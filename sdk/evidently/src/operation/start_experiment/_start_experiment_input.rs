@@ -36,9 +36,7 @@ impl StartExperimentInput {
 
 /// A builder for [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExperimentInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) experiment: ::std::option::Option<::std::string::String>,
@@ -79,26 +77,18 @@ impl StartExperimentInputBuilder {
         self
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub fn set_analysis_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.analysis_complete_time = input;
         self
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub fn get_analysis_complete_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.analysis_complete_time
     }
     /// Consumes the builder and constructs a [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_experiment::StartExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_experiment::StartExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_experiment::StartExperimentInput {
             project: self.project,
             experiment: self.experiment,

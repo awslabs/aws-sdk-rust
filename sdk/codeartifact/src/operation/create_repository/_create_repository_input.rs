@@ -50,17 +50,14 @@ impl CreateRepositoryInput {
 }
 impl CreateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         crate::operation::create_repository::builders::CreateRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRepositoryInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -138,17 +135,12 @@ impl CreateRepositoryInputBuilder {
         self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn set_upstreams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>,
-    ) -> Self {
+    pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>) -> Self {
         self.upstreams = input;
         self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn get_upstreams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
+    pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
         &self.upstreams
     }
     /// Appends an item to `tags`.
@@ -163,10 +155,7 @@ impl CreateRepositoryInputBuilder {
         self
     }
     /// <p>One or more tag key-value pairs for the repository.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -177,10 +166,7 @@ impl CreateRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_repository::CreateRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_repository::CreateRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_repository::CreateRepositoryInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExperienceOutput`](crate::operation::create_experience::CreateExperienceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_experience::CreateExperienceOutput::id): <p>The identifier of your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<CreateExperienceError>`](crate::operation::create_experience::CreateExperienceError)
-    pub fn create_experience(
-        &self,
-    ) -> crate::operation::create_experience::builders::CreateExperienceFluentBuilder {
-        crate::operation::create_experience::builders::CreateExperienceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_experience(&self) -> crate::operation::create_experience::builders::CreateExperienceFluentBuilder {
+        crate::operation::create_experience::builders::CreateExperienceFluentBuilder::new(self.handle.clone())
     }
 }

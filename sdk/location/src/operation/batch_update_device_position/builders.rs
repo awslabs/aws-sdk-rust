@@ -30,7 +30,7 @@ impl BatchUpdateDevicePositionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder,
+    inner: crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder,
 }
 impl BatchUpdateDevicePositionFluentBuilder {
     /// Creates a new `BatchUpdateDevicePosition`.
@@ -41,7 +41,7 @@ impl BatchUpdateDevicePositionFluentBuilder {
         }
     }
     /// Access the BatchUpdateDevicePosition as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl BatchUpdateDevicePositionFluentBuilder {
             crate::operation::batch_update_device_position::BatchUpdateDevicePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl BatchUpdateDevicePositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl BatchUpdateDevicePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl BatchUpdateDevicePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl BatchUpdateDevicePositionFluentBuilder {
             crate::operation::batch_update_device_position::BatchUpdateDevicePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +137,12 @@ impl BatchUpdateDevicePositionFluentBuilder {
         self
     }
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
         self.inner.get_updates()
     }
 }

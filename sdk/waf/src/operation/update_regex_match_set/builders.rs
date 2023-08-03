@@ -55,9 +55,7 @@ impl UpdateRegexMatchSetFluentBuilder {
         }
     }
     /// Access the UpdateRegexMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +67,7 @@ impl UpdateRegexMatchSetFluentBuilder {
             crate::operation::update_regex_match_set::UpdateRegexMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +77,7 @@ impl UpdateRegexMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +86,7 @@ impl UpdateRegexMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_regex_match_set::UpdateRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError>,
     > {
         let op = self
             .inner
@@ -118,9 +109,7 @@ impl UpdateRegexMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_regex_match_set::UpdateRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -134,25 +123,17 @@ impl UpdateRegexMatchSetFluentBuilder {
             crate::operation::update_regex_match_set::UpdateRegexMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regex_match_set_id(input.into());
         self
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn set_regex_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_regex_match_set_id(input);
         self
     }
@@ -170,17 +151,12 @@ impl UpdateRegexMatchSetFluentBuilder {
         self
     }
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>> {
         self.inner.get_updates()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>

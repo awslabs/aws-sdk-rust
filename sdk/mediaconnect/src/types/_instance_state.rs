@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for InstanceState {
             "DEREGISTRATION_ERROR" => InstanceState::DeregistrationError,
             "REGISTERING" => InstanceState::Registering,
             "REGISTRATION_ERROR" => InstanceState::RegistrationError,
-            other => {
-                InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

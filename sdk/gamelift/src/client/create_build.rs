@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::operation::create_build::CreateBuildOutput::upload_credentials): <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
     ///   - [`storage_location(Option<S3Location>)`](crate::operation::create_build::CreateBuildOutput::storage_location): <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     /// - On failure, responds with [`SdkError<CreateBuildError>`](crate::operation::create_build::CreateBuildError)
-    pub fn create_build(
-        &self,
-    ) -> crate::operation::create_build::builders::CreateBuildFluentBuilder {
+    pub fn create_build(&self) -> crate::operation::create_build::builders::CreateBuildFluentBuilder {
         crate::operation::create_build::builders::CreateBuildFluentBuilder::new(self.handle.clone())
     }
 }

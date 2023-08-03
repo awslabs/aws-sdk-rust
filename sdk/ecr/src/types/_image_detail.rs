@@ -76,9 +76,7 @@ impl ImageDetail {
         self.image_scan_status.as_ref()
     }
     /// <p>A summary of the last completed image scan.</p>
-    pub fn image_scan_findings_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageScanFindingsSummary> {
+    pub fn image_scan_findings_summary(&self) -> ::std::option::Option<&crate::types::ImageScanFindingsSummary> {
         self.image_scan_findings_summary.as_ref()
     }
     /// <p>The media type of the image manifest.</p>
@@ -105,9 +103,7 @@ impl ImageDetail {
 
 /// A builder for [`ImageDetail`](crate::types::ImageDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageDetailBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -116,8 +112,7 @@ pub struct ImageDetailBuilder {
     pub(crate) image_size_in_bytes: ::std::option::Option<i64>,
     pub(crate) image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) image_scan_status: ::std::option::Option<crate::types::ImageScanStatus>,
-    pub(crate) image_scan_findings_summary:
-        ::std::option::Option<crate::types::ImageScanFindingsSummary>,
+    pub(crate) image_scan_findings_summary: ::std::option::Option<crate::types::ImageScanFindingsSummary>,
     pub(crate) image_manifest_media_type: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_media_type: ::std::option::Option<::std::string::String>,
     pub(crate) last_recorded_pull_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -138,18 +133,12 @@ impl ImageDetailBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to which this image belongs.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to which this image belongs.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -183,10 +172,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The list of tags associated with this image.</p>
-    pub fn set_image_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_tags = input;
         self
     }
@@ -223,10 +209,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
-    pub fn set_image_pushed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.image_pushed_at = input;
         self
     }
@@ -240,10 +223,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The current state of the scan.</p>
-    pub fn set_image_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanStatus>,
-    ) -> Self {
+    pub fn set_image_scan_status(mut self, input: ::std::option::Option<crate::types::ImageScanStatus>) -> Self {
         self.image_scan_status = input;
         self
     }
@@ -252,40 +232,26 @@ impl ImageDetailBuilder {
         &self.image_scan_status
     }
     /// <p>A summary of the last completed image scan.</p>
-    pub fn image_scan_findings_summary(
-        mut self,
-        input: crate::types::ImageScanFindingsSummary,
-    ) -> Self {
+    pub fn image_scan_findings_summary(mut self, input: crate::types::ImageScanFindingsSummary) -> Self {
         self.image_scan_findings_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of the last completed image scan.</p>
-    pub fn set_image_scan_findings_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanFindingsSummary>,
-    ) -> Self {
+    pub fn set_image_scan_findings_summary(mut self, input: ::std::option::Option<crate::types::ImageScanFindingsSummary>) -> Self {
         self.image_scan_findings_summary = input;
         self
     }
     /// <p>A summary of the last completed image scan.</p>
-    pub fn get_image_scan_findings_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanFindingsSummary> {
+    pub fn get_image_scan_findings_summary(&self) -> &::std::option::Option<crate::types::ImageScanFindingsSummary> {
         &self.image_scan_findings_summary
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn image_manifest_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_manifest_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn set_image_manifest_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_manifest_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_manifest_media_type = input;
         self
     }
@@ -294,18 +260,12 @@ impl ImageDetailBuilder {
         &self.image_manifest_media_type
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn artifact_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn set_artifact_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_media_type = input;
         self
     }
@@ -323,19 +283,14 @@ impl ImageDetailBuilder {
     /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
-    pub fn set_last_recorded_pull_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_recorded_pull_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_recorded_pull_time = input;
         self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
-    pub fn get_last_recorded_pull_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_recorded_pull_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_recorded_pull_time
     }
     /// Consumes the builder and constructs a [`ImageDetail`](crate::types::ImageDetail).

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterApplicationRevisionOutput {
 }
 impl RegisterApplicationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationRevisionOutput`](crate::operation::register_application_revision::RegisterApplicationRevisionOutput).
-    pub fn builder() -> crate::operation::register_application_revision::builders::RegisterApplicationRevisionOutputBuilder{
+    pub fn builder() -> crate::operation::register_application_revision::builders::RegisterApplicationRevisionOutputBuilder {
         crate::operation::register_application_revision::builders::RegisterApplicationRevisionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterApplicationRevisionOutput`](crate::operation::register_application_revision::RegisterApplicationRevisionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterApplicationRevisionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RegisterApplicationRevisionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterApplicationRevisionOutput`](crate::operation::register_application_revision::RegisterApplicationRevisionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_application_revision::RegisterApplicationRevisionOutput {
+    pub fn build(self) -> crate::operation::register_application_revision::RegisterApplicationRevisionOutput {
         crate::operation::register_application_revision::RegisterApplicationRevisionOutput {
             _request_id: self._request_id,
         }

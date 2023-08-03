@@ -26,8 +26,7 @@ impl ModifyClusterDbRevisionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterDbRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder,
+    inner: crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder,
 }
 impl ModifyClusterDbRevisionFluentBuilder {
     /// Creates a new `ModifyClusterDbRevision`.
@@ -38,10 +37,7 @@ impl ModifyClusterDbRevisionFluentBuilder {
         }
     }
     /// Access the ModifyClusterDbRevision as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ModifyClusterDbRevisionFluentBuilder {
             crate::operation::modify_cluster_db_revision::ModifyClusterDbRevision,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ModifyClusterDbRevisionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ModifyClusterDbRevisionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ModifyClusterDbRevisionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +105,19 @@ impl ModifyClusterDbRevisionFluentBuilder {
             crate::operation::modify_cluster_db_revision::ModifyClusterDbRevision,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -148,18 +127,12 @@ impl ModifyClusterDbRevisionFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
-    pub fn revision_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revision_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_target(input.into());
         self
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
-    pub fn set_revision_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revision_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_target(input);
         self
     }

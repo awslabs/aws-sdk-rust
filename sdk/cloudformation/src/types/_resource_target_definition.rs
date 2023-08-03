@@ -37,9 +37,7 @@ impl ResourceTargetDefinition {
 
 /// A builder for [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceTargetDefinitionBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ResourceAttribute>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ResourceTargetDefinitionBuilder {
         self
     }
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResourceAttribute>) -> Self {
         self.attribute = input;
         self
     }
@@ -83,17 +78,12 @@ impl ResourceTargetDefinitionBuilder {
         self
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
-    pub fn set_requires_recreation(
-        mut self,
-        input: ::std::option::Option<crate::types::RequiresRecreation>,
-    ) -> Self {
+    pub fn set_requires_recreation(mut self, input: ::std::option::Option<crate::types::RequiresRecreation>) -> Self {
         self.requires_recreation = input;
         self
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
-    pub fn get_requires_recreation(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequiresRecreation> {
+    pub fn get_requires_recreation(&self) -> &::std::option::Option<crate::types::RequiresRecreation> {
         &self.requires_recreation
     }
     /// Consumes the builder and constructs a [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).

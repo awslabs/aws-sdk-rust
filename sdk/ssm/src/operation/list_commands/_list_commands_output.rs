@@ -35,9 +35,7 @@ impl ListCommandsOutput {
 
 /// A builder for [`ListCommandsOutput`](crate::operation::list_commands::ListCommandsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCommandsOutputBuilder {
     pub(crate) commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListCommandsOutputBuilder {
         self
     }
     /// <p>(Optional) The list of commands requested by the user. </p>
-    pub fn set_commands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
-    ) -> Self {
+    pub fn set_commands(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>) -> Self {
         self.commands = input;
         self
     }

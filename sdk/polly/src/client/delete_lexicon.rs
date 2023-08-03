@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_lexicon::builders::DeleteLexiconFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_lexicon::builders::DeleteLexiconFluentBuilder::set_name): <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
     /// - On success, responds with [`DeleteLexiconOutput`](crate::operation::delete_lexicon::DeleteLexiconOutput)
     /// - On failure, responds with [`SdkError<DeleteLexiconError>`](crate::operation::delete_lexicon::DeleteLexiconError)
-    pub fn delete_lexicon(
-        &self,
-    ) -> crate::operation::delete_lexicon::builders::DeleteLexiconFluentBuilder {
-        crate::operation::delete_lexicon::builders::DeleteLexiconFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_lexicon(&self) -> crate::operation::delete_lexicon::builders::DeleteLexiconFluentBuilder {
+        crate::operation::delete_lexicon::builders::DeleteLexiconFluentBuilder::new(self.handle.clone())
     }
 }

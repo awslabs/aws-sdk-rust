@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`reputation_metrics_enabled(bool)`](crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsFluentBuilder::reputation_metrics_enabled) / [`set_reputation_metrics_enabled(bool)`](crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsFluentBuilder::set_reputation_metrics_enabled): <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetReputationOptionsOutput`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetReputationOptionsError>`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsError)
-    pub fn put_configuration_set_reputation_options(&self) -> crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsFluentBuilder{
-        crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsFluentBuilder::new(self.handle.clone())
+    pub fn put_configuration_set_reputation_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsFluentBuilder {
+        crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

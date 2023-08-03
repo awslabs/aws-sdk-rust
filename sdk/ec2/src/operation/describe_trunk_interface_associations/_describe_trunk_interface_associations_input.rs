@@ -51,16 +51,14 @@ impl DescribeTrunkInterfaceAssociationsInput {
 }
 impl DescribeTrunkInterfaceAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrunkInterfaceAssociationsInput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput).
-    pub fn builder() -> crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder {
         crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrunkInterfaceAssociationsInput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrunkInterfaceAssociationsInputBuilder {
     pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -74,27 +72,19 @@ impl DescribeTrunkInterfaceAssociationsInputBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>The IDs of the associations.</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
         v.push(input.into());
         self.association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the associations.</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.association_ids = input;
         self
     }
     /// <p>The IDs of the associations.</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.association_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -131,10 +121,7 @@ impl DescribeTrunkInterfaceAssociationsInputBuilder {
     /// <li> <p> <code>gre-key</code> - The ID of a trunk interface association.</p> </li>
     /// <li> <p> <code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -175,20 +162,20 @@ impl DescribeTrunkInterfaceAssociationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeTrunkInterfaceAssociationsInput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput {
-                association_ids: self.association_ids
-                ,
-                dry_run: self.dry_run
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                association_ids: self.association_ids,
+                dry_run: self.dry_run,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

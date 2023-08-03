@@ -10,10 +10,7 @@ impl ListActionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_actions::ListActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_actions::ListActionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_actions::ListActionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_actions();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListActionsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_actions::ListActions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_actions::ListActions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_actions::ListActionsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListActionsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_actions::ListActions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_actions::ListActions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_actions::ListActionsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListActionsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_actions::paginator::ListActionsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_actions::paginator::ListActionsPaginator {
-        crate::operation::list_actions::paginator::ListActionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_actions::paginator::ListActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only actions with the specified source URI.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,10 +140,7 @@ impl ListActionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only actions created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -172,10 +154,7 @@ impl ListActionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only actions created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -189,10 +168,7 @@ impl ListActionsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortActionsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortActionsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

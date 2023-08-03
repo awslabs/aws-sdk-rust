@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateIpAccessSettingsOutput {
 }
 impl AssociateIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateIpAccessSettingsOutput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput).
-    pub fn builder() -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder {
         crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIpAccessSettingsOutput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIpAccessSettingsOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl AssociateIpAccessSettingsOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -88,9 +80,7 @@ impl AssociateIpAccessSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateIpAccessSettingsOutput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput {
+    pub fn build(self) -> crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput {
         crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput {
             portal_arn: self.portal_arn,
             ip_access_settings_arn: self.ip_access_settings_arn,

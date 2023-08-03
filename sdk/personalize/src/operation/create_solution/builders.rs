@@ -10,10 +10,7 @@ impl CreateSolutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_solution::CreateSolutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_solution::CreateSolutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_solution();
         fluent_builder.inner = self;
@@ -59,9 +56,7 @@ impl CreateSolutionFluentBuilder {
         }
     }
     /// Access the CreateSolution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_solution::builders::CreateSolutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_solution::builders::CreateSolutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -83,10 +78,7 @@ impl CreateSolutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -208,18 +200,12 @@ impl CreateSolutionFluentBuilder {
         self.inner.get_recipe_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
@@ -254,10 +240,7 @@ impl CreateSolutionFluentBuilder {
     /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
-    pub fn set_solution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SolutionConfig>,
-    ) -> Self {
+    pub fn set_solution_config(mut self, input: ::std::option::Option<crate::types::SolutionConfig>) -> Self {
         self.inner = self.inner.set_solution_config(input);
         self
     }
@@ -277,10 +260,7 @@ impl CreateSolutionFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

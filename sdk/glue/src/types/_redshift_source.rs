@@ -51,9 +51,7 @@ impl RedshiftSource {
 
 /// A builder for [`RedshiftSource`](crate::types::RedshiftSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ impl RedshiftSourceBuilder {
         &self.table
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    pub fn redshift_tmp_dir(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn redshift_tmp_dir(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redshift_tmp_dir = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    pub fn set_redshift_tmp_dir(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_redshift_tmp_dir(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.redshift_tmp_dir = input;
         self
     }
@@ -125,18 +117,12 @@ impl RedshiftSourceBuilder {
         &self.redshift_tmp_dir
     }
     /// <p>The IAM role with permissions.</p>
-    pub fn tmp_dir_iam_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tmp_dir_iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tmp_dir_iam_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role with permissions.</p>
-    pub fn set_tmp_dir_iam_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tmp_dir_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tmp_dir_iam_role = input;
         self
     }

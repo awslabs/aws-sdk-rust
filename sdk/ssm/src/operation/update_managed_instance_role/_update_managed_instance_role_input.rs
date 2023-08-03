@@ -26,16 +26,14 @@ impl UpdateManagedInstanceRoleInput {
 }
 impl UpdateManagedInstanceRoleInput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedInstanceRoleInput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput).
-    pub fn builder() -> crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder{
+    pub fn builder() -> crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder {
         crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateManagedInstanceRoleInput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateManagedInstanceRoleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
@@ -82,11 +80,9 @@ impl UpdateManagedInstanceRoleInputBuilder {
         crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput {
-                instance_id: self.instance_id,
-                iam_role: self.iam_role,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput {
+            instance_id: self.instance_id,
+            iam_role: self.iam_role,
+        })
     }
 }

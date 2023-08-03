@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`event_action_id(impl ::std::convert::Into<String>)`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::event_action_id) / [`set_event_action_id(Option<String>)`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::set_event_action_id): <p>The unique identifier for the event action.</p>
     /// - On success, responds with [`DeleteEventActionOutput`](crate::operation::delete_event_action::DeleteEventActionOutput)
     /// - On failure, responds with [`SdkError<DeleteEventActionError>`](crate::operation::delete_event_action::DeleteEventActionError)
-    pub fn delete_event_action(
-        &self,
-    ) -> crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder {
-        crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_event_action(&self) -> crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder {
+        crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::new(self.handle.clone())
     }
 }

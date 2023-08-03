@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`experiment(impl ::std::convert::Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::experiment) / [`set_experiment(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_experiment): <p>The name of the experiment to delete.</p>
     /// - On success, responds with [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput)
     /// - On failure, responds with [`SdkError<DeleteExperimentError>`](crate::operation::delete_experiment::DeleteExperimentError)
-    pub fn delete_experiment(
-        &self,
-    ) -> crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder {
-        crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_experiment(&self) -> crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder {
+        crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::new(self.handle.clone())
     }
 }

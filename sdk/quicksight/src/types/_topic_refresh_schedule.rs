@@ -58,9 +58,7 @@ impl TopicRefreshSchedule {
 
 /// A builder for [`TopicRefreshSchedule`](crate::types::TopicRefreshSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicRefreshScheduleBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
     pub(crate) based_on_spice_schedule: ::std::option::Option<bool>,
@@ -104,10 +102,7 @@ impl TopicRefreshScheduleBuilder {
         self
     }
     /// <p>The starting date and time for the refresh schedule.</p>
-    pub fn set_starting_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_starting_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.starting_at = input;
         self
     }
@@ -149,17 +144,12 @@ impl TopicRefreshScheduleBuilder {
         self
     }
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
-    pub fn set_topic_schedule_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicScheduleType>,
-    ) -> Self {
+    pub fn set_topic_schedule_type(mut self, input: ::std::option::Option<crate::types::TopicScheduleType>) -> Self {
         self.topic_schedule_type = input;
         self
     }
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
-    pub fn get_topic_schedule_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicScheduleType> {
+    pub fn get_topic_schedule_type(&self) -> &::std::option::Option<crate::types::TopicScheduleType> {
         &self.topic_schedule_type
     }
     /// Consumes the builder and constructs a [`TopicRefreshSchedule`](crate::types::TopicRefreshSchedule).

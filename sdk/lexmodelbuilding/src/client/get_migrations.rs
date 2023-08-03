@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`migration_summaries(Option<Vec<MigrationSummary>>)`](crate::operation::get_migrations::GetMigrationsOutput::migration_summaries): <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_migrations::GetMigrationsOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
     /// - On failure, responds with [`SdkError<GetMigrationsError>`](crate::operation::get_migrations::GetMigrationsError)
-    pub fn get_migrations(
-        &self,
-    ) -> crate::operation::get_migrations::builders::GetMigrationsFluentBuilder {
-        crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_migrations(&self) -> crate::operation::get_migrations::builders::GetMigrationsFluentBuilder {
+        crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::new(self.handle.clone())
     }
 }

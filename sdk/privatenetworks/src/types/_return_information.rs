@@ -44,9 +44,7 @@ impl ReturnInformation {
 
 /// A builder for [`ReturnInformation`](crate::types::ReturnInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReturnInformationBuilder {
     pub(crate) shipping_address: ::std::option::Option<crate::types::Address>,
     pub(crate) return_reason: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ReturnInformationBuilder {
         self
     }
     /// <p>The shipping address.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.shipping_address = input;
         self
     }
@@ -72,18 +67,12 @@ impl ReturnInformationBuilder {
         &self.shipping_address
     }
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
-    pub fn return_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn return_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.return_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
-    pub fn set_return_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_return_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.return_reason = input;
         self
     }
@@ -92,18 +81,12 @@ impl ReturnInformationBuilder {
         &self.return_reason
     }
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
-    pub fn replacement_order_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replacement_order_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replacement_order_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
-    pub fn set_replacement_order_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replacement_order_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replacement_order_arn = input;
         self
     }
@@ -112,18 +95,12 @@ impl ReturnInformationBuilder {
         &self.replacement_order_arn
     }
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
-    pub fn shipping_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shipping_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shipping_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
-    pub fn set_shipping_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shipping_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shipping_label = input;
         self
     }

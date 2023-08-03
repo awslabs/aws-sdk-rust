@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSizeConstraintSetOutput`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSizeConstraintSetError>`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError)
-    pub fn delete_size_constraint_set(
-        &self,
-    ) -> crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetFluentBuilder
-    {
+    pub fn delete_size_constraint_set(&self) -> crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetFluentBuilder {
         crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetFluentBuilder::new(self.handle.clone())
     }
 }

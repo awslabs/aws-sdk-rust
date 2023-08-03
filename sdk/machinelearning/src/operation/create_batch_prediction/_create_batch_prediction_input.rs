@@ -45,18 +45,14 @@ impl CreateBatchPredictionInput {
 }
 impl CreateBatchPredictionInput {
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionInput`](crate::operation::create_batch_prediction::CreateBatchPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder {
         crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchPredictionInput`](crate::operation::create_batch_prediction::CreateBatchPredictionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_prediction_name: ::std::option::Option<::std::string::String>,
@@ -66,18 +62,12 @@ pub struct CreateBatchPredictionInputBuilder {
 }
 impl CreateBatchPredictionInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_id = input;
         self
     }
@@ -86,18 +76,12 @@ impl CreateBatchPredictionInputBuilder {
         &self.batch_prediction_id
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    pub fn batch_prediction_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    pub fn set_batch_prediction_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_name = input;
         self
     }
@@ -120,25 +104,17 @@ impl CreateBatchPredictionInputBuilder {
         &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn batch_prediction_data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn set_batch_prediction_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_data_source_id = input;
         self
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn get_batch_prediction_data_source_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_batch_prediction_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.batch_prediction_data_source_id
     }
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
@@ -161,18 +137,14 @@ impl CreateBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchPredictionInput`](crate::operation::create_batch_prediction::CreateBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_batch_prediction::CreateBatchPredictionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_batch_prediction::CreateBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-                batch_prediction_name: self.batch_prediction_name,
-                ml_model_id: self.ml_model_id,
-                batch_prediction_data_source_id: self.batch_prediction_data_source_id,
-                output_uri: self.output_uri,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_batch_prediction::CreateBatchPredictionInput {
+            batch_prediction_id: self.batch_prediction_id,
+            batch_prediction_name: self.batch_prediction_name,
+            ml_model_id: self.ml_model_id,
+            batch_prediction_data_source_id: self.batch_prediction_data_source_id,
+            output_uri: self.output_uri,
+        })
     }
 }

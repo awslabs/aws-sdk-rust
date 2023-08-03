@@ -70,9 +70,7 @@ impl DescribeBulkImportJobOutput {
         self.files.as_deref()
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn error_report_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
+    pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
         self.error_report_location.as_ref()
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
@@ -95,18 +93,14 @@ impl ::aws_http::request_id::RequestId for DescribeBulkImportJobOutput {
 }
 impl DescribeBulkImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBulkImportJobOutput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder {
         crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBulkImportJobOutput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBulkImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -212,10 +206,7 @@ impl DescribeBulkImportJobOutputBuilder {
         self
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.files = input;
         self
     }
@@ -229,17 +220,12 @@ impl DescribeBulkImportJobOutputBuilder {
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn set_error_report_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorReportLocation>,
-    ) -> Self {
+    pub fn set_error_report_location(mut self, input: ::std::option::Option<crate::types::ErrorReportLocation>) -> Self {
         self.error_report_location = input;
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn get_error_report_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ErrorReportLocation> {
+    pub fn get_error_report_location(&self) -> &::std::option::Option<crate::types::ErrorReportLocation> {
         &self.error_report_location
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
@@ -248,10 +234,7 @@ impl DescribeBulkImportJobOutputBuilder {
         self
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    pub fn set_job_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::JobConfiguration>,
-    ) -> Self {
+    pub fn set_job_configuration(mut self, input: ::std::option::Option<crate::types::JobConfiguration>) -> Self {
         self.job_configuration = input;
         self
     }
@@ -265,10 +248,7 @@ impl DescribeBulkImportJobOutputBuilder {
         self
     }
     /// <p>The date the job was created, in Unix epoch TIME.</p>
-    pub fn set_job_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_creation_date = input;
         self
     }
@@ -282,10 +262,7 @@ impl DescribeBulkImportJobOutputBuilder {
         self
     }
     /// <p>The date the job was last updated, in Unix epoch time.</p>
-    pub fn set_job_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_last_update_date = input;
         self
     }

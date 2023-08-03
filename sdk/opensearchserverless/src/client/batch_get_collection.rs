@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`collection_details(Option<Vec<CollectionDetail>>)`](crate::operation::batch_get_collection::BatchGetCollectionOutput::collection_details): <p>Details about each collection.</p>
     ///   - [`collection_error_details(Option<Vec<CollectionErrorDetail>>)`](crate::operation::batch_get_collection::BatchGetCollectionOutput::collection_error_details): <p>Error information for the request.</p>
     /// - On failure, responds with [`SdkError<BatchGetCollectionError>`](crate::operation::batch_get_collection::BatchGetCollectionError)
-    pub fn batch_get_collection(
-        &self,
-    ) -> crate::operation::batch_get_collection::builders::BatchGetCollectionFluentBuilder {
-        crate::operation::batch_get_collection::builders::BatchGetCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_collection(&self) -> crate::operation::batch_get_collection::builders::BatchGetCollectionFluentBuilder {
+        crate::operation::batch_get_collection::builders::BatchGetCollectionFluentBuilder::new(self.handle.clone())
     }
 }

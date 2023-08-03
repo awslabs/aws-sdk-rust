@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddNotificationChannelsOutput`](crate::operation::add_notification_channels::AddNotificationChannelsOutput) with field(s):
     ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::operation::add_notification_channels::AddNotificationChannelsOutput::notification_configuration): <p>The new notification configuration for this profiling group.</p>
     /// - On failure, responds with [`SdkError<AddNotificationChannelsError>`](crate::operation::add_notification_channels::AddNotificationChannelsError)
-    pub fn add_notification_channels(
-        &self,
-    ) -> crate::operation::add_notification_channels::builders::AddNotificationChannelsFluentBuilder
-    {
+    pub fn add_notification_channels(&self) -> crate::operation::add_notification_channels::builders::AddNotificationChannelsFluentBuilder {
         crate::operation::add_notification_channels::builders::AddNotificationChannelsFluentBuilder::new(self.handle.clone())
     }
 }

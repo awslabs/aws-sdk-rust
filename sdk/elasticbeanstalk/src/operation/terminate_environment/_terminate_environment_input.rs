@@ -55,18 +55,14 @@ impl TerminateEnvironmentInput {
 }
 impl TerminateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`TerminateEnvironmentInput`](crate::operation::terminate_environment::TerminateEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::terminate_environment::builders::TerminateEnvironmentInputBuilder {
-        crate::operation::terminate_environment::builders::TerminateEnvironmentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::terminate_environment::builders::TerminateEnvironmentInputBuilder {
+        crate::operation::terminate_environment::builders::TerminateEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateEnvironmentInput`](crate::operation::terminate_environment::TerminateEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -76,19 +72,13 @@ pub struct TerminateEnvironmentInputBuilder {
 impl TerminateEnvironmentInputBuilder {
     /// <p>The ID of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -99,19 +89,13 @@ impl TerminateEnvironmentInputBuilder {
     }
     /// <p>The name of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -172,17 +156,13 @@ impl TerminateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`TerminateEnvironmentInput`](crate::operation::terminate_environment::TerminateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_environment::TerminateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_environment::TerminateEnvironmentInput {
-                environment_id: self.environment_id,
-                environment_name: self.environment_name,
-                terminate_resources: self.terminate_resources,
-                force_terminate: self.force_terminate,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::terminate_environment::TerminateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::terminate_environment::TerminateEnvironmentInput {
+            environment_id: self.environment_id,
+            environment_name: self.environment_name,
+            terminate_resources: self.terminate_resources,
+            force_terminate: self.force_terminate,
+        })
     }
 }

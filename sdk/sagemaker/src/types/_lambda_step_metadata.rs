@@ -30,13 +30,10 @@ impl LambdaStepMetadata {
 
 /// A builder for [`LambdaStepMetadata`](crate::types::LambdaStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaStepMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) output_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
+    pub(crate) output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
 }
 impl LambdaStepMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution.</p>
@@ -65,17 +62,12 @@ impl LambdaStepMetadataBuilder {
         self
     }
     /// <p>A list of the output parameters of the Lambda step.</p>
-    pub fn set_output_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
-    ) -> Self {
+    pub fn set_output_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>) -> Self {
         self.output_parameters = input;
         self
     }
     /// <p>A list of the output parameters of the Lambda step.</p>
-    pub fn get_output_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
+    pub fn get_output_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
         &self.output_parameters
     }
     /// Consumes the builder and constructs a [`LambdaStepMetadata`](crate::types::LambdaStepMetadata).

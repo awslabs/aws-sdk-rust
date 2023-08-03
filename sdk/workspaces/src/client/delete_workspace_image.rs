@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`image_id(impl ::std::convert::Into<String>)`](crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageFluentBuilder::image_id) / [`set_image_id(Option<String>)`](crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageFluentBuilder::set_image_id): <p>The identifier of the image.</p>
     /// - On success, responds with [`DeleteWorkspaceImageOutput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkspaceImageError>`](crate::operation::delete_workspace_image::DeleteWorkspaceImageError)
-    pub fn delete_workspace_image(
-        &self,
-    ) -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageFluentBuilder {
-        crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workspace_image(&self) -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageFluentBuilder {
+        crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageFluentBuilder::new(self.handle.clone())
     }
 }

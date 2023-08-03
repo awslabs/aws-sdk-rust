@@ -23,9 +23,7 @@ impl InAppMessageButton {
         self.android.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn default_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultButtonConfiguration> {
+    pub fn default_config(&self) -> ::std::option::Option<&crate::types::DefaultButtonConfiguration> {
         self.default_config.as_ref()
     }
     /// <p>Default button content.</p>
@@ -46,9 +44,7 @@ impl InAppMessageButton {
 
 /// A builder for [`InAppMessageButton`](crate::types::InAppMessageButton).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppMessageButtonBuilder {
     pub(crate) android: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     pub(crate) default_config: ::std::option::Option<crate::types::DefaultButtonConfiguration>,
@@ -62,10 +58,7 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_android(
-        mut self,
-        input: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
-    ) -> Self {
+    pub fn set_android(mut self, input: ::std::option::Option<crate::types::OverrideButtonConfiguration>) -> Self {
         self.android = input;
         self
     }
@@ -79,17 +72,12 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_default_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultButtonConfiguration>,
-    ) -> Self {
+    pub fn set_default_config(mut self, input: ::std::option::Option<crate::types::DefaultButtonConfiguration>) -> Self {
         self.default_config = input;
         self
     }
     /// <p>Default button content.</p>
-    pub fn get_default_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultButtonConfiguration> {
+    pub fn get_default_config(&self) -> &::std::option::Option<crate::types::DefaultButtonConfiguration> {
         &self.default_config
     }
     /// <p>Default button content.</p>
@@ -98,10 +86,7 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_ios(
-        mut self,
-        input: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
-    ) -> Self {
+    pub fn set_ios(mut self, input: ::std::option::Option<crate::types::OverrideButtonConfiguration>) -> Self {
         self.ios = input;
         self
     }
@@ -115,10 +100,7 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_web(
-        mut self,
-        input: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
-    ) -> Self {
+    pub fn set_web(mut self, input: ::std::option::Option<crate::types::OverrideButtonConfiguration>) -> Self {
         self.web = input;
         self
     }

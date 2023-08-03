@@ -22,9 +22,7 @@ pub struct PostLaunchActions {
 }
 impl PostLaunchActions {
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    pub fn deployment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PostLaunchActionsDeploymentType> {
+    pub fn deployment(&self) -> ::std::option::Option<&crate::types::PostLaunchActionsDeploymentType> {
         self.deployment.as_ref()
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
@@ -53,9 +51,7 @@ impl PostLaunchActions {
 
 /// A builder for [`PostLaunchActions`](crate::types::PostLaunchActions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostLaunchActionsBuilder {
     pub(crate) deployment: ::std::option::Option<crate::types::PostLaunchActionsDeploymentType>,
     pub(crate) s3_log_bucket: ::std::option::Option<::std::string::String>,
@@ -70,32 +66,21 @@ impl PostLaunchActionsBuilder {
         self
     }
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    pub fn set_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::PostLaunchActionsDeploymentType>,
-    ) -> Self {
+    pub fn set_deployment(mut self, input: ::std::option::Option<crate::types::PostLaunchActionsDeploymentType>) -> Self {
         self.deployment = input;
         self
     }
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    pub fn get_deployment(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostLaunchActionsDeploymentType> {
+    pub fn get_deployment(&self) -> &::std::option::Option<crate::types::PostLaunchActionsDeploymentType> {
         &self.deployment
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
-    pub fn s3_log_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_log_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_log_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
-    pub fn set_s3_log_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_log_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_log_bucket = input;
         self
     }
@@ -104,18 +89,12 @@ impl PostLaunchActionsBuilder {
         &self.s3_log_bucket
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-    pub fn s3_output_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-    pub fn set_s3_output_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_key_prefix = input;
         self
     }
@@ -124,18 +103,12 @@ impl PostLaunchActionsBuilder {
         &self.s3_output_key_prefix
     }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-    pub fn cloud_watch_log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-    pub fn set_cloud_watch_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_name = input;
         self
     }
@@ -155,17 +128,12 @@ impl PostLaunchActionsBuilder {
         self
     }
     /// <p>AWS Systems Manager Documents.</p>
-    pub fn set_ssm_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SsmDocument>>,
-    ) -> Self {
+    pub fn set_ssm_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SsmDocument>>) -> Self {
         self.ssm_documents = input;
         self
     }
     /// <p>AWS Systems Manager Documents.</p>
-    pub fn get_ssm_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SsmDocument>> {
+    pub fn get_ssm_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SsmDocument>> {
         &self.ssm_documents
     }
     /// Consumes the builder and constructs a [`PostLaunchActions`](crate::types::PostLaunchActions).

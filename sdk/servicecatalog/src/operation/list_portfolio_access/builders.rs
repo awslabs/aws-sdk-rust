@@ -38,9 +38,7 @@ impl ListPortfolioAccessFluentBuilder {
         }
     }
     /// Access the ListPortfolioAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_portfolio_access::builders::ListPortfolioAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_portfolio_access::builders::ListPortfolioAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListPortfolioAccessFluentBuilder {
             crate::operation::list_portfolio_access::ListPortfolioAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_portfolio_access::ListPortfolioAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_portfolio_access::ListPortfolioAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListPortfolioAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListPortfolioAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_portfolio_access::ListPortfolioAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_portfolio_access::ListPortfolioAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_portfolio_access::ListPortfolioAccessError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListPortfolioAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_portfolio_access::ListPortfolioAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_portfolio_access::ListPortfolioAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_portfolio_access::ListPortfolioAccessError>,
     > {
         self.send_middleware().await
     }
@@ -117,32 +106,22 @@ impl ListPortfolioAccessFluentBuilder {
             crate::operation::list_portfolio_access::ListPortfolioAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_portfolio_access::ListPortfolioAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_portfolio_access::ListPortfolioAccessError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_portfolio_access::paginator::ListPortfolioAccessPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_portfolio_access::paginator::ListPortfolioAccessPaginator {
-        crate::operation::list_portfolio_access::paginator::ListPortfolioAccessPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_portfolio_access::paginator::ListPortfolioAccessPaginator {
+        crate::operation::list_portfolio_access::paginator::ListPortfolioAccessPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -151,10 +130,7 @@ impl ListPortfolioAccessFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -181,18 +157,12 @@ impl ListPortfolioAccessFluentBuilder {
         self.inner.get_portfolio_id()
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    pub fn organization_parent_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_parent_id(input.into());
         self
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    pub fn set_organization_parent_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_parent_id(input);
         self
     }

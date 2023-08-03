@@ -10,10 +10,7 @@ impl UnshareDirectoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unshare_directory::UnshareDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.unshare_directory();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UnshareDirectoryFluentBuilder {
         }
     }
     /// Access the UnshareDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UnshareDirectoryFluentBuilder {
             crate::operation::unshare_directory::UnshareDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UnshareDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UnshareDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unshare_directory::UnshareDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UnshareDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unshare_directory::UnshareDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UnshareDirectoryFluentBuilder {
             crate::operation::unshare_directory::UnshareDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl UnshareDirectoryFluentBuilder {
         self
     }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
-    pub fn set_unshare_target(
-        mut self,
-        input: ::std::option::Option<crate::types::UnshareTarget>,
-    ) -> Self {
+    pub fn set_unshare_target(mut self, input: ::std::option::Option<crate::types::UnshareTarget>) -> Self {
         self.inner = self.inner.set_unshare_target(input);
         self
     }

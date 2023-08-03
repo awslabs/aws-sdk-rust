@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetVaultAccessPolicyOutput {
 }
 impl GetVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyOutput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyOutputBuilder {
         crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVaultAccessPolicyOutput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVaultAccessPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::VaultAccessPolicy>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl GetVaultAccessPolicyOutputBuilder {
         self
     }
     /// <p>Contains the returned vault access policy as a JSON string.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultAccessPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::VaultAccessPolicy>) -> Self {
         self.policy = input;
         self
     }

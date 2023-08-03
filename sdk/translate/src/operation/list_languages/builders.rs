@@ -10,10 +10,7 @@ impl ListLanguagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_languages::ListLanguagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_languages::ListLanguagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_languages::ListLanguagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_languages();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListLanguagesFluentBuilder {
         }
     }
     /// Access the ListLanguages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_languages::builders::ListLanguagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_languages::builders::ListLanguagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListLanguagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListLanguagesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_languages::paginator::ListLanguagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_languages::paginator::ListLanguagesPaginator {
-        crate::operation::list_languages::paginator::ListLanguagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_languages::paginator::ListLanguagesPaginator {
+        crate::operation::list_languages::paginator::ListLanguagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
     pub fn display_language_code(mut self, input: crate::types::DisplayLanguageCode) -> Self {
@@ -131,17 +118,12 @@ impl ListLanguagesFluentBuilder {
         self
     }
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-    pub fn set_display_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DisplayLanguageCode>,
-    ) -> Self {
+    pub fn set_display_language_code(mut self, input: ::std::option::Option<crate::types::DisplayLanguageCode>) -> Self {
         self.inner = self.inner.set_display_language_code(input);
         self
     }
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-    pub fn get_display_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
+    pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
         self.inner.get_display_language_code()
     }
     /// <p>Include the NextToken value to fetch the next group of supported languages. </p>

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`hours_of_operation_summary_list(Option<Vec<HoursOfOperationSummary>>)`](crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput::hours_of_operation_summary_list): <p>Information about the hours of operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListHoursOfOperationsError>`](crate::operation::list_hours_of_operations::ListHoursOfOperationsError)
-    pub fn list_hours_of_operations(
-        &self,
-    ) -> crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsFluentBuilder
-    {
+    pub fn list_hours_of_operations(&self) -> crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsFluentBuilder {
         crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsFluentBuilder::new(self.handle.clone())
     }
 }

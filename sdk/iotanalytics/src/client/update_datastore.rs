@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`file_format_configuration(FileFormatConfiguration)`](crate::operation::update_datastore::builders::UpdateDatastoreFluentBuilder::file_format_configuration) / [`set_file_format_configuration(Option<FileFormatConfiguration>)`](crate::operation::update_datastore::builders::UpdateDatastoreFluentBuilder::set_file_format_configuration): <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>  <p>The default file format is JSON. You can specify only one format.</p>  <p>You can't change the file format after you create the data store.</p>
     /// - On success, responds with [`UpdateDatastoreOutput`](crate::operation::update_datastore::UpdateDatastoreOutput)
     /// - On failure, responds with [`SdkError<UpdateDatastoreError>`](crate::operation::update_datastore::UpdateDatastoreError)
-    pub fn update_datastore(
-        &self,
-    ) -> crate::operation::update_datastore::builders::UpdateDatastoreFluentBuilder {
-        crate::operation::update_datastore::builders::UpdateDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_datastore(&self) -> crate::operation::update_datastore::builders::UpdateDatastoreFluentBuilder {
+        crate::operation::update_datastore::builders::UpdateDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

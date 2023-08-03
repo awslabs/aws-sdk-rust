@@ -28,7 +28,7 @@ impl GetCommentsForPullRequestInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCommentsForPullRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder,
+    inner: crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder,
 }
 impl GetCommentsForPullRequestFluentBuilder {
     /// Creates a new `GetCommentsForPullRequest`.
@@ -39,7 +39,7 @@ impl GetCommentsForPullRequestFluentBuilder {
         }
     }
     /// Access the GetCommentsForPullRequest as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetCommentsForPullRequestFluentBuilder {
             crate::operation::get_comments_for_pull_request::GetCommentsForPullRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetCommentsForPullRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetCommentsForPullRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetCommentsForPullRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError>,
     > {
         self.send_middleware().await
     }
@@ -116,31 +107,23 @@ impl GetCommentsForPullRequestFluentBuilder {
             crate::operation::get_comments_for_pull_request::GetCommentsForPullRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_comments_for_pull_request::paginator::GetCommentsForPullRequestPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_comments_for_pull_request::paginator::GetCommentsForPullRequestPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_comments_for_pull_request::paginator::GetCommentsForPullRequestPaginator {
         crate::operation::get_comments_for_pull_request::paginator::GetCommentsForPullRequestPaginator::new(self.handle, self.inner)
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -149,18 +132,12 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner.get_pull_request_id()
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -169,18 +146,12 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_commit_id(input);
         self
     }
@@ -189,18 +160,12 @@ impl GetCommentsForPullRequestFluentBuilder {
         self.inner.get_before_commit_id()
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_commit_id(input);
         self
     }

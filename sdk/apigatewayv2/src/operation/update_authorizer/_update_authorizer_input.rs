@@ -113,17 +113,14 @@ impl UpdateAuthorizerInput {
 }
 impl UpdateAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
-    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder {
         crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuthorizerInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_credentials_arn: ::std::option::Option<::std::string::String>,
@@ -154,18 +151,12 @@ impl UpdateAuthorizerInputBuilder {
         &self.api_id
     }
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
-    pub fn authorizer_credentials_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_credentials_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_credentials_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
-    pub fn set_authorizer_credentials_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_credentials_arn = input;
         self
     }
@@ -174,18 +165,12 @@ impl UpdateAuthorizerInputBuilder {
         &self.authorizer_credentials_arn
     }
     /// <p>The authorizer identifier.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer identifier.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_id = input;
         self
     }
@@ -194,25 +179,17 @@ impl UpdateAuthorizerInputBuilder {
         &self.authorizer_id
     }
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    pub fn authorizer_payload_format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_payload_format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_payload_format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    pub fn set_authorizer_payload_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_payload_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_payload_format_version = input;
         self
     }
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    pub fn get_authorizer_payload_format_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_authorizer_payload_format_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorizer_payload_format_version
     }
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
@@ -221,10 +198,7 @@ impl UpdateAuthorizerInputBuilder {
         self
     }
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
-    pub fn set_authorizer_result_ttl_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_authorizer_result_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.authorizer_result_ttl_in_seconds = input;
         self
     }
@@ -238,10 +212,7 @@ impl UpdateAuthorizerInputBuilder {
         self
     }
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
-    pub fn set_authorizer_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerType>,
-    ) -> Self {
+    pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::AuthorizerType>) -> Self {
         self.authorizer_type = input;
         self
     }
@@ -258,10 +229,7 @@ impl UpdateAuthorizerInputBuilder {
     /// </replaceable>:lambda:path/<replaceable>
     /// {service_api}
     /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
-    pub fn authorizer_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -274,10 +242,7 @@ impl UpdateAuthorizerInputBuilder {
     /// </replaceable>:lambda:path/<replaceable>
     /// {service_api}
     /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
-    pub fn set_authorizer_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_uri = input;
         self
     }
@@ -314,10 +279,7 @@ impl UpdateAuthorizerInputBuilder {
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-    pub fn identity_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identity_source.unwrap_or_default();
         v.push(input.into());
         self.identity_source = ::std::option::Option::Some(v);
@@ -326,41 +288,28 @@ impl UpdateAuthorizerInputBuilder {
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-    pub fn set_identity_source(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identity_source(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.identity_source = input;
         self
     }
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-    pub fn get_identity_source(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identity_source(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.identity_source
     }
     /// <p>This parameter is not used.</p>
-    pub fn identity_validation_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_validation_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_validation_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is not used.</p>
-    pub fn set_identity_validation_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_validation_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_validation_expression = input;
         self
     }
     /// <p>This parameter is not used.</p>
-    pub fn get_identity_validation_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_identity_validation_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_validation_expression
     }
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
@@ -369,10 +318,7 @@ impl UpdateAuthorizerInputBuilder {
         self
     }
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-    pub fn set_jwt_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::JwtConfiguration>,
-    ) -> Self {
+    pub fn set_jwt_configuration(mut self, input: ::std::option::Option<crate::types::JwtConfiguration>) -> Self {
         self.jwt_configuration = input;
         self
     }
@@ -397,10 +343,7 @@ impl UpdateAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_authorizer::UpdateAuthorizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_authorizer::UpdateAuthorizerInput {
             api_id: self.api_id,
             authorizer_credentials_arn: self.authorizer_credentials_arn,

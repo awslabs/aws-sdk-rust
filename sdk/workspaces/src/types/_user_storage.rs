@@ -23,9 +23,7 @@ impl UserStorage {
 
 /// A builder for [`UserStorage`](crate::types::UserStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserStorageBuilder {
     pub(crate) capacity: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl UserStorageBuilder {
     }
     /// Consumes the builder and constructs a [`UserStorage`](crate::types::UserStorage).
     pub fn build(self) -> crate::types::UserStorage {
-        crate::types::UserStorage {
-            capacity: self.capacity,
-        }
+        crate::types::UserStorage { capacity: self.capacity }
     }
 }

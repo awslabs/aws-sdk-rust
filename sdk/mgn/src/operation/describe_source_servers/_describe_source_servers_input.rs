@@ -18,9 +18,7 @@ pub struct DescribeSourceServersInput {
 }
 impl DescribeSourceServersInput {
     /// <p>Request to filter Source Servers list.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DescribeSourceServersRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeSourceServersRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Request to filter Source Servers list by maximum results.</p>
@@ -38,18 +36,14 @@ impl DescribeSourceServersInput {
 }
 impl DescribeSourceServersInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder {
         crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceServersInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -63,17 +57,12 @@ impl DescribeSourceServersInputBuilder {
         self
     }
     /// <p>Request to filter Source Servers list.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Request to filter Source Servers list.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeSourceServersRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeSourceServersRequestFilters> {
         &self.filters
     }
     /// <p>Request to filter Source Servers list by maximum results.</p>
@@ -121,17 +110,13 @@ impl DescribeSourceServersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_source_servers::DescribeSourceServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_source_servers::DescribeSourceServersInput {
-                filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_source_servers::DescribeSourceServersInput {
+            filters: self.filters,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            account_id: self.account_id,
+        })
     }
 }

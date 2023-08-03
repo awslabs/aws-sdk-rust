@@ -5,15 +5,12 @@
 pub struct PutAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
     #[doc(hidden)]
-    pub app_instance_streaming_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
+    pub app_instance_streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
     _request_id: Option<String>,
 }
 impl PutAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
-    pub fn app_instance_streaming_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppInstanceStreamingConfiguration]> {
+    pub fn app_instance_streaming_configurations(&self) -> ::std::option::Option<&[crate::types::AppInstanceStreamingConfiguration]> {
         self.app_instance_streaming_configurations.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for PutAppInstanceStreamingConfigurations
 }
 impl PutAppInstanceStreamingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceStreamingConfigurationsOutput`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput).
-    pub fn builder() -> crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsOutputBuilder {
         crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppInstanceStreamingConfigurationsOutput`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppInstanceStreamingConfigurationsOutputBuilder {
-    pub(crate) app_instance_streaming_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
+    pub(crate) app_instance_streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
     _request_id: Option<String>,
 }
 impl PutAppInstanceStreamingConfigurationsOutputBuilder {
@@ -45,13 +39,8 @@ impl PutAppInstanceStreamingConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_app_instance_streaming_configurations`](Self::set_app_instance_streaming_configurations).
     ///
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
-    pub fn app_instance_streaming_configurations(
-        mut self,
-        input: crate::types::AppInstanceStreamingConfiguration,
-    ) -> Self {
-        let mut v = self
-            .app_instance_streaming_configurations
-            .unwrap_or_default();
+    pub fn app_instance_streaming_configurations(mut self, input: crate::types::AppInstanceStreamingConfiguration) -> Self {
+        let mut v = self.app_instance_streaming_configurations.unwrap_or_default();
         v.push(input);
         self.app_instance_streaming_configurations = ::std::option::Option::Some(v);
         self
@@ -59,9 +48,7 @@ impl PutAppInstanceStreamingConfigurationsOutputBuilder {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
     pub fn set_app_instance_streaming_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
     ) -> Self {
         self.app_instance_streaming_configurations = input;
         self
@@ -69,8 +56,7 @@ impl PutAppInstanceStreamingConfigurationsOutputBuilder {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
     pub fn get_app_instance_streaming_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>> {
         &self.app_instance_streaming_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -83,10 +69,9 @@ impl PutAppInstanceStreamingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAppInstanceStreamingConfigurationsOutput`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput{
+    pub fn build(self) -> crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput {
         crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput {
-            app_instance_streaming_configurations: self.app_instance_streaming_configurations
-            ,
+            app_instance_streaming_configurations: self.app_instance_streaming_configurations,
             _request_id: self._request_id,
         }
     }

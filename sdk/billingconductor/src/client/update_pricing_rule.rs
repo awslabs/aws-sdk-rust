@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`usage_type(Option<String>)`](crate::operation::update_pricing_rule::UpdatePricingRuleOutput::usage_type): <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>  <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     ///   - [`operation(Option<String>)`](crate::operation::update_pricing_rule::UpdatePricingRuleOutput::operation): <p>Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage of the line item.</p>  <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     /// - On failure, responds with [`SdkError<UpdatePricingRuleError>`](crate::operation::update_pricing_rule::UpdatePricingRuleError)
-    pub fn update_pricing_rule(
-        &self,
-    ) -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleFluentBuilder {
-        crate::operation::update_pricing_rule::builders::UpdatePricingRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_pricing_rule(&self) -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleFluentBuilder {
+        crate::operation::update_pricing_rule::builders::UpdatePricingRuleFluentBuilder::new(self.handle.clone())
     }
 }

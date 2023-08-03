@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`report_plan_arn(Option<String>)`](crate::operation::update_report_plan::UpdateReportPlanOutput::report_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_report_plan::UpdateReportPlanOutput::creation_time): <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     /// - On failure, responds with [`SdkError<UpdateReportPlanError>`](crate::operation::update_report_plan::UpdateReportPlanError)
-    pub fn update_report_plan(
-        &self,
-    ) -> crate::operation::update_report_plan::builders::UpdateReportPlanFluentBuilder {
-        crate::operation::update_report_plan::builders::UpdateReportPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_report_plan(&self) -> crate::operation::update_report_plan::builders::UpdateReportPlanFluentBuilder {
+        crate::operation::update_report_plan::builders::UpdateReportPlanFluentBuilder::new(self.handle.clone())
     }
 }

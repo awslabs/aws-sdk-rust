@@ -64,16 +64,14 @@ impl ::aws_http::request_id::RequestId for DescribeMaintenanceStartTimeOutput {
 }
 impl DescribeMaintenanceStartTimeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_start_time::builders::DescribeMaintenanceStartTimeOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_start_time::builders::DescribeMaintenanceStartTimeOutputBuilder {
         crate::operation::describe_maintenance_start_time::builders::DescribeMaintenanceStartTimeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceStartTimeOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hour_of_day: ::std::option::Option<i32>,
@@ -178,9 +176,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput {
+    pub fn build(self) -> crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput {
         crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput {
             gateway_arn: self.gateway_arn,
             hour_of_day: self.hour_of_day,

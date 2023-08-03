@@ -10,10 +10,7 @@ impl DeleteOtaUpdateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_ota_update::DeleteOtaUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ota_update::DeleteOTAUpdateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ota_update::DeleteOTAUpdateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_ota_update();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteOTAUpdateFluentBuilder {
         }
     }
     /// Access the DeleteOTAUpdate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_ota_update::builders::DeleteOtaUpdateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_ota_update::builders::DeleteOtaUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteOTAUpdateFluentBuilder {
             crate::operation::delete_ota_update::DeleteOTAUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ota_update::DeleteOTAUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ota_update::DeleteOTAUpdateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteOTAUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteOTAUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ota_update::DeleteOtaUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ota_update::DeleteOTAUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ota_update::DeleteOTAUpdateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteOTAUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ota_update::DeleteOtaUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ota_update::DeleteOTAUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ota_update::DeleteOTAUpdateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteOTAUpdateFluentBuilder {
             crate::operation::delete_ota_update::DeleteOTAUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ota_update::DeleteOTAUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ota_update::DeleteOTAUpdateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the OTA update to delete.</p>
-    pub fn ota_update_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ota_update_id(input.into());
         self
     }
     /// <p>The ID of the OTA update to delete.</p>
-    pub fn set_ota_update_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ota_update_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ota_update_id(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::describe_email_monitoring_configuration::_describe_ema
 
 impl DescribeEmailMonitoringConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_email_monitoring_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeEmailMonitoringConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder,
+    inner: crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder,
 }
 impl DescribeEmailMonitoringConfigurationFluentBuilder {
     /// Creates a new `DescribeEmailMonitoringConfiguration`.
@@ -37,15 +37,20 @@ impl DescribeEmailMonitoringConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeEmailMonitoringConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeEmailMonitoringConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl DescribeEmailMonitoringConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

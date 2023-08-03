@@ -40,10 +40,7 @@ impl GetAutoMergingPreviewFluentBuilder {
         }
     }
     /// Access the GetAutoMergingPreview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl GetAutoMergingPreviewFluentBuilder {
             crate::operation::get_auto_merging_preview::GetAutoMergingPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl GetAutoMergingPreviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl GetAutoMergingPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl GetAutoMergingPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl GetAutoMergingPreviewFluentBuilder {
             crate::operation::get_auto_merging_preview::GetAutoMergingPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +132,7 @@ impl GetAutoMergingPreviewFluentBuilder {
         self
     }
     /// <p>A list of matching attributes that represent matching criteria.</p>
-    pub fn set_consolidation(
-        mut self,
-        input: ::std::option::Option<crate::types::Consolidation>,
-    ) -> Self {
+    pub fn set_consolidation(mut self, input: ::std::option::Option<crate::types::Consolidation>) -> Self {
         self.inner = self.inner.set_consolidation(input);
         self
     }
@@ -163,17 +146,12 @@ impl GetAutoMergingPreviewFluentBuilder {
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn set_conflict_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolution>,
-    ) -> Self {
+    pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
         self.inner = self.inner.set_conflict_resolution(input);
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn get_conflict_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+    pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         self.inner.get_conflict_resolution()
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
@@ -182,13 +160,8 @@ impl GetAutoMergingPreviewFluentBuilder {
         self
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
-    pub fn set_min_allowed_confidence_score_for_merging(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_min_allowed_confidence_score_for_merging(input);
+    pub fn set_min_allowed_confidence_score_for_merging(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.inner = self.inner.set_min_allowed_confidence_score_for_merging(input);
         self
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>

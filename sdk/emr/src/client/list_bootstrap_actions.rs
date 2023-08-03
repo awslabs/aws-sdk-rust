@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`bootstrap_actions(Option<Vec<Command>>)`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput::bootstrap_actions): <p>The bootstrap actions associated with the cluster.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListBootstrapActionsError>`](crate::operation::list_bootstrap_actions::ListBootstrapActionsError)
-    pub fn list_bootstrap_actions(
-        &self,
-    ) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder {
-        crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_bootstrap_actions(&self) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder {
+        crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::new(self.handle.clone())
     }
 }

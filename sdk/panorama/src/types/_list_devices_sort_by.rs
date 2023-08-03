@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ListDevicesSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ListDevicesSortBy {
             "DEVICE_AGGREGATED_STATUS" => ListDevicesSortBy::DeviceAggregatedStatus,
             "DEVICE_ID" => ListDevicesSortBy::DeviceId,
             "NAME" => ListDevicesSortBy::Name,
-            other => {
-                ListDevicesSortBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ListDevicesSortBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ListDevicesSortBy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED_TIME",
-            "DEVICE_AGGREGATED_STATUS",
-            "DEVICE_ID",
-            "NAME",
-        ]
+        &["CREATED_TIME", "DEVICE_AGGREGATED_STATUS", "DEVICE_ID", "NAME"]
     }
 }
 impl ::std::convert::AsRef<str> for ListDevicesSortBy {

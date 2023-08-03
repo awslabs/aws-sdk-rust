@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`sidewalk(SidewalkUpdateImportInfo)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::sidewalk) / [`set_sidewalk(Option<SidewalkUpdateImportInfo>)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::set_sidewalk): <p>The Sidewalk-related parameters of the import task to be updated.</p>
     /// - On success, responds with [`UpdateWirelessDeviceImportTaskOutput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput)
     /// - On failure, responds with [`SdkError<UpdateWirelessDeviceImportTaskError>`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError)
-    pub fn update_wireless_device_import_task(&self) -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder{
+    pub fn update_wireless_device_import_task(
+        &self,
+    ) -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder {
         crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

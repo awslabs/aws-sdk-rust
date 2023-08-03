@@ -51,9 +51,7 @@ impl SearchResourcesSimpleCriterion {
 
 /// A builder for [`SearchResourcesSimpleCriterion`](crate::types::SearchResourcesSimpleCriterion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesSimpleCriterionBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::SearchResourcesComparator>,
     pub(crate) key: ::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey>,
@@ -66,17 +64,12 @@ impl SearchResourcesSimpleCriterionBuilder {
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchResourcesComparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::SearchResourcesComparator>) -> Self {
         self.comparator = input;
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn get_comparator(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchResourcesComparator> {
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::SearchResourcesComparator> {
         &self.comparator
     }
     /// <p>The property to use in the condition.</p>
@@ -85,17 +78,12 @@ impl SearchResourcesSimpleCriterionBuilder {
         self
     }
     /// <p>The property to use in the condition.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey>) -> Self {
         self.key = input;
         self
     }
     /// <p>The property to use in the condition.</p>
-    pub fn get_key(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey> {
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey> {
         &self.key
     }
     /// Appends an item to `values`.
@@ -124,10 +112,7 @@ impl SearchResourcesSimpleCriterionBuilder {
     /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -35,9 +35,7 @@ impl ListSubjectsOutput {
 
 /// A builder for [`ListSubjectsOutput`](crate::operation::list_subjects::ListSubjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubjectsOutputBuilder {
     pub(crate) subjects: ::std::option::Option<::std::vec::Vec<crate::types::SubjectSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSubjectsOutputBuilder {
         self
     }
     /// <p>A list of subjects.</p>
-    pub fn set_subjects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubjectSummary>>,
-    ) -> Self {
+    pub fn set_subjects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubjectSummary>>) -> Self {
         self.subjects = input;
         self
     }
     /// <p>A list of subjects.</p>
-    pub fn get_subjects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubjectSummary>> {
+    pub fn get_subjects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubjectSummary>> {
         &self.subjects
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>

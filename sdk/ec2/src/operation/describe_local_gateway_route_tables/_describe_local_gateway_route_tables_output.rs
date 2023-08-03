@@ -5,8 +5,7 @@
 pub struct DescribeLocalGatewayRouteTablesOutput {
     /// <p>Information about the local gateway route tables.</p>
     #[doc(hidden)]
-    pub local_gateway_route_tables:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>,
+    pub local_gateway_route_tables: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeLocalGatewayRouteTablesOutput {
 }
 impl DescribeLocalGatewayRouteTablesOutput {
     /// <p>Information about the local gateway route tables.</p>
-    pub fn local_gateway_route_tables(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LocalGatewayRouteTable]> {
+    pub fn local_gateway_route_tables(&self) -> ::std::option::Option<&[crate::types::LocalGatewayRouteTable]> {
         self.local_gateway_route_tables.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLocalGatewayRouteTablesOutput
 }
 impl DescribeLocalGatewayRouteTablesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocalGatewayRouteTablesOutput`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput).
-    pub fn builder() -> crate::operation::describe_local_gateway_route_tables::builders::DescribeLocalGatewayRouteTablesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_local_gateway_route_tables::builders::DescribeLocalGatewayRouteTablesOutputBuilder {
         crate::operation::describe_local_gateway_route_tables::builders::DescribeLocalGatewayRouteTablesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocalGatewayRouteTablesOutput`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayRouteTablesOutputBuilder {
-    pub(crate) local_gateway_route_tables:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>,
+    pub(crate) local_gateway_route_tables: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeLocalGatewayRouteTablesOutputBuilder {
     /// To override the contents of this collection use [`set_local_gateway_route_tables`](Self::set_local_gateway_route_tables).
     ///
     /// <p>Information about the local gateway route tables.</p>
-    pub fn local_gateway_route_tables(
-        mut self,
-        input: crate::types::LocalGatewayRouteTable,
-    ) -> Self {
+    pub fn local_gateway_route_tables(mut self, input: crate::types::LocalGatewayRouteTable) -> Self {
         let mut v = self.local_gateway_route_tables.unwrap_or_default();
         v.push(input);
         self.local_gateway_route_tables = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the local gateway route tables.</p>
-    pub fn set_local_gateway_route_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>,
-    ) -> Self {
+    pub fn set_local_gateway_route_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>) -> Self {
         self.local_gateway_route_tables = input;
         self
     }
     /// <p>Information about the local gateway route tables.</p>
-    pub fn get_local_gateway_route_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>> {
+    pub fn get_local_gateway_route_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>> {
         &self.local_gateway_route_tables
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,15 +86,10 @@ impl DescribeLocalGatewayRouteTablesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayRouteTablesOutput`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput {
         crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput {
-            local_gateway_route_tables: self.local_gateway_route_tables
-            ,
-            next_token: self.next_token
-            ,
+            local_gateway_route_tables: self.local_gateway_route_tables,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

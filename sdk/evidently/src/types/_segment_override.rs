@@ -24,9 +24,7 @@ impl SegmentOverride {
         self.evaluation_order
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn weights(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn weights(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
         self.weights.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl SegmentOverride {
 
 /// A builder for [`SegmentOverride`](crate::types::SegmentOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentOverrideBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_order: ::std::option::Option<i64>,
-    pub(crate) weights:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl SegmentOverrideBuilder {
     /// <p>The ARN of the segment to use.</p>
@@ -89,17 +84,12 @@ impl SegmentOverrideBuilder {
         self
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn set_weights(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    ) -> Self {
+    pub fn set_weights(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
         self.weights = input;
         self
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn get_weights(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn get_weights(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
         &self.weights
     }
     /// Consumes the builder and constructs a [`SegmentOverride`](crate::types::SegmentOverride).

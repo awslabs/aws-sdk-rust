@@ -12,12 +12,7 @@ pub struct SearchProductsInput {
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
@@ -43,12 +38,7 @@ impl SearchProductsInput {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub fn filters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -77,17 +67,10 @@ impl SearchProductsInput {
 
 /// A builder for [`SearchProductsInput`](crate::operation::search_products::SearchProductsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProductsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ProductViewSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -99,10 +82,7 @@ impl SearchProductsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -111,10 +91,7 @@ impl SearchProductsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -131,11 +108,7 @@ impl SearchProductsInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProductViewFilterBy,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k, v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -144,12 +117,7 @@ impl SearchProductsInputBuilder {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ProductViewFilterBy,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filters = input;
         self
@@ -157,12 +125,7 @@ impl SearchProductsInputBuilder {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -185,10 +148,7 @@ impl SearchProductsInputBuilder {
         self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProductViewSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -227,10 +187,7 @@ impl SearchProductsInputBuilder {
     /// Consumes the builder and constructs a [`SearchProductsInput`](crate::operation::search_products::SearchProductsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_products::SearchProductsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_products::SearchProductsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_products::SearchProductsInput {
             accept_language: self.accept_language,
             filters: self.filters,

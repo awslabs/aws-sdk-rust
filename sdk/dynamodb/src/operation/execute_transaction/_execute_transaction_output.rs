@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ExecuteTransactionOutput {
 }
 impl ExecuteTransactionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteTransactionOutput`](crate::operation::execute_transaction::ExecuteTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::execute_transaction::builders::ExecuteTransactionOutputBuilder {
+    pub fn builder() -> crate::operation::execute_transaction::builders::ExecuteTransactionOutputBuilder {
         crate::operation::execute_transaction::builders::ExecuteTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteTransactionOutput`](crate::operation::execute_transaction::ExecuteTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteTransactionOutputBuilder {
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>>,
-    pub(crate) consumed_capacity:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
+    pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }
 impl ExecuteTransactionOutputBuilder {
@@ -58,17 +54,12 @@ impl ExecuteTransactionOutputBuilder {
         self
     }
     /// <p>The response to a PartiQL transaction.</p>
-    pub fn set_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>>,
-    ) -> Self {
+    pub fn set_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>>) -> Self {
         self.responses = input;
         self
     }
     /// <p>The response to a PartiQL transaction.</p>
-    pub fn get_responses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>> {
+    pub fn get_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>> {
         &self.responses
     }
     /// Appends an item to `consumed_capacity`.
@@ -83,17 +74,12 @@ impl ExecuteTransactionOutputBuilder {
         self
     }
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-    pub fn set_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
-    ) -> Self {
+    pub fn set_consumed_capacity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>) -> Self {
         self.consumed_capacity = input;
         self
     }
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-    pub fn get_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
+    pub fn get_consumed_capacity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
         &self.consumed_capacity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -29,9 +29,7 @@ impl GetFunctionInput {
 
 /// A builder for [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetFunctionInputBuilder {
         &self.function_id
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_function::GetFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_function::GetFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_function::GetFunctionInput {
             api_id: self.api_id,
             function_id: self.function_id,

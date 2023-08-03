@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`event_stream_name(impl ::std::convert::Into<String>)`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::event_stream_name) / [`set_event_stream_name(Option<String>)`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::set_event_stream_name): <p>The name of the event stream</p>
     /// - On success, responds with [`DeleteEventStreamOutput`](crate::operation::delete_event_stream::DeleteEventStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteEventStreamError>`](crate::operation::delete_event_stream::DeleteEventStreamError)
-    pub fn delete_event_stream(
-        &self,
-    ) -> crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder {
-        crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_event_stream(&self) -> crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder {
+        crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::new(self.handle.clone())
     }
 }

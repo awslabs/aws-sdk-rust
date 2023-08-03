@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RunTimeAnalyzerName {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for RunTimeAnalyzerName {
             "EMP_PA_ANALYZER" => RunTimeAnalyzerName::EmpPaAnalyzer,
             "REHOST_ANALYZER" => RunTimeAnalyzerName::RehostAnalyzer,
             "SCT_ANALYZER" => RunTimeAnalyzerName::SctAnalyzer,
-            other => RunTimeAnalyzerName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RunTimeAnalyzerName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl RunTimeAnalyzerName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "A2C_ANALYZER",
-            "DATABASE_ANALYZER",
-            "EMP_PA_ANALYZER",
-            "REHOST_ANALYZER",
-            "SCT_ANALYZER",
-        ]
+        &["A2C_ANALYZER", "DATABASE_ANALYZER", "EMP_PA_ANALYZER", "REHOST_ANALYZER", "SCT_ANALYZER"]
     }
 }
 impl ::std::convert::AsRef<str> for RunTimeAnalyzerName {

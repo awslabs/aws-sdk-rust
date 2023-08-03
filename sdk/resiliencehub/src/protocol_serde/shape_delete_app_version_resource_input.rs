@@ -18,10 +18,7 @@ pub fn ser_delete_app_version_resource_input(
     if let Some(var_5) = &input.logical_resource_id {
         #[allow(unused_mut)]
         let mut object_6 = object.key("logicalResourceId").start_object();
-        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.physical_resource_id {

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StopTargetedSentimentDetectionJobOutp
 }
 impl StopTargetedSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobOutput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput).
-    pub fn builder() -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobOutputBuilder {
         crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopTargetedSentimentDetectionJobOutput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTargetedSentimentDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -82,12 +80,10 @@ impl StopTargetedSentimentDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobOutput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput).
-    pub fn build(self) -> crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput{
+    pub fn build(self) -> crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput {
         crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput {
-            job_id: self.job_id
-            ,
-            job_status: self.job_status
-            ,
+            job_id: self.job_id,
+            job_status: self.job_status,
             _request_id: self._request_id,
         }
     }

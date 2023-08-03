@@ -5,8 +5,7 @@
 pub struct ListTemplateVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified template.</p>
     #[doc(hidden)]
-    pub template_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>,
+    pub template_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListTemplateVersionsOutput {
 }
 impl ListTemplateVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified template.</p>
-    pub fn template_version_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TemplateVersionSummary]> {
+    pub fn template_version_summary_list(&self) -> ::std::option::Option<&[crate::types::TemplateVersionSummary]> {
         self.template_version_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,20 +42,16 @@ impl ::aws_http::request_id::RequestId for ListTemplateVersionsOutput {
 }
 impl ListTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder {
         crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateVersionsOutputBuilder {
-    pub(crate) template_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>,
+    pub(crate) template_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -70,27 +63,19 @@ impl ListTemplateVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_template_version_summary_list`](Self::set_template_version_summary_list).
     ///
     /// <p>A structure containing a list of all the versions of the specified template.</p>
-    pub fn template_version_summary_list(
-        mut self,
-        input: crate::types::TemplateVersionSummary,
-    ) -> Self {
+    pub fn template_version_summary_list(mut self, input: crate::types::TemplateVersionSummary) -> Self {
         let mut v = self.template_version_summary_list.unwrap_or_default();
         v.push(input);
         self.template_version_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A structure containing a list of all the versions of the specified template.</p>
-    pub fn set_template_version_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>,
-    ) -> Self {
+    pub fn set_template_version_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>) -> Self {
         self.template_version_summary_list = input;
         self
     }
     /// <p>A structure containing a list of all the versions of the specified template.</p>
-    pub fn get_template_version_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>> {
+    pub fn get_template_version_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>> {
         &self.template_version_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

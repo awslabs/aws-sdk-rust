@@ -37,9 +37,7 @@ impl DescribeHumanTaskUiFluentBuilder {
         }
     }
     /// Access the DescribeHumanTaskUi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeHumanTaskUiFluentBuilder {
             crate::operation::describe_human_task_ui::DescribeHumanTaskUi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_task_ui::DescribeHumanTaskUiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_task_ui::DescribeHumanTaskUiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeHumanTaskUiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeHumanTaskUiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_task_ui::DescribeHumanTaskUiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_task_ui::DescribeHumanTaskUiError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeHumanTaskUiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_task_ui::DescribeHumanTaskUiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_task_ui::DescribeHumanTaskUiError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeHumanTaskUiFluentBuilder {
             crate::operation::describe_human_task_ui::DescribeHumanTaskUi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_task_ui::DescribeHumanTaskUiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_task_ui::DescribeHumanTaskUiError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
-    pub fn human_task_ui_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.human_task_ui_name(input.into());
         self
     }
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
-    pub fn set_human_task_ui_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_human_task_ui_name(input);
         self
     }

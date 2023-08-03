@@ -15,16 +15,14 @@ impl UpdateRevealConfigurationInput {
 }
 impl UpdateRevealConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
-    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder {
         crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRevealConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
 }
@@ -35,10 +33,7 @@ impl UpdateRevealConfigurationInputBuilder {
         self
     }
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -53,10 +48,8 @@ impl UpdateRevealConfigurationInputBuilder {
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput {
-                configuration: self.configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput {
+            configuration: self.configuration,
+        })
     }
 }

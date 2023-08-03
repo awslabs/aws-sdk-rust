@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDrtLogBucketOutput {
 }
 impl AssociateDrtLogBucketOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketOutput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketOutputBuilder {
         crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDrtLogBucketOutput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDrtLogBucketOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,7 +26,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBProxyTargetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder,
+    inner: crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder,
 }
 impl ModifyDBProxyTargetGroupFluentBuilder {
     /// Creates a new `ModifyDBProxyTargetGroup`.
@@ -37,7 +37,7 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         }
     }
     /// Access the ModifyDBProxyTargetGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
             crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
             crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the target group to modify.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_name(input.into());
         self
     }
     /// <p>The name of the target group to modify.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         self.inner.get_target_group_name()
     }
     /// <p>The name of the proxy.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The name of the proxy.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
@@ -161,25 +138,17 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         self.inner.get_db_proxy_name()
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn connection_pool_config(
-        mut self,
-        input: crate::types::ConnectionPoolConfiguration,
-    ) -> Self {
+    pub fn connection_pool_config(mut self, input: crate::types::ConnectionPoolConfiguration) -> Self {
         self.inner = self.inner.connection_pool_config(input);
         self
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn set_connection_pool_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionPoolConfiguration>,
-    ) -> Self {
+    pub fn set_connection_pool_config(mut self, input: ::std::option::Option<crate::types::ConnectionPoolConfiguration>) -> Self {
         self.inner = self.inner.set_connection_pool_config(input);
         self
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn get_connection_pool_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionPoolConfiguration> {
+    pub fn get_connection_pool_config(&self) -> &::std::option::Option<crate::types::ConnectionPoolConfiguration> {
         self.inner.get_connection_pool_config()
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>

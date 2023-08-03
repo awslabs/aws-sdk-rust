@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccountConfigurationOutput`](crate::operation::get_account_configuration::GetAccountConfigurationOutput) with field(s):
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::operation::get_account_configuration::GetAccountConfigurationOutput::encryption_config): <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption. By default, CodeGuru Security uses an AWS-managed key for encryption. To specify your own key, call <code>UpdateAccountConfiguration</code>.</p>
     /// - On failure, responds with [`SdkError<GetAccountConfigurationError>`](crate::operation::get_account_configuration::GetAccountConfigurationError)
-    pub fn get_account_configuration(
-        &self,
-    ) -> crate::operation::get_account_configuration::builders::GetAccountConfigurationFluentBuilder
-    {
+    pub fn get_account_configuration(&self) -> crate::operation::get_account_configuration::builders::GetAccountConfigurationFluentBuilder {
         crate::operation::get_account_configuration::builders::GetAccountConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

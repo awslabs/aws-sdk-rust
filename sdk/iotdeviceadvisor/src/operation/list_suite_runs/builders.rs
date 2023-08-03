@@ -10,10 +10,7 @@ impl ListSuiteRunsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_suite_runs::ListSuiteRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_suite_runs::ListSuiteRunsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_suite_runs::ListSuiteRunsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_suite_runs();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListSuiteRunsFluentBuilder {
         }
     }
     /// Access the ListSuiteRuns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_suite_runs::builders::ListSuiteRunsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_suite_runs::builders::ListSuiteRunsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListSuiteRunsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,27 +110,16 @@ impl ListSuiteRunsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator {
-        crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator {
+        crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::new(self.handle, self.inner)
     }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
@@ -147,18 +128,12 @@ impl ListSuiteRunsFluentBuilder {
         self.inner.get_suite_definition_id()
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_version(input.into());
         self
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_version(input);
         self
     }

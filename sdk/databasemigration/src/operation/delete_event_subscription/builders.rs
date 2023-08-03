@@ -26,8 +26,7 @@ impl DeleteEventSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder,
+    inner: crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder,
 }
 impl DeleteEventSubscriptionFluentBuilder {
     /// Creates a new `DeleteEventSubscription`.
@@ -38,10 +37,7 @@ impl DeleteEventSubscriptionFluentBuilder {
         }
     }
     /// Access the DeleteEventSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteEventSubscriptionFluentBuilder {
             crate::operation::delete_event_subscription::DeleteEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_subscription::DeleteEventSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteEventSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_subscription::DeleteEventSubscriptionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_subscription::DeleteEventSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteEventSubscriptionFluentBuilder {
             crate::operation::delete_event_subscription::DeleteEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_subscription::DeleteEventSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DMS event notification subscription to be deleted.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
     /// <p>The name of the DMS event notification subscription to be deleted.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::list_third_party_firewall_firewall_policies::_list_thi
 
 impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_third_party_firewall_firewall_policies();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesInputBuilder,
+    inner: crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesInputBuilder,
 }
 impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
     /// Creates a new `ListThirdPartyFirewallFirewallPolicies`.
@@ -37,15 +37,24 @@ impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
         }
     }
     /// Access the ListThirdPartyFirewallFirewallPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPolicies, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPolicies,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +93,42 @@ impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPolicies, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPolicies,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator{
-        crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator {
+        crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The name of the third-party firewall vendor.</p>
     pub fn third_party_firewall(mut self, input: crate::types::ThirdPartyFirewall) -> Self {
@@ -106,17 +136,12 @@ impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn set_third_party_firewall(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyFirewall>,
-    ) -> Self {
+    pub fn set_third_party_firewall(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
         self.inner = self.inner.set_third_party_firewall(input);
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn get_third_party_firewall(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+    pub fn get_third_party_firewall(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
         self.inner.get_third_party_firewall()
     }
     /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>

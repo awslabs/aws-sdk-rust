@@ -37,9 +37,7 @@ impl ListTagsForResourceFluentBuilder {
         }
     }
     /// Access the ListTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -152,10 +133,7 @@ impl ListTagsForResourceFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -29,18 +29,14 @@ impl DescribeApplicationsInput {
 }
 impl DescribeApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
-        crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
+        crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationsInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl DescribeApplicationsInputBuilder {
         self
     }
     /// <p>The ARNs for the applications.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }
@@ -101,16 +94,12 @@ impl DescribeApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_applications::DescribeApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_applications::DescribeApplicationsInput {
-                arns: self.arns,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_applications::DescribeApplicationsInput {
+            arns: self.arns,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

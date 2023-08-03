@@ -37,12 +37,9 @@ impl PutRecordsInput {
 
 /// A builder for [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordsInputBuilder {
-    pub(crate) records:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
@@ -59,17 +56,12 @@ impl PutRecordsInputBuilder {
         self
     }
     /// <p>The records associated with the request.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>) -> Self {
         self.records = input;
         self
     }
     /// <p>The records associated with the request.</p>
-    pub fn get_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>> {
         &self.records
     }
     /// <p>The stream name associated with the request.</p>
@@ -101,12 +93,7 @@ impl PutRecordsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_records::PutRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_records::PutRecordsInput {
             records: self.records,
             stream_name: self.stream_name,

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteDashboardOutput`](crate::operation::delete_dashboard::DeleteDashboardOutput)
     /// - On failure, responds with [`SdkError<DeleteDashboardError>`](crate::operation::delete_dashboard::DeleteDashboardError)
-    pub fn delete_dashboard(
-        &self,
-    ) -> crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder {
-        crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dashboard(&self) -> crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder {
+        crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::new(self.handle.clone())
     }
 }

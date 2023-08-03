@@ -10,10 +10,7 @@ impl DeleteArtifactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_artifact::DeleteArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_artifact::DeleteArtifactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_artifact::DeleteArtifactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_artifact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteArtifactFluentBuilder {
         }
     }
     /// Access the DeleteArtifact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteArtifactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl DeleteArtifactFluentBuilder {
         self
     }
     /// <p>The URI of the source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }

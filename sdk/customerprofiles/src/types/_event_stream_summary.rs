@@ -24,9 +24,7 @@ pub struct EventStreamSummary {
     pub destination_summary: ::std::option::Option<crate::types::DestinationSummary>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventStreamSummary {
     /// <p>The unique name of the domain.</p>
@@ -54,11 +52,7 @@ impl EventStreamSummary {
         self.destination_summary.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl EventStreamSummary {
 
 /// A builder for [`EventStreamSummary`](crate::types::EventStreamSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventStreamSummaryBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_stream_name: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct EventStreamSummaryBuilder {
     pub(crate) state: ::std::option::Option<crate::types::EventStreamState>,
     pub(crate) stopped_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) destination_summary: ::std::option::Option<crate::types::DestinationSummary>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventStreamSummaryBuilder {
     /// <p>The unique name of the domain.</p>
@@ -101,18 +91,12 @@ impl EventStreamSummaryBuilder {
         &self.domain_name
     }
     /// <p>The name of the event stream.</p>
-    pub fn event_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event stream.</p>
-    pub fn set_event_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_stream_name = input;
         self
     }
@@ -121,18 +105,12 @@ impl EventStreamSummaryBuilder {
         &self.event_stream_name
     }
     /// <p>A unique identifier for the event stream.</p>
-    pub fn event_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the event stream.</p>
-    pub fn set_event_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_stream_arn = input;
         self
     }
@@ -146,10 +124,7 @@ impl EventStreamSummaryBuilder {
         self
     }
     /// <p>The operational state of destination stream for export.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EventStreamState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EventStreamState>) -> Self {
         self.state = input;
         self
     }
@@ -163,10 +138,7 @@ impl EventStreamSummaryBuilder {
         self
     }
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
-    pub fn set_stopped_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopped_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopped_since = input;
         self
     }
@@ -180,17 +152,12 @@ impl EventStreamSummaryBuilder {
         self
     }
     /// <p>Summary information about the Kinesis data stream.</p>
-    pub fn set_destination_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationSummary>,
-    ) -> Self {
+    pub fn set_destination_summary(mut self, input: ::std::option::Option<crate::types::DestinationSummary>) -> Self {
         self.destination_summary = input;
         self
     }
     /// <p>Summary information about the Kinesis data stream.</p>
-    pub fn get_destination_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationSummary> {
+    pub fn get_destination_summary(&self) -> &::std::option::Option<crate::types::DestinationSummary> {
         &self.destination_summary
     }
     /// Adds a key-value pair to `tags`.
@@ -198,32 +165,19 @@ impl EventStreamSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`EventStreamSummary`](crate::types::EventStreamSummary).

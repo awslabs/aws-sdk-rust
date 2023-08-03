@@ -23,9 +23,7 @@ pub struct AwsElasticsearchDomainElasticsearchClusterConfigDetails {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     #[doc(hidden)]
-    pub zone_awareness_config: ::std::option::Option<
-        crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
-    >,
+    pub zone_awareness_config: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
     /// <p>Whether to enable zone awareness for the Elasticsearch domain. When zone awareness is enabled, OpenSearch allocates the cluster's nodes and replica index shards across Availability Zones in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
     #[doc(hidden)]
     pub zone_awareness_enabled: bool,
@@ -56,9 +54,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     pub fn zone_awareness_config(
         &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
-    > {
+    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails> {
         self.zone_awareness_config.as_ref()
     }
     /// <p>Whether to enable zone awareness for the Elasticsearch domain. When zone awareness is enabled, OpenSearch allocates the cluster's nodes and replica index shards across Availability Zones in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
@@ -68,27 +64,21 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
         crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
     pub(crate) dedicated_master_count: ::std::option::Option<i32>,
     pub(crate) dedicated_master_enabled: ::std::option::Option<bool>,
     pub(crate) dedicated_master_type: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) zone_awareness_config: ::std::option::Option<
-        crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
-    >,
+    pub(crate) zone_awareness_config: ::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
     pub(crate) zone_awareness_enabled: ::std::option::Option<bool>,
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
@@ -122,19 +112,13 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    pub fn dedicated_master_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dedicated_master_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedicated_master_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    pub fn set_dedicated_master_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dedicated_master_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedicated_master_type = input;
         self
     }
@@ -159,19 +143,13 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
     }
     /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -181,10 +159,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
         &self.instance_type
     }
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    pub fn zone_awareness_config(
-        mut self,
-        input: crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
-    ) -> Self {
+    pub fn zone_awareness_config(mut self, input: crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails) -> Self {
         self.zone_awareness_config = ::std::option::Option::Some(input);
         self
     }
@@ -199,9 +174,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetailsBuilder {
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     pub fn get_zone_awareness_config(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails> {
         &self.zone_awareness_config
     }
     /// <p>Whether to enable zone awareness for the Elasticsearch domain. When zone awareness is enabled, OpenSearch allocates the cluster's nodes and replica index shards across Availability Zones in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>

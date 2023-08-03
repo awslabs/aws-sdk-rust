@@ -29,17 +29,14 @@ impl DismissUserContactInput {
 }
 impl DismissUserContactInput {
     /// Creates a new builder-style object to manufacture [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
-    pub fn builder(
-    ) -> crate::operation::dismiss_user_contact::builders::DismissUserContactInputBuilder {
+    pub fn builder() -> crate::operation::dismiss_user_contact::builders::DismissUserContactInputBuilder {
         crate::operation::dismiss_user_contact::builders::DismissUserContactInputBuilder::default()
     }
 }
 
 /// A builder for [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DismissUserContactInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DismissUserContactInputBuilder {
     /// Consumes the builder and constructs a [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::dismiss_user_contact::DismissUserContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::dismiss_user_contact::DismissUserContactInput {
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::dismiss_user_contact::DismissUserContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::dismiss_user_contact::DismissUserContactInput {
+            user_id: self.user_id,
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+        })
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`savings_plans(Option<Vec<SavingsPlan>>)`](crate::operation::describe_savings_plans::DescribeSavingsPlansOutput::savings_plans): <p>Information about the Savings Plans.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_savings_plans::DescribeSavingsPlansOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeSavingsPlansError>`](crate::operation::describe_savings_plans::DescribeSavingsPlansError)
-    pub fn describe_savings_plans(
-        &self,
-    ) -> crate::operation::describe_savings_plans::builders::DescribeSavingsPlansFluentBuilder {
-        crate::operation::describe_savings_plans::builders::DescribeSavingsPlansFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_savings_plans(&self) -> crate::operation::describe_savings_plans::builders::DescribeSavingsPlansFluentBuilder {
+        crate::operation::describe_savings_plans::builders::DescribeSavingsPlansFluentBuilder::new(self.handle.clone())
     }
 }

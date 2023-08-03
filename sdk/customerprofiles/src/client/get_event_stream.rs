@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`destination_details(Option<EventStreamDestinationDetails>)`](crate::operation::get_event_stream::GetEventStreamOutput::destination_details): <p>Details regarding the Kinesis stream.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_event_stream::GetEventStreamOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetEventStreamError>`](crate::operation::get_event_stream::GetEventStreamError)
-    pub fn get_event_stream(
-        &self,
-    ) -> crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder {
-        crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_event_stream(&self) -> crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder {
+        crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::new(self.handle.clone())
     }
 }

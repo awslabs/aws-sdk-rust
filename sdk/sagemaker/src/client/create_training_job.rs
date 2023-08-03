@@ -28,11 +28,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTrainingJobOutput`](crate::operation::create_training_job::CreateTrainingJobOutput) with field(s):
     ///   - [`training_job_arn(Option<String>)`](crate::operation::create_training_job::CreateTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
     /// - On failure, responds with [`SdkError<CreateTrainingJobError>`](crate::operation::create_training_job::CreateTrainingJobError)
-    pub fn create_training_job(
-        &self,
-    ) -> crate::operation::create_training_job::builders::CreateTrainingJobFluentBuilder {
-        crate::operation::create_training_job::builders::CreateTrainingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_training_job(&self) -> crate::operation::create_training_job::builders::CreateTrainingJobFluentBuilder {
+        crate::operation::create_training_job::builders::CreateTrainingJobFluentBuilder::new(self.handle.clone())
     }
 }

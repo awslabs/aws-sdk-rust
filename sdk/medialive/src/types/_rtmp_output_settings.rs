@@ -19,9 +19,7 @@ pub struct RtmpOutputSettings {
 }
 impl RtmpOutputSettings {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
-    pub fn certificate_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RtmpOutputCertificateMode> {
+    pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::RtmpOutputCertificateMode> {
         self.certificate_mode.as_ref()
     }
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
@@ -46,9 +44,7 @@ impl RtmpOutputSettings {
 
 /// A builder for [`RtmpOutputSettings`](crate::types::RtmpOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RtmpOutputSettingsBuilder {
     pub(crate) certificate_mode: ::std::option::Option<crate::types::RtmpOutputCertificateMode>,
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,
@@ -62,17 +58,12 @@ impl RtmpOutputSettingsBuilder {
         self
     }
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
-    pub fn set_certificate_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RtmpOutputCertificateMode>,
-    ) -> Self {
+    pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::RtmpOutputCertificateMode>) -> Self {
         self.certificate_mode = input;
         self
     }
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
-    pub fn get_certificate_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::RtmpOutputCertificateMode> {
+    pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::RtmpOutputCertificateMode> {
         &self.certificate_mode
     }
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
@@ -95,10 +86,7 @@ impl RtmpOutputSettingsBuilder {
         self
     }
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocationRef>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
         self.destination = input;
         self
     }

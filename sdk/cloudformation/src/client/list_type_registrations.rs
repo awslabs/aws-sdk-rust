@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`registration_token_list(Option<Vec<String>>)`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput::registration_token_list): <p>A list of extension registration tokens.</p>  <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListTypeRegistrationsError>`](crate::operation::list_type_registrations::ListTypeRegistrationsError)
-    pub fn list_type_registrations(
-        &self,
-    ) -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsFluentBuilder
-    {
-        crate::operation::list_type_registrations::builders::ListTypeRegistrationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_type_registrations(&self) -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsFluentBuilder {
+        crate::operation::list_type_registrations::builders::ListTypeRegistrationsFluentBuilder::new(self.handle.clone())
     }
 }

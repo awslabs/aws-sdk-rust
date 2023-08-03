@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`enabled(bool)`](crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledFluentBuilder::enabled) / [`set_enabled(bool)`](crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledFluentBuilder::set_enabled): <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     /// - On success, responds with [`UpdateConfigurationSetSendingEnabledOutput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput)
     /// - On failure, responds with [`SdkError<UpdateConfigurationSetSendingEnabledError>`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError)
-    pub fn update_configuration_set_sending_enabled(&self) -> crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledFluentBuilder{
-        crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledFluentBuilder::new(self.handle.clone())
+    pub fn update_configuration_set_sending_enabled(
+        &self,
+    ) -> crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledFluentBuilder {
+        crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

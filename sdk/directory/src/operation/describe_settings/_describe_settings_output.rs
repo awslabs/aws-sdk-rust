@@ -37,17 +37,14 @@ impl ::aws_http::request_id::RequestId for DescribeSettingsOutput {
 }
 impl DescribeSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSettingsOutput`](crate::operation::describe_settings::DescribeSettingsOutput).
-    pub fn builder() -> crate::operation::describe_settings::builders::DescribeSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_settings::builders::DescribeSettingsOutputBuilder {
         crate::operation::describe_settings::builders::DescribeSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSettingsOutput`](crate::operation::describe_settings::DescribeSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSettingsOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) setting_entries: ::std::option::Option<::std::vec::Vec<crate::types::SettingEntry>>,
@@ -83,18 +80,13 @@ impl DescribeSettingsOutputBuilder {
     }
     /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn set_setting_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SettingEntry>>,
-    ) -> Self {
+    pub fn set_setting_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SettingEntry>>) -> Self {
         self.setting_entries = input;
         self
     }
     /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn get_setting_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SettingEntry>> {
+    pub fn get_setting_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SettingEntry>> {
         &self.setting_entries
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>

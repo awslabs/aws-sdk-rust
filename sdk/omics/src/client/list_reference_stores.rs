@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`reference_stores(Option<Vec<ReferenceStoreDetail>>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::reference_stores): <p>A list of reference stores.</p>
     /// - On failure, responds with [`SdkError<ListReferenceStoresError>`](crate::operation::list_reference_stores::ListReferenceStoresError)
-    pub fn list_reference_stores(
-        &self,
-    ) -> crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder {
-        crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_reference_stores(&self) -> crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder {
+        crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::new(self.handle.clone())
     }
 }

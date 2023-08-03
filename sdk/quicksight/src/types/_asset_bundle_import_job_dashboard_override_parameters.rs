@@ -23,17 +23,14 @@ impl AssetBundleImportJobDashboardOverrideParameters {
 }
 impl AssetBundleImportJobDashboardOverrideParameters {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobDashboardOverrideParameters`](crate::types::AssetBundleImportJobDashboardOverrideParameters).
-    pub fn builder(
-    ) -> crate::types::builders::AssetBundleImportJobDashboardOverrideParametersBuilder {
+    pub fn builder() -> crate::types::builders::AssetBundleImportJobDashboardOverrideParametersBuilder {
         crate::types::builders::AssetBundleImportJobDashboardOverrideParametersBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleImportJobDashboardOverrideParameters`](crate::types::AssetBundleImportJobDashboardOverrideParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDashboardOverrideParametersBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

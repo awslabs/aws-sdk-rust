@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutAccountSuppressionAttributesOutput
 }
 impl PutAccountSuppressionAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
-    pub fn builder() -> crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesOutputBuilder {
         crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSuppressionAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl PutAccountSuppressionAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput {
         crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput {
             _request_id: self._request_id,
         }

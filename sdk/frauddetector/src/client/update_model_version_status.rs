@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`status(ModelVersionStatus)`](crate::operation::update_model_version_status::builders::UpdateModelVersionStatusFluentBuilder::status) / [`set_status(Option<ModelVersionStatus>)`](crate::operation::update_model_version_status::builders::UpdateModelVersionStatusFluentBuilder::set_status): <p>The model version status.</p>
     /// - On success, responds with [`UpdateModelVersionStatusOutput`](crate::operation::update_model_version_status::UpdateModelVersionStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateModelVersionStatusError>`](crate::operation::update_model_version_status::UpdateModelVersionStatusError)
-    pub fn update_model_version_status(&self) -> crate::operation::update_model_version_status::builders::UpdateModelVersionStatusFluentBuilder{
+    pub fn update_model_version_status(&self) -> crate::operation::update_model_version_status::builders::UpdateModelVersionStatusFluentBuilder {
         crate::operation::update_model_version_status::builders::UpdateModelVersionStatusFluentBuilder::new(self.handle.clone())
     }
 }

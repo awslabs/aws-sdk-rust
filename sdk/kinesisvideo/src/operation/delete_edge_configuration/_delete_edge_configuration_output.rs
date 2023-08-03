@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEdgeConfigurationOutput {
 }
 impl DeleteEdgeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEdgeConfigurationOutput`](crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_edge_configuration::builders::DeleteEdgeConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_edge_configuration::builders::DeleteEdgeConfigurationOutputBuilder {
         crate::operation::delete_edge_configuration::builders::DeleteEdgeConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEdgeConfigurationOutput`](crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEdgeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteEdgeConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEdgeConfigurationOutput`](crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput {
         crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput {
             _request_id: self._request_id,
         }

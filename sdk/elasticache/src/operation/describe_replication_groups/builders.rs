@@ -28,7 +28,7 @@ impl DescribeReplicationGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReplicationGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsInputBuilder,
+    inner: crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsInputBuilder,
 }
 impl DescribeReplicationGroupsFluentBuilder {
     /// Creates a new `DescribeReplicationGroups`.
@@ -39,7 +39,7 @@ impl DescribeReplicationGroupsFluentBuilder {
         }
     }
     /// Access the DescribeReplicationGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeReplicationGroupsFluentBuilder {
             crate::operation::describe_replication_groups::DescribeReplicationGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_groups::DescribeReplicationGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeReplicationGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeReplicationGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_groups::DescribeReplicationGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeReplicationGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_groups::DescribeReplicationGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +107,25 @@ impl DescribeReplicationGroupsFluentBuilder {
             crate::operation::describe_replication_groups::DescribeReplicationGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_groups::DescribeReplicationGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_groups::paginator::DescribeReplicationGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_replication_groups::paginator::DescribeReplicationGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_replication_groups::paginator::DescribeReplicationGroupsPaginator {
         crate::operation::describe_replication_groups::paginator::DescribeReplicationGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>
     /// <p>If you do not specify this parameter, information about all replication groups is returned.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>
     /// <p>If you do not specify this parameter, information about all replication groups is returned.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }

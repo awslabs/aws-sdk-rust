@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyVerifiedAccessTrustProviderOutput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderOutput) with field(s):
     ///   - [`verified_access_trust_provider(Option<VerifiedAccessTrustProvider>)`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderOutput::verified_access_trust_provider): <p>The ID of the Verified Access trust provider.</p>
     /// - On failure, responds with [`SdkError<ModifyVerifiedAccessTrustProviderError>`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderError)
-    pub fn modify_verified_access_trust_provider(&self) -> crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderFluentBuilder{
+    pub fn modify_verified_access_trust_provider(
+        &self,
+    ) -> crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderFluentBuilder {
         crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderFluentBuilder::new(self.handle.clone())
     }
 }

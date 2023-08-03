@@ -37,9 +37,7 @@ impl DescribeUserProfileFluentBuilder {
         }
     }
     /// Access the DescribeUserProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeUserProfileFluentBuilder {
             crate::operation::describe_user_profile::DescribeUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profile::DescribeUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profile::DescribeUserProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeUserProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_profile::DescribeUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profile::DescribeUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profile::DescribeUserProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_profile::DescribeUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profile::DescribeUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profile::DescribeUserProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeUserProfileFluentBuilder {
             crate::operation::describe_user_profile::DescribeUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profile::DescribeUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profile::DescribeUserProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DescribeUserProfileFluentBuilder {
         self.inner.get_domain_id()
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_profile_name(input.into());
         self
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_profile_name(input);
         self
     }

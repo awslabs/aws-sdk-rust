@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAutomationExecutionOutput`](crate::operation::get_automation_execution::GetAutomationExecutionOutput) with field(s):
     ///   - [`automation_execution(Option<AutomationExecution>)`](crate::operation::get_automation_execution::GetAutomationExecutionOutput::automation_execution): <p>Detailed information about the current state of an automation execution.</p>
     /// - On failure, responds with [`SdkError<GetAutomationExecutionError>`](crate::operation::get_automation_execution::GetAutomationExecutionError)
-    pub fn get_automation_execution(
-        &self,
-    ) -> crate::operation::get_automation_execution::builders::GetAutomationExecutionFluentBuilder
-    {
+    pub fn get_automation_execution(&self) -> crate::operation::get_automation_execution::builders::GetAutomationExecutionFluentBuilder {
         crate::operation::get_automation_execution::builders::GetAutomationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

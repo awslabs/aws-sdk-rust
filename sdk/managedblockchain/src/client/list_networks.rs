@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`networks(Option<Vec<NetworkSummary>>)`](crate::operation::list_networks::ListNetworksOutput::networks): <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_networks::ListNetworksOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListNetworksError>`](crate::operation::list_networks::ListNetworksError)
-    pub fn list_networks(
-        &self,
-    ) -> crate::operation::list_networks::builders::ListNetworksFluentBuilder {
-        crate::operation::list_networks::builders::ListNetworksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_networks(&self) -> crate::operation::list_networks::builders::ListNetworksFluentBuilder {
+        crate::operation::list_networks::builders::ListNetworksFluentBuilder::new(self.handle.clone())
     }
 }

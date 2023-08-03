@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`access_point_arn(Option<String>)`](crate::operation::create_access_point::CreateAccessPointOutput::access_point_arn): <p>The ARN of the access point.</p> <note>   <p>This is only supported by Amazon S3 on Outposts.</p>  </note>
     ///   - [`alias(Option<String>)`](crate::operation::create_access_point::CreateAccessPointOutput::alias): <p>The name or alias of the access point.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPointError>`](crate::operation::create_access_point::CreateAccessPointError)
-    pub fn create_access_point(
-        &self,
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder {
-        crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access_point(&self) -> crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder {
+        crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

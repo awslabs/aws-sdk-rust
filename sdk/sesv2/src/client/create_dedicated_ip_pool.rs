@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`scaling_mode(ScalingMode)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::scaling_mode) / [`set_scaling_mode(Option<ScalingMode>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::set_scaling_mode): <p>The type of scaling mode.</p>
     /// - On success, responds with [`CreateDedicatedIpPoolOutput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput)
     /// - On failure, responds with [`SdkError<CreateDedicatedIpPoolError>`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError)
-    pub fn create_dedicated_ip_pool(
-        &self,
-    ) -> crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder
-    {
+    pub fn create_dedicated_ip_pool(&self) -> crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder {
         crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::new(self.handle.clone())
     }
 }

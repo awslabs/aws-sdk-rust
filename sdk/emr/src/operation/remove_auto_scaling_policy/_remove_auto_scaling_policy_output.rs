@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveAutoScalingPolicyOutput {
 }
 impl RemoveAutoScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAutoScalingPolicyOutput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyOutputBuilder {
         crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAutoScalingPolicyOutput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAutoScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl RemoveAutoScalingPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveAutoScalingPolicyOutput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput {
+    pub fn build(self) -> crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput {
         crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput {
             _request_id: self._request_id,
         }

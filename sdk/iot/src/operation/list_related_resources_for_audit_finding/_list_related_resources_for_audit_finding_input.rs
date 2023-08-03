@@ -29,16 +29,14 @@ impl ListRelatedResourcesForAuditFindingInput {
 }
 impl ListRelatedResourcesForAuditFindingInput {
     /// Creates a new builder-style object to manufacture [`ListRelatedResourcesForAuditFindingInput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput).
-    pub fn builder() -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder{
+    pub fn builder() -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder {
         crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRelatedResourcesForAuditFindingInput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRelatedResourcesForAuditFindingInputBuilder {
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRelatedResourcesForAuditFindingInput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput {
-                finding_id: self.finding_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                finding_id: self.finding_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

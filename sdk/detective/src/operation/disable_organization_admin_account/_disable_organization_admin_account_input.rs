@@ -5,16 +5,14 @@
 pub struct DisableOrganizationAdminAccountInput {}
 impl DisableOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder {
         crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountInputBuilder {}
 impl DisableOrganizationAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
@@ -24,9 +22,6 @@ impl DisableOrganizationAdminAccountInputBuilder {
         crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput {
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput {})
     }
 }

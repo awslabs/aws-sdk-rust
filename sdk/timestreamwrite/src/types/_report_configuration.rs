@@ -10,9 +10,7 @@ pub struct ReportConfiguration {
 }
 impl ReportConfiguration {
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
-    pub fn report_s3_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReportS3Configuration> {
+    pub fn report_s3_configuration(&self) -> ::std::option::Option<&crate::types::ReportS3Configuration> {
         self.report_s3_configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ReportConfiguration {
 
 /// A builder for [`ReportConfiguration`](crate::types::ReportConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportConfigurationBuilder {
     pub(crate) report_s3_configuration: ::std::option::Option<crate::types::ReportS3Configuration>,
 }
@@ -38,17 +34,12 @@ impl ReportConfigurationBuilder {
         self
     }
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
-    pub fn set_report_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportS3Configuration>,
-    ) -> Self {
+    pub fn set_report_s3_configuration(mut self, input: ::std::option::Option<crate::types::ReportS3Configuration>) -> Self {
         self.report_s3_configuration = input;
         self
     }
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
-    pub fn get_report_s3_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportS3Configuration> {
+    pub fn get_report_s3_configuration(&self) -> &::std::option::Option<crate::types::ReportS3Configuration> {
         &self.report_s3_configuration
     }
     /// Consumes the builder and constructs a [`ReportConfiguration`](crate::types::ReportConfiguration).

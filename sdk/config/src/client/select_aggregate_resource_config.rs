@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`query_info(Option<QueryInfo>)`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput::query_info): <p>Details about the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput::next_token): <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     /// - On failure, responds with [`SdkError<SelectAggregateResourceConfigError>`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError)
-    pub fn select_aggregate_resource_config(&self) -> crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigFluentBuilder{
+    pub fn select_aggregate_resource_config(
+        &self,
+    ) -> crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigFluentBuilder {
         crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigFluentBuilder::new(self.handle.clone())
     }
 }

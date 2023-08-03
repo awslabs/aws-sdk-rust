@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`connector_list(Option<Vec<Connector>>)`](crate::operation::get_connectors::GetConnectorsOutput::connector_list): <p>Information about the registered connectors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connectors::GetConnectorsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetConnectorsError>`](crate::operation::get_connectors::GetConnectorsError)
-    pub fn get_connectors(
-        &self,
-    ) -> crate::operation::get_connectors::builders::GetConnectorsFluentBuilder {
-        crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connectors(&self) -> crate::operation::get_connectors::builders::GetConnectorsFluentBuilder {
+        crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::new(self.handle.clone())
     }
 }

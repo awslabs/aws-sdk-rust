@@ -9,10 +9,7 @@ pub fn ser_aws_elbv2_load_balancer_details(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_availability_zone::ser_availability_zone(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_availability_zone::ser_availability_zone(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -45,10 +42,7 @@ pub fn ser_aws_elbv2_load_balancer_details(
     if let Some(var_13) = &input.state {
         #[allow(unused_mut)]
         let mut object_14 = object.key("State").start_object();
-        crate::protocol_serde::shape_load_balancer_state::ser_load_balancer_state(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_load_balancer_state::ser_load_balancer_state(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.r#type {
@@ -74,17 +68,9 @@ pub fn ser_aws_elbv2_load_balancer_details(
 
 pub(crate) fn de_aws_elbv2_load_balancer_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsElbv2LoadBalancerDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsElbv2LoadBalancerDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -94,109 +80,84 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AvailabilityZones" => {
-                                builder = builder.set_availability_zones(
-                                    crate::protocol_serde::shape_availability_zones::de_availability_zones(tokens)?
-                                );
-                            }
-                            "CanonicalHostedZoneId" => {
-                                builder = builder.set_canonical_hosted_zone_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "CreatedTime" => {
-                                builder = builder.set_created_time(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "DNSName" => {
-                                builder = builder.set_dns_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "IpAddressType" => {
-                                builder = builder.set_ip_address_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Scheme" => {
-                                builder = builder.set_scheme(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "SecurityGroups" => {
-                                builder = builder.set_security_groups(
-                                    crate::protocol_serde::shape_security_groups::de_security_groups(tokens)?
-                                );
-                            }
-                            "State" => {
-                                builder = builder.set_state(
-                                    crate::protocol_serde::shape_load_balancer_state::de_load_balancer_state(tokens)?
-                                );
-                            }
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "VpcId" => {
-                                builder = builder.set_vpc_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "LoadBalancerAttributes" => {
-                                builder = builder.set_load_balancer_attributes(
-                                    crate::protocol_serde::shape_aws_elbv2_load_balancer_attributes::de_aws_elbv2_load_balancer_attributes(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AvailabilityZones" => {
+                            builder = builder.set_availability_zones(crate::protocol_serde::shape_availability_zones::de_availability_zones(tokens)?);
                         }
-                    }
+                        "CanonicalHostedZoneId" => {
+                            builder = builder.set_canonical_hosted_zone_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatedTime" => {
+                            builder = builder.set_created_time(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DNSName" => {
+                            builder = builder.set_dns_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IpAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Scheme" => {
+                            builder = builder.set_scheme(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SecurityGroups" => {
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_security_groups::de_security_groups(tokens)?);
+                        }
+                        "State" => {
+                            builder = builder.set_state(crate::protocol_serde::shape_load_balancer_state::de_load_balancer_state(tokens)?);
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "VpcId" => {
+                            builder = builder.set_vpc_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LoadBalancerAttributes" => {
+                            builder = builder.set_load_balancer_attributes(
+                                crate::protocol_serde::shape_aws_elbv2_load_balancer_attributes::de_aws_elbv2_load_balancer_attributes(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

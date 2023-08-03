@@ -51,9 +51,7 @@ impl RecommendationData {
 
 /// A builder for [`RecommendationData`](crate::types::RecommendationData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationDataBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<crate::types::Document>,
@@ -63,18 +61,12 @@ pub struct RecommendationDataBuilder {
 }
 impl RecommendationDataBuilder {
     /// <p>The identifier of the recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -116,10 +108,7 @@ impl RecommendationDataBuilder {
         self
     }
     /// <p>The relevance level of the recommendation.</p>
-    pub fn set_relevance_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RelevanceLevel>,
-    ) -> Self {
+    pub fn set_relevance_level(mut self, input: ::std::option::Option<crate::types::RelevanceLevel>) -> Self {
         self.relevance_level = input;
         self
     }
@@ -133,10 +122,7 @@ impl RecommendationDataBuilder {
         self
     }
     /// <p>The type of recommendation.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
         self.r#type = input;
         self
     }

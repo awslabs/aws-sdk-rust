@@ -22,9 +22,7 @@ impl ListMeetingTagsInput {
 
 /// A builder for [`ListMeetingTagsInput`](crate::operation::list_meeting_tags::ListMeetingTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMeetingTagsInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl ListMeetingTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListMeetingTagsInput`](crate::operation::list_meeting_tags::ListMeetingTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_meeting_tags::ListMeetingTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_meeting_tags::ListMeetingTagsInput {
-            meeting_id: self.meeting_id,
-        })
+    ) -> ::std::result::Result<crate::operation::list_meeting_tags::ListMeetingTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_meeting_tags::ListMeetingTagsInput { meeting_id: self.meeting_id })
     }
 }

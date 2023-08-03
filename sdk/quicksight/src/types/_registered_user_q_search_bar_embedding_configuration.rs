@@ -18,36 +18,27 @@ impl RegisteredUserQSearchBarEmbeddingConfiguration {
 }
 impl RegisteredUserQSearchBarEmbeddingConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::types::RegisteredUserQSearchBarEmbeddingConfiguration).
-    pub fn builder() -> crate::types::builders::RegisteredUserQSearchBarEmbeddingConfigurationBuilder
-    {
+    pub fn builder() -> crate::types::builders::RegisteredUserQSearchBarEmbeddingConfigurationBuilder {
         crate::types::builders::RegisteredUserQSearchBarEmbeddingConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::types::RegisteredUserQSearchBarEmbeddingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisteredUserQSearchBarEmbeddingConfigurationBuilder {
     pub(crate) initial_topic_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisteredUserQSearchBarEmbeddingConfigurationBuilder {
     /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
     /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
-    pub fn initial_topic_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_topic_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
     /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
-    pub fn set_initial_topic_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_topic_id = input;
         self
     }

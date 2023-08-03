@@ -42,9 +42,7 @@ impl ListHiTsOutput {
 
 /// A builder for [`ListHiTsOutput`](crate::operation::list_hi_ts::ListHiTsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHiTsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -92,10 +90,7 @@ impl ListHiTsOutputBuilder {
         self
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn set_hi_ts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
-    ) -> Self {
+    pub fn set_hi_ts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>) -> Self {
         self.hi_ts = input;
         self
     }

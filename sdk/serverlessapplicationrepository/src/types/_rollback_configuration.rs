@@ -30,13 +30,10 @@ impl RollbackConfiguration {
 
 /// A builder for [`RollbackConfiguration`](crate::types::RollbackConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RollbackConfigurationBuilder {
     pub(crate) monitoring_time_in_minutes: ::std::option::Option<i32>,
-    pub(crate) rollback_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
+    pub(crate) rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
 }
 impl RollbackConfigurationBuilder {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
@@ -65,17 +62,12 @@ impl RollbackConfigurationBuilder {
         self
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn set_rollback_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
-    ) -> Self {
+    pub fn set_rollback_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>) -> Self {
         self.rollback_triggers = input;
         self
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn get_rollback_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>> {
+    pub fn get_rollback_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>> {
         &self.rollback_triggers
     }
     /// Consumes the builder and constructs a [`RollbackConfiguration`](crate::types::RollbackConfiguration).

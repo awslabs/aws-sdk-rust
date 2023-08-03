@@ -122,17 +122,9 @@ pub fn ser_aws_ec2_vpn_connection_options_tunnel_options_details(
 
 pub(crate) fn de_aws_ec2_vpn_connection_options_tunnel_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -142,143 +134,113 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DpdTimeoutSeconds" => {
                             builder = builder.set_dpd_timeout_seconds(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "IkeVersions" => {
-                            builder = builder.set_ike_versions(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
+                            builder = builder.set_ike_versions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
                         }
                         "OutsideIpAddress" => {
                             builder = builder.set_outside_ip_address(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "Phase1DhGroupNumbers" => {
-                            builder = builder.set_phase1_dh_group_numbers(
-                                crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?,
-                            );
+                            builder = builder.set_phase1_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
                         }
                         "Phase1EncryptionAlgorithms" => {
                             builder = builder.set_phase1_encryption_algorithms(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                            );
                         }
                         "Phase1IntegrityAlgorithms" => {
                             builder = builder.set_phase1_integrity_algorithms(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                            );
                         }
                         "Phase1LifetimeSeconds" => {
                             builder = builder.set_phase1_lifetime_seconds(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "Phase2DhGroupNumbers" => {
-                            builder = builder.set_phase2_dh_group_numbers(
-                                crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?,
-                            );
+                            builder = builder.set_phase2_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
                         }
                         "Phase2EncryptionAlgorithms" => {
                             builder = builder.set_phase2_encryption_algorithms(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                            );
                         }
                         "Phase2IntegrityAlgorithms" => {
                             builder = builder.set_phase2_integrity_algorithms(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                            );
                         }
                         "Phase2LifetimeSeconds" => {
                             builder = builder.set_phase2_lifetime_seconds(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "PreSharedKey" => {
                             builder = builder.set_pre_shared_key(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "RekeyFuzzPercentage" => {
                             builder = builder.set_rekey_fuzz_percentage(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "RekeyMarginTimeSeconds" => {
                             builder = builder.set_rekey_margin_time_seconds(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "ReplayWindowSize" => {
                             builder = builder.set_replay_window_size(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "TunnelInsideCidr" => {
                             builder = builder.set_tunnel_inside_cidr(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

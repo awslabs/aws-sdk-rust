@@ -54,18 +54,12 @@ pub struct UpdatePhoneNumberRequestItemBuilder {
 }
 impl UpdatePhoneNumberRequestItemBuilder {
     /// <p>The phone number ID to update.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number ID to update.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -79,10 +73,7 @@ impl UpdatePhoneNumberRequestItemBuilder {
         self
     }
     /// <p>The product type to update.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
         self.product_type = input;
         self
     }

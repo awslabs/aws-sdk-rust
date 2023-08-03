@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`status(Option<AvailabilityMonitorTestStatus>)`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput::status): <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput::start_time): <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
     /// - On failure, responds with [`SdkError<DescribeAvailabilityMonitorTestError>`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestError)
-    pub fn describe_availability_monitor_test(&self) -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestFluentBuilder{
+    pub fn describe_availability_monitor_test(
+        &self,
+    ) -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestFluentBuilder {
         crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestFluentBuilder::new(self.handle.clone())
     }
 }

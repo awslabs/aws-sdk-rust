@@ -5,8 +5,7 @@
 pub struct GetNetworkResourceCountsOutput {
     /// <p>The count of resources.</p>
     #[doc(hidden)]
-    pub network_resource_counts:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
+    pub network_resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetNetworkResourceCountsOutput {
 }
 impl GetNetworkResourceCountsOutput {
     /// <p>The count of resources.</p>
-    pub fn network_resource_counts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkResourceCount]> {
+    pub fn network_resource_counts(&self) -> ::std::option::Option<&[crate::types::NetworkResourceCount]> {
         self.network_resource_counts.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetNetworkResourceCountsOutput {
 }
 impl GetNetworkResourceCountsOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsOutput`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput).
-    pub fn builder() -> crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsOutputBuilder{
+    pub fn builder() -> crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsOutputBuilder {
         crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkResourceCountsOutput`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkResourceCountsOutputBuilder {
-    pub(crate) network_resource_counts:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
+    pub(crate) network_resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetNetworkResourceCountsOutputBuilder {
         self
     }
     /// <p>The count of resources.</p>
-    pub fn set_network_resource_counts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
-    ) -> Self {
+    pub fn set_network_resource_counts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>) -> Self {
         self.network_resource_counts = input;
         self
     }
     /// <p>The count of resources.</p>
-    pub fn get_network_resource_counts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>> {
+    pub fn get_network_resource_counts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>> {
         &self.network_resource_counts
     }
     /// <p>The token for the next page of results.</p>
@@ -97,9 +86,7 @@ impl GetNetworkResourceCountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetNetworkResourceCountsOutput`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput {
+    pub fn build(self) -> crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput {
         crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput {
             network_resource_counts: self.network_resource_counts,
             next_token: self.next_token,

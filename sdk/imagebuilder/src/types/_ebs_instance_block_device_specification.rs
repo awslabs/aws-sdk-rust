@@ -72,9 +72,7 @@ impl EbsInstanceBlockDeviceSpecification {
 
 /// A builder for [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecificationBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
@@ -176,10 +174,7 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self
     }
     /// <p>Use to override the device's volume type.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsVolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::EbsVolumeType>) -> Self {
         self.volume_type = input;
         self
     }

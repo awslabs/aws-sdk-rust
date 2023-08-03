@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`saml_provider_arn(Option<String>)`](crate::operation::create_saml_provider::CreateSamlProviderOutput::saml_provider_arn): <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_saml_provider::CreateSamlProviderOutput::tags): <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<CreateSAMLProviderError>`](crate::operation::create_saml_provider::CreateSAMLProviderError)
-    pub fn create_saml_provider(
-        &self,
-    ) -> crate::operation::create_saml_provider::builders::CreateSAMLProviderFluentBuilder {
-        crate::operation::create_saml_provider::builders::CreateSAMLProviderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_saml_provider(&self) -> crate::operation::create_saml_provider::builders::CreateSAMLProviderFluentBuilder {
+        crate::operation::create_saml_provider::builders::CreateSAMLProviderFluentBuilder::new(self.handle.clone())
     }
 }

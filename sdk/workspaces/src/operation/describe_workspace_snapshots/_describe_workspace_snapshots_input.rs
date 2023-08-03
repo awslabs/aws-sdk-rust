@@ -15,16 +15,14 @@ impl DescribeWorkspaceSnapshotsInput {
 }
 impl DescribeWorkspaceSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder {
         crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
-                workspace_id: self.workspace_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
+            workspace_id: self.workspace_id,
+        })
     }
 }

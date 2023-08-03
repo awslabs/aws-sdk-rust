@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`last_updated_timestamp(Option<DateTime>)`](crate::operation::get_contact_list::GetContactListOutput::last_updated_timestamp): <p>A timestamp noting the last time the contact list was updated.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_contact_list::GetContactListOutput::tags): <p>The tags associated with a contact list.</p>
     /// - On failure, responds with [`SdkError<GetContactListError>`](crate::operation::get_contact_list::GetContactListError)
-    pub fn get_contact_list(
-        &self,
-    ) -> crate::operation::get_contact_list::builders::GetContactListFluentBuilder {
-        crate::operation::get_contact_list::builders::GetContactListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_contact_list(&self) -> crate::operation::get_contact_list::builders::GetContactListFluentBuilder {
+        crate::operation::get_contact_list::builders::GetContactListFluentBuilder::new(self.handle.clone())
     }
 }

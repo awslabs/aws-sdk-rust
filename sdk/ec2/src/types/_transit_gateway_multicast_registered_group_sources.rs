@@ -9,8 +9,7 @@ pub struct TransitGatewayMulticastRegisteredGroupSources {
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the network interfaces members registered with the transit gateway multicast group.</p>
     #[doc(hidden)]
-    pub registered_network_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub registered_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     #[doc(hidden)]
     pub group_ip_address: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl TransitGatewayMulticastRegisteredGroupSources {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The IDs of the network interfaces members registered with the transit gateway multicast group.</p>
-    pub fn registered_network_interface_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn registered_network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.registered_network_interface_ids.as_deref()
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
@@ -33,44 +30,32 @@ impl TransitGatewayMulticastRegisteredGroupSources {
 }
 impl TransitGatewayMulticastRegisteredGroupSources {
     /// Creates a new builder-style object to manufacture [`TransitGatewayMulticastRegisteredGroupSources`](crate::types::TransitGatewayMulticastRegisteredGroupSources).
-    pub fn builder() -> crate::types::builders::TransitGatewayMulticastRegisteredGroupSourcesBuilder
-    {
+    pub fn builder() -> crate::types::builders::TransitGatewayMulticastRegisteredGroupSourcesBuilder {
         crate::types::builders::TransitGatewayMulticastRegisteredGroupSourcesBuilder::default()
     }
 }
 
 /// A builder for [`TransitGatewayMulticastRegisteredGroupSources`](crate::types::TransitGatewayMulticastRegisteredGroupSources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastRegisteredGroupSourcesBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
-    pub(crate) registered_network_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) registered_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) group_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayMulticastRegisteredGroupSourcesBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_id
     }
     /// Appends an item to `registered_network_interface_ids`.
@@ -78,42 +63,28 @@ impl TransitGatewayMulticastRegisteredGroupSourcesBuilder {
     /// To override the contents of this collection use [`set_registered_network_interface_ids`](Self::set_registered_network_interface_ids).
     ///
     /// <p>The IDs of the network interfaces members registered with the transit gateway multicast group.</p>
-    pub fn registered_network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.registered_network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.registered_network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the network interfaces members registered with the transit gateway multicast group.</p>
-    pub fn set_registered_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_registered_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.registered_network_interface_ids = input;
         self
     }
     /// <p>The IDs of the network interfaces members registered with the transit gateway multicast group.</p>
-    pub fn get_registered_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registered_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.registered_network_interface_ids
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn group_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn set_group_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_ip_address = input;
         self
     }

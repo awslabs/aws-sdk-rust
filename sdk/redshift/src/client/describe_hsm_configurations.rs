@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`hsm_configurations(Option<Vec<HsmConfiguration>>)`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput::hsm_configurations): <p>A list of <code>HsmConfiguration</code> objects.</p>
     /// - On failure, responds with [`SdkError<DescribeHsmConfigurationsError>`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError)
-    pub fn describe_hsm_configurations(&self) -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsFluentBuilder{
+    pub fn describe_hsm_configurations(&self) -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsFluentBuilder {
         crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

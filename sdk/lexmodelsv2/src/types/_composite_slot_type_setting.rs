@@ -23,12 +23,9 @@ impl CompositeSlotTypeSetting {
 
 /// A builder for [`CompositeSlotTypeSetting`](crate::types::CompositeSlotTypeSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompositeSlotTypeSettingBuilder {
-    pub(crate) sub_slots:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>>,
+    pub(crate) sub_slots: ::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>>,
 }
 impl CompositeSlotTypeSettingBuilder {
     /// Appends an item to `sub_slots`.
@@ -43,23 +40,16 @@ impl CompositeSlotTypeSettingBuilder {
         self
     }
     /// <p>Subslots in the composite slot.</p>
-    pub fn set_sub_slots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>>,
-    ) -> Self {
+    pub fn set_sub_slots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>>) -> Self {
         self.sub_slots = input;
         self
     }
     /// <p>Subslots in the composite slot.</p>
-    pub fn get_sub_slots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>> {
+    pub fn get_sub_slots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>> {
         &self.sub_slots
     }
     /// Consumes the builder and constructs a [`CompositeSlotTypeSetting`](crate::types::CompositeSlotTypeSetting).
     pub fn build(self) -> crate::types::CompositeSlotTypeSetting {
-        crate::types::CompositeSlotTypeSetting {
-            sub_slots: self.sub_slots,
-        }
+        crate::types::CompositeSlotTypeSetting { sub_slots: self.sub_slots }
     }
 }

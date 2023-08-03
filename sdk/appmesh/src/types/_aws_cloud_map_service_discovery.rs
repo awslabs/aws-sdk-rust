@@ -14,8 +14,7 @@ pub struct AwsCloudMapServiceDiscovery {
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
     #[doc(hidden)]
-    pub attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     #[doc(hidden)]
     pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
@@ -30,9 +29,7 @@ impl AwsCloudMapServiceDiscovery {
         self.service_name.as_deref()
     }
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsCloudMapInstanceAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AwsCloudMapInstanceAttribute]> {
         self.attributes.as_deref()
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
@@ -49,30 +46,21 @@ impl AwsCloudMapServiceDiscovery {
 
 /// A builder for [`AwsCloudMapServiceDiscovery`](crate::types::AwsCloudMapServiceDiscovery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudMapServiceDiscoveryBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
     pub(crate) ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl AwsCloudMapServiceDiscoveryBuilder {
     /// <p>The name of the Cloud Map namespace to use.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Cloud Map namespace to use.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -106,17 +94,12 @@ impl AwsCloudMapServiceDiscoveryBuilder {
         self
     }
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>> {
         &self.attributes
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
@@ -125,10 +108,7 @@ impl AwsCloudMapServiceDiscoveryBuilder {
         self
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    pub fn set_ip_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::IpPreference>,
-    ) -> Self {
+    pub fn set_ip_preference(mut self, input: ::std::option::Option<crate::types::IpPreference>) -> Self {
         self.ip_preference = input;
         self
     }

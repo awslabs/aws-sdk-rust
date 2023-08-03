@@ -39,10 +39,7 @@ pub fn ser_run_task_input(
     if let Some(var_11) = &input.network_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.overrides {
@@ -57,10 +54,7 @@ pub fn ser_run_task_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }
@@ -72,10 +66,7 @@ pub fn ser_run_task_input(
             {
                 #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(
-                    &mut object_22,
-                    item_21,
-                )?;
+                crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(&mut object_22, item_21)?;
                 object_22.finish();
             }
         }

@@ -36,16 +36,14 @@ impl DeleteStudioSessionMappingInput {
 }
 impl DeleteStudioSessionMappingInput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioSessionMappingInput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput).
-    pub fn builder() -> crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingInputBuilder{
+    pub fn builder() -> crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingInputBuilder {
         crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioSessionMappingInput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioSessionMappingInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl DeleteStudioSessionMappingInputBuilder {
         &self.identity_id
     }
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn identity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn set_identity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_name = input;
         self
     }
@@ -107,10 +99,7 @@ impl DeleteStudioSessionMappingInputBuilder {
         self
     }
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -125,13 +114,11 @@ impl DeleteStudioSessionMappingInputBuilder {
         crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput {
-                studio_id: self.studio_id,
-                identity_id: self.identity_id,
-                identity_name: self.identity_name,
-                identity_type: self.identity_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput {
+            studio_id: self.studio_id,
+            identity_id: self.identity_id,
+            identity_name: self.identity_name,
+            identity_type: self.identity_type,
+        })
     }
 }

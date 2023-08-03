@@ -5,15 +5,12 @@
 pub struct ListMessageMoveTasksOutput {
     /// <p>A list of message movement tasks and their attributes.</p>
     #[doc(hidden)]
-    pub results:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>,
+    pub results: ::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>,
     _request_id: Option<String>,
 }
 impl ListMessageMoveTasksOutput {
     /// <p>A list of message movement tasks and their attributes.</p>
-    pub fn results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListMessageMoveTasksResultEntry]> {
+    pub fn results(&self) -> ::std::option::Option<&[crate::types::ListMessageMoveTasksResultEntry]> {
         self.results.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for ListMessageMoveTasksOutput {
 }
 impl ListMessageMoveTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListMessageMoveTasksOutput`](crate::operation::list_message_move_tasks::ListMessageMoveTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksOutputBuilder {
         crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMessageMoveTasksOutput`](crate::operation::list_message_move_tasks::ListMessageMoveTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMessageMoveTasksOutputBuilder {
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>,
     _request_id: Option<String>,
 }
 impl ListMessageMoveTasksOutputBuilder {
@@ -54,20 +46,12 @@ impl ListMessageMoveTasksOutputBuilder {
         self
     }
     /// <p>A list of message movement tasks and their attributes.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>,
-        >,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list of message movement tasks and their attributes.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>
-    {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

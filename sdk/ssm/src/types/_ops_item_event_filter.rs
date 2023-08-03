@@ -37,9 +37,7 @@ impl OpsItemEventFilter {
 
 /// A builder for [`OpsItemEventFilter`](crate::types::OpsItemEventFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemEventFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::OpsItemEventFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl OpsItemEventFilterBuilder {
         self
     }
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemEventFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::OpsItemEventFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -75,10 +70,7 @@ impl OpsItemEventFilterBuilder {
         self
     }
     /// <p>The values for the filter, consisting of one or more OpsItem IDs.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -92,10 +84,7 @@ impl OpsItemEventFilterBuilder {
         self
     }
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemEventFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OpsItemEventFilterOperator>) -> Self {
         self.operator = input;
         self
     }

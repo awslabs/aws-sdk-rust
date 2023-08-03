@@ -22,9 +22,7 @@ pub struct ConfigurationTag {
 }
 impl ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
-    pub fn configuration_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
         self.configuration_type.as_ref()
     }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
@@ -53,9 +51,7 @@ impl ConfigurationTag {
 
 /// A builder for [`ConfigurationTag`](crate::types::ConfigurationTag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationTagBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
@@ -70,32 +66,21 @@ impl ConfigurationTagBuilder {
         self
     }
     /// <p>A type of IT asset to tag.</p>
-    pub fn set_configuration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationItemType>,
-    ) -> Self {
+    pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationItemType>) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>A type of IT asset to tag.</p>
-    pub fn get_configuration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationItemType> {
+    pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationItemType> {
         &self.configuration_type
     }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -137,10 +122,7 @@ impl ConfigurationTagBuilder {
         self
     }
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
-    pub fn set_time_of_creation(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_of_creation(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_of_creation = input;
         self
     }

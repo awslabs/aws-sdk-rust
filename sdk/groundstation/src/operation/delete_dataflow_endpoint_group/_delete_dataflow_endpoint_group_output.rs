@@ -22,34 +22,26 @@ impl ::aws_http::request_id::RequestId for DeleteDataflowEndpointGroupOutput {
 }
 impl DeleteDataflowEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataflowEndpointGroupOutput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput).
-    pub fn builder() -> crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupOutputBuilder {
         crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataflowEndpointGroupOutput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupOutputBuilder {
     pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteDataflowEndpointGroupOutputBuilder {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = input;
         self
     }
@@ -67,9 +59,7 @@ impl DeleteDataflowEndpointGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDataflowEndpointGroupOutput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput {
+    pub fn build(self) -> crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput {
         crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput {
             dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
             _request_id: self._request_id,

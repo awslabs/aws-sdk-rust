@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`traffic_distribution_group_summary_list(Option<Vec<TrafficDistributionGroupSummary>>)`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput::traffic_distribution_group_summary_list): <p>A list of traffic distribution groups.</p>
     /// - On failure, responds with [`SdkError<ListTrafficDistributionGroupsError>`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError)
-    pub fn list_traffic_distribution_groups(&self) -> crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsFluentBuilder{
+    pub fn list_traffic_distribution_groups(
+        &self,
+    ) -> crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsFluentBuilder {
         crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsFluentBuilder::new(self.handle.clone())
     }
 }

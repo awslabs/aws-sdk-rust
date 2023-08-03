@@ -10,10 +10,7 @@ impl DeleteKeyPairInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_key_pair::DeleteKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_key_pair::DeleteKeyPairError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_key_pair::DeleteKeyPairError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_key_pair();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteKeyPairFluentBuilder {
         }
     }
     /// Access the DeleteKeyPair as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_key_pair::builders::DeleteKeyPairInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_key_pair::builders::DeleteKeyPairInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DeleteKeyPairFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl DeleteKeyPairFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the key pair to delete.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair_name(input.into());
         self
     }
     /// <p>The name of the key pair to delete.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_pair_name(input);
         self
     }
@@ -139,20 +125,14 @@ impl DeleteKeyPairFluentBuilder {
     /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
-    pub fn expected_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_fingerprint(input.into());
         self
     }
     /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
-    pub fn set_expected_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_fingerprint(input);
         self
     }

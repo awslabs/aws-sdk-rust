@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`project_role(Option<String>)`](crate::operation::update_team_member::UpdateTeamMemberOutput::project_role): <p>The project role granted to the user.</p>
     ///   - [`remote_access_allowed(Option<bool>)`](crate::operation::update_team_member::UpdateTeamMemberOutput::remote_access_allowed): <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
     /// - On failure, responds with [`SdkError<UpdateTeamMemberError>`](crate::operation::update_team_member::UpdateTeamMemberError)
-    pub fn update_team_member(
-        &self,
-    ) -> crate::operation::update_team_member::builders::UpdateTeamMemberFluentBuilder {
-        crate::operation::update_team_member::builders::UpdateTeamMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_team_member(&self) -> crate::operation::update_team_member::builders::UpdateTeamMemberFluentBuilder {
+        crate::operation::update_team_member::builders::UpdateTeamMemberFluentBuilder::new(self.handle.clone())
     }
 }

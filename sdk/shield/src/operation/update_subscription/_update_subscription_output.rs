@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateSubscriptionOutput {
 }
 impl UpdateSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionOutput`](crate::operation::update_subscription::UpdateSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_subscription::builders::UpdateSubscriptionOutputBuilder {
+    pub fn builder() -> crate::operation::update_subscription::builders::UpdateSubscriptionOutputBuilder {
         crate::operation::update_subscription::builders::UpdateSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriptionOutput`](crate::operation::update_subscription::UpdateSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

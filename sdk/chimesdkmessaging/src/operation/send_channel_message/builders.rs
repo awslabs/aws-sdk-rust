@@ -10,10 +10,7 @@ impl SendChannelMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_channel_message();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl SendChannelMessageFluentBuilder {
         }
     }
     /// Access the SendChannelMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl SendChannelMessageFluentBuilder {
             crate::operation::send_channel_message::SendChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl SendChannelMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl SendChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl SendChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl SendChannelMessageFluentBuilder {
             crate::operation::send_channel_message::SendChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         self.customize_middleware().await
     }
@@ -164,10 +148,7 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
     /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -183,17 +164,12 @@ impl SendChannelMessageFluentBuilder {
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn set_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
-    ) -> Self {
+    pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
         self.inner = self.inner.set_persistence(input);
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn get_persistence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+    pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
         self.inner.get_persistence()
     }
     /// <p>The optional metadata for each message.</p>
@@ -211,18 +187,12 @@ impl SendChannelMessageFluentBuilder {
         self.inner.get_metadata()
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -250,17 +220,12 @@ impl SendChannelMessageFluentBuilder {
         self
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn set_push_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::PushNotificationConfiguration>,
-    ) -> Self {
+    pub fn set_push_notification(mut self, input: ::std::option::Option<crate::types::PushNotificationConfiguration>) -> Self {
         self.inner = self.inner.set_push_notification(input);
         self
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn get_push_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
+    pub fn get_push_notification(&self) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
         self.inner.get_push_notification()
     }
     /// Adds a key-value pair to `MessageAttributes`.
@@ -268,20 +233,14 @@ impl SendChannelMessageFluentBuilder {
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub fn message_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MessageAttributeValue,
-    ) -> Self {
+    pub fn message_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
         self.inner = self.inner.message_attributes(k.into(), v);
         self
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
     pub fn set_message_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     ) -> Self {
         self.inner = self.inner.set_message_attributes(input);
         self
@@ -289,24 +248,16 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
     pub fn get_message_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
         self.inner.get_message_attributes()
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
@@ -338,10 +289,7 @@ impl SendChannelMessageFluentBuilder {
         self
     }
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }

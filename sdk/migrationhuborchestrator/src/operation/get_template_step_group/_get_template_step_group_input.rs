@@ -22,17 +22,14 @@ impl GetTemplateStepGroupInput {
 }
 impl GetTemplateStepGroupInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
-    pub fn builder(
-    ) -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder {
+    pub fn builder() -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder {
         crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateStepGroupInputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl GetTemplateStepGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template_step_group::GetTemplateStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_template_step_group::GetTemplateStepGroupInput {
-                template_id: self.template_id,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_template_step_group::GetTemplateStepGroupInput {
+            template_id: self.template_id,
+            id: self.id,
+        })
     }
 }

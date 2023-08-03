@@ -10,24 +10,20 @@ pub struct UpdateAccountConfigurationInput {
 }
 impl UpdateAccountConfigurationInput {
     /// Placeholder documentation for AccountConfiguration
-    pub fn account_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountConfiguration> {
+    pub fn account_configuration(&self) -> ::std::option::Option<&crate::types::AccountConfiguration> {
         self.account_configuration.as_ref()
     }
 }
 impl UpdateAccountConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
-    pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder {
         crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationInputBuilder {
     pub(crate) account_configuration: ::std::option::Option<crate::types::AccountConfiguration>,
 }
@@ -38,17 +34,12 @@ impl UpdateAccountConfigurationInputBuilder {
         self
     }
     /// Placeholder documentation for AccountConfiguration
-    pub fn set_account_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountConfiguration>,
-    ) -> Self {
+    pub fn set_account_configuration(mut self, input: ::std::option::Option<crate::types::AccountConfiguration>) -> Self {
         self.account_configuration = input;
         self
     }
     /// Placeholder documentation for AccountConfiguration
-    pub fn get_account_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountConfiguration> {
+    pub fn get_account_configuration(&self) -> &::std::option::Option<crate::types::AccountConfiguration> {
         &self.account_configuration
     }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
@@ -58,10 +49,8 @@ impl UpdateAccountConfigurationInputBuilder {
         crate::operation::update_account_configuration::UpdateAccountConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
-                account_configuration: self.account_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
+            account_configuration: self.account_configuration,
+        })
     }
 }

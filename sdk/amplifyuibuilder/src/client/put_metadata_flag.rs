@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`body(PutMetadataFlagBody)`](crate::operation::put_metadata_flag::builders::PutMetadataFlagFluentBuilder::body) / [`set_body(Option<PutMetadataFlagBody>)`](crate::operation::put_metadata_flag::builders::PutMetadataFlagFluentBuilder::set_body): <p>The metadata information to store.</p>
     /// - On success, responds with [`PutMetadataFlagOutput`](crate::operation::put_metadata_flag::PutMetadataFlagOutput)
     /// - On failure, responds with [`SdkError<PutMetadataFlagError>`](crate::operation::put_metadata_flag::PutMetadataFlagError)
-    pub fn put_metadata_flag(
-        &self,
-    ) -> crate::operation::put_metadata_flag::builders::PutMetadataFlagFluentBuilder {
-        crate::operation::put_metadata_flag::builders::PutMetadataFlagFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_metadata_flag(&self) -> crate::operation::put_metadata_flag::builders::PutMetadataFlagFluentBuilder {
+        crate::operation::put_metadata_flag::builders::PutMetadataFlagFluentBuilder::new(self.handle.clone())
     }
 }

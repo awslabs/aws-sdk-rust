@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeAddonConfigurationOutput {
 }
 impl DescribeAddonConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonConfigurationOutput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationOutputBuilder {
         crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddonConfigurationOutput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonConfigurationOutputBuilder {
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl DescribeAddonConfigurationOutputBuilder {
         &self.addon_name
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn addon_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn addon_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn set_addon_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_version = input;
         self
     }
@@ -87,18 +79,12 @@ impl DescribeAddonConfigurationOutputBuilder {
         &self.addon_version
     }
     /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
-    pub fn configuration_schema(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
-    pub fn set_configuration_schema(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_schema = input;
         self
     }
@@ -116,9 +102,7 @@ impl DescribeAddonConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAddonConfigurationOutput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput {
         crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput {
             addon_name: self.addon_name,
             addon_version: self.addon_version,

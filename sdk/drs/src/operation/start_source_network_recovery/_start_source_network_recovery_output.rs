@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSourceNetworkRecoveryOutput {
 }
 impl StartSourceNetworkRecoveryOutput {
     /// Creates a new builder-style object to manufacture [`StartSourceNetworkRecoveryOutput`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput).
-    pub fn builder() -> crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryOutputBuilder{
+    pub fn builder() -> crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryOutputBuilder {
         crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSourceNetworkRecoveryOutput`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSourceNetworkRecoveryOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartSourceNetworkRecoveryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSourceNetworkRecoveryOutput`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput {
+    pub fn build(self) -> crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput {
         crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput {
             job: self.job,
             _request_id: self._request_id,

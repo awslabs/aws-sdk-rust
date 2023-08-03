@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_backward_token(Option<String>)`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput::next_backward_token): <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     ///   - [`next_forward_token(Option<String>)`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput::next_forward_token): <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseLogEventsError>`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError)
-    pub fn get_relational_database_log_events(&self) -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsFluentBuilder{
+    pub fn get_relational_database_log_events(
+        &self,
+    ) -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsFluentBuilder {
         crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsFluentBuilder::new(self.handle.clone())
     }
 }

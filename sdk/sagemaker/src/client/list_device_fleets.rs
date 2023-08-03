@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`device_fleet_summaries(Option<Vec<DeviceFleetSummary>>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::device_fleet_summaries): <p>Summary of the device fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
     /// - On failure, responds with [`SdkError<ListDeviceFleetsError>`](crate::operation::list_device_fleets::ListDeviceFleetsError)
-    pub fn list_device_fleets(
-        &self,
-    ) -> crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder {
-        crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_fleets(&self) -> crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder {
+        crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,15 +22,11 @@ pub struct GetPropertyValueHistoryInput {
     #[doc(hidden)]
     pub property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
     #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
     #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
@@ -81,16 +77,12 @@ impl GetPropertyValueHistoryInput {
         self.property_filters.as_deref()
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
     pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
     pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
@@ -124,26 +116,21 @@ impl GetPropertyValueHistoryInput {
 }
 impl GetPropertyValueHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueHistoryInput`](crate::operation::get_property_value_history::GetPropertyValueHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder {
         crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPropertyValueHistoryInput`](crate::operation::get_property_value_history::GetPropertyValueHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) property_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
+    pub(crate) property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) interpolation: ::std::option::Option<crate::types::InterpolationParameters>,
@@ -183,18 +170,12 @@ impl GetPropertyValueHistoryInputBuilder {
         &self.entity_id
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -203,18 +184,12 @@ impl GetPropertyValueHistoryInputBuilder {
         &self.component_name
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_id = input;
         self
     }
@@ -227,27 +202,19 @@ impl GetPropertyValueHistoryInputBuilder {
     /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
     ///
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn selected_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_properties.unwrap_or_default();
         v.push(input.into());
         self.selected_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn set_selected_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_properties = input;
         self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn get_selected_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_properties
     }
     /// Appends an item to `property_filters`.
@@ -262,68 +229,45 @@ impl GetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn set_property_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
-    ) -> Self {
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>) -> Self {
         self.property_filters = input;
         self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn get_property_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+    pub fn get_property_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
         &self.property_filters
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
     pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_date_time
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date_time
     }
@@ -333,17 +277,12 @@ impl GetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    pub fn set_interpolation(
-        mut self,
-        input: ::std::option::Option<crate::types::InterpolationParameters>,
-    ) -> Self {
+    pub fn set_interpolation(mut self, input: ::std::option::Option<crate::types::InterpolationParameters>) -> Self {
         self.interpolation = input;
         self
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    pub fn get_interpolation(
-        &self,
-    ) -> &::std::option::Option<crate::types::InterpolationParameters> {
+    pub fn get_interpolation(&self) -> &::std::option::Option<crate::types::InterpolationParameters> {
         &self.interpolation
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -383,10 +322,7 @@ impl GetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>The time direction to use in the result order.</p>
-    pub fn set_order_by_time(
-        mut self,
-        input: ::std::option::Option<crate::types::OrderByTime>,
-    ) -> Self {
+    pub fn set_order_by_time(mut self, input: ::std::option::Option<crate::types::OrderByTime>) -> Self {
         self.order_by_time = input;
         self
     }
@@ -435,23 +371,21 @@ impl GetPropertyValueHistoryInputBuilder {
         crate::operation::get_property_value_history::GetPropertyValueHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_property_value_history::GetPropertyValueHistoryInput {
-                workspace_id: self.workspace_id,
-                entity_id: self.entity_id,
-                component_name: self.component_name,
-                component_type_id: self.component_type_id,
-                selected_properties: self.selected_properties,
-                property_filters: self.property_filters,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                interpolation: self.interpolation,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                order_by_time: self.order_by_time,
-                start_time: self.start_time,
-                end_time: self.end_time,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_property_value_history::GetPropertyValueHistoryInput {
+            workspace_id: self.workspace_id,
+            entity_id: self.entity_id,
+            component_name: self.component_name,
+            component_type_id: self.component_type_id,
+            selected_properties: self.selected_properties,
+            property_filters: self.property_filters,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            interpolation: self.interpolation,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            order_by_time: self.order_by_time,
+            start_time: self.start_time,
+            end_time: self.end_time,
+        })
     }
 }

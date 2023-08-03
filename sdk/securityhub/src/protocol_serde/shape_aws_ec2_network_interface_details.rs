@@ -18,16 +18,17 @@ pub fn ser_aws_ec2_network_interface_details(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_network_interface_security_group::ser_aws_ec2_network_interface_security_group(&mut object_7, item_6)?;
+                crate::protocol_serde::shape_aws_ec2_network_interface_security_group::ser_aws_ec2_network_interface_security_group(
+                    &mut object_7,
+                    item_6,
+                )?;
                 object_7.finish();
             }
         }
         array_5.finish();
     }
     if input.source_dest_check {
-        object
-            .key("SourceDestCheck")
-            .boolean(input.source_dest_check);
+        object.key("SourceDestCheck").boolean(input.source_dest_check);
     }
     if let Some(var_8) = &input.ip_v6_addresses {
         let mut array_9 = object.key("IpV6Addresses").start_array();
@@ -35,7 +36,10 @@ pub fn ser_aws_ec2_network_interface_details(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_network_interface_ip_v6_address_detail::ser_aws_ec2_network_interface_ip_v6_address_detail(&mut object_11, item_10)?;
+                crate::protocol_serde::shape_aws_ec2_network_interface_ip_v6_address_detail::ser_aws_ec2_network_interface_ip_v6_address_detail(
+                    &mut object_11,
+                    item_10,
+                )?;
                 object_11.finish();
             }
         }
@@ -64,101 +68,77 @@ pub fn ser_aws_ec2_network_interface_details(
 
 pub(crate) fn de_aws_ec2_network_interface_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2NetworkInterfaceDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2NetworkInterfaceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsEc2NetworkInterfaceDetailsBuilder::default();
+            let mut builder = crate::types::builders::AwsEc2NetworkInterfaceDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Attachment" => {
-                                builder = builder.set_attachment(
-                                    crate::protocol_serde::shape_aws_ec2_network_interface_attachment::de_aws_ec2_network_interface_attachment(tokens)?
-                                );
-                            }
-                            "NetworkInterfaceId" => {
-                                builder = builder.set_network_interface_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Attachment" => {
+                            builder = builder.set_attachment(
+                                crate::protocol_serde::shape_aws_ec2_network_interface_attachment::de_aws_ec2_network_interface_attachment(tokens)?,
+                            );
+                        }
+                        "NetworkInterfaceId" => {
+                            builder = builder.set_network_interface_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "SecurityGroups" => {
-                                builder = builder.set_security_groups(
+                            );
+                        }
+                        "SecurityGroups" => {
+                            builder = builder.set_security_groups(
                                     crate::protocol_serde::shape_aws_ec2_network_interface_security_group_list::de_aws_ec2_network_interface_security_group_list(tokens)?
                                 );
-                            }
-                            "SourceDestCheck" => {
-                                builder = builder.set_source_dest_check(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "IpV6Addresses" => {
-                                builder = builder.set_ip_v6_addresses(
+                        }
+                        "SourceDestCheck" => {
+                            builder = builder.set_source_dest_check(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IpV6Addresses" => {
+                            builder = builder.set_ip_v6_addresses(
                                     crate::protocol_serde::shape_aws_ec2_network_interface_ip_v6_address_list::de_aws_ec2_network_interface_ip_v6_address_list(tokens)?
                                 );
-                            }
-                            "PrivateIpAddresses" => {
-                                builder = builder.set_private_ip_addresses(
+                        }
+                        "PrivateIpAddresses" => {
+                            builder = builder.set_private_ip_addresses(
                                     crate::protocol_serde::shape_aws_ec2_network_interface_private_ip_address_list::de_aws_ec2_network_interface_private_ip_address_list(tokens)?
                                 );
-                            }
-                            "PublicDnsName" => {
-                                builder = builder.set_public_dns_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "PublicIp" => {
-                                builder = builder.set_public_ip(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "PublicDnsName" => {
+                            builder = builder.set_public_dns_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PublicIp" => {
+                            builder = builder.set_public_ip(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

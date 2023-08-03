@@ -36,16 +36,16 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInput {
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceLoggingConfigurationInput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder
+    {
         crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessInstanceLoggingConfigurationInput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_logs: ::std::option::Option<crate::types::VerifiedAccessLogOptions>,
@@ -54,18 +54,12 @@ pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_instance_id = input;
         self
     }
@@ -79,17 +73,12 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         self
     }
     /// <p>The configuration options for Verified Access instances.</p>
-    pub fn set_access_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessLogOptions>,
-    ) -> Self {
+    pub fn set_access_logs(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogOptions>) -> Self {
         self.access_logs = input;
         self
     }
     /// <p>The configuration options for Verified Access instances.</p>
-    pub fn get_access_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogOptions> {
+    pub fn get_access_logs(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogOptions> {
         &self.access_logs
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -121,18 +110,19 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceLoggingConfigurationInput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput {
-                verified_access_instance_id: self.verified_access_instance_id
-                ,
-                access_logs: self.access_logs
-                ,
-                dry_run: self.dry_run
-                ,
-                client_token: self.client_token
-                ,
-            }
+                verified_access_instance_id: self.verified_access_instance_id,
+                access_logs: self.access_logs,
+                dry_run: self.dry_run,
+                client_token: self.client_token,
+            },
         )
     }
 }

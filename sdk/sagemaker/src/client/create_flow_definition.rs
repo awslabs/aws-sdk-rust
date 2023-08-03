@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFlowDefinitionOutput`](crate::operation::create_flow_definition::CreateFlowDefinitionOutput) with field(s):
     ///   - [`flow_definition_arn(Option<String>)`](crate::operation::create_flow_definition::CreateFlowDefinitionOutput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow definition you create.</p>
     /// - On failure, responds with [`SdkError<CreateFlowDefinitionError>`](crate::operation::create_flow_definition::CreateFlowDefinitionError)
-    pub fn create_flow_definition(
-        &self,
-    ) -> crate::operation::create_flow_definition::builders::CreateFlowDefinitionFluentBuilder {
-        crate::operation::create_flow_definition::builders::CreateFlowDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_flow_definition(&self) -> crate::operation::create_flow_definition::builders::CreateFlowDefinitionFluentBuilder {
+        crate::operation::create_flow_definition::builders::CreateFlowDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

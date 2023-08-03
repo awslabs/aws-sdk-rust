@@ -36,18 +36,14 @@ impl SetRepositoryPolicyInput {
 }
 impl SetRepositoryPolicyInput {
     /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder {
-        crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder {
+        crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetRepositoryPolicyInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl SetRepositoryPolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -120,17 +110,13 @@ impl SetRepositoryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_repository_policy::SetRepositoryPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_repository_policy::SetRepositoryPolicyInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                policy_text: self.policy_text,
-                force: self.force.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_repository_policy::SetRepositoryPolicyInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            policy_text: self.policy_text,
+            force: self.force.unwrap_or_default(),
+        })
     }
 }

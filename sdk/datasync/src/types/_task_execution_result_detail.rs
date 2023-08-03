@@ -79,9 +79,7 @@ impl TaskExecutionResultDetail {
 
 /// A builder for [`TaskExecutionResultDetail`](crate::types::TaskExecutionResultDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskExecutionResultDetailBuilder {
     pub(crate) prepare_duration: ::std::option::Option<i64>,
     pub(crate) prepare_status: ::std::option::Option<crate::types::PhaseStatus>,
@@ -114,10 +112,7 @@ impl TaskExecutionResultDetailBuilder {
         self
     }
     /// <p>The status of the PREPARING phase.</p>
-    pub fn set_prepare_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhaseStatus>,
-    ) -> Self {
+    pub fn set_prepare_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
         self.prepare_status = input;
         self
     }
@@ -159,10 +154,7 @@ impl TaskExecutionResultDetailBuilder {
         self
     }
     /// <p>The status of the TRANSFERRING phase.</p>
-    pub fn set_transfer_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhaseStatus>,
-    ) -> Self {
+    pub fn set_transfer_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
         self.transfer_status = input;
         self
     }
@@ -190,10 +182,7 @@ impl TaskExecutionResultDetailBuilder {
         self
     }
     /// <p>The status of the VERIFYING phase.</p>
-    pub fn set_verify_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhaseStatus>,
-    ) -> Self {
+    pub fn set_verify_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
         self.verify_status = input;
         self
     }

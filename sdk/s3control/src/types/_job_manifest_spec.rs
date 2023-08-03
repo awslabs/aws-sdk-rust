@@ -30,9 +30,7 @@ impl JobManifestSpec {
 
 /// A builder for [`JobManifestSpec`](crate::types::JobManifestSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobManifestSpecBuilder {
     pub(crate) format: ::std::option::Option<crate::types::JobManifestFormat>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>,
@@ -44,10 +42,7 @@ impl JobManifestSpecBuilder {
         self
     }
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::JobManifestFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::JobManifestFormat>) -> Self {
         self.format = input;
         self
     }
@@ -67,17 +62,12 @@ impl JobManifestSpecBuilder {
         self
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`JobManifestSpec`](crate::types::JobManifestSpec).

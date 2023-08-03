@@ -36,16 +36,14 @@ impl AssociateDiscoveredResourceInput {
 }
 impl AssociateDiscoveredResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceInput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput).
-    pub fn builder() -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder {
         crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDiscoveredResourceInput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct AssociateDiscoveredResourceInputBuilder {
 }
 impl AssociateDiscoveredResourceInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -74,18 +66,12 @@ impl AssociateDiscoveredResourceInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -99,17 +85,12 @@ impl AssociateDiscoveredResourceInputBuilder {
         self
     }
     /// <p>Object representing a Resource.</p>
-    pub fn set_discovered_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveredResource>,
-    ) -> Self {
+    pub fn set_discovered_resource(mut self, input: ::std::option::Option<crate::types::DiscoveredResource>) -> Self {
         self.discovered_resource = input;
         self
     }
     /// <p>Object representing a Resource.</p>
-    pub fn get_discovered_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveredResource> {
+    pub fn get_discovered_resource(&self) -> &::std::option::Option<crate::types::DiscoveredResource> {
         &self.discovered_resource
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -133,13 +114,11 @@ impl AssociateDiscoveredResourceInputBuilder {
         crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                discovered_resource: self.discovered_resource,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            discovered_resource: self.discovered_resource,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

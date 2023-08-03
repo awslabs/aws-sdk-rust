@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`certificate_arn(Option<String>)`](crate::operation::update_service::UpdateServiceOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate. </p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::update_service::UpdateServiceOutput::auth_type): <p>The type of IAM policy.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::operation::update_service::UpdateServiceError)
-    pub fn update_service(
-        &self,
-    ) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
-        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service(&self) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
+        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(self.handle.clone())
     }
 }

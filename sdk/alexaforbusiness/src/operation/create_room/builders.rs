@@ -10,10 +10,7 @@ impl CreateRoomInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_room::CreateRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_room::CreateRoomError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_room::CreateRoomError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_room();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateRoomFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_room::CreateRoom,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_room::CreateRoom, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_room::CreateRoomError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateRoomFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl CreateRoomFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_room::CreateRoom,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_room::CreateRoom, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_room::CreateRoomError>,
     > {
         self.customize_middleware().await
@@ -156,18 +144,12 @@ impl CreateRoomFluentBuilder {
         self.inner.get_profile_arn()
     }
     /// <p>The calendar ARN for the room.</p>
-    pub fn provider_calendar_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_calendar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_calendar_id(input.into());
         self
     }
     /// <p>The calendar ARN for the room.</p>
-    pub fn set_provider_calendar_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_calendar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_calendar_id(input);
         self
     }
@@ -176,18 +158,12 @@ impl CreateRoomFluentBuilder {
         self.inner.get_provider_calendar_id()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -205,10 +181,7 @@ impl CreateRoomFluentBuilder {
         self
     }
     /// <p>The tags for the room.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeElasticsearchDomainConfigOutput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigOutput) with field(s):
     ///   - [`domain_config(Option<ElasticsearchDomainConfig>)`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigOutput::domain_config): <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeElasticsearchDomainConfigError>`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigError)
-    pub fn describe_elasticsearch_domain_config(&self) -> crate::operation::describe_elasticsearch_domain_config::builders::DescribeElasticsearchDomainConfigFluentBuilder{
+    pub fn describe_elasticsearch_domain_config(
+        &self,
+    ) -> crate::operation::describe_elasticsearch_domain_config::builders::DescribeElasticsearchDomainConfigFluentBuilder {
         crate::operation::describe_elasticsearch_domain_config::builders::DescribeElasticsearchDomainConfigFluentBuilder::new(self.handle.clone())
     }
 }

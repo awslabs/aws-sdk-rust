@@ -65,9 +65,7 @@ impl DeploymentController {
 
 /// A builder for [`DeploymentController`](crate::types::DeploymentController).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentControllerBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DeploymentControllerType>,
 }
@@ -120,10 +118,7 @@ impl DeploymentControllerBuilder {
     /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
     /// </dd>
     /// </dl>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentControllerType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeploymentControllerType>) -> Self {
         self.r#type = input;
         self
     }
@@ -154,8 +149,6 @@ impl DeploymentControllerBuilder {
     }
     /// Consumes the builder and constructs a [`DeploymentController`](crate::types::DeploymentController).
     pub fn build(self) -> crate::types::DeploymentController {
-        crate::types::DeploymentController {
-            r#type: self.r#type,
-        }
+        crate::types::DeploymentController { r#type: self.r#type }
     }
 }

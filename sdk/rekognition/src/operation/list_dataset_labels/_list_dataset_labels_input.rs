@@ -29,17 +29,14 @@ impl ListDatasetLabelsInput {
 }
 impl ListDatasetLabelsInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetLabelsInput`](crate::operation::list_dataset_labels::ListDatasetLabelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_labels::builders::ListDatasetLabelsInputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_labels::builders::ListDatasetLabelsInputBuilder {
         crate::operation::list_dataset_labels::builders::ListDatasetLabelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetLabelsInput`](crate::operation::list_dataset_labels::ListDatasetLabelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetLabelsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListDatasetLabelsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetLabelsInput`](crate::operation::list_dataset_labels::ListDatasetLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_labels::ListDatasetLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dataset_labels::ListDatasetLabelsInput {
-                dataset_arn: self.dataset_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dataset_labels::ListDatasetLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_dataset_labels::ListDatasetLabelsInput {
+            dataset_arn: self.dataset_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -29,9 +29,7 @@ impl UpdateTrialInput {
 
 /// A builder for [`UpdateTrialInput`](crate::operation::update_trial::UpdateTrialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrialInputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl UpdateTrialInputBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`UpdateTrialInput`](crate::operation::update_trial::UpdateTrialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_trial::UpdateTrialInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_trial::UpdateTrialInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trial::UpdateTrialInput {
             trial_name: self.trial_name,
             display_name: self.display_name,

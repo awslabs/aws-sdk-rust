@@ -6,10 +6,7 @@ pub fn ser_project_data_delivery_config(
     if let Some(var_1) = &input.s3_destination {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3Destination").start_object();
-        crate::protocol_serde::shape_s3_destination_config::ser_s3_destination_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_s3_destination_config::ser_s3_destination_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.cloud_watch_logs {

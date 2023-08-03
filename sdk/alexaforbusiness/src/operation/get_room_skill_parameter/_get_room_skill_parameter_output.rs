@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRoomSkillParameterOutput {
 }
 impl GetRoomSkillParameterOutput {
     /// Creates a new builder-style object to manufacture [`GetRoomSkillParameterOutput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput).
-    pub fn builder(
-    ) -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterOutputBuilder {
         crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRoomSkillParameterOutput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRoomSkillParameterOutputBuilder {
     pub(crate) room_skill_parameter: ::std::option::Option<crate::types::RoomSkillParameter>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetRoomSkillParameterOutputBuilder {
         self
     }
     /// <p>The details of the room skill parameter requested. Required.</p>
-    pub fn set_room_skill_parameter(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomSkillParameter>,
-    ) -> Self {
+    pub fn set_room_skill_parameter(mut self, input: ::std::option::Option<crate::types::RoomSkillParameter>) -> Self {
         self.room_skill_parameter = input;
         self
     }
     /// <p>The details of the room skill parameter requested. Required.</p>
-    pub fn get_room_skill_parameter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoomSkillParameter> {
+    pub fn get_room_skill_parameter(&self) -> &::std::option::Option<crate::types::RoomSkillParameter> {
         &self.room_skill_parameter
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

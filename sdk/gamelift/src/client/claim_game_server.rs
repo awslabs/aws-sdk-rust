@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ClaimGameServerOutput`](crate::operation::claim_game_server::ClaimGameServerOutput) with field(s):
     ///   - [`game_server(Option<GameServer>)`](crate::operation::claim_game_server::ClaimGameServerOutput::game_server): <p>Object that describes the newly claimed game server.</p>
     /// - On failure, responds with [`SdkError<ClaimGameServerError>`](crate::operation::claim_game_server::ClaimGameServerError)
-    pub fn claim_game_server(
-        &self,
-    ) -> crate::operation::claim_game_server::builders::ClaimGameServerFluentBuilder {
-        crate::operation::claim_game_server::builders::ClaimGameServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn claim_game_server(&self) -> crate::operation::claim_game_server::builders::ClaimGameServerFluentBuilder {
+        crate::operation::claim_game_server::builders::ClaimGameServerFluentBuilder::new(self.handle.clone())
     }
 }

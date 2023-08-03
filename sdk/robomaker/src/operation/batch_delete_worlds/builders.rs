@@ -10,10 +10,7 @@ impl BatchDeleteWorldsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_worlds::BatchDeleteWorldsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_delete_worlds();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchDeleteWorldsFluentBuilder {
         }
     }
     /// Access the BatchDeleteWorlds as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchDeleteWorldsFluentBuilder {
             crate::operation::batch_delete_worlds::BatchDeleteWorlds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_worlds::BatchDeleteWorldsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchDeleteWorldsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchDeleteWorldsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_worlds::BatchDeleteWorldsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchDeleteWorldsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_worlds::BatchDeleteWorldsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchDeleteWorldsFluentBuilder {
             crate::operation::batch_delete_worlds::BatchDeleteWorlds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_worlds::BatchDeleteWorldsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchDeleteWorldsFluentBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    pub fn set_worlds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_worlds(input);
         self
     }

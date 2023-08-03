@@ -10,9 +10,7 @@ pub struct GetSourceApiAssociationOutput {
 }
 impl GetSourceApiAssociationOutput {
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn source_api_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceApiAssociation> {
+    pub fn source_api_association(&self) -> ::std::option::Option<&crate::types::SourceApiAssociation> {
         self.source_api_association.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSourceApiAssociationOutput {
 }
 impl GetSourceApiAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetSourceApiAssociationOutput`](crate::operation::get_source_api_association::GetSourceApiAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_source_api_association::builders::GetSourceApiAssociationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_source_api_association::builders::GetSourceApiAssociationOutputBuilder {
         crate::operation::get_source_api_association::builders::GetSourceApiAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSourceApiAssociationOutput`](crate::operation::get_source_api_association::GetSourceApiAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSourceApiAssociationOutputBuilder {
     pub(crate) source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetSourceApiAssociationOutputBuilder {
         self
     }
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn set_source_api_association(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceApiAssociation>,
-    ) -> Self {
+    pub fn set_source_api_association(mut self, input: ::std::option::Option<crate::types::SourceApiAssociation>) -> Self {
         self.source_api_association = input;
         self
     }
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn get_source_api_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceApiAssociation> {
+    pub fn get_source_api_association(&self) -> &::std::option::Option<crate::types::SourceApiAssociation> {
         &self.source_api_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetSourceApiAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSourceApiAssociationOutput`](crate::operation::get_source_api_association::GetSourceApiAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_source_api_association::GetSourceApiAssociationOutput {
+    pub fn build(self) -> crate::operation::get_source_api_association::GetSourceApiAssociationOutput {
         crate::operation::get_source_api_association::GetSourceApiAssociationOutput {
             source_api_association: self.source_api_association,
             _request_id: self._request_id,

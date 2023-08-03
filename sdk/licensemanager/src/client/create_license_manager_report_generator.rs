@@ -13,7 +13,11 @@ impl super::Client {
     /// - On success, responds with [`CreateLicenseManagerReportGeneratorOutput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput) with field(s):
     ///   - [`license_manager_report_generator_arn(Option<String>)`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput::license_manager_report_generator_arn): <p>The Amazon Resource Name (ARN) of the new report generator.</p>
     /// - On failure, responds with [`SdkError<CreateLicenseManagerReportGeneratorError>`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError)
-    pub fn create_license_manager_report_generator(&self) -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorFluentBuilder{
-        crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorFluentBuilder::new(self.handle.clone())
+    pub fn create_license_manager_report_generator(
+        &self,
+    ) -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorFluentBuilder {
+        crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

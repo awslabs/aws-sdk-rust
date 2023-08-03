@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetAllResourceLogLevelsOutput {
 }
 impl ResetAllResourceLogLevelsOutput {
     /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsOutput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput).
-    pub fn builder() -> crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsOutputBuilder{
+    pub fn builder() -> crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsOutputBuilder {
         crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetAllResourceLogLevelsOutput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetAllResourceLogLevelsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ResetAllResourceLogLevelsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsOutput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput {
+    pub fn build(self) -> crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput {
         crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput {
             _request_id: self._request_id,
         }

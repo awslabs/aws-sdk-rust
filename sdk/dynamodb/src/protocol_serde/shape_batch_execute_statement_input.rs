@@ -9,10 +9,7 @@ pub fn ser_batch_execute_statement_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_batch_statement_request::ser_batch_statement_request(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_batch_statement_request::ser_batch_statement_request(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

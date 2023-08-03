@@ -44,10 +44,7 @@ impl GetPipelineDefinitionFluentBuilder {
         }
     }
     /// Access the GetPipelineDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl GetPipelineDefinitionFluentBuilder {
             crate::operation::get_pipeline_definition::GetPipelineDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_definition::GetPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_definition::GetPipelineDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl GetPipelineDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl GetPipelineDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_definition::GetPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_definition::GetPipelineDefinitionError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl GetPipelineDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_definition::GetPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_definition::GetPipelineDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +112,7 @@ impl GetPipelineDefinitionFluentBuilder {
             crate::operation::get_pipeline_definition::GetPipelineDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_definition::GetPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_definition::GetPipelineDefinitionError>,
     > {
         self.customize_middleware().await
     }

@@ -23,9 +23,7 @@ impl AccountConfiguration {
 
 /// A builder for [`AccountConfiguration`](crate::types::AccountConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AccountConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`AccountConfiguration`](crate::types::AccountConfiguration).
     pub fn build(self) -> crate::types::AccountConfiguration {
-        crate::types::AccountConfiguration {
-            kms_key_id: self.kms_key_id,
-        }
+        crate::types::AccountConfiguration { kms_key_id: self.kms_key_id }
     }
 }

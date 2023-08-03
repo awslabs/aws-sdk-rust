@@ -28,9 +28,7 @@ impl MeetingSetting {
 
 /// A builder for [`MeetingSetting`](crate::types::MeetingSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeetingSettingBuilder {
     pub(crate) require_pin: ::std::option::Option<crate::types::RequirePin>,
 }
@@ -41,10 +39,7 @@ impl MeetingSettingBuilder {
         self
     }
     /// <p>The values that indicate whether the pin is always required.</p>
-    pub fn set_require_pin(
-        mut self,
-        input: ::std::option::Option<crate::types::RequirePin>,
-    ) -> Self {
+    pub fn set_require_pin(mut self, input: ::std::option::Option<crate::types::RequirePin>) -> Self {
         self.require_pin = input;
         self
     }

@@ -12,10 +12,7 @@ pub fn ser_execute_statement_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -37,9 +34,7 @@ pub fn ser_execute_statement_input(
         );
     }
     if let Some(var_10) = &input.return_values_on_condition_check_failure {
-        object
-            .key("ReturnValuesOnConditionCheckFailure")
-            .string(var_10.as_str());
+        object.key("ReturnValuesOnConditionCheckFailure").string(var_10.as_str());
     }
     Ok(())
 }

@@ -10,10 +10,7 @@ impl CreateMultiplexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_multiplex::CreateMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex::CreateMultiplexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex::CreateMultiplexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_multiplex();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateMultiplexFluentBuilder {
         }
     }
     /// Access the CreateMultiplex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_multiplex::builders::CreateMultiplexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_multiplex::builders::CreateMultiplexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateMultiplexFluentBuilder {
             crate::operation::create_multiplex::CreateMultiplex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex::CreateMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex::CreateMultiplexError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateMultiplexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateMultiplexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multiplex::CreateMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex::CreateMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex::CreateMultiplexError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateMultiplexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multiplex::CreateMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex::CreateMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex::CreateMultiplexError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateMultiplexFluentBuilder {
             crate::operation::create_multiplex::CreateMultiplex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex::CreateMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex::CreateMultiplexError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl CreateMultiplexFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zones(input.into());
         self
     }
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
     /// Configuration for a multiplex event.
@@ -154,17 +130,12 @@ impl CreateMultiplexFluentBuilder {
         self
     }
     /// Configuration for a multiplex event.
-    pub fn set_multiplex_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexSettings>,
-    ) -> Self {
+    pub fn set_multiplex_settings(mut self, input: ::std::option::Option<crate::types::MultiplexSettings>) -> Self {
         self.inner = self.inner.set_multiplex_settings(input);
         self
     }
     /// Configuration for a multiplex event.
-    pub fn get_multiplex_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+    pub fn get_multiplex_settings(&self) -> &::std::option::Option<crate::types::MultiplexSettings> {
         self.inner.get_multiplex_settings()
     }
     /// Name of multiplex.
@@ -200,30 +171,17 @@ impl CreateMultiplexFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

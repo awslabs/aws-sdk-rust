@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateReportGroupOutput`](crate::operation::update_report_group::UpdateReportGroupOutput) with field(s):
     ///   - [`report_group(Option<ReportGroup>)`](crate::operation::update_report_group::UpdateReportGroupOutput::report_group): <p> Information about the updated report group. </p>
     /// - On failure, responds with [`SdkError<UpdateReportGroupError>`](crate::operation::update_report_group::UpdateReportGroupError)
-    pub fn update_report_group(
-        &self,
-    ) -> crate::operation::update_report_group::builders::UpdateReportGroupFluentBuilder {
-        crate::operation::update_report_group::builders::UpdateReportGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_report_group(&self) -> crate::operation::update_report_group::builders::UpdateReportGroupFluentBuilder {
+        crate::operation::update_report_group::builders::UpdateReportGroupFluentBuilder::new(self.handle.clone())
     }
 }

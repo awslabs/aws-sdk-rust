@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateResolverDnssecConfigOutput`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigOutput) with field(s):
     ///   - [`resolver_dnssec_config(Option<ResolverDnssecConfig>)`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigOutput::resolver_dnssec_config): <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverDnssecConfigError>`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError)
-    pub fn update_resolver_dnssec_config(&self) -> crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigFluentBuilder{
+    pub fn update_resolver_dnssec_config(
+        &self,
+    ) -> crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigFluentBuilder {
         crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigFluentBuilder::new(self.handle.clone())
     }
 }

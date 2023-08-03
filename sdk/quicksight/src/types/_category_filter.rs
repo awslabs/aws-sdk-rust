@@ -25,9 +25,7 @@ impl CategoryFilter {
         self.column.as_ref()
     }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoryFilterConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CategoryFilterConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -40,9 +38,7 @@ impl CategoryFilter {
 
 /// A builder for [`CategoryFilter`](crate::types::CategoryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryFilterBuilder {
     pub(crate) filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
@@ -69,10 +65,7 @@ impl CategoryFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -86,17 +79,12 @@ impl CategoryFilterBuilder {
         self
     }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryFilterConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CategoryFilterConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoryFilterConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CategoryFilterConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CategoryFilter`](crate::types::CategoryFilter).

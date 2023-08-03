@@ -21,9 +21,7 @@ impl UpdateProjectInput {
     }
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
-    pub fn app_config_resource(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProjectAppConfigResourceConfig> {
+    pub fn app_config_resource(&self) -> ::std::option::Option<&crate::types::ProjectAppConfigResourceConfig> {
         self.app_config_resource.as_ref()
     }
     /// <p>An optional description of the project.</p>
@@ -40,13 +38,10 @@ impl UpdateProjectInput {
 
 /// A builder for [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProjectInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
-    pub(crate) app_config_resource:
-        ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>,
+    pub(crate) app_config_resource: ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInputBuilder {
@@ -66,27 +61,19 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
-    pub fn app_config_resource(
-        mut self,
-        input: crate::types::ProjectAppConfigResourceConfig,
-    ) -> Self {
+    pub fn app_config_resource(mut self, input: crate::types::ProjectAppConfigResourceConfig) -> Self {
         self.app_config_resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
-    pub fn set_app_config_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>,
-    ) -> Self {
+    pub fn set_app_config_resource(mut self, input: ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>) -> Self {
         self.app_config_resource = input;
         self
     }
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
-    pub fn get_app_config_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectAppConfigResourceConfig> {
+    pub fn get_app_config_resource(&self) -> &::std::option::Option<crate::types::ProjectAppConfigResourceConfig> {
         &self.app_config_resource
     }
     /// <p>An optional description of the project.</p>
@@ -106,10 +93,7 @@ impl UpdateProjectInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_project::UpdateProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
             project: self.project,
             app_config_resource: self.app_config_resource,

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MediaPipelineStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for MediaPipelineStatus {
             "Paused" => MediaPipelineStatus::Paused,
             "Stopped" => MediaPipelineStatus::Stopped,
             "Stopping" => MediaPipelineStatus::Stopping,
-            other => MediaPipelineStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MediaPipelineStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl MediaPipelineStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed",
-            "InProgress",
-            "Initializing",
-            "Paused",
-            "Stopped",
-            "Stopping",
-        ]
+        &["Failed", "InProgress", "Initializing", "Paused", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for MediaPipelineStatus {

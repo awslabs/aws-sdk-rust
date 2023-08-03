@@ -86,9 +86,7 @@ impl LteObj {
 
 /// A builder for [`LteObj`](crate::types::LteObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LteObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,
@@ -164,10 +162,7 @@ impl LteObjBuilder {
         self
     }
     /// <p>LTE local identification (local ID) information.</p>
-    pub fn set_lte_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::LteLocalId>,
-    ) -> Self {
+    pub fn set_lte_local_id(mut self, input: ::std::option::Option<crate::types::LteLocalId>) -> Self {
         self.lte_local_id = input;
         self
     }
@@ -243,10 +238,7 @@ impl LteObjBuilder {
         self
     }
     /// <p>LTE object for network measurement reports.</p>
-    pub fn set_lte_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>>,
-    ) -> Self {
+    pub fn set_lte_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>>) -> Self {
         self.lte_nmr = input;
         self
     }

@@ -9,15 +9,12 @@ pub struct DashboardInvalidInputError {
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub dashboard_validation_messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
+    pub dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl DashboardInvalidInputError {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn dashboard_validation_messages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DashboardValidationMessage]> {
+    pub fn dashboard_validation_messages(&self) -> ::std::option::Option<&[crate::types::DashboardValidationMessage]> {
         self.dashboard_validation_messages.as_deref()
     }
 }
@@ -59,13 +56,10 @@ impl DashboardInvalidInputError {
 
 /// A builder for [`DashboardInvalidInputError`](crate::types::error::DashboardInvalidInputError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardInvalidInputErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) dashboard_validation_messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
+    pub(crate) dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl DashboardInvalidInputErrorBuilder {
@@ -87,10 +81,7 @@ impl DashboardInvalidInputErrorBuilder {
     ///
     /// To override the contents of this collection use [`set_dashboard_validation_messages`](Self::set_dashboard_validation_messages).
     ///
-    pub fn dashboard_validation_messages(
-        mut self,
-        input: crate::types::DashboardValidationMessage,
-    ) -> Self {
+    pub fn dashboard_validation_messages(mut self, input: crate::types::DashboardValidationMessage) -> Self {
         let mut v = self.dashboard_validation_messages.unwrap_or_default();
         v.push(input);
         self.dashboard_validation_messages = ::std::option::Option::Some(v);
@@ -105,9 +96,7 @@ impl DashboardInvalidInputErrorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_dashboard_validation_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>> {
+    pub fn get_dashboard_validation_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>> {
         &self.dashboard_validation_messages
     }
     /// Sets error metadata
@@ -117,10 +106,7 @@ impl DashboardInvalidInputErrorBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

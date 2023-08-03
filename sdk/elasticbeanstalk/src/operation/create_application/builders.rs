@@ -10,10 +10,7 @@ impl CreateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateApplicationFluentBuilder {
         }
     }
     /// Access the CreateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application. Must be unique within your account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application. Must be unique within your account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -157,25 +135,17 @@ impl CreateApplicationFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
-    pub fn resource_lifecycle_config(
-        mut self,
-        input: crate::types::ApplicationResourceLifecycleConfig,
-    ) -> Self {
+    pub fn resource_lifecycle_config(mut self, input: crate::types::ApplicationResourceLifecycleConfig) -> Self {
         self.inner = self.inner.resource_lifecycle_config(input);
         self
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
-    pub fn set_resource_lifecycle_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
-    ) -> Self {
+    pub fn set_resource_lifecycle_config(mut self, input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>) -> Self {
         self.inner = self.inner.set_resource_lifecycle_config(input);
         self
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
-    pub fn get_resource_lifecycle_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+    pub fn get_resource_lifecycle_config(&self) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
         self.inner.get_resource_lifecycle_config()
     }
     /// Appends an item to `Tags`.
@@ -190,10 +160,7 @@ impl CreateApplicationFluentBuilder {
     }
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

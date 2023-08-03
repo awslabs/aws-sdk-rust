@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for SetTypeConfigurationOutput {
 }
 impl SetTypeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`SetTypeConfigurationOutput`](crate::operation::set_type_configuration::SetTypeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::set_type_configuration::builders::SetTypeConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::set_type_configuration::builders::SetTypeConfigurationOutputBuilder {
         crate::operation::set_type_configuration::builders::SetTypeConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetTypeConfigurationOutput`](crate::operation::set_type_configuration::SetTypeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTypeConfigurationOutputBuilder {
     pub(crate) configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -41,19 +38,13 @@ pub struct SetTypeConfigurationOutputBuilder {
 impl SetTypeConfigurationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
-    pub fn configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
-    pub fn set_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_arn = input;
         self
     }

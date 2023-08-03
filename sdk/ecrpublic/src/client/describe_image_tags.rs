@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`image_tag_details(Option<Vec<ImageTagDetail>>)`](crate::operation::describe_image_tags::DescribeImageTagsOutput::image_tag_details): <p>The image tag details for the images in the requested repository.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_image_tags::DescribeImageTagsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeImageTagsError>`](crate::operation::describe_image_tags::DescribeImageTagsError)
-    pub fn describe_image_tags(
-        &self,
-    ) -> crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder {
-        crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_image_tags(&self) -> crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder {
+        crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -46,9 +46,7 @@ impl UnsearchedFace {
 
 /// A builder for [`UnsearchedFace`](crate::types::UnsearchedFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsearchedFaceBuilder {
     pub(crate) face_details: ::std::option::Option<crate::types::FaceDetail>,
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>>,
@@ -76,10 +74,7 @@ impl UnsearchedFaceBuilder {
     /// <li> <p>GetFaceSearch</p> </li>
     /// </ul>
     /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
-    pub fn set_face_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceDetail>,
-    ) -> Self {
+    pub fn set_face_details(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face_details = input;
         self
     }
@@ -107,17 +102,12 @@ impl UnsearchedFaceBuilder {
         self
     }
     /// <p> Reasons why a face wasn't used for Search. </p>
-    pub fn set_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>>,
-    ) -> Self {
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>>) -> Self {
         self.reasons = input;
         self
     }
     /// <p> Reasons why a face wasn't used for Search. </p>
-    pub fn get_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>> {
         &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsearchedFace`](crate::types::UnsearchedFace).

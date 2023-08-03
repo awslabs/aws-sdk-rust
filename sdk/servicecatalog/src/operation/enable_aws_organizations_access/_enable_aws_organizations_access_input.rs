@@ -5,16 +5,14 @@
 pub struct EnableAwsOrganizationsAccessInput {}
 impl EnableAwsOrganizationsAccessInput {
     /// Creates a new builder-style object to manufacture [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
-    pub fn builder() -> crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessInputBuilder{
+    pub fn builder() -> crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessInputBuilder {
         crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAwsOrganizationsAccessInputBuilder {}
 impl EnableAwsOrganizationsAccessInputBuilder {
     /// Consumes the builder and constructs a [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
@@ -24,8 +22,6 @@ impl EnableAwsOrganizationsAccessInputBuilder {
         crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput {})
     }
 }

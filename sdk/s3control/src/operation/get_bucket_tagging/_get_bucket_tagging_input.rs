@@ -46,17 +46,14 @@ impl GetBucketTaggingInput {
 }
 impl GetBucketTaggingInput {
     /// Creates a new builder-style object to manufacture [`GetBucketTaggingInput`](crate::operation::get_bucket_tagging::GetBucketTaggingInput).
-    pub fn builder() -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingInputBuilder {
         crate::operation::get_bucket_tagging::builders::GetBucketTaggingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketTaggingInput`](crate::operation::get_bucket_tagging::GetBucketTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketTaggingInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -129,15 +126,10 @@ impl GetBucketTaggingInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketTaggingInput`](crate::operation::get_bucket_tagging::GetBucketTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_tagging::GetBucketTaggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bucket_tagging::GetBucketTaggingInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bucket_tagging::GetBucketTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_bucket_tagging::GetBucketTaggingInput {
+            account_id: self.account_id,
+            bucket: self.bucket,
+        })
     }
 }

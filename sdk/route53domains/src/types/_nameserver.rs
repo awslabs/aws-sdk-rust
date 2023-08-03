@@ -34,9 +34,7 @@ impl Nameserver {
 
 /// A builder for [`Nameserver`](crate::types::Nameserver).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NameserverBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) glue_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,10 +71,7 @@ impl NameserverBuilder {
     }
     /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
-    pub fn set_glue_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_glue_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.glue_ips = input;
         self
     }

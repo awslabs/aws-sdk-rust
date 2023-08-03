@@ -27,9 +27,7 @@ pub struct SigningProfile {
     pub platform_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The parameters that are available for use by a code signing user.</p>
     #[doc(hidden)]
-    pub signing_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of a code signing profile.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SigningProfileStatus>,
@@ -38,9 +36,7 @@ pub struct SigningProfile {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SigningProfile {
     /// <p>The name of the signing profile.</p>
@@ -60,9 +56,7 @@ impl SigningProfile {
         self.signing_material.as_ref()
     }
     /// <p>The validity period for a signing job created using this signing profile.</p>
-    pub fn signature_validity_period(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SignatureValidityPeriod> {
+    pub fn signature_validity_period(&self) -> ::std::option::Option<&crate::types::SignatureValidityPeriod> {
         self.signature_validity_period.as_ref()
     }
     /// <p>The ID of a platform that is available for use by a signing profile.</p>
@@ -74,11 +68,7 @@ impl SigningProfile {
         self.platform_display_name.as_deref()
     }
     /// <p>The parameters that are available for use by a code signing user.</p>
-    pub fn signing_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn signing_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.signing_parameters.as_ref()
     }
     /// <p>The status of a code signing profile.</p>
@@ -90,11 +80,7 @@ impl SigningProfile {
         self.arn.as_deref()
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -107,26 +93,19 @@ impl SigningProfile {
 
 /// A builder for [`SigningProfile`](crate::types::SigningProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningProfileBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) signing_material: ::std::option::Option<crate::types::SigningMaterial>,
-    pub(crate) signature_validity_period:
-        ::std::option::Option<crate::types::SignatureValidityPeriod>,
+    pub(crate) signature_validity_period: ::std::option::Option<crate::types::SignatureValidityPeriod>,
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
     pub(crate) platform_display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) signing_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::SigningProfileStatus>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SigningProfileBuilder {
     /// <p>The name of the signing profile.</p>
@@ -144,18 +123,12 @@ impl SigningProfileBuilder {
         &self.profile_name
     }
     /// <p>The version of a signing profile.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of a signing profile.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -164,18 +137,12 @@ impl SigningProfileBuilder {
         &self.profile_version
     }
     /// <p>The ARN of a signing profile, including the profile version.</p>
-    pub fn profile_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a signing profile, including the profile version.</p>
-    pub fn set_profile_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version_arn = input;
         self
     }
@@ -189,10 +156,7 @@ impl SigningProfileBuilder {
         self
     }
     /// <p>The ACM certificate that is available for use by a signing profile.</p>
-    pub fn set_signing_material(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningMaterial>,
-    ) -> Self {
+    pub fn set_signing_material(mut self, input: ::std::option::Option<crate::types::SigningMaterial>) -> Self {
         self.signing_material = input;
         self
     }
@@ -201,25 +165,17 @@ impl SigningProfileBuilder {
         &self.signing_material
     }
     /// <p>The validity period for a signing job created using this signing profile.</p>
-    pub fn signature_validity_period(
-        mut self,
-        input: crate::types::SignatureValidityPeriod,
-    ) -> Self {
+    pub fn signature_validity_period(mut self, input: crate::types::SignatureValidityPeriod) -> Self {
         self.signature_validity_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The validity period for a signing job created using this signing profile.</p>
-    pub fn set_signature_validity_period(
-        mut self,
-        input: ::std::option::Option<crate::types::SignatureValidityPeriod>,
-    ) -> Self {
+    pub fn set_signature_validity_period(mut self, input: ::std::option::Option<crate::types::SignatureValidityPeriod>) -> Self {
         self.signature_validity_period = input;
         self
     }
     /// <p>The validity period for a signing job created using this signing profile.</p>
-    pub fn get_signature_validity_period(
-        &self,
-    ) -> &::std::option::Option<crate::types::SignatureValidityPeriod> {
+    pub fn get_signature_validity_period(&self) -> &::std::option::Option<crate::types::SignatureValidityPeriod> {
         &self.signature_validity_period
     }
     /// <p>The ID of a platform that is available for use by a signing profile.</p>
@@ -237,18 +193,12 @@ impl SigningProfileBuilder {
         &self.platform_id
     }
     /// <p>The name of the signing platform.</p>
-    pub fn platform_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the signing platform.</p>
-    pub fn set_platform_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_display_name = input;
         self
     }
@@ -274,19 +224,13 @@ impl SigningProfileBuilder {
     /// <p>The parameters that are available for use by a code signing user.</p>
     pub fn set_signing_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.signing_parameters = input;
         self
     }
     /// <p>The parameters that are available for use by a code signing user.</p>
-    pub fn get_signing_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_signing_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.signing_parameters
     }
     /// <p>The status of a code signing profile.</p>
@@ -295,10 +239,7 @@ impl SigningProfileBuilder {
         self
     }
     /// <p>The status of a code signing profile.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningProfileStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SigningProfileStatus>) -> Self {
         self.status = input;
         self
     }
@@ -325,32 +266,19 @@ impl SigningProfileBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SigningProfile`](crate::types::SigningProfile).

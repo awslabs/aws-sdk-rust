@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`termination_protected(bool)`](crate::operation::set_termination_protection::builders::SetTerminationProtectionFluentBuilder::termination_protected) / [`set_termination_protected(Option<bool>)`](crate::operation::set_termination_protection::builders::SetTerminationProtectionFluentBuilder::set_termination_protected): <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     /// - On success, responds with [`SetTerminationProtectionOutput`](crate::operation::set_termination_protection::SetTerminationProtectionOutput)
     /// - On failure, responds with [`SdkError<SetTerminationProtectionError>`](crate::operation::set_termination_protection::SetTerminationProtectionError)
-    pub fn set_termination_protection(
-        &self,
-    ) -> crate::operation::set_termination_protection::builders::SetTerminationProtectionFluentBuilder
-    {
+    pub fn set_termination_protection(&self) -> crate::operation::set_termination_protection::builders::SetTerminationProtectionFluentBuilder {
         crate::operation::set_termination_protection::builders::SetTerminationProtectionFluentBuilder::new(self.handle.clone())
     }
 }

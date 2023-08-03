@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::create_stream::CreateStreamOutput::description): <p>A description of the stream.</p>
     ///   - [`stream_version(Option<i32>)`](crate::operation::create_stream::CreateStreamOutput::stream_version): <p>The version of the stream.</p>
     /// - On failure, responds with [`SdkError<CreateStreamError>`](crate::operation::create_stream::CreateStreamError)
-    pub fn create_stream(
-        &self,
-    ) -> crate::operation::create_stream::builders::CreateStreamFluentBuilder {
-        crate::operation::create_stream::builders::CreateStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_stream(&self) -> crate::operation::create_stream::builders::CreateStreamFluentBuilder {
+        crate::operation::create_stream::builders::CreateStreamFluentBuilder::new(self.handle.clone())
     }
 }

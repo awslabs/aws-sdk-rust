@@ -22,35 +22,26 @@ impl CompleteMigrationInput {
 }
 impl CompleteMigrationInput {
     /// Creates a new builder-style object to manufacture [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
-    pub fn builder() -> crate::operation::complete_migration::builders::CompleteMigrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_migration::builders::CompleteMigrationInputBuilder {
         crate::operation::complete_migration::builders::CompleteMigrationInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMigrationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl CompleteMigrationInputBuilder {
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl CompleteMigrationInputBuilder {
     /// Consumes the builder and constructs a [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_migration::CompleteMigrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::complete_migration::CompleteMigrationInput {
-                replication_group_id: self.replication_group_id,
-                force: self.force.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::complete_migration::CompleteMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::complete_migration::CompleteMigrationInput {
+            replication_group_id: self.replication_group_id,
+            force: self.force.unwrap_or_default(),
+        })
     }
 }

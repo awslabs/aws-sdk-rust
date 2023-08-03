@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`project_policies(Option<Vec<ProjectPolicy>>)`](crate::operation::list_project_policies::ListProjectPoliciesOutput::project_policies): <p>A list of project policies attached to the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_project_policies::ListProjectPoliciesOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
     /// - On failure, responds with [`SdkError<ListProjectPoliciesError>`](crate::operation::list_project_policies::ListProjectPoliciesError)
-    pub fn list_project_policies(
-        &self,
-    ) -> crate::operation::list_project_policies::builders::ListProjectPoliciesFluentBuilder {
-        crate::operation::list_project_policies::builders::ListProjectPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_project_policies(&self) -> crate::operation::list_project_policies::builders::ListProjectPoliciesFluentBuilder {
+        crate::operation::list_project_policies::builders::ListProjectPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

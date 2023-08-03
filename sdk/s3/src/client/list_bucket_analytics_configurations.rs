@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_continuation_token(Option<String>)`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput::next_continuation_token): <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     ///   - [`analytics_configuration_list(Option<Vec<AnalyticsConfiguration>>)`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput::analytics_configuration_list): <p>The list of analytics configurations for a bucket.</p>
     /// - On failure, responds with [`SdkError<ListBucketAnalyticsConfigurationsError>`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsError)
-    pub fn list_bucket_analytics_configurations(&self) -> crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsFluentBuilder{
+    pub fn list_bucket_analytics_configurations(
+        &self,
+    ) -> crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsFluentBuilder {
         crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

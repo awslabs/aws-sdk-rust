@@ -15,33 +15,25 @@ impl DeleteRecommenderConfigurationInput {
 }
 impl DeleteRecommenderConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommenderConfigurationInput`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput).
-    pub fn builder() -> crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder {
         crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecommenderConfigurationInput`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecommenderConfigurationInputBuilder {
     pub(crate) recommender_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecommenderConfigurationInputBuilder {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_recommender_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommender_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl DeleteRecommenderConfigurationInputBuilder {
         crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput {
-                recommender_id: self.recommender_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput {
+            recommender_id: self.recommender_id,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl IndexDocumentsInput {
 
 /// A builder for [`IndexDocumentsInput`](crate::operation::index_documents::IndexDocumentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexDocumentsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl IndexDocumentsInputBuilder {
     /// Consumes the builder and constructs a [`IndexDocumentsInput`](crate::operation::index_documents::IndexDocumentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::index_documents::IndexDocumentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::index_documents::IndexDocumentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::index_documents::IndexDocumentsInput {
             domain_name: self.domain_name,
         })

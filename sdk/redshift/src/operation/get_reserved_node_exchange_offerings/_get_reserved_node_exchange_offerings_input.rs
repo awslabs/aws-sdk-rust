@@ -30,16 +30,14 @@ impl GetReservedNodeExchangeOfferingsInput {
 }
 impl GetReservedNodeExchangeOfferingsInput {
     /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
-    pub fn builder() -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder {
         crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservedNodeExchangeOfferingsInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -47,18 +45,12 @@ pub struct GetReservedNodeExchangeOfferingsInputBuilder {
 }
 impl GetReservedNodeExchangeOfferingsInputBuilder {
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -95,16 +87,18 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput {
-                reserved_node_id: self.reserved_node_id
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                reserved_node_id: self.reserved_node_id,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

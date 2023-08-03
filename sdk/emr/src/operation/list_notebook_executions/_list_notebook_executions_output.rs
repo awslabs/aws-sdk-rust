@@ -5,8 +5,7 @@
 pub struct ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
     #[doc(hidden)]
-    pub notebook_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
+    pub notebook_executions: ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListNotebookExecutionsOutput {
 }
 impl ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
-    pub fn notebook_executions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookExecutionSummary]> {
+    pub fn notebook_executions(&self) -> ::std::option::Option<&[crate::types::NotebookExecutionSummary]> {
         self.notebook_executions.as_deref()
     }
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListNotebookExecutionsOutput {
 }
 impl ListNotebookExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotebookExecutionsOutput`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsOutputBuilder {
         crate::operation::list_notebook_executions::builders::ListNotebookExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotebookExecutionsOutput`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotebookExecutionsOutputBuilder {
-    pub(crate) notebook_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
+    pub(crate) notebook_executions: ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListNotebookExecutionsOutputBuilder {
         self
     }
     /// <p>A list of notebook executions.</p>
-    pub fn set_notebook_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
-    ) -> Self {
+    pub fn set_notebook_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>) -> Self {
         self.notebook_executions = input;
         self
     }
     /// <p>A list of notebook executions.</p>
-    pub fn get_notebook_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>> {
+    pub fn get_notebook_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>> {
         &self.notebook_executions
     }
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>

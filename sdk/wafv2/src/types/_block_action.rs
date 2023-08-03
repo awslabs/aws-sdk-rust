@@ -26,9 +26,7 @@ impl BlockAction {
 
 /// A builder for [`BlockAction`](crate::types::BlockAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockActionBuilder {
     pub(crate) custom_response: ::std::option::Option<crate::types::CustomResponse>,
 }
@@ -41,10 +39,7 @@ impl BlockActionBuilder {
     }
     /// <p>Defines a custom response for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_custom_response(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomResponse>,
-    ) -> Self {
+    pub fn set_custom_response(mut self, input: ::std::option::Option<crate::types::CustomResponse>) -> Self {
         self.custom_response = input;
         self
     }

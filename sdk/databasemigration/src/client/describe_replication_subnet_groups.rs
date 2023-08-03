@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`replication_subnet_groups(Option<Vec<ReplicationSubnetGroup>>)`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput::replication_subnet_groups): <p>A description of the replication subnet groups.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationSubnetGroupsError>`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsError)
-    pub fn describe_replication_subnet_groups(&self) -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsFluentBuilder{
+    pub fn describe_replication_subnet_groups(
+        &self,
+    ) -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsFluentBuilder {
         crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

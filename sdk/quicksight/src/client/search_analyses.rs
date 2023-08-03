@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::search_analyses::SearchAnalysesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::search_analyses::SearchAnalysesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<SearchAnalysesError>`](crate::operation::search_analyses::SearchAnalysesError)
-    pub fn search_analyses(
-        &self,
-    ) -> crate::operation::search_analyses::builders::SearchAnalysesFluentBuilder {
-        crate::operation::search_analyses::builders::SearchAnalysesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_analyses(&self) -> crate::operation::search_analyses::builders::SearchAnalysesFluentBuilder {
+        crate::operation::search_analyses::builders::SearchAnalysesFluentBuilder::new(self.handle.clone())
     }
 }

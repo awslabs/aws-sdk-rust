@@ -2,8 +2,7 @@
 pub fn ser_list_objects_v2_headers(
     input: &crate::operation::list_objects_v2::ListObjectsV2Input,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.request_payer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_list_objects_v2_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -27,10 +23,7 @@ pub fn ser_list_objects_v2_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -44,10 +37,7 @@ pub fn ser_list_objects_v2_headers(
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_http::operation::error::BuildError::invalid_field(
                         "optional_object_attributes",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
+                        format!("`{}` cannot be used as a header value: {}", &header_value, err),
                     )
                 })?;
                 builder = builder.header("x-amz-optional-object-attributes", header_value);
@@ -62,26 +52,16 @@ pub fn de_list_objects_v2_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_objects_v2::ListObjectsV2Output,
-    crate::operation::list_objects_v2::ListObjectsV2Error,
-> {
+) -> std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Output, crate::operation::list_objects_v2::ListObjectsV2Error> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled(generic))
-        }
+        None => return Err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -91,11 +71,8 @@ pub fn de_list_objects_v2_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NoSuchBucketBuilder::default();
-                output = crate::protocol_serde::shape_no_such_bucket::de_no_such_bucket_xml_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
+                output = crate::protocol_serde::shape_no_such_bucket::de_no_such_bucket_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -113,36 +90,19 @@ pub fn de_list_objects_v2_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_objects_v2::ListObjectsV2Output,
-    crate::operation::list_objects_v2::ListObjectsV2Error,
-> {
+) -> std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Output, crate::operation::list_objects_v2::ListObjectsV2Error> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder::default();
-        output = crate::protocol_serde::shape_list_objects_v2::de_list_objects_v2(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
+        let mut output = crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder::default();
+        output = crate::protocol_serde::shape_list_objects_v2::de_list_objects_v2(_response_body, output)
+            .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
         output = output.set_request_charged(
-            crate::protocol_serde::shape_list_objects_v2_output::de_request_charged_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::list_objects_v2::ListObjectsV2Error::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
+            crate::protocol_serde::shape_list_objects_v2_output::de_request_charged_header(_response_headers).map_err(|_| {
+                crate::operation::list_objects_v2::ListObjectsV2Error::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged")
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -151,10 +111,7 @@ pub fn de_list_objects_v2_http_response_with_props(
 pub fn de_list_objects_v2(
     inp: &[u8],
     mut builder: crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder,
-) -> Result<
-    crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -162,11 +119,10 @@ pub fn de_list_objects_v2(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListBucketResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected ListBucketResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected ListBucketResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

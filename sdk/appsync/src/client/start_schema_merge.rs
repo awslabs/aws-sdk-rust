@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartSchemaMergeOutput`](crate::operation::start_schema_merge::StartSchemaMergeOutput) with field(s):
     ///   - [`source_api_association_status(Option<SourceApiAssociationStatus>)`](crate::operation::start_schema_merge::StartSchemaMergeOutput::source_api_association_status): <p>The state of the source API association.</p>
     /// - On failure, responds with [`SdkError<StartSchemaMergeError>`](crate::operation::start_schema_merge::StartSchemaMergeError)
-    pub fn start_schema_merge(
-        &self,
-    ) -> crate::operation::start_schema_merge::builders::StartSchemaMergeFluentBuilder {
-        crate::operation::start_schema_merge::builders::StartSchemaMergeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_schema_merge(&self) -> crate::operation::start_schema_merge::builders::StartSchemaMergeFluentBuilder {
+        crate::operation::start_schema_merge::builders::StartSchemaMergeFluentBuilder::new(self.handle.clone())
     }
 }

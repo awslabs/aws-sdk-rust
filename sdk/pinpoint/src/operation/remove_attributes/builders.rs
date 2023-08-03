@@ -10,10 +10,7 @@ impl RemoveAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes::RemoveAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes::RemoveAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes::RemoveAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_attributes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RemoveAttributesFluentBuilder {
         }
     }
     /// Access the RemoveAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RemoveAttributesFluentBuilder {
             crate::operation::remove_attributes::RemoveAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes::RemoveAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes::RemoveAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RemoveAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RemoveAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes::RemoveAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes::RemoveAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes::RemoveAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RemoveAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes::RemoveAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes::RemoveAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes::RemoveAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl RemoveAttributesFluentBuilder {
             crate::operation::remove_attributes::RemoveAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes::RemoveAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes::RemoveAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl RemoveAttributesFluentBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
-    pub fn attribute_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_type(input.into());
         self
     }
@@ -161,10 +136,7 @@ impl RemoveAttributesFluentBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_type(input);
         self
     }
@@ -178,25 +150,17 @@ impl RemoveAttributesFluentBuilder {
         self.inner.get_attribute_type()
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn update_attributes_request(
-        mut self,
-        input: crate::types::UpdateAttributesRequest,
-    ) -> Self {
+    pub fn update_attributes_request(mut self, input: crate::types::UpdateAttributesRequest) -> Self {
         self.inner = self.inner.update_attributes_request(input);
         self
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn set_update_attributes_request(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAttributesRequest>,
-    ) -> Self {
+    pub fn set_update_attributes_request(mut self, input: ::std::option::Option<crate::types::UpdateAttributesRequest>) -> Self {
         self.inner = self.inner.set_update_attributes_request(input);
         self
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
-    pub fn get_update_attributes_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateAttributesRequest> {
+    pub fn get_update_attributes_request(&self) -> &::std::option::Option<crate::types::UpdateAttributesRequest> {
         self.inner.get_update_attributes_request()
     }
 }

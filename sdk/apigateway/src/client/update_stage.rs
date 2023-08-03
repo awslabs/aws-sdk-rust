@@ -25,9 +25,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::update_stage::UpdateStageOutput::created_date): <p>The timestamp when the stage was created.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::update_stage::UpdateStageOutput::last_updated_date): <p>The timestamp when the stage last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateStageError>`](crate::operation::update_stage::UpdateStageError)
-    pub fn update_stage(
-        &self,
-    ) -> crate::operation::update_stage::builders::UpdateStageFluentBuilder {
+    pub fn update_stage(&self) -> crate::operation::update_stage::builders::UpdateStageFluentBuilder {
         crate::operation::update_stage::builders::UpdateStageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`fast_launch_images(Option<Vec<DescribeFastLaunchImagesSuccessItem>>)`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput::fast_launch_images): <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeFastLaunchImagesError>`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError)
-    pub fn describe_fast_launch_images(&self) -> crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesFluentBuilder{
+    pub fn describe_fast_launch_images(&self) -> crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesFluentBuilder {
         crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesFluentBuilder::new(self.handle.clone())
     }
 }

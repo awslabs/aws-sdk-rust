@@ -37,9 +37,7 @@ impl BatchStartRecommendationsErrorEntry {
 
 /// A builder for [`BatchStartRecommendationsErrorEntry`](crate::types::BatchStartRecommendationsErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartRecommendationsErrorEntryBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

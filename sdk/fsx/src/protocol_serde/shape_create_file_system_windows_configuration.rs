@@ -8,10 +8,11 @@ pub fn ser_create_file_system_windows_configuration(
     }
     if let Some(var_2) = &input.self_managed_active_directory_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("SelfManagedActiveDirectoryConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_self_managed_active_directory_configuration::ser_self_managed_active_directory_configuration(&mut object_3, var_2)?;
+        let mut object_3 = object.key("SelfManagedActiveDirectoryConfiguration").start_object();
+        crate::protocol_serde::shape_self_managed_active_directory_configuration::ser_self_managed_active_directory_configuration(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     if let Some(var_4) = &input.deployment_type {
@@ -27,14 +28,10 @@ pub fn ser_create_file_system_windows_configuration(
         );
     }
     if let Some(var_7) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_7.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_7.as_str());
     }
     if let Some(var_8) = &input.daily_automatic_backup_start_time {
-        object
-            .key("DailyAutomaticBackupStartTime")
-            .string(var_8.as_str());
+        object.key("DailyAutomaticBackupStartTime").string(var_8.as_str());
     }
     if let Some(var_9) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(

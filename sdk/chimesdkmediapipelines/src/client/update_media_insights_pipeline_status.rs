@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`update_status(MediaPipelineStatusUpdate)`](crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusFluentBuilder::update_status) / [`set_update_status(Option<MediaPipelineStatusUpdate>)`](crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusFluentBuilder::set_update_status): <p>The requested status of the media insights pipeline.</p>
     /// - On success, responds with [`UpdateMediaInsightsPipelineStatusOutput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateMediaInsightsPipelineStatusError>`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError)
-    pub fn update_media_insights_pipeline_status(&self) -> crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusFluentBuilder{
+    pub fn update_media_insights_pipeline_status(
+        &self,
+    ) -> crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusFluentBuilder {
         crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusFluentBuilder::new(self.handle.clone())
     }
 }

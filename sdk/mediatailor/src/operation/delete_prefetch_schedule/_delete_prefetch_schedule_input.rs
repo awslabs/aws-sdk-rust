@@ -22,18 +22,14 @@ impl DeletePrefetchScheduleInput {
 }
 impl DeletePrefetchScheduleInput {
     /// Creates a new builder-style object to manufacture [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder {
         crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePrefetchScheduleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeletePrefetchScheduleInputBuilder {
         &self.name
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeletePrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput {
-                name: self.name,
-                playback_configuration_name: self.playback_configuration_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput {
+            name: self.name,
+            playback_configuration_name: self.playback_configuration_name,
+        })
     }
 }

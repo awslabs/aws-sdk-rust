@@ -29,16 +29,14 @@ impl ListMultipartReadSetUploadsInput {
 }
 impl ListMultipartReadSetUploadsInput {
     /// Creates a new builder-style object to manufacture [`ListMultipartReadSetUploadsInput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput).
-    pub fn builder() -> crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder{
+    pub fn builder() -> crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder {
         crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultipartReadSetUploadsInput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListMultipartReadSetUploadsInputBuilder {
 }
 impl ListMultipartReadSetUploadsInputBuilder {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListMultipartReadSetUploadsInputBuilder {
         crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput {
-                sequence_store_id: self.sequence_store_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput {
+            sequence_store_id: self.sequence_store_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

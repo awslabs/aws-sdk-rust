@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`method_integration(Option<Integration>)`](crate::operation::update_method::UpdateMethodOutput::method_integration): <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
     ///   - [`authorization_scopes(Option<Vec<String>>)`](crate::operation::update_method::UpdateMethodOutput::authorization_scopes): <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     /// - On failure, responds with [`SdkError<UpdateMethodError>`](crate::operation::update_method::UpdateMethodError)
-    pub fn update_method(
-        &self,
-    ) -> crate::operation::update_method::builders::UpdateMethodFluentBuilder {
-        crate::operation::update_method::builders::UpdateMethodFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_method(&self) -> crate::operation::update_method::builders::UpdateMethodFluentBuilder {
+        crate::operation::update_method::builders::UpdateMethodFluentBuilder::new(self.handle.clone())
     }
 }

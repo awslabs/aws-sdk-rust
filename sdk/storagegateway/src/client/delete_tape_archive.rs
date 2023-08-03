@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTapeArchiveOutput`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
     /// - On failure, responds with [`SdkError<DeleteTapeArchiveError>`](crate::operation::delete_tape_archive::DeleteTapeArchiveError)
-    pub fn delete_tape_archive(
-        &self,
-    ) -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveFluentBuilder {
-        crate::operation::delete_tape_archive::builders::DeleteTapeArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_tape_archive(&self) -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveFluentBuilder {
+        crate::operation::delete_tape_archive::builders::DeleteTapeArchiveFluentBuilder::new(self.handle.clone())
     }
 }

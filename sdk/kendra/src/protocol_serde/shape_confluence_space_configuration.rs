@@ -4,14 +4,10 @@ pub fn ser_confluence_space_configuration(
     input: &crate::types::ConfluenceSpaceConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.crawl_personal_spaces {
-        object
-            .key("CrawlPersonalSpaces")
-            .boolean(input.crawl_personal_spaces);
+        object.key("CrawlPersonalSpaces").boolean(input.crawl_personal_spaces);
     }
     if input.crawl_archived_spaces {
-        object
-            .key("CrawlArchivedSpaces")
-            .boolean(input.crawl_archived_spaces);
+        object.key("CrawlArchivedSpaces").boolean(input.crawl_archived_spaces);
     }
     if let Some(var_1) = &input.include_spaces {
         let mut array_2 = object.key("IncludeSpaces").start_array();
@@ -37,7 +33,10 @@ pub fn ser_confluence_space_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_confluence_space_to_index_field_mapping::ser_confluence_space_to_index_field_mapping(&mut object_10, item_9)?;
+                crate::protocol_serde::shape_confluence_space_to_index_field_mapping::ser_confluence_space_to_index_field_mapping(
+                    &mut object_10,
+                    item_9,
+                )?;
                 object_10.finish();
             }
         }
@@ -48,76 +47,52 @@ pub fn ser_confluence_space_configuration(
 
 pub(crate) fn de_confluence_space_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ConfluenceSpaceConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ConfluenceSpaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::ConfluenceSpaceConfigurationBuilder::default();
+            let mut builder = crate::types::builders::ConfluenceSpaceConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CrawlPersonalSpaces" => {
-                                builder = builder.set_crawl_personal_spaces(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "CrawlArchivedSpaces" => {
-                                builder = builder.set_crawl_archived_spaces(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "IncludeSpaces" => {
-                                builder = builder.set_include_spaces(
-                                    crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(tokens)?
-                                );
-                            }
-                            "ExcludeSpaces" => {
-                                builder = builder.set_exclude_spaces(
-                                    crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(tokens)?
-                                );
-                            }
-                            "SpaceFieldMappings" => {
-                                builder = builder.set_space_field_mappings(
-                                    crate::protocol_serde::shape_confluence_space_field_mappings_list::de_confluence_space_field_mappings_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CrawlPersonalSpaces" => {
+                            builder = builder.set_crawl_personal_spaces(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
-                    }
+                        "CrawlArchivedSpaces" => {
+                            builder = builder.set_crawl_archived_spaces(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IncludeSpaces" => {
+                            builder =
+                                builder.set_include_spaces(crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(tokens)?);
+                        }
+                        "ExcludeSpaces" => {
+                            builder =
+                                builder.set_exclude_spaces(crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(tokens)?);
+                        }
+                        "SpaceFieldMappings" => {
+                            builder = builder.set_space_field_mappings(
+                                crate::protocol_serde::shape_confluence_space_field_mappings_list::de_confluence_space_field_mappings_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

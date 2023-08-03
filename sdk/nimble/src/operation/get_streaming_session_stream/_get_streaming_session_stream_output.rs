@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStreamingSessionStreamOutput {
 }
 impl GetStreamingSessionStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamingSessionStreamOutput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput).
-    pub fn builder() -> crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamOutputBuilder{
+    pub fn builder() -> crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamOutputBuilder {
         crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingSessionStreamOutput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingSessionStreamOutputBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::StreamingSessionStream>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetStreamingSessionStreamOutputBuilder {
         self
     }
     /// <p>The stream.</p>
-    pub fn set_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSessionStream>,
-    ) -> Self {
+    pub fn set_stream(mut self, input: ::std::option::Option<crate::types::StreamingSessionStream>) -> Self {
         self.stream = input;
         self
     }
@@ -63,9 +58,7 @@ impl GetStreamingSessionStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetStreamingSessionStreamOutput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput {
+    pub fn build(self) -> crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput {
         crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput {
             stream: self.stream,
             _request_id: self._request_id,

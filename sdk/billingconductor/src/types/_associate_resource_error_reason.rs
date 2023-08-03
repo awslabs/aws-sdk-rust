@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssociateResourceErrorReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,13 +63,9 @@ impl ::std::convert::From<&str> for AssociateResourceErrorReason {
             "ILLEGAL_CUSTOMLINEITEM" => AssociateResourceErrorReason::IllegalCustomlineitem,
             "INTERNAL_SERVER_EXCEPTION" => AssociateResourceErrorReason::InternalServerException,
             "INVALID_ARN" => AssociateResourceErrorReason::InvalidArn,
-            "INVALID_BILLING_PERIOD_RANGE" => {
-                AssociateResourceErrorReason::InvalidBillingPeriodRange
-            }
+            "INVALID_BILLING_PERIOD_RANGE" => AssociateResourceErrorReason::InvalidBillingPeriodRange,
             "SERVICE_LIMIT_EXCEEDED" => AssociateResourceErrorReason::ServiceLimitExceeded,
-            other => AssociateResourceErrorReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AssociateResourceErrorReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,9 +83,7 @@ impl AssociateResourceErrorReason {
             AssociateResourceErrorReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
             AssociateResourceErrorReason::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
             AssociateResourceErrorReason::InvalidArn => "INVALID_ARN",
-            AssociateResourceErrorReason::InvalidBillingPeriodRange => {
-                "INVALID_BILLING_PERIOD_RANGE"
-            }
+            AssociateResourceErrorReason::InvalidBillingPeriodRange => "INVALID_BILLING_PERIOD_RANGE",
             AssociateResourceErrorReason::ServiceLimitExceeded => "SERVICE_LIMIT_EXCEEDED",
             AssociateResourceErrorReason::Unknown(value) => value.as_str(),
         }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVpnGatewayOutput`](crate::operation::create_vpn_gateway::CreateVpnGatewayOutput) with field(s):
     ///   - [`vpn_gateway(Option<VpnGateway>)`](crate::operation::create_vpn_gateway::CreateVpnGatewayOutput::vpn_gateway): <p>Information about the virtual private gateway.</p>
     /// - On failure, responds with [`SdkError<CreateVpnGatewayError>`](crate::operation::create_vpn_gateway::CreateVpnGatewayError)
-    pub fn create_vpn_gateway(
-        &self,
-    ) -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayFluentBuilder {
-        crate::operation::create_vpn_gateway::builders::CreateVpnGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vpn_gateway(&self) -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayFluentBuilder {
+        crate::operation::create_vpn_gateway::builders::CreateVpnGatewayFluentBuilder::new(self.handle.clone())
     }
 }

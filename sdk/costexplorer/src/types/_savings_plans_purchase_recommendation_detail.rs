@@ -27,8 +27,7 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
     pub estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
     #[doc(hidden)]
-    pub estimated_on_demand_cost_with_current_commitment:
-        ::std::option::Option<::std::string::String>,
+    pub estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
     #[doc(hidden)]
     pub estimated_savings_amount: ::std::option::Option<::std::string::String>,
@@ -59,9 +58,7 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
 }
 impl SavingsPlansPurchaseRecommendationDetail {
     /// <p>Details for your recommended Savings Plans.</p>
-    pub fn savings_plans_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SavingsPlansDetails> {
+    pub fn savings_plans_details(&self) -> ::std::option::Option<&crate::types::SavingsPlansDetails> {
         self.savings_plans_details.as_ref()
     }
     /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
@@ -90,8 +87,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
     }
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
     pub fn estimated_on_demand_cost_with_current_commitment(&self) -> ::std::option::Option<&str> {
-        self.estimated_on_demand_cost_with_current_commitment
-            .as_deref()
+        self.estimated_on_demand_cost_with_current_commitment.as_deref()
     }
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
     pub fn estimated_savings_amount(&self) -> ::std::option::Option<&str> {
@@ -139,9 +135,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
 
 /// A builder for [`SavingsPlansPurchaseRecommendationDetail`](crate::types::SavingsPlansPurchaseRecommendationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationDetailBuilder {
     pub(crate) savings_plans_details: ::std::option::Option<crate::types::SavingsPlansDetails>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -150,8 +144,7 @@ pub struct SavingsPlansPurchaseRecommendationDetailBuilder {
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_sp_cost: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
-    pub(crate) estimated_on_demand_cost_with_current_commitment:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_savings_amount: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_savings_percentage: ::std::option::Option<::std::string::String>,
     pub(crate) hourly_commitment_to_purchase: ::std::option::Option<::std::string::String>,
@@ -169,17 +162,12 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         self
     }
     /// <p>Details for your recommended Savings Plans.</p>
-    pub fn set_savings_plans_details(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlansDetails>,
-    ) -> Self {
+    pub fn set_savings_plans_details(mut self, input: ::std::option::Option<crate::types::SavingsPlansDetails>) -> Self {
         self.savings_plans_details = input;
         self
     }
     /// <p>Details for your recommended Savings Plans.</p>
-    pub fn get_savings_plans_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsPlansDetails> {
+    pub fn get_savings_plans_details(&self) -> &::std::option::Option<crate::types::SavingsPlansDetails> {
         &self.savings_plans_details
     }
     /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
@@ -211,18 +199,12 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         &self.upfront_cost
     }
     /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
-    pub fn estimated_roi(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_roi(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_roi = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
-    pub fn set_estimated_roi(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_roi(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_roi = input;
         self
     }
@@ -231,18 +213,12 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         &self.estimated_roi
     }
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -251,18 +227,12 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         &self.currency_code
     }
     /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
-    pub fn estimated_sp_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_sp_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_sp_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
-    pub fn set_estimated_sp_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_sp_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_sp_cost = input;
         self
     }
@@ -271,18 +241,12 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         &self.estimated_sp_cost
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
-    pub fn estimated_on_demand_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_on_demand_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_on_demand_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
-    pub fn set_estimated_on_demand_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_on_demand_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_on_demand_cost = input;
         self
     }
@@ -291,41 +255,26 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         &self.estimated_on_demand_cost
     }
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-    pub fn estimated_on_demand_cost_with_current_commitment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.estimated_on_demand_cost_with_current_commitment =
-            ::std::option::Option::Some(input.into());
+    pub fn estimated_on_demand_cost_with_current_commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.estimated_on_demand_cost_with_current_commitment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-    pub fn set_estimated_on_demand_cost_with_current_commitment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_on_demand_cost_with_current_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_on_demand_cost_with_current_commitment = input;
         self
     }
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-    pub fn get_estimated_on_demand_cost_with_current_commitment(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_on_demand_cost_with_current_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_on_demand_cost_with_current_commitment
     }
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
-    pub fn estimated_savings_amount(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_savings_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_savings_amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
-    pub fn set_estimated_savings_amount(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_savings_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_savings_amount = input;
         self
     }
@@ -334,172 +283,110 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         &self.estimated_savings_amount
     }
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-    pub fn estimated_savings_percentage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_savings_percentage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_savings_percentage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-    pub fn set_estimated_savings_percentage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_savings_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_savings_percentage = input;
         self
     }
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-    pub fn get_estimated_savings_percentage(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_savings_percentage(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_savings_percentage
     }
     /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-    pub fn hourly_commitment_to_purchase(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hourly_commitment_to_purchase(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hourly_commitment_to_purchase = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-    pub fn set_hourly_commitment_to_purchase(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hourly_commitment_to_purchase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hourly_commitment_to_purchase = input;
         self
     }
     /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-    pub fn get_hourly_commitment_to_purchase(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hourly_commitment_to_purchase(&self) -> &::std::option::Option<::std::string::String> {
         &self.hourly_commitment_to_purchase
     }
     /// <p>The estimated utilization of the recommended Savings Plans.</p>
-    pub fn estimated_average_utilization(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_average_utilization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_average_utilization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated utilization of the recommended Savings Plans.</p>
-    pub fn set_estimated_average_utilization(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_average_utilization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_average_utilization = input;
         self
     }
     /// <p>The estimated utilization of the recommended Savings Plans.</p>
-    pub fn get_estimated_average_utilization(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_average_utilization(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_average_utilization
     }
     /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-    pub fn estimated_monthly_savings_amount(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_savings_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_savings_amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-    pub fn set_estimated_monthly_savings_amount(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_savings_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_savings_amount = input;
         self
     }
     /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-    pub fn get_estimated_monthly_savings_amount(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_monthly_savings_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_monthly_savings_amount
     }
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn current_minimum_hourly_on_demand_spend(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_minimum_hourly_on_demand_spend(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_minimum_hourly_on_demand_spend = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn set_current_minimum_hourly_on_demand_spend(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_minimum_hourly_on_demand_spend(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_minimum_hourly_on_demand_spend = input;
         self
     }
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn get_current_minimum_hourly_on_demand_spend(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_current_minimum_hourly_on_demand_spend(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_minimum_hourly_on_demand_spend
     }
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn current_maximum_hourly_on_demand_spend(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_maximum_hourly_on_demand_spend(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_maximum_hourly_on_demand_spend = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn set_current_maximum_hourly_on_demand_spend(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_maximum_hourly_on_demand_spend(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_maximum_hourly_on_demand_spend = input;
         self
     }
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn get_current_maximum_hourly_on_demand_spend(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_current_maximum_hourly_on_demand_spend(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_maximum_hourly_on_demand_spend
     }
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn current_average_hourly_on_demand_spend(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_average_hourly_on_demand_spend(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_average_hourly_on_demand_spend = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn set_current_average_hourly_on_demand_spend(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_average_hourly_on_demand_spend(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_average_hourly_on_demand_spend = input;
         self
     }
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn get_current_average_hourly_on_demand_spend(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_current_average_hourly_on_demand_spend(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_average_hourly_on_demand_spend
     }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    pub fn recommendation_detail_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_detail_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_detail_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    pub fn set_recommendation_detail_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_detail_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_detail_id = input;
         self
     }
@@ -517,8 +404,7 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
             currency_code: self.currency_code,
             estimated_sp_cost: self.estimated_sp_cost,
             estimated_on_demand_cost: self.estimated_on_demand_cost,
-            estimated_on_demand_cost_with_current_commitment: self
-                .estimated_on_demand_cost_with_current_commitment,
+            estimated_on_demand_cost_with_current_commitment: self.estimated_on_demand_cost_with_current_commitment,
             estimated_savings_amount: self.estimated_savings_amount,
             estimated_savings_percentage: self.estimated_savings_percentage,
             hourly_commitment_to_purchase: self.hourly_commitment_to_purchase,

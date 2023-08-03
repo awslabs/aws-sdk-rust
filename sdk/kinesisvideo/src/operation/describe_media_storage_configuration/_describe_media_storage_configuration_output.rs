@@ -10,9 +10,7 @@ pub struct DescribeMediaStorageConfigurationOutput {
 }
 impl DescribeMediaStorageConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MediaStorageConfiguration> {
+    pub fn media_storage_configuration(&self) -> ::std::option::Option<&crate::types::MediaStorageConfiguration> {
         self.media_storage_configuration.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeMediaStorageConfigurationOutp
 }
 impl DescribeMediaStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationOutputBuilder {
         crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMediaStorageConfigurationOutputBuilder {
-    pub(crate) media_storage_configuration:
-        ::std::option::Option<crate::types::MediaStorageConfiguration>,
+    pub(crate) media_storage_configuration: ::std::option::Option<crate::types::MediaStorageConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeMediaStorageConfigurationOutputBuilder {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        mut self,
-        input: crate::types::MediaStorageConfiguration,
-    ) -> Self {
+    pub fn media_storage_configuration(mut self, input: crate::types::MediaStorageConfiguration) -> Self {
         self.media_storage_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn set_media_storage_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStorageConfiguration>,
-    ) -> Self {
+    pub fn set_media_storage_configuration(mut self, input: ::std::option::Option<crate::types::MediaStorageConfiguration>) -> Self {
         self.media_storage_configuration = input;
         self
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn get_media_storage_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
+    pub fn get_media_storage_configuration(&self) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
         &self.media_storage_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,9 @@ impl DescribeMediaStorageConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput {
         crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput {
-            media_storage_configuration: self.media_storage_configuration
-            ,
+            media_storage_configuration: self.media_storage_configuration,
             _request_id: self._request_id,
         }
     }

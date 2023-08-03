@@ -10,9 +10,7 @@ pub fn ser_associate_transit_gateway_connect_peer_input(
         object.key("LinkId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.transit_gateway_connect_peer_arn {
-        object
-            .key("TransitGatewayConnectPeerArn")
-            .string(var_3.as_str());
+        object.key("TransitGatewayConnectPeerArn").string(var_3.as_str());
     }
     Ok(())
 }

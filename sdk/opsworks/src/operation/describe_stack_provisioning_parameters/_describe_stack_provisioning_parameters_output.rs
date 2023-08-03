@@ -9,9 +9,7 @@ pub struct DescribeStackProvisioningParametersOutput {
     pub agent_installer_url: ::std::option::Option<::std::string::String>,
     /// <p>An embedded object that contains the provisioning parameters.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeStackProvisioningParametersOutput {
@@ -20,11 +18,7 @@ impl DescribeStackProvisioningParametersOutput {
         self.agent_installer_url.as_deref()
     }
     /// <p>An embedded object that contains the provisioning parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -35,37 +29,27 @@ impl ::aws_http::request_id::RequestId for DescribeStackProvisioningParametersOu
 }
 impl DescribeStackProvisioningParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackProvisioningParametersOutput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput).
-    pub fn builder() -> crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersOutputBuilder {
         crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackProvisioningParametersOutput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackProvisioningParametersOutputBuilder {
     pub(crate) agent_installer_url: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeStackProvisioningParametersOutputBuilder {
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
-    pub fn agent_installer_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_installer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_installer_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
-    pub fn set_agent_installer_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_installer_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_installer_url = input;
         self
     }
@@ -78,32 +62,19 @@ impl DescribeStackProvisioningParametersOutputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>An embedded object that contains the provisioning parameters.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An embedded object that contains the provisioning parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>An embedded object that contains the provisioning parameters.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -116,12 +87,10 @@ impl DescribeStackProvisioningParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStackProvisioningParametersOutput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput).
-    pub fn build(self) -> crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput{
+    pub fn build(self) -> crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput {
         crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput {
-            agent_installer_url: self.agent_installer_url
-            ,
-            parameters: self.parameters
-            ,
+            agent_installer_url: self.agent_installer_url,
+            parameters: self.parameters,
             _request_id: self._request_id,
         }
     }

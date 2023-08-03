@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -97,31 +91,21 @@ impl ::std::convert::From<&str> for CreateAccountFailureReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
-            "CONCURRENT_ACCOUNT_MODIFICATION" => {
-                CreateAccountFailureReason::ConcurrentAccountModification
-            }
+            "CONCURRENT_ACCOUNT_MODIFICATION" => CreateAccountFailureReason::ConcurrentAccountModification,
             "EMAIL_ALREADY_EXISTS" => CreateAccountFailureReason::EmailAlreadyExists,
             "FAILED_BUSINESS_VALIDATION" => CreateAccountFailureReason::FailedBusinessValidation,
-            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => {
-                CreateAccountFailureReason::GovcloudAccountAlreadyExists
-            }
+            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => CreateAccountFailureReason::GovcloudAccountAlreadyExists,
             "INTERNAL_FAILURE" => CreateAccountFailureReason::InternalFailure,
             "INVALID_ADDRESS" => CreateAccountFailureReason::InvalidAddress,
             "INVALID_EMAIL" => CreateAccountFailureReason::InvalidEmail,
-            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => {
-                CreateAccountFailureReason::InvalidIdentityForBusinessValidation
-            }
+            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => CreateAccountFailureReason::InvalidIdentityForBusinessValidation,
             "INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
             "MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
             "MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
             "PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
             "UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
-            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => {
-                CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported
-            }
-            other => CreateAccountFailureReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported,
+            other => CreateAccountFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -137,28 +121,20 @@ impl CreateAccountFailureReason {
     pub fn as_str(&self) -> &str {
         match self {
             CreateAccountFailureReason::AccountLimitExceeded => "ACCOUNT_LIMIT_EXCEEDED",
-            CreateAccountFailureReason::ConcurrentAccountModification => {
-                "CONCURRENT_ACCOUNT_MODIFICATION"
-            }
+            CreateAccountFailureReason::ConcurrentAccountModification => "CONCURRENT_ACCOUNT_MODIFICATION",
             CreateAccountFailureReason::EmailAlreadyExists => "EMAIL_ALREADY_EXISTS",
             CreateAccountFailureReason::FailedBusinessValidation => "FAILED_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::GovcloudAccountAlreadyExists => {
-                "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"
-            }
+            CreateAccountFailureReason::GovcloudAccountAlreadyExists => "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
             CreateAccountFailureReason::InternalFailure => "INTERNAL_FAILURE",
             CreateAccountFailureReason::InvalidAddress => "INVALID_ADDRESS",
             CreateAccountFailureReason::InvalidEmail => "INVALID_EMAIL",
-            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => {
-                "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"
-            }
+            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
             CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
             CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
             CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => {
-                "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"
-            }
+            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
             CreateAccountFailureReason::Unknown(value) => value.as_str(),
         }
     }

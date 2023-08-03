@@ -12,10 +12,7 @@ pub fn ser_framework_control(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_control_input_parameter::ser_control_input_parameter(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_control_input_parameter::ser_control_input_parameter(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -32,17 +29,9 @@ pub fn ser_framework_control(
 
 pub(crate) fn de_framework_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::FrameworkControl>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::FrameworkControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,47 +41,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ControlName" => {
-                                builder = builder.set_control_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ControlName" => {
+                            builder = builder.set_control_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ControlInputParameters" => {
-                                builder = builder.set_control_input_parameters(
-                                    crate::protocol_serde::shape_control_input_parameters::de_control_input_parameters(tokens)?
-                                );
-                            }
-                            "ControlScope" => {
-                                builder = builder.set_control_scope(
-                                    crate::protocol_serde::shape_control_scope::de_control_scope(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ControlInputParameters" => {
+                            builder = builder.set_control_input_parameters(
+                                crate::protocol_serde::shape_control_input_parameters::de_control_input_parameters(tokens)?,
+                            );
+                        }
+                        "ControlScope" => {
+                            builder = builder.set_control_scope(crate::protocol_serde::shape_control_scope::de_control_scope(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

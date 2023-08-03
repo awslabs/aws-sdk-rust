@@ -33,30 +33,24 @@ impl StartDashboardSnapshotJobInput {
         self.snapshot_job_id.as_deref()
     }
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
-    pub fn user_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnapshotUserConfiguration> {
+    pub fn user_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotUserConfiguration> {
         self.user_configuration.as_ref()
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
-    pub fn snapshot_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnapshotConfiguration> {
+    pub fn snapshot_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotConfiguration> {
         self.snapshot_configuration.as_ref()
     }
 }
 impl StartDashboardSnapshotJobInput {
     /// Creates a new builder-style object to manufacture [`StartDashboardSnapshotJobInput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobInput).
-    pub fn builder() -> crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder{
+    pub fn builder() -> crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder {
         crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDashboardSnapshotJobInput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDashboardSnapshotJobInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -66,18 +60,12 @@ pub struct StartDashboardSnapshotJobInputBuilder {
 }
 impl StartDashboardSnapshotJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -100,18 +88,12 @@ impl StartDashboardSnapshotJobInputBuilder {
         &self.dashboard_id
     }
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
-    pub fn snapshot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
-    pub fn set_snapshot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_job_id = input;
         self
     }
@@ -125,17 +107,12 @@ impl StartDashboardSnapshotJobInputBuilder {
         self
     }
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
-    pub fn set_user_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotUserConfiguration>,
-    ) -> Self {
+    pub fn set_user_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotUserConfiguration>) -> Self {
         self.user_configuration = input;
         self
     }
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
-    pub fn get_user_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
+    pub fn get_user_configuration(&self) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
         &self.user_configuration
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
@@ -144,17 +121,12 @@ impl StartDashboardSnapshotJobInputBuilder {
         self
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
-    pub fn set_snapshot_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotConfiguration>,
-    ) -> Self {
+    pub fn set_snapshot_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotConfiguration>) -> Self {
         self.snapshot_configuration = input;
         self
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
-    pub fn get_snapshot_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotConfiguration> {
+    pub fn get_snapshot_configuration(&self) -> &::std::option::Option<crate::types::SnapshotConfiguration> {
         &self.snapshot_configuration
     }
     /// Consumes the builder and constructs a [`StartDashboardSnapshotJobInput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobInput).
@@ -164,14 +136,12 @@ impl StartDashboardSnapshotJobInputBuilder {
         crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                snapshot_job_id: self.snapshot_job_id,
-                user_configuration: self.user_configuration,
-                snapshot_configuration: self.snapshot_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobInput {
+            aws_account_id: self.aws_account_id,
+            dashboard_id: self.dashboard_id,
+            snapshot_job_id: self.snapshot_job_id,
+            user_configuration: self.user_configuration,
+            snapshot_configuration: self.snapshot_configuration,
+        })
     }
 }

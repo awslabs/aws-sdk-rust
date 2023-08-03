@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteResourcesByExternalIdOutput {
 }
 impl DeleteResourcesByExternalIdOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcesByExternalIdOutput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput).
-    pub fn builder() -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdOutputBuilder{
+    pub fn builder() -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdOutputBuilder {
         crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourcesByExternalIdOutput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourcesByExternalIdOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteResourcesByExternalIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteResourcesByExternalIdOutput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput {
+    pub fn build(self) -> crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput {
         crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput {
             _request_id: self._request_id,
         }

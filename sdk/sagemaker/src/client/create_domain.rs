@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`domain_arn(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the created domain.</p>
     ///   - [`url(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::url): <p>The URL to the created domain.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::operation::create_domain::CreateDomainError)
-    pub fn create_domain(
-        &self,
-    ) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
-        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_domain(&self) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
+        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(self.handle.clone())
     }
 }

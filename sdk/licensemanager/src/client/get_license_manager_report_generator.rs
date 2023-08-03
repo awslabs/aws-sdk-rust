@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetLicenseManagerReportGeneratorOutput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput) with field(s):
     ///   - [`report_generator(Option<ReportGenerator>)`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput::report_generator): <p>A report generator that creates periodic reports about your license configurations.</p>
     /// - On failure, responds with [`SdkError<GetLicenseManagerReportGeneratorError>`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError)
-    pub fn get_license_manager_report_generator(&self) -> crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorFluentBuilder{
+    pub fn get_license_manager_report_generator(
+        &self,
+    ) -> crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorFluentBuilder {
         crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorFluentBuilder::new(self.handle.clone())
     }
 }

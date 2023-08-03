@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`auto_ml_override_strategy(Option<AutoMlOverrideStrategy>)`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput::auto_ml_override_strategy): <note>   <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>  </note>  <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>  <p>This parameter is only valid for predictors trained using AutoML.</p>
     ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
     /// - On failure, responds with [`SdkError<GetAccuracyMetricsError>`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsError)
-    pub fn get_accuracy_metrics(
-        &self,
-    ) -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder {
-        crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_accuracy_metrics(&self) -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder {
+        crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder::new(self.handle.clone())
     }
 }

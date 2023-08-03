@@ -10,10 +10,7 @@ impl DeleteRouteTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_route_table::DeleteRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_table::DeleteRouteTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_table::DeleteRouteTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_route_table();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteRouteTableFluentBuilder {
         }
     }
     /// Access the DeleteRouteTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteRouteTableFluentBuilder {
             crate::operation::delete_route_table::DeleteRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_table::DeleteRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_table::DeleteRouteTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteRouteTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_table::DeleteRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_table::DeleteRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_table::DeleteRouteTableError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_table::DeleteRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_table::DeleteRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_table::DeleteRouteTableError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteRouteTableFluentBuilder {
             crate::operation::delete_route_table::DeleteRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_table::DeleteRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_table::DeleteRouteTableError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteRouteTableFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }

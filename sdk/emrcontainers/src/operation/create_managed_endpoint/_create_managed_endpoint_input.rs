@@ -19,9 +19,7 @@ pub struct CreateManagedEndpointInput {
     #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
     #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that will be used to override existing configurations.</p>
@@ -32,9 +30,7 @@ pub struct CreateManagedEndpointInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the managed endpoint. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateManagedEndpointInput {
     /// <p>The name of the managed endpoint.</p>
@@ -58,16 +54,12 @@ impl CreateManagedEndpointInput {
         self.execution_role_arn.as_deref()
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>The client idempotency token for this create call.</p>
@@ -75,28 +67,20 @@ impl CreateManagedEndpointInput {
         self.client_token.as_deref()
     }
     /// <p>The tags of the managed endpoint. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateManagedEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateManagedEndpointInput`](crate::operation::create_managed_endpoint::CreateManagedEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointInputBuilder {
         crate::operation::create_managed_endpoint::builders::CreateManagedEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateManagedEndpointInput`](crate::operation::create_managed_endpoint::CreateManagedEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateManagedEndpointInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
@@ -106,9 +90,7 @@ pub struct CreateManagedEndpointInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateManagedEndpointInputBuilder {
     /// <p>The name of the managed endpoint.</p>
@@ -126,18 +108,12 @@ impl CreateManagedEndpointInputBuilder {
         &self.name
     }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -160,18 +136,12 @@ impl CreateManagedEndpointInputBuilder {
         &self.r#type
     }
     /// <p>The Amazon EMR release version.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EMR release version.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -180,18 +150,12 @@ impl CreateManagedEndpointInputBuilder {
         &self.release_label
     }
     /// <p>The ARN of the execution role.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the execution role.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -200,31 +164,19 @@ impl CreateManagedEndpointInputBuilder {
         &self.execution_role_arn
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
@@ -234,17 +186,12 @@ impl CreateManagedEndpointInputBuilder {
         self
     }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    pub fn set_configuration_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
         self.configuration_overrides = input;
         self
     }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    pub fn get_configuration_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
         &self.configuration_overrides
     }
     /// <p>The client idempotency token for this create call.</p>
@@ -266,53 +213,36 @@ impl CreateManagedEndpointInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the managed endpoint. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of the managed endpoint. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of the managed endpoint. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateManagedEndpointInput`](crate::operation::create_managed_endpoint::CreateManagedEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_managed_endpoint::CreateManagedEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_managed_endpoint::CreateManagedEndpointInput {
-                name: self.name,
-                virtual_cluster_id: self.virtual_cluster_id,
-                r#type: self.r#type,
-                release_label: self.release_label,
-                execution_role_arn: self.execution_role_arn,
-                certificate_arn: self.certificate_arn,
-                configuration_overrides: self.configuration_overrides,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_managed_endpoint::CreateManagedEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_managed_endpoint::CreateManagedEndpointInput {
+            name: self.name,
+            virtual_cluster_id: self.virtual_cluster_id,
+            r#type: self.r#type,
+            release_label: self.release_label,
+            execution_role_arn: self.execution_role_arn,
+            certificate_arn: self.certificate_arn,
+            configuration_overrides: self.configuration_overrides,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

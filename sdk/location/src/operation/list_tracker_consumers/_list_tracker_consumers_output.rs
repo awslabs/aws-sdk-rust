@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTrackerConsumersOutput {
 }
 impl ListTrackerConsumersOutput {
     /// Creates a new builder-style object to manufacture [`ListTrackerConsumersOutput`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder {
+    pub fn builder() -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder {
         crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrackerConsumersOutput`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrackerConsumersOutputBuilder {
     pub(crate) consumer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListTrackerConsumersOutputBuilder {
     /// To override the contents of this collection use [`set_consumer_arns`](Self::set_consumer_arns).
     ///
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn consumer_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.consumer_arns.unwrap_or_default();
         v.push(input.into());
         self.consumer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn set_consumer_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_consumer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.consumer_arns = input;
         self
     }
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn get_consumer_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_consumer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.consumer_arns
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>

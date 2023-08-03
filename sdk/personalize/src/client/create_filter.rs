@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFilterOutput`](crate::operation::create_filter::CreateFilterOutput) with field(s):
     ///   - [`filter_arn(Option<String>)`](crate::operation::create_filter::CreateFilterOutput::filter_arn): <p>The ARN of the new filter.</p>
     /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::operation::create_filter::CreateFilterError)
-    pub fn create_filter(
-        &self,
-    ) -> crate::operation::create_filter::builders::CreateFilterFluentBuilder {
-        crate::operation::create_filter::builders::CreateFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_filter(&self) -> crate::operation::create_filter::builders::CreateFilterFluentBuilder {
+        crate::operation::create_filter::builders::CreateFilterFluentBuilder::new(self.handle.clone())
     }
 }

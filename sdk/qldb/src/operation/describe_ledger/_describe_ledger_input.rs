@@ -22,9 +22,7 @@ impl DescribeLedgerInput {
 
 /// A builder for [`DescribeLedgerInput`](crate::operation::describe_ledger::DescribeLedgerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLedgerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeLedgerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLedgerInput`](crate::operation::describe_ledger::DescribeLedgerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ledger::DescribeLedgerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_ledger::DescribeLedgerInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_ledger::DescribeLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ledger::DescribeLedgerInput { name: self.name })
     }
 }

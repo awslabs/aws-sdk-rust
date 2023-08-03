@@ -19,9 +19,7 @@ impl DeleteStackSetOutput {
 
 /// A builder for [`DeleteStackSetOutput`](crate::operation::delete_stack_set::DeleteStackSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackSetOutputBuilder {
     _request_id: Option<String>,
 }

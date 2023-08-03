@@ -37,9 +37,7 @@ impl ListApiDestinationsFluentBuilder {
         }
     }
     /// Access the ListApiDestinations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListApiDestinationsFluentBuilder {
             crate::operation::list_api_destinations::ListApiDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_api_destinations::ListApiDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_api_destinations::ListApiDestinationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListApiDestinationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListApiDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_api_destinations::ListApiDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_api_destinations::ListApiDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_api_destinations::ListApiDestinationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListApiDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_api_destinations::ListApiDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_api_destinations::ListApiDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_api_destinations::ListApiDestinationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListApiDestinationsFluentBuilder {
             crate::operation::list_api_destinations::ListApiDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_api_destinations::ListApiDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_api_destinations::ListApiDestinationsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl ListApiDestinationsFluentBuilder {
         self.inner.get_name_prefix()
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_arn(input.into());
         self
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RebootDbInstanceOutput`](crate::operation::reboot_db_instance::RebootDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::db_instance): <p>Contains the details of an Amazon Neptune DB instance.</p>  <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     /// - On failure, responds with [`SdkError<RebootDBInstanceError>`](crate::operation::reboot_db_instance::RebootDBInstanceError)
-    pub fn reboot_db_instance(
-        &self,
-    ) -> crate::operation::reboot_db_instance::builders::RebootDBInstanceFluentBuilder {
-        crate::operation::reboot_db_instance::builders::RebootDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_db_instance(&self) -> crate::operation::reboot_db_instance::builders::RebootDBInstanceFluentBuilder {
+        crate::operation::reboot_db_instance::builders::RebootDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

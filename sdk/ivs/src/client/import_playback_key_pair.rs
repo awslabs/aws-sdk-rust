@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ImportPlaybackKeyPairOutput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput) with field(s):
     ///   - [`key_pair(Option<PlaybackKeyPair>)`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput::key_pair): <p></p>
     /// - On failure, responds with [`SdkError<ImportPlaybackKeyPairError>`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError)
-    pub fn import_playback_key_pair(
-        &self,
-    ) -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairFluentBuilder
-    {
+    pub fn import_playback_key_pair(&self) -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairFluentBuilder {
         crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

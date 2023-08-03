@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`destination_name(impl ::std::convert::Into<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::destination_name) / [`set_destination_name(Option<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::set_destination_name): <p>The name of the destination.</p>
     /// - On success, responds with [`DeleteDestinationOutput`](crate::operation::delete_destination::DeleteDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteDestinationError>`](crate::operation::delete_destination::DeleteDestinationError)
-    pub fn delete_destination(
-        &self,
-    ) -> crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder {
-        crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_destination(&self) -> crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder {
+        crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::new(self.handle.clone())
     }
 }

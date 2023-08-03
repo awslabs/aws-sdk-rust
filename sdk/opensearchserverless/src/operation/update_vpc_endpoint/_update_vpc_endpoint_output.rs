@@ -10,9 +10,7 @@ pub struct UpdateVpcEndpointOutput {
 }
 impl UpdateVpcEndpointOutput {
     /// <p>Details about the updated VPC endpoint.</p>
-    pub fn update_vpc_endpoint_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateVpcEndpointDetail> {
+    pub fn update_vpc_endpoint_detail(&self) -> ::std::option::Option<&crate::types::UpdateVpcEndpointDetail> {
         self.update_vpc_endpoint_detail.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateVpcEndpointOutput {
 }
 impl UpdateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder {
         crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointOutputBuilder {
-    pub(crate) update_vpc_endpoint_detail:
-        ::std::option::Option<crate::types::UpdateVpcEndpointDetail>,
+    pub(crate) update_vpc_endpoint_detail: ::std::option::Option<crate::types::UpdateVpcEndpointDetail>,
     _request_id: Option<String>,
 }
 impl UpdateVpcEndpointOutputBuilder {
     /// <p>Details about the updated VPC endpoint.</p>
-    pub fn update_vpc_endpoint_detail(
-        mut self,
-        input: crate::types::UpdateVpcEndpointDetail,
-    ) -> Self {
+    pub fn update_vpc_endpoint_detail(mut self, input: crate::types::UpdateVpcEndpointDetail) -> Self {
         self.update_vpc_endpoint_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the updated VPC endpoint.</p>
-    pub fn set_update_vpc_endpoint_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateVpcEndpointDetail>,
-    ) -> Self {
+    pub fn set_update_vpc_endpoint_detail(mut self, input: ::std::option::Option<crate::types::UpdateVpcEndpointDetail>) -> Self {
         self.update_vpc_endpoint_detail = input;
         self
     }
     /// <p>Details about the updated VPC endpoint.</p>
-    pub fn get_update_vpc_endpoint_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateVpcEndpointDetail> {
+    pub fn get_update_vpc_endpoint_detail(&self) -> &::std::option::Option<crate::types::UpdateVpcEndpointDetail> {
         &self.update_vpc_endpoint_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

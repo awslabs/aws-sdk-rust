@@ -60,9 +60,7 @@ impl HypervisorDetails {
         self.state.as_ref()
     }
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-    pub fn last_successful_metadata_sync_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_metadata_sync_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_metadata_sync_time.as_ref()
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
@@ -70,9 +68,7 @@ impl HypervisorDetails {
         self.latest_metadata_sync_status_message.as_deref()
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn latest_metadata_sync_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SyncMetadataStatus> {
+    pub fn latest_metadata_sync_status(&self) -> ::std::option::Option<&crate::types::SyncMetadataStatus> {
         self.latest_metadata_sync_status.as_ref()
     }
 }
@@ -85,9 +81,7 @@ impl HypervisorDetails {
 
 /// A builder for [`HypervisorDetails`](crate::types::HypervisorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HypervisorDetailsBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
@@ -95,8 +89,7 @@ pub struct HypervisorDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::HypervisorState>,
-    pub(crate) last_successful_metadata_sync_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_successful_metadata_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_metadata_sync_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) latest_metadata_sync_status: ::std::option::Option<crate::types::SyncMetadataStatus>,
 }
@@ -116,18 +109,12 @@ impl HypervisorDetailsBuilder {
         &self.host
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -164,18 +151,12 @@ impl HypervisorDetailsBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
@@ -191,10 +172,7 @@ impl HypervisorDetailsBuilder {
     }
     /// <p>This is the current state of the specified hypervisor.</p>
     /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::HypervisorState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::HypervisorState>) -> Self {
         self.state = input;
         self
     }
@@ -204,47 +182,31 @@ impl HypervisorDetailsBuilder {
         &self.state
     }
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-    pub fn last_successful_metadata_sync_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn last_successful_metadata_sync_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_successful_metadata_sync_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-    pub fn set_last_successful_metadata_sync_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_successful_metadata_sync_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_successful_metadata_sync_time = input;
         self
     }
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-    pub fn get_last_successful_metadata_sync_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_successful_metadata_sync_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_successful_metadata_sync_time
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn latest_metadata_sync_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_metadata_sync_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_metadata_sync_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn set_latest_metadata_sync_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_metadata_sync_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_metadata_sync_status_message = input;
         self
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn get_latest_metadata_sync_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_metadata_sync_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_metadata_sync_status_message
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
@@ -253,17 +215,12 @@ impl HypervisorDetailsBuilder {
         self
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn set_latest_metadata_sync_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncMetadataStatus>,
-    ) -> Self {
+    pub fn set_latest_metadata_sync_status(mut self, input: ::std::option::Option<crate::types::SyncMetadataStatus>) -> Self {
         self.latest_metadata_sync_status = input;
         self
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn get_latest_metadata_sync_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SyncMetadataStatus> {
+    pub fn get_latest_metadata_sync_status(&self) -> &::std::option::Option<crate::types::SyncMetadataStatus> {
         &self.latest_metadata_sync_status
     }
     /// Consumes the builder and constructs a [`HypervisorDetails`](crate::types::HypervisorDetails).

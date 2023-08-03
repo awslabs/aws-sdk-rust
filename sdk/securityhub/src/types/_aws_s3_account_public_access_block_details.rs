@@ -44,9 +44,7 @@ impl AwsS3AccountPublicAccessBlockDetails {
 
 /// A builder for [`AwsS3AccountPublicAccessBlockDetails`](crate::types::AwsS3AccountPublicAccessBlockDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3AccountPublicAccessBlockDetailsBuilder {
     pub(crate) block_public_acls: ::std::option::Option<bool>,
     pub(crate) block_public_policy: ::std::option::Option<bool>,

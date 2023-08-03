@@ -10,10 +10,7 @@ impl PublishInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::publish::PublishOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish::PublishError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.publish();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl PublishFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish::Publish,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::publish::Publish, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
     > {
         let handle = self.handle.clone();
@@ -62,20 +56,15 @@ impl PublishFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish::PublishOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::publish::PublishOutput, ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>>
+    {
         let op = self
             .inner
             .build()
@@ -95,10 +84,8 @@ impl PublishFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish::PublishOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::publish::PublishOutput, ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>>
+    {
         self.send_middleware().await
     }
 
@@ -107,10 +94,7 @@ impl PublishFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish::Publish,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::publish::Publish, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
     > {
         self.customize_middleware().await
@@ -186,20 +170,14 @@ impl PublishFluentBuilder {
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_properties(input.into());
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn set_user_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_properties(input);
         self
     }
@@ -215,17 +193,12 @@ impl PublishFluentBuilder {
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn set_payload_format_indicator(
-        mut self,
-        input: ::std::option::Option<crate::types::PayloadFormatIndicator>,
-    ) -> Self {
+    pub fn set_payload_format_indicator(mut self, input: ::std::option::Option<crate::types::PayloadFormatIndicator>) -> Self {
         self.inner = self.inner.set_payload_format_indicator(input);
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn get_payload_format_indicator(
-        &self,
-    ) -> &::std::option::Option<crate::types::PayloadFormatIndicator> {
+    pub fn get_payload_format_indicator(&self) -> &::std::option::Option<crate::types::PayloadFormatIndicator> {
         self.inner.get_payload_format_indicator()
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
@@ -243,18 +216,12 @@ impl PublishFluentBuilder {
         self.inner.get_content_type()
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn response_topic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_topic(input.into());
         self
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn set_response_topic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_topic(input);
         self
     }
@@ -263,18 +230,12 @@ impl PublishFluentBuilder {
         self.inner.get_response_topic()
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn correlation_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn correlation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.correlation_data(input.into());
         self
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn set_correlation_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_correlation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_correlation_data(input);
         self
     }

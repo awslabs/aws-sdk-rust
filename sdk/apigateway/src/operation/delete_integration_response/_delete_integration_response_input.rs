@@ -37,16 +37,14 @@ impl DeleteIntegrationResponseInput {
 }
 impl DeleteIntegrationResponseInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseInput`](crate::operation::delete_integration_response::DeleteIntegrationResponseInput).
-    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder{
+    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder {
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationResponseInput`](crate::operation::delete_integration_response::DeleteIntegrationResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -117,13 +115,11 @@ impl DeleteIntegrationResponseInputBuilder {
         crate::operation::delete_integration_response::DeleteIntegrationResponseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_integration_response::DeleteIntegrationResponseInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-                status_code: self.status_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_integration_response::DeleteIntegrationResponseInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+            status_code: self.status_code,
+        })
     }
 }

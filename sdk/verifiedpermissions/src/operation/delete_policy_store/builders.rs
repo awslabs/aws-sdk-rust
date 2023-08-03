@@ -10,10 +10,7 @@ impl DeletePolicyStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_policy_store::DeletePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_store::DeletePolicyStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_store::DeletePolicyStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_policy_store();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeletePolicyStoreFluentBuilder {
         }
     }
     /// Access the DeletePolicyStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_policy_store::builders::DeletePolicyStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_policy_store::builders::DeletePolicyStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeletePolicyStoreFluentBuilder {
             crate::operation::delete_policy_store::DeletePolicyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_store::DeletePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_store::DeletePolicyStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeletePolicyStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeletePolicyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_policy_store::DeletePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_store::DeletePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_store::DeletePolicyStoreError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeletePolicyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_policy_store::DeletePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_store::DeletePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_store::DeletePolicyStoreError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeletePolicyStoreFluentBuilder {
             crate::operation::delete_policy_store::DeletePolicyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_policy_store::DeletePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy_store::DeletePolicyStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that you want to delete.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that you want to delete.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }

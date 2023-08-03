@@ -4,9 +4,7 @@ pub fn ser_update_dataset_entries_input(
     input: &crate::operation::update_dataset_entries::UpdateDatasetEntriesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.changes {
-        object
-            .key("Changes")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Changes").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     Ok(())
 }

@@ -65,9 +65,7 @@ impl ImportErrorData {
 
 /// A builder for [`ImportErrorData`](crate::types::ImportErrorData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportErrorDataBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ImportErrorDataBuilder {
 }
 impl ImportErrorDataBuilder {
     /// <p>Import error data source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -99,18 +91,12 @@ impl ImportErrorDataBuilder {
         &self.source_server_id
     }
     /// <p>Import error data application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -133,18 +119,12 @@ impl ImportErrorDataBuilder {
         &self.wave_id
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
-    pub fn ec2_launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
-    pub fn set_ec2_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_launch_template_id = input;
         self
     }

@@ -26,7 +26,7 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder,
+    inner: crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder,
 }
 impl DescribeWorkspaceSnapshotsFluentBuilder {
     /// Creates a new `DescribeWorkspaceSnapshots`.
@@ -37,7 +37,7 @@ impl DescribeWorkspaceSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeWorkspaceSnapshots as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeWorkspaceSnapshotsFluentBuilder {
             crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeWorkspaceSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeWorkspaceSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeWorkspaceSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeWorkspaceSnapshotsFluentBuilder {
             crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError>,
     > {
         self.customize_middleware().await
     }

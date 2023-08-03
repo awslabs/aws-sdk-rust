@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceNetworkServiceAssociationStatus {
     /// ServiceNetwork and Service association is active
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ServiceNetworkServiceAssociationStatus {
             "CREATE_IN_PROGRESS" => ServiceNetworkServiceAssociationStatus::CreateInProgress,
             "DELETE_FAILED" => ServiceNetworkServiceAssociationStatus::DeleteFailed,
             "DELETE_IN_PROGRESS" => ServiceNetworkServiceAssociationStatus::DeleteInProgress,
-            other => ServiceNetworkServiceAssociationStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ServiceNetworkServiceAssociationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ServiceNetworkServiceAssociationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-        ]
+        &["ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceNetworkServiceAssociationStatus {

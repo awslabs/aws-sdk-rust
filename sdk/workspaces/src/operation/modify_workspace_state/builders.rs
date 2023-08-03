@@ -38,9 +38,7 @@ impl ModifyWorkspaceStateFluentBuilder {
         }
     }
     /// Access the ModifyWorkspaceState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ModifyWorkspaceStateFluentBuilder {
             crate::operation::modify_workspace_state::ModifyWorkspaceState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_state::ModifyWorkspaceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_state::ModifyWorkspaceStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ModifyWorkspaceStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ModifyWorkspaceStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_state::ModifyWorkspaceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_state::ModifyWorkspaceStateError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ModifyWorkspaceStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_state::ModifyWorkspaceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_state::ModifyWorkspaceStateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl ModifyWorkspaceStateFluentBuilder {
             crate::operation::modify_workspace_state::ModifyWorkspaceState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_state::ModifyWorkspaceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_state::ModifyWorkspaceStateError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +130,12 @@ impl ModifyWorkspaceStateFluentBuilder {
         self
     }
     /// <p>The WorkSpace state.</p>
-    pub fn set_workspace_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetWorkspaceState>,
-    ) -> Self {
+    pub fn set_workspace_state(mut self, input: ::std::option::Option<crate::types::TargetWorkspaceState>) -> Self {
         self.inner = self.inner.set_workspace_state(input);
         self
     }
     /// <p>The WorkSpace state.</p>
-    pub fn get_workspace_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetWorkspaceState> {
+    pub fn get_workspace_state(&self) -> &::std::option::Option<crate::types::TargetWorkspaceState> {
         self.inner.get_workspace_state()
     }
 }

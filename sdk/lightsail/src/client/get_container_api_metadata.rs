@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetContainerApiMetadataOutput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput) with field(s):
     ///   - [`metadata(Option<Vec<HashMap<String, String>>>)`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput::metadata): <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     /// - On failure, responds with [`SdkError<GetContainerAPIMetadataError>`](crate::operation::get_container_api_metadata::GetContainerAPIMetadataError)
-    pub fn get_container_api_metadata(
-        &self,
-    ) -> crate::operation::get_container_api_metadata::builders::GetContainerAPIMetadataFluentBuilder
-    {
+    pub fn get_container_api_metadata(&self) -> crate::operation::get_container_api_metadata::builders::GetContainerAPIMetadataFluentBuilder {
         crate::operation::get_container_api_metadata::builders::GetContainerAPIMetadataFluentBuilder::new(self.handle.clone())
     }
 }

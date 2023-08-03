@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteLaunchTemplateOutput`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput) with field(s):
     ///   - [`launch_template(Option<LaunchTemplate>)`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput::launch_template): <p>Information about the launch template.</p>
     /// - On failure, responds with [`SdkError<DeleteLaunchTemplateError>`](crate::operation::delete_launch_template::DeleteLaunchTemplateError)
-    pub fn delete_launch_template(
-        &self,
-    ) -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateFluentBuilder {
-        crate::operation::delete_launch_template::builders::DeleteLaunchTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_launch_template(&self) -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateFluentBuilder {
+        crate::operation::delete_launch_template::builders::DeleteLaunchTemplateFluentBuilder::new(self.handle.clone())
     }
 }

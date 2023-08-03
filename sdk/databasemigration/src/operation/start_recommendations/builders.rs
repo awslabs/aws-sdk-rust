@@ -38,9 +38,7 @@ impl StartRecommendationsFluentBuilder {
         }
     }
     /// Access the StartRecommendations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl StartRecommendationsFluentBuilder {
             crate::operation::start_recommendations::StartRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_recommendations::StartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_recommendations::StartRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl StartRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl StartRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_recommendations::StartRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_recommendations::StartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_recommendations::StartRecommendationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl StartRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_recommendations::StartRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_recommendations::StartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_recommendations::StartRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl StartRecommendationsFluentBuilder {
             crate::operation::start_recommendations::StartRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_recommendations::StartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_recommendations::StartRecommendationsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +130,7 @@ impl StartRecommendationsFluentBuilder {
         self
     }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::RecommendationSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }

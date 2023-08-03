@@ -5,8 +5,7 @@
 pub struct ListProgressUpdateStreamsOutput {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
     #[doc(hidden)]
-    pub progress_update_stream_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>>,
+    pub progress_update_stream_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>>,
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProgressUpdateStreamsOutput {
 }
 impl ListProgressUpdateStreamsOutput {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-    pub fn progress_update_stream_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProgressUpdateStreamSummary]> {
+    pub fn progress_update_stream_summary_list(&self) -> ::std::option::Option<&[crate::types::ProgressUpdateStreamSummary]> {
         self.progress_update_stream_summary_list.as_deref()
     }
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProgressUpdateStreamsOutput {
 }
 impl ListProgressUpdateStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsOutput`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput).
-    pub fn builder() -> crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsOutputBuilder{
+    pub fn builder() -> crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsOutputBuilder {
         crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProgressUpdateStreamsOutput`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProgressUpdateStreamsOutputBuilder {
-    pub(crate) progress_update_stream_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>>,
+    pub(crate) progress_update_stream_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListProgressUpdateStreamsOutputBuilder {
     /// To override the contents of this collection use [`set_progress_update_stream_summary_list`](Self::set_progress_update_stream_summary_list).
     ///
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-    pub fn progress_update_stream_summary_list(
-        mut self,
-        input: crate::types::ProgressUpdateStreamSummary,
-    ) -> Self {
+    pub fn progress_update_stream_summary_list(mut self, input: crate::types::ProgressUpdateStreamSummary) -> Self {
         let mut v = self.progress_update_stream_summary_list.unwrap_or_default();
         v.push(input);
         self.progress_update_stream_summary_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListProgressUpdateStreamsOutputBuilder {
         self
     }
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-    pub fn get_progress_update_stream_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>> {
+    pub fn get_progress_update_stream_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>> {
         &self.progress_update_stream_summary_list
     }
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
@@ -100,9 +89,7 @@ impl ListProgressUpdateStreamsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProgressUpdateStreamsOutput`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput {
+    pub fn build(self) -> crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput {
         crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput {
             progress_update_stream_summary_list: self.progress_update_stream_summary_list,
             next_token: self.next_token,

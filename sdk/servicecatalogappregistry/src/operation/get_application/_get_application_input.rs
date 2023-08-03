@@ -22,9 +22,7 @@ impl GetApplicationInput {
 
 /// A builder for [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl GetApplicationInputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application::GetApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_application::GetApplicationInput {
             application: self.application,
         })

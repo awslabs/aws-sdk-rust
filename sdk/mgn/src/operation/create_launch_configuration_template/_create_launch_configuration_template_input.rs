@@ -14,16 +14,13 @@ pub struct CreateLaunchConfigurationTemplateInput {
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Launch disposition.</p>
     #[doc(hidden)]
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private Ip.</p>
     #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
@@ -63,11 +60,7 @@ impl CreateLaunchConfigurationTemplateInput {
         self.map_auto_tagging_mpe_id.as_deref()
     }
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Launch disposition.</p>
@@ -75,9 +68,7 @@ impl CreateLaunchConfigurationTemplateInput {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private Ip.</p>
@@ -105,15 +96,11 @@ impl CreateLaunchConfigurationTemplateInput {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
-    pub fn small_volume_conf(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateDiskConf> {
+    pub fn small_volume_conf(&self) -> ::std::option::Option<&crate::types::LaunchTemplateDiskConf> {
         self.small_volume_conf.as_ref()
     }
     /// <p>Large volume config.</p>
-    pub fn large_volume_conf(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateDiskConf> {
+    pub fn large_volume_conf(&self) -> ::std::option::Option<&crate::types::LaunchTemplateDiskConf> {
         self.large_volume_conf.as_ref()
     }
 }
@@ -125,15 +112,9 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
         formatter.field("map_auto_tagging_mpe_id", &self.map_auto_tagging_mpe_id);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
+        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
         formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
+        formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
@@ -145,7 +126,7 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
 }
 impl CreateLaunchConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateInput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder {
         crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder::default()
     }
 }
@@ -157,12 +138,9 @@ pub struct CreateLaunchConfigurationTemplateInputBuilder {
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     pub(crate) enable_map_auto_tagging: ::std::option::Option<bool>,
     pub(crate) map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
-    pub(crate) target_instance_type_right_sizing_method:
-        ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub(crate) target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
@@ -179,17 +157,12 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Launch configuration template post launch actions.</p>
-    pub fn set_post_launch_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::PostLaunchActions>,
-    ) -> Self {
+    pub fn set_post_launch_actions(mut self, input: ::std::option::Option<crate::types::PostLaunchActions>) -> Self {
         self.post_launch_actions = input;
         self
     }
     /// <p>Launch configuration template post launch actions.</p>
-    pub fn get_post_launch_actions(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostLaunchActions> {
+    pub fn get_post_launch_actions(&self) -> &::std::option::Option<crate::types::PostLaunchActions> {
         &self.post_launch_actions
     }
     /// <p>Enable map auto tagging.</p>
@@ -207,18 +180,12 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         &self.enable_map_auto_tagging
     }
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn map_auto_tagging_mpe_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_auto_tagging_mpe_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
-    pub fn set_map_auto_tagging_mpe_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_map_auto_tagging_mpe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_auto_tagging_mpe_id = input;
         self
     }
@@ -231,32 +198,19 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Launch disposition.</p>
@@ -265,24 +219,16 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Launch disposition.</p>
-    pub fn set_launch_disposition(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchDisposition>,
-    ) -> Self {
+    pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
         self.launch_disposition = input;
         self
     }
     /// <p>Launch disposition.</p>
-    pub fn get_launch_disposition(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+    pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
         &self.launch_disposition
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        mut self,
-        input: crate::types::TargetInstanceTypeRightSizingMethod,
-    ) -> Self {
+    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
         self.target_instance_type_right_sizing_method = ::std::option::Option::Some(input);
         self
     }
@@ -295,9 +241,7 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn get_target_instance_type_right_sizing_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
         &self.target_instance_type_right_sizing_method
     }
     /// <p>Copy private Ip.</p>
@@ -390,17 +334,12 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Small volume config.</p>
-    pub fn set_small_volume_conf(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
-    ) -> Self {
+    pub fn set_small_volume_conf(mut self, input: ::std::option::Option<crate::types::LaunchTemplateDiskConf>) -> Self {
         self.small_volume_conf = input;
         self
     }
     /// <p>Small volume config.</p>
-    pub fn get_small_volume_conf(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
+    pub fn get_small_volume_conf(&self) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
         &self.small_volume_conf
     }
     /// <p>Large volume config.</p>
@@ -409,53 +348,38 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Large volume config.</p>
-    pub fn set_large_volume_conf(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
-    ) -> Self {
+    pub fn set_large_volume_conf(mut self, input: ::std::option::Option<crate::types::LaunchTemplateDiskConf>) -> Self {
         self.large_volume_conf = input;
         self
     }
     /// <p>Large volume config.</p>
-    pub fn get_large_volume_conf(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
+    pub fn get_large_volume_conf(&self) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
         &self.large_volume_conf
     }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateInput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput {
-                post_launch_actions: self.post_launch_actions
-                ,
-                enable_map_auto_tagging: self.enable_map_auto_tagging
-                ,
-                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
-                ,
-                tags: self.tags
-                ,
-                launch_disposition: self.launch_disposition
-                ,
-                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
-                ,
-                copy_private_ip: self.copy_private_ip
-                ,
-                associate_public_ip_address: self.associate_public_ip_address
-                ,
-                copy_tags: self.copy_tags
-                ,
-                licensing: self.licensing
-                ,
-                boot_mode: self.boot_mode
-                ,
-                small_volume_max_size: self.small_volume_max_size
-                    .unwrap_or_default()
-                ,
-                small_volume_conf: self.small_volume_conf
-                ,
-                large_volume_conf: self.large_volume_conf
-                ,
-            }
+                post_launch_actions: self.post_launch_actions,
+                enable_map_auto_tagging: self.enable_map_auto_tagging,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                tags: self.tags,
+                launch_disposition: self.launch_disposition,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
+                copy_private_ip: self.copy_private_ip,
+                associate_public_ip_address: self.associate_public_ip_address,
+                copy_tags: self.copy_tags,
+                licensing: self.licensing,
+                boot_mode: self.boot_mode,
+                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
+                small_volume_conf: self.small_volume_conf,
+                large_volume_conf: self.large_volume_conf,
+            },
         )
     }
 }
@@ -467,15 +391,9 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInputBuilder {
         formatter.field("map_auto_tagging_mpe_id", &self.map_auto_tagging_mpe_id);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
+        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
         formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
+        formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);

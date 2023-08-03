@@ -28,7 +28,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReleaseIpamPoolAllocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder,
+    inner: crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder,
 }
 impl ReleaseIpamPoolAllocationFluentBuilder {
     /// Creates a new `ReleaseIpamPoolAllocation`.
@@ -39,7 +39,7 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
         }
     }
     /// Access the ReleaseIpamPoolAllocation as a reference.
-    pub fn as_input(&self) -> &crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
             crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
             crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +154,12 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
         self.inner.get_cidr()
     }
     /// <p>The ID of the allocation.</p>
-    pub fn ipam_pool_allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_allocation_id(input.into());
         self
     }
     /// <p>The ID of the allocation.</p>
-    pub fn set_ipam_pool_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_pool_allocation_id(input);
         self
     }

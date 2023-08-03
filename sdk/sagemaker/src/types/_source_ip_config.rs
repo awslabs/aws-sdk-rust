@@ -29,9 +29,7 @@ impl SourceIpConfig {
 
 /// A builder for [`SourceIpConfig`](crate::types::SourceIpConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceIpConfigBuilder {
     pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -54,10 +52,7 @@ impl SourceIpConfigBuilder {
     /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    pub fn set_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidrs = input;
         self
     }

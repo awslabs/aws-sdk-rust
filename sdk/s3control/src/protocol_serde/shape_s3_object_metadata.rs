@@ -49,16 +49,11 @@ pub fn ser_s3_object_metadata(
     }
     if let Some(var_11) = &input.http_expires_date {
         let mut inner_writer = scope.start_el("HttpExpiresDate").finish();
-        inner_writer.data(
-            var_11
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_11.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if input.requester_charged {
         let mut inner_writer = scope.start_el("RequesterCharged").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.requester_charged).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.requester_charged).encode());
     }
     if let Some(var_12) = &input.sse_algorithm {
         let mut inner_writer = scope.start_el("SSEAlgorithm").finish();

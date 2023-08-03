@@ -11,8 +11,7 @@ pub struct DescribeLiveSourceOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
     #[doc(hidden)]
-    pub http_package_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the live source was modified.</p>
     #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,9 +23,7 @@ pub struct DescribeLiveSourceOutput {
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeLiveSourceOutput {
@@ -39,9 +36,7 @@ impl DescribeLiveSourceOutput {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
+    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
     /// <p>The timestamp that indicates when the live source was modified.</p>
@@ -57,11 +52,7 @@ impl DescribeLiveSourceOutput {
         self.source_location_name.as_deref()
     }
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -72,28 +63,22 @@ impl ::aws_http::request_id::RequestId for DescribeLiveSourceOutput {
 }
 impl DescribeLiveSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLiveSourceOutput`](crate::operation::describe_live_source::DescribeLiveSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_live_source::builders::DescribeLiveSourceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_live_source::builders::DescribeLiveSourceOutputBuilder {
         crate::operation::describe_live_source::builders::DescribeLiveSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLiveSourceOutput`](crate::operation::describe_live_source::DescribeLiveSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLiveSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) http_package_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub(crate) http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeLiveSourceOutputBuilder {
@@ -117,10 +102,7 @@ impl DescribeLiveSourceOutputBuilder {
         self
     }
     /// <p>The timestamp that indicates when the live source was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -133,27 +115,19 @@ impl DescribeLiveSourceOutputBuilder {
     /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
     ///
     /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(
-        mut self,
-        input: crate::types::HttpPackageConfiguration,
-    ) -> Self {
+    pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
         let mut v = self.http_package_configurations.unwrap_or_default();
         v.push(input);
         self.http_package_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The HTTP package configurations.</p>
-    pub fn set_http_package_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
-    ) -> Self {
+    pub fn set_http_package_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
         self.http_package_configurations = input;
         self
     }
     /// <p>The HTTP package configurations.</p>
-    pub fn get_http_package_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+    pub fn get_http_package_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
         &self.http_package_configurations
     }
     /// <p>The timestamp that indicates when the live source was modified.</p>
@@ -162,10 +136,7 @@ impl DescribeLiveSourceOutputBuilder {
         self
     }
     /// <p>The timestamp that indicates when the live source was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -174,18 +145,12 @@ impl DescribeLiveSourceOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.live_source_name = input;
         self
     }
@@ -194,18 +159,12 @@ impl DescribeLiveSourceOutputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with the live source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location associated with the live source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -218,32 +177,19 @@ impl DescribeLiveSourceOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

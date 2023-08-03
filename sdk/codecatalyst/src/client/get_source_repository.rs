@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_source_repository::GetSourceRepositoryOutput::last_updated_time): <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_source_repository::GetSourceRepositoryOutput::created_time): <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     /// - On failure, responds with [`SdkError<GetSourceRepositoryError>`](crate::operation::get_source_repository::GetSourceRepositoryError)
-    pub fn get_source_repository(
-        &self,
-    ) -> crate::operation::get_source_repository::builders::GetSourceRepositoryFluentBuilder {
-        crate::operation::get_source_repository::builders::GetSourceRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_source_repository(&self) -> crate::operation::get_source_repository::builders::GetSourceRepositoryFluentBuilder {
+        crate::operation::get_source_repository::builders::GetSourceRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

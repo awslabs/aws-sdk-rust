@@ -13,10 +13,7 @@ pub fn ser_update_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_6,
-                    value_5,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_6, value_5)?;
                 object_6.finish();
             }
         }
@@ -29,10 +26,7 @@ pub fn ser_update_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = object_8.key(key_9.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value_update::ser_attribute_value_update(
-                    &mut object_11,
-                    value_10,
-                )?;
+                crate::protocol_serde::shape_attribute_value_update::ser_attribute_value_update(&mut object_11, value_10)?;
                 object_11.finish();
             }
         }
@@ -61,9 +55,7 @@ pub fn ser_update_item_input(
         object.key("ReturnConsumedCapacity").string(var_19.as_str());
     }
     if let Some(var_20) = &input.return_item_collection_metrics {
-        object
-            .key("ReturnItemCollectionMetrics")
-            .string(var_20.as_str());
+        object.key("ReturnItemCollectionMetrics").string(var_20.as_str());
     }
     if let Some(var_21) = &input.update_expression {
         object.key("UpdateExpression").string(var_21.as_str());
@@ -88,19 +80,14 @@ pub fn ser_update_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_31 = object_28.key(key_29.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_31,
-                    value_30,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_31, value_30)?;
                 object_31.finish();
             }
         }
         object_28.finish();
     }
     if let Some(var_32) = &input.return_values_on_condition_check_failure {
-        object
-            .key("ReturnValuesOnConditionCheckFailure")
-            .string(var_32.as_str());
+        object.key("ReturnValuesOnConditionCheckFailure").string(var_32.as_str());
     }
     Ok(())
 }

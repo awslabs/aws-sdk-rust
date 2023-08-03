@@ -52,9 +52,7 @@ impl ExportJobResource {
 
 /// A builder for [`ExportJobResource`](crate::types::ExportJobResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportJobResourceBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_url_prefix: ::std::option::Option<::std::string::String>,
@@ -81,10 +79,7 @@ impl ExportJobResourceBuilder {
     /// </replaceable>/<replaceable>
     /// folder-name
     /// </replaceable>/.</p>
-    pub fn s3_url_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_url_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url_prefix = ::std::option::Option::Some(input.into());
         self
     }
@@ -93,10 +88,7 @@ impl ExportJobResourceBuilder {
     /// </replaceable>/<replaceable>
     /// folder-name
     /// </replaceable>/.</p>
-    pub fn set_s3_url_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_url_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url_prefix = input;
         self
     }

@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`source_location_name(Option<String>)`](crate::operation::describe_source_location::DescribeSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_source_location::DescribeSourceLocationOutput::tags): <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceLocationError>`](crate::operation::describe_source_location::DescribeSourceLocationError)
-    pub fn describe_source_location(
-        &self,
-    ) -> crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder
-    {
+    pub fn describe_source_location(&self) -> crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder {
         crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder::new(self.handle.clone())
     }
 }

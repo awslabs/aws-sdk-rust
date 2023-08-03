@@ -30,8 +30,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder,
+    inner: crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder,
 }
 impl RetrieveEnvironmentInfoFluentBuilder {
     /// Creates a new `RetrieveEnvironmentInfo`.
@@ -42,10 +41,7 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         }
     }
     /// Access the RetrieveEnvironmentInfo as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl RetrieveEnvironmentInfoFluentBuilder {
             crate::operation::retrieve_environment_info::RetrieveEnvironmentInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl RetrieveEnvironmentInfoFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError>,
     > {
         self.send_middleware().await
     }
@@ -122,29 +109,21 @@ impl RetrieveEnvironmentInfoFluentBuilder {
             crate::operation::retrieve_environment_info::RetrieveEnvironmentInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -157,20 +136,14 @@ impl RetrieveEnvironmentInfoFluentBuilder {
     /// <p>The name of the data's environment.</p>
     /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the data's environment.</p>
     /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -186,10 +159,7 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         self
     }
     /// <p>The type of information to retrieve.</p>
-    pub fn set_info_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentInfoType>,
-    ) -> Self {
+    pub fn set_info_type(mut self, input: ::std::option::Option<crate::types::EnvironmentInfoType>) -> Self {
         self.inner = self.inner.set_info_type(input);
         self
     }

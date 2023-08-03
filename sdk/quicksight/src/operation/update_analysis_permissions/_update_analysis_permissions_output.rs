@@ -49,21 +49,18 @@ impl ::aws_http::request_id::RequestId for UpdateAnalysisPermissionsOutput {
 }
 impl UpdateAnalysisPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisPermissionsOutput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput).
-    pub fn builder() -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsOutputBuilder {
         crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnalysisPermissionsOutput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnalysisPermissionsOutputBuilder {
     pub(crate) analysis_arn: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -109,17 +106,12 @@ impl UpdateAnalysisPermissionsOutputBuilder {
         self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -160,9 +152,7 @@ impl UpdateAnalysisPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAnalysisPermissionsOutput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput {
+    pub fn build(self) -> crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput {
         crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput {
             analysis_arn: self.analysis_arn,
             analysis_id: self.analysis_id,

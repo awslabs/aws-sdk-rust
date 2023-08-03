@@ -4,9 +4,7 @@ pub fn ser_update_license_manager_report_generator_input(
     input: &crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.license_manager_report_generator_arn {
-        object
-            .key("LicenseManagerReportGeneratorArn")
-            .string(var_1.as_str());
+        object.key("LicenseManagerReportGeneratorArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.report_generator_name {
         object.key("ReportGeneratorName").string(var_2.as_str());

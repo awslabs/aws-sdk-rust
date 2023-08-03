@@ -3,39 +3,45 @@
 /// <p>Describes a launch template and overrides for a mixed instances policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails  {
+pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
     /// <p>The launch template to use for a mixed instances policy.</p>
     #[doc(hidden)]
-    pub launch_template_specification: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
+    pub launch_template_specification:
+        ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
     /// <p>Property values to use to override the values in the launch template.</p>
     #[doc(hidden)]
-    pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
+    pub overrides:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
     /// <p>The launch template to use for a mixed instances policy.</p>
-    pub fn launch_template_specification(&self) -> ::std::option::Option<& crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>{
+    pub fn launch_template_specification(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification> {
         self.launch_template_specification.as_ref()
     }
     /// <p>Property values to use to override the values in the launch template.</p>
-    pub fn overrides(&self) -> ::std::option::Option<& [crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails]>{
+    pub fn overrides(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails]> {
         self.overrides.as_deref()
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
-    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuilder {
         crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuilder {
-    pub(crate) launch_template_specification: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
-    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
+    pub(crate) launch_template_specification:
+        ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
+    pub(crate) overrides:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuilder {
     /// <p>The launch template to use for a mixed instances policy.</p>
@@ -55,7 +61,9 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuil
         self
     }
     /// <p>The launch template to use for a mixed instances policy.</p>
-    pub fn get_launch_template_specification(&self) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>{
+    pub fn get_launch_template_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification> {
         &self.launch_template_specification
     }
     /// Appends an item to `overrides`.
@@ -63,10 +71,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuil
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
     ///
     /// <p>Property values to use to override the values in the launch template.</p>
-    pub fn overrides(
-        mut self,
-        input: crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails,
-    ) -> Self {
+    pub fn overrides(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails) -> Self {
         let mut v = self.overrides.unwrap_or_default();
         v.push(input);
         self.overrides = ::std::option::Option::Some(v);
@@ -75,19 +80,22 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsBuil
     /// <p>Property values to use to override the values in the launch template.</p>
     pub fn set_overrides(
         mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>,
+        >,
     ) -> Self {
         self.overrides = input;
         self
     }
     /// <p>Property values to use to override the values in the launch template.</p>
-    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>{
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>
+    {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
+    pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
         crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
             launch_template_specification: self.launch_template_specification,
             overrides: self.overrides,

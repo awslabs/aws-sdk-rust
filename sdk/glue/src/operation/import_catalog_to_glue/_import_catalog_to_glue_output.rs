@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ImportCatalogToGlueOutput {
 }
 impl ImportCatalogToGlueOutput {
     /// Creates a new builder-style object to manufacture [`ImportCatalogToGlueOutput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueOutput).
-    pub fn builder(
-    ) -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueOutputBuilder {
+    pub fn builder() -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueOutputBuilder {
         crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportCatalogToGlueOutput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportCatalogToGlueOutputBuilder {
     _request_id: Option<String>,
 }

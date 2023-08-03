@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateConnectorOutput {
 }
 impl DisassociateConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectorOutput`](crate::operation::disassociate_connector::DisassociateConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_connector::builders::DisassociateConnectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_connector::builders::DisassociateConnectorOutputBuilder {
         crate::operation::disassociate_connector::builders::DisassociateConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConnectorOutput`](crate::operation::disassociate_connector::DisassociateConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConnectorOutputBuilder {
     _request_id: Option<String>,
 }

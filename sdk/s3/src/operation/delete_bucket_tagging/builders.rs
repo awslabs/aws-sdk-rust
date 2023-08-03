@@ -43,9 +43,7 @@ impl DeleteBucketTaggingFluentBuilder {
         }
     }
     /// Access the DeleteBucketTagging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_bucket_tagging::builders::DeleteBucketTaggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_bucket_tagging::builders::DeleteBucketTaggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl DeleteBucketTaggingFluentBuilder {
             crate::operation::delete_bucket_tagging::DeleteBucketTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl DeleteBucketTaggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl DeleteBucketTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_tagging::DeleteBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl DeleteBucketTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_tagging::DeleteBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl DeleteBucketTaggingFluentBuilder {
             crate::operation::delete_bucket_tagging::DeleteBucketTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +130,12 @@ impl DeleteBucketTaggingFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

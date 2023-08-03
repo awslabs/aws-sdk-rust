@@ -40,10 +40,7 @@ impl CreateRouteCalculatorFluentBuilder {
         }
     }
     /// Access the CreateRouteCalculator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_route_calculator::builders::CreateRouteCalculatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_route_calculator::builders::CreateRouteCalculatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl CreateRouteCalculatorFluentBuilder {
             crate::operation::create_route_calculator::CreateRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_calculator::CreateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_calculator::CreateRouteCalculatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl CreateRouteCalculatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl CreateRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_route_calculator::CreateRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_calculator::CreateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_calculator::CreateRouteCalculatorError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl CreateRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_route_calculator::CreateRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_calculator::CreateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_calculator::CreateRouteCalculatorError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl CreateRouteCalculatorFluentBuilder {
             crate::operation::create_route_calculator::CreateRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_calculator::CreateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_calculator::CreateRouteCalculatorError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl CreateRouteCalculatorFluentBuilder {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
@@ -147,10 +130,7 @@ impl CreateRouteCalculatorFluentBuilder {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
@@ -206,31 +186,19 @@ impl CreateRouteCalculatorFluentBuilder {
         self.inner.get_data_source()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }
@@ -266,11 +234,7 @@ impl CreateRouteCalculatorFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -288,12 +252,7 @@ impl CreateRouteCalculatorFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -311,11 +270,7 @@ impl CreateRouteCalculatorFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

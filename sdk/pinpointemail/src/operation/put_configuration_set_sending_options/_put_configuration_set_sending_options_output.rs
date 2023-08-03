@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutConfigurationSetSendingOptionsOutp
 }
 impl PutConfigurationSetSendingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput).
-    pub fn builder() -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsOutputBuilder {
         crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptionsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl PutConfigurationSetSendingOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput).
-    pub fn build(self) -> crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput{
+    pub fn build(self) -> crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput {
         crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl NotifyWorkersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::notify_workers::NotifyWorkersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_workers::NotifyWorkersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.notify_workers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl NotifyWorkersFluentBuilder {
         }
     }
     /// Access the NotifyWorkers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::notify_workers::builders::NotifyWorkersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::notify_workers::builders::NotifyWorkersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl NotifyWorkersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -152,10 +144,7 @@ impl NotifyWorkersFluentBuilder {
         self
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub fn set_worker_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worker_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_worker_ids(input);
         self
     }

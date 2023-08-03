@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput::next_marker): <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`activated_rules(Option<Vec<ActivatedRule>>)`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput::activated_rules): <p>An array of <code>ActivatedRules</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListActivatedRulesInRuleGroupError>`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError)
-    pub fn list_activated_rules_in_rule_group(&self) -> crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupFluentBuilder{
+    pub fn list_activated_rules_in_rule_group(
+        &self,
+    ) -> crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupFluentBuilder {
         crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

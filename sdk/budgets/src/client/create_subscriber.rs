@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`subscriber(Subscriber)`](crate::operation::create_subscriber::builders::CreateSubscriberFluentBuilder::subscriber) / [`set_subscriber(Option<Subscriber>)`](crate::operation::create_subscriber::builders::CreateSubscriberFluentBuilder::set_subscriber): <p>The subscriber that you want to associate with a budget notification.</p>
     /// - On success, responds with [`CreateSubscriberOutput`](crate::operation::create_subscriber::CreateSubscriberOutput)
     /// - On failure, responds with [`SdkError<CreateSubscriberError>`](crate::operation::create_subscriber::CreateSubscriberError)
-    pub fn create_subscriber(
-        &self,
-    ) -> crate::operation::create_subscriber::builders::CreateSubscriberFluentBuilder {
-        crate::operation::create_subscriber::builders::CreateSubscriberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_subscriber(&self) -> crate::operation::create_subscriber::builders::CreateSubscriberFluentBuilder {
+        crate::operation::create_subscriber::builders::CreateSubscriberFluentBuilder::new(self.handle.clone())
     }
 }

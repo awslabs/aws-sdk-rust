@@ -4,9 +4,7 @@ pub fn ser_default_import_client_branding_attributes(
     input: &crate::types::DefaultImportClientBrandingAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.logo {
-        object
-            .key("Logo")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Logo").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.support_email {
         object.key("SupportEmail").string(var_2.as_str());

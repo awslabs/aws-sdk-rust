@@ -48,8 +48,7 @@ impl ::aws_http::request_id::RequestId for SynthesizeSpeechOutput {
 }
 impl SynthesizeSpeechOutput {
     /// Creates a new builder-style object to manufacture [`SynthesizeSpeechOutput`](crate::operation::synthesize_speech::SynthesizeSpeechOutput).
-    pub fn builder() -> crate::operation::synthesize_speech::builders::SynthesizeSpeechOutputBuilder
-    {
+    pub fn builder() -> crate::operation::synthesize_speech::builders::SynthesizeSpeechOutputBuilder {
         crate::operation::synthesize_speech::builders::SynthesizeSpeechOutputBuilder::default()
     }
 }
@@ -70,17 +69,12 @@ impl SynthesizeSpeechOutputBuilder {
         self
     }
     /// <p> Stream containing the synthesized speech. </p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p> Stream containing the synthesized speech. </p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>

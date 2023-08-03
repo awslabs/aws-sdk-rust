@@ -23,8 +23,7 @@ pub struct DescribeReservedInstancesModificationsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>IDs for the submitted modification request.</p>
     #[doc(hidden)]
-    pub reserved_instances_modification_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -49,9 +48,7 @@ impl DescribeReservedInstancesModificationsInput {
         self.filters.as_deref()
     }
     /// <p>IDs for the submitted modification request.</p>
-    pub fn reserved_instances_modification_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn reserved_instances_modification_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.reserved_instances_modification_ids.as_deref()
     }
     /// <p>The token to retrieve the next page of results.</p>
@@ -61,20 +58,17 @@ impl DescribeReservedInstancesModificationsInput {
 }
 impl DescribeReservedInstancesModificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
-    pub fn builder() -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsInputBuilder {
         crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) reserved_instances_modification_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesModificationsInputBuilder {
@@ -118,10 +112,7 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// <li> <p> <code>update-date</code> - The time when the modification request was last updated.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -148,27 +139,19 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_modification_ids`](Self::set_reserved_instances_modification_ids).
     ///
     /// <p>IDs for the submitted modification request.</p>
-    pub fn reserved_instances_modification_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_modification_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reserved_instances_modification_ids.unwrap_or_default();
         v.push(input.into());
         self.reserved_instances_modification_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>IDs for the submitted modification request.</p>
-    pub fn set_reserved_instances_modification_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_modification_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reserved_instances_modification_ids = input;
         self
     }
     /// <p>IDs for the submitted modification request.</p>
-    pub fn get_reserved_instances_modification_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_modification_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reserved_instances_modification_ids
     }
     /// <p>The token to retrieve the next page of results.</p>
@@ -186,16 +169,18 @@ impl DescribeReservedInstancesModificationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput {
-                filters: self.filters
-                ,
-                reserved_instances_modification_ids: self.reserved_instances_modification_ids
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                reserved_instances_modification_ids: self.reserved_instances_modification_ids,
+                next_token: self.next_token,
+            },
         )
     }
 }

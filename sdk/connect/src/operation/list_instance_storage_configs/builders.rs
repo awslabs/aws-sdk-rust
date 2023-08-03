@@ -27,7 +27,7 @@ impl ListInstanceStorageConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstanceStorageConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder,
+    inner: crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder,
 }
 impl ListInstanceStorageConfigsFluentBuilder {
     /// Creates a new `ListInstanceStorageConfigs`.
@@ -38,7 +38,7 @@ impl ListInstanceStorageConfigsFluentBuilder {
         }
     }
     /// Access the ListInstanceStorageConfigs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListInstanceStorageConfigsFluentBuilder {
             crate::operation::list_instance_storage_configs::ListInstanceStorageConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListInstanceStorageConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListInstanceStorageConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListInstanceStorageConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListInstanceStorageConfigsFluentBuilder {
             crate::operation::list_instance_storage_configs::ListInstanceStorageConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instance_storage_configs::paginator::ListInstanceStorageConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_instance_storage_configs::paginator::ListInstanceStorageConfigsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_instance_storage_configs::paginator::ListInstanceStorageConfigsPaginator {
         crate::operation::list_instance_storage_configs::paginator::ListInstanceStorageConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -147,17 +136,12 @@ impl ListInstanceStorageConfigsFluentBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         self.inner.get_resource_type()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>

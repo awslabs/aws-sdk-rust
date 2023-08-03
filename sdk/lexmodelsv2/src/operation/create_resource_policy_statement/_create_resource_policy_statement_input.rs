@@ -22,10 +22,7 @@ pub struct CreateResourcePolicyStatementInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
     #[doc(hidden)]
     pub condition: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
@@ -58,10 +55,7 @@ impl CreateResourcePolicyStatementInput {
     pub fn condition(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.condition.as_ref()
     }
@@ -73,16 +67,14 @@ impl CreateResourcePolicyStatementInput {
 }
 impl CreateResourcePolicyStatementInput {
     /// Creates a new builder-style object to manufacture [`CreateResourcePolicyStatementInput`](crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput).
-    pub fn builder() -> crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder{
+    pub fn builder() -> crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder {
         crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourcePolicyStatementInput`](crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,
@@ -90,10 +82,7 @@ pub struct CreateResourcePolicyStatementInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) condition: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     pub(crate) expected_revision_id: ::std::option::Option<::std::string::String>,
 }
@@ -152,17 +141,12 @@ impl CreateResourcePolicyStatementInputBuilder {
         self
     }
     /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.principal = input;
         self
     }
     /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
-    pub fn get_principal(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principal(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         &self.principal
     }
     /// Appends an item to `action`.
@@ -177,10 +161,7 @@ impl CreateResourcePolicyStatementInputBuilder {
         self
     }
     /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.action = input;
         self
     }
@@ -209,10 +190,7 @@ impl CreateResourcePolicyStatementInputBuilder {
     pub fn set_condition(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.condition = input;
@@ -223,28 +201,19 @@ impl CreateResourcePolicyStatementInputBuilder {
     pub fn get_condition(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         &self.condition
     }
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn expected_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn set_expected_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_revision_id = input;
         self
     }
@@ -260,23 +229,14 @@ impl CreateResourcePolicyStatementInputBuilder {
         crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput {
-                resource_arn: self.resource_arn
-                ,
-                statement_id: self.statement_id
-                ,
-                effect: self.effect
-                ,
-                principal: self.principal
-                ,
-                action: self.action
-                ,
-                condition: self.condition
-                ,
-                expected_revision_id: self.expected_revision_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput {
+            resource_arn: self.resource_arn,
+            statement_id: self.statement_id,
+            effect: self.effect,
+            principal: self.principal,
+            action: self.action,
+            condition: self.condition,
+            expected_revision_id: self.expected_revision_id,
+        })
     }
 }

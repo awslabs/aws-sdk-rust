@@ -22,17 +22,14 @@ impl AssociateLicenseInput {
 }
 impl AssociateLicenseInput {
     /// Creates a new builder-style object to manufacture [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
-    pub fn builder() -> crate::operation::associate_license::builders::AssociateLicenseInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_license::builders::AssociateLicenseInputBuilder {
         crate::operation::associate_license::builders::AssociateLicenseInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLicenseInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_type: ::std::option::Option<crate::types::LicenseType>,
@@ -58,10 +55,7 @@ impl AssociateLicenseInputBuilder {
         self
     }
     /// <p>The type of license to associate with the workspace.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.license_type = input;
         self
     }
@@ -72,10 +66,7 @@ impl AssociateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_license::AssociateLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_license::AssociateLicenseInput {
             workspace_id: self.workspace_id,
             license_type: self.license_type,

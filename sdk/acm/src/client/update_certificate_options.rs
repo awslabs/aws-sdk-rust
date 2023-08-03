@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`options(CertificateOptions)`](crate::operation::update_certificate_options::builders::UpdateCertificateOptionsFluentBuilder::options) / [`set_options(Option<CertificateOptions>)`](crate::operation::update_certificate_options::builders::UpdateCertificateOptionsFluentBuilder::set_options): <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
     /// - On success, responds with [`UpdateCertificateOptionsOutput`](crate::operation::update_certificate_options::UpdateCertificateOptionsOutput)
     /// - On failure, responds with [`SdkError<UpdateCertificateOptionsError>`](crate::operation::update_certificate_options::UpdateCertificateOptionsError)
-    pub fn update_certificate_options(
-        &self,
-    ) -> crate::operation::update_certificate_options::builders::UpdateCertificateOptionsFluentBuilder
-    {
+    pub fn update_certificate_options(&self) -> crate::operation::update_certificate_options::builders::UpdateCertificateOptionsFluentBuilder {
         crate::operation::update_certificate_options::builders::UpdateCertificateOptionsFluentBuilder::new(self.handle.clone())
     }
 }

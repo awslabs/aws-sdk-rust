@@ -22,9 +22,7 @@ impl DeleteAppsListInput {
 
 /// A builder for [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppsListInputBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteAppsListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_apps_list::DeleteAppsListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_apps_list::DeleteAppsListInput {
-            list_id: self.list_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_apps_list::DeleteAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_apps_list::DeleteAppsListInput { list_id: self.list_id })
     }
 }

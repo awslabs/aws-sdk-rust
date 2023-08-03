@@ -25,9 +25,7 @@ impl TemplateConfiguration {
 
 /// A builder for [`TemplateConfiguration`](crate::types::TemplateConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateConfigurationBuilder {
     pub(crate) template: ::std::option::Option<::aws_smithy_types::Document>,
 }
@@ -40,10 +38,7 @@ impl TemplateConfigurationBuilder {
     }
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
-    pub fn set_template(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_template(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.template = input;
         self
     }
@@ -54,8 +49,6 @@ impl TemplateConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
-        crate::types::TemplateConfiguration {
-            template: self.template,
-        }
+        crate::types::TemplateConfiguration { template: self.template }
     }
 }

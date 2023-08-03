@@ -15,10 +15,7 @@ pub fn ser_create_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_destination_flow_config::ser_destination_flow_config(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_destination_flow_config::ser_destination_flow_config(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -33,19 +30,13 @@ pub fn ser_create_flow_input(
     if let Some(var_9) = &input.metadata_catalog_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("metadataCatalogConfig").start_object();
-        crate::protocol_serde::shape_metadata_catalog_config::ser_metadata_catalog_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_metadata_catalog_config::ser_metadata_catalog_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.source_flow_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("sourceFlowConfig").start_object();
-        crate::protocol_serde::shape_source_flow_config::ser_source_flow_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_source_flow_config::ser_source_flow_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.tags {

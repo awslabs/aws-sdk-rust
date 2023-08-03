@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAutoTerminationPolicyOutput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput) with field(s):
     ///   - [`auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput::auto_termination_policy): <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
     /// - On failure, responds with [`SdkError<GetAutoTerminationPolicyError>`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError)
-    pub fn get_auto_termination_policy(&self) -> crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder{
+    pub fn get_auto_termination_policy(&self) -> crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder {
         crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyFluentBuilder::new(self.handle.clone())
     }
 }

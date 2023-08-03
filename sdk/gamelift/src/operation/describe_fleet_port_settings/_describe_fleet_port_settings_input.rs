@@ -22,16 +22,14 @@ impl DescribeFleetPortSettingsInput {
 }
 impl DescribeFleetPortSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetPortSettingsInput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput).
-    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder {
         crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetPortSettingsInput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DescribeFleetPortSettingsInputBuilder {
         crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput {
-                fleet_id: self.fleet_id,
-                location: self.location,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput {
+            fleet_id: self.fleet_id,
+            location: self.location,
+        })
     }
 }

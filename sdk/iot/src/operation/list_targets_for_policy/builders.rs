@@ -38,10 +38,7 @@ impl ListTargetsForPolicyFluentBuilder {
         }
     }
     /// Access the ListTargetsForPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListTargetsForPolicyFluentBuilder {
             crate::operation::list_targets_for_policy::ListTargetsForPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_policy::ListTargetsForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_policy::ListTargetsForPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListTargetsForPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListTargetsForPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_policy::ListTargetsForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_policy::ListTargetsForPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListTargetsForPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_policy::ListTargetsForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_policy::ListTargetsForPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListTargetsForPolicyFluentBuilder {
             crate::operation::list_targets_for_policy::ListTargetsForPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_policy::ListTargetsForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_policy::ListTargetsForPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_targets_for_policy::paginator::ListTargetsForPolicyPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_targets_for_policy::paginator::ListTargetsForPolicyPaginator {
-        crate::operation::list_targets_for_policy::paginator::ListTargetsForPolicyPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_targets_for_policy::paginator::ListTargetsForPolicyPaginator {
+        crate::operation::list_targets_for_policy::paginator::ListTargetsForPolicyPaginator::new(self.handle, self.inner)
     }
     /// <p>The policy name.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

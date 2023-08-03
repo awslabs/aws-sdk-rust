@@ -26,7 +26,7 @@ impl DescribeTableDataImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTableDataImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder,
+    inner: crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder,
 }
 impl DescribeTableDataImportJobFluentBuilder {
     /// Creates a new `DescribeTableDataImportJob`.
@@ -37,7 +37,7 @@ impl DescribeTableDataImportJobFluentBuilder {
         }
     }
     /// Access the DescribeTableDataImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeTableDataImportJobFluentBuilder {
             crate::operation::describe_table_data_import_job::DescribeTableDataImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeTableDataImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeTableDataImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeTableDataImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeTableDataImportJobFluentBuilder {
             crate::operation::describe_table_data_import_job::DescribeTableDataImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError>,
     > {
         self.customize_middleware().await
     }

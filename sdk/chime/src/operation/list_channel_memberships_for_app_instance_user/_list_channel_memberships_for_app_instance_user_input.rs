@@ -46,7 +46,8 @@ impl ::std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 }
 impl ListChannelMembershipsForAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserInput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput).
-    pub fn builder() -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder {
         crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder::default()
     }
 }
@@ -62,18 +63,12 @@ pub struct ListChannelMembershipsForAppInstanceUserInputBuilder {
 }
 impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -124,18 +119,19 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelMembershipsForAppInstanceUserInput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-            }
+                app_instance_user_arn: self.app_instance_user_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                chime_bearer: self.chime_bearer,
+            },
         )
     }
 }

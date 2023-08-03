@@ -15,17 +15,14 @@ impl DescribePlaceIndexInput {
 }
 impl DescribePlaceIndexInput {
     /// Creates a new builder-style object to manufacture [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
-    pub fn builder(
-    ) -> crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder {
+    pub fn builder() -> crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder {
         crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlaceIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DescribePlaceIndexInputBuilder {
     /// Consumes the builder and constructs a [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_place_index::DescribePlaceIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_place_index::DescribePlaceIndexInput {
-                index_name: self.index_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_place_index::DescribePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_place_index::DescribePlaceIndexInput { index_name: self.index_name })
     }
 }

@@ -9,8 +9,7 @@ pub struct SqlRunConfiguration {
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     #[doc(hidden)]
-    pub input_starting_position_configuration:
-        ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
@@ -18,9 +17,7 @@ impl SqlRunConfiguration {
         self.input_id.as_deref()
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    pub fn input_starting_position_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
+    pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl SqlRunConfiguration {
 
 /// A builder for [`SqlRunConfiguration`](crate::types::SqlRunConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlRunConfigurationBuilder {
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_starting_position_configuration:
-        ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub(crate) input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfigurationBuilder {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
@@ -57,10 +51,7 @@ impl SqlRunConfigurationBuilder {
         &self.input_id
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    pub fn input_starting_position_configuration(
-        mut self,
-        input: crate::types::InputStartingPositionConfiguration,
-    ) -> Self {
+    pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -73,9 +64,7 @@ impl SqlRunConfigurationBuilder {
         self
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    pub fn get_input_starting_position_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+    pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
         &self.input_starting_position_configuration
     }
     /// Consumes the builder and constructs a [`SqlRunConfiguration`](crate::types::SqlRunConfiguration).

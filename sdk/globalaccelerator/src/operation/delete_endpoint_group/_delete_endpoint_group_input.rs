@@ -15,35 +15,25 @@ impl DeleteEndpointGroupInput {
 }
 impl DeleteEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupInputBuilder {
-        crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupInputBuilder {
+        crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEndpointGroupInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_endpoint_group::DeleteEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_endpoint_group::DeleteEndpointGroupInput {
-                endpoint_group_arn: self.endpoint_group_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_endpoint_group::DeleteEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_endpoint_group::DeleteEndpointGroupInput {
+            endpoint_group_arn: self.endpoint_group_arn,
+        })
     }
 }

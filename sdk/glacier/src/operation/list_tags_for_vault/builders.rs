@@ -10,10 +10,7 @@ impl ListTagsForVaultInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_vault::ListTagsForVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_vault::ListTagsForVaultError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tags_for_vault();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTagsForVaultFluentBuilder {
         }
     }
     /// Access the ListTagsForVault as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_vault::builders::ListTagsForVaultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_vault::builders::ListTagsForVaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTagsForVaultFluentBuilder {
             crate::operation::list_tags_for_vault::ListTagsForVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_vault::ListTagsForVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTagsForVaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTagsForVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_vault::ListTagsForVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_vault::ListTagsForVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTagsForVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_vault::ListTagsForVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_vault::ListTagsForVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListTagsForVaultFluentBuilder {
             crate::operation::list_tags_for_vault::ListTagsForVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_vault::ListTagsForVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError>,
     > {
         self.customize_middleware().await
     }

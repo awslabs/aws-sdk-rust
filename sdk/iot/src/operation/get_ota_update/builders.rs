@@ -10,10 +10,7 @@ impl GetOtaUpdateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ota_update::GetOtaUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ota_update::GetOTAUpdateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ota_update::GetOTAUpdateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ota_update();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetOTAUpdateFluentBuilder {
         }
     }
     /// Access the GetOTAUpdate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ota_update::builders::GetOtaUpdateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ota_update::builders::GetOtaUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl GetOTAUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl GetOTAUpdateFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The OTA update ID.</p>
-    pub fn ota_update_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ota_update_id(input.into());
         self
     }
     /// <p>The OTA update ID.</p>
-    pub fn set_ota_update_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ota_update_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ota_update_id(input);
         self
     }

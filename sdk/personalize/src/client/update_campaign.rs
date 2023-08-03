@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCampaignOutput`](crate::operation::update_campaign::UpdateCampaignOutput) with field(s):
     ///   - [`campaign_arn(Option<String>)`](crate::operation::update_campaign::UpdateCampaignOutput::campaign_arn): <p>The same campaign ARN as given in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateCampaignError>`](crate::operation::update_campaign::UpdateCampaignError)
-    pub fn update_campaign(
-        &self,
-    ) -> crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder {
-        crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_campaign(&self) -> crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder {
+        crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl ImageConfigurationInput {
 
 /// A builder for [`ImageConfigurationInput`](crate::types::ImageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageConfigurationInputBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ImageConfigurationInputBuilder {
     }
     /// Consumes the builder and constructs a [`ImageConfigurationInput`](crate::types::ImageConfigurationInput).
     pub fn build(self) -> crate::types::ImageConfigurationInput {
-        crate::types::ImageConfigurationInput {
-            image_uri: self.image_uri,
-        }
+        crate::types::ImageConfigurationInput { image_uri: self.image_uri }
     }
 }

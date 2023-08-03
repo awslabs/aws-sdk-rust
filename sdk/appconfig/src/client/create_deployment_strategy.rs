@@ -21,10 +21,7 @@ impl super::Client {
     ///   - [`final_bake_time_in_minutes(i32)`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput::final_bake_time_in_minutes): <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     ///   - [`replicate_to(Option<ReplicateTo>)`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput::replicate_to): <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     /// - On failure, responds with [`SdkError<CreateDeploymentStrategyError>`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyError)
-    pub fn create_deployment_strategy(
-        &self,
-    ) -> crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyFluentBuilder
-    {
+    pub fn create_deployment_strategy(&self) -> crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyFluentBuilder {
         crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyFluentBuilder::new(self.handle.clone())
     }
 }

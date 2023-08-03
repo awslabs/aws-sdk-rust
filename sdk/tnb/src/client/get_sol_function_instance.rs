@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`metadata(Option<GetSolFunctionInstanceMetadata>)`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput::metadata): <p>The metadata of a network function instance.</p>  <p>A network function instance is a function in a function package .</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<GetSolFunctionInstanceError>`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceError)
-    pub fn get_sol_function_instance(
-        &self,
-    ) -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder
-    {
+    pub fn get_sol_function_instance(&self) -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder {
         crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder::new(self.handle.clone())
     }
 }

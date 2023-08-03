@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SendWorkflowStepStateOutput {
 }
 impl SendWorkflowStepStateOutput {
     /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateOutput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput).
-    pub fn builder(
-    ) -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateOutputBuilder {
         crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendWorkflowStepStateOutput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateOutputBuilder {
     _request_id: Option<String>,
 }

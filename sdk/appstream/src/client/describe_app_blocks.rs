@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`app_blocks(Option<Vec<AppBlock>>)`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput::app_blocks): <p>The app blocks in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAppBlocksError>`](crate::operation::describe_app_blocks::DescribeAppBlocksError)
-    pub fn describe_app_blocks(
-        &self,
-    ) -> crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder {
-        crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_app_blocks(&self) -> crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder {
+        crate::operation::describe_app_blocks::builders::DescribeAppBlocksFluentBuilder::new(self.handle.clone())
     }
 }

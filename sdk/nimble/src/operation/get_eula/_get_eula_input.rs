@@ -22,9 +22,7 @@ impl GetEulaInput {
 
 /// A builder for [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEulaInputBuilder {
     pub(crate) eula_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetEulaInputBuilder {
         &self.eula_id
     }
     /// Consumes the builder and constructs a [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_eula::GetEulaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_eula::GetEulaInput {
-            eula_id: self.eula_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_eula::GetEulaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_eula::GetEulaInput { eula_id: self.eula_id })
     }
 }

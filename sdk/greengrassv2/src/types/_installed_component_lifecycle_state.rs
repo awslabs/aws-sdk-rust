@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstalledComponentLifecycleState {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for InstalledComponentLifecycleState {
             "RUNNING" => InstalledComponentLifecycleState::Running,
             "STARTING" => InstalledComponentLifecycleState::Starting,
             "STOPPING" => InstalledComponentLifecycleState::Stopping,
-            other => InstalledComponentLifecycleState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstalledComponentLifecycleState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,16 +105,7 @@ impl InstalledComponentLifecycleState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BROKEN",
-            "ERRORED",
-            "FINISHED",
-            "INSTALLED",
-            "NEW",
-            "RUNNING",
-            "STARTING",
-            "STOPPING",
-        ]
+        &["BROKEN", "ERRORED", "FINISHED", "INSTALLED", "NEW", "RUNNING", "STARTING", "STOPPING"]
     }
 }
 impl ::std::convert::AsRef<str> for InstalledComponentLifecycleState {

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`owner_account(Option<String>)`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput::owner_account): <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
     ///   - [`namespace(Option<Namespace>)`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput::namespace): <p>A collection of database objects and users.</p>
     /// - On failure, responds with [`SdkError<RestoreFromSnapshotError>`](crate::operation::restore_from_snapshot::RestoreFromSnapshotError)
-    pub fn restore_from_snapshot(
-        &self,
-    ) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder {
-        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_from_snapshot(&self) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder {
+        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

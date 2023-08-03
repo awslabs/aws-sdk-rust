@@ -19,9 +19,7 @@ impl FileFormatConfiguration {
         self.json_configuration.as_ref()
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
-    pub fn parquet_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParquetConfiguration> {
+    pub fn parquet_configuration(&self) -> ::std::option::Option<&crate::types::ParquetConfiguration> {
         self.parquet_configuration.as_ref()
     }
 }
@@ -34,9 +32,7 @@ impl FileFormatConfiguration {
 
 /// A builder for [`FileFormatConfiguration`](crate::types::FileFormatConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileFormatConfigurationBuilder {
     pub(crate) json_configuration: ::std::option::Option<crate::types::JsonConfiguration>,
     pub(crate) parquet_configuration: ::std::option::Option<crate::types::ParquetConfiguration>,
@@ -48,17 +44,12 @@ impl FileFormatConfigurationBuilder {
         self
     }
     /// <p>Contains the configuration information of the JSON format.</p>
-    pub fn set_json_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::JsonConfiguration>,
-    ) -> Self {
+    pub fn set_json_configuration(mut self, input: ::std::option::Option<crate::types::JsonConfiguration>) -> Self {
         self.json_configuration = input;
         self
     }
     /// <p>Contains the configuration information of the JSON format.</p>
-    pub fn get_json_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::JsonConfiguration> {
+    pub fn get_json_configuration(&self) -> &::std::option::Option<crate::types::JsonConfiguration> {
         &self.json_configuration
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
@@ -67,17 +58,12 @@ impl FileFormatConfigurationBuilder {
         self
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
-    pub fn set_parquet_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetConfiguration>,
-    ) -> Self {
+    pub fn set_parquet_configuration(mut self, input: ::std::option::Option<crate::types::ParquetConfiguration>) -> Self {
         self.parquet_configuration = input;
         self
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
-    pub fn get_parquet_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParquetConfiguration> {
+    pub fn get_parquet_configuration(&self) -> &::std::option::Option<crate::types::ParquetConfiguration> {
         &self.parquet_configuration
     }
     /// Consumes the builder and constructs a [`FileFormatConfiguration`](crate::types::FileFormatConfiguration).

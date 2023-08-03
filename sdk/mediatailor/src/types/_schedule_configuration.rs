@@ -30,9 +30,7 @@ impl ScheduleConfiguration {
 
 /// A builder for [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) transition: ::std::option::Option<crate::types::Transition>,
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,
@@ -44,10 +42,7 @@ impl ScheduleConfigurationBuilder {
         self
     }
     /// <p>Program transition configurations.</p>
-    pub fn set_transition(
-        mut self,
-        input: ::std::option::Option<crate::types::Transition>,
-    ) -> Self {
+    pub fn set_transition(mut self, input: ::std::option::Option<crate::types::Transition>) -> Self {
         self.transition = input;
         self
     }

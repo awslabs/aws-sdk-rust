@@ -59,9 +59,7 @@ impl ListSessionsInput {
 
 /// A builder for [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSessionsInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) state_filter: ::std::option::Option<crate::types::SessionState>,
@@ -105,10 +103,7 @@ impl ListSessionsInputBuilder {
     /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    pub fn set_state_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_state_filter(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.state_filter = input;
         self
     }
@@ -153,12 +148,7 @@ impl ListSessionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sessions::ListSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sessions::ListSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sessions::ListSessionsInput {
             work_group: self.work_group,
             state_filter: self.state_filter,

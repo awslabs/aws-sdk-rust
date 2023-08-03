@@ -26,8 +26,7 @@ impl ListTagsForCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateInputBuilder,
+    inner: crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateInputBuilder,
 }
 impl ListTagsForCertificateFluentBuilder {
     /// Creates a new `ListTagsForCertificate`.
@@ -38,10 +37,7 @@ impl ListTagsForCertificateFluentBuilder {
         }
     }
     /// Access the ListTagsForCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListTagsForCertificateFluentBuilder {
             crate::operation::list_tags_for_certificate::ListTagsForCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_certificate::ListTagsForCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_certificate::ListTagsForCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListTagsForCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListTagsForCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_certificate::ListTagsForCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_certificate::ListTagsForCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListTagsForCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_certificate::ListTagsForCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_certificate::ListTagsForCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,29 +105,21 @@ impl ListTagsForCertificateFluentBuilder {
             crate::operation::list_tags_for_certificate::ListTagsForCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_certificate::ListTagsForCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_certificate::ListTagsForCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }

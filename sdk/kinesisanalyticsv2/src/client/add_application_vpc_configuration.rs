@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::application_version_id): <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
     ///   - [`vpc_configuration_description(Option<VpcConfigurationDescription>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::vpc_configuration_description): <p>The parameters of the new VPC configuration.</p>
     /// - On failure, responds with [`SdkError<AddApplicationVpcConfigurationError>`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationError)
-    pub fn add_application_vpc_configuration(&self) -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationFluentBuilder{
+    pub fn add_application_vpc_configuration(
+        &self,
+    ) -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationFluentBuilder {
         crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

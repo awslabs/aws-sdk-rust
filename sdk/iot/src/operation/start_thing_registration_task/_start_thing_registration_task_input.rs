@@ -36,16 +36,14 @@ impl StartThingRegistrationTaskInput {
 }
 impl StartThingRegistrationTaskInput {
     /// Creates a new builder-style object to manufacture [`StartThingRegistrationTaskInput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput).
-    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder{
+    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder {
         crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartThingRegistrationTaskInput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartThingRegistrationTaskInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) input_file_bucket: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct StartThingRegistrationTaskInputBuilder {
 }
 impl StartThingRegistrationTaskInputBuilder {
     /// <p>The provisioning template.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provisioning template.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -74,18 +66,12 @@ impl StartThingRegistrationTaskInputBuilder {
         &self.template_body
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn input_file_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn set_input_file_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_file_bucket = input;
         self
     }
@@ -94,18 +80,12 @@ impl StartThingRegistrationTaskInputBuilder {
         &self.input_file_bucket
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    pub fn input_file_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    pub fn set_input_file_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_file_key = input;
         self
     }
@@ -134,13 +114,11 @@ impl StartThingRegistrationTaskInputBuilder {
         crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput {
-                template_body: self.template_body,
-                input_file_bucket: self.input_file_bucket,
-                input_file_key: self.input_file_key,
-                role_arn: self.role_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput {
+            template_body: self.template_body,
+            input_file_bucket: self.input_file_bucket,
+            input_file_key: self.input_file_key,
+            role_arn: self.role_arn,
+        })
     }
 }

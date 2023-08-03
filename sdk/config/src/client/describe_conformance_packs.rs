@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`conformance_pack_details(Option<Vec<ConformancePackDetail>>)`](crate::operation::describe_conformance_packs::DescribeConformancePacksOutput::conformance_pack_details): <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_conformance_packs::DescribeConformancePacksOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeConformancePacksError>`](crate::operation::describe_conformance_packs::DescribeConformancePacksError)
-    pub fn describe_conformance_packs(
-        &self,
-    ) -> crate::operation::describe_conformance_packs::builders::DescribeConformancePacksFluentBuilder
-    {
+    pub fn describe_conformance_packs(&self) -> crate::operation::describe_conformance_packs::builders::DescribeConformancePacksFluentBuilder {
         crate::operation::describe_conformance_packs::builders::DescribeConformancePacksFluentBuilder::new(self.handle.clone())
     }
 }

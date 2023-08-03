@@ -38,13 +38,7 @@
 /// The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputDeviceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputDeviceType {
         match s {
             "HD" => InputDeviceType::Hd,
             "UHD" => InputDeviceType::Uhd,
-            other => {
-                InputDeviceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InputDeviceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

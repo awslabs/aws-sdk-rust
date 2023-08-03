@@ -35,9 +35,7 @@ impl ListScenesOutput {
 
 /// A builder for [`ListScenesOutput`](crate::operation::list_scenes::ListScenesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScenesOutputBuilder {
     pub(crate) scene_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListScenesOutputBuilder {
         self
     }
     /// <p>A list of objects that contain information about the scenes.</p>
-    pub fn set_scene_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>>,
-    ) -> Self {
+    pub fn set_scene_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>>) -> Self {
         self.scene_summaries = input;
         self
     }
     /// <p>A list of objects that contain information about the scenes.</p>
-    pub fn get_scene_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>> {
+    pub fn get_scene_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>> {
         &self.scene_summaries
     }
     /// <p>The string that specifies the next page of results.</p>

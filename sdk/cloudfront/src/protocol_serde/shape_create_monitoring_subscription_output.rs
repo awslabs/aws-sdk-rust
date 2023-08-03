@@ -5,14 +5,15 @@ pub(crate) fn de_monitoring_subscription_payload(
     ::std::option::Option<crate::types::MonitoringSubscription>,
     crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_create_monitoring_subscription_output::de_monitoring_subscription(body).map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_create_monitoring_subscription_output::de_monitoring_subscription(body)
+                .map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_monitoring_subscription(
-    inp: &[u8],
-) -> Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_monitoring_subscription(inp: &[u8]) -> Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -30,9 +30,7 @@ impl AnomalyDateInterval {
 
 /// A builder for [`AnomalyDateInterval`](crate::types::AnomalyDateInterval).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDateIntervalBuilder {
     pub(crate) start_date: ::std::option::Option<::std::string::String>,
     pub(crate) end_date: ::std::option::Option<::std::string::String>,

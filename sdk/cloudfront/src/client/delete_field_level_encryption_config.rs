@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteFieldLevelEncryptionConfigOutput`](crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteFieldLevelEncryptionConfigError>`](crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError)
-    pub fn delete_field_level_encryption_config(&self) -> crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigFluentBuilder{
+    pub fn delete_field_level_encryption_config(
+        &self,
+    ) -> crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigFluentBuilder {
         crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

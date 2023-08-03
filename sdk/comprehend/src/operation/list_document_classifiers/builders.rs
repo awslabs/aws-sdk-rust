@@ -26,8 +26,7 @@ impl ListDocumentClassifiersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDocumentClassifiersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_document_classifiers::builders::ListDocumentClassifiersInputBuilder,
+    inner: crate::operation::list_document_classifiers::builders::ListDocumentClassifiersInputBuilder,
 }
 impl ListDocumentClassifiersFluentBuilder {
     /// Creates a new `ListDocumentClassifiers`.
@@ -38,10 +37,7 @@ impl ListDocumentClassifiersFluentBuilder {
         }
     }
     /// Access the ListDocumentClassifiers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_document_classifiers::builders::ListDocumentClassifiersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_document_classifiers::builders::ListDocumentClassifiersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListDocumentClassifiersFluentBuilder {
             crate::operation::list_document_classifiers::ListDocumentClassifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_classifiers::ListDocumentClassifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_classifiers::ListDocumentClassifiersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListDocumentClassifiersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListDocumentClassifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_document_classifiers::ListDocumentClassifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_classifiers::ListDocumentClassifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_classifiers::ListDocumentClassifiersError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListDocumentClassifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_document_classifiers::ListDocumentClassifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_classifiers::ListDocumentClassifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_classifiers::ListDocumentClassifiersError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListDocumentClassifiersFluentBuilder {
             crate::operation::list_document_classifiers::ListDocumentClassifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_classifiers::ListDocumentClassifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_classifiers::ListDocumentClassifiersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_document_classifiers::paginator::ListDocumentClassifiersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_document_classifiers::paginator::ListDocumentClassifiersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_document_classifiers::paginator::ListDocumentClassifiersPaginator {
         crate::operation::list_document_classifiers::paginator::ListDocumentClassifiersPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
@@ -139,10 +121,7 @@ impl ListDocumentClassifiersFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DocumentClassifierFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

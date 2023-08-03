@@ -12,32 +12,25 @@ pub struct DestinationDescription {
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The destination in Amazon S3.</p>
     #[doc(hidden)]
-    pub extended_s3_destination_description:
-        ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
+    pub extended_s3_destination_description: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
     /// <p>The destination in Amazon Redshift.</p>
     #[doc(hidden)]
-    pub redshift_destination_description:
-        ::std::option::Option<crate::types::RedshiftDestinationDescription>,
+    pub redshift_destination_description: ::std::option::Option<crate::types::RedshiftDestinationDescription>,
     /// <p>The destination in Amazon ES.</p>
     #[doc(hidden)]
-    pub elasticsearch_destination_description:
-        ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
+    pub elasticsearch_destination_description: ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
     /// <p>The destination in Amazon OpenSearch Service.</p>
     #[doc(hidden)]
-    pub amazonopensearchservice_destination_description:
-        ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
+    pub amazonopensearchservice_destination_description: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
     /// <p>The destination in Splunk.</p>
     #[doc(hidden)]
-    pub splunk_destination_description:
-        ::std::option::Option<crate::types::SplunkDestinationDescription>,
+    pub splunk_destination_description: ::std::option::Option<crate::types::SplunkDestinationDescription>,
     /// <p>Describes the specified HTTP endpoint destination.</p>
     #[doc(hidden)]
-    pub http_endpoint_destination_description:
-        ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
+    pub http_endpoint_destination_description: ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     #[doc(hidden)]
-    pub amazon_open_search_serverless_destination_description:
-        ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
+    pub amazon_open_search_serverless_destination_description: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
 }
 impl DestinationDescription {
     /// <p>The ID of the destination.</p>
@@ -45,55 +38,40 @@ impl DestinationDescription {
         self.destination_id.as_deref()
     }
     /// <p>[Deprecated] The destination in Amazon S3.</p>
-    pub fn s3_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
     /// <p>The destination in Amazon S3.</p>
-    pub fn extended_s3_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExtendedS3DestinationDescription> {
+    pub fn extended_s3_destination_description(&self) -> ::std::option::Option<&crate::types::ExtendedS3DestinationDescription> {
         self.extended_s3_destination_description.as_ref()
     }
     /// <p>The destination in Amazon Redshift.</p>
-    pub fn redshift_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedshiftDestinationDescription> {
+    pub fn redshift_destination_description(&self) -> ::std::option::Option<&crate::types::RedshiftDestinationDescription> {
         self.redshift_destination_description.as_ref()
     }
     /// <p>The destination in Amazon ES.</p>
-    pub fn elasticsearch_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchDestinationDescription> {
+    pub fn elasticsearch_destination_description(&self) -> ::std::option::Option<&crate::types::ElasticsearchDestinationDescription> {
         self.elasticsearch_destination_description.as_ref()
     }
     /// <p>The destination in Amazon OpenSearch Service.</p>
     pub fn amazonopensearchservice_destination_description(
         &self,
     ) -> ::std::option::Option<&crate::types::AmazonopensearchserviceDestinationDescription> {
-        self.amazonopensearchservice_destination_description
-            .as_ref()
+        self.amazonopensearchservice_destination_description.as_ref()
     }
     /// <p>The destination in Splunk.</p>
-    pub fn splunk_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SplunkDestinationDescription> {
+    pub fn splunk_destination_description(&self) -> ::std::option::Option<&crate::types::SplunkDestinationDescription> {
         self.splunk_destination_description.as_ref()
     }
     /// <p>Describes the specified HTTP endpoint destination.</p>
-    pub fn http_endpoint_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HttpEndpointDestinationDescription> {
+    pub fn http_endpoint_destination_description(&self) -> ::std::option::Option<&crate::types::HttpEndpointDestinationDescription> {
         self.http_endpoint_destination_description.as_ref()
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn amazon_open_search_serverless_destination_description(
         &self,
-    ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessDestinationDescription>
-    {
-        self.amazon_open_search_serverless_destination_description
-            .as_ref()
+    ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessDestinationDescription> {
+        self.amazon_open_search_serverless_destination_description.as_ref()
     }
 }
 impl DestinationDescription {
@@ -105,42 +83,27 @@ impl DestinationDescription {
 
 /// A builder for [`DestinationDescription`](crate::types::DestinationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationDescriptionBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
-    pub(crate) s3_destination_description:
-        ::std::option::Option<crate::types::S3DestinationDescription>,
-    pub(crate) extended_s3_destination_description:
-        ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
-    pub(crate) redshift_destination_description:
-        ::std::option::Option<crate::types::RedshiftDestinationDescription>,
-    pub(crate) elasticsearch_destination_description:
-        ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
-    pub(crate) amazonopensearchservice_destination_description:
-        ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
-    pub(crate) splunk_destination_description:
-        ::std::option::Option<crate::types::SplunkDestinationDescription>,
-    pub(crate) http_endpoint_destination_description:
-        ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
+    pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) extended_s3_destination_description: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
+    pub(crate) redshift_destination_description: ::std::option::Option<crate::types::RedshiftDestinationDescription>,
+    pub(crate) elasticsearch_destination_description: ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
+    pub(crate) amazonopensearchservice_destination_description: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
+    pub(crate) splunk_destination_description: ::std::option::Option<crate::types::SplunkDestinationDescription>,
+    pub(crate) http_endpoint_destination_description: ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
     pub(crate) amazon_open_search_serverless_destination_description:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
 }
 impl DestinationDescriptionBuilder {
     /// <p>The ID of the destination.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the destination.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
@@ -149,76 +112,49 @@ impl DestinationDescriptionBuilder {
         &self.destination_id
     }
     /// <p>[Deprecated] The destination in Amazon S3.</p>
-    pub fn s3_destination_description(
-        mut self,
-        input: crate::types::S3DestinationDescription,
-    ) -> Self {
+    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>[Deprecated] The destination in Amazon S3.</p>
-    pub fn set_s3_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationDescription>,
-    ) -> Self {
+    pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_destination_description = input;
         self
     }
     /// <p>[Deprecated] The destination in Amazon S3.</p>
-    pub fn get_s3_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+    pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
     /// <p>The destination in Amazon S3.</p>
-    pub fn extended_s3_destination_description(
-        mut self,
-        input: crate::types::ExtendedS3DestinationDescription,
-    ) -> Self {
+    pub fn extended_s3_destination_description(mut self, input: crate::types::ExtendedS3DestinationDescription) -> Self {
         self.extended_s3_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination in Amazon S3.</p>
-    pub fn set_extended_s3_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
-    ) -> Self {
+    pub fn set_extended_s3_destination_description(mut self, input: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>) -> Self {
         self.extended_s3_destination_description = input;
         self
     }
     /// <p>The destination in Amazon S3.</p>
-    pub fn get_extended_s3_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExtendedS3DestinationDescription> {
+    pub fn get_extended_s3_destination_description(&self) -> &::std::option::Option<crate::types::ExtendedS3DestinationDescription> {
         &self.extended_s3_destination_description
     }
     /// <p>The destination in Amazon Redshift.</p>
-    pub fn redshift_destination_description(
-        mut self,
-        input: crate::types::RedshiftDestinationDescription,
-    ) -> Self {
+    pub fn redshift_destination_description(mut self, input: crate::types::RedshiftDestinationDescription) -> Self {
         self.redshift_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination in Amazon Redshift.</p>
-    pub fn set_redshift_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDestinationDescription>,
-    ) -> Self {
+    pub fn set_redshift_destination_description(mut self, input: ::std::option::Option<crate::types::RedshiftDestinationDescription>) -> Self {
         self.redshift_destination_description = input;
         self
     }
     /// <p>The destination in Amazon Redshift.</p>
-    pub fn get_redshift_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedshiftDestinationDescription> {
+    pub fn get_redshift_destination_description(&self) -> &::std::option::Option<crate::types::RedshiftDestinationDescription> {
         &self.redshift_destination_description
     }
     /// <p>The destination in Amazon ES.</p>
-    pub fn elasticsearch_destination_description(
-        mut self,
-        input: crate::types::ElasticsearchDestinationDescription,
-    ) -> Self {
+    pub fn elasticsearch_destination_description(mut self, input: crate::types::ElasticsearchDestinationDescription) -> Self {
         self.elasticsearch_destination_description = ::std::option::Option::Some(input);
         self
     }
@@ -231,16 +167,11 @@ impl DestinationDescriptionBuilder {
         self
     }
     /// <p>The destination in Amazon ES.</p>
-    pub fn get_elasticsearch_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchDestinationDescription> {
+    pub fn get_elasticsearch_destination_description(&self) -> &::std::option::Option<crate::types::ElasticsearchDestinationDescription> {
         &self.elasticsearch_destination_description
     }
     /// <p>The destination in Amazon OpenSearch Service.</p>
-    pub fn amazonopensearchservice_destination_description(
-        mut self,
-        input: crate::types::AmazonopensearchserviceDestinationDescription,
-    ) -> Self {
+    pub fn amazonopensearchservice_destination_description(mut self, input: crate::types::AmazonopensearchserviceDestinationDescription) -> Self {
         self.amazonopensearchservice_destination_description = ::std::option::Option::Some(input);
         self
     }
@@ -259,32 +190,21 @@ impl DestinationDescriptionBuilder {
         &self.amazonopensearchservice_destination_description
     }
     /// <p>The destination in Splunk.</p>
-    pub fn splunk_destination_description(
-        mut self,
-        input: crate::types::SplunkDestinationDescription,
-    ) -> Self {
+    pub fn splunk_destination_description(mut self, input: crate::types::SplunkDestinationDescription) -> Self {
         self.splunk_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination in Splunk.</p>
-    pub fn set_splunk_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::SplunkDestinationDescription>,
-    ) -> Self {
+    pub fn set_splunk_destination_description(mut self, input: ::std::option::Option<crate::types::SplunkDestinationDescription>) -> Self {
         self.splunk_destination_description = input;
         self
     }
     /// <p>The destination in Splunk.</p>
-    pub fn get_splunk_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::SplunkDestinationDescription> {
+    pub fn get_splunk_destination_description(&self) -> &::std::option::Option<crate::types::SplunkDestinationDescription> {
         &self.splunk_destination_description
     }
     /// <p>Describes the specified HTTP endpoint destination.</p>
-    pub fn http_endpoint_destination_description(
-        mut self,
-        input: crate::types::HttpEndpointDestinationDescription,
-    ) -> Self {
+    pub fn http_endpoint_destination_description(mut self, input: crate::types::HttpEndpointDestinationDescription) -> Self {
         self.http_endpoint_destination_description = ::std::option::Option::Some(input);
         self
     }
@@ -297,9 +217,7 @@ impl DestinationDescriptionBuilder {
         self
     }
     /// <p>Describes the specified HTTP endpoint destination.</p>
-    pub fn get_http_endpoint_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::HttpEndpointDestinationDescription> {
+    pub fn get_http_endpoint_destination_description(&self) -> &::std::option::Option<crate::types::HttpEndpointDestinationDescription> {
         &self.http_endpoint_destination_description
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
@@ -307,16 +225,13 @@ impl DestinationDescriptionBuilder {
         mut self,
         input: crate::types::AmazonOpenSearchServerlessDestinationDescription,
     ) -> Self {
-        self.amazon_open_search_serverless_destination_description =
-            ::std::option::Option::Some(input);
+        self.amazon_open_search_serverless_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn set_amazon_open_search_serverless_destination_description(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AmazonOpenSearchServerlessDestinationDescription,
-        >,
+        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
     ) -> Self {
         self.amazon_open_search_serverless_destination_description = input;
         self
@@ -324,8 +239,7 @@ impl DestinationDescriptionBuilder {
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn get_amazon_open_search_serverless_destination_description(
         &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>
-    {
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription> {
         &self.amazon_open_search_serverless_destination_description
     }
     /// Consumes the builder and constructs a [`DestinationDescription`](crate::types::DestinationDescription).
@@ -336,12 +250,10 @@ impl DestinationDescriptionBuilder {
             extended_s3_destination_description: self.extended_s3_destination_description,
             redshift_destination_description: self.redshift_destination_description,
             elasticsearch_destination_description: self.elasticsearch_destination_description,
-            amazonopensearchservice_destination_description: self
-                .amazonopensearchservice_destination_description,
+            amazonopensearchservice_destination_description: self.amazonopensearchservice_destination_description,
             splunk_destination_description: self.splunk_destination_description,
             http_endpoint_destination_description: self.http_endpoint_destination_description,
-            amazon_open_search_serverless_destination_description: self
-                .amazon_open_search_serverless_destination_description,
+            amazon_open_search_serverless_destination_description: self.amazon_open_search_serverless_destination_description,
         }
     }
 }

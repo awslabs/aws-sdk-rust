@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_registries::ListRegistriesOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`registries(Option<Vec<RegistrySummary>>)`](crate::operation::list_registries::ListRegistriesOutput::registries): <p>An array of registry summaries.</p>
     /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::operation::list_registries::ListRegistriesError)
-    pub fn list_registries(
-        &self,
-    ) -> crate::operation::list_registries::builders::ListRegistriesFluentBuilder {
-        crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_registries(&self) -> crate::operation::list_registries::builders::ListRegistriesFluentBuilder {
+        crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(self.handle.clone())
     }
 }

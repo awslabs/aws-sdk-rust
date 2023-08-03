@@ -40,13 +40,7 @@
 /// support a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,9 +55,7 @@ impl ::std::convert::From<&str> for InputSourceType {
         match s {
             "DYNAMIC" => InputSourceType::Dynamic,
             "STATIC" => InputSourceType::Static,
-            other => {
-                InputSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InputSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

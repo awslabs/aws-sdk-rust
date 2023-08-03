@@ -22,16 +22,14 @@ impl ListAdminAccountsForOrganizationInput {
 }
 impl ListAdminAccountsForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`ListAdminAccountsForOrganizationInput`](crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationInput).
-    pub fn builder() -> crate::operation::list_admin_accounts_for_organization::builders::ListAdminAccountsForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::list_admin_accounts_for_organization::builders::ListAdminAccountsForOrganizationInputBuilder {
         crate::operation::list_admin_accounts_for_organization::builders::ListAdminAccountsForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAdminAccountsForOrganizationInput`](crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAdminAccountsForOrganizationInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -66,14 +64,17 @@ impl ListAdminAccountsForOrganizationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAdminAccountsForOrganizationInput`](crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

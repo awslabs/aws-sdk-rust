@@ -8,9 +8,7 @@ pub struct CreateUploadUrlOutput {
     pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
     #[doc(hidden)]
-    pub request_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for the uploaded code resource. </p>
     #[doc(hidden)]
     pub code_artifact_id: ::std::option::Option<::std::string::String>,
@@ -22,11 +20,7 @@ impl CreateUploadUrlOutput {
         self.s3_url.as_deref()
     }
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
-    pub fn request_headers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_headers.as_ref()
     }
     /// <p>The identifier for the uploaded code resource. </p>
@@ -51,8 +45,7 @@ impl ::aws_http::request_id::RequestId for CreateUploadUrlOutput {
 }
 impl CreateUploadUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateUploadUrlOutput`](crate::operation::create_upload_url::CreateUploadUrlOutput).
-    pub fn builder() -> crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder {
         crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder::default()
     }
 }
@@ -62,9 +55,7 @@ impl CreateUploadUrlOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateUploadUrlOutputBuilder {
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,
-    pub(crate) request_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) code_artifact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -101,34 +92,22 @@ impl CreateUploadUrlOutputBuilder {
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
     pub fn set_request_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_headers = input;
         self
     }
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
-    pub fn get_request_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_headers
     }
     /// <p>The identifier for the uploaded code resource. </p>
-    pub fn code_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the uploaded code resource. </p>
-    pub fn set_code_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_artifact_id = input;
         self
     }

@@ -21,10 +21,7 @@ pub fn ser_create_location_efs_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -34,9 +31,7 @@ pub fn ser_create_location_efs_input(
         object.key("AccessPointArn").string(var_9.as_str());
     }
     if let Some(var_10) = &input.file_system_access_role_arn {
-        object
-            .key("FileSystemAccessRoleArn")
-            .string(var_10.as_str());
+        object.key("FileSystemAccessRoleArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.in_transit_encryption {
         object.key("InTransitEncryption").string(var_11.as_str());

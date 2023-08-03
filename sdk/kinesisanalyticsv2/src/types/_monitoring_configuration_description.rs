@@ -37,9 +37,7 @@ impl MonitoringConfigurationDescription {
 
 /// A builder for [`MonitoringConfigurationDescription`](crate::types::MonitoringConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringConfigurationDescriptionBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) metrics_level: ::std::option::Option<crate::types::MetricsLevel>,
@@ -52,17 +50,12 @@ impl MonitoringConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
-    pub fn set_configuration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationType>,
-    ) -> Self {
+    pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
-    pub fn get_configuration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+    pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application.</p>
@@ -71,10 +64,7 @@ impl MonitoringConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application.</p>
-    pub fn set_metrics_level(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsLevel>,
-    ) -> Self {
+    pub fn set_metrics_level(mut self, input: ::std::option::Option<crate::types::MetricsLevel>) -> Self {
         self.metrics_level = input;
         self
     }

@@ -37,9 +37,7 @@ impl NotificationContext {
 
 /// A builder for [`NotificationContext`](crate::types::NotificationContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationContextBuilder {
     pub(crate) validation_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ValidationStatus>,
@@ -47,18 +45,12 @@ pub struct NotificationContextBuilder {
 }
 impl NotificationContextBuilder {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the validation.</p>
-    pub fn set_validation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_id = input;
         self
     }
@@ -72,10 +64,7 @@ impl NotificationContextBuilder {
         self
     }
     /// <p>The status of the validation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ValidationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -84,18 +73,12 @@ impl NotificationContextBuilder {
         &self.status
     }
     /// <p>The status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

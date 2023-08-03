@@ -8,9 +8,7 @@ pub struct ListNotebookInstanceLifecycleConfigsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     #[doc(hidden)]
-    pub notebook_instance_lifecycle_configs: ::std::option::Option<
-        ::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>,
-    >,
+    pub notebook_instance_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotebookInstanceLifecycleConfigsOutput {
@@ -19,9 +17,7 @@ impl ListNotebookInstanceLifecycleConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleConfigSummary]> {
+    pub fn notebook_instance_lifecycle_configs(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleConfigSummary]> {
         self.notebook_instance_lifecycle_configs.as_deref()
     }
 }
@@ -32,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListNotebookInstanceLifecycleConfigsO
 }
 impl ListNotebookInstanceLifecycleConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput).
-    pub fn builder() -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsOutputBuilder {
         crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotebookInstanceLifecycleConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) notebook_instance_lifecycle_configs: ::std::option::Option<
-        ::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>,
-    >,
+    pub(crate) notebook_instance_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
@@ -69,10 +61,7 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
     /// To override the contents of this collection use [`set_notebook_instance_lifecycle_configs`](Self::set_notebook_instance_lifecycle_configs).
     ///
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_configs(
-        mut self,
-        input: crate::types::NotebookInstanceLifecycleConfigSummary,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_configs(mut self, input: crate::types::NotebookInstanceLifecycleConfigSummary) -> Self {
         let mut v = self.notebook_instance_lifecycle_configs.unwrap_or_default();
         v.push(input);
         self.notebook_instance_lifecycle_configs = ::std::option::Option::Some(v);
@@ -81,9 +70,7 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     pub fn set_notebook_instance_lifecycle_configs(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
     ) -> Self {
         self.notebook_instance_lifecycle_configs = input;
         self
@@ -91,8 +78,7 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     pub fn get_notebook_instance_lifecycle_configs(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>> {
         &self.notebook_instance_lifecycle_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,12 +91,10 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput).
-    pub fn build(self) -> crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput{
+    pub fn build(self) -> crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput {
         crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput {
-            next_token: self.next_token
-            ,
-            notebook_instance_lifecycle_configs: self.notebook_instance_lifecycle_configs
-            ,
+            next_token: self.next_token,
+            notebook_instance_lifecycle_configs: self.notebook_instance_lifecycle_configs,
             _request_id: self._request_id,
         }
     }

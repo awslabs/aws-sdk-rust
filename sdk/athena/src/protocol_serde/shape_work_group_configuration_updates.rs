@@ -13,9 +13,7 @@ pub fn ser_work_group_configuration_updates(
         object_3.finish();
     }
     if let Some(var_4) = &input.publish_cloud_watch_metrics_enabled {
-        object
-            .key("PublishCloudWatchMetricsEnabled")
-            .boolean(*var_4);
+        object.key("PublishCloudWatchMetricsEnabled").boolean(*var_4);
     }
     if let Some(var_5) = &input.bytes_scanned_cutoff_per_query {
         object.key("BytesScannedCutoffPerQuery").number(
@@ -24,9 +22,7 @@ pub fn ser_work_group_configuration_updates(
         );
     }
     if let Some(var_6) = &input.remove_bytes_scanned_cutoff_per_query {
-        object
-            .key("RemoveBytesScannedCutoffPerQuery")
-            .boolean(*var_6);
+        object.key("RemoveBytesScannedCutoffPerQuery").boolean(*var_6);
     }
     if let Some(var_7) = &input.requester_pays_enabled {
         object.key("RequesterPaysEnabled").boolean(*var_7);
@@ -38,30 +34,25 @@ pub fn ser_work_group_configuration_updates(
         object_9.finish();
     }
     if let Some(var_10) = &input.remove_customer_content_encryption_configuration {
-        object
-            .key("RemoveCustomerContentEncryptionConfiguration")
-            .boolean(*var_10);
+        object.key("RemoveCustomerContentEncryptionConfiguration").boolean(*var_10);
     }
     if let Some(var_11) = &input.additional_configuration {
-        object
-            .key("AdditionalConfiguration")
-            .string(var_11.as_str());
+        object.key("AdditionalConfiguration").string(var_11.as_str());
     }
     if let Some(var_12) = &input.execution_role {
         object.key("ExecutionRole").string(var_12.as_str());
     }
     if let Some(var_13) = &input.customer_content_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object
-            .key("CustomerContentEncryptionConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(&mut object_14, var_13)?;
+        let mut object_14 = object.key("CustomerContentEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(
+            &mut object_14,
+            var_13,
+        )?;
         object_14.finish();
     }
     if let Some(var_15) = &input.enable_minimum_encryption_configuration {
-        object
-            .key("EnableMinimumEncryptionConfiguration")
-            .boolean(*var_15);
+        object.key("EnableMinimumEncryptionConfiguration").boolean(*var_15);
     }
     Ok(())
 }

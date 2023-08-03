@@ -89,9 +89,7 @@ impl DnsConfig {
 
 /// A builder for [`DnsConfig`](crate::types::DnsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnsConfigBuilder {
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_policy: ::std::option::Option<crate::types::RoutingPolicy>,
@@ -170,10 +168,7 @@ impl DnsConfigBuilder {
     /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_routing_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingPolicy>,
-    ) -> Self {
+    pub fn set_routing_policy(mut self, input: ::std::option::Option<crate::types::RoutingPolicy>) -> Self {
         self.routing_policy = input;
         self
     }
@@ -216,17 +211,12 @@ impl DnsConfigBuilder {
         self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
-    pub fn set_dns_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
-    ) -> Self {
+    pub fn set_dns_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>) -> Self {
         self.dns_records = input;
         self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
-    pub fn get_dns_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
+    pub fn get_dns_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
         &self.dns_records
     }
     /// Consumes the builder and constructs a [`DnsConfig`](crate::types::DnsConfig).

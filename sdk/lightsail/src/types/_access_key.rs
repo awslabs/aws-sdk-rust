@@ -83,18 +83,12 @@ pub struct AccessKeyBuilder {
 }
 impl AccessKeyBuilder {
     /// <p>The ID of the access key.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access key.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -104,19 +98,13 @@ impl AccessKeyBuilder {
     }
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
-    pub fn secret_access_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_access_key = input;
         self
     }
@@ -148,10 +136,7 @@ impl AccessKeyBuilder {
         self
     }
     /// <p>The timestamp when the access key was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -169,10 +154,7 @@ impl AccessKeyBuilder {
     /// <p>An object that describes the last time the access key was used.</p> <note>
     /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
-    pub fn set_last_used(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessKeyLastUsed>,
-    ) -> Self {
+    pub fn set_last_used(mut self, input: ::std::option::Option<crate::types::AccessKeyLastUsed>) -> Self {
         self.last_used = input;
         self
     }

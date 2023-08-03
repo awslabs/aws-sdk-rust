@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateTrafficDistributionGroupOutput 
 }
 impl CreateTrafficDistributionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficDistributionGroupOutput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput).
-    pub fn builder() -> crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupOutputBuilder {
         crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficDistributionGroupOutput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficDistributionGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl CreateTrafficDistributionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTrafficDistributionGroupOutput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput
-    {
+    pub fn build(self) -> crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput {
         crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput {
             id: self.id,
             arn: self.arn,

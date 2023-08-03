@@ -36,9 +36,7 @@ impl UpdateKeyGroupInput {
 
 /// A builder for [`UpdateKeyGroupInput`](crate::operation::update_key_group::UpdateKeyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKeyGroupInputBuilder {
     pub(crate) key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl UpdateKeyGroupInputBuilder {
         self
     }
     /// <p>The key group configuration.</p>
-    pub fn set_key_group_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyGroupConfig>,
-    ) -> Self {
+    pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
         self.key_group_config = input;
         self
     }
@@ -93,10 +88,7 @@ impl UpdateKeyGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKeyGroupInput`](crate::operation::update_key_group::UpdateKeyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_key_group::UpdateKeyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_key_group::UpdateKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_key_group::UpdateKeyGroupInput {
             key_group_config: self.key_group_config,
             id: self.id,

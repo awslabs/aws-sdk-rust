@@ -10,10 +10,7 @@ impl StopTransformJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_transform_job::StopTransformJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_transform_job::StopTransformJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_transform_job::StopTransformJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_transform_job();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopTransformJobFluentBuilder {
         }
     }
     /// Access the StopTransformJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StopTransformJobFluentBuilder {
             crate::operation::stop_transform_job::StopTransformJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_transform_job::StopTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_transform_job::StopTransformJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StopTransformJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StopTransformJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_transform_job::StopTransformJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_transform_job::StopTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_transform_job::StopTransformJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StopTransformJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_transform_job::StopTransformJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_transform_job::StopTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_transform_job::StopTransformJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl StopTransformJobFluentBuilder {
             crate::operation::stop_transform_job::StopTransformJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_transform_job::StopTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_transform_job::StopTransformJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn transform_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transform_job_name(input.into());
         self
     }
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn set_transform_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transform_job_name(input);
         self
     }

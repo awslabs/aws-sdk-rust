@@ -23,26 +23,18 @@ impl AmexCardSecurityCodeVersion1 {
 
 /// A builder for [`AmexCardSecurityCodeVersion1`](crate::types::AmexCardSecurityCodeVersion1).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmexCardSecurityCodeVersion1Builder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
 }
 impl AmexCardSecurityCodeVersion1Builder {
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn card_expiry_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_expiry_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiry date of a payment card.</p>
-    pub fn set_card_expiry_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_card_expiry_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.card_expiry_date = input;
         self
     }

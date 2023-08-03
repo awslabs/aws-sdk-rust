@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeContactEvaluationOutput {
 }
 impl DescribeContactEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContactEvaluationOutput`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput).
-    pub fn builder() -> crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder {
         crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContactEvaluationOutput`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContactEvaluationOutputBuilder {
     pub(crate) evaluation: ::std::option::Option<crate::types::Evaluation>,
     pub(crate) evaluation_form: ::std::option::Option<crate::types::EvaluationFormContent>,
@@ -50,10 +48,7 @@ impl DescribeContactEvaluationOutputBuilder {
         self
     }
     /// <p>Information about the evaluation form completed for a specific contact.</p>
-    pub fn set_evaluation(
-        mut self,
-        input: ::std::option::Option<crate::types::Evaluation>,
-    ) -> Self {
+    pub fn set_evaluation(mut self, input: ::std::option::Option<crate::types::Evaluation>) -> Self {
         self.evaluation = input;
         self
     }
@@ -67,17 +62,12 @@ impl DescribeContactEvaluationOutputBuilder {
         self
     }
     /// <p>Information about the evaluation form.</p>
-    pub fn set_evaluation_form(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormContent>,
-    ) -> Self {
+    pub fn set_evaluation_form(mut self, input: ::std::option::Option<crate::types::EvaluationFormContent>) -> Self {
         self.evaluation_form = input;
         self
     }
     /// <p>Information about the evaluation form.</p>
-    pub fn get_evaluation_form(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormContent> {
+    pub fn get_evaluation_form(&self) -> &::std::option::Option<crate::types::EvaluationFormContent> {
         &self.evaluation_form
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -90,9 +80,7 @@ impl DescribeContactEvaluationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeContactEvaluationOutput`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput {
+    pub fn build(self) -> crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput {
         crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput {
             evaluation: self.evaluation,
             evaluation_form: self.evaluation_form,

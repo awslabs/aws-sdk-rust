@@ -30,9 +30,7 @@ impl VCpuCountRequest {
 
 /// A builder for [`VCpuCountRequest`](crate::types::VCpuCountRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VCpuCountRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

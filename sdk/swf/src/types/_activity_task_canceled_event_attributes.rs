@@ -44,9 +44,7 @@ impl ActivityTaskCanceledEventAttributes {
 
 /// A builder for [`ActivityTaskCanceledEventAttributes`](crate::types::ActivityTaskCanceledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityTaskCanceledEventAttributesBuilder {
     pub(crate) details: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
@@ -102,10 +100,7 @@ impl ActivityTaskCanceledEventAttributesBuilder {
         self
     }
     /// <p>If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_latest_cancel_requested_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_latest_cancel_requested_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latest_cancel_requested_event_id = input;
         self
     }
@@ -119,9 +114,7 @@ impl ActivityTaskCanceledEventAttributesBuilder {
             details: self.details,
             scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
             started_event_id: self.started_event_id.unwrap_or_default(),
-            latest_cancel_requested_event_id: self
-                .latest_cancel_requested_event_id
-                .unwrap_or_default(),
+            latest_cancel_requested_event_id: self.latest_cancel_requested_event_id.unwrap_or_default(),
         }
     }
 }

@@ -10,10 +10,7 @@ impl ListMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_members::ListMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_members::ListMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_members();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListMembersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_members::ListMembers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_members::ListMembers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListMembersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_members::ListMembers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_members::ListMembers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListMembersFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_members::paginator::ListMembersPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_members::paginator::ListMembersPaginator {
-        crate::operation::list_members::paginator::ListMembersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_members::paginator::ListMembersPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
     pub fn only_associated(mut self, input: bool) -> Self {

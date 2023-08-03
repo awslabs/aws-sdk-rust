@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DisableDelegatedAdminAccountOutput`](crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput) with field(s):
     ///   - [`delegated_admin_account_id(Option<String>)`](crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput::delegated_admin_account_id): <p>The Amazon Web Services account ID of the successfully disabled delegated administrator.</p>
     /// - On failure, responds with [`SdkError<DisableDelegatedAdminAccountError>`](crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError)
-    pub fn disable_delegated_admin_account(&self) -> crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountFluentBuilder{
+    pub fn disable_delegated_admin_account(
+        &self,
+    ) -> crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountFluentBuilder {
         crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

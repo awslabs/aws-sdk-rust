@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for PutReportDefinitionOutput {
 }
 impl PutReportDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_report_definition::builders::PutReportDefinitionOutputBuilder {
-        crate::operation::put_report_definition::builders::PutReportDefinitionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_report_definition::builders::PutReportDefinitionOutputBuilder {
+        crate::operation::put_report_definition::builders::PutReportDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutReportDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

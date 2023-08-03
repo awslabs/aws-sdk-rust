@@ -94,17 +94,14 @@ impl DbProxyEndpoint {
 
 /// A builder for [`DbProxyEndpoint`](crate::types::DbProxyEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbProxyEndpointBuilder {
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DbProxyEndpointStatus>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -113,18 +110,12 @@ pub struct DbProxyEndpointBuilder {
 }
 impl DbProxyEndpointBuilder {
     /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = input;
         self
     }
@@ -133,18 +124,12 @@ impl DbProxyEndpointBuilder {
         &self.db_proxy_endpoint_name
     }
     /// <p>The Amazon Resource Name (ARN) for the DB proxy endpoint.</p>
-    pub fn db_proxy_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB proxy endpoint.</p>
-    pub fn set_db_proxy_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_endpoint_arn = input;
         self
     }
@@ -153,18 +138,12 @@ impl DbProxyEndpointBuilder {
         &self.db_proxy_endpoint_arn
     }
     /// <p>The identifier for the DB proxy that is associated with this DB proxy endpoint.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the DB proxy that is associated with this DB proxy endpoint.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -178,10 +157,7 @@ impl DbProxyEndpointBuilder {
         self
     }
     /// <p>The current status of this DB proxy endpoint. A status of <code>available</code> means the endpoint is ready to handle requests. Other values indicate that you must wait for the endpoint to be ready, or take some action to resolve an issue.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DbProxyEndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -208,27 +184,19 @@ impl DbProxyEndpointBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>Provides a list of VPC security groups that the DB proxy endpoint belongs to.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a list of VPC security groups that the DB proxy endpoint belongs to.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>Provides a list of VPC security groups that the DB proxy endpoint belongs to.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `vpc_subnet_ids`.
@@ -236,27 +204,19 @@ impl DbProxyEndpointBuilder {
     /// To override the contents of this collection use [`set_vpc_subnet_ids`](Self::set_vpc_subnet_ids).
     ///
     /// <p>The EC2 subnet IDs for the DB proxy endpoint.</p>
-    pub fn vpc_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The EC2 subnet IDs for the DB proxy endpoint.</p>
-    pub fn set_vpc_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_subnet_ids = input;
         self
     }
     /// <p>The EC2 subnet IDs for the DB proxy endpoint.</p>
-    pub fn get_vpc_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_subnet_ids
     }
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
@@ -279,10 +239,7 @@ impl DbProxyEndpointBuilder {
         self
     }
     /// <p>The date and time when the DB proxy endpoint was first created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -296,17 +253,12 @@ impl DbProxyEndpointBuilder {
         self
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.</p>
-    pub fn set_target_role(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
-    ) -> Self {
+    pub fn set_target_role(mut self, input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>) -> Self {
         self.target_role = input;
         self
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.</p>
-    pub fn get_target_role(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
+    pub fn get_target_role(&self) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
         &self.target_role
     }
     /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>

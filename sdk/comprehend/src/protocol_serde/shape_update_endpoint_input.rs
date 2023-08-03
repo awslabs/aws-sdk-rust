@@ -16,9 +16,7 @@ pub fn ser_update_endpoint_input(
         );
     }
     if let Some(var_4) = &input.desired_data_access_role_arn {
-        object
-            .key("DesiredDataAccessRoleArn")
-            .string(var_4.as_str());
+        object.key("DesiredDataAccessRoleArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.flywheel_arn {
         object.key("FlywheelArn").string(var_5.as_str());

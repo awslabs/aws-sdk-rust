@@ -27,7 +27,7 @@ impl UpdatePipelineNotificationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder,
+    inner: crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder,
 }
 impl UpdatePipelineNotificationsFluentBuilder {
     /// Creates a new `UpdatePipelineNotifications`.
@@ -38,7 +38,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
         }
     }
     /// Access the UpdatePipelineNotifications as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
             crate::operation::update_pipeline_notifications::UpdatePipelineNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
             crate::operation::update_pipeline_notifications::UpdatePipelineNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +146,7 @@ impl UpdatePipelineNotificationsFluentBuilder {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<crate::types::Notifications>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<crate::types::Notifications>) -> Self {
         self.inner = self.inner.set_notifications(input);
         self
     }

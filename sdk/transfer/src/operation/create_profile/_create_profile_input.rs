@@ -51,9 +51,7 @@ impl CreateProfileInput {
 
 /// A builder for [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileInputBuilder {
     pub(crate) as2_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_type: ::std::option::Option<crate::types::ProfileType>,
@@ -89,10 +87,7 @@ impl CreateProfileInputBuilder {
     /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
     /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
     /// </ul>
-    pub fn set_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileType>,
-    ) -> Self {
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
         self.profile_type = input;
         self
     }
@@ -109,27 +104,19 @@ impl CreateProfileInputBuilder {
     /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
     ///
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_ids.unwrap_or_default();
         v.push(input.into());
         self.certificate_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificate_ids = input;
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn get_certificate_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificate_ids
     }
     /// Appends an item to `tags`.
@@ -144,10 +131,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -158,10 +142,7 @@ impl CreateProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_profile::CreateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             as2_id: self.as2_id,
             profile_type: self.profile_type,

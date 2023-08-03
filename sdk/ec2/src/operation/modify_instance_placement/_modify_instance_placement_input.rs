@@ -70,18 +70,14 @@ impl ModifyInstancePlacementInput {
 }
 impl ModifyInstancePlacementInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstancePlacementInput`](crate::operation::modify_instance_placement::ModifyInstancePlacementInput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder {
         crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstancePlacementInput`](crate::operation::modify_instance_placement::ModifyInstancePlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementInputBuilder {
     pub(crate) affinity: ::std::option::Option<crate::types::Affinity>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -187,18 +183,12 @@ impl ModifyInstancePlacementInputBuilder {
         &self.partition_number
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
-    pub fn host_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
-    pub fn set_host_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_resource_group_arn = input;
         self
     }
@@ -227,17 +217,15 @@ impl ModifyInstancePlacementInputBuilder {
         crate::operation::modify_instance_placement::ModifyInstancePlacementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_instance_placement::ModifyInstancePlacementInput {
-                affinity: self.affinity,
-                group_name: self.group_name,
-                host_id: self.host_id,
-                instance_id: self.instance_id,
-                tenancy: self.tenancy,
-                partition_number: self.partition_number,
-                host_resource_group_arn: self.host_resource_group_arn,
-                group_id: self.group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_instance_placement::ModifyInstancePlacementInput {
+            affinity: self.affinity,
+            group_name: self.group_name,
+            host_id: self.host_id,
+            instance_id: self.instance_id,
+            tenancy: self.tenancy,
+            partition_number: self.partition_number,
+            host_resource_group_arn: self.host_resource_group_arn,
+            group_id: self.group_id,
+        })
     }
 }

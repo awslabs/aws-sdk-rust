@@ -24,9 +24,7 @@ pub struct AutomationRulesFindingFieldsUpdate {
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
     #[doc(hidden)]
-    pub user_defined_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to update information about the investigation into the finding.</p>
     #[doc(hidden)]
     pub workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
@@ -60,11 +58,7 @@ impl AutomationRulesFindingFieldsUpdate {
         self.types.as_deref()
     }
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
-    pub fn user_defined_fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_defined_fields.as_ref()
     }
     /// <p>Used to update information about the investigation into the finding.</p>
@@ -85,9 +79,7 @@ impl AutomationRulesFindingFieldsUpdate {
 
 /// A builder for [`AutomationRulesFindingFieldsUpdate`](crate::types::AutomationRulesFindingFieldsUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomationRulesFindingFieldsUpdateBuilder {
     pub(crate) note: ::std::option::Option<crate::types::NoteUpdate>,
     pub(crate) severity: ::std::option::Option<crate::types::SeverityUpdate>,
@@ -95,12 +87,9 @@ pub struct AutomationRulesFindingFieldsUpdateBuilder {
     pub(crate) confidence: ::std::option::Option<i32>,
     pub(crate) criticality: ::std::option::Option<i32>,
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_defined_fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
-    pub(crate) related_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub(crate) related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
 }
 impl AutomationRulesFindingFieldsUpdateBuilder {
     /// <p>The updated note.</p>
@@ -123,10 +112,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self
     }
     /// <p>Updates to the severity information for a finding.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityUpdate>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::SeverityUpdate>) -> Self {
         self.severity = input;
         self
     }
@@ -140,17 +126,12 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self
     }
     /// <p> The rule action updates the <code>VerificationState</code> field of a finding. </p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p> The rule action updates the <code>VerificationState</code> field of a finding. </p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p> The rule action updates the <code>Confidence</code> field of a finding. </p>
@@ -193,10 +174,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self
     }
     /// <p> The rule action updates the <code>Types</code> field of a finding. </p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }
@@ -222,19 +200,13 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
     pub fn set_user_defined_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.user_defined_fields = input;
         self
     }
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
-    pub fn get_user_defined_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_defined_fields
     }
     /// <p>Used to update information about the investigation into the finding.</p>
@@ -243,10 +215,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self
     }
     /// <p>Used to update information about the investigation into the finding.</p>
-    pub fn set_workflow(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowUpdate>,
-    ) -> Self {
+    pub fn set_workflow(mut self, input: ::std::option::Option<crate::types::WorkflowUpdate>) -> Self {
         self.workflow = input;
         self
     }
@@ -266,17 +235,12 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self
     }
     /// <p> The rule action updates the <code>RelatedFindings</code> field of a finding. </p>
-    pub fn set_related_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
-    ) -> Self {
+    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>) -> Self {
         self.related_findings = input;
         self
     }
     /// <p> The rule action updates the <code>RelatedFindings</code> field of a finding. </p>
-    pub fn get_related_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
         &self.related_findings
     }
     /// Consumes the builder and constructs a [`AutomationRulesFindingFieldsUpdate`](crate::types::AutomationRulesFindingFieldsUpdate).

@@ -44,9 +44,7 @@ impl DisableLoggingOutput {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn last_successful_delivery_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_delivery_time.as_ref()
     }
     /// <p>The last time when logs failed to be delivered.</p>
@@ -80,9 +78,7 @@ impl DisableLoggingOutput {
 
 /// A builder for [`DisableLoggingOutput`](crate::operation::disable_logging::DisableLoggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableLoggingOutputBuilder {
     pub(crate) logging_enabled: ::std::option::Option<bool>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
@@ -124,18 +120,12 @@ impl DisableLoggingOutputBuilder {
         &self.bucket_name
     }
     /// <p>The prefix applied to the log file names.</p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix applied to the log file names.</p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }
@@ -149,17 +139,12 @@ impl DisableLoggingOutputBuilder {
         self
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn set_last_successful_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_successful_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_successful_delivery_time = input;
         self
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn get_last_successful_delivery_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_successful_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_successful_delivery_time
     }
     /// <p>The last time when logs failed to be delivered.</p>
@@ -168,10 +153,7 @@ impl DisableLoggingOutputBuilder {
         self
     }
     /// <p>The last time when logs failed to be delivered.</p>
-    pub fn set_last_failure_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_failure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_failure_time = input;
         self
     }
@@ -180,18 +162,12 @@ impl DisableLoggingOutputBuilder {
         &self.last_failure_time
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
-    pub fn last_failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
-    pub fn set_last_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_failure_message = input;
         self
     }
@@ -205,17 +181,12 @@ impl DisableLoggingOutputBuilder {
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn set_log_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogDestinationType>,
-    ) -> Self {
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.log_destination_type = input;
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn get_log_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         &self.log_destination_type
     }
     /// Appends an item to `log_exports`.
@@ -230,17 +201,12 @@ impl DisableLoggingOutputBuilder {
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_exports = input;
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn get_log_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_exports
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

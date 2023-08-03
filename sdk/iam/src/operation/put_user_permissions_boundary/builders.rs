@@ -28,7 +28,7 @@ impl PutUserPermissionsBoundaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutUserPermissionsBoundaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder,
+    inner: crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder,
 }
 impl PutUserPermissionsBoundaryFluentBuilder {
     /// Creates a new `PutUserPermissionsBoundary`.
@@ -39,7 +39,7 @@ impl PutUserPermissionsBoundaryFluentBuilder {
         }
     }
     /// Access the PutUserPermissionsBoundary as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutUserPermissionsBoundaryFluentBuilder {
             crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutUserPermissionsBoundaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutUserPermissionsBoundaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutUserPermissionsBoundaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl PutUserPermissionsBoundaryFluentBuilder {
             crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError>,
     > {
         self.customize_middleware().await
     }
@@ -139,20 +128,14 @@ impl PutUserPermissionsBoundaryFluentBuilder {
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn permissions_boundary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permissions_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permissions_boundary(input.into());
         self
     }
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permissions_boundary(input);
         self
     }

@@ -27,7 +27,7 @@ impl UpdateIndexingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIndexingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationInputBuilder,
+    inner: crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationInputBuilder,
 }
 impl UpdateIndexingConfigurationFluentBuilder {
     /// Creates a new `UpdateIndexingConfiguration`.
@@ -38,7 +38,7 @@ impl UpdateIndexingConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateIndexingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateIndexingConfigurationFluentBuilder {
             crate::operation::update_indexing_configuration::UpdateIndexingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateIndexingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateIndexingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateIndexingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,54 +106,36 @@ impl UpdateIndexingConfigurationFluentBuilder {
             crate::operation::update_indexing_configuration::UpdateIndexingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_indexing_configuration::UpdateIndexingConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Thing indexing configuration.</p>
-    pub fn thing_indexing_configuration(
-        mut self,
-        input: crate::types::ThingIndexingConfiguration,
-    ) -> Self {
+    pub fn thing_indexing_configuration(mut self, input: crate::types::ThingIndexingConfiguration) -> Self {
         self.inner = self.inner.thing_indexing_configuration(input);
         self
     }
     /// <p>Thing indexing configuration.</p>
-    pub fn set_thing_indexing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingIndexingConfiguration>,
-    ) -> Self {
+    pub fn set_thing_indexing_configuration(mut self, input: ::std::option::Option<crate::types::ThingIndexingConfiguration>) -> Self {
         self.inner = self.inner.set_thing_indexing_configuration(input);
         self
     }
     /// <p>Thing indexing configuration.</p>
-    pub fn get_thing_indexing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
+    pub fn get_thing_indexing_configuration(&self) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
         self.inner.get_thing_indexing_configuration()
     }
     /// <p>Thing group indexing configuration.</p>
-    pub fn thing_group_indexing_configuration(
-        mut self,
-        input: crate::types::ThingGroupIndexingConfiguration,
-    ) -> Self {
+    pub fn thing_group_indexing_configuration(mut self, input: crate::types::ThingGroupIndexingConfiguration) -> Self {
         self.inner = self.inner.thing_group_indexing_configuration(input);
         self
     }
     /// <p>Thing group indexing configuration.</p>
-    pub fn set_thing_group_indexing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>,
-    ) -> Self {
+    pub fn set_thing_group_indexing_configuration(mut self, input: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>) -> Self {
         self.inner = self.inner.set_thing_group_indexing_configuration(input);
         self
     }
     /// <p>Thing group indexing configuration.</p>
-    pub fn get_thing_group_indexing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
+    pub fn get_thing_group_indexing_configuration(&self) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
         self.inner.get_thing_group_indexing_configuration()
     }
 }

@@ -5,33 +5,26 @@
 pub struct TerminateWorkspacesInput {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
-    pub terminate_workspace_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
+    pub terminate_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
 }
 impl TerminateWorkspacesInput {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn terminate_workspace_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TerminateRequest]> {
+    pub fn terminate_workspace_requests(&self) -> ::std::option::Option<&[crate::types::TerminateRequest]> {
         self.terminate_workspace_requests.as_deref()
     }
 }
 impl TerminateWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
-    pub fn builder(
-    ) -> crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder {
+    pub fn builder() -> crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder {
         crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesInputBuilder {
-    pub(crate) terminate_workspace_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
+    pub(crate) terminate_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
 }
 impl TerminateWorkspacesInputBuilder {
     /// Appends an item to `terminate_workspace_requests`.
@@ -46,30 +39,21 @@ impl TerminateWorkspacesInputBuilder {
         self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_terminate_workspace_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
-    ) -> Self {
+    pub fn set_terminate_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>) -> Self {
         self.terminate_workspace_requests = input;
         self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_terminate_workspace_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
+    pub fn get_terminate_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
         &self.terminate_workspace_requests
     }
     /// Consumes the builder and constructs a [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_workspaces::TerminateWorkspacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_workspaces::TerminateWorkspacesInput {
-                terminate_workspace_requests: self.terminate_workspace_requests,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::terminate_workspaces::TerminateWorkspacesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::terminate_workspaces::TerminateWorkspacesInput {
+            terminate_workspace_requests: self.terminate_workspace_requests,
+        })
     }
 }

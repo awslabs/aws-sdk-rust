@@ -40,10 +40,7 @@ impl UpdateEnrollmentStatusFluentBuilder {
         }
     }
     /// Access the UpdateEnrollmentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl UpdateEnrollmentStatusFluentBuilder {
             crate::operation::update_enrollment_status::UpdateEnrollmentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl UpdateEnrollmentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl UpdateEnrollmentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl UpdateEnrollmentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl UpdateEnrollmentStatusFluentBuilder {
             crate::operation::update_enrollment_status::UpdateEnrollmentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError>,
     > {
         self.customize_middleware().await
     }

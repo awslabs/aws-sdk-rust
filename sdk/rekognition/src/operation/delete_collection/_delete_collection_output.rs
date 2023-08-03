@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCollectionOutput {
 }
 impl DeleteCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCollectionOutput`](crate::operation::delete_collection::DeleteCollectionOutput).
-    pub fn builder() -> crate::operation::delete_collection::builders::DeleteCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_collection::builders::DeleteCollectionOutputBuilder {
         crate::operation::delete_collection::builders::DeleteCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCollectionOutput`](crate::operation::delete_collection::DeleteCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCollectionOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,

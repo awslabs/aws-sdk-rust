@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`import_token(Option<String>)`](crate::operation::get_parameters_for_import::GetParametersForImportOutput::import_token): <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     ///   - [`parameters_valid_until_timestamp(Option<DateTime>)`](crate::operation::get_parameters_for_import::GetParametersForImportOutput::parameters_valid_until_timestamp): <p>The validity period of the import token.</p>
     /// - On failure, responds with [`SdkError<GetParametersForImportError>`](crate::operation::get_parameters_for_import::GetParametersForImportError)
-    pub fn get_parameters_for_import(
-        &self,
-    ) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportFluentBuilder
-    {
+    pub fn get_parameters_for_import(&self) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportFluentBuilder {
         crate::operation::get_parameters_for_import::builders::GetParametersForImportFluentBuilder::new(self.handle.clone())
     }
 }

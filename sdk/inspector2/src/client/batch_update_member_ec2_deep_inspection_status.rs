@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`account_ids(Option<Vec<MemberAccountEc2DeepInspectionStatusState>>)`](crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput::account_ids): <p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. </p>
     ///   - [`failed_account_ids(Option<Vec<FailedMemberAccountEc2DeepInspectionStatusState>>)`](crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput::failed_account_ids): <p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. </p>
     /// - On failure, responds with [`SdkError<BatchUpdateMemberEc2DeepInspectionStatusError>`](crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError)
-    pub fn batch_update_member_ec2_deep_inspection_status(&self) -> crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder{
-        crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder::new(self.handle.clone())
+    pub fn batch_update_member_ec2_deep_inspection_status(
+        &self,
+    ) -> crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
+        crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

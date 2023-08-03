@@ -51,16 +51,14 @@ impl CreateApprovalRuleTemplateInput {
 }
 impl CreateApprovalRuleTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateApprovalRuleTemplateInput`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput).
-    pub fn builder() -> crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder{
+    pub fn builder() -> crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder {
         crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApprovalRuleTemplateInput`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApprovalRuleTemplateInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_template_content: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ pub struct CreateApprovalRuleTemplateInputBuilder {
 }
 impl CreateApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
@@ -99,10 +91,7 @@ impl CreateApprovalRuleTemplateInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn approval_rule_template_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_content = ::std::option::Option::Some(input.into());
         self
     }
@@ -118,10 +107,7 @@ impl CreateApprovalRuleTemplateInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn set_approval_rule_template_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_content = input;
         self
     }
@@ -137,31 +123,21 @@ impl CreateApprovalRuleTemplateInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn get_approval_rule_template_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_approval_rule_template_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_content
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn approval_rule_template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn set_approval_rule_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_description = input;
         self
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn get_approval_rule_template_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_approval_rule_template_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_description
     }
     /// Consumes the builder and constructs a [`CreateApprovalRuleTemplateInput`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput).
@@ -171,12 +147,10 @@ impl CreateApprovalRuleTemplateInputBuilder {
         crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput {
-                approval_rule_template_name: self.approval_rule_template_name,
-                approval_rule_template_content: self.approval_rule_template_content,
-                approval_rule_template_description: self.approval_rule_template_description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput {
+            approval_rule_template_name: self.approval_rule_template_name,
+            approval_rule_template_content: self.approval_rule_template_content,
+            approval_rule_template_description: self.approval_rule_template_description,
+        })
     }
 }

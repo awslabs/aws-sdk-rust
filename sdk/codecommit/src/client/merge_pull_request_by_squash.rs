@@ -16,7 +16,7 @@ impl super::Client {
     /// - On success, responds with [`MergePullRequestBySquashOutput`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput) with field(s):
     ///   - [`pull_request(Option<PullRequest>)`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput::pull_request): <p>Returns information about a pull request.</p>
     /// - On failure, responds with [`SdkError<MergePullRequestBySquashError>`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError)
-    pub fn merge_pull_request_by_squash(&self) -> crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashFluentBuilder{
+    pub fn merge_pull_request_by_squash(&self) -> crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashFluentBuilder {
         crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::operation::describe_offering::DescribeOfferingOutput::resource_specification): Resource configuration details
     ///   - [`usage_price(Option<f64>)`](crate::operation::describe_offering::DescribeOfferingOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
     /// - On failure, responds with [`SdkError<DescribeOfferingError>`](crate::operation::describe_offering::DescribeOfferingError)
-    pub fn describe_offering(
-        &self,
-    ) -> crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder {
-        crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_offering(&self) -> crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder {
+        crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::new(self.handle.clone())
     }
 }

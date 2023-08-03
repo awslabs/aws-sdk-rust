@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`dashboard_names(Vec<String>)`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::dashboard_names) / [`set_dashboard_names(Option<Vec<String>>)`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::set_dashboard_names): <p>The dashboards to be deleted. This parameter is required.</p>
     /// - On success, responds with [`DeleteDashboardsOutput`](crate::operation::delete_dashboards::DeleteDashboardsOutput)
     /// - On failure, responds with [`SdkError<DeleteDashboardsError>`](crate::operation::delete_dashboards::DeleteDashboardsError)
-    pub fn delete_dashboards(
-        &self,
-    ) -> crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder {
-        crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dashboards(&self) -> crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder {
+        crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::new(self.handle.clone())
     }
 }

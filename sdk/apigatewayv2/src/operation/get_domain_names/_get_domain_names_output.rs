@@ -35,9 +35,7 @@ impl GetDomainNamesOutput {
 
 /// A builder for [`GetDomainNamesOutput`](crate::operation::get_domain_names::GetDomainNamesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainNamesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DomainName>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetDomainNamesOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainName>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainName>>) -> Self {
         self.items = input;
         self
     }

@@ -17,9 +17,7 @@ impl CrossRegionCopyDeprecateRule {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn interval_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl CrossRegionCopyDeprecateRule {
 
 /// A builder for [`CrossRegionCopyDeprecateRule`](crate::types::CrossRegionCopyDeprecateRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrossRegionCopyDeprecateRuleBuilder {
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
@@ -60,17 +56,12 @@ impl CrossRegionCopyDeprecateRuleBuilder {
         self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn set_interval_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
-    ) -> Self {
+    pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
         self.interval_unit = input;
         self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn get_interval_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+    pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
         &self.interval_unit
     }
     /// Consumes the builder and constructs a [`CrossRegionCopyDeprecateRule`](crate::types::CrossRegionCopyDeprecateRule).

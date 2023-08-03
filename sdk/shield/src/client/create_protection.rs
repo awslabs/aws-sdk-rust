@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProtectionOutput`](crate::operation::create_protection::CreateProtectionOutput) with field(s):
     ///   - [`protection_id(Option<String>)`](crate::operation::create_protection::CreateProtectionOutput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
     /// - On failure, responds with [`SdkError<CreateProtectionError>`](crate::operation::create_protection::CreateProtectionError)
-    pub fn create_protection(
-        &self,
-    ) -> crate::operation::create_protection::builders::CreateProtectionFluentBuilder {
-        crate::operation::create_protection::builders::CreateProtectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_protection(&self) -> crate::operation::create_protection::builders::CreateProtectionFluentBuilder {
+        crate::operation::create_protection::builders::CreateProtectionFluentBuilder::new(self.handle.clone())
     }
 }

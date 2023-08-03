@@ -5,16 +5,16 @@ pub use crate::operation::describe_reserved_nodes_offerings::_describe_reserved_
 
 impl DescribeReservedNodesOfferingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_reserved_nodes_offerings();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeReservedNodesOfferingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder,
+    inner: crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder,
 }
 impl DescribeReservedNodesOfferingsFluentBuilder {
     /// Creates a new `DescribeReservedNodesOfferings`.
@@ -37,15 +37,20 @@ impl DescribeReservedNodesOfferingsFluentBuilder {
         }
     }
     /// Access the DescribeReservedNodesOfferings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeReservedNodesOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl DescribeReservedNodesOfferingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_nodes_offerings::paginator::DescribeReservedNodesOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_reserved_nodes_offerings::paginator::DescribeReservedNodesOfferingsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_nodes_offerings::paginator::DescribeReservedNodesOfferingsPaginator {
         crate::operation::describe_reserved_nodes_offerings::paginator::DescribeReservedNodesOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn reserved_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_nodes_offering_id(input.into());
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_nodes_offering_id(input);
         self
     }
@@ -149,18 +158,12 @@ impl DescribeReservedNodesOfferingsFluentBuilder {
         self.inner.get_duration()
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_type(input.into());
         self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
     }

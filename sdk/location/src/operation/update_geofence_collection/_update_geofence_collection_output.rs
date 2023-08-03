@@ -41,18 +41,14 @@ impl ::aws_http::request_id::RequestId for UpdateGeofenceCollectionOutput {
 }
 impl UpdateGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGeofenceCollectionOutput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionOutputBuilder {
         crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGeofenceCollectionOutput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGeofenceCollectionOutputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) collection_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ pub struct UpdateGeofenceCollectionOutputBuilder {
 }
 impl UpdateGeofenceCollectionOutputBuilder {
     /// <p>The name of the updated geofence collection.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the updated geofence collection.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -84,10 +74,7 @@ impl UpdateGeofenceCollectionOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
-    pub fn collection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +82,7 @@ impl UpdateGeofenceCollectionOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
-    pub fn set_collection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_arn = input;
         self
     }
@@ -115,10 +99,7 @@ impl UpdateGeofenceCollectionOutputBuilder {
         self
     }
     /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -136,9 +117,7 @@ impl UpdateGeofenceCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGeofenceCollectionOutput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput {
+    pub fn build(self) -> crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput {
         crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput {
             collection_name: self.collection_name,
             collection_arn: self.collection_arn,

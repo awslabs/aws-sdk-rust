@@ -23,9 +23,7 @@ impl RecommendationData {
 
 /// A builder for [`RecommendationData`](crate::types::RecommendationData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationDataBuilder {
     pub(crate) rds_engine: ::std::option::Option<crate::types::RdsRecommendation>,
 }
@@ -36,10 +34,7 @@ impl RecommendationDataBuilder {
         self
     }
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
-    pub fn set_rds_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::RdsRecommendation>,
-    ) -> Self {
+    pub fn set_rds_engine(mut self, input: ::std::option::Option<crate::types::RdsRecommendation>) -> Self {
         self.rds_engine = input;
         self
     }
@@ -49,8 +44,6 @@ impl RecommendationDataBuilder {
     }
     /// Consumes the builder and constructs a [`RecommendationData`](crate::types::RecommendationData).
     pub fn build(self) -> crate::types::RecommendationData {
-        crate::types::RecommendationData {
-            rds_engine: self.rds_engine,
-        }
+        crate::types::RecommendationData { rds_engine: self.rds_engine }
     }
 }

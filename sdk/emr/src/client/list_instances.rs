@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::list_instances::ListInstancesOutput::instances): <p>The list of instances for the cluster and given filters.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
-    pub fn list_instances(
-        &self,
-    ) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
-        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instances(&self) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
+        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
     }
 }

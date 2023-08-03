@@ -117,9 +117,7 @@ impl Origin {
 
 /// A builder for [`Origin`](crate::types::Origin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -192,10 +190,7 @@ impl OriginBuilder {
     }
     /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_custom_headers(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomHeaders>,
-    ) -> Self {
+    pub fn set_custom_headers(mut self, input: ::std::option::Option<crate::types::CustomHeaders>) -> Self {
         self.custom_headers = input;
         self
     }
@@ -210,10 +205,7 @@ impl OriginBuilder {
         self
     }
     /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
-    pub fn set_s3_origin_config(
-        mut self,
-        input: ::std::option::Option<crate::types::S3OriginConfig>,
-    ) -> Self {
+    pub fn set_s3_origin_config(mut self, input: ::std::option::Option<crate::types::S3OriginConfig>) -> Self {
         self.s3_origin_config = input;
         self
     }
@@ -227,17 +219,12 @@ impl OriginBuilder {
         self
     }
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
-    pub fn set_custom_origin_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomOriginConfig>,
-    ) -> Self {
+    pub fn set_custom_origin_config(mut self, input: ::std::option::Option<crate::types::CustomOriginConfig>) -> Self {
         self.custom_origin_config = input;
         self
     }
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
-    pub fn get_custom_origin_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomOriginConfig> {
+    pub fn get_custom_origin_config(&self) -> &::std::option::Option<crate::types::CustomOriginConfig> {
         &self.custom_origin_config
     }
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
@@ -285,10 +272,7 @@ impl OriginBuilder {
     }
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_shield(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginShield>,
-    ) -> Self {
+    pub fn set_origin_shield(mut self, input: ::std::option::Option<crate::types::OriginShield>) -> Self {
         self.origin_shield = input;
         self
     }
@@ -299,19 +283,13 @@ impl OriginBuilder {
     }
     /// <p>The unique identifier of an origin access control for this origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_access_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_access_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of an origin access control for this origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_access_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_access_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_access_control_id = input;
         self
     }

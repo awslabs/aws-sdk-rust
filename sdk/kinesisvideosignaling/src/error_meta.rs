@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ice_server_config::GetIceServerConfigError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -66,42 +50,32 @@ where
 impl From<crate::operation::get_ice_server_config::GetIceServerConfigError> for Error {
     fn from(err: crate::operation::get_ice_server_config::GetIceServerConfigError) -> Self {
         match err {
-            crate::operation::get_ice_server_config::GetIceServerConfigError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
             crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidClientException(inner) => Error::InvalidClientException(inner),
             crate::operation::get_ice_server_config::GetIceServerConfigError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::operation::get_ice_server_config::GetIceServerConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_ice_server_config::GetIceServerConfigError::SessionExpiredException(inner) => Error::SessionExpiredException(inner),
             crate::operation::get_ice_server_config::GetIceServerConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -109,14 +83,20 @@ where
     }
 }
 impl From<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError> for Error {
-    fn from(
-        err: crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-    ) -> Self {
+    fn from(err: crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError) -> Self {
         match err {
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

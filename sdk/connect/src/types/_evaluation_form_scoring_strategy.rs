@@ -30,9 +30,7 @@ impl EvaluationFormScoringStrategy {
 
 /// A builder for [`EvaluationFormScoringStrategy`](crate::types::EvaluationFormScoringStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormScoringStrategyBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
     pub(crate) status: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
@@ -44,10 +42,7 @@ impl EvaluationFormScoringStrategyBuilder {
         self
     }
     /// <p>The scoring mode of the evaluation form.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringMode>) -> Self {
         self.mode = input;
         self
     }
@@ -61,10 +56,7 @@ impl EvaluationFormScoringStrategyBuilder {
         self
     }
     /// <p>The scoring status of the evaluation form.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringStatus>) -> Self {
         self.status = input;
         self
     }

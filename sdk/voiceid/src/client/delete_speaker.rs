@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`speaker_id(impl ::std::convert::Into<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::speaker_id) / [`set_speaker_id(Option<String>)`](crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::set_speaker_id): <p>The identifier of the speaker you want to delete.</p>
     /// - On success, responds with [`DeleteSpeakerOutput`](crate::operation::delete_speaker::DeleteSpeakerOutput)
     /// - On failure, responds with [`SdkError<DeleteSpeakerError>`](crate::operation::delete_speaker::DeleteSpeakerError)
-    pub fn delete_speaker(
-        &self,
-    ) -> crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder {
-        crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_speaker(&self) -> crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder {
+        crate::operation::delete_speaker::builders::DeleteSpeakerFluentBuilder::new(self.handle.clone())
     }
 }

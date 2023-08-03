@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for ExportJournalToS3Output {
 }
 impl ExportJournalToS3Output {
     /// Creates a new builder-style object to manufacture [`ExportJournalToS3Output`](crate::operation::export_journal_to_s3::ExportJournalToS3Output).
-    pub fn builder(
-    ) -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3OutputBuilder {
+    pub fn builder() -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3OutputBuilder {
         crate::operation::export_journal_to_s3::builders::ExportJournalToS3OutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportJournalToS3Output`](crate::operation::export_journal_to_s3::ExportJournalToS3Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportJournalToS3OutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

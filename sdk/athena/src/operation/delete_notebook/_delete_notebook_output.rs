@@ -19,9 +19,7 @@ impl DeleteNotebookOutput {
 
 /// A builder for [`DeleteNotebookOutput`](crate::operation::delete_notebook::DeleteNotebookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotebookOutputBuilder {
     _request_id: Option<String>,
 }

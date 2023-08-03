@@ -29,18 +29,14 @@ impl ResetFpgaImageAttributeInput {
 }
 impl ResetFpgaImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder {
         crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetFpgaImageAttributeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl ResetFpgaImageAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl ResetFpgaImageAttributeInputBuilder {
         self
     }
     /// <p>The attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The attribute.</p>
-    pub fn get_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResetFpgaImageAttributeName> {
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResetFpgaImageAttributeName> {
         &self.attribute
     }
     /// Consumes the builder and constructs a [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
@@ -107,12 +92,10 @@ impl ResetFpgaImageAttributeInputBuilder {
         crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput {
-                dry_run: self.dry_run,
-                fpga_image_id: self.fpga_image_id,
-                attribute: self.attribute,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput {
+            dry_run: self.dry_run,
+            fpga_image_id: self.fpga_image_id,
+            attribute: self.attribute,
+        })
     }
 }

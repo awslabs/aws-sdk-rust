@@ -107,9 +107,7 @@ impl ListUploadsInput {
 
 /// A builder for [`ListUploadsInput`](crate::operation::list_uploads::ListUploadsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUploadsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::UploadType>,
@@ -264,12 +262,7 @@ impl ListUploadsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUploadsInput`](crate::operation::list_uploads::ListUploadsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_uploads::ListUploadsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_uploads::ListUploadsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_uploads::ListUploadsInput {
             arn: self.arn,
             r#type: self.r#type,

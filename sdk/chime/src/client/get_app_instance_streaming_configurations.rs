@@ -7,10 +7,12 @@ impl super::Client {
     /// - On success, responds with [`GetAppInstanceStreamingConfigurationsOutput`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsOutput) with field(s):
     ///   - [`app_instance_streaming_configurations(Option<Vec<AppInstanceStreamingConfiguration>>)`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsOutput::app_instance_streaming_configurations): <p>The streaming settings.</p>
     /// - On failure, responds with [`SdkError<GetAppInstanceStreamingConfigurationsError>`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsError)
-    #[deprecated(
-        note = "Replaced by GetAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn get_app_instance_streaming_configurations(&self) -> crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsFluentBuilder{
-        crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Replaced by GetAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace")]
+    pub fn get_app_instance_streaming_configurations(
+        &self,
+    ) -> crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsFluentBuilder {
+        crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteConditionalForwarderOutput {
 }
 impl DeleteConditionalForwarderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConditionalForwarderOutput`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput).
-    pub fn builder() -> crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderOutputBuilder{
+    pub fn builder() -> crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderOutputBuilder {
         crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConditionalForwarderOutput`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConditionalForwarderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl DeleteConditionalForwarderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConditionalForwarderOutput`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput {
+    pub fn build(self) -> crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput {
         crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput {
             _request_id: self._request_id,
         }

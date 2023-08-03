@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAccountConfigurationOutput {
 }
 impl PutAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountConfigurationOutput`](crate::operation::put_account_configuration::PutAccountConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_account_configuration::builders::PutAccountConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_account_configuration::builders::PutAccountConfigurationOutputBuilder {
         crate::operation::put_account_configuration::builders::PutAccountConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountConfigurationOutput`](crate::operation::put_account_configuration::PutAccountConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutAccountConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAccountConfigurationOutput`](crate::operation::put_account_configuration::PutAccountConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_account_configuration::PutAccountConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_account_configuration::PutAccountConfigurationOutput {
         crate::operation::put_account_configuration::PutAccountConfigurationOutput {
             _request_id: self._request_id,
         }

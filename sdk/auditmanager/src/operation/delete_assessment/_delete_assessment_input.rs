@@ -15,34 +15,25 @@ impl DeleteAssessmentInput {
 }
 impl DeleteAssessmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
-    pub fn builder() -> crate::operation::delete_assessment::builders::DeleteAssessmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_assessment::builders::DeleteAssessmentInputBuilder {
         crate::operation::delete_assessment::builders::DeleteAssessmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentInputBuilder {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl DeleteAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assessment::DeleteAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_assessment::DeleteAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_assessment::DeleteAssessmentInput {
             assessment_id: self.assessment_id,
         })

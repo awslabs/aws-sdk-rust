@@ -9,15 +9,13 @@ pub struct MonitoringConfiguration {
     pub persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
     /// <p>Monitoring configurations for CloudWatch.</p>
     #[doc(hidden)]
-    pub cloud_watch_monitoring_configuration:
-        ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
+    pub cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
     #[doc(hidden)]
     pub s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     /// <p>Enable or disable container log rotation.</p>
     #[doc(hidden)]
-    pub container_log_rotation_configuration:
-        ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
+    pub container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfiguration {
     /// <p>Monitoring configurations for the persistent application UI. </p>
@@ -25,21 +23,15 @@ impl MonitoringConfiguration {
         self.persistent_app_ui.as_ref()
     }
     /// <p>Monitoring configurations for CloudWatch.</p>
-    pub fn cloud_watch_monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchMonitoringConfiguration> {
+    pub fn cloud_watch_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchMonitoringConfiguration> {
         self.cloud_watch_monitoring_configuration.as_ref()
     }
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3MonitoringConfiguration> {
+    pub fn s3_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::S3MonitoringConfiguration> {
         self.s3_monitoring_configuration.as_ref()
     }
     /// <p>Enable or disable container log rotation.</p>
-    pub fn container_log_rotation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerLogRotationConfiguration> {
+    pub fn container_log_rotation_configuration(&self) -> ::std::option::Option<&crate::types::ContainerLogRotationConfiguration> {
         self.container_log_rotation_configuration.as_ref()
     }
 }
@@ -52,17 +44,12 @@ impl MonitoringConfiguration {
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringConfigurationBuilder {
     pub(crate) persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
-    pub(crate) cloud_watch_monitoring_configuration:
-        ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
-    pub(crate) s3_monitoring_configuration:
-        ::std::option::Option<crate::types::S3MonitoringConfiguration>,
-    pub(crate) container_log_rotation_configuration:
-        ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
+    pub(crate) cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
+    pub(crate) s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
+    pub(crate) container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
     /// <p>Monitoring configurations for the persistent application UI. </p>
@@ -71,10 +58,7 @@ impl MonitoringConfigurationBuilder {
         self
     }
     /// <p>Monitoring configurations for the persistent application UI. </p>
-    pub fn set_persistent_app_ui(
-        mut self,
-        input: ::std::option::Option<crate::types::PersistentAppUi>,
-    ) -> Self {
+    pub fn set_persistent_app_ui(mut self, input: ::std::option::Option<crate::types::PersistentAppUi>) -> Self {
         self.persistent_app_ui = input;
         self
     }
@@ -83,69 +67,45 @@ impl MonitoringConfigurationBuilder {
         &self.persistent_app_ui
     }
     /// <p>Monitoring configurations for CloudWatch.</p>
-    pub fn cloud_watch_monitoring_configuration(
-        mut self,
-        input: crate::types::CloudWatchMonitoringConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_monitoring_configuration(mut self, input: crate::types::CloudWatchMonitoringConfiguration) -> Self {
         self.cloud_watch_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Monitoring configurations for CloudWatch.</p>
-    pub fn set_cloud_watch_monitoring_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>) -> Self {
         self.cloud_watch_monitoring_configuration = input;
         self
     }
     /// <p>Monitoring configurations for CloudWatch.</p>
-    pub fn get_cloud_watch_monitoring_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchMonitoringConfiguration> {
+    pub fn get_cloud_watch_monitoring_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchMonitoringConfiguration> {
         &self.cloud_watch_monitoring_configuration
     }
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(
-        mut self,
-        input: crate::types::S3MonitoringConfiguration,
-    ) -> Self {
+    pub fn s3_monitoring_configuration(mut self, input: crate::types::S3MonitoringConfiguration) -> Self {
         self.s3_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn set_s3_monitoring_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
-    ) -> Self {
+    pub fn set_s3_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::S3MonitoringConfiguration>) -> Self {
         self.s3_monitoring_configuration = input;
         self
     }
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn get_s3_monitoring_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3MonitoringConfiguration> {
+    pub fn get_s3_monitoring_configuration(&self) -> &::std::option::Option<crate::types::S3MonitoringConfiguration> {
         &self.s3_monitoring_configuration
     }
     /// <p>Enable or disable container log rotation.</p>
-    pub fn container_log_rotation_configuration(
-        mut self,
-        input: crate::types::ContainerLogRotationConfiguration,
-    ) -> Self {
+    pub fn container_log_rotation_configuration(mut self, input: crate::types::ContainerLogRotationConfiguration) -> Self {
         self.container_log_rotation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enable or disable container log rotation.</p>
-    pub fn set_container_log_rotation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
-    ) -> Self {
+    pub fn set_container_log_rotation_configuration(mut self, input: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>) -> Self {
         self.container_log_rotation_configuration = input;
         self
     }
     /// <p>Enable or disable container log rotation.</p>
-    pub fn get_container_log_rotation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerLogRotationConfiguration> {
+    pub fn get_container_log_rotation_configuration(&self) -> &::std::option::Option<crate::types::ContainerLogRotationConfiguration> {
         &self.container_log_rotation_configuration
     }
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).

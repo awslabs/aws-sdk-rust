@@ -105,17 +105,14 @@ impl ::aws_http::request_id::RequestId for GetWorkflowExecutionOutput {
 }
 impl GetWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionOutput`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionOutputBuilder {
         crate::operation::get_workflow_execution::builders::GetWorkflowExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowExecutionOutput`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_build_version_arn: ::std::option::Option<::std::string::String>,
@@ -148,18 +145,12 @@ impl GetWorkflowExecutionOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines the specified runtime instance of the workflow.</p>
-    pub fn workflow_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines the specified runtime instance of the workflow.</p>
-    pub fn set_workflow_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
@@ -168,18 +159,12 @@ impl GetWorkflowExecutionOutputBuilder {
         &self.workflow_build_version_arn
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_id = input;
         self
     }
@@ -188,18 +173,12 @@ impl GetWorkflowExecutionOutputBuilder {
         &self.workflow_execution_id
     }
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -227,10 +206,7 @@ impl GetWorkflowExecutionOutputBuilder {
         self
     }
     /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionStatus>) -> Self {
         self.status = input;
         self
     }

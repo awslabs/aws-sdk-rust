@@ -29,9 +29,7 @@ impl ExportKeyInput {
 
 /// A builder for [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportKeyInputBuilder {
     pub(crate) key_material: ::std::option::Option<crate::types::ExportKeyMaterial>,
     pub(crate) export_key_identifier: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl ExportKeyInputBuilder {
         self
     }
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
-    pub fn set_key_material(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportKeyMaterial>,
-    ) -> Self {
+    pub fn set_key_material(mut self, input: ::std::option::Option<crate::types::ExportKeyMaterial>) -> Self {
         self.key_material = input;
         self
     }
@@ -55,18 +50,12 @@ impl ExportKeyInputBuilder {
         &self.key_material
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
-    pub fn export_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
-    pub fn set_export_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_key_identifier = input;
         self
     }
@@ -75,12 +64,7 @@ impl ExportKeyInputBuilder {
         &self.export_key_identifier
     }
     /// Consumes the builder and constructs a [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_key::ExportKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_key::ExportKeyInput {
             key_material: self.key_material,
             export_key_identifier: self.export_key_identifier,

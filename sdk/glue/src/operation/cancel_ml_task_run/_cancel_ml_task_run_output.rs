@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CancelMlTaskRunOutput {
 }
 impl CancelMlTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelMlTaskRunOutput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput).
-    pub fn builder() -> crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunOutputBuilder {
         crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMlTaskRunOutput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMlTaskRunOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
@@ -87,10 +84,7 @@ impl CancelMlTaskRunOutputBuilder {
         self
     }
     /// <p>The status for this run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }

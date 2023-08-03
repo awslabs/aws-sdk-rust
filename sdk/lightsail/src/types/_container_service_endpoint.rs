@@ -24,9 +24,7 @@ impl ContainerServiceEndpoint {
         self.container_port
     }
     /// <p>An object that describes the health check configuration of the container.</p>
-    pub fn health_check(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerServiceHealthCheckConfig> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::ContainerServiceHealthCheckConfig> {
         self.health_check.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl ContainerServiceEndpoint {
 
 /// A builder for [`ContainerServiceEndpoint`](crate::types::ContainerServiceEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceEndpointBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) container_port: ::std::option::Option<i32>,
@@ -49,18 +45,12 @@ pub struct ContainerServiceEndpointBuilder {
 }
 impl ContainerServiceEndpointBuilder {
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -88,17 +78,12 @@ impl ContainerServiceEndpointBuilder {
         self
     }
     /// <p>An object that describes the health check configuration of the container.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>) -> Self {
         self.health_check = input;
         self
     }
     /// <p>An object that describes the health check configuration of the container.</p>
-    pub fn get_health_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceHealthCheckConfig> {
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::ContainerServiceHealthCheckConfig> {
         &self.health_check
     }
     /// Consumes the builder and constructs a [`ContainerServiceEndpoint`](crate::types::ContainerServiceEndpoint).

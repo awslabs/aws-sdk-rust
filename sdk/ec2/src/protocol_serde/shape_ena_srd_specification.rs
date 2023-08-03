@@ -12,9 +12,7 @@ pub fn ser_ena_srd_specification(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("EnaSrdUdpSpecification");
     if let Some(var_4) = &input.ena_srd_udp_specification {
-        crate::protocol_serde::shape_ena_srd_udp_specification::ser_ena_srd_udp_specification(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_ena_srd_udp_specification::ser_ena_srd_udp_specification(scope_3, var_4)?;
     }
     Ok(())
 }

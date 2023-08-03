@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput::policy): <p>The policy that removes permissions on the target database.</p>
     /// - On failure, responds with [`SdkError<DeleteResourcePermissionError>`](crate::operation::delete_resource_permission::DeleteResourcePermissionError)
-    pub fn delete_resource_permission(
-        &self,
-    ) -> crate::operation::delete_resource_permission::builders::DeleteResourcePermissionFluentBuilder
-    {
+    pub fn delete_resource_permission(&self) -> crate::operation::delete_resource_permission::builders::DeleteResourcePermissionFluentBuilder {
         crate::operation::delete_resource_permission::builders::DeleteResourcePermissionFluentBuilder::new(self.handle.clone())
     }
 }

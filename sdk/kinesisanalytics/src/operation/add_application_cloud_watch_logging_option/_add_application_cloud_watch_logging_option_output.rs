@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AddApplicationCloudWatchLoggingOption
 }
 impl AddApplicationCloudWatchLoggingOptionOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput).
-    pub fn builder() -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionOutputBuilder{
+    pub fn builder() -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionOutputBuilder {
         crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionOutput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput).
-    pub fn build(self) -> crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput{
+    pub fn build(self) -> crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput {
         crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput {
             _request_id: self._request_id,
         }

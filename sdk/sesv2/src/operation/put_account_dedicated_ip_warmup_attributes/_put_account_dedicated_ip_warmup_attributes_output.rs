@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutAccountDedicatedIpWarmupAttributes
 }
 impl PutAccountDedicatedIpWarmupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput).
-    pub fn builder() -> crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesOutputBuilder {
         crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountDedicatedIpWarmupAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl PutAccountDedicatedIpWarmupAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput).
-    pub fn build(self) -> crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput{
+    pub fn build(self) -> crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput {
         crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput {
             _request_id: self._request_id,
         }

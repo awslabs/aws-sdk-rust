@@ -48,9 +48,7 @@ impl LambdaVolumeMount {
 
 /// A builder for [`LambdaVolumeMount`](crate::types::LambdaVolumeMount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaVolumeMountBuilder {
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
     pub(crate) destination_path: ::std::option::Option<::std::string::String>,
@@ -73,18 +71,12 @@ impl LambdaVolumeMountBuilder {
         &self.source_path
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn destination_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn set_destination_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_path = input;
         self
     }
@@ -100,18 +92,13 @@ impl LambdaVolumeMountBuilder {
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::LambdaFilesystemPermission>) -> Self {
         self.permission = input;
         self
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    pub fn get_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaFilesystemPermission> {
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::LambdaFilesystemPermission> {
         &self.permission
     }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>

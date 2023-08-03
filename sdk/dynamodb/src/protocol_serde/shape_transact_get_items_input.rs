@@ -9,10 +9,7 @@ pub fn ser_transact_get_items_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_transact_get_item::ser_transact_get_item(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_transact_get_item::ser_transact_get_item(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

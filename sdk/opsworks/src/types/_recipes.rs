@@ -52,9 +52,7 @@ impl Recipes {
 
 /// A builder for [`Recipes`](crate::types::Recipes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipesBuilder {
     pub(crate) setup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) configure: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,10 +73,7 @@ impl RecipesBuilder {
         self
     }
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    pub fn set_setup(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_setup(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.setup = input;
         self
     }
@@ -98,10 +93,7 @@ impl RecipesBuilder {
         self
     }
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    pub fn set_configure(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configure(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configure = input;
         self
     }
@@ -121,10 +113,7 @@ impl RecipesBuilder {
         self
     }
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    pub fn set_deploy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deploy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deploy = input;
         self
     }
@@ -144,10 +133,7 @@ impl RecipesBuilder {
         self
     }
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    pub fn set_undeploy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_undeploy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.undeploy = input;
         self
     }
@@ -167,10 +153,7 @@ impl RecipesBuilder {
         self
     }
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    pub fn set_shutdown(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_shutdown(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shutdown = input;
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for TestHypervisorConfigurationOutput {
 }
 impl TestHypervisorConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput).
-    pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationOutputBuilder {
         crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestHypervisorConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl TestHypervisorConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput {
+    pub fn build(self) -> crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput {
         crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput {
             _request_id: self._request_id,
         }

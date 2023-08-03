@@ -19,10 +19,7 @@ pub fn ser_continuous_deployment_single_header_config(
 
 pub fn de_continuous_deployment_single_header_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ContinuousDeploymentSingleHeaderConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ContinuousDeploymentSingleHeaderConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentSingleHeaderConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

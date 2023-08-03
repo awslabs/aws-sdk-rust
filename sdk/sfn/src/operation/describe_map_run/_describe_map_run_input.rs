@@ -22,9 +22,7 @@ impl DescribeMapRunInput {
 
 /// A builder for [`DescribeMapRunInput`](crate::operation::describe_map_run::DescribeMapRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMapRunInputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeMapRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMapRunInput`](crate::operation::describe_map_run::DescribeMapRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_map_run::DescribeMapRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_map_run::DescribeMapRunInput {
             map_run_arn: self.map_run_arn,
         })

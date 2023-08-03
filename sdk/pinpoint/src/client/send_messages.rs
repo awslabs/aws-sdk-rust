@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SendMessagesOutput`](crate::operation::send_messages::SendMessagesOutput) with field(s):
     ///   - [`message_response(Option<MessageResponse>)`](crate::operation::send_messages::SendMessagesOutput::message_response): <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     /// - On failure, responds with [`SdkError<SendMessagesError>`](crate::operation::send_messages::SendMessagesError)
-    pub fn send_messages(
-        &self,
-    ) -> crate::operation::send_messages::builders::SendMessagesFluentBuilder {
-        crate::operation::send_messages::builders::SendMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_messages(&self) -> crate::operation::send_messages::builders::SendMessagesFluentBuilder {
+        crate::operation::send_messages::builders::SendMessagesFluentBuilder::new(self.handle.clone())
     }
 }

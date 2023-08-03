@@ -120,10 +120,7 @@ impl UpdateWatchlistInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWatchlistInput`](crate::operation::update_watchlist::UpdateWatchlistInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_watchlist::UpdateWatchlistInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_watchlist::UpdateWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_watchlist::UpdateWatchlistInput {
             domain_id: self.domain_id,
             watchlist_id: self.watchlist_id,

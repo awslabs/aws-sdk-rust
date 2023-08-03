@@ -28,9 +28,7 @@ impl DescribeGatewayOutput {
 
 /// A builder for [`DescribeGatewayOutput`](crate::operation::describe_gateway::DescribeGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGatewayOutputBuilder {
     pub(crate) gateway: ::std::option::Option<crate::types::Gateway>,
     _request_id: Option<String>,

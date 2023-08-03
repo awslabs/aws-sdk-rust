@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`usage_statistics(Option<UsageStatistics>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::usage_statistics): <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::operation::get_usage_statistics::GetUsageStatisticsError)
-    pub fn get_usage_statistics(
-        &self,
-    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder {
-        crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_statistics(&self) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder {
+        crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

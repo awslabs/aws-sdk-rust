@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for ReloadReplicationTablesOutput {
 }
 impl ReloadReplicationTablesOutput {
     /// Creates a new builder-style object to manufacture [`ReloadReplicationTablesOutput`](crate::operation::reload_replication_tables::ReloadReplicationTablesOutput).
-    pub fn builder(
-    ) -> crate::operation::reload_replication_tables::builders::ReloadReplicationTablesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reload_replication_tables::builders::ReloadReplicationTablesOutputBuilder {
         crate::operation::reload_replication_tables::builders::ReloadReplicationTablesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReloadReplicationTablesOutput`](crate::operation::reload_replication_tables::ReloadReplicationTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReloadReplicationTablesOutputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ReloadReplicationTablesOutputBuilder {
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -69,9 +59,7 @@ impl ReloadReplicationTablesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReloadReplicationTablesOutput`](crate::operation::reload_replication_tables::ReloadReplicationTablesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reload_replication_tables::ReloadReplicationTablesOutput {
+    pub fn build(self) -> crate::operation::reload_replication_tables::ReloadReplicationTablesOutput {
         crate::operation::reload_replication_tables::ReloadReplicationTablesOutput {
             replication_config_arn: self.replication_config_arn,
             _request_id: self._request_id,

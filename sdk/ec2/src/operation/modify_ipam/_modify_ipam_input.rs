@@ -15,12 +15,10 @@ pub struct ModifyIpamInput {
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     #[doc(hidden)]
-    pub add_operating_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
+    pub add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     /// <p>The operating Regions to remove.</p>
     #[doc(hidden)]
-    pub remove_operating_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
 }
 impl ModifyIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -37,15 +35,11 @@ impl ModifyIpamInput {
     }
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_operating_regions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
+    pub fn add_operating_regions(&self) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
         self.add_operating_regions.as_deref()
     }
     /// <p>The operating Regions to remove.</p>
-    pub fn remove_operating_regions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RemoveIpamOperatingRegion]> {
+    pub fn remove_operating_regions(&self) -> ::std::option::Option<&[crate::types::RemoveIpamOperatingRegion]> {
         self.remove_operating_regions.as_deref()
     }
 }
@@ -58,17 +52,13 @@ impl ModifyIpamInput {
 
 /// A builder for [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) add_operating_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    pub(crate) remove_operating_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    pub(crate) add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
+    pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
 }
 impl ModifyIpamInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -127,18 +117,13 @@ impl ModifyIpamInputBuilder {
     }
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_add_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_add_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
         self.add_operating_regions = input;
         self
     }
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_add_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_add_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
         &self.add_operating_regions
     }
     /// Appends an item to `remove_operating_regions`.
@@ -146,36 +131,23 @@ impl ModifyIpamInputBuilder {
     /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).
     ///
     /// <p>The operating Regions to remove.</p>
-    pub fn remove_operating_regions(
-        mut self,
-        input: crate::types::RemoveIpamOperatingRegion,
-    ) -> Self {
+    pub fn remove_operating_regions(mut self, input: crate::types::RemoveIpamOperatingRegion) -> Self {
         let mut v = self.remove_operating_regions.unwrap_or_default();
         v.push(input);
         self.remove_operating_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The operating Regions to remove.</p>
-    pub fn set_remove_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_remove_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>) -> Self {
         self.remove_operating_regions = input;
         self
     }
     /// <p>The operating Regions to remove.</p>
-    pub fn get_remove_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+    pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
         &self.remove_operating_regions
     }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_ipam::ModifyIpamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam::ModifyIpamInput {
             dry_run: self.dry_run,
             ipam_id: self.ipam_id,

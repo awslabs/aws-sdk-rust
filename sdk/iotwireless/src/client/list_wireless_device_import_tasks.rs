@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput::next_token): <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
     ///   - [`wireless_device_import_task_list(Option<Vec<WirelessDeviceImportTask>>)`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput::wireless_device_import_task_list): <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
     /// - On failure, responds with [`SdkError<ListWirelessDeviceImportTasksError>`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError)
-    pub fn list_wireless_device_import_tasks(&self) -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksFluentBuilder{
+    pub fn list_wireless_device_import_tasks(
+        &self,
+    ) -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksFluentBuilder {
         crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksFluentBuilder::new(self.handle.clone())
     }
 }

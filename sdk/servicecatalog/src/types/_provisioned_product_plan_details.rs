@@ -42,8 +42,7 @@ pub struct ProvisionedProductPlanDetails {
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     #[doc(hidden)]
-    pub provisioning_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -101,9 +100,7 @@ impl ProvisionedProductPlanDetails {
         self.notification_arns.as_deref()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
+    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
         self.provisioning_parameters.as_deref()
     }
     /// <p>One or more tags.</p>
@@ -124,9 +121,7 @@ impl ProvisionedProductPlanDetails {
 
 /// A builder for [`ProvisionedProductPlanDetails`](crate::types::ProvisionedProductPlanDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedProductPlanDetailsBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) path_id: ::std::option::Option<::std::string::String>,
@@ -140,8 +135,7 @@ pub struct ProvisionedProductPlanDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
     pub(crate) updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) provisioning_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
@@ -152,10 +146,7 @@ impl ProvisionedProductPlanDetailsBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -220,18 +211,12 @@ impl ProvisionedProductPlanDetailsBuilder {
         &self.plan_id
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_provision_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_product_id = input;
         self
     }
@@ -240,18 +225,12 @@ impl ProvisionedProductPlanDetailsBuilder {
         &self.provision_product_id
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provision_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn set_provision_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_product_name = input;
         self
     }
@@ -265,32 +244,21 @@ impl ProvisionedProductPlanDetailsBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
-    ) -> Self {
+    pub fn set_plan_type(mut self, input: ::std::option::Option<crate::types::ProvisionedProductPlanType>) -> Self {
         self.plan_type = input;
         self
     }
     /// <p>The plan type.</p>
-    pub fn get_plan_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
+    pub fn get_plan_type(&self) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
         &self.plan_type
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -304,10 +272,7 @@ impl ProvisionedProductPlanDetailsBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>) -> Self {
         self.status = input;
         self
     }
@@ -321,10 +286,7 @@ impl ProvisionedProductPlanDetailsBuilder {
         self
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
-    pub fn set_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_time = input;
         self
     }
@@ -337,27 +299,19 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
         self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.notification_arns = input;
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn get_notification_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.notification_arns
     }
     /// Appends an item to `provisioning_parameters`.
@@ -365,27 +319,19 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
     ///
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(
-        mut self,
-        input: crate::types::UpdateProvisioningParameter,
-    ) -> Self {
+    pub fn provisioning_parameters(mut self, input: crate::types::UpdateProvisioningParameter) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
         v.push(input);
         self.provisioning_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
-    ) -> Self {
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>) -> Self {
         self.provisioning_parameters = input;
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn get_provisioning_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>> {
         &self.provisioning_parameters
     }
     /// Appends an item to `tags`.
@@ -400,10 +346,7 @@ impl ProvisionedProductPlanDetailsBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -412,18 +355,12 @@ impl ProvisionedProductPlanDetailsBuilder {
         &self.tags
     }
     /// <p>The status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

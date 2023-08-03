@@ -14,8 +14,7 @@ pub fn ser_kinesis_firehose_destination_details(
 
 pub fn de_kinesis_firehose_destination_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::KinesisFirehoseDestinationDetails, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::KinesisFirehoseDestinationDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::KinesisFirehoseDestinationDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {

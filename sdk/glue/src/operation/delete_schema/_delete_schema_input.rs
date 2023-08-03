@@ -22,9 +22,7 @@ impl DeleteSchemaInput {
 
 /// A builder for [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
 }
@@ -44,14 +42,7 @@ impl DeleteSchemaInputBuilder {
         &self.schema_id
     }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_schema::DeleteSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_schema::DeleteSchemaInput {
-            schema_id: self.schema_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_schema::DeleteSchemaInput { schema_id: self.schema_id })
     }
 }

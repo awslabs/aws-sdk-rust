@@ -33,10 +33,7 @@ impl ::std::fmt::Debug for RotateTunnelAccessTokenOutput {
         let mut formatter = f.debug_struct("RotateTunnelAccessTokenOutput");
         formatter.field("tunnel_arn", &self.tunnel_arn);
         formatter.field("source_access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "destination_access_token",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("destination_access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -48,9 +45,7 @@ impl ::aws_http::request_id::RequestId for RotateTunnelAccessTokenOutput {
 }
 impl RotateTunnelAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenOutputBuilder {
         crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenOutputBuilder::default()
     }
 }
@@ -80,18 +75,12 @@ impl RotateTunnelAccessTokenOutputBuilder {
         &self.tunnel_arn
     }
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn source_access_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn set_source_access_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_access_token = input;
         self
     }
@@ -100,18 +89,12 @@ impl RotateTunnelAccessTokenOutputBuilder {
         &self.source_access_token
     }
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn destination_access_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn set_destination_access_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_access_token = input;
         self
     }
@@ -129,9 +112,7 @@ impl RotateTunnelAccessTokenOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RotateTunnelAccessTokenOutput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput {
+    pub fn build(self) -> crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput {
         crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput {
             tunnel_arn: self.tunnel_arn,
             source_access_token: self.source_access_token,
@@ -145,10 +126,7 @@ impl ::std::fmt::Debug for RotateTunnelAccessTokenOutputBuilder {
         let mut formatter = f.debug_struct("RotateTunnelAccessTokenOutputBuilder");
         formatter.field("tunnel_arn", &self.tunnel_arn);
         formatter.field("source_access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "destination_access_token",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("destination_access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

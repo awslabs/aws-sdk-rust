@@ -37,9 +37,7 @@ impl UpdateFindingsFilterFluentBuilder {
         }
     }
     /// Access the UpdateFindingsFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateFindingsFilterFluentBuilder {
             crate::operation::update_findings_filter::UpdateFindingsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_filter::UpdateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_filter::UpdateFindingsFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateFindingsFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateFindingsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_findings_filter::UpdateFindingsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_filter::UpdateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_filter::UpdateFindingsFilterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateFindingsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_findings_filter::UpdateFindingsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_filter::UpdateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_filter::UpdateFindingsFilterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateFindingsFilterFluentBuilder {
             crate::operation::update_findings_filter::UpdateFindingsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_filter::UpdateFindingsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_filter::UpdateFindingsFilterError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl UpdateFindingsFilterFluentBuilder {
         self
     }
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingsFilterAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -176,10 +160,7 @@ impl UpdateFindingsFilterFluentBuilder {
         self
     }
     /// <p>The criteria to use to filter findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }

@@ -26,7 +26,7 @@ impl GetMaintenanceWindowExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder,
+    inner: crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder,
 }
 impl GetMaintenanceWindowExecutionFluentBuilder {
     /// Creates a new `GetMaintenanceWindowExecution`.
@@ -37,7 +37,7 @@ impl GetMaintenanceWindowExecutionFluentBuilder {
         }
     }
     /// Access the GetMaintenanceWindowExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetMaintenanceWindowExecutionFluentBuilder {
             crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetMaintenanceWindowExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetMaintenanceWindowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetMaintenanceWindowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetMaintenanceWindowExecutionFluentBuilder {
             crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_execution_id(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_execution_id(input);
         self
     }

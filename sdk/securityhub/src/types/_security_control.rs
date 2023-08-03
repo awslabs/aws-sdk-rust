@@ -65,9 +65,7 @@ impl SecurityControl {
 
 /// A builder for [`SecurityControl`](crate::types::SecurityControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityControlBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_control_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct SecurityControlBuilder {
 }
 impl SecurityControlBuilder {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -99,18 +91,12 @@ impl SecurityControlBuilder {
         &self.security_control_id
     }
     /// <p> The Amazon Resource Name (ARN) for a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    pub fn security_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    pub fn set_security_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_arn = input;
         self
     }
@@ -147,18 +133,12 @@ impl SecurityControlBuilder {
         &self.description
     }
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
-    pub fn remediation_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remediation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
-    pub fn set_remediation_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remediation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation_url = input;
         self
     }
@@ -172,10 +152,7 @@ impl SecurityControlBuilder {
         self
     }
     /// <p> The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn set_severity_rating(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityRating>,
-    ) -> Self {
+    pub fn set_severity_rating(mut self, input: ::std::option::Option<crate::types::SeverityRating>) -> Self {
         self.severity_rating = input;
         self
     }
@@ -189,17 +166,12 @@ impl SecurityControlBuilder {
         self
     }
     /// <p> The enablement status of a security control in a specific standard. </p>
-    pub fn set_security_control_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlStatus>,
-    ) -> Self {
+    pub fn set_security_control_status(mut self, input: ::std::option::Option<crate::types::ControlStatus>) -> Self {
         self.security_control_status = input;
         self
     }
     /// <p> The enablement status of a security control in a specific standard. </p>
-    pub fn get_security_control_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ControlStatus> {
+    pub fn get_security_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
         &self.security_control_status
     }
     /// Consumes the builder and constructs a [`SecurityControl`](crate::types::SecurityControl).

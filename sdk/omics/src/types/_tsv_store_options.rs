@@ -9,16 +9,10 @@ pub struct TsvStoreOptions {
     pub annotation_type: ::std::option::Option<crate::types::AnnotationType>,
     /// <p>The store's header key to column name mapping.</p>
     #[doc(hidden)]
-    pub format_to_header: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>,
-    >,
+    pub format_to_header: ::std::option::Option<::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>>,
     /// <p>The store's schema.</p>
     #[doc(hidden)]
-    pub schema: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>,
-        >,
-    >,
+    pub schema: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>>>,
 }
 impl TsvStoreOptions {
     /// <p>The store's annotation type.</p>
@@ -26,19 +20,11 @@ impl TsvStoreOptions {
         self.annotation_type.as_ref()
     }
     /// <p>The store's header key to column name mapping.</p>
-    pub fn format_to_header(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>,
-    > {
+    pub fn format_to_header(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>> {
         self.format_to_header.as_ref()
     }
     /// <p>The store's schema.</p>
-    pub fn schema(
-        &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>],
-    > {
+    pub fn schema(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>]> {
         self.schema.as_deref()
     }
 }
@@ -51,19 +37,11 @@ impl TsvStoreOptions {
 
 /// A builder for [`TsvStoreOptions`](crate::types::TsvStoreOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TsvStoreOptionsBuilder {
     pub(crate) annotation_type: ::std::option::Option<crate::types::AnnotationType>,
-    pub(crate) format_to_header: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>,
-    >,
-    pub(crate) schema: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>,
-        >,
-    >,
+    pub(crate) format_to_header: ::std::option::Option<::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>>,
+    pub(crate) schema: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>>>,
 }
 impl TsvStoreOptionsBuilder {
     /// <p>The store's annotation type.</p>
@@ -72,10 +50,7 @@ impl TsvStoreOptionsBuilder {
         self
     }
     /// <p>The store's annotation type.</p>
-    pub fn set_annotation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnnotationType>,
-    ) -> Self {
+    pub fn set_annotation_type(mut self, input: ::std::option::Option<crate::types::AnnotationType>) -> Self {
         self.annotation_type = input;
         self
     }
@@ -88,11 +63,7 @@ impl TsvStoreOptionsBuilder {
     /// To override the contents of this collection use [`set_format_to_header`](Self::set_format_to_header).
     ///
     /// <p>The store's header key to column name mapping.</p>
-    pub fn format_to_header(
-        mut self,
-        k: crate::types::FormatToHeaderKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_to_header(mut self, k: crate::types::FormatToHeaderKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.format_to_header.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.format_to_header = ::std::option::Option::Some(hash_map);
@@ -101,9 +72,7 @@ impl TsvStoreOptionsBuilder {
     /// <p>The store's header key to column name mapping.</p>
     pub fn set_format_to_header(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>>,
     ) -> Self {
         self.format_to_header = input;
         self
@@ -111,9 +80,7 @@ impl TsvStoreOptionsBuilder {
     /// <p>The store's header key to column name mapping.</p>
     pub fn get_format_to_header(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::FormatToHeaderKey, ::std::string::String>> {
         &self.format_to_header
     }
     /// Appends an item to `schema`.
@@ -121,10 +88,7 @@ impl TsvStoreOptionsBuilder {
     /// To override the contents of this collection use [`set_schema`](Self::set_schema).
     ///
     /// <p>The store's schema.</p>
-    pub fn schema(
-        mut self,
-        input: ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>,
-    ) -> Self {
+    pub fn schema(mut self, input: ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>) -> Self {
         let mut v = self.schema.unwrap_or_default();
         v.push(input);
         self.schema = ::std::option::Option::Some(v);
@@ -133,11 +97,7 @@ impl TsvStoreOptionsBuilder {
     /// <p>The store's schema.</p>
     pub fn set_schema(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>>>,
     ) -> Self {
         self.schema = input;
         self
@@ -145,11 +105,7 @@ impl TsvStoreOptionsBuilder {
     /// <p>The store's schema.</p>
     pub fn get_schema(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>>> {
         &self.schema
     }
     /// Consumes the builder and constructs a [`TsvStoreOptions`](crate::types::TsvStoreOptions).

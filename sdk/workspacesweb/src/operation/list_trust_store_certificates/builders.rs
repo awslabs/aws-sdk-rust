@@ -26,7 +26,7 @@ impl ListTrustStoreCertificatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTrustStoreCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder,
+    inner: crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder,
 }
 impl ListTrustStoreCertificatesFluentBuilder {
     /// Creates a new `ListTrustStoreCertificates`.
@@ -37,7 +37,7 @@ impl ListTrustStoreCertificatesFluentBuilder {
         }
     }
     /// Access the ListTrustStoreCertificates as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTrustStoreCertificatesFluentBuilder {
             crate::operation::list_trust_store_certificates::ListTrustStoreCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTrustStoreCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTrustStoreCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTrustStoreCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListTrustStoreCertificatesFluentBuilder {
             crate::operation::list_trust_store_certificates::ListTrustStoreCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_trust_store_certificates::paginator::ListTrustStoreCertificatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_trust_store_certificates::paginator::ListTrustStoreCertificatesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_trust_store_certificates::paginator::ListTrustStoreCertificatesPaginator {
         crate::operation::list_trust_store_certificates::paginator::ListTrustStoreCertificatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the trust store</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_store_arn(input.into());
         self
     }
     /// <p>The ARN of the trust store</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_store_arn(input);
         self
     }

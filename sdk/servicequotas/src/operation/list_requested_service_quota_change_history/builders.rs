@@ -5,16 +5,16 @@ pub use crate::operation::list_requested_service_quota_change_history::_list_req
 
 impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_requested_service_quota_change_history();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder,
+    inner: crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder,
 }
 impl ListRequestedServiceQuotaChangeHistoryFluentBuilder {
     /// Creates a new `ListRequestedServiceQuotaChangeHistory`.
@@ -37,15 +37,24 @@ impl ListRequestedServiceQuotaChangeHistoryFluentBuilder {
         }
     }
     /// Access the ListRequestedServiceQuotaChangeHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistory,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ListRequestedServiceQuotaChangeHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +93,42 @@ impl ListRequestedServiceQuotaChangeHistoryFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistory,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator{
-        crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator {
+        crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The service identifier.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

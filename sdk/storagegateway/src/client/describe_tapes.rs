@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`tapes(Option<Vec<Tape>>)`](crate::operation::describe_tapes::DescribeTapesOutput::tapes): <p>An array of virtual tape descriptions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_tapes::DescribeTapesOutput::marker): <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>  <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
     /// - On failure, responds with [`SdkError<DescribeTapesError>`](crate::operation::describe_tapes::DescribeTapesError)
-    pub fn describe_tapes(
-        &self,
-    ) -> crate::operation::describe_tapes::builders::DescribeTapesFluentBuilder {
-        crate::operation::describe_tapes::builders::DescribeTapesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tapes(&self) -> crate::operation::describe_tapes::builders::DescribeTapesFluentBuilder {
+        crate::operation::describe_tapes::builders::DescribeTapesFluentBuilder::new(self.handle.clone())
     }
 }

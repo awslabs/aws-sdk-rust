@@ -77,7 +77,7 @@ impl ::aws_http::request_id::RequestId for GetHostedConfigurationVersionOutput {
 }
 impl GetHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedConfigurationVersionOutput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput).
-    pub fn builder() -> crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionOutputBuilder {
         crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionOutputBuilder::default()
     }
 }
@@ -97,18 +97,12 @@ pub struct GetHostedConfigurationVersionOutputBuilder {
 }
 impl GetHostedConfigurationVersionOutputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -117,18 +111,12 @@ impl GetHostedConfigurationVersionOutputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -193,18 +181,12 @@ impl GetHostedConfigurationVersionOutputBuilder {
         &self.content_type
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -222,10 +204,7 @@ impl GetHostedConfigurationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHostedConfigurationVersionOutput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput
-    {
+    pub fn build(self) -> crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput {
         crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput {
             application_id: self.application_id,
             configuration_profile_id: self.configuration_profile_id,

@@ -12,9 +12,7 @@ pub struct Workflow {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
     #[doc(hidden)]
-    pub default_run_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time when the workflow was created.</p>
     #[doc(hidden)]
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,11 +42,7 @@ impl Workflow {
         self.description.as_deref()
     }
     /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
-    pub fn default_run_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_run_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_run_properties.as_ref()
     }
     /// <p>The date and time when the workflow was created.</p>
@@ -85,15 +79,11 @@ impl Workflow {
 
 /// A builder for [`Workflow`](crate::types::Workflow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) default_run_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) default_run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_run: ::std::option::Option<crate::types::WorkflowRun>,
@@ -148,19 +138,13 @@ impl WorkflowBuilder {
     /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
     pub fn set_default_run_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_run_properties = input;
         self
     }
     /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
-    pub fn get_default_run_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_run_properties
     }
     /// <p>The date and time when the workflow was created.</p>
@@ -169,10 +153,7 @@ impl WorkflowBuilder {
         self
     }
     /// <p>The date and time when the workflow was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -186,10 +167,7 @@ impl WorkflowBuilder {
         self
     }
     /// <p>The date and time when the workflow was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -245,10 +223,7 @@ impl WorkflowBuilder {
         self
     }
     /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
-    pub fn set_blueprint_details(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueprintDetails>,
-    ) -> Self {
+    pub fn set_blueprint_details(mut self, input: ::std::option::Option<crate::types::BlueprintDetails>) -> Self {
         self.blueprint_details = input;
         self
     }

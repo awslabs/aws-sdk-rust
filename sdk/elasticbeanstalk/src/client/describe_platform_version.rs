@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePlatformVersionOutput`](crate::operation::describe_platform_version::DescribePlatformVersionOutput) with field(s):
     ///   - [`platform_description(Option<PlatformDescription>)`](crate::operation::describe_platform_version::DescribePlatformVersionOutput::platform_description): <p>Detailed information about the platform version.</p>
     /// - On failure, responds with [`SdkError<DescribePlatformVersionError>`](crate::operation::describe_platform_version::DescribePlatformVersionError)
-    pub fn describe_platform_version(
-        &self,
-    ) -> crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder
-    {
+    pub fn describe_platform_version(&self) -> crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder {
         crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder::new(self.handle.clone())
     }
 }

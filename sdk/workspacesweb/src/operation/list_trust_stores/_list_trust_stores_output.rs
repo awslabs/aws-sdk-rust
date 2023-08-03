@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTrustStoresOutput {
 }
 impl ListTrustStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListTrustStoresOutput`](crate::operation::list_trust_stores::ListTrustStoresOutput).
-    pub fn builder() -> crate::operation::list_trust_stores::builders::ListTrustStoresOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_trust_stores::builders::ListTrustStoresOutputBuilder {
         crate::operation::list_trust_stores::builders::ListTrustStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrustStoresOutput`](crate::operation::list_trust_stores::ListTrustStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustStoresOutputBuilder {
-    pub(crate) trust_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>>,
+    pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListTrustStoresOutputBuilder {
         self
     }
     /// <p>The trust stores.</p>
-    pub fn set_trust_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>>,
-    ) -> Self {
+    pub fn set_trust_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>>) -> Self {
         self.trust_stores = input;
         self
     }
     /// <p>The trust stores.</p>
-    pub fn get_trust_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>> {
+    pub fn get_trust_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>> {
         &self.trust_stores
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

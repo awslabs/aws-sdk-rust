@@ -36,9 +36,7 @@ impl ListSchemasInput {
 
 /// A builder for [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasInputBuilder {
     pub(crate) registry_id: ::std::option::Option<crate::types::RegistryId>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -51,10 +49,7 @@ impl ListSchemasInputBuilder {
         self
     }
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn set_registry_id(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryId>,
-    ) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
         self.registry_id = input;
         self
     }
@@ -91,12 +86,7 @@ impl ListSchemasInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schemas::ListSchemasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             registry_id: self.registry_id,
             max_results: self.max_results,

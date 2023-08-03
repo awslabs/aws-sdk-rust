@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::delete_key_pair::DeleteKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteKeyPairError>`](crate::operation::delete_key_pair::DeleteKeyPairError)
-    pub fn delete_key_pair(
-        &self,
-    ) -> crate::operation::delete_key_pair::builders::DeleteKeyPairFluentBuilder {
-        crate::operation::delete_key_pair::builders::DeleteKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_key_pair(&self) -> crate::operation::delete_key_pair::builders::DeleteKeyPairFluentBuilder {
+        crate::operation::delete_key_pair::builders::DeleteKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

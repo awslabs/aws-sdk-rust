@@ -43,21 +43,16 @@ impl ListImageScanFindingsInput {
 }
 impl ListImageScanFindingsInput {
     /// Creates a new builder-style object to manufacture [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
-    pub fn builder(
-    ) -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder {
         crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageScanFindingsInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -88,10 +83,7 @@ impl ListImageScanFindingsInputBuilder {
     /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -103,9 +95,7 @@ impl ListImageScanFindingsInputBuilder {
     /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {
         &self.filters
     }
     /// <p>The maximum items to return in a request.</p>
@@ -139,16 +129,12 @@ impl ListImageScanFindingsInputBuilder {
     /// Consumes the builder and constructs a [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_image_scan_findings::ListImageScanFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_image_scan_findings::ListImageScanFindingsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_image_scan_findings::ListImageScanFindingsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`task_token(Option<String>)`](crate::operation::get_activity_task::GetActivityTaskOutput::task_token): <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     ///   - [`input(Option<String>)`](crate::operation::get_activity_task::GetActivityTaskOutput::input): <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     /// - On failure, responds with [`SdkError<GetActivityTaskError>`](crate::operation::get_activity_task::GetActivityTaskError)
-    pub fn get_activity_task(
-        &self,
-    ) -> crate::operation::get_activity_task::builders::GetActivityTaskFluentBuilder {
-        crate::operation::get_activity_task::builders::GetActivityTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_activity_task(&self) -> crate::operation::get_activity_task::builders::GetActivityTaskFluentBuilder {
+        crate::operation::get_activity_task::builders::GetActivityTaskFluentBuilder::new(self.handle.clone())
     }
 }

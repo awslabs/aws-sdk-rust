@@ -26,7 +26,7 @@ impl ListPipelineExecutionStepsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionStepsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder,
+    inner: crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder,
 }
 impl ListPipelineExecutionStepsFluentBuilder {
     /// Creates a new `ListPipelineExecutionSteps`.
@@ -37,7 +37,7 @@ impl ListPipelineExecutionStepsFluentBuilder {
         }
     }
     /// Access the ListPipelineExecutionSteps as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListPipelineExecutionStepsFluentBuilder {
             crate::operation::list_pipeline_execution_steps::ListPipelineExecutionSteps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListPipelineExecutionStepsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListPipelineExecutionStepsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListPipelineExecutionStepsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListPipelineExecutionStepsFluentBuilder {
             crate::operation::list_pipeline_execution_steps::ListPipelineExecutionSteps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pipeline_execution_steps::paginator::ListPipelineExecutionStepsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_pipeline_execution_steps::paginator::ListPipelineExecutionStepsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_pipeline_execution_steps::paginator::ListPipelineExecutionStepsPaginator {
         crate::operation::list_pipeline_execution_steps::paginator::ListPipelineExecutionStepsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }

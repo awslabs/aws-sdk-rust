@@ -33,18 +33,14 @@ impl UpdateInstanceAttributeInput {
 }
 impl UpdateInstanceAttributeInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceAttributeInput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder {
         crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceAttributeInput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
@@ -75,19 +71,14 @@ impl UpdateInstanceAttributeInputBuilder {
     /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeType>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.attribute_type = input;
         self
     }
     /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
-    pub fn get_attribute_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         &self.attribute_type
     }
     /// <p>The value for the attribute. Maximum character limit is 100. </p>
@@ -111,12 +102,10 @@ impl UpdateInstanceAttributeInputBuilder {
         crate::operation::update_instance_attribute::UpdateInstanceAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_instance_attribute::UpdateInstanceAttributeInput {
-                instance_id: self.instance_id,
-                attribute_type: self.attribute_type,
-                value: self.value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_instance_attribute::UpdateInstanceAttributeInput {
+            instance_id: self.instance_id,
+            attribute_type: self.attribute_type,
+            value: self.value,
+        })
     }
 }

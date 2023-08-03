@@ -38,10 +38,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
         }
     }
     /// Access the DeleteDeviceUsageData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
             crate::operation::delete_device_usage_data::DeleteDeviceUsageData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
             crate::operation::delete_device_usage_data::DeleteDeviceUsageData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +130,7 @@ impl DeleteDeviceUsageDataFluentBuilder {
         self
     }
     /// <p>The type of usage data to delete.</p>
-    pub fn set_device_usage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceUsageType>,
-    ) -> Self {
+    pub fn set_device_usage_type(mut self, input: ::std::option::Option<crate::types::DeviceUsageType>) -> Self {
         self.inner = self.inner.set_device_usage_type(input);
         self
     }

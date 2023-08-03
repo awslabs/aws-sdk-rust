@@ -37,9 +37,7 @@ impl DetectMitigationActionsTaskStatistics {
 
 /// A builder for [`DetectMitigationActionsTaskStatistics`](crate::types::DetectMitigationActionsTaskStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskStatisticsBuilder {
     pub(crate) actions_executed: ::std::option::Option<i64>,
     pub(crate) actions_skipped: ::std::option::Option<i64>,

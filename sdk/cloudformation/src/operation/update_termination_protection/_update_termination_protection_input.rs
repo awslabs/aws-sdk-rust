@@ -22,16 +22,14 @@ impl UpdateTerminationProtectionInput {
 }
 impl UpdateTerminationProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTerminationProtectionInput`](crate::operation::update_termination_protection::UpdateTerminationProtectionInput).
-    pub fn builder() -> crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder{
+    pub fn builder() -> crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder {
         crate::operation::update_termination_protection::builders::UpdateTerminationProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTerminationProtectionInput`](crate::operation::update_termination_protection::UpdateTerminationProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTerminationProtectionInputBuilder {
     pub(crate) enable_termination_protection: ::std::option::Option<bool>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl UpdateTerminationProtectionInputBuilder {
         crate::operation::update_termination_protection::UpdateTerminationProtectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_termination_protection::UpdateTerminationProtectionInput {
-                enable_termination_protection: self.enable_termination_protection,
-                stack_name: self.stack_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_termination_protection::UpdateTerminationProtectionInput {
+            enable_termination_protection: self.enable_termination_protection,
+            stack_name: self.stack_name,
+        })
     }
 }

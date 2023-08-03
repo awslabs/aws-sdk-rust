@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ShutdownGatewayOutput`](crate::operation::shutdown_gateway::ShutdownGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::shutdown_gateway::ShutdownGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<ShutdownGatewayError>`](crate::operation::shutdown_gateway::ShutdownGatewayError)
-    pub fn shutdown_gateway(
-        &self,
-    ) -> crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder {
-        crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn shutdown_gateway(&self) -> crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder {
+        crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder::new(self.handle.clone())
     }
 }

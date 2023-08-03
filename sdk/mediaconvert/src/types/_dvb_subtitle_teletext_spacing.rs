@@ -39,13 +39,7 @@
 /// Specify whether the Text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubtitleTeletextSpacing {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DvbSubtitleTeletextSpacing {
             "AUTO" => DvbSubtitleTeletextSpacing::Auto,
             "FIXED_GRID" => DvbSubtitleTeletextSpacing::FixedGrid,
             "PROPORTIONAL" => DvbSubtitleTeletextSpacing::Proportional,
-            other => DvbSubtitleTeletextSpacing::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DvbSubtitleTeletextSpacing::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -32,9 +32,7 @@ impl NotificationChannel {
 
 /// A builder for [`NotificationChannel`](crate::types::NotificationChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationChannelBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) config: ::std::option::Option<crate::types::NotificationChannelConfig>,
@@ -60,10 +58,7 @@ impl NotificationChannelBuilder {
         self
     }
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannelConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::NotificationChannelConfig>) -> Self {
         self.config = input;
         self
     }

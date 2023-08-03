@@ -25,9 +25,7 @@ impl DeleteQueueInput {
 
 /// A builder for [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueueInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
 }
@@ -50,14 +48,7 @@ impl DeleteQueueInputBuilder {
         &self.queue_url
     }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_queue::DeleteQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_queue::DeleteQueueInput {
-            queue_url: self.queue_url,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queue::DeleteQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_queue::DeleteQueueInput { queue_url: self.queue_url })
     }
 }

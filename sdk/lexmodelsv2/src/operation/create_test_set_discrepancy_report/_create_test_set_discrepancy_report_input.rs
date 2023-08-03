@@ -16,24 +16,20 @@ impl CreateTestSetDiscrepancyReportInput {
         self.test_set_id.as_deref()
     }
     /// <p>The target bot for the test set discrepancy report.</p>
-    pub fn target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportResourceTarget> {
+    pub fn target(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportResourceTarget> {
         self.target.as_ref()
     }
 }
 impl CreateTestSetDiscrepancyReportInput {
     /// Creates a new builder-style object to manufacture [`CreateTestSetDiscrepancyReportInput`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput).
-    pub fn builder() -> crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportInputBuilder{
+    pub fn builder() -> crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportInputBuilder {
         crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTestSetDiscrepancyReportInput`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTestSetDiscrepancyReportInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
@@ -59,17 +55,12 @@ impl CreateTestSetDiscrepancyReportInputBuilder {
         self
     }
     /// <p>The target bot for the test set discrepancy report.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>) -> Self {
         self.target = input;
         self
     }
     /// <p>The target bot for the test set discrepancy report.</p>
-    pub fn get_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
         &self.target
     }
     /// Consumes the builder and constructs a [`CreateTestSetDiscrepancyReportInput`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput).
@@ -81,11 +72,9 @@ impl CreateTestSetDiscrepancyReportInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput {
-                test_set_id: self.test_set_id
-                ,
-                target: self.target
-                ,
-            }
+                test_set_id: self.test_set_id,
+                target: self.target,
+            },
         )
     }
 }

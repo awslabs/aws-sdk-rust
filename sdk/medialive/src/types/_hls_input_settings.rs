@@ -51,9 +51,7 @@ impl HlsInputSettings {
 
 /// A builder for [`HlsInputSettings`](crate::types::HlsInputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsInputSettingsBuilder {
     pub(crate) bandwidth: ::std::option::Option<i32>,
     pub(crate) buffer_segments: ::std::option::Option<i32>,
@@ -124,10 +122,7 @@ impl HlsInputSettingsBuilder {
         self
     }
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
-    pub fn set_scte35_source(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsScte35SourceType>,
-    ) -> Self {
+    pub fn set_scte35_source(mut self, input: ::std::option::Option<crate::types::HlsScte35SourceType>) -> Self {
         self.scte35_source = input;
         self
     }

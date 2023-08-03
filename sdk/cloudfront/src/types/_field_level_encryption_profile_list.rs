@@ -15,8 +15,7 @@ pub struct FieldLevelEncryptionProfileList {
     pub quantity: ::std::option::Option<i32>,
     /// <p>The field-level encryption profile items.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>,
 }
 impl FieldLevelEncryptionProfileList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
@@ -32,9 +31,7 @@ impl FieldLevelEncryptionProfileList {
         self.quantity
     }
     /// <p>The field-level encryption profile items.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FieldLevelEncryptionProfileSummary]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::FieldLevelEncryptionProfileSummary]> {
         self.items.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl FieldLevelEncryptionProfileList {
 
 /// A builder for [`FieldLevelEncryptionProfileList`](crate::types::FieldLevelEncryptionProfileList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>,
 }
 impl FieldLevelEncryptionProfileListBuilder {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
@@ -112,20 +106,12 @@ impl FieldLevelEncryptionProfileListBuilder {
         self
     }
     /// <p>The field-level encryption profile items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The field-level encryption profile items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileList`](crate::types::FieldLevelEncryptionProfileList).

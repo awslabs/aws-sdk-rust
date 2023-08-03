@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`recovery_points(Option<Vec<RecoveryPointMember>>)`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput::recovery_points): <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput::next_token): <p>This return is the next item following a partial list of returned resources.</p>
     /// - On failure, responds with [`SdkError<ListRecoveryPointsByLegalHoldError>`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError)
-    pub fn list_recovery_points_by_legal_hold(&self) -> crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldFluentBuilder{
+    pub fn list_recovery_points_by_legal_hold(
+        &self,
+    ) -> crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldFluentBuilder {
         crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldFluentBuilder::new(self.handle.clone())
     }
 }

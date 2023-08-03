@@ -42,9 +42,7 @@ impl DescribeTableOutput {
 
 /// A builder for [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
@@ -78,17 +76,12 @@ impl DescribeTableOutputBuilder {
         self
     }
     /// <p>A list of columns in the table. </p>
-    pub fn set_column_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    ) -> Self {
+    pub fn set_column_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
         self.column_list = input;
         self
     }
     /// <p>A list of columns in the table. </p>
-    pub fn get_column_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_column_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
         &self.column_list
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>

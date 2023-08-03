@@ -31,9 +31,7 @@ impl ElasticsearchDataSourceConfig {
 
 /// A builder for [`ElasticsearchDataSourceConfig`](crate::types::ElasticsearchDataSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticsearchDataSourceConfigBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

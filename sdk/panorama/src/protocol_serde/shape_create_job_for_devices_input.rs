@@ -15,10 +15,7 @@ pub fn ser_create_job_for_devices_input(
     if let Some(var_4) = &input.device_job_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DeviceJobConfig").start_object();
-        crate::protocol_serde::shape_device_job_config::ser_device_job_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_device_job_config::ser_device_job_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.job_type {

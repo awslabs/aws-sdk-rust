@@ -36,9 +36,7 @@ impl PutLabelInput {
 
 /// A builder for [`PutLabelInput`](crate::operation::put_label::PutLabelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLabelInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl PutLabelInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -97,12 +92,7 @@ impl PutLabelInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutLabelInput`](crate::operation::put_label::PutLabelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_label::PutLabelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_label::PutLabelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_label::PutLabelInput {
             name: self.name,
             description: self.description,

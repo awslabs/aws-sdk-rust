@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeRecoveryInstancesOutput {
 }
 impl DescribeRecoveryInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput).
-    pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesOutputBuilder {
         crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>>,
@@ -70,17 +68,12 @@ impl DescribeRecoveryInstancesOutputBuilder {
         self
     }
     /// <p>An array of Recovery Instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of Recovery Instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl DescribeRecoveryInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput {
         crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput {
             next_token: self.next_token,
             items: self.items,

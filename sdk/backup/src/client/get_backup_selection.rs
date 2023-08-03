@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::get_backup_selection::GetBackupSelectionOutput::creation_date): <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`creator_request_id(Option<String>)`](crate::operation::get_backup_selection::GetBackupSelectionOutput::creator_request_id): <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
     /// - On failure, responds with [`SdkError<GetBackupSelectionError>`](crate::operation::get_backup_selection::GetBackupSelectionError)
-    pub fn get_backup_selection(
-        &self,
-    ) -> crate::operation::get_backup_selection::builders::GetBackupSelectionFluentBuilder {
-        crate::operation::get_backup_selection::builders::GetBackupSelectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backup_selection(&self) -> crate::operation::get_backup_selection::builders::GetBackupSelectionFluentBuilder {
+        crate::operation::get_backup_selection::builders::GetBackupSelectionFluentBuilder::new(self.handle.clone())
     }
 }

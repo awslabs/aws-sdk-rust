@@ -113,18 +113,12 @@ impl OidcConfigBuilder {
         &self.client_id
     }
     /// <p>The OIDC IdP client secret used to configure your private workforce.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC IdP client secret used to configure your private workforce.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }
@@ -147,18 +141,12 @@ impl OidcConfigBuilder {
         &self.issuer
     }
     /// <p>The OIDC IdP authorization endpoint used to configure your private workforce.</p>
-    pub fn authorization_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC IdP authorization endpoint used to configure your private workforce.</p>
-    pub fn set_authorization_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_endpoint = input;
         self
     }
@@ -167,18 +155,12 @@ impl OidcConfigBuilder {
         &self.authorization_endpoint
     }
     /// <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
-    pub fn token_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
-    pub fn set_token_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_endpoint = input;
         self
     }
@@ -187,18 +169,12 @@ impl OidcConfigBuilder {
         &self.token_endpoint
     }
     /// <p>The OIDC IdP user information endpoint used to configure your private workforce.</p>
-    pub fn user_info_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_info_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_info_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC IdP user information endpoint used to configure your private workforce.</p>
-    pub fn set_user_info_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_info_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_info_endpoint = input;
         self
     }
@@ -207,18 +183,12 @@ impl OidcConfigBuilder {
         &self.user_info_endpoint
     }
     /// <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
-    pub fn logout_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logout_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logout_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
-    pub fn set_logout_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logout_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logout_endpoint = input;
         self
     }

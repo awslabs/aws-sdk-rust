@@ -49,12 +49,9 @@ impl ListThemesOutput {
 
 /// A builder for [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThemesOutputBuilder {
-    pub(crate) theme_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
+    pub(crate) theme_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -73,17 +70,12 @@ impl ListThemesOutputBuilder {
         self
     }
     /// <p>Information about the themes in the list.</p>
-    pub fn set_theme_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
-    ) -> Self {
+    pub fn set_theme_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>) -> Self {
         self.theme_summary_list = input;
         self
     }
     /// <p>Information about the themes in the list.</p>
-    pub fn get_theme_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
+    pub fn get_theme_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
         &self.theme_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

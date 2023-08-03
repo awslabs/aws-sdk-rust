@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAcceleratorsOutput {
 }
 impl ListAcceleratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListAcceleratorsOutput`](crate::operation::list_accelerators::ListAcceleratorsOutput).
-    pub fn builder() -> crate::operation::list_accelerators::builders::ListAcceleratorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_accelerators::builders::ListAcceleratorsOutputBuilder {
         crate::operation::list_accelerators::builders::ListAcceleratorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAcceleratorsOutput`](crate::operation::list_accelerators::ListAcceleratorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAcceleratorsOutputBuilder {
     pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::Accelerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAcceleratorsOutputBuilder {
         self
     }
     /// <p>The list of accelerators for a customer account.</p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Accelerator>>,
-    ) -> Self {
+    pub fn set_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Accelerator>>) -> Self {
         self.accelerators = input;
         self
     }
     /// <p>The list of accelerators for a customer account.</p>
-    pub fn get_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Accelerator>> {
+    pub fn get_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Accelerator>> {
         &self.accelerators
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>

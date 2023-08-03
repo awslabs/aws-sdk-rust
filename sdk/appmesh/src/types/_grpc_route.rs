@@ -44,9 +44,7 @@ impl GrpcRoute {
 
 /// A builder for [`GrpcRoute`](crate::types::GrpcRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcRouteBuilder {
     pub(crate) action: ::std::option::Option<crate::types::GrpcRouteAction>,
     pub(crate) r#match: ::std::option::Option<crate::types::GrpcRouteMatch>,
@@ -60,10 +58,7 @@ impl GrpcRouteBuilder {
         self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcRouteAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::GrpcRouteAction>) -> Self {
         self.action = input;
         self
     }
@@ -91,10 +86,7 @@ impl GrpcRouteBuilder {
         self
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn set_retry_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcRetryPolicy>,
-    ) -> Self {
+    pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::GrpcRetryPolicy>) -> Self {
         self.retry_policy = input;
         self
     }

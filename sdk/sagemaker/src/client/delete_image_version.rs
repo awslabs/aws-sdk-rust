@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::set_alias): <p>The alias of the image to delete.</p>
     /// - On success, responds with [`DeleteImageVersionOutput`](crate::operation::delete_image_version::DeleteImageVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteImageVersionError>`](crate::operation::delete_image_version::DeleteImageVersionError)
-    pub fn delete_image_version(
-        &self,
-    ) -> crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder {
-        crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_image_version(&self) -> crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder {
+        crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ImportDecoderManifestOutput {
 }
 impl ImportDecoderManifestOutput {
     /// Creates a new builder-style object to manufacture [`ImportDecoderManifestOutput`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput).
-    pub fn builder(
-    ) -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestOutputBuilder {
         crate::operation::import_decoder_manifest::builders::ImportDecoderManifestOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportDecoderManifestOutput`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

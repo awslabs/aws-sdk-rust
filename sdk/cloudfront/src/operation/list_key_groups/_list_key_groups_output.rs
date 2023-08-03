@@ -28,9 +28,7 @@ impl ListKeyGroupsOutput {
 
 /// A builder for [`ListKeyGroupsOutput`](crate::operation::list_key_groups::ListKeyGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeyGroupsOutputBuilder {
     pub(crate) key_group_list: ::std::option::Option<crate::types::KeyGroupList>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ListKeyGroupsOutputBuilder {
         self
     }
     /// <p>A list of key groups.</p>
-    pub fn set_key_group_list(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyGroupList>,
-    ) -> Self {
+    pub fn set_key_group_list(mut self, input: ::std::option::Option<crate::types::KeyGroupList>) -> Self {
         self.key_group_list = input;
         self
     }

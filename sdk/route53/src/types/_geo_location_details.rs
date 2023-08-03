@@ -58,9 +58,7 @@ impl GeoLocationDetails {
 
 /// A builder for [`GeoLocationDetails`](crate::types::GeoLocationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoLocationDetailsBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) continent_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct GeoLocationDetailsBuilder {
 }
 impl GeoLocationDetailsBuilder {
     /// <p>The two-letter code for the continent.</p>
-    pub fn continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continent_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-letter code for the continent.</p>
-    pub fn set_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continent_code = input;
         self
     }
@@ -91,18 +83,12 @@ impl GeoLocationDetailsBuilder {
         &self.continent_code
     }
     /// <p>The full name of the continent.</p>
-    pub fn continent_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continent_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name of the continent.</p>
-    pub fn set_continent_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continent_name = input;
         self
     }
@@ -139,18 +125,12 @@ impl GeoLocationDetailsBuilder {
         &self.country_name
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn set_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision_code = input;
         self
     }
@@ -159,18 +139,12 @@ impl GeoLocationDetailsBuilder {
         &self.subdivision_code
     }
     /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
-    pub fn subdivision_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
-    pub fn set_subdivision_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision_name = input;
         self
     }

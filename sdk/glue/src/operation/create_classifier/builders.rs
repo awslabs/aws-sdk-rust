@@ -10,10 +10,7 @@ impl CreateClassifierInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_classifier::CreateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classifier::CreateClassifierError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classifier::CreateClassifierError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_classifier();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateClassifierFluentBuilder {
         }
     }
     /// Access the CreateClassifier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_classifier::builders::CreateClassifierInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_classifier::builders::CreateClassifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateClassifierFluentBuilder {
             crate::operation::create_classifier::CreateClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classifier::CreateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classifier::CreateClassifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateClassifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_classifier::CreateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classifier::CreateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classifier::CreateClassifierError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_classifier::CreateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classifier::CreateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classifier::CreateClassifierError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateClassifierFluentBuilder {
             crate::operation::create_classifier::CreateClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classifier::CreateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classifier::CreateClassifierError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl CreateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
-    pub fn set_grok_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateGrokClassifierRequest>,
-    ) -> Self {
+    pub fn set_grok_classifier(mut self, input: ::std::option::Option<crate::types::CreateGrokClassifierRequest>) -> Self {
         self.inner = self.inner.set_grok_classifier(input);
         self
     }
     /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
-    pub fn get_grok_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateGrokClassifierRequest> {
+    pub fn get_grok_classifier(&self) -> &::std::option::Option<crate::types::CreateGrokClassifierRequest> {
         self.inner.get_grok_classifier()
     }
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
@@ -147,17 +126,12 @@ impl CreateClassifierFluentBuilder {
         self
     }
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
-    pub fn set_xml_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateXmlClassifierRequest>,
-    ) -> Self {
+    pub fn set_xml_classifier(mut self, input: ::std::option::Option<crate::types::CreateXmlClassifierRequest>) -> Self {
         self.inner = self.inner.set_xml_classifier(input);
         self
     }
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
-    pub fn get_xml_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateXmlClassifierRequest> {
+    pub fn get_xml_classifier(&self) -> &::std::option::Option<crate::types::CreateXmlClassifierRequest> {
         self.inner.get_xml_classifier()
     }
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
@@ -166,17 +140,12 @@ impl CreateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
-    pub fn set_json_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateJsonClassifierRequest>,
-    ) -> Self {
+    pub fn set_json_classifier(mut self, input: ::std::option::Option<crate::types::CreateJsonClassifierRequest>) -> Self {
         self.inner = self.inner.set_json_classifier(input);
         self
     }
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
-    pub fn get_json_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateJsonClassifierRequest> {
+    pub fn get_json_classifier(&self) -> &::std::option::Option<crate::types::CreateJsonClassifierRequest> {
         self.inner.get_json_classifier()
     }
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
@@ -185,17 +154,12 @@ impl CreateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
-    pub fn set_csv_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateCsvClassifierRequest>,
-    ) -> Self {
+    pub fn set_csv_classifier(mut self, input: ::std::option::Option<crate::types::CreateCsvClassifierRequest>) -> Self {
         self.inner = self.inner.set_csv_classifier(input);
         self
     }
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
-    pub fn get_csv_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateCsvClassifierRequest> {
+    pub fn get_csv_classifier(&self) -> &::std::option::Option<crate::types::CreateCsvClassifierRequest> {
         self.inner.get_csv_classifier()
     }
 }

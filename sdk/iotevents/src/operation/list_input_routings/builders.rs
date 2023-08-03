@@ -10,10 +10,7 @@ impl ListInputRoutingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_input_routings::ListInputRoutingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_routings::ListInputRoutingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_routings::ListInputRoutingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_input_routings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListInputRoutingsFluentBuilder {
         }
     }
     /// Access the ListInputRoutings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_input_routings::builders::ListInputRoutingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_input_routings::builders::ListInputRoutingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListInputRoutingsFluentBuilder {
             crate::operation::list_input_routings::ListInputRoutings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_routings::ListInputRoutingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_routings::ListInputRoutingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListInputRoutingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListInputRoutingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_routings::ListInputRoutingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_routings::ListInputRoutingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_routings::ListInputRoutingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListInputRoutingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_routings::ListInputRoutingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_routings::ListInputRoutingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_routings::ListInputRoutingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListInputRoutingsFluentBuilder {
             crate::operation::list_input_routings::ListInputRoutings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_routings::ListInputRoutingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_routings::ListInputRoutingsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl ListInputRoutingsFluentBuilder {
         self
     }
     /// <p> The identifer of the routed input. </p>
-    pub fn set_input_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::InputIdentifier>,
-    ) -> Self {
+    pub fn set_input_identifier(mut self, input: ::std::option::Option<crate::types::InputIdentifier>) -> Self {
         self.inner = self.inner.set_input_identifier(input);
         self
     }

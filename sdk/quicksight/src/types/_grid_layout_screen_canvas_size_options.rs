@@ -38,9 +38,7 @@ impl GridLayoutScreenCanvasSizeOptions {
 
 /// A builder for [`GridLayoutScreenCanvasSizeOptions`](crate::types::GridLayoutScreenCanvasSizeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GridLayoutScreenCanvasSizeOptionsBuilder {
     pub(crate) resize_option: ::std::option::Option<crate::types::ResizeOption>,
     pub(crate) optimized_view_port_width: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
     /// <li> <p> <code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p> </li>
     /// <li> <p> <code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p> </li>
     /// </ul>
-    pub fn set_resize_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ResizeOption>,
-    ) -> Self {
+    pub fn set_resize_option(mut self, input: ::std::option::Option<crate::types::ResizeOption>) -> Self {
         self.resize_option = input;
         self
     }
@@ -76,18 +71,12 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
         &self.resize_option
     }
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn optimized_view_port_width(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn optimized_view_port_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.optimized_view_port_width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn set_optimized_view_port_width(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_optimized_view_port_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.optimized_view_port_width = input;
         self
     }

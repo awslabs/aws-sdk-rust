@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetUtterancesViewOutput {
 }
 impl GetUtterancesViewOutput {
     /// Creates a new builder-style object to manufacture [`GetUtterancesViewOutput`](crate::operation::get_utterances_view::GetUtterancesViewOutput).
-    pub fn builder(
-    ) -> crate::operation::get_utterances_view::builders::GetUtterancesViewOutputBuilder {
+    pub fn builder() -> crate::operation::get_utterances_view::builders::GetUtterancesViewOutputBuilder {
         crate::operation::get_utterances_view::builders::GetUtterancesViewOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUtterancesViewOutput`](crate::operation::get_utterances_view::GetUtterancesViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUtterancesViewOutputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>,
@@ -71,17 +68,12 @@ impl GetUtterancesViewOutputBuilder {
         self
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub fn set_utterances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>,
-    ) -> Self {
+    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>) -> Self {
         self.utterances = input;
         self
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub fn get_utterances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>> {
+    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>> {
         &self.utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

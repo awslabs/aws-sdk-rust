@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for CreatePrefetchScheduleOutput {
 }
 impl CreatePrefetchScheduleOutput {
     /// Creates a new builder-style object to manufacture [`CreatePrefetchScheduleOutput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleOutputBuilder {
         crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePrefetchScheduleOutput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePrefetchScheduleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
@@ -98,10 +94,7 @@ impl CreatePrefetchScheduleOutputBuilder {
         self
     }
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    pub fn set_consumption(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefetchConsumption>,
-    ) -> Self {
+    pub fn set_consumption(mut self, input: ::std::option::Option<crate::types::PrefetchConsumption>) -> Self {
         self.consumption = input;
         self
     }
@@ -124,18 +117,12 @@ impl CreatePrefetchScheduleOutputBuilder {
         &self.name
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_name = input;
         self
     }
@@ -149,10 +136,7 @@ impl CreatePrefetchScheduleOutputBuilder {
         self
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    pub fn set_retrieval(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefetchRetrieval>,
-    ) -> Self {
+    pub fn set_retrieval(mut self, input: ::std::option::Option<crate::types::PrefetchRetrieval>) -> Self {
         self.retrieval = input;
         self
     }

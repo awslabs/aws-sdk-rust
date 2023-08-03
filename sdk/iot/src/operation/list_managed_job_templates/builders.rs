@@ -26,8 +26,7 @@ impl ListManagedJobTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListManagedJobTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesInputBuilder,
+    inner: crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesInputBuilder,
 }
 impl ListManagedJobTemplatesFluentBuilder {
     /// Creates a new `ListManagedJobTemplates`.
@@ -38,10 +37,7 @@ impl ListManagedJobTemplatesFluentBuilder {
         }
     }
     /// Access the ListManagedJobTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListManagedJobTemplatesFluentBuilder {
             crate::operation::list_managed_job_templates::ListManagedJobTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_job_templates::ListManagedJobTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_job_templates::ListManagedJobTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListManagedJobTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListManagedJobTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_job_templates::ListManagedJobTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_job_templates::ListManagedJobTemplatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListManagedJobTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_job_templates::ListManagedJobTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_job_templates::ListManagedJobTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListManagedJobTemplatesFluentBuilder {
             crate::operation::list_managed_job_templates::ListManagedJobTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_job_templates::ListManagedJobTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_job_templates::ListManagedJobTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_job_templates::paginator::ListManagedJobTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_managed_job_templates::paginator::ListManagedJobTemplatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_managed_job_templates::paginator::ListManagedJobTemplatesPaginator {
         crate::operation::list_managed_job_templates::paginator::ListManagedJobTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

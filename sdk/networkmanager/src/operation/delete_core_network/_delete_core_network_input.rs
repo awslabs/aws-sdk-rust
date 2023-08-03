@@ -15,34 +15,25 @@ impl DeleteCoreNetworkInput {
 }
 impl DeleteCoreNetworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkInput`](crate::operation::delete_core_network::DeleteCoreNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder {
+    pub fn builder() -> crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder {
         crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCoreNetworkInput`](crate::operation::delete_core_network::DeleteCoreNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoreNetworkInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCoreNetworkInputBuilder {
     /// <p>The network ID of the deleted core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network ID of the deleted core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteCoreNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoreNetworkInput`](crate::operation::delete_core_network::DeleteCoreNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_core_network::DeleteCoreNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_core_network::DeleteCoreNetworkInput {
-                core_network_id: self.core_network_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_core_network::DeleteCoreNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_core_network::DeleteCoreNetworkInput {
+            core_network_id: self.core_network_id,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl OpenTableFormatInput {
 
 /// A builder for [`OpenTableFormatInput`](crate::types::OpenTableFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenTableFormatInputBuilder {
     pub(crate) iceberg_input: ::std::option::Option<crate::types::IcebergInput>,
 }
@@ -36,10 +34,7 @@ impl OpenTableFormatInputBuilder {
         self
     }
     /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
-    pub fn set_iceberg_input(
-        mut self,
-        input: ::std::option::Option<crate::types::IcebergInput>,
-    ) -> Self {
+    pub fn set_iceberg_input(mut self, input: ::std::option::Option<crate::types::IcebergInput>) -> Self {
         self.iceberg_input = input;
         self
     }

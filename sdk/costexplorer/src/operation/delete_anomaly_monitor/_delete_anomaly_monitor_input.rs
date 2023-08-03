@@ -15,17 +15,14 @@ impl DeleteAnomalyMonitorInput {
 }
 impl DeleteAnomalyMonitorInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
-    pub fn builder(
-    ) -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorInputBuilder {
+    pub fn builder() -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorInputBuilder {
         crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnomalyMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl DeleteAnomalyMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput {
-                monitor_arn: self.monitor_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput {
+            monitor_arn: self.monitor_arn,
+        })
     }
 }

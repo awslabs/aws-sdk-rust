@@ -5,16 +5,16 @@ pub use crate::operation::create_replication_configuration_template::_create_rep
 
 impl CreateReplicationConfigurationTemplateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_replication_configuration_template();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReplicationConfigurationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder,
+    inner: crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder,
 }
 impl CreateReplicationConfigurationTemplateFluentBuilder {
     /// Creates a new `CreateReplicationConfigurationTemplate`.
@@ -37,15 +37,22 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         }
     }
     /// Access the CreateReplicationConfigurationTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +89,35 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The subnet to be used by the replication staging area.</p>
-    pub fn staging_area_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_area_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.staging_area_subnet_id(input.into());
         self
     }
     /// <p>The subnet to be used by the replication staging area.</p>
-    pub fn set_staging_area_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_staging_area_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_staging_area_subnet_id(input);
         self
     }
@@ -120,10 +131,7 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-    pub fn set_associate_default_security_group(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_associate_default_security_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_associate_default_security_group(input);
         self
     }
@@ -136,51 +144,31 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
     ///
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .replication_servers_security_groups_i_ds(input.into());
+    pub fn replication_servers_security_groups_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_servers_security_groups_i_ds(input.into());
         self
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn set_replication_servers_security_groups_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_replication_servers_security_groups_i_ds(input);
+    pub fn set_replication_servers_security_groups_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_replication_servers_security_groups_i_ds(input);
         self
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn get_replication_servers_security_groups_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_servers_security_groups_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_servers_security_groups_i_ds()
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn replication_server_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_server_instance_type(input.into());
         self
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn set_replication_server_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_server_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_server_instance_type(input);
         self
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn get_replication_server_instance_type(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_server_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_server_instance_type()
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -189,10 +177,7 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-    pub fn set_use_dedicated_replication_server(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_dedicated_replication_server(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_dedicated_replication_server(input);
         self
     }
@@ -201,65 +186,43 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner.get_use_dedicated_replication_server()
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn default_large_staging_disk_type(
-        mut self,
-        input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
-    ) -> Self {
+    pub fn default_large_staging_disk_type(mut self, input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
         self.inner = self.inner.default_large_staging_disk_type(input);
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
     pub fn set_default_large_staging_disk_type(
         mut self,
-        input: ::std::option::Option<
-            crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
-        >,
+        input: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     ) -> Self {
         self.inner = self.inner.set_default_large_staging_disk_type(input);
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn get_default_large_staging_disk_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn get_default_large_staging_disk_type(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.inner.get_default_large_staging_disk_type()
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn ebs_encryption(
-        mut self,
-        input: crate::types::ReplicationConfigurationEbsEncryption,
-    ) -> Self {
+    pub fn ebs_encryption(mut self, input: crate::types::ReplicationConfigurationEbsEncryption) -> Self {
         self.inner = self.inner.ebs_encryption(input);
         self
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn set_ebs_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
-    ) -> Self {
+    pub fn set_ebs_encryption(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>) -> Self {
         self.inner = self.inner.set_ebs_encryption(input);
         self
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn get_ebs_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
+    pub fn get_ebs_encryption(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
         self.inner.get_ebs_encryption()
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-    pub fn ebs_encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ebs_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ebs_encryption_key_arn(input.into());
         self
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-    pub fn set_ebs_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ebs_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ebs_encryption_key_arn(input);
         self
     }
@@ -282,25 +245,17 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner.get_bandwidth_throttling()
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn data_plane_routing(
-        mut self,
-        input: crate::types::ReplicationConfigurationDataPlaneRouting,
-    ) -> Self {
+    pub fn data_plane_routing(mut self, input: crate::types::ReplicationConfigurationDataPlaneRouting) -> Self {
         self.inner = self.inner.data_plane_routing(input);
         self
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn set_data_plane_routing(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
-    ) -> Self {
+    pub fn set_data_plane_routing(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>) -> Self {
         self.inner = self.inner.set_data_plane_routing(input);
         self
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn get_data_plane_routing(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
+    pub fn get_data_plane_routing(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
         self.inner.get_data_plane_routing()
     }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -333,19 +288,13 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
     pub fn set_staging_area_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_staging_area_tags(input);
         self
     }
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    pub fn get_staging_area_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_staging_area_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_staging_area_tags()
     }
     /// Appends an item to `pitPolicy`.
@@ -358,17 +307,12 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn set_pit_policy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
-    ) -> Self {
+    pub fn set_pit_policy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>) -> Self {
         self.inner = self.inner.set_pit_policy(input);
         self
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn get_pit_policy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>> {
+    pub fn get_pit_policy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>> {
         self.inner.get_pit_policy()
     }
     /// Adds a key-value pair to `tags`.
@@ -376,30 +320,17 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>

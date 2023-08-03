@@ -24,8 +24,7 @@ pub struct VolumeStatusItem {
     pub volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
     /// <p>Information about the instances to which the volume is attached.</p>
     #[doc(hidden)]
-    pub attachment_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+    pub attachment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
 }
 impl VolumeStatusItem {
     /// <p>The details of the operation.</p>
@@ -53,9 +52,7 @@ impl VolumeStatusItem {
         self.volume_status.as_ref()
     }
     /// <p>Information about the instances to which the volume is attached.</p>
-    pub fn attachment_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VolumeStatusAttachmentStatus]> {
+    pub fn attachment_statuses(&self) -> ::std::option::Option<&[crate::types::VolumeStatusAttachmentStatus]> {
         self.attachment_statuses.as_deref()
     }
 }
@@ -68,9 +65,7 @@ impl VolumeStatusItem {
 
 /// A builder for [`VolumeStatusItem`](crate::types::VolumeStatusItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeStatusItemBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -78,8 +73,7 @@ pub struct VolumeStatusItemBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
-    pub(crate) attachment_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+    pub(crate) attachment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
 }
 impl VolumeStatusItemBuilder {
     /// Appends an item to `actions`.
@@ -94,32 +88,21 @@ impl VolumeStatusItemBuilder {
         self
     }
     /// <p>The details of the operation.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The details of the operation.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>> {
         &self.actions
     }
     /// <p>The Availability Zone of the volume.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the volume.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -153,17 +136,12 @@ impl VolumeStatusItemBuilder {
         self
     }
     /// <p>A list of events associated with the volume.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>A list of events associated with the volume.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>> {
         &self.events
     }
     /// <p>The volume ID.</p>
@@ -186,10 +164,7 @@ impl VolumeStatusItemBuilder {
         self
     }
     /// <p>The volume status.</p>
-    pub fn set_volume_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeStatusInfo>,
-    ) -> Self {
+    pub fn set_volume_status(mut self, input: ::std::option::Option<crate::types::VolumeStatusInfo>) -> Self {
         self.volume_status = input;
         self
     }
@@ -202,27 +177,19 @@ impl VolumeStatusItemBuilder {
     /// To override the contents of this collection use [`set_attachment_statuses`](Self::set_attachment_statuses).
     ///
     /// <p>Information about the instances to which the volume is attached.</p>
-    pub fn attachment_statuses(
-        mut self,
-        input: crate::types::VolumeStatusAttachmentStatus,
-    ) -> Self {
+    pub fn attachment_statuses(mut self, input: crate::types::VolumeStatusAttachmentStatus) -> Self {
         let mut v = self.attachment_statuses.unwrap_or_default();
         v.push(input);
         self.attachment_statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the instances to which the volume is attached.</p>
-    pub fn set_attachment_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
-    ) -> Self {
+    pub fn set_attachment_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>) -> Self {
         self.attachment_statuses = input;
         self
     }
     /// <p>Information about the instances to which the volume is attached.</p>
-    pub fn get_attachment_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>> {
+    pub fn get_attachment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>> {
         &self.attachment_statuses
     }
     /// Consumes the builder and constructs a [`VolumeStatusItem`](crate::types::VolumeStatusItem).

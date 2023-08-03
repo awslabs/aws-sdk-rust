@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartModelPackagingJobOutput`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput) with field(s):
     ///   - [`job_name(Option<String>)`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput::job_name): <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
     /// - On failure, responds with [`SdkError<StartModelPackagingJobError>`](crate::operation::start_model_packaging_job::StartModelPackagingJobError)
-    pub fn start_model_packaging_job(
-        &self,
-    ) -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobFluentBuilder
-    {
+    pub fn start_model_packaging_job(&self) -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobFluentBuilder {
         crate::operation::start_model_packaging_job::builders::StartModelPackagingJobFluentBuilder::new(self.handle.clone())
     }
 }

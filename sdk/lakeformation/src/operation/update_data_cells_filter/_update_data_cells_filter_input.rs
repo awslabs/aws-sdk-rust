@@ -15,18 +15,14 @@ impl UpdateDataCellsFilterInput {
 }
 impl UpdateDataCellsFilterInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder {
         crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataCellsFilterInputBuilder {
     pub(crate) table_data: ::std::option::Option<crate::types::DataCellsFilter>,
 }
@@ -37,10 +33,7 @@ impl UpdateDataCellsFilterInputBuilder {
         self
     }
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-    pub fn set_table_data(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCellsFilter>,
-    ) -> Self {
+    pub fn set_table_data(mut self, input: ::std::option::Option<crate::types::DataCellsFilter>) -> Self {
         self.table_data = input;
         self
     }
@@ -51,14 +44,8 @@ impl UpdateDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput {
-                table_data: self.table_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput { table_data: self.table_data })
     }
 }

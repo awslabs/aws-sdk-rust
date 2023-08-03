@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFirewallConfigOutput {
 }
 impl GetFirewallConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallConfigOutput`](crate::operation::get_firewall_config::GetFirewallConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_config::builders::GetFirewallConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_config::builders::GetFirewallConfigOutputBuilder {
         crate::operation::get_firewall_config::builders::GetFirewallConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallConfigOutput`](crate::operation::get_firewall_config::GetFirewallConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallConfigOutputBuilder {
     pub(crate) firewall_config: ::std::option::Option<crate::types::FirewallConfig>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetFirewallConfigOutputBuilder {
         self
     }
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
-    pub fn set_firewall_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallConfig>,
-    ) -> Self {
+    pub fn set_firewall_config(mut self, input: ::std::option::Option<crate::types::FirewallConfig>) -> Self {
         self.firewall_config = input;
         self
     }

@@ -30,9 +30,7 @@ impl Locale {
 
 /// A builder for [`Locale`](crate::types::Locale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocaleBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) subdivision: ::std::option::Option<::std::string::String>,

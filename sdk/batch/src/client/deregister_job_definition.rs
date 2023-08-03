@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`job_definition(impl ::std::convert::Into<String>)`](crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionFluentBuilder::job_definition) / [`set_job_definition(Option<String>)`](crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionFluentBuilder::set_job_definition): <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
     /// - On success, responds with [`DeregisterJobDefinitionOutput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeregisterJobDefinitionError>`](crate::operation::deregister_job_definition::DeregisterJobDefinitionError)
-    pub fn deregister_job_definition(
-        &self,
-    ) -> crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionFluentBuilder
-    {
+    pub fn deregister_job_definition(&self) -> crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionFluentBuilder {
         crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

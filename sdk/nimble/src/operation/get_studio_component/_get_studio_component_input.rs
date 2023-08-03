@@ -22,35 +22,26 @@ impl GetStudioComponentInput {
 }
 impl GetStudioComponentInput {
     /// Creates a new builder-style object to manufacture [`GetStudioComponentInput`](crate::operation::get_studio_component::GetStudioComponentInput).
-    pub fn builder(
-    ) -> crate::operation::get_studio_component::builders::GetStudioComponentInputBuilder {
+    pub fn builder() -> crate::operation::get_studio_component::builders::GetStudioComponentInputBuilder {
         crate::operation::get_studio_component::builders::GetStudioComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStudioComponentInput`](crate::operation::get_studio_component::GetStudioComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioComponentInputBuilder {
     pub(crate) studio_component_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStudioComponentInputBuilder {
     /// <p>The studio component ID.</p>
-    pub fn studio_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The studio component ID.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_component_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetStudioComponentInputBuilder {
     /// Consumes the builder and constructs a [`GetStudioComponentInput`](crate::operation::get_studio_component::GetStudioComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_studio_component::GetStudioComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_studio_component::GetStudioComponentInput {
-                studio_component_id: self.studio_component_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_studio_component::GetStudioComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_studio_component::GetStudioComponentInput {
+            studio_component_id: self.studio_component_id,
+            studio_id: self.studio_id,
+        })
     }
 }

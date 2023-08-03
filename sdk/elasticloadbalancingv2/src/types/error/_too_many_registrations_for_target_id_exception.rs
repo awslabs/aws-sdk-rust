@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyRegistrationsForTargetIdException {
     }
 }
 impl ::std::error::Error for TooManyRegistrationsForTargetIdException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyRegistrationsForTargetIdException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyRegistrationsForTargetIdException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyRegistrationsForTargetIdException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRegistrationsForTargetIdException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyRegistrationsForTargetIdException {
     /// Creates a new builder-style object to manufacture [`TooManyRegistrationsForTargetIdException`](crate::types::error::TooManyRegistrationsForTargetIdException).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyRegistrationsForTargetIdExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyRegistrationsForTargetIdExceptionBuilder {
         crate::types::error::builders::TooManyRegistrationsForTargetIdExceptionBuilder::default()
     }
 }
 
 /// A builder for [`TooManyRegistrationsForTargetIdException`](crate::types::error::TooManyRegistrationsForTargetIdException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyRegistrationsForTargetIdExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyRegistrationsForTargetIdExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

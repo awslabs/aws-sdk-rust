@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRuleVersionOutput {
 }
 impl UpdateRuleVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleVersionOutput`](crate::operation::update_rule_version::UpdateRuleVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_rule_version::builders::UpdateRuleVersionOutputBuilder {
+    pub fn builder() -> crate::operation::update_rule_version::builders::UpdateRuleVersionOutputBuilder {
         crate::operation::update_rule_version::builders::UpdateRuleVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuleVersionOutput`](crate::operation::update_rule_version::UpdateRuleVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleVersionOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchCreateRoomMembershipOutput {
 }
 impl BatchCreateRoomMembershipOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput).
-    pub fn builder() -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipOutputBuilder{
+    pub fn builder() -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipOutputBuilder {
         crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateRoomMembershipOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl BatchCreateRoomMembershipOutputBuilder {
         self
     }
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>) -> Self {
         self.errors = input;
         self
     }
@@ -69,9 +64,7 @@ impl BatchCreateRoomMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput {
+    pub fn build(self) -> crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput {
         crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput {
             errors: self.errors,
             _request_id: self._request_id,

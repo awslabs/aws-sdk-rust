@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachLoadBalancersOutput {
 }
 impl AttachLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancersOutput`](crate::operation::attach_load_balancers::AttachLoadBalancersOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_load_balancers::builders::AttachLoadBalancersOutputBuilder {
-        crate::operation::attach_load_balancers::builders::AttachLoadBalancersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::attach_load_balancers::builders::AttachLoadBalancersOutputBuilder {
+        crate::operation::attach_load_balancers::builders::AttachLoadBalancersOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachLoadBalancersOutput`](crate::operation::attach_load_balancers::AttachLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancersOutputBuilder {
     _request_id: Option<String>,
 }

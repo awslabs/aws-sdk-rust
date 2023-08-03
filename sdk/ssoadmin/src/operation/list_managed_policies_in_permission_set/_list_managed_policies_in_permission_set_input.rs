@@ -36,16 +36,14 @@ impl ListManagedPoliciesInPermissionSetInput {
 }
 impl ListManagedPoliciesInPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetInput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetInput).
-    pub fn builder() -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetInputBuilder {
         crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedPoliciesInPermissionSetInput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedPoliciesInPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl ListManagedPoliciesInPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -116,18 +108,19 @@ impl ListManagedPoliciesInPermissionSetInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListManagedPoliciesInPermissionSetInput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetInput {
-                instance_arn: self.instance_arn
-                ,
-                permission_set_arn: self.permission_set_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_arn: self.instance_arn,
+                permission_set_arn: self.permission_set_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

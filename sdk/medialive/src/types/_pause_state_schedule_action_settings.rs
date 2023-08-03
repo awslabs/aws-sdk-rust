@@ -23,12 +23,9 @@ impl PauseStateScheduleActionSettings {
 
 /// A builder for [`PauseStateScheduleActionSettings`](crate::types::PauseStateScheduleActionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PauseStateScheduleActionSettingsBuilder {
-    pub(crate) pipelines:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
+    pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
 }
 impl PauseStateScheduleActionSettingsBuilder {
     /// Appends an item to `pipelines`.
@@ -43,23 +40,16 @@ impl PauseStateScheduleActionSettingsBuilder {
         self
     }
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    pub fn set_pipelines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
-    ) -> Self {
+    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>) -> Self {
         self.pipelines = input;
         self
     }
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    pub fn get_pipelines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>> {
+    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>> {
         &self.pipelines
     }
     /// Consumes the builder and constructs a [`PauseStateScheduleActionSettings`](crate::types::PauseStateScheduleActionSettings).
     pub fn build(self) -> crate::types::PauseStateScheduleActionSettings {
-        crate::types::PauseStateScheduleActionSettings {
-            pipelines: self.pipelines,
-        }
+        crate::types::PauseStateScheduleActionSettings { pipelines: self.pipelines }
     }
 }

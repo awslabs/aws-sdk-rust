@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeregisterContainerInstanceOutput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput) with field(s):
     ///   - [`container_instance(Option<ContainerInstance>)`](crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput::container_instance): <p>The container instance that was deregistered.</p>
     /// - On failure, responds with [`SdkError<DeregisterContainerInstanceError>`](crate::operation::deregister_container_instance::DeregisterContainerInstanceError)
-    pub fn deregister_container_instance(&self) -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceFluentBuilder{
+    pub fn deregister_container_instance(
+        &self,
+    ) -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceFluentBuilder {
         crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceFluentBuilder::new(self.handle.clone())
     }
 }

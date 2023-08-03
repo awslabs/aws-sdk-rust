@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TagResourcesOutput`](crate::operation::tag_resources::TagResourcesOutput) with field(s):
     ///   - [`failed_resources_map(Option<HashMap<String, FailureInfo>>)`](crate::operation::tag_resources::TagResourcesOutput::failed_resources_map): <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     /// - On failure, responds with [`SdkError<TagResourcesError>`](crate::operation::tag_resources::TagResourcesError)
-    pub fn tag_resources(
-        &self,
-    ) -> crate::operation::tag_resources::builders::TagResourcesFluentBuilder {
-        crate::operation::tag_resources::builders::TagResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn tag_resources(&self) -> crate::operation::tag_resources::builders::TagResourcesFluentBuilder {
+        crate::operation::tag_resources::builders::TagResourcesFluentBuilder::new(self.handle.clone())
     }
 }

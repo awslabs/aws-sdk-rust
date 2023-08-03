@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateIndexTypeOutput {
 }
 impl UpdateIndexTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIndexTypeOutput`](crate::operation::update_index_type::UpdateIndexTypeOutput).
-    pub fn builder() -> crate::operation::update_index_type::builders::UpdateIndexTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_index_type::builders::UpdateIndexTypeOutputBuilder {
         crate::operation::update_index_type::builders::UpdateIndexTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIndexTypeOutput`](crate::operation::update_index_type::UpdateIndexTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIndexTypeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
@@ -109,10 +106,7 @@ impl UpdateIndexTypeOutputBuilder {
         self
     }
     /// <p>The date and timestamp when the index was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteClientBrandingOutput {
 }
 impl DeleteClientBrandingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClientBrandingOutput`](crate::operation::delete_client_branding::DeleteClientBrandingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_client_branding::builders::DeleteClientBrandingOutputBuilder {
+    pub fn builder() -> crate::operation::delete_client_branding::builders::DeleteClientBrandingOutputBuilder {
         crate::operation::delete_client_branding::builders::DeleteClientBrandingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClientBrandingOutput`](crate::operation::delete_client_branding::DeleteClientBrandingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClientBrandingOutputBuilder {
     _request_id: Option<String>,
 }

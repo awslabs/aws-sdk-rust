@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`vpc_endpoints(Option<Vec<VpcEndpoint>>)`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput::vpc_endpoints): <p>Information about the endpoints.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointsError>`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError)
-    pub fn describe_vpc_endpoints(
-        &self,
-    ) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder {
-        crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vpc_endpoints(&self) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder {
+        crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

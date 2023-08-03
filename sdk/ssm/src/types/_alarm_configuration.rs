@@ -30,9 +30,7 @@ impl AlarmConfiguration {
 
 /// A builder for [`AlarmConfiguration`](crate::types::AlarmConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmConfigurationBuilder {
     pub(crate) ignore_poll_alarm_failure: ::std::option::Option<bool>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
@@ -64,10 +62,7 @@ impl AlarmConfigurationBuilder {
         self
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
         self.alarms = input;
         self
     }

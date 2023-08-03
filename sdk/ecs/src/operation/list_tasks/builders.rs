@@ -10,10 +10,7 @@ impl ListTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tasks::ListTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tasks::ListTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tasks::ListTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tasks();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListTasksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tasks::ListTasks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tasks::ListTasks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tasks::ListTasksError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListTasksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tasks::ListTasks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tasks::ListTasks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tasks::ListTasksError>,
     > {
         self.customize_middleware().await
@@ -134,18 +122,12 @@ impl ListTasksFluentBuilder {
         self.inner.get_cluster()
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instance(input.into());
         self
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_instance(input);
         self
     }
@@ -242,10 +224,7 @@ impl ListTasksFluentBuilder {
     /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
     /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
     /// </note>
-    pub fn set_desired_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredStatus>,
-    ) -> Self {
+    pub fn set_desired_status(mut self, input: ::std::option::Option<crate::types::DesiredStatus>) -> Self {
         self.inner = self.inner.set_desired_status(input);
         self
     }
@@ -261,10 +240,7 @@ impl ListTasksFluentBuilder {
         self
     }
     /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.inner = self.inner.set_launch_type(input);
         self
     }

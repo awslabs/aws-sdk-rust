@@ -38,9 +38,7 @@ impl FilterTextAreaControl {
         self.delimiter.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl FilterTextAreaControl {
 
 /// A builder for [`FilterTextAreaControl`](crate::types::FilterTextAreaControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterTextAreaControlBuilder {
     pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,12 @@ pub struct FilterTextAreaControlBuilder {
 }
 impl FilterTextAreaControlBuilder {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn filter_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn set_filter_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_control_id = input;
         self
     }
@@ -99,18 +89,12 @@ impl FilterTextAreaControlBuilder {
         &self.title
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn source_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn set_source_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_filter_id = input;
         self
     }
@@ -138,17 +122,12 @@ impl FilterTextAreaControlBuilder {
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
-    ) -> Self {
+    pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>) -> Self {
         self.display_options = input;
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn get_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextAreaControlDisplayOptions> {
+    pub fn get_display_options(&self) -> &::std::option::Option<crate::types::TextAreaControlDisplayOptions> {
         &self.display_options
     }
     /// Consumes the builder and constructs a [`FilterTextAreaControl`](crate::types::FilterTextAreaControl).

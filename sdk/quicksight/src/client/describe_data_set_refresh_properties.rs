@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`data_set_refresh_properties(Option<DataSetRefreshProperties>)`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput::data_set_refresh_properties): <p>The dataset refresh properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDataSetRefreshPropertiesError>`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError)
-    pub fn describe_data_set_refresh_properties(&self) -> crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesFluentBuilder{
+    pub fn describe_data_set_refresh_properties(
+        &self,
+    ) -> crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesFluentBuilder {
         crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

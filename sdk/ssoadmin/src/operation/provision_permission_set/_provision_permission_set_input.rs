@@ -36,18 +36,14 @@ impl ProvisionPermissionSetInput {
 }
 impl ProvisionPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetInput`](crate::operation::provision_permission_set::ProvisionPermissionSetInput).
-    pub fn builder(
-    ) -> crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder {
         crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionPermissionSetInput`](crate::operation::provision_permission_set::ProvisionPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl ProvisionPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -109,10 +99,7 @@ impl ProvisionPermissionSetInputBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionTargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::ProvisionTargetType>) -> Self {
         self.target_type = input;
         self
     }
@@ -123,17 +110,13 @@ impl ProvisionPermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionPermissionSetInput`](crate::operation::provision_permission_set::ProvisionPermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::provision_permission_set::ProvisionPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::provision_permission_set::ProvisionPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                target_id: self.target_id,
-                target_type: self.target_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::provision_permission_set::ProvisionPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::provision_permission_set::ProvisionPermissionSetInput {
+            instance_arn: self.instance_arn,
+            permission_set_arn: self.permission_set_arn,
+            target_id: self.target_id,
+            target_type: self.target_type,
+        })
     }
 }

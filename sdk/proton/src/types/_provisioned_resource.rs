@@ -26,9 +26,7 @@ impl ProvisionedResource {
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
-    pub fn provisioning_engine(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedResourceEngine> {
+    pub fn provisioning_engine(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceEngine> {
         self.provisioning_engine.as_ref()
     }
 }
@@ -41,9 +39,7 @@ impl ProvisionedResource {
 
 /// A builder for [`ProvisionedResource`](crate::types::ProvisionedResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedResourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,13 @@ impl ProvisionedResourceBuilder {
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_provisioning_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedResourceEngine>,
-    ) -> Self {
+    pub fn set_provisioning_engine(mut self, input: ::std::option::Option<crate::types::ProvisionedResourceEngine>) -> Self {
         self.provisioning_engine = input;
         self
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
-    pub fn get_provisioning_engine(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedResourceEngine> {
+    pub fn get_provisioning_engine(&self) -> &::std::option::Option<crate::types::ProvisionedResourceEngine> {
         &self.provisioning_engine
     }
     /// Consumes the builder and constructs a [`ProvisionedResource`](crate::types::ProvisionedResource).

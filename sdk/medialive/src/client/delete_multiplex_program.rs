@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`pipeline_details(Option<Vec<MultiplexProgramPipelineDetail>>)`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramOutput::pipeline_details): Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
     ///   - [`program_name(Option<String>)`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramOutput::program_name): The name of the multiplex program.
     /// - On failure, responds with [`SdkError<DeleteMultiplexProgramError>`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramError)
-    pub fn delete_multiplex_program(
-        &self,
-    ) -> crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramFluentBuilder
-    {
+    pub fn delete_multiplex_program(&self) -> crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramFluentBuilder {
         crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramFluentBuilder::new(self.handle.clone())
     }
 }

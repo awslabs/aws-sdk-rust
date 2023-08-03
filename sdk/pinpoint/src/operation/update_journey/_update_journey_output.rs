@@ -28,9 +28,7 @@ impl UpdateJourneyOutput {
 
 /// A builder for [`UpdateJourneyOutput`](crate::operation::update_journey::UpdateJourneyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJourneyOutputBuilder {
     pub(crate) journey_response: ::std::option::Option<crate::types::JourneyResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateJourneyOutputBuilder {
         self
     }
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn set_journey_response(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyResponse>,
-    ) -> Self {
+    pub fn set_journey_response(mut self, input: ::std::option::Option<crate::types::JourneyResponse>) -> Self {
         self.journey_response = input;
         self
     }

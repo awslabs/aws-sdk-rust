@@ -40,10 +40,7 @@ impl DescribeAssetPropertyFluentBuilder {
         }
     }
     /// Access the DescribeAssetProperty as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DescribeAssetPropertyFluentBuilder {
             crate::operation::describe_asset_property::DescribeAssetProperty,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_property::DescribeAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_property::DescribeAssetPropertyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DescribeAssetPropertyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DescribeAssetPropertyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_property::DescribeAssetPropertyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_property::DescribeAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_property::DescribeAssetPropertyError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DescribeAssetPropertyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_property::DescribeAssetPropertyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_property::DescribeAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_property::DescribeAssetPropertyError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DescribeAssetPropertyFluentBuilder {
             crate::operation::describe_asset_property::DescribeAssetProperty,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_property::DescribeAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_property::DescribeAssetPropertyError>,
     > {
         self.customize_middleware().await
     }

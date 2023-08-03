@@ -10,10 +10,7 @@ impl DescribeListenersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_listeners::DescribeListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listeners::DescribeListenersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_listeners();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeListenersFluentBuilder {
         }
     }
     /// Access the DescribeListeners as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_listeners::builders::DescribeListenersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_listeners::builders::DescribeListenersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeListenersFluentBuilder {
             crate::operation::describe_listeners::DescribeListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listeners::DescribeListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeListenersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_listeners::DescribeListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listeners::DescribeListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_listeners::DescribeListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listeners::DescribeListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl DescribeListenersFluentBuilder {
             crate::operation::describe_listeners::DescribeListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listeners::DescribeListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_listeners::paginator::DescribeListenersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_listeners::paginator::DescribeListenersPaginator {
-        crate::operation::describe_listeners::paginator::DescribeListenersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_listeners::paginator::DescribeListenersPaginator {
+        crate::operation::describe_listeners::paginator::DescribeListenersPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -158,25 +131,17 @@ impl DescribeListenersFluentBuilder {
     /// To override the contents of this collection use [`set_listener_arns`](Self::set_listener_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn listener_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn set_listener_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_listener_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn get_listener_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_listener_arns()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>

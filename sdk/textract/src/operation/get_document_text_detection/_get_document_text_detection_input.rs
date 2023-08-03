@@ -29,18 +29,14 @@ impl GetDocumentTextDetectionInput {
 }
 impl GetDocumentTextDetectionInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionInput`](crate::operation::get_document_text_detection::GetDocumentTextDetectionInput).
-    pub fn builder(
-    ) -> crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder {
         crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentTextDetectionInput`](crate::operation::get_document_text_detection::GetDocumentTextDetectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentTextDetectionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl GetDocumentTextDetectionInputBuilder {
         crate::operation::get_document_text_detection::GetDocumentTextDetectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_document_text_detection::GetDocumentTextDetectionInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_document_text_detection::GetDocumentTextDetectionInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

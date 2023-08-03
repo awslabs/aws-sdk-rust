@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`status(Option<Status>)`](crate::operation::get_backend_api_models::GetBackendApiModelsOutput::status): <p>The current status of the request.</p>
     ///   - [`model_introspection_schema(Option<String>)`](crate::operation::get_backend_api_models::GetBackendApiModelsOutput::model_introspection_schema): <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
     /// - On failure, responds with [`SdkError<GetBackendAPIModelsError>`](crate::operation::get_backend_api_models::GetBackendAPIModelsError)
-    pub fn get_backend_api_models(
-        &self,
-    ) -> crate::operation::get_backend_api_models::builders::GetBackendAPIModelsFluentBuilder {
-        crate::operation::get_backend_api_models::builders::GetBackendAPIModelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backend_api_models(&self) -> crate::operation::get_backend_api_models::builders::GetBackendAPIModelsFluentBuilder {
+        crate::operation::get_backend_api_models::builders::GetBackendAPIModelsFluentBuilder::new(self.handle.clone())
     }
 }

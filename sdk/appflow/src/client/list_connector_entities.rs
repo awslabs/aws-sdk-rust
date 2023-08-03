@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`connector_entity_map(Option<HashMap<String, Vec<ConnectorEntity>>>)`](crate::operation::list_connector_entities::ListConnectorEntitiesOutput::connector_entity_map): <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connector_entities::ListConnectorEntitiesOutput::next_token): <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
     /// - On failure, responds with [`SdkError<ListConnectorEntitiesError>`](crate::operation::list_connector_entities::ListConnectorEntitiesError)
-    pub fn list_connector_entities(
-        &self,
-    ) -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesFluentBuilder
-    {
-        crate::operation::list_connector_entities::builders::ListConnectorEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_connector_entities(&self) -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesFluentBuilder {
+        crate::operation::list_connector_entities::builders::ListConnectorEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_snapshots::ListSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshots::ListSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_snapshots();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSnapshotsFluentBuilder {
         }
     }
     /// Access the ListSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_snapshots::builders::ListSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_snapshots::builders::ListSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListSnapshotsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_snapshots::paginator::ListSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_snapshots::paginator::ListSnapshotsPaginator {
-        crate::operation::list_snapshots::paginator::ListSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_snapshots::paginator::ListSnapshotsPaginator {
+        crate::operation::list_snapshots::paginator::ListSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,18 +141,12 @@ impl ListSnapshotsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -174,18 +155,12 @@ impl ListSnapshotsFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_arn(input);
         self
     }
@@ -194,18 +169,12 @@ impl ListSnapshotsFluentBuilder {
         self.inner.get_namespace_arn()
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -219,10 +188,7 @@ impl ListSnapshotsFluentBuilder {
         self
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -236,10 +202,7 @@ impl ListSnapshotsFluentBuilder {
         self
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

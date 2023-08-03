@@ -26,10 +26,7 @@ pub fn ser_update_rotation_input(
     if let Some(var_7) = &input.recurrence {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Recurrence").start_object();
-        crate::protocol_serde::shape_recurrence_settings::ser_recurrence_settings(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_recurrence_settings::ser_recurrence_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

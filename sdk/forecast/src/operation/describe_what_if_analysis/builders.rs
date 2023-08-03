@@ -33,8 +33,7 @@ impl DescribeWhatIfAnalysisInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder,
+    inner: crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder,
 }
 impl DescribeWhatIfAnalysisFluentBuilder {
     /// Creates a new `DescribeWhatIfAnalysis`.
@@ -45,10 +44,7 @@ impl DescribeWhatIfAnalysisFluentBuilder {
         }
     }
     /// Access the DescribeWhatIfAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl DescribeWhatIfAnalysisFluentBuilder {
             crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl DescribeWhatIfAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl DescribeWhatIfAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl DescribeWhatIfAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -125,25 +112,17 @@ impl DescribeWhatIfAnalysisFluentBuilder {
             crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn what_if_analysis_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_analysis_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn set_what_if_analysis_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_what_if_analysis_arn(input);
         self
     }

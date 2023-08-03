@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateTapeWithBarcodeOutput {
 }
 impl CreateTapeWithBarcodeOutput {
     /// Creates a new builder-style object to manufacture [`CreateTapeWithBarcodeOutput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeOutputBuilder {
         crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTapeWithBarcodeOutput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTapeWithBarcodeOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -29,9 +29,7 @@ impl DeleteWebAclInput {
 
 /// A builder for [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWebAclInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteWebAclInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_web_acl::DeleteWebAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_web_acl::DeleteWebAclInput {
             web_acl_id: self.web_acl_id,
             change_token: self.change_token,

@@ -23,31 +23,24 @@ impl UpdateSignalingChannelInput {
         self.current_version.as_deref()
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn single_master_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
+    pub fn single_master_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
 }
 impl UpdateSignalingChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateSignalingChannelInput`](crate::operation::update_signaling_channel::UpdateSignalingChannelInput).
-    pub fn builder(
-    ) -> crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder {
         crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSignalingChannelInput`](crate::operation::update_signaling_channel::UpdateSignalingChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSignalingChannelInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
-    pub(crate) single_master_configuration:
-        ::std::option::Option<crate::types::SingleMasterConfiguration>,
+    pub(crate) single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
 }
 impl UpdateSignalingChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
@@ -65,18 +58,12 @@ impl UpdateSignalingChannelInputBuilder {
         &self.channel_arn
     }
     /// <p>The current version of the signaling channel that you want to update.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the signaling channel that you want to update.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -85,40 +72,28 @@ impl UpdateSignalingChannelInputBuilder {
         &self.current_version
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn single_master_configuration(
-        mut self,
-        input: crate::types::SingleMasterConfiguration,
-    ) -> Self {
+    pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.single_master_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn set_single_master_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterConfiguration>,
-    ) -> Self {
+    pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.single_master_configuration = input;
         self
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn get_single_master_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+    pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         &self.single_master_configuration
     }
     /// Consumes the builder and constructs a [`UpdateSignalingChannelInput`](crate::operation::update_signaling_channel::UpdateSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_signaling_channel::UpdateSignalingChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_signaling_channel::UpdateSignalingChannelInput {
-                channel_arn: self.channel_arn,
-                current_version: self.current_version,
-                single_master_configuration: self.single_master_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_signaling_channel::UpdateSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_signaling_channel::UpdateSignalingChannelInput {
+            channel_arn: self.channel_arn,
+            current_version: self.current_version,
+            single_master_configuration: self.single_master_configuration,
+        })
     }
 }

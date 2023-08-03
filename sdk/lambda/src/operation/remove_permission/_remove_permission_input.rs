@@ -50,17 +50,14 @@ impl RemovePermissionInput {
 }
 impl RemovePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
         crate::operation::remove_permission::builders::RemovePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemovePermissionInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,
@@ -76,10 +73,7 @@ impl RemovePermissionInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -91,10 +85,7 @@ impl RemovePermissionInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -154,10 +145,7 @@ impl RemovePermissionInputBuilder {
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_permission::RemovePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionInput {
             function_name: self.function_name,
             statement_id: self.statement_id,

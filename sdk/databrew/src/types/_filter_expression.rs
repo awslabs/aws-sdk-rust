@@ -9,9 +9,7 @@ pub struct FilterExpression {
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
     #[doc(hidden)]
-    pub values_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub values_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FilterExpression {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
@@ -19,11 +17,7 @@ impl FilterExpression {
         self.expression.as_deref()
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn values_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn values_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.values_map.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl FilterExpression {
 
 /// A builder for [`FilterExpression`](crate::types::FilterExpression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterExpressionBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
-    pub(crate) values_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) values_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FilterExpressionBuilder {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
@@ -65,32 +55,19 @@ impl FilterExpressionBuilder {
     /// To override the contents of this collection use [`set_values_map`](Self::set_values_map).
     ///
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn values_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn values_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.values_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.values_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn set_values_map(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_values_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.values_map = input;
         self
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn get_values_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_values_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.values_map
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).

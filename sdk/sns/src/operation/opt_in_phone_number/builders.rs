@@ -10,10 +10,7 @@ impl OptInPhoneNumberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::opt_in_phone_number::OptInPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::opt_in_phone_number::OptInPhoneNumberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.opt_in_phone_number();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl OptInPhoneNumberFluentBuilder {
         }
     }
     /// Access the OptInPhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl OptInPhoneNumberFluentBuilder {
             crate::operation::opt_in_phone_number::OptInPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::opt_in_phone_number::OptInPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl OptInPhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl OptInPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::opt_in_phone_number::OptInPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::opt_in_phone_number::OptInPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl OptInPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::opt_in_phone_number::OptInPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::opt_in_phone_number::OptInPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl OptInPhoneNumberFluentBuilder {
             crate::operation::opt_in_phone_number::OptInPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::opt_in_phone_number::OptInPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError>,
     > {
         self.customize_middleware().await
     }

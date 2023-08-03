@@ -27,34 +27,27 @@ impl ::std::fmt::Display for SnapshotScheduleUpdateInProgressFault {
     }
 }
 impl ::std::error::Error for SnapshotScheduleUpdateInProgressFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::SnapshotScheduleUpdateInProgressFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::SnapshotScheduleUpdateInProgressFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SnapshotScheduleUpdateInProgressFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotScheduleUpdateInProgressFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl SnapshotScheduleUpdateInProgressFault {
     /// Creates a new builder-style object to manufacture [`SnapshotScheduleUpdateInProgressFault`](crate::types::error::SnapshotScheduleUpdateInProgressFault).
-    pub fn builder() -> crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder {
         crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder::default()
     }
 }
 
 /// A builder for [`SnapshotScheduleUpdateInProgressFault`](crate::types::error::SnapshotScheduleUpdateInProgressFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotScheduleUpdateInProgressFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl SnapshotScheduleUpdateInProgressFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

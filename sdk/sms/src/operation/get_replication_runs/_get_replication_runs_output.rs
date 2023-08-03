@@ -35,21 +35,17 @@ impl ::aws_http::request_id::RequestId for GetReplicationRunsOutput {
 }
 impl GetReplicationRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetReplicationRunsOutput`](crate::operation::get_replication_runs::GetReplicationRunsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_replication_runs::builders::GetReplicationRunsOutputBuilder {
+    pub fn builder() -> crate::operation::get_replication_runs::builders::GetReplicationRunsOutputBuilder {
         crate::operation::get_replication_runs::builders::GetReplicationRunsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationRunsOutput`](crate::operation::get_replication_runs::GetReplicationRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationRunsOutputBuilder {
     pub(crate) replication_job: ::std::option::Option<crate::types::ReplicationJob>,
-    pub(crate) replication_run_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
+    pub(crate) replication_run_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,10 +56,7 @@ impl GetReplicationRunsOutputBuilder {
         self
     }
     /// <p>Information about the replication job.</p>
-    pub fn set_replication_job(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationJob>,
-    ) -> Self {
+    pub fn set_replication_job(mut self, input: ::std::option::Option<crate::types::ReplicationJob>) -> Self {
         self.replication_job = input;
         self
     }
@@ -83,17 +76,12 @@ impl GetReplicationRunsOutputBuilder {
         self
     }
     /// <p>Information about the replication runs.</p>
-    pub fn set_replication_run_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,
-    ) -> Self {
+    pub fn set_replication_run_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>) -> Self {
         self.replication_run_list = input;
         self
     }
     /// <p>Information about the replication runs.</p>
-    pub fn get_replication_run_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>> {
+    pub fn get_replication_run_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>> {
         &self.replication_run_list
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>

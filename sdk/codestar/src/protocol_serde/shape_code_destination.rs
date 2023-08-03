@@ -12,10 +12,7 @@ pub fn ser_code_destination(
     if let Some(var_3) = &input.git_hub {
         #[allow(unused_mut)]
         let mut object_4 = object.key("gitHub").start_object();
-        crate::protocol_serde::shape_git_hub_code_destination::ser_git_hub_code_destination(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_git_hub_code_destination::ser_git_hub_code_destination(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

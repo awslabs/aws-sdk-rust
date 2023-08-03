@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetRepositorySyncStatusOutput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput) with field(s):
     ///   - [`latest_sync(Option<RepositorySyncAttempt>)`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput::latest_sync): <p>The repository sync status detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetRepositorySyncStatusError>`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusError)
-    pub fn get_repository_sync_status(
-        &self,
-    ) -> crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusFluentBuilder
-    {
+    pub fn get_repository_sync_status(&self) -> crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusFluentBuilder {
         crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusFluentBuilder::new(self.handle.clone())
     }
 }

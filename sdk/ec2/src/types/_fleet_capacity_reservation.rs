@@ -52,9 +52,7 @@ impl FleetCapacityReservation {
         self.instance_type.as_ref()
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_platform(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationInstancePlatform> {
+    pub fn instance_platform(&self) -> ::std::option::Option<&crate::types::CapacityReservationInstancePlatform> {
         self.instance_platform.as_ref()
     }
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
@@ -95,15 +93,12 @@ impl FleetCapacityReservation {
 
 /// A builder for [`FleetCapacityReservation`](crate::types::FleetCapacityReservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetCapacityReservationBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
-    pub(crate) instance_platform:
-        ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
+    pub(crate) instance_platform: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) total_instance_count: ::std::option::Option<i32>,
     pub(crate) fulfilled_capacity: ::std::option::Option<f64>,
@@ -114,18 +109,12 @@ pub struct FleetCapacityReservationBuilder {
 }
 impl FleetCapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -134,18 +123,12 @@ impl FleetCapacityReservationBuilder {
         &self.capacity_reservation_id
     }
     /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -159,10 +142,7 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -171,40 +151,26 @@ impl FleetCapacityReservationBuilder {
         &self.instance_type
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_platform(
-        mut self,
-        input: crate::types::CapacityReservationInstancePlatform,
-    ) -> Self {
+    pub fn instance_platform(mut self, input: crate::types::CapacityReservationInstancePlatform) -> Self {
         self.instance_platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
-    ) -> Self {
+    pub fn set_instance_platform(mut self, input: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>) -> Self {
         self.instance_platform = input;
         self
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn get_instance_platform(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationInstancePlatform> {
+    pub fn get_instance_platform(&self) -> &::std::option::Option<crate::types::CapacityReservationInstancePlatform> {
         &self.instance_platform
     }
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -260,10 +226,7 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }

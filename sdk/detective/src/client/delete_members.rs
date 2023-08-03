@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`account_ids(Option<Vec<String>>)`](crate::operation::delete_members::DeleteMembersOutput::account_ids): <p>The list of Amazon Web Services account identifiers for the member accounts that Detective successfully removed from the behavior graph.</p>
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::delete_members::DeleteMembersOutput::unprocessed_accounts): <p>The list of member accounts that Detective was not able to remove from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
     /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::operation::delete_members::DeleteMembersError)
-    pub fn delete_members(
-        &self,
-    ) -> crate::operation::delete_members::builders::DeleteMembersFluentBuilder {
-        crate::operation::delete_members::builders::DeleteMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_members(&self) -> crate::operation::delete_members::builders::DeleteMembersFluentBuilder {
+        crate::operation::delete_members::builders::DeleteMembersFluentBuilder::new(self.handle.clone())
     }
 }

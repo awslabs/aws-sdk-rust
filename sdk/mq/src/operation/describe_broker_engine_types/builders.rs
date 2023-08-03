@@ -26,7 +26,7 @@ impl DescribeBrokerEngineTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBrokerEngineTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder,
+    inner: crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder,
 }
 impl DescribeBrokerEngineTypesFluentBuilder {
     /// Creates a new `DescribeBrokerEngineTypes`.
@@ -37,7 +37,7 @@ impl DescribeBrokerEngineTypesFluentBuilder {
         }
     }
     /// Access the DescribeBrokerEngineTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeBrokerEngineTypesFluentBuilder {
             crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeBrokerEngineTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeBrokerEngineTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeBrokerEngineTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeBrokerEngineTypesFluentBuilder {
             crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError>,
     > {
         self.customize_middleware().await
     }

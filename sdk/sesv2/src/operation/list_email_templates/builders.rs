@@ -10,10 +10,7 @@ impl ListEmailTemplatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_email_templates::ListEmailTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_email_templates::ListEmailTemplatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_email_templates();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListEmailTemplatesFluentBuilder {
         }
     }
     /// Access the ListEmailTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_email_templates::builders::ListEmailTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_email_templates::builders::ListEmailTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListEmailTemplatesFluentBuilder {
             crate::operation::list_email_templates::ListEmailTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_email_templates::ListEmailTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListEmailTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListEmailTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_email_templates::ListEmailTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_email_templates::ListEmailTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListEmailTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_email_templates::ListEmailTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_email_templates::ListEmailTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListEmailTemplatesFluentBuilder {
             crate::operation::list_email_templates::ListEmailTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_email_templates::ListEmailTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_email_templates::paginator::ListEmailTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_email_templates::paginator::ListEmailTemplatesPaginator {
-        crate::operation::list_email_templates::paginator::ListEmailTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_email_templates::paginator::ListEmailTemplatesPaginator {
+        crate::operation::list_email_templates::paginator::ListEmailTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

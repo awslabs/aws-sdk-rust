@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for UpdateChapCredentialsOutput {
 }
 impl UpdateChapCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChapCredentialsOutput`](crate::operation::update_chap_credentials::UpdateChapCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsOutputBuilder {
         crate::operation::update_chap_credentials::builders::UpdateChapCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChapCredentialsOutput`](crate::operation::update_chap_credentials::UpdateChapCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChapCredentialsOutputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) initiator_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl UpdateChapCredentialsOutputBuilder {
         &self.target_arn
     }
     /// <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
-    pub fn initiator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initiator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
-    pub fn set_initiator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initiator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initiator_name = input;
         self
     }

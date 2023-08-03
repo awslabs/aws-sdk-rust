@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRevealConfigurationOutput {
 }
 impl UpdateRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
-    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder {
         crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRevealConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateRevealConfigurationOutputBuilder {
         self
     }
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdateRevealConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
             configuration: self.configuration,
             _request_id: self._request_id,

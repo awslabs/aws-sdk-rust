@@ -23,9 +23,7 @@ impl CalculationConfiguration {
 
 /// A builder for [`CalculationConfiguration`](crate::types::CalculationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculationConfigurationBuilder {
     pub(crate) code_block: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CalculationConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`CalculationConfiguration`](crate::types::CalculationConfiguration).
     pub fn build(self) -> crate::types::CalculationConfiguration {
-        crate::types::CalculationConfiguration {
-            code_block: self.code_block,
-        }
+        crate::types::CalculationConfiguration { code_block: self.code_block }
     }
 }

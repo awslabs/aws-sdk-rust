@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`notification_summaries(Option<Vec<NotificationSummary>>)`](crate::operation::list_notifications::ListNotificationsOutput::notification_summaries): <p>List of lens notification summaries in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_notifications::ListNotificationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::operation::list_notifications::ListNotificationsError)
-    pub fn list_notifications(
-        &self,
-    ) -> crate::operation::list_notifications::builders::ListNotificationsFluentBuilder {
-        crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_notifications(&self) -> crate::operation::list_notifications::builders::ListNotificationsFluentBuilder {
+        crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

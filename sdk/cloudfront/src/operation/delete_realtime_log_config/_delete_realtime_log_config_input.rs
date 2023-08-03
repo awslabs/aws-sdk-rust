@@ -22,18 +22,14 @@ impl DeleteRealtimeLogConfigInput {
 }
 impl DeleteRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteRealtimeLogConfigInput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder {
         crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRealtimeLogConfigInput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRealtimeLogConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeleteRealtimeLogConfigInputBuilder {
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput {
-                name: self.name,
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput {
+            name: self.name,
+            arn: self.arn,
+        })
     }
 }

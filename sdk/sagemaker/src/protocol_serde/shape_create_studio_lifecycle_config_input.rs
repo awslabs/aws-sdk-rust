@@ -4,19 +4,13 @@ pub fn ser_create_studio_lifecycle_config_input(
     input: &crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.studio_lifecycle_config_name {
-        object
-            .key("StudioLifecycleConfigName")
-            .string(var_1.as_str());
+        object.key("StudioLifecycleConfigName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.studio_lifecycle_config_content {
-        object
-            .key("StudioLifecycleConfigContent")
-            .string(var_2.as_str());
+        object.key("StudioLifecycleConfigContent").string(var_2.as_str());
     }
     if let Some(var_3) = &input.studio_lifecycle_config_app_type {
-        object
-            .key("StudioLifecycleConfigAppType")
-            .string(var_3.as_str());
+        object.key("StudioLifecycleConfigAppType").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
         let mut array_5 = object.key("Tags").start_array();

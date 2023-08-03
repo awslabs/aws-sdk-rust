@@ -10,10 +10,7 @@ impl UpdateProjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_project::UpdateProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project::UpdateProjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_project();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateProjectFluentBuilder {
         }
     }
     /// Access the UpdateProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -172,17 +164,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn set_secondary_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
-    ) -> Self {
+    pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
         self.inner = self.inner.set_secondary_sources(input);
         self
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn get_secondary_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+    pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
         self.inner.get_secondary_sources()
     }
     /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
@@ -194,10 +181,7 @@ impl UpdateProjectFluentBuilder {
     /// </ul>
     /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
@@ -210,10 +194,7 @@ impl UpdateProjectFluentBuilder {
     /// </ul>
     /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
@@ -239,17 +220,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-    pub fn set_secondary_source_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
-    ) -> Self {
+    pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
         self.inner = self.inner.set_secondary_source_versions(input);
         self
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-    pub fn get_secondary_source_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+    pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
         self.inner.get_secondary_source_versions()
     }
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
@@ -258,10 +234,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
-    pub fn set_artifacts(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectArtifacts>,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: ::std::option::Option<crate::types::ProjectArtifacts>) -> Self {
         self.inner = self.inner.set_artifacts(input);
         self
     }
@@ -279,17 +252,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-    pub fn set_secondary_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
-    ) -> Self {
+    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
         self.inner = self.inner.set_secondary_artifacts(input);
         self
     }
     /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-    pub fn get_secondary_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
         self.inner.get_secondary_artifacts()
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
@@ -312,10 +280,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>Information to be changed about the build environment for the build project.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::ProjectEnvironment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -370,10 +335,7 @@ impl UpdateProjectFluentBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
@@ -382,10 +344,7 @@ impl UpdateProjectFluentBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -409,10 +368,7 @@ impl UpdateProjectFluentBuilder {
     }
     /// <p>An updated list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -455,10 +411,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
-    pub fn set_logs_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LogsConfig>,
-    ) -> Self {
+    pub fn set_logs_config(mut self, input: ::std::option::Option<crate::types::LogsConfig>) -> Self {
         self.inner = self.inner.set_logs_config(input);
         self
     }
@@ -476,17 +429,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn set_file_system_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
-    ) -> Self {
+    pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>) -> Self {
         self.inner = self.inner.set_file_system_locations(input);
         self
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn get_file_system_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
+    pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
         self.inner.get_file_system_locations()
     }
     /// <p>Contains configuration information about a batch build project.</p>
@@ -495,17 +443,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn set_build_batch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
-    ) -> Self {
+    pub fn set_build_batch_config(mut self, input: ::std::option::Option<crate::types::ProjectBuildBatchConfig>) -> Self {
         self.inner = self.inner.set_build_batch_config(input);
         self
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn get_build_batch_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
+    pub fn get_build_batch_config(&self) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
         self.inner.get_build_batch_config()
     }
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>

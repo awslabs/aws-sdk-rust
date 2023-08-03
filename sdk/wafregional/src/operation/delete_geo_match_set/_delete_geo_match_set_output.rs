@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteGeoMatchSetOutput {
 }
 impl DeleteGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetOutput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetOutputBuilder {
         crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGeoMatchSetOutput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGeoMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

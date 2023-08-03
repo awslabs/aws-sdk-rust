@@ -10,10 +10,7 @@ impl DescribeInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_instances::DescribeInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_instances();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeInstancesFluentBuilder {
         }
     }
     /// Access the DescribeInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeInstancesFluentBuilder {
             crate::operation::describe_instances::DescribeInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances::DescribeInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances::DescribeInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DescribeInstancesFluentBuilder {
             crate::operation::describe_instances::DescribeInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -163,17 +147,12 @@ impl DescribeInstancesFluentBuilder {
         self
     }
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
 }

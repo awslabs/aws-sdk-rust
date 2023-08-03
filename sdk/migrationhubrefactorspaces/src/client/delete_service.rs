@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`state(Option<ServiceState>)`](crate::operation::delete_service::DeleteServiceOutput::state): <p>The current state of the service. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_service::DeleteServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
-    pub fn delete_service(
-        &self,
-    ) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
-        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
+        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())
     }
 }

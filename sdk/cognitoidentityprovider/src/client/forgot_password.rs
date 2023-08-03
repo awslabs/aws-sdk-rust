@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ForgotPasswordOutput`](crate::operation::forgot_password::ForgotPasswordOutput) with field(s):
     ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::operation::forgot_password::ForgotPasswordOutput::code_delivery_details): <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     /// - On failure, responds with [`SdkError<ForgotPasswordError>`](crate::operation::forgot_password::ForgotPasswordError)
-    pub fn forgot_password(
-        &self,
-    ) -> crate::operation::forgot_password::builders::ForgotPasswordFluentBuilder {
-        crate::operation::forgot_password::builders::ForgotPasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn forgot_password(&self) -> crate::operation::forgot_password::builders::ForgotPasswordFluentBuilder {
+        crate::operation::forgot_password::builders::ForgotPasswordFluentBuilder::new(self.handle.clone())
     }
 }

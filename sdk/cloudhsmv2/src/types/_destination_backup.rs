@@ -44,9 +44,7 @@ impl DestinationBackup {
 
 /// A builder for [`DestinationBackup`](crate::types::DestinationBackup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBackupBuilder {
     pub(crate) create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) source_region: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl DestinationBackupBuilder {
         self
     }
     /// <p>The date and time when both the source backup was created.</p>
-    pub fn set_create_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_timestamp = input;
         self
     }
@@ -72,18 +67,12 @@ impl DestinationBackupBuilder {
         &self.create_timestamp
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -92,18 +81,12 @@ impl DestinationBackupBuilder {
         &self.source_region
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn source_backup(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_backup(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn set_source_backup(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_backup(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup = input;
         self
     }
@@ -112,18 +95,12 @@ impl DestinationBackupBuilder {
         &self.source_backup
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn source_cluster(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_cluster = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn set_source_cluster(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_cluster = input;
         self
     }

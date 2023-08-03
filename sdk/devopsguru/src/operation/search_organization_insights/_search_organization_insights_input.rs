@@ -32,9 +32,7 @@ impl SearchOrganizationInsightsInput {
         self.start_time_range.as_ref()
     }
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SearchOrganizationInsightsFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::SearchOrganizationInsightsFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -52,16 +50,14 @@ impl SearchOrganizationInsightsInput {
 }
 impl SearchOrganizationInsightsInput {
     /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsInput`](crate::operation::search_organization_insights::SearchOrganizationInsightsInput).
-    pub fn builder() -> crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder{
+    pub fn builder() -> crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder {
         crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchOrganizationInsightsInput`](crate::operation::search_organization_insights::SearchOrganizationInsightsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchOrganizationInsightsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
@@ -83,17 +79,12 @@ impl SearchOrganizationInsightsInputBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
@@ -102,10 +93,7 @@ impl SearchOrganizationInsightsInputBuilder {
         self
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.start_time_range = input;
         self
     }
@@ -119,17 +107,12 @@ impl SearchOrganizationInsightsInputBuilder {
         self
     }
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchOrganizationInsightsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchOrganizationInsightsFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchOrganizationInsightsFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchOrganizationInsightsFilters> {
         &self.filters
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -181,15 +164,13 @@ impl SearchOrganizationInsightsInputBuilder {
         crate::operation::search_organization_insights::SearchOrganizationInsightsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_organization_insights::SearchOrganizationInsightsInput {
-                account_ids: self.account_ids,
-                start_time_range: self.start_time_range,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                r#type: self.r#type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_organization_insights::SearchOrganizationInsightsInput {
+            account_ids: self.account_ids,
+            start_time_range: self.start_time_range,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            r#type: self.r#type,
+        })
     }
 }

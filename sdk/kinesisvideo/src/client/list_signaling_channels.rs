@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`channel_info_list(Option<Vec<ChannelInfo>>)`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput::channel_info_list): <p>An array of <code>ChannelInfo</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
     /// - On failure, responds with [`SdkError<ListSignalingChannelsError>`](crate::operation::list_signaling_channels::ListSignalingChannelsError)
-    pub fn list_signaling_channels(
-        &self,
-    ) -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder
-    {
-        crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_signaling_channels(&self) -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder {
+        crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::new(self.handle.clone())
     }
 }

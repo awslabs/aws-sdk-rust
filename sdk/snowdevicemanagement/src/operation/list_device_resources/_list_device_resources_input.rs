@@ -36,18 +36,14 @@ impl ListDeviceResourcesInput {
 }
 impl ListDeviceResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder {
-        crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder {
+        crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceResourcesInputBuilder {
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListDeviceResourcesInputBuilder {
 }
 impl ListDeviceResourcesInputBuilder {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_device_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListDeviceResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_resources::ListDeviceResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_resources::ListDeviceResourcesInput {
-                managed_device_id: self.managed_device_id,
-                r#type: self.r#type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_resources::ListDeviceResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_device_resources::ListDeviceResourcesInput {
+            managed_device_id: self.managed_device_id,
+            r#type: self.r#type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

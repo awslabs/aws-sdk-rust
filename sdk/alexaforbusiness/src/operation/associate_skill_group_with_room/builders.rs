@@ -27,7 +27,7 @@ impl AssociateSkillGroupWithRoomInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSkillGroupWithRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder,
+    inner: crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder,
 }
 impl AssociateSkillGroupWithRoomFluentBuilder {
     /// Creates a new `AssociateSkillGroupWithRoom`.
@@ -38,7 +38,7 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
         }
     }
     /// Access the AssociateSkillGroupWithRoom as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
             crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoom,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
             crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoom,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_group_arn(input.into());
         self
     }
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }

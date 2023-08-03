@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_encryption::builders::DeleteBucketEncryptionFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::delete_bucket_encryption::builders::DeleteBucketEncryptionFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`DeleteBucketEncryptionOutput`](crate::operation::delete_bucket_encryption::DeleteBucketEncryptionOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketEncryptionError>`](crate::operation::delete_bucket_encryption::DeleteBucketEncryptionError)
-    pub fn delete_bucket_encryption(
-        &self,
-    ) -> crate::operation::delete_bucket_encryption::builders::DeleteBucketEncryptionFluentBuilder
-    {
+    pub fn delete_bucket_encryption(&self) -> crate::operation::delete_bucket_encryption::builders::DeleteBucketEncryptionFluentBuilder {
         crate::operation::delete_bucket_encryption::builders::DeleteBucketEncryptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl SuccessfulPackageVersionInfo {
 
 /// A builder for [`SuccessfulPackageVersionInfo`](crate::types::SuccessfulPackageVersionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuccessfulPackageVersionInfoBuilder {
     pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
@@ -58,10 +56,7 @@ impl SuccessfulPackageVersionInfoBuilder {
         self
     }
     /// <p> The status of a package version. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.status = input;
         self
     }

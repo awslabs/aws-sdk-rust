@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateEnvironmentOperationsRoleOut
 }
 impl AssociateEnvironmentOperationsRoleOutput {
     /// Creates a new builder-style object to manufacture [`AssociateEnvironmentOperationsRoleOutput`](crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput).
-    pub fn builder() -> crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleOutputBuilder{
+    pub fn builder() -> crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleOutputBuilder {
         crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEnvironmentOperationsRoleOutput`](crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateEnvironmentOperationsRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateEnvironmentOperationsRoleOutput`](crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput).
-    pub fn build(self) -> crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput{
+    pub fn build(self) -> crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput {
         crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput {
             _request_id: self._request_id,
         }

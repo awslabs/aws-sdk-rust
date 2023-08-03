@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`distribution_configuration(Option<DistributionConfiguration>)`](crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput::distribution_configuration): <p>The distribution configuration object.</p>
     /// - On failure, responds with [`SdkError<GetDistributionConfigurationError>`](crate::operation::get_distribution_configuration::GetDistributionConfigurationError)
-    pub fn get_distribution_configuration(&self) -> crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationFluentBuilder{
+    pub fn get_distribution_configuration(
+        &self,
+    ) -> crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationFluentBuilder {
         crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

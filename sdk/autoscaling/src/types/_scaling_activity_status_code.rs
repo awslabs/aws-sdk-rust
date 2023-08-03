@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalingActivityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -97,21 +91,13 @@ impl ::std::convert::From<&str> for ScalingActivityStatusCode {
             "PendingSpotBidPlacement" => ScalingActivityStatusCode::PendingSpotBidPlacement,
             "PreInService" => ScalingActivityStatusCode::PreInService,
             "Successful" => ScalingActivityStatusCode::Successful,
-            "WaitingForConnectionDraining" => {
-                ScalingActivityStatusCode::WaitingForConnectionDraining
-            }
-            "WaitingForELBConnectionDraining" => {
-                ScalingActivityStatusCode::WaitingForElbConnectionDraining
-            }
+            "WaitingForConnectionDraining" => ScalingActivityStatusCode::WaitingForConnectionDraining,
+            "WaitingForELBConnectionDraining" => ScalingActivityStatusCode::WaitingForElbConnectionDraining,
             "WaitingForInstanceId" => ScalingActivityStatusCode::WaitingForInstanceId,
             "WaitingForInstanceWarmup" => ScalingActivityStatusCode::WaitingForInstanceWarmup,
             "WaitingForSpotInstanceId" => ScalingActivityStatusCode::WaitingForSpotInstanceId,
-            "WaitingForSpotInstanceRequestId" => {
-                ScalingActivityStatusCode::WaitingForSpotInstanceRequestId
-            }
-            other => ScalingActivityStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "WaitingForSpotInstanceRequestId" => ScalingActivityStatusCode::WaitingForSpotInstanceRequestId,
+            other => ScalingActivityStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -133,18 +119,12 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::PendingSpotBidPlacement => "PendingSpotBidPlacement",
             ScalingActivityStatusCode::PreInService => "PreInService",
             ScalingActivityStatusCode::Successful => "Successful",
-            ScalingActivityStatusCode::WaitingForConnectionDraining => {
-                "WaitingForConnectionDraining"
-            }
-            ScalingActivityStatusCode::WaitingForElbConnectionDraining => {
-                "WaitingForELBConnectionDraining"
-            }
+            ScalingActivityStatusCode::WaitingForConnectionDraining => "WaitingForConnectionDraining",
+            ScalingActivityStatusCode::WaitingForElbConnectionDraining => "WaitingForELBConnectionDraining",
             ScalingActivityStatusCode::WaitingForInstanceId => "WaitingForInstanceId",
             ScalingActivityStatusCode::WaitingForInstanceWarmup => "WaitingForInstanceWarmup",
             ScalingActivityStatusCode::WaitingForSpotInstanceId => "WaitingForSpotInstanceId",
-            ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => {
-                "WaitingForSpotInstanceRequestId"
-            }
+            ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => "WaitingForSpotInstanceRequestId",
             ScalingActivityStatusCode::Unknown(value) => value.as_str(),
         }
     }

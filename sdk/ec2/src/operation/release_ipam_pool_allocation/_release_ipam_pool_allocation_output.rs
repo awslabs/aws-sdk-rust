@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ReleaseIpamPoolAllocationOutput {
 }
 impl ReleaseIpamPoolAllocationOutput {
     /// Creates a new builder-style object to manufacture [`ReleaseIpamPoolAllocationOutput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput).
-    pub fn builder() -> crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationOutputBuilder{
+    pub fn builder() -> crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationOutputBuilder {
         crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReleaseIpamPoolAllocationOutput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseIpamPoolAllocationOutputBuilder {
     pub(crate) success: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ReleaseIpamPoolAllocationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReleaseIpamPoolAllocationOutput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput {
+    pub fn build(self) -> crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput {
         crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput {
             success: self.success,
             _request_id: self._request_id,

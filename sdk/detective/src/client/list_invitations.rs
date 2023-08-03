@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`invitations(Option<Vec<MemberDetail>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
-    pub fn list_invitations(
-        &self,
-    ) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
-        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_invitations(&self) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
+        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

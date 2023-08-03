@@ -24,10 +24,7 @@ pub fn ser_start_face_search_input(
     if let Some(var_6) = &input.notification_channel {
         #[allow(unused_mut)]
         let mut object_7 = object.key("NotificationChannel").start_object();
-        crate::protocol_serde::shape_notification_channel::ser_notification_channel(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_notification_channel::ser_notification_channel(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.job_tag {

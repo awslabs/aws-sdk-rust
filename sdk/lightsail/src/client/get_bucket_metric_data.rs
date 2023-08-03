@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`metric_name(Option<BucketMetricName>)`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
     ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
     /// - On failure, responds with [`SdkError<GetBucketMetricDataError>`](crate::operation::get_bucket_metric_data::GetBucketMetricDataError)
-    pub fn get_bucket_metric_data(
-        &self,
-    ) -> crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataFluentBuilder {
-        crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_metric_data(&self) -> crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataFluentBuilder {
+        crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

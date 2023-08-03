@@ -21,10 +21,7 @@ pub fn ser_search_expression(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_nested_filters::ser_nested_filters(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_nested_filters::ser_nested_filters(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_search_expression(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_search_expression::ser_search_expression(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_search_expression::ser_search_expression(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }

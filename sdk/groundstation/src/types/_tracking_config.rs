@@ -23,9 +23,7 @@ impl TrackingConfig {
 
 /// A builder for [`TrackingConfig`](crate::types::TrackingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrackingConfigBuilder {
     pub(crate) autotrack: ::std::option::Option<crate::types::Criticality>,
 }
@@ -36,10 +34,7 @@ impl TrackingConfigBuilder {
         self
     }
     /// <p>Current setting for autotrack.</p>
-    pub fn set_autotrack(
-        mut self,
-        input: ::std::option::Option<crate::types::Criticality>,
-    ) -> Self {
+    pub fn set_autotrack(mut self, input: ::std::option::Option<crate::types::Criticality>) -> Self {
         self.autotrack = input;
         self
     }
@@ -49,8 +44,6 @@ impl TrackingConfigBuilder {
     }
     /// Consumes the builder and constructs a [`TrackingConfig`](crate::types::TrackingConfig).
     pub fn build(self) -> crate::types::TrackingConfig {
-        crate::types::TrackingConfig {
-            autotrack: self.autotrack,
-        }
+        crate::types::TrackingConfig { autotrack: self.autotrack }
     }
 }

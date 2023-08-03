@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`instance_information_list(Option<Vec<InstanceInformation>>)`](crate::operation::describe_instance_information::DescribeInstanceInformationOutput::instance_information_list): <p>The managed node information list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_information::DescribeInstanceInformationOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
     /// - On failure, responds with [`SdkError<DescribeInstanceInformationError>`](crate::operation::describe_instance_information::DescribeInstanceInformationError)
-    pub fn describe_instance_information(&self) -> crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder{
+    pub fn describe_instance_information(
+        &self,
+    ) -> crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder {
         crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl IoTJobAbortCriteria {
 
 /// A builder for [`IoTJobAbortCriteria`](crate::types::IoTJobAbortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoTJobAbortCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
     pub(crate) action: ::std::option::Option<crate::types::IoTJobAbortAction>,
@@ -67,17 +65,12 @@ impl IoTJobAbortCriteriaBuilder {
         self
     }
     /// <p>The type of job deployment failure that can cancel a job.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
-    ) -> Self {
+    pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::IoTJobExecutionFailureType>) -> Self {
         self.failure_type = input;
         self
     }
     /// <p>The type of job deployment failure that can cancel a job.</p>
-    pub fn get_failure_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IoTJobExecutionFailureType> {
+    pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::IoTJobExecutionFailureType> {
         &self.failure_type
     }
     /// <p>The action to perform when the criteria are met.</p>
@@ -86,10 +79,7 @@ impl IoTJobAbortCriteriaBuilder {
         self
     }
     /// <p>The action to perform when the criteria are met.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobAbortAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::IoTJobAbortAction>) -> Self {
         self.action = input;
         self
     }

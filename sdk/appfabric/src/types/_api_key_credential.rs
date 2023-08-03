@@ -51,9 +51,7 @@ impl ApiKeyCredentialBuilder {
     }
     /// Consumes the builder and constructs a [`ApiKeyCredential`](crate::types::ApiKeyCredential).
     pub fn build(self) -> crate::types::ApiKeyCredential {
-        crate::types::ApiKeyCredential {
-            api_key: self.api_key,
-        }
+        crate::types::ApiKeyCredential { api_key: self.api_key }
     }
 }
 impl ::std::fmt::Debug for ApiKeyCredentialBuilder {

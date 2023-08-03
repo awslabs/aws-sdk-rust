@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetProvisionedProductOutputsOutput {
 }
 impl GetProvisionedProductOutputsOutput {
     /// Creates a new builder-style object to manufacture [`GetProvisionedProductOutputsOutput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput).
-    pub fn builder() -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsOutputBuilder{
+    pub fn builder() -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsOutputBuilder {
         crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProvisionedProductOutputsOutput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProvisionedProductOutputsOutputBuilder {
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -56,32 +54,21 @@ impl GetProvisionedProductOutputsOutputBuilder {
         self
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
         &self.outputs
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -99,9 +86,7 @@ impl GetProvisionedProductOutputsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetProvisionedProductOutputsOutput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput {
+    pub fn build(self) -> crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput {
         crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput {
             outputs: self.outputs,
             next_page_token: self.next_page_token,

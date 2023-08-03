@@ -7,9 +7,7 @@ pub fn ser_instance_requirements_request(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VCpuCount");
     if let Some(var_2) = &input.v_cpu_count {
-        crate::protocol_serde::shape_v_cpu_count_range_request::ser_v_cpu_count_range_request(
-            scope_1, var_2,
-        )?;
+        crate::protocol_serde::shape_v_cpu_count_range_request::ser_v_cpu_count_range_request(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("MemoryMiB");
@@ -130,9 +128,7 @@ pub fn ser_instance_requirements_request(
     #[allow(unused_mut)]
     let mut scope_50 = writer.prefix("AcceleratorCount");
     if let Some(var_51) = &input.accelerator_count {
-        crate::protocol_serde::shape_accelerator_count_request::ser_accelerator_count_request(
-            scope_50, var_51,
-        )?;
+        crate::protocol_serde::shape_accelerator_count_request::ser_accelerator_count_request(scope_50, var_51)?;
     }
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("AcceleratorManufacturer");

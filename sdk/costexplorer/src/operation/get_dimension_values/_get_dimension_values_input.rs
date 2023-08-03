@@ -260,17 +260,14 @@ impl GetDimensionValuesInput {
 }
 impl GetDimensionValuesInput {
     /// Creates a new builder-style object to manufacture [`GetDimensionValuesInput`](crate::operation::get_dimension_values::GetDimensionValuesInput).
-    pub fn builder(
-    ) -> crate::operation::get_dimension_values::builders::GetDimensionValuesInputBuilder {
+    pub fn builder() -> crate::operation::get_dimension_values::builders::GetDimensionValuesInputBuilder {
         crate::operation::get_dimension_values::builders::GetDimensionValuesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDimensionValuesInput`](crate::operation::get_dimension_values::GetDimensionValuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDimensionValuesInputBuilder {
     pub(crate) search_string: ::std::option::Option<::std::string::String>,
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
@@ -283,18 +280,12 @@ pub struct GetDimensionValuesInputBuilder {
 }
 impl GetDimensionValuesInputBuilder {
     /// <p>The value that you want to search the filter values for.</p>
-    pub fn search_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
-    pub fn set_search_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_string = input;
         self
     }
@@ -308,10 +299,7 @@ impl GetDimensionValuesInputBuilder {
         self
     }
     /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -652,10 +640,7 @@ impl GetDimensionValuesInputBuilder {
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
         self.sort_by = input;
         self
     }
@@ -672,9 +657,7 @@ impl GetDimensionValuesInputBuilder {
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
         &self.sort_by
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
@@ -695,18 +678,12 @@ impl GetDimensionValuesInputBuilder {
         &self.max_results
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -717,21 +694,16 @@ impl GetDimensionValuesInputBuilder {
     /// Consumes the builder and constructs a [`GetDimensionValuesInput`](crate::operation::get_dimension_values::GetDimensionValuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dimension_values::GetDimensionValuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_dimension_values::GetDimensionValuesInput {
-                search_string: self.search_string,
-                time_period: self.time_period,
-                dimension: self.dimension,
-                context: self.context,
-                filter: self.filter,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_page_token: self.next_page_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_dimension_values::GetDimensionValuesInput {
+            search_string: self.search_string,
+            time_period: self.time_period,
+            dimension: self.dimension,
+            context: self.context,
+            filter: self.filter,
+            sort_by: self.sort_by,
+            max_results: self.max_results,
+            next_page_token: self.next_page_token,
+        })
     }
 }

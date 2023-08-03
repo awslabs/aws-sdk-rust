@@ -36,20 +36,17 @@ impl DescribePullThroughCacheRulesInput {
 }
 impl DescribePullThroughCacheRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesInput`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesInput).
-    pub fn builder() -> crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder{
+    pub fn builder() -> crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder {
         crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePullThroughCacheRulesInput`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePullThroughCacheRulesInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ecr_repository_prefixes:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ecr_repository_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -73,27 +70,19 @@ impl DescribePullThroughCacheRulesInputBuilder {
     /// To override the contents of this collection use [`set_ecr_repository_prefixes`](Self::set_ecr_repository_prefixes).
     ///
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn ecr_repository_prefixes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ecr_repository_prefixes.unwrap_or_default();
         v.push(input.into());
         self.ecr_repository_prefixes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn set_ecr_repository_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ecr_repository_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ecr_repository_prefixes = input;
         self
     }
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn get_ecr_repository_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ecr_repository_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ecr_repository_prefixes
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
@@ -131,17 +120,11 @@ impl DescribePullThroughCacheRulesInputBuilder {
         crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesInput {
-                registry_id: self.registry_id
-                ,
-                ecr_repository_prefixes: self.ecr_repository_prefixes
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesInput {
+            registry_id: self.registry_id,
+            ecr_repository_prefixes: self.ecr_repository_prefixes,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

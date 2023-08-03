@@ -19,9 +19,7 @@ impl DeleteSpeakerOutput {
 
 /// A builder for [`DeleteSpeakerOutput`](crate::operation::delete_speaker::DeleteSpeakerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSpeakerOutputBuilder {
     _request_id: Option<String>,
 }

@@ -51,9 +51,7 @@ impl ComputeLimits {
 
 /// A builder for [`ComputeLimits`](crate::types::ComputeLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeLimitsBuilder {
     pub(crate) unit_type: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
     pub(crate) minimum_capacity_units: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ComputeLimitsBuilder {
         self
     }
     /// <p> The unit type used for specifying a managed scaling policy. </p>
-    pub fn set_unit_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
-    ) -> Self {
+    pub fn set_unit_type(mut self, input: ::std::option::Option<crate::types::ComputeLimitsUnitType>) -> Self {
         self.unit_type = input;
         self
     }
@@ -113,10 +108,7 @@ impl ComputeLimitsBuilder {
         self
     }
     /// <p> The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
-    pub fn set_maximum_on_demand_capacity_units(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_on_demand_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_on_demand_capacity_units = input;
         self
     }

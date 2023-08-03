@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionFluentBuilder::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     /// - On success, responds with [`DeleteAlertManagerDefinitionOutput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteAlertManagerDefinitionError>`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError)
-    pub fn delete_alert_manager_definition(&self) -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionFluentBuilder{
+    pub fn delete_alert_manager_definition(
+        &self,
+    ) -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionFluentBuilder {
         crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

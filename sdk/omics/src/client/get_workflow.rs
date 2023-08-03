@@ -25,9 +25,7 @@ impl super::Client {
     ///   - [`metadata(Option<HashMap<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::metadata): <p> Gets metadata for workflow. </p>
     ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_workflow::GetWorkflowOutput::accelerators): <p> The computational accelerator specified to run the workflow. </p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
-    pub fn get_workflow(
-        &self,
-    ) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
+    pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

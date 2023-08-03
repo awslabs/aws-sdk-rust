@@ -28,9 +28,7 @@ impl DescribeRegionsOutput {
 
 /// A builder for [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionsOutputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl DescribeRegionsOutputBuilder {
         self
     }
     /// <p>Information about the Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>) -> Self {
         self.regions = input;
         self
     }

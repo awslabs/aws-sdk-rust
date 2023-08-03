@@ -29,9 +29,7 @@ impl GetDeviceOutput {
 
 /// A builder for [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceOutputBuilder {
     pub(crate) device: ::std::option::Option<crate::types::DeviceType>,
     _request_id: Option<String>,

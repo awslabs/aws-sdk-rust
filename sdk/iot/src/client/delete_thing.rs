@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`expected_version(i64)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::set_expected_version): <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     /// - On success, responds with [`DeleteThingOutput`](crate::operation::delete_thing::DeleteThingOutput)
     /// - On failure, responds with [`SdkError<DeleteThingError>`](crate::operation::delete_thing::DeleteThingError)
-    pub fn delete_thing(
-        &self,
-    ) -> crate::operation::delete_thing::builders::DeleteThingFluentBuilder {
+    pub fn delete_thing(&self) -> crate::operation::delete_thing::builders::DeleteThingFluentBuilder {
         crate::operation::delete_thing::builders::DeleteThingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,9 +17,7 @@ pub struct PutGeofenceInput {
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
     #[doc(hidden)]
-    pub geofence_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutGeofenceInput {
     /// <p>The geofence collection to store the geofence in.</p>
@@ -38,11 +36,7 @@ impl PutGeofenceInput {
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn geofence_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn geofence_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.geofence_properties.as_ref()
     }
 }
@@ -70,24 +64,16 @@ pub struct PutGeofenceInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
-    pub(crate) geofence_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutGeofenceInputBuilder {
     /// <p>The geofence collection to store the geofence in.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geofence collection to store the geofence in.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -119,10 +105,7 @@ impl PutGeofenceInputBuilder {
     /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
-    pub fn set_geometry(
-        mut self,
-        input: ::std::option::Option<crate::types::GeofenceGeometry>,
-    ) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.geometry = input;
         self
     }
@@ -152,29 +135,18 @@ impl PutGeofenceInputBuilder {
     /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn set_geofence_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.geofence_properties = input;
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn get_geofence_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`PutGeofenceInput`](crate::operation::put_geofence::PutGeofenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_geofence::PutGeofenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_geofence::PutGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_geofence::PutGeofenceInput {
             collection_name: self.collection_name,
             geofence_id: self.geofence_id,

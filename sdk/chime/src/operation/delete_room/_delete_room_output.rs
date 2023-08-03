@@ -19,9 +19,7 @@ impl DeleteRoomOutput {
 
 /// A builder for [`DeleteRoomOutput`](crate::operation::delete_room::DeleteRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoomOutputBuilder {
     _request_id: Option<String>,
 }

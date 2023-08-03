@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePresignedDomainUrlOutput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput::authorized_url): <p>The presigned URL.</p>
     /// - On failure, responds with [`SdkError<CreatePresignedDomainUrlError>`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError)
-    pub fn create_presigned_domain_url(&self) -> crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlFluentBuilder{
+    pub fn create_presigned_domain_url(&self) -> crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlFluentBuilder {
         crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlFluentBuilder::new(self.handle.clone())
     }
 }

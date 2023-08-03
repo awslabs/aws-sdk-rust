@@ -30,13 +30,10 @@ impl JobWorkerExecutorConfiguration {
 
 /// A builder for [`JobWorkerExecutorConfiguration`](crate::types::JobWorkerExecutorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobWorkerExecutorConfigurationBuilder {
     pub(crate) polling_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) polling_service_principals:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) polling_service_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobWorkerExecutorConfigurationBuilder {
     /// Appends an item to `polling_accounts`.
@@ -44,27 +41,19 @@ impl JobWorkerExecutorConfigurationBuilder {
     /// To override the contents of this collection use [`set_polling_accounts`](Self::set_polling_accounts).
     ///
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn polling_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn polling_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.polling_accounts.unwrap_or_default();
         v.push(input.into());
         self.polling_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn set_polling_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_polling_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.polling_accounts = input;
         self
     }
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn get_polling_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_polling_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.polling_accounts
     }
     /// Appends an item to `polling_service_principals`.
@@ -72,27 +61,19 @@ impl JobWorkerExecutorConfigurationBuilder {
     /// To override the contents of this collection use [`set_polling_service_principals`](Self::set_polling_service_principals).
     ///
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn polling_service_principals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn polling_service_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.polling_service_principals.unwrap_or_default();
         v.push(input.into());
         self.polling_service_principals = ::std::option::Option::Some(v);
         self
     }
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn set_polling_service_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_polling_service_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.polling_service_principals = input;
         self
     }
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn get_polling_service_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_polling_service_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.polling_service_principals
     }
     /// Consumes the builder and constructs a [`JobWorkerExecutorConfiguration`](crate::types::JobWorkerExecutorConfiguration).

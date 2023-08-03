@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`mappings(Option<Vec<PatchGroupPatchBaselineMapping>>)`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput::mappings): <p>Each entry in the array contains:</p>  <ul>   <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>   <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>  </ul>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribePatchGroupsError>`](crate::operation::describe_patch_groups::DescribePatchGroupsError)
-    pub fn describe_patch_groups(
-        &self,
-    ) -> crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder {
-        crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_patch_groups(&self) -> crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder {
+        crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::new(self.handle.clone())
     }
 }

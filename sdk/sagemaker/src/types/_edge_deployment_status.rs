@@ -45,9 +45,7 @@ impl EdgeDeploymentStatus {
         self.edge_deployment_status_message.as_deref()
     }
     /// <p>The time when the deployment API started.</p>
-    pub fn edge_deployment_stage_start_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn edge_deployment_stage_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.edge_deployment_stage_start_time.as_ref()
     }
 }
@@ -60,17 +58,14 @@ impl EdgeDeploymentStatus {
 
 /// A builder for [`EdgeDeploymentStatus`](crate::types::EdgeDeploymentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeDeploymentStatusBuilder {
     pub(crate) stage_status: ::std::option::Option<crate::types::StageStatus>,
     pub(crate) edge_deployment_success_in_stage: ::std::option::Option<i32>,
     pub(crate) edge_deployment_pending_in_stage: ::std::option::Option<i32>,
     pub(crate) edge_deployment_failed_in_stage: ::std::option::Option<i32>,
     pub(crate) edge_deployment_status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) edge_deployment_stage_start_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) edge_deployment_stage_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgeDeploymentStatusBuilder {
     /// <p>The general status of the current stage.</p>
@@ -79,10 +74,7 @@ impl EdgeDeploymentStatusBuilder {
         self
     }
     /// <p>The general status of the current stage.</p>
-    pub fn set_stage_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StageStatus>,
-    ) -> Self {
+    pub fn set_stage_status(mut self, input: ::std::option::Option<crate::types::StageStatus>) -> Self {
         self.stage_status = input;
         self
     }
@@ -96,10 +88,7 @@ impl EdgeDeploymentStatusBuilder {
         self
     }
     /// <p>The number of edge devices with the successful deployment in the current stage.</p>
-    pub fn set_edge_deployment_success_in_stage(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_edge_deployment_success_in_stage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.edge_deployment_success_in_stage = input;
         self
     }
@@ -113,10 +102,7 @@ impl EdgeDeploymentStatusBuilder {
         self
     }
     /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
-    pub fn set_edge_deployment_pending_in_stage(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_edge_deployment_pending_in_stage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.edge_deployment_pending_in_stage = input;
         self
     }
@@ -130,10 +116,7 @@ impl EdgeDeploymentStatusBuilder {
         self
     }
     /// <p>The number of edge devices that failed the deployment in current stage.</p>
-    pub fn set_edge_deployment_failed_in_stage(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_edge_deployment_failed_in_stage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.edge_deployment_failed_in_stage = input;
         self
     }
@@ -142,25 +125,17 @@ impl EdgeDeploymentStatusBuilder {
         &self.edge_deployment_failed_in_stage
     }
     /// <p>A detailed message about deployment status in current stage.</p>
-    pub fn edge_deployment_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed message about deployment status in current stage.</p>
-    pub fn set_edge_deployment_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_status_message = input;
         self
     }
     /// <p>A detailed message about deployment status in current stage.</p>
-    pub fn get_edge_deployment_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_edge_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_deployment_status_message
     }
     /// <p>The time when the deployment API started.</p>
@@ -169,32 +144,21 @@ impl EdgeDeploymentStatusBuilder {
         self
     }
     /// <p>The time when the deployment API started.</p>
-    pub fn set_edge_deployment_stage_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_edge_deployment_stage_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.edge_deployment_stage_start_time = input;
         self
     }
     /// <p>The time when the deployment API started.</p>
-    pub fn get_edge_deployment_stage_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_edge_deployment_stage_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.edge_deployment_stage_start_time
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentStatus`](crate::types::EdgeDeploymentStatus).
     pub fn build(self) -> crate::types::EdgeDeploymentStatus {
         crate::types::EdgeDeploymentStatus {
             stage_status: self.stage_status,
-            edge_deployment_success_in_stage: self
-                .edge_deployment_success_in_stage
-                .unwrap_or_default(),
-            edge_deployment_pending_in_stage: self
-                .edge_deployment_pending_in_stage
-                .unwrap_or_default(),
-            edge_deployment_failed_in_stage: self
-                .edge_deployment_failed_in_stage
-                .unwrap_or_default(),
+            edge_deployment_success_in_stage: self.edge_deployment_success_in_stage.unwrap_or_default(),
+            edge_deployment_pending_in_stage: self.edge_deployment_pending_in_stage.unwrap_or_default(),
+            edge_deployment_failed_in_stage: self.edge_deployment_failed_in_stage.unwrap_or_default(),
             edge_deployment_status_message: self.edge_deployment_status_message,
             edge_deployment_stage_start_time: self.edge_deployment_stage_start_time,
         }

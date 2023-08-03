@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ListFieldLevelEncryptionConfigsOutput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput) with field(s):
     ///   - [`field_level_encryption_list(Option<FieldLevelEncryptionList>)`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput::field_level_encryption_list): <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
     /// - On failure, responds with [`SdkError<ListFieldLevelEncryptionConfigsError>`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError)
-    pub fn list_field_level_encryption_configs(&self) -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsFluentBuilder{
+    pub fn list_field_level_encryption_configs(
+        &self,
+    ) -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsFluentBuilder {
         crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -55,18 +55,14 @@ impl DescribeBundleTasksInput {
 }
 impl DescribeBundleTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder {
-        crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder {
+        crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleTasksInputBuilder {
     pub(crate) bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -87,10 +83,7 @@ impl DescribeBundleTasksInputBuilder {
     }
     /// <p>The bundle task IDs.</p>
     /// <p>Default: Describes all your bundle tasks.</p>
-    pub fn set_bundle_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bundle_ids = input;
         self
     }
@@ -135,10 +128,7 @@ impl DescribeBundleTasksInputBuilder {
     /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -175,16 +165,12 @@ impl DescribeBundleTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bundle_tasks::DescribeBundleTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_bundle_tasks::DescribeBundleTasksInput {
-                bundle_ids: self.bundle_ids,
-                filters: self.filters,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_bundle_tasks::DescribeBundleTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_bundle_tasks::DescribeBundleTasksInput {
+            bundle_ids: self.bundle_ids,
+            filters: self.filters,
+            dry_run: self.dry_run,
+        })
     }
 }

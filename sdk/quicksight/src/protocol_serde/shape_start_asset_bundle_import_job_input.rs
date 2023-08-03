@@ -9,10 +9,7 @@ pub fn ser_start_asset_bundle_import_job_input(
     if let Some(var_2) = &input.asset_bundle_import_source {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AssetBundleImportSource").start_object();
-        crate::protocol_serde::shape_asset_bundle_import_source::ser_asset_bundle_import_source(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_asset_bundle_import_source::ser_asset_bundle_import_source(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.failure_action {
@@ -21,7 +18,10 @@ pub fn ser_start_asset_bundle_import_job_input(
     if let Some(var_5) = &input.override_parameters {
         #[allow(unused_mut)]
         let mut object_6 = object.key("OverrideParameters").start_object();
-        crate::protocol_serde::shape_asset_bundle_import_job_override_parameters::ser_asset_bundle_import_job_override_parameters(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_asset_bundle_import_job_override_parameters::ser_asset_bundle_import_job_override_parameters(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     Ok(())

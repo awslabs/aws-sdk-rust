@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetQueueUrlOutput`](crate::operation::get_queue_url::GetQueueUrlOutput) with field(s):
     ///   - [`queue_url(Option<String>)`](crate::operation::get_queue_url::GetQueueUrlOutput::queue_url): <p>The URL of the queue.</p>
     /// - On failure, responds with [`SdkError<GetQueueUrlError>`](crate::operation::get_queue_url::GetQueueUrlError)
-    pub fn get_queue_url(
-        &self,
-    ) -> crate::operation::get_queue_url::builders::GetQueueUrlFluentBuilder {
-        crate::operation::get_queue_url::builders::GetQueueUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_queue_url(&self) -> crate::operation::get_queue_url::builders::GetQueueUrlFluentBuilder {
+        crate::operation::get_queue_url::builders::GetQueueUrlFluentBuilder::new(self.handle.clone())
     }
 }

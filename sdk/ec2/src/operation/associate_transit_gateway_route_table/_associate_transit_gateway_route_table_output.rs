@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateTransitGatewayRouteTableOutp
 }
 impl AssociateTransitGatewayRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayRouteTableOutput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput).
-    pub fn builder() -> crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableOutputBuilder{
+    pub fn builder() -> crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableOutputBuilder {
         crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTransitGatewayRouteTableOutput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayRouteTableOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::TransitGatewayAssociation>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl AssociateTransitGatewayRouteTableOutputBuilder {
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn set_association(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayAssociation>,
-    ) -> Self {
+    pub fn set_association(mut self, input: ::std::option::Option<crate::types::TransitGatewayAssociation>) -> Self {
         self.association = input;
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn get_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayAssociation> {
+    pub fn get_association(&self) -> &::std::option::Option<crate::types::TransitGatewayAssociation> {
         &self.association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl AssociateTransitGatewayRouteTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayRouteTableOutput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput).
-    pub fn build(self) -> crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput{
+    pub fn build(self) -> crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput {
         crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput {
-            association: self.association
-            ,
+            association: self.association,
             _request_id: self._request_id,
         }
     }

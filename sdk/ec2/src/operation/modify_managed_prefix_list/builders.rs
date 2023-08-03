@@ -28,8 +28,7 @@ impl ModifyManagedPrefixListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyManagedPrefixListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder,
+    inner: crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder,
 }
 impl ModifyManagedPrefixListFluentBuilder {
     /// Creates a new `ModifyManagedPrefixList`.
@@ -40,10 +39,7 @@ impl ModifyManagedPrefixListFluentBuilder {
         }
     }
     /// Access the ModifyManagedPrefixList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ModifyManagedPrefixListFluentBuilder {
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ModifyManagedPrefixListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ModifyManagedPrefixListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ModifyManagedPrefixListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl ModifyManagedPrefixListFluentBuilder {
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError>,
     > {
         self.customize_middleware().await
     }
@@ -141,18 +126,12 @@ impl ModifyManagedPrefixListFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_id(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }
@@ -175,18 +154,12 @@ impl ModifyManagedPrefixListFluentBuilder {
         self.inner.get_current_version()
     }
     /// <p>A name for the prefix list.</p>
-    pub fn prefix_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_name(input.into());
         self
     }
     /// <p>A name for the prefix list.</p>
-    pub fn set_prefix_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix_list_name(input);
         self
     }
@@ -204,17 +177,12 @@ impl ModifyManagedPrefixListFluentBuilder {
         self
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn set_add_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    ) -> Self {
+    pub fn set_add_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>) -> Self {
         self.inner = self.inner.set_add_entries(input);
         self
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn get_add_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
+    pub fn get_add_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
         self.inner.get_add_entries()
     }
     /// Appends an item to `RemoveEntries`.
@@ -227,17 +195,12 @@ impl ModifyManagedPrefixListFluentBuilder {
         self
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn set_remove_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
-    ) -> Self {
+    pub fn set_remove_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>) -> Self {
         self.inner = self.inner.set_remove_entries(input);
         self
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn get_remove_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>> {
+    pub fn get_remove_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>> {
         self.inner.get_remove_entries()
     }
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>

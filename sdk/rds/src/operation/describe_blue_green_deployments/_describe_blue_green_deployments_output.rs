@@ -5,8 +5,7 @@
 pub struct DescribeBlueGreenDeploymentsOutput {
     /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub blue_green_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
+    pub blue_green_deployments: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
     /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeBlueGreenDeploymentsOutput {
 }
 impl DescribeBlueGreenDeploymentsOutput {
     /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
-    pub fn blue_green_deployments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BlueGreenDeployment]> {
+    pub fn blue_green_deployments(&self) -> ::std::option::Option<&[crate::types::BlueGreenDeployment]> {
         self.blue_green_deployments.as_deref()
     }
     /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeBlueGreenDeploymentsOutput {
 }
 impl DescribeBlueGreenDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsOutput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput).
-    pub fn builder() -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsOutputBuilder {
         crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBlueGreenDeploymentsOutput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsOutputBuilder {
-    pub(crate) blue_green_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
+    pub(crate) blue_green_deployments: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
         self
     }
     /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
-    pub fn set_blue_green_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
-    ) -> Self {
+    pub fn set_blue_green_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>) -> Self {
         self.blue_green_deployments = input;
         self
     }
     /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
-    pub fn get_blue_green_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>> {
+    pub fn get_blue_green_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>> {
         &self.blue_green_deployments
     }
     /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
@@ -97,9 +86,7 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBlueGreenDeploymentsOutput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput {
+    pub fn build(self) -> crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput {
         crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput {
             blue_green_deployments: self.blue_green_deployments,
             marker: self.marker,

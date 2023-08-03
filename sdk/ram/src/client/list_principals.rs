@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`principals(Option<Vec<Principal>>)`](crate::operation::list_principals::ListPrincipalsOutput::principals): <p>An array of objects that contain the details about the principals.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_principals::ListPrincipalsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<ListPrincipalsError>`](crate::operation::list_principals::ListPrincipalsError)
-    pub fn list_principals(
-        &self,
-    ) -> crate::operation::list_principals::builders::ListPrincipalsFluentBuilder {
-        crate::operation::list_principals::builders::ListPrincipalsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_principals(&self) -> crate::operation::list_principals::builders::ListPrincipalsFluentBuilder {
+        crate::operation::list_principals::builders::ListPrincipalsFluentBuilder::new(self.handle.clone())
     }
 }

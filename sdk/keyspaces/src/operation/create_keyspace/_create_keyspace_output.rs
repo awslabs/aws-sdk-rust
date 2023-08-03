@@ -28,9 +28,7 @@ impl CreateKeyspaceOutput {
 
 /// A builder for [`CreateKeyspaceOutput`](crate::operation::create_keyspace::CreateKeyspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeyspaceOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

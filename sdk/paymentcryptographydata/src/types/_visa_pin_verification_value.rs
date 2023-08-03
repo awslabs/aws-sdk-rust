@@ -30,27 +30,19 @@ impl VisaPinVerificationValue {
 
 /// A builder for [`VisaPinVerificationValue`](crate::types::VisaPinVerificationValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VisaPinVerificationValueBuilder {
     pub(crate) encrypted_pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) pin_verification_key_index: ::std::option::Option<i32>,
 }
 impl VisaPinVerificationValueBuilder {
     /// <p>The encrypted PIN block data to verify.</p>
-    pub fn encrypted_pin_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encrypted_pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encrypted_pin_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encrypted PIN block data to verify.</p>
-    pub fn set_encrypted_pin_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encrypted_pin_block = input;
         self
     }

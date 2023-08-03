@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkspaceApiKeyOutput {
 }
 impl DeleteWorkspaceApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder {
         crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyOutputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,

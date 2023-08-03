@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveKnowledgeBaseTemplateUriOutput 
 }
 impl RemoveKnowledgeBaseTemplateUriOutput {
     /// Creates a new builder-style object to manufacture [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput).
-    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder{
+    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder {
         crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveKnowledgeBaseTemplateUriOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RemoveKnowledgeBaseTemplateUriOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput
-    {
+    pub fn build(self) -> crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput {
         crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput {
             _request_id: self._request_id,
         }

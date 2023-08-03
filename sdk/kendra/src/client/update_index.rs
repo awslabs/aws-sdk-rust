@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::operation::update_index::builders::UpdateIndexFluentBuilder::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::operation::update_index::builders::UpdateIndexFluentBuilder::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     /// - On success, responds with [`UpdateIndexOutput`](crate::operation::update_index::UpdateIndexOutput)
     /// - On failure, responds with [`SdkError<UpdateIndexError>`](crate::operation::update_index::UpdateIndexError)
-    pub fn update_index(
-        &self,
-    ) -> crate::operation::update_index::builders::UpdateIndexFluentBuilder {
+    pub fn update_index(&self) -> crate::operation::update_index::builders::UpdateIndexFluentBuilder {
         crate::operation::update_index::builders::UpdateIndexFluentBuilder::new(self.handle.clone())
     }
 }

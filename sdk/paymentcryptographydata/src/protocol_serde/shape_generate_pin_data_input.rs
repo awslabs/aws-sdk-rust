@@ -9,10 +9,7 @@ pub fn ser_generate_pin_data_input(
     if let Some(var_2) = &input.generation_attributes {
         #[allow(unused_mut)]
         let mut object_3 = object.key("GenerationAttributes").start_object();
-        crate::protocol_serde::shape_pin_generation_attributes::ser_pin_generation_attributes(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_pin_generation_attributes::ser_pin_generation_attributes(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.generation_key_identifier {

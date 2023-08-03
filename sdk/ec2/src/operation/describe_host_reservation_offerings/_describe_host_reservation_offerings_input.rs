@@ -58,16 +58,14 @@ impl DescribeHostReservationOfferingsInput {
 }
 impl DescribeHostReservationOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHostReservationOfferingsInput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput).
-    pub fn builder() -> crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder {
         crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostReservationOfferingsInput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_duration: ::std::option::Option<i32>,
@@ -97,10 +95,7 @@ impl DescribeHostReservationOfferingsInputBuilder {
     /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
     /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
         self
     }
@@ -183,22 +178,21 @@ impl DescribeHostReservationOfferingsInputBuilder {
         &self.offering_id
     }
     /// Consumes the builder and constructs a [`DescribeHostReservationOfferingsInput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput {
-                filter: self.filter
-                ,
-                max_duration: self.max_duration
-                ,
-                max_results: self.max_results
-                ,
-                min_duration: self.min_duration
-                ,
-                next_token: self.next_token
-                ,
-                offering_id: self.offering_id
-                ,
-            }
+                filter: self.filter,
+                max_duration: self.max_duration,
+                max_results: self.max_results,
+                min_duration: self.min_duration,
+                next_token: self.next_token,
+                offering_id: self.offering_id,
+            },
         )
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWorkteamOutput`](crate::operation::create_workteam::CreateWorkteamOutput) with field(s):
     ///   - [`workteam_arn(Option<String>)`](crate::operation::create_workteam::CreateWorkteamOutput::workteam_arn): <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
     /// - On failure, responds with [`SdkError<CreateWorkteamError>`](crate::operation::create_workteam::CreateWorkteamError)
-    pub fn create_workteam(
-        &self,
-    ) -> crate::operation::create_workteam::builders::CreateWorkteamFluentBuilder {
-        crate::operation::create_workteam::builders::CreateWorkteamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workteam(&self) -> crate::operation::create_workteam::builders::CreateWorkteamFluentBuilder {
+        crate::operation::create_workteam::builders::CreateWorkteamFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,17 @@ pub fn ser_create_media_insights_pipeline_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_media_insights_pipeline_configuration_element::ser_media_insights_pipeline_configuration_element(&mut object_5, item_4)?;
+                crate::protocol_serde::shape_media_insights_pipeline_configuration_element::ser_media_insights_pipeline_configuration_element(
+                    &mut object_5,
+                    item_4,
+                )?;
                 object_5.finish();
             }
         }
         array_3.finish();
     }
     if let Some(var_6) = &input.media_insights_pipeline_configuration_name {
-        object
-            .key("MediaInsightsPipelineConfigurationName")
-            .string(var_6.as_str());
+        object.key("MediaInsightsPipelineConfigurationName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.real_time_alert_configuration {
         #[allow(unused_mut)]

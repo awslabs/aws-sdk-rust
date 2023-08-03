@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for ListPipelineBlueprintsOutput {
 }
 impl ListPipelineBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelineBlueprintsOutput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsOutputBuilder {
         crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineBlueprintsOutput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineBlueprintsOutputBuilder {
-    pub(crate) blueprints:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>>,
+    pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>>,
     _request_id: Option<String>,
 }
 impl ListPipelineBlueprintsOutputBuilder {
@@ -51,17 +46,12 @@ impl ListPipelineBlueprintsOutputBuilder {
         self
     }
     /// <p>A list of available blueprints for Data Prepper.</p>
-    pub fn set_blueprints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>>,
-    ) -> Self {
+    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>>) -> Self {
         self.blueprints = input;
         self
     }
     /// <p>A list of available blueprints for Data Prepper.</p>
-    pub fn get_blueprints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>> {
+    pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>> {
         &self.blueprints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

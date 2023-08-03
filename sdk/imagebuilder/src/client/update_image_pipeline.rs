@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::update_image_pipeline::UpdateImagePipelineOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`image_pipeline_arn(Option<String>)`](crate::operation::update_image_pipeline::UpdateImagePipelineOutput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request.</p>
     /// - On failure, responds with [`SdkError<UpdateImagePipelineError>`](crate::operation::update_image_pipeline::UpdateImagePipelineError)
-    pub fn update_image_pipeline(
-        &self,
-    ) -> crate::operation::update_image_pipeline::builders::UpdateImagePipelineFluentBuilder {
-        crate::operation::update_image_pipeline::builders::UpdateImagePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_image_pipeline(&self) -> crate::operation::update_image_pipeline::builders::UpdateImagePipelineFluentBuilder {
+        crate::operation::update_image_pipeline::builders::UpdateImagePipelineFluentBuilder::new(self.handle.clone())
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_list_available_management_cidr_ranges_input(
     input: &crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.management_cidr_range_constraint {
-        object
-            .key("ManagementCidrRangeConstraint")
-            .string(var_1.as_str());
+        object.key("ManagementCidrRangeConstraint").string(var_1.as_str());
     }
     if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(

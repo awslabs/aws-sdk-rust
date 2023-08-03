@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`lo_ra_wan(LoRaWanStartFuotaTask)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanStartFuotaTask>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::set_lo_ra_wan): <p>The LoRaWAN information used to start a FUOTA task.</p>
     /// - On success, responds with [`StartFuotaTaskOutput`](crate::operation::start_fuota_task::StartFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<StartFuotaTaskError>`](crate::operation::start_fuota_task::StartFuotaTaskError)
-    pub fn start_fuota_task(
-        &self,
-    ) -> crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder {
-        crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_fuota_task(&self) -> crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder {
+        crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::new(self.handle.clone())
     }
 }

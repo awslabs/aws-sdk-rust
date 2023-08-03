@@ -10,10 +10,7 @@ impl UpdateLinkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_link::UpdateLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_link::UpdateLinkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_link::UpdateLinkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_link();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateLinkFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_link::UpdateLink,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_link::UpdateLink, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_link::UpdateLinkError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateLinkFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_link::UpdateLink,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_link::UpdateLink, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_link::UpdateLinkError>,
     > {
         self.customize_middleware().await
@@ -139,18 +127,13 @@ impl UpdateLinkFluentBuilder {
     }
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
         self.inner.get_resource_types()
     }
 }

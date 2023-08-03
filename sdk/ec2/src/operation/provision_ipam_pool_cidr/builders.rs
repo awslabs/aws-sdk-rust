@@ -38,10 +38,7 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         }
     }
     /// Access the ProvisionIpamPoolCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ProvisionIpamPoolCidrFluentBuilder {
             crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ProvisionIpamPoolCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ProvisionIpamPoolCidrFluentBuilder {
             crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError>,
     > {
         self.customize_middleware().await
     }
@@ -167,25 +153,17 @@ impl ProvisionIpamPoolCidrFluentBuilder {
         self.inner.get_cidr()
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn cidr_authorization_context(
-        mut self,
-        input: crate::types::IpamCidrAuthorizationContext,
-    ) -> Self {
+    pub fn cidr_authorization_context(mut self, input: crate::types::IpamCidrAuthorizationContext) -> Self {
         self.inner = self.inner.cidr_authorization_context(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn set_cidr_authorization_context(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
-    ) -> Self {
+    pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>) -> Self {
         self.inner = self.inner.set_cidr_authorization_context(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn get_cidr_authorization_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
+    pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
         self.inner.get_cidr_authorization_context()
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>

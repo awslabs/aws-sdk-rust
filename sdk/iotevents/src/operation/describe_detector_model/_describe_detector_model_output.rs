@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeDetectorModelOutput {
 }
 impl DescribeDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelOutput`](crate::operation::describe_detector_model::DescribeDetectorModelOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_detector_model::builders::DescribeDetectorModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_detector_model::builders::DescribeDetectorModelOutputBuilder {
         crate::operation::describe_detector_model::builders::DescribeDetectorModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDetectorModelOutput`](crate::operation::describe_detector_model::DescribeDetectorModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDetectorModelOutputBuilder {
     pub(crate) detector_model: ::std::option::Option<crate::types::DetectorModel>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeDetectorModelOutputBuilder {
         self
     }
     /// <p>Information about the detector model.</p>
-    pub fn set_detector_model(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModel>,
-    ) -> Self {
+    pub fn set_detector_model(mut self, input: ::std::option::Option<crate::types::DetectorModel>) -> Self {
         self.detector_model = input;
         self
     }

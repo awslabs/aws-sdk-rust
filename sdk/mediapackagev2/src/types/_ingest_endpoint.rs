@@ -30,9 +30,7 @@ impl IngestEndpoint {
 
 /// A builder for [`IngestEndpoint`](crate::types::IngestEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestEndpointBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl IngestEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`IngestEndpoint`](crate::types::IngestEndpoint).
     pub fn build(self) -> crate::types::IngestEndpoint {
-        crate::types::IngestEndpoint {
-            id: self.id,
-            url: self.url,
-        }
+        crate::types::IngestEndpoint { id: self.id, url: self.url }
     }
 }

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`persons(Option<Vec<ProtectiveEquipmentPerson>>)`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput::persons): <p>An array of persons detected in the image (including persons not wearing PPE).</p>
     ///   - [`summary(Option<ProtectiveEquipmentSummary>)`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput::summary): <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
     /// - On failure, responds with [`SdkError<DetectProtectiveEquipmentError>`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError)
-    pub fn detect_protective_equipment(&self) -> crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentFluentBuilder{
+    pub fn detect_protective_equipment(&self) -> crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentFluentBuilder {
         crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentFluentBuilder::new(self.handle.clone())
     }
 }

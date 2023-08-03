@@ -23,9 +23,7 @@ impl DataSource {
 
 /// A builder for [`DataSource`](crate::types::DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
 }
@@ -36,10 +34,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataSource>,
-    ) -> Self {
+    pub fn set_s3_data_source(mut self, input: ::std::option::Option<crate::types::S3DataSource>) -> Self {
         self.s3_data_source = input;
         self
     }

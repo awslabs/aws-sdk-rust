@@ -39,9 +39,7 @@ impl DeleteResourceShareFluentBuilder {
         }
     }
     /// Access the DeleteResourceShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_share::builders::DeleteResourceShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_share::builders::DeleteResourceShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteResourceShareFluentBuilder {
             crate::operation::delete_resource_share::DeleteResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_share::DeleteResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_share::DeleteResourceShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteResourceShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_share::DeleteResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_share::DeleteResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_share::DeleteResourceShareError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_share::DeleteResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_share::DeleteResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_share::DeleteResourceShareError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl DeleteResourceShareFluentBuilder {
             crate::operation::delete_resource_share::DeleteResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_share::DeleteResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_share::DeleteResourceShareError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to delete.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to delete.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_share_arn(input);
         self
     }

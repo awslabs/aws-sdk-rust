@@ -41,13 +41,7 @@
 /// of the current calendar month.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeliverabilityDashboardAccountStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,9 +59,7 @@ impl ::std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
             "ACTIVE" => DeliverabilityDashboardAccountStatus::Active,
             "DISABLED" => DeliverabilityDashboardAccountStatus::Disabled,
             "PENDING_EXPIRATION" => DeliverabilityDashboardAccountStatus::PendingExpiration,
-            other => DeliverabilityDashboardAccountStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DeliverabilityDashboardAccountStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

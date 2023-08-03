@@ -26,7 +26,7 @@ impl UpdateRoutingProfileQueuesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileQueuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder,
+    inner: crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder,
 }
 impl UpdateRoutingProfileQueuesFluentBuilder {
     /// Creates a new `UpdateRoutingProfileQueues`.
@@ -37,7 +37,7 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
         }
     }
     /// Access the UpdateRoutingProfileQueues as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
             crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
             crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }
@@ -164,17 +147,12 @@ impl UpdateRoutingProfileQueuesFluentBuilder {
         self
     }
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
-    pub fn set_queue_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    ) -> Self {
+    pub fn set_queue_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
         self.inner = self.inner.set_queue_configs(input);
         self
     }
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
-    pub fn get_queue_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+    pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
         self.inner.get_queue_configs()
     }
 }

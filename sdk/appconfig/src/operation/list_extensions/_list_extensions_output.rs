@@ -35,9 +35,7 @@ impl ListExtensionsOutput {
 
 /// A builder for [`ListExtensionsOutput`](crate::operation::list_extensions::ListExtensionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListExtensionsOutputBuilder {
         self
     }
     /// <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>> {
         &self.items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

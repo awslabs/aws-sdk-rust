@@ -10,10 +10,7 @@ impl BatchGetCrawlersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_crawlers::BatchGetCrawlersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_crawlers::BatchGetCrawlersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_crawlers::BatchGetCrawlersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_crawlers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetCrawlersFluentBuilder {
         }
     }
     /// Access the BatchGetCrawlers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_crawlers::builders::BatchGetCrawlersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_crawlers::builders::BatchGetCrawlersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetCrawlersFluentBuilder {
             crate::operation::batch_get_crawlers::BatchGetCrawlers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_crawlers::BatchGetCrawlersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_crawlers::BatchGetCrawlersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetCrawlersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetCrawlersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_crawlers::BatchGetCrawlersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_crawlers::BatchGetCrawlersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_crawlers::BatchGetCrawlersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetCrawlersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_crawlers::BatchGetCrawlersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_crawlers::BatchGetCrawlersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_crawlers::BatchGetCrawlersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetCrawlersFluentBuilder {
             crate::operation::batch_get_crawlers::BatchGetCrawlers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_crawlers::BatchGetCrawlersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_crawlers::BatchGetCrawlersError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl BatchGetCrawlersFluentBuilder {
     /// To override the contents of this collection use [`set_crawler_names`](Self::set_crawler_names).
     ///
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn crawler_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn crawler_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.crawler_names(input.into());
         self
     }
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn set_crawler_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_crawler_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_crawler_names(input);
         self
     }
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn get_crawler_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_crawler_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_crawler_names()
     }
 }

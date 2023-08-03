@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ResumeBatchLoadTaskOutput {
 }
 impl ResumeBatchLoadTaskOutput {
     /// Creates a new builder-style object to manufacture [`ResumeBatchLoadTaskOutput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskOutputBuilder {
+    pub fn builder() -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskOutputBuilder {
         crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeBatchLoadTaskOutput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeBatchLoadTaskOutputBuilder {
     _request_id: Option<String>,
 }

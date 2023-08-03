@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamingImageEncryptionConfigurationKeyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum StreamingImageEncryptionConfigurationKeyType {
 impl ::std::convert::From<&str> for StreamingImageEncryptionConfigurationKeyType {
     fn from(s: &str) -> Self {
         match s {
-            "CUSTOMER_MANAGED_KEY" => {
-                StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey
-            }
-            other => StreamingImageEncryptionConfigurationKeyType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "CUSTOMER_MANAGED_KEY" => StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey,
+            other => StreamingImageEncryptionConfigurationKeyType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl StreamingImageEncryptionConfigurationKeyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey => {
-                "CUSTOMER_MANAGED_KEY"
-            }
+            StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey => "CUSTOMER_MANAGED_KEY",
             StreamingImageEncryptionConfigurationKeyType::Unknown(value) => value.as_str(),
         }
     }

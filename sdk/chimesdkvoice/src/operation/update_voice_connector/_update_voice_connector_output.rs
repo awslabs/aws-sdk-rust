@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVoiceConnectorOutput {
 }
 impl UpdateVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceConnectorOutput`](crate::operation::update_voice_connector::UpdateVoiceConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_connector::builders::UpdateVoiceConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::update_voice_connector::builders::UpdateVoiceConnectorOutputBuilder {
         crate::operation::update_voice_connector::builders::UpdateVoiceConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceConnectorOutput`](crate::operation::update_voice_connector::UpdateVoiceConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceConnectorOutputBuilder {
     pub(crate) voice_connector: ::std::option::Option<crate::types::VoiceConnector>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateVoiceConnectorOutputBuilder {
         self
     }
     /// <p>The updated Voice Connector details.</p>
-    pub fn set_voice_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnector>,
-    ) -> Self {
+    pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnector>) -> Self {
         self.voice_connector = input;
         self
     }

@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for GetLoggerDefinitionVersionOutput {
 }
 impl GetLoggerDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggerDefinitionVersionOutput`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionOutputBuilder {
         crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggerDefinitionVersionOutput`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggerDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl GetLoggerDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the logger definition version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the logger definition version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -108,10 +100,7 @@ impl GetLoggerDefinitionVersionOutputBuilder {
         self
     }
     /// Information about the logger definition version.
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggerDefinitionVersion>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::LoggerDefinitionVersion>) -> Self {
         self.definition = input;
         self
     }
@@ -157,9 +146,7 @@ impl GetLoggerDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLoggerDefinitionVersionOutput`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput {
+    pub fn build(self) -> crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput {
         crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput {
             arn: self.arn,
             creation_timestamp: self.creation_timestamp,

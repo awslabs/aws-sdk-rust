@@ -163,9 +163,7 @@ impl OutputConfig {
 
 /// A builder for [`OutputConfig`](crate::types::OutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputConfigBuilder {
     pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
     pub(crate) target_device: ::std::option::Option<crate::types::TargetDevice>,
@@ -175,18 +173,12 @@ pub struct OutputConfigBuilder {
 }
 impl OutputConfigBuilder {
     /// <p>Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn set_s3_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_location = input;
         self
     }
@@ -204,10 +196,7 @@ impl OutputConfigBuilder {
     /// <p>Identifies the target device or the machine learning instance that you want to run your model on after the compilation has completed. Alternatively, you can specify OS, architecture, and accelerator using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.</p> <note>
     /// <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
     /// </note>
-    pub fn set_target_device(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetDevice>,
-    ) -> Self {
+    pub fn set_target_device(mut self, input: ::std::option::Option<crate::types::TargetDevice>) -> Self {
         self.target_device = input;
         self
     }
@@ -241,10 +230,7 @@ impl OutputConfigBuilder {
     /// <li> <p>ARMv7 phone (CPU)</p> <p> <code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code> </p> <p> <code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code> </p> </li>
     /// <li> <p>ARMv8 phone (CPU)</p> <p> <code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code> </p> <p> <code> "CompilerOptions": {'ANDROID_PLATFORM': 29}</code> </p> </li>
     /// </ul>
-    pub fn set_target_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetPlatform>,
-    ) -> Self {
+    pub fn set_target_platform(mut self, input: ::std::option::Option<crate::types::TargetPlatform>) -> Self {
         self.target_platform = input;
         self
     }
@@ -300,10 +286,7 @@ impl OutputConfigBuilder {
     /// <li> <p> <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
     /// </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code> </p> </li>
     /// </ul>
-    pub fn compiler_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compiler_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compiler_options = ::std::option::Option::Some(input.into());
         self
     }
@@ -346,10 +329,7 @@ impl OutputConfigBuilder {
     /// <li> <p> <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
     /// </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code> </p> </li>
     /// </ul>
-    pub fn set_compiler_options(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compiler_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compiler_options = input;
         self
     }

@@ -43,34 +43,27 @@ impl ::std::fmt::Display for OpsItemRelatedItemAlreadyExistsException {
     }
 }
 impl ::std::error::Error for OpsItemRelatedItemAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::OpsItemRelatedItemAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::OpsItemRelatedItemAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for OpsItemRelatedItemAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OpsItemRelatedItemAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl OpsItemRelatedItemAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`OpsItemRelatedItemAlreadyExistsException`](crate::types::error::OpsItemRelatedItemAlreadyExistsException).
-    pub fn builder(
-    ) -> crate::types::error::builders::OpsItemRelatedItemAlreadyExistsExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::OpsItemRelatedItemAlreadyExistsExceptionBuilder {
         crate::types::error::builders::OpsItemRelatedItemAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`OpsItemRelatedItemAlreadyExistsException`](crate::types::error::OpsItemRelatedItemAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_uri: ::std::option::Option<::std::string::String>,
@@ -127,10 +120,7 @@ impl OpsItemRelatedItemAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -37,9 +37,7 @@ impl UpdateReplicationJobFluentBuilder {
         }
     }
     /// Access the UpdateReplicationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateReplicationJobFluentBuilder {
             crate::operation::update_replication_job::UpdateReplicationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_job::UpdateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateReplicationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateReplicationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_replication_job::UpdateReplicationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_job::UpdateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateReplicationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_replication_job::UpdateReplicationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_job::UpdateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateReplicationJobFluentBuilder {
             crate::operation::update_replication_job::UpdateReplicationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_job::UpdateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_job_id(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_job_id(input);
         self
     }
@@ -162,17 +143,12 @@ impl UpdateReplicationJobFluentBuilder {
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn set_next_replication_run_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_replication_run_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_next_replication_run_start_time(input);
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn get_next_replication_run_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_next_replication_run_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_next_replication_run_start_time()
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
@@ -181,10 +157,7 @@ impl UpdateReplicationJobFluentBuilder {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }

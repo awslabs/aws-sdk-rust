@@ -6,17 +6,11 @@
 pub struct TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     #[doc(hidden)]
-    pub algorithm_hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
-    pub fn algorithm_hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn algorithm_hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.algorithm_hyper_parameters.as_ref()
     }
 }
@@ -29,13 +23,9 @@ impl TunedHpoParams {
 
 /// A builder for [`TunedHpoParams`](crate::types::TunedHpoParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TunedHpoParamsBuilder {
-    pub(crate) algorithm_hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TunedHpoParamsBuilder {
     /// Adds a key-value pair to `algorithm_hyper_parameters`.
@@ -56,9 +46,7 @@ impl TunedHpoParamsBuilder {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     pub fn set_algorithm_hyper_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.algorithm_hyper_parameters = input;
         self
@@ -66,9 +54,7 @@ impl TunedHpoParamsBuilder {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     pub fn get_algorithm_hyper_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.algorithm_hyper_parameters
     }
     /// Consumes the builder and constructs a [`TunedHpoParams`](crate::types::TunedHpoParams).

@@ -10,10 +10,7 @@ impl UpdateSmsChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_sms_channel::UpdateSmsChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_channel::UpdateSmsChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_channel::UpdateSmsChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_sms_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSmsChannelFluentBuilder {
         }
     }
     /// Access the UpdateSmsChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateSmsChannelFluentBuilder {
             crate::operation::update_sms_channel::UpdateSmsChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_channel::UpdateSmsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_channel::UpdateSmsChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateSmsChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateSmsChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sms_channel::UpdateSmsChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_channel::UpdateSmsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_channel::UpdateSmsChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateSmsChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sms_channel::UpdateSmsChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_channel::UpdateSmsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_channel::UpdateSmsChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateSmsChannelFluentBuilder {
             crate::operation::update_sms_channel::UpdateSmsChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_channel::UpdateSmsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_channel::UpdateSmsChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -148,17 +126,12 @@ impl UpdateSmsChannelFluentBuilder {
         self
     }
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
-    pub fn set_sms_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsChannelRequest>,
-    ) -> Self {
+    pub fn set_sms_channel_request(mut self, input: ::std::option::Option<crate::types::SmsChannelRequest>) -> Self {
         self.inner = self.inner.set_sms_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
-    pub fn get_sms_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsChannelRequest> {
+    pub fn get_sms_channel_request(&self) -> &::std::option::Option<crate::types::SmsChannelRequest> {
         self.inner.get_sms_channel_request()
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StartFlywheelIterationOutput {
 }
 impl StartFlywheelIterationOutput {
     /// Creates a new builder-style object to manufacture [`StartFlywheelIterationOutput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationOutputBuilder {
         crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFlywheelIterationOutput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFlywheelIterationOutputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flywheel_iteration_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl StartFlywheelIterationOutputBuilder {
         &self.flywheel_arn
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flywheel_iteration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_iteration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_flywheel_iteration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flywheel_iteration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flywheel_iteration_id = input;
         self
     }

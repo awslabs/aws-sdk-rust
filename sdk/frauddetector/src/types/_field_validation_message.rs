@@ -51,9 +51,7 @@ impl FieldValidationMessage {
 
 /// A builder for [`FieldValidationMessage`](crate::types::FieldValidationMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldValidationMessageBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

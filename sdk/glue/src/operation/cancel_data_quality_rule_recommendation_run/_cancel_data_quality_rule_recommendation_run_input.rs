@@ -15,16 +15,14 @@ impl CancelDataQualityRuleRecommendationRunInput {
 }
 impl CancelDataQualityRuleRecommendationRunInput {
     /// Creates a new builder-style object to manufacture [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
-    pub fn builder() -> crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder{
+    pub fn builder() -> crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder {
         crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl CancelDataQualityRuleRecommendationRunInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput {
-                run_id: self.run_id
-                ,
-            }
+            crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput { run_id: self.run_id },
         )
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`connection_alias_permissions(Option<Vec<ConnectionAliasPermission>>)`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput::connection_alias_permissions): <p>The permissions associated with a connection alias.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectionAliasPermissionsError>`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsError)
-    pub fn describe_connection_alias_permissions(&self) -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsFluentBuilder{
+    pub fn describe_connection_alias_permissions(
+        &self,
+    ) -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsFluentBuilder {
         crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

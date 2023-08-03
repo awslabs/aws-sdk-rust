@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetIncidentRecordOutput`](crate::operation::get_incident_record::GetIncidentRecordOutput) with field(s):
     ///   - [`incident_record(Option<IncidentRecord>)`](crate::operation::get_incident_record::GetIncidentRecordOutput::incident_record): <p>Details the structure of the incident record.</p>
     /// - On failure, responds with [`SdkError<GetIncidentRecordError>`](crate::operation::get_incident_record::GetIncidentRecordError)
-    pub fn get_incident_record(
-        &self,
-    ) -> crate::operation::get_incident_record::builders::GetIncidentRecordFluentBuilder {
-        crate::operation::get_incident_record::builders::GetIncidentRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_incident_record(&self) -> crate::operation::get_incident_record::builders::GetIncidentRecordFluentBuilder {
+        crate::operation::get_incident_record::builders::GetIncidentRecordFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_templates::ListPolicyTemplatesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     ///   - [`policy_templates(Option<Vec<PolicyTemplateItem>>)`](crate::operation::list_policy_templates::ListPolicyTemplatesOutput::policy_templates): <p>The list of the policy templates in the specified policy store.</p>
     /// - On failure, responds with [`SdkError<ListPolicyTemplatesError>`](crate::operation::list_policy_templates::ListPolicyTemplatesError)
-    pub fn list_policy_templates(
-        &self,
-    ) -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesFluentBuilder {
-        crate::operation::list_policy_templates::builders::ListPolicyTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policy_templates(&self) -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesFluentBuilder {
+        crate::operation::list_policy_templates::builders::ListPolicyTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

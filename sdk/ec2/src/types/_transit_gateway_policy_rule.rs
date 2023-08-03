@@ -45,9 +45,7 @@ impl TransitGatewayPolicyRule {
         self.protocol.as_deref()
     }
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
-    pub fn meta_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPolicyRuleMetaData> {
+    pub fn meta_data(&self) -> ::std::option::Option<&crate::types::TransitGatewayPolicyRuleMetaData> {
         self.meta_data.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl TransitGatewayPolicyRule {
 
 /// A builder for [`TransitGatewayPolicyRule`](crate::types::TransitGatewayPolicyRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyRuleBuilder {
     pub(crate) source_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) source_port_range: ::std::option::Option<::std::string::String>,
@@ -73,18 +69,12 @@ pub struct TransitGatewayPolicyRuleBuilder {
 }
 impl TransitGatewayPolicyRuleBuilder {
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
-    pub fn source_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
-    pub fn set_source_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_cidr_block = input;
         self
     }
@@ -93,18 +83,12 @@ impl TransitGatewayPolicyRuleBuilder {
         &self.source_cidr_block
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    pub fn source_port_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_port_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_port_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    pub fn set_source_port_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_port_range = input;
         self
     }
@@ -113,18 +97,12 @@ impl TransitGatewayPolicyRuleBuilder {
         &self.source_port_range
     }
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -133,18 +111,12 @@ impl TransitGatewayPolicyRuleBuilder {
         &self.destination_cidr_block
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    pub fn destination_port_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_port_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_port_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    pub fn set_destination_port_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_port_range = input;
         self
     }
@@ -172,17 +144,12 @@ impl TransitGatewayPolicyRuleBuilder {
         self
     }
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
-    pub fn set_meta_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData>,
-    ) -> Self {
+    pub fn set_meta_data(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData>) -> Self {
         self.meta_data = input;
         self
     }
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
-    pub fn get_meta_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData> {
+    pub fn get_meta_data(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData> {
         &self.meta_data
     }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyRule`](crate::types::TransitGatewayPolicyRule).

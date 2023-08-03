@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     ///   - [`workflows(Option<Vec<ListedWorkflow>>)`](crate::operation::list_workflows::ListWorkflowsOutput::workflows): <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
-    pub fn list_workflows(
-        &self,
-    ) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
+        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

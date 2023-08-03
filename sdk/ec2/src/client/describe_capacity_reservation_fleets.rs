@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`capacity_reservation_fleets(Option<Vec<CapacityReservationFleet>>)`](crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput::capacity_reservation_fleets): <p>Information about the Capacity Reservation Fleets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeCapacityReservationFleetsError>`](crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsError)
-    pub fn describe_capacity_reservation_fleets(&self) -> crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsFluentBuilder{
+    pub fn describe_capacity_reservation_fleets(
+        &self,
+    ) -> crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsFluentBuilder {
         crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsFluentBuilder::new(self.handle.clone())
     }
 }

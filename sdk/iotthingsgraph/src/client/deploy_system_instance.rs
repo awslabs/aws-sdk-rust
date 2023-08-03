@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`greengrass_deployment_id(Option<String>)`](crate::operation::deploy_system_instance::DeploySystemInstanceOutput::greengrass_deployment_id): <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     /// - On failure, responds with [`SdkError<DeploySystemInstanceError>`](crate::operation::deploy_system_instance::DeploySystemInstanceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn deploy_system_instance(
-        &self,
-    ) -> crate::operation::deploy_system_instance::builders::DeploySystemInstanceFluentBuilder {
-        crate::operation::deploy_system_instance::builders::DeploySystemInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deploy_system_instance(&self) -> crate::operation::deploy_system_instance::builders::DeploySystemInstanceFluentBuilder {
+        crate::operation::deploy_system_instance::builders::DeploySystemInstanceFluentBuilder::new(self.handle.clone())
     }
 }

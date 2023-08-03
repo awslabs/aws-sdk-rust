@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListPolicyPrincipalsOutput {
 }
 impl ListPolicyPrincipalsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyPrincipalsOutput`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsOutputBuilder {
+    pub fn builder() -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsOutputBuilder {
         crate::operation::list_policy_principals::builders::ListPolicyPrincipalsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyPrincipalsOutput`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyPrincipalsOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,10 +55,7 @@ impl ListPolicyPrincipalsOutputBuilder {
         self
     }
     /// <p>The descriptions of the principals.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }

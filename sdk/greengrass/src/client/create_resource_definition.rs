@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_resource_definition::CreateResourceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_resource_definition::CreateResourceDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateResourceDefinitionError>`](crate::operation::create_resource_definition::CreateResourceDefinitionError)
-    pub fn create_resource_definition(
-        &self,
-    ) -> crate::operation::create_resource_definition::builders::CreateResourceDefinitionFluentBuilder
-    {
+    pub fn create_resource_definition(&self) -> crate::operation::create_resource_definition::builders::CreateResourceDefinitionFluentBuilder {
         crate::operation::create_resource_definition::builders::CreateResourceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

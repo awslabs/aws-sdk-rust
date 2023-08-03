@@ -15,16 +15,14 @@ impl DescribeTimeBasedAutoScalingInput {
 }
 impl DescribeTimeBasedAutoScalingInput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeBasedAutoScalingInput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput).
-    pub fn builder() -> crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder{
+    pub fn builder() -> crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder {
         crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTimeBasedAutoScalingInput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,17 +39,12 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
         self
     }
     /// <p>An array of instance IDs.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>An array of instance IDs.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeTimeBasedAutoScalingInput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput).
@@ -61,10 +54,8 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
         crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput {
-                instance_ids: self.instance_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput {
+            instance_ids: self.instance_ids,
+        })
     }
 }

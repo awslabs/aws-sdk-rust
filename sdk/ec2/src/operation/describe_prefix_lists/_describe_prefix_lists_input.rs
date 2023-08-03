@@ -51,18 +51,14 @@ impl DescribePrefixListsInput {
 }
 impl DescribePrefixListsInput {
     /// Creates a new builder-style object to manufacture [`DescribePrefixListsInput`](crate::operation::describe_prefix_lists::DescribePrefixListsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_prefix_lists::builders::DescribePrefixListsInputBuilder {
-        crate::operation::describe_prefix_lists::builders::DescribePrefixListsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_prefix_lists::builders::DescribePrefixListsInputBuilder {
+        crate::operation::describe_prefix_lists::builders::DescribePrefixListsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePrefixListsInput`](crate::operation::describe_prefix_lists::DescribePrefixListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePrefixListsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -105,10 +101,7 @@ impl DescribePrefixListsInputBuilder {
     /// <li> <p> <code>prefix-list-id</code>: The ID of a prefix list.</p> </li>
     /// <li> <p> <code>prefix-list-name</code>: The name of a prefix list.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -153,44 +146,32 @@ impl DescribePrefixListsInputBuilder {
     /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
     ///
     /// <p>One or more prefix list IDs.</p>
-    pub fn prefix_list_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
         v.push(input.into());
         self.prefix_list_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn set_prefix_list_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.prefix_list_ids = input;
         self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn get_prefix_list_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.prefix_list_ids
     }
     /// Consumes the builder and constructs a [`DescribePrefixListsInput`](crate::operation::describe_prefix_lists::DescribePrefixListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_prefix_lists::DescribePrefixListsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_prefix_lists::DescribePrefixListsInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                prefix_list_ids: self.prefix_list_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_prefix_lists::DescribePrefixListsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_prefix_lists::DescribePrefixListsInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            prefix_list_ids: self.prefix_list_ids,
+        })
     }
 }

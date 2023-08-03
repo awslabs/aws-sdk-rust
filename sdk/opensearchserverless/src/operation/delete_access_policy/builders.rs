@@ -10,10 +10,7 @@ impl DeleteAccessPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_access_policy::DeleteAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_policy::DeleteAccessPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_policy::DeleteAccessPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_access_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAccessPolicyFluentBuilder {
         }
     }
     /// Access the DeleteAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAccessPolicyFluentBuilder {
             crate::operation::delete_access_policy::DeleteAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_policy::DeleteAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_policy::DeleteAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_policy::DeleteAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_policy::DeleteAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_policy::DeleteAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_policy::DeleteAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_policy::DeleteAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_policy::DeleteAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteAccessPolicyFluentBuilder {
             crate::operation::delete_access_policy::DeleteAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_policy::DeleteAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_policy::DeleteAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl DeleteAccessPolicyFluentBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

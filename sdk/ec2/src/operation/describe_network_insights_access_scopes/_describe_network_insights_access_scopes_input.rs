@@ -5,8 +5,7 @@
 pub struct DescribeNetworkInsightsAccessScopesInput {
     /// <p>The IDs of the Network Access Scopes.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_insights_access_scope_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>There are no supported filters.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -22,9 +21,7 @@ pub struct DescribeNetworkInsightsAccessScopesInput {
 }
 impl DescribeNetworkInsightsAccessScopesInput {
     /// <p>The IDs of the Network Access Scopes.</p>
-    pub fn network_insights_access_scope_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn network_insights_access_scope_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.network_insights_access_scope_ids.as_deref()
     }
     /// <p>There are no supported filters.</p>
@@ -46,19 +43,16 @@ impl DescribeNetworkInsightsAccessScopesInput {
 }
 impl DescribeNetworkInsightsAccessScopesInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopesInput`](crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesInput).
-    pub fn builder() -> crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesInputBuilder {
         crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsAccessScopesInput`](crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopesInputBuilder {
-    pub(crate) network_insights_access_scope_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_insights_access_scope_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -70,27 +64,19 @@ impl DescribeNetworkInsightsAccessScopesInputBuilder {
     /// To override the contents of this collection use [`set_network_insights_access_scope_ids`](Self::set_network_insights_access_scope_ids).
     ///
     /// <p>The IDs of the Network Access Scopes.</p>
-    pub fn network_insights_access_scope_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_insights_access_scope_ids.unwrap_or_default();
         v.push(input.into());
         self.network_insights_access_scope_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Network Access Scopes.</p>
-    pub fn set_network_insights_access_scope_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_insights_access_scope_ids = input;
         self
     }
     /// <p>The IDs of the Network Access Scopes.</p>
-    pub fn get_network_insights_access_scope_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_insights_access_scope_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_insights_access_scope_ids
     }
     /// Appends an item to `filters`.
@@ -105,10 +91,7 @@ impl DescribeNetworkInsightsAccessScopesInputBuilder {
         self
     }
     /// <p>There are no supported filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -159,20 +142,20 @@ impl DescribeNetworkInsightsAccessScopesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopesInput`](crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesInput {
-                network_insights_access_scope_ids: self.network_insights_access_scope_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                dry_run: self.dry_run
-                ,
-                next_token: self.next_token
-                ,
-            }
+                network_insights_access_scope_ids: self.network_insights_access_scope_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                dry_run: self.dry_run,
+                next_token: self.next_token,
+            },
         )
     }
 }

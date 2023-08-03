@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`workflow_id(Option<String>)`](crate::operation::create_workflow_step::CreateWorkflowStepOutput::workflow_id): <p>The ID of the migration workflow.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_workflow_step::CreateWorkflowStepOutput::name): <p>The name of the step.</p>
     /// - On failure, responds with [`SdkError<CreateWorkflowStepError>`](crate::operation::create_workflow_step::CreateWorkflowStepError)
-    pub fn create_workflow_step(
-        &self,
-    ) -> crate::operation::create_workflow_step::builders::CreateWorkflowStepFluentBuilder {
-        crate::operation::create_workflow_step::builders::CreateWorkflowStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workflow_step(&self) -> crate::operation::create_workflow_step::builders::CreateWorkflowStepFluentBuilder {
+        crate::operation::create_workflow_step::builders::CreateWorkflowStepFluentBuilder::new(self.handle.clone())
     }
 }

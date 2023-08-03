@@ -36,16 +36,14 @@ impl DescribeEngineDefaultParametersInput {
 }
 impl DescribeEngineDefaultParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
-    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder {
         crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersInputBuilder {
     pub(crate) cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -54,27 +52,19 @@ pub struct DescribeEngineDefaultParametersInputBuilder {
 impl DescribeEngineDefaultParametersInputBuilder {
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    pub fn cache_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    pub fn set_cache_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_family = input;
         self
     }
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    pub fn get_cache_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_parameter_group_family
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -120,13 +110,10 @@ impl DescribeEngineDefaultParametersInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput {
-                cache_parameter_group_family: self.cache_parameter_group_family
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                cache_parameter_group_family: self.cache_parameter_group_family,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

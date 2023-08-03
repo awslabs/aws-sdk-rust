@@ -50,16 +50,14 @@ impl DescribeSnapshotCopyGrantsInput {
 }
 impl DescribeSnapshotCopyGrantsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotCopyGrantsInput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput).
-    pub fn builder() -> crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsInputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsInputBuilder {
         crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotCopyGrantsInput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotCopyGrantsInputBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -69,18 +67,12 @@ pub struct DescribeSnapshotCopyGrantsInputBuilder {
 }
 impl DescribeSnapshotCopyGrantsInputBuilder {
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = input;
         self
     }
@@ -137,10 +129,7 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -160,10 +149,7 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -178,14 +164,12 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
         crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput {
-                snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-                max_records: self.max_records,
-                marker: self.marker,
-                tag_keys: self.tag_keys,
-                tag_values: self.tag_values,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput {
+            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
+            max_records: self.max_records,
+            marker: self.marker,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+        })
     }
 }

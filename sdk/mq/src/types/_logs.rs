@@ -30,9 +30,7 @@ impl Logs {
 
 /// A builder for [`Logs`](crate::types::Logs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogsBuilder {
     pub(crate) audit: ::std::option::Option<bool>,
     pub(crate) general: ::std::option::Option<bool>,

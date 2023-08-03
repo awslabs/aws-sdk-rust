@@ -23,17 +23,14 @@ impl AssetBundleImportJobDataSetOverrideParameters {
 }
 impl AssetBundleImportJobDataSetOverrideParameters {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobDataSetOverrideParameters`](crate::types::AssetBundleImportJobDataSetOverrideParameters).
-    pub fn builder() -> crate::types::builders::AssetBundleImportJobDataSetOverrideParametersBuilder
-    {
+    pub fn builder() -> crate::types::builders::AssetBundleImportJobDataSetOverrideParametersBuilder {
         crate::types::builders::AssetBundleImportJobDataSetOverrideParametersBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleImportJobDataSetOverrideParameters`](crate::types::AssetBundleImportJobDataSetOverrideParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSetOverrideParametersBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

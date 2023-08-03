@@ -46,16 +46,14 @@ impl ::aws_http::request_id::RequestId for UpdateFirewallPolicyChangeProtectionO
 }
 impl UpdateFirewallPolicyChangeProtectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyChangeProtectionOutput`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput).
-    pub fn builder() -> crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionOutputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionOutputBuilder {
         crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallPolicyChangeProtectionOutput`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallPolicyChangeProtectionOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ impl UpdateFirewallPolicyChangeProtectionOutputBuilder {
         &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -124,10 +116,7 @@ impl UpdateFirewallPolicyChangeProtectionOutputBuilder {
         self
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn set_firewall_policy_change_protection(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_firewall_policy_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.firewall_policy_change_protection = input;
         self
     }
@@ -145,17 +134,12 @@ impl UpdateFirewallPolicyChangeProtectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallPolicyChangeProtectionOutput`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput).
-    pub fn build(self) -> crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput{
+    pub fn build(self) -> crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput {
         crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput {
-            update_token: self.update_token
-            ,
-            firewall_arn: self.firewall_arn
-            ,
-            firewall_name: self.firewall_name
-            ,
-            firewall_policy_change_protection: self.firewall_policy_change_protection
-                .unwrap_or_default()
-            ,
+            update_token: self.update_token,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            firewall_policy_change_protection: self.firewall_policy_change_protection.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

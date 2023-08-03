@@ -36,17 +36,14 @@ impl UpdateProxySessionInput {
 }
 impl UpdateProxySessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
-    pub fn builder(
-    ) -> crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
+    pub fn builder() -> crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
         crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProxySessionInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_session_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct UpdateProxySessionInputBuilder {
 }
 impl UpdateProxySessionInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -75,18 +66,12 @@ impl UpdateProxySessionInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The proxy session ID.</p>
-    pub fn set_proxy_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proxy_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proxy_session_id = input;
         self
     }
@@ -106,17 +91,12 @@ impl UpdateProxySessionInputBuilder {
         self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         &self.capabilities
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
@@ -136,17 +116,12 @@ impl UpdateProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_proxy_session::UpdateProxySessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_proxy_session::UpdateProxySessionInput {
-                voice_connector_id: self.voice_connector_id,
-                proxy_session_id: self.proxy_session_id,
-                capabilities: self.capabilities,
-                expiry_minutes: self.expiry_minutes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_proxy_session::UpdateProxySessionInput {
+            voice_connector_id: self.voice_connector_id,
+            proxy_session_id: self.proxy_session_id,
+            capabilities: self.capabilities,
+            expiry_minutes: self.expiry_minutes,
+        })
     }
 }

@@ -54,9 +54,7 @@ impl PropertyDifference {
 
 /// A builder for [`PropertyDifference`](crate::types::PropertyDifference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyDifferenceBuilder {
     pub(crate) property_path: ::std::option::Option<::std::string::String>,
     pub(crate) expected_value: ::std::option::Option<::std::string::String>,
@@ -65,18 +63,12 @@ pub struct PropertyDifferenceBuilder {
 }
 impl PropertyDifferenceBuilder {
     /// <p>The fully-qualified path to the resource property.</p>
-    pub fn property_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully-qualified path to the resource property.</p>
-    pub fn set_property_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_path = input;
         self
     }
@@ -85,18 +77,12 @@ impl PropertyDifferenceBuilder {
         &self.property_path
     }
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
-    pub fn expected_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
-    pub fn set_expected_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_value = input;
         self
     }
@@ -134,10 +120,7 @@ impl PropertyDifferenceBuilder {
     /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
     /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
-    pub fn set_difference_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DifferenceType>,
-    ) -> Self {
+    pub fn set_difference_type(mut self, input: ::std::option::Option<crate::types::DifferenceType>) -> Self {
         self.difference_type = input;
         self
     }

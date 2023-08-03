@@ -5,16 +5,16 @@ pub use crate::operation::register_task_with_maintenance_window::_register_task_
 
 impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.register_task_with_maintenance_window();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTaskWithMaintenanceWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder,
+    inner: crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder,
 }
 impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// Creates a new `RegisterTaskWithMaintenanceWindow`.
@@ -37,15 +37,20 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         }
     }
     /// Access the RegisterTaskWithMaintenanceWindow as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the maintenance window the task should be added to.</p>
@@ -146,10 +161,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code> </p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -191,10 +203,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
@@ -204,10 +213,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
@@ -226,10 +232,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         self
     }
     /// <p>The type of task being registered.</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
         self.inner = self.inner.set_task_type(input);
         self
     }
@@ -257,12 +260,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// </note>
     pub fn set_task_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     ) -> Self {
         self.inner = self.inner.set_task_parameters(input);
         self
@@ -272,34 +270,21 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// </note>
     pub fn get_task_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         self.inner.get_task_parameters()
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn task_invocation_parameters(
-        mut self,
-        input: crate::types::MaintenanceWindowTaskInvocationParameters,
-    ) -> Self {
+    pub fn task_invocation_parameters(mut self, input: crate::types::MaintenanceWindowTaskInvocationParameters) -> Self {
         self.inner = self.inner.task_invocation_parameters(input);
         self
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn set_task_invocation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
-    ) -> Self {
+    pub fn set_task_invocation_parameters(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>) -> Self {
         self.inner = self.inner.set_task_invocation_parameters(input);
         self
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn get_task_invocation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
+    pub fn get_task_invocation_parameters(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
         self.inner.get_task_invocation_parameters()
     }
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
@@ -320,10 +305,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_concurrency(input.into());
         self
     }
@@ -331,10 +313,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_max_concurrency(input);
         self
     }
@@ -378,10 +357,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
     }
@@ -442,10 +418,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn cutoff_behavior(
-        mut self,
-        input: crate::types::MaintenanceWindowTaskCutoffBehavior,
-    ) -> Self {
+    pub fn cutoff_behavior(mut self, input: crate::types::MaintenanceWindowTaskCutoffBehavior) -> Self {
         self.inner = self.inner.cutoff_behavior(input);
         self
     }
@@ -458,10 +431,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn set_cutoff_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
-    ) -> Self {
+    pub fn set_cutoff_behavior(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>) -> Self {
         self.inner = self.inner.set_cutoff_behavior(input);
         self
     }
@@ -474,9 +444,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn get_cutoff_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn get_cutoff_behavior(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
         self.inner.get_cutoff_behavior()
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
@@ -485,17 +453,12 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         self
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.inner = self.inner.set_alarm_configuration(input);
         self
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         self.inner.get_alarm_configuration()
     }
 }

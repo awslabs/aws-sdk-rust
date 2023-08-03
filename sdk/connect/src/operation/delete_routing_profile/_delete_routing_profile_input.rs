@@ -22,17 +22,14 @@ impl DeleteRoutingProfileInput {
 }
 impl DeleteRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteRoutingProfileInput`](crate::operation::delete_routing_profile::DeleteRoutingProfileInput).
-    pub fn builder(
-    ) -> crate::operation::delete_routing_profile::builders::DeleteRoutingProfileInputBuilder {
+    pub fn builder() -> crate::operation::delete_routing_profile::builders::DeleteRoutingProfileInputBuilder {
         crate::operation::delete_routing_profile::builders::DeleteRoutingProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoutingProfileInput`](crate::operation::delete_routing_profile::DeleteRoutingProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoutingProfileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteRoutingProfileInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_id = input;
         self
     }
@@ -75,15 +66,11 @@ impl DeleteRoutingProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoutingProfileInput`](crate::operation::delete_routing_profile::DeleteRoutingProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_routing_profile::DeleteRoutingProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_routing_profile::DeleteRoutingProfileInput {
-                instance_id: self.instance_id,
-                routing_profile_id: self.routing_profile_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_routing_profile::DeleteRoutingProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_routing_profile::DeleteRoutingProfileInput {
+            instance_id: self.instance_id,
+            routing_profile_id: self.routing_profile_id,
+        })
     }
 }

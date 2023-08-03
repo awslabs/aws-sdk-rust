@@ -20,7 +20,9 @@ impl super::Client {
     ///   - [`inference_recommendations_jobs(Option<Vec<InferenceRecommendationsJob>>)`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput::inference_recommendations_jobs): <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput::next_token): <p>A token for getting the next set of recommendations, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListInferenceRecommendationsJobsError>`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsError)
-    pub fn list_inference_recommendations_jobs(&self) -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder{
+    pub fn list_inference_recommendations_jobs(
+        &self,
+    ) -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder {
         crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRaidArraysOutput`](crate::operation::describe_raid_arrays::DescribeRaidArraysOutput) with field(s):
     ///   - [`raid_arrays(Option<Vec<RaidArray>>)`](crate::operation::describe_raid_arrays::DescribeRaidArraysOutput::raid_arrays): <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     /// - On failure, responds with [`SdkError<DescribeRaidArraysError>`](crate::operation::describe_raid_arrays::DescribeRaidArraysError)
-    pub fn describe_raid_arrays(
-        &self,
-    ) -> crate::operation::describe_raid_arrays::builders::DescribeRaidArraysFluentBuilder {
-        crate::operation::describe_raid_arrays::builders::DescribeRaidArraysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_raid_arrays(&self) -> crate::operation::describe_raid_arrays::builders::DescribeRaidArraysFluentBuilder {
+        crate::operation::describe_raid_arrays::builders::DescribeRaidArraysFluentBuilder::new(self.handle.clone())
     }
 }

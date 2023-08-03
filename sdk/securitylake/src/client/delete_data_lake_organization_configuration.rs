@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`auto_enable_new_account(Vec<DataLakeAutoEnableNewAccountConfiguration>)`](crate::operation::delete_data_lake_organization_configuration::builders::DeleteDataLakeOrganizationConfigurationFluentBuilder::auto_enable_new_account) / [`set_auto_enable_new_account(Option<Vec<DataLakeAutoEnableNewAccountConfiguration>>)`](crate::operation::delete_data_lake_organization_configuration::builders::DeleteDataLakeOrganizationConfigurationFluentBuilder::set_auto_enable_new_account): <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
     /// - On success, responds with [`DeleteDataLakeOrganizationConfigurationOutput`](crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteDataLakeOrganizationConfigurationError>`](crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationError)
-    pub fn delete_data_lake_organization_configuration(&self) -> crate::operation::delete_data_lake_organization_configuration::builders::DeleteDataLakeOrganizationConfigurationFluentBuilder{
-        crate::operation::delete_data_lake_organization_configuration::builders::DeleteDataLakeOrganizationConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn delete_data_lake_organization_configuration(
+        &self,
+    ) -> crate::operation::delete_data_lake_organization_configuration::builders::DeleteDataLakeOrganizationConfigurationFluentBuilder {
+        crate::operation::delete_data_lake_organization_configuration::builders::DeleteDataLakeOrganizationConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

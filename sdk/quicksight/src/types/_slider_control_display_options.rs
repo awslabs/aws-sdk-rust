@@ -9,8 +9,7 @@ pub struct SliderControlDisplayOptions {
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The configuration of info icon label options.</p>
     #[doc(hidden)]
-    pub info_icon_label_options:
-        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -18,9 +17,7 @@ impl SliderControlDisplayOptions {
         self.title_options.as_ref()
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn info_icon_label_options(&self) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
         self.info_icon_label_options.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl SliderControlDisplayOptions {
 
 /// A builder for [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SliderControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
-    pub(crate) info_icon_label_options:
-        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub(crate) info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl SliderControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -48,10 +42,7 @@ impl SliderControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
+    pub fn set_title_options(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
         self.title_options = input;
         self
     }
@@ -60,25 +51,17 @@ impl SliderControlDisplayOptionsBuilder {
         &self.title_options
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(
-        mut self,
-        input: crate::types::SheetControlInfoIconLabelOptions,
-    ) -> Self {
+    pub fn info_icon_label_options(mut self, input: crate::types::SheetControlInfoIconLabelOptions) -> Self {
         self.info_icon_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn set_info_icon_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
-    ) -> Self {
+    pub fn set_info_icon_label_options(mut self, input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>) -> Self {
         self.info_icon_label_options = input;
         self
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn get_info_icon_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn get_info_icon_label_options(&self) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
         &self.info_icon_label_options
     }
     /// Consumes the builder and constructs a [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).

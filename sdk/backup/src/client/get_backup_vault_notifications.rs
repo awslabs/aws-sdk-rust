@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`sns_topic_arn(Option<String>)`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput::sns_topic_arn): <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
     ///   - [`backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput::backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
     /// - On failure, responds with [`SdkError<GetBackupVaultNotificationsError>`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError)
-    pub fn get_backup_vault_notifications(&self) -> crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsFluentBuilder{
+    pub fn get_backup_vault_notifications(
+        &self,
+    ) -> crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsFluentBuilder {
         crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

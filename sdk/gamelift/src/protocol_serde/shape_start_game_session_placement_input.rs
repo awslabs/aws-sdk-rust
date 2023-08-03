@@ -15,10 +15,7 @@ pub fn ser_start_game_session_placement_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_game_property::ser_game_property(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_game_property::ser_game_property(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -39,10 +36,7 @@ pub fn ser_start_game_session_placement_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_player_latency::ser_player_latency(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_player_latency::ser_player_latency(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -54,10 +48,7 @@ pub fn ser_start_game_session_placement_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_desired_player_session::ser_desired_player_session(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_desired_player_session::ser_desired_player_session(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

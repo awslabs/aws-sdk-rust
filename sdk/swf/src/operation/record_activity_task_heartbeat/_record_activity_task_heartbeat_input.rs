@@ -26,16 +26,14 @@ impl RecordActivityTaskHeartbeatInput {
 }
 impl RecordActivityTaskHeartbeatInput {
     /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatInput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput).
-    pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatInputBuilder{
+    pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatInputBuilder {
         crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatInputBuilder::default()
     }
 }
 
 /// A builder for [`RecordActivityTaskHeartbeatInput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeatInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -82,11 +80,9 @@ impl RecordActivityTaskHeartbeatInputBuilder {
         crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput {
-                task_token: self.task_token,
-                details: self.details,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput {
+            task_token: self.task_token,
+            details: self.details,
+        })
     }
 }

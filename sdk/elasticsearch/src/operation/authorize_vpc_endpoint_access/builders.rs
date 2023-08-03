@@ -26,7 +26,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder,
+    inner: crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder,
 }
 impl AuthorizeVpcEndpointAccessFluentBuilder {
     /// Creates a new `AuthorizeVpcEndpointAccess`.
@@ -37,7 +37,7 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
         }
     }
     /// Access the AuthorizeVpcEndpointAccess as a reference.
-    pub fn as_input(&self) -> &crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
             crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AuthorizeVpcEndpointAccessFluentBuilder {
             crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError>,
     > {
         self.customize_middleware().await
     }

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListNetworkResourcesOutput {
 }
 impl ListNetworkResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkResourcesOutput`](crate::operation::list_network_resources::ListNetworkResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_network_resources::builders::ListNetworkResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_network_resources::builders::ListNetworkResourcesOutputBuilder {
         crate::operation::list_network_resources::builders::ListNetworkResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkResourcesOutput`](crate::operation::list_network_resources::ListNetworkResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkResourcesOutputBuilder {
-    pub(crate) network_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>>,
+    pub(crate) network_resources: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListNetworkResourcesOutputBuilder {
         self
     }
     /// <p>Information about network resources.</p>
-    pub fn set_network_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>>,
-    ) -> Self {
+    pub fn set_network_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>>) -> Self {
         self.network_resources = input;
         self
     }
     /// <p>Information about network resources.</p>
-    pub fn get_network_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>> {
+    pub fn get_network_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkResource>> {
         &self.network_resources
     }
     /// <p>The token for the next page of results.</p>

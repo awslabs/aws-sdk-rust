@@ -38,16 +38,14 @@ impl GetPredictiveScalingForecastInput {
 }
 impl GetPredictiveScalingForecastInput {
     /// Creates a new builder-style object to manufacture [`GetPredictiveScalingForecastInput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput).
-    pub fn builder() -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder{
+    pub fn builder() -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder {
         crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPredictiveScalingForecastInput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct GetPredictiveScalingForecastInputBuilder {
 }
 impl GetPredictiveScalingForecastInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -95,10 +87,7 @@ impl GetPredictiveScalingForecastInputBuilder {
         self
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -114,10 +103,7 @@ impl GetPredictiveScalingForecastInputBuilder {
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -133,13 +119,11 @@ impl GetPredictiveScalingForecastInputBuilder {
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                policy_name: self.policy_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            policy_name: self.policy_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+        })
     }
 }

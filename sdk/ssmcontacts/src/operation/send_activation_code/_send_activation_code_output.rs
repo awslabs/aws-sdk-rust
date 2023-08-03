@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SendActivationCodeOutput {
 }
 impl SendActivationCodeOutput {
     /// Creates a new builder-style object to manufacture [`SendActivationCodeOutput`](crate::operation::send_activation_code::SendActivationCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::send_activation_code::builders::SendActivationCodeOutputBuilder {
+    pub fn builder() -> crate::operation::send_activation_code::builders::SendActivationCodeOutputBuilder {
         crate::operation::send_activation_code::builders::SendActivationCodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendActivationCodeOutput`](crate::operation::send_activation_code::SendActivationCodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendActivationCodeOutputBuilder {
     _request_id: Option<String>,
 }

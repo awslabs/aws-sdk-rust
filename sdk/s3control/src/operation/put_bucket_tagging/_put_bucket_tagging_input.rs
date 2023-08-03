@@ -53,17 +53,14 @@ impl PutBucketTaggingInput {
 }
 impl PutBucketTaggingInput {
     /// Creates a new builder-style object to manufacture [`PutBucketTaggingInput`](crate::operation::put_bucket_tagging::PutBucketTaggingInput).
-    pub fn builder() -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingInputBuilder {
         crate::operation::put_bucket_tagging::builders::PutBucketTaggingInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketTaggingInput`](crate::operation::put_bucket_tagging::PutBucketTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketTaggingInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -151,16 +148,11 @@ impl PutBucketTaggingInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketTaggingInput`](crate::operation::put_bucket_tagging::PutBucketTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_tagging::PutBucketTaggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bucket_tagging::PutBucketTaggingInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-                tagging: self.tagging,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_bucket_tagging::PutBucketTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_bucket_tagging::PutBucketTaggingInput {
+            account_id: self.account_id,
+            bucket: self.bucket,
+            tagging: self.tagging,
+        })
     }
 }

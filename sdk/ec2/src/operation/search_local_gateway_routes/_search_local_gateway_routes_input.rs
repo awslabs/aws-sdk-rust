@@ -61,18 +61,14 @@ impl SearchLocalGatewayRoutesInput {
 }
 impl SearchLocalGatewayRoutesInput {
     /// Creates a new builder-style object to manufacture [`SearchLocalGatewayRoutesInput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput).
-    pub fn builder(
-    ) -> crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesInputBuilder {
         crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchLocalGatewayRoutesInput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchLocalGatewayRoutesInputBuilder {
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -82,25 +78,17 @@ pub struct SearchLocalGatewayRoutesInputBuilder {
 }
 impl SearchLocalGatewayRoutesInputBuilder {
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// Appends an item to `filters`.
@@ -133,10 +121,7 @@ impl SearchLocalGatewayRoutesInputBuilder {
     /// <li> <p> <code>state</code> - The state of the route.</p> </li>
     /// <li> <p> <code>type</code> - The route type.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -202,14 +187,12 @@ impl SearchLocalGatewayRoutesInputBuilder {
         crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput {
-                local_gateway_route_table_id: self.local_gateway_route_table_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput {
+            local_gateway_route_table_id: self.local_gateway_route_table_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

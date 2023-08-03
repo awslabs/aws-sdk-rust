@@ -150,10 +150,7 @@ impl GetSecretValueOutputBuilder {
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
-    pub fn set_secret_binary(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.secret_binary = input;
         self
     }
@@ -164,19 +161,13 @@ impl GetSecretValueOutputBuilder {
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
-    pub fn secret_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
-    pub fn set_secret_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
     }
@@ -190,27 +181,19 @@ impl GetSecretValueOutputBuilder {
     /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
     ///
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn version_stages(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_stages.unwrap_or_default();
         v.push(input.into());
         self.version_stages = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn set_version_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.version_stages = input;
         self
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn get_version_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.version_stages
     }
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
@@ -219,10 +202,7 @@ impl GetSecretValueOutputBuilder {
         self
     }
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }

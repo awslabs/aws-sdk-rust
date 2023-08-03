@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput::role_arn): <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
     ///   - [`iot_role_alias(Option<String>)`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput::iot_role_alias): <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceFleetError>`](crate::operation::describe_device_fleet::DescribeDeviceFleetError)
-    pub fn describe_device_fleet(
-        &self,
-    ) -> crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder {
-        crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_device_fleet(&self) -> crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder {
+        crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder::new(self.handle.clone())
     }
 }

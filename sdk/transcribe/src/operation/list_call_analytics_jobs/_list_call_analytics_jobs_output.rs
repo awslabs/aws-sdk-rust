@@ -11,8 +11,7 @@ pub struct ListCallAnalyticsJobsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
-    pub call_analytics_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
+    pub call_analytics_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListCallAnalyticsJobsOutput {
@@ -25,9 +24,7 @@ impl ListCallAnalyticsJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn call_analytics_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CallAnalyticsJobSummary]> {
+    pub fn call_analytics_job_summaries(&self) -> ::std::option::Option<&[crate::types::CallAnalyticsJobSummary]> {
         self.call_analytics_job_summaries.as_deref()
     }
 }
@@ -38,23 +35,18 @@ impl ::aws_http::request_id::RequestId for ListCallAnalyticsJobsOutput {
 }
 impl ListCallAnalyticsJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsOutput`](crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsOutputBuilder {
         crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCallAnalyticsJobsOutput`](crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCallAnalyticsJobsOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) call_analytics_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
+    pub(crate) call_analytics_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListCallAnalyticsJobsOutputBuilder {
@@ -64,10 +56,7 @@ impl ListCallAnalyticsJobsOutputBuilder {
         self
     }
     /// <p>Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -94,27 +83,19 @@ impl ListCallAnalyticsJobsOutputBuilder {
     /// To override the contents of this collection use [`set_call_analytics_job_summaries`](Self::set_call_analytics_job_summaries).
     ///
     /// <p>Provides a summary of information about each result.</p>
-    pub fn call_analytics_job_summaries(
-        mut self,
-        input: crate::types::CallAnalyticsJobSummary,
-    ) -> Self {
+    pub fn call_analytics_job_summaries(mut self, input: crate::types::CallAnalyticsJobSummary) -> Self {
         let mut v = self.call_analytics_job_summaries.unwrap_or_default();
         v.push(input);
         self.call_analytics_job_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn set_call_analytics_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
-    ) -> Self {
+    pub fn set_call_analytics_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>>) -> Self {
         self.call_analytics_job_summaries = input;
         self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn get_call_analytics_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>> {
+    pub fn get_call_analytics_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsJobSummary>> {
         &self.call_analytics_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -45,9 +45,7 @@ impl StartTestExecutionOutput {
         self.api_mode.as_ref()
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn test_execution_modality(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestExecutionModality> {
+    pub fn test_execution_modality(&self) -> ::std::option::Option<&crate::types::TestExecutionModality> {
         self.test_execution_modality.as_ref()
     }
 }
@@ -58,17 +56,14 @@ impl ::aws_http::request_id::RequestId for StartTestExecutionOutput {
 }
 impl StartTestExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartTestExecutionOutput`](crate::operation::start_test_execution::StartTestExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_test_execution::builders::StartTestExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::start_test_execution::builders::StartTestExecutionOutputBuilder {
         crate::operation::start_test_execution::builders::StartTestExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTestExecutionOutput`](crate::operation::start_test_execution::StartTestExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTestExecutionOutputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,18 +75,12 @@ pub struct StartTestExecutionOutputBuilder {
 }
 impl StartTestExecutionOutputBuilder {
     /// <p>The unique identifier of the test set execution.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the test set execution.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_execution_id = input;
         self
     }
@@ -105,10 +94,7 @@ impl StartTestExecutionOutputBuilder {
         self
     }
     /// <p>The creation date and time for the test set execution.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -136,10 +122,7 @@ impl StartTestExecutionOutputBuilder {
         self
     }
     /// <p>The target bot for the test set execution.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestExecutionTarget>) -> Self {
         self.target = input;
         self
     }
@@ -153,10 +136,7 @@ impl StartTestExecutionOutputBuilder {
         self
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Amazon Lex Runtime API is used. Whereas for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
-    pub fn set_api_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionApiMode>,
-    ) -> Self {
+    pub fn set_api_mode(mut self, input: ::std::option::Option<crate::types::TestExecutionApiMode>) -> Self {
         self.api_mode = input;
         self
     }
@@ -170,17 +150,12 @@ impl StartTestExecutionOutputBuilder {
         self
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn set_test_execution_modality(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionModality>,
-    ) -> Self {
+    pub fn set_test_execution_modality(mut self, input: ::std::option::Option<crate::types::TestExecutionModality>) -> Self {
         self.test_execution_modality = input;
         self
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn get_test_execution_modality(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+    pub fn get_test_execution_modality(&self) -> &::std::option::Option<crate::types::TestExecutionModality> {
         &self.test_execution_modality
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

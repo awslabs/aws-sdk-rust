@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`query_id(Option<String>)`](crate::operation::cancel_query::CancelQueryOutput::query_id): <p>The ID of the canceled query.</p>
     ///   - [`query_status(Option<QueryStatus>)`](crate::operation::cancel_query::CancelQueryOutput::query_status): <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
     /// - On failure, responds with [`SdkError<CancelQueryError>`](crate::operation::cancel_query::CancelQueryError)
-    pub fn cancel_query(
-        &self,
-    ) -> crate::operation::cancel_query::builders::CancelQueryFluentBuilder {
+    pub fn cancel_query(&self) -> crate::operation::cancel_query::builders::CancelQueryFluentBuilder {
         crate::operation::cancel_query::builders::CancelQueryFluentBuilder::new(self.handle.clone())
     }
 }

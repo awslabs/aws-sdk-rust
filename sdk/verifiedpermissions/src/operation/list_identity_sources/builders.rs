@@ -37,9 +37,7 @@ impl ListIdentitySourcesFluentBuilder {
         }
     }
     /// Access the ListIdentitySources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_identity_sources::builders::ListIdentitySourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_identity_sources::builders::ListIdentitySourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListIdentitySourcesFluentBuilder {
             crate::operation::list_identity_sources::ListIdentitySources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_sources::ListIdentitySourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_sources::ListIdentitySourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListIdentitySourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListIdentitySourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_sources::ListIdentitySourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_sources::ListIdentitySourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_sources::ListIdentitySourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListIdentitySourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_sources::ListIdentitySourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_sources::ListIdentitySourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_sources::ListIdentitySourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListIdentitySourcesFluentBuilder {
             crate::operation::list_identity_sources::ListIdentitySources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_sources::ListIdentitySourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_sources::ListIdentitySourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_identity_sources::paginator::ListIdentitySourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_identity_sources::paginator::ListIdentitySourcesPaginator {
-        crate::operation::list_identity_sources::paginator::ListIdentitySourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_identity_sources::paginator::ListIdentitySourcesPaginator {
+        crate::operation::list_identity_sources::paginator::ListIdentitySourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -191,17 +167,12 @@ impl ListIdentitySourcesFluentBuilder {
         self
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>> {
         self.inner.get_filters()
     }
 }

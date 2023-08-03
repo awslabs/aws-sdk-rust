@@ -31,9 +31,7 @@ impl ClassificationResult {
         self.additional_occurrences
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
-    pub fn custom_data_identifiers(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDataIdentifiers> {
+    pub fn custom_data_identifiers(&self) -> ::std::option::Option<&crate::types::CustomDataIdentifiers> {
         self.custom_data_identifiers.as_ref()
     }
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
@@ -62,15 +60,12 @@ impl ClassificationResult {
 
 /// A builder for [`ClassificationResult`](crate::types::ClassificationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationResultBuilder {
     pub(crate) additional_occurrences: ::std::option::Option<bool>,
     pub(crate) custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiers>,
     pub(crate) mime_type: ::std::option::Option<::std::string::String>,
-    pub(crate) sensitive_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>,
+    pub(crate) sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>,
     pub(crate) size_classified: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::ClassificationResultStatus>,
 }
@@ -98,17 +93,12 @@ impl ClassificationResultBuilder {
         self
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
-    pub fn set_custom_data_identifiers(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDataIdentifiers>,
-    ) -> Self {
+    pub fn set_custom_data_identifiers(mut self, input: ::std::option::Option<crate::types::CustomDataIdentifiers>) -> Self {
         self.custom_data_identifiers = input;
         self
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
-    pub fn get_custom_data_identifiers(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDataIdentifiers> {
+    pub fn get_custom_data_identifiers(&self) -> &::std::option::Option<crate::types::CustomDataIdentifiers> {
         &self.custom_data_identifiers
     }
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
@@ -137,17 +127,12 @@ impl ClassificationResultBuilder {
         self
     }
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    pub fn set_sensitive_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>,
-    ) -> Self {
+    pub fn set_sensitive_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>) -> Self {
         self.sensitive_data = input;
         self
     }
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    pub fn get_sensitive_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>> {
+    pub fn get_sensitive_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>> {
         &self.sensitive_data
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
@@ -170,10 +155,7 @@ impl ClassificationResultBuilder {
         self
     }
     /// <p>The status of the finding.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationResultStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClassificationResultStatus>) -> Self {
         self.status = input;
         self
     }

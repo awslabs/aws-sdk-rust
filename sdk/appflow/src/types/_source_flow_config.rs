@@ -34,15 +34,11 @@ impl SourceFlowConfig {
         self.connector_profile_name.as_deref()
     }
     /// <p> Specifies the information that is required to query a particular source connector. </p>
-    pub fn source_connector_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConnectorProperties> {
+    pub fn source_connector_properties(&self) -> ::std::option::Option<&crate::types::SourceConnectorProperties> {
         self.source_connector_properties.as_ref()
     }
     /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
-    pub fn incremental_pull_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IncrementalPullConfig> {
+    pub fn incremental_pull_config(&self) -> ::std::option::Option<&crate::types::IncrementalPullConfig> {
         self.incremental_pull_config.as_ref()
     }
 }
@@ -55,15 +51,12 @@ impl SourceFlowConfig {
 
 /// A builder for [`SourceFlowConfig`](crate::types::SourceFlowConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceFlowConfigBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) api_version: ::std::option::Option<::std::string::String>,
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
-    pub(crate) source_connector_properties:
-        ::std::option::Option<crate::types::SourceConnectorProperties>,
+    pub(crate) source_connector_properties: ::std::option::Option<crate::types::SourceConnectorProperties>,
     pub(crate) incremental_pull_config: ::std::option::Option<crate::types::IncrementalPullConfig>,
 }
 impl SourceFlowConfigBuilder {
@@ -73,10 +66,7 @@ impl SourceFlowConfigBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -99,18 +89,12 @@ impl SourceFlowConfigBuilder {
         &self.api_version
     }
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
@@ -119,25 +103,17 @@ impl SourceFlowConfigBuilder {
         &self.connector_profile_name
     }
     /// <p> Specifies the information that is required to query a particular source connector. </p>
-    pub fn source_connector_properties(
-        mut self,
-        input: crate::types::SourceConnectorProperties,
-    ) -> Self {
+    pub fn source_connector_properties(mut self, input: crate::types::SourceConnectorProperties) -> Self {
         self.source_connector_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the information that is required to query a particular source connector. </p>
-    pub fn set_source_connector_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnectorProperties>,
-    ) -> Self {
+    pub fn set_source_connector_properties(mut self, input: ::std::option::Option<crate::types::SourceConnectorProperties>) -> Self {
         self.source_connector_properties = input;
         self
     }
     /// <p> Specifies the information that is required to query a particular source connector. </p>
-    pub fn get_source_connector_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConnectorProperties> {
+    pub fn get_source_connector_properties(&self) -> &::std::option::Option<crate::types::SourceConnectorProperties> {
         &self.source_connector_properties
     }
     /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
@@ -146,17 +122,12 @@ impl SourceFlowConfigBuilder {
         self
     }
     /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
-    pub fn set_incremental_pull_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IncrementalPullConfig>,
-    ) -> Self {
+    pub fn set_incremental_pull_config(mut self, input: ::std::option::Option<crate::types::IncrementalPullConfig>) -> Self {
         self.incremental_pull_config = input;
         self
     }
     /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
-    pub fn get_incremental_pull_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IncrementalPullConfig> {
+    pub fn get_incremental_pull_config(&self) -> &::std::option::Option<crate::types::IncrementalPullConfig> {
         &self.incremental_pull_config
     }
     /// Consumes the builder and constructs a [`SourceFlowConfig`](crate::types::SourceFlowConfig).

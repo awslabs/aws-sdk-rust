@@ -28,7 +28,7 @@ impl GetCommentsForComparedCommitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCommentsForComparedCommitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder,
+    inner: crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder,
 }
 impl GetCommentsForComparedCommitFluentBuilder {
     /// Creates a new `GetCommentsForComparedCommit`.
@@ -39,7 +39,7 @@ impl GetCommentsForComparedCommitFluentBuilder {
         }
     }
     /// Access the GetCommentsForComparedCommit as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetCommentsForComparedCommitFluentBuilder {
             crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetCommentsForComparedCommitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetCommentsForComparedCommitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetCommentsForComparedCommitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError>,
     > {
         self.send_middleware().await
     }
@@ -116,31 +107,23 @@ impl GetCommentsForComparedCommitFluentBuilder {
             crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_comments_for_compared_commit::paginator::GetCommentsForComparedCommitPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_comments_for_compared_commit::paginator::GetCommentsForComparedCommitPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_comments_for_compared_commit::paginator::GetCommentsForComparedCommitPaginator {
         crate::operation::get_comments_for_compared_commit::paginator::GetCommentsForComparedCommitPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the repository where you want to compare commits.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to compare commits.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -149,18 +132,12 @@ impl GetCommentsForComparedCommitFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_commit_id(input.into());
         self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_commit_id(input);
         self
     }
@@ -169,18 +146,12 @@ impl GetCommentsForComparedCommitFluentBuilder {
         self.inner.get_before_commit_id()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_commit_id(input.into());
         self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_commit_id(input);
         self
     }

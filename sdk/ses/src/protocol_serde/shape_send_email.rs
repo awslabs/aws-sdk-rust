@@ -4,46 +4,37 @@ pub fn de_send_email_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::send_email::SendEmailOutput,
-    crate::operation::send_email::SendEmailError,
-> {
+) -> std::result::Result<crate::operation::send_email::SendEmailOutput, crate::operation::send_email::SendEmailError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::send_email::SendEmailError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::send_email::SendEmailError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::send_email::SendEmailError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::send_email::SendEmailError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccountSendingPausedException" => {
-            crate::operation::send_email::SendEmailError::AccountSendingPausedException({
+        "AccountSendingPausedException" => crate::operation::send_email::SendEmailError::AccountSendingPausedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccountSendingPausedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_sending_paused_exception::de_account_sending_paused_exception_xml_err(_response_body, output).map_err(crate::operation::send_email::SendEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::AccountSendingPausedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_account_sending_paused_exception::de_account_sending_paused_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::send_email::SendEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ConfigurationSetDoesNotExist" => {
             crate::operation::send_email::SendEmailError::ConfigurationSetDoesNotExistException({
                 #[allow(unused_mut)]
@@ -76,32 +67,30 @@ pub fn de_send_email_http_error(
                 tmp
             })
         }
-        "MailFromDomainNotVerifiedException" => {
-            crate::operation::send_email::SendEmailError::MailFromDomainNotVerifiedException({
+        "MailFromDomainNotVerifiedException" => crate::operation::send_email::SendEmailError::MailFromDomainNotVerifiedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_mail_from_domain_not_verified_exception::de_mail_from_domain_not_verified_exception_xml_err(_response_body, output).map_err(crate::operation::send_email::SendEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_mail_from_domain_not_verified_exception::de_mail_from_domain_not_verified_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::send_email::SendEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "MessageRejected" => crate::operation::send_email::SendEmailError::MessageRejected({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::MessageRejectedBuilder::default();
-                output =
-                    crate::protocol_serde::shape_message_rejected::de_message_rejected_xml_err(
-                        _response_body,
-                        output,
-                    )
+                output = crate::protocol_serde::shape_message_rejected::de_message_rejected_xml_err(_response_body, output)
                     .map_err(crate::operation::send_email::SendEmailError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -120,18 +109,13 @@ pub fn de_send_email_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::send_email::SendEmailOutput,
-    crate::operation::send_email::SendEmailError,
-> {
+) -> std::result::Result<crate::operation::send_email::SendEmailOutput, crate::operation::send_email::SendEmailError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::send_email::builders::SendEmailOutputBuilder::default();
         output = crate::protocol_serde::shape_send_email::de_send_email(_response_body, output)
             .map_err(crate::operation::send_email::SendEmailError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -140,10 +124,7 @@ pub fn de_send_email_http_response_with_props(
 pub fn de_send_email(
     inp: &[u8],
     mut builder: crate::operation::send_email::builders::SendEmailOutputBuilder,
-) -> Result<
-    crate::operation::send_email::builders::SendEmailOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::send_email::builders::SendEmailOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -183,9 +164,7 @@ pub fn de_send_email(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected SendEmailResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected SendEmailResult tag"));
     };
     Ok(builder)
 }

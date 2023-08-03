@@ -15,35 +15,25 @@ impl DescribeClusterOperationInput {
 }
 impl DescribeClusterOperationInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOperationInput`](crate::operation::describe_cluster_operation::DescribeClusterOperationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder {
         crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterOperationInput`](crate::operation::describe_cluster_operation::DescribeClusterOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterOperationInputBuilder {
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterOperationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    pub fn cluster_operation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_operation_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeClusterOperationInputBuilder {
         crate::operation::describe_cluster_operation::DescribeClusterOperationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_operation::DescribeClusterOperationInput {
-                cluster_operation_arn: self.cluster_operation_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_operation::DescribeClusterOperationInput {
+            cluster_operation_arn: self.cluster_operation_arn,
+        })
     }
 }

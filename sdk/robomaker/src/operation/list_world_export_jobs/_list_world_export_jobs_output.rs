@@ -5,8 +5,7 @@
 pub struct ListWorldExportJobsOutput {
     /// <p>Summary information for world export jobs.</p>
     #[doc(hidden)]
-    pub world_export_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>,
+    pub world_export_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListWorldExportJobsOutput {
 }
 impl ListWorldExportJobsOutput {
     /// <p>Summary information for world export jobs.</p>
-    pub fn world_export_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorldExportJobSummary]> {
+    pub fn world_export_job_summaries(&self) -> ::std::option::Option<&[crate::types::WorldExportJobSummary]> {
         self.world_export_job_summaries.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWorldExportJobsOutput {
 }
 impl ListWorldExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorldExportJobsOutput`](crate::operation::list_world_export_jobs::ListWorldExportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsOutputBuilder {
         crate::operation::list_world_export_jobs::builders::ListWorldExportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorldExportJobsOutput`](crate::operation::list_world_export_jobs::ListWorldExportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldExportJobsOutputBuilder {
-    pub(crate) world_export_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>,
+    pub(crate) world_export_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListWorldExportJobsOutputBuilder {
     /// To override the contents of this collection use [`set_world_export_job_summaries`](Self::set_world_export_job_summaries).
     ///
     /// <p>Summary information for world export jobs.</p>
-    pub fn world_export_job_summaries(
-        mut self,
-        input: crate::types::WorldExportJobSummary,
-    ) -> Self {
+    pub fn world_export_job_summaries(mut self, input: crate::types::WorldExportJobSummary) -> Self {
         let mut v = self.world_export_job_summaries.unwrap_or_default();
         v.push(input);
         self.world_export_job_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Summary information for world export jobs.</p>
-    pub fn set_world_export_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>,
-    ) -> Self {
+    pub fn set_world_export_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>) -> Self {
         self.world_export_job_summaries = input;
         self
     }
     /// <p>Summary information for world export jobs.</p>
-    pub fn get_world_export_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>> {
+    pub fn get_world_export_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>> {
         &self.world_export_job_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>

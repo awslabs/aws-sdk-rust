@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_connections::DescribeConnectionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_connections::DescribeConnectionsOutput::connections): <p>A description of the connections.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsError>`](crate::operation::describe_connections::DescribeConnectionsError)
-    pub fn describe_connections(
-        &self,
-    ) -> crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder {
-        crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_connections(&self) -> crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder {
+        crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

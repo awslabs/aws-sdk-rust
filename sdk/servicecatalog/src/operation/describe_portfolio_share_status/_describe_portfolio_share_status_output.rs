@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribePortfolioShareStatusOutput {
 }
 impl DescribePortfolioShareStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioShareStatusOutput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput).
-    pub fn builder() -> crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusOutputBuilder {
         crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePortfolioShareStatusOutput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusOutputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ pub struct DescribePortfolioShareStatusOutputBuilder {
 }
 impl DescribePortfolioShareStatusOutputBuilder {
     /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
-    pub fn portfolio_share_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_share_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
-    pub fn set_portfolio_share_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portfolio_share_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_share_token = input;
         self
     }
@@ -103,18 +95,12 @@ impl DescribePortfolioShareStatusOutputBuilder {
         &self.portfolio_id
     }
     /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
-    pub fn organization_node_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_node_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_node_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
-    pub fn set_organization_node_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_node_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_node_value = input;
         self
     }
@@ -142,10 +128,7 @@ impl DescribePortfolioShareStatusOutputBuilder {
         self
     }
     /// <p>Information about the portfolio share operation.</p>
-    pub fn set_share_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareDetails>,
-    ) -> Self {
+    pub fn set_share_details(mut self, input: ::std::option::Option<crate::types::ShareDetails>) -> Self {
         self.share_details = input;
         self
     }
@@ -163,9 +146,7 @@ impl DescribePortfolioShareStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePortfolioShareStatusOutput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput {
+    pub fn build(self) -> crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput {
         crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput {
             portfolio_share_token: self.portfolio_share_token,
             portfolio_id: self.portfolio_id,

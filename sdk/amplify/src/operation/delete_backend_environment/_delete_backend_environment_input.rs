@@ -23,18 +23,14 @@ impl DeleteBackendEnvironmentInput {
 }
 impl DeleteBackendEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendEnvironmentInput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentInputBuilder {
         crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackendEnvironmentInput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackendEnvironmentInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ impl DeleteBackendEnvironmentInputBuilder {
         &self.app_id
     }
     /// <p> The name of a backend environment of an Amplify app. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of a backend environment of an Amplify app. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -81,11 +71,9 @@ impl DeleteBackendEnvironmentInputBuilder {
         crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput {
+            app_id: self.app_id,
+            environment_name: self.environment_name,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl RangeEndsLabelType {
 
 /// A builder for [`RangeEndsLabelType`](crate::types::RangeEndsLabelType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RangeEndsLabelTypeBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,10 +34,7 @@ impl RangeEndsLabelTypeBuilder {
         self
     }
     /// <p>The visibility of the range ends label.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -49,8 +44,6 @@ impl RangeEndsLabelTypeBuilder {
     }
     /// Consumes the builder and constructs a [`RangeEndsLabelType`](crate::types::RangeEndsLabelType).
     pub fn build(self) -> crate::types::RangeEndsLabelType {
-        crate::types::RangeEndsLabelType {
-            visibility: self.visibility,
-        }
+        crate::types::RangeEndsLabelType { visibility: self.visibility }
     }
 }

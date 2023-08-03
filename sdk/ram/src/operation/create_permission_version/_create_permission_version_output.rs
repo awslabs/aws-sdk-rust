@@ -13,9 +13,7 @@ pub struct CreatePermissionVersionOutput {
 }
 impl CreatePermissionVersionOutput {
     /// <p>Information about a RAM managed permission.</p>
-    pub fn permission(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSharePermissionDetail> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::ResourceSharePermissionDetail> {
         self.permission.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
@@ -30,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreatePermissionVersionOutput {
 }
 impl CreatePermissionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionVersionOutput`](crate::operation::create_permission_version::CreatePermissionVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_permission_version::builders::CreatePermissionVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission_version::builders::CreatePermissionVersionOutputBuilder {
         crate::operation::create_permission_version::builders::CreatePermissionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionVersionOutput`](crate::operation::create_permission_version::CreatePermissionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionVersionOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -54,17 +48,12 @@ impl CreatePermissionVersionOutputBuilder {
         self
     }
     /// <p>Information about a RAM managed permission.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionDetail>) -> Self {
         self.permission = input;
         self
     }
     /// <p>Information about a RAM managed permission.</p>
-    pub fn get_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSharePermissionDetail> {
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionDetail> {
         &self.permission
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
@@ -91,9 +80,7 @@ impl CreatePermissionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePermissionVersionOutput`](crate::operation::create_permission_version::CreatePermissionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_permission_version::CreatePermissionVersionOutput {
+    pub fn build(self) -> crate::operation::create_permission_version::CreatePermissionVersionOutput {
         crate::operation::create_permission_version::CreatePermissionVersionOutput {
             permission: self.permission,
             client_token: self.client_token,

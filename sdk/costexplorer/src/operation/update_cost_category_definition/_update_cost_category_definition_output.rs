@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateCostCategoryDefinitionOutput {
 }
 impl UpdateCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionOutput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionOutputBuilder {
         crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCostCategoryDefinitionOutput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionOutputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
     pub(crate) effective_start: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct UpdateCostCategoryDefinitionOutputBuilder {
 }
 impl UpdateCostCategoryDefinitionOutputBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
@@ -65,18 +57,12 @@ impl UpdateCostCategoryDefinitionOutputBuilder {
         &self.cost_category_arn
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-    pub fn effective_start(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn effective_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_start = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-    pub fn set_effective_start(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_effective_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_start = input;
         self
     }
@@ -94,9 +80,7 @@ impl UpdateCostCategoryDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionOutput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput {
+    pub fn build(self) -> crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput {
         crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput {
             cost_category_arn: self.cost_category_arn,
             effective_start: self.effective_start,

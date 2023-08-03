@@ -8,8 +8,7 @@ pub struct ListRecommendationTemplatesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
     #[doc(hidden)]
-    pub recommendation_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>,
+    pub recommendation_templates: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>,
     _request_id: Option<String>,
 }
 impl ListRecommendationTemplatesOutput {
@@ -18,9 +17,7 @@ impl ListRecommendationTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
-    pub fn recommendation_templates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationTemplate]> {
+    pub fn recommendation_templates(&self) -> ::std::option::Option<&[crate::types::RecommendationTemplate]> {
         self.recommendation_templates.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRecommendationTemplatesOutput {
 }
 impl ListRecommendationTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationTemplatesOutput`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput).
-    pub fn builder() -> crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesOutputBuilder {
         crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendationTemplatesOutput`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>,
+    pub(crate) recommendation_templates: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>,
     _request_id: Option<String>,
 }
 impl ListRecommendationTemplatesOutputBuilder {
@@ -74,17 +68,12 @@ impl ListRecommendationTemplatesOutputBuilder {
         self
     }
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
-    pub fn set_recommendation_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>,
-    ) -> Self {
+    pub fn set_recommendation_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>) -> Self {
         self.recommendation_templates = input;
         self
     }
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
-    pub fn get_recommendation_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>> {
+    pub fn get_recommendation_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>> {
         &self.recommendation_templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListRecommendationTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecommendationTemplatesOutput`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput {
+    pub fn build(self) -> crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput {
         crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput {
             next_token: self.next_token,
             recommendation_templates: self.recommendation_templates,

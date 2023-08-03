@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for RevokeVpcEndpointAccessOutput {
 }
 impl RevokeVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessOutputBuilder {
         crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl RevokeVpcEndpointAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput {
+    pub fn build(self) -> crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput {
         crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSignalingChannelOutput`](crate::operation::create_signaling_channel::CreateSignalingChannelOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::create_signaling_channel::CreateSignalingChannelOutput::channel_arn): <p>The Amazon Resource Name (ARN) of the created channel.</p>
     /// - On failure, responds with [`SdkError<CreateSignalingChannelError>`](crate::operation::create_signaling_channel::CreateSignalingChannelError)
-    pub fn create_signaling_channel(
-        &self,
-    ) -> crate::operation::create_signaling_channel::builders::CreateSignalingChannelFluentBuilder
-    {
+    pub fn create_signaling_channel(&self) -> crate::operation::create_signaling_channel::builders::CreateSignalingChannelFluentBuilder {
         crate::operation::create_signaling_channel::builders::CreateSignalingChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSchemaOutput`](crate::operation::update_schema::UpdateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::schema_arn): <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::operation::update_schema::UpdateSchemaError)
-    pub fn update_schema(
-        &self,
-    ) -> crate::operation::update_schema::builders::UpdateSchemaFluentBuilder {
-        crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_schema(&self) -> crate::operation::update_schema::builders::UpdateSchemaFluentBuilder {
+        crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::new(self.handle.clone())
     }
 }

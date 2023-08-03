@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDbSnapshotOutput`](crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput) with field(s):
     ///   - [`db_snapshot(Option<DbSnapshot>)`](crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput::db_snapshot): <p>Contains the details of an Amazon RDS DB snapshot.</p>  <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<DeleteDBSnapshotError>`](crate::operation::delete_db_snapshot::DeleteDBSnapshotError)
-    pub fn delete_db_snapshot(
-        &self,
-    ) -> crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder {
-        crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_db_snapshot(&self) -> crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder {
+        crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

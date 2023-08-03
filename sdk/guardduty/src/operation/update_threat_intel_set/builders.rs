@@ -37,10 +37,7 @@ impl UpdateThreatIntelSetFluentBuilder {
         }
     }
     /// Access the UpdateThreatIntelSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateThreatIntelSetFluentBuilder {
             crate::operation::update_threat_intel_set::UpdateThreatIntelSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_threat_intel_set::UpdateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateThreatIntelSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateThreatIntelSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_threat_intel_set::UpdateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateThreatIntelSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_threat_intel_set::UpdateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateThreatIntelSetFluentBuilder {
             crate::operation::update_threat_intel_set::UpdateThreatIntelSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_threat_intel_set::UpdateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateThreatIntelSetFluentBuilder {
         self.inner.get_detector_id()
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    pub fn threat_intel_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.threat_intel_set_id(input.into());
         self
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    pub fn set_threat_intel_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_threat_intel_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_threat_intel_set_id(input);
         self
     }

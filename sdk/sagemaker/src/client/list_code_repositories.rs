@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`code_repository_summary_list(Option<Vec<CodeRepositorySummary>>)`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput::code_repository_summary_list): <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository: </p>  <ul>   <li> <p>Name</p> </li>   <li> <p>Amazon Resource Name (ARN)</p> </li>   <li> <p>Creation time</p> </li>   <li> <p>Last modified time</p> </li>   <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>  </ul>
     ///   - [`next_token(Option<String>)`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput::next_token): <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListCodeRepositoriesError>`](crate::operation::list_code_repositories::ListCodeRepositoriesError)
-    pub fn list_code_repositories(
-        &self,
-    ) -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesFluentBuilder {
-        crate::operation::list_code_repositories::builders::ListCodeRepositoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_code_repositories(&self) -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesFluentBuilder {
+        crate::operation::list_code_repositories::builders::ListCodeRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

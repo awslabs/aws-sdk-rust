@@ -39,17 +39,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkflowTypeOutput {
 }
 impl DescribeWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeOutput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeOutputBuilder {
+    pub fn builder() -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeOutputBuilder {
         crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkflowTypeOutput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkflowTypeOutputBuilder {
     pub(crate) type_info: ::std::option::Option<crate::types::WorkflowTypeInfo>,
     pub(crate) configuration: ::std::option::Option<crate::types::WorkflowTypeConfiguration>,
@@ -72,10 +69,7 @@ impl DescribeWorkflowTypeOutputBuilder {
     /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
-    pub fn set_type_info(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeInfo>,
-    ) -> Self {
+    pub fn set_type_info(mut self, input: ::std::option::Option<crate::types::WorkflowTypeInfo>) -> Self {
         self.type_info = input;
         self
     }
@@ -94,17 +88,12 @@ impl DescribeWorkflowTypeOutputBuilder {
         self
     }
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::WorkflowTypeConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowTypeConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::WorkflowTypeConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

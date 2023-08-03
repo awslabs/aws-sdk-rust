@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`permission_sets_provisioning_status(Option<Vec<PermissionSetProvisioningStatusMetadata>>)`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput::permission_sets_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListPermissionSetProvisioningStatusError>`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError)
-    pub fn list_permission_set_provisioning_status(&self) -> crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusFluentBuilder{
-        crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusFluentBuilder::new(self.handle.clone())
+    pub fn list_permission_set_provisioning_status(
+        &self,
+    ) -> crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusFluentBuilder {
+        crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

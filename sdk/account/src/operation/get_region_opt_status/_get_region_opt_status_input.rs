@@ -28,17 +28,14 @@ impl GetRegionOptStatusInput {
 }
 impl GetRegionOptStatusInput {
     /// Creates a new builder-style object to manufacture [`GetRegionOptStatusInput`](crate::operation::get_region_opt_status::GetRegionOptStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusInputBuilder {
+    pub fn builder() -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusInputBuilder {
         crate::operation::get_region_opt_status::builders::GetRegionOptStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegionOptStatusInput`](crate::operation::get_region_opt_status::GetRegionOptStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegionOptStatusInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -84,15 +81,11 @@ impl GetRegionOptStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetRegionOptStatusInput`](crate::operation::get_region_opt_status::GetRegionOptStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_region_opt_status::GetRegionOptStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_region_opt_status::GetRegionOptStatusInput {
-                account_id: self.account_id,
-                region_name: self.region_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_region_opt_status::GetRegionOptStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_region_opt_status::GetRegionOptStatusInput {
+            account_id: self.account_id,
+            region_name: self.region_name,
+        })
     }
 }

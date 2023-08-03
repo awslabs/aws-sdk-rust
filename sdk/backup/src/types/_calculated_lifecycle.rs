@@ -33,9 +33,7 @@ impl CalculatedLifecycle {
 
 /// A builder for [`CalculatedLifecycle`](crate::types::CalculatedLifecycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculatedLifecycleBuilder {
     pub(crate) move_to_cold_storage_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,17 +45,12 @@ impl CalculatedLifecycleBuilder {
         self
     }
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-    pub fn set_move_to_cold_storage_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_move_to_cold_storage_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.move_to_cold_storage_at = input;
         self
     }
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-    pub fn get_move_to_cold_storage_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_move_to_cold_storage_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.move_to_cold_storage_at
     }
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
@@ -66,10 +59,7 @@ impl CalculatedLifecycleBuilder {
         self
     }
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
-    pub fn set_delete_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delete_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delete_at = input;
         self
     }

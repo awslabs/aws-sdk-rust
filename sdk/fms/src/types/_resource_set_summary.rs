@@ -59,9 +59,7 @@ impl ResourceSetSummary {
 
 /// A builder for [`ResourceSetSummary`](crate::types::ResourceSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceSetSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl ResourceSetSummaryBuilder {
         self
     }
     /// <p>The last time that the resource set was changed.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -143,10 +138,7 @@ impl ResourceSetSummaryBuilder {
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the resource set.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p> </li>
     /// </ul>
-    pub fn set_resource_set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSetStatus>,
-    ) -> Self {
+    pub fn set_resource_set_status(mut self, input: ::std::option::Option<crate::types::ResourceSetStatus>) -> Self {
         self.resource_set_status = input;
         self
     }
@@ -155,9 +147,7 @@ impl ResourceSetSummaryBuilder {
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the resource set.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p> </li>
     /// </ul>
-    pub fn get_resource_set_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSetStatus> {
+    pub fn get_resource_set_status(&self) -> &::std::option::Option<crate::types::ResourceSetStatus> {
         &self.resource_set_status
     }
     /// Consumes the builder and constructs a [`ResourceSetSummary`](crate::types::ResourceSetSummary).

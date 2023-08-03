@@ -10,9 +10,7 @@ pub struct UpdateCollectionOutput {
 }
 impl UpdateCollectionOutput {
     /// <p>Details about the updated collection.</p>
-    pub fn update_collection_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateCollectionDetail> {
+    pub fn update_collection_detail(&self) -> ::std::option::Option<&crate::types::UpdateCollectionDetail> {
         self.update_collection_detail.as_ref()
     }
 }
@@ -23,20 +21,16 @@ impl ::aws_http::request_id::RequestId for UpdateCollectionOutput {
 }
 impl UpdateCollectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput).
-    pub fn builder() -> crate::operation::update_collection::builders::UpdateCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_collection::builders::UpdateCollectionOutputBuilder {
         crate::operation::update_collection::builders::UpdateCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCollectionOutputBuilder {
-    pub(crate) update_collection_detail:
-        ::std::option::Option<crate::types::UpdateCollectionDetail>,
+    pub(crate) update_collection_detail: ::std::option::Option<crate::types::UpdateCollectionDetail>,
     _request_id: Option<String>,
 }
 impl UpdateCollectionOutputBuilder {
@@ -46,17 +40,12 @@ impl UpdateCollectionOutputBuilder {
         self
     }
     /// <p>Details about the updated collection.</p>
-    pub fn set_update_collection_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCollectionDetail>,
-    ) -> Self {
+    pub fn set_update_collection_detail(mut self, input: ::std::option::Option<crate::types::UpdateCollectionDetail>) -> Self {
         self.update_collection_detail = input;
         self
     }
     /// <p>Details about the updated collection.</p>
-    pub fn get_update_collection_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateCollectionDetail> {
+    pub fn get_update_collection_detail(&self) -> &::std::option::Option<crate::types::UpdateCollectionDetail> {
         &self.update_collection_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -30,9 +30,7 @@ impl IpamPoolCidr {
         self.state.as_ref()
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn failure_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamPoolCidrFailureReason> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::IpamPoolCidrFailureReason> {
         self.failure_reason.as_ref()
     }
     /// <p>The IPAM pool CIDR ID.</p>
@@ -53,9 +51,7 @@ impl IpamPoolCidr {
 
 /// A builder for [`IpamPoolCidr`](crate::types::IpamPoolCidr).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamPoolCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::IpamPoolCidrState>,
@@ -84,10 +80,7 @@ impl IpamPoolCidrBuilder {
         self
     }
     /// <p>The state of the CIDR.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolCidrState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamPoolCidrState>) -> Self {
         self.state = input;
         self
     }
@@ -101,32 +94,21 @@ impl IpamPoolCidrBuilder {
         self
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolCidrFailureReason>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::IpamPoolCidrFailureReason>) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn get_failure_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamPoolCidrFailureReason> {
+    pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::IpamPoolCidrFailureReason> {
         &self.failure_reason
     }
     /// <p>The IPAM pool CIDR ID.</p>
-    pub fn ipam_pool_cidr_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_cidr_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_cidr_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPAM pool CIDR ID.</p>
-    pub fn set_ipam_pool_cidr_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_cidr_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_cidr_id = input;
         self
     }

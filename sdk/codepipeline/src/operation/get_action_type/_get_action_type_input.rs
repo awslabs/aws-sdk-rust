@@ -59,9 +59,7 @@ impl GetActionTypeInput {
 
 /// A builder for [`GetActionTypeInput`](crate::operation::get_action_type::GetActionTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActionTypeInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl GetActionTypeInputBuilder {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }
@@ -155,10 +150,7 @@ impl GetActionTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetActionTypeInput`](crate::operation::get_action_type::GetActionTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_action_type::GetActionTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_action_type::GetActionTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_action_type::GetActionTypeInput {
             category: self.category,
             owner: self.owner,

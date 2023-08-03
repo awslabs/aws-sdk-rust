@@ -119,9 +119,7 @@ impl SourceKeyword {
 
 /// A builder for [`SourceKeyword`](crate::types::SourceKeyword).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceKeywordBuilder {
     pub(crate) keyword_input_type: ::std::option::Option<crate::types::KeywordInputType>,
     pub(crate) keyword_value: ::std::option::Option<::std::string::String>,
@@ -155,10 +153,7 @@ impl SourceKeywordBuilder {
     /// <li> <p>When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_keyword_input_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KeywordInputType>,
-    ) -> Self {
+    pub fn set_keyword_input_type(mut self, input: ::std::option::Option<crate::types::KeywordInputType>) -> Self {
         self.keyword_input_type = input;
         self
     }
@@ -207,10 +202,7 @@ impl SourceKeywordBuilder {
     /// <li> <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p> </li>
     /// </ol>
     /// </important>
-    pub fn keyword_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyword_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword_value = ::std::option::Option::Some(input.into());
         self
     }
@@ -244,10 +236,7 @@ impl SourceKeywordBuilder {
     /// <li> <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p> </li>
     /// </ol>
     /// </important>
-    pub fn set_keyword_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyword_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword_value = input;
         self
     }

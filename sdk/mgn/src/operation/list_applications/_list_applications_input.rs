@@ -36,17 +36,14 @@ impl ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListApplicationsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -60,17 +57,12 @@ impl ListApplicationsInputBuilder {
         self
     }
     /// <p>Applications list filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListApplicationsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListApplicationsRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Applications list filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListApplicationsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListApplicationsRequestFilters> {
         &self.filters
     }
     /// <p>Maximum results to return when listing applications.</p>
@@ -118,10 +110,7 @@ impl ListApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_applications::ListApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),

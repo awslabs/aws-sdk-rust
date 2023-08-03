@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`bridges(Option<Vec<ListedBridge>>)`](crate::operation::list_bridges::ListBridgesOutput::bridges): A list of bridge summaries.
     ///   - [`next_token(Option<String>)`](crate::operation::list_bridges::ListBridgesOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
     /// - On failure, responds with [`SdkError<ListBridgesError>`](crate::operation::list_bridges::ListBridgesError)
-    pub fn list_bridges(
-        &self,
-    ) -> crate::operation::list_bridges::builders::ListBridgesFluentBuilder {
+    pub fn list_bridges(&self) -> crate::operation::list_bridges::builders::ListBridgesFluentBuilder {
         crate::operation::list_bridges::builders::ListBridgesFluentBuilder::new(self.handle.clone())
     }
 }

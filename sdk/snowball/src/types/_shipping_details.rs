@@ -49,9 +49,7 @@ impl ShippingDetails {
 
 /// A builder for [`ShippingDetails`](crate::types::ShippingDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShippingDetailsBuilder {
     pub(crate) shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     pub(crate) inbound_shipment: ::std::option::Option<crate::types::Shipment>,
@@ -76,10 +74,7 @@ impl ShippingDetailsBuilder {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
         self
     }
@@ -99,10 +94,7 @@ impl ShippingDetailsBuilder {
         self
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
-    pub fn set_inbound_shipment(
-        mut self,
-        input: ::std::option::Option<crate::types::Shipment>,
-    ) -> Self {
+    pub fn set_inbound_shipment(mut self, input: ::std::option::Option<crate::types::Shipment>) -> Self {
         self.inbound_shipment = input;
         self
     }
@@ -116,10 +108,7 @@ impl ShippingDetailsBuilder {
         self
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
-    pub fn set_outbound_shipment(
-        mut self,
-        input: ::std::option::Option<crate::types::Shipment>,
-    ) -> Self {
+    pub fn set_outbound_shipment(mut self, input: ::std::option::Option<crate::types::Shipment>) -> Self {
         self.outbound_shipment = input;
         self
     }

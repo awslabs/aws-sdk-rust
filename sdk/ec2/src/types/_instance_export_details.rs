@@ -30,9 +30,7 @@ impl InstanceExportDetails {
 
 /// A builder for [`InstanceExportDetails`](crate::types::InstanceExportDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceExportDetailsBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
@@ -58,17 +56,12 @@ impl InstanceExportDetailsBuilder {
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn set_target_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportEnvironment>,
-    ) -> Self {
+    pub fn set_target_environment(mut self, input: ::std::option::Option<crate::types::ExportEnvironment>) -> Self {
         self.target_environment = input;
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn get_target_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportEnvironment> {
+    pub fn get_target_environment(&self) -> &::std::option::Option<crate::types::ExportEnvironment> {
         &self.target_environment
     }
     /// Consumes the builder and constructs a [`InstanceExportDetails`](crate::types::InstanceExportDetails).

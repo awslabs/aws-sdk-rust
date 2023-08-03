@@ -27,9 +27,7 @@ impl GetBackendStorageOutput {
         self.backend_environment_name.as_deref()
     }
     /// <p>The resource configuration for the backend storage resource.</p>
-    pub fn resource_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GetBackendStorageResourceConfig> {
+    pub fn resource_config(&self) -> ::std::option::Option<&crate::types::GetBackendStorageResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of the storage resource.</p>
@@ -44,22 +42,18 @@ impl ::aws_http::request_id::RequestId for GetBackendStorageOutput {
 }
 impl GetBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendStorageOutput`](crate::operation::get_backend_storage::GetBackendStorageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_backend_storage::builders::GetBackendStorageOutputBuilder {
+    pub fn builder() -> crate::operation::get_backend_storage::builders::GetBackendStorageOutputBuilder {
         crate::operation::get_backend_storage::builders::GetBackendStorageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackendStorageOutput`](crate::operation::get_backend_storage::GetBackendStorageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackendStorageOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_config:
-        ::std::option::Option<crate::types::GetBackendStorageResourceConfig>,
+    pub(crate) resource_config: ::std::option::Option<crate::types::GetBackendStorageResourceConfig>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,18 +73,12 @@ impl GetBackendStorageOutputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -104,32 +92,21 @@ impl GetBackendStorageOutputBuilder {
         self
     }
     /// <p>The resource configuration for the backend storage resource.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::GetBackendStorageResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::GetBackendStorageResourceConfig>) -> Self {
         self.resource_config = input;
         self
     }
     /// <p>The resource configuration for the backend storage resource.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetBackendStorageResourceConfig> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::GetBackendStorageResourceConfig> {
         &self.resource_config
     }
     /// <p>The name of the storage resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the storage resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }

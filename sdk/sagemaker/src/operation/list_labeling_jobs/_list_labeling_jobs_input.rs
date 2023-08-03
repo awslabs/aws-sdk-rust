@@ -48,9 +48,7 @@ impl ListLabelingJobsInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
@@ -80,17 +78,14 @@ impl ListLabelingJobsInput {
 }
 impl ListLabelingJobsInput {
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsInput`](crate::operation::list_labeling_jobs::ListLabelingJobsInput).
-    pub fn builder() -> crate::operation::list_labeling_jobs::builders::ListLabelingJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_labeling_jobs::builders::ListLabelingJobsInputBuilder {
         crate::operation::list_labeling_jobs::builders::ListLabelingJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLabelingJobsInput`](crate::operation::list_labeling_jobs::ListLabelingJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelingJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -110,10 +105,7 @@ impl ListLabelingJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -127,10 +119,7 @@ impl ListLabelingJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -144,17 +133,12 @@ impl ListLabelingJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
@@ -163,17 +147,12 @@ impl ListLabelingJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
@@ -205,18 +184,12 @@ impl ListLabelingJobsInputBuilder {
         &self.next_token
     }
     /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -258,10 +231,7 @@ impl ListLabelingJobsInputBuilder {
         self
     }
     /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::LabelingJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -272,23 +242,18 @@ impl ListLabelingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListLabelingJobsInput`](crate::operation::list_labeling_jobs::ListLabelingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_labeling_jobs::ListLabelingJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_labeling_jobs::ListLabelingJobsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                name_contains: self.name_contains,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                status_equals: self.status_equals,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_labeling_jobs::ListLabelingJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_labeling_jobs::ListLabelingJobsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            last_modified_time_after: self.last_modified_time_after,
+            last_modified_time_before: self.last_modified_time_before,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            name_contains: self.name_contains,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            status_equals: self.status_equals,
+        })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorGroupOutput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput) with field(s):
     ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput::voice_connector_group): <p>The details of the Voice Connector group.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorGroupError>`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError)
-    pub fn get_voice_connector_group(
-        &self,
-    ) -> crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupFluentBuilder
-    {
+    pub fn get_voice_connector_group(&self) -> crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupFluentBuilder {
         crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupFluentBuilder::new(self.handle.clone())
     }
 }

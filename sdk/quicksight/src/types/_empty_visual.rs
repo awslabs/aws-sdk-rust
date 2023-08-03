@@ -38,9 +38,7 @@ impl EmptyVisual {
 
 /// A builder for [`EmptyVisual`](crate::types::EmptyVisual).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmptyVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ impl EmptyVisualBuilder {
         &self.visual_id
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub fn data_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub fn set_data_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_identifier = input;
         self
     }
@@ -93,17 +85,12 @@ impl EmptyVisualBuilder {
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`EmptyVisual`](crate::types::EmptyVisual).

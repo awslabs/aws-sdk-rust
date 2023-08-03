@@ -8,8 +8,7 @@ pub struct BatchEvaluateGeofencesInput {
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
     #[doc(hidden)]
-    pub device_position_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
+    pub device_position_updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
 }
 impl BatchEvaluateGeofencesInput {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
@@ -17,45 +16,32 @@ impl BatchEvaluateGeofencesInput {
         self.collection_name.as_deref()
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn device_position_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DevicePositionUpdate]> {
+    pub fn device_position_updates(&self) -> ::std::option::Option<&[crate::types::DevicePositionUpdate]> {
         self.device_position_updates.as_deref()
     }
 }
 impl BatchEvaluateGeofencesInput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder {
         crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
-    pub(crate) device_position_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
+    pub(crate) device_position_updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
 }
 impl BatchEvaluateGeofencesInputBuilder {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -75,31 +61,22 @@ impl BatchEvaluateGeofencesInputBuilder {
         self
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn set_device_position_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
-    ) -> Self {
+    pub fn set_device_position_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>) -> Self {
         self.device_position_updates = input;
         self
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn get_device_position_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+    pub fn get_device_position_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
         &self.device_position_updates
     }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput {
-                collection_name: self.collection_name,
-                device_position_updates: self.device_position_updates,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput {
+            collection_name: self.collection_name,
+            device_position_updates: self.device_position_updates,
+        })
     }
 }

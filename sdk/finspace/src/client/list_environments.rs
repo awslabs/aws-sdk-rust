@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`environments(Option<Vec<Environment>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environments): <p>A list of all of your FinSpace environments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
-    pub fn list_environments(
-        &self,
-    ) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
+        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl StopPipelineExecutionFluentBuilder {
         }
     }
     /// Access the StopPipelineExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StopPipelineExecutionFluentBuilder {
             crate::operation::stop_pipeline_execution::StopPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_pipeline_execution::StopPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_pipeline_execution::StopPipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StopPipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StopPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_pipeline_execution::StopPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_pipeline_execution::StopPipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StopPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_pipeline_execution::StopPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_pipeline_execution::StopPipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl StopPipelineExecutionFluentBuilder {
             crate::operation::stop_pipeline_execution::StopPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_pipeline_execution::StopPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_pipeline_execution::StopPipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline to stop.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline to stop.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl StopPipelineExecutionFluentBuilder {
         self.inner.get_pipeline_name()
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_id(input.into());
         self
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_id(input);
         self
     }

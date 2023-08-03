@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput) with field(s):
     ///   - [`verified_access_endpoint(Option<VerifiedAccessEndpoint>)`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput::verified_access_endpoint): <p>The ID of the Verified Access endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteVerifiedAccessEndpointError>`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointError)
-    pub fn delete_verified_access_endpoint(&self) -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointFluentBuilder{
+    pub fn delete_verified_access_endpoint(
+        &self,
+    ) -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointFluentBuilder {
         crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ScheduleEntry>>)`](crate::operation::get_channel_schedule::GetChannelScheduleOutput::items): <p>A list of schedule entries for the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_channel_schedule::GetChannelScheduleOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetChannelScheduleError>`](crate::operation::get_channel_schedule::GetChannelScheduleError)
-    pub fn get_channel_schedule(
-        &self,
-    ) -> crate::operation::get_channel_schedule::builders::GetChannelScheduleFluentBuilder {
-        crate::operation::get_channel_schedule::builders::GetChannelScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_channel_schedule(&self) -> crate::operation::get_channel_schedule::builders::GetChannelScheduleFluentBuilder {
+        crate::operation::get_channel_schedule::builders::GetChannelScheduleFluentBuilder::new(self.handle.clone())
     }
 }

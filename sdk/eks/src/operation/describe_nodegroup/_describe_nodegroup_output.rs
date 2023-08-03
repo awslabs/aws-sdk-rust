@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeNodegroupOutput {
 }
 impl DescribeNodegroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_nodegroup::builders::DescribeNodegroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_nodegroup::builders::DescribeNodegroupOutputBuilder {
         crate::operation::describe_nodegroup::builders::DescribeNodegroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodegroupOutputBuilder {
     pub(crate) nodegroup: ::std::option::Option<crate::types::Nodegroup>,
     _request_id: Option<String>,

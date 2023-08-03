@@ -28,8 +28,7 @@ impl UpdateResourceDataSyncInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceDataSyncFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder,
+    inner: crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder,
 }
 impl UpdateResourceDataSyncFluentBuilder {
     /// Creates a new `UpdateResourceDataSync`.
@@ -40,10 +39,7 @@ impl UpdateResourceDataSyncFluentBuilder {
         }
     }
     /// Access the UpdateResourceDataSync as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateResourceDataSyncFluentBuilder {
             crate::operation::update_resource_data_sync::UpdateResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_data_sync::UpdateResourceDataSyncError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateResourceDataSyncFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_data_sync::UpdateResourceDataSyncError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_data_sync::UpdateResourceDataSyncError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl UpdateResourceDataSyncFluentBuilder {
             crate::operation::update_resource_data_sync::UpdateResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_data_sync::UpdateResourceDataSyncError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +145,7 @@ impl UpdateResourceDataSyncFluentBuilder {
         self
     }
     /// <p>Specify information about the data sources to synchronize.</p>
-    pub fn set_sync_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncSource>,
-    ) -> Self {
+    pub fn set_sync_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncSource>) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self
     }

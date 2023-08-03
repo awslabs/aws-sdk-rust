@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicRefreshError>`](crate::operation::describe_topic_refresh::DescribeTopicRefreshError)
-    pub fn describe_topic_refresh(
-        &self,
-    ) -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshFluentBuilder {
-        crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_topic_refresh(&self) -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshFluentBuilder {
+        crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshFluentBuilder::new(self.handle.clone())
     }
 }

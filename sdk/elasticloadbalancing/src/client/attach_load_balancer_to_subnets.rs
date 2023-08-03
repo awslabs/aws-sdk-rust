@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AttachLoadBalancerToSubnetsOutput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput) with field(s):
     ///   - [`subnets(Option<Vec<String>>)`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput::subnets): <p>The IDs of the subnets attached to the load balancer.</p>
     /// - On failure, responds with [`SdkError<AttachLoadBalancerToSubnetsError>`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError)
-    pub fn attach_load_balancer_to_subnets(&self) -> crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsFluentBuilder{
+    pub fn attach_load_balancer_to_subnets(
+        &self,
+    ) -> crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsFluentBuilder {
         crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsFluentBuilder::new(self.handle.clone())
     }
 }

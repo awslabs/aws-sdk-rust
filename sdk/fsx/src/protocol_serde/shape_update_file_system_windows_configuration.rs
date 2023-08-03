@@ -4,14 +4,10 @@ pub fn ser_update_file_system_windows_configuration(
     input: &crate::types::UpdateFileSystemWindowsConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_1.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_1.as_str());
     }
     if let Some(var_2) = &input.daily_automatic_backup_start_time {
-        object
-            .key("DailyAutomaticBackupStartTime")
-            .string(var_2.as_str());
+        object.key("DailyAutomaticBackupStartTime").string(var_2.as_str());
     }
     if let Some(var_3) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(
@@ -27,10 +23,11 @@ pub fn ser_update_file_system_windows_configuration(
     }
     if let Some(var_5) = &input.self_managed_active_directory_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object
-            .key("SelfManagedActiveDirectoryConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_self_managed_active_directory_configuration_updates::ser_self_managed_active_directory_configuration_updates(&mut object_6, var_5)?;
+        let mut object_6 = object.key("SelfManagedActiveDirectoryConfiguration").start_object();
+        crate::protocol_serde::shape_self_managed_active_directory_configuration_updates::ser_self_managed_active_directory_configuration_updates(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.audit_log_configuration {

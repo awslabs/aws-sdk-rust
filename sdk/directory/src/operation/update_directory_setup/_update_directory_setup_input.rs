@@ -36,17 +36,14 @@ impl UpdateDirectorySetupInput {
 }
 impl UpdateDirectorySetupInput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectorySetupInput`](crate::operation::update_directory_setup::UpdateDirectorySetupInput).
-    pub fn builder(
-    ) -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupInputBuilder {
+    pub fn builder() -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupInputBuilder {
         crate::operation::update_directory_setup::builders::UpdateDirectorySetupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDirectorySetupInput`](crate::operation::update_directory_setup::UpdateDirectorySetupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectorySetupInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_type: ::std::option::Option<crate::types::UpdateType>,
@@ -74,10 +71,7 @@ impl UpdateDirectorySetupInputBuilder {
         self
     }
     /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.update_type = input;
         self
     }
@@ -91,10 +85,7 @@ impl UpdateDirectorySetupInputBuilder {
         self
     }
     /// <p> The settings for the OS update that needs to be performed on the directory. </p>
-    pub fn set_os_update_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OsUpdateSettings>,
-    ) -> Self {
+    pub fn set_os_update_settings(mut self, input: ::std::option::Option<crate::types::OsUpdateSettings>) -> Self {
         self.os_update_settings = input;
         self
     }
@@ -119,17 +110,13 @@ impl UpdateDirectorySetupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDirectorySetupInput`](crate::operation::update_directory_setup::UpdateDirectorySetupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_directory_setup::UpdateDirectorySetupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_directory_setup::UpdateDirectorySetupInput {
-                directory_id: self.directory_id,
-                update_type: self.update_type,
-                os_update_settings: self.os_update_settings,
-                create_snapshot_before_update: self.create_snapshot_before_update,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_directory_setup::UpdateDirectorySetupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_directory_setup::UpdateDirectorySetupInput {
+            directory_id: self.directory_id,
+            update_type: self.update_type,
+            os_update_settings: self.os_update_settings,
+            create_snapshot_before_update: self.create_snapshot_before_update,
+        })
     }
 }

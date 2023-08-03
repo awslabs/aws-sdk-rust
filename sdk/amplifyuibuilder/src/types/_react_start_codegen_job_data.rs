@@ -51,9 +51,7 @@ impl ReactStartCodegenJobData {
 
 /// A builder for [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReactStartCodegenJobDataBuilder {
     pub(crate) module: ::std::option::Option<crate::types::JsModule>,
     pub(crate) target: ::std::option::Option<crate::types::JsTarget>,

@@ -8,21 +8,16 @@ pub struct BatchCreateChannelMembershipOutput {
     pub batch_channel_memberships: ::std::option::Option<crate::types::BatchChannelMemberships>,
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
-    pub fn batch_channel_memberships(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchChannelMemberships> {
+    pub fn batch_channel_memberships(&self) -> ::std::option::Option<&crate::types::BatchChannelMemberships> {
         self.batch_channel_memberships.as_ref()
     }
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchCreateChannelMembershipError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchCreateChannelMembershipError]> {
         self.errors.as_deref()
     }
 }
@@ -33,44 +28,32 @@ impl ::aws_http::request_id::RequestId for BatchCreateChannelMembershipOutput {
 }
 impl BatchCreateChannelMembershipOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipOutput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput).
-    pub fn builder() -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder{
+    pub fn builder() -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder {
         crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateChannelMembershipOutput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipOutputBuilder {
-    pub(crate) batch_channel_memberships:
-        ::std::option::Option<crate::types::BatchChannelMemberships>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
+    pub(crate) batch_channel_memberships: ::std::option::Option<crate::types::BatchChannelMemberships>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateChannelMembershipOutputBuilder {
     /// <p>The list of channel memberships in the response.</p>
-    pub fn batch_channel_memberships(
-        mut self,
-        input: crate::types::BatchChannelMemberships,
-    ) -> Self {
+    pub fn batch_channel_memberships(mut self, input: crate::types::BatchChannelMemberships) -> Self {
         self.batch_channel_memberships = ::std::option::Option::Some(input);
         self
     }
     /// <p>The list of channel memberships in the response.</p>
-    pub fn set_batch_channel_memberships(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchChannelMemberships>,
-    ) -> Self {
+    pub fn set_batch_channel_memberships(mut self, input: ::std::option::Option<crate::types::BatchChannelMemberships>) -> Self {
         self.batch_channel_memberships = input;
         self
     }
     /// <p>The list of channel memberships in the response.</p>
-    pub fn get_batch_channel_memberships(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchChannelMemberships> {
+    pub fn get_batch_channel_memberships(&self) -> &::std::option::Option<crate::types::BatchChannelMemberships> {
         &self.batch_channel_memberships
     }
     /// Appends an item to `errors`.
@@ -85,20 +68,12 @@ impl BatchCreateChannelMembershipOutputBuilder {
         self
     }
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -111,9 +86,7 @@ impl BatchCreateChannelMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCreateChannelMembershipOutput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput {
+    pub fn build(self) -> crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput {
         crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput {
             batch_channel_memberships: self.batch_channel_memberships,
             errors: self.errors,

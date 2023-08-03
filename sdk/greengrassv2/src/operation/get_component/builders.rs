@@ -10,10 +10,7 @@ impl GetComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_component::GetComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component::GetComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_component();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetComponentFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_component::GetComponent,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_component::GetComponent, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetComponentFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_component::GetComponent,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_component::GetComponent, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError>,
     > {
         self.customize_middleware().await
@@ -118,17 +106,12 @@ impl GetComponentFluentBuilder {
         self
     }
     /// <p>The format of the recipe.</p>
-    pub fn set_recipe_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeOutputFormat>,
-    ) -> Self {
+    pub fn set_recipe_output_format(mut self, input: ::std::option::Option<crate::types::RecipeOutputFormat>) -> Self {
         self.inner = self.inner.set_recipe_output_format(input);
         self
     }
     /// <p>The format of the recipe.</p>
-    pub fn get_recipe_output_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
+    pub fn get_recipe_output_format(&self) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
         self.inner.get_recipe_output_format()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>

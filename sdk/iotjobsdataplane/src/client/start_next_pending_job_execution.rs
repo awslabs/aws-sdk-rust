@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput) with field(s):
     ///   - [`execution(Option<JobExecution>)`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput::execution): <p>A JobExecution object.</p>
     /// - On failure, responds with [`SdkError<StartNextPendingJobExecutionError>`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionError)
-    pub fn start_next_pending_job_execution(&self) -> crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionFluentBuilder{
+    pub fn start_next_pending_job_execution(
+        &self,
+    ) -> crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionFluentBuilder {
         crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionFluentBuilder::new(self.handle.clone())
     }
 }

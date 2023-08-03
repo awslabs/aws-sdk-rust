@@ -33,8 +33,7 @@ pub struct CreateRecipeJobInput {
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     #[doc(hidden)]
-    pub data_catalog_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
     #[doc(hidden)]
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
@@ -49,9 +48,7 @@ pub struct CreateRecipeJobInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     #[doc(hidden)]
     pub timeout: i32,
@@ -94,9 +91,7 @@ impl CreateRecipeJobInput {
         self.outputs.as_deref()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
+    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
@@ -116,11 +111,7 @@ impl CreateRecipeJobInput {
         self.role_arn.as_deref()
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -137,9 +128,7 @@ impl CreateRecipeJobInput {
 
 /// A builder for [`CreateRecipeJobInput`](crate::operation::create_recipe_job::CreateRecipeJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRecipeJobInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -149,16 +138,12 @@ pub struct CreateRecipeJobInputBuilder {
     pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) max_retries: ::std::option::Option<i32>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    pub(crate) data_catalog_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    pub(crate) database_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
+    pub(crate) data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub(crate) database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) timeout: ::std::option::Option<i32>,
 }
 impl CreateRecipeJobInputBuilder {
@@ -177,18 +162,12 @@ impl CreateRecipeJobInputBuilder {
         &self.dataset_name
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
@@ -210,10 +189,7 @@ impl CreateRecipeJobInputBuilder {
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMode>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -245,10 +221,7 @@ impl CreateRecipeJobInputBuilder {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::LogSubscription>,
-    ) -> Self {
+    pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
         self.log_subscription = input;
         self
     }
@@ -296,10 +269,7 @@ impl CreateRecipeJobInputBuilder {
         self
     }
     /// <p>One or more artifacts that represent the output from running the job.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
@@ -319,17 +289,12 @@ impl CreateRecipeJobInputBuilder {
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    ) -> Self {
+    pub fn set_data_catalog_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
         self.data_catalog_outputs = input;
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn get_data_catalog_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+    pub fn get_data_catalog_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
         &self.data_catalog_outputs
     }
     /// Appends an item to `database_outputs`.
@@ -344,17 +309,12 @@ impl CreateRecipeJobInputBuilder {
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
-    pub fn set_database_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
-    ) -> Self {
+    pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
         self.database_outputs = input;
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
-    pub fn get_database_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+    pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
         &self.database_outputs
     }
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
@@ -377,10 +337,7 @@ impl CreateRecipeJobInputBuilder {
         self
     }
     /// <p>Represents the name and version of a DataBrew recipe.</p>
-    pub fn set_recipe_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeReference>,
-    ) -> Self {
+    pub fn set_recipe_reference(mut self, input: ::std::option::Option<crate::types::RecipeReference>) -> Self {
         self.recipe_reference = input;
         self
     }
@@ -407,32 +364,19 @@ impl CreateRecipeJobInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -452,10 +396,7 @@ impl CreateRecipeJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateRecipeJobInput`](crate::operation::create_recipe_job::CreateRecipeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_recipe_job::CreateRecipeJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_recipe_job::CreateRecipeJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_recipe_job::CreateRecipeJobInput {
             dataset_name: self.dataset_name,
             encryption_key_arn: self.encryption_key_arn,

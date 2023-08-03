@@ -9,10 +9,7 @@ pub fn ser_register_cluster_input(
     if let Some(var_2) = &input.connector_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("connectorConfig").start_object();
-        crate::protocol_serde::shape_connector_config_request::ser_connector_config_request(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_connector_config_request::ser_connector_config_request(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.name {

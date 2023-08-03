@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociatePhoneNumberContactFlowOut
 }
 impl DisassociatePhoneNumberContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberContactFlowOutput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput).
-    pub fn builder() -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowOutputBuilder {
         crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePhoneNumberContactFlowOutput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumberContactFlowOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociatePhoneNumberContactFlowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumberContactFlowOutput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput).
-    pub fn build(self) -> crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput{
+    pub fn build(self) -> crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput {
         crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput {
             _request_id: self._request_id,
         }

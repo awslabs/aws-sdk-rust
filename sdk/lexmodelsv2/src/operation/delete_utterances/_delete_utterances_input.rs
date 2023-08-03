@@ -29,17 +29,14 @@ impl DeleteUtterancesInput {
 }
 impl DeleteUtterancesInput {
     /// Creates a new builder-style object to manufacture [`DeleteUtterancesInput`](crate::operation::delete_utterances::DeleteUtterancesInput).
-    pub fn builder() -> crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder {
         crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUtterancesInput`](crate::operation::delete_utterances::DeleteUtterancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUtterancesInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
@@ -91,10 +88,7 @@ impl DeleteUtterancesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUtterancesInput`](crate::operation::delete_utterances::DeleteUtterancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_utterances::DeleteUtterancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_utterances::DeleteUtterancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_utterances::DeleteUtterancesInput {
             bot_id: self.bot_id,
             locale_id: self.locale_id,

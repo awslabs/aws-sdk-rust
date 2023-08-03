@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput) with field(s):
     ///   - [`accelerator_attributes(Option<CustomRoutingAcceleratorAttributes>)`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput::accelerator_attributes): <p>Updated custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<UpdateCustomRoutingAcceleratorAttributesError>`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError)
-    pub fn update_custom_routing_accelerator_attributes(&self) -> crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesFluentBuilder{
-        crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesFluentBuilder::new(self.handle.clone())
+    pub fn update_custom_routing_accelerator_attributes(
+        &self,
+    ) -> crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
+        crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

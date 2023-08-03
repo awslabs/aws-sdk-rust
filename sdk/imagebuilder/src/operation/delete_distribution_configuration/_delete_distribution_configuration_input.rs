@@ -15,40 +15,30 @@ impl DeleteDistributionConfigurationInput {
 }
 impl DeleteDistributionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDistributionConfigurationInput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationInput).
-    pub fn builder() -> crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationInputBuilder {
         crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDistributionConfigurationInput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationInputBuilder {
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDistributionConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     /// Consumes the builder and constructs a [`DeleteDistributionConfigurationInput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationInput).
@@ -60,9 +50,8 @@ impl DeleteDistributionConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationInput {
-                distribution_configuration_arn: self.distribution_configuration_arn
-                ,
-            }
+                distribution_configuration_arn: self.distribution_configuration_arn,
+            },
         )
     }
 }

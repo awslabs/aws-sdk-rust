@@ -37,13 +37,10 @@ impl SensitiveDataResult {
 
 /// A builder for [`SensitiveDataResult`](crate::types::SensitiveDataResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SensitiveDataResultBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
-    pub(crate) detections:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
+    pub(crate) detections: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
     pub(crate) total_count: ::std::option::Option<i64>,
 }
 impl SensitiveDataResultBuilder {
@@ -73,17 +70,12 @@ impl SensitiveDataResultBuilder {
         self
     }
     /// <p>The list of detected instances of sensitive data.</p>
-    pub fn set_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
-    ) -> Self {
+    pub fn set_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>) -> Self {
         self.detections = input;
         self
     }
     /// <p>The list of detected instances of sensitive data.</p>
-    pub fn get_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>> {
+    pub fn get_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>> {
         &self.detections
     }
     /// <p>The total number of occurrences of sensitive data.</p>

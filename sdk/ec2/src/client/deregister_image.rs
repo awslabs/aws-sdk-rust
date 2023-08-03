@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeregisterImageOutput`](crate::operation::deregister_image::DeregisterImageOutput)
     /// - On failure, responds with [`SdkError<DeregisterImageError>`](crate::operation::deregister_image::DeregisterImageError)
-    pub fn deregister_image(
-        &self,
-    ) -> crate::operation::deregister_image::builders::DeregisterImageFluentBuilder {
-        crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_image(&self) -> crate::operation::deregister_image::builders::DeregisterImageFluentBuilder {
+        crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::new(self.handle.clone())
     }
 }

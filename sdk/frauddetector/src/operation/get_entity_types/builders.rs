@@ -10,10 +10,7 @@ impl GetEntityTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_entity_types::GetEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entity_types::GetEntityTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entity_types::GetEntityTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_entity_types();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetEntityTypesFluentBuilder {
         }
     }
     /// Access the GetEntityTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_entity_types::builders::GetEntityTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_entity_types::builders::GetEntityTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetEntityTypesFluentBuilder {
             crate::operation::get_entity_types::GetEntityTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entity_types::GetEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entity_types::GetEntityTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetEntityTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetEntityTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_entity_types::GetEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entity_types::GetEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entity_types::GetEntityTypesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetEntityTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_entity_types::GetEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entity_types::GetEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entity_types::GetEntityTypesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetEntityTypesFluentBuilder {
             crate::operation::get_entity_types::GetEntityTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entity_types::GetEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entity_types::GetEntityTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_entity_types::paginator::GetEntityTypesPaginator {
-        crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_entity_types::paginator::GetEntityTypesPaginator {
+        crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`deployments(Option<Vec<BulkDeploymentResult>>)`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput::deployments): A list of the individual group deployments in the bulk deployment operation.
     ///   - [`next_token(Option<String>)`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListBulkDeploymentDetailedReportsError>`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError)
-    pub fn list_bulk_deployment_detailed_reports(&self) -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsFluentBuilder{
+    pub fn list_bulk_deployment_detailed_reports(
+        &self,
+    ) -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsFluentBuilder {
         crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsFluentBuilder::new(self.handle.clone())
     }
 }

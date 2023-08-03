@@ -21,9 +21,7 @@ pub enum DialerConfig {
 impl DialerConfig {
     /// Tries to convert the enum instance into [`PredictiveDialerConfig`](crate::types::DialerConfig::PredictiveDialerConfig), extracting the inner [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_predictive_dialer_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::PredictiveDialerConfig, &Self> {
+    pub fn as_predictive_dialer_config(&self) -> ::std::result::Result<&crate::types::PredictiveDialerConfig, &Self> {
         if let DialerConfig::PredictiveDialerConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl DialerConfig {
     }
     /// Tries to convert the enum instance into [`ProgressiveDialerConfig`](crate::types::DialerConfig::ProgressiveDialerConfig), extracting the inner [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_progressive_dialer_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ProgressiveDialerConfig, &Self> {
+    pub fn as_progressive_dialer_config(&self) -> ::std::result::Result<&crate::types::ProgressiveDialerConfig, &Self> {
         if let DialerConfig::ProgressiveDialerConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

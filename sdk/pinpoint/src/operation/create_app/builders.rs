@@ -10,10 +10,7 @@ impl CreateAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_app::CreateAppOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app::CreateAppError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_app();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateAppFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,34 +95,23 @@ impl CreateAppFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    pub fn create_application_request(
-        mut self,
-        input: crate::types::CreateApplicationRequest,
-    ) -> Self {
+    pub fn create_application_request(mut self, input: crate::types::CreateApplicationRequest) -> Self {
         self.inner = self.inner.create_application_request(input);
         self
     }
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    pub fn set_create_application_request(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateApplicationRequest>,
-    ) -> Self {
+    pub fn set_create_application_request(mut self, input: ::std::option::Option<crate::types::CreateApplicationRequest>) -> Self {
         self.inner = self.inner.set_create_application_request(input);
         self
     }
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    pub fn get_create_application_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateApplicationRequest> {
+    pub fn get_create_application_request(&self) -> &::std::option::Option<crate::types::CreateApplicationRequest> {
         self.inner.get_create_application_request()
     }
 }

@@ -43,17 +43,14 @@ impl ListInventoryEntriesInput {
 }
 impl ListInventoryEntriesInput {
     /// Creates a new builder-style object to manufacture [`ListInventoryEntriesInput`](crate::operation::list_inventory_entries::ListInventoryEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder {
+    pub fn builder() -> crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder {
         crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInventoryEntriesInput`](crate::operation::list_inventory_entries::ListInventoryEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInventoryEntriesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -102,17 +99,12 @@ impl ListInventoryEntriesInputBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         &self.filters
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -146,18 +138,14 @@ impl ListInventoryEntriesInputBuilder {
     /// Consumes the builder and constructs a [`ListInventoryEntriesInput`](crate::operation::list_inventory_entries::ListInventoryEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_inventory_entries::ListInventoryEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_inventory_entries::ListInventoryEntriesInput {
-                instance_id: self.instance_id,
-                type_name: self.type_name,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_inventory_entries::ListInventoryEntriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_inventory_entries::ListInventoryEntriesInput {
+            instance_id: self.instance_id,
+            type_name: self.type_name,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

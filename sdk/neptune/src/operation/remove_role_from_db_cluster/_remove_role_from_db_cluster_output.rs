@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveRoleFromDbClusterOutput {
 }
 impl RemoveRoleFromDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterOutput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterOutputBuilder {
         crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveRoleFromDbClusterOutput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRoleFromDbClusterOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl RemoveRoleFromDbClusterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveRoleFromDbClusterOutput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput {
+    pub fn build(self) -> crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput {
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput {
             _request_id: self._request_id,
         }

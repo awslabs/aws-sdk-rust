@@ -4,55 +4,26 @@ pub fn de_get_connection_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_connection::GetConnectionOutput,
-    crate::operation::get_connection::GetConnectionError,
-> {
+) -> std::result::Result<crate::operation::get_connection::GetConnectionOutput, crate::operation::get_connection::GetConnectionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::get_connection::GetConnectionError::unhandled(generic))
-        }
+        None => return Err(crate::operation::get_connection::GetConnectionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => {
-            crate::operation::get_connection::GetConnectionError::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "GoneException" => crate::operation::get_connection::GetConnectionError::GoneException({
+        "ForbiddenException" => crate::operation::get_connection::GetConnectionError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::GoneExceptionBuilder::default();
-                output = crate::protocol_serde::shape_gone_exception::de_gone_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -61,23 +32,36 @@ pub fn de_get_connection_http_error(
             }
             tmp
         }),
-        "LimitExceededException" => {
-            crate::operation::get_connection::GetConnectionError::LimitExceededException({
+        "GoneException" => crate::operation::get_connection::GetConnectionError::GoneException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::GoneExceptionBuilder::default();
+                output = crate::protocol_serde::shape_gone_exception::de_gone_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::get_connection::GetConnectionError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_connection::GetConnectionError::generic(generic),
     })
 }
@@ -87,20 +71,13 @@ pub fn de_get_connection_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_connection::GetConnectionOutput,
-    crate::operation::get_connection::GetConnectionError,
-> {
+) -> std::result::Result<crate::operation::get_connection::GetConnectionOutput, crate::operation::get_connection::GetConnectionError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_connection::builders::GetConnectionOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_get_connection::de_get_connection(_response_body, output)
-                .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::get_connection::builders::GetConnectionOutputBuilder::default();
+        output = crate::protocol_serde::shape_get_connection::de_get_connection(_response_body, output)
+            .map_err(crate::operation::get_connection::GetConnectionError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -108,60 +85,43 @@ pub fn de_get_connection_http_response_with_props(
 pub(crate) fn de_get_connection(
     value: &[u8],
     mut builder: crate::operation::get_connection::builders::GetConnectionOutputBuilder,
-) -> Result<
-    crate::operation::get_connection::builders::GetConnectionOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::get_connection::builders::GetConnectionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "connectedAt" => {
-                        builder = builder.set_connected_at(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    "identity" => {
-                        builder = builder.set_identity(
-                            crate::protocol_serde::shape_identity::de_identity(tokens)?,
-                        );
-                    }
-                    "lastActiveAt" => {
-                        builder = builder.set_last_active_at(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "connectedAt" => {
+                    builder = builder.set_connected_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
                 }
-            }
+                "identity" => {
+                    builder = builder.set_identity(crate::protocol_serde::shape_identity::de_identity(tokens)?);
+                }
+                "lastActiveAt" => {
+                    builder = builder.set_last_active_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

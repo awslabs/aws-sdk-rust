@@ -5,8 +5,7 @@
 pub struct ListBuiltInIntentsOutput {
     /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub built_in_intent_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>,
+    pub built_in_intent_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct ListBuiltInIntentsOutput {
 }
 impl ListBuiltInIntentsOutput {
     /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn built_in_intent_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BuiltInIntentSummary]> {
+    pub fn built_in_intent_summaries(&self) -> ::std::option::Option<&[crate::types::BuiltInIntentSummary]> {
         self.built_in_intent_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
@@ -38,21 +35,16 @@ impl ::aws_http::request_id::RequestId for ListBuiltInIntentsOutput {
 }
 impl ListBuiltInIntentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInIntentsOutput`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsOutputBuilder {
-        crate::operation::list_built_in_intents::builders::ListBuiltInIntentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsOutputBuilder {
+        crate::operation::list_built_in_intents::builders::ListBuiltInIntentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuiltInIntentsOutput`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuiltInIntentsOutputBuilder {
-    pub(crate) built_in_intent_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>,
+    pub(crate) built_in_intent_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -70,17 +62,12 @@ impl ListBuiltInIntentsOutputBuilder {
         self
     }
     /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_built_in_intent_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>,
-    ) -> Self {
+    pub fn set_built_in_intent_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>) -> Self {
         self.built_in_intent_summaries = input;
         self
     }
     /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_built_in_intent_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>> {
+    pub fn get_built_in_intent_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>> {
         &self.built_in_intent_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>

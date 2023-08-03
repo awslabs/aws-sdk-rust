@@ -9,104 +9,101 @@ pub fn de_delete_topic_rule_destination_http_error(
     crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictingResourceUpdateException" => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConflictingResourceUpdateException" => {
+            crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::ConflictingResourceUpdateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictingResourceUpdateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(_response_body, output).map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InternalException" => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::InternalException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output).map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::InvalidRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ServiceUnavailableException" => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ServiceUnavailableException" => {
+            crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "UnauthorizedException" => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::UnauthorizedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::generic(generic)
+        _ => crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError::generic(generic),
     })
 }
 
@@ -122,9 +119,7 @@ pub fn de_delete_topic_rule_destination_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

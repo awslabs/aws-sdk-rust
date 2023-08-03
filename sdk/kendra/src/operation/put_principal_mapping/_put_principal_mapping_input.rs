@@ -62,18 +62,14 @@ impl PutPrincipalMappingInput {
 }
 impl PutPrincipalMappingInput {
     /// Creates a new builder-style object to manufacture [`PutPrincipalMappingInput`](crate::operation::put_principal_mapping::PutPrincipalMappingInput).
-    pub fn builder(
-    ) -> crate::operation::put_principal_mapping::builders::PutPrincipalMappingInputBuilder {
-        crate::operation::put_principal_mapping::builders::PutPrincipalMappingInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_principal_mapping::builders::PutPrincipalMappingInputBuilder {
+        crate::operation::put_principal_mapping::builders::PutPrincipalMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPrincipalMappingInput`](crate::operation::put_principal_mapping::PutPrincipalMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPrincipalMappingInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -99,19 +95,13 @@ impl PutPrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the data source you want to map users to their groups.</p>
     /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data source you want to map users to their groups.</p>
     /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -144,10 +134,7 @@ impl PutPrincipalMappingInputBuilder {
     /// <p>The list that contains your users or sub groups that belong the same group.</p>
     /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
-    pub fn set_group_members(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupMembers>,
-    ) -> Self {
+    pub fn set_group_members(mut self, input: ::std::option::Option<crate::types::GroupMembers>) -> Self {
         self.group_members = input;
         self
     }
@@ -197,19 +184,15 @@ impl PutPrincipalMappingInputBuilder {
     /// Consumes the builder and constructs a [`PutPrincipalMappingInput`](crate::operation::put_principal_mapping::PutPrincipalMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_principal_mapping::PutPrincipalMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_principal_mapping::PutPrincipalMappingInput {
-                index_id: self.index_id,
-                data_source_id: self.data_source_id,
-                group_id: self.group_id,
-                group_members: self.group_members,
-                ordering_id: self.ordering_id,
-                role_arn: self.role_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_principal_mapping::PutPrincipalMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_principal_mapping::PutPrincipalMappingInput {
+            index_id: self.index_id,
+            data_source_id: self.data_source_id,
+            group_id: self.group_id,
+            group_members: self.group_members,
+            ordering_id: self.ordering_id,
+            role_arn: self.role_arn,
+        })
     }
 }

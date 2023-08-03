@@ -26,11 +26,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssociationOutput`](crate::operation::create_association::CreateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::operation::create_association::CreateAssociationOutput::association_description): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<CreateAssociationError>`](crate::operation::create_association::CreateAssociationError)
-    pub fn create_association(
-        &self,
-    ) -> crate::operation::create_association::builders::CreateAssociationFluentBuilder {
-        crate::operation::create_association::builders::CreateAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_association(&self) -> crate::operation::create_association::builders::CreateAssociationFluentBuilder {
+        crate::operation::create_association::builders::CreateAssociationFluentBuilder::new(self.handle.clone())
     }
 }

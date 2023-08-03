@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`location(Option<Location>)`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput::location): <p>The location of the change where you posted your comment.</p>
     ///   - [`comment(Option<Comment>)`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput::comment): <p>The content of the comment you posted.</p>
     /// - On failure, responds with [`SdkError<PostCommentForPullRequestError>`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError)
-    pub fn post_comment_for_pull_request(&self) -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestFluentBuilder{
+    pub fn post_comment_for_pull_request(&self) -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestFluentBuilder {
         crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestFluentBuilder::new(self.handle.clone())
     }
 }

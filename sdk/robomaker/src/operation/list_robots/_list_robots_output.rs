@@ -38,9 +38,7 @@ impl ListRobotsOutput {
 
 /// A builder for [`ListRobotsOutput`](crate::operation::list_robots::ListRobotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRobotsOutputBuilder {
     pub(crate) robots: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl ListRobotsOutputBuilder {
         self
     }
     /// <p>A list of robots that meet the criteria of the request.</p>
-    pub fn set_robots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
-    ) -> Self {
+    pub fn set_robots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>) -> Self {
         self.robots = input;
         self
     }

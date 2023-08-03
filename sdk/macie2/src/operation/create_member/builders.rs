@@ -10,10 +10,7 @@ impl CreateMemberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_member::CreateMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_member::CreateMemberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_member::CreateMemberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_member();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateMemberFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_member::CreateMember,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_member::CreateMember, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_member::CreateMemberError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateMemberFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_member::CreateMember,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_member::CreateMember, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_member::CreateMemberError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl CreateMemberFluentBuilder {
         self
     }
     /// <p>The details of the account to associate with the administrator account.</p>
-    pub fn set_account(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountDetail>,
-    ) -> Self {
+    pub fn set_account(mut self, input: ::std::option::Option<crate::types::AccountDetail>) -> Self {
         self.inner = self.inner.set_account(input);
         self
     }
@@ -135,32 +120,19 @@ impl CreateMemberFluentBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

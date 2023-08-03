@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsOutput::status): <p>The HTTP status of the response.</p>
     /// - On failure, responds with [`SdkError<ListAssetBundleImportJobsError>`](crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError)
-    pub fn list_asset_bundle_import_jobs(&self) -> crate::operation::list_asset_bundle_import_jobs::builders::ListAssetBundleImportJobsFluentBuilder{
+    pub fn list_asset_bundle_import_jobs(&self) -> crate::operation::list_asset_bundle_import_jobs::builders::ListAssetBundleImportJobsFluentBuilder {
         crate::operation::list_asset_bundle_import_jobs::builders::ListAssetBundleImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

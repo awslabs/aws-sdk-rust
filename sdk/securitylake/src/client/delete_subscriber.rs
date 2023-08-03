@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`subscriber_id(impl ::std::convert::Into<String>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::subscriber_id) / [`set_subscriber_id(Option<String>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::set_subscriber_id): <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
     /// - On success, responds with [`DeleteSubscriberOutput`](crate::operation::delete_subscriber::DeleteSubscriberOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriberError>`](crate::operation::delete_subscriber::DeleteSubscriberError)
-    pub fn delete_subscriber(
-        &self,
-    ) -> crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder {
-        crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_subscriber(&self) -> crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder {
+        crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ pub fn ser_update_script_input(
         object_5.finish();
     }
     if let Some(var_6) = &input.zip_file {
-        object
-            .key("ZipFile")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_6));
+        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_6));
     }
     Ok(())
 }

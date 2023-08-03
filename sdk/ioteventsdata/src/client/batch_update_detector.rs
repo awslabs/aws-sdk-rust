@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchUpdateDetectorOutput`](crate::operation::batch_update_detector::BatchUpdateDetectorOutput) with field(s):
     ///   - [`batch_update_detector_error_entries(Option<Vec<BatchUpdateDetectorErrorEntry>>)`](crate::operation::batch_update_detector::BatchUpdateDetectorOutput::batch_update_detector_error_entries): <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
     /// - On failure, responds with [`SdkError<BatchUpdateDetectorError>`](crate::operation::batch_update_detector::BatchUpdateDetectorError)
-    pub fn batch_update_detector(
-        &self,
-    ) -> crate::operation::batch_update_detector::builders::BatchUpdateDetectorFluentBuilder {
-        crate::operation::batch_update_detector::builders::BatchUpdateDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_detector(&self) -> crate::operation::batch_update_detector::builders::BatchUpdateDetectorFluentBuilder {
+        crate::operation::batch_update_detector::builders::BatchUpdateDetectorFluentBuilder::new(self.handle.clone())
     }
 }

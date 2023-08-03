@@ -38,9 +38,7 @@ impl GetSolVnfcResourceInfoMetadata {
 
 /// A builder for [`GetSolVnfcResourceInfoMetadata`](crate::types::GetSolVnfcResourceInfoMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolVnfcResourceInfoMetadataBuilder {
     pub(crate) node_group: ::std::option::Option<::std::string::String>,
     pub(crate) cluster: ::std::option::Option<::std::string::String>,

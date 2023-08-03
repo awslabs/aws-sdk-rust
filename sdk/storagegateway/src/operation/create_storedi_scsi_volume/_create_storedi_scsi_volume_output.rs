@@ -36,18 +36,14 @@ impl ::aws_http::request_id::RequestId for CreateStorediScsiVolumeOutput {
 }
 impl CreateStorediScsiVolumeOutput {
     /// Creates a new builder-style object to manufacture [`CreateStorediScsiVolumeOutput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeOutputBuilder {
         crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStorediScsiVolumeOutput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStorediScsiVolumeOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_size_in_bytes: ::std::option::Option<i64>,
@@ -107,9 +103,7 @@ impl CreateStorediScsiVolumeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStorediScsiVolumeOutput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput {
+    pub fn build(self) -> crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput {
         crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput {
             volume_arn: self.volume_arn,
             volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),

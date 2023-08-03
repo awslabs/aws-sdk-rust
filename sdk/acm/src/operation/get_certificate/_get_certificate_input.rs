@@ -26,9 +26,7 @@ impl GetCertificateInput {
 
 /// A builder for [`GetCertificateInput`](crate::operation::get_certificate::GetCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,14 @@ impl GetCertificateInputBuilder {
     /// <p>String that contains a certificate ARN in the following format:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains a certificate ARN in the following format:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -62,10 +54,7 @@ impl GetCertificateInputBuilder {
     /// Consumes the builder and constructs a [`GetCertificateInput`](crate::operation::get_certificate::GetCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_certificate::GetCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_certificate::GetCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_certificate::GetCertificateInput {
             certificate_arn: self.certificate_arn,
         })

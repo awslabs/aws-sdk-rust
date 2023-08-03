@@ -22,9 +22,7 @@ impl GetLexiconInput {
 
 /// A builder for [`GetLexiconInput`](crate::operation::get_lexicon::GetLexiconInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLexiconInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetLexiconInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetLexiconInput`](crate::operation::get_lexicon::GetLexiconInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lexicon::GetLexiconInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_lexicon::GetLexiconInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lexicon::GetLexiconInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_lexicon::GetLexiconInput { name: self.name })
     }
 }

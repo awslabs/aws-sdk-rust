@@ -98,10 +98,7 @@ impl AdminGetDeviceInputBuilder {
     /// Consumes the builder and constructs a [`AdminGetDeviceInput`](crate::operation::admin_get_device::AdminGetDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_get_device::AdminGetDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::admin_get_device::AdminGetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_get_device::AdminGetDeviceInput {
             device_key: self.device_key,
             user_pool_id: self.user_pool_id,

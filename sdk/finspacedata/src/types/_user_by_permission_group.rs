@@ -102,9 +102,7 @@ impl UserByPermissionGroup {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    pub fn membership_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
+    pub fn membership_status(&self) -> ::std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
         self.membership_status.as_ref()
     }
 }
@@ -142,8 +140,7 @@ pub struct UserByPermissionGroupBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::UserType>,
     pub(crate) api_access: ::std::option::Option<crate::types::ApiAccess>,
     pub(crate) api_access_principal_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) membership_status:
-        ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
+    pub(crate) membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl UserByPermissionGroupBuilder {
     /// <p>The unique identifier for the user.</p>
@@ -218,18 +215,12 @@ impl UserByPermissionGroupBuilder {
         &self.last_name
     }
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -290,18 +281,12 @@ impl UserByPermissionGroupBuilder {
         &self.api_access
     }
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
-    pub fn api_access_principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_access_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_access_principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
-    pub fn set_api_access_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_access_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_access_principal_arn = input;
         self
     }
@@ -315,10 +300,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    pub fn membership_status(
-        mut self,
-        input: crate::types::PermissionGroupMembershipStatus,
-    ) -> Self {
+    pub fn membership_status(mut self, input: crate::types::PermissionGroupMembershipStatus) -> Self {
         self.membership_status = ::std::option::Option::Some(input);
         self
     }
@@ -328,10 +310,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    pub fn set_membership_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
-    ) -> Self {
+    pub fn set_membership_status(mut self, input: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>) -> Self {
         self.membership_status = input;
         self
     }
@@ -341,9 +320,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    pub fn get_membership_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionGroupMembershipStatus> {
+    pub fn get_membership_status(&self) -> &::std::option::Option<crate::types::PermissionGroupMembershipStatus> {
         &self.membership_status
     }
     /// Consumes the builder and constructs a [`UserByPermissionGroup`](crate::types::UserByPermissionGroup).

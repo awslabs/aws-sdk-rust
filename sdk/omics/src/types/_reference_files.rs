@@ -30,9 +30,7 @@ impl ReferenceFiles {
 
 /// A builder for [`ReferenceFiles`](crate::types::ReferenceFiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceFilesBuilder {
     pub(crate) source: ::std::option::Option<crate::types::FileInformation>,
     pub(crate) index: ::std::option::Option<crate::types::FileInformation>,
@@ -44,10 +42,7 @@ impl ReferenceFilesBuilder {
         self
     }
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
         self.source = input;
         self
     }
@@ -61,10 +56,7 @@ impl ReferenceFilesBuilder {
         self
     }
     /// <p>The files' index.</p>
-    pub fn set_index(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
         self.index = input;
         self
     }

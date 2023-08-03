@@ -29,17 +29,14 @@ impl AssociateDhcpOptionsInput {
 }
 impl AssociateDhcpOptionsInput {
     /// Creates a new builder-style object to manufacture [`AssociateDhcpOptionsInput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::associate_dhcp_options::builders::AssociateDhcpOptionsInputBuilder {
+    pub fn builder() -> crate::operation::associate_dhcp_options::builders::AssociateDhcpOptionsInputBuilder {
         crate::operation::associate_dhcp_options::builders::AssociateDhcpOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDhcpOptionsInput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDhcpOptionsInputBuilder {
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct AssociateDhcpOptionsInputBuilder {
 }
 impl AssociateDhcpOptionsInputBuilder {
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
-    pub fn dhcp_options_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
-    pub fn set_dhcp_options_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dhcp_options_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl AssociateDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDhcpOptionsInput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput {
-                dhcp_options_id: self.dhcp_options_id,
-                vpc_id: self.vpc_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput {
+            dhcp_options_id: self.dhcp_options_id,
+            vpc_id: self.vpc_id,
+            dry_run: self.dry_run,
+        })
     }
 }

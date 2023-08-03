@@ -10,10 +10,7 @@ impl DescribeFileCachesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_file_caches::DescribeFileCachesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_caches::DescribeFileCachesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_caches::DescribeFileCachesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_file_caches();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DescribeFileCachesFluentBuilder {
         }
     }
     /// Access the DescribeFileCaches as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_file_caches::builders::DescribeFileCachesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_file_caches::builders::DescribeFileCachesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DescribeFileCachesFluentBuilder {
             crate::operation::describe_file_caches::DescribeFileCaches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_caches::DescribeFileCachesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_caches::DescribeFileCachesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DescribeFileCachesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DescribeFileCachesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_caches::DescribeFileCachesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_caches::DescribeFileCachesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_caches::DescribeFileCachesError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DescribeFileCachesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_caches::DescribeFileCachesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_caches::DescribeFileCachesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_caches::DescribeFileCachesError>,
     > {
         self.send_middleware().await
     }
@@ -123,47 +109,32 @@ impl DescribeFileCachesFluentBuilder {
             crate::operation::describe_file_caches::DescribeFileCaches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_caches::DescribeFileCachesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_caches::DescribeFileCachesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_file_caches::paginator::DescribeFileCachesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_file_caches::paginator::DescribeFileCachesPaginator {
-        crate::operation::describe_file_caches::paginator::DescribeFileCachesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_file_caches::paginator::DescribeFileCachesPaginator {
+        crate::operation::describe_file_caches::paginator::DescribeFileCachesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `FileCacheIds`.
     ///
     /// To override the contents of this collection use [`set_file_cache_ids`](Self::set_file_cache_ids).
     ///
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn file_cache_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_cache_ids(input.into());
         self
     }
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn set_file_cache_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_file_cache_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_file_cache_ids(input);
         self
     }
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn get_file_cache_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_cache_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_file_cache_ids()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>

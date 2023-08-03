@@ -37,9 +37,7 @@ impl RedshiftMetadata {
 
 /// A builder for [`RedshiftMetadata`](crate::types::RedshiftMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftMetadataBuilder {
     pub(crate) redshift_database: ::std::option::Option<crate::types::RedshiftDatabase>,
     pub(crate) database_user_name: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl RedshiftMetadataBuilder {
         self
     }
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
-    pub fn set_redshift_database(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDatabase>,
-    ) -> Self {
+    pub fn set_redshift_database(mut self, input: ::std::option::Option<crate::types::RedshiftDatabase>) -> Self {
         self.redshift_database = input;
         self
     }
@@ -64,18 +59,12 @@ impl RedshiftMetadataBuilder {
         &self.redshift_database
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    pub fn database_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    pub fn set_database_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_user_name = input;
         self
     }
@@ -84,18 +73,12 @@ impl RedshiftMetadataBuilder {
         &self.database_user_name
     }
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
-    pub fn select_sql_query(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn select_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.select_sql_query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
-    pub fn set_select_sql_query(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_select_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.select_sql_query = input;
         self
     }

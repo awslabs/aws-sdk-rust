@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutGroupConfigurationOutput {
 }
 impl PutGroupConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutGroupConfigurationOutput`](crate::operation::put_group_configuration::PutGroupConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_group_configuration::builders::PutGroupConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_group_configuration::builders::PutGroupConfigurationOutputBuilder {
         crate::operation::put_group_configuration::builders::PutGroupConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutGroupConfigurationOutput`](crate::operation::put_group_configuration::PutGroupConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutGroupConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

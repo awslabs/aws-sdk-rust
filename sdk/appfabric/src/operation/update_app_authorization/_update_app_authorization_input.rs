@@ -38,18 +38,14 @@ impl UpdateAppAuthorizationInput {
 }
 impl UpdateAppAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppAuthorizationInput`](crate::operation::update_app_authorization::UpdateAppAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::update_app_authorization::builders::UpdateAppAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_app_authorization::builders::UpdateAppAuthorizationInputBuilder {
         crate::operation::update_app_authorization::builders::UpdateAppAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAppAuthorizationInput`](crate::operation::update_app_authorization::UpdateAppAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppAuthorizationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) app_authorization_identifier: ::std::option::Option<::std::string::String>,
@@ -58,18 +54,12 @@ pub struct UpdateAppAuthorizationInputBuilder {
 }
 impl UpdateAppAuthorizationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -78,25 +68,17 @@ impl UpdateAppAuthorizationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn app_authorization_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_authorization_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_authorization_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn set_app_authorization_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_authorization_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_authorization_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn get_app_authorization_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_app_authorization_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_authorization_identifier
     }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
@@ -107,10 +89,7 @@ impl UpdateAppAuthorizationInputBuilder {
     }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
     /// <p>Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
-    pub fn set_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::Credential>,
-    ) -> Self {
+    pub fn set_credential(mut self, input: ::std::option::Option<crate::types::Credential>) -> Self {
         self.credential = input;
         self
     }
@@ -136,17 +115,13 @@ impl UpdateAppAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppAuthorizationInput`](crate::operation::update_app_authorization::UpdateAppAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_authorization::UpdateAppAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_app_authorization::UpdateAppAuthorizationInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                app_authorization_identifier: self.app_authorization_identifier,
-                credential: self.credential,
-                tenant: self.tenant,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_app_authorization::UpdateAppAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_app_authorization::UpdateAppAuthorizationInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            app_authorization_identifier: self.app_authorization_identifier,
+            credential: self.credential,
+            tenant: self.tenant,
+        })
     }
 }

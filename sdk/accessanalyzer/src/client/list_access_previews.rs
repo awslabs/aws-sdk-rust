@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`access_previews(Option<Vec<AccessPreviewSummary>>)`](crate::operation::list_access_previews::ListAccessPreviewsOutput::access_previews): <p>A list of access previews retrieved for the analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_previews::ListAccessPreviewsOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListAccessPreviewsError>`](crate::operation::list_access_previews::ListAccessPreviewsError)
-    pub fn list_access_previews(
-        &self,
-    ) -> crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder {
-        crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_access_previews(&self) -> crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder {
+        crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::new(self.handle.clone())
     }
 }

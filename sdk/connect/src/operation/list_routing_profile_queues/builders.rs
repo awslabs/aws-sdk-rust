@@ -26,7 +26,7 @@ impl ListRoutingProfileQueuesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRoutingProfileQueuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder,
+    inner: crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder,
 }
 impl ListRoutingProfileQueuesFluentBuilder {
     /// Creates a new `ListRoutingProfileQueues`.
@@ -37,7 +37,7 @@ impl ListRoutingProfileQueuesFluentBuilder {
         }
     }
     /// Access the ListRoutingProfileQueues as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRoutingProfileQueuesFluentBuilder {
             crate::operation::list_routing_profile_queues::ListRoutingProfileQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRoutingProfileQueuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRoutingProfileQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRoutingProfileQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListRoutingProfileQueuesFluentBuilder {
             crate::operation::list_routing_profile_queues::ListRoutingProfileQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_routing_profile_queues::paginator::ListRoutingProfileQueuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_routing_profile_queues::paginator::ListRoutingProfileQueuesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_routing_profile_queues::paginator::ListRoutingProfileQueuesPaginator {
         crate::operation::list_routing_profile_queues::paginator::ListRoutingProfileQueuesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -144,18 +130,12 @@ impl ListRoutingProfileQueuesFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }

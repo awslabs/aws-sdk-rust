@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ClaimGameServerOutput {
 }
 impl ClaimGameServerOutput {
     /// Creates a new builder-style object to manufacture [`ClaimGameServerOutput`](crate::operation::claim_game_server::ClaimGameServerOutput).
-    pub fn builder() -> crate::operation::claim_game_server::builders::ClaimGameServerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::claim_game_server::builders::ClaimGameServerOutputBuilder {
         crate::operation::claim_game_server::builders::ClaimGameServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`ClaimGameServerOutput`](crate::operation::claim_game_server::ClaimGameServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimGameServerOutputBuilder {
     pub(crate) game_server: ::std::option::Option<crate::types::GameServer>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ClaimGameServerOutputBuilder {
         self
     }
     /// <p>Object that describes the newly claimed game server.</p>
-    pub fn set_game_server(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServer>,
-    ) -> Self {
+    pub fn set_game_server(mut self, input: ::std::option::Option<crate::types::GameServer>) -> Self {
         self.game_server = input;
         self
     }

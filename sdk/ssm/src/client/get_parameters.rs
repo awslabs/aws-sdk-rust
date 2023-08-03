@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::get_parameters::GetParametersOutput::parameters): <p>A list of details for a parameter.</p>
     ///   - [`invalid_parameters(Option<Vec<String>>)`](crate::operation::get_parameters::GetParametersOutput::invalid_parameters): <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
     /// - On failure, responds with [`SdkError<GetParametersError>`](crate::operation::get_parameters::GetParametersError)
-    pub fn get_parameters(
-        &self,
-    ) -> crate::operation::get_parameters::builders::GetParametersFluentBuilder {
-        crate::operation::get_parameters::builders::GetParametersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_parameters(&self) -> crate::operation::get_parameters::builders::GetParametersFluentBuilder {
+        crate::operation::get_parameters::builders::GetParametersFluentBuilder::new(self.handle.clone())
     }
 }

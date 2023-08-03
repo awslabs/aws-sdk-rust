@@ -10,10 +10,7 @@ impl UpdateExperimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_experiment::UpdateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_experiment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateExperimentFluentBuilder {
         }
     }
     /// Access the UpdateExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateExperimentFluentBuilder {
             crate::operation::update_experiment::UpdateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment::UpdateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment::UpdateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateExperimentFluentBuilder {
             crate::operation::update_experiment::UpdateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the experiment to update.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());
         self
     }
     /// <p>The name of the experiment to update.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment_name(input);
         self
     }

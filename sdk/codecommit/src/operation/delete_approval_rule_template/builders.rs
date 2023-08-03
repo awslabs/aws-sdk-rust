@@ -26,7 +26,7 @@ impl DeleteApprovalRuleTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder,
+    inner: crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder,
 }
 impl DeleteApprovalRuleTemplateFluentBuilder {
     /// Creates a new `DeleteApprovalRuleTemplate`.
@@ -37,7 +37,7 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
         }
     }
     /// Access the DeleteApprovalRuleTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
             crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
             crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the approval rule template to delete.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());
         self
     }
     /// <p>The name of the approval rule template to delete.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }

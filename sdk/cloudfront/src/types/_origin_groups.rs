@@ -30,9 +30,7 @@ impl OriginGroups {
 
 /// A builder for [`OriginGroups`](crate::types::OriginGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginGroupsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>,
@@ -64,10 +62,7 @@ impl OriginGroupsBuilder {
         self
     }
     /// <p>The items (origin groups) in a distribution.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>) -> Self {
         self.items = input;
         self
     }

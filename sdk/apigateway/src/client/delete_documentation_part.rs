@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`documentation_part_id(impl ::std::convert::Into<String>)`](crate::operation::delete_documentation_part::builders::DeleteDocumentationPartFluentBuilder::documentation_part_id) / [`set_documentation_part_id(Option<String>)`](crate::operation::delete_documentation_part::builders::DeleteDocumentationPartFluentBuilder::set_documentation_part_id): <p>The identifier of the to-be-deleted documentation part.</p>
     /// - On success, responds with [`DeleteDocumentationPartOutput`](crate::operation::delete_documentation_part::DeleteDocumentationPartOutput)
     /// - On failure, responds with [`SdkError<DeleteDocumentationPartError>`](crate::operation::delete_documentation_part::DeleteDocumentationPartError)
-    pub fn delete_documentation_part(
-        &self,
-    ) -> crate::operation::delete_documentation_part::builders::DeleteDocumentationPartFluentBuilder
-    {
+    pub fn delete_documentation_part(&self) -> crate::operation::delete_documentation_part::builders::DeleteDocumentationPartFluentBuilder {
         crate::operation::delete_documentation_part::builders::DeleteDocumentationPartFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,9 +31,7 @@ impl GetGroupQueryInput {
 
 /// A builder for [`GetGroupQueryInput`](crate::operation::get_group_query::GetGroupQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupQueryInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl GetGroupQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupQueryInput`](crate::operation::get_group_query::GetGroupQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_group_query::GetGroupQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_group_query::GetGroupQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_query::GetGroupQueryInput {
             group_name: self.group_name,
             group: self.group,

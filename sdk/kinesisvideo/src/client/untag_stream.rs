@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`tag_key_list(Vec<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::set_tag_key_list): <p>A list of the keys of the tags that you want to remove.</p>
     /// - On success, responds with [`UntagStreamOutput`](crate::operation::untag_stream::UntagStreamOutput)
     /// - On failure, responds with [`SdkError<UntagStreamError>`](crate::operation::untag_stream::UntagStreamError)
-    pub fn untag_stream(
-        &self,
-    ) -> crate::operation::untag_stream::builders::UntagStreamFluentBuilder {
+    pub fn untag_stream(&self) -> crate::operation::untag_stream::builders::UntagStreamFluentBuilder {
         crate::operation::untag_stream::builders::UntagStreamFluentBuilder::new(self.handle.clone())
     }
 }

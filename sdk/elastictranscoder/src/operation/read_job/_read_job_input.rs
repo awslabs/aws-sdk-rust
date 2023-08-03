@@ -23,9 +23,7 @@ impl ReadJobInput {
 
 /// A builder for [`ReadJobInput`](crate::operation::read_job::ReadJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl ReadJobInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ReadJobInput`](crate::operation::read_job::ReadJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::read_job::ReadJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::read_job::ReadJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::read_job::ReadJobInput { id: self.id })
     }
 }

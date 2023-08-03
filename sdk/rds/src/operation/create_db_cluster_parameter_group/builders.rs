@@ -34,7 +34,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupInputBuilder,
+    inner: crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupInputBuilder,
 }
 impl CreateDBClusterParameterGroupFluentBuilder {
     /// Creates a new `CreateDBClusterParameterGroup`.
@@ -45,7 +45,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the CreateDBClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
             crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
             crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -135,10 +124,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
     }
@@ -149,10 +135,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
@@ -163,9 +146,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
     /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
@@ -191,10 +172,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>postgres</code> </p> </li>
     /// </ul>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());
         self
     }
@@ -221,10 +199,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>postgres</code> </p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
@@ -278,10 +253,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
         self
     }
     /// <p>Tags to assign to the DB cluster parameter group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

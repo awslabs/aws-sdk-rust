@@ -6,30 +6,18 @@
 pub struct RuleVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
     #[doc(hidden)]
-    pub ip_sets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    >,
+    pub ip_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
     /// <p>A list of port ranges. </p>
     #[doc(hidden)]
-    pub port_sets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PortSet>,
-    >,
+    pub port_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>>,
 }
 impl RuleVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn ip_sets(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    > {
+    pub fn ip_sets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IpSet>> {
         self.ip_sets.as_ref()
     }
     /// <p>A list of port ranges. </p>
-    pub fn port_sets(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::PortSet>,
-    > {
+    pub fn port_sets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PortSet>> {
         self.port_sets.as_ref()
     }
 }
@@ -42,16 +30,10 @@ impl RuleVariables {
 
 /// A builder for [`RuleVariables`](crate::types::RuleVariables).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleVariablesBuilder {
-    pub(crate) ip_sets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    >,
-    pub(crate) port_sets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PortSet>,
-    >,
+    pub(crate) ip_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
+    pub(crate) port_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>>,
 }
 impl RuleVariablesBuilder {
     /// Adds a key-value pair to `ip_sets`.
@@ -59,32 +41,19 @@ impl RuleVariablesBuilder {
     /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
     ///
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn ip_sets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::IpSet,
-    ) -> Self {
+    pub fn ip_sets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::IpSet) -> Self {
         let mut hash_map = self.ip_sets.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.ip_sets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn set_ip_sets(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-        >,
-    ) -> Self {
+    pub fn set_ip_sets(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>) -> Self {
         self.ip_sets = input;
         self
     }
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn get_ip_sets(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
-    > {
+    pub fn get_ip_sets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>> {
         &self.ip_sets
     }
     /// Adds a key-value pair to `port_sets`.
@@ -92,32 +61,19 @@ impl RuleVariablesBuilder {
     /// To override the contents of this collection use [`set_port_sets`](Self::set_port_sets).
     ///
     /// <p>A list of port ranges. </p>
-    pub fn port_sets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PortSet,
-    ) -> Self {
+    pub fn port_sets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PortSet) -> Self {
         let mut hash_map = self.port_sets.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.port_sets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of port ranges. </p>
-    pub fn set_port_sets(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::PortSet>,
-        >,
-    ) -> Self {
+    pub fn set_port_sets(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>>) -> Self {
         self.port_sets = input;
         self
     }
     /// <p>A list of port ranges. </p>
-    pub fn get_port_sets(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PortSet>,
-    > {
+    pub fn get_port_sets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>> {
         &self.port_sets
     }
     /// Consumes the builder and constructs a [`RuleVariables`](crate::types::RuleVariables).

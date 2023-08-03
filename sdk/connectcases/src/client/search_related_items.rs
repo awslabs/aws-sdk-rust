@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_related_items::SearchRelatedItemsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     ///   - [`related_items(Option<Vec<Option<SearchRelatedItemsResponseItem>>>)`](crate::operation::search_related_items::SearchRelatedItemsOutput::related_items): <p>A list of items related to a case. </p>
     /// - On failure, responds with [`SdkError<SearchRelatedItemsError>`](crate::operation::search_related_items::SearchRelatedItemsError)
-    pub fn search_related_items(
-        &self,
-    ) -> crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder {
-        crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_related_items(&self) -> crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder {
+        crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::new(self.handle.clone())
     }
 }

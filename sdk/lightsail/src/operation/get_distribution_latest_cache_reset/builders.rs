@@ -5,16 +5,16 @@ pub use crate::operation::get_distribution_latest_cache_reset::_get_distribution
 
 impl GetDistributionLatestCacheResetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_distribution_latest_cache_reset();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetDistributionLatestCacheResetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDistributionLatestCacheResetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder,
+    inner: crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder,
 }
 impl GetDistributionLatestCacheResetFluentBuilder {
     /// Creates a new `GetDistributionLatestCacheReset`.
@@ -37,15 +37,20 @@ impl GetDistributionLatestCacheResetFluentBuilder {
         }
     }
     /// Access the GetDistributionLatestCacheReset as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheReset, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheReset,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetDistributionLatestCacheResetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,36 +87,39 @@ impl GetDistributionLatestCacheResetFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheReset, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheReset,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }

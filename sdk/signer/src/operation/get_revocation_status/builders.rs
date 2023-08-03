@@ -37,9 +37,7 @@ impl GetRevocationStatusFluentBuilder {
         }
     }
     /// Access the GetRevocationStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetRevocationStatusFluentBuilder {
             crate::operation::get_revocation_status::GetRevocationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_revocation_status::GetRevocationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_revocation_status::GetRevocationStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetRevocationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetRevocationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_revocation_status::GetRevocationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_revocation_status::GetRevocationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_revocation_status::GetRevocationStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetRevocationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_revocation_status::GetRevocationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_revocation_status::GetRevocationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_revocation_status::GetRevocationStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetRevocationStatusFluentBuilder {
             crate::operation::get_revocation_status::GetRevocationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_revocation_status::GetRevocationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_revocation_status::GetRevocationStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl GetRevocationStatusFluentBuilder {
         self
     }
     /// <p>The timestamp of the signature that validates the profile or job.</p>
-    pub fn set_signature_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_signature_timestamp(input);
         self
     }
@@ -154,18 +138,12 @@ impl GetRevocationStatusFluentBuilder {
         self.inner.get_platform_id()
     }
     /// <p>The version of a signing profile.</p>
-    pub fn profile_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_version_arn(input.into());
         self
     }
     /// <p>The version of a signing profile.</p>
-    pub fn set_profile_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_version_arn(input);
         self
     }
@@ -193,27 +171,19 @@ impl GetRevocationStatusFluentBuilder {
     ///
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn certificate_hashes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_hashes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_hashes(input.into());
         self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn set_certificate_hashes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_hashes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_hashes(input);
         self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn get_certificate_hashes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_hashes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_hashes()
     }
 }

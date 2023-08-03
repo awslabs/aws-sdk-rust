@@ -28,7 +28,7 @@ impl DeleteConfigurationRecorderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationRecorderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_configuration_recorder::builders::DeleteConfigurationRecorderInputBuilder,
+    inner: crate::operation::delete_configuration_recorder::builders::DeleteConfigurationRecorderInputBuilder,
 }
 impl DeleteConfigurationRecorderFluentBuilder {
     /// Creates a new `DeleteConfigurationRecorder`.
@@ -39,7 +39,7 @@ impl DeleteConfigurationRecorderFluentBuilder {
         }
     }
     /// Access the DeleteConfigurationRecorder as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_configuration_recorder::builders::DeleteConfigurationRecorderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_configuration_recorder::builders::DeleteConfigurationRecorderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteConfigurationRecorderFluentBuilder {
             crate::operation::delete_configuration_recorder::DeleteConfigurationRecorder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteConfigurationRecorderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteConfigurationRecorderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteConfigurationRecorderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DeleteConfigurationRecorderFluentBuilder {
             crate::operation::delete_configuration_recorder::DeleteConfigurationRecorder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
-    pub fn configuration_recorder_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_name(input.into());
         self
     }
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
-    pub fn set_configuration_recorder_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_recorder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_recorder_name(input);
         self
     }

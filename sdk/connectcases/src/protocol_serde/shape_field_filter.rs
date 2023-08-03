@@ -40,13 +40,7 @@ pub fn ser_field_filter(
             crate::protocol_serde::shape_field_value::ser_field_value(&mut object_6, inner)?;
             object_6.finish();
         }
-        crate::types::FieldFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "FieldFilter",
-                ),
-            )
-        }
+        crate::types::FieldFilter::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("FieldFilter")),
     }
     Ok(())
 }

@@ -37,17 +37,14 @@ impl ImportBackendStorageInput {
 }
 impl ImportBackendStorageInput {
     /// Creates a new builder-style object to manufacture [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
-    pub fn builder(
-    ) -> crate::operation::import_backend_storage::builders::ImportBackendStorageInputBuilder {
+    pub fn builder() -> crate::operation::import_backend_storage::builders::ImportBackendStorageInputBuilder {
         crate::operation::import_backend_storage::builders::ImportBackendStorageInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportBackendStorageInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ impl ImportBackendStorageInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -109,10 +100,7 @@ impl ImportBackendStorageInputBuilder {
         self
     }
     /// <p>The name of the storage service.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.service_name = input;
         self
     }
@@ -123,17 +111,13 @@ impl ImportBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_backend_storage::ImportBackendStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_backend_storage::ImportBackendStorageInput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                bucket_name: self.bucket_name,
-                service_name: self.service_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_backend_storage::ImportBackendStorageInput {
+            app_id: self.app_id,
+            backend_environment_name: self.backend_environment_name,
+            bucket_name: self.bucket_name,
+            service_name: self.service_name,
+        })
     }
 }

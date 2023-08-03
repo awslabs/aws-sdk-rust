@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for SetLocalConsolePasswordOutput {
 }
 impl SetLocalConsolePasswordOutput {
     /// Creates a new builder-style object to manufacture [`SetLocalConsolePasswordOutput`](crate::operation::set_local_console_password::SetLocalConsolePasswordOutput).
-    pub fn builder(
-    ) -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordOutputBuilder {
         crate::operation::set_local_console_password::builders::SetLocalConsolePasswordOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetLocalConsolePasswordOutput`](crate::operation::set_local_console_password::SetLocalConsolePasswordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLocalConsolePasswordOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl SetLocalConsolePasswordOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetLocalConsolePasswordOutput`](crate::operation::set_local_console_password::SetLocalConsolePasswordOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_local_console_password::SetLocalConsolePasswordOutput {
+    pub fn build(self) -> crate::operation::set_local_console_password::SetLocalConsolePasswordOutput {
         crate::operation::set_local_console_password::SetLocalConsolePasswordOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

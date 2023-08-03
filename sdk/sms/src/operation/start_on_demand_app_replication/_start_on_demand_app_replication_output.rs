@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StartOnDemandAppReplicationOutput {
 }
 impl StartOnDemandAppReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput).
-    pub fn builder() -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationOutputBuilder{
+    pub fn builder() -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationOutputBuilder {
         crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOnDemandAppReplicationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StartOnDemandAppReplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput {
+    pub fn build(self) -> crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput {
         crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput {
             _request_id: self._request_id,
         }

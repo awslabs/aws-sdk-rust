@@ -23,9 +23,7 @@ impl StreamFilters {
 
 /// A builder for [`StreamFilters`](crate::types::StreamFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamFiltersBuilder {
     pub(crate) health: ::std::option::Option<crate::types::StreamHealth>,
 }
@@ -46,8 +44,6 @@ impl StreamFiltersBuilder {
     }
     /// Consumes the builder and constructs a [`StreamFilters`](crate::types::StreamFilters).
     pub fn build(self) -> crate::types::StreamFilters {
-        crate::types::StreamFilters {
-            health: self.health,
-        }
+        crate::types::StreamFilters { health: self.health }
     }
 }

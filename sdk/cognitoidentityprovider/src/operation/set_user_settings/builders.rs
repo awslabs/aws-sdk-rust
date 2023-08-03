@@ -10,10 +10,7 @@ impl SetUserSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_user_settings::SetUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_settings::SetUserSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_settings::SetUserSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_user_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SetUserSettingsFluentBuilder {
         }
     }
     /// Access the SetUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_user_settings::builders::SetUserSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_user_settings::builders::SetUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SetUserSettingsFluentBuilder {
             crate::operation::set_user_settings::SetUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_settings::SetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_settings::SetUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SetUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SetUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_user_settings::SetUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_settings::SetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_settings::SetUserSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SetUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_user_settings::SetUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_settings::SetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_settings::SetUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SetUserSettingsFluentBuilder {
             crate::operation::set_user_settings::SetUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_settings::SetUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_settings::SetUserSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl SetUserSettingsFluentBuilder {
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn set_mfa_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    ) -> Self {
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.inner = self.inner.set_mfa_options(input);
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn get_mfa_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         self.inner.get_mfa_options()
     }
 }

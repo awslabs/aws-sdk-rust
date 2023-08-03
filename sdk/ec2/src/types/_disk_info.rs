@@ -37,9 +37,7 @@ impl DiskInfo {
 
 /// A builder for [`DiskInfo`](crate::types::DiskInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskInfoBuilder {
     pub(crate) size_in_gb: ::std::option::Option<i64>,
     pub(crate) count: ::std::option::Option<i32>,

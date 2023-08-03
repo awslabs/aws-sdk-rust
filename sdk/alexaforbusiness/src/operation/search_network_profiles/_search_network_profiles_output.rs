@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for SearchNetworkProfilesOutput {
 }
 impl SearchNetworkProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchNetworkProfilesOutput`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesOutputBuilder {
         crate::operation::search_network_profiles::builders::SearchNetworkProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchNetworkProfilesOutput`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchNetworkProfilesOutputBuilder {
-    pub(crate) network_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>,
+    pub(crate) network_profiles: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -67,17 +62,12 @@ impl SearchNetworkProfilesOutputBuilder {
         self
     }
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
-    pub fn set_network_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>,
-    ) -> Self {
+    pub fn set_network_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>) -> Self {
         self.network_profiles = input;
         self
     }
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
-    pub fn get_network_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>> {
+    pub fn get_network_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>> {
         &self.network_profiles
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>

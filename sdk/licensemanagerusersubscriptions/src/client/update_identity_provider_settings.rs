@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateIdentityProviderSettingsOutput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput) with field(s):
     ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput::identity_provider_summary): <p>Describes an identity provider.</p>
     /// - On failure, responds with [`SdkError<UpdateIdentityProviderSettingsError>`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError)
-    pub fn update_identity_provider_settings(&self) -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsFluentBuilder{
+    pub fn update_identity_provider_settings(
+        &self,
+    ) -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsFluentBuilder {
         crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl InputDeviceUhdSettings {
         self.active_input.as_ref()
     }
     /// The source at the input device that is currently active. You can specify this source.
-    pub fn configured_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceConfiguredInput> {
+    pub fn configured_input(&self) -> ::std::option::Option<&crate::types::InputDeviceConfiguredInput> {
         self.configured_input.as_ref()
     }
     /// The state of the input device.
@@ -81,9 +79,7 @@ impl InputDeviceUhdSettings {
 
 /// A builder for [`InputDeviceUhdSettings`](crate::types::InputDeviceUhdSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDeviceUhdSettingsBuilder {
     pub(crate) active_input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
     pub(crate) configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
@@ -102,10 +98,7 @@ impl InputDeviceUhdSettingsBuilder {
         self
     }
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-    pub fn set_active_input(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
-    ) -> Self {
+    pub fn set_active_input(mut self, input: ::std::option::Option<crate::types::InputDeviceActiveInput>) -> Self {
         self.active_input = input;
         self
     }
@@ -119,17 +112,12 @@ impl InputDeviceUhdSettingsBuilder {
         self
     }
     /// The source at the input device that is currently active. You can specify this source.
-    pub fn set_configured_input(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
-    ) -> Self {
+    pub fn set_configured_input(mut self, input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>) -> Self {
         self.configured_input = input;
         self
     }
     /// The source at the input device that is currently active. You can specify this source.
-    pub fn get_configured_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
+    pub fn get_configured_input(&self) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
         &self.configured_input
     }
     /// The state of the input device.
@@ -138,10 +126,7 @@ impl InputDeviceUhdSettingsBuilder {
         self
     }
     /// The state of the input device.
-    pub fn set_device_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceState>,
-    ) -> Self {
+    pub fn set_device_state(mut self, input: ::std::option::Option<crate::types::InputDeviceState>) -> Self {
         self.device_state = input;
         self
     }
@@ -197,10 +182,7 @@ impl InputDeviceUhdSettingsBuilder {
         self
     }
     /// The scan type of the video source.
-    pub fn set_scan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceScanType>,
-    ) -> Self {
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::InputDeviceScanType>) -> Self {
         self.scan_type = input;
         self
     }

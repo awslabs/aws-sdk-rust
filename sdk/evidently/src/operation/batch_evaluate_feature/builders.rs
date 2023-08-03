@@ -41,9 +41,7 @@ impl BatchEvaluateFeatureFluentBuilder {
         }
     }
     /// Access the BatchEvaluateFeature as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl BatchEvaluateFeatureFluentBuilder {
             crate::operation::batch_evaluate_feature::BatchEvaluateFeature,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl BatchEvaluateFeatureFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl BatchEvaluateFeatureFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl BatchEvaluateFeatureFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl BatchEvaluateFeatureFluentBuilder {
             crate::operation::batch_evaluate_feature::BatchEvaluateFeature,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError>,
     > {
         self.customize_middleware().await
     }
@@ -150,17 +137,12 @@ impl BatchEvaluateFeatureFluentBuilder {
         self
     }
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    pub fn set_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>,
-    ) -> Self {
+    pub fn set_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>) -> Self {
         self.inner = self.inner.set_requests(input);
         self
     }
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    pub fn get_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>> {
+    pub fn get_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>> {
         self.inner.get_requests()
     }
 }

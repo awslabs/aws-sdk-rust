@@ -30,27 +30,19 @@ impl ReportDestination {
 
 /// A builder for [`ReportDestination`](crate::types::ReportDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportDestinationBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportDestinationBuilder {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -70,10 +62,7 @@ impl ReportDestinationBuilder {
         self
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub fn set_s3_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.s3_keys = input;
         self
     }

@@ -39,17 +39,14 @@ impl ListRegexPatternSetsInput {
 }
 impl ListRegexPatternSetsInput {
     /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsInput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsInputBuilder {
+    pub fn builder() -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsInputBuilder {
         crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRegexPatternSetsInput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegexPatternSetsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -116,16 +113,12 @@ impl ListRegexPatternSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListRegexPatternSetsInput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput {
-                scope: self.scope,
-                next_marker: self.next_marker,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput {
+            scope: self.scope,
+            next_marker: self.next_marker,
+            limit: self.limit,
+        })
     }
 }

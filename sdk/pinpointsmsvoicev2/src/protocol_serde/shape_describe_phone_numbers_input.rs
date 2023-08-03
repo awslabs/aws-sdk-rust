@@ -18,10 +18,7 @@ pub fn ser_describe_phone_numbers_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_phone_number_filter::ser_phone_number_filter(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_phone_number_filter::ser_phone_number_filter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

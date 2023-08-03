@@ -23,9 +23,7 @@ impl ResourceConfigForUpdate {
 
 /// A builder for [`ResourceConfigForUpdate`](crate::types::ResourceConfigForUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceConfigForUpdateBuilder {
     pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }

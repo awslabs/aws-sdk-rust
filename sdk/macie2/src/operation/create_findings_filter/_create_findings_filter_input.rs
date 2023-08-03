@@ -26,9 +26,7 @@ pub struct CreateFindingsFilterInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFindingsFilterInput {
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -59,27 +57,20 @@ impl CreateFindingsFilterInput {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`CreateFindingsFilterInput`](crate::operation::create_findings_filter::CreateFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::create_findings_filter::builders::CreateFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::create_findings_filter::builders::CreateFindingsFilterInputBuilder {
         crate::operation::create_findings_filter::builders::CreateFindingsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFindingsFilterInput`](crate::operation::create_findings_filter::CreateFindingsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFindingsFilterInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FindingsFilterAction>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -87,9 +78,7 @@ pub struct CreateFindingsFilterInputBuilder {
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFindingsFilterInputBuilder {
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -98,10 +87,7 @@ impl CreateFindingsFilterInputBuilder {
         self
     }
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingsFilterAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
         self.action = input;
         self
     }
@@ -146,10 +132,7 @@ impl CreateFindingsFilterInputBuilder {
         self
     }
     /// <p>The criteria to use to filter findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -194,11 +177,7 @@ impl CreateFindingsFilterInputBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -206,41 +185,28 @@ impl CreateFindingsFilterInputBuilder {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFindingsFilterInput`](crate::operation::create_findings_filter::CreateFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_findings_filter::CreateFindingsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_findings_filter::CreateFindingsFilterInput {
-                action: self.action,
-                client_token: self.client_token,
-                description: self.description,
-                finding_criteria: self.finding_criteria,
-                name: self.name,
-                position: self.position,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_findings_filter::CreateFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_findings_filter::CreateFindingsFilterInput {
+            action: self.action,
+            client_token: self.client_token,
+            description: self.description,
+            finding_criteria: self.finding_criteria,
+            name: self.name,
+            position: self.position,
+            tags: self.tags,
+        })
     }
 }

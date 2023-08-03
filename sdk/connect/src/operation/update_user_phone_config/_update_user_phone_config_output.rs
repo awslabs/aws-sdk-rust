@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserPhoneConfigOutput {
 }
 impl UpdateUserPhoneConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPhoneConfigOutput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigOutputBuilder {
         crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserPhoneConfigOutput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserPhoneConfigOutputBuilder {
     _request_id: Option<String>,
 }

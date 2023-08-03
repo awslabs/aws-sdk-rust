@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StreamJournalToKinesisOutput {
 }
 impl StreamJournalToKinesisOutput {
     /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisOutput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput).
-    pub fn builder(
-    ) -> crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisOutputBuilder {
         crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StreamJournalToKinesisOutput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamJournalToKinesisOutputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StreamJournalToKinesisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StreamJournalToKinesisOutput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput {
+    pub fn build(self) -> crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput {
         crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput {
             stream_id: self.stream_id,
             _request_id: self._request_id,

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`public_ip(Option<String>)`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput::public_ip): <p>The Elastic IP address.</p>
     ///   - [`status(Option<Status>)`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput::status): <p>The move status for the IP address.</p>
     /// - On failure, responds with [`SdkError<RestoreAddressToClassicError>`](crate::operation::restore_address_to_classic::RestoreAddressToClassicError)
-    pub fn restore_address_to_classic(
-        &self,
-    ) -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicFluentBuilder
-    {
+    pub fn restore_address_to_classic(&self) -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicFluentBuilder {
         crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicFluentBuilder::new(self.handle.clone())
     }
 }

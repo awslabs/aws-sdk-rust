@@ -23,21 +23,15 @@ impl ClientVpnAuthentication {
         self.r#type.as_ref()
     }
     /// <p>Information about the Active Directory, if applicable.</p>
-    pub fn active_directory(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectoryServiceAuthentication> {
+    pub fn active_directory(&self) -> ::std::option::Option<&crate::types::DirectoryServiceAuthentication> {
         self.active_directory.as_ref()
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
-    pub fn mutual_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateAuthentication> {
+    pub fn mutual_authentication(&self) -> ::std::option::Option<&crate::types::CertificateAuthentication> {
         self.mutual_authentication.as_ref()
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn federated_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FederatedAuthentication> {
+    pub fn federated_authentication(&self) -> ::std::option::Option<&crate::types::FederatedAuthentication> {
         self.federated_authentication.as_ref()
     }
 }
@@ -50,17 +44,12 @@ impl ClientVpnAuthentication {
 
 /// A builder for [`ClientVpnAuthentication`](crate::types::ClientVpnAuthentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientVpnAuthenticationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ClientVpnAuthenticationType>,
-    pub(crate) active_directory:
-        ::std::option::Option<crate::types::DirectoryServiceAuthentication>,
-    pub(crate) mutual_authentication:
-        ::std::option::Option<crate::types::CertificateAuthentication>,
-    pub(crate) federated_authentication:
-        ::std::option::Option<crate::types::FederatedAuthentication>,
+    pub(crate) active_directory: ::std::option::Option<crate::types::DirectoryServiceAuthentication>,
+    pub(crate) mutual_authentication: ::std::option::Option<crate::types::CertificateAuthentication>,
+    pub(crate) federated_authentication: ::std::option::Option<crate::types::FederatedAuthentication>,
 }
 impl ClientVpnAuthenticationBuilder {
     /// <p>The authentication type used.</p>
@@ -69,10 +58,7 @@ impl ClientVpnAuthenticationBuilder {
         self
     }
     /// <p>The authentication type used.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnAuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientVpnAuthenticationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -86,17 +72,12 @@ impl ClientVpnAuthenticationBuilder {
         self
     }
     /// <p>Information about the Active Directory, if applicable.</p>
-    pub fn set_active_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryServiceAuthentication>,
-    ) -> Self {
+    pub fn set_active_directory(mut self, input: ::std::option::Option<crate::types::DirectoryServiceAuthentication>) -> Self {
         self.active_directory = input;
         self
     }
     /// <p>Information about the Active Directory, if applicable.</p>
-    pub fn get_active_directory(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryServiceAuthentication> {
+    pub fn get_active_directory(&self) -> &::std::option::Option<crate::types::DirectoryServiceAuthentication> {
         &self.active_directory
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
@@ -105,39 +86,26 @@ impl ClientVpnAuthenticationBuilder {
         self
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
-    pub fn set_mutual_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthentication>,
-    ) -> Self {
+    pub fn set_mutual_authentication(mut self, input: ::std::option::Option<crate::types::CertificateAuthentication>) -> Self {
         self.mutual_authentication = input;
         self
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
-    pub fn get_mutual_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateAuthentication> {
+    pub fn get_mutual_authentication(&self) -> &::std::option::Option<crate::types::CertificateAuthentication> {
         &self.mutual_authentication
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn federated_authentication(
-        mut self,
-        input: crate::types::FederatedAuthentication,
-    ) -> Self {
+    pub fn federated_authentication(mut self, input: crate::types::FederatedAuthentication) -> Self {
         self.federated_authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn set_federated_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::FederatedAuthentication>,
-    ) -> Self {
+    pub fn set_federated_authentication(mut self, input: ::std::option::Option<crate::types::FederatedAuthentication>) -> Self {
         self.federated_authentication = input;
         self
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn get_federated_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::FederatedAuthentication> {
+    pub fn get_federated_authentication(&self) -> &::std::option::Option<crate::types::FederatedAuthentication> {
         &self.federated_authentication
     }
     /// Consumes the builder and constructs a [`ClientVpnAuthentication`](crate::types::ClientVpnAuthentication).

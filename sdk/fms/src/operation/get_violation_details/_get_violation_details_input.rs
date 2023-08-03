@@ -36,18 +36,14 @@ impl GetViolationDetailsInput {
 }
 impl GetViolationDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetViolationDetailsInput`](crate::operation::get_violation_details::GetViolationDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder {
-        crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder {
+        crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetViolationDetailsInput`](crate::operation::get_violation_details::GetViolationDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetViolationDetailsInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_account: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl GetViolationDetailsInputBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account = input;
         self
     }
@@ -104,18 +94,12 @@ impl GetViolationDetailsInputBuilder {
         &self.resource_id
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -126,17 +110,13 @@ impl GetViolationDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetViolationDetailsInput`](crate::operation::get_violation_details::GetViolationDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_violation_details::GetViolationDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_violation_details::GetViolationDetailsInput {
-                policy_id: self.policy_id,
-                member_account: self.member_account,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_violation_details::GetViolationDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_violation_details::GetViolationDetailsInput {
+            policy_id: self.policy_id,
+            member_account: self.member_account,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+        })
     }
 }

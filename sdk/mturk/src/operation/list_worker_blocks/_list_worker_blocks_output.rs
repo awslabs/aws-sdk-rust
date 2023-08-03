@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListWorkerBlocksOutput {
 }
 impl ListWorkerBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerBlocksOutput`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput).
-    pub fn builder() -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksOutputBuilder {
         crate::operation::list_worker_blocks::builders::ListWorkerBlocksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkerBlocksOutput`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerBlocksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -93,17 +90,12 @@ impl ListWorkerBlocksOutputBuilder {
         self
     }
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-    pub fn set_worker_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>>,
-    ) -> Self {
+    pub fn set_worker_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>>) -> Self {
         self.worker_blocks = input;
         self
     }
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-    pub fn get_worker_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>> {
+    pub fn get_worker_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>> {
         &self.worker_blocks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

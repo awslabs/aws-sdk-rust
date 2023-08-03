@@ -49,24 +49,20 @@ impl ::aws_http::request_id::RequestId for BatchUpdateCustomVocabularyItemOutput
 }
 impl BatchUpdateCustomVocabularyItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateCustomVocabularyItemOutput`](crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput).
-    pub fn builder() -> crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemOutputBuilder{
+    pub fn builder() -> crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemOutputBuilder {
         crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateCustomVocabularyItemOutput`](crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateCustomVocabularyItemOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
-    pub(crate) resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateCustomVocabularyItemOutputBuilder {
@@ -124,17 +120,12 @@ impl BatchUpdateCustomVocabularyItemOutputBuilder {
         self
     }
     /// <p>A list of custom vocabulary items that failed to update during the operation. The reason for the error is contained within each error object.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of custom vocabulary items that failed to update during the operation. The reason for the error is contained within each error object.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>> {
         &self.errors
     }
     /// Appends an item to `resources`.
@@ -149,17 +140,12 @@ impl BatchUpdateCustomVocabularyItemOutputBuilder {
         self
     }
     /// <p>A list of custom vocabulary items that were successfully updated during the operation.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>A list of custom vocabulary items that were successfully updated during the operation.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
         &self.resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -172,21 +158,13 @@ impl BatchUpdateCustomVocabularyItemOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchUpdateCustomVocabularyItemOutput`](crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput
-    {
+    pub fn build(self) -> crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput {
         crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_id: self.locale_id
-            ,
-            errors: self.errors
-            ,
-            resources: self.resources
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            errors: self.errors,
+            resources: self.resources,
             _request_id: self._request_id,
         }
     }

@@ -43,9 +43,7 @@ impl CreateMeshInput {
 
 /// A builder for [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMeshInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) spec: ::std::option::Option<crate::types::MeshSpec>,
@@ -93,10 +91,7 @@ impl CreateMeshInputBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.tags = input;
         self
     }
@@ -119,12 +114,7 @@ impl CreateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_mesh::CreateMeshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_mesh::CreateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mesh::CreateMeshInput {
             mesh_name: self.mesh_name,
             spec: self.spec,

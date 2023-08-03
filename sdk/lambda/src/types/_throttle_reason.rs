@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ThrottleReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -70,24 +64,12 @@ impl ::std::convert::From<&str> for ThrottleReason {
     fn from(s: &str) -> Self {
         match s {
             "CallerRateLimitExceeded" => ThrottleReason::CallerRateLimitExceeded,
-            "ConcurrentInvocationLimitExceeded" => {
-                ThrottleReason::ConcurrentInvocationLimitExceeded
-            }
-            "ConcurrentSnapshotCreateLimitExceeded" => {
-                ThrottleReason::ConcurrentSnapshotCreateLimitExceeded
-            }
-            "FunctionInvocationRateLimitExceeded" => {
-                ThrottleReason::FunctionInvocationRateLimitExceeded
-            }
-            "ReservedFunctionConcurrentInvocationLimitExceeded" => {
-                ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded
-            }
-            "ReservedFunctionInvocationRateLimitExceeded" => {
-                ThrottleReason::ReservedFunctionInvocationRateLimitExceeded
-            }
-            other => {
-                ThrottleReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "ConcurrentInvocationLimitExceeded" => ThrottleReason::ConcurrentInvocationLimitExceeded,
+            "ConcurrentSnapshotCreateLimitExceeded" => ThrottleReason::ConcurrentSnapshotCreateLimitExceeded,
+            "FunctionInvocationRateLimitExceeded" => ThrottleReason::FunctionInvocationRateLimitExceeded,
+            "ReservedFunctionConcurrentInvocationLimitExceeded" => ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded,
+            "ReservedFunctionInvocationRateLimitExceeded" => ThrottleReason::ReservedFunctionInvocationRateLimitExceeded,
+            other => ThrottleReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,21 +85,11 @@ impl ThrottleReason {
     pub fn as_str(&self) -> &str {
         match self {
             ThrottleReason::CallerRateLimitExceeded => "CallerRateLimitExceeded",
-            ThrottleReason::ConcurrentInvocationLimitExceeded => {
-                "ConcurrentInvocationLimitExceeded"
-            }
-            ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => {
-                "ConcurrentSnapshotCreateLimitExceeded"
-            }
-            ThrottleReason::FunctionInvocationRateLimitExceeded => {
-                "FunctionInvocationRateLimitExceeded"
-            }
-            ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => {
-                "ReservedFunctionConcurrentInvocationLimitExceeded"
-            }
-            ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => {
-                "ReservedFunctionInvocationRateLimitExceeded"
-            }
+            ThrottleReason::ConcurrentInvocationLimitExceeded => "ConcurrentInvocationLimitExceeded",
+            ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => "ConcurrentSnapshotCreateLimitExceeded",
+            ThrottleReason::FunctionInvocationRateLimitExceeded => "FunctionInvocationRateLimitExceeded",
+            ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => "ReservedFunctionConcurrentInvocationLimitExceeded",
+            ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => "ReservedFunctionInvocationRateLimitExceeded",
             ThrottleReason::Unknown(value) => value.as_str(),
         }
     }

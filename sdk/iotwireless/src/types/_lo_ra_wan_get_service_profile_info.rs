@@ -149,9 +149,7 @@ impl LoRaWanGetServiceProfileInfo {
 
 /// A builder for [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanGetServiceProfileInfoBuilder {
     pub(crate) ul_rate: ::std::option::Option<i32>,
     pub(crate) ul_bucket_size: ::std::option::Option<i32>,
@@ -203,18 +201,12 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         &self.ul_bucket_size
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn ul_rate_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ul_rate_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ul_rate_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn set_ul_rate_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ul_rate_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ul_rate_policy = input;
         self
     }
@@ -251,18 +243,12 @@ impl LoRaWanGetServiceProfileInfoBuilder {
         &self.dl_bucket_size
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn dl_rate_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dl_rate_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dl_rate_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn set_dl_rate_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dl_rate_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dl_rate_policy = input;
         self
     }

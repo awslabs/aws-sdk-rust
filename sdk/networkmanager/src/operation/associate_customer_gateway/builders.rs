@@ -28,7 +28,7 @@ impl AssociateCustomerGatewayInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateCustomerGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder,
+    inner: crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder,
 }
 impl AssociateCustomerGatewayFluentBuilder {
     /// Creates a new `AssociateCustomerGateway`.
@@ -39,10 +39,7 @@ impl AssociateCustomerGatewayFluentBuilder {
         }
     }
     /// Access the AssociateCustomerGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl AssociateCustomerGatewayFluentBuilder {
             crate::operation::associate_customer_gateway::AssociateCustomerGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_customer_gateway::AssociateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_customer_gateway::AssociateCustomerGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl AssociateCustomerGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl AssociateCustomerGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_customer_gateway::AssociateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_customer_gateway::AssociateCustomerGatewayError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl AssociateCustomerGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_customer_gateway::AssociateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_customer_gateway::AssociateCustomerGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl AssociateCustomerGatewayFluentBuilder {
             crate::operation::associate_customer_gateway::AssociateCustomerGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_customer_gateway::AssociateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_customer_gateway::AssociateCustomerGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_gateway_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn set_customer_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_gateway_arn(input);
         self
     }
@@ -146,18 +126,12 @@ impl AssociateCustomerGatewayFluentBuilder {
         self.inner.get_customer_gateway_arn()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }

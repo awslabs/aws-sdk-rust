@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteOptOutListOutput {
 }
 impl DeleteOptOutListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptOutListOutput`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListOutputBuilder {
+    pub fn builder() -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListOutputBuilder {
         crate::operation::delete_opt_out_list::builders::DeleteOptOutListOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOptOutListOutput`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOptOutListOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct DeleteOptOutListOutputBuilder {
 }
 impl DeleteOptOutListOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
-    pub fn opt_out_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
-    pub fn set_opt_out_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_arn = input;
         self
     }
@@ -74,18 +65,12 @@ impl DeleteOptOutListOutputBuilder {
         &self.opt_out_list_arn
     }
     /// <p>The name of the OptOutList that was removed.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OptOutList that was removed.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -99,10 +84,7 @@ impl DeleteOptOutListOutputBuilder {
         self
     }
     /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }

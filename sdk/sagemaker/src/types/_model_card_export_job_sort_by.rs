@@ -39,13 +39,7 @@
 /// Attribute by which to sort returned export jobs.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ModelCardExportJobSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ModelCardExportJobSortBy {
             "CreationTime" => ModelCardExportJobSortBy::CreationTime,
             "Name" => ModelCardExportJobSortBy::Name,
             "Status" => ModelCardExportJobSortBy::Status,
-            other => ModelCardExportJobSortBy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ModelCardExportJobSortBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

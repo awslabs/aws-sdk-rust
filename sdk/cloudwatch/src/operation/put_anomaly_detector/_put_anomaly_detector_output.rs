@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAnomalyDetectorOutput {
 }
 impl PutAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`PutAnomalyDetectorOutput`](crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorOutputBuilder {
+    pub fn builder() -> crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorOutputBuilder {
         crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAnomalyDetectorOutput`](crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }

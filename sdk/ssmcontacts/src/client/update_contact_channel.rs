@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`delivery_address(ContactChannelAddress)`](crate::operation::update_contact_channel::builders::UpdateContactChannelFluentBuilder::delivery_address) / [`set_delivery_address(Option<ContactChannelAddress>)`](crate::operation::update_contact_channel::builders::UpdateContactChannelFluentBuilder::set_delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     /// - On success, responds with [`UpdateContactChannelOutput`](crate::operation::update_contact_channel::UpdateContactChannelOutput)
     /// - On failure, responds with [`SdkError<UpdateContactChannelError>`](crate::operation::update_contact_channel::UpdateContactChannelError)
-    pub fn update_contact_channel(
-        &self,
-    ) -> crate::operation::update_contact_channel::builders::UpdateContactChannelFluentBuilder {
-        crate::operation::update_contact_channel::builders::UpdateContactChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_contact_channel(&self) -> crate::operation::update_contact_channel::builders::UpdateContactChannelFluentBuilder {
+        crate::operation::update_contact_channel::builders::UpdateContactChannelFluentBuilder::new(self.handle.clone())
     }
 }

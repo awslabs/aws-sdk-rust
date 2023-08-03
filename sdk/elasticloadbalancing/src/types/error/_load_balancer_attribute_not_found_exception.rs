@@ -27,34 +27,27 @@ impl ::std::fmt::Display for LoadBalancerAttributeNotFoundException {
     }
 }
 impl ::std::error::Error for LoadBalancerAttributeNotFoundException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::LoadBalancerAttributeNotFoundException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::LoadBalancerAttributeNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for LoadBalancerAttributeNotFoundException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for LoadBalancerAttributeNotFoundException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl LoadBalancerAttributeNotFoundException {
     /// Creates a new builder-style object to manufacture [`LoadBalancerAttributeNotFoundException`](crate::types::error::LoadBalancerAttributeNotFoundException).
-    pub fn builder() -> crate::types::error::builders::LoadBalancerAttributeNotFoundExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::LoadBalancerAttributeNotFoundExceptionBuilder {
         crate::types::error::builders::LoadBalancerAttributeNotFoundExceptionBuilder::default()
     }
 }
 
 /// A builder for [`LoadBalancerAttributeNotFoundException`](crate::types::error::LoadBalancerAttributeNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerAttributeNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl LoadBalancerAttributeNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -31,18 +31,14 @@ impl ModifyIdentityIdFormatInput {
 }
 impl ModifyIdentityIdFormatInput {
     /// Creates a new builder-style object to manufacture [`ModifyIdentityIdFormatInput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput).
-    pub fn builder(
-    ) -> crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder {
         crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyIdentityIdFormatInput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIdentityIdFormatInputBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
@@ -50,18 +46,12 @@ pub struct ModifyIdentityIdFormatInputBuilder {
 }
 impl ModifyIdentityIdFormatInputBuilder {
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to modify the ID format for all IAM users, IAM roles, and the root user of the account.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to modify the ID format for all IAM users, IAM roles, and the root user of the account.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -107,12 +97,10 @@ impl ModifyIdentityIdFormatInputBuilder {
         crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput {
-                principal_arn: self.principal_arn,
-                resource: self.resource,
-                use_long_ids: self.use_long_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput {
+            principal_arn: self.principal_arn,
+            resource: self.resource,
+            use_long_ids: self.use_long_ids,
+        })
     }
 }

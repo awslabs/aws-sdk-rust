@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`input_devices(Option<Vec<InputDeviceSummary>>)`](crate::operation::list_input_devices::ListInputDevicesOutput::input_devices): The list of input devices.
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_devices::ListInputDevicesOutput::next_token): A token to get additional list results.
     /// - On failure, responds with [`SdkError<ListInputDevicesError>`](crate::operation::list_input_devices::ListInputDevicesError)
-    pub fn list_input_devices(
-        &self,
-    ) -> crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder {
-        crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_input_devices(&self) -> crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder {
+        crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::new(self.handle.clone())
     }
 }

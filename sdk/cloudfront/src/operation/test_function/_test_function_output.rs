@@ -28,9 +28,7 @@ impl TestFunctionOutput {
 
 /// A builder for [`TestFunctionOutput`](crate::operation::test_function::TestFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestFunctionOutputBuilder {
     pub(crate) test_result: ::std::option::Option<crate::types::TestResult>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl TestFunctionOutputBuilder {
         self
     }
     /// <p>An object that represents the result of running the function with the provided event object.</p>
-    pub fn set_test_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestResult>,
-    ) -> Self {
+    pub fn set_test_result(mut self, input: ::std::option::Option<crate::types::TestResult>) -> Self {
         self.test_result = input;
         self
     }

@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`job_creation_date(Option<DateTime>)`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput::job_creation_date): <p>The date the job was created, in Unix epoch TIME.</p>
     ///   - [`job_last_update_date(Option<DateTime>)`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput::job_last_update_date): <p>The date the job was last updated, in Unix epoch time.</p>
     /// - On failure, responds with [`SdkError<DescribeBulkImportJobError>`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobError)
-    pub fn describe_bulk_import_job(
-        &self,
-    ) -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder
-    {
+    pub fn describe_bulk_import_job(&self) -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder {
         crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder::new(self.handle.clone())
     }
 }

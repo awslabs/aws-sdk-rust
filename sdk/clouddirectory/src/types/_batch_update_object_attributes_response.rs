@@ -23,26 +23,18 @@ impl BatchUpdateObjectAttributesResponse {
 
 /// A builder for [`BatchUpdateObjectAttributesResponse`](crate::types::BatchUpdateObjectAttributesResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributesResponseBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateObjectAttributesResponseBuilder {
     /// <p>ID that is associated with the object.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID that is associated with the object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }

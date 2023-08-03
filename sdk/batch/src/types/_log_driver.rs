@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LogDriver {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl LogDriver {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "awslogs",
-            "fluentd",
-            "gelf",
-            "journald",
-            "json-file",
-            "splunk",
-            "syslog",
-        ]
+        &["awslogs", "fluentd", "gelf", "journald", "json-file", "splunk", "syslog"]
     }
 }
 impl ::std::convert::AsRef<str> for LogDriver {

@@ -16,9 +16,7 @@ pub fn ser_workspace_creation_properties(
         object.key("CustomSecurityGroupId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.user_enabled_as_local_administrator {
-        object
-            .key("UserEnabledAsLocalAdministrator")
-            .boolean(*var_5);
+        object.key("UserEnabledAsLocalAdministrator").boolean(*var_5);
     }
     if let Some(var_6) = &input.enable_maintenance_mode {
         object.key("EnableMaintenanceMode").boolean(*var_6);

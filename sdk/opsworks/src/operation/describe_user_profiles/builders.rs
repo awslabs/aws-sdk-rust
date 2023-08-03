@@ -38,9 +38,7 @@ impl DescribeUserProfilesFluentBuilder {
         }
     }
     /// Access the DescribeUserProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_user_profiles::builders::DescribeUserProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_user_profiles::builders::DescribeUserProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeUserProfilesFluentBuilder {
             crate::operation::describe_user_profiles::DescribeUserProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profiles::DescribeUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profiles::DescribeUserProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeUserProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeUserProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_profiles::DescribeUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profiles::DescribeUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profiles::DescribeUserProfilesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeUserProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_profiles::DescribeUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profiles::DescribeUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profiles::DescribeUserProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeUserProfilesFluentBuilder {
             crate::operation::describe_user_profiles::DescribeUserProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_profiles::DescribeUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_profiles::DescribeUserProfilesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +115,17 @@ impl DescribeUserProfilesFluentBuilder {
     /// To override the contents of this collection use [`set_iam_user_arns`](Self::set_iam_user_arns).
     ///
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn iam_user_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_user_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_user_arns(input.into());
         self
     }
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn set_iam_user_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_iam_user_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_iam_user_arns(input);
         self
     }
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn get_iam_user_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_iam_user_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_iam_user_arns()
     }
 }

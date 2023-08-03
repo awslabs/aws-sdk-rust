@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`volume_arn(Option<String>)`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     ///   - [`volume_recovery_point_time(Option<String>)`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput::volume_recovery_point_time): <p>The time the volume was created from the recovery point.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotFromVolumeRecoveryPointError>`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointError)
-    pub fn create_snapshot_from_volume_recovery_point(&self) -> crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointFluentBuilder{
-        crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointFluentBuilder::new(self.handle.clone())
+    pub fn create_snapshot_from_volume_recovery_point(
+        &self,
+    ) -> crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointFluentBuilder {
+        crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

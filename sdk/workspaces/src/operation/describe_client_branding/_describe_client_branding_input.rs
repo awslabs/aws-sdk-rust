@@ -15,18 +15,14 @@ impl DescribeClientBrandingInput {
 }
 impl DescribeClientBrandingInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientBrandingInput`](crate::operation::describe_client_branding::DescribeClientBrandingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_client_branding::builders::DescribeClientBrandingInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_client_branding::builders::DescribeClientBrandingInputBuilder {
         crate::operation::describe_client_branding::builders::DescribeClientBrandingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientBrandingInput`](crate::operation::describe_client_branding::DescribeClientBrandingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientBrandingInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DescribeClientBrandingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClientBrandingInput`](crate::operation::describe_client_branding::DescribeClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_client_branding::DescribeClientBrandingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_client_branding::DescribeClientBrandingInput {
-                resource_id: self.resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_client_branding::DescribeClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_client_branding::DescribeClientBrandingInput {
+            resource_id: self.resource_id,
+        })
     }
 }

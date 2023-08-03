@@ -37,9 +37,7 @@ impl ListComplianceItemsFluentBuilder {
         }
     }
     /// Access the ListComplianceItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_compliance_items::builders::ListComplianceItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_compliance_items::builders::ListComplianceItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListComplianceItemsFluentBuilder {
             crate::operation::list_compliance_items::ListComplianceItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_items::ListComplianceItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_items::ListComplianceItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListComplianceItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListComplianceItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_compliance_items::ListComplianceItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_items::ListComplianceItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_items::ListComplianceItemsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListComplianceItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_compliance_items::ListComplianceItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_items::ListComplianceItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_items::ListComplianceItemsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListComplianceItemsFluentBuilder {
             crate::operation::list_compliance_items::ListComplianceItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_items::ListComplianceItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_items::ListComplianceItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_compliance_items::paginator::ListComplianceItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_compliance_items::paginator::ListComplianceItemsPaginator {
-        crate::operation::list_compliance_items::paginator::ListComplianceItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_compliance_items::paginator::ListComplianceItemsPaginator {
+        crate::operation::list_compliance_items::paginator::ListComplianceItemsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -143,17 +125,12 @@ impl ListComplianceItemsFluentBuilder {
         self
     }
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `ResourceIds`.
@@ -166,17 +143,12 @@ impl ListComplianceItemsFluentBuilder {
         self
     }
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }
     /// Appends an item to `ResourceTypes`.
@@ -184,25 +156,17 @@ impl ListComplianceItemsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_types(input.into());
         self
     }
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_types()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>

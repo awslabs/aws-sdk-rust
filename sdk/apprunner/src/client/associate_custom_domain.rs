@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`custom_domain(Option<CustomDomain>)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being associated.</p>
     ///   - [`vpc_dns_targets(Option<Vec<VpcDnsTarget>>)`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     /// - On failure, responds with [`SdkError<AssociateCustomDomainError>`](crate::operation::associate_custom_domain::AssociateCustomDomainError)
-    pub fn associate_custom_domain(
-        &self,
-    ) -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainFluentBuilder
-    {
-        crate::operation::associate_custom_domain::builders::AssociateCustomDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_custom_domain(&self) -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainFluentBuilder {
+        crate::operation::associate_custom_domain::builders::AssociateCustomDomainFluentBuilder::new(self.handle.clone())
     }
 }

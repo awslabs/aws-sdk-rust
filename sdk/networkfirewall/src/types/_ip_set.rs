@@ -23,9 +23,7 @@ impl IpSet {
 
 /// A builder for [`IpSet`](crate::types::IpSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetBuilder {
     pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl IpSetBuilder {
         self
     }
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.definition = input;
         self
     }
@@ -55,8 +50,6 @@ impl IpSetBuilder {
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
     pub fn build(self) -> crate::types::IpSet {
-        crate::types::IpSet {
-            definition: self.definition,
-        }
+        crate::types::IpSet { definition: self.definition }
     }
 }

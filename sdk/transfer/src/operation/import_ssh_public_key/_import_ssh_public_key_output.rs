@@ -36,18 +36,14 @@ impl ::aws_http::request_id::RequestId for ImportSshPublicKeyOutput {
 }
 impl ImportSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportSshPublicKeyOutput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder {
-        crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder {
+        crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportSshPublicKeyOutput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSshPublicKeyOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl ImportSshPublicKeyOutputBuilder {
         &self.server_id
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn ssh_public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_id = input;
         self
     }

@@ -70,20 +70,17 @@ impl DescribeInstanceEventWindowsInput {
 }
 impl DescribeInstanceEventWindowsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceEventWindowsInput`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput).
-    pub fn builder() -> crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder {
         crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceEventWindowsInput`](crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceEventWindowsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) instance_event_window_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_event_window_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -108,27 +105,19 @@ impl DescribeInstanceEventWindowsInputBuilder {
     /// To override the contents of this collection use [`set_instance_event_window_ids`](Self::set_instance_event_window_ids).
     ///
     /// <p>The IDs of the event windows.</p>
-    pub fn instance_event_window_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_window_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_event_window_ids.unwrap_or_default();
         v.push(input.into());
         self.instance_event_window_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the event windows.</p>
-    pub fn set_instance_event_window_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_event_window_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_event_window_ids = input;
         self
     }
     /// <p>The IDs of the event windows.</p>
-    pub fn get_instance_event_window_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_event_window_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_event_window_ids
     }
     /// Appends an item to `filters`.
@@ -167,10 +156,7 @@ impl DescribeInstanceEventWindowsInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the event window. Use this filter to find all event windows that have a tag with a specific key, regardless of the tag value. </p> </li>
     /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the event window. Use this filter to find all event windows that have a tag with a specific value, regardless of the tag key. </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -225,14 +211,12 @@ impl DescribeInstanceEventWindowsInputBuilder {
         crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput {
-                dry_run: self.dry_run,
-                instance_event_window_ids: self.instance_event_window_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput {
+            dry_run: self.dry_run,
+            instance_event_window_ids: self.instance_event_window_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

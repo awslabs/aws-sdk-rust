@@ -37,9 +37,7 @@ impl TransitGatewayPolicyTableEntry {
 
 /// A builder for [`TransitGatewayPolicyTableEntry`](crate::types::TransitGatewayPolicyTableEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyTableEntryBuilder {
     pub(crate) policy_rule_number: ::std::option::Option<::std::string::String>,
     pub(crate) policy_rule: ::std::option::Option<crate::types::TransitGatewayPolicyRule>,
@@ -47,18 +45,12 @@ pub struct TransitGatewayPolicyTableEntryBuilder {
 }
 impl TransitGatewayPolicyTableEntryBuilder {
     /// <p>The rule number for the transit gateway policy table entry.</p>
-    pub fn policy_rule_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_rule_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_rule_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule number for the transit gateway policy table entry.</p>
-    pub fn set_policy_rule_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_rule_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_rule_number = input;
         self
     }
@@ -72,32 +64,21 @@ impl TransitGatewayPolicyTableEntryBuilder {
         self
     }
     /// <p>The policy rule associated with the transit gateway policy table.</p>
-    pub fn set_policy_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPolicyRule>,
-    ) -> Self {
+    pub fn set_policy_rule(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyRule>) -> Self {
         self.policy_rule = input;
         self
     }
     /// <p>The policy rule associated with the transit gateway policy table.</p>
-    pub fn get_policy_rule(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyRule> {
+    pub fn get_policy_rule(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyRule> {
         &self.policy_rule
     }
     /// <p>The ID of the target route table.</p>
-    pub fn target_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target route table.</p>
-    pub fn set_target_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_route_table_id = input;
         self
     }

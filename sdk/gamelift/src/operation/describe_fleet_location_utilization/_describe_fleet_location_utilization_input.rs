@@ -22,16 +22,14 @@ impl DescribeFleetLocationUtilizationInput {
 }
 impl DescribeFleetLocationUtilizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationUtilizationInput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput).
-    pub fn builder() -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationInputBuilder {
         crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetLocationUtilizationInput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeFleetLocationUtilizationInputBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`DescribeFleetLocationUtilizationInput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput {
-                fleet_id: self.fleet_id
-                ,
-                location: self.location
-                ,
-            }
+                fleet_id: self.fleet_id,
+                location: self.location,
+            },
         )
     }
 }

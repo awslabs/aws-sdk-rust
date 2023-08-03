@@ -103,9 +103,7 @@ impl ClarifyInferenceConfig {
 
 /// A builder for [`ClarifyInferenceConfig`](crate::types::ClarifyInferenceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClarifyInferenceConfigBuilder {
     pub(crate) features_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) content_template: ::std::option::Option<::std::string::String>,
@@ -117,23 +115,16 @@ pub struct ClarifyInferenceConfigBuilder {
     pub(crate) label_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) label_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) feature_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) feature_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClarifyFeatureType>>,
+    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::ClarifyFeatureType>>,
 }
 impl ClarifyInferenceConfigBuilder {
     /// <p>Provides the JMESPath expression to extract the features from a model container input in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code> from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
-    pub fn features_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn features_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.features_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the JMESPath expression to extract the features from a model container input in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code> from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
-    pub fn set_features_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_features_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.features_attribute = input;
         self
     }
@@ -142,18 +133,12 @@ impl ClarifyInferenceConfigBuilder {
         &self.features_attribute
     }
     /// <p>A template string used to format a JSON record into an acceptable model container input. For example, a <code>ContentTemplate</code> string <code>'{"myfeatures":$features}'</code> will format a list of features <code>[1,2,3]</code> into the record string <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container input is in JSON Lines format.</p>
-    pub fn content_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A template string used to format a JSON record into an acceptable model container input. For example, a <code>ContentTemplate</code> string <code>'{"myfeatures":$features}'</code> will format a list of features <code>[1,2,3]</code> into the record string <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container input is in JSON Lines format.</p>
-    pub fn set_content_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_template = input;
         self
     }
@@ -228,19 +213,13 @@ impl ClarifyInferenceConfigBuilder {
     }
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
     /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
-    pub fn probability_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn probability_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.probability_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.</p>
     /// <p> <b>Example</b>: If the model container output of a single request is <code>'{"predicted_label":1,"probability":0.6}'</code>, then set <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
-    pub fn set_probability_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_probability_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.probability_attribute = input;
         self
     }
@@ -251,19 +230,13 @@ impl ClarifyInferenceConfigBuilder {
     }
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
     /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
-    pub fn label_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JMESPath expression used to locate the list of label headers in the model container output.</p>
     /// <p> <b>Example</b>: If the model container output of a batch request is <code>'{"labels":["cat","dog","fish"],"probability":[0.6,0.3,0.1]}'</code>, then set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of label headers <code>["cat","dog","fish"]</code> </p>
-    pub fn set_label_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_attribute = input;
         self
     }
@@ -277,27 +250,19 @@ impl ClarifyInferenceConfigBuilder {
     /// To override the contents of this collection use [`set_label_headers`](Self::set_label_headers).
     ///
     /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
-    pub fn label_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.label_headers.unwrap_or_default();
         v.push(input.into());
         self.label_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
-    pub fn set_label_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_label_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.label_headers = input;
         self
     }
     /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
-    pub fn get_label_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_label_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.label_headers
     }
     /// Appends an item to `feature_headers`.
@@ -305,27 +270,19 @@ impl ClarifyInferenceConfigBuilder {
     /// To override the contents of this collection use [`set_feature_headers`](Self::set_feature_headers).
     ///
     /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn feature_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.feature_headers.unwrap_or_default();
         v.push(input.into());
         self.feature_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn set_feature_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_feature_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.feature_headers = input;
         self
     }
     /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn get_feature_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_feature_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.feature_headers
     }
     /// Appends an item to `feature_types`.
@@ -340,17 +297,12 @@ impl ClarifyInferenceConfigBuilder {
         self
     }
     /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn set_feature_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClarifyFeatureType>>,
-    ) -> Self {
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClarifyFeatureType>>) -> Self {
         self.feature_types = input;
         self
     }
     /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn get_feature_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClarifyFeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClarifyFeatureType>> {
         &self.feature_types
     }
     /// Consumes the builder and constructs a [`ClarifyInferenceConfig`](crate::types::ClarifyInferenceConfig).

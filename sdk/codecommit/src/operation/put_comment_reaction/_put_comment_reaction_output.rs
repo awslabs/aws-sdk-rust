@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutCommentReactionOutput {
 }
 impl PutCommentReactionOutput {
     /// Creates a new builder-style object to manufacture [`PutCommentReactionOutput`](crate::operation::put_comment_reaction::PutCommentReactionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_comment_reaction::builders::PutCommentReactionOutputBuilder {
+    pub fn builder() -> crate::operation::put_comment_reaction::builders::PutCommentReactionOutputBuilder {
         crate::operation::put_comment_reaction::builders::PutCommentReactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutCommentReactionOutput`](crate::operation::put_comment_reaction::PutCommentReactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCommentReactionOutputBuilder {
     _request_id: Option<String>,
 }

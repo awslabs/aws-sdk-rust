@@ -24,17 +24,14 @@ impl CancelFlowExecutionsInput {
 }
 impl CancelFlowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsInputBuilder {
         crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelFlowExecutionsInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,10 +57,7 @@ impl CancelFlowExecutionsInputBuilder {
     ///
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn execution_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.execution_ids.unwrap_or_default();
         v.push(input.into());
         self.execution_ids = ::std::option::Option::Some(v);
@@ -71,32 +65,23 @@ impl CancelFlowExecutionsInputBuilder {
     }
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn set_execution_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.execution_ids = input;
         self
     }
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn get_execution_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.execution_ids
     }
     /// Consumes the builder and constructs a [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_flow_executions::CancelFlowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_flow_executions::CancelFlowExecutionsInput {
-                flow_name: self.flow_name,
-                execution_ids: self.execution_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_flow_executions::CancelFlowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_flow_executions::CancelFlowExecutionsInput {
+            flow_name: self.flow_name,
+            execution_ids: self.execution_ids,
+        })
     }
 }

@@ -131,15 +131,9 @@ impl ::std::fmt::Debug for UpdateRelationalDatabaseInput {
         let mut formatter = f.debug_struct("UpdateRelationalDatabaseInput");
         formatter.field("relational_database_name", &self.relational_database_name);
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "rotate_master_user_password",
-            &self.rotate_master_user_password,
-        );
+        formatter.field("rotate_master_user_password", &self.rotate_master_user_password);
         formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.field("enable_backup_retention", &self.enable_backup_retention);
         formatter.field("disable_backup_retention", &self.disable_backup_retention);
         formatter.field("publicly_accessible", &self.publicly_accessible);
@@ -150,9 +144,7 @@ impl ::std::fmt::Debug for UpdateRelationalDatabaseInput {
 }
 impl UpdateRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseInput`](crate::operation::update_relational_database::UpdateRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder {
         crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder::default()
     }
 }
@@ -174,18 +166,12 @@ pub struct UpdateRelationalDatabaseInputBuilder {
 }
 impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The name of your Lightsail database resource to update.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your Lightsail database resource to update.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -198,10 +184,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
@@ -210,10 +193,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -250,10 +230,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -265,10 +242,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
@@ -293,10 +267,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -310,10 +281,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -327,9 +295,7 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
@@ -401,18 +367,12 @@ impl UpdateRelationalDatabaseInputBuilder {
         &self.apply_immediately
     }
     /// <p>Indicates the certificate that needs to be associated with the database.</p>
-    pub fn ca_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the certificate that needs to be associated with the database.</p>
-    pub fn set_ca_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_identifier = input;
         self
     }
@@ -427,20 +387,18 @@ impl UpdateRelationalDatabaseInputBuilder {
         crate::operation::update_relational_database::UpdateRelationalDatabaseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_relational_database::UpdateRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-                master_user_password: self.master_user_password,
-                rotate_master_user_password: self.rotate_master_user_password,
-                preferred_backup_window: self.preferred_backup_window,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                enable_backup_retention: self.enable_backup_retention,
-                disable_backup_retention: self.disable_backup_retention,
-                publicly_accessible: self.publicly_accessible,
-                apply_immediately: self.apply_immediately,
-                ca_certificate_identifier: self.ca_certificate_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_relational_database::UpdateRelationalDatabaseInput {
+            relational_database_name: self.relational_database_name,
+            master_user_password: self.master_user_password,
+            rotate_master_user_password: self.rotate_master_user_password,
+            preferred_backup_window: self.preferred_backup_window,
+            preferred_maintenance_window: self.preferred_maintenance_window,
+            enable_backup_retention: self.enable_backup_retention,
+            disable_backup_retention: self.disable_backup_retention,
+            publicly_accessible: self.publicly_accessible,
+            apply_immediately: self.apply_immediately,
+            ca_certificate_identifier: self.ca_certificate_identifier,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateRelationalDatabaseInputBuilder {
@@ -448,15 +406,9 @@ impl ::std::fmt::Debug for UpdateRelationalDatabaseInputBuilder {
         let mut formatter = f.debug_struct("UpdateRelationalDatabaseInputBuilder");
         formatter.field("relational_database_name", &self.relational_database_name);
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "rotate_master_user_password",
-            &self.rotate_master_user_password,
-        );
+        formatter.field("rotate_master_user_password", &self.rotate_master_user_password);
         formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.field("enable_backup_retention", &self.enable_backup_retention);
         formatter.field("disable_backup_retention", &self.disable_backup_retention);
         formatter.field("publicly_accessible", &self.publicly_accessible);

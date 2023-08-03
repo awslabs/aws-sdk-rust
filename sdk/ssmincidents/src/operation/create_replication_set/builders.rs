@@ -37,9 +37,7 @@ impl CreateReplicationSetFluentBuilder {
         }
     }
     /// Access the CreateReplicationSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateReplicationSetFluentBuilder {
             crate::operation::create_replication_set::CreateReplicationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_set::CreateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateReplicationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateReplicationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_set::CreateReplicationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_set::CreateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateReplicationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_set::CreateReplicationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_set::CreateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateReplicationSetFluentBuilder {
             crate::operation::create_replication_set::CreateReplicationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_set::CreateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError>,
     > {
         self.customize_middleware().await
     }
@@ -127,30 +114,20 @@ impl CreateReplicationSetFluentBuilder {
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub fn regions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RegionMapInputValue,
-    ) -> Self {
+    pub fn regions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RegionMapInputValue) -> Self {
         self.inner = self.inner.regions(k.into(), v);
         self
     }
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
     pub fn set_regions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
     ) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub fn get_regions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-    > {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>> {
         self.inner.get_regions()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
@@ -172,30 +149,17 @@ impl CreateReplicationSetFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

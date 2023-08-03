@@ -43,9 +43,7 @@ impl GetExportInput {
 
 /// A builder for [`GetExportInput`](crate::operation::get_export::GetExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExportInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -87,10 +85,7 @@ impl GetExportInputBuilder {
         self
     }
     /// <p>The type of resource to export. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -104,10 +99,7 @@ impl GetExportInputBuilder {
         self
     }
     /// <p>The format of the exported data.</p>
-    pub fn set_export_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportType>,
-    ) -> Self {
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
         self.export_type = input;
         self
     }
@@ -116,12 +108,7 @@ impl GetExportInputBuilder {
         &self.export_type
     }
     /// Consumes the builder and constructs a [`GetExportInput`](crate::operation::get_export::GetExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_export::GetExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_export::GetExportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_export::GetExportInput {
             name: self.name,
             version: self.version,

@@ -83,9 +83,7 @@ impl JobSummary {
 
 /// A builder for [`JobSummary`](crate::types::JobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobSummaryBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -127,18 +125,12 @@ impl JobSummaryBuilder {
         &self.job_id
     }
     /// <p>The ID of the thing group.</p>
-    pub fn thing_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the thing group.</p>
-    pub fn set_thing_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_id = input;
         self
     }
@@ -156,10 +148,7 @@ impl JobSummaryBuilder {
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
-    pub fn set_target_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetSelection>,
-    ) -> Self {
+    pub fn set_target_selection(mut self, input: ::std::option::Option<crate::types::TargetSelection>) -> Self {
         self.target_selection = input;
         self
     }
@@ -189,10 +178,7 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -206,10 +192,7 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -223,10 +206,7 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
-    pub fn set_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_at = input;
         self
     }

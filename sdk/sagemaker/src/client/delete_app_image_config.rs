@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`app_image_config_name(impl ::std::convert::Into<String>)`](crate::operation::delete_app_image_config::builders::DeleteAppImageConfigFluentBuilder::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::operation::delete_app_image_config::builders::DeleteAppImageConfigFluentBuilder::set_app_image_config_name): <p>The name of the AppImageConfig to delete.</p>
     /// - On success, responds with [`DeleteAppImageConfigOutput`](crate::operation::delete_app_image_config::DeleteAppImageConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteAppImageConfigError>`](crate::operation::delete_app_image_config::DeleteAppImageConfigError)
-    pub fn delete_app_image_config(
-        &self,
-    ) -> crate::operation::delete_app_image_config::builders::DeleteAppImageConfigFluentBuilder
-    {
-        crate::operation::delete_app_image_config::builders::DeleteAppImageConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_app_image_config(&self) -> crate::operation::delete_app_image_config::builders::DeleteAppImageConfigFluentBuilder {
+        crate::operation::delete_app_image_config::builders::DeleteAppImageConfigFluentBuilder::new(self.handle.clone())
     }
 }

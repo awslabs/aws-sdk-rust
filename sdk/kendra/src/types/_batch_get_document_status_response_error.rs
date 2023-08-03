@@ -37,9 +37,7 @@ impl BatchGetDocumentStatusResponseError {
 
 /// A builder for [`BatchGetDocumentStatusResponseError`](crate::types::BatchGetDocumentStatusResponseError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDocumentStatusResponseErrorBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -75,18 +73,12 @@ impl BatchGetDocumentStatusResponseErrorBuilder {
         &self.error_code
     }
     /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

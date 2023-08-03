@@ -30,9 +30,7 @@ impl AwsS3BucketWebsiteConfigurationRedirectTo {
 
 /// A builder for [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::types::AwsS3BucketWebsiteConfigurationRedirectTo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRedirectToBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,

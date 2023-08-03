@@ -35,9 +35,7 @@ impl GetImageRecipeOutput {
 
 /// A builder for [`GetImageRecipeOutput`](crate::operation::get_image_recipe::GetImageRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImageRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_recipe: ::std::option::Option<crate::types::ImageRecipe>,
@@ -64,10 +62,7 @@ impl GetImageRecipeOutputBuilder {
         self
     }
     /// <p>The image recipe object.</p>
-    pub fn set_image_recipe(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageRecipe>,
-    ) -> Self {
+    pub fn set_image_recipe(mut self, input: ::std::option::Option<crate::types::ImageRecipe>) -> Self {
         self.image_recipe = input;
         self
     }

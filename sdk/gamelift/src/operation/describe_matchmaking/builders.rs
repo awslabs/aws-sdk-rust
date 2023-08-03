@@ -10,10 +10,7 @@ impl DescribeMatchmakingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking::DescribeMatchmakingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking::DescribeMatchmakingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking::DescribeMatchmakingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_matchmaking();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl DescribeMatchmakingFluentBuilder {
         }
     }
     /// Access the DescribeMatchmaking as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl DescribeMatchmakingFluentBuilder {
             crate::operation::describe_matchmaking::DescribeMatchmaking,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking::DescribeMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking::DescribeMatchmakingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl DescribeMatchmakingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl DescribeMatchmakingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking::DescribeMatchmakingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking::DescribeMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking::DescribeMatchmakingError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl DescribeMatchmakingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking::DescribeMatchmakingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking::DescribeMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking::DescribeMatchmakingError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl DescribeMatchmakingFluentBuilder {
             crate::operation::describe_matchmaking::DescribeMatchmaking,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking::DescribeMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking::DescribeMatchmakingError>,
     > {
         self.customize_middleware().await
     }
@@ -138,10 +122,7 @@ impl DescribeMatchmakingFluentBuilder {
         self
     }
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-    pub fn set_ticket_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ticket_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ticket_ids(input);
         self
     }

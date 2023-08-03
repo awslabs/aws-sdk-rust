@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRuntimeConfigurationOutput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput) with field(s):
     ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput::runtime_configuration): <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
     /// - On failure, responds with [`SdkError<UpdateRuntimeConfigurationError>`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError)
-    pub fn update_runtime_configuration(&self) -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationFluentBuilder{
+    pub fn update_runtime_configuration(&self) -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationFluentBuilder {
         crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl PillarMetric {
         self.pillar_id.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The questions that have been identified as risks in the pillar.</p>
@@ -41,13 +39,10 @@ impl PillarMetric {
 
 /// A builder for [`PillarMetric`](crate::types::PillarMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PillarMetricBuilder {
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
-    pub(crate) risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     pub(crate) questions: ::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>>,
 }
 impl PillarMetricBuilder {
@@ -80,17 +75,12 @@ impl PillarMetricBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// Appends an item to `questions`.
@@ -105,17 +95,12 @@ impl PillarMetricBuilder {
         self
     }
     /// <p>The questions that have been identified as risks in the pillar.</p>
-    pub fn set_questions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>>,
-    ) -> Self {
+    pub fn set_questions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>>) -> Self {
         self.questions = input;
         self
     }
     /// <p>The questions that have been identified as risks in the pillar.</p>
-    pub fn get_questions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>> {
+    pub fn get_questions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>> {
         &self.questions
     }
     /// Consumes the builder and constructs a [`PillarMetric`](crate::types::PillarMetric).

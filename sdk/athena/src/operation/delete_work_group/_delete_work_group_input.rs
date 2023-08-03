@@ -29,9 +29,7 @@ impl DeleteWorkGroupInput {
 
 /// A builder for [`DeleteWorkGroupInput`](crate::operation::delete_work_group::DeleteWorkGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) recursive_delete_option: ::std::option::Option<bool>,
@@ -68,10 +66,7 @@ impl DeleteWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkGroupInput`](crate::operation::delete_work_group::DeleteWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_work_group::DeleteWorkGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_work_group::DeleteWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_work_group::DeleteWorkGroupInput {
             work_group: self.work_group,
             recursive_delete_option: self.recursive_delete_option,

@@ -28,9 +28,7 @@ impl GetCampaignsOutput {
 
 /// A builder for [`GetCampaignsOutput`](crate::operation::get_campaigns::GetCampaignsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignsOutputBuilder {
     pub(crate) campaigns_response: ::std::option::Option<crate::types::CampaignsResponse>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetCampaignsOutputBuilder {
         self
     }
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn set_campaigns_response(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignsResponse>,
-    ) -> Self {
+    pub fn set_campaigns_response(mut self, input: ::std::option::Option<crate::types::CampaignsResponse>) -> Self {
         self.campaigns_response = input;
         self
     }
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn get_campaigns_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::CampaignsResponse> {
+    pub fn get_campaigns_response(&self) -> &::std::option::Option<crate::types::CampaignsResponse> {
         &self.campaigns_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

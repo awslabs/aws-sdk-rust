@@ -46,9 +46,7 @@ impl ConditionalSplitActivity {
 
 /// A builder for [`ConditionalSplitActivity`](crate::types::ConditionalSplitActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionalSplitActivityBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) evaluation_wait_time: ::std::option::Option<crate::types::WaitTime>,
@@ -76,10 +74,7 @@ impl ConditionalSplitActivityBuilder {
         self
     }
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
-    pub fn set_evaluation_wait_time(
-        mut self,
-        input: ::std::option::Option<crate::types::WaitTime>,
-    ) -> Self {
+    pub fn set_evaluation_wait_time(mut self, input: ::std::option::Option<crate::types::WaitTime>) -> Self {
         self.evaluation_wait_time = input;
         self
     }
@@ -88,18 +83,12 @@ impl ConditionalSplitActivityBuilder {
         &self.evaluation_wait_time
     }
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
-    pub fn false_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn false_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.false_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
-    pub fn set_false_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_false_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.false_activity = input;
         self
     }
@@ -108,18 +97,12 @@ impl ConditionalSplitActivityBuilder {
         &self.false_activity
     }
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
-    pub fn true_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn true_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.true_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
-    pub fn set_true_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_true_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.true_activity = input;
         self
     }

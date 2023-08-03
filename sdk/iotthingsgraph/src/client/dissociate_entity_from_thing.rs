@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DissociateEntityFromThingOutput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput)
     /// - On failure, responds with [`SdkError<DissociateEntityFromThingError>`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn dissociate_entity_from_thing(&self) -> crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder{
+    pub fn dissociate_entity_from_thing(&self) -> crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder {
         crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl EncodingParametersRequest {
 
 /// A builder for [`EncodingParametersRequest`](crate::types::EncodingParametersRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncodingParametersRequestBuilder {
     pub(crate) compression_factor: ::std::option::Option<f64>,
     pub(crate) encoder_profile: ::std::option::Option<crate::types::EncoderProfile>,
@@ -58,10 +56,7 @@ impl EncodingParametersRequestBuilder {
         self
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-    pub fn set_encoder_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::EncoderProfile>,
-    ) -> Self {
+    pub fn set_encoder_profile(mut self, input: ::std::option::Option<crate::types::EncoderProfile>) -> Self {
         self.encoder_profile = input;
         self
     }

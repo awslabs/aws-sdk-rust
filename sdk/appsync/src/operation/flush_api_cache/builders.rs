@@ -10,10 +10,7 @@ impl FlushApiCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::flush_api_cache::FlushApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_api_cache::FlushApiCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_api_cache::FlushApiCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.flush_api_cache();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl FlushApiCacheFluentBuilder {
         }
     }
     /// Access the FlushApiCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::flush_api_cache::builders::FlushApiCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::flush_api_cache::builders::FlushApiCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl FlushApiCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

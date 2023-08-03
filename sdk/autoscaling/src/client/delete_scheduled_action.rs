@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`scheduled_action_name(impl ::std::convert::Into<String>)`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::scheduled_action_name) / [`set_scheduled_action_name(Option<String>)`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::set_scheduled_action_name): <p>The name of the action to delete.</p>
     /// - On success, responds with [`DeleteScheduledActionOutput`](crate::operation::delete_scheduled_action::DeleteScheduledActionOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduledActionError>`](crate::operation::delete_scheduled_action::DeleteScheduledActionError)
-    pub fn delete_scheduled_action(
-        &self,
-    ) -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder
-    {
-        crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_scheduled_action(&self) -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder {
+        crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl DisableStageTransitionFluentBuilder {
         }
     }
     /// Access the DisableStageTransition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisableStageTransitionFluentBuilder {
             crate::operation::disable_stage_transition::DisableStageTransition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_stage_transition::DisableStageTransitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_stage_transition::DisableStageTransitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisableStageTransitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisableStageTransitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_stage_transition::DisableStageTransitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_stage_transition::DisableStageTransitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_stage_transition::DisableStageTransitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisableStageTransitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_stage_transition::DisableStageTransitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_stage_transition::DisableStageTransitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_stage_transition::DisableStageTransitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DisableStageTransitionFluentBuilder {
             crate::operation::disable_stage_transition::DisableStageTransition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_stage_transition::DisableStageTransitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_stage_transition::DisableStageTransitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -163,10 +143,7 @@ impl DisableStageTransitionFluentBuilder {
         self
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
-    pub fn set_transition_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StageTransitionType>,
-    ) -> Self {
+    pub fn set_transition_type(mut self, input: ::std::option::Option<crate::types::StageTransitionType>) -> Self {
         self.inner = self.inner.set_transition_type(input);
         self
     }

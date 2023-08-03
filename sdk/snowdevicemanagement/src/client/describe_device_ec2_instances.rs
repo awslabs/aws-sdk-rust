@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput) with field(s):
     ///   - [`instances(Option<Vec<InstanceSummary>>)`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput::instances): <p>A list of structures containing information about each instance. </p>
     /// - On failure, responds with [`SdkError<DescribeDeviceEc2InstancesError>`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError)
-    pub fn describe_device_ec2_instances(&self) -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder{
+    pub fn describe_device_ec2_instances(
+        &self,
+    ) -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder {
         crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesFluentBuilder::new(self.handle.clone())
     }
 }

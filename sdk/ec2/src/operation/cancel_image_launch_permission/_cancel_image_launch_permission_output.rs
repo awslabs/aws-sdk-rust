@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelImageLaunchPermissionOutput {
 }
 impl CancelImageLaunchPermissionOutput {
     /// Creates a new builder-style object to manufacture [`CancelImageLaunchPermissionOutput`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput).
-    pub fn builder() -> crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionOutputBuilder {
         crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelImageLaunchPermissionOutput`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelImageLaunchPermissionOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CancelImageLaunchPermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelImageLaunchPermissionOutput`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput {
+    pub fn build(self) -> crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput {
         crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

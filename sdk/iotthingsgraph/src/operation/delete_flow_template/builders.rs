@@ -10,10 +10,7 @@ impl DeleteFlowTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_template::DeleteFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_template::DeleteFlowTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_template::DeleteFlowTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_flow_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteFlowTemplateFluentBuilder {
         }
     }
     /// Access the DeleteFlowTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteFlowTemplateFluentBuilder {
             crate::operation::delete_flow_template::DeleteFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_template::DeleteFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_template::DeleteFlowTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteFlowTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_template::DeleteFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_template::DeleteFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_template::DeleteFlowTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_template::DeleteFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_template::DeleteFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_template::DeleteFlowTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteFlowTemplateFluentBuilder {
             crate::operation::delete_flow_template::DeleteFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_template::DeleteFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_template::DeleteFlowTemplateError>,
     > {
         self.customize_middleware().await
     }

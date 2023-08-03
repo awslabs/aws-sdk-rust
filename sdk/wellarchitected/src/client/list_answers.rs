@@ -19,9 +19,7 @@ impl super::Client {
     ///   - [`answer_summaries(Option<Vec<AnswerSummary>>)`](crate::operation::list_answers::ListAnswersOutput::answer_summaries): <p>List of answer summaries of lens review in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_answers::ListAnswersOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAnswersError>`](crate::operation::list_answers::ListAnswersError)
-    pub fn list_answers(
-        &self,
-    ) -> crate::operation::list_answers::builders::ListAnswersFluentBuilder {
+    pub fn list_answers(&self) -> crate::operation::list_answers::builders::ListAnswersFluentBuilder {
         crate::operation::list_answers::builders::ListAnswersFluentBuilder::new(self.handle.clone())
     }
 }

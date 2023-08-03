@@ -10,9 +10,7 @@ pub struct DescribeDeliveryStreamOutput {
 }
 impl DescribeDeliveryStreamOutput {
     /// <p>Information about the delivery stream.</p>
-    pub fn delivery_stream_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeliveryStreamDescription> {
+    pub fn delivery_stream_description(&self) -> ::std::option::Option<&crate::types::DeliveryStreamDescription> {
         self.delivery_stream_description.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeDeliveryStreamOutput {
 }
 impl DescribeDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamOutput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamOutputBuilder {
         crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeliveryStreamOutput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeliveryStreamOutputBuilder {
-    pub(crate) delivery_stream_description:
-        ::std::option::Option<crate::types::DeliveryStreamDescription>,
+    pub(crate) delivery_stream_description: ::std::option::Option<crate::types::DeliveryStreamDescription>,
     _request_id: Option<String>,
 }
 impl DescribeDeliveryStreamOutputBuilder {
     /// <p>Information about the delivery stream.</p>
-    pub fn delivery_stream_description(
-        mut self,
-        input: crate::types::DeliveryStreamDescription,
-    ) -> Self {
+    pub fn delivery_stream_description(mut self, input: crate::types::DeliveryStreamDescription) -> Self {
         self.delivery_stream_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the delivery stream.</p>
-    pub fn set_delivery_stream_description(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamDescription>,
-    ) -> Self {
+    pub fn set_delivery_stream_description(mut self, input: ::std::option::Option<crate::types::DeliveryStreamDescription>) -> Self {
         self.delivery_stream_description = input;
         self
     }
     /// <p>Information about the delivery stream.</p>
-    pub fn get_delivery_stream_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeliveryStreamDescription> {
+    pub fn get_delivery_stream_description(&self) -> &::std::option::Option<crate::types::DeliveryStreamDescription> {
         &self.delivery_stream_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,10 +10,7 @@ impl DescribeInsightInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_insight::DescribeInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight::DescribeInsightError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight::DescribeInsightError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_insight();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeInsightFluentBuilder {
         }
     }
     /// Access the DescribeInsight as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_insight::builders::DescribeInsightInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_insight::builders::DescribeInsightInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeInsightFluentBuilder {
             crate::operation::describe_insight::DescribeInsight,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight::DescribeInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight::DescribeInsightError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeInsightFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeInsightFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_insight::DescribeInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight::DescribeInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight::DescribeInsightError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeInsightFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_insight::DescribeInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight::DescribeInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight::DescribeInsightError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeInsightFluentBuilder {
             crate::operation::describe_insight::DescribeInsight,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight::DescribeInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight::DescribeInsightError>,
     > {
         self.customize_middleware().await
     }

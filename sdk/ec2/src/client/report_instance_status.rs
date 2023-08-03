@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`status(ReportStatusType)`](crate::operation::report_instance_status::builders::ReportInstanceStatusFluentBuilder::status) / [`set_status(Option<ReportStatusType>)`](crate::operation::report_instance_status::builders::ReportInstanceStatusFluentBuilder::set_status): <p>The status of all instances listed.</p>
     /// - On success, responds with [`ReportInstanceStatusOutput`](crate::operation::report_instance_status::ReportInstanceStatusOutput)
     /// - On failure, responds with [`SdkError<ReportInstanceStatusError>`](crate::operation::report_instance_status::ReportInstanceStatusError)
-    pub fn report_instance_status(
-        &self,
-    ) -> crate::operation::report_instance_status::builders::ReportInstanceStatusFluentBuilder {
-        crate::operation::report_instance_status::builders::ReportInstanceStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn report_instance_status(&self) -> crate::operation::report_instance_status::builders::ReportInstanceStatusFluentBuilder {
+        crate::operation::report_instance_status::builders::ReportInstanceStatusFluentBuilder::new(self.handle.clone())
     }
 }

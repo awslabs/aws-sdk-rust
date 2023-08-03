@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_scene::CreateSceneOutput::arn): <p>The ARN of the scene.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_scene::CreateSceneOutput::creation_date_time): <p>The date and time when the scene was created.</p>
     /// - On failure, responds with [`SdkError<CreateSceneError>`](crate::operation::create_scene::CreateSceneError)
-    pub fn create_scene(
-        &self,
-    ) -> crate::operation::create_scene::builders::CreateSceneFluentBuilder {
+    pub fn create_scene(&self) -> crate::operation::create_scene::builders::CreateSceneFluentBuilder {
         crate::operation::create_scene::builders::CreateSceneFluentBuilder::new(self.handle.clone())
     }
 }

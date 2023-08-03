@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ResendContactReachabilityEmailOutput 
 }
 impl ResendContactReachabilityEmailOutput {
     /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
-    pub fn builder() -> crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder{
+    pub fn builder() -> crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder {
         crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl ResendContactReachabilityEmailOutputBuilder {
         &self.domain_name
     }
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -110,10 +102,7 @@ impl ResendContactReachabilityEmailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput
-    {
+    pub fn build(self) -> crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput {
         crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput {
             domain_name: self.domain_name,
             email_address: self.email_address,

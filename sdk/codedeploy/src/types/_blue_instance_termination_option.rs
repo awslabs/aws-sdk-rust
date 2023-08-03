@@ -42,9 +42,7 @@ impl BlueInstanceTerminationOption {
 
 /// A builder for [`BlueInstanceTerminationOption`](crate::types::BlueInstanceTerminationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlueInstanceTerminationOptionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::InstanceAction>,
     pub(crate) termination_wait_time_in_minutes: ::std::option::Option<i32>,
@@ -64,10 +62,7 @@ impl BlueInstanceTerminationOptionBuilder {
     /// <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li>
     /// <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li>
     /// </ul>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::InstanceAction>) -> Self {
         self.action = input;
         self
     }
@@ -89,10 +84,7 @@ impl BlueInstanceTerminationOptionBuilder {
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
     /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p>
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
-    pub fn set_termination_wait_time_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_termination_wait_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.termination_wait_time_in_minutes = input;
         self
     }
@@ -106,9 +98,7 @@ impl BlueInstanceTerminationOptionBuilder {
     pub fn build(self) -> crate::types::BlueInstanceTerminationOption {
         crate::types::BlueInstanceTerminationOption {
             action: self.action,
-            termination_wait_time_in_minutes: self
-                .termination_wait_time_in_minutes
-                .unwrap_or_default(),
+            termination_wait_time_in_minutes: self.termination_wait_time_in_minutes.unwrap_or_default(),
         }
     }
 }

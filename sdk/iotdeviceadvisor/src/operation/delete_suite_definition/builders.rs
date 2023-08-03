@@ -38,10 +38,7 @@ impl DeleteSuiteDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteSuiteDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteSuiteDefinitionFluentBuilder {
             crate::operation::delete_suite_definition::DeleteSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suite_definition::DeleteSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suite_definition::DeleteSuiteDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteSuiteDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suite_definition::DeleteSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suite_definition::DeleteSuiteDefinitionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suite_definition::DeleteSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suite_definition::DeleteSuiteDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DeleteSuiteDefinitionFluentBuilder {
             crate::operation::delete_suite_definition::DeleteSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suite_definition::DeleteSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suite_definition::DeleteSuiteDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEventDataStoreOutput {
 }
 impl DeleteEventDataStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreOutput`](crate::operation::delete_event_data_store::DeleteEventDataStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreOutputBuilder {
         crate::operation::delete_event_data_store::builders::DeleteEventDataStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventDataStoreOutput`](crate::operation::delete_event_data_store::DeleteEventDataStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventDataStoreOutputBuilder {
     _request_id: Option<String>,
 }

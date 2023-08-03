@@ -30,9 +30,7 @@ impl AggregationConfig {
 
 /// A builder for [`AggregationConfig`](crate::types::AggregationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregationConfigBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     pub(crate) target_file_size: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl AggregationConfigBuilder {
         self
     }
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.aggregation_type = input;
         self
     }

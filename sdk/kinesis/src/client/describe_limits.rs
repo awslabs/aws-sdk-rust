@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`on_demand_stream_count(Option<i32>)`](crate::operation::describe_limits::DescribeLimitsOutput::on_demand_stream_count): <p> Indicates the number of data streams with the on-demand capacity mode.</p>
     ///   - [`on_demand_stream_count_limit(Option<i32>)`](crate::operation::describe_limits::DescribeLimitsOutput::on_demand_stream_count_limit): <p> The maximum number of data streams with the on-demand capacity mode. </p>
     /// - On failure, responds with [`SdkError<DescribeLimitsError>`](crate::operation::describe_limits::DescribeLimitsError)
-    pub fn describe_limits(
-        &self,
-    ) -> crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder {
-        crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_limits(&self) -> crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder {
+        crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder::new(self.handle.clone())
     }
 }

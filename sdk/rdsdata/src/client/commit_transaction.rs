@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput) with field(s):
     ///   - [`transaction_status(Option<String>)`](crate::operation::commit_transaction::CommitTransactionOutput::transaction_status): <p>The status of the commit operation.</p>
     /// - On failure, responds with [`SdkError<CommitTransactionError>`](crate::operation::commit_transaction::CommitTransactionError)
-    pub fn commit_transaction(
-        &self,
-    ) -> crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder {
-        crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn commit_transaction(&self) -> crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder {
+        crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,10 +43,7 @@ impl DescribeStackResourcesFluentBuilder {
         }
     }
     /// Access the DescribeStackResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stack_resources::builders::DescribeStackResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_stack_resources::builders::DescribeStackResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl DescribeStackResourcesFluentBuilder {
             crate::operation::describe_stack_resources::DescribeStackResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resources::DescribeStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resources::DescribeStackResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl DescribeStackResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl DescribeStackResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resources::DescribeStackResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resources::DescribeStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resources::DescribeStackResourcesError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl DescribeStackResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resources::DescribeStackResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resources::DescribeStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resources::DescribeStackResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +111,7 @@ impl DescribeStackResourcesFluentBuilder {
             crate::operation::describe_stack_resources::DescribeStackResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resources::DescribeStackResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resources::DescribeStackResourcesError>,
     > {
         self.customize_middleware().await
     }
@@ -163,19 +149,13 @@ impl DescribeStackResourcesFluentBuilder {
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
@@ -188,10 +168,7 @@ impl DescribeStackResourcesFluentBuilder {
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack.</p>
     /// <p>Required: Conditional. If you don't specify <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.physical_resource_id(input.into());
         self
     }
@@ -199,10 +176,7 @@ impl DescribeStackResourcesFluentBuilder {
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack.</p>
     /// <p>Required: Conditional. If you don't specify <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_physical_resource_id(input);
         self
     }

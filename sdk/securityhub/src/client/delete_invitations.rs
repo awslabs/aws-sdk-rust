@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::operation::delete_invitations::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::operation::delete_invitations::DeleteInvitationsOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::operation::delete_invitations::DeleteInvitationsError)
-    pub fn delete_invitations(
-        &self,
-    ) -> crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder {
-        crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_invitations(&self) -> crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder {
+        crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

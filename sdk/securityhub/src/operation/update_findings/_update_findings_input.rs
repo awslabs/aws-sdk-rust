@@ -36,9 +36,7 @@ impl UpdateFindingsInput {
 
 /// A builder for [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     pub(crate) note: ::std::option::Option<crate::types::NoteUpdate>,
@@ -51,10 +49,7 @@ impl UpdateFindingsInputBuilder {
         self
     }
     /// <p>A collection of attributes that specify which findings you want to update.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -82,10 +77,7 @@ impl UpdateFindingsInputBuilder {
         self
     }
     /// <p>The updated record state for the finding.</p>
-    pub fn set_record_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordState>,
-    ) -> Self {
+    pub fn set_record_state(mut self, input: ::std::option::Option<crate::types::RecordState>) -> Self {
         self.record_state = input;
         self
     }
@@ -96,10 +88,7 @@ impl UpdateFindingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_findings::UpdateFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_findings::UpdateFindingsInput {
             filters: self.filters,
             note: self.note,

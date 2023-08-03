@@ -26,7 +26,7 @@ impl DeleteAccountCustomizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountCustomizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_account_customization::builders::DeleteAccountCustomizationInputBuilder,
+    inner: crate::operation::delete_account_customization::builders::DeleteAccountCustomizationInputBuilder,
 }
 impl DeleteAccountCustomizationFluentBuilder {
     /// Creates a new `DeleteAccountCustomization`.
@@ -37,7 +37,7 @@ impl DeleteAccountCustomizationFluentBuilder {
         }
     }
     /// Access the DeleteAccountCustomization as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_account_customization::builders::DeleteAccountCustomizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_account_customization::builders::DeleteAccountCustomizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAccountCustomizationFluentBuilder {
             crate::operation::delete_account_customization::DeleteAccountCustomization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_customization::DeleteAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_customization::DeleteAccountCustomizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAccountCustomizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAccountCustomizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_customization::DeleteAccountCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_customization::DeleteAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_customization::DeleteAccountCustomizationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAccountCustomizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_customization::DeleteAccountCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_customization::DeleteAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_customization::DeleteAccountCustomizationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteAccountCustomizationFluentBuilder {
             crate::operation::delete_account_customization::DeleteAccountCustomization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_customization::DeleteAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_customization::DeleteAccountCustomizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

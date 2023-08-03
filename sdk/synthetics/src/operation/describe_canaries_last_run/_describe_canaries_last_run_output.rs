@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeCanariesLastRunOutput {
 }
 impl DescribeCanariesLastRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunOutput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunOutputBuilder {
         crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCanariesLastRunOutput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCanariesLastRunOutputBuilder {
-    pub(crate) canaries_last_run:
-        ::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>>,
+    pub(crate) canaries_last_run: ::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeCanariesLastRunOutputBuilder {
         self
     }
     /// <p>An array that contains the information from the most recent run of each canary.</p>
-    pub fn set_canaries_last_run(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>>,
-    ) -> Self {
+    pub fn set_canaries_last_run(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>>) -> Self {
         self.canaries_last_run = input;
         self
     }
     /// <p>An array that contains the information from the most recent run of each canary.</p>
-    pub fn get_canaries_last_run(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>> {
+    pub fn get_canaries_last_run(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>> {
         &self.canaries_last_run
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
@@ -96,9 +86,7 @@ impl DescribeCanariesLastRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCanariesLastRunOutput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput {
+    pub fn build(self) -> crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput {
         crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput {
             canaries_last_run: self.canaries_last_run,
             next_token: self.next_token,

@@ -45,8 +45,7 @@ impl ::aws_http::request_id::RequestId for ListSubChannelsOutput {
 }
 impl ListSubChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubChannelsOutput`](crate::operation::list_sub_channels::ListSubChannelsOutput).
-    pub fn builder() -> crate::operation::list_sub_channels::builders::ListSubChannelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sub_channels::builders::ListSubChannelsOutputBuilder {
         crate::operation::list_sub_channels::builders::ListSubChannelsOutputBuilder::default()
     }
 }
@@ -56,8 +55,7 @@ impl ListSubChannelsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListSubChannelsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sub_channels:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,
+    pub(crate) sub_channels: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -88,17 +86,12 @@ impl ListSubChannelsOutputBuilder {
         self
     }
     /// <p>The information about each sub-channel.</p>
-    pub fn set_sub_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,
-    ) -> Self {
+    pub fn set_sub_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>) -> Self {
         self.sub_channels = input;
         self
     }
     /// <p>The information about each sub-channel.</p>
-    pub fn get_sub_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>> {
+    pub fn get_sub_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>> {
         &self.sub_channels
     }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>

@@ -15,10 +15,7 @@ pub struct UpdateTableStorageOptimizerInput {
     /// <p>Name of the table for which to enable the storage optimizer.</p>
     #[doc(hidden)]
     pub storage_optimizer_config: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OptimizerType,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl UpdateTableStorageOptimizerInput {
@@ -38,35 +35,27 @@ impl UpdateTableStorageOptimizerInput {
     pub fn storage_optimizer_config(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::OptimizerType,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.storage_optimizer_config.as_ref()
     }
 }
 impl UpdateTableStorageOptimizerInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerInput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput).
-    pub fn builder() -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder{
+    pub fn builder() -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder {
         crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTableStorageOptimizerInput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_optimizer_config: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OptimizerType,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl UpdateTableStorageOptimizerInputBuilder {
@@ -85,18 +74,12 @@ impl UpdateTableStorageOptimizerInputBuilder {
         &self.catalog_id
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -137,10 +120,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
     pub fn set_storage_optimizer_config(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::OptimizerType,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.storage_optimizer_config = input;
@@ -150,10 +130,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
     pub fn get_storage_optimizer_config(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OptimizerType,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         &self.storage_optimizer_config
     }
@@ -164,13 +141,11 @@ impl UpdateTableStorageOptimizerInputBuilder {
         crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                storage_optimizer_config: self.storage_optimizer_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            storage_optimizer_config: self.storage_optimizer_config,
+        })
     }
 }

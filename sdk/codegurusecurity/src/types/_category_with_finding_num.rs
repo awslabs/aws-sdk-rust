@@ -30,27 +30,19 @@ impl CategoryWithFindingNum {
 
 /// A builder for [`CategoryWithFindingNum`](crate::types::CategoryWithFindingNum).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryWithFindingNumBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) finding_number: ::std::option::Option<i32>,
 }
 impl CategoryWithFindingNumBuilder {
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_name = input;
         self
     }

@@ -59,9 +59,7 @@ impl DataSource {
 
 /// A builder for [`DataSource`](crate::types::DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
@@ -110,17 +108,12 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn set_s3_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3KeyOutput>>,
-    ) -> Self {
+    pub fn set_s3_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3KeyOutput>>) -> Self {
         self.s3_keys = input;
         self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn get_s3_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3KeyOutput>> {
+    pub fn get_s3_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3KeyOutput>> {
         &self.s3_keys
     }
     /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>

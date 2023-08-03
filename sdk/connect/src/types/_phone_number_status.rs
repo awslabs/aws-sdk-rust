@@ -35,9 +35,7 @@ impl PhoneNumberStatus {
 
 /// A builder for [`PhoneNumberStatus`](crate::types::PhoneNumberStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -49,10 +47,7 @@ impl PhoneNumberStatusBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>) -> Self {
         self.status = input;
         self
     }

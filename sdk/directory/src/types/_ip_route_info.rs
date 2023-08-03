@@ -58,9 +58,7 @@ impl IpRouteInfo {
 
 /// A builder for [`IpRouteInfo`](crate::types::IpRouteInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpRouteInfoBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
@@ -104,17 +102,12 @@ impl IpRouteInfoBuilder {
         self
     }
     /// <p>The status of the IP address block.</p>
-    pub fn set_ip_route_status_msg(
-        mut self,
-        input: ::std::option::Option<crate::types::IpRouteStatusMsg>,
-    ) -> Self {
+    pub fn set_ip_route_status_msg(mut self, input: ::std::option::Option<crate::types::IpRouteStatusMsg>) -> Self {
         self.ip_route_status_msg = input;
         self
     }
     /// <p>The status of the IP address block.</p>
-    pub fn get_ip_route_status_msg(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpRouteStatusMsg> {
+    pub fn get_ip_route_status_msg(&self) -> &::std::option::Option<crate::types::IpRouteStatusMsg> {
         &self.ip_route_status_msg
     }
     /// <p>The date and time the address block was added to the directory.</p>
@@ -123,10 +116,7 @@ impl IpRouteInfoBuilder {
         self
     }
     /// <p>The date and time the address block was added to the directory.</p>
-    pub fn set_added_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_added_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.added_date_time = input;
         self
     }
@@ -135,18 +125,12 @@ impl IpRouteInfoBuilder {
         &self.added_date_time
     }
     /// <p>The reason for the IpRouteStatusMsg.</p>
-    pub fn ip_route_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_route_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_route_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the IpRouteStatusMsg.</p>
-    pub fn set_ip_route_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_route_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_route_status_reason = input;
         self
     }

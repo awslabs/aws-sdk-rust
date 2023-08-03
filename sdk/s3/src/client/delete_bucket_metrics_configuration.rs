@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`DeleteBucketMetricsConfigurationOutput`](crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketMetricsConfigurationError>`](crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationError)
-    pub fn delete_bucket_metrics_configuration(&self) -> crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationFluentBuilder{
+    pub fn delete_bucket_metrics_configuration(
+        &self,
+    ) -> crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationFluentBuilder {
         crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl EventBatchingCondition {
 
 /// A builder for [`EventBatchingCondition`](crate::types::EventBatchingCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBatchingConditionBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) batch_window: ::std::option::Option<i32>,

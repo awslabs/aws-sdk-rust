@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`type_infos(Option<Vec<ActivityTypeInfo>>)`](crate::operation::list_activity_types::ListActivityTypesOutput::type_infos): <p>List of activity type information.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_activity_types::ListActivityTypesOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     /// - On failure, responds with [`SdkError<ListActivityTypesError>`](crate::operation::list_activity_types::ListActivityTypesError)
-    pub fn list_activity_types(
-        &self,
-    ) -> crate::operation::list_activity_types::builders::ListActivityTypesFluentBuilder {
-        crate::operation::list_activity_types::builders::ListActivityTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_activity_types(&self) -> crate::operation::list_activity_types::builders::ListActivityTypesFluentBuilder {
+        crate::operation::list_activity_types::builders::ListActivityTypesFluentBuilder::new(self.handle.clone())
     }
 }

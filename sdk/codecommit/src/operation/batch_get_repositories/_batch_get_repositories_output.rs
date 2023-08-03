@@ -29,22 +29,17 @@ impl ::aws_http::request_id::RequestId for BatchGetRepositoriesOutput {
 }
 impl BatchGetRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesOutput`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder {
         crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetRepositoriesOutput`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRepositoriesOutputBuilder {
-    pub(crate) repositories:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
-    pub(crate) repositories_not_found:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
+    pub(crate) repositories_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetRepositoriesOutputBuilder {
@@ -60,17 +55,12 @@ impl BatchGetRepositoriesOutputBuilder {
         self
     }
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>> {
         &self.repositories
     }
     /// Appends an item to `repositories_not_found`.
@@ -78,27 +68,19 @@ impl BatchGetRepositoriesOutputBuilder {
     /// To override the contents of this collection use [`set_repositories_not_found`](Self::set_repositories_not_found).
     ///
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn repositories_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repositories_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repositories_not_found.unwrap_or_default();
         v.push(input.into());
         self.repositories_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn set_repositories_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repositories_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repositories_not_found = input;
         self
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn get_repositories_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repositories_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.repositories_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

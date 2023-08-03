@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for SelectResourceConfigOutput {
 }
 impl SelectResourceConfigOutput {
     /// Creates a new builder-style object to manufacture [`SelectResourceConfigOutput`](crate::operation::select_resource_config::SelectResourceConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder {
+    pub fn builder() -> crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder {
         crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`SelectResourceConfigOutput`](crate::operation::select_resource_config::SelectResourceConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectResourceConfigOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_info: ::std::option::Option<crate::types::QueryInfo>,
@@ -65,10 +62,7 @@ impl SelectResourceConfigOutputBuilder {
         self
     }
     /// <p>Returns the results for the SQL query.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.results = input;
         self
     }

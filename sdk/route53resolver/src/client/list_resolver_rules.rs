@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::list_resolver_rules::ListResolverRulesOutput::max_results): <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     ///   - [`resolver_rules(Option<Vec<ResolverRule>>)`](crate::operation::list_resolver_rules::ListResolverRulesOutput::resolver_rules): <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
     /// - On failure, responds with [`SdkError<ListResolverRulesError>`](crate::operation::list_resolver_rules::ListResolverRulesError)
-    pub fn list_resolver_rules(
-        &self,
-    ) -> crate::operation::list_resolver_rules::builders::ListResolverRulesFluentBuilder {
-        crate::operation::list_resolver_rules::builders::ListResolverRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resolver_rules(&self) -> crate::operation::list_resolver_rules::builders::ListResolverRulesFluentBuilder {
+        crate::operation::list_resolver_rules::builders::ListResolverRulesFluentBuilder::new(self.handle.clone())
     }
 }

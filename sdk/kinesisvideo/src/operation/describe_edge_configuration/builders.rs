@@ -26,7 +26,7 @@ impl DescribeEdgeConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEdgeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder,
+    inner: crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder,
 }
 impl DescribeEdgeConfigurationFluentBuilder {
     /// Creates a new `DescribeEdgeConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeEdgeConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeEdgeConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEdgeConfigurationFluentBuilder {
             crate::operation::describe_edge_configuration::DescribeEdgeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEdgeConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEdgeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEdgeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeEdgeConfigurationFluentBuilder {
             crate::operation::describe_edge_configuration::DescribeEdgeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError>,
     > {
         self.customize_middleware().await
     }

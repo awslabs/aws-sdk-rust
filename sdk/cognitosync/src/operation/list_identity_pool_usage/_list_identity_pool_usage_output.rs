@@ -6,8 +6,7 @@
 pub struct ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
     #[doc(hidden)]
-    pub identity_pool_usages:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
+    pub identity_pool_usages: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
     /// The maximum number of results to be returned.
     #[doc(hidden)]
     pub max_results: i32,
@@ -21,9 +20,7 @@ pub struct ListIdentityPoolUsageOutput {
 }
 impl ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
-    pub fn identity_pool_usages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityPoolUsage]> {
+    pub fn identity_pool_usages(&self) -> ::std::option::Option<&[crate::types::IdentityPoolUsage]> {
         self.identity_pool_usages.as_deref()
     }
     /// The maximum number of results to be returned.
@@ -46,21 +43,16 @@ impl ::aws_http::request_id::RequestId for ListIdentityPoolUsageOutput {
 }
 impl ListIdentityPoolUsageOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoolUsageOutput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageOutputBuilder {
         crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityPoolUsageOutput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoolUsageOutputBuilder {
-    pub(crate) identity_pool_usages:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
+    pub(crate) identity_pool_usages: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -79,17 +71,12 @@ impl ListIdentityPoolUsageOutputBuilder {
         self
     }
     /// Usage information for the identity pools.
-    pub fn set_identity_pool_usages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
-    ) -> Self {
+    pub fn set_identity_pool_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>) -> Self {
         self.identity_pool_usages = input;
         self
     }
     /// Usage information for the identity pools.
-    pub fn get_identity_pool_usages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>> {
+    pub fn get_identity_pool_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>> {
         &self.identity_pool_usages
     }
     /// The maximum number of results to be returned.

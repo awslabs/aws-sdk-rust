@@ -13,9 +13,7 @@ pub struct VectorEnrichmentJobExportErrorDetails {
 }
 impl VectorEnrichmentJobExportErrorDetails {
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
-    pub fn r#type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
@@ -32,9 +30,7 @@ impl VectorEnrichmentJobExportErrorDetails {
 
 /// A builder for [`VectorEnrichmentJobExportErrorDetails`](crate::types::VectorEnrichmentJobExportErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VectorEnrichmentJobExportErrorDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl VectorEnrichmentJobExportErrorDetailsBuilder {
         self
     }
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType> {
         &self.r#type
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>

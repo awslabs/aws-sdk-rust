@@ -8,8 +8,7 @@ pub struct SearchAvailablePhoneNumbersOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
     #[doc(hidden)]
-    pub available_numbers_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
+    pub available_numbers_list: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
     _request_id: Option<String>,
 }
 impl SearchAvailablePhoneNumbersOutput {
@@ -18,9 +17,7 @@ impl SearchAvailablePhoneNumbersOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    pub fn available_numbers_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AvailableNumberSummary]> {
+    pub fn available_numbers_list(&self) -> ::std::option::Option<&[crate::types::AvailableNumberSummary]> {
         self.available_numbers_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for SearchAvailablePhoneNumbersOutput {
 }
 impl SearchAvailablePhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder{
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder {
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) available_numbers_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
+    pub(crate) available_numbers_list: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
     _request_id: Option<String>,
 }
 impl SearchAvailablePhoneNumbersOutputBuilder {
@@ -74,17 +68,12 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
         self
     }
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    pub fn set_available_numbers_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
-    ) -> Self {
+    pub fn set_available_numbers_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>) -> Self {
         self.available_numbers_list = input;
         self
     }
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    pub fn get_available_numbers_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
+    pub fn get_available_numbers_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
         &self.available_numbers_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
+    pub fn build(self) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
             next_token: self.next_token,
             available_numbers_list: self.available_numbers_list,

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateChannelReadMarkerOutput {
 }
 impl UpdateChannelReadMarkerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder {
         crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelReadMarkerOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl UpdateChannelReadMarkerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput {
+    pub fn build(self) -> crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput {
         crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput {
             channel_arn: self.channel_arn,
             _request_id: self._request_id,

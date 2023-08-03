@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateExperimentTemplateOutput`](crate::operation::update_experiment_template::UpdateExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::operation::update_experiment_template::UpdateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<UpdateExperimentTemplateError>`](crate::operation::update_experiment_template::UpdateExperimentTemplateError)
-    pub fn update_experiment_template(
-        &self,
-    ) -> crate::operation::update_experiment_template::builders::UpdateExperimentTemplateFluentBuilder
-    {
+    pub fn update_experiment_template(&self) -> crate::operation::update_experiment_template::builders::UpdateExperimentTemplateFluentBuilder {
         crate::operation::update_experiment_template::builders::UpdateExperimentTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,34 +22,26 @@ impl DeleteMobileDeviceAccessRuleInput {
 }
 impl DeleteMobileDeviceAccessRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessRuleInput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput).
-    pub fn builder() -> crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder{
+    pub fn builder() -> crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder {
         crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMobileDeviceAccessRuleInput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRuleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMobileDeviceAccessRuleInputBuilder {
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -58,25 +50,17 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn mobile_device_access_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mobile_device_access_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mobile_device_access_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn set_mobile_device_access_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mobile_device_access_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mobile_device_access_rule_id = input;
         self
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn get_mobile_device_access_rule_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_mobile_device_access_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.mobile_device_access_rule_id
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessRuleInput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput).
@@ -86,11 +70,9 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
         crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput {
-                organization_id: self.organization_id,
-                mobile_device_access_rule_id: self.mobile_device_access_rule_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput {
+            organization_id: self.organization_id,
+            mobile_device_access_rule_id: self.mobile_device_access_rule_id,
+        })
     }
 }

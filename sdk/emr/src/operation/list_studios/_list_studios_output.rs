@@ -35,9 +35,7 @@ impl ListStudiosOutput {
 
 /// A builder for [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudiosOutputBuilder {
     pub(crate) studios: ::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStudiosOutputBuilder {
         self
     }
     /// <p>The list of Studio summary objects.</p>
-    pub fn set_studios(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>>,
-    ) -> Self {
+    pub fn set_studios(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>>) -> Self {
         self.studios = input;
         self
     }
     /// <p>The list of Studio summary objects.</p>
-    pub fn get_studios(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>> {
+    pub fn get_studios(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>> {
         &self.studios
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

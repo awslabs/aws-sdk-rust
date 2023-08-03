@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetPasswordDataOutput {
 }
 impl GetPasswordDataOutput {
     /// Creates a new builder-style object to manufacture [`GetPasswordDataOutput`](crate::operation::get_password_data::GetPasswordDataOutput).
-    pub fn builder() -> crate::operation::get_password_data::builders::GetPasswordDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_password_data::builders::GetPasswordDataOutputBuilder {
         crate::operation::get_password_data::builders::GetPasswordDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPasswordDataOutput`](crate::operation::get_password_data::GetPasswordDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPasswordDataOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) password_data: ::std::option::Option<::std::string::String>,
@@ -68,18 +65,12 @@ impl GetPasswordDataOutputBuilder {
         &self.instance_id
     }
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn password_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn password_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn set_password_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_password_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password_data = input;
         self
     }
@@ -93,10 +84,7 @@ impl GetPasswordDataOutputBuilder {
         self
     }
     /// <p>The time the data was last updated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

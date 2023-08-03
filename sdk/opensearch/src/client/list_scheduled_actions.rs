@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`scheduled_actions(Option<Vec<ScheduledAction>>)`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput::scheduled_actions): <p>A list of actions that are scheduled for the domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListScheduledActionsError>`](crate::operation::list_scheduled_actions::ListScheduledActionsError)
-    pub fn list_scheduled_actions(
-        &self,
-    ) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder {
-        crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_scheduled_actions(&self) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder {
+        crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder::new(self.handle.clone())
     }
 }

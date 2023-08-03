@@ -10,10 +10,7 @@ impl ListDeviceEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_device_events::ListDeviceEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_device_events();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeviceEventsFluentBuilder {
         }
     }
     /// Access the ListDeviceEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeviceEventsFluentBuilder {
             crate::operation::list_device_events::ListDeviceEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeviceEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeviceEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_events::ListDeviceEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeviceEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_events::ListDeviceEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListDeviceEventsFluentBuilder {
             crate::operation::list_device_events::ListDeviceEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl ListDeviceEventsFluentBuilder {
         self
     }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    pub fn set_from_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from_time_stamp(input);
         self
     }
@@ -187,10 +168,7 @@ impl ListDeviceEventsFluentBuilder {
         self
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    pub fn set_to_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_to_time_stamp(input);
         self
     }

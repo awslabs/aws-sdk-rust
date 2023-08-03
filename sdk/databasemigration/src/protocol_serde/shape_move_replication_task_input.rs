@@ -7,9 +7,7 @@ pub fn ser_move_replication_task_input(
         object.key("ReplicationTaskArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.target_replication_instance_arn {
-        object
-            .key("TargetReplicationInstanceArn")
-            .string(var_2.as_str());
+        object.key("TargetReplicationInstanceArn").string(var_2.as_str());
     }
     Ok(())
 }

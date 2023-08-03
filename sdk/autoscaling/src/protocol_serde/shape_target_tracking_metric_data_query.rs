@@ -17,9 +17,7 @@ pub fn ser_target_tracking_metric_data_query(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("MetricStat");
     if let Some(var_6) = &input.metric_stat {
-        crate::protocol_serde::shape_target_tracking_metric_stat::ser_target_tracking_metric_stat(
-            scope_5, var_6,
-        )?;
+        crate::protocol_serde::shape_target_tracking_metric_stat::ser_target_tracking_metric_stat(scope_5, var_6)?;
     }
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("Label");

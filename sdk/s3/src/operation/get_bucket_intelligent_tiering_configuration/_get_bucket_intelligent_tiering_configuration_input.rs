@@ -22,16 +22,15 @@ impl GetBucketIntelligentTieringConfigurationInput {
 }
 impl GetBucketIntelligentTieringConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketIntelligentTieringConfigurationInput`](crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput).
-    pub fn builder() -> crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder
+    {
         crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketIntelligentTieringConfigurationInput`](crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -66,14 +65,17 @@ impl GetBucketIntelligentTieringConfigurationInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetBucketIntelligentTieringConfigurationInput`](crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput {
-                bucket: self.bucket
-                ,
-                id: self.id
-                ,
-            }
+                bucket: self.bucket,
+                id: self.id,
+            },
         )
     }
 }

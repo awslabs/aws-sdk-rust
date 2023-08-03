@@ -39,18 +39,14 @@ impl DeletePermissionVersionInput {
 }
 impl DeletePermissionVersionInput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionVersionInput`](crate::operation::delete_permission_version::DeletePermissionVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder {
         crate::operation::delete_permission_version::builders::DeletePermissionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePermissionVersionInput`](crate::operation::delete_permission_version::DeletePermissionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionVersionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<i32>,
@@ -58,18 +54,12 @@ pub struct DeletePermissionVersionInputBuilder {
 }
 impl DeletePermissionVersionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -127,12 +117,10 @@ impl DeletePermissionVersionInputBuilder {
         crate::operation::delete_permission_version::DeletePermissionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_permission_version::DeletePermissionVersionInput {
-                permission_arn: self.permission_arn,
-                permission_version: self.permission_version,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_permission_version::DeletePermissionVersionInput {
+            permission_arn: self.permission_arn,
+            permission_version: self.permission_version,
+            client_token: self.client_token,
+        })
     }
 }

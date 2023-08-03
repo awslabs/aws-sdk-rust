@@ -44,17 +44,14 @@ impl CreateConfigurationInput {
 }
 impl CreateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
         crate::operation::create_configuration::builders::CreateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kafka_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,27 +78,19 @@ impl CreateConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
     ///
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.kafka_versions.unwrap_or_default();
         v.push(input.into());
         self.kafka_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn set_kafka_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.kafka_versions = input;
         self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn get_kafka_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.kafka_versions
     }
     /// <p>The name of the configuration.</p>
@@ -132,10 +121,7 @@ impl CreateConfigurationInputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.server_properties = input;
         self
     }
@@ -150,17 +136,13 @@ impl CreateConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration::CreateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_configuration::CreateConfigurationInput {
-                description: self.description,
-                kafka_versions: self.kafka_versions,
-                name: self.name,
-                server_properties: self.server_properties,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_configuration::CreateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_configuration::CreateConfigurationInput {
+            description: self.description,
+            kafka_versions: self.kafka_versions,
+            name: self.name,
+            server_properties: self.server_properties,
+        })
     }
 }

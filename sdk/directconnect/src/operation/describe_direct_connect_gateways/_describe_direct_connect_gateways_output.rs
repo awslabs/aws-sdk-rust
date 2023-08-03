@@ -5,8 +5,7 @@
 pub struct DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
     #[doc(hidden)]
-    pub direct_connect_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>,
+    pub direct_connect_gateways: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>,
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeDirectConnectGatewaysOutput {
 }
 impl DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
-    pub fn direct_connect_gateways(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DirectConnectGateway]> {
+    pub fn direct_connect_gateways(&self) -> ::std::option::Option<&[crate::types::DirectConnectGateway]> {
         self.direct_connect_gateways.as_deref()
     }
     /// <p>The token to retrieve the next page.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeDirectConnectGatewaysOutput {
 }
 impl DescribeDirectConnectGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysOutput`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysOutputBuilder{
+    pub fn builder() -> crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysOutputBuilder {
         crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectConnectGatewaysOutput`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysOutputBuilder {
-    pub(crate) direct_connect_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>,
+    pub(crate) direct_connect_gateways: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeDirectConnectGatewaysOutputBuilder {
         self
     }
     /// <p>The Direct Connect gateways.</p>
-    pub fn set_direct_connect_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>,
-    ) -> Self {
+    pub fn set_direct_connect_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>>) -> Self {
         self.direct_connect_gateways = input;
         self
     }
     /// <p>The Direct Connect gateways.</p>
-    pub fn get_direct_connect_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>> {
+    pub fn get_direct_connect_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGateway>> {
         &self.direct_connect_gateways
     }
     /// <p>The token to retrieve the next page.</p>
@@ -97,10 +86,7 @@ impl DescribeDirectConnectGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewaysOutput`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput
-    {
+    pub fn build(self) -> crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput {
         crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput {
             direct_connect_gateways: self.direct_connect_gateways,
             next_token: self.next_token,

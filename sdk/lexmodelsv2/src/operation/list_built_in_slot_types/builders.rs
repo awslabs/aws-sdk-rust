@@ -37,10 +37,7 @@ impl ListBuiltInSlotTypesFluentBuilder {
         }
     }
     /// Access the ListBuiltInSlotTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListBuiltInSlotTypesFluentBuilder {
             crate::operation::list_built_in_slot_types::ListBuiltInSlotTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListBuiltInSlotTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListBuiltInSlotTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListBuiltInSlotTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListBuiltInSlotTypesFluentBuilder {
             crate::operation::list_built_in_slot_types::ListBuiltInSlotTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_built_in_slot_types::paginator::ListBuiltInSlotTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_built_in_slot_types::paginator::ListBuiltInSlotTypesPaginator {
-        crate::operation::list_built_in_slot_types::paginator::ListBuiltInSlotTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_built_in_slot_types::paginator::ListBuiltInSlotTypesPaginator {
+        crate::operation::list_built_in_slot_types::paginator::ListBuiltInSlotTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +135,7 @@ impl ListBuiltInSlotTypesFluentBuilder {
         self
     }
     /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BuiltInSlotTypeSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BuiltInSlotTypeSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

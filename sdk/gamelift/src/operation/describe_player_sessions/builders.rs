@@ -47,10 +47,7 @@ impl DescribePlayerSessionsFluentBuilder {
         }
     }
     /// Access the DescribePlayerSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +59,7 @@ impl DescribePlayerSessionsFluentBuilder {
             crate::operation::describe_player_sessions::DescribePlayerSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_player_sessions::DescribePlayerSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +69,7 @@ impl DescribePlayerSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +78,7 @@ impl DescribePlayerSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_player_sessions::DescribePlayerSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_player_sessions::DescribePlayerSessionsError>,
     > {
         let op = self
             .inner
@@ -111,9 +101,7 @@ impl DescribePlayerSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_player_sessions::DescribePlayerSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_player_sessions::DescribePlayerSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -127,37 +115,23 @@ impl DescribePlayerSessionsFluentBuilder {
             crate::operation::describe_player_sessions::DescribePlayerSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_player_sessions::DescribePlayerSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator
-    {
-        crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator {
+        crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
@@ -180,18 +154,12 @@ impl DescribePlayerSessionsFluentBuilder {
         self.inner.get_player_id()
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn player_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn player_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_session_id(input.into());
         self
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn set_player_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_player_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_player_session_id(input);
         self
     }
@@ -207,10 +175,7 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn player_session_status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn player_session_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_session_status_filter(input.into());
         self
     }
@@ -222,10 +187,7 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn set_player_session_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_player_session_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_player_session_status_filter(input);
         self
     }
@@ -237,9 +199,7 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn get_player_session_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_player_session_status_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_player_session_status_filter()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>

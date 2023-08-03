@@ -12,10 +12,7 @@ pub fn ser_put_room_skill_parameter_input(
     if let Some(var_3) = &input.room_skill_parameter {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RoomSkillParameter").start_object();
-        crate::protocol_serde::shape_room_skill_parameter::ser_room_skill_parameter(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_room_skill_parameter::ser_room_skill_parameter(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

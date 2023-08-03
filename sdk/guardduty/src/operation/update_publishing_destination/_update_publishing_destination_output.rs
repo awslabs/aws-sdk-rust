@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePublishingDestinationOutput {
 }
 impl UpdatePublishingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePublishingDestinationOutput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput).
-    pub fn builder() -> crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationOutputBuilder {
         crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublishingDestinationOutput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublishingDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdatePublishingDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePublishingDestinationOutput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput {
+    pub fn build(self) -> crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput {
         crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput {
             _request_id: self._request_id,
         }

@@ -26,8 +26,7 @@ impl DeleteModelPackageGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelPackageGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder,
+    inner: crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder,
 }
 impl DeleteModelPackageGroupFluentBuilder {
     /// Creates a new `DeleteModelPackageGroup`.
@@ -38,10 +37,7 @@ impl DeleteModelPackageGroupFluentBuilder {
         }
     }
     /// Access the DeleteModelPackageGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteModelPackageGroupFluentBuilder {
             crate::operation::delete_model_package_group::DeleteModelPackageGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group::DeleteModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group::DeleteModelPackageGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteModelPackageGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteModelPackageGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group::DeleteModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group::DeleteModelPackageGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteModelPackageGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group::DeleteModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group::DeleteModelPackageGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteModelPackageGroupFluentBuilder {
             crate::operation::delete_model_package_group::DeleteModelPackageGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group::DeleteModelPackageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group::DeleteModelPackageGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model group to delete.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
     /// <p>The name of the model group to delete.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`roles(Option<Vec<ImpersonationRole>>)`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput::roles): <p>The list of impersonation roles under the given WorkMail organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput::next_token): <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
     /// - On failure, responds with [`SdkError<ListImpersonationRolesError>`](crate::operation::list_impersonation_roles::ListImpersonationRolesError)
-    pub fn list_impersonation_roles(
-        &self,
-    ) -> crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder
-    {
+    pub fn list_impersonation_roles(&self) -> crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder {
         crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateLicenseManagerReportGeneratorOu
 }
 impl CreateLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorOutput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorOutputBuilder{
+    pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorOutputBuilder {
         crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLicenseManagerReportGeneratorOutput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorOutputBuilder {
     pub(crate) license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLicenseManagerReportGeneratorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-    pub fn license_manager_report_generator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-    pub fn set_license_manager_report_generator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_manager_report_generator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-    pub fn get_license_manager_report_generator_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_license_manager_report_generator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_manager_report_generator_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,9 @@ impl CreateLicenseManagerReportGeneratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorOutput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput).
-    pub fn build(self) -> crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput{
+    pub fn build(self) -> crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput {
         crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput {
-            license_manager_report_generator_arn: self.license_manager_report_generator_arn
-            ,
+            license_manager_report_generator_arn: self.license_manager_report_generator_arn,
             _request_id: self._request_id,
         }
     }

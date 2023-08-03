@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAlarmOutput`](crate::operation::describe_alarm::DescribeAlarmOutput) with field(s):
     ///   - [`alarm(Option<Alarm>)`](crate::operation::describe_alarm::DescribeAlarmOutput::alarm): <p>Contains information about an alarm.</p>
     /// - On failure, responds with [`SdkError<DescribeAlarmError>`](crate::operation::describe_alarm::DescribeAlarmError)
-    pub fn describe_alarm(
-        &self,
-    ) -> crate::operation::describe_alarm::builders::DescribeAlarmFluentBuilder {
-        crate::operation::describe_alarm::builders::DescribeAlarmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_alarm(&self) -> crate::operation::describe_alarm::builders::DescribeAlarmFluentBuilder {
+        crate::operation::describe_alarm::builders::DescribeAlarmFluentBuilder::new(self.handle.clone())
     }
 }

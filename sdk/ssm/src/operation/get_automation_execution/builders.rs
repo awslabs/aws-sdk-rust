@@ -37,10 +37,7 @@ impl GetAutomationExecutionFluentBuilder {
         }
     }
     /// Access the GetAutomationExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetAutomationExecutionFluentBuilder {
             crate::operation::get_automation_execution::GetAutomationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_automation_execution::GetAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_automation_execution::GetAutomationExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetAutomationExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetAutomationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_automation_execution::GetAutomationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_automation_execution::GetAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_automation_execution::GetAutomationExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetAutomationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_automation_execution::GetAutomationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_automation_execution::GetAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_automation_execution::GetAutomationExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetAutomationExecutionFluentBuilder {
             crate::operation::get_automation_execution::GetAutomationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_automation_execution::GetAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_automation_execution::GetAutomationExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_execution_id(input.into());
         self
     }
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_automation_execution_id(input);
         self
     }

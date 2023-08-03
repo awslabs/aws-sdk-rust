@@ -43,18 +43,14 @@ impl GetAccessControlEffectInput {
 }
 impl GetAccessControlEffectInput {
     /// Creates a new builder-style object to manufacture [`GetAccessControlEffectInput`](crate::operation::get_access_control_effect::GetAccessControlEffectInput).
-    pub fn builder(
-    ) -> crate::operation::get_access_control_effect::builders::GetAccessControlEffectInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_access_control_effect::builders::GetAccessControlEffectInputBuilder {
         crate::operation::get_access_control_effect::builders::GetAccessControlEffectInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessControlEffectInput`](crate::operation::get_access_control_effect::GetAccessControlEffectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessControlEffectInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct GetAccessControlEffectInputBuilder {
 }
 impl GetAccessControlEffectInputBuilder {
     /// <p>The identifier for the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -126,18 +116,12 @@ impl GetAccessControlEffectInputBuilder {
         &self.user_id
     }
     /// <p>The impersonation role ID.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The impersonation role ID.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.impersonation_role_id = input;
         self
     }
@@ -152,14 +136,12 @@ impl GetAccessControlEffectInputBuilder {
         crate::operation::get_access_control_effect::GetAccessControlEffectInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_access_control_effect::GetAccessControlEffectInput {
-                organization_id: self.organization_id,
-                ip_address: self.ip_address,
-                action: self.action,
-                user_id: self.user_id,
-                impersonation_role_id: self.impersonation_role_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_access_control_effect::GetAccessControlEffectInput {
+            organization_id: self.organization_id,
+            ip_address: self.ip_address,
+            action: self.action,
+            user_id: self.user_id,
+            impersonation_role_id: self.impersonation_role_id,
+        })
     }
 }

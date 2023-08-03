@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`use_case_id(Option<String>)`](crate::operation::create_use_case::CreateUseCaseOutput::use_case_id): <p>The identifier of the use case.</p>
     ///   - [`use_case_arn(Option<String>)`](crate::operation::create_use_case::CreateUseCaseOutput::use_case_arn): <p>The Amazon Resource Name (ARN) for the use case.</p>
     /// - On failure, responds with [`SdkError<CreateUseCaseError>`](crate::operation::create_use_case::CreateUseCaseError)
-    pub fn create_use_case(
-        &self,
-    ) -> crate::operation::create_use_case::builders::CreateUseCaseFluentBuilder {
-        crate::operation::create_use_case::builders::CreateUseCaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_use_case(&self) -> crate::operation::create_use_case::builders::CreateUseCaseFluentBuilder {
+        crate::operation::create_use_case::builders::CreateUseCaseFluentBuilder::new(self.handle.clone())
     }
 }

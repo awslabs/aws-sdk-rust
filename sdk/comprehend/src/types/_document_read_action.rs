@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DocumentReadAction {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DocumentReadAction {
         match s {
             "TEXTRACT_ANALYZE_DOCUMENT" => DocumentReadAction::TextractAnalyzeDocument,
             "TEXTRACT_DETECT_DOCUMENT_TEXT" => DocumentReadAction::TextractDetectDocumentText,
-            other => DocumentReadAction::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DocumentReadAction::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

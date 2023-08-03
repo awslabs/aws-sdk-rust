@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDevicePolicyConfigurationOutput
 }
 impl UpdateDevicePolicyConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDevicePolicyConfigurationOutput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput).
-    pub fn builder() -> crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationOutputBuilder {
         crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDevicePolicyConfigurationOutput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevicePolicyConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateDevicePolicyConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDevicePolicyConfigurationOutput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput {
         crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput {
             _request_id: self._request_id,
         }

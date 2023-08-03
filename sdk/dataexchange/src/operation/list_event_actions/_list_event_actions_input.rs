@@ -29,17 +29,14 @@ impl ListEventActionsInput {
 }
 impl ListEventActionsInput {
     /// Creates a new builder-style object to manufacture [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
-    pub fn builder() -> crate::operation::list_event_actions::builders::ListEventActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_actions::builders::ListEventActionsInputBuilder {
         crate::operation::list_event_actions::builders::ListEventActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventActionsInputBuilder {
     pub(crate) event_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct ListEventActionsInputBuilder {
 }
 impl ListEventActionsInputBuilder {
     /// <p>The unique identifier for the event source.</p>
-    pub fn event_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the event source.</p>
-    pub fn set_event_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListEventActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_actions::ListEventActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_event_actions::ListEventActionsInput {
-                event_source_id: self.event_source_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_event_actions::ListEventActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_event_actions::ListEventActionsInput {
+            event_source_id: self.event_source_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

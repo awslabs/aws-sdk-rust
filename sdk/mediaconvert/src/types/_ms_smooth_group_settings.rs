@@ -6,8 +6,7 @@
 pub struct MsSmoothGroupSettings {
     /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
     #[doc(hidden)]
-    pub additional_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
+    pub additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
     #[doc(hidden)]
     pub audio_deduplication: ::std::option::Option<crate::types::MsSmoothAudioDeduplication>,
@@ -32,15 +31,11 @@ pub struct MsSmoothGroupSettings {
 }
 impl MsSmoothGroupSettings {
     /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn additional_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MsSmoothAdditionalManifest]> {
+    pub fn additional_manifests(&self) -> ::std::option::Option<&[crate::types::MsSmoothAdditionalManifest]> {
         self.additional_manifests.as_deref()
     }
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
-    pub fn audio_deduplication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MsSmoothAudioDeduplication> {
+    pub fn audio_deduplication(&self) -> ::std::option::Option<&crate::types::MsSmoothAudioDeduplication> {
         self.audio_deduplication.as_ref()
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
@@ -48,9 +43,7 @@ impl MsSmoothGroupSettings {
         self.destination.as_deref()
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn destination_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationSettings> {
+    pub fn destination_settings(&self) -> ::std::option::Option<&crate::types::DestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
@@ -62,15 +55,11 @@ impl MsSmoothGroupSettings {
         self.fragment_length
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn fragment_length_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MsSmoothFragmentLengthControl> {
+    pub fn fragment_length_control(&self) -> ::std::option::Option<&crate::types::MsSmoothFragmentLengthControl> {
         self.fragment_length_control.as_ref()
     }
     /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
-    pub fn manifest_encoding(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MsSmoothManifestEncoding> {
+    pub fn manifest_encoding(&self) -> ::std::option::Option<&crate::types::MsSmoothManifestEncoding> {
         self.manifest_encoding.as_ref()
     }
 }
@@ -83,19 +72,15 @@ impl MsSmoothGroupSettings {
 
 /// A builder for [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MsSmoothGroupSettingsBuilder {
-    pub(crate) additional_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
+    pub(crate) additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
     pub(crate) audio_deduplication: ::std::option::Option<crate::types::MsSmoothAudioDeduplication>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
     pub(crate) encryption: ::std::option::Option<crate::types::MsSmoothEncryptionSettings>,
     pub(crate) fragment_length: ::std::option::Option<i32>,
-    pub(crate) fragment_length_control:
-        ::std::option::Option<crate::types::MsSmoothFragmentLengthControl>,
+    pub(crate) fragment_length_control: ::std::option::Option<crate::types::MsSmoothFragmentLengthControl>,
     pub(crate) manifest_encoding: ::std::option::Option<crate::types::MsSmoothManifestEncoding>,
 }
 impl MsSmoothGroupSettingsBuilder {
@@ -111,17 +96,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn set_additional_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
-    ) -> Self {
+    pub fn set_additional_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>) -> Self {
         self.additional_manifests = input;
         self
     }
     /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn get_additional_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>> {
+    pub fn get_additional_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>> {
         &self.additional_manifests
     }
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
@@ -130,17 +110,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
-    pub fn set_audio_deduplication(
-        mut self,
-        input: ::std::option::Option<crate::types::MsSmoothAudioDeduplication>,
-    ) -> Self {
+    pub fn set_audio_deduplication(mut self, input: ::std::option::Option<crate::types::MsSmoothAudioDeduplication>) -> Self {
         self.audio_deduplication = input;
         self
     }
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
-    pub fn get_audio_deduplication(
-        &self,
-    ) -> &::std::option::Option<crate::types::MsSmoothAudioDeduplication> {
+    pub fn get_audio_deduplication(&self) -> &::std::option::Option<crate::types::MsSmoothAudioDeduplication> {
         &self.audio_deduplication
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
@@ -163,17 +138,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn set_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationSettings>,
-    ) -> Self {
+    pub fn set_destination_settings(mut self, input: ::std::option::Option<crate::types::DestinationSettings>) -> Self {
         self.destination_settings = input;
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn get_destination_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationSettings> {
+    pub fn get_destination_settings(&self) -> &::std::option::Option<crate::types::DestinationSettings> {
         &self.destination_settings
     }
     /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
@@ -182,17 +152,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::MsSmoothEncryptionSettings>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::MsSmoothEncryptionSettings>) -> Self {
         self.encryption = input;
         self
     }
     /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
-    pub fn get_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::MsSmoothEncryptionSettings> {
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::MsSmoothEncryptionSettings> {
         &self.encryption
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
@@ -210,25 +175,17 @@ impl MsSmoothGroupSettingsBuilder {
         &self.fragment_length
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn fragment_length_control(
-        mut self,
-        input: crate::types::MsSmoothFragmentLengthControl,
-    ) -> Self {
+    pub fn fragment_length_control(mut self, input: crate::types::MsSmoothFragmentLengthControl) -> Self {
         self.fragment_length_control = ::std::option::Option::Some(input);
         self
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn set_fragment_length_control(
-        mut self,
-        input: ::std::option::Option<crate::types::MsSmoothFragmentLengthControl>,
-    ) -> Self {
+    pub fn set_fragment_length_control(mut self, input: ::std::option::Option<crate::types::MsSmoothFragmentLengthControl>) -> Self {
         self.fragment_length_control = input;
         self
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn get_fragment_length_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::MsSmoothFragmentLengthControl> {
+    pub fn get_fragment_length_control(&self) -> &::std::option::Option<crate::types::MsSmoothFragmentLengthControl> {
         &self.fragment_length_control
     }
     /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
@@ -237,17 +194,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
-    pub fn set_manifest_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::MsSmoothManifestEncoding>,
-    ) -> Self {
+    pub fn set_manifest_encoding(mut self, input: ::std::option::Option<crate::types::MsSmoothManifestEncoding>) -> Self {
         self.manifest_encoding = input;
         self
     }
     /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
-    pub fn get_manifest_encoding(
-        &self,
-    ) -> &::std::option::Option<crate::types::MsSmoothManifestEncoding> {
+    pub fn get_manifest_encoding(&self) -> &::std::option::Option<crate::types::MsSmoothManifestEncoding> {
         &self.manifest_encoding
     }
     /// Consumes the builder and constructs a [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).

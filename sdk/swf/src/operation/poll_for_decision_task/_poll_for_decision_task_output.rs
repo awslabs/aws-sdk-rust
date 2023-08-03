@@ -66,17 +66,14 @@ impl ::aws_http::request_id::RequestId for PollForDecisionTaskOutput {
 }
 impl PollForDecisionTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForDecisionTaskOutput`](crate::operation::poll_for_decision_task::PollForDecisionTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder {
+    pub fn builder() -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder {
         crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`PollForDecisionTaskOutput`](crate::operation::poll_for_decision_task::PollForDecisionTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForDecisionTaskOutputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) started_event_id: ::std::option::Option<i64>,
@@ -122,17 +119,12 @@ impl PollForDecisionTaskOutputBuilder {
         self
     }
     /// <p>The workflow execution for which this decision task was created.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The workflow execution for which this decision task was created.</p>
-    pub fn get_workflow_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.workflow_execution
     }
     /// <p>The type of the workflow execution for which this decision task was created.</p>
@@ -141,10 +133,7 @@ impl PollForDecisionTaskOutputBuilder {
         self
     }
     /// <p>The type of the workflow execution for which this decision task was created.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -164,34 +153,23 @@ impl PollForDecisionTaskOutputBuilder {
         self
     }
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
         &self.events
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

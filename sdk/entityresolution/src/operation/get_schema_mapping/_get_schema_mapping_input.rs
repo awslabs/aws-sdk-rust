@@ -15,17 +15,14 @@ impl GetSchemaMappingInput {
 }
 impl GetSchemaMappingInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
-    pub fn builder() -> crate::operation::get_schema_mapping::builders::GetSchemaMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_mapping::builders::GetSchemaMappingInputBuilder {
         crate::operation::get_schema_mapping::builders::GetSchemaMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaMappingInputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema_mapping::GetSchemaMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schema_mapping::GetSchemaMappingInput {
-                schema_name: self.schema_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_schema_mapping::GetSchemaMappingInput {
+            schema_name: self.schema_name,
+        })
     }
 }

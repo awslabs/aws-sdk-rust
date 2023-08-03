@@ -6,7 +6,11 @@ impl super::Client {
     /// - On success, responds with [`GetAssociationForServiceQuotaTemplateOutput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput) with field(s):
     ///   - [`service_quota_template_association_status(Option<ServiceQuotaTemplateAssociationStatus>)`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput::service_quota_template_association_status): <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
     /// - On failure, responds with [`SdkError<GetAssociationForServiceQuotaTemplateError>`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError)
-    pub fn get_association_for_service_quota_template(&self) -> crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateFluentBuilder{
-        crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateFluentBuilder::new(self.handle.clone())
+    pub fn get_association_for_service_quota_template(
+        &self,
+    ) -> crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateFluentBuilder {
+        crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

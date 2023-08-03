@@ -26,8 +26,7 @@ impl ListGeofenceCollectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGeofenceCollectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder,
+    inner: crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder,
 }
 impl ListGeofenceCollectionsFluentBuilder {
     /// Creates a new `ListGeofenceCollections`.
@@ -38,10 +37,7 @@ impl ListGeofenceCollectionsFluentBuilder {
         }
     }
     /// Access the ListGeofenceCollections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListGeofenceCollectionsFluentBuilder {
             crate::operation::list_geofence_collections::ListGeofenceCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geofence_collections::ListGeofenceCollectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListGeofenceCollectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListGeofenceCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geofence_collections::ListGeofenceCollectionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListGeofenceCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geofence_collections::ListGeofenceCollectionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListGeofenceCollectionsFluentBuilder {
             crate::operation::list_geofence_collections::ListGeofenceCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geofence_collections::ListGeofenceCollectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_geofence_collections::paginator::ListGeofenceCollectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_geofence_collections::paginator::ListGeofenceCollectionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_geofence_collections::paginator::ListGeofenceCollectionsPaginator {
         crate::operation::list_geofence_collections::paginator::ListGeofenceCollectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional limit for the number of resources returned in a single call. </p>

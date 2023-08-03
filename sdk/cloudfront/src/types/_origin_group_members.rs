@@ -30,9 +30,7 @@ impl OriginGroupMembers {
 
 /// A builder for [`OriginGroupMembers`](crate::types::OriginGroupMembers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginGroupMembersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroupMember>>,
@@ -64,17 +62,12 @@ impl OriginGroupMembersBuilder {
         self
     }
     /// <p>Items (origins) in an origin group.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroupMember>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroupMember>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Items (origins) in an origin group.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginGroupMember>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginGroupMember>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`OriginGroupMembers`](crate::types::OriginGroupMembers).

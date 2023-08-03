@@ -22,18 +22,14 @@ impl GetDiscoveredSchemaInput {
 }
 impl GetDiscoveredSchemaInput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder {
-        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder {
+        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiscoveredSchemaInputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -51,10 +47,7 @@ impl GetDiscoveredSchemaInputBuilder {
         self
     }
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.events = input;
         self
     }
@@ -79,15 +72,11 @@ impl GetDiscoveredSchemaInputBuilder {
     /// Consumes the builder and constructs a [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_discovered_schema::GetDiscoveredSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_discovered_schema::GetDiscoveredSchemaInput {
-                events: self.events,
-                r#type: self.r#type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_discovered_schema::GetDiscoveredSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_discovered_schema::GetDiscoveredSchemaInput {
+            events: self.events,
+            r#type: self.r#type,
+        })
     }
 }

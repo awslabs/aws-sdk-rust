@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateCustomDataIdentifierOutput {
 }
 impl CreateCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDataIdentifierOutput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput).
-    pub fn builder() -> crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierOutputBuilder{
+    pub fn builder() -> crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierOutputBuilder {
         crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomDataIdentifierOutput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomDataIdentifierOutputBuilder {
     pub(crate) custom_data_identifier_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateCustomDataIdentifierOutputBuilder {
     /// <p>The unique identifier for the custom data identifier that was created.</p>
-    pub fn custom_data_identifier_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_data_identifier_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_data_identifier_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the custom data identifier that was created.</p>
-    pub fn set_custom_data_identifier_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_data_identifier_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_data_identifier_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateCustomDataIdentifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCustomDataIdentifierOutput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput {
+    pub fn build(self) -> crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput {
         crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput {
             custom_data_identifier_id: self.custom_data_identifier_id,
             _request_id: self._request_id,

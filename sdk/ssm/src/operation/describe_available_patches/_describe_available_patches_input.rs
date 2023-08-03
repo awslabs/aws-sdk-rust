@@ -89,21 +89,16 @@ impl DescribeAvailablePatchesInput {
 }
 impl DescribeAvailablePatchesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailablePatchesInput`](crate::operation::describe_available_patches::DescribeAvailablePatchesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder {
         crate::operation::describe_available_patches::builders::DescribeAvailablePatchesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailablePatchesInput`](crate::operation::describe_available_patches::DescribeAvailablePatchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailablePatchesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -180,10 +175,7 @@ impl DescribeAvailablePatchesInputBuilder {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -218,9 +210,7 @@ impl DescribeAvailablePatchesInputBuilder {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         &self.filters
     }
     /// <p>The maximum number of patches to return (per page).</p>
@@ -258,12 +248,10 @@ impl DescribeAvailablePatchesInputBuilder {
         crate::operation::describe_available_patches::DescribeAvailablePatchesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_available_patches::DescribeAvailablePatchesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_available_patches::DescribeAvailablePatchesInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

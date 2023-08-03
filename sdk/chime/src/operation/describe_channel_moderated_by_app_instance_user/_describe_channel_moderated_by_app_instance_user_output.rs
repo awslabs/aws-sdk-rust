@@ -10,9 +10,7 @@ pub struct DescribeChannelModeratedByAppInstanceUserOutput {
 }
 impl DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
-    pub fn channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelModeratedByAppInstanceUserSummary> {
+    pub fn channel(&self) -> ::std::option::Option<&crate::types::ChannelModeratedByAppInstanceUserSummary> {
         self.channel.as_ref()
     }
 }
@@ -23,42 +21,32 @@ impl ::aws_http::request_id::RequestId for DescribeChannelModeratedByAppInstance
 }
 impl DescribeChannelModeratedByAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput).
-    pub fn builder() -> crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserOutputBuilder {
         crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelModeratedByAppInstanceUserOutputBuilder {
-    pub(crate) channel:
-        ::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary>,
+    pub(crate) channel: ::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary>,
     _request_id: Option<String>,
 }
 impl DescribeChannelModeratedByAppInstanceUserOutputBuilder {
     /// <p>The moderated channel.</p>
-    pub fn channel(
-        mut self,
-        input: crate::types::ChannelModeratedByAppInstanceUserSummary,
-    ) -> Self {
+    pub fn channel(mut self, input: crate::types::ChannelModeratedByAppInstanceUserSummary) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The moderated channel.</p>
-    pub fn set_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary>,
-    ) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary>) -> Self {
         self.channel = input;
         self
     }
     /// <p>The moderated channel.</p>
-    pub fn get_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary> {
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary> {
         &self.channel
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +59,9 @@ impl DescribeChannelModeratedByAppInstanceUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput).
-    pub fn build(self) -> crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput{
+    pub fn build(self) -> crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput {
         crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput {
-            channel: self.channel
-            ,
+            channel: self.channel,
             _request_id: self._request_id,
         }
     }

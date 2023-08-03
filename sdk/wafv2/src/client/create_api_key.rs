@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApiKeyOutput`](crate::operation::create_api_key::CreateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<String>)`](crate::operation::create_api_key::CreateApiKeyOutput::api_key): <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     /// - On failure, responds with [`SdkError<CreateAPIKeyError>`](crate::operation::create_api_key::CreateAPIKeyError)
-    pub fn create_api_key(
-        &self,
-    ) -> crate::operation::create_api_key::builders::CreateAPIKeyFluentBuilder {
-        crate::operation::create_api_key::builders::CreateAPIKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_api_key(&self) -> crate::operation::create_api_key::builders::CreateAPIKeyFluentBuilder {
+        crate::operation::create_api_key::builders::CreateAPIKeyFluentBuilder::new(self.handle.clone())
     }
 }

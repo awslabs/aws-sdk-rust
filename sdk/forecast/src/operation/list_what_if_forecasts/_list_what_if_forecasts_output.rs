@@ -5,8 +5,7 @@
 pub struct ListWhatIfForecastsOutput {
     /// <p>An array of <code>WhatIfForecasts</code> objects that describe the matched forecasts.</p>
     #[doc(hidden)]
-    pub what_if_forecasts:
-        ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>>,
+    pub what_if_forecasts: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListWhatIfForecastsOutput {
 }
 impl ListWhatIfForecastsOutput {
     /// <p>An array of <code>WhatIfForecasts</code> objects that describe the matched forecasts.</p>
-    pub fn what_if_forecasts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WhatIfForecastSummary]> {
+    pub fn what_if_forecasts(&self) -> ::std::option::Option<&[crate::types::WhatIfForecastSummary]> {
         self.what_if_forecasts.as_deref()
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWhatIfForecastsOutput {
 }
 impl ListWhatIfForecastsOutput {
     /// Creates a new builder-style object to manufacture [`ListWhatIfForecastsOutput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsOutputBuilder {
+    pub fn builder() -> crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsOutputBuilder {
         crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWhatIfForecastsOutput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWhatIfForecastsOutputBuilder {
-    pub(crate) what_if_forecasts:
-        ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>>,
+    pub(crate) what_if_forecasts: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListWhatIfForecastsOutputBuilder {
         self
     }
     /// <p>An array of <code>WhatIfForecasts</code> objects that describe the matched forecasts.</p>
-    pub fn set_what_if_forecasts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>>,
-    ) -> Self {
+    pub fn set_what_if_forecasts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>>) -> Self {
         self.what_if_forecasts = input;
         self
     }
     /// <p>An array of <code>WhatIfForecasts</code> objects that describe the matched forecasts.</p>
-    pub fn get_what_if_forecasts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>> {
+    pub fn get_what_if_forecasts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastSummary>> {
         &self.what_if_forecasts
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>

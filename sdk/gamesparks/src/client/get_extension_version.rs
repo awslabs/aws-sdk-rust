@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetExtensionVersionOutput`](crate::operation::get_extension_version::GetExtensionVersionOutput) with field(s):
     ///   - [`extension_version(Option<ExtensionVersionDetails>)`](crate::operation::get_extension_version::GetExtensionVersionOutput::extension_version): <p>The version of the extension.</p>
     /// - On failure, responds with [`SdkError<GetExtensionVersionError>`](crate::operation::get_extension_version::GetExtensionVersionError)
-    pub fn get_extension_version(
-        &self,
-    ) -> crate::operation::get_extension_version::builders::GetExtensionVersionFluentBuilder {
-        crate::operation::get_extension_version::builders::GetExtensionVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_extension_version(&self) -> crate::operation::get_extension_version::builders::GetExtensionVersionFluentBuilder {
+        crate::operation::get_extension_version::builders::GetExtensionVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for RegisterEventTopicOutput {
 }
 impl RegisterEventTopicOutput {
     /// Creates a new builder-style object to manufacture [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput).
-    pub fn builder(
-    ) -> crate::operation::register_event_topic::builders::RegisterEventTopicOutputBuilder {
+    pub fn builder() -> crate::operation::register_event_topic::builders::RegisterEventTopicOutputBuilder {
         crate::operation::register_event_topic::builders::RegisterEventTopicOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterEventTopicOutputBuilder {
     _request_id: Option<String>,
 }

@@ -30,9 +30,7 @@ impl UnlockDelay {
 
 /// A builder for [`UnlockDelay`](crate::types::UnlockDelay).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlockDelayBuilder {
     pub(crate) unlock_delay_value: ::std::option::Option<i32>,
     pub(crate) unlock_delay_unit: ::std::option::Option<crate::types::UnlockDelayUnit>,
@@ -58,10 +56,7 @@ impl UnlockDelayBuilder {
         self
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub fn set_unlock_delay_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::UnlockDelayUnit>,
-    ) -> Self {
+    pub fn set_unlock_delay_unit(mut self, input: ::std::option::Option<crate::types::UnlockDelayUnit>) -> Self {
         self.unlock_delay_unit = input;
         self
     }

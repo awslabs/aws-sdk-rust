@@ -26,8 +26,7 @@ impl ModifyAquaConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyAquaConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder,
+    inner: crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder,
 }
 impl ModifyAquaConfigurationFluentBuilder {
     /// Creates a new `ModifyAquaConfiguration`.
@@ -38,10 +37,7 @@ impl ModifyAquaConfigurationFluentBuilder {
         }
     }
     /// Access the ModifyAquaConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ModifyAquaConfigurationFluentBuilder {
             crate::operation::modify_aqua_configuration::ModifyAquaConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ModifyAquaConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ModifyAquaConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ModifyAquaConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl ModifyAquaConfigurationFluentBuilder {
             crate::operation::modify_aqua_configuration::ModifyAquaConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the cluster to be modified.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster to be modified.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -145,25 +124,17 @@ impl ModifyAquaConfigurationFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(
-        mut self,
-        input: crate::types::AquaConfigurationStatus,
-    ) -> Self {
+    pub fn aqua_configuration_status(mut self, input: crate::types::AquaConfigurationStatus) -> Self {
         self.inner = self.inner.aqua_configuration_status(input);
         self
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn set_aqua_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AquaConfigurationStatus>,
-    ) -> Self {
+    pub fn set_aqua_configuration_status(mut self, input: ::std::option::Option<crate::types::AquaConfigurationStatus>) -> Self {
         self.inner = self.inner.set_aqua_configuration_status(input);
         self
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn get_aqua_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+    pub fn get_aqua_configuration_status(&self) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
         self.inner.get_aqua_configuration_status()
     }
 }

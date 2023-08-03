@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`asset_model_arn(Option<String>)`](crate::operation::create_asset_model::CreateAssetModelOutput::asset_model_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::operation::create_asset_model::CreateAssetModelOutput::asset_model_status): <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<CreateAssetModelError>`](crate::operation::create_asset_model::CreateAssetModelError)
-    pub fn create_asset_model(
-        &self,
-    ) -> crate::operation::create_asset_model::builders::CreateAssetModelFluentBuilder {
-        crate::operation::create_asset_model::builders::CreateAssetModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_asset_model(&self) -> crate::operation::create_asset_model::builders::CreateAssetModelFluentBuilder {
+        crate::operation::create_asset_model::builders::CreateAssetModelFluentBuilder::new(self.handle.clone())
     }
 }

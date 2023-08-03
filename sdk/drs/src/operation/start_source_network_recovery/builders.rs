@@ -26,7 +26,7 @@ impl StartSourceNetworkRecoveryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSourceNetworkRecoveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryInputBuilder,
+    inner: crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryInputBuilder,
 }
 impl StartSourceNetworkRecoveryFluentBuilder {
     /// Creates a new `StartSourceNetworkRecovery`.
@@ -37,7 +37,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
         }
     }
     /// Access the StartSourceNetworkRecovery as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
             crate::operation::start_source_network_recovery::StartSourceNetworkRecovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
             crate::operation::start_source_network_recovery::StartSourceNetworkRecovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError>,
     > {
         self.customize_middleware().await
     }
@@ -125,29 +114,20 @@ impl StartSourceNetworkRecoveryFluentBuilder {
     /// To override the contents of this collection use [`set_source_networks`](Self::set_source_networks).
     ///
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    pub fn source_networks(
-        mut self,
-        input: crate::types::StartSourceNetworkRecoveryRequestNetworkEntry,
-    ) -> Self {
+    pub fn source_networks(mut self, input: crate::types::StartSourceNetworkRecoveryRequestNetworkEntry) -> Self {
         self.inner = self.inner.source_networks(input);
         self
     }
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
     pub fn set_source_networks(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
     ) -> Self {
         self.inner = self.inner.set_source_networks(input);
         self
     }
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    pub fn get_source_networks(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>,
-    > {
+    pub fn get_source_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>> {
         self.inner.get_source_networks()
     }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
@@ -169,30 +149,17 @@ impl StartSourceNetworkRecoveryFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -50,17 +50,14 @@ impl ListPhoneNumbersInput {
 }
 impl ListPhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
-    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder {
         crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersInputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
@@ -90,10 +87,7 @@ impl ListPhoneNumbersInputBuilder {
         self
     }
     /// <p>The phone number product types.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
         self.product_type = input;
         self
     }
@@ -107,17 +101,12 @@ impl ListPhoneNumbersInputBuilder {
         self
     }
     /// <p>The filter to limit the number of results.</p>
-    pub fn set_filter_name(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberAssociationName>,
-    ) -> Self {
+    pub fn set_filter_name(mut self, input: ::std::option::Option<crate::types::PhoneNumberAssociationName>) -> Self {
         self.filter_name = input;
         self
     }
     /// <p>The filter to limit the number of results.</p>
-    pub fn get_filter_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhoneNumberAssociationName> {
+    pub fn get_filter_name(&self) -> &::std::option::Option<crate::types::PhoneNumberAssociationName> {
         &self.filter_name
     }
     /// <p>The filter value.</p>
@@ -165,19 +154,14 @@ impl ListPhoneNumbersInputBuilder {
     /// Consumes the builder and constructs a [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_phone_numbers::ListPhoneNumbersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_phone_numbers::ListPhoneNumbersInput {
-                status: self.status,
-                product_type: self.product_type,
-                filter_name: self.filter_name,
-                filter_value: self.filter_value,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_phone_numbers::ListPhoneNumbersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_phone_numbers::ListPhoneNumbersInput {
+            status: self.status,
+            product_type: self.product_type,
+            filter_name: self.filter_name,
+            filter_value: self.filter_value,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

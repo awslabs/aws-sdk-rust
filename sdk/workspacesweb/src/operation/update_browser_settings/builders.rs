@@ -37,10 +37,7 @@ impl UpdateBrowserSettingsFluentBuilder {
         }
     }
     /// Access the UpdateBrowserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_browser_settings::builders::UpdateBrowserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_browser_settings::builders::UpdateBrowserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateBrowserSettingsFluentBuilder {
             crate::operation::update_browser_settings::UpdateBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_browser_settings::UpdateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_browser_settings::UpdateBrowserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateBrowserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_browser_settings::UpdateBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_browser_settings::UpdateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_browser_settings::UpdateBrowserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_browser_settings::UpdateBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_browser_settings::UpdateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_browser_settings::UpdateBrowserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateBrowserSettingsFluentBuilder {
             crate::operation::update_browser_settings::UpdateBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_browser_settings::UpdateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_browser_settings::UpdateBrowserSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.browser_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_browser_settings_arn(input);
         self
     }
@@ -144,18 +124,12 @@ impl UpdateBrowserSettingsFluentBuilder {
         self.inner.get_browser_settings_arn()
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
-    pub fn browser_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.browser_policy(input.into());
         self
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
-    pub fn set_browser_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_browser_policy(input);
         self
     }

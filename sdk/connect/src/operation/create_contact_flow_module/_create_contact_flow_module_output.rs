@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateContactFlowModuleOutput {
 }
 impl CreateContactFlowModuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactFlowModuleOutput`](crate::operation::create_contact_flow_module::CreateContactFlowModuleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_contact_flow_module::builders::CreateContactFlowModuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_contact_flow_module::builders::CreateContactFlowModuleOutputBuilder {
         crate::operation::create_contact_flow_module::builders::CreateContactFlowModuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContactFlowModuleOutput`](crate::operation::create_contact_flow_module::CreateContactFlowModuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContactFlowModuleOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -84,9 +80,7 @@ impl CreateContactFlowModuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateContactFlowModuleOutput`](crate::operation::create_contact_flow_module::CreateContactFlowModuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_contact_flow_module::CreateContactFlowModuleOutput {
+    pub fn build(self) -> crate::operation::create_contact_flow_module::CreateContactFlowModuleOutput {
         crate::operation::create_contact_flow_module::CreateContactFlowModuleOutput {
             id: self.id,
             arn: self.arn,

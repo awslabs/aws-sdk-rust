@@ -26,7 +26,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStudioLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder,
+    inner: crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder,
 }
 impl CreateStudioLifecycleConfigFluentBuilder {
     /// Creates a new `CreateStudioLifecycleConfig`.
@@ -37,7 +37,7 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         }
     }
     /// Access the CreateStudioLifecycleConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateStudioLifecycleConfigFluentBuilder {
             crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateStudioLifecycleConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,76 +105,50 @@ impl CreateStudioLifecycleConfigFluentBuilder {
             crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
-    pub fn studio_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_name(input.into());
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
-    pub fn set_studio_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
-    pub fn get_studio_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_name()
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn studio_lifecycle_config_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_content(input.into());
         self
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn set_studio_lifecycle_config_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_content(input);
         self
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn get_studio_lifecycle_config_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_studio_lifecycle_config_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_content()
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn studio_lifecycle_config_app_type(
-        mut self,
-        input: crate::types::StudioLifecycleConfigAppType,
-    ) -> Self {
+    pub fn studio_lifecycle_config_app_type(mut self, input: crate::types::StudioLifecycleConfigAppType) -> Self {
         self.inner = self.inner.studio_lifecycle_config_app_type(input);
         self
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn set_studio_lifecycle_config_app_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_app_type(mut self, input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_app_type(input);
         self
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn get_studio_lifecycle_config_app_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
+    pub fn get_studio_lifecycle_config_app_type(&self) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
         self.inner.get_studio_lifecycle_config_app_type()
     }
     /// Appends an item to `Tags`.
@@ -196,10 +161,7 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         self
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

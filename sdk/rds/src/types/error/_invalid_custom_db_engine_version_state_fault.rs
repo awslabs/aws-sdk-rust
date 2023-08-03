@@ -17,10 +17,7 @@ impl InvalidCustomDbEngineVersionStateFault {
 }
 impl ::std::fmt::Display for InvalidCustomDbEngineVersionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "InvalidCustomDbEngineVersionStateFault [InvalidCustomDBEngineVersionStateFault]"
-        )?;
+        ::std::write!(f, "InvalidCustomDbEngineVersionStateFault [InvalidCustomDBEngineVersionStateFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -30,34 +27,27 @@ impl ::std::fmt::Display for InvalidCustomDbEngineVersionStateFault {
     }
 }
 impl ::std::error::Error for InvalidCustomDbEngineVersionStateFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidCustomDbEngineVersionStateFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCustomDbEngineVersionStateFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidCustomDbEngineVersionStateFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidCustomDbEngineVersionStateFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidCustomDbEngineVersionStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidCustomDbEngineVersionStateFault`](crate::types::error::InvalidCustomDbEngineVersionStateFault).
-    pub fn builder() -> crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder {
         crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder::default()
     }
 }
 
 /// A builder for [`InvalidCustomDbEngineVersionStateFault`](crate::types::error::InvalidCustomDbEngineVersionStateFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidCustomDbEngineVersionStateFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -84,10 +74,7 @@ impl InvalidCustomDbEngineVersionStateFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

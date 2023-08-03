@@ -35,7 +35,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder,
+    inner: crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder,
 }
 impl UpdateTrafficPolicyInstanceFluentBuilder {
     /// Creates a new `UpdateTrafficPolicyInstance`.
@@ -46,7 +46,7 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
         }
     }
     /// Access the UpdateTrafficPolicyInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
             crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +114,7 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
             crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -158,18 +147,12 @@ impl UpdateTrafficPolicyInstanceFluentBuilder {
         self.inner.get_ttl()
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    pub fn traffic_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_policy_id(input.into());
         self
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    pub fn set_traffic_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_policy_id(input);
         self
     }

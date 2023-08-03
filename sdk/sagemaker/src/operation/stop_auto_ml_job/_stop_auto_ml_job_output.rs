@@ -19,9 +19,7 @@ impl StopAutoMlJobOutput {
 
 /// A builder for [`StopAutoMlJobOutput`](crate::operation::stop_auto_ml_job::StopAutoMlJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAutoMlJobOutputBuilder {
     _request_id: Option<String>,
 }

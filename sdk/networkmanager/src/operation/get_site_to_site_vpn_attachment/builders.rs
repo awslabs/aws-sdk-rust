@@ -26,7 +26,7 @@ impl GetSiteToSiteVpnAttachmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSiteToSiteVpnAttachmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder,
+    inner: crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder,
 }
 impl GetSiteToSiteVpnAttachmentFluentBuilder {
     /// Creates a new `GetSiteToSiteVpnAttachment`.
@@ -37,7 +37,7 @@ impl GetSiteToSiteVpnAttachmentFluentBuilder {
         }
     }
     /// Access the GetSiteToSiteVpnAttachment as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSiteToSiteVpnAttachmentFluentBuilder {
             crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSiteToSiteVpnAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSiteToSiteVpnAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSiteToSiteVpnAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetSiteToSiteVpnAttachmentFluentBuilder {
             crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }

@@ -9,10 +9,7 @@ pub fn ser_verify_auth_request_cryptogram_input(
     if let Some(var_2) = &input.auth_response_attributes {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AuthResponseAttributes").start_object();
-        crate::protocol_serde::shape_cryptogram_auth_response::ser_cryptogram_auth_response(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_cryptogram_auth_response::ser_cryptogram_auth_response(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.key_identifier {
@@ -24,10 +21,7 @@ pub fn ser_verify_auth_request_cryptogram_input(
     if let Some(var_6) = &input.session_key_derivation_attributes {
         #[allow(unused_mut)]
         let mut object_7 = object.key("SessionKeyDerivationAttributes").start_object();
-        crate::protocol_serde::shape_session_key_derivation::ser_session_key_derivation(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_session_key_derivation::ser_session_key_derivation(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.transaction_data {

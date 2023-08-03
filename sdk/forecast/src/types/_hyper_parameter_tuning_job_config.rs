@@ -25,9 +25,7 @@ impl HyperParameterTuningJobConfig {
 
 /// A builder for [`HyperParameterTuningJobConfig`](crate::types::HyperParameterTuningJobConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobConfigBuilder {
     pub(crate) parameter_ranges: ::std::option::Option<crate::types::ParameterRanges>,
 }
@@ -38,10 +36,7 @@ impl HyperParameterTuningJobConfigBuilder {
         self
     }
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
-    pub fn set_parameter_ranges(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterRanges>,
-    ) -> Self {
+    pub fn set_parameter_ranges(mut self, input: ::std::option::Option<crate::types::ParameterRanges>) -> Self {
         self.parameter_ranges = input;
         self
     }

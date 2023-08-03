@@ -3,10 +3,7 @@
 pub fn de_disabled_operation_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DisabledOperationExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::DisabledOperationExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::DisabledOperationExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

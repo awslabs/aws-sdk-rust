@@ -2,8 +2,7 @@
 pub fn ser_put_snapshot_block_headers(
     input: &crate::operation::put_snapshot_block::PutSnapshotBlockInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.data_length {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
@@ -12,10 +11,7 @@ pub fn ser_put_snapshot_block_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "data_length",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-Data-Length", header_value);
@@ -29,10 +25,7 @@ pub fn ser_put_snapshot_block_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "progress",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-Progress", header_value);
@@ -45,10 +38,7 @@ pub fn ser_put_snapshot_block_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-Checksum", header_value);
@@ -61,10 +51,7 @@ pub fn ser_put_snapshot_block_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-Checksum-Algorithm", header_value);
@@ -78,127 +65,113 @@ pub fn de_put_snapshot_block_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_snapshot_block::PutSnapshotBlockOutput,
-    crate::operation::put_snapshot_block::PutSnapshotBlockError,
-> {
+) -> std::result::Result<crate::operation::put_snapshot_block::PutSnapshotBlockOutput, crate::operation::put_snapshot_block::PutSnapshotBlockError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::put_snapshot_block::PutSnapshotBlockError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::put_snapshot_block::PutSnapshotBlockError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RequestThrottledException" => crate::operation::put_snapshot_block::PutSnapshotBlockError::RequestThrottledException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RequestThrottledExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_request_throttled_exception::de_request_throttled_exception_json_err(_response_body, output).map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestThrottledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_throttled_exception::de_request_throttled_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::put_snapshot_block::PutSnapshotBlockError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::put_snapshot_block::PutSnapshotBlockError::ServiceQuotaExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::put_snapshot_block::PutSnapshotBlockError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::put_snapshot_block::PutSnapshotBlockError::generic(generic)
+        _ => crate::operation::put_snapshot_block::PutSnapshotBlockError::generic(generic),
     })
 }
 
@@ -207,38 +180,23 @@ pub fn de_put_snapshot_block_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_snapshot_block::PutSnapshotBlockOutput,
-    crate::operation::put_snapshot_block::PutSnapshotBlockError,
-> {
+) -> std::result::Result<crate::operation::put_snapshot_block::PutSnapshotBlockOutput, crate::operation::put_snapshot_block::PutSnapshotBlockError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder::default(
-            );
+        let mut output = crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder::default();
         output = output.set_checksum(
-            crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(
-                    "Failed to parse Checksum from header `x-amz-Checksum",
-                )
+            crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_header(_response_headers).map_err(|_| {
+                crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled("Failed to parse Checksum from header `x-amz-Checksum")
             })?,
         );
         output = output.set_checksum_algorithm(
-            crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_algorithm_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_algorithm_header(_response_headers).map_err(|_| {
                 crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(
                     "Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm",
                 )
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

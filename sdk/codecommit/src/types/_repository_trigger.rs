@@ -59,16 +59,13 @@ impl RepositoryTrigger {
 
 /// A builder for [`RepositoryTrigger`](crate::types::RepositoryTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryTriggerBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_data: ::std::option::Option<::std::string::String>,
     pub(crate) branches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) events:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
 }
 impl RepositoryTriggerBuilder {
     /// <p>The name of the trigger.</p>
@@ -86,18 +83,12 @@ impl RepositoryTriggerBuilder {
         &self.name
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -135,10 +126,7 @@ impl RepositoryTriggerBuilder {
     /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
     /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
-    pub fn set_branches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_branches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.branches = input;
         self
     }
@@ -164,19 +152,14 @@ impl RepositoryTriggerBuilder {
     /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::types::RepositoryTrigger).

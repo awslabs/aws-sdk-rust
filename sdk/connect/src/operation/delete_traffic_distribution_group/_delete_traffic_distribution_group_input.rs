@@ -15,40 +15,30 @@ impl DeleteTrafficDistributionGroupInput {
 }
 impl DeleteTrafficDistributionGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficDistributionGroupInput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput).
-    pub fn builder() -> crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupInputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupInputBuilder {
         crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficDistributionGroupInput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficDistributionGroupInputBuilder {
     pub(crate) traffic_distribution_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrafficDistributionGroupInputBuilder {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn traffic_distribution_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_distribution_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_distribution_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn set_traffic_distribution_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_distribution_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_distribution_group_id = input;
         self
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn get_traffic_distribution_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_distribution_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_distribution_group_id
     }
     /// Consumes the builder and constructs a [`DeleteTrafficDistributionGroupInput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput).
@@ -58,11 +48,8 @@ impl DeleteTrafficDistributionGroupInputBuilder {
         crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput {
-                traffic_distribution_group_id: self.traffic_distribution_group_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput {
+            traffic_distribution_group_id: self.traffic_distribution_group_id,
+        })
     }
 }

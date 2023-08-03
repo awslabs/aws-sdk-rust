@@ -39,9 +39,7 @@ impl GetMedicalVocabularyFluentBuilder {
         }
     }
     /// Access the GetMedicalVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl GetMedicalVocabularyFluentBuilder {
             crate::operation::get_medical_vocabulary::GetMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_vocabulary::GetMedicalVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl GetMedicalVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl GetMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_medical_vocabulary::GetMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_vocabulary::GetMedicalVocabularyError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl GetMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_medical_vocabulary::GetMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_vocabulary::GetMedicalVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl GetMedicalVocabularyFluentBuilder {
             crate::operation::get_medical_vocabulary::GetMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_vocabulary::GetMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_vocabulary::GetMedicalVocabularyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }

@@ -37,9 +37,7 @@ impl TeamMember {
 
 /// A builder for [`TeamMember`](crate::types::TeamMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TeamMemberBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_role: ::std::option::Option<::std::string::String>,

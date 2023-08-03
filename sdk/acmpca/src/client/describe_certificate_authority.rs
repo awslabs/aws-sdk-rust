@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput) with field(s):
     ///   - [`certificate_authority(Option<CertificateAuthority>)`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput::certificate_authority): <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificateAuthorityError>`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError)
-    pub fn describe_certificate_authority(&self) -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityFluentBuilder{
+    pub fn describe_certificate_authority(
+        &self,
+    ) -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityFluentBuilder {
         crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

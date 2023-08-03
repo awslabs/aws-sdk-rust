@@ -25,9 +25,7 @@ impl PathPatternConditionConfig {
 
 /// A builder for [`PathPatternConditionConfig`](crate::types::PathPatternConditionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathPatternConditionConfigBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -46,10 +44,7 @@ impl PathPatternConditionConfigBuilder {
     }
     /// <p>The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -60,8 +55,6 @@ impl PathPatternConditionConfigBuilder {
     }
     /// Consumes the builder and constructs a [`PathPatternConditionConfig`](crate::types::PathPatternConditionConfig).
     pub fn build(self) -> crate::types::PathPatternConditionConfig {
-        crate::types::PathPatternConditionConfig {
-            values: self.values,
-        }
+        crate::types::PathPatternConditionConfig { values: self.values }
     }
 }

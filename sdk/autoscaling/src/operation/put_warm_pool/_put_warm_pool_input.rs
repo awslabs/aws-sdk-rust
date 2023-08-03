@@ -45,9 +45,7 @@ impl PutWarmPoolInput {
         self.pool_state.as_ref()
     }
     /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
-    pub fn instance_reuse_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceReusePolicy> {
+    pub fn instance_reuse_policy(&self) -> ::std::option::Option<&crate::types::InstanceReusePolicy> {
         self.instance_reuse_policy.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl PutWarmPoolInput {
 
 /// A builder for [`PutWarmPoolInput`](crate::operation::put_warm_pool::PutWarmPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutWarmPoolInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_group_prepared_capacity: ::std::option::Option<i32>,
@@ -72,18 +68,12 @@ pub struct PutWarmPoolInputBuilder {
 }
 impl PutWarmPoolInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -137,10 +127,7 @@ impl PutWarmPoolInputBuilder {
         self
     }
     /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
-    pub fn set_pool_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolState>,
-    ) -> Self {
+    pub fn set_pool_state(mut self, input: ::std::option::Option<crate::types::WarmPoolState>) -> Self {
         self.pool_state = input;
         self
     }
@@ -154,26 +141,16 @@ impl PutWarmPoolInputBuilder {
         self
     }
     /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
-    pub fn set_instance_reuse_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceReusePolicy>,
-    ) -> Self {
+    pub fn set_instance_reuse_policy(mut self, input: ::std::option::Option<crate::types::InstanceReusePolicy>) -> Self {
         self.instance_reuse_policy = input;
         self
     }
     /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
-    pub fn get_instance_reuse_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
+    pub fn get_instance_reuse_policy(&self) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
         &self.instance_reuse_policy
     }
     /// Consumes the builder and constructs a [`PutWarmPoolInput`](crate::operation::put_warm_pool::PutWarmPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_warm_pool::PutWarmPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_warm_pool::PutWarmPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_warm_pool::PutWarmPoolInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             max_group_prepared_capacity: self.max_group_prepared_capacity,

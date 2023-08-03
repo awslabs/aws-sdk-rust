@@ -22,34 +22,26 @@ impl DeleteTrafficMirrorSessionInput {
 }
 impl DeleteTrafficMirrorSessionInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorSessionInput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder {
         crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficMirrorSessionInput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorSessionInputBuilder {
     pub(crate) traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTrafficMirrorSessionInputBuilder {
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteTrafficMirrorSessionInputBuilder {
         crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput {
-                traffic_mirror_session_id: self.traffic_mirror_session_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput {
+            traffic_mirror_session_id: self.traffic_mirror_session_id,
+            dry_run: self.dry_run,
+        })
     }
 }

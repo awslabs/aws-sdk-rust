@@ -105,10 +105,7 @@ impl HandshakeResourceBuilder {
     /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
     /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HandshakeResourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::HandshakeResourceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -136,17 +133,12 @@ impl HandshakeResourceBuilder {
         self
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`HandshakeResource`](crate::types::HandshakeResource).

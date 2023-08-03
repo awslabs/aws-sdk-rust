@@ -28,8 +28,7 @@ impl AssociateEntityToThingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEntityToThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder,
+    inner: crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder,
 }
 impl AssociateEntityToThingFluentBuilder {
     /// Creates a new `AssociateEntityToThing`.
@@ -40,10 +39,7 @@ impl AssociateEntityToThingFluentBuilder {
         }
     }
     /// Access the AssociateEntityToThing as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl AssociateEntityToThingFluentBuilder {
             crate::operation::associate_entity_to_thing::AssociateEntityToThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl AssociateEntityToThingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl AssociateEntityToThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl AssociateEntityToThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl AssociateEntityToThingFluentBuilder {
             crate::operation::associate_entity_to_thing::AssociateEntityToThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>,
     > {
         self.customize_middleware().await
     }

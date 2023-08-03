@@ -27,8 +27,7 @@ impl ReloadReplicationTablesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReloadReplicationTablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder,
+    inner: crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder,
 }
 impl ReloadReplicationTablesFluentBuilder {
     /// Creates a new `ReloadReplicationTables`.
@@ -39,10 +38,7 @@ impl ReloadReplicationTablesFluentBuilder {
         }
     }
     /// Access the ReloadReplicationTables as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ReloadReplicationTablesFluentBuilder {
             crate::operation::reload_replication_tables::ReloadReplicationTables,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reload_replication_tables::ReloadReplicationTablesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ReloadReplicationTablesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ReloadReplicationTablesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reload_replication_tables::ReloadReplicationTablesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ReloadReplicationTablesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reload_replication_tables::ReloadReplicationTablesError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl ReloadReplicationTablesFluentBuilder {
             crate::operation::reload_replication_tables::ReloadReplicationTables,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reload_replication_tables::ReloadReplicationTablesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_config_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_config_arn(input);
         self
     }
@@ -155,17 +134,12 @@ impl ReloadReplicationTablesFluentBuilder {
         self
     }
     /// <p>The list of tables to reload.</p>
-    pub fn set_tables_to_reload(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
-    ) -> Self {
+    pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>) -> Self {
         self.inner = self.inner.set_tables_to_reload(input);
         self
     }
     /// <p>The list of tables to reload.</p>
-    pub fn get_tables_to_reload(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+    pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
         self.inner.get_tables_to_reload()
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
@@ -174,10 +148,7 @@ impl ReloadReplicationTablesFluentBuilder {
         self
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
-    pub fn set_reload_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ReloadOptionValue>,
-    ) -> Self {
+    pub fn set_reload_option(mut self, input: ::std::option::Option<crate::types::ReloadOptionValue>) -> Self {
         self.inner = self.inner.set_reload_option(input);
         self
     }

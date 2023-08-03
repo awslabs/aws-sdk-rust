@@ -29,16 +29,14 @@ impl CreateSubscriptionDefinitionVersionInput {
 }
 impl CreateSubscriptionDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionDefinitionVersionInput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionInputBuilder {
         crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriptionDefinitionVersionInput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateSubscriptionDefinitionVersionInputBuilder {
 }
 impl CreateSubscriptionDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -66,18 +58,12 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_definition_id = input;
         self
     }
@@ -97,30 +83,27 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
         self
     }
     /// A list of subscriptions.
-    pub fn set_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// A list of subscriptions.
-    pub fn get_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionVersionInput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                subscription_definition_id: self.subscription_definition_id
-                ,
-                subscriptions: self.subscriptions
-                ,
-            }
+                amzn_client_token: self.amzn_client_token,
+                subscription_definition_id: self.subscription_definition_id,
+                subscriptions: self.subscriptions,
+            },
         )
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateConnectionAliasOutput`](crate::operation::associate_connection_alias::AssociateConnectionAliasOutput) with field(s):
     ///   - [`connection_identifier(Option<String>)`](crate::operation::associate_connection_alias::AssociateConnectionAliasOutput::connection_identifier): <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
     /// - On failure, responds with [`SdkError<AssociateConnectionAliasError>`](crate::operation::associate_connection_alias::AssociateConnectionAliasError)
-    pub fn associate_connection_alias(
-        &self,
-    ) -> crate::operation::associate_connection_alias::builders::AssociateConnectionAliasFluentBuilder
-    {
+    pub fn associate_connection_alias(&self) -> crate::operation::associate_connection_alias::builders::AssociateConnectionAliasFluentBuilder {
         crate::operation::associate_connection_alias::builders::AssociateConnectionAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ impl CreateBillingGroupInput {
         self.billing_group_name.as_deref()
     }
     /// <p>The properties of the billing group.</p>
-    pub fn billing_group_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BillingGroupProperties> {
+    pub fn billing_group_properties(&self) -> ::std::option::Option<&crate::types::BillingGroupProperties> {
         self.billing_group_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the billing group.</p>
@@ -31,37 +29,27 @@ impl CreateBillingGroupInput {
 }
 impl CreateBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
         crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) billing_group_properties:
-        ::std::option::Option<crate::types::BillingGroupProperties>,
+    pub(crate) billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBillingGroupInputBuilder {
     /// <p>The name you wish to give to the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name you wish to give to the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
@@ -75,17 +63,12 @@ impl CreateBillingGroupInputBuilder {
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn set_billing_group_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupProperties>,
-    ) -> Self {
+    pub fn set_billing_group_properties(mut self, input: ::std::option::Option<crate::types::BillingGroupProperties>) -> Self {
         self.billing_group_properties = input;
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn get_billing_group_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::BillingGroupProperties> {
+    pub fn get_billing_group_properties(&self) -> &::std::option::Option<crate::types::BillingGroupProperties> {
         &self.billing_group_properties
     }
     /// Appends an item to `tags`.
@@ -100,10 +83,7 @@ impl CreateBillingGroupInputBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the billing group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -114,16 +94,11 @@ impl CreateBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_billing_group::CreateBillingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_billing_group::CreateBillingGroupInput {
-                billing_group_name: self.billing_group_name,
-                billing_group_properties: self.billing_group_properties,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_billing_group::CreateBillingGroupInput {
+            billing_group_name: self.billing_group_name,
+            billing_group_properties: self.billing_group_properties,
+            tags: self.tags,
+        })
     }
 }

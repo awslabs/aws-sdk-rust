@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`unique_problems(Option<HashMap<ExecutionResult, Vec<UniqueProblem>>>)`](crate::operation::list_unique_problems::ListUniqueProblemsOutput::unique_problems): <p>Information about the unique problems.</p>  <p>Allowed values include:</p>  <ul>   <li> <p>PENDING</p> </li>   <li> <p>PASSED</p> </li>   <li> <p>WARNED</p> </li>   <li> <p>FAILED</p> </li>   <li> <p>SKIPPED</p> </li>   <li> <p>ERRORED</p> </li>   <li> <p>STOPPED</p> </li>  </ul>
     ///   - [`next_token(Option<String>)`](crate::operation::list_unique_problems::ListUniqueProblemsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListUniqueProblemsError>`](crate::operation::list_unique_problems::ListUniqueProblemsError)
-    pub fn list_unique_problems(
-        &self,
-    ) -> crate::operation::list_unique_problems::builders::ListUniqueProblemsFluentBuilder {
-        crate::operation::list_unique_problems::builders::ListUniqueProblemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_unique_problems(&self) -> crate::operation::list_unique_problems::builders::ListUniqueProblemsFluentBuilder {
+        crate::operation::list_unique_problems::builders::ListUniqueProblemsFluentBuilder::new(self.handle.clone())
     }
 }

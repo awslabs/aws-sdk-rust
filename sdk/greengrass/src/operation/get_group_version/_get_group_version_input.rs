@@ -29,9 +29,7 @@ impl GetGroupVersionInput {
 
 /// A builder for [`GetGroupVersionInput`](crate::operation::get_group_version::GetGroupVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupVersionInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_version_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetGroupVersionInputBuilder {
         &self.group_id
     }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
-    pub fn group_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
-    pub fn set_group_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_version_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl GetGroupVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupVersionInput`](crate::operation::get_group_version::GetGroupVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_group_version::GetGroupVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_group_version::GetGroupVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_version::GetGroupVersionInput {
             group_id: self.group_id,
             group_version_id: self.group_version_id,

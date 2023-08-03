@@ -26,7 +26,7 @@ impl RegisterWebhookWithThirdPartyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder,
+    inner: crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder,
 }
 impl RegisterWebhookWithThirdPartyFluentBuilder {
     /// Creates a new `RegisterWebhookWithThirdParty`.
@@ -37,7 +37,7 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
         }
     }
     /// Access the RegisterWebhookWithThirdParty as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
             crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdParty,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
             crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdParty,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError>,
     > {
         self.customize_middleware().await
     }

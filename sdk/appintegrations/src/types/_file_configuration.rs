@@ -9,9 +9,7 @@ pub struct FileConfiguration {
     pub folders: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Restrictions for what files should be pulled from the source.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FileConfiguration {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
@@ -19,11 +17,7 @@ impl FileConfiguration {
         self.folders.as_deref()
     }
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl FileConfiguration {
 
 /// A builder for [`FileConfiguration`](crate::types::FileConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileConfigurationBuilder {
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FileConfigurationBuilder {
     /// Appends an item to `folders`.
@@ -58,10 +48,7 @@ impl FileConfigurationBuilder {
         self
     }
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
-    pub fn set_folders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_folders(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folders = input;
         self
     }
@@ -74,11 +61,7 @@ impl FileConfigurationBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    pub fn filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -87,22 +70,13 @@ impl FileConfigurationBuilder {
     /// <p>Restrictions for what files should be pulled from the source.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`FileConfiguration`](crate::types::FileConfiguration).

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`InviteMembersOutput`](crate::operation::invite_members::InviteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::operation::invite_members::InviteMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<InviteMembersError>`](crate::operation::invite_members::InviteMembersError)
-    pub fn invite_members(
-        &self,
-    ) -> crate::operation::invite_members::builders::InviteMembersFluentBuilder {
-        crate::operation::invite_members::builders::InviteMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn invite_members(&self) -> crate::operation::invite_members::builders::InviteMembersFluentBuilder {
+        crate::operation::invite_members::builders::InviteMembersFluentBuilder::new(self.handle.clone())
     }
 }

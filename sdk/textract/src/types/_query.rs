@@ -51,9 +51,7 @@ impl Query {
 
 /// A builder for [`Query`](crate::types::Query).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -114,10 +112,7 @@ impl QueryBuilder {
     /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
     /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
     /// </ul>
-    pub fn set_pages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pages = input;
         self
     }

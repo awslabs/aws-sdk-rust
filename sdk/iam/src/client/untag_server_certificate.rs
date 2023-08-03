@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_server_certificate::builders::UntagServerCertificateFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_server_certificate::builders::UntagServerCertificateFluentBuilder::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
     /// - On success, responds with [`UntagServerCertificateOutput`](crate::operation::untag_server_certificate::UntagServerCertificateOutput)
     /// - On failure, responds with [`SdkError<UntagServerCertificateError>`](crate::operation::untag_server_certificate::UntagServerCertificateError)
-    pub fn untag_server_certificate(
-        &self,
-    ) -> crate::operation::untag_server_certificate::builders::UntagServerCertificateFluentBuilder
-    {
+    pub fn untag_server_certificate(&self) -> crate::operation::untag_server_certificate::builders::UntagServerCertificateFluentBuilder {
         crate::operation::untag_server_certificate::builders::UntagServerCertificateFluentBuilder::new(self.handle.clone())
     }
 }

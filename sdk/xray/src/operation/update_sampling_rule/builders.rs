@@ -10,10 +10,7 @@ impl UpdateSamplingRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_sampling_rule::UpdateSamplingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sampling_rule::UpdateSamplingRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sampling_rule::UpdateSamplingRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_sampling_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSamplingRuleFluentBuilder {
         }
     }
     /// Access the UpdateSamplingRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_sampling_rule::builders::UpdateSamplingRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_sampling_rule::builders::UpdateSamplingRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateSamplingRuleFluentBuilder {
             crate::operation::update_sampling_rule::UpdateSamplingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sampling_rule::UpdateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sampling_rule::UpdateSamplingRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateSamplingRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateSamplingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sampling_rule::UpdateSamplingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sampling_rule::UpdateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sampling_rule::UpdateSamplingRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateSamplingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sampling_rule::UpdateSamplingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sampling_rule::UpdateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sampling_rule::UpdateSamplingRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateSamplingRuleFluentBuilder {
             crate::operation::update_sampling_rule::UpdateSamplingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sampling_rule::UpdateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sampling_rule::UpdateSamplingRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl UpdateSamplingRuleFluentBuilder {
         self
     }
     /// <p>The rule and fields to change.</p>
-    pub fn set_sampling_rule_update(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingRuleUpdate>,
-    ) -> Self {
+    pub fn set_sampling_rule_update(mut self, input: ::std::option::Option<crate::types::SamplingRuleUpdate>) -> Self {
         self.inner = self.inner.set_sampling_rule_update(input);
         self
     }
     /// <p>The rule and fields to change.</p>
-    pub fn get_sampling_rule_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::SamplingRuleUpdate> {
+    pub fn get_sampling_rule_update(&self) -> &::std::option::Option<crate::types::SamplingRuleUpdate> {
         self.inner.get_sampling_rule_update()
     }
 }

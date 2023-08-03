@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// - On success, responds with [`UpdateUserIdentityInfoOutput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput)
     /// - On failure, responds with [`SdkError<UpdateUserIdentityInfoError>`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoError)
-    pub fn update_user_identity_info(
-        &self,
-    ) -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoFluentBuilder
-    {
+    pub fn update_user_identity_info(&self) -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoFluentBuilder {
         crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoFluentBuilder::new(self.handle.clone())
     }
 }

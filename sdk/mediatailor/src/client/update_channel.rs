@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_channel::UpdateChannelOutput::tags): <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     ///   - [`tier(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::tier): <p>The tier associated with this Channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::operation::update_channel::UpdateChannelError)
-    pub fn update_channel(
-        &self,
-    ) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
-        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel(&self) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
+        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(self.handle.clone())
     }
 }

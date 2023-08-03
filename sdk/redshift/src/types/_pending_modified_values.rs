@@ -97,9 +97,7 @@ impl PendingModifiedValues {
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ pub struct PendingModifiedValuesBuilder {
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -177,18 +169,12 @@ impl PendingModifiedValuesBuilder {
         &self.cluster_type
     }
     /// <p>The pending or in-progress change of the service version.</p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change of the service version.</p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -202,10 +188,7 @@ impl PendingModifiedValuesBuilder {
         self
     }
     /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
-    pub fn set_automated_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automated_snapshot_retention_period = input;
         self
     }
@@ -214,18 +197,12 @@ impl PendingModifiedValuesBuilder {
         &self.automated_snapshot_retention_period
     }
     /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -268,18 +245,12 @@ impl PendingModifiedValuesBuilder {
         &self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -288,18 +259,12 @@ impl PendingModifiedValuesBuilder {
         &self.maintenance_track_name
     }
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
-    pub fn encryption_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_type = input;
         self
     }

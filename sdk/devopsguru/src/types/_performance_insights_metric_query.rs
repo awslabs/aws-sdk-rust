@@ -27,9 +27,7 @@ pub struct PerformanceInsightsMetricQuery {
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PerformanceInsightsMetricQuery {
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
@@ -43,9 +41,7 @@ impl PerformanceInsightsMetricQuery {
         self.metric.as_deref()
     }
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn group_by(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricDimensionGroup> {
+    pub fn group_by(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricDimensionGroup> {
         self.group_by.as_ref()
     }
     /// <p>One or more filters to apply to a Performance Insights <code>GetResourceMetrics</code> API query. Restrictions:</p>
@@ -53,11 +49,7 @@ impl PerformanceInsightsMetricQuery {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter.as_ref()
     }
 }
@@ -70,16 +62,11 @@ impl PerformanceInsightsMetricQuery {
 
 /// A builder for [`PerformanceInsightsMetricQuery`](crate::types::PerformanceInsightsMetricQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsMetricQueryBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
-    pub(crate) group_by:
-        ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) group_by: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PerformanceInsightsMetricQueryBuilder {
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
@@ -115,25 +102,17 @@ impl PerformanceInsightsMetricQueryBuilder {
         &self.metric
     }
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn group_by(
-        mut self,
-        input: crate::types::PerformanceInsightsMetricDimensionGroup,
-    ) -> Self {
+    pub fn group_by(mut self, input: crate::types::PerformanceInsightsMetricDimensionGroup) -> Self {
         self.group_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>) -> Self {
         self.group_by = input;
         self
     }
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup> {
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup> {
         &self.group_by
     }
     /// Adds a key-value pair to `filter`.
@@ -145,11 +124,7 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.filter = ::std::option::Option::Some(hash_map);
@@ -160,12 +135,7 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filter = input;
         self
     }
@@ -174,11 +144,7 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`PerformanceInsightsMetricQuery`](crate::types::PerformanceInsightsMetricQuery).

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseOutput {
 }
 impl GetRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput).
-    pub fn builder(
-    ) -> crate::operation::get_relational_database::builders::GetRelationalDatabaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_relational_database::builders::GetRelationalDatabaseOutputBuilder {
         crate::operation::get_relational_database::builders::GetRelationalDatabaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseOutputBuilder {
     pub(crate) relational_database: ::std::option::Option<crate::types::RelationalDatabase>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetRelationalDatabaseOutputBuilder {
         self
     }
     /// <p>An object describing the specified database.</p>
-    pub fn set_relational_database(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationalDatabase>,
-    ) -> Self {
+    pub fn set_relational_database(mut self, input: ::std::option::Option<crate::types::RelationalDatabase>) -> Self {
         self.relational_database = input;
         self
     }
     /// <p>An object describing the specified database.</p>
-    pub fn get_relational_database(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationalDatabase> {
+    pub fn get_relational_database(&self) -> &::std::option::Option<crate::types::RelationalDatabase> {
         &self.relational_database
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

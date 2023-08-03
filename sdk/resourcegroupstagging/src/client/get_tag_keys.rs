@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`pagination_token(Option<String>)`](crate::operation::get_tag_keys::GetTagKeysOutput::pagination_token): <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     ///   - [`tag_keys(Option<Vec<String>>)`](crate::operation::get_tag_keys::GetTagKeysOutput::tag_keys): <p>A list of all tag keys in the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetTagKeysError>`](crate::operation::get_tag_keys::GetTagKeysError)
-    pub fn get_tag_keys(
-        &self,
-    ) -> crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder {
+    pub fn get_tag_keys(&self) -> crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder {
         crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl CreateResolverOutput {
 
 /// A builder for [`CreateResolverOutput`](crate::operation::create_resolver::CreateResolverOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResolverOutputBuilder {
     pub(crate) resolver: ::std::option::Option<crate::types::Resolver>,
     _request_id: Option<String>,

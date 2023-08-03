@@ -10,10 +10,7 @@ impl GetSessionStatusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_session_status::GetSessionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_status::GetSessionStatusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_status::GetSessionStatusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_session_status();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSessionStatusFluentBuilder {
         }
     }
     /// Access the GetSessionStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_session_status::builders::GetSessionStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_session_status::builders::GetSessionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSessionStatusFluentBuilder {
             crate::operation::get_session_status::GetSessionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_status::GetSessionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_status::GetSessionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSessionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSessionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_session_status::GetSessionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_status::GetSessionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_status::GetSessionStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSessionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_session_status::GetSessionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_status::GetSessionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_status::GetSessionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSessionStatusFluentBuilder {
             crate::operation::get_session_status::GetSessionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_status::GetSessionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_status::GetSessionStatusError>,
     > {
         self.customize_middleware().await
     }

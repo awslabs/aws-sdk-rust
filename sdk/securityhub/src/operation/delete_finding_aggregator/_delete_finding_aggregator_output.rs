@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFindingAggregatorOutput {
 }
 impl DeleteFindingAggregatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFindingAggregatorOutput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorOutputBuilder {
         crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFindingAggregatorOutput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFindingAggregatorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteFindingAggregatorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFindingAggregatorOutput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput {
+    pub fn build(self) -> crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput {
         crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput {
             _request_id: self._request_id,
         }

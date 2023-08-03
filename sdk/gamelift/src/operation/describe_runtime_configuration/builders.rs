@@ -31,7 +31,7 @@ impl DescribeRuntimeConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder,
+    inner: crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder,
 }
 impl DescribeRuntimeConfigurationFluentBuilder {
     /// Creates a new `DescribeRuntimeConfiguration`.
@@ -42,7 +42,7 @@ impl DescribeRuntimeConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeRuntimeConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeRuntimeConfigurationFluentBuilder {
             crate::operation::describe_runtime_configuration::DescribeRuntimeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeRuntimeConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeRuntimeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeRuntimeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl DescribeRuntimeConfigurationFluentBuilder {
             crate::operation::describe_runtime_configuration::DescribeRuntimeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError>,
     > {
         self.customize_middleware().await
     }

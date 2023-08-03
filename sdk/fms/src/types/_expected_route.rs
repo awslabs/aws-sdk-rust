@@ -58,9 +58,7 @@ impl ExpectedRoute {
 
 /// A builder for [`ExpectedRoute`](crate::types::ExpectedRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpectedRouteBuilder {
     pub(crate) ip_v4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl ExpectedRouteBuilder {
         &self.ip_v4_cidr
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -123,27 +115,19 @@ impl ExpectedRouteBuilder {
     /// To override the contents of this collection use [`set_contributing_subnets`](Self::set_contributing_subnets).
     ///
     /// <p>Information about the contributing subnets.</p>
-    pub fn contributing_subnets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contributing_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contributing_subnets.unwrap_or_default();
         v.push(input.into());
         self.contributing_subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the contributing subnets.</p>
-    pub fn set_contributing_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contributing_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contributing_subnets = input;
         self
     }
     /// <p>Information about the contributing subnets.</p>
-    pub fn get_contributing_subnets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contributing_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contributing_subnets
     }
     /// Appends an item to `allowed_targets`.
@@ -151,42 +135,28 @@ impl ExpectedRouteBuilder {
     /// To override the contents of this collection use [`set_allowed_targets`](Self::set_allowed_targets).
     ///
     /// <p>Information about the allowed targets.</p>
-    pub fn allowed_targets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_targets.unwrap_or_default();
         v.push(input.into());
         self.allowed_targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the allowed targets.</p>
-    pub fn set_allowed_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_targets = input;
         self
     }
     /// <p>Information about the allowed targets.</p>
-    pub fn get_allowed_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_targets
     }
     /// <p>Information about the route table ID.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the route table ID.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAggregateIdFormatOutput {
 }
 impl DescribeAggregateIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateIdFormatOutput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput).
-    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatOutputBuilder{
+    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatOutputBuilder {
         crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAggregateIdFormatOutput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAggregateIdFormatOutputBuilder {
     pub(crate) use_long_ids_aggregated: ::std::option::Option<bool>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
@@ -70,10 +68,7 @@ impl DescribeAggregateIdFormatOutputBuilder {
         self
     }
     /// <p>Information about each resource's ID format.</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>) -> Self {
         self.statuses = input;
         self
     }
@@ -91,9 +86,7 @@ impl DescribeAggregateIdFormatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAggregateIdFormatOutput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput {
+    pub fn build(self) -> crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput {
         crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput {
             use_long_ids_aggregated: self.use_long_ids_aggregated,
             statuses: self.statuses,

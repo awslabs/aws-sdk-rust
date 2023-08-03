@@ -132,9 +132,7 @@ impl ReportGroup {
 
 /// A builder for [`ReportGroup`](crate::types::ReportGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportGroupBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -236,10 +234,7 @@ impl ReportGroupBuilder {
         self
     }
     /// <p>Information about the destination where the raw data of this <code>ReportGroup</code> is exported. </p>
-    pub fn set_export_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportExportConfig>,
-    ) -> Self {
+    pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.export_config = input;
         self
     }
@@ -253,10 +248,7 @@ impl ReportGroupBuilder {
         self
     }
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -270,10 +262,7 @@ impl ReportGroupBuilder {
         self
     }
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -295,10 +284,7 @@ impl ReportGroupBuilder {
     }
     /// <p>A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -343,10 +329,7 @@ impl ReportGroupBuilder {
     /// <p>The report group is in the process of being deleted.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroupStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportGroupStatusType>) -> Self {
         self.status = input;
         self
     }

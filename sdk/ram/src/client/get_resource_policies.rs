@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`policies(Option<Vec<String>>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::policies): <p>An array of resource policy documents in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::operation::get_resource_policies::GetResourcePoliciesError)
-    pub fn get_resource_policies(
-        &self,
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_policies(&self) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

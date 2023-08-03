@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateNodegroupVersionOutput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<UpdateNodegroupVersionError>`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionError)
-    pub fn update_nodegroup_version(
-        &self,
-    ) -> crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionFluentBuilder
-    {
+    pub fn update_nodegroup_version(&self) -> crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionFluentBuilder {
         crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionFluentBuilder::new(self.handle.clone())
     }
 }

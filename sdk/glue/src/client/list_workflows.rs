@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`workflows(Option<Vec<String>>)`](crate::operation::list_workflows::ListWorkflowsOutput::workflows): <p>List of names of workflows in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>A continuation token, if not all workflow names have been returned.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
-    pub fn list_workflows(
-        &self,
-    ) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
+        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

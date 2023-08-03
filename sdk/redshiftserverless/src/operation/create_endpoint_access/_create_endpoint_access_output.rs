@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEndpointAccessOutput {
 }
 impl CreateEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointAccessOutput`](crate::operation::create_endpoint_access::CreateEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder {
+    pub fn builder() -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder {
         crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEndpointAccessOutput`](crate::operation::create_endpoint_access::CreateEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEndpointAccessOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::EndpointAccess>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateEndpointAccessOutputBuilder {
         self
     }
     /// <p>The created VPC endpoint.</p>
-    pub fn set_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAccess>,
-    ) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointAccess>) -> Self {
         self.endpoint = input;
         self
     }

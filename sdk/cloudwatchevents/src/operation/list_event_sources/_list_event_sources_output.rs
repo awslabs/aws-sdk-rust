@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEventSourcesOutput {
 }
 impl ListEventSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListEventSourcesOutput`](crate::operation::list_event_sources::ListEventSourcesOutput).
-    pub fn builder() -> crate::operation::list_event_sources::builders::ListEventSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_sources::builders::ListEventSourcesOutputBuilder {
         crate::operation::list_event_sources::builders::ListEventSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventSourcesOutput`](crate::operation::list_event_sources::ListEventSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventSourcesOutputBuilder {
     pub(crate) event_sources: ::std::option::Option<::std::vec::Vec<crate::types::EventSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListEventSourcesOutputBuilder {
         self
     }
     /// <p>The list of event sources.</p>
-    pub fn set_event_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSource>>,
-    ) -> Self {
+    pub fn set_event_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSource>>) -> Self {
         self.event_sources = input;
         self
     }
     /// <p>The list of event sources.</p>
-    pub fn get_event_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSource>> {
+    pub fn get_event_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSource>> {
         &self.event_sources
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>

@@ -10,10 +10,7 @@ impl DescribeTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_table::DescribeTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table::DescribeTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table::DescribeTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_table();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl DescribeTableFluentBuilder {
         }
     }
     /// Access the DescribeTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_table::builders::DescribeTableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_table::builders::DescribeTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,10 +66,7 @@ impl DescribeTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -127,27 +119,16 @@ impl DescribeTableFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_table::paginator::DescribeTablePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_table::paginator::DescribeTablePaginator {
-        crate::operation::describe_table::paginator::DescribeTablePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_table::paginator::DescribeTablePaginator {
+        crate::operation::describe_table::paginator::DescribeTablePaginator::new(self.handle, self.inner)
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -198,18 +179,12 @@ impl DescribeTableFluentBuilder {
         self.inner.get_database()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connected_database(input.into());
         self
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn set_connected_database(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connected_database(input);
         self
     }
@@ -274,18 +249,12 @@ impl DescribeTableFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

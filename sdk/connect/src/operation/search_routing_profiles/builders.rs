@@ -37,10 +37,7 @@ impl SearchRoutingProfilesFluentBuilder {
         }
     }
     /// Access the SearchRoutingProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_routing_profiles::builders::SearchRoutingProfilesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_routing_profiles::builders::SearchRoutingProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SearchRoutingProfilesFluentBuilder {
             crate::operation::search_routing_profiles::SearchRoutingProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_routing_profiles::SearchRoutingProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_routing_profiles::SearchRoutingProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SearchRoutingProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SearchRoutingProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_routing_profiles::SearchRoutingProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_routing_profiles::SearchRoutingProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_routing_profiles::SearchRoutingProfilesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SearchRoutingProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_routing_profiles::SearchRoutingProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_routing_profiles::SearchRoutingProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_routing_profiles::SearchRoutingProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl SearchRoutingProfilesFluentBuilder {
             crate::operation::search_routing_profiles::SearchRoutingProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_routing_profiles::SearchRoutingProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_routing_profiles::SearchRoutingProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_routing_profiles::paginator::SearchRoutingProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_routing_profiles::paginator::SearchRoutingProfilesPaginator {
-        crate::operation::search_routing_profiles::paginator::SearchRoutingProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_routing_profiles::paginator::SearchRoutingProfilesPaginator {
+        crate::operation::search_routing_profiles::paginator::SearchRoutingProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,17 +163,12 @@ impl SearchRoutingProfilesFluentBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::RoutingProfileSearchFilter>) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn get_search_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingProfileSearchFilter> {
+    pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::RoutingProfileSearchFilter> {
         self.inner.get_search_filter()
     }
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
@@ -205,19 +181,14 @@ impl SearchRoutingProfilesFluentBuilder {
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::RoutingProfileSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingProfileSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::RoutingProfileSearchCriteria> {
         self.inner.get_search_criteria()
     }
 }

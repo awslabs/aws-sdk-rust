@@ -30,17 +30,14 @@ impl UpdateReservationInput {
 }
 impl UpdateReservationInput {
     /// Creates a new builder-style object to manufacture [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
-    pub fn builder() -> crate::operation::update_reservation::builders::UpdateReservationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_reservation::builders::UpdateReservationInputBuilder {
         crate::operation::update_reservation::builders::UpdateReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
@@ -67,10 +64,7 @@ impl UpdateReservationInputBuilder {
         self
     }
     /// Renewal settings for the reservation
-    pub fn set_renewal_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RenewalSettings>,
-    ) -> Self {
+    pub fn set_renewal_settings(mut self, input: ::std::option::Option<crate::types::RenewalSettings>) -> Self {
         self.renewal_settings = input;
         self
     }
@@ -79,18 +73,12 @@ impl UpdateReservationInputBuilder {
         &self.renewal_settings
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }
@@ -101,16 +89,11 @@ impl UpdateReservationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_reservation::UpdateReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_reservation::UpdateReservationInput {
-                name: self.name,
-                renewal_settings: self.renewal_settings,
-                reservation_id: self.reservation_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_reservation::UpdateReservationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_reservation::UpdateReservationInput {
+            name: self.name,
+            renewal_settings: self.renewal_settings,
+            reservation_id: self.reservation_id,
+        })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::set_name): The name of the definition.
     /// - On success, responds with [`UpdateDeviceDefinitionOutput`](crate::operation::update_device_definition::UpdateDeviceDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceDefinitionError>`](crate::operation::update_device_definition::UpdateDeviceDefinitionError)
-    pub fn update_device_definition(
-        &self,
-    ) -> crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder
-    {
+    pub fn update_device_definition(&self) -> crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder {
         crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl EksAttemptContainerDetail {
 
 /// A builder for [`EksAttemptContainerDetail`](crate::types::EksAttemptContainerDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksAttemptContainerDetailBuilder {
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

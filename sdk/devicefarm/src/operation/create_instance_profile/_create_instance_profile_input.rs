@@ -15,8 +15,7 @@ pub struct CreateInstanceProfileInput {
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
     #[doc(hidden)]
-    pub exclude_app_packages_from_cleanup:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclude_app_packages_from_cleanup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
     #[doc(hidden)]
     pub reboot_after_use: ::std::option::Option<bool>,
@@ -36,9 +35,7 @@ impl CreateInstanceProfileInput {
     }
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn exclude_app_packages_from_cleanup(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.exclude_app_packages_from_cleanup.as_deref()
     }
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
@@ -48,24 +45,19 @@ impl CreateInstanceProfileInput {
 }
 impl CreateInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder {
         crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) package_cleanup: ::std::option::Option<bool>,
-    pub(crate) exclude_app_packages_from_cleanup:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) exclude_app_packages_from_cleanup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) reboot_after_use: ::std::option::Option<bool>,
 }
 impl CreateInstanceProfileInputBuilder {
@@ -117,10 +109,7 @@ impl CreateInstanceProfileInputBuilder {
     ///
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclude_app_packages_from_cleanup(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclude_app_packages_from_cleanup.unwrap_or_default();
         v.push(input.into());
         self.exclude_app_packages_from_cleanup = ::std::option::Option::Some(v);
@@ -128,18 +117,13 @@ impl CreateInstanceProfileInputBuilder {
     }
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn set_exclude_app_packages_from_cleanup(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclude_app_packages_from_cleanup(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclude_app_packages_from_cleanup = input;
         self
     }
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn get_exclude_app_packages_from_cleanup(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclude_app_packages_from_cleanup(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclude_app_packages_from_cleanup
     }
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
@@ -159,18 +143,14 @@ impl CreateInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instance_profile::CreateInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_instance_profile::CreateInstanceProfileInput {
-                name: self.name,
-                description: self.description,
-                package_cleanup: self.package_cleanup,
-                exclude_app_packages_from_cleanup: self.exclude_app_packages_from_cleanup,
-                reboot_after_use: self.reboot_after_use,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_instance_profile::CreateInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_instance_profile::CreateInstanceProfileInput {
+            name: self.name,
+            description: self.description,
+            package_cleanup: self.package_cleanup,
+            exclude_app_packages_from_cleanup: self.exclude_app_packages_from_cleanup,
+            reboot_after_use: self.reboot_after_use,
+        })
     }
 }

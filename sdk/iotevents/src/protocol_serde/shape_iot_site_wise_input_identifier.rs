@@ -5,10 +5,11 @@ pub fn ser_iot_site_wise_input_identifier(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.iot_site_wise_asset_model_property_identifier {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("iotSiteWiseAssetModelPropertyIdentifier")
-            .start_object();
-        crate::protocol_serde::shape_iot_site_wise_asset_model_property_identifier::ser_iot_site_wise_asset_model_property_identifier(&mut object_2, var_1)?;
+        let mut object_2 = object.key("iotSiteWiseAssetModelPropertyIdentifier").start_object();
+        crate::protocol_serde::shape_iot_site_wise_asset_model_property_identifier::ser_iot_site_wise_asset_model_property_identifier(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     Ok(())

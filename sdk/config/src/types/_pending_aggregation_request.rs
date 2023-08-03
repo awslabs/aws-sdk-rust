@@ -30,27 +30,19 @@ impl PendingAggregationRequest {
 
 /// A builder for [`PendingAggregationRequest`](crate::types::PendingAggregationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingAggregationRequestBuilder {
     pub(crate) requester_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_aws_region: ::std::option::Option<::std::string::String>,
 }
 impl PendingAggregationRequestBuilder {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn requester_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn set_requester_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_account_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl PendingAggregationRequestBuilder {
         &self.requester_account_id
     }
     /// <p>The region requesting to aggregate data. </p>
-    pub fn requester_aws_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The region requesting to aggregate data. </p>
-    pub fn set_requester_aws_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_aws_region = input;
         self
     }

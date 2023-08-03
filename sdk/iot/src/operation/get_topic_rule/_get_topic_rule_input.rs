@@ -23,9 +23,7 @@ impl GetTopicRuleInput {
 
 /// A builder for [`GetTopicRuleInput`](crate::operation::get_topic_rule::GetTopicRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl GetTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetTopicRuleInput`](crate::operation::get_topic_rule::GetTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_topic_rule::GetTopicRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_topic_rule::GetTopicRuleInput {
-            rule_name: self.rule_name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_topic_rule::GetTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_topic_rule::GetTopicRuleInput { rule_name: self.rule_name })
     }
 }

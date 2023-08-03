@@ -30,9 +30,7 @@ impl DatasetLabelDescription {
 
 /// A builder for [`DatasetLabelDescription`](crate::types::DatasetLabelDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetLabelDescriptionBuilder {
     pub(crate) label_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_stats: ::std::option::Option<crate::types::DatasetLabelStats>,
@@ -58,10 +56,7 @@ impl DatasetLabelDescriptionBuilder {
         self
     }
     /// <p> Statistics about the label. </p>
-    pub fn set_label_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetLabelStats>,
-    ) -> Self {
+    pub fn set_label_stats(mut self, input: ::std::option::Option<crate::types::DatasetLabelStats>) -> Self {
         self.label_stats = input;
         self
     }

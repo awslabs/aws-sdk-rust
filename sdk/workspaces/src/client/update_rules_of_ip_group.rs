@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`user_rules(Vec<IpRuleItem>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::set_user_rules): <p>One or more rules.</p>
     /// - On success, responds with [`UpdateRulesOfIpGroupOutput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateRulesOfIpGroupError>`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError)
-    pub fn update_rules_of_ip_group(
-        &self,
-    ) -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder
-    {
-        crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rules_of_ip_group(&self) -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder {
+        crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::new(self.handle.clone())
     }
 }

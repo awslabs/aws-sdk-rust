@@ -28,7 +28,7 @@ impl DescribeAutoScalingGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder,
+    inner: crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder,
 }
 impl DescribeAutoScalingGroupsFluentBuilder {
     /// Creates a new `DescribeAutoScalingGroups`.
@@ -39,7 +39,7 @@ impl DescribeAutoScalingGroupsFluentBuilder {
         }
     }
     /// Access the DescribeAutoScalingGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeAutoScalingGroupsFluentBuilder {
             crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeAutoScalingGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeAutoScalingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeAutoScalingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl DescribeAutoScalingGroupsFluentBuilder {
             crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator {
         crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `AutoScalingGroupNames`.
@@ -137,27 +123,19 @@ impl DescribeAutoScalingGroupsFluentBuilder {
     ///
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn auto_scaling_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_names(input.into());
         self
     }
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn set_auto_scaling_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_names(input);
         self
     }
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn get_auto_scaling_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_scaling_group_names()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -198,10 +176,7 @@ impl DescribeAutoScalingGroupsFluentBuilder {
         self
     }
     /// <p>One or more filters to limit the results based on specific tags. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

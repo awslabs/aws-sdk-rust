@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateFileSystemAliasesOutput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput) with field(s):
     ///   - [`aliases(Option<Vec<Alias>>)`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput::aliases): <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
     /// - On failure, responds with [`SdkError<DisassociateFileSystemAliasesError>`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError)
-    pub fn disassociate_file_system_aliases(&self) -> crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesFluentBuilder{
+    pub fn disassociate_file_system_aliases(
+        &self,
+    ) -> crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesFluentBuilder {
         crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesFluentBuilder::new(self.handle.clone())
     }
 }

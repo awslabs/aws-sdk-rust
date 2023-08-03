@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateEnvironmentOutput {
 }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentOutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEnvironmentOutputBuilder {
     /// <p>The unique identifier of the runtime environment that was updated.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the runtime environment that was updated.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }

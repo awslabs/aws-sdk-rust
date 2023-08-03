@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`member_account_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_member_account::builders::DisassociateMemberAccountFluentBuilder::member_account_id) / [`set_member_account_id(Option<String>)`](crate::operation::disassociate_member_account::builders::DisassociateMemberAccountFluentBuilder::set_member_account_id): <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
     /// - On success, responds with [`DisassociateMemberAccountOutput`](crate::operation::disassociate_member_account::DisassociateMemberAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateMemberAccountError>`](crate::operation::disassociate_member_account::DisassociateMemberAccountError)
-    pub fn disassociate_member_account(&self) -> crate::operation::disassociate_member_account::builders::DisassociateMemberAccountFluentBuilder{
+    pub fn disassociate_member_account(&self) -> crate::operation::disassociate_member_account::builders::DisassociateMemberAccountFluentBuilder {
         crate::operation::disassociate_member_account::builders::DisassociateMemberAccountFluentBuilder::new(self.handle.clone())
     }
 }

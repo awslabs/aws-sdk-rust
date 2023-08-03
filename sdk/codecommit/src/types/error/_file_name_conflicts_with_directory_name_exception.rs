@@ -27,34 +27,27 @@ impl ::std::fmt::Display for FileNameConflictsWithDirectoryNameException {
     }
 }
 impl ::std::error::Error for FileNameConflictsWithDirectoryNameException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::FileNameConflictsWithDirectoryNameException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::FileNameConflictsWithDirectoryNameException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FileNameConflictsWithDirectoryNameException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FileNameConflictsWithDirectoryNameException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl FileNameConflictsWithDirectoryNameException {
     /// Creates a new builder-style object to manufacture [`FileNameConflictsWithDirectoryNameException`](crate::types::error::FileNameConflictsWithDirectoryNameException).
-    pub fn builder(
-    ) -> crate::types::error::builders::FileNameConflictsWithDirectoryNameExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::FileNameConflictsWithDirectoryNameExceptionBuilder {
         crate::types::error::builders::FileNameConflictsWithDirectoryNameExceptionBuilder::default()
     }
 }
 
 /// A builder for [`FileNameConflictsWithDirectoryNameException`](crate::types::error::FileNameConflictsWithDirectoryNameException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileNameConflictsWithDirectoryNameExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl FileNameConflictsWithDirectoryNameExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

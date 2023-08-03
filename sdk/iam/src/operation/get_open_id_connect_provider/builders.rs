@@ -26,7 +26,7 @@ impl GetOpenIdConnectProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOpenIDConnectProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderInputBuilder,
+    inner: crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderInputBuilder,
 }
 impl GetOpenIDConnectProviderFluentBuilder {
     /// Creates a new `GetOpenIDConnectProvider`.
@@ -37,7 +37,7 @@ impl GetOpenIDConnectProviderFluentBuilder {
         }
     }
     /// Access the GetOpenIDConnectProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetOpenIDConnectProviderFluentBuilder {
             crate::operation::get_open_id_connect_provider::GetOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetOpenIDConnectProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError>,
     > {
         self.send_middleware().await
     }
@@ -114,35 +105,25 @@ impl GetOpenIDConnectProviderFluentBuilder {
             crate::operation::get_open_id_connect_provider::GetOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn open_id_connect_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.open_id_connect_provider_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_open_id_connect_provider_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_open_id_connect_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_open_id_connect_provider_arn()
     }
 }

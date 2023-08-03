@@ -10,14 +10,10 @@ pub fn ser_create_relational_database_input(
         object.key("availabilityZone").string(var_2.as_str());
     }
     if let Some(var_3) = &input.relational_database_blueprint_id {
-        object
-            .key("relationalDatabaseBlueprintId")
-            .string(var_3.as_str());
+        object.key("relationalDatabaseBlueprintId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.relational_database_bundle_id {
-        object
-            .key("relationalDatabaseBundleId")
-            .string(var_4.as_str());
+        object.key("relationalDatabaseBundleId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.master_database_name {
         object.key("masterDatabaseName").string(var_5.as_str());
@@ -32,9 +28,7 @@ pub fn ser_create_relational_database_input(
         object.key("preferredBackupWindow").string(var_8.as_str());
     }
     if let Some(var_9) = &input.preferred_maintenance_window {
-        object
-            .key("preferredMaintenanceWindow")
-            .string(var_9.as_str());
+        object.key("preferredMaintenanceWindow").string(var_9.as_str());
     }
     if let Some(var_10) = &input.publicly_accessible {
         object.key("publiclyAccessible").boolean(*var_10);

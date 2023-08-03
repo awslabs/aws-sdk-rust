@@ -29,22 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeClusterVersionsOutput {
 }
 impl DescribeClusterVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterVersionsOutput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsOutputBuilder {
         crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterVersionsOutput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterVersionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,
+    pub(crate) cluster_versions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterVersionsOutputBuilder {
@@ -74,17 +69,12 @@ impl DescribeClusterVersionsOutputBuilder {
         self
     }
     /// <p>A list of <code>Version</code> elements. </p>
-    pub fn set_cluster_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,
-    ) -> Self {
+    pub fn set_cluster_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>) -> Self {
         self.cluster_versions = input;
         self
     }
     /// <p>A list of <code>Version</code> elements. </p>
-    pub fn get_cluster_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>> {
+    pub fn get_cluster_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>> {
         &self.cluster_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +87,7 @@ impl DescribeClusterVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterVersionsOutput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput {
         crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput {
             marker: self.marker,
             cluster_versions: self.cluster_versions,

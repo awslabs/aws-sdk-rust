@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteContextOutput`](crate::operation::delete_context::DeleteContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::operation::delete_context::DeleteContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<DeleteContextError>`](crate::operation::delete_context::DeleteContextError)
-    pub fn delete_context(
-        &self,
-    ) -> crate::operation::delete_context::builders::DeleteContextFluentBuilder {
-        crate::operation::delete_context::builders::DeleteContextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_context(&self) -> crate::operation::delete_context::builders::DeleteContextFluentBuilder {
+        crate::operation::delete_context::builders::DeleteContextFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,7 +37,7 @@ impl CreatePlatformApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePlatformApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_platform_application::builders::CreatePlatformApplicationInputBuilder,
+    inner: crate::operation::create_platform_application::builders::CreatePlatformApplicationInputBuilder,
 }
 impl CreatePlatformApplicationFluentBuilder {
     /// Creates a new `CreatePlatformApplication`.
@@ -48,7 +48,7 @@ impl CreatePlatformApplicationFluentBuilder {
         }
     }
     /// Access the CreatePlatformApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_platform_application::builders::CreatePlatformApplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_platform_application::builders::CreatePlatformApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +60,7 @@ impl CreatePlatformApplicationFluentBuilder {
             crate::operation::create_platform_application::CreatePlatformApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_application::CreatePlatformApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +70,7 @@ impl CreatePlatformApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +79,7 @@ impl CreatePlatformApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_application::CreatePlatformApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_application::CreatePlatformApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError>,
     > {
         let op = self
             .inner
@@ -109,9 +102,7 @@ impl CreatePlatformApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_application::CreatePlatformApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_application::CreatePlatformApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +116,7 @@ impl CreatePlatformApplicationFluentBuilder {
             crate::operation::create_platform_application::CreatePlatformApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_application::CreatePlatformApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -164,30 +153,17 @@ impl CreatePlatformApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

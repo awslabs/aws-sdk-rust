@@ -30,27 +30,19 @@ impl Tenant {
 
 /// A builder for [`Tenant`](crate::types::Tenant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TenantBuilder {
     pub(crate) tenant_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_display_name: ::std::option::Option<::std::string::String>,
 }
 impl TenantBuilder {
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tenant_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application tenant.</p>
-    pub fn set_tenant_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tenant_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_identifier = input;
         self
     }
@@ -59,18 +51,12 @@ impl TenantBuilder {
         &self.tenant_identifier
     }
     /// <p>The display name of the tenant.</p>
-    pub fn tenant_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tenant_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the tenant.</p>
-    pub fn set_tenant_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tenant_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_display_name = input;
         self
     }

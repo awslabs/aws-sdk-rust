@@ -28,27 +28,19 @@ impl CreateIndexOutput {
 
 /// A builder for [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIndexOutputBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateIndexOutputBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }

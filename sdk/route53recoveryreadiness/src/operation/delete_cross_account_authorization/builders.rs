@@ -5,16 +5,16 @@ pub use crate::operation::delete_cross_account_authorization::_delete_cross_acco
 
 impl DeleteCrossAccountAuthorizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_cross_account_authorization();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeleteCrossAccountAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCrossAccountAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder,
+    inner: crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder,
 }
 impl DeleteCrossAccountAuthorizationFluentBuilder {
     /// Creates a new `DeleteCrossAccountAuthorization`.
@@ -37,15 +37,20 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
         }
     }
     /// Access the DeleteCrossAccountAuthorization as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cross_account_authorization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cross_account_authorization(input.into());
         self
     }
     /// <p>The cross-account authorization.</p>
-    pub fn set_cross_account_authorization(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cross_account_authorization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cross_account_authorization(input);
         self
     }

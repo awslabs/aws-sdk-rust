@@ -41,90 +41,65 @@ pub fn ser_target_tracking_scaling_policy_configuration(
 
 pub(crate) fn de_target_tracking_scaling_policy_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TargetTrackingScalingPolicyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder::default();
+            let mut builder = crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TargetValue" => {
-                                builder = builder.set_target_value(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "PredefinedMetricSpecification" => {
-                                builder = builder.set_predefined_metric_specification(
-                                    crate::protocol_serde::shape_predefined_metric_specification::de_predefined_metric_specification(tokens)?
-                                );
-                            }
-                            "CustomizedMetricSpecification" => {
-                                builder = builder.set_customized_metric_specification(
-                                    crate::protocol_serde::shape_customized_metric_specification::de_customized_metric_specification(tokens)?
-                                );
-                            }
-                            "ScaleOutCooldown" => {
-                                builder = builder.set_scale_out_cooldown(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "ScaleInCooldown" => {
-                                builder = builder.set_scale_in_cooldown(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "DisableScaleIn" => {
-                                builder = builder.set_disable_scale_in(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TargetValue" => {
+                            builder = builder.set_target_value(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
                         }
-                    }
+                        "PredefinedMetricSpecification" => {
+                            builder = builder.set_predefined_metric_specification(
+                                crate::protocol_serde::shape_predefined_metric_specification::de_predefined_metric_specification(tokens)?,
+                            );
+                        }
+                        "CustomizedMetricSpecification" => {
+                            builder = builder.set_customized_metric_specification(
+                                crate::protocol_serde::shape_customized_metric_specification::de_customized_metric_specification(tokens)?,
+                            );
+                        }
+                        "ScaleOutCooldown" => {
+                            builder = builder.set_scale_out_cooldown(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ScaleInCooldown" => {
+                            builder = builder.set_scale_in_cooldown(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "DisableScaleIn" => {
+                            builder = builder.set_disable_scale_in(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

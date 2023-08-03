@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageFluentBuilder::set_stage_name): <p>The name of the stage to start.</p>
     /// - On success, responds with [`StartEdgeDeploymentStageOutput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageOutput)
     /// - On failure, responds with [`SdkError<StartEdgeDeploymentStageError>`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageError)
-    pub fn start_edge_deployment_stage(&self) -> crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageFluentBuilder{
+    pub fn start_edge_deployment_stage(&self) -> crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageFluentBuilder {
         crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageFluentBuilder::new(self.handle.clone())
     }
 }

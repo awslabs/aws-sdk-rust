@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput) with field(s):
     ///   - [`backup_plan(Option<BackupPlan>)`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput::backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     /// - On failure, responds with [`SdkError<GetBackupPlanFromJSONError>`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError)
-    pub fn get_backup_plan_from_json(
-        &self,
-    ) -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder
-    {
+    pub fn get_backup_plan_from_json(&self) -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder {
         crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CheckCapacityOutput`](crate::operation::check_capacity::CheckCapacityOutput) with field(s):
     ///   - [`capacity(i64)`](crate::operation::check_capacity::CheckCapacityOutput::capacity): <p>The capacity required by the rules and scope.</p>
     /// - On failure, responds with [`SdkError<CheckCapacityError>`](crate::operation::check_capacity::CheckCapacityError)
-    pub fn check_capacity(
-        &self,
-    ) -> crate::operation::check_capacity::builders::CheckCapacityFluentBuilder {
-        crate::operation::check_capacity::builders::CheckCapacityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn check_capacity(&self) -> crate::operation::check_capacity::builders::CheckCapacityFluentBuilder {
+        crate::operation::check_capacity::builders::CheckCapacityFluentBuilder::new(self.handle.clone())
     }
 }

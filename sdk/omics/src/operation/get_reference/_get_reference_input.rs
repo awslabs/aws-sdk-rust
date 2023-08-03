@@ -50,9 +50,7 @@ impl GetReferenceInput {
 
 /// A builder for [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReferenceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl GetReferenceInputBuilder {
         &self.id
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_store_id = input;
         self
     }
@@ -138,12 +130,7 @@ impl GetReferenceInputBuilder {
         &self.file
     }
     /// Consumes the builder and constructs a [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reference::GetReferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference::GetReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_reference::GetReferenceInput {
             id: self.id,
             reference_store_id: self.reference_store_id,

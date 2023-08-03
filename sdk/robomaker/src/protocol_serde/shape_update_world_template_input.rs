@@ -15,10 +15,7 @@ pub fn ser_update_world_template_input(
     if let Some(var_4) = &input.template_location {
         #[allow(unused_mut)]
         let mut object_5 = object.key("templateLocation").start_object();
-        crate::protocol_serde::shape_template_location::ser_template_location(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_template_location::ser_template_location(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

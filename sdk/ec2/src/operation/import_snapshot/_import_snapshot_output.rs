@@ -49,9 +49,7 @@ impl ImportSnapshotOutput {
 
 /// A builder for [`ImportSnapshotOutput`](crate::operation::import_snapshot::ImportSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSnapshotOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) import_task_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl ImportSnapshotOutputBuilder {
         &self.description
     }
     /// <p>The ID of the import snapshot task.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the import snapshot task.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_task_id = input;
         self
     }
@@ -100,17 +92,12 @@ impl ImportSnapshotOutputBuilder {
         self
     }
     /// <p>Information about the import snapshot task.</p>
-    pub fn set_snapshot_task_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotTaskDetail>,
-    ) -> Self {
+    pub fn set_snapshot_task_detail(mut self, input: ::std::option::Option<crate::types::SnapshotTaskDetail>) -> Self {
         self.snapshot_task_detail = input;
         self
     }
     /// <p>Information about the import snapshot task.</p>
-    pub fn get_snapshot_task_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotTaskDetail> {
+    pub fn get_snapshot_task_detail(&self) -> &::std::option::Option<crate::types::SnapshotTaskDetail> {
         &self.snapshot_task_detail
     }
     /// Appends an item to `tags`.
@@ -125,10 +112,7 @@ impl ImportSnapshotOutputBuilder {
         self
     }
     /// <p>Any tags assigned to the import snapshot task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

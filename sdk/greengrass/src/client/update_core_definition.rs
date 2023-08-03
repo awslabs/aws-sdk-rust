@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::set_name): The name of the definition.
     /// - On success, responds with [`UpdateCoreDefinitionOutput`](crate::operation::update_core_definition::UpdateCoreDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateCoreDefinitionError>`](crate::operation::update_core_definition::UpdateCoreDefinitionError)
-    pub fn update_core_definition(
-        &self,
-    ) -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder {
-        crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_core_definition(&self) -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder {
+        crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

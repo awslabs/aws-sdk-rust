@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DeleteStreamOutput`](crate::operation::delete_stream::DeleteStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::operation::delete_stream::DeleteStreamError)
-    pub fn delete_stream(
-        &self,
-    ) -> crate::operation::delete_stream::builders::DeleteStreamFluentBuilder {
-        crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_stream(&self) -> crate::operation::delete_stream::builders::DeleteStreamFluentBuilder {
+        crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::new(self.handle.clone())
     }
 }

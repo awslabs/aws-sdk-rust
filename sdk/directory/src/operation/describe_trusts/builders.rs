@@ -10,10 +10,7 @@ impl DescribeTrustsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_trusts::DescribeTrustsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_trusts::DescribeTrustsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trusts::DescribeTrustsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_trusts();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeTrustsFluentBuilder {
         }
     }
     /// Access the DescribeTrusts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_trusts::builders::DescribeTrustsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_trusts::builders::DescribeTrustsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeTrustsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl DescribeTrustsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_trusts::paginator::DescribeTrustsPaginator {
-        crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_trusts::paginator::DescribeTrustsPaginator {
+        crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,10 +139,7 @@ impl DescribeTrustsFluentBuilder {
     }
     /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_trust_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trust_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trust_ids(input);
         self
     }

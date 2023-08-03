@@ -6,8 +6,7 @@
 pub struct ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
     #[doc(hidden)]
-    pub share_invitation_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
+    pub share_invitation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListShareInvitationsOutput {
 }
 impl ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn share_invitation_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ShareInvitationSummary]> {
+    pub fn share_invitation_summaries(&self) -> ::std::option::Option<&[crate::types::ShareInvitationSummary]> {
         self.share_invitation_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -32,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListShareInvitationsOutput {
 }
 impl ListShareInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_share_invitations::builders::ListShareInvitationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_share_invitations::builders::ListShareInvitationsOutputBuilder {
         crate::operation::list_share_invitations::builders::ListShareInvitationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListShareInvitationsOutputBuilder {
-    pub(crate) share_invitation_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
+    pub(crate) share_invitation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +48,19 @@ impl ListShareInvitationsOutputBuilder {
     /// To override the contents of this collection use [`set_share_invitation_summaries`](Self::set_share_invitation_summaries).
     ///
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn share_invitation_summaries(
-        mut self,
-        input: crate::types::ShareInvitationSummary,
-    ) -> Self {
+    pub fn share_invitation_summaries(mut self, input: crate::types::ShareInvitationSummary) -> Self {
         let mut v = self.share_invitation_summaries.unwrap_or_default();
         v.push(input);
         self.share_invitation_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn set_share_invitation_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
-    ) -> Self {
+    pub fn set_share_invitation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>) -> Self {
         self.share_invitation_summaries = input;
         self
     }
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn get_share_invitation_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>> {
+    pub fn get_share_invitation_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>> {
         &self.share_invitation_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

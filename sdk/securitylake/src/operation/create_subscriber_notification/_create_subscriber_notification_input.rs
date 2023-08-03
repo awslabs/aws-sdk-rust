@@ -22,34 +22,26 @@ impl CreateSubscriberNotificationInput {
 }
 impl CreateSubscriberNotificationInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberNotificationInput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput).
-    pub fn builder() -> crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder{
+    pub fn builder() -> crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder {
         crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriberNotificationInput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriberNotificationInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl CreateSubscriberNotificationInputBuilder {
     /// <p>The subscriber ID for the notification subscription.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscriber ID for the notification subscription.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_id = input;
         self
     }
@@ -63,17 +55,12 @@ impl CreateSubscriberNotificationInputBuilder {
         self
     }
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateSubscriberNotificationInput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput).
@@ -83,11 +70,9 @@ impl CreateSubscriberNotificationInputBuilder {
         crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput {
-                subscriber_id: self.subscriber_id,
-                configuration: self.configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput {
+            subscriber_id: self.subscriber_id,
+            configuration: self.configuration,
+        })
     }
 }

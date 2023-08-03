@@ -26,7 +26,7 @@ impl GetSuppressedDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSuppressedDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder,
+    inner: crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder,
 }
 impl GetSuppressedDestinationFluentBuilder {
     /// Creates a new `GetSuppressedDestination`.
@@ -37,10 +37,7 @@ impl GetSuppressedDestinationFluentBuilder {
         }
     }
     /// Access the GetSuppressedDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetSuppressedDestinationFluentBuilder {
             crate::operation::get_suppressed_destination::GetSuppressedDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetSuppressedDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetSuppressedDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetSuppressedDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetSuppressedDestinationFluentBuilder {
             crate::operation::get_suppressed_destination::GetSuppressedDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email address that's on the account suppression list.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The email address that's on the account suppression list.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_arn(impl ::std::convert::Into<String>)`](crate::operation::attach_user_policy::builders::AttachUserPolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::attach_user_policy::builders::AttachUserPolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`AttachUserPolicyOutput`](crate::operation::attach_user_policy::AttachUserPolicyOutput)
     /// - On failure, responds with [`SdkError<AttachUserPolicyError>`](crate::operation::attach_user_policy::AttachUserPolicyError)
-    pub fn attach_user_policy(
-        &self,
-    ) -> crate::operation::attach_user_policy::builders::AttachUserPolicyFluentBuilder {
-        crate::operation::attach_user_policy::builders::AttachUserPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_user_policy(&self) -> crate::operation::attach_user_policy::builders::AttachUserPolicyFluentBuilder {
+        crate::operation::attach_user_policy::builders::AttachUserPolicyFluentBuilder::new(self.handle.clone())
     }
 }

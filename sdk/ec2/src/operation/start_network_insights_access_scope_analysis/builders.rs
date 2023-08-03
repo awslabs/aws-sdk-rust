@@ -5,16 +5,16 @@ pub use crate::operation::start_network_insights_access_scope_analysis::_start_n
 
 impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_network_insights_access_scope_analysis();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder,
+    inner: crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder,
 }
 impl StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
     /// Creates a new `StartNetworkInsightsAccessScopeAnalysis`.
@@ -37,15 +37,24 @@ impl StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
         }
     }
     /// Access the StartNetworkInsightsAccessScopeAnalysis as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysis, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysis,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,39 +93,44 @@ impl StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysis, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysis,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_insights_access_scope_id(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_insights_access_scope_id(input);
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_insights_access_scope_id()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -140,17 +157,12 @@ impl StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>

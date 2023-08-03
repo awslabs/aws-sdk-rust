@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`export_snapshot_records(Option<Vec<ExportSnapshotRecord>>)`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput::export_snapshot_records): <p>A list of objects describing the export snapshot records.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetExportSnapshotRecordsError>`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError)
-    pub fn get_export_snapshot_records(&self) -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsFluentBuilder{
+    pub fn get_export_snapshot_records(&self) -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsFluentBuilder {
         crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsFluentBuilder::new(self.handle.clone())
     }
 }

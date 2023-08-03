@@ -23,9 +23,7 @@ impl TargetConfiguration {
 
 /// A builder for [`TargetConfiguration`](crate::types::TargetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetConfigurationBuilder {
     pub(crate) target_value: ::std::option::Option<f64>,
 }

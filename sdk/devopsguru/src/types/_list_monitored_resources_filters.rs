@@ -9,8 +9,7 @@ pub struct ListMonitoredResourcesFilters {
     pub resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
     #[doc(hidden)]
-    pub resource_type_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
+    pub resource_type_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
 }
 impl ListMonitoredResourcesFilters {
     /// <p> The permission status of a resource. </p>
@@ -18,9 +17,7 @@ impl ListMonitoredResourcesFilters {
         self.resource_permission.as_ref()
     }
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
-    pub fn resource_type_filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceTypeFilter]> {
+    pub fn resource_type_filters(&self) -> ::std::option::Option<&[crate::types::ResourceTypeFilter]> {
         self.resource_type_filters.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl ListMonitoredResourcesFilters {
 
 /// A builder for [`ListMonitoredResourcesFilters`](crate::types::ListMonitoredResourcesFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesFiltersBuilder {
     pub(crate) resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
-    pub(crate) resource_type_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
+    pub(crate) resource_type_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
 }
 impl ListMonitoredResourcesFiltersBuilder {
     /// <p> The permission status of a resource. </p>
@@ -48,17 +42,12 @@ impl ListMonitoredResourcesFiltersBuilder {
         self
     }
     /// <p> The permission status of a resource. </p>
-    pub fn set_resource_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePermission>,
-    ) -> Self {
+    pub fn set_resource_permission(mut self, input: ::std::option::Option<crate::types::ResourcePermission>) -> Self {
         self.resource_permission = input;
         self
     }
     /// <p> The permission status of a resource. </p>
-    pub fn get_resource_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourcePermission> {
+    pub fn get_resource_permission(&self) -> &::std::option::Option<crate::types::ResourcePermission> {
         &self.resource_permission
     }
     /// Appends an item to `resource_type_filters`.
@@ -73,17 +62,12 @@ impl ListMonitoredResourcesFiltersBuilder {
         self
     }
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
-    pub fn set_resource_type_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
-    ) -> Self {
+    pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>) -> Self {
         self.resource_type_filters = input;
         self
     }
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
-    pub fn get_resource_type_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>> {
+    pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>> {
         &self.resource_type_filters
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesFilters`](crate::types::ListMonitoredResourcesFilters).

@@ -10,9 +10,7 @@ pub struct UpdateConfiguredTableAnalysisRuleOutput {
 }
 impl UpdateConfiguredTableAnalysisRuleOutput {
     /// <p>The entire updated analysis rule.</p>
-    pub fn analysis_rule(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRule> {
+    pub fn analysis_rule(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRule> {
         self.analysis_rule.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateConfiguredTableAnalysisRuleOutp
 }
 impl UpdateConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableAnalysisRuleOutput`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput).
-    pub fn builder() -> crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder{
+    pub fn builder() -> crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder {
         crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfiguredTableAnalysisRuleOutput`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableAnalysisRuleOutputBuilder {
     pub(crate) analysis_rule: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateConfiguredTableAnalysisRuleOutputBuilder {
         self
     }
     /// <p>The entire updated analysis rule.</p>
-    pub fn set_analysis_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>,
-    ) -> Self {
+    pub fn set_analysis_rule(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>) -> Self {
         self.analysis_rule = input;
         self
     }
     /// <p>The entire updated analysis rule.</p>
-    pub fn get_analysis_rule(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRule> {
+    pub fn get_analysis_rule(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRule> {
         &self.analysis_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,9 @@ impl UpdateConfiguredTableAnalysisRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAnalysisRuleOutput`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput).
-    pub fn build(self) -> crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput{
+    pub fn build(self) -> crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput {
         crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput {
-            analysis_rule: self.analysis_rule
-            ,
+            analysis_rule: self.analysis_rule,
             _request_id: self._request_id,
         }
     }

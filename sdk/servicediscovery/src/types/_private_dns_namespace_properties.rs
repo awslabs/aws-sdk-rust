@@ -10,9 +10,7 @@ pub struct PrivateDnsNamespaceProperties {
 }
 impl PrivateDnsNamespaceProperties {
     /// <p>DNS properties for the private DNS namespace.</p>
-    pub fn dns_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateDnsPropertiesMutable> {
+    pub fn dns_properties(&self) -> ::std::option::Option<&crate::types::PrivateDnsPropertiesMutable> {
         self.dns_properties.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl PrivateDnsNamespaceProperties {
 
 /// A builder for [`PrivateDnsNamespaceProperties`](crate::types::PrivateDnsNamespaceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrivateDnsNamespacePropertiesBuilder {
     pub(crate) dns_properties: ::std::option::Option<crate::types::PrivateDnsPropertiesMutable>,
 }
@@ -38,17 +34,12 @@ impl PrivateDnsNamespacePropertiesBuilder {
         self
     }
     /// <p>DNS properties for the private DNS namespace.</p>
-    pub fn set_dns_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateDnsPropertiesMutable>,
-    ) -> Self {
+    pub fn set_dns_properties(mut self, input: ::std::option::Option<crate::types::PrivateDnsPropertiesMutable>) -> Self {
         self.dns_properties = input;
         self
     }
     /// <p>DNS properties for the private DNS namespace.</p>
-    pub fn get_dns_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateDnsPropertiesMutable> {
+    pub fn get_dns_properties(&self) -> &::std::option::Option<crate::types::PrivateDnsPropertiesMutable> {
         &self.dns_properties
     }
     /// Consumes the builder and constructs a [`PrivateDnsNamespaceProperties`](crate::types::PrivateDnsNamespaceProperties).

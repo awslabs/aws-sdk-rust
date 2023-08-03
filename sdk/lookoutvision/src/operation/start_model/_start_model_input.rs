@@ -54,9 +54,7 @@ impl StartModelInput {
 
 /// A builder for [`StartModelInput`](crate::operation::start_model::StartModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartModelInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
@@ -80,18 +78,12 @@ impl StartModelInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to start.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model that you want to start.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -148,12 +140,7 @@ impl StartModelInputBuilder {
         &self.max_inference_units
     }
     /// Consumes the builder and constructs a [`StartModelInput`](crate::operation::start_model::StartModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_model::StartModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_model::StartModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_model::StartModelInput {
             project_name: self.project_name,
             model_version: self.model_version,

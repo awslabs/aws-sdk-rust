@@ -79,9 +79,7 @@ impl NotebookExecutionSummary {
         self.end_time.as_ref()
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    pub fn notebook_s3_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotebookS3LocationForOutput> {
+    pub fn notebook_s3_location(&self) -> ::std::option::Option<&crate::types::NotebookS3LocationForOutput> {
         self.notebook_s3_location.as_ref()
     }
     /// <p>The unique ID of the execution engine for the notebook execution.</p>
@@ -98,9 +96,7 @@ impl NotebookExecutionSummary {
 
 /// A builder for [`NotebookExecutionSummary`](crate::types::NotebookExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotebookExecutionSummaryBuilder {
     pub(crate) notebook_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) editor_id: ::std::option::Option<::std::string::String>,
@@ -108,24 +104,17 @@ pub struct NotebookExecutionSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::NotebookExecutionStatus>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) notebook_s3_location:
-        ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
+    pub(crate) notebook_s3_location: ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
     pub(crate) execution_engine_id: ::std::option::Option<::std::string::String>,
 }
 impl NotebookExecutionSummaryBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn set_notebook_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_execution_id = input;
         self
     }
@@ -148,18 +137,12 @@ impl NotebookExecutionSummaryBuilder {
         &self.editor_id
     }
     /// <p>The name of the notebook execution.</p>
-    pub fn notebook_execution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_execution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the notebook execution.</p>
-    pub fn set_notebook_execution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_execution_name = input;
         self
     }
@@ -197,10 +180,7 @@ impl NotebookExecutionSummaryBuilder {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -226,10 +206,7 @@ impl NotebookExecutionSummaryBuilder {
         self
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -243,10 +220,7 @@ impl NotebookExecutionSummaryBuilder {
         self
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -255,40 +229,26 @@ impl NotebookExecutionSummaryBuilder {
         &self.end_time
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    pub fn notebook_s3_location(
-        mut self,
-        input: crate::types::NotebookS3LocationForOutput,
-    ) -> Self {
+    pub fn notebook_s3_location(mut self, input: crate::types::NotebookS3LocationForOutput) -> Self {
         self.notebook_s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    pub fn set_notebook_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
-    ) -> Self {
+    pub fn set_notebook_s3_location(mut self, input: ::std::option::Option<crate::types::NotebookS3LocationForOutput>) -> Self {
         self.notebook_s3_location = input;
         self
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    pub fn get_notebook_s3_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookS3LocationForOutput> {
+    pub fn get_notebook_s3_location(&self) -> &::std::option::Option<crate::types::NotebookS3LocationForOutput> {
         &self.notebook_s3_location
     }
     /// <p>The unique ID of the execution engine for the notebook execution.</p>
-    pub fn execution_engine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_engine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_engine_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the execution engine for the notebook execution.</p>
-    pub fn set_execution_engine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_engine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_engine_id = input;
         self
     }

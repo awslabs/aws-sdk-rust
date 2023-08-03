@@ -30,9 +30,7 @@ impl LifeCycleLastLaunch {
 
 /// A builder for [`LifeCycleLastLaunch`](crate::types::LifeCycleLastLaunch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleLastLaunchBuilder {
     pub(crate) initiated: ::std::option::Option<crate::types::LifeCycleLastLaunchInitiated>,
     pub(crate) status: ::std::option::Option<crate::types::LaunchStatus>,
@@ -44,17 +42,12 @@ impl LifeCycleLastLaunchBuilder {
         self
     }
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
-    pub fn set_initiated(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastLaunchInitiated>,
-    ) -> Self {
+    pub fn set_initiated(mut self, input: ::std::option::Option<crate::types::LifeCycleLastLaunchInitiated>) -> Self {
         self.initiated = input;
         self
     }
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
-    pub fn get_initiated(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifeCycleLastLaunchInitiated> {
+    pub fn get_initiated(&self) -> &::std::option::Option<crate::types::LifeCycleLastLaunchInitiated> {
         &self.initiated
     }
     /// <p>Status of Source Server's last launch.</p>

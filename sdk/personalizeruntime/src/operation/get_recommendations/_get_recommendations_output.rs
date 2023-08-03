@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutputBuilder {
     pub(crate) item_list: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
@@ -57,32 +54,21 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    pub fn set_item_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
-    ) -> Self {
+    pub fn set_item_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>) -> Self {
         self.item_list = input;
         self
     }
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    pub fn get_item_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
+    pub fn get_item_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
         &self.item_list
     }
     /// <p>The ID of the recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }

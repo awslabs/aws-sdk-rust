@@ -2,8 +2,7 @@
 pub fn ser_batch_create_channel_membership_headers(
     input: &crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.chime_bearer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_batch_create_channel_membership_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "chime_bearer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-chime-bearer", header_value);
@@ -25,8 +21,7 @@ pub fn ser_batch_create_channel_membership_headers(
 
 pub fn ser_batch_create_channel_membership_input(
     input: &crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_create_channel_membership_input::ser_batch_create_channel_membership_input(&mut object, input)?;
@@ -44,145 +39,151 @@ pub fn de_batch_create_channel_membership_http_error(
     crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::NotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ResourceLimitExceededException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ResourceLimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceLimitExceededException" => {
+            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceLimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ServiceFailureException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ServiceUnavailableException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ServiceUnavailableException" => {
+            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ThrottledClientException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottledClientExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "UnauthorizedClientException" => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::generic(generic),
     })
 }
 
@@ -198,54 +199,51 @@ pub fn de_batch_create_channel_membership_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder::default();
-        output = crate::protocol_serde::shape_batch_create_channel_membership::de_batch_create_channel_membership(_response_body, output).map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_batch_create_channel_membership::de_batch_create_channel_membership(_response_body, output)
+            .map_err(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_batch_create_channel_membership(value: &[u8], mut builder: crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder) -> Result<crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_batch_create_channel_membership(
+    value: &[u8],
+    mut builder: crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder,
+) -> Result<
+    crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "BatchChannelMemberships" => {
-                        builder = builder.set_batch_channel_memberships(
-                            crate::protocol_serde::shape_batch_channel_memberships::de_batch_channel_memberships(tokens)?
-                        );
-                    }
-                    "Errors" => {
-                        builder = builder.set_errors(
-                            crate::protocol_serde::shape_batch_create_channel_membership_errors::de_batch_create_channel_membership_errors(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "BatchChannelMemberships" => {
+                    builder = builder.set_batch_channel_memberships(
+                        crate::protocol_serde::shape_batch_channel_memberships::de_batch_channel_memberships(tokens)?,
+                    );
                 }
-            }
+                "Errors" => {
+                    builder = builder.set_errors(
+                        crate::protocol_serde::shape_batch_create_channel_membership_errors::de_batch_create_channel_membership_errors(tokens)?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

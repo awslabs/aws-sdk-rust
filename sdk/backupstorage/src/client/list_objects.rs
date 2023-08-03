@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`object_list(Option<Vec<BackupObject>>)`](crate::operation::list_objects::ListObjectsOutput::object_list): Object list
     ///   - [`next_token(Option<String>)`](crate::operation::list_objects::ListObjectsOutput::next_token): Pagination token
     /// - On failure, responds with [`SdkError<ListObjectsError>`](crate::operation::list_objects::ListObjectsError)
-    pub fn list_objects(
-        &self,
-    ) -> crate::operation::list_objects::builders::ListObjectsFluentBuilder {
+    pub fn list_objects(&self) -> crate::operation::list_objects::builders::ListObjectsFluentBuilder {
         crate::operation::list_objects::builders::ListObjectsFluentBuilder::new(self.handle.clone())
     }
 }

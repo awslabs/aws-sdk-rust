@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`ip_access_settings_arn(Option<String>)`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput::ip_access_settings_arn): <p>The ARN of the IP access settings resource.</p>
     /// - On failure, responds with [`SdkError<AssociateIpAccessSettingsError>`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError)
-    pub fn associate_ip_access_settings(&self) -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsFluentBuilder{
+    pub fn associate_ip_access_settings(&self) -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsFluentBuilder {
         crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsFluentBuilder::new(self.handle.clone())
     }
 }

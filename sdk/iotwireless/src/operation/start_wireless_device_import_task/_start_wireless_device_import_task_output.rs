@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StartWirelessDeviceImportTaskOutput {
 }
 impl StartWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartWirelessDeviceImportTaskOutput`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput).
-    pub fn builder() -> crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskOutputBuilder{
+    pub fn builder() -> crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskOutputBuilder {
         crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartWirelessDeviceImportTaskOutput`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWirelessDeviceImportTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl StartWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartWirelessDeviceImportTaskOutput`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput
-    {
+    pub fn build(self) -> crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput {
         crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput {
             id: self.id,
             arn: self.arn,

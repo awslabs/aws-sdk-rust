@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`amazon_open_search_serverless_destination_update(AmazonOpenSearchServerlessDestinationUpdate)`](crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::amazon_open_search_serverless_destination_update) / [`set_amazon_open_search_serverless_destination_update(Option<AmazonOpenSearchServerlessDestinationUpdate>)`](crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::set_amazon_open_search_serverless_destination_update): <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
     /// - On success, responds with [`UpdateDestinationOutput`](crate::operation::update_destination::UpdateDestinationOutput)
     /// - On failure, responds with [`SdkError<UpdateDestinationError>`](crate::operation::update_destination::UpdateDestinationError)
-    pub fn update_destination(
-        &self,
-    ) -> crate::operation::update_destination::builders::UpdateDestinationFluentBuilder {
-        crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_destination(&self) -> crate::operation::update_destination::builders::UpdateDestinationFluentBuilder {
+        crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::new(self.handle.clone())
     }
 }

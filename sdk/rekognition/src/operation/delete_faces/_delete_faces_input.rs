@@ -29,27 +29,19 @@ impl DeleteFacesInput {
 
 /// A builder for [`DeleteFacesInput`](crate::operation::delete_faces::DeleteFacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFacesInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteFacesInputBuilder {
     /// <p>Collection from which to remove the specific faces.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Collection from which to remove the specific faces.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -69,10 +61,7 @@ impl DeleteFacesInputBuilder {
         self
     }
     /// <p>An array of face IDs to delete.</p>
-    pub fn set_face_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.face_ids = input;
         self
     }
@@ -81,12 +70,7 @@ impl DeleteFacesInputBuilder {
         &self.face_ids
     }
     /// Consumes the builder and constructs a [`DeleteFacesInput`](crate::operation::delete_faces::DeleteFacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_faces::DeleteFacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_faces::DeleteFacesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_faces::DeleteFacesInput {
             collection_id: self.collection_id,
             face_ids: self.face_ids,

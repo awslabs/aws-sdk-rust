@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`instance_credit_specifications(Option<Vec<InstanceCreditSpecification>>)`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput::instance_credit_specifications): <p>Information about the credit option for CPU usage of an instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceCreditSpecificationsError>`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsError)
-    pub fn describe_instance_credit_specifications(&self) -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsFluentBuilder{
-        crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_instance_credit_specifications(
+        &self,
+    ) -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsFluentBuilder {
+        crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

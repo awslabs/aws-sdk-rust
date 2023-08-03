@@ -47,9 +47,7 @@ impl Notification {
 
 /// A builder for [`Notification`](crate::types::Notification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
@@ -59,19 +57,13 @@ pub struct NotificationBuilder {
 impl NotificationBuilder {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -92,17 +84,12 @@ impl NotificationBuilder {
         self
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn set_job_states_to_notify(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
-    ) -> Self {
+    pub fn set_job_states_to_notify(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>) -> Self {
         self.job_states_to_notify = input;
         self
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn get_job_states_to_notify(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
+    pub fn get_job_states_to_notify(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
         &self.job_states_to_notify
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
@@ -120,18 +107,12 @@ impl NotificationBuilder {
         &self.notify_all
     }
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
-    pub fn device_pickup_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_pickup_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_pickup_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
-    pub fn set_device_pickup_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_pickup_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_pickup_sns_topic_arn = input;
         self
     }

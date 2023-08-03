@@ -9,8 +9,7 @@ pub struct ListInstalledComponentsOutput {
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
     #[doc(hidden)]
-    pub installed_components:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
+    pub installed_components: ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ impl ListInstalledComponentsOutput {
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn installed_components(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstalledComponent]> {
+    pub fn installed_components(&self) -> ::std::option::Option<&[crate::types::InstalledComponent]> {
         self.installed_components.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -39,21 +36,16 @@ impl ::aws_http::request_id::RequestId for ListInstalledComponentsOutput {
 }
 impl ListInstalledComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstalledComponentsOutput`](crate::operation::list_installed_components::ListInstalledComponentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_installed_components::builders::ListInstalledComponentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_installed_components::builders::ListInstalledComponentsOutputBuilder {
         crate::operation::list_installed_components::builders::ListInstalledComponentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstalledComponentsOutput`](crate::operation::list_installed_components::ListInstalledComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstalledComponentsOutputBuilder {
-    pub(crate) installed_components:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
+    pub(crate) installed_components: ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -78,10 +70,7 @@ impl ListInstalledComponentsOutputBuilder {
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn set_installed_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
-    ) -> Self {
+    pub fn set_installed_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>) -> Self {
         self.installed_components = input;
         self
     }
@@ -90,9 +79,7 @@ impl ListInstalledComponentsOutputBuilder {
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn get_installed_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>> {
+    pub fn get_installed_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>> {
         &self.installed_components
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -119,9 +106,7 @@ impl ListInstalledComponentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInstalledComponentsOutput`](crate::operation::list_installed_components::ListInstalledComponentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_installed_components::ListInstalledComponentsOutput {
+    pub fn build(self) -> crate::operation::list_installed_components::ListInstalledComponentsOutput {
         crate::operation::list_installed_components::ListInstalledComponentsOutput {
             installed_components: self.installed_components,
             next_token: self.next_token,

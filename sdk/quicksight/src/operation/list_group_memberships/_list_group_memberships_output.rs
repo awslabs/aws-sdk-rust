@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for ListGroupMembershipsOutput {
 }
 impl ListGroupMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembershipsOutput`](crate::operation::list_group_memberships::ListGroupMembershipsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_memberships::builders::ListGroupMembershipsOutputBuilder {
         crate::operation::list_group_memberships::builders::ListGroupMembershipsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupMembershipsOutput`](crate::operation::list_group_memberships::ListGroupMembershipsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupMembershipsOutputBuilder {
     pub(crate) group_member_list: ::std::option::Option<::std::vec::Vec<crate::types::GroupMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -73,17 +70,12 @@ impl ListGroupMembershipsOutputBuilder {
         self
     }
     /// <p>The list of the members of the group.</p>
-    pub fn set_group_member_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMember>>,
-    ) -> Self {
+    pub fn set_group_member_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMember>>) -> Self {
         self.group_member_list = input;
         self
     }
     /// <p>The list of the members of the group.</p>
-    pub fn get_group_member_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMember>> {
+    pub fn get_group_member_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMember>> {
         &self.group_member_list
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>

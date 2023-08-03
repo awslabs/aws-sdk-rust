@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDiskSnapshotOutput`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput) with field(s):
     ///   - [`disk_snapshot(Option<DiskSnapshot>)`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput::disk_snapshot): <p>An object containing information about the disk snapshot.</p>
     /// - On failure, responds with [`SdkError<GetDiskSnapshotError>`](crate::operation::get_disk_snapshot::GetDiskSnapshotError)
-    pub fn get_disk_snapshot(
-        &self,
-    ) -> crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder {
-        crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_disk_snapshot(&self) -> crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder {
+        crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

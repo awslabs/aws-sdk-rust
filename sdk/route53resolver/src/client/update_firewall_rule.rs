@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFirewallRuleOutput`](crate::operation::update_firewall_rule::UpdateFirewallRuleOutput) with field(s):
     ///   - [`firewall_rule(Option<FirewallRule>)`](crate::operation::update_firewall_rule::UpdateFirewallRuleOutput::firewall_rule): <p>The firewall rule that you just updated. </p>
     /// - On failure, responds with [`SdkError<UpdateFirewallRuleError>`](crate::operation::update_firewall_rule::UpdateFirewallRuleError)
-    pub fn update_firewall_rule(
-        &self,
-    ) -> crate::operation::update_firewall_rule::builders::UpdateFirewallRuleFluentBuilder {
-        crate::operation::update_firewall_rule::builders::UpdateFirewallRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_firewall_rule(&self) -> crate::operation::update_firewall_rule::builders::UpdateFirewallRuleFluentBuilder {
+        crate::operation::update_firewall_rule::builders::UpdateFirewallRuleFluentBuilder::new(self.handle.clone())
     }
 }

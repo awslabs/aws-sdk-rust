@@ -41,9 +41,7 @@ impl LambdaDeviceMount {
 
 /// A builder for [`LambdaDeviceMount`](crate::types::LambdaDeviceMount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaDeviceMountBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
@@ -72,18 +70,13 @@ impl LambdaDeviceMountBuilder {
     }
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::LambdaFilesystemPermission>) -> Self {
         self.permission = input;
         self
     }
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    pub fn get_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaFilesystemPermission> {
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::LambdaFilesystemPermission> {
         &self.permission
     }
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>

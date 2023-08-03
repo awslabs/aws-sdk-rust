@@ -59,9 +59,7 @@ impl EnableMfaDeviceInput {
 
 /// A builder for [`EnableMfaDeviceInput`](crate::operation::enable_mfa_device::EnableMfaDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableMfaDeviceInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
@@ -88,19 +86,13 @@ impl EnableMfaDeviceInputBuilder {
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial_number = input;
         self
     }
@@ -113,10 +105,7 @@ impl EnableMfaDeviceInputBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn authentication_code1(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_code1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_code1 = ::std::option::Option::Some(input.into());
         self
     }
@@ -124,10 +113,7 @@ impl EnableMfaDeviceInputBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn set_authentication_code1(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_code1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_code1 = input;
         self
     }
@@ -142,10 +128,7 @@ impl EnableMfaDeviceInputBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn authentication_code2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_code2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_code2 = ::std::option::Option::Some(input.into());
         self
     }
@@ -153,10 +136,7 @@ impl EnableMfaDeviceInputBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn set_authentication_code2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_code2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_code2 = input;
         self
     }
@@ -170,10 +150,7 @@ impl EnableMfaDeviceInputBuilder {
     /// Consumes the builder and constructs a [`EnableMfaDeviceInput`](crate::operation::enable_mfa_device::EnableMfaDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_mfa_device::EnableMfaDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::enable_mfa_device::EnableMfaDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_mfa_device::EnableMfaDeviceInput {
             user_name: self.user_name,
             serial_number: self.serial_number,

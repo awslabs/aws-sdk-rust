@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`packaging_groups(Option<Vec<PackagingGroup>>)`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput::packaging_groups): A list of MediaPackage VOD PackagingGroup resources.
     /// - On failure, responds with [`SdkError<ListPackagingGroupsError>`](crate::operation::list_packaging_groups::ListPackagingGroupsError)
-    pub fn list_packaging_groups(
-        &self,
-    ) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder {
-        crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_packaging_groups(&self) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder {
+        crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,15 +5,12 @@
 pub struct UpdateCustomRoutingAcceleratorAttributesOutput {
     /// <p>Updated custom routing accelerator.</p>
     #[doc(hidden)]
-    pub accelerator_attributes:
-        ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>,
+    pub accelerator_attributes: ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>,
     _request_id: Option<String>,
 }
 impl UpdateCustomRoutingAcceleratorAttributesOutput {
     /// <p>Updated custom routing accelerator.</p>
-    pub fn accelerator_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomRoutingAcceleratorAttributes> {
+    pub fn accelerator_attributes(&self) -> ::std::option::Option<&crate::types::CustomRoutingAcceleratorAttributes> {
         self.accelerator_attributes.as_ref()
     }
 }
@@ -24,42 +21,32 @@ impl ::aws_http::request_id::RequestId for UpdateCustomRoutingAcceleratorAttribu
 }
 impl UpdateCustomRoutingAcceleratorAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput).
-    pub fn builder() -> crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesOutputBuilder
+    {
         crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorAttributesOutputBuilder {
-    pub(crate) accelerator_attributes:
-        ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>,
+    pub(crate) accelerator_attributes: ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>,
     _request_id: Option<String>,
 }
 impl UpdateCustomRoutingAcceleratorAttributesOutputBuilder {
     /// <p>Updated custom routing accelerator.</p>
-    pub fn accelerator_attributes(
-        mut self,
-        input: crate::types::CustomRoutingAcceleratorAttributes,
-    ) -> Self {
+    pub fn accelerator_attributes(mut self, input: crate::types::CustomRoutingAcceleratorAttributes) -> Self {
         self.accelerator_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updated custom routing accelerator.</p>
-    pub fn set_accelerator_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>,
-    ) -> Self {
+    pub fn set_accelerator_attributes(mut self, input: ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>) -> Self {
         self.accelerator_attributes = input;
         self
     }
     /// <p>Updated custom routing accelerator.</p>
-    pub fn get_accelerator_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes> {
+    pub fn get_accelerator_attributes(&self) -> &::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes> {
         &self.accelerator_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +59,9 @@ impl UpdateCustomRoutingAcceleratorAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput).
-    pub fn build(self) -> crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput{
+    pub fn build(self) -> crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput {
         crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput {
-            accelerator_attributes: self.accelerator_attributes
-            ,
+            accelerator_attributes: self.accelerator_attributes,
             _request_id: self._request_id,
         }
     }

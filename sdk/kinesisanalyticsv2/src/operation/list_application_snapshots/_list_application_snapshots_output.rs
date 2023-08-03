@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationSnapshotsOutput {
 }
 impl ListApplicationSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsOutputBuilder {
         crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationSnapshotsOutput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationSnapshotsOutputBuilder {
-    pub(crate) snapshot_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>,
+    pub(crate) snapshot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListApplicationSnapshotsOutputBuilder {
         self
     }
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub fn set_snapshot_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>,
-    ) -> Self {
+    pub fn set_snapshot_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>) -> Self {
         self.snapshot_summaries = input;
         self
     }
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub fn get_snapshot_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>> {
+    pub fn get_snapshot_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>> {
         &self.snapshot_summaries
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -96,9 +86,7 @@ impl ListApplicationSnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationSnapshotsOutput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput {
+    pub fn build(self) -> crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput {
         crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput {
             snapshot_summaries: self.snapshot_summaries,
             next_token: self.next_token,

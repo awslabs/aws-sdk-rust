@@ -10,10 +10,7 @@ impl IsAuthorizedInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::is_authorized::IsAuthorizedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_authorized::IsAuthorizedError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_authorized::IsAuthorizedError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.is_authorized();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl IsAuthorizedFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::is_authorized::IsAuthorized,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::is_authorized::IsAuthorized, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::is_authorized::IsAuthorizedError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl IsAuthorizedFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl IsAuthorizedFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::is_authorized::IsAuthorized,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::is_authorized::IsAuthorized, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::is_authorized::IsAuthorizedError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -138,10 +120,7 @@ impl IsAuthorizedFluentBuilder {
         self
     }
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
@@ -155,10 +134,7 @@ impl IsAuthorizedFluentBuilder {
         self
     }
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionIdentifier>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionIdentifier>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -172,10 +148,7 @@ impl IsAuthorizedFluentBuilder {
         self
     }
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -189,10 +162,7 @@ impl IsAuthorizedFluentBuilder {
         self
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDefinition>,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<crate::types::ContextDefinition>) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }
@@ -210,10 +180,7 @@ impl IsAuthorizedFluentBuilder {
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitiesDefinition>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }

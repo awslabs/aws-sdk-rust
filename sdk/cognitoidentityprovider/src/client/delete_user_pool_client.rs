@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
     /// - On success, responds with [`DeleteUserPoolClientOutput`](crate::operation::delete_user_pool_client::DeleteUserPoolClientOutput)
     /// - On failure, responds with [`SdkError<DeleteUserPoolClientError>`](crate::operation::delete_user_pool_client::DeleteUserPoolClientError)
-    pub fn delete_user_pool_client(
-        &self,
-    ) -> crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder
-    {
-        crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_pool_client(&self) -> crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder {
+        crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::new(self.handle.clone())
     }
 }

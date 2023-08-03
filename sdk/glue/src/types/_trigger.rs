@@ -73,9 +73,7 @@ impl Trigger {
         self.predicate.as_ref()
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn event_batching_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
+    pub fn event_batching_condition(&self) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
     }
 }
@@ -88,9 +86,7 @@ impl Trigger {
 
 /// A builder for [`Trigger`](crate::types::Trigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TriggerBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
@@ -101,8 +97,7 @@ pub struct TriggerBuilder {
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,
-    pub(crate) event_batching_condition:
-        ::std::option::Option<crate::types::EventBatchingCondition>,
+    pub(crate) event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
 impl TriggerBuilder {
     /// <p>The name of the trigger.</p>
@@ -120,18 +115,12 @@ impl TriggerBuilder {
         &self.name
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -221,10 +210,7 @@ impl TriggerBuilder {
         self
     }
     /// <p>The actions initiated by this trigger.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -252,17 +238,12 @@ impl TriggerBuilder {
         self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn set_event_batching_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBatchingCondition>,
-    ) -> Self {
+    pub fn set_event_batching_condition(mut self, input: ::std::option::Option<crate::types::EventBatchingCondition>) -> Self {
         self.event_batching_condition = input;
         self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn get_event_batching_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBatchingCondition> {
+    pub fn get_event_batching_condition(&self) -> &::std::option::Option<crate::types::EventBatchingCondition> {
         &self.event_batching_condition
     }
     /// Consumes the builder and constructs a [`Trigger`](crate::types::Trigger).

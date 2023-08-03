@@ -16,17 +16,14 @@ impl VerifyDomainIdentityInput {
 }
 impl VerifyDomainIdentityInput {
     /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
-    pub fn builder(
-    ) -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityInputBuilder {
+    pub fn builder() -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityInputBuilder {
         crate::operation::verify_domain_identity::builders::VerifyDomainIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyDomainIdentityInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,8 @@ impl VerifyDomainIdentityInputBuilder {
     /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_domain_identity::VerifyDomainIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::verify_domain_identity::VerifyDomainIdentityInput {
-                domain: self.domain,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::verify_domain_identity::VerifyDomainIdentityInput { domain: self.domain })
     }
 }

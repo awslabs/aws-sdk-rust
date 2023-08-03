@@ -37,17 +37,14 @@ impl DeleteBackendStorageInput {
 }
 impl DeleteBackendStorageInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendStorageInput`](crate::operation::delete_backend_storage::DeleteBackendStorageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder {
+    pub fn builder() -> crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder {
         crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackendStorageInput`](crate::operation::delete_backend_storage::DeleteBackendStorageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackendStorageInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ impl DeleteBackendStorageInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -90,18 +81,12 @@ impl DeleteBackendStorageInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The name of the storage resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the storage resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -115,10 +100,7 @@ impl DeleteBackendStorageInputBuilder {
         self
     }
     /// <p>The name of the storage service.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.service_name = input;
         self
     }
@@ -129,17 +111,13 @@ impl DeleteBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackendStorageInput`](crate::operation::delete_backend_storage::DeleteBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_backend_storage::DeleteBackendStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_backend_storage::DeleteBackendStorageInput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                resource_name: self.resource_name,
-                service_name: self.service_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_backend_storage::DeleteBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_backend_storage::DeleteBackendStorageInput {
+            app_id: self.app_id,
+            backend_environment_name: self.backend_environment_name,
+            resource_name: self.resource_name,
+            service_name: self.service_name,
+        })
     }
 }

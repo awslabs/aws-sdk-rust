@@ -35,9 +35,7 @@ pub struct GetQuantumTaskOutput {
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags that belong to this task.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
     #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
@@ -85,11 +83,7 @@ impl GetQuantumTaskOutput {
         self.ended_at.as_ref()
     }
     /// <p>The tags that belong to this task.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
@@ -111,9 +105,7 @@ impl GetQuantumTaskOutput {
 
 /// A builder for [`GetQuantumTaskOutput`](crate::operation::get_quantum_task::GetQuantumTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQuantumTaskOutputBuilder {
     pub(crate) quantum_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::QuantumTaskStatus>,
@@ -125,26 +117,18 @@ pub struct GetQuantumTaskOutputBuilder {
     pub(crate) output_s3_directory: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutputBuilder {
     /// <p>The ARN of the task.</p>
-    pub fn quantum_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task.</p>
-    pub fn set_quantum_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
@@ -158,10 +142,7 @@ impl GetQuantumTaskOutputBuilder {
         self
     }
     /// <p>The status of the task.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QuantumTaskStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QuantumTaskStatus>) -> Self {
         self.status = input;
         self
     }
@@ -170,18 +151,12 @@ impl GetQuantumTaskOutputBuilder {
         &self.status
     }
     /// <p>The reason that a task failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that a task failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -204,18 +179,12 @@ impl GetQuantumTaskOutputBuilder {
         &self.device_arn
     }
     /// <p>The parameters for the device on which the task ran.</p>
-    pub fn device_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameters for the device on which the task ran.</p>
-    pub fn set_device_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_parameters = input;
         self
     }
@@ -238,18 +207,12 @@ impl GetQuantumTaskOutputBuilder {
         &self.shots
     }
     /// <p>The S3 bucket where task results are stored.</p>
-    pub fn output_s3_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket where task results are stored.</p>
-    pub fn set_output_s3_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket = input;
         self
     }
@@ -258,18 +221,12 @@ impl GetQuantumTaskOutputBuilder {
         &self.output_s3_bucket
     }
     /// <p>The folder in the S3 bucket where task results are stored.</p>
-    pub fn output_s3_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The folder in the S3 bucket where task results are stored.</p>
-    pub fn set_output_s3_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_directory = input;
         self
     }
@@ -283,10 +240,7 @@ impl GetQuantumTaskOutputBuilder {
         self
     }
     /// <p>The time at which the task was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -300,10 +254,7 @@ impl GetQuantumTaskOutputBuilder {
         self
     }
     /// <p>The time at which the task ended.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
@@ -316,32 +267,19 @@ impl GetQuantumTaskOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that belong to this task.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that belong to this task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that belong to this task.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>

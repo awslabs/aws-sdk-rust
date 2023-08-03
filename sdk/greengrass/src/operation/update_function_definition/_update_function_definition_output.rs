@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateFunctionDefinitionOutput {
 }
 impl UpdateFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionDefinitionOutput`](crate::operation::update_function_definition::UpdateFunctionDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_function_definition::builders::UpdateFunctionDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_function_definition::builders::UpdateFunctionDefinitionOutputBuilder {
         crate::operation::update_function_definition::builders::UpdateFunctionDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFunctionDefinitionOutput`](crate::operation::update_function_definition::UpdateFunctionDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFunctionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateFunctionDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFunctionDefinitionOutput`](crate::operation::update_function_definition::UpdateFunctionDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_function_definition::UpdateFunctionDefinitionOutput {
+    pub fn build(self) -> crate::operation::update_function_definition::UpdateFunctionDefinitionOutput {
         crate::operation::update_function_definition::UpdateFunctionDefinitionOutput {
             _request_id: self._request_id,
         }

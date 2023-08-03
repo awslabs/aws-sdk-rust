@@ -10,10 +10,7 @@ impl UpdateEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_environment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEnvironmentFluentBuilder {
         }
     }
     /// Access the UpdateEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateEnvironmentFluentBuilder {
             crate::operation::update_environment::UpdateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateEnvironmentFluentBuilder {
             crate::operation::update_environment::UpdateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the environment to change settings.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment to change settings.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -177,10 +155,7 @@ impl UpdateEnvironmentFluentBuilder {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn managed_credentials_action(
-        mut self,
-        input: crate::types::ManagedCredentialsAction,
-    ) -> Self {
+    pub fn managed_credentials_action(mut self, input: crate::types::ManagedCredentialsAction) -> Self {
         self.inner = self.inner.managed_credentials_action(input);
         self
     }
@@ -191,10 +166,7 @@ impl UpdateEnvironmentFluentBuilder {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn set_managed_credentials_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedCredentialsAction>,
-    ) -> Self {
+    pub fn set_managed_credentials_action(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsAction>) -> Self {
         self.inner = self.inner.set_managed_credentials_action(input);
         self
     }
@@ -205,9 +177,7 @@ impl UpdateEnvironmentFluentBuilder {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn get_managed_credentials_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManagedCredentialsAction> {
+    pub fn get_managed_credentials_action(&self) -> &::std::option::Option<crate::types::ManagedCredentialsAction> {
         self.inner.get_managed_credentials_action()
     }
 }

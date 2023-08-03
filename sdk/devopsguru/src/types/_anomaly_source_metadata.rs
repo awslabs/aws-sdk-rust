@@ -37,9 +37,7 @@ impl AnomalySourceMetadata {
 
 /// A builder for [`AnomalySourceMetadata`](crate::types::AnomalySourceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalySourceMetadataBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) source_resource_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl AnomalySourceMetadataBuilder {
         &self.source
     }
     /// <p>The name of the anomaly's resource.</p>
-    pub fn source_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the anomaly's resource.</p>
-    pub fn set_source_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_resource_name = input;
         self
     }
@@ -81,18 +73,12 @@ impl AnomalySourceMetadataBuilder {
         &self.source_resource_name
     }
     /// <p>The anomaly's resource type.</p>
-    pub fn source_resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The anomaly's resource type.</p>
-    pub fn set_source_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_resource_type = input;
         self
     }

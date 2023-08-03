@@ -51,9 +51,7 @@ impl IngestedEventStatistics {
 
 /// A builder for [`IngestedEventStatistics`](crate::types::IngestedEventStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestedEventStatisticsBuilder {
     pub(crate) number_of_events: ::std::option::Option<i64>,
     pub(crate) event_data_size_in_bytes: ::std::option::Option<i64>,
@@ -91,18 +89,12 @@ impl IngestedEventStatisticsBuilder {
         &self.event_data_size_in_bytes
     }
     /// <p>The oldest stored event.</p>
-    pub fn least_recent_event(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn least_recent_event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.least_recent_event = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The oldest stored event.</p>
-    pub fn set_least_recent_event(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_least_recent_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.least_recent_event = input;
         self
     }
@@ -111,18 +103,12 @@ impl IngestedEventStatisticsBuilder {
         &self.least_recent_event
     }
     /// <p>The newest stored event.</p>
-    pub fn most_recent_event(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn most_recent_event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.most_recent_event = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The newest stored event.</p>
-    pub fn set_most_recent_event(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_most_recent_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.most_recent_event = input;
         self
     }
@@ -131,18 +117,12 @@ impl IngestedEventStatisticsBuilder {
         &self.most_recent_event
     }
     /// <p>Timestamp of when the stored event was last updated. </p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the stored event was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }

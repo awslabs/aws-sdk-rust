@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`count(i32)`](crate::operation::list_datasets::ListDatasetsOutput::count): Number of datasets returned.
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): A pagination token for obtaining the next page of results.
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
-    pub fn list_datasets(
-        &self,
-    ) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
-        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
+        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())
     }
 }

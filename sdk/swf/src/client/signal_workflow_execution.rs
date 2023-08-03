@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`input(impl ::std::convert::Into<String>)`](crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionFluentBuilder::input) / [`set_input(Option<String>)`](crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionFluentBuilder::set_input): <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     /// - On success, responds with [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput)
     /// - On failure, responds with [`SdkError<SignalWorkflowExecutionError>`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionError)
-    pub fn signal_workflow_execution(
-        &self,
-    ) -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionFluentBuilder
-    {
+    pub fn signal_workflow_execution(&self) -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionFluentBuilder {
         crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionFluentBuilder::new(self.handle.clone())
     }
 }

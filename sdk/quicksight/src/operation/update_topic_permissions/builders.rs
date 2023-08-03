@@ -37,10 +37,7 @@ impl UpdateTopicPermissionsFluentBuilder {
         }
     }
     /// Access the UpdateTopicPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_topic_permissions::builders::UpdateTopicPermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_topic_permissions::builders::UpdateTopicPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateTopicPermissionsFluentBuilder {
             crate::operation::update_topic_permissions::UpdateTopicPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_permissions::UpdateTopicPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateTopicPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateTopicPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_permissions::UpdateTopicPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_permissions::UpdateTopicPermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateTopicPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_permissions::UpdateTopicPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_permissions::UpdateTopicPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateTopicPermissionsFluentBuilder {
             crate::operation::update_topic_permissions::UpdateTopicPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_permissions::UpdateTopicPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -167,17 +147,12 @@ impl UpdateTopicPermissionsFluentBuilder {
         self
     }
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    pub fn get_grant_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
     /// Appends an item to `RevokePermissions`.
@@ -190,17 +165,12 @@ impl UpdateTopicPermissionsFluentBuilder {
         self
     }
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    pub fn get_revoke_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }
 }

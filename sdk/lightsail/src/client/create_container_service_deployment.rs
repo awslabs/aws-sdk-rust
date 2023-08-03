@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateContainerServiceDeploymentOutput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput) with field(s):
     ///   - [`container_service(Option<ContainerService>)`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput::container_service): <p>An object that describes a container service.</p>
     /// - On failure, responds with [`SdkError<CreateContainerServiceDeploymentError>`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError)
-    pub fn create_container_service_deployment(&self) -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentFluentBuilder{
+    pub fn create_container_service_deployment(
+        &self,
+    ) -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentFluentBuilder {
         crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

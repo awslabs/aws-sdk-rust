@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
@@ -96,13 +90,7 @@ impl AppType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "JupyterServer",
-            "KernelGateway",
-            "RSessionGateway",
-            "RStudioServerPro",
-            "TensorBoard",
-        ]
+        &["JupyterServer", "KernelGateway", "RSessionGateway", "RStudioServerPro", "TensorBoard"]
     }
 }
 impl ::std::convert::AsRef<str> for AppType {

@@ -57,10 +57,7 @@ impl SubscriberBuilder {
         self
     }
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
-    pub fn set_subscription_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionType>,
-    ) -> Self {
+    pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.subscription_type = input;
         self
     }

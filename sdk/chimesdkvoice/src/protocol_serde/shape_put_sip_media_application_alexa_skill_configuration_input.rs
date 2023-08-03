@@ -5,10 +5,11 @@ pub fn ser_put_sip_media_application_alexa_skill_configuration_input(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sip_media_application_alexa_skill_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("SipMediaApplicationAlexaSkillConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_sip_media_application_alexa_skill_configuration::ser_sip_media_application_alexa_skill_configuration(&mut object_2, var_1)?;
+        let mut object_2 = object.key("SipMediaApplicationAlexaSkillConfiguration").start_object();
+        crate::protocol_serde::shape_sip_media_application_alexa_skill_configuration::ser_sip_media_application_alexa_skill_configuration(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     Ok(())

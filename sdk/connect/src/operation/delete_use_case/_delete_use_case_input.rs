@@ -36,9 +36,7 @@ impl DeleteUseCaseInput {
 
 /// A builder for [`DeleteUseCaseInput`](crate::operation::delete_use_case::DeleteUseCaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUseCaseInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DeleteUseCaseInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl DeleteUseCaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUseCaseInput`](crate::operation::delete_use_case::DeleteUseCaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_use_case::DeleteUseCaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_use_case::DeleteUseCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_use_case::DeleteUseCaseInput {
             instance_id: self.instance_id,
             integration_association_id: self.integration_association_id,

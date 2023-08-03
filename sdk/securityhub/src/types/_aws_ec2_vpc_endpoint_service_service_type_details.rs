@@ -23,9 +23,7 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetails {
 
 /// A builder for [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpcEndpointServiceServiceTypeDetailsBuilder {
     pub(crate) service_type: ::std::option::Option<::std::string::String>,
 }

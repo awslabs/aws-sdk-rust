@@ -46,9 +46,7 @@ impl CreateKnowledgeBaseFluentBuilder {
         }
     }
     /// Access the CreateKnowledgeBase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +58,7 @@ impl CreateKnowledgeBaseFluentBuilder {
             crate::operation::create_knowledge_base::CreateKnowledgeBase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_knowledge_base::CreateKnowledgeBaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_knowledge_base::CreateKnowledgeBaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +68,7 @@ impl CreateKnowledgeBaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +77,7 @@ impl CreateKnowledgeBaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_knowledge_base::CreateKnowledgeBaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_knowledge_base::CreateKnowledgeBaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_knowledge_base::CreateKnowledgeBaseError>,
     > {
         let op = self
             .inner
@@ -109,9 +100,7 @@ impl CreateKnowledgeBaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_knowledge_base::CreateKnowledgeBaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_knowledge_base::CreateKnowledgeBaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_knowledge_base::CreateKnowledgeBaseError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +114,7 @@ impl CreateKnowledgeBaseFluentBuilder {
             crate::operation::create_knowledge_base::CreateKnowledgeBase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_knowledge_base::CreateKnowledgeBaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_knowledge_base::CreateKnowledgeBaseError>,
     > {
         self.customize_middleware().await
     }
@@ -165,17 +152,12 @@ impl CreateKnowledgeBaseFluentBuilder {
         self
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub fn set_knowledge_base_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseType>,
-    ) -> Self {
+    pub fn set_knowledge_base_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
         self.inner = self.inner.set_knowledge_base_type(input);
         self
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub fn get_knowledge_base_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
+    pub fn get_knowledge_base_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
         self.inner.get_knowledge_base_type()
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
@@ -184,17 +166,12 @@ impl CreateKnowledgeBaseFluentBuilder {
         self
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
-    pub fn set_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConfiguration>,
-    ) -> Self {
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
         self.inner = self.inner.set_source_configuration(input);
         self
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
-    pub fn get_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
         self.inner.get_source_configuration()
     }
     /// <p>Information about how to render the content.</p>
@@ -203,39 +180,26 @@ impl CreateKnowledgeBaseFluentBuilder {
         self
     }
     /// <p>Information about how to render the content.</p>
-    pub fn set_rendering_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingConfiguration>,
-    ) -> Self {
+    pub fn set_rendering_configuration(mut self, input: ::std::option::Option<crate::types::RenderingConfiguration>) -> Self {
         self.inner = self.inner.set_rendering_configuration(input);
         self
     }
     /// <p>Information about how to render the content.</p>
-    pub fn get_rendering_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RenderingConfiguration> {
+    pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         self.inner.get_rendering_configuration()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         self.inner.get_server_side_encryption_configuration()
     }
     /// <p>The description.</p>
@@ -257,30 +221,17 @@ impl CreateKnowledgeBaseFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

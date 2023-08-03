@@ -32,16 +32,12 @@ impl RowLevelPermissionDataSet {
         self.arn.as_deref()
     }
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-    pub fn permission_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RowLevelPermissionPolicy> {
+    pub fn permission_policy(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionPolicy> {
         self.permission_policy.as_ref()
     }
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
-    pub fn format_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RowLevelPermissionFormatVersion> {
+    pub fn format_version(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionFormatVersion> {
         self.format_version.as_ref()
     }
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
@@ -58,9 +54,7 @@ impl RowLevelPermissionDataSet {
 
 /// A builder for [`RowLevelPermissionDataSet`](crate::types::RowLevelPermissionDataSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowLevelPermissionDataSetBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -103,17 +97,12 @@ impl RowLevelPermissionDataSetBuilder {
         self
     }
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-    pub fn set_permission_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::RowLevelPermissionPolicy>,
-    ) -> Self {
+    pub fn set_permission_policy(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionPolicy>) -> Self {
         self.permission_policy = input;
         self
     }
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-    pub fn get_permission_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::RowLevelPermissionPolicy> {
+    pub fn get_permission_policy(&self) -> &::std::option::Option<crate::types::RowLevelPermissionPolicy> {
         &self.permission_policy
     }
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
@@ -124,18 +113,13 @@ impl RowLevelPermissionDataSetBuilder {
     }
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<crate::types::RowLevelPermissionFormatVersion>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionFormatVersion>) -> Self {
         self.format_version = input;
         self
     }
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
-    pub fn get_format_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::RowLevelPermissionFormatVersion> {
+    pub fn get_format_version(&self) -> &::std::option::Option<crate::types::RowLevelPermissionFormatVersion> {
         &self.format_version
     }
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>

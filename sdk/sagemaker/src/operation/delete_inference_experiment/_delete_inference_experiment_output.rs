@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteInferenceExperimentOutput {
 }
 impl DeleteInferenceExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput).
-    pub fn builder() -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder{
+    pub fn builder() -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder {
         crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInferenceExperimentOutputBuilder {
     pub(crate) inference_experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteInferenceExperimentOutputBuilder {
     /// <p>The ARN of the deleted inference experiment.</p>
-    pub fn inference_experiment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the deleted inference experiment.</p>
-    pub fn set_inference_experiment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_experiment_arn = input;
         self
     }
@@ -66,9 +58,7 @@ impl DeleteInferenceExperimentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput {
+    pub fn build(self) -> crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput {
         crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput {
             inference_experiment_arn: self.inference_experiment_arn,
             _request_id: self._request_id,

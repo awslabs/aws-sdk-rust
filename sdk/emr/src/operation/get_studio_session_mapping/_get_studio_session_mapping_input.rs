@@ -36,18 +36,14 @@ impl GetStudioSessionMappingInput {
 }
 impl GetStudioSessionMappingInput {
     /// Creates a new builder-style object to manufacture [`GetStudioSessionMappingInput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput).
-    pub fn builder(
-    ) -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingInputBuilder {
         crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStudioSessionMappingInput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioSessionMappingInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ impl GetStudioSessionMappingInputBuilder {
         &self.identity_id
     }
     /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn identity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn set_identity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_name = input;
         self
     }
@@ -109,10 +99,7 @@ impl GetStudioSessionMappingInputBuilder {
         self
     }
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -127,13 +114,11 @@ impl GetStudioSessionMappingInputBuilder {
         crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput {
-                studio_id: self.studio_id,
-                identity_id: self.identity_id,
-                identity_name: self.identity_name,
-                identity_type: self.identity_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput {
+            studio_id: self.studio_id,
+            identity_id: self.identity_id,
+            identity_name: self.identity_name,
+            identity_type: self.identity_type,
+        })
     }
 }

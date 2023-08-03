@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAssociatedResourceOutput {
 }
 impl GetAssociatedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedResourceOutput`](crate::operation::get_associated_resource::GetAssociatedResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_associated_resource::builders::GetAssociatedResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_associated_resource::builders::GetAssociatedResourceOutputBuilder {
         crate::operation::get_associated_resource::builders::GetAssociatedResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssociatedResourceOutput`](crate::operation::get_associated_resource::GetAssociatedResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedResourceOutputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     _request_id: Option<String>,

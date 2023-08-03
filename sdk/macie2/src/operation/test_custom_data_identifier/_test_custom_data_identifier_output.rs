@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for TestCustomDataIdentifierOutput {
 }
 impl TestCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`TestCustomDataIdentifierOutput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput).
-    pub fn builder() -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierOutputBuilder{
+    pub fn builder() -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierOutputBuilder {
         crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestCustomDataIdentifierOutput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestCustomDataIdentifierOutputBuilder {
     pub(crate) match_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl TestCustomDataIdentifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TestCustomDataIdentifierOutput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
+    pub fn build(self) -> crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
             match_count: self.match_count,
             _request_id: self._request_id,

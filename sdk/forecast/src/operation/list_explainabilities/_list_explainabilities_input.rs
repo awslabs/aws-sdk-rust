@@ -41,18 +41,14 @@ impl ListExplainabilitiesInput {
 }
 impl ListExplainabilitiesInput {
     /// Creates a new builder-style object to manufacture [`ListExplainabilitiesInput`](crate::operation::list_explainabilities::ListExplainabilitiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_explainabilities::builders::ListExplainabilitiesInputBuilder {
-        crate::operation::list_explainabilities::builders::ListExplainabilitiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_explainabilities::builders::ListExplainabilitiesInputBuilder {
+        crate::operation::list_explainabilities::builders::ListExplainabilitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExplainabilitiesInput`](crate::operation::list_explainabilities::ListExplainabilitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExplainabilitiesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -111,10 +107,7 @@ impl ListExplainabilitiesInputBuilder {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -131,16 +124,12 @@ impl ListExplainabilitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListExplainabilitiesInput`](crate::operation::list_explainabilities::ListExplainabilitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_explainabilities::ListExplainabilitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_explainabilities::ListExplainabilitiesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_explainabilities::ListExplainabilitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_explainabilities::ListExplainabilitiesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

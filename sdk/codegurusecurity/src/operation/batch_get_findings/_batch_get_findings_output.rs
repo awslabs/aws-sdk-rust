@@ -8,8 +8,7 @@ pub struct BatchGetFindingsOutput {
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
     #[doc(hidden)]
-    pub failed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
+    pub failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
     _request_id: Option<String>,
 }
 impl BatchGetFindingsOutput {
@@ -29,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetFindingsOutput {
 }
 impl BatchGetFindingsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFindingsOutput`](crate::operation::batch_get_findings::BatchGetFindingsOutput).
-    pub fn builder() -> crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder {
         crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetFindingsOutput`](crate::operation::batch_get_findings::BatchGetFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    pub(crate) failed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
+    pub(crate) failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
     _request_id: Option<String>,
 }
 impl BatchGetFindingsOutputBuilder {
@@ -59,10 +54,7 @@ impl BatchGetFindingsOutputBuilder {
         self
     }
     /// <p> A list of all requested findings.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>) -> Self {
         self.findings = input;
         self
     }
@@ -82,17 +74,12 @@ impl BatchGetFindingsOutputBuilder {
         self
     }
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
-    pub fn set_failed_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
-    ) -> Self {
+    pub fn set_failed_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>) -> Self {
         self.failed_findings = input;
         self
     }
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
-    pub fn get_failed_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>> {
+    pub fn get_failed_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>> {
         &self.failed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -27,7 +27,7 @@ impl UpdateThingGroupsForThingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateThingGroupsForThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder,
+    inner: crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder,
 }
 impl UpdateThingGroupsForThingFluentBuilder {
     /// Creates a new `UpdateThingGroupsForThing`.
@@ -38,7 +38,7 @@ impl UpdateThingGroupsForThingFluentBuilder {
         }
     }
     /// Access the UpdateThingGroupsForThing as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateThingGroupsForThingFluentBuilder {
             crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateThingGroupsForThingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateThingGroupsForThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateThingGroupsForThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateThingGroupsForThingFluentBuilder {
             crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError>,
     > {
         self.customize_middleware().await
     }
@@ -140,25 +129,17 @@ impl UpdateThingGroupsForThingFluentBuilder {
     /// To override the contents of this collection use [`set_thing_groups_to_add`](Self::set_thing_groups_to_add).
     ///
     /// <p>The groups to which the thing will be added.</p>
-    pub fn thing_groups_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_groups_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_groups_to_add(input.into());
         self
     }
     /// <p>The groups to which the thing will be added.</p>
-    pub fn set_thing_groups_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thing_groups_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_thing_groups_to_add(input);
         self
     }
     /// <p>The groups to which the thing will be added.</p>
-    pub fn get_thing_groups_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thing_groups_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_thing_groups_to_add()
     }
     /// Appends an item to `thingGroupsToRemove`.
@@ -166,25 +147,17 @@ impl UpdateThingGroupsForThingFluentBuilder {
     /// To override the contents of this collection use [`set_thing_groups_to_remove`](Self::set_thing_groups_to_remove).
     ///
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn thing_groups_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_groups_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_groups_to_remove(input.into());
         self
     }
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn set_thing_groups_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thing_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_thing_groups_to_remove(input);
         self
     }
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn get_thing_groups_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thing_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_thing_groups_to_remove()
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>

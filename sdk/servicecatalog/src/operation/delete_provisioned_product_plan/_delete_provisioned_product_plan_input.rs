@@ -37,16 +37,14 @@ impl DeleteProvisionedProductPlanInput {
 }
 impl DeleteProvisionedProductPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisionedProductPlanInput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput).
-    pub fn builder() -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder {
         crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProvisionedProductPlanInput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProvisionedProductPlanInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) plan_id: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -70,10 +65,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -120,12 +112,10 @@ impl DeleteProvisionedProductPlanInputBuilder {
         crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
-                accept_language: self.accept_language,
-                plan_id: self.plan_id,
-                ignore_errors: self.ignore_errors,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
+            accept_language: self.accept_language,
+            plan_id: self.plan_id,
+            ignore_errors: self.ignore_errors,
+        })
     }
 }

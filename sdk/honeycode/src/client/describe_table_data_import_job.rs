@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`job_metadata(Option<TableDataImportJobMetadata>)`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput::job_metadata): <p> The metadata about the job that was submitted for import. </p>
     ///   - [`error_code(Option<ErrorCode>)`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput::error_code): <p> If job status is failed, error code to understand reason for the failure. </p>
     /// - On failure, responds with [`SdkError<DescribeTableDataImportJobError>`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError)
-    pub fn describe_table_data_import_job(&self) -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobFluentBuilder{
+    pub fn describe_table_data_import_job(
+        &self,
+    ) -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobFluentBuilder {
         crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobFluentBuilder::new(self.handle.clone())
     }
 }

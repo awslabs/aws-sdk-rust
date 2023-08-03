@@ -26,7 +26,7 @@ impl DeleteLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder,
+    inner: crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder,
 }
 impl DeleteLoggingConfigurationFluentBuilder {
     /// Creates a new `DeleteLoggingConfiguration`.
@@ -37,7 +37,7 @@ impl DeleteLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteLoggingConfigurationFluentBuilder {
             crate::operation::delete_logging_configuration::DeleteLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteLoggingConfigurationFluentBuilder {
             crate::operation::delete_logging_configuration::DeleteLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }

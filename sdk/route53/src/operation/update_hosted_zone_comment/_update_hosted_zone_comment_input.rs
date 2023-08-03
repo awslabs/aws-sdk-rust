@@ -23,18 +23,14 @@ impl UpdateHostedZoneCommentInput {
 }
 impl UpdateHostedZoneCommentInput {
     /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentInput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput).
-    pub fn builder(
-    ) -> crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentInputBuilder {
         crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHostedZoneCommentInput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHostedZoneCommentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
@@ -75,11 +71,9 @@ impl UpdateHostedZoneCommentInputBuilder {
         crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput {
-                id: self.id,
-                comment: self.comment,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput {
+            id: self.id,
+            comment: self.comment,
+        })
     }
 }

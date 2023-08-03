@@ -48,9 +48,7 @@ impl ProductViewDetail {
         self.created_time.as_ref()
     }
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
-    pub fn source_connection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConnectionDetail> {
+    pub fn source_connection(&self) -> ::std::option::Option<&crate::types::SourceConnectionDetail> {
         self.source_connection.as_ref()
     }
 }
@@ -63,9 +61,7 @@ impl ProductViewDetail {
 
 /// A builder for [`ProductViewDetail`](crate::types::ProductViewDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductViewDetailBuilder {
     pub(crate) product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -80,17 +76,12 @@ impl ProductViewDetailBuilder {
         self
     }
     /// <p>Summary information about the product view.</p>
-    pub fn set_product_view_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewSummary>,
-    ) -> Self {
+    pub fn set_product_view_summary(mut self, input: ::std::option::Option<crate::types::ProductViewSummary>) -> Self {
         self.product_view_summary = input;
         self
     }
     /// <p>Summary information about the product view.</p>
-    pub fn get_product_view_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductViewSummary> {
+    pub fn get_product_view_summary(&self) -> &::std::option::Option<crate::types::ProductViewSummary> {
         &self.product_view_summary
     }
     /// <p>The status of the product.</p>
@@ -142,10 +133,7 @@ impl ProductViewDetailBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -159,17 +147,12 @@ impl ProductViewDetailBuilder {
         self
     }
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
-    pub fn set_source_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnectionDetail>,
-    ) -> Self {
+    pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnectionDetail>) -> Self {
         self.source_connection = input;
         self
     }
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
-    pub fn get_source_connection(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConnectionDetail> {
+    pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnectionDetail> {
         &self.source_connection
     }
     /// Consumes the builder and constructs a [`ProductViewDetail`](crate::types::ProductViewDetail).

@@ -36,17 +36,14 @@ impl ListSensorStatisticsInput {
 }
 impl ListSensorStatisticsInput {
     /// Creates a new builder-style object to manufacture [`ListSensorStatisticsInput`](crate::operation::list_sensor_statistics::ListSensorStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInputBuilder {
+    pub fn builder() -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInputBuilder {
         crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSensorStatisticsInput`](crate::operation::list_sensor_statistics::ListSensorStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_job_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl ListSensorStatisticsInputBuilder {
         &self.dataset_name
     }
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    pub fn ingestion_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    pub fn set_ingestion_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_job_id = input;
         self
     }
@@ -119,17 +110,13 @@ impl ListSensorStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`ListSensorStatisticsInput`](crate::operation::list_sensor_statistics::ListSensorStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sensor_statistics::ListSensorStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sensor_statistics::ListSensorStatisticsInput {
-                dataset_name: self.dataset_name,
-                ingestion_job_id: self.ingestion_job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_sensor_statistics::ListSensorStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_sensor_statistics::ListSensorStatisticsInput {
+            dataset_name: self.dataset_name,
+            ingestion_job_id: self.ingestion_job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

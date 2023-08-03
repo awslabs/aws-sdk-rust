@@ -9,12 +9,7 @@ pub struct ListNetworkSitesInput {
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::NetworkSiteFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
@@ -33,12 +28,7 @@ impl ListNetworkSitesInput {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::NetworkSiteFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
@@ -56,24 +46,17 @@ impl ListNetworkSitesInput {
 }
 impl ListNetworkSitesInput {
     /// Creates a new builder-style object to manufacture [`ListNetworkSitesInput`](crate::operation::list_network_sites::ListNetworkSitesInput).
-    pub fn builder() -> crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder {
         crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkSitesInput`](crate::operation::list_network_sites::ListNetworkSitesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkSitesInputBuilder {
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::NetworkSiteFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) filters:
+        ::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,11 +71,7 @@ impl ListNetworkSitesInputBuilder {
     /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::NetworkSiteFilterKeys,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::NetworkSiteFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k, v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -105,12 +84,7 @@ impl ListNetworkSitesInputBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::NetworkSiteFilterKeys,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filters = input;
         self
@@ -122,12 +96,7 @@ impl ListNetworkSitesInputBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::NetworkSiteFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
@@ -175,17 +144,12 @@ impl ListNetworkSitesInputBuilder {
     /// Consumes the builder and constructs a [`ListNetworkSitesInput`](crate::operation::list_network_sites::ListNetworkSitesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_network_sites::ListNetworkSitesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_network_sites::ListNetworkSitesInput {
-                filters: self.filters,
-                network_arn: self.network_arn,
-                start_token: self.start_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_network_sites::ListNetworkSitesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_network_sites::ListNetworkSitesInput {
+            filters: self.filters,
+            network_arn: self.network_arn,
+            start_token: self.start_token,
+            max_results: self.max_results,
+        })
     }
 }

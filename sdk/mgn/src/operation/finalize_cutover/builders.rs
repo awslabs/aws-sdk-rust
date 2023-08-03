@@ -10,10 +10,7 @@ impl FinalizeCutoverInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::finalize_cutover::FinalizeCutoverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::finalize_cutover::FinalizeCutoverError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::finalize_cutover::FinalizeCutoverError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.finalize_cutover();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl FinalizeCutoverFluentBuilder {
         }
     }
     /// Access the FinalizeCutover as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::finalize_cutover::builders::FinalizeCutoverInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::finalize_cutover::builders::FinalizeCutoverInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl FinalizeCutoverFluentBuilder {
             crate::operation::finalize_cutover::FinalizeCutover,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::finalize_cutover::FinalizeCutoverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::finalize_cutover::FinalizeCutoverError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl FinalizeCutoverFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl FinalizeCutoverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::finalize_cutover::FinalizeCutoverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::finalize_cutover::FinalizeCutoverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::finalize_cutover::FinalizeCutoverError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl FinalizeCutoverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::finalize_cutover::FinalizeCutoverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::finalize_cutover::FinalizeCutoverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::finalize_cutover::FinalizeCutoverError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl FinalizeCutoverFluentBuilder {
             crate::operation::finalize_cutover::FinalizeCutover,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::finalize_cutover::FinalizeCutoverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::finalize_cutover::FinalizeCutoverError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

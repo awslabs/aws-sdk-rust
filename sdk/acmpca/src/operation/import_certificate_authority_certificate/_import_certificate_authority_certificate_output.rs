@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ImportCertificateAuthorityCertificate
 }
 impl ImportCertificateAuthorityCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateAuthorityCertificateOutput`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput).
-    pub fn builder() -> crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateOutputBuilder {
         crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportCertificateAuthorityCertificateOutput`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportCertificateAuthorityCertificateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl ImportCertificateAuthorityCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportCertificateAuthorityCertificateOutput`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput).
-    pub fn build(self) -> crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput{
+    pub fn build(self) -> crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput {
         crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput {
             _request_id: self._request_id,
         }

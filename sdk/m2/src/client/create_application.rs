@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`application_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::application_id): <p>The unique application identifier.</p>
     ///   - [`application_version(Option<i32>)`](crate::operation::create_application::CreateApplicationOutput::application_version): <p>The version number of the application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
-    pub fn create_application(
-        &self,
-    ) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
-        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
+        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput::destinations): <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On failure, responds with [`SdkError<ListPublishingDestinationsError>`](crate::operation::list_publishing_destinations::ListPublishingDestinationsError)
-    pub fn list_publishing_destinations(&self) -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder{
+    pub fn list_publishing_destinations(&self) -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder {
         crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

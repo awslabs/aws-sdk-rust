@@ -43,16 +43,14 @@ impl DescribeAddressesAttributeInput {
 }
 impl DescribeAddressesAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressesAttributeInput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput).
-    pub fn builder() -> crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder {
         crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressesAttributeInput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesAttributeInputBuilder {
     pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attribute: ::std::option::Option<crate::types::AddressAttributeName>,
@@ -66,27 +64,19 @@ impl DescribeAddressesAttributeInputBuilder {
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
         v.push(input.into());
         self.allocation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allocation_ids = input;
         self
     }
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn get_allocation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allocation_ids
     }
     /// <p>The attribute of the IP address.</p>
@@ -95,10 +85,7 @@ impl DescribeAddressesAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::AddressAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -155,14 +142,12 @@ impl DescribeAddressesAttributeInputBuilder {
         crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput {
-                allocation_ids: self.allocation_ids,
-                attribute: self.attribute,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput {
+            allocation_ids: self.allocation_ids,
+            attribute: self.attribute,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+        })
     }
 }

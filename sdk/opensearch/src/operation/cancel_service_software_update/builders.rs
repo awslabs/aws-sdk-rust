@@ -26,7 +26,7 @@ impl CancelServiceSoftwareUpdateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelServiceSoftwareUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder,
+    inner: crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder,
 }
 impl CancelServiceSoftwareUpdateFluentBuilder {
     /// Creates a new `CancelServiceSoftwareUpdate`.
@@ -37,7 +37,7 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
         }
     }
     /// Access the CancelServiceSoftwareUpdate as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
             crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
             crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>,
     > {
         self.customize_middleware().await
     }

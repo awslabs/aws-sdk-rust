@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceNotFoundExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum ResourceNotFoundExceptionReason {
 impl ::std::convert::From<&str> for ResourceNotFoundExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "DEPENDENCY_RESOURCE_NOT_FOUND" => {
-                ResourceNotFoundExceptionReason::DependencyResourceNotFound
-            }
+            "DEPENDENCY_RESOURCE_NOT_FOUND" => ResourceNotFoundExceptionReason::DependencyResourceNotFound,
             "SNAPSHOT_NOT_FOUND" => ResourceNotFoundExceptionReason::SnapshotNotFound,
-            other => ResourceNotFoundExceptionReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ResourceNotFoundExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl ResourceNotFoundExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourceNotFoundExceptionReason::DependencyResourceNotFound => {
-                "DEPENDENCY_RESOURCE_NOT_FOUND"
-            }
+            ResourceNotFoundExceptionReason::DependencyResourceNotFound => "DEPENDENCY_RESOURCE_NOT_FOUND",
             ResourceNotFoundExceptionReason::SnapshotNotFound => "SNAPSHOT_NOT_FOUND",
             ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
         }

@@ -51,9 +51,7 @@ impl CustomerGatewayAssociation {
 
 /// A builder for [`CustomerGatewayAssociation`](crate::types::CustomerGatewayAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomerGatewayAssociationBuilder {
     pub(crate) customer_gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct CustomerGatewayAssociationBuilder {
 }
 impl CustomerGatewayAssociationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn set_customer_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_arn = input;
         self
     }
@@ -83,18 +75,12 @@ impl CustomerGatewayAssociationBuilder {
         &self.customer_gateway_arn
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -136,17 +122,12 @@ impl CustomerGatewayAssociationBuilder {
         self
     }
     /// <p>The association state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerGatewayAssociationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CustomerGatewayAssociationState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The association state.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomerGatewayAssociationState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CustomerGatewayAssociationState> {
         &self.state
     }
     /// Consumes the builder and constructs a [`CustomerGatewayAssociation`](crate::types::CustomerGatewayAssociation).

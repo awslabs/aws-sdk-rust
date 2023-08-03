@@ -109,10 +109,7 @@ impl TestFunctionInputBuilder {
         self
     }
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_event_object(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_event_object(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.event_object = input;
         self
     }
@@ -121,12 +118,7 @@ impl TestFunctionInputBuilder {
         &self.event_object
     }
     /// Consumes the builder and constructs a [`TestFunctionInput`](crate::operation::test_function::TestFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_function::TestFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_function::TestFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_function::TestFunctionInput {
             name: self.name,
             if_match: self.if_match,

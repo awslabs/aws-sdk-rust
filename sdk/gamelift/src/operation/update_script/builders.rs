@@ -10,10 +10,7 @@ impl UpdateScriptInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_script::UpdateScriptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_script::UpdateScriptError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_script::UpdateScriptError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_script();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl UpdateScriptFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_script::UpdateScript,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_script::UpdateScript, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_script::UpdateScriptError>,
     > {
         let handle = self.handle.clone();
@@ -66,10 +60,7 @@ impl UpdateScriptFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -111,10 +102,7 @@ impl UpdateScriptFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_script::UpdateScript,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_script::UpdateScript, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_script::UpdateScriptError>,
     > {
         self.customize_middleware().await
@@ -167,10 +155,7 @@ impl UpdateScriptFluentBuilder {
         self
     }
     /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_storage_location(input);
         self
     }

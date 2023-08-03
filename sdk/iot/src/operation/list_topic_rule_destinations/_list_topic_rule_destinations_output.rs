@@ -5,8 +5,7 @@
 pub struct ListTopicRuleDestinationsOutput {
     /// <p>Information about a topic rule destination.</p>
     #[doc(hidden)]
-    pub destination_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>,
+    pub destination_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTopicRuleDestinationsOutput {
 }
 impl ListTopicRuleDestinationsOutput {
     /// <p>Information about a topic rule destination.</p>
-    pub fn destination_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TopicRuleDestinationSummary]> {
+    pub fn destination_summaries(&self) -> ::std::option::Option<&[crate::types::TopicRuleDestinationSummary]> {
         self.destination_summaries.as_deref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTopicRuleDestinationsOutput {
 }
 impl ListTopicRuleDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicRuleDestinationsOutput`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput).
-    pub fn builder() -> crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsOutputBuilder {
         crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTopicRuleDestinationsOutput`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRuleDestinationsOutputBuilder {
-    pub(crate) destination_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>,
+    pub(crate) destination_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListTopicRuleDestinationsOutputBuilder {
     /// To override the contents of this collection use [`set_destination_summaries`](Self::set_destination_summaries).
     ///
     /// <p>Information about a topic rule destination.</p>
-    pub fn destination_summaries(
-        mut self,
-        input: crate::types::TopicRuleDestinationSummary,
-    ) -> Self {
+    pub fn destination_summaries(mut self, input: crate::types::TopicRuleDestinationSummary) -> Self {
         let mut v = self.destination_summaries.unwrap_or_default();
         v.push(input);
         self.destination_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about a topic rule destination.</p>
-    pub fn set_destination_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>,
-    ) -> Self {
+    pub fn set_destination_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>) -> Self {
         self.destination_summaries = input;
         self
     }
     /// <p>Information about a topic rule destination.</p>
-    pub fn get_destination_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>> {
+    pub fn get_destination_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>> {
         &self.destination_summaries
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -100,9 +86,7 @@ impl ListTopicRuleDestinationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTopicRuleDestinationsOutput`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput {
+    pub fn build(self) -> crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput {
         crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput {
             destination_summaries: self.destination_summaries,
             next_token: self.next_token,

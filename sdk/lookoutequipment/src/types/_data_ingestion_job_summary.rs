@@ -15,8 +15,7 @@ pub struct DataIngestionJobSummary {
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p>Indicates the status of the data ingestion job. </p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
@@ -35,9 +34,7 @@ impl DataIngestionJobSummary {
         self.dataset_arn.as_deref()
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p>Indicates the status of the data ingestion job. </p>
@@ -54,15 +51,12 @@ impl DataIngestionJobSummary {
 
 /// A builder for [`DataIngestionJobSummary`](crate::types::DataIngestionJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataIngestionJobSummaryBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub(crate) ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl DataIngestionJobSummaryBuilder {
@@ -109,25 +103,17 @@ impl DataIngestionJobSummaryBuilder {
         &self.dataset_arn
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-    pub fn ingestion_input_configuration(
-        mut self,
-        input: crate::types::IngestionInputConfiguration,
-    ) -> Self {
+    pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-    pub fn set_ingestion_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
-    ) -> Self {
+    pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
         self.ingestion_input_configuration = input;
         self
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-    pub fn get_ingestion_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+    pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
         &self.ingestion_input_configuration
     }
     /// <p>Indicates the status of the data ingestion job. </p>
@@ -136,10 +122,7 @@ impl DataIngestionJobSummaryBuilder {
         self
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.status = input;
         self
     }

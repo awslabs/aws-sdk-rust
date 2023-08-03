@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`transit_gateway_connect_peer_associations(Option<Vec<TransitGatewayConnectPeerAssociation>>)`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput::transit_gateway_connect_peer_associations): <p>Information about the transit gateway Connect peer associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput::next_token): <p>The token to use for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayConnectPeerAssociationsError>`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsError)
-    pub fn get_transit_gateway_connect_peer_associations(&self) -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder{
-        crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_connect_peer_associations(
+        &self,
+    ) -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder {
+        crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

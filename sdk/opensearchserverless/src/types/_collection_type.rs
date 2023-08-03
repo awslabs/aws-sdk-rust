@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CollectionType {
     /// Search collection type
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for CollectionType {
             "SEARCH" => CollectionType::Search,
             "TIMESERIES" => CollectionType::Timeseries,
             "VECTORSEARCH" => CollectionType::Vectorsearch,
-            other => {
-                CollectionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CollectionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

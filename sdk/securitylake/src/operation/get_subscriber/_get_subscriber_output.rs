@@ -28,9 +28,7 @@ impl GetSubscriberOutput {
 
 /// A builder for [`GetSubscriberOutput`](crate::operation::get_subscriber::GetSubscriberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriberOutputBuilder {
     pub(crate) subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetSubscriberOutputBuilder {
         self
     }
     /// <p>The subscriber information for the specified subscriber ID.</p>
-    pub fn set_subscriber(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriberResource>,
-    ) -> Self {
+    pub fn set_subscriber(mut self, input: ::std::option::Option<crate::types::SubscriberResource>) -> Self {
         self.subscriber = input;
         self
     }

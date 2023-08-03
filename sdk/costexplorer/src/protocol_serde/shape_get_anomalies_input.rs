@@ -9,10 +9,7 @@ pub fn ser_get_anomalies_input(
     if let Some(var_2) = &input.date_interval {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DateInterval").start_object();
-        crate::protocol_serde::shape_anomaly_date_interval::ser_anomaly_date_interval(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_anomaly_date_interval::ser_anomaly_date_interval(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.feedback {
@@ -21,10 +18,7 @@ pub fn ser_get_anomalies_input(
     if let Some(var_5) = &input.total_impact {
         #[allow(unused_mut)]
         let mut object_6 = object.key("TotalImpact").start_object();
-        crate::protocol_serde::shape_total_impact_filter::ser_total_impact_filter(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_total_impact_filter::ser_total_impact_filter(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.next_page_token {

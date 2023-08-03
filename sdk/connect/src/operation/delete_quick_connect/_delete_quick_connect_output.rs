@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteQuickConnectOutput {
 }
 impl DeleteQuickConnectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQuickConnectOutput`](crate::operation::delete_quick_connect::DeleteQuickConnectOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectOutputBuilder {
+    pub fn builder() -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectOutputBuilder {
         crate::operation::delete_quick_connect::builders::DeleteQuickConnectOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQuickConnectOutput`](crate::operation::delete_quick_connect::DeleteQuickConnectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQuickConnectOutputBuilder {
     _request_id: Option<String>,
 }

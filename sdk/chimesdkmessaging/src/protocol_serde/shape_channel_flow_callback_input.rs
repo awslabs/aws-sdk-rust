@@ -9,10 +9,7 @@ pub fn ser_channel_flow_callback_input(
     if let Some(var_2) = &input.channel_message {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ChannelMessage").start_object();
-        crate::protocol_serde::shape_channel_message_callback::ser_channel_message_callback(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_channel_message_callback::ser_channel_message_callback(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.delete_resource {

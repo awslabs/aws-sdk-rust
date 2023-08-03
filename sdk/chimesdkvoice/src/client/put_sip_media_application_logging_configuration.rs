@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput) with field(s):
     ///   - [`sip_media_application_logging_configuration(Option<SipMediaApplicationLoggingConfiguration>)`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput::sip_media_application_logging_configuration): <p>The updated logging configuration for the specified SIP media application.</p>
     /// - On failure, responds with [`SdkError<PutSipMediaApplicationLoggingConfigurationError>`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError)
-    pub fn put_sip_media_application_logging_configuration(&self) -> crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationFluentBuilder{
-        crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn put_sip_media_application_logging_configuration(
+        &self,
+    ) -> crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationFluentBuilder {
+        crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

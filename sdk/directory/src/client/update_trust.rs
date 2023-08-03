@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_trust::UpdateTrustOutput::request_id): <p>The Amazon Web Services request identifier.</p>
     ///   - [`trust_id(Option<String>)`](crate::operation::update_trust::UpdateTrustOutput::trust_id): <p>Identifier of the trust relationship.</p>
     /// - On failure, responds with [`SdkError<UpdateTrustError>`](crate::operation::update_trust::UpdateTrustError)
-    pub fn update_trust(
-        &self,
-    ) -> crate::operation::update_trust::builders::UpdateTrustFluentBuilder {
+    pub fn update_trust(&self) -> crate::operation::update_trust::builders::UpdateTrustFluentBuilder {
         crate::operation::update_trust::builders::UpdateTrustFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,17 +15,14 @@ impl DescribeLocationHdfsInput {
 }
 impl DescribeLocationHdfsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsInput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder {
+    pub fn builder() -> crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder {
         crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationHdfsInput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationHdfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl DescribeLocationHdfsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationHdfsInput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_location_hdfs::DescribeLocationHdfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_hdfs::DescribeLocationHdfsInput {
-                location_arn: self.location_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_location_hdfs::DescribeLocationHdfsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_location_hdfs::DescribeLocationHdfsInput {
+            location_arn: self.location_arn,
+        })
     }
 }

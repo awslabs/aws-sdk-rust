@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for GetDeployablePatchSnapshotForInstance
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeployablePatchSnapshotForInstanceOutput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput).
-    pub fn builder() -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder {
         crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeployablePatchSnapshotForInstanceOutput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstanceOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
         &self.snapshot_id
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-    pub fn snapshot_download_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_download_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-    pub fn set_snapshot_download_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_download_url = input;
         self
     }
@@ -132,16 +124,12 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDeployablePatchSnapshotForInstanceOutput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput).
-    pub fn build(self) -> crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput{
+    pub fn build(self) -> crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput {
         crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput {
-            instance_id: self.instance_id
-            ,
-            snapshot_id: self.snapshot_id
-            ,
-            snapshot_download_url: self.snapshot_download_url
-            ,
-            product: self.product
-            ,
+            instance_id: self.instance_id,
+            snapshot_id: self.snapshot_id,
+            snapshot_download_url: self.snapshot_download_url,
+            product: self.product,
             _request_id: self._request_id,
         }
     }

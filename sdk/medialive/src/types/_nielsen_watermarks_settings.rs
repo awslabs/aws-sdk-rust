@@ -9,8 +9,7 @@ pub struct NielsenWatermarksSettings {
     pub nielsen_cbet_settings: ::std::option::Option<crate::types::NielsenCbet>,
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
     #[doc(hidden)]
-    pub nielsen_distribution_type:
-        ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
+    pub nielsen_distribution_type: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
     #[doc(hidden)]
     pub nielsen_naes_ii_nw_settings: ::std::option::Option<crate::types::NielsenNaesIiNw>,
@@ -21,15 +20,11 @@ impl NielsenWatermarksSettings {
         self.nielsen_cbet_settings.as_ref()
     }
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
-    pub fn nielsen_distribution_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NielsenWatermarksDistributionTypes> {
+    pub fn nielsen_distribution_type(&self) -> ::std::option::Option<&crate::types::NielsenWatermarksDistributionTypes> {
         self.nielsen_distribution_type.as_ref()
     }
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
-    pub fn nielsen_naes_ii_nw_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NielsenNaesIiNw> {
+    pub fn nielsen_naes_ii_nw_settings(&self) -> ::std::option::Option<&crate::types::NielsenNaesIiNw> {
         self.nielsen_naes_ii_nw_settings.as_ref()
     }
 }
@@ -42,13 +37,10 @@ impl NielsenWatermarksSettings {
 
 /// A builder for [`NielsenWatermarksSettings`](crate::types::NielsenWatermarksSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NielsenWatermarksSettingsBuilder {
     pub(crate) nielsen_cbet_settings: ::std::option::Option<crate::types::NielsenCbet>,
-    pub(crate) nielsen_distribution_type:
-        ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
+    pub(crate) nielsen_distribution_type: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
     pub(crate) nielsen_naes_ii_nw_settings: ::std::option::Option<crate::types::NielsenNaesIiNw>,
 }
 impl NielsenWatermarksSettingsBuilder {
@@ -58,10 +50,7 @@ impl NielsenWatermarksSettingsBuilder {
         self
     }
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
-    pub fn set_nielsen_cbet_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenCbet>,
-    ) -> Self {
+    pub fn set_nielsen_cbet_settings(mut self, input: ::std::option::Option<crate::types::NielsenCbet>) -> Self {
         self.nielsen_cbet_settings = input;
         self
     }
@@ -70,25 +59,17 @@ impl NielsenWatermarksSettingsBuilder {
         &self.nielsen_cbet_settings
     }
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
-    pub fn nielsen_distribution_type(
-        mut self,
-        input: crate::types::NielsenWatermarksDistributionTypes,
-    ) -> Self {
+    pub fn nielsen_distribution_type(mut self, input: crate::types::NielsenWatermarksDistributionTypes) -> Self {
         self.nielsen_distribution_type = ::std::option::Option::Some(input);
         self
     }
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
-    pub fn set_nielsen_distribution_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
-    ) -> Self {
+    pub fn set_nielsen_distribution_type(mut self, input: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>) -> Self {
         self.nielsen_distribution_type = input;
         self
     }
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
-    pub fn get_nielsen_distribution_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NielsenWatermarksDistributionTypes> {
+    pub fn get_nielsen_distribution_type(&self) -> &::std::option::Option<crate::types::NielsenWatermarksDistributionTypes> {
         &self.nielsen_distribution_type
     }
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
@@ -97,17 +78,12 @@ impl NielsenWatermarksSettingsBuilder {
         self
     }
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
-    pub fn set_nielsen_naes_ii_nw_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenNaesIiNw>,
-    ) -> Self {
+    pub fn set_nielsen_naes_ii_nw_settings(mut self, input: ::std::option::Option<crate::types::NielsenNaesIiNw>) -> Self {
         self.nielsen_naes_ii_nw_settings = input;
         self
     }
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
-    pub fn get_nielsen_naes_ii_nw_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::NielsenNaesIiNw> {
+    pub fn get_nielsen_naes_ii_nw_settings(&self) -> &::std::option::Option<crate::types::NielsenNaesIiNw> {
         &self.nielsen_naes_ii_nw_settings
     }
     /// Consumes the builder and constructs a [`NielsenWatermarksSettings`](crate::types::NielsenWatermarksSettings).

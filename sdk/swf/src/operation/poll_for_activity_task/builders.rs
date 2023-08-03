@@ -47,9 +47,7 @@ impl PollForActivityTaskFluentBuilder {
         }
     }
     /// Access the PollForActivityTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +59,7 @@ impl PollForActivityTaskFluentBuilder {
             crate::operation::poll_for_activity_task::PollForActivityTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_activity_task::PollForActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_activity_task::PollForActivityTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +69,7 @@ impl PollForActivityTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +78,7 @@ impl PollForActivityTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::poll_for_activity_task::PollForActivityTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_activity_task::PollForActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_activity_task::PollForActivityTaskError>,
     > {
         let op = self
             .inner
@@ -110,9 +101,7 @@ impl PollForActivityTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::poll_for_activity_task::PollForActivityTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_activity_task::PollForActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_activity_task::PollForActivityTaskError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +115,7 @@ impl PollForActivityTaskFluentBuilder {
             crate::operation::poll_for_activity_task::PollForActivityTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_activity_task::PollForActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_activity_task::PollForActivityTaskError>,
     > {
         self.customize_middleware().await
     }

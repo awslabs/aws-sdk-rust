@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLoggerDefinitionOutput {
 }
 impl UpdateLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggerDefinitionOutput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionOutputBuilder {
         crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLoggerDefinitionOutput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLoggerDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

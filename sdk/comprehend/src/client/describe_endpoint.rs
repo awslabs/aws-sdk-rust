@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput) with field(s):
     ///   - [`endpoint_properties(Option<EndpointProperties>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_properties): <p>Describes information associated with the specific endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::operation::describe_endpoint::DescribeEndpointError)
-    pub fn describe_endpoint(
-        &self,
-    ) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
-        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoint(&self) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
+        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationFluentBuilder::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationFluentBuilder::set_lambda_provider): <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     /// - On success, responds with [`CreateAvailabilityConfigurationOutput`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput)
     /// - On failure, responds with [`SdkError<CreateAvailabilityConfigurationError>`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError)
-    pub fn create_availability_configuration(&self) -> crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationFluentBuilder{
+    pub fn create_availability_configuration(
+        &self,
+    ) -> crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationFluentBuilder {
         crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl DeleteStorageLensConfigurationInput {
 }
 impl DeleteStorageLensConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationInput`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput).
-    pub fn builder() -> crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationInputBuilder {
         crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStorageLensConfigurationInput`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl DeleteStorageLensConfigurationInputBuilder {
         crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput {
-                config_id: self.config_id
-                ,
-                account_id: self.account_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput {
+            config_id: self.config_id,
+            account_id: self.account_id,
+        })
     }
 }

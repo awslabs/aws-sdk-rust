@@ -9,8 +9,7 @@ pub struct Output {
     pub audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     /// Contains groups of captions settings. For each output that has captions, include one instance of CaptionDescriptions. Can contain multiple groups of captions settings.
     #[doc(hidden)]
-    pub caption_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
+    pub caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
     /// Container specific settings.
     #[doc(hidden)]
     pub container_settings: ::std::option::Option<crate::types::ContainerSettings>,
@@ -36,9 +35,7 @@ impl Output {
         self.audio_descriptions.as_deref()
     }
     /// Contains groups of captions settings. For each output that has captions, include one instance of CaptionDescriptions. Can contain multiple groups of captions settings.
-    pub fn caption_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CaptionDescription]> {
+    pub fn caption_descriptions(&self) -> ::std::option::Option<&[crate::types::CaptionDescription]> {
         self.caption_descriptions.as_deref()
     }
     /// Container specific settings.
@@ -75,14 +72,10 @@ impl Output {
 
 /// A builder for [`Output`](crate::types::Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputBuilder {
-    pub(crate) audio_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
-    pub(crate) caption_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
+    pub(crate) audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
+    pub(crate) caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
     pub(crate) container_settings: ::std::option::Option<crate::types::ContainerSettings>,
     pub(crate) extension: ::std::option::Option<::std::string::String>,
     pub(crate) name_modifier: ::std::option::Option<::std::string::String>,
@@ -103,17 +96,12 @@ impl OutputBuilder {
         self
     }
     /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
-    pub fn set_audio_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
-    ) -> Self {
+    pub fn set_audio_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>) -> Self {
         self.audio_descriptions = input;
         self
     }
     /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
-    pub fn get_audio_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
+    pub fn get_audio_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
         &self.audio_descriptions
     }
     /// Appends an item to `caption_descriptions`.
@@ -128,17 +116,12 @@ impl OutputBuilder {
         self
     }
     /// Contains groups of captions settings. For each output that has captions, include one instance of CaptionDescriptions. Can contain multiple groups of captions settings.
-    pub fn set_caption_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
-    ) -> Self {
+    pub fn set_caption_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>) -> Self {
         self.caption_descriptions = input;
         self
     }
     /// Contains groups of captions settings. For each output that has captions, include one instance of CaptionDescriptions. Can contain multiple groups of captions settings.
-    pub fn get_caption_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>> {
+    pub fn get_caption_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>> {
         &self.caption_descriptions
     }
     /// Container specific settings.
@@ -147,17 +130,12 @@ impl OutputBuilder {
         self
     }
     /// Container specific settings.
-    pub fn set_container_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerSettings>,
-    ) -> Self {
+    pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::ContainerSettings>) -> Self {
         self.container_settings = input;
         self
     }
     /// Container specific settings.
-    pub fn get_container_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerSettings> {
+    pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::ContainerSettings> {
         &self.container_settings
     }
     /// Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
@@ -175,18 +153,12 @@ impl OutputBuilder {
         &self.extension
     }
     /// Use Name modifier to have the service add a string to the end of each output filename. You specify the base filename as part of your destination URI. When you create multiple outputs in the same output group, Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output group.
-    pub fn name_modifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_modifier = ::std::option::Option::Some(input.into());
         self
     }
     /// Use Name modifier to have the service add a string to the end of each output filename. You specify the base filename as part of your destination URI. When you create multiple outputs in the same output group, Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output group.
-    pub fn set_name_modifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_modifier = input;
         self
     }
@@ -200,10 +172,7 @@ impl OutputBuilder {
         self
     }
     /// Specific settings for this type of output.
-    pub fn set_output_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputSettings>,
-    ) -> Self {
+    pub fn set_output_settings(mut self, input: ::std::option::Option<crate::types::OutputSettings>) -> Self {
         self.output_settings = input;
         self
     }
@@ -231,10 +200,7 @@ impl OutputBuilder {
         self
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
-    pub fn set_video_description(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoDescription>,
-    ) -> Self {
+    pub fn set_video_description(mut self, input: ::std::option::Option<crate::types::VideoDescription>) -> Self {
         self.video_description = input;
         self
     }

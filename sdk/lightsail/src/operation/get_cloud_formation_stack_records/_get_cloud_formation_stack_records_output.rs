@@ -5,8 +5,7 @@
 pub struct GetCloudFormationStackRecordsOutput {
     /// <p>A list of objects describing the CloudFormation stack records.</p>
     #[doc(hidden)]
-    pub cloud_formation_stack_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>>,
+    pub cloud_formation_stack_records: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -16,9 +15,7 @@ pub struct GetCloudFormationStackRecordsOutput {
 }
 impl GetCloudFormationStackRecordsOutput {
     /// <p>A list of objects describing the CloudFormation stack records.</p>
-    pub fn cloud_formation_stack_records(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudFormationStackRecord]> {
+    pub fn cloud_formation_stack_records(&self) -> ::std::option::Option<&[crate::types::CloudFormationStackRecord]> {
         self.cloud_formation_stack_records.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -35,19 +32,16 @@ impl ::aws_http::request_id::RequestId for GetCloudFormationStackRecordsOutput {
 }
 impl GetCloudFormationStackRecordsOutput {
     /// Creates a new builder-style object to manufacture [`GetCloudFormationStackRecordsOutput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput).
-    pub fn builder() -> crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsOutputBuilder{
+    pub fn builder() -> crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsOutputBuilder {
         crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCloudFormationStackRecordsOutput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCloudFormationStackRecordsOutputBuilder {
-    pub(crate) cloud_formation_stack_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>>,
+    pub(crate) cloud_formation_stack_records: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,10 +51,7 @@ impl GetCloudFormationStackRecordsOutputBuilder {
     /// To override the contents of this collection use [`set_cloud_formation_stack_records`](Self::set_cloud_formation_stack_records).
     ///
     /// <p>A list of objects describing the CloudFormation stack records.</p>
-    pub fn cloud_formation_stack_records(
-        mut self,
-        input: crate::types::CloudFormationStackRecord,
-    ) -> Self {
+    pub fn cloud_formation_stack_records(mut self, input: crate::types::CloudFormationStackRecord) -> Self {
         let mut v = self.cloud_formation_stack_records.unwrap_or_default();
         v.push(input);
         self.cloud_formation_stack_records = ::std::option::Option::Some(v);
@@ -75,28 +66,20 @@ impl GetCloudFormationStackRecordsOutputBuilder {
         self
     }
     /// <p>A list of objects describing the CloudFormation stack records.</p>
-    pub fn get_cloud_formation_stack_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>> {
+    pub fn get_cloud_formation_stack_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>> {
         &self.cloud_formation_stack_records
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -116,10 +99,7 @@ impl GetCloudFormationStackRecordsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCloudFormationStackRecordsOutput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput
-    {
+    pub fn build(self) -> crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput {
         crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput {
             cloud_formation_stack_records: self.cloud_formation_stack_records,
             next_page_token: self.next_page_token,

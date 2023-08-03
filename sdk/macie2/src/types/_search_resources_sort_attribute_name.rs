@@ -40,13 +40,7 @@
 /// <p>The property to sort the query results by. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SearchResourcesSortAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,15 +59,9 @@ impl ::std::convert::From<&str> for SearchResourcesSortAttributeName {
         match s {
             "ACCOUNT_ID" => SearchResourcesSortAttributeName::AccountId,
             "RESOURCE_NAME" => SearchResourcesSortAttributeName::ResourceName,
-            "S3_CLASSIFIABLE_OBJECT_COUNT" => {
-                SearchResourcesSortAttributeName::S3ClassifiableObjectCount
-            }
-            "S3_CLASSIFIABLE_SIZE_IN_BYTES" => {
-                SearchResourcesSortAttributeName::S3ClassifiableSizeInBytes
-            }
-            other => SearchResourcesSortAttributeName::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "S3_CLASSIFIABLE_OBJECT_COUNT" => SearchResourcesSortAttributeName::S3ClassifiableObjectCount,
+            "S3_CLASSIFIABLE_SIZE_IN_BYTES" => SearchResourcesSortAttributeName::S3ClassifiableSizeInBytes,
+            other => SearchResourcesSortAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,12 +78,8 @@ impl SearchResourcesSortAttributeName {
         match self {
             SearchResourcesSortAttributeName::AccountId => "ACCOUNT_ID",
             SearchResourcesSortAttributeName::ResourceName => "RESOURCE_NAME",
-            SearchResourcesSortAttributeName::S3ClassifiableObjectCount => {
-                "S3_CLASSIFIABLE_OBJECT_COUNT"
-            }
-            SearchResourcesSortAttributeName::S3ClassifiableSizeInBytes => {
-                "S3_CLASSIFIABLE_SIZE_IN_BYTES"
-            }
+            SearchResourcesSortAttributeName::S3ClassifiableObjectCount => "S3_CLASSIFIABLE_OBJECT_COUNT",
+            SearchResourcesSortAttributeName::S3ClassifiableSizeInBytes => "S3_CLASSIFIABLE_SIZE_IN_BYTES",
             SearchResourcesSortAttributeName::Unknown(value) => value.as_str(),
         }
     }

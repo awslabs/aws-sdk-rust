@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VpcCidrBlockStateCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for VpcCidrBlockStateCode {
             "disassociating" => VpcCidrBlockStateCode::Disassociating,
             "failed" => VpcCidrBlockStateCode::Failed,
             "failing" => VpcCidrBlockStateCode::Failing,
-            other => VpcCidrBlockStateCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VpcCidrBlockStateCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl VpcCidrBlockStateCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "associated",
-            "associating",
-            "disassociated",
-            "disassociating",
-            "failed",
-            "failing",
-        ]
+        &["associated", "associating", "disassociated", "disassociating", "failed", "failing"]
     }
 }
 impl ::std::convert::AsRef<str> for VpcCidrBlockStateCode {

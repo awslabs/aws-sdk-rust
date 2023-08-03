@@ -37,18 +37,14 @@ impl CreateBasePathMappingInput {
 }
 impl CreateBasePathMappingInput {
     /// Creates a new builder-style object to manufacture [`CreateBasePathMappingInput`](crate::operation::create_base_path_mapping::CreateBasePathMappingInput).
-    pub fn builder(
-    ) -> crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder {
         crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBasePathMappingInput`](crate::operation::create_base_path_mapping::CreateBasePathMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBasePathMappingInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
@@ -115,17 +111,13 @@ impl CreateBasePathMappingInputBuilder {
     /// Consumes the builder and constructs a [`CreateBasePathMappingInput`](crate::operation::create_base_path_mapping::CreateBasePathMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_base_path_mapping::CreateBasePathMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_base_path_mapping::CreateBasePathMappingInput {
-                domain_name: self.domain_name,
-                base_path: self.base_path,
-                rest_api_id: self.rest_api_id,
-                stage: self.stage,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_base_path_mapping::CreateBasePathMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_base_path_mapping::CreateBasePathMappingInput {
+            domain_name: self.domain_name,
+            base_path: self.base_path,
+            rest_api_id: self.rest_api_id,
+            stage: self.stage,
+        })
     }
 }

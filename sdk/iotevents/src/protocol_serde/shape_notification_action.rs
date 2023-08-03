@@ -6,10 +6,7 @@ pub fn ser_notification_action(
     if let Some(var_1) = &input.action {
         #[allow(unused_mut)]
         let mut object_2 = object.key("action").start_object();
-        crate::protocol_serde::shape_notification_target_actions::ser_notification_target_actions(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_notification_target_actions::ser_notification_target_actions(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sms_configurations {
@@ -18,10 +15,7 @@ pub fn ser_notification_action(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_sms_configuration::ser_sms_configuration(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_sms_configuration::ser_sms_configuration(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -33,10 +27,7 @@ pub fn ser_notification_action(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_email_configuration::ser_email_configuration(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_email_configuration::ser_email_configuration(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -47,17 +38,9 @@ pub fn ser_notification_action(
 
 pub(crate) fn de_notification_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::NotificationAction>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::NotificationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,41 +50,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "action" => {
-                                builder = builder.set_action(
-                                    crate::protocol_serde::shape_notification_target_actions::de_notification_target_actions(tokens)?
-                                );
-                            }
-                            "smsConfigurations" => {
-                                builder = builder.set_sms_configurations(
-                                    crate::protocol_serde::shape_sms_configurations::de_sms_configurations(tokens)?
-                                );
-                            }
-                            "emailConfigurations" => {
-                                builder = builder.set_email_configurations(
-                                    crate::protocol_serde::shape_email_configurations::de_email_configurations(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "action" => {
+                            builder = builder.set_action(crate::protocol_serde::shape_notification_target_actions::de_notification_target_actions(
+                                tokens,
+                            )?);
                         }
-                    }
+                        "smsConfigurations" => {
+                            builder = builder.set_sms_configurations(crate::protocol_serde::shape_sms_configurations::de_sms_configurations(tokens)?);
+                        }
+                        "emailConfigurations" => {
+                            builder =
+                                builder.set_email_configurations(crate::protocol_serde::shape_email_configurations::de_email_configurations(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -42,9 +42,7 @@ impl AcceptGrantOutput {
 
 /// A builder for [`AcceptGrantOutput`](crate::operation::accept_grant::AcceptGrantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptGrantOutputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GrantStatus>,

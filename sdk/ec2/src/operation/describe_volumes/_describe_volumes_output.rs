@@ -35,9 +35,7 @@ impl DescribeVolumesOutput {
 
 /// A builder for [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumesOutputBuilder {
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl DescribeVolumesOutputBuilder {
         self
     }
     /// <p>Information about the volumes.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
         self.volumes = input;
         self
     }

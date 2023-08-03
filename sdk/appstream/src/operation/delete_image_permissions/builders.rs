@@ -37,10 +37,7 @@ impl DeleteImagePermissionsFluentBuilder {
         }
     }
     /// Access the DeleteImagePermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteImagePermissionsFluentBuilder {
             crate::operation::delete_image_permissions::DeleteImagePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_permissions::DeleteImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_image_permissions::DeleteImagePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteImagePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteImagePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_image_permissions::DeleteImagePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_permissions::DeleteImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_image_permissions::DeleteImagePermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteImagePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_image_permissions::DeleteImagePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_permissions::DeleteImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_image_permissions::DeleteImagePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteImagePermissionsFluentBuilder {
             crate::operation::delete_image_permissions::DeleteImagePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_permissions::DeleteImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_image_permissions::DeleteImagePermissionsError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteImagePermissionsFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_account_id(input.into());
         self
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_account_id(input);
         self
     }

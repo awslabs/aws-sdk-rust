@@ -15,10 +15,7 @@ pub fn ser_aws_waf_web_acl_rule(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_waf_excluded_rule::ser_waf_excluded_rule(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_waf_excluded_rule::ser_waf_excluded_rule(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_aws_waf_web_acl_rule(
     if let Some(var_7) = &input.override_action {
         #[allow(unused_mut)]
         let mut object_8 = object.key("OverrideAction").start_object();
-        crate::protocol_serde::shape_waf_override_action::ser_waf_override_action(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_waf_override_action::ser_waf_override_action(&mut object_8, var_7)?;
         object_8.finish();
     }
     if input.priority != 0 {
@@ -50,17 +44,9 @@ pub fn ser_aws_waf_web_acl_rule(
 
 pub(crate) fn de_aws_waf_web_acl_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsWafWebAclRule>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsWafWebAclRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,68 +56,52 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Action" => {
-                                builder = builder.set_action(
-                                    crate::protocol_serde::shape_waf_action::de_waf_action(tokens)?,
-                                );
-                            }
-                            "ExcludedRules" => {
-                                builder = builder.set_excluded_rules(
-                                    crate::protocol_serde::shape_waf_excluded_rule_list::de_waf_excluded_rule_list(tokens)?
-                                );
-                            }
-                            "OverrideAction" => {
-                                builder = builder.set_override_action(
-                                    crate::protocol_serde::shape_waf_override_action::de_waf_override_action(tokens)?
-                                );
-                            }
-                            "Priority" => {
-                                builder = builder.set_priority(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Action" => {
+                            builder = builder.set_action(crate::protocol_serde::shape_waf_action::de_waf_action(tokens)?);
+                        }
+                        "ExcludedRules" => {
+                            builder =
+                                builder.set_excluded_rules(crate::protocol_serde::shape_waf_excluded_rule_list::de_waf_excluded_rule_list(tokens)?);
+                        }
+                        "OverrideAction" => {
+                            builder = builder.set_override_action(crate::protocol_serde::shape_waf_override_action::de_waf_override_action(tokens)?);
+                        }
+                        "Priority" => {
+                            builder = builder.set_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "RuleId" => {
-                                builder = builder.set_rule_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "RuleId" => {
+                            builder = builder.set_rule_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

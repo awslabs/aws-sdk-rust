@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDataQualityRuleRecommendationRun
 }
 impl StartDataQualityRuleRecommendationRunOutput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunOutput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput).
-    pub fn builder() -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunOutputBuilder {
         crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataQualityRuleRecommendationRunOutput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataQualityRuleRecommendationRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl StartDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunOutput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput).
-    pub fn build(self) -> crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput{
+    pub fn build(self) -> crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput {
         crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput {
-            run_id: self.run_id
-            ,
+            run_id: self.run_id,
             _request_id: self._request_id,
         }
     }

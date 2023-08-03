@@ -40,13 +40,7 @@
 /// Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AvcIntraClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AvcIntraClass {
             "CLASS_200" => AvcIntraClass::Class200,
             "CLASS_4K_2K" => AvcIntraClass::Class4K2K,
             "CLASS_50" => AvcIntraClass::Class50,
-            other => {
-                AvcIntraClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AvcIntraClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

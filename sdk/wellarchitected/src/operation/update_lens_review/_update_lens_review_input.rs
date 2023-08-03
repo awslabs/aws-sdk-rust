@@ -18,9 +18,7 @@ pub struct UpdateLensReviewInput {
     pub lens_notes: ::std::option::Option<::std::string::String>,
     /// <p>List of pillar notes of a lens review in a workload.</p>
     #[doc(hidden)]
-    pub pillar_notes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -39,34 +37,25 @@ impl UpdateLensReviewInput {
         self.lens_notes.as_deref()
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn pillar_notes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn pillar_notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.pillar_notes.as_ref()
     }
 }
 impl UpdateLensReviewInput {
     /// Creates a new builder-style object to manufacture [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
-    pub fn builder() -> crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder {
         crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLensReviewInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_notes: ::std::option::Option<::std::string::String>,
-    pub(crate) pillar_notes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateLensReviewInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -125,11 +114,7 @@ impl UpdateLensReviewInputBuilder {
     /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
     ///
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn pillar_notes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pillar_notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.pillar_notes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.pillar_notes = ::std::option::Option::Some(hash_map);
@@ -138,35 +123,24 @@ impl UpdateLensReviewInputBuilder {
     /// <p>List of pillar notes of a lens review in a workload.</p>
     pub fn set_pillar_notes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.pillar_notes = input;
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn get_pillar_notes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.pillar_notes
     }
     /// Consumes the builder and constructs a [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lens_review::UpdateLensReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_lens_review::UpdateLensReviewInput {
-                workload_id: self.workload_id,
-                lens_alias: self.lens_alias,
-                lens_notes: self.lens_notes,
-                pillar_notes: self.pillar_notes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_lens_review::UpdateLensReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_lens_review::UpdateLensReviewInput {
+            workload_id: self.workload_id,
+            lens_alias: self.lens_alias,
+            lens_notes: self.lens_notes,
+            pillar_notes: self.pillar_notes,
+        })
     }
 }

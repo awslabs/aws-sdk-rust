@@ -37,9 +37,7 @@ impl AuditContext {
 
 /// A builder for [`AuditContext`](crate::types::AuditContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditContextBuilder {
     pub(crate) additional_audit_context: ::std::option::Option<::std::string::String>,
     pub(crate) requested_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,18 +45,12 @@ pub struct AuditContextBuilder {
 }
 impl AuditContextBuilder {
     /// <p>A string containing the additional audit context information.</p>
-    pub fn additional_audit_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_audit_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_audit_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing the additional audit context information.</p>
-    pub fn set_additional_audit_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_audit_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_audit_context = input;
         self
     }
@@ -71,27 +63,19 @@ impl AuditContextBuilder {
     /// To override the contents of this collection use [`set_requested_columns`](Self::set_requested_columns).
     ///
     /// <p>The requested columns for audit.</p>
-    pub fn requested_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_columns.unwrap_or_default();
         v.push(input.into());
         self.requested_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The requested columns for audit.</p>
-    pub fn set_requested_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requested_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.requested_columns = input;
         self
     }
     /// <p>The requested columns for audit.</p>
-    pub fn get_requested_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.requested_columns
     }
     /// <p>All columns request for audit.</p>

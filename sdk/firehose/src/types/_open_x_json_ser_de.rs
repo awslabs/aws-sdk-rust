@@ -13,9 +13,7 @@ pub struct OpenXJsonSerDe {
     pub case_insensitive: ::std::option::Option<bool>,
     /// <p>Maps column names to JSON keys that aren't identical to the column names. This is useful when the JSON contains keys that are Hive keywords. For example, <code>timestamp</code> is a Hive keyword. If you have a JSON key named <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code> to map this key to a column named <code>ts</code>.</p>
     #[doc(hidden)]
-    pub column_to_json_key_mappings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub column_to_json_key_mappings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OpenXJsonSerDe {
     /// <p>When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using this option.</p>
@@ -28,11 +26,7 @@ impl OpenXJsonSerDe {
         self.case_insensitive
     }
     /// <p>Maps column names to JSON keys that aren't identical to the column names. This is useful when the JSON contains keys that are Hive keywords. For example, <code>timestamp</code> is a Hive keyword. If you have a JSON key named <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code> to map this key to a column named <code>ts</code>.</p>
-    pub fn column_to_json_key_mappings(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn column_to_json_key_mappings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.column_to_json_key_mappings.as_ref()
     }
 }
@@ -45,15 +39,11 @@ impl OpenXJsonSerDe {
 
 /// A builder for [`OpenXJsonSerDe`](crate::types::OpenXJsonSerDe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenXJsonSerDeBuilder {
     pub(crate) convert_dots_in_json_keys_to_underscores: ::std::option::Option<bool>,
     pub(crate) case_insensitive: ::std::option::Option<bool>,
-    pub(crate) column_to_json_key_mappings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) column_to_json_key_mappings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OpenXJsonSerDeBuilder {
     /// <p>When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using this option.</p>
@@ -64,10 +54,7 @@ impl OpenXJsonSerDeBuilder {
     }
     /// <p>When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using this option.</p>
     /// <p>The default is <code>false</code>.</p>
-    pub fn set_convert_dots_in_json_keys_to_underscores(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_convert_dots_in_json_keys_to_underscores(mut self, input: ::std::option::Option<bool>) -> Self {
         self.convert_dots_in_json_keys_to_underscores = input;
         self
     }
@@ -108,9 +95,7 @@ impl OpenXJsonSerDeBuilder {
     /// <p>Maps column names to JSON keys that aren't identical to the column names. This is useful when the JSON contains keys that are Hive keywords. For example, <code>timestamp</code> is a Hive keyword. If you have a JSON key named <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code> to map this key to a column named <code>ts</code>.</p>
     pub fn set_column_to_json_key_mappings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.column_to_json_key_mappings = input;
         self
@@ -118,9 +103,7 @@ impl OpenXJsonSerDeBuilder {
     /// <p>Maps column names to JSON keys that aren't identical to the column names. This is useful when the JSON contains keys that are Hive keywords. For example, <code>timestamp</code> is a Hive keyword. If you have a JSON key named <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code> to map this key to a column named <code>ts</code>.</p>
     pub fn get_column_to_json_key_mappings(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.column_to_json_key_mappings
     }
     /// Consumes the builder and constructs a [`OpenXJsonSerDe`](crate::types::OpenXJsonSerDe).

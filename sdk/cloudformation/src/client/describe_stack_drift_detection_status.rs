@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`drifted_stack_resource_count(Option<i32>)`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput::drifted_stack_resource_count): <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
     ///   - [`timestamp(Option<DateTime>)`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput::timestamp): <p>Time at which the stack drift detection operation was initiated.</p>
     /// - On failure, responds with [`SdkError<DescribeStackDriftDetectionStatusError>`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError)
-    pub fn describe_stack_drift_detection_status(&self) -> crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusFluentBuilder{
+    pub fn describe_stack_drift_detection_status(
+        &self,
+    ) -> crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusFluentBuilder {
         crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusFluentBuilder::new(self.handle.clone())
     }
 }

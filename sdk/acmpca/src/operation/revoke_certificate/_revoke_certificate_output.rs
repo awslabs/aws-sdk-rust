@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RevokeCertificateOutput {
 }
 impl RevokeCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RevokeCertificateOutput`](crate::operation::revoke_certificate::RevokeCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_certificate::builders::RevokeCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_certificate::builders::RevokeCertificateOutputBuilder {
         crate::operation::revoke_certificate::builders::RevokeCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeCertificateOutput`](crate::operation::revoke_certificate::RevokeCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeCertificateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -5,8 +5,7 @@
 pub struct ListTrainingJobsOutput {
     /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
     #[doc(hidden)]
-    pub training_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
+    pub training_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTrainingJobsOutput {
 }
 impl ListTrainingJobsOutput {
     /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
-    pub fn training_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrainingJobSummary]> {
+    pub fn training_job_summaries(&self) -> ::std::option::Option<&[crate::types::TrainingJobSummary]> {
         self.training_job_summaries.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTrainingJobsOutput {
 }
 impl ListTrainingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrainingJobsOutput`](crate::operation::list_training_jobs::ListTrainingJobsOutput).
-    pub fn builder() -> crate::operation::list_training_jobs::builders::ListTrainingJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_training_jobs::builders::ListTrainingJobsOutputBuilder {
         crate::operation::list_training_jobs::builders::ListTrainingJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrainingJobsOutput`](crate::operation::list_training_jobs::ListTrainingJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrainingJobsOutputBuilder {
-    pub(crate) training_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
+    pub(crate) training_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListTrainingJobsOutputBuilder {
         self
     }
     /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
-    pub fn set_training_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
-    ) -> Self {
+    pub fn set_training_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>) -> Self {
         self.training_job_summaries = input;
         self
     }
     /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
-    pub fn get_training_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>> {
+    pub fn get_training_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>> {
         &self.training_job_summaries
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>

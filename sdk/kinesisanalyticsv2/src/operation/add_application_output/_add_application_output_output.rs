@@ -11,8 +11,7 @@ pub struct AddApplicationOutputOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     #[doc(hidden)]
-    pub output_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
+    pub output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationOutputOutput {
@@ -36,38 +35,28 @@ impl ::aws_http::request_id::RequestId for AddApplicationOutputOutput {
 }
 impl AddApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
-    pub fn builder(
-    ) -> crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder {
+    pub fn builder() -> crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder {
         crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationOutputOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) output_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
+    pub(crate) output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationOutputOutputBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -101,17 +90,12 @@ impl AddApplicationOutputOutputBuilder {
         self
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn set_output_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
-    ) -> Self {
+    pub fn set_output_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>) -> Self {
         self.output_descriptions = input;
         self
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn get_output_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
+    pub fn get_output_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
         &self.output_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCloudFrontOriginAccessIdentityO
 }
 impl DeleteCloudFrontOriginAccessIdentityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput).
-    pub fn builder() -> crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityOutputBuilder{
+    pub fn builder() -> crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityOutputBuilder {
         crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCloudFrontOriginAccessIdentityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteCloudFrontOriginAccessIdentityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput).
-    pub fn build(self) -> crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput{
+    pub fn build(self) -> crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput {
         crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput {
             _request_id: self._request_id,
         }

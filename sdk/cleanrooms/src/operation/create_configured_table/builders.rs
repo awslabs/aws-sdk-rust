@@ -37,10 +37,7 @@ impl CreateConfiguredTableFluentBuilder {
         }
     }
     /// Access the CreateConfiguredTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateConfiguredTableFluentBuilder {
             crate::operation::create_configured_table::CreateConfiguredTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configured_table::CreateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table::CreateConfiguredTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateConfiguredTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateConfiguredTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configured_table::CreateConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configured_table::CreateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table::CreateConfiguredTableError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateConfiguredTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configured_table::CreateConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configured_table::CreateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table::CreateConfiguredTableError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateConfiguredTableFluentBuilder {
             crate::operation::create_configured_table::CreateConfiguredTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configured_table::CreateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table::CreateConfiguredTableError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl CreateConfiguredTableFluentBuilder {
         self
     }
     /// <p>A reference to the Glue table being configured.</p>
-    pub fn set_table_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::TableReference>,
-    ) -> Self {
+    pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
         self.inner = self.inner.set_table_reference(input);
         self
     }
@@ -173,25 +156,17 @@ impl CreateConfiguredTableFluentBuilder {
     /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
     ///
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn allowed_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_columns(input.into());
         self
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn set_allowed_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_columns(input);
         self
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn get_allowed_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_columns()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -200,10 +175,7 @@ impl CreateConfiguredTableFluentBuilder {
         self
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn set_analysis_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisMethod>,
-    ) -> Self {
+    pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.inner = self.inner.set_analysis_method(input);
         self
     }
@@ -216,30 +188,17 @@ impl CreateConfiguredTableFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`provisioning_artifact_id(impl ::std::convert::Into<String>)`](crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactFluentBuilder::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactFluentBuilder::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
     /// - On success, responds with [`DeleteProvisioningArtifactOutput`](crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactOutput)
     /// - On failure, responds with [`SdkError<DeleteProvisioningArtifactError>`](crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactError)
-    pub fn delete_provisioning_artifact(&self) -> crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactFluentBuilder{
+    pub fn delete_provisioning_artifact(&self) -> crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactFluentBuilder {
         crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactFluentBuilder::new(self.handle.clone())
     }
 }

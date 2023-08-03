@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbClusterSnapshotOutput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput) with field(s):
     ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput::db_cluster_snapshot): <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<CreateDBClusterSnapshotError>`](crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError)
-    pub fn create_db_cluster_snapshot(
-        &self,
-    ) -> crate::operation::create_db_cluster_snapshot::builders::CreateDBClusterSnapshotFluentBuilder
-    {
+    pub fn create_db_cluster_snapshot(&self) -> crate::operation::create_db_cluster_snapshot::builders::CreateDBClusterSnapshotFluentBuilder {
         crate::operation::create_db_cluster_snapshot::builders::CreateDBClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

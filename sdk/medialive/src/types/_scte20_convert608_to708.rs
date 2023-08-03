@@ -38,13 +38,7 @@
 /// Scte20 Convert608 To708
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte20Convert608To708 {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte20Convert608To708 {
         match s {
             "DISABLED" => Scte20Convert608To708::Disabled,
             "UPCONVERT" => Scte20Convert608To708::Upconvert,
-            other => Scte20Convert608To708::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Scte20Convert608To708::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

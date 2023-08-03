@@ -5,15 +5,12 @@
 pub struct DescribeTopicsDetectionJobOutput {
     /// <p>The list of properties for the requested job.</p>
     #[doc(hidden)]
-    pub topics_detection_job_properties:
-        ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
+    pub topics_detection_job_properties: ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeTopicsDetectionJobOutput {
     /// <p>The list of properties for the requested job.</p>
-    pub fn topics_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TopicsDetectionJobProperties> {
+    pub fn topics_detection_job_properties(&self) -> ::std::option::Option<&crate::types::TopicsDetectionJobProperties> {
         self.topics_detection_job_properties.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeTopicsDetectionJobOutput {
 }
 impl DescribeTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobOutput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobOutputBuilder {
         crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicsDetectionJobOutput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicsDetectionJobOutputBuilder {
-    pub(crate) topics_detection_job_properties:
-        ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
+    pub(crate) topics_detection_job_properties: ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeTopicsDetectionJobOutputBuilder {
     /// <p>The list of properties for the requested job.</p>
-    pub fn topics_detection_job_properties(
-        mut self,
-        input: crate::types::TopicsDetectionJobProperties,
-    ) -> Self {
+    pub fn topics_detection_job_properties(mut self, input: crate::types::TopicsDetectionJobProperties) -> Self {
         self.topics_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The list of properties for the requested job.</p>
-    pub fn set_topics_detection_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
-    ) -> Self {
+    pub fn set_topics_detection_job_properties(mut self, input: ::std::option::Option<crate::types::TopicsDetectionJobProperties>) -> Self {
         self.topics_detection_job_properties = input;
         self
     }
     /// <p>The list of properties for the requested job.</p>
-    pub fn get_topics_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicsDetectionJobProperties> {
+    pub fn get_topics_detection_job_properties(&self) -> &::std::option::Option<crate::types::TopicsDetectionJobProperties> {
         &self.topics_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DescribeTopicsDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTopicsDetectionJobOutput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput {
+    pub fn build(self) -> crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput {
         crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput {
             topics_detection_job_properties: self.topics_detection_job_properties,
             _request_id: self._request_id,

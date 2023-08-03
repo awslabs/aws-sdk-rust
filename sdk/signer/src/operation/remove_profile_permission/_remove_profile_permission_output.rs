@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RemoveProfilePermissionOutput {
 }
 impl RemoveProfilePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionOutput`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder {
         crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveProfilePermissionOutput`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveProfilePermissionOutputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl RemoveProfilePermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveProfilePermissionOutput`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_profile_permission::RemoveProfilePermissionOutput {
+    pub fn build(self) -> crate::operation::remove_profile_permission::RemoveProfilePermissionOutput {
         crate::operation::remove_profile_permission::RemoveProfilePermissionOutput {
             revision_id: self.revision_id,
             _request_id: self._request_id,

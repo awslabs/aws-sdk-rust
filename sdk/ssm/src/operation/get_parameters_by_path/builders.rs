@@ -38,9 +38,7 @@ impl GetParametersByPathFluentBuilder {
         }
     }
     /// Access the GetParametersByPath as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetParametersByPathFluentBuilder {
             crate::operation::get_parameters_by_path::GetParametersByPath,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_by_path::GetParametersByPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_by_path::GetParametersByPathError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetParametersByPathFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetParametersByPathFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameters_by_path::GetParametersByPathOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_by_path::GetParametersByPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_by_path::GetParametersByPathError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetParametersByPathFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameters_by_path::GetParametersByPathOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_by_path::GetParametersByPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_by_path::GetParametersByPathError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl GetParametersByPathFluentBuilder {
             crate::operation::get_parameters_by_path::GetParametersByPath,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_by_path::GetParametersByPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_by_path::GetParametersByPathError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator {
-        crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator {
+        crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::new(self.handle, self.inner)
     }
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,10 +166,7 @@ impl GetParametersByPathFluentBuilder {
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn set_parameter_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
-    ) -> Self {
+    pub fn set_parameter_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>) -> Self {
         self.inner = self.inner.set_parameter_filters(input);
         self
     }
@@ -195,9 +174,7 @@ impl GetParametersByPathFluentBuilder {
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn get_parameter_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
+    pub fn get_parameter_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
         self.inner.get_parameter_filters()
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>

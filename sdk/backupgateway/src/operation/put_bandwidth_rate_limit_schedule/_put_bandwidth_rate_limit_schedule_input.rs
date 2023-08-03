@@ -8,8 +8,7 @@ pub struct PutBandwidthRateLimitScheduleInput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     #[doc(hidden)]
-    pub bandwidth_rate_limit_intervals:
-        ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
 }
 impl PutBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -17,28 +16,23 @@ impl PutBandwidthRateLimitScheduleInput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
+    pub fn bandwidth_rate_limit_intervals(&self) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
 impl PutBandwidthRateLimitScheduleInput {
     /// Creates a new builder-style object to manufacture [`PutBandwidthRateLimitScheduleInput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleInput).
-    pub fn builder() -> crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder{
+    pub fn builder() -> crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder {
         crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBandwidthRateLimitScheduleInput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBandwidthRateLimitScheduleInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) bandwidth_rate_limit_intervals:
-        ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
 }
 impl PutBandwidthRateLimitScheduleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -60,10 +54,7 @@ impl PutBandwidthRateLimitScheduleInputBuilder {
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(
-        mut self,
-        input: crate::types::BandwidthRateLimitInterval,
-    ) -> Self {
+    pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
         v.push(input);
         self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
@@ -78,9 +69,7 @@ impl PutBandwidthRateLimitScheduleInputBuilder {
         self
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn get_bandwidth_rate_limit_intervals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }
     /// Consumes the builder and constructs a [`PutBandwidthRateLimitScheduleInput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleInput).
@@ -90,13 +79,9 @@ impl PutBandwidthRateLimitScheduleInputBuilder {
         crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleInput {
-                gateway_arn: self.gateway_arn
-                ,
-                bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleInput {
+            gateway_arn: self.gateway_arn,
+            bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
+        })
     }
 }

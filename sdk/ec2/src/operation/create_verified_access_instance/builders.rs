@@ -26,7 +26,7 @@ impl CreateVerifiedAccessInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder,
+    inner: crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder,
 }
 impl CreateVerifiedAccessInstanceFluentBuilder {
     /// Creates a new `CreateVerifiedAccessInstance`.
@@ -37,7 +37,7 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
         }
     }
     /// Access the CreateVerifiedAccessInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
             crate::operation::create_verified_access_instance::CreateVerifiedAccessInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
             crate::operation::create_verified_access_instance::CreateVerifiedAccessInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +133,12 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
         self
     }
     /// <p>The tags to assign to the Verified Access instance.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the Verified Access instance.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>

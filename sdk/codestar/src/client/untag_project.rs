@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<String>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::tags) / [`set_tags(Option<Vec<String>>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::set_tags): <p>The tags to remove from the project.</p>
     /// - On success, responds with [`UntagProjectOutput`](crate::operation::untag_project::UntagProjectOutput)
     /// - On failure, responds with [`SdkError<UntagProjectError>`](crate::operation::untag_project::UntagProjectError)
-    pub fn untag_project(
-        &self,
-    ) -> crate::operation::untag_project::builders::UntagProjectFluentBuilder {
-        crate::operation::untag_project::builders::UntagProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_project(&self) -> crate::operation::untag_project::builders::UntagProjectFluentBuilder {
+        crate::operation::untag_project::builders::UntagProjectFluentBuilder::new(self.handle.clone())
     }
 }

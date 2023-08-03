@@ -10,10 +10,7 @@ impl CreateLocationSmbInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_location_smb::CreateLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_smb::CreateLocationSmbError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_location_smb();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateLocationSmbFluentBuilder {
         }
     }
     /// Access the CreateLocationSmb as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateLocationSmbFluentBuilder {
             crate::operation::create_location_smb::CreateLocationSmb,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_smb::CreateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateLocationSmbFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateLocationSmbFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_smb::CreateLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_smb::CreateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateLocationSmbFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_smb::CreateLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_smb::CreateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateLocationSmbFluentBuilder {
             crate::operation::create_location_smb::CreateLocationSmb,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_smb::CreateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError>,
     > {
         self.customize_middleware().await
     }
@@ -143,20 +127,14 @@ impl CreateLocationSmbFluentBuilder {
     /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
-    pub fn server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
     /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
-    pub fn set_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
@@ -227,10 +205,7 @@ impl CreateLocationSmbFluentBuilder {
         self
     }
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -244,10 +219,7 @@ impl CreateLocationSmbFluentBuilder {
         self
     }
     /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.inner = self.inner.set_mount_options(input);
         self
     }
@@ -265,10 +237,7 @@ impl CreateLocationSmbFluentBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

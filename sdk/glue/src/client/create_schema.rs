@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`schema_version_id(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_version_id): <p>The unique identifier of the first schema version.</p>
     ///   - [`schema_version_status(Option<SchemaVersionStatus>)`](crate::operation::create_schema::CreateSchemaOutput::schema_version_status): <p>The status of the first schema version created.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::operation::create_schema::CreateSchemaError)
-    pub fn create_schema(
-        &self,
-    ) -> crate::operation::create_schema::builders::CreateSchemaFluentBuilder {
-        crate::operation::create_schema::builders::CreateSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_schema(&self) -> crate::operation::create_schema::builders::CreateSchemaFluentBuilder {
+        crate::operation::create_schema::builders::CreateSchemaFluentBuilder::new(self.handle.clone())
     }
 }

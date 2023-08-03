@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateForecastOutput`](crate::operation::create_forecast::CreateForecastOutput) with field(s):
     ///   - [`forecast_arn(Option<String>)`](crate::operation::create_forecast::CreateForecastOutput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
     /// - On failure, responds with [`SdkError<CreateForecastError>`](crate::operation::create_forecast::CreateForecastError)
-    pub fn create_forecast(
-        &self,
-    ) -> crate::operation::create_forecast::builders::CreateForecastFluentBuilder {
-        crate::operation::create_forecast::builders::CreateForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_forecast(&self) -> crate::operation::create_forecast::builders::CreateForecastFluentBuilder {
+        crate::operation::create_forecast::builders::CreateForecastFluentBuilder::new(self.handle.clone())
     }
 }

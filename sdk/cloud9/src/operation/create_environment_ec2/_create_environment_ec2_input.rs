@@ -126,10 +126,7 @@ impl ::std::fmt::Debug for CreateEnvironmentEc2Input {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("image_id", &self.image_id);
-        formatter.field(
-            "automatic_stop_time_minutes",
-            &self.automatic_stop_time_minutes,
-        );
+        formatter.field("automatic_stop_time_minutes", &self.automatic_stop_time_minutes);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("connection_type", &self.connection_type);
@@ -139,8 +136,7 @@ impl ::std::fmt::Debug for CreateEnvironmentEc2Input {
 }
 impl CreateEnvironmentEc2Input {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Input`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Input).
-    pub fn builder(
-    ) -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
+    pub fn builder() -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
         crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder::default()
     }
 }
@@ -195,19 +191,13 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -217,18 +207,12 @@ impl CreateEnvironmentEc2InputBuilder {
         &self.client_request_token
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -346,10 +330,7 @@ impl CreateEnvironmentEc2InputBuilder {
         self
     }
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -365,10 +346,7 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
         self.connection_type = input;
         self
     }
@@ -394,25 +372,21 @@ impl CreateEnvironmentEc2InputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentEc2Input`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment_ec2::CreateEnvironmentEc2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_environment_ec2::CreateEnvironmentEc2Input {
-                name: self.name,
-                description: self.description,
-                client_request_token: self.client_request_token,
-                instance_type: self.instance_type,
-                subnet_id: self.subnet_id,
-                image_id: self.image_id,
-                automatic_stop_time_minutes: self.automatic_stop_time_minutes,
-                owner_arn: self.owner_arn,
-                tags: self.tags,
-                connection_type: self.connection_type,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_environment_ec2::CreateEnvironmentEc2Input, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_environment_ec2::CreateEnvironmentEc2Input {
+            name: self.name,
+            description: self.description,
+            client_request_token: self.client_request_token,
+            instance_type: self.instance_type,
+            subnet_id: self.subnet_id,
+            image_id: self.image_id,
+            automatic_stop_time_minutes: self.automatic_stop_time_minutes,
+            owner_arn: self.owner_arn,
+            tags: self.tags,
+            connection_type: self.connection_type,
+            dry_run: self.dry_run,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentEc2InputBuilder {
@@ -424,10 +398,7 @@ impl ::std::fmt::Debug for CreateEnvironmentEc2InputBuilder {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("image_id", &self.image_id);
-        formatter.field(
-            "automatic_stop_time_minutes",
-            &self.automatic_stop_time_minutes,
-        );
+        formatter.field("automatic_stop_time_minutes", &self.automatic_stop_time_minutes);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("connection_type", &self.connection_type);

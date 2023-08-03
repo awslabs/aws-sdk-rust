@@ -49,9 +49,7 @@ impl DescribeLimitsOutput {
 
 /// A builder for [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLimitsOutputBuilder {
     pub(crate) shard_limit: ::std::option::Option<i32>,
     pub(crate) open_shard_count: ::std::option::Option<i32>,

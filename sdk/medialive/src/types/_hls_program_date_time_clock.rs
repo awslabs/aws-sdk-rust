@@ -38,13 +38,7 @@
 /// Hls Program Date Time Clock
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsProgramDateTimeClock {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum HlsProgramDateTimeClock {
 impl ::std::convert::From<&str> for HlsProgramDateTimeClock {
     fn from(s: &str) -> Self {
         match s {
-            "INITIALIZE_FROM_OUTPUT_TIMECODE" => {
-                HlsProgramDateTimeClock::InitializeFromOutputTimecode
-            }
+            "INITIALIZE_FROM_OUTPUT_TIMECODE" => HlsProgramDateTimeClock::InitializeFromOutputTimecode,
             "SYSTEM_CLOCK" => HlsProgramDateTimeClock::SystemClock,
-            other => HlsProgramDateTimeClock::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsProgramDateTimeClock::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl HlsProgramDateTimeClock {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            HlsProgramDateTimeClock::InitializeFromOutputTimecode => {
-                "INITIALIZE_FROM_OUTPUT_TIMECODE"
-            }
+            HlsProgramDateTimeClock::InitializeFromOutputTimecode => "INITIALIZE_FROM_OUTPUT_TIMECODE",
             HlsProgramDateTimeClock::SystemClock => "SYSTEM_CLOCK",
             HlsProgramDateTimeClock::Unknown(value) => value.as_str(),
         }

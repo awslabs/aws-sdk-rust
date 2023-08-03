@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeUpdateOutput`](crate::operation::describe_update::DescribeUpdateOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::describe_update::DescribeUpdateOutput::update): <p>The full description of the specified update.</p>
     /// - On failure, responds with [`SdkError<DescribeUpdateError>`](crate::operation::describe_update::DescribeUpdateError)
-    pub fn describe_update(
-        &self,
-    ) -> crate::operation::describe_update::builders::DescribeUpdateFluentBuilder {
-        crate::operation::describe_update::builders::DescribeUpdateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_update(&self) -> crate::operation::describe_update::builders::DescribeUpdateFluentBuilder {
+        crate::operation::describe_update::builders::DescribeUpdateFluentBuilder::new(self.handle.clone())
     }
 }

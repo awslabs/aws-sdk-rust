@@ -23,9 +23,7 @@ impl ZeppelinMonitoringConfigurationDescription {
 
 /// A builder for [`ZeppelinMonitoringConfigurationDescription`](crate::types::ZeppelinMonitoringConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationDescriptionBuilder {
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
 }
@@ -46,8 +44,6 @@ impl ZeppelinMonitoringConfigurationDescriptionBuilder {
     }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfigurationDescription`](crate::types::ZeppelinMonitoringConfigurationDescription).
     pub fn build(self) -> crate::types::ZeppelinMonitoringConfigurationDescription {
-        crate::types::ZeppelinMonitoringConfigurationDescription {
-            log_level: self.log_level,
-        }
+        crate::types::ZeppelinMonitoringConfigurationDescription { log_level: self.log_level }
     }
 }

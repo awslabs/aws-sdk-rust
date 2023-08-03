@@ -49,13 +49,7 @@
 /// * P3D65 (HDR): Display P3, PQ, BT.709
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ColorSpace {
     #[allow(missing_docs)] // documentation missing in model
@@ -116,16 +110,7 @@ impl ColorSpace {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FOLLOW",
-            "HDR10",
-            "HLG_2020",
-            "P3D65_HDR",
-            "P3D65_SDR",
-            "P3DCI",
-            "REC_601",
-            "REC_709",
-        ]
+        &["FOLLOW", "HDR10", "HLG_2020", "P3D65_HDR", "P3D65_SDR", "P3DCI", "REC_601", "REC_709"]
     }
 }
 impl ::std::convert::AsRef<str> for ColorSpace {

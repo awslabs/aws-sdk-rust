@@ -30,9 +30,7 @@ impl ResourceErrorsDetails {
 
 /// A builder for [`ResourceErrorsDetails`](crate::types::ResourceErrorsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceErrorsDetailsBuilder {
     pub(crate) resource_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     pub(crate) has_more_errors: ::std::option::Option<bool>,
@@ -50,17 +48,12 @@ impl ResourceErrorsDetailsBuilder {
         self
     }
     /// <p> A list of errors retrieving an application's resources. </p>
-    pub fn set_resource_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
-    ) -> Self {
+    pub fn set_resource_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>) -> Self {
         self.resource_errors = input;
         self
     }
     /// <p> A list of errors retrieving an application's resources. </p>
-    pub fn get_resource_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+    pub fn get_resource_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
         &self.resource_errors
     }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>

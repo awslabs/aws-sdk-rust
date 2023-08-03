@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::operation::reject_data_share::RejectDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::reject_data_share::RejectDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<RejectDataShareError>`](crate::operation::reject_data_share::RejectDataShareError)
-    pub fn reject_data_share(
-        &self,
-    ) -> crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder {
-        crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reject_data_share(&self) -> crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder {
+        crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::new(self.handle.clone())
     }
 }

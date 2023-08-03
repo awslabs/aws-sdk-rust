@@ -46,20 +46,18 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
 }
 impl DescribeInstancePatchStatesForPatchGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
-    pub fn builder() -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder {
         crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroupInputBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -100,10 +98,7 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     /// <li> <p>Values (array containing a single string)</p> </li>
     /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -113,9 +108,7 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     /// <li> <p>Values (array containing a single string)</p> </li>
     /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>> {
         &self.filters
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -147,18 +140,19 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput {
-                patch_group: self.patch_group
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                patch_group: self.patch_group,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

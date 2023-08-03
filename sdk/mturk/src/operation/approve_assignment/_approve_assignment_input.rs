@@ -29,17 +29,14 @@ impl ApproveAssignmentInput {
 }
 impl ApproveAssignmentInput {
     /// Creates a new builder-style object to manufacture [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
-    pub fn builder() -> crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder {
         crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder::default()
     }
 }
 
 /// A builder for [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApproveAssignmentInputBuilder {
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_feedback: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ApproveAssignmentInputBuilder {
 }
 impl ApproveAssignmentInputBuilder {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -67,18 +58,12 @@ impl ApproveAssignmentInputBuilder {
         &self.assignment_id
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn requester_feedback(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_feedback = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn set_requester_feedback(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_feedback = input;
         self
     }
@@ -103,16 +88,11 @@ impl ApproveAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::approve_assignment::ApproveAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::approve_assignment::ApproveAssignmentInput {
-                assignment_id: self.assignment_id,
-                requester_feedback: self.requester_feedback,
-                override_rejection: self.override_rejection,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::approve_assignment::ApproveAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::approve_assignment::ApproveAssignmentInput {
+            assignment_id: self.assignment_id,
+            requester_feedback: self.requester_feedback,
+            override_rejection: self.override_rejection,
+        })
     }
 }

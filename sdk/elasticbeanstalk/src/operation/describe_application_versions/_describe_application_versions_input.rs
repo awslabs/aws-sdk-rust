@@ -41,16 +41,14 @@ impl DescribeApplicationVersionsInput {
 }
 impl DescribeApplicationVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionsInput`](crate::operation::describe_application_versions::DescribeApplicationVersionsInput).
-    pub fn builder() -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder {
         crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationVersionsInput`](crate::operation::describe_application_versions::DescribeApplicationVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -59,18 +57,12 @@ pub struct DescribeApplicationVersionsInputBuilder {
 }
 impl DescribeApplicationVersionsInputBuilder {
     /// <p>Specify an application name to show only application versions for that application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify an application name to show only application versions for that application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -83,27 +75,19 @@ impl DescribeApplicationVersionsInputBuilder {
     /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).
     ///
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn version_labels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_labels.unwrap_or_default();
         v.push(input.into());
         self.version_labels = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn set_version_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.version_labels = input;
         self
     }
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn get_version_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.version_labels
     }
     /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>
@@ -147,13 +131,11 @@ impl DescribeApplicationVersionsInputBuilder {
         crate::operation::describe_application_versions::DescribeApplicationVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_application_versions::DescribeApplicationVersionsInput {
-                application_name: self.application_name,
-                version_labels: self.version_labels,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_application_versions::DescribeApplicationVersionsInput {
+            application_name: self.application_name,
+            version_labels: self.version_labels,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbParameterGroupOutput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput) with field(s):
     ///   - [`db_parameter_group_name(Option<String>)`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput::db_parameter_group_name): <p>Provides the name of the DB parameter group.</p>
     /// - On failure, responds with [`SdkError<ModifyDBParameterGroupError>`](crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError)
-    pub fn modify_db_parameter_group(
-        &self,
-    ) -> crate::operation::modify_db_parameter_group::builders::ModifyDBParameterGroupFluentBuilder
-    {
+    pub fn modify_db_parameter_group(&self) -> crate::operation::modify_db_parameter_group::builders::ModifyDBParameterGroupFluentBuilder {
         crate::operation::modify_db_parameter_group::builders::ModifyDBParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

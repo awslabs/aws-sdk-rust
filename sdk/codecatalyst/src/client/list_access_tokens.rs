@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<AccessTokenSummary>>)`](crate::operation::list_access_tokens::ListAccessTokensOutput::items): <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_tokens::ListAccessTokensOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     /// - On failure, responds with [`SdkError<ListAccessTokensError>`](crate::operation::list_access_tokens::ListAccessTokensError)
-    pub fn list_access_tokens(
-        &self,
-    ) -> crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder {
-        crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_access_tokens(&self) -> crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder {
+        crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::new(self.handle.clone())
     }
 }

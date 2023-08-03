@@ -16,9 +16,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> ::std::option::Option<&crate::types::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
@@ -29,19 +27,18 @@ impl ::aws_http::request_id::RequestId for DecreaseNodeGroupsInGlobalReplication
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder{
-        crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
+        crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
-    pub(crate) global_replication_group:
-        ::std::option::Option<crate::types::GlobalReplicationGroup>,
+    pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
@@ -57,10 +54,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    pub fn set_global_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalReplicationGroup>,
-    ) -> Self {
+    pub fn set_global_replication_group(mut self, input: ::std::option::Option<crate::types::GlobalReplicationGroup>) -> Self {
         self.global_replication_group = input;
         self
     }
@@ -68,9 +62,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    pub fn get_global_replication_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlobalReplicationGroup> {
+    pub fn get_global_replication_group(&self) -> &::std::option::Option<crate::types::GlobalReplicationGroup> {
         &self.global_replication_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -83,10 +75,9 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn build(self) -> crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput{
+    pub fn build(self) -> crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput {
         crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-            global_replication_group: self.global_replication_group
-            ,
+            global_replication_group: self.global_replication_group,
             _request_id: self._request_id,
         }
     }

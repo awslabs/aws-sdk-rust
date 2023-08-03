@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetQualificationScoreOutput {
 }
 impl GetQualificationScoreOutput {
     /// Creates a new builder-style object to manufacture [`GetQualificationScoreOutput`](crate::operation::get_qualification_score::GetQualificationScoreOutput).
-    pub fn builder(
-    ) -> crate::operation::get_qualification_score::builders::GetQualificationScoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_qualification_score::builders::GetQualificationScoreOutputBuilder {
         crate::operation::get_qualification_score::builders::GetQualificationScoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQualificationScoreOutput`](crate::operation::get_qualification_score::GetQualificationScoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQualificationScoreOutputBuilder {
     pub(crate) qualification: ::std::option::Option<crate::types::Qualification>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetQualificationScoreOutputBuilder {
         self
     }
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
-    pub fn set_qualification(
-        mut self,
-        input: ::std::option::Option<crate::types::Qualification>,
-    ) -> Self {
+    pub fn set_qualification(mut self, input: ::std::option::Option<crate::types::Qualification>) -> Self {
         self.qualification = input;
         self
     }

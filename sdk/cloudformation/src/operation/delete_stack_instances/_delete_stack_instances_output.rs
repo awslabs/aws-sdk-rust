@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteStackInstancesOutput {
 }
 impl DeleteStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStackInstancesOutput`](crate::operation::delete_stack_instances::DeleteStackInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_stack_instances::builders::DeleteStackInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::delete_stack_instances::builders::DeleteStackInstancesOutputBuilder {
         crate::operation::delete_stack_instances::builders::DeleteStackInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStackInstancesOutput`](crate::operation::delete_stack_instances::DeleteStackInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackInstancesOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

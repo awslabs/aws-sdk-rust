@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for DetectStackDriftOutput {
 }
 impl DetectStackDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackDriftOutput`](crate::operation::detect_stack_drift::DetectStackDriftOutput).
-    pub fn builder() -> crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder {
         crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectStackDriftOutput`](crate::operation::detect_stack_drift::DetectStackDriftOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectStackDriftOutputBuilder {
     pub(crate) stack_drift_detection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -41,19 +38,13 @@ pub struct DetectStackDriftOutputBuilder {
 impl DetectStackDriftOutputBuilder {
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn stack_drift_detection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_drift_detection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_drift_detection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn set_stack_drift_detection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_drift_detection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_drift_detection_id = input;
         self
     }

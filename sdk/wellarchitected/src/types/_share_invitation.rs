@@ -64,9 +64,7 @@ impl ShareInvitation {
 
 /// A builder for [`ShareInvitation`](crate::types::ShareInvitation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShareInvitationBuilder {
     pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
@@ -77,18 +75,12 @@ pub struct ShareInvitationBuilder {
 }
 impl ShareInvitationBuilder {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn share_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_share_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_invitation_id = input;
         self
     }
@@ -102,17 +94,12 @@ impl ShareInvitationBuilder {
         self
     }
     /// <p>The resource type of the share invitation.</p>
-    pub fn set_share_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareResourceType>,
-    ) -> Self {
+    pub fn set_share_resource_type(mut self, input: ::std::option::Option<crate::types::ShareResourceType>) -> Self {
         self.share_resource_type = input;
         self
     }
     /// <p>The resource type of the share invitation.</p>
-    pub fn get_share_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShareResourceType> {
+    pub fn get_share_resource_type(&self) -> &::std::option::Option<crate::types::ShareResourceType> {
         &self.share_resource_type
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>

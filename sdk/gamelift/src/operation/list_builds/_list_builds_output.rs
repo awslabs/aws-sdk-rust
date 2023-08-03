@@ -35,9 +35,7 @@ impl ListBuildsOutput {
 
 /// A builder for [`ListBuildsOutput`](crate::operation::list_builds::ListBuildsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildsOutputBuilder {
     pub(crate) builds: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListBuildsOutputBuilder {
         self
     }
     /// <p>A collection of build resources that match the request.</p>
-    pub fn set_builds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
-    ) -> Self {
+    pub fn set_builds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Build>>) -> Self {
         self.builds = input;
         self
     }

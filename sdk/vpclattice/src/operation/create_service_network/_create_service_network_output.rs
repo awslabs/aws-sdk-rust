@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateServiceNetworkOutput {
 }
 impl CreateServiceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkOutput`](crate::operation::create_service_network::CreateServiceNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::create_service_network::builders::CreateServiceNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::create_service_network::builders::CreateServiceNetworkOutputBuilder {
         crate::operation::create_service_network::builders::CreateServiceNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceNetworkOutput`](crate::operation::create_service_network::CreateServiceNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceNetworkOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

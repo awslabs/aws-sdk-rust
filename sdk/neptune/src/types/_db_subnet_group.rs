@@ -59,9 +59,7 @@ impl DbSubnetGroup {
 
 /// A builder for [`DbSubnetGroup`](crate::types::DbSubnetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbSubnetGroupBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -72,18 +70,12 @@ pub struct DbSubnetGroupBuilder {
 }
 impl DbSubnetGroupBuilder {
     /// <p>The name of the DB subnet group.</p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB subnet group.</p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -92,18 +84,12 @@ impl DbSubnetGroupBuilder {
         &self.db_subnet_group_name
     }
     /// <p>Provides the description of the DB subnet group.</p>
-    pub fn db_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the description of the DB subnet group.</p>
-    pub fn set_db_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_description = input;
         self
     }
@@ -126,18 +112,12 @@ impl DbSubnetGroupBuilder {
         &self.vpc_id
     }
     /// <p>Provides the status of the DB subnet group.</p>
-    pub fn subnet_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the status of the DB subnet group.</p>
-    pub fn set_subnet_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_status = input;
         self
     }
@@ -157,10 +137,7 @@ impl DbSubnetGroupBuilder {
         self
     }
     /// <p> Contains a list of <code>Subnet</code> elements.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
         self.subnets = input;
         self
     }
@@ -169,18 +146,12 @@ impl DbSubnetGroupBuilder {
         &self.subnets
     }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-    pub fn db_subnet_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-    pub fn set_db_subnet_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_arn = input;
         self
     }

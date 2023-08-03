@@ -43,19 +43,16 @@ impl DescribeConnectorProfilesInput {
 }
 impl DescribeConnectorProfilesInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesInput`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput).
-    pub fn builder() -> crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder{
+    pub fn builder() -> crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder {
         crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorProfilesInput`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorProfilesInputBuilder {
-    pub(crate) connector_profile_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_profile_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -67,27 +64,19 @@ impl DescribeConnectorProfilesInputBuilder {
     /// To override the contents of this collection use [`set_connector_profile_names`](Self::set_connector_profile_names).
     ///
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_profile_names.unwrap_or_default();
         v.push(input.into());
         self.connector_profile_names = ::std::option::Option::Some(v);
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connector_profile_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connector_profile_names = input;
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn get_connector_profile_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_profile_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connector_profile_names
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -96,10 +85,7 @@ impl DescribeConnectorProfilesInputBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -108,18 +94,12 @@ impl DescribeConnectorProfilesInputBuilder {
         &self.connector_type
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
@@ -162,14 +142,12 @@ impl DescribeConnectorProfilesInputBuilder {
         crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput {
-                connector_profile_names: self.connector_profile_names,
-                connector_type: self.connector_type,
-                connector_label: self.connector_label,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput {
+            connector_profile_names: self.connector_profile_names,
+            connector_type: self.connector_type,
+            connector_label: self.connector_label,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

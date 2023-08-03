@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::put_resource_config::builders::PutResourceConfigFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::put_resource_config::builders::PutResourceConfigFluentBuilder::set_tags): <p>Tags associated with the resource.</p> <note>   <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>  </note>
     /// - On success, responds with [`PutResourceConfigOutput`](crate::operation::put_resource_config::PutResourceConfigOutput)
     /// - On failure, responds with [`SdkError<PutResourceConfigError>`](crate::operation::put_resource_config::PutResourceConfigError)
-    pub fn put_resource_config(
-        &self,
-    ) -> crate::operation::put_resource_config::builders::PutResourceConfigFluentBuilder {
-        crate::operation::put_resource_config::builders::PutResourceConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_config(&self) -> crate::operation::put_resource_config::builders::PutResourceConfigFluentBuilder {
+        crate::operation::put_resource_config::builders::PutResourceConfigFluentBuilder::new(self.handle.clone())
     }
 }

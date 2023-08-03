@@ -230,9 +230,7 @@ impl RemoteAccessSession {
 
 /// A builder for [`RemoteAccessSession`](crate::types::RemoteAccessSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoteAccessSessionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -292,10 +290,7 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The date and time the remote access session was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -331,10 +326,7 @@ impl RemoteAccessSessionBuilder {
     /// <li> <p>COMPLETED.</p> </li>
     /// <li> <p>STOPPING.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -377,10 +369,7 @@ impl RemoteAccessSessionBuilder {
     /// <li> <p>ERRORED.</p> </li>
     /// <li> <p>STOPPED.</p> </li>
     /// </ul>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
         self
     }
@@ -417,10 +406,7 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The date and time the remote access session was started.</p>
-    pub fn set_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started = input;
         self
     }
@@ -434,10 +420,7 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The date and time the remote access session was stopped.</p>
-    pub fn set_stopped(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopped(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopped = input;
         self
     }
@@ -505,18 +488,12 @@ impl RemoteAccessSessionBuilder {
         &self.remote_record_enabled
     }
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_record_app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_record_app_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn set_remote_record_app_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_record_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_record_app_arn = input;
         self
     }
@@ -564,10 +541,7 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
-    pub fn set_billing_method(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingMethod>,
-    ) -> Self {
+    pub fn set_billing_method(mut self, input: ::std::option::Option<crate::types::BillingMethod>) -> Self {
         self.billing_method = input;
         self
     }
@@ -581,10 +555,7 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
-    pub fn set_device_minutes(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceMinutes>,
-    ) -> Self {
+    pub fn set_device_minutes(mut self, input: ::std::option::Option<crate::types::DeviceMinutes>) -> Self {
         self.device_minutes = input;
         self
     }
@@ -639,10 +610,7 @@ impl RemoteAccessSessionBuilder {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    pub fn set_interaction_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::InteractionMode>,
-    ) -> Self {
+    pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.interaction_mode = input;
         self
     }

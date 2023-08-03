@@ -10,10 +10,7 @@ impl PutClusterPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_cluster_policy::PutClusterPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_policy::PutClusterPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_cluster_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutClusterPolicyFluentBuilder {
         }
     }
     /// Access the PutClusterPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_cluster_policy::builders::PutClusterPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_cluster_policy::builders::PutClusterPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutClusterPolicyFluentBuilder {
             crate::operation::put_cluster_policy::PutClusterPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_policy::PutClusterPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutClusterPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutClusterPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_cluster_policy::PutClusterPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_policy::PutClusterPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutClusterPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_cluster_policy::PutClusterPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_policy::PutClusterPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutClusterPolicyFluentBuilder {
             crate::operation::put_cluster_policy::PutClusterPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_policy::PutClusterPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PutClusterPolicyFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The policy version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The policy version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

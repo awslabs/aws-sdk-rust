@@ -37,9 +37,7 @@ impl LaunchTemplateDiskConf {
 
 /// A builder for [`LaunchTemplateDiskConf`](crate::types::LaunchTemplateDiskConf).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateDiskConfBuilder {
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
     pub(crate) iops: ::std::option::Option<i64>,
@@ -52,10 +50,7 @@ impl LaunchTemplateDiskConfBuilder {
         self
     }
     /// <p>Launch template disk volume type configuration.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }

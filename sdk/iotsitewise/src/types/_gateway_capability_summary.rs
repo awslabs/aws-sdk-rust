@@ -27,9 +27,7 @@ impl GatewayCapabilitySummary {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    pub fn capability_sync_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapabilitySyncStatus> {
+    pub fn capability_sync_status(&self) -> ::std::option::Option<&crate::types::CapabilitySyncStatus> {
         self.capability_sync_status.as_ref()
     }
 }
@@ -42,27 +40,19 @@ impl GatewayCapabilitySummary {
 
 /// A builder for [`GatewayCapabilitySummary`](crate::types::GatewayCapabilitySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayCapabilitySummaryBuilder {
     pub(crate) capability_namespace: ::std::option::Option<::std::string::String>,
     pub(crate) capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,
 }
 impl GatewayCapabilitySummaryBuilder {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn set_capability_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capability_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capability_namespace = input;
         self
     }
@@ -86,10 +76,7 @@ impl GatewayCapabilitySummaryBuilder {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    pub fn set_capability_sync_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CapabilitySyncStatus>,
-    ) -> Self {
+    pub fn set_capability_sync_status(mut self, input: ::std::option::Option<crate::types::CapabilitySyncStatus>) -> Self {
         self.capability_sync_status = input;
         self
     }
@@ -99,9 +86,7 @@ impl GatewayCapabilitySummaryBuilder {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    pub fn get_capability_sync_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapabilitySyncStatus> {
+    pub fn get_capability_sync_status(&self) -> &::std::option::Option<crate::types::CapabilitySyncStatus> {
         &self.capability_sync_status
     }
     /// Consumes the builder and constructs a [`GatewayCapabilitySummary`](crate::types::GatewayCapabilitySummary).

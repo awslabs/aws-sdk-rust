@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateIpGroupsOutput {
 }
 impl DisassociateIpGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpGroupsOutput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsOutputBuilder {
         crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIpGroupsOutput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIpGroupsOutputBuilder {
     _request_id: Option<String>,
 }

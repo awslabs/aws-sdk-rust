@@ -40,9 +40,7 @@ impl ListStagesInput {
 
 /// A builder for [`ListStagesInput`](crate::operation::list_stages::ListStagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStagesInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -98,12 +96,7 @@ impl ListStagesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListStagesInput`](crate::operation::list_stages::ListStagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stages::ListStagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stages::ListStagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stages::ListStagesInput {
             game_name: self.game_name,
             max_results: self.max_results,

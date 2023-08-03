@@ -41,9 +41,7 @@ impl PutEvaluationsInput {
 
 /// A builder for [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEvaluationsInputBuilder {
     pub(crate) evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     pub(crate) result_token: ::std::option::Option<::std::string::String>,
@@ -62,17 +60,12 @@ impl PutEvaluationsInputBuilder {
         self
     }
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
-    pub fn set_evaluations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
-    ) -> Self {
+    pub fn set_evaluations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>) -> Self {
         self.evaluations = input;
         self
     }
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
-    pub fn get_evaluations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
+    pub fn get_evaluations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
         &self.evaluations
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
@@ -112,10 +105,7 @@ impl PutEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_evaluations::PutEvaluationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_evaluations::PutEvaluationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_evaluations::PutEvaluationsInput {
             evaluations: self.evaluations,
             result_token: self.result_token,

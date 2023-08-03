@@ -49,9 +49,7 @@ impl DescribeActivityTypeFluentBuilder {
         }
     }
     /// Access the DescribeActivityType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_activity_type::builders::DescribeActivityTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_activity_type::builders::DescribeActivityTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +61,7 @@ impl DescribeActivityTypeFluentBuilder {
             crate::operation::describe_activity_type::DescribeActivityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activity_type::DescribeActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activity_type::DescribeActivityTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +71,7 @@ impl DescribeActivityTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +80,7 @@ impl DescribeActivityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_activity_type::DescribeActivityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activity_type::DescribeActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activity_type::DescribeActivityTypeError>,
     > {
         let op = self
             .inner
@@ -112,9 +103,7 @@ impl DescribeActivityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_activity_type::DescribeActivityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activity_type::DescribeActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activity_type::DescribeActivityTypeError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +117,7 @@ impl DescribeActivityTypeFluentBuilder {
             crate::operation::describe_activity_type::DescribeActivityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activity_type::DescribeActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activity_type::DescribeActivityTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +141,7 @@ impl DescribeActivityTypeFluentBuilder {
         self
     }
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.inner = self.inner.set_activity_type(input);
         self
     }

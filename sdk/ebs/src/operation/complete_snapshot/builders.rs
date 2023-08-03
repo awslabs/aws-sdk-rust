@@ -10,10 +10,7 @@ impl CompleteSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::complete_snapshot::CompleteSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_snapshot::CompleteSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.complete_snapshot();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CompleteSnapshotFluentBuilder {
         }
     }
     /// Access the CompleteSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CompleteSnapshotFluentBuilder {
             crate::operation::complete_snapshot::CompleteSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_snapshot::CompleteSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CompleteSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CompleteSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_snapshot::CompleteSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_snapshot::CompleteSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CompleteSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_snapshot::CompleteSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_snapshot::CompleteSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CompleteSnapshotFluentBuilder {
             crate::operation::complete_snapshot::CompleteSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_snapshot::CompleteSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -173,39 +157,26 @@ impl CompleteSnapshotFluentBuilder {
         self
     }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         self.inner.get_checksum_algorithm()
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    pub fn checksum_aggregation_method(
-        mut self,
-        input: crate::types::ChecksumAggregationMethod,
-    ) -> Self {
+    pub fn checksum_aggregation_method(mut self, input: crate::types::ChecksumAggregationMethod) -> Self {
         self.inner = self.inner.checksum_aggregation_method(input);
         self
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    pub fn set_checksum_aggregation_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAggregationMethod>,
-    ) -> Self {
+    pub fn set_checksum_aggregation_method(mut self, input: ::std::option::Option<crate::types::ChecksumAggregationMethod>) -> Self {
         self.inner = self.inner.set_checksum_aggregation_method(input);
         self
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    pub fn get_checksum_aggregation_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAggregationMethod> {
+    pub fn get_checksum_aggregation_method(&self) -> &::std::option::Option<crate::types::ChecksumAggregationMethod> {
         self.inner.get_checksum_aggregation_method()
     }
 }

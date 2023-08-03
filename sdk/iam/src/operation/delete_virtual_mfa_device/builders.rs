@@ -28,8 +28,7 @@ impl DeleteVirtualMfaDeviceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVirtualMFADeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder,
+    inner: crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder,
 }
 impl DeleteVirtualMFADeviceFluentBuilder {
     /// Creates a new `DeleteVirtualMFADevice`.
@@ -40,10 +39,7 @@ impl DeleteVirtualMFADeviceFluentBuilder {
         }
     }
     /// Access the DeleteVirtualMFADevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteVirtualMFADeviceFluentBuilder {
             crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteVirtualMFADeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteVirtualMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteVirtualMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError>,
     > {
         self.send_middleware().await
     }
@@ -120,27 +107,19 @@ impl DeleteVirtualMFADeviceFluentBuilder {
             crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());
         self
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
     }

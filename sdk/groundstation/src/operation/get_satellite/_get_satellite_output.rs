@@ -57,9 +57,7 @@ impl GetSatelliteOutput {
 
 /// A builder for [`GetSatelliteOutput`](crate::operation::get_satellite::GetSatelliteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSatelliteOutputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) satellite_arn: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl GetSatelliteOutputBuilder {
         &self.satellite_id
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn set_satellite_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_satellite_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.satellite_arn = input;
         self
     }
@@ -122,27 +114,19 @@ impl GetSatelliteOutputBuilder {
     /// To override the contents of this collection use [`set_ground_stations`](Self::set_ground_stations).
     ///
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn ground_stations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_stations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ground_stations.unwrap_or_default();
         v.push(input.into());
         self.ground_stations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn set_ground_stations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ground_stations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ground_stations = input;
         self
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn get_ground_stations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ground_stations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ground_stations
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
@@ -151,10 +135,7 @@ impl GetSatelliteOutputBuilder {
         self
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    pub fn set_current_ephemeris(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemerisMetaData>,
-    ) -> Self {
+    pub fn set_current_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisMetaData>) -> Self {
         self.current_ephemeris = input;
         self
     }

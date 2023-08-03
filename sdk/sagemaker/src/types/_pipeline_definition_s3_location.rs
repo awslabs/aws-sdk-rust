@@ -37,9 +37,7 @@ impl PipelineDefinitionS3Location {
 
 /// A builder for [`PipelineDefinitionS3Location`](crate::types::PipelineDefinitionS3Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineDefinitionS3LocationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) object_key: ::std::option::Option<::std::string::String>,

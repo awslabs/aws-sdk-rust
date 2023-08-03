@@ -37,10 +37,7 @@ impl UpdateApnsVoipChannelFluentBuilder {
         }
     }
     /// Access the UpdateApnsVoipChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateApnsVoipChannelFluentBuilder {
             crate::operation::update_apns_voip_channel::UpdateApnsVoipChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateApnsVoipChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateApnsVoipChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateApnsVoipChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError>,
     > {
         self.send_middleware().await
     }
@@ -117,47 +105,31 @@ impl UpdateApnsVoipChannelFluentBuilder {
             crate::operation::update_apns_voip_channel::UpdateApnsVoipChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_request(
-        mut self,
-        input: crate::types::ApnsVoipChannelRequest,
-    ) -> Self {
+    pub fn apns_voip_channel_request(mut self, input: crate::types::ApnsVoipChannelRequest) -> Self {
         self.inner = self.inner.apns_voip_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn set_apns_voip_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsVoipChannelRequest>,
-    ) -> Self {
+    pub fn set_apns_voip_channel_request(mut self, input: ::std::option::Option<crate::types::ApnsVoipChannelRequest>) -> Self {
         self.inner = self.inner.set_apns_voip_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn get_apns_voip_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsVoipChannelRequest> {
+    pub fn get_apns_voip_channel_request(&self) -> &::std::option::Option<crate::types::ApnsVoipChannelRequest> {
         self.inner.get_apns_voip_channel_request()
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

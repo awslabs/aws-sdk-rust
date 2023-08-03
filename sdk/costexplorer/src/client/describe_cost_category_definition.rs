@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeCostCategoryDefinitionOutput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput) with field(s):
     ///   - [`cost_category(Option<CostCategory>)`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput::cost_category): <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
     /// - On failure, responds with [`SdkError<DescribeCostCategoryDefinitionError>`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError)
-    pub fn describe_cost_category_definition(&self) -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionFluentBuilder{
+    pub fn describe_cost_category_definition(
+        &self,
+    ) -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionFluentBuilder {
         crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

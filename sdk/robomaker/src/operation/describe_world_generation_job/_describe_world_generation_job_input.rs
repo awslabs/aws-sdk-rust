@@ -15,16 +15,14 @@ impl DescribeWorldGenerationJobInput {
 }
 impl DescribeWorldGenerationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobInput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput).
-    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder {
         crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorldGenerationJobInput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorldGenerationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeWorldGenerationJobInputBuilder {
         crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput {
-                job: self.job,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput { job: self.job })
     }
 }

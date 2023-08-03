@@ -29,16 +29,14 @@ impl ListFileSystemAssociationsInput {
 }
 impl ListFileSystemAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListFileSystemAssociationsInput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsInput).
-    pub fn builder() -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder {
         crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFileSystemAssociationsInput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFileSystemAssociationsInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListFileSystemAssociationsInputBuilder {
         crate::operation::list_file_system_associations::ListFileSystemAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_file_system_associations::ListFileSystemAssociationsInput {
-                gateway_arn: self.gateway_arn,
-                limit: self.limit,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_file_system_associations::ListFileSystemAssociationsInput {
+            gateway_arn: self.gateway_arn,
+            limit: self.limit,
+            marker: self.marker,
+        })
     }
 }

@@ -30,27 +30,19 @@ impl AuthorizationData {
 
 /// A builder for [`AuthorizationData`](crate::types::AuthorizationData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizationDataBuilder {
     pub(crate) authorization_token: ::std::option::Option<::std::string::String>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AuthorizationDataBuilder {
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it's presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
-    pub fn authorization_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it's presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
-    pub fn set_authorization_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_token = input;
         self
     }
@@ -64,10 +56,7 @@ impl AuthorizationDataBuilder {
         self
     }
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
-    pub fn set_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_at = input;
         self
     }

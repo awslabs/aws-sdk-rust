@@ -26,7 +26,7 @@ impl DeleteResourcePolicyStatementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyStatementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder,
+    inner: crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder,
 }
 impl DeleteResourcePolicyStatementFluentBuilder {
     /// Creates a new `DeleteResourcePolicyStatement`.
@@ -37,7 +37,7 @@ impl DeleteResourcePolicyStatementFluentBuilder {
         }
     }
     /// Access the DeleteResourcePolicyStatement as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteResourcePolicyStatementFluentBuilder {
             crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteResourcePolicyStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteResourcePolicyStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteResourcePolicyStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteResourcePolicyStatementFluentBuilder {
             crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -150,19 +139,13 @@ impl DeleteResourcePolicyStatementFluentBuilder {
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
-    pub fn expected_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_revision_id(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
-    pub fn set_expected_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
     }

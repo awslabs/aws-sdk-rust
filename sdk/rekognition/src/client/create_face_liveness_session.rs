@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput::session_id): <p>A unique 128-bit UUID identifying a Face Liveness session.</p>
     /// - On failure, responds with [`SdkError<CreateFaceLivenessSessionError>`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError)
-    pub fn create_face_liveness_session(&self) -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionFluentBuilder{
+    pub fn create_face_liveness_session(&self) -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionFluentBuilder {
         crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionFluentBuilder::new(self.handle.clone())
     }
 }

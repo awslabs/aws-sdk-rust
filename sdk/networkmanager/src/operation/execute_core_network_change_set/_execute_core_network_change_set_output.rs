@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ExecuteCoreNetworkChangeSetOutput {
 }
 impl ExecuteCoreNetworkChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteCoreNetworkChangeSetOutput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput).
-    pub fn builder() -> crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetOutputBuilder{
+    pub fn builder() -> crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetOutputBuilder {
         crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteCoreNetworkChangeSetOutput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCoreNetworkChangeSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ExecuteCoreNetworkChangeSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExecuteCoreNetworkChangeSetOutput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput {
+    pub fn build(self) -> crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput {
         crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput {
             _request_id: self._request_id,
         }

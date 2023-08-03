@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for AdminDeleteUserAttributesOutput {
 }
 impl AdminDeleteUserAttributesOutput {
     /// Creates a new builder-style object to manufacture [`AdminDeleteUserAttributesOutput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput).
-    pub fn builder() -> crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesOutputBuilder {
         crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminDeleteUserAttributesOutput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminDeleteUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl AdminDeleteUserAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminDeleteUserAttributesOutput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput {
+    pub fn build(self) -> crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput {
         crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput {
             _request_id: self._request_id,
         }

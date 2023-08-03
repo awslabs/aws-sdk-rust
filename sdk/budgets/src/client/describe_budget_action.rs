@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`budget_name(Option<String>)`](crate::operation::describe_budget_action::DescribeBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action(Option<Action>)`](crate::operation::describe_budget_action::DescribeBudgetActionOutput::action): <p> A budget action resource. </p>
     /// - On failure, responds with [`SdkError<DescribeBudgetActionError>`](crate::operation::describe_budget_action::DescribeBudgetActionError)
-    pub fn describe_budget_action(
-        &self,
-    ) -> crate::operation::describe_budget_action::builders::DescribeBudgetActionFluentBuilder {
-        crate::operation::describe_budget_action::builders::DescribeBudgetActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_budget_action(&self) -> crate::operation::describe_budget_action::builders::DescribeBudgetActionFluentBuilder {
+        crate::operation::describe_budget_action::builders::DescribeBudgetActionFluentBuilder::new(self.handle.clone())
     }
 }

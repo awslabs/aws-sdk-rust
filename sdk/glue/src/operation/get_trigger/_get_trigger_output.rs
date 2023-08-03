@@ -28,9 +28,7 @@ impl GetTriggerOutput {
 
 /// A builder for [`GetTriggerOutput`](crate::operation::get_trigger::GetTriggerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTriggerOutputBuilder {
     pub(crate) trigger: ::std::option::Option<crate::types::Trigger>,
     _request_id: Option<String>,

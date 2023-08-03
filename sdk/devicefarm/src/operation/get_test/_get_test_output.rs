@@ -29,9 +29,7 @@ impl GetTestOutput {
 
 /// A builder for [`GetTestOutput`](crate::operation::get_test::GetTestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestOutputBuilder {
     pub(crate) test: ::std::option::Option<crate::types::Test>,
     _request_id: Option<String>,

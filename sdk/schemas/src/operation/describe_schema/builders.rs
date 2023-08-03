@@ -10,10 +10,7 @@ impl DescribeSchemaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_schema::DescribeSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_schema::DescribeSchemaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_schema::DescribeSchemaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_schema();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSchemaFluentBuilder {
         }
     }
     /// Access the DescribeSchema as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_schema::builders::DescribeSchemaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_schema::builders::DescribeSchemaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl DescribeSchemaFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
@@ -149,18 +135,12 @@ impl DescribeSchemaFluentBuilder {
         self.inner.get_schema_name()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version(input);
         self
     }

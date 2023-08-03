@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::update_access::UpdateAccessOutput::server_id): <p>The identifier of the server that the user is attached to.</p>
     ///   - [`external_id(Option<String>)`](crate::operation::update_access::UpdateAccessOutput::external_id): <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     /// - On failure, responds with [`SdkError<UpdateAccessError>`](crate::operation::update_access::UpdateAccessError)
-    pub fn update_access(
-        &self,
-    ) -> crate::operation::update_access::builders::UpdateAccessFluentBuilder {
-        crate::operation::update_access::builders::UpdateAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_access(&self) -> crate::operation::update_access::builders::UpdateAccessFluentBuilder {
+        crate::operation::update_access::builders::UpdateAccessFluentBuilder::new(self.handle.clone())
     }
 }

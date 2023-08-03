@@ -10,10 +10,7 @@ impl CreateAllowListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_allow_list::CreateAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_allow_list::CreateAllowListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_allow_list::CreateAllowListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_allow_list();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAllowListFluentBuilder {
         }
     }
     /// Access the CreateAllowList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_allow_list::builders::CreateAllowListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_allow_list::builders::CreateAllowListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAllowListFluentBuilder {
             crate::operation::create_allow_list::CreateAllowList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_allow_list::CreateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_allow_list::CreateAllowListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAllowListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAllowListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_allow_list::CreateAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_allow_list::CreateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_allow_list::CreateAllowListError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAllowListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_allow_list::CreateAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_allow_list::CreateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_allow_list::CreateAllowListError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateAllowListFluentBuilder {
             crate::operation::create_allow_list::CreateAllowList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_allow_list::CreateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_allow_list::CreateAllowListError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl CreateAllowListFluentBuilder {
         self
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowListCriteria>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AllowListCriteria>) -> Self {
         self.inner = self.inner.set_criteria(input);
         self
     }
@@ -187,32 +168,19 @@ impl CreateAllowListFluentBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<VodSource>>)`](crate::operation::list_vod_sources::ListVodSourcesOutput::items): <p>Lists the VOD sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vod_sources::ListVodSourcesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVodSourcesError>`](crate::operation::list_vod_sources::ListVodSourcesError)
-    pub fn list_vod_sources(
-        &self,
-    ) -> crate::operation::list_vod_sources::builders::ListVodSourcesFluentBuilder {
-        crate::operation::list_vod_sources::builders::ListVodSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vod_sources(&self) -> crate::operation::list_vod_sources::builders::ListVodSourcesFluentBuilder {
+        crate::operation::list_vod_sources::builders::ListVodSourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateFlowSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_flow_source::UpdateFlowSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_source::UpdateFlowSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_flow_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFlowSourceFluentBuilder {
         }
     }
     /// Access the UpdateFlowSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateFlowSourceFluentBuilder {
             crate::operation::update_flow_source::UpdateFlowSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_source::UpdateFlowSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateFlowSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateFlowSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_source::UpdateFlowSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_source::UpdateFlowSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateFlowSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_source::UpdateFlowSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_source::UpdateFlowSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateFlowSourceFluentBuilder {
             crate::operation::update_flow_source::UpdateFlowSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_source::UpdateFlowSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl UpdateFlowSourceFluentBuilder {
         self
     }
     /// The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
-    pub fn set_decryption(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateEncryption>,
-    ) -> Self {
+    pub fn set_decryption(mut self, input: ::std::option::Option<crate::types::UpdateEncryption>) -> Self {
         self.inner = self.inner.set_decryption(input);
         self
     }
@@ -154,18 +135,12 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner.get_description()
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entitlement_arn(input.into());
         self
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entitlement_arn(input);
         self
     }
@@ -248,19 +223,14 @@ impl UpdateFlowSourceFluentBuilder {
     /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
     ///
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(
-        mut self,
-        input: crate::types::MediaStreamSourceConfigurationRequest,
-    ) -> Self {
+    pub fn media_stream_source_configurations(mut self, input: crate::types::MediaStreamSourceConfigurationRequest) -> Self {
         self.inner = self.inner.media_stream_source_configurations(input);
         self
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
     pub fn set_media_stream_source_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
     ) -> Self {
         self.inner = self.inner.set_media_stream_source_configurations(input);
         self
@@ -268,8 +238,7 @@ impl UpdateFlowSourceFluentBuilder {
     /// The media streams that are associated with the source, and the parameters for those associations.
     pub fn get_media_stream_source_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>> {
         self.inner.get_media_stream_source_configurations()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -315,18 +284,12 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner.get_sender_control_port()
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_ip_address(input.into());
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_ip_address(input);
         self
     }
@@ -349,18 +312,12 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner.get_source_arn()
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_listener_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_listener_address(input.into());
         self
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn set_source_listener_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_listener_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_listener_address(input);
         self
     }
@@ -397,18 +354,12 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner.get_stream_id()
     }
     /// The name of the VPC interface to use for this source.
-    pub fn vpc_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_interface_name(input.into());
         self
     }
     /// The name of the VPC interface to use for this source.
-    pub fn set_vpc_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_interface_name(input);
         self
     }
@@ -417,18 +368,12 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner.get_vpc_interface_name()
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn whitelist_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn whitelist_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.whitelist_cidr(input.into());
         self
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_whitelist_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_whitelist_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_whitelist_cidr(input);
         self
     }
@@ -437,25 +382,17 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner.get_whitelist_cidr()
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn gateway_bridge_source(
-        mut self,
-        input: crate::types::UpdateGatewayBridgeSourceRequest,
-    ) -> Self {
+    pub fn gateway_bridge_source(mut self, input: crate::types::UpdateGatewayBridgeSourceRequest) -> Self {
         self.inner = self.inner.gateway_bridge_source(input);
         self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn set_gateway_bridge_source(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest>,
-    ) -> Self {
+    pub fn set_gateway_bridge_source(mut self, input: ::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest>) -> Self {
         self.inner = self.inner.set_gateway_bridge_source(input);
         self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn get_gateway_bridge_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest> {
+    pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest> {
         self.inner.get_gateway_bridge_source()
     }
 }

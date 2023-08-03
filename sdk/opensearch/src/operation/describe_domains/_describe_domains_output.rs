@@ -29,12 +29,9 @@ impl DescribeDomainsOutput {
 
 /// A builder for [`DescribeDomainsOutput`](crate::operation::describe_domains::DescribeDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainsOutputBuilder {
-    pub(crate) domain_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
+    pub(crate) domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainsOutputBuilder {
@@ -50,17 +47,12 @@ impl DescribeDomainsOutputBuilder {
         self
     }
     /// <p>The status of the requested domains.</p>
-    pub fn set_domain_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
-    ) -> Self {
+    pub fn set_domain_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>) -> Self {
         self.domain_status_list = input;
         self
     }
     /// <p>The status of the requested domains.</p>
-    pub fn get_domain_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>> {
+    pub fn get_domain_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>> {
         &self.domain_status_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

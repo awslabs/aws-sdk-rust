@@ -5,16 +5,16 @@ pub use crate::operation::batch_associate_resources_to_custom_line_item::_batch_
 
 impl BatchAssociateResourcesToCustomLineItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_associate_resources_to_custom_line_item();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemInputBuilder,
+    inner: crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemInputBuilder,
 }
 impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
     /// Creates a new `BatchAssociateResourcesToCustomLineItem`.
@@ -37,15 +37,24 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
         }
     }
     /// Access the BatchAssociateResourcesToCustomLineItem as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
@@ -113,47 +138,31 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p> A list containing the ARNs of the resources to be associated. </p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p> A list containing the ARNs of the resources to be associated. </p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p> A list containing the ARNs of the resources to be associated. </p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(
-        mut self,
-        input: crate::types::CustomLineItemBillingPeriodRange,
-    ) -> Self {
+    pub fn billing_period_range(mut self, input: crate::types::CustomLineItemBillingPeriodRange) -> Self {
         self.inner = self.inner.billing_period_range(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn set_billing_period_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    ) -> Self {
+    pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn get_billing_period_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         self.inner.get_billing_period_range()
     }
 }

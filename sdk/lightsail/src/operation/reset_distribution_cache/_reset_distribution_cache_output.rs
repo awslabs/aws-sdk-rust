@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ResetDistributionCacheOutput {
 }
 impl ResetDistributionCacheOutput {
     /// Creates a new builder-style object to manufacture [`ResetDistributionCacheOutput`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder {
         crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetDistributionCacheOutput`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetDistributionCacheOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +70,7 @@ impl ResetDistributionCacheOutputBuilder {
         self
     }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }

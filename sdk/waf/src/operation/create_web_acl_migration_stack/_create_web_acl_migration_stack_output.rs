@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateWebAclMigrationStackOutput {
 }
 impl CreateWebAclMigrationStackOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackOutput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput).
-    pub fn builder() -> crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackOutputBuilder{
+    pub fn builder() -> crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackOutputBuilder {
         crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWebAclMigrationStackOutput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebAclMigrationStackOutputBuilder {
     pub(crate) s3_object_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateWebAclMigrationStackOutputBuilder {
     /// <p>The URL of the template created in Amazon S3. </p>
-    pub fn s3_object_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_object_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_object_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the template created in Amazon S3. </p>
-    pub fn set_s3_object_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_object_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_object_url = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateWebAclMigrationStackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWebAclMigrationStackOutput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput {
+    pub fn build(self) -> crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput {
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput {
             s3_object_url: self.s3_object_url,
             _request_id: self._request_id,

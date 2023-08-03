@@ -44,9 +44,7 @@ impl TableDataImportJobMetadata {
 
 /// A builder for [`TableDataImportJobMetadata`](crate::types::TableDataImportJobMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableDataImportJobMetadataBuilder {
     pub(crate) submitter: ::std::option::Option<crate::types::ImportJobSubmitter>,
     pub(crate) submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,10 +58,7 @@ impl TableDataImportJobMetadataBuilder {
         self
     }
     /// <p>Details about the submitter of the import request.</p>
-    pub fn set_submitter(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobSubmitter>,
-    ) -> Self {
+    pub fn set_submitter(mut self, input: ::std::option::Option<crate::types::ImportJobSubmitter>) -> Self {
         self.submitter = input;
         self
     }
@@ -77,10 +72,7 @@ impl TableDataImportJobMetadataBuilder {
         self
     }
     /// <p>The timestamp when the job was submitted for import.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }
@@ -94,10 +86,7 @@ impl TableDataImportJobMetadataBuilder {
         self
     }
     /// <p>The options that was specified at the time of submitting the import request.</p>
-    pub fn set_import_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportOptions>,
-    ) -> Self {
+    pub fn set_import_options(mut self, input: ::std::option::Option<crate::types::ImportOptions>) -> Self {
         self.import_options = input;
         self
     }
@@ -111,10 +100,7 @@ impl TableDataImportJobMetadataBuilder {
         self
     }
     /// <p>The source of the data that was submitted for import.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::ImportDataSource>) -> Self {
         self.data_source = input;
         self
     }

@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_crawler::builders::CreateCrawlerFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_crawler::builders::CreateCrawlerFluentBuilder::set_tags): <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     /// - On success, responds with [`CreateCrawlerOutput`](crate::operation::create_crawler::CreateCrawlerOutput)
     /// - On failure, responds with [`SdkError<CreateCrawlerError>`](crate::operation::create_crawler::CreateCrawlerError)
-    pub fn create_crawler(
-        &self,
-    ) -> crate::operation::create_crawler::builders::CreateCrawlerFluentBuilder {
-        crate::operation::create_crawler::builders::CreateCrawlerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_crawler(&self) -> crate::operation::create_crawler::builders::CreateCrawlerFluentBuilder {
+        crate::operation::create_crawler::builders::CreateCrawlerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`cluster_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster to delete a custom domain association for.</p>
     /// - On success, responds with [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomDomainAssociationError>`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError)
-    pub fn delete_custom_domain_association(&self) -> crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder{
+    pub fn delete_custom_domain_association(
+        &self,
+    ) -> crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder {
         crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::new(self.handle.clone())
     }
 }

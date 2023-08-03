@@ -37,9 +37,7 @@ impl ListScheduledQueriesFluentBuilder {
         }
     }
     /// Access the ListScheduledQueries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_scheduled_queries::builders::ListScheduledQueriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_scheduled_queries::builders::ListScheduledQueriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListScheduledQueriesFluentBuilder {
             crate::operation::list_scheduled_queries::ListScheduledQueries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListScheduledQueriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListScheduledQueriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduled_queries::ListScheduledQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListScheduledQueriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduled_queries::ListScheduledQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListScheduledQueriesFluentBuilder {
             crate::operation::list_scheduled_queries::ListScheduledQueries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator {
-        crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator {
+        crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of items to return in the output. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as the argument to the subsequent call to <code>ListScheduledQueriesRequest</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {

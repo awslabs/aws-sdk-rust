@@ -51,9 +51,7 @@ impl RouteSettings {
 
 /// A builder for [`RouteSettings`](crate::types::RouteSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteSettingsBuilder {
     pub(crate) data_trace_enabled: ::std::option::Option<bool>,
     pub(crate) detailed_metrics_enabled: ::std::option::Option<bool>,
@@ -96,10 +94,7 @@ impl RouteSettingsBuilder {
         self
     }
     /// <p>Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
-    pub fn set_logging_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingLevel>,
-    ) -> Self {
+    pub fn set_logging_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
         self.logging_level = input;
         self
     }

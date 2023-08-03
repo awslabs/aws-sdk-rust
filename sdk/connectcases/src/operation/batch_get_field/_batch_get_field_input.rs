@@ -29,9 +29,7 @@ impl BatchGetFieldInput {
 
 /// A builder for [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFieldInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
@@ -63,26 +61,18 @@ impl BatchGetFieldInputBuilder {
         self
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_field::BatchGetFieldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_field::BatchGetFieldInput {
             domain_id: self.domain_id,
             fields: self.fields,

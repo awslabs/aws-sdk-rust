@@ -38,9 +38,7 @@ impl GetVocabularyFilterFluentBuilder {
         }
     }
     /// Access the GetVocabularyFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetVocabularyFilterFluentBuilder {
             crate::operation::get_vocabulary_filter::GetVocabularyFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vocabulary_filter::GetVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vocabulary_filter::GetVocabularyFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetVocabularyFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetVocabularyFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vocabulary_filter::GetVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vocabulary_filter::GetVocabularyFilterError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetVocabularyFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vocabulary_filter::GetVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vocabulary_filter::GetVocabularyFilterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl GetVocabularyFilterFluentBuilder {
             crate::operation::get_vocabulary_filter::GetVocabularyFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vocabulary_filter::GetVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vocabulary_filter::GetVocabularyFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_filter_name(input.into());
         self
     }
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_filter_name(input);
         self
     }

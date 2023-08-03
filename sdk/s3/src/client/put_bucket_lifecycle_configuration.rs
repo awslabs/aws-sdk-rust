@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketLifecycleConfigurationOutput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutBucketLifecycleConfigurationError>`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError)
-    pub fn put_bucket_lifecycle_configuration(&self) -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationFluentBuilder{
+    pub fn put_bucket_lifecycle_configuration(
+        &self,
+    ) -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationFluentBuilder {
         crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

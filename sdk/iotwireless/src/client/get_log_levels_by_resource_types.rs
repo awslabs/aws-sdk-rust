@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`wireless_gateway_log_options(Option<Vec<WirelessGatewayLogOption>>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
     ///   - [`wireless_device_log_options(Option<Vec<WirelessDeviceLogOption>>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::wireless_device_log_options): <p>The list of wireless device log options.</p>
     /// - On failure, responds with [`SdkError<GetLogLevelsByResourceTypesError>`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError)
-    pub fn get_log_levels_by_resource_types(&self) -> crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesFluentBuilder{
+    pub fn get_log_levels_by_resource_types(
+        &self,
+    ) -> crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesFluentBuilder {
         crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`monitoring_schedule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>The name of the monitoring schedule to delete.</p>
     /// - On success, responds with [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteMonitoringScheduleError>`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleError)
-    pub fn delete_monitoring_schedule(
-        &self,
-    ) -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleFluentBuilder
-    {
+    pub fn delete_monitoring_schedule(&self) -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleFluentBuilder {
         crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleFluentBuilder::new(self.handle.clone())
     }
 }

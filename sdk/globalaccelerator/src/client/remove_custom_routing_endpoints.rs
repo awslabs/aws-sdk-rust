@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     /// - On success, responds with [`RemoveCustomRoutingEndpointsOutput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput)
     /// - On failure, responds with [`SdkError<RemoveCustomRoutingEndpointsError>`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsError)
-    pub fn remove_custom_routing_endpoints(&self) -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsFluentBuilder{
+    pub fn remove_custom_routing_endpoints(
+        &self,
+    ) -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsFluentBuilder {
         crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

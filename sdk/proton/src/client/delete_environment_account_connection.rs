@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteEnvironmentAccountConnectionOutput`](crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput::environment_account_connection): <p>The detailed data of the environment account connection being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentAccountConnectionError>`](crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionError)
-    pub fn delete_environment_account_connection(&self) -> crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionFluentBuilder{
+    pub fn delete_environment_account_connection(
+        &self,
+    ) -> crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionFluentBuilder {
         crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionFluentBuilder::new(self.handle.clone())
     }
 }

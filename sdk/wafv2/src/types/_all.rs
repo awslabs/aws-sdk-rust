@@ -15,9 +15,7 @@ impl All {
 
 /// A builder for [`All`](crate::types::All).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllBuilder {}
 impl AllBuilder {
     /// Consumes the builder and constructs a [`All`](crate::types::All).

@@ -51,9 +51,7 @@ impl AwsGroundStationAgentEndpoint {
 
 /// A builder for [`AwsGroundStationAgentEndpoint`](crate::types::AwsGroundStationAgentEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsGroundStationAgentEndpointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) egress_address: ::std::option::Option<crate::types::ConnectionDetails>,
@@ -82,10 +80,7 @@ impl AwsGroundStationAgentEndpointBuilder {
         self
     }
     /// <p>The egress address of AgentEndpoint.</p>
-    pub fn set_egress_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionDetails>,
-    ) -> Self {
+    pub fn set_egress_address(mut self, input: ::std::option::Option<crate::types::ConnectionDetails>) -> Self {
         self.egress_address = input;
         self
     }
@@ -99,17 +94,12 @@ impl AwsGroundStationAgentEndpointBuilder {
         self
     }
     /// <p>The ingress address of AgentEndpoint.</p>
-    pub fn set_ingress_address(
-        mut self,
-        input: ::std::option::Option<crate::types::RangedConnectionDetails>,
-    ) -> Self {
+    pub fn set_ingress_address(mut self, input: ::std::option::Option<crate::types::RangedConnectionDetails>) -> Self {
         self.ingress_address = input;
         self
     }
     /// <p>The ingress address of AgentEndpoint.</p>
-    pub fn get_ingress_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::RangedConnectionDetails> {
+    pub fn get_ingress_address(&self) -> &::std::option::Option<crate::types::RangedConnectionDetails> {
         &self.ingress_address
     }
     /// <p>The status of AgentEndpoint.</p>
@@ -118,10 +108,7 @@ impl AwsGroundStationAgentEndpointBuilder {
         self
     }
     /// <p>The status of AgentEndpoint.</p>
-    pub fn set_agent_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentStatus>,
-    ) -> Self {
+    pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.agent_status = input;
         self
     }
@@ -135,10 +122,7 @@ impl AwsGroundStationAgentEndpointBuilder {
         self
     }
     /// <p>The results of the audit.</p>
-    pub fn set_audit_results(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditResults>,
-    ) -> Self {
+    pub fn set_audit_results(mut self, input: ::std::option::Option<crate::types::AuditResults>) -> Self {
         self.audit_results = input;
         self
     }

@@ -23,9 +23,7 @@ impl CreateTransitGatewayConnectRequestOptions {
 
 /// A builder for [`CreateTransitGatewayConnectRequestOptions`](crate::types::CreateTransitGatewayConnectRequestOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectRequestOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolValue>,
 }
@@ -36,10 +34,7 @@ impl CreateTransitGatewayConnectRequestOptionsBuilder {
         self
     }
     /// <p>The tunnel protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolValue>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolValue>) -> Self {
         self.protocol = input;
         self
     }
@@ -49,8 +44,6 @@ impl CreateTransitGatewayConnectRequestOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectRequestOptions`](crate::types::CreateTransitGatewayConnectRequestOptions).
     pub fn build(self) -> crate::types::CreateTransitGatewayConnectRequestOptions {
-        crate::types::CreateTransitGatewayConnectRequestOptions {
-            protocol: self.protocol,
-        }
+        crate::types::CreateTransitGatewayConnectRequestOptions { protocol: self.protocol }
     }
 }

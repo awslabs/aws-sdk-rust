@@ -6,10 +6,7 @@ pub fn ser_start_document_text_detection_input(
     if let Some(var_1) = &input.document_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DocumentLocation").start_object();
-        crate::protocol_serde::shape_document_location::ser_document_location(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_document_location::ser_document_location(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.client_request_token {
@@ -21,10 +18,7 @@ pub fn ser_start_document_text_detection_input(
     if let Some(var_5) = &input.notification_channel {
         #[allow(unused_mut)]
         let mut object_6 = object.key("NotificationChannel").start_object();
-        crate::protocol_serde::shape_notification_channel::ser_notification_channel(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_notification_channel::ser_notification_channel(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.output_config {

@@ -65,9 +65,7 @@ impl Counters {
 
 /// A builder for [`Counters`](crate::types::Counters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountersBuilder {
     pub(crate) total: ::std::option::Option<i32>,
     pub(crate) passed: ::std::option::Option<i32>,

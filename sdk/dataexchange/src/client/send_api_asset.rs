@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`body(Option<String>)`](crate::operation::send_api_asset::SendApiAssetOutput::body): <p>The response body from the underlying API tracked by the API asset.</p>
     ///   - [`response_headers(Option<HashMap<String, String>>)`](crate::operation::send_api_asset::SendApiAssetOutput::response_headers): <p>The response headers from the underlying API tracked by the API asset.</p>
     /// - On failure, responds with [`SdkError<SendApiAssetError>`](crate::operation::send_api_asset::SendApiAssetError)
-    pub fn send_api_asset(
-        &self,
-    ) -> crate::operation::send_api_asset::builders::SendApiAssetFluentBuilder {
-        crate::operation::send_api_asset::builders::SendApiAssetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_api_asset(&self) -> crate::operation::send_api_asset::builders::SendApiAssetFluentBuilder {
+        crate::operation::send_api_asset::builders::SendApiAssetFluentBuilder::new(self.handle.clone())
     }
 }

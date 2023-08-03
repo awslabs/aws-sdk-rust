@@ -9,75 +9,67 @@ pub fn de_list_realtime_log_configs_http_error(
     crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidArgument" => crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchRealtimeLogConfig" => crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::NoSuchRealtimeLogConfig({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output).map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
+                output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::generic(generic)
+        _ => crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::generic(generic),
     })
 }
 
@@ -94,11 +86,9 @@ pub fn de_list_realtime_log_configs_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsOutputBuilder::default();
         output = output.set_realtime_log_configs(
-            crate::protocol_serde::shape_list_realtime_log_configs_output::de_realtime_log_configs_payload(_response_body)?
+            crate::protocol_serde::shape_list_realtime_log_configs_output::de_realtime_log_configs_payload(_response_body)?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DecisionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -97,17 +91,13 @@ impl ::std::convert::From<&str> for DecisionType {
             "FailWorkflowExecution" => DecisionType::FailWorkflowExecution,
             "RecordMarker" => DecisionType::RecordMarker,
             "RequestCancelActivityTask" => DecisionType::RequestCancelActivityTask,
-            "RequestCancelExternalWorkflowExecution" => {
-                DecisionType::RequestCancelExternalWorkflowExecution
-            }
+            "RequestCancelExternalWorkflowExecution" => DecisionType::RequestCancelExternalWorkflowExecution,
             "ScheduleActivityTask" => DecisionType::ScheduleActivityTask,
             "ScheduleLambdaFunction" => DecisionType::ScheduleLambdaFunction,
             "SignalExternalWorkflowExecution" => DecisionType::SignalExternalWorkflowExecution,
             "StartChildWorkflowExecution" => DecisionType::StartChildWorkflowExecution,
             "StartTimer" => DecisionType::StartTimer,
-            other => {
-                DecisionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DecisionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -129,9 +119,7 @@ impl DecisionType {
             DecisionType::FailWorkflowExecution => "FailWorkflowExecution",
             DecisionType::RecordMarker => "RecordMarker",
             DecisionType::RequestCancelActivityTask => "RequestCancelActivityTask",
-            DecisionType::RequestCancelExternalWorkflowExecution => {
-                "RequestCancelExternalWorkflowExecution"
-            }
+            DecisionType::RequestCancelExternalWorkflowExecution => "RequestCancelExternalWorkflowExecution",
             DecisionType::ScheduleActivityTask => "ScheduleActivityTask",
             DecisionType::ScheduleLambdaFunction => "ScheduleLambdaFunction",
             DecisionType::SignalExternalWorkflowExecution => "SignalExternalWorkflowExecution",

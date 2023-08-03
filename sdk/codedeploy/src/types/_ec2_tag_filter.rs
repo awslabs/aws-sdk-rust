@@ -47,9 +47,7 @@ impl Ec2TagFilter {
 
 /// A builder for [`Ec2TagFilter`](crate::types::Ec2TagFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2TagFilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -100,10 +98,7 @@ impl Ec2TagFilterBuilder {
     /// <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li>
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2TagFilterType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Ec2TagFilterType>) -> Self {
         self.r#type = input;
         self
     }

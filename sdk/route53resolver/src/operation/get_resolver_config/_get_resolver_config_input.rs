@@ -15,17 +15,14 @@ impl GetResolverConfigInput {
 }
 impl GetResolverConfigInput {
     /// Creates a new builder-style object to manufacture [`GetResolverConfigInput`](crate::operation::get_resolver_config::GetResolverConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_config::builders::GetResolverConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_resolver_config::builders::GetResolverConfigInputBuilder {
         crate::operation::get_resolver_config::builders::GetResolverConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverConfigInput`](crate::operation::get_resolver_config::GetResolverConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetResolverConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverConfigInput`](crate::operation::get_resolver_config::GetResolverConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resolver_config::GetResolverConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resolver_config::GetResolverConfigInput {
-                resource_id: self.resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resolver_config::GetResolverConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_resolver_config::GetResolverConfigInput {
+            resource_id: self.resource_id,
+        })
     }
 }

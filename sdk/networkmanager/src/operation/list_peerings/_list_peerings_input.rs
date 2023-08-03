@@ -57,9 +57,7 @@ impl ListPeeringsInput {
 
 /// A builder for [`ListPeeringsInput`](crate::operation::list_peerings::ListPeeringsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPeeringsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_type: ::std::option::Option<crate::types::PeeringType>,
@@ -70,18 +68,12 @@ pub struct ListPeeringsInputBuilder {
 }
 impl ListPeeringsInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -95,10 +87,7 @@ impl ListPeeringsInputBuilder {
         self
     }
     /// <p>Returns a list of a peering requests.</p>
-    pub fn set_peering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringType>,
-    ) -> Self {
+    pub fn set_peering_type(mut self, input: ::std::option::Option<crate::types::PeeringType>) -> Self {
         self.peering_type = input;
         self
     }
@@ -107,18 +96,12 @@ impl ListPeeringsInputBuilder {
         &self.peering_type
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -169,12 +152,7 @@ impl ListPeeringsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPeeringsInput`](crate::operation::list_peerings::ListPeeringsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_peerings::ListPeeringsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_peerings::ListPeeringsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_peerings::ListPeeringsInput {
             core_network_id: self.core_network_id,
             peering_type: self.peering_type,

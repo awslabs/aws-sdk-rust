@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`index_name(Option<String>)`](crate::operation::update_contributor_insights::UpdateContributorInsightsOutput::index_name): <p>The name of the global secondary index, if applicable.</p>
     ///   - [`contributor_insights_status(Option<ContributorInsightsStatus>)`](crate::operation::update_contributor_insights::UpdateContributorInsightsOutput::contributor_insights_status): <p>The status of contributor insights</p>
     /// - On failure, responds with [`SdkError<UpdateContributorInsightsError>`](crate::operation::update_contributor_insights::UpdateContributorInsightsError)
-    pub fn update_contributor_insights(&self) -> crate::operation::update_contributor_insights::builders::UpdateContributorInsightsFluentBuilder{
+    pub fn update_contributor_insights(&self) -> crate::operation::update_contributor_insights::builders::UpdateContributorInsightsFluentBuilder {
         crate::operation::update_contributor_insights::builders::UpdateContributorInsightsFluentBuilder::new(self.handle.clone())
     }
 }

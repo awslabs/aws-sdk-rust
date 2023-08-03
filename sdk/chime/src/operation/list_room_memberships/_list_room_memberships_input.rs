@@ -36,18 +36,14 @@ impl ListRoomMembershipsInput {
 }
 impl ListRoomMembershipsInput {
     /// Creates a new builder-style object to manufacture [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
-    pub fn builder(
-    ) -> crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder {
-        crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder {
+        crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomMembershipsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl ListRoomMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_room_memberships::ListRoomMembershipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_room_memberships::ListRoomMembershipsInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_room_memberships::ListRoomMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_room_memberships::ListRoomMembershipsInput {
+            account_id: self.account_id,
+            room_id: self.room_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

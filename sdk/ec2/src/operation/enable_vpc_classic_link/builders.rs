@@ -40,10 +40,7 @@ impl EnableVpcClassicLinkFluentBuilder {
         }
     }
     /// Access the EnableVpcClassicLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl EnableVpcClassicLinkFluentBuilder {
             crate::operation::enable_vpc_classic_link::EnableVpcClassicLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl EnableVpcClassicLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl EnableVpcClassicLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl EnableVpcClassicLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl EnableVpcClassicLinkFluentBuilder {
             crate::operation::enable_vpc_classic_link::EnableVpcClassicLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError>,
     > {
         self.customize_middleware().await
     }

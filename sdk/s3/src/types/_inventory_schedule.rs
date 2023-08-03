@@ -23,9 +23,7 @@ impl InventorySchedule {
 
 /// A builder for [`InventorySchedule`](crate::types::InventorySchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryScheduleBuilder {
     pub(crate) frequency: ::std::option::Option<crate::types::InventoryFrequency>,
 }
@@ -36,10 +34,7 @@ impl InventoryScheduleBuilder {
         self
     }
     /// <p>Specifies how frequently inventory results are produced.</p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::InventoryFrequency>) -> Self {
         self.frequency = input;
         self
     }
@@ -49,8 +44,6 @@ impl InventoryScheduleBuilder {
     }
     /// Consumes the builder and constructs a [`InventorySchedule`](crate::types::InventorySchedule).
     pub fn build(self) -> crate::types::InventorySchedule {
-        crate::types::InventorySchedule {
-            frequency: self.frequency,
-        }
+        crate::types::InventorySchedule { frequency: self.frequency }
     }
 }

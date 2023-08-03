@@ -37,9 +37,7 @@ impl AccountTakeoverActionsType {
 
 /// A builder for [`AccountTakeoverActionsType`](crate::types::AccountTakeoverActionsType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountTakeoverActionsTypeBuilder {
     pub(crate) low_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,
     pub(crate) medium_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,
@@ -52,17 +50,12 @@ impl AccountTakeoverActionsTypeBuilder {
         self
     }
     /// <p>Action to take for a low risk.</p>
-    pub fn set_low_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverActionType>,
-    ) -> Self {
+    pub fn set_low_action(mut self, input: ::std::option::Option<crate::types::AccountTakeoverActionType>) -> Self {
         self.low_action = input;
         self
     }
     /// <p>Action to take for a low risk.</p>
-    pub fn get_low_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountTakeoverActionType> {
+    pub fn get_low_action(&self) -> &::std::option::Option<crate::types::AccountTakeoverActionType> {
         &self.low_action
     }
     /// <p>Action to take for a medium risk.</p>
@@ -71,17 +64,12 @@ impl AccountTakeoverActionsTypeBuilder {
         self
     }
     /// <p>Action to take for a medium risk.</p>
-    pub fn set_medium_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverActionType>,
-    ) -> Self {
+    pub fn set_medium_action(mut self, input: ::std::option::Option<crate::types::AccountTakeoverActionType>) -> Self {
         self.medium_action = input;
         self
     }
     /// <p>Action to take for a medium risk.</p>
-    pub fn get_medium_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountTakeoverActionType> {
+    pub fn get_medium_action(&self) -> &::std::option::Option<crate::types::AccountTakeoverActionType> {
         &self.medium_action
     }
     /// <p>Action to take for a high risk.</p>
@@ -90,17 +78,12 @@ impl AccountTakeoverActionsTypeBuilder {
         self
     }
     /// <p>Action to take for a high risk.</p>
-    pub fn set_high_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverActionType>,
-    ) -> Self {
+    pub fn set_high_action(mut self, input: ::std::option::Option<crate::types::AccountTakeoverActionType>) -> Self {
         self.high_action = input;
         self
     }
     /// <p>Action to take for a high risk.</p>
-    pub fn get_high_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountTakeoverActionType> {
+    pub fn get_high_action(&self) -> &::std::option::Option<crate::types::AccountTakeoverActionType> {
         &self.high_action
     }
     /// Consumes the builder and constructs a [`AccountTakeoverActionsType`](crate::types::AccountTakeoverActionsType).

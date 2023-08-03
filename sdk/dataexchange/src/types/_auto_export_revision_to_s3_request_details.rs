@@ -9,8 +9,7 @@ pub struct AutoExportRevisionToS3RequestDetails {
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
     #[doc(hidden)]
-    pub revision_destination:
-        ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,
+    pub revision_destination: ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,
 }
 impl AutoExportRevisionToS3RequestDetails {
     /// <p>Encryption configuration for the auto export job.</p>
@@ -18,9 +17,7 @@ impl AutoExportRevisionToS3RequestDetails {
         self.encryption.as_ref()
     }
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
-    pub fn revision_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoExportRevisionDestinationEntry> {
+    pub fn revision_destination(&self) -> ::std::option::Option<&crate::types::AutoExportRevisionDestinationEntry> {
         self.revision_destination.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl AutoExportRevisionToS3RequestDetails {
 
 /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::types::AutoExportRevisionToS3RequestDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoExportRevisionToS3RequestDetailsBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
-    pub(crate) revision_destination:
-        ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,
+    pub(crate) revision_destination: ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,
 }
 impl AutoExportRevisionToS3RequestDetailsBuilder {
     /// <p>Encryption configuration for the auto export job.</p>
@@ -48,39 +42,26 @@ impl AutoExportRevisionToS3RequestDetailsBuilder {
         self
     }
     /// <p>Encryption configuration for the auto export job.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportServerSideEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::ExportServerSideEncryption>) -> Self {
         self.encryption = input;
         self
     }
     /// <p>Encryption configuration for the auto export job.</p>
-    pub fn get_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
         &self.encryption
     }
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
-    pub fn revision_destination(
-        mut self,
-        input: crate::types::AutoExportRevisionDestinationEntry,
-    ) -> Self {
+    pub fn revision_destination(mut self, input: crate::types::AutoExportRevisionDestinationEntry) -> Self {
         self.revision_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
-    pub fn set_revision_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,
-    ) -> Self {
+    pub fn set_revision_destination(mut self, input: ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>) -> Self {
         self.revision_destination = input;
         self
     }
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
-    pub fn get_revision_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoExportRevisionDestinationEntry> {
+    pub fn get_revision_destination(&self) -> &::std::option::Option<crate::types::AutoExportRevisionDestinationEntry> {
         &self.revision_destination
     }
     /// Consumes the builder and constructs a [`AutoExportRevisionToS3RequestDetails`](crate::types::AutoExportRevisionToS3RequestDetails).

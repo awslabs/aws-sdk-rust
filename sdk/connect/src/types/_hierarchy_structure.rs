@@ -51,9 +51,7 @@ impl HierarchyStructure {
 
 /// A builder for [`HierarchyStructure`](crate::types::HierarchyStructure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchyStructureBuilder {
     pub(crate) level_one: ::std::option::Option<crate::types::HierarchyLevel>,
     pub(crate) level_two: ::std::option::Option<crate::types::HierarchyLevel>,
@@ -68,10 +66,7 @@ impl HierarchyStructureBuilder {
         self
     }
     /// <p>Information about level one.</p>
-    pub fn set_level_one(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyLevel>,
-    ) -> Self {
+    pub fn set_level_one(mut self, input: ::std::option::Option<crate::types::HierarchyLevel>) -> Self {
         self.level_one = input;
         self
     }
@@ -85,10 +80,7 @@ impl HierarchyStructureBuilder {
         self
     }
     /// <p>Information about level two.</p>
-    pub fn set_level_two(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyLevel>,
-    ) -> Self {
+    pub fn set_level_two(mut self, input: ::std::option::Option<crate::types::HierarchyLevel>) -> Self {
         self.level_two = input;
         self
     }
@@ -102,10 +94,7 @@ impl HierarchyStructureBuilder {
         self
     }
     /// <p>Information about level three.</p>
-    pub fn set_level_three(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyLevel>,
-    ) -> Self {
+    pub fn set_level_three(mut self, input: ::std::option::Option<crate::types::HierarchyLevel>) -> Self {
         self.level_three = input;
         self
     }
@@ -119,10 +108,7 @@ impl HierarchyStructureBuilder {
         self
     }
     /// <p>Information about level four.</p>
-    pub fn set_level_four(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyLevel>,
-    ) -> Self {
+    pub fn set_level_four(mut self, input: ::std::option::Option<crate::types::HierarchyLevel>) -> Self {
         self.level_four = input;
         self
     }
@@ -136,10 +122,7 @@ impl HierarchyStructureBuilder {
         self
     }
     /// <p>Information about level five.</p>
-    pub fn set_level_five(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyLevel>,
-    ) -> Self {
+    pub fn set_level_five(mut self, input: ::std::option::Option<crate::types::HierarchyLevel>) -> Self {
         self.level_five = input;
         self
     }

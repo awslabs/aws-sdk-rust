@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_identity_policy::builders::PutIdentityPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_identity_policy::builders::PutIdentityPolicyFluentBuilder::set_policy): <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>  <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     /// - On success, responds with [`PutIdentityPolicyOutput`](crate::operation::put_identity_policy::PutIdentityPolicyOutput)
     /// - On failure, responds with [`SdkError<PutIdentityPolicyError>`](crate::operation::put_identity_policy::PutIdentityPolicyError)
-    pub fn put_identity_policy(
-        &self,
-    ) -> crate::operation::put_identity_policy::builders::PutIdentityPolicyFluentBuilder {
-        crate::operation::put_identity_policy::builders::PutIdentityPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_identity_policy(&self) -> crate::operation::put_identity_policy::builders::PutIdentityPolicyFluentBuilder {
+        crate::operation::put_identity_policy::builders::PutIdentityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

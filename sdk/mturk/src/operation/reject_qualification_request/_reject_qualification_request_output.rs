@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RejectQualificationRequestOutput {
 }
 impl RejectQualificationRequestOutput {
     /// Creates a new builder-style object to manufacture [`RejectQualificationRequestOutput`](crate::operation::reject_qualification_request::RejectQualificationRequestOutput).
-    pub fn builder() -> crate::operation::reject_qualification_request::builders::RejectQualificationRequestOutputBuilder{
+    pub fn builder() -> crate::operation::reject_qualification_request::builders::RejectQualificationRequestOutputBuilder {
         crate::operation::reject_qualification_request::builders::RejectQualificationRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectQualificationRequestOutput`](crate::operation::reject_qualification_request::RejectQualificationRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectQualificationRequestOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RejectQualificationRequestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RejectQualificationRequestOutput`](crate::operation::reject_qualification_request::RejectQualificationRequestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reject_qualification_request::RejectQualificationRequestOutput {
+    pub fn build(self) -> crate::operation::reject_qualification_request::RejectQualificationRequestOutput {
         crate::operation::reject_qualification_request::RejectQualificationRequestOutput {
             _request_id: self._request_id,
         }

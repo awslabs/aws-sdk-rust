@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateConnectionOutput`](crate::operation::update_connection::UpdateConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::update_connection::UpdateConnectionOutput::connection): <p>Information about the connection.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::operation::update_connection::UpdateConnectionError)
-    pub fn update_connection(
-        &self,
-    ) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
-        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connection(&self) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
+        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

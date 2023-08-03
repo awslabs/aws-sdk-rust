@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLocalGatewayRouteOutput {
 }
 impl CreateLocalGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteOutput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteOutputBuilder {
         crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocalGatewayRouteOutput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::LocalGatewayRoute>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateLocalGatewayRouteOutputBuilder {
         self
     }
     /// <p>Information about the route.</p>
-    pub fn set_route(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRoute>,
-    ) -> Self {
+    pub fn set_route(mut self, input: ::std::option::Option<crate::types::LocalGatewayRoute>) -> Self {
         self.route = input;
         self
     }
@@ -65,9 +58,7 @@ impl CreateLocalGatewayRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteOutput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput {
+    pub fn build(self) -> crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput {
         crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput {
             route: self.route,
             _request_id: self._request_id,

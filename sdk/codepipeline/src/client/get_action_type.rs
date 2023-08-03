@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetActionTypeOutput`](crate::operation::get_action_type::GetActionTypeOutput) with field(s):
     ///   - [`action_type(Option<ActionTypeDeclaration>)`](crate::operation::get_action_type::GetActionTypeOutput::action_type): <p>The action type information for the requested action type, such as the action type ID.</p>
     /// - On failure, responds with [`SdkError<GetActionTypeError>`](crate::operation::get_action_type::GetActionTypeError)
-    pub fn get_action_type(
-        &self,
-    ) -> crate::operation::get_action_type::builders::GetActionTypeFluentBuilder {
-        crate::operation::get_action_type::builders::GetActionTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_action_type(&self) -> crate::operation::get_action_type::builders::GetActionTypeFluentBuilder {
+        crate::operation::get_action_type::builders::GetActionTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateSubscriberNotificationOutput {
 }
 impl CreateSubscriberNotificationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberNotificationOutput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput).
-    pub fn builder() -> crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationOutputBuilder{
+    pub fn builder() -> crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationOutputBuilder {
         crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriberNotificationOutput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriberNotificationOutputBuilder {
     pub(crate) subscriber_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSubscriberNotificationOutputBuilder {
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
-    pub fn subscriber_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
-    pub fn set_subscriber_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_endpoint = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateSubscriberNotificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSubscriberNotificationOutput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput {
+    pub fn build(self) -> crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput {
         crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput {
             subscriber_endpoint: self.subscriber_endpoint,
             _request_id: self._request_id,

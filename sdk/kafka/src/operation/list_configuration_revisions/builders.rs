@@ -26,7 +26,7 @@ impl ListConfigurationRevisionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfigurationRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder,
+    inner: crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder,
 }
 impl ListConfigurationRevisionsFluentBuilder {
     /// Creates a new `ListConfigurationRevisions`.
@@ -37,7 +37,7 @@ impl ListConfigurationRevisionsFluentBuilder {
         }
     }
     /// Access the ListConfigurationRevisions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListConfigurationRevisionsFluentBuilder {
             crate::operation::list_configuration_revisions::ListConfigurationRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_revisions::ListConfigurationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_revisions::ListConfigurationRevisionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListConfigurationRevisionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListConfigurationRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_revisions::ListConfigurationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_revisions::ListConfigurationRevisionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListConfigurationRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_revisions::ListConfigurationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_revisions::ListConfigurationRevisionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListConfigurationRevisionsFluentBuilder {
             crate::operation::list_configuration_revisions::ListConfigurationRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_revisions::ListConfigurationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_revisions::ListConfigurationRevisionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_configuration_revisions::paginator::ListConfigurationRevisionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_configuration_revisions::paginator::ListConfigurationRevisionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_configuration_revisions::paginator::ListConfigurationRevisionsPaginator {
         crate::operation::list_configuration_revisions::paginator::ListConfigurationRevisionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EvidenceFinderEnablementStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for EvidenceFinderEnablementStatus {
             "DISABLE_IN_PROGRESS" => EvidenceFinderEnablementStatus::DisableInProgress,
             "ENABLED" => EvidenceFinderEnablementStatus::Enabled,
             "ENABLE_IN_PROGRESS" => EvidenceFinderEnablementStatus::EnableInProgress,
-            other => EvidenceFinderEnablementStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => EvidenceFinderEnablementStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl EvidenceFinderEnablementStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED",
-            "DISABLE_IN_PROGRESS",
-            "ENABLED",
-            "ENABLE_IN_PROGRESS",
-        ]
+        &["DISABLED", "DISABLE_IN_PROGRESS", "ENABLED", "ENABLE_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for EvidenceFinderEnablementStatus {

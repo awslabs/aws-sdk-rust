@@ -38,13 +38,7 @@
 /// H264 Framerate Control
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264FramerateControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264FramerateControl {
         match s {
             "INITIALIZE_FROM_SOURCE" => H264FramerateControl::InitializeFromSource,
             "SPECIFIED" => H264FramerateControl::Specified,
-            other => H264FramerateControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H264FramerateControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

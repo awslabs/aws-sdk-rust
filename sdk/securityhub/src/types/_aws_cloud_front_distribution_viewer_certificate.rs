@@ -65,9 +65,7 @@ impl AwsCloudFrontDistributionViewerCertificate {
 
 /// A builder for [`AwsCloudFrontDistributionViewerCertificate`](crate::types::AwsCloudFrontDistributionViewerCertificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionViewerCertificateBuilder {
     pub(crate) acm_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct AwsCloudFrontDistributionViewerCertificateBuilder {
 }
 impl AwsCloudFrontDistributionViewerCertificateBuilder {
     /// <p>The ARN of the ACM certificate. Used if the certificate is stored in ACM. If you provide an ACM certificate ARN, you must also provide <code>MinimumCertificateVersion</code> and <code>SslSupportMethod</code>.</p>
-    pub fn acm_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acm_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acm_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the ACM certificate. Used if the certificate is stored in ACM. If you provide an ACM certificate ARN, you must also provide <code>MinimumCertificateVersion</code> and <code>SslSupportMethod</code>.</p>
-    pub fn set_acm_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acm_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acm_certificate_arn = input;
         self
     }
@@ -113,18 +105,12 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
         &self.certificate
     }
     /// <p>The source of the certificate identified by <code>Certificate</code>. Note that in CloudFront, this attribute is deprecated.</p>
-    pub fn certificate_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the certificate identified by <code>Certificate</code>. Note that in CloudFront, this attribute is deprecated.</p>
-    pub fn set_certificate_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_source = input;
         self
     }
@@ -138,10 +124,7 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
         self
     }
     /// <p>Whether the distribution uses the CloudFront domain name. If set to <code>false</code>, then you provide either <code>AcmCertificateArn</code> or <code>IamCertificateId</code>.</p>
-    pub fn set_cloud_front_default_certificate(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_cloud_front_default_certificate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_front_default_certificate = input;
         self
     }
@@ -150,18 +133,12 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
         &self.cloud_front_default_certificate
     }
     /// <p>The identifier of the IAM certificate. Used if the certificate is stored in IAM. If you provide <code>IamCertificateId</code>, then you also must provide <code>MinimumProtocolVersion</code> and <code>SslSupportMethod</code>.</p>
-    pub fn iam_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the IAM certificate. Used if the certificate is stored in IAM. If you provide <code>IamCertificateId</code>, then you also must provide <code>MinimumProtocolVersion</code> and <code>SslSupportMethod</code>.</p>
-    pub fn set_iam_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_certificate_id = input;
         self
     }
@@ -170,18 +147,12 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
         &self.iam_certificate_id
     }
     /// <p>The security policy that CloudFront uses for HTTPS connections with viewers. If <code>SslSupportMethod</code> is <code>sni-only</code>, then <code>MinimumProtocolVersion</code> must be <code>TLSv1</code> or higher.</p>
-    pub fn minimum_protocol_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_protocol_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security policy that CloudFront uses for HTTPS connections with viewers. If <code>SslSupportMethod</code> is <code>sni-only</code>, then <code>MinimumProtocolVersion</code> must be <code>TLSv1</code> or higher.</p>
-    pub fn set_minimum_protocol_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_protocol_version = input;
         self
     }
@@ -190,18 +161,12 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
         &self.minimum_protocol_version
     }
     /// <p>The viewers that the distribution accepts HTTPS connections from.</p>
-    pub fn ssl_support_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_support_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_support_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The viewers that the distribution accepts HTTPS connections from.</p>
-    pub fn set_ssl_support_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_support_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_support_method = input;
         self
     }
@@ -215,9 +180,7 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
             acm_certificate_arn: self.acm_certificate_arn,
             certificate: self.certificate,
             certificate_source: self.certificate_source,
-            cloud_front_default_certificate: self
-                .cloud_front_default_certificate
-                .unwrap_or_default(),
+            cloud_front_default_certificate: self.cloud_front_default_certificate.unwrap_or_default(),
             iam_certificate_id: self.iam_certificate_id,
             minimum_protocol_version: self.minimum_protocol_version,
             ssl_support_method: self.ssl_support_method,

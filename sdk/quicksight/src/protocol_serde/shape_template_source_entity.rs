@@ -6,19 +6,13 @@ pub fn ser_template_source_entity(
     if let Some(var_1) = &input.source_analysis {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SourceAnalysis").start_object();
-        crate::protocol_serde::shape_template_source_analysis::ser_template_source_analysis(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_template_source_analysis::ser_template_source_analysis(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.source_template {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SourceTemplate").start_object();
-        crate::protocol_serde::shape_template_source_template::ser_template_source_template(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_template_source_template::ser_template_source_template(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

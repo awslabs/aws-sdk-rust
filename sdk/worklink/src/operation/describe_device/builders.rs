@@ -10,10 +10,7 @@ impl DescribeDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_device::DescribeDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device::DescribeDeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device::DescribeDeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_device();
         fluent_builder.inner = self;
@@ -23,9 +20,7 @@ impl DescribeDeviceInputBuilder {
 /// Fluent builder constructing a request to `DescribeDevice`.
 ///
 /// <p>Provides information about a user's device.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +35,7 @@ impl DescribeDeviceFluentBuilder {
         }
     }
     /// Access the DescribeDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_device::builders::DescribeDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_device::builders::DescribeDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +57,7 @@ impl DescribeDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`opt_out_lists(Option<Vec<OptOutListInformation>>)`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput::opt_out_lists): <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeOptOutListsError>`](crate::operation::describe_opt_out_lists::DescribeOptOutListsError)
-    pub fn describe_opt_out_lists(
-        &self,
-    ) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder {
-        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_opt_out_lists(&self) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder {
+        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::new(self.handle.clone())
     }
 }

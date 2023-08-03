@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_log_group::ListTagsLogGroupOutput::tags): <p>The tags for the log group.</p>
     /// - On failure, responds with [`SdkError<ListTagsLogGroupError>`](crate::operation::list_tags_log_group::ListTagsLogGroupError)
     #[deprecated(note = "Please use the generic tagging API ListTagsForResource")]
-    pub fn list_tags_log_group(
-        &self,
-    ) -> crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder {
-        crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_log_group(&self) -> crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder {
+        crate::operation::list_tags_log_group::builders::ListTagsLogGroupFluentBuilder::new(self.handle.clone())
     }
 }

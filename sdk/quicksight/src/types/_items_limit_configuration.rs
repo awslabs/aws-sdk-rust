@@ -38,9 +38,7 @@ impl ItemsLimitConfiguration {
 
 /// A builder for [`ItemsLimitConfiguration`](crate::types::ItemsLimitConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ItemsLimitConfigurationBuilder {
     pub(crate) items_limit: ::std::option::Option<i64>,
     pub(crate) other_categories: ::std::option::Option<crate::types::OtherCategories>,
@@ -74,10 +72,7 @@ impl ItemsLimitConfigurationBuilder {
     /// <li> <p> <code>INCLUDE</code> </p> </li>
     /// <li> <p> <code>EXCLUDE</code> </p> </li>
     /// </ul>
-    pub fn set_other_categories(
-        mut self,
-        input: ::std::option::Option<crate::types::OtherCategories>,
-    ) -> Self {
+    pub fn set_other_categories(mut self, input: ::std::option::Option<crate::types::OtherCategories>) -> Self {
         self.other_categories = input;
         self
     }

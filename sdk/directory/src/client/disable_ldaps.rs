@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`r#type(LdapsType)`](crate::operation::disable_ldaps::builders::DisableLDAPSFluentBuilder::type) / [`set_type(Option<LdapsType>)`](crate::operation::disable_ldaps::builders::DisableLDAPSFluentBuilder::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`DisableLdapsOutput`](crate::operation::disable_ldaps::DisableLdapsOutput)
     /// - On failure, responds with [`SdkError<DisableLDAPSError>`](crate::operation::disable_ldaps::DisableLDAPSError)
-    pub fn disable_ldaps(
-        &self,
-    ) -> crate::operation::disable_ldaps::builders::DisableLDAPSFluentBuilder {
-        crate::operation::disable_ldaps::builders::DisableLDAPSFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_ldaps(&self) -> crate::operation::disable_ldaps::builders::DisableLDAPSFluentBuilder {
+        crate::operation::disable_ldaps::builders::DisableLDAPSFluentBuilder::new(self.handle.clone())
     }
 }

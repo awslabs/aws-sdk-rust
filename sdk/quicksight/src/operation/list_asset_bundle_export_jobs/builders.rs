@@ -26,7 +26,7 @@ impl ListAssetBundleExportJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssetBundleExportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsInputBuilder,
+    inner: crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsInputBuilder,
 }
 impl ListAssetBundleExportJobsFluentBuilder {
     /// Creates a new `ListAssetBundleExportJobs`.
@@ -37,7 +37,7 @@ impl ListAssetBundleExportJobsFluentBuilder {
         }
     }
     /// Access the ListAssetBundleExportJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAssetBundleExportJobsFluentBuilder {
             crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAssetBundleExportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAssetBundleExportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAssetBundleExportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListAssetBundleExportJobsFluentBuilder {
             crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_asset_bundle_export_jobs::paginator::ListAssetBundleExportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_asset_bundle_export_jobs::paginator::ListAssetBundleExportJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_asset_bundle_export_jobs::paginator::ListAssetBundleExportJobsPaginator {
         crate::operation::list_asset_bundle_export_jobs::paginator::ListAssetBundleExportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

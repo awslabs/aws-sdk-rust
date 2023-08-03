@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRegexMatchSetOutput {
 }
 impl CreateRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetOutput`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetOutputBuilder {
         crate::operation::create_regex_match_set::builders::CreateRegexMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRegexMatchSetOutput`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRegexMatchSetOutputBuilder {
     pub(crate) regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl CreateRegexMatchSetOutputBuilder {
         self
     }
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
-    pub fn set_regex_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::RegexMatchSet>,
-    ) -> Self {
+    pub fn set_regex_match_set(mut self, input: ::std::option::Option<crate::types::RegexMatchSet>) -> Self {
         self.regex_match_set = input;
         self
     }

@@ -38,13 +38,7 @@
 /// Embedded Scte20 Detection
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EmbeddedScte20Detection {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for EmbeddedScte20Detection {
         match s {
             "AUTO" => EmbeddedScte20Detection::Auto,
             "OFF" => EmbeddedScte20Detection::Off,
-            other => EmbeddedScte20Detection::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EmbeddedScte20Detection::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -44,9 +44,7 @@ impl IpOwner {
 
 /// A builder for [`IpOwner`](crate::types::IpOwner).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpOwnerBuilder {
     pub(crate) asn: ::std::option::Option<::std::string::String>,
     pub(crate) asn_org: ::std::option::Option<::std::string::String>,

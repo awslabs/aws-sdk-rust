@@ -10,10 +10,7 @@ impl GetAssignmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_assignment::GetAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assignment::GetAssignmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assignment::GetAssignmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_assignment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAssignmentFluentBuilder {
         }
     }
     /// Access the GetAssignment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_assignment::builders::GetAssignmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_assignment::builders::GetAssignmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetAssignmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetAssignmentFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the Assignment to be retrieved.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
     /// <p>The ID of the Assignment to be retrieved.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }

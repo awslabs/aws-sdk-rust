@@ -5,8 +5,7 @@
 pub struct DescribeUsageReportSubscriptionsOutput {
     /// <p>Information about the usage report subscription.</p>
     #[doc(hidden)]
-    pub usage_report_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
+    pub usage_report_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeUsageReportSubscriptionsOutput {
 }
 impl DescribeUsageReportSubscriptionsOutput {
     /// <p>Information about the usage report subscription.</p>
-    pub fn usage_report_subscriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UsageReportSubscription]> {
+    pub fn usage_report_subscriptions(&self) -> ::std::option::Option<&[crate::types::UsageReportSubscription]> {
         self.usage_report_subscriptions.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeUsageReportSubscriptionsOutpu
 }
 impl DescribeUsageReportSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUsageReportSubscriptionsOutput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput).
-    pub fn builder() -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsOutputBuilder {
         crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUsageReportSubscriptionsOutput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsageReportSubscriptionsOutputBuilder {
-    pub(crate) usage_report_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
+    pub(crate) usage_report_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeUsageReportSubscriptionsOutputBuilder {
     /// To override the contents of this collection use [`set_usage_report_subscriptions`](Self::set_usage_report_subscriptions).
     ///
     /// <p>Information about the usage report subscription.</p>
-    pub fn usage_report_subscriptions(
-        mut self,
-        input: crate::types::UsageReportSubscription,
-    ) -> Self {
+    pub fn usage_report_subscriptions(mut self, input: crate::types::UsageReportSubscription) -> Self {
         let mut v = self.usage_report_subscriptions.unwrap_or_default();
         v.push(input);
         self.usage_report_subscriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the usage report subscription.</p>
-    pub fn set_usage_report_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
-    ) -> Self {
+    pub fn set_usage_report_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>) -> Self {
         self.usage_report_subscriptions = input;
         self
     }
     /// <p>Information about the usage report subscription.</p>
-    pub fn get_usage_report_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>> {
+    pub fn get_usage_report_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>> {
         &self.usage_report_subscriptions
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -100,15 +86,10 @@ impl DescribeUsageReportSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeUsageReportSubscriptionsOutput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput {
         crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput {
-            usage_report_subscriptions: self.usage_report_subscriptions
-            ,
-            next_token: self.next_token
-            ,
+            usage_report_subscriptions: self.usage_report_subscriptions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

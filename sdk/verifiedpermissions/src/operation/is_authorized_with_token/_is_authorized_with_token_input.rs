@@ -61,18 +61,14 @@ impl IsAuthorizedWithTokenInput {
 }
 impl IsAuthorizedWithTokenInput {
     /// Creates a new builder-style object to manufacture [`IsAuthorizedWithTokenInput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput).
-    pub fn builder(
-    ) -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenInputBuilder
-    {
+    pub fn builder() -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenInputBuilder {
         crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`IsAuthorizedWithTokenInput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsAuthorizedWithTokenInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_token: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ pub struct IsAuthorizedWithTokenInputBuilder {
 }
 impl IsAuthorizedWithTokenInputBuilder {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -104,18 +94,12 @@ impl IsAuthorizedWithTokenInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
-    pub fn identity_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
-    pub fn set_identity_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_token = input;
         self
     }
@@ -143,10 +127,7 @@ impl IsAuthorizedWithTokenInputBuilder {
         self
     }
     /// <p>Specifies the requested action to be authorized. Is the specified principal authorized to perform this action on the specified resource.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionIdentifier>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionIdentifier>) -> Self {
         self.action = input;
         self
     }
@@ -160,10 +141,7 @@ impl IsAuthorizedWithTokenInputBuilder {
         self
     }
     /// <p>Specifies the resource for which the authorization decision is made. For example, is the principal allowed to perform the action on the resource?</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.resource = input;
         self
     }
@@ -177,10 +155,7 @@ impl IsAuthorizedWithTokenInputBuilder {
         self
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDefinition>,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<crate::types::ContextDefinition>) -> Self {
         self.context = input;
         self
     }
@@ -198,10 +173,7 @@ impl IsAuthorizedWithTokenInputBuilder {
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitiesDefinition>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.entities = input;
         self
     }
@@ -214,20 +186,16 @@ impl IsAuthorizedWithTokenInputBuilder {
     /// Consumes the builder and constructs a [`IsAuthorizedWithTokenInput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput {
-                policy_store_id: self.policy_store_id,
-                identity_token: self.identity_token,
-                access_token: self.access_token,
-                action: self.action,
-                resource: self.resource,
-                context: self.context,
-                entities: self.entities,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput {
+            policy_store_id: self.policy_store_id,
+            identity_token: self.identity_token,
+            access_token: self.access_token,
+            action: self.action,
+            resource: self.resource,
+            context: self.context,
+            entities: self.entities,
+        })
     }
 }

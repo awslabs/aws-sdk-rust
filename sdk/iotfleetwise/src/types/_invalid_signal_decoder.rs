@@ -30,9 +30,7 @@ impl InvalidSignalDecoder {
 
 /// A builder for [`InvalidSignalDecoder`](crate::types::InvalidSignalDecoder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidSignalDecoderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
@@ -58,10 +56,7 @@ impl InvalidSignalDecoderBuilder {
         self
     }
     /// <p>A message about why the signal decoder isn't valid.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SignalDecoderFailureReason>) -> Self {
         self.reason = input;
         self
     }

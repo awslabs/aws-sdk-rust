@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AcceptAttachmentOutput {
 }
 impl AcceptAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`AcceptAttachmentOutput`](crate::operation::accept_attachment::AcceptAttachmentOutput).
-    pub fn builder() -> crate::operation::accept_attachment::builders::AcceptAttachmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_attachment::builders::AcceptAttachmentOutputBuilder {
         crate::operation::accept_attachment::builders::AcceptAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptAttachmentOutput`](crate::operation::accept_attachment::AcceptAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptAttachmentOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl AcceptAttachmentOutputBuilder {
         self
     }
     /// <p>The response to the attachment request. </p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::Attachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
         self.attachment = input;
         self
     }

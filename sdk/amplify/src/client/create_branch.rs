@@ -24,11 +24,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput) with field(s):
     ///   - [`branch(Option<Branch>)`](crate::operation::create_branch::CreateBranchOutput::branch): <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     /// - On failure, responds with [`SdkError<CreateBranchError>`](crate::operation::create_branch::CreateBranchError)
-    pub fn create_branch(
-        &self,
-    ) -> crate::operation::create_branch::builders::CreateBranchFluentBuilder {
-        crate::operation::create_branch::builders::CreateBranchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_branch(&self) -> crate::operation::create_branch::builders::CreateBranchFluentBuilder {
+        crate::operation::create_branch::builders::CreateBranchFluentBuilder::new(self.handle.clone())
     }
 }

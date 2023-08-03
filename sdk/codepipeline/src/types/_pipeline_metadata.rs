@@ -44,9 +44,7 @@ impl PipelineMetadata {
 
 /// A builder for [`PipelineMetadata`](crate::types::PipelineMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineMetadataBuilder {
     pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +72,7 @@ impl PipelineMetadataBuilder {
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -91,10 +86,7 @@ impl PipelineMetadataBuilder {
         self
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn set_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated = input;
         self
     }
@@ -108,10 +100,7 @@ impl PipelineMetadataBuilder {
         self
     }
     /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
-    pub fn set_polling_disabled_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_polling_disabled_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.polling_disabled_at = input;
         self
     }

@@ -8,21 +8,17 @@ pub struct CreateMediaInsightsPipelineInput {
     pub media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
     #[doc(hidden)]
-    pub kinesis_video_stream_source_runtime_configuration:
-        ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,
+    pub kinesis_video_stream_source_runtime_configuration: ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,
     /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
     #[doc(hidden)]
-    pub media_insights_runtime_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub media_insights_runtime_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
     #[doc(hidden)]
     pub kinesis_video_stream_recording_source_runtime_configuration:
         ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     #[doc(hidden)]
-    pub s3_recording_sink_runtime_configuration:
-        ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
+    pub s3_recording_sink_runtime_configuration: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
     /// <p>The tags assigned to the media insights pipeline.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -39,29 +35,22 @@ impl CreateMediaInsightsPipelineInput {
     pub fn kinesis_video_stream_source_runtime_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::KinesisVideoStreamSourceRuntimeConfiguration> {
-        self.kinesis_video_stream_source_runtime_configuration
-            .as_ref()
+        self.kinesis_video_stream_source_runtime_configuration.as_ref()
     }
     /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
     pub fn media_insights_runtime_metadata(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.media_insights_runtime_metadata.as_ref()
     }
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
     pub fn kinesis_video_stream_recording_source_runtime_configuration(
         &self,
-    ) -> ::std::option::Option<&crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>
-    {
-        self.kinesis_video_stream_recording_source_runtime_configuration
-            .as_ref()
+    ) -> ::std::option::Option<&crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration> {
+        self.kinesis_video_stream_recording_source_runtime_configuration.as_ref()
     }
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
-    pub fn s3_recording_sink_runtime_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3RecordingSinkRuntimeConfiguration> {
+    pub fn s3_recording_sink_runtime_configuration(&self) -> ::std::option::Option<&crate::types::S3RecordingSinkRuntimeConfiguration> {
         self.s3_recording_sink_runtime_configuration.as_ref()
     }
     /// <p>The tags assigned to the media insights pipeline.</p>
@@ -76,26 +65,17 @@ impl CreateMediaInsightsPipelineInput {
 impl ::std::fmt::Debug for CreateMediaInsightsPipelineInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaInsightsPipelineInput");
-        formatter.field(
-            "media_insights_pipeline_configuration_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("media_insights_pipeline_configuration_arn", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "kinesis_video_stream_source_runtime_configuration",
             &self.kinesis_video_stream_source_runtime_configuration,
         );
-        formatter.field(
-            "media_insights_runtime_metadata",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("media_insights_runtime_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "kinesis_video_stream_recording_source_runtime_configuration",
             &self.kinesis_video_stream_recording_source_runtime_configuration,
         );
-        formatter.field(
-            "s3_recording_sink_runtime_configuration",
-            &self.s3_recording_sink_runtime_configuration,
-        );
+        formatter.field("s3_recording_sink_runtime_configuration", &self.s3_recording_sink_runtime_configuration);
         formatter.field("tags", &self.tags);
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -103,7 +83,7 @@ impl ::std::fmt::Debug for CreateMediaInsightsPipelineInput {
 }
 impl CreateMediaInsightsPipelineInput {
     /// Creates a new builder-style object to manufacture [`CreateMediaInsightsPipelineInput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput).
-    pub fn builder() -> crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineInputBuilder{
+    pub fn builder() -> crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineInputBuilder {
         crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineInputBuilder::default()
     }
 }
@@ -112,48 +92,32 @@ impl CreateMediaInsightsPipelineInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateMediaInsightsPipelineInputBuilder {
-    pub(crate) media_insights_pipeline_configuration_arn:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) kinesis_video_stream_source_runtime_configuration:
-        ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,
-    pub(crate) media_insights_runtime_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kinesis_video_stream_source_runtime_configuration: ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,
+    pub(crate) media_insights_runtime_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kinesis_video_stream_recording_source_runtime_configuration:
         ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
-    pub(crate) s3_recording_sink_runtime_configuration:
-        ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
+    pub(crate) s3_recording_sink_runtime_configuration: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateMediaInsightsPipelineInputBuilder {
     /// <p>The ARN of the pipeline's configuration.</p>
-    pub fn media_insights_pipeline_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_insights_pipeline_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_insights_pipeline_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the pipeline's configuration.</p>
-    pub fn set_media_insights_pipeline_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_insights_pipeline_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_insights_pipeline_configuration_arn = input;
         self
     }
     /// <p>The ARN of the pipeline's configuration.</p>
-    pub fn get_media_insights_pipeline_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_media_insights_pipeline_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_insights_pipeline_configuration_arn
     }
     /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    pub fn kinesis_video_stream_source_runtime_configuration(
-        mut self,
-        input: crate::types::KinesisVideoStreamSourceRuntimeConfiguration,
-    ) -> Self {
+    pub fn kinesis_video_stream_source_runtime_configuration(mut self, input: crate::types::KinesisVideoStreamSourceRuntimeConfiguration) -> Self {
         self.kinesis_video_stream_source_runtime_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -189,9 +153,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
     /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
     pub fn set_media_insights_runtime_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.media_insights_runtime_metadata = input;
         self
@@ -199,9 +161,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
     /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
     pub fn get_media_insights_runtime_metadata(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.media_insights_runtime_metadata
     }
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
@@ -209,16 +169,13 @@ impl CreateMediaInsightsPipelineInputBuilder {
         mut self,
         input: crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration,
     ) -> Self {
-        self.kinesis_video_stream_recording_source_runtime_configuration =
-            ::std::option::Option::Some(input);
+        self.kinesis_video_stream_recording_source_runtime_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
     pub fn set_kinesis_video_stream_recording_source_runtime_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration,
-        >,
+        input: ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
     ) -> Self {
         self.kinesis_video_stream_recording_source_runtime_configuration = input;
         self
@@ -226,15 +183,11 @@ impl CreateMediaInsightsPipelineInputBuilder {
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
     pub fn get_kinesis_video_stream_recording_source_runtime_configuration(
         &self,
-    ) -> &::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>
-    {
+    ) -> &::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration> {
         &self.kinesis_video_stream_recording_source_runtime_configuration
     }
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
-    pub fn s3_recording_sink_runtime_configuration(
-        mut self,
-        input: crate::types::S3RecordingSinkRuntimeConfiguration,
-    ) -> Self {
+    pub fn s3_recording_sink_runtime_configuration(mut self, input: crate::types::S3RecordingSinkRuntimeConfiguration) -> Self {
         self.s3_recording_sink_runtime_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -247,9 +200,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self
     }
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
-    pub fn get_s3_recording_sink_runtime_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration> {
+    pub fn get_s3_recording_sink_runtime_configuration(&self) -> &::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration> {
         &self.s3_recording_sink_runtime_configuration
     }
     /// Appends an item to `tags`.
@@ -264,10 +215,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self
     }
     /// <p>The tags assigned to the media insights pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -276,18 +224,12 @@ impl CreateMediaInsightsPipelineInputBuilder {
         &self.tags
     }
     /// <p>The unique identifier for the media insights pipeline request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the media insights pipeline request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -302,46 +244,31 @@ impl CreateMediaInsightsPipelineInputBuilder {
         crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput {
-                media_insights_pipeline_configuration_arn: self
-                    .media_insights_pipeline_configuration_arn,
-                kinesis_video_stream_source_runtime_configuration: self
-                    .kinesis_video_stream_source_runtime_configuration,
-                media_insights_runtime_metadata: self.media_insights_runtime_metadata,
-                kinesis_video_stream_recording_source_runtime_configuration: self
-                    .kinesis_video_stream_recording_source_runtime_configuration,
-                s3_recording_sink_runtime_configuration: self
-                    .s3_recording_sink_runtime_configuration,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput {
+            media_insights_pipeline_configuration_arn: self.media_insights_pipeline_configuration_arn,
+            kinesis_video_stream_source_runtime_configuration: self.kinesis_video_stream_source_runtime_configuration,
+            media_insights_runtime_metadata: self.media_insights_runtime_metadata,
+            kinesis_video_stream_recording_source_runtime_configuration: self.kinesis_video_stream_recording_source_runtime_configuration,
+            s3_recording_sink_runtime_configuration: self.s3_recording_sink_runtime_configuration,
+            tags: self.tags,
+            client_request_token: self.client_request_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateMediaInsightsPipelineInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaInsightsPipelineInputBuilder");
-        formatter.field(
-            "media_insights_pipeline_configuration_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("media_insights_pipeline_configuration_arn", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "kinesis_video_stream_source_runtime_configuration",
             &self.kinesis_video_stream_source_runtime_configuration,
         );
-        formatter.field(
-            "media_insights_runtime_metadata",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("media_insights_runtime_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "kinesis_video_stream_recording_source_runtime_configuration",
             &self.kinesis_video_stream_recording_source_runtime_configuration,
         );
-        formatter.field(
-            "s3_recording_sink_runtime_configuration",
-            &self.s3_recording_sink_runtime_configuration,
-        );
+        formatter.field("s3_recording_sink_runtime_configuration", &self.s3_recording_sink_runtime_configuration);
         formatter.field("tags", &self.tags);
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()

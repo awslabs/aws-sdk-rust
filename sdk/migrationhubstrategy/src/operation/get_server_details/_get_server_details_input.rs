@@ -29,17 +29,14 @@ impl GetServerDetailsInput {
 }
 impl GetServerDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetServerDetailsInput`](crate::operation::get_server_details::GetServerDetailsInput).
-    pub fn builder() -> crate::operation::get_server_details::builders::GetServerDetailsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_server_details::builders::GetServerDetailsInputBuilder {
         crate::operation::get_server_details::builders::GetServerDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServerDetailsInput`](crate::operation::get_server_details::GetServerDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServerDetailsInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl GetServerDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetServerDetailsInput`](crate::operation::get_server_details::GetServerDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_server_details::GetServerDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_server_details::GetServerDetailsInput {
-                server_id: self.server_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_server_details::GetServerDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_server_details::GetServerDetailsInput {
+            server_id: self.server_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

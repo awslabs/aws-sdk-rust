@@ -5,8 +5,7 @@
 pub struct DescribeMaintenanceWindowScheduleOutput {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
     #[doc(hidden)]
-    pub scheduled_window_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>>,
+    pub scheduled_window_executions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeMaintenanceWindowScheduleOutput {
 }
 impl DescribeMaintenanceWindowScheduleOutput {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-    pub fn scheduled_window_executions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledWindowExecution]> {
+    pub fn scheduled_window_executions(&self) -> ::std::option::Option<&[crate::types::ScheduledWindowExecution]> {
         self.scheduled_window_executions.as_deref()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeMaintenanceWindowScheduleOutp
 }
 impl DescribeMaintenanceWindowScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowScheduleOutput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleOutputBuilder {
         crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowScheduleOutput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowScheduleOutputBuilder {
-    pub(crate) scheduled_window_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>>,
+    pub(crate) scheduled_window_executions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeMaintenanceWindowScheduleOutputBuilder {
     /// To override the contents of this collection use [`set_scheduled_window_executions`](Self::set_scheduled_window_executions).
     ///
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-    pub fn scheduled_window_executions(
-        mut self,
-        input: crate::types::ScheduledWindowExecution,
-    ) -> Self {
+    pub fn scheduled_window_executions(mut self, input: crate::types::ScheduledWindowExecution) -> Self {
         let mut v = self.scheduled_window_executions.unwrap_or_default();
         v.push(input);
         self.scheduled_window_executions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-    pub fn set_scheduled_window_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>>,
-    ) -> Self {
+    pub fn set_scheduled_window_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>>) -> Self {
         self.scheduled_window_executions = input;
         self
     }
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-    pub fn get_scheduled_window_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>> {
+    pub fn get_scheduled_window_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledWindowExecution>> {
         &self.scheduled_window_executions
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
@@ -100,12 +86,10 @@ impl DescribeMaintenanceWindowScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowScheduleOutput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput).
-    pub fn build(self) -> crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput{
+    pub fn build(self) -> crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput {
         crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput {
-            scheduled_window_executions: self.scheduled_window_executions
-            ,
-            next_token: self.next_token
-            ,
+            scheduled_window_executions: self.scheduled_window_executions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

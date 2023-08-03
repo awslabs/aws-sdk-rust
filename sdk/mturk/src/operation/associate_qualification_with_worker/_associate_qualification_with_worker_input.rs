@@ -36,16 +36,14 @@ impl AssociateQualificationWithWorkerInput {
 }
 impl AssociateQualificationWithWorkerInput {
     /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerInput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput).
-    pub fn builder() -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder{
+    pub fn builder() -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder {
         crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateQualificationWithWorkerInput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateQualificationWithWorkerInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct AssociateQualificationWithWorkerInputBuilder {
 }
 impl AssociateQualificationWithWorkerInputBuilder {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -116,18 +108,19 @@ impl AssociateQualificationWithWorkerInputBuilder {
         &self.send_notification
     }
     /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerInput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput {
-                qualification_type_id: self.qualification_type_id
-                ,
-                worker_id: self.worker_id
-                ,
-                integer_value: self.integer_value
-                ,
-                send_notification: self.send_notification
-                ,
-            }
+                qualification_type_id: self.qualification_type_id,
+                worker_id: self.worker_id,
+                integer_value: self.integer_value,
+                send_notification: self.send_notification,
+            },
         )
     }
 }

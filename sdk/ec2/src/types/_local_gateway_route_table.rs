@@ -79,9 +79,7 @@ impl LocalGatewayRouteTable {
 
 /// A builder for [`LocalGatewayRouteTable`](crate::types::LocalGatewayRouteTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalGatewayRouteTableBuilder {
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
@@ -95,62 +93,40 @@ pub struct LocalGatewayRouteTableBuilder {
 }
 impl LocalGatewayRouteTableBuilder {
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn local_gateway_route_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_arn
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_id = input;
         self
     }
@@ -212,10 +188,7 @@ impl LocalGatewayRouteTableBuilder {
         self
     }
     /// <p>The tags assigned to the local gateway route table.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -229,10 +202,7 @@ impl LocalGatewayRouteTableBuilder {
         self
     }
     /// <p>The mode of the local gateway route table.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>) -> Self {
         self.mode = input;
         self
     }
@@ -246,10 +216,7 @@ impl LocalGatewayRouteTableBuilder {
         self
     }
     /// <p>Information about the state change.</p>
-    pub fn set_state_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::StateReason>,
-    ) -> Self {
+    pub fn set_state_reason(mut self, input: ::std::option::Option<crate::types::StateReason>) -> Self {
         self.state_reason = input;
         self
     }

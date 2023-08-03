@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`route_updates(Vec<MultiRegionAccessPointRoute>)`](crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesFluentBuilder::route_updates) / [`set_route_updates(Option<Vec<MultiRegionAccessPointRoute>>)`](crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesFluentBuilder::set_route_updates): <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
     /// - On success, responds with [`SubmitMultiRegionAccessPointRoutesOutput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput)
     /// - On failure, responds with [`SdkError<SubmitMultiRegionAccessPointRoutesError>`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError)
-    pub fn submit_multi_region_access_point_routes(&self) -> crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesFluentBuilder{
+    pub fn submit_multi_region_access_point_routes(
+        &self,
+    ) -> crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesFluentBuilder {
         crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesFluentBuilder::new(self.handle.clone())
     }
 }

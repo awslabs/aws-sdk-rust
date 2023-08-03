@@ -4,9 +4,7 @@ pub fn ser_put_account_dedicated_ip_warmup_attributes_input(
     input: &crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.auto_warmup_enabled {
-        object
-            .key("AutoWarmupEnabled")
-            .boolean(input.auto_warmup_enabled);
+        object.key("AutoWarmupEnabled").boolean(input.auto_warmup_enabled);
     }
     Ok(())
 }

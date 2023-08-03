@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`email_identities(Option<Vec<IdentityInfo>>)`](crate::operation::list_email_identities::ListEmailIdentitiesOutput::email_identities): <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_email_identities::ListEmailIdentitiesOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<ListEmailIdentitiesError>`](crate::operation::list_email_identities::ListEmailIdentitiesError)
-    pub fn list_email_identities(
-        &self,
-    ) -> crate::operation::list_email_identities::builders::ListEmailIdentitiesFluentBuilder {
-        crate::operation::list_email_identities::builders::ListEmailIdentitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_email_identities(&self) -> crate::operation::list_email_identities::builders::ListEmailIdentitiesFluentBuilder {
+        crate::operation::list_email_identities::builders::ListEmailIdentitiesFluentBuilder::new(self.handle.clone())
     }
 }

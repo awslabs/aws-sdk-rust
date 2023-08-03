@@ -27,16 +27,13 @@ pub struct GetMissionProfileOutput {
     pub minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     #[doc(hidden)]
-    pub dataflow_edges:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub dataflow_edges: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
     #[doc(hidden)]
     pub tracking_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to a mission profile.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>KMS key to use for encrypting streams.</p>
     #[doc(hidden)]
     pub streams_kms_key: ::std::option::Option<crate::types::KmsKey>,
@@ -75,9 +72,7 @@ impl GetMissionProfileOutput {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
+    pub fn dataflow_edges(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.dataflow_edges.as_deref()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
@@ -85,11 +80,7 @@ impl GetMissionProfileOutput {
         self.tracking_config_arn.as_deref()
     }
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>KMS key to use for encrypting streams.</p>
@@ -108,17 +99,14 @@ impl ::aws_http::request_id::RequestId for GetMissionProfileOutput {
 }
 impl GetMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetMissionProfileOutput`](crate::operation::get_mission_profile::GetMissionProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::get_mission_profile::builders::GetMissionProfileOutputBuilder {
+    pub fn builder() -> crate::operation::get_mission_profile::builders::GetMissionProfileOutputBuilder {
         crate::operation::get_mission_profile::builders::GetMissionProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMissionProfileOutput`](crate::operation::get_mission_profile::GetMissionProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMissionProfileOutputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_arn: ::std::option::Option<::std::string::String>,
@@ -127,30 +115,21 @@ pub struct GetMissionProfileOutputBuilder {
     pub(crate) contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
     pub(crate) contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     pub(crate) minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
-    pub(crate) dataflow_edges:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) dataflow_edges: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) tracking_config_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) streams_kms_key: ::std::option::Option<crate::types::KmsKey>,
     pub(crate) streams_kms_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMissionProfileOutputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_id = input;
         self
     }
@@ -159,18 +138,12 @@ impl GetMissionProfileOutputBuilder {
         &self.mission_profile_id
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_arn = input;
         self
     }
@@ -212,10 +185,7 @@ impl GetMissionProfileOutputBuilder {
         self
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn set_contact_pre_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_pre_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.contact_pre_pass_duration_seconds = input;
         self
     }
@@ -229,10 +199,7 @@ impl GetMissionProfileOutputBuilder {
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn set_contact_post_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_post_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.contact_post_pass_duration_seconds = input;
         self
     }
@@ -246,10 +213,7 @@ impl GetMissionProfileOutputBuilder {
         self
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    pub fn set_minimum_viable_contact_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_minimum_viable_contact_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_viable_contact_duration_seconds = input;
         self
     }
@@ -269,32 +233,21 @@ impl GetMissionProfileOutputBuilder {
         self
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn set_dataflow_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_dataflow_edges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.dataflow_edges = input;
         self
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn get_dataflow_edges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_dataflow_edges(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.dataflow_edges
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn tracking_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tracking_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn set_tracking_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tracking_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tracking_config_arn = input;
         self
     }
@@ -307,32 +260,19 @@ impl GetMissionProfileOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>KMS key to use for encrypting streams.</p>
@@ -341,10 +281,7 @@ impl GetMissionProfileOutputBuilder {
         self
     }
     /// <p>KMS key to use for encrypting streams.</p>
-    pub fn set_streams_kms_key(
-        mut self,
-        input: ::std::option::Option<crate::types::KmsKey>,
-    ) -> Self {
+    pub fn set_streams_kms_key(mut self, input: ::std::option::Option<crate::types::KmsKey>) -> Self {
         self.streams_kms_key = input;
         self
     }
@@ -353,18 +290,12 @@ impl GetMissionProfileOutputBuilder {
         &self.streams_kms_key
     }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn streams_kms_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streams_kms_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streams_kms_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn set_streams_kms_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streams_kms_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streams_kms_role = input;
         self
     }

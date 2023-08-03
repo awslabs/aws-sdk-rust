@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_channel_policy::GetChannelPolicyOutput::policy): <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     /// - On failure, responds with [`SdkError<GetChannelPolicyError>`](crate::operation::get_channel_policy::GetChannelPolicyError)
-    pub fn get_channel_policy(
-        &self,
-    ) -> crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder {
-        crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_channel_policy(&self) -> crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder {
+        crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl ListCustomRoutingAcceleratorsInput {
 }
 impl ListCustomRoutingAcceleratorsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsInput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput).
-    pub fn builder() -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder {
         crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingAcceleratorsInput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
         crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

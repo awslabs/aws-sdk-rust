@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteAutomaticTapeCreationPolicyOutput`](crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<DeleteAutomaticTapeCreationPolicyError>`](crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError)
-    pub fn delete_automatic_tape_creation_policy(&self) -> crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyFluentBuilder{
+    pub fn delete_automatic_tape_creation_policy(
+        &self,
+    ) -> crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyFluentBuilder {
         crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyFluentBuilder::new(self.handle.clone())
     }
 }

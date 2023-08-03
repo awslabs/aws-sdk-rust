@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`what_if_forecasts(Option<Vec<WhatIfForecastSummary>>)`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsOutput::what_if_forecasts): <p>An array of <code>WhatIfForecasts</code> objects that describe the matched forecasts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsOutput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
     /// - On failure, responds with [`SdkError<ListWhatIfForecastsError>`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsError)
-    pub fn list_what_if_forecasts(
-        &self,
-    ) -> crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsFluentBuilder {
-        crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_what_if_forecasts(&self) -> crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsFluentBuilder {
+        crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsFluentBuilder::new(self.handle.clone())
     }
 }

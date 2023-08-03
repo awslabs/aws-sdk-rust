@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`RunScheduledInstancesOutput`](crate::operation::run_scheduled_instances::RunScheduledInstancesOutput) with field(s):
     ///   - [`instance_id_set(Option<Vec<String>>)`](crate::operation::run_scheduled_instances::RunScheduledInstancesOutput::instance_id_set): <p>The IDs of the newly launched instances.</p>
     /// - On failure, responds with [`SdkError<RunScheduledInstancesError>`](crate::operation::run_scheduled_instances::RunScheduledInstancesError)
-    pub fn run_scheduled_instances(
-        &self,
-    ) -> crate::operation::run_scheduled_instances::builders::RunScheduledInstancesFluentBuilder
-    {
-        crate::operation::run_scheduled_instances::builders::RunScheduledInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn run_scheduled_instances(&self) -> crate::operation::run_scheduled_instances::builders::RunScheduledInstancesFluentBuilder {
+        crate::operation::run_scheduled_instances::builders::RunScheduledInstancesFluentBuilder::new(self.handle.clone())
     }
 }

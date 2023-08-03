@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableInsightRulesOutput {
 }
 impl EnableInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`EnableInsightRulesOutput`](crate::operation::enable_insight_rules::EnableInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder {
+    pub fn builder() -> crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder {
         crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableInsightRulesOutput`](crate::operation::enable_insight_rules::EnableInsightRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl EnableInsightRulesOutputBuilder {
         self
     }
     /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

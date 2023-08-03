@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`expiration(Option<DateTime>)`](crate::operation::get_credentials::GetCredentialsOutput::expiration): <p>The date and time the password in <code>DbPassword</code> expires.</p>
     ///   - [`next_refresh_time(Option<DateTime>)`](crate::operation::get_credentials::GetCredentialsOutput::next_refresh_time): <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
     /// - On failure, responds with [`SdkError<GetCredentialsError>`](crate::operation::get_credentials::GetCredentialsError)
-    pub fn get_credentials(
-        &self,
-    ) -> crate::operation::get_credentials::builders::GetCredentialsFluentBuilder {
-        crate::operation::get_credentials::builders::GetCredentialsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_credentials(&self) -> crate::operation::get_credentials::builders::GetCredentialsFluentBuilder {
+        crate::operation::get_credentials::builders::GetCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

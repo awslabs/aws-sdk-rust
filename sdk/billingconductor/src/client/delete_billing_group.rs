@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBillingGroupOutput`](crate::operation::delete_billing_group::DeleteBillingGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_billing_group::DeleteBillingGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
     /// - On failure, responds with [`SdkError<DeleteBillingGroupError>`](crate::operation::delete_billing_group::DeleteBillingGroupError)
-    pub fn delete_billing_group(
-        &self,
-    ) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder {
-        crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_billing_group(&self) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder {
+        crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

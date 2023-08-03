@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`template_content(EmailTemplateContent)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::template_content) / [`set_template_content(Option<EmailTemplateContent>)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::set_template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On success, responds with [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput)
     /// - On failure, responds with [`SdkError<CreateEmailTemplateError>`](crate::operation::create_email_template::CreateEmailTemplateError)
-    pub fn create_email_template(
-        &self,
-    ) -> crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder {
-        crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_email_template(&self) -> crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder {
+        crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl SystemInstanceFilter {
 
 /// A builder for [`SystemInstanceFilter`](crate::types::SystemInstanceFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemInstanceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SystemInstanceFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl SystemInstanceFilterBuilder {
         self
     }
     /// <p>The name of the search filter field.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemInstanceFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SystemInstanceFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl SystemInstanceFilterBuilder {
         self
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value = input;
         self
     }

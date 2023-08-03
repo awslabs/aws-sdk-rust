@@ -26,7 +26,7 @@ impl CreateIntegrationWorkflowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntegrationWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowInputBuilder,
+    inner: crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowInputBuilder,
 }
 impl CreateIntegrationWorkflowFluentBuilder {
     /// Creates a new `CreateIntegrationWorkflow`.
@@ -37,7 +37,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
         }
     }
     /// Access the CreateIntegrationWorkflow as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
             crate::operation::create_integration_workflow::CreateIntegrationWorkflow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
             crate::operation::create_integration_workflow::CreateIntegrationWorkflow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl CreateIntegrationWorkflowFluentBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
     }
@@ -157,32 +143,21 @@ impl CreateIntegrationWorkflowFluentBuilder {
         self
     }
     /// <p>Configuration data for integration workflow.</p>
-    pub fn set_integration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrationConfig>,
-    ) -> Self {
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
         self.inner = self.inner.set_integration_config(input);
         self
     }
     /// <p>Configuration data for integration workflow.</p>
-    pub fn get_integration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntegrationConfig> {
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
         self.inner.get_integration_config()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_type_name(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
     }
@@ -209,30 +184,17 @@ impl CreateIntegrationWorkflowFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

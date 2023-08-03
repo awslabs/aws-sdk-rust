@@ -34,15 +34,11 @@ impl AutoScalingDescription {
         self.min_worker_count
     }
     /// <p>The sacle-in policy for the connector.</p>
-    pub fn scale_in_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScaleInPolicyDescription> {
+    pub fn scale_in_policy(&self) -> ::std::option::Option<&crate::types::ScaleInPolicyDescription> {
         self.scale_in_policy.as_ref()
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
-    pub fn scale_out_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScaleOutPolicyDescription> {
+    pub fn scale_out_policy(&self) -> ::std::option::Option<&crate::types::ScaleOutPolicyDescription> {
         self.scale_out_policy.as_ref()
     }
 }
@@ -55,9 +51,7 @@ impl AutoScalingDescription {
 
 /// A builder for [`AutoScalingDescription`](crate::types::AutoScalingDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingDescriptionBuilder {
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) mcu_count: ::std::option::Option<i32>,
@@ -114,17 +108,12 @@ impl AutoScalingDescriptionBuilder {
         self
     }
     /// <p>The sacle-in policy for the connector.</p>
-    pub fn set_scale_in_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleInPolicyDescription>,
-    ) -> Self {
+    pub fn set_scale_in_policy(mut self, input: ::std::option::Option<crate::types::ScaleInPolicyDescription>) -> Self {
         self.scale_in_policy = input;
         self
     }
     /// <p>The sacle-in policy for the connector.</p>
-    pub fn get_scale_in_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScaleInPolicyDescription> {
+    pub fn get_scale_in_policy(&self) -> &::std::option::Option<crate::types::ScaleInPolicyDescription> {
         &self.scale_in_policy
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
@@ -133,17 +122,12 @@ impl AutoScalingDescriptionBuilder {
         self
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
-    pub fn set_scale_out_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleOutPolicyDescription>,
-    ) -> Self {
+    pub fn set_scale_out_policy(mut self, input: ::std::option::Option<crate::types::ScaleOutPolicyDescription>) -> Self {
         self.scale_out_policy = input;
         self
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
-    pub fn get_scale_out_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScaleOutPolicyDescription> {
+    pub fn get_scale_out_policy(&self) -> &::std::option::Option<crate::types::ScaleOutPolicyDescription> {
         &self.scale_out_policy
     }
     /// Consumes the builder and constructs a [`AutoScalingDescription`](crate::types::AutoScalingDescription).

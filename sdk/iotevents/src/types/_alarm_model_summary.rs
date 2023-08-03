@@ -37,9 +37,7 @@ impl AlarmModelSummary {
 
 /// A builder for [`AlarmModelSummary`](crate::types::AlarmModelSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmModelSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) alarm_model_description: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl AlarmModelSummaryBuilder {
         self
     }
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -64,18 +59,12 @@ impl AlarmModelSummaryBuilder {
         &self.creation_time
     }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the alarm model.</p>
-    pub fn set_alarm_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_description = input;
         self
     }
@@ -84,18 +73,12 @@ impl AlarmModelSummaryBuilder {
         &self.alarm_model_description
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_name = input;
         self
     }

@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for PutClusterPolicyOutput {
 }
 impl PutClusterPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutClusterPolicyOutput`](crate::operation::put_cluster_policy::PutClusterPolicyOutput).
-    pub fn builder() -> crate::operation::put_cluster_policy::builders::PutClusterPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_cluster_policy::builders::PutClusterPolicyOutputBuilder {
         crate::operation::put_cluster_policy::builders::PutClusterPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutClusterPolicyOutput`](crate::operation::put_cluster_policy::PutClusterPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutClusterPolicyOutputBuilder {
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutClusterPolicyOutputBuilder {
     /// <p>The policy version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }

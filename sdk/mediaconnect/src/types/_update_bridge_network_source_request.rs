@@ -44,9 +44,7 @@ impl UpdateBridgeNetworkSourceRequest {
 
 /// A builder for [`UpdateBridgeNetworkSourceRequest`](crate::types::UpdateBridgeNetworkSourceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBridgeNetworkSourceRequestBuilder {
     pub(crate) multicast_ip: ::std::option::Option<::std::string::String>,
     pub(crate) network_name: ::std::option::Option<::std::string::String>,

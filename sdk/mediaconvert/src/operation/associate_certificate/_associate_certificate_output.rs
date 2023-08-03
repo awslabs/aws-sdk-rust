@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateCertificateOutput {
 }
 impl AssociateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCertificateOutput`](crate::operation::associate_certificate::AssociateCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_certificate::builders::AssociateCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::associate_certificate::builders::AssociateCertificateOutputBuilder {
         crate::operation::associate_certificate::builders::AssociateCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateCertificateOutput`](crate::operation::associate_certificate::AssociateCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateCertificateOutputBuilder {
     _request_id: Option<String>,
 }

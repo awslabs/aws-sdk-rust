@@ -22,17 +22,14 @@ impl RegisterElasticIpInput {
 }
 impl RegisterElasticIpInput {
     /// Creates a new builder-style object to manufacture [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
-    pub fn builder(
-    ) -> crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
+    pub fn builder() -> crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
         crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl RegisterElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_elastic_ip::RegisterElasticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_elastic_ip::RegisterElasticIpInput {
-                elastic_ip: self.elastic_ip,
-                stack_id: self.stack_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_elastic_ip::RegisterElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_elastic_ip::RegisterElasticIpInput {
+            elastic_ip: self.elastic_ip,
+            stack_id: self.stack_id,
+        })
     }
 }

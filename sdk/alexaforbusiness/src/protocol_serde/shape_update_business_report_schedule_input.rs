@@ -21,10 +21,7 @@ pub fn ser_update_business_report_schedule_input(
     if let Some(var_6) = &input.recurrence {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Recurrence").start_object();
-        crate::protocol_serde::shape_business_report_recurrence::ser_business_report_recurrence(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_business_report_recurrence::ser_business_report_recurrence(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

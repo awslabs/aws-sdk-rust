@@ -58,9 +58,7 @@ impl CreatePresetInput {
 
 /// A builder for [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl CreatePresetInputBuilder {
         self
     }
     /// <p>A section of the request body that specifies the video parameters.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoParameters>,
-    ) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoParameters>) -> Self {
         self.video = input;
         self
     }
@@ -135,10 +130,7 @@ impl CreatePresetInputBuilder {
         self
     }
     /// <p>A section of the request body that specifies the audio parameters.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioParameters>,
-    ) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioParameters>) -> Self {
         self.audio = input;
         self
     }
@@ -152,10 +144,7 @@ impl CreatePresetInputBuilder {
         self
     }
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-    pub fn set_thumbnails(
-        mut self,
-        input: ::std::option::Option<crate::types::Thumbnails>,
-    ) -> Self {
+    pub fn set_thumbnails(mut self, input: ::std::option::Option<crate::types::Thumbnails>) -> Self {
         self.thumbnails = input;
         self
     }
@@ -164,12 +153,7 @@ impl CreatePresetInputBuilder {
         &self.thumbnails
     }
     /// Consumes the builder and constructs a [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_preset::CreatePresetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_preset::CreatePresetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_preset::CreatePresetInput {
             name: self.name,
             description: self.description,

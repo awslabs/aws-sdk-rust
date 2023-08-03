@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`consumers(Option<Vec<Consumer>>)`](crate::operation::list_stream_consumers::ListStreamConsumersOutput::consumers): <p>An array of JSON objects. Each object represents one registered consumer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stream_consumers::ListStreamConsumersOutput::next_token): <p>When the number of consumers that are registered with the data stream is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of registered consumers, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListStreamConsumers</code> to list the next set of registered consumers. For more information about the use of this pagination token when calling the <code>ListStreamConsumers</code> operation, see <code>ListStreamConsumersInput$NextToken</code>.</p> <important>   <p>Tokens expire after 300 seconds. When you obtain a value for <code>NextToken</code> in the response to a call to <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you specify an expired token in a call to <code>ListStreamConsumers</code>, you get <code>ExpiredNextTokenException</code>.</p>  </important>
     /// - On failure, responds with [`SdkError<ListStreamConsumersError>`](crate::operation::list_stream_consumers::ListStreamConsumersError)
-    pub fn list_stream_consumers(
-        &self,
-    ) -> crate::operation::list_stream_consumers::builders::ListStreamConsumersFluentBuilder {
-        crate::operation::list_stream_consumers::builders::ListStreamConsumersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stream_consumers(&self) -> crate::operation::list_stream_consumers::builders::ListStreamConsumersFluentBuilder {
+        crate::operation::list_stream_consumers::builders::ListStreamConsumersFluentBuilder::new(self.handle.clone())
     }
 }

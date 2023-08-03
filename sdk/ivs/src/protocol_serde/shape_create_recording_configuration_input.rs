@@ -6,10 +6,7 @@ pub fn ser_create_recording_configuration_input(
     if let Some(var_1) = &input.destination_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("destinationConfiguration").start_object();
-        crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.name {
@@ -24,10 +21,7 @@ pub fn ser_create_recording_configuration_input(
     if let Some(var_4) = &input.rendition_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("renditionConfiguration").start_object();
-        crate::protocol_serde::shape_rendition_configuration::ser_rendition_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_rendition_configuration::ser_rendition_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {
@@ -43,10 +37,7 @@ pub fn ser_create_recording_configuration_input(
     if let Some(var_10) = &input.thumbnail_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("thumbnailConfiguration").start_object();
-        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

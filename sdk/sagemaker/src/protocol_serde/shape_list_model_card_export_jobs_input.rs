@@ -23,9 +23,7 @@ pub fn ser_list_model_card_export_jobs_input(
             .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_5) = &input.model_card_export_job_name_contains {
-        object
-            .key("ModelCardExportJobNameContains")
-            .string(var_5.as_str());
+        object.key("ModelCardExportJobNameContains").string(var_5.as_str());
     }
     if let Some(var_6) = &input.status_equals {
         object.key("StatusEquals").string(var_6.as_str());

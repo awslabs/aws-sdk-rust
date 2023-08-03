@@ -10,10 +10,7 @@ impl DeleteOptOutListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_opt_out_list::DeleteOptOutListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opt_out_list::DeleteOptOutListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opt_out_list::DeleteOptOutListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_opt_out_list();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteOptOutListFluentBuilder {
         }
     }
     /// Access the DeleteOptOutList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteOptOutListFluentBuilder {
             crate::operation::delete_opt_out_list::DeleteOptOutList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opt_out_list::DeleteOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opt_out_list::DeleteOptOutListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteOptOutListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteOptOutListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_opt_out_list::DeleteOptOutListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opt_out_list::DeleteOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opt_out_list::DeleteOptOutListError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteOptOutListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_opt_out_list::DeleteOptOutListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opt_out_list::DeleteOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opt_out_list::DeleteOptOutListError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteOptOutListFluentBuilder {
             crate::operation::delete_opt_out_list::DeleteOptOutList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opt_out_list::DeleteOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opt_out_list::DeleteOptOutListError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }

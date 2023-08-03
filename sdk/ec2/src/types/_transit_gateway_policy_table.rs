@@ -51,9 +51,7 @@ impl TransitGatewayPolicyTable {
 
 /// A builder for [`TransitGatewayPolicyTable`](crate::types::TransitGatewayPolicyTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyTableBuilder {
     pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -63,40 +61,26 @@ pub struct TransitGatewayPolicyTableBuilder {
 }
 impl TransitGatewayPolicyTableBuilder {
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn set_transit_gateway_policy_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_policy_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn get_transit_gateway_policy_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_policy_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_policy_table_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -110,17 +94,12 @@ impl TransitGatewayPolicyTableBuilder {
         self
     }
     /// <p>The state of the transit gateway policy table</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPolicyTableState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyTableState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the transit gateway policy table</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableState> {
         &self.state
     }
     /// <p>The timestamp when the transit gateway policy table was created.</p>
@@ -129,10 +108,7 @@ impl TransitGatewayPolicyTableBuilder {
         self
     }
     /// <p>The timestamp when the transit gateway policy table was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -152,10 +128,7 @@ impl TransitGatewayPolicyTableBuilder {
         self
     }
     /// <p>he key-value pairs associated with the transit gateway policy table.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

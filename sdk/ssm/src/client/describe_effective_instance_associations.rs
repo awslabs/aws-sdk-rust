@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`associations(Option<Vec<InstanceAssociation>>)`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput::associations): <p>The associations for the requested managed node.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeEffectiveInstanceAssociationsError>`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsError)
-    pub fn describe_effective_instance_associations(&self) -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder{
-        crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_effective_instance_associations(
+        &self,
+    ) -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder {
+        crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -44,9 +44,7 @@ impl Master {
 
 /// A builder for [`Master`](crate::types::Master).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MasterBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl MasterBuilder {
         &self.account_id
     }
     /// <p>The value used to validate the administrator account to the member account.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value used to validate the administrator account to the member account.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -89,18 +81,12 @@ impl MasterBuilder {
         &self.invitation_id
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
-    pub fn relationship_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relationship_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relationship_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relationship_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relationship_status = input;
         self
     }

@@ -12,10 +12,7 @@ pub fn ser_poll_for_task_input(
     if let Some(var_3) = &input.instance_identity {
         #[allow(unused_mut)]
         let mut object_4 = object.key("instanceIdentity").start_object();
-        crate::protocol_serde::shape_instance_identity::ser_instance_identity(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_instance_identity::ser_instance_identity(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`bot_version(Option<String>)`](crate::operation::delete_bot_version::DeleteBotVersionOutput::bot_version): <p>The version of the bot that is being deleted.</p>
     ///   - [`bot_status(Option<BotStatus>)`](crate::operation::delete_bot_version::DeleteBotVersionOutput::bot_status): <p>The current status of the bot. </p>
     /// - On failure, responds with [`SdkError<DeleteBotVersionError>`](crate::operation::delete_bot_version::DeleteBotVersionError)
-    pub fn delete_bot_version(
-        &self,
-    ) -> crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder {
-        crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bot_version(&self) -> crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder {
+        crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder::new(self.handle.clone())
     }
 }

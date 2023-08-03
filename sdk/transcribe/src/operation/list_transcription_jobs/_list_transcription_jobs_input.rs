@@ -36,18 +36,14 @@ impl ListTranscriptionJobsInput {
 }
 impl ListTranscriptionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsInput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsInputBuilder {
         crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTranscriptionJobsInput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTranscriptionJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) job_name_contains: ::std::option::Option<::std::string::String>,
@@ -61,10 +57,7 @@ impl ListTranscriptionJobsInputBuilder {
         self
     }
     /// <p>Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -73,18 +66,12 @@ impl ListTranscriptionJobsInputBuilder {
         &self.status
     }
     /// <p>Returns only the transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn job_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only the transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_job_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name_contains = input;
         self
     }
@@ -123,17 +110,13 @@ impl ListTranscriptionJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListTranscriptionJobsInput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_transcription_jobs::ListTranscriptionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_transcription_jobs::ListTranscriptionJobsInput {
-                status: self.status,
-                job_name_contains: self.job_name_contains,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_transcription_jobs::ListTranscriptionJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_transcription_jobs::ListTranscriptionJobsInput {
+            status: self.status,
+            job_name_contains: self.job_name_contains,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

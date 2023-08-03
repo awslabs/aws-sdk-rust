@@ -28,9 +28,7 @@ impl CreatePipelineOutput {
 
 /// A builder for [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,

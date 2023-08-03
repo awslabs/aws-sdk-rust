@@ -15,34 +15,25 @@ impl GetAutoSnapshotsInput {
 }
 impl GetAutoSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
-    pub fn builder() -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsInputBuilder {
         crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutoSnapshotsInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAutoSnapshotsInputBuilder {
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetAutoSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_auto_snapshots::GetAutoSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_auto_snapshots::GetAutoSnapshotsInput {
-                resource_name: self.resource_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_auto_snapshots::GetAutoSnapshotsInput {
+            resource_name: self.resource_name,
+        })
     }
 }

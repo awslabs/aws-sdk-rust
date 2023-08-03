@@ -59,17 +59,14 @@ impl AssociateAddressInput {
 }
 impl AssociateAddressInput {
     /// Creates a new builder-style object to manufacture [`AssociateAddressInput`](crate::operation::associate_address::AssociateAddressInput).
-    pub fn builder() -> crate::operation::associate_address::builders::AssociateAddressInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_address::builders::AssociateAddressInputBuilder {
         crate::operation::associate_address::builders::AssociateAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAddressInput`](crate::operation::associate_address::AssociateAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAddressInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -81,18 +78,12 @@ pub struct AssociateAddressInputBuilder {
 }
 impl AssociateAddressInputBuilder {
     /// <p>The allocation ID. This is required.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID. This is required.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -158,19 +149,13 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -180,18 +165,12 @@ impl AssociateAddressInputBuilder {
         &self.network_interface_id
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -202,10 +181,7 @@ impl AssociateAddressInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAddressInput`](crate::operation::associate_address::AssociateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_address::AssociateAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_address::AssociateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_address::AssociateAddressInput {
             allocation_id: self.allocation_id,
             instance_id: self.instance_id,

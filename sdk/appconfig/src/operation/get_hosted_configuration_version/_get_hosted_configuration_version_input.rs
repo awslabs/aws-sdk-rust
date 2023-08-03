@@ -29,16 +29,14 @@ impl GetHostedConfigurationVersionInput {
 }
 impl GetHostedConfigurationVersionInput {
     /// Creates a new builder-style object to manufacture [`GetHostedConfigurationVersionInput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput).
-    pub fn builder() -> crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionInputBuilder{
+    pub fn builder() -> crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionInputBuilder {
         crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostedConfigurationVersionInput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostedConfigurationVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetHostedConfigurationVersionInputBuilder {
 }
 impl GetHostedConfigurationVersionInputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl GetHostedConfigurationVersionInputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -106,15 +92,10 @@ impl GetHostedConfigurationVersionInputBuilder {
         crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput {
-                application_id: self.application_id
-                ,
-                configuration_profile_id: self.configuration_profile_id
-                ,
-                version_number: self.version_number
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput {
+            application_id: self.application_id,
+            configuration_profile_id: self.configuration_profile_id,
+            version_number: self.version_number,
+        })
     }
 }

@@ -20,9 +20,7 @@ impl StartLoggingOutput {
 
 /// A builder for [`StartLoggingOutput`](crate::operation::start_logging::StartLoggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLoggingOutputBuilder {
     _request_id: Option<String>,
 }

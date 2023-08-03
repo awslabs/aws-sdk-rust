@@ -62,9 +62,7 @@ impl AwsRedshiftClusterLoggingStatus {
 
 /// A builder for [`AwsRedshiftClusterLoggingStatus`](crate::types::AwsRedshiftClusterLoggingStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterLoggingStatusBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_failure_message: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
         &self.bucket_name
     }
     /// <p>The message indicating that the logs failed to be delivered.</p>
-    pub fn last_failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message indicating that the logs failed to be delivered.</p>
-    pub fn set_last_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_failure_message = input;
         self
     }
@@ -110,19 +102,13 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
     }
     /// <p>The last time when logs failed to be delivered.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_failure_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_failure_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_failure_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last time when logs failed to be delivered.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_failure_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_failure_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_failure_time = input;
         self
     }
@@ -133,27 +119,19 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
     }
     /// <p>The last time that logs were delivered successfully.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_successful_delivery_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_successful_delivery_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_successful_delivery_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last time that logs were delivered successfully.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_successful_delivery_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_successful_delivery_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_successful_delivery_time = input;
         self
     }
     /// <p>The last time that logs were delivered successfully.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn get_last_successful_delivery_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_successful_delivery_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_successful_delivery_time
     }
     /// <p>Indicates whether logging is enabled.</p>
@@ -171,18 +149,12 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
         &self.logging_enabled
     }
     /// <p>Provides the prefix applied to the log file names.</p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the prefix applied to the log file names.</p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }

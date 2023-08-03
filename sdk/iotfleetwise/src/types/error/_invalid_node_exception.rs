@@ -63,9 +63,7 @@ impl InvalidNodeException {
 
 /// A builder for [`InvalidNodeException`](crate::types::error::InvalidNodeException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidNodeExceptionBuilder {
     pub(crate) invalid_nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl InvalidNodeExceptionBuilder {
         self
     }
     /// <p>The specified node type isn't valid.</p>
-    pub fn set_invalid_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_invalid_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.invalid_nodes = input;
         self
     }
@@ -131,10 +126,7 @@ impl InvalidNodeExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`kafka_versions(Option<Vec<KafkaVersion>>)`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput::kafka_versions): (undocumented)
     ///   - [`next_token(Option<String>)`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput::next_token): (undocumented)
     /// - On failure, responds with [`SdkError<ListKafkaVersionsError>`](crate::operation::list_kafka_versions::ListKafkaVersionsError)
-    pub fn list_kafka_versions(
-        &self,
-    ) -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder {
-        crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_kafka_versions(&self) -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder {
+        crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::new(self.handle.clone())
     }
 }

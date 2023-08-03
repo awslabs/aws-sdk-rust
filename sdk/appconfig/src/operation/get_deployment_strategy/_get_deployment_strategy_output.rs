@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for GetDeploymentStrategyOutput {
 }
 impl GetDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStrategyOutput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyOutputBuilder {
         crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentStrategyOutput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentStrategyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -156,10 +152,7 @@ impl GetDeploymentStrategyOutputBuilder {
         self
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
@@ -201,10 +194,7 @@ impl GetDeploymentStrategyOutputBuilder {
         self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn set_replicate_to(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicateTo>,
-    ) -> Self {
+    pub fn set_replicate_to(mut self, input: ::std::option::Option<crate::types::ReplicateTo>) -> Self {
         self.replicate_to = input;
         self
     }

@@ -13,9 +13,7 @@ impl FrameCaptureHlsSettings {
 
 /// A builder for [`FrameCaptureHlsSettings`](crate::types::FrameCaptureHlsSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameCaptureHlsSettingsBuilder {}
 impl FrameCaptureHlsSettingsBuilder {
     /// Consumes the builder and constructs a [`FrameCaptureHlsSettings`](crate::types::FrameCaptureHlsSettings).

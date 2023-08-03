@@ -14,7 +14,10 @@ pub fn ser_response_headers_policy_remove_headers_config(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("ResponseHeadersPolicyRemoveHeader");
-                crate::protocol_serde::shape_response_headers_policy_remove_header::ser_response_headers_policy_remove_header(list_item_3, inner_writer)?
+                crate::protocol_serde::shape_response_headers_policy_remove_header::ser_response_headers_policy_remove_header(
+                    list_item_3,
+                    inner_writer,
+                )?
             }
         }
     }
@@ -24,10 +27,7 @@ pub fn ser_response_headers_policy_remove_headers_config(
 
 pub fn de_response_headers_policy_remove_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyRemoveHeadersConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyRemoveHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyRemoveHeadersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

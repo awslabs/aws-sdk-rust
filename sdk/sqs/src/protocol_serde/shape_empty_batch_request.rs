@@ -3,10 +3,7 @@
 pub fn de_empty_batch_request_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::EmptyBatchRequestBuilder,
-) -> Result<
-    crate::types::error::builders::EmptyBatchRequestBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::EmptyBatchRequestBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

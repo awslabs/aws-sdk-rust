@@ -7,27 +7,19 @@ pub fn ser_network_origin_configuration(
         crate::types::NetworkOriginConfiguration::VpcConfiguration(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_5.key("vpcConfiguration").start_object();
-            crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::NetworkOriginConfiguration::InternetConfiguration(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_5.key("internetConfiguration").start_object();
-            crate::protocol_serde::shape_internet_configuration::ser_internet_configuration(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_internet_configuration::ser_internet_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::NetworkOriginConfiguration::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "NetworkOriginConfiguration",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "NetworkOriginConfiguration",
+            ))
         }
     }
     Ok(())
@@ -35,17 +27,9 @@ pub fn ser_network_origin_configuration(
 
 pub(crate) fn de_network_origin_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::NetworkOriginConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::NetworkOriginConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -55,47 +39,39 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "vpcConfiguration" => {
-                                Some(crate::types::NetworkOriginConfiguration::VpcConfiguration(
-                                    crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcConfiguration' cannot be null"))?
-                                ))
-                            }
-                            "internetConfiguration" => {
-                                Some(crate::types::NetworkOriginConfiguration::InternetConfiguration(
-                                    crate::protocol_serde::shape_internet_configuration::de_internet_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'internetConfiguration' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::NetworkOriginConfiguration::Unknown)
-                                                                    }
-                        };
+                        "vpcConfiguration" => Some(crate::types::NetworkOriginConfiguration::VpcConfiguration(
+                            crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcConfiguration' cannot be null")
+                            })?,
+                        )),
+                        "internetConfiguration" => Some(crate::types::NetworkOriginConfiguration::InternetConfiguration(
+                            crate::protocol_serde::shape_internet_configuration::de_internet_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'internetConfiguration' cannot be null")
+                            })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::NetworkOriginConfiguration::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

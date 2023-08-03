@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`response_plan_summaries(Option<Vec<ResponsePlanSummary>>)`](crate::operation::list_response_plans::ListResponsePlansOutput::response_plan_summaries): <p>Details of each response plan.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_response_plans::ListResponsePlansOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListResponsePlansError>`](crate::operation::list_response_plans::ListResponsePlansError)
-    pub fn list_response_plans(
-        &self,
-    ) -> crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder {
-        crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_response_plans(&self) -> crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder {
+        crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::new(self.handle.clone())
     }
 }

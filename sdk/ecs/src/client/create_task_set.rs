@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTaskSetOutput`](crate::operation::create_task_set::CreateTaskSetOutput) with field(s):
     ///   - [`task_set(Option<TaskSet>)`](crate::operation::create_task_set::CreateTaskSetOutput::task_set): <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     /// - On failure, responds with [`SdkError<CreateTaskSetError>`](crate::operation::create_task_set::CreateTaskSetError)
-    pub fn create_task_set(
-        &self,
-    ) -> crate::operation::create_task_set::builders::CreateTaskSetFluentBuilder {
-        crate::operation::create_task_set::builders::CreateTaskSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_task_set(&self) -> crate::operation::create_task_set::builders::CreateTaskSetFluentBuilder {
+        crate::operation::create_task_set::builders::CreateTaskSetFluentBuilder::new(self.handle.clone())
     }
 }

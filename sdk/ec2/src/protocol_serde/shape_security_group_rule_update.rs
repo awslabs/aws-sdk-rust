@@ -12,9 +12,7 @@ pub fn ser_security_group_rule_update(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("SecurityGroupRule");
     if let Some(var_4) = &input.security_group_rule {
-        crate::protocol_serde::shape_security_group_rule_request::ser_security_group_rule_request(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_security_group_rule_request::ser_security_group_rule_request(scope_3, var_4)?;
     }
     Ok(())
 }

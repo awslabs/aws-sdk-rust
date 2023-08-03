@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetAuthorizersCacheOutput {
 }
 impl ResetAuthorizersCacheOutput {
     /// Creates a new builder-style object to manufacture [`ResetAuthorizersCacheOutput`](crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheOutputBuilder {
         crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetAuthorizersCacheOutput`](crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetAuthorizersCacheOutputBuilder {
     _request_id: Option<String>,
 }

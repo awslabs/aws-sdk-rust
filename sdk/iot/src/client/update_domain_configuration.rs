@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`domain_configuration_name(Option<String>)`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput::domain_configuration_name): <p>The name of the domain configuration that was updated.</p>
     ///   - [`domain_configuration_arn(Option<String>)`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput::domain_configuration_arn): <p>The ARN of the domain configuration that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainConfigurationError>`](crate::operation::update_domain_configuration::UpdateDomainConfigurationError)
-    pub fn update_domain_configuration(&self) -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationFluentBuilder{
+    pub fn update_domain_configuration(&self) -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationFluentBuilder {
         crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl ListFhirDatastoresInput {
 }
 impl ListFhirDatastoresInput {
     /// Creates a new builder-style object to manufacture [`ListFhirDatastoresInput`](crate::operation::list_fhir_datastores::ListFhirDatastoresInput).
-    pub fn builder(
-    ) -> crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBuilder {
+    pub fn builder() -> crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBuilder {
         crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFhirDatastoresInput`](crate::operation::list_fhir_datastores::ListFhirDatastoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DatastoreFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl ListFhirDatastoresInputBuilder {
         self
     }
     /// <p>Lists all filters associated with a FHIR data store request.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DatastoreFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -94,16 +88,11 @@ impl ListFhirDatastoresInputBuilder {
     /// Consumes the builder and constructs a [`ListFhirDatastoresInput`](crate::operation::list_fhir_datastores::ListFhirDatastoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fhir_datastores::ListFhirDatastoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_fhir_datastores::ListFhirDatastoresInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_fhir_datastores::ListFhirDatastoresInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_fhir_datastores::ListFhirDatastoresInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

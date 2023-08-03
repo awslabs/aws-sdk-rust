@@ -10,10 +10,7 @@ impl SubmitFeedbackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::submit_feedback::SubmitFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_feedback::SubmitFeedbackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.submit_feedback();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SubmitFeedbackFluentBuilder {
         }
     }
     /// Access the SubmitFeedback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SubmitFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -153,17 +145,12 @@ impl SubmitFeedbackFluentBuilder {
         self
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    pub fn set_click_feedback_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>,
-    ) -> Self {
+    pub fn set_click_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>) -> Self {
         self.inner = self.inner.set_click_feedback_items(input);
         self
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    pub fn get_click_feedback_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
+    pub fn get_click_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
         self.inner.get_click_feedback_items()
     }
     /// Appends an item to `RelevanceFeedbackItems`.
@@ -176,17 +163,12 @@ impl SubmitFeedbackFluentBuilder {
         self
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn set_relevance_feedback_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>,
-    ) -> Self {
+    pub fn set_relevance_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>) -> Self {
         self.inner = self.inner.set_relevance_feedback_items(input);
         self
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn get_relevance_feedback_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>> {
+    pub fn get_relevance_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>> {
         self.inner.get_relevance_feedback_items()
     }
 }

@@ -10,10 +10,7 @@ impl GetModelManifestInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_model_manifest::GetModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_model_manifest::GetModelManifestError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_model_manifest::GetModelManifestError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_model_manifest();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetModelManifestFluentBuilder {
         }
     }
     /// Access the GetModelManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_model_manifest::builders::GetModelManifestInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_model_manifest::builders::GetModelManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetModelManifestFluentBuilder {
             crate::operation::get_model_manifest::GetModelManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_model_manifest::GetModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_model_manifest::GetModelManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetModelManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetModelManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_model_manifest::GetModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_model_manifest::GetModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_model_manifest::GetModelManifestError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetModelManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_model_manifest::GetModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_model_manifest::GetModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_model_manifest::GetModelManifestError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetModelManifestFluentBuilder {
             crate::operation::get_model_manifest::GetModelManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_model_manifest::GetModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_model_manifest::GetModelManifestError>,
     > {
         self.customize_middleware().await
     }

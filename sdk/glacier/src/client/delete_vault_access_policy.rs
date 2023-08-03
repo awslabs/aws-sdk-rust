@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`vault_name(impl ::std::convert::Into<String>)`](crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyFluentBuilder::vault_name) / [`set_vault_name(Option<String>)`](crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyFluentBuilder::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DeleteVaultAccessPolicyOutput`](crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteVaultAccessPolicyError>`](crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError)
-    pub fn delete_vault_access_policy(
-        &self,
-    ) -> crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyFluentBuilder
-    {
+    pub fn delete_vault_access_policy(&self) -> crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyFluentBuilder {
         crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

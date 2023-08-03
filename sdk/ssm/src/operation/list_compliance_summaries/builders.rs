@@ -26,8 +26,7 @@ impl ListComplianceSummariesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComplianceSummariesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder,
+    inner: crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder,
 }
 impl ListComplianceSummariesFluentBuilder {
     /// Creates a new `ListComplianceSummaries`.
@@ -38,10 +37,7 @@ impl ListComplianceSummariesFluentBuilder {
         }
     }
     /// Access the ListComplianceSummaries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListComplianceSummariesFluentBuilder {
             crate::operation::list_compliance_summaries::ListComplianceSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_summaries::ListComplianceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_summaries::ListComplianceSummariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListComplianceSummariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListComplianceSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_compliance_summaries::ListComplianceSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_summaries::ListComplianceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_summaries::ListComplianceSummariesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListComplianceSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_compliance_summaries::ListComplianceSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_summaries::ListComplianceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_summaries::ListComplianceSummariesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListComplianceSummariesFluentBuilder {
             crate::operation::list_compliance_summaries::ListComplianceSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compliance_summaries::ListComplianceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compliance_summaries::ListComplianceSummariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator {
         crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -143,17 +125,12 @@ impl ListComplianceSummariesFluentBuilder {
         self
     }
     /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
         self.inner.get_filters()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>

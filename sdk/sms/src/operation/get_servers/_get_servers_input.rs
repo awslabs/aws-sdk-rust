@@ -11,8 +11,7 @@ pub struct GetServersInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The server addresses.</p>
     #[doc(hidden)]
-    pub vm_server_address_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>,
+    pub vm_server_address_list: ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>,
 }
 impl GetServersInput {
     /// <p>The token for the next set of results.</p>
@@ -24,9 +23,7 @@ impl GetServersInput {
         self.max_results
     }
     /// <p>The server addresses.</p>
-    pub fn vm_server_address_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VmServerAddress]> {
+    pub fn vm_server_address_list(&self) -> ::std::option::Option<&[crate::types::VmServerAddress]> {
         self.vm_server_address_list.as_deref()
     }
 }
@@ -39,14 +36,11 @@ impl GetServersInput {
 
 /// A builder for [`GetServersInput`](crate::operation::get_servers::GetServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) vm_server_address_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>,
+    pub(crate) vm_server_address_list: ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>,
 }
 impl GetServersInputBuilder {
     /// <p>The token for the next set of results.</p>
@@ -89,26 +83,16 @@ impl GetServersInputBuilder {
         self
     }
     /// <p>The server addresses.</p>
-    pub fn set_vm_server_address_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>,
-    ) -> Self {
+    pub fn set_vm_server_address_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>) -> Self {
         self.vm_server_address_list = input;
         self
     }
     /// <p>The server addresses.</p>
-    pub fn get_vm_server_address_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>> {
+    pub fn get_vm_server_address_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>> {
         &self.vm_server_address_list
     }
     /// Consumes the builder and constructs a [`GetServersInput`](crate::operation::get_servers::GetServersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_servers::GetServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_servers::GetServersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_servers::GetServersInput {
             next_token: self.next_token,
             max_results: self.max_results,

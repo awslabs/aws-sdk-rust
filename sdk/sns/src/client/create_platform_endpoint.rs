@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePlatformEndpointOutput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput::endpoint_arn): <p>EndpointArn returned from CreateEndpoint action.</p>
     /// - On failure, responds with [`SdkError<CreatePlatformEndpointError>`](crate::operation::create_platform_endpoint::CreatePlatformEndpointError)
-    pub fn create_platform_endpoint(
-        &self,
-    ) -> crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointFluentBuilder
-    {
+    pub fn create_platform_endpoint(&self) -> crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointFluentBuilder {
         crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,18 +22,14 @@ impl DescribeRobotApplicationInput {
 }
 impl DescribeRobotApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeRobotApplicationInput`](crate::operation::describe_robot_application::DescribeRobotApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder {
         crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRobotApplicationInput`](crate::operation::describe_robot_application::DescribeRobotApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRobotApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DescribeRobotApplicationInputBuilder {
         &self.application
     }
     /// <p>The version of the robot application to describe.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the robot application to describe.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_version = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeRobotApplicationInputBuilder {
         crate::operation::describe_robot_application::DescribeRobotApplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_robot_application::DescribeRobotApplicationInput {
-                application: self.application,
-                application_version: self.application_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_robot_application::DescribeRobotApplicationInput {
+            application: self.application,
+            application_version: self.application_version,
+        })
     }
 }

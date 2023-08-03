@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetComplianceSummaryOutput {
 }
 impl GetComplianceSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryOutput`](crate::operation::get_compliance_summary::GetComplianceSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryOutputBuilder {
+    pub fn builder() -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryOutputBuilder {
         crate::operation::get_compliance_summary::builders::GetComplianceSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComplianceSummaryOutput`](crate::operation::get_compliance_summary::GetComplianceSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryOutputBuilder {
     pub(crate) summary_list: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
@@ -57,32 +54,21 @@ impl GetComplianceSummaryOutputBuilder {
         self
     }
     /// <p>A table that shows counts of noncompliant resources.</p>
-    pub fn set_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
-    ) -> Self {
+    pub fn set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>) -> Self {
         self.summary_list = input;
         self
     }
     /// <p>A table that shows counts of noncompliant resources.</p>
-    pub fn get_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
+    pub fn get_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
         &self.summary_list
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }

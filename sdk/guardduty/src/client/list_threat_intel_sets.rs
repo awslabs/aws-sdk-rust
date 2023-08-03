@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`threat_intel_set_ids(Option<Vec<String>>)`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput::threat_intel_set_ids): <p>The IDs of the ThreatIntelSet resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListThreatIntelSetsError>`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsError)
-    pub fn list_threat_intel_sets(
-        &self,
-    ) -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder {
-        crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_threat_intel_sets(&self) -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder {
+        crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,10 +24,7 @@ pub fn ser_update_evaluation_form_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

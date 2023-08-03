@@ -24,9 +24,7 @@ impl GetSolInstantiatedVnfInfo {
 
 /// A builder for [`GetSolInstantiatedVnfInfo`](crate::types::GetSolInstantiatedVnfInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolInstantiatedVnfInfoBuilder {
     pub(crate) vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
 }
@@ -37,10 +35,7 @@ impl GetSolInstantiatedVnfInfoBuilder {
         self
     }
     /// <p>State of the network function.</p>
-    pub fn set_vnf_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VnfOperationalState>,
-    ) -> Self {
+    pub fn set_vnf_state(mut self, input: ::std::option::Option<crate::types::VnfOperationalState>) -> Self {
         self.vnf_state = input;
         self
     }
@@ -50,8 +45,6 @@ impl GetSolInstantiatedVnfInfoBuilder {
     }
     /// Consumes the builder and constructs a [`GetSolInstantiatedVnfInfo`](crate::types::GetSolInstantiatedVnfInfo).
     pub fn build(self) -> crate::types::GetSolInstantiatedVnfInfo {
-        crate::types::GetSolInstantiatedVnfInfo {
-            vnf_state: self.vnf_state,
-        }
+        crate::types::GetSolInstantiatedVnfInfo { vnf_state: self.vnf_state }
     }
 }

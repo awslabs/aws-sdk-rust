@@ -77,18 +77,12 @@ impl MeetingBuilder {
         &self.meeting_id
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_meeting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_meeting_id = input;
         self
     }
@@ -102,10 +96,7 @@ impl MeetingBuilder {
         self
     }
     /// <p>The media placement for the meeting.</p>
-    pub fn set_media_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPlacement>,
-    ) -> Self {
+    pub fn set_media_placement(mut self, input: ::std::option::Option<crate::types::MediaPlacement>) -> Self {
         self.media_placement = input;
         self
     }

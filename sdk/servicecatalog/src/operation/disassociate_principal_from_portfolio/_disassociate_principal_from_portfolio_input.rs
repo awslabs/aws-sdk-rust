@@ -44,16 +44,14 @@ impl DisassociatePrincipalFromPortfolioInput {
 }
 impl DisassociatePrincipalFromPortfolioInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePrincipalFromPortfolioInput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput).
-    pub fn builder() -> crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioInputBuilder {
         crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePrincipalFromPortfolioInput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePrincipalFromPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +73,7 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -108,18 +100,12 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
         &self.portfolio_id
     }
     /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -133,10 +119,7 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
         self
     }
     /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.principal_type = input;
         self
     }
@@ -145,18 +128,19 @@ impl DisassociatePrincipalFromPortfolioInputBuilder {
         &self.principal_type
     }
     /// Consumes the builder and constructs a [`DisassociatePrincipalFromPortfolioInput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput {
-                accept_language: self.accept_language
-                ,
-                portfolio_id: self.portfolio_id
-                ,
-                principal_arn: self.principal_arn
-                ,
-                principal_type: self.principal_type
-                ,
-            }
+                accept_language: self.accept_language,
+                portfolio_id: self.portfolio_id,
+                principal_arn: self.principal_arn,
+                principal_type: self.principal_type,
+            },
         )
     }
 }

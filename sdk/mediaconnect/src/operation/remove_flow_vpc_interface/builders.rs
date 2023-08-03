@@ -26,8 +26,7 @@ impl RemoveFlowVpcInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder,
+    inner: crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder,
 }
 impl RemoveFlowVpcInterfaceFluentBuilder {
     /// Creates a new `RemoveFlowVpcInterface`.
@@ -38,10 +37,7 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
         }
     }
     /// Access the RemoveFlowVpcInterface as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
             crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
             crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
         self.inner.get_flow_arn()
     }
     /// The name of the VPC interface that you want to remove.
-    pub fn vpc_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_interface_name(input.into());
         self
     }
     /// The name of the VPC interface that you want to remove.
-    pub fn set_vpc_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_interface_name(input);
         self
     }

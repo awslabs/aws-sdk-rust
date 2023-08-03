@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::set_role_arn): <p>The ARN of the IAM Role that authorizes the destination.</p>
     /// - On success, responds with [`UpdateDestinationOutput`](crate::operation::update_destination::UpdateDestinationOutput)
     /// - On failure, responds with [`SdkError<UpdateDestinationError>`](crate::operation::update_destination::UpdateDestinationError)
-    pub fn update_destination(
-        &self,
-    ) -> crate::operation::update_destination::builders::UpdateDestinationFluentBuilder {
-        crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_destination(&self) -> crate::operation::update_destination::builders::UpdateDestinationFluentBuilder {
+        crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::new(self.handle.clone())
     }
 }

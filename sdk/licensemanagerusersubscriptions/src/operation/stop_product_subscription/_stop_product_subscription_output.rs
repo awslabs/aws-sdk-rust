@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StopProductSubscriptionOutput {
 }
 impl StopProductSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StopProductSubscriptionOutput`](crate::operation::stop_product_subscription::StopProductSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_product_subscription::builders::StopProductSubscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_product_subscription::builders::StopProductSubscriptionOutputBuilder {
         crate::operation::stop_product_subscription::builders::StopProductSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopProductSubscriptionOutput`](crate::operation::stop_product_subscription::StopProductSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopProductSubscriptionOutputBuilder {
     pub(crate) product_user_summary: ::std::option::Option<crate::types::ProductUserSummary>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl StopProductSubscriptionOutputBuilder {
         self
     }
     /// <p>Metadata that describes the start product subscription operation.</p>
-    pub fn set_product_user_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductUserSummary>,
-    ) -> Self {
+    pub fn set_product_user_summary(mut self, input: ::std::option::Option<crate::types::ProductUserSummary>) -> Self {
         self.product_user_summary = input;
         self
     }
     /// <p>Metadata that describes the start product subscription operation.</p>
-    pub fn get_product_user_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductUserSummary> {
+    pub fn get_product_user_summary(&self) -> &::std::option::Option<crate::types::ProductUserSummary> {
         &self.product_user_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl StopProductSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopProductSubscriptionOutput`](crate::operation::stop_product_subscription::StopProductSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_product_subscription::StopProductSubscriptionOutput {
+    pub fn build(self) -> crate::operation::stop_product_subscription::StopProductSubscriptionOutput {
         crate::operation::stop_product_subscription::StopProductSubscriptionOutput {
             product_user_summary: self.product_user_summary,
             _request_id: self._request_id,

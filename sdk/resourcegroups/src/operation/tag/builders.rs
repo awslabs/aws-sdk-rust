@@ -10,10 +10,7 @@ impl TagInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag::TagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag::TagError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.tag();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl TagFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::tag::Tag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::tag::Tag, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError>,
     > {
         let handle = self.handle.clone();
@@ -66,20 +60,14 @@ impl TagFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::tag::TagOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::tag::TagOutput, ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError>> {
         let op = self
             .inner
             .build()
@@ -99,10 +87,7 @@ impl TagFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::tag::TagOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::tag::TagOutput, ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError>> {
         self.send_middleware().await
     }
 
@@ -111,10 +96,7 @@ impl TagFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::tag::Tag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::tag::Tag, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::tag::TagError>,
     > {
         self.customize_middleware().await
@@ -138,30 +120,17 @@ impl TagFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

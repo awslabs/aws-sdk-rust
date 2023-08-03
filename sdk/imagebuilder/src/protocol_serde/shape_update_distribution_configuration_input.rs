@@ -10,9 +10,7 @@ pub fn ser_update_distribution_configuration_input(
         object.key("description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.distribution_configuration_arn {
-        object
-            .key("distributionConfigurationArn")
-            .string(var_3.as_str());
+        object.key("distributionConfigurationArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.distributions {
         let mut array_5 = object.key("distributions").start_array();

@@ -30,9 +30,7 @@ impl UsageResourceResult {
 
 /// A builder for [`UsageResourceResult`](crate::types::UsageResourceResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageResourceResultBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) total: ::std::option::Option<crate::types::Total>,

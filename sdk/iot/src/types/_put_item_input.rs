@@ -23,9 +23,7 @@ impl PutItemInput {
 
 /// A builder for [`PutItemInput`](crate::types::PutItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutItemInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PutItemInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutItemInput`](crate::types::PutItemInput).
     pub fn build(self) -> crate::types::PutItemInput {
-        crate::types::PutItemInput {
-            table_name: self.table_name,
-        }
+        crate::types::PutItemInput { table_name: self.table_name }
     }
 }

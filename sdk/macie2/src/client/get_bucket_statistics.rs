@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`unclassifiable_object_count(Option<ObjectLevelStatistics>)`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput::unclassifiable_object_count): <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     ///   - [`unclassifiable_object_size_in_bytes(Option<ObjectLevelStatistics>)`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput::unclassifiable_object_size_in_bytes): <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     /// - On failure, responds with [`SdkError<GetBucketStatisticsError>`](crate::operation::get_bucket_statistics::GetBucketStatisticsError)
-    pub fn get_bucket_statistics(
-        &self,
-    ) -> crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder {
-        crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_statistics(&self) -> crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder {
+        crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl TestGridSession {
 
 /// A builder for [`TestGridSession`](crate::types::TestGridSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestGridSessionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TestGridSessionStatus>,
@@ -90,10 +88,7 @@ impl TestGridSessionBuilder {
         self
     }
     /// <p>The state of the session.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestGridSessionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -107,10 +102,7 @@ impl TestGridSessionBuilder {
         self
     }
     /// <p>The time that the session was started.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -147,18 +139,12 @@ impl TestGridSessionBuilder {
         &self.billing_minutes
     }
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
-    pub fn selenium_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selenium_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selenium_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
-    pub fn set_selenium_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_selenium_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selenium_properties = input;
         self
     }

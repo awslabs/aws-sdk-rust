@@ -10,9 +10,7 @@ pub struct DeleteCollectionOutput {
 }
 impl DeleteCollectionOutput {
     /// <p>Details of the deleted collection.</p>
-    pub fn delete_collection_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeleteCollectionDetail> {
+    pub fn delete_collection_detail(&self) -> ::std::option::Option<&crate::types::DeleteCollectionDetail> {
         self.delete_collection_detail.as_ref()
     }
 }
@@ -23,20 +21,16 @@ impl ::aws_http::request_id::RequestId for DeleteCollectionOutput {
 }
 impl DeleteCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCollectionOutput`](crate::operation::delete_collection::DeleteCollectionOutput).
-    pub fn builder() -> crate::operation::delete_collection::builders::DeleteCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_collection::builders::DeleteCollectionOutputBuilder {
         crate::operation::delete_collection::builders::DeleteCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCollectionOutput`](crate::operation::delete_collection::DeleteCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCollectionOutputBuilder {
-    pub(crate) delete_collection_detail:
-        ::std::option::Option<crate::types::DeleteCollectionDetail>,
+    pub(crate) delete_collection_detail: ::std::option::Option<crate::types::DeleteCollectionDetail>,
     _request_id: Option<String>,
 }
 impl DeleteCollectionOutputBuilder {
@@ -46,17 +40,12 @@ impl DeleteCollectionOutputBuilder {
         self
     }
     /// <p>Details of the deleted collection.</p>
-    pub fn set_delete_collection_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteCollectionDetail>,
-    ) -> Self {
+    pub fn set_delete_collection_detail(mut self, input: ::std::option::Option<crate::types::DeleteCollectionDetail>) -> Self {
         self.delete_collection_detail = input;
         self
     }
     /// <p>Details of the deleted collection.</p>
-    pub fn get_delete_collection_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteCollectionDetail> {
+    pub fn get_delete_collection_detail(&self) -> &::std::option::Option<crate::types::DeleteCollectionDetail> {
         &self.delete_collection_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

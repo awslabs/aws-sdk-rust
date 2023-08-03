@@ -35,9 +35,7 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// <p>A list of projects in your AWS account.</p>
-    pub fn set_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>>,
-    ) -> Self {
+    pub fn set_projects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>>) -> Self {
         self.projects = input;
         self
     }
     /// <p>A list of projects in your AWS account.</p>
-    pub fn get_projects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>> {
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>> {
         &self.projects
     }
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>

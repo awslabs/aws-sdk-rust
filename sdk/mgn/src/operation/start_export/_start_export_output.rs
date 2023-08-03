@@ -29,9 +29,7 @@ impl StartExportOutput {
 
 /// A builder for [`StartExportOutput`](crate::operation::start_export::StartExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportOutputBuilder {
     pub(crate) export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl StartExportOutputBuilder {
         self
     }
     /// <p>Start export response export task.</p>
-    pub fn set_export_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTask>,
-    ) -> Self {
+    pub fn set_export_task(mut self, input: ::std::option::Option<crate::types::ExportTask>) -> Self {
         self.export_task = input;
         self
     }

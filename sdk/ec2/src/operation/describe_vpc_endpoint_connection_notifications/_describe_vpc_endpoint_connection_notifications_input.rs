@@ -59,16 +59,15 @@ impl DescribeVpcEndpointConnectionNotificationsInput {
 }
 impl DescribeVpcEndpointConnectionNotificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointConnectionNotificationsInput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder {
         crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointConnectionNotificationsInput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionNotificationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) connection_notification_id: ::std::option::Option<::std::string::String>,
@@ -92,18 +91,12 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_notification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_notification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the notification.</p>
-    pub fn set_connection_notification_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_notification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_notification_id = input;
         self
     }
@@ -139,10 +132,7 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
     /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -187,20 +177,20 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionNotificationsInput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput {
-                dry_run: self.dry_run
-                ,
-                connection_notification_id: self.connection_notification_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                connection_notification_id: self.connection_notification_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

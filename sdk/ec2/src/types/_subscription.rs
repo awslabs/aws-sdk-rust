@@ -51,9 +51,7 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriptionBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl SubscriptionBuilder {
         self
     }
     /// <p>The statistic used for the subscription.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.statistic = input;
         self
     }

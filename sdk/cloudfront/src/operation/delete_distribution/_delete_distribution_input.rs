@@ -35,17 +35,14 @@ impl DeleteDistributionInput {
 }
 impl DeleteDistributionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_distribution::builders::DeleteDistributionInputBuilder {
+    pub fn builder() -> crate::operation::delete_distribution::builders::DeleteDistributionInputBuilder {
         crate::operation::delete_distribution::builders::DeleteDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -82,15 +79,10 @@ impl DeleteDistributionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_distribution::DeleteDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_distribution::DeleteDistributionInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_distribution::DeleteDistributionInput {
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

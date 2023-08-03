@@ -44,9 +44,7 @@ impl Invalidation {
 
 /// A builder for [`Invalidation`](crate::types::Invalidation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl InvalidationBuilder {
         self
     }
     /// <p>The date and time the invalidation request was first made.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -105,17 +100,12 @@ impl InvalidationBuilder {
         self
     }
     /// <p>The current invalidation information for the batch request.</p>
-    pub fn set_invalidation_batch(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidationBatch>,
-    ) -> Self {
+    pub fn set_invalidation_batch(mut self, input: ::std::option::Option<crate::types::InvalidationBatch>) -> Self {
         self.invalidation_batch = input;
         self
     }
     /// <p>The current invalidation information for the batch request.</p>
-    pub fn get_invalidation_batch(
-        &self,
-    ) -> &::std::option::Option<crate::types::InvalidationBatch> {
+    pub fn get_invalidation_batch(&self) -> &::std::option::Option<crate::types::InvalidationBatch> {
         &self.invalidation_batch
     }
     /// Consumes the builder and constructs a [`Invalidation`](crate::types::Invalidation).

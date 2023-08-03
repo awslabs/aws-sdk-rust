@@ -22,9 +22,7 @@ impl DeprecateDomainInput {
 
 /// A builder for [`DeprecateDomainInput`](crate::operation::deprecate_domain::DeprecateDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateDomainInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeprecateDomainInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateDomainInput`](crate::operation::deprecate_domain::DeprecateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_domain::DeprecateDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deprecate_domain::DeprecateDomainInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::deprecate_domain::DeprecateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::deprecate_domain::DeprecateDomainInput { name: self.name })
     }
 }

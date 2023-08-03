@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListByteMatchSetsOutput {
 }
 impl ListByteMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListByteMatchSetsOutput`](crate::operation::list_byte_match_sets::ListByteMatchSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_byte_match_sets::builders::ListByteMatchSetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_byte_match_sets::builders::ListByteMatchSetsOutputBuilder {
         crate::operation::list_byte_match_sets::builders::ListByteMatchSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListByteMatchSetsOutput`](crate::operation::list_byte_match_sets::ListByteMatchSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListByteMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) byte_match_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>,
+    pub(crate) byte_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListByteMatchSetsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListByteMatchSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub fn set_byte_match_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>,
-    ) -> Self {
+    pub fn set_byte_match_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>) -> Self {
         self.byte_match_sets = input;
         self
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub fn get_byte_match_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>> {
+    pub fn get_byte_match_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>> {
         &self.byte_match_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

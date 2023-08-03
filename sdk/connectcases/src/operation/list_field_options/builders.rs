@@ -10,10 +10,7 @@ impl ListFieldOptionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_field_options::ListFieldOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_field_options::ListFieldOptionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_field_options::ListFieldOptionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_field_options();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFieldOptionsFluentBuilder {
         }
     }
     /// Access the ListFieldOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListFieldOptionsFluentBuilder {
             crate::operation::list_field_options::ListFieldOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_field_options::ListFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_field_options::ListFieldOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListFieldOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListFieldOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_field_options::ListFieldOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_field_options::ListFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_field_options::ListFieldOptionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListFieldOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_field_options::ListFieldOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_field_options::ListFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_field_options::ListFieldOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListFieldOptionsFluentBuilder {
             crate::operation::list_field_options::ListFieldOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_field_options::ListFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_field_options::ListFieldOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_field_options::paginator::ListFieldOptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_field_options::paginator::ListFieldOptionsPaginator {
-        crate::operation::list_field_options::paginator::ListFieldOptionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_field_options::paginator::ListFieldOptionsPaginator {
+        crate::operation::list_field_options::paginator::ListFieldOptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -199,10 +178,7 @@ impl ListFieldOptionsFluentBuilder {
         self
     }
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values(input);
         self
     }

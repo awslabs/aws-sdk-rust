@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`resolution_id(Option<String>)`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput::resolution_id): <p>The ID for a specific resolution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppVersionResourcesError>`](crate::operation::list_app_version_resources::ListAppVersionResourcesError)
-    pub fn list_app_version_resources(
-        &self,
-    ) -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder
-    {
+    pub fn list_app_version_resources(&self) -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder {
         crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::new(self.handle.clone())
     }
 }

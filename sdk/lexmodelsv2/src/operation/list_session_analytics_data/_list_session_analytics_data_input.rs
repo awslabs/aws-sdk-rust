@@ -59,25 +59,20 @@ impl ListSessionAnalyticsDataInput {
 }
 impl ListSessionAnalyticsDataInput {
     /// Creates a new builder-style object to manufacture [`ListSessionAnalyticsDataInput`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataInput).
-    pub fn builder(
-    ) -> crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder {
         crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSessionAnalyticsDataInput`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSessionAnalyticsDataInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SessionDataSortBy>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -102,10 +97,7 @@ impl ListSessionAnalyticsDataInputBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see session analytics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -119,10 +111,7 @@ impl ListSessionAnalyticsDataInputBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see session analytics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -136,10 +125,7 @@ impl ListSessionAnalyticsDataInputBuilder {
         self
     }
     /// <p>An object specifying the measure and method by which to sort the session analytics data.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionDataSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SessionDataSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -159,17 +145,12 @@ impl ListSessionAnalyticsDataInputBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -210,16 +191,14 @@ impl ListSessionAnalyticsDataInputBuilder {
         crate::operation::list_session_analytics_data::ListSessionAnalyticsDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataInput {
-                bot_id: self.bot_id,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                sort_by: self.sort_by,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_session_analytics_data::ListSessionAnalyticsDataInput {
+            bot_id: self.bot_id,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            sort_by: self.sort_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

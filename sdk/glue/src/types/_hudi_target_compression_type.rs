@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HudiTargetCompressionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for HudiTargetCompressionType {
             "lzo" => HudiTargetCompressionType::Lzo,
             "snappy" => HudiTargetCompressionType::Snappy,
             "uncompressed" => HudiTargetCompressionType::Uncompressed,
-            other => HudiTargetCompressionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HudiTargetCompressionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

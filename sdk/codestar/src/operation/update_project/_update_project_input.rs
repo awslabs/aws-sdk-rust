@@ -97,10 +97,7 @@ impl UpdateProjectInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_project::UpdateProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
             id: self.id,
             name: self.name,

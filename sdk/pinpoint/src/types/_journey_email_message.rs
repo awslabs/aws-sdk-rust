@@ -23,9 +23,7 @@ impl JourneyEmailMessage {
 
 /// A builder for [`JourneyEmailMessage`](crate::types::JourneyEmailMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JourneyEmailMessageBuilder {
     pub(crate) from_address: ::std::option::Option<::std::string::String>,
 }

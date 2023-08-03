@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`report_id(Option<String>)`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput::report_id): <p>A unique string that identifies the predictive inbox placement test.</p>
     ///   - [`deliverability_test_status(Option<DeliverabilityTestStatus>)`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput::deliverability_test_status): <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     /// - On failure, responds with [`SdkError<CreateDeliverabilityTestReportError>`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError)
-    pub fn create_deliverability_test_report(&self) -> crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportFluentBuilder{
+    pub fn create_deliverability_test_report(
+        &self,
+    ) -> crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportFluentBuilder {
         crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportFluentBuilder::new(self.handle.clone())
     }
 }

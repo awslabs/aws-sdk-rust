@@ -15,33 +15,25 @@ impl StopDeliveryStreamEncryptionInput {
 }
 impl StopDeliveryStreamEncryptionInput {
     /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionInput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput).
-    pub fn builder() -> crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder{
+    pub fn builder() -> crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder {
         crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDeliveryStreamEncryptionInput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl StopDeliveryStreamEncryptionInputBuilder {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl StopDeliveryStreamEncryptionInputBuilder {
         crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput {
-                delivery_stream_name: self.delivery_stream_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput {
+            delivery_stream_name: self.delivery_stream_name,
+        })
     }
 }

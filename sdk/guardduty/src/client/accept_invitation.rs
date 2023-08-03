@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput)
     /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::operation::accept_invitation::AcceptInvitationError)
     #[deprecated(note = "This operation is deprecated, use AcceptAdministratorInvitation instead")]
-    pub fn accept_invitation(
-        &self,
-    ) -> crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder {
-        crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn accept_invitation(&self) -> crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder {
+        crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::new(self.handle.clone())
     }
 }

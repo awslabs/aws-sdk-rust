@@ -15,34 +15,25 @@ impl DeleteCoreDeviceInput {
 }
 impl DeleteCoreDeviceInput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
-    pub fn builder() -> crate::operation::delete_core_device::builders::DeleteCoreDeviceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_core_device::builders::DeleteCoreDeviceInputBuilder {
         crate::operation::delete_core_device::builders::DeleteCoreDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoreDeviceInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCoreDeviceInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_device_thing_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteCoreDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_core_device::DeleteCoreDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_core_device::DeleteCoreDeviceInput {
-                core_device_thing_name: self.core_device_thing_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_core_device::DeleteCoreDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_core_device::DeleteCoreDeviceInput {
+            core_device_thing_name: self.core_device_thing_name,
+        })
     }
 }

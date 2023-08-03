@@ -36,9 +36,7 @@ impl GetBotVersionsInput {
 
 /// A builder for [`GetBotVersionsInput`](crate::operation::get_bot_versions::GetBotVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetBotVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetBotVersionsInput`](crate::operation::get_bot_versions::GetBotVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bot_versions::GetBotVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_bot_versions::GetBotVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bot_versions::GetBotVersionsInput {
             name: self.name,
             next_token: self.next_token,

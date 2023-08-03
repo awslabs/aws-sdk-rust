@@ -26,7 +26,7 @@ impl StartExportLabelsTaskRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExportLabelsTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder,
+    inner: crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder,
 }
 impl StartExportLabelsTaskRunFluentBuilder {
     /// Creates a new `StartExportLabelsTaskRun`.
@@ -37,7 +37,7 @@ impl StartExportLabelsTaskRunFluentBuilder {
         }
     }
     /// Access the StartExportLabelsTaskRun as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartExportLabelsTaskRunFluentBuilder {
             crate::operation::start_export_labels_task_run::StartExportLabelsTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartExportLabelsTaskRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartExportLabelsTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartExportLabelsTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartExportLabelsTaskRunFluentBuilder {
             crate::operation::start_export_labels_task_run::StartExportLabelsTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl StartExportLabelsTaskRunFluentBuilder {
         self.inner.get_transform_id()
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn output_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_s3_path(input.into());
         self
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn set_output_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_s3_path(input);
         self
     }

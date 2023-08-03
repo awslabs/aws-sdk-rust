@@ -10,9 +10,7 @@ pub struct UpdateGameConfigurationOutput {
 }
 impl UpdateGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
-    pub fn game_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GameConfigurationDetails> {
+    pub fn game_configuration(&self) -> ::std::option::Option<&crate::types::GameConfigurationDetails> {
         self.game_configuration.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGameConfigurationOutput {
 }
 impl UpdateGameConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationOutputBuilder {
         crate::operation::update_game_configuration::builders::UpdateGameConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameConfigurationOutputBuilder {
     pub(crate) game_configuration: ::std::option::Option<crate::types::GameConfigurationDetails>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl UpdateGameConfigurationOutputBuilder {
         self
     }
     /// <p>Details about the game configuration.</p>
-    pub fn set_game_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::GameConfigurationDetails>,
-    ) -> Self {
+    pub fn set_game_configuration(mut self, input: ::std::option::Option<crate::types::GameConfigurationDetails>) -> Self {
         self.game_configuration = input;
         self
     }
     /// <p>Details about the game configuration.</p>
-    pub fn get_game_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameConfigurationDetails> {
+    pub fn get_game_configuration(&self) -> &::std::option::Option<crate::types::GameConfigurationDetails> {
         &self.game_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl UpdateGameConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_game_configuration::UpdateGameConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_game_configuration::UpdateGameConfigurationOutput {
         crate::operation::update_game_configuration::UpdateGameConfigurationOutput {
             game_configuration: self.game_configuration,
             _request_id: self._request_id,

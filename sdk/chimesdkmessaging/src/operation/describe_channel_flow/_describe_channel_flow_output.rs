@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeChannelFlowOutput {
 }
 impl DescribeChannelFlowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelFlowOutput`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder {
-        crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder {
+        crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChannelFlowOutput`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelFlowOutputBuilder {
     pub(crate) channel_flow: ::std::option::Option<crate::types::ChannelFlow>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeChannelFlowOutputBuilder {
         self
     }
     /// <p>The channel flow details.</p>
-    pub fn set_channel_flow(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelFlow>,
-    ) -> Self {
+    pub fn set_channel_flow(mut self, input: ::std::option::Option<crate::types::ChannelFlow>) -> Self {
         self.channel_flow = input;
         self
     }

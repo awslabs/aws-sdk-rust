@@ -10,10 +10,7 @@ impl ListPipesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_pipes::ListPipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipes::ListPipesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_pipes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListPipesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_pipes::ListPipes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_pipes::ListPipes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListPipesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListPipesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_pipes::ListPipes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_pipes::ListPipes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
     > {
         self.customize_middleware().await
@@ -138,10 +126,7 @@ impl ListPipesFluentBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
@@ -155,10 +140,7 @@ impl ListPipesFluentBuilder {
         self
     }
     /// <p>The state the pipe is in.</p>
-    pub fn set_current_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeState>,
-    ) -> Self {
+    pub fn set_current_state(mut self, input: ::std::option::Option<crate::types::PipeState>) -> Self {
         self.inner = self.inner.set_current_state(input);
         self
     }
@@ -167,18 +149,12 @@ impl ListPipesFluentBuilder {
         self.inner.get_current_state()
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn source_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_prefix(input.into());
         self
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn set_source_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_prefix(input);
         self
     }
@@ -187,18 +163,12 @@ impl ListPipesFluentBuilder {
         self.inner.get_source_prefix()
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn target_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_prefix(input.into());
         self
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn set_target_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_prefix(input);
         self
     }

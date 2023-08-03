@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`lifecycle(Option<VolumeLifecycle>)`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput::lifecycle): <p>The lifecycle state of the volume being restored.</p>
     ///   - [`administrative_actions(Option<Vec<AdministrativeAction>>)`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput::administrative_actions): <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
     /// - On failure, responds with [`SdkError<RestoreVolumeFromSnapshotError>`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError)
-    pub fn restore_volume_from_snapshot(&self) -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotFluentBuilder{
+    pub fn restore_volume_from_snapshot(&self) -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotFluentBuilder {
         crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

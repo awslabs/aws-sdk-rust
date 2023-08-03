@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateQuantumTaskOutput`](crate::operation::create_quantum_task::CreateQuantumTaskOutput) with field(s):
     ///   - [`quantum_task_arn(Option<String>)`](crate::operation::create_quantum_task::CreateQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task created by the request.</p>
     /// - On failure, responds with [`SdkError<CreateQuantumTaskError>`](crate::operation::create_quantum_task::CreateQuantumTaskError)
-    pub fn create_quantum_task(
-        &self,
-    ) -> crate::operation::create_quantum_task::builders::CreateQuantumTaskFluentBuilder {
-        crate::operation::create_quantum_task::builders::CreateQuantumTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_quantum_task(&self) -> crate::operation::create_quantum_task::builders::CreateQuantumTaskFluentBuilder {
+        crate::operation::create_quantum_task::builders::CreateQuantumTaskFluentBuilder::new(self.handle.clone())
     }
 }

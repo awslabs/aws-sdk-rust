@@ -30,27 +30,19 @@ impl FailureInfo {
 
 /// A builder for [`FailureInfo`](crate::types::FailureInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureInfoBuilder {
     pub(crate) failed_records_s3_url: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailureInfoBuilder {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    pub fn failed_records_s3_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failed_records_s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failed_records_s3_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    pub fn set_failed_records_s3_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failed_records_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failed_records_s3_url = input;
         self
     }
@@ -59,18 +51,12 @@ impl FailureInfoBuilder {
         &self.failed_records_s3_url
     }
     /// <p>A message about why the import job failed.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about why the import job failed.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

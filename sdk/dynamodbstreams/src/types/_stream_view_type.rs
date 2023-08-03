@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamViewType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for StreamViewType {
             "NEW_AND_OLD_IMAGES" => StreamViewType::NewAndOldImages,
             "NEW_IMAGE" => StreamViewType::NewImage,
             "OLD_IMAGE" => StreamViewType::OldImage,
-            other => {
-                StreamViewType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => StreamViewType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

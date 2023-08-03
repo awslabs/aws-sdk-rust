@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::set_resource_arn): <p>The ARN of the canary that you want to associate with the specified group.</p>
     /// - On success, responds with [`AssociateResourceOutput`](crate::operation::associate_resource::AssociateResourceOutput)
     /// - On failure, responds with [`SdkError<AssociateResourceError>`](crate::operation::associate_resource::AssociateResourceError)
-    pub fn associate_resource(
-        &self,
-    ) -> crate::operation::associate_resource::builders::AssociateResourceFluentBuilder {
-        crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_resource(&self) -> crate::operation::associate_resource::builders::AssociateResourceFluentBuilder {
+        crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::new(self.handle.clone())
     }
 }

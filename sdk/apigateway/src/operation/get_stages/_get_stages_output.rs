@@ -29,9 +29,7 @@ impl GetStagesOutput {
 
 /// A builder for [`GetStagesOutput`](crate::operation::get_stages::GetStagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStagesOutputBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl GetStagesOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
-    ) -> Self {
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>) -> Self {
         self.item = input;
         self
     }

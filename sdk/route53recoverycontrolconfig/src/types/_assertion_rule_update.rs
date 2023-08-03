@@ -37,9 +37,7 @@ impl AssertionRuleUpdate {
 
 /// A builder for [`AssertionRuleUpdate`](crate::types::AssertionRuleUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssertionRuleUpdateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl AssertionRuleUpdateBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn safety_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn set_safety_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.safety_rule_arn = input;
         self
     }

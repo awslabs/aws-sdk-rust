@@ -13,8 +13,7 @@ pub struct ClusterParameterGroupStatus {
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     #[doc(hidden)]
-    pub cluster_parameter_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
+    pub cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
 }
 impl ClusterParameterGroupStatus {
     /// <p>The name of the cluster parameter group.</p>
@@ -27,9 +26,7 @@ impl ClusterParameterGroupStatus {
     }
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn cluster_parameter_status_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterParameterStatus]> {
+    pub fn cluster_parameter_status_list(&self) -> ::std::option::Option<&[crate::types::ClusterParameterStatus]> {
         self.cluster_parameter_status_list.as_deref()
     }
 }
@@ -42,29 +39,20 @@ impl ClusterParameterGroupStatus {
 
 /// A builder for [`ClusterParameterGroupStatus`](crate::types::ClusterParameterGroupStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterParameterGroupStatusBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_parameter_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
+    pub(crate) cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
 }
 impl ClusterParameterGroupStatusBuilder {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -73,18 +61,12 @@ impl ClusterParameterGroupStatusBuilder {
         &self.parameter_group_name
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of parameter updates.</p>
-    pub fn set_parameter_apply_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
@@ -98,10 +80,7 @@ impl ClusterParameterGroupStatusBuilder {
     ///
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn cluster_parameter_status_list(
-        mut self,
-        input: crate::types::ClusterParameterStatus,
-    ) -> Self {
+    pub fn cluster_parameter_status_list(mut self, input: crate::types::ClusterParameterStatus) -> Self {
         let mut v = self.cluster_parameter_status_list.unwrap_or_default();
         v.push(input);
         self.cluster_parameter_status_list = ::std::option::Option::Some(v);
@@ -109,18 +88,13 @@ impl ClusterParameterGroupStatusBuilder {
     }
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn set_cluster_parameter_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
-    ) -> Self {
+    pub fn set_cluster_parameter_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>) -> Self {
         self.cluster_parameter_status_list = input;
         self
     }
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn get_cluster_parameter_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>> {
+    pub fn get_cluster_parameter_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>> {
         &self.cluster_parameter_status_list
     }
     /// Consumes the builder and constructs a [`ClusterParameterGroupStatus`](crate::types::ClusterParameterGroupStatus).

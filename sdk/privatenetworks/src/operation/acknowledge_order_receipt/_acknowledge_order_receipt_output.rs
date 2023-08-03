@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AcknowledgeOrderReceiptOutput {
 }
 impl AcknowledgeOrderReceiptOutput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeOrderReceiptOutput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput).
-    pub fn builder(
-    ) -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptOutputBuilder
-    {
+    pub fn builder() -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptOutputBuilder {
         crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcknowledgeOrderReceiptOutput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptOutputBuilder {
     pub(crate) order: ::std::option::Option<crate::types::Order>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl AcknowledgeOrderReceiptOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcknowledgeOrderReceiptOutput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput {
+    pub fn build(self) -> crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput {
         crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput {
             order: self.order,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl MeterUsageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::meter_usage::MeterUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::meter_usage::MeterUsageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.meter_usage();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl MeterUsageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::meter_usage::MeterUsage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::meter_usage::MeterUsage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl MeterUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl MeterUsageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::meter_usage::MeterUsage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::meter_usage::MeterUsage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError>,
     > {
         self.customize_middleware().await
@@ -135,10 +123,7 @@ impl MeterUsageFluentBuilder {
         self
     }
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self
     }
@@ -147,18 +132,12 @@ impl MeterUsageFluentBuilder {
         self.inner.get_timestamp()
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
-    pub fn usage_dimension(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_dimension(input.into());
         self
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
-    pub fn set_usage_dimension(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_dimension(input);
         self
     }
@@ -206,18 +185,13 @@ impl MeterUsageFluentBuilder {
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn set_usage_allocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
-    ) -> Self {
+    pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
         self.inner = self.inner.set_usage_allocations(input);
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn get_usage_allocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
+    pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         self.inner.get_usage_allocations()
     }
 }

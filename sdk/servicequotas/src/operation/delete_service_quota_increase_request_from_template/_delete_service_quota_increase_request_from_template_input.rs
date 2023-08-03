@@ -29,16 +29,16 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
-    pub fn builder() -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder
+    {
         crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
@@ -88,16 +88,18 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         &self.aws_region
     }
     /// Consumes the builder and constructs a [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput {
-                service_code: self.service_code
-                ,
-                quota_code: self.quota_code
-                ,
-                aws_region: self.aws_region
-                ,
-            }
+                service_code: self.service_code,
+                quota_code: self.quota_code,
+                aws_region: self.aws_region,
+            },
         )
     }
 }

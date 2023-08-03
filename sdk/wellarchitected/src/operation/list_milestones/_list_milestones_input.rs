@@ -37,9 +37,7 @@ impl ListMilestonesInput {
 
 /// A builder for [`ListMilestonesInput`](crate::operation::list_milestones::ListMilestonesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMilestonesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl ListMilestonesInputBuilder {
     /// Consumes the builder and constructs a [`ListMilestonesInput`](crate::operation::list_milestones::ListMilestonesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_milestones::ListMilestonesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_milestones::ListMilestonesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_milestones::ListMilestonesInput {
             workload_id: self.workload_id,
             next_token: self.next_token,

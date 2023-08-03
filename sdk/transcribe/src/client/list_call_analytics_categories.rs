@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput::next_token): <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     ///   - [`categories(Option<Vec<CategoryProperties>>)`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput::categories): <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
     /// - On failure, responds with [`SdkError<ListCallAnalyticsCategoriesError>`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError)
-    pub fn list_call_analytics_categories(&self) -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesFluentBuilder{
+    pub fn list_call_analytics_categories(
+        &self,
+    ) -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesFluentBuilder {
         crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesFluentBuilder::new(self.handle.clone())
     }
 }

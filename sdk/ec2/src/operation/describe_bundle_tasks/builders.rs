@@ -39,9 +39,7 @@ impl DescribeBundleTasksFluentBuilder {
         }
     }
     /// Access the DescribeBundleTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeBundleTasksFluentBuilder {
             crate::operation::describe_bundle_tasks::DescribeBundleTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bundle_tasks::DescribeBundleTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bundle_tasks::DescribeBundleTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeBundleTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeBundleTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bundle_tasks::DescribeBundleTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bundle_tasks::DescribeBundleTasksError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeBundleTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bundle_tasks::DescribeBundleTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bundle_tasks::DescribeBundleTasksError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DescribeBundleTasksFluentBuilder {
             crate::operation::describe_bundle_tasks::DescribeBundleTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bundle_tasks::DescribeBundleTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bundle_tasks::DescribeBundleTasksError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +123,7 @@ impl DescribeBundleTasksFluentBuilder {
     }
     /// <p>The bundle task IDs.</p>
     /// <p>Default: Describes all your bundle tasks.</p>
-    pub fn set_bundle_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_bundle_ids(input);
         self
     }
@@ -182,10 +166,7 @@ impl DescribeBundleTasksFluentBuilder {
     /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

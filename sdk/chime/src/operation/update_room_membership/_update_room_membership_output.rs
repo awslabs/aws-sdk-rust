@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRoomMembershipOutput {
 }
 impl UpdateRoomMembershipOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoomMembershipOutput`](crate::operation::update_room_membership::UpdateRoomMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::update_room_membership::builders::UpdateRoomMembershipOutputBuilder {
+    pub fn builder() -> crate::operation::update_room_membership::builders::UpdateRoomMembershipOutputBuilder {
         crate::operation::update_room_membership::builders::UpdateRoomMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoomMembershipOutput`](crate::operation::update_room_membership::UpdateRoomMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoomMembershipOutputBuilder {
     pub(crate) room_membership: ::std::option::Option<crate::types::RoomMembership>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateRoomMembershipOutputBuilder {
         self
     }
     /// <p>The room membership details.</p>
-    pub fn set_room_membership(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembership>,
-    ) -> Self {
+    pub fn set_room_membership(mut self, input: ::std::option::Option<crate::types::RoomMembership>) -> Self {
         self.room_membership = input;
         self
     }

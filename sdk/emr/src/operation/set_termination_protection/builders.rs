@@ -29,7 +29,7 @@ impl SetTerminationProtectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetTerminationProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder,
+    inner: crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder,
 }
 impl SetTerminationProtectionFluentBuilder {
     /// Creates a new `SetTerminationProtection`.
@@ -40,10 +40,7 @@ impl SetTerminationProtectionFluentBuilder {
         }
     }
     /// Access the SetTerminationProtection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl SetTerminationProtectionFluentBuilder {
             crate::operation::set_termination_protection::SetTerminationProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_termination_protection::SetTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_termination_protection::SetTerminationProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl SetTerminationProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl SetTerminationProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_termination_protection::SetTerminationProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_termination_protection::SetTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_termination_protection::SetTerminationProtectionError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl SetTerminationProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_termination_protection::SetTerminationProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_termination_protection::SetTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_termination_protection::SetTerminationProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl SetTerminationProtectionFluentBuilder {
             crate::operation::set_termination_protection::SetTerminationProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_termination_protection::SetTerminationProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_termination_protection::SetTerminationProtectionError>,
     > {
         self.customize_middleware().await
     }
@@ -136,17 +122,12 @@ impl SetTerminationProtectionFluentBuilder {
         self
     }
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    pub fn get_job_flow_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>

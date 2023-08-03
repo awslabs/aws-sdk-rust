@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`application_versions(Option<Vec<ApplicationVersionSummary>>)`](crate::operation::list_application_versions::ListApplicationVersionsOutput::application_versions): <p>The list of application versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_versions::ListApplicationVersionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListApplicationVersionsError>`](crate::operation::list_application_versions::ListApplicationVersionsError)
-    pub fn list_application_versions(
-        &self,
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder
-    {
+    pub fn list_application_versions(&self) -> crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::new(self.handle.clone())
     }
 }

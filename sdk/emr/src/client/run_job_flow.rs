@@ -36,9 +36,7 @@ impl super::Client {
     ///   - [`job_flow_id(Option<String>)`](crate::operation::run_job_flow::RunJobFlowOutput::job_flow_id): <p>A unique identifier for the job flow.</p>
     ///   - [`cluster_arn(Option<String>)`](crate::operation::run_job_flow::RunJobFlowOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     /// - On failure, responds with [`SdkError<RunJobFlowError>`](crate::operation::run_job_flow::RunJobFlowError)
-    pub fn run_job_flow(
-        &self,
-    ) -> crate::operation::run_job_flow::builders::RunJobFlowFluentBuilder {
+    pub fn run_job_flow(&self) -> crate::operation::run_job_flow::builders::RunJobFlowFluentBuilder {
         crate::operation::run_job_flow::builders::RunJobFlowFluentBuilder::new(self.handle.clone())
     }
 }

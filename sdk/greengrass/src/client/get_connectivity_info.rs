@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput::connectivity_info): Connectivity info list.
     ///   - [`message(Option<String>)`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput::message): A message about the connectivity info request.
     /// - On failure, responds with [`SdkError<GetConnectivityInfoError>`](crate::operation::get_connectivity_info::GetConnectivityInfoError)
-    pub fn get_connectivity_info(
-        &self,
-    ) -> crate::operation::get_connectivity_info::builders::GetConnectivityInfoFluentBuilder {
-        crate::operation::get_connectivity_info::builders::GetConnectivityInfoFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connectivity_info(&self) -> crate::operation::get_connectivity_info::builders::GetConnectivityInfoFluentBuilder {
+        crate::operation::get_connectivity_info::builders::GetConnectivityInfoFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,8 +22,7 @@ pub struct ListLensReviewImprovementsOutput {
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of improvement summaries of lens review in a workload.</p>
     #[doc(hidden)]
-    pub improvement_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
+    pub improvement_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -51,9 +50,7 @@ impl ListLensReviewImprovementsOutput {
         self.lens_arn.as_deref()
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn improvement_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ImprovementSummary]> {
+    pub fn improvement_summaries(&self) -> ::std::option::Option<&[crate::types::ImprovementSummary]> {
         self.improvement_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -68,23 +65,20 @@ impl ::aws_http::request_id::RequestId for ListLensReviewImprovementsOutput {
 }
 impl ListLensReviewImprovementsOutput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput).
-    pub fn builder() -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsOutputBuilder{
+    pub fn builder() -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsOutputBuilder {
         crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensReviewImprovementsOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) improvement_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
+    pub(crate) improvement_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -169,17 +163,12 @@ impl ListLensReviewImprovementsOutputBuilder {
         self
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn set_improvement_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
-    ) -> Self {
+    pub fn set_improvement_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>) -> Self {
         self.improvement_summaries = input;
         self
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn get_improvement_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>> {
+    pub fn get_improvement_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>> {
         &self.improvement_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -206,9 +195,7 @@ impl ListLensReviewImprovementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput {
+    pub fn build(self) -> crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput {
         crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput {
             workload_id: self.workload_id,
             milestone_number: self.milestone_number.unwrap_or_default(),

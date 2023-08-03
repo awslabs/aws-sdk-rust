@@ -10,10 +10,7 @@ impl ListDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_devices::ListDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices::ListDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_devices();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListDevicesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_devices::paginator::ListDevicesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_devices::paginator::ListDevicesPaginator {
-        crate::operation::list_devices::paginator::ListDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_devices::paginator::ListDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -219,10 +204,7 @@ impl ListDevicesFluentBuilder {
     /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -257,9 +239,7 @@ impl ListDevicesFluentBuilder {
     /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
         self.inner.get_filters()
     }
 }

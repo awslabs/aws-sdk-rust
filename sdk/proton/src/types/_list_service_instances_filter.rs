@@ -32,9 +32,7 @@ impl ListServiceInstancesFilter {
 
 /// A builder for [`ListServiceInstancesFilter`](crate::types::ListServiceInstancesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceInstancesFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -46,10 +44,7 @@ impl ListServiceInstancesFilterBuilder {
         self
     }
     /// <p>The name of a filtering criterion.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>) -> Self {
         self.key = input;
         self
     }

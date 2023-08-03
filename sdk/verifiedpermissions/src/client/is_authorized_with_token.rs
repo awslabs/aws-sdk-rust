@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`determining_policies(Option<Vec<DeterminingPolicyItem>>)`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput::determining_policies): <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
     ///   - [`errors(Option<Vec<EvaluationErrorItem>>)`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput::errors): <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
     /// - On failure, responds with [`SdkError<IsAuthorizedWithTokenError>`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError)
-    pub fn is_authorized_with_token(
-        &self,
-    ) -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenFluentBuilder
-    {
+    pub fn is_authorized_with_token(&self) -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenFluentBuilder {
         crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenFluentBuilder::new(self.handle.clone())
     }
 }

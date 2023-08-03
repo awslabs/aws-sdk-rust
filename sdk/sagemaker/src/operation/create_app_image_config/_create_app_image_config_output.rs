@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAppImageConfigOutput {
 }
 impl CreateAppImageConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppImageConfigOutput`](crate::operation::create_app_image_config::CreateAppImageConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::create_app_image_config::builders::CreateAppImageConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_image_config::builders::CreateAppImageConfigOutputBuilder {
         crate::operation::create_app_image_config::builders::CreateAppImageConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppImageConfigOutput`](crate::operation::create_app_image_config::CreateAppImageConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppImageConfigOutputBuilder {
     pub(crate) app_image_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAppImageConfigOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
-    pub fn app_image_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_image_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
-    pub fn set_app_image_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_image_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_image_config_arn = input;
         self
     }

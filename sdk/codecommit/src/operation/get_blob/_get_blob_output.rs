@@ -29,9 +29,7 @@ impl GetBlobOutput {
 
 /// A builder for [`GetBlobOutput`](crate::operation::get_blob::GetBlobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlobOutputBuilder {
     pub(crate) content: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

@@ -23,9 +23,7 @@ impl Row {
 
 /// A builder for [`Row`](crate::types::Row).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowBuilder {
     pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
 }
@@ -42,10 +40,7 @@ impl RowBuilder {
         self
     }
     /// <p>List of data points in a single row of the result set.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>) -> Self {
         self.data = input;
         self
     }

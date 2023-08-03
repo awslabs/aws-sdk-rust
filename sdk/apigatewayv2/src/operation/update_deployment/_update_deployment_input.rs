@@ -30,17 +30,14 @@ impl UpdateDeploymentInput {
 }
 impl UpdateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
-    pub fn builder() -> crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder {
         crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeploymentInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ impl UpdateDeploymentInputBuilder {
         &self.api_id
     }
     /// <p>The deployment ID.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment ID.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -98,10 +89,7 @@ impl UpdateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_deployment::UpdateDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_deployment::UpdateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_deployment::UpdateDeploymentInput {
             api_id: self.api_id,
             deployment_id: self.deployment_id,

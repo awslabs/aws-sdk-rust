@@ -37,9 +37,7 @@ impl ResourceMapFilter {
 
 /// A builder for [`ResourceMapFilter`](crate::types::ResourceMapFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceMapFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::ResourceMapComparison>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ResourceMapFilterBuilder {
         self
     }
     /// <p>The filter's comparison.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMapComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::ResourceMapComparison>) -> Self {
         self.comparison = input;
         self
     }

@@ -42,17 +42,9 @@ pub fn ser_s3_bucket_configuration(
 
 pub(crate) fn de_s3_bucket_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::S3BucketConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::S3BucketConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -62,50 +54,45 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "bucketPolicy" => {
-                                builder = builder.set_bucket_policy(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "bucketPolicy" => {
+                            builder = builder.set_bucket_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "bucketAclGrants" => {
-                                builder = builder.set_bucket_acl_grants(
-                                    crate::protocol_serde::shape_s3_bucket_acl_grant_configurations_list::de_s3_bucket_acl_grant_configurations_list(tokens)?
-                                );
-                            }
-                            "bucketPublicAccessBlock" => {
-                                builder = builder.set_bucket_public_access_block(
-                                    crate::protocol_serde::shape_s3_public_access_block_configuration::de_s3_public_access_block_configuration(tokens)?
-                                );
-                            }
-                            "accessPoints" => {
-                                builder = builder.set_access_points(
-                                    crate::protocol_serde::shape_s3_access_point_configurations_map::de_s3_access_point_configurations_map(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "bucketAclGrants" => {
+                            builder = builder.set_bucket_acl_grants(
+                                crate::protocol_serde::shape_s3_bucket_acl_grant_configurations_list::de_s3_bucket_acl_grant_configurations_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "bucketPublicAccessBlock" => {
+                            builder = builder.set_bucket_public_access_block(
+                                crate::protocol_serde::shape_s3_public_access_block_configuration::de_s3_public_access_block_configuration(tokens)?,
+                            );
+                        }
+                        "accessPoints" => {
+                            builder = builder.set_access_points(
+                                crate::protocol_serde::shape_s3_access_point_configurations_map::de_s3_access_point_configurations_map(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -68,9 +68,7 @@ impl FieldFilter {
     }
     /// Tries to convert the enum instance into [`GreaterThanOrEqualTo`](crate::types::FieldFilter::GreaterThanOrEqualTo), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_greater_than_or_equal_to(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FieldValue, &Self> {
+    pub fn as_greater_than_or_equal_to(&self) -> ::std::result::Result<&crate::types::FieldValue, &Self> {
         if let FieldFilter::GreaterThanOrEqualTo(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -96,9 +94,7 @@ impl FieldFilter {
     }
     /// Tries to convert the enum instance into [`LessThanOrEqualTo`](crate::types::FieldFilter::LessThanOrEqualTo), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_less_than_or_equal_to(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FieldValue, &Self> {
+    pub fn as_less_than_or_equal_to(&self) -> ::std::result::Result<&crate::types::FieldValue, &Self> {
         if let FieldFilter::LessThanOrEqualTo(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

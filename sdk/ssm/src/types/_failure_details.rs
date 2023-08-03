@@ -12,9 +12,7 @@ pub struct FailureDetails {
     pub failure_type: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the Automation step failure.</p>
     #[doc(hidden)]
-    pub details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FailureDetails {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
@@ -26,11 +24,7 @@ impl FailureDetails {
         self.failure_type.as_deref()
     }
     /// <p>Detailed information about the Automation step failure.</p>
-    pub fn details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.details.as_ref()
     }
 }
@@ -43,30 +37,20 @@ impl FailureDetails {
 
 /// A builder for [`FailureDetails`](crate::types::FailureDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureDetailsBuilder {
     pub(crate) failure_stage: ::std::option::Option<::std::string::String>,
     pub(crate) failure_type: ::std::option::Option<::std::string::String>,
-    pub(crate) details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FailureDetailsBuilder {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
-    pub fn failure_stage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
-    pub fn set_failure_stage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_stage = input;
         self
     }
@@ -93,11 +77,7 @@ impl FailureDetailsBuilder {
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
     /// <p>Detailed information about the Automation step failure.</p>
-    pub fn details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.details = ::std::option::Option::Some(hash_map);
@@ -106,22 +86,13 @@ impl FailureDetailsBuilder {
     /// <p>Detailed information about the Automation step failure.</p>
     pub fn set_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.details = input;
         self
     }
     /// <p>Detailed information about the Automation step failure.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).

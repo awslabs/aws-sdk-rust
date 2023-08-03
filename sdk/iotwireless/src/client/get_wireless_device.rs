@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`sidewalk(Option<SidewalkDevice>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::sidewalk): <p>Sidewalk device object.</p>
     ///   - [`positioning(Option<PositioningConfigStatus>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::positioning): <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     /// - On failure, responds with [`SdkError<GetWirelessDeviceError>`](crate::operation::get_wireless_device::GetWirelessDeviceError)
-    pub fn get_wireless_device(
-        &self,
-    ) -> crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder {
-        crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_wireless_device(&self) -> crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder {
+        crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::new(self.handle.clone())
     }
 }

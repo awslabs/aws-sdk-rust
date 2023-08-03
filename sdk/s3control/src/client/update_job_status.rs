@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`status(Option<JobStatus>)`](crate::operation::update_job_status::UpdateJobStatusOutput::status): <p>The current status for the specified job.</p>
     ///   - [`status_update_reason(Option<String>)`](crate::operation::update_job_status::UpdateJobStatusOutput::status_update_reason): <p>The reason that the specified job's status was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateJobStatusError>`](crate::operation::update_job_status::UpdateJobStatusError)
-    pub fn update_job_status(
-        &self,
-    ) -> crate::operation::update_job_status::builders::UpdateJobStatusFluentBuilder {
-        crate::operation::update_job_status::builders::UpdateJobStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_job_status(&self) -> crate::operation::update_job_status::builders::UpdateJobStatusFluentBuilder {
+        crate::operation::update_job_status::builders::UpdateJobStatusFluentBuilder::new(self.handle.clone())
     }
 }

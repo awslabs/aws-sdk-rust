@@ -53,10 +53,7 @@ impl ::std::fmt::Debug for VoiceProfileDomainSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileDomainSummary");
         formatter.field("voice_profile_domain_id", &self.voice_profile_domain_id);
-        formatter.field(
-            "voice_profile_domain_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("voice_profile_domain_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("created_timestamp", &self.created_timestamp);
@@ -84,18 +81,12 @@ pub struct VoiceProfileDomainSummaryBuilder {
 }
 impl VoiceProfileDomainSummaryBuilder {
     /// <p>The ID of the voice profile domain summary.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile domain summary.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
@@ -104,18 +95,12 @@ impl VoiceProfileDomainSummaryBuilder {
         &self.voice_profile_domain_id
     }
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
-    pub fn voice_profile_domain_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
-    pub fn set_voice_profile_domain_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_arn = input;
         self
     }
@@ -157,10 +142,7 @@ impl VoiceProfileDomainSummaryBuilder {
         self
     }
     /// <p>The time at which the voice profile domain summary was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -174,10 +156,7 @@ impl VoiceProfileDomainSummaryBuilder {
         self
     }
     /// <p>The time at which the voice profile domain summary was last updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -201,10 +180,7 @@ impl ::std::fmt::Debug for VoiceProfileDomainSummaryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileDomainSummaryBuilder");
         formatter.field("voice_profile_domain_id", &self.voice_profile_domain_id);
-        formatter.field(
-            "voice_profile_domain_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("voice_profile_domain_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("created_timestamp", &self.created_timestamp);

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`enable_cross_accounts_discovery(Option<bool>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::enable_cross_accounts_discovery): <p>Indicates whether cross-account discovery is enabled.</p>
     ///   - [`license_manager_resource_share_arn(Option<String>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::license_manager_resource_share_arn): <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     /// - On failure, responds with [`SdkError<GetServiceSettingsError>`](crate::operation::get_service_settings::GetServiceSettingsError)
-    pub fn get_service_settings(
-        &self,
-    ) -> crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder {
-        crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_settings(&self) -> crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder {
+        crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder::new(self.handle.clone())
     }
 }

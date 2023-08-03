@@ -44,17 +44,14 @@ impl DescribeMountTargetsInput {
 }
 impl DescribeMountTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetsInput`](crate::operation::describe_mount_targets::DescribeMountTargetsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder {
+    pub fn builder() -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder {
         crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMountTargetsInput`](crate::operation::describe_mount_targets::DescribeMountTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMountTargetsInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -92,18 +89,12 @@ impl DescribeMountTargetsInputBuilder {
         &self.marker
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -112,18 +103,12 @@ impl DescribeMountTargetsInputBuilder {
         &self.file_system_id
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_target_id = input;
         self
     }
@@ -132,18 +117,12 @@ impl DescribeMountTargetsInputBuilder {
         &self.mount_target_id
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_id = input;
         self
     }
@@ -154,18 +133,14 @@ impl DescribeMountTargetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMountTargetsInput`](crate::operation::describe_mount_targets::DescribeMountTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_mount_targets::DescribeMountTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_mount_targets::DescribeMountTargetsInput {
-                max_items: self.max_items,
-                marker: self.marker,
-                file_system_id: self.file_system_id,
-                mount_target_id: self.mount_target_id,
-                access_point_id: self.access_point_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_mount_targets::DescribeMountTargetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_mount_targets::DescribeMountTargetsInput {
+            max_items: self.max_items,
+            marker: self.marker,
+            file_system_id: self.file_system_id,
+            mount_target_id: self.mount_target_id,
+            access_point_id: self.access_point_id,
+        })
     }
 }

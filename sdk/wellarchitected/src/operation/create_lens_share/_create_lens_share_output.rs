@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLensShareOutput {
 }
 impl CreateLensShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateLensShareOutput`](crate::operation::create_lens_share::CreateLensShareOutput).
-    pub fn builder() -> crate::operation::create_lens_share::builders::CreateLensShareOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_lens_share::builders::CreateLensShareOutputBuilder {
         crate::operation::create_lens_share::builders::CreateLensShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLensShareOutput`](crate::operation::create_lens_share::CreateLensShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLensShareOutputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

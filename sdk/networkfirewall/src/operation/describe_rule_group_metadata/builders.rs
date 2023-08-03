@@ -26,7 +26,7 @@ impl DescribeRuleGroupMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder,
+    inner: crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder,
 }
 impl DescribeRuleGroupMetadataFluentBuilder {
     /// Creates a new `DescribeRuleGroupMetadata`.
@@ -37,7 +37,7 @@ impl DescribeRuleGroupMetadataFluentBuilder {
         }
     }
     /// Access the DescribeRuleGroupMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRuleGroupMetadataFluentBuilder {
             crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRuleGroupMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRuleGroupMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRuleGroupMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -114,27 +105,19 @@ impl DescribeRuleGroupMetadataFluentBuilder {
             crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_name(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_name(input);
         self
     }
@@ -145,19 +128,13 @@ impl DescribeRuleGroupMetadataFluentBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_arn(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_arn(input);
         self
     }

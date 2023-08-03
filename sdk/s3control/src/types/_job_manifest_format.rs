@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobManifestFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for JobManifestFormat {
         match s {
             "S3BatchOperations_CSV_20180820" => JobManifestFormat::S3BatchOperationsCsv20180820,
             "S3InventoryReport_CSV_20161130" => JobManifestFormat::S3InventoryReportCsv20161130,
-            other => {
-                JobManifestFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobManifestFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,10 +75,7 @@ impl JobManifestFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "S3BatchOperations_CSV_20180820",
-            "S3InventoryReport_CSV_20161130",
-        ]
+        &["S3BatchOperations_CSV_20180820", "S3InventoryReport_CSV_20161130"]
     }
 }
 impl ::std::convert::AsRef<str> for JobManifestFormat {

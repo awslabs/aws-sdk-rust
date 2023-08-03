@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListQueryExecutionsOutput {
 }
 impl ListQueryExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListQueryExecutionsOutput`](crate::operation::list_query_executions::ListQueryExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_query_executions::builders::ListQueryExecutionsOutputBuilder {
-        crate::operation::list_query_executions::builders::ListQueryExecutionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_query_executions::builders::ListQueryExecutionsOutputBuilder {
+        crate::operation::list_query_executions::builders::ListQueryExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueryExecutionsOutput`](crate::operation::list_query_executions::ListQueryExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueryExecutionsOutputBuilder {
     pub(crate) query_execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,27 +47,19 @@ impl ListQueryExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_query_execution_ids`](Self::set_query_execution_ids).
     ///
     /// <p>The unique IDs of each query execution as an array of strings.</p>
-    pub fn query_execution_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_execution_ids.unwrap_or_default();
         v.push(input.into());
         self.query_execution_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The unique IDs of each query execution as an array of strings.</p>
-    pub fn set_query_execution_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.query_execution_ids = input;
         self
     }
     /// <p>The unique IDs of each query execution as an array of strings.</p>
-    pub fn get_query_execution_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.query_execution_ids
     }
     /// <p>A token to be used by the next request if this request is truncated.</p>

@@ -38,17 +38,14 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
 }
 impl ResponseHeadersPolicyStrictTransportSecurity {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyStrictTransportSecurity`](crate::types::ResponseHeadersPolicyStrictTransportSecurity).
-    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder
-    {
+    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder {
         crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::default()
     }
 }
 
 /// A builder for [`ResponseHeadersPolicyStrictTransportSecurity`](crate::types::ResponseHeadersPolicyStrictTransportSecurity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyStrictTransportSecurityBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) include_subdomains: ::std::option::Option<bool>,

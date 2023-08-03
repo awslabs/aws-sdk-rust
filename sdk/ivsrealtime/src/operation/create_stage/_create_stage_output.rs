@@ -35,13 +35,10 @@ impl CreateStageOutput {
 
 /// A builder for [`CreateStageOutput`](crate::operation::create_stage::CreateStageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStageOutputBuilder {
     pub(crate) stage: ::std::option::Option<crate::types::Stage>,
-    pub(crate) participant_tokens:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>>,
+    pub(crate) participant_tokens: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>>,
     _request_id: Option<String>,
 }
 impl CreateStageOutputBuilder {
@@ -71,17 +68,12 @@ impl CreateStageOutputBuilder {
         self
     }
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
-    pub fn set_participant_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>>,
-    ) -> Self {
+    pub fn set_participant_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>>) -> Self {
         self.participant_tokens = input;
         self
     }
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
-    pub fn get_participant_tokens(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>> {
+    pub fn get_participant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>> {
         &self.participant_tokens
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

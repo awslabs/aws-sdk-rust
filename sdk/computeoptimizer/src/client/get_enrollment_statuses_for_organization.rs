@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`account_enrollment_statuses(Option<Vec<AccountEnrollmentStatus>>)`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput::account_enrollment_statuses): <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput::next_token): <p>The token to use to advance to the next page of account enrollment statuses.</p>  <p>This value is null when there are no more pages of account enrollment statuses to return.</p>
     /// - On failure, responds with [`SdkError<GetEnrollmentStatusesForOrganizationError>`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError)
-    pub fn get_enrollment_statuses_for_organization(&self) -> crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationFluentBuilder{
-        crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn get_enrollment_statuses_for_organization(
+        &self,
+    ) -> crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationFluentBuilder {
+        crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWatchlistOutput`](crate::operation::update_watchlist::UpdateWatchlistOutput) with field(s):
     ///   - [`watchlist(Option<Watchlist>)`](crate::operation::update_watchlist::UpdateWatchlistOutput::watchlist): <p>Details about the updated watchlist.</p>
     /// - On failure, responds with [`SdkError<UpdateWatchlistError>`](crate::operation::update_watchlist::UpdateWatchlistError)
-    pub fn update_watchlist(
-        &self,
-    ) -> crate::operation::update_watchlist::builders::UpdateWatchlistFluentBuilder {
-        crate::operation::update_watchlist::builders::UpdateWatchlistFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_watchlist(&self) -> crate::operation::update_watchlist::builders::UpdateWatchlistFluentBuilder {
+        crate::operation::update_watchlist::builders::UpdateWatchlistFluentBuilder::new(self.handle.clone())
     }
 }

@@ -64,9 +64,7 @@ impl WebAcl {
 
 /// A builder for [`WebAcl`](crate::types::WebAcl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebAclBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -127,10 +125,7 @@ impl WebAclBuilder {
         self
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
         self.default_action = input;
         self
     }
@@ -150,17 +145,12 @@ impl WebAclBuilder {
         self
     }
     /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>> {
         &self.rules
     }
     /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CancelJournalKinesisStreamOutput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput) with field(s):
     ///   - [`stream_id(Option<String>)`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput::stream_id): <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
     /// - On failure, responds with [`SdkError<CancelJournalKinesisStreamError>`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError)
-    pub fn cancel_journal_kinesis_stream(&self) -> crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamFluentBuilder{
+    pub fn cancel_journal_kinesis_stream(
+        &self,
+    ) -> crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamFluentBuilder {
         crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamFluentBuilder::new(self.handle.clone())
     }
 }

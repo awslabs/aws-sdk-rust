@@ -28,7 +28,7 @@ impl ListControlDomainInsightsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListControlDomainInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsInputBuilder,
+    inner: crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsInputBuilder,
 }
 impl ListControlDomainInsightsFluentBuilder {
     /// Creates a new `ListControlDomainInsights`.
@@ -39,7 +39,7 @@ impl ListControlDomainInsightsFluentBuilder {
         }
     }
     /// Access the ListControlDomainInsights as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListControlDomainInsightsFluentBuilder {
             crate::operation::list_control_domain_insights::ListControlDomainInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights::ListControlDomainInsightsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListControlDomainInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListControlDomainInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_control_domain_insights::ListControlDomainInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights::ListControlDomainInsightsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListControlDomainInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_control_domain_insights::ListControlDomainInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights::ListControlDomainInsightsError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl ListControlDomainInsightsFluentBuilder {
             crate::operation::list_control_domain_insights::ListControlDomainInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights::ListControlDomainInsightsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator {
         crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>

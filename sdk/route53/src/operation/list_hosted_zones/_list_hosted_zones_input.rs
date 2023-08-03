@@ -41,9 +41,7 @@ impl ListHostedZonesInput {
 
 /// A builder for [`ListHostedZonesInput`](crate::operation::list_hosted_zones::ListHostedZonesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedZonesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -85,18 +83,12 @@ impl ListHostedZonesInputBuilder {
         &self.max_items
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-    pub fn delegation_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegation_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegation_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegation_set_id = input;
         self
     }
@@ -107,10 +99,7 @@ impl ListHostedZonesInputBuilder {
     /// Consumes the builder and constructs a [`ListHostedZonesInput`](crate::operation::list_hosted_zones::ListHostedZonesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hosted_zones::ListHostedZonesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones::ListHostedZonesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones::ListHostedZonesInput {
             marker: self.marker,
             max_items: self.max_items,

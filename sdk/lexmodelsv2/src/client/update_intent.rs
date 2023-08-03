@@ -41,11 +41,7 @@ impl super::Client {
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_intent::UpdateIntentOutput::last_updated_date_time): <p>A timestamp of the last time that the intent was modified.</p>
     ///   - [`initial_response_setting(Option<InitialResponseSetting>)`](crate::operation::update_intent::UpdateIntentOutput::initial_response_setting): <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     /// - On failure, responds with [`SdkError<UpdateIntentError>`](crate::operation::update_intent::UpdateIntentError)
-    pub fn update_intent(
-        &self,
-    ) -> crate::operation::update_intent::builders::UpdateIntentFluentBuilder {
-        crate::operation::update_intent::builders::UpdateIntentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_intent(&self) -> crate::operation::update_intent::builders::UpdateIntentFluentBuilder {
+        crate::operation::update_intent::builders::UpdateIntentFluentBuilder::new(self.handle.clone())
     }
 }

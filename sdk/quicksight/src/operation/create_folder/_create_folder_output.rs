@@ -49,9 +49,7 @@ impl CreateFolderOutput {
 
 /// A builder for [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFolderOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

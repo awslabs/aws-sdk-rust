@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StartMeetingTranscriptionOutput {
 }
 impl StartMeetingTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionOutput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput).
-    pub fn builder() -> crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionOutputBuilder {
         crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMeetingTranscriptionOutput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMeetingTranscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StartMeetingTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartMeetingTranscriptionOutput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput {
+    pub fn build(self) -> crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput {
         crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput {
             _request_id: self._request_id,
         }

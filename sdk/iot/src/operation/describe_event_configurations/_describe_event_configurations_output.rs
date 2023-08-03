@@ -5,9 +5,7 @@
 pub struct DescribeEventConfigurationsOutput {
     /// <p>The event configurations.</p>
     #[doc(hidden)]
-    pub event_configurations: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    >,
+    pub event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     /// <p>The creation date of the event configuration.</p>
     #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,11 +16,7 @@ pub struct DescribeEventConfigurationsOutput {
 }
 impl DescribeEventConfigurationsOutput {
     /// <p>The event configurations.</p>
-    pub fn event_configurations(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    > {
+    pub fn event_configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
         self.event_configurations.as_ref()
     }
     /// <p>The creation date of the event configuration.</p>
@@ -41,20 +35,16 @@ impl ::aws_http::request_id::RequestId for DescribeEventConfigurationsOutput {
 }
 impl DescribeEventConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventConfigurationsOutput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder {
         crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventConfigurationsOutput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventConfigurationsOutputBuilder {
-    pub(crate) event_configurations: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    >,
+    pub(crate) event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -65,11 +55,7 @@ impl DescribeEventConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_event_configurations`](Self::set_event_configurations).
     ///
     /// <p>The event configurations.</p>
-    pub fn event_configurations(
-        mut self,
-        k: crate::types::EventType,
-        v: crate::types::Configuration,
-    ) -> Self {
+    pub fn event_configurations(mut self, k: crate::types::EventType, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.event_configurations.unwrap_or_default();
         hash_map.insert(k, v);
         self.event_configurations = ::std::option::Option::Some(hash_map);
@@ -78,9 +64,7 @@ impl DescribeEventConfigurationsOutputBuilder {
     /// <p>The event configurations.</p>
     pub fn set_event_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     ) -> Self {
         self.event_configurations = input;
         self
@@ -88,9 +72,7 @@ impl DescribeEventConfigurationsOutputBuilder {
     /// <p>The event configurations.</p>
     pub fn get_event_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
         &self.event_configurations
     }
     /// <p>The creation date of the event configuration.</p>
@@ -99,10 +81,7 @@ impl DescribeEventConfigurationsOutputBuilder {
         self
     }
     /// <p>The creation date of the event configuration.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -116,10 +95,7 @@ impl DescribeEventConfigurationsOutputBuilder {
         self
     }
     /// <p>The date the event configurations were last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -137,9 +113,7 @@ impl DescribeEventConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventConfigurationsOutput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput {
+    pub fn build(self) -> crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput {
         crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput {
             event_configurations: self.event_configurations,
             creation_date: self.creation_date,

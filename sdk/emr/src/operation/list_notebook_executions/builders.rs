@@ -37,10 +37,7 @@ impl ListNotebookExecutionsFluentBuilder {
         }
     }
     /// Access the ListNotebookExecutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListNotebookExecutionsFluentBuilder {
             crate::operation::list_notebook_executions::ListNotebookExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_executions::ListNotebookExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_executions::ListNotebookExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListNotebookExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListNotebookExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notebook_executions::ListNotebookExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_executions::ListNotebookExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_executions::ListNotebookExecutionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListNotebookExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notebook_executions::ListNotebookExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_executions::ListNotebookExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_executions::ListNotebookExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListNotebookExecutionsFluentBuilder {
             crate::operation::list_notebook_executions::ListNotebookExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_executions::ListNotebookExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_executions::ListNotebookExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator
-    {
-        crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator {
+        crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     pub fn editor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,10 +159,7 @@ impl ListNotebookExecutionsFluentBuilder {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -245,18 +222,12 @@ impl ListNotebookExecutionsFluentBuilder {
         self.inner.get_marker()
     }
     /// <p>The unique ID of the execution engine.</p>
-    pub fn execution_engine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_engine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_engine_id(input.into());
         self
     }
     /// <p>The unique ID of the execution engine.</p>
-    pub fn set_execution_engine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_engine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_engine_id(input);
         self
     }

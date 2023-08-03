@@ -46,16 +46,14 @@ impl ::aws_http::request_id::RequestId for UpdateFirewallDeleteProtectionOutput 
 }
 impl UpdateFirewallDeleteProtectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDeleteProtectionOutput`](crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput).
-    pub fn builder() -> crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionOutputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionOutputBuilder {
         crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallDeleteProtectionOutput`](crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtectionOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ impl UpdateFirewallDeleteProtectionOutputBuilder {
         &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -142,10 +134,7 @@ impl UpdateFirewallDeleteProtectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallDeleteProtectionOutput`](crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput
-    {
+    pub fn build(self) -> crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput {
         crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput {
             firewall_arn: self.firewall_arn,
             firewall_name: self.firewall_name,

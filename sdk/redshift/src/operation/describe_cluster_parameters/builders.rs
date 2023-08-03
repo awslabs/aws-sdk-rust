@@ -28,7 +28,7 @@ impl DescribeClusterParametersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder,
+    inner: crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder,
 }
 impl DescribeClusterParametersFluentBuilder {
     /// Creates a new `DescribeClusterParameters`.
@@ -39,7 +39,7 @@ impl DescribeClusterParametersFluentBuilder {
         }
     }
     /// Access the DescribeClusterParameters as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeClusterParametersFluentBuilder {
             crate::operation::describe_cluster_parameters::DescribeClusterParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameters::DescribeClusterParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeClusterParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeClusterParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameters::DescribeClusterParametersError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeClusterParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameters::DescribeClusterParametersError>,
     > {
         self.send_middleware().await
     }
@@ -116,34 +107,23 @@ impl DescribeClusterParametersFluentBuilder {
             crate::operation::describe_cluster_parameters::DescribeClusterParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameters::DescribeClusterParametersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator {
         crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a cluster parameter group for which to return details.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of a cluster parameter group for which to return details.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }

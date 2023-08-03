@@ -37,9 +37,7 @@ impl MapFilter {
 
 /// A builder for [`MapFilter`](crate::types::MapFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MapFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::MapComparison>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl MapFilterBuilder {
         self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::MapComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::MapComparison>) -> Self {
         self.comparison = input;
         self
     }

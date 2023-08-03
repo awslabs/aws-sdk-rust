@@ -26,7 +26,7 @@ impl ListServiceInstanceOutputsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceInstanceOutputsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder,
+    inner: crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder,
 }
 impl ListServiceInstanceOutputsFluentBuilder {
     /// Creates a new `ListServiceInstanceOutputs`.
@@ -37,7 +37,7 @@ impl ListServiceInstanceOutputsFluentBuilder {
         }
     }
     /// Access the ListServiceInstanceOutputs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListServiceInstanceOutputsFluentBuilder {
             crate::operation::list_service_instance_outputs::ListServiceInstanceOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListServiceInstanceOutputsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListServiceInstanceOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListServiceInstanceOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListServiceInstanceOutputsFluentBuilder {
             crate::operation::list_service_instance_outputs::ListServiceInstanceOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_service_instance_outputs::paginator::ListServiceInstanceOutputsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_service_instance_outputs::paginator::ListServiceInstanceOutputsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_service_instance_outputs::paginator::ListServiceInstanceOutputsPaginator {
         crate::operation::list_service_instance_outputs::paginator::ListServiceInstanceOutputsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the service instance whose outputs you want.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_instance_name(input.into());
         self
     }
     /// <p>The name of the service instance whose outputs you want.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }
@@ -175,18 +158,12 @@ impl ListServiceInstanceOutputsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

@@ -25,18 +25,14 @@ impl RetrieveTapeArchiveInput {
 }
 impl RetrieveTapeArchiveInput {
     /// Creates a new builder-style object to manufacture [`RetrieveTapeArchiveInput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput).
-    pub fn builder(
-    ) -> crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder {
-        crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder {
+        crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder::default()
     }
 }
 
 /// A builder for [`RetrieveTapeArchiveInput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveTapeArchiveInputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
@@ -76,15 +72,11 @@ impl RetrieveTapeArchiveInputBuilder {
     /// Consumes the builder and constructs a [`RetrieveTapeArchiveInput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput {
-                tape_arn: self.tape_arn,
-                gateway_arn: self.gateway_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput {
+            tape_arn: self.tape_arn,
+            gateway_arn: self.gateway_arn,
+        })
     }
 }

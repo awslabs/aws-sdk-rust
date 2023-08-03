@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`created_rows(Option<HashMap<String, String>>)`](crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput::created_rows): <p>The map of batch item id to the row id that was created for that item.</p>
     ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput::failed_batch_items): <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     /// - On failure, responds with [`SdkError<BatchCreateTableRowsError>`](crate::operation::batch_create_table_rows::BatchCreateTableRowsError)
-    pub fn batch_create_table_rows(
-        &self,
-    ) -> crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsFluentBuilder
-    {
-        crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_create_table_rows(&self) -> crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsFluentBuilder {
+        crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsFluentBuilder::new(self.handle.clone())
     }
 }

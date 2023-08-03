@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ReplicateInstanceOutput {
 }
 impl ReplicateInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ReplicateInstanceOutput`](crate::operation::replicate_instance::ReplicateInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::replicate_instance::builders::ReplicateInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::replicate_instance::builders::ReplicateInstanceOutputBuilder {
         crate::operation::replicate_instance::builders::ReplicateInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReplicateInstanceOutput`](crate::operation::replicate_instance::ReplicateInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicateInstanceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

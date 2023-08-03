@@ -23,26 +23,18 @@ impl EventDescription {
 
 /// A builder for [`EventDescription`](crate::types::EventDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDescriptionBuilder {
     pub(crate) latest_description: ::std::option::Option<::std::string::String>,
 }
 impl EventDescriptionBuilder {
     /// <p>The most recent description of the event.</p>
-    pub fn latest_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent description of the event.</p>
-    pub fn set_latest_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_description = input;
         self
     }

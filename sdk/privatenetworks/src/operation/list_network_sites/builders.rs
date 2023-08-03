@@ -10,10 +10,7 @@ impl ListNetworkSitesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_network_sites::ListNetworkSitesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_sites::ListNetworkSitesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_sites::ListNetworkSitesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_network_sites();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListNetworkSitesFluentBuilder {
         }
     }
     /// Access the ListNetworkSites as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListNetworkSitesFluentBuilder {
             crate::operation::list_network_sites::ListNetworkSites,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_sites::ListNetworkSitesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_sites::ListNetworkSitesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListNetworkSitesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListNetworkSitesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_network_sites::ListNetworkSitesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_sites::ListNetworkSitesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_sites::ListNetworkSitesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListNetworkSitesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_network_sites::ListNetworkSitesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_sites::ListNetworkSitesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_sites::ListNetworkSitesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListNetworkSitesFluentBuilder {
             crate::operation::list_network_sites::ListNetworkSites,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_sites::ListNetworkSitesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_sites::ListNetworkSitesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator {
-        crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator {
+        crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::new(self.handle, self.inner)
     }
     /// Adds a key-value pair to `filters`.
     ///
@@ -142,11 +121,7 @@ impl ListNetworkSitesFluentBuilder {
     /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::NetworkSiteFilterKeys,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::NetworkSiteFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
@@ -157,12 +132,7 @@ impl ListNetworkSitesFluentBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::NetworkSiteFilterKeys,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -174,12 +144,7 @@ impl ListNetworkSitesFluentBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::NetworkSiteFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>

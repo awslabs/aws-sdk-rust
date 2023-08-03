@@ -15,17 +15,14 @@ impl GetVirtualMachineInput {
 }
 impl GetVirtualMachineInput {
     /// Creates a new builder-style object to manufacture [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
-    pub fn builder(
-    ) -> crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder {
+    pub fn builder() -> crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder {
         crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVirtualMachineInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetVirtualMachineInputBuilder {
     /// Consumes the builder and constructs a [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_virtual_machine::GetVirtualMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_virtual_machine::GetVirtualMachineInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_virtual_machine::GetVirtualMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_virtual_machine::GetVirtualMachineInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

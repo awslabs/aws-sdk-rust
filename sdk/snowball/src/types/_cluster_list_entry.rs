@@ -44,9 +44,7 @@ impl ClusterListEntry {
 
 /// A builder for [`ClusterListEntry`](crate::types::ClusterListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterListEntryBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_state: ::std::option::Option<crate::types::ClusterState>,
@@ -74,10 +72,7 @@ impl ClusterListEntryBuilder {
         self
     }
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
-    pub fn set_cluster_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterState>,
-    ) -> Self {
+    pub fn set_cluster_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
         self.cluster_state = input;
         self
     }
@@ -91,10 +86,7 @@ impl ClusterListEntryBuilder {
         self
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

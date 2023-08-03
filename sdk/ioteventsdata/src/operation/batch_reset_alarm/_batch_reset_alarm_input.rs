@@ -5,14 +5,11 @@
 pub struct BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
-    pub reset_action_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>,
+    pub reset_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>,
 }
 impl BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    pub fn reset_action_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResetAlarmActionRequest]> {
+    pub fn reset_action_requests(&self) -> ::std::option::Option<&[crate::types::ResetAlarmActionRequest]> {
         self.reset_action_requests.as_deref()
     }
 }
@@ -25,12 +22,9 @@ impl BatchResetAlarmInput {
 
 /// A builder for [`BatchResetAlarmInput`](crate::operation::batch_reset_alarm::BatchResetAlarmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchResetAlarmInputBuilder {
-    pub(crate) reset_action_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>,
+    pub(crate) reset_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>,
 }
 impl BatchResetAlarmInputBuilder {
     /// Appends an item to `reset_action_requests`.
@@ -45,26 +39,18 @@ impl BatchResetAlarmInputBuilder {
         self
     }
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_reset_action_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>,
-    ) -> Self {
+    pub fn set_reset_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>>) -> Self {
         self.reset_action_requests = input;
         self
     }
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_reset_action_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>> {
+    pub fn get_reset_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>> {
         &self.reset_action_requests
     }
     /// Consumes the builder and constructs a [`BatchResetAlarmInput`](crate::operation::batch_reset_alarm::BatchResetAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_reset_alarm::BatchResetAlarmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_reset_alarm::BatchResetAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_reset_alarm::BatchResetAlarmInput {
             reset_action_requests: self.reset_action_requests,
         })

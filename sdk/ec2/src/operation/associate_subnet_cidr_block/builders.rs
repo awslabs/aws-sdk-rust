@@ -26,7 +26,7 @@ impl AssociateSubnetCidrBlockInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSubnetCidrBlockFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder,
+    inner: crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder,
 }
 impl AssociateSubnetCidrBlockFluentBuilder {
     /// Creates a new `AssociateSubnetCidrBlock`.
@@ -37,7 +37,7 @@ impl AssociateSubnetCidrBlockFluentBuilder {
         }
     }
     /// Access the AssociateSubnetCidrBlock as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateSubnetCidrBlockFluentBuilder {
             crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateSubnetCidrBlockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateSubnetCidrBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateSubnetCidrBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AssociateSubnetCidrBlockFluentBuilder {
             crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv6_cidr_block(input.into());
         self
     }
     /// <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipv6_cidr_block(input);
         self
     }

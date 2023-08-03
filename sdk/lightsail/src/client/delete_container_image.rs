@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`image(impl ::std::convert::Into<String>)`](crate::operation::delete_container_image::builders::DeleteContainerImageFluentBuilder::image) / [`set_image(Option<String>)`](crate::operation::delete_container_image::builders::DeleteContainerImageFluentBuilder::set_image): <p>The name of the container image to delete from the container service.</p>  <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>   <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>  </note>
     /// - On success, responds with [`DeleteContainerImageOutput`](crate::operation::delete_container_image::DeleteContainerImageOutput)
     /// - On failure, responds with [`SdkError<DeleteContainerImageError>`](crate::operation::delete_container_image::DeleteContainerImageError)
-    pub fn delete_container_image(
-        &self,
-    ) -> crate::operation::delete_container_image::builders::DeleteContainerImageFluentBuilder {
-        crate::operation::delete_container_image::builders::DeleteContainerImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_container_image(&self) -> crate::operation::delete_container_image::builders::DeleteContainerImageFluentBuilder {
+        crate::operation::delete_container_image::builders::DeleteContainerImageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,8 +9,7 @@ pub struct KxDatabaseConfiguration {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
     #[doc(hidden)]
-    pub cache_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
+    pub cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl KxDatabaseConfiguration {
         self.database_name.as_deref()
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn cache_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::KxDatabaseCacheConfiguration]> {
+    pub fn cache_configurations(&self) -> ::std::option::Option<&[crate::types::KxDatabaseCacheConfiguration]> {
         self.cache_configurations.as_deref()
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
@@ -40,29 +37,20 @@ impl KxDatabaseConfiguration {
 
 /// A builder for [`KxDatabaseConfiguration`](crate::types::KxDatabaseConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KxDatabaseConfigurationBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
+    pub(crate) cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
 }
 impl KxDatabaseConfigurationBuilder {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -75,27 +63,19 @@ impl KxDatabaseConfigurationBuilder {
     /// To override the contents of this collection use [`set_cache_configurations`](Self::set_cache_configurations).
     ///
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn cache_configurations(
-        mut self,
-        input: crate::types::KxDatabaseCacheConfiguration,
-    ) -> Self {
+    pub fn cache_configurations(mut self, input: crate::types::KxDatabaseCacheConfiguration) -> Self {
         let mut v = self.cache_configurations.unwrap_or_default();
         v.push(input);
         self.cache_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn set_cache_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
-    ) -> Self {
+    pub fn set_cache_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>) -> Self {
         self.cache_configurations = input;
         self
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn get_cache_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>> {
+    pub fn get_cache_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>> {
         &self.cache_configurations
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>

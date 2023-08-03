@@ -17,9 +17,7 @@ pub struct CreateRobotInput {
     pub greengrass_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRobotInput {
     /// <p>The name for the robot.</p>
@@ -35,11 +33,7 @@ impl CreateRobotInput {
         self.greengrass_group_id.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,16 +46,12 @@ impl CreateRobotInput {
 
 /// A builder for [`CreateRobotInput`](crate::operation::create_robot::CreateRobotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRobotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
     pub(crate) greengrass_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRobotInputBuilder {
     /// <p>The name for the robot.</p>
@@ -84,10 +74,7 @@ impl CreateRobotInputBuilder {
         self
     }
     /// <p>The target architecture of the robot.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }
@@ -96,18 +83,12 @@ impl CreateRobotInputBuilder {
         &self.architecture
     }
     /// <p>The Greengrass group id.</p>
-    pub fn greengrass_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Greengrass group id.</p>
-    pub fn set_greengrass_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.greengrass_group_id = input;
         self
     }
@@ -120,41 +101,23 @@ impl CreateRobotInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRobotInput`](crate::operation::create_robot::CreateRobotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_robot::CreateRobotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_robot::CreateRobotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_robot::CreateRobotInput {
             name: self.name,
             architecture: self.architecture,

@@ -30,9 +30,7 @@ impl DebugSession {
 
 /// A builder for [`DebugSession`](crate::types::DebugSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DebugSessionBuilder {
     pub(crate) session_enabled: ::std::option::Option<bool>,
     pub(crate) session_target: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl DebugSessionBuilder {
         &self.session_enabled
     }
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
-    pub fn session_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
-    pub fn set_session_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_target = input;
         self
     }

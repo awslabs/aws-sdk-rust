@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`graphql_apis(Option<Vec<GraphqlApi>>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::graphql_apis): <p>The <code>GraphqlApi</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListGraphqlApisError>`](crate::operation::list_graphql_apis::ListGraphqlApisError)
-    pub fn list_graphql_apis(
-        &self,
-    ) -> crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder {
-        crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_graphql_apis(&self) -> crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder {
+        crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,9 +40,7 @@ impl GetSlotTypeVersionsFluentBuilder {
         }
     }
     /// Access the GetSlotTypeVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl GetSlotTypeVersionsFluentBuilder {
             crate::operation::get_slot_type_versions::GetSlotTypeVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type_versions::GetSlotTypeVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl GetSlotTypeVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl GetSlotTypeVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type_versions::GetSlotTypeVersionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl GetSlotTypeVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type_versions::GetSlotTypeVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +108,15 @@ impl GetSlotTypeVersionsFluentBuilder {
             crate::operation::get_slot_type_versions::GetSlotTypeVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type_versions::GetSlotTypeVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator {
-        crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator {
+        crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the slot type for which versions should be returned.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

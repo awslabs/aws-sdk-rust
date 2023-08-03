@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::get_component::GetComponentOutput::component): <p>The detailed data of the requested component.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)
-    pub fn get_component(
-        &self,
-    ) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
-        crate::operation::get_component::builders::GetComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_component(&self) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
+        crate::operation::get_component::builders::GetComponentFluentBuilder::new(self.handle.clone())
     }
 }

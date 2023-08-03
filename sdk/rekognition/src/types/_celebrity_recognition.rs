@@ -30,9 +30,7 @@ impl CelebrityRecognition {
 
 /// A builder for [`CelebrityRecognition`](crate::types::CelebrityRecognition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CelebrityRecognitionBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) celebrity: ::std::option::Option<crate::types::CelebrityDetail>,
@@ -58,10 +56,7 @@ impl CelebrityRecognitionBuilder {
         self
     }
     /// <p>Information about a recognized celebrity.</p>
-    pub fn set_celebrity(
-        mut self,
-        input: ::std::option::Option<crate::types::CelebrityDetail>,
-    ) -> Self {
+    pub fn set_celebrity(mut self, input: ::std::option::Option<crate::types::CelebrityDetail>) -> Self {
         self.celebrity = input;
         self
     }

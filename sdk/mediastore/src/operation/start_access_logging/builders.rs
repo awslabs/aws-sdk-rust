@@ -10,10 +10,7 @@ impl StartAccessLoggingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_access_logging::StartAccessLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_access_logging::StartAccessLoggingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_access_logging();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartAccessLoggingFluentBuilder {
         }
     }
     /// Access the StartAccessLogging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_access_logging::builders::StartAccessLoggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_access_logging::builders::StartAccessLoggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartAccessLoggingFluentBuilder {
             crate::operation::start_access_logging::StartAccessLogging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_access_logging::StartAccessLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartAccessLoggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartAccessLoggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_access_logging::StartAccessLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_access_logging::StartAccessLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartAccessLoggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_access_logging::StartAccessLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_access_logging::StartAccessLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartAccessLoggingFluentBuilder {
             crate::operation::start_access_logging::StartAccessLogging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_access_logging::StartAccessLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the container that you want to start access logging on.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container that you want to start access logging on.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }

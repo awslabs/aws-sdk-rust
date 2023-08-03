@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCopyJobOutput {
 }
 impl DescribeCopyJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput).
-    pub fn builder() -> crate::operation::describe_copy_job::builders::DescribeCopyJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_copy_job::builders::DescribeCopyJobOutputBuilder {
         crate::operation::describe_copy_job::builders::DescribeCopyJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCopyJobOutputBuilder {
     pub(crate) copy_job: ::std::option::Option<crate::types::CopyJob>,
     _request_id: Option<String>,

@@ -15,17 +15,14 @@ impl CancelSigningProfileInput {
 }
 impl CancelSigningProfileInput {
     /// Creates a new builder-style object to manufacture [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
+    pub fn builder() -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
         crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSigningProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl CancelSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_signing_profile::CancelSigningProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_signing_profile::CancelSigningProfileInput {
-                profile_name: self.profile_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_signing_profile::CancelSigningProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_signing_profile::CancelSigningProfileInput {
+            profile_name: self.profile_name,
+        })
     }
 }

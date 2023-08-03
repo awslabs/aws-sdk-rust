@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopTrainingDocumentClassifierOutput 
 }
 impl StopTrainingDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierOutput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput).
-    pub fn builder() -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierOutputBuilder{
+    pub fn builder() -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierOutputBuilder {
         crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopTrainingDocumentClassifierOutput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTrainingDocumentClassifierOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl StopTrainingDocumentClassifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopTrainingDocumentClassifierOutput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput
-    {
+    pub fn build(self) -> crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput {
         crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput {
             _request_id: self._request_id,
         }

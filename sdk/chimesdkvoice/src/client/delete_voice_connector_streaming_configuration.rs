@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorStreamingConfigurationError>`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationError)
-    pub fn delete_voice_connector_streaming_configuration(&self) -> crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationFluentBuilder{
-        crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn delete_voice_connector_streaming_configuration(
+        &self,
+    ) -> crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationFluentBuilder {
+        crate::operation::delete_voice_connector_streaming_configuration::builders::DeleteVoiceConnectorStreamingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

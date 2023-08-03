@@ -6,8 +6,7 @@
 pub struct ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
     #[doc(hidden)]
-    pub execution_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
+    pub execution_infos: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
@@ -32,19 +31,16 @@ impl ::aws_http::request_id::RequestId for ListClosedWorkflowExecutionsOutput {
 }
 impl ListClosedWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsOutput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput).
-    pub fn builder() -> crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsOutputBuilder {
         crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsOutputBuilder {
-    pub(crate) execution_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
+    pub(crate) execution_infos: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,34 +57,23 @@ impl ListClosedWorkflowExecutionsOutputBuilder {
         self
     }
     /// <p>The list of workflow information structures.</p>
-    pub fn set_execution_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
-    ) -> Self {
+    pub fn set_execution_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>) -> Self {
         self.execution_infos = input;
         self
     }
     /// <p>The list of workflow information structures.</p>
-    pub fn get_execution_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>> {
+    pub fn get_execution_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>> {
         &self.execution_infos
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -107,9 +92,7 @@ impl ListClosedWorkflowExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsOutput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput {
+    pub fn build(self) -> crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput {
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput {
             execution_infos: self.execution_infos,
             next_page_token: self.next_page_token,

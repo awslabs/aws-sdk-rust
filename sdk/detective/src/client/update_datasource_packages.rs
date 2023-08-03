@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`datasource_packages(Vec<DatasourcePackage>)`](crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesFluentBuilder::datasource_packages) / [`set_datasource_packages(Option<Vec<DatasourcePackage>>)`](crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesFluentBuilder::set_datasource_packages): <p>The data source package start for the behavior graph.</p>
     /// - On success, responds with [`UpdateDatasourcePackagesOutput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput)
     /// - On failure, responds with [`SdkError<UpdateDatasourcePackagesError>`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesError)
-    pub fn update_datasource_packages(
-        &self,
-    ) -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesFluentBuilder
-    {
+    pub fn update_datasource_packages(&self) -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesFluentBuilder {
         crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesFluentBuilder::new(self.handle.clone())
     }
 }

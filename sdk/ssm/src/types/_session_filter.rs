@@ -62,9 +62,7 @@ impl SessionFilter {
 
 /// A builder for [`SessionFilter`](crate::types::SessionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::SessionFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

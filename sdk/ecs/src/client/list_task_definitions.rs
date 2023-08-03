@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`task_definition_arns(Option<Vec<String>>)`](crate::operation::list_task_definitions::ListTaskDefinitionsOutput::task_definition_arns): <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_task_definitions::ListTaskDefinitionsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListTaskDefinitionsError>`](crate::operation::list_task_definitions::ListTaskDefinitionsError)
-    pub fn list_task_definitions(
-        &self,
-    ) -> crate::operation::list_task_definitions::builders::ListTaskDefinitionsFluentBuilder {
-        crate::operation::list_task_definitions::builders::ListTaskDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_task_definitions(&self) -> crate::operation::list_task_definitions::builders::ListTaskDefinitionsFluentBuilder {
+        crate::operation::list_task_definitions::builders::ListTaskDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

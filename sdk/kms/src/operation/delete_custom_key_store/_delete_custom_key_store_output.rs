@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomKeyStoreOutput {
 }
 impl DeleteCustomKeyStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomKeyStoreOutput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreOutputBuilder {
         crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomKeyStoreOutput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomKeyStoreOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,16 +22,14 @@ impl DeleteInstanceConnectEndpointInput {
 }
 impl DeleteInstanceConnectEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceConnectEndpointInput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput).
-    pub fn builder() -> crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointInputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointInputBuilder {
         crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInstanceConnectEndpointInput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceConnectEndpointInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_connect_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -52,25 +50,17 @@ impl DeleteInstanceConnectEndpointInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
-    pub fn instance_connect_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_connect_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_connect_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
-    pub fn set_instance_connect_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_connect_endpoint_id = input;
         self
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
-    pub fn get_instance_connect_endpoint_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_instance_connect_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_connect_endpoint_id
     }
     /// Consumes the builder and constructs a [`DeleteInstanceConnectEndpointInput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput).
@@ -80,13 +70,9 @@ impl DeleteInstanceConnectEndpointInputBuilder {
         crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput {
-                dry_run: self.dry_run
-                ,
-                instance_connect_endpoint_id: self.instance_connect_endpoint_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput {
+            dry_run: self.dry_run,
+            instance_connect_endpoint_id: self.instance_connect_endpoint_id,
+        })
     }
 }

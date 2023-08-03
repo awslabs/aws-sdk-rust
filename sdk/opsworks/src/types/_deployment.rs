@@ -114,9 +114,7 @@ impl Deployment {
 
 /// A builder for [`Deployment`](crate::types::Deployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ pub struct DeploymentBuilder {
 }
 impl DeploymentBuilder {
     /// <p>The deployment ID.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment ID.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -256,10 +248,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>Used to specify a stack or deployment command.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCommand>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::DeploymentCommand>) -> Self {
         self.command = input;
         self
     }
@@ -328,17 +317,12 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The IDs of the target instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the target instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).

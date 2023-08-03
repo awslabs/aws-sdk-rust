@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`job_run_id(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::job_run_id): <p>The output contains the ID of the started job run.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::arn): <p>This output displays the ARN of the job run..</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::operation::start_job_run::StartJobRunError)
-    pub fn start_job_run(
-        &self,
-    ) -> crate::operation::start_job_run::builders::StartJobRunFluentBuilder {
-        crate::operation::start_job_run::builders::StartJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_job_run(&self) -> crate::operation::start_job_run::builders::StartJobRunFluentBuilder {
+        crate::operation::start_job_run::builders::StartJobRunFluentBuilder::new(self.handle.clone())
     }
 }

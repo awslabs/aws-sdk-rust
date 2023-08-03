@@ -23,9 +23,7 @@ impl InstanceIpv4Prefix {
 
 /// A builder for [`InstanceIpv4Prefix`](crate::types::InstanceIpv4Prefix).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceIpv4PrefixBuilder {
     pub(crate) ipv4_prefix: ::std::option::Option<::std::string::String>,
 }

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorkflowStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for WorkflowStatus {
             "FAILED" => WorkflowStatus::Failed,
             "INACTIVE" => WorkflowStatus::Inactive,
             "UPDATING" => WorkflowStatus::Updating,
-            other => {
-                WorkflowStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => WorkflowStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl WorkflowStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETED", "FAILED", "INACTIVE", "UPDATING",
-        ]
+        &["ACTIVE", "CREATING", "DELETED", "FAILED", "INACTIVE", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkflowStatus {

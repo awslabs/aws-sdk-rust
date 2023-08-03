@@ -36,17 +36,14 @@ impl SearchSkillGroupsInput {
 }
 impl SearchSkillGroupsInput {
     /// Creates a new builder-style object to manufacture [`SearchSkillGroupsInput`](crate::operation::search_skill_groups::SearchSkillGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::search_skill_groups::builders::SearchSkillGroupsInputBuilder {
+    pub fn builder() -> crate::operation::search_skill_groups::builders::SearchSkillGroupsInputBuilder {
         crate::operation::search_skill_groups::builders::SearchSkillGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchSkillGroupsInput`](crate::operation::search_skill_groups::SearchSkillGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSkillGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,10 +91,7 @@ impl SearchSkillGroupsInputBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -117,10 +111,7 @@ impl SearchSkillGroupsInputBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -131,17 +122,12 @@ impl SearchSkillGroupsInputBuilder {
     /// Consumes the builder and constructs a [`SearchSkillGroupsInput`](crate::operation::search_skill_groups::SearchSkillGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_skill_groups::SearchSkillGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_skill_groups::SearchSkillGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-                sort_criteria: self.sort_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_skill_groups::SearchSkillGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_skill_groups::SearchSkillGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            sort_criteria: self.sort_criteria,
+        })
     }
 }

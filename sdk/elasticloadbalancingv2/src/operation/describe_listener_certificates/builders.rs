@@ -28,7 +28,7 @@ impl DescribeListenerCertificatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeListenerCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder,
+    inner: crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder,
 }
 impl DescribeListenerCertificatesFluentBuilder {
     /// Creates a new `DescribeListenerCertificates`.
@@ -39,7 +39,7 @@ impl DescribeListenerCertificatesFluentBuilder {
         }
     }
     /// Access the DescribeListenerCertificates as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeListenerCertificatesFluentBuilder {
             crate::operation::describe_listener_certificates::DescribeListenerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listener_certificates::DescribeListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listener_certificates::DescribeListenerCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeListenerCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeListenerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listener_certificates::DescribeListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listener_certificates::DescribeListenerCertificatesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeListenerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listener_certificates::DescribeListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listener_certificates::DescribeListenerCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DescribeListenerCertificatesFluentBuilder {
             crate::operation::describe_listener_certificates::DescribeListenerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_listener_certificates::DescribeListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_listener_certificates::DescribeListenerCertificatesError>,
     > {
         self.customize_middleware().await
     }

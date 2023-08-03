@@ -24,9 +24,7 @@ pub struct ListIntentStageMetricsInput {
     /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub group_by: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>,
-    >,
+    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>>,
@@ -64,9 +62,7 @@ impl ListIntentStageMetricsInput {
     /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
     /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
     /// </ul>
-    pub fn group_by(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageGroupBySpecification]> {
+    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageGroupBySpecification]> {
         self.group_by.as_deref()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
@@ -85,31 +81,22 @@ impl ListIntentStageMetricsInput {
 }
 impl ListIntentStageMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListIntentStageMetricsInput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsInputBuilder {
         crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntentStageMetricsInput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentStageMetricsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>>,
-    pub(crate) bin_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    pub(crate) group_by: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>,
-    >,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>>,
+    pub(crate) bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -134,10 +121,7 @@ impl ListIntentStageMetricsInputBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent stage metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -151,10 +135,7 @@ impl ListIntentStageMetricsInputBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent stage metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -174,17 +155,12 @@ impl ListIntentStageMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>> {
         &self.metrics
     }
     /// Appends an item to `bin_by`.
@@ -199,17 +175,12 @@ impl ListIntentStageMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn set_bin_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    ) -> Self {
+    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>) -> Self {
         self.bin_by = input;
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn get_bin_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
         &self.bin_by
     }
     /// Appends an item to `group_by`.
@@ -221,10 +192,7 @@ impl ListIntentStageMetricsInputBuilder {
     /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
     /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
     /// </ul>
-    pub fn group_by(
-        mut self,
-        input: crate::types::AnalyticsIntentStageGroupBySpecification,
-    ) -> Self {
+    pub fn group_by(mut self, input: crate::types::AnalyticsIntentStageGroupBySpecification) -> Self {
         let mut v = self.group_by.unwrap_or_default();
         v.push(input);
         self.group_by = ::std::option::Option::Some(v);
@@ -235,12 +203,7 @@ impl ListIntentStageMetricsInputBuilder {
     /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
     /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
     /// </ul>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>,
-        >,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>>) -> Self {
         self.group_by = input;
         self
     }
@@ -249,11 +212,7 @@ impl ListIntentStageMetricsInputBuilder {
     /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
     /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
     /// </ul>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>,
-    > {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>> {
         &self.group_by
     }
     /// Appends an item to `filters`.
@@ -268,17 +227,12 @@ impl ListIntentStageMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -319,18 +273,16 @@ impl ListIntentStageMetricsInputBuilder {
         crate::operation::list_intent_stage_metrics::ListIntentStageMetricsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsInput {
-                bot_id: self.bot_id,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                metrics: self.metrics,
-                bin_by: self.bin_by,
-                group_by: self.group_by,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_intent_stage_metrics::ListIntentStageMetricsInput {
+            bot_id: self.bot_id,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            metrics: self.metrics,
+            bin_by: self.bin_by,
+            group_by: self.group_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

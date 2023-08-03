@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`notify_on_case_severity(Option<NotificationSeverityLevel>)`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput::notify_on_case_severity): <p>The case severity for a support case that you want to receive notifications.</p>
     ///   - [`channel_role_arn(Option<String>)`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput::channel_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<UpdateSlackChannelConfigurationError>`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError)
-    pub fn update_slack_channel_configuration(&self) -> crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationFluentBuilder{
+    pub fn update_slack_channel_configuration(
+        &self,
+    ) -> crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationFluentBuilder {
         crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

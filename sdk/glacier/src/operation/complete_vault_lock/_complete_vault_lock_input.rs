@@ -30,17 +30,14 @@ impl CompleteVaultLockInput {
 }
 impl CompleteVaultLockInput {
     /// Creates a new builder-style object to manufacture [`CompleteVaultLockInput`](crate::operation::complete_vault_lock::CompleteVaultLockInput).
-    pub fn builder(
-    ) -> crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder {
+    pub fn builder() -> crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder {
         crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteVaultLockInput`](crate::operation::complete_vault_lock::CompleteVaultLockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteVaultLockInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,11 @@ impl CompleteVaultLockInputBuilder {
     /// Consumes the builder and constructs a [`CompleteVaultLockInput`](crate::operation::complete_vault_lock::CompleteVaultLockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_vault_lock::CompleteVaultLockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::complete_vault_lock::CompleteVaultLockInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                lock_id: self.lock_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::complete_vault_lock::CompleteVaultLockInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::complete_vault_lock::CompleteVaultLockInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            lock_id: self.lock_id,
+        })
     }
 }

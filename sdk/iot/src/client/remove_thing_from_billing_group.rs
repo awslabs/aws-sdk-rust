@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`thing_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupFluentBuilder::thing_arn) / [`set_thing_arn(Option<String>)`](crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupFluentBuilder::set_thing_arn): <p>The ARN of the thing to be removed from the billing group.</p>
     /// - On success, responds with [`RemoveThingFromBillingGroupOutput`](crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupOutput)
     /// - On failure, responds with [`SdkError<RemoveThingFromBillingGroupError>`](crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError)
-    pub fn remove_thing_from_billing_group(&self) -> crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupFluentBuilder{
+    pub fn remove_thing_from_billing_group(
+        &self,
+    ) -> crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupFluentBuilder {
         crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

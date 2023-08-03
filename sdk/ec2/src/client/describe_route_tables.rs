@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`route_tables(Option<Vec<RouteTable>>)`](crate::operation::describe_route_tables::DescribeRouteTablesOutput::route_tables): <p>Information about one or more route tables.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_route_tables::DescribeRouteTablesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeRouteTablesError>`](crate::operation::describe_route_tables::DescribeRouteTablesError)
-    pub fn describe_route_tables(
-        &self,
-    ) -> crate::operation::describe_route_tables::builders::DescribeRouteTablesFluentBuilder {
-        crate::operation::describe_route_tables::builders::DescribeRouteTablesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_route_tables(&self) -> crate::operation::describe_route_tables::builders::DescribeRouteTablesFluentBuilder {
+        crate::operation::describe_route_tables::builders::DescribeRouteTablesFluentBuilder::new(self.handle.clone())
     }
 }

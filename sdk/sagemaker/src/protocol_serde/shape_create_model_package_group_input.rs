@@ -7,9 +7,7 @@ pub fn ser_create_model_package_group_input(
         object.key("ModelPackageGroupName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.model_package_group_description {
-        object
-            .key("ModelPackageGroupDescription")
-            .string(var_2.as_str());
+        object.key("ModelPackageGroupDescription").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
         let mut array_4 = object.key("Tags").start_array();

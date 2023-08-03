@@ -13,9 +13,7 @@ pub struct UpdateFieldLevelEncryptionConfigOutput {
 }
 impl UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
-    pub fn field_level_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryption> {
+    pub fn field_level_encryption(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryption> {
         self.field_level_encryption.as_ref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateFieldLevelEncryptionConfigOutpu
 }
 impl UpdateFieldLevelEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionConfigOutput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput).
-    pub fn builder() -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder {
         crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFieldLevelEncryptionConfigOutput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigOutputBuilder {
     pub(crate) field_level_encryption: ::std::option::Option<crate::types::FieldLevelEncryption>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl UpdateFieldLevelEncryptionConfigOutputBuilder {
         self
     }
     /// <p>Return the results of updating the configuration.</p>
-    pub fn set_field_level_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryption>,
-    ) -> Self {
+    pub fn set_field_level_encryption(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryption>) -> Self {
         self.field_level_encryption = input;
         self
     }
     /// <p>Return the results of updating the configuration.</p>
-    pub fn get_field_level_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryption> {
+    pub fn get_field_level_encryption(&self) -> &::std::option::Option<crate::types::FieldLevelEncryption> {
         &self.field_level_encryption
     }
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -89,12 +80,10 @@ impl UpdateFieldLevelEncryptionConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionConfigOutput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput).
-    pub fn build(self) -> crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput{
+    pub fn build(self) -> crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput {
         crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput {
-            field_level_encryption: self.field_level_encryption
-            ,
-            e_tag: self.e_tag
-            ,
+            field_level_encryption: self.field_level_encryption,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

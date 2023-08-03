@@ -30,9 +30,7 @@ impl SimulationSoftwareSuite {
 
 /// A builder for [`SimulationSoftwareSuite`](crate::types::SimulationSoftwareSuite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationSoftwareSuiteBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SimulationSoftwareSuiteType>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl SimulationSoftwareSuiteBuilder {
         self
     }
     /// <p>The name of the simulation software suite.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationSoftwareSuiteType>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SimulationSoftwareSuiteType>) -> Self {
         self.name = input;
         self
     }

@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for ResolveAppVersionResourcesOutput {
 }
 impl ResolveAppVersionResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ResolveAppVersionResourcesOutput`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput).
-    pub fn builder() -> crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesOutputBuilder {
         crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResolveAppVersionResourcesOutput`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveAppVersionResourcesOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ impl ResolveAppVersionResourcesOutputBuilder {
         &self.app_version
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution_id = input;
         self
     }
@@ -114,10 +106,7 @@ impl ResolveAppVersionResourcesOutputBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceResolutionStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceResolutionStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -135,9 +124,7 @@ impl ResolveAppVersionResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResolveAppVersionResourcesOutput`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput {
+    pub fn build(self) -> crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput {
         crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

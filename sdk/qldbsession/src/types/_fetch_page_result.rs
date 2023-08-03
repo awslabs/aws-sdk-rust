@@ -37,9 +37,7 @@ impl FetchPageResult {
 
 /// A builder for [`FetchPageResult`](crate::types::FetchPageResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FetchPageResultBuilder {
     pub(crate) page: ::std::option::Option<crate::types::Page>,
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
@@ -66,17 +64,12 @@ impl FetchPageResultBuilder {
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn set_timing_information(
-        mut self,
-        input: ::std::option::Option<crate::types::TimingInformation>,
-    ) -> Self {
+    pub fn set_timing_information(mut self, input: ::std::option::Option<crate::types::TimingInformation>) -> Self {
         self.timing_information = input;
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn get_timing_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimingInformation> {
+    pub fn get_timing_information(&self) -> &::std::option::Option<crate::types::TimingInformation> {
         &self.timing_information
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
@@ -85,10 +78,7 @@ impl FetchPageResultBuilder {
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn set_consumed_i_os(
-        mut self,
-        input: ::std::option::Option<crate::types::IoUsage>,
-    ) -> Self {
+    pub fn set_consumed_i_os(mut self, input: ::std::option::Option<crate::types::IoUsage>) -> Self {
         self.consumed_i_os = input;
         self
     }

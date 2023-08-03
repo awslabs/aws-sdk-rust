@@ -26,7 +26,7 @@ impl DescribeAppVersionTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAppVersionTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder,
+    inner: crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder,
 }
 impl DescribeAppVersionTemplateFluentBuilder {
     /// Creates a new `DescribeAppVersionTemplate`.
@@ -37,7 +37,7 @@ impl DescribeAppVersionTemplateFluentBuilder {
         }
     }
     /// Access the DescribeAppVersionTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAppVersionTemplateFluentBuilder {
             crate::operation::describe_app_version_template::DescribeAppVersionTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_template::DescribeAppVersionTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_template::DescribeAppVersionTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAppVersionTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAppVersionTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_template::DescribeAppVersionTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_template::DescribeAppVersionTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAppVersionTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_template::DescribeAppVersionTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_template::DescribeAppVersionTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAppVersionTemplateFluentBuilder {
             crate::operation::describe_app_version_template::DescribeAppVersionTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_template::DescribeAppVersionTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_template::DescribeAppVersionTemplateError>,
     > {
         self.customize_middleware().await
     }

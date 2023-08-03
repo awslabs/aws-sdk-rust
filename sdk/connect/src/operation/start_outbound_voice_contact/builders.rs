@@ -32,7 +32,7 @@ impl StartOutboundVoiceContactInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOutboundVoiceContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder,
+    inner: crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder,
 }
 impl StartOutboundVoiceContactFluentBuilder {
     /// Creates a new `StartOutboundVoiceContact`.
@@ -43,7 +43,7 @@ impl StartOutboundVoiceContactFluentBuilder {
         }
     }
     /// Access the StartOutboundVoiceContact as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl StartOutboundVoiceContactFluentBuilder {
             crate::operation::start_outbound_voice_contact::StartOutboundVoiceContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl StartOutboundVoiceContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl StartOutboundVoiceContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl StartOutboundVoiceContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +111,17 @@ impl StartOutboundVoiceContactFluentBuilder {
             crate::operation::start_outbound_voice_contact::StartOutboundVoiceContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The phone number of the customer, in E.164 format.</p>
-    pub fn destination_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_phone_number(input.into());
         self
     }
     /// <p>The phone number of the customer, in E.164 format.</p>
-    pub fn set_destination_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
@@ -148,19 +131,13 @@ impl StartOutboundVoiceContactFluentBuilder {
     }
     /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_flow_id(input.into());
         self
     }
     /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_flow_id(input);
         self
     }
@@ -198,18 +175,12 @@ impl StartOutboundVoiceContactFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
-    pub fn source_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_phone_number(input.into());
         self
     }
     /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
-    pub fn set_source_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_phone_number(input);
         self
     }
@@ -237,54 +208,33 @@ impl StartOutboundVoiceContactFluentBuilder {
     ///
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn answer_machine_detection_config(
-        mut self,
-        input: crate::types::AnswerMachineDetectionConfig,
-    ) -> Self {
+    pub fn answer_machine_detection_config(mut self, input: crate::types::AnswerMachineDetectionConfig) -> Self {
         self.inner = self.inner.answer_machine_detection_config(input);
         self
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn set_answer_machine_detection_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
-    ) -> Self {
+    pub fn set_answer_machine_detection_config(mut self, input: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>) -> Self {
         self.inner = self.inner.set_answer_machine_detection_config(input);
         self
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn get_answer_machine_detection_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
+    pub fn get_answer_machine_detection_config(&self) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
         self.inner.get_answer_machine_detection_config()
     }
     /// <p>The campaign identifier of the outbound communication.</p>
@@ -307,10 +257,7 @@ impl StartOutboundVoiceContactFluentBuilder {
         self
     }
     /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
-    pub fn set_traffic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficType>,
-    ) -> Self {
+    pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.inner = self.inner.set_traffic_type(input);
         self
     }

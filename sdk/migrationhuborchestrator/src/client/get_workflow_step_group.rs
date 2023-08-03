@@ -19,12 +19,7 @@ impl super::Client {
     ///   - [`previous(Option<Vec<String>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::previous): <p>The previous step group.</p>
     ///   - [`next(Option<Vec<String>>)`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput::next): <p>The next step group.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepGroupError>`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupError)
-    pub fn get_workflow_step_group(
-        &self,
-    ) -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupFluentBuilder
-    {
-        crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workflow_step_group(&self) -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupFluentBuilder {
+        crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupFluentBuilder::new(self.handle.clone())
     }
 }

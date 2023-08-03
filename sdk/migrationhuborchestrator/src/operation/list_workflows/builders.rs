@@ -10,10 +10,7 @@ impl ListWorkflowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_workflows::ListWorkflowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflows::ListWorkflowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_workflows();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWorkflowsFluentBuilder {
         }
     }
     /// Access the ListWorkflows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListWorkflowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListWorkflowsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workflows::paginator::ListWorkflowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workflows::paginator::ListWorkflowsPaginator {
-        crate::operation::list_workflows::paginator::ListWorkflowsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workflows::paginator::ListWorkflowsPaginator {
+        crate::operation::list_workflows::paginator::ListWorkflowsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -168,25 +155,17 @@ impl ListWorkflowsFluentBuilder {
         self.inner.get_template_id()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ads_application_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ads_application_configuration_name(input.into());
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn set_ads_application_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ads_application_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ads_application_configuration_name(input);
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn get_ads_application_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ads_application_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ads_application_configuration_name()
     }
     /// <p>The status of the migration workflow.</p>
@@ -195,10 +174,7 @@ impl ListWorkflowsFluentBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

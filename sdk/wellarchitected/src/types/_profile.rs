@@ -33,9 +33,7 @@ pub struct Profile {
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the profile.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Profile {
     /// <p>The profile ARN.</p>
@@ -75,11 +73,7 @@ impl Profile {
         self.share_invitation_id.as_deref()
     }
     /// <p>The tags assigned to the profile.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -92,23 +86,18 @@ impl Profile {
 
 /// A builder for [`Profile`](crate::types::Profile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_description: ::std::option::Option<::std::string::String>,
-    pub(crate) profile_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>>,
+    pub(crate) profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProfileBuilder {
     /// <p>The profile ARN.</p>
@@ -126,18 +115,12 @@ impl ProfileBuilder {
         &self.profile_arn
     }
     /// <p>The profile version.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile version.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -160,18 +143,12 @@ impl ProfileBuilder {
         &self.profile_name
     }
     /// <p>The profile description.</p>
-    pub fn profile_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile description.</p>
-    pub fn set_profile_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_description = input;
         self
     }
@@ -191,17 +168,12 @@ impl ProfileBuilder {
         self
     }
     /// <p>Profile questions.</p>
-    pub fn set_profile_questions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>>,
-    ) -> Self {
+    pub fn set_profile_questions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>>) -> Self {
         self.profile_questions = input;
         self
     }
     /// <p>Profile questions.</p>
-    pub fn get_profile_questions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>> {
+    pub fn get_profile_questions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>> {
         &self.profile_questions
     }
     /// <p>An Amazon Web Services account ID.</p>
@@ -224,10 +196,7 @@ impl ProfileBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -241,10 +210,7 @@ impl ProfileBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -253,18 +219,12 @@ impl ProfileBuilder {
         &self.updated_at
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn share_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_share_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_invitation_id = input;
         self
     }
@@ -277,32 +237,19 @@ impl ProfileBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the profile.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the profile.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Profile`](crate::types::Profile).

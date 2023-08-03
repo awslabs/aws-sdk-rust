@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::set_name): <p>The name of the ledger that you want to delete.</p>
     /// - On success, responds with [`DeleteLedgerOutput`](crate::operation::delete_ledger::DeleteLedgerOutput)
     /// - On failure, responds with [`SdkError<DeleteLedgerError>`](crate::operation::delete_ledger::DeleteLedgerError)
-    pub fn delete_ledger(
-        &self,
-    ) -> crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder {
-        crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ledger(&self) -> crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder {
+        crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`resource_id_preference(Option<ResourceIdPreference>)`](crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput::resource_id_preference): <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput::next_token): <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountPreferencesError>`](crate::operation::describe_account_preferences::DescribeAccountPreferencesError)
-    pub fn describe_account_preferences(&self) -> crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesFluentBuilder{
+    pub fn describe_account_preferences(&self) -> crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesFluentBuilder {
         crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

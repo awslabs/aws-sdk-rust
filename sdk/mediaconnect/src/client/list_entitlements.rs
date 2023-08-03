@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`entitlements(Option<Vec<ListedEntitlement>>)`](crate::operation::list_entitlements::ListEntitlementsOutput::entitlements): A list of entitlements that have been granted to you from other AWS accounts.
     ///   - [`next_token(Option<String>)`](crate::operation::list_entitlements::ListEntitlementsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     /// - On failure, responds with [`SdkError<ListEntitlementsError>`](crate::operation::list_entitlements::ListEntitlementsError)
-    pub fn list_entitlements(
-        &self,
-    ) -> crate::operation::list_entitlements::builders::ListEntitlementsFluentBuilder {
-        crate::operation::list_entitlements::builders::ListEntitlementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_entitlements(&self) -> crate::operation::list_entitlements::builders::ListEntitlementsFluentBuilder {
+        crate::operation::list_entitlements::builders::ListEntitlementsFluentBuilder::new(self.handle.clone())
     }
 }

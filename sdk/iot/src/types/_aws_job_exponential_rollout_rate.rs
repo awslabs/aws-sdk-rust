@@ -26,9 +26,7 @@ impl AwsJobExponentialRolloutRate {
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub fn rate_increase_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsJobRateIncreaseCriteria> {
+    pub fn rate_increase_criteria(&self) -> ::std::option::Option<&crate::types::AwsJobRateIncreaseCriteria> {
         self.rate_increase_criteria.as_ref()
     }
 }
@@ -41,14 +39,11 @@ impl AwsJobExponentialRolloutRate {
 
 /// A builder for [`AwsJobExponentialRolloutRate`](crate::types::AwsJobExponentialRolloutRate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsJobExponentialRolloutRateBuilder {
     pub(crate) base_rate_per_minute: ::std::option::Option<i32>,
     pub(crate) increment_factor: ::std::option::Option<f64>,
-    pub(crate) rate_increase_criteria:
-        ::std::option::Option<crate::types::AwsJobRateIncreaseCriteria>,
+    pub(crate) rate_increase_criteria: ::std::option::Option<crate::types::AwsJobRateIncreaseCriteria>,
 }
 impl AwsJobExponentialRolloutRateBuilder {
     /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
@@ -81,27 +76,19 @@ impl AwsJobExponentialRolloutRateBuilder {
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub fn rate_increase_criteria(
-        mut self,
-        input: crate::types::AwsJobRateIncreaseCriteria,
-    ) -> Self {
+    pub fn rate_increase_criteria(mut self, input: crate::types::AwsJobRateIncreaseCriteria) -> Self {
         self.rate_increase_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub fn set_rate_increase_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsJobRateIncreaseCriteria>,
-    ) -> Self {
+    pub fn set_rate_increase_criteria(mut self, input: ::std::option::Option<crate::types::AwsJobRateIncreaseCriteria>) -> Self {
         self.rate_increase_criteria = input;
         self
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub fn get_rate_increase_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsJobRateIncreaseCriteria> {
+    pub fn get_rate_increase_criteria(&self) -> &::std::option::Option<crate::types::AwsJobRateIncreaseCriteria> {
         &self.rate_increase_criteria
     }
     /// Consumes the builder and constructs a [`AwsJobExponentialRolloutRate`](crate::types::AwsJobExponentialRolloutRate).

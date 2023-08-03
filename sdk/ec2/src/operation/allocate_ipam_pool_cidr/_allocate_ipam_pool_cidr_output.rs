@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AllocateIpamPoolCidrOutput {
 }
 impl AllocateIpamPoolCidrOutput {
     /// Creates a new builder-style object to manufacture [`AllocateIpamPoolCidrOutput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder
-    {
+    pub fn builder() -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder {
         crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`AllocateIpamPoolCidrOutput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateIpamPoolCidrOutputBuilder {
     pub(crate) ipam_pool_allocation: ::std::option::Option<crate::types::IpamPoolAllocation>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl AllocateIpamPoolCidrOutputBuilder {
         self
     }
     /// <p>Information about the allocation created.</p>
-    pub fn set_ipam_pool_allocation(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolAllocation>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocation(mut self, input: ::std::option::Option<crate::types::IpamPoolAllocation>) -> Self {
         self.ipam_pool_allocation = input;
         self
     }
     /// <p>Information about the allocation created.</p>
-    pub fn get_ipam_pool_allocation(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamPoolAllocation> {
+    pub fn get_ipam_pool_allocation(&self) -> &::std::option::Option<crate::types::IpamPoolAllocation> {
         &self.ipam_pool_allocation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

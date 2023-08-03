@@ -35,9 +35,7 @@ impl ListAttachmentsOutput {
 
 /// A builder for [`ListAttachmentsOutput`](crate::operation::list_attachments::ListAttachmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachmentsOutputBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAttachmentsOutputBuilder {
         self
     }
     /// <p>Describes the list of attachments.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>Describes the list of attachments.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
         &self.attachments
     }
     /// <p>The token for the next page of results.</p>

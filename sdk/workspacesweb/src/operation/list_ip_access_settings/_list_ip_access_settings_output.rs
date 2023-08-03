@@ -5,8 +5,7 @@
 pub struct ListIpAccessSettingsOutput {
     /// <p>The IP access settings.</p>
     #[doc(hidden)]
-    pub ip_access_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
+    pub ip_access_settings: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIpAccessSettingsOutput {
 }
 impl ListIpAccessSettingsOutput {
     /// <p>The IP access settings.</p>
-    pub fn ip_access_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpAccessSettingsSummary]> {
+    pub fn ip_access_settings(&self) -> ::std::option::Option<&[crate::types::IpAccessSettingsSummary]> {
         self.ip_access_settings.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIpAccessSettingsOutput {
 }
 impl ListIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsOutputBuilder {
         crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpAccessSettingsOutputBuilder {
-    pub(crate) ip_access_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
+    pub(crate) ip_access_settings: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListIpAccessSettingsOutputBuilder {
         self
     }
     /// <p>The IP access settings.</p>
-    pub fn set_ip_access_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
-    ) -> Self {
+    pub fn set_ip_access_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>) -> Self {
         self.ip_access_settings = input;
         self
     }
     /// <p>The IP access settings.</p>
-    pub fn get_ip_access_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>> {
+    pub fn get_ip_access_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>> {
         &self.ip_access_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

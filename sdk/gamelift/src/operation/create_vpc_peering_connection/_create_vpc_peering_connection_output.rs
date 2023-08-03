@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateVpcPeeringConnectionOutput {
 }
 impl CreateVpcPeeringConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringConnectionOutput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput).
-    pub fn builder() -> crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionOutputBuilder {
         crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcPeeringConnectionOutput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateVpcPeeringConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVpcPeeringConnectionOutput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput {
+    pub fn build(self) -> crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput {
         crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput {
             _request_id: self._request_id,
         }

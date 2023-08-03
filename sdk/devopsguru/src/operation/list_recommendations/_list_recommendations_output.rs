@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRecommendationsOutput {
 }
 impl ListRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
+        crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationsOutputBuilder {
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListRecommendationsOutputBuilder {
         self
     }
     /// <p> An array of the requested recommendations. </p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p> An array of the requested recommendations. </p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

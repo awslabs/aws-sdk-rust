@@ -30,9 +30,7 @@ impl GetSchemaInput {
 
 /// A builder for [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
 }
@@ -64,14 +62,7 @@ impl GetSchemaInputBuilder {
         &self.schema_id
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema::GetSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput {
-            schema_id: self.schema_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput { schema_id: self.schema_id })
     }
 }

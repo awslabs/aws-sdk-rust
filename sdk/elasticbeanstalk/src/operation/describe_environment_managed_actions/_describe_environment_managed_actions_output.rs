@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeEnvironmentManagedActionsOutp
 }
 impl DescribeEnvironmentManagedActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
-    pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsOutputBuilder {
         crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsOutputBuilder {
     pub(crate) managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
     _request_id: Option<String>,
@@ -49,17 +47,12 @@ impl DescribeEnvironmentManagedActionsOutputBuilder {
         self
     }
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub fn set_managed_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
-    ) -> Self {
+    pub fn set_managed_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>) -> Self {
         self.managed_actions = input;
         self
     }
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub fn get_managed_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>> {
+    pub fn get_managed_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>> {
         &self.managed_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +65,9 @@ impl DescribeEnvironmentManagedActionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
-    pub fn build(self) -> crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput{
+    pub fn build(self) -> crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput {
         crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput {
-            managed_actions: self.managed_actions
-            ,
+            managed_actions: self.managed_actions,
             _request_id: self._request_id,
         }
     }

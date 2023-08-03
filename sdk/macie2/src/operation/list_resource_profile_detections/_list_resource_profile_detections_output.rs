@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListResourceProfileDetectionsOutput {
 }
 impl ListResourceProfileDetectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsOutput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput).
-    pub fn builder() -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsOutputBuilder {
         crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceProfileDetectionsOutput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceProfileDetectionsOutputBuilder {
     pub(crate) detections: ::std::option::Option<::std::vec::Vec<crate::types::Detection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListResourceProfileDetectionsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
-    pub fn set_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Detection>>,
-    ) -> Self {
+    pub fn set_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Detection>>) -> Self {
         self.detections = input;
         self
     }
     /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
-    pub fn get_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Detection>> {
+    pub fn get_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Detection>> {
         &self.detections
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -93,10 +86,7 @@ impl ListResourceProfileDetectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceProfileDetectionsOutput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput {
         crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput {
             detections: self.detections,
             next_token: self.next_token,

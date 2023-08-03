@@ -44,9 +44,7 @@ impl InventoryRetrievalJobInput {
 
 /// A builder for [`InventoryRetrievalJobInput`](crate::types::InventoryRetrievalJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryRetrievalJobInputBuilder {
     pub(crate) start_date: ::std::option::Option<::std::string::String>,
     pub(crate) end_date: ::std::option::Option<::std::string::String>,

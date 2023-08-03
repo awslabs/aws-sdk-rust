@@ -44,9 +44,7 @@ impl Ibm3624PinVerification {
 
 /// A builder for [`Ibm3624PinVerification`](crate::types::Ibm3624PinVerification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ibm3624PinVerificationBuilder {
     pub(crate) decimalization_table: ::std::option::Option<::std::string::String>,
     pub(crate) pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct Ibm3624PinVerificationBuilder {
 }
 impl Ibm3624PinVerificationBuilder {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    pub fn decimalization_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn decimalization_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decimalization_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    pub fn set_decimalization_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_decimalization_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.decimalization_table = input;
         self
     }
@@ -75,40 +67,26 @@ impl Ibm3624PinVerificationBuilder {
         &self.decimalization_table
     }
     /// <p>The padding character for validation data.</p>
-    pub fn pin_validation_data_pad_character(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pin_validation_data_pad_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pin_validation_data_pad_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The padding character for validation data.</p>
-    pub fn set_pin_validation_data_pad_character(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pin_validation_data_pad_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pin_validation_data_pad_character = input;
         self
     }
     /// <p>The padding character for validation data.</p>
-    pub fn get_pin_validation_data_pad_character(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pin_validation_data_pad_character(&self) -> &::std::option::Option<::std::string::String> {
         &self.pin_validation_data_pad_character
     }
     /// <p>The unique data for cardholder identification.</p>
-    pub fn pin_validation_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pin_validation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pin_validation_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique data for cardholder identification.</p>
-    pub fn set_pin_validation_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pin_validation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pin_validation_data = input;
         self
     }

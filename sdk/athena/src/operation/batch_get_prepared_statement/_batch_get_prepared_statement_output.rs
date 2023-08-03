@@ -5,12 +5,10 @@
 pub struct BatchGetPreparedStatementOutput {
     /// <p>The list of prepared statements returned.</p>
     #[doc(hidden)]
-    pub prepared_statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
+    pub prepared_statements: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
     #[doc(hidden)]
-    pub unprocessed_prepared_statement_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
+    pub unprocessed_prepared_statement_names: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
     _request_id: Option<String>,
 }
 impl BatchGetPreparedStatementOutput {
@@ -19,9 +17,7 @@ impl BatchGetPreparedStatementOutput {
         self.prepared_statements.as_deref()
     }
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
-    pub fn unprocessed_prepared_statement_names(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedPreparedStatementName]> {
+    pub fn unprocessed_prepared_statement_names(&self) -> ::std::option::Option<&[crate::types::UnprocessedPreparedStatementName]> {
         self.unprocessed_prepared_statement_names.as_deref()
     }
 }
@@ -32,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetPreparedStatementOutput {
 }
 impl BatchGetPreparedStatementOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetPreparedStatementOutput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput).
-    pub fn builder() -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementOutputBuilder {
         crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetPreparedStatementOutput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetPreparedStatementOutputBuilder {
-    pub(crate) prepared_statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
-    pub(crate) unprocessed_prepared_statement_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
+    pub(crate) prepared_statements: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
+    pub(crate) unprocessed_prepared_statement_names: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
     _request_id: Option<String>,
 }
 impl BatchGetPreparedStatementOutputBuilder {
@@ -62,17 +54,12 @@ impl BatchGetPreparedStatementOutputBuilder {
         self
     }
     /// <p>The list of prepared statements returned.</p>
-    pub fn set_prepared_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
-    ) -> Self {
+    pub fn set_prepared_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>) -> Self {
         self.prepared_statements = input;
         self
     }
     /// <p>The list of prepared statements returned.</p>
-    pub fn get_prepared_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>> {
+    pub fn get_prepared_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>> {
         &self.prepared_statements
     }
     /// Appends an item to `unprocessed_prepared_statement_names`.
@@ -80,13 +67,8 @@ impl BatchGetPreparedStatementOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_prepared_statement_names`](Self::set_unprocessed_prepared_statement_names).
     ///
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
-    pub fn unprocessed_prepared_statement_names(
-        mut self,
-        input: crate::types::UnprocessedPreparedStatementName,
-    ) -> Self {
-        let mut v = self
-            .unprocessed_prepared_statement_names
-            .unwrap_or_default();
+    pub fn unprocessed_prepared_statement_names(mut self, input: crate::types::UnprocessedPreparedStatementName) -> Self {
+        let mut v = self.unprocessed_prepared_statement_names.unwrap_or_default();
         v.push(input);
         self.unprocessed_prepared_statement_names = ::std::option::Option::Some(v);
         self
@@ -94,9 +76,7 @@ impl BatchGetPreparedStatementOutputBuilder {
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
     pub fn set_unprocessed_prepared_statement_names(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
     ) -> Self {
         self.unprocessed_prepared_statement_names = input;
         self
@@ -104,8 +84,7 @@ impl BatchGetPreparedStatementOutputBuilder {
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
     pub fn get_unprocessed_prepared_statement_names(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>> {
         &self.unprocessed_prepared_statement_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -118,9 +97,7 @@ impl BatchGetPreparedStatementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetPreparedStatementOutput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput {
+    pub fn build(self) -> crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput {
         crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput {
             prepared_statements: self.prepared_statements,
             unprocessed_prepared_statement_names: self.unprocessed_prepared_statement_names,

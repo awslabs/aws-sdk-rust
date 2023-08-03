@@ -5,8 +5,7 @@
 pub struct DescribeGameServerInstancesOutput {
     /// <p>The collection of requested game server instances.</p>
     #[doc(hidden)]
-    pub game_server_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
+    pub game_server_instances: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeGameServerInstancesOutput {
 }
 impl DescribeGameServerInstancesOutput {
     /// <p>The collection of requested game server instances.</p>
-    pub fn game_server_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GameServerInstance]> {
+    pub fn game_server_instances(&self) -> ::std::option::Option<&[crate::types::GameServerInstance]> {
         self.game_server_instances.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeGameServerInstancesOutput {
 }
 impl DescribeGameServerInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInstancesOutput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput).
-    pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesOutputBuilder {
         crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameServerInstancesOutput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameServerInstancesOutputBuilder {
-    pub(crate) game_server_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
+    pub(crate) game_server_instances: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeGameServerInstancesOutputBuilder {
         self
     }
     /// <p>The collection of requested game server instances.</p>
-    pub fn set_game_server_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
-    ) -> Self {
+    pub fn set_game_server_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>) -> Self {
         self.game_server_instances = input;
         self
     }
     /// <p>The collection of requested game server instances.</p>
-    pub fn get_game_server_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>> {
+    pub fn get_game_server_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>> {
         &self.game_server_instances
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -97,9 +86,7 @@ impl DescribeGameServerInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGameServerInstancesOutput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput {
         crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput {
             game_server_instances: self.game_server_instances,
             next_token: self.next_token,

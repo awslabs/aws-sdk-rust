@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateImpersonationRoleOutput {
 }
 impl CreateImpersonationRoleOutput {
     /// Creates a new builder-style object to manufacture [`CreateImpersonationRoleOutput`](crate::operation::create_impersonation_role::CreateImpersonationRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_impersonation_role::builders::CreateImpersonationRoleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_impersonation_role::builders::CreateImpersonationRoleOutputBuilder {
         crate::operation::create_impersonation_role::builders::CreateImpersonationRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImpersonationRoleOutput`](crate::operation::create_impersonation_role::CreateImpersonationRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImpersonationRoleOutputBuilder {
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateImpersonationRoleOutputBuilder {
     /// <p>The new impersonation role ID.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new impersonation role ID.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.impersonation_role_id = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateImpersonationRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateImpersonationRoleOutput`](crate::operation::create_impersonation_role::CreateImpersonationRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_impersonation_role::CreateImpersonationRoleOutput {
+    pub fn build(self) -> crate::operation::create_impersonation_role::CreateImpersonationRoleOutput {
         crate::operation::create_impersonation_role::CreateImpersonationRoleOutput {
             impersonation_role_id: self.impersonation_role_id,
             _request_id: self._request_id,

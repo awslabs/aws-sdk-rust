@@ -10,10 +10,7 @@ impl PostCommentReplyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::post_comment_reply::PostCommentReplyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_reply::PostCommentReplyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.post_comment_reply();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PostCommentReplyFluentBuilder {
         }
     }
     /// Access the PostCommentReply as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PostCommentReplyFluentBuilder {
             crate::operation::post_comment_reply::PostCommentReply,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_reply::PostCommentReplyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PostCommentReplyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PostCommentReplyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_reply::PostCommentReplyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_reply::PostCommentReplyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PostCommentReplyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_reply::PostCommentReplyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_reply::PostCommentReplyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PostCommentReplyFluentBuilder {
             crate::operation::post_comment_reply::PostCommentReply,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_reply::PostCommentReplyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PostCommentReplyFluentBuilder {
         self.inner.get_in_reply_to()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -29,7 +29,7 @@ impl CompleteAttachmentUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteAttachmentUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder,
+    inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder,
 }
 impl CompleteAttachmentUploadFluentBuilder {
     /// Creates a new `CompleteAttachmentUpload`.
@@ -40,10 +40,7 @@ impl CompleteAttachmentUploadFluentBuilder {
         }
     }
     /// Access the CompleteAttachmentUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl CompleteAttachmentUploadFluentBuilder {
             crate::operation::complete_attachment_upload::CompleteAttachmentUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl CompleteAttachmentUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl CompleteAttachmentUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl CompleteAttachmentUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl CompleteAttachmentUploadFluentBuilder {
             crate::operation::complete_attachment_upload::CompleteAttachmentUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError>,
     > {
         self.customize_middleware().await
     }
@@ -131,25 +117,17 @@ impl CompleteAttachmentUploadFluentBuilder {
     /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
     ///
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn attachment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_ids(input.into());
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn set_attachment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_attachment_ids(input);
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn get_attachment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attachment_ids()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -167,18 +145,12 @@ impl CompleteAttachmentUploadFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_token(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
     }

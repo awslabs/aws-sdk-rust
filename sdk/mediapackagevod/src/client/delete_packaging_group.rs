@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_packaging_group::builders::DeletePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_packaging_group::builders::DeletePackagingGroupFluentBuilder::set_id): The ID of the MediaPackage VOD PackagingGroup resource to delete.
     /// - On success, responds with [`DeletePackagingGroupOutput`](crate::operation::delete_packaging_group::DeletePackagingGroupOutput)
     /// - On failure, responds with [`SdkError<DeletePackagingGroupError>`](crate::operation::delete_packaging_group::DeletePackagingGroupError)
-    pub fn delete_packaging_group(
-        &self,
-    ) -> crate::operation::delete_packaging_group::builders::DeletePackagingGroupFluentBuilder {
-        crate::operation::delete_packaging_group::builders::DeletePackagingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_packaging_group(&self) -> crate::operation::delete_packaging_group::builders::DeletePackagingGroupFluentBuilder {
+        crate::operation::delete_packaging_group::builders::DeletePackagingGroupFluentBuilder::new(self.handle.clone())
     }
 }

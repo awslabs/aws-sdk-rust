@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBridgeOutput`](crate::operation::update_bridge::UpdateBridgeOutput) with field(s):
     ///   - [`bridge(Option<Bridge>)`](crate::operation::update_bridge::UpdateBridgeOutput::bridge): A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
     /// - On failure, responds with [`SdkError<UpdateBridgeError>`](crate::operation::update_bridge::UpdateBridgeError)
-    pub fn update_bridge(
-        &self,
-    ) -> crate::operation::update_bridge::builders::UpdateBridgeFluentBuilder {
-        crate::operation::update_bridge::builders::UpdateBridgeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bridge(&self) -> crate::operation::update_bridge::builders::UpdateBridgeFluentBuilder {
+        crate::operation::update_bridge::builders::UpdateBridgeFluentBuilder::new(self.handle.clone())
     }
 }

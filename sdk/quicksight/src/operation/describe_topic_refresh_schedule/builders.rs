@@ -26,7 +26,7 @@ impl DescribeTopicRefreshScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleInputBuilder,
+    inner: crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleInputBuilder,
 }
 impl DescribeTopicRefreshScheduleFluentBuilder {
     /// Creates a new `DescribeTopicRefreshSchedule`.
@@ -37,7 +37,7 @@ impl DescribeTopicRefreshScheduleFluentBuilder {
         }
     }
     /// Access the DescribeTopicRefreshSchedule as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeTopicRefreshScheduleFluentBuilder {
             crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeTopicRefreshScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeTopicRefreshScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeTopicRefreshScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeTopicRefreshScheduleFluentBuilder {
             crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

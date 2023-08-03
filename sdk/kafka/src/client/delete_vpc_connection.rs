@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`vpc_connection_arn(Option<String>)`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput::vpc_connection_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
     ///   - [`state(Option<VpcConnectionState>)`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput::state): <p>The state of the VPC connection.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcConnectionError>`](crate::operation::delete_vpc_connection::DeleteVpcConnectionError)
-    pub fn delete_vpc_connection(
-        &self,
-    ) -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder {
-        crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vpc_connection(&self) -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder {
+        crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct AssociateUserOutput {
 }
 impl AssociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn instance_user_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceUserSummary> {
+    pub fn instance_user_summary(&self) -> ::std::option::Option<&crate::types::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl AssociateUserOutput {
 
 /// A builder for [`AssociateUserOutput`](crate::operation::associate_user::AssociateUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserOutputBuilder {
     pub(crate) instance_user_summary: ::std::option::Option<crate::types::InstanceUserSummary>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl AssociateUserOutputBuilder {
         self
     }
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn set_instance_user_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceUserSummary>,
-    ) -> Self {
+    pub fn set_instance_user_summary(mut self, input: ::std::option::Option<crate::types::InstanceUserSummary>) -> Self {
         self.instance_user_summary = input;
         self
     }
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn get_instance_user_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceUserSummary> {
+    pub fn get_instance_user_summary(&self) -> &::std::option::Option<crate::types::InstanceUserSummary> {
         &self.instance_user_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

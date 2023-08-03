@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`permissions_with_grant_option(Vec<Permission>)`](crate::operation::revoke_permissions::builders::RevokePermissionsFluentBuilder::permissions_with_grant_option) / [`set_permissions_with_grant_option(Option<Vec<Permission>>)`](crate::operation::revoke_permissions::builders::RevokePermissionsFluentBuilder::set_permissions_with_grant_option): <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     /// - On success, responds with [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput)
     /// - On failure, responds with [`SdkError<RevokePermissionsError>`](crate::operation::revoke_permissions::RevokePermissionsError)
-    pub fn revoke_permissions(
-        &self,
-    ) -> crate::operation::revoke_permissions::builders::RevokePermissionsFluentBuilder {
-        crate::operation::revoke_permissions::builders::RevokePermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_permissions(&self) -> crate::operation::revoke_permissions::builders::RevokePermissionsFluentBuilder {
+        crate::operation::revoke_permissions::builders::RevokePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

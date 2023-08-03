@@ -29,16 +29,14 @@ impl ListCostCategoryDefinitionsInput {
 }
 impl ListCostCategoryDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsInput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput).
-    pub fn builder() -> crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsInputBuilder {
         crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCostCategoryDefinitionsInput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsInputBuilder {
     pub(crate) effective_on: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListCostCategoryDefinitionsInputBuilder {
         crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput {
-                effective_on: self.effective_on,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput {
+            effective_on: self.effective_on,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -35,9 +35,7 @@ impl GetMlTaskRunsOutput {
 
 /// A builder for [`GetMlTaskRunsOutput`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTaskRunsOutputBuilder {
     pub(crate) task_runs: ::std::option::Option<::std::vec::Vec<crate::types::TaskRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetMlTaskRunsOutputBuilder {
         self
     }
     /// <p>A list of task runs that are associated with the transform.</p>
-    pub fn set_task_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRun>>,
-    ) -> Self {
+    pub fn set_task_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRun>>) -> Self {
         self.task_runs = input;
         self
     }

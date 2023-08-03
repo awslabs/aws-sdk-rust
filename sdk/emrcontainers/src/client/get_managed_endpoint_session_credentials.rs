@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::credentials): <p>The structure containing the session credentials.</p>
     ///   - [`expires_at(Option<DateTime>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::expires_at): <p>The date and time when the session token will expire.</p>
     /// - On failure, responds with [`SdkError<GetManagedEndpointSessionCredentialsError>`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError)
-    pub fn get_managed_endpoint_session_credentials(&self) -> crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsFluentBuilder{
-        crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsFluentBuilder::new(self.handle.clone())
+    pub fn get_managed_endpoint_session_credentials(
+        &self,
+    ) -> crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsFluentBuilder {
+        crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -26,8 +26,7 @@ impl DescribeUpdateDirectoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder,
+    inner: crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder,
 }
 impl DescribeUpdateDirectoryFluentBuilder {
     /// Creates a new `DescribeUpdateDirectory`.
@@ -38,10 +37,7 @@ impl DescribeUpdateDirectoryFluentBuilder {
         }
     }
     /// Access the DescribeUpdateDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeUpdateDirectoryFluentBuilder {
             crate::operation::describe_update_directory::DescribeUpdateDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_directory::DescribeUpdateDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_directory::DescribeUpdateDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeUpdateDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeUpdateDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_directory::DescribeUpdateDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_directory::DescribeUpdateDirectoryError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeUpdateDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_directory::DescribeUpdateDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_directory::DescribeUpdateDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl DescribeUpdateDirectoryFluentBuilder {
             crate::operation::describe_update_directory::DescribeUpdateDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_directory::DescribeUpdateDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_directory::DescribeUpdateDirectoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_update_directory::paginator::DescribeUpdateDirectoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_update_directory::paginator::DescribeUpdateDirectoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_update_directory::paginator::DescribeUpdateDirectoryPaginator {
         crate::operation::describe_update_directory::paginator::DescribeUpdateDirectoryPaginator::new(self.handle, self.inner)
     }
     /// <p> The unique identifier of the directory. </p>
@@ -153,10 +135,7 @@ impl DescribeUpdateDirectoryFluentBuilder {
         self
     }
     /// <p> The type of updates you want to describe for the directory. </p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }

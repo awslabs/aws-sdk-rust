@@ -10,9 +10,7 @@ pub struct S3ClassificationScopeUpdate {
 }
 impl S3ClassificationScopeUpdate {
     /// <p>The names of the S3 buckets to add or remove from the list.</p>
-    pub fn excludes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ClassificationScopeExclusionUpdate> {
+    pub fn excludes(&self) -> ::std::option::Option<&crate::types::S3ClassificationScopeExclusionUpdate> {
         self.excludes.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl S3ClassificationScopeUpdate {
 
 /// A builder for [`S3ClassificationScopeUpdate`](crate::types::S3ClassificationScopeUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeUpdateBuilder {
     pub(crate) excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusionUpdate>,
 }
@@ -38,23 +34,16 @@ impl S3ClassificationScopeUpdateBuilder {
         self
     }
     /// <p>The names of the S3 buckets to add or remove from the list.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ClassificationScopeExclusionUpdate>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::S3ClassificationScopeExclusionUpdate>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>The names of the S3 buckets to add or remove from the list.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ClassificationScopeExclusionUpdate> {
+    pub fn get_excludes(&self) -> &::std::option::Option<crate::types::S3ClassificationScopeExclusionUpdate> {
         &self.excludes
     }
     /// Consumes the builder and constructs a [`S3ClassificationScopeUpdate`](crate::types::S3ClassificationScopeUpdate).
     pub fn build(self) -> crate::types::S3ClassificationScopeUpdate {
-        crate::types::S3ClassificationScopeUpdate {
-            excludes: self.excludes,
-        }
+        crate::types::S3ClassificationScopeUpdate { excludes: self.excludes }
     }
 }

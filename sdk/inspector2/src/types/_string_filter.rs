@@ -30,9 +30,7 @@ impl StringFilter {
 
 /// A builder for [`StringFilter`](crate::types::StringFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::StringComparison>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl StringFilterBuilder {
         self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::StringComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::StringComparison>) -> Self {
         self.comparison = input;
         self
     }

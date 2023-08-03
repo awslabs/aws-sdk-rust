@@ -35,12 +35,9 @@ impl SearchContentOutput {
 
 /// A builder for [`SearchContentOutput`](crate::operation::search_content::SearchContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchContentOutputBuilder {
-    pub(crate) content_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>,
+    pub(crate) content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl SearchContentOutputBuilder {
         self
     }
     /// <p>Summary information about the content.</p>
-    pub fn set_content_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>,
-    ) -> Self {
+    pub fn set_content_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>) -> Self {
         self.content_summaries = input;
         self
     }
     /// <p>Summary information about the content.</p>
-    pub fn get_content_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>> {
+    pub fn get_content_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>> {
         &self.content_summaries
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

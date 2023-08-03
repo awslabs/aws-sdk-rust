@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::import_server_catalog::builders::ImportServerCatalogFluentBuilder::send) it.
     /// - On success, responds with [`ImportServerCatalogOutput`](crate::operation::import_server_catalog::ImportServerCatalogOutput)
     /// - On failure, responds with [`SdkError<ImportServerCatalogError>`](crate::operation::import_server_catalog::ImportServerCatalogError)
-    pub fn import_server_catalog(
-        &self,
-    ) -> crate::operation::import_server_catalog::builders::ImportServerCatalogFluentBuilder {
-        crate::operation::import_server_catalog::builders::ImportServerCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_server_catalog(&self) -> crate::operation::import_server_catalog::builders::ImportServerCatalogFluentBuilder {
+        crate::operation::import_server_catalog::builders::ImportServerCatalogFluentBuilder::new(self.handle.clone())
     }
 }

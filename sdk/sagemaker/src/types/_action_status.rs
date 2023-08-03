@@ -42,13 +42,7 @@
 /// _Note: `ActionStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ActionStatus {
             "Stopped" => ActionStatus::Stopped,
             "Stopping" => ActionStatus::Stopping,
             "Unknown" => ActionStatus::UnknownValue,
-            other => {
-                ActionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ActionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Completed",
-            "Failed",
-            "InProgress",
-            "Stopped",
-            "Stopping",
-            "Unknown",
-        ]
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping", "Unknown"]
     }
 }
 impl ::std::convert::AsRef<str> for ActionStatus {

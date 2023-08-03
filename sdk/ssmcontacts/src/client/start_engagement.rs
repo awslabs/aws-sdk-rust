@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`StartEngagementOutput`](crate::operation::start_engagement::StartEngagementOutput) with field(s):
     ///   - [`engagement_arn(Option<String>)`](crate::operation::start_engagement::StartEngagementOutput::engagement_arn): <p>The ARN of the engagement.</p>
     /// - On failure, responds with [`SdkError<StartEngagementError>`](crate::operation::start_engagement::StartEngagementError)
-    pub fn start_engagement(
-        &self,
-    ) -> crate::operation::start_engagement::builders::StartEngagementFluentBuilder {
-        crate::operation::start_engagement::builders::StartEngagementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_engagement(&self) -> crate::operation::start_engagement::builders::StartEngagementFluentBuilder {
+        crate::operation::start_engagement::builders::StartEngagementFluentBuilder::new(self.handle.clone())
     }
 }

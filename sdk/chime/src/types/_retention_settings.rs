@@ -9,20 +9,15 @@ pub struct RetentionSettings {
     pub room_retention_settings: ::std::option::Option<crate::types::RoomRetentionSettings>,
     /// <p>The chat conversation retention settings.</p>
     #[doc(hidden)]
-    pub conversation_retention_settings:
-        ::std::option::Option<crate::types::ConversationRetentionSettings>,
+    pub conversation_retention_settings: ::std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettings {
     /// <p>The chat room retention settings.</p>
-    pub fn room_retention_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoomRetentionSettings> {
+    pub fn room_retention_settings(&self) -> ::std::option::Option<&crate::types::RoomRetentionSettings> {
         self.room_retention_settings.as_ref()
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn conversation_retention_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationRetentionSettings> {
+    pub fn conversation_retention_settings(&self) -> ::std::option::Option<&crate::types::ConversationRetentionSettings> {
         self.conversation_retention_settings.as_ref()
     }
 }
@@ -35,13 +30,10 @@ impl RetentionSettings {
 
 /// A builder for [`RetentionSettings`](crate::types::RetentionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionSettingsBuilder {
     pub(crate) room_retention_settings: ::std::option::Option<crate::types::RoomRetentionSettings>,
-    pub(crate) conversation_retention_settings:
-        ::std::option::Option<crate::types::ConversationRetentionSettings>,
+    pub(crate) conversation_retention_settings: ::std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettingsBuilder {
     /// <p>The chat room retention settings.</p>
@@ -50,39 +42,26 @@ impl RetentionSettingsBuilder {
         self
     }
     /// <p>The chat room retention settings.</p>
-    pub fn set_room_retention_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomRetentionSettings>,
-    ) -> Self {
+    pub fn set_room_retention_settings(mut self, input: ::std::option::Option<crate::types::RoomRetentionSettings>) -> Self {
         self.room_retention_settings = input;
         self
     }
     /// <p>The chat room retention settings.</p>
-    pub fn get_room_retention_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoomRetentionSettings> {
+    pub fn get_room_retention_settings(&self) -> &::std::option::Option<crate::types::RoomRetentionSettings> {
         &self.room_retention_settings
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn conversation_retention_settings(
-        mut self,
-        input: crate::types::ConversationRetentionSettings,
-    ) -> Self {
+    pub fn conversation_retention_settings(mut self, input: crate::types::ConversationRetentionSettings) -> Self {
         self.conversation_retention_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn set_conversation_retention_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationRetentionSettings>,
-    ) -> Self {
+    pub fn set_conversation_retention_settings(mut self, input: ::std::option::Option<crate::types::ConversationRetentionSettings>) -> Self {
         self.conversation_retention_settings = input;
         self
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn get_conversation_retention_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationRetentionSettings> {
+    pub fn get_conversation_retention_settings(&self) -> &::std::option::Option<crate::types::ConversationRetentionSettings> {
         &self.conversation_retention_settings
     }
     /// Consumes the builder and constructs a [`RetentionSettings`](crate::types::RetentionSettings).

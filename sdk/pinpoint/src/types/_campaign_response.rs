@@ -6,8 +6,7 @@
 pub struct CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
     #[doc(hidden)]
-    pub additional_treatments:
-        ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
+    pub additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
     /// <p>The unique identifier for the application that the campaign applies to.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -19,8 +18,7 @@ pub struct CampaignResponse {
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
     #[doc(hidden)]
-    pub custom_delivery_configuration:
-        ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
+    pub custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
     #[doc(hidden)]
     pub default_state: ::std::option::Option<crate::types::CampaignState>,
@@ -65,9 +63,7 @@ pub struct CampaignResponse {
     pub state: ::std::option::Option<crate::types::CampaignState>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message template that’s used for the campaign.</p>
     #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
@@ -86,9 +82,7 @@ pub struct CampaignResponse {
 }
 impl CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
-    pub fn additional_treatments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TreatmentResource]> {
+    pub fn additional_treatments(&self) -> ::std::option::Option<&[crate::types::TreatmentResource]> {
         self.additional_treatments.as_deref()
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
@@ -104,9 +98,7 @@ impl CampaignResponse {
         self.creation_date.as_deref()
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
-    pub fn custom_delivery_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDeliveryConfiguration> {
+    pub fn custom_delivery_configuration(&self) -> ::std::option::Option<&crate::types::CustomDeliveryConfiguration> {
         self.custom_delivery_configuration.as_ref()
     }
     /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
@@ -142,9 +134,7 @@ impl CampaignResponse {
         self.limits.as_ref()
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn message_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageConfiguration> {
+    pub fn message_configuration(&self) -> ::std::option::Option<&crate::types::MessageConfiguration> {
         self.message_configuration.as_ref()
     }
     /// <p>The name of the campaign.</p>
@@ -168,17 +158,11 @@ impl CampaignResponse {
         self.state.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The message template that’s used for the campaign.</p>
-    pub fn template_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
     /// <p>The custom description of the default treatment for the campaign.</p>
@@ -207,17 +191,13 @@ impl CampaignResponse {
 
 /// A builder for [`CampaignResponse`](crate::types::CampaignResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CampaignResponseBuilder {
-    pub(crate) additional_treatments:
-        ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
+    pub(crate) additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_delivery_configuration:
-        ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
+    pub(crate) custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     pub(crate) default_state: ::std::option::Option<crate::types::CampaignState>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) holdout_percent: ::std::option::Option<i32>,
@@ -232,9 +212,7 @@ pub struct CampaignResponseBuilder {
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_version: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::CampaignState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     pub(crate) treatment_description: ::std::option::Option<::std::string::String>,
     pub(crate) treatment_name: ::std::option::Option<::std::string::String>,
@@ -254,32 +232,21 @@ impl CampaignResponseBuilder {
         self
     }
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
-    pub fn set_additional_treatments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
-    ) -> Self {
+    pub fn set_additional_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>) -> Self {
         self.additional_treatments = input;
         self
     }
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
-    pub fn get_additional_treatments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>> {
+    pub fn get_additional_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>> {
         &self.additional_treatments
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -302,18 +269,12 @@ impl CampaignResponseBuilder {
         &self.arn
     }
     /// <p>The date, in ISO 8601 format, when the campaign was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the campaign was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -322,25 +283,17 @@ impl CampaignResponseBuilder {
         &self.creation_date
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
-    pub fn custom_delivery_configuration(
-        mut self,
-        input: crate::types::CustomDeliveryConfiguration,
-    ) -> Self {
+    pub fn custom_delivery_configuration(mut self, input: crate::types::CustomDeliveryConfiguration) -> Self {
         self.custom_delivery_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
-    pub fn set_custom_delivery_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
-    ) -> Self {
+    pub fn set_custom_delivery_configuration(mut self, input: ::std::option::Option<crate::types::CustomDeliveryConfiguration>) -> Self {
         self.custom_delivery_configuration = input;
         self
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
-    pub fn get_custom_delivery_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
+    pub fn get_custom_delivery_configuration(&self) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
         &self.custom_delivery_configuration
     }
     /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
@@ -349,10 +302,7 @@ impl CampaignResponseBuilder {
         self
     }
     /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
-    pub fn set_default_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignState>,
-    ) -> Self {
+    pub fn set_default_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
         self.default_state = input;
         self
     }
@@ -431,18 +381,12 @@ impl CampaignResponseBuilder {
         &self.is_paused
     }
     /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -456,10 +400,7 @@ impl CampaignResponseBuilder {
         self
     }
     /// <p>The messaging limits for the campaign.</p>
-    pub fn set_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignLimits>,
-    ) -> Self {
+    pub fn set_limits(mut self, input: ::std::option::Option<crate::types::CampaignLimits>) -> Self {
         self.limits = input;
         self
     }
@@ -473,17 +414,12 @@ impl CampaignResponseBuilder {
         self
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn set_message_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageConfiguration>,
-    ) -> Self {
+    pub fn set_message_configuration(mut self, input: ::std::option::Option<crate::types::MessageConfiguration>) -> Self {
         self.message_configuration = input;
         self
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn get_message_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageConfiguration> {
+    pub fn get_message_configuration(&self) -> &::std::option::Option<crate::types::MessageConfiguration> {
         &self.message_configuration
     }
     /// <p>The name of the campaign.</p>
@@ -561,32 +497,19 @@ impl CampaignResponseBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The message template that’s used for the campaign.</p>
@@ -595,32 +518,21 @@ impl CampaignResponseBuilder {
         self
     }
     /// <p>The message template that’s used for the campaign.</p>
-    pub fn set_template_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateConfiguration>,
-    ) -> Self {
+    pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::TemplateConfiguration>) -> Self {
         self.template_configuration = input;
         self
     }
     /// <p>The message template that’s used for the campaign.</p>
-    pub fn get_template_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateConfiguration> {
+    pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::TemplateConfiguration> {
         &self.template_configuration
     }
     /// <p>The custom description of the default treatment for the campaign.</p>
-    pub fn treatment_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treatment_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom description of the default treatment for the campaign.</p>
-    pub fn set_treatment_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treatment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_description = input;
         self
     }
@@ -629,18 +541,12 @@ impl CampaignResponseBuilder {
         &self.treatment_description
     }
     /// <p>The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    pub fn treatment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treatment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    pub fn set_treatment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treatment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_name = input;
         self
     }

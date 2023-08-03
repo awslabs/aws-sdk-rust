@@ -59,9 +59,7 @@ impl DataSourceConfig {
 
 /// A builder for [`DataSourceConfig`](crate::types::DataSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl DataSourceConfigBuilder {
         self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn set_s3_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.s3_keys = input;
         self
     }

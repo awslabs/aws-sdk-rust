@@ -30,10 +30,7 @@ pub fn ser_create_fuota_task_input(
     if let Some(var_7) = &input.lo_ra_wan {
         #[allow(unused_mut)]
         let mut object_8 = object.key("LoRaWAN").start_object();
-        crate::protocol_serde::shape_lo_ra_wan_fuota_task::ser_lo_ra_wan_fuota_task(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_lo_ra_wan_fuota_task::ser_lo_ra_wan_fuota_task(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.name {

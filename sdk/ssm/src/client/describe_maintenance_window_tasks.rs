@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`tasks(Option<Vec<MaintenanceWindowTask>>)`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput::tasks): <p>Information about the tasks in the maintenance window.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTasksError>`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksError)
-    pub fn describe_maintenance_window_tasks(&self) -> crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder{
+    pub fn describe_maintenance_window_tasks(
+        &self,
+    ) -> crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder {
         crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReleaseFileSystemNfsV3LocksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder,
+    inner: crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder,
 }
 impl ReleaseFileSystemNfsV3LocksFluentBuilder {
     /// Creates a new `ReleaseFileSystemNfsV3Locks`.
@@ -37,7 +37,7 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
         }
     }
     /// Access the ReleaseFileSystemNfsV3Locks as a reference.
-    pub fn as_input(&self) -> &crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
             crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3Locks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
             crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3Locks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
         self.inner.get_file_system_id()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

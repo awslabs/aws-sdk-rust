@@ -37,9 +37,7 @@ impl ListSecurityPoliciesFluentBuilder {
         }
     }
     /// Access the ListSecurityPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListSecurityPoliciesFluentBuilder {
             crate::operation::list_security_policies::ListSecurityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_policies::ListSecurityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_policies::ListSecurityPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListSecurityPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListSecurityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_policies::ListSecurityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_policies::ListSecurityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_policies::ListSecurityPoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListSecurityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_policies::ListSecurityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_policies::ListSecurityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_policies::ListSecurityPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListSecurityPoliciesFluentBuilder {
             crate::operation::list_security_policies::ListSecurityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_policies::ListSecurityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_policies::ListSecurityPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator {
-        crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator {
+        crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
     pub fn max_results(mut self, input: i32) -> Self {

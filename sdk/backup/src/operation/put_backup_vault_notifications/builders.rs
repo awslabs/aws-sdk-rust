@@ -26,7 +26,7 @@ impl PutBackupVaultNotificationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBackupVaultNotificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder,
+    inner: crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder,
 }
 impl PutBackupVaultNotificationsFluentBuilder {
     /// Creates a new `PutBackupVaultNotifications`.
@@ -37,7 +37,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
         }
     }
     /// Access the PutBackupVaultNotifications as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
             crate::operation::put_backup_vault_notifications::PutBackupVaultNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutBackupVaultNotificationsFluentBuilder {
             crate::operation::put_backup_vault_notifications::PutBackupVaultNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl PutBackupVaultNotificationsFluentBuilder {
         self.inner.get_backup_vault_name()
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -190,10 +167,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// </ul> <note>
     /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
     /// </note>
-    pub fn set_backup_vault_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
-    ) -> Self {
+    pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>) -> Self {
         self.inner = self.inner.set_backup_vault_events(input);
         self
     }
@@ -208,9 +182,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// </ul> <note>
     /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
     /// </note>
-    pub fn get_backup_vault_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
+    pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
         self.inner.get_backup_vault_events()
     }
 }

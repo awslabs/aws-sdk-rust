@@ -44,9 +44,7 @@ impl AutoScalingGroupConfiguration {
 
 /// A builder for [`AutoScalingGroupConfiguration`](crate::types::AutoScalingGroupConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingGroupConfigurationBuilder {
     pub(crate) desired_capacity: ::std::option::Option<i32>,
     pub(crate) min_size: ::std::option::Option<i32>,
@@ -97,18 +95,12 @@ impl AutoScalingGroupConfigurationBuilder {
         &self.max_size
     }
     /// <p>The instance type for the Auto Scaling group.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type for the Auto Scaling group.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }

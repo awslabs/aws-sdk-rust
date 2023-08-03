@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetParameterOutput`](crate::operation::get_parameter::GetParameterOutput) with field(s):
     ///   - [`parameter(Option<Parameter>)`](crate::operation::get_parameter::GetParameterOutput::parameter): <p>Information about a parameter.</p>
     /// - On failure, responds with [`SdkError<GetParameterError>`](crate::operation::get_parameter::GetParameterError)
-    pub fn get_parameter(
-        &self,
-    ) -> crate::operation::get_parameter::builders::GetParameterFluentBuilder {
-        crate::operation::get_parameter::builders::GetParameterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_parameter(&self) -> crate::operation::get_parameter::builders::GetParameterFluentBuilder {
+        crate::operation::get_parameter::builders::GetParameterFluentBuilder::new(self.handle.clone())
     }
 }

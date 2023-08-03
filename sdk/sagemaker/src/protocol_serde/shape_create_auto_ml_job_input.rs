@@ -12,10 +12,7 @@ pub fn ser_create_auto_ml_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_auto_ml_channel::ser_auto_ml_channel(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_auto_ml_channel::ser_auto_ml_channel(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_create_auto_ml_job_input(
     if let Some(var_6) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_output_data_config::ser_auto_ml_output_data_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_auto_ml_output_data_config::ser_auto_ml_output_data_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.problem_type {
@@ -36,28 +30,20 @@ pub fn ser_create_auto_ml_job_input(
     if let Some(var_9) = &input.auto_ml_job_objective {
         #[allow(unused_mut)]
         let mut object_10 = object.key("AutoMLJobObjective").start_object();
-        crate::protocol_serde::shape_auto_ml_job_objective::ser_auto_ml_job_objective(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_auto_ml_job_objective::ser_auto_ml_job_objective(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.auto_ml_job_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("AutoMLJobConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_job_config::ser_auto_ml_job_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_auto_ml_job_config::ser_auto_ml_job_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.role_arn {
         object.key("RoleArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.generate_candidate_definitions_only {
-        object
-            .key("GenerateCandidateDefinitionsOnly")
-            .boolean(*var_14);
+        object.key("GenerateCandidateDefinitionsOnly").boolean(*var_14);
     }
     if let Some(var_15) = &input.tags {
         let mut array_16 = object.key("Tags").start_array();
@@ -74,10 +60,7 @@ pub fn ser_create_auto_ml_job_input(
     if let Some(var_19) = &input.model_deploy_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("ModelDeployConfig").start_object();
-        crate::protocol_serde::shape_model_deploy_config::ser_model_deploy_config(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_model_deploy_config::ser_model_deploy_config(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())

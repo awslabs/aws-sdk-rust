@@ -42,13 +42,7 @@
 /// Eac3 Drc Line
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3DrcLine {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,14 +95,7 @@ impl Eac3DrcLine {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILM_LIGHT",
-            "FILM_STANDARD",
-            "MUSIC_LIGHT",
-            "MUSIC_STANDARD",
-            "NONE",
-            "SPEECH",
-        ]
+        &["FILM_LIGHT", "FILM_STANDARD", "MUSIC_LIGHT", "MUSIC_STANDARD", "NONE", "SPEECH"]
     }
 }
 impl ::std::convert::AsRef<str> for Eac3DrcLine {

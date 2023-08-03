@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for TransferCertificateOutput {
 }
 impl TransferCertificateOutput {
     /// Creates a new builder-style object to manufacture [`TransferCertificateOutput`](crate::operation::transfer_certificate::TransferCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::transfer_certificate::builders::TransferCertificateOutputBuilder {
-        crate::operation::transfer_certificate::builders::TransferCertificateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::transfer_certificate::builders::TransferCertificateOutputBuilder {
+        crate::operation::transfer_certificate::builders::TransferCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`TransferCertificateOutput`](crate::operation::transfer_certificate::TransferCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferCertificateOutputBuilder {
     pub(crate) transferred_certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl TransferCertificateOutputBuilder {
     /// <p>The ARN of the certificate.</p>
-    pub fn transferred_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transferred_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transferred_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the certificate.</p>
-    pub fn set_transferred_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transferred_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transferred_certificate_arn = input;
         self
     }

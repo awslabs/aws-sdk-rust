@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateFunctionDefinitionVersionError>`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError)
-    pub fn create_function_definition_version(&self) -> crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionFluentBuilder{
+    pub fn create_function_definition_version(
+        &self,
+    ) -> crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionFluentBuilder {
         crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

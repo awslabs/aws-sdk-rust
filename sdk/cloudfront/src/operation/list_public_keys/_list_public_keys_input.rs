@@ -29,9 +29,7 @@ impl ListPublicKeysInput {
 
 /// A builder for [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublicKeysInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListPublicKeysInputBuilder {
     /// Consumes the builder and constructs a [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_public_keys::ListPublicKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_public_keys::ListPublicKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_public_keys::ListPublicKeysInput {
             marker: self.marker,
             max_items: self.max_items,

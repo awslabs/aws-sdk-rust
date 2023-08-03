@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidApprovalRuleTemplateDescriptionException {
     }
 }
 impl ::std::error::Error for InvalidApprovalRuleTemplateDescriptionException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidApprovalRuleTemplateDescriptionException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidApprovalRuleTemplateDescriptionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidApprovalRuleTemplateDescriptionException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidApprovalRuleTemplateDescriptionException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidApprovalRuleTemplateDescriptionException {
     /// Creates a new builder-style object to manufacture [`InvalidApprovalRuleTemplateDescriptionException`](crate::types::error::InvalidApprovalRuleTemplateDescriptionException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
         crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidApprovalRuleTemplateDescriptionException`](crate::types::error::InvalidApprovalRuleTemplateDescriptionException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

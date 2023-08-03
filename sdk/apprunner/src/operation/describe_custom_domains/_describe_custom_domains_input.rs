@@ -33,18 +33,14 @@ impl DescribeCustomDomainsInput {
 }
 impl DescribeCustomDomainsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomDomainsInput`](crate::operation::describe_custom_domains::DescribeCustomDomainsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_custom_domains::builders::DescribeCustomDomainsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_custom_domains::builders::DescribeCustomDomainsInputBuilder {
         crate::operation::describe_custom_domains::builders::DescribeCustomDomainsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomDomainsInput`](crate::operation::describe_custom_domains::DescribeCustomDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainsInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -102,16 +98,12 @@ impl DescribeCustomDomainsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomDomainsInput`](crate::operation::describe_custom_domains::DescribeCustomDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_custom_domains::DescribeCustomDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_custom_domains::DescribeCustomDomainsInput {
-                service_arn: self.service_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_custom_domains::DescribeCustomDomainsInput {
+            service_arn: self.service_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutDashboardOutput`](crate::operation::put_dashboard::PutDashboardOutput) with field(s):
     ///   - [`dashboard_validation_messages(Option<Vec<DashboardValidationMessage>>)`](crate::operation::put_dashboard::PutDashboardOutput::dashboard_validation_messages): <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>  <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>  <p>If this result includes error messages, the input was not valid and the operation failed.</p>
     /// - On failure, responds with [`SdkError<PutDashboardError>`](crate::operation::put_dashboard::PutDashboardError)
-    pub fn put_dashboard(
-        &self,
-    ) -> crate::operation::put_dashboard::builders::PutDashboardFluentBuilder {
-        crate::operation::put_dashboard::builders::PutDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_dashboard(&self) -> crate::operation::put_dashboard::builders::PutDashboardFluentBuilder {
+        crate::operation::put_dashboard::builders::PutDashboardFluentBuilder::new(self.handle.clone())
     }
 }

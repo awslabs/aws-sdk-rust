@@ -25,17 +25,14 @@ impl LaunchTemplateElasticInferenceAcceleratorResponse {
 }
 impl LaunchTemplateElasticInferenceAcceleratorResponse {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateElasticInferenceAcceleratorResponse`](crate::types::LaunchTemplateElasticInferenceAcceleratorResponse).
-    pub fn builder(
-    ) -> crate::types::builders::LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
+    pub fn builder() -> crate::types::builders::LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
         crate::types::builders::LaunchTemplateElasticInferenceAcceleratorResponseBuilder::default()
     }
 }
 
 /// A builder for [`LaunchTemplateElasticInferenceAcceleratorResponse`](crate::types::LaunchTemplateElasticInferenceAcceleratorResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

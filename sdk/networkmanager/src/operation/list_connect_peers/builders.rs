@@ -10,10 +10,7 @@ impl ListConnectPeersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_connect_peers::ListConnectPeersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connect_peers::ListConnectPeersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connect_peers::ListConnectPeersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_connect_peers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListConnectPeersFluentBuilder {
         }
     }
     /// Access the ListConnectPeers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_connect_peers::builders::ListConnectPeersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_connect_peers::builders::ListConnectPeersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListConnectPeersFluentBuilder {
             crate::operation::list_connect_peers::ListConnectPeers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connect_peers::ListConnectPeersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connect_peers::ListConnectPeersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListConnectPeersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListConnectPeersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connect_peers::ListConnectPeersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connect_peers::ListConnectPeersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connect_peers::ListConnectPeersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListConnectPeersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connect_peers::ListConnectPeersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connect_peers::ListConnectPeersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connect_peers::ListConnectPeersError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListConnectPeersFluentBuilder {
             crate::operation::list_connect_peers::ListConnectPeers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connect_peers::ListConnectPeersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connect_peers::ListConnectPeersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_connect_peers::paginator::ListConnectPeersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_connect_peers::paginator::ListConnectPeersPaginator {
-        crate::operation::list_connect_peers::paginator::ListConnectPeersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_connect_peers::paginator::ListConnectPeersPaginator {
+        crate::operation::list_connect_peers::paginator::ListConnectPeersPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -154,18 +127,12 @@ impl ListConnectPeersFluentBuilder {
         self.inner.get_core_network_id()
     }
     /// <p>The ID of the attachment.</p>
-    pub fn connect_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_connect_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connect_attachment_id(input);
         self
     }

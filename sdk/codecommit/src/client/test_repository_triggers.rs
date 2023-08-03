@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`successful_executions(Option<Vec<String>>)`](crate::operation::test_repository_triggers::TestRepositoryTriggersOutput::successful_executions): <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
     ///   - [`failed_executions(Option<Vec<RepositoryTriggerExecutionFailure>>)`](crate::operation::test_repository_triggers::TestRepositoryTriggersOutput::failed_executions): <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
     /// - On failure, responds with [`SdkError<TestRepositoryTriggersError>`](crate::operation::test_repository_triggers::TestRepositoryTriggersError)
-    pub fn test_repository_triggers(
-        &self,
-    ) -> crate::operation::test_repository_triggers::builders::TestRepositoryTriggersFluentBuilder
-    {
+    pub fn test_repository_triggers(&self) -> crate::operation::test_repository_triggers::builders::TestRepositoryTriggersFluentBuilder {
         crate::operation::test_repository_triggers::builders::TestRepositoryTriggersFluentBuilder::new(self.handle.clone())
     }
 }

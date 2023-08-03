@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`key_phrases_detection_job_properties_list(Option<Vec<KeyPhrasesDetectionJobProperties>>)`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput::key_phrases_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListKeyPhrasesDetectionJobsError>`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError)
-    pub fn list_key_phrases_detection_jobs(&self) -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder{
+    pub fn list_key_phrases_detection_jobs(
+        &self,
+    ) -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder {
         crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

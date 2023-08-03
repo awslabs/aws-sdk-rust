@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PromoteResourceShareCreatedFromPolicy
 }
 impl PromoteResourceShareCreatedFromPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
-    pub fn builder() -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder {
         crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromoteResourceShareCreatedFromPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl PromoteResourceShareCreatedFromPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
-    pub fn build(self) -> crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput{
+    pub fn build(self) -> crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput {
         crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput {
-            return_value: self.return_value
-            ,
+            return_value: self.return_value,
             _request_id: self._request_id,
         }
     }

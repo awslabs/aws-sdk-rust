@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`account(impl ::std::convert::Into<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::set_account): <p>The account ID to revoke access from.</p>
     /// - On success, responds with [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput)
     /// - On failure, responds with [`SdkError<RevokeVpcEndpointAccessError>`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError)
-    pub fn revoke_vpc_endpoint_access(
-        &self,
-    ) -> crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder
-    {
+    pub fn revoke_vpc_endpoint_access(&self) -> crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder {
         crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

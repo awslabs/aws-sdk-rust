@@ -27,7 +27,7 @@ impl DescribeStandardsControlsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStandardsControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder,
+    inner: crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder,
 }
 impl DescribeStandardsControlsFluentBuilder {
     /// Creates a new `DescribeStandardsControls`.
@@ -38,7 +38,7 @@ impl DescribeStandardsControlsFluentBuilder {
         }
     }
     /// Access the DescribeStandardsControls as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeStandardsControlsFluentBuilder {
             crate::operation::describe_standards_controls::DescribeStandardsControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards_controls::DescribeStandardsControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards_controls::DescribeStandardsControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeStandardsControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeStandardsControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_standards_controls::DescribeStandardsControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards_controls::DescribeStandardsControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards_controls::DescribeStandardsControlsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeStandardsControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_standards_controls::DescribeStandardsControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards_controls::DescribeStandardsControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards_controls::DescribeStandardsControlsError>,
     > {
         self.send_middleware().await
     }
@@ -115,34 +106,23 @@ impl DescribeStandardsControlsFluentBuilder {
             crate::operation::describe_standards_controls::DescribeStandardsControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards_controls::DescribeStandardsControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards_controls::DescribeStandardsControlsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator {
         crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-    pub fn standards_subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.standards_subscription_arn(input.into());
         self
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-    pub fn set_standards_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_standards_subscription_arn(input);
         self
     }

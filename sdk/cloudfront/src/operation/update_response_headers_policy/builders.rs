@@ -32,7 +32,7 @@ impl UpdateResponseHeadersPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResponseHeadersPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder,
+    inner: crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder,
 }
 impl UpdateResponseHeadersPolicyFluentBuilder {
     /// Creates a new `UpdateResponseHeadersPolicy`.
@@ -43,7 +43,7 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
         }
     }
     /// Access the UpdateResponseHeadersPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
             crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -120,32 +111,22 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
             crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn response_headers_policy_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyConfig,
-    ) -> Self {
+    pub fn response_headers_policy_config(mut self, input: crate::types::ResponseHeadersPolicyConfig) -> Self {
         self.inner = self.inner.response_headers_policy_config(input);
         self
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn set_response_headers_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
-    ) -> Self {
+    pub fn set_response_headers_policy_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>) -> Self {
         self.inner = self.inner.set_response_headers_policy_config(input);
         self
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn get_response_headers_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+    pub fn get_response_headers_policy_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
         self.inner.get_response_headers_policy_config()
     }
     /// <p>The identifier for the response headers policy that you are updating.</p>

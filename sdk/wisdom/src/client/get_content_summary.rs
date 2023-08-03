@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetContentSummaryOutput`](crate::operation::get_content_summary::GetContentSummaryOutput) with field(s):
     ///   - [`content_summary(Option<ContentSummary>)`](crate::operation::get_content_summary::GetContentSummaryOutput::content_summary): <p>The content summary.</p>
     /// - On failure, responds with [`SdkError<GetContentSummaryError>`](crate::operation::get_content_summary::GetContentSummaryError)
-    pub fn get_content_summary(
-        &self,
-    ) -> crate::operation::get_content_summary::builders::GetContentSummaryFluentBuilder {
-        crate::operation::get_content_summary::builders::GetContentSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_content_summary(&self) -> crate::operation::get_content_summary::builders::GetContentSummaryFluentBuilder {
+        crate::operation::get_content_summary::builders::GetContentSummaryFluentBuilder::new(self.handle.clone())
     }
 }

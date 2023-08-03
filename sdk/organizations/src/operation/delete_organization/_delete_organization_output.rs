@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOrganizationOutput {
 }
 impl DeleteOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationOutput`](crate::operation::delete_organization::DeleteOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_organization::builders::DeleteOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_organization::builders::DeleteOrganizationOutputBuilder {
         crate::operation::delete_organization::builders::DeleteOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOrganizationOutput`](crate::operation::delete_organization::DeleteOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOrganizationOutputBuilder {
     _request_id: Option<String>,
 }

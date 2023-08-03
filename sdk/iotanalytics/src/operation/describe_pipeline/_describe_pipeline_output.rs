@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribePipelineOutput {
 }
 impl DescribePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipelineOutput`](crate::operation::describe_pipeline::DescribePipelineOutput).
-    pub fn builder() -> crate::operation::describe_pipeline::builders::DescribePipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_pipeline::builders::DescribePipelineOutputBuilder {
         crate::operation::describe_pipeline::builders::DescribePipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePipelineOutput`](crate::operation::describe_pipeline::DescribePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,

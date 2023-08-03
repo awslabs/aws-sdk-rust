@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`volume_id(Option<String>)`](crate::operation::attach_volume::AttachVolumeOutput::volume_id): <p>The ID of the volume.</p>
     ///   - [`delete_on_termination(Option<bool>)`](crate::operation::attach_volume::AttachVolumeOutput::delete_on_termination): <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     /// - On failure, responds with [`SdkError<AttachVolumeError>`](crate::operation::attach_volume::AttachVolumeError)
-    pub fn attach_volume(
-        &self,
-    ) -> crate::operation::attach_volume::builders::AttachVolumeFluentBuilder {
-        crate::operation::attach_volume::builders::AttachVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_volume(&self) -> crate::operation::attach_volume::builders::AttachVolumeFluentBuilder {
+        crate::operation::attach_volume::builders::AttachVolumeFluentBuilder::new(self.handle.clone())
     }
 }

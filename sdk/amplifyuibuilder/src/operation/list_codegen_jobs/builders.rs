@@ -10,10 +10,7 @@ impl ListCodegenJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_codegen_jobs::ListCodegenJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_codegen_jobs::ListCodegenJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_codegen_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListCodegenJobsFluentBuilder {
         }
     }
     /// Access the ListCodegenJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_codegen_jobs::builders::ListCodegenJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_codegen_jobs::builders::ListCodegenJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListCodegenJobsFluentBuilder {
             crate::operation::list_codegen_jobs::ListCodegenJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_codegen_jobs::ListCodegenJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_codegen_jobs::ListCodegenJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListCodegenJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListCodegenJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_codegen_jobs::ListCodegenJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_codegen_jobs::ListCodegenJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListCodegenJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_codegen_jobs::ListCodegenJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_codegen_jobs::ListCodegenJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListCodegenJobsFluentBuilder {
             crate::operation::list_codegen_jobs::ListCodegenJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_codegen_jobs::ListCodegenJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_codegen_jobs::ListCodegenJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_codegen_jobs::paginator::ListCodegenJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_codegen_jobs::paginator::ListCodegenJobsPaginator {
-        crate::operation::list_codegen_jobs::paginator::ListCodegenJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_codegen_jobs::paginator::ListCodegenJobsPaginator {
+        crate::operation::list_codegen_jobs::paginator::ListCodegenJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListCodegenJobsFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

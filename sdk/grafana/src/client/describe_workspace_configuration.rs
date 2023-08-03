@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`configuration(Option<String>)`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput::configuration): <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     ///   - [`grafana_version(Option<String>)`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput::grafana_version): <p>The supported Grafana version for the workspace.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceConfigurationError>`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError)
-    pub fn describe_workspace_configuration(&self) -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationFluentBuilder{
+    pub fn describe_workspace_configuration(
+        &self,
+    ) -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationFluentBuilder {
         crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

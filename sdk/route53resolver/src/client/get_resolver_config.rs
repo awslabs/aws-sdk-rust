@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput) with field(s):
     ///   - [`resolver_config(Option<ResolverConfig>)`](crate::operation::get_resolver_config::GetResolverConfigOutput::resolver_config): <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverConfigError>`](crate::operation::get_resolver_config::GetResolverConfigError)
-    pub fn get_resolver_config(
-        &self,
-    ) -> crate::operation::get_resolver_config::builders::GetResolverConfigFluentBuilder {
-        crate::operation::get_resolver_config::builders::GetResolverConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resolver_config(&self) -> crate::operation::get_resolver_config::builders::GetResolverConfigFluentBuilder {
+        crate::operation::get_resolver_config::builders::GetResolverConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`enable_cross_accounts_discovery(bool)`](crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder::enable_cross_accounts_discovery) / [`set_enable_cross_accounts_discovery(Option<bool>)`](crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder::set_enable_cross_accounts_discovery): <p>Activates cross-account discovery.</p>
     /// - On success, responds with [`UpdateServiceSettingsOutput`](crate::operation::update_service_settings::UpdateServiceSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateServiceSettingsError>`](crate::operation::update_service_settings::UpdateServiceSettingsError)
-    pub fn update_service_settings(
-        &self,
-    ) -> crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder
-    {
-        crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service_settings(&self) -> crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder {
+        crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder::new(self.handle.clone())
     }
 }

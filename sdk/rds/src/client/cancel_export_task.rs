@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`warning_message(Option<String>)`](crate::operation::cancel_export_task::CancelExportTaskOutput::warning_message): <p>A warning about the snapshot or cluster export task.</p>
     ///   - [`source_type(Option<ExportSourceType>)`](crate::operation::cancel_export_task::CancelExportTaskOutput::source_type): <p>The type of source for the export.</p>
     /// - On failure, responds with [`SdkError<CancelExportTaskError>`](crate::operation::cancel_export_task::CancelExportTaskError)
-    pub fn cancel_export_task(
-        &self,
-    ) -> crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder {
-        crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_export_task(&self) -> crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder {
+        crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::new(self.handle.clone())
     }
 }

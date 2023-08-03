@@ -30,9 +30,7 @@ impl OptionRestrictionRegex {
 
 /// A builder for [`OptionRestrictionRegex`](crate::types::OptionRestrictionRegex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionRestrictionRegexBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,

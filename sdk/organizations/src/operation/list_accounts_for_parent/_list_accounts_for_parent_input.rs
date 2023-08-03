@@ -29,18 +29,14 @@ impl ListAccountsForParentInput {
 }
 impl ListAccountsForParentInput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
-    pub fn builder(
-    ) -> crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder {
         crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsForParentInputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListAccountsForParentInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_accounts_for_parent::ListAccountsForParentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_accounts_for_parent::ListAccountsForParentInput {
-                parent_id: self.parent_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_accounts_for_parent::ListAccountsForParentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_accounts_for_parent::ListAccountsForParentInput {
+            parent_id: self.parent_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

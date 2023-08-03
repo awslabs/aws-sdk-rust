@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetStudioSessionMappingOutput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput) with field(s):
     ///   - [`session_mapping(Option<SessionMappingDetail>)`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput::session_mapping): <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
     /// - On failure, responds with [`SdkError<GetStudioSessionMappingError>`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingError)
-    pub fn get_studio_session_mapping(
-        &self,
-    ) -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingFluentBuilder
-    {
+    pub fn get_studio_session_mapping(&self) -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingFluentBuilder {
         crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingFluentBuilder::new(self.handle.clone())
     }
 }

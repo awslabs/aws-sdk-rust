@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`annotation_import_jobs(Option<Vec<AnnotationImportJobItem>>)`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput::annotation_import_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAnnotationImportJobsError>`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError)
-    pub fn list_annotation_import_jobs(&self) -> crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder{
+    pub fn list_annotation_import_jobs(&self) -> crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder {
         crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

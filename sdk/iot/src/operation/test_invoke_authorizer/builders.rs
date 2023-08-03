@@ -38,9 +38,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         }
     }
     /// Access the TestInvokeAuthorizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl TestInvokeAuthorizerFluentBuilder {
             crate::operation::test_invoke_authorizer::TestInvokeAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl TestInvokeAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl TestInvokeAuthorizerFluentBuilder {
             crate::operation::test_invoke_authorizer::TestInvokeAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The custom authorizer name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_name(input.into());
         self
     }
     /// <p>The custom authorizer name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_name(input);
         self
     }
@@ -158,18 +139,12 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner.get_token()
     }
     /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
-    pub fn token_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_signature(input.into());
         self
     }
     /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
-    pub fn set_token_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token_signature(input);
         self
     }
@@ -183,10 +158,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self
     }
     /// <p>Specifies a test HTTP authorization request.</p>
-    pub fn set_http_context(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpContext>,
-    ) -> Self {
+    pub fn set_http_context(mut self, input: ::std::option::Option<crate::types::HttpContext>) -> Self {
         self.inner = self.inner.set_http_context(input);
         self
     }
@@ -200,10 +172,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self
     }
     /// <p>Specifies a test MQTT authorization request.</p>
-    pub fn set_mqtt_context(
-        mut self,
-        input: ::std::option::Option<crate::types::MqttContext>,
-    ) -> Self {
+    pub fn set_mqtt_context(mut self, input: ::std::option::Option<crate::types::MqttContext>) -> Self {
         self.inner = self.inner.set_mqtt_context(input);
         self
     }
@@ -217,10 +186,7 @@ impl TestInvokeAuthorizerFluentBuilder {
         self
     }
     /// <p>Specifies a test TLS authorization request.</p>
-    pub fn set_tls_context(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsContext>,
-    ) -> Self {
+    pub fn set_tls_context(mut self, input: ::std::option::Option<crate::types::TlsContext>) -> Self {
         self.inner = self.inner.set_tls_context(input);
         self
     }

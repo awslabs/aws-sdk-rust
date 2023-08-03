@@ -23,16 +23,14 @@ impl UpdateServiceAccessPoliciesInput {
 }
 impl UpdateServiceAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesInput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput).
-    pub fn builder() -> crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder {
         crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceAccessPoliciesInput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl UpdateServiceAccessPoliciesInputBuilder {
         &self.domain_name
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-    pub fn access_policies(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policies = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-    pub fn set_access_policies(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policies = input;
         self
     }
@@ -79,11 +71,9 @@ impl UpdateServiceAccessPoliciesInputBuilder {
         crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput {
-                domain_name: self.domain_name,
-                access_policies: self.access_policies,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput {
+            domain_name: self.domain_name,
+            access_policies: self.access_policies,
+        })
     }
 }

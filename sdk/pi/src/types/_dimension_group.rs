@@ -181,9 +181,7 @@ impl DimensionGroup {
 
 /// A builder for [`DimensionGroup`](crate::types::DimensionGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionGroupBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -379,10 +377,7 @@ impl DimensionGroupBuilder {
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dimensions = input;
         self
     }

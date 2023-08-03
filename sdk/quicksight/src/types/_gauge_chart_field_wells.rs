@@ -30,9 +30,7 @@ impl GaugeChartFieldWells {
 
 /// A builder for [`GaugeChartFieldWells`](crate::types::GaugeChartFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GaugeChartFieldWellsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     pub(crate) target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
@@ -50,17 +48,12 @@ impl GaugeChartFieldWellsBuilder {
         self
     }
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Appends an item to `target_values`.
@@ -75,17 +68,12 @@ impl GaugeChartFieldWellsBuilder {
         self
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_target_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_target_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.target_values = input;
         self
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn get_target_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_target_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.target_values
     }
     /// Consumes the builder and constructs a [`GaugeChartFieldWells`](crate::types::GaugeChartFieldWells).

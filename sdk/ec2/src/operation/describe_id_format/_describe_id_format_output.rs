@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeIdFormatOutput {
 }
 impl DescribeIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdFormatOutput`](crate::operation::describe_id_format::DescribeIdFormatOutput).
-    pub fn builder() -> crate::operation::describe_id_format::builders::DescribeIdFormatOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_id_format::builders::DescribeIdFormatOutputBuilder {
         crate::operation::describe_id_format::builders::DescribeIdFormatOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdFormatOutput`](crate::operation::describe_id_format::DescribeIdFormatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdFormatOutputBuilder {
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl DescribeIdFormatOutputBuilder {
         self
     }
     /// <p>Information about the ID format for the resource.</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>) -> Self {
         self.statuses = input;
         self
     }

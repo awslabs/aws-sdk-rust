@@ -71,9 +71,7 @@ impl RegisterTargetWithMaintenanceWindowInput {
         self.window_id.as_deref()
     }
     /// <p>The type of target being registered with the maintenance window.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>
@@ -152,7 +150,7 @@ impl ::std::fmt::Debug for RegisterTargetWithMaintenanceWindowInput {
 }
 impl RegisterTargetWithMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`RegisterTargetWithMaintenanceWindowInput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput).
-    pub fn builder() -> crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder{
+    pub fn builder() -> crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder {
         crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder::default()
     }
 }
@@ -190,17 +188,12 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         self
     }
     /// <p>The type of target being registered with the maintenance window.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of target being registered with the maintenance window.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
         &self.resource_type
     }
     /// Appends an item to `targets`.
@@ -295,10 +288,7 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
     /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -347,18 +337,12 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         &self.targets
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_information = input;
         self
     }
@@ -409,24 +393,22 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`RegisterTargetWithMaintenanceWindowInput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput {
-                window_id: self.window_id
-                ,
-                resource_type: self.resource_type
-                ,
-                targets: self.targets
-                ,
-                owner_information: self.owner_information
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                client_token: self.client_token
-                ,
-            }
+                window_id: self.window_id,
+                resource_type: self.resource_type,
+                targets: self.targets,
+                owner_information: self.owner_information,
+                name: self.name,
+                description: self.description,
+                client_token: self.client_token,
+            },
         )
     }
 }

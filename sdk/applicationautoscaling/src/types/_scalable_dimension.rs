@@ -57,13 +57,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalableDimension {
     #[allow(missing_docs)] // documentation missing in model
@@ -115,57 +109,27 @@ impl ::std::convert::From<&str> for ScalableDimension {
     fn from(s: &str) -> Self {
         match s {
             "appstream:fleet:DesiredCapacity" => ScalableDimension::AppstreamFleetDesiredCapacity,
-            "cassandra:table:ReadCapacityUnits" => {
-                ScalableDimension::CassandraTableReadCapacityUnits
-            }
-            "cassandra:table:WriteCapacityUnits" => {
-                ScalableDimension::CassandraTableWriteCapacityUnits
-            }
-            "comprehend:document-classifier-endpoint:DesiredInferenceUnits" => {
-                ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits
-            }
-            "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" => {
-                ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits
-            }
-            "custom-resource:ResourceType:Property" => {
-                ScalableDimension::CustomResourceScalableDimension
-            }
+            "cassandra:table:ReadCapacityUnits" => ScalableDimension::CassandraTableReadCapacityUnits,
+            "cassandra:table:WriteCapacityUnits" => ScalableDimension::CassandraTableWriteCapacityUnits,
+            "comprehend:document-classifier-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits,
+            "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits,
+            "custom-resource:ResourceType:Property" => ScalableDimension::CustomResourceScalableDimension,
             "dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
-            "dynamodb:index:WriteCapacityUnits" => {
-                ScalableDimension::DynamoDbIndexWriteCapacityUnits
-            }
+            "dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
             "dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
-            "dynamodb:table:WriteCapacityUnits" => {
-                ScalableDimension::DynamoDbTableWriteCapacityUnits
-            }
-            "ec2:spot-fleet-request:TargetCapacity" => {
-                ScalableDimension::Ec2SpotFleetRequestTargetCapacity
-            }
+            "dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
+            "ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
             "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
-            "elasticache:replication-group:NodeGroups" => {
-                ScalableDimension::ElastiCacheReplicationGroupNodeGroups
-            }
-            "elasticache:replication-group:Replicas" => {
-                ScalableDimension::ElastiCacheReplicationGroupReplicas
-            }
-            "elasticmapreduce:instancegroup:InstanceCount" => {
-                ScalableDimension::EmrInstanceGroupInstanceCount
-            }
+            "elasticache:replication-group:NodeGroups" => ScalableDimension::ElastiCacheReplicationGroupNodeGroups,
+            "elasticache:replication-group:Replicas" => ScalableDimension::ElastiCacheReplicationGroupReplicas,
+            "elasticmapreduce:instancegroup:InstanceCount" => ScalableDimension::EmrInstanceGroupInstanceCount,
             "kafka:broker-storage:VolumeSize" => ScalableDimension::KafkaBrokerStorageVolumeSize,
-            "lambda:function:ProvisionedConcurrency" => {
-                ScalableDimension::LambdaFunctionProvisionedConcurrency
-            }
+            "lambda:function:ProvisionedConcurrency" => ScalableDimension::LambdaFunctionProvisionedConcurrency,
             "neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
             "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
-            "sagemaker:variant:DesiredInstanceCount" => {
-                ScalableDimension::SageMakerVariantDesiredInstanceCount
-            }
-            "sagemaker:variant:DesiredProvisionedConcurrency" => {
-                ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency
-            }
-            other => {
-                ScalableDimension::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
+            "sagemaker:variant:DesiredProvisionedConcurrency" => ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency,
+            other => ScalableDimension::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -181,54 +145,26 @@ impl ScalableDimension {
     pub fn as_str(&self) -> &str {
         match self {
             ScalableDimension::AppstreamFleetDesiredCapacity => "appstream:fleet:DesiredCapacity",
-            ScalableDimension::CassandraTableReadCapacityUnits => {
-                "cassandra:table:ReadCapacityUnits"
-            }
-            ScalableDimension::CassandraTableWriteCapacityUnits => {
-                "cassandra:table:WriteCapacityUnits"
-            }
-            ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => {
-                "comprehend:document-classifier-endpoint:DesiredInferenceUnits"
-            }
-            ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => {
-                "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits"
-            }
-            ScalableDimension::CustomResourceScalableDimension => {
-                "custom-resource:ResourceType:Property"
-            }
+            ScalableDimension::CassandraTableReadCapacityUnits => "cassandra:table:ReadCapacityUnits",
+            ScalableDimension::CassandraTableWriteCapacityUnits => "cassandra:table:WriteCapacityUnits",
+            ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => "comprehend:document-classifier-endpoint:DesiredInferenceUnits",
+            ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits",
+            ScalableDimension::CustomResourceScalableDimension => "custom-resource:ResourceType:Property",
             ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
-            ScalableDimension::DynamoDbIndexWriteCapacityUnits => {
-                "dynamodb:index:WriteCapacityUnits"
-            }
+            ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
             ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
-            ScalableDimension::DynamoDbTableWriteCapacityUnits => {
-                "dynamodb:table:WriteCapacityUnits"
-            }
-            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => {
-                "ec2:spot-fleet-request:TargetCapacity"
-            }
+            ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
+            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
             ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
-            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => {
-                "elasticache:replication-group:NodeGroups"
-            }
-            ScalableDimension::ElastiCacheReplicationGroupReplicas => {
-                "elasticache:replication-group:Replicas"
-            }
-            ScalableDimension::EmrInstanceGroupInstanceCount => {
-                "elasticmapreduce:instancegroup:InstanceCount"
-            }
+            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => "elasticache:replication-group:NodeGroups",
+            ScalableDimension::ElastiCacheReplicationGroupReplicas => "elasticache:replication-group:Replicas",
+            ScalableDimension::EmrInstanceGroupInstanceCount => "elasticmapreduce:instancegroup:InstanceCount",
             ScalableDimension::KafkaBrokerStorageVolumeSize => "kafka:broker-storage:VolumeSize",
-            ScalableDimension::LambdaFunctionProvisionedConcurrency => {
-                "lambda:function:ProvisionedConcurrency"
-            }
+            ScalableDimension::LambdaFunctionProvisionedConcurrency => "lambda:function:ProvisionedConcurrency",
             ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
             ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
-            ScalableDimension::SageMakerVariantDesiredInstanceCount => {
-                "sagemaker:variant:DesiredInstanceCount"
-            }
-            ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => {
-                "sagemaker:variant:DesiredProvisionedConcurrency"
-            }
+            ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
+            ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => "sagemaker:variant:DesiredProvisionedConcurrency",
             ScalableDimension::Unknown(value) => value.as_str(),
         }
     }

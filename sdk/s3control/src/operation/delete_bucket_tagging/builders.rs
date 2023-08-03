@@ -47,9 +47,7 @@ impl DeleteBucketTaggingFluentBuilder {
         }
     }
     /// Access the DeleteBucketTagging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_bucket_tagging::builders::DeleteBucketTaggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_bucket_tagging::builders::DeleteBucketTaggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +59,7 @@ impl DeleteBucketTaggingFluentBuilder {
             crate::operation::delete_bucket_tagging::DeleteBucketTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +69,7 @@ impl DeleteBucketTaggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +78,7 @@ impl DeleteBucketTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_tagging::DeleteBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         let op = self
             .inner
@@ -110,9 +101,7 @@ impl DeleteBucketTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_tagging::DeleteBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +115,7 @@ impl DeleteBucketTaggingFluentBuilder {
             crate::operation::delete_bucket_tagging::DeleteBucketTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_tagging::DeleteBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_tagging::DeleteBucketTaggingError>,
     > {
         self.customize_middleware().await
     }

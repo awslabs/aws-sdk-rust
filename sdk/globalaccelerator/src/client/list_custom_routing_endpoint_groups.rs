@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`endpoint_groups(Option<Vec<CustomRoutingEndpointGroup>>)`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput::endpoint_groups): <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListCustomRoutingEndpointGroupsError>`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError)
-    pub fn list_custom_routing_endpoint_groups(&self) -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder{
+    pub fn list_custom_routing_endpoint_groups(
+        &self,
+    ) -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder {
         crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::new(self.handle.clone())
     }
 }

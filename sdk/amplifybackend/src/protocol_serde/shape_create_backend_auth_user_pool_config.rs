@@ -6,7 +6,10 @@ pub fn ser_create_backend_auth_user_pool_config(
     if let Some(var_1) = &input.forgot_password {
         #[allow(unused_mut)]
         let mut object_2 = object.key("forgotPassword").start_object();
-        crate::protocol_serde::shape_create_backend_auth_forgot_password_config::ser_create_backend_auth_forgot_password_config(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_create_backend_auth_forgot_password_config::ser_create_backend_auth_forgot_password_config(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.mfa {
@@ -24,7 +27,10 @@ pub fn ser_create_backend_auth_user_pool_config(
     if let Some(var_7) = &input.password_policy {
         #[allow(unused_mut)]
         let mut object_8 = object.key("passwordPolicy").start_object();
-        crate::protocol_serde::shape_create_backend_auth_password_policy_config::ser_create_backend_auth_password_policy_config(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_create_backend_auth_password_policy_config::ser_create_backend_auth_password_policy_config(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.required_sign_up_attributes {
@@ -45,7 +51,10 @@ pub fn ser_create_backend_auth_user_pool_config(
     if let Some(var_14) = &input.verification_message {
         #[allow(unused_mut)]
         let mut object_15 = object.key("verificationMessage").start_object();
-        crate::protocol_serde::shape_create_backend_auth_verification_message_config::ser_create_backend_auth_verification_message_config(&mut object_15, var_14)?;
+        crate::protocol_serde::shape_create_backend_auth_verification_message_config::ser_create_backend_auth_verification_message_config(
+            &mut object_15,
+            var_14,
+        )?;
         object_15.finish();
     }
     Ok(())
@@ -53,98 +62,76 @@ pub fn ser_create_backend_auth_user_pool_config(
 
 pub(crate) fn de_create_backend_auth_user_pool_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CreateBackendAuthUserPoolConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CreateBackendAuthUserPoolConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::CreateBackendAuthUserPoolConfigBuilder::default();
+            let mut builder = crate::types::builders::CreateBackendAuthUserPoolConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "forgotPassword" => {
-                                builder = builder.set_forgot_password(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "forgotPassword" => {
+                            builder = builder.set_forgot_password(
                                     crate::protocol_serde::shape_create_backend_auth_forgot_password_config::de_create_backend_auth_forgot_password_config(tokens)?
                                 );
-                            }
-                            "mfa" => {
-                                builder = builder.set_mfa(
-                                    crate::protocol_serde::shape_create_backend_auth_mfa_config::de_create_backend_auth_mfa_config(tokens)?
-                                );
-                            }
-                            "oAuth" => {
-                                builder = builder.set_o_auth(
-                                    crate::protocol_serde::shape_create_backend_auth_o_auth_config::de_create_backend_auth_o_auth_config(tokens)?
-                                );
-                            }
-                            "passwordPolicy" => {
-                                builder = builder.set_password_policy(
+                        }
+                        "mfa" => {
+                            builder = builder
+                                .set_mfa(crate::protocol_serde::shape_create_backend_auth_mfa_config::de_create_backend_auth_mfa_config(tokens)?);
+                        }
+                        "oAuth" => {
+                            builder = builder.set_o_auth(
+                                crate::protocol_serde::shape_create_backend_auth_o_auth_config::de_create_backend_auth_o_auth_config(tokens)?,
+                            );
+                        }
+                        "passwordPolicy" => {
+                            builder = builder.set_password_policy(
                                     crate::protocol_serde::shape_create_backend_auth_password_policy_config::de_create_backend_auth_password_policy_config(tokens)?
                                 );
-                            }
-                            "requiredSignUpAttributes" => {
-                                builder = builder.set_required_sign_up_attributes(
+                        }
+                        "requiredSignUpAttributes" => {
+                            builder = builder.set_required_sign_up_attributes(
                                     crate::protocol_serde::shape_list_of_required_sign_up_attributes_element::de_list_of_required_sign_up_attributes_element(tokens)?
                                 );
-                            }
-                            "signInMethod" => {
-                                builder = builder.set_sign_in_method(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::SignInMethod::from(u.as_ref()))
-                                    })
+                        }
+                        "signInMethod" => {
+                            builder = builder.set_sign_in_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SignInMethod::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "userPoolName" => {
-                                builder = builder.set_user_pool_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "userPoolName" => {
+                            builder = builder.set_user_pool_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "verificationMessage" => {
-                                builder = builder.set_verification_message(
+                            );
+                        }
+                        "verificationMessage" => {
+                            builder = builder.set_verification_message(
                                     crate::protocol_serde::shape_create_backend_auth_verification_message_config::de_create_backend_auth_verification_message_config(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

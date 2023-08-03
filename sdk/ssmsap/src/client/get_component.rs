@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`component(Option<Component>)`](crate::operation::get_component::GetComponentOutput::component): <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_component::GetComponentOutput::tags): <p>The tags of a component.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)
-    pub fn get_component(
-        &self,
-    ) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
-        crate::operation::get_component::builders::GetComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_component(&self) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
+        crate::operation::get_component::builders::GetComponentFluentBuilder::new(self.handle.clone())
     }
 }

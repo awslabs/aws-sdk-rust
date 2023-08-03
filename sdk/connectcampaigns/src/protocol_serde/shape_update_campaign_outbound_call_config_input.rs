@@ -13,9 +13,7 @@ pub fn ser_update_campaign_outbound_call_config_input(
         object.key("connectContactFlowId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.connect_source_phone_number {
-        object
-            .key("connectSourcePhoneNumber")
-            .string(var_4.as_str());
+        object.key("connectSourcePhoneNumber").string(var_4.as_str());
     }
     Ok(())
 }

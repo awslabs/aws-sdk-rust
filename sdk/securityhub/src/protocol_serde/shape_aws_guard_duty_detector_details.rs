@@ -6,7 +6,10 @@ pub fn ser_aws_guard_duty_detector_details(
     if let Some(var_1) = &input.data_sources {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataSources").start_object();
-        crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_details::ser_aws_guard_duty_detector_data_sources_details(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_details::ser_aws_guard_duty_detector_data_sources_details(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.features {
@@ -15,16 +18,17 @@ pub fn ser_aws_guard_duty_detector_details(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_aws_guard_duty_detector_features_details::ser_aws_guard_duty_detector_features_details(&mut object_6, item_5)?;
+                crate::protocol_serde::shape_aws_guard_duty_detector_features_details::ser_aws_guard_duty_detector_features_details(
+                    &mut object_6,
+                    item_5,
+                )?;
                 object_6.finish();
             }
         }
         array_4.finish();
     }
     if let Some(var_7) = &input.finding_publishing_frequency {
-        object
-            .key("FindingPublishingFrequency")
-            .string(var_7.as_str());
+        object.key("FindingPublishingFrequency").string(var_7.as_str());
     }
     if let Some(var_8) = &input.service_role {
         object.key("ServiceRole").string(var_8.as_str());
@@ -37,17 +41,9 @@ pub fn ser_aws_guard_duty_detector_details(
 
 pub(crate) fn de_aws_guard_duty_detector_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsGuardDutyDetectorDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsGuardDutyDetectorDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -57,63 +53,52 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DataSources" => {
-                                builder = builder.set_data_sources(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DataSources" => {
+                            builder = builder.set_data_sources(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_details::de_aws_guard_duty_detector_data_sources_details(tokens)?
                                 );
-                            }
-                            "Features" => {
-                                builder = builder.set_features(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_features_list::de_aws_guard_duty_detector_features_list(tokens)?
-                                );
-                            }
-                            "FindingPublishingFrequency" => {
-                                builder = builder.set_finding_publishing_frequency(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ServiceRole" => {
-                                builder = builder.set_service_role(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Status" => {
-                                builder = builder.set_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "Features" => {
+                            builder = builder.set_features(
+                                crate::protocol_serde::shape_aws_guard_duty_detector_features_list::de_aws_guard_duty_detector_features_list(tokens)?,
+                            );
+                        }
+                        "FindingPublishingFrequency" => {
+                            builder = builder.set_finding_publishing_frequency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ServiceRole" => {
+                            builder = builder.set_service_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

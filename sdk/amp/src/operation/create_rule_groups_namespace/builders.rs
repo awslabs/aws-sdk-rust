@@ -26,7 +26,7 @@ impl CreateRuleGroupsNamespaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder,
+    inner: crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder,
 }
 impl CreateRuleGroupsNamespaceFluentBuilder {
     /// Creates a new `CreateRuleGroupsNamespace`.
@@ -37,7 +37,7 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
         }
     }
     /// Access the CreateRuleGroupsNamespace as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
             crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
             crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError>,
     > {
         self.customize_middleware().await
     }
@@ -181,30 +170,17 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Optional, user-provided tags for this rule groups namespace.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

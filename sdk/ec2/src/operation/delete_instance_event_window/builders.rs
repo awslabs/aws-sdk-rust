@@ -27,7 +27,7 @@ impl DeleteInstanceEventWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInstanceEventWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder,
+    inner: crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder,
 }
 impl DeleteInstanceEventWindowFluentBuilder {
     /// Creates a new `DeleteInstanceEventWindow`.
@@ -38,7 +38,7 @@ impl DeleteInstanceEventWindowFluentBuilder {
         }
     }
     /// Access the DeleteInstanceEventWindow as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteInstanceEventWindowFluentBuilder {
             crate::operation::delete_instance_event_window::DeleteInstanceEventWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteInstanceEventWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteInstanceEventWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteInstanceEventWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteInstanceEventWindowFluentBuilder {
             crate::operation::delete_instance_event_window::DeleteInstanceEventWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError>,
     > {
         self.customize_middleware().await
     }
@@ -150,18 +139,12 @@ impl DeleteInstanceEventWindowFluentBuilder {
         self.inner.get_force_delete()
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_event_window_id(input.into());
         self
     }
     /// <p>The ID of the event window.</p>
-    pub fn set_instance_event_window_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_event_window_id(input);
         self
     }

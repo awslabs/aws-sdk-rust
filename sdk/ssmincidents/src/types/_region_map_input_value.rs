@@ -23,26 +23,18 @@ impl RegionMapInputValue {
 
 /// A builder for [`RegionMapInputValue`](crate::types::RegionMapInputValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionMapInputValueBuilder {
     pub(crate) sse_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RegionMapInputValueBuilder {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
-    pub fn sse_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
-    pub fn set_sse_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_kms_key_id = input;
         self
     }

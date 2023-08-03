@@ -37,10 +37,7 @@ impl DescribeEngineVersionsFluentBuilder {
         }
     }
     /// Access the DescribeEngineVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEngineVersionsFluentBuilder {
             crate::operation::describe_engine_versions::DescribeEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_engine_versions::DescribeEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_versions::DescribeEngineVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEngineVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_engine_versions::DescribeEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_engine_versions::DescribeEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_versions::DescribeEngineVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_engine_versions::DescribeEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_engine_versions::DescribeEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_versions::DescribeEngineVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl DescribeEngineVersionsFluentBuilder {
             crate::operation::describe_engine_versions::DescribeEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_engine_versions::DescribeEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_versions::DescribeEngineVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator
-    {
-        crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator {
+        crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Redis engine version</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The Redis engine version</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -156,18 +130,12 @@ impl DescribeEngineVersionsFluentBuilder {
         self.inner.get_engine_version()
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
-    pub fn parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_family(input.into());
         self
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
-    pub fn set_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_family(input);
         self
     }

@@ -15,10 +15,7 @@ pub fn ser_create_dev_environment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_ide_configuration::ser_ide_configuration(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_ide_configuration::ser_ide_configuration(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -45,10 +42,7 @@ pub fn ser_create_dev_environment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_repository_input::ser_repository_input(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_repository_input::ser_repository_input(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

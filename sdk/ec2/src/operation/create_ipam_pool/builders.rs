@@ -10,10 +10,7 @@ impl CreateIpamPoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_pool::CreateIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_pool::CreateIpamPoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ipam_pool();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateIpamPoolFluentBuilder {
         }
     }
     /// Access the CreateIpamPool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ipam_pool::builders::CreateIpamPoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_ipam_pool::builders::CreateIpamPoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateIpamPoolFluentBuilder {
             crate::operation::create_ipam_pool::CreateIpamPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_pool::CreateIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateIpamPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateIpamPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_pool::CreateIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_pool::CreateIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateIpamPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_pool::CreateIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_pool::CreateIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateIpamPoolFluentBuilder {
             crate::operation::create_ipam_pool::CreateIpamPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_pool::CreateIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl CreateIpamPoolFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_scope_id(input.into());
         self
     }
     /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_scope_id(input);
         self
     }
@@ -175,18 +153,12 @@ impl CreateIpamPoolFluentBuilder {
         self.inner.get_locale()
     }
     /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
-    pub fn source_ipam_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_ipam_pool_id(input.into());
         self
     }
     /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
-    pub fn set_source_ipam_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_ipam_pool_id(input);
         self
     }
@@ -214,10 +186,7 @@ impl CreateIpamPoolFluentBuilder {
         self
     }
     /// <p>The IP protocol assigned to this IPAM pool. You must choose either IPv4 or IPv6 protocol for a pool.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressFamily>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
         self.inner = self.inner.set_address_family(input);
         self
     }
@@ -290,10 +259,7 @@ impl CreateIpamPoolFluentBuilder {
         self
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
-    pub fn set_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_allocation_default_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocation_default_netmask_length(input);
         self
     }
@@ -311,17 +277,12 @@ impl CreateIpamPoolFluentBuilder {
         self
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn set_allocation_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    ) -> Self {
+    pub fn set_allocation_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>) -> Self {
         self.inner = self.inner.set_allocation_resource_tags(input);
         self
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn get_allocation_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+    pub fn get_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         self.inner.get_allocation_resource_tags()
     }
     /// Appends an item to `TagSpecifications`.
@@ -334,17 +295,12 @@ impl CreateIpamPoolFluentBuilder {
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -367,10 +323,7 @@ impl CreateIpamPoolFluentBuilder {
         self
     }
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
-    pub fn set_aws_service(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolAwsService>,
-    ) -> Self {
+    pub fn set_aws_service(mut self, input: ::std::option::Option<crate::types::IpamPoolAwsService>) -> Self {
         self.inner = self.inner.set_aws_service(input);
         self
     }
@@ -384,17 +337,12 @@ impl CreateIpamPoolFluentBuilder {
         self
     }
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_public_ip_source(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolPublicIpSource>,
-    ) -> Self {
+    pub fn set_public_ip_source(mut self, input: ::std::option::Option<crate::types::IpamPoolPublicIpSource>) -> Self {
         self.inner = self.inner.set_public_ip_source(input);
         self
     }
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_public_ip_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
+    pub fn get_public_ip_source(&self) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
         self.inner.get_public_ip_source()
     }
 }

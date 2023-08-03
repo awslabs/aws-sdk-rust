@@ -11,8 +11,7 @@ pub struct CreateSipMediaApplicationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
     #[doc(hidden)]
-    pub endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInput {
     /// <p>The AWS Region assigned to the SIP media application.</p>
@@ -30,21 +29,18 @@ impl CreateSipMediaApplicationInput {
 }
 impl CreateSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
-    pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder{
+    pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder {
         crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationInputBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInputBuilder {
     /// <p>The AWS Region assigned to the SIP media application.</p>
@@ -87,17 +83,12 @@ impl CreateSipMediaApplicationInputBuilder {
         self
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
         &self.endpoints
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
@@ -107,12 +98,10 @@ impl CreateSipMediaApplicationInputBuilder {
         crate::operation::create_sip_media_application::CreateSipMediaApplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
-                aws_region: self.aws_region,
-                name: self.name,
-                endpoints: self.endpoints,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
+            aws_region: self.aws_region,
+            name: self.name,
+            endpoints: self.endpoints,
+        })
     }
 }

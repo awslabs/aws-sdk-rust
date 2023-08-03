@@ -28,27 +28,19 @@ impl PublishSchemaOutput {
 
 /// A builder for [`PublishSchemaOutput`](crate::operation::publish_schema::PublishSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishSchemaOutputBuilder {
     pub(crate) published_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PublishSchemaOutputBuilder {
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
-    pub fn published_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
-    pub fn set_published_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.published_schema_arn = input;
         self
     }

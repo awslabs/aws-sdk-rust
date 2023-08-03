@@ -5,8 +5,7 @@
 pub struct ListResourcesInput {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
     #[doc(hidden)]
-    pub filter_condition_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
+    pub filter_condition_list: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     /// <p>The maximum number of resource results.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -37,12 +36,9 @@ impl ListResourcesInput {
 
 /// A builder for [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesInputBuilder {
-    pub(crate) filter_condition_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
+    pub(crate) filter_condition_list: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -59,17 +55,12 @@ impl ListResourcesInputBuilder {
         self
     }
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    pub fn set_filter_condition_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
-    ) -> Self {
+    pub fn set_filter_condition_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>) -> Self {
         self.filter_condition_list = input;
         self
     }
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    pub fn get_filter_condition_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+    pub fn get_filter_condition_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
         &self.filter_condition_list
     }
     /// <p>The maximum number of resource results.</p>
@@ -103,10 +94,7 @@ impl ListResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources::ListResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
             filter_condition_list: self.filter_condition_list,
             max_results: self.max_results,

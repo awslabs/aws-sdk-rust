@@ -26,8 +26,7 @@ impl ListFunctionDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFunctionDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_function_definitions::builders::ListFunctionDefinitionsInputBuilder,
+    inner: crate::operation::list_function_definitions::builders::ListFunctionDefinitionsInputBuilder,
 }
 impl ListFunctionDefinitionsFluentBuilder {
     /// Creates a new `ListFunctionDefinitions`.
@@ -38,10 +37,7 @@ impl ListFunctionDefinitionsFluentBuilder {
         }
     }
     /// Access the ListFunctionDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_function_definitions::builders::ListFunctionDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_function_definitions::builders::ListFunctionDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListFunctionDefinitionsFluentBuilder {
             crate::operation::list_function_definitions::ListFunctionDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_definitions::ListFunctionDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_definitions::ListFunctionDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListFunctionDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListFunctionDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_function_definitions::ListFunctionDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_definitions::ListFunctionDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_definitions::ListFunctionDefinitionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListFunctionDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_function_definitions::ListFunctionDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_definitions::ListFunctionDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_definitions::ListFunctionDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListFunctionDefinitionsFluentBuilder {
             crate::operation::list_function_definitions::ListFunctionDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_definitions::ListFunctionDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_definitions::ListFunctionDefinitionsError>,
     > {
         self.customize_middleware().await
     }

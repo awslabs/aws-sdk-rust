@@ -44,18 +44,14 @@ impl ScanProvisionedProductsInput {
 }
 impl ScanProvisionedProductsInput {
     /// Creates a new builder-style object to manufacture [`ScanProvisionedProductsInput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsInput).
-    pub fn builder(
-    ) -> crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsInputBuilder
-    {
+    pub fn builder() -> crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsInputBuilder {
         crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsInputBuilder::default()
     }
 }
 
 /// A builder for [`ScanProvisionedProductsInput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanProvisionedProductsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
@@ -68,10 +64,7 @@ impl ScanProvisionedProductsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -80,10 +73,7 @@ impl ScanProvisionedProductsInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -101,17 +91,12 @@ impl ScanProvisionedProductsInputBuilder {
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn set_access_level_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLevelFilter>,
-    ) -> Self {
+    pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
         self.access_level_filter = input;
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn get_access_level_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessLevelFilter> {
+    pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         &self.access_level_filter
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -149,13 +134,11 @@ impl ScanProvisionedProductsInputBuilder {
         crate::operation::scan_provisioned_products::ScanProvisionedProductsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::scan_provisioned_products::ScanProvisionedProductsInput {
-                accept_language: self.accept_language,
-                access_level_filter: self.access_level_filter,
-                page_size: self.page_size,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::scan_provisioned_products::ScanProvisionedProductsInput {
+            accept_language: self.accept_language,
+            access_level_filter: self.access_level_filter,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }

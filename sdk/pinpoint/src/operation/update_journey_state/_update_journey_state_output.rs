@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateJourneyStateOutput {
 }
 impl UpdateJourneyStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJourneyStateOutput`](crate::operation::update_journey_state::UpdateJourneyStateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_journey_state::builders::UpdateJourneyStateOutputBuilder {
+    pub fn builder() -> crate::operation::update_journey_state::builders::UpdateJourneyStateOutputBuilder {
         crate::operation::update_journey_state::builders::UpdateJourneyStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJourneyStateOutput`](crate::operation::update_journey_state::UpdateJourneyStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJourneyStateOutputBuilder {
     pub(crate) journey_response: ::std::option::Option<crate::types::JourneyResponse>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateJourneyStateOutputBuilder {
         self
     }
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn set_journey_response(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyResponse>,
-    ) -> Self {
+    pub fn set_journey_response(mut self, input: ::std::option::Option<crate::types::JourneyResponse>) -> Self {
         self.journey_response = input;
         self
     }

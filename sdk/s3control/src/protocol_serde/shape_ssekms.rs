@@ -13,9 +13,7 @@ pub fn ser_ssekms(
     Ok(())
 }
 
-pub fn de_ssekms(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Ssekms, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_ssekms(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Ssekms, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Ssekms::builder();
     while let Some(mut tag) = decoder.next_tag() {

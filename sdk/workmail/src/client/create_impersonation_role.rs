@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateImpersonationRoleOutput`](crate::operation::create_impersonation_role::CreateImpersonationRoleOutput) with field(s):
     ///   - [`impersonation_role_id(Option<String>)`](crate::operation::create_impersonation_role::CreateImpersonationRoleOutput::impersonation_role_id): <p>The new impersonation role ID.</p>
     /// - On failure, responds with [`SdkError<CreateImpersonationRoleError>`](crate::operation::create_impersonation_role::CreateImpersonationRoleError)
-    pub fn create_impersonation_role(
-        &self,
-    ) -> crate::operation::create_impersonation_role::builders::CreateImpersonationRoleFluentBuilder
-    {
+    pub fn create_impersonation_role(&self) -> crate::operation::create_impersonation_role::builders::CreateImpersonationRoleFluentBuilder {
         crate::operation::create_impersonation_role::builders::CreateImpersonationRoleFluentBuilder::new(self.handle.clone())
     }
 }

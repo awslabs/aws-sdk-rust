@@ -10,10 +10,7 @@ impl UpdateRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_rule_group();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl UpdateRuleGroupFluentBuilder {
         }
     }
     /// Access the UpdateRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl UpdateRuleGroupFluentBuilder {
             crate::operation::update_rule_group::UpdateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl UpdateRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl UpdateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl UpdateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl UpdateRuleGroupFluentBuilder {
             crate::operation::update_rule_group::UpdateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -213,10 +197,7 @@ impl UpdateRuleGroupFluentBuilder {
         self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -230,10 +211,7 @@ impl UpdateRuleGroupFluentBuilder {
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VisibilityConfig>,
-    ) -> Self {
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
         self.inner = self.inner.set_visibility_config(input);
         self
     }
@@ -262,11 +240,7 @@ impl UpdateRuleGroupFluentBuilder {
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_response_bodies(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CustomResponseBody,
-    ) -> Self {
+    pub fn custom_response_bodies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CustomResponseBody) -> Self {
         self.inner = self.inner.custom_response_bodies(k.into(), v);
         self
     }
@@ -275,9 +249,7 @@ impl UpdateRuleGroupFluentBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn set_custom_response_bodies(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     ) -> Self {
         self.inner = self.inner.set_custom_response_bodies(input);
         self
@@ -287,9 +259,7 @@ impl UpdateRuleGroupFluentBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn get_custom_response_bodies(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         self.inner.get_custom_response_bodies()
     }
 }

@@ -15,9 +15,7 @@ pub struct PutRuleGroupsNamespaceOutput {
     pub status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutRuleGroupsNamespaceOutput {
@@ -34,11 +32,7 @@ impl PutRuleGroupsNamespaceOutput {
         self.status.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -49,25 +43,19 @@ impl ::aws_http::request_id::RequestId for PutRuleGroupsNamespaceOutput {
 }
 impl PutRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`PutRuleGroupsNamespaceOutput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput).
-    pub fn builder(
-    ) -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder {
         crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRuleGroupsNamespaceOutput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRuleGroupsNamespaceOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutRuleGroupsNamespaceOutputBuilder {
@@ -105,10 +93,7 @@ impl PutRuleGroupsNamespaceOutputBuilder {
         self
     }
     /// The status of rule groups namespace.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -121,32 +106,19 @@ impl PutRuleGroupsNamespaceOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// The tags of this rule groups namespace.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// The tags of this rule groups namespace.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -159,9 +131,7 @@ impl PutRuleGroupsNamespaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceOutput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput {
+    pub fn build(self) -> crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput {
         crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput {
             name: self.name,
             arn: self.arn,

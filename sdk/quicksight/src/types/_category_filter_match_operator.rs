@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CategoryFilterMatchOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for CategoryFilterMatchOperator {
             "ENDS_WITH" => CategoryFilterMatchOperator::EndsWith,
             "EQUALS" => CategoryFilterMatchOperator::Equals,
             "STARTS_WITH" => CategoryFilterMatchOperator::StartsWith,
-            other => CategoryFilterMatchOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CategoryFilterMatchOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl CategoryFilterMatchOperator {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONTAINS",
-            "DOES_NOT_CONTAIN",
-            "DOES_NOT_EQUAL",
-            "ENDS_WITH",
-            "EQUALS",
-            "STARTS_WITH",
-        ]
+        &["CONTAINS", "DOES_NOT_CONTAIN", "DOES_NOT_EQUAL", "ENDS_WITH", "EQUALS", "STARTS_WITH"]
     }
 }
 impl ::std::convert::AsRef<str> for CategoryFilterMatchOperator {

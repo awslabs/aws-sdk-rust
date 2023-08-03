@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`metadata_blob_checksum(Option<String>)`](crate::operation::get_object_metadata::GetObjectMetadataOutput::metadata_blob_checksum): MetadataBlob checksum.
     ///   - [`metadata_blob_checksum_algorithm(Option<DataChecksumAlgorithm>)`](crate::operation::get_object_metadata::GetObjectMetadataOutput::metadata_blob_checksum_algorithm): Checksum algorithm.
     /// - On failure, responds with [`SdkError<GetObjectMetadataError>`](crate::operation::get_object_metadata::GetObjectMetadataError)
-    pub fn get_object_metadata(
-        &self,
-    ) -> crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder {
-        crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_metadata(&self) -> crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder {
+        crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::new(self.handle.clone())
     }
 }

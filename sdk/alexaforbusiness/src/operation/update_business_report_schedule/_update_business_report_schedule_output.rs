@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateBusinessReportScheduleOutput {
 }
 impl UpdateBusinessReportScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBusinessReportScheduleOutput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput).
-    pub fn builder() -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleOutputBuilder {
         crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBusinessReportScheduleOutput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBusinessReportScheduleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateBusinessReportScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateBusinessReportScheduleOutput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput {
+    pub fn build(self) -> crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput {
         crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput {
             _request_id: self._request_id,
         }

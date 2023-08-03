@@ -23,9 +23,7 @@ impl MetadataCatalogConfig {
 
 /// A builder for [`MetadataCatalogConfig`](crate::types::MetadataCatalogConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetadataCatalogConfigBuilder {
     pub(crate) glue_data_catalog: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
 }
@@ -36,17 +34,12 @@ impl MetadataCatalogConfigBuilder {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
-    pub fn set_glue_data_catalog(
-        mut self,
-        input: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
-    ) -> Self {
+    pub fn set_glue_data_catalog(mut self, input: ::std::option::Option<crate::types::GlueDataCatalogConfig>) -> Self {
         self.glue_data_catalog = input;
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
-    pub fn get_glue_data_catalog(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlueDataCatalogConfig> {
+    pub fn get_glue_data_catalog(&self) -> &::std::option::Option<crate::types::GlueDataCatalogConfig> {
         &self.glue_data_catalog
     }
     /// Consumes the builder and constructs a [`MetadataCatalogConfig`](crate::types::MetadataCatalogConfig).

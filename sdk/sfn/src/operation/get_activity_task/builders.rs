@@ -10,10 +10,7 @@ impl GetActivityTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_activity_task::GetActivityTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_activity_task::GetActivityTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_activity_task::GetActivityTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_activity_task();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl GetActivityTaskFluentBuilder {
         }
     }
     /// Access the GetActivityTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_activity_task::builders::GetActivityTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_activity_task::builders::GetActivityTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl GetActivityTaskFluentBuilder {
             crate::operation::get_activity_task::GetActivityTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_activity_task::GetActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_activity_task::GetActivityTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl GetActivityTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl GetActivityTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_activity_task::GetActivityTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_activity_task::GetActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_activity_task::GetActivityTaskError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl GetActivityTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_activity_task::GetActivityTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_activity_task::GetActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_activity_task::GetActivityTaskError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl GetActivityTaskFluentBuilder {
             crate::operation::get_activity_task::GetActivityTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_activity_task::GetActivityTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_activity_task::GetActivityTaskError>,
     > {
         self.customize_middleware().await
     }

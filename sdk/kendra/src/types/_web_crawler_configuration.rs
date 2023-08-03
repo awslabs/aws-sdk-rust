@@ -43,8 +43,7 @@ pub struct WebCrawlerConfiguration {
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     #[doc(hidden)]
-    pub authentication_configuration:
-        ::std::option::Option<crate::types::AuthenticationConfiguration>,
+    pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl WebCrawlerConfiguration {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
@@ -93,9 +92,7 @@ impl WebCrawlerConfiguration {
     /// <p>Configuration information required to connect to websites using authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
-    pub fn authentication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
@@ -108,22 +105,17 @@ impl WebCrawlerConfiguration {
 
 /// A builder for [`WebCrawlerConfiguration`](crate::types::WebCrawlerConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebCrawlerConfigurationBuilder {
     pub(crate) urls: ::std::option::Option<crate::types::Urls>,
     pub(crate) crawl_depth: ::std::option::Option<i32>,
     pub(crate) max_links_per_page: ::std::option::Option<i32>,
     pub(crate) max_content_size_per_page_in_mega_bytes: ::std::option::Option<f32>,
     pub(crate) max_urls_per_minute_crawl_rate: ::std::option::Option<i32>,
-    pub(crate) url_inclusion_patterns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) url_exclusion_patterns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) url_inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) url_exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
-    pub(crate) authentication_configuration:
-        ::std::option::Option<crate::types::AuthenticationConfiguration>,
+    pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl WebCrawlerConfigurationBuilder {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
@@ -193,10 +185,7 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>The maximum size (in MB) of a web page or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
     /// <p>The default maximum size of a web page or attachment is set to 50 MB.</p>
-    pub fn set_max_content_size_per_page_in_mega_bytes(
-        mut self,
-        input: ::std::option::Option<f32>,
-    ) -> Self {
+    pub fn set_max_content_size_per_page_in_mega_bytes(mut self, input: ::std::option::Option<f32>) -> Self {
         self.max_content_size_per_page_in_mega_bytes = input;
         self
     }
@@ -231,27 +220,19 @@ impl WebCrawlerConfigurationBuilder {
     /// To override the contents of this collection use [`set_url_inclusion_patterns`](Self::set_url_inclusion_patterns).
     ///
     /// <p>A list of regular expression patterns to include certain URLs to crawl. URLs that match the patterns are included in the index. URLs that don't match the patterns are excluded from the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn url_inclusion_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn url_inclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.url_inclusion_patterns.unwrap_or_default();
         v.push(input.into());
         self.url_inclusion_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to include certain URLs to crawl. URLs that match the patterns are included in the index. URLs that don't match the patterns are excluded from the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn set_url_inclusion_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_url_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.url_inclusion_patterns = input;
         self
     }
     /// <p>A list of regular expression patterns to include certain URLs to crawl. URLs that match the patterns are included in the index. URLs that don't match the patterns are excluded from the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn get_url_inclusion_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_url_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.url_inclusion_patterns
     }
     /// Appends an item to `url_exclusion_patterns`.
@@ -259,27 +240,19 @@ impl WebCrawlerConfigurationBuilder {
     /// To override the contents of this collection use [`set_url_exclusion_patterns`](Self::set_url_exclusion_patterns).
     ///
     /// <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn url_exclusion_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn url_exclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.url_exclusion_patterns.unwrap_or_default();
         v.push(input.into());
         self.url_exclusion_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn set_url_exclusion_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_url_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.url_exclusion_patterns = input;
         self
     }
     /// <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn get_url_exclusion_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_url_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.url_exclusion_patterns
     }
     /// <p>Configuration information required to connect to your internal websites via a web proxy.</p>
@@ -292,47 +265,34 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>Configuration information required to connect to your internal websites via a web proxy.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
-    pub fn set_proxy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProxyConfiguration>,
-    ) -> Self {
+    pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::ProxyConfiguration>) -> Self {
         self.proxy_configuration = input;
         self
     }
     /// <p>Configuration information required to connect to your internal websites via a web proxy.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
-    pub fn get_proxy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProxyConfiguration> {
+    pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::ProxyConfiguration> {
         &self.proxy_configuration
     }
     /// <p>Configuration information required to connect to websites using authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
-    pub fn authentication_configuration(
-        mut self,
-        input: crate::types::AuthenticationConfiguration,
-    ) -> Self {
+    pub fn authentication_configuration(mut self, input: crate::types::AuthenticationConfiguration) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information required to connect to websites using authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
-    pub fn set_authentication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationConfiguration>,
-    ) -> Self {
+    pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfiguration>) -> Self {
         self.authentication_configuration = input;
         self
     }
     /// <p>Configuration information required to connect to websites using authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
-    pub fn get_authentication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
+    pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
         &self.authentication_configuration
     }
     /// Consumes the builder and constructs a [`WebCrawlerConfiguration`](crate::types::WebCrawlerConfiguration).

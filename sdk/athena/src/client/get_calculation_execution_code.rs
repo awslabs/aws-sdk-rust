@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput) with field(s):
     ///   - [`code_block(Option<String>)`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput::code_block): <p>The unencrypted code that was executed for the calculation.</p>
     /// - On failure, responds with [`SdkError<GetCalculationExecutionCodeError>`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeError)
-    pub fn get_calculation_execution_code(&self) -> crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder{
+    pub fn get_calculation_execution_code(
+        &self,
+    ) -> crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder {
         crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeFluentBuilder::new(self.handle.clone())
     }
 }

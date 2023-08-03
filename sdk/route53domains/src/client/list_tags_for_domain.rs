@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListTagsForDomainOutput`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput) with field(s):
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput::tag_list): <p>A list of the tags that are associated with the specified domain.</p>
     /// - On failure, responds with [`SdkError<ListTagsForDomainError>`](crate::operation::list_tags_for_domain::ListTagsForDomainError)
-    pub fn list_tags_for_domain(
-        &self,
-    ) -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder {
-        crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_domain(&self) -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder {
+        crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder::new(self.handle.clone())
     }
 }

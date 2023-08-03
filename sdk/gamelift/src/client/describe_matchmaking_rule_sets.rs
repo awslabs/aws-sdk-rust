@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`rule_sets(Option<Vec<MatchmakingRuleSet>>)`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput::rule_sets): <p>A collection of requested matchmaking rule set objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeMatchmakingRuleSetsError>`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError)
-    pub fn describe_matchmaking_rule_sets(&self) -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder{
+    pub fn describe_matchmaking_rule_sets(
+        &self,
+    ) -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder {
         crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::new(self.handle.clone())
     }
 }

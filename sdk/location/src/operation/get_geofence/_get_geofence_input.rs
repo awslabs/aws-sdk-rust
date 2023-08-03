@@ -29,27 +29,19 @@ impl GetGeofenceInput {
 
 /// A builder for [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGeofenceInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGeofenceInputBuilder {
     /// <p>The geofence collection storing the target geofence.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geofence collection storing the target geofence.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -72,12 +64,7 @@ impl GetGeofenceInputBuilder {
         &self.geofence_id
     }
     /// Consumes the builder and constructs a [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_geofence::GetGeofenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_geofence::GetGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_geofence::GetGeofenceInput {
             collection_name: self.collection_name,
             geofence_id: self.geofence_id,

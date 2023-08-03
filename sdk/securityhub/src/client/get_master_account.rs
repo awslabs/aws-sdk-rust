@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`master(Option<Invitation>)`](crate::operation::get_master_account::GetMasterAccountOutput::master): <p>A list of details about the Security Hub administrator account for the current member account. </p>
     /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::operation::get_master_account::GetMasterAccountError)
     #[deprecated(note = "This API has been deprecated, use GetAdministratorAccount API instead.")]
-    pub fn get_master_account(
-        &self,
-    ) -> crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder {
-        crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_master_account(&self) -> crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder {
+        crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::new(self.handle.clone())
     }
 }

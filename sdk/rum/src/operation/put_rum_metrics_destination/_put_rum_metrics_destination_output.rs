@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutRumMetricsDestinationOutput {
 }
 impl PutRumMetricsDestinationOutput {
     /// Creates a new builder-style object to manufacture [`PutRumMetricsDestinationOutput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput).
-    pub fn builder() -> crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationOutputBuilder {
         crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRumMetricsDestinationOutput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRumMetricsDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutRumMetricsDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRumMetricsDestinationOutput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput {
+    pub fn build(self) -> crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput {
         crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput {
             _request_id: self._request_id,
         }

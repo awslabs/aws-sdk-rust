@@ -74,9 +74,7 @@ impl Item {
 
 /// A builder for [`Item`](crate::types::Item).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ItemBuilder {
     pub(crate) start_time: ::std::option::Option<f64>,
     pub(crate) end_time: ::std::option::Option<f64>,

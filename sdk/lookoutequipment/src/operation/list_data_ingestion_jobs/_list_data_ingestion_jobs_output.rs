@@ -8,8 +8,7 @@ pub struct ListDataIngestionJobsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     #[doc(hidden)]
-    pub data_ingestion_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
+    pub data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListDataIngestionJobsOutput {
@@ -18,9 +17,7 @@ impl ListDataIngestionJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    pub fn data_ingestion_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataIngestionJobSummary]> {
+    pub fn data_ingestion_job_summaries(&self) -> ::std::option::Option<&[crate::types::DataIngestionJobSummary]> {
         self.data_ingestion_job_summaries.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListDataIngestionJobsOutput {
 }
 impl ListDataIngestionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsOutput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsOutputBuilder {
         crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataIngestionJobsOutput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) data_ingestion_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
+    pub(crate) data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListDataIngestionJobsOutputBuilder {
@@ -69,27 +61,19 @@ impl ListDataIngestionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_data_ingestion_job_summaries`](Self::set_data_ingestion_job_summaries).
     ///
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    pub fn data_ingestion_job_summaries(
-        mut self,
-        input: crate::types::DataIngestionJobSummary,
-    ) -> Self {
+    pub fn data_ingestion_job_summaries(mut self, input: crate::types::DataIngestionJobSummary) -> Self {
         let mut v = self.data_ingestion_job_summaries.unwrap_or_default();
         v.push(input);
         self.data_ingestion_job_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    pub fn set_data_ingestion_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
-    ) -> Self {
+    pub fn set_data_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>) -> Self {
         self.data_ingestion_job_summaries = input;
         self
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    pub fn get_data_ingestion_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>> {
+    pub fn get_data_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>> {
         &self.data_ingestion_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -97,8 +97,7 @@ pub struct Cluster {
     pub step_concurrency_level: ::std::option::Option<i32>,
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
     #[doc(hidden)]
-    pub placement_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
+    pub placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
     #[doc(hidden)]
     pub os_release_label: ::std::option::Option<::std::string::String>,
@@ -117,18 +116,14 @@ impl Cluster {
         self.status.as_ref()
     }
     /// <p>Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-    pub fn ec2_instance_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Ec2InstanceAttributes> {
+    pub fn ec2_instance_attributes(&self) -> ::std::option::Option<&crate::types::Ec2InstanceAttributes> {
         self.ec2_instance_attributes.as_ref()
     }
     /// <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-    pub fn instance_collection_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceCollectionType> {
+    pub fn instance_collection_type(&self) -> ::std::option::Option<&crate::types::InstanceCollectionType> {
         self.instance_collection_type.as_ref()
     }
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
@@ -246,16 +241,13 @@ impl Cluster {
 
 /// A builder for [`Cluster`](crate::types::Cluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) ec2_instance_attributes: ::std::option::Option<crate::types::Ec2InstanceAttributes>,
-    pub(crate) instance_collection_type:
-        ::std::option::Option<crate::types::InstanceCollectionType>,
+    pub(crate) instance_collection_type: ::std::option::Option<crate::types::InstanceCollectionType>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) requested_ami_version: ::std::option::Option<::std::string::String>,
@@ -280,8 +272,7 @@ pub struct ClusterBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) step_concurrency_level: ::std::option::Option<i32>,
-    pub(crate) placement_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
+    pub(crate) placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
     pub(crate) os_release_label: ::std::option::Option<::std::string::String>,
 }
 impl ClusterBuilder {
@@ -333,17 +324,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-    pub fn set_ec2_instance_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceAttributes>,
-    ) -> Self {
+    pub fn set_ec2_instance_attributes(mut self, input: ::std::option::Option<crate::types::Ec2InstanceAttributes>) -> Self {
         self.ec2_instance_attributes = input;
         self
     }
     /// <p>Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-    pub fn get_ec2_instance_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ec2InstanceAttributes> {
+    pub fn get_ec2_instance_attributes(&self) -> &::std::option::Option<crate::types::Ec2InstanceAttributes> {
         &self.ec2_instance_attributes
     }
     /// <note>
@@ -358,10 +344,7 @@ impl ClusterBuilder {
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-    pub fn set_instance_collection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceCollectionType>,
-    ) -> Self {
+    pub fn set_instance_collection_type(mut self, input: ::std::option::Option<crate::types::InstanceCollectionType>) -> Self {
         self.instance_collection_type = input;
         self
     }
@@ -369,9 +352,7 @@ impl ClusterBuilder {
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-    pub fn get_instance_collection_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceCollectionType> {
+    pub fn get_instance_collection_type(&self) -> &::std::option::Option<crate::types::InstanceCollectionType> {
         &self.instance_collection_type
     }
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
@@ -389,18 +370,12 @@ impl ClusterBuilder {
         &self.log_uri
     }
     /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
-    pub fn log_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
-    pub fn set_log_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = input;
         self
     }
@@ -409,18 +384,12 @@ impl ClusterBuilder {
         &self.log_encryption_kms_key_id
     }
     /// <p>The AMI version requested for this cluster.</p>
-    pub fn requested_ami_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_ami_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requested_ami_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AMI version requested for this cluster.</p>
-    pub fn set_requested_ami_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requested_ami_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requested_ami_version = input;
         self
     }
@@ -429,18 +398,12 @@ impl ClusterBuilder {
         &self.requested_ami_version
     }
     /// <p>The AMI version running on this cluster.</p>
-    pub fn running_ami_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn running_ami_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.running_ami_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AMI version running on this cluster.</p>
-    pub fn set_running_ami_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_running_ami_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.running_ami_version = input;
         self
     }
@@ -449,18 +412,12 @@ impl ClusterBuilder {
         &self.running_ami_version
     }
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -525,17 +482,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>The applications installed on this cluster.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>The applications installed on this cluster.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }
     /// Appends an item to `tags`.
@@ -550,10 +502,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>A list of tags associated with a cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -590,18 +539,12 @@ impl ClusterBuilder {
         &self.normalized_instance_hours
     }
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    pub fn master_public_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    pub fn set_master_public_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_public_dns_name = input;
         self
     }
@@ -621,32 +564,21 @@ impl ClusterBuilder {
         self
     }
     /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
     /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>The name of the security configuration applied to the cluster.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security configuration applied to the cluster.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -655,18 +587,12 @@ impl ClusterBuilder {
         &self.security_configuration
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
-    pub fn auto_scaling_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
-    pub fn set_auto_scaling_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_role = input;
         self
     }
@@ -680,32 +606,21 @@ impl ClusterBuilder {
         self
     }
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-    pub fn set_scale_down_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleDownBehavior>,
-    ) -> Self {
+    pub fn set_scale_down_behavior(mut self, input: ::std::option::Option<crate::types::ScaleDownBehavior>) -> Self {
         self.scale_down_behavior = input;
         self
     }
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-    pub fn get_scale_down_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
+    pub fn get_scale_down_behavior(&self) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
         &self.scale_down_behavior
     }
     /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
-    pub fn custom_ami_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
-    pub fn set_custom_ami_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_ami_id = input;
         self
     }
@@ -733,17 +648,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI package repositories apply when an instance boots using the AMI.</p>
-    pub fn set_repo_upgrade_on_boot(
-        mut self,
-        input: ::std::option::Option<crate::types::RepoUpgradeOnBoot>,
-    ) -> Self {
+    pub fn set_repo_upgrade_on_boot(mut self, input: ::std::option::Option<crate::types::RepoUpgradeOnBoot>) -> Self {
         self.repo_upgrade_on_boot = input;
         self
     }
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI package repositories apply when an instance boots using the AMI.</p>
-    pub fn get_repo_upgrade_on_boot(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepoUpgradeOnBoot> {
+    pub fn get_repo_upgrade_on_boot(&self) -> &::std::option::Option<crate::types::RepoUpgradeOnBoot> {
         &self.repo_upgrade_on_boot
     }
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
@@ -752,17 +662,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn set_kerberos_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::KerberosAttributes>,
-    ) -> Self {
+    pub fn set_kerberos_attributes(mut self, input: ::std::option::Option<crate::types::KerberosAttributes>) -> Self {
         self.kerberos_attributes = input;
         self
     }
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn get_kerberos_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::KerberosAttributes> {
+    pub fn get_kerberos_attributes(&self) -> &::std::option::Option<crate::types::KerberosAttributes> {
         &self.kerberos_attributes
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
@@ -819,32 +724,21 @@ impl ClusterBuilder {
         self
     }
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
-    pub fn set_placement_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
-    ) -> Self {
+    pub fn set_placement_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>) -> Self {
         self.placement_groups = input;
         self
     }
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
-    pub fn get_placement_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>> {
+    pub fn get_placement_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>> {
         &self.placement_groups
     }
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
-    pub fn os_release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn os_release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
-    pub fn set_os_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_os_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os_release_label = input;
         self
     }

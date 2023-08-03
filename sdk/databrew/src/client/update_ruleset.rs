@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRulesetOutput`](crate::operation::update_ruleset::UpdateRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_ruleset::UpdateRulesetOutput::name): <p>The name of the updated ruleset.</p>
     /// - On failure, responds with [`SdkError<UpdateRulesetError>`](crate::operation::update_ruleset::UpdateRulesetError)
-    pub fn update_ruleset(
-        &self,
-    ) -> crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder {
-        crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ruleset(&self) -> crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder {
+        crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::new(self.handle.clone())
     }
 }

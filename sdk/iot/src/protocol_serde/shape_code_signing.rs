@@ -9,19 +9,13 @@ pub fn ser_code_signing(
     if let Some(var_2) = &input.start_signing_job_parameter {
         #[allow(unused_mut)]
         let mut object_3 = object.key("startSigningJobParameter").start_object();
-        crate::protocol_serde::shape_start_signing_job_parameter::ser_start_signing_job_parameter(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_start_signing_job_parameter::ser_start_signing_job_parameter(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.custom_code_signing {
         #[allow(unused_mut)]
         let mut object_5 = object.key("customCodeSigning").start_object();
-        crate::protocol_serde::shape_custom_code_signing::ser_custom_code_signing(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_custom_code_signing::ser_custom_code_signing(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -29,17 +23,9 @@ pub fn ser_code_signing(
 
 pub(crate) fn de_code_signing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CodeSigning>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CodeSigning>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,45 +35,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "awsSignerJobId" => {
-                                builder = builder.set_aws_signer_job_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "awsSignerJobId" => {
+                            builder = builder.set_aws_signer_job_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "startSigningJobParameter" => {
-                                builder = builder.set_start_signing_job_parameter(
-                                    crate::protocol_serde::shape_start_signing_job_parameter::de_start_signing_job_parameter(tokens)?
-                                );
-                            }
-                            "customCodeSigning" => {
-                                builder = builder.set_custom_code_signing(
-                                    crate::protocol_serde::shape_custom_code_signing::de_custom_code_signing(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "startSigningJobParameter" => {
+                            builder = builder.set_start_signing_job_parameter(
+                                crate::protocol_serde::shape_start_signing_job_parameter::de_start_signing_job_parameter(tokens)?,
+                            );
+                        }
+                        "customCodeSigning" => {
+                            builder =
+                                builder.set_custom_code_signing(crate::protocol_serde::shape_custom_code_signing::de_custom_code_signing(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

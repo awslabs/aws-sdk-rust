@@ -36,17 +36,14 @@ impl DisassociateAssetsInput {
 }
 impl DisassociateAssetsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder {
         crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAssetsInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl DisassociateAssetsInputBuilder {
         &self.hierarchy_id
     }
     /// <p>The ID of the child asset to disassociate.</p>
-    pub fn child_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the child asset to disassociate.</p>
-    pub fn set_child_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_child_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.child_asset_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl DisassociateAssetsInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_assets::DisassociateAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_assets::DisassociateAssetsInput {
-                asset_id: self.asset_id,
-                hierarchy_id: self.hierarchy_id,
-                child_asset_id: self.child_asset_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_assets::DisassociateAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_assets::DisassociateAssetsInput {
+            asset_id: self.asset_id,
+            hierarchy_id: self.hierarchy_id,
+            child_asset_id: self.child_asset_id,
+            client_token: self.client_token,
+        })
     }
 }

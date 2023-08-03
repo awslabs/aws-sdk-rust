@@ -29,9 +29,7 @@ impl DeleteFpgaImageInput {
 
 /// A builder for [`DeleteFpgaImageInput`](crate::operation::delete_fpga_image::DeleteFpgaImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFpgaImageInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFpgaImageInput`](crate::operation::delete_fpga_image::DeleteFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fpga_image::DeleteFpgaImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_fpga_image::DeleteFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fpga_image::DeleteFpgaImageInput {
             dry_run: self.dry_run,
             fpga_image_id: self.fpga_image_id,

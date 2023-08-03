@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeKeyPairsOutput {
 }
 impl DescribeKeyPairsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyPairsOutput`](crate::operation::describe_key_pairs::DescribeKeyPairsOutput).
-    pub fn builder() -> crate::operation::describe_key_pairs::builders::DescribeKeyPairsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_key_pairs::builders::DescribeKeyPairsOutputBuilder {
         crate::operation::describe_key_pairs::builders::DescribeKeyPairsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKeyPairsOutput`](crate::operation::describe_key_pairs::DescribeKeyPairsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKeyPairsOutputBuilder {
     pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl DescribeKeyPairsOutputBuilder {
         self
     }
     /// <p>Information about the key pairs.</p>
-    pub fn set_key_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>>,
-    ) -> Self {
+    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>>) -> Self {
         self.key_pairs = input;
         self
     }
     /// <p>Information about the key pairs.</p>
-    pub fn get_key_pairs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>> {
+    pub fn get_key_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>> {
         &self.key_pairs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`profile_arns(Vec<String>)`](crate::operation::disassociate_profiles::builders::DisassociateProfilesFluentBuilder::profile_arns) / [`set_profile_arns(Option<Vec<String>>)`](crate::operation::disassociate_profiles::builders::DisassociateProfilesFluentBuilder::set_profile_arns): <p>The list of profile ARNs to disassociate from the workload.</p>
     /// - On success, responds with [`DisassociateProfilesOutput`](crate::operation::disassociate_profiles::DisassociateProfilesOutput)
     /// - On failure, responds with [`SdkError<DisassociateProfilesError>`](crate::operation::disassociate_profiles::DisassociateProfilesError)
-    pub fn disassociate_profiles(
-        &self,
-    ) -> crate::operation::disassociate_profiles::builders::DisassociateProfilesFluentBuilder {
-        crate::operation::disassociate_profiles::builders::DisassociateProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_profiles(&self) -> crate::operation::disassociate_profiles::builders::DisassociateProfilesFluentBuilder {
+        crate::operation::disassociate_profiles::builders::DisassociateProfilesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,54 +7,37 @@ pub fn ser_session_key_derivation(
         crate::types::SessionKeyDerivation::EmvCommon(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_7.key("EmvCommon").start_object();
-            crate::protocol_serde::shape_session_key_emv_common::ser_session_key_emv_common(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_session_key_emv_common::ser_session_key_emv_common(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::SessionKeyDerivation::Mastercard(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_7.key("Mastercard").start_object();
-            crate::protocol_serde::shape_session_key_mastercard::ser_session_key_mastercard(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_session_key_mastercard::ser_session_key_mastercard(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::SessionKeyDerivation::Emv2000(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_7.key("Emv2000").start_object();
-            crate::protocol_serde::shape_session_key_emv2000::ser_session_key_emv2000(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_session_key_emv2000::ser_session_key_emv2000(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::SessionKeyDerivation::Amex(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_7.key("Amex").start_object();
-            crate::protocol_serde::shape_session_key_amex::ser_session_key_amex(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_session_key_amex::ser_session_key_amex(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::SessionKeyDerivation::Visa(inner) => {
             #[allow(unused_mut)]
             let mut object_5 = object_7.key("Visa").start_object();
-            crate::protocol_serde::shape_session_key_visa::ser_session_key_visa(
-                &mut object_5,
-                inner,
-            )?;
+            crate::protocol_serde::shape_session_key_visa::ser_session_key_visa(&mut object_5, inner)?;
             object_5.finish();
         }
         crate::types::SessionKeyDerivation::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "SessionKeyDerivation",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "SessionKeyDerivation",
+            ))
         }
     }
     Ok(())

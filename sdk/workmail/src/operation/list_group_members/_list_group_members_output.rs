@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListGroupMembersOutput {
 }
 impl ListGroupMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembersOutput`](crate::operation::list_group_members::ListGroupMembersOutput).
-    pub fn builder() -> crate::operation::list_group_members::builders::ListGroupMembersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_group_members::builders::ListGroupMembersOutputBuilder {
         crate::operation::list_group_members::builders::ListGroupMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupMembersOutput`](crate::operation::list_group_members::ListGroupMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupMembersOutputBuilder {
     pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListGroupMembersOutputBuilder {
         self
     }
     /// <p>The members associated to the group.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>) -> Self {
         self.members = input;
         self
     }

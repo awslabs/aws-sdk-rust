@@ -37,10 +37,7 @@ impl UpdateLoggerDefinitionFluentBuilder {
         }
     }
     /// Access the UpdateLoggerDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateLoggerDefinitionFluentBuilder {
             crate::operation::update_logger_definition::UpdateLoggerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logger_definition::UpdateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logger_definition::UpdateLoggerDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateLoggerDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateLoggerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logger_definition::UpdateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logger_definition::UpdateLoggerDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateLoggerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logger_definition::UpdateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logger_definition::UpdateLoggerDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateLoggerDefinitionFluentBuilder {
             crate::operation::update_logger_definition::UpdateLoggerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logger_definition::UpdateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logger_definition::UpdateLoggerDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logger_definition_id(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logger_definition_id(input);
         self
     }

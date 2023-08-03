@@ -38,9 +38,7 @@ impl DiscoverInputSchemaFluentBuilder {
         }
     }
     /// Access the DiscoverInputSchema as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DiscoverInputSchemaFluentBuilder {
             crate::operation::discover_input_schema::DiscoverInputSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_input_schema::DiscoverInputSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DiscoverInputSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_input_schema::DiscoverInputSchemaError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_input_schema::DiscoverInputSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DiscoverInputSchemaFluentBuilder {
             crate::operation::discover_input_schema::DiscoverInputSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_input_schema::DiscoverInputSchemaError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +125,12 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner.get_resource_arn()
     }
     /// <p>The ARN of the role that is used to access the streaming source.</p>
-    pub fn service_execution_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_execution_role(input.into());
         self
     }
     /// <p>The ARN of the role that is used to access the streaming source.</p>
-    pub fn set_service_execution_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_execution_role(input);
         self
     }
@@ -158,10 +139,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner.get_service_execution_role()
     }
     /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    pub fn input_starting_position_configuration(
-        mut self,
-        input: crate::types::InputStartingPositionConfiguration,
-    ) -> Self {
+    pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.inner = self.inner.input_starting_position_configuration(input);
         self
     }
@@ -174,9 +152,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self
     }
     /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    pub fn get_input_starting_position_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+    pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
         self.inner.get_input_starting_position_configuration()
     }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
@@ -185,10 +161,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self
     }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Configuration>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3Configuration>) -> Self {
         self.inner = self.inner.set_s3_configuration(input);
         self
     }
@@ -197,25 +170,17 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner.get_s3_configuration()
     }
     /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn input_processing_configuration(
-        mut self,
-        input: crate::types::InputProcessingConfiguration,
-    ) -> Self {
+    pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
         self.inner = self.inner.input_processing_configuration(input);
         self
     }
     /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn set_input_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_input_processing_configuration(mut self, input: ::std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
         self.inner = self.inner.set_input_processing_configuration(input);
         self
     }
     /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
-    pub fn get_input_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+    pub fn get_input_processing_configuration(&self) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
         self.inner.get_input_processing_configuration()
     }
 }

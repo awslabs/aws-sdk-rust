@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssessmentTargetsOutput {
 }
 impl ListAssessmentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentTargetsOutput`](crate::operation::list_assessment_targets::ListAssessmentTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder {
         crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentTargetsOutput`](crate::operation::list_assessment_targets::ListAssessmentTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentTargetsOutputBuilder {
-    pub(crate) assessment_target_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,27 +47,19 @@ impl ListAssessmentTargetsOutputBuilder {
     /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
     ///
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub fn assessment_target_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_target_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_target_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub fn set_assessment_target_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_target_arns = input;
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub fn get_assessment_target_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_target_arns
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>

@@ -44,9 +44,7 @@ impl AutoMerging {
 
 /// A builder for [`AutoMerging`](crate::types::AutoMerging).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMergingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) consolidation: ::std::option::Option<crate::types::Consolidation>,
@@ -74,10 +72,7 @@ impl AutoMergingBuilder {
         self
     }
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
-    pub fn set_consolidation(
-        mut self,
-        input: ::std::option::Option<crate::types::Consolidation>,
-    ) -> Self {
+    pub fn set_consolidation(mut self, input: ::std::option::Option<crate::types::Consolidation>) -> Self {
         self.consolidation = input;
         self
     }
@@ -91,17 +86,12 @@ impl AutoMergingBuilder {
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
-    pub fn set_conflict_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolution>,
-    ) -> Self {
+    pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
         self.conflict_resolution = input;
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
-    pub fn get_conflict_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+    pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
     /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
@@ -110,10 +100,7 @@ impl AutoMergingBuilder {
         self
     }
     /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
-    pub fn set_min_allowed_confidence_score_for_merging(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_min_allowed_confidence_score_for_merging(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_allowed_confidence_score_for_merging = input;
         self
     }

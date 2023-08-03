@@ -30,9 +30,7 @@ impl VolumeStatusDetails {
 
 /// A builder for [`VolumeStatusDetails`](crate::types::VolumeStatusDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeStatusDetailsBuilder {
     pub(crate) name: ::std::option::Option<crate::types::VolumeStatusName>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl VolumeStatusDetailsBuilder {
         self
     }
     /// <p>The name of the volume status.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeStatusName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::VolumeStatusName>) -> Self {
         self.name = input;
         self
     }

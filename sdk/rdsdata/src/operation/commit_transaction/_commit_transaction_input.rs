@@ -30,17 +30,14 @@ impl CommitTransactionInput {
 }
 impl CommitTransactionInput {
     /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
-    pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionInputBuilder
-    {
+    pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionInputBuilder {
         crate::operation::commit_transaction::builders::CommitTransactionInputBuilder::default()
     }
 }
 
 /// A builder for [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitTransactionInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl CommitTransactionInputBuilder {
         &self.secret_arn
     }
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -98,16 +89,11 @@ impl CommitTransactionInputBuilder {
     /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::commit_transaction::CommitTransactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::commit_transaction::CommitTransactionInput {
-                resource_arn: self.resource_arn,
-                secret_arn: self.secret_arn,
-                transaction_id: self.transaction_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::commit_transaction::CommitTransactionInput {
+            resource_arn: self.resource_arn,
+            secret_arn: self.secret_arn,
+            transaction_id: self.transaction_id,
+        })
     }
 }

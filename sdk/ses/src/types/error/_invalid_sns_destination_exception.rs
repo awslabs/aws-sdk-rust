@@ -33,10 +33,7 @@ impl InvalidSnsDestinationException {
 }
 impl ::std::fmt::Display for InvalidSnsDestinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "InvalidSnsDestinationException [InvalidSNSDestinationException]"
-        )?;
+        ::std::write!(f, "InvalidSnsDestinationException [InvalidSNSDestinationException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -66,9 +63,7 @@ impl InvalidSnsDestinationException {
 
 /// A builder for [`InvalidSnsDestinationException`](crate::types::error::InvalidSnsDestinationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidSnsDestinationExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +72,12 @@ pub struct InvalidSnsDestinationExceptionBuilder {
 }
 impl InvalidSnsDestinationExceptionBuilder {
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -97,18 +86,12 @@ impl InvalidSnsDestinationExceptionBuilder {
         &self.configuration_set_name
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_destination_name = input;
         self
     }
@@ -137,10 +120,7 @@ impl InvalidSnsDestinationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

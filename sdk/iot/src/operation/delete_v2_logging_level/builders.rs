@@ -38,10 +38,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
         }
     }
     /// Access the DeleteV2LoggingLevel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
             crate::operation::delete_v2_logging_level::DeleteV2LoggingLevel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
             crate::operation::delete_v2_logging_level::DeleteV2LoggingLevel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl DeleteV2LoggingLevelFluentBuilder {
         self
     }
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogTargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }

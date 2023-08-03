@@ -43,9 +43,7 @@ impl OpenTunnelInput {
 
 /// A builder for [`OpenTunnelInput`](crate::operation::open_tunnel::OpenTunnelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenTunnelInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -79,10 +77,7 @@ impl OpenTunnelInputBuilder {
         self
     }
     /// <p>A collection of tag metadata.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -96,17 +91,12 @@ impl OpenTunnelInputBuilder {
         self
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
-    pub fn set_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfig>,
-    ) -> Self {
+    pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.destination_config = input;
         self
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
-    pub fn get_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+    pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config
     }
     /// <p>Timeout configuration for a tunnel.</p>
@@ -115,10 +105,7 @@ impl OpenTunnelInputBuilder {
         self
     }
     /// <p>Timeout configuration for a tunnel.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
         self.timeout_config = input;
         self
     }
@@ -127,12 +114,7 @@ impl OpenTunnelInputBuilder {
         &self.timeout_config
     }
     /// Consumes the builder and constructs a [`OpenTunnelInput`](crate::operation::open_tunnel::OpenTunnelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::open_tunnel::OpenTunnelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::open_tunnel::OpenTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::open_tunnel::OpenTunnelInput {
             description: self.description,
             tags: self.tags,

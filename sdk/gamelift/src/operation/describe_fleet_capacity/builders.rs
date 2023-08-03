@@ -49,10 +49,7 @@ impl DescribeFleetCapacityFluentBuilder {
         }
     }
     /// Access the DescribeFleetCapacity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +61,7 @@ impl DescribeFleetCapacityFluentBuilder {
             crate::operation::describe_fleet_capacity::DescribeFleetCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_capacity::DescribeFleetCapacityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +71,7 @@ impl DescribeFleetCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +80,7 @@ impl DescribeFleetCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_capacity::DescribeFleetCapacityError>,
     > {
         let op = self
             .inner
@@ -113,9 +103,7 @@ impl DescribeFleetCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_capacity::DescribeFleetCapacityError>,
     > {
         self.send_middleware().await
     }
@@ -129,22 +117,15 @@ impl DescribeFleetCapacityFluentBuilder {
             crate::operation::describe_fleet_capacity::DescribeFleetCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_capacity::DescribeFleetCapacityError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_capacity::paginator::DescribeFleetCapacityPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_fleet_capacity::paginator::DescribeFleetCapacityPaginator {
-        crate::operation::describe_fleet_capacity::paginator::DescribeFleetCapacityPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_capacity::paginator::DescribeFleetCapacityPaginator {
+        crate::operation::describe_fleet_capacity::paginator::DescribeFleetCapacityPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `FleetIds`.
     ///
@@ -156,10 +137,7 @@ impl DescribeFleetCapacityFluentBuilder {
         self
     }
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }

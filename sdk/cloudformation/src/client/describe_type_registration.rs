@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`type_arn(Option<String>)`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput::type_arn): <p>The Amazon Resource Name (ARN) of the extension being registered.</p>  <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
     ///   - [`type_version_arn(Option<String>)`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput::type_version_arn): <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>  <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeTypeRegistrationError>`](crate::operation::describe_type_registration::DescribeTypeRegistrationError)
-    pub fn describe_type_registration(
-        &self,
-    ) -> crate::operation::describe_type_registration::builders::DescribeTypeRegistrationFluentBuilder
-    {
+    pub fn describe_type_registration(&self) -> crate::operation::describe_type_registration::builders::DescribeTypeRegistrationFluentBuilder {
         crate::operation::describe_type_registration::builders::DescribeTypeRegistrationFluentBuilder::new(self.handle.clone())
     }
 }

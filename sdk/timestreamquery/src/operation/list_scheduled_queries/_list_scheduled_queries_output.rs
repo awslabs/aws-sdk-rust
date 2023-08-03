@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListScheduledQueriesOutput {
 }
 impl ListScheduledQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduledQueriesOutput`](crate::operation::list_scheduled_queries::ListScheduledQueriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduled_queries::builders::ListScheduledQueriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_scheduled_queries::builders::ListScheduledQueriesOutputBuilder {
         crate::operation::list_scheduled_queries::builders::ListScheduledQueriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduledQueriesOutput`](crate::operation::list_scheduled_queries::ListScheduledQueriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledQueriesOutputBuilder {
-    pub(crate) scheduled_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>,
+    pub(crate) scheduled_queries: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListScheduledQueriesOutputBuilder {
         self
     }
     /// <p>A list of scheduled queries.</p>
-    pub fn set_scheduled_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>,
-    ) -> Self {
+    pub fn set_scheduled_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>) -> Self {
         self.scheduled_queries = input;
         self
     }
     /// <p>A list of scheduled queries.</p>
-    pub fn get_scheduled_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>> {
+    pub fn get_scheduled_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>> {
         &self.scheduled_queries
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>

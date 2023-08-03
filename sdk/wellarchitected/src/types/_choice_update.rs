@@ -37,9 +37,7 @@ impl ChoiceUpdate {
 
 /// A builder for [`ChoiceUpdate`](crate::types::ChoiceUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChoiceUpdateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ChoiceStatus>,
     pub(crate) reason: ::std::option::Option<crate::types::ChoiceReason>,

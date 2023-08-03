@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribePublicIpv4PoolsOutput {
 }
 impl DescribePublicIpv4PoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePublicIpv4PoolsOutput`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsOutputBuilder {
         crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePublicIpv4PoolsOutput`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePublicIpv4PoolsOutputBuilder {
-    pub(crate) public_ipv4_pools:
-        ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>>,
+    pub(crate) public_ipv4_pools: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribePublicIpv4PoolsOutputBuilder {
         self
     }
     /// <p>Information about the address pools.</p>
-    pub fn set_public_ipv4_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>>,
-    ) -> Self {
+    pub fn set_public_ipv4_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>>) -> Self {
         self.public_ipv4_pools = input;
         self
     }
     /// <p>Information about the address pools.</p>
-    pub fn get_public_ipv4_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>> {
+    pub fn get_public_ipv4_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>> {
         &self.public_ipv4_pools
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribePublicIpv4PoolsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePublicIpv4PoolsOutput`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput {
+    pub fn build(self) -> crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput {
         crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput {
             public_ipv4_pools: self.public_ipv4_pools,
             next_token: self.next_token,

@@ -22,21 +22,16 @@ impl BatchCreateVariableInput {
 }
 impl BatchCreateVariableInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
-        crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
+        crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateVariableInputBuilder {
-    pub(crate) variable_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
+    pub(crate) variable_entries: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl BatchCreateVariableInputBuilder {
@@ -52,17 +47,12 @@ impl BatchCreateVariableInputBuilder {
         self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn set_variable_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
-    ) -> Self {
+    pub fn set_variable_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>) -> Self {
         self.variable_entries = input;
         self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn get_variable_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
+    pub fn get_variable_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
         &self.variable_entries
     }
     /// Appends an item to `tags`.
@@ -77,10 +67,7 @@ impl BatchCreateVariableInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -91,15 +78,11 @@ impl BatchCreateVariableInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_variable::BatchCreateVariableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_create_variable::BatchCreateVariableInput {
-                variable_entries: self.variable_entries,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_create_variable::BatchCreateVariableInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_create_variable::BatchCreateVariableInput {
+            variable_entries: self.variable_entries,
+            tags: self.tags,
+        })
     }
 }

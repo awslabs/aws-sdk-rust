@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeServiceOutput`](crate::operation::describe_service::DescribeServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::describe_service::DescribeServiceOutput::service): <p>A full description of the App Runner service that you specified in this request.</p>
     /// - On failure, responds with [`SdkError<DescribeServiceError>`](crate::operation::describe_service::DescribeServiceError)
-    pub fn describe_service(
-        &self,
-    ) -> crate::operation::describe_service::builders::DescribeServiceFluentBuilder {
-        crate::operation::describe_service::builders::DescribeServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_service(&self) -> crate::operation::describe_service::builders::DescribeServiceFluentBuilder {
+        crate::operation::describe_service::builders::DescribeServiceFluentBuilder::new(self.handle.clone())
     }
 }

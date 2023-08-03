@@ -10,10 +10,7 @@ impl CreateSiteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_site::CreateSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_site::CreateSiteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_site();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateSiteFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_site::CreateSite,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_site::CreateSite, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateSiteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateSiteFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_site::CreateSite,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_site::CreateSite, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
     > {
         self.customize_middleware().await
@@ -159,30 +147,17 @@ impl CreateSiteFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags to apply to a site. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags to apply to a site. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tags to apply to a site. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
@@ -191,10 +166,7 @@ impl CreateSiteFluentBuilder {
         self
     }
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
-    pub fn set_operating_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_operating_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_operating_address(input);
         self
     }
@@ -208,10 +180,7 @@ impl CreateSiteFluentBuilder {
         self
     }
     /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
@@ -225,17 +194,12 @@ impl CreateSiteFluentBuilder {
         self
     }
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
-    pub fn set_rack_physical_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::RackPhysicalProperties>,
-    ) -> Self {
+    pub fn set_rack_physical_properties(mut self, input: ::std::option::Option<crate::types::RackPhysicalProperties>) -> Self {
         self.inner = self.inner.set_rack_physical_properties(input);
         self
     }
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
-    pub fn get_rack_physical_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::RackPhysicalProperties> {
+    pub fn get_rack_physical_properties(&self) -> &::std::option::Option<crate::types::RackPhysicalProperties> {
         self.inner.get_rack_physical_properties()
     }
 }

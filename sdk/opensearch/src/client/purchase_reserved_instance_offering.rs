@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`reserved_instance_id(Option<String>)`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput::reserved_instance_id): <p>The ID of the Reserved Instance offering that was purchased.</p>
     ///   - [`reservation_name(Option<String>)`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput::reservation_name): <p>The customer-specified identifier used to track this reservation.</p>
     /// - On failure, responds with [`SdkError<PurchaseReservedInstanceOfferingError>`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingError)
-    pub fn purchase_reserved_instance_offering(&self) -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingFluentBuilder{
+    pub fn purchase_reserved_instance_offering(
+        &self,
+    ) -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingFluentBuilder {
         crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`scheduled_window_executions(Option<Vec<ScheduledWindowExecution>>)`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput::scheduled_window_executions): <p>Information about maintenance window executions scheduled for the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowScheduleError>`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError)
-    pub fn describe_maintenance_window_schedule(&self) -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder{
+    pub fn describe_maintenance_window_schedule(
+        &self,
+    ) -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder {
         crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::new(self.handle.clone())
     }
 }

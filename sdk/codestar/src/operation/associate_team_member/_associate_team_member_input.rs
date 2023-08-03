@@ -43,18 +43,14 @@ impl AssociateTeamMemberInput {
 }
 impl AssociateTeamMemberInput {
     /// Creates a new builder-style object to manufacture [`AssociateTeamMemberInput`](crate::operation::associate_team_member::AssociateTeamMemberInput).
-    pub fn builder(
-    ) -> crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder {
-        crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder {
+        crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTeamMemberInput`](crate::operation::associate_team_member::AssociateTeamMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTeamMemberInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl AssociateTeamMemberInputBuilder {
         &self.project_id
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -142,18 +132,14 @@ impl AssociateTeamMemberInputBuilder {
     /// Consumes the builder and constructs a [`AssociateTeamMemberInput`](crate::operation::associate_team_member::AssociateTeamMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_team_member::AssociateTeamMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_team_member::AssociateTeamMemberInput {
-                project_id: self.project_id,
-                client_request_token: self.client_request_token,
-                user_arn: self.user_arn,
-                project_role: self.project_role,
-                remote_access_allowed: self.remote_access_allowed,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_team_member::AssociateTeamMemberInput {
+            project_id: self.project_id,
+            client_request_token: self.client_request_token,
+            user_arn: self.user_arn,
+            project_role: self.project_role,
+            remote_access_allowed: self.remote_access_allowed,
+        })
     }
 }

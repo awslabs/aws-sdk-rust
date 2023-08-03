@@ -137,8 +137,7 @@ pub struct GetCurrentMetricDataInput {
     /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub sort_criteria:
-        ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
+    pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
 }
 impl GetCurrentMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -280,25 +279,20 @@ impl GetCurrentMetricDataInput {
     /// <ul>
     /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
     /// </ul>
-    pub fn sort_criteria(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CurrentMetricSortCriteria]> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<&[crate::types::CurrentMetricSortCriteria]> {
         self.sort_criteria.as_deref()
     }
 }
 impl GetCurrentMetricDataInput {
     /// Creates a new builder-style object to manufacture [`GetCurrentMetricDataInput`](crate::operation::get_current_metric_data::GetCurrentMetricDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder {
+    pub fn builder() -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder {
         crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCurrentMetricDataInput`](crate::operation::get_current_metric_data::GetCurrentMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentMetricDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::Filters>,
@@ -306,8 +300,7 @@ pub struct GetCurrentMetricDataInputBuilder {
     pub(crate) current_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) sort_criteria:
-        ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
+    pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
 }
 impl GetCurrentMetricDataInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -381,10 +374,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
     /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
     /// </ul>
-    pub fn set_groupings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
-    ) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
         self.groupings = input;
         self
     }
@@ -603,10 +593,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
-    pub fn set_current_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>,
-    ) -> Self {
+    pub fn set_current_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>) -> Self {
         self.current_metrics = input;
         self
     }
@@ -708,9 +695,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
-    pub fn get_current_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>> {
+    pub fn get_current_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>> {
         &self.current_metrics
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -764,10 +749,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <ul>
     /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
     /// </ul>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -776,28 +758,22 @@ impl GetCurrentMetricDataInputBuilder {
     /// <ul>
     /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
     /// </ul>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>> {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetCurrentMetricDataInput`](crate::operation::get_current_metric_data::GetCurrentMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_current_metric_data::GetCurrentMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_current_metric_data::GetCurrentMetricDataInput {
-                instance_id: self.instance_id,
-                filters: self.filters,
-                groupings: self.groupings,
-                current_metrics: self.current_metrics,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_criteria: self.sort_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_current_metric_data::GetCurrentMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_current_metric_data::GetCurrentMetricDataInput {
+            instance_id: self.instance_id,
+            filters: self.filters,
+            groupings: self.groupings,
+            current_metrics: self.current_metrics,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            sort_criteria: self.sort_criteria,
+        })
     }
 }

@@ -43,18 +43,14 @@ impl UpdateFleetCapacityInput {
 }
 impl UpdateFleetCapacityInput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetCapacityInput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityInput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder {
-        crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder {
+        crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetCapacityInput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetCapacityInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_instances: ::std::option::Option<i32>,
@@ -136,18 +132,14 @@ impl UpdateFleetCapacityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFleetCapacityInput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_fleet_capacity::UpdateFleetCapacityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_fleet_capacity::UpdateFleetCapacityInput {
-                fleet_id: self.fleet_id,
-                desired_instances: self.desired_instances,
-                min_size: self.min_size,
-                max_size: self.max_size,
-                location: self.location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_fleet_capacity::UpdateFleetCapacityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_fleet_capacity::UpdateFleetCapacityInput {
+            fleet_id: self.fleet_id,
+            desired_instances: self.desired_instances,
+            min_size: self.min_size,
+            max_size: self.max_size,
+            location: self.location,
+        })
     }
 }

@@ -33,19 +33,16 @@ impl ::aws_http::request_id::RequestId for BatchGetDeploymentTargetsOutput {
 }
 impl BatchGetDeploymentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentTargetsOutput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput).
-    pub fn builder() -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsOutputBuilder {
         crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentTargetsOutput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsOutputBuilder {
-    pub(crate) deployment_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
+    pub(crate) deployment_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentTargetsOutputBuilder {
@@ -73,10 +70,7 @@ impl BatchGetDeploymentTargetsOutputBuilder {
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
     /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
-    pub fn set_deployment_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
-    ) -> Self {
+    pub fn set_deployment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>) -> Self {
         self.deployment_targets = input;
         self
     }
@@ -87,9 +81,7 @@ impl BatchGetDeploymentTargetsOutputBuilder {
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
     /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
-    pub fn get_deployment_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>> {
+    pub fn get_deployment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>> {
         &self.deployment_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +94,7 @@ impl BatchGetDeploymentTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentTargetsOutput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput {
+    pub fn build(self) -> crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput {
         crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput {
             deployment_targets: self.deployment_targets,
             _request_id: self._request_id,

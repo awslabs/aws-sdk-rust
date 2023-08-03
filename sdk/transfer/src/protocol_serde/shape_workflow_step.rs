@@ -9,28 +9,19 @@ pub fn ser_workflow_step(
     if let Some(var_2) = &input.copy_step_details {
         #[allow(unused_mut)]
         let mut object_3 = object.key("CopyStepDetails").start_object();
-        crate::protocol_serde::shape_copy_step_details::ser_copy_step_details(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_copy_step_details::ser_copy_step_details(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.custom_step_details {
         #[allow(unused_mut)]
         let mut object_5 = object.key("CustomStepDetails").start_object();
-        crate::protocol_serde::shape_custom_step_details::ser_custom_step_details(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_custom_step_details::ser_custom_step_details(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.delete_step_details {
         #[allow(unused_mut)]
         let mut object_7 = object.key("DeleteStepDetails").start_object();
-        crate::protocol_serde::shape_delete_step_details::ser_delete_step_details(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_delete_step_details::ser_delete_step_details(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tag_step_details {
@@ -42,10 +33,7 @@ pub fn ser_workflow_step(
     if let Some(var_10) = &input.decrypt_step_details {
         #[allow(unused_mut)]
         let mut object_11 = object.key("DecryptStepDetails").start_object();
-        crate::protocol_serde::shape_decrypt_step_details::ser_decrypt_step_details(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_decrypt_step_details::ser_decrypt_step_details(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())
@@ -53,17 +41,9 @@ pub fn ser_workflow_step(
 
 pub(crate) fn de_workflow_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::WorkflowStep>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::WorkflowStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -73,64 +53,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::WorkflowStepType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WorkflowStepType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "CopyStepDetails" => {
-                                builder = builder.set_copy_step_details(
-                                    crate::protocol_serde::shape_copy_step_details::de_copy_step_details(tokens)?
-                                );
-                            }
-                            "CustomStepDetails" => {
-                                builder = builder.set_custom_step_details(
-                                    crate::protocol_serde::shape_custom_step_details::de_custom_step_details(tokens)?
-                                );
-                            }
-                            "DeleteStepDetails" => {
-                                builder = builder.set_delete_step_details(
-                                    crate::protocol_serde::shape_delete_step_details::de_delete_step_details(tokens)?
-                                );
-                            }
-                            "TagStepDetails" => {
-                                builder = builder.set_tag_step_details(
-                                    crate::protocol_serde::shape_tag_step_details::de_tag_step_details(tokens)?
-                                );
-                            }
-                            "DecryptStepDetails" => {
-                                builder = builder.set_decrypt_step_details(
-                                    crate::protocol_serde::shape_decrypt_step_details::de_decrypt_step_details(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "CopyStepDetails" => {
+                            builder = builder.set_copy_step_details(crate::protocol_serde::shape_copy_step_details::de_copy_step_details(tokens)?);
+                        }
+                        "CustomStepDetails" => {
+                            builder =
+                                builder.set_custom_step_details(crate::protocol_serde::shape_custom_step_details::de_custom_step_details(tokens)?);
+                        }
+                        "DeleteStepDetails" => {
+                            builder =
+                                builder.set_delete_step_details(crate::protocol_serde::shape_delete_step_details::de_delete_step_details(tokens)?);
+                        }
+                        "TagStepDetails" => {
+                            builder = builder.set_tag_step_details(crate::protocol_serde::shape_tag_step_details::de_tag_step_details(tokens)?);
+                        }
+                        "DecryptStepDetails" => {
+                            builder =
+                                builder.set_decrypt_step_details(crate::protocol_serde::shape_decrypt_step_details::de_decrypt_step_details(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -27,7 +27,7 @@ impl DescribeDataSetPermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDataSetPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsInputBuilder,
+    inner: crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsInputBuilder,
 }
 impl DescribeDataSetPermissionsFluentBuilder {
     /// Creates a new `DescribeDataSetPermissions`.
@@ -38,7 +38,7 @@ impl DescribeDataSetPermissionsFluentBuilder {
         }
     }
     /// Access the DescribeDataSetPermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeDataSetPermissionsFluentBuilder {
             crate::operation::describe_data_set_permissions::DescribeDataSetPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeDataSetPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeDataSetPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeDataSetPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DescribeDataSetPermissionsFluentBuilder {
             crate::operation::describe_data_set_permissions::DescribeDataSetPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

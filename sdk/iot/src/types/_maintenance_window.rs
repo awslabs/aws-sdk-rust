@@ -30,9 +30,7 @@ impl MaintenanceWindow {
 
 /// A builder for [`MaintenanceWindow`](crate::types::MaintenanceWindow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaintenanceWindowBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_minutes: ::std::option::Option<i32>,

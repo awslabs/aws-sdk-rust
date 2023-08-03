@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRescoreExecutionPlanOutput {
 }
 impl DeleteRescoreExecutionPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRescoreExecutionPlanOutput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanOutputBuilder{
+    pub fn builder() -> crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanOutputBuilder {
         crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRescoreExecutionPlanOutput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRescoreExecutionPlanOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRescoreExecutionPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRescoreExecutionPlanOutput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput {
+    pub fn build(self) -> crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput {
         crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput {
             _request_id: self._request_id,
         }

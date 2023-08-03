@@ -80,9 +80,7 @@ impl PipelineExecutionStep {
         self.metadata.as_ref()
     }
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
-    pub fn selective_execution_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelectiveExecutionResult> {
+    pub fn selective_execution_result(&self) -> ::std::option::Option<&crate::types::SelectiveExecutionResult> {
         self.selective_execution_result.as_ref()
     }
 }
@@ -95,9 +93,7 @@ impl PipelineExecutionStep {
 
 /// A builder for [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineExecutionStepBuilder {
     pub(crate) step_name: ::std::option::Option<::std::string::String>,
     pub(crate) step_display_name: ::std::option::Option<::std::string::String>,
@@ -109,8 +105,7 @@ pub struct PipelineExecutionStepBuilder {
     pub(crate) attempt_count: ::std::option::Option<i32>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>,
-    pub(crate) selective_execution_result:
-        ::std::option::Option<crate::types::SelectiveExecutionResult>,
+    pub(crate) selective_execution_result: ::std::option::Option<crate::types::SelectiveExecutionResult>,
 }
 impl PipelineExecutionStepBuilder {
     /// <p>The name of the step that is executed.</p>
@@ -128,18 +123,12 @@ impl PipelineExecutionStepBuilder {
         &self.step_name
     }
     /// <p>The display name of the step.</p>
-    pub fn step_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the step.</p>
-    pub fn set_step_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_display_name = input;
         self
     }
@@ -148,18 +137,12 @@ impl PipelineExecutionStepBuilder {
         &self.step_display_name
     }
     /// <p>The description of the step.</p>
-    pub fn step_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the step.</p>
-    pub fn set_step_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_description = input;
         self
     }
@@ -173,10 +156,7 @@ impl PipelineExecutionStepBuilder {
         self
     }
     /// <p>The time that the step started executing.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -190,10 +170,7 @@ impl PipelineExecutionStepBuilder {
         self
     }
     /// <p>The time that the step stopped executing.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -207,10 +184,7 @@ impl PipelineExecutionStepBuilder {
         self
     }
     /// <p>The status of the step execution.</p>
-    pub fn set_step_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StepStatus>,
-    ) -> Self {
+    pub fn set_step_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
         self.step_status = input;
         self
     }
@@ -224,10 +198,7 @@ impl PipelineExecutionStepBuilder {
         self
     }
     /// <p>If this pipeline execution step was cached, details on the cache hit.</p>
-    pub fn set_cache_hit_result(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheHitResult>,
-    ) -> Self {
+    pub fn set_cache_hit_result(mut self, input: ::std::option::Option<crate::types::CacheHitResult>) -> Self {
         self.cache_hit_result = input;
         self
     }
@@ -250,18 +221,12 @@ impl PipelineExecutionStepBuilder {
         &self.attempt_count
     }
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -275,39 +240,26 @@ impl PipelineExecutionStepBuilder {
         self
     }
     /// <p>Metadata to run the pipeline step.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata to run the pipeline step.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineExecutionStepMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::PipelineExecutionStepMetadata> {
         &self.metadata
     }
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
-    pub fn selective_execution_result(
-        mut self,
-        input: crate::types::SelectiveExecutionResult,
-    ) -> Self {
+    pub fn selective_execution_result(mut self, input: crate::types::SelectiveExecutionResult) -> Self {
         self.selective_execution_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
-    pub fn set_selective_execution_result(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectiveExecutionResult>,
-    ) -> Self {
+    pub fn set_selective_execution_result(mut self, input: ::std::option::Option<crate::types::SelectiveExecutionResult>) -> Self {
         self.selective_execution_result = input;
         self
     }
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
-    pub fn get_selective_execution_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelectiveExecutionResult> {
+    pub fn get_selective_execution_result(&self) -> &::std::option::Option<crate::types::SelectiveExecutionResult> {
         &self.selective_execution_result
     }
     /// Consumes the builder and constructs a [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).

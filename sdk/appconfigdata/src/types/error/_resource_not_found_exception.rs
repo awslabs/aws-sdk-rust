@@ -12,9 +12,7 @@ pub struct ResourceNotFoundException {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>A map indicating which parameters in the request reference the resource that was not found.</p>
     #[doc(hidden)]
-    pub referenced_by: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub referenced_by: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
@@ -23,11 +21,7 @@ impl ResourceNotFoundException {
         self.resource_type.as_ref()
     }
     /// <p>A map indicating which parameters in the request reference the resource that was not found.</p>
-    pub fn referenced_by(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn referenced_by(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.referenced_by.as_ref()
     }
 }
@@ -69,15 +63,11 @@ impl ResourceNotFoundException {
 
 /// A builder for [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) referenced_by: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) referenced_by: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
@@ -101,10 +91,7 @@ impl ResourceNotFoundExceptionBuilder {
         self
     }
     /// <p>The type of resource that was not found.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -117,11 +104,7 @@ impl ResourceNotFoundExceptionBuilder {
     /// To override the contents of this collection use [`set_referenced_by`](Self::set_referenced_by).
     ///
     /// <p>A map indicating which parameters in the request reference the resource that was not found.</p>
-    pub fn referenced_by(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn referenced_by(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.referenced_by.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.referenced_by = ::std::option::Option::Some(hash_map);
@@ -130,19 +113,13 @@ impl ResourceNotFoundExceptionBuilder {
     /// <p>A map indicating which parameters in the request reference the resource that was not found.</p>
     pub fn set_referenced_by(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.referenced_by = input;
         self
     }
     /// <p>A map indicating which parameters in the request reference the resource that was not found.</p>
-    pub fn get_referenced_by(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_referenced_by(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.referenced_by
     }
     /// Sets error metadata
@@ -152,10 +129,7 @@ impl ResourceNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

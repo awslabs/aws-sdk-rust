@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`database_preferences(Option<DatabasePreferences>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::database_preferences): <p> The transformation preferences for database applications. </p>
     ///   - [`application_mode(Option<ApplicationMode>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::application_mode): <p>The classification for application component types.</p>
     /// - On failure, responds with [`SdkError<GetPortfolioPreferencesError>`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesError)
-    pub fn get_portfolio_preferences(
-        &self,
-    ) -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesFluentBuilder
-    {
+    pub fn get_portfolio_preferences(&self) -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesFluentBuilder {
         crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

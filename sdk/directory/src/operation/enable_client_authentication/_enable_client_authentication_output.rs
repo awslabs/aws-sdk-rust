@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableClientAuthenticationOutput {
 }
 impl EnableClientAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`EnableClientAuthenticationOutput`](crate::operation::enable_client_authentication::EnableClientAuthenticationOutput).
-    pub fn builder() -> crate::operation::enable_client_authentication::builders::EnableClientAuthenticationOutputBuilder{
+    pub fn builder() -> crate::operation::enable_client_authentication::builders::EnableClientAuthenticationOutputBuilder {
         crate::operation::enable_client_authentication::builders::EnableClientAuthenticationOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableClientAuthenticationOutput`](crate::operation::enable_client_authentication::EnableClientAuthenticationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableClientAuthenticationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl EnableClientAuthenticationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableClientAuthenticationOutput`](crate::operation::enable_client_authentication::EnableClientAuthenticationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_client_authentication::EnableClientAuthenticationOutput {
+    pub fn build(self) -> crate::operation::enable_client_authentication::EnableClientAuthenticationOutput {
         crate::operation::enable_client_authentication::EnableClientAuthenticationOutput {
             _request_id: self._request_id,
         }

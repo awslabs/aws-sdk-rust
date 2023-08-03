@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`total_filtered_count(i32)`](crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput::total_filtered_count): <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     ///   - [`resolver_query_log_config_associations(Option<Vec<ResolverQueryLogConfigAssociation>>)`](crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput::resolver_query_log_config_associations): <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     /// - On failure, responds with [`SdkError<ListResolverQueryLogConfigAssociationsError>`](crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError)
-    pub fn list_resolver_query_log_config_associations(&self) -> crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsFluentBuilder{
-        crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn list_resolver_query_log_config_associations(
+        &self,
+    ) -> crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsFluentBuilder {
+        crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

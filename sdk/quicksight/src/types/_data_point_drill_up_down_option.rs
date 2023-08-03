@@ -23,9 +23,7 @@ impl DataPointDrillUpDownOption {
 
 /// A builder for [`DataPointDrillUpDownOption`](crate::types::DataPointDrillUpDownOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPointDrillUpDownOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
@@ -36,17 +34,12 @@ impl DataPointDrillUpDownOptionBuilder {
         self
     }
     /// <p>The status of the drill down options of data points.</p>
-    pub fn set_availability_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardBehavior>,
-    ) -> Self {
+    pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
         self.availability_status = input;
         self
     }
     /// <p>The status of the drill down options of data points.</p>
-    pub fn get_availability_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+    pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
         &self.availability_status
     }
     /// Consumes the builder and constructs a [`DataPointDrillUpDownOption`](crate::types::DataPointDrillUpDownOption).

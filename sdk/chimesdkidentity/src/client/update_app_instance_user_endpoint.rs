@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`app_instance_user_arn(Option<String>)`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     ///   - [`endpoint_id(Option<String>)`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput::endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateAppInstanceUserEndpointError>`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError)
-    pub fn update_app_instance_user_endpoint(&self) -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointFluentBuilder{
+    pub fn update_app_instance_user_endpoint(
+        &self,
+    ) -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointFluentBuilder {
         crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointFluentBuilder::new(self.handle.clone())
     }
 }

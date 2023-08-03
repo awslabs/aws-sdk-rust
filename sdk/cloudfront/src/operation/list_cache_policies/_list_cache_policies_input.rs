@@ -37,17 +37,14 @@ impl ListCachePoliciesInput {
 }
 impl ListCachePoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListCachePoliciesInput`](crate::operation::list_cache_policies::ListCachePoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_cache_policies::builders::ListCachePoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_cache_policies::builders::ListCachePoliciesInputBuilder {
         crate::operation::list_cache_policies::builders::ListCachePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCachePoliciesInput`](crate::operation::list_cache_policies::ListCachePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCachePoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CachePolicyType>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -111,16 +108,11 @@ impl ListCachePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListCachePoliciesInput`](crate::operation::list_cache_policies::ListCachePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cache_policies::ListCachePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cache_policies::ListCachePoliciesInput {
-                r#type: self.r#type,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_cache_policies::ListCachePoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_cache_policies::ListCachePoliciesInput {
+            r#type: self.r#type,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

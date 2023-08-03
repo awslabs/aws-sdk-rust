@@ -5,8 +5,7 @@
 pub struct ListLensSharesOutput {
     /// <p>A list of lens share summaries.</p>
     #[doc(hidden)]
-    pub lens_share_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>>,
+    pub lens_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl ListLensSharesOutput {
 
 /// A builder for [`ListLensSharesOutput`](crate::operation::list_lens_shares::ListLensSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensSharesOutputBuilder {
-    pub(crate) lens_share_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>>,
+    pub(crate) lens_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListLensSharesOutputBuilder {
         self
     }
     /// <p>A list of lens share summaries.</p>
-    pub fn set_lens_share_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>>,
-    ) -> Self {
+    pub fn set_lens_share_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>>) -> Self {
         self.lens_share_summaries = input;
         self
     }
     /// <p>A list of lens share summaries.</p>
-    pub fn get_lens_share_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>> {
+    pub fn get_lens_share_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LensShareSummary>> {
         &self.lens_share_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

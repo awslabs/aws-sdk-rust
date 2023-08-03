@@ -7,19 +7,13 @@ pub fn ser_aggregation_request(
         crate::types::AggregationRequest::AccountAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_6.key("accountAggregation").start_object();
-            crate::protocol_serde::shape_account_aggregation::ser_account_aggregation(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_account_aggregation::ser_account_aggregation(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::AggregationRequest::AmiAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_6.key("amiAggregation").start_object();
-            crate::protocol_serde::shape_ami_aggregation::ser_ami_aggregation(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ami_aggregation::ser_ami_aggregation(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::AggregationRequest::AwsEcrContainerAggregation(inner) => {
@@ -31,64 +25,43 @@ pub fn ser_aggregation_request(
         crate::types::AggregationRequest::Ec2InstanceAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_6.key("ec2InstanceAggregation").start_object();
-            crate::protocol_serde::shape_ec2_instance_aggregation::ser_ec2_instance_aggregation(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ec2_instance_aggregation::ser_ec2_instance_aggregation(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::AggregationRequest::FindingTypeAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_5 = object_6.key("findingTypeAggregation").start_object();
-            crate::protocol_serde::shape_finding_type_aggregation::ser_finding_type_aggregation(
-                &mut object_5,
-                inner,
-            )?;
+            crate::protocol_serde::shape_finding_type_aggregation::ser_finding_type_aggregation(&mut object_5, inner)?;
             object_5.finish();
         }
         crate::types::AggregationRequest::ImageLayerAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_6 = object_6.key("imageLayerAggregation").start_object();
-            crate::protocol_serde::shape_image_layer_aggregation::ser_image_layer_aggregation(
-                &mut object_6,
-                inner,
-            )?;
+            crate::protocol_serde::shape_image_layer_aggregation::ser_image_layer_aggregation(&mut object_6, inner)?;
             object_6.finish();
         }
         crate::types::AggregationRequest::PackageAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_7 = object_6.key("packageAggregation").start_object();
-            crate::protocol_serde::shape_package_aggregation::ser_package_aggregation(
-                &mut object_7,
-                inner,
-            )?;
+            crate::protocol_serde::shape_package_aggregation::ser_package_aggregation(&mut object_7, inner)?;
             object_7.finish();
         }
         crate::types::AggregationRequest::RepositoryAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_8 = object_6.key("repositoryAggregation").start_object();
-            crate::protocol_serde::shape_repository_aggregation::ser_repository_aggregation(
-                &mut object_8,
-                inner,
-            )?;
+            crate::protocol_serde::shape_repository_aggregation::ser_repository_aggregation(&mut object_8, inner)?;
             object_8.finish();
         }
         crate::types::AggregationRequest::TitleAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_9 = object_6.key("titleAggregation").start_object();
-            crate::protocol_serde::shape_title_aggregation::ser_title_aggregation(
-                &mut object_9,
-                inner,
-            )?;
+            crate::protocol_serde::shape_title_aggregation::ser_title_aggregation(&mut object_9, inner)?;
             object_9.finish();
         }
         crate::types::AggregationRequest::LambdaLayerAggregation(inner) => {
             #[allow(unused_mut)]
             let mut object_10 = object_6.key("lambdaLayerAggregation").start_object();
-            crate::protocol_serde::shape_lambda_layer_aggregation::ser_lambda_layer_aggregation(
-                &mut object_10,
-                inner,
-            )?;
+            crate::protocol_serde::shape_lambda_layer_aggregation::ser_lambda_layer_aggregation(&mut object_10, inner)?;
             object_10.finish();
         }
         crate::types::AggregationRequest::LambdaFunctionAggregation(inner) => {
@@ -98,11 +71,9 @@ pub fn ser_aggregation_request(
             object_11.finish();
         }
         crate::types::AggregationRequest::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AggregationRequest",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "AggregationRequest",
+            ))
         }
     }
     Ok(())

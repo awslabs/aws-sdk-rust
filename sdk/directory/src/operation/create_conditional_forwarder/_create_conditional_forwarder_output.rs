@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateConditionalForwarderOutput {
 }
 impl CreateConditionalForwarderOutput {
     /// Creates a new builder-style object to manufacture [`CreateConditionalForwarderOutput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput).
-    pub fn builder() -> crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderOutputBuilder{
+    pub fn builder() -> crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderOutputBuilder {
         crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConditionalForwarderOutput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConditionalForwarderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl CreateConditionalForwarderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateConditionalForwarderOutput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput {
+    pub fn build(self) -> crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput {
         crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput {
             _request_id: self._request_id,
         }

@@ -38,7 +38,10 @@ pub fn ser_list_intent_stage_metrics_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_analytics_intent_stage_group_by_specification::ser_analytics_intent_stage_group_by_specification(&mut object_13, item_12)?;
+                crate::protocol_serde::shape_analytics_intent_stage_group_by_specification::ser_analytics_intent_stage_group_by_specification(
+                    &mut object_13,
+                    item_12,
+                )?;
                 object_13.finish();
             }
         }

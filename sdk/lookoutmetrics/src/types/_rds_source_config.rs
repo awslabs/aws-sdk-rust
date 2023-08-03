@@ -72,9 +72,7 @@ impl RdsSourceConfig {
 
 /// A builder for [`RdsSourceConfig`](crate::types::RdsSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsSourceConfigBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) database_host: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct RdsSourceConfigBuilder {
 }
 impl RdsSourceConfigBuilder {
     /// <p>A string identifying the database instance.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string identifying the database instance.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -107,18 +99,12 @@ impl RdsSourceConfigBuilder {
         &self.db_instance_identifier
     }
     /// <p>The host name of the database.</p>
-    pub fn database_host(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The host name of the database.</p>
-    pub fn set_database_host(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_host = input;
         self
     }
@@ -141,18 +127,12 @@ impl RdsSourceConfigBuilder {
         &self.database_port
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn secret_manager_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_manager_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn set_secret_manager_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_manager_arn = input;
         self
     }
@@ -161,18 +141,12 @@ impl RdsSourceConfigBuilder {
         &self.secret_manager_arn
     }
     /// <p>The name of the RDS database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the RDS database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -214,10 +188,7 @@ impl RdsSourceConfigBuilder {
         self
     }
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }

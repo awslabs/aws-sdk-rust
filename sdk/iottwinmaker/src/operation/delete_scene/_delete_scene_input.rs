@@ -29,9 +29,7 @@ impl DeleteSceneInput {
 
 /// A builder for [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSceneInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DeleteSceneInputBuilder {
         &self.scene_id
     }
     /// Consumes the builder and constructs a [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_scene::DeleteSceneInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scene::DeleteSceneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_scene::DeleteSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

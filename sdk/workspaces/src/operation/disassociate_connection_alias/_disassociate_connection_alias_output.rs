@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateConnectionAliasOutput {
 }
 impl DisassociateConnectionAliasOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectionAliasOutput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput).
-    pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasOutputBuilder {
         crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConnectionAliasOutput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConnectionAliasOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateConnectionAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateConnectionAliasOutput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput {
+    pub fn build(self) -> crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput {
         crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput {
             _request_id: self._request_id,
         }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`settings(Option<Vec<Setting>>)`](crate::operation::list_account_settings::ListAccountSettingsOutput::settings): <p>The account settings for the resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_settings::ListAccountSettingsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListAccountSettingsError>`](crate::operation::list_account_settings::ListAccountSettingsError)
-    pub fn list_account_settings(
-        &self,
-    ) -> crate::operation::list_account_settings::builders::ListAccountSettingsFluentBuilder {
-        crate::operation::list_account_settings::builders::ListAccountSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_account_settings(&self) -> crate::operation::list_account_settings::builders::ListAccountSettingsFluentBuilder {
+        crate::operation::list_account_settings::builders::ListAccountSettingsFluentBuilder::new(self.handle.clone())
     }
 }

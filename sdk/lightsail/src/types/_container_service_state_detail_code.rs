@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ContainerServiceStateDetailCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,21 +73,15 @@ impl ::std::convert::From<&str> for ContainerServiceStateDetailCode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVATING_DEPLOYMENT" => ContainerServiceStateDetailCode::ActivatingDeployment,
-            "CERTIFICATE_LIMIT_EXCEEDED" => {
-                ContainerServiceStateDetailCode::CertificateLimitExceeded
-            }
+            "CERTIFICATE_LIMIT_EXCEEDED" => ContainerServiceStateDetailCode::CertificateLimitExceeded,
             "CREATING_DEPLOYMENT" => ContainerServiceStateDetailCode::CreatingDeployment,
-            "CREATING_NETWORK_INFRASTRUCTURE" => {
-                ContainerServiceStateDetailCode::CreatingNetworkInfrastructure
-            }
+            "CREATING_NETWORK_INFRASTRUCTURE" => ContainerServiceStateDetailCode::CreatingNetworkInfrastructure,
             "CREATING_SYSTEM_RESOURCES" => ContainerServiceStateDetailCode::CreatingSystemResources,
             "EVALUATING_HEALTH_CHECK" => ContainerServiceStateDetailCode::EvaluatingHealthCheck,
             "PROVISIONING_CERTIFICATE" => ContainerServiceStateDetailCode::ProvisioningCertificate,
             "PROVISIONING_SERVICE" => ContainerServiceStateDetailCode::ProvisioningService,
             "UNKNOWN_ERROR" => ContainerServiceStateDetailCode::UnknownError,
-            other => ContainerServiceStateDetailCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ContainerServiceStateDetailCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -109,13 +97,9 @@ impl ContainerServiceStateDetailCode {
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServiceStateDetailCode::ActivatingDeployment => "ACTIVATING_DEPLOYMENT",
-            ContainerServiceStateDetailCode::CertificateLimitExceeded => {
-                "CERTIFICATE_LIMIT_EXCEEDED"
-            }
+            ContainerServiceStateDetailCode::CertificateLimitExceeded => "CERTIFICATE_LIMIT_EXCEEDED",
             ContainerServiceStateDetailCode::CreatingDeployment => "CREATING_DEPLOYMENT",
-            ContainerServiceStateDetailCode::CreatingNetworkInfrastructure => {
-                "CREATING_NETWORK_INFRASTRUCTURE"
-            }
+            ContainerServiceStateDetailCode::CreatingNetworkInfrastructure => "CREATING_NETWORK_INFRASTRUCTURE",
             ContainerServiceStateDetailCode::CreatingSystemResources => "CREATING_SYSTEM_RESOURCES",
             ContainerServiceStateDetailCode::EvaluatingHealthCheck => "EVALUATING_HEALTH_CHECK",
             ContainerServiceStateDetailCode::ProvisioningCertificate => "PROVISIONING_CERTIFICATE",

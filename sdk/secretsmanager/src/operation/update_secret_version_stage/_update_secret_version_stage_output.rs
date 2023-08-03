@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateSecretVersionStageOutput {
 }
 impl UpdateSecretVersionStageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageOutput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput).
-    pub fn builder() -> crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageOutputBuilder{
+    pub fn builder() -> crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageOutputBuilder {
         crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecretVersionStageOutput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecretVersionStageOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl UpdateSecretVersionStageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSecretVersionStageOutput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput {
+    pub fn build(self) -> crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput {
         crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput {
             arn: self.arn,
             name: self.name,

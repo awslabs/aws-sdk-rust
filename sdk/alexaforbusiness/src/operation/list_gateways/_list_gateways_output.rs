@@ -35,9 +35,7 @@ impl ListGatewaysOutput {
 
 /// A builder for [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewaysOutputBuilder {
     pub(crate) gateways: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListGatewaysOutputBuilder {
         self
     }
     /// <p>The gateways in the list.</p>
-    pub fn set_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
-    ) -> Self {
+    pub fn set_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>) -> Self {
         self.gateways = input;
         self
     }
     /// <p>The gateways in the list.</p>
-    pub fn get_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
+    pub fn get_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
         &self.gateways
     }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>

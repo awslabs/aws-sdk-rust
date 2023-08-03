@@ -48,7 +48,10 @@ pub fn ser_aws_dynamo_db_table_global_secondary_index(
     if let Some(var_10) = &input.provisioned_throughput {
         #[allow(unused_mut)]
         let mut object_11 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::ser_aws_dynamo_db_table_provisioned_throughput(&mut object_11, var_10)?;
+        crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::ser_aws_dynamo_db_table_provisioned_throughput(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
     Ok(())
@@ -56,114 +59,86 @@ pub fn ser_aws_dynamo_db_table_global_secondary_index(
 
 pub(crate) fn de_aws_dynamo_db_table_global_secondary_index<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsDynamoDbTableGlobalSecondaryIndexBuilder::default();
+            let mut builder = crate::types::builders::AwsDynamoDbTableGlobalSecondaryIndexBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Backfilling" => {
-                                builder = builder.set_backfilling(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "IndexArn" => {
-                                builder = builder.set_index_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Backfilling" => {
+                            builder = builder.set_backfilling(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IndexArn" => {
+                            builder = builder.set_index_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "IndexName" => {
-                                builder = builder.set_index_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "IndexName" => {
+                            builder = builder.set_index_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "IndexSizeBytes" => {
-                                builder = builder.set_index_size_bytes(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "IndexSizeBytes" => {
+                            builder = builder.set_index_size_bytes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "IndexStatus" => {
-                                builder = builder.set_index_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "IndexStatus" => {
+                            builder = builder.set_index_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ItemCount" => {
-                                builder = builder.set_item_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ItemCount" => {
+                            builder = builder.set_item_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "KeySchema" => {
-                                builder = builder.set_key_schema(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_key_schema_list::de_aws_dynamo_db_table_key_schema_list(tokens)?
-                                );
-                            }
-                            "Projection" => {
-                                builder = builder.set_projection(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_projection::de_aws_dynamo_db_table_projection(tokens)?
-                                );
-                            }
-                            "ProvisionedThroughput" => {
-                                builder = builder.set_provisioned_throughput(
+                            );
+                        }
+                        "KeySchema" => {
+                            builder = builder.set_key_schema(
+                                crate::protocol_serde::shape_aws_dynamo_db_table_key_schema_list::de_aws_dynamo_db_table_key_schema_list(tokens)?,
+                            );
+                        }
+                        "Projection" => {
+                            builder = builder.set_projection(
+                                crate::protocol_serde::shape_aws_dynamo_db_table_projection::de_aws_dynamo_db_table_projection(tokens)?,
+                            );
+                        }
+                        "ProvisionedThroughput" => {
+                            builder = builder.set_provisioned_throughput(
                                     crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::de_aws_dynamo_db_table_provisioned_throughput(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

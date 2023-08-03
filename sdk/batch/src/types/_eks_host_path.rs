@@ -23,9 +23,7 @@ impl EksHostPath {
 
 /// A builder for [`EksHostPath`](crate::types::EksHostPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksHostPathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }

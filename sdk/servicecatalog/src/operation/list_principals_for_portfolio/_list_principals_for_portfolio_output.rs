@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPrincipalsForPortfolioOutput {
 }
 impl ListPrincipalsForPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalsForPortfolioOutput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput).
-    pub fn builder() -> crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioOutputBuilder {
         crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrincipalsForPortfolioOutput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalsForPortfolioOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -56,32 +54,21 @@ impl ListPrincipalsForPortfolioOutputBuilder {
         self
     }
     /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.principals = input;
         self
     }
     /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         &self.principals
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -99,9 +86,7 @@ impl ListPrincipalsForPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPrincipalsForPortfolioOutput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput {
+    pub fn build(self) -> crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput {
         crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput {
             principals: self.principals,
             next_page_token: self.next_page_token,

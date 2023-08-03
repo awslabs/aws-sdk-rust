@@ -120,9 +120,7 @@ impl ProgressDetail {
 
 /// A builder for [`ProgressDetail`](crate::types::ProgressDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProgressDetailBuilder {
     pub(crate) current_progress: ::std::option::Option<crate::types::RobotDeploymentStep>,
     pub(crate) percent_done: ::std::option::Option<f32>,
@@ -212,10 +210,7 @@ impl ProgressDetailBuilder {
     /// <p>Deployment is complete.</p>
     /// </dd>
     /// </dl>
-    pub fn set_current_progress(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotDeploymentStep>,
-    ) -> Self {
+    pub fn set_current_progress(mut self, input: ::std::option::Option<crate::types::RobotDeploymentStep>) -> Self {
         self.current_progress = input;
         self
     }
@@ -258,9 +253,7 @@ impl ProgressDetailBuilder {
     /// <p>Deployment is complete.</p>
     /// </dd>
     /// </dl>
-    pub fn get_current_progress(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotDeploymentStep> {
+    pub fn get_current_progress(&self) -> &::std::option::Option<crate::types::RobotDeploymentStep> {
         &self.current_progress
     }
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
@@ -283,10 +276,7 @@ impl ProgressDetailBuilder {
         self
     }
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    pub fn set_estimated_time_remaining_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_estimated_time_remaining_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.estimated_time_remaining_seconds = input;
         self
     }
@@ -295,18 +285,12 @@ impl ProgressDetailBuilder {
         &self.estimated_time_remaining_seconds
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn target_resource(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn set_target_resource(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_resource = input;
         self
     }

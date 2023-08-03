@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelPipelineReprocessingOutput {
 }
 impl CancelPipelineReprocessingOutput {
     /// Creates a new builder-style object to manufacture [`CancelPipelineReprocessingOutput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput).
-    pub fn builder() -> crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingOutputBuilder {
         crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelPipelineReprocessingOutput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelPipelineReprocessingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CancelPipelineReprocessingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelPipelineReprocessingOutput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput {
+    pub fn build(self) -> crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput {
         crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput {
             _request_id: self._request_id,
         }

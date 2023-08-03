@@ -13,9 +13,7 @@ pub fn ser_dynamic_card_verification_value(
         object.key("ServiceCode").string(var_3.as_str());
     }
     if let Some(var_4) = &input.application_transaction_counter {
-        object
-            .key("ApplicationTransactionCounter")
-            .string(var_4.as_str());
+        object.key("ApplicationTransactionCounter").string(var_4.as_str());
     }
     Ok(())
 }

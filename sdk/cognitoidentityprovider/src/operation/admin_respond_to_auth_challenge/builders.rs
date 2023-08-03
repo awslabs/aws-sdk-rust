@@ -30,7 +30,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminRespondToAuthChallengeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder,
+    inner: crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder,
 }
 impl AdminRespondToAuthChallengeFluentBuilder {
     /// Creates a new `AdminRespondToAuthChallenge`.
@@ -41,7 +41,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         }
     }
     /// Access the AdminRespondToAuthChallenge as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallenge,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallenge,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +147,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
-    pub fn set_challenge_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeNameType>,
-    ) -> Self {
+    pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.inner = self.inner.set_challenge_name(input);
         self
     }
@@ -209,9 +195,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
     pub fn set_challenge_responses(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_challenge_responses(input);
         self
@@ -229,11 +213,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
-    pub fn get_challenge_responses(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_challenge_responses(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_challenge_responses()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
@@ -256,17 +236,12 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.inner = self.inner.set_analytics_metadata(input);
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         self.inner.get_analytics_metadata()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -275,10 +250,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDataType>,
-    ) -> Self {
+    pub fn set_context_data(mut self, input: ::std::option::Option<crate::types::ContextDataType>) -> Self {
         self.inner = self.inner.set_context_data(input);
         self
     }
@@ -342,9 +314,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -370,11 +340,7 @@ impl AdminRespondToAuthChallengeFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

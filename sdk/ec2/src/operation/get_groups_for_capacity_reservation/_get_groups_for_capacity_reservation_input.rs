@@ -36,16 +36,14 @@ impl GetGroupsForCapacityReservationInput {
 }
 impl GetGroupsForCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`GetGroupsForCapacityReservationInput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput).
-    pub fn builder() -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder {
         crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupsForCapacityReservationInput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupsForCapacityReservationInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct GetGroupsForCapacityReservationInputBuilder {
 }
 impl GetGroupsForCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -124,15 +116,11 @@ impl GetGroupsForCapacityReservationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput {
-                capacity_reservation_id: self.capacity_reservation_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                capacity_reservation_id: self.capacity_reservation_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

@@ -6,10 +6,7 @@ pub fn ser_put_signing_profile_input(
     if let Some(var_1) = &input.overrides {
         #[allow(unused_mut)]
         let mut object_2 = object.key("overrides").start_object();
-        crate::protocol_serde::shape_signing_platform_overrides::ser_signing_platform_overrides(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_signing_platform_overrides::ser_signing_platform_overrides(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.platform_id {
@@ -18,10 +15,7 @@ pub fn ser_put_signing_profile_input(
     if let Some(var_4) = &input.signature_validity_period {
         #[allow(unused_mut)]
         let mut object_5 = object.key("signatureValidityPeriod").start_object();
-        crate::protocol_serde::shape_signature_validity_period::ser_signature_validity_period(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_signature_validity_period::ser_signature_validity_period(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.signing_material {

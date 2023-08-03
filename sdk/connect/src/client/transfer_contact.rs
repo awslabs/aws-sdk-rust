@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`contact_id(Option<String>)`](crate::operation::transfer_contact::TransferContactOutput::contact_id): <p>The identifier of the contact in this instance of Amazon Connect. </p>
     ///   - [`contact_arn(Option<String>)`](crate::operation::transfer_contact::TransferContactOutput::contact_arn): <p>The Amazon Resource Name (ARN) of the contact.</p>
     /// - On failure, responds with [`SdkError<TransferContactError>`](crate::operation::transfer_contact::TransferContactError)
-    pub fn transfer_contact(
-        &self,
-    ) -> crate::operation::transfer_contact::builders::TransferContactFluentBuilder {
-        crate::operation::transfer_contact::builders::TransferContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn transfer_contact(&self) -> crate::operation::transfer_contact::builders::TransferContactFluentBuilder {
+        crate::operation::transfer_contact::builders::TransferContactFluentBuilder::new(self.handle.clone())
     }
 }

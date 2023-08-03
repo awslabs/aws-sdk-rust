@@ -27,79 +27,51 @@ impl ListRecommendationTemplatesInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_recommendation_templates::ListRecommendationTemplatesInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/list-recommendation-templates")
-                    .expect("formatting should succeed");
+                ::std::write!(output, "/list-recommendation-templates").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(
                 _input: &crate::operation::list_recommendation_templates::ListRecommendationTemplatesInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.assessment_arn;
-                let inner_1 = inner_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let inner_1 = inner_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("assessment_arn", "cannot be empty or unset"))?;
+                if inner_1.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "assessment_arn",
                         "cannot be empty or unset",
-                    )
-                })?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "assessment_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                query.push_kv(
-                    "assessmentArn",
-                    &::aws_smithy_http::query::fmt_string(&inner_1),
-                );
+                query.push_kv("assessmentArn", &::aws_smithy_http::query::fmt_string(&inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.reverse_order {
                     if *inner_2 {
-                        query.push_kv(
-                            "reverseOrder",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
-                        );
+                        query.push_kv("reverseOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.status {
                     {
                         for inner_4 in inner_3 {
-                            query
-                                .push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.recommendation_template_arn {
                     {
-                        query.push_kv(
-                            "recommendationTemplateArn",
-                            &::aws_smithy_http::query::fmt_string(&inner_5),
-                        );
+                        query.push_kv("recommendationTemplateArn", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.name {
@@ -114,10 +86,7 @@ impl ListRecommendationTemplatesInput {
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
                     if *inner_8 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                        );
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -126,10 +95,7 @@ impl ListRecommendationTemplatesInput {
             fn update_http_builder(
                 input: &crate::operation::list_recommendation_templates::ListRecommendationTemplatesInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -151,10 +117,8 @@ impl ListRecommendationTemplatesInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -163,21 +127,14 @@ impl ListRecommendationTemplatesInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
         let op = ::aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::list_recommendation_templates::ListRecommendationTemplates::new(),
@@ -214,7 +171,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for ListRecommendationTemp
         if !success && status != 200 {
             crate::protocol_serde::shape_list_recommendation_templates::de_list_recommendation_templates_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_recommendation_templates::de_list_recommendation_templates_http_response_with_props(status, headers, body)
+            crate::protocol_serde::shape_list_recommendation_templates::de_list_recommendation_templates_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
     fn sensitive(&self) -> bool {
@@ -246,9 +205,7 @@ pub enum ListRecommendationTemplatesError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for ListRecommendationTemplatesError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -269,32 +226,18 @@ impl ::std::fmt::Display for ListRecommendationTemplatesError {
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ListRecommendationTemplatesError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListRecommendationTemplatesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ThrottlingException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ValidationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::list_recommendation_templates::ListRecommendationTemplatesError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::list_recommendation_templates::ListRecommendationTemplatesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -310,27 +253,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListRecommendationTemplates
 impl ListRecommendationTemplatesError {
     /// Creates the `ListRecommendationTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `ListRecommendationTemplatesError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

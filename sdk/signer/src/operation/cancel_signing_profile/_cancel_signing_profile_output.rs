@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelSigningProfileOutput {
 }
 impl CancelSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`CancelSigningProfileOutput`](crate::operation::cancel_signing_profile::CancelSigningProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileOutputBuilder {
         crate::operation::cancel_signing_profile::builders::CancelSigningProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSigningProfileOutput`](crate::operation::cancel_signing_profile::CancelSigningProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSigningProfileOutputBuilder {
     _request_id: Option<String>,
 }

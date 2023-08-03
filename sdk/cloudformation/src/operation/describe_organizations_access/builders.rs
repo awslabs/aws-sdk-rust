@@ -26,7 +26,7 @@ impl DescribeOrganizationsAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationsAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder,
+    inner: crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder,
 }
 impl DescribeOrganizationsAccessFluentBuilder {
     /// Creates a new `DescribeOrganizationsAccess`.
@@ -37,7 +37,7 @@ impl DescribeOrganizationsAccessFluentBuilder {
         }
     }
     /// Access the DescribeOrganizationsAccess as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeOrganizationsAccessFluentBuilder {
             crate::operation::describe_organizations_access::DescribeOrganizationsAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organizations_access::DescribeOrganizationsAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeOrganizationsAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeOrganizationsAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organizations_access::DescribeOrganizationsAccessError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeOrganizationsAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organizations_access::DescribeOrganizationsAccessError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeOrganizationsAccessFluentBuilder {
             crate::operation::describe_organizations_access::DescribeOrganizationsAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organizations_access::DescribeOrganizationsAccessError>,
     > {
         self.customize_middleware().await
     }

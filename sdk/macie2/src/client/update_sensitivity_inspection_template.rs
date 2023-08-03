@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`includes(SensitivityInspectionTemplateIncludes)`](crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateFluentBuilder::includes) / [`set_includes(Option<SensitivityInspectionTemplateIncludes>)`](crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateFluentBuilder::set_includes): <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
     /// - On success, responds with [`UpdateSensitivityInspectionTemplateOutput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput)
     /// - On failure, responds with [`SdkError<UpdateSensitivityInspectionTemplateError>`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateError)
-    pub fn update_sensitivity_inspection_template(&self) -> crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateFluentBuilder{
+    pub fn update_sensitivity_inspection_template(
+        &self,
+    ) -> crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateFluentBuilder {
         crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateFluentBuilder::new(self.handle.clone())
     }
 }

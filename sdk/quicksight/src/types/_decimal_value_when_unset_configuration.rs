@@ -21,9 +21,7 @@ impl DecimalValueWhenUnsetConfiguration {
     /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
-    pub fn value_when_unset_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
+    pub fn value_when_unset_option(&self) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
         self.value_when_unset_option.as_ref()
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
@@ -68,10 +66,7 @@ impl DecimalValueWhenUnsetConfigurationBuilder {
     /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
-    pub fn set_value_when_unset_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
-    ) -> Self {
+    pub fn set_value_when_unset_option(mut self, input: ::std::option::Option<crate::types::ValueWhenUnsetOption>) -> Self {
         self.value_when_unset_option = input;
         self
     }
@@ -80,9 +75,7 @@ impl DecimalValueWhenUnsetConfigurationBuilder {
     /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
-    pub fn get_value_when_unset_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValueWhenUnsetOption> {
+    pub fn get_value_when_unset_option(&self) -> &::std::option::Option<crate::types::ValueWhenUnsetOption> {
         &self.value_when_unset_option
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>

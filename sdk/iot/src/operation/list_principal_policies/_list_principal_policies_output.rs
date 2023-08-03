@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListPrincipalPoliciesOutput {
 }
 impl ListPrincipalPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalPoliciesOutput`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesOutputBuilder {
         crate::operation::list_principal_policies::builders::ListPrincipalPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrincipalPoliciesOutput`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalPoliciesOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl ListPrincipalPoliciesOutputBuilder {
         self
     }
     /// <p>The policies.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }

@@ -27,10 +27,7 @@ pub fn ser_create_edge_deployment_plan_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_deployment_stage::ser_deployment_stage(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_deployment_stage::ser_deployment_stage(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

@@ -15,34 +15,25 @@ impl DeleteEventStreamInput {
 }
 impl DeleteEventStreamInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_stream::builders::DeleteEventStreamInputBuilder {
+    pub fn builder() -> crate::operation::delete_event_stream::builders::DeleteEventStreamInputBuilder {
         crate::operation::delete_event_stream::builders::DeleteEventStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventStreamInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventStreamInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_event_stream::DeleteEventStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_event_stream::DeleteEventStreamInput {
-                application_id: self.application_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_event_stream::DeleteEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_event_stream::DeleteEventStreamInput {
+            application_id: self.application_id,
+        })
     }
 }

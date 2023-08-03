@@ -6,10 +6,7 @@ pub fn ser_update_subscriber_notification_input(
     if let Some(var_1) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("configuration").start_object();
-        crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

@@ -31,9 +31,7 @@ impl DeleteCanaryInput {
 
 /// A builder for [`DeleteCanaryInput`](crate::operation::delete_canary::DeleteCanaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) delete_lambda: ::std::option::Option<bool>,
@@ -71,12 +69,7 @@ impl DeleteCanaryInputBuilder {
         &self.delete_lambda
     }
     /// Consumes the builder and constructs a [`DeleteCanaryInput`](crate::operation::delete_canary::DeleteCanaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_canary::DeleteCanaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_canary::DeleteCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_canary::DeleteCanaryInput {
             name: self.name,
             delete_lambda: self.delete_lambda.unwrap_or_default(),

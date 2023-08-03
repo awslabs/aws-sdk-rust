@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`accelerators(Option<Vec<Accelerator>>)`](crate::operation::list_accelerators::ListAcceleratorsOutput::accelerators): <p>The list of accelerators for a customer account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accelerators::ListAcceleratorsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListAcceleratorsError>`](crate::operation::list_accelerators::ListAcceleratorsError)
-    pub fn list_accelerators(
-        &self,
-    ) -> crate::operation::list_accelerators::builders::ListAcceleratorsFluentBuilder {
-        crate::operation::list_accelerators::builders::ListAcceleratorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_accelerators(&self) -> crate::operation::list_accelerators::builders::ListAcceleratorsFluentBuilder {
+        crate::operation::list_accelerators::builders::ListAcceleratorsFluentBuilder::new(self.handle.clone())
     }
 }

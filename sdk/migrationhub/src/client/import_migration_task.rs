@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::import_migration_task::builders::ImportMigrationTaskFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::import_migration_task::builders::ImportMigrationTaskFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`ImportMigrationTaskOutput`](crate::operation::import_migration_task::ImportMigrationTaskOutput)
     /// - On failure, responds with [`SdkError<ImportMigrationTaskError>`](crate::operation::import_migration_task::ImportMigrationTaskError)
-    pub fn import_migration_task(
-        &self,
-    ) -> crate::operation::import_migration_task::builders::ImportMigrationTaskFluentBuilder {
-        crate::operation::import_migration_task::builders::ImportMigrationTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_migration_task(&self) -> crate::operation::import_migration_task::builders::ImportMigrationTaskFluentBuilder {
+        crate::operation::import_migration_task::builders::ImportMigrationTaskFluentBuilder::new(self.handle.clone())
     }
 }

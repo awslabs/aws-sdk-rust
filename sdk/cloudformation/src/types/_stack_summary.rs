@@ -84,9 +84,7 @@ impl StackSummary {
         self.root_id.as_deref()
     }
     /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn drift_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackDriftInformationSummary> {
+    pub fn drift_information(&self) -> ::std::option::Option<&crate::types::StackDriftInformationSummary> {
         self.drift_information.as_ref()
     }
 }
@@ -99,9 +97,7 @@ impl StackSummary {
 
 /// A builder for [`StackSummary`](crate::types::StackSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSummaryBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -145,18 +141,12 @@ impl StackSummaryBuilder {
         &self.stack_name
     }
     /// <p>The template description of the template used to create the stack.</p>
-    pub fn template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template description of the template used to create the stack.</p>
-    pub fn set_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_description = input;
         self
     }
@@ -170,10 +160,7 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The time the stack was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -187,10 +174,7 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -204,10 +188,7 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn set_deletion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_time = input;
         self
     }
@@ -221,10 +202,7 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The current status of the stack.</p>
-    pub fn set_stack_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackStatus>,
-    ) -> Self {
+    pub fn set_stack_status(mut self, input: ::std::option::Option<crate::types::StackStatus>) -> Self {
         self.stack_status = input;
         self
     }
@@ -233,18 +211,12 @@ impl StackSummaryBuilder {
         &self.stack_status
     }
     /// <p>Success/Failure message associated with the stack status.</p>
-    pub fn stack_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Success/Failure message associated with the stack status.</p>
-    pub fn set_stack_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_status_reason = input;
         self
     }
@@ -292,17 +264,12 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn set_drift_information(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftInformationSummary>,
-    ) -> Self {
+    pub fn set_drift_information(mut self, input: ::std::option::Option<crate::types::StackDriftInformationSummary>) -> Self {
         self.drift_information = input;
         self
     }
     /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn get_drift_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackDriftInformationSummary> {
+    pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformationSummary> {
         &self.drift_information
     }
     /// Consumes the builder and constructs a [`StackSummary`](crate::types::StackSummary).

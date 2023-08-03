@@ -37,10 +37,7 @@ impl DeleteApnsVoipChannelFluentBuilder {
         }
     }
     /// Access the DeleteApnsVoipChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_apns_voip_channel::builders::DeleteApnsVoipChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_apns_voip_channel::builders::DeleteApnsVoipChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteApnsVoipChannelFluentBuilder {
             crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteApnsVoipChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteApnsVoipChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteApnsVoipChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteApnsVoipChannelFluentBuilder {
             crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

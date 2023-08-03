@@ -23,9 +23,7 @@ impl Csv {
 
 /// A builder for [`Csv`](crate::types::Csv).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvBuilder {
     pub(crate) column_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>,
 }
@@ -42,17 +40,12 @@ impl CsvBuilder {
         self
     }
     /// <p>The column names specified in the .csv file.</p>
-    pub fn set_column_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>,
-    ) -> Self {
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>) -> Self {
         self.column_names = input;
         self
     }
     /// <p>The column names specified in the .csv file.</p>
-    pub fn get_column_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnName>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnName>> {
         &self.column_names
     }
     /// Consumes the builder and constructs a [`Csv`](crate::types::Csv).

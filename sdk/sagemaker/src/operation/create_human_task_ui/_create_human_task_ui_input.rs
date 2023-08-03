@@ -29,17 +29,14 @@ impl CreateHumanTaskUiInput {
 }
 impl CreateHumanTaskUiInput {
     /// Creates a new builder-style object to manufacture [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
-    pub fn builder(
-    ) -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder {
+    pub fn builder() -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder {
         crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHumanTaskUiInputBuilder {
     pub(crate) human_task_ui_name: ::std::option::Option<::std::string::String>,
     pub(crate) ui_template: ::std::option::Option<crate::types::UiTemplate>,
@@ -47,18 +44,12 @@ pub struct CreateHumanTaskUiInputBuilder {
 }
 impl CreateHumanTaskUiInputBuilder {
     /// <p>The name of the user interface you are creating.</p>
-    pub fn human_task_ui_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user interface you are creating.</p>
-    pub fn set_human_task_ui_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_name = input;
         self
     }
@@ -72,10 +63,7 @@ impl CreateHumanTaskUiInputBuilder {
         self
     }
     /// <p>The Liquid template for the worker user interface.</p>
-    pub fn set_ui_template(
-        mut self,
-        input: ::std::option::Option<crate::types::UiTemplate>,
-    ) -> Self {
+    pub fn set_ui_template(mut self, input: ::std::option::Option<crate::types::UiTemplate>) -> Self {
         self.ui_template = input;
         self
     }
@@ -95,10 +83,7 @@ impl CreateHumanTaskUiInputBuilder {
         self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -109,16 +94,11 @@ impl CreateHumanTaskUiInputBuilder {
     /// Consumes the builder and constructs a [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_human_task_ui::CreateHumanTaskUiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_human_task_ui::CreateHumanTaskUiInput {
-                human_task_ui_name: self.human_task_ui_name,
-                ui_template: self.ui_template,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_human_task_ui::CreateHumanTaskUiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_human_task_ui::CreateHumanTaskUiInput {
+            human_task_ui_name: self.human_task_ui_name,
+            ui_template: self.ui_template,
+            tags: self.tags,
+        })
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`event_summaries(Option<Vec<EventSummary>>)`](crate::operation::list_timeline_events::ListTimelineEventsOutput::event_summaries): <p>Details about each event that occurred during the incident.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_timeline_events::ListTimelineEventsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTimelineEventsError>`](crate::operation::list_timeline_events::ListTimelineEventsError)
-    pub fn list_timeline_events(
-        &self,
-    ) -> crate::operation::list_timeline_events::builders::ListTimelineEventsFluentBuilder {
-        crate::operation::list_timeline_events::builders::ListTimelineEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_timeline_events(&self) -> crate::operation::list_timeline_events::builders::ListTimelineEventsFluentBuilder {
+        crate::operation::list_timeline_events::builders::ListTimelineEventsFluentBuilder::new(self.handle.clone())
     }
 }

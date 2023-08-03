@@ -27,7 +27,7 @@ impl ResetNotificationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetNotificationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder,
+    inner: crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder,
 }
 impl ResetNotificationSettingsFluentBuilder {
     /// Creates a new `ResetNotificationSettings`.
@@ -38,7 +38,7 @@ impl ResetNotificationSettingsFluentBuilder {
         }
     }
     /// Access the ResetNotificationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ResetNotificationSettingsFluentBuilder {
             crate::operation::reset_notification_settings::ResetNotificationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_notification_settings::ResetNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_notification_settings::ResetNotificationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ResetNotificationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ResetNotificationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_notification_settings::ResetNotificationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_notification_settings::ResetNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_notification_settings::ResetNotificationSettingsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ResetNotificationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_notification_settings::ResetNotificationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_notification_settings::ResetNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_notification_settings::ResetNotificationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl ResetNotificationSettingsFluentBuilder {
             crate::operation::reset_notification_settings::ResetNotificationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_notification_settings::ResetNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_notification_settings::ResetNotificationSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor_id(input.into());
         self
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn set_trust_anchor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }
@@ -146,25 +129,17 @@ impl ResetNotificationSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_notification_setting_keys`](Self::set_notification_setting_keys).
     ///
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn notification_setting_keys(
-        mut self,
-        input: crate::types::NotificationSettingKey,
-    ) -> Self {
+    pub fn notification_setting_keys(mut self, input: crate::types::NotificationSettingKey) -> Self {
         self.inner = self.inner.notification_setting_keys(input);
         self
     }
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn set_notification_setting_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
-    ) -> Self {
+    pub fn set_notification_setting_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>) -> Self {
         self.inner = self.inner.set_notification_setting_keys(input);
         self
     }
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn get_notification_setting_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
+    pub fn get_notification_setting_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
         self.inner.get_notification_setting_keys()
     }
 }

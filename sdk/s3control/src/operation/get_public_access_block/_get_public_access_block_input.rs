@@ -15,17 +15,14 @@ impl GetPublicAccessBlockInput {
 }
 impl GetPublicAccessBlockInput {
     /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
-    pub fn builder(
-    ) -> crate::operation::get_public_access_block::builders::GetPublicAccessBlockInputBuilder {
+    pub fn builder() -> crate::operation::get_public_access_block::builders::GetPublicAccessBlockInputBuilder {
         crate::operation::get_public_access_block::builders::GetPublicAccessBlockInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPublicAccessBlockInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl GetPublicAccessBlockInputBuilder {
     /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_public_access_block::GetPublicAccessBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_public_access_block::GetPublicAccessBlockInput {
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_public_access_block::GetPublicAccessBlockInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_public_access_block::GetPublicAccessBlockInput { account_id: self.account_id })
     }
 }

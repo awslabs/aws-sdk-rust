@@ -30,9 +30,7 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
@@ -58,10 +56,7 @@ impl UserBuilder {
         self
     }
     /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
-    pub fn set_user_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatus>,
-    ) -> Self {
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.user_status = input;
         self
     }

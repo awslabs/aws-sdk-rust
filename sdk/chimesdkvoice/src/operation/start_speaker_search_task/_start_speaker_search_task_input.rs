@@ -43,18 +43,14 @@ impl StartSpeakerSearchTaskInput {
 }
 impl StartSpeakerSearchTaskInput {
     /// Creates a new builder-style object to manufacture [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
-    pub fn builder(
-    ) -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder {
         crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSpeakerSearchTaskInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct StartSpeakerSearchTaskInputBuilder {
 }
 impl StartSpeakerSearchTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -84,18 +74,12 @@ impl StartSpeakerSearchTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The transaction ID of the call being analyzed.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of the call being analyzed.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -104,18 +88,12 @@ impl StartSpeakerSearchTaskInputBuilder {
         &self.transaction_id
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
@@ -124,18 +102,12 @@ impl StartSpeakerSearchTaskInputBuilder {
         &self.voice_profile_domain_id
     }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -164,14 +136,12 @@ impl StartSpeakerSearchTaskInputBuilder {
         crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput {
-                voice_connector_id: self.voice_connector_id,
-                transaction_id: self.transaction_id,
-                voice_profile_domain_id: self.voice_profile_domain_id,
-                client_request_token: self.client_request_token,
-                call_leg: self.call_leg,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput {
+            voice_connector_id: self.voice_connector_id,
+            transaction_id: self.transaction_id,
+            voice_profile_domain_id: self.voice_profile_domain_id,
+            client_request_token: self.client_request_token,
+            call_leg: self.call_leg,
+        })
     }
 }

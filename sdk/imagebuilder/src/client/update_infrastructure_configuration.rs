@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationOutput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
     /// - On failure, responds with [`SdkError<UpdateInfrastructureConfigurationError>`](crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError)
-    pub fn update_infrastructure_configuration(&self) -> crate::operation::update_infrastructure_configuration::builders::UpdateInfrastructureConfigurationFluentBuilder{
+    pub fn update_infrastructure_configuration(
+        &self,
+    ) -> crate::operation::update_infrastructure_configuration::builders::UpdateInfrastructureConfigurationFluentBuilder {
         crate::operation::update_infrastructure_configuration::builders::UpdateInfrastructureConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

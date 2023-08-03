@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::operation::update_data_source::UpdateDataSourceOutput::data_source): <p>The updated <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::operation::update_data_source::UpdateDataSourceError)
-    pub fn update_data_source(
-        &self,
-    ) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
-        crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_source(&self) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
+        crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

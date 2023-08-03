@@ -5,15 +5,12 @@
 pub struct GetEc2RecommendationProjectedMetricsOutput {
     /// <p>An array of objects that describes projected metrics.</p>
     #[doc(hidden)]
-    pub recommended_option_projected_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>,
+    pub recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,
 }
 impl GetEc2RecommendationProjectedMetricsOutput {
     /// <p>An array of objects that describes projected metrics.</p>
-    pub fn recommended_option_projected_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendedOptionProjectedMetric]> {
+    pub fn recommended_option_projected_metrics(&self) -> ::std::option::Option<&[crate::types::RecommendedOptionProjectedMetric]> {
         self.recommended_option_projected_metrics.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetEc2RecommendationProjectedMetricsO
 }
 impl GetEc2RecommendationProjectedMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsOutput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput).
-    pub fn builder() -> crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsOutputBuilder{
+    pub fn builder() -> crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsOutputBuilder {
         crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEc2RecommendationProjectedMetricsOutput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEc2RecommendationProjectedMetricsOutputBuilder {
-    pub(crate) recommended_option_projected_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>,
+    pub(crate) recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,
 }
 impl GetEc2RecommendationProjectedMetricsOutputBuilder {
@@ -45,13 +39,8 @@ impl GetEc2RecommendationProjectedMetricsOutputBuilder {
     /// To override the contents of this collection use [`set_recommended_option_projected_metrics`](Self::set_recommended_option_projected_metrics).
     ///
     /// <p>An array of objects that describes projected metrics.</p>
-    pub fn recommended_option_projected_metrics(
-        mut self,
-        input: crate::types::RecommendedOptionProjectedMetric,
-    ) -> Self {
-        let mut v = self
-            .recommended_option_projected_metrics
-            .unwrap_or_default();
+    pub fn recommended_option_projected_metrics(mut self, input: crate::types::RecommendedOptionProjectedMetric) -> Self {
+        let mut v = self.recommended_option_projected_metrics.unwrap_or_default();
         v.push(input);
         self.recommended_option_projected_metrics = ::std::option::Option::Some(v);
         self
@@ -59,9 +48,7 @@ impl GetEc2RecommendationProjectedMetricsOutputBuilder {
     /// <p>An array of objects that describes projected metrics.</p>
     pub fn set_recommended_option_projected_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>,
     ) -> Self {
         self.recommended_option_projected_metrics = input;
         self
@@ -69,8 +56,7 @@ impl GetEc2RecommendationProjectedMetricsOutputBuilder {
     /// <p>An array of objects that describes projected metrics.</p>
     pub fn get_recommended_option_projected_metrics(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>> {
         &self.recommended_option_projected_metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -83,10 +69,9 @@ impl GetEc2RecommendationProjectedMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEc2RecommendationProjectedMetricsOutput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput).
-    pub fn build(self) -> crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput{
+    pub fn build(self) -> crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput {
         crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput {
-            recommended_option_projected_metrics: self.recommended_option_projected_metrics
-            ,
+            recommended_option_projected_metrics: self.recommended_option_projected_metrics,
             _request_id: self._request_id,
         }
     }

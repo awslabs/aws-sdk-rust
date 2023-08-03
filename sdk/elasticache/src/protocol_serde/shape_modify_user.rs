@@ -4,101 +4,95 @@ pub fn de_modify_user_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::modify_user::ModifyUserOutput,
-    crate::operation::modify_user::ModifyUserError,
-> {
+) -> std::result::Result<crate::operation::modify_user::ModifyUserOutput, crate::operation::modify_user::ModifyUserError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::modify_user::ModifyUserError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::modify_user::ModifyUserError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombination" => {
-            crate::operation::modify_user::ModifyUserError::InvalidParameterCombinationException({
+        "InvalidParameterCombination" => crate::operation::modify_user::ModifyUserError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(_response_body, output).map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::operation::modify_user::ModifyUserError::InvalidParameterValueException({
+                let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::modify_user::ModifyUserError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidUserState" => {
-            crate::operation::modify_user::ModifyUserError::InvalidUserStateFault({
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidUserState" => crate::operation::modify_user::ModifyUserError::InvalidUserStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidUserStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_user_state_fault::de_invalid_user_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceLinkedRoleNotFoundFault" => {
-            crate::operation::modify_user::ModifyUserError::ServiceLinkedRoleNotFoundFault({
+                let mut output = crate::types::error::builders::InvalidUserStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_user_state_fault::de_invalid_user_state_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleNotFoundFault" => crate::operation::modify_user::ModifyUserError::ServiceLinkedRoleNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UserNotFound" => crate::operation::modify_user::ModifyUserError::UserNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::UserNotFoundFaultBuilder::default();
-                output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
+                output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -116,19 +110,13 @@ pub fn de_modify_user_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::modify_user::ModifyUserOutput,
-    crate::operation::modify_user::ModifyUserError,
-> {
+) -> std::result::Result<crate::operation::modify_user::ModifyUserOutput, crate::operation::modify_user::ModifyUserError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::modify_user::builders::ModifyUserOutputBuilder::default();
+        let mut output = crate::operation::modify_user::builders::ModifyUserOutputBuilder::default();
         output = crate::protocol_serde::shape_modify_user::de_modify_user(_response_body, output)
             .map_err(crate::operation::modify_user::ModifyUserError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -137,10 +125,7 @@ pub fn de_modify_user_http_response_with_props(
 pub fn de_modify_user(
     inp: &[u8],
     mut builder: crate::operation::modify_user::builders::ModifyUserOutputBuilder,
-) -> Result<
-    crate::operation::modify_user::builders::ModifyUserOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::modify_user::builders::ModifyUserOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -278,9 +263,7 @@ pub fn de_modify_user(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ModifyUserResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ModifyUserResult tag"));
     };
     Ok(builder)
 }

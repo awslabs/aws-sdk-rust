@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListHubContentVersionsOutput {
 }
 impl ListHubContentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListHubContentVersionsOutput`](crate::operation::list_hub_content_versions::ListHubContentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_hub_content_versions::builders::ListHubContentVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hub_content_versions::builders::ListHubContentVersionsOutputBuilder {
         crate::operation::list_hub_content_versions::builders::ListHubContentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHubContentVersionsOutput`](crate::operation::list_hub_content_versions::ListHubContentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHubContentVersionsOutputBuilder {
-    pub(crate) hub_content_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>,
+    pub(crate) hub_content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListHubContentVersionsOutputBuilder {
         self
     }
     /// <p>The summaries of the listed hub content versions.</p>
-    pub fn set_hub_content_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>,
-    ) -> Self {
+    pub fn set_hub_content_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>) -> Self {
         self.hub_content_summaries = input;
         self
     }
     /// <p>The summaries of the listed hub content versions.</p>
-    pub fn get_hub_content_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>> {
+    pub fn get_hub_content_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>> {
         &self.hub_content_summaries
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content versions, use it in the subsequent request.</p>
@@ -96,9 +86,7 @@ impl ListHubContentVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHubContentVersionsOutput`](crate::operation::list_hub_content_versions::ListHubContentVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_hub_content_versions::ListHubContentVersionsOutput {
+    pub fn build(self) -> crate::operation::list_hub_content_versions::ListHubContentVersionsOutput {
         crate::operation::list_hub_content_versions::ListHubContentVersionsOutput {
             hub_content_summaries: self.hub_content_summaries,
             next_token: self.next_token,

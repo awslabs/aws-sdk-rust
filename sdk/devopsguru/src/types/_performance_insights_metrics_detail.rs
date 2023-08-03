@@ -20,16 +20,13 @@ pub struct PerformanceInsightsMetricsDetail {
     pub metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
     #[doc(hidden)]
-    pub reference_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>,
+    pub reference_data: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>,
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
     #[doc(hidden)]
-    pub stats_at_anomaly:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
+    pub stats_at_anomaly: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
     #[doc(hidden)]
-    pub stats_at_baseline:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
+    pub stats_at_baseline: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
 }
 impl PerformanceInsightsMetricsDetail {
     /// <p>The name used for a specific Performance Insights metric.</p>
@@ -41,27 +38,19 @@ impl PerformanceInsightsMetricsDetail {
         self.unit.as_deref()
     }
     /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
-    pub fn metric_query(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
+    pub fn metric_query(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
         self.metric_query.as_ref()
     }
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
-    pub fn reference_data(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PerformanceInsightsReferenceData]> {
+    pub fn reference_data(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsReferenceData]> {
         self.reference_data.as_deref()
     }
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
-    pub fn stats_at_anomaly(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PerformanceInsightsStat]> {
+    pub fn stats_at_anomaly(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsStat]> {
         self.stats_at_anomaly.as_deref()
     }
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
-    pub fn stats_at_baseline(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PerformanceInsightsStat]> {
+    pub fn stats_at_baseline(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsStat]> {
         self.stats_at_baseline.as_deref()
     }
 }
@@ -74,34 +63,23 @@ impl PerformanceInsightsMetricsDetail {
 
 /// A builder for [`PerformanceInsightsMetricsDetail`](crate::types::PerformanceInsightsMetricsDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsMetricsDetailBuilder {
     pub(crate) metric_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
-    pub(crate) reference_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>,
-    pub(crate) stats_at_anomaly:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
-    pub(crate) stats_at_baseline:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
+    pub(crate) reference_data: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>,
+    pub(crate) stats_at_anomaly: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
+    pub(crate) stats_at_baseline: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
 }
 impl PerformanceInsightsMetricsDetailBuilder {
     /// <p>The name used for a specific Performance Insights metric.</p>
-    pub fn metric_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name used for a specific Performance Insights metric.</p>
-    pub fn set_metric_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_display_name = input;
         self
     }
@@ -129,17 +107,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self
     }
     /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
-    pub fn set_metric_query(
-        mut self,
-        input: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
-    ) -> Self {
+    pub fn set_metric_query(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>) -> Self {
         self.metric_query = input;
         self
     }
     /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
-    pub fn get_metric_query(
-        &self,
-    ) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
+    pub fn get_metric_query(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
         &self.metric_query
     }
     /// Appends an item to `reference_data`.
@@ -154,20 +127,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self
     }
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
-    pub fn set_reference_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>,
-        >,
-    ) -> Self {
+    pub fn set_reference_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>) -> Self {
         self.reference_data = input;
         self
     }
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
-    pub fn get_reference_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>
-    {
+    pub fn get_reference_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>> {
         &self.reference_data
     }
     /// Appends an item to `stats_at_anomaly`.
@@ -182,17 +147,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self
     }
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
-    pub fn set_stats_at_anomaly(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
-    ) -> Self {
+    pub fn set_stats_at_anomaly(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>) -> Self {
         self.stats_at_anomaly = input;
         self
     }
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
-    pub fn get_stats_at_anomaly(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>> {
+    pub fn get_stats_at_anomaly(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>> {
         &self.stats_at_anomaly
     }
     /// Appends an item to `stats_at_baseline`.
@@ -207,17 +167,12 @@ impl PerformanceInsightsMetricsDetailBuilder {
         self
     }
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
-    pub fn set_stats_at_baseline(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
-    ) -> Self {
+    pub fn set_stats_at_baseline(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>) -> Self {
         self.stats_at_baseline = input;
         self
     }
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
-    pub fn get_stats_at_baseline(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>> {
+    pub fn get_stats_at_baseline(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>> {
         &self.stats_at_baseline
     }
     /// Consumes the builder and constructs a [`PerformanceInsightsMetricsDetail`](crate::types::PerformanceInsightsMetricsDetail).

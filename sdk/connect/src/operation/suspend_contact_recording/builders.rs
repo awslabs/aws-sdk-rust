@@ -28,8 +28,7 @@ impl SuspendContactRecordingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuspendContactRecordingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::suspend_contact_recording::builders::SuspendContactRecordingInputBuilder,
+    inner: crate::operation::suspend_contact_recording::builders::SuspendContactRecordingInputBuilder,
 }
 impl SuspendContactRecordingFluentBuilder {
     /// Creates a new `SuspendContactRecording`.
@@ -40,10 +39,7 @@ impl SuspendContactRecordingFluentBuilder {
         }
     }
     /// Access the SuspendContactRecording as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::suspend_contact_recording::builders::SuspendContactRecordingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::suspend_contact_recording::builders::SuspendContactRecordingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl SuspendContactRecordingFluentBuilder {
             crate::operation::suspend_contact_recording::SuspendContactRecording,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_contact_recording::SuspendContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_contact_recording::SuspendContactRecordingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl SuspendContactRecordingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl SuspendContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_contact_recording::SuspendContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_contact_recording::SuspendContactRecordingError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl SuspendContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_contact_recording::SuspendContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_contact_recording::SuspendContactRecordingError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl SuspendContactRecordingFluentBuilder {
             crate::operation::suspend_contact_recording::SuspendContactRecording,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_contact_recording::SuspendContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_contact_recording::SuspendContactRecordingError>,
     > {
         self.customize_middleware().await
     }
@@ -155,18 +140,12 @@ impl SuspendContactRecordingFluentBuilder {
         self.inner.get_contact_id()
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initial_contact_id(input.into());
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initial_contact_id(input);
         self
     }

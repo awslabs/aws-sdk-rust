@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for ClusterState {
             "INITIALIZE_IN_PROGRESS" => ClusterState::InitializeInProgress,
             "UNINITIALIZED" => ClusterState::Uninitialized,
             "UPDATE_IN_PROGRESS" => ClusterState::UpdateInProgress,
-            other => {
-                ClusterState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ClusterState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

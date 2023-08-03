@@ -5,8 +5,7 @@
 pub struct ListThirdPartyFirewallFirewallPoliciesOutput {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
     #[doc(hidden)]
-    pub third_party_firewall_firewall_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
+    pub third_party_firewall_firewall_policies: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListThirdPartyFirewallFirewallPoliciesOutput {
 }
 impl ListThirdPartyFirewallFirewallPoliciesOutput {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
-    pub fn third_party_firewall_firewall_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ThirdPartyFirewallFirewallPolicy]> {
+    pub fn third_party_firewall_firewall_policies(&self) -> ::std::option::Option<&[crate::types::ThirdPartyFirewallFirewallPolicy]> {
         self.third_party_firewall_firewall_policies.as_deref()
     }
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListThirdPartyFirewallFirewallPolicie
 }
 impl ListThirdPartyFirewallFirewallPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput).
-    pub fn builder() -> crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
         crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
-    pub(crate) third_party_firewall_firewall_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
+    pub(crate) third_party_firewall_firewall_policies: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_third_party_firewall_firewall_policies`](Self::set_third_party_firewall_firewall_policies).
     ///
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
-    pub fn third_party_firewall_firewall_policies(
-        mut self,
-        input: crate::types::ThirdPartyFirewallFirewallPolicy,
-    ) -> Self {
-        let mut v = self
-            .third_party_firewall_firewall_policies
-            .unwrap_or_default();
+    pub fn third_party_firewall_firewall_policies(mut self, input: crate::types::ThirdPartyFirewallFirewallPolicy) -> Self {
+        let mut v = self.third_party_firewall_firewall_policies.unwrap_or_default();
         v.push(input);
         self.third_party_firewall_firewall_policies = ::std::option::Option::Some(v);
         self
@@ -67,9 +56,7 @@ impl ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
     pub fn set_third_party_firewall_firewall_policies(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
     ) -> Self {
         self.third_party_firewall_firewall_policies = input;
         self
@@ -77,8 +64,7 @@ impl ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
     pub fn get_third_party_firewall_firewall_policies(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>> {
         &self.third_party_firewall_firewall_policies
     }
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
@@ -105,12 +91,10 @@ impl ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput).
-    pub fn build(self) -> crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput{
+    pub fn build(self) -> crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput {
         crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput {
-            third_party_firewall_firewall_policies: self.third_party_firewall_firewall_policies
-            ,
-            next_token: self.next_token
-            ,
+            third_party_firewall_firewall_policies: self.third_party_firewall_firewall_policies,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

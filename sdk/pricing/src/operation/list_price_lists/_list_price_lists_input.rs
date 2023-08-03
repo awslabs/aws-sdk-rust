@@ -59,9 +59,7 @@ impl ListPriceListsInput {
 
 /// A builder for [`ListPriceListsInput`](crate::operation::list_price_lists::ListPriceListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPriceListsInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) effective_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -94,10 +92,7 @@ impl ListPriceListsInputBuilder {
         self
     }
     /// <p>The date that the Price List file prices are effective from. </p>
-    pub fn set_effective_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_effective_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.effective_date = input;
         self
     }
@@ -120,18 +115,12 @@ impl ListPriceListsInputBuilder {
         &self.region_code
     }
     /// <p>The three alphabetical character ISO-4217 currency code that the Price List files are denominated in. </p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The three alphabetical character ISO-4217 currency code that the Price List files are denominated in. </p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -170,10 +159,7 @@ impl ListPriceListsInputBuilder {
     /// Consumes the builder and constructs a [`ListPriceListsInput`](crate::operation::list_price_lists::ListPriceListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_price_lists::ListPriceListsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_price_lists::ListPriceListsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_price_lists::ListPriceListsInput {
             service_code: self.service_code,
             effective_date: self.effective_date,

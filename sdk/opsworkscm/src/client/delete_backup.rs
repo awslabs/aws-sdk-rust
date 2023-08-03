@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`backup_id(impl ::std::convert::Into<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::backup_id) / [`set_backup_id(Option<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::set_backup_id): <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
     /// - On success, responds with [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupError>`](crate::operation::delete_backup::DeleteBackupError)
-    pub fn delete_backup(
-        &self,
-    ) -> crate::operation::delete_backup::builders::DeleteBackupFluentBuilder {
-        crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_backup(&self) -> crate::operation::delete_backup::builders::DeleteBackupFluentBuilder {
+        crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`sentiment(Option<SentimentType>)`](crate::operation::detect_sentiment::DetectSentimentOutput::sentiment): <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
     ///   - [`sentiment_score(Option<SentimentScore>)`](crate::operation::detect_sentiment::DetectSentimentOutput::sentiment_score): <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
     /// - On failure, responds with [`SdkError<DetectSentimentError>`](crate::operation::detect_sentiment::DetectSentimentError)
-    pub fn detect_sentiment(
-        &self,
-    ) -> crate::operation::detect_sentiment::builders::DetectSentimentFluentBuilder {
-        crate::operation::detect_sentiment::builders::DetectSentimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_sentiment(&self) -> crate::operation::detect_sentiment::builders::DetectSentimentFluentBuilder {
+        crate::operation::detect_sentiment::builders::DetectSentimentFluentBuilder::new(self.handle.clone())
     }
 }

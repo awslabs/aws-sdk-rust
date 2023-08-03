@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateUserAccessLoggingSettingsOutput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput) with field(s):
     ///   - [`user_access_logging_settings_arn(Option<String>)`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput::user_access_logging_settings_arn): <p>The ARN of the user access logging settings.</p>
     /// - On failure, responds with [`SdkError<CreateUserAccessLoggingSettingsError>`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsError)
-    pub fn create_user_access_logging_settings(&self) -> crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsFluentBuilder{
+    pub fn create_user_access_logging_settings(
+        &self,
+    ) -> crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsFluentBuilder {
         crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl MotionImageInsertionFramerate {
 
 /// A builder for [`MotionImageInsertionFramerate`](crate::types::MotionImageInsertionFramerate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MotionImageInsertionFramerateBuilder {
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,

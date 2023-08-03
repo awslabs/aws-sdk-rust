@@ -15,16 +15,13 @@ pub struct DataLakeResource {
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub encryption_configuration:
-        ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
+    pub encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub lifecycle_configuration:
-        ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
+    pub lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub replication_configuration:
-        ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
+    pub replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
     #[doc(hidden)]
     pub create_status: ::std::option::Option<crate::types::DataLakeStatus>,
@@ -46,21 +43,15 @@ impl DataLakeResource {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLakeEncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeEncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn lifecycle_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLakeLifecycleConfiguration> {
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeLifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn replication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLakeReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
@@ -81,36 +72,25 @@ impl DataLakeResource {
 
 /// A builder for [`DataLakeResource`](crate::types::DataLakeResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeResourceBuilder {
     pub(crate) data_lake_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
-    pub(crate) lifecycle_configuration:
-        ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
-    pub(crate) replication_configuration:
-        ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
+    pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
+    pub(crate) replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
     pub(crate) create_status: ::std::option::Option<crate::types::DataLakeStatus>,
     pub(crate) update_status: ::std::option::Option<crate::types::DataLakeUpdateStatus>,
 }
 impl DataLakeResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn data_lake_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_lake_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn set_data_lake_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_lake_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_lake_arn = input;
         self
     }
@@ -133,18 +113,12 @@ impl DataLakeResourceBuilder {
         &self.region
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
-    pub fn s3_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
-    pub fn set_s3_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_arn = input;
         self
     }
@@ -153,69 +127,45 @@ impl DataLakeResourceBuilder {
         &self.s3_bucket_arn
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::DataLakeEncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::DataLakeEncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn lifecycle_configuration(
-        mut self,
-        input: crate::types::DataLakeLifecycleConfiguration,
-    ) -> Self {
+    pub fn lifecycle_configuration(mut self, input: crate::types::DataLakeLifecycleConfiguration) -> Self {
         self.lifecycle_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn set_lifecycle_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>) -> Self {
         self.lifecycle_configuration = input;
         self
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn get_lifecycle_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
+    pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
         &self.lifecycle_configuration
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::DataLakeReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::DataLakeReplicationConfiguration) -> Self {
         self.replication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>) -> Self {
         self.replication_configuration = input;
         self
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
         &self.replication_configuration
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
@@ -224,10 +174,7 @@ impl DataLakeResourceBuilder {
         self
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
-    pub fn set_create_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeStatus>,
-    ) -> Self {
+    pub fn set_create_status(mut self, input: ::std::option::Option<crate::types::DataLakeStatus>) -> Self {
         self.create_status = input;
         self
     }
@@ -241,10 +188,7 @@ impl DataLakeResourceBuilder {
         self
     }
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeUpdateStatus>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::DataLakeUpdateStatus>) -> Self {
         self.update_status = input;
         self
     }

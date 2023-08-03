@@ -30,9 +30,7 @@ impl ResourceFilter {
 
 /// A builder for [`ResourceFilter`](crate::types::ResourceFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ResourceFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl ResourceFilterBuilder {
         self
     }
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ResourceFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl ResourceFilterBuilder {
         self
     }
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

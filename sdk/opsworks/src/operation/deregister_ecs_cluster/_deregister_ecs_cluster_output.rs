@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterEcsClusterOutput {
 }
 impl DeregisterEcsClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterEcsClusterOutput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterOutputBuilder {
         crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterEcsClusterOutput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterEcsClusterOutputBuilder {
     _request_id: Option<String>,
 }

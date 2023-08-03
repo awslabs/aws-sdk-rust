@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`account_limits(Option<Vec<AccountLimit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::account_limits): <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::next_token): <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
-    pub fn describe_account_limits(
-        &self,
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder
-    {
-        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_account_limits(&self) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder {
+        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(self.handle.clone())
     }
 }

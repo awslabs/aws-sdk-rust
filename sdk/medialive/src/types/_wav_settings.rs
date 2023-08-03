@@ -37,9 +37,7 @@ impl WavSettings {
 
 /// A builder for [`WavSettings`](crate::types::WavSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WavSettingsBuilder {
     pub(crate) bit_depth: ::std::option::Option<f64>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::WavCodingMode>,
@@ -66,10 +64,7 @@ impl WavSettingsBuilder {
         self
     }
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::WavCodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::WavCodingMode>) -> Self {
         self.coding_mode = input;
         self
     }

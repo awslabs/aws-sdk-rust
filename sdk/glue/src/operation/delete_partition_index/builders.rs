@@ -37,9 +37,7 @@ impl DeletePartitionIndexFluentBuilder {
         }
     }
     /// Access the DeletePartitionIndex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_partition_index::builders::DeletePartitionIndexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_partition_index::builders::DeletePartitionIndexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeletePartitionIndexFluentBuilder {
             crate::operation::delete_partition_index::DeletePartitionIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition_index::DeletePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition_index::DeletePartitionIndexError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeletePartitionIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeletePartitionIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_partition_index::DeletePartitionIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition_index::DeletePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition_index::DeletePartitionIndexError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeletePartitionIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_partition_index::DeletePartitionIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition_index::DeletePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition_index::DeletePartitionIndexError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeletePartitionIndexFluentBuilder {
             crate::operation::delete_partition_index::DeletePartitionIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partition_index::DeletePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partition_index::DeletePartitionIndexError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeletePartitionIndexFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

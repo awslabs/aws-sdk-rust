@@ -26,7 +26,7 @@ impl UpdateCertificateOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCertificateOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder,
+    inner: crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder,
 }
 impl UpdateCertificateOptionsFluentBuilder {
     /// Creates a new `UpdateCertificateOptions`.
@@ -37,10 +37,7 @@ impl UpdateCertificateOptionsFluentBuilder {
         }
     }
     /// Access the UpdateCertificateOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateCertificateOptionsFluentBuilder {
             crate::operation::update_certificate_options::UpdateCertificateOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_options::UpdateCertificateOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_options::UpdateCertificateOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateCertificateOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateCertificateOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate_options::UpdateCertificateOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_options::UpdateCertificateOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_options::UpdateCertificateOptionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateCertificateOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate_options::UpdateCertificateOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_options::UpdateCertificateOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_options::UpdateCertificateOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +105,19 @@ impl UpdateCertificateOptionsFluentBuilder {
             crate::operation::update_certificate_options::UpdateCertificateOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_options::UpdateCertificateOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_options::UpdateCertificateOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
@@ -152,10 +132,7 @@ impl UpdateCertificateOptionsFluentBuilder {
         self
     }
     /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }

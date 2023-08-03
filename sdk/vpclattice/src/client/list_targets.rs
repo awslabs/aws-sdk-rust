@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<TargetSummary>>)`](crate::operation::list_targets::ListTargetsOutput::items): <p>Information about the targets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets::ListTargetsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::operation::list_targets::ListTargetsError)
-    pub fn list_targets(
-        &self,
-    ) -> crate::operation::list_targets::builders::ListTargetsFluentBuilder {
+    pub fn list_targets(&self) -> crate::operation::list_targets::builders::ListTargetsFluentBuilder {
         crate::operation::list_targets::builders::ListTargetsFluentBuilder::new(self.handle.clone())
     }
 }

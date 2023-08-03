@@ -30,9 +30,7 @@ impl ApprovalStateChangedEventMetadata {
 
 /// A builder for [`ApprovalStateChangedEventMetadata`](crate::types::ApprovalStateChangedEventMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalStateChangedEventMetadataBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_status: ::std::option::Option<crate::types::ApprovalState>,
@@ -58,10 +56,7 @@ impl ApprovalStateChangedEventMetadataBuilder {
         self
     }
     /// <p>The approval status for the pull request.</p>
-    pub fn set_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalState>,
-    ) -> Self {
+    pub fn set_approval_status(mut self, input: ::std::option::Option<crate::types::ApprovalState>) -> Self {
         self.approval_status = input;
         self
     }

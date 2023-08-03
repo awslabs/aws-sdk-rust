@@ -60,9 +60,7 @@ impl ModifyHsmInput {
 
 /// A builder for [`ModifyHsmInput`](crate::operation::modify_hsm::ModifyHsmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyHsmInputBuilder {
     pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -160,12 +158,7 @@ impl ModifyHsmInputBuilder {
         &self.syslog_ip
     }
     /// Consumes the builder and constructs a [`ModifyHsmInput`](crate::operation::modify_hsm::ModifyHsmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_hsm::ModifyHsmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hsm::ModifyHsmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hsm::ModifyHsmInput {
             hsm_arn: self.hsm_arn,
             subnet_id: self.subnet_id,

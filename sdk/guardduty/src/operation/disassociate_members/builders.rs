@@ -10,10 +10,7 @@ impl DisassociateMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_members::DisassociateMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_members::DisassociateMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_members::DisassociateMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_members();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DisassociateMembersFluentBuilder {
         }
     }
     /// Access the DisassociateMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_members::builders::DisassociateMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_members::builders::DisassociateMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DisassociateMembersFluentBuilder {
             crate::operation::disassociate_members::DisassociateMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_members::DisassociateMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_members::DisassociateMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DisassociateMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DisassociateMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_members::DisassociateMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_members::DisassociateMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_members::DisassociateMembersError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DisassociateMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_members::DisassociateMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_members::DisassociateMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_members::DisassociateMembersError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DisassociateMembersFluentBuilder {
             crate::operation::disassociate_members::DisassociateMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_members::DisassociateMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_members::DisassociateMembersError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +132,12 @@ impl DisassociateMembersFluentBuilder {
         self
     }
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

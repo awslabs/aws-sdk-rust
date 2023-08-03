@@ -31,7 +31,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutManagedRuleSetVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder,
+    inner: crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder,
 }
 impl PutManagedRuleSetVersionsFluentBuilder {
     /// Creates a new `PutManagedRuleSetVersions`.
@@ -42,7 +42,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         }
     }
     /// Access the PutManagedRuleSetVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
             crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
             crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -200,18 +189,12 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self.inner.get_lock_token()
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
-    pub fn recommended_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommended_version(input.into());
         self
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
-    pub fn set_recommended_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommended_version(input);
         self
     }
@@ -224,20 +207,14 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     /// To override the contents of this collection use [`set_versions_to_publish`](Self::set_versions_to_publish).
     ///
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
-    pub fn versions_to_publish(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::VersionToPublish,
-    ) -> Self {
+    pub fn versions_to_publish(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VersionToPublish) -> Self {
         self.inner = self.inner.versions_to_publish(k.into(), v);
         self
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn set_versions_to_publish(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
     ) -> Self {
         self.inner = self.inner.set_versions_to_publish(input);
         self
@@ -245,9 +222,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn get_versions_to_publish(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {
         self.inner.get_versions_to_publish()
     }
 }

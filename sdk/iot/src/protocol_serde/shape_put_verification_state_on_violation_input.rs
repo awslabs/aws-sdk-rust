@@ -7,9 +7,7 @@ pub fn ser_put_verification_state_on_violation_input(
         object.key("verificationState").string(var_1.as_str());
     }
     if let Some(var_2) = &input.verification_state_description {
-        object
-            .key("verificationStateDescription")
-            .string(var_2.as_str());
+        object.key("verificationStateDescription").string(var_2.as_str());
     }
     Ok(())
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`connection_summary_list(Option<Vec<ConnectionSummary>>)`](crate::operation::list_connections::ListConnectionsOutput::connection_summary_list): <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connections::ListConnectionsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::operation::list_connections::ListConnectionsError)
-    pub fn list_connections(
-        &self,
-    ) -> crate::operation::list_connections::builders::ListConnectionsFluentBuilder {
-        crate::operation::list_connections::builders::ListConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_connections(&self) -> crate::operation::list_connections::builders::ListConnectionsFluentBuilder {
+        crate::operation::list_connections::builders::ListConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

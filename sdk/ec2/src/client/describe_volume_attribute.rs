@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`product_codes(Option<Vec<ProductCode>>)`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput::product_codes): <p>A list of product codes.</p>
     ///   - [`volume_id(Option<String>)`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput::volume_id): <p>The ID of the volume.</p>
     /// - On failure, responds with [`SdkError<DescribeVolumeAttributeError>`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeError)
-    pub fn describe_volume_attribute(
-        &self,
-    ) -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeFluentBuilder
-    {
+    pub fn describe_volume_attribute(&self) -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeFluentBuilder {
         crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeFluentBuilder::new(self.handle.clone())
     }
 }

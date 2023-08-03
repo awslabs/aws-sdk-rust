@@ -83,9 +83,7 @@ impl StreamDescriptionSummary {
         self.retention_period_hours
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn stream_creation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -129,9 +127,7 @@ impl StreamDescriptionSummary {
 
 /// A builder for [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamDescriptionSummaryBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -139,8 +135,7 @@ pub struct StreamDescriptionSummaryBuilder {
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,
     pub(crate) stream_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) enhanced_monitoring:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>>,
+    pub(crate) enhanced_monitoring: ::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>>,
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) open_shard_count: ::std::option::Option<i32>,
@@ -193,10 +188,7 @@ impl StreamDescriptionSummaryBuilder {
     /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
     /// </ul>
-    pub fn set_stream_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamStatus>,
-    ) -> Self {
+    pub fn set_stream_status(mut self, input: ::std::option::Option<crate::types::StreamStatus>) -> Self {
         self.stream_status = input;
         self
     }
@@ -216,17 +208,12 @@ impl StreamDescriptionSummaryBuilder {
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn set_stream_mode_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamModeDetails>,
-    ) -> Self {
+    pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.stream_mode_details = input;
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn get_stream_mode_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamModeDetails> {
+    pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         &self.stream_mode_details
     }
     /// <p>The current retention period, in hours.</p>
@@ -249,17 +236,12 @@ impl StreamDescriptionSummaryBuilder {
         self
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn set_stream_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stream_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stream_creation_timestamp = input;
         self
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn get_stream_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_stream_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stream_creation_timestamp
     }
     /// Appends an item to `enhanced_monitoring`.
@@ -274,17 +256,12 @@ impl StreamDescriptionSummaryBuilder {
         self
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>>) -> Self {
         self.enhanced_monitoring = input;
         self
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>> {
         &self.enhanced_monitoring
     }
     /// <p>The encryption type used. This value is one of the following:</p>
@@ -301,10 +278,7 @@ impl StreamDescriptionSummaryBuilder {
     /// <li> <p> <code>KMS</code> </p> </li>
     /// <li> <p> <code>NONE</code> </p> </li>
     /// </ul>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }

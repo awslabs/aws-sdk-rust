@@ -28,27 +28,19 @@ impl CopyFpgaImageOutput {
 
 /// A builder for [`CopyFpgaImageOutput`](crate::operation::copy_fpga_image::CopyFpgaImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyFpgaImageOutputBuilder {
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopyFpgaImageOutputBuilder {
     /// <p>The ID of the new AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the new AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_id = input;
         self
     }

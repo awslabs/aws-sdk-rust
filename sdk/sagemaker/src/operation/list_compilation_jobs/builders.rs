@@ -38,9 +38,7 @@ impl ListCompilationJobsFluentBuilder {
         }
     }
     /// Access the ListCompilationJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_compilation_jobs::builders::ListCompilationJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_compilation_jobs::builders::ListCompilationJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListCompilationJobsFluentBuilder {
             crate::operation::list_compilation_jobs::ListCompilationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compilation_jobs::ListCompilationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compilation_jobs::ListCompilationJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListCompilationJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListCompilationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_compilation_jobs::ListCompilationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compilation_jobs::ListCompilationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compilation_jobs::ListCompilationJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListCompilationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_compilation_jobs::ListCompilationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compilation_jobs::ListCompilationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compilation_jobs::ListCompilationJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListCompilationJobsFluentBuilder {
             crate::operation::list_compilation_jobs::ListCompilationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_compilation_jobs::ListCompilationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_compilation_jobs::ListCompilationJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator {
-        crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator {
+        crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,10 +150,7 @@ impl ListCompilationJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -185,10 +164,7 @@ impl ListCompilationJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -202,17 +178,12 @@ impl ListCompilationJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
@@ -221,32 +192,21 @@ impl ListCompilationJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -260,10 +220,7 @@ impl ListCompilationJobsFluentBuilder {
         self
     }
     /// <p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::CompilationJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::CompilationJobStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -277,10 +234,7 @@ impl ListCompilationJobsFluentBuilder {
         self
     }
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCompilationJobsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListCompilationJobsSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

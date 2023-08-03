@@ -50,17 +50,14 @@ impl ::aws_http::request_id::RequestId for ListHealthChecksOutput {
 }
 impl ListHealthChecksOutput {
     /// Creates a new builder-style object to manufacture [`ListHealthChecksOutput`](crate::operation::list_health_checks::ListHealthChecksOutput).
-    pub fn builder() -> crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder {
         crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHealthChecksOutput`](crate::operation::list_health_checks::ListHealthChecksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHealthChecksOutputBuilder {
     pub(crate) health_checks: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -82,17 +79,12 @@ impl ListHealthChecksOutputBuilder {
         self
     }
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
-    pub fn set_health_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>>,
-    ) -> Self {
+    pub fn set_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>>) -> Self {
         self.health_checks = input;
         self
     }
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
-    pub fn get_health_checks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>> {
+    pub fn get_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>> {
         &self.health_checks
     }
     /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the previous request.</p>

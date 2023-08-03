@@ -29,9 +29,7 @@ impl DeleteHostKeyInput {
 
 /// A builder for [`DeleteHostKeyInput`](crate::operation::delete_host_key::DeleteHostKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHostKeyInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_key_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHostKeyInput`](crate::operation::delete_host_key::DeleteHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_host_key::DeleteHostKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_host_key::DeleteHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_host_key::DeleteHostKeyInput {
             server_id: self.server_id,
             host_key_id: self.host_key_id,

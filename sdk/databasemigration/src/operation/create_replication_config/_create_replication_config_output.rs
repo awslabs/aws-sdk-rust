@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateReplicationConfigOutput {
 }
 impl CreateReplicationConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_config::builders::CreateReplicationConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_replication_config::builders::CreateReplicationConfigOutputBuilder {
         crate::operation::create_replication_config::builders::CreateReplicationConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationConfigOutputBuilder {
     pub(crate) replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl CreateReplicationConfigOutputBuilder {
         self
     }
     /// <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.replication_config = input;
         self
     }
     /// <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +59,7 @@ impl CreateReplicationConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_replication_config::CreateReplicationConfigOutput {
+    pub fn build(self) -> crate::operation::create_replication_config::CreateReplicationConfigOutput {
         crate::operation::create_replication_config::CreateReplicationConfigOutput {
             replication_config: self.replication_config,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl ImportKeyPairInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_key_pair::ImportKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_key_pair::ImportKeyPairError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_key_pair();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ImportKeyPairFluentBuilder {
         }
     }
     /// Access the ImportKeyPair as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ImportKeyPairFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ImportKeyPairFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair_name(input.into());
         self
     }
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_pair_name(input);
         self
     }
@@ -135,18 +121,12 @@ impl ImportKeyPairFluentBuilder {
         self.inner.get_key_pair_name()
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_key_base64(input.into());
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_base64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_key_base64(input);
         self
     }

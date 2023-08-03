@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceStatusOutput {
 }
 impl DescribeInstanceStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceStatusOutput`](crate::operation::describe_instance_status::DescribeInstanceStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_status::builders::DescribeInstanceStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_status::builders::DescribeInstanceStatusOutputBuilder {
         crate::operation::describe_instance_status::builders::DescribeInstanceStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceStatusOutput`](crate::operation::describe_instance_status::DescribeInstanceStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceStatusOutputBuilder {
-    pub(crate) instance_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
+    pub(crate) instance_statuses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeInstanceStatusOutputBuilder {
         self
     }
     /// <p>Information about the status of the instances.</p>
-    pub fn set_instance_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
-    ) -> Self {
+    pub fn set_instance_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>) -> Self {
         self.instance_statuses = input;
         self
     }
     /// <p>Information about the status of the instances.</p>
-    pub fn get_instance_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
+    pub fn get_instance_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
         &self.instance_statuses
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

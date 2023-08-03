@@ -28,8 +28,7 @@ impl CreateRestoreImageTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRestoreImageTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder,
+    inner: crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder,
 }
 impl CreateRestoreImageTaskFluentBuilder {
     /// Creates a new `CreateRestoreImageTask`.
@@ -40,10 +39,7 @@ impl CreateRestoreImageTaskFluentBuilder {
         }
     }
     /// Access the CreateRestoreImageTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl CreateRestoreImageTaskFluentBuilder {
             crate::operation::create_restore_image_task::CreateRestoreImageTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_restore_image_task::CreateRestoreImageTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl CreateRestoreImageTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl CreateRestoreImageTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_restore_image_task::CreateRestoreImageTaskError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl CreateRestoreImageTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_restore_image_task::CreateRestoreImageTaskError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl CreateRestoreImageTaskFluentBuilder {
             crate::operation::create_restore_image_task::CreateRestoreImageTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_restore_image_task::CreateRestoreImageTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -186,10 +171,7 @@ impl CreateRestoreImageTaskFluentBuilder {
     /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
     /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
     /// </ul>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -198,9 +180,7 @@ impl CreateRestoreImageTaskFluentBuilder {
     /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
     /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
     /// </ul>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput::flow_arn): The Amazon Resource Name (ARN) of the flow.
     ///   - [`media_stream_name(Option<String>)`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput::media_stream_name): The name of the media stream that was removed.
     /// - On failure, responds with [`SdkError<RemoveFlowMediaStreamError>`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError)
-    pub fn remove_flow_media_stream(
-        &self,
-    ) -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder
-    {
+    pub fn remove_flow_media_stream(&self) -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder {
         crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::new(self.handle.clone())
     }
 }

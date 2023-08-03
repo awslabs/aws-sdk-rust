@@ -5,8 +5,7 @@
 pub struct ListAssetBundleExportJobsOutput {
     /// <p>A list of export job summaries.</p>
     #[doc(hidden)]
-    pub asset_bundle_export_job_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>>,
+    pub asset_bundle_export_job_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListAssetBundleExportJobsOutput {
 }
 impl ListAssetBundleExportJobsOutput {
     /// <p>A list of export job summaries.</p>
-    pub fn asset_bundle_export_job_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetBundleExportJobSummary]> {
+    pub fn asset_bundle_export_job_summary_list(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobSummary]> {
         self.asset_bundle_export_job_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,19 +42,16 @@ impl ::aws_http::request_id::RequestId for ListAssetBundleExportJobsOutput {
 }
 impl ListAssetBundleExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetBundleExportJobsOutput`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput).
-    pub fn builder() -> crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsOutputBuilder {
         crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetBundleExportJobsOutput`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetBundleExportJobsOutputBuilder {
-    pub(crate) asset_bundle_export_job_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>>,
+    pub(crate) asset_bundle_export_job_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -69,13 +63,8 @@ impl ListAssetBundleExportJobsOutputBuilder {
     /// To override the contents of this collection use [`set_asset_bundle_export_job_summary_list`](Self::set_asset_bundle_export_job_summary_list).
     ///
     /// <p>A list of export job summaries.</p>
-    pub fn asset_bundle_export_job_summary_list(
-        mut self,
-        input: crate::types::AssetBundleExportJobSummary,
-    ) -> Self {
-        let mut v = self
-            .asset_bundle_export_job_summary_list
-            .unwrap_or_default();
+    pub fn asset_bundle_export_job_summary_list(mut self, input: crate::types::AssetBundleExportJobSummary) -> Self {
+        let mut v = self.asset_bundle_export_job_summary_list.unwrap_or_default();
         v.push(input);
         self.asset_bundle_export_job_summary_list = ::std::option::Option::Some(v);
         self
@@ -89,9 +78,7 @@ impl ListAssetBundleExportJobsOutputBuilder {
         self
     }
     /// <p>A list of export job summaries.</p>
-    pub fn get_asset_bundle_export_job_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>> {
+    pub fn get_asset_bundle_export_job_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>> {
         &self.asset_bundle_export_job_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -146,9 +133,7 @@ impl ListAssetBundleExportJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssetBundleExportJobsOutput`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput {
+    pub fn build(self) -> crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput {
         crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput {
             asset_bundle_export_job_summary_list: self.asset_bundle_export_job_summary_list,
             next_token: self.next_token,

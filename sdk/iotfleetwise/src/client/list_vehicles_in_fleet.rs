@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`vehicles(Option<Vec<String>>)`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetOutput::vehicles): <p> A list of vehicles associated with the fleet. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListVehiclesInFleetError>`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetError)
-    pub fn list_vehicles_in_fleet(
-        &self,
-    ) -> crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetFluentBuilder {
-        crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vehicles_in_fleet(&self) -> crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetFluentBuilder {
+        crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetFluentBuilder::new(self.handle.clone())
     }
 }

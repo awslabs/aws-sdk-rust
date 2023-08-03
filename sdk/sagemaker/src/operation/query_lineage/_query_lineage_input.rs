@@ -78,9 +78,7 @@ impl QueryLineageInput {
 
 /// A builder for [`QueryLineageInput`](crate::operation::query_lineage::QueryLineageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryLineageInputBuilder {
     pub(crate) start_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) direction: ::std::option::Option<crate::types::Direction>,
@@ -103,10 +101,7 @@ impl QueryLineageInputBuilder {
         self
     }
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn set_start_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_start_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.start_arns = input;
         self
     }
@@ -220,12 +215,7 @@ impl QueryLineageInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`QueryLineageInput`](crate::operation::query_lineage::QueryLineageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::query_lineage::QueryLineageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::query_lineage::QueryLineageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_lineage::QueryLineageInput {
             start_arns: self.start_arns,
             direction: self.direction,

@@ -6,13 +6,19 @@ pub fn ser_update_custom_line_item_charge_details(
     if let Some(var_1) = &input.flat {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Flat").start_object();
-        crate::protocol_serde::shape_update_custom_line_item_flat_charge_details::ser_update_custom_line_item_flat_charge_details(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_update_custom_line_item_flat_charge_details::ser_update_custom_line_item_flat_charge_details(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.percentage {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Percentage").start_object();
-        crate::protocol_serde::shape_update_custom_line_item_percentage_charge_details::ser_update_custom_line_item_percentage_charge_details(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_update_custom_line_item_percentage_charge_details::ser_update_custom_line_item_percentage_charge_details(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     Ok(())

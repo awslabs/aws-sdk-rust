@@ -22,34 +22,26 @@ impl GetPullRequestApprovalStatesInput {
 }
 impl GetPullRequestApprovalStatesInput {
     /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesInput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput).
-    pub fn builder() -> crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesInputBuilder{
+    pub fn builder() -> crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesInputBuilder {
         crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPullRequestApprovalStatesInput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPullRequestApprovalStatesInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPullRequestApprovalStatesInputBuilder {
     /// <p>The system-generated ID for the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID for the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl GetPullRequestApprovalStatesInputBuilder {
         crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput {
-                pull_request_id: self.pull_request_id,
-                revision_id: self.revision_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput {
+            pull_request_id: self.pull_request_id,
+            revision_id: self.revision_id,
+        })
     }
 }

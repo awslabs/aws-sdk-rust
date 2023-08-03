@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RebootClusterOutput`](crate::operation::reboot_cluster::RebootClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::reboot_cluster::RebootClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<RebootClusterError>`](crate::operation::reboot_cluster::RebootClusterError)
-    pub fn reboot_cluster(
-        &self,
-    ) -> crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder {
-        crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_cluster(&self) -> crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder {
+        crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -55,9 +55,7 @@ impl ReservedInstancesConfiguration {
 
 /// A builder for [`ReservedInstancesConfiguration`](crate::types::ReservedInstancesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedInstancesConfigurationBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -67,18 +65,12 @@ pub struct ReservedInstancesConfigurationBuilder {
 }
 impl ReservedInstancesConfigurationBuilder {
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -112,10 +104,7 @@ impl ReservedInstancesConfigurationBuilder {
         self
     }
     /// <p>The instance type for the modified Reserved Instances.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }

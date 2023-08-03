@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput) with field(s):
     ///   - [`upload_id(Option<String>)`](crate::operation::start_object::StartObjectOutput::upload_id): Upload Id for a given upload.
     /// - On failure, responds with [`SdkError<StartObjectError>`](crate::operation::start_object::StartObjectError)
-    pub fn start_object(
-        &self,
-    ) -> crate::operation::start_object::builders::StartObjectFluentBuilder {
+    pub fn start_object(&self) -> crate::operation::start_object::builders::StartObjectFluentBuilder {
         crate::operation::start_object::builders::StartObjectFluentBuilder::new(self.handle.clone())
     }
 }

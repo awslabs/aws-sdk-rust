@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeliveryChannelStatusOutput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput) with field(s):
     ///   - [`delivery_channels_status(Option<Vec<DeliveryChannelStatus>>)`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput::delivery_channels_status): <p>A list that contains the status of a specified delivery channel.</p>
     /// - On failure, responds with [`SdkError<DescribeDeliveryChannelStatusError>`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError)
-    pub fn describe_delivery_channel_status(&self) -> crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder{
+    pub fn describe_delivery_channel_status(
+        &self,
+    ) -> crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder {
         crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder::new(self.handle.clone())
     }
 }

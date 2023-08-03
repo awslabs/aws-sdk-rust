@@ -66,16 +66,13 @@ impl DbSecurityGroup {
 
 /// A builder for [`DbSecurityGroup`](crate::types::DbSecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbSecurityGroupBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ec2_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
+    pub(crate) ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
     pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
     pub(crate) db_security_group_arn: ::std::option::Option<::std::string::String>,
 }
@@ -95,18 +92,12 @@ impl DbSecurityGroupBuilder {
         &self.owner_id
     }
     /// <p>Specifies the name of the DB security group.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the DB security group.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -115,25 +106,17 @@ impl DbSecurityGroupBuilder {
         &self.db_security_group_name
     }
     /// <p>Provides the description of the DB security group.</p>
-    pub fn db_security_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the description of the DB security group.</p>
-    pub fn set_db_security_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_description = input;
         self
     }
     /// <p>Provides the description of the DB security group.</p>
-    pub fn get_db_security_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_security_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_security_group_description
     }
     /// <p>Provides the VpcId of the DB security group.</p>
@@ -162,17 +145,12 @@ impl DbSecurityGroupBuilder {
         self
     }
     /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
-    pub fn set_ec2_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
-    ) -> Self {
+    pub fn set_ec2_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>) -> Self {
         self.ec2_security_groups = input;
         self
     }
     /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
-    pub fn get_ec2_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
+    pub fn get_ec2_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
         &self.ec2_security_groups
     }
     /// Appends an item to `ip_ranges`.
@@ -187,10 +165,7 @@ impl DbSecurityGroupBuilder {
         self
     }
     /// <p>Contains a list of <code>IPRange</code> elements.</p>
-    pub fn set_ip_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
-    ) -> Self {
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>) -> Self {
         self.ip_ranges = input;
         self
     }
@@ -199,18 +174,12 @@ impl DbSecurityGroupBuilder {
         &self.ip_ranges
     }
     /// <p>The Amazon Resource Name (ARN) for the DB security group.</p>
-    pub fn db_security_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB security group.</p>
-    pub fn set_db_security_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_arn = input;
         self
     }

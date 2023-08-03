@@ -44,16 +44,14 @@ impl AssociateFileSystemAliasesInput {
 }
 impl AssociateFileSystemAliasesInput {
     /// Creates a new builder-style object to manufacture [`AssociateFileSystemAliasesInput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput).
-    pub fn builder() -> crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder{
+    pub fn builder() -> crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder {
         crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateFileSystemAliasesInput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFileSystemAliasesInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct AssociateFileSystemAliasesInputBuilder {
 }
 impl AssociateFileSystemAliasesInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -81,18 +73,12 @@ impl AssociateFileSystemAliasesInputBuilder {
         &self.client_request_token
     }
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -126,10 +112,7 @@ impl AssociateFileSystemAliasesInputBuilder {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aliases = input;
         self
     }
@@ -151,12 +134,10 @@ impl AssociateFileSystemAliasesInputBuilder {
         crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput {
-                client_request_token: self.client_request_token,
-                file_system_id: self.file_system_id,
-                aliases: self.aliases,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput {
+            client_request_token: self.client_request_token,
+            file_system_id: self.file_system_id,
+            aliases: self.aliases,
+        })
     }
 }

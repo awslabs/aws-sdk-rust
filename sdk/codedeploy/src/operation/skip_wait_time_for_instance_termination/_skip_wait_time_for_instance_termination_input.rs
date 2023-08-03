@@ -15,33 +15,25 @@ impl SkipWaitTimeForInstanceTerminationInput {
 }
 impl SkipWaitTimeForInstanceTerminationInput {
     /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationInput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput).
-    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder{
+    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder {
         crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder::default()
     }
 }
 
 /// A builder for [`SkipWaitTimeForInstanceTerminationInput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInputBuilder {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl SkipWaitTimeForInstanceTerminationInputBuilder {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationInput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput {
-                deployment_id: self.deployment_id
-                ,
-            }
+                deployment_id: self.deployment_id,
+            },
         )
     }
 }

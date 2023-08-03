@@ -36,9 +36,7 @@ impl GetTopicRuleOutput {
 
 /// A builder for [`GetTopicRuleOutput`](crate::operation::get_topic_rule::GetTopicRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTopicRuleOutputBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule: ::std::option::Option<crate::types::TopicRule>,

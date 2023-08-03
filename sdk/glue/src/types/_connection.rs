@@ -58,13 +58,10 @@ pub struct Connection {
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka Documentation: Configuring Kafka Brokers</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub connection_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-    >,
+    pub connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     #[doc(hidden)]
-    pub physical_connection_requirements:
-        ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
+    pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     /// <p>The time that this connection definition was created.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -135,15 +132,11 @@ impl Connection {
     /// </ul>
     pub fn connection_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         self.connection_properties.as_ref()
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
-    pub fn physical_connection_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
+    pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
     }
     /// <p>The time that this connection definition was created.</p>
@@ -168,19 +161,14 @@ impl Connection {
 
 /// A builder for [`Connection`](crate::types::Connection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) connection_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-    >,
-    pub(crate) physical_connection_requirements:
-        ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
+    pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
@@ -220,10 +208,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The type of the connection. Currently, SFTP is not supported.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
         self.connection_type = input;
         self
     }
@@ -236,27 +221,19 @@ impl ConnectionBuilder {
     /// To override the contents of this collection use [`set_match_criteria`](Self::set_match_criteria).
     ///
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub fn match_criteria(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn match_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_criteria.unwrap_or_default();
         v.push(input.into());
         self.match_criteria = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub fn set_match_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_match_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.match_criteria = input;
         self
     }
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub fn get_match_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_match_criteria(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.match_criteria
     }
     /// Adds a key-value pair to `connection_properties`.
@@ -304,11 +281,7 @@ impl ConnectionBuilder {
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka Configuration</a>.</p> </li>
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka Documentation: Configuring Kafka Brokers</a>.</p> </li>
     /// </ul>
-    pub fn connection_properties(
-        mut self,
-        k: crate::types::ConnectionPropertyKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_properties(mut self, k: crate::types::ConnectionPropertyKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.connection_properties.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.connection_properties = ::std::option::Option::Some(hash_map);
@@ -357,9 +330,7 @@ impl ConnectionBuilder {
     /// </ul>
     pub fn set_connection_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
     ) -> Self {
         self.connection_properties = input;
         self
@@ -407,31 +378,21 @@ impl ConnectionBuilder {
     /// </ul>
     pub fn get_connection_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
-    pub fn physical_connection_requirements(
-        mut self,
-        input: crate::types::PhysicalConnectionRequirements,
-    ) -> Self {
+    pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
         self.physical_connection_requirements = ::std::option::Option::Some(input);
         self
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
-    pub fn set_physical_connection_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
-    ) -> Self {
+    pub fn set_physical_connection_requirements(mut self, input: ::std::option::Option<crate::types::PhysicalConnectionRequirements>) -> Self {
         self.physical_connection_requirements = input;
         self
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
-    pub fn get_physical_connection_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhysicalConnectionRequirements> {
+    pub fn get_physical_connection_requirements(&self) -> &::std::option::Option<crate::types::PhysicalConnectionRequirements> {
         &self.physical_connection_requirements
     }
     /// <p>The time that this connection definition was created.</p>
@@ -440,10 +401,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The time that this connection definition was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -457,10 +415,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The last time that this connection definition was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -469,18 +424,12 @@ impl ConnectionBuilder {
         &self.last_updated_time
     }
     /// <p>The user, group, or role that last updated this connection definition.</p>
-    pub fn last_updated_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user, group, or role that last updated this connection definition.</p>
-    pub fn set_last_updated_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_by = input;
         self
     }

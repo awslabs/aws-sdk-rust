@@ -29,7 +29,7 @@ impl PutScheduledUpdateGroupActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScheduledUpdateGroupActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder,
+    inner: crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder,
 }
 impl PutScheduledUpdateGroupActionFluentBuilder {
     /// Creates a new `PutScheduledUpdateGroupAction`.
@@ -40,7 +40,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
         }
     }
     /// Access the PutScheduledUpdateGroupAction as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
             crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
             crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -144,18 +127,12 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
         self.inner.get_auto_scaling_group_name()
     }
     /// <p>The name of this scaling action.</p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
     /// <p>The name of this scaling action.</p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
@@ -185,10 +162,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
     }
     /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).</p>
     /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -203,10 +177,7 @@ impl PutScheduledUpdateGroupActionFluentBuilder {
         self
     }
     /// <p>The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

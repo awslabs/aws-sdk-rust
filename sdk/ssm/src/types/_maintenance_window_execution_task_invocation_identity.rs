@@ -111,8 +111,7 @@ impl ::std::fmt::Debug for MaintenanceWindowExecutionTaskInvocationIdentity {
 }
 impl MaintenanceWindowExecutionTaskInvocationIdentity {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowExecutionTaskInvocationIdentity`](crate::types::MaintenanceWindowExecutionTaskInvocationIdentity).
-    pub fn builder(
-    ) -> crate::types::builders::MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
+    pub fn builder() -> crate::types::builders::MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         crate::types::builders::MaintenanceWindowExecutionTaskInvocationIdentityBuilder::default()
     }
 }
@@ -136,18 +135,12 @@ pub struct MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
 }
 impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -156,18 +149,12 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         &self.window_execution_id
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    pub fn task_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    pub fn set_task_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_id = input;
         self
     }
@@ -176,18 +163,12 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         &self.task_execution_id
     }
     /// <p>The ID of the task invocation.</p>
-    pub fn invocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the task invocation.</p>
-    pub fn set_invocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_id = input;
         self
     }
@@ -215,10 +196,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         self
     }
     /// <p>The task type.</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
         self.task_type = input;
         self
     }
@@ -246,32 +224,21 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         self
     }
     /// <p>The status of the task invocation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the task invocation.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
         &self.status
     }
     /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -285,10 +252,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         self
     }
     /// <p>The time the invocation started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -302,10 +266,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         self
     }
     /// <p>The time the invocation finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -314,18 +275,12 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         &self.end_time
     }
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_information = input;
         self
     }
@@ -334,18 +289,12 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
         &self.owner_information
     }
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
-    pub fn window_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
-    pub fn set_window_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_target_id = input;
         self
     }
@@ -373,8 +322,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
 }
 impl ::std::fmt::Debug for MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("MaintenanceWindowExecutionTaskInvocationIdentityBuilder");
+        let mut formatter = f.debug_struct("MaintenanceWindowExecutionTaskInvocationIdentityBuilder");
         formatter.field("window_execution_id", &self.window_execution_id);
         formatter.field("task_execution_id", &self.task_execution_id);
         formatter.field("invocation_id", &self.invocation_id);

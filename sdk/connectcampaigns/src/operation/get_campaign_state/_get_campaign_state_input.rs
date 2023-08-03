@@ -16,17 +16,14 @@ impl GetCampaignStateInput {
 }
 impl GetCampaignStateInput {
     /// Creates a new builder-style object to manufacture [`GetCampaignStateInput`](crate::operation::get_campaign_state::GetCampaignStateInput).
-    pub fn builder() -> crate::operation::get_campaign_state::builders::GetCampaignStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_campaign_state::builders::GetCampaignStateInputBuilder {
         crate::operation::get_campaign_state::builders::GetCampaignStateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignStateInput`](crate::operation::get_campaign_state::GetCampaignStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignStateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +45,7 @@ impl GetCampaignStateInputBuilder {
     /// Consumes the builder and constructs a [`GetCampaignStateInput`](crate::operation::get_campaign_state::GetCampaignStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_campaign_state::GetCampaignStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_campaign_state::GetCampaignStateInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_campaign_state::GetCampaignStateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_campaign_state::GetCampaignStateInput { id: self.id })
     }
 }

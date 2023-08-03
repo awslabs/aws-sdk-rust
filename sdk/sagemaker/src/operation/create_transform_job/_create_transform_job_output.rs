@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateTransformJobOutput {
 }
 impl CreateTransformJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransformJobOutput`](crate::operation::create_transform_job::CreateTransformJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder {
         crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransformJobOutput`](crate::operation::create_transform_job::CreateTransformJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransformJobOutputBuilder {
     pub(crate) transform_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTransformJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    pub fn transform_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    pub fn set_transform_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_job_arn = input;
         self
     }

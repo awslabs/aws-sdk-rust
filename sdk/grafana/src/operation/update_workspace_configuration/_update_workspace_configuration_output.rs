@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkspaceConfigurationOutput {
 }
 impl UpdateWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationOutput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput).
-    pub fn builder() -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationOutputBuilder {
         crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceConfigurationOutput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateWorkspaceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationOutput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput {
         crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput {
             _request_id: self._request_id,
         }

@@ -72,9 +72,7 @@ impl ApprovalRuleTemplate {
 
 /// A builder for [`ApprovalRuleTemplate`](crate::types::ApprovalRuleTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleTemplateBuilder {
     pub(crate) approval_rule_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct ApprovalRuleTemplateBuilder {
 }
 impl ApprovalRuleTemplateBuilder {
     /// <p>The system-generated ID of the approval rule template.</p>
-    pub fn approval_rule_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the approval rule template.</p>
-    pub fn set_approval_rule_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_id = input;
         self
     }
@@ -107,18 +99,12 @@ impl ApprovalRuleTemplateBuilder {
         &self.approval_rule_template_id
     }
     /// <p>The name of the approval rule template.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule template.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
@@ -127,62 +113,40 @@ impl ApprovalRuleTemplateBuilder {
         &self.approval_rule_template_name
     }
     /// <p>The description of the approval rule template.</p>
-    pub fn approval_rule_template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the approval rule template.</p>
-    pub fn set_approval_rule_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_description = input;
         self
     }
     /// <p>The description of the approval rule template.</p>
-    pub fn get_approval_rule_template_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_approval_rule_template_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_description
     }
     /// <p>The content of the approval rule template.</p>
-    pub fn approval_rule_template_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the approval rule template.</p>
-    pub fn set_approval_rule_template_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_content = input;
         self
     }
     /// <p>The content of the approval rule template.</p>
-    pub fn get_approval_rule_template_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_approval_rule_template_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_content
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
-    pub fn rule_content_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_content_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
-    pub fn set_rule_content_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_content_sha256 = input;
         self
     }
@@ -196,10 +160,7 @@ impl ApprovalRuleTemplateBuilder {
         self
     }
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -213,10 +174,7 @@ impl ApprovalRuleTemplateBuilder {
         self
     }
     /// <p>The date the approval rule template was created, in timestamp format.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -225,18 +183,12 @@ impl ApprovalRuleTemplateBuilder {
         &self.creation_date
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
-    pub fn last_modified_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_user = input;
         self
     }

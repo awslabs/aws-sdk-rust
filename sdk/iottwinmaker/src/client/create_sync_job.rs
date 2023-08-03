@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_sync_job::CreateSyncJobOutput::creation_date_time): <p>The date and time for the SyncJob creation.</p>
     ///   - [`state(Option<SyncJobState>)`](crate::operation::create_sync_job::CreateSyncJobOutput::state): <p>The SyncJob response state.</p>
     /// - On failure, responds with [`SdkError<CreateSyncJobError>`](crate::operation::create_sync_job::CreateSyncJobError)
-    pub fn create_sync_job(
-        &self,
-    ) -> crate::operation::create_sync_job::builders::CreateSyncJobFluentBuilder {
-        crate::operation::create_sync_job::builders::CreateSyncJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sync_job(&self) -> crate::operation::create_sync_job::builders::CreateSyncJobFluentBuilder {
+        crate::operation::create_sync_job::builders::CreateSyncJobFluentBuilder::new(self.handle.clone())
     }
 }

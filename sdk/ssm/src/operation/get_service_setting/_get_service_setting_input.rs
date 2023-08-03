@@ -36,17 +36,14 @@ impl GetServiceSettingInput {
 }
 impl GetServiceSettingInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder {
+    pub fn builder() -> crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder {
         crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceSettingInputBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
 }
@@ -98,14 +95,7 @@ impl GetServiceSettingInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_setting::GetServiceSettingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_setting::GetServiceSettingInput {
-                setting_id: self.setting_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_service_setting::GetServiceSettingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_service_setting::GetServiceSettingInput { setting_id: self.setting_id })
     }
 }

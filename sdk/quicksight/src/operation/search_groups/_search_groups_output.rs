@@ -49,9 +49,7 @@ impl SearchGroupsOutput {
 
 /// A builder for [`SearchGroupsOutput`](crate::operation::search_groups::SearchGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchGroupsOutputBuilder {
     pub(crate) group_list: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl SearchGroupsOutputBuilder {
         self
     }
     /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
-    pub fn set_group_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_list = input;
         self
     }

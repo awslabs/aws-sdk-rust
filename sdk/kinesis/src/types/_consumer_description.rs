@@ -36,9 +36,7 @@ impl ConsumerDescription {
         self.consumer_status.as_ref()
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn consumer_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
@@ -55,9 +53,7 @@ impl ConsumerDescription {
 
 /// A builder for [`ConsumerDescription`](crate::types::ConsumerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConsumerDescriptionBuilder {
     pub(crate) consumer_name: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
@@ -67,18 +63,12 @@ pub struct ConsumerDescriptionBuilder {
 }
 impl ConsumerDescriptionBuilder {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn consumer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn set_consumer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_name = input;
         self
     }
@@ -109,10 +99,7 @@ impl ConsumerDescriptionBuilder {
         self
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    pub fn set_consumer_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsumerStatus>,
-    ) -> Self {
+    pub fn set_consumer_status(mut self, input: ::std::option::Option<crate::types::ConsumerStatus>) -> Self {
         self.consumer_status = input;
         self
     }
@@ -126,17 +113,12 @@ impl ConsumerDescriptionBuilder {
         self
     }
     /// <p></p>
-    pub fn set_consumer_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_consumer_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.consumer_creation_timestamp = input;
         self
     }
     /// <p></p>
-    pub fn get_consumer_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_consumer_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.consumer_creation_timestamp
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>

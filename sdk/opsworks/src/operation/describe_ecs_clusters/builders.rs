@@ -39,9 +39,7 @@ impl DescribeEcsClustersFluentBuilder {
         }
     }
     /// Access the DescribeEcsClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeEcsClustersFluentBuilder {
             crate::operation::describe_ecs_clusters::DescribeEcsClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ecs_clusters::DescribeEcsClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeEcsClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeEcsClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ecs_clusters::DescribeEcsClustersError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeEcsClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ecs_clusters::DescribeEcsClustersError>,
     > {
         self.send_middleware().await
     }
@@ -118,47 +107,32 @@ impl DescribeEcsClustersFluentBuilder {
             crate::operation::describe_ecs_clusters::DescribeEcsClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ecs_clusters::DescribeEcsClustersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator {
-        crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator {
+        crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `EcsClusterArns`.
     ///
     /// To override the contents of this collection use [`set_ecs_cluster_arns`](Self::set_ecs_cluster_arns).
     ///
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn ecs_cluster_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecs_cluster_arns(input.into());
         self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn set_ecs_cluster_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ecs_cluster_arns(input);
         self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn get_ecs_cluster_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ecs_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ecs_cluster_arns()
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>

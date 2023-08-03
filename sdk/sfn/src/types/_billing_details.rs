@@ -30,9 +30,7 @@ impl BillingDetails {
 
 /// A builder for [`BillingDetails`](crate::types::BillingDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BillingDetailsBuilder {
     pub(crate) billed_memory_used_in_mb: ::std::option::Option<i64>,
     pub(crate) billed_duration_in_milliseconds: ::std::option::Option<i64>,
@@ -58,10 +56,7 @@ impl BillingDetailsBuilder {
         self
     }
     /// <p>Billed duration of your workflow, in milliseconds.</p>
-    pub fn set_billed_duration_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_billed_duration_in_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.billed_duration_in_milliseconds = input;
         self
     }
@@ -73,9 +68,7 @@ impl BillingDetailsBuilder {
     pub fn build(self) -> crate::types::BillingDetails {
         crate::types::BillingDetails {
             billed_memory_used_in_mb: self.billed_memory_used_in_mb.unwrap_or_default(),
-            billed_duration_in_milliseconds: self
-                .billed_duration_in_milliseconds
-                .unwrap_or_default(),
+            billed_duration_in_milliseconds: self.billed_duration_in_milliseconds.unwrap_or_default(),
         }
     }
 }

@@ -16,9 +16,7 @@ pub fn ser_create_script_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.zip_file {
-        object
-            .key("ZipFile")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_5));
+        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_5));
     }
     if let Some(var_6) = &input.tags {
         let mut array_7 = object.key("Tags").start_array();

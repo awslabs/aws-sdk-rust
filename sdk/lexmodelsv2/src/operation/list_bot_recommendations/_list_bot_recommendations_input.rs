@@ -43,18 +43,14 @@ impl ListBotRecommendationsInput {
 }
 impl ListBotRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ListBotRecommendationsInput`](crate::operation::list_bot_recommendations::ListBotRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bot_recommendations::builders::ListBotRecommendationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_bot_recommendations::builders::ListBotRecommendationsInputBuilder {
         crate::operation::list_bot_recommendations::builders::ListBotRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBotRecommendationsInput`](crate::operation::list_bot_recommendations::ListBotRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotRecommendationsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -136,18 +132,14 @@ impl ListBotRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`ListBotRecommendationsInput`](crate::operation::list_bot_recommendations::ListBotRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bot_recommendations::ListBotRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_bot_recommendations::ListBotRecommendationsInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_bot_recommendations::ListBotRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_bot_recommendations::ListBotRecommendationsInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

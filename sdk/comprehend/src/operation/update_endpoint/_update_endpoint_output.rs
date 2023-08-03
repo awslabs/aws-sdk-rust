@@ -28,27 +28,19 @@ impl UpdateEndpointOutput {
 
 /// A builder for [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointOutputBuilder {
     pub(crate) desired_model_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEndpointOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the new model.</p>
-    pub fn desired_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the new model.</p>
-    pub fn set_desired_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_model_arn = input;
         self
     }

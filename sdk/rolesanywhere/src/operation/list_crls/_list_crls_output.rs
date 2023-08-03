@@ -35,9 +35,7 @@ impl ListCrlsOutput {
 
 /// A builder for [`ListCrlsOutput`](crate::operation::list_crls::ListCrlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrlsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) crls: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>,
@@ -70,10 +68,7 @@ impl ListCrlsOutputBuilder {
         self
     }
     /// <p>A list of certificate revocation lists (CRL). </p>
-    pub fn set_crls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>,
-    ) -> Self {
+    pub fn set_crls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>) -> Self {
         self.crls = input;
         self
     }

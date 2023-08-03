@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`replace_permission_associations_works(Option<Vec<ReplacePermissionAssociationsWork>>)`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput::replace_permission_associations_works): <p>An array of data structures that provide details of the matching work IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<ListReplacePermissionAssociationsWorkError>`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError)
-    pub fn list_replace_permission_associations_work(&self) -> crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkFluentBuilder{
-        crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkFluentBuilder::new(self.handle.clone())
+    pub fn list_replace_permission_associations_work(
+        &self,
+    ) -> crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkFluentBuilder {
+        crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -46,9 +46,7 @@ impl Encryption {
 
 /// A builder for [`Encryption`](crate::types::Encryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionBuilder {
     pub(crate) constant_initialization_vector: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
@@ -57,25 +55,17 @@ pub struct EncryptionBuilder {
 }
 impl EncryptionBuilder {
     /// <p>A 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting content. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).</p>
-    pub fn constant_initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn constant_initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constant_initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting content. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).</p>
-    pub fn set_constant_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_constant_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constant_initialization_vector = input;
         self
     }
     /// <p>A 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting content. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).</p>
-    pub fn get_constant_initialization_vector(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_constant_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
         &self.constant_initialization_vector
     }
     /// <p>The encryption method to use.</p>
@@ -84,10 +74,7 @@ impl EncryptionBuilder {
         self
     }
     /// <p>The encryption method to use.</p>
-    pub fn set_encryption_method(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMethod>,
-    ) -> Self {
+    pub fn set_encryption_method(mut self, input: ::std::option::Option<crate::types::EncryptionMethod>) -> Self {
         self.encryption_method = input;
         self
     }
@@ -118,10 +105,7 @@ impl EncryptionBuilder {
         self
     }
     /// <p>The parameters for the SPEKE key provider.</p>
-    pub fn set_speke_key_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::SpekeKeyProvider>,
-    ) -> Self {
+    pub fn set_speke_key_provider(mut self, input: ::std::option::Option<crate::types::SpekeKeyProvider>) -> Self {
         self.speke_key_provider = input;
         self
     }

@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`aggregated_source_status_list(Option<Vec<AggregatedSourceStatus>>)`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput::aggregated_source_status_list): <p>Returns an AggregatedSourceStatus object. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationAggregatorSourcesStatusError>`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError)
-    pub fn describe_configuration_aggregator_sources_status(&self) -> crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusFluentBuilder{
-        crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusFluentBuilder::new(self.handle.clone())
+    pub fn describe_configuration_aggregator_sources_status(
+        &self,
+    ) -> crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
+        crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

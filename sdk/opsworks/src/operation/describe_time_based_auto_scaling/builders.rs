@@ -29,7 +29,7 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder,
+    inner: crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder,
 }
 impl DescribeTimeBasedAutoScalingFluentBuilder {
     /// Creates a new `DescribeTimeBasedAutoScaling`.
@@ -40,7 +40,7 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
         }
     }
     /// Access the DescribeTimeBasedAutoScaling as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
             crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
             crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +122,12 @@ impl DescribeTimeBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An array of instance IDs.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>An array of instance IDs.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`account_ids(Option<Vec<String>>)`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput::account_ids): <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPortfolioAccessError>`](crate::operation::list_portfolio_access::ListPortfolioAccessError)
-    pub fn list_portfolio_access(
-        &self,
-    ) -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder {
-        crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_portfolio_access(&self) -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder {
+        crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::new(self.handle.clone())
     }
 }

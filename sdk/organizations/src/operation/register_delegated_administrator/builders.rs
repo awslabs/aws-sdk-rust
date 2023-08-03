@@ -28,7 +28,7 @@ impl RegisterDelegatedAdministratorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterDelegatedAdministratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder,
+    inner: crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder,
 }
 impl RegisterDelegatedAdministratorFluentBuilder {
     /// Creates a new `RegisterDelegatedAdministrator`.
@@ -39,7 +39,7 @@ impl RegisterDelegatedAdministratorFluentBuilder {
         }
     }
     /// Access the RegisterDelegatedAdministrator as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl RegisterDelegatedAdministratorFluentBuilder {
             crate::operation::register_delegated_administrator::RegisterDelegatedAdministrator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl RegisterDelegatedAdministratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl RegisterDelegatedAdministratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl RegisterDelegatedAdministratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl RegisterDelegatedAdministratorFluentBuilder {
             crate::operation::register_delegated_administrator::RegisterDelegatedAdministrator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +126,12 @@ impl RegisterDelegatedAdministratorFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
     }

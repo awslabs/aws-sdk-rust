@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateExperimentOutput {
 }
 impl CreateExperimentOutput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentOutput`](crate::operation::create_experiment::CreateExperimentOutput).
-    pub fn builder() -> crate::operation::create_experiment::builders::CreateExperimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_experiment::builders::CreateExperimentOutputBuilder {
         crate::operation::create_experiment::builders::CreateExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExperimentOutput`](crate::operation::create_experiment::CreateExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExperimentOutputBuilder {
     pub(crate) experiment: ::std::option::Option<crate::types::Experiment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateExperimentOutputBuilder {
         self
     }
     /// <p>A structure containing the configuration details of the experiment that you created.</p>
-    pub fn set_experiment(
-        mut self,
-        input: ::std::option::Option<crate::types::Experiment>,
-    ) -> Self {
+    pub fn set_experiment(mut self, input: ::std::option::Option<crate::types::Experiment>) -> Self {
         self.experiment = input;
         self
     }

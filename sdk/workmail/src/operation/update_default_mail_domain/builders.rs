@@ -26,8 +26,7 @@ impl UpdateDefaultMailDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDefaultMailDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder,
+    inner: crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder,
 }
 impl UpdateDefaultMailDomainFluentBuilder {
     /// Creates a new `UpdateDefaultMailDomain`.
@@ -38,10 +37,7 @@ impl UpdateDefaultMailDomainFluentBuilder {
         }
     }
     /// Access the UpdateDefaultMailDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateDefaultMailDomainFluentBuilder {
             crate::operation::update_default_mail_domain::UpdateDefaultMailDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateDefaultMailDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateDefaultMailDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateDefaultMailDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdateDefaultMailDomainFluentBuilder {
             crate::operation::update_default_mail_domain::UpdateDefaultMailDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

@@ -12,7 +12,10 @@ pub fn ser_rule_group_source_stateless_rules_details(
     if let Some(var_1) = &input.rule_definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RuleDefinition").start_object();
-        crate::protocol_serde::shape_rule_group_source_stateless_rule_definition::ser_rule_group_source_stateless_rule_definition(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_rule_group_source_stateless_rule_definition::ser_rule_group_source_stateless_rule_definition(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     Ok(())
@@ -20,61 +23,45 @@ pub fn ser_rule_group_source_stateless_rules_details(
 
 pub(crate) fn de_rule_group_source_stateless_rules_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RuleGroupSourceStatelessRulesDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RuleGroupSourceStatelessRulesDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::RuleGroupSourceStatelessRulesDetailsBuilder::default();
+            let mut builder = crate::types::builders::RuleGroupSourceStatelessRulesDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Priority" => {
-                                builder = builder.set_priority(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Priority" => {
+                            builder = builder.set_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "RuleDefinition" => {
-                                builder = builder.set_rule_definition(
+                            );
+                        }
+                        "RuleDefinition" => {
+                            builder = builder.set_rule_definition(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_definition::de_rule_group_source_stateless_rule_definition(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

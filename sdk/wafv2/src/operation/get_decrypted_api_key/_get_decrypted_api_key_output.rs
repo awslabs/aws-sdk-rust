@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDecryptedApiKeyOutput {
 }
 impl GetDecryptedApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetDecryptedApiKeyOutput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder {
-        crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder {
+        crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDecryptedApiKeyOutput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDecryptedApiKeyOutputBuilder {
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -51,27 +47,19 @@ impl GetDecryptedApiKeyOutputBuilder {
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
     ///
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn token_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.token_domains.unwrap_or_default();
         v.push(input.into());
         self.token_domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn set_token_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.token_domains = input;
         self
     }
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn get_token_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.token_domains
     }
     /// <p>The date and time that the key was created. </p>
@@ -80,10 +68,7 @@ impl GetDecryptedApiKeyOutputBuilder {
         self
     }
     /// <p>The date and time that the key was created. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }

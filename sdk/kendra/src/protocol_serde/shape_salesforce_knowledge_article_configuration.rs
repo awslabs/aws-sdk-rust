@@ -14,16 +14,12 @@ pub fn ser_salesforce_knowledge_article_configuration(
     }
     if let Some(var_4) = &input.standard_knowledge_article_type_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object
-            .key("StandardKnowledgeArticleTypeConfiguration")
-            .start_object();
+        let mut object_5 = object.key("StandardKnowledgeArticleTypeConfiguration").start_object();
         crate::protocol_serde::shape_salesforce_standard_knowledge_article_type_configuration::ser_salesforce_standard_knowledge_article_type_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.custom_knowledge_article_type_configurations {
-        let mut array_7 = object
-            .key("CustomKnowledgeArticleTypeConfigurations")
-            .start_array();
+        let mut array_7 = object.key("CustomKnowledgeArticleTypeConfigurations").start_array();
         for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
@@ -39,62 +35,50 @@ pub fn ser_salesforce_knowledge_article_configuration(
 
 pub(crate) fn de_salesforce_knowledge_article_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SalesforceKnowledgeArticleConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::SalesforceKnowledgeArticleConfigurationBuilder::default();
+            let mut builder = crate::types::builders::SalesforceKnowledgeArticleConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "IncludedStates" => {
-                                builder = builder.set_included_states(
-                                    crate::protocol_serde::shape_salesforce_knowledge_article_state_list::de_salesforce_knowledge_article_state_list(tokens)?
-                                );
-                            }
-                            "StandardKnowledgeArticleTypeConfiguration" => {
-                                builder = builder.set_standard_knowledge_article_type_configuration(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "IncludedStates" => {
+                            builder = builder.set_included_states(
+                                crate::protocol_serde::shape_salesforce_knowledge_article_state_list::de_salesforce_knowledge_article_state_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "StandardKnowledgeArticleTypeConfiguration" => {
+                            builder = builder.set_standard_knowledge_article_type_configuration(
                                     crate::protocol_serde::shape_salesforce_standard_knowledge_article_type_configuration::de_salesforce_standard_knowledge_article_type_configuration(tokens)?
                                 );
-                            }
-                            "CustomKnowledgeArticleTypeConfigurations" => {
-                                builder = builder.set_custom_knowledge_article_type_configurations(
+                        }
+                        "CustomKnowledgeArticleTypeConfigurations" => {
+                            builder = builder.set_custom_knowledge_article_type_configurations(
                                     crate::protocol_serde::shape_salesforce_custom_knowledge_article_type_configuration_list::de_salesforce_custom_knowledge_article_type_configuration_list(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

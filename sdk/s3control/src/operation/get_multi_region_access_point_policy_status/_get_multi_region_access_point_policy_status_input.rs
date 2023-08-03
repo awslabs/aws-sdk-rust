@@ -22,16 +22,14 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
 }
 impl GetMultiRegionAccessPointPolicyStatusInput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusInput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusInputBuilder {
         crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMultiRegionAccessPointPolicyStatusInput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyStatusInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl GetMultiRegionAccessPointPolicyStatusInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusInput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

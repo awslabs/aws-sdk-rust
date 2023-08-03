@@ -40,10 +40,7 @@ impl DisableVpcClassicLinkFluentBuilder {
         }
     }
     /// Access the DisableVpcClassicLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DisableVpcClassicLinkFluentBuilder {
             crate::operation::disable_vpc_classic_link::DisableVpcClassicLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DisableVpcClassicLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DisableVpcClassicLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DisableVpcClassicLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DisableVpcClassicLinkFluentBuilder {
             crate::operation::disable_vpc_classic_link::DisableVpcClassicLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError>,
     > {
         self.customize_middleware().await
     }

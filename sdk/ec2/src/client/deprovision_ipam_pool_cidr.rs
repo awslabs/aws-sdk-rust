@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeprovisionIpamPoolCidrOutput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput) with field(s):
     ///   - [`ipam_pool_cidr(Option<IpamPoolCidr>)`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput::ipam_pool_cidr): <p>The deprovisioned pool CIDR.</p>
     /// - On failure, responds with [`SdkError<DeprovisionIpamPoolCidrError>`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError)
-    pub fn deprovision_ipam_pool_cidr(
-        &self,
-    ) -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrFluentBuilder
-    {
+    pub fn deprovision_ipam_pool_cidr(&self) -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrFluentBuilder {
         crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrFluentBuilder::new(self.handle.clone())
     }
 }

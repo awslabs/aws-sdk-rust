@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`workload_share_summaries(Option<Vec<WorkloadShareSummary>>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::workload_share_summaries): <p>A list of workload share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkloadSharesError>`](crate::operation::list_workload_shares::ListWorkloadSharesError)
-    pub fn list_workload_shares(
-        &self,
-    ) -> crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder {
-        crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workload_shares(&self) -> crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder {
+        crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::new(self.handle.clone())
     }
 }

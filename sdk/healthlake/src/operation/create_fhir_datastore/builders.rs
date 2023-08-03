@@ -37,9 +37,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         }
     }
     /// Access the CreateFHIRDatastore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateFHIRDatastoreFluentBuilder {
             crate::operation::create_fhir_datastore::CreateFHIRDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateFHIRDatastoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateFHIRDatastoreFluentBuilder {
             crate::operation::create_fhir_datastore::CreateFHIRDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The user generated name for the data store.</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_name(input.into());
         self
     }
     /// <p>The user generated name for the data store.</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_name(input);
         self
     }
@@ -148,10 +129,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
-    pub fn set_datastore_type_version(
-        mut self,
-        input: ::std::option::Option<crate::types::FhirVersion>,
-    ) -> Self {
+    pub fn set_datastore_type_version(mut self, input: ::std::option::Option<crate::types::FhirVersion>) -> Self {
         self.inner = self.inner.set_datastore_type_version(input);
         self
     }
@@ -165,10 +143,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
-    pub fn set_sse_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SseConfiguration>,
-    ) -> Self {
+    pub fn set_sse_configuration(mut self, input: ::std::option::Option<crate::types::SseConfiguration>) -> Self {
         self.inner = self.inner.set_sse_configuration(input);
         self
     }
@@ -182,17 +157,12 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
-    pub fn set_preload_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PreloadDataConfig>,
-    ) -> Self {
+    pub fn set_preload_data_config(mut self, input: ::std::option::Option<crate::types::PreloadDataConfig>) -> Self {
         self.inner = self.inner.set_preload_data_config(input);
         self
     }
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
-    pub fn get_preload_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PreloadDataConfig> {
+    pub fn get_preload_data_config(&self) -> &::std::option::Option<crate::types::PreloadDataConfig> {
         self.inner.get_preload_data_config()
     }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
@@ -219,10 +189,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p> Resource tags that are applied to a data store when it is created. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -231,25 +198,17 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
-    pub fn identity_provider_configuration(
-        mut self,
-        input: crate::types::IdentityProviderConfiguration,
-    ) -> Self {
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
         self.inner = self.inner.identity_provider_configuration(input);
         self
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
-    pub fn set_identity_provider_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
-    ) -> Self {
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
         self.inner = self.inner.set_identity_provider_configuration(input);
         self
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
-    pub fn get_identity_provider_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         self.inner.get_identity_provider_configuration()
     }
 }

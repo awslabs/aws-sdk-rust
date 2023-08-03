@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceConnectorOutput {
 }
 impl GetVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorOutput`](crate::operation::get_voice_connector::GetVoiceConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::get_voice_connector::builders::GetVoiceConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::get_voice_connector::builders::GetVoiceConnectorOutputBuilder {
         crate::operation::get_voice_connector::builders::GetVoiceConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorOutput`](crate::operation::get_voice_connector::GetVoiceConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorOutputBuilder {
     pub(crate) voice_connector: ::std::option::Option<crate::types::VoiceConnector>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetVoiceConnectorOutputBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector details.</p>
-    pub fn set_voice_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnector>,
-    ) -> Self {
+    pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnector>) -> Self {
         self.voice_connector = input;
         self
     }

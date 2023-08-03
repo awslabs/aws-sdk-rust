@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`attributes(HashMap<String, String>)`](crate::operation::update_contact_attributes::builders::UpdateContactAttributesFluentBuilder::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::operation::update_contact_attributes::builders::UpdateContactAttributesFluentBuilder::set_attributes): <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>  <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     /// - On success, responds with [`UpdateContactAttributesOutput`](crate::operation::update_contact_attributes::UpdateContactAttributesOutput)
     /// - On failure, responds with [`SdkError<UpdateContactAttributesError>`](crate::operation::update_contact_attributes::UpdateContactAttributesError)
-    pub fn update_contact_attributes(
-        &self,
-    ) -> crate::operation::update_contact_attributes::builders::UpdateContactAttributesFluentBuilder
-    {
+    pub fn update_contact_attributes(&self) -> crate::operation::update_contact_attributes::builders::UpdateContactAttributesFluentBuilder {
         crate::operation::update_contact_attributes::builders::UpdateContactAttributesFluentBuilder::new(self.handle.clone())
     }
 }

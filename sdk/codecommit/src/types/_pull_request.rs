@@ -27,8 +27,7 @@ pub struct PullRequest {
     pub author_arn: ::std::option::Option<::std::string::String>,
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
     #[doc(hidden)]
-    pub pull_request_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>,
+    pub pull_request_targets: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -61,9 +60,7 @@ impl PullRequest {
         self.creation_date.as_ref()
     }
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
-    pub fn pull_request_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
@@ -71,9 +68,7 @@ impl PullRequest {
         self.author_arn.as_deref()
     }
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-    pub fn pull_request_targets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PullRequestTarget]> {
+    pub fn pull_request_targets(&self) -> ::std::option::Option<&[crate::types::PullRequestTarget]> {
         self.pull_request_targets.as_deref()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
@@ -98,9 +93,7 @@ impl PullRequest {
 
 /// A builder for [`PullRequest`](crate::types::PullRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullRequestBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -109,26 +102,19 @@ pub struct PullRequestBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
     pub(crate) author_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) pull_request_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>,
+    pub(crate) pull_request_targets: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rules: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>>,
 }
 impl PullRequestBuilder {
     /// <p>The system-generated ID of the pull request. </p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. </p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -170,10 +156,7 @@ impl PullRequestBuilder {
         self
     }
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-    pub fn set_last_activity_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_activity_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_activity_date = input;
         self
     }
@@ -187,10 +170,7 @@ impl PullRequestBuilder {
         self
     }
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -204,17 +184,12 @@ impl PullRequestBuilder {
         self
     }
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
-    pub fn set_pull_request_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestStatusEnum>,
-    ) -> Self {
+    pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
         self.pull_request_status = input;
         self
     }
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
-    pub fn get_pull_request_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+    pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
         &self.pull_request_status
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
@@ -243,32 +218,21 @@ impl PullRequestBuilder {
         self
     }
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-    pub fn set_pull_request_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>,
-    ) -> Self {
+    pub fn set_pull_request_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>>) -> Self {
         self.pull_request_targets = input;
         self
     }
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-    pub fn get_pull_request_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>> {
+    pub fn get_pull_request_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PullRequestTarget>> {
         &self.pull_request_targets
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -302,17 +266,12 @@ impl PullRequestBuilder {
         self
     }
     /// <p>The approval rules applied to the pull request.</p>
-    pub fn set_approval_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>>,
-    ) -> Self {
+    pub fn set_approval_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>>) -> Self {
         self.approval_rules = input;
         self
     }
     /// <p>The approval rules applied to the pull request.</p>
-    pub fn get_approval_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>> {
+    pub fn get_approval_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApprovalRule>> {
         &self.approval_rules
     }
     /// Consumes the builder and constructs a [`PullRequest`](crate::types::PullRequest).

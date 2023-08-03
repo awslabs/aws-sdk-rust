@@ -30,9 +30,7 @@ impl LfTagError {
 
 /// A builder for [`LfTagError`](crate::types::LfTagError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LfTagErrorBuilder {
     pub(crate) lf_tag: ::std::option::Option<crate::types::LfTagPair>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,

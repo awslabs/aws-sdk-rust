@@ -34,7 +34,11 @@ impl super::Client {
     ///   - [`content_redaction_type(Option<ContentRedactionType>)`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput::content_redaction_type): <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
     ///   - [`pii_entity_types(Option<String>)`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput::pii_entity_types): <p>Lists the PII entity types you specified in your Call Analytics request.</p>
     /// - On failure, responds with [`SdkError<StartCallAnalyticsStreamTranscriptionError>`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError)
-    pub fn start_call_analytics_stream_transcription(&self) -> crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionFluentBuilder{
-        crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionFluentBuilder::new(self.handle.clone())
+    pub fn start_call_analytics_stream_transcription(
+        &self,
+    ) -> crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionFluentBuilder {
+        crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

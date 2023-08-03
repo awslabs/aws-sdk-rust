@@ -35,9 +35,7 @@ impl ListDataViewsOutput {
 
 /// A builder for [`ListDataViewsOutput`](crate::operation::list_data_views::ListDataViewsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataViewsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) data_views: ::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>>,
@@ -70,17 +68,12 @@ impl ListDataViewsOutputBuilder {
         self
     }
     /// <p>A list of Dataviews.</p>
-    pub fn set_data_views(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>>,
-    ) -> Self {
+    pub fn set_data_views(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>>) -> Self {
         self.data_views = input;
         self
     }
     /// <p>A list of Dataviews.</p>
-    pub fn get_data_views(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>> {
+    pub fn get_data_views(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>> {
         &self.data_views
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

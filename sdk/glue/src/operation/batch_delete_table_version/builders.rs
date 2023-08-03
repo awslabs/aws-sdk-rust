@@ -26,8 +26,7 @@ impl BatchDeleteTableVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteTableVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder,
+    inner: crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder,
 }
 impl BatchDeleteTableVersionFluentBuilder {
     /// Creates a new `BatchDeleteTableVersion`.
@@ -38,10 +37,7 @@ impl BatchDeleteTableVersionFluentBuilder {
         }
     }
     /// Access the BatchDeleteTableVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl BatchDeleteTableVersionFluentBuilder {
             crate::operation::batch_delete_table_version::BatchDeleteTableVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_version::BatchDeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_version::BatchDeleteTableVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl BatchDeleteTableVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl BatchDeleteTableVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_version::BatchDeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_version::BatchDeleteTableVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl BatchDeleteTableVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_version::BatchDeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_version::BatchDeleteTableVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl BatchDeleteTableVersionFluentBuilder {
             crate::operation::batch_delete_table_version::BatchDeleteTableVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_version::BatchDeleteTableVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_version::BatchDeleteTableVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl BatchDeleteTableVersionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -182,17 +161,12 @@ impl BatchDeleteTableVersionFluentBuilder {
         self
     }
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn set_version_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_version_ids(input);
         self
     }
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn get_version_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_version_ids()
     }
 }

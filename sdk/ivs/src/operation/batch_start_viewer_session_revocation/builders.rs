@@ -5,16 +5,16 @@ pub use crate::operation::batch_start_viewer_session_revocation::_batch_start_vi
 
 impl BatchStartViewerSessionRevocationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_start_viewer_session_revocation();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchStartViewerSessionRevocationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder,
+    inner: crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder,
 }
 impl BatchStartViewerSessionRevocationFluentBuilder {
     /// Creates a new `BatchStartViewerSessionRevocation`.
@@ -37,15 +37,20 @@ impl BatchStartViewerSessionRevocationFluentBuilder {
         }
     }
     /// Access the BatchStartViewerSessionRevocation as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl BatchStartViewerSessionRevocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl BatchStartViewerSessionRevocationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `viewerSessions`.
@@ -99,29 +114,20 @@ impl BatchStartViewerSessionRevocationFluentBuilder {
     /// To override the contents of this collection use [`set_viewer_sessions`](Self::set_viewer_sessions).
     ///
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn viewer_sessions(
-        mut self,
-        input: crate::types::BatchStartViewerSessionRevocationViewerSession,
-    ) -> Self {
+    pub fn viewer_sessions(mut self, input: crate::types::BatchStartViewerSessionRevocationViewerSession) -> Self {
         self.inner = self.inner.viewer_sessions(input);
         self
     }
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
     pub fn set_viewer_sessions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
     ) -> Self {
         self.inner = self.inner.set_viewer_sessions(input);
         self
     }
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn get_viewer_sessions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
-    > {
+    pub fn get_viewer_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>> {
         self.inner.get_viewer_sessions()
     }
 }

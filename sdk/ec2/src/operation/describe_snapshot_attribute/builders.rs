@@ -27,7 +27,7 @@ impl DescribeSnapshotAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder,
+    inner: crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder,
 }
 impl DescribeSnapshotAttributeFluentBuilder {
     /// Creates a new `DescribeSnapshotAttribute`.
@@ -38,7 +38,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
         }
     }
     /// Access the DescribeSnapshotAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
             crate::operation::describe_snapshot_attribute::DescribeSnapshotAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
             crate::operation::describe_snapshot_attribute::DescribeSnapshotAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +116,7 @@ impl DescribeSnapshotAttributeFluentBuilder {
         self
     }
     /// <p>The snapshot attribute you would like to view.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

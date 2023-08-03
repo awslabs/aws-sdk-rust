@@ -27,9 +27,7 @@ impl Transform {
         self.variables.as_deref()
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
-    pub fn processing_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransformProcessingConfig> {
+    pub fn processing_config(&self) -> ::std::option::Option<&crate::types::TransformProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
@@ -42,9 +40,7 @@ impl Transform {
 
 /// A builder for [`Transform`](crate::types::Transform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
@@ -80,17 +76,12 @@ impl TransformBuilder {
         self
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>) -> Self {
         self.variables = input;
         self
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
         &self.variables
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
@@ -99,17 +90,12 @@ impl TransformBuilder {
         self
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
-    pub fn set_processing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformProcessingConfig>,
-    ) -> Self {
+    pub fn set_processing_config(mut self, input: ::std::option::Option<crate::types::TransformProcessingConfig>) -> Self {
         self.processing_config = input;
         self
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
-    pub fn get_processing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformProcessingConfig> {
+    pub fn get_processing_config(&self) -> &::std::option::Option<crate::types::TransformProcessingConfig> {
         &self.processing_config
     }
     /// Consumes the builder and constructs a [`Transform`](crate::types::Transform).

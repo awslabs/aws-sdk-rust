@@ -33,27 +33,19 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
 
 /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
     /// <p>The name of the template you want to associate with one or more repositories.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template you want to associate with one or more repositories.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
@@ -68,10 +60,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
     /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
         v.push(input.into());
         self.repository_names = ::std::option::Option::Some(v);
@@ -80,30 +69,28 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
     /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repository_names = input;
         self
     }
     /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.repository_names
     }
     /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
-                approval_rule_template_name: self.approval_rule_template_name
-                ,
-                repository_names: self.repository_names
-                ,
-            }
+                approval_rule_template_name: self.approval_rule_template_name,
+                repository_names: self.repository_names,
+            },
         )
     }
 }

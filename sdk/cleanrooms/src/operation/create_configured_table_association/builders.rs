@@ -5,16 +5,16 @@ pub use crate::operation::create_configured_table_association::_create_configure
 
 impl CreateConfiguredTableAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_configured_table_association();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder,
+    inner: crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder,
 }
 impl CreateConfiguredTableAssociationFluentBuilder {
     /// Creates a new `CreateConfiguredTableAssociation`.
@@ -37,15 +37,20 @@ impl CreateConfiguredTableAssociationFluentBuilder {
         }
     }
     /// Access the CreateConfiguredTableAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_configured_table_association::CreateConfiguredTableAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configured_table_association::CreateConfiguredTableAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateConfiguredTableAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl CreateConfiguredTableAssociationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_configured_table_association::CreateConfiguredTableAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configured_table_association::CreateConfiguredTableAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
@@ -123,18 +138,12 @@ impl CreateConfiguredTableAssociationFluentBuilder {
         self.inner.get_description()
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -143,18 +152,12 @@ impl CreateConfiguredTableAssociationFluentBuilder {
         self.inner.get_membership_identifier()
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub fn configured_table_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configured_table_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }
@@ -181,30 +184,17 @@ impl CreateConfiguredTableAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

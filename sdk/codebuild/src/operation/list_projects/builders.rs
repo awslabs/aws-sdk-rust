@@ -10,10 +10,7 @@ impl ListProjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_projects::ListProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_projects::ListProjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_projects();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListProjectsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_projects::ListProjects,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_projects::ListProjects, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListProjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListProjectsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_projects::ListProjects,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_projects::ListProjects, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListProjectsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_projects::paginator::ListProjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_projects::paginator::ListProjectsPaginator {
-        crate::operation::list_projects::paginator::ListProjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_projects::paginator::ListProjectsPaginator {
+        crate::operation::list_projects::paginator::ListProjectsPaginator::new(self.handle, self.inner)
     }
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
@@ -141,10 +124,7 @@ impl ListProjectsFluentBuilder {
     /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProjectSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -174,10 +154,7 @@ impl ListProjectsFluentBuilder {
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

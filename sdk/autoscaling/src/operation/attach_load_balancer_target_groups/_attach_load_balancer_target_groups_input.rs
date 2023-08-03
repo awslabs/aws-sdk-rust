@@ -22,34 +22,26 @@ impl AttachLoadBalancerTargetGroupsInput {
 }
 impl AttachLoadBalancerTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTargetGroupsInput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput).
-    pub fn builder() -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder {
         crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachLoadBalancerTargetGroupsInput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTargetGroupsInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttachLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -62,27 +54,19 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn target_group_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_group_ar_ns.unwrap_or_default();
         v.push(input.into());
         self.target_group_ar_ns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn set_target_group_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_group_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_group_ar_ns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn get_target_group_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_group_ar_ns
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTargetGroupsInput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput).
@@ -94,11 +78,9 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                target_group_ar_ns: self.target_group_ar_ns
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                target_group_ar_ns: self.target_group_ar_ns,
+            },
         )
     }
 }

@@ -55,8 +55,7 @@ pub struct BarChartConfiguration {
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
     #[doc(hidden)]
-    pub contribution_analysis_defaults:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
 }
 impl BarChartConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -64,9 +63,7 @@ impl BarChartConfiguration {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>BarChartVisual</code>.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BarChartSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::BarChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
@@ -86,9 +83,7 @@ impl BarChartConfiguration {
         self.visual_palette.as_ref()
     }
     /// <p>The small multiples setup for the visual.</p>
-    pub fn small_multiples_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmallMultiplesOptions> {
+    pub fn small_multiples_options(&self) -> ::std::option::Option<&crate::types::SmallMultiplesOptions> {
         self.small_multiples_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, axis step) for bar chart category.</p>
@@ -96,9 +91,7 @@ impl BarChartConfiguration {
         self.category_axis.as_ref()
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart.</p>
-    pub fn category_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn category_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.category_label_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, axis step) for a bar chart value.</p>
@@ -106,15 +99,11 @@ impl BarChartConfiguration {
         self.value_axis.as_ref()
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart value.</p>
-    pub fn value_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn value_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.value_label_options.as_ref()
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a color that is used in a bar chart.</p>
-    pub fn color_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn color_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.color_label_options.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
@@ -134,9 +123,7 @@ impl BarChartConfiguration {
         self.reference_lines.as_deref()
     }
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub fn contribution_analysis_defaults(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContributionAnalysisDefault]> {
+    pub fn contribution_analysis_defaults(&self) -> ::std::option::Option<&[crate::types::ContributionAnalysisDefault]> {
         self.contribution_analysis_defaults.as_deref()
     }
 }
@@ -149,9 +136,7 @@ impl BarChartConfiguration {
 
 /// A builder for [`BarChartConfiguration`](crate::types::BarChartConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BarChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::BarChartFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::BarChartSortConfiguration>,
@@ -168,8 +153,7 @@ pub struct BarChartConfigurationBuilder {
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
-    pub(crate) contribution_analysis_defaults:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub(crate) contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
 }
 impl BarChartConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -178,10 +162,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::BarChartFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::BarChartFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -195,17 +176,12 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a <code>BarChartVisual</code>.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BarChartSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::BarChartSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a <code>BarChartVisual</code>.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BarChartSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::BarChartSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
@@ -222,10 +198,7 @@ impl BarChartConfigurationBuilder {
     /// <li> <p> <code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p> </li>
     /// <li> <p> <code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p> </li>
     /// </ul>
-    pub fn set_orientation(
-        mut self,
-        input: ::std::option::Option<crate::types::BarChartOrientation>,
-    ) -> Self {
+    pub fn set_orientation(mut self, input: ::std::option::Option<crate::types::BarChartOrientation>) -> Self {
         self.orientation = input;
         self
     }
@@ -243,10 +216,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>Determines the arrangement of the bars. The orientation and arrangement of bars determine the type of bar that is used in the visual.</p>
-    pub fn set_bars_arrangement(
-        mut self,
-        input: ::std::option::Option<crate::types::BarsArrangement>,
-    ) -> Self {
+    pub fn set_bars_arrangement(mut self, input: ::std::option::Option<crate::types::BarsArrangement>) -> Self {
         self.bars_arrangement = input;
         self
     }
@@ -260,10 +230,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
+    pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
         self.visual_palette = input;
         self
     }
@@ -277,17 +244,12 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The small multiples setup for the visual.</p>
-    pub fn set_small_multiples_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmallMultiplesOptions>,
-    ) -> Self {
+    pub fn set_small_multiples_options(mut self, input: ::std::option::Option<crate::types::SmallMultiplesOptions>) -> Self {
         self.small_multiples_options = input;
         self
     }
     /// <p>The small multiples setup for the visual.</p>
-    pub fn get_small_multiples_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmallMultiplesOptions> {
+    pub fn get_small_multiples_options(&self) -> &::std::option::Option<crate::types::SmallMultiplesOptions> {
         &self.small_multiples_options
     }
     /// <p>The label display options (grid line, range, scale, axis step) for bar chart category.</p>
@@ -296,10 +258,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The label display options (grid line, range, scale, axis step) for bar chart category.</p>
-    pub fn set_category_axis(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
+    pub fn set_category_axis(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
         self.category_axis = input;
         self
     }
@@ -313,17 +272,12 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart.</p>
-    pub fn set_category_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_category_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.category_label_options = input;
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart.</p>
-    pub fn get_category_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_category_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.category_label_options
     }
     /// <p>The label display options (grid line, range, scale, axis step) for a bar chart value.</p>
@@ -332,10 +286,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The label display options (grid line, range, scale, axis step) for a bar chart value.</p>
-    pub fn set_value_axis(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
+    pub fn set_value_axis(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
         self.value_axis = input;
         self
     }
@@ -349,17 +300,12 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart value.</p>
-    pub fn set_value_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_value_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.value_label_options = input;
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart value.</p>
-    pub fn get_value_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_value_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.value_label_options
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a color that is used in a bar chart.</p>
@@ -368,17 +314,12 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a color that is used in a bar chart.</p>
-    pub fn set_color_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_color_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.color_label_options = input;
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) for a color that is used in a bar chart.</p>
-    pub fn get_color_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_color_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.color_label_options
     }
     /// <p>The legend display setup of the visual.</p>
@@ -401,10 +342,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
+    pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
         self.data_labels = input;
         self
     }
@@ -418,10 +356,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn set_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
+    pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
         self.tooltip = input;
         self
     }
@@ -441,17 +376,12 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn set_reference_lines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
-    ) -> Self {
+    pub fn set_reference_lines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>) -> Self {
         self.reference_lines = input;
         self
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn get_reference_lines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>> {
+    pub fn get_reference_lines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>> {
         &self.reference_lines
     }
     /// Appends an item to `contribution_analysis_defaults`.
@@ -459,10 +389,7 @@ impl BarChartConfigurationBuilder {
     /// To override the contents of this collection use [`set_contribution_analysis_defaults`](Self::set_contribution_analysis_defaults).
     ///
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub fn contribution_analysis_defaults(
-        mut self,
-        input: crate::types::ContributionAnalysisDefault,
-    ) -> Self {
+    pub fn contribution_analysis_defaults(mut self, input: crate::types::ContributionAnalysisDefault) -> Self {
         let mut v = self.contribution_analysis_defaults.unwrap_or_default();
         v.push(input);
         self.contribution_analysis_defaults = ::std::option::Option::Some(v);
@@ -477,9 +404,7 @@ impl BarChartConfigurationBuilder {
         self
     }
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub fn get_contribution_analysis_defaults(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>> {
+    pub fn get_contribution_analysis_defaults(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>> {
         &self.contribution_analysis_defaults
     }
     /// Consumes the builder and constructs a [`BarChartConfiguration`](crate::types::BarChartConfiguration).

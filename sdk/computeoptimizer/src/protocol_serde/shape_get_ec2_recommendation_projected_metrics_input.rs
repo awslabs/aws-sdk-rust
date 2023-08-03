@@ -28,10 +28,7 @@ pub fn ser_get_ec2_recommendation_projected_metrics_input(
     if let Some(var_6) = &input.recommendation_preferences {
         #[allow(unused_mut)]
         let mut object_7 = object.key("recommendationPreferences").start_object();
-        crate::protocol_serde::shape_recommendation_preferences::ser_recommendation_preferences(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_recommendation_preferences::ser_recommendation_preferences(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

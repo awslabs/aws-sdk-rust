@@ -37,9 +37,7 @@ impl ClosedDaysRule {
 
 /// A builder for [`ClosedDaysRule`](crate::types::ClosedDaysRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClosedDaysRuleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ClosedDaysRuleBuilder {
         &self.name
     }
     /// <p>Start DateTime ISO 8601 format</p>
-    pub fn start_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Start DateTime ISO 8601 format</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -81,18 +73,12 @@ impl ClosedDaysRuleBuilder {
         &self.start_date_time
     }
     /// <p>End DateTime ISO 8601 format</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>End DateTime ISO 8601 format</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date_time = input;
         self
     }

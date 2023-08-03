@@ -28,9 +28,7 @@ impl GetCodegenJobOutput {
 
 /// A builder for [`GetCodegenJobOutput`](crate::operation::get_codegen_job::GetCodegenJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCodegenJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::CodegenJob>,
     _request_id: Option<String>,

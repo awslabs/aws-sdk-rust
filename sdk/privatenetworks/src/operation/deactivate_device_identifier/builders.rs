@@ -26,7 +26,7 @@ impl DeactivateDeviceIdentifierInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder,
+    inner: crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder,
 }
 impl DeactivateDeviceIdentifierFluentBuilder {
     /// Creates a new `DeactivateDeviceIdentifier`.
@@ -37,7 +37,7 @@ impl DeactivateDeviceIdentifierFluentBuilder {
         }
     }
     /// Access the DeactivateDeviceIdentifier as a reference.
-    pub fn as_input(&self) -> &crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeactivateDeviceIdentifierFluentBuilder {
             crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeactivateDeviceIdentifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeactivateDeviceIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeactivateDeviceIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeactivateDeviceIdentifierFluentBuilder {
             crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_identifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_identifier_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn set_device_identifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_identifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_identifier_arn(input);
         self
     }

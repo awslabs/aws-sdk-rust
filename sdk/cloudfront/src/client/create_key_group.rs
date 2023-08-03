@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_key_group::CreateKeyGroupOutput::location): <p>The URL of the key group.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_key_group::CreateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
     /// - On failure, responds with [`SdkError<CreateKeyGroupError>`](crate::operation::create_key_group::CreateKeyGroupError)
-    pub fn create_key_group(
-        &self,
-    ) -> crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder {
-        crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_key_group(&self) -> crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder {
+        crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder::new(self.handle.clone())
     }
 }

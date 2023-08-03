@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateCustomerGatewayOutput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput) with field(s):
     ///   - [`customer_gateway_association(Option<CustomerGatewayAssociation>)`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput::customer_gateway_association): <p>The customer gateway association.</p>
     /// - On failure, responds with [`SdkError<AssociateCustomerGatewayError>`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayError)
-    pub fn associate_customer_gateway(
-        &self,
-    ) -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayFluentBuilder
-    {
+    pub fn associate_customer_gateway(&self) -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayFluentBuilder {
         crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayFluentBuilder::new(self.handle.clone())
     }
 }

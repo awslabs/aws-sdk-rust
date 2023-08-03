@@ -12,28 +12,19 @@ pub fn ser_gateway_route_spec(
     if let Some(var_2) = &input.http_route {
         #[allow(unused_mut)]
         let mut object_3 = object.key("httpRoute").start_object();
-        crate::protocol_serde::shape_http_gateway_route::ser_http_gateway_route(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_http_gateway_route::ser_http_gateway_route(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.http2_route {
         #[allow(unused_mut)]
         let mut object_5 = object.key("http2Route").start_object();
-        crate::protocol_serde::shape_http_gateway_route::ser_http_gateway_route(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_http_gateway_route::ser_http_gateway_route(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.grpc_route {
         #[allow(unused_mut)]
         let mut object_7 = object.key("grpcRoute").start_object();
-        crate::protocol_serde::shape_grpc_gateway_route::ser_grpc_gateway_route(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_grpc_gateway_route::ser_grpc_gateway_route(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -41,17 +32,9 @@ pub fn ser_gateway_route_spec(
 
 pub(crate) fn de_gateway_route_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::GatewayRouteSpec>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::GatewayRouteSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,50 +44,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "priority" => {
-                                builder = builder.set_priority(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "priority" => {
+                            builder = builder.set_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "httpRoute" => {
-                                builder = builder.set_http_route(
-                                    crate::protocol_serde::shape_http_gateway_route::de_http_gateway_route(tokens)?
-                                );
-                            }
-                            "http2Route" => {
-                                builder = builder.set_http2_route(
-                                    crate::protocol_serde::shape_http_gateway_route::de_http_gateway_route(tokens)?
-                                );
-                            }
-                            "grpcRoute" => {
-                                builder = builder.set_grpc_route(
-                                    crate::protocol_serde::shape_grpc_gateway_route::de_grpc_gateway_route(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "httpRoute" => {
+                            builder = builder.set_http_route(crate::protocol_serde::shape_http_gateway_route::de_http_gateway_route(tokens)?);
+                        }
+                        "http2Route" => {
+                            builder = builder.set_http2_route(crate::protocol_serde::shape_http_gateway_route::de_http_gateway_route(tokens)?);
+                        }
+                        "grpcRoute" => {
+                            builder = builder.set_grpc_route(crate::protocol_serde::shape_grpc_gateway_route::de_grpc_gateway_route(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

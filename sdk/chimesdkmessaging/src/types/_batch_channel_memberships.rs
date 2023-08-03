@@ -51,9 +51,7 @@ impl BatchChannelMemberships {
 
 /// A builder for [`BatchChannelMemberships`](crate::types::BatchChannelMemberships).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchChannelMembershipsBuilder {
     pub(crate) invited_by: ::std::option::Option<crate::types::Identity>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
@@ -82,10 +80,7 @@ impl BatchChannelMembershipsBuilder {
         self
     }
     /// <p>The membership types set for the channel members.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -105,10 +100,7 @@ impl BatchChannelMembershipsBuilder {
         self
     }
     /// <p>The users successfully added to the request.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>) -> Self {
         self.members = input;
         self
     }
@@ -131,18 +123,12 @@ impl BatchChannelMembershipsBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }

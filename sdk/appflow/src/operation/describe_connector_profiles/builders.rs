@@ -27,7 +27,7 @@ impl DescribeConnectorProfilesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectorProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder,
+    inner: crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder,
 }
 impl DescribeConnectorProfilesFluentBuilder {
     /// Creates a new `DescribeConnectorProfiles`.
@@ -38,7 +38,7 @@ impl DescribeConnectorProfilesFluentBuilder {
         }
     }
     /// Access the DescribeConnectorProfiles as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeConnectorProfilesFluentBuilder {
             crate::operation::describe_connector_profiles::DescribeConnectorProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_profiles::DescribeConnectorProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_profiles::DescribeConnectorProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeConnectorProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeConnectorProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_profiles::DescribeConnectorProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_profiles::DescribeConnectorProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_profiles::DescribeConnectorProfilesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeConnectorProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_profiles::DescribeConnectorProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_profiles::DescribeConnectorProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_profiles::DescribeConnectorProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl DescribeConnectorProfilesFluentBuilder {
             crate::operation::describe_connector_profiles::DescribeConnectorProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connector_profiles::DescribeConnectorProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connector_profiles::DescribeConnectorProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator {
         crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `connectorProfileNames`.
@@ -135,25 +121,17 @@ impl DescribeConnectorProfilesFluentBuilder {
     /// To override the contents of this collection use [`set_connector_profile_names`](Self::set_connector_profile_names).
     ///
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_names(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connector_profile_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_connector_profile_names(input);
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn get_connector_profile_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_profile_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_connector_profile_names()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -162,10 +140,7 @@ impl DescribeConnectorProfilesFluentBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
@@ -174,18 +149,12 @@ impl DescribeConnectorProfilesFluentBuilder {
         self.inner.get_connector_type()
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_label(input.into());
         self
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_label(input);
         self
     }

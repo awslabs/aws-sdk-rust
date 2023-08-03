@@ -42,9 +42,7 @@ pub struct UpdateInputDeviceOutput {
     pub uhd_device_settings: ::std::option::Option<crate::types::InputDeviceUhdSettings>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateInputDeviceOutput {
@@ -53,15 +51,11 @@ impl UpdateInputDeviceOutput {
         self.arn.as_deref()
     }
     /// The state of the connection between the input device and AWS.
-    pub fn connection_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceConnectionState> {
+    pub fn connection_state(&self) -> ::std::option::Option<&crate::types::InputDeviceConnectionState> {
         self.connection_state.as_ref()
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    pub fn device_settings_sync_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceSettingsSyncState> {
+    pub fn device_settings_sync_state(&self) -> ::std::option::Option<&crate::types::DeviceSettingsSyncState> {
         self.device_settings_sync_state.as_ref()
     }
     /// The status of software on the input device.
@@ -69,9 +63,7 @@ impl UpdateInputDeviceOutput {
         self.device_update_status.as_ref()
     }
     /// Settings that describe an input device that is type HD.
-    pub fn hd_device_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceHdSettings> {
+    pub fn hd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceHdSettings> {
         self.hd_device_settings.as_ref()
     }
     /// The unique ID of the input device.
@@ -87,9 +79,7 @@ impl UpdateInputDeviceOutput {
         self.name.as_deref()
     }
     /// The network settings for the input device.
-    pub fn network_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceNetworkSettings> {
+    pub fn network_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceNetworkSettings> {
         self.network_settings.as_ref()
     }
     /// The unique serial number of the input device.
@@ -101,17 +91,11 @@ impl UpdateInputDeviceOutput {
         self.r#type.as_ref()
     }
     /// Settings that describe an input device that is type UHD.
-    pub fn uhd_device_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceUhdSettings> {
+    pub fn uhd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -122,22 +106,18 @@ impl ::aws_http::request_id::RequestId for UpdateInputDeviceOutput {
 }
 impl UpdateInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInputDeviceOutput`](crate::operation::update_input_device::UpdateInputDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_input_device::builders::UpdateInputDeviceOutputBuilder {
+    pub fn builder() -> crate::operation::update_input_device::builders::UpdateInputDeviceOutputBuilder {
         crate::operation::update_input_device::builders::UpdateInputDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInputDeviceOutput`](crate::operation::update_input_device::UpdateInputDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInputDeviceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) connection_state: ::std::option::Option<crate::types::InputDeviceConnectionState>,
-    pub(crate) device_settings_sync_state:
-        ::std::option::Option<crate::types::DeviceSettingsSyncState>,
+    pub(crate) device_settings_sync_state: ::std::option::Option<crate::types::DeviceSettingsSyncState>,
     pub(crate) device_update_status: ::std::option::Option<crate::types::DeviceUpdateStatus>,
     pub(crate) hd_device_settings: ::std::option::Option<crate::types::InputDeviceHdSettings>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -147,9 +127,7 @@ pub struct UpdateInputDeviceOutputBuilder {
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputDeviceType>,
     pub(crate) uhd_device_settings: ::std::option::Option<crate::types::InputDeviceUhdSettings>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateInputDeviceOutputBuilder {
@@ -173,39 +151,26 @@ impl UpdateInputDeviceOutputBuilder {
         self
     }
     /// The state of the connection between the input device and AWS.
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::InputDeviceConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
     /// The state of the connection between the input device and AWS.
-    pub fn get_connection_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConnectionState> {
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::InputDeviceConnectionState> {
         &self.connection_state
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    pub fn device_settings_sync_state(
-        mut self,
-        input: crate::types::DeviceSettingsSyncState,
-    ) -> Self {
+    pub fn device_settings_sync_state(mut self, input: crate::types::DeviceSettingsSyncState) -> Self {
         self.device_settings_sync_state = ::std::option::Option::Some(input);
         self
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    pub fn set_device_settings_sync_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSettingsSyncState>,
-    ) -> Self {
+    pub fn set_device_settings_sync_state(mut self, input: ::std::option::Option<crate::types::DeviceSettingsSyncState>) -> Self {
         self.device_settings_sync_state = input;
         self
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    pub fn get_device_settings_sync_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceSettingsSyncState> {
+    pub fn get_device_settings_sync_state(&self) -> &::std::option::Option<crate::types::DeviceSettingsSyncState> {
         &self.device_settings_sync_state
     }
     /// The status of software on the input device.
@@ -214,17 +179,12 @@ impl UpdateInputDeviceOutputBuilder {
         self
     }
     /// The status of software on the input device.
-    pub fn set_device_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceUpdateStatus>,
-    ) -> Self {
+    pub fn set_device_update_status(mut self, input: ::std::option::Option<crate::types::DeviceUpdateStatus>) -> Self {
         self.device_update_status = input;
         self
     }
     /// The status of software on the input device.
-    pub fn get_device_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceUpdateStatus> {
+    pub fn get_device_update_status(&self) -> &::std::option::Option<crate::types::DeviceUpdateStatus> {
         &self.device_update_status
     }
     /// Settings that describe an input device that is type HD.
@@ -233,17 +193,12 @@ impl UpdateInputDeviceOutputBuilder {
         self
     }
     /// Settings that describe an input device that is type HD.
-    pub fn set_hd_device_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceHdSettings>,
-    ) -> Self {
+    pub fn set_hd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceHdSettings>) -> Self {
         self.hd_device_settings = input;
         self
     }
     /// Settings that describe an input device that is type HD.
-    pub fn get_hd_device_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceHdSettings> {
+    pub fn get_hd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceHdSettings> {
         &self.hd_device_settings
     }
     /// The unique ID of the input device.
@@ -294,32 +249,21 @@ impl UpdateInputDeviceOutputBuilder {
         self
     }
     /// The network settings for the input device.
-    pub fn set_network_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceNetworkSettings>,
-    ) -> Self {
+    pub fn set_network_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceNetworkSettings>) -> Self {
         self.network_settings = input;
         self
     }
     /// The network settings for the input device.
-    pub fn get_network_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceNetworkSettings> {
+    pub fn get_network_settings(&self) -> &::std::option::Option<crate::types::InputDeviceNetworkSettings> {
         &self.network_settings
     }
     /// The unique serial number of the input device.
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique serial number of the input device.
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial_number = input;
         self
     }
@@ -347,17 +291,12 @@ impl UpdateInputDeviceOutputBuilder {
         self
     }
     /// Settings that describe an input device that is type UHD.
-    pub fn set_uhd_device_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceUhdSettings>,
-    ) -> Self {
+    pub fn set_uhd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceUhdSettings>) -> Self {
         self.uhd_device_settings = input;
         self
     }
     /// Settings that describe an input device that is type UHD.
-    pub fn get_uhd_device_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceUhdSettings> {
+    pub fn get_uhd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceUhdSettings> {
         &self.uhd_device_settings
     }
     /// Adds a key-value pair to `tags`.
@@ -365,32 +304,19 @@ impl UpdateInputDeviceOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

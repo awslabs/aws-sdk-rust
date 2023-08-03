@@ -58,9 +58,7 @@ impl ContainerServiceHealthCheckConfig {
 
 /// A builder for [`ContainerServiceHealthCheckConfig`](crate::types::ContainerServiceHealthCheckConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceHealthCheckConfigBuilder {
     pub(crate) healthy_threshold: ::std::option::Option<i32>,
     pub(crate) unhealthy_threshold: ::std::option::Option<i32>,
@@ -141,18 +139,12 @@ impl ContainerServiceHealthCheckConfigBuilder {
         &self.path
     }
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
-    pub fn success_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn success_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.success_codes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
-    pub fn set_success_codes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_success_codes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.success_codes = input;
         self
     }

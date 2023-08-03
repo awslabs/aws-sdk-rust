@@ -51,18 +51,14 @@ impl ListPortfolioAccessInput {
 }
 impl ListPortfolioAccessInput {
     /// Creates a new builder-style object to manufacture [`ListPortfolioAccessInput`](crate::operation::list_portfolio_access::ListPortfolioAccessInput).
-    pub fn builder(
-    ) -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessInputBuilder {
-        crate::operation::list_portfolio_access::builders::ListPortfolioAccessInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessInputBuilder {
+        crate::operation::list_portfolio_access::builders::ListPortfolioAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPortfolioAccessInput`](crate::operation::list_portfolio_access::ListPortfolioAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPortfolioAccessInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -76,10 +72,7 @@ impl ListPortfolioAccessInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -88,10 +81,7 @@ impl ListPortfolioAccessInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -118,18 +108,12 @@ impl ListPortfolioAccessInputBuilder {
         &self.portfolio_id
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    pub fn organization_parent_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_parent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    pub fn set_organization_parent_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_parent_id = input;
         self
     }
@@ -168,18 +152,14 @@ impl ListPortfolioAccessInputBuilder {
     /// Consumes the builder and constructs a [`ListPortfolioAccessInput`](crate::operation::list_portfolio_access::ListPortfolioAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_portfolio_access::ListPortfolioAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_portfolio_access::ListPortfolioAccessInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                organization_parent_id: self.organization_parent_id,
-                page_token: self.page_token,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_portfolio_access::ListPortfolioAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_portfolio_access::ListPortfolioAccessInput {
+            accept_language: self.accept_language,
+            portfolio_id: self.portfolio_id,
+            organization_parent_id: self.organization_parent_id,
+            page_token: self.page_token,
+            page_size: self.page_size,
+        })
     }
 }

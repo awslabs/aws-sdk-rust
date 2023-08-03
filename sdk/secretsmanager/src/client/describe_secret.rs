@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`primary_region(Option<String>)`](crate::operation::describe_secret::DescribeSecretOutput::primary_region): <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
     ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::operation::describe_secret::DescribeSecretOutput::replication_status): <p>A list of the replicas of this secret and their status: </p>  <ul>   <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>   <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>   <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeSecretError>`](crate::operation::describe_secret::DescribeSecretError)
-    pub fn describe_secret(
-        &self,
-    ) -> crate::operation::describe_secret::builders::DescribeSecretFluentBuilder {
-        crate::operation::describe_secret::builders::DescribeSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_secret(&self) -> crate::operation::describe_secret::builders::DescribeSecretFluentBuilder {
+        crate::operation::describe_secret::builders::DescribeSecretFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationFluentBuilder::set_domain_name): <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     /// - On success, responds with [`DeleteAvailabilityConfigurationOutput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAvailabilityConfigurationError>`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError)
-    pub fn delete_availability_configuration(&self) -> crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationFluentBuilder{
+    pub fn delete_availability_configuration(
+        &self,
+    ) -> crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationFluentBuilder {
         crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

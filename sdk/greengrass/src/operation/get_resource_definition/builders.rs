@@ -37,10 +37,7 @@ impl GetResourceDefinitionFluentBuilder {
         }
     }
     /// Access the GetResourceDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_definition::builders::GetResourceDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_resource_definition::builders::GetResourceDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetResourceDefinitionFluentBuilder {
             crate::operation::get_resource_definition::GetResourceDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_definition::GetResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_definition::GetResourceDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetResourceDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetResourceDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_definition::GetResourceDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_definition::GetResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_definition::GetResourceDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetResourceDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_definition::GetResourceDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_definition::GetResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_definition::GetResourceDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetResourceDefinitionFluentBuilder {
             crate::operation::get_resource_definition::GetResourceDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_definition::GetResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_definition::GetResourceDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_definition_id(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_definition_id(input);
         self
     }

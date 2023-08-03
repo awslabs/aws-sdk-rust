@@ -57,9 +57,7 @@ impl UpdateRuleInput {
 
 /// A builder for [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -137,10 +135,7 @@ impl UpdateRuleInputBuilder {
         self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>) -> Self {
         self.actions = input;
         self
     }
@@ -154,10 +149,7 @@ impl UpdateRuleInputBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
+    pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
         self.publish_status = input;
         self
     }
@@ -166,12 +158,7 @@ impl UpdateRuleInputBuilder {
         &self.publish_status
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule::UpdateRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
             rule_id: self.rule_id,
             instance_id: self.instance_id,

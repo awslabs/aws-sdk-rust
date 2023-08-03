@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteDataflowEndpointGroupOutput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On failure, responds with [`SdkError<DeleteDataflowEndpointGroupError>`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError)
-    pub fn delete_dataflow_endpoint_group(&self) -> crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder{
+    pub fn delete_dataflow_endpoint_group(
+        &self,
+    ) -> crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder {
         crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

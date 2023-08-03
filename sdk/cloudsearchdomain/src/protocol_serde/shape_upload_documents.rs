@@ -2,8 +2,7 @@
 pub fn ser_upload_documents_headers(
     input: &crate::operation::upload_documents::UploadDocumentsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_upload_documents_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-Type", header_value);
@@ -28,47 +24,34 @@ pub fn de_upload_documents_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::upload_documents::UploadDocumentsOutput,
-    crate::operation::upload_documents::UploadDocumentsError,
-> {
+) -> std::result::Result<crate::operation::upload_documents::UploadDocumentsOutput, crate::operation::upload_documents::UploadDocumentsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::upload_documents::UploadDocumentsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::upload_documents::UploadDocumentsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::upload_documents::UploadDocumentsError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::upload_documents::UploadDocumentsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DocumentServiceException" => {
-            crate::operation::upload_documents::UploadDocumentsError::DocumentServiceException({
+        "DocumentServiceException" => crate::operation::upload_documents::UploadDocumentsError::DocumentServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::DocumentServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_document_service_exception::de_document_service_exception_json_err(_response_body, output).map_err(crate::operation::upload_documents::UploadDocumentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::DocumentServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_document_service_exception::de_document_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::upload_documents::UploadDocumentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::upload_documents::UploadDocumentsError::generic(generic),
     })
 }
@@ -78,22 +61,13 @@ pub fn de_upload_documents_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::upload_documents::UploadDocumentsOutput,
-    crate::operation::upload_documents::UploadDocumentsError,
-> {
+) -> std::result::Result<crate::operation::upload_documents::UploadDocumentsOutput, crate::operation::upload_documents::UploadDocumentsError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::upload_documents::builders::UploadDocumentsOutputBuilder::default();
-        output = crate::protocol_serde::shape_upload_documents::de_upload_documents(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::upload_documents::UploadDocumentsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::upload_documents::builders::UploadDocumentsOutputBuilder::default();
+        output = crate::protocol_serde::shape_upload_documents::de_upload_documents(_response_body, output)
+            .map_err(crate::operation::upload_documents::UploadDocumentsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -101,71 +75,54 @@ pub fn de_upload_documents_http_response_with_props(
 pub(crate) fn de_upload_documents(
     value: &[u8],
     mut builder: crate::operation::upload_documents::builders::UploadDocumentsOutputBuilder,
-) -> Result<
-    crate::operation::upload_documents::builders::UploadDocumentsOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::upload_documents::builders::UploadDocumentsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "adds" => {
-                        builder = builder.set_adds(
-                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "adds" => {
+                    builder = builder.set_adds(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?,
-                        );
-                    }
-                    "deletes" => {
-                        builder = builder.set_deletes(
-                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "deletes" => {
+                    builder = builder.set_deletes(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?,
-                        );
-                    }
-                    "status" => {
-                        builder = builder.set_status(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "warnings" => {
-                        builder = builder.set_warnings(
-                            crate::protocol_serde::shape_document_service_warnings::de_document_service_warnings(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "warnings" => {
+                    builder = builder.set_warnings(crate::protocol_serde::shape_document_service_warnings::de_document_service_warnings(
+                        tokens,
+                    )?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput::name): <p>The name of the scheduling policy.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput::arn): <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     /// - On failure, responds with [`SdkError<CreateSchedulingPolicyError>`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyError)
-    pub fn create_scheduling_policy(
-        &self,
-    ) -> crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyFluentBuilder
-    {
+    pub fn create_scheduling_policy(&self) -> crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyFluentBuilder {
         crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

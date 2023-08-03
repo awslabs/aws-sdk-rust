@@ -43,17 +43,14 @@ impl ListStudioComponentsInput {
 }
 impl ListStudioComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_studio_components::builders::ListStudioComponentsInputBuilder {
+    pub fn builder() -> crate::operation::list_studio_components::builders::ListStudioComponentsInputBuilder {
         crate::operation::list_studio_components::builders::ListStudioComponentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioComponentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -102,17 +99,12 @@ impl ListStudioComponentsInputBuilder {
         self
     }
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>> {
         &self.states
     }
     /// <p>The studio ID. </p>
@@ -141,34 +133,25 @@ impl ListStudioComponentsInputBuilder {
         self
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>) -> Self {
         self.types = input;
         self
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn get_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>> {
         &self.types
     }
     /// Consumes the builder and constructs a [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_studio_components::ListStudioComponentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_studio_components::ListStudioComponentsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                states: self.states,
-                studio_id: self.studio_id,
-                types: self.types,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_studio_components::ListStudioComponentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_studio_components::ListStudioComponentsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            states: self.states,
+            studio_id: self.studio_id,
+            types: self.types,
+        })
     }
 }

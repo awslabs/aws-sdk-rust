@@ -28,9 +28,7 @@ impl UpdateAclOutput {
 
 /// A builder for [`UpdateAclOutput`](crate::operation::update_acl::UpdateAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAclOutputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,

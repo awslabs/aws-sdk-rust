@@ -26,8 +26,7 @@ pub struct NatGateway {
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
     #[doc(hidden)]
-    pub nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     /// <p>The ID of the NAT gateway.</p>
     #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
@@ -83,9 +82,7 @@ impl NatGateway {
         self.failure_message.as_deref()
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn nat_gateway_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
+    pub fn nat_gateway_addresses(&self) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
         self.nat_gateway_addresses.as_deref()
     }
     /// <p>The ID of the NAT gateway.</p>
@@ -93,9 +90,7 @@ impl NatGateway {
         self.nat_gateway_id.as_deref()
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn provisioned_bandwidth(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedBandwidth> {
+    pub fn provisioned_bandwidth(&self) -> ::std::option::Option<&crate::types::ProvisionedBandwidth> {
         self.provisioned_bandwidth.as_ref()
     }
     /// <p>The state of the NAT gateway.</p>
@@ -135,16 +130,13 @@ impl NatGateway {
 
 /// A builder for [`NatGateway`](crate::types::NatGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NatGatewayBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_bandwidth: ::std::option::Option<crate::types::ProvisionedBandwidth>,
     pub(crate) state: ::std::option::Option<crate::types::NatGatewayState>,
@@ -160,10 +152,7 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>The date and time the NAT gateway was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -177,10 +166,7 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
-    pub fn set_delete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delete_time = input;
         self
     }
@@ -211,10 +197,7 @@ impl NatGatewayBuilder {
     /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li>
     /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li>
     /// </ul>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
@@ -227,10 +210,7 @@ impl NatGatewayBuilder {
     /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li>
     /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li>
     /// </ul>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -258,32 +238,21 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn set_nat_gateway_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
-    ) -> Self {
+    pub fn set_nat_gateway_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>) -> Self {
         self.nat_gateway_addresses = input;
         self
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn get_nat_gateway_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
+    pub fn get_nat_gateway_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
         &self.nat_gateway_addresses
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nat_gateway_id = input;
         self
     }
@@ -297,17 +266,12 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn set_provisioned_bandwidth(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedBandwidth>,
-    ) -> Self {
+    pub fn set_provisioned_bandwidth(mut self, input: ::std::option::Option<crate::types::ProvisionedBandwidth>) -> Self {
         self.provisioned_bandwidth = input;
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn get_provisioned_bandwidth(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedBandwidth> {
+    pub fn get_provisioned_bandwidth(&self) -> &::std::option::Option<crate::types::ProvisionedBandwidth> {
         &self.provisioned_bandwidth
     }
     /// <p>The state of the NAT gateway.</p>
@@ -330,10 +294,7 @@ impl NatGatewayBuilder {
     /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li>
     /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NatGatewayState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::NatGatewayState>) -> Self {
         self.state = input;
         self
     }
@@ -388,10 +349,7 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>The tags for the NAT gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -405,10 +363,7 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
-    pub fn set_connectivity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectivityType>,
-    ) -> Self {
+    pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
         self.connectivity_type = input;
         self
     }

@@ -36,17 +36,14 @@ impl DescribeConnectionsInput {
 }
 impl DescribeConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsInput`](crate::operation::describe_connections::DescribeConnectionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_connections::builders::DescribeConnectionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_connections::builders::DescribeConnectionsInputBuilder {
         crate::operation::describe_connections::builders::DescribeConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionsInput`](crate::operation::describe_connections::DescribeConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -67,10 +64,7 @@ impl DescribeConnectionsInputBuilder {
     }
     /// <p>The filters applied to the connection.</p>
     /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -116,16 +110,12 @@ impl DescribeConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectionsInput`](crate::operation::describe_connections::DescribeConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connections::DescribeConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connections::DescribeConnectionsInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_connections::DescribeConnectionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_connections::DescribeConnectionsInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

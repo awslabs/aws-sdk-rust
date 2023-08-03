@@ -37,10 +37,7 @@ impl CreateWorkspaceBundleFluentBuilder {
         }
     }
     /// Access the CreateWorkspaceBundle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateWorkspaceBundleFluentBuilder {
             crate::operation::create_workspace_bundle::CreateWorkspaceBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateWorkspaceBundleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateWorkspaceBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateWorkspaceBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateWorkspaceBundleFluentBuilder {
             crate::operation::create_workspace_bundle::CreateWorkspaceBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner.get_bundle_name()
     }
     /// <p>The description of the bundle.</p>
-    pub fn bundle_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bundle_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_description(input.into());
         self
     }
     /// <p>The description of the bundle.</p>
-    pub fn set_bundle_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bundle_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_description(input);
         self
     }
@@ -177,10 +157,7 @@ impl CreateWorkspaceBundleFluentBuilder {
         self
     }
     /// <p>Describes the compute type of the bundle.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.inner = self.inner.set_compute_type(input);
         self
     }
@@ -194,10 +171,7 @@ impl CreateWorkspaceBundleFluentBuilder {
         self
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
-    pub fn set_user_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStorage>,
-    ) -> Self {
+    pub fn set_user_storage(mut self, input: ::std::option::Option<crate::types::UserStorage>) -> Self {
         self.inner = self.inner.set_user_storage(input);
         self
     }
@@ -211,10 +185,7 @@ impl CreateWorkspaceBundleFluentBuilder {
         self
     }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
-    pub fn set_root_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::RootStorage>,
-    ) -> Self {
+    pub fn set_root_storage(mut self, input: ::std::option::Option<crate::types::RootStorage>) -> Self {
         self.inner = self.inner.set_root_storage(input);
         self
     }
@@ -236,10 +207,7 @@ impl CreateWorkspaceBundleFluentBuilder {
     /// <p>The tags associated with the bundle.</p> <note>
     /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -22,18 +22,14 @@ impl DescribeAgentStatusInput {
 }
 impl DescribeAgentStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentStatusInput`](crate::operation::describe_agent_status::DescribeAgentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::describe_agent_status::builders::DescribeAgentStatusInputBuilder {
-        crate::operation::describe_agent_status::builders::DescribeAgentStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_agent_status::builders::DescribeAgentStatusInputBuilder {
+        crate::operation::describe_agent_status::builders::DescribeAgentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAgentStatusInput`](crate::operation::describe_agent_status::DescribeAgentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentStatusInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_status_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DescribeAgentStatusInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the agent status.</p>
-    pub fn agent_status_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the agent status.</p>
-    pub fn set_agent_status_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_status_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DescribeAgentStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentStatusInput`](crate::operation::describe_agent_status::DescribeAgentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_agent_status::DescribeAgentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_agent_status::DescribeAgentStatusInput {
-                instance_id: self.instance_id,
-                agent_status_id: self.agent_status_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_agent_status::DescribeAgentStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_agent_status::DescribeAgentStatusInput {
+            instance_id: self.instance_id,
+            agent_status_id: self.agent_status_id,
+        })
     }
 }

@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for PostAgentProfileOutput {
 }
 impl PostAgentProfileOutput {
     /// Creates a new builder-style object to manufacture [`PostAgentProfileOutput`](crate::operation::post_agent_profile::PostAgentProfileOutput).
-    pub fn builder() -> crate::operation::post_agent_profile::builders::PostAgentProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::post_agent_profile::builders::PostAgentProfileOutputBuilder {
         crate::operation::post_agent_profile::builders::PostAgentProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`PostAgentProfileOutput`](crate::operation::post_agent_profile::PostAgentProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostAgentProfileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateDataCellsFilterOutput {
 }
 impl CreateDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterOutput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterOutputBuilder {
         crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataCellsFilterOutput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataCellsFilterOutputBuilder {
     _request_id: Option<String>,
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TargetGroupStatus {
     /// TargetGroup is active
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for TargetGroupStatus {
             "CREATE_IN_PROGRESS" => TargetGroupStatus::CreateInProgress,
             "DELETE_FAILED" => TargetGroupStatus::DeleteFailed,
             "DELETE_IN_PROGRESS" => TargetGroupStatus::DeleteInProgress,
-            other => {
-                TargetGroupStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TargetGroupStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl TargetGroupStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-        ]
+        &["ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetGroupStatus {

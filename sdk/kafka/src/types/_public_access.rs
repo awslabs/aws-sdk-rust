@@ -23,9 +23,7 @@ impl PublicAccess {
 
 /// A builder for [`PublicAccess`](crate::types::PublicAccess).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicAccessBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PublicAccessBuilder {
     }
     /// Consumes the builder and constructs a [`PublicAccess`](crate::types::PublicAccess).
     pub fn build(self) -> crate::types::PublicAccess {
-        crate::types::PublicAccess {
-            r#type: self.r#type,
-        }
+        crate::types::PublicAccess { r#type: self.r#type }
     }
 }

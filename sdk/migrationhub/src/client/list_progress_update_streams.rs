@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`progress_update_stream_summary_list(Option<Vec<ProgressUpdateStreamSummary>>)`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput::progress_update_stream_summary_list): <p>List of progress update streams up to the max number of results passed in the input.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput::next_token): <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     /// - On failure, responds with [`SdkError<ListProgressUpdateStreamsError>`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError)
-    pub fn list_progress_update_streams(&self) -> crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder{
+    pub fn list_progress_update_streams(&self) -> crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder {
         crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::new(self.handle.clone())
     }
 }

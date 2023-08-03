@@ -28,9 +28,7 @@ impl DeleteInsightOutput {
 
 /// A builder for [`DeleteInsightOutput`](crate::operation::delete_insight::DeleteInsightOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInsightOutputBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

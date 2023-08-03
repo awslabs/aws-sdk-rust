@@ -5,15 +5,12 @@
 pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes_result:
-        ::std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
+    pub db_cluster_snapshot_attributes_result: ::std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DbClusterSnapshotAttributesResult> {
+    pub fn db_cluster_snapshot_attributes_result(&self) -> ::std::option::Option<&crate::types::DbClusterSnapshotAttributesResult> {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for ModifyDbClusterSnapshotAttributeOutpu
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput).
-    pub fn builder() -> crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder {
         crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbClusterSnapshotAttributeOutput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbClusterSnapshotAttributeOutputBuilder {
-    pub(crate) db_cluster_snapshot_attributes_result:
-        ::std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
+    pub(crate) db_cluster_snapshot_attributes_result: ::std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterSnapshotAttributeOutputBuilder {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        mut self,
-        input: crate::types::DbClusterSnapshotAttributesResult,
-    ) -> Self {
+    pub fn db_cluster_snapshot_attributes_result(mut self, input: crate::types::DbClusterSnapshotAttributesResult) -> Self {
         self.db_cluster_snapshot_attributes_result = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl ModifyDbClusterSnapshotAttributeOutputBuilder {
         self
     }
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-    pub fn get_db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbClusterSnapshotAttributesResult> {
+    pub fn get_db_cluster_snapshot_attributes_result(&self) -> &::std::option::Option<crate::types::DbClusterSnapshotAttributesResult> {
         &self.db_cluster_snapshot_attributes_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl ModifyDbClusterSnapshotAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput).
-    pub fn build(self) -> crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput{
+    pub fn build(self) -> crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput {
         crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput {
-            db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
-            ,
+            db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
             _request_id: self._request_id,
         }
     }

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateIpSetOutput`](crate::operation::update_ip_set::UpdateIpSetOutput) with field(s):
     ///   - [`next_lock_token(Option<String>)`](crate::operation::update_ip_set::UpdateIpSetOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::operation::update_ip_set::UpdateIPSetError)
-    pub fn update_ip_set(
-        &self,
-    ) -> crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder {
-        crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ip_set(&self) -> crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder {
+        crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::new(self.handle.clone())
     }
 }

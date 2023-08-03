@@ -25,17 +25,14 @@ impl ListEmailTemplatesInput {
 }
 impl ListEmailTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListEmailTemplatesInput`](crate::operation::list_email_templates::ListEmailTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_email_templates::builders::ListEmailTemplatesInputBuilder {
+    pub fn builder() -> crate::operation::list_email_templates::builders::ListEmailTemplatesInputBuilder {
         crate::operation::list_email_templates::builders::ListEmailTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEmailTemplatesInput`](crate::operation::list_email_templates::ListEmailTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEmailTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -75,15 +72,10 @@ impl ListEmailTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListEmailTemplatesInput`](crate::operation::list_email_templates::ListEmailTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_email_templates::ListEmailTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_email_templates::ListEmailTemplatesInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_email_templates::ListEmailTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_email_templates::ListEmailTemplatesInput {
+            next_token: self.next_token,
+            page_size: self.page_size,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl ListCollaborationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_collaborations::ListCollaborationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collaborations::ListCollaborationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collaborations::ListCollaborationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_collaborations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListCollaborationsFluentBuilder {
         }
     }
     /// Access the ListCollaborations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListCollaborationsFluentBuilder {
             crate::operation::list_collaborations::ListCollaborations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collaborations::ListCollaborationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collaborations::ListCollaborationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListCollaborationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListCollaborationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_collaborations::ListCollaborationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collaborations::ListCollaborationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collaborations::ListCollaborationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListCollaborationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_collaborations::ListCollaborationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collaborations::ListCollaborationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collaborations::ListCollaborationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListCollaborationsFluentBuilder {
             crate::operation::list_collaborations::ListCollaborations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collaborations::ListCollaborationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collaborations::ListCollaborationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_collaborations::paginator::ListCollaborationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_collaborations::paginator::ListCollaborationsPaginator {
-        crate::operation::list_collaborations::paginator::ListCollaborationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_collaborations::paginator::ListCollaborationsPaginator {
+        crate::operation::list_collaborations::paginator::ListCollaborationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,17 +146,12 @@ impl ListCollaborationsFluentBuilder {
         self
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn set_member_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterableMemberStatus>,
-    ) -> Self {
+    pub fn set_member_status(mut self, input: ::std::option::Option<crate::types::FilterableMemberStatus>) -> Self {
         self.inner = self.inner.set_member_status(input);
         self
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn get_member_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterableMemberStatus> {
+    pub fn get_member_status(&self) -> &::std::option::Option<crate::types::FilterableMemberStatus> {
         self.inner.get_member_status()
     }
 }

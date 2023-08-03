@@ -22,9 +22,7 @@ impl GetLinkInput {
 
 /// A builder for [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetLinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_link::GetLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_link::GetLinkInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_link::GetLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_link::GetLinkInput { identifier: self.identifier })
     }
 }

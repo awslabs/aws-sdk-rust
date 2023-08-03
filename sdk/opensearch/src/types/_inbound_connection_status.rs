@@ -50,9 +50,7 @@ impl InboundConnectionStatus {
 
 /// A builder for [`InboundConnectionStatus`](crate::types::InboundConnectionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InboundConnectionStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl InboundConnectionStatusBuilder {
     /// <li> <p> <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::InboundConnectionStatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -102,9 +97,7 @@ impl InboundConnectionStatusBuilder {
     /// <li> <p> <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::InboundConnectionStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::InboundConnectionStatusCode> {
         &self.status_code
     }
     /// <p>Information about the connection.</p>

@@ -45,9 +45,7 @@ impl PutAlternateContactInput {
         self.phone_number.as_deref()
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    pub fn alternate_contact_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlternateContactType> {
+    pub fn alternate_contact_type(&self) -> ::std::option::Option<&crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -74,10 +72,8 @@ impl ::std::fmt::Debug for PutAlternateContactInput {
 }
 impl PutAlternateContactInput {
     /// Creates a new builder-style object to manufacture [`PutAlternateContactInput`](crate::operation::put_alternate_contact::PutAlternateContactInput).
-    pub fn builder(
-    ) -> crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder {
-        crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder {
+        crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder::default()
     }
 }
 
@@ -122,18 +118,12 @@ impl PutAlternateContactInputBuilder {
         &self.title
     }
     /// <p>Specifies an email address for the alternate contact. </p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies an email address for the alternate contact. </p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -161,17 +151,12 @@ impl PutAlternateContactInputBuilder {
         self
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    pub fn set_alternate_contact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateContactType>,
-    ) -> Self {
+    pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.alternate_contact_type = input;
         self
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    pub fn get_alternate_contact_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+    pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         &self.alternate_contact_type
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -206,20 +191,16 @@ impl PutAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`PutAlternateContactInput`](crate::operation::put_alternate_contact::PutAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_alternate_contact::PutAlternateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_alternate_contact::PutAlternateContactInput {
-                name: self.name,
-                title: self.title,
-                email_address: self.email_address,
-                phone_number: self.phone_number,
-                alternate_contact_type: self.alternate_contact_type,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_alternate_contact::PutAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_alternate_contact::PutAlternateContactInput {
+            name: self.name,
+            title: self.title,
+            email_address: self.email_address,
+            phone_number: self.phone_number,
+            alternate_contact_type: self.alternate_contact_type,
+            account_id: self.account_id,
+        })
     }
 }
 impl ::std::fmt::Debug for PutAlternateContactInputBuilder {

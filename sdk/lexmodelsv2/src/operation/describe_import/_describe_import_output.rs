@@ -38,9 +38,7 @@ impl DescribeImportOutput {
         self.import_id.as_deref()
     }
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
@@ -86,13 +84,10 @@ impl DescribeImportOutput {
 
 /// A builder for [`DescribeImportOutput`](crate::operation::describe_import::DescribeImportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_specification:
-        ::std::option::Option<crate::types::ImportResourceSpecification>,
+    pub(crate) resource_specification: ::std::option::Option<crate::types::ImportResourceSpecification>,
     pub(crate) imported_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) imported_resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
@@ -118,40 +113,26 @@ impl DescribeImportOutputBuilder {
         &self.import_id
     }
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ImportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ImportResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ImportResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
         &self.resource_specification
     }
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
-    pub fn imported_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn imported_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.imported_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
-    pub fn set_imported_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_imported_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_resource_id = input;
         self
     }
@@ -160,18 +141,12 @@ impl DescribeImportOutputBuilder {
         &self.imported_resource_id
     }
     /// <p>The name of the imported resource.</p>
-    pub fn imported_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn imported_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.imported_resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the imported resource.</p>
-    pub fn set_imported_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_imported_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_resource_name = input;
         self
     }
@@ -185,10 +160,7 @@ impl DescribeImportOutputBuilder {
         self
     }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.merge_strategy = input;
         self
     }
@@ -202,10 +174,7 @@ impl DescribeImportOutputBuilder {
         self
     }
     /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
         self.import_status = input;
         self
     }
@@ -218,27 +187,19 @@ impl DescribeImportOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>The date and time that the import was created.</p>
@@ -247,10 +208,7 @@ impl DescribeImportOutputBuilder {
         self
     }
     /// <p>The date and time that the import was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -264,17 +222,12 @@ impl DescribeImportOutputBuilder {
         self
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

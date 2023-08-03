@@ -27,8 +27,7 @@ impl TestRenderEmailTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestRenderEmailTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder,
+    inner: crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder,
 }
 impl TestRenderEmailTemplateFluentBuilder {
     /// Creates a new `TestRenderEmailTemplate`.
@@ -39,10 +38,7 @@ impl TestRenderEmailTemplateFluentBuilder {
         }
     }
     /// Access the TestRenderEmailTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::test_render_email_template::builders::TestRenderEmailTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl TestRenderEmailTemplateFluentBuilder {
             crate::operation::test_render_email_template::TestRenderEmailTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_render_email_template::TestRenderEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_render_email_template::TestRenderEmailTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl TestRenderEmailTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl TestRenderEmailTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_render_email_template::TestRenderEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_render_email_template::TestRenderEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_render_email_template::TestRenderEmailTemplateError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl TestRenderEmailTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_render_email_template::TestRenderEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_render_email_template::TestRenderEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_render_email_template::TestRenderEmailTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl TestRenderEmailTemplateFluentBuilder {
             crate::operation::test_render_email_template::TestRenderEmailTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_render_email_template::TestRenderEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_render_email_template::TestRenderEmailTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -146,18 +125,12 @@ impl TestRenderEmailTemplateFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_data(input.into());
         self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn set_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_data(input);
         self
     }

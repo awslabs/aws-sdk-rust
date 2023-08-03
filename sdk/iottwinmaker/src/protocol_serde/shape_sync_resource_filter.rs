@@ -17,11 +17,9 @@ pub fn ser_sync_resource_filter(
             object_4.key("externalId").string(inner.as_str());
         }
         crate::types::SyncResourceFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "SyncResourceFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "SyncResourceFilter",
+            ))
         }
     }
     Ok(())

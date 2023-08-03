@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`processed_clusters(Option<Vec<Cluster>>)`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput::processed_clusters): <p>The list of clusters that have been updated.</p>
     ///   - [`unprocessed_clusters(Option<Vec<UnprocessedCluster>>)`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput::unprocessed_clusters): <p>The list of clusters where updates have not been applied.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateClusterError>`](crate::operation::batch_update_cluster::BatchUpdateClusterError)
-    pub fn batch_update_cluster(
-        &self,
-    ) -> crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder {
-        crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_cluster(&self) -> crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder {
+        crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::new(self.handle.clone())
     }
 }

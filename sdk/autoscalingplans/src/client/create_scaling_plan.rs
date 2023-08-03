@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateScalingPlanOutput`](crate::operation::create_scaling_plan::CreateScalingPlanOutput) with field(s):
     ///   - [`scaling_plan_version(Option<i64>)`](crate::operation::create_scaling_plan::CreateScalingPlanOutput::scaling_plan_version): <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     /// - On failure, responds with [`SdkError<CreateScalingPlanError>`](crate::operation::create_scaling_plan::CreateScalingPlanError)
-    pub fn create_scaling_plan(
-        &self,
-    ) -> crate::operation::create_scaling_plan::builders::CreateScalingPlanFluentBuilder {
-        crate::operation::create_scaling_plan::builders::CreateScalingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_scaling_plan(&self) -> crate::operation::create_scaling_plan::builders::CreateScalingPlanFluentBuilder {
+        crate::operation::create_scaling_plan::builders::CreateScalingPlanFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,9 +42,7 @@ impl MatchingRule {
 
 /// A builder for [`MatchingRule`](crate::types::MatchingRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchingRuleBuilder {
     pub(crate) rule: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -61,10 +59,7 @@ impl MatchingRuleBuilder {
         self
     }
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub fn set_rule(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule = input;
         self
     }

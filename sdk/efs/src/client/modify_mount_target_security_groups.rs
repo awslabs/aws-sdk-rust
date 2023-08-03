@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`security_groups(Vec<String>)`](crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsFluentBuilder::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsFluentBuilder::set_security_groups): <p>An array of up to five VPC security group IDs.</p>
     /// - On success, responds with [`ModifyMountTargetSecurityGroupsOutput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput)
     /// - On failure, responds with [`SdkError<ModifyMountTargetSecurityGroupsError>`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError)
-    pub fn modify_mount_target_security_groups(&self) -> crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsFluentBuilder{
+    pub fn modify_mount_target_security_groups(
+        &self,
+    ) -> crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsFluentBuilder {
         crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

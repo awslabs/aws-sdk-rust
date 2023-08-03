@@ -15,28 +15,19 @@ pub fn ser_update_meeting_room_configuration(
     if let Some(var_4) = &input.instant_booking {
         #[allow(unused_mut)]
         let mut object_5 = object.key("InstantBooking").start_object();
-        crate::protocol_serde::shape_update_instant_booking::ser_update_instant_booking(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_update_instant_booking::ser_update_instant_booking(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.require_check_in {
         #[allow(unused_mut)]
         let mut object_7 = object.key("RequireCheckIn").start_object();
-        crate::protocol_serde::shape_update_require_check_in::ser_update_require_check_in(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_update_require_check_in::ser_update_require_check_in(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.proactive_join {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ProactiveJoin").start_object();
-        crate::protocol_serde::shape_update_proactive_join::ser_update_proactive_join(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_update_proactive_join::ser_update_proactive_join(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

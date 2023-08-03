@@ -30,9 +30,7 @@ impl IcebergInput {
 
 /// A builder for [`IcebergInput`](crate::types::IcebergInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IcebergInputBuilder {
     pub(crate) metadata_operation: ::std::option::Option<crate::types::MetadataOperation>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl IcebergInputBuilder {
         self
     }
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-    pub fn set_metadata_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataOperation>,
-    ) -> Self {
+    pub fn set_metadata_operation(mut self, input: ::std::option::Option<crate::types::MetadataOperation>) -> Self {
         self.metadata_operation = input;
         self
     }
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-    pub fn get_metadata_operation(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataOperation> {
+    pub fn get_metadata_operation(&self) -> &::std::option::Option<crate::types::MetadataOperation> {
         &self.metadata_operation
     }
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>

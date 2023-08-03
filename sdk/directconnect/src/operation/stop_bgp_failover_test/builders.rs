@@ -37,9 +37,7 @@ impl StopBgpFailoverTestFluentBuilder {
         }
     }
     /// Access the StopBgpFailoverTest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopBgpFailoverTestFluentBuilder {
             crate::operation::stop_bgp_failover_test::StopBgpFailoverTest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopBgpFailoverTestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopBgpFailoverTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopBgpFailoverTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl StopBgpFailoverTestFluentBuilder {
             crate::operation::stop_bgp_failover_test::StopBgpFailoverTest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface you no longer want to test.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface you no longer want to test.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }

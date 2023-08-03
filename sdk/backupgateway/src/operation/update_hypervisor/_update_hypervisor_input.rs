@@ -62,8 +62,7 @@ impl ::std::fmt::Debug for UpdateHypervisorInput {
 }
 impl UpdateHypervisorInput {
     /// Creates a new builder-style object to manufacture [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
-    pub fn builder() -> crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder {
         crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder::default()
     }
 }
@@ -81,18 +80,12 @@ pub struct UpdateHypervisorInputBuilder {
 }
 impl UpdateHypervisorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -157,18 +150,12 @@ impl UpdateHypervisorInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
@@ -179,10 +166,7 @@ impl UpdateHypervisorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_hypervisor::UpdateHypervisorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hypervisor::UpdateHypervisorInput {
             hypervisor_arn: self.hypervisor_arn,
             host: self.host,

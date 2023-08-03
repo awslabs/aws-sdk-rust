@@ -22,34 +22,26 @@ impl DeleteSubnetCidrReservationInput {
 }
 impl DeleteSubnetCidrReservationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubnetCidrReservationInput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput).
-    pub fn builder() -> crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationInputBuilder{
+    pub fn builder() -> crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationInputBuilder {
         crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubnetCidrReservationInput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubnetCidrReservationInputBuilder {
     pub(crate) subnet_cidr_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteSubnetCidrReservationInputBuilder {
     /// <p>The ID of the subnet CIDR reservation.</p>
-    pub fn subnet_cidr_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_cidr_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_cidr_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet CIDR reservation.</p>
-    pub fn set_subnet_cidr_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_cidr_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_cidr_reservation_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteSubnetCidrReservationInputBuilder {
         crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput {
-                subnet_cidr_reservation_id: self.subnet_cidr_reservation_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput {
+            subnet_cidr_reservation_id: self.subnet_cidr_reservation_id,
+            dry_run: self.dry_run,
+        })
     }
 }

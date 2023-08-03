@@ -35,9 +35,7 @@ impl GetImagesOutput {
 
 /// A builder for [`GetImagesOutput`](crate::operation::get_images::GetImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImagesOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetImagesOutputBuilder {
         self
     }
     /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
-    pub fn set_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
-    ) -> Self {
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>) -> Self {
         self.images = input;
         self
     }

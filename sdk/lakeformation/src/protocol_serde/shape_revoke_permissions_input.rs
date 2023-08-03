@@ -27,10 +27,7 @@ pub fn ser_revoke_permissions_input(
     if let Some(var_8) = &input.principal {
         #[allow(unused_mut)]
         let mut object_9 = object.key("Principal").start_object();
-        crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.resource {

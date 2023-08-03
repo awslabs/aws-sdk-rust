@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput::next_page_token): <p>The token to retrieve the next set of results.</p>
     ///   - [`configuration(Option<RightsizingRecommendationConfiguration>)`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput::configuration): <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     /// - On failure, responds with [`SdkError<GetRightsizingRecommendationError>`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError)
-    pub fn get_rightsizing_recommendation(&self) -> crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationFluentBuilder{
+    pub fn get_rightsizing_recommendation(
+        &self,
+    ) -> crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationFluentBuilder {
         crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationFluentBuilder::new(self.handle.clone())
     }
 }

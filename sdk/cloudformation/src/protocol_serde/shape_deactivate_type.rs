@@ -4,62 +4,49 @@ pub fn de_deactivate_type_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::deactivate_type::DeactivateTypeOutput,
-    crate::operation::deactivate_type::DeactivateTypeError,
-> {
+) -> std::result::Result<crate::operation::deactivate_type::DeactivateTypeOutput, crate::operation::deactivate_type::DeactivateTypeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::deactivate_type::DeactivateTypeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::deactivate_type::DeactivateTypeError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::deactivate_type::DeactivateTypeError::unhandled(generic))
-        }
+        None => return Err(crate::operation::deactivate_type::DeactivateTypeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => {
-            crate::operation::deactivate_type::DeactivateTypeError::CfnRegistryException({
+        "CFNRegistryException" => crate::operation::deactivate_type::DeactivateTypeError::CfnRegistryException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::CfnRegistryExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(_response_body, output).map_err(crate::operation::deactivate_type::DeactivateTypeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TypeNotFoundException" => {
-            crate::operation::deactivate_type::DeactivateTypeError::TypeNotFoundException({
+                let mut output = crate::types::error::builders::CfnRegistryExceptionBuilder::default();
+                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::deactivate_type::DeactivateTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TypeNotFoundException" => crate::operation::deactivate_type::DeactivateTypeError::TypeNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::deactivate_type::DeactivateTypeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::deactivate_type::DeactivateTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::deactivate_type::DeactivateTypeError::generic(generic),
     })
 }
@@ -69,17 +56,11 @@ pub fn de_deactivate_type_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::deactivate_type::DeactivateTypeOutput,
-    crate::operation::deactivate_type::DeactivateTypeError,
-> {
+) -> std::result::Result<crate::operation::deactivate_type::DeactivateTypeOutput, crate::operation::deactivate_type::DeactivateTypeError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::deactivate_type::builders::DeactivateTypeOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::deactivate_type::builders::DeactivateTypeOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

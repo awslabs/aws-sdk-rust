@@ -35,9 +35,7 @@ impl SearchOutput {
 
 /// A builder for [`SearchOutput`](crate::operation::search::SearchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl SearchOutputBuilder {
         self
     }
     /// <p>A list of <code>SearchRecord</code> objects.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list of <code>SearchRecord</code> objects.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>> {
         &self.results
     }
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>

@@ -37,10 +37,7 @@ impl DisableAddressTransferFluentBuilder {
         }
     }
     /// Access the DisableAddressTransfer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisableAddressTransferFluentBuilder {
             crate::operation::disable_address_transfer::DisableAddressTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_address_transfer::DisableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_address_transfer::DisableAddressTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisableAddressTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisableAddressTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_address_transfer::DisableAddressTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_address_transfer::DisableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_address_transfer::DisableAddressTransferError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisableAddressTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_address_transfer::DisableAddressTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_address_transfer::DisableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_address_transfer::DisableAddressTransferError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DisableAddressTransferFluentBuilder {
             crate::operation::disable_address_transfer::DisableAddressTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_address_transfer::DisableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_address_transfer::DisableAddressTransferError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_id(input.into());
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_id(input);
         self
     }

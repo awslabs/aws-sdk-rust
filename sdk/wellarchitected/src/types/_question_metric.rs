@@ -37,9 +37,7 @@ impl QuestionMetric {
 
 /// A builder for [`QuestionMetric`](crate::types::QuestionMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuestionMetricBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
@@ -86,17 +84,12 @@ impl QuestionMetricBuilder {
         self
     }
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    pub fn set_best_practices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BestPractice>>,
-    ) -> Self {
+    pub fn set_best_practices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BestPractice>>) -> Self {
         self.best_practices = input;
         self
     }
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    pub fn get_best_practices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BestPractice>> {
+    pub fn get_best_practices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BestPractice>> {
         &self.best_practices
     }
     /// Consumes the builder and constructs a [`QuestionMetric`](crate::types::QuestionMetric).

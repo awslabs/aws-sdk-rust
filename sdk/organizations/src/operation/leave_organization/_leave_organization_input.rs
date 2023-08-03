@@ -5,26 +5,20 @@
 pub struct LeaveOrganizationInput {}
 impl LeaveOrganizationInput {
     /// Creates a new builder-style object to manufacture [`LeaveOrganizationInput`](crate::operation::leave_organization::LeaveOrganizationInput).
-    pub fn builder() -> crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder {
         crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`LeaveOrganizationInput`](crate::operation::leave_organization::LeaveOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LeaveOrganizationInputBuilder {}
 impl LeaveOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`LeaveOrganizationInput`](crate::operation::leave_organization::LeaveOrganizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::leave_organization::LeaveOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::leave_organization::LeaveOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::leave_organization::LeaveOrganizationInput {})
     }
 }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for RegisterTaskWithMaintenanceWindowOutp
 }
 impl RegisterTaskWithMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskWithMaintenanceWindowOutput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput).
-    pub fn builder() -> crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowOutputBuilder{
+    pub fn builder() -> crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowOutputBuilder {
         crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterTaskWithMaintenanceWindowOutput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTaskWithMaintenanceWindowOutputBuilder {
     pub(crate) window_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterTaskWithMaintenanceWindowOutputBuilder {
     /// <p>The ID of the task in the maintenance window.</p>
-    pub fn window_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the task in the maintenance window.</p>
-    pub fn set_window_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_task_id = input;
         self
     }
@@ -66,10 +58,9 @@ impl RegisterTaskWithMaintenanceWindowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterTaskWithMaintenanceWindowOutput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput).
-    pub fn build(self) -> crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput{
+    pub fn build(self) -> crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput {
         crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput {
-            window_task_id: self.window_task_id
-            ,
+            window_task_id: self.window_task_id,
             _request_id: self._request_id,
         }
     }

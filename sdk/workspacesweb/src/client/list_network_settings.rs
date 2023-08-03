@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`network_settings(Option<Vec<NetworkSettingsSummary>>)`](crate::operation::list_network_settings::ListNetworkSettingsOutput::network_settings): <p>The network settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_settings::ListNetworkSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListNetworkSettingsError>`](crate::operation::list_network_settings::ListNetworkSettingsError)
-    pub fn list_network_settings(
-        &self,
-    ) -> crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder {
-        crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_network_settings(&self) -> crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder {
+        crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::new(self.handle.clone())
     }
 }

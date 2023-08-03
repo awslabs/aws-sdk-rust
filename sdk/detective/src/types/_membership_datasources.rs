@@ -15,10 +15,7 @@ pub struct MembershipDatasources {
     pub datasource_package_ingest_history: ::std::option::Option<
         ::std::collections::HashMap<
             crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
+            ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>,
         >,
     >,
 }
@@ -37,10 +34,7 @@ impl MembershipDatasources {
     ) -> ::std::option::Option<
         &::std::collections::HashMap<
             crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
+            ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>,
         >,
     > {
         self.datasource_package_ingest_history.as_ref()
@@ -55,19 +49,14 @@ impl MembershipDatasources {
 
 /// A builder for [`MembershipDatasources`](crate::types::MembershipDatasources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MembershipDatasourcesBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) datasource_package_ingest_history: ::std::option::Option<
         ::std::collections::HashMap<
             crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
+            ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>,
         >,
     >,
 }
@@ -108,10 +97,7 @@ impl MembershipDatasourcesBuilder {
     pub fn datasource_package_ingest_history(
         mut self,
         k: crate::types::DatasourcePackage,
-        v: ::std::collections::HashMap<
-            crate::types::DatasourcePackageIngestState,
-            crate::types::TimestampForCollection,
-        >,
+        v: ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>,
     ) -> Self {
         let mut hash_map = self.datasource_package_ingest_history.unwrap_or_default();
         hash_map.insert(k, v);
@@ -124,10 +110,7 @@ impl MembershipDatasourcesBuilder {
         input: ::std::option::Option<
             ::std::collections::HashMap<
                 crate::types::DatasourcePackage,
-                ::std::collections::HashMap<
-                    crate::types::DatasourcePackageIngestState,
-                    crate::types::TimestampForCollection,
-                >,
+                ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>,
             >,
         >,
     ) -> Self {
@@ -140,10 +123,7 @@ impl MembershipDatasourcesBuilder {
     ) -> &::std::option::Option<
         ::std::collections::HashMap<
             crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
+            ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>,
         >,
     > {
         &self.datasource_package_ingest_history

@@ -37,9 +37,7 @@ impl Filters {
 
 /// A builder for [`Filters`](crate::types::Filters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FiltersBuilder {
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
@@ -58,10 +56,7 @@ impl FiltersBuilder {
         self
     }
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
-    pub fn set_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.queues = input;
         self
     }
@@ -81,10 +76,7 @@ impl FiltersBuilder {
         self
     }
     /// <p>The channel to use to filter the metrics.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
         self.channels = input;
         self
     }
@@ -97,27 +89,19 @@ impl FiltersBuilder {
     /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
     ///
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profiles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.routing_profiles.unwrap_or_default();
         v.push(input.into());
         self.routing_profiles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn set_routing_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_routing_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.routing_profiles = input;
         self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn get_routing_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_routing_profiles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.routing_profiles
     }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).

@@ -28,9 +28,7 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("MemoryGiBPerVCpu");
     if let Some(var_11) = &input.memory_gi_b_per_v_cpu {
-        crate::protocol_serde::shape_memory_gi_b_per_v_cpu::ser_memory_gi_b_per_v_cpu(
-            scope_10, var_11,
-        )?;
+        crate::protocol_serde::shape_memory_gi_b_per_v_cpu::ser_memory_gi_b_per_v_cpu(scope_10, var_11)?;
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("ExcludedInstanceTypeSet");
@@ -88,9 +86,7 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_32 = writer.prefix("NetworkInterfaceCount");
     if let Some(var_33) = &input.network_interface_count {
-        crate::protocol_serde::shape_network_interface_count::ser_network_interface_count(
-            scope_32, var_33,
-        )?;
+        crate::protocol_serde::shape_network_interface_count::ser_network_interface_count(scope_32, var_33)?;
     }
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("LocalStorage");
@@ -111,16 +107,12 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("TotalLocalStorageGB");
     if let Some(var_42) = &input.total_local_storage_gb {
-        crate::protocol_serde::shape_total_local_storage_gb::ser_total_local_storage_gb(
-            scope_41, var_42,
-        )?;
+        crate::protocol_serde::shape_total_local_storage_gb::ser_total_local_storage_gb(scope_41, var_42)?;
     }
     #[allow(unused_mut)]
     let mut scope_43 = writer.prefix("BaselineEbsBandwidthMbps");
     if let Some(var_44) = &input.baseline_ebs_bandwidth_mbps {
-        crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps::ser_baseline_ebs_bandwidth_mbps(
-            scope_43, var_44,
-        )?;
+        crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps::ser_baseline_ebs_bandwidth_mbps(scope_43, var_44)?;
     }
     #[allow(unused_mut)]
     let mut scope_45 = writer.prefix("AcceleratorTypeSet");
@@ -168,9 +160,7 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_64 = writer.prefix("NetworkBandwidthGbps");
     if let Some(var_65) = &input.network_bandwidth_gbps {
-        crate::protocol_serde::shape_network_bandwidth_gbps::ser_network_bandwidth_gbps(
-            scope_64, var_65,
-        )?;
+        crate::protocol_serde::shape_network_bandwidth_gbps::ser_network_bandwidth_gbps(scope_64, var_65)?;
     }
     #[allow(unused_mut)]
     let mut scope_66 = writer.prefix("AllowedInstanceTypeSet");

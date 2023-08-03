@@ -31,9 +31,7 @@ impl ShortFormatText {
 
 /// A builder for [`ShortFormatText`](crate::types::ShortFormatText).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShortFormatTextBuilder {
     pub(crate) plain_text: ::std::option::Option<::std::string::String>,
     pub(crate) rich_text: ::std::option::Option<::std::string::String>,

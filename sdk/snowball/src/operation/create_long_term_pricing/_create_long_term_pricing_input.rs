@@ -15,9 +15,7 @@ pub struct CreateLongTermPricingInput {
 }
 impl CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    pub fn long_term_pricing_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LongTermPricingType> {
+    pub fn long_term_pricing_type(&self) -> ::std::option::Option<&crate::types::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
@@ -31,18 +29,14 @@ impl CreateLongTermPricingInput {
 }
 impl CreateLongTermPricingInput {
     /// Creates a new builder-style object to manufacture [`CreateLongTermPricingInput`](crate::operation::create_long_term_pricing::CreateLongTermPricingInput).
-    pub fn builder(
-    ) -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder {
         crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLongTermPricingInput`](crate::operation::create_long_term_pricing::CreateLongTermPricingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLongTermPricingInputBuilder {
     pub(crate) long_term_pricing_type: ::std::option::Option<crate::types::LongTermPricingType>,
     pub(crate) is_long_term_pricing_auto_renew: ::std::option::Option<bool>,
@@ -55,17 +49,12 @@ impl CreateLongTermPricingInputBuilder {
         self
     }
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    pub fn set_long_term_pricing_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LongTermPricingType>,
-    ) -> Self {
+    pub fn set_long_term_pricing_type(mut self, input: ::std::option::Option<crate::types::LongTermPricingType>) -> Self {
         self.long_term_pricing_type = input;
         self
     }
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    pub fn get_long_term_pricing_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LongTermPricingType> {
+    pub fn get_long_term_pricing_type(&self) -> &::std::option::Option<crate::types::LongTermPricingType> {
         &self.long_term_pricing_type
     }
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
@@ -74,10 +63,7 @@ impl CreateLongTermPricingInputBuilder {
         self
     }
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
-    pub fn set_is_long_term_pricing_auto_renew(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_long_term_pricing_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_long_term_pricing_auto_renew = input;
         self
     }
@@ -91,10 +77,7 @@ impl CreateLongTermPricingInputBuilder {
         self
     }
     /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
-    pub fn set_snowball_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowballType>,
-    ) -> Self {
+    pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
         self.snowball_type = input;
         self
     }
@@ -105,16 +88,12 @@ impl CreateLongTermPricingInputBuilder {
     /// Consumes the builder and constructs a [`CreateLongTermPricingInput`](crate::operation::create_long_term_pricing::CreateLongTermPricingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_long_term_pricing::CreateLongTermPricingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_long_term_pricing::CreateLongTermPricingInput {
-                long_term_pricing_type: self.long_term_pricing_type,
-                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
-                snowball_type: self.snowball_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_long_term_pricing::CreateLongTermPricingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_long_term_pricing::CreateLongTermPricingInput {
+            long_term_pricing_type: self.long_term_pricing_type,
+            is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
+            snowball_type: self.snowball_type,
+        })
     }
 }

@@ -69,7 +69,7 @@ impl ::aws_http::request_id::RequestId for UpdateMaintenanceWindowTargetOutput {
 }
 impl UpdateMaintenanceWindowTargetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTargetOutput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput).
-    pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetOutputBuilder{
+    pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetOutputBuilder {
         crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetOutputBuilder::default()
     }
 }
@@ -102,18 +102,12 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         &self.window_id
     }
     /// <p>The target ID specified in the update request.</p>
-    pub fn window_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target ID specified in the update request.</p>
-    pub fn set_window_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_target_id = input;
         self
     }
@@ -133,10 +127,7 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self
     }
     /// <p>The updated targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -145,18 +136,12 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         &self.targets
     }
     /// <p>The updated owner.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated owner.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_information = input;
         self
     }
@@ -202,10 +187,7 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTargetOutput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput
-    {
+    pub fn build(self) -> crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput {
         crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput {
             window_id: self.window_id,
             window_target_id: self.window_target_id,

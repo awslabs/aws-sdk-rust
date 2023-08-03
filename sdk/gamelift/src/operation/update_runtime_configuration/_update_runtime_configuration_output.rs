@@ -10,9 +10,7 @@ pub struct UpdateRuntimeConfigurationOutput {
 }
 impl UpdateRuntimeConfigurationOutput {
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
-    pub fn runtime_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRuntimeConfigurationOutput {
 }
 impl UpdateRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuntimeConfigurationOutput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput).
-    pub fn builder() -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationOutputBuilder {
         crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuntimeConfigurationOutput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationOutputBuilder {
     pub(crate) runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateRuntimeConfigurationOutputBuilder {
         self
     }
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
-    pub fn set_runtime_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeConfiguration>,
-    ) -> Self {
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.runtime_configuration = input;
         self
     }
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
-    pub fn get_runtime_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         &self.runtime_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateRuntimeConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRuntimeConfigurationOutput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput {
         crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput {
             runtime_configuration: self.runtime_configuration,
             _request_id: self._request_id,

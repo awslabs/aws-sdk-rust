@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateHyperParameterTuningJobOutput`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput) with field(s):
     ///   - [`hyper_parameter_tuning_job_arn(Option<String>)`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput::hyper_parameter_tuning_job_arn): <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
     /// - On failure, responds with [`SdkError<CreateHyperParameterTuningJobError>`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError)
-    pub fn create_hyper_parameter_tuning_job(&self) -> crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobFluentBuilder{
+    pub fn create_hyper_parameter_tuning_job(
+        &self,
+    ) -> crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobFluentBuilder {
         crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobFluentBuilder::new(self.handle.clone())
     }
 }

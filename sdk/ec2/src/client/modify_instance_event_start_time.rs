@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyInstanceEventStartTimeOutput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput) with field(s):
     ///   - [`event(Option<InstanceStatusEvent>)`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput::event): <p>Information about the event.</p>
     /// - On failure, responds with [`SdkError<ModifyInstanceEventStartTimeError>`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError)
-    pub fn modify_instance_event_start_time(&self) -> crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeFluentBuilder{
+    pub fn modify_instance_event_start_time(
+        &self,
+    ) -> crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeFluentBuilder {
         crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeFluentBuilder::new(self.handle.clone())
     }
 }

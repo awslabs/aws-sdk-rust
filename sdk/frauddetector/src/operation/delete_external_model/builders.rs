@@ -38,9 +38,7 @@ impl DeleteExternalModelFluentBuilder {
         }
     }
     /// Access the DeleteExternalModel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteExternalModelFluentBuilder {
             crate::operation::delete_external_model::DeleteExternalModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_external_model::DeleteExternalModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_external_model::DeleteExternalModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteExternalModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteExternalModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_external_model::DeleteExternalModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_external_model::DeleteExternalModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_external_model::DeleteExternalModelError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteExternalModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_external_model::DeleteExternalModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_external_model::DeleteExternalModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_external_model::DeleteExternalModelError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeleteExternalModelFluentBuilder {
             crate::operation::delete_external_model::DeleteExternalModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_external_model::DeleteExternalModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_external_model::DeleteExternalModelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
-    pub fn model_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_endpoint(input.into());
         self
     }
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
-    pub fn set_model_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_endpoint(input);
         self
     }

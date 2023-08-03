@@ -20,9 +20,7 @@ impl WrappedKey {
         self.wrapping_key_arn.as_deref()
     }
     /// <p>The key block format of a wrapped key.</p>
-    pub fn wrapped_key_material_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WrappedKeyMaterialFormat> {
+    pub fn wrapped_key_material_format(&self) -> ::std::option::Option<&crate::types::WrappedKeyMaterialFormat> {
         self.wrapped_key_material_format.as_ref()
     }
     /// <p>Parameter information for generating a wrapped key using TR-31 or TR-34 standard.</p>
@@ -34,10 +32,7 @@ impl ::std::fmt::Debug for WrappedKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WrappedKey");
         formatter.field("wrapping_key_arn", &self.wrapping_key_arn);
-        formatter.field(
-            "wrapped_key_material_format",
-            &self.wrapped_key_material_format,
-        );
+        formatter.field("wrapped_key_material_format", &self.wrapped_key_material_format);
         formatter.field("key_material", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -54,24 +49,17 @@ impl WrappedKey {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct WrappedKeyBuilder {
     pub(crate) wrapping_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) wrapped_key_material_format:
-        ::std::option::Option<crate::types::WrappedKeyMaterialFormat>,
+    pub(crate) wrapped_key_material_format: ::std::option::Option<crate::types::WrappedKeyMaterialFormat>,
     pub(crate) key_material: ::std::option::Option<::std::string::String>,
 }
 impl WrappedKeyBuilder {
     /// <p>The <code>KeyARN</code> of the wrapped key.</p>
-    pub fn wrapping_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapping_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the wrapped key.</p>
-    pub fn set_wrapping_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapping_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_arn = input;
         self
     }
@@ -80,25 +68,17 @@ impl WrappedKeyBuilder {
         &self.wrapping_key_arn
     }
     /// <p>The key block format of a wrapped key.</p>
-    pub fn wrapped_key_material_format(
-        mut self,
-        input: crate::types::WrappedKeyMaterialFormat,
-    ) -> Self {
+    pub fn wrapped_key_material_format(mut self, input: crate::types::WrappedKeyMaterialFormat) -> Self {
         self.wrapped_key_material_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The key block format of a wrapped key.</p>
-    pub fn set_wrapped_key_material_format(
-        mut self,
-        input: ::std::option::Option<crate::types::WrappedKeyMaterialFormat>,
-    ) -> Self {
+    pub fn set_wrapped_key_material_format(mut self, input: ::std::option::Option<crate::types::WrappedKeyMaterialFormat>) -> Self {
         self.wrapped_key_material_format = input;
         self
     }
     /// <p>The key block format of a wrapped key.</p>
-    pub fn get_wrapped_key_material_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::WrappedKeyMaterialFormat> {
+    pub fn get_wrapped_key_material_format(&self) -> &::std::option::Option<crate::types::WrappedKeyMaterialFormat> {
         &self.wrapped_key_material_format
     }
     /// <p>Parameter information for generating a wrapped key using TR-31 or TR-34 standard.</p>
@@ -128,10 +108,7 @@ impl ::std::fmt::Debug for WrappedKeyBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WrappedKeyBuilder");
         formatter.field("wrapping_key_arn", &self.wrapping_key_arn);
-        formatter.field(
-            "wrapped_key_material_format",
-            &self.wrapped_key_material_format,
-        );
+        formatter.field("wrapped_key_material_format", &self.wrapped_key_material_format);
         formatter.field("key_material", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

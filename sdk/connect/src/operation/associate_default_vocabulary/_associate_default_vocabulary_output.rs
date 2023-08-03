@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDefaultVocabularyOutput {
 }
 impl AssociateDefaultVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultVocabularyOutput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput).
-    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyOutputBuilder{
+    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyOutputBuilder {
         crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDefaultVocabularyOutput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDefaultVocabularyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AssociateDefaultVocabularyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDefaultVocabularyOutput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput {
+    pub fn build(self) -> crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput {
         crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput {
             _request_id: self._request_id,
         }

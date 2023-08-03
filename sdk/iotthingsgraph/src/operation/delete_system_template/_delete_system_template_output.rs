@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSystemTemplateOutput {
 }
 impl DeleteSystemTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSystemTemplateOutput`](crate::operation::delete_system_template::DeleteSystemTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_system_template::builders::DeleteSystemTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_system_template::builders::DeleteSystemTemplateOutputBuilder {
         crate::operation::delete_system_template::builders::DeleteSystemTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSystemTemplateOutput`](crate::operation::delete_system_template::DeleteSystemTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSystemTemplateOutputBuilder {
     _request_id: Option<String>,
 }

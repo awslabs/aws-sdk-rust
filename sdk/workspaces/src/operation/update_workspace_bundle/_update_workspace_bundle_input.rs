@@ -22,18 +22,14 @@ impl UpdateWorkspaceBundleInput {
 }
 impl UpdateWorkspaceBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
-    pub fn builder(
-    ) -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder {
         crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl UpdateWorkspaceBundleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput {
-                bundle_id: self.bundle_id,
-                image_id: self.image_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput {
+            bundle_id: self.bundle_id,
+            image_id: self.image_id,
+        })
     }
 }

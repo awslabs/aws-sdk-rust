@@ -51,9 +51,7 @@ impl DnsTargetResource {
 
 /// A builder for [`DnsTargetResource`](crate::types::DnsTargetResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnsTargetResourceBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_arn: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl DnsTargetResourceBuilder {
         &self.domain_name
     }
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
-    pub fn hosted_zone_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
-    pub fn set_hosted_zone_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_arn = input;
         self
     }
@@ -97,18 +89,12 @@ impl DnsTargetResourceBuilder {
         &self.hosted_zone_arn
     }
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
-    pub fn record_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
-    pub fn set_record_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_set_id = input;
         self
     }
@@ -136,10 +122,7 @@ impl DnsTargetResourceBuilder {
         self
     }
     /// <p>The target resource of the DNS target resource.</p>
-    pub fn set_target_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetResource>,
-    ) -> Self {
+    pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::TargetResource>) -> Self {
         self.target_resource = input;
         self
     }

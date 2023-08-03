@@ -10,10 +10,7 @@ impl RegisterClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_cluster::RegisterClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_cluster::RegisterClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cluster::RegisterClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_cluster();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl RegisterClusterFluentBuilder {
         }
     }
     /// Access the RegisterCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_cluster::builders::RegisterClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_cluster::builders::RegisterClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl RegisterClusterFluentBuilder {
             crate::operation::register_cluster::RegisterCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_cluster::RegisterClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cluster::RegisterClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl RegisterClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl RegisterClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_cluster::RegisterClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_cluster::RegisterClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cluster::RegisterClusterError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl RegisterClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_cluster::RegisterClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_cluster::RegisterClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cluster::RegisterClusterError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl RegisterClusterFluentBuilder {
             crate::operation::register_cluster::RegisterCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_cluster::RegisterClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cluster::RegisterClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -146,32 +130,21 @@ impl RegisterClusterFluentBuilder {
         self
     }
     /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
-    pub fn set_connector_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorConfigRequest>,
-    ) -> Self {
+    pub fn set_connector_config(mut self, input: ::std::option::Option<crate::types::ConnectorConfigRequest>) -> Self {
         self.inner = self.inner.set_connector_config(input);
         self
     }
     /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
-    pub fn get_connector_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorConfigRequest> {
+    pub fn get_connector_config(&self) -> &::std::option::Option<crate::types::ConnectorConfigRequest> {
         self.inner.get_connector_config()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -184,30 +157,17 @@ impl RegisterClusterFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

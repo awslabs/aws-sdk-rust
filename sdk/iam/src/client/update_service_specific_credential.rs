@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`status(StatusType)`](crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialFluentBuilder::status) / [`set_status(Option<StatusType>)`](crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialFluentBuilder::set_status): <p>The status to be assigned to the service-specific credential.</p>
     /// - On success, responds with [`UpdateServiceSpecificCredentialOutput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialOutput)
     /// - On failure, responds with [`SdkError<UpdateServiceSpecificCredentialError>`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialError)
-    pub fn update_service_specific_credential(&self) -> crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialFluentBuilder{
+    pub fn update_service_specific_credential(
+        &self,
+    ) -> crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialFluentBuilder {
         crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialFluentBuilder::new(self.handle.clone())
     }
 }

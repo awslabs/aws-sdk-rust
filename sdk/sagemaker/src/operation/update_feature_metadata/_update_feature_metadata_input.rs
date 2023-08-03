@@ -43,40 +43,29 @@ impl UpdateFeatureMetadataInput {
 }
 impl UpdateFeatureMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder {
         crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFeatureMetadataInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_additions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
+    pub(crate) parameter_additions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
     pub(crate) parameter_removals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFeatureMetadataInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -124,17 +113,12 @@ impl UpdateFeatureMetadataInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn set_parameter_additions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
-    ) -> Self {
+    pub fn set_parameter_additions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
         self.parameter_additions = input;
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn get_parameter_additions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+    pub fn get_parameter_additions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
         &self.parameter_additions
     }
     /// Appends an item to `parameter_removals`.
@@ -142,44 +126,32 @@ impl UpdateFeatureMetadataInputBuilder {
     /// To override the contents of this collection use [`set_parameter_removals`](Self::set_parameter_removals).
     ///
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn parameter_removals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_removals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parameter_removals.unwrap_or_default();
         v.push(input.into());
         self.parameter_removals = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn set_parameter_removals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parameter_removals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.parameter_removals = input;
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn get_parameter_removals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parameter_removals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.parameter_removals
     }
     /// Consumes the builder and constructs a [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataInput {
-                feature_group_name: self.feature_group_name,
-                feature_name: self.feature_name,
-                description: self.description,
-                parameter_additions: self.parameter_additions,
-                parameter_removals: self.parameter_removals,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_feature_metadata::UpdateFeatureMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_feature_metadata::UpdateFeatureMetadataInput {
+            feature_group_name: self.feature_group_name,
+            feature_name: self.feature_name,
+            description: self.description,
+            parameter_additions: self.parameter_additions,
+            parameter_removals: self.parameter_removals,
+        })
     }
 }

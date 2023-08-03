@@ -3,10 +3,7 @@
 pub fn de_realtime_log_config_owner_mismatch_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder,
-) -> Result<
-    crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

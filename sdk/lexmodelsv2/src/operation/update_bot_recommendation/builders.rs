@@ -26,8 +26,7 @@ impl UpdateBotRecommendationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBotRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder,
+    inner: crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder,
 }
 impl UpdateBotRecommendationFluentBuilder {
     /// Creates a new `UpdateBotRecommendation`.
@@ -38,10 +37,7 @@ impl UpdateBotRecommendationFluentBuilder {
         }
     }
     /// Access the UpdateBotRecommendation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateBotRecommendationFluentBuilder {
             crate::operation::update_bot_recommendation::UpdateBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_recommendation::UpdateBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_recommendation::UpdateBotRecommendationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateBotRecommendationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bot_recommendation::UpdateBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_recommendation::UpdateBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_recommendation::UpdateBotRecommendationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bot_recommendation::UpdateBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_recommendation::UpdateBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_recommendation::UpdateBotRecommendationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateBotRecommendationFluentBuilder {
             crate::operation::update_bot_recommendation::UpdateBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_recommendation::UpdateBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_recommendation::UpdateBotRecommendationError>,
     > {
         self.customize_middleware().await
     }
@@ -167,18 +152,12 @@ impl UpdateBotRecommendationFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_recommendation_id(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_recommendation_id(input);
         self
     }
@@ -192,17 +171,12 @@ impl UpdateBotRecommendationFluentBuilder {
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
         self.inner = self.inner.set_encryption_setting(input);
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn get_encryption_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         self.inner.get_encryption_setting()
     }
 }

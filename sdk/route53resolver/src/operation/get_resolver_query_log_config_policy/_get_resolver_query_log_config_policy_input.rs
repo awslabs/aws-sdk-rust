@@ -15,16 +15,14 @@ impl GetResolverQueryLogConfigPolicyInput {
 }
 impl GetResolverQueryLogConfigPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyInput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput).
-    pub fn builder() -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder {
         crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverQueryLogConfigPolicyInput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,12 @@ impl GetResolverQueryLogConfigPolicyInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigPolicyInput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput {
-                arn: self.arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput { arn: self.arn })
     }
 }

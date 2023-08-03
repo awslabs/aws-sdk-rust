@@ -10,10 +10,7 @@ impl CreateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset::CreateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dataset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDatasetFluentBuilder {
         }
     }
     /// Access the CreateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>The dataset type. You can specify that the data in a dataset is for training the model or for testing the model.</p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
@@ -179,32 +168,21 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetInputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::DatasetInputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetInputDataConfig> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DatasetInputDataConfig> {
         self.inner.get_input_data_config()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -222,10 +200,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Tags for the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

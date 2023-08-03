@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`report_plan_arn(Option<String>)`](crate::operation::create_report_plan::CreateReportPlanOutput::report_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_report_plan::CreateReportPlanOutput::creation_time): <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     /// - On failure, responds with [`SdkError<CreateReportPlanError>`](crate::operation::create_report_plan::CreateReportPlanError)
-    pub fn create_report_plan(
-        &self,
-    ) -> crate::operation::create_report_plan::builders::CreateReportPlanFluentBuilder {
-        crate::operation::create_report_plan::builders::CreateReportPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_report_plan(&self) -> crate::operation::create_report_plan::builders::CreateReportPlanFluentBuilder {
+        crate::operation::create_report_plan::builders::CreateReportPlanFluentBuilder::new(self.handle.clone())
     }
 }

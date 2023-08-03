@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInstanceOutput`](crate::operation::delete_instance::DeleteInstanceOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_instance::DeleteInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteInstanceError>`](crate::operation::delete_instance::DeleteInstanceError)
-    pub fn delete_instance(
-        &self,
-    ) -> crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder {
-        crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_instance(&self) -> crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder {
+        crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl SlotDateTimeRangeRequest {
 
 /// A builder for [`SlotDateTimeRangeRequest`](crate::types::SlotDateTimeRangeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotDateTimeRangeRequestBuilder {
     pub(crate) earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl SlotDateTimeRangeRequestBuilder {
         self
     }
     /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
-    pub fn set_earliest_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_earliest_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.earliest_time = input;
         self
     }
@@ -61,10 +56,7 @@ impl SlotDateTimeRangeRequestBuilder {
         self
     }
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
-    pub fn set_latest_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_time = input;
         self
     }

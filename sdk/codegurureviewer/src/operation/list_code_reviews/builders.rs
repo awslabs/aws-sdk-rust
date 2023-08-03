@@ -10,10 +10,7 @@ impl ListCodeReviewsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_code_reviews::ListCodeReviewsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_reviews::ListCodeReviewsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_code_reviews();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListCodeReviewsFluentBuilder {
         }
     }
     /// Access the ListCodeReviews as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListCodeReviewsFluentBuilder {
             crate::operation::list_code_reviews::ListCodeReviews,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_reviews::ListCodeReviewsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListCodeReviewsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListCodeReviewsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_code_reviews::ListCodeReviewsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_reviews::ListCodeReviewsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListCodeReviewsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_code_reviews::ListCodeReviewsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_reviews::ListCodeReviewsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListCodeReviewsFluentBuilder {
             crate::operation::list_code_reviews::ListCodeReviews,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_reviews::ListCodeReviewsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
-        crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
+        crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ProviderTypes`.
     ///
@@ -143,17 +122,12 @@ impl ListCodeReviewsFluentBuilder {
         self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn set_provider_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    ) -> Self {
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
         self.inner = self.inner.set_provider_types(input);
         self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn get_provider_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
         self.inner.get_provider_types()
     }
     /// Appends an item to `States`.
@@ -180,10 +154,7 @@ impl ListCodeReviewsFluentBuilder {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -203,25 +174,17 @@ impl ListCodeReviewsFluentBuilder {
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_names(input.into());
         self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_repository_names()
     }
     /// <p>The type of code reviews to list in the response.</p>

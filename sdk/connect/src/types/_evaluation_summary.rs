@@ -79,9 +79,7 @@ impl EvaluationSummary {
 
 /// A builder for [`EvaluationSummary`](crate::types::EvaluationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationSummaryBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct EvaluationSummaryBuilder {
 }
 impl EvaluationSummaryBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }
@@ -115,18 +107,12 @@ impl EvaluationSummaryBuilder {
         &self.evaluation_id
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn set_evaluation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_arn = input;
         self
     }
@@ -135,18 +121,12 @@ impl EvaluationSummaryBuilder {
         &self.evaluation_arn
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn evaluation_form_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn set_evaluation_form_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_title = input;
         self
     }
@@ -155,18 +135,12 @@ impl EvaluationSummaryBuilder {
         &self.evaluation_form_title
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -180,10 +154,7 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The status of the contact evaluation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -192,18 +163,12 @@ impl EvaluationSummaryBuilder {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn set_evaluator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluator_arn = input;
         self
     }
@@ -217,10 +182,7 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn set_score(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationScore>,
-    ) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<crate::types::EvaluationScore>) -> Self {
         self.score = input;
         self
     }
@@ -234,10 +196,7 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -251,10 +210,7 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

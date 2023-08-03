@@ -80,18 +80,14 @@ impl CreateNetworkAclEntryInput {
 }
 impl CreateNetworkAclEntryInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
-    pub fn builder(
-    ) -> crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryInputBuilder {
         crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkAclEntryInputBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -153,10 +149,7 @@ impl CreateNetworkAclEntryInputBuilder {
         self
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn set_icmp_type_code(
-        mut self,
-        input: ::std::option::Option<crate::types::IcmpTypeCode>,
-    ) -> Self {
+    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
         self.icmp_type_code = input;
         self
     }
@@ -165,18 +158,12 @@ impl CreateNetworkAclEntryInputBuilder {
         &self.icmp_type_code
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
@@ -185,18 +172,12 @@ impl CreateNetworkAclEntryInputBuilder {
         &self.ipv6_cidr_block
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_acl_id = input;
         self
     }
@@ -238,10 +219,7 @@ impl CreateNetworkAclEntryInputBuilder {
         self
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
-    pub fn set_rule_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_rule_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.rule_action = input;
         self
     }
@@ -269,23 +247,19 @@ impl CreateNetworkAclEntryInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput {
-                cidr_block: self.cidr_block,
-                dry_run: self.dry_run,
-                egress: self.egress,
-                icmp_type_code: self.icmp_type_code,
-                ipv6_cidr_block: self.ipv6_cidr_block,
-                network_acl_id: self.network_acl_id,
-                port_range: self.port_range,
-                protocol: self.protocol,
-                rule_action: self.rule_action,
-                rule_number: self.rule_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput {
+            cidr_block: self.cidr_block,
+            dry_run: self.dry_run,
+            egress: self.egress,
+            icmp_type_code: self.icmp_type_code,
+            ipv6_cidr_block: self.ipv6_cidr_block,
+            network_acl_id: self.network_acl_id,
+            port_range: self.port_range,
+            protocol: self.protocol,
+            rule_action: self.rule_action,
+            rule_number: self.rule_number,
+        })
     }
 }

@@ -23,26 +23,18 @@ impl CloudWatchLoggingOption {
 
 /// A builder for [`CloudWatchLoggingOption`](crate::types::CloudWatchLoggingOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionBuilder {
     pub(crate) log_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionBuilder {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
-    pub fn set_log_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_arn = input;
         self
     }

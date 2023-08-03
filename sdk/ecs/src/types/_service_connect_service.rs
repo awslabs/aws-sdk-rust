@@ -16,8 +16,7 @@ pub struct ServiceConnectService {
     /// <p>Each name and port mapping must be unique within the namespace.</p>
     /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
     #[doc(hidden)]
-    pub client_aliases:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>,
+    pub client_aliases: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>,
     /// <p>The port number for the Service Connect proxy to listen on.</p>
     /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
     /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
@@ -38,9 +37,7 @@ impl ServiceConnectService {
     /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
     /// <p>Each name and port mapping must be unique within the namespace.</p>
     /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
-    pub fn client_aliases(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceConnectClientAlias]> {
+    pub fn client_aliases(&self) -> ::std::option::Option<&[crate::types::ServiceConnectClientAlias]> {
         self.client_aliases.as_deref()
     }
     /// <p>The port number for the Service Connect proxy to listen on.</p>
@@ -59,14 +56,11 @@ impl ServiceConnectService {
 
 /// A builder for [`ServiceConnectService`](crate::types::ServiceConnectService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceConnectServiceBuilder {
     pub(crate) port_name: ::std::option::Option<::std::string::String>,
     pub(crate) discovery_name: ::std::option::Option<::std::string::String>,
-    pub(crate) client_aliases:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>,
+    pub(crate) client_aliases: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>,
     pub(crate) ingress_port_override: ::std::option::Option<i32>,
 }
 impl ServiceConnectServiceBuilder {
@@ -86,19 +80,13 @@ impl ServiceConnectServiceBuilder {
     }
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
     /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
-    pub fn discovery_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
     /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
-    pub fn set_discovery_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_name = input;
         self
     }
@@ -125,10 +113,7 @@ impl ServiceConnectServiceBuilder {
     /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
     /// <p>Each name and port mapping must be unique within the namespace.</p>
     /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
-    pub fn set_client_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>,
-    ) -> Self {
+    pub fn set_client_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>) -> Self {
         self.client_aliases = input;
         self
     }
@@ -136,9 +121,7 @@ impl ServiceConnectServiceBuilder {
     /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
     /// <p>Each name and port mapping must be unique within the namespace.</p>
     /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
-    pub fn get_client_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>> {
+    pub fn get_client_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>> {
         &self.client_aliases
     }
     /// <p>The port number for the Service Connect proxy to listen on.</p>

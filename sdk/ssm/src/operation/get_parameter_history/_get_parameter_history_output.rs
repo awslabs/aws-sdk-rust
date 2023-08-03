@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetParameterHistoryOutput {
 }
 impl GetParameterHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetParameterHistoryOutput`](crate::operation::get_parameter_history::GetParameterHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder {
-        crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder {
+        crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetParameterHistoryOutput`](crate::operation::get_parameter_history::GetParameterHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParameterHistoryOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl GetParameterHistoryOutputBuilder {
         self
     }
     /// <p>A list of parameters returned by the request.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterHistory>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterHistory>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of parameters returned by the request.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterHistory>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterHistory>> {
         &self.parameters
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

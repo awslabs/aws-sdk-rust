@@ -10,10 +10,7 @@ impl PutFeedbackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_feedback::PutFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_feedback::PutFeedbackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_feedback::PutFeedbackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_feedback();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutFeedbackFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_feedback::PutFeedback,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_feedback::PutFeedback, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_feedback::PutFeedbackError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl PutFeedbackFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_feedback::PutFeedback,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_feedback::PutFeedback, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_feedback::PutFeedbackError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
@@ -133,25 +115,17 @@ impl PutFeedbackFluentBuilder {
         self.inner.get_anomaly_detector_arn()
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(
-        mut self,
-        input: crate::types::AnomalyGroupTimeSeriesFeedback,
-    ) -> Self {
+    pub fn anomaly_group_time_series_feedback(mut self, input: crate::types::AnomalyGroupTimeSeriesFeedback) -> Self {
         self.inner = self.inner.anomaly_group_time_series_feedback(input);
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn set_anomaly_group_time_series_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
-    ) -> Self {
+    pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>) -> Self {
         self.inner = self.inner.set_anomaly_group_time_series_feedback(input);
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn get_anomaly_group_time_series_feedback(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback> {
+    pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback> {
         self.inner.get_anomaly_group_time_series_feedback()
     }
 }

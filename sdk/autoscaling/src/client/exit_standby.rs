@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ExitStandbyOutput`](crate::operation::exit_standby::ExitStandbyOutput) with field(s):
     ///   - [`activities(Option<Vec<Activity>>)`](crate::operation::exit_standby::ExitStandbyOutput::activities): <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
     /// - On failure, responds with [`SdkError<ExitStandbyError>`](crate::operation::exit_standby::ExitStandbyError)
-    pub fn exit_standby(
-        &self,
-    ) -> crate::operation::exit_standby::builders::ExitStandbyFluentBuilder {
+    pub fn exit_standby(&self) -> crate::operation::exit_standby::builders::ExitStandbyFluentBuilder {
         crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::new(self.handle.clone())
     }
 }

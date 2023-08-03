@@ -26,7 +26,7 @@ impl ListWhatIfForecastExportsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWhatIfForecastExportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsInputBuilder,
+    inner: crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsInputBuilder,
 }
 impl ListWhatIfForecastExportsFluentBuilder {
     /// Creates a new `ListWhatIfForecastExports`.
@@ -37,7 +37,7 @@ impl ListWhatIfForecastExportsFluentBuilder {
         }
     }
     /// Access the ListWhatIfForecastExports as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListWhatIfForecastExportsFluentBuilder {
             crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListWhatIfForecastExportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListWhatIfForecastExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListWhatIfForecastExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListWhatIfForecastExportsFluentBuilder {
             crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator {
         crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
@@ -186,10 +175,7 @@ impl ListWhatIfForecastExportsFluentBuilder {
     /// <acct-id>
     /// :forecast/electricityWIFExport" } ]
     /// </acct-id></code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

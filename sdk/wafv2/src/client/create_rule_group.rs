@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput) with field(s):
     ///   - [`summary(Option<RuleGroupSummary>)`](crate::operation::create_rule_group::CreateRuleGroupOutput::summary): <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     /// - On failure, responds with [`SdkError<CreateRuleGroupError>`](crate::operation::create_rule_group::CreateRuleGroupError)
-    pub fn create_rule_group(
-        &self,
-    ) -> crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder {
-        crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_rule_group(&self) -> crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder {
+        crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

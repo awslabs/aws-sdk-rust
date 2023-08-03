@@ -5,16 +5,16 @@ pub use crate::operation::describe_ipam_resource_discovery_associations::_descri
 
 impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_ipam_resource_discovery_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder,
+    inner: crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder,
 }
 impl DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
     /// Creates a new `DescribeIpamResourceDiscoveryAssociations`.
@@ -37,15 +37,24 @@ impl DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
         }
     }
     /// Access the DescribeIpamResourceDiscoveryAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +93,42 @@ impl DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ipam_resource_discovery_associations::paginator::DescribeIpamResourceDiscoveryAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_ipam_resource_discovery_associations::paginator::DescribeIpamResourceDiscoveryAssociationsPaginator{
-        crate::operation::describe_ipam_resource_discovery_associations::paginator::DescribeIpamResourceDiscoveryAssociationsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_ipam_resource_discovery_associations::paginator::DescribeIpamResourceDiscoveryAssociationsPaginator {
+        crate::operation::describe_ipam_resource_discovery_associations::paginator::DescribeIpamResourceDiscoveryAssociationsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -119,29 +149,17 @@ impl DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_ipam_resource_discovery_association_ids`](Self::set_ipam_resource_discovery_association_ids).
     ///
     /// <p>The resource discovery association IDs.</p>
-    pub fn ipam_resource_discovery_association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .ipam_resource_discovery_association_ids(input.into());
+    pub fn ipam_resource_discovery_association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipam_resource_discovery_association_ids(input.into());
         self
     }
     /// <p>The resource discovery association IDs.</p>
-    pub fn set_ipam_resource_discovery_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_ipam_resource_discovery_association_ids(input);
+    pub fn set_ipam_resource_discovery_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ipam_resource_discovery_association_ids(input);
         self
     }
     /// <p>The resource discovery association IDs.</p>
-    pub fn get_ipam_resource_discovery_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_resource_discovery_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipam_resource_discovery_association_ids()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -182,10 +200,7 @@ impl DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
         self
     }
     /// <p>The resource discovery association filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

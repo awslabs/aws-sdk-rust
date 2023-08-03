@@ -28,9 +28,7 @@ impl GetSchemaOutput {
 
 /// A builder for [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaOutputBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,
     _request_id: Option<String>,

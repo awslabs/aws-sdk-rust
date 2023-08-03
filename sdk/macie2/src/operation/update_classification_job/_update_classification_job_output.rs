@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateClassificationJobOutput {
 }
 impl UpdateClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationJobOutput`](crate::operation::update_classification_job::UpdateClassificationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::update_classification_job::builders::UpdateClassificationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_classification_job::builders::UpdateClassificationJobOutputBuilder {
         crate::operation::update_classification_job::builders::UpdateClassificationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClassificationJobOutput`](crate::operation::update_classification_job::UpdateClassificationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClassificationJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateClassificationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateClassificationJobOutput`](crate::operation::update_classification_job::UpdateClassificationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_classification_job::UpdateClassificationJobOutput {
+    pub fn build(self) -> crate::operation::update_classification_job::UpdateClassificationJobOutput {
         crate::operation::update_classification_job::UpdateClassificationJobOutput {
             _request_id: self._request_id,
         }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
     /// - On success, responds with [`DeleteRealtimeLogConfigOutput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteRealtimeLogConfigError>`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError)
-    pub fn delete_realtime_log_config(
-        &self,
-    ) -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder
-    {
+    pub fn delete_realtime_log_config(&self) -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder {
         crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

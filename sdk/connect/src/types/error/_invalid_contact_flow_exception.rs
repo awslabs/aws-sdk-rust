@@ -56,9 +56,7 @@ impl InvalidContactFlowException {
 
 /// A builder for [`InvalidContactFlowException`](crate::types::error::InvalidContactFlowException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidContactFlowExceptionBuilder {
     pub(crate) problems: ::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -77,17 +75,12 @@ impl InvalidContactFlowExceptionBuilder {
         self
     }
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    pub fn set_problems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>>,
-    ) -> Self {
+    pub fn set_problems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>>) -> Self {
         self.problems = input;
         self
     }
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    pub fn get_problems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>> {
+    pub fn get_problems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>> {
         &self.problems
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -111,10 +104,7 @@ impl InvalidContactFlowExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

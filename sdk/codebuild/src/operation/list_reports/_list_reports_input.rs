@@ -51,9 +51,7 @@ impl ListReportsInput {
 
 /// A builder for [`ListReportsInput`](crate::operation::list_reports::ListReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,10 +73,7 @@ impl ListReportsInputBuilder {
     /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
     /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -133,12 +128,7 @@ impl ListReportsInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListReportsInput`](crate::operation::list_reports::ListReportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_reports::ListReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_reports::ListReportsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_reports::ListReportsInput {
             sort_order: self.sort_order,
             next_token: self.next_token,

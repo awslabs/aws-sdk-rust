@@ -10,10 +10,7 @@ impl DescribeWorkteamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_workteam::DescribeWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workteam::DescribeWorkteamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workteam::DescribeWorkteamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_workteam();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeWorkteamFluentBuilder {
         }
     }
     /// Access the DescribeWorkteam as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeWorkteamFluentBuilder {
             crate::operation::describe_workteam::DescribeWorkteam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workteam::DescribeWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workteam::DescribeWorkteamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeWorkteamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeWorkteamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workteam::DescribeWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workteam::DescribeWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workteam::DescribeWorkteamError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeWorkteamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workteam::DescribeWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workteam::DescribeWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workteam::DescribeWorkteamError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeWorkteamFluentBuilder {
             crate::operation::describe_workteam::DescribeWorkteam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workteam::DescribeWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workteam::DescribeWorkteamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the work team to return a description of.</p>
-    pub fn workteam_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workteam_name(input.into());
         self
     }
     /// <p>The name of the work team to return a description of.</p>
-    pub fn set_workteam_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workteam_name(input);
         self
     }

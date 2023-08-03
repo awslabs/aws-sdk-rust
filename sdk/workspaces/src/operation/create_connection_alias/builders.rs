@@ -37,10 +37,7 @@ impl CreateConnectionAliasFluentBuilder {
         }
     }
     /// Access the CreateConnectionAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateConnectionAliasFluentBuilder {
             crate::operation::create_connection_alias::CreateConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection_alias::CreateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection_alias::CreateConnectionAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateConnectionAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection_alias::CreateConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection_alias::CreateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection_alias::CreateConnectionAliasError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection_alias::CreateConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection_alias::CreateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection_alias::CreateConnectionAliasError>,
     > {
         self.send_middleware().await
     }
@@ -117,29 +105,21 @@ impl CreateConnectionAliasFluentBuilder {
             crate::operation::create_connection_alias::CreateConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection_alias::CreateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection_alias::CreateConnectionAliasError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
-    pub fn connection_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_string(input.into());
         self
     }
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
-    pub fn set_connection_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_string(input);
         self
     }
@@ -159,10 +139,7 @@ impl CreateConnectionAliasFluentBuilder {
         self
     }
     /// <p>The tags to associate with the connection alias.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

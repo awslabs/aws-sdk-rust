@@ -29,9 +29,7 @@ impl DescribeAnomalyInput {
 
 /// A builder for [`DescribeAnomalyInput`](crate::operation::describe_anomaly::DescribeAnomalyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeAnomalyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAnomalyInput`](crate::operation::describe_anomaly::DescribeAnomalyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_anomaly::DescribeAnomalyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_anomaly::DescribeAnomalyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_anomaly::DescribeAnomalyInput {
             id: self.id,
             account_id: self.account_id,

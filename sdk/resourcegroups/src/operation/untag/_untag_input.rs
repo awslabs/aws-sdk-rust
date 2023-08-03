@@ -29,9 +29,7 @@ impl UntagInput {
 
 /// A builder for [`UntagInput`](crate::operation::untag::UntagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl UntagInputBuilder {
         self
     }
     /// <p>The keys of the tags to be removed.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keys = input;
         self
     }
@@ -75,12 +70,7 @@ impl UntagInputBuilder {
         &self.keys
     }
     /// Consumes the builder and constructs a [`UntagInput`](crate::operation::untag::UntagInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag::UntagInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag::UntagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag::UntagInput {
             arn: self.arn,
             keys: self.keys,

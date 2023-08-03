@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StorageVirtualMachineSubtype {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for StorageVirtualMachineSubtype {
             "DP_DESTINATION" => StorageVirtualMachineSubtype::DpDestination,
             "SYNC_DESTINATION" => StorageVirtualMachineSubtype::SyncDestination,
             "SYNC_SOURCE" => StorageVirtualMachineSubtype::SyncSource,
-            other => StorageVirtualMachineSubtype::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StorageVirtualMachineSubtype::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl StorageVirtualMachineSubtype {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEFAULT",
-            "DP_DESTINATION",
-            "SYNC_DESTINATION",
-            "SYNC_SOURCE",
-        ]
+        &["DEFAULT", "DP_DESTINATION", "SYNC_DESTINATION", "SYNC_SOURCE"]
     }
 }
 impl ::std::convert::AsRef<str> for StorageVirtualMachineSubtype {

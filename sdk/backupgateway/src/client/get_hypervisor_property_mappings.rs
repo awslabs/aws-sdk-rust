@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`vmware_to_aws_tag_mappings(Option<Vec<VmwareToAwsTagMapping>>)`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput::vmware_to_aws_tag_mappings): <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
     ///   - [`iam_role_arn(Option<String>)`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput::iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     /// - On failure, responds with [`SdkError<GetHypervisorPropertyMappingsError>`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsError)
-    pub fn get_hypervisor_property_mappings(&self) -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder{
+    pub fn get_hypervisor_property_mappings(
+        &self,
+    ) -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder {
         crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder::new(self.handle.clone())
     }
 }

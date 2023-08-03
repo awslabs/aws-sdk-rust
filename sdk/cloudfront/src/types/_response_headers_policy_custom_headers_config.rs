@@ -9,8 +9,7 @@ pub struct ResponseHeadersPolicyCustomHeadersConfig {
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP response headers and their values.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>,
 }
 impl ResponseHeadersPolicyCustomHeadersConfig {
     /// <p>The number of HTTP response headers in the list.</p>
@@ -18,9 +17,7 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
         self.quantity
     }
     /// <p>The list of HTTP response headers and their values.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyCustomHeader]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyCustomHeader]> {
         self.items.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
 
 /// A builder for [`ResponseHeadersPolicyCustomHeadersConfig`](crate::types::ResponseHeadersPolicyCustomHeadersConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeadersConfigBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>,
 }
 impl ResponseHeadersPolicyCustomHeadersConfigBuilder {
     /// <p>The number of HTTP response headers in the list.</p>
@@ -68,20 +62,12 @@ impl ResponseHeadersPolicyCustomHeadersConfigBuilder {
         self
     }
     /// <p>The list of HTTP response headers and their values.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of HTTP response headers and their values.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeadersConfig`](crate::types::ResponseHeadersPolicyCustomHeadersConfig).

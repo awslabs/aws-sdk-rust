@@ -10,9 +10,7 @@ pub struct DescribeTransactionOutput {
 }
 impl DescribeTransactionOutput {
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
-    pub fn transaction_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransactionDescription> {
+    pub fn transaction_description(&self) -> ::std::option::Option<&crate::types::TransactionDescription> {
         self.transaction_description.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeTransactionOutput {
 }
 impl DescribeTransactionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransactionOutput`](crate::operation::describe_transaction::DescribeTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder {
-        crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder {
+        crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransactionOutput`](crate::operation::describe_transaction::DescribeTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransactionOutputBuilder {
     pub(crate) transaction_description: ::std::option::Option<crate::types::TransactionDescription>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeTransactionOutputBuilder {
         self
     }
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
-    pub fn set_transaction_description(
-        mut self,
-        input: ::std::option::Option<crate::types::TransactionDescription>,
-    ) -> Self {
+    pub fn set_transaction_description(mut self, input: ::std::option::Option<crate::types::TransactionDescription>) -> Self {
         self.transaction_description = input;
         self
     }
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
-    pub fn get_transaction_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransactionDescription> {
+    pub fn get_transaction_description(&self) -> &::std::option::Option<crate::types::TransactionDescription> {
         &self.transaction_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

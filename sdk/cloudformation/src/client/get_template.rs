@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`template_body(Option<String>)`](crate::operation::get_template::GetTemplateOutput::template_body): <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>  <p>CloudFormation returns the same template that was used when the stack was created.</p>
     ///   - [`stages_available(Option<Vec<TemplateStage>>)`](crate::operation::get_template::GetTemplateOutput::stages_available): <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
-    pub fn get_template(
-        &self,
-    ) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
+    pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())
     }
 }

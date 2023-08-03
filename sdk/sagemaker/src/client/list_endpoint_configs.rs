@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`endpoint_configs(Option<Vec<EndpointConfigSummary>>)`](crate::operation::list_endpoint_configs::ListEndpointConfigsOutput::endpoint_configs): <p>An array of endpoint configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoint_configs::ListEndpointConfigsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     /// - On failure, responds with [`SdkError<ListEndpointConfigsError>`](crate::operation::list_endpoint_configs::ListEndpointConfigsError)
-    pub fn list_endpoint_configs(
-        &self,
-    ) -> crate::operation::list_endpoint_configs::builders::ListEndpointConfigsFluentBuilder {
-        crate::operation::list_endpoint_configs::builders::ListEndpointConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoint_configs(&self) -> crate::operation::list_endpoint_configs::builders::ListEndpointConfigsFluentBuilder {
+        crate::operation::list_endpoint_configs::builders::ListEndpointConfigsFluentBuilder::new(self.handle.clone())
     }
 }

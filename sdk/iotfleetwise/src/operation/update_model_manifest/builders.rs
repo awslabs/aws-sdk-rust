@@ -37,9 +37,7 @@ impl UpdateModelManifestFluentBuilder {
         }
     }
     /// Access the UpdateModelManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateModelManifestFluentBuilder {
             crate::operation::update_model_manifest::UpdateModelManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_manifest::UpdateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_manifest::UpdateModelManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateModelManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateModelManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_manifest::UpdateModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_manifest::UpdateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_manifest::UpdateModelManifestError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateModelManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_manifest::UpdateModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_manifest::UpdateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_manifest::UpdateModelManifestError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateModelManifestFluentBuilder {
             crate::operation::update_model_manifest::UpdateModelManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_manifest::UpdateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_manifest::UpdateModelManifestError>,
     > {
         self.customize_middleware().await
     }
@@ -160,17 +147,12 @@ impl UpdateModelManifestFluentBuilder {
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
-    pub fn set_nodes_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_add(input);
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
-    pub fn get_nodes_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes_to_add()
     }
     /// Appends an item to `nodesToRemove`.
@@ -178,25 +160,17 @@ impl UpdateModelManifestFluentBuilder {
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn nodes_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes_to_remove(input.into());
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn set_nodes_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_remove(input);
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn get_nodes_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes_to_remove()
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
@@ -205,10 +179,7 @@ impl UpdateModelManifestFluentBuilder {
         self
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

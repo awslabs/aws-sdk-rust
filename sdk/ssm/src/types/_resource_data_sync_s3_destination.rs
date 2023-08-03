@@ -21,8 +21,7 @@ pub struct ResourceDataSyncS3Destination {
     pub awskms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
     #[doc(hidden)]
-    pub destination_data_sharing:
-        ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
+    pub destination_data_sharing: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
 }
 impl ResourceDataSyncS3Destination {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
@@ -46,9 +45,7 @@ impl ResourceDataSyncS3Destination {
         self.awskms_key_arn.as_deref()
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
-    pub fn destination_data_sharing(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDataSyncDestinationDataSharing> {
+    pub fn destination_data_sharing(&self) -> ::std::option::Option<&crate::types::ResourceDataSyncDestinationDataSharing> {
         self.destination_data_sharing.as_ref()
     }
 }
@@ -61,17 +58,14 @@ impl ResourceDataSyncS3Destination {
 
 /// A builder for [`ResourceDataSyncS3Destination`](crate::types::ResourceDataSyncS3Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDataSyncS3DestinationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) sync_format: ::std::option::Option<crate::types::ResourceDataSyncS3Format>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) awskms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_data_sharing:
-        ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
+    pub(crate) destination_data_sharing: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
 }
 impl ResourceDataSyncS3DestinationBuilder {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
@@ -108,17 +102,12 @@ impl ResourceDataSyncS3DestinationBuilder {
         self
     }
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
-    pub fn set_sync_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncS3Format>,
-    ) -> Self {
+    pub fn set_sync_format(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncS3Format>) -> Self {
         self.sync_format = input;
         self
     }
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
-    pub fn get_sync_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDataSyncS3Format> {
+    pub fn get_sync_format(&self) -> &::std::option::Option<crate::types::ResourceDataSyncS3Format> {
         &self.sync_format
     }
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
@@ -136,18 +125,12 @@ impl ResourceDataSyncS3DestinationBuilder {
         &self.region
     }
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
-    pub fn awskms_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn awskms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.awskms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
-    pub fn set_awskms_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_awskms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.awskms_key_arn = input;
         self
     }
@@ -156,25 +139,17 @@ impl ResourceDataSyncS3DestinationBuilder {
         &self.awskms_key_arn
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
-    pub fn destination_data_sharing(
-        mut self,
-        input: crate::types::ResourceDataSyncDestinationDataSharing,
-    ) -> Self {
+    pub fn destination_data_sharing(mut self, input: crate::types::ResourceDataSyncDestinationDataSharing) -> Self {
         self.destination_data_sharing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
-    pub fn set_destination_data_sharing(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
-    ) -> Self {
+    pub fn set_destination_data_sharing(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>) -> Self {
         self.destination_data_sharing = input;
         self
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
-    pub fn get_destination_data_sharing(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing> {
+    pub fn get_destination_data_sharing(&self) -> &::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing> {
         &self.destination_data_sharing
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncS3Destination`](crate::types::ResourceDataSyncS3Destination).

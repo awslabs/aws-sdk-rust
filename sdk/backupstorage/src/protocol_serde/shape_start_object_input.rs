@@ -4,9 +4,7 @@ pub fn ser_start_object_input(
     input: &crate::operation::start_object::StartObjectInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.throw_on_duplicate {
-        object
-            .key("ThrowOnDuplicate")
-            .boolean(input.throw_on_duplicate);
+        object.key("ThrowOnDuplicate").boolean(input.throw_on_duplicate);
     }
     Ok(())
 }

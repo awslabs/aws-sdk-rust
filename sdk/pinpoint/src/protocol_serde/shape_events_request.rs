@@ -10,10 +10,7 @@ pub fn ser_events_request(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_events_batch::ser_events_batch(
-                    &mut object_5,
-                    value_4,
-                )?;
+                crate::protocol_serde::shape_events_batch::ser_events_batch(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }

@@ -129,16 +129,14 @@ impl GetReservationUtilizationInput {
 }
 impl GetReservationUtilizationInput {
     /// Creates a new builder-style object to manufacture [`GetReservationUtilizationInput`](crate::operation::get_reservation_utilization::GetReservationUtilizationInput).
-    pub fn builder() -> crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder{
+    pub fn builder() -> crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder {
         crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReservationUtilizationInput`](crate::operation::get_reservation_utilization::GetReservationUtilizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
@@ -155,10 +153,7 @@ impl GetReservationUtilizationInputBuilder {
         self
     }
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -178,17 +173,12 @@ impl GetReservationUtilizationInputBuilder {
         self
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.group_by = input;
         self
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         &self.group_by
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -199,10 +189,7 @@ impl GetReservationUtilizationInputBuilder {
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.granularity = input;
         self
     }
@@ -315,10 +302,7 @@ impl GetReservationUtilizationInputBuilder {
     /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.sort_by = input;
         self
     }
@@ -348,18 +332,12 @@ impl GetReservationUtilizationInputBuilder {
         &self.sort_by
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -388,16 +366,14 @@ impl GetReservationUtilizationInputBuilder {
         crate::operation::get_reservation_utilization::GetReservationUtilizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_reservation_utilization::GetReservationUtilizationInput {
-                time_period: self.time_period,
-                group_by: self.group_by,
-                granularity: self.granularity,
-                filter: self.filter,
-                sort_by: self.sort_by,
-                next_page_token: self.next_page_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_reservation_utilization::GetReservationUtilizationInput {
+            time_period: self.time_period,
+            group_by: self.group_by,
+            granularity: self.granularity,
+            filter: self.filter,
+            sort_by: self.sort_by,
+            next_page_token: self.next_page_token,
+            max_results: self.max_results,
+        })
     }
 }

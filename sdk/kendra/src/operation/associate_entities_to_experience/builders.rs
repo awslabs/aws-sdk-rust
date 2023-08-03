@@ -26,7 +26,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEntitiesToExperienceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder,
+    inner: crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder,
 }
 impl AssociateEntitiesToExperienceFluentBuilder {
     /// Creates a new `AssociateEntitiesToExperience`.
@@ -37,7 +37,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
         }
     }
     /// Access the AssociateEntitiesToExperience as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +147,12 @@ impl AssociateEntitiesToExperienceFluentBuilder {
         self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn set_entity_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
-    ) -> Self {
+    pub fn set_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>) -> Self {
         self.inner = self.inner.set_entity_list(input);
         self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn get_entity_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>> {
+    pub fn get_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>> {
         self.inner.get_entity_list()
     }
 }

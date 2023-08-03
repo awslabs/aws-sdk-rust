@@ -32,27 +32,19 @@ impl ConnectionCredentials {
 
 /// A builder for [`ConnectionCredentials`](crate::types::ConnectionCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionCredentialsBuilder {
     pub(crate) connection_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiry: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionCredentialsBuilder {
     /// <p>The connection token.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection token.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_token = input;
         self
     }

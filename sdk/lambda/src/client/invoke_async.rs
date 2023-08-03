@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::invoke_async::InvokeAsyncOutput::status): <p>The status code.</p>
     /// - On failure, responds with [`SdkError<InvokeAsyncError>`](crate::operation::invoke_async::InvokeAsyncError)
     #[deprecated]
-    pub fn invoke_async(
-        &self,
-    ) -> crate::operation::invoke_async::builders::InvokeAsyncFluentBuilder {
+    pub fn invoke_async(&self) -> crate::operation::invoke_async::builders::InvokeAsyncFluentBuilder {
         crate::operation::invoke_async::builders::InvokeAsyncFluentBuilder::new(self.handle.clone())
     }
 }

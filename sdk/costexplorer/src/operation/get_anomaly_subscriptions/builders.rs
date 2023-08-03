@@ -26,8 +26,7 @@ impl GetAnomalySubscriptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder,
+    inner: crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder,
 }
 impl GetAnomalySubscriptionsFluentBuilder {
     /// Creates a new `GetAnomalySubscriptions`.
@@ -38,10 +37,7 @@ impl GetAnomalySubscriptionsFluentBuilder {
         }
     }
     /// Access the GetAnomalySubscriptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAnomalySubscriptionsFluentBuilder {
             crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAnomalySubscriptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAnomalySubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAnomalySubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetAnomalySubscriptionsFluentBuilder {
             crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +114,17 @@ impl GetAnomalySubscriptionsFluentBuilder {
     /// To override the contents of this collection use [`set_subscription_arn_list`](Self::set_subscription_arn_list).
     ///
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn subscription_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn_list(input.into());
         self
     }
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn set_subscription_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subscription_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subscription_arn_list(input);
         self
     }
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn get_subscription_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subscription_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subscription_arn_list()
     }
     /// <p>Cost anomaly monitor ARNs. </p>
@@ -165,18 +142,12 @@ impl GetAnomalySubscriptionsFluentBuilder {
         self.inner.get_monitor_arn()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

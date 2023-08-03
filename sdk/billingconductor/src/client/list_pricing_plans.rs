@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`pricing_plans(Option<Vec<PricingPlanListElement>>)`](crate::operation::list_pricing_plans::ListPricingPlansOutput::pricing_plans): <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pricing_plans::ListPricingPlansOutput::next_token): <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     /// - On failure, responds with [`SdkError<ListPricingPlansError>`](crate::operation::list_pricing_plans::ListPricingPlansError)
-    pub fn list_pricing_plans(
-        &self,
-    ) -> crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder {
-        crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pricing_plans(&self) -> crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder {
+        crate::operation::list_pricing_plans::builders::ListPricingPlansFluentBuilder::new(self.handle.clone())
     }
 }

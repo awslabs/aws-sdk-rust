@@ -26,7 +26,7 @@ impl ListRepositoriesInDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRepositoriesInDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder,
+    inner: crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder,
 }
 impl ListRepositoriesInDomainFluentBuilder {
     /// Creates a new `ListRepositoriesInDomain`.
@@ -37,7 +37,7 @@ impl ListRepositoriesInDomainFluentBuilder {
         }
     }
     /// Access the ListRepositoriesInDomain as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRepositoriesInDomainFluentBuilder {
             crate::operation::list_repositories_in_domain::ListRepositoriesInDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRepositoriesInDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRepositoriesInDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repositories_in_domain::ListRepositoriesInDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRepositoriesInDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repositories_in_domain::ListRepositoriesInDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListRepositoriesInDomainFluentBuilder {
             crate::operation::list_repositories_in_domain::ListRepositoriesInDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator {
         crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the domain that contains the returned list of repositories. </p>
@@ -158,18 +144,12 @@ impl ListRepositoriesInDomainFluentBuilder {
         self.inner.get_domain_owner()
     }
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    pub fn administrator_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administrator_account(input.into());
         self
     }
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    pub fn set_administrator_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administrator_account(input);
         self
     }
@@ -178,18 +158,12 @@ impl ListRepositoriesInDomainFluentBuilder {
         self.inner.get_administrator_account()
     }
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    pub fn repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_prefix(input.into());
         self
     }
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    pub fn set_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_prefix(input);
         self
     }

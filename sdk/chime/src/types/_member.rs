@@ -91,10 +91,7 @@ impl MemberBuilder {
         self
     }
     /// <p>The member type.</p>
-    pub fn set_member_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberType>,
-    ) -> Self {
+    pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.member_type = input;
         self
     }

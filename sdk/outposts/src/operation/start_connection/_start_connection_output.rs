@@ -35,9 +35,7 @@ impl StartConnectionOutput {
 
 /// A builder for [`StartConnectionOutput`](crate::operation::start_connection::StartConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartConnectionOutputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) underlay_ip_address: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct StartConnectionOutputBuilder {
 }
 impl StartConnectionOutputBuilder {
     /// <p> The ID of the connection. </p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the connection. </p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -65,18 +57,12 @@ impl StartConnectionOutputBuilder {
         &self.connection_id
     }
     /// <p> The underlay IP address. </p>
-    pub fn underlay_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn underlay_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.underlay_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The underlay IP address. </p>
-    pub fn set_underlay_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_underlay_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.underlay_ip_address = input;
         self
     }

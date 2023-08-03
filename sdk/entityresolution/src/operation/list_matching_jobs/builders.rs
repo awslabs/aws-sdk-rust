@@ -10,10 +10,7 @@ impl ListMatchingJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_matching_jobs::ListMatchingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_jobs::ListMatchingJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_jobs::ListMatchingJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_matching_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListMatchingJobsFluentBuilder {
         }
     }
     /// Access the ListMatchingJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_matching_jobs::builders::ListMatchingJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_matching_jobs::builders::ListMatchingJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListMatchingJobsFluentBuilder {
             crate::operation::list_matching_jobs::ListMatchingJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_jobs::ListMatchingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_jobs::ListMatchingJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListMatchingJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListMatchingJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_matching_jobs::ListMatchingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_jobs::ListMatchingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_jobs::ListMatchingJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListMatchingJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_matching_jobs::ListMatchingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_jobs::ListMatchingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_jobs::ListMatchingJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListMatchingJobsFluentBuilder {
             crate::operation::list_matching_jobs::ListMatchingJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_matching_jobs::ListMatchingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_matching_jobs::ListMatchingJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_matching_jobs::paginator::ListMatchingJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_matching_jobs::paginator::ListMatchingJobsPaginator {
-        crate::operation::list_matching_jobs::paginator::ListMatchingJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_matching_jobs::paginator::ListMatchingJobsPaginator {
+        crate::operation::list_matching_jobs::paginator::ListMatchingJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }

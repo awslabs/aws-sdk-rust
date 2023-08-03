@@ -50,10 +50,7 @@ impl ListHostedZonesByVPCFluentBuilder {
         }
     }
     /// Access the ListHostedZonesByVPC as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +62,7 @@ impl ListHostedZonesByVPCFluentBuilder {
             crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPC,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +72,7 @@ impl ListHostedZonesByVPCFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +81,7 @@ impl ListHostedZonesByVPCFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError>,
     > {
         let op = self
             .inner
@@ -114,9 +104,7 @@ impl ListHostedZonesByVPCFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +118,7 @@ impl ListHostedZonesByVPCFluentBuilder {
             crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPC,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError>,
     > {
         self.customize_middleware().await
     }

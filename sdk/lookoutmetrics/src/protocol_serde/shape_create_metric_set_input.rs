@@ -73,10 +73,7 @@ pub fn ser_create_metric_set_input(
     if let Some(var_23) = &input.timestamp_column {
         #[allow(unused_mut)]
         let mut object_24 = object.key("TimestampColumn").start_object();
-        crate::protocol_serde::shape_timestamp_column::ser_timestamp_column(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_timestamp_column::ser_timestamp_column(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.timezone {

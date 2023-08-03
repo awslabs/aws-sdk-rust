@@ -9,9 +9,7 @@ pub struct AwsElbLoadBalancerDetails {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the configuration of the EC2 instances.</p>
     #[doc(hidden)]
-    pub backend_server_descriptions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>,
-    >,
+    pub backend_server_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>>,
     /// <p>The name of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
     #[doc(hidden)]
     pub canonical_hosted_zone_name: ::std::option::Option<::std::string::String>,
@@ -33,8 +31,7 @@ pub struct AwsElbLoadBalancerDetails {
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>>,
     /// <p>The policies that are enabled for the load balancer listeners.</p>
     #[doc(hidden)]
-    pub listener_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
+    pub listener_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
     /// <p>The attributes for a load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_attributes: ::std::option::Option<crate::types::AwsElbLoadBalancerAttributes>,
@@ -54,8 +51,7 @@ pub struct AwsElbLoadBalancerDetails {
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
     #[doc(hidden)]
-    pub source_security_group:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>,
+    pub source_security_group: ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>,
     /// <p>The list of subnet identifiers for the load balancer.</p>
     #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,9 +65,7 @@ impl AwsElbLoadBalancerDetails {
         self.availability_zones.as_deref()
     }
     /// <p>Information about the configuration of the EC2 instances.</p>
-    pub fn backend_server_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerBackendServerDescription]> {
+    pub fn backend_server_descriptions(&self) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerBackendServerDescription]> {
         self.backend_server_descriptions.as_deref()
     }
     /// <p>The name of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
@@ -92,9 +86,7 @@ impl AwsElbLoadBalancerDetails {
         self.dns_name.as_deref()
     }
     /// <p>Information about the health checks that are conducted on the load balancer.</p>
-    pub fn health_check(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerHealthCheck> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerHealthCheck> {
         self.health_check.as_ref()
     }
     /// <p>List of EC2 instances for the load balancer.</p>
@@ -102,15 +94,11 @@ impl AwsElbLoadBalancerDetails {
         self.instances.as_deref()
     }
     /// <p>The policies that are enabled for the load balancer listeners.</p>
-    pub fn listener_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerListenerDescription]> {
+    pub fn listener_descriptions(&self) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerListenerDescription]> {
         self.listener_descriptions.as_deref()
     }
     /// <p>The attributes for a load balancer.</p>
-    pub fn load_balancer_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerAttributes> {
+    pub fn load_balancer_attributes(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
     /// <p>The name of the load balancer.</p>
@@ -132,9 +120,7 @@ impl AwsElbLoadBalancerDetails {
         self.security_groups.as_deref()
     }
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
-    pub fn source_security_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerSourceSecurityGroup> {
+    pub fn source_security_group(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerSourceSecurityGroup> {
         self.source_security_group.as_ref()
     }
     /// <p>The list of subnet identifiers for the load balancer.</p>
@@ -155,31 +141,23 @@ impl AwsElbLoadBalancerDetails {
 
 /// A builder for [`AwsElbLoadBalancerDetails`](crate::types::AwsElbLoadBalancerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerDetailsBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) backend_server_descriptions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>,
-    >,
+    pub(crate) backend_server_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>>,
     pub(crate) canonical_hosted_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) canonical_hosted_zone_name_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) health_check: ::std::option::Option<crate::types::AwsElbLoadBalancerHealthCheck>,
-    pub(crate) instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>>,
-    pub(crate) listener_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
-    pub(crate) load_balancer_attributes:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerAttributes>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>>,
+    pub(crate) listener_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
+    pub(crate) load_balancer_attributes: ::std::option::Option<crate::types::AwsElbLoadBalancerAttributes>,
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) policies: ::std::option::Option<crate::types::AwsElbLoadBalancerPolicies>,
     pub(crate) scheme: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) source_security_group:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>,
+    pub(crate) source_security_group: ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -189,27 +167,19 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The list of Availability Zones for the load balancer.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Availability Zones for the load balancer.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The list of Availability Zones for the load balancer.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `backend_server_descriptions`.
@@ -217,10 +187,7 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// To override the contents of this collection use [`set_backend_server_descriptions`](Self::set_backend_server_descriptions).
     ///
     /// <p>Information about the configuration of the EC2 instances.</p>
-    pub fn backend_server_descriptions(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerBackendServerDescription,
-    ) -> Self {
+    pub fn backend_server_descriptions(mut self, input: crate::types::AwsElbLoadBalancerBackendServerDescription) -> Self {
         let mut v = self.backend_server_descriptions.unwrap_or_default();
         v.push(input);
         self.backend_server_descriptions = ::std::option::Option::Some(v);
@@ -229,9 +196,7 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// <p>Information about the configuration of the EC2 instances.</p>
     pub fn set_backend_server_descriptions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>>,
     ) -> Self {
         self.backend_server_descriptions = input;
         self
@@ -239,24 +204,16 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// <p>Information about the configuration of the EC2 instances.</p>
     pub fn get_backend_server_descriptions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>> {
         &self.backend_server_descriptions
     }
     /// <p>The name of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    pub fn canonical_hosted_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn canonical_hosted_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.canonical_hosted_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    pub fn set_canonical_hosted_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_canonical_hosted_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.canonical_hosted_zone_name = input;
         self
     }
@@ -265,25 +222,17 @@ impl AwsElbLoadBalancerDetailsBuilder {
         &self.canonical_hosted_zone_name
     }
     /// <p>The ID of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    pub fn canonical_hosted_zone_name_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn canonical_hosted_zone_name_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.canonical_hosted_zone_name_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    pub fn set_canonical_hosted_zone_name_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_canonical_hosted_zone_name_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.canonical_hosted_zone_name_id = input;
         self
     }
     /// <p>The ID of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
-    pub fn get_canonical_hosted_zone_name_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_canonical_hosted_zone_name_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.canonical_hosted_zone_name_id
     }
     /// <p>Indicates when the load balancer was created.</p>
@@ -323,17 +272,12 @@ impl AwsElbLoadBalancerDetailsBuilder {
         self
     }
     /// <p>Information about the health checks that are conducted on the load balancer.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerHealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerHealthCheck>) -> Self {
         self.health_check = input;
         self
     }
     /// <p>Information about the health checks that are conducted on the load balancer.</p>
-    pub fn get_health_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerHealthCheck> {
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerHealthCheck> {
         &self.health_check
     }
     /// Appends an item to `instances`.
@@ -348,17 +292,12 @@ impl AwsElbLoadBalancerDetailsBuilder {
         self
     }
     /// <p>List of EC2 instances for the load balancer.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>List of EC2 instances for the load balancer.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerInstance>> {
         &self.instances
     }
     /// Appends an item to `listener_descriptions`.
@@ -366,10 +305,7 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// To override the contents of this collection use [`set_listener_descriptions`](Self::set_listener_descriptions).
     ///
     /// <p>The policies that are enabled for the load balancer listeners.</p>
-    pub fn listener_descriptions(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerListenerDescription,
-    ) -> Self {
+    pub fn listener_descriptions(mut self, input: crate::types::AwsElbLoadBalancerListenerDescription) -> Self {
         let mut v = self.listener_descriptions.unwrap_or_default();
         v.push(input);
         self.listener_descriptions = ::std::option::Option::Some(v);
@@ -378,55 +314,36 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// <p>The policies that are enabled for the load balancer listeners.</p>
     pub fn set_listener_descriptions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
     ) -> Self {
         self.listener_descriptions = input;
         self
     }
     /// <p>The policies that are enabled for the load balancer listeners.</p>
-    pub fn get_listener_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>
-    {
+    pub fn get_listener_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>> {
         &self.listener_descriptions
     }
     /// <p>The attributes for a load balancer.</p>
-    pub fn load_balancer_attributes(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerAttributes,
-    ) -> Self {
+    pub fn load_balancer_attributes(mut self, input: crate::types::AwsElbLoadBalancerAttributes) -> Self {
         self.load_balancer_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes for a load balancer.</p>
-    pub fn set_load_balancer_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerAttributes>,
-    ) -> Self {
+    pub fn set_load_balancer_attributes(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerAttributes>) -> Self {
         self.load_balancer_attributes = input;
         self
     }
     /// <p>The attributes for a load balancer.</p>
-    pub fn get_load_balancer_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerAttributes> {
+    pub fn get_load_balancer_attributes(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerAttributes> {
         &self.load_balancer_attributes
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -440,10 +357,7 @@ impl AwsElbLoadBalancerDetailsBuilder {
         self
     }
     /// <p>The policies for a load balancer.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerPolicies>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerPolicies>) -> Self {
         self.policies = input;
         self
     }
@@ -476,49 +390,33 @@ impl AwsElbLoadBalancerDetailsBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The security groups for the load balancer. Only provided if the load balancer is in a VPC.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups for the load balancer. Only provided if the load balancer is in a VPC.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The security groups for the load balancer. Only provided if the load balancer is in a VPC.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
-    pub fn source_security_group(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerSourceSecurityGroup,
-    ) -> Self {
+    pub fn source_security_group(mut self, input: crate::types::AwsElbLoadBalancerSourceSecurityGroup) -> Self {
         self.source_security_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
-    pub fn set_source_security_group(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>,
-    ) -> Self {
+    pub fn set_source_security_group(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>) -> Self {
         self.source_security_group = input;
         self
     }
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
-    pub fn get_source_security_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup> {
+    pub fn get_source_security_group(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup> {
         &self.source_security_group
     }
     /// Appends an item to `subnets`.
@@ -533,10 +431,7 @@ impl AwsElbLoadBalancerDetailsBuilder {
         self
     }
     /// <p>The list of subnet identifiers for the load balancer.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }

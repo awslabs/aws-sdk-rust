@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job being deleted.</p>
     /// - On success, responds with [`DeleteEarthObservationJobOutput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput)
     /// - On failure, responds with [`SdkError<DeleteEarthObservationJobError>`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError)
-    pub fn delete_earth_observation_job(&self) -> crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobFluentBuilder{
+    pub fn delete_earth_observation_job(&self) -> crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobFluentBuilder {
         crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobFluentBuilder::new(self.handle.clone())
     }
 }

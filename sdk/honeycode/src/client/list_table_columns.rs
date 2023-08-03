@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_table_columns::ListTableColumnsOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     ///   - [`workbook_cursor(i64)`](crate::operation::list_table_columns::ListTableColumnsOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     /// - On failure, responds with [`SdkError<ListTableColumnsError>`](crate::operation::list_table_columns::ListTableColumnsError)
-    pub fn list_table_columns(
-        &self,
-    ) -> crate::operation::list_table_columns::builders::ListTableColumnsFluentBuilder {
-        crate::operation::list_table_columns::builders::ListTableColumnsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_table_columns(&self) -> crate::operation::list_table_columns::builders::ListTableColumnsFluentBuilder {
+        crate::operation::list_table_columns::builders::ListTableColumnsFluentBuilder::new(self.handle.clone())
     }
 }

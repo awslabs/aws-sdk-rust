@@ -23,9 +23,7 @@ impl ExplicitDeny {
 
 /// A builder for [`ExplicitDeny`](crate::types::ExplicitDeny).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExplicitDenyBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }
@@ -42,10 +40,7 @@ impl ExplicitDenyBuilder {
         self
     }
     /// <p>The policies that denied the authorization.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }
@@ -55,8 +50,6 @@ impl ExplicitDenyBuilder {
     }
     /// Consumes the builder and constructs a [`ExplicitDeny`](crate::types::ExplicitDeny).
     pub fn build(self) -> crate::types::ExplicitDeny {
-        crate::types::ExplicitDeny {
-            policies: self.policies,
-        }
+        crate::types::ExplicitDeny { policies: self.policies }
     }
 }

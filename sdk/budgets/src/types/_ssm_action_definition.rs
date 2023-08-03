@@ -37,9 +37,7 @@ impl SsmActionDefinition {
 
 /// A builder for [`SsmActionDefinition`](crate::types::SsmActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsmActionDefinitionBuilder {
     pub(crate) action_sub_type: ::std::option::Option<crate::types::ActionSubType>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl SsmActionDefinitionBuilder {
         self
     }
     /// <p>The action subType. </p>
-    pub fn set_action_sub_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionSubType>,
-    ) -> Self {
+    pub fn set_action_sub_type(mut self, input: ::std::option::Option<crate::types::ActionSubType>) -> Self {
         self.action_sub_type = input;
         self
     }
@@ -89,17 +84,12 @@ impl SsmActionDefinitionBuilder {
         self
     }
     /// <p>The EC2 and RDS instance IDs. </p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The EC2 and RDS instance IDs. </p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`SsmActionDefinition`](crate::types::SsmActionDefinition).

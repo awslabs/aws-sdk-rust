@@ -51,9 +51,7 @@ impl AssetPropertySummary {
 
 /// A builder for [`AssetPropertySummary`](crate::types::AssetPropertySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertySummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl AssetPropertySummaryBuilder {
         self
     }
     /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyNotification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::PropertyNotification>) -> Self {
         self.notification = input;
         self
     }
@@ -122,18 +117,12 @@ impl AssetPropertySummaryBuilder {
         &self.notification
     }
     /// <p> The ID of the composite model that contains the asset property. </p>
-    pub fn asset_composite_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_composite_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_composite_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the composite model that contains the asset property. </p>
-    pub fn set_asset_composite_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_composite_model_id = input;
         self
     }

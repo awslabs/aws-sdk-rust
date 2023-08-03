@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`regions_of_interest(Option<Vec<RegionOfInterest>>)`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput::regions_of_interest): <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
     ///   - [`data_sharing_preference(Option<StreamProcessorDataSharingPreference>)`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput::data_sharing_preference): <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     /// - On failure, responds with [`SdkError<DescribeStreamProcessorError>`](crate::operation::describe_stream_processor::DescribeStreamProcessorError)
-    pub fn describe_stream_processor(
-        &self,
-    ) -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder
-    {
+    pub fn describe_stream_processor(&self) -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder {
         crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder::new(self.handle.clone())
     }
 }

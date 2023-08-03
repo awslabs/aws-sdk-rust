@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`metric_data(Vec<MetricDatum>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::metric_data) / [`set_metric_data(Option<Vec<MetricDatum>>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::set_metric_data): <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
     /// - On success, responds with [`PublishMetricsOutput`](crate::operation::publish_metrics::PublishMetricsOutput)
     /// - On failure, responds with [`SdkError<PublishMetricsError>`](crate::operation::publish_metrics::PublishMetricsError)
-    pub fn publish_metrics(
-        &self,
-    ) -> crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder {
-        crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_metrics(&self) -> crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder {
+        crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::new(self.handle.clone())
     }
 }

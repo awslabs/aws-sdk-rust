@@ -51,13 +51,7 @@
 /// the mutation failed.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StudioComponentStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -86,27 +80,17 @@ pub enum StudioComponentStatusCode {
 impl ::std::convert::From<&str> for StudioComponentStatusCode {
     fn from(s: &str) -> Self {
         match s {
-            "ACTIVE_DIRECTORY_ALREADY_EXISTS" => {
-                StudioComponentStatusCode::ActiveDirectoryAlreadyExists
-            }
+            "ACTIVE_DIRECTORY_ALREADY_EXISTS" => StudioComponentStatusCode::ActiveDirectoryAlreadyExists,
             "ENCRYPTION_KEY_ACCESS_DENIED" => StudioComponentStatusCode::EncryptionKeyAccessDenied,
             "ENCRYPTION_KEY_NOT_FOUND" => StudioComponentStatusCode::EncryptionKeyNotFound,
             "INTERNAL_ERROR" => StudioComponentStatusCode::InternalError,
             "STUDIO_COMPONENT_CREATED" => StudioComponentStatusCode::StudioComponentCreated,
-            "STUDIO_COMPONENT_CREATE_IN_PROGRESS" => {
-                StudioComponentStatusCode::StudioComponentCreateInProgress
-            }
+            "STUDIO_COMPONENT_CREATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentCreateInProgress,
             "STUDIO_COMPONENT_DELETED" => StudioComponentStatusCode::StudioComponentDeleted,
-            "STUDIO_COMPONENT_DELETE_IN_PROGRESS" => {
-                StudioComponentStatusCode::StudioComponentDeleteInProgress
-            }
+            "STUDIO_COMPONENT_DELETE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentDeleteInProgress,
             "STUDIO_COMPONENT_UPDATED" => StudioComponentStatusCode::StudioComponentUpdated,
-            "STUDIO_COMPONENT_UPDATE_IN_PROGRESS" => {
-                StudioComponentStatusCode::StudioComponentUpdateInProgress
-            }
-            other => StudioComponentStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "STUDIO_COMPONENT_UPDATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentUpdateInProgress,
+            other => StudioComponentStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -121,24 +105,16 @@ impl StudioComponentStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StudioComponentStatusCode::ActiveDirectoryAlreadyExists => {
-                "ACTIVE_DIRECTORY_ALREADY_EXISTS"
-            }
+            StudioComponentStatusCode::ActiveDirectoryAlreadyExists => "ACTIVE_DIRECTORY_ALREADY_EXISTS",
             StudioComponentStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
             StudioComponentStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
             StudioComponentStatusCode::InternalError => "INTERNAL_ERROR",
             StudioComponentStatusCode::StudioComponentCreated => "STUDIO_COMPONENT_CREATED",
-            StudioComponentStatusCode::StudioComponentCreateInProgress => {
-                "STUDIO_COMPONENT_CREATE_IN_PROGRESS"
-            }
+            StudioComponentStatusCode::StudioComponentCreateInProgress => "STUDIO_COMPONENT_CREATE_IN_PROGRESS",
             StudioComponentStatusCode::StudioComponentDeleted => "STUDIO_COMPONENT_DELETED",
-            StudioComponentStatusCode::StudioComponentDeleteInProgress => {
-                "STUDIO_COMPONENT_DELETE_IN_PROGRESS"
-            }
+            StudioComponentStatusCode::StudioComponentDeleteInProgress => "STUDIO_COMPONENT_DELETE_IN_PROGRESS",
             StudioComponentStatusCode::StudioComponentUpdated => "STUDIO_COMPONENT_UPDATED",
-            StudioComponentStatusCode::StudioComponentUpdateInProgress => {
-                "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"
-            }
+            StudioComponentStatusCode::StudioComponentUpdateInProgress => "STUDIO_COMPONENT_UPDATE_IN_PROGRESS",
             StudioComponentStatusCode::Unknown(value) => value.as_str(),
         }
     }

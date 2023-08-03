@@ -30,9 +30,7 @@ impl DefaultAction {
 
 /// A builder for [`DefaultAction`](crate::types::DefaultAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultActionBuilder {
     pub(crate) block: ::std::option::Option<crate::types::BlockAction>,
     pub(crate) allow: ::std::option::Option<crate::types::AllowAction>,

@@ -26,7 +26,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder,
+    inner: crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder,
 }
 impl UpdateTableStorageOptimizerFluentBuilder {
     /// Creates a new `UpdateTableStorageOptimizer`.
@@ -37,7 +37,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         }
     }
     /// Access the UpdateTableStorageOptimizer as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
             crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
             crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -185,10 +168,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
     pub fn set_storage_optimizer_config(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::OptimizerType,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.inner = self.inner.set_storage_optimizer_config(input);
@@ -198,10 +178,7 @@ impl UpdateTableStorageOptimizerFluentBuilder {
     pub fn get_storage_optimizer_config(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OptimizerType,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::OptimizerType, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.inner.get_storage_optimizer_config()
     }

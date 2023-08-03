@@ -22,17 +22,14 @@ impl ListRecoveryGroupsInput {
 }
 impl ListRecoveryGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryGroupsInput`](crate::operation::list_recovery_groups::ListRecoveryGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsInputBuilder {
         crate::operation::list_recovery_groups::builders::ListRecoveryGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryGroupsInput`](crate::operation::list_recovery_groups::ListRecoveryGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListRecoveryGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecoveryGroupsInput`](crate::operation::list_recovery_groups::ListRecoveryGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recovery_groups::ListRecoveryGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recovery_groups::ListRecoveryGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_recovery_groups::ListRecoveryGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_recovery_groups::ListRecoveryGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

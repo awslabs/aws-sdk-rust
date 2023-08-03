@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkteamOutput {
 }
 impl DescribeWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkteamOutput`](crate::operation::describe_workteam::DescribeWorkteamOutput).
-    pub fn builder() -> crate::operation::describe_workteam::builders::DescribeWorkteamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workteam::builders::DescribeWorkteamOutputBuilder {
         crate::operation::describe_workteam::builders::DescribeWorkteamOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkteamOutput`](crate::operation::describe_workteam::DescribeWorkteamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkteamOutputBuilder {
     pub(crate) workteam: ::std::option::Option<crate::types::Workteam>,
     _request_id: Option<String>,

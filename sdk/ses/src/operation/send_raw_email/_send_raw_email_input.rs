@@ -122,9 +122,7 @@ impl SendRawEmailInput {
 
 /// A builder for [`SendRawEmailInput`](crate::operation::send_raw_email::SendRawEmailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendRawEmailInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -171,17 +169,12 @@ impl SendRawEmailInputBuilder {
         self
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destinations
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
@@ -212,10 +205,7 @@ impl SendRawEmailInputBuilder {
     /// , must not exceed 1,000 characters.
     /// </crlf></p> </li>
     /// </ul>
-    pub fn set_raw_message(
-        mut self,
-        input: ::std::option::Option<crate::types::RawMessage>,
-    ) -> Self {
+    pub fn set_raw_message(mut self, input: ::std::option::Option<crate::types::RawMessage>) -> Self {
         self.raw_message = input;
         self
     }
@@ -288,10 +278,7 @@ impl SendRawEmailInputBuilder {
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn return_path_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn return_path_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.return_path_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -300,10 +287,7 @@ impl SendRawEmailInputBuilder {
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn set_return_path_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_return_path_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.return_path_arn = input;
         self
     }
@@ -327,10 +311,7 @@ impl SendRawEmailInputBuilder {
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.tags = input;
         self
     }
@@ -339,18 +320,12 @@ impl SendRawEmailInputBuilder {
         &self.tags
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -361,10 +336,7 @@ impl SendRawEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendRawEmailInput`](crate::operation::send_raw_email::SendRawEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_raw_email::SendRawEmailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailInput {
             source: self.source,
             destinations: self.destinations,

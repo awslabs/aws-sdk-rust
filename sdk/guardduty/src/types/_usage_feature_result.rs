@@ -30,9 +30,7 @@ impl UsageFeatureResult {
 
 /// A builder for [`UsageFeatureResult`](crate::types::UsageFeatureResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageFeatureResultBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::UsageFeature>,
     pub(crate) total: ::std::option::Option<crate::types::Total>,

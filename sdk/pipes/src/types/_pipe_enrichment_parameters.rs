@@ -19,9 +19,7 @@ impl PipeEnrichmentParameters {
     }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn http_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipeEnrichmentHttpParameters> {
+    pub fn http_parameters(&self) -> ::std::option::Option<&crate::types::PipeEnrichmentHttpParameters> {
         self.http_parameters.as_ref()
     }
 }
@@ -49,18 +47,12 @@ pub struct PipeEnrichmentParametersBuilder {
 }
 impl PipeEnrichmentParametersBuilder {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn input_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn set_input_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_template = input;
         self
     }
@@ -76,18 +68,13 @@ impl PipeEnrichmentParametersBuilder {
     }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn set_http_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeEnrichmentHttpParameters>,
-    ) -> Self {
+    pub fn set_http_parameters(mut self, input: ::std::option::Option<crate::types::PipeEnrichmentHttpParameters>) -> Self {
         self.http_parameters = input;
         self
     }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn get_http_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeEnrichmentHttpParameters> {
+    pub fn get_http_parameters(&self) -> &::std::option::Option<crate::types::PipeEnrichmentHttpParameters> {
         &self.http_parameters
     }
     /// Consumes the builder and constructs a [`PipeEnrichmentParameters`](crate::types::PipeEnrichmentParameters).

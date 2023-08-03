@@ -38,8 +38,7 @@ impl CreateSizeConstraintSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSizeConstraintSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder,
+    inner: crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder,
 }
 impl CreateSizeConstraintSetFluentBuilder {
     /// Creates a new `CreateSizeConstraintSet`.
@@ -50,10 +49,7 @@ impl CreateSizeConstraintSetFluentBuilder {
         }
     }
     /// Access the CreateSizeConstraintSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +61,7 @@ impl CreateSizeConstraintSetFluentBuilder {
             crate::operation::create_size_constraint_set::CreateSizeConstraintSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +71,7 @@ impl CreateSizeConstraintSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +80,7 @@ impl CreateSizeConstraintSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError>,
     > {
         let op = self
             .inner
@@ -114,9 +103,7 @@ impl CreateSizeConstraintSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +117,7 @@ impl CreateSizeConstraintSetFluentBuilder {
             crate::operation::create_size_constraint_set::CreateSizeConstraintSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError>,
     > {
         self.customize_middleware().await
     }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeVirtualNodeOutput {
 }
 impl DescribeVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeOutput`](crate::operation::describe_virtual_node::DescribeVirtualNodeOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_node::builders::DescribeVirtualNodeOutputBuilder {
-        crate::operation::describe_virtual_node::builders::DescribeVirtualNodeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_virtual_node::builders::DescribeVirtualNodeOutputBuilder {
+        crate::operation::describe_virtual_node::builders::DescribeVirtualNodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualNodeOutput`](crate::operation::describe_virtual_node::DescribeVirtualNodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualNodeOutputBuilder {
     pub(crate) virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeVirtualNodeOutputBuilder {
         self
     }
     /// <p>The full description of your virtual node.</p>
-    pub fn set_virtual_node(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeData>,
-    ) -> Self {
+    pub fn set_virtual_node(mut self, input: ::std::option::Option<crate::types::VirtualNodeData>) -> Self {
         self.virtual_node = input;
         self
     }

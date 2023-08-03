@@ -10,10 +10,7 @@ impl CreateBotLocaleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_bot_locale::CreateBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_bot_locale();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateBotLocaleFluentBuilder {
         }
     }
     /// Access the CreateBotLocale as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_bot_locale::builders::CreateBotLocaleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_bot_locale::builders::CreateBotLocaleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateBotLocaleFluentBuilder {
             crate::operation::create_bot_locale::CreateBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateBotLocaleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_bot_locale::CreateBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_bot_locale::CreateBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateBotLocaleFluentBuilder {
             crate::operation::create_bot_locale::CreateBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError>,
     > {
         self.customize_middleware().await
     }
@@ -198,10 +182,7 @@ impl CreateBotLocaleFluentBuilder {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
         self
     }
@@ -222,10 +203,7 @@ impl CreateBotLocaleFluentBuilder {
         self
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.inner = self.inner.set_voice_settings(input);
         self
     }

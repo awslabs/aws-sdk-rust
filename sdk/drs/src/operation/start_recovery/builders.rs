@@ -10,10 +10,7 @@ impl StartRecoveryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_recovery::StartRecoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_recovery::StartRecoveryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_recovery::StartRecoveryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_recovery();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartRecoveryFluentBuilder {
         }
     }
     /// Access the StartRecovery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_recovery::builders::StartRecoveryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_recovery::builders::StartRecoveryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StartRecoveryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,20 +116,12 @@ impl StartRecoveryFluentBuilder {
         self
     }
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub fn set_source_servers(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>,
-        >,
-    ) -> Self {
+    pub fn set_source_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>) -> Self {
         self.inner = self.inner.set_source_servers(input);
         self
     }
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub fn get_source_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>
-    {
+    pub fn get_source_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>> {
         self.inner.get_source_servers()
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
@@ -159,30 +143,17 @@ impl StartRecoveryFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

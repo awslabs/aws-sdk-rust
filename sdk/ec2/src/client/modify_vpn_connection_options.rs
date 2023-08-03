@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyVpnConnectionOptionsOutput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput) with field(s):
     ///   - [`vpn_connection(Option<VpnConnection>)`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput::vpn_connection): <p>Information about the VPN connection.</p>
     /// - On failure, responds with [`SdkError<ModifyVpnConnectionOptionsError>`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsError)
-    pub fn modify_vpn_connection_options(&self) -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsFluentBuilder{
+    pub fn modify_vpn_connection_options(
+        &self,
+    ) -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsFluentBuilder {
         crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsFluentBuilder::new(self.handle.clone())
     }
 }

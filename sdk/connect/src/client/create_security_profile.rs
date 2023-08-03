@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`security_profile_id(Option<String>)`](crate::operation::create_security_profile::CreateSecurityProfileOutput::security_profile_id): <p>The identifier for the security profle.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::operation::create_security_profile::CreateSecurityProfileOutput::security_profile_arn): <p>The Amazon Resource Name (ARN) for the security profile.</p>
     /// - On failure, responds with [`SdkError<CreateSecurityProfileError>`](crate::operation::create_security_profile::CreateSecurityProfileError)
-    pub fn create_security_profile(
-        &self,
-    ) -> crate::operation::create_security_profile::builders::CreateSecurityProfileFluentBuilder
-    {
-        crate::operation::create_security_profile::builders::CreateSecurityProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_security_profile(&self) -> crate::operation::create_security_profile::builders::CreateSecurityProfileFluentBuilder {
+        crate::operation::create_security_profile::builders::CreateSecurityProfileFluentBuilder::new(self.handle.clone())
     }
 }

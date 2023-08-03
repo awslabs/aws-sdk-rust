@@ -45,8 +45,7 @@ pub struct SessionSpecification {
     pub number_of_turns: ::std::option::Option<i64>,
     /// <p>A list of objects containing the name of an intent that was invoked.</p>
     #[doc(hidden)]
-    pub invoked_intent_samples:
-        ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>,
+    pub invoked_intent_samples: ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>,
     /// <p>The identifier of the first request in a session.</p>
     #[doc(hidden)]
     pub originating_request_id: ::std::option::Option<::std::string::String>,
@@ -85,9 +84,7 @@ impl SessionSpecification {
         self.conversation_duration_seconds
     }
     /// <p>The final state of the conversation. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn conversation_end_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationEndState> {
+    pub fn conversation_end_state(&self) -> ::std::option::Option<&crate::types::ConversationEndState> {
         self.conversation_end_state.as_ref()
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
@@ -105,9 +102,7 @@ impl SessionSpecification {
         self.number_of_turns
     }
     /// <p>A list of objects containing the name of an intent that was invoked.</p>
-    pub fn invoked_intent_samples(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InvokedIntentSample]> {
+    pub fn invoked_intent_samples(&self) -> ::std::option::Option<&[crate::types::InvokedIntentSample]> {
         self.invoked_intent_samples.as_deref()
     }
     /// <p>The identifier of the first request in a session.</p>
@@ -124,9 +119,7 @@ impl SessionSpecification {
 
 /// A builder for [`SessionSpecification`](crate::types::SessionSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionSpecificationBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -139,8 +132,7 @@ pub struct SessionSpecificationBuilder {
     pub(crate) conversation_end_state: ::std::option::Option<crate::types::ConversationEndState>,
     pub(crate) mode: ::std::option::Option<crate::types::AnalyticsModality>,
     pub(crate) number_of_turns: ::std::option::Option<i64>,
-    pub(crate) invoked_intent_samples:
-        ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>,
+    pub(crate) invoked_intent_samples: ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>,
     pub(crate) originating_request_id: ::std::option::Option<::std::string::String>,
 }
 impl SessionSpecificationBuilder {
@@ -220,17 +212,12 @@ impl SessionSpecificationBuilder {
         self
     }
     /// <p>The date and time when the conversation began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn set_conversation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_conversation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.conversation_start_time = input;
         self
     }
     /// <p>The date and time when the conversation began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn get_conversation_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_conversation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.conversation_start_time
     }
     /// <p>The date and time when the conversation ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
@@ -239,17 +226,12 @@ impl SessionSpecificationBuilder {
         self
     }
     /// <p>The date and time when the conversation ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn set_conversation_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_conversation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.conversation_end_time = input;
         self
     }
     /// <p>The date and time when the conversation ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn get_conversation_end_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_conversation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.conversation_end_time
     }
     /// <p>The duration of the conversation in seconds. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
@@ -272,17 +254,12 @@ impl SessionSpecificationBuilder {
         self
     }
     /// <p>The final state of the conversation. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn set_conversation_end_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationEndState>,
-    ) -> Self {
+    pub fn set_conversation_end_state(mut self, input: ::std::option::Option<crate::types::ConversationEndState>) -> Self {
         self.conversation_end_state = input;
         self
     }
     /// <p>The final state of the conversation. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    pub fn get_conversation_end_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationEndState> {
+    pub fn get_conversation_end_state(&self) -> &::std::option::Option<crate::types::ConversationEndState> {
         &self.conversation_end_state
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
@@ -303,10 +280,7 @@ impl SessionSpecificationBuilder {
     /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
     /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsModality>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AnalyticsModality>) -> Self {
         self.mode = input;
         self
     }
@@ -346,32 +320,21 @@ impl SessionSpecificationBuilder {
         self
     }
     /// <p>A list of objects containing the name of an intent that was invoked.</p>
-    pub fn set_invoked_intent_samples(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>,
-    ) -> Self {
+    pub fn set_invoked_intent_samples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>) -> Self {
         self.invoked_intent_samples = input;
         self
     }
     /// <p>A list of objects containing the name of an intent that was invoked.</p>
-    pub fn get_invoked_intent_samples(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>> {
+    pub fn get_invoked_intent_samples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>> {
         &self.invoked_intent_samples
     }
     /// <p>The identifier of the first request in a session.</p>
-    pub fn originating_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn originating_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.originating_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the first request in a session.</p>
-    pub fn set_originating_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_originating_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.originating_request_id = input;
         self
     }

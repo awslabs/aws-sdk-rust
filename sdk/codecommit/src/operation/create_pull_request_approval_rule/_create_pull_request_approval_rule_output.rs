@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePullRequestApprovalRuleOutput {
 }
 impl CreatePullRequestApprovalRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleOutput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput).
-    pub fn builder() -> crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleOutputBuilder{
+    pub fn builder() -> crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleOutputBuilder {
         crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePullRequestApprovalRuleOutput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePullRequestApprovalRuleOutputBuilder {
     pub(crate) approval_rule: ::std::option::Option<crate::types::ApprovalRule>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreatePullRequestApprovalRuleOutputBuilder {
         self
     }
     /// <p>Information about the created approval rule.</p>
-    pub fn set_approval_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalRule>,
-    ) -> Self {
+    pub fn set_approval_rule(mut self, input: ::std::option::Option<crate::types::ApprovalRule>) -> Self {
         self.approval_rule = input;
         self
     }
@@ -63,10 +58,7 @@ impl CreatePullRequestApprovalRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePullRequestApprovalRuleOutput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput
-    {
+    pub fn build(self) -> crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput {
         crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput {
             approval_rule: self.approval_rule,
             _request_id: self._request_id,

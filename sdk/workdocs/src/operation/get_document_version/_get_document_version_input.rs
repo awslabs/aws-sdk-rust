@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for GetDocumentVersionInput {
 }
 impl GetDocumentVersionInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder {
+    pub fn builder() -> crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder {
         crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder::default()
     }
 }
@@ -72,18 +71,12 @@ pub struct GetDocumentVersionInputBuilder {
 }
 impl GetDocumentVersionInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -150,19 +143,14 @@ impl GetDocumentVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_document_version::GetDocumentVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_document_version::GetDocumentVersionInput {
-                authentication_token: self.authentication_token,
-                document_id: self.document_id,
-                version_id: self.version_id,
-                fields: self.fields,
-                include_custom_metadata: self.include_custom_metadata,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_document_version::GetDocumentVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_document_version::GetDocumentVersionInput {
+            authentication_token: self.authentication_token,
+            document_id: self.document_id,
+            version_id: self.version_id,
+            fields: self.fields,
+            include_custom_metadata: self.include_custom_metadata,
+        })
     }
 }
 impl ::std::fmt::Debug for GetDocumentVersionInputBuilder {

@@ -37,9 +37,7 @@ impl DeleteTrialComponentFluentBuilder {
         }
     }
     /// Access the DeleteTrialComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteTrialComponentFluentBuilder {
             crate::operation::delete_trial_component::DeleteTrialComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trial_component::DeleteTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trial_component::DeleteTrialComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteTrialComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteTrialComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_trial_component::DeleteTrialComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trial_component::DeleteTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trial_component::DeleteTrialComponentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteTrialComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_trial_component::DeleteTrialComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trial_component::DeleteTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trial_component::DeleteTrialComponentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteTrialComponentFluentBuilder {
             crate::operation::delete_trial_component::DeleteTrialComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trial_component::DeleteTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trial_component::DeleteTrialComponentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the component to delete.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
     /// <p>The name of the component to delete.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }

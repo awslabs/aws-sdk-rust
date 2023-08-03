@@ -9,8 +9,7 @@ pub struct ListSqlInjectionMatchSetsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub sql_injection_match_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
+    pub sql_injection_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListSqlInjectionMatchSetsOutput {
@@ -19,9 +18,7 @@ impl ListSqlInjectionMatchSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    pub fn sql_injection_match_sets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SqlInjectionMatchSetSummary]> {
+    pub fn sql_injection_match_sets(&self) -> ::std::option::Option<&[crate::types::SqlInjectionMatchSetSummary]> {
         self.sql_injection_match_sets.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for ListSqlInjectionMatchSetsOutput {
 }
 impl ListSqlInjectionMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsOutput`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput).
-    pub fn builder() -> crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsOutputBuilder{
+    pub fn builder() -> crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsOutputBuilder {
         crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSqlInjectionMatchSetsOutput`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) sql_injection_match_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
+    pub(crate) sql_injection_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListSqlInjectionMatchSetsOutputBuilder {
@@ -68,27 +62,19 @@ impl ListSqlInjectionMatchSetsOutputBuilder {
     /// To override the contents of this collection use [`set_sql_injection_match_sets`](Self::set_sql_injection_match_sets).
     ///
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    pub fn sql_injection_match_sets(
-        mut self,
-        input: crate::types::SqlInjectionMatchSetSummary,
-    ) -> Self {
+    pub fn sql_injection_match_sets(mut self, input: crate::types::SqlInjectionMatchSetSummary) -> Self {
         let mut v = self.sql_injection_match_sets.unwrap_or_default();
         v.push(input);
         self.sql_injection_match_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    pub fn set_sql_injection_match_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
-    ) -> Self {
+    pub fn set_sql_injection_match_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>) -> Self {
         self.sql_injection_match_sets = input;
         self
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    pub fn get_sql_injection_match_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>> {
+    pub fn get_sql_injection_match_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>> {
         &self.sql_injection_match_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,9 +87,7 @@ impl ListSqlInjectionMatchSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSqlInjectionMatchSetsOutput`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput {
+    pub fn build(self) -> crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput {
         crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput {
             next_marker: self.next_marker,
             sql_injection_match_sets: self.sql_injection_match_sets,

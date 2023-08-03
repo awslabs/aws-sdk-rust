@@ -34,35 +34,26 @@ impl PutLifecycleConfigurationInput {
 }
 impl PutLifecycleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleConfigurationInput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput).
-    pub fn builder() -> crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder {
         crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutLifecycleConfigurationInput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecycleConfigurationInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) lifecycle_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
+    pub(crate) lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
 }
 impl PutLifecycleConfigurationInputBuilder {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -94,10 +85,7 @@ impl PutLifecycleConfigurationInputBuilder {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn set_lifecycle_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
-    ) -> Self {
+    pub fn set_lifecycle_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>) -> Self {
         self.lifecycle_policies = input;
         self
     }
@@ -108,9 +96,7 @@ impl PutLifecycleConfigurationInputBuilder {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn get_lifecycle_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
+    pub fn get_lifecycle_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
         &self.lifecycle_policies
     }
     /// Consumes the builder and constructs a [`PutLifecycleConfigurationInput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput).
@@ -120,11 +106,9 @@ impl PutLifecycleConfigurationInputBuilder {
         crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput {
-                file_system_id: self.file_system_id,
-                lifecycle_policies: self.lifecycle_policies,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput {
+            file_system_id: self.file_system_id,
+            lifecycle_policies: self.lifecycle_policies,
+        })
     }
 }

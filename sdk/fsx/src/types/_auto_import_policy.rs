@@ -36,9 +36,7 @@ impl AutoImportPolicy {
 
 /// A builder for [`AutoImportPolicy`](crate::types::AutoImportPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoImportPolicyBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
@@ -67,10 +65,7 @@ impl AutoImportPolicyBuilder {
     /// <li> <p> <code>DELETED</code> - Amazon FSx automatically deletes files on the file system as corresponding files are deleted in the data repository.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.events = input;
         self
     }
@@ -86,8 +81,6 @@ impl AutoImportPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`AutoImportPolicy`](crate::types::AutoImportPolicy).
     pub fn build(self) -> crate::types::AutoImportPolicy {
-        crate::types::AutoImportPolicy {
-            events: self.events,
-        }
+        crate::types::AutoImportPolicy { events: self.events }
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::describe_app_version_resources_resolution_status::_des
 
 impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_app_version_resources_resolution_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAppVersionResourcesResolutionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder,
+    inner: crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder,
 }
 impl DescribeAppVersionResourcesResolutionStatusFluentBuilder {
     /// Creates a new `DescribeAppVersionResourcesResolutionStatus`.
@@ -37,15 +37,24 @@ impl DescribeAppVersionResourcesResolutionStatusFluentBuilder {
         }
     }
     /// Access the DescribeAppVersionResourcesResolutionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeAppVersionResourcesResolutionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl DescribeAppVersionResourcesResolutionStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -123,18 +148,12 @@ impl DescribeAppVersionResourcesResolutionStatusFluentBuilder {
         self.inner.get_app_version()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolution_id(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolution_id(input);
         self
     }

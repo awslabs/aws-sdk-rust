@@ -37,9 +37,7 @@ impl DescribeExportTasksFluentBuilder {
         }
     }
     /// Access the DescribeExportTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeExportTasksFluentBuilder {
             crate::operation::describe_export_tasks::DescribeExportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeExportTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeExportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeExportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeExportTasksFluentBuilder {
             crate::operation::describe_export_tasks::DescribeExportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl DescribeExportTasksFluentBuilder {
         self
     }
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub fn set_export_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_export_ids(input);
         self
     }
@@ -159,10 +143,7 @@ impl DescribeExportTasksFluentBuilder {
     /// <ul>
     /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -170,9 +151,7 @@ impl DescribeExportTasksFluentBuilder {
     /// <ul>
     /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>

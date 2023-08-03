@@ -21,10 +21,7 @@ pub fn ser_splunk_destination_configuration(
     if let Some(var_5) = &input.retry_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("RetryOptions").start_object();
-        crate::protocol_serde::shape_splunk_retry_options::ser_splunk_retry_options(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_splunk_retry_options::ser_splunk_retry_options(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.s3_backup_mode {
@@ -39,19 +36,13 @@ pub fn ser_splunk_destination_configuration(
     if let Some(var_10) = &input.processing_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
         let mut object_13 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())

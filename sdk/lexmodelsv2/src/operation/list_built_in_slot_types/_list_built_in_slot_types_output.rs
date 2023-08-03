@@ -5,8 +5,7 @@
 pub struct ListBuiltInSlotTypesOutput {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub built_in_slot_type_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
+    pub built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct ListBuiltInSlotTypesOutput {
 }
 impl ListBuiltInSlotTypesOutput {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn built_in_slot_type_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BuiltInSlotTypeSummary]> {
+    pub fn built_in_slot_type_summaries(&self) -> ::std::option::Option<&[crate::types::BuiltInSlotTypeSummary]> {
         self.built_in_slot_type_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
@@ -38,21 +35,16 @@ impl ::aws_http::request_id::RequestId for ListBuiltInSlotTypesOutput {
 }
 impl ListBuiltInSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInSlotTypesOutput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesOutputBuilder {
         crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuiltInSlotTypesOutput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuiltInSlotTypesOutputBuilder {
-    pub(crate) built_in_slot_type_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
+    pub(crate) built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,27 +55,19 @@ impl ListBuiltInSlotTypesOutputBuilder {
     /// To override the contents of this collection use [`set_built_in_slot_type_summaries`](Self::set_built_in_slot_type_summaries).
     ///
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn built_in_slot_type_summaries(
-        mut self,
-        input: crate::types::BuiltInSlotTypeSummary,
-    ) -> Self {
+    pub fn built_in_slot_type_summaries(mut self, input: crate::types::BuiltInSlotTypeSummary) -> Self {
         let mut v = self.built_in_slot_type_summaries.unwrap_or_default();
         v.push(input);
         self.built_in_slot_type_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_built_in_slot_type_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
-    ) -> Self {
+    pub fn set_built_in_slot_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>) -> Self {
         self.built_in_slot_type_summaries = input;
         self
     }
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_built_in_slot_type_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>> {
+    pub fn get_built_in_slot_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>> {
         &self.built_in_slot_type_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>

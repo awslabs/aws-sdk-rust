@@ -26,7 +26,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomDBEngineVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder,
+    inner: crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder,
 }
 impl CreateCustomDBEngineVersionFluentBuilder {
     /// Creates a new `CreateCustomDBEngineVersion`.
@@ -37,7 +37,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         }
     }
     /// Access the CreateCustomDBEngineVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         self.inner.get_engine()
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -155,53 +138,31 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         self.inner.get_engine_version()
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn database_installation_files_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .database_installation_files_s3_bucket_name(input.into());
+    pub fn database_installation_files_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database_installation_files_s3_bucket_name(input.into());
         self
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn set_database_installation_files_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_database_installation_files_s3_bucket_name(input);
+    pub fn set_database_installation_files_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_database_installation_files_s3_bucket_name(input);
         self
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn get_database_installation_files_s3_bucket_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_database_installation_files_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_installation_files_s3_bucket_name()
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .database_installation_files_s3_prefix(input.into());
+    pub fn database_installation_files_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database_installation_files_s3_prefix(input.into());
         self
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn set_database_installation_files_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_installation_files_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_installation_files_s3_prefix(input);
         self
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn get_database_installation_files_s3_prefix(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_installation_files_s3_prefix()
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
@@ -378,10 +339,7 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

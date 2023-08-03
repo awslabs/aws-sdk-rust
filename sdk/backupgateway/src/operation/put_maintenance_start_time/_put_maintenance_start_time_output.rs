@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutMaintenanceStartTimeOutput {
 }
 impl PutMaintenanceStartTimeOutput {
     /// Creates a new builder-style object to manufacture [`PutMaintenanceStartTimeOutput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput).
-    pub fn builder(
-    ) -> crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeOutputBuilder {
         crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMaintenanceStartTimeOutput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMaintenanceStartTimeOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl PutMaintenanceStartTimeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutMaintenanceStartTimeOutput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput {
+    pub fn build(self) -> crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput {
         crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

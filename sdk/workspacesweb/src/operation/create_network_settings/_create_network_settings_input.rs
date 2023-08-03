@@ -45,18 +45,14 @@ impl CreateNetworkSettingsInput {
 }
 impl CreateNetworkSettingsInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkSettingsInput`](crate::operation::create_network_settings::CreateNetworkSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::create_network_settings::builders::CreateNetworkSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_settings::builders::CreateNetworkSettingsInputBuilder {
         crate::operation::create_network_settings::builders::CreateNetworkSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkSettingsInput`](crate::operation::create_network_settings::CreateNetworkSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkSettingsInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -91,10 +87,7 @@ impl CreateNetworkSettingsInputBuilder {
         self
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -107,27 +100,19 @@ impl CreateNetworkSettingsInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `tags`.
@@ -142,10 +127,7 @@ impl CreateNetworkSettingsInputBuilder {
         self
     }
     /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -173,18 +155,14 @@ impl CreateNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkSettingsInput`](crate::operation::create_network_settings::CreateNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_network_settings::CreateNetworkSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_network_settings::CreateNetworkSettingsInput {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_network_settings::CreateNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_network_settings::CreateNetworkSettingsInput {
+            vpc_id: self.vpc_id,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::put_app_instance_streaming_configurations::_put_app_in
 
 impl PutAppInstanceStreamingConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_app_instance_streaming_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,13 +26,11 @@ impl PutAppInstanceStreamingConfigurationsInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutMessagingStreamingConfigurations.html">PutMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by PutAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by PutAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAppInstanceStreamingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsInputBuilder,
+    inner: crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsInputBuilder,
 }
 impl PutAppInstanceStreamingConfigurationsFluentBuilder {
     /// Creates a new `PutAppInstanceStreamingConfigurations`.
@@ -43,15 +41,22 @@ impl PutAppInstanceStreamingConfigurationsFluentBuilder {
         }
     }
     /// Access the PutAppInstanceStreamingConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -60,16 +65,17 @@ impl PutAppInstanceStreamingConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -87,32 +93,35 @@ impl PutAppInstanceStreamingConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
@@ -125,19 +134,14 @@ impl PutAppInstanceStreamingConfigurationsFluentBuilder {
     /// To override the contents of this collection use [`set_app_instance_streaming_configurations`](Self::set_app_instance_streaming_configurations).
     ///
     /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
-    pub fn app_instance_streaming_configurations(
-        mut self,
-        input: crate::types::AppInstanceStreamingConfiguration,
-    ) -> Self {
+    pub fn app_instance_streaming_configurations(mut self, input: crate::types::AppInstanceStreamingConfiguration) -> Self {
         self.inner = self.inner.app_instance_streaming_configurations(input);
         self
     }
     /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
     pub fn set_app_instance_streaming_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_app_instance_streaming_configurations(input);
         self
@@ -145,8 +149,7 @@ impl PutAppInstanceStreamingConfigurationsFluentBuilder {
     /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
     pub fn get_app_instance_streaming_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>> {
         self.inner.get_app_instance_streaming_configurations()
     }
 }

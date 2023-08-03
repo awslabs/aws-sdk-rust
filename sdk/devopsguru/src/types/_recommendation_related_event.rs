@@ -9,8 +9,7 @@ pub struct RecommendationRelatedEvent {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>,
 }
 impl RecommendationRelatedEvent {
     /// <p> The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object. </p>
@@ -18,9 +17,7 @@ impl RecommendationRelatedEvent {
         self.name.as_deref()
     }
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedEventResource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedEventResource]> {
         self.resources.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl RecommendationRelatedEvent {
 
 /// A builder for [`RecommendationRelatedEvent`](crate::types::RecommendationRelatedEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationRelatedEventBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>,
 }
 impl RecommendationRelatedEventBuilder {
     /// <p> The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object. </p>
@@ -68,20 +62,12 @@ impl RecommendationRelatedEventBuilder {
         self
     }
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RecommendationRelatedEventResource>,
-        >,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>) -> Self {
         self.resources = input;
         self
     }
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>
-    {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedEvent`](crate::types::RecommendationRelatedEvent).

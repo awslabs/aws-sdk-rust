@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSkillGroupOutput`](crate::operation::delete_skill_group::DeleteSkillGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteSkillGroupError>`](crate::operation::delete_skill_group::DeleteSkillGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_skill_group(
-        &self,
-    ) -> crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder {
-        crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_skill_group(&self) -> crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder {
+        crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder::new(self.handle.clone())
     }
 }

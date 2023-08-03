@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateIpAccessSettingsOutput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateIpAccessSettingsError>`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError)
-    pub fn disassociate_ip_access_settings(&self) -> crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder{
+    pub fn disassociate_ip_access_settings(
+        &self,
+    ) -> crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder {
         crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`configuration_name(impl ::std::convert::Into<String>)`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::configuration_name) / [`set_configuration_name(Option<String>)`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::set_configuration_name): <p>Name of the network analyzer configuration.</p>
     /// - On success, responds with [`DeleteNetworkAnalyzerConfigurationOutput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkAnalyzerConfigurationError>`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationError)
-    pub fn delete_network_analyzer_configuration(&self) -> crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder{
+    pub fn delete_network_analyzer_configuration(
+        &self,
+    ) -> crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder {
         crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

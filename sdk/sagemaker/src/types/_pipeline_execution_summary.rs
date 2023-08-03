@@ -33,9 +33,7 @@ impl PipelineExecutionSummary {
         self.start_time.as_ref()
     }
     /// <p>The status of the pipeline execution.</p>
-    pub fn pipeline_execution_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
+    pub fn pipeline_execution_status(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
         self.pipeline_execution_status.as_ref()
     }
     /// <p>The description of the pipeline execution.</p>
@@ -60,32 +58,23 @@ impl PipelineExecutionSummary {
 
 /// A builder for [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineExecutionSummaryBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) pipeline_execution_status:
-        ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub(crate) pipeline_execution_status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     pub(crate) pipeline_execution_description: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_execution_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_execution_failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl PipelineExecutionSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }
@@ -99,10 +88,7 @@ impl PipelineExecutionSummaryBuilder {
         self
     }
     /// <p>The start time of the pipeline execution.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -111,91 +97,59 @@ impl PipelineExecutionSummaryBuilder {
         &self.start_time
     }
     /// <p>The status of the pipeline execution.</p>
-    pub fn pipeline_execution_status(
-        mut self,
-        input: crate::types::PipelineExecutionStatus,
-    ) -> Self {
+    pub fn pipeline_execution_status(mut self, input: crate::types::PipelineExecutionStatus) -> Self {
         self.pipeline_execution_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the pipeline execution.</p>
-    pub fn set_pipeline_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineExecutionStatus>,
-    ) -> Self {
+    pub fn set_pipeline_execution_status(mut self, input: ::std::option::Option<crate::types::PipelineExecutionStatus>) -> Self {
         self.pipeline_execution_status = input;
         self
     }
     /// <p>The status of the pipeline execution.</p>
-    pub fn get_pipeline_execution_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineExecutionStatus> {
+    pub fn get_pipeline_execution_status(&self) -> &::std::option::Option<crate::types::PipelineExecutionStatus> {
         &self.pipeline_execution_status
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn pipeline_execution_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn set_pipeline_execution_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_description = input;
         self
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn get_pipeline_execution_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_description
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn pipeline_execution_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn set_pipeline_execution_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_display_name = input;
         self
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn get_pipeline_execution_display_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_display_name
     }
     /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
-    pub fn pipeline_execution_failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
-    pub fn set_pipeline_execution_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_failure_reason = input;
         self
     }
     /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
-    pub fn get_pipeline_execution_failure_reason(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_failure_reason
     }
     /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).

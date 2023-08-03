@@ -15,35 +15,25 @@ impl GetBackupPlanFromJsonInput {
 }
 impl GetBackupPlanFromJsonInput {
     /// Creates a new builder-style object to manufacture [`GetBackupPlanFromJsonInput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput).
-    pub fn builder(
-    ) -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonInputBuilder {
         crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupPlanFromJsonInput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromJsonInputBuilder {
     pub(crate) backup_plan_template_json: ::std::option::Option<::std::string::String>,
 }
 impl GetBackupPlanFromJsonInputBuilder {
     /// <p>A customer-supplied backup plan document in JSON format.</p>
-    pub fn backup_plan_template_json(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_template_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-supplied backup plan document in JSON format.</p>
-    pub fn set_backup_plan_template_json(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_template_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_template_json = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetBackupPlanFromJsonInputBuilder {
     /// Consumes the builder and constructs a [`GetBackupPlanFromJsonInput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput {
-                backup_plan_template_json: self.backup_plan_template_json,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput {
+            backup_plan_template_json: self.backup_plan_template_json,
+        })
     }
 }

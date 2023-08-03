@@ -7,14 +7,11 @@
 pub struct BoxPlotFieldWells {
     /// <p>The aggregated field wells of a box plot.</p>
     #[doc(hidden)]
-    pub box_plot_aggregated_field_wells:
-        ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
+    pub box_plot_aggregated_field_wells: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }
 impl BoxPlotFieldWells {
     /// <p>The aggregated field wells of a box plot.</p>
-    pub fn box_plot_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BoxPlotAggregatedFieldWells> {
+    pub fn box_plot_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::BoxPlotAggregatedFieldWells> {
         self.box_plot_aggregated_field_wells.as_ref()
     }
 }
@@ -27,34 +24,23 @@ impl BoxPlotFieldWells {
 
 /// A builder for [`BoxPlotFieldWells`](crate::types::BoxPlotFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BoxPlotFieldWellsBuilder {
-    pub(crate) box_plot_aggregated_field_wells:
-        ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
+    pub(crate) box_plot_aggregated_field_wells: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }
 impl BoxPlotFieldWellsBuilder {
     /// <p>The aggregated field wells of a box plot.</p>
-    pub fn box_plot_aggregated_field_wells(
-        mut self,
-        input: crate::types::BoxPlotAggregatedFieldWells,
-    ) -> Self {
+    pub fn box_plot_aggregated_field_wells(mut self, input: crate::types::BoxPlotAggregatedFieldWells) -> Self {
         self.box_plot_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a box plot.</p>
-    pub fn set_box_plot_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_box_plot_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>) -> Self {
         self.box_plot_aggregated_field_wells = input;
         self
     }
     /// <p>The aggregated field wells of a box plot.</p>
-    pub fn get_box_plot_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::BoxPlotAggregatedFieldWells> {
+    pub fn get_box_plot_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::BoxPlotAggregatedFieldWells> {
         &self.box_plot_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`BoxPlotFieldWells`](crate::types::BoxPlotFieldWells).

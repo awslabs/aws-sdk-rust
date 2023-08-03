@@ -15,9 +15,7 @@ impl UriPath {
 
 /// A builder for [`UriPath`](crate::types::UriPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UriPathBuilder {}
 impl UriPathBuilder {
     /// Consumes the builder and constructs a [`UriPath`](crate::types::UriPath).

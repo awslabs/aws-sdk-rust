@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`image_ids(Option<Vec<ImageIdentifier>>)`](crate::operation::batch_delete_image::BatchDeleteImageOutput::image_ids): <p>The image IDs of the deleted images.</p>
     ///   - [`failures(Option<Vec<ImageFailure>>)`](crate::operation::batch_delete_image::BatchDeleteImageOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteImageError>`](crate::operation::batch_delete_image::BatchDeleteImageError)
-    pub fn batch_delete_image(
-        &self,
-    ) -> crate::operation::batch_delete_image::builders::BatchDeleteImageFluentBuilder {
-        crate::operation::batch_delete_image::builders::BatchDeleteImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_image(&self) -> crate::operation::batch_delete_image::builders::BatchDeleteImageFluentBuilder {
+        crate::operation::batch_delete_image::builders::BatchDeleteImageFluentBuilder::new(self.handle.clone())
     }
 }

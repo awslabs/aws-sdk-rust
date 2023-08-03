@@ -26,8 +26,7 @@ impl ListTableRestoreStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTableRestoreStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder,
+    inner: crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder,
 }
 impl ListTableRestoreStatusFluentBuilder {
     /// Creates a new `ListTableRestoreStatus`.
@@ -38,10 +37,7 @@ impl ListTableRestoreStatusFluentBuilder {
         }
     }
     /// Access the ListTableRestoreStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListTableRestoreStatusFluentBuilder {
             crate::operation::list_table_restore_status::ListTableRestoreStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_restore_status::ListTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_restore_status::ListTableRestoreStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListTableRestoreStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListTableRestoreStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_restore_status::ListTableRestoreStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_restore_status::ListTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_restore_status::ListTableRestoreStatusError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListTableRestoreStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_restore_status::ListTableRestoreStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_restore_status::ListTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_restore_status::ListTableRestoreStatusError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListTableRestoreStatusFluentBuilder {
             crate::operation::list_table_restore_status::ListTableRestoreStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_restore_status::ListTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_restore_status::ListTableRestoreStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_table_restore_status::paginator::ListTableRestoreStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_table_restore_status::paginator::ListTableRestoreStatusPaginator
-    {
-        crate::operation::list_table_restore_status::paginator::ListTableRestoreStatusPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_table_restore_status::paginator::ListTableRestoreStatusPaginator {
+        crate::operation::list_table_restore_status::paginator::ListTableRestoreStatusPaginator::new(self.handle, self.inner)
     }
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,18 +144,12 @@ impl ListTableRestoreStatusFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -185,18 +158,12 @@ impl ListTableRestoreStatusFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

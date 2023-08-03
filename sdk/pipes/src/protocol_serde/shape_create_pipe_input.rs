@@ -15,10 +15,7 @@ pub fn ser_create_pipe_input(
     if let Some(var_4) = &input.enrichment_parameters {
         #[allow(unused_mut)]
         let mut object_5 = object.key("EnrichmentParameters").start_object();
-        crate::protocol_serde::shape_pipe_enrichment_parameters::ser_pipe_enrichment_parameters(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_pipe_enrichment_parameters::ser_pipe_enrichment_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.role_arn {
@@ -30,10 +27,7 @@ pub fn ser_create_pipe_input(
     if let Some(var_8) = &input.source_parameters {
         #[allow(unused_mut)]
         let mut object_9 = object.key("SourceParameters").start_object();
-        crate::protocol_serde::shape_pipe_source_parameters::ser_pipe_source_parameters(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_pipe_source_parameters::ser_pipe_source_parameters(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.tags {
@@ -52,10 +46,7 @@ pub fn ser_create_pipe_input(
     if let Some(var_15) = &input.target_parameters {
         #[allow(unused_mut)]
         let mut object_16 = object.key("TargetParameters").start_object();
-        crate::protocol_serde::shape_pipe_target_parameters::ser_pipe_target_parameters(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_pipe_target_parameters::ser_pipe_target_parameters(&mut object_16, var_15)?;
         object_16.finish();
     }
     Ok(())

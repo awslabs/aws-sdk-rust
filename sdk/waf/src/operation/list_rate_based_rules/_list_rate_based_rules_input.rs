@@ -22,17 +22,14 @@ impl ListRateBasedRulesInput {
 }
 impl ListRateBasedRulesInput {
     /// Creates a new builder-style object to manufacture [`ListRateBasedRulesInput`](crate::operation::list_rate_based_rules::ListRateBasedRulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_rate_based_rules::builders::ListRateBasedRulesInputBuilder {
+    pub fn builder() -> crate::operation::list_rate_based_rules::builders::ListRateBasedRulesInputBuilder {
         crate::operation::list_rate_based_rules::builders::ListRateBasedRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRateBasedRulesInput`](crate::operation::list_rate_based_rules::ListRateBasedRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRateBasedRulesInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -69,15 +66,11 @@ impl ListRateBasedRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListRateBasedRulesInput`](crate::operation::list_rate_based_rules::ListRateBasedRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rate_based_rules::ListRateBasedRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_rate_based_rules::ListRateBasedRulesInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_rate_based_rules::ListRateBasedRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_rate_based_rules::ListRateBasedRulesInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

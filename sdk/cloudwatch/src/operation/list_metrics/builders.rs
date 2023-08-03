@@ -10,10 +10,7 @@ impl ListMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_metrics::ListMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metrics::ListMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metrics::ListMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_metrics();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl ListMetricsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_metrics::ListMetrics,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_metrics::ListMetrics, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_metrics::ListMetricsError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl ListMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl ListMetricsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_metrics::ListMetrics,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_metrics::ListMetrics, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_metrics::ListMetricsError>,
     > {
         self.customize_middleware().await
@@ -120,10 +108,7 @@ impl ListMetricsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_metrics::paginator::ListMetricsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_metrics::paginator::ListMetricsPaginator {
-        crate::operation::list_metrics::paginator::ListMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_metrics::paginator::ListMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,17 +148,12 @@ impl ListMetricsFluentBuilder {
         self
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
         self.inner.get_dimensions()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
@@ -198,10 +178,7 @@ impl ListMetricsFluentBuilder {
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
-    pub fn set_recently_active(
-        mut self,
-        input: ::std::option::Option<crate::types::RecentlyActive>,
-    ) -> Self {
+    pub fn set_recently_active(mut self, input: ::std::option::Option<crate::types::RecentlyActive>) -> Self {
         self.inner = self.inner.set_recently_active(input);
         self
     }
@@ -228,18 +205,12 @@ impl ListMetricsFluentBuilder {
         self.inner.get_include_linked_accounts()
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    pub fn owning_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owning_account(input.into());
         self
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    pub fn set_owning_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owning_account(input);
         self
     }

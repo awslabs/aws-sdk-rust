@@ -26,7 +26,7 @@ impl GetWirelessGatewayCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder,
+    inner: crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder,
 }
 impl GetWirelessGatewayCertificateFluentBuilder {
     /// Creates a new `GetWirelessGatewayCertificate`.
@@ -37,7 +37,7 @@ impl GetWirelessGatewayCertificateFluentBuilder {
         }
     }
     /// Access the GetWirelessGatewayCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetWirelessGatewayCertificateFluentBuilder {
             crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetWirelessGatewayCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetWirelessGatewayCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetWirelessGatewayCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetWirelessGatewayCertificateFluentBuilder {
             crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError>,
     > {
         self.customize_middleware().await
     }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryFluentBuilder::set_user_name): <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
     /// - On success, responds with [`DeleteUserPermissionsBoundaryOutput`](crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryOutput)
     /// - On failure, responds with [`SdkError<DeleteUserPermissionsBoundaryError>`](crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError)
-    pub fn delete_user_permissions_boundary(&self) -> crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryFluentBuilder{
+    pub fn delete_user_permissions_boundary(
+        &self,
+    ) -> crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryFluentBuilder {
         crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryFluentBuilder::new(self.handle.clone())
     }
 }

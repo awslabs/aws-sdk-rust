@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`resource_definition_id(impl ::std::convert::Into<String>)`](crate::operation::update_resource_definition::builders::UpdateResourceDefinitionFluentBuilder::resource_definition_id) / [`set_resource_definition_id(Option<String>)`](crate::operation::update_resource_definition::builders::UpdateResourceDefinitionFluentBuilder::set_resource_definition_id): The ID of the resource definition.
     /// - On success, responds with [`UpdateResourceDefinitionOutput`](crate::operation::update_resource_definition::UpdateResourceDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceDefinitionError>`](crate::operation::update_resource_definition::UpdateResourceDefinitionError)
-    pub fn update_resource_definition(
-        &self,
-    ) -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionFluentBuilder
-    {
+    pub fn update_resource_definition(&self) -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionFluentBuilder {
         crate::operation::update_resource_definition::builders::UpdateResourceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

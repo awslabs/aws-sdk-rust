@@ -42,9 +42,7 @@ impl StopStreamEncryptionFluentBuilder {
         }
     }
     /// Access the StopStreamEncryption as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl StopStreamEncryptionFluentBuilder {
             crate::operation::stop_stream_encryption::StopStreamEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stream_encryption::StopStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stream_encryption::StopStreamEncryptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl StopStreamEncryptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl StopStreamEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_stream_encryption::StopStreamEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stream_encryption::StopStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stream_encryption::StopStreamEncryptionError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl StopStreamEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_stream_encryption::StopStreamEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stream_encryption::StopStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stream_encryption::StopStreamEncryptionError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +110,7 @@ impl StopStreamEncryptionFluentBuilder {
             crate::operation::stop_stream_encryption::StopStreamEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stream_encryption::StopStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stream_encryption::StopStreamEncryptionError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +134,7 @@ impl StopStreamEncryptionFluentBuilder {
         self
     }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.inner = self.inner.set_encryption_type(input);
         self
     }

@@ -19,9 +19,7 @@ impl EnableVolumeIoOutput {
 
 /// A builder for [`EnableVolumeIoOutput`](crate::operation::enable_volume_io::EnableVolumeIoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableVolumeIoOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,9 +37,7 @@ impl ListCidrBlocksOutput {
 
 /// A builder for [`ListCidrBlocksOutput`](crate::operation::list_cidr_blocks::ListCidrBlocksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCidrBlocksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>>,
@@ -75,17 +73,12 @@ impl ListCidrBlocksOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about the CIDR blocks.</p>
-    pub fn set_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>>,
-    ) -> Self {
+    pub fn set_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>>) -> Self {
         self.cidr_blocks = input;
         self
     }
     /// <p>A complex type that contains information about the CIDR blocks.</p>
-    pub fn get_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>> {
+    pub fn get_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>> {
         &self.cidr_blocks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

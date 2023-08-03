@@ -6,10 +6,7 @@ pub fn ser_create_data_source_input(
     if let Some(var_1) = &input.credentials {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Credentials").start_object();
-        crate::protocol_serde::shape_data_source_credentials::ser_data_source_credentials(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_data_source_credentials::ser_data_source_credentials(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.data_source_id {
@@ -18,10 +15,7 @@ pub fn ser_create_data_source_input(
     if let Some(var_4) = &input.data_source_parameters {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DataSourceParameters").start_object();
-        crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.name {
@@ -33,10 +27,7 @@ pub fn ser_create_data_source_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -66,10 +57,7 @@ pub fn ser_create_data_source_input(
     if let Some(var_18) = &input.vpc_connection_properties {
         #[allow(unused_mut)]
         let mut object_19 = object.key("VpcConnectionProperties").start_object();
-        crate::protocol_serde::shape_vpc_connection_properties::ser_vpc_connection_properties(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_vpc_connection_properties::ser_vpc_connection_properties(&mut object_19, var_18)?;
         object_19.finish();
     }
     Ok(())

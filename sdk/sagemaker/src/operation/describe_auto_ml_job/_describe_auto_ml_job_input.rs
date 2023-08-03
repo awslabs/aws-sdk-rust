@@ -15,34 +15,25 @@ impl DescribeAutoMlJobInput {
 }
 impl DescribeAutoMlJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobInput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder {
         crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoMlJobInput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobInputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAutoMlJobInputBuilder {
     /// <p>Requests information about an AutoML job using its unique name.</p>
-    pub fn auto_ml_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Requests information about an AutoML job using its unique name.</p>
-    pub fn set_auto_ml_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_ml_job_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeAutoMlJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAutoMlJobInput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput {
-                auto_ml_job_name: self.auto_ml_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput {
+            auto_ml_job_name: self.auto_ml_job_name,
+        })
     }
 }

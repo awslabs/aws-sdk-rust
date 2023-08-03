@@ -29,16 +29,14 @@ impl ListJournalKinesisStreamsForLedgerInput {
 }
 impl ListJournalKinesisStreamsForLedgerInput {
     /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerInput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput).
-    pub fn builder() -> crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder{
+    pub fn builder() -> crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder {
         crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJournalKinesisStreamsForLedgerInput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerInputBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerInput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput {
-                ledger_name: self.ledger_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                ledger_name: self.ledger_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

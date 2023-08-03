@@ -26,7 +26,7 @@ impl UpdateGeofenceCollectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGeofenceCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionInputBuilder,
+    inner: crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionInputBuilder,
 }
 impl UpdateGeofenceCollectionFluentBuilder {
     /// Creates a new `UpdateGeofenceCollection`.
@@ -37,10 +37,7 @@ impl UpdateGeofenceCollectionFluentBuilder {
         }
     }
     /// Access the UpdateGeofenceCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateGeofenceCollectionFluentBuilder {
             crate::operation::update_geofence_collection::UpdateGeofenceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateGeofenceCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateGeofenceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateGeofenceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateGeofenceCollectionFluentBuilder {
             crate::operation::update_geofence_collection::UpdateGeofenceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the geofence collection to update.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The name of the geofence collection to update.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -144,49 +124,31 @@ impl UpdateGeofenceCollectionFluentBuilder {
         self.inner.get_collection_name()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_plan_data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_plan_data_source(input.into());
         self
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn set_pricing_plan_data_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pricing_plan_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pricing_plan_data_source(input);
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`branches(Option<Vec<Branch>>)`](crate::operation::list_branches::ListBranchesOutput::branches): <p> A list of branches for an Amplify app. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_branches::ListBranchesOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     /// - On failure, responds with [`SdkError<ListBranchesError>`](crate::operation::list_branches::ListBranchesError)
-    pub fn list_branches(
-        &self,
-    ) -> crate::operation::list_branches::builders::ListBranchesFluentBuilder {
-        crate::operation::list_branches::builders::ListBranchesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_branches(&self) -> crate::operation::list_branches::builders::ListBranchesFluentBuilder {
+        crate::operation::list_branches::builders::ListBranchesFluentBuilder::new(self.handle.clone())
     }
 }

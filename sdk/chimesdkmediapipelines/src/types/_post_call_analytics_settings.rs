@@ -29,9 +29,7 @@ impl PostCallAnalyticsSettings {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The content redaction output settings for a post-call analysis task.</p>
-    pub fn content_redaction_output(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentRedactionOutput> {
+    pub fn content_redaction_output(&self) -> ::std::option::Option<&crate::types::ContentRedactionOutput> {
         self.content_redaction_output.as_ref()
     }
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
@@ -48,30 +46,21 @@ impl PostCallAnalyticsSettings {
 
 /// A builder for [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCallAnalyticsSettingsBuilder {
     pub(crate) output_location: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) content_redaction_output:
-        ::std::option::Option<crate::types::ContentRedactionOutput>,
+    pub(crate) content_redaction_output: ::std::option::Option<crate::types::ContentRedactionOutput>,
     pub(crate) output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl PostCallAnalyticsSettingsBuilder {
     /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
-    pub fn output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_location = input;
         self
     }
@@ -80,18 +69,12 @@ impl PostCallAnalyticsSettingsBuilder {
         &self.output_location
     }
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -105,39 +88,26 @@ impl PostCallAnalyticsSettingsBuilder {
         self
     }
     /// <p>The content redaction output settings for a post-call analysis task.</p>
-    pub fn set_content_redaction_output(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentRedactionOutput>,
-    ) -> Self {
+    pub fn set_content_redaction_output(mut self, input: ::std::option::Option<crate::types::ContentRedactionOutput>) -> Self {
         self.content_redaction_output = input;
         self
     }
     /// <p>The content redaction output settings for a post-call analysis task.</p>
-    pub fn get_content_redaction_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentRedactionOutput> {
+    pub fn get_content_redaction_output(&self) -> &::std::option::Option<crate::types::ContentRedactionOutput> {
         &self.content_redaction_output
     }
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
-    pub fn output_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
-    pub fn set_output_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = input;
         self
     }
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
-    pub fn get_output_encryption_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_encryption_kms_key_id
     }
     /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).

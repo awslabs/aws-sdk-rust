@@ -26,7 +26,7 @@ impl CreateConnectorDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectorDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_connector_definition::builders::CreateConnectorDefinitionInputBuilder,
+    inner: crate::operation::create_connector_definition::builders::CreateConnectorDefinitionInputBuilder,
 }
 impl CreateConnectorDefinitionFluentBuilder {
     /// Creates a new `CreateConnectorDefinition`.
@@ -37,7 +37,7 @@ impl CreateConnectorDefinitionFluentBuilder {
         }
     }
     /// Access the CreateConnectorDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_connector_definition::builders::CreateConnectorDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_connector_definition::builders::CreateConnectorDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateConnectorDefinitionFluentBuilder {
             crate::operation::create_connector_definition::CreateConnectorDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector_definition::CreateConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector_definition::CreateConnectorDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateConnectorDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateConnectorDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connector_definition::CreateConnectorDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector_definition::CreateConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector_definition::CreateConnectorDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateConnectorDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connector_definition::CreateConnectorDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector_definition::CreateConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector_definition::CreateConnectorDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateConnectorDefinitionFluentBuilder {
             crate::operation::create_connector_definition::CreateConnectorDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector_definition::CreateConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector_definition::CreateConnectorDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -146,17 +129,12 @@ impl CreateConnectorDefinitionFluentBuilder {
         self
     }
     /// Information about the initial version of the connector definition.
-    pub fn set_initial_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorDefinitionVersion>,
-    ) -> Self {
+    pub fn set_initial_version(mut self, input: ::std::option::Option<crate::types::ConnectorDefinitionVersion>) -> Self {
         self.inner = self.inner.set_initial_version(input);
         self
     }
     /// Information about the initial version of the connector definition.
-    pub fn get_initial_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorDefinitionVersion> {
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::ConnectorDefinitionVersion> {
         self.inner.get_initial_version()
     }
     /// The name of the connector definition.
@@ -178,30 +156,17 @@ impl CreateConnectorDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

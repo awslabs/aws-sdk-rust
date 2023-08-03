@@ -30,9 +30,7 @@ impl MemoryMiBRequest {
 
 /// A builder for [`MemoryMiBRequest`](crate::types::MemoryMiBRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemoryMiBRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

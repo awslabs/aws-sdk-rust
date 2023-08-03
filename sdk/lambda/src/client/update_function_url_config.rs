@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<String>)`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigOutput::last_modified_time): <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     ///   - [`invoke_mode(Option<InvokeMode>)`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigOutput::invoke_mode): <p>Use one of the following options:</p>  <ul>   <li> <p> <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p> </li>   <li> <p> <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<UpdateFunctionUrlConfigError>`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigError)
-    pub fn update_function_url_config(
-        &self,
-    ) -> crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigFluentBuilder
-    {
+    pub fn update_function_url_config(&self) -> crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigFluentBuilder {
         crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigFluentBuilder::new(self.handle.clone())
     }
 }

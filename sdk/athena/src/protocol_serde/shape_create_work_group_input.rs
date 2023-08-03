@@ -9,10 +9,7 @@ pub fn ser_create_work_group_input(
     if let Some(var_2) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_work_group_configuration::ser_work_group_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_work_group_configuration::ser_work_group_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.description {

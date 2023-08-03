@@ -29,9 +29,7 @@ impl StopInstanceInput {
 
 /// A builder for [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -66,12 +64,7 @@ impl StopInstanceInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_instance::StopInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_instance::StopInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_instance::StopInstanceInput {
             instance_id: self.instance_id,
             force: self.force,

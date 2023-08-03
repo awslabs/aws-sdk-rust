@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`insight_summaries(Option<Vec<InsightSummary>>)`](crate::operation::get_insight_summaries::GetInsightSummariesOutput::insight_summaries): <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_insight_summaries::GetInsightSummariesOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetInsightSummariesError>`](crate::operation::get_insight_summaries::GetInsightSummariesError)
-    pub fn get_insight_summaries(
-        &self,
-    ) -> crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder {
-        crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_insight_summaries(&self) -> crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder {
+        crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::new(self.handle.clone())
     }
 }

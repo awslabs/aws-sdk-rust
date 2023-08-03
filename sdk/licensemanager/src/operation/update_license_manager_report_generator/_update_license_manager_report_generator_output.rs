@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLicenseManagerReportGeneratorOu
 }
 impl UpdateLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorOutput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorOutputBuilder{
+    pub fn builder() -> crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorOutputBuilder {
         crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLicenseManagerReportGeneratorOutput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateLicenseManagerReportGeneratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLicenseManagerReportGeneratorOutput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput).
-    pub fn build(self) -> crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput{
+    pub fn build(self) -> crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput {
         crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput {
             _request_id: self._request_id,
         }

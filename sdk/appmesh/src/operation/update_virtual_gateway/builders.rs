@@ -37,9 +37,7 @@ impl UpdateVirtualGatewayFluentBuilder {
         }
     }
     /// Access the UpdateVirtualGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateVirtualGatewayFluentBuilder {
             crate::operation::update_virtual_gateway::UpdateVirtualGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_gateway::UpdateVirtualGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateVirtualGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateVirtualGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_virtual_gateway::UpdateVirtualGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_gateway::UpdateVirtualGatewayError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateVirtualGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_virtual_gateway::UpdateVirtualGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_gateway::UpdateVirtualGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateVirtualGatewayFluentBuilder {
             crate::operation::update_virtual_gateway::UpdateVirtualGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_gateway::UpdateVirtualGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual gateway to update.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_gateway_name(input.into());
         self
     }
     /// <p>The name of the virtual gateway to update.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }
@@ -162,10 +143,7 @@ impl UpdateVirtualGatewayFluentBuilder {
         self
     }
     /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewaySpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualGatewaySpec>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
     }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVpnConnectionsOutput`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput) with field(s):
     ///   - [`vpn_connections(Option<Vec<VpnConnection>>)`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput::vpn_connections): <p>Information about one or more VPN connections.</p>
     /// - On failure, responds with [`SdkError<DescribeVpnConnectionsError>`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsError)
-    pub fn describe_vpn_connections(
-        &self,
-    ) -> crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsFluentBuilder
-    {
+    pub fn describe_vpn_connections(&self) -> crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsFluentBuilder {
         crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

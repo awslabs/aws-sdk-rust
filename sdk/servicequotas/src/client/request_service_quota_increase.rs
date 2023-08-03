@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`RequestServiceQuotaIncreaseOutput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput) with field(s):
     ///   - [`requested_quota(Option<RequestedServiceQuotaChange>)`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput::requested_quota): <p>Information about the quota increase request.</p>
     /// - On failure, responds with [`SdkError<RequestServiceQuotaIncreaseError>`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError)
-    pub fn request_service_quota_increase(&self) -> crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseFluentBuilder{
+    pub fn request_service_quota_increase(
+        &self,
+    ) -> crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseFluentBuilder {
         crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseFluentBuilder::new(self.handle.clone())
     }
 }

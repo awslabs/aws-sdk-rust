@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NamespaceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for NamespaceStatus {
             "DELETING" => NamespaceStatus::Deleting,
             "NON_RETRYABLE_FAILURE" => NamespaceStatus::NonRetryableFailure,
             "RETRYABLE_FAILURE" => NamespaceStatus::RetryableFailure,
-            other => {
-                NamespaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => NamespaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl NamespaceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED",
-            "CREATING",
-            "DELETING",
-            "NON_RETRYABLE_FAILURE",
-            "RETRYABLE_FAILURE",
-        ]
+        &["CREATED", "CREATING", "DELETING", "NON_RETRYABLE_FAILURE", "RETRYABLE_FAILURE"]
     }
 }
 impl ::std::convert::AsRef<str> for NamespaceStatus {

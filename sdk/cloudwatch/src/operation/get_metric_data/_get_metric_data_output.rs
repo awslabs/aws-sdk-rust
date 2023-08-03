@@ -44,12 +44,9 @@ impl GetMetricDataOutput {
 
 /// A builder for [`GetMetricDataOutput`](crate::operation::get_metric_data::GetMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricDataOutputBuilder {
-    pub(crate) metric_data_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>>,
+    pub(crate) metric_data_results: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>,
     _request_id: Option<String>,
@@ -67,17 +64,12 @@ impl GetMetricDataOutputBuilder {
         self
     }
     /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
-    pub fn set_metric_data_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>>,
-    ) -> Self {
+    pub fn set_metric_data_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>>) -> Self {
         self.metric_data_results = input;
         self
     }
     /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
-    pub fn get_metric_data_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>> {
+    pub fn get_metric_data_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>> {
         &self.metric_data_results
     }
     /// <p>A token that marks the next batch of returned results.</p>
@@ -108,18 +100,13 @@ impl GetMetricDataOutputBuilder {
     }
     /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>) -> Self {
         self.messages = input;
         self
     }
     /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
-    pub fn get_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageData>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageData>> {
         &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

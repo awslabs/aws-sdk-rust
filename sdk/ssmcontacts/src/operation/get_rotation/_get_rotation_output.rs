@@ -63,9 +63,7 @@ impl GetRotationOutput {
 
 /// A builder for [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRotationOutputBuilder {
     pub(crate) rotation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -116,17 +114,12 @@ impl GetRotationOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn set_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contact_ids = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn get_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contact_ids
     }
     /// <p>The specified start time for the on-call rotation.</p>
@@ -135,10 +128,7 @@ impl GetRotationOutputBuilder {
         self
     }
     /// <p>The specified start time for the on-call rotation.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -166,10 +156,7 @@ impl GetRotationOutputBuilder {
         self
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
         self.recurrence = input;
         self
     }

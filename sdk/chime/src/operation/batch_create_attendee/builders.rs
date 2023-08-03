@@ -42,9 +42,7 @@ impl BatchCreateAttendeeFluentBuilder {
         }
     }
     /// Access the BatchCreateAttendee as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_create_attendee::builders::BatchCreateAttendeeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_create_attendee::builders::BatchCreateAttendeeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl BatchCreateAttendeeFluentBuilder {
             crate::operation::batch_create_attendee::BatchCreateAttendee,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_attendee::BatchCreateAttendeeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_attendee::BatchCreateAttendeeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl BatchCreateAttendeeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl BatchCreateAttendeeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_attendee::BatchCreateAttendeeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_attendee::BatchCreateAttendeeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_attendee::BatchCreateAttendeeError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl BatchCreateAttendeeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_attendee::BatchCreateAttendeeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_attendee::BatchCreateAttendeeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_attendee::BatchCreateAttendeeError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +110,7 @@ impl BatchCreateAttendeeFluentBuilder {
             crate::operation::batch_create_attendee::BatchCreateAttendee,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_attendee::BatchCreateAttendeeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_attendee::BatchCreateAttendeeError>,
     > {
         self.customize_middleware().await
     }
@@ -151,17 +138,12 @@ impl BatchCreateAttendeeFluentBuilder {
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
         self.inner = self.inner.set_attendees(input);
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn get_attendees(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
         self.inner.get_attendees()
     }
 }

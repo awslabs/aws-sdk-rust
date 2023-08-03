@@ -67,9 +67,7 @@ impl ContainerDetails {
 
 /// A builder for [`ContainerDetails`](crate::types::ContainerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerDetailsBuilder {
     pub(crate) container_runtime: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ pub struct ContainerDetailsBuilder {
 }
 impl ContainerDetailsBuilder {
     /// <p>The runtime of the container. </p>
-    pub fn container_runtime(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_runtime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The runtime of the container. </p>
-    pub fn set_container_runtime(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_runtime = input;
         self
     }
@@ -171,17 +163,12 @@ impl ContainerDetailsBuilder {
         self
     }
     /// <p>Provides information about the mounting of a volume in a container. </p>
-    pub fn set_volume_mounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
-    ) -> Self {
+    pub fn set_volume_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>) -> Self {
         self.volume_mounts = input;
         self
     }
     /// <p>Provides information about the mounting of a volume in a container. </p>
-    pub fn get_volume_mounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
+    pub fn get_volume_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
         &self.volume_mounts
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>

@@ -236,9 +236,7 @@ impl JobOutput {
 
 /// A builder for [`JobOutput`](crate::types::JobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -302,10 +300,7 @@ impl JobOutputBuilder {
     /// <li> <p> <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object. </p> </li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    pub fn thumbnail_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbnail_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thumbnail_pattern = ::std::option::Option::Some(input.into());
         self
     }
@@ -320,10 +315,7 @@ impl JobOutputBuilder {
     /// <li> <p> <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object. </p> </li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    pub fn set_thumbnail_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thumbnail_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thumbnail_pattern = input;
         self
     }
@@ -347,10 +339,7 @@ impl JobOutputBuilder {
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
-    pub fn set_thumbnail_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_thumbnail_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.thumbnail_encryption = input;
         self
     }
@@ -398,10 +387,7 @@ impl JobOutputBuilder {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    pub fn segment_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segment_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_duration = ::std::option::Option::Some(input.into());
         self
     }
@@ -411,10 +397,7 @@ impl JobOutputBuilder {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    pub fn set_segment_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_segment_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_duration = input;
         self
     }
@@ -463,18 +446,12 @@ impl JobOutputBuilder {
         &self.status
     }
     /// <p>Information that further explains <code>Status</code>.</p>
-    pub fn status_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information that further explains <code>Status</code>.</p>
-    pub fn set_status_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_detail = input;
         self
     }
@@ -580,18 +557,13 @@ impl JobOutputBuilder {
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <code>Preset</code> for the current output.</p>
     /// <p>Watermarks are added to the output video in the sequence in which you list them in the job output—the first watermark in the list is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add covers the first one, the third one covers the second, and the fourth one covers the third.</p>
-    pub fn set_watermarks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>,
-    ) -> Self {
+    pub fn set_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>) -> Self {
         self.watermarks = input;
         self
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <code>Preset</code> for the current output.</p>
     /// <p>Watermarks are added to the output video in the sequence in which you list them in the job output—the first watermark in the list is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add covers the first one, the third one covers the second, and the fourth one covers the third.</p>
-    pub fn get_watermarks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>> {
+    pub fn get_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>> {
         &self.watermarks
     }
     /// <p>The album art to be associated with the output file, if any.</p>
@@ -600,10 +572,7 @@ impl JobOutputBuilder {
         self
     }
     /// <p>The album art to be associated with the output file, if any.</p>
-    pub fn set_album_art(
-        mut self,
-        input: ::std::option::Option<crate::types::JobAlbumArt>,
-    ) -> Self {
+    pub fn set_album_art(mut self, input: ::std::option::Option<crate::types::JobAlbumArt>) -> Self {
         self.album_art = input;
         self
     }
@@ -625,10 +594,7 @@ impl JobOutputBuilder {
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    pub fn set_composition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>,
-    ) -> Self {
+    pub fn set_composition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>) -> Self {
         self.composition = input;
         self
     }
@@ -684,10 +650,7 @@ impl JobOutputBuilder {
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you choose to use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder writes an unencrypted file to your Amazon S3 bucket.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -696,25 +659,17 @@ impl JobOutputBuilder {
         &self.encryption
     }
     /// <p>If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job response.</p>
-    pub fn applied_color_space_conversion(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn applied_color_space_conversion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.applied_color_space_conversion = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job response.</p>
-    pub fn set_applied_color_space_conversion(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_applied_color_space_conversion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.applied_color_space_conversion = input;
         self
     }
     /// <p>If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job response.</p>
-    pub fn get_applied_color_space_conversion(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_applied_color_space_conversion(&self) -> &::std::option::Option<::std::string::String> {
         &self.applied_color_space_conversion
     }
     /// Consumes the builder and constructs a [`JobOutput`](crate::types::JobOutput).

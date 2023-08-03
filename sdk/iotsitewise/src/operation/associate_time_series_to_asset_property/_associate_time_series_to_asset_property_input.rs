@@ -36,16 +36,14 @@ impl AssociateTimeSeriesToAssetPropertyInput {
 }
 impl AssociateTimeSeriesToAssetPropertyInput {
     /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyInput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput).
-    pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder{
+    pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder {
         crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTimeSeriesToAssetPropertyInput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTimeSeriesToAssetPropertyInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
@@ -110,18 +108,19 @@ impl AssociateTimeSeriesToAssetPropertyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyInput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput {
-                alias: self.alias
-                ,
-                asset_id: self.asset_id
-                ,
-                property_id: self.property_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                alias: self.alias,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                client_token: self.client_token,
+            },
         )
     }
 }

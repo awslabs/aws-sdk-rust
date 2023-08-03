@@ -86,15 +86,12 @@ impl Connector {
 
 /// A builder for [`Connector`](crate::types::Connector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ConnectorStatus>,
-    pub(crate) capability_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>>,
+    pub(crate) capability_list: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>>,
     pub(crate) vm_manager_name: ::std::option::Option<::std::string::String>,
     pub(crate) vm_manager_type: ::std::option::Option<crate::types::VmManagerType>,
     pub(crate) vm_manager_id: ::std::option::Option<::std::string::String>,
@@ -137,10 +134,7 @@ impl ConnectorBuilder {
         self
     }
     /// <p>The status of the connector.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectorStatus>) -> Self {
         self.status = input;
         self
     }
@@ -160,32 +154,21 @@ impl ConnectorBuilder {
         self
     }
     /// <p>The capabilities of the connector.</p>
-    pub fn set_capability_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>>,
-    ) -> Self {
+    pub fn set_capability_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>>) -> Self {
         self.capability_list = input;
         self
     }
     /// <p>The capabilities of the connector.</p>
-    pub fn get_capability_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>> {
+    pub fn get_capability_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorCapability>> {
         &self.capability_list
     }
     /// <p>The name of the VM manager.</p>
-    pub fn vm_manager_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vm_manager_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_manager_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VM manager.</p>
-    pub fn set_vm_manager_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vm_manager_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_manager_name = input;
         self
     }
@@ -199,10 +182,7 @@ impl ConnectorBuilder {
         self
     }
     /// <p>The VM management product.</p>
-    pub fn set_vm_manager_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VmManagerType>,
-    ) -> Self {
+    pub fn set_vm_manager_type(mut self, input: ::std::option::Option<crate::types::VmManagerType>) -> Self {
         self.vm_manager_type = input;
         self
     }
@@ -211,18 +191,12 @@ impl ConnectorBuilder {
         &self.vm_manager_type
     }
     /// <p>The ID of the VM manager.</p>
-    pub fn vm_manager_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vm_manager_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_manager_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VM manager.</p>
-    pub fn set_vm_manager_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vm_manager_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_manager_id = input;
         self
     }
@@ -264,10 +238,7 @@ impl ConnectorBuilder {
         self
     }
     /// <p>The time the connector was associated.</p>
-    pub fn set_associated_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_associated_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.associated_on = input;
         self
     }

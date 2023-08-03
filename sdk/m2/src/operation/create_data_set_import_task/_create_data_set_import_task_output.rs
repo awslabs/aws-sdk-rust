@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDataSetImportTaskOutput {
 }
 impl CreateDataSetImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder {
         crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSetImportTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl CreateDataSetImportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
+    pub fn build(self) -> crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
         crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
             task_id: self.task_id,
             _request_id: self._request_id,

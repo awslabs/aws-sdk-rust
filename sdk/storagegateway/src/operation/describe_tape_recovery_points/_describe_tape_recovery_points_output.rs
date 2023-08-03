@@ -9,8 +9,7 @@ pub struct DescribeTapeRecoveryPointsOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
     #[doc(hidden)]
-    pub tape_recovery_point_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
+    pub tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
     #[doc(hidden)]
@@ -23,9 +22,7 @@ impl DescribeTapeRecoveryPointsOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub fn tape_recovery_point_infos(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TapeRecoveryPointInfo]> {
+    pub fn tape_recovery_point_infos(&self) -> ::std::option::Option<&[crate::types::TapeRecoveryPointInfo]> {
         self.tape_recovery_point_infos.as_deref()
     }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
@@ -41,20 +38,17 @@ impl ::aws_http::request_id::RequestId for DescribeTapeRecoveryPointsOutput {
 }
 impl DescribeTapeRecoveryPointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeRecoveryPointsOutput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput).
-    pub fn builder() -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsOutputBuilder {
         crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTapeRecoveryPointsOutput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tape_recovery_point_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
+    pub(crate) tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -85,17 +79,12 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
         self
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub fn set_tape_recovery_point_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
-    ) -> Self {
+    pub fn set_tape_recovery_point_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>) -> Self {
         self.tape_recovery_point_infos = input;
         self
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub fn get_tape_recovery_point_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>> {
+    pub fn get_tape_recovery_point_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>> {
         &self.tape_recovery_point_infos
     }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
@@ -125,9 +114,7 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTapeRecoveryPointsOutput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput {
+    pub fn build(self) -> crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput {
         crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput {
             gateway_arn: self.gateway_arn,
             tape_recovery_point_infos: self.tape_recovery_point_infos,

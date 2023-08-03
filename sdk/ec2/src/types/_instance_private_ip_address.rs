@@ -19,9 +19,7 @@ pub struct InstancePrivateIpAddress {
 }
 impl InstancePrivateIpAddress {
     /// <p>The association information for an Elastic IP address for the network interface.</p>
-    pub fn association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceNetworkInterfaceAssociation> {
+    pub fn association(&self) -> ::std::option::Option<&crate::types::InstanceNetworkInterfaceAssociation> {
         self.association.as_ref()
     }
     /// <p>Indicates whether this IPv4 address is the primary private IP address of the network interface.</p>
@@ -46,12 +44,9 @@ impl InstancePrivateIpAddress {
 
 /// A builder for [`InstancePrivateIpAddress`](crate::types::InstancePrivateIpAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstancePrivateIpAddressBuilder {
-    pub(crate) association:
-        ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
+    pub(crate) association: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
     pub(crate) primary: ::std::option::Option<bool>,
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
@@ -63,17 +58,12 @@ impl InstancePrivateIpAddressBuilder {
         self
     }
     /// <p>The association information for an Elastic IP address for the network interface.</p>
-    pub fn set_association(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
-    ) -> Self {
+    pub fn set_association(mut self, input: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>) -> Self {
         self.association = input;
         self
     }
     /// <p>The association information for an Elastic IP address for the network interface.</p>
-    pub fn get_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation> {
+    pub fn get_association(&self) -> &::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation> {
         &self.association
     }
     /// <p>Indicates whether this IPv4 address is the primary private IP address of the network interface.</p>
@@ -91,18 +81,12 @@ impl InstancePrivateIpAddressBuilder {
         &self.primary
     }
     /// <p>The private IPv4 DNS name.</p>
-    pub fn private_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 DNS name.</p>
-    pub fn set_private_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }
@@ -111,18 +95,12 @@ impl InstancePrivateIpAddressBuilder {
         &self.private_dns_name
     }
     /// <p>The private IPv4 address of the network interface.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 address of the network interface.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }

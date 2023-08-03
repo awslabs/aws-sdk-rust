@@ -15,35 +15,25 @@ impl DeleteDefaultMessageTypeInput {
 }
 impl DeleteDefaultMessageTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultMessageTypeInput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder {
         crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDefaultMessageTypeInput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDefaultMessageTypeInputBuilder {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteDefaultMessageTypeInputBuilder {
         crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput {
-                configuration_set_name: self.configuration_set_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput {
+            configuration_set_name: self.configuration_set_name,
+        })
     }
 }

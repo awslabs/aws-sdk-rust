@@ -29,9 +29,7 @@ impl S3BucketDestination {
         self.format.as_ref()
     }
     /// <p>The schema version of the export file.</p>
-    pub fn output_schema_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputSchemaVersion> {
+    pub fn output_schema_version(&self) -> ::std::option::Option<&crate::types::OutputSchemaVersion> {
         self.output_schema_version.as_ref()
     }
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
@@ -47,9 +45,7 @@ impl S3BucketDestination {
         self.prefix.as_deref()
     }
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
-    pub fn encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageLensDataExportEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::StorageLensDataExportEncryption> {
         self.encryption.as_ref()
     }
 }
@@ -62,9 +58,7 @@ impl S3BucketDestination {
 
 /// A builder for [`S3BucketDestination`](crate::types::S3BucketDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketDestinationBuilder {
     pub(crate) format: ::std::option::Option<crate::types::Format>,
     pub(crate) output_schema_version: ::std::option::Option<crate::types::OutputSchemaVersion>,
@@ -94,17 +88,12 @@ impl S3BucketDestinationBuilder {
         self
     }
     /// <p>The schema version of the export file.</p>
-    pub fn set_output_schema_version(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputSchemaVersion>,
-    ) -> Self {
+    pub fn set_output_schema_version(mut self, input: ::std::option::Option<crate::types::OutputSchemaVersion>) -> Self {
         self.output_schema_version = input;
         self
     }
     /// <p>The schema version of the export file.</p>
-    pub fn get_output_schema_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputSchemaVersion> {
+    pub fn get_output_schema_version(&self) -> &::std::option::Option<crate::types::OutputSchemaVersion> {
         &self.output_schema_version
     }
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
@@ -155,17 +144,12 @@ impl S3BucketDestinationBuilder {
         self
     }
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLensDataExportEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::StorageLensDataExportEncryption>) -> Self {
         self.encryption = input;
         self
     }
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
-    pub fn get_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLensDataExportEncryption> {
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::StorageLensDataExportEncryption> {
         &self.encryption
     }
     /// Consumes the builder and constructs a [`S3BucketDestination`](crate::types::S3BucketDestination).

@@ -16,16 +16,14 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
 }
 impl StartElasticsearchServiceSoftwareUpdateInput {
     /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
-    pub fn builder() -> crate::operation::start_elasticsearch_service_software_update::builders::StartElasticsearchServiceSoftwareUpdateInputBuilder{
+    pub fn builder() -> crate::operation::start_elasticsearch_service_software_update::builders::StartElasticsearchServiceSoftwareUpdateInputBuilder {
         crate::operation::start_elasticsearch_service_software_update::builders::StartElasticsearchServiceSoftwareUpdateInputBuilder::default()
     }
 }
 
 /// A builder for [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartElasticsearchServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,16 @@ impl StartElasticsearchServiceSoftwareUpdateInputBuilder {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput {
-                domain_name: self.domain_name
-                ,
-            }
+                domain_name: self.domain_name,
+            },
         )
     }
 }

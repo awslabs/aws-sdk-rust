@@ -10,10 +10,7 @@ impl DeleteResourceSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_set::DeleteResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_set::DeleteResourceSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_set::DeleteResourceSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_resource_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteResourceSetFluentBuilder {
         }
     }
     /// Access the DeleteResourceSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteResourceSetFluentBuilder {
             crate::operation::delete_resource_set::DeleteResourceSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_set::DeleteResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_set::DeleteResourceSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteResourceSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteResourceSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_set::DeleteResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_set::DeleteResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_set::DeleteResourceSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteResourceSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_set::DeleteResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_set::DeleteResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_set::DeleteResourceSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteResourceSetFluentBuilder {
             crate::operation::delete_resource_set::DeleteResourceSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_set::DeleteResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_set::DeleteResourceSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of a resource set.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_name(input.into());
         self
     }
     /// <p>Name of a resource set.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_name(input);
         self
     }

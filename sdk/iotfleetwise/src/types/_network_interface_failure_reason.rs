@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NetworkInterfaceFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,25 +63,13 @@ pub enum NetworkInterfaceFailureReason {
 impl ::std::convert::From<&str> for NetworkInterfaceFailureReason {
     fn from(s: &str) -> Self {
         match s {
-            "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => {
-                NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull
-            }
-            "CONFLICTING_NETWORK_INTERFACE" => {
-                NetworkInterfaceFailureReason::ConflictingNetworkInterface
-            }
+            "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull,
+            "CONFLICTING_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::ConflictingNetworkInterface,
             "DUPLICATE_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::DuplicateInterface,
-            "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => {
-                NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists
-            }
-            "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => {
-                NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals
-            }
-            "OBD_NETWORK_INTERFACE_INFO_IS_NULL" => {
-                NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull
-            }
-            other => NetworkInterfaceFailureReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists,
+            "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals,
+            "OBD_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull,
+            other => NetworkInterfaceFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -102,22 +84,12 @@ impl NetworkInterfaceFailureReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => {
-                "CAN_NETWORK_INTERFACE_INFO_IS_NULL"
-            }
-            NetworkInterfaceFailureReason::ConflictingNetworkInterface => {
-                "CONFLICTING_NETWORK_INTERFACE"
-            }
+            NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
+            NetworkInterfaceFailureReason::ConflictingNetworkInterface => "CONFLICTING_NETWORK_INTERFACE",
             NetworkInterfaceFailureReason::DuplicateInterface => "DUPLICATE_NETWORK_INTERFACE",
-            NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => {
-                "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS"
-            }
-            NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => {
-                "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS"
-            }
-            NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => {
-                "OBD_NETWORK_INTERFACE_INFO_IS_NULL"
-            }
+            NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
+            NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
+            NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => "OBD_NETWORK_INTERFACE_INFO_IS_NULL",
             NetworkInterfaceFailureReason::Unknown(value) => value.as_str(),
         }
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`access_point_list(Option<Vec<AccessPoint>>)`](crate::operation::list_access_points::ListAccessPointsOutput::access_point_list): <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_points::ListAccessPointsOutput::next_token): <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     /// - On failure, responds with [`SdkError<ListAccessPointsError>`](crate::operation::list_access_points::ListAccessPointsError)
-    pub fn list_access_points(
-        &self,
-    ) -> crate::operation::list_access_points::builders::ListAccessPointsFluentBuilder {
-        crate::operation::list_access_points::builders::ListAccessPointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_access_points(&self) -> crate::operation::list_access_points::builders::ListAccessPointsFluentBuilder {
+        crate::operation::list_access_points::builders::ListAccessPointsFluentBuilder::new(self.handle.clone())
     }
 }

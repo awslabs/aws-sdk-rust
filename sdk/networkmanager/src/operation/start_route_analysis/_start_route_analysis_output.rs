@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartRouteAnalysisOutput {
 }
 impl StartRouteAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartRouteAnalysisOutput`](crate::operation::start_route_analysis::StartRouteAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::start_route_analysis::builders::StartRouteAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::start_route_analysis::builders::StartRouteAnalysisOutputBuilder {
         crate::operation::start_route_analysis::builders::StartRouteAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartRouteAnalysisOutput`](crate::operation::start_route_analysis::StartRouteAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRouteAnalysisOutputBuilder {
     pub(crate) route_analysis: ::std::option::Option<crate::types::RouteAnalysis>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl StartRouteAnalysisOutputBuilder {
         self
     }
     /// <p>The route analysis.</p>
-    pub fn set_route_analysis(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteAnalysis>,
-    ) -> Self {
+    pub fn set_route_analysis(mut self, input: ::std::option::Option<crate::types::RouteAnalysis>) -> Self {
         self.route_analysis = input;
         self
     }

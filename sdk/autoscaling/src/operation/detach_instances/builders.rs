@@ -10,10 +10,7 @@ impl DetachInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detach_instances::DetachInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_instances::DetachInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_instances::DetachInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detach_instances();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DetachInstancesFluentBuilder {
         }
     }
     /// Access the DetachInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_instances::builders::DetachInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detach_instances::builders::DetachInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DetachInstancesFluentBuilder {
             crate::operation::detach_instances::DetachInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_instances::DetachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_instances::DetachInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DetachInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DetachInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_instances::DetachInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_instances::DetachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_instances::DetachInstancesError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DetachInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_instances::DetachInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_instances::DetachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_instances::DetachInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl DetachInstancesFluentBuilder {
             crate::operation::detach_instances::DetachInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_instances::DetachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_instances::DetachInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -136,32 +120,21 @@ impl DetachInstancesFluentBuilder {
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -175,10 +148,7 @@ impl DetachInstancesFluentBuilder {
         self
     }
     /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
-    pub fn set_should_decrement_desired_capacity(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_should_decrement_desired_capacity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_should_decrement_desired_capacity(input);
         self
     }

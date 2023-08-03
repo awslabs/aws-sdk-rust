@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeProtectionGroupOutput {
 }
 impl DescribeProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupOutput`](crate::operation::describe_protection_group::DescribeProtectionGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_protection_group::builders::DescribeProtectionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_protection_group::builders::DescribeProtectionGroupOutputBuilder {
         crate::operation::describe_protection_group::builders::DescribeProtectionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProtectionGroupOutput`](crate::operation::describe_protection_group::DescribeProtectionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProtectionGroupOutputBuilder {
     pub(crate) protection_group: ::std::option::Option<crate::types::ProtectionGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeProtectionGroupOutputBuilder {
         self
     }
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
-    pub fn set_protection_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionGroup>,
-    ) -> Self {
+    pub fn set_protection_group(mut self, input: ::std::option::Option<crate::types::ProtectionGroup>) -> Self {
         self.protection_group = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeProtectionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProtectionGroupOutput`](crate::operation::describe_protection_group::DescribeProtectionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_protection_group::DescribeProtectionGroupOutput {
+    pub fn build(self) -> crate::operation::describe_protection_group::DescribeProtectionGroupOutput {
         crate::operation::describe_protection_group::DescribeProtectionGroupOutput {
             protection_group: self.protection_group,
             _request_id: self._request_id,

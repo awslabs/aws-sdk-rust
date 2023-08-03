@@ -50,17 +50,14 @@ impl CreateVirtualGatewayInput {
 }
 impl CreateVirtualGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayInput`](crate::operation::create_virtual_gateway::CreateVirtualGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayInputBuilder {
+    pub fn builder() -> crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayInputBuilder {
         crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualGatewayInput`](crate::operation::create_virtual_gateway::CreateVirtualGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualGatewayInputBuilder {
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +68,12 @@ pub struct CreateVirtualGatewayInputBuilder {
 }
 impl CreateVirtualGatewayInputBuilder {
     /// <p>The name to use for the virtual gateway.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the virtual gateway.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_name = input;
         self
     }
@@ -110,10 +101,7 @@ impl CreateVirtualGatewayInputBuilder {
         self
     }
     /// <p>The virtual gateway specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewaySpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualGatewaySpec>) -> Self {
         self.spec = input;
         self
     }
@@ -133,10 +121,7 @@ impl CreateVirtualGatewayInputBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.tags = input;
         self
     }
@@ -175,19 +160,15 @@ impl CreateVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualGatewayInput`](crate::operation::create_virtual_gateway::CreateVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_virtual_gateway::CreateVirtualGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_virtual_gateway::CreateVirtualGatewayInput {
-                virtual_gateway_name: self.virtual_gateway_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                tags: self.tags,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_virtual_gateway::CreateVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_virtual_gateway::CreateVirtualGatewayInput {
+            virtual_gateway_name: self.virtual_gateway_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            tags: self.tags,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

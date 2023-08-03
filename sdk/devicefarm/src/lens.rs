@@ -291,12 +291,7 @@ pub(crate) fn lens_list_tests_output_tests(
 
 pub(crate) fn lens_list_unique_problems_output_unique_problems(
     input: crate::operation::list_unique_problems::ListUniqueProblemsOutput,
-) -> ::std::option::Option<
-    ::std::collections::HashMap<
-        crate::types::ExecutionResult,
-        ::std::vec::Vec<crate::types::UniqueProblem>,
-    >,
-> {
+) -> ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>> {
     let input = match input.unique_problems {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

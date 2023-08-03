@@ -44,9 +44,7 @@ impl AwsBackupRecoveryPointCreatedByDetails {
 
 /// A builder for [`AwsBackupRecoveryPointCreatedByDetails`](crate::types::AwsBackupRecoveryPointCreatedByDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsBackupRecoveryPointCreatedByDetailsBuilder {
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct AwsBackupRecoveryPointCreatedByDetailsBuilder {
 }
 impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
-    pub fn backup_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
-    pub fn set_backup_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
         &self.backup_plan_arn
     }
     /// <p>Uniquely identifies a backup plan. </p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan. </p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -95,18 +81,12 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
         &self.backup_plan_id
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
-    pub fn backup_plan_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
-    pub fn set_backup_plan_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_version = input;
         self
     }
@@ -115,18 +95,12 @@ impl AwsBackupRecoveryPointCreatedByDetailsBuilder {
         &self.backup_plan_version
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
-    pub fn backup_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
-    pub fn set_backup_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_rule_id = input;
         self
     }

@@ -22,35 +22,26 @@ impl PutImageRecipePolicyInput {
 }
 impl PutImageRecipePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutImageRecipePolicyInput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyInputBuilder {
         crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutImageRecipePolicyInput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImageRecipePolicyInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutImageRecipePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
@@ -75,15 +66,11 @@ impl PutImageRecipePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutImageRecipePolicyInput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput {
-                image_recipe_arn: self.image_recipe_arn,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput {
+            image_recipe_arn: self.image_recipe_arn,
+            policy: self.policy,
+        })
     }
 }

@@ -38,9 +38,7 @@ impl S3CatalogSource {
         self.partition_predicate.as_deref()
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3SourceAdditionalOptions> {
+    pub fn additional_options(&self) -> ::std::option::Option<&crate::types::S3SourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl S3CatalogSource {
 
 /// A builder for [`S3CatalogSource`](crate::types::S3CatalogSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3CatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
@@ -107,18 +103,12 @@ impl S3CatalogSourceBuilder {
         &self.table
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
-    pub fn partition_predicate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_predicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_predicate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
-    pub fn set_partition_predicate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partition_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_predicate = input;
         self
     }
@@ -132,17 +122,12 @@ impl S3CatalogSourceBuilder {
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SourceAdditionalOptions>,
-    ) -> Self {
+    pub fn set_additional_options(mut self, input: ::std::option::Option<crate::types::S3SourceAdditionalOptions>) -> Self {
         self.additional_options = input;
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn get_additional_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3SourceAdditionalOptions> {
+    pub fn get_additional_options(&self) -> &::std::option::Option<crate::types::S3SourceAdditionalOptions> {
         &self.additional_options
     }
     /// Consumes the builder and constructs a [`S3CatalogSource`](crate::types::S3CatalogSource).

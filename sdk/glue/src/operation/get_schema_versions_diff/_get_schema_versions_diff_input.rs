@@ -30,15 +30,11 @@ impl GetSchemaVersionsDiffInput {
         self.schema_id.as_ref()
     }
     /// <p>The first of the two schema versions to be compared.</p>
-    pub fn first_schema_version_number(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn first_schema_version_number(&self) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
         self.first_schema_version_number.as_ref()
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn second_schema_version_number(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn second_schema_version_number(&self) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
         self.second_schema_version_number.as_ref()
     }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
@@ -48,24 +44,18 @@ impl GetSchemaVersionsDiffInput {
 }
 impl GetSchemaVersionsDiffInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder {
         crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaVersionsDiffInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
-    pub(crate) first_schema_version_number:
-        ::std::option::Option<crate::types::SchemaVersionNumber>,
-    pub(crate) second_schema_version_number:
-        ::std::option::Option<crate::types::SchemaVersionNumber>,
+    pub(crate) first_schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
+    pub(crate) second_schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     pub(crate) schema_diff_type: ::std::option::Option<crate::types::SchemaDiffType>,
 }
 impl GetSchemaVersionsDiffInputBuilder {
@@ -101,39 +91,26 @@ impl GetSchemaVersionsDiffInputBuilder {
         self
     }
     /// <p>The first of the two schema versions to be compared.</p>
-    pub fn set_first_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_first_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.first_schema_version_number = input;
         self
     }
     /// <p>The first of the two schema versions to be compared.</p>
-    pub fn get_first_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_first_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         &self.first_schema_version_number
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn second_schema_version_number(
-        mut self,
-        input: crate::types::SchemaVersionNumber,
-    ) -> Self {
+    pub fn second_schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.second_schema_version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn set_second_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_second_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.second_schema_version_number = input;
         self
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn get_second_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_second_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         &self.second_schema_version_number
     }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
@@ -142,10 +119,7 @@ impl GetSchemaVersionsDiffInputBuilder {
         self
     }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
-    pub fn set_schema_diff_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDiffType>,
-    ) -> Self {
+    pub fn set_schema_diff_type(mut self, input: ::std::option::Option<crate::types::SchemaDiffType>) -> Self {
         self.schema_diff_type = input;
         self
     }
@@ -156,17 +130,13 @@ impl GetSchemaVersionsDiffInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput {
-                schema_id: self.schema_id,
-                first_schema_version_number: self.first_schema_version_number,
-                second_schema_version_number: self.second_schema_version_number,
-                schema_diff_type: self.schema_diff_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput {
+            schema_id: self.schema_id,
+            first_schema_version_number: self.first_schema_version_number,
+            second_schema_version_number: self.second_schema_version_number,
+            schema_diff_type: self.schema_diff_type,
+        })
     }
 }

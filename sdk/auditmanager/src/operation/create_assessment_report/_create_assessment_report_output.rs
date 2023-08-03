@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAssessmentReportOutput {
 }
 impl CreateAssessmentReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentReportOutput`](crate::operation::create_assessment_report::CreateAssessmentReportOutput).
-    pub fn builder(
-    ) -> crate::operation::create_assessment_report::builders::CreateAssessmentReportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_assessment_report::builders::CreateAssessmentReportOutputBuilder {
         crate::operation::create_assessment_report::builders::CreateAssessmentReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssessmentReportOutput`](crate::operation::create_assessment_report::CreateAssessmentReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentReportOutputBuilder {
     pub(crate) assessment_report: ::std::option::Option<crate::types::AssessmentReport>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateAssessmentReportOutputBuilder {
         self
     }
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
-    pub fn set_assessment_report(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReport>,
-    ) -> Self {
+    pub fn set_assessment_report(mut self, input: ::std::option::Option<crate::types::AssessmentReport>) -> Self {
         self.assessment_report = input;
         self
     }

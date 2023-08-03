@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`accessors(Option<Vec<AccessorSummary>>)`](crate::operation::list_accessors::ListAccessorsOutput::accessors): <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accessors::ListAccessorsOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
     /// - On failure, responds with [`SdkError<ListAccessorsError>`](crate::operation::list_accessors::ListAccessorsError)
-    pub fn list_accessors(
-        &self,
-    ) -> crate::operation::list_accessors::builders::ListAccessorsFluentBuilder {
-        crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_accessors(&self) -> crate::operation::list_accessors::builders::ListAccessorsFluentBuilder {
+        crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::new(self.handle.clone())
     }
 }

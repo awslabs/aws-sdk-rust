@@ -44,9 +44,7 @@ impl ListTypeRegistrationsInput {
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    pub fn registration_status_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn registration_status_filter(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
         self.registration_status_filter.as_ref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -60,18 +58,14 @@ impl ListTypeRegistrationsInput {
 }
 impl ListTypeRegistrationsInput {
     /// Creates a new builder-style object to manufacture [`ListTypeRegistrationsInput`](crate::operation::list_type_registrations::ListTypeRegistrationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder {
         crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypeRegistrationsInput`](crate::operation::list_type_registrations::ListTypeRegistrationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypeRegistrationsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -140,18 +134,13 @@ impl ListTypeRegistrationsInputBuilder {
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    pub fn set_registration_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status_filter(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.registration_status_filter = input;
         self
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    pub fn get_registration_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status_filter(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.registration_status_filter
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -185,19 +174,15 @@ impl ListTypeRegistrationsInputBuilder {
     /// Consumes the builder and constructs a [`ListTypeRegistrationsInput`](crate::operation::list_type_registrations::ListTypeRegistrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_type_registrations::ListTypeRegistrationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_type_registrations::ListTypeRegistrationsInput {
-                r#type: self.r#type,
-                type_name: self.type_name,
-                type_arn: self.type_arn,
-                registration_status_filter: self.registration_status_filter,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_type_registrations::ListTypeRegistrationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_type_registrations::ListTypeRegistrationsInput {
+            r#type: self.r#type,
+            type_name: self.type_name,
+            type_arn: self.type_arn,
+            registration_status_filter: self.registration_status_filter,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRescoreExecutionPlanOutput {
 }
 impl UpdateRescoreExecutionPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRescoreExecutionPlanOutput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanOutputBuilder{
+    pub fn builder() -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanOutputBuilder {
         crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRescoreExecutionPlanOutput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRescoreExecutionPlanOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateRescoreExecutionPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRescoreExecutionPlanOutput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput {
+    pub fn build(self) -> crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput {
         crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput {
             _request_id: self._request_id,
         }

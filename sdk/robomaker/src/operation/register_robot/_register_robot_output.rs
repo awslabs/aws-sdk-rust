@@ -38,9 +38,7 @@ impl RegisterRobotOutput {
 
 /// A builder for [`RegisterRobotOutput`](crate::operation::register_robot::RegisterRobotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterRobotOutputBuilder {
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) robot: ::std::option::Option<::std::string::String>,

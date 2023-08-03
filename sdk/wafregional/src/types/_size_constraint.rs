@@ -140,9 +140,7 @@ impl SizeConstraint {
 
 /// A builder for [`SizeConstraint`](crate::types::SizeConstraint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SizeConstraintBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) text_transformation: ::std::option::Option<crate::types::TextTransformation>,
@@ -156,10 +154,7 @@ impl SizeConstraintBuilder {
         self
     }
     /// <p>Specifies where in a web request to look for the size constraint.</p>
-    pub fn set_field_to_match(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldToMatch>,
-    ) -> Self {
+    pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
         self.field_to_match = input;
         self
     }
@@ -249,10 +244,7 @@ impl SizeConstraintBuilder {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
-    pub fn set_text_transformation(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTransformation>,
-    ) -> Self {
+    pub fn set_text_transformation(mut self, input: ::std::option::Option<crate::types::TextTransformation>) -> Self {
         self.text_transformation = input;
         self
     }
@@ -295,9 +287,7 @@ impl SizeConstraintBuilder {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
-    pub fn get_text_transformation(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextTransformation> {
+    pub fn get_text_transformation(&self) -> &::std::option::Option<crate::types::TextTransformation> {
         &self.text_transformation
     }
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
@@ -318,10 +308,7 @@ impl SizeConstraintBuilder {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
@@ -332,9 +319,7 @@ impl SizeConstraintBuilder {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>

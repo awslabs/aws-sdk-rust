@@ -21,10 +21,7 @@ pub fn ser_create_launch_configuration_template_input(
     if let Some(var_6) = &input.large_volume_conf {
         #[allow(unused_mut)]
         let mut object_7 = object.key("largeVolumeConf").start_object();
-        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.launch_disposition {
@@ -42,19 +39,13 @@ pub fn ser_create_launch_configuration_template_input(
     if let Some(var_12) = &input.post_launch_actions {
         #[allow(unused_mut)]
         let mut object_13 = object.key("postLaunchActions").start_object();
-        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.small_volume_conf {
         #[allow(unused_mut)]
         let mut object_15 = object.key("smallVolumeConf").start_object();
-        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_15, var_14)?;
         object_15.finish();
     }
     if input.small_volume_max_size != 0 {
@@ -74,9 +65,7 @@ pub fn ser_create_launch_configuration_template_input(
         object_17.finish();
     }
     if let Some(var_20) = &input.target_instance_type_right_sizing_method {
-        object
-            .key("targetInstanceTypeRightSizingMethod")
-            .string(var_20.as_str());
+        object.key("targetInstanceTypeRightSizingMethod").string(var_20.as_str());
     }
     Ok(())
 }

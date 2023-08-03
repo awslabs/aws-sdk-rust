@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteVPCConnectionError>`](crate::operation::delete_vpc_connection::DeleteVPCConnectionError)
-    pub fn delete_vpc_connection(
-        &self,
-    ) -> crate::operation::delete_vpc_connection::builders::DeleteVPCConnectionFluentBuilder {
-        crate::operation::delete_vpc_connection::builders::DeleteVPCConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vpc_connection(&self) -> crate::operation::delete_vpc_connection::builders::DeleteVPCConnectionFluentBuilder {
+        crate::operation::delete_vpc_connection::builders::DeleteVPCConnectionFluentBuilder::new(self.handle.clone())
     }
 }

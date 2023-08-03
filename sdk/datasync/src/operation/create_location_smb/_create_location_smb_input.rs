@@ -91,8 +91,7 @@ impl ::std::fmt::Debug for CreateLocationSmbInput {
 }
 impl CreateLocationSmbInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationSmbInput`](crate::operation::create_location_smb::CreateLocationSmbInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder {
+    pub fn builder() -> crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder {
         crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder::default()
     }
 }
@@ -131,20 +130,14 @@ impl CreateLocationSmbInputBuilder {
     /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
-    pub fn server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
-    pub fn set_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
@@ -217,10 +210,7 @@ impl CreateLocationSmbInputBuilder {
         self
     }
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -234,10 +224,7 @@ impl CreateLocationSmbInputBuilder {
         self
     }
     /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
@@ -257,10 +244,7 @@ impl CreateLocationSmbInputBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -271,22 +255,17 @@ impl CreateLocationSmbInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationSmbInput`](crate::operation::create_location_smb::CreateLocationSmbInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_smb::CreateLocationSmbInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_smb::CreateLocationSmbInput {
-                subdirectory: self.subdirectory,
-                server_hostname: self.server_hostname,
-                user: self.user,
-                domain: self.domain,
-                password: self.password,
-                agent_arns: self.agent_arns,
-                mount_options: self.mount_options,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_location_smb::CreateLocationSmbInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_location_smb::CreateLocationSmbInput {
+            subdirectory: self.subdirectory,
+            server_hostname: self.server_hostname,
+            user: self.user,
+            domain: self.domain,
+            password: self.password,
+            agent_arns: self.agent_arns,
+            mount_options: self.mount_options,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateLocationSmbInputBuilder {

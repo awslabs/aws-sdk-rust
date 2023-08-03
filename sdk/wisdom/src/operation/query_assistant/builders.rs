@@ -10,10 +10,7 @@ impl QueryAssistantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::query_assistant::QueryAssistantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_assistant::QueryAssistantError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_assistant::QueryAssistantError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.query_assistant();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl QueryAssistantFluentBuilder {
         }
     }
     /// Access the QueryAssistant as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::query_assistant::builders::QueryAssistantInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::query_assistant::builders::QueryAssistantInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl QueryAssistantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl QueryAssistantFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::query_assistant::paginator::QueryAssistantPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
-        crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
+        crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

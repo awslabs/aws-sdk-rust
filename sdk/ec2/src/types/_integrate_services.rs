@@ -6,8 +6,7 @@
 pub struct IntegrateServices {
     /// <p>Information about the integration with Amazon Athena.</p>
     #[doc(hidden)]
-    pub athena_integrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
+    pub athena_integrations: ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
 }
 impl IntegrateServices {
     /// <p>Information about the integration with Amazon Athena.</p>
@@ -24,12 +23,9 @@ impl IntegrateServices {
 
 /// A builder for [`IntegrateServices`](crate::types::IntegrateServices).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegrateServicesBuilder {
-    pub(crate) athena_integrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
+    pub(crate) athena_integrations: ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
 }
 impl IntegrateServicesBuilder {
     /// Appends an item to `athena_integrations`.
@@ -44,17 +40,12 @@ impl IntegrateServicesBuilder {
         self
     }
     /// <p>Information about the integration with Amazon Athena.</p>
-    pub fn set_athena_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
-    ) -> Self {
+    pub fn set_athena_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>) -> Self {
         self.athena_integrations = input;
         self
     }
     /// <p>Information about the integration with Amazon Athena.</p>
-    pub fn get_athena_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>> {
+    pub fn get_athena_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>> {
         &self.athena_integrations
     }
     /// Consumes the builder and constructs a [`IntegrateServices`](crate::types::IntegrateServices).

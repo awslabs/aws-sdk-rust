@@ -43,9 +43,7 @@ impl ArchivalSummary {
 
 /// A builder for [`ArchivalSummary`](crate::types::ArchivalSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchivalSummaryBuilder {
     pub(crate) archival_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) archival_reason: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl ArchivalSummaryBuilder {
         self
     }
     /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time format.</p>
-    pub fn set_archival_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_archival_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.archival_date_time = input;
         self
     }
@@ -73,10 +68,7 @@ impl ArchivalSummaryBuilder {
     /// <ul>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p> </li>
     /// </ul>
-    pub fn archival_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archival_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archival_reason = ::std::option::Option::Some(input.into());
         self
     }
@@ -84,10 +76,7 @@ impl ArchivalSummaryBuilder {
     /// <ul>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p> </li>
     /// </ul>
-    pub fn set_archival_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archival_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archival_reason = input;
         self
     }
@@ -99,18 +88,12 @@ impl ArchivalSummaryBuilder {
         &self.archival_reason
     }
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
-    pub fn archival_backup_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archival_backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archival_backup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
-    pub fn set_archival_backup_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archival_backup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archival_backup_arn = input;
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`archive_rules(Option<Vec<ArchiveRuleSummary>>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::archive_rules): <p>A list of archive rules created for the specified analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListArchiveRulesError>`](crate::operation::list_archive_rules::ListArchiveRulesError)
-    pub fn list_archive_rules(
-        &self,
-    ) -> crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder {
-        crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_archive_rules(&self) -> crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder {
+        crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::new(self.handle.clone())
     }
 }

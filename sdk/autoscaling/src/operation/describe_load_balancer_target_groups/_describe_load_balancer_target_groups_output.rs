@@ -5,8 +5,7 @@
 pub struct DescribeLoadBalancerTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
     #[doc(hidden)]
-    pub load_balancer_target_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>>,
+    pub load_balancer_target_groups: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeLoadBalancerTargetGroupsOutput {
 }
 impl DescribeLoadBalancerTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
-    pub fn load_balancer_target_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoadBalancerTargetGroupState]> {
+    pub fn load_balancer_target_groups(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTargetGroupState]> {
         self.load_balancer_target_groups.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLoadBalancerTargetGroupsOutpu
 }
 impl DescribeLoadBalancerTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerTargetGroupsOutput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput).
-    pub fn builder() -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsOutputBuilder {
         crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancerTargetGroupsOutput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerTargetGroupsOutputBuilder {
-    pub(crate) load_balancer_target_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>>,
+    pub(crate) load_balancer_target_groups: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeLoadBalancerTargetGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_load_balancer_target_groups`](Self::set_load_balancer_target_groups).
     ///
     /// <p>Information about the target groups.</p>
-    pub fn load_balancer_target_groups(
-        mut self,
-        input: crate::types::LoadBalancerTargetGroupState,
-    ) -> Self {
+    pub fn load_balancer_target_groups(mut self, input: crate::types::LoadBalancerTargetGroupState) -> Self {
         let mut v = self.load_balancer_target_groups.unwrap_or_default();
         v.push(input);
         self.load_balancer_target_groups = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeLoadBalancerTargetGroupsOutputBuilder {
         self
     }
     /// <p>Information about the target groups.</p>
-    pub fn get_load_balancer_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>> {
+    pub fn get_load_balancer_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>> {
         &self.load_balancer_target_groups
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -100,12 +89,10 @@ impl DescribeLoadBalancerTargetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerTargetGroupsOutput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput{
+    pub fn build(self) -> crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput {
         crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput {
-            load_balancer_target_groups: self.load_balancer_target_groups
-            ,
-            next_token: self.next_token
-            ,
+            load_balancer_target_groups: self.load_balancer_target_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`sensitivity_score_overridden(Option<bool>)`](crate::operation::get_resource_profile::GetResourceProfileOutput::sensitivity_score_overridden): <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
     ///   - [`statistics(Option<ResourceStatistics>)`](crate::operation::get_resource_profile::GetResourceProfileOutput::statistics): <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
     /// - On failure, responds with [`SdkError<GetResourceProfileError>`](crate::operation::get_resource_profile::GetResourceProfileError)
-    pub fn get_resource_profile(
-        &self,
-    ) -> crate::operation::get_resource_profile::builders::GetResourceProfileFluentBuilder {
-        crate::operation::get_resource_profile::builders::GetResourceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_profile(&self) -> crate::operation::get_resource_profile::builders::GetResourceProfileFluentBuilder {
+        crate::operation::get_resource_profile::builders::GetResourceProfileFluentBuilder::new(self.handle.clone())
     }
 }

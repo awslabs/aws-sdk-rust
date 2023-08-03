@@ -44,9 +44,7 @@ impl AttachmentItem {
 
 /// A builder for [`AttachmentItem`](crate::types::AttachmentItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentItemBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl AttachmentItemBuilder {
         &self.content_type
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -89,18 +81,12 @@ impl AttachmentItemBuilder {
         &self.attachment_id
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn attachment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn set_attachment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_name = input;
         self
     }
@@ -114,10 +100,7 @@ impl AttachmentItemBuilder {
         self
     }
     /// <p>Status of the attachment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ArtifactStatus>) -> Self {
         self.status = input;
         self
     }

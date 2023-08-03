@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`backup_vault_name(impl ::std::convert::Into<String>)`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::set_backup_vault_name): <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     /// - On success, responds with [`DeleteBackupVaultLockConfigurationOutput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupVaultLockConfigurationError>`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError)
-    pub fn delete_backup_vault_lock_configuration(&self) -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder{
+    pub fn delete_backup_vault_lock_configuration(
+        &self,
+    ) -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder {
         crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl GetActionInput {
 
 /// A builder for [`GetActionInput`](crate::operation::get_action::GetActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetActionInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetActionInput`](crate::operation::get_action::GetActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_action::GetActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_action::GetActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_action::GetActionInput { id: self.id })
     }
 }

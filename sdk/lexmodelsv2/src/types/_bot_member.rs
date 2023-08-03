@@ -51,9 +51,7 @@ impl BotMember {
 
 /// A builder for [`BotMember`](crate::types::BotMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotMemberBuilder {
     pub(crate) bot_member_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_member_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct BotMemberBuilder {
 }
 impl BotMemberBuilder {
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
-    pub fn set_bot_member_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_member_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl BotMemberBuilder {
         &self.bot_member_id
     }
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_member_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
-    pub fn set_bot_member_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_member_name = input;
         self
     }
@@ -103,18 +89,12 @@ impl BotMemberBuilder {
         &self.bot_member_name
     }
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_alias_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_member_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_member_alias_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
-    pub fn set_bot_member_alias_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_member_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_member_alias_id = input;
         self
     }
@@ -123,18 +103,12 @@ impl BotMemberBuilder {
         &self.bot_member_alias_id
     }
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_alias_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_member_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_member_alias_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
-    pub fn set_bot_member_alias_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_member_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_member_alias_name = input;
         self
     }
@@ -143,18 +117,12 @@ impl BotMemberBuilder {
         &self.bot_member_alias_name
     }
     /// <p>The version of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_member_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_member_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of a bot that is a member of this network of bots.</p>
-    pub fn set_bot_member_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_member_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_member_version = input;
         self
     }

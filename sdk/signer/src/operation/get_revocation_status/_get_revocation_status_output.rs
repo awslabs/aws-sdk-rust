@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRevocationStatusOutput {
 }
 impl GetRevocationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRevocationStatusOutput`](crate::operation::get_revocation_status::GetRevocationStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_revocation_status::builders::GetRevocationStatusOutputBuilder {
-        crate::operation::get_revocation_status::builders::GetRevocationStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_revocation_status::builders::GetRevocationStatusOutputBuilder {
+        crate::operation::get_revocation_status::builders::GetRevocationStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRevocationStatusOutput`](crate::operation::get_revocation_status::GetRevocationStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevocationStatusOutputBuilder {
     pub(crate) revoked_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -43,27 +39,19 @@ impl GetRevocationStatusOutputBuilder {
     /// To override the contents of this collection use [`set_revoked_entities`](Self::set_revoked_entities).
     ///
     /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
-    pub fn revoked_entities(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revoked_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.revoked_entities.unwrap_or_default();
         v.push(input.into());
         self.revoked_entities = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
-    pub fn set_revoked_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_revoked_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.revoked_entities = input;
         self
     }
     /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
-    pub fn get_revoked_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_revoked_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.revoked_entities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

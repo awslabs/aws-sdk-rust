@@ -10,10 +10,7 @@ impl DeleteBackendInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_backend::DeleteBackendOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backend::DeleteBackendError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backend::DeleteBackendError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_backend();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteBackendFluentBuilder {
         }
     }
     /// Access the DeleteBackend as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_backend::builders::DeleteBackendInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_backend::builders::DeleteBackendInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteBackendFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl DeleteBackendFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }

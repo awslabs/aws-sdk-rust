@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceProfileDomainOutput {
 }
 impl DeleteVoiceProfileDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceProfileDomainOutput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput).
-    pub fn builder() -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainOutputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainOutputBuilder {
         crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceProfileDomainOutput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceProfileDomainOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteVoiceProfileDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceProfileDomainOutput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput {
+    pub fn build(self) -> crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput {
         crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput {
             _request_id: self._request_id,
         }

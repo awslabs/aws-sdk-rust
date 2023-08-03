@@ -44,17 +44,14 @@ impl UpdateMonitoringInput {
 }
 impl UpdateMonitoringInput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
-    pub fn builder() -> crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder {
         crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMonitoringInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ impl UpdateMonitoringInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -103,17 +94,12 @@ impl UpdateMonitoringInputBuilder {
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.enhanced_monitoring = input;
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
         &self.enhanced_monitoring
     }
     /// <p>The settings for open monitoring.</p>
@@ -122,10 +108,7 @@ impl UpdateMonitoringInputBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenMonitoringInfo>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: ::std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
         self.open_monitoring = input;
         self
     }
@@ -139,10 +122,7 @@ impl UpdateMonitoringInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
@@ -153,10 +133,7 @@ impl UpdateMonitoringInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_monitoring::UpdateMonitoringInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_monitoring::UpdateMonitoringInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_monitoring::UpdateMonitoringInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,

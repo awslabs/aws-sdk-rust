@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RevokeSnapshotAccessOutput {
 }
 impl RevokeSnapshotAccessOutput {
     /// Creates a new builder-style object to manufacture [`RevokeSnapshotAccessOutput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder {
         crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeSnapshotAccessOutput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeSnapshotAccessOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,

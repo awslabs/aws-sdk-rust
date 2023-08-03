@@ -10,10 +10,7 @@ impl PutEventTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_event_type::PutEventTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_event_type::PutEventTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_event_type();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutEventTypeFluentBuilder {
         }
     }
     /// Access the PutEventType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_event_type::builders::PutEventTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_event_type::builders::PutEventTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl PutEventTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -147,25 +139,17 @@ impl PutEventTypeFluentBuilder {
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
     /// <p>The event type variables.</p>
-    pub fn event_variables(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_variables(input.into());
         self
     }
     /// <p>The event type variables.</p>
-    pub fn set_event_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_variables(input);
         self
     }
     /// <p>The event type variables.</p>
-    pub fn get_event_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_variables()
     }
     /// Appends an item to `labels`.
@@ -178,10 +162,7 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>The event type labels.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
@@ -199,17 +180,12 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_entity_types(input);
         self
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_entity_types()
     }
     /// <p>Specifies if ingestion is enabled or disabled.</p>
@@ -218,10 +194,7 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>Specifies if ingestion is enabled or disabled.</p>
-    pub fn set_event_ingestion(
-        mut self,
-        input: ::std::option::Option<crate::types::EventIngestion>,
-    ) -> Self {
+    pub fn set_event_ingestion(mut self, input: ::std::option::Option<crate::types::EventIngestion>) -> Self {
         self.inner = self.inner.set_event_ingestion(input);
         self
     }
@@ -239,10 +212,7 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -256,17 +226,12 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
-    pub fn set_event_orchestration(
-        mut self,
-        input: ::std::option::Option<crate::types::EventOrchestration>,
-    ) -> Self {
+    pub fn set_event_orchestration(mut self, input: ::std::option::Option<crate::types::EventOrchestration>) -> Self {
         self.inner = self.inner.set_event_orchestration(input);
         self
     }
     /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
-    pub fn get_event_orchestration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventOrchestration> {
+    pub fn get_event_orchestration(&self) -> &::std::option::Option<crate::types::EventOrchestration> {
         self.inner.get_event_orchestration()
     }
 }

@@ -8,8 +8,7 @@ pub struct ListVolumeRecoveryPointsOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
     #[doc(hidden)]
-    pub volume_recovery_point_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>,
+    pub volume_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>,
     _request_id: Option<String>,
 }
 impl ListVolumeRecoveryPointsOutput {
@@ -18,9 +17,7 @@ impl ListVolumeRecoveryPointsOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
-    pub fn volume_recovery_point_infos(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VolumeRecoveryPointInfo]> {
+    pub fn volume_recovery_point_infos(&self) -> ::std::option::Option<&[crate::types::VolumeRecoveryPointInfo]> {
         self.volume_recovery_point_infos.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListVolumeRecoveryPointsOutput {
 }
 impl ListVolumeRecoveryPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListVolumeRecoveryPointsOutput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput).
-    pub fn builder() -> crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsOutputBuilder{
+    pub fn builder() -> crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsOutputBuilder {
         crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVolumeRecoveryPointsOutput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumeRecoveryPointsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_recovery_point_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>,
+    pub(crate) volume_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>,
     _request_id: Option<String>,
 }
 impl ListVolumeRecoveryPointsOutputBuilder {
@@ -67,27 +61,19 @@ impl ListVolumeRecoveryPointsOutputBuilder {
     /// To override the contents of this collection use [`set_volume_recovery_point_infos`](Self::set_volume_recovery_point_infos).
     ///
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
-    pub fn volume_recovery_point_infos(
-        mut self,
-        input: crate::types::VolumeRecoveryPointInfo,
-    ) -> Self {
+    pub fn volume_recovery_point_infos(mut self, input: crate::types::VolumeRecoveryPointInfo) -> Self {
         let mut v = self.volume_recovery_point_infos.unwrap_or_default();
         v.push(input);
         self.volume_recovery_point_infos = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
-    pub fn set_volume_recovery_point_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>,
-    ) -> Self {
+    pub fn set_volume_recovery_point_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>) -> Self {
         self.volume_recovery_point_infos = input;
         self
     }
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
-    pub fn get_volume_recovery_point_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>> {
+    pub fn get_volume_recovery_point_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>> {
         &self.volume_recovery_point_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,9 +86,7 @@ impl ListVolumeRecoveryPointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVolumeRecoveryPointsOutput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput {
+    pub fn build(self) -> crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput {
         crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput {
             gateway_arn: self.gateway_arn,
             volume_recovery_point_infos: self.volume_recovery_point_infos,

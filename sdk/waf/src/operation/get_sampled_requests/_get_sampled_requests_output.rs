@@ -35,20 +35,16 @@ impl ::aws_http::request_id::RequestId for GetSampledRequestsOutput {
 }
 impl GetSampledRequestsOutput {
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsOutput`](crate::operation::get_sampled_requests::GetSampledRequestsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_sampled_requests::builders::GetSampledRequestsOutputBuilder {
+    pub fn builder() -> crate::operation::get_sampled_requests::builders::GetSampledRequestsOutputBuilder {
         crate::operation::get_sampled_requests::builders::GetSampledRequestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSampledRequestsOutput`](crate::operation::get_sampled_requests::GetSampledRequestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSampledRequestsOutputBuilder {
-    pub(crate) sampled_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>>,
+    pub(crate) sampled_requests: ::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>>,
     pub(crate) population_size: ::std::option::Option<i64>,
     pub(crate) time_window: ::std::option::Option<crate::types::TimeWindow>,
     _request_id: Option<String>,
@@ -66,17 +62,12 @@ impl GetSampledRequestsOutputBuilder {
         self
     }
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-    pub fn set_sampled_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>>,
-    ) -> Self {
+    pub fn set_sampled_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>>) -> Self {
         self.sampled_requests = input;
         self
     }
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-    pub fn get_sampled_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>> {
+    pub fn get_sampled_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>> {
         &self.sampled_requests
     }
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
@@ -99,10 +90,7 @@ impl GetSampledRequestsOutputBuilder {
         self
     }
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
-    pub fn set_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeWindow>,
-    ) -> Self {
+    pub fn set_time_window(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
         self.time_window = input;
         self
     }

@@ -46,9 +46,7 @@ impl ::aws_http::request_id::RequestId for GetClusterCredentialsOutput {
 }
 impl GetClusterCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsOutput`](crate::operation::get_cluster_credentials::GetClusterCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsOutputBuilder {
         crate::operation::get_cluster_credentials::builders::GetClusterCredentialsOutputBuilder::default()
     }
 }
@@ -97,10 +95,7 @@ impl GetClusterCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }

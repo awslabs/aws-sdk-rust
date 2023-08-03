@@ -22,16 +22,14 @@ impl GetSolFunctionPackageDescriptorInput {
 }
 impl GetSolFunctionPackageDescriptorInput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageDescriptorInput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput).
-    pub fn builder() -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder{
+    pub fn builder() -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder {
         crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolFunctionPackageDescriptorInput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageDescriptorInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::DescriptorContentType>,
@@ -57,10 +55,7 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         self
     }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
-    pub fn set_accept(
-        mut self,
-        input: ::std::option::Option<crate::types::DescriptorContentType>,
-    ) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<crate::types::DescriptorContentType>) -> Self {
         self.accept = input;
         self
     }
@@ -77,11 +72,9 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput {
-                vnf_pkg_id: self.vnf_pkg_id
-                ,
-                accept: self.accept
-                ,
-            }
+                vnf_pkg_id: self.vnf_pkg_id,
+                accept: self.accept,
+            },
         )
     }
 }

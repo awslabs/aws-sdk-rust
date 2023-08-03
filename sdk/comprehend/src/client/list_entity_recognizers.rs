@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`entity_recognizer_properties_list(Option<Vec<EntityRecognizerProperties>>)`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput::entity_recognizer_properties_list): <p>The list of properties of an entity recognizer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEntityRecognizersError>`](crate::operation::list_entity_recognizers::ListEntityRecognizersError)
-    pub fn list_entity_recognizers(
-        &self,
-    ) -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder
-    {
-        crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_entity_recognizers(&self) -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder {
+        crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::new(self.handle.clone())
     }
 }

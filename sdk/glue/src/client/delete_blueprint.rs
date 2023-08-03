@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBlueprintOutput`](crate::operation::delete_blueprint::DeleteBlueprintOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_blueprint::DeleteBlueprintOutput::name): <p>Returns the name of the blueprint that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteBlueprintError>`](crate::operation::delete_blueprint::DeleteBlueprintError)
-    pub fn delete_blueprint(
-        &self,
-    ) -> crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder {
-        crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_blueprint(&self) -> crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder {
+        crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder::new(self.handle.clone())
     }
 }

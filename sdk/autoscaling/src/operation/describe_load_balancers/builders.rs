@@ -44,10 +44,7 @@ impl DescribeLoadBalancersFluentBuilder {
         }
     }
     /// Access the DescribeLoadBalancers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl DescribeLoadBalancersFluentBuilder {
             crate::operation::describe_load_balancers::DescribeLoadBalancers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancers::DescribeLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl DescribeLoadBalancersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl DescribeLoadBalancersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancers::DescribeLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl DescribeLoadBalancersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancers::DescribeLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError>,
     > {
         self.send_middleware().await
     }
@@ -124,25 +112,17 @@ impl DescribeLoadBalancersFluentBuilder {
             crate::operation::describe_load_balancers::DescribeLoadBalancers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancers::DescribeLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }

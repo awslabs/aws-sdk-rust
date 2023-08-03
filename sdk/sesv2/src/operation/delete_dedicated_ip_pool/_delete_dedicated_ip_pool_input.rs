@@ -16,18 +16,14 @@ impl DeleteDedicatedIpPoolInput {
 }
 impl DeleteDedicatedIpPoolInput {
     /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder {
         crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolInputBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,8 @@ impl DeleteDedicatedIpPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput {
-                pool_name: self.pool_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput { pool_name: self.pool_name })
     }
 }

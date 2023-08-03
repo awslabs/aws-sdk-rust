@@ -10,9 +10,7 @@ pub struct DescribeAcceleratorAttributesOutput {
 }
 impl DescribeAcceleratorAttributesOutput {
     /// <p>The attributes of the accelerator.</p>
-    pub fn accelerator_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AcceleratorAttributes> {
+    pub fn accelerator_attributes(&self) -> ::std::option::Option<&crate::types::AcceleratorAttributes> {
         self.accelerator_attributes.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAcceleratorAttributesOutput {
 }
 impl DescribeAcceleratorAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesOutput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput).
-    pub fn builder() -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesOutputBuilder {
         crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorAttributesOutput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorAttributesOutputBuilder {
     pub(crate) accelerator_attributes: ::std::option::Option<crate::types::AcceleratorAttributes>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DescribeAcceleratorAttributesOutputBuilder {
         self
     }
     /// <p>The attributes of the accelerator.</p>
-    pub fn set_accelerator_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::AcceleratorAttributes>,
-    ) -> Self {
+    pub fn set_accelerator_attributes(mut self, input: ::std::option::Option<crate::types::AcceleratorAttributes>) -> Self {
         self.accelerator_attributes = input;
         self
     }
     /// <p>The attributes of the accelerator.</p>
-    pub fn get_accelerator_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::AcceleratorAttributes> {
+    pub fn get_accelerator_attributes(&self) -> &::std::option::Option<crate::types::AcceleratorAttributes> {
         &self.accelerator_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,7 @@ impl DescribeAcceleratorAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorAttributesOutput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput {
         crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput {
             accelerator_attributes: self.accelerator_attributes,
             _request_id: self._request_id,

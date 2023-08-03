@@ -26,10 +26,7 @@ pub fn ser_list_audit_findings_input(
     if let Some(var_6) = &input.resource_identifier {
         #[allow(unused_mut)]
         let mut object_7 = object.key("resourceIdentifier").start_object();
-        crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.start_time {

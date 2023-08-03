@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`destination_id(impl ::std::convert::Into<String>)`](crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationFluentBuilder::destination_id) / [`set_destination_id(Option<String>)`](crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationFluentBuilder::set_destination_id): <p>The ID of the publishing destination to delete.</p>
     /// - On success, responds with [`DeletePublishingDestinationOutput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput)
     /// - On failure, responds with [`SdkError<DeletePublishingDestinationError>`](crate::operation::delete_publishing_destination::DeletePublishingDestinationError)
-    pub fn delete_publishing_destination(&self) -> crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationFluentBuilder{
+    pub fn delete_publishing_destination(
+        &self,
+    ) -> crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationFluentBuilder {
         crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationFluentBuilder::new(self.handle.clone())
     }
 }

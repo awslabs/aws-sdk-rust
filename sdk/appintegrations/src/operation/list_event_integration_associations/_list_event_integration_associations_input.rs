@@ -29,16 +29,14 @@ impl ListEventIntegrationAssociationsInput {
 }
 impl ListEventIntegrationAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsInput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput).
-    pub fn builder() -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder {
         crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventIntegrationAssociationsInput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventIntegrationAssociationsInputBuilder {
     pub(crate) event_integration_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListEventIntegrationAssociationsInputBuilder {
 }
 impl ListEventIntegrationAssociationsInputBuilder {
     /// <p>The name of the event integration. </p>
-    pub fn event_integration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_integration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event integration. </p>
-    pub fn set_event_integration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_integration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_integration_name = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListEventIntegrationAssociationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEventIntegrationAssociationsInput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput {
-                event_integration_name: self.event_integration_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                event_integration_name: self.event_integration_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

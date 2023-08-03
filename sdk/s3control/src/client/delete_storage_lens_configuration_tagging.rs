@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingFluentBuilder::set_account_id): <p>The account ID of the requester.</p>
     /// - On success, responds with [`DeleteStorageLensConfigurationTaggingOutput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput)
     /// - On failure, responds with [`SdkError<DeleteStorageLensConfigurationTaggingError>`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingError)
-    pub fn delete_storage_lens_configuration_tagging(&self) -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingFluentBuilder{
-        crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingFluentBuilder::new(self.handle.clone())
+    pub fn delete_storage_lens_configuration_tagging(
+        &self,
+    ) -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingFluentBuilder {
+        crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

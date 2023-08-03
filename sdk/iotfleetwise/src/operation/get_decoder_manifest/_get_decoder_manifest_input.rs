@@ -15,17 +15,14 @@ impl GetDecoderManifestInput {
 }
 impl GetDecoderManifestInput {
     /// Creates a new builder-style object to manufacture [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
-    pub fn builder(
-    ) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
+    pub fn builder() -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
         crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDecoderManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_decoder_manifest::GetDecoderManifestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_decoder_manifest::GetDecoderManifestInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::get_decoder_manifest::GetDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_decoder_manifest::GetDecoderManifestInput { name: self.name })
     }
 }

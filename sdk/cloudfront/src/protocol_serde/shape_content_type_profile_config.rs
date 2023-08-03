@@ -11,10 +11,7 @@ pub fn ser_content_type_profile_config(
     }
     if let Some(var_2) = &input.content_type_profiles {
         let inner_writer = scope.start_el("ContentTypeProfiles");
-        crate::protocol_serde::shape_content_type_profiles::ser_content_type_profiles(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_content_type_profiles::ser_content_type_profiles(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

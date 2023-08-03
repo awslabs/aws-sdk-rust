@@ -19,9 +19,7 @@ impl PauseCampaignOutput {
 
 /// A builder for [`PauseCampaignOutput`](crate::operation::pause_campaign::PauseCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PauseCampaignOutputBuilder {
     _request_id: Option<String>,
 }

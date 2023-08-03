@@ -23,9 +23,7 @@ impl ImportGameConfigurationSource {
 
 /// A builder for [`ImportGameConfigurationSource`](crate::types::ImportGameConfigurationSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationSourceBuilder {
     pub(crate) file: ::std::option::Option<::aws_smithy_types::Blob>,
 }

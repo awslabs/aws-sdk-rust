@@ -30,9 +30,7 @@ impl RepositoryFilter {
 
 /// A builder for [`RepositoryFilter`](crate::types::RepositoryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryFilterBuilder {
     pub(crate) filter: ::std::option::Option<::std::string::String>,
     pub(crate) filter_type: ::std::option::Option<crate::types::RepositoryFilterType>,
@@ -58,10 +56,7 @@ impl RepositoryFilterBuilder {
         self
     }
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
-    pub fn set_filter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryFilterType>,
-    ) -> Self {
+    pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::RepositoryFilterType>) -> Self {
         self.filter_type = input;
         self
     }

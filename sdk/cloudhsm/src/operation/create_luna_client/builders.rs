@@ -10,10 +10,7 @@ impl CreateLunaClientInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_luna_client::CreateLunaClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_luna_client::CreateLunaClientError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_luna_client::CreateLunaClientError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_luna_client();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateLunaClientFluentBuilder {
         }
     }
     /// Access the CreateLunaClient as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_luna_client::builders::CreateLunaClientInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_luna_client::builders::CreateLunaClientInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateLunaClientFluentBuilder {
             crate::operation::create_luna_client::CreateLunaClient,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_luna_client::CreateLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_luna_client::CreateLunaClientError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateLunaClientFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateLunaClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_luna_client::CreateLunaClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_luna_client::CreateLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_luna_client::CreateLunaClientError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateLunaClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_luna_client::CreateLunaClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_luna_client::CreateLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_luna_client::CreateLunaClientError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateLunaClientFluentBuilder {
             crate::operation::create_luna_client::CreateLunaClient,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_luna_client::CreateLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_luna_client::CreateLunaClientError>,
     > {
         self.customize_middleware().await
     }

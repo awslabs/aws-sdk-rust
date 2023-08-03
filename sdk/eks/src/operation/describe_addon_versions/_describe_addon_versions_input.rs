@@ -61,18 +61,14 @@ impl DescribeAddonVersionsInput {
 }
 impl DescribeAddonVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder {
         crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsInputBuilder {
     pub(crate) kubernetes_version: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -84,18 +80,12 @@ pub struct DescribeAddonVersionsInputBuilder {
 }
 impl DescribeAddonVersionsInputBuilder {
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn kubernetes_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kubernetes_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kubernetes_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn set_kubernetes_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kubernetes_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kubernetes_version = input;
         self
     }
@@ -163,10 +153,7 @@ impl DescribeAddonVersionsInputBuilder {
         self
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }
@@ -186,10 +173,7 @@ impl DescribeAddonVersionsInputBuilder {
         self
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn set_publishers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_publishers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.publishers = input;
         self
     }
@@ -209,10 +193,7 @@ impl DescribeAddonVersionsInputBuilder {
         self
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.owners = input;
         self
     }
@@ -223,20 +204,16 @@ impl DescribeAddonVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addon_versions::DescribeAddonVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_addon_versions::DescribeAddonVersionsInput {
-                kubernetes_version: self.kubernetes_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                addon_name: self.addon_name,
-                types: self.types,
-                publishers: self.publishers,
-                owners: self.owners,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_addon_versions::DescribeAddonVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_addon_versions::DescribeAddonVersionsInput {
+            kubernetes_version: self.kubernetes_version,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            addon_name: self.addon_name,
+            types: self.types,
+            publishers: self.publishers,
+            owners: self.owners,
+        })
     }
 }

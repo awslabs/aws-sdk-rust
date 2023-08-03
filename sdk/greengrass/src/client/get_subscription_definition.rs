@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::name): The name of the definition.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetSubscriptionDefinitionError>`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionError)
-    pub fn get_subscription_definition(&self) -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder{
+    pub fn get_subscription_definition(&self) -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder {
         crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

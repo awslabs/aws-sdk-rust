@@ -29,16 +29,14 @@ impl DisassociateGlobalReplicationGroupInput {
 }
 impl DisassociateGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateGlobalReplicationGroupInput`](crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupInputBuilder {
         crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateGlobalReplicationGroupInput`](crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisassociateGlobalReplicationGroupInputBuilder {
 }
 impl DisassociateGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl DisassociateGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -86,18 +72,12 @@ impl DisassociateGlobalReplicationGroupInputBuilder {
         &self.replication_group_id
     }
     /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
-    pub fn replication_group_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
-    pub fn set_replication_group_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_region = input;
         self
     }
@@ -106,16 +86,18 @@ impl DisassociateGlobalReplicationGroupInputBuilder {
         &self.replication_group_region
     }
     /// Consumes the builder and constructs a [`DisassociateGlobalReplicationGroupInput`](crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput {
-                global_replication_group_id: self.global_replication_group_id
-                ,
-                replication_group_id: self.replication_group_id
-                ,
-                replication_group_region: self.replication_group_region
-                ,
-            }
+                global_replication_group_id: self.global_replication_group_id,
+                replication_group_id: self.replication_group_id,
+                replication_group_region: self.replication_group_region,
+            },
         )
     }
 }

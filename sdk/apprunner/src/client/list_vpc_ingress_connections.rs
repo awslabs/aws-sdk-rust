@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`vpc_ingress_connection_summary_list(Option<Vec<VpcIngressConnectionSummary>>)`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput::vpc_ingress_connection_summary_list): <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListVpcIngressConnectionsError>`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError)
-    pub fn list_vpc_ingress_connections(&self) -> crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsFluentBuilder{
+    pub fn list_vpc_ingress_connections(&self) -> crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsFluentBuilder {
         crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

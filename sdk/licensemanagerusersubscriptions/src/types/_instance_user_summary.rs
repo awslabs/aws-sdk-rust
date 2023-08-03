@@ -72,9 +72,7 @@ impl InstanceUserSummary {
 
 /// A builder for [`InstanceUserSummary`](crate::types::InstanceUserSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceUserSummaryBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl InstanceUserSummaryBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -146,18 +141,12 @@ impl InstanceUserSummaryBuilder {
         &self.status
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -180,18 +169,12 @@ impl InstanceUserSummaryBuilder {
         &self.domain
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn association_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn set_association_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_date = input;
         self
     }
@@ -200,18 +183,12 @@ impl InstanceUserSummaryBuilder {
         &self.association_date
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn disassociation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disassociation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disassociation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn set_disassociation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disassociation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disassociation_date = input;
         self
     }

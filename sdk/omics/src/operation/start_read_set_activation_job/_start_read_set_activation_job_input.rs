@@ -11,8 +11,7 @@ pub struct StartReadSetActivationJobInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The job's source files.</p>
     #[doc(hidden)]
-    pub sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>,
 }
 impl StartReadSetActivationJobInput {
     /// <p>The read set's sequence store ID.</p>
@@ -24,44 +23,33 @@ impl StartReadSetActivationJobInput {
         self.client_token.as_deref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StartReadSetActivationJobSourceItem]> {
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::StartReadSetActivationJobSourceItem]> {
         self.sources.as_deref()
     }
 }
 impl StartReadSetActivationJobInput {
     /// Creates a new builder-style object to manufacture [`StartReadSetActivationJobInput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput).
-    pub fn builder() -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder{
+    pub fn builder() -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder {
         crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReadSetActivationJobInput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>,
 }
 impl StartReadSetActivationJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -95,20 +83,12 @@ impl StartReadSetActivationJobInputBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>,
-        >,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>
-    {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`StartReadSetActivationJobInput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput).
@@ -118,12 +98,10 @@ impl StartReadSetActivationJobInputBuilder {
         crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput {
-                sequence_store_id: self.sequence_store_id,
-                client_token: self.client_token,
-                sources: self.sources,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_read_set_activation_job::StartReadSetActivationJobInput {
+            sequence_store_id: self.sequence_store_id,
+            client_token: self.client_token,
+            sources: self.sources,
+        })
     }
 }

@@ -29,16 +29,14 @@ impl ListApplicationInstanceNodeInstancesInput {
 }
 impl ListApplicationInstanceNodeInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstanceNodeInstancesInput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput).
-    pub fn builder() -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesInputBuilder{
+    pub fn builder() -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesInputBuilder {
         crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationInstanceNodeInstancesInput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationInstanceNodeInstancesInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListApplicationInstanceNodeInstancesInputBuilder {
 }
 impl ListApplicationInstanceNodeInstancesInputBuilder {
     /// <p>The node instances' application instance ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node instances' application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_instance_id = input;
         self
     }
@@ -94,17 +86,18 @@ impl ListApplicationInstanceNodeInstancesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationInstanceNodeInstancesInput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput {
-                application_instance_id: self.application_instance_id
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                application_instance_id: self.application_instance_id,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }

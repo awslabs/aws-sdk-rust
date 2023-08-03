@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeregisterInstancesFromLoadBalancerOutput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput) with field(s):
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput::instances): <p>The remaining instances registered with the load balancer.</p>
     /// - On failure, responds with [`SdkError<DeregisterInstancesFromLoadBalancerError>`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError)
-    pub fn deregister_instances_from_load_balancer(&self) -> crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder{
-        crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::new(self.handle.clone())
+    pub fn deregister_instances_from_load_balancer(
+        &self,
+    ) -> crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder {
+        crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

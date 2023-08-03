@@ -9,10 +9,7 @@ pub fn ser_associate_delegation_signer_to_domain_input(
     if let Some(var_2) = &input.signing_attributes {
         #[allow(unused_mut)]
         let mut object_3 = object.key("SigningAttributes").start_object();
-        crate::protocol_serde::shape_dnssec_signing_attributes::ser_dnssec_signing_attributes(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_dnssec_signing_attributes::ser_dnssec_signing_attributes(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

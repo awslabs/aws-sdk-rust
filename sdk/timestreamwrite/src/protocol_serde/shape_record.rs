@@ -42,10 +42,7 @@ pub fn ser_record(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_measure_value::ser_measure_value(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_measure_value::ser_measure_value(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resource_types(Option<Vec<ServiceNameAndResourceType>>)`](crate::operation::list_resource_types::ListResourceTypesOutput::resource_types): <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_types::ListResourceTypesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<ListResourceTypesError>`](crate::operation::list_resource_types::ListResourceTypesError)
-    pub fn list_resource_types(
-        &self,
-    ) -> crate::operation::list_resource_types::builders::ListResourceTypesFluentBuilder {
-        crate::operation::list_resource_types::builders::ListResourceTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_types(&self) -> crate::operation::list_resource_types::builders::ListResourceTypesFluentBuilder {
+        crate::operation::list_resource_types::builders::ListResourceTypesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStackInstancesOutput {
 }
 impl ListStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesOutput`](crate::operation::list_stack_instances::ListStackInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stack_instances::builders::ListStackInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::list_stack_instances::builders::ListStackInstancesOutputBuilder {
         crate::operation::list_stack_instances::builders::ListStackInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackInstancesOutput`](crate::operation::list_stack_instances::ListStackInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackInstancesOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListStackInstancesOutputBuilder {
         self
     }
     /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>> {
         &self.summaries
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>

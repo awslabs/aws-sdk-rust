@@ -22,18 +22,14 @@ impl AssociateUserSettingsInput {
 }
 impl AssociateUserSettingsInput {
     /// Creates a new builder-style object to manufacture [`AssociateUserSettingsInput`](crate::operation::associate_user_settings::AssociateUserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::associate_user_settings::builders::AssociateUserSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_user_settings::builders::AssociateUserSettingsInputBuilder {
         crate::operation::associate_user_settings::builders::AssociateUserSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateUserSettingsInput`](crate::operation::associate_user_settings::AssociateUserSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl AssociateUserSettingsInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_settings_arn = input;
         self
     }
@@ -76,15 +66,11 @@ impl AssociateUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateUserSettingsInput`](crate::operation::associate_user_settings::AssociateUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_user_settings::AssociateUserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_user_settings::AssociateUserSettingsInput {
-                portal_arn: self.portal_arn,
-                user_settings_arn: self.user_settings_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_user_settings::AssociateUserSettingsInput {
+            portal_arn: self.portal_arn,
+            user_settings_arn: self.user_settings_arn,
+        })
     }
 }

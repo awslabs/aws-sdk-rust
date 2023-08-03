@@ -36,17 +36,13 @@ impl ::std::fmt::Display for FromEmailAddressNotVerifiedException {
     }
 }
 impl ::std::error::Error for FromEmailAddressNotVerifiedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::FromEmailAddressNotVerifiedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::FromEmailAddressNotVerifiedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FromEmailAddressNotVerifiedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FromEmailAddressNotVerifiedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -60,9 +56,7 @@ impl FromEmailAddressNotVerifiedException {
 
 /// A builder for [`FromEmailAddressNotVerifiedException`](crate::types::error::FromEmailAddressNotVerifiedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FromEmailAddressNotVerifiedExceptionBuilder {
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -70,18 +64,12 @@ pub struct FromEmailAddressNotVerifiedExceptionBuilder {
 }
 impl FromEmailAddressNotVerifiedExceptionBuilder {
     /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
-    pub fn from_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
-    pub fn set_from_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_email_address = input;
         self
     }
@@ -110,10 +98,7 @@ impl FromEmailAddressNotVerifiedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

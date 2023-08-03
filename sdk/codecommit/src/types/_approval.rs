@@ -30,9 +30,7 @@ impl Approval {
 
 /// A builder for [`Approval`](crate::types::Approval).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) approval_state: ::std::option::Option<crate::types::ApprovalState>,
@@ -58,10 +56,7 @@ impl ApprovalBuilder {
         self
     }
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
-    pub fn set_approval_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalState>,
-    ) -> Self {
+    pub fn set_approval_state(mut self, input: ::std::option::Option<crate::types::ApprovalState>) -> Self {
         self.approval_state = input;
         self
     }

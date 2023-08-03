@@ -6,17 +6,11 @@
 pub struct AwsAthenaWorkGroupConfigurationDetails {
     /// <p> The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
     #[doc(hidden)]
-    pub result_configuration: ::std::option::Option<
-        crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails,
-    >,
+    pub result_configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>,
 }
 impl AwsAthenaWorkGroupConfigurationDetails {
     /// <p> The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
-    pub fn result_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails,
-    > {
+    pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails> {
         self.result_configuration.as_ref()
     }
 }
@@ -29,39 +23,26 @@ impl AwsAthenaWorkGroupConfigurationDetails {
 
 /// A builder for [`AwsAthenaWorkGroupConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAthenaWorkGroupConfigurationDetailsBuilder {
-    pub(crate) result_configuration: ::std::option::Option<
-        crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails,
-    >,
+    pub(crate) result_configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>,
 }
 impl AwsAthenaWorkGroupConfigurationDetailsBuilder {
     /// <p> The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
-    pub fn result_configuration(
-        mut self,
-        input: crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails,
-    ) -> Self {
+    pub fn result_configuration(mut self, input: crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails) -> Self {
         self.result_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
     pub fn set_result_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>,
     ) -> Self {
         self.result_configuration = input;
         self
     }
     /// <p> The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
-    pub fn get_result_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails,
-    > {
+    pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails> {
         &self.result_configuration
     }
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationDetails).

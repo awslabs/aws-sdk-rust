@@ -37,17 +37,14 @@ impl DeleteMethodResponseInput {
 }
 impl DeleteMethodResponseInput {
     /// Creates a new builder-style object to manufacture [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
-    pub fn builder(
-    ) -> crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder {
+    pub fn builder() -> crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder {
         crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMethodResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -114,17 +111,13 @@ impl DeleteMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_method_response::DeleteMethodResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_method_response::DeleteMethodResponseInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-                status_code: self.status_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_method_response::DeleteMethodResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_method_response::DeleteMethodResponseInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+            status_code: self.status_code,
+        })
     }
 }

@@ -29,16 +29,14 @@ impl DisassociateUserFromPermissionGroupInput {
 }
 impl DisassociateUserFromPermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
-    pub fn builder() -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder {
         crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisassociateUserFromPermissionGroupInputBuilder {
 }
 impl DisassociateUserFromPermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_group_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput {
-                permission_group_id: self.permission_group_id
-                ,
-                user_id: self.user_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                permission_group_id: self.permission_group_id,
+                user_id: self.user_id,
+                client_token: self.client_token,
+            },
         )
     }
 }

@@ -30,9 +30,7 @@ impl AudioLogSetting {
 
 /// A builder for [`AudioLogSetting`](crate::types::AudioLogSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioLogSettingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<crate::types::AudioLogDestination>,
@@ -58,10 +56,7 @@ impl AudioLogSettingBuilder {
         self
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioLogDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::AudioLogDestination>) -> Self {
         self.destination = input;
         self
     }

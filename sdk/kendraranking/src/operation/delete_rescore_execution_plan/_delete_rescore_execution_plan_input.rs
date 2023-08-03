@@ -15,16 +15,14 @@ impl DeleteRescoreExecutionPlanInput {
 }
 impl DeleteRescoreExecutionPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteRescoreExecutionPlanInput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput).
-    pub fn builder() -> crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder{
+    pub fn builder() -> crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder {
         crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRescoreExecutionPlanInput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRescoreExecutionPlanInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteRescoreExecutionPlanInputBuilder {
         crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput { id: self.id })
     }
 }

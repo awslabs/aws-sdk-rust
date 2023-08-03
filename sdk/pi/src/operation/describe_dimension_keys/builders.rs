@@ -39,10 +39,7 @@ impl DescribeDimensionKeysFluentBuilder {
         }
     }
     /// Access the DescribeDimensionKeys as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeDimensionKeysFluentBuilder {
             crate::operation::describe_dimension_keys::DescribeDimensionKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeDimensionKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeDimensionKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeDimensionKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +107,15 @@ impl DescribeDimensionKeysFluentBuilder {
             crate::operation::describe_dimension_keys::DescribeDimensionKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator {
-        crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator {
+        crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
@@ -150,10 +131,7 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
@@ -190,10 +168,7 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -210,10 +185,7 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -298,10 +270,7 @@ impl DescribeDimensionKeysFluentBuilder {
         self
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionGroup>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::DimensionGroup>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
@@ -314,25 +283,17 @@ impl DescribeDimensionKeysFluentBuilder {
     /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
     ///
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-    pub fn additional_metrics(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_metrics(input.into());
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-    pub fn set_additional_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_metrics(input);
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-    pub fn get_additional_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_metrics()
     }
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
@@ -341,10 +302,7 @@ impl DescribeDimensionKeysFluentBuilder {
         self
     }
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
-    pub fn set_partition_by(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionGroup>,
-    ) -> Self {
+    pub fn set_partition_by(mut self, input: ::std::option::Option<crate::types::DimensionGroup>) -> Self {
         self.inner = self.inner.set_partition_by(input);
         self
     }
@@ -361,11 +319,7 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k.into(), v.into());
         self
     }
@@ -374,12 +328,7 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -388,11 +337,7 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_filter()
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>

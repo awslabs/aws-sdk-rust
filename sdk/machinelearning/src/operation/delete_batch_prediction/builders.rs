@@ -39,10 +39,7 @@ impl DeleteBatchPredictionFluentBuilder {
         }
     }
     /// Access the DeleteBatchPrediction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteBatchPredictionFluentBuilder {
             crate::operation::delete_batch_prediction::DeleteBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction::DeleteBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction::DeleteBatchPredictionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteBatchPredictionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_batch_prediction::DeleteBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction::DeleteBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction::DeleteBatchPredictionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_batch_prediction::DeleteBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction::DeleteBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction::DeleteBatchPredictionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteBatchPredictionFluentBuilder {
             crate::operation::delete_batch_prediction::DeleteBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction::DeleteBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction::DeleteBatchPredictionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
     }

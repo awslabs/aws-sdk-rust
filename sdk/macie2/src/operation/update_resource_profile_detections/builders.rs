@@ -5,16 +5,16 @@ pub use crate::operation::update_resource_profile_detections::_update_resource_p
 
 impl UpdateResourceProfileDetectionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_resource_profile_detections();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateResourceProfileDetectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceProfileDetectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsInputBuilder,
+    inner: crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsInputBuilder,
 }
 impl UpdateResourceProfileDetectionsFluentBuilder {
     /// Creates a new `UpdateResourceProfileDetections`.
@@ -37,15 +37,20 @@ impl UpdateResourceProfileDetectionsFluentBuilder {
         }
     }
     /// Access the UpdateResourceProfileDetections as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetections, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_resource_profile_detections::UpdateResourceProfileDetections,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateResourceProfileDetectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateResourceProfileDetectionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetections, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_resource_profile_detections::UpdateResourceProfileDetections,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
@@ -113,25 +128,17 @@ impl UpdateResourceProfileDetectionsFluentBuilder {
     /// To override the contents of this collection use [`set_suppress_data_identifiers`](Self::set_suppress_data_identifiers).
     ///
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub fn suppress_data_identifiers(
-        mut self,
-        input: crate::types::SuppressDataIdentifier,
-    ) -> Self {
+    pub fn suppress_data_identifiers(mut self, input: crate::types::SuppressDataIdentifier) -> Self {
         self.inner = self.inner.suppress_data_identifiers(input);
         self
     }
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub fn set_suppress_data_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>,
-    ) -> Self {
+    pub fn set_suppress_data_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>) -> Self {
         self.inner = self.inner.set_suppress_data_identifiers(input);
         self
     }
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub fn get_suppress_data_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>> {
+    pub fn get_suppress_data_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>> {
         self.inner.get_suppress_data_identifiers()
     }
 }

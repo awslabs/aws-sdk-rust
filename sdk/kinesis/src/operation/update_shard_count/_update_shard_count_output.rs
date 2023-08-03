@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateShardCountOutput {
 }
 impl UpdateShardCountOutput {
     /// Creates a new builder-style object to manufacture [`UpdateShardCountOutput`](crate::operation::update_shard_count::UpdateShardCountOutput).
-    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountOutputBuilder {
         crate::operation::update_shard_count::builders::UpdateShardCountOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateShardCountOutput`](crate::operation::update_shard_count::UpdateShardCountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateShardCountOutputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_shard_count: ::std::option::Option<i32>,

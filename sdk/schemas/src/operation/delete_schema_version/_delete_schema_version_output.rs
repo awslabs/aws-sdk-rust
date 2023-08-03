@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSchemaVersionOutput {
 }
 impl DeleteSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaVersionOutput`](crate::operation::delete_schema_version::DeleteSchemaVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_schema_version::builders::DeleteSchemaVersionOutputBuilder {
-        crate::operation::delete_schema_version::builders::DeleteSchemaVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_schema_version::builders::DeleteSchemaVersionOutputBuilder {
+        crate::operation::delete_schema_version::builders::DeleteSchemaVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSchemaVersionOutput`](crate::operation::delete_schema_version::DeleteSchemaVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaVersionOutputBuilder {
     _request_id: Option<String>,
 }

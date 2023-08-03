@@ -38,9 +38,7 @@ impl DateTimeDatasetParameter {
         self.time_granularity.as_ref()
     }
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
-    pub fn default_values(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DateTimeDatasetParameterDefaultValues> {
+    pub fn default_values(&self) -> ::std::option::Option<&crate::types::DateTimeDatasetParameterDefaultValues> {
         self.default_values.as_ref()
     }
 }
@@ -53,16 +51,13 @@ impl DateTimeDatasetParameter {
 
 /// A builder for [`DateTimeDatasetParameter`](crate::types::DateTimeDatasetParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameterBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
-    pub(crate) default_values:
-        ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
+    pub(crate) default_values: ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
 }
 impl DateTimeDatasetParameterBuilder {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
@@ -99,17 +94,12 @@ impl DateTimeDatasetParameterBuilder {
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn set_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetParameterValueType>,
-    ) -> Self {
+    pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::DatasetParameterValueType>) -> Self {
         self.value_type = input;
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn get_value_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetParameterValueType> {
+    pub fn get_value_type(&self) -> &::std::option::Option<crate::types::DatasetParameterValueType> {
         &self.value_type
     }
     /// <p>The time granularity of the date time parameter.</p>
@@ -118,10 +108,7 @@ impl DateTimeDatasetParameterBuilder {
         self
     }
     /// <p>The time granularity of the date time parameter.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.time_granularity = input;
         self
     }
@@ -130,25 +117,17 @@ impl DateTimeDatasetParameterBuilder {
         &self.time_granularity
     }
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
-    pub fn default_values(
-        mut self,
-        input: crate::types::DateTimeDatasetParameterDefaultValues,
-    ) -> Self {
+    pub fn default_values(mut self, input: crate::types::DateTimeDatasetParameterDefaultValues) -> Self {
         self.default_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
-    pub fn set_default_values(
-        mut self,
-        input: ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
-    ) -> Self {
+    pub fn set_default_values(mut self, input: ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>) -> Self {
         self.default_values = input;
         self
     }
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
-    pub fn get_default_values(
-        &self,
-    ) -> &::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues> {
+    pub fn get_default_values(&self) -> &::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues> {
         &self.default_values
     }
     /// Consumes the builder and constructs a [`DateTimeDatasetParameter`](crate::types::DateTimeDatasetParameter).

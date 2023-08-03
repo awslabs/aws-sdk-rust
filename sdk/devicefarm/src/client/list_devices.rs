@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`devices(Option<Vec<Device>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>Information about the devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
-    pub fn list_devices(
-        &self,
-    ) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
+    pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
         crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
     }
 }

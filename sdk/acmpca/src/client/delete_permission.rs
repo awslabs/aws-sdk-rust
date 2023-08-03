@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`source_account(impl ::std::convert::Into<String>)`](crate::operation::delete_permission::builders::DeletePermissionFluentBuilder::source_account) / [`set_source_account(Option<String>)`](crate::operation::delete_permission::builders::DeletePermissionFluentBuilder::set_source_account): <p>The Amazon Web Services account that calls this action.</p>
     /// - On success, responds with [`DeletePermissionOutput`](crate::operation::delete_permission::DeletePermissionOutput)
     /// - On failure, responds with [`SdkError<DeletePermissionError>`](crate::operation::delete_permission::DeletePermissionError)
-    pub fn delete_permission(
-        &self,
-    ) -> crate::operation::delete_permission::builders::DeletePermissionFluentBuilder {
-        crate::operation::delete_permission::builders::DeletePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_permission(&self) -> crate::operation::delete_permission::builders::DeletePermissionFluentBuilder {
+        crate::operation::delete_permission::builders::DeletePermissionFluentBuilder::new(self.handle.clone())
     }
 }

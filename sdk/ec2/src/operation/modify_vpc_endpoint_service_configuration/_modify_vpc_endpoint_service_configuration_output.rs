@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpcEndpointServiceConfiguration
 }
 impl ModifyVpcEndpointServiceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServiceConfigurationOutput`](crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationOutputBuilder {
         crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointServiceConfigurationOutput`](crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServiceConfigurationOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl ModifyVpcEndpointServiceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServiceConfigurationOutput`](crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput).
-    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput{
+    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput {
         crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

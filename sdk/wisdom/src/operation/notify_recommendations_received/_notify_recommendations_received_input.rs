@@ -29,16 +29,14 @@ impl NotifyRecommendationsReceivedInput {
 }
 impl NotifyRecommendationsReceivedInput {
     /// Creates a new builder-style object to manufacture [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
-    pub fn builder() -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder{
+    pub fn builder() -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder {
         crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -78,27 +76,19 @@ impl NotifyRecommendationsReceivedInputBuilder {
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
         v.push(input.into());
         self.recommendation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recommendation_ids = input;
         self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn get_recommendation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
@@ -108,12 +98,10 @@ impl NotifyRecommendationsReceivedInputBuilder {
         crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
-                assistant_id: self.assistant_id,
-                session_id: self.session_id,
-                recommendation_ids: self.recommendation_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
+            assistant_id: self.assistant_id,
+            session_id: self.session_id,
+            recommendation_ids: self.recommendation_ids,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl ListEntityPersonasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_entity_personas::ListEntityPersonasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entity_personas::ListEntityPersonasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entity_personas::ListEntityPersonasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_entity_personas();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListEntityPersonasFluentBuilder {
         }
     }
     /// Access the ListEntityPersonas as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListEntityPersonasFluentBuilder {
             crate::operation::list_entity_personas::ListEntityPersonas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entity_personas::ListEntityPersonasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entity_personas::ListEntityPersonasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListEntityPersonasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListEntityPersonasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entity_personas::ListEntityPersonasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entity_personas::ListEntityPersonasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entity_personas::ListEntityPersonasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListEntityPersonasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entity_personas::ListEntityPersonasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entity_personas::ListEntityPersonasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entity_personas::ListEntityPersonasError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListEntityPersonasFluentBuilder {
             crate::operation::list_entity_personas::ListEntityPersonas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entity_personas::ListEntityPersonasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entity_personas::ListEntityPersonasError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_entity_personas::paginator::ListEntityPersonasPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_entity_personas::paginator::ListEntityPersonasPaginator {
-        crate::operation::list_entity_personas::paginator::ListEntityPersonasPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_entity_personas::paginator::ListEntityPersonasPaginator {
+        crate::operation::list_entity_personas::paginator::ListEntityPersonasPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

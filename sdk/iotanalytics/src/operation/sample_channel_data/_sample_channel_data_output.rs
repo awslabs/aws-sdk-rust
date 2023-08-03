@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SampleChannelDataOutput {
 }
 impl SampleChannelDataOutput {
     /// Creates a new builder-style object to manufacture [`SampleChannelDataOutput`](crate::operation::sample_channel_data::SampleChannelDataOutput).
-    pub fn builder(
-    ) -> crate::operation::sample_channel_data::builders::SampleChannelDataOutputBuilder {
+    pub fn builder() -> crate::operation::sample_channel_data::builders::SampleChannelDataOutputBuilder {
         crate::operation::sample_channel_data::builders::SampleChannelDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`SampleChannelDataOutput`](crate::operation::sample_channel_data::SampleChannelDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampleChannelDataOutputBuilder {
     pub(crate) payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl SampleChannelDataOutputBuilder {
         self
     }
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    pub fn set_payloads(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.payloads = input;
         self
     }
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    pub fn get_payloads(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.payloads
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

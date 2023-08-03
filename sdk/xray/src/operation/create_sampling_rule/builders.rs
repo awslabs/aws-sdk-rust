@@ -10,10 +10,7 @@ impl CreateSamplingRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_sampling_rule::CreateSamplingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sampling_rule::CreateSamplingRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sampling_rule::CreateSamplingRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_sampling_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateSamplingRuleFluentBuilder {
         }
     }
     /// Access the CreateSamplingRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_sampling_rule::builders::CreateSamplingRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_sampling_rule::builders::CreateSamplingRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateSamplingRuleFluentBuilder {
             crate::operation::create_sampling_rule::CreateSamplingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sampling_rule::CreateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sampling_rule::CreateSamplingRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateSamplingRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateSamplingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sampling_rule::CreateSamplingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sampling_rule::CreateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sampling_rule::CreateSamplingRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateSamplingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sampling_rule::CreateSamplingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sampling_rule::CreateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sampling_rule::CreateSamplingRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateSamplingRuleFluentBuilder {
             crate::operation::create_sampling_rule::CreateSamplingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sampling_rule::CreateSamplingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sampling_rule::CreateSamplingRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl CreateSamplingRuleFluentBuilder {
         self
     }
     /// <p>The rule definition.</p>
-    pub fn set_sampling_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingRule>,
-    ) -> Self {
+    pub fn set_sampling_rule(mut self, input: ::std::option::Option<crate::types::SamplingRule>) -> Self {
         self.inner = self.inner.set_sampling_rule(input);
         self
     }
@@ -167,10 +148,7 @@ impl CreateSamplingRuleFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

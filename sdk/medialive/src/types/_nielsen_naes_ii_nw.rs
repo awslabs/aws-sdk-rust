@@ -37,9 +37,7 @@ impl NielsenNaesIiNw {
 
 /// A builder for [`NielsenNaesIiNw`](crate::types::NielsenNaesIiNw).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NielsenNaesIiNwBuilder {
     pub(crate) check_digit_string: ::std::option::Option<::std::string::String>,
     pub(crate) sid: ::std::option::Option<f64>,
@@ -47,18 +45,12 @@ pub struct NielsenNaesIiNwBuilder {
 }
 impl NielsenNaesIiNwBuilder {
     /// Enter the check digit string for the watermark
-    pub fn check_digit_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn check_digit_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_digit_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Enter the check digit string for the watermark
-    pub fn set_check_digit_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_check_digit_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_digit_string = input;
         self
     }
@@ -86,10 +78,7 @@ impl NielsenNaesIiNwBuilder {
         self
     }
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
-    pub fn set_timezone(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenWatermarkTimezones>,
-    ) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<crate::types::NielsenWatermarkTimezones>) -> Self {
         self.timezone = input;
         self
     }

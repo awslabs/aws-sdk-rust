@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetLicenseManagerReportGeneratorOutpu
 }
 impl GetLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorOutput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorOutputBuilder{
+    pub fn builder() -> crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorOutputBuilder {
         crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLicenseManagerReportGeneratorOutput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorOutputBuilder {
     pub(crate) report_generator: ::std::option::Option<crate::types::ReportGenerator>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetLicenseManagerReportGeneratorOutputBuilder {
         self
     }
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    pub fn set_report_generator(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGenerator>,
-    ) -> Self {
+    pub fn set_report_generator(mut self, input: ::std::option::Option<crate::types::ReportGenerator>) -> Self {
         self.report_generator = input;
         self
     }
@@ -63,10 +58,9 @@ impl GetLicenseManagerReportGeneratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLicenseManagerReportGeneratorOutput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput).
-    pub fn build(self) -> crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput{
+    pub fn build(self) -> crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput {
         crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput {
-            report_generator: self.report_generator
-            ,
+            report_generator: self.report_generator,
             _request_id: self._request_id,
         }
     }

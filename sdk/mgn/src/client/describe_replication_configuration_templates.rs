@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`items(Option<Vec<ReplicationConfigurationTemplate>>)`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput::items): <p>Request to describe Replication Configuration template by items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput::next_token): <p>Request to describe Replication Configuration template by next token.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationTemplatesError>`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError)
-    pub fn describe_replication_configuration_templates(&self) -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder{
-        crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::new(self.handle.clone())
+    pub fn describe_replication_configuration_templates(
+        &self,
+    ) -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder {
+        crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

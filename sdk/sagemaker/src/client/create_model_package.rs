@@ -24,11 +24,7 @@ impl super::Client {
     /// - On success, responds with [`CreateModelPackageOutput`](crate::operation::create_model_package::CreateModelPackageOutput) with field(s):
     ///   - [`model_package_arn(Option<String>)`](crate::operation::create_model_package::CreateModelPackageOutput::model_package_arn): <p>The Amazon Resource Name (ARN) of the new model package.</p>
     /// - On failure, responds with [`SdkError<CreateModelPackageError>`](crate::operation::create_model_package::CreateModelPackageError)
-    pub fn create_model_package(
-        &self,
-    ) -> crate::operation::create_model_package::builders::CreateModelPackageFluentBuilder {
-        crate::operation::create_model_package::builders::CreateModelPackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_model_package(&self) -> crate::operation::create_model_package::builders::CreateModelPackageFluentBuilder {
+        crate::operation::create_model_package::builders::CreateModelPackageFluentBuilder::new(self.handle.clone())
     }
 }

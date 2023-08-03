@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationOutput`](crate::operation::create_location::CreateLocationOutput) with field(s):
     ///   - [`location(Option<LocationModel>)`](crate::operation::create_location::CreateLocationOutput::location): <p>The details of the custom location you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationError>`](crate::operation::create_location::CreateLocationError)
-    pub fn create_location(
-        &self,
-    ) -> crate::operation::create_location::builders::CreateLocationFluentBuilder {
-        crate::operation::create_location::builders::CreateLocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_location(&self) -> crate::operation::create_location::builders::CreateLocationFluentBuilder {
+        crate::operation::create_location::builders::CreateLocationFluentBuilder::new(self.handle.clone())
     }
 }

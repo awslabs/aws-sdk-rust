@@ -26,7 +26,7 @@ impl GetResourceRequestStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceRequestStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder,
+    inner: crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder,
 }
 impl GetResourceRequestStatusFluentBuilder {
     /// Creates a new `GetResourceRequestStatus`.
@@ -37,7 +37,7 @@ impl GetResourceRequestStatusFluentBuilder {
         }
     }
     /// Access the GetResourceRequestStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetResourceRequestStatusFluentBuilder {
             crate::operation::get_resource_request_status::GetResourceRequestStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_request_status::GetResourceRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_request_status::GetResourceRequestStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetResourceRequestStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetResourceRequestStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_request_status::GetResourceRequestStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_request_status::GetResourceRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_request_status::GetResourceRequestStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetResourceRequestStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_request_status::GetResourceRequestStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_request_status::GetResourceRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_request_status::GetResourceRequestStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,27 +105,19 @@ impl GetResourceRequestStatusFluentBuilder {
             crate::operation::get_resource_request_status::GetResourceRequestStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_request_status::GetResourceRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_request_status::GetResourceRequestStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_token(input.into());
         self
     }
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_token(input);
         self
     }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for PutMultiRegionAccessPointPolicyOutput
 }
 impl PutMultiRegionAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput).
-    pub fn builder() -> crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyOutputBuilder {
         crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyOutputBuilder {
     pub(crate) request_token_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutMultiRegionAccessPointPolicyOutputBuilder {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn request_token_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn set_request_token_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token_arn = input;
         self
     }
@@ -66,13 +58,9 @@ impl PutMultiRegionAccessPointPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyOutput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput {
         crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput {
-            request_token_arn: self.request_token_arn
-            ,
+            request_token_arn: self.request_token_arn,
             _request_id: self._request_id,
         }
     }

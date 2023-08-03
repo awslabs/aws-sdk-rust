@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePlaceIndexOutput {
 }
 impl DeletePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlaceIndexOutput`](crate::operation::delete_place_index::DeletePlaceIndexOutput).
-    pub fn builder() -> crate::operation::delete_place_index::builders::DeletePlaceIndexOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_place_index::builders::DeletePlaceIndexOutputBuilder {
         crate::operation::delete_place_index::builders::DeletePlaceIndexOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaceIndexOutput`](crate::operation::delete_place_index::DeletePlaceIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaceIndexOutputBuilder {
     _request_id: Option<String>,
 }

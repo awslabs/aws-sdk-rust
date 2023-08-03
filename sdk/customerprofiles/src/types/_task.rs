@@ -15,9 +15,7 @@ pub struct Task {
     pub source_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
     #[doc(hidden)]
-    pub task_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>,
-    >,
+    pub task_properties: ::std::option::Option<::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>>,
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
     #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::TaskType>,
@@ -38,9 +36,7 @@ impl Task {
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
     pub fn task_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>> {
         self.task_properties.as_ref()
     }
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
@@ -57,16 +53,12 @@ impl Task {
 
 /// A builder for [`Task`](crate::types::Task).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskBuilder {
     pub(crate) connector_operator: ::std::option::Option<crate::types::ConnectorOperator>,
     pub(crate) destination_field: ::std::option::Option<::std::string::String>,
     pub(crate) source_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) task_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>,
-    >,
+    pub(crate) task_properties: ::std::option::Option<::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>>,
     pub(crate) task_type: ::std::option::Option<crate::types::TaskType>,
 }
 impl TaskBuilder {
@@ -76,32 +68,21 @@ impl TaskBuilder {
         self
     }
     /// <p>The operation to be performed on the provided source fields.</p>
-    pub fn set_connector_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorOperator>,
-    ) -> Self {
+    pub fn set_connector_operator(mut self, input: ::std::option::Option<crate::types::ConnectorOperator>) -> Self {
         self.connector_operator = input;
         self
     }
     /// <p>The operation to be performed on the provided source fields.</p>
-    pub fn get_connector_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorOperator> {
+    pub fn get_connector_operator(&self) -> &::std::option::Option<crate::types::ConnectorOperator> {
         &self.connector_operator
     }
     /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
-    pub fn destination_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
-    pub fn set_destination_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_field = input;
         self
     }
@@ -114,27 +95,19 @@ impl TaskBuilder {
     /// To override the contents of this collection use [`set_source_fields`](Self::set_source_fields).
     ///
     /// <p>The source fields to which a particular task is applied.</p>
-    pub fn source_fields(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_fields.unwrap_or_default();
         v.push(input.into());
         self.source_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>The source fields to which a particular task is applied.</p>
-    pub fn set_source_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_fields = input;
         self
     }
     /// <p>The source fields to which a particular task is applied.</p>
-    pub fn get_source_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_fields
     }
     /// Adds a key-value pair to `task_properties`.
@@ -142,11 +115,7 @@ impl TaskBuilder {
     /// To override the contents of this collection use [`set_task_properties`](Self::set_task_properties).
     ///
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
-    pub fn task_properties(
-        mut self,
-        k: crate::types::OperatorPropertiesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_properties(mut self, k: crate::types::OperatorPropertiesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.task_properties.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.task_properties = ::std::option::Option::Some(hash_map);
@@ -155,12 +124,7 @@ impl TaskBuilder {
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
     pub fn set_task_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::OperatorPropertiesKeys,
-                ::std::string::String,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>>,
     ) -> Self {
         self.task_properties = input;
         self
@@ -168,9 +132,7 @@ impl TaskBuilder {
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
     pub fn get_task_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>> {
         &self.task_properties
     }
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>

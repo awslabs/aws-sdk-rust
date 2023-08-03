@@ -22,9 +22,7 @@ impl DeleteTestSetInput {
 
 /// A builder for [`DeleteTestSetInput`](crate::operation::delete_test_set::DeleteTestSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTestSetInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteTestSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTestSetInput`](crate::operation::delete_test_set::DeleteTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_test_set::DeleteTestSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_test_set::DeleteTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_test_set::DeleteTestSetInput {
             test_set_id: self.test_set_id,
         })

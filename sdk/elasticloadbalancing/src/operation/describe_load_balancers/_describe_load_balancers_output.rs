@@ -6,8 +6,7 @@
 pub struct DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
     #[doc(hidden)]
-    pub load_balancer_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
+    pub load_balancer_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeLoadBalancersOutput {
 }
 impl DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
-    pub fn load_balancer_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoadBalancerDescription]> {
+    pub fn load_balancer_descriptions(&self) -> ::std::option::Option<&[crate::types::LoadBalancerDescription]> {
         self.load_balancer_descriptions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
 }
 impl DescribeLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder {
         crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersOutputBuilder {
-    pub(crate) load_balancer_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
+    pub(crate) load_balancer_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,27 +48,19 @@ impl DescribeLoadBalancersOutputBuilder {
     /// To override the contents of this collection use [`set_load_balancer_descriptions`](Self::set_load_balancer_descriptions).
     ///
     /// <p>Information about the load balancers.</p>
-    pub fn load_balancer_descriptions(
-        mut self,
-        input: crate::types::LoadBalancerDescription,
-    ) -> Self {
+    pub fn load_balancer_descriptions(mut self, input: crate::types::LoadBalancerDescription) -> Self {
         let mut v = self.load_balancer_descriptions.unwrap_or_default();
         v.push(input);
         self.load_balancer_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the load balancers.</p>
-    pub fn set_load_balancer_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
-    ) -> Self {
+    pub fn set_load_balancer_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>) -> Self {
         self.load_balancer_descriptions = input;
         self
     }
     /// <p>Information about the load balancers.</p>
-    pub fn get_load_balancer_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>> {
+    pub fn get_load_balancer_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>> {
         &self.load_balancer_descriptions
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>

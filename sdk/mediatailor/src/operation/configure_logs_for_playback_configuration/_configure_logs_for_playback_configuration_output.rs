@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ConfigureLogsForPlaybackConfiguration
 }
 impl ConfigureLogsForPlaybackConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsForPlaybackConfigurationOutput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput).
-    pub fn builder() -> crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationOutputBuilder {
         crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfigureLogsForPlaybackConfigurationOutput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureLogsForPlaybackConfigurationOutputBuilder {
     pub(crate) percent_enabled: ::std::option::Option<i32>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
         &self.percent_enabled
     }
     /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the playback configuration.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_name = input;
         self
     }
@@ -88,13 +80,10 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationOutput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput).
-    pub fn build(self) -> crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput{
+    pub fn build(self) -> crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput {
         crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput {
-            percent_enabled: self.percent_enabled
-                .unwrap_or_default()
-            ,
-            playback_configuration_name: self.playback_configuration_name
-            ,
+            percent_enabled: self.percent_enabled.unwrap_or_default(),
+            playback_configuration_name: self.playback_configuration_name,
             _request_id: self._request_id,
         }
     }

@@ -29,17 +29,14 @@ impl ListBillingGroupsInput {
 }
 impl ListBillingGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder {
         crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,18 +72,12 @@ impl ListBillingGroupsInputBuilder {
         &self.max_results
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
-    pub fn name_prefix_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_prefix_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
-    pub fn set_name_prefix_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_prefix_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_prefix_filter = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListBillingGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_billing_groups::ListBillingGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_billing_groups::ListBillingGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                name_prefix_filter: self.name_prefix_filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_billing_groups::ListBillingGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_billing_groups::ListBillingGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            name_prefix_filter: self.name_prefix_filter,
+        })
     }
 }

@@ -34,9 +34,7 @@ impl ScalableTargetAction {
 
 /// A builder for [`ScalableTargetAction`](crate::types::ScalableTargetAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalableTargetActionBuilder {
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListTagsForVaultOutput`](crate::operation::list_tags_for_vault::ListTagsForVaultOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_for_vault::ListTagsForVaultOutput::tags): <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     /// - On failure, responds with [`SdkError<ListTagsForVaultError>`](crate::operation::list_tags_for_vault::ListTagsForVaultError)
-    pub fn list_tags_for_vault(
-        &self,
-    ) -> crate::operation::list_tags_for_vault::builders::ListTagsForVaultFluentBuilder {
-        crate::operation::list_tags_for_vault::builders::ListTagsForVaultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_vault(&self) -> crate::operation::list_tags_for_vault::builders::ListTagsForVaultFluentBuilder {
+        crate::operation::list_tags_for_vault::builders::ListTagsForVaultFluentBuilder::new(self.handle.clone())
     }
 }

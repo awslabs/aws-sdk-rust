@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateSiteAddressOutput {
 }
 impl UpdateSiteAddressOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteAddressOutput`](crate::operation::update_site_address::UpdateSiteAddressOutput).
-    pub fn builder(
-    ) -> crate::operation::update_site_address::builders::UpdateSiteAddressOutputBuilder {
+    pub fn builder() -> crate::operation::update_site_address::builders::UpdateSiteAddressOutputBuilder {
         crate::operation::update_site_address::builders::UpdateSiteAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSiteAddressOutput`](crate::operation::update_site_address::UpdateSiteAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSiteAddressOutputBuilder {
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,
     pub(crate) address: ::std::option::Option<crate::types::Address>,
@@ -51,10 +48,7 @@ impl UpdateSiteAddressOutputBuilder {
         self
     }
     /// <p> The type of the address. </p>
-    pub fn set_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressType>,
-    ) -> Self {
+    pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.address_type = input;
         self
     }

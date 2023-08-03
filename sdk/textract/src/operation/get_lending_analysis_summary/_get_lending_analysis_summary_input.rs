@@ -15,16 +15,14 @@ impl GetLendingAnalysisSummaryInput {
 }
 impl GetLendingAnalysisSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryInput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput).
-    pub fn builder() -> crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder{
+    pub fn builder() -> crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder {
         crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLendingAnalysisSummaryInput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisSummaryInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetLendingAnalysisSummaryInputBuilder {
         crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput { job_id: self.job_id })
     }
 }

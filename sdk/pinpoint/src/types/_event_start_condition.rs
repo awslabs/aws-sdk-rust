@@ -30,9 +30,7 @@ impl EventStartCondition {
 
 /// A builder for [`EventStartCondition`](crate::types::EventStartCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventStartConditionBuilder {
     pub(crate) event_filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl EventStartConditionBuilder {
         self
     }
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventFilter>,
-    ) -> Self {
+    pub fn set_event_filter(mut self, input: ::std::option::Option<crate::types::EventFilter>) -> Self {
         self.event_filter = input;
         self
     }

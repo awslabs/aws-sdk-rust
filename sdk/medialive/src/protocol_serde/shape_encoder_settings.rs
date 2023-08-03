@@ -9,10 +9,7 @@ pub fn ser_encoder_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_audio_description::ser_audio_description(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_audio_description::ser_audio_description(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_encoder_settings(
     if let Some(var_7) = &input.avail_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("availConfiguration").start_object();
-        crate::protocol_serde::shape_avail_configuration::ser_avail_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_avail_configuration::ser_avail_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.blackout_slate {
@@ -45,10 +39,7 @@ pub fn ser_encoder_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_caption_description::ser_caption_description(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_caption_description::ser_caption_description(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -57,19 +48,13 @@ pub fn ser_encoder_settings(
     if let Some(var_15) = &input.feature_activations {
         #[allow(unused_mut)]
         let mut object_16 = object.key("featureActivations").start_object();
-        crate::protocol_serde::shape_feature_activations::ser_feature_activations(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_feature_activations::ser_feature_activations(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.global_configuration {
         #[allow(unused_mut)]
         let mut object_18 = object.key("globalConfiguration").start_object();
-        crate::protocol_serde::shape_global_configuration::ser_global_configuration(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_global_configuration::ser_global_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.motion_graphics_configuration {
@@ -81,10 +66,7 @@ pub fn ser_encoder_settings(
     if let Some(var_21) = &input.nielsen_configuration {
         #[allow(unused_mut)]
         let mut object_22 = object.key("nielsenConfiguration").start_object();
-        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.output_groups {
@@ -93,10 +75,7 @@ pub fn ser_encoder_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_output_group::ser_output_group(
-                    &mut object_26,
-                    item_25,
-                )?;
+                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_26, item_25)?;
                 object_26.finish();
             }
         }
@@ -114,10 +93,7 @@ pub fn ser_encoder_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_video_description::ser_video_description(
-                    &mut object_32,
-                    item_31,
-                )?;
+                crate::protocol_serde::shape_video_description::ser_video_description(&mut object_32, item_31)?;
                 object_32.finish();
             }
         }
@@ -126,10 +102,7 @@ pub fn ser_encoder_settings(
     if let Some(var_33) = &input.thumbnail_configuration {
         #[allow(unused_mut)]
         let mut object_34 = object.key("thumbnailConfiguration").start_object();
-        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(&mut object_34, var_33)?;
         object_34.finish();
     }
     Ok(())
@@ -137,17 +110,9 @@ pub fn ser_encoder_settings(
 
 pub(crate) fn de_encoder_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EncoderSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EncoderSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -157,95 +122,75 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioDescriptions" => {
-                                builder = builder.set_audio_descriptions(
-                                    crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?
-                                );
-                            }
-                            "availBlanking" => {
-                                builder = builder.set_avail_blanking(
-                                    crate::protocol_serde::shape_avail_blanking::de_avail_blanking(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "availConfiguration" => {
-                                builder = builder.set_avail_configuration(
-                                    crate::protocol_serde::shape_avail_configuration::de_avail_configuration(tokens)?
-                                );
-                            }
-                            "blackoutSlate" => {
-                                builder = builder.set_blackout_slate(
-                                    crate::protocol_serde::shape_blackout_slate::de_blackout_slate(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "captionDescriptions" => {
-                                builder = builder.set_caption_descriptions(
-                                    crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?
-                                );
-                            }
-                            "featureActivations" => {
-                                builder = builder.set_feature_activations(
-                                    crate::protocol_serde::shape_feature_activations::de_feature_activations(tokens)?
-                                );
-                            }
-                            "globalConfiguration" => {
-                                builder = builder.set_global_configuration(
-                                    crate::protocol_serde::shape_global_configuration::de_global_configuration(tokens)?
-                                );
-                            }
-                            "motionGraphicsConfiguration" => {
-                                builder = builder.set_motion_graphics_configuration(
-                                    crate::protocol_serde::shape_motion_graphics_configuration::de_motion_graphics_configuration(tokens)?
-                                );
-                            }
-                            "nielsenConfiguration" => {
-                                builder = builder.set_nielsen_configuration(
-                                    crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?
-                                );
-                            }
-                            "outputGroups" => {
-                                builder = builder.set_output_groups(
-                                    crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?
-                                );
-                            }
-                            "timecodeConfig" => {
-                                builder = builder.set_timecode_config(
-                                    crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?
-                                );
-                            }
-                            "videoDescriptions" => {
-                                builder = builder.set_video_descriptions(
-                                    crate::protocol_serde::shape___list_of_video_description::de___list_of_video_description(tokens)?
-                                );
-                            }
-                            "thumbnailConfiguration" => {
-                                builder = builder.set_thumbnail_configuration(
-                                    crate::protocol_serde::shape_thumbnail_configuration::de_thumbnail_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioDescriptions" => {
+                            builder = builder.set_audio_descriptions(
+                                crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?,
+                            );
                         }
-                    }
+                        "availBlanking" => {
+                            builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(tokens)?);
+                        }
+                        "availConfiguration" => {
+                            builder =
+                                builder.set_avail_configuration(crate::protocol_serde::shape_avail_configuration::de_avail_configuration(tokens)?);
+                        }
+                        "blackoutSlate" => {
+                            builder = builder.set_blackout_slate(crate::protocol_serde::shape_blackout_slate::de_blackout_slate(tokens)?);
+                        }
+                        "captionDescriptions" => {
+                            builder = builder.set_caption_descriptions(
+                                crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?,
+                            );
+                        }
+                        "featureActivations" => {
+                            builder =
+                                builder.set_feature_activations(crate::protocol_serde::shape_feature_activations::de_feature_activations(tokens)?);
+                        }
+                        "globalConfiguration" => {
+                            builder =
+                                builder.set_global_configuration(crate::protocol_serde::shape_global_configuration::de_global_configuration(tokens)?);
+                        }
+                        "motionGraphicsConfiguration" => {
+                            builder = builder.set_motion_graphics_configuration(
+                                crate::protocol_serde::shape_motion_graphics_configuration::de_motion_graphics_configuration(tokens)?,
+                            );
+                        }
+                        "nielsenConfiguration" => {
+                            builder = builder
+                                .set_nielsen_configuration(crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?);
+                        }
+                        "outputGroups" => {
+                            builder =
+                                builder.set_output_groups(crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?);
+                        }
+                        "timecodeConfig" => {
+                            builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?);
+                        }
+                        "videoDescriptions" => {
+                            builder = builder.set_video_descriptions(
+                                crate::protocol_serde::shape___list_of_video_description::de___list_of_video_description(tokens)?,
+                            );
+                        }
+                        "thumbnailConfiguration" => {
+                            builder = builder.set_thumbnail_configuration(
+                                crate::protocol_serde::shape_thumbnail_configuration::de_thumbnail_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

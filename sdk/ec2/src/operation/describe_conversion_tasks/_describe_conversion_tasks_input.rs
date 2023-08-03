@@ -22,18 +22,14 @@ impl DescribeConversionTasksInput {
 }
 impl DescribeConversionTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeConversionTasksInput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder {
         crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConversionTasksInput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConversionTasksInputBuilder {
     pub(crate) conversion_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -44,27 +40,19 @@ impl DescribeConversionTasksInputBuilder {
     /// To override the contents of this collection use [`set_conversion_task_ids`](Self::set_conversion_task_ids).
     ///
     /// <p>The conversion task IDs.</p>
-    pub fn conversion_task_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversion_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.conversion_task_ids.unwrap_or_default();
         v.push(input.into());
         self.conversion_task_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The conversion task IDs.</p>
-    pub fn set_conversion_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_conversion_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.conversion_task_ids = input;
         self
     }
     /// <p>The conversion task IDs.</p>
-    pub fn get_conversion_task_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conversion_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.conversion_task_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -88,11 +76,9 @@ impl DescribeConversionTasksInputBuilder {
         crate::operation::describe_conversion_tasks::DescribeConversionTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_conversion_tasks::DescribeConversionTasksInput {
-                conversion_task_ids: self.conversion_task_ids,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_conversion_tasks::DescribeConversionTasksInput {
+            conversion_task_ids: self.conversion_task_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

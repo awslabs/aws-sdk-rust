@@ -37,9 +37,7 @@ impl CreateEnvironmentEC2FluentBuilder {
         }
     }
     /// Access the CreateEnvironmentEC2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateEnvironmentEC2FluentBuilder {
             crate::operation::create_environment_ec2::CreateEnvironmentEC2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateEnvironmentEC2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateEnvironmentEC2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_ec2::CreateEnvironmentEc2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateEnvironmentEC2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_ec2::CreateEnvironmentEc2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateEnvironmentEC2FluentBuilder {
             crate::operation::create_environment_ec2::CreateEnvironmentEC2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error>,
     > {
         self.customize_middleware().await
     }
@@ -155,19 +142,13 @@ impl CreateEnvironmentEC2FluentBuilder {
     }
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -177,18 +158,12 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -304,10 +279,7 @@ impl CreateEnvironmentEC2FluentBuilder {
         self
     }
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -323,10 +295,7 @@ impl CreateEnvironmentEC2FluentBuilder {
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
         self.inner = self.inner.set_connection_type(input);
         self
     }

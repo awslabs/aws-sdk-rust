@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for CreateDataLakeOrganizationConfigurati
 }
 impl CreateDataLakeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataLakeOrganizationConfigurationOutput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationOutputBuilder
+    {
         crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataLakeOrganizationConfigurationOutput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataLakeOrganizationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl CreateDataLakeOrganizationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataLakeOrganizationConfigurationOutput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput{
+    pub fn build(self) -> crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput {
         crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput {
             _request_id: self._request_id,
         }

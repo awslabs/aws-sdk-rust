@@ -23,9 +23,7 @@ impl IncrementalRefresh {
 
 /// A builder for [`IncrementalRefresh`](crate::types::IncrementalRefresh).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncrementalRefreshBuilder {
     pub(crate) lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }
@@ -36,10 +34,7 @@ impl IncrementalRefreshBuilder {
         self
     }
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
-    pub fn set_lookback_window(
-        mut self,
-        input: ::std::option::Option<crate::types::LookbackWindow>,
-    ) -> Self {
+    pub fn set_lookback_window(mut self, input: ::std::option::Option<crate::types::LookbackWindow>) -> Self {
         self.lookback_window = input;
         self
     }

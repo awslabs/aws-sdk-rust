@@ -36,16 +36,14 @@ impl UpdateDistributionConfigurationInput {
 }
 impl UpdateDistributionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionConfigurationInput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput).
-    pub fn builder() -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder {
         crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionConfigurationInput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationInputBuilder {
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -54,25 +52,17 @@ pub struct UpdateDistributionConfigurationInputBuilder {
 }
 impl UpdateDistributionConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     /// <p>The description of the distribution configuration.</p>
@@ -101,17 +91,12 @@ impl UpdateDistributionConfigurationInputBuilder {
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn set_distributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
         self.distributions = input;
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn get_distributions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
         &self.distributions
     }
     /// <p>The idempotency token of the distribution configuration.</p>
@@ -137,15 +122,11 @@ impl UpdateDistributionConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput {
-                distribution_configuration_arn: self.distribution_configuration_arn
-                ,
-                description: self.description
-                ,
-                distributions: self.distributions
-                ,
-                client_token: self.client_token
-                ,
-            }
+                distribution_configuration_arn: self.distribution_configuration_arn,
+                description: self.description,
+                distributions: self.distributions,
+                client_token: self.client_token,
+            },
         )
     }
 }

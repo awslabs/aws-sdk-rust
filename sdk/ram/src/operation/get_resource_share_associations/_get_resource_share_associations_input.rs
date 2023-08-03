@@ -37,9 +37,7 @@ impl GetResourceShareAssociationsInput {
     /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
     /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
     /// </ul>
-    pub fn association_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceShareAssociationType> {
+    pub fn association_type(&self) -> ::std::option::Option<&crate::types::ResourceShareAssociationType> {
         self.association_type.as_ref()
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
@@ -57,9 +55,7 @@ impl GetResourceShareAssociationsInput {
         self.principal.as_deref()
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn association_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceShareAssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<&crate::types::ResourceShareAssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -73,23 +69,20 @@ impl GetResourceShareAssociationsInput {
 }
 impl GetResourceShareAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsInput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput).
-    pub fn builder() -> crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder {
         crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceShareAssociationsInput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceShareAssociationsInputBuilder {
     pub(crate) association_type: ::std::option::Option<crate::types::ResourceShareAssociationType>,
     pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
-    pub(crate) association_status:
-        ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
+    pub(crate) association_status: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -108,10 +101,7 @@ impl GetResourceShareAssociationsInputBuilder {
     /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
     /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
     /// </ul>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareAssociationType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationType>) -> Self {
         self.association_type = input;
         self
     }
@@ -120,9 +110,7 @@ impl GetResourceShareAssociationsInputBuilder {
     /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
     /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
     /// </ul>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
         &self.association_type
     }
     /// Appends an item to `resource_share_arns`.
@@ -130,27 +118,19 @@ impl GetResourceShareAssociationsInputBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_share_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share_arns = input;
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share_arns
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.</p>
@@ -188,25 +168,17 @@ impl GetResourceShareAssociationsInputBuilder {
         &self.principal
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn association_status(
-        mut self,
-        input: crate::types::ResourceShareAssociationStatus,
-    ) -> Self {
+    pub fn association_status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
         &self.association_status
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -244,16 +216,14 @@ impl GetResourceShareAssociationsInputBuilder {
         crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput {
-                association_type: self.association_type,
-                resource_share_arns: self.resource_share_arns,
-                resource_arn: self.resource_arn,
-                principal: self.principal,
-                association_status: self.association_status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput {
+            association_type: self.association_type,
+            resource_share_arns: self.resource_share_arns,
+            resource_arn: self.resource_arn,
+            principal: self.principal,
+            association_status: self.association_status,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

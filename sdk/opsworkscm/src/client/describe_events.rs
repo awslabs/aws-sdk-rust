@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`server_events(Option<Vec<ServerEvent>>)`](crate::operation::describe_events::DescribeEventsOutput::server_events): <p>Contains the response to a <code>DescribeEvents</code> request. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::next_token): <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
-    pub fn describe_events(
-        &self,
-    ) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
+        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
     }
 }

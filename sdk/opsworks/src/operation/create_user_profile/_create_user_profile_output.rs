@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateUserProfileOutput {
 }
 impl CreateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserProfileOutput`](crate::operation::create_user_profile::CreateUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder {
         crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserProfileOutput`](crate::operation::create_user_profile::CreateUserProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserProfileOutputBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

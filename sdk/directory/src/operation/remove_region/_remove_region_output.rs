@@ -19,9 +19,7 @@ impl RemoveRegionOutput {
 
 /// A builder for [`RemoveRegionOutput`](crate::operation::remove_region::RemoveRegionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRegionOutputBuilder {
     _request_id: Option<String>,
 }

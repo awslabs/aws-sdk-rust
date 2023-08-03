@@ -26,7 +26,7 @@ impl DeleteRemediationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRemediationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder,
+    inner: crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder,
 }
 impl DeleteRemediationConfigurationFluentBuilder {
     /// Creates a new `DeleteRemediationConfiguration`.
@@ -37,7 +37,7 @@ impl DeleteRemediationConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteRemediationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRemediationConfigurationFluentBuilder {
             crate::operation::delete_remediation_configuration::DeleteRemediationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRemediationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRemediationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRemediationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteRemediationConfigurationFluentBuilder {
             crate::operation::delete_remediation_configuration::DeleteRemediationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteRemediationConfigurationFluentBuilder {
         self.inner.get_config_rule_name()
     }
     /// <p>The type of a resource.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of a resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

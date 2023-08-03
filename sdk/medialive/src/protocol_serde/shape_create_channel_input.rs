@@ -6,10 +6,7 @@ pub fn ser_create_channel_input(
     if let Some(var_1) = &input.cdi_input_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cdiInputSpecification").start_object();
-        crate::protocol_serde::shape_cdi_input_specification::ser_cdi_input_specification(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_cdi_input_specification::ser_cdi_input_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.channel_class {
@@ -21,10 +18,7 @@ pub fn ser_create_channel_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_output_destination::ser_output_destination(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_output_destination::ser_output_destination(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -42,10 +36,7 @@ pub fn ser_create_channel_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_input_attachment::ser_input_attachment(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_input_attachment::ser_input_attachment(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -54,10 +45,7 @@ pub fn ser_create_channel_input(
     if let Some(var_14) = &input.input_specification {
         #[allow(unused_mut)]
         let mut object_15 = object.key("inputSpecification").start_object();
-        crate::protocol_serde::shape_input_specification::ser_input_specification(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_input_specification::ser_input_specification(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.log_level {
@@ -66,10 +54,7 @@ pub fn ser_create_channel_input(
     if let Some(var_17) = &input.maintenance {
         #[allow(unused_mut)]
         let mut object_18 = object.key("maintenance").start_object();
-        crate::protocol_serde::shape_maintenance_create_settings::ser_maintenance_create_settings(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_maintenance_create_settings::ser_maintenance_create_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.name {
@@ -97,10 +82,7 @@ pub fn ser_create_channel_input(
     if let Some(var_27) = &input.vpc {
         #[allow(unused_mut)]
         let mut object_28 = object.key("vpc").start_object();
-        crate::protocol_serde::shape_vpc_output_settings::ser_vpc_output_settings(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_vpc_output_settings::ser_vpc_output_settings(&mut object_28, var_27)?;
         object_28.finish();
     }
     Ok(())

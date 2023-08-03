@@ -31,9 +31,7 @@ pub fn ser_restore_table_from_snapshot_input(
         object.key("newTableName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.activate_case_sensitive_identifier {
-        object
-            .key("activateCaseSensitiveIdentifier")
-            .boolean(*var_10);
+        object.key("activateCaseSensitiveIdentifier").boolean(*var_10);
     }
     Ok(())
 }

@@ -10,10 +10,7 @@ impl InitializeClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::initialize_cluster::InitializeClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initialize_cluster::InitializeClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initialize_cluster::InitializeClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.initialize_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl InitializeClusterFluentBuilder {
         }
     }
     /// Access the InitializeCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl InitializeClusterFluentBuilder {
             crate::operation::initialize_cluster::InitializeCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initialize_cluster::InitializeClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initialize_cluster::InitializeClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl InitializeClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl InitializeClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initialize_cluster::InitializeClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initialize_cluster::InitializeClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initialize_cluster::InitializeClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl InitializeClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initialize_cluster::InitializeClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initialize_cluster::InitializeClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initialize_cluster::InitializeClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl InitializeClusterFluentBuilder {
             crate::operation::initialize_cluster::InitializeCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initialize_cluster::InitializeClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initialize_cluster::InitializeClusterError>,
     > {
         self.customize_middleware().await
     }

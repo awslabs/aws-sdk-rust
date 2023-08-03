@@ -26,7 +26,7 @@ impl SendProjectSessionActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendProjectSessionActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder,
+    inner: crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder,
 }
 impl SendProjectSessionActionFluentBuilder {
     /// Creates a new `SendProjectSessionAction`.
@@ -37,7 +37,7 @@ impl SendProjectSessionActionFluentBuilder {
         }
     }
     /// Access the SendProjectSessionAction as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SendProjectSessionActionFluentBuilder {
             crate::operation::send_project_session_action::SendProjectSessionAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_project_session_action::SendProjectSessionActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_project_session_action::SendProjectSessionActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SendProjectSessionActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SendProjectSessionActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_project_session_action::SendProjectSessionActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_project_session_action::SendProjectSessionActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_project_session_action::SendProjectSessionActionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SendProjectSessionActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_project_session_action::SendProjectSessionActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_project_session_action::SendProjectSessionActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_project_session_action::SendProjectSessionActionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl SendProjectSessionActionFluentBuilder {
             crate::operation::send_project_session_action::SendProjectSessionAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_project_session_action::SendProjectSessionActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_project_session_action::SendProjectSessionActionError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +143,7 @@ impl SendProjectSessionActionFluentBuilder {
         self
     }
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
-    pub fn set_recipe_step(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeStep>,
-    ) -> Self {
+    pub fn set_recipe_step(mut self, input: ::std::option::Option<crate::types::RecipeStep>) -> Self {
         self.inner = self.inner.set_recipe_step(input);
         self
     }
@@ -180,18 +166,12 @@ impl SendProjectSessionActionFluentBuilder {
         self.inner.get_step_index()
     }
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
-    pub fn client_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_session_id(input.into());
         self
     }
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
-    pub fn set_client_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_session_id(input);
         self
     }

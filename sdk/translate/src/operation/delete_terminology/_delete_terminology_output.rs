@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTerminologyOutput {
 }
 impl DeleteTerminologyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTerminologyOutput`](crate::operation::delete_terminology::DeleteTerminologyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_terminology::builders::DeleteTerminologyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_terminology::builders::DeleteTerminologyOutputBuilder {
         crate::operation::delete_terminology::builders::DeleteTerminologyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTerminologyOutput`](crate::operation::delete_terminology::DeleteTerminologyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTerminologyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePullRequestTitleOutput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput) with field(s):
     ///   - [`pull_request(Option<PullRequest>)`](crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput::pull_request): <p>Information about the updated pull request.</p>
     /// - On failure, responds with [`SdkError<UpdatePullRequestTitleError>`](crate::operation::update_pull_request_title::UpdatePullRequestTitleError)
-    pub fn update_pull_request_title(
-        &self,
-    ) -> crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleFluentBuilder
-    {
+    pub fn update_pull_request_title(&self) -> crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleFluentBuilder {
         crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleFluentBuilder::new(self.handle.clone())
     }
 }

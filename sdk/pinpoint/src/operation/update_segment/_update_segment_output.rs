@@ -28,9 +28,7 @@ impl UpdateSegmentOutput {
 
 /// A builder for [`UpdateSegmentOutput`](crate::operation::update_segment::UpdateSegmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSegmentOutputBuilder {
     pub(crate) segment_response: ::std::option::Option<crate::types::SegmentResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateSegmentOutputBuilder {
         self
     }
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn set_segment_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentResponse>,
-    ) -> Self {
+    pub fn set_segment_response(mut self, input: ::std::option::Option<crate::types::SegmentResponse>) -> Self {
         self.segment_response = input;
         self
     }

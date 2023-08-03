@@ -26,7 +26,7 @@ impl DescribeRecoverySnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder,
+    inner: crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder,
 }
 impl DescribeRecoverySnapshotsFluentBuilder {
     /// Creates a new `DescribeRecoverySnapshots`.
@@ -37,7 +37,7 @@ impl DescribeRecoverySnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeRecoverySnapshots as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRecoverySnapshotsFluentBuilder {
             crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRecoverySnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRecoverySnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRecoverySnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribeRecoverySnapshotsFluentBuilder {
             crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator {
         crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
@@ -155,17 +135,12 @@ impl DescribeRecoverySnapshotsFluentBuilder {
         self
     }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters> {
         self.inner.get_filters()
     }
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
@@ -174,10 +149,7 @@ impl DescribeRecoverySnapshotsFluentBuilder {
         self
     }
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::RecoverySnapshotsOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::RecoverySnapshotsOrder>) -> Self {
         self.inner = self.inner.set_order(input);
         self
     }

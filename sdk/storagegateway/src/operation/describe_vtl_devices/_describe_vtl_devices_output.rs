@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for DescribeVtlDevicesOutput {
 }
 impl DescribeVtlDevicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVtlDevicesOutput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesOutputBuilder {
         crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVtlDevicesOutput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVtlDevicesOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vtl_devices: ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>>,
@@ -80,17 +77,12 @@ impl DescribeVtlDevicesOutputBuilder {
         self
     }
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
-    pub fn set_vtl_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>>,
-    ) -> Self {
+    pub fn set_vtl_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>>) -> Self {
         self.vtl_devices = input;
         self
     }
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
-    pub fn get_vtl_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>> {
+    pub fn get_vtl_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>> {
         &self.vtl_devices
     }
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>

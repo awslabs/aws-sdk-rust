@@ -37,9 +37,7 @@ impl BatchGetApplicationsFluentBuilder {
         }
     }
     /// Access the BatchGetApplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchGetApplicationsFluentBuilder {
             crate::operation::batch_get_applications::BatchGetApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_applications::BatchGetApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_applications::BatchGetApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchGetApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchGetApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_applications::BatchGetApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_applications::BatchGetApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_applications::BatchGetApplicationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchGetApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_applications::BatchGetApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_applications::BatchGetApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_applications::BatchGetApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchGetApplicationsFluentBuilder {
             crate::operation::batch_get_applications::BatchGetApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_applications::BatchGetApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_applications::BatchGetApplicationsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +114,17 @@ impl BatchGetApplicationsFluentBuilder {
     /// To override the contents of this collection use [`set_application_names`](Self::set_application_names).
     ///
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn application_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_names(input.into());
         self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn set_application_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_application_names(input);
         self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn get_application_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_application_names()
     }
 }

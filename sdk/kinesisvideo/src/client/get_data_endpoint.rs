@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataEndpointOutput`](crate::operation::get_data_endpoint::GetDataEndpointOutput) with field(s):
     ///   - [`data_endpoint(Option<String>)`](crate::operation::get_data_endpoint::GetDataEndpointOutput::data_endpoint): <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     /// - On failure, responds with [`SdkError<GetDataEndpointError>`](crate::operation::get_data_endpoint::GetDataEndpointError)
-    pub fn get_data_endpoint(
-        &self,
-    ) -> crate::operation::get_data_endpoint::builders::GetDataEndpointFluentBuilder {
-        crate::operation::get_data_endpoint::builders::GetDataEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_endpoint(&self) -> crate::operation::get_data_endpoint::builders::GetDataEndpointFluentBuilder {
+        crate::operation::get_data_endpoint::builders::GetDataEndpointFluentBuilder::new(self.handle.clone())
     }
 }

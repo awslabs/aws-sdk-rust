@@ -27,7 +27,7 @@ impl RebootRelationalDatabaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RebootRelationalDatabaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder,
+    inner: crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder,
 }
 impl RebootRelationalDatabaseFluentBuilder {
     /// Creates a new `RebootRelationalDatabase`.
@@ -38,10 +38,7 @@ impl RebootRelationalDatabaseFluentBuilder {
         }
     }
     /// Access the RebootRelationalDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl RebootRelationalDatabaseFluentBuilder {
             crate::operation::reboot_relational_database::RebootRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_relational_database::RebootRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_relational_database::RebootRelationalDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl RebootRelationalDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl RebootRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_relational_database::RebootRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_relational_database::RebootRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_relational_database::RebootRelationalDatabaseError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl RebootRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_relational_database::RebootRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_relational_database::RebootRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_relational_database::RebootRelationalDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl RebootRelationalDatabaseFluentBuilder {
             crate::operation::reboot_relational_database::RebootRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_relational_database::RebootRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_relational_database::RebootRelationalDatabaseError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your database to reboot.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of your database to reboot.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateApplicationFleetOutput`](crate::operation::associate_application_fleet::AssociateApplicationFleetOutput) with field(s):
     ///   - [`application_fleet_association(Option<ApplicationFleetAssociation>)`](crate::operation::associate_application_fleet::AssociateApplicationFleetOutput::application_fleet_association): <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     /// - On failure, responds with [`SdkError<AssociateApplicationFleetError>`](crate::operation::associate_application_fleet::AssociateApplicationFleetError)
-    pub fn associate_application_fleet(&self) -> crate::operation::associate_application_fleet::builders::AssociateApplicationFleetFluentBuilder{
+    pub fn associate_application_fleet(&self) -> crate::operation::associate_application_fleet::builders::AssociateApplicationFleetFluentBuilder {
         crate::operation::associate_application_fleet::builders::AssociateApplicationFleetFluentBuilder::new(self.handle.clone())
     }
 }

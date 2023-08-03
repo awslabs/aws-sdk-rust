@@ -34,18 +34,14 @@ impl DescribeReservedNodesInput {
 }
 impl DescribeReservedNodesInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder {
         crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -53,18 +49,12 @@ pub struct DescribeReservedNodesInputBuilder {
 }
 impl DescribeReservedNodesInputBuilder {
     /// <p>Identifier for the node reservation.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier for the node reservation.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -109,16 +99,12 @@ impl DescribeReservedNodesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_nodes::DescribeReservedNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_reserved_nodes::DescribeReservedNodesInput {
-                reserved_node_id: self.reserved_node_id,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_reserved_nodes::DescribeReservedNodesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_reserved_nodes::DescribeReservedNodesInput {
+            reserved_node_id: self.reserved_node_id,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

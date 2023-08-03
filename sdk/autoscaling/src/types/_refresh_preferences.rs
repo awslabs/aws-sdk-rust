@@ -56,8 +56,7 @@ pub struct RefreshPreferences {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub scale_in_protected_instances:
-        ::std::option::Option<crate::types::ScaleInProtectedInstances>,
+    pub scale_in_protected_instances: ::std::option::Option<crate::types::ScaleInProtectedInstances>,
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code> state are found.</p>
     /// <p>The following lists the valid values:</p>
     /// <dl>
@@ -141,9 +140,7 @@ impl RefreshPreferences {
     /// <p>Amazon EC2 Auto Scaling waits one hour for you to remove scale-in protection. Otherwise, the instance refresh will fail.</p>
     /// </dd>
     /// </dl>
-    pub fn scale_in_protected_instances(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScaleInProtectedInstances> {
+    pub fn scale_in_protected_instances(&self) -> ::std::option::Option<&crate::types::ScaleInProtectedInstances> {
         self.scale_in_protected_instances.as_ref()
     }
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code> state are found.</p>
@@ -181,9 +178,7 @@ impl RefreshPreferences {
 
 /// A builder for [`RefreshPreferences`](crate::types::RefreshPreferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RefreshPreferencesBuilder {
     pub(crate) min_healthy_percentage: ::std::option::Option<i32>,
     pub(crate) instance_warmup: ::std::option::Option<i32>,
@@ -191,8 +186,7 @@ pub struct RefreshPreferencesBuilder {
     pub(crate) checkpoint_delay: ::std::option::Option<i32>,
     pub(crate) skip_matching: ::std::option::Option<bool>,
     pub(crate) auto_rollback: ::std::option::Option<bool>,
-    pub(crate) scale_in_protected_instances:
-        ::std::option::Option<crate::types::ScaleInProtectedInstances>,
+    pub(crate) scale_in_protected_instances: ::std::option::Option<crate::types::ScaleInProtectedInstances>,
     pub(crate) standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
 }
 impl RefreshPreferencesBuilder {
@@ -247,10 +241,7 @@ impl RefreshPreferencesBuilder {
     }
     /// <p>(Optional) Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_checkpoint_percentages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_checkpoint_percentages(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.checkpoint_percentages = input;
         self
     }
@@ -344,10 +335,7 @@ impl RefreshPreferencesBuilder {
     /// <p>Amazon EC2 Auto Scaling waits one hour for you to remove scale-in protection. Otherwise, the instance refresh will fail.</p>
     /// </dd>
     /// </dl>
-    pub fn scale_in_protected_instances(
-        mut self,
-        input: crate::types::ScaleInProtectedInstances,
-    ) -> Self {
+    pub fn scale_in_protected_instances(mut self, input: crate::types::ScaleInProtectedInstances) -> Self {
         self.scale_in_protected_instances = ::std::option::Option::Some(input);
         self
     }
@@ -373,10 +361,7 @@ impl RefreshPreferencesBuilder {
     /// <p>Amazon EC2 Auto Scaling waits one hour for you to remove scale-in protection. Otherwise, the instance refresh will fail.</p>
     /// </dd>
     /// </dl>
-    pub fn set_scale_in_protected_instances(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleInProtectedInstances>,
-    ) -> Self {
+    pub fn set_scale_in_protected_instances(mut self, input: ::std::option::Option<crate::types::ScaleInProtectedInstances>) -> Self {
         self.scale_in_protected_instances = input;
         self
     }
@@ -402,9 +387,7 @@ impl RefreshPreferencesBuilder {
     /// <p>Amazon EC2 Auto Scaling waits one hour for you to remove scale-in protection. Otherwise, the instance refresh will fail.</p>
     /// </dd>
     /// </dl>
-    pub fn get_scale_in_protected_instances(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScaleInProtectedInstances> {
+    pub fn get_scale_in_protected_instances(&self) -> &::std::option::Option<crate::types::ScaleInProtectedInstances> {
         &self.scale_in_protected_instances
     }
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code> state are found.</p>
@@ -455,10 +438,7 @@ impl RefreshPreferencesBuilder {
     /// <p>Amazon EC2 Auto Scaling waits one hour for you to return the instances to service. Otherwise, the instance refresh will fail.</p>
     /// </dd>
     /// </dl>
-    pub fn set_standby_instances(
-        mut self,
-        input: ::std::option::Option<crate::types::StandbyInstances>,
-    ) -> Self {
+    pub fn set_standby_instances(mut self, input: ::std::option::Option<crate::types::StandbyInstances>) -> Self {
         self.standby_instances = input;
         self
     }

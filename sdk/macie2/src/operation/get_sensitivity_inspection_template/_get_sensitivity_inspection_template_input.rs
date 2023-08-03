@@ -15,16 +15,14 @@ impl GetSensitivityInspectionTemplateInput {
 }
 impl GetSensitivityInspectionTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateInput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput).
-    pub fn builder() -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateInputBuilder{
+    pub fn builder() -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateInputBuilder {
         crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSensitivityInspectionTemplateInput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSensitivityInspectionTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,12 @@ impl GetSensitivityInspectionTemplateInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateInput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput { id: self.id })
     }
 }

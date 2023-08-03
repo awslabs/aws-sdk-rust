@@ -65,9 +65,7 @@ pub struct Client {
 
 impl ::std::clone::Clone for Client {
     fn clone(&self) -> Self {
-        Self {
-            handle: self.handle.clone(),
-        }
+        Self { handle: self.handle.clone() }
     }
 }
 
@@ -140,8 +138,10 @@ impl Client {
             .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
         let sleep_impl = conf.sleep_impl();
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
-            panic!("An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic.");
+            panic!(
+                "An async sleep implementation is required for retries or timeouts to work. \
+                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
+            );
         }
 
         let connector = conf.http_connector().and_then(|c| {
@@ -149,10 +149,7 @@ impl Client {
                 .timeout_config()
                 .cloned()
                 .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
-            let connector_settings =
-                ::aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(
-                    &timeout_config,
-                );
+            let connector_settings = ::aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(&timeout_config);
             c.connector(&connector_settings, conf.sleep_impl())
         });
 
@@ -165,11 +162,9 @@ impl Client {
                 #[cfg(feature = "rustls")]
                 {
                     // Use default connector based on enabled features
-                    builder.dyn_https_connector(
-                        ::aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(
-                            &timeout_config,
-                        ),
-                    )
+                    builder.dyn_https_connector(::aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(
+                        &timeout_config,
+                    ))
                 }
                 #[cfg(not(feature = "rustls"))]
                 {
@@ -178,9 +173,7 @@ impl Client {
             }
         };
         let mut builder = builder
-            .middleware(::aws_smithy_client::erase::DynMiddleware::new(
-                crate::middleware::DefaultMiddleware::new(),
-            ))
+            .middleware(::aws_smithy_client::erase::DynMiddleware::new(crate::middleware::DefaultMiddleware::new()))
             .reconnect_mode(retry_config.reconnect_mode())
             .retry_config(retry_config.into())
             .operation_timeout_config(timeout_config.into());

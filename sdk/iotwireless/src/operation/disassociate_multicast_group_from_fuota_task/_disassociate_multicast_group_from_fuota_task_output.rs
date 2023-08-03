@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateMulticastGroupFromFuotaTa
 }
 impl DisassociateMulticastGroupFromFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput).
-    pub fn builder() -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskOutputBuilder
+    {
         crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMulticastGroupFromFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateMulticastGroupFromFuotaTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput).
-    pub fn build(self) -> crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput{
+    pub fn build(self) -> crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput {
         crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput {
             _request_id: self._request_id,
         }

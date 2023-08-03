@@ -9,10 +9,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -54,10 +45,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -69,10 +57,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -132,10 +117,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_40 = array_38.value().start_object();
-                crate::protocol_serde::shape_number_filter::ser_number_filter(
-                    &mut object_40,
-                    item_39,
-                )?;
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_40, item_39)?;
                 object_40.finish();
             }
         }
@@ -147,10 +129,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_44 = array_42.value().start_object();
-                crate::protocol_serde::shape_number_filter::ser_number_filter(
-                    &mut object_44,
-                    item_43,
-                )?;
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_44, item_43)?;
                 object_44.finish();
             }
         }
@@ -162,10 +141,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_48 = array_46.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_48,
-                    item_47,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_48, item_47)?;
                 object_48.finish();
             }
         }
@@ -177,10 +153,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_52 = array_50.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_52,
-                    item_51,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_52, item_51)?;
                 object_52.finish();
             }
         }
@@ -192,10 +165,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_56,
-                    item_55,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_56, item_55)?;
                 object_56.finish();
             }
         }
@@ -207,10 +177,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_60,
-                    item_59,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_60, item_59)?;
                 object_60.finish();
             }
         }
@@ -222,10 +189,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_64 = array_62.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_64,
-                    item_63,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_64, item_63)?;
                 object_64.finish();
             }
         }
@@ -237,10 +201,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_68 = array_66.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_68,
-                    item_67,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_68, item_67)?;
                 object_68.finish();
             }
         }
@@ -252,10 +213,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_72,
-                    item_71,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_72, item_71)?;
                 object_72.finish();
             }
         }
@@ -267,10 +225,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_76 = array_74.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_76,
-                    item_75,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_76, item_75)?;
                 object_76.finish();
             }
         }
@@ -282,10 +237,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_80 = array_78.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_80,
-                    item_79,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_80, item_79)?;
                 object_80.finish();
             }
         }
@@ -297,10 +249,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_84 = array_82.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_84,
-                    item_83,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_84, item_83)?;
                 object_84.finish();
             }
         }
@@ -336,10 +285,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_96 = array_94.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_96,
-                    item_95,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_96, item_95)?;
                 object_96.finish();
             }
         }
@@ -351,10 +297,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_100,
-                    item_99,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_100, item_99)?;
                 object_100.finish();
             }
         }
@@ -366,10 +309,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_104 = array_102.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_104,
-                    item_103,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_104, item_103)?;
                 object_104.finish();
             }
         }
@@ -381,10 +321,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_108 = array_106.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_108,
-                    item_107,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_108, item_107)?;
                 object_108.finish();
             }
         }
@@ -396,10 +333,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_112,
-                    item_111,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_112, item_111)?;
                 object_112.finish();
             }
         }
@@ -411,10 +345,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_116 = array_114.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_116,
-                    item_115,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_116, item_115)?;
                 object_116.finish();
             }
         }
@@ -426,10 +357,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_120 = array_118.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_120,
-                    item_119,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_120, item_119)?;
                 object_120.finish();
             }
         }
@@ -441,10 +369,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_124,
-                    item_123,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_124, item_123)?;
                 object_124.finish();
             }
         }
@@ -456,10 +381,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_128,
-                    item_127,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_128, item_127)?;
                 object_128.finish();
             }
         }
@@ -471,10 +393,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
-                crate::protocol_serde::shape_date_filter::ser_date_filter(
-                    &mut object_132,
-                    item_131,
-                )?;
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_132, item_131)?;
                 object_132.finish();
             }
         }
@@ -486,10 +405,7 @@ pub fn ser_automation_rules_finding_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_136 = array_134.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_136,
-                    item_135,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_136, item_135)?;
                 object_136.finish();
             }
         }
@@ -512,222 +428,143 @@ pub fn ser_automation_rules_finding_filters(
 
 pub(crate) fn de_automation_rules_finding_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AutomationRulesFindingFilters>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AutomationRulesFindingFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AutomationRulesFindingFiltersBuilder::default();
+            let mut builder = crate::types::builders::AutomationRulesFindingFiltersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ProductArn" => {
-                                builder = builder.set_product_arn(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "AwsAccountId" => {
-                                builder = builder.set_aws_account_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "Id" => {
-                                builder = builder.set_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "GeneratorId" => {
-                                builder = builder.set_generator_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "Type" => {
-                                builder = builder.set_type(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "FirstObservedAt" => {
-                                builder = builder.set_first_observed_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "LastObservedAt" => {
-                                builder = builder.set_last_observed_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "CreatedAt" => {
-                                builder = builder.set_created_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "UpdatedAt" => {
-                                builder = builder.set_updated_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "Confidence" => {
-                                builder = builder.set_confidence(
-                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?
-                                );
-                            }
-                            "Criticality" => {
-                                builder = builder.set_criticality(
-                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?
-                                );
-                            }
-                            "Title" => {
-                                builder = builder.set_title(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "Description" => {
-                                builder = builder.set_description(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "SourceUrl" => {
-                                builder = builder.set_source_url(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ProductName" => {
-                                builder = builder.set_product_name(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "CompanyName" => {
-                                builder = builder.set_company_name(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "SeverityLabel" => {
-                                builder = builder.set_severity_label(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ResourceType" => {
-                                builder = builder.set_resource_type(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ResourceId" => {
-                                builder = builder.set_resource_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ResourcePartition" => {
-                                builder = builder.set_resource_partition(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ResourceRegion" => {
-                                builder = builder.set_resource_region(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ResourceTags" => {
-                                builder = builder.set_resource_tags(
-                                    crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?
-                                );
-                            }
-                            "ResourceDetailsOther" => {
-                                builder = builder.set_resource_details_other(
-                                    crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?
-                                );
-                            }
-                            "ComplianceStatus" => {
-                                builder = builder.set_compliance_status(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ComplianceSecurityControlId" => {
-                                builder = builder.set_compliance_security_control_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "ComplianceAssociatedStandardsId" => {
-                                builder = builder.set_compliance_associated_standards_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "VerificationState" => {
-                                builder = builder.set_verification_state(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "WorkflowStatus" => {
-                                builder = builder.set_workflow_status(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "RecordState" => {
-                                builder = builder.set_record_state(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "RelatedFindingsProductArn" => {
-                                builder = builder.set_related_findings_product_arn(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "RelatedFindingsId" => {
-                                builder = builder.set_related_findings_id(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "NoteText" => {
-                                builder = builder.set_note_text(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "NoteUpdatedAt" => {
-                                builder = builder.set_note_updated_at(
-                                    crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?
-                                );
-                            }
-                            "NoteUpdatedBy" => {
-                                builder = builder.set_note_updated_by(
-                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
-                                );
-                            }
-                            "UserDefinedFields" => {
-                                builder = builder.set_user_defined_fields(
-                                    crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ProductArn" => {
+                            builder = builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
                         }
-                    }
+                        "AwsAccountId" => {
+                            builder = builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "Id" => {
+                            builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "GeneratorId" => {
+                            builder = builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "Type" => {
+                            builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "FirstObservedAt" => {
+                            builder = builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "LastObservedAt" => {
+                            builder = builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "CreatedAt" => {
+                            builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "UpdatedAt" => {
+                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "Confidence" => {
+                            builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                        }
+                        "Criticality" => {
+                            builder = builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                        }
+                        "Title" => {
+                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "Description" => {
+                            builder = builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "SourceUrl" => {
+                            builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ProductName" => {
+                            builder = builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "CompanyName" => {
+                            builder = builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "SeverityLabel" => {
+                            builder = builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ResourceType" => {
+                            builder = builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ResourceId" => {
+                            builder = builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ResourcePartition" => {
+                            builder = builder.set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ResourceRegion" => {
+                            builder = builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ResourceTags" => {
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                        }
+                        "ResourceDetailsOther" => {
+                            builder = builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                        }
+                        "ComplianceStatus" => {
+                            builder = builder.set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ComplianceSecurityControlId" => {
+                            builder = builder
+                                .set_compliance_security_control_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ComplianceAssociatedStandardsId" => {
+                            builder = builder.set_compliance_associated_standards_id(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "VerificationState" => {
+                            builder = builder.set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "WorkflowStatus" => {
+                            builder = builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "RecordState" => {
+                            builder = builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "RelatedFindingsProductArn" => {
+                            builder = builder
+                                .set_related_findings_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "RelatedFindingsId" => {
+                            builder =
+                                builder.set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "NoteText" => {
+                            builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "NoteUpdatedAt" => {
+                            builder = builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "NoteUpdatedBy" => {
+                            builder = builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "UserDefinedFields" => {
+                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

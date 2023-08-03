@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListInstanceGroupsOutput {
 }
 impl ListInstanceGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceGroupsOutput`](crate::operation::list_instance_groups::ListInstanceGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_groups::builders::ListInstanceGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_instance_groups::builders::ListInstanceGroupsOutputBuilder {
         crate::operation::list_instance_groups::builders::ListInstanceGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceGroupsOutput`](crate::operation::list_instance_groups::ListInstanceGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceGroupsOutputBuilder {
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListInstanceGroupsOutputBuilder {
         self
     }
     /// <p>The list of instance groups for the cluster and given filters.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>) -> Self {
         self.instance_groups = input;
         self
     }
     /// <p>The list of instance groups for the cluster and given filters.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
         &self.instance_groups
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

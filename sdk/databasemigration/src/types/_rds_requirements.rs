@@ -65,9 +65,7 @@ impl RdsRequirements {
 
 /// A builder for [`RdsRequirements`](crate::types::RdsRequirements).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsRequirementsBuilder {
     pub(crate) engine_edition: ::std::option::Option<::std::string::String>,
     pub(crate) instance_vcpu: ::std::option::Option<f64>,
@@ -79,18 +77,12 @@ pub struct RdsRequirementsBuilder {
 }
 impl RdsRequirementsBuilder {
     /// <p>The required target Amazon RDS engine edition.</p>
-    pub fn engine_edition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_edition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_edition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The required target Amazon RDS engine edition.</p>
-    pub fn set_engine_edition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_edition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_edition = input;
         self
     }
@@ -155,18 +147,12 @@ impl RdsRequirementsBuilder {
         &self.storage_iops
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
-    pub fn deployment_option(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_option(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_option = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
-    pub fn set_deployment_option(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_option = input;
         self
     }
@@ -175,18 +161,12 @@ impl RdsRequirementsBuilder {
         &self.deployment_option
     }
     /// <p>The required target Amazon RDS engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The required target Amazon RDS engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }

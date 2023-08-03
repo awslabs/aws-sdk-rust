@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAttributeGroupOutput {
 }
 impl UpdateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAttributeGroupOutput`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupOutputBuilder {
         crate::operation::update_attribute_group::builders::UpdateAttributeGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAttributeGroupOutput`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAttributeGroupOutputBuilder {
     pub(crate) attribute_group: ::std::option::Option<crate::types::AttributeGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateAttributeGroupOutputBuilder {
         self
     }
     /// <p>The updated information of the attribute group.</p>
-    pub fn set_attribute_group(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeGroup>,
-    ) -> Self {
+    pub fn set_attribute_group(mut self, input: ::std::option::Option<crate::types::AttributeGroup>) -> Self {
         self.attribute_group = input;
         self
     }

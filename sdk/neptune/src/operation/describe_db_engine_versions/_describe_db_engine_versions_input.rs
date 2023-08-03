@@ -85,18 +85,14 @@ impl DescribeDbEngineVersionsInput {
 }
 impl DescribeDbEngineVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsInput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder {
         crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbEngineVersionsInput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbEngineVersionsInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -125,19 +121,13 @@ impl DescribeDbEngineVersionsInputBuilder {
     }
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -151,10 +141,7 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
@@ -163,10 +150,7 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
         self
     }
@@ -190,10 +174,7 @@ impl DescribeDbEngineVersionsInputBuilder {
         self
     }
     /// <p>Not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -284,18 +265,16 @@ impl DescribeDbEngineVersionsInputBuilder {
         crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                db_parameter_group_family: self.db_parameter_group_family,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                default_only: self.default_only.unwrap_or_default(),
-                list_supported_character_sets: self.list_supported_character_sets,
-                list_supported_timezones: self.list_supported_timezones,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput {
+            engine: self.engine,
+            engine_version: self.engine_version,
+            db_parameter_group_family: self.db_parameter_group_family,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+            default_only: self.default_only.unwrap_or_default(),
+            list_supported_character_sets: self.list_supported_character_sets,
+            list_supported_timezones: self.list_supported_timezones,
+        })
     }
 }

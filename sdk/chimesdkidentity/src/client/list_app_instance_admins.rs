@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`app_instance_admins(Option<Vec<AppInstanceAdminSummary>>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::app_instance_admins): <p>The information for each administrator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
     /// - On failure, responds with [`SdkError<ListAppInstanceAdminsError>`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsError)
-    pub fn list_app_instance_admins(
-        &self,
-    ) -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder
-    {
+    pub fn list_app_instance_admins(&self) -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder {
         crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::new(self.handle.clone())
     }
 }

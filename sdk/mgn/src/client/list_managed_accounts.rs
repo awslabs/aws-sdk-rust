@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ManagedAccount>>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::items): <p>List managed accounts response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::next_token): <p>List managed accounts response next token.</p>
     /// - On failure, responds with [`SdkError<ListManagedAccountsError>`](crate::operation::list_managed_accounts::ListManagedAccountsError)
-    pub fn list_managed_accounts(
-        &self,
-    ) -> crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder {
-        crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_managed_accounts(&self) -> crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder {
+        crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::new(self.handle.clone())
     }
 }

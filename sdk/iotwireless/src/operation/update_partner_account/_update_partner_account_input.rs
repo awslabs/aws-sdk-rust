@@ -29,17 +29,14 @@ impl UpdatePartnerAccountInput {
 }
 impl UpdatePartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
-    pub fn builder(
-    ) -> crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
+    pub fn builder() -> crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
         crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePartnerAccountInputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkUpdateAccount>,
     pub(crate) partner_account_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl UpdatePartnerAccountInputBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkUpdateAccount>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateAccount>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -64,18 +58,12 @@ impl UpdatePartnerAccountInputBuilder {
         &self.sidewalk
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn partner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn set_partner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_account_id = input;
         self
     }
@@ -89,10 +77,7 @@ impl UpdatePartnerAccountInputBuilder {
         self
     }
     /// <p>The partner type.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
         self.partner_type = input;
         self
     }
@@ -103,16 +88,12 @@ impl UpdatePartnerAccountInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_partner_account::UpdatePartnerAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_partner_account::UpdatePartnerAccountInput {
-                sidewalk: self.sidewalk,
-                partner_account_id: self.partner_account_id,
-                partner_type: self.partner_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_partner_account::UpdatePartnerAccountInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_partner_account::UpdatePartnerAccountInput {
+            sidewalk: self.sidewalk,
+            partner_account_id: self.partner_account_id,
+            partner_type: self.partner_type,
+        })
     }
 }

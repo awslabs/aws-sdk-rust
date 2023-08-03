@@ -23,9 +23,7 @@ impl SuggestionValue {
 
 /// A builder for [`SuggestionValue`](crate::types::SuggestionValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestionValueBuilder {
     pub(crate) text: ::std::option::Option<crate::types::SuggestionTextWithHighlights>,
 }
@@ -36,10 +34,7 @@ impl SuggestionValueBuilder {
         self
     }
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
-    pub fn set_text(
-        mut self,
-        input: ::std::option::Option<crate::types::SuggestionTextWithHighlights>,
-    ) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<crate::types::SuggestionTextWithHighlights>) -> Self {
         self.text = input;
         self
     }

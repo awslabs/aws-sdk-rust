@@ -33,18 +33,14 @@ impl StartProjectVersionInput {
 }
 impl StartProjectVersionInput {
     /// Creates a new builder-style object to manufacture [`StartProjectVersionInput`](crate::operation::start_project_version::StartProjectVersionInput).
-    pub fn builder(
-    ) -> crate::operation::start_project_version::builders::StartProjectVersionInputBuilder {
-        crate::operation::start_project_version::builders::StartProjectVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_project_version::builders::StartProjectVersionInputBuilder {
+        crate::operation::start_project_version::builders::StartProjectVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartProjectVersionInput`](crate::operation::start_project_version::StartProjectVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) min_inference_units: ::std::option::Option<i32>,
@@ -52,18 +48,12 @@ pub struct StartProjectVersionInputBuilder {
 }
 impl StartProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
@@ -108,16 +98,12 @@ impl StartProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`StartProjectVersionInput`](crate::operation::start_project_version::StartProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_project_version::StartProjectVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_project_version::StartProjectVersionInput {
-                project_version_arn: self.project_version_arn,
-                min_inference_units: self.min_inference_units,
-                max_inference_units: self.max_inference_units,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_project_version::StartProjectVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_project_version::StartProjectVersionInput {
+            project_version_arn: self.project_version_arn,
+            min_inference_units: self.min_inference_units,
+            max_inference_units: self.max_inference_units,
+        })
     }
 }

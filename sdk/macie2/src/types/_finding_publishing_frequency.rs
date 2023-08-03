@@ -39,13 +39,7 @@
 /// <p>The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events). For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FindingPublishingFrequency {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for FindingPublishingFrequency {
             "FIFTEEN_MINUTES" => FindingPublishingFrequency::FifteenMinutes,
             "ONE_HOUR" => FindingPublishingFrequency::OneHour,
             "SIX_HOURS" => FindingPublishingFrequency::SixHours,
-            other => FindingPublishingFrequency::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FindingPublishingFrequency::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -6,14 +6,11 @@
 pub struct OpenZfsNfsExport {
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
     #[doc(hidden)]
-    pub client_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
+    pub client_configurations: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
 }
 impl OpenZfsNfsExport {
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
-    pub fn client_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OpenZfsClientConfiguration]> {
+    pub fn client_configurations(&self) -> ::std::option::Option<&[crate::types::OpenZfsClientConfiguration]> {
         self.client_configurations.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl OpenZfsNfsExport {
 
 /// A builder for [`OpenZfsNfsExport`](crate::types::OpenZfsNfsExport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenZfsNfsExportBuilder {
-    pub(crate) client_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
+    pub(crate) client_configurations: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
 }
 impl OpenZfsNfsExportBuilder {
     /// Appends an item to `client_configurations`.
@@ -39,27 +33,19 @@ impl OpenZfsNfsExportBuilder {
     /// To override the contents of this collection use [`set_client_configurations`](Self::set_client_configurations).
     ///
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
-    pub fn client_configurations(
-        mut self,
-        input: crate::types::OpenZfsClientConfiguration,
-    ) -> Self {
+    pub fn client_configurations(mut self, input: crate::types::OpenZfsClientConfiguration) -> Self {
         let mut v = self.client_configurations.unwrap_or_default();
         v.push(input);
         self.client_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
-    pub fn set_client_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
-    ) -> Self {
+    pub fn set_client_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>) -> Self {
         self.client_configurations = input;
         self
     }
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
-    pub fn get_client_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>> {
+    pub fn get_client_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>> {
         &self.client_configurations
     }
     /// Consumes the builder and constructs a [`OpenZfsNfsExport`](crate::types::OpenZfsNfsExport).

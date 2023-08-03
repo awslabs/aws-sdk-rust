@@ -10,10 +10,7 @@ impl GetInstanceAccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_instance_access::GetInstanceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_access::GetInstanceAccessError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_access::GetInstanceAccessError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_instance_access();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl GetInstanceAccessFluentBuilder {
         }
     }
     /// Access the GetInstanceAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl GetInstanceAccessFluentBuilder {
             crate::operation::get_instance_access::GetInstanceAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_access::GetInstanceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_access::GetInstanceAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl GetInstanceAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl GetInstanceAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_access::GetInstanceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_access::GetInstanceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_access::GetInstanceAccessError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl GetInstanceAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_access::GetInstanceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_access::GetInstanceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_access::GetInstanceAccessError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl GetInstanceAccessFluentBuilder {
             crate::operation::get_instance_access::GetInstanceAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_access::GetInstanceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_access::GetInstanceAccessError>,
     > {
         self.customize_middleware().await
     }

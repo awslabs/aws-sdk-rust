@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCatalogItemOutput`](crate::operation::get_catalog_item::GetCatalogItemOutput) with field(s):
     ///   - [`catalog_item(Option<CatalogItem>)`](crate::operation::get_catalog_item::GetCatalogItemOutput::catalog_item): <p>Information about this catalog item.</p>
     /// - On failure, responds with [`SdkError<GetCatalogItemError>`](crate::operation::get_catalog_item::GetCatalogItemError)
-    pub fn get_catalog_item(
-        &self,
-    ) -> crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder {
-        crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_catalog_item(&self) -> crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder {
+        crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder::new(self.handle.clone())
     }
 }

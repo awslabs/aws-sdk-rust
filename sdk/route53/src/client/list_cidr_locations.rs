@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_cidr_locations::ListCidrLocationsOutput::next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
     ///   - [`cidr_locations(Option<Vec<LocationSummary>>)`](crate::operation::list_cidr_locations::ListCidrLocationsOutput::cidr_locations): <p>A complex type that contains information about the list of CIDR locations.</p>
     /// - On failure, responds with [`SdkError<ListCidrLocationsError>`](crate::operation::list_cidr_locations::ListCidrLocationsError)
-    pub fn list_cidr_locations(
-        &self,
-    ) -> crate::operation::list_cidr_locations::builders::ListCidrLocationsFluentBuilder {
-        crate::operation::list_cidr_locations::builders::ListCidrLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cidr_locations(&self) -> crate::operation::list_cidr_locations::builders::ListCidrLocationsFluentBuilder {
+        crate::operation::list_cidr_locations::builders::ListCidrLocationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ViewBillingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::view_billing::ViewBillingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::view_billing::ViewBillingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::view_billing::ViewBillingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.view_billing();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ViewBillingFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::view_billing::ViewBilling,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::view_billing::ViewBilling, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::view_billing::ViewBillingError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ViewBillingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ViewBillingFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::view_billing::ViewBilling,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::view_billing::ViewBilling, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::view_billing::ViewBillingError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ViewBillingFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::view_billing::paginator::ViewBillingPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::view_billing::paginator::ViewBillingPaginator {
-        crate::operation::view_billing::paginator::ViewBillingPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::view_billing::paginator::ViewBillingPaginator::new(self.handle, self.inner)
     }
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn start(mut self, input: ::aws_smithy_types::DateTime) -> Self {

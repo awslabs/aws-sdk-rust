@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_device_job::DescribeDeviceJobOutput::created_time): <p>When the job was created.</p>
     ///   - [`job_type(Option<JobType>)`](crate::operation::describe_device_job::DescribeDeviceJobOutput::job_type): <p>The job's type.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceJobError>`](crate::operation::describe_device_job::DescribeDeviceJobError)
-    pub fn describe_device_job(
-        &self,
-    ) -> crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder {
-        crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_device_job(&self) -> crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder {
+        crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder::new(self.handle.clone())
     }
 }

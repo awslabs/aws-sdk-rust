@@ -30,9 +30,7 @@ impl ImageQuality {
 
 /// A builder for [`ImageQuality`](crate::types::ImageQuality).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageQualityBuilder {
     pub(crate) brightness: ::std::option::Option<f32>,
     pub(crate) sharpness: ::std::option::Option<f32>,

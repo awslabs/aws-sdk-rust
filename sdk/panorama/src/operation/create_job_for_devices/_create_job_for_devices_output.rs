@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateJobForDevicesOutput {
 }
 impl CreateJobForDevicesOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobForDevicesOutput`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput).
-    pub fn builder(
-    ) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesOutputBuilder {
+    pub fn builder() -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesOutputBuilder {
         crate::operation::create_job_for_devices::builders::CreateJobForDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateJobForDevicesOutput`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobForDevicesOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl CreateJobForDevicesOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>) -> Self {
         self.jobs = input;
         self
     }

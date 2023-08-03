@@ -23,9 +23,7 @@ impl LambdaInvokeOperation {
 
 /// A builder for [`LambdaInvokeOperation`](crate::types::LambdaInvokeOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaInvokeOperationBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
 }

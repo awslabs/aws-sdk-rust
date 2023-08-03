@@ -27,7 +27,7 @@ impl DescribeAvailabilityZonesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityZonesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder,
+    inner: crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder,
 }
 impl DescribeAvailabilityZonesFluentBuilder {
     /// Creates a new `DescribeAvailabilityZones`.
@@ -38,7 +38,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
         }
     }
     /// Access the DescribeAvailabilityZones as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
             crate::operation::describe_availability_zones::DescribeAvailabilityZones,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_zones::DescribeAvailabilityZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_zones::DescribeAvailabilityZonesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_zones::DescribeAvailabilityZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_zones::DescribeAvailabilityZonesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_zones::DescribeAvailabilityZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_zones::DescribeAvailabilityZonesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
             crate::operation::describe_availability_zones::DescribeAvailabilityZones,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_zones::DescribeAvailabilityZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_zones::DescribeAvailabilityZonesError>,
     > {
         self.customize_middleware().await
     }
@@ -155,10 +144,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
     /// <li> <p> <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
     /// <li> <p> <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -188,10 +174,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self
     }
     /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_zone_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_zone_names(input);
         self
     }
@@ -209,10 +192,7 @@ impl DescribeAvailabilityZonesFluentBuilder {
         self
     }
     /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_zone_ids(input);
         self
     }

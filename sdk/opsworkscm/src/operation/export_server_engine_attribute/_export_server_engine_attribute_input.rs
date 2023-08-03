@@ -41,36 +41,27 @@ impl ExportServerEngineAttributeInput {
 }
 impl ExportServerEngineAttributeInput {
     /// Creates a new builder-style object to manufacture [`ExportServerEngineAttributeInput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput).
-    pub fn builder() -> crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder{
+    pub fn builder() -> crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder {
         crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ExportServerEngineAttributeInput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportServerEngineAttributeInputBuilder {
     pub(crate) export_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
-    pub(crate) input_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) input_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl ExportServerEngineAttributeInputBuilder {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-    pub fn export_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-    pub fn set_export_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_attribute_name = input;
         self
     }
@@ -116,10 +107,7 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
     /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
-    pub fn set_input_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
-    ) -> Self {
+    pub fn set_input_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.input_attributes = input;
         self
     }
@@ -130,9 +118,7 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
     /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
-    pub fn get_input_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_input_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.input_attributes
     }
     /// Consumes the builder and constructs a [`ExportServerEngineAttributeInput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput).
@@ -142,12 +128,10 @@ impl ExportServerEngineAttributeInputBuilder {
         crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput {
-                export_attribute_name: self.export_attribute_name,
-                server_name: self.server_name,
-                input_attributes: self.input_attributes,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput {
+            export_attribute_name: self.export_attribute_name,
+            server_name: self.server_name,
+            input_attributes: self.input_attributes,
+        })
     }
 }

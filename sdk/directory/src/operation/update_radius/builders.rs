@@ -10,10 +10,7 @@ impl UpdateRadiusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_radius::UpdateRadiusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_radius::UpdateRadiusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_radius();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateRadiusFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_radius::UpdateRadius,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_radius::UpdateRadius, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateRadiusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateRadiusFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_radius::UpdateRadius,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_radius::UpdateRadius, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
     > {
         self.customize_middleware().await
@@ -132,10 +120,7 @@ impl UpdateRadiusFluentBuilder {
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn set_radius_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusSettings>,
-    ) -> Self {
+    pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
         self.inner = self.inner.set_radius_settings(input);
         self
     }

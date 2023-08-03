@@ -15,17 +15,14 @@ impl BatchGetCrawlersInput {
 }
 impl BatchGetCrawlersInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
-    pub fn builder() -> crate::operation::batch_get_crawlers::builders::BatchGetCrawlersInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_crawlers::builders::BatchGetCrawlersInputBuilder {
         crate::operation::batch_get_crawlers::builders::BatchGetCrawlersInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCrawlersInputBuilder {
     pub(crate) crawler_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,40 +32,27 @@ impl BatchGetCrawlersInputBuilder {
     /// To override the contents of this collection use [`set_crawler_names`](Self::set_crawler_names).
     ///
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn crawler_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn crawler_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.crawler_names.unwrap_or_default();
         v.push(input.into());
         self.crawler_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn set_crawler_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_crawler_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.crawler_names = input;
         self
     }
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn get_crawler_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_crawler_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.crawler_names
     }
     /// Consumes the builder and constructs a [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_crawlers::BatchGetCrawlersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_crawlers::BatchGetCrawlersInput {
-                crawler_names: self.crawler_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_crawlers::BatchGetCrawlersInput {
+            crawler_names: self.crawler_names,
+        })
     }
 }

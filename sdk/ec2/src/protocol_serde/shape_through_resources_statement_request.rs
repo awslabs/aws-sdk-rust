@@ -7,9 +7,7 @@ pub fn ser_through_resources_statement_request(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceStatement");
     if let Some(var_2) = &input.resource_statement {
-        crate::protocol_serde::shape_resource_statement_request::ser_resource_statement_request(
-            scope_1, var_2,
-        )?;
+        crate::protocol_serde::shape_resource_statement_request::ser_resource_statement_request(scope_1, var_2)?;
     }
     Ok(())
 }

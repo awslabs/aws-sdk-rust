@@ -30,27 +30,19 @@ impl DataflowEndpointListItem {
 
 /// A builder for [`DataflowEndpointListItem`](crate::types::DataflowEndpointListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataflowEndpointListItemBuilder {
     pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataflowEndpointListItemBuilder {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl DataflowEndpointListItemBuilder {
         &self.dataflow_endpoint_group_id
     }
     /// <p>ARN of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_arn = input;
         self
     }

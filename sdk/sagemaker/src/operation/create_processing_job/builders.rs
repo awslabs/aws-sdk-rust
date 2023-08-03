@@ -37,9 +37,7 @@ impl CreateProcessingJobFluentBuilder {
         }
     }
     /// Access the CreateProcessingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateProcessingJobFluentBuilder {
             crate::operation::create_processing_job::CreateProcessingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_processing_job::CreateProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_processing_job::CreateProcessingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateProcessingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateProcessingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_processing_job::CreateProcessingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_processing_job::CreateProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_processing_job::CreateProcessingJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateProcessingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_processing_job::CreateProcessingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_processing_job::CreateProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_processing_job::CreateProcessingJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateProcessingJobFluentBuilder {
             crate::operation::create_processing_job::CreateProcessingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_processing_job::CreateProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_processing_job::CreateProcessingJobError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    pub fn set_processing_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
-    ) -> Self {
+    pub fn set_processing_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>) -> Self {
         self.inner = self.inner.set_processing_inputs(input);
         self
     }
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    pub fn get_processing_inputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>> {
+    pub fn get_processing_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>> {
         self.inner.get_processing_inputs()
     }
     /// <p>Output configuration for the processing job.</p>
@@ -151,32 +133,21 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>Output configuration for the processing job.</p>
-    pub fn set_processing_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingOutputConfig>,
-    ) -> Self {
+    pub fn set_processing_output_config(mut self, input: ::std::option::Option<crate::types::ProcessingOutputConfig>) -> Self {
         self.inner = self.inner.set_processing_output_config(input);
         self
     }
     /// <p>Output configuration for the processing job.</p>
-    pub fn get_processing_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingOutputConfig> {
+    pub fn get_processing_output_config(&self) -> &::std::option::Option<crate::types::ProcessingOutputConfig> {
         self.inner.get_processing_output_config()
     }
     /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn processing_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.processing_job_name(input.into());
         self
     }
     /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_processing_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_processing_job_name(input);
         self
     }
@@ -190,17 +161,12 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn set_processing_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingResources>,
-    ) -> Self {
+    pub fn set_processing_resources(mut self, input: ::std::option::Option<crate::types::ProcessingResources>) -> Self {
         self.inner = self.inner.set_processing_resources(input);
         self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn get_processing_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingResources> {
+    pub fn get_processing_resources(&self) -> &::std::option::Option<crate::types::ProcessingResources> {
         self.inner.get_processing_resources()
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
@@ -209,17 +175,12 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::ProcessingStoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingStoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::ProcessingStoppingCondition> {
         self.inner.get_stopping_condition()
     }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
@@ -228,10 +189,7 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
-    pub fn set_app_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSpecification>,
-    ) -> Self {
+    pub fn set_app_specification(mut self, input: ::std::option::Option<crate::types::AppSpecification>) -> Self {
         self.inner = self.inner.set_app_specification(input);
         self
     }
@@ -244,30 +202,20 @@ impl CreateProcessingJobFluentBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment(k.into(), v.into());
         self
     }
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment()
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
@@ -276,10 +224,7 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
-    pub fn set_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfig>,
-    ) -> Self {
+    pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::NetworkConfig>) -> Self {
         self.inner = self.inner.set_network_config(input);
         self
     }
@@ -311,10 +256,7 @@ impl CreateProcessingJobFluentBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -338,10 +280,7 @@ impl CreateProcessingJobFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    pub fn set_experiment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentConfig>,
-    ) -> Self {
+    pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
         self.inner = self.inner.set_experiment_config(input);
         self
     }

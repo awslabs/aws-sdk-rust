@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for MoveReplicationTaskOutput {
 }
 impl MoveReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`MoveReplicationTaskOutput`](crate::operation::move_replication_task::MoveReplicationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::move_replication_task::builders::MoveReplicationTaskOutputBuilder {
-        crate::operation::move_replication_task::builders::MoveReplicationTaskOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::move_replication_task::builders::MoveReplicationTaskOutputBuilder {
+        crate::operation::move_replication_task::builders::MoveReplicationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`MoveReplicationTaskOutput`](crate::operation::move_replication_task::MoveReplicationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MoveReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl MoveReplicationTaskOutputBuilder {
         self
     }
     /// <p>The replication task that was moved.</p>
-    pub fn set_replication_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
+    pub fn set_replication_task(mut self, input: ::std::option::Option<crate::types::ReplicationTask>) -> Self {
         self.replication_task = input;
         self
     }

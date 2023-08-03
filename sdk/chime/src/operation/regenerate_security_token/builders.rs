@@ -26,8 +26,7 @@ impl RegenerateSecurityTokenInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegenerateSecurityTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder,
+    inner: crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder,
 }
 impl RegenerateSecurityTokenFluentBuilder {
     /// Creates a new `RegenerateSecurityToken`.
@@ -38,10 +37,7 @@ impl RegenerateSecurityTokenFluentBuilder {
         }
     }
     /// Access the RegenerateSecurityToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RegenerateSecurityTokenFluentBuilder {
             crate::operation::regenerate_security_token::RegenerateSecurityToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::regenerate_security_token::RegenerateSecurityTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::regenerate_security_token::RegenerateSecurityTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RegenerateSecurityTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RegenerateSecurityTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::regenerate_security_token::RegenerateSecurityTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::regenerate_security_token::RegenerateSecurityTokenError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RegenerateSecurityTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::regenerate_security_token::RegenerateSecurityTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::regenerate_security_token::RegenerateSecurityTokenError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RegenerateSecurityTokenFluentBuilder {
             crate::operation::regenerate_security_token::RegenerateSecurityToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::regenerate_security_token::RegenerateSecurityTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::regenerate_security_token::RegenerateSecurityTokenError>,
     > {
         self.customize_middleware().await
     }

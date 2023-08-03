@@ -31,9 +31,7 @@ impl InstanceInformationFilter {
 
 /// A builder for [`InstanceInformationFilter`](crate::types::InstanceInformationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceInformationFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
     pub(crate) value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,10 +43,7 @@ impl InstanceInformationFilterBuilder {
         self
     }
     /// <p>The name of the filter. </p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::InstanceInformationFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -68,10 +63,7 @@ impl InstanceInformationFilterBuilder {
         self
     }
     /// <p>The filter values.</p>
-    pub fn set_value_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_value_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value_set = input;
         self
     }

@@ -87,9 +87,7 @@ impl InsightRuleMetricDatapoint {
 
 /// A builder for [`InsightRuleMetricDatapoint`](crate::types::InsightRuleMetricDatapoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightRuleMetricDatapointBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) unique_contributors: ::std::option::Option<f64>,
@@ -107,10 +105,7 @@ impl InsightRuleMetricDatapointBuilder {
         self
     }
     /// <p>The timestamp of the data point.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

@@ -6,14 +6,11 @@
 pub struct StatelessCustomActionDefinition {
     /// <p>Information about metrics to publish to CloudWatch.</p>
     #[doc(hidden)]
-    pub publish_metric_action:
-        ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
+    pub publish_metric_action: ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
 }
 impl StatelessCustomActionDefinition {
     /// <p>Information about metrics to publish to CloudWatch.</p>
-    pub fn publish_metric_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatelessCustomPublishMetricAction> {
+    pub fn publish_metric_action(&self) -> ::std::option::Option<&crate::types::StatelessCustomPublishMetricAction> {
         self.publish_metric_action.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl StatelessCustomActionDefinition {
 
 /// A builder for [`StatelessCustomActionDefinition`](crate::types::StatelessCustomActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatelessCustomActionDefinitionBuilder {
-    pub(crate) publish_metric_action:
-        ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
+    pub(crate) publish_metric_action: ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
 }
 impl StatelessCustomActionDefinitionBuilder {
     /// <p>Information about metrics to publish to CloudWatch.</p>
-    pub fn publish_metric_action(
-        mut self,
-        input: crate::types::StatelessCustomPublishMetricAction,
-    ) -> Self {
+    pub fn publish_metric_action(mut self, input: crate::types::StatelessCustomPublishMetricAction) -> Self {
         self.publish_metric_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about metrics to publish to CloudWatch.</p>
-    pub fn set_publish_metric_action(
-        mut self,
-        input: ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
-    ) -> Self {
+    pub fn set_publish_metric_action(mut self, input: ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>) -> Self {
         self.publish_metric_action = input;
         self
     }
     /// <p>Information about metrics to publish to CloudWatch.</p>
-    pub fn get_publish_metric_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatelessCustomPublishMetricAction> {
+    pub fn get_publish_metric_action(&self) -> &::std::option::Option<crate::types::StatelessCustomPublishMetricAction> {
         &self.publish_metric_action
     }
     /// Consumes the builder and constructs a [`StatelessCustomActionDefinition`](crate::types::StatelessCustomActionDefinition).

@@ -22,17 +22,14 @@ impl GetContentSummaryInput {
 }
 impl GetContentSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetContentSummaryInput`](crate::operation::get_content_summary::GetContentSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::get_content_summary::builders::GetContentSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_content_summary::builders::GetContentSummaryInputBuilder {
         crate::operation::get_content_summary::builders::GetContentSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContentSummaryInput`](crate::operation::get_content_summary::GetContentSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContentSummaryInputBuilder {
     pub(crate) content_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl GetContentSummaryInputBuilder {
         &self.content_id
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetContentSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetContentSummaryInput`](crate::operation::get_content_summary::GetContentSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_content_summary::GetContentSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_content_summary::GetContentSummaryInput {
-                content_id: self.content_id,
-                knowledge_base_id: self.knowledge_base_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_content_summary::GetContentSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_content_summary::GetContentSummaryInput {
+            content_id: self.content_id,
+            knowledge_base_id: self.knowledge_base_id,
+        })
     }
 }

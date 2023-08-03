@@ -10,10 +10,7 @@ impl DeleteAssociationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_association::DeleteAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_association::DeleteAssociationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_association::DeleteAssociationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_association();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteAssociationFluentBuilder {
         }
     }
     /// Access the DeleteAssociation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_association::builders::DeleteAssociationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_association::builders::DeleteAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteAssociationFluentBuilder {
             crate::operation::delete_association::DeleteAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_association::DeleteAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_association::DeleteAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_association::DeleteAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_association::DeleteAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_association::DeleteAssociationError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_association::DeleteAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_association::DeleteAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_association::DeleteAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteAssociationFluentBuilder {
             crate::operation::delete_association::DeleteAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_association::DeleteAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_association::DeleteAssociationError>,
     > {
         self.customize_middleware().await
     }
@@ -158,18 +142,12 @@ impl DeleteAssociationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The association ID that you want to delete.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID that you want to delete.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

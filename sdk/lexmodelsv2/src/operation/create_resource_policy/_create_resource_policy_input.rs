@@ -24,17 +24,14 @@ impl CreateResourcePolicyInput {
 }
 impl CreateResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_policy::builders::CreateResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::create_resource_policy::builders::CreateResourcePolicyInputBuilder {
         crate::operation::create_resource_policy::builders::CreateResourcePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -74,15 +71,11 @@ impl CreateResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resource_policy::CreateResourcePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resource_policy::CreateResourcePolicyInput {
-                resource_arn: self.resource_arn,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_resource_policy::CreateResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_resource_policy::CreateResourcePolicyInput {
+            resource_arn: self.resource_arn,
+            policy: self.policy,
+        })
     }
 }

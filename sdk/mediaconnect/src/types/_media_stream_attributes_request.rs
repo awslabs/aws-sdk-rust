@@ -30,9 +30,7 @@ impl MediaStreamAttributesRequest {
 
 /// A builder for [`MediaStreamAttributesRequest`](crate::types::MediaStreamAttributesRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaStreamAttributesRequestBuilder {
     pub(crate) fmtp: ::std::option::Option<crate::types::FmtpRequest>,
     pub(crate) lang: ::std::option::Option<::std::string::String>,

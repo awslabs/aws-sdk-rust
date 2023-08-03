@@ -37,9 +37,7 @@ impl ScriptModeConfig {
 
 /// A builder for [`ScriptModeConfig`](crate::types::ScriptModeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptModeConfigBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ScriptModeConfigBuilder {
         self
     }
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionType>) -> Self {
         self.compression_type = input;
         self
     }

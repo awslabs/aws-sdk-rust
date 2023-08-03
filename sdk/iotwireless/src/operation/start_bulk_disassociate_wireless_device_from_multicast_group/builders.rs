@@ -15,8 +15,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInputBuilder {
                             ::aws_smithy_http::operation::Response
                         >
     >{
-        let mut fluent_builder =
-            client.start_bulk_disassociate_wireless_device_from_multicast_group();
+        let mut fluent_builder = client.start_bulk_disassociate_wireless_device_from_multicast_group();
         fluent_builder.inner = self;
         fluent_builder.send().await
     }
@@ -55,10 +54,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -133,10 +129,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

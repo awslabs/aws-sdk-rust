@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stop_action(StopAction)`](crate::operation::stop_assessment_run::builders::StopAssessmentRunFluentBuilder::stop_action) / [`set_stop_action(Option<StopAction>)`](crate::operation::stop_assessment_run::builders::StopAssessmentRunFluentBuilder::set_stop_action): <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     /// - On success, responds with [`StopAssessmentRunOutput`](crate::operation::stop_assessment_run::StopAssessmentRunOutput)
     /// - On failure, responds with [`SdkError<StopAssessmentRunError>`](crate::operation::stop_assessment_run::StopAssessmentRunError)
-    pub fn stop_assessment_run(
-        &self,
-    ) -> crate::operation::stop_assessment_run::builders::StopAssessmentRunFluentBuilder {
-        crate::operation::stop_assessment_run::builders::StopAssessmentRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_assessment_run(&self) -> crate::operation::stop_assessment_run::builders::StopAssessmentRunFluentBuilder {
+        crate::operation::stop_assessment_run::builders::StopAssessmentRunFluentBuilder::new(self.handle.clone())
     }
 }

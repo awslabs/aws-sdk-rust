@@ -21,10 +21,7 @@ pub fn ser_media_stream_output_configuration_request(
     if let Some(var_6) = &input.encoding_parameters {
         #[allow(unused_mut)]
         let mut object_7 = object.key("encodingParameters").start_object();
-        crate::protocol_serde::shape_encoding_parameters_request::ser_encoding_parameters_request(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_encoding_parameters_request::ser_encoding_parameters_request(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.media_stream_name {

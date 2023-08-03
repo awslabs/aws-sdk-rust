@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterStreamConsumerOutput {
 }
 impl DeregisterStreamConsumerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerOutputBuilder {
         crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterStreamConsumerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeregisterStreamConsumerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput {
+    pub fn build(self) -> crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput {
         crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput {
             _request_id: self._request_id,
         }

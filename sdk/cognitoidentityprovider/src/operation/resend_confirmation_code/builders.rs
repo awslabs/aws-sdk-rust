@@ -40,10 +40,7 @@ impl ResendConfirmationCodeFluentBuilder {
         }
     }
     /// Access the ResendConfirmationCode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl ResendConfirmationCodeFluentBuilder {
             crate::operation::resend_confirmation_code::ResendConfirmationCode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_confirmation_code::ResendConfirmationCodeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl ResendConfirmationCodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl ResendConfirmationCodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_confirmation_code::ResendConfirmationCodeError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl ResendConfirmationCodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_confirmation_code::ResendConfirmationCodeError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl ResendConfirmationCodeFluentBuilder {
             crate::operation::resend_confirmation_code::ResendConfirmationCode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_confirmation_code::ResendConfirmationCodeError>,
     > {
         self.customize_middleware().await
     }
@@ -160,17 +146,12 @@ impl ResendConfirmationCodeFluentBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_user_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextDataType>,
-    ) -> Self {
+    pub fn set_user_context_data(mut self, input: ::std::option::Option<crate::types::UserContextDataType>) -> Self {
         self.inner = self.inner.set_user_context_data(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn get_user_context_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+    pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         self.inner.get_user_context_data()
     }
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
@@ -193,17 +174,12 @@ impl ResendConfirmationCodeFluentBuilder {
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.inner = self.inner.set_analytics_metadata(input);
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         self.inner.get_analytics_metadata()
     }
     /// Adds a key-value pair to `ClientMetadata`.
@@ -240,9 +216,7 @@ impl ResendConfirmationCodeFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -257,11 +231,7 @@ impl ResendConfirmationCodeFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

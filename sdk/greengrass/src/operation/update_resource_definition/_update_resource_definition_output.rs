@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateResourceDefinitionOutput {
 }
 impl UpdateResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDefinitionOutput`](crate::operation::update_resource_definition::UpdateResourceDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionOutputBuilder {
         crate::operation::update_resource_definition::builders::UpdateResourceDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceDefinitionOutput`](crate::operation::update_resource_definition::UpdateResourceDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateResourceDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateResourceDefinitionOutput`](crate::operation::update_resource_definition::UpdateResourceDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_resource_definition::UpdateResourceDefinitionOutput {
+    pub fn build(self) -> crate::operation::update_resource_definition::UpdateResourceDefinitionOutput {
         crate::operation::update_resource_definition::UpdateResourceDefinitionOutput {
             _request_id: self._request_id,
         }

@@ -37,9 +37,7 @@ impl DisableInsightRulesFluentBuilder {
         }
     }
     /// Access the DisableInsightRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DisableInsightRulesFluentBuilder {
             crate::operation::disable_insight_rules::DisableInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_insight_rules::DisableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_insight_rules::DisableInsightRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DisableInsightRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DisableInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_insight_rules::DisableInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_insight_rules::DisableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_insight_rules::DisableInsightRulesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DisableInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_insight_rules::DisableInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_insight_rules::DisableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_insight_rules::DisableInsightRulesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DisableInsightRulesFluentBuilder {
             crate::operation::disable_insight_rules::DisableInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_insight_rules::DisableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_insight_rules::DisableInsightRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl DisableInsightRulesFluentBuilder {
         self
     }
     /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rule_names(input);
         self
     }

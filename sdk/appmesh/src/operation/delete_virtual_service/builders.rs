@@ -37,9 +37,7 @@ impl DeleteVirtualServiceFluentBuilder {
         }
     }
     /// Access the DeleteVirtualService as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_virtual_service::builders::DeleteVirtualServiceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_virtual_service::builders::DeleteVirtualServiceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteVirtualServiceFluentBuilder {
             crate::operation::delete_virtual_service::DeleteVirtualService,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_service::DeleteVirtualServiceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteVirtualServiceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteVirtualServiceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_service::DeleteVirtualServiceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_service::DeleteVirtualServiceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteVirtualServiceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_service::DeleteVirtualServiceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_service::DeleteVirtualServiceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteVirtualServiceFluentBuilder {
             crate::operation::delete_virtual_service::DeleteVirtualService,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_service::DeleteVirtualServiceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual service to delete.</p>
-    pub fn virtual_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_service_name(input.into());
         self
     }
     /// <p>The name of the virtual service to delete.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_service_name(input);
         self
     }

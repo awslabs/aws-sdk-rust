@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`failed_status_details(Option<String>)`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput::failed_status_details): <p>A description of the generated failure status.</p>
     ///   - [`edge_config(Option<EdgeConfig>)`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput::edge_config): <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
     /// - On failure, responds with [`SdkError<StartEdgeConfigurationUpdateError>`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError)
-    pub fn start_edge_configuration_update(&self) -> crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateFluentBuilder{
+    pub fn start_edge_configuration_update(
+        &self,
+    ) -> crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateFluentBuilder {
         crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateFluentBuilder::new(self.handle.clone())
     }
 }

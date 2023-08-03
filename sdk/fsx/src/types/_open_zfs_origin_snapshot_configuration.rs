@@ -38,9 +38,7 @@ impl OpenZfsOriginSnapshotConfiguration {
 
 /// A builder for [`OpenZfsOriginSnapshotConfiguration`](crate::types::OpenZfsOriginSnapshotConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenZfsOriginSnapshotConfigurationBuilder {
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) copy_strategy: ::std::option::Option<crate::types::OpenZfsCopyStrategy>,
@@ -74,10 +72,7 @@ impl OpenZfsOriginSnapshotConfigurationBuilder {
     /// <li> <p> <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than copying the data from a snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot can't be deleted if there is a volume using its copied data. </p> </li>
     /// <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume. </p> </li>
     /// </ul>
-    pub fn set_copy_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenZfsCopyStrategy>,
-    ) -> Self {
+    pub fn set_copy_strategy(mut self, input: ::std::option::Option<crate::types::OpenZfsCopyStrategy>) -> Self {
         self.copy_strategy = input;
         self
     }

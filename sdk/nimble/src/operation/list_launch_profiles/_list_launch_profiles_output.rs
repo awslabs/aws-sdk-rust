@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLaunchProfilesOutput {
 }
 impl ListLaunchProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListLaunchProfilesOutput`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesOutputBuilder {
         crate::operation::list_launch_profiles::builders::ListLaunchProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLaunchProfilesOutput`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLaunchProfilesOutputBuilder {
     pub(crate) launch_profiles: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListLaunchProfilesOutputBuilder {
         self
     }
     /// <p>A collection of launch profiles.</p>
-    pub fn set_launch_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfile>>,
-    ) -> Self {
+    pub fn set_launch_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfile>>) -> Self {
         self.launch_profiles = input;
         self
     }
     /// <p>A collection of launch profiles.</p>
-    pub fn get_launch_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfile>> {
+    pub fn get_launch_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfile>> {
         &self.launch_profiles
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

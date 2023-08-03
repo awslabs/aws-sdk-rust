@@ -9,9 +9,7 @@ pub fn ser_get_time_series_service_statistics_input(
             .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_2) = &input.entity_selector_expression {
-        object
-            .key("EntitySelectorExpression")
-            .string(var_2.as_str());
+        object.key("EntitySelectorExpression").string(var_2.as_str());
     }
     if let Some(var_3) = &input.forecast_statistics {
         object.key("ForecastStatistics").boolean(*var_3);

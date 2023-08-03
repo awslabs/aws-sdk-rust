@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_policies::ListSecurityPoliciesOutput::next_token): <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
     ///   - [`security_policy_names(Option<Vec<String>>)`](crate::operation::list_security_policies::ListSecurityPoliciesOutput::security_policy_names): <p>An array of security policies that were listed.</p>
     /// - On failure, responds with [`SdkError<ListSecurityPoliciesError>`](crate::operation::list_security_policies::ListSecurityPoliciesError)
-    pub fn list_security_policies(
-        &self,
-    ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder {
-        crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_security_policies(&self) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder {
+        crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

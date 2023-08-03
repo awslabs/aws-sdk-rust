@@ -54,18 +54,12 @@ pub struct NotificationsConfigurationBuilder {
 }
 impl NotificationsConfigurationBuilder {
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }
@@ -74,18 +68,12 @@ impl NotificationsConfigurationBuilder {
         &self.lambda_function_arn
     }
     /// <p>The ARN of the SNS topic.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SNS topic.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -94,18 +82,12 @@ impl NotificationsConfigurationBuilder {
         &self.sns_topic_arn
     }
     /// <p>The ARN of the SQS queue.</p>
-    pub fn sqs_queue_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sqs_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sqs_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SQS queue.</p>
-    pub fn set_sqs_queue_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sqs_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sqs_queue_arn = input;
         self
     }

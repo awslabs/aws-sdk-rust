@@ -42,13 +42,7 @@
 /// Eac3 Atmos Drc Rf
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosDrcRf {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for Eac3AtmosDrcRf {
             "MUSIC_STANDARD" => Eac3AtmosDrcRf::MusicStandard,
             "NONE" => Eac3AtmosDrcRf::None,
             "SPEECH" => Eac3AtmosDrcRf::Speech,
-            other => {
-                Eac3AtmosDrcRf::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Eac3AtmosDrcRf::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl Eac3AtmosDrcRf {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILM_LIGHT",
-            "FILM_STANDARD",
-            "MUSIC_LIGHT",
-            "MUSIC_STANDARD",
-            "NONE",
-            "SPEECH",
-        ]
+        &["FILM_LIGHT", "FILM_STANDARD", "MUSIC_LIGHT", "MUSIC_STANDARD", "NONE", "SPEECH"]
     }
 }
 impl ::std::convert::AsRef<str> for Eac3AtmosDrcRf {

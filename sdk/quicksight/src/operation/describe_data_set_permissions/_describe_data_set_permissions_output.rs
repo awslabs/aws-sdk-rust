@@ -49,21 +49,18 @@ impl ::aws_http::request_id::RequestId for DescribeDataSetPermissionsOutput {
 }
 impl DescribeDataSetPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSetPermissionsOutput`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput).
-    pub fn builder() -> crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsOutputBuilder {
         crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSetPermissionsOutput`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSetPermissionsOutputBuilder {
     pub(crate) data_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -109,17 +106,12 @@ impl DescribeDataSetPermissionsOutputBuilder {
         self
     }
     /// <p>A list of resource permissions on the dataset.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A list of resource permissions on the dataset.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -160,9 +152,7 @@ impl DescribeDataSetPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataSetPermissionsOutput`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput {
         crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput {
             data_set_arn: self.data_set_arn,
             data_set_id: self.data_set_id,

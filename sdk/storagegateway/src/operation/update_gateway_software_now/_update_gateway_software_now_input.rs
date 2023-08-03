@@ -16,18 +16,14 @@ impl UpdateGatewaySoftwareNowInput {
 }
 impl UpdateGatewaySoftwareNowInput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowInput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder {
         crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewaySoftwareNowInput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,8 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput {
-                gateway_arn: self.gateway_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput {
+            gateway_arn: self.gateway_arn,
+        })
     }
 }

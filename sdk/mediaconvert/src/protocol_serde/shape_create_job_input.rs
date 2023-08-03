@@ -6,10 +6,7 @@ pub fn ser_create_job_input(
     if let Some(var_1) = &input.acceleration_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accelerationSettings").start_object();
-        crate::protocol_serde::shape_acceleration_settings::ser_acceleration_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_acceleration_settings::ser_acceleration_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.billing_tags_source {
@@ -24,10 +21,7 @@ pub fn ser_create_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_hop_destination::ser_hop_destination(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_hop_destination::ser_hop_destination(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

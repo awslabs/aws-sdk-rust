@@ -29,16 +29,14 @@ impl GetBucketAccelerateConfigurationInput {
 }
 impl GetBucketAccelerateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketAccelerateConfigurationInput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput).
-    pub fn builder() -> crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationInputBuilder {
         crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketAccelerateConfigurationInput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketAccelerateConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl GetBucketAccelerateConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -85,10 +77,7 @@ impl GetBucketAccelerateConfigurationInputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.request_payer = input;
         self
     }
@@ -97,16 +86,18 @@ impl GetBucketAccelerateConfigurationInputBuilder {
         &self.request_payer
     }
     /// Consumes the builder and constructs a [`GetBucketAccelerateConfigurationInput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput {
-                bucket: self.bucket
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-                request_payer: self.request_payer
-                ,
-            }
+                bucket: self.bucket,
+                expected_bucket_owner: self.expected_bucket_owner,
+                request_payer: self.request_payer,
+            },
         )
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`quick_connect_id(impl ::std::convert::Into<String>)`](crate::operation::delete_quick_connect::builders::DeleteQuickConnectFluentBuilder::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::operation::delete_quick_connect::builders::DeleteQuickConnectFluentBuilder::set_quick_connect_id): <p>The identifier for the quick connect.</p>
     /// - On success, responds with [`DeleteQuickConnectOutput`](crate::operation::delete_quick_connect::DeleteQuickConnectOutput)
     /// - On failure, responds with [`SdkError<DeleteQuickConnectError>`](crate::operation::delete_quick_connect::DeleteQuickConnectError)
-    pub fn delete_quick_connect(
-        &self,
-    ) -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectFluentBuilder {
-        crate::operation::delete_quick_connect::builders::DeleteQuickConnectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_quick_connect(&self) -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectFluentBuilder {
+        crate::operation::delete_quick_connect::builders::DeleteQuickConnectFluentBuilder::new(self.handle.clone())
     }
 }

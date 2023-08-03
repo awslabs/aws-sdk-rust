@@ -19,8 +19,7 @@ pub fn ser_server_side_encryption_configuration(
 
 pub fn de_server_side_encryption_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ServerSideEncryptionConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

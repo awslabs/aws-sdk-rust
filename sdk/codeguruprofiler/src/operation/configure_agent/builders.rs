@@ -10,10 +10,7 @@ impl ConfigureAgentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::configure_agent::ConfigureAgentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_agent::ConfigureAgentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.configure_agent();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ConfigureAgentFluentBuilder {
         }
     }
     /// Access the ConfigureAgent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::configure_agent::builders::ConfigureAgentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::configure_agent::builders::ConfigureAgentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ConfigureAgentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ConfigureAgentFluentBuilder {
         self.customize_middleware().await
     }
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -135,18 +121,12 @@ impl ConfigureAgentFluentBuilder {
         self.inner.get_profiling_group_name()
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    pub fn fleet_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fleet_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_instance_id(input.into());
         self
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    pub fn set_fleet_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fleet_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_instance_id(input);
         self
     }
@@ -170,11 +150,7 @@ impl ConfigureAgentFluentBuilder {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
-    pub fn metadata(
-        mut self,
-        k: crate::types::MetadataField,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: crate::types::MetadataField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(k, v.into());
         self
     }
@@ -192,9 +168,7 @@ impl ConfigureAgentFluentBuilder {
     /// </ul>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
@@ -211,11 +185,7 @@ impl ConfigureAgentFluentBuilder {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>> {
         self.inner.get_metadata()
     }
 }

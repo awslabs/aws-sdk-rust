@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`lock_token(impl ::std::convert::Into<String>)`](crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder::lock_token) / [`set_lock_token(Option<String>)`](crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`DeleteRegexPatternSetOutput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput)
     /// - On failure, responds with [`SdkError<DeleteRegexPatternSetError>`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError)
-    pub fn delete_regex_pattern_set(
-        &self,
-    ) -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder
-    {
+    pub fn delete_regex_pattern_set(&self) -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder {
         crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

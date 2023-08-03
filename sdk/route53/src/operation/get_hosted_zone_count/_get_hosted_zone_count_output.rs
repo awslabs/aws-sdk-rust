@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetHostedZoneCountOutput {
 }
 impl GetHostedZoneCountOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder {
-        crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder {
+        crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostedZoneCountOutputBuilder {
     pub(crate) hosted_zone_count: ::std::option::Option<i64>,
     _request_id: Option<String>,

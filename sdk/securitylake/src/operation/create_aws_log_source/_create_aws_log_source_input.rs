@@ -15,20 +15,16 @@ impl CreateAwsLogSourceInput {
 }
 impl CreateAwsLogSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
+    pub fn builder() -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
         crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceInputBuilder {
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl CreateAwsLogSourceInputBuilder {
     /// Appends an item to `sources`.
@@ -43,30 +39,19 @@ impl CreateAwsLogSourceInputBuilder {
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_aws_log_source::CreateAwsLogSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_aws_log_source::CreateAwsLogSourceInput {
-                sources: self.sources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_aws_log_source::CreateAwsLogSourceInput { sources: self.sources })
     }
 }

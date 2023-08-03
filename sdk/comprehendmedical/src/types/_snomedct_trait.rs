@@ -30,9 +30,7 @@ impl SnomedctTrait {
 
 /// A builder for [`SnomedctTrait`](crate::types::SnomedctTrait).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnomedctTraitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SnomedctTraitName>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -44,10 +42,7 @@ impl SnomedctTraitBuilder {
         self
     }
     /// <p> The name or contextual description of a detected trait. </p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctTraitName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SnomedctTraitName>) -> Self {
         self.name = input;
         self
     }

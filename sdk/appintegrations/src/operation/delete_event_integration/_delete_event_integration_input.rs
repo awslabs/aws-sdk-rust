@@ -15,18 +15,14 @@ impl DeleteEventIntegrationInput {
 }
 impl DeleteEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventIntegrationInput`](crate::operation::delete_event_integration::DeleteEventIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_integration::builders::DeleteEventIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_event_integration::builders::DeleteEventIntegrationInputBuilder {
         crate::operation::delete_event_integration::builders::DeleteEventIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventIntegrationInput`](crate::operation::delete_event_integration::DeleteEventIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteEventIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventIntegrationInput`](crate::operation::delete_event_integration::DeleteEventIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_event_integration::DeleteEventIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_event_integration::DeleteEventIntegrationInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_event_integration::DeleteEventIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_event_integration::DeleteEventIntegrationInput { name: self.name })
     }
 }

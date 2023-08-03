@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateFleetMetricOutput {
 }
 impl UpdateFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetricOutput`](crate::operation::update_fleet_metric::UpdateFleetMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_metric::builders::UpdateFleetMetricOutputBuilder {
+    pub fn builder() -> crate::operation::update_fleet_metric::builders::UpdateFleetMetricOutputBuilder {
         crate::operation::update_fleet_metric::builders::UpdateFleetMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetMetricOutput`](crate::operation::update_fleet_metric::UpdateFleetMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetMetricOutputBuilder {
     _request_id: Option<String>,
 }

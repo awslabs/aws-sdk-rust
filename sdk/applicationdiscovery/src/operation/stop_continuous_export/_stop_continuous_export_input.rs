@@ -15,17 +15,14 @@ impl StopContinuousExportInput {
 }
 impl StopContinuousExportInput {
     /// Creates a new builder-style object to manufacture [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
-    pub fn builder(
-    ) -> crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder {
+    pub fn builder() -> crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder {
         crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder::default()
     }
 }
 
 /// A builder for [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopContinuousExportInputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl StopContinuousExportInputBuilder {
     /// Consumes the builder and constructs a [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_continuous_export::StopContinuousExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_continuous_export::StopContinuousExportInput {
-                export_id: self.export_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_continuous_export::StopContinuousExportInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_continuous_export::StopContinuousExportInput { export_id: self.export_id })
     }
 }

@@ -39,9 +39,7 @@ impl ListShardsOutput {
 
 /// A builder for [`ListShardsOutput`](crate::operation::list_shards::ListShardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListShardsOutputBuilder {
     pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ListShardsOutputBuilder {
         self
     }
     /// <p>An array of JSON objects. Each object represents one shard and specifies the IDs of the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each object also contains the starting and ending hash keys and the starting and ending sequence numbers for the shard.</p>
-    pub fn set_shards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
-    ) -> Self {
+    pub fn set_shards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>) -> Self {
         self.shards = input;
         self
     }

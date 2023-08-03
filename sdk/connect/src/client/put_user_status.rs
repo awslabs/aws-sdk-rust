@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`agent_status_id(impl ::std::convert::Into<String>)`](crate::operation::put_user_status::builders::PutUserStatusFluentBuilder::agent_status_id) / [`set_agent_status_id(Option<String>)`](crate::operation::put_user_status::builders::PutUserStatusFluentBuilder::set_agent_status_id): <p>The identifier of the agent status.</p>
     /// - On success, responds with [`PutUserStatusOutput`](crate::operation::put_user_status::PutUserStatusOutput)
     /// - On failure, responds with [`SdkError<PutUserStatusError>`](crate::operation::put_user_status::PutUserStatusError)
-    pub fn put_user_status(
-        &self,
-    ) -> crate::operation::put_user_status::builders::PutUserStatusFluentBuilder {
-        crate::operation::put_user_status::builders::PutUserStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_user_status(&self) -> crate::operation::put_user_status::builders::PutUserStatusFluentBuilder {
+        crate::operation::put_user_status::builders::PutUserStatusFluentBuilder::new(self.handle.clone())
     }
 }

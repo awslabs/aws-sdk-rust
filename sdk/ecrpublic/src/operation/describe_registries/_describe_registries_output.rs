@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeRegistriesOutput {
 }
 impl DescribeRegistriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistriesOutput`](crate::operation::describe_registries::DescribeRegistriesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder {
         crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRegistriesOutput`](crate::operation::describe_registries::DescribeRegistriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistriesOutputBuilder {
     pub(crate) registries: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeRegistriesOutputBuilder {
         self
     }
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn set_registries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>,
-    ) -> Self {
+    pub fn set_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>) -> Self {
         self.registries = input;
         self
     }
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn get_registries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Registry>> {
+    pub fn get_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Registry>> {
         &self.registries
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>

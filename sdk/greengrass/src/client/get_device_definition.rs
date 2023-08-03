@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_device_definition::GetDeviceDefinitionOutput::name): The name of the definition.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_device_definition::GetDeviceDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetDeviceDefinitionError>`](crate::operation::get_device_definition::GetDeviceDefinitionError)
-    pub fn get_device_definition(
-        &self,
-    ) -> crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder {
-        crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_definition(&self) -> crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder {
+        crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

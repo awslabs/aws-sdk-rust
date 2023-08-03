@@ -29,9 +29,7 @@ impl CostCategoryRule {
         self.rule.as_ref()
     }
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-    pub fn inherited_value(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CostCategoryInheritedValueDimension> {
+    pub fn inherited_value(&self) -> ::std::option::Option<&crate::types::CostCategoryInheritedValueDimension> {
         self.inherited_value.as_ref()
     }
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
@@ -48,14 +46,11 @@ impl CostCategoryRule {
 
 /// A builder for [`CostCategoryRule`](crate::types::CostCategoryRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategoryRuleBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) rule: ::std::option::Option<crate::types::Expression>,
-    pub(crate) inherited_value:
-        ::std::option::Option<crate::types::CostCategoryInheritedValueDimension>,
+    pub(crate) inherited_value: ::std::option::Option<crate::types::CostCategoryInheritedValueDimension>,
     pub(crate) r#type: ::std::option::Option<crate::types::CostCategoryRuleType>,
 }
 impl CostCategoryRuleBuilder {
@@ -91,25 +86,17 @@ impl CostCategoryRuleBuilder {
         &self.rule
     }
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-    pub fn inherited_value(
-        mut self,
-        input: crate::types::CostCategoryInheritedValueDimension,
-    ) -> Self {
+    pub fn inherited_value(mut self, input: crate::types::CostCategoryInheritedValueDimension) -> Self {
         self.inherited_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-    pub fn set_inherited_value(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategoryInheritedValueDimension>,
-    ) -> Self {
+    pub fn set_inherited_value(mut self, input: ::std::option::Option<crate::types::CostCategoryInheritedValueDimension>) -> Self {
         self.inherited_value = input;
         self
     }
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-    pub fn get_inherited_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostCategoryInheritedValueDimension> {
+    pub fn get_inherited_value(&self) -> &::std::option::Option<crate::types::CostCategoryInheritedValueDimension> {
         &self.inherited_value
     }
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
@@ -118,10 +105,7 @@ impl CostCategoryRuleBuilder {
         self
     }
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategoryRuleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostCategoryRuleType>) -> Self {
         self.r#type = input;
         self
     }

@@ -29,16 +29,14 @@ impl UpdateDetectorVersionMetadataInput {
 }
 impl UpdateDetectorVersionMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionMetadataInput`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput).
-    pub fn builder() -> crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder{
+    pub fn builder() -> crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder {
         crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDetectorVersionMetadataInput`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionMetadataInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID. </p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
@@ -100,15 +92,10 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput {
-                detector_id: self.detector_id
-                ,
-                detector_version_id: self.detector_version_id
-                ,
-                description: self.description
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput {
+            detector_id: self.detector_id,
+            detector_version_id: self.detector_version_id,
+            description: self.description,
+        })
     }
 }

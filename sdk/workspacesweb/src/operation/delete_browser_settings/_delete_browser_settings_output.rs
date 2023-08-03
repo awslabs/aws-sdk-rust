@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBrowserSettingsOutput {
 }
 impl DeleteBrowserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBrowserSettingsOutput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsOutputBuilder {
         crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBrowserSettingsOutput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBrowserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

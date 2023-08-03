@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput) with field(s):
     ///   - [`export_description(Option<ExportDescription>)`](crate::operation::describe_export::DescribeExportOutput::export_description): <p>Represents the properties of the export.</p>
     /// - On failure, responds with [`SdkError<DescribeExportError>`](crate::operation::describe_export::DescribeExportError)
-    pub fn describe_export(
-        &self,
-    ) -> crate::operation::describe_export::builders::DescribeExportFluentBuilder {
-        crate::operation::describe_export::builders::DescribeExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_export(&self) -> crate::operation::describe_export::builders::DescribeExportFluentBuilder {
+        crate::operation::describe_export::builders::DescribeExportFluentBuilder::new(self.handle.clone())
     }
 }

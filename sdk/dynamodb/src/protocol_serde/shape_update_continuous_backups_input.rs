@@ -8,9 +8,7 @@ pub fn ser_update_continuous_backups_input(
     }
     if let Some(var_2) = &input.point_in_time_recovery_specification {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("PointInTimeRecoverySpecification")
-            .start_object();
+        let mut object_3 = object.key("PointInTimeRecoverySpecification").start_object();
         crate::protocol_serde::shape_point_in_time_recovery_specification::ser_point_in_time_recovery_specification(&mut object_3, var_2)?;
         object_3.finish();
     }

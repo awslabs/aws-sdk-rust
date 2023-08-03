@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`SetResourceAccessForBucketOutput`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<SetResourceAccessForBucketError>`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError)
-    pub fn set_resource_access_for_bucket(&self) -> crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketFluentBuilder{
+    pub fn set_resource_access_for_bucket(
+        &self,
+    ) -> crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketFluentBuilder {
         crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketFluentBuilder::new(self.handle.clone())
     }
 }

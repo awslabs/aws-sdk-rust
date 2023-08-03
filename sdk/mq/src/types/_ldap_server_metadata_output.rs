@@ -86,9 +86,7 @@ impl LdapServerMetadataOutput {
 
 /// A builder for [`LdapServerMetadataOutput`](crate::types::LdapServerMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LdapServerMetadataOutputBuilder {
     pub(crate) hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_base: ::std::option::Option<::std::string::String>,
@@ -114,10 +112,7 @@ impl LdapServerMetadataOutputBuilder {
         self
     }
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    pub fn set_hosts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hosts = input;
         self
     }
@@ -154,18 +149,12 @@ impl LdapServerMetadataOutputBuilder {
         &self.role_name
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-    pub fn role_search_matching(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_search_matching(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_search_matching = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-    pub fn set_role_search_matching(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_search_matching(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_search_matching = input;
         self
     }
@@ -188,18 +177,12 @@ impl LdapServerMetadataOutputBuilder {
         &self.role_search_subtree
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    pub fn service_account_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_account_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_account_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    pub fn set_service_account_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_account_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_account_username = input;
         self
     }
@@ -222,18 +205,12 @@ impl LdapServerMetadataOutputBuilder {
         &self.user_base
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-    pub fn user_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-    pub fn set_user_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_role_name = input;
         self
     }
@@ -242,18 +219,12 @@ impl LdapServerMetadataOutputBuilder {
         &self.user_role_name
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_search_matching(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_search_matching(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_search_matching = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn set_user_search_matching(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_search_matching(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_search_matching = input;
         self
     }

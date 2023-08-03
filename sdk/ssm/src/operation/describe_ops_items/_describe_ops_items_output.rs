@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeOpsItemsOutput {
 }
 impl DescribeOpsItemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOpsItemsOutput`](crate::operation::describe_ops_items::DescribeOpsItemsOutput).
-    pub fn builder() -> crate::operation::describe_ops_items::builders::DescribeOpsItemsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ops_items::builders::DescribeOpsItemsOutputBuilder {
         crate::operation::describe_ops_items::builders::DescribeOpsItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOpsItemsOutput`](crate::operation::describe_ops_items::DescribeOpsItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOpsItemsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) ops_item_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>>,
+    pub(crate) ops_item_summaries: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeOpsItemsOutputBuilder {
@@ -72,17 +68,12 @@ impl DescribeOpsItemsOutputBuilder {
         self
     }
     /// <p>A list of OpsItems.</p>
-    pub fn set_ops_item_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>>,
-    ) -> Self {
+    pub fn set_ops_item_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>>) -> Self {
         self.ops_item_summaries = input;
         self
     }
     /// <p>A list of OpsItems.</p>
-    pub fn get_ops_item_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>> {
+    pub fn get_ops_item_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemSummary>> {
         &self.ops_item_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

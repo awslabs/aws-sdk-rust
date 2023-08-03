@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSmsTemplateOutput`](crate::operation::create_sms_template::CreateSmsTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::operation::create_sms_template::CreateSmsTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateSmsTemplateError>`](crate::operation::create_sms_template::CreateSmsTemplateError)
-    pub fn create_sms_template(
-        &self,
-    ) -> crate::operation::create_sms_template::builders::CreateSmsTemplateFluentBuilder {
-        crate::operation::create_sms_template::builders::CreateSmsTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sms_template(&self) -> crate::operation::create_sms_template::builders::CreateSmsTemplateFluentBuilder {
+        crate::operation::create_sms_template::builders::CreateSmsTemplateFluentBuilder::new(self.handle.clone())
     }
 }

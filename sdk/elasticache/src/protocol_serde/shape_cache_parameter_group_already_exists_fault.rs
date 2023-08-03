@@ -3,10 +3,7 @@
 pub fn de_cache_parameter_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::CacheParameterGroupAlreadyExistsFaultBuilder,
-) -> Result<
-    crate::types::error::builders::CacheParameterGroupAlreadyExistsFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::CacheParameterGroupAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

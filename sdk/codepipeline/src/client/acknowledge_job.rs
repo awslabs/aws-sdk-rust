@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AcknowledgeJobOutput`](crate::operation::acknowledge_job::AcknowledgeJobOutput) with field(s):
     ///   - [`status(Option<JobStatus>)`](crate::operation::acknowledge_job::AcknowledgeJobOutput::status): <p>Whether the job worker has received the specified job.</p>
     /// - On failure, responds with [`SdkError<AcknowledgeJobError>`](crate::operation::acknowledge_job::AcknowledgeJobError)
-    pub fn acknowledge_job(
-        &self,
-    ) -> crate::operation::acknowledge_job::builders::AcknowledgeJobFluentBuilder {
-        crate::operation::acknowledge_job::builders::AcknowledgeJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn acknowledge_job(&self) -> crate::operation::acknowledge_job::builders::AcknowledgeJobFluentBuilder {
+        crate::operation::acknowledge_job::builders::AcknowledgeJobFluentBuilder::new(self.handle.clone())
     }
 }

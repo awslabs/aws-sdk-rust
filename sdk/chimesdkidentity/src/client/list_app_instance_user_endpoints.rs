@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`app_instance_user_endpoints(Option<Vec<AppInstanceUserEndpointSummary>>)`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput::app_instance_user_endpoints): <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput::next_token): <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     /// - On failure, responds with [`SdkError<ListAppInstanceUserEndpointsError>`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError)
-    pub fn list_app_instance_user_endpoints(&self) -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder{
+    pub fn list_app_instance_user_endpoints(
+        &self,
+    ) -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder {
         crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

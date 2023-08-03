@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`remove_license_specifications(Vec<LicenseSpecification>)`](crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceFluentBuilder::remove_license_specifications) / [`set_remove_license_specifications(Option<Vec<LicenseSpecification>>)`](crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceFluentBuilder::set_remove_license_specifications): <p>ARNs of the license configurations to remove.</p>
     /// - On success, responds with [`UpdateLicenseSpecificationsForResourceOutput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput)
     /// - On failure, responds with [`SdkError<UpdateLicenseSpecificationsForResourceError>`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError)
-    pub fn update_license_specifications_for_resource(&self) -> crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceFluentBuilder{
-        crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceFluentBuilder::new(self.handle.clone())
+    pub fn update_license_specifications_for_resource(
+        &self,
+    ) -> crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceFluentBuilder {
+        crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

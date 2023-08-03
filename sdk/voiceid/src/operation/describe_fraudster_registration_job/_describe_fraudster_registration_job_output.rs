@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFraudsterRegistrationJobOutpu
 }
 impl DescribeFraudsterRegistrationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobOutput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput).
-    pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobOutputBuilder {
         crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFraudsterRegistrationJobOutput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFraudsterRegistrationJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeFraudsterRegistrationJobOutputBuilder {
         self
     }
     /// <p>Contains details about the specified fraudster registration job.</p>
-    pub fn set_job(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
-    ) -> Self {
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJob>) -> Self {
         self.job = input;
         self
     }
@@ -63,13 +58,9 @@ impl DescribeFraudsterRegistrationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterRegistrationJobOutput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput {
         crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput {
-            job: self.job
-            ,
+            job: self.job,
             _request_id: self._request_id,
         }
     }

@@ -42,16 +42,14 @@ impl ReplacePermissionAssociationsInput {
 }
 impl ReplacePermissionAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ReplacePermissionAssociationsInput`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsInput).
-    pub fn builder() -> crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder {
         crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ReplacePermissionAssociationsInput`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplacePermissionAssociationsInputBuilder {
     pub(crate) from_permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) from_permission_version: ::std::option::Option<i32>,
@@ -60,18 +58,12 @@ pub struct ReplacePermissionAssociationsInputBuilder {
 }
 impl ReplacePermissionAssociationsInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to replace.</p>
-    pub fn from_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to replace.</p>
-    pub fn set_from_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_permission_arn = input;
         self
     }
@@ -95,19 +87,13 @@ impl ReplacePermissionAssociationsInputBuilder {
     }
     /// <p>Specifies the ARN of the managed permission that you want to associate with resource shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.</p>
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
-    pub fn to_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the managed permission that you want to associate with resource shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.</p>
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
-    pub fn set_to_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_permission_arn = input;
         self
     }
@@ -143,13 +129,11 @@ impl ReplacePermissionAssociationsInputBuilder {
         crate::operation::replace_permission_associations::ReplacePermissionAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::replace_permission_associations::ReplacePermissionAssociationsInput {
-                from_permission_arn: self.from_permission_arn,
-                from_permission_version: self.from_permission_version,
-                to_permission_arn: self.to_permission_arn,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::replace_permission_associations::ReplacePermissionAssociationsInput {
+            from_permission_arn: self.from_permission_arn,
+            from_permission_version: self.from_permission_version,
+            to_permission_arn: self.to_permission_arn,
+            client_token: self.client_token,
+        })
     }
 }

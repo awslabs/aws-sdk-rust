@@ -23,9 +23,7 @@ impl Logging {
 
 /// A builder for [`Logging`](crate::types::Logging).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingBuilder {
     pub(crate) cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>,
 }
@@ -42,17 +40,12 @@ impl LoggingBuilder {
         self
     }
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    pub fn set_cluster_logging(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>,
-    ) -> Self {
+    pub fn set_cluster_logging(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>) -> Self {
         self.cluster_logging = input;
         self
     }
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    pub fn get_cluster_logging(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSetup>> {
+    pub fn get_cluster_logging(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSetup>> {
         &self.cluster_logging
     }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).

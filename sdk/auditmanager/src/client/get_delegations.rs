@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`delegations(Option<Vec<DelegationMetadata>>)`](crate::operation::get_delegations::GetDelegationsOutput::delegations): <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_delegations::GetDelegationsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<GetDelegationsError>`](crate::operation::get_delegations::GetDelegationsError)
-    pub fn get_delegations(
-        &self,
-    ) -> crate::operation::get_delegations::builders::GetDelegationsFluentBuilder {
-        crate::operation::get_delegations::builders::GetDelegationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_delegations(&self) -> crate::operation::get_delegations::builders::GetDelegationsFluentBuilder {
+        crate::operation::get_delegations::builders::GetDelegationsFluentBuilder::new(self.handle.clone())
     }
 }

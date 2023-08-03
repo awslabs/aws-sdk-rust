@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetCampaignsOutput`](crate::operation::get_campaigns::GetCampaignsOutput) with field(s):
     ///   - [`campaigns_response(Option<CampaignsResponse>)`](crate::operation::get_campaigns::GetCampaignsOutput::campaigns_response): <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetCampaignsError>`](crate::operation::get_campaigns::GetCampaignsError)
-    pub fn get_campaigns(
-        &self,
-    ) -> crate::operation::get_campaigns::builders::GetCampaignsFluentBuilder {
-        crate::operation::get_campaigns::builders::GetCampaignsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_campaigns(&self) -> crate::operation::get_campaigns::builders::GetCampaignsFluentBuilder {
+        crate::operation::get_campaigns::builders::GetCampaignsFluentBuilder::new(self.handle.clone())
     }
 }

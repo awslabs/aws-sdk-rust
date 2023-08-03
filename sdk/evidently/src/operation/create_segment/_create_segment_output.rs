@@ -28,9 +28,7 @@ impl CreateSegmentOutput {
 
 /// A builder for [`CreateSegmentOutput`](crate::operation::create_segment::CreateSegmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSegmentOutputBuilder {
     pub(crate) segment: ::std::option::Option<crate::types::Segment>,
     _request_id: Option<String>,

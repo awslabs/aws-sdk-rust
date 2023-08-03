@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput) with field(s):
     ///   - [`solution_version(Option<SolutionVersion>)`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput::solution_version): <p>The solution version.</p>
     /// - On failure, responds with [`SdkError<DescribeSolutionVersionError>`](crate::operation::describe_solution_version::DescribeSolutionVersionError)
-    pub fn describe_solution_version(
-        &self,
-    ) -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder
-    {
+    pub fn describe_solution_version(&self) -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder {
         crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl DeleteWorkflowStepGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder,
+    inner: crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder,
 }
 impl DeleteWorkflowStepGroupFluentBuilder {
     /// Creates a new `DeleteWorkflowStepGroup`.
@@ -38,10 +37,7 @@ impl DeleteWorkflowStepGroupFluentBuilder {
         }
     }
     /// Access the DeleteWorkflowStepGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteWorkflowStepGroupFluentBuilder {
             crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteWorkflowStepGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteWorkflowStepGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteWorkflowStepGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteWorkflowStepGroupFluentBuilder {
             crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError>,
     > {
         self.customize_middleware().await
     }

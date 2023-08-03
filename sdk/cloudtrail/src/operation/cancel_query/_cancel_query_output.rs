@@ -35,9 +35,7 @@ impl CancelQueryOutput {
 
 /// A builder for [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelQueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
@@ -64,10 +62,7 @@ impl CancelQueryOutputBuilder {
         self
     }
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }

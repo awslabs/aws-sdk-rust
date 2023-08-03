@@ -26,7 +26,7 @@ impl ListConstraintsForPortfolioInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConstraintsForPortfolioFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder,
+    inner: crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder,
 }
 impl ListConstraintsForPortfolioFluentBuilder {
     /// Creates a new `ListConstraintsForPortfolio`.
@@ -37,7 +37,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
         }
     }
     /// Access the ListConstraintsForPortfolio as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
             crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListConstraintsForPortfolioFluentBuilder {
             crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator {
         crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
@@ -131,10 +120,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl ListConstraintsForPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

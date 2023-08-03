@@ -79,9 +79,7 @@ impl FlywheelSummary {
 
 /// A builder for [`FlywheelSummary`](crate::types::FlywheelSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlywheelSummaryBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_model_arn: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl FlywheelSummaryBuilder {
         &self.flywheel_arn
     }
     /// <p>ARN of the active model version for the flywheel.</p>
-    pub fn active_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the active model version for the flywheel.</p>
-    pub fn set_active_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_model_arn = input;
         self
     }
@@ -129,18 +121,12 @@ impl FlywheelSummaryBuilder {
         &self.active_model_arn
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn data_lake_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn set_data_lake_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_lake_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_lake_s3_uri = input;
         self
     }
@@ -154,10 +140,7 @@ impl FlywheelSummaryBuilder {
         self
     }
     /// <p>The status of the flywheel.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlywheelStatus>) -> Self {
         self.status = input;
         self
     }
@@ -199,10 +182,7 @@ impl FlywheelSummaryBuilder {
         self
     }
     /// <p>Creation time of the flywheel.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -216,10 +196,7 @@ impl FlywheelSummaryBuilder {
         self
     }
     /// <p>Last modified time for the flywheel.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -228,18 +205,12 @@ impl FlywheelSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn latest_flywheel_iteration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_flywheel_iteration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_flywheel_iteration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn set_latest_flywheel_iteration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_flywheel_iteration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_flywheel_iteration = input;
         self
     }

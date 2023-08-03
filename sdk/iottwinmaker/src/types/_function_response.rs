@@ -44,9 +44,7 @@ impl FunctionResponse {
 
 /// A builder for [`FunctionResponse`](crate::types::FunctionResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionResponseBuilder {
     pub(crate) required_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -59,27 +57,19 @@ impl FunctionResponseBuilder {
     /// To override the contents of this collection use [`set_required_properties`](Self::set_required_properties).
     ///
     /// <p>The required properties of the function.</p>
-    pub fn required_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn required_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.required_properties.unwrap_or_default();
         v.push(input.into());
         self.required_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>The required properties of the function.</p>
-    pub fn set_required_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_required_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.required_properties = input;
         self
     }
     /// <p>The required properties of the function.</p>
-    pub fn get_required_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_required_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.required_properties
     }
     /// <p>The scope of the function.</p>
@@ -102,10 +92,7 @@ impl FunctionResponseBuilder {
         self
     }
     /// <p>The data connector.</p>
-    pub fn set_implemented_by(
-        mut self,
-        input: ::std::option::Option<crate::types::DataConnector>,
-    ) -> Self {
+    pub fn set_implemented_by(mut self, input: ::std::option::Option<crate::types::DataConnector>) -> Self {
         self.implemented_by = input;
         self
     }

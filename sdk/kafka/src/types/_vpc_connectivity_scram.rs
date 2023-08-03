@@ -23,9 +23,7 @@ impl VpcConnectivityScram {
 
 /// A builder for [`VpcConnectivityScram`](crate::types::VpcConnectivityScram).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectivityScramBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl VpcConnectivityScramBuilder {
     }
     /// Consumes the builder and constructs a [`VpcConnectivityScram`](crate::types::VpcConnectivityScram).
     pub fn build(self) -> crate::types::VpcConnectivityScram {
-        crate::types::VpcConnectivityScram {
-            enabled: self.enabled,
-        }
+        crate::types::VpcConnectivityScram { enabled: self.enabled }
     }
 }

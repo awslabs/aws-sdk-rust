@@ -10,10 +10,7 @@ impl DescribeJobQueuesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_queues::DescribeJobQueuesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_job_queues();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeJobQueuesFluentBuilder {
         }
     }
     /// Access the DescribeJobQueues as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeJobQueuesFluentBuilder {
             crate::operation::describe_job_queues::DescribeJobQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_queues::DescribeJobQueuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeJobQueuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeJobQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_queues::DescribeJobQueuesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeJobQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_queues::DescribeJobQueuesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeJobQueuesFluentBuilder {
             crate::operation::describe_job_queues::DescribeJobQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_queues::DescribeJobQueuesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator {
-        crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator {
+        crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `jobQueues`.
     ///
@@ -143,10 +122,7 @@ impl DescribeJobQueuesFluentBuilder {
         self
     }
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
-    pub fn set_job_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_queues(input);
         self
     }

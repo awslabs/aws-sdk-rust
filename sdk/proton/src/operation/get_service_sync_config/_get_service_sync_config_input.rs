@@ -15,17 +15,14 @@ impl GetServiceSyncConfigInput {
 }
 impl GetServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_sync_config::builders::GetServiceSyncConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_service_sync_config::builders::GetServiceSyncConfigInputBuilder {
         crate::operation::get_service_sync_config::builders::GetServiceSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl GetServiceSyncConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_sync_config::GetServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_sync_config::GetServiceSyncConfigInput {
-                service_name: self.service_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_service_sync_config::GetServiceSyncConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_service_sync_config::GetServiceSyncConfigInput {
+            service_name: self.service_name,
+        })
     }
 }

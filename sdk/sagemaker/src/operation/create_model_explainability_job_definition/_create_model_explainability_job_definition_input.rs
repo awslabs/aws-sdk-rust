@@ -8,20 +8,16 @@ pub struct CreateModelExplainabilityJobDefinitionInput {
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The baseline configuration for a model explainability job.</p>
     #[doc(hidden)]
-    pub model_explainability_baseline_config:
-        ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
+    pub model_explainability_baseline_config: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
     #[doc(hidden)]
-    pub model_explainability_app_specification:
-        ::std::option::Option<crate::types::ModelExplainabilityAppSpecification>,
+    pub model_explainability_app_specification: ::std::option::Option<crate::types::ModelExplainabilityAppSpecification>,
     /// <p>Inputs for the model explainability job.</p>
     #[doc(hidden)]
-    pub model_explainability_job_input:
-        ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
+    pub model_explainability_job_input: ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
     #[doc(hidden)]
-    pub model_explainability_job_output_config:
-        ::std::option::Option<crate::types::MonitoringOutputConfig>,
+    pub model_explainability_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     #[doc(hidden)]
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
@@ -44,27 +40,19 @@ impl CreateModelExplainabilityJobDefinitionInput {
         self.job_definition_name.as_deref()
     }
     /// <p>The baseline configuration for a model explainability job.</p>
-    pub fn model_explainability_baseline_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelExplainabilityBaselineConfig> {
+    pub fn model_explainability_baseline_config(&self) -> ::std::option::Option<&crate::types::ModelExplainabilityBaselineConfig> {
         self.model_explainability_baseline_config.as_ref()
     }
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
-    pub fn model_explainability_app_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelExplainabilityAppSpecification> {
+    pub fn model_explainability_app_specification(&self) -> ::std::option::Option<&crate::types::ModelExplainabilityAppSpecification> {
         self.model_explainability_app_specification.as_ref()
     }
     /// <p>Inputs for the model explainability job.</p>
-    pub fn model_explainability_job_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelExplainabilityJobInput> {
+    pub fn model_explainability_job_input(&self) -> ::std::option::Option<&crate::types::ModelExplainabilityJobInput> {
         self.model_explainability_job_input.as_ref()
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_explainability_job_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
+    pub fn model_explainability_job_output_config(&self) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
         self.model_explainability_job_output_config.as_ref()
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -80,9 +68,7 @@ impl CreateModelExplainabilityJobDefinitionInput {
         self.role_arn.as_deref()
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn stopping_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringStoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::MonitoringStoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
@@ -92,26 +78,20 @@ impl CreateModelExplainabilityJobDefinitionInput {
 }
 impl CreateModelExplainabilityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateModelExplainabilityJobDefinitionInput`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput).
-    pub fn builder() -> crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionInputBuilder {
         crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelExplainabilityJobDefinitionInput`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelExplainabilityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
-    pub(crate) model_explainability_baseline_config:
-        ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
-    pub(crate) model_explainability_app_specification:
-        ::std::option::Option<crate::types::ModelExplainabilityAppSpecification>,
-    pub(crate) model_explainability_job_input:
-        ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
-    pub(crate) model_explainability_job_output_config:
-        ::std::option::Option<crate::types::MonitoringOutputConfig>,
+    pub(crate) model_explainability_baseline_config: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
+    pub(crate) model_explainability_app_specification: ::std::option::Option<crate::types::ModelExplainabilityAppSpecification>,
+    pub(crate) model_explainability_job_input: ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
+    pub(crate) model_explainability_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     pub(crate) job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     pub(crate) network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -120,18 +100,12 @@ pub struct CreateModelExplainabilityJobDefinitionInputBuilder {
 }
 impl CreateModelExplainabilityJobDefinitionInputBuilder {
     /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -140,32 +114,21 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.job_definition_name
     }
     /// <p>The baseline configuration for a model explainability job.</p>
-    pub fn model_explainability_baseline_config(
-        mut self,
-        input: crate::types::ModelExplainabilityBaselineConfig,
-    ) -> Self {
+    pub fn model_explainability_baseline_config(mut self, input: crate::types::ModelExplainabilityBaselineConfig) -> Self {
         self.model_explainability_baseline_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The baseline configuration for a model explainability job.</p>
-    pub fn set_model_explainability_baseline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
-    ) -> Self {
+    pub fn set_model_explainability_baseline_config(mut self, input: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>) -> Self {
         self.model_explainability_baseline_config = input;
         self
     }
     /// <p>The baseline configuration for a model explainability job.</p>
-    pub fn get_model_explainability_baseline_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelExplainabilityBaselineConfig> {
+    pub fn get_model_explainability_baseline_config(&self) -> &::std::option::Option<crate::types::ModelExplainabilityBaselineConfig> {
         &self.model_explainability_baseline_config
     }
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
-    pub fn model_explainability_app_specification(
-        mut self,
-        input: crate::types::ModelExplainabilityAppSpecification,
-    ) -> Self {
+    pub fn model_explainability_app_specification(mut self, input: crate::types::ModelExplainabilityAppSpecification) -> Self {
         self.model_explainability_app_specification = ::std::option::Option::Some(input);
         self
     }
@@ -178,53 +141,35 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         self
     }
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
-    pub fn get_model_explainability_app_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelExplainabilityAppSpecification> {
+    pub fn get_model_explainability_app_specification(&self) -> &::std::option::Option<crate::types::ModelExplainabilityAppSpecification> {
         &self.model_explainability_app_specification
     }
     /// <p>Inputs for the model explainability job.</p>
-    pub fn model_explainability_job_input(
-        mut self,
-        input: crate::types::ModelExplainabilityJobInput,
-    ) -> Self {
+    pub fn model_explainability_job_input(mut self, input: crate::types::ModelExplainabilityJobInput) -> Self {
         self.model_explainability_job_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Inputs for the model explainability job.</p>
-    pub fn set_model_explainability_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
-    ) -> Self {
+    pub fn set_model_explainability_job_input(mut self, input: ::std::option::Option<crate::types::ModelExplainabilityJobInput>) -> Self {
         self.model_explainability_job_input = input;
         self
     }
     /// <p>Inputs for the model explainability job.</p>
-    pub fn get_model_explainability_job_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelExplainabilityJobInput> {
+    pub fn get_model_explainability_job_input(&self) -> &::std::option::Option<crate::types::ModelExplainabilityJobInput> {
         &self.model_explainability_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_explainability_job_output_config(
-        mut self,
-        input: crate::types::MonitoringOutputConfig,
-    ) -> Self {
+    pub fn model_explainability_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.model_explainability_job_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn set_model_explainability_job_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringOutputConfig>,
-    ) -> Self {
+    pub fn set_model_explainability_job_output_config(mut self, input: ::std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
         self.model_explainability_job_output_config = input;
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn get_model_explainability_job_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+    pub fn get_model_explainability_job_output_config(&self) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
         &self.model_explainability_job_output_config
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -233,10 +178,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn set_job_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringResources>,
-    ) -> Self {
+    pub fn set_job_resources(mut self, input: ::std::option::Option<crate::types::MonitoringResources>) -> Self {
         self.job_resources = input;
         self
     }
@@ -250,17 +192,12 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         self
     }
     /// <p>Networking options for a model explainability job.</p>
-    pub fn set_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
-    ) -> Self {
+    pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
         self.network_config = input;
         self
     }
     /// <p>Networking options for a model explainability job.</p>
-    pub fn get_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+    pub fn get_network_config(&self) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
         &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
@@ -283,17 +220,12 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
         &self.stopping_condition
     }
     /// Appends an item to `tags`.
@@ -308,10 +240,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -320,30 +249,25 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateModelExplainabilityJobDefinitionInput`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-                model_explainability_baseline_config: self.model_explainability_baseline_config
-                ,
-                model_explainability_app_specification: self.model_explainability_app_specification
-                ,
-                model_explainability_job_input: self.model_explainability_job_input
-                ,
-                model_explainability_job_output_config: self.model_explainability_job_output_config
-                ,
-                job_resources: self.job_resources
-                ,
-                network_config: self.network_config
-                ,
-                role_arn: self.role_arn
-                ,
-                stopping_condition: self.stopping_condition
-                ,
-                tags: self.tags
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+                model_explainability_baseline_config: self.model_explainability_baseline_config,
+                model_explainability_app_specification: self.model_explainability_app_specification,
+                model_explainability_job_input: self.model_explainability_job_input,
+                model_explainability_job_output_config: self.model_explainability_job_output_config,
+                job_resources: self.job_resources,
+                network_config: self.network_config,
+                role_arn: self.role_arn,
+                stopping_condition: self.stopping_condition,
+                tags: self.tags,
+            },
         )
     }
 }

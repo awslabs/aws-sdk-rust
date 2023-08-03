@@ -37,10 +37,7 @@ impl UpdateFeatureMetadataFluentBuilder {
         }
     }
     /// Access the UpdateFeatureMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateFeatureMetadataFluentBuilder {
             crate::operation::update_feature_metadata::UpdateFeatureMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateFeatureMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateFeatureMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateFeatureMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateFeatureMetadataFluentBuilder {
             crate::operation::update_feature_metadata::UpdateFeatureMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
@@ -181,17 +161,12 @@ impl UpdateFeatureMetadataFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn set_parameter_additions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
-    ) -> Self {
+    pub fn set_parameter_additions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
         self.inner = self.inner.set_parameter_additions(input);
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn get_parameter_additions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+    pub fn get_parameter_additions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
         self.inner.get_parameter_additions()
     }
     /// Appends an item to `ParameterRemovals`.
@@ -199,25 +174,17 @@ impl UpdateFeatureMetadataFluentBuilder {
     /// To override the contents of this collection use [`set_parameter_removals`](Self::set_parameter_removals).
     ///
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn parameter_removals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_removals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_removals(input.into());
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn set_parameter_removals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parameter_removals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameter_removals(input);
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn get_parameter_removals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parameter_removals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_parameter_removals()
     }
 }

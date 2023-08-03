@@ -10,10 +10,7 @@ impl StopCompilationJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_compilation_job::StopCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_compilation_job::StopCompilationJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_compilation_job::StopCompilationJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_compilation_job();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl StopCompilationJobFluentBuilder {
         }
     }
     /// Access the StopCompilationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_compilation_job::builders::StopCompilationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_compilation_job::builders::StopCompilationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl StopCompilationJobFluentBuilder {
             crate::operation::stop_compilation_job::StopCompilationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_compilation_job::StopCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_compilation_job::StopCompilationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl StopCompilationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl StopCompilationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_compilation_job::StopCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_compilation_job::StopCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_compilation_job::StopCompilationJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl StopCompilationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_compilation_job::StopCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_compilation_job::StopCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_compilation_job::StopCompilationJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl StopCompilationJobFluentBuilder {
             crate::operation::stop_compilation_job::StopCompilationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_compilation_job::StopCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_compilation_job::StopCompilationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model compilation job to stop.</p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compilation_job_name(input.into());
         self
     }
     /// <p>The name of the model compilation job to stop.</p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
     }

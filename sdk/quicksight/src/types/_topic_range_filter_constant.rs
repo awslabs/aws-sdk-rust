@@ -50,10 +50,7 @@ impl TopicRangeFilterConstantBuilder {
         self
     }
     /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
-    pub fn set_constant_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConstantType>,
-    ) -> Self {
+    pub fn set_constant_type(mut self, input: ::std::option::Option<crate::types::ConstantType>) -> Self {
         self.constant_type = input;
         self
     }
@@ -67,10 +64,7 @@ impl TopicRangeFilterConstantBuilder {
         self
     }
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
-    pub fn set_range_constant(
-        mut self,
-        input: ::std::option::Option<crate::types::RangeConstant>,
-    ) -> Self {
+    pub fn set_range_constant(mut self, input: ::std::option::Option<crate::types::RangeConstant>) -> Self {
         self.range_constant = input;
         self
     }

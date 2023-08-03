@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`logging_configurations(Option<Vec<LoggingConfiguration>>)`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput::logging_configurations): <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     /// - On failure, responds with [`SdkError<ListLoggingConfigurationsError>`](crate::operation::list_logging_configurations::ListLoggingConfigurationsError)
-    pub fn list_logging_configurations(&self) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder{
+    pub fn list_logging_configurations(&self) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder {
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

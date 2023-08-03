@@ -26,7 +26,7 @@ impl DescribeWorkspaceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder,
+    inner: crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder,
 }
 impl DescribeWorkspaceConfigurationFluentBuilder {
     /// Creates a new `DescribeWorkspaceConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeWorkspaceConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeWorkspaceConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeWorkspaceConfigurationFluentBuilder {
             crate::operation::describe_workspace_configuration::DescribeWorkspaceConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeWorkspaceConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeWorkspaceConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeWorkspaceConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeWorkspaceConfigurationFluentBuilder {
             crate::operation::describe_workspace_configuration::DescribeWorkspaceConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError>,
     > {
         self.customize_middleware().await
     }

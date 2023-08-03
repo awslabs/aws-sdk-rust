@@ -37,10 +37,7 @@ impl DeleteBrowserSettingsFluentBuilder {
         }
     }
     /// Access the DeleteBrowserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteBrowserSettingsFluentBuilder {
             crate::operation::delete_browser_settings::DeleteBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_browser_settings::DeleteBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_browser_settings::DeleteBrowserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteBrowserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_browser_settings::DeleteBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_browser_settings::DeleteBrowserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_browser_settings::DeleteBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_browser_settings::DeleteBrowserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteBrowserSettingsFluentBuilder {
             crate::operation::delete_browser_settings::DeleteBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_browser_settings::DeleteBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_browser_settings::DeleteBrowserSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.browser_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_browser_settings_arn(input);
         self
     }

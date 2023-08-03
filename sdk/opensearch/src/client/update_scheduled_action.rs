@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateScheduledActionOutput`](crate::operation::update_scheduled_action::UpdateScheduledActionOutput) with field(s):
     ///   - [`scheduled_action(Option<ScheduledAction>)`](crate::operation::update_scheduled_action::UpdateScheduledActionOutput::scheduled_action): <p>Information about the rescheduled action.</p>
     /// - On failure, responds with [`SdkError<UpdateScheduledActionError>`](crate::operation::update_scheduled_action::UpdateScheduledActionError)
-    pub fn update_scheduled_action(
-        &self,
-    ) -> crate::operation::update_scheduled_action::builders::UpdateScheduledActionFluentBuilder
-    {
-        crate::operation::update_scheduled_action::builders::UpdateScheduledActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_scheduled_action(&self) -> crate::operation::update_scheduled_action::builders::UpdateScheduledActionFluentBuilder {
+        crate::operation::update_scheduled_action::builders::UpdateScheduledActionFluentBuilder::new(self.handle.clone())
     }
 }

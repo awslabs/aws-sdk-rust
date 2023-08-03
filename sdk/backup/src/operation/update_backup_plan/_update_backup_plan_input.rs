@@ -22,35 +22,26 @@ impl UpdateBackupPlanInput {
 }
 impl UpdateBackupPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateBackupPlanInput`](crate::operation::update_backup_plan::UpdateBackupPlanInput).
-    pub fn builder() -> crate::operation::update_backup_plan::builders::UpdateBackupPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_backup_plan::builders::UpdateBackupPlanInputBuilder {
         crate::operation::update_backup_plan::builders::UpdateBackupPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBackupPlanInput`](crate::operation::update_backup_plan::UpdateBackupPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBackupPlanInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,
 }
 impl UpdateBackupPlanInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -64,10 +55,7 @@ impl UpdateBackupPlanInputBuilder {
         self
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    pub fn set_backup_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPlanInput>,
-    ) -> Self {
+    pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlanInput>) -> Self {
         self.backup_plan = input;
         self
     }
@@ -78,15 +66,10 @@ impl UpdateBackupPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackupPlanInput`](crate::operation::update_backup_plan::UpdateBackupPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_backup_plan::UpdateBackupPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_backup_plan::UpdateBackupPlanInput {
-                backup_plan_id: self.backup_plan_id,
-                backup_plan: self.backup_plan,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_backup_plan::UpdateBackupPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_backup_plan::UpdateBackupPlanInput {
+            backup_plan_id: self.backup_plan_id,
+            backup_plan: self.backup_plan,
+        })
     }
 }

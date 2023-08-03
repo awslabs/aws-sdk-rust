@@ -5,8 +5,7 @@
 pub struct ExecuteQueryOutput {
     /// <p>A list of ColumnDescription objects.</p>
     #[doc(hidden)]
-    pub column_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
+    pub column_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
     /// <p>Represents a single row in the query results.</p>
     #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
@@ -43,12 +42,9 @@ impl ExecuteQueryOutput {
 
 /// A builder for [`ExecuteQueryOutput`](crate::operation::execute_query::ExecuteQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteQueryOutputBuilder {
-    pub(crate) column_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
+    pub(crate) column_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -66,17 +62,12 @@ impl ExecuteQueryOutputBuilder {
         self
     }
     /// <p>A list of ColumnDescription objects.</p>
-    pub fn set_column_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
-    ) -> Self {
+    pub fn set_column_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>) -> Self {
         self.column_descriptions = input;
         self
     }
     /// <p>A list of ColumnDescription objects.</p>
-    pub fn get_column_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>> {
+    pub fn get_column_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>> {
         &self.column_descriptions
     }
     /// Appends an item to `rows`.
@@ -91,10 +82,7 @@ impl ExecuteQueryOutputBuilder {
         self
     }
     /// <p>Represents a single row in the query results.</p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>) -> Self {
         self.rows = input;
         self
     }

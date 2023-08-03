@@ -22,36 +22,26 @@ impl StopAutomationExecutionInput {
 }
 impl StopAutomationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopAutomationExecutionInput`](crate::operation::stop_automation_execution::StopAutomationExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder {
         crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopAutomationExecutionInput`](crate::operation::stop_automation_execution::StopAutomationExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAutomationExecutionInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::StopType>,
 }
 impl StopAutomationExecutionInputBuilder {
     /// <p>The execution ID of the Automation to stop.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution ID of the Automation to stop.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl StopAutomationExecutionInputBuilder {
         crate::operation::stop_automation_execution::StopAutomationExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_automation_execution::StopAutomationExecutionInput {
-                automation_execution_id: self.automation_execution_id,
-                r#type: self.r#type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_automation_execution::StopAutomationExecutionInput {
+            automation_execution_id: self.automation_execution_id,
+            r#type: self.r#type,
+        })
     }
 }

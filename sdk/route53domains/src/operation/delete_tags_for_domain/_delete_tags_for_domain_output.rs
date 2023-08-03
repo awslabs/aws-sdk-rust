@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTagsForDomainOutput {
 }
 impl DeleteTagsForDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainOutput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainOutputBuilder {
+    pub fn builder() -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainOutputBuilder {
         crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTagsForDomainOutput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTagsForDomainOutputBuilder {
     _request_id: Option<String>,
 }

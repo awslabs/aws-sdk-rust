@@ -28,7 +28,7 @@ impl DescribeDashboardDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDashboardDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder,
+    inner: crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder,
 }
 impl DescribeDashboardDefinitionFluentBuilder {
     /// Creates a new `DescribeDashboardDefinition`.
@@ -39,7 +39,7 @@ impl DescribeDashboardDefinitionFluentBuilder {
         }
     }
     /// Access the DescribeDashboardDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeDashboardDefinitionFluentBuilder {
             crate::operation::describe_dashboard_definition::DescribeDashboardDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeDashboardDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeDashboardDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeDashboardDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeDashboardDefinitionFluentBuilder {
             crate::operation::describe_dashboard_definition::DescribeDashboardDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

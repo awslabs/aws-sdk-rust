@@ -27,16 +27,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -77,9 +75,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsBuilder 
         &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
             r#type: self.r#type,
             value: self.value,

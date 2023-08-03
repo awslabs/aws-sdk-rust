@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVirtualRouterOutput {
 }
 impl DeleteVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterOutput`](crate::operation::delete_virtual_router::DeleteVirtualRouterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_router::builders::DeleteVirtualRouterOutputBuilder {
-        crate::operation::delete_virtual_router::builders::DeleteVirtualRouterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_virtual_router::builders::DeleteVirtualRouterOutputBuilder {
+        crate::operation::delete_virtual_router::builders::DeleteVirtualRouterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualRouterOutput`](crate::operation::delete_virtual_router::DeleteVirtualRouterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualRouterOutputBuilder {
     pub(crate) virtual_router: ::std::option::Option<crate::types::VirtualRouterData>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteVirtualRouterOutputBuilder {
         self
     }
     /// <p>The virtual router that was deleted.</p>
-    pub fn set_virtual_router(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterData>,
-    ) -> Self {
+    pub fn set_virtual_router(mut self, input: ::std::option::Option<crate::types::VirtualRouterData>) -> Self {
         self.virtual_router = input;
         self
     }

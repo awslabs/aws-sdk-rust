@@ -29,9 +29,7 @@ impl DeleteDiskInput {
 
 /// A builder for [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete_add_ons: ::std::option::Option<bool>,
@@ -66,12 +64,7 @@ impl DeleteDiskInputBuilder {
         &self.force_delete_add_ons
     }
     /// Consumes the builder and constructs a [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_disk::DeleteDiskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_disk::DeleteDiskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_disk::DeleteDiskInput {
             disk_name: self.disk_name,
             force_delete_add_ons: self.force_delete_add_ons,

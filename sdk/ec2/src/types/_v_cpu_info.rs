@@ -51,9 +51,7 @@ impl VCpuInfo {
 
 /// A builder for [`VCpuInfo`](crate::types::VCpuInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VCpuInfoBuilder {
     pub(crate) default_v_cpus: ::std::option::Option<i32>,
     pub(crate) default_cores: ::std::option::Option<i32>,
@@ -136,10 +134,7 @@ impl VCpuInfoBuilder {
         self
     }
     /// <p>The valid number of threads per core that can be configured for the instance type.</p>
-    pub fn set_valid_threads_per_core(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_valid_threads_per_core(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.valid_threads_per_core = input;
         self
     }

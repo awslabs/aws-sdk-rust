@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateFraudsterOutput`](crate::operation::disassociate_fraudster::DisassociateFraudsterOutput) with field(s):
     ///   - [`fraudster(Option<Fraudster>)`](crate::operation::disassociate_fraudster::DisassociateFraudsterOutput::fraudster): <p>Contains all the information about a fraudster.</p>
     /// - On failure, responds with [`SdkError<DisassociateFraudsterError>`](crate::operation::disassociate_fraudster::DisassociateFraudsterError)
-    pub fn disassociate_fraudster(
-        &self,
-    ) -> crate::operation::disassociate_fraudster::builders::DisassociateFraudsterFluentBuilder
-    {
-        crate::operation::disassociate_fraudster::builders::DisassociateFraudsterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_fraudster(&self) -> crate::operation::disassociate_fraudster::builders::DisassociateFraudsterFluentBuilder {
+        crate::operation::disassociate_fraudster::builders::DisassociateFraudsterFluentBuilder::new(self.handle.clone())
     }
 }

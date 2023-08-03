@@ -10,10 +10,7 @@ impl CreateArchiveRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_archive_rule::CreateArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_archive_rule::CreateArchiveRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_archive_rule::CreateArchiveRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_archive_rule();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateArchiveRuleFluentBuilder {
         }
     }
     /// Access the CreateArchiveRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_archive_rule::builders::CreateArchiveRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_archive_rule::builders::CreateArchiveRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateArchiveRuleFluentBuilder {
             crate::operation::create_archive_rule::CreateArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_archive_rule::CreateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_archive_rule::CreateArchiveRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateArchiveRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_archive_rule::CreateArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_archive_rule::CreateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_archive_rule::CreateArchiveRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_archive_rule::CreateArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_archive_rule::CreateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_archive_rule::CreateArchiveRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateArchiveRuleFluentBuilder {
             crate::operation::create_archive_rule::CreateArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_archive_rule::CreateArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_archive_rule::CreateArchiveRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the created analyzer.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analyzer_name(input.into());
         self
     }
     /// <p>The name of the created analyzer.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }
@@ -162,30 +140,17 @@ impl CreateArchiveRuleFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>The criteria for the rule.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         self.inner = self.inner.filter(k.into(), v);
         self
     }
     /// <p>The criteria for the rule.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>The criteria for the rule.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.inner.get_filter()
     }
     /// <p>A client token.</p>

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteClassifierOutput {
 }
 impl DeleteClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClassifierOutput`](crate::operation::delete_classifier::DeleteClassifierOutput).
-    pub fn builder() -> crate::operation::delete_classifier::builders::DeleteClassifierOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_classifier::builders::DeleteClassifierOutputBuilder {
         crate::operation::delete_classifier::builders::DeleteClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClassifierOutput`](crate::operation::delete_classifier::DeleteClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClassifierOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetKeyPolicyOutput`](crate::operation::get_key_policy::GetKeyPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_key_policy::GetKeyPolicyOutput::policy): <p>A key policy document in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetKeyPolicyError>`](crate::operation::get_key_policy::GetKeyPolicyError)
-    pub fn get_key_policy(
-        &self,
-    ) -> crate::operation::get_key_policy::builders::GetKeyPolicyFluentBuilder {
-        crate::operation::get_key_policy::builders::GetKeyPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_key_policy(&self) -> crate::operation::get_key_policy::builders::GetKeyPolicyFluentBuilder {
+        crate::operation::get_key_policy::builders::GetKeyPolicyFluentBuilder::new(self.handle.clone())
     }
 }

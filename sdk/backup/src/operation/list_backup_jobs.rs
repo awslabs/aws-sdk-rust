@@ -9,10 +9,7 @@ impl ListBackupJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::list_backup_jobs::ListBackupJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        ::aws_smithy_http::operation::Operation<crate::operation::list_backup_jobs::ListBackupJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::operation::error::BuildError,
     > {
         assert_ne!(
@@ -27,27 +24,16 @@ impl ListBackupJobsInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_backup_jobs::ListBackupJobsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/backup-jobs").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -55,8 +41,7 @@ impl ListBackupJobsInput {
             fn uri_query(
                 _input: &crate::operation::list_backup_jobs::ListBackupJobsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
@@ -65,18 +50,12 @@ impl ListBackupJobsInput {
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
                     if *inner_2 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
-                        );
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.by_resource_arn {
                     {
-                        query.push_kv(
-                            "resourceArn",
-                            &::aws_smithy_http::query::fmt_string(&inner_3),
-                        );
+                        query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.by_state {
@@ -86,20 +65,14 @@ impl ListBackupJobsInput {
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.by_backup_vault_name {
                     {
-                        query.push_kv(
-                            "backupVaultName",
-                            &::aws_smithy_http::query::fmt_string(&inner_5),
-                        );
+                        query.push_kv("backupVaultName", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.by_created_before {
                     {
                         query.push_kv(
                             "createdBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_6,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_6, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
@@ -107,19 +80,13 @@ impl ListBackupJobsInput {
                     {
                         query.push_kv(
                             "createdAfter",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_7,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_7, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.by_resource_type {
                     {
-                        query.push_kv(
-                            "resourceType",
-                            &::aws_smithy_http::query::fmt_string(&inner_8),
-                        );
+                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.by_account_id {
@@ -131,10 +98,7 @@ impl ListBackupJobsInput {
                     {
                         query.push_kv(
                             "completeAfter",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_10,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_10, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
@@ -142,19 +106,13 @@ impl ListBackupJobsInput {
                     {
                         query.push_kv(
                             "completeBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_11,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_11, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
                 if let ::std::option::Option::Some(inner_12) = &_input.by_parent_job_id {
                     {
-                        query.push_kv(
-                            "parentJobId",
-                            &::aws_smithy_http::query::fmt_string(&inner_12),
-                        );
+                        query.push_kv("parentJobId", &::aws_smithy_http::query::fmt_string(&inner_12));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -163,10 +121,7 @@ impl ListBackupJobsInput {
             fn update_http_builder(
                 input: &crate::operation::list_backup_jobs::ListBackupJobsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -188,10 +143,8 @@ impl ListBackupJobsInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -200,29 +153,16 @@ impl ListBackupJobsInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::list_backup_jobs::ListBackupJobs::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "ListBackupJobs",
-            "backup",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::list_backup_jobs::ListBackupJobs::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("ListBackupJobs", "backup"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -239,19 +179,15 @@ impl ListBackupJobs {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for ListBackupJobs {
-    type Output = ::std::result::Result<
-        crate::operation::list_backup_jobs::ListBackupJobsOutput,
-        crate::operation::list_backup_jobs::ListBackupJobsError,
-    >;
+    type Output =
+        ::std::result::Result<crate::operation::list_backup_jobs::ListBackupJobsOutput, crate::operation::list_backup_jobs::ListBackupJobsError>;
     fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
-            crate::protocol_serde::shape_list_backup_jobs::de_list_backup_jobs_http_error(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_backup_jobs::de_list_backup_jobs_http_error(status, headers, body)
         } else {
             crate::protocol_serde::shape_list_backup_jobs::de_list_backup_jobs_http_response_with_props(status, headers, body)
         }
@@ -278,9 +214,7 @@ pub enum ListBackupJobsError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for ListBackupJobsError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -302,15 +236,9 @@ impl ::std::fmt::Display for ListBackupJobsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListBackupJobsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidParameterValueException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceUnavailableException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
@@ -330,27 +258,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListBackupJobsError {
 impl ListBackupJobsError {
     /// Creates the `ListBackupJobsError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `ListBackupJobsError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

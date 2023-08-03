@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput) with field(s):
     ///   - [`function_list(Option<FunctionList>)`](crate::operation::list_functions::ListFunctionsOutput::function_list): <p>A list of CloudFront functions.</p>
     /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::operation::list_functions::ListFunctionsError)
-    pub fn list_functions(
-        &self,
-    ) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
-        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_functions(&self) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
+        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(self.handle.clone())
     }
 }

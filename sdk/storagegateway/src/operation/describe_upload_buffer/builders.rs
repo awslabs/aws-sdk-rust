@@ -38,9 +38,7 @@ impl DescribeUploadBufferFluentBuilder {
         }
     }
     /// Access the DescribeUploadBuffer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_upload_buffer::builders::DescribeUploadBufferInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_upload_buffer::builders::DescribeUploadBufferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeUploadBufferFluentBuilder {
             crate::operation::describe_upload_buffer::DescribeUploadBuffer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_upload_buffer::DescribeUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_upload_buffer::DescribeUploadBufferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeUploadBufferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeUploadBufferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_upload_buffer::DescribeUploadBufferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_upload_buffer::DescribeUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_upload_buffer::DescribeUploadBufferError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeUploadBufferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_upload_buffer::DescribeUploadBufferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_upload_buffer::DescribeUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_upload_buffer::DescribeUploadBufferError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeUploadBufferFluentBuilder {
             crate::operation::describe_upload_buffer::DescribeUploadBuffer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_upload_buffer::DescribeUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_upload_buffer::DescribeUploadBufferError>,
     > {
         self.customize_middleware().await
     }

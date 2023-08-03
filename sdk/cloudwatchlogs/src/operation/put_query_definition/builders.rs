@@ -10,10 +10,7 @@ impl PutQueryDefinitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_query_definition::PutQueryDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_query_definition::PutQueryDefinitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_query_definition::PutQueryDefinitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_query_definition();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl PutQueryDefinitionFluentBuilder {
         }
     }
     /// Access the PutQueryDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_query_definition::builders::PutQueryDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_query_definition::builders::PutQueryDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl PutQueryDefinitionFluentBuilder {
             crate::operation::put_query_definition::PutQueryDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_query_definition::PutQueryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_query_definition::PutQueryDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl PutQueryDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl PutQueryDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_query_definition::PutQueryDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_query_definition::PutQueryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_query_definition::PutQueryDefinitionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl PutQueryDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_query_definition::PutQueryDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_query_definition::PutQueryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_query_definition::PutQueryDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl PutQueryDefinitionFluentBuilder {
             crate::operation::put_query_definition::PutQueryDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_query_definition::PutQueryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_query_definition::PutQueryDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -140,19 +124,13 @@ impl PutQueryDefinitionFluentBuilder {
     }
     /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
-    pub fn query_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_definition_id(input.into());
         self
     }
     /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
-    pub fn set_query_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_definition_id(input);
         self
     }
@@ -167,27 +145,19 @@ impl PutQueryDefinitionFluentBuilder {
     ///
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
     /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
-    pub fn log_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_names(input.into());
         self
     }
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
     /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
-    pub fn set_log_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_group_names(input);
         self
     }
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
     /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
-    pub fn get_log_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_log_group_names()
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>

@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`metadata(impl ::std::convert::Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::metadata) / [`set_metadata(Option<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::set_metadata): <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     /// - On success, responds with [`PutMetadataOutput`](crate::operation::put_metadata::PutMetadataOutput)
     /// - On failure, responds with [`SdkError<PutMetadataError>`](crate::operation::put_metadata::PutMetadataError)
-    pub fn put_metadata(
-        &self,
-    ) -> crate::operation::put_metadata::builders::PutMetadataFluentBuilder {
+    pub fn put_metadata(&self) -> crate::operation::put_metadata::builders::PutMetadataFluentBuilder {
         crate::operation::put_metadata::builders::PutMetadataFluentBuilder::new(self.handle.clone())
     }
 }

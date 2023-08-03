@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`directory_configs(Option<Vec<DirectoryConfig>>)`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput::directory_configs): <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeDirectoryConfigsError>`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsError)
-    pub fn describe_directory_configs(
-        &self,
-    ) -> crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsFluentBuilder
-    {
+    pub fn describe_directory_configs(&self) -> crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsFluentBuilder {
         crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -53,9 +53,7 @@ impl GetBucketPolicyInput {
 
 /// A builder for [`GetBucketPolicyInput`](crate::operation::get_bucket_policy::GetBucketPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl GetBucketPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketPolicyInput`](crate::operation::get_bucket_policy::GetBucketPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_policy::GetBucketPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_bucket_policy::GetBucketPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_policy::GetBucketPolicyInput {
             account_id: self.account_id,
             bucket: self.bucket,

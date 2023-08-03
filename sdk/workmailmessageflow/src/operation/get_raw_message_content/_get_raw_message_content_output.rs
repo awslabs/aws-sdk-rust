@@ -20,9 +20,7 @@ impl ::aws_http::request_id::RequestId for GetRawMessageContentOutput {
 }
 impl GetRawMessageContentOutput {
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::operation::get_raw_message_content::GetRawMessageContentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_raw_message_content::builders::GetRawMessageContentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_raw_message_content::builders::GetRawMessageContentOutputBuilder {
         crate::operation::get_raw_message_content::builders::GetRawMessageContentOutputBuilder::default()
     }
 }
@@ -41,17 +39,12 @@ impl GetRawMessageContentOutputBuilder {
         self
     }
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn set_message_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_message_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.message_content = input;
         self
     }
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn get_message_content(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_message_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.message_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

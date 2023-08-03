@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDirectorySetupOutput {
 }
 impl UpdateDirectorySetupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectorySetupOutput`](crate::operation::update_directory_setup::UpdateDirectorySetupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupOutputBuilder {
+    pub fn builder() -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupOutputBuilder {
         crate::operation::update_directory_setup::builders::UpdateDirectorySetupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDirectorySetupOutput`](crate::operation::update_directory_setup::UpdateDirectorySetupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectorySetupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFindingsStatisticsOutput {
 }
 impl GetFindingsStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsStatisticsOutput`](crate::operation::get_findings_statistics::GetFindingsStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_statistics::builders::GetFindingsStatisticsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_findings_statistics::builders::GetFindingsStatisticsOutputBuilder {
         crate::operation::get_findings_statistics::builders::GetFindingsStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsStatisticsOutput`](crate::operation::get_findings_statistics::GetFindingsStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsStatisticsOutputBuilder {
     pub(crate) finding_statistics: ::std::option::Option<crate::types::FindingStatistics>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetFindingsStatisticsOutputBuilder {
         self
     }
     /// <p>The finding statistics object.</p>
-    pub fn set_finding_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingStatistics>,
-    ) -> Self {
+    pub fn set_finding_statistics(mut self, input: ::std::option::Option<crate::types::FindingStatistics>) -> Self {
         self.finding_statistics = input;
         self
     }
     /// <p>The finding statistics object.</p>
-    pub fn get_finding_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingStatistics> {
+    pub fn get_finding_statistics(&self) -> &::std::option::Option<crate::types::FindingStatistics> {
         &self.finding_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

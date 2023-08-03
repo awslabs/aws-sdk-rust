@@ -22,35 +22,26 @@ impl UpdateGlobalTableInput {
 }
 impl UpdateGlobalTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableInput`](crate::operation::update_global_table::UpdateGlobalTableInput).
-    pub fn builder(
-    ) -> crate::operation::update_global_table::builders::UpdateGlobalTableInputBuilder {
+    pub fn builder() -> crate::operation::update_global_table::builders::UpdateGlobalTableInputBuilder {
         crate::operation::update_global_table::builders::UpdateGlobalTableInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalTableInput`](crate::operation::update_global_table::UpdateGlobalTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,
 }
 impl UpdateGlobalTableInputBuilder {
     /// <p>The global table name.</p>
-    pub fn global_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The global table name.</p>
-    pub fn set_global_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_table_name = input;
         self
     }
@@ -70,31 +61,21 @@ impl UpdateGlobalTableInputBuilder {
         self
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn set_replica_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,
-    ) -> Self {
+    pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>) -> Self {
         self.replica_updates = input;
         self
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn get_replica_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
+    pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
         &self.replica_updates
     }
     /// Consumes the builder and constructs a [`UpdateGlobalTableInput`](crate::operation::update_global_table::UpdateGlobalTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_global_table::UpdateGlobalTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_global_table::UpdateGlobalTableInput {
-                global_table_name: self.global_table_name,
-                replica_updates: self.replica_updates,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_global_table::UpdateGlobalTableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_global_table::UpdateGlobalTableInput {
+            global_table_name: self.global_table_name,
+            replica_updates: self.replica_updates,
+        })
     }
 }

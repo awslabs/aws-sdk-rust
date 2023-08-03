@@ -25,11 +25,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSmbFileShareOutput`](crate::operation::update_smb_file_share::UpdateSmbFileShareOutput) with field(s):
     ///   - [`file_share_arn(Option<String>)`](crate::operation::update_smb_file_share::UpdateSmbFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
     /// - On failure, responds with [`SdkError<UpdateSMBFileShareError>`](crate::operation::update_smb_file_share::UpdateSMBFileShareError)
-    pub fn update_smb_file_share(
-        &self,
-    ) -> crate::operation::update_smb_file_share::builders::UpdateSMBFileShareFluentBuilder {
-        crate::operation::update_smb_file_share::builders::UpdateSMBFileShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_smb_file_share(&self) -> crate::operation::update_smb_file_share::builders::UpdateSMBFileShareFluentBuilder {
+        crate::operation::update_smb_file_share::builders::UpdateSMBFileShareFluentBuilder::new(self.handle.clone())
     }
 }

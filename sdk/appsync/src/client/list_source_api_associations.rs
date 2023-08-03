@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`source_api_association_summaries(Option<Vec<SourceApiAssociationSummary>>)`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput::source_api_association_summaries): <p>The <code>SourceApiAssociationSummary</code> object data.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListSourceApiAssociationsError>`](crate::operation::list_source_api_associations::ListSourceApiAssociationsError)
-    pub fn list_source_api_associations(&self) -> crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsFluentBuilder{
+    pub fn list_source_api_associations(&self) -> crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsFluentBuilder {
         crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -75,17 +75,14 @@ impl DeleteDbInstanceInput {
 }
 impl DeleteDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
-    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder {
         crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) skip_final_snapshot: ::std::option::Option<bool>,
@@ -98,10 +95,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -110,10 +104,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -165,10 +156,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -183,10 +171,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
-    pub fn set_final_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = input;
         self
     }
@@ -201,9 +186,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
-    pub fn get_final_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_db_snapshot_identifier
     }
     /// <p>A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
@@ -223,17 +206,12 @@ impl DeleteDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_instance::DeleteDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_instance::DeleteDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier,
-                skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),
-                final_db_snapshot_identifier: self.final_db_snapshot_identifier,
-                delete_automated_backups: self.delete_automated_backups,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
+            db_instance_identifier: self.db_instance_identifier,
+            skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),
+            final_db_snapshot_identifier: self.final_db_snapshot_identifier,
+            delete_automated_backups: self.delete_automated_backups,
+        })
     }
 }

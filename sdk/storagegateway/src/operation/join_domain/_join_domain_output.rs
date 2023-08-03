@@ -36,9 +36,7 @@ impl JoinDomainOutput {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn active_directory_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActiveDirectoryStatus> {
+    pub fn active_directory_status(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryStatus> {
         self.active_directory_status.as_ref()
     }
 }
@@ -56,9 +54,7 @@ impl JoinDomainOutput {
 
 /// A builder for [`JoinDomainOutput`](crate::operation::join_domain::JoinDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinDomainOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_directory_status: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
@@ -103,10 +99,7 @@ impl JoinDomainOutputBuilder {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn set_active_directory_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
-    ) -> Self {
+    pub fn set_active_directory_status(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryStatus>) -> Self {
         self.active_directory_status = input;
         self
     }
@@ -120,9 +113,7 @@ impl JoinDomainOutputBuilder {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn get_active_directory_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveDirectoryStatus> {
+    pub fn get_active_directory_status(&self) -> &::std::option::Option<crate::types::ActiveDirectoryStatus> {
         &self.active_directory_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

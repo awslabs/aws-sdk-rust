@@ -36,18 +36,14 @@ impl ListFindingsMetricsInput {
 }
 impl ListFindingsMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListFindingsMetricsInput`](crate::operation::list_findings_metrics::ListFindingsMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder {
-        crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder {
+        crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingsMetricsInput`](crate::operation::list_findings_metrics::ListFindingsMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsMetricsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -89,10 +85,7 @@ impl ListFindingsMetricsInputBuilder {
         self
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -106,10 +99,7 @@ impl ListFindingsMetricsInputBuilder {
         self
     }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListFindingsMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsMetricsInput`](crate::operation::list_findings_metrics::ListFindingsMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings_metrics::ListFindingsMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_findings_metrics::ListFindingsMetricsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                start_date: self.start_date,
-                end_date: self.end_date,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_findings_metrics::ListFindingsMetricsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_findings_metrics::ListFindingsMetricsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            start_date: self.start_date,
+            end_date: self.end_date,
+        })
     }
 }

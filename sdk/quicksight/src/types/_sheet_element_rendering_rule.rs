@@ -9,8 +9,7 @@ pub struct SheetElementRenderingRule {
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The override configuration of the rendering rules of a sheet.</p>
     #[doc(hidden)]
-    pub configuration_overrides:
-        ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
+    pub configuration_overrides: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
 }
 impl SheetElementRenderingRule {
     /// <p>The expression of the rendering rules of a sheet.</p>
@@ -18,9 +17,7 @@ impl SheetElementRenderingRule {
         self.expression.as_deref()
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SheetElementConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::SheetElementConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
 }
@@ -44,8 +41,7 @@ impl SheetElementRenderingRule {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SheetElementRenderingRuleBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_overrides:
-        ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
+    pub(crate) configuration_overrides: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
 }
 impl SheetElementRenderingRuleBuilder {
     /// <p>The expression of the rendering rules of a sheet.</p>
@@ -63,25 +59,17 @@ impl SheetElementRenderingRuleBuilder {
         &self.expression
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn configuration_overrides(
-        mut self,
-        input: crate::types::SheetElementConfigurationOverrides,
-    ) -> Self {
+    pub fn configuration_overrides(mut self, input: crate::types::SheetElementConfigurationOverrides) -> Self {
         self.configuration_overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn set_configuration_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>) -> Self {
         self.configuration_overrides = input;
         self
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn get_configuration_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::SheetElementConfigurationOverrides> {
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::SheetElementConfigurationOverrides> {
         &self.configuration_overrides
     }
     /// Consumes the builder and constructs a [`SheetElementRenderingRule`](crate::types::SheetElementRenderingRule).

@@ -29,9 +29,7 @@ impl DescribeProjectOutput {
 
 /// A builder for [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectOutputBuilder {
     pub(crate) details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::ProjectDetails>) -> Self {
         self.details = input;
         self
     }

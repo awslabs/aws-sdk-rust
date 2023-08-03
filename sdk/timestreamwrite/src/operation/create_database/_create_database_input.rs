@@ -36,9 +36,7 @@ impl CreateDatabaseInput {
 
 /// A builder for [`CreateDatabaseInput`](crate::operation::create_database::CreateDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatabaseInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateDatabaseInputBuilder {
 }
 impl CreateDatabaseInputBuilder {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -91,10 +83,7 @@ impl CreateDatabaseInputBuilder {
         self
     }
     /// <p> A list of key-value pairs to label the table. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -105,10 +94,7 @@ impl CreateDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatabaseInput`](crate::operation::create_database::CreateDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_database::CreateDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_database::CreateDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_database::CreateDatabaseInput {
             database_name: self.database_name,
             kms_key_id: self.kms_key_id,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeHostKeyOutput`](crate::operation::describe_host_key::DescribeHostKeyOutput) with field(s):
     ///   - [`host_key(Option<DescribedHostKey>)`](crate::operation::describe_host_key::DescribeHostKeyOutput::host_key): <p>Returns the details for the specified host key.</p>
     /// - On failure, responds with [`SdkError<DescribeHostKeyError>`](crate::operation::describe_host_key::DescribeHostKeyError)
-    pub fn describe_host_key(
-        &self,
-    ) -> crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder {
-        crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_host_key(&self) -> crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder {
+        crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`permanent_deletion_time_in_days(i32)`](crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityFluentBuilder::permanent_deletion_time_in_days) / [`set_permanent_deletion_time_in_days(Option<i32>)`](crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityFluentBuilder::set_permanent_deletion_time_in_days): <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
     /// - On success, responds with [`DeleteCertificateAuthorityOutput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput)
     /// - On failure, responds with [`SdkError<DeleteCertificateAuthorityError>`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError)
-    pub fn delete_certificate_authority(&self) -> crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityFluentBuilder{
+    pub fn delete_certificate_authority(&self) -> crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityFluentBuilder {
         crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

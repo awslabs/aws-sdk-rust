@@ -22,9 +22,7 @@ impl DeleteImageInput {
 
 /// A builder for [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteImageInputBuilder {
         &self.image_name
     }
     /// Consumes the builder and constructs a [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_image::DeleteImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_image::DeleteImageInput {
-            image_name: self.image_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_image::DeleteImageInput { image_name: self.image_name })
     }
 }

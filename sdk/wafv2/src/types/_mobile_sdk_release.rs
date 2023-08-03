@@ -45,9 +45,7 @@ impl MobileSdkRelease {
 
 /// A builder for [`MobileSdkRelease`](crate::types::MobileSdkRelease).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MobileSdkReleaseBuilder {
     pub(crate) release_version: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -56,18 +54,12 @@ pub struct MobileSdkReleaseBuilder {
 }
 impl MobileSdkReleaseBuilder {
     /// <p>The release version. </p>
-    pub fn release_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release version. </p>
-    pub fn set_release_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_version = input;
         self
     }
@@ -81,10 +73,7 @@ impl MobileSdkReleaseBuilder {
         self
     }
     /// <p>The timestamp of the release. </p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -93,18 +82,12 @@ impl MobileSdkReleaseBuilder {
         &self.timestamp
     }
     /// <p>Notes describing the release.</p>
-    pub fn release_notes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Notes describing the release.</p>
-    pub fn set_release_notes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
@@ -124,10 +107,7 @@ impl MobileSdkReleaseBuilder {
         self
     }
     /// <p>Tags that are associated with the release. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

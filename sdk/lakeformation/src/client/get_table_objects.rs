@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`objects(Option<Vec<PartitionObjects>>)`](crate::operation::get_table_objects::GetTableObjectsOutput::objects): <p>A list of objects organized by partition keys.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_table_objects::GetTableObjectsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
     /// - On failure, responds with [`SdkError<GetTableObjectsError>`](crate::operation::get_table_objects::GetTableObjectsError)
-    pub fn get_table_objects(
-        &self,
-    ) -> crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder {
-        crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_table_objects(&self) -> crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder {
+        crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::new(self.handle.clone())
     }
 }

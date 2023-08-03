@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAppLaunchConfigurationOutput {
 }
 impl PutAppLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutAppLaunchConfigurationOutput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationOutputBuilder {
         crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppLaunchConfigurationOutput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppLaunchConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutAppLaunchConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAppLaunchConfigurationOutput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput {
         crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput {
             _request_id: self._request_id,
         }

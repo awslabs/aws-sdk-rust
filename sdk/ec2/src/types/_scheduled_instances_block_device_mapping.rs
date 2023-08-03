@@ -46,9 +46,7 @@ impl ScheduledInstancesBlockDeviceMapping {
 
 /// A builder for [`ScheduledInstancesBlockDeviceMapping`](crate::types::ScheduledInstancesBlockDeviceMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstancesBlockDeviceMappingBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs: ::std::option::Option<crate::types::ScheduledInstancesEbs>,
@@ -76,10 +74,7 @@ impl ScheduledInstancesBlockDeviceMappingBuilder {
         self
     }
     /// <p>Parameters used to set up EBS volumes automatically when the instance is launched.</p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledInstancesEbs>,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::ScheduledInstancesEbs>) -> Self {
         self.ebs = input;
         self
     }

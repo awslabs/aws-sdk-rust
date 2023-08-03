@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`count(i32)`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput::count): <p>The number of workflow executions.</p>
     ///   - [`truncated(bool)`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     /// - On failure, responds with [`SdkError<CountClosedWorkflowExecutionsError>`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError)
-    pub fn count_closed_workflow_executions(&self) -> crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsFluentBuilder{
+    pub fn count_closed_workflow_executions(
+        &self,
+    ) -> crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsFluentBuilder {
         crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl OrganizationEbsVolumes {
 
 /// A builder for [`OrganizationEbsVolumes`](crate::types::OrganizationEbsVolumes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationEbsVolumesBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
 }

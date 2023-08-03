@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`opt_out_list_name(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::opt_out_list_name): <p>The name of the OptOutList that was associated with the phone number.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::created_timestamp): <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<ReleasePhoneNumberError>`](crate::operation::release_phone_number::ReleasePhoneNumberError)
-    pub fn release_phone_number(
-        &self,
-    ) -> crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder {
-        crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn release_phone_number(&self) -> crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder {
+        crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

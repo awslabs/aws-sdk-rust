@@ -16,11 +16,7 @@ pub fn ser_command(
             crate::protocol_serde::shape_reboot::ser_reboot(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::Command::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant("Command"),
-            )
-        }
+        crate::types::Command::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Command")),
     }
     Ok(())
 }

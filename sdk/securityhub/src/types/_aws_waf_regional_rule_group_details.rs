@@ -15,8 +15,7 @@ pub struct AwsWafRegionalRuleGroupDetails {
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count. </p>
     #[doc(hidden)]
-    pub rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
 }
 impl AwsWafRegionalRuleGroupDetails {
     /// <p>A name for the metrics for this rule group. </p>
@@ -32,9 +31,7 @@ impl AwsWafRegionalRuleGroupDetails {
         self.rule_group_id.as_deref()
     }
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count. </p>
-    pub fn rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsWafRegionalRuleGroupRulesDetails]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafRegionalRuleGroupRulesDetails]> {
         self.rules.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl AwsWafRegionalRuleGroupDetails {
 
 /// A builder for [`AwsWafRegionalRuleGroupDetails`](crate::types::AwsWafRegionalRuleGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRuleGroupDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
 }
 impl AwsWafRegionalRuleGroupDetailsBuilder {
     /// <p>A name for the metrics for this rule group. </p>
@@ -87,18 +81,12 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
         &self.name
     }
     /// <p>The ID of the rule group. </p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the rule group. </p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_id = input;
         self
     }
@@ -118,20 +106,12 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
         self
     }
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>,
-        >,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count. </p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>
-    {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupDetails`](crate::types::AwsWafRegionalRuleGroupDetails).

@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`GetCampaignDateRangeKpiOutput`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput) with field(s):
     ///   - [`campaign_date_range_kpi_response(Option<CampaignDateRangeKpiResponse>)`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput::campaign_date_range_kpi_response): <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetCampaignDateRangeKpiError>`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError)
-    pub fn get_campaign_date_range_kpi(
-        &self,
-    ) -> crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiFluentBuilder
-    {
+    pub fn get_campaign_date_range_kpi(&self) -> crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiFluentBuilder {
         crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiFluentBuilder::new(self.handle.clone())
     }
 }

@@ -118,18 +118,12 @@ impl SamlOptionsInputBuilder {
         &self.idp
     }
     /// <p>The SAML master user name, which is stored in the domain's internal user database.</p>
-    pub fn master_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SAML master user name, which is stored in the domain's internal user database.</p>
-    pub fn set_master_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_name = input;
         self
     }
@@ -138,18 +132,12 @@ impl SamlOptionsInputBuilder {
         &self.master_user_name
     }
     /// <p>The backend role that the SAML master user is mapped to.</p>
-    pub fn master_backend_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_backend_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_backend_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The backend role that the SAML master user is mapped to.</p>
-    pub fn set_master_backend_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_backend_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_backend_role = input;
         self
     }

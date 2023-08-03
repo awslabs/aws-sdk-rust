@@ -5,8 +5,7 @@
 pub struct DescribeFleetAdvisorLsaAnalysisOutput {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
     #[doc(hidden)]
-    pub analysis:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>,
+    pub analysis: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeFleetAdvisorLsaAnalysisOutput {
 }
 impl DescribeFleetAdvisorLsaAnalysisOutput {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub fn analysis(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FleetAdvisorLsaAnalysisResponse]> {
+    pub fn analysis(&self) -> ::std::option::Option<&[crate::types::FleetAdvisorLsaAnalysisResponse]> {
         self.analysis.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFleetAdvisorLsaAnalysisOutput
 }
 impl DescribeFleetAdvisorLsaAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisOutputBuilder {
         crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorLsaAnalysisOutputBuilder {
-    pub(crate) analysis:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>,
+    pub(crate) analysis: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl DescribeFleetAdvisorLsaAnalysisOutputBuilder {
         self
     }
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub fn set_analysis(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>,
-        >,
-    ) -> Self {
+    pub fn set_analysis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>) -> Self {
         self.analysis = input;
         self
     }
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub fn get_analysis(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>
-    {
+    pub fn get_analysis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>> {
         &self.analysis
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -100,15 +86,10 @@ impl DescribeFleetAdvisorLsaAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput {
         crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput {
-            analysis: self.analysis
-            ,
-            next_token: self.next_token
-            ,
+            analysis: self.analysis,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

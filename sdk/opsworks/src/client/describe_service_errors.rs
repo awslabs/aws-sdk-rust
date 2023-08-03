@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput) with field(s):
     ///   - [`service_errors(Option<Vec<ServiceError>>)`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput::service_errors): <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     /// - On failure, responds with [`SdkError<DescribeServiceErrorsError>`](crate::operation::describe_service_errors::DescribeServiceErrorsError)
-    pub fn describe_service_errors(
-        &self,
-    ) -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsFluentBuilder
-    {
-        crate::operation::describe_service_errors::builders::DescribeServiceErrorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_service_errors(&self) -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsFluentBuilder {
+        crate::operation::describe_service_errors::builders::DescribeServiceErrorsFluentBuilder::new(self.handle.clone())
     }
 }

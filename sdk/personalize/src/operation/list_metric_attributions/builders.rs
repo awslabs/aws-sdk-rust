@@ -37,10 +37,7 @@ impl ListMetricAttributionsFluentBuilder {
         }
     }
     /// Access the ListMetricAttributions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_metric_attributions::builders::ListMetricAttributionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_metric_attributions::builders::ListMetricAttributionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListMetricAttributionsFluentBuilder {
             crate::operation::list_metric_attributions::ListMetricAttributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_attributions::ListMetricAttributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_attributions::ListMetricAttributionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListMetricAttributionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListMetricAttributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_metric_attributions::ListMetricAttributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_attributions::ListMetricAttributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_attributions::ListMetricAttributionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListMetricAttributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_metric_attributions::ListMetricAttributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_attributions::ListMetricAttributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_attributions::ListMetricAttributionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl ListMetricAttributionsFluentBuilder {
             crate::operation::list_metric_attributions::ListMetricAttributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_attributions::ListMetricAttributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_attributions::ListMetricAttributionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_metric_attributions::paginator::ListMetricAttributionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_metric_attributions::paginator::ListMetricAttributionsPaginator
-    {
-        crate::operation::list_metric_attributions::paginator::ListMetricAttributionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_metric_attributions::paginator::ListMetricAttributionsPaginator {
+        crate::operation::list_metric_attributions::paginator::ListMetricAttributionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }

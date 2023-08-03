@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStreamingDistributionOutput {
 }
 impl DeleteStreamingDistributionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamingDistributionOutput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput).
-    pub fn builder() -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionOutputBuilder {
         crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamingDistributionOutput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamingDistributionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteStreamingDistributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStreamingDistributionOutput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput {
+    pub fn build(self) -> crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput {
         crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput {
             _request_id: self._request_id,
         }

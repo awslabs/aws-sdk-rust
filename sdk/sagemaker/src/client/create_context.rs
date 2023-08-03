@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateContextOutput`](crate::operation::create_context::CreateContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::operation::create_context::CreateContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<CreateContextError>`](crate::operation::create_context::CreateContextError)
-    pub fn create_context(
-        &self,
-    ) -> crate::operation::create_context::builders::CreateContextFluentBuilder {
-        crate::operation::create_context::builders::CreateContextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_context(&self) -> crate::operation::create_context::builders::CreateContextFluentBuilder {
+        crate::operation::create_context::builders::CreateContextFluentBuilder::new(self.handle.clone())
     }
 }

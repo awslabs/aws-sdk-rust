@@ -30,9 +30,7 @@ impl InsightConfiguration {
 
 /// A builder for [`InsightConfiguration`](crate::types::InsightConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightConfigurationBuilder {
     pub(crate) computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     pub(crate) custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,
@@ -50,17 +48,12 @@ impl InsightConfigurationBuilder {
         self
     }
     /// <p>The computations configurations of the insight visual</p>
-    pub fn set_computations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
-    ) -> Self {
+    pub fn set_computations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>) -> Self {
         self.computations = input;
         self
     }
     /// <p>The computations configurations of the insight visual</p>
-    pub fn get_computations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Computation>> {
+    pub fn get_computations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Computation>> {
         &self.computations
     }
     /// <p>The custom narrative of the insight visual.</p>
@@ -69,17 +62,12 @@ impl InsightConfigurationBuilder {
         self
     }
     /// <p>The custom narrative of the insight visual.</p>
-    pub fn set_custom_narrative(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomNarrativeOptions>,
-    ) -> Self {
+    pub fn set_custom_narrative(mut self, input: ::std::option::Option<crate::types::CustomNarrativeOptions>) -> Self {
         self.custom_narrative = input;
         self
     }
     /// <p>The custom narrative of the insight visual.</p>
-    pub fn get_custom_narrative(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomNarrativeOptions> {
+    pub fn get_custom_narrative(&self) -> &::std::option::Option<crate::types::CustomNarrativeOptions> {
         &self.custom_narrative
     }
     /// Consumes the builder and constructs a [`InsightConfiguration`](crate::types::InsightConfiguration).

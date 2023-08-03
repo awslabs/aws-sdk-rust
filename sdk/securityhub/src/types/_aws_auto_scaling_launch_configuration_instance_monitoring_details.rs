@@ -18,18 +18,14 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
 }
 impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
         crate::types::builders::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

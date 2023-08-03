@@ -11,8 +11,7 @@ pub fn ser_job_parameters_http_payload(
 
 pub fn ser_job_parameters_payload(
     input: &crate::types::JobParameters,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_job_parameters::ser_job_parameters(&mut object, input)?;

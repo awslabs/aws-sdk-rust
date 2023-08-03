@@ -10,10 +10,7 @@ impl CreateImageVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_image_version::CreateImageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_version::CreateImageVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_image_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateImageVersionFluentBuilder {
         }
     }
     /// Access the CreateImageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_image_version::builders::CreateImageVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_image_version::builders::CreateImageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateImageVersionFluentBuilder {
             crate::operation::create_image_version::CreateImageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_version::CreateImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateImageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateImageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_version::CreateImageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_version::CreateImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateImageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_version::CreateImageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_version::CreateImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateImageVersionFluentBuilder {
             crate::operation::create_image_version::CreateImageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_version::CreateImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -198,10 +182,7 @@ impl CreateImageVersionFluentBuilder {
         self
     }
     /// <p>A list of aliases created with the image version.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_aliases(input);
         self
     }
@@ -227,10 +208,7 @@ impl CreateImageVersionFluentBuilder {
     /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
     /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    pub fn set_vendor_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorGuidance>,
-    ) -> Self {
+    pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
         self.inner = self.inner.set_vendor_guidance(input);
         self
     }
@@ -288,18 +266,12 @@ impl CreateImageVersionFluentBuilder {
         self.inner.get_ml_framework()
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn programming_lang(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.programming_lang(input.into());
         self
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn set_programming_lang(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_programming_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_programming_lang(input);
         self
     }
@@ -348,18 +320,12 @@ impl CreateImageVersionFluentBuilder {
         self.inner.get_horovod()
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_notes(input.into());
         self
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn set_release_notes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_notes(input);
         self
     }

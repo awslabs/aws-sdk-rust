@@ -38,9 +38,7 @@ impl StopNotebookInstanceFluentBuilder {
         }
     }
     /// Access the StopNotebookInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl StopNotebookInstanceFluentBuilder {
             crate::operation::stop_notebook_instance::StopNotebookInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_notebook_instance::StopNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_notebook_instance::StopNotebookInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl StopNotebookInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl StopNotebookInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_notebook_instance::StopNotebookInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_notebook_instance::StopNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_notebook_instance::StopNotebookInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl StopNotebookInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_notebook_instance::StopNotebookInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_notebook_instance::StopNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_notebook_instance::StopNotebookInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl StopNotebookInstanceFluentBuilder {
             crate::operation::stop_notebook_instance::StopNotebookInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_notebook_instance::StopNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_notebook_instance::StopNotebookInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the notebook instance to terminate.</p>
-    pub fn notebook_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notebook_instance_name(input.into());
         self
     }
     /// <p>The name of the notebook instance to terminate.</p>
-    pub fn set_notebook_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notebook_instance_name(input);
         self
     }

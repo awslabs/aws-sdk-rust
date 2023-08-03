@@ -51,9 +51,7 @@ impl SpotDatafeedSubscription {
 
 /// A builder for [`SpotDatafeedSubscription`](crate::types::SpotDatafeedSubscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotDatafeedSubscriptionBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) fault: ::std::option::Option<crate::types::SpotInstanceStateFault>,
@@ -82,10 +80,7 @@ impl SpotDatafeedSubscriptionBuilder {
         self
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
-    pub fn set_fault(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotInstanceStateFault>,
-    ) -> Self {
+    pub fn set_fault(mut self, input: ::std::option::Option<crate::types::SpotInstanceStateFault>) -> Self {
         self.fault = input;
         self
     }
@@ -127,10 +122,7 @@ impl SpotDatafeedSubscriptionBuilder {
         self
     }
     /// <p>The state of the Spot Instance data feed subscription.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DatafeedSubscriptionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DatafeedSubscriptionState>) -> Self {
         self.state = input;
         self
     }

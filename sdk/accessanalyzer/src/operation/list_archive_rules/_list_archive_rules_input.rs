@@ -30,17 +30,14 @@ impl ListArchiveRulesInput {
 }
 impl ListArchiveRulesInput {
     /// Creates a new builder-style object to manufacture [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
-    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder {
         crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArchiveRulesInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct ListArchiveRulesInputBuilder {
 }
 impl ListArchiveRulesInputBuilder {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_name = input;
         self
     }
@@ -98,16 +89,11 @@ impl ListArchiveRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_archive_rules::ListArchiveRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_archive_rules::ListArchiveRulesInput {
-                analyzer_name: self.analyzer_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_archive_rules::ListArchiveRulesInput {
+            analyzer_name: self.analyzer_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

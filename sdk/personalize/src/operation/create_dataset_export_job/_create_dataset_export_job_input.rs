@@ -50,18 +50,14 @@ impl CreateDatasetExportJobInput {
 }
 impl CreateDatasetExportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetExportJobInput`](crate::operation::create_dataset_export_job::CreateDatasetExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder {
         crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDatasetExportJobInput`](crate::operation::create_dataset_export_job::CreateDatasetExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetExportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -105,10 +101,7 @@ impl CreateDatasetExportJobInputBuilder {
         self
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-    pub fn set_ingestion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionMode>,
-    ) -> Self {
+    pub fn set_ingestion_mode(mut self, input: ::std::option::Option<crate::types::IngestionMode>) -> Self {
         self.ingestion_mode = input;
         self
     }
@@ -136,10 +129,7 @@ impl CreateDatasetExportJobInputBuilder {
         self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
-    pub fn set_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetExportJobOutput>,
-    ) -> Self {
+    pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::DatasetExportJobOutput>) -> Self {
         self.job_output = input;
         self
     }
@@ -159,10 +149,7 @@ impl CreateDatasetExportJobInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -177,15 +164,13 @@ impl CreateDatasetExportJobInputBuilder {
         crate::operation::create_dataset_export_job::CreateDatasetExportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_dataset_export_job::CreateDatasetExportJobInput {
-                job_name: self.job_name,
-                dataset_arn: self.dataset_arn,
-                ingestion_mode: self.ingestion_mode,
-                role_arn: self.role_arn,
-                job_output: self.job_output,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_dataset_export_job::CreateDatasetExportJobInput {
+            job_name: self.job_name,
+            dataset_arn: self.dataset_arn,
+            ingestion_mode: self.ingestion_mode,
+            role_arn: self.role_arn,
+            job_output: self.job_output,
+            tags: self.tags,
+        })
     }
 }

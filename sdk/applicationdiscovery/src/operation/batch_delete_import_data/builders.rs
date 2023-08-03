@@ -38,10 +38,7 @@ impl BatchDeleteImportDataFluentBuilder {
         }
     }
     /// Access the BatchDeleteImportData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl BatchDeleteImportDataFluentBuilder {
             crate::operation::batch_delete_import_data::BatchDeleteImportData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_import_data::BatchDeleteImportDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl BatchDeleteImportDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl BatchDeleteImportDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_import_data::BatchDeleteImportDataError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl BatchDeleteImportDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_import_data::BatchDeleteImportDataError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl BatchDeleteImportDataFluentBuilder {
             crate::operation::batch_delete_import_data::BatchDeleteImportData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_import_data::BatchDeleteImportDataError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +115,17 @@ impl BatchDeleteImportDataFluentBuilder {
     /// To override the contents of this collection use [`set_import_task_ids`](Self::set_import_task_ids).
     ///
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn import_task_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_task_ids(input.into());
         self
     }
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn set_import_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_import_task_ids(input);
         self
     }
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn get_import_task_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_import_task_ids()
     }
 }

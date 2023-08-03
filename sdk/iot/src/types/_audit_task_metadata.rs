@@ -37,9 +37,7 @@ impl AuditTaskMetadata {
 
 /// A builder for [`AuditTaskMetadata`](crate::types::AuditTaskMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditTaskMetadataBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_status: ::std::option::Option<crate::types::AuditTaskStatus>,
@@ -66,10 +64,7 @@ impl AuditTaskMetadataBuilder {
         self
     }
     /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditTaskStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -83,10 +78,7 @@ impl AuditTaskMetadataBuilder {
         self
     }
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::AuditTaskType>) -> Self {
         self.task_type = input;
         self
     }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`evaluation_id(Option<String>)`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput::evaluation_id): <p>A unique identifier for the contact evaluation.</p>
     ///   - [`evaluation_arn(Option<String>)`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput::evaluation_arn): <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     /// - On failure, responds with [`SdkError<UpdateContactEvaluationError>`](crate::operation::update_contact_evaluation::UpdateContactEvaluationError)
-    pub fn update_contact_evaluation(
-        &self,
-    ) -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationFluentBuilder
-    {
+    pub fn update_contact_evaluation(&self) -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationFluentBuilder {
         crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

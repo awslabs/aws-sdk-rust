@@ -72,9 +72,7 @@ impl UpdateAutomationRulesRequestItem {
 
 /// A builder for [`UpdateAutomationRulesRequestItem`](crate::types::UpdateAutomationRulesRequestItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAutomationRulesRequestItemBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_status: ::std::option::Option<crate::types::RuleStatus>,
@@ -106,10 +104,7 @@ impl UpdateAutomationRulesRequestItemBuilder {
         self
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
-    pub fn set_rule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleStatus>,
-    ) -> Self {
+    pub fn set_rule_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
         self.rule_status = input;
         self
     }
@@ -179,17 +174,12 @@ impl UpdateAutomationRulesRequestItemBuilder {
         self
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>) -> Self {
         self.criteria = input;
         self
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn get_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
         &self.criteria
     }
     /// Appends an item to `actions`.
@@ -204,17 +194,12 @@ impl UpdateAutomationRulesRequestItemBuilder {
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`UpdateAutomationRulesRequestItem`](crate::types::UpdateAutomationRulesRequestItem).

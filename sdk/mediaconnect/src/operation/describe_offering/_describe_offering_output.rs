@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeOfferingOutput {
 }
 impl DescribeOfferingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
-    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder {
         crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOfferingOutputBuilder {
     pub(crate) offering: ::std::option::Option<crate::types::Offering>,
     _request_id: Option<String>,

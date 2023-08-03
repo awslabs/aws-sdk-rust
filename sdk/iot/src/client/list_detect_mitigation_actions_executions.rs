@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`actions_executions(Option<Vec<DetectMitigationActionExecution>>)`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput::actions_executions): <p> List of actions executions. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     /// - On failure, responds with [`SdkError<ListDetectMitigationActionsExecutionsError>`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError)
-    pub fn list_detect_mitigation_actions_executions(&self) -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder{
-        crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::new(self.handle.clone())
+    pub fn list_detect_mitigation_actions_executions(
+        &self,
+    ) -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder {
+        crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

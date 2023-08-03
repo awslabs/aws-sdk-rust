@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`directory_id(Option<String>)`](crate::operation::create_alias::CreateAliasOutput::directory_id): <p>The identifier of the directory.</p>
     ///   - [`alias(Option<String>)`](crate::operation::create_alias::CreateAliasOutput::alias): <p>The alias for the directory.</p>
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::operation::create_alias::CreateAliasError)
-    pub fn create_alias(
-        &self,
-    ) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
+    pub fn create_alias(&self) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
         crate::operation::create_alias::builders::CreateAliasFluentBuilder::new(self.handle.clone())
     }
 }

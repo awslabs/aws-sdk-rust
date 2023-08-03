@@ -17,9 +17,7 @@ pub struct UpdateEntityInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub component_updates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
-    >,
+    pub component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
     /// <p>An object that describes the update request for a parent entity.</p>
     #[doc(hidden)]
     pub parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
@@ -44,15 +42,11 @@ impl UpdateEntityInput {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn component_updates(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         self.component_updates.as_ref()
     }
     /// <p>An object that describes the update request for a parent entity.</p>
-    pub fn parent_entity_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParentEntityUpdateRequest> {
+    pub fn parent_entity_update(&self) -> ::std::option::Option<&crate::types::ParentEntityUpdateRequest> {
         self.parent_entity_update.as_ref()
     }
 }
@@ -65,17 +59,13 @@ impl UpdateEntityInput {
 
 /// A builder for [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEntityInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) component_updates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
-    >,
+    pub(crate) component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
     pub(crate) parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
 }
 impl UpdateEntityInputBuilder {
@@ -140,11 +130,7 @@ impl UpdateEntityInputBuilder {
     /// To override the contents of this collection use [`set_component_updates`](Self::set_component_updates).
     ///
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    pub fn component_updates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentUpdateRequest,
-    ) -> Self {
+    pub fn component_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentUpdateRequest) -> Self {
         let mut hash_map = self.component_updates.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.component_updates = ::std::option::Option::Some(hash_map);
@@ -153,12 +139,7 @@ impl UpdateEntityInputBuilder {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn set_component_updates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentUpdateRequest,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
     ) -> Self {
         self.component_updates = input;
         self
@@ -166,9 +147,7 @@ impl UpdateEntityInputBuilder {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn get_component_updates(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         &self.component_updates
     }
     /// <p>An object that describes the update request for a parent entity.</p>
@@ -177,26 +156,16 @@ impl UpdateEntityInputBuilder {
         self
     }
     /// <p>An object that describes the update request for a parent entity.</p>
-    pub fn set_parent_entity_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
-    ) -> Self {
+    pub fn set_parent_entity_update(mut self, input: ::std::option::Option<crate::types::ParentEntityUpdateRequest>) -> Self {
         self.parent_entity_update = input;
         self
     }
     /// <p>An object that describes the update request for a parent entity.</p>
-    pub fn get_parent_entity_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
+    pub fn get_parent_entity_update(&self) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
         &self.parent_entity_update
     }
     /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_entity::UpdateEntityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

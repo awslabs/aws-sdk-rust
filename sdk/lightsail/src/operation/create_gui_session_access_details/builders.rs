@@ -27,7 +27,7 @@ impl CreateGuiSessionAccessDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGUISessionAccessDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsInputBuilder,
+    inner: crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsInputBuilder,
 }
 impl CreateGUISessionAccessDetailsFluentBuilder {
     /// Creates a new `CreateGUISessionAccessDetails`.
@@ -38,7 +38,7 @@ impl CreateGUISessionAccessDetailsFluentBuilder {
         }
     }
     /// Access the CreateGUISessionAccessDetails as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateGUISessionAccessDetailsFluentBuilder {
             crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateGUISessionAccessDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateGUISessionAccessDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateGUISessionAccessDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl CreateGUISessionAccessDetailsFluentBuilder {
             crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The resource name.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The resource name.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

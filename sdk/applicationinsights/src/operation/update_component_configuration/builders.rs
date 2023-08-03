@@ -26,7 +26,7 @@ impl UpdateComponentConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateComponentConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder,
+    inner: crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder,
 }
 impl UpdateComponentConfigurationFluentBuilder {
     /// Creates a new `UpdateComponentConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateComponentConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateComponentConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateComponentConfigurationFluentBuilder {
             crate::operation::update_component_configuration::UpdateComponentConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component_configuration::UpdateComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component_configuration::UpdateComponentConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateComponentConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateComponentConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_component_configuration::UpdateComponentConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component_configuration::UpdateComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component_configuration::UpdateComponentConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateComponentConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_component_configuration::UpdateComponentConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component_configuration::UpdateComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component_configuration::UpdateComponentConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateComponentConfigurationFluentBuilder {
             crate::operation::update_component_configuration::UpdateComponentConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component_configuration::UpdateComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component_configuration::UpdateComponentConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl UpdateComponentConfigurationFluentBuilder {
         self.inner.get_resource_group_name()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }
@@ -189,18 +166,12 @@ impl UpdateComponentConfigurationFluentBuilder {
         self.inner.get_tier()
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    pub fn component_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_configuration(input.into());
         self
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    pub fn set_component_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_configuration(input);
         self
     }

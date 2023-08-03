@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::set_id): <p>The identifier of the constraint.</p>
     /// - On success, responds with [`DeleteConstraintOutput`](crate::operation::delete_constraint::DeleteConstraintOutput)
     /// - On failure, responds with [`SdkError<DeleteConstraintError>`](crate::operation::delete_constraint::DeleteConstraintError)
-    pub fn delete_constraint(
-        &self,
-    ) -> crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder {
-        crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_constraint(&self) -> crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder {
+        crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,14 +6,11 @@
 pub struct CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
     #[doc(hidden)]
-    pub parameter_value_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+    pub parameter_value_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
 }
 impl CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn parameter_value_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SetParameterValueConfiguration]> {
+    pub fn parameter_value_configurations(&self) -> ::std::option::Option<&[crate::types::SetParameterValueConfiguration]> {
         self.parameter_value_configurations.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl CustomActionSetParametersOperation {
 
 /// A builder for [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomActionSetParametersOperationBuilder {
-    pub(crate) parameter_value_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+    pub(crate) parameter_value_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
 }
 impl CustomActionSetParametersOperationBuilder {
     /// Appends an item to `parameter_value_configurations`.
@@ -39,10 +33,7 @@ impl CustomActionSetParametersOperationBuilder {
     /// To override the contents of this collection use [`set_parameter_value_configurations`](Self::set_parameter_value_configurations).
     ///
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn parameter_value_configurations(
-        mut self,
-        input: crate::types::SetParameterValueConfiguration,
-    ) -> Self {
+    pub fn parameter_value_configurations(mut self, input: crate::types::SetParameterValueConfiguration) -> Self {
         let mut v = self.parameter_value_configurations.unwrap_or_default();
         v.push(input);
         self.parameter_value_configurations = ::std::option::Option::Some(v);
@@ -57,9 +48,7 @@ impl CustomActionSetParametersOperationBuilder {
         self
     }
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn get_parameter_value_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>> {
+    pub fn get_parameter_value_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>> {
         &self.parameter_value_configurations
     }
     /// Consumes the builder and constructs a [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).

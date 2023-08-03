@@ -38,9 +38,7 @@ impl DeleteTagsForDomainFluentBuilder {
         }
     }
     /// Access the DeleteTagsForDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteTagsForDomainFluentBuilder {
             crate::operation::delete_tags_for_domain::DeleteTagsForDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_tags_for_domain::DeleteTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_tags_for_domain::DeleteTagsForDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteTagsForDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteTagsForDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_tags_for_domain::DeleteTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_tags_for_domain::DeleteTagsForDomainError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteTagsForDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_tags_for_domain::DeleteTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_tags_for_domain::DeleteTagsForDomainError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeleteTagsForDomainFluentBuilder {
             crate::operation::delete_tags_for_domain::DeleteTagsForDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_tags_for_domain::DeleteTagsForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_tags_for_domain::DeleteTagsForDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +129,17 @@ impl DeleteTagsForDomainFluentBuilder {
     /// To override the contents of this collection use [`set_tags_to_delete`](Self::set_tags_to_delete).
     ///
     /// <p>A list of tag keys to delete.</p>
-    pub fn tags_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags_to_delete(input.into());
         self
     }
     /// <p>A list of tag keys to delete.</p>
-    pub fn set_tags_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tags_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags_to_delete(input);
         self
     }
     /// <p>A list of tag keys to delete.</p>
-    pub fn get_tags_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tags_to_delete()
     }
 }

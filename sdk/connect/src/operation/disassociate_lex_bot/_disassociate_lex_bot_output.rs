@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateLexBotOutput {
 }
 impl DisassociateLexBotOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLexBotOutput`](crate::operation::disassociate_lex_bot::DisassociateLexBotOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_lex_bot::builders::DisassociateLexBotOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_lex_bot::builders::DisassociateLexBotOutputBuilder {
         crate::operation::disassociate_lex_bot::builders::DisassociateLexBotOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLexBotOutput`](crate::operation::disassociate_lex_bot::DisassociateLexBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLexBotOutputBuilder {
     _request_id: Option<String>,
 }

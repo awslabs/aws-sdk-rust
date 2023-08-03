@@ -24,7 +24,10 @@ pub fn ser_generate_embed_url_for_anonymous_user_input(
     if let Some(var_7) = &input.experience_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ExperienceConfiguration").start_object();
-        crate::protocol_serde::shape_anonymous_user_embedding_experience_configuration::ser_anonymous_user_embedding_experience_configuration(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_anonymous_user_embedding_experience_configuration::ser_anonymous_user_embedding_experience_configuration(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.namespace {

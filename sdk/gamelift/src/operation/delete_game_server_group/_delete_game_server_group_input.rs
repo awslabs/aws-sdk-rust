@@ -26,44 +26,32 @@ impl DeleteGameServerGroupInput {
     /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
     /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
-    pub fn delete_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GameServerGroupDeleteOption> {
+    pub fn delete_option(&self) -> ::std::option::Option<&crate::types::GameServerGroupDeleteOption> {
         self.delete_option.as_ref()
     }
 }
 impl DeleteGameServerGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteGameServerGroupInput`](crate::operation::delete_game_server_group::DeleteGameServerGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupInputBuilder {
         crate::operation::delete_game_server_group::builders::DeleteGameServerGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGameServerGroupInput`](crate::operation::delete_game_server_group::DeleteGameServerGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) delete_option: ::std::option::Option<crate::types::GameServerGroupDeleteOption>,
 }
 impl DeleteGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -87,10 +75,7 @@ impl DeleteGameServerGroupInputBuilder {
     /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
     /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
-    pub fn set_delete_option(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroupDeleteOption>,
-    ) -> Self {
+    pub fn set_delete_option(mut self, input: ::std::option::Option<crate::types::GameServerGroupDeleteOption>) -> Self {
         self.delete_option = input;
         self
     }
@@ -100,23 +85,17 @@ impl DeleteGameServerGroupInputBuilder {
     /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
     /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
-    pub fn get_delete_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameServerGroupDeleteOption> {
+    pub fn get_delete_option(&self) -> &::std::option::Option<crate::types::GameServerGroupDeleteOption> {
         &self.delete_option
     }
     /// Consumes the builder and constructs a [`DeleteGameServerGroupInput`](crate::operation::delete_game_server_group::DeleteGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_game_server_group::DeleteGameServerGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_game_server_group::DeleteGameServerGroupInput {
-                game_server_group_name: self.game_server_group_name,
-                delete_option: self.delete_option,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_game_server_group::DeleteGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_game_server_group::DeleteGameServerGroupInput {
+            game_server_group_name: self.game_server_group_name,
+            delete_option: self.delete_option,
+        })
     }
 }

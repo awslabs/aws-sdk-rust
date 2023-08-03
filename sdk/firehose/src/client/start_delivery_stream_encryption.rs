@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`delivery_stream_encryption_configuration_input(DeliveryStreamEncryptionConfigurationInput)`](crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionFluentBuilder::delivery_stream_encryption_configuration_input) / [`set_delivery_stream_encryption_configuration_input(Option<DeliveryStreamEncryptionConfigurationInput>)`](crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionFluentBuilder::set_delivery_stream_encryption_configuration_input): <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     /// - On success, responds with [`StartDeliveryStreamEncryptionOutput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput)
     /// - On failure, responds with [`SdkError<StartDeliveryStreamEncryptionError>`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError)
-    pub fn start_delivery_stream_encryption(&self) -> crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionFluentBuilder{
+    pub fn start_delivery_stream_encryption(
+        &self,
+    ) -> crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionFluentBuilder {
         crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionFluentBuilder::new(self.handle.clone())
     }
 }

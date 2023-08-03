@@ -58,9 +58,7 @@ impl ResolverRuleAssociation {
 
 /// A builder for [`ResolverRuleAssociation`](crate::types::ResolverRuleAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverRuleAssociationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_rule_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl ResolverRuleAssociationBuilder {
         &self.id
     }
     /// <p>The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.</p>
-    pub fn resolver_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.</p>
-    pub fn set_resolver_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_rule_id = input;
         self
     }
@@ -138,32 +130,21 @@ impl ResolverRuleAssociationBuilder {
         self
     }
     /// <p>A code that specifies the current status of the association between a Resolver rule and a VPC.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverRuleAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResolverRuleAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>A code that specifies the current status of the association between a Resolver rule and a VPC.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverRuleAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResolverRuleAssociationStatus> {
         &self.status
     }
     /// <p>A detailed description of the status of the association between a Resolver rule and a VPC.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed description of the status of the association between a Resolver rule and a VPC.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`suppressed_reasons(Vec<SuppressionListReason>)`](crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesFluentBuilder::suppressed_reasons) / [`set_suppressed_reasons(Option<Vec<SuppressionListReason>>)`](crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesFluentBuilder::set_suppressed_reasons): <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>  <ul>   <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>   <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>  </ul>
     /// - On success, responds with [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput)
     /// - On failure, responds with [`SdkError<PutAccountSuppressionAttributesError>`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError)
-    pub fn put_account_suppression_attributes(&self) -> crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesFluentBuilder{
+    pub fn put_account_suppression_attributes(
+        &self,
+    ) -> crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesFluentBuilder {
         crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesFluentBuilder::new(self.handle.clone())
     }
 }

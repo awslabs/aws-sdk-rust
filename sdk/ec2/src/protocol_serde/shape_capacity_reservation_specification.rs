@@ -12,9 +12,7 @@ pub fn ser_capacity_reservation_specification(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("CapacityReservationTarget");
     if let Some(var_4) = &input.capacity_reservation_target {
-        crate::protocol_serde::shape_capacity_reservation_target::ser_capacity_reservation_target(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_capacity_reservation_target::ser_capacity_reservation_target(scope_3, var_4)?;
     }
     Ok(())
 }

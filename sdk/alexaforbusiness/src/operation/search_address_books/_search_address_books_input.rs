@@ -36,17 +36,14 @@ impl SearchAddressBooksInput {
 }
 impl SearchAddressBooksInput {
     /// Creates a new builder-style object to manufacture [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
-    pub fn builder(
-    ) -> crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder {
+    pub fn builder() -> crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder {
         crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAddressBooksInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
@@ -66,10 +63,7 @@ impl SearchAddressBooksInputBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -89,10 +83,7 @@ impl SearchAddressBooksInputBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -131,17 +122,12 @@ impl SearchAddressBooksInputBuilder {
     /// Consumes the builder and constructs a [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_address_books::SearchAddressBooksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_address_books::SearchAddressBooksInput {
-                filters: self.filters,
-                sort_criteria: self.sort_criteria,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_address_books::SearchAddressBooksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_address_books::SearchAddressBooksInput {
+            filters: self.filters,
+            sort_criteria: self.sort_criteria,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

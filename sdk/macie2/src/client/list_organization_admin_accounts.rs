@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`admin_accounts(Option<Vec<AdminAccount>>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::admin_accounts): <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError)
-    pub fn list_organization_admin_accounts(&self) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder{
+    pub fn list_organization_admin_accounts(
+        &self,
+    ) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder {
         crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::new(self.handle.clone())
     }
 }

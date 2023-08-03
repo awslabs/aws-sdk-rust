@@ -58,9 +58,7 @@ impl ListProjectsInput {
 
 /// A builder for [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ProjectSortByType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
@@ -85,10 +83,7 @@ impl ListProjectsInputBuilder {
     /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProjectSortByType>) -> Self {
         self.sort_by = input;
         self
     }
@@ -118,10 +113,7 @@ impl ListProjectsInputBuilder {
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -149,12 +141,7 @@ impl ListProjectsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_projects::ListProjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

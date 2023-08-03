@@ -43,9 +43,7 @@ impl SearchSessionsInput {
 
 /// A builder for [`SearchSessionsInput`](crate::operation::search_sessions::SearchSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSessionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl SearchSessionsInputBuilder {
         self
     }
     /// <p>The search expression to filter results.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchExpression>,
-    ) -> Self {
+    pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::SearchExpression>) -> Self {
         self.search_expression = input;
         self
     }
@@ -115,10 +110,7 @@ impl SearchSessionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchSessionsInput`](crate::operation::search_sessions::SearchSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_sessions::SearchSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_sessions::SearchSessionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

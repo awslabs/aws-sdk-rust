@@ -22,16 +22,14 @@ impl DeleteSlackChannelConfigurationInput {
 }
 impl DeleteSlackChannelConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSlackChannelConfigurationInput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput).
-    pub fn builder() -> crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationInputBuilder {
         crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlackChannelConfigurationInput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationInputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +72,9 @@ impl DeleteSlackChannelConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput {
-                team_id: self.team_id
-                ,
-                channel_id: self.channel_id
-                ,
-            }
+                team_id: self.team_id,
+                channel_id: self.channel_id,
+            },
         )
     }
 }

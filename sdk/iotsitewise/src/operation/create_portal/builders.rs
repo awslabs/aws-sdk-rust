@@ -10,10 +10,7 @@ impl CreatePortalInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_portal::CreatePortalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_portal::CreatePortalError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_portal();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreatePortalFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_portal::CreatePortal,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_portal::CreatePortal, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreatePortalFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreatePortalFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_portal::CreatePortal,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_portal::CreatePortal, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError>,
     > {
         self.customize_middleware().await
@@ -129,18 +117,12 @@ impl CreatePortalFluentBuilder {
         self.inner.get_portal_name()
     }
     /// <p>A description for the portal.</p>
-    pub fn portal_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portal_description(input.into());
         self
     }
     /// <p>A description for the portal.</p>
-    pub fn set_portal_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_description(input);
         self
     }
@@ -149,18 +131,12 @@ impl CreatePortalFluentBuilder {
         self.inner.get_portal_description()
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portal_contact_email(input.into());
         self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn set_portal_contact_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_contact_email(input);
         self
     }
@@ -188,10 +164,7 @@ impl CreatePortalFluentBuilder {
         self
     }
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
-    pub fn set_portal_logo_image_file(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageFile>,
-    ) -> Self {
+    pub fn set_portal_logo_image_file(mut self, input: ::std::option::Option<crate::types::ImageFile>) -> Self {
         self.inner = self.inner.set_portal_logo_image_file(input);
         self
     }
@@ -218,30 +191,17 @@ impl CreatePortalFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
@@ -262,10 +222,7 @@ impl CreatePortalFluentBuilder {
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code> </p>
-    pub fn set_portal_auth_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthMode>,
-    ) -> Self {
+    pub fn set_portal_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
         self.inner = self.inner.set_portal_auth_mode(input);
         self
     }
@@ -282,20 +239,14 @@ impl CreatePortalFluentBuilder {
     /// <p>The email address that sends alarm notifications.</p> <important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
-    pub fn notification_sender_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_sender_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_sender_email(input.into());
         self
     }
     /// <p>The email address that sends alarm notifications.</p> <important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
-    pub fn set_notification_sender_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_sender_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_sender_email(input);
         self
     }

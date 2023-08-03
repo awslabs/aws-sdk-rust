@@ -20,8 +20,7 @@ pub struct GetUnfilteredPartitionMetadataInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>(Required) A list of supported permission types. </p>
     #[doc(hidden)]
-    pub supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredPartitionMetadataInput {
     /// <p>The catalog ID where the partition resides.</p>
@@ -45,32 +44,27 @@ impl GetUnfilteredPartitionMetadataInput {
         self.audit_context.as_ref()
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn supported_permission_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PermissionType]> {
+    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
 }
 impl GetUnfilteredPartitionMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
-    pub fn builder() -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataInputBuilder{
+    pub fn builder() -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataInputBuilder {
         crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredPartitionMetadataInputBuilder {
     /// <p>The catalog ID where the partition resides.</p>
@@ -88,18 +82,12 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         &self.catalog_id
     }
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -126,27 +114,19 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
     ///
     /// <p>(Required) A list of partition key values.</p>
-    pub fn partition_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
         v.push(input.into());
         self.partition_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Required) A list of partition key values.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_values = input;
         self
     }
     /// <p>(Required) A list of partition key values.</p>
-    pub fn get_partition_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_values
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
@@ -155,10 +135,7 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         self
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.audit_context = input;
         self
     }
@@ -178,17 +155,12 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         self
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
@@ -198,21 +170,13 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                partition_values: self.partition_values
-                ,
-                audit_context: self.audit_context
-                ,
-                supported_permission_types: self.supported_permission_types
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            partition_values: self.partition_values,
+            audit_context: self.audit_context,
+            supported_permission_types: self.supported_permission_types,
+        })
     }
 }

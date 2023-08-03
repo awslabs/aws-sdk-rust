@@ -26,7 +26,7 @@ impl DescribeScheduledActionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
+    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
 }
 impl DescribeScheduledActionsFluentBuilder {
     /// Creates a new `DescribeScheduledActions`.
@@ -37,10 +37,7 @@ impl DescribeScheduledActionsFluentBuilder {
         }
     }
     /// Access the DescribeScheduledActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeScheduledActionsFluentBuilder {
             crate::operation::describe_scheduled_actions::DescribeScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeScheduledActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,34 +105,23 @@ impl DescribeScheduledActionsFluentBuilder {
             crate::operation::describe_scheduled_actions::DescribeScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
         crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the scheduled action to retrieve. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
     /// <p>The name of the scheduled action to retrieve. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
@@ -158,17 +135,12 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>The type of the scheduled actions to retrieve. </p>
-    pub fn set_target_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionTypeValues>,
-    ) -> Self {
+    pub fn set_target_action_type(mut self, input: ::std::option::Option<crate::types::ScheduledActionTypeValues>) -> Self {
         self.inner = self.inner.set_target_action_type(input);
         self
     }
     /// <p>The type of the scheduled actions to retrieve. </p>
-    pub fn get_target_action_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
+    pub fn get_target_action_type(&self) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
         self.inner.get_target_action_type()
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
@@ -177,10 +149,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -194,10 +163,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -229,17 +195,12 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>List of scheduled action filters. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>List of scheduled action filters. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
         self.inner.get_filters()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>

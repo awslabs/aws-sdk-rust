@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`member_account_id(impl ::std::convert::Into<String>)`](crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminFluentBuilder::member_account_id) / [`set_member_account_id(Option<String>)`](crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminFluentBuilder::set_member_account_id): <p>An organization member account ID that you want to designate as a delegated administrator.</p>
     /// - On success, responds with [`RegisterOrganizationDelegatedAdminOutput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput)
     /// - On failure, responds with [`SdkError<RegisterOrganizationDelegatedAdminError>`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError)
-    pub fn register_organization_delegated_admin(&self) -> crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminFluentBuilder{
+    pub fn register_organization_delegated_admin(
+        &self,
+    ) -> crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminFluentBuilder {
         crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminFluentBuilder::new(self.handle.clone())
     }
 }

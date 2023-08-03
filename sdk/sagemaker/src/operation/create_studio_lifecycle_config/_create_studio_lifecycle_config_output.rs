@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateStudioLifecycleConfigOutput {
 }
 impl CreateStudioLifecycleConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateStudioLifecycleConfigOutput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput).
-    pub fn builder() -> crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigOutputBuilder{
+    pub fn builder() -> crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigOutputBuilder {
         crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStudioLifecycleConfigOutput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStudioLifecycleConfigOutputBuilder {
     pub(crate) studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStudioLifecycleConfigOutputBuilder {
     /// <p>The ARN of your created Lifecycle Configuration.</p>
-    pub fn studio_lifecycle_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of your created Lifecycle Configuration.</p>
-    pub fn set_studio_lifecycle_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_lifecycle_config_arn = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateStudioLifecycleConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStudioLifecycleConfigOutput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput {
+    pub fn build(self) -> crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput {
         crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput {
             studio_lifecycle_config_arn: self.studio_lifecycle_config_arn,
             _request_id: self._request_id,

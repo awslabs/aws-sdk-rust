@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`hsm_client_certificates(Option<Vec<HsmClientCertificate>>)`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput::hsm_client_certificates): <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     /// - On failure, responds with [`SdkError<DescribeHsmClientCertificatesError>`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError)
-    pub fn describe_hsm_client_certificates(&self) -> crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesFluentBuilder{
+    pub fn describe_hsm_client_certificates(
+        &self,
+    ) -> crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesFluentBuilder {
         crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

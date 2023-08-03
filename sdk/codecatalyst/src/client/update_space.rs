@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::update_space::UpdateSpaceOutput::display_name): <p>The friendly name of the space displayed to users in Amazon CodeCatalyst.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_space::UpdateSpaceOutput::description): <p>The description of the space.</p>
     /// - On failure, responds with [`SdkError<UpdateSpaceError>`](crate::operation::update_space::UpdateSpaceError)
-    pub fn update_space(
-        &self,
-    ) -> crate::operation::update_space::builders::UpdateSpaceFluentBuilder {
+    pub fn update_space(&self) -> crate::operation::update_space::builders::UpdateSpaceFluentBuilder {
         crate::operation::update_space::builders::UpdateSpaceFluentBuilder::new(self.handle.clone())
     }
 }

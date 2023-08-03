@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`rules(Vec<ImpersonationRule>)`](crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleFluentBuilder::rules) / [`set_rules(Option<Vec<ImpersonationRule>>)`](crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleFluentBuilder::set_rules): <p>The updated list of rules.</p>
     /// - On success, responds with [`UpdateImpersonationRoleOutput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput)
     /// - On failure, responds with [`SdkError<UpdateImpersonationRoleError>`](crate::operation::update_impersonation_role::UpdateImpersonationRoleError)
-    pub fn update_impersonation_role(
-        &self,
-    ) -> crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleFluentBuilder
-    {
+    pub fn update_impersonation_role(&self) -> crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleFluentBuilder {
         crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleFluentBuilder::new(self.handle.clone())
     }
 }

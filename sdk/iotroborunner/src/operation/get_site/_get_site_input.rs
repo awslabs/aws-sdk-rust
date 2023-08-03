@@ -22,9 +22,7 @@ impl GetSiteInput {
 
 /// A builder for [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSiteInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetSiteInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_site::GetSiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_site::GetSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_site::GetSiteInput { id: self.id })
     }
 }

@@ -36,9 +36,7 @@ impl HlsAkamaiSettings {
         self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
-    pub fn http_transfer_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsAkamaiHttpTransferMode> {
+    pub fn http_transfer_mode(&self) -> ::std::option::Option<&crate::types::HlsAkamaiHttpTransferMode> {
         self.http_transfer_mode.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
@@ -67,9 +65,7 @@ impl HlsAkamaiSettings {
 
 /// A builder for [`HlsAkamaiSettings`](crate::types::HlsAkamaiSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsAkamaiSettingsBuilder {
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,
     pub(crate) filecache_duration: ::std::option::Option<i32>,
@@ -114,17 +110,12 @@ impl HlsAkamaiSettingsBuilder {
         self
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
-    pub fn set_http_transfer_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsAkamaiHttpTransferMode>,
-    ) -> Self {
+    pub fn set_http_transfer_mode(mut self, input: ::std::option::Option<crate::types::HlsAkamaiHttpTransferMode>) -> Self {
         self.http_transfer_mode = input;
         self
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
-    pub fn get_http_transfer_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsAkamaiHttpTransferMode> {
+    pub fn get_http_transfer_mode(&self) -> &::std::option::Option<crate::types::HlsAkamaiHttpTransferMode> {
         &self.http_transfer_mode
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.

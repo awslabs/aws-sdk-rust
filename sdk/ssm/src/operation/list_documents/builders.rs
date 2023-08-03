@@ -10,10 +10,7 @@ impl ListDocumentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_documents::ListDocumentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_documents::ListDocumentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_documents::ListDocumentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_documents();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDocumentsFluentBuilder {
         }
     }
     /// Access the ListDocuments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_documents::builders::ListDocumentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_documents::builders::ListDocumentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListDocumentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListDocumentsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_documents::paginator::ListDocumentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_documents::paginator::ListDocumentsPaginator {
-        crate::operation::list_documents::paginator::ListDocumentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_documents::paginator::ListDocumentsPaginator {
+        crate::operation::list_documents::paginator::ListDocumentsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `DocumentFilterList`.
     ///
@@ -135,17 +122,12 @@ impl ListDocumentsFluentBuilder {
         self
     }
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    pub fn set_document_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>>,
-    ) -> Self {
+    pub fn set_document_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>>) -> Self {
         self.inner = self.inner.set_document_filter_list(input);
         self
     }
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    pub fn get_document_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>> {
+    pub fn get_document_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>> {
         self.inner.get_document_filter_list()
     }
     /// Appends an item to `Filters`.
@@ -162,19 +144,14 @@ impl ListDocumentsFluentBuilder {
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
     /// </note>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

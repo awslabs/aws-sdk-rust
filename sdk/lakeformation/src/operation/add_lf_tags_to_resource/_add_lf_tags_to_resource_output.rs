@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AddLfTagsToResourceOutput {
 }
 impl AddLfTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceOutput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceOutputBuilder {
+    pub fn builder() -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceOutputBuilder {
         crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddLfTagsToResourceOutput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddLfTagsToResourceOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl AddLfTagsToResourceOutputBuilder {
         self
     }
     /// <p>A list of failures to tag the resource.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>A list of failures to tag the resource.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagError>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagError>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

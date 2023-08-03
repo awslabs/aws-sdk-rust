@@ -22,16 +22,14 @@ impl PutDefaultEncryptionConfigurationInput {
 }
 impl PutDefaultEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
-    pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder {
         crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDefaultEncryptionConfigurationInputBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         self
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }
@@ -69,14 +64,17 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput {
-                encryption_type: self.encryption_type
-                ,
-                kms_key_id: self.kms_key_id
-                ,
-            }
+                encryption_type: self.encryption_type,
+                kms_key_id: self.kms_key_id,
+            },
         )
     }
 }

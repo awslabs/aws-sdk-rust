@@ -10,10 +10,7 @@ impl UpdateFlywheelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_flywheel::UpdateFlywheelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flywheel::UpdateFlywheelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flywheel::UpdateFlywheelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_flywheel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFlywheelFluentBuilder {
         }
     }
     /// Access the UpdateFlywheel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_flywheel::builders::UpdateFlywheelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_flywheel::builders::UpdateFlywheelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateFlywheelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl UpdateFlywheelFluentBuilder {
         self.inner.get_flywheel_arn()
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn active_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.active_model_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn set_active_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_active_model_arn(input);
         self
     }
@@ -149,18 +135,12 @@ impl UpdateFlywheelFluentBuilder {
         self.inner.get_active_model_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -174,17 +154,12 @@ impl UpdateFlywheelFluentBuilder {
         self
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn set_data_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateDataSecurityConfig>,
-    ) -> Self {
+    pub fn set_data_security_config(mut self, input: ::std::option::Option<crate::types::UpdateDataSecurityConfig>) -> Self {
         self.inner = self.inner.set_data_security_config(input);
         self
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn get_data_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateDataSecurityConfig> {
+    pub fn get_data_security_config(&self) -> &::std::option::Option<crate::types::UpdateDataSecurityConfig> {
         self.inner.get_data_security_config()
     }
 }

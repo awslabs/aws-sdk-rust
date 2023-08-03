@@ -30,9 +30,7 @@ impl SourceMetadata {
 
 /// A builder for [`SourceMetadata`](crate::types::SourceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceMetadataBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_update_token: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl SourceMetadataBuilder {
         &self.source_arn
     }
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
-    pub fn source_update_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_update_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
-    pub fn set_source_update_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_update_token = input;
         self
     }

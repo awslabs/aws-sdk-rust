@@ -26,8 +26,7 @@ impl DeleteMedicalVocabularyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMedicalVocabularyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder,
+    inner: crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder,
 }
 impl DeleteMedicalVocabularyFluentBuilder {
     /// Creates a new `DeleteMedicalVocabulary`.
@@ -38,10 +37,7 @@ impl DeleteMedicalVocabularyFluentBuilder {
         }
     }
     /// Access the DeleteMedicalVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteMedicalVocabularyFluentBuilder {
             crate::operation::delete_medical_vocabulary::DeleteMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteMedicalVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteMedicalVocabularyFluentBuilder {
             crate::operation::delete_medical_vocabulary::DeleteMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }

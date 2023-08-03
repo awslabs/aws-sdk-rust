@@ -36,9 +36,7 @@ impl AudioStream {
     }
     /// Tries to convert the enum instance into [`ConfigurationEvent`](crate::types::AudioStream::ConfigurationEvent), extracting the inner [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_configuration_event(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ConfigurationEvent, &Self> {
+    pub fn as_configuration_event(&self) -> ::std::result::Result<&crate::types::ConfigurationEvent, &Self> {
         if let AudioStream::ConfigurationEvent(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

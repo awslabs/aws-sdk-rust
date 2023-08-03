@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instances(Option<Vec<InstanceMetadata>>)`](crate::operation::list_instances::ListInstancesOutput::instances): <p>Lists the IAM Identity Center instances that the caller has access to.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
-    pub fn list_instances(
-        &self,
-    ) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
-        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instances(&self) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
+        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
     }
 }

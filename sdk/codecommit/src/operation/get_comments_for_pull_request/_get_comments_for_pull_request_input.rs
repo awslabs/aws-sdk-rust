@@ -50,16 +50,14 @@ impl GetCommentsForPullRequestInput {
 }
 impl GetCommentsForPullRequestInput {
     /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestInput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput).
-    pub fn builder() -> crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder{
+    pub fn builder() -> crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder {
         crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCommentsForPullRequestInput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommentsForPullRequestInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct GetCommentsForPullRequestInputBuilder {
 }
 impl GetCommentsForPullRequestInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -90,18 +82,12 @@ impl GetCommentsForPullRequestInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -110,18 +96,12 @@ impl GetCommentsForPullRequestInputBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -130,18 +110,12 @@ impl GetCommentsForPullRequestInputBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -184,15 +158,13 @@ impl GetCommentsForPullRequestInputBuilder {
         crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput {
-                pull_request_id: self.pull_request_id,
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput {
+            pull_request_id: self.pull_request_id,
+            repository_name: self.repository_name,
+            before_commit_id: self.before_commit_id,
+            after_commit_id: self.after_commit_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

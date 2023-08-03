@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeTargetedSentimentDetectionJobOutput`](crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobOutput) with field(s):
     ///   - [`targeted_sentiment_detection_job_properties(Option<TargetedSentimentDetectionJobProperties>)`](crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobOutput::targeted_sentiment_detection_job_properties): <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeTargetedSentimentDetectionJobError>`](crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobError)
-    pub fn describe_targeted_sentiment_detection_job(&self) -> crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobFluentBuilder{
-        crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobFluentBuilder::new(self.handle.clone())
+    pub fn describe_targeted_sentiment_detection_job(
+        &self,
+    ) -> crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobFluentBuilder {
+        crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

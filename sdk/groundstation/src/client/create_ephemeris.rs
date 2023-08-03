@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEphemerisOutput`](crate::operation::create_ephemeris::CreateEphemerisOutput) with field(s):
     ///   - [`ephemeris_id(Option<String>)`](crate::operation::create_ephemeris::CreateEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
     /// - On failure, responds with [`SdkError<CreateEphemerisError>`](crate::operation::create_ephemeris::CreateEphemerisError)
-    pub fn create_ephemeris(
-        &self,
-    ) -> crate::operation::create_ephemeris::builders::CreateEphemerisFluentBuilder {
-        crate::operation::create_ephemeris::builders::CreateEphemerisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ephemeris(&self) -> crate::operation::create_ephemeris::builders::CreateEphemerisFluentBuilder {
+        crate::operation::create_ephemeris::builders::CreateEphemerisFluentBuilder::new(self.handle.clone())
     }
 }

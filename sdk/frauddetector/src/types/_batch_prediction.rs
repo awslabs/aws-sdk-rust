@@ -121,9 +121,7 @@ impl BatchPrediction {
 
 /// A builder for [`BatchPrediction`](crate::types::BatchPrediction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPredictionBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AsyncJobStatus>,
@@ -162,10 +160,7 @@ impl BatchPredictionBuilder {
         self
     }
     /// <p>The batch prediction status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AsyncJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -174,18 +169,12 @@ impl BatchPredictionBuilder {
         &self.status
     }
     /// <p>The reason a batch prediction job failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason a batch prediction job failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -208,18 +197,12 @@ impl BatchPredictionBuilder {
         &self.start_time
     }
     /// <p>Timestamp of when the batch prediction job completed.</p>
-    pub fn completion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the batch prediction job completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completion_time = input;
         self
     }
@@ -228,18 +211,12 @@ impl BatchPredictionBuilder {
         &self.completion_time
     }
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
-    pub fn last_heartbeat_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_heartbeat_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_heartbeat_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
-    pub fn set_last_heartbeat_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_heartbeat_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_heartbeat_time = input;
         self
     }
@@ -276,18 +253,12 @@ impl BatchPredictionBuilder {
         &self.output_path
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -296,18 +267,12 @@ impl BatchPredictionBuilder {
         &self.event_type_name
     }
     /// <p>The name of the detector.</p>
-    pub fn detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_name = input;
         self
     }
@@ -316,18 +281,12 @@ impl BatchPredictionBuilder {
         &self.detector_name
     }
     /// <p>The detector version. </p>
-    pub fn detector_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version. </p>
-    pub fn set_detector_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version = input;
         self
     }

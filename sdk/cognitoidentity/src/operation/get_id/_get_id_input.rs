@@ -24,9 +24,7 @@ pub struct GetIdInput {
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub logins: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetIdInput {
     /// <p>A standard AWS account ID (9+ digits).</p>
@@ -50,11 +48,7 @@ impl GetIdInput {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn logins(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn logins(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.logins.as_ref()
     }
 }
@@ -67,15 +61,11 @@ impl GetIdInput {
 
 /// A builder for [`GetIdInput`](crate::operation::get_id::GetIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) logins: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetIdInputBuilder {
     /// <p>A standard AWS account ID (9+ digits).</p>
@@ -93,18 +83,12 @@ impl GetIdInputBuilder {
         &self.account_id
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -129,11 +113,7 @@ impl GetIdInputBuilder {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn logins(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.logins.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.logins = ::std::option::Option::Some(hash_map);
@@ -152,12 +132,7 @@ impl GetIdInputBuilder {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn set_logins(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.logins = input;
         self
     }
@@ -174,20 +149,11 @@ impl GetIdInputBuilder {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn get_logins(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.logins
     }
     /// Consumes the builder and constructs a [`GetIdInput`](crate::operation::get_id::GetIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_id::GetIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_id::GetIdInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_id::GetIdInput {
             account_id: self.account_id,
             identity_pool_id: self.identity_pool_id,

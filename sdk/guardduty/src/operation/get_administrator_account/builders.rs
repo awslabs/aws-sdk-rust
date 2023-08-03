@@ -26,8 +26,7 @@ impl GetAdministratorAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder,
+    inner: crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder,
 }
 impl GetAdministratorAccountFluentBuilder {
     /// Creates a new `GetAdministratorAccount`.
@@ -38,10 +37,7 @@ impl GetAdministratorAccountFluentBuilder {
         }
     }
     /// Access the GetAdministratorAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAdministratorAccountFluentBuilder {
             crate::operation::get_administrator_account::GetAdministratorAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_administrator_account::GetAdministratorAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_administrator_account::GetAdministratorAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAdministratorAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAdministratorAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_administrator_account::GetAdministratorAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_administrator_account::GetAdministratorAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_administrator_account::GetAdministratorAccountError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAdministratorAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_administrator_account::GetAdministratorAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_administrator_account::GetAdministratorAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_administrator_account::GetAdministratorAccountError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetAdministratorAccountFluentBuilder {
             crate::operation::get_administrator_account::GetAdministratorAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_administrator_account::GetAdministratorAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_administrator_account::GetAdministratorAccountError>,
     > {
         self.customize_middleware().await
     }

@@ -46,17 +46,14 @@ impl GetBucketReplicationInput {
 }
 impl GetBucketReplicationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketReplicationInput`](crate::operation::get_bucket_replication::GetBucketReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_replication::builders::GetBucketReplicationInputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_replication::builders::GetBucketReplicationInputBuilder {
         crate::operation::get_bucket_replication::builders::GetBucketReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketReplicationInput`](crate::operation::get_bucket_replication::GetBucketReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketReplicationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -129,15 +126,11 @@ impl GetBucketReplicationInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketReplicationInput`](crate::operation::get_bucket_replication::GetBucketReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_replication::GetBucketReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bucket_replication::GetBucketReplicationInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_bucket_replication::GetBucketReplicationInput {
+            account_id: self.account_id,
+            bucket: self.bucket,
+        })
     }
 }

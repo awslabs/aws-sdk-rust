@@ -3,10 +3,7 @@
 pub fn de_hosted_zone_partially_delegated_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::HostedZonePartiallyDelegatedBuilder,
-) -> Result<
-    crate::types::error::builders::HostedZonePartiallyDelegatedBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::HostedZonePartiallyDelegatedBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

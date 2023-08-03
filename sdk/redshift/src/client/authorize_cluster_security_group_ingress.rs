@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`AuthorizeClusterSecurityGroupIngressOutput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput) with field(s):
     ///   - [`cluster_security_group(Option<ClusterSecurityGroup>)`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput::cluster_security_group): <p>Describes a security group.</p>
     /// - On failure, responds with [`SdkError<AuthorizeClusterSecurityGroupIngressError>`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError)
-    pub fn authorize_cluster_security_group_ingress(&self) -> crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressFluentBuilder{
-        crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressFluentBuilder::new(self.handle.clone())
+    pub fn authorize_cluster_security_group_ingress(
+        &self,
+    ) -> crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressFluentBuilder {
+        crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

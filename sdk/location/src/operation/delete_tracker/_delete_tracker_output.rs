@@ -19,9 +19,7 @@ impl DeleteTrackerOutput {
 
 /// A builder for [`DeleteTrackerOutput`](crate::operation::delete_tracker::DeleteTrackerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrackerOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,9 +23,7 @@ impl ServiceTypeDetail {
 
 /// A builder for [`ServiceTypeDetail`](crate::types::ServiceTypeDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceTypeDetailBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
 }
@@ -36,10 +34,7 @@ impl ServiceTypeDetailBuilder {
         self
     }
     /// <p>The type of service.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLunaClientOutput`](crate::operation::create_luna_client::CreateLunaClientOutput) with field(s):
     ///   - [`client_arn(Option<String>)`](crate::operation::create_luna_client::CreateLunaClientOutput::client_arn): <p>The ARN of the client.</p>
     /// - On failure, responds with [`SdkError<CreateLunaClientError>`](crate::operation::create_luna_client::CreateLunaClientError)
-    pub fn create_luna_client(
-        &self,
-    ) -> crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder {
-        crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_luna_client(&self) -> crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder {
+        crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::new(self.handle.clone())
     }
 }

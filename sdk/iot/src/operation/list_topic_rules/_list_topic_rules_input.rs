@@ -44,9 +44,7 @@ impl ListTopicRulesInput {
 
 /// A builder for [`ListTopicRulesInput`](crate::operation::list_topic_rules::ListTopicRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRulesInputBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -113,10 +111,7 @@ impl ListTopicRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListTopicRulesInput`](crate::operation::list_topic_rules::ListTopicRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_topic_rules::ListTopicRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_topic_rules::ListTopicRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_topic_rules::ListTopicRulesInput {
             topic: self.topic,
             max_results: self.max_results,

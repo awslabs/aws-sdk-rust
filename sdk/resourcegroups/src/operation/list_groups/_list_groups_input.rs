@@ -52,9 +52,7 @@ impl ListGroupsInput {
 
 /// A builder for [`ListGroupsInput`](crate::operation::list_groups::ListGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -89,10 +87,7 @@ impl ListGroupsInputBuilder {
     /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -105,9 +100,7 @@ impl ListGroupsInputBuilder {
     /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>> {
         &self.filters
     }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -139,12 +132,7 @@ impl ListGroupsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListGroupsInput`](crate::operation::list_groups::ListGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_groups::ListGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_groups::ListGroupsInput {
             filters: self.filters,
             max_results: self.max_results,

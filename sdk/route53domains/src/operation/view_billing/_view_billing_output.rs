@@ -36,9 +36,7 @@ impl ViewBillingOutput {
 
 /// A builder for [`ViewBillingOutput`](crate::operation::view_billing::ViewBillingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViewBillingOutputBuilder {
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
     pub(crate) billing_records: ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>>,
@@ -46,18 +44,12 @@ pub struct ViewBillingOutputBuilder {
 }
 impl ViewBillingOutputBuilder {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn set_next_page_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_marker = input;
         self
     }
@@ -77,17 +69,12 @@ impl ViewBillingOutputBuilder {
         self
     }
     /// <p>A summary of billing records.</p>
-    pub fn set_billing_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>>,
-    ) -> Self {
+    pub fn set_billing_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>>) -> Self {
         self.billing_records = input;
         self
     }
     /// <p>A summary of billing records.</p>
-    pub fn get_billing_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>> {
+    pub fn get_billing_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>> {
         &self.billing_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

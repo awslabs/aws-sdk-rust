@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`export_job_properties_list(Option<Vec<ExportJobProperties>>)`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput::export_job_properties_list): <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput::next_token): <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     /// - On failure, responds with [`SdkError<ListFHIRExportJobsError>`](crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError)
-    pub fn list_fhir_export_jobs(
-        &self,
-    ) -> crate::operation::list_fhir_export_jobs::builders::ListFHIRExportJobsFluentBuilder {
-        crate::operation::list_fhir_export_jobs::builders::ListFHIRExportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fhir_export_jobs(&self) -> crate::operation::list_fhir_export_jobs::builders::ListFHIRExportJobsFluentBuilder {
+        crate::operation::list_fhir_export_jobs::builders::ListFHIRExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

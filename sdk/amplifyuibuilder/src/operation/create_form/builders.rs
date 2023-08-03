@@ -10,10 +10,7 @@ impl CreateFormInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_form::CreateFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_form::CreateFormError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_form::CreateFormError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_form();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateFormFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_form::CreateForm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_form::CreateForm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_form::CreateFormError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateFormFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateFormFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_form::CreateForm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_form::CreateForm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_form::CreateFormError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl CreateFormFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -166,10 +148,7 @@ impl CreateFormFluentBuilder {
         self
     }
     /// <p>Represents the configuration of the form to create.</p>
-    pub fn set_form_to_create(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFormData>,
-    ) -> Self {
+    pub fn set_form_to_create(mut self, input: ::std::option::Option<crate::types::CreateFormData>) -> Self {
         self.inner = self.inner.set_form_to_create(input);
         self
     }

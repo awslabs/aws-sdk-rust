@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppInstanceBotOutput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput) with field(s):
     ///   - [`app_instance_bot(Option<AppInstanceBot>)`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput::app_instance_bot): <p>The detials of the <code>AppInstanceBot</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceBotError>`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError)
-    pub fn describe_app_instance_bot(
-        &self,
-    ) -> crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder
-    {
+    pub fn describe_app_instance_bot(&self) -> crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder {
         crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder::new(self.handle.clone())
     }
 }

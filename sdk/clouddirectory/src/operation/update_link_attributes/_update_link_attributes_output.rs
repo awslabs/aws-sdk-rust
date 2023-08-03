@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLinkAttributesOutput {
 }
 impl UpdateLinkAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkAttributesOutput`](crate::operation::update_link_attributes::UpdateLinkAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::update_link_attributes::builders::UpdateLinkAttributesOutputBuilder {
+    pub fn builder() -> crate::operation::update_link_attributes::builders::UpdateLinkAttributesOutputBuilder {
         crate::operation::update_link_attributes::builders::UpdateLinkAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLinkAttributesOutput`](crate::operation::update_link_attributes::UpdateLinkAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLinkAttributesOutputBuilder {
     _request_id: Option<String>,
 }

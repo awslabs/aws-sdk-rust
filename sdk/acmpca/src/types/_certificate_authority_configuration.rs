@@ -46,9 +46,7 @@ impl CertificateAuthorityConfiguration {
 
 /// A builder for [`CertificateAuthorityConfiguration`](crate::types::CertificateAuthorityConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateAuthorityConfigurationBuilder {
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithm>,
@@ -62,10 +60,7 @@ impl CertificateAuthorityConfigurationBuilder {
         self
     }
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
-    pub fn set_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.key_algorithm = input;
         self
     }
@@ -81,10 +76,7 @@ impl CertificateAuthorityConfigurationBuilder {
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
-    pub fn set_signing_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningAlgorithm>,
-    ) -> Self {
+    pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithm>) -> Self {
         self.signing_algorithm = input;
         self
     }
@@ -113,10 +105,7 @@ impl CertificateAuthorityConfigurationBuilder {
         self
     }
     /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
-    pub fn set_csr_extensions(
-        mut self,
-        input: ::std::option::Option<crate::types::CsrExtensions>,
-    ) -> Self {
+    pub fn set_csr_extensions(mut self, input: ::std::option::Option<crate::types::CsrExtensions>) -> Self {
         self.csr_extensions = input;
         self
     }

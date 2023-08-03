@@ -38,9 +38,7 @@ impl GetV2LoggingOptionsFluentBuilder {
         }
     }
     /// Access the GetV2LoggingOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetV2LoggingOptionsFluentBuilder {
             crate::operation::get_v2_logging_options::GetV2LoggingOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_v2_logging_options::GetV2LoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_v2_logging_options::GetV2LoggingOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetV2LoggingOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetV2LoggingOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_v2_logging_options::GetV2LoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_v2_logging_options::GetV2LoggingOptionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetV2LoggingOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_v2_logging_options::GetV2LoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_v2_logging_options::GetV2LoggingOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetV2LoggingOptionsFluentBuilder {
             crate::operation::get_v2_logging_options::GetV2LoggingOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_v2_logging_options::GetV2LoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_v2_logging_options::GetV2LoggingOptionsError>,
     > {
         self.customize_middleware().await
     }

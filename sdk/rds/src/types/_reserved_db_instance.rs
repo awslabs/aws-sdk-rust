@@ -132,9 +132,7 @@ impl ReservedDbInstance {
 
 /// A builder for [`ReservedDbInstance`](crate::types::ReservedDbInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedDbInstanceBuilder {
     pub(crate) reserved_db_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
@@ -149,25 +147,18 @@ pub struct ReservedDbInstanceBuilder {
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
-    pub(crate) recurring_charges:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     pub(crate) reserved_db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lease_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedDbInstanceBuilder {
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_db_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the reservation.</p>
-    pub fn set_reserved_db_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instance_id = input;
         self
     }
@@ -176,40 +167,26 @@ impl ReservedDbInstanceBuilder {
         &self.reserved_db_instance_id
     }
     /// <p>The offering identifier.</p>
-    pub fn reserved_db_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier.</p>
-    pub fn set_reserved_db_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = input;
         self
     }
     /// <p>The offering identifier.</p>
-    pub fn get_reserved_db_instances_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_db_instances_offering_id
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -223,10 +200,7 @@ impl ReservedDbInstanceBuilder {
         self
     }
     /// <p>The time the reservation started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -277,18 +251,12 @@ impl ReservedDbInstanceBuilder {
         &self.usage_price
     }
     /// <p>The currency code for the reserved DB instance.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code for the reserved DB instance.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -311,18 +279,12 @@ impl ReservedDbInstanceBuilder {
         &self.db_instance_count
     }
     /// <p>The description of the reserved DB instance.</p>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the reserved DB instance.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_description = input;
         self
     }
@@ -331,18 +293,12 @@ impl ReservedDbInstanceBuilder {
         &self.product_description
     }
     /// <p>The offering type of this reserved DB instance.</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type of this reserved DB instance.</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -390,32 +346,21 @@ impl ReservedDbInstanceBuilder {
         self
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub fn set_recurring_charges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
-    ) -> Self {
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
         self.recurring_charges = input;
         self
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub fn get_recurring_charges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
-    pub fn reserved_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
-    pub fn set_reserved_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instance_arn = input;
         self
     }

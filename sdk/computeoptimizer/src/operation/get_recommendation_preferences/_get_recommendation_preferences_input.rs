@@ -46,16 +46,14 @@ impl GetRecommendationPreferencesInput {
 }
 impl GetRecommendationPreferencesInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesInput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput).
-    pub fn builder() -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder {
         crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationPreferencesInput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -75,10 +73,7 @@ impl GetRecommendationPreferencesInputBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -144,13 +139,11 @@ impl GetRecommendationPreferencesInputBuilder {
         crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput {
-                resource_type: self.resource_type,
-                scope: self.scope,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput {
+            resource_type: self.resource_type,
+            scope: self.scope,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

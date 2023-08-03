@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`state(Option<IndexState>)`](crate::operation::delete_index::DeleteIndexOutput::state): <p>Indicates the current state of the index. </p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::delete_index::DeleteIndexOutput::last_updated_at): <p>The date and time when you last updated this index.</p>
     /// - On failure, responds with [`SdkError<DeleteIndexError>`](crate::operation::delete_index::DeleteIndexError)
-    pub fn delete_index(
-        &self,
-    ) -> crate::operation::delete_index::builders::DeleteIndexFluentBuilder {
+    pub fn delete_index(&self) -> crate::operation::delete_index::builders::DeleteIndexFluentBuilder {
         crate::operation::delete_index::builders::DeleteIndexFluentBuilder::new(self.handle.clone())
     }
 }

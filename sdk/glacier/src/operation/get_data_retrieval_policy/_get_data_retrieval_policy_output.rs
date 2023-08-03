@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetDataRetrievalPolicyOutput {
 }
 impl GetDataRetrievalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyOutput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyOutputBuilder {
         crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataRetrievalPolicyOutput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataRetrievalPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl GetDataRetrievalPolicyOutputBuilder {
         self
     }
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRetrievalPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::DataRetrievalPolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -66,9 +59,7 @@ impl GetDataRetrievalPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDataRetrievalPolicyOutput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput {
+    pub fn build(self) -> crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput {
         crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput {
             policy: self.policy,
             _request_id: self._request_id,

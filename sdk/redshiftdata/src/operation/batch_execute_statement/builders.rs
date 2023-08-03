@@ -47,10 +47,7 @@ impl BatchExecuteStatementFluentBuilder {
         }
     }
     /// Access the BatchExecuteStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +59,7 @@ impl BatchExecuteStatementFluentBuilder {
             crate::operation::batch_execute_statement::BatchExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +69,7 @@ impl BatchExecuteStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +78,7 @@ impl BatchExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         let op = self
             .inner
@@ -111,9 +101,7 @@ impl BatchExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +115,7 @@ impl BatchExecuteStatementFluentBuilder {
             crate::operation::batch_execute_statement::BatchExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl BatchExecuteStatementFluentBuilder {
         self
     }
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn set_sqls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sqls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sqls(input);
         self
     }
@@ -155,18 +138,12 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner.get_sqls()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -231,18 +208,12 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner.get_with_event()
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_name(input.into());
         self
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_name(input);
         self
     }
@@ -251,18 +222,12 @@ impl BatchExecuteStatementFluentBuilder {
         self.inner.get_statement_name()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

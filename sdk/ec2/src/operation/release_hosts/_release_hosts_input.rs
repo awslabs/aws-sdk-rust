@@ -22,9 +22,7 @@ impl ReleaseHostsInput {
 
 /// A builder for [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseHostsInputBuilder {
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl ReleaseHostsInputBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_ids = input;
         self
     }
@@ -53,14 +48,7 @@ impl ReleaseHostsInputBuilder {
         &self.host_ids
     }
     /// Consumes the builder and constructs a [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::release_hosts::ReleaseHostsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::release_hosts::ReleaseHostsInput {
-            host_ids: self.host_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::release_hosts::ReleaseHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::release_hosts::ReleaseHostsInput { host_ids: self.host_ids })
     }
 }

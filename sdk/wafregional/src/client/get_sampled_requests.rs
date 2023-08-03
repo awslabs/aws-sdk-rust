@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`population_size(i64)`](crate::operation::get_sampled_requests::GetSampledRequestsOutput::population_size): <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
     ///   - [`time_window(Option<TimeWindow>)`](crate::operation::get_sampled_requests::GetSampledRequestsOutput::time_window): <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
     /// - On failure, responds with [`SdkError<GetSampledRequestsError>`](crate::operation::get_sampled_requests::GetSampledRequestsError)
-    pub fn get_sampled_requests(
-        &self,
-    ) -> crate::operation::get_sampled_requests::builders::GetSampledRequestsFluentBuilder {
-        crate::operation::get_sampled_requests::builders::GetSampledRequestsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sampled_requests(&self) -> crate::operation::get_sampled_requests::builders::GetSampledRequestsFluentBuilder {
+        crate::operation::get_sampled_requests::builders::GetSampledRequestsFluentBuilder::new(self.handle.clone())
     }
 }

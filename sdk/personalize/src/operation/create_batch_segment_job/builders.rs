@@ -37,10 +37,7 @@ impl CreateBatchSegmentJobFluentBuilder {
         }
     }
     /// Access the CreateBatchSegmentJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateBatchSegmentJobFluentBuilder {
             crate::operation::create_batch_segment_job::CreateBatchSegmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_segment_job::CreateBatchSegmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateBatchSegmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateBatchSegmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_segment_job::CreateBatchSegmentJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateBatchSegmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_segment_job::CreateBatchSegmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateBatchSegmentJobFluentBuilder {
             crate::operation::create_batch_segment_job::CreateBatchSegmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_segment_job::CreateBatchSegmentJobError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateBatchSegmentJobFluentBuilder {
         self.inner.get_job_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
@@ -191,10 +171,7 @@ impl CreateBatchSegmentJobFluentBuilder {
         self
     }
     /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
-    pub fn set_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchSegmentJobInput>,
-    ) -> Self {
+    pub fn set_job_input(mut self, input: ::std::option::Option<crate::types::BatchSegmentJobInput>) -> Self {
         self.inner = self.inner.set_job_input(input);
         self
     }
@@ -208,10 +185,7 @@ impl CreateBatchSegmentJobFluentBuilder {
         self
     }
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
-    pub fn set_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchSegmentJobOutput>,
-    ) -> Self {
+    pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::BatchSegmentJobOutput>) -> Self {
         self.inner = self.inner.set_job_output(input);
         self
     }
@@ -243,10 +217,7 @@ impl CreateBatchSegmentJobFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

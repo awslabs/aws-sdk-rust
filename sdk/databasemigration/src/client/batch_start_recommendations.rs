@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchStartRecommendationsOutput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchStartRecommendationsErrorEntry>>)`](crate::operation::batch_start_recommendations::BatchStartRecommendationsOutput::error_entries): <p>A list with error details about the analysis of each source database.</p>
     /// - On failure, responds with [`SdkError<BatchStartRecommendationsError>`](crate::operation::batch_start_recommendations::BatchStartRecommendationsError)
-    pub fn batch_start_recommendations(&self) -> crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsFluentBuilder{
+    pub fn batch_start_recommendations(&self) -> crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsFluentBuilder {
         crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

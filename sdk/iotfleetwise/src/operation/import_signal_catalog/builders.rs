@@ -37,9 +37,7 @@ impl ImportSignalCatalogFluentBuilder {
         }
     }
     /// Access the ImportSignalCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ImportSignalCatalogFluentBuilder {
             crate::operation::import_signal_catalog::ImportSignalCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_signal_catalog::ImportSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_signal_catalog::ImportSignalCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ImportSignalCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ImportSignalCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_signal_catalog::ImportSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_signal_catalog::ImportSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_signal_catalog::ImportSignalCatalogError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ImportSignalCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_signal_catalog::ImportSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_signal_catalog::ImportSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_signal_catalog::ImportSignalCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ImportSignalCatalogFluentBuilder {
             crate::operation::import_signal_catalog::ImportSignalCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_signal_catalog::ImportSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_signal_catalog::ImportSignalCatalogError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +161,7 @@ impl ImportSignalCatalogFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

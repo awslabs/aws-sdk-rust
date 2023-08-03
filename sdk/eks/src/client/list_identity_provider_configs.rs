@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`identity_provider_configs(Option<Vec<IdentityProviderConfig>>)`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput::identity_provider_configs): <p>The identity provider configurations for the cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     /// - On failure, responds with [`SdkError<ListIdentityProviderConfigsError>`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError)
-    pub fn list_identity_provider_configs(&self) -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsFluentBuilder{
+    pub fn list_identity_provider_configs(
+        &self,
+    ) -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsFluentBuilder {
         crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsFluentBuilder::new(self.handle.clone())
     }
 }

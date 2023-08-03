@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppBlocksOutput {
 }
 impl DescribeAppBlocksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppBlocksOutput`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_blocks::builders::DescribeAppBlocksOutputBuilder {
+    pub fn builder() -> crate::operation::describe_app_blocks::builders::DescribeAppBlocksOutputBuilder {
         crate::operation::describe_app_blocks::builders::DescribeAppBlocksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppBlocksOutput`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppBlocksOutputBuilder {
     pub(crate) app_blocks: ::std::option::Option<::std::vec::Vec<crate::types::AppBlock>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeAppBlocksOutputBuilder {
         self
     }
     /// <p>The app blocks in the list.</p>
-    pub fn set_app_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlock>>,
-    ) -> Self {
+    pub fn set_app_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlock>>) -> Self {
         self.app_blocks = input;
         self
     }
     /// <p>The app blocks in the list.</p>
-    pub fn get_app_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlock>> {
+    pub fn get_app_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlock>> {
         &self.app_blocks
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopTrainingEntityRecognizerOutput {
 }
 impl StopTrainingEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput).
-    pub fn builder() -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerOutputBuilder{
+    pub fn builder() -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerOutputBuilder {
         crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTrainingEntityRecognizerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StopTrainingEntityRecognizerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput {
+    pub fn build(self) -> crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput {
         crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput {
             _request_id: self._request_id,
         }

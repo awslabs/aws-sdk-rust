@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`request_headers(Option<HashMap<String, String>>)`](crate::operation::create_upload_url::CreateUploadUrlOutput::request_headers): <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
     ///   - [`code_artifact_id(Option<String>)`](crate::operation::create_upload_url::CreateUploadUrlOutput::code_artifact_id): <p>The identifier for the uploaded code resource. </p>
     /// - On failure, responds with [`SdkError<CreateUploadUrlError>`](crate::operation::create_upload_url::CreateUploadUrlError)
-    pub fn create_upload_url(
-        &self,
-    ) -> crate::operation::create_upload_url::builders::CreateUploadUrlFluentBuilder {
-        crate::operation::create_upload_url::builders::CreateUploadUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_upload_url(&self) -> crate::operation::create_upload_url::builders::CreateUploadUrlFluentBuilder {
+        crate::operation::create_upload_url::builders::CreateUploadUrlFluentBuilder::new(self.handle.clone())
     }
 }

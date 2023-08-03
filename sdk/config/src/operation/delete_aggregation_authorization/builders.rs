@@ -26,7 +26,7 @@ impl DeleteAggregationAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAggregationAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationInputBuilder,
+    inner: crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationInputBuilder,
 }
 impl DeleteAggregationAuthorizationFluentBuilder {
     /// Creates a new `DeleteAggregationAuthorization`.
@@ -37,7 +37,7 @@ impl DeleteAggregationAuthorizationFluentBuilder {
         }
     }
     /// Access the DeleteAggregationAuthorization as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAggregationAuthorizationFluentBuilder {
             crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAggregationAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAggregationAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAggregationAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteAggregationAuthorizationFluentBuilder {
             crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn authorized_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorized_account_id(input.into());
         self
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn set_authorized_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorized_account_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteAggregationAuthorizationFluentBuilder {
         self.inner.get_authorized_account_id()
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn authorized_aws_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorized_aws_region(input.into());
         self
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn set_authorized_aws_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorized_aws_region(input);
         self
     }

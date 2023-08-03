@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSystemInstanceOutput {
 }
 impl GetSystemInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetSystemInstanceOutput`](crate::operation::get_system_instance::GetSystemInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_system_instance::builders::GetSystemInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::get_system_instance::builders::GetSystemInstanceOutputBuilder {
         crate::operation::get_system_instance::builders::GetSystemInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSystemInstanceOutput`](crate::operation::get_system_instance::GetSystemInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSystemInstanceOutputBuilder {
     pub(crate) description: ::std::option::Option<crate::types::SystemInstanceDescription>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetSystemInstanceOutputBuilder {
         self
     }
     /// <p>An object that describes the system instance.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemInstanceDescription>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::SystemInstanceDescription>) -> Self {
         self.description = input;
         self
     }
     /// <p>An object that describes the system instance.</p>
-    pub fn get_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::SystemInstanceDescription> {
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::SystemInstanceDescription> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

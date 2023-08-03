@@ -40,8 +40,7 @@ impl ::std::fmt::Debug for ExportCertificateInput {
 }
 impl ExportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ExportCertificateInput`](crate::operation::export_certificate::ExportCertificateInput).
-    pub fn builder() -> crate::operation::export_certificate::builders::ExportCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::export_certificate::builders::ExportCertificateInputBuilder {
         crate::operation::export_certificate::builders::ExportCertificateInputBuilder::default()
     }
 }
@@ -56,19 +55,13 @@ pub struct ExportCertificateInputBuilder {
 impl ExportCertificateInputBuilder {
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -91,10 +84,7 @@ impl ExportCertificateInputBuilder {
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
     /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
-    pub fn set_passphrase(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_passphrase(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.passphrase = input;
         self
     }
@@ -109,16 +99,11 @@ impl ExportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ExportCertificateInput`](crate::operation::export_certificate::ExportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::export_certificate::ExportCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::export_certificate::ExportCertificateInput {
-                certificate_arn: self.certificate_arn,
-                passphrase: self.passphrase,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::export_certificate::ExportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::export_certificate::ExportCertificateInput {
+            certificate_arn: self.certificate_arn,
+            passphrase: self.passphrase,
+        })
     }
 }
 impl ::std::fmt::Debug for ExportCertificateInputBuilder {

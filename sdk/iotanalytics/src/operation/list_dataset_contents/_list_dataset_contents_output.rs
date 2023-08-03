@@ -5,8 +5,7 @@
 pub struct ListDatasetContentsOutput {
     /// <p>Summary information about dataset contents that have been created.</p>
     #[doc(hidden)]
-    pub dataset_content_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>>,
+    pub dataset_content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDatasetContentsOutput {
 }
 impl ListDatasetContentsOutput {
     /// <p>Summary information about dataset contents that have been created.</p>
-    pub fn dataset_content_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DatasetContentSummary]> {
+    pub fn dataset_content_summaries(&self) -> ::std::option::Option<&[crate::types::DatasetContentSummary]> {
         self.dataset_content_summaries.as_deref()
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDatasetContentsOutput {
 }
 impl ListDatasetContentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetContentsOutput`](crate::operation::list_dataset_contents::ListDatasetContentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_contents::builders::ListDatasetContentsOutputBuilder {
-        crate::operation::list_dataset_contents::builders::ListDatasetContentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_dataset_contents::builders::ListDatasetContentsOutputBuilder {
+        crate::operation::list_dataset_contents::builders::ListDatasetContentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetContentsOutput`](crate::operation::list_dataset_contents::ListDatasetContentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetContentsOutputBuilder {
-    pub(crate) dataset_content_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>>,
+    pub(crate) dataset_content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListDatasetContentsOutputBuilder {
         self
     }
     /// <p>Summary information about dataset contents that have been created.</p>
-    pub fn set_dataset_content_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>>,
-    ) -> Self {
+    pub fn set_dataset_content_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>>) -> Self {
         self.dataset_content_summaries = input;
         self
     }
     /// <p>Summary information about dataset contents that have been created.</p>
-    pub fn get_dataset_content_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>> {
+    pub fn get_dataset_content_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetContentSummary>> {
         &self.dataset_content_summaries
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>

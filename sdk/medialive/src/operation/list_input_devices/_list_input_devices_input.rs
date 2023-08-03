@@ -23,17 +23,14 @@ impl ListInputDevicesInput {
 }
 impl ListInputDevicesInput {
     /// Creates a new builder-style object to manufacture [`ListInputDevicesInput`](crate::operation::list_input_devices::ListInputDevicesInput).
-    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesInputBuilder {
         crate::operation::list_input_devices::builders::ListInputDevicesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInputDevicesInput`](crate::operation::list_input_devices::ListInputDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputDevicesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl ListInputDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListInputDevicesInput`](crate::operation::list_input_devices::ListInputDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_input_devices::ListInputDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_input_devices::ListInputDevicesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_input_devices::ListInputDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_input_devices::ListInputDevicesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

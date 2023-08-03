@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`accounts(Option<Vec<AccountState>>)`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput::accounts): <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
     ///   - [`failed_accounts(Option<Vec<FailedAccount>>)`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput::failed_accounts): <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
     /// - On failure, responds with [`SdkError<BatchGetAccountStatusError>`](crate::operation::batch_get_account_status::BatchGetAccountStatusError)
-    pub fn batch_get_account_status(
-        &self,
-    ) -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder
-    {
+    pub fn batch_get_account_status(&self) -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder {
         crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder::new(self.handle.clone())
     }
 }

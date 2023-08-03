@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`export_tasks(Option<Vec<ExportTask>>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::export_tasks): <p>The export tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeExportTasksError>`](crate::operation::describe_export_tasks::DescribeExportTasksError)
-    pub fn describe_export_tasks(
-        &self,
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_export_tasks(&self) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,10 +9,7 @@ pub fn ser_send_data_to_multicast_group_input(
     if let Some(var_2) = &input.wireless_metadata {
         #[allow(unused_mut)]
         let mut object_3 = object.key("WirelessMetadata").start_object();
-        crate::protocol_serde::shape_multicast_wireless_metadata::ser_multicast_wireless_metadata(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_multicast_wireless_metadata::ser_multicast_wireless_metadata(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

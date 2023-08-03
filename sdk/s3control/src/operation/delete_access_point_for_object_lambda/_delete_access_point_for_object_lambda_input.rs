@@ -22,16 +22,14 @@ impl DeleteAccessPointForObjectLambdaInput {
 }
 impl DeleteAccessPointForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaInput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaInput).
-    pub fn builder() -> crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaInputBuilder {
         crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointForObjectLambdaInput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeleteAccessPointForObjectLambdaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointForObjectLambdaInput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

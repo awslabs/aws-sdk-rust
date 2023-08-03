@@ -10,10 +10,7 @@ impl ListConfigsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_configs::ListConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configs::ListConfigsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configs::ListConfigsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_configs();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListConfigsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_configs::ListConfigs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_configs::ListConfigs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_configs::ListConfigsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListConfigsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_configs::ListConfigs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_configs::ListConfigs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_configs::ListConfigsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListConfigsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_configs::paginator::ListConfigsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_configs::paginator::ListConfigsPaginator {
-        crate::operation::list_configs::paginator::ListConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_configs::paginator::ListConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>Maximum number of <code>Configs</code> returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {

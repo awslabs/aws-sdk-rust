@@ -26,8 +26,7 @@ impl ListBackendEnvironmentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackendEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder,
+    inner: crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder,
 }
 impl ListBackendEnvironmentsFluentBuilder {
     /// Creates a new `ListBackendEnvironments`.
@@ -38,10 +37,7 @@ impl ListBackendEnvironmentsFluentBuilder {
         }
     }
     /// Access the ListBackendEnvironments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListBackendEnvironmentsFluentBuilder {
             crate::operation::list_backend_environments::ListBackendEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backend_environments::ListBackendEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backend_environments::ListBackendEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListBackendEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListBackendEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backend_environments::ListBackendEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backend_environments::ListBackendEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backend_environments::ListBackendEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListBackendEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backend_environments::ListBackendEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backend_environments::ListBackendEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backend_environments::ListBackendEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListBackendEnvironmentsFluentBuilder {
             crate::operation::list_backend_environments::ListBackendEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backend_environments::ListBackendEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backend_environments::ListBackendEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl ListBackendEnvironmentsFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p> The name of the backend environment </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p> The name of the backend environment </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

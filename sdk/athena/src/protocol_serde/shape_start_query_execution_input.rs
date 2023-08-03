@@ -12,19 +12,13 @@ pub fn ser_start_query_execution_input(
     if let Some(var_3) = &input.query_execution_context {
         #[allow(unused_mut)]
         let mut object_4 = object.key("QueryExecutionContext").start_object();
-        crate::protocol_serde::shape_query_execution_context::ser_query_execution_context(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_query_execution_context::ser_query_execution_context(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.result_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ResultConfiguration").start_object();
-        crate::protocol_serde::shape_result_configuration::ser_result_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_result_configuration::ser_result_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.work_group {
@@ -42,10 +36,7 @@ pub fn ser_start_query_execution_input(
     if let Some(var_11) = &input.result_reuse_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("ResultReuseConfiguration").start_object();
-        crate::protocol_serde::shape_result_reuse_configuration::ser_result_reuse_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_result_reuse_configuration::ser_result_reuse_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

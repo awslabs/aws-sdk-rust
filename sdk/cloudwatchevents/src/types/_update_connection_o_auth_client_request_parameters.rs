@@ -23,17 +23,14 @@ impl UpdateConnectionOAuthClientRequestParameters {
 }
 impl UpdateConnectionOAuthClientRequestParameters {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
-    pub fn builder() -> crate::types::builders::UpdateConnectionOAuthClientRequestParametersBuilder
-    {
+    pub fn builder() -> crate::types::builders::UpdateConnectionOAuthClientRequestParametersBuilder {
         crate::types::builders::UpdateConnectionOAuthClientRequestParametersBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionOAuthClientRequestParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
         &self.client_id
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }

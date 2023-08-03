@@ -44,9 +44,7 @@ impl VmwareToAwsTagMapping {
 
 /// A builder for [`VmwareToAwsTagMapping`](crate::types::VmwareToAwsTagMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VmwareToAwsTagMappingBuilder {
     pub(crate) vmware_category: ::std::option::Option<::std::string::String>,
     pub(crate) vmware_tag_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct VmwareToAwsTagMappingBuilder {
 }
 impl VmwareToAwsTagMappingBuilder {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vmware_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The is the category of VMware.</p>
-    pub fn set_vmware_category(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vmware_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vmware_category = input;
         self
     }
@@ -75,18 +67,12 @@ impl VmwareToAwsTagMappingBuilder {
         &self.vmware_category
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vmware_tag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_tag_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn set_vmware_tag_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vmware_tag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vmware_tag_name = input;
         self
     }
@@ -109,18 +95,12 @@ impl VmwareToAwsTagMappingBuilder {
         &self.aws_tag_key
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn set_aws_tag_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_tag_value = input;
         self
     }

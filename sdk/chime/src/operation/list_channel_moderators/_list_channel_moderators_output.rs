@@ -11,8 +11,7 @@ pub struct ListChannelModeratorsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The information about and names of each moderator.</p>
     #[doc(hidden)]
-    pub channel_moderators:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>>,
+    pub channel_moderators: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>>,
     _request_id: Option<String>,
 }
 impl ListChannelModeratorsOutput {
@@ -25,9 +24,7 @@ impl ListChannelModeratorsOutput {
         self.next_token.as_deref()
     }
     /// <p>The information about and names of each moderator.</p>
-    pub fn channel_moderators(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelModeratorSummary]> {
+    pub fn channel_moderators(&self) -> ::std::option::Option<&[crate::types::ChannelModeratorSummary]> {
         self.channel_moderators.as_deref()
     }
 }
@@ -48,9 +45,7 @@ impl ::aws_http::request_id::RequestId for ListChannelModeratorsOutput {
 }
 impl ListChannelModeratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelModeratorsOutput`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder {
         crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder::default()
     }
 }
@@ -61,8 +56,7 @@ impl ListChannelModeratorsOutput {
 pub struct ListChannelModeratorsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) channel_moderators:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>>,
+    pub(crate) channel_moderators: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>>,
     _request_id: Option<String>,
 }
 impl ListChannelModeratorsOutputBuilder {
@@ -106,17 +100,12 @@ impl ListChannelModeratorsOutputBuilder {
         self
     }
     /// <p>The information about and names of each moderator.</p>
-    pub fn set_channel_moderators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>>,
-    ) -> Self {
+    pub fn set_channel_moderators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>>) -> Self {
         self.channel_moderators = input;
         self
     }
     /// <p>The information about and names of each moderator.</p>
-    pub fn get_channel_moderators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>> {
+    pub fn get_channel_moderators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratorSummary>> {
         &self.channel_moderators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput::operation_id): <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<AssociateDelegationSignerToDomainError>`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError)
-    pub fn associate_delegation_signer_to_domain(&self) -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainFluentBuilder{
+    pub fn associate_delegation_signer_to_domain(
+        &self,
+    ) -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainFluentBuilder {
         crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainFluentBuilder::new(self.handle.clone())
     }
 }

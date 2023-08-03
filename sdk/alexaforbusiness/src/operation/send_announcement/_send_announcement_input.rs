@@ -36,17 +36,14 @@ impl SendAnnouncementInput {
 }
 impl SendAnnouncementInput {
     /// Creates a new builder-style object to manufacture [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
-    pub fn builder() -> crate::operation::send_announcement::builders::SendAnnouncementInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_announcement::builders::SendAnnouncementInputBuilder {
         crate::operation::send_announcement::builders::SendAnnouncementInputBuilder::default()
     }
 }
 
 /// A builder for [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAnnouncementInputBuilder {
     pub(crate) room_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) content: ::std::option::Option<crate::types::Content>,
@@ -66,17 +63,12 @@ impl SendAnnouncementInputBuilder {
         self
     }
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn set_room_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_room_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.room_filters = input;
         self
     }
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn get_room_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_room_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.room_filters
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
@@ -108,18 +100,12 @@ impl SendAnnouncementInputBuilder {
         &self.time_to_live_in_seconds
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -130,10 +116,7 @@ impl SendAnnouncementInputBuilder {
     /// Consumes the builder and constructs a [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_announcement::SendAnnouncementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_announcement::SendAnnouncementInput {
             room_filters: self.room_filters,
             content: self.content,

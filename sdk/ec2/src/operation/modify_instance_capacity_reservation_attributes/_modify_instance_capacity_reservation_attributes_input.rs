@@ -8,8 +8,7 @@ pub struct ModifyInstanceCapacityReservationAttributesInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
     #[doc(hidden)]
-    pub capacity_reservation_specification:
-        ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -20,9 +19,7 @@ impl ModifyInstanceCapacityReservationAttributesInput {
         self.instance_id.as_deref()
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn capacity_reservation_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
+    pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
         self.capacity_reservation_specification.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -32,20 +29,19 @@ impl ModifyInstanceCapacityReservationAttributesInput {
 }
 impl ModifyInstanceCapacityReservationAttributesInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceCapacityReservationAttributesInput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput).
-    pub fn builder() -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder{
-        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder {
+        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ModifyInstanceCapacityReservationAttributesInput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceCapacityReservationAttributesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservation_specification:
-        ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyInstanceCapacityReservationAttributesInputBuilder {
@@ -64,25 +60,17 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         &self.instance_id
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn capacity_reservation_specification(
-        mut self,
-        input: crate::types::CapacityReservationSpecification,
-    ) -> Self {
+    pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
         self.capacity_reservation_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn set_capacity_reservation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationSpecification>,
-    ) -> Self {
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
         self.capacity_reservation_specification = input;
         self
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    pub fn get_capacity_reservation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         &self.capacity_reservation_specification
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -100,16 +88,18 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyInstanceCapacityReservationAttributesInput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput {
-                instance_id: self.instance_id
-                ,
-                capacity_reservation_specification: self.capacity_reservation_specification
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                instance_id: self.instance_id,
+                capacity_reservation_specification: self.capacity_reservation_specification,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

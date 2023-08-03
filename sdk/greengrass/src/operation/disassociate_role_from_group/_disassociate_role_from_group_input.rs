@@ -15,16 +15,14 @@ impl DisassociateRoleFromGroupInput {
 }
 impl DisassociateRoleFromGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateRoleFromGroupInput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput).
-    pub fn builder() -> crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder {
         crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRoleFromGroupInput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRoleFromGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DisassociateRoleFromGroupInputBuilder {
         crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput {
-                group_id: self.group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput { group_id: self.group_id })
     }
 }

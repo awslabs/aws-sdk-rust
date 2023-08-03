@@ -17,9 +17,7 @@ impl DataModelConfiguration {
         self.data_model.as_ref()
     }
     /// <p></p>
-    pub fn data_model_s3_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataModelS3Configuration> {
+    pub fn data_model_s3_configuration(&self) -> ::std::option::Option<&crate::types::DataModelS3Configuration> {
         self.data_model_s3_configuration.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl DataModelConfiguration {
 
 /// A builder for [`DataModelConfiguration`](crate::types::DataModelConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataModelConfigurationBuilder {
     pub(crate) data_model: ::std::option::Option<crate::types::DataModel>,
-    pub(crate) data_model_s3_configuration:
-        ::std::option::Option<crate::types::DataModelS3Configuration>,
+    pub(crate) data_model_s3_configuration: ::std::option::Option<crate::types::DataModelS3Configuration>,
 }
 impl DataModelConfigurationBuilder {
     /// <p></p>
@@ -56,25 +51,17 @@ impl DataModelConfigurationBuilder {
         &self.data_model
     }
     /// <p></p>
-    pub fn data_model_s3_configuration(
-        mut self,
-        input: crate::types::DataModelS3Configuration,
-    ) -> Self {
+    pub fn data_model_s3_configuration(mut self, input: crate::types::DataModelS3Configuration) -> Self {
         self.data_model_s3_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_data_model_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataModelS3Configuration>,
-    ) -> Self {
+    pub fn set_data_model_s3_configuration(mut self, input: ::std::option::Option<crate::types::DataModelS3Configuration>) -> Self {
         self.data_model_s3_configuration = input;
         self
     }
     /// <p></p>
-    pub fn get_data_model_s3_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataModelS3Configuration> {
+    pub fn get_data_model_s3_configuration(&self) -> &::std::option::Option<crate::types::DataModelS3Configuration> {
         &self.data_model_s3_configuration
     }
     /// Consumes the builder and constructs a [`DataModelConfiguration`](crate::types::DataModelConfiguration).

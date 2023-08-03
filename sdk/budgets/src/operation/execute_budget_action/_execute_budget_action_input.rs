@@ -36,18 +36,14 @@ impl ExecuteBudgetActionInput {
 }
 impl ExecuteBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionInput`](crate::operation::execute_budget_action::ExecuteBudgetActionInput).
-    pub fn builder(
-    ) -> crate::operation::execute_budget_action::builders::ExecuteBudgetActionInputBuilder {
-        crate::operation::execute_budget_action::builders::ExecuteBudgetActionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::execute_budget_action::builders::ExecuteBudgetActionInputBuilder {
+        crate::operation::execute_budget_action::builders::ExecuteBudgetActionInputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteBudgetActionInput`](crate::operation::execute_budget_action::ExecuteBudgetActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteBudgetActionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl ExecuteBudgetActionInputBuilder {
         self
     }
     /// <p> The type of execution. </p>
-    pub fn set_execution_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionType>,
-    ) -> Self {
+    pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
         self.execution_type = input;
         self
     }
@@ -117,17 +110,13 @@ impl ExecuteBudgetActionInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteBudgetActionInput`](crate::operation::execute_budget_action::ExecuteBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_budget_action::ExecuteBudgetActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::execute_budget_action::ExecuteBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-                execution_type: self.execution_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::execute_budget_action::ExecuteBudgetActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::execute_budget_action::ExecuteBudgetActionInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            action_id: self.action_id,
+            execution_type: self.execution_type,
+        })
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_detect_text_input(
     if let Some(var_3) = &input.filters {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Filters").start_object();
-        crate::protocol_serde::shape_detect_text_filters::ser_detect_text_filters(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_detect_text_filters::ser_detect_text_filters(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

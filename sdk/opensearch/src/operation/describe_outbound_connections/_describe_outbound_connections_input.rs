@@ -30,16 +30,14 @@ impl DescribeOutboundConnectionsInput {
 }
 impl DescribeOutboundConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOutboundConnectionsInput`](crate::operation::describe_outbound_connections::DescribeOutboundConnectionsInput).
-    pub fn builder() -> crate::operation::describe_outbound_connections::builders::DescribeOutboundConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_outbound_connections::builders::DescribeOutboundConnectionsInputBuilder {
         crate::operation::describe_outbound_connections::builders::DescribeOutboundConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOutboundConnectionsInput`](crate::operation::describe_outbound_connections::DescribeOutboundConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOutboundConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl DescribeOutboundConnectionsInputBuilder {
         self
     }
     /// <p>List of filter names and values that you can use for requests.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -104,12 +99,10 @@ impl DescribeOutboundConnectionsInputBuilder {
         crate::operation::describe_outbound_connections::DescribeOutboundConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_outbound_connections::DescribeOutboundConnectionsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_outbound_connections::DescribeOutboundConnectionsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

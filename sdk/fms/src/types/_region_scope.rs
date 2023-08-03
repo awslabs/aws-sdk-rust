@@ -30,9 +30,7 @@ impl RegionScope {
 
 /// A builder for [`RegionScope`](crate::types::RegionScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionScopeBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) all_regions_enabled: ::std::option::Option<bool>,
@@ -50,10 +48,7 @@ impl RegionScopeBuilder {
         self
     }
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }

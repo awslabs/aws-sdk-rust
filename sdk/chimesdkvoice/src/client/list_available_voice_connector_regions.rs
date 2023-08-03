@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput) with field(s):
     ///   - [`voice_connector_regions(Option<Vec<VoiceConnectorAwsRegion>>)`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput::voice_connector_regions): <p>The list of AWS Regions.</p>
     /// - On failure, responds with [`SdkError<ListAvailableVoiceConnectorRegionsError>`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsError)
-    pub fn list_available_voice_connector_regions(&self) -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsFluentBuilder{
+    pub fn list_available_voice_connector_regions(
+        &self,
+    ) -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsFluentBuilder {
         crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsFluentBuilder::new(self.handle.clone())
     }
 }

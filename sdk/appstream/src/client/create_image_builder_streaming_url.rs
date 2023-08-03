@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`streaming_url(Option<String>)`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput::streaming_url): <p>The URL to start the AppStream 2.0 streaming session.</p>
     ///   - [`expires(Option<DateTime>)`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput::expires): <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     /// - On failure, responds with [`SdkError<CreateImageBuilderStreamingURLError>`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError)
-    pub fn create_image_builder_streaming_url(&self) -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingURLFluentBuilder{
+    pub fn create_image_builder_streaming_url(
+        &self,
+    ) -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingURLFluentBuilder {
         crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingURLFluentBuilder::new(self.handle.clone())
     }
 }

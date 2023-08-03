@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSubnetGroupOutput`](crate::operation::update_subnet_group::UpdateSubnetGroupOutput) with field(s):
     ///   - [`subnet_group(Option<SubnetGroup>)`](crate::operation::update_subnet_group::UpdateSubnetGroupOutput::subnet_group): <p>The updated subnet group</p>
     /// - On failure, responds with [`SdkError<UpdateSubnetGroupError>`](crate::operation::update_subnet_group::UpdateSubnetGroupError)
-    pub fn update_subnet_group(
-        &self,
-    ) -> crate::operation::update_subnet_group::builders::UpdateSubnetGroupFluentBuilder {
-        crate::operation::update_subnet_group::builders::UpdateSubnetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_subnet_group(&self) -> crate::operation::update_subnet_group::builders::UpdateSubnetGroupFluentBuilder {
+        crate::operation::update_subnet_group::builders::UpdateSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

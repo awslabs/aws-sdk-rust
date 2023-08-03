@@ -31,18 +31,14 @@ impl ListSignalCatalogNodesInput {
 }
 impl ListSignalCatalogNodesInput {
     /// Creates a new builder-style object to manufacture [`ListSignalCatalogNodesInput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput).
-    pub fn builder(
-    ) -> crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder {
         crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSignalCatalogNodesInput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSignalCatalogNodesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -101,12 +97,10 @@ impl ListSignalCatalogNodesInputBuilder {
         crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput {
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput {
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

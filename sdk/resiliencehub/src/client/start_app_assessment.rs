@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartAppAssessmentOutput`](crate::operation::start_app_assessment::StartAppAssessmentOutput) with field(s):
     ///   - [`assessment(Option<AppAssessment>)`](crate::operation::start_app_assessment::StartAppAssessmentOutput::assessment): <p>The assessment created.</p>
     /// - On failure, responds with [`SdkError<StartAppAssessmentError>`](crate::operation::start_app_assessment::StartAppAssessmentError)
-    pub fn start_app_assessment(
-        &self,
-    ) -> crate::operation::start_app_assessment::builders::StartAppAssessmentFluentBuilder {
-        crate::operation::start_app_assessment::builders::StartAppAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_app_assessment(&self) -> crate::operation::start_app_assessment::builders::StartAppAssessmentFluentBuilder {
+        crate::operation::start_app_assessment::builders::StartAppAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

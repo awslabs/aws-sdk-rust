@@ -40,9 +40,7 @@ impl ListPolicyPrincipalsFluentBuilder {
         }
     }
     /// Access the ListPolicyPrincipals as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl ListPolicyPrincipalsFluentBuilder {
             crate::operation::list_policy_principals::ListPolicyPrincipals,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_principals::ListPolicyPrincipalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_principals::ListPolicyPrincipalsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl ListPolicyPrincipalsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl ListPolicyPrincipalsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_principals::ListPolicyPrincipalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_principals::ListPolicyPrincipalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_principals::ListPolicyPrincipalsError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl ListPolicyPrincipalsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_principals::ListPolicyPrincipalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_principals::ListPolicyPrincipalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_principals::ListPolicyPrincipalsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +108,15 @@ impl ListPolicyPrincipalsFluentBuilder {
             crate::operation::list_policy_principals::ListPolicyPrincipals,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_principals::ListPolicyPrincipalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_principals::ListPolicyPrincipalsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator {
-        crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator {
+        crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::new(self.handle, self.inner)
     }
     /// <p>The policy name.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

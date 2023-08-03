@@ -52,9 +52,7 @@ impl ValidationMessage {
 
 /// A builder for [`ValidationMessage`](crate::types::ValidationMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationMessageBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<crate::types::ValidationSeverity>,
@@ -90,10 +88,7 @@ impl ValidationMessageBuilder {
     /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
     /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ValidationSeverity>) -> Self {
         self.severity = input;
         self
     }

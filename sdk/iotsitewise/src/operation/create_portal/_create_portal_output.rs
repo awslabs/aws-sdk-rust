@@ -58,9 +58,7 @@ impl CreatePortalOutput {
 
 /// A builder for [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePortalOutputBuilder {
     pub(crate) portal_id: ::std::option::Option<::std::string::String>,
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
@@ -102,18 +100,12 @@ impl CreatePortalOutputBuilder {
         &self.portal_arn
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_start_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn set_portal_start_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_start_url = input;
         self
     }
@@ -127,10 +119,7 @@ impl CreatePortalOutputBuilder {
         self
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_portal_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PortalStatus>,
-    ) -> Self {
+    pub fn set_portal_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
         self.portal_status = input;
         self
     }
@@ -139,18 +128,12 @@ impl CreatePortalOutputBuilder {
         &self.portal_status
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn sso_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sso_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sso_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn set_sso_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sso_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sso_application_id = input;
         self
     }

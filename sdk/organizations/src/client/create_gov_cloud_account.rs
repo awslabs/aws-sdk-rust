@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGovCloudAccountOutput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput) with field(s):
     ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput::create_account_status): <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     /// - On failure, responds with [`SdkError<CreateGovCloudAccountError>`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountError)
-    pub fn create_gov_cloud_account(
-        &self,
-    ) -> crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountFluentBuilder
-    {
+    pub fn create_gov_cloud_account(&self) -> crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountFluentBuilder {
         crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountFluentBuilder::new(self.handle.clone())
     }
 }

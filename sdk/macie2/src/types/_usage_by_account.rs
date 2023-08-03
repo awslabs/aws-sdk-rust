@@ -44,9 +44,7 @@ impl UsageByAccount {
 
 /// A builder for [`UsageByAccount`](crate::types::UsageByAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageByAccountBuilder {
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
     pub(crate) estimated_cost: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl UsageByAccountBuilder {
         &self.currency
     }
     /// <p>The estimated value for the metric.</p>
-    pub fn estimated_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated value for the metric.</p>
-    pub fn set_estimated_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_cost = input;
         self
     }
@@ -94,10 +86,7 @@ impl UsageByAccountBuilder {
         self
     }
     /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
-    pub fn set_service_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceLimit>,
-    ) -> Self {
+    pub fn set_service_limit(mut self, input: ::std::option::Option<crate::types::ServiceLimit>) -> Self {
         self.service_limit = input;
         self
     }

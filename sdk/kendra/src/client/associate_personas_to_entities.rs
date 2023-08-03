@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput) with field(s):
     ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<AssociatePersonasToEntitiesError>`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError)
-    pub fn associate_personas_to_entities(&self) -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesFluentBuilder{
+    pub fn associate_personas_to_entities(
+        &self,
+    ) -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesFluentBuilder {
         crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

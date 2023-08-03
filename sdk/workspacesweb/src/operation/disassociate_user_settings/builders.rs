@@ -26,7 +26,7 @@ impl DisassociateUserSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateUserSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder,
+    inner: crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder,
 }
 impl DisassociateUserSettingsFluentBuilder {
     /// Creates a new `DisassociateUserSettings`.
@@ -37,10 +37,7 @@ impl DisassociateUserSettingsFluentBuilder {
         }
     }
     /// Access the DisassociateUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisassociateUserSettingsFluentBuilder {
             crate::operation::disassociate_user_settings::DisassociateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user_settings::DisassociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user_settings::DisassociateUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisassociateUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisassociateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user_settings::DisassociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user_settings::DisassociateUserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisassociateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user_settings::DisassociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user_settings::DisassociateUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DisassociateUserSettingsFluentBuilder {
             crate::operation::disassociate_user_settings::DisassociateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user_settings::DisassociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user_settings::DisassociateUserSettingsError>,
     > {
         self.customize_middleware().await
     }

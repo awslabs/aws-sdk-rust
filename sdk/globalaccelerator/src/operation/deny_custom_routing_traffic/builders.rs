@@ -27,7 +27,7 @@ impl DenyCustomRoutingTrafficInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder,
+    inner: crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder,
 }
 impl DenyCustomRoutingTrafficFluentBuilder {
     /// Creates a new `DenyCustomRoutingTraffic`.
@@ -38,7 +38,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         }
     }
     /// Access the DenyCustomRoutingTraffic as a reference.
-    pub fn as_input(&self) -> &crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
             crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTraffic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DenyCustomRoutingTrafficFluentBuilder {
             crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTraffic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }
@@ -160,25 +143,17 @@ impl DenyCustomRoutingTrafficFluentBuilder {
     /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
     ///
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn destination_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_addresses(input.into());
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn set_destination_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destination_addresses(input);
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn get_destination_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destination_addresses()
     }
     /// Appends an item to `DestinationPorts`.
@@ -191,10 +166,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
-    pub fn set_destination_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.inner = self.inner.set_destination_ports(input);
         self
     }

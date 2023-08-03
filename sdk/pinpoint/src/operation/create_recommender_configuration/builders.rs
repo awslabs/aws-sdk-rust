@@ -26,7 +26,7 @@ impl CreateRecommenderConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder,
+    inner: crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder,
 }
 impl CreateRecommenderConfigurationFluentBuilder {
     /// Creates a new `CreateRecommenderConfiguration`.
@@ -37,7 +37,7 @@ impl CreateRecommenderConfigurationFluentBuilder {
         }
     }
     /// Access the CreateRecommenderConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateRecommenderConfigurationFluentBuilder {
             crate::operation::create_recommender_configuration::CreateRecommenderConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateRecommenderConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateRecommenderConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recommender_configuration::CreateRecommenderConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateRecommenderConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recommender_configuration::CreateRecommenderConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl CreateRecommenderConfigurationFluentBuilder {
             crate::operation::create_recommender_configuration::CreateRecommenderConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn create_recommender_configuration(
-        mut self,
-        input: crate::types::CreateRecommenderConfigurationShape,
-    ) -> Self {
+    pub fn create_recommender_configuration(mut self, input: crate::types::CreateRecommenderConfigurationShape) -> Self {
         self.inner = self.inner.create_recommender_configuration(input);
         self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn set_create_recommender_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
-    ) -> Self {
+    pub fn set_create_recommender_configuration(mut self, input: ::std::option::Option<crate::types::CreateRecommenderConfigurationShape>) -> Self {
         self.inner = self.inner.set_create_recommender_configuration(input);
         self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn get_create_recommender_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateRecommenderConfigurationShape> {
+    pub fn get_create_recommender_configuration(&self) -> &::std::option::Option<crate::types::CreateRecommenderConfigurationShape> {
         self.inner.get_create_recommender_configuration()
     }
 }

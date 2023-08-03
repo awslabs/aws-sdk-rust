@@ -22,16 +22,14 @@ impl DisassociateIpamResourceDiscoveryInput {
 }
 impl DisassociateIpamResourceDiscoveryInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
-    pub fn builder() -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder {
         crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
@@ -52,36 +50,31 @@ impl DisassociateIpamResourceDiscoveryInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn ipam_resource_discovery_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn set_ipam_resource_discovery_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_id = input;
         self
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn get_ipam_resource_discovery_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ipam_resource_discovery_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_resource_discovery_association_id
     }
     /// Consumes the builder and constructs a [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput {
-                dry_run: self.dry_run
-                ,
-                ipam_resource_discovery_association_id: self.ipam_resource_discovery_association_id
-                ,
-            }
+                dry_run: self.dry_run,
+                ipam_resource_discovery_association_id: self.ipam_resource_discovery_association_id,
+            },
         )
     }
 }

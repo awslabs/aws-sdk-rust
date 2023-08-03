@@ -36,16 +36,14 @@ impl UpdateAssessmentControlSetStatusInput {
 }
 impl UpdateAssessmentControlSetStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlSetStatusInput`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput).
-    pub fn builder() -> crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusInputBuilder{
+    pub fn builder() -> crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusInputBuilder {
         crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssessmentControlSetStatusInput`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlSetStatusInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct UpdateAssessmentControlSetStatusInputBuilder {
 }
 impl UpdateAssessmentControlSetStatusInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
@@ -99,10 +85,7 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         self
     }
     /// <p> The status of the control set that's being updated. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlSetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ControlSetStatus>) -> Self {
         self.status = input;
         self
     }
@@ -125,18 +108,19 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentControlSetStatusInput`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput {
-                assessment_id: self.assessment_id
-                ,
-                control_set_id: self.control_set_id
-                ,
-                status: self.status
-                ,
-                comment: self.comment
-                ,
-            }
+                assessment_id: self.assessment_id,
+                control_set_id: self.control_set_id,
+                status: self.status,
+                comment: self.comment,
+            },
         )
     }
 }

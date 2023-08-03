@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`public_key_rotation_timestamp(Option<DateTime>)`](crate::operation::register_usage::RegisterUsageOutput::public_key_rotation_timestamp): <p>(Optional) Only included when public key version has expired</p>
     ///   - [`signature(Option<String>)`](crate::operation::register_usage::RegisterUsageOutput::signature): <p>JWT Token</p>
     /// - On failure, responds with [`SdkError<RegisterUsageError>`](crate::operation::register_usage::RegisterUsageError)
-    pub fn register_usage(
-        &self,
-    ) -> crate::operation::register_usage::builders::RegisterUsageFluentBuilder {
-        crate::operation::register_usage::builders::RegisterUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_usage(&self) -> crate::operation::register_usage::builders::RegisterUsageFluentBuilder {
+        crate::operation::register_usage::builders::RegisterUsageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,8 +16,7 @@ pub struct PutBucketRequestPaymentInput {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>Container for Payer.</p>
     #[doc(hidden)]
-    pub request_payment_configuration:
-        ::std::option::Option<crate::types::RequestPaymentConfiguration>,
+    pub request_payment_configuration: ::std::option::Option<crate::types::RequestPaymentConfiguration>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -38,9 +37,7 @@ impl PutBucketRequestPaymentInput {
         self.checksum_algorithm.as_ref()
     }
     /// <p>Container for Payer.</p>
-    pub fn request_payment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RequestPaymentConfiguration> {
+    pub fn request_payment_configuration(&self) -> ::std::option::Option<&crate::types::RequestPaymentConfiguration> {
         self.request_payment_configuration.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -50,24 +47,19 @@ impl PutBucketRequestPaymentInput {
 }
 impl PutBucketRequestPaymentInput {
     /// Creates a new builder-style object to manufacture [`PutBucketRequestPaymentInput`](crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput).
-    pub fn builder(
-    ) -> crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentInputBuilder {
         crate::operation::put_bucket_request_payment::builders::PutBucketRequestPaymentInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketRequestPaymentInput`](crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketRequestPaymentInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    pub(crate) request_payment_configuration:
-        ::std::option::Option<crate::types::RequestPaymentConfiguration>,
+    pub(crate) request_payment_configuration: ::std::option::Option<crate::types::RequestPaymentConfiguration>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl PutBucketRequestPaymentInputBuilder {
@@ -110,55 +102,36 @@ impl PutBucketRequestPaymentInputBuilder {
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// <p>Container for Payer.</p>
-    pub fn request_payment_configuration(
-        mut self,
-        input: crate::types::RequestPaymentConfiguration,
-    ) -> Self {
+    pub fn request_payment_configuration(mut self, input: crate::types::RequestPaymentConfiguration) -> Self {
         self.request_payment_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for Payer.</p>
-    pub fn set_request_payment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPaymentConfiguration>,
-    ) -> Self {
+    pub fn set_request_payment_configuration(mut self, input: ::std::option::Option<crate::types::RequestPaymentConfiguration>) -> Self {
         self.request_payment_configuration = input;
         self
     }
     /// <p>Container for Payer.</p>
-    pub fn get_request_payment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestPaymentConfiguration> {
+    pub fn get_request_payment_configuration(&self) -> &::std::option::Option<crate::types::RequestPaymentConfiguration> {
         &self.request_payment_configuration
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -173,14 +146,12 @@ impl PutBucketRequestPaymentInputBuilder {
         crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput {
-                bucket: self.bucket,
-                content_md5: self.content_md5,
-                checksum_algorithm: self.checksum_algorithm,
-                request_payment_configuration: self.request_payment_configuration,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput {
+            bucket: self.bucket,
+            content_md5: self.content_md5,
+            checksum_algorithm: self.checksum_algorithm,
+            request_payment_configuration: self.request_payment_configuration,
+            expected_bucket_owner: self.expected_bucket_owner,
+        })
     }
 }

@@ -58,9 +58,7 @@ impl ProjectSummary {
 
 /// A builder for [`ProjectSummary`](crate::types::ProjectSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectSummaryBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl ProjectSummaryBuilder {
         &self.project_name
     }
     /// <p>The description of the project.</p>
-    pub fn project_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_description = input;
         self
     }
@@ -138,10 +130,7 @@ impl ProjectSummaryBuilder {
         self
     }
     /// <p>The time that the project was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -155,10 +144,7 @@ impl ProjectSummaryBuilder {
         self
     }
     /// <p>The status of the project.</p>
-    pub fn set_project_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectStatus>,
-    ) -> Self {
+    pub fn set_project_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
         self.project_status = input;
         self
     }

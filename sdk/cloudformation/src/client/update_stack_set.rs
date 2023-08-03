@@ -25,11 +25,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStackSetOutput`](crate::operation::update_stack_set::UpdateStackSetOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_stack_set::UpdateStackSetOutput::operation_id): <p>The unique ID for this stack set operation.</p>
     /// - On failure, responds with [`SdkError<UpdateStackSetError>`](crate::operation::update_stack_set::UpdateStackSetError)
-    pub fn update_stack_set(
-        &self,
-    ) -> crate::operation::update_stack_set::builders::UpdateStackSetFluentBuilder {
-        crate::operation::update_stack_set::builders::UpdateStackSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_stack_set(&self) -> crate::operation::update_stack_set::builders::UpdateStackSetFluentBuilder {
+        crate::operation::update_stack_set::builders::UpdateStackSetFluentBuilder::new(self.handle.clone())
     }
 }

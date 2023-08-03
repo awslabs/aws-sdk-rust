@@ -10,10 +10,7 @@ impl ListProfileTimesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_profile_times::ListProfileTimesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_times::ListProfileTimesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_times::ListProfileTimesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_profile_times();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListProfileTimesFluentBuilder {
         }
     }
     /// Access the ListProfileTimes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListProfileTimesFluentBuilder {
             crate::operation::list_profile_times::ListProfileTimes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_times::ListProfileTimesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_times::ListProfileTimesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListProfileTimesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListProfileTimesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_times::ListProfileTimesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_times::ListProfileTimesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_times::ListProfileTimesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListProfileTimesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_times::ListProfileTimesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_times::ListProfileTimesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_times::ListProfileTimesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListProfileTimesFluentBuilder {
             crate::operation::list_profile_times::ListProfileTimes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_times::ListProfileTimesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_times::ListProfileTimesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_profile_times::paginator::ListProfileTimesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_profile_times::paginator::ListProfileTimesPaginator {
-        crate::operation::list_profile_times::paginator::ListProfileTimesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_profile_times::paginator::ListProfileTimesPaginator {
+        crate::operation::list_profile_times::paginator::ListProfileTimesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -159,10 +132,7 @@ impl ListProfileTimesFluentBuilder {
         self
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -176,10 +146,7 @@ impl ListProfileTimesFluentBuilder {
         self
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -203,10 +170,7 @@ impl ListProfileTimesFluentBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationPeriod>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }

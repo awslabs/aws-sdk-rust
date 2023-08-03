@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput) with field(s):
     ///   - [`global_cluster(Option<GlobalCluster>)`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput::global_cluster): <p>A data type representing an Aurora global database.</p>
     /// - On failure, responds with [`SdkError<RemoveFromGlobalClusterError>`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError)
-    pub fn remove_from_global_cluster(
-        &self,
-    ) -> crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterFluentBuilder
-    {
+    pub fn remove_from_global_cluster(&self) -> crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterFluentBuilder {
         crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl ListLogSubscriptionsInput {
 }
 impl ListLogSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListLogSubscriptionsInput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder {
+    pub fn builder() -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder {
         crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLogSubscriptionsInput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSubscriptionsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl ListLogSubscriptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLogSubscriptionsInput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_log_subscriptions::ListLogSubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_log_subscriptions::ListLogSubscriptionsInput {
-                directory_id: self.directory_id,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_log_subscriptions::ListLogSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_log_subscriptions::ListLogSubscriptionsInput {
+            directory_id: self.directory_id,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

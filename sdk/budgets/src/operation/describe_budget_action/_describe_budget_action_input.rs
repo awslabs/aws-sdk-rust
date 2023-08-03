@@ -29,17 +29,14 @@ impl DescribeBudgetActionInput {
 }
 impl DescribeBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionInput`](crate::operation::describe_budget_action::DescribeBudgetActionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_budget_action::builders::DescribeBudgetActionInputBuilder {
+    pub fn builder() -> crate::operation::describe_budget_action::builders::DescribeBudgetActionInputBuilder {
         crate::operation::describe_budget_action::builders::DescribeBudgetActionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetActionInput`](crate::operation::describe_budget_action::DescribeBudgetActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl DescribeBudgetActionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBudgetActionInput`](crate::operation::describe_budget_action::DescribeBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_budget_action::DescribeBudgetActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_budget_action::DescribeBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_budget_action::DescribeBudgetActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_budget_action::DescribeBudgetActionInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            action_id: self.action_id,
+        })
     }
 }

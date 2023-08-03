@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDbProxyEndpointOutput {
 }
 impl CreateDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbProxyEndpointOutput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointOutputBuilder {
         crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbProxyEndpointOutput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbProxyEndpointOutputBuilder {
     pub(crate) db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateDbProxyEndpointOutputBuilder {
         self
     }
     /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
-    pub fn set_db_proxy_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpoint>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint(mut self, input: ::std::option::Option<crate::types::DbProxyEndpoint>) -> Self {
         self.db_proxy_endpoint = input;
         self
     }

@@ -23,26 +23,18 @@ impl ModelInput {
 
 /// A builder for [`ModelInput`](crate::types::ModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelInputBuilder {
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
 }
 impl ModelInputBuilder {
     /// <p>The input configuration object for the model.</p>
-    pub fn data_input_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_input_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_input_config = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input configuration object for the model.</p>
-    pub fn set_data_input_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_input_config = input;
         self
     }

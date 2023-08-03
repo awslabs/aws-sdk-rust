@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMonitoringSubscriptionOutput {
 }
 impl DeleteMonitoringSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringSubscriptionOutput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput).
-    pub fn builder() -> crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionOutputBuilder {
         crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMonitoringSubscriptionOutput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMonitoringSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteMonitoringSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMonitoringSubscriptionOutput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput {
+    pub fn build(self) -> crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput {
         crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput {
             _request_id: self._request_id,
         }

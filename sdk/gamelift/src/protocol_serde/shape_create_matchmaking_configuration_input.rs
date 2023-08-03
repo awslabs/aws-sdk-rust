@@ -54,10 +54,7 @@ pub fn ser_create_matchmaking_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_game_property::ser_game_property(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_game_property::ser_game_property(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

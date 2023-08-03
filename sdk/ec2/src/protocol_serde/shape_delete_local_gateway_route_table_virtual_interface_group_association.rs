@@ -14,9 +14,7 @@ pub fn de_delete_local_gateway_route_table_virtual_interface_group_association_h
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder::default();
         output = crate::protocol_serde::shape_delete_local_gateway_route_table_virtual_interface_group_association::de_delete_local_gateway_route_table_virtual_interface_group_association(_response_body, output).map_err(crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -30,7 +28,10 @@ pub fn de_delete_local_gateway_route_table_virtual_interface_group_association(i
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid root, expected DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse got {:?}", start_el)));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "invalid root, expected DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse got {:?}",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

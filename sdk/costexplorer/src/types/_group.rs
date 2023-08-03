@@ -9,9 +9,7 @@ pub struct Group {
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The metrics that are included in this group.</p>
     #[doc(hidden)]
-    pub metrics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetricValue>,
-    >,
+    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
 }
 impl Group {
     /// <p>The keys that are included in this group.</p>
@@ -19,11 +17,7 @@ impl Group {
         self.keys.as_deref()
     }
     /// <p>The metrics that are included in this group.</p>
-    pub fn metrics(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MetricValue>,
-    > {
+    pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetricValue>> {
         self.metrics.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl Group {
 
 /// A builder for [`Group`](crate::types::Group).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupBuilder {
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) metrics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetricValue>,
-    >,
+    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
 }
 impl GroupBuilder {
     /// Appends an item to `keys`.
@@ -58,10 +48,7 @@ impl GroupBuilder {
         self
     }
     /// <p>The keys that are included in this group.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keys = input;
         self
     }
@@ -74,11 +61,7 @@ impl GroupBuilder {
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
     /// <p>The metrics that are included in this group.</p>
-    pub fn metrics(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetricValue,
-    ) -> Self {
+    pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetricValue) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metrics = ::std::option::Option::Some(hash_map);
@@ -87,19 +70,13 @@ impl GroupBuilder {
     /// <p>The metrics that are included in this group.</p>
     pub fn set_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetricValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
     ) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The metrics that are included in this group.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetricValue>,
-    > {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>> {
         &self.metrics
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).

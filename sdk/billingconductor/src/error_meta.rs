@@ -34,32 +34,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -73,39 +57,25 @@ impl From<crate::operation::associate_accounts::AssociateAccountsError> for Erro
             crate::operation::associate_accounts::AssociateAccountsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::associate_accounts::AssociateAccountsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::associate_accounts::AssociateAccountsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::associate_accounts::AssociateAccountsError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::associate_accounts::AssociateAccountsError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
             crate::operation::associate_accounts::AssociateAccountsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_accounts::AssociateAccountsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_accounts::AssociateAccountsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_pricing_rules::AssociatePricingRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_pricing_rules::AssociatePricingRulesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -115,27 +85,49 @@ where
 impl From<crate::operation::associate_pricing_rules::AssociatePricingRulesError> for Error {
     fn from(err: crate::operation::associate_pricing_rules::AssociatePricingRulesError) -> Self {
         match err {
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_pricing_rules::AssociatePricingRulesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::associate_pricing_rules::AssociatePricingRulesError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::associate_pricing_rules::AssociatePricingRulesError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::associate_pricing_rules::AssociatePricingRulesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_pricing_rules::AssociatePricingRulesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_pricing_rules::AssociatePricingRulesError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
             crate::operation::associate_pricing_rules::AssociatePricingRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_pricing_rules::AssociatePricingRulesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_pricing_rules::AssociatePricingRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -153,16 +145,30 @@ impl From<crate::operation::batch_associate_resources_to_custom_line_item::Batch
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -179,32 +185,16 @@ impl From<crate::operation::batch_disassociate_resources_from_custom_line_item::
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -217,39 +207,25 @@ impl From<crate::operation::create_billing_group::CreateBillingGroupError> for E
             crate::operation::create_billing_group::CreateBillingGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_billing_group::CreateBillingGroupError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_billing_group::CreateBillingGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_billing_group::CreateBillingGroupError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::create_billing_group::CreateBillingGroupError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
             crate::operation::create_billing_group::CreateBillingGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_billing_group::CreateBillingGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_billing_group::CreateBillingGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_line_item::CreateCustomLineItemError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_custom_line_item::CreateCustomLineItemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_line_item::CreateCustomLineItemError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_custom_line_item::CreateCustomLineItemError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -261,40 +237,28 @@ impl From<crate::operation::create_custom_line_item::CreateCustomLineItemError> 
         match err {
             crate::operation::create_custom_line_item::CreateCustomLineItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_custom_line_item::CreateCustomLineItemError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_custom_line_item::CreateCustomLineItemError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_custom_line_item::CreateCustomLineItemError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::create_custom_line_item::CreateCustomLineItemError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_custom_line_item::CreateCustomLineItemError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
             crate::operation::create_custom_line_item::CreateCustomLineItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_custom_line_item::CreateCustomLineItemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_custom_line_item::CreateCustomLineItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -307,40 +271,28 @@ impl From<crate::operation::create_pricing_plan::CreatePricingPlanError> for Err
             crate::operation::create_pricing_plan::CreatePricingPlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_pricing_plan::CreatePricingPlanError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_pricing_plan::CreatePricingPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_pricing_plan::CreatePricingPlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_pricing_plan::CreatePricingPlanError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::create_pricing_plan::CreatePricingPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_pricing_plan::CreatePricingPlanError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
             crate::operation::create_pricing_plan::CreatePricingPlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_pricing_plan::CreatePricingPlanError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_pricing_plan::CreatePricingPlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_rule::CreatePricingRuleError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_rule::CreatePricingRuleError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -353,39 +305,25 @@ impl From<crate::operation::create_pricing_rule::CreatePricingRuleError> for Err
             crate::operation::create_pricing_rule::CreatePricingRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_pricing_rule::CreatePricingRuleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_pricing_rule::CreatePricingRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_pricing_rule::CreatePricingRuleError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::create_pricing_rule::CreatePricingRuleError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
             crate::operation::create_pricing_rule::CreatePricingRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_pricing_rule::CreatePricingRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_pricing_rule::CreatePricingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -403,32 +341,16 @@ impl From<crate::operation::delete_billing_group::DeleteBillingGroupError> for E
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_custom_line_item::DeleteCustomLineItemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_line_item::DeleteCustomLineItemError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -440,39 +362,25 @@ impl From<crate::operation::delete_custom_line_item::DeleteCustomLineItemError> 
         match err {
             crate::operation::delete_custom_line_item::DeleteCustomLineItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_custom_line_item::DeleteCustomLineItemError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_custom_line_item::DeleteCustomLineItemError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::delete_custom_line_item::DeleteCustomLineItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_custom_line_item::DeleteCustomLineItemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_custom_line_item::DeleteCustomLineItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_plan::DeletePricingPlanError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_plan::DeletePricingPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_plan::DeletePricingPlanError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_plan::DeletePricingPlanError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -491,32 +399,16 @@ impl From<crate::operation::delete_pricing_plan::DeletePricingPlanError> for Err
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -535,32 +427,16 @@ impl From<crate::operation::delete_pricing_rule::DeletePricingRuleError> for Err
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_accounts::DisassociateAccountsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_accounts::DisassociateAccountsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_accounts::DisassociateAccountsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_accounts::DisassociateAccountsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -572,40 +448,28 @@ impl From<crate::operation::disassociate_accounts::DisassociateAccountsError> fo
         match err {
             crate::operation::disassociate_accounts::DisassociateAccountsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disassociate_accounts::DisassociateAccountsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::disassociate_accounts::DisassociateAccountsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::disassociate_accounts::DisassociateAccountsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_accounts::DisassociateAccountsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_accounts::DisassociateAccountsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::disassociate_accounts::DisassociateAccountsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_accounts::DisassociateAccountsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disassociate_accounts::DisassociateAccountsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -613,46 +477,38 @@ where
     }
 }
 impl From<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError> for Error {
-    fn from(
-        err: crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-    ) -> Self {
+    fn from(err: crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError) -> Self {
         match err {
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_associations::ListAccountAssociationsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_associations::ListAccountAssociationsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -660,93 +516,77 @@ where
     }
 }
 impl From<crate::operation::list_account_associations::ListAccountAssociationsError> for Error {
-    fn from(
-        err: crate::operation::list_account_associations::ListAccountAssociationsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_account_associations::ListAccountAssociationsError) -> Self {
         match err {
-            crate::operation::list_account_associations::ListAccountAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_account_associations::ListAccountAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_account_associations::ListAccountAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_account_associations::ListAccountAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_account_associations::ListAccountAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_account_associations::ListAccountAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_account_associations::ListAccountAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_account_associations::ListAccountAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_account_associations::ListAccountAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_account_associations::ListAccountAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_account_associations::ListAccountAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-    ) -> Self {
+impl From<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError> for Error {
+    fn from(err: crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError) -> Self {
         match err {
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -758,39 +598,25 @@ impl From<crate::operation::list_billing_groups::ListBillingGroupsError> for Err
         match err {
             crate::operation::list_billing_groups::ListBillingGroupsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_billing_groups::ListBillingGroupsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_billing_groups::ListBillingGroupsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_billing_groups::ListBillingGroupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_billing_groups::ListBillingGroupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_billing_groups::ListBillingGroupsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_billing_groups::ListBillingGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_items::ListCustomLineItemsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_items::ListCustomLineItemsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -801,87 +627,63 @@ impl From<crate::operation::list_custom_line_items::ListCustomLineItemsError> fo
     fn from(err: crate::operation::list_custom_line_items::ListCustomLineItemsError) -> Self {
         match err {
             crate::operation::list_custom_line_items::ListCustomLineItemsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_custom_line_items::ListCustomLineItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_custom_line_items::ListCustomLineItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_custom_line_items::ListCustomLineItemsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_custom_line_items::ListCustomLineItemsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_custom_line_items::ListCustomLineItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_custom_line_items::ListCustomLineItemsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_custom_line_items::ListCustomLineItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-    ) -> Self {
+impl From<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError> for Error {
+    fn from(err: crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError) -> Self {
         match err {
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_plans::ListPricingPlansError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_pricing_plans::ListPricingPlansError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_plans::ListPricingPlansError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_plans::ListPricingPlansError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -899,16 +701,30 @@ impl From<crate::operation::list_pricing_plans::ListPricingPlansError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -924,32 +740,16 @@ impl From<crate::operation::list_pricing_plans_associated_with_pricing_rule::Lis
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -967,16 +767,30 @@ impl From<crate::operation::list_pricing_rules::ListPricingRulesError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -992,16 +806,30 @@ impl From<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListP
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1017,32 +845,16 @@ impl From<crate::operation::list_resources_associated_to_custom_line_item::ListR
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1053,36 +865,28 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1092,53 +896,25 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1148,53 +924,25 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_billing_group::UpdateBillingGroupError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_billing_group::UpdateBillingGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_billing_group::UpdateBillingGroupError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_billing_group::UpdateBillingGroupError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1207,39 +955,25 @@ impl From<crate::operation::update_billing_group::UpdateBillingGroupError> for E
             crate::operation::update_billing_group::UpdateBillingGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_billing_group::UpdateBillingGroupError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_billing_group::UpdateBillingGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_billing_group::UpdateBillingGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_billing_group::UpdateBillingGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_billing_group::UpdateBillingGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_billing_group::UpdateBillingGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_billing_group::UpdateBillingGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_custom_line_item::UpdateCustomLineItemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_custom_line_item::UpdateCustomLineItemError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1250,40 +984,28 @@ impl From<crate::operation::update_custom_line_item::UpdateCustomLineItemError> 
     fn from(err: crate::operation::update_custom_line_item::UpdateCustomLineItemError) -> Self {
         match err {
             crate::operation::update_custom_line_item::UpdateCustomLineItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_custom_line_item::UpdateCustomLineItemError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_custom_line_item::UpdateCustomLineItemError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_custom_line_item::UpdateCustomLineItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_custom_line_item::UpdateCustomLineItemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_custom_line_item::UpdateCustomLineItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_plan::UpdatePricingPlanError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_pricing_plan::UpdatePricingPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_plan::UpdatePricingPlanError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_plan::UpdatePricingPlanError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1296,39 +1018,25 @@ impl From<crate::operation::update_pricing_plan::UpdatePricingPlanError> for Err
             crate::operation::update_pricing_plan::UpdatePricingPlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_pricing_plan::UpdatePricingPlanError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_pricing_plan::UpdatePricingPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_pricing_plan::UpdatePricingPlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_pricing_plan::UpdatePricingPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_pricing_plan::UpdatePricingPlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_pricing_plan::UpdatePricingPlanError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_pricing_plan::UpdatePricingPlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1341,7 +1049,9 @@ impl From<crate::operation::update_pricing_rule::UpdatePricingRuleError> for Err
             crate::operation::update_pricing_rule::UpdatePricingRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_pricing_rule::UpdatePricingRuleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_pricing_rule::UpdatePricingRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_pricing_rule::UpdatePricingRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_pricing_rule::UpdatePricingRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_pricing_rule::UpdatePricingRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_pricing_rule::UpdatePricingRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_pricing_rule::UpdatePricingRuleError::Unhandled(inner) => Error::Unhandled(inner),

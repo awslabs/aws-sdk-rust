@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`events(Option<Vec<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>The events described.</p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
-    pub fn describe_events(
-        &self,
-    ) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
+        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
     }
 }

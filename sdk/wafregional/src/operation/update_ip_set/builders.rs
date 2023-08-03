@@ -10,10 +10,7 @@ impl UpdateIpSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_ip_set::UpdateIpSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_set::UpdateIPSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_ip_set();
         fluent_builder.inner = self;
@@ -72,10 +69,7 @@ impl UpdateIPSetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_ip_set::UpdateIPSet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_ip_set::UpdateIPSet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError>,
     > {
         let handle = self.handle.clone();
@@ -86,10 +80,7 @@ impl UpdateIPSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -131,10 +122,7 @@ impl UpdateIPSetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_ip_set::UpdateIPSet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_ip_set::UpdateIPSet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError>,
     > {
         self.customize_middleware().await
@@ -187,10 +175,7 @@ impl UpdateIPSetFluentBuilder {
     /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -200,9 +185,7 @@ impl UpdateIPSetFluentBuilder {
     /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>> {
         self.inner.get_updates()
     }
 }

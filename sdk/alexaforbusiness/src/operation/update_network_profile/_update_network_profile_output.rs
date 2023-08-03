@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNetworkProfileOutput {
 }
 impl UpdateNetworkProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkProfileOutput`](crate::operation::update_network_profile::UpdateNetworkProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_network_profile::builders::UpdateNetworkProfileOutputBuilder {
+    pub fn builder() -> crate::operation::update_network_profile::builders::UpdateNetworkProfileOutputBuilder {
         crate::operation::update_network_profile::builders::UpdateNetworkProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkProfileOutput`](crate::operation::update_network_profile::UpdateNetworkProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkProfileOutputBuilder {
     _request_id: Option<String>,
 }

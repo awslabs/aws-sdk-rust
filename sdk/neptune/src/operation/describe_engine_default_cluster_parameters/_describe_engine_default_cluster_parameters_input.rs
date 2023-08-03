@@ -40,16 +40,14 @@ impl DescribeEngineDefaultClusterParametersInput {
 }
 impl DescribeEngineDefaultClusterParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersInput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput).
-    pub fn builder() -> crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersInputBuilder {
         crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineDefaultClusterParametersInput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultClusterParametersInputBuilder {
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -58,18 +56,12 @@ pub struct DescribeEngineDefaultClusterParametersInputBuilder {
 }
 impl DescribeEngineDefaultClusterParametersInputBuilder {
     /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
         self
     }
@@ -89,10 +81,7 @@ impl DescribeEngineDefaultClusterParametersInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -135,18 +124,19 @@ impl DescribeEngineDefaultClusterParametersInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersInput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput {
-                db_parameter_group_family: self.db_parameter_group_family
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                db_parameter_group_family: self.db_parameter_group_family,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

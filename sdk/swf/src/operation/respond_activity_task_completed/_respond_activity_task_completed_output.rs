@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RespondActivityTaskCompletedOutput {
 }
 impl RespondActivityTaskCompletedOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput).
-    pub fn builder() -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedOutputBuilder{
+    pub fn builder() -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedOutputBuilder {
         crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedOutputBuilder::default()
     }
 }
 
 /// A builder for [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RespondActivityTaskCompletedOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RespondActivityTaskCompletedOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput {
+    pub fn build(self) -> crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput {
         crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput {
             _request_id: self._request_id,
         }

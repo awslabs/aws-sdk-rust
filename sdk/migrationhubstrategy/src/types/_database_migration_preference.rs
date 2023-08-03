@@ -49,9 +49,7 @@ impl DatabaseMigrationPreference {
     }
     /// Tries to convert the enum instance into [`NoPreference`](crate::types::DatabaseMigrationPreference::NoPreference), extracting the inner [`NoDatabaseMigrationPreference`](crate::types::NoDatabaseMigrationPreference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_no_preference(
-        &self,
-    ) -> ::std::result::Result<&crate::types::NoDatabaseMigrationPreference, &Self> {
+    pub fn as_no_preference(&self) -> ::std::result::Result<&crate::types::NoDatabaseMigrationPreference, &Self> {
         if let DatabaseMigrationPreference::NoPreference(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

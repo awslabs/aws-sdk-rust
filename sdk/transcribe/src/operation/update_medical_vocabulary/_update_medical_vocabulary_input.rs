@@ -31,18 +31,14 @@ impl UpdateMedicalVocabularyInput {
 }
 impl UpdateMedicalVocabularyInput {
     /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyInput`](crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyInput).
-    pub fn builder(
-    ) -> crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder {
         crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMedicalVocabularyInput`](crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMedicalVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -50,18 +46,12 @@ pub struct UpdateMedicalVocabularyInputBuilder {
 }
 impl UpdateMedicalVocabularyInputBuilder {
     /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -75,10 +65,7 @@ impl UpdateMedicalVocabularyInputBuilder {
         self
     }
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -88,19 +75,13 @@ impl UpdateMedicalVocabularyInputBuilder {
     }
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    pub fn vocabulary_file_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_file_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    pub fn set_vocabulary_file_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_file_uri = input;
         self
     }
@@ -116,12 +97,10 @@ impl UpdateMedicalVocabularyInputBuilder {
         crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyInput {
-                vocabulary_name: self.vocabulary_name,
-                language_code: self.language_code,
-                vocabulary_file_uri: self.vocabulary_file_uri,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyInput {
+            vocabulary_name: self.vocabulary_name,
+            language_code: self.language_code,
+            vocabulary_file_uri: self.vocabulary_file_uri,
+        })
     }
 }

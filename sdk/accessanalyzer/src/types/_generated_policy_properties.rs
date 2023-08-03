@@ -24,9 +24,7 @@ impl GeneratedPolicyProperties {
         self.principal_arn.as_deref()
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-    pub fn cloud_trail_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudTrailProperties> {
+    pub fn cloud_trail_properties(&self) -> ::std::option::Option<&crate::types::CloudTrailProperties> {
         self.cloud_trail_properties.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl GeneratedPolicyProperties {
 
 /// A builder for [`GeneratedPolicyProperties`](crate::types::GeneratedPolicyProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneratedPolicyPropertiesBuilder {
     pub(crate) is_complete: ::std::option::Option<bool>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ impl GeneratedPolicyPropertiesBuilder {
         &self.is_complete
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -88,17 +78,12 @@ impl GeneratedPolicyPropertiesBuilder {
         self
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-    pub fn set_cloud_trail_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudTrailProperties>,
-    ) -> Self {
+    pub fn set_cloud_trail_properties(mut self, input: ::std::option::Option<crate::types::CloudTrailProperties>) -> Self {
         self.cloud_trail_properties = input;
         self
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-    pub fn get_cloud_trail_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudTrailProperties> {
+    pub fn get_cloud_trail_properties(&self) -> &::std::option::Option<crate::types::CloudTrailProperties> {
         &self.cloud_trail_properties
     }
     /// Consumes the builder and constructs a [`GeneratedPolicyProperties`](crate::types::GeneratedPolicyProperties).

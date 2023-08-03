@@ -31,7 +31,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder,
+    inner: crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder,
 }
 impl CreateDataSourceFromRedshiftFluentBuilder {
     /// Creates a new `CreateDataSourceFromRedshift`.
@@ -42,7 +42,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
         }
     }
     /// Access the CreateDataSourceFromRedshift as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
             crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +110,17 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
             crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
@@ -146,18 +129,12 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
         self.inner.get_data_source_id()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
@@ -197,10 +174,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
-    pub fn set_data_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDataSpec>,
-    ) -> Self {
+    pub fn set_data_spec(mut self, input: ::std::option::Option<crate::types::RedshiftDataSpec>) -> Self {
         self.inner = self.inner.set_data_spec(input);
         self
     }

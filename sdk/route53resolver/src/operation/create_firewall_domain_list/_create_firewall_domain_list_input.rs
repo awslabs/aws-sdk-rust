@@ -29,18 +29,14 @@ impl CreateFirewallDomainListInput {
 }
 impl CreateFirewallDomainListInput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListInput`](crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput).
-    pub fn builder(
-    ) -> crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder {
         crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFirewallDomainListInput`](crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFirewallDomainListInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct CreateFirewallDomainListInputBuilder {
 }
 impl CreateFirewallDomainListInputBuilder {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -93,10 +83,7 @@ impl CreateFirewallDomainListInputBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -111,12 +98,10 @@ impl CreateFirewallDomainListInputBuilder {
         crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput {
-                creator_request_id: self.creator_request_id,
-                name: self.name,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput {
+            creator_request_id: self.creator_request_id,
+            name: self.name,
+            tags: self.tags,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl BatchDeleteReadSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_read_set::BatchDeleteReadSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_read_set::BatchDeleteReadSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_delete_read_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchDeleteReadSetFluentBuilder {
         }
     }
     /// Access the BatchDeleteReadSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchDeleteReadSetFluentBuilder {
             crate::operation::batch_delete_read_set::BatchDeleteReadSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_read_set::BatchDeleteReadSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_read_set::BatchDeleteReadSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchDeleteReadSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchDeleteReadSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_read_set::BatchDeleteReadSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_read_set::BatchDeleteReadSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchDeleteReadSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_read_set::BatchDeleteReadSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_read_set::BatchDeleteReadSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchDeleteReadSetFluentBuilder {
             crate::operation::batch_delete_read_set::BatchDeleteReadSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_read_set::BatchDeleteReadSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_read_set::BatchDeleteReadSetError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchDeleteReadSetFluentBuilder {
         self
     }
     /// <p>The read sets' IDs.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }
@@ -144,18 +125,12 @@ impl BatchDeleteReadSetFluentBuilder {
         self.inner.get_ids()
     }
     /// <p>The read sets' sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The read sets' sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }

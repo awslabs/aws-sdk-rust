@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListApprovedOriginsOutput {
 }
 impl ListApprovedOriginsOutput {
     /// Creates a new builder-style object to manufacture [`ListApprovedOriginsOutput`](crate::operation::list_approved_origins::ListApprovedOriginsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_approved_origins::builders::ListApprovedOriginsOutputBuilder {
-        crate::operation::list_approved_origins::builders::ListApprovedOriginsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_approved_origins::builders::ListApprovedOriginsOutputBuilder {
+        crate::operation::list_approved_origins::builders::ListApprovedOriginsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApprovedOriginsOutput`](crate::operation::list_approved_origins::ListApprovedOriginsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApprovedOriginsOutputBuilder {
     pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListApprovedOriginsOutputBuilder {
         self
     }
     /// <p>The approved origins.</p>
-    pub fn set_origins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.origins = input;
         self
     }

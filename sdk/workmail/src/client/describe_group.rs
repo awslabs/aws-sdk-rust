@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`enabled_date(Option<DateTime>)`](crate::operation::describe_group::DescribeGroupOutput::enabled_date): <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::operation::describe_group::DescribeGroupOutput::disabled_date): <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::operation::describe_group::DescribeGroupError)
-    pub fn describe_group(
-        &self,
-    ) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
-        crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_group(&self) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
+        crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(self.handle.clone())
     }
 }

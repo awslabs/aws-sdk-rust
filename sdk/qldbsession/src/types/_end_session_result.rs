@@ -23,9 +23,7 @@ impl EndSessionResult {
 
 /// A builder for [`EndSessionResult`](crate::types::EndSessionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndSessionResultBuilder {
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }
@@ -36,17 +34,12 @@ impl EndSessionResultBuilder {
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn set_timing_information(
-        mut self,
-        input: ::std::option::Option<crate::types::TimingInformation>,
-    ) -> Self {
+    pub fn set_timing_information(mut self, input: ::std::option::Option<crate::types::TimingInformation>) -> Self {
         self.timing_information = input;
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn get_timing_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimingInformation> {
+    pub fn get_timing_information(&self) -> &::std::option::Option<crate::types::TimingInformation> {
         &self.timing_information
     }
     /// Consumes the builder and constructs a [`EndSessionResult`](crate::types::EndSessionResult).

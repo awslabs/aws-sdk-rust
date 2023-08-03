@@ -38,10 +38,7 @@ impl DescribeStackInstanceFluentBuilder {
         }
     }
     /// Access the DescribeStackInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeStackInstanceFluentBuilder {
             crate::operation::describe_stack_instance::DescribeStackInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_instance::DescribeStackInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_instance::DescribeStackInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeStackInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeStackInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_instance::DescribeStackInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_instance::DescribeStackInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_instance::DescribeStackInstanceError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeStackInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_instance::DescribeStackInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_instance::DescribeStackInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_instance::DescribeStackInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeStackInstanceFluentBuilder {
             crate::operation::describe_stack_instance::DescribeStackInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_instance::DescribeStackInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_instance::DescribeStackInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -145,18 +125,12 @@ impl DescribeStackInstanceFluentBuilder {
         self.inner.get_stack_set_name()
     }
     /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
-    pub fn stack_instance_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_instance_account(input.into());
         self
     }
     /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
-    pub fn set_stack_instance_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_instance_account(input);
         self
     }
@@ -165,18 +139,12 @@ impl DescribeStackInstanceFluentBuilder {
         self.inner.get_stack_instance_account()
     }
     /// <p>The name of a Region that's associated with this stack instance.</p>
-    pub fn stack_instance_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_instance_region(input.into());
         self
     }
     /// <p>The name of a Region that's associated with this stack instance.</p>
-    pub fn set_stack_instance_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_instance_region(input);
         self
     }

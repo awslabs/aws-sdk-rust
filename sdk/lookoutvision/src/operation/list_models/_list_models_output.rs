@@ -35,9 +35,7 @@ impl ListModelsOutput {
 
 /// A builder for [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelsOutputBuilder {
     pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListModelsOutputBuilder {
         self
     }
     /// <p>A list of model versions in the specified project. </p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>>,
-    ) -> Self {
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>>) -> Self {
         self.models = input;
         self
     }
     /// <p>A list of model versions in the specified project. </p>
-    pub fn get_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>> {
         &self.models
     }
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>

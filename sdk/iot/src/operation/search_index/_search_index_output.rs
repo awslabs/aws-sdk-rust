@@ -42,14 +42,11 @@ impl SearchIndexOutput {
 
 /// A builder for [`SearchIndexOutput`](crate::operation::search_index::SearchIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchIndexOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) things: ::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>>,
-    pub(crate) thing_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>>,
+    pub(crate) thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>>,
     _request_id: Option<String>,
 }
 impl SearchIndexOutputBuilder {
@@ -79,17 +76,12 @@ impl SearchIndexOutputBuilder {
         self
     }
     /// <p>The things that match the search query.</p>
-    pub fn set_things(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>>,
-    ) -> Self {
+    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>>) -> Self {
         self.things = input;
         self
     }
     /// <p>The things that match the search query.</p>
-    pub fn get_things(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>> {
+    pub fn get_things(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>> {
         &self.things
     }
     /// Appends an item to `thing_groups`.
@@ -104,17 +96,12 @@ impl SearchIndexOutputBuilder {
         self
     }
     /// <p>The thing groups that match the search query.</p>
-    pub fn set_thing_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>>,
-    ) -> Self {
+    pub fn set_thing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>>) -> Self {
         self.thing_groups = input;
         self
     }
     /// <p>The thing groups that match the search query.</p>
-    pub fn get_thing_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>> {
+    pub fn get_thing_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>> {
         &self.thing_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

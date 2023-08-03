@@ -38,13 +38,7 @@
 /// <p>The category of the finding. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FindingCategory {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for FindingCategory {
         match s {
             "CLASSIFICATION" => FindingCategory::Classification,
             "POLICY" => FindingCategory::Policy,
-            other => {
-                FindingCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

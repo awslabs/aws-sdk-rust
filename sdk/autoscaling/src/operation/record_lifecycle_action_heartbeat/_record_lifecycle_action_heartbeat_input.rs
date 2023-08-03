@@ -36,16 +36,14 @@ impl RecordLifecycleActionHeartbeatInput {
 }
 impl RecordLifecycleActionHeartbeatInput {
     /// Creates a new builder-style object to manufacture [`RecordLifecycleActionHeartbeatInput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput).
-    pub fn builder() -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder{
+    pub fn builder() -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder {
         crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder::default()
     }
 }
 
 /// A builder for [`RecordLifecycleActionHeartbeatInput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordLifecycleActionHeartbeatInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct RecordLifecycleActionHeartbeatInputBuilder {
 }
 impl RecordLifecycleActionHeartbeatInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_hook_name = input;
         self
     }
@@ -74,18 +66,12 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -94,18 +80,12 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    pub fn lifecycle_action_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_action_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_action_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    pub fn set_lifecycle_action_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_action_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_action_token = input;
         self
     }
@@ -134,17 +114,11 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput {
-                lifecycle_hook_name: self.lifecycle_hook_name
-                ,
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                lifecycle_action_token: self.lifecycle_action_token
-                ,
-                instance_id: self.instance_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput {
+            lifecycle_hook_name: self.lifecycle_hook_name,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            lifecycle_action_token: self.lifecycle_action_token,
+            instance_id: self.instance_id,
+        })
     }
 }

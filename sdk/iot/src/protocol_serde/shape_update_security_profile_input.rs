@@ -18,10 +18,7 @@ pub fn ser_update_security_profile_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_metric_to_retain::ser_metric_to_retain(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_metric_to_retain::ser_metric_to_retain(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -34,10 +31,7 @@ pub fn ser_update_security_profile_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_alert_target::ser_alert_target(
-                    &mut object_12,
-                    value_11,
-                )?;
+                crate::protocol_serde::shape_alert_target::ser_alert_target(&mut object_12, value_11)?;
                 object_12.finish();
             }
         }
@@ -56,9 +50,7 @@ pub fn ser_update_security_profile_input(
         array_14.finish();
     }
     if let Some(var_17) = &input.delete_additional_metrics_to_retain {
-        object
-            .key("deleteAdditionalMetricsToRetain")
-            .boolean(*var_17);
+        object.key("deleteAdditionalMetricsToRetain").boolean(*var_17);
     }
     if let Some(var_18) = &input.delete_alert_targets {
         object.key("deleteAlertTargets").boolean(*var_18);
@@ -67,9 +59,7 @@ pub fn ser_update_security_profile_input(
         object.key("deleteBehaviors").boolean(*var_19);
     }
     if let Some(var_20) = &input.security_profile_description {
-        object
-            .key("securityProfileDescription")
-            .string(var_20.as_str());
+        object.key("securityProfileDescription").string(var_20.as_str());
     }
     Ok(())
 }

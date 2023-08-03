@@ -18,7 +18,10 @@ pub fn ser_organization_data_source_configurations(
     if let Some(var_5) = &input.malware_protection {
         #[allow(unused_mut)]
         let mut object_6 = object.key("malwareProtection").start_object();
-        crate::protocol_serde::shape_organization_malware_protection_configuration::ser_organization_malware_protection_configuration(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_organization_malware_protection_configuration::ser_organization_malware_protection_configuration(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     Ok(())

@@ -50,18 +50,14 @@ impl ListCommandInvocationsInput {
 }
 impl ListCommandInvocationsInput {
     /// Creates a new builder-style object to manufacture [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder {
         crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCommandInvocationsInputBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -139,17 +135,12 @@ impl ListCommandInvocationsInputBuilder {
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         &self.filters
     }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
@@ -169,19 +160,15 @@ impl ListCommandInvocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_command_invocations::ListCommandInvocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_command_invocations::ListCommandInvocationsInput {
-                command_id: self.command_id,
-                instance_id: self.instance_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-                details: self.details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_command_invocations::ListCommandInvocationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_command_invocations::ListCommandInvocationsInput {
+            command_id: self.command_id,
+            instance_id: self.instance_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+            details: self.details,
+        })
     }
 }

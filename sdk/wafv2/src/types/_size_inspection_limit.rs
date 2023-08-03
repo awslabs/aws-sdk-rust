@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SizeInspectionLimit {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for SizeInspectionLimit {
             "KB_32" => SizeInspectionLimit::Kb32,
             "KB_48" => SizeInspectionLimit::Kb48,
             "KB_64" => SizeInspectionLimit::Kb64,
-            other => SizeInspectionLimit::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SizeInspectionLimit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

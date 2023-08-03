@@ -26,7 +26,7 @@ impl GetGroupCertificateAuthorityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupCertificateAuthorityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder,
+    inner: crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder,
 }
 impl GetGroupCertificateAuthorityFluentBuilder {
     /// Creates a new `GetGroupCertificateAuthority`.
@@ -37,7 +37,7 @@ impl GetGroupCertificateAuthorityFluentBuilder {
         }
     }
     /// Access the GetGroupCertificateAuthority as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetGroupCertificateAuthorityFluentBuilder {
             crate::operation::get_group_certificate_authority::GetGroupCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetGroupCertificateAuthorityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetGroupCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetGroupCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetGroupCertificateAuthorityFluentBuilder {
             crate::operation::get_group_certificate_authority::GetGroupCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the certificate authority.
-    pub fn certificate_authority_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_id(input.into());
         self
     }
     /// The ID of the certificate authority.
-    pub fn set_certificate_authority_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_id(input);
         self
     }

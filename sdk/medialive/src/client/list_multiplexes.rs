@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`multiplexes(Option<Vec<MultiplexSummary>>)`](crate::operation::list_multiplexes::ListMultiplexesOutput::multiplexes): List of multiplexes.
     ///   - [`next_token(Option<String>)`](crate::operation::list_multiplexes::ListMultiplexesOutput::next_token): Token for the next ListMultiplexes request.
     /// - On failure, responds with [`SdkError<ListMultiplexesError>`](crate::operation::list_multiplexes::ListMultiplexesError)
-    pub fn list_multiplexes(
-        &self,
-    ) -> crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder {
-        crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_multiplexes(&self) -> crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder {
+        crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::new(self.handle.clone())
     }
 }

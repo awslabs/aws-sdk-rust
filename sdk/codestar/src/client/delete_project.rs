@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`stack_id(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::stack_id): <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
     ///   - [`project_arn(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the deleted project.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
-    pub fn delete_project(
-        &self,
-    ) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
-        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
+        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }
 }

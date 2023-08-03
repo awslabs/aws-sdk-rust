@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteGatewayGroupOutput {
 }
 impl DeleteGatewayGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGatewayGroupOutput`](crate::operation::delete_gateway_group::DeleteGatewayGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_gateway_group::builders::DeleteGatewayGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_gateway_group::builders::DeleteGatewayGroupOutputBuilder {
         crate::operation::delete_gateway_group::builders::DeleteGatewayGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGatewayGroupOutput`](crate::operation::delete_gateway_group::DeleteGatewayGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGatewayGroupOutputBuilder {
     _request_id: Option<String>,
 }

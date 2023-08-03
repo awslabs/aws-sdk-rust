@@ -6,27 +6,21 @@
 pub struct TrafficConfig {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
     #[doc(hidden)]
-    pub single_weight_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
+    pub single_weight_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
     #[doc(hidden)]
-    pub single_header_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
+    pub single_header_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
     /// <p>The type of traffic configuration.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>,
 }
 impl TrafficConfig {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
-    pub fn single_weight_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousDeploymentSingleWeightConfig> {
+    pub fn single_weight_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentSingleWeightConfig> {
         self.single_weight_config.as_ref()
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
-    pub fn single_header_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousDeploymentSingleHeaderConfig> {
+    pub fn single_header_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentSingleHeaderConfig> {
         self.single_header_config.as_ref()
     }
     /// <p>The type of traffic configuration.</p>
@@ -43,59 +37,39 @@ impl TrafficConfig {
 
 /// A builder for [`TrafficConfig`](crate::types::TrafficConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficConfigBuilder {
-    pub(crate) single_weight_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
-    pub(crate) single_header_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
+    pub(crate) single_weight_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
+    pub(crate) single_header_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
     pub(crate) r#type: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>,
 }
 impl TrafficConfigBuilder {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
-    pub fn single_weight_config(
-        mut self,
-        input: crate::types::ContinuousDeploymentSingleWeightConfig,
-    ) -> Self {
+    pub fn single_weight_config(mut self, input: crate::types::ContinuousDeploymentSingleWeightConfig) -> Self {
         self.single_weight_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
-    pub fn set_single_weight_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
-    ) -> Self {
+    pub fn set_single_weight_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>) -> Self {
         self.single_weight_config = input;
         self
     }
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
-    pub fn get_single_weight_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig> {
+    pub fn get_single_weight_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig> {
         &self.single_weight_config
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
-    pub fn single_header_config(
-        mut self,
-        input: crate::types::ContinuousDeploymentSingleHeaderConfig,
-    ) -> Self {
+    pub fn single_header_config(mut self, input: crate::types::ContinuousDeploymentSingleHeaderConfig) -> Self {
         self.single_header_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
-    pub fn set_single_header_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
-    ) -> Self {
+    pub fn set_single_header_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>) -> Self {
         self.single_header_config = input;
         self
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
-    pub fn get_single_header_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig> {
+    pub fn get_single_header_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig> {
         &self.single_header_config
     }
     /// <p>The type of traffic configuration.</p>
@@ -104,10 +78,7 @@ impl TrafficConfigBuilder {
         self
     }
     /// <p>The type of traffic configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>) -> Self {
         self.r#type = input;
         self
     }

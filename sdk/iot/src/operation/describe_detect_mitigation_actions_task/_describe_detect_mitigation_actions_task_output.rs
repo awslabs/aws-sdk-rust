@@ -10,9 +10,7 @@ pub struct DescribeDetectMitigationActionsTaskOutput {
 }
 impl DescribeDetectMitigationActionsTaskOutput {
     /// <p> The description of a task. </p>
-    pub fn task_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectMitigationActionsTaskSummary> {
+    pub fn task_summary(&self) -> ::std::option::Option<&crate::types::DetectMitigationActionsTaskSummary> {
         self.task_summary.as_ref()
     }
 }
@@ -23,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeDetectMitigationActionsTaskOu
 }
 impl DescribeDetectMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectMitigationActionsTaskOutput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput).
-    pub fn builder() -> crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskOutputBuilder{
+    pub fn builder() -> crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskOutputBuilder {
         crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDetectMitigationActionsTaskOutput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDetectMitigationActionsTaskOutputBuilder {
-    pub(crate) task_summary:
-        ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>,
+    pub(crate) task_summary: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>,
     _request_id: Option<String>,
 }
 impl DescribeDetectMitigationActionsTaskOutputBuilder {
@@ -45,17 +40,12 @@ impl DescribeDetectMitigationActionsTaskOutputBuilder {
         self
     }
     /// <p> The description of a task. </p>
-    pub fn set_task_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>,
-    ) -> Self {
+    pub fn set_task_summary(mut self, input: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>) -> Self {
         self.task_summary = input;
         self
     }
     /// <p> The description of a task. </p>
-    pub fn get_task_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskSummary> {
+    pub fn get_task_summary(&self) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskSummary> {
         &self.task_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,9 @@ impl DescribeDetectMitigationActionsTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDetectMitigationActionsTaskOutput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput).
-    pub fn build(self) -> crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput{
+    pub fn build(self) -> crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput {
         crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput {
-            task_summary: self.task_summary
-            ,
+            task_summary: self.task_summary,
             _request_id: self._request_id,
         }
     }

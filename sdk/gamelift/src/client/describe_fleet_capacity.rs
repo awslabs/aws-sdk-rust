@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`fleet_capacity(Option<Vec<FleetCapacity>>)`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput::fleet_capacity): <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetCapacityError>`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityError)
-    pub fn describe_fleet_capacity(
-        &self,
-    ) -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder
-    {
-        crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fleet_capacity(&self) -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder {
+        crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::new(self.handle.clone())
     }
 }

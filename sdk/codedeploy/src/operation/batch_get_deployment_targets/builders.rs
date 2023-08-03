@@ -33,7 +33,7 @@ impl BatchGetDeploymentTargetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder,
+    inner: crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder,
 }
 impl BatchGetDeploymentTargetsFluentBuilder {
     /// Creates a new `BatchGetDeploymentTargets`.
@@ -44,7 +44,7 @@ impl BatchGetDeploymentTargetsFluentBuilder {
         }
     }
     /// Access the BatchGetDeploymentTargets as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl BatchGetDeploymentTargetsFluentBuilder {
             crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl BatchGetDeploymentTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl BatchGetDeploymentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl BatchGetDeploymentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +112,17 @@ impl BatchGetDeploymentTargetsFluentBuilder {
             crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -177,10 +160,7 @@ impl BatchGetDeploymentTargetsFluentBuilder {
     /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
     /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
-    pub fn set_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_ids(input);
         self
     }

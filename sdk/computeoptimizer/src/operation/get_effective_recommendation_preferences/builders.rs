@@ -5,16 +5,16 @@ pub use crate::operation::get_effective_recommendation_preferences::_get_effecti
 
 impl GetEffectiveRecommendationPreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_effective_recommendation_preferences();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl GetEffectiveRecommendationPreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEffectiveRecommendationPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder,
+    inner: crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder,
 }
 impl GetEffectiveRecommendationPreferencesFluentBuilder {
     /// Creates a new `GetEffectiveRecommendationPreferences`.
@@ -38,15 +38,22 @@ impl GetEffectiveRecommendationPreferencesFluentBuilder {
         }
     }
     /// Access the GetEffectiveRecommendationPreferences as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferences, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferences,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +62,17 @@ impl GetEffectiveRecommendationPreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +90,26 @@ impl GetEffectiveRecommendationPreferencesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferences, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferences,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>

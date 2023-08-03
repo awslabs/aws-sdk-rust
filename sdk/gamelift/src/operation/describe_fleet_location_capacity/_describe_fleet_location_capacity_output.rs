@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetLocationCapacityOutput {
 }
 impl DescribeFleetLocationCapacityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationCapacityOutput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput).
-    pub fn builder() -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityOutputBuilder {
         crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetLocationCapacityOutput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityOutputBuilder {
     pub(crate) fleet_capacity: ::std::option::Option<crate::types::FleetCapacity>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeFleetLocationCapacityOutputBuilder {
         self
     }
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
-    pub fn set_fleet_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetCapacity>,
-    ) -> Self {
+    pub fn set_fleet_capacity(mut self, input: ::std::option::Option<crate::types::FleetCapacity>) -> Self {
         self.fleet_capacity = input;
         self
     }
@@ -63,10 +58,7 @@ impl DescribeFleetLocationCapacityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetLocationCapacityOutput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput {
         crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput {
             fleet_capacity: self.fleet_capacity,
             _request_id: self._request_id,

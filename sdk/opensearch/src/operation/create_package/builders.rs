@@ -10,10 +10,7 @@ impl CreatePackageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_package::CreatePackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package::CreatePackageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_package();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePackageFluentBuilder {
         }
     }
     /// Access the CreatePackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_package::builders::CreatePackageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_package::builders::CreatePackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreatePackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl CreatePackageFluentBuilder {
         self
     }
     /// <p>The type of package.</p>
-    pub fn set_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageType>,
-    ) -> Self {
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
         self.inner = self.inner.set_package_type(input);
         self
     }
@@ -146,18 +135,12 @@ impl CreatePackageFluentBuilder {
         self.inner.get_package_type()
     }
     /// <p>Description of the package.</p>
-    pub fn package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_description(input.into());
         self
     }
     /// <p>Description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_description(input);
         self
     }
@@ -171,10 +154,7 @@ impl CreatePackageFluentBuilder {
         self
     }
     /// <p>The Amazon S3 location from which to import the package.</p>
-    pub fn set_package_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageSource>,
-    ) -> Self {
+    pub fn set_package_source(mut self, input: ::std::option::Option<crate::types::PackageSource>) -> Self {
         self.inner = self.inner.set_package_source(input);
         self
     }

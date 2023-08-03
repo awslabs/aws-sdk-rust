@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`lifecycle_policy_text(Option<String>)`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput::lifecycle_policy_text): <p>The JSON repository policy text.</p>
     ///   - [`status(Option<LifecyclePolicyPreviewStatus>)`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput::status): <p>The status of the lifecycle policy preview request.</p>
     /// - On failure, responds with [`SdkError<StartLifecyclePolicyPreviewError>`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError)
-    pub fn start_lifecycle_policy_preview(&self) -> crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewFluentBuilder{
+    pub fn start_lifecycle_policy_preview(
+        &self,
+    ) -> crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewFluentBuilder {
         crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewFluentBuilder::new(self.handle.clone())
     }
 }

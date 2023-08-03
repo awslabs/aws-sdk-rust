@@ -23,9 +23,7 @@ impl TsvOptions {
 
 /// A builder for [`TsvOptions`](crate::types::TsvOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TsvOptionsBuilder {
     pub(crate) read_options: ::std::option::Option<crate::types::ReadOptions>,
 }
@@ -36,10 +34,7 @@ impl TsvOptionsBuilder {
         self
     }
     /// <p>The file's read options.</p>
-    pub fn set_read_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadOptions>,
-    ) -> Self {
+    pub fn set_read_options(mut self, input: ::std::option::Option<crate::types::ReadOptions>) -> Self {
         self.read_options = input;
         self
     }

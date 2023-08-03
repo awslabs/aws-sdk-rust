@@ -24,9 +24,7 @@ impl Location {
         self.file_position
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-    pub fn relative_file_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelativeFileVersionEnum> {
+    pub fn relative_file_version(&self) -> ::std::option::Option<&crate::types::RelativeFileVersionEnum> {
         self.relative_file_version.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) file_position: ::std::option::Option<i64>,
@@ -82,17 +78,12 @@ impl LocationBuilder {
         self
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-    pub fn set_relative_file_version(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativeFileVersionEnum>,
-    ) -> Self {
+    pub fn set_relative_file_version(mut self, input: ::std::option::Option<crate::types::RelativeFileVersionEnum>) -> Self {
         self.relative_file_version = input;
         self
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-    pub fn get_relative_file_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelativeFileVersionEnum> {
+    pub fn get_relative_file_version(&self) -> &::std::option::Option<crate::types::RelativeFileVersionEnum> {
         &self.relative_file_version
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).

@@ -15,10 +15,7 @@ pub fn ser_list_bot_versions_input(
     if let Some(var_3) = &input.sort_by {
         #[allow(unused_mut)]
         let mut object_4 = object.key("sortBy").start_object();
-        crate::protocol_serde::shape_bot_version_sort_by::ser_bot_version_sort_by(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_bot_version_sort_by::ser_bot_version_sort_by(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

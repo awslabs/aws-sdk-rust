@@ -22,9 +22,7 @@ impl GetCachePolicyInput {
 
 /// A builder for [`GetCachePolicyInput`](crate::operation::get_cache_policy::GetCachePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCachePolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetCachePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetCachePolicyInput`](crate::operation::get_cache_policy::GetCachePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cache_policy::GetCachePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_cache_policy::GetCachePolicyInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_cache_policy::GetCachePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_cache_policy::GetCachePolicyInput { id: self.id })
     }
 }

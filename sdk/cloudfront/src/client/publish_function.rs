@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PublishFunctionOutput`](crate::operation::publish_function::PublishFunctionOutput) with field(s):
     ///   - [`function_summary(Option<FunctionSummary>)`](crate::operation::publish_function::PublishFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
     /// - On failure, responds with [`SdkError<PublishFunctionError>`](crate::operation::publish_function::PublishFunctionError)
-    pub fn publish_function(
-        &self,
-    ) -> crate::operation::publish_function::builders::PublishFunctionFluentBuilder {
-        crate::operation::publish_function::builders::PublishFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_function(&self) -> crate::operation::publish_function::builders::PublishFunctionFluentBuilder {
+        crate::operation::publish_function::builders::PublishFunctionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -57,9 +57,7 @@ impl ManagedScaling {
 
 /// A builder for [`ManagedScaling`](crate::types::ManagedScaling).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedScalingBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ManagedScalingStatus>,
     pub(crate) target_capacity: ::std::option::Option<i32>,
@@ -74,10 +72,7 @@ impl ManagedScalingBuilder {
         self
     }
     /// <p>Determines whether to use managed scaling for the capacity provider.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedScalingStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedScalingStatus>) -> Self {
         self.status = input;
         self
     }

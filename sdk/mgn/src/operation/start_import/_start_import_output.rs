@@ -29,9 +29,7 @@ impl StartImportOutput {
 
 /// A builder for [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportOutputBuilder {
     pub(crate) import_task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>Start import response import task.</p>
-    pub fn set_import_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTask>,
-    ) -> Self {
+    pub fn set_import_task(mut self, input: ::std::option::Option<crate::types::ImportTask>) -> Self {
         self.import_task = input;
         self
     }

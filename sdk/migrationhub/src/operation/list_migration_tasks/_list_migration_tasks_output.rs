@@ -8,8 +8,7 @@ pub struct ListMigrationTasksOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
     #[doc(hidden)]
-    pub migration_task_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>>,
+    pub migration_task_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>>,
     _request_id: Option<String>,
 }
 impl ListMigrationTasksOutput {
@@ -18,9 +17,7 @@ impl ListMigrationTasksOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    pub fn migration_task_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MigrationTaskSummary]> {
+    pub fn migration_task_summary_list(&self) -> ::std::option::Option<&[crate::types::MigrationTaskSummary]> {
         self.migration_task_summary_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListMigrationTasksOutput {
 }
 impl ListMigrationTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListMigrationTasksOutput`](crate::operation::list_migration_tasks::ListMigrationTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_migration_tasks::builders::ListMigrationTasksOutputBuilder {
+    pub fn builder() -> crate::operation::list_migration_tasks::builders::ListMigrationTasksOutputBuilder {
         crate::operation::list_migration_tasks::builders::ListMigrationTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMigrationTasksOutput`](crate::operation::list_migration_tasks::ListMigrationTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMigrationTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) migration_task_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>>,
+    pub(crate) migration_task_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>>,
     _request_id: Option<String>,
 }
 impl ListMigrationTasksOutputBuilder {
@@ -68,27 +61,19 @@ impl ListMigrationTasksOutputBuilder {
     /// To override the contents of this collection use [`set_migration_task_summary_list`](Self::set_migration_task_summary_list).
     ///
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    pub fn migration_task_summary_list(
-        mut self,
-        input: crate::types::MigrationTaskSummary,
-    ) -> Self {
+    pub fn migration_task_summary_list(mut self, input: crate::types::MigrationTaskSummary) -> Self {
         let mut v = self.migration_task_summary_list.unwrap_or_default();
         v.push(input);
         self.migration_task_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    pub fn set_migration_task_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>>,
-    ) -> Self {
+    pub fn set_migration_task_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>>) -> Self {
         self.migration_task_summary_list = input;
         self
     }
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    pub fn get_migration_task_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>> {
+    pub fn get_migration_task_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>> {
         &self.migration_task_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

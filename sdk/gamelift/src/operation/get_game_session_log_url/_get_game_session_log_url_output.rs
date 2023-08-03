@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for GetGameSessionLogUrlOutput {
 }
 impl GetGameSessionLogUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetGameSessionLogUrlOutput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlOutputBuilder {
         crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGameSessionLogUrlOutput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGameSessionLogUrlOutputBuilder {
     pub(crate) pre_signed_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetGameSessionLogUrlOutputBuilder {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
         self
     }

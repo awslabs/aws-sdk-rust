@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`tags_model(TagsModel)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags_model) / [`set_tags_model(Option<TagsModel>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags_model): <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
-    pub fn tag_resource(
-        &self,
-    ) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
+    pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
         crate::operation::tag_resource::builders::TagResourceFluentBuilder::new(self.handle.clone())
     }
 }

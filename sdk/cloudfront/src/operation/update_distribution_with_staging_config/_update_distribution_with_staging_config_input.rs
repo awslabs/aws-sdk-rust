@@ -39,16 +39,14 @@ impl UpdateDistributionWithStagingConfigInput {
 }
 impl UpdateDistributionWithStagingConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionWithStagingConfigInput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput).
-    pub fn builder() -> crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder{
+    pub fn builder() -> crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder {
         crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionWithStagingConfigInput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) staging_distribution_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
         &self.id
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-    pub fn staging_distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.staging_distribution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-    pub fn set_staging_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_staging_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.staging_distribution_id = input;
         self
     }
@@ -119,16 +111,18 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateDistributionWithStagingConfigInput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput {
-                id: self.id
-                ,
-                staging_distribution_id: self.staging_distribution_id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                id: self.id,
+                staging_distribution_id: self.staging_distribution_id,
+                if_match: self.if_match,
+            },
         )
     }
 }

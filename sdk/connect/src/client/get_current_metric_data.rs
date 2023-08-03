@@ -17,12 +17,7 @@ impl super::Client {
     ///   - [`data_snapshot_time(Option<DateTime>)`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput::data_snapshot_time): <p>The time at which the metrics were retrieved and cached for pagination.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput::approximate_total_count): <p>The total count of the result, regardless of the current page size. </p>
     /// - On failure, responds with [`SdkError<GetCurrentMetricDataError>`](crate::operation::get_current_metric_data::GetCurrentMetricDataError)
-    pub fn get_current_metric_data(
-        &self,
-    ) -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataFluentBuilder
-    {
-        crate::operation::get_current_metric_data::builders::GetCurrentMetricDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_current_metric_data(&self) -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataFluentBuilder {
+        crate::operation::get_current_metric_data::builders::GetCurrentMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

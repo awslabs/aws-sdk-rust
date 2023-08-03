@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDataRepositoryTaskOutput {
 }
 impl CreateDataRepositoryTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskOutput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput).
-    pub fn builder() -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskOutputBuilder{
+    pub fn builder() -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskOutputBuilder {
         crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataRepositoryTaskOutput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskOutputBuilder {
     pub(crate) data_repository_task: ::std::option::Option<crate::types::DataRepositoryTask>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl CreateDataRepositoryTaskOutputBuilder {
         self
     }
     /// <p>The description of the data repository task that you just created.</p>
-    pub fn set_data_repository_task(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTask>,
-    ) -> Self {
+    pub fn set_data_repository_task(mut self, input: ::std::option::Option<crate::types::DataRepositoryTask>) -> Self {
         self.data_repository_task = input;
         self
     }
     /// <p>The description of the data repository task that you just created.</p>
-    pub fn get_data_repository_task(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataRepositoryTask> {
+    pub fn get_data_repository_task(&self) -> &::std::option::Option<crate::types::DataRepositoryTask> {
         &self.data_repository_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl CreateDataRepositoryTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataRepositoryTaskOutput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput {
+    pub fn build(self) -> crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput {
         crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput {
             data_repository_task: self.data_repository_task,
             _request_id: self._request_id,

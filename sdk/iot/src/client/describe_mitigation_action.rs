@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput::creation_date): <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput::last_modified_date): <p>The date and time when the mitigation action was last changed.</p>
     /// - On failure, responds with [`SdkError<DescribeMitigationActionError>`](crate::operation::describe_mitigation_action::DescribeMitigationActionError)
-    pub fn describe_mitigation_action(
-        &self,
-    ) -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder
-    {
+    pub fn describe_mitigation_action(&self) -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder {
         crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder::new(self.handle.clone())
     }
 }

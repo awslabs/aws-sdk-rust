@@ -49,9 +49,7 @@ impl ListNamespacesOutput {
 
 /// A builder for [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesOutputBuilder {
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,17 +70,12 @@ impl ListNamespacesOutputBuilder {
         self
     }
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    pub fn set_namespaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>>,
-    ) -> Self {
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>>) -> Self {
         self.namespaces = input;
         self
     }
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    pub fn get_namespaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>> {
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>> {
         &self.namespaces
     }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>

@@ -10,10 +10,7 @@ impl UpdateDataCatalogInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_data_catalog::UpdateDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_catalog::UpdateDataCatalogError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_catalog::UpdateDataCatalogError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_data_catalog();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDataCatalogFluentBuilder {
         }
     }
     /// Access the UpdateDataCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_catalog::builders::UpdateDataCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_data_catalog::builders::UpdateDataCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDataCatalogFluentBuilder {
             crate::operation::update_data_catalog::UpdateDataCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_catalog::UpdateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_catalog::UpdateDataCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDataCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDataCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_catalog::UpdateDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_catalog::UpdateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_catalog::UpdateDataCatalogError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDataCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_catalog::UpdateDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_catalog::UpdateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_catalog::UpdateDataCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDataCatalogFluentBuilder {
             crate::operation::update_data_catalog::UpdateDataCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_catalog::UpdateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_catalog::UpdateDataCatalogError>,
     > {
         self.customize_middleware().await
     }
@@ -177,11 +161,7 @@ impl UpdateDataCatalogFluentBuilder {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
     }
@@ -194,12 +174,7 @@ impl UpdateDataCatalogFluentBuilder {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -212,11 +187,7 @@ impl UpdateDataCatalogFluentBuilder {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::name): <p>The name of the celebrity.</p>
     ///   - [`known_gender(Option<KnownGender>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::known_gender): <p>Retrieves the known gender for the celebrity.</p>
     /// - On failure, responds with [`SdkError<GetCelebrityInfoError>`](crate::operation::get_celebrity_info::GetCelebrityInfoError)
-    pub fn get_celebrity_info(
-        &self,
-    ) -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder {
-        crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_celebrity_info(&self) -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder {
+        crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::new(self.handle.clone())
     }
 }

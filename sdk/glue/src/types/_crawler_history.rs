@@ -86,9 +86,7 @@ impl CrawlerHistory {
 
 /// A builder for [`CrawlerHistory`](crate::types::CrawlerHistory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlerHistoryBuilder {
     pub(crate) crawl_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CrawlerHistoryState>,
@@ -122,10 +120,7 @@ impl CrawlerHistoryBuilder {
         self
     }
     /// <p>The state of the crawl.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CrawlerHistoryState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CrawlerHistoryState>) -> Self {
         self.state = input;
         self
     }
@@ -139,10 +134,7 @@ impl CrawlerHistoryBuilder {
         self
     }
     /// <p>The date and time on which the crawl started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -156,10 +148,7 @@ impl CrawlerHistoryBuilder {
         self
     }
     /// <p>The date and time on which the crawl ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -182,18 +171,12 @@ impl CrawlerHistoryBuilder {
         &self.summary
     }
     /// <p>If an error occurred, the error message associated with the crawl.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred, the error message associated with the crawl.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -230,18 +213,12 @@ impl CrawlerHistoryBuilder {
         &self.log_stream
     }
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
-    pub fn message_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
-    pub fn set_message_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_prefix = input;
         self
     }

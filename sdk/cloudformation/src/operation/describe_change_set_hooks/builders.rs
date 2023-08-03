@@ -26,8 +26,7 @@ impl DescribeChangeSetHooksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChangeSetHooksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksInputBuilder,
+    inner: crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksInputBuilder,
 }
 impl DescribeChangeSetHooksFluentBuilder {
     /// Creates a new `DescribeChangeSetHooks`.
@@ -38,10 +37,7 @@ impl DescribeChangeSetHooksFluentBuilder {
         }
     }
     /// Access the DescribeChangeSetHooks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeChangeSetHooksFluentBuilder {
             crate::operation::describe_change_set_hooks::DescribeChangeSetHooks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeChangeSetHooksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeChangeSetHooksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeChangeSetHooksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeChangeSetHooksFluentBuilder {
             crate::operation::describe_change_set_hooks::DescribeChangeSetHooks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_set_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_set_name(input);
         self
     }
@@ -173,18 +152,12 @@ impl DescribeChangeSetHooksFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }

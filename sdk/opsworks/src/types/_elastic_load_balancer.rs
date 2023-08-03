@@ -79,9 +79,7 @@ impl ElasticLoadBalancer {
 
 /// A builder for [`ElasticLoadBalancer`](crate::types::ElasticLoadBalancer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticLoadBalancerBuilder {
     pub(crate) elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct ElasticLoadBalancerBuilder {
 }
 impl ElasticLoadBalancerBuilder {
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn elastic_load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elastic_load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn set_elastic_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = input;
         self
     }
@@ -189,27 +181,19 @@ impl ElasticLoadBalancerBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>A list of Availability Zones.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Availability Zones.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>A list of Availability Zones.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `subnet_ids`.
@@ -224,10 +208,7 @@ impl ElasticLoadBalancerBuilder {
         self
     }
     /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -240,27 +221,19 @@ impl ElasticLoadBalancerBuilder {
     /// To override the contents of this collection use [`set_ec2_instance_ids`](Self::set_ec2_instance_ids).
     ///
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-    pub fn ec2_instance_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_instance_ids.unwrap_or_default();
         v.push(input.into());
         self.ec2_instance_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-    pub fn set_ec2_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ec2_instance_ids = input;
         self
     }
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-    pub fn get_ec2_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ec2_instance_ids
     }
     /// Consumes the builder and constructs a [`ElasticLoadBalancer`](crate::types::ElasticLoadBalancer).

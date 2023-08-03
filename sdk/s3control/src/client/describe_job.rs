@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput) with field(s):
     ///   - [`job(Option<JobDescriptor>)`](crate::operation::describe_job::DescribeJobOutput::job): <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::operation::describe_job::DescribeJobError)
-    pub fn describe_job(
-        &self,
-    ) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
+    pub fn describe_job(&self) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
         crate::operation::describe_job::builders::DescribeJobFluentBuilder::new(self.handle.clone())
     }
 }

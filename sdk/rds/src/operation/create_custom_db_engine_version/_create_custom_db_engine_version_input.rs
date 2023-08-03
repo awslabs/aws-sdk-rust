@@ -143,21 +143,18 @@ impl CreateCustomDbEngineVersionInput {
 }
 impl CreateCustomDbEngineVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
-    pub fn builder() -> crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder {
         crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomDbEngineVersionInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
-    pub(crate) database_installation_files_s3_bucket_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -181,18 +178,12 @@ impl CreateCustomDbEngineVersionInputBuilder {
         &self.engine
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -201,47 +192,31 @@ impl CreateCustomDbEngineVersionInputBuilder {
         &self.engine_version
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn database_installation_files_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_installation_files_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_installation_files_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn set_database_installation_files_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_installation_files_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_installation_files_s3_bucket_name = input;
         self
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn get_database_installation_files_s3_bucket_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_database_installation_files_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_installation_files_s3_bucket_name
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_installation_files_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_installation_files_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn set_database_installation_files_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_installation_files_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_installation_files_s3_prefix = input;
         self
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn get_database_installation_files_s3_prefix(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_installation_files_s3_prefix
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
@@ -420,10 +395,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -438,19 +410,16 @@ impl CreateCustomDbEngineVersionInputBuilder {
         crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                database_installation_files_s3_bucket_name: self
-                    .database_installation_files_s3_bucket_name,
-                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-                image_id: self.image_id,
-                kms_key_id: self.kms_key_id,
-                description: self.description,
-                manifest: self.manifest,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput {
+            engine: self.engine,
+            engine_version: self.engine_version,
+            database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
+            database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
+            image_id: self.image_id,
+            kms_key_id: self.kms_key_id,
+            description: self.description,
+            manifest: self.manifest,
+            tags: self.tags,
+        })
     }
 }

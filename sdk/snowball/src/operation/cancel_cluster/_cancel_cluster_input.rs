@@ -22,9 +22,7 @@ impl CancelClusterInput {
 
 /// A builder for [`CancelClusterInput`](crate::operation::cancel_cluster::CancelClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelClusterInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl CancelClusterInputBuilder {
     /// Consumes the builder and constructs a [`CancelClusterInput`](crate::operation::cancel_cluster::CancelClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_cluster::CancelClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_cluster::CancelClusterInput {
-            cluster_id: self.cluster_id,
-        })
+    ) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_cluster::CancelClusterInput { cluster_id: self.cluster_id })
     }
 }

@@ -23,9 +23,7 @@ impl RoomRetentionSettings {
 
 /// A builder for [`RoomRetentionSettings`](crate::types::RoomRetentionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoomRetentionSettingsBuilder {
     pub(crate) retention_days: ::std::option::Option<i32>,
 }

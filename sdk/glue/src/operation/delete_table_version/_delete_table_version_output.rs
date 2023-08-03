@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTableVersionOutput {
 }
 impl DeleteTableVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTableVersionOutput`](crate::operation::delete_table_version::DeleteTableVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_table_version::builders::DeleteTableVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_table_version::builders::DeleteTableVersionOutputBuilder {
         crate::operation::delete_table_version::builders::DeleteTableVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTableVersionOutput`](crate::operation::delete_table_version::DeleteTableVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTableVersionOutputBuilder {
     _request_id: Option<String>,
 }

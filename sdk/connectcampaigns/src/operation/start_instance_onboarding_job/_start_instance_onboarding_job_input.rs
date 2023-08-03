@@ -23,34 +23,26 @@ impl StartInstanceOnboardingJobInput {
 }
 impl StartInstanceOnboardingJobInput {
     /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobInput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput).
-    pub fn builder() -> crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder{
+    pub fn builder() -> crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder {
         crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartInstanceOnboardingJobInput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInstanceOnboardingJobInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl StartInstanceOnboardingJobInputBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_instance_id = input;
         self
     }
@@ -64,10 +56,7 @@ impl StartInstanceOnboardingJobInputBuilder {
         self
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -82,11 +71,9 @@ impl StartInstanceOnboardingJobInputBuilder {
         crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput {
-                connect_instance_id: self.connect_instance_id,
-                encryption_config: self.encryption_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput {
+            connect_instance_id: self.connect_instance_id,
+            encryption_config: self.encryption_config,
+        })
     }
 }

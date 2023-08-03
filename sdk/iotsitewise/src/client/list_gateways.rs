@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`gateway_summaries(Option<Vec<GatewaySummary>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateway_summaries): <p>A list that summarizes each gateway.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
-    pub fn list_gateways(
-        &self,
-    ) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
-        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_gateways(&self) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
+        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

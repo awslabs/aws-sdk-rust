@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetStreamKeyOutput`](crate::operation::get_stream_key::GetStreamKeyOutput) with field(s):
     ///   - [`stream_key(Option<StreamKey>)`](crate::operation::get_stream_key::GetStreamKeyOutput::stream_key): (undocumented)
     /// - On failure, responds with [`SdkError<GetStreamKeyError>`](crate::operation::get_stream_key::GetStreamKeyError)
-    pub fn get_stream_key(
-        &self,
-    ) -> crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder {
-        crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_stream_key(&self) -> crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder {
+        crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder::new(self.handle.clone())
     }
 }

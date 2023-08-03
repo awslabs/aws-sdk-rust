@@ -44,9 +44,7 @@ impl ColumnStatistics {
 
 /// A builder for [`ColumnStatistics`](crate::types::ColumnStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnStatisticsBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_type: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ColumnStatisticsBuilder {
         self
     }
     /// <p>The timestamp of when column statistics were generated.</p>
-    pub fn set_analyzed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analyzed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.analyzed_time = input;
         self
     }
@@ -105,17 +100,12 @@ impl ColumnStatisticsBuilder {
         self
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
-    pub fn set_statistics_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnStatisticsData>,
-    ) -> Self {
+    pub fn set_statistics_data(mut self, input: ::std::option::Option<crate::types::ColumnStatisticsData>) -> Self {
         self.statistics_data = input;
         self
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
-    pub fn get_statistics_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColumnStatisticsData> {
+    pub fn get_statistics_data(&self) -> &::std::option::Option<crate::types::ColumnStatisticsData> {
         &self.statistics_data
     }
     /// Consumes the builder and constructs a [`ColumnStatistics`](crate::types::ColumnStatistics).

@@ -40,13 +40,7 @@
 /// _Note: `LifecycleManagementStrategy::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LifecycleManagementStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for LifecycleManagementStrategy {
             "BySpatialSubdivision" => LifecycleManagementStrategy::BySpatialSubdivision,
             "PerWorker" => LifecycleManagementStrategy::PerWorker,
             "Unknown" => LifecycleManagementStrategy::UnknownValue,
-            other => LifecycleManagementStrategy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LifecycleManagementStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

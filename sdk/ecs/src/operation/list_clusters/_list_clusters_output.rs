@@ -35,9 +35,7 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersOutputBuilder {
     pub(crate) cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListClustersOutputBuilder {
         self
     }
     /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
-    pub fn set_cluster_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_arns = input;
         self
     }
     /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
-    pub fn get_cluster_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_arns
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

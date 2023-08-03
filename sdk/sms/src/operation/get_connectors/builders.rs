@@ -10,10 +10,7 @@ impl GetConnectorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_connectors::GetConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectors::GetConnectorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connectors::GetConnectorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_connectors();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetConnectorsFluentBuilder {
         }
     }
     /// Access the GetConnectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_connectors::builders::GetConnectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_connectors::builders::GetConnectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetConnectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetConnectorsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_connectors::paginator::GetConnectorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_connectors::paginator::GetConnectorsPaginator {
-        crate::operation::get_connectors::paginator::GetConnectorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_connectors::paginator::GetConnectorsPaginator {
+        crate::operation::get_connectors::paginator::GetConnectorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

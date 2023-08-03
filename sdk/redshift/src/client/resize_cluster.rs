@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ResizeClusterOutput`](crate::operation::resize_cluster::ResizeClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::resize_cluster::ResizeClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ResizeClusterError>`](crate::operation::resize_cluster::ResizeClusterError)
-    pub fn resize_cluster(
-        &self,
-    ) -> crate::operation::resize_cluster::builders::ResizeClusterFluentBuilder {
-        crate::operation::resize_cluster::builders::ResizeClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resize_cluster(&self) -> crate::operation::resize_cluster::builders::ResizeClusterFluentBuilder {
+        crate::operation::resize_cluster::builders::ResizeClusterFluentBuilder::new(self.handle.clone())
     }
 }

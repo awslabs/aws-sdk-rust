@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`network_resources(Option<Vec<NetworkResource>>)`](crate::operation::list_network_resources::ListNetworkResourcesOutput::network_resources): <p>Information about network resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_resources::ListNetworkResourcesOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListNetworkResourcesError>`](crate::operation::list_network_resources::ListNetworkResourcesError)
-    pub fn list_network_resources(
-        &self,
-    ) -> crate::operation::list_network_resources::builders::ListNetworkResourcesFluentBuilder {
-        crate::operation::list_network_resources::builders::ListNetworkResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_network_resources(&self) -> crate::operation::list_network_resources::builders::ListNetworkResourcesFluentBuilder {
+        crate::operation::list_network_resources::builders::ListNetworkResourcesFluentBuilder::new(self.handle.clone())
     }
 }

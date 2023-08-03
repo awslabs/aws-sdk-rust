@@ -30,9 +30,7 @@ impl DataReplicationError {
 
 /// A builder for [`DataReplicationError`](crate::types::DataReplicationError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataReplicationErrorBuilder {
     pub(crate) error: ::std::option::Option<crate::types::DataReplicationErrorString>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DataReplicationErrorBuilder {
         self
     }
     /// <p>Error in data replication.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::DataReplicationErrorString>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::DataReplicationErrorString>) -> Self {
         self.error = input;
         self
     }

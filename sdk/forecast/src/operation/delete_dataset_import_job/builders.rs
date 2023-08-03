@@ -26,8 +26,7 @@ impl DeleteDatasetImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatasetImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder,
+    inner: crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder,
 }
 impl DeleteDatasetImportJobFluentBuilder {
     /// Creates a new `DeleteDatasetImportJob`.
@@ -38,10 +37,7 @@ impl DeleteDatasetImportJobFluentBuilder {
         }
     }
     /// Access the DeleteDatasetImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteDatasetImportJobFluentBuilder {
             crate::operation::delete_dataset_import_job::DeleteDatasetImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteDatasetImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteDatasetImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteDatasetImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteDatasetImportJobFluentBuilder {
             crate::operation::delete_dataset_import_job::DeleteDatasetImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_import_job_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_import_job_arn(input);
         self
     }

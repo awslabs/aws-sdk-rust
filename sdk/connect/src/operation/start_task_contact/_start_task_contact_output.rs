@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartTaskContactOutput {
 }
 impl StartTaskContactOutput {
     /// Creates a new builder-style object to manufacture [`StartTaskContactOutput`](crate::operation::start_task_contact::StartTaskContactOutput).
-    pub fn builder() -> crate::operation::start_task_contact::builders::StartTaskContactOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_task_contact::builders::StartTaskContactOutputBuilder {
         crate::operation::start_task_contact::builders::StartTaskContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTaskContactOutput`](crate::operation::start_task_contact::StartTaskContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTaskContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

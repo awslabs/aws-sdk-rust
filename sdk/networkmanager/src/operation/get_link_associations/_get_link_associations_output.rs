@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetLinkAssociationsOutput {
 }
 impl GetLinkAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetLinkAssociationsOutput`](crate::operation::get_link_associations::GetLinkAssociationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_link_associations::builders::GetLinkAssociationsOutputBuilder {
-        crate::operation::get_link_associations::builders::GetLinkAssociationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_link_associations::builders::GetLinkAssociationsOutputBuilder {
+        crate::operation::get_link_associations::builders::GetLinkAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLinkAssociationsOutput`](crate::operation::get_link_associations::GetLinkAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLinkAssociationsOutputBuilder {
-    pub(crate) link_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>>,
+    pub(crate) link_associations: ::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetLinkAssociationsOutputBuilder {
         self
     }
     /// <p>The link associations.</p>
-    pub fn set_link_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>>,
-    ) -> Self {
+    pub fn set_link_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>>) -> Self {
         self.link_associations = input;
         self
     }
     /// <p>The link associations.</p>
-    pub fn get_link_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>> {
+    pub fn get_link_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>> {
         &self.link_associations
     }
     /// <p>The token for the next page of results.</p>

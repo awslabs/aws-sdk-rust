@@ -15,10 +15,7 @@ pub fn ser_update_agent_status_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_component_status_data::ser_component_status_data(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_component_status_data::ser_component_status_data(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

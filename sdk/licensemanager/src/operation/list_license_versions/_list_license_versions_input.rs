@@ -29,18 +29,14 @@ impl ListLicenseVersionsInput {
 }
 impl ListLicenseVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListLicenseVersionsInput`](crate::operation::list_license_versions::ListLicenseVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_license_versions::builders::ListLicenseVersionsInputBuilder {
-        crate::operation::list_license_versions::builders::ListLicenseVersionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_license_versions::builders::ListLicenseVersionsInputBuilder {
+        crate::operation::list_license_versions::builders::ListLicenseVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseVersionsInput`](crate::operation::list_license_versions::ListLicenseVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseVersionsInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListLicenseVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLicenseVersionsInput`](crate::operation::list_license_versions::ListLicenseVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_license_versions::ListLicenseVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_license_versions::ListLicenseVersionsInput {
-                license_arn: self.license_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_license_versions::ListLicenseVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_license_versions::ListLicenseVersionsInput {
+            license_arn: self.license_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

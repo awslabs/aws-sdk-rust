@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddListenerCertificatesOutput`](crate::operation::add_listener_certificates::AddListenerCertificatesOutput) with field(s):
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::add_listener_certificates::AddListenerCertificatesOutput::certificates): <p>Information about the certificates in the certificate list.</p>
     /// - On failure, responds with [`SdkError<AddListenerCertificatesError>`](crate::operation::add_listener_certificates::AddListenerCertificatesError)
-    pub fn add_listener_certificates(
-        &self,
-    ) -> crate::operation::add_listener_certificates::builders::AddListenerCertificatesFluentBuilder
-    {
+    pub fn add_listener_certificates(&self) -> crate::operation::add_listener_certificates::builders::AddListenerCertificatesFluentBuilder {
         crate::operation::add_listener_certificates::builders::AddListenerCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

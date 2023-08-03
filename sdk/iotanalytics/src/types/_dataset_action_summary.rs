@@ -30,9 +30,7 @@ impl DatasetActionSummary {
 
 /// A builder for [`DatasetActionSummary`](crate::types::DatasetActionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetActionSummaryBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<crate::types::DatasetActionType>,
@@ -58,10 +56,7 @@ impl DatasetActionSummaryBuilder {
         self
     }
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::DatasetActionType>) -> Self {
         self.action_type = input;
         self
     }

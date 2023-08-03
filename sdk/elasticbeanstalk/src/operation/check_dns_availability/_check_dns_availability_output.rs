@@ -37,17 +37,14 @@ impl ::aws_http::request_id::RequestId for CheckDnsAvailabilityOutput {
 }
 impl CheckDnsAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput).
-    pub fn builder(
-    ) -> crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder {
+    pub fn builder() -> crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder {
         crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckDnsAvailabilityOutputBuilder {
     pub(crate) available: ::std::option::Option<bool>,
     pub(crate) fully_qualified_cname: ::std::option::Option<::std::string::String>,
@@ -81,18 +78,12 @@ impl CheckDnsAvailabilityOutputBuilder {
         &self.available
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
-    pub fn fully_qualified_cname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fully_qualified_cname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_cname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
-    pub fn set_fully_qualified_cname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fully_qualified_cname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fully_qualified_cname = input;
         self
     }

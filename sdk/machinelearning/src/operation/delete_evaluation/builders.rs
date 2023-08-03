@@ -10,10 +10,7 @@ impl DeleteEvaluationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_evaluation::DeleteEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation::DeleteEvaluationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation::DeleteEvaluationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_evaluation();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteEvaluationFluentBuilder {
         }
     }
     /// Access the DeleteEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_evaluation::builders::DeleteEvaluationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_evaluation::builders::DeleteEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteEvaluationFluentBuilder {
             crate::operation::delete_evaluation::DeleteEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation::DeleteEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation::DeleteEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_evaluation::DeleteEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation::DeleteEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation::DeleteEvaluationError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_evaluation::DeleteEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation::DeleteEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation::DeleteEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl DeleteEvaluationFluentBuilder {
             crate::operation::delete_evaluation::DeleteEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation::DeleteEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation::DeleteEvaluationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_id(input);
         self
     }

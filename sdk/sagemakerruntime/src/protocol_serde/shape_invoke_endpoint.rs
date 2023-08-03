@@ -2,8 +2,7 @@
 pub fn ser_invoke_endpoint_headers(
     input: &crate::operation::invoke_endpoint::InvokeEndpointInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-Type", header_value);
@@ -27,10 +23,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "accept",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Accept", header_value);
@@ -43,10 +36,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "custom_attributes",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
@@ -59,10 +49,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "target_model",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Target-Model", header_value);
@@ -75,10 +62,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "target_variant",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Target-Variant", header_value);
@@ -91,10 +75,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "target_container_hostname",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Target-Container-Hostname", header_value);
@@ -107,10 +88,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "inference_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
@@ -123,10 +101,7 @@ pub fn ser_invoke_endpoint_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "enable_explanations",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Enable-Explanations", header_value);
@@ -140,73 +115,27 @@ pub fn de_invoke_endpoint_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::invoke_endpoint::InvokeEndpointOutput,
-    crate::operation::invoke_endpoint::InvokeEndpointError,
-> {
+) -> std::result::Result<crate::operation::invoke_endpoint::InvokeEndpointOutput, crate::operation::invoke_endpoint::InvokeEndpointError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(generic))
-        }
+        None => return Err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalDependencyException" => {
-            crate::operation::invoke_endpoint::InvokeEndpointError::InternalDependencyException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalDependencyExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_internal_dependency_exception::de_internal_dependency_exception_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalFailure" => {
-            crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalFailureBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ModelError" => crate::operation::invoke_endpoint::InvokeEndpointError::ModelError({
+        "InternalDependencyException" => crate::operation::invoke_endpoint::InvokeEndpointError::InternalDependencyException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelErrorBuilder::default();
-                output = crate::protocol_serde::shape_model_error::de_model_error_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let mut output = crate::types::error::builders::InternalDependencyExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_internal_dependency_exception::de_internal_dependency_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -215,57 +144,81 @@ pub fn de_invoke_endpoint_http_error(
             }
             tmp
         }),
-        "ModelNotReadyException" => {
-            crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException({
+        "InternalFailure" => crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailable" => {
-            crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable({
+                let mut output = crate::types::error::builders::InternalFailureBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModelError" => crate::operation::invoke_endpoint::InvokeEndpointError::ModelError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceUnavailableBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationError" => {
-            crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError({
+                let mut output = crate::types::error::builders::ModelErrorBuilder::default();
+                output = crate::protocol_serde::shape_model_error::de_model_error_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModelNotReadyException" => crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationErrorBuilder::default();
-                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailable" => crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
+                output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationError" => crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
+                output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::invoke_endpoint::InvokeEndpointError::generic(generic),
     })
 }
@@ -275,38 +228,31 @@ pub fn de_invoke_endpoint_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::invoke_endpoint::InvokeEndpointOutput,
-    crate::operation::invoke_endpoint::InvokeEndpointError,
-> {
+) -> std::result::Result<crate::operation::invoke_endpoint::InvokeEndpointOutput, crate::operation::invoke_endpoint::InvokeEndpointError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::invoke_endpoint::builders::InvokeEndpointOutputBuilder::default();
-        output = output.set_body(
-            crate::protocol_serde::shape_invoke_endpoint_output::de_body_payload(_response_body)?,
-        );
+        let mut output = crate::operation::invoke_endpoint::builders::InvokeEndpointOutputBuilder::default();
+        output = output.set_body(crate::protocol_serde::shape_invoke_endpoint_output::de_body_payload(_response_body)?);
         output = output.set_content_type(
-            crate::protocol_serde::shape_invoke_endpoint_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(
-                    "Failed to parse ContentType from header `Content-Type",
-                )
+            crate::protocol_serde::shape_invoke_endpoint_output::de_content_type_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_endpoint::InvokeEndpointError::unhandled("Failed to parse ContentType from header `Content-Type")
             })?,
         );
         output = output.set_custom_attributes(
-            crate::protocol_serde::shape_invoke_endpoint_output::de_custom_attributes_header(_response_headers)
-                                    .map_err(|_|crate::operation::invoke_endpoint::InvokeEndpointError::unhandled("Failed to parse CustomAttributes from header `X-Amzn-SageMaker-Custom-Attributes"))?
+            crate::protocol_serde::shape_invoke_endpoint_output::de_custom_attributes_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(
+                    "Failed to parse CustomAttributes from header `X-Amzn-SageMaker-Custom-Attributes",
+                )
+            })?,
         );
         output = output.set_invoked_production_variant(
-            crate::protocol_serde::shape_invoke_endpoint_output::de_invoked_production_variant_header(_response_headers)
-                                    .map_err(|_|crate::operation::invoke_endpoint::InvokeEndpointError::unhandled("Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant"))?
+            crate::protocol_serde::shape_invoke_endpoint_output::de_invoked_production_variant_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(
+                    "Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -15,33 +15,25 @@ impl DeleteLicenseConfigurationInput {
 }
 impl DeleteLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationInput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput).
-    pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder {
         crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLicenseConfigurationInput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationInputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLicenseConfigurationInputBuilder {
     /// <p>ID of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_configuration_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteLicenseConfigurationInputBuilder {
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput {
+            license_configuration_arn: self.license_configuration_arn,
+        })
     }
 }

@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`pre_provisioning_hook(Option<ProvisioningHook>)`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput::pre_provisioning_hook): <p>Gets information about a pre-provisioned hook.</p>
     ///   - [`r#type(Option<TemplateType>)`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput::type): <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningTemplateError>`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateError)
-    pub fn describe_provisioning_template(&self) -> crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder{
+    pub fn describe_provisioning_template(
+        &self,
+    ) -> crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder {
         crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder::new(self.handle.clone())
     }
 }

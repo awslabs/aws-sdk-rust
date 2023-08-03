@@ -37,9 +37,7 @@ impl ActivateEventSourceFluentBuilder {
         }
     }
     /// Access the ActivateEventSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ActivateEventSourceFluentBuilder {
             crate::operation::activate_event_source::ActivateEventSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_event_source::ActivateEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_event_source::ActivateEventSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ActivateEventSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ActivateEventSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_event_source::ActivateEventSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_event_source::ActivateEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_event_source::ActivateEventSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ActivateEventSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_event_source::ActivateEventSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_event_source::ActivateEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_event_source::ActivateEventSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ActivateEventSourceFluentBuilder {
             crate::operation::activate_event_source::ActivateEventSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_event_source::ActivateEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_event_source::ActivateEventSourceError>,
     > {
         self.customize_middleware().await
     }

@@ -52,9 +52,7 @@ impl MigrationAlert {
 
 /// A builder for [`MigrationAlert`](crate::types::MigrationAlert).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MigrationAlertBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MigrationAlertType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl MigrationAlertBuilder {
     /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
     /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationAlertType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MigrationAlertType>) -> Self {
         self.r#type = input;
         self
     }
@@ -117,10 +112,7 @@ impl MigrationAlertBuilder {
         self
     }
     /// <p>Additional details about the alert.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.details = input;
         self
     }
@@ -133,27 +125,19 @@ impl MigrationAlertBuilder {
     /// To override the contents of this collection use [`set_reference_ur_ls`](Self::set_reference_ur_ls).
     ///
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_ur_ls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reference_ur_ls.unwrap_or_default();
         v.push(input.into());
         self.reference_ur_ls = ::std::option::Option::Some(v);
         self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn set_reference_ur_ls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reference_ur_ls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reference_ur_ls = input;
         self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn get_reference_ur_ls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reference_ur_ls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reference_ur_ls
     }
     /// Consumes the builder and constructs a [`MigrationAlert`](crate::types::MigrationAlert).

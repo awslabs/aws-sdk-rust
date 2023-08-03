@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTrustStoreOutput`](crate::operation::update_trust_store::UpdateTrustStoreOutput) with field(s):
     ///   - [`trust_store_arn(Option<String>)`](crate::operation::update_trust_store::UpdateTrustStoreOutput::trust_store_arn): <p>The ARN of the trust store.</p>
     /// - On failure, responds with [`SdkError<UpdateTrustStoreError>`](crate::operation::update_trust_store::UpdateTrustStoreError)
-    pub fn update_trust_store(
-        &self,
-    ) -> crate::operation::update_trust_store::builders::UpdateTrustStoreFluentBuilder {
-        crate::operation::update_trust_store::builders::UpdateTrustStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_trust_store(&self) -> crate::operation::update_trust_store::builders::UpdateTrustStoreFluentBuilder {
+        crate::operation::update_trust_store::builders::UpdateTrustStoreFluentBuilder::new(self.handle.clone())
     }
 }

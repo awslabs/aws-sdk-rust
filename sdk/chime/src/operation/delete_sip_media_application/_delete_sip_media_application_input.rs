@@ -15,33 +15,25 @@ impl DeleteSipMediaApplicationInput {
 }
 impl DeleteSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSipMediaApplicationInput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput).
-    pub fn builder() -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder{
+    pub fn builder() -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder {
         crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSipMediaApplicationInput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSipMediaApplicationInputBuilder {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sip_media_application_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteSipMediaApplicationInputBuilder {
         crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput {
-                sip_media_application_id: self.sip_media_application_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput {
+            sip_media_application_id: self.sip_media_application_id,
+        })
     }
 }

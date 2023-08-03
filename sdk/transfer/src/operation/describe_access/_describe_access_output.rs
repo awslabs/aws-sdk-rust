@@ -35,9 +35,7 @@ impl DescribeAccessOutput {
 
 /// A builder for [`DescribeAccessOutput`](crate::operation::describe_access::DescribeAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccessOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) access: ::std::option::Option<crate::types::DescribedAccess>,
@@ -64,10 +62,7 @@ impl DescribeAccessOutputBuilder {
         self
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
-    pub fn set_access(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedAccess>,
-    ) -> Self {
+    pub fn set_access(mut self, input: ::std::option::Option<crate::types::DescribedAccess>) -> Self {
         self.access = input;
         self
     }

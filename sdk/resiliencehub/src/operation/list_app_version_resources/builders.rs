@@ -26,8 +26,7 @@ impl ListAppVersionResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppVersionResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder,
+    inner: crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder,
 }
 impl ListAppVersionResourcesFluentBuilder {
     /// Creates a new `ListAppVersionResources`.
@@ -38,10 +37,7 @@ impl ListAppVersionResourcesFluentBuilder {
         }
     }
     /// Access the ListAppVersionResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAppVersionResourcesFluentBuilder {
             crate::operation::list_app_version_resources::ListAppVersionResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_resources::ListAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_resources::ListAppVersionResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAppVersionResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAppVersionResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_version_resources::ListAppVersionResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_resources::ListAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_resources::ListAppVersionResourcesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAppVersionResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_version_resources::ListAppVersionResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_resources::ListAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_resources::ListAppVersionResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListAppVersionResourcesFluentBuilder {
             crate::operation::list_app_version_resources::ListAppVersionResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_resources::ListAppVersionResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_resources::ListAppVersionResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_version_resources::paginator::ListAppVersionResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_app_version_resources::paginator::ListAppVersionResourcesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_app_version_resources::paginator::ListAppVersionResourcesPaginator {
         crate::operation::list_app_version_resources::paginator::ListAppVersionResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -162,18 +144,12 @@ impl ListAppVersionResourcesFluentBuilder {
         self.inner.get_app_version()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolution_id(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolution_id(input);
         self
     }

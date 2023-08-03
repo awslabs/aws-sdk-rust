@@ -44,9 +44,7 @@ impl JobCommand {
 
 /// A builder for [`JobCommand`](crate::types::JobCommand).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobCommandBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) script_location: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl JobCommandBuilder {
         &self.name
     }
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
-    pub fn script_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn script_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
-    pub fn set_script_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_script_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_location = input;
         self
     }
@@ -89,18 +81,12 @@ impl JobCommandBuilder {
         &self.script_location
     }
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
-    pub fn python_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn python_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.python_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
-    pub fn set_python_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_python_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.python_version = input;
         self
     }

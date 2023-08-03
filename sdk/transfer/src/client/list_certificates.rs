@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_token): <p>Returns the next token, which you can use to list the next certificate.</p>
     ///   - [`certificates(Option<Vec<ListedCertificate>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates): <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
     /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
-    pub fn list_certificates(
-        &self,
-    ) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
-        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
+        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

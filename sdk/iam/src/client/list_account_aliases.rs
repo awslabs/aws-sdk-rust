@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`is_truncated(bool)`](crate::operation::list_account_aliases::ListAccountAliasesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_account_aliases::ListAccountAliasesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     /// - On failure, responds with [`SdkError<ListAccountAliasesError>`](crate::operation::list_account_aliases::ListAccountAliasesError)
-    pub fn list_account_aliases(
-        &self,
-    ) -> crate::operation::list_account_aliases::builders::ListAccountAliasesFluentBuilder {
-        crate::operation::list_account_aliases::builders::ListAccountAliasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_account_aliases(&self) -> crate::operation::list_account_aliases::builders::ListAccountAliasesFluentBuilder {
+        crate::operation::list_account_aliases::builders::ListAccountAliasesFluentBuilder::new(self.handle.clone())
     }
 }

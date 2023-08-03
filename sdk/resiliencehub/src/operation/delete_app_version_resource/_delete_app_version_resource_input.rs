@@ -57,18 +57,14 @@ impl DeleteAppVersionResourceInput {
 }
 impl DeleteAppVersionResourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppVersionResourceInput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder {
         crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppVersionResourceInput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppVersionResourceInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
@@ -94,18 +90,12 @@ impl DeleteAppVersionResourceInputBuilder {
         &self.app_arn
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -119,32 +109,21 @@ impl DeleteAppVersionResourceInputBuilder {
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalResourceId>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.logical_resource_id = input;
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn get_logical_resource_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         &self.logical_resource_id
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -167,18 +146,12 @@ impl DeleteAppVersionResourceInputBuilder {
         &self.aws_region
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -207,16 +180,14 @@ impl DeleteAppVersionResourceInputBuilder {
         crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput {
-                app_arn: self.app_arn,
-                resource_name: self.resource_name,
-                logical_resource_id: self.logical_resource_id,
-                physical_resource_id: self.physical_resource_id,
-                aws_region: self.aws_region,
-                aws_account_id: self.aws_account_id,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput {
+            app_arn: self.app_arn,
+            resource_name: self.resource_name,
+            logical_resource_id: self.logical_resource_id,
+            physical_resource_id: self.physical_resource_id,
+            aws_region: self.aws_region,
+            aws_account_id: self.aws_account_id,
+            client_token: self.client_token,
+        })
     }
 }

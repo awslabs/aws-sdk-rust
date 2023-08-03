@@ -5,8 +5,7 @@
 pub struct ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     #[doc(hidden)]
-    pub cost_category_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
+    pub cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCostCategoryDefinitionsOutput {
 }
 impl ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-    pub fn cost_category_references(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CostCategoryReference]> {
+    pub fn cost_category_references(&self) -> ::std::option::Option<&[crate::types::CostCategoryReference]> {
         self.cost_category_references.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCostCategoryDefinitionsOutput {
 }
 impl ListCostCategoryDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsOutput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsOutputBuilder {
         crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCostCategoryDefinitionsOutput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsOutputBuilder {
-    pub(crate) cost_category_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
+    pub(crate) cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListCostCategoryDefinitionsOutputBuilder {
         self
     }
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-    pub fn set_cost_category_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
-    ) -> Self {
+    pub fn set_cost_category_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>) -> Self {
         self.cost_category_references = input;
         self
     }
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-    pub fn get_cost_category_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>> {
+    pub fn get_cost_category_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>> {
         &self.cost_category_references
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
@@ -97,9 +86,7 @@ impl ListCostCategoryDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCostCategoryDefinitionsOutput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput {
+    pub fn build(self) -> crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput {
         crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput {
             cost_category_references: self.cost_category_references,
             next_token: self.next_token,

@@ -6,14 +6,11 @@
 pub struct InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     #[doc(hidden)]
-    pub access_control_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
+    pub access_control_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
 }
 impl InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn access_control_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccessControlAttribute]> {
+    pub fn access_control_attributes(&self) -> ::std::option::Option<&[crate::types::AccessControlAttribute]> {
         self.access_control_attributes.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl InstanceAccessControlAttributeConfiguration {
 
 /// A builder for [`InstanceAccessControlAttributeConfiguration`](crate::types::InstanceAccessControlAttributeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceAccessControlAttributeConfigurationBuilder {
-    pub(crate) access_control_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
+    pub(crate) access_control_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
 }
 impl InstanceAccessControlAttributeConfigurationBuilder {
     /// Appends an item to `access_control_attributes`.
@@ -39,27 +33,19 @@ impl InstanceAccessControlAttributeConfigurationBuilder {
     /// To override the contents of this collection use [`set_access_control_attributes`](Self::set_access_control_attributes).
     ///
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn access_control_attributes(
-        mut self,
-        input: crate::types::AccessControlAttribute,
-    ) -> Self {
+    pub fn access_control_attributes(mut self, input: crate::types::AccessControlAttribute) -> Self {
         let mut v = self.access_control_attributes.unwrap_or_default();
         v.push(input);
         self.access_control_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn set_access_control_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
-    ) -> Self {
+    pub fn set_access_control_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>) -> Self {
         self.access_control_attributes = input;
         self
     }
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn get_access_control_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>> {
+    pub fn get_access_control_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>> {
         &self.access_control_attributes
     }
     /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::types::InstanceAccessControlAttributeConfiguration).

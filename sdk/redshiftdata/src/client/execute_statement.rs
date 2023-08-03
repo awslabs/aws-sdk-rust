@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`secret_arn(Option<String>)`](crate::operation::execute_statement::ExecuteStatementOutput::secret_arn): <p>The name or ARN of the secret that enables access to the database. </p>
     ///   - [`workgroup_name(Option<String>)`](crate::operation::execute_statement::ExecuteStatementOutput::workgroup_name): <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     /// - On failure, responds with [`SdkError<ExecuteStatementError>`](crate::operation::execute_statement::ExecuteStatementError)
-    pub fn execute_statement(
-        &self,
-    ) -> crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder {
-        crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_statement(&self) -> crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder {
+        crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder::new(self.handle.clone())
     }
 }

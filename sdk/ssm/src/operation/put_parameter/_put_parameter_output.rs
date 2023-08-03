@@ -35,9 +35,7 @@ impl PutParameterOutput {
 
 /// A builder for [`PutParameterOutput`](crate::operation::put_parameter::PutParameterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutParameterOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) tier: ::std::option::Option<crate::types::ParameterTier>,

@@ -5,16 +5,16 @@ pub use crate::operation::register_target_with_maintenance_window::_register_tar
 
 impl RegisterTargetWithMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.register_target_with_maintenance_window();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTargetWithMaintenanceWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder,
+    inner: crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder,
 }
 impl RegisterTargetWithMaintenanceWindowFluentBuilder {
     /// Creates a new `RegisterTargetWithMaintenanceWindow`.
@@ -37,15 +37,20 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
         }
     }
     /// Access the RegisterTargetWithMaintenanceWindow as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the maintenance window the target should be registered with.</p>
@@ -114,17 +129,12 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
         self
     }
     /// <p>The type of target being registered with the maintenance window.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>The type of target being registered with the maintenance window.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
         self.inner.get_resource_type()
     }
     /// Appends an item to `Targets`.
@@ -217,10 +227,7 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
     /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -269,18 +276,12 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
         self.inner.get_targets()
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_information(input.into());
         self
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_information(input);
         self
     }

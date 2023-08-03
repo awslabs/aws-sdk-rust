@@ -6,10 +6,7 @@ pub fn ser_create_canary_input(
     if let Some(var_1) = &input.artifact_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ArtifactConfig").start_object();
-        crate::protocol_serde::shape_artifact_config_input::ser_artifact_config_input(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_artifact_config_input::ser_artifact_config_input(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.artifact_s3_location {
@@ -18,10 +15,7 @@ pub fn ser_create_canary_input(
     if let Some(var_4) = &input.code {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Code").start_object();
-        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.execution_role_arn {
@@ -39,10 +33,7 @@ pub fn ser_create_canary_input(
     if let Some(var_9) = &input.run_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("RunConfig").start_object();
-        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.runtime_version {
@@ -51,10 +42,7 @@ pub fn ser_create_canary_input(
     if let Some(var_12) = &input.schedule {
         #[allow(unused_mut)]
         let mut object_13 = object.key("Schedule").start_object();
-        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.success_retention_period_in_days {
@@ -76,10 +64,7 @@ pub fn ser_create_canary_input(
     if let Some(var_19) = &input.vpc_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())

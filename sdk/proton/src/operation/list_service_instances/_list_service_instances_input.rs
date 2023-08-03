@@ -56,23 +56,19 @@ impl ListServiceInstancesInput {
 }
 impl ListServiceInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstancesInput`](crate::operation::list_service_instances::ListServiceInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_service_instances::builders::ListServiceInstancesInputBuilder {
+    pub fn builder() -> crate::operation::list_service_instances::builders::ListServiceInstancesInputBuilder {
         crate::operation::list_service_instances::builders::ListServiceInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceInstancesInput`](crate::operation::list_service_instances::ListServiceInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceInstancesInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ListServiceInstancesSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
@@ -131,17 +127,12 @@ impl ListServiceInstancesInputBuilder {
         self
     }
     /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>> {
         &self.filters
     }
     /// <p>The field that the result list is sorted by.</p>
@@ -154,10 +145,7 @@ impl ListServiceInstancesInputBuilder {
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
     /// <p>Default: <code>serviceName</code> </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListServiceInstancesSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListServiceInstancesSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -187,19 +175,15 @@ impl ListServiceInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceInstancesInput`](crate::operation::list_service_instances::ListServiceInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_instances::ListServiceInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_instances::ListServiceInstancesInput {
-                service_name: self.service_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_service_instances::ListServiceInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_instances::ListServiceInstancesInput {
+            service_name: self.service_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

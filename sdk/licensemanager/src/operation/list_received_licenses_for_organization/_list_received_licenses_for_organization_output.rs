@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReceivedLicensesForOrganizationOu
 }
 impl ListReceivedLicensesForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationOutput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput).
-    pub fn builder() -> crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationOutputBuilder {
         crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceivedLicensesForOrganizationOutput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceivedLicensesForOrganizationOutputBuilder {
     pub(crate) licenses: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListReceivedLicensesForOrganizationOutputBuilder {
         self
     }
     /// <p>Lists the licenses the organization has received.</p>
-    pub fn set_licenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>,
-    ) -> Self {
+    pub fn set_licenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>) -> Self {
         self.licenses = input;
         self
     }
     /// <p>Lists the licenses the organization has received.</p>
-    pub fn get_licenses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>> {
+    pub fn get_licenses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>> {
         &self.licenses
     }
     /// <p>Token for the next set of results.</p>
@@ -93,12 +86,10 @@ impl ListReceivedLicensesForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationOutput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput).
-    pub fn build(self) -> crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput{
+    pub fn build(self) -> crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput {
         crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput {
-            licenses: self.licenses
-            ,
-            next_token: self.next_token
-            ,
+            licenses: self.licenses,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

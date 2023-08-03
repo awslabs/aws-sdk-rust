@@ -67,18 +67,14 @@ impl PollForDecisionTaskInput {
 }
 impl PollForDecisionTaskInput {
     /// Creates a new builder-style object to manufacture [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
-    pub fn builder(
-    ) -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder {
-        crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder {
+        crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForDecisionTaskInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
@@ -138,10 +134,7 @@ impl PollForDecisionTaskInputBuilder {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -149,10 +142,7 @@ impl PollForDecisionTaskInputBuilder {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -200,10 +190,7 @@ impl PollForDecisionTaskInputBuilder {
         self
     }
     /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
-    pub fn set_start_at_previous_started_event(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_start_at_previous_started_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.start_at_previous_started_event = input;
         self
     }
@@ -214,20 +201,16 @@ impl PollForDecisionTaskInputBuilder {
     /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::poll_for_decision_task::PollForDecisionTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::poll_for_decision_task::PollForDecisionTaskInput {
-                domain: self.domain,
-                task_list: self.task_list,
-                identity: self.identity,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size,
-                reverse_order: self.reverse_order,
-                start_at_previous_started_event: self.start_at_previous_started_event,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::poll_for_decision_task::PollForDecisionTaskInput {
+            domain: self.domain,
+            task_list: self.task_list,
+            identity: self.identity,
+            next_page_token: self.next_page_token,
+            maximum_page_size: self.maximum_page_size,
+            reverse_order: self.reverse_order,
+            start_at_previous_started_event: self.start_at_previous_started_event,
+        })
     }
 }

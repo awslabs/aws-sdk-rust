@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RollbackInstanceRefreshOutput`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshOutput) with field(s):
     ///   - [`instance_refresh_id(Option<String>)`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshOutput::instance_refresh_id): <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     /// - On failure, responds with [`SdkError<RollbackInstanceRefreshError>`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError)
-    pub fn rollback_instance_refresh(
-        &self,
-    ) -> crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder
-    {
+    pub fn rollback_instance_refresh(&self) -> crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder {
         crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder::new(self.handle.clone())
     }
 }

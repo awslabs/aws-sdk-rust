@@ -7,13 +7,7 @@ pub fn ser_formatted_vss(
         crate::types::FormattedVss::VssJson(inner) => {
             object_4.key("vssJson").string(inner.as_str());
         }
-        crate::types::FormattedVss::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "FormattedVss",
-                ),
-            )
-        }
+        crate::types::FormattedVss::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("FormattedVss")),
     }
     Ok(())
 }

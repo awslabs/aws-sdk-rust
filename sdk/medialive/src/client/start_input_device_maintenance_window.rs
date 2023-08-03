@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`input_device_id(impl ::std::convert::Into<String>)`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::set_input_device_id): The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
     /// - On success, responds with [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput)
     /// - On failure, responds with [`SdkError<StartInputDeviceMaintenanceWindowError>`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError)
-    pub fn start_input_device_maintenance_window(&self) -> crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder{
+    pub fn start_input_device_maintenance_window(
+        &self,
+    ) -> crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder {
         crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::new(self.handle.clone())
     }
 }

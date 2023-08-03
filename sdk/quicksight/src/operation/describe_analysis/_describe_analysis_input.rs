@@ -22,35 +22,26 @@ impl DescribeAnalysisInput {
 }
 impl DescribeAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisInput`](crate::operation::describe_analysis::DescribeAnalysisInput).
-    pub fn builder() -> crate::operation::describe_analysis::builders::DescribeAnalysisInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_analysis::builders::DescribeAnalysisInputBuilder {
         crate::operation::describe_analysis::builders::DescribeAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnalysisInput`](crate::operation::describe_analysis::DescribeAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -75,10 +66,7 @@ impl DescribeAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAnalysisInput`](crate::operation::describe_analysis::DescribeAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_analysis::DescribeAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_analysis::DescribeAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_analysis::DescribeAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

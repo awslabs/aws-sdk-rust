@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionFluentBuilder::set_meeting_id): <p>The unique ID of the meeting for which you stop transcription.</p>
     /// - On success, responds with [`StopMeetingTranscriptionOutput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput)
     /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError)
-    pub fn stop_meeting_transcription(
-        &self,
-    ) -> crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionFluentBuilder
-    {
+    pub fn stop_meeting_transcription(&self) -> crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionFluentBuilder {
         crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionFluentBuilder::new(self.handle.clone())
     }
 }

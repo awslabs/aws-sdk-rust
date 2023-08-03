@@ -64,9 +64,7 @@ impl GetTranscriptInput {
 
 /// A builder for [`GetTranscriptInput`](crate::operation::get_transcript::GetTranscriptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTranscriptInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -125,10 +123,7 @@ impl GetTranscriptInputBuilder {
         self
     }
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
-    pub fn set_scan_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanDirection>,
-    ) -> Self {
+    pub fn set_scan_direction(mut self, input: ::std::option::Option<crate::types::ScanDirection>) -> Self {
         self.scan_direction = input;
         self
     }
@@ -156,10 +151,7 @@ impl GetTranscriptInputBuilder {
         self
     }
     /// <p>A filtering option for where to start.</p>
-    pub fn set_start_position(
-        mut self,
-        input: ::std::option::Option<crate::types::StartPosition>,
-    ) -> Self {
+    pub fn set_start_position(mut self, input: ::std::option::Option<crate::types::StartPosition>) -> Self {
         self.start_position = input;
         self
     }
@@ -168,18 +160,12 @@ impl GetTranscriptInputBuilder {
         &self.start_position
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_token = input;
         self
     }
@@ -190,10 +176,7 @@ impl GetTranscriptInputBuilder {
     /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::operation::get_transcript::GetTranscriptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_transcript::GetTranscriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_transcript::GetTranscriptInput {
             contact_id: self.contact_id,
             max_results: self.max_results,

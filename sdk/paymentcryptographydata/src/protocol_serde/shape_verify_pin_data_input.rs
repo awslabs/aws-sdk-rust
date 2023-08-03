@@ -30,16 +30,11 @@ pub fn ser_verify_pin_data_input(
     if let Some(var_8) = &input.verification_attributes {
         #[allow(unused_mut)]
         let mut object_9 = object.key("VerificationAttributes").start_object();
-        crate::protocol_serde::shape_pin_verification_attributes::ser_pin_verification_attributes(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_pin_verification_attributes::ser_pin_verification_attributes(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.verification_key_identifier {
-        object
-            .key("VerificationKeyIdentifier")
-            .string(var_10.as_str());
+        object.key("VerificationKeyIdentifier").string(var_10.as_str());
     }
     Ok(())
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyMountTargetSecurityGroupsOutput
 }
 impl ModifyMountTargetSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyMountTargetSecurityGroupsOutput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsOutputBuilder {
         crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyMountTargetSecurityGroupsOutput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl ModifyMountTargetSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyMountTargetSecurityGroupsOutput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput {
         crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput {
             _request_id: self._request_id,
         }

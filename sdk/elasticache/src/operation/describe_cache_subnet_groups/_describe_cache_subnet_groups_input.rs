@@ -34,16 +34,14 @@ impl DescribeCacheSubnetGroupsInput {
 }
 impl DescribeCacheSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsInput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsInput).
-    pub fn builder() -> crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder {
         crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheSubnetGroupsInput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsInputBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -51,18 +49,12 @@ pub struct DescribeCacheSubnetGroupsInputBuilder {
 }
 impl DescribeCacheSubnetGroupsInputBuilder {
     /// <p>The name of the cache subnet group to return details for.</p>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache subnet group to return details for.</p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_name = input;
         self
     }
@@ -111,12 +103,10 @@ impl DescribeCacheSubnetGroupsInputBuilder {
         crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsInput {
-                cache_subnet_group_name: self.cache_subnet_group_name,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsInput {
+            cache_subnet_group_name: self.cache_subnet_group_name,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

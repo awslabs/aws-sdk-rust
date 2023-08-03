@@ -37,16 +37,14 @@ impl DescribeReplicationTableStatisticsInput {
 }
 impl DescribeReplicationTableStatisticsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTableStatisticsInput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsInput).
-    pub fn builder() -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsInputBuilder {
         crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTableStatisticsInput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTableStatisticsInputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -55,18 +53,12 @@ pub struct DescribeReplicationTableStatisticsInputBuilder {
 }
 impl DescribeReplicationTableStatisticsInputBuilder {
     /// <p>The replication config to describe.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication config to describe.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -114,10 +106,7 @@ impl DescribeReplicationTableStatisticsInputBuilder {
         self
     }
     /// <p>Filters applied to the replication table statistics.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -126,18 +115,19 @@ impl DescribeReplicationTableStatisticsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTableStatisticsInput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsInput {
-                replication_config_arn: self.replication_config_arn
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-                filters: self.filters
-                ,
-            }
+                replication_config_arn: self.replication_config_arn,
+                max_records: self.max_records,
+                marker: self.marker,
+                filters: self.filters,
+            },
         )
     }
 }

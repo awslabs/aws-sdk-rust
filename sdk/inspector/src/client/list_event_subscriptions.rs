@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput::subscriptions): <p>Details of the returned event subscriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<ListEventSubscriptionsError>`](crate::operation::list_event_subscriptions::ListEventSubscriptionsError)
-    pub fn list_event_subscriptions(
-        &self,
-    ) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsFluentBuilder
-    {
+    pub fn list_event_subscriptions(&self) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsFluentBuilder {
         crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

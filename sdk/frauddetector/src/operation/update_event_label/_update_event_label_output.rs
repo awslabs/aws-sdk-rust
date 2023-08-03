@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateEventLabelOutput {
 }
 impl UpdateEventLabelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventLabelOutput`](crate::operation::update_event_label::UpdateEventLabelOutput).
-    pub fn builder() -> crate::operation::update_event_label::builders::UpdateEventLabelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_label::builders::UpdateEventLabelOutputBuilder {
         crate::operation::update_event_label::builders::UpdateEventLabelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventLabelOutput`](crate::operation::update_event_label::UpdateEventLabelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventLabelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListOriginRequestPoliciesOutput`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput) with field(s):
     ///   - [`origin_request_policy_list(Option<OriginRequestPolicyList>)`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput::origin_request_policy_list): <p>A list of origin request policies.</p>
     /// - On failure, responds with [`SdkError<ListOriginRequestPoliciesError>`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError)
-    pub fn list_origin_request_policies(&self) -> crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesFluentBuilder{
+    pub fn list_origin_request_policies(&self) -> crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesFluentBuilder {
         crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

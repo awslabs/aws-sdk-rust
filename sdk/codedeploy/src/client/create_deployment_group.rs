@@ -24,12 +24,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDeploymentGroupOutput`](crate::operation::create_deployment_group::CreateDeploymentGroupOutput) with field(s):
     ///   - [`deployment_group_id(Option<String>)`](crate::operation::create_deployment_group::CreateDeploymentGroupOutput::deployment_group_id): <p>A unique deployment group ID.</p>
     /// - On failure, responds with [`SdkError<CreateDeploymentGroupError>`](crate::operation::create_deployment_group::CreateDeploymentGroupError)
-    pub fn create_deployment_group(
-        &self,
-    ) -> crate::operation::create_deployment_group::builders::CreateDeploymentGroupFluentBuilder
-    {
-        crate::operation::create_deployment_group::builders::CreateDeploymentGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_deployment_group(&self) -> crate::operation::create_deployment_group::builders::CreateDeploymentGroupFluentBuilder {
+        crate::operation::create_deployment_group::builders::CreateDeploymentGroupFluentBuilder::new(self.handle.clone())
     }
 }

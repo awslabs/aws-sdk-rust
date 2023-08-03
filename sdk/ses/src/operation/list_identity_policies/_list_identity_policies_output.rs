@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListIdentityPoliciesOutput {
 }
 impl ListIdentityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoliciesOutput`](crate::operation::list_identity_policies::ListIdentityPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesOutputBuilder {
         crate::operation::list_identity_policies::builders::ListIdentityPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityPoliciesOutput`](crate::operation::list_identity_policies::ListIdentityPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoliciesOutputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl ListIdentityPoliciesOutputBuilder {
         self
     }
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

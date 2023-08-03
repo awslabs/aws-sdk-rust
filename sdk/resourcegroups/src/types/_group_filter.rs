@@ -30,9 +30,7 @@ impl GroupFilter {
 
 /// A builder for [`GroupFilter`](crate::types::GroupFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::GroupFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl GroupFilterBuilder {
         self
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

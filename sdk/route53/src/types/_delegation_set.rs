@@ -37,9 +37,7 @@ impl DelegationSet {
 
 /// A builder for [`DelegationSet`](crate::types::DelegationSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DelegationSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DelegationSetBuilder {
         &self.id
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -92,17 +84,12 @@ impl DelegationSetBuilder {
         self
     }
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn set_name_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_name_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.name_servers = input;
         self
     }
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn get_name_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_name_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.name_servers
     }
     /// Consumes the builder and constructs a [`DelegationSet`](crate::types::DelegationSet).

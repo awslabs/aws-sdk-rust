@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LaunchProfileState {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for LaunchProfileState {
             "READY" => LaunchProfileState::Ready,
             "UPDATE_FAILED" => LaunchProfileState::UpdateFailed,
             "UPDATE_IN_PROGRESS" => LaunchProfileState::UpdateInProgress,
-            other => LaunchProfileState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LaunchProfileState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

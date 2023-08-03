@@ -38,13 +38,7 @@
 /// M2ts Nielsen Id3 Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsNielsenId3Behavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsNielsenId3Behavior {
         match s {
             "NO_PASSTHROUGH" => M2tsNielsenId3Behavior::NoPassthrough,
             "PASSTHROUGH" => M2tsNielsenId3Behavior::Passthrough,
-            other => M2tsNielsenId3Behavior::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => M2tsNielsenId3Behavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

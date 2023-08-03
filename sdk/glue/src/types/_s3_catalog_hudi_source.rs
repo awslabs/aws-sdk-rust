@@ -15,9 +15,7 @@ pub struct S3CatalogHudiSource {
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional connection options.</p>
     #[doc(hidden)]
-    pub additional_hudi_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_hudi_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the Hudi source.</p>
     #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
@@ -36,11 +34,7 @@ impl S3CatalogHudiSource {
         self.table.as_deref()
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_hudi_options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_hudi_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_hudi_options.as_ref()
     }
     /// <p>Specifies the data schema for the Hudi source.</p>
@@ -57,16 +51,12 @@ impl S3CatalogHudiSource {
 
 /// A builder for [`S3CatalogHudiSource`](crate::types::S3CatalogHudiSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3CatalogHudiSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_hudi_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_hudi_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3CatalogHudiSourceBuilder {
@@ -130,19 +120,13 @@ impl S3CatalogHudiSourceBuilder {
     /// <p>Specifies additional connection options.</p>
     pub fn set_additional_hudi_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_hudi_options = input;
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn get_additional_hudi_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_hudi_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_hudi_options
     }
     /// Appends an item to `output_schemas`.
@@ -157,17 +141,12 @@ impl S3CatalogHudiSourceBuilder {
         self
     }
     /// <p>Specifies the data schema for the Hudi source.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the Hudi source.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3CatalogHudiSource`](crate::types::S3CatalogHudiSource).

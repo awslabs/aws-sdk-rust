@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`auto_termination_policy(AutoTerminationPolicy)`](crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyFluentBuilder::auto_termination_policy) / [`set_auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyFluentBuilder::set_auto_termination_policy): <p>Specifies the auto-termination policy to attach to the cluster.</p>
     /// - On success, responds with [`PutAutoTerminationPolicyOutput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput)
     /// - On failure, responds with [`SdkError<PutAutoTerminationPolicyError>`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError)
-    pub fn put_auto_termination_policy(&self) -> crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyFluentBuilder{
+    pub fn put_auto_termination_policy(&self) -> crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyFluentBuilder {
         crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyFluentBuilder::new(self.handle.clone())
     }
 }

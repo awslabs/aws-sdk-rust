@@ -16,9 +16,7 @@ pub fn ser_hls_manifest_create_or_update_parameters(
         array_3.finish();
     }
     if let Some(var_5) = &input.ads_on_delivery_restrictions {
-        object
-            .key("adsOnDeliveryRestrictions")
-            .string(var_5.as_str());
+        object.key("adsOnDeliveryRestrictions").string(var_5.as_str());
     }
     if let Some(var_6) = &input.id {
         object.key("id").string(var_6.as_str());

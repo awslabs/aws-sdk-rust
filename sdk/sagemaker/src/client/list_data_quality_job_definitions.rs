@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput::job_definition_summaries): <p>A list of data quality monitoring job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput::next_token): <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListDataQualityJobDefinitionsError>`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsError)
-    pub fn list_data_quality_job_definitions(&self) -> crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsFluentBuilder{
+    pub fn list_data_quality_job_definitions(
+        &self,
+    ) -> crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsFluentBuilder {
         crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

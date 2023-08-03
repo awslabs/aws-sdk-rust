@@ -58,9 +58,7 @@ impl GetUsageInput {
 
 /// A builder for [`GetUsageInput`](crate::operation::get_usage::GetUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct GetUsageInputBuilder {
 }
 impl GetUsageInputBuilder {
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_plan_id = input;
         self
     }
@@ -161,12 +153,7 @@ impl GetUsageInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetUsageInput`](crate::operation::get_usage::GetUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage::GetUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage::GetUsageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage::GetUsageInput {
             usage_plan_id: self.usage_plan_id,
             key_id: self.key_id,

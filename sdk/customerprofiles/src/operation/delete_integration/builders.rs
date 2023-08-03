@@ -10,10 +10,7 @@ impl DeleteIntegrationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_integration::DeleteIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration::DeleteIntegrationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_integration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteIntegrationFluentBuilder {
         }
     }
     /// Access the DeleteIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteIntegrationFluentBuilder {
             crate::operation::delete_integration::DeleteIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration::DeleteIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration::DeleteIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration::DeleteIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration::DeleteIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration::DeleteIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteIntegrationFluentBuilder {
             crate::operation::delete_integration::DeleteIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration::DeleteIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError>,
     > {
         self.customize_middleware().await
     }

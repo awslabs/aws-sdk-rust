@@ -81,17 +81,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatasetGroupOutput {
 }
 impl DescribeDatasetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder {
         crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetGroupOutputBuilder {
     pub(crate) dataset_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
@@ -104,18 +101,12 @@ pub struct DescribeDatasetGroupOutputBuilder {
 }
 impl DescribeDatasetGroupOutputBuilder {
     /// <p>The name of the dataset group.</p>
-    pub fn dataset_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset group.</p>
-    pub fn set_dataset_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_name = input;
         self
     }
@@ -124,18 +115,12 @@ impl DescribeDatasetGroupOutputBuilder {
         &self.dataset_group_name
     }
     /// <p>The ARN of the dataset group.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -155,17 +140,12 @@ impl DescribeDatasetGroupOutputBuilder {
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
-    pub fn set_dataset_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dataset_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dataset_arns = input;
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
-    pub fn get_dataset_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dataset_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dataset_arns
     }
     /// <p>The domain associated with the dataset group.</p>
@@ -229,10 +209,7 @@ impl DescribeDatasetGroupOutputBuilder {
         self
     }
     /// <p>When the dataset group was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -246,17 +223,12 @@ impl DescribeDatasetGroupOutputBuilder {
         self
     }
     /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`filter(ReceiptFilter)`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::filter) / [`set_filter(Option<ReceiptFilter>)`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::set_filter): <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     /// - On success, responds with [`CreateReceiptFilterOutput`](crate::operation::create_receipt_filter::CreateReceiptFilterOutput)
     /// - On failure, responds with [`SdkError<CreateReceiptFilterError>`](crate::operation::create_receipt_filter::CreateReceiptFilterError)
-    pub fn create_receipt_filter(
-        &self,
-    ) -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder {
-        crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_receipt_filter(&self) -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder {
+        crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::new(self.handle.clone())
     }
 }

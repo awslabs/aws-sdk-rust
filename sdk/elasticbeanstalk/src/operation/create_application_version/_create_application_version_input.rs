@@ -55,9 +55,7 @@ impl CreateApplicationVersionInput {
         self.description.as_deref()
     }
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
-    pub fn source_build_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceBuildInformation> {
+    pub fn source_build_information(&self) -> ::std::option::Option<&crate::types::SourceBuildInformation> {
         self.source_build_information.as_ref()
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
@@ -90,24 +88,19 @@ impl CreateApplicationVersionInput {
 }
 impl CreateApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationVersionInput`](crate::operation::create_application_version::CreateApplicationVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder {
         crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationVersionInput`](crate::operation::create_application_version::CreateApplicationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) source_build_information:
-        ::std::option::Option<crate::types::SourceBuildInformation>,
+    pub(crate) source_build_information: ::std::option::Option<crate::types::SourceBuildInformation>,
     pub(crate) source_bundle: ::std::option::Option<crate::types::S3Location>,
     pub(crate) build_configuration: ::std::option::Option<crate::types::BuildConfiguration>,
     pub(crate) auto_create_application: ::std::option::Option<bool>,
@@ -116,18 +109,12 @@ pub struct CreateApplicationVersionInputBuilder {
 }
 impl CreateApplicationVersionInputBuilder {
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -137,19 +124,13 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -178,17 +159,12 @@ impl CreateApplicationVersionInputBuilder {
         self
     }
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
-    pub fn set_source_build_information(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceBuildInformation>,
-    ) -> Self {
+    pub fn set_source_build_information(mut self, input: ::std::option::Option<crate::types::SourceBuildInformation>) -> Self {
         self.source_build_information = input;
         self
     }
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
-    pub fn get_source_build_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceBuildInformation> {
+    pub fn get_source_build_information(&self) -> &::std::option::Option<crate::types::SourceBuildInformation> {
         &self.source_build_information
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
@@ -203,10 +179,7 @@ impl CreateApplicationVersionInputBuilder {
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
-    pub fn set_source_bundle(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_source_bundle(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.source_bundle = input;
         self
     }
@@ -223,17 +196,12 @@ impl CreateApplicationVersionInputBuilder {
         self
     }
     /// <p>Settings for an AWS CodeBuild build.</p>
-    pub fn set_build_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildConfiguration>,
-    ) -> Self {
+    pub fn set_build_configuration(mut self, input: ::std::option::Option<crate::types::BuildConfiguration>) -> Self {
         self.build_configuration = input;
         self
     }
     /// <p>Settings for an AWS CodeBuild build.</p>
-    pub fn get_build_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BuildConfiguration> {
+    pub fn get_build_configuration(&self) -> &::std::option::Option<crate::types::BuildConfiguration> {
         &self.build_configuration
     }
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
@@ -287,10 +255,7 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>Specifies the tags applied to the application version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -306,18 +271,16 @@ impl CreateApplicationVersionInputBuilder {
         crate::operation::create_application_version::CreateApplicationVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application_version::CreateApplicationVersionInput {
-                application_name: self.application_name,
-                version_label: self.version_label,
-                description: self.description,
-                source_build_information: self.source_build_information,
-                source_bundle: self.source_bundle,
-                build_configuration: self.build_configuration,
-                auto_create_application: self.auto_create_application,
-                process: self.process,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_application_version::CreateApplicationVersionInput {
+            application_name: self.application_name,
+            version_label: self.version_label,
+            description: self.description,
+            source_build_information: self.source_build_information,
+            source_bundle: self.source_bundle,
+            build_configuration: self.build_configuration,
+            auto_create_application: self.auto_create_application,
+            process: self.process,
+            tags: self.tags,
+        })
     }
 }

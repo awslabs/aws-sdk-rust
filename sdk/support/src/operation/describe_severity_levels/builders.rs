@@ -42,10 +42,7 @@ impl DescribeSeverityLevelsFluentBuilder {
         }
     }
     /// Access the DescribeSeverityLevels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl DescribeSeverityLevelsFluentBuilder {
             crate::operation::describe_severity_levels::DescribeSeverityLevels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_severity_levels::DescribeSeverityLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_severity_levels::DescribeSeverityLevelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl DescribeSeverityLevelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl DescribeSeverityLevelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_severity_levels::DescribeSeverityLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_severity_levels::DescribeSeverityLevelsError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl DescribeSeverityLevelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_severity_levels::DescribeSeverityLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_severity_levels::DescribeSeverityLevelsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl DescribeSeverityLevelsFluentBuilder {
             crate::operation::describe_severity_levels::DescribeSeverityLevels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_severity_levels::DescribeSeverityLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_severity_levels::DescribeSeverityLevelsError>,
     > {
         self.customize_middleware().await
     }

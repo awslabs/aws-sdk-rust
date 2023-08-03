@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateS3ResourcesOutput`](crate::operation::update_s3_resources::UpdateS3ResourcesOutput) with field(s):
     ///   - [`failed_s3_resources(Option<Vec<FailedS3Resource>>)`](crate::operation::update_s3_resources::UpdateS3ResourcesOutput::failed_s3_resources): <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<UpdateS3ResourcesError>`](crate::operation::update_s3_resources::UpdateS3ResourcesError)
-    pub fn update_s3_resources(
-        &self,
-    ) -> crate::operation::update_s3_resources::builders::UpdateS3ResourcesFluentBuilder {
-        crate::operation::update_s3_resources::builders::UpdateS3ResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_s3_resources(&self) -> crate::operation::update_s3_resources::builders::UpdateS3ResourcesFluentBuilder {
+        crate::operation::update_s3_resources::builders::UpdateS3ResourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePricingRuleOutput`](crate::operation::create_pricing_rule::CreatePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_pricing_rule::CreatePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
     /// - On failure, responds with [`SdkError<CreatePricingRuleError>`](crate::operation::create_pricing_rule::CreatePricingRuleError)
-    pub fn create_pricing_rule(
-        &self,
-    ) -> crate::operation::create_pricing_rule::builders::CreatePricingRuleFluentBuilder {
-        crate::operation::create_pricing_rule::builders::CreatePricingRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pricing_rule(&self) -> crate::operation::create_pricing_rule::builders::CreatePricingRuleFluentBuilder {
+        crate::operation::create_pricing_rule::builders::CreatePricingRuleFluentBuilder::new(self.handle.clone())
     }
 }

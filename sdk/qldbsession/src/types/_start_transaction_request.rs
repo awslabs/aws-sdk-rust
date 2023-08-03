@@ -13,9 +13,7 @@ impl StartTransactionRequest {
 
 /// A builder for [`StartTransactionRequest`](crate::types::StartTransactionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTransactionRequestBuilder {}
 impl StartTransactionRequestBuilder {
     /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::types::StartTransactionRequest).

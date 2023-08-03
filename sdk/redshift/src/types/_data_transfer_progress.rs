@@ -58,9 +58,7 @@ impl DataTransferProgress {
 
 /// A builder for [`DataTransferProgress`](crate::types::DataTransferProgress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataTransferProgressBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) current_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
@@ -90,10 +88,7 @@ impl DataTransferProgressBuilder {
         self
     }
     /// <p>Describes the data transfer rate in MB's per second.</p>
-    pub fn set_current_rate_in_mega_bytes_per_second(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_current_rate_in_mega_bytes_per_second(mut self, input: ::std::option::Option<f64>) -> Self {
         self.current_rate_in_mega_bytes_per_second = input;
         self
     }
@@ -135,10 +130,7 @@ impl DataTransferProgressBuilder {
         self
     }
     /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
-    pub fn set_estimated_time_to_completion_in_seconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_to_completion_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_to_completion_in_seconds = input;
         self
     }

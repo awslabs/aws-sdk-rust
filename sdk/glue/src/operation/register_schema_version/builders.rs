@@ -39,10 +39,7 @@ impl RegisterSchemaVersionFluentBuilder {
         }
     }
     /// Access the RegisterSchemaVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl RegisterSchemaVersionFluentBuilder {
             crate::operation::register_schema_version::RegisterSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_schema_version::RegisterSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_schema_version::RegisterSchemaVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl RegisterSchemaVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl RegisterSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_schema_version::RegisterSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_schema_version::RegisterSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_schema_version::RegisterSchemaVersionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl RegisterSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_schema_version::RegisterSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_schema_version::RegisterSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_schema_version::RegisterSchemaVersionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl RegisterSchemaVersionFluentBuilder {
             crate::operation::register_schema_version::RegisterSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_schema_version::RegisterSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_schema_version::RegisterSchemaVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +138,12 @@ impl RegisterSchemaVersionFluentBuilder {
         self.inner.get_schema_id()
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_definition(input.into());
         self
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
     }

@@ -33,18 +33,14 @@ impl DescribeStackEventsInput {
 }
 impl DescribeStackEventsInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder {
-        crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder {
+        crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackEventsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,15 +92,11 @@ impl DescribeStackEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_events::DescribeStackEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_events::DescribeStackEventsInput {
-                stack_name: self.stack_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stack_events::DescribeStackEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_stack_events::DescribeStackEventsInput {
+            stack_name: self.stack_name,
+            next_token: self.next_token,
+        })
     }
 }

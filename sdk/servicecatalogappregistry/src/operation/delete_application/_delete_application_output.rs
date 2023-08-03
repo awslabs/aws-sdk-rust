@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationOutput {
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_application::builders::DeleteApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationOutputBuilder {
         crate::operation::delete_application::builders::DeleteApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationOutputBuilder {
     pub(crate) application: ::std::option::Option<crate::types::ApplicationSummary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteApplicationOutputBuilder {
         self
     }
     /// <p>Information about the deleted application.</p>
-    pub fn set_application(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSummary>,
-    ) -> Self {
+    pub fn set_application(mut self, input: ::std::option::Option<crate::types::ApplicationSummary>) -> Self {
         self.application = input;
         self
     }

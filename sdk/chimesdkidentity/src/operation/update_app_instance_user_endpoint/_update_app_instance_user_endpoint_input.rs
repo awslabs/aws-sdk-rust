@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
 }
 impl UpdateAppInstanceUserEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput).
-    pub fn builder() -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder{
+    pub fn builder() -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder {
         crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder::default()
     }
 }
@@ -62,18 +62,12 @@ pub struct UpdateAppInstanceUserEndpointInputBuilder {
 }
 impl UpdateAppInstanceUserEndpointInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -115,10 +109,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn set_allow_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowMessages>,
-    ) -> Self {
+    pub fn set_allow_messages(mut self, input: ::std::option::Option<crate::types::AllowMessages>) -> Self {
         self.allow_messages = input;
         self
     }
@@ -133,18 +124,12 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-                endpoint_id: self.endpoint_id
-                ,
-                name: self.name
-                ,
-                allow_messages: self.allow_messages
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput {
+            app_instance_user_arn: self.app_instance_user_arn,
+            endpoint_id: self.endpoint_id,
+            name: self.name,
+            allow_messages: self.allow_messages,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInputBuilder {

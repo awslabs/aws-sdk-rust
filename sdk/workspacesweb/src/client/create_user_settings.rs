@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUserSettingsOutput`](crate::operation::create_user_settings::CreateUserSettingsOutput) with field(s):
     ///   - [`user_settings_arn(Option<String>)`](crate::operation::create_user_settings::CreateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
     /// - On failure, responds with [`SdkError<CreateUserSettingsError>`](crate::operation::create_user_settings::CreateUserSettingsError)
-    pub fn create_user_settings(
-        &self,
-    ) -> crate::operation::create_user_settings::builders::CreateUserSettingsFluentBuilder {
-        crate::operation::create_user_settings::builders::CreateUserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_user_settings(&self) -> crate::operation::create_user_settings::builders::CreateUserSettingsFluentBuilder {
+        crate::operation::create_user_settings::builders::CreateUserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

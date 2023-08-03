@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchTransitGatewayRoutesOutput {
 }
 impl SearchTransitGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
-    pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder{
+    pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder {
         crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
     pub(crate) additional_routes_available: ::std::option::Option<bool>,
@@ -56,17 +54,12 @@ impl SearchTransitGatewayRoutesOutputBuilder {
         self
     }
     /// <p>Information about the routes.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>) -> Self {
         self.routes = input;
         self
     }
     /// <p>Information about the routes.</p>
-    pub fn get_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>> {
         &self.routes
     }
     /// <p>Indicates whether there are additional routes available.</p>
@@ -93,9 +86,7 @@ impl SearchTransitGatewayRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
+    pub fn build(self) -> crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
             routes: self.routes,
             additional_routes_available: self.additional_routes_available,

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteWorkgroupOutput`](crate::operation::delete_workgroup::DeleteWorkgroupOutput) with field(s):
     ///   - [`workgroup(Option<Workgroup>)`](crate::operation::delete_workgroup::DeleteWorkgroupOutput::workgroup): <p>The deleted workgroup object.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkgroupError>`](crate::operation::delete_workgroup::DeleteWorkgroupError)
-    pub fn delete_workgroup(
-        &self,
-    ) -> crate::operation::delete_workgroup::builders::DeleteWorkgroupFluentBuilder {
-        crate::operation::delete_workgroup::builders::DeleteWorkgroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workgroup(&self) -> crate::operation::delete_workgroup::builders::DeleteWorkgroupFluentBuilder {
+        crate::operation::delete_workgroup::builders::DeleteWorkgroupFluentBuilder::new(self.handle.clone())
     }
 }

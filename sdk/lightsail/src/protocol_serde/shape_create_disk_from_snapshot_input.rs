@@ -36,10 +36,7 @@ pub fn ser_create_disk_from_snapshot_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_add_on_request::ser_add_on_request(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_add_on_request::ser_add_on_request(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -52,9 +49,7 @@ pub fn ser_create_disk_from_snapshot_input(
         object.key("restoreDate").string(var_14.as_str());
     }
     if let Some(var_15) = &input.use_latest_restorable_auto_snapshot {
-        object
-            .key("useLatestRestorableAutoSnapshot")
-            .boolean(*var_15);
+        object.key("useLatestRestorableAutoSnapshot").boolean(*var_15);
     }
     Ok(())
 }

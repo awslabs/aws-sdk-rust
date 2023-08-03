@@ -26,7 +26,7 @@ impl ImportDocumentationPartsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportDocumentationPartsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder,
+    inner: crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder,
 }
 impl ImportDocumentationPartsFluentBuilder {
     /// Creates a new `ImportDocumentationParts`.
@@ -37,10 +37,7 @@ impl ImportDocumentationPartsFluentBuilder {
         }
     }
     /// Access the ImportDocumentationParts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ImportDocumentationPartsFluentBuilder {
             crate::operation::import_documentation_parts::ImportDocumentationParts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_documentation_parts::ImportDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_documentation_parts::ImportDocumentationPartsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ImportDocumentationPartsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ImportDocumentationPartsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_documentation_parts::ImportDocumentationPartsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_documentation_parts::ImportDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_documentation_parts::ImportDocumentationPartsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ImportDocumentationPartsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_documentation_parts::ImportDocumentationPartsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_documentation_parts::ImportDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_documentation_parts::ImportDocumentationPartsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ImportDocumentationPartsFluentBuilder {
             crate::operation::import_documentation_parts::ImportDocumentationParts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_documentation_parts::ImportDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_documentation_parts::ImportDocumentationPartsError>,
     > {
         self.customize_middleware().await
     }

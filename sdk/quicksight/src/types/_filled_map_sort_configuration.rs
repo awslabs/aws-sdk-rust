@@ -23,12 +23,9 @@ impl FilledMapSortConfiguration {
 
 /// A builder for [`FilledMapSortConfiguration`](crate::types::FilledMapSortConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilledMapSortConfigurationBuilder {
-    pub(crate) category_sort:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
 }
 impl FilledMapSortConfigurationBuilder {
     /// Appends an item to `category_sort`.
@@ -43,17 +40,12 @@ impl FilledMapSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of the location fields.</p>
-    pub fn set_category_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_category_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.category_sort = input;
         self
     }
     /// <p>The sort configuration of the location fields.</p>
-    pub fn get_category_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_category_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.category_sort
     }
     /// Consumes the builder and constructs a [`FilledMapSortConfiguration`](crate::types::FilledMapSortConfiguration).

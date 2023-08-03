@@ -27,7 +27,7 @@ impl DownloadDbLogFilePortionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DownloadDBLogFilePortionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder,
+    inner: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder,
 }
 impl DownloadDBLogFilePortionFluentBuilder {
     /// Creates a new `DownloadDBLogFilePortion`.
@@ -38,7 +38,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
         }
     }
     /// Access the DownloadDBLogFilePortion as a reference.
-    pub fn as_input(&self) -> &crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl DownloadDBLogFilePortionFluentBuilder {
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator {
         crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator::new(self.handle, self.inner)
     }
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -135,10 +121,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -147,10 +130,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -163,18 +143,12 @@ impl DownloadDBLogFilePortionFluentBuilder {
         self.inner.get_db_instance_identifier()
     }
     /// <p>The name of the log file to be downloaded.</p>
-    pub fn log_file_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_file_name(input.into());
         self
     }
     /// <p>The name of the log file to be downloaded.</p>
-    pub fn set_log_file_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_file_name(input);
         self
     }

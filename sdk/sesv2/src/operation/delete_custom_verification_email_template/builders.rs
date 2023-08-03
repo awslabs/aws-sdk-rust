@@ -5,16 +5,16 @@ pub use crate::operation::delete_custom_verification_email_template::_delete_cus
 
 impl DeleteCustomVerificationEmailTemplateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_custom_verification_email_template();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl DeleteCustomVerificationEmailTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder,
+    inner: crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder,
 }
 impl DeleteCustomVerificationEmailTemplateFluentBuilder {
     /// Creates a new `DeleteCustomVerificationEmailTemplate`.
@@ -39,15 +39,22 @@ impl DeleteCustomVerificationEmailTemplateFluentBuilder {
         }
     }
     /// Access the DeleteCustomVerificationEmailTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +63,17 @@ impl DeleteCustomVerificationEmailTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +91,35 @@ impl DeleteCustomVerificationEmailTemplateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the custom verification email template that you want to delete.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the custom verification email template that you want to delete.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

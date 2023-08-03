@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLanguageModelsOutput {
 }
 impl ListLanguageModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListLanguageModelsOutput`](crate::operation::list_language_models::ListLanguageModelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_language_models::builders::ListLanguageModelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_language_models::builders::ListLanguageModelsOutputBuilder {
         crate::operation::list_language_models::builders::ListLanguageModelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLanguageModelsOutput`](crate::operation::list_language_models::ListLanguageModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLanguageModelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>>,
@@ -71,17 +68,12 @@ impl ListLanguageModelsOutputBuilder {
         self
     }
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>>,
-    ) -> Self {
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>>) -> Self {
         self.models = input;
         self
     }
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
-    pub fn get_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>> {
         &self.models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

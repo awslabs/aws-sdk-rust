@@ -7,27 +7,21 @@ pub struct GetBlockPublicAccessConfigurationOutput {
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     #[doc(hidden)]
-    pub block_public_access_configuration:
-        ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
+    pub block_public_access_configuration: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
     /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
     #[doc(hidden)]
-    pub block_public_access_configuration_metadata:
-        ::std::option::Option<crate::types::BlockPublicAccessConfigurationMetadata>,
+    pub block_public_access_configuration_metadata: ::std::option::Option<crate::types::BlockPublicAccessConfigurationMetadata>,
     _request_id: Option<String>,
 }
 impl GetBlockPublicAccessConfigurationOutput {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn block_public_access_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BlockPublicAccessConfiguration> {
+    pub fn block_public_access_configuration(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessConfiguration> {
         self.block_public_access_configuration.as_ref()
     }
     /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
-    pub fn block_public_access_configuration_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BlockPublicAccessConfigurationMetadata> {
+    pub fn block_public_access_configuration_metadata(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessConfigurationMetadata> {
         self.block_public_access_configuration_metadata.as_ref()
     }
 }
@@ -38,57 +32,42 @@ impl ::aws_http::request_id::RequestId for GetBlockPublicAccessConfigurationOutp
 }
 impl GetBlockPublicAccessConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBlockPublicAccessConfigurationOutput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationOutput).
-    pub fn builder() -> crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationOutputBuilder {
         crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBlockPublicAccessConfigurationOutput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlockPublicAccessConfigurationOutputBuilder {
-    pub(crate) block_public_access_configuration:
-        ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
-    pub(crate) block_public_access_configuration_metadata:
-        ::std::option::Option<crate::types::BlockPublicAccessConfigurationMetadata>,
+    pub(crate) block_public_access_configuration: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
+    pub(crate) block_public_access_configuration_metadata: ::std::option::Option<crate::types::BlockPublicAccessConfigurationMetadata>,
     _request_id: Option<String>,
 }
 impl GetBlockPublicAccessConfigurationOutputBuilder {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn block_public_access_configuration(
-        mut self,
-        input: crate::types::BlockPublicAccessConfiguration,
-    ) -> Self {
+    pub fn block_public_access_configuration(mut self, input: crate::types::BlockPublicAccessConfiguration) -> Self {
         self.block_public_access_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn set_block_public_access_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
-    ) -> Self {
+    pub fn set_block_public_access_configuration(mut self, input: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>) -> Self {
         self.block_public_access_configuration = input;
         self
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn get_block_public_access_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockPublicAccessConfiguration> {
+    pub fn get_block_public_access_configuration(&self) -> &::std::option::Option<crate::types::BlockPublicAccessConfiguration> {
         &self.block_public_access_configuration
     }
     /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
-    pub fn block_public_access_configuration_metadata(
-        mut self,
-        input: crate::types::BlockPublicAccessConfigurationMetadata,
-    ) -> Self {
+    pub fn block_public_access_configuration_metadata(mut self, input: crate::types::BlockPublicAccessConfigurationMetadata) -> Self {
         self.block_public_access_configuration_metadata = ::std::option::Option::Some(input);
         self
     }
@@ -101,9 +80,7 @@ impl GetBlockPublicAccessConfigurationOutputBuilder {
         self
     }
     /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
-    pub fn get_block_public_access_configuration_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockPublicAccessConfigurationMetadata> {
+    pub fn get_block_public_access_configuration_metadata(&self) -> &::std::option::Option<crate::types::BlockPublicAccessConfigurationMetadata> {
         &self.block_public_access_configuration_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -116,12 +93,10 @@ impl GetBlockPublicAccessConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBlockPublicAccessConfigurationOutput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationOutput {
         crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationOutput {
-            block_public_access_configuration: self.block_public_access_configuration
-            ,
-            block_public_access_configuration_metadata: self.block_public_access_configuration_metadata
-            ,
+            block_public_access_configuration: self.block_public_access_configuration,
+            block_public_access_configuration_metadata: self.block_public_access_configuration_metadata,
             _request_id: self._request_id,
         }
     }

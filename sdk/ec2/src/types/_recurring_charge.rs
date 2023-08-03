@@ -30,9 +30,7 @@ impl RecurringCharge {
 
 /// A builder for [`RecurringCharge`](crate::types::RecurringCharge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecurringChargeBuilder {
     pub(crate) amount: ::std::option::Option<f64>,
     pub(crate) frequency: ::std::option::Option<crate::types::RecurringChargeFrequency>,
@@ -58,10 +56,7 @@ impl RecurringChargeBuilder {
         self
     }
     /// <p>The frequency of the recurring charge.</p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurringChargeFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::RecurringChargeFrequency>) -> Self {
         self.frequency = input;
         self
     }

@@ -5,12 +5,10 @@
 pub struct ListInsightsOutput {
     /// <p> The returned list of proactive insights. </p>
     #[doc(hidden)]
-    pub proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
     /// <p> The returned list of reactive insights. </p>
     #[doc(hidden)]
-    pub reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,15 +16,11 @@ pub struct ListInsightsOutput {
 }
 impl ListInsightsOutput {
     /// <p> The returned list of proactive insights. </p>
-    pub fn proactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProactiveInsightSummary]> {
+    pub fn proactive_insights(&self) -> ::std::option::Option<&[crate::types::ProactiveInsightSummary]> {
         self.proactive_insights.as_deref()
     }
     /// <p> The returned list of reactive insights. </p>
-    pub fn reactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReactiveInsightSummary]> {
+    pub fn reactive_insights(&self) -> ::std::option::Option<&[crate::types::ReactiveInsightSummary]> {
         self.reactive_insights.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -48,14 +42,10 @@ impl ListInsightsOutput {
 
 /// A builder for [`ListInsightsOutput`](crate::operation::list_insights::ListInsightsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInsightsOutputBuilder {
-    pub(crate) proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    pub(crate) reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -72,17 +62,12 @@ impl ListInsightsOutputBuilder {
         self
     }
     /// <p> The returned list of proactive insights. </p>
-    pub fn set_proactive_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    ) -> Self {
+    pub fn set_proactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>) -> Self {
         self.proactive_insights = input;
         self
     }
     /// <p> The returned list of proactive insights. </p>
-    pub fn get_proactive_insights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
         &self.proactive_insights
     }
     /// Appends an item to `reactive_insights`.
@@ -97,17 +82,12 @@ impl ListInsightsOutputBuilder {
         self
     }
     /// <p> The returned list of reactive insights. </p>
-    pub fn set_reactive_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
-    ) -> Self {
+    pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>) -> Self {
         self.reactive_insights = input;
         self
     }
     /// <p> The returned list of reactive insights. </p>
-    pub fn get_reactive_insights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
         &self.reactive_insights
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

@@ -35,9 +35,7 @@ impl ListEventTypesOutput {
 
 /// A builder for [`ListEventTypesOutput`](crate::operation::list_event_types::ListEventTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventTypesOutputBuilder {
     pub(crate) event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListEventTypesOutputBuilder {
         self
     }
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
-    pub fn set_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
-    ) -> Self {
+    pub fn set_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>) -> Self {
         self.event_types = input;
         self
     }
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
-    pub fn get_event_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>> {
+    pub fn get_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>> {
         &self.event_types
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>

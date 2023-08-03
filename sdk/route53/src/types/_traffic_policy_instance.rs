@@ -119,9 +119,7 @@ impl TrafficPolicyInstance {
 
 /// A builder for [`TrafficPolicyInstance`](crate::types::TrafficPolicyInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficPolicyInstanceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
@@ -149,18 +147,12 @@ impl TrafficPolicyInstanceBuilder {
         &self.id
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -285,18 +277,12 @@ impl TrafficPolicyInstanceBuilder {
         &self.message
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn traffic_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn set_traffic_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_id = input;
         self
     }
@@ -324,10 +310,7 @@ impl TrafficPolicyInstanceBuilder {
         self
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
-    pub fn set_traffic_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RrType>,
-    ) -> Self {
+    pub fn set_traffic_policy_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.traffic_policy_type = input;
         self
     }

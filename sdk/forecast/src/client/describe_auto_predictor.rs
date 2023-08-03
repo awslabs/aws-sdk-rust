@@ -25,12 +25,7 @@ impl super::Client {
     ///   - [`monitor_info(Option<MonitorInfo>)`](crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput::monitor_info): <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
     ///   - [`time_alignment_boundary(Option<TimeAlignmentBoundary>)`](crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput::time_alignment_boundary): <p>The time boundary Forecast uses when aggregating data.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoPredictorError>`](crate::operation::describe_auto_predictor::DescribeAutoPredictorError)
-    pub fn describe_auto_predictor(
-        &self,
-    ) -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorFluentBuilder
-    {
-        crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_auto_predictor(&self) -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorFluentBuilder {
+        crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorFluentBuilder::new(self.handle.clone())
     }
 }

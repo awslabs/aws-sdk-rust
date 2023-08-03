@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FunnelChartMeasureDataLabelStyle {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,19 +61,11 @@ impl ::std::convert::From<&str> for FunnelChartMeasureDataLabelStyle {
     fn from(s: &str) -> Self {
         match s {
             "PERCENTAGE_BY_FIRST_STAGE" => FunnelChartMeasureDataLabelStyle::PercentageByFirstStage,
-            "PERCENTAGE_BY_PREVIOUS_STAGE" => {
-                FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage
-            }
-            "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" => {
-                FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage
-            }
-            "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE" => {
-                FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage
-            }
+            "PERCENTAGE_BY_PREVIOUS_STAGE" => FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage,
+            "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" => FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage,
+            "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE" => FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage,
             "VALUE_ONLY" => FunnelChartMeasureDataLabelStyle::ValueOnly,
-            other => FunnelChartMeasureDataLabelStyle::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => FunnelChartMeasureDataLabelStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -95,15 +81,9 @@ impl FunnelChartMeasureDataLabelStyle {
     pub fn as_str(&self) -> &str {
         match self {
             FunnelChartMeasureDataLabelStyle::PercentageByFirstStage => "PERCENTAGE_BY_FIRST_STAGE",
-            FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage => {
-                "PERCENTAGE_BY_PREVIOUS_STAGE"
-            }
-            FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage => {
-                "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE"
-            }
-            FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage => {
-                "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE"
-            }
+            FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage => "PERCENTAGE_BY_PREVIOUS_STAGE",
+            FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage => "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE",
+            FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage => "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE",
             FunnelChartMeasureDataLabelStyle::ValueOnly => "VALUE_ONLY",
             FunnelChartMeasureDataLabelStyle::Unknown(value) => value.as_str(),
         }

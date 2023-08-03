@@ -30,9 +30,7 @@ impl FrameMetricDatum {
 
 /// A builder for [`FrameMetricDatum`](crate::types::FrameMetricDatum).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameMetricDatumBuilder {
     pub(crate) frame_metric: ::std::option::Option<crate::types::FrameMetric>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -44,10 +42,7 @@ impl FrameMetricDatumBuilder {
         self
     }
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
-    pub fn set_frame_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::FrameMetric>,
-    ) -> Self {
+    pub fn set_frame_metric(mut self, input: ::std::option::Option<crate::types::FrameMetric>) -> Self {
         self.frame_metric = input;
         self
     }

@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput::next_token): <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>  <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
     ///   - [`utterances(Option<Vec<UtteranceSpecification>>)`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput::utterances): <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
     /// - On failure, responds with [`SdkError<ListUtteranceAnalyticsDataError>`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError)
-    pub fn list_utterance_analytics_data(&self) -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataFluentBuilder{
+    pub fn list_utterance_analytics_data(
+        &self,
+    ) -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataFluentBuilder {
         crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataFluentBuilder::new(self.handle.clone())
     }
 }

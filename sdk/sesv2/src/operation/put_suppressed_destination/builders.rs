@@ -26,7 +26,7 @@ impl PutSuppressedDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSuppressedDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder,
+    inner: crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder,
 }
 impl PutSuppressedDestinationFluentBuilder {
     /// Creates a new `PutSuppressedDestination`.
@@ -37,10 +37,7 @@ impl PutSuppressedDestinationFluentBuilder {
         }
     }
     /// Access the PutSuppressedDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutSuppressedDestinationFluentBuilder {
             crate::operation::put_suppressed_destination::PutSuppressedDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_suppressed_destination::PutSuppressedDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutSuppressedDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutSuppressedDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_suppressed_destination::PutSuppressedDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_suppressed_destination::PutSuppressedDestinationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutSuppressedDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_suppressed_destination::PutSuppressedDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_suppressed_destination::PutSuppressedDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl PutSuppressedDestinationFluentBuilder {
             crate::operation::put_suppressed_destination::PutSuppressedDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_suppressed_destination::PutSuppressedDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email address that should be added to the suppression list for your account.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The email address that should be added to the suppression list for your account.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -149,10 +129,7 @@ impl PutSuppressedDestinationFluentBuilder {
         self
     }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::SuppressionListReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SuppressionListReason>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }

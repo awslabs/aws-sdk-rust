@@ -30,9 +30,7 @@ impl BotVersionSortBy {
 
 /// A builder for [`BotVersionSortBy`](crate::types::BotVersionSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotVersionSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BotVersionSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl BotVersionSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list of versions.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::BotVersionSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BotVersionSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

@@ -40,9 +40,7 @@ impl DescribeEventDetailsFluentBuilder {
         }
     }
     /// Access the DescribeEventDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_event_details::builders::DescribeEventDetailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_event_details::builders::DescribeEventDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl DescribeEventDetailsFluentBuilder {
             crate::operation::describe_event_details::DescribeEventDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_details::DescribeEventDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details::DescribeEventDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl DescribeEventDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl DescribeEventDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_details::DescribeEventDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_details::DescribeEventDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details::DescribeEventDetailsError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl DescribeEventDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_details::DescribeEventDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_details::DescribeEventDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details::DescribeEventDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl DescribeEventDetailsFluentBuilder {
             crate::operation::describe_event_details::DescribeEventDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_details::DescribeEventDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details::DescribeEventDetailsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,10 +122,7 @@ impl DescribeEventDetailsFluentBuilder {
         self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn set_event_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_arns(input);
         self
     }

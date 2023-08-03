@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ThreatIntelSetStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ThreatIntelSetStatus {
             "DELETE_PENDING" => ThreatIntelSetStatus::DeletePending,
             "ERROR" => ThreatIntelSetStatus::Error,
             "INACTIVE" => ThreatIntelSetStatus::Inactive,
-            other => ThreatIntelSetStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ThreatIntelSetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl ThreatIntelSetStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVATING",
-            "ACTIVE",
-            "DEACTIVATING",
-            "DELETED",
-            "DELETE_PENDING",
-            "ERROR",
-            "INACTIVE",
-        ]
+        &["ACTIVATING", "ACTIVE", "DEACTIVATING", "DELETED", "DELETE_PENDING", "ERROR", "INACTIVE"]
     }
 }
 impl ::std::convert::AsRef<str> for ThreatIntelSetStatus {

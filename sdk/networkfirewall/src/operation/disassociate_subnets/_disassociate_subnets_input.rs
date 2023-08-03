@@ -44,17 +44,14 @@ impl DisassociateSubnetsInput {
 }
 impl DisassociateSubnetsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSubnetsInput`](crate::operation::disassociate_subnets::DisassociateSubnetsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder {
         crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSubnetsInput`](crate::operation::disassociate_subnets::DisassociateSubnetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSubnetsInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
@@ -101,19 +98,13 @@ impl DisassociateSubnetsInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -134,10 +125,7 @@ impl DisassociateSubnetsInputBuilder {
         self
     }
     /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -148,17 +136,13 @@ impl DisassociateSubnetsInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateSubnetsInput`](crate::operation::disassociate_subnets::DisassociateSubnetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_subnets::DisassociateSubnetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_subnets::DisassociateSubnetsInput {
-                update_token: self.update_token,
-                firewall_arn: self.firewall_arn,
-                firewall_name: self.firewall_name,
-                subnet_ids: self.subnet_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_subnets::DisassociateSubnetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_subnets::DisassociateSubnetsInput {
+            update_token: self.update_token,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            subnet_ids: self.subnet_ids,
+        })
     }
 }

@@ -24,9 +24,7 @@ impl ClientSideTimestamps {
 
 /// A builder for [`ClientSideTimestamps`](crate::types::ClientSideTimestamps).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientSideTimestampsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
 }
@@ -37,10 +35,7 @@ impl ClientSideTimestampsBuilder {
         self
     }
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientSideTimestampsStatus>) -> Self {
         self.status = input;
         self
     }
@@ -50,8 +45,6 @@ impl ClientSideTimestampsBuilder {
     }
     /// Consumes the builder and constructs a [`ClientSideTimestamps`](crate::types::ClientSideTimestamps).
     pub fn build(self) -> crate::types::ClientSideTimestamps {
-        crate::types::ClientSideTimestamps {
-            status: self.status,
-        }
+        crate::types::ClientSideTimestamps { status: self.status }
     }
 }

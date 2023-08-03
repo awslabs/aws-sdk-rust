@@ -22,34 +22,26 @@ impl CreateDirectConnectGatewayInput {
 }
 impl CreateDirectConnectGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayInput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput).
-    pub fn builder() -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder{
+    pub fn builder() -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder {
         crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDirectConnectGatewayInput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayInputBuilder {
     pub(crate) direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
 }
 impl CreateDirectConnectGatewayInputBuilder {
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_name = input;
         self
     }
@@ -78,11 +70,9 @@ impl CreateDirectConnectGatewayInputBuilder {
         crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput {
-                direct_connect_gateway_name: self.direct_connect_gateway_name,
-                amazon_side_asn: self.amazon_side_asn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput {
+            direct_connect_gateway_name: self.direct_connect_gateway_name,
+            amazon_side_asn: self.amazon_side_asn,
+        })
     }
 }

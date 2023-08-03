@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainNameOutput {
 }
 impl UpdateDomainNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameOutput`](crate::operation::update_domain_name::UpdateDomainNameOutput).
-    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameOutputBuilder {
         crate::operation::update_domain_name::builders::UpdateDomainNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainNameOutput`](crate::operation::update_domain_name::UpdateDomainNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainNameOutputBuilder {
     pub(crate) domain_name_config: ::std::option::Option<crate::types::DomainNameConfig>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateDomainNameOutputBuilder {
         self
     }
     /// <p>The configuration for the <code>DomainName</code>.</p>
-    pub fn set_domain_name_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainNameConfig>,
-    ) -> Self {
+    pub fn set_domain_name_config(mut self, input: ::std::option::Option<crate::types::DomainNameConfig>) -> Self {
         self.domain_name_config = input;
         self
     }

@@ -11,8 +11,7 @@ pub struct ListIncomingTypedLinksInput {
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     #[doc(hidden)]
-    pub filter_attribute_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
+    pub filter_attribute_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
     #[doc(hidden)]
     pub filter_typed_link: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
@@ -36,15 +35,11 @@ impl ListIncomingTypedLinksInput {
         self.object_reference.as_ref()
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn filter_attribute_ranges(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TypedLinkAttributeRange]> {
+    pub fn filter_attribute_ranges(&self) -> ::std::option::Option<&[crate::types::TypedLinkAttributeRange]> {
         self.filter_attribute_ranges.as_deref()
     }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-    pub fn filter_typed_link(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn filter_typed_link(&self) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
         self.filter_typed_link.as_ref()
     }
     /// <p>The pagination token.</p>
@@ -62,23 +57,18 @@ impl ListIncomingTypedLinksInput {
 }
 impl ListIncomingTypedLinksInput {
     /// Creates a new builder-style object to manufacture [`ListIncomingTypedLinksInput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput).
-    pub fn builder(
-    ) -> crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksInputBuilder {
         crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIncomingTypedLinksInput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIncomingTypedLinksInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
-    pub(crate) filter_attribute_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
+    pub(crate) filter_attribute_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
     pub(crate) filter_typed_link: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -86,18 +76,12 @@ pub struct ListIncomingTypedLinksInputBuilder {
 }
 impl ListIncomingTypedLinksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -111,10 +95,7 @@ impl ListIncomingTypedLinksInputBuilder {
         self
     }
     /// <p>Reference that identifies the object whose attributes will be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -134,17 +115,12 @@ impl ListIncomingTypedLinksInputBuilder {
         self
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn set_filter_attribute_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
-    ) -> Self {
+    pub fn set_filter_attribute_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>) -> Self {
         self.filter_attribute_ranges = input;
         self
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn get_filter_attribute_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>> {
+    pub fn get_filter_attribute_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>> {
         &self.filter_attribute_ranges
     }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
@@ -153,17 +129,12 @@ impl ListIncomingTypedLinksInputBuilder {
         self
     }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-    pub fn set_filter_typed_link(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
-    ) -> Self {
+    pub fn set_filter_typed_link(mut self, input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>) -> Self {
         self.filter_typed_link = input;
         self
     }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-    pub fn get_filter_typed_link(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn get_filter_typed_link(&self) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
         &self.filter_typed_link
     }
     /// <p>The pagination token.</p>
@@ -200,10 +171,7 @@ impl ListIncomingTypedLinksInputBuilder {
         self
     }
     /// <p>The consistency level to execute the request at.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.consistency_level = input;
         self
     }
@@ -218,16 +186,14 @@ impl ListIncomingTypedLinksInputBuilder {
         crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput {
-                directory_arn: self.directory_arn,
-                object_reference: self.object_reference,
-                filter_attribute_ranges: self.filter_attribute_ranges,
-                filter_typed_link: self.filter_typed_link,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                consistency_level: self.consistency_level,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput {
+            directory_arn: self.directory_arn,
+            object_reference: self.object_reference,
+            filter_attribute_ranges: self.filter_attribute_ranges,
+            filter_typed_link: self.filter_typed_link,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            consistency_level: self.consistency_level,
+        })
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for InitiateDocumentVersionUploadOutput {
 }
 impl InitiateDocumentVersionUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadOutput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput).
-    pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder{
+    pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder {
         crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateDocumentVersionUploadOutput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateDocumentVersionUploadOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,
@@ -50,10 +48,7 @@ impl InitiateDocumentVersionUploadOutputBuilder {
         self
     }
     /// <p>The document metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -67,10 +62,7 @@ impl InitiateDocumentVersionUploadOutputBuilder {
         self
     }
     /// <p>The upload metadata.</p>
-    pub fn set_upload_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::UploadMetadata>,
-    ) -> Self {
+    pub fn set_upload_metadata(mut self, input: ::std::option::Option<crate::types::UploadMetadata>) -> Self {
         self.upload_metadata = input;
         self
     }
@@ -88,10 +80,7 @@ impl InitiateDocumentVersionUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InitiateDocumentVersionUploadOutput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput
-    {
+    pub fn build(self) -> crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput {
         crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput {
             metadata: self.metadata,
             upload_metadata: self.upload_metadata,

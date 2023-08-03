@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`platform_applications(Option<Vec<PlatformApplication>>)`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput::platform_applications): <p>Platform applications returned when calling ListPlatformApplications action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput::next_token): <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
     /// - On failure, responds with [`SdkError<ListPlatformApplicationsError>`](crate::operation::list_platform_applications::ListPlatformApplicationsError)
-    pub fn list_platform_applications(
-        &self,
-    ) -> crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder
-    {
+    pub fn list_platform_applications(&self) -> crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder {
         crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

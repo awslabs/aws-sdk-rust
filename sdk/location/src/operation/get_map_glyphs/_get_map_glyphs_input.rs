@@ -205,18 +205,12 @@ impl GetMapGlyphsInputBuilder {
         &self.font_stack
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub fn font_unicode_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn font_unicode_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.font_unicode_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub fn set_font_unicode_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_font_unicode_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.font_unicode_range = input;
         self
     }
@@ -241,10 +235,7 @@ impl GetMapGlyphsInputBuilder {
     /// Consumes the builder and constructs a [`GetMapGlyphsInput`](crate::operation::get_map_glyphs::GetMapGlyphsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_map_glyphs::GetMapGlyphsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_glyphs::GetMapGlyphsInput {
             map_name: self.map_name,
             font_stack: self.font_stack,

@@ -22,18 +22,14 @@ impl ListFindingAggregatorsInput {
 }
 impl ListFindingAggregatorsInput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregatorsInput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsInput).
-    pub fn builder(
-    ) -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsInputBuilder {
         crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingAggregatorsInput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingAggregatorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListFindingAggregatorsInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingAggregatorsInput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_finding_aggregators::ListFindingAggregatorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_finding_aggregators::ListFindingAggregatorsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_finding_aggregators::ListFindingAggregatorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_finding_aggregators::ListFindingAggregatorsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

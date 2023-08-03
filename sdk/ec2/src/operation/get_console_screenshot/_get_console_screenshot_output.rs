@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetConsoleScreenshotOutput {
 }
 impl GetConsoleScreenshotOutput {
     /// Creates a new builder-style object to manufacture [`GetConsoleScreenshotOutput`](crate::operation::get_console_screenshot::GetConsoleScreenshotOutput).
-    pub fn builder(
-    ) -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder {
+    pub fn builder() -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder {
         crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConsoleScreenshotOutput`](crate::operation::get_console_screenshot::GetConsoleScreenshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConsoleScreenshotOutputBuilder {
     pub(crate) image_data: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

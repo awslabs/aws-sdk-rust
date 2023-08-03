@@ -7,18 +7,13 @@ pub fn ser_template_version_source_input(
         crate::types::TemplateVersionSourceInput::S3(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_6.key("s3").start_object();
-            crate::protocol_serde::shape_s3_object_source::ser_s3_object_source(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_s3_object_source::ser_s3_object_source(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::TemplateVersionSourceInput::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "TemplateVersionSourceInput",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "TemplateVersionSourceInput",
+            ))
         }
     }
     Ok(())

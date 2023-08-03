@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopDbInstanceOutput`](crate::operation::stop_db_instance::StopDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::stop_db_instance::StopDbInstanceOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<StopDBInstanceError>`](crate::operation::stop_db_instance::StopDBInstanceError)
-    pub fn stop_db_instance(
-        &self,
-    ) -> crate::operation::stop_db_instance::builders::StopDBInstanceFluentBuilder {
-        crate::operation::stop_db_instance::builders::StopDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_db_instance(&self) -> crate::operation::stop_db_instance::builders::StopDBInstanceFluentBuilder {
+        crate::operation::stop_db_instance::builders::StopDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

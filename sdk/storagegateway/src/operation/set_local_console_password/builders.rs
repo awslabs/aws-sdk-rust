@@ -26,8 +26,7 @@ impl SetLocalConsolePasswordInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetLocalConsolePasswordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder,
+    inner: crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder,
 }
 impl SetLocalConsolePasswordFluentBuilder {
     /// Creates a new `SetLocalConsolePassword`.
@@ -38,10 +37,7 @@ impl SetLocalConsolePasswordFluentBuilder {
         }
     }
     /// Access the SetLocalConsolePassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl SetLocalConsolePasswordFluentBuilder {
             crate::operation::set_local_console_password::SetLocalConsolePassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_local_console_password::SetLocalConsolePasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_local_console_password::SetLocalConsolePasswordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl SetLocalConsolePasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl SetLocalConsolePasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_local_console_password::SetLocalConsolePasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_local_console_password::SetLocalConsolePasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_local_console_password::SetLocalConsolePasswordError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl SetLocalConsolePasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_local_console_password::SetLocalConsolePasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_local_console_password::SetLocalConsolePasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_local_console_password::SetLocalConsolePasswordError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl SetLocalConsolePasswordFluentBuilder {
             crate::operation::set_local_console_password::SetLocalConsolePassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_local_console_password::SetLocalConsolePasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_local_console_password::SetLocalConsolePasswordError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl SetLocalConsolePasswordFluentBuilder {
         self.inner.get_gateway_arn()
     }
     /// <p>The password you want to set for your VM local console.</p>
-    pub fn local_console_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_console_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_console_password(input.into());
         self
     }
     /// <p>The password you want to set for your VM local console.</p>
-    pub fn set_local_console_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_console_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_console_password(input);
         self
     }

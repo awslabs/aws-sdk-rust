@@ -5,8 +5,7 @@
 pub struct ListModelCardVersionsOutput {
     /// <p>The summaries of the listed versions of the model card.</p>
     #[doc(hidden)]
-    pub model_card_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>>,
+    pub model_card_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListModelCardVersionsOutput {
 }
 impl ListModelCardVersionsOutput {
     /// <p>The summaries of the listed versions of the model card.</p>
-    pub fn model_card_version_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelCardVersionSummary]> {
+    pub fn model_card_version_summary_list(&self) -> ::std::option::Option<&[crate::types::ModelCardVersionSummary]> {
         self.model_card_version_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListModelCardVersionsOutput {
 }
 impl ListModelCardVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelCardVersionsOutput`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsOutputBuilder {
         crate::operation::list_model_card_versions::builders::ListModelCardVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelCardVersionsOutput`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelCardVersionsOutputBuilder {
-    pub(crate) model_card_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>>,
+    pub(crate) model_card_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListModelCardVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_model_card_version_summary_list`](Self::set_model_card_version_summary_list).
     ///
     /// <p>The summaries of the listed versions of the model card.</p>
-    pub fn model_card_version_summary_list(
-        mut self,
-        input: crate::types::ModelCardVersionSummary,
-    ) -> Self {
+    pub fn model_card_version_summary_list(mut self, input: crate::types::ModelCardVersionSummary) -> Self {
         let mut v = self.model_card_version_summary_list.unwrap_or_default();
         v.push(input);
         self.model_card_version_summary_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListModelCardVersionsOutputBuilder {
         self
     }
     /// <p>The summaries of the listed versions of the model card.</p>
-    pub fn get_model_card_version_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>> {
+    pub fn get_model_card_version_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>> {
         &self.model_card_version_summary_list
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>

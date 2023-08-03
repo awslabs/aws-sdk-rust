@@ -37,9 +37,7 @@ impl ListStreamsInput {
 
 /// A builder for [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -75,18 +73,12 @@ impl ListStreamsInputBuilder {
         &self.limit
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
-    pub fn exclusive_start_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
-    pub fn set_exclusive_start_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_stream_arn = input;
         self
     }
@@ -95,12 +87,7 @@ impl ListStreamsInputBuilder {
         &self.exclusive_start_stream_arn
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streams::ListStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
             table_name: self.table_name,
             limit: self.limit,

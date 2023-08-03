@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`checksum(Option<String>)`](crate::operation::get_snapshot_block::GetSnapshotBlockOutput::checksum): <p>The checksum generated for the block, which is Base64 encoded.</p>
     ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::operation::get_snapshot_block::GetSnapshotBlockOutput::checksum_algorithm): <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotBlockError>`](crate::operation::get_snapshot_block::GetSnapshotBlockError)
-    pub fn get_snapshot_block(
-        &self,
-    ) -> crate::operation::get_snapshot_block::builders::GetSnapshotBlockFluentBuilder {
-        crate::operation::get_snapshot_block::builders::GetSnapshotBlockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_snapshot_block(&self) -> crate::operation::get_snapshot_block::builders::GetSnapshotBlockFluentBuilder {
+        crate::operation::get_snapshot_block::builders::GetSnapshotBlockFluentBuilder::new(self.handle.clone())
     }
 }

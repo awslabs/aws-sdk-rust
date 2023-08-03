@@ -36,17 +36,14 @@ impl ListBillingGroupsInput {
 }
 impl ListBillingGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder {
         crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -55,18 +52,12 @@ pub struct ListBillingGroupsInputBuilder {
 }
 impl ListBillingGroupsInputBuilder {
     /// <p>The preferred billing period to get billing groups. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The preferred billing period to get billing groups. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -108,10 +99,7 @@ impl ListBillingGroupsInputBuilder {
         self
     }
     /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListBillingGroupsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListBillingGroupsFilter>) -> Self {
         self.filters = input;
         self
     }
@@ -122,17 +110,12 @@ impl ListBillingGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_billing_groups::ListBillingGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_billing_groups::ListBillingGroupsInput {
-                billing_period: self.billing_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_billing_groups::ListBillingGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_billing_groups::ListBillingGroupsInput {
+            billing_period: self.billing_period,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

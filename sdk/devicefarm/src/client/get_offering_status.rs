@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_period(Option<HashMap<String, OfferingStatus>>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::next_period): <p>When specified, gets the offering status for the next period.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<GetOfferingStatusError>`](crate::operation::get_offering_status::GetOfferingStatusError)
-    pub fn get_offering_status(
-        &self,
-    ) -> crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder {
-        crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_offering_status(&self) -> crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder {
+        crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,15 +5,12 @@
 pub struct DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
     #[doc(hidden)]
-    pub resolver_query_log_config_association:
-        ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
+    pub resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-    pub fn resolver_query_log_config_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigAssociation> {
+    pub fn resolver_query_log_config_association(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigAssociation> {
         self.resolver_query_log_config_association.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DisassociateResolverQueryLogConfigOut
 }
 impl DisassociateResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigOutput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput).
-    pub fn builder() -> crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigOutputBuilder {
         crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResolverQueryLogConfigOutput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResolverQueryLogConfigOutputBuilder {
-    pub(crate) resolver_query_log_config_association:
-        ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
+    pub(crate) resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateResolverQueryLogConfigOutputBuilder {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-    pub fn resolver_query_log_config_association(
-        mut self,
-        input: crate::types::ResolverQueryLogConfigAssociation,
-    ) -> Self {
+    pub fn resolver_query_log_config_association(mut self, input: crate::types::ResolverQueryLogConfigAssociation) -> Self {
         self.resolver_query_log_config_association = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DisassociateResolverQueryLogConfigOutputBuilder {
         self
     }
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-    pub fn get_resolver_query_log_config_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociation> {
+    pub fn get_resolver_query_log_config_association(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociation> {
         &self.resolver_query_log_config_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl DisassociateResolverQueryLogConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateResolverQueryLogConfigOutput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput).
-    pub fn build(self) -> crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput{
+    pub fn build(self) -> crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput {
         crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput {
-            resolver_query_log_config_association: self.resolver_query_log_config_association
-            ,
+            resolver_query_log_config_association: self.resolver_query_log_config_association,
             _request_id: self._request_id,
         }
     }

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`vulnerabilities(Option<Vec<Vulnerability>>)`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput::vulnerabilities): <p>Details about the listed vulnerability.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<SearchVulnerabilitiesError>`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesError)
-    pub fn search_vulnerabilities(
-        &self,
-    ) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder
-    {
-        crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_vulnerabilities(&self) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder {
+        crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::new(self.handle.clone())
     }
 }

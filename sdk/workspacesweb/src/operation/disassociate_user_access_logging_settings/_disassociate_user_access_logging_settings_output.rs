@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateUserAccessLoggingSettings
 }
 impl DisassociateUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsOutput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsOutputBuilder {
         crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateUserAccessLoggingSettingsOutput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateUserAccessLoggingSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateUserAccessLoggingSettingsOutput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput).
-    pub fn build(self) -> crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput{
+    pub fn build(self) -> crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput {
         crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput {
             _request_id: self._request_id,
         }

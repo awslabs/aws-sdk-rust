@@ -26,7 +26,7 @@ impl ListTestGridSessionArtifactsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder,
+    inner: crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder,
 }
 impl ListTestGridSessionArtifactsFluentBuilder {
     /// Creates a new `ListTestGridSessionArtifacts`.
@@ -37,7 +37,7 @@ impl ListTestGridSessionArtifactsFluentBuilder {
         }
     }
     /// Access the ListTestGridSessionArtifacts as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTestGridSessionArtifactsFluentBuilder {
             crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTestGridSessionArtifactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTestGridSessionArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTestGridSessionArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListTestGridSessionArtifactsFluentBuilder {
             crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_session_artifacts::paginator::ListTestGridSessionArtifactsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_test_grid_session_artifacts::paginator::ListTestGridSessionArtifactsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_test_grid_session_artifacts::paginator::ListTestGridSessionArtifactsPaginator {
         crate::operation::list_test_grid_session_artifacts::paginator::ListTestGridSessionArtifactsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of a <code>TestGridSession</code>. </p>
@@ -146,17 +135,12 @@ impl ListTestGridSessionArtifactsFluentBuilder {
         self
     }
     /// <p>Limit results to a specified type of artifact.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>Limit results to a specified type of artifact.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestGridSessionArtifactCategory> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TestGridSessionArtifactCategory> {
         self.inner.get_type()
     }
     /// <p>The maximum number of results to be returned by a request.</p>

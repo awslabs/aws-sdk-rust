@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput) with field(s):
     ///   - [`repository(Option<Repository>)`](crate::operation::create_repository::CreateRepositoryOutput::repository): <p>The repository that was created.</p>
     /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::operation::create_repository::CreateRepositoryError)
-    pub fn create_repository(
-        &self,
-    ) -> crate::operation::create_repository::builders::CreateRepositoryFluentBuilder {
-        crate::operation::create_repository::builders::CreateRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_repository(&self) -> crate::operation::create_repository::builders::CreateRepositoryFluentBuilder {
+        crate::operation::create_repository::builders::CreateRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

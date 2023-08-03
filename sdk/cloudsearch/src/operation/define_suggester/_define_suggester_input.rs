@@ -30,9 +30,7 @@ impl DefineSuggesterInput {
 
 /// A builder for [`DefineSuggesterInput`](crate::operation::define_suggester::DefineSuggesterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineSuggesterInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggester: ::std::option::Option<crate::types::Suggester>,
@@ -69,10 +67,7 @@ impl DefineSuggesterInputBuilder {
     /// Consumes the builder and constructs a [`DefineSuggesterInput`](crate::operation::define_suggester::DefineSuggesterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::define_suggester::DefineSuggesterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::define_suggester::DefineSuggesterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::define_suggester::DefineSuggesterInput {
             domain_name: self.domain_name,
             suggester: self.suggester,

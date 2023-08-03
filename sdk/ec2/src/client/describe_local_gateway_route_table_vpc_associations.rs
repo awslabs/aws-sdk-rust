@@ -13,7 +13,10 @@ impl super::Client {
     ///   - [`local_gateway_route_table_vpc_associations(Option<Vec<LocalGatewayRouteTableVpcAssociation>>)`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput::local_gateway_route_table_vpc_associations): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLocalGatewayRouteTableVpcAssociationsError>`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsError)
-    pub fn describe_local_gateway_route_table_vpc_associations(&self) -> crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsFluentBuilder{
+    pub fn describe_local_gateway_route_table_vpc_associations(
+        &self,
+    ) -> crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsFluentBuilder
+    {
         crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

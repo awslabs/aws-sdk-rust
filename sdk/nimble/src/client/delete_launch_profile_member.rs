@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`studio_id(impl ::std::convert::Into<String>)`](crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberFluentBuilder::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput)
     /// - On failure, responds with [`SdkError<DeleteLaunchProfileMemberError>`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberError)
-    pub fn delete_launch_profile_member(&self) -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberFluentBuilder{
+    pub fn delete_launch_profile_member(&self) -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberFluentBuilder {
         crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,18 +22,14 @@ impl DeleteEdgeConfigurationInput {
 }
 impl DeleteEdgeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEdgeConfigurationInput`](crate::operation::delete_edge_configuration::DeleteEdgeConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_edge_configuration::builders::DeleteEdgeConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_edge_configuration::builders::DeleteEdgeConfigurationInputBuilder {
         crate::operation::delete_edge_configuration::builders::DeleteEdgeConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEdgeConfigurationInput`](crate::operation::delete_edge_configuration::DeleteEdgeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEdgeConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeleteEdgeConfigurationInputBuilder {
         crate::operation::delete_edge_configuration::DeleteEdgeConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_edge_configuration::DeleteEdgeConfigurationInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+        })
     }
 }

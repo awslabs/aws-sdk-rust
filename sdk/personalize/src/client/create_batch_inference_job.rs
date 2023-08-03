@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBatchInferenceJobOutput`](crate::operation::create_batch_inference_job::CreateBatchInferenceJobOutput) with field(s):
     ///   - [`batch_inference_job_arn(Option<String>)`](crate::operation::create_batch_inference_job::CreateBatchInferenceJobOutput::batch_inference_job_arn): <p>The ARN of the batch inference job.</p>
     /// - On failure, responds with [`SdkError<CreateBatchInferenceJobError>`](crate::operation::create_batch_inference_job::CreateBatchInferenceJobError)
-    pub fn create_batch_inference_job(
-        &self,
-    ) -> crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobFluentBuilder
-    {
+    pub fn create_batch_inference_job(&self) -> crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobFluentBuilder {
         crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

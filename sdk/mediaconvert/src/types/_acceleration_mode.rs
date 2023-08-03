@@ -39,13 +39,7 @@
 /// Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccelerationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AccelerationMode {
             "DISABLED" => AccelerationMode::Disabled,
             "ENABLED" => AccelerationMode::Enabled,
             "PREFERRED" => AccelerationMode::Preferred,
-            other => {
-                AccelerationMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccelerationMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

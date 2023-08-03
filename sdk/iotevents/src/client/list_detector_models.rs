@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`detector_model_summaries(Option<Vec<DetectorModelSummary>>)`](crate::operation::list_detector_models::ListDetectorModelsOutput::detector_model_summaries): <p>Summary information about the detector models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detector_models::ListDetectorModelsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListDetectorModelsError>`](crate::operation::list_detector_models::ListDetectorModelsError)
-    pub fn list_detector_models(
-        &self,
-    ) -> crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder {
-        crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_detector_models(&self) -> crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder {
+        crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::new(self.handle.clone())
     }
 }

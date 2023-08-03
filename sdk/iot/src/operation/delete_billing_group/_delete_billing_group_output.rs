@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBillingGroupOutput {
 }
 impl DeleteBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBillingGroupOutput`](crate::operation::delete_billing_group::DeleteBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_billing_group::builders::DeleteBillingGroupOutputBuilder {
         crate::operation::delete_billing_group::builders::DeleteBillingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBillingGroupOutput`](crate::operation::delete_billing_group::DeleteBillingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBillingGroupOutputBuilder {
     _request_id: Option<String>,
 }

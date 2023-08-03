@@ -26,8 +26,7 @@ impl UpdateGameConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder,
+    inner: crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder,
 }
 impl UpdateGameConfigurationFluentBuilder {
     /// Creates a new `UpdateGameConfiguration`.
@@ -38,10 +37,7 @@ impl UpdateGameConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateGameConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateGameConfigurationFluentBuilder {
             crate::operation::update_game_configuration::UpdateGameConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_configuration::UpdateGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_configuration::UpdateGameConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateGameConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateGameConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_configuration::UpdateGameConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_configuration::UpdateGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_configuration::UpdateGameConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateGameConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_configuration::UpdateGameConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_configuration::UpdateGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_configuration::UpdateGameConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateGameConfigurationFluentBuilder {
             crate::operation::update_game_configuration::UpdateGameConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_configuration::UpdateGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_configuration::UpdateGameConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +133,12 @@ impl UpdateGameConfigurationFluentBuilder {
         self
     }
     /// <p>The list of modifications to make.</p>
-    pub fn set_modifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>,
-    ) -> Self {
+    pub fn set_modifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>) -> Self {
         self.inner = self.inner.set_modifications(input);
         self
     }
     /// <p>The list of modifications to make.</p>
-    pub fn get_modifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SectionModification>> {
+    pub fn get_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SectionModification>> {
         self.inner.get_modifications()
     }
 }

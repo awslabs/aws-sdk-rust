@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateServiceInstanceOutput {
 }
 impl CreateServiceInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceInstanceOutput`](crate::operation::create_service_instance::CreateServiceInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_service_instance::builders::CreateServiceInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_service_instance::builders::CreateServiceInstanceOutputBuilder {
         crate::operation::create_service_instance::builders::CreateServiceInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceInstanceOutput`](crate::operation::create_service_instance::CreateServiceInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceInstanceOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateServiceInstanceOutputBuilder {
         self
     }
     /// <p>The detailed data of the service instance being created.</p>
-    pub fn set_service_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceInstance>,
-    ) -> Self {
+    pub fn set_service_instance(mut self, input: ::std::option::Option<crate::types::ServiceInstance>) -> Self {
         self.service_instance = input;
         self
     }

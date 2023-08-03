@@ -31,11 +31,7 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::create_service::CreateServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::create_service::CreateServiceOutput::created_time): <p>A timestamp that indicates when the service is created.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::operation::create_service::CreateServiceError)
-    pub fn create_service(
-        &self,
-    ) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
-        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service(&self) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
+        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(self.handle.clone())
     }
 }

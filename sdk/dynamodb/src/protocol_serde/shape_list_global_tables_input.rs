@@ -4,9 +4,7 @@ pub fn ser_list_global_tables_input(
     input: &crate::operation::list_global_tables::ListGlobalTablesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.exclusive_start_global_table_name {
-        object
-            .key("ExclusiveStartGlobalTableName")
-            .string(var_1.as_str());
+        object.key("ExclusiveStartGlobalTableName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.limit {
         object.key("Limit").number(

@@ -27,9 +27,7 @@ impl DeterminingPolicyItem {
 
 /// A builder for [`DeterminingPolicyItem`](crate::types::DeterminingPolicyItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeterminingPolicyItemBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
 }
@@ -53,8 +51,6 @@ impl DeterminingPolicyItemBuilder {
     }
     /// Consumes the builder and constructs a [`DeterminingPolicyItem`](crate::types::DeterminingPolicyItem).
     pub fn build(self) -> crate::types::DeterminingPolicyItem {
-        crate::types::DeterminingPolicyItem {
-            policy_id: self.policy_id,
-        }
+        crate::types::DeterminingPolicyItem { policy_id: self.policy_id }
     }
 }

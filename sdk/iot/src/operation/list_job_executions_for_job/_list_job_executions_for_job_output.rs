@@ -5,8 +5,7 @@
 pub struct ListJobExecutionsForJobOutput {
     /// <p>A list of job execution summaries.</p>
     #[doc(hidden)]
-    pub execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>,
+    pub execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListJobExecutionsForJobOutput {
 }
 impl ListJobExecutionsForJobOutput {
     /// <p>A list of job execution summaries.</p>
-    pub fn execution_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::JobExecutionSummaryForJob]> {
+    pub fn execution_summaries(&self) -> ::std::option::Option<&[crate::types::JobExecutionSummaryForJob]> {
         self.execution_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListJobExecutionsForJobOutput {
 }
 impl ListJobExecutionsForJobOutput {
     /// Creates a new builder-style object to manufacture [`ListJobExecutionsForJobOutput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput).
-    pub fn builder(
-    ) -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobOutputBuilder {
         crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobExecutionsForJobOutput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForJobOutputBuilder {
-    pub(crate) execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>,
+    pub(crate) execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListJobExecutionsForJobOutputBuilder {
         self
     }
     /// <p>A list of job execution summaries.</p>
-    pub fn set_execution_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>,
-    ) -> Self {
+    pub fn set_execution_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>) -> Self {
         self.execution_summaries = input;
         self
     }
     /// <p>A list of job execution summaries.</p>
-    pub fn get_execution_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>> {
+    pub fn get_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>> {
         &self.execution_summaries
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -99,9 +86,7 @@ impl ListJobExecutionsForJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListJobExecutionsForJobOutput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput {
+    pub fn build(self) -> crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput {
         crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput {
             execution_summaries: self.execution_summaries,
             next_token: self.next_token,

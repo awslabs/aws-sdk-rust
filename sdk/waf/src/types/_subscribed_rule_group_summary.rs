@@ -41,9 +41,7 @@ impl SubscribedRuleGroupSummary {
 
 /// A builder for [`SubscribedRuleGroupSummary`](crate::types::SubscribedRuleGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribedRuleGroupSummaryBuilder {
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -51,18 +49,12 @@ pub struct SubscribedRuleGroupSummaryBuilder {
 }
 impl SubscribedRuleGroupSummaryBuilder {
     /// <p>A unique identifier for a <code>RuleGroup</code>.</p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a <code>RuleGroup</code>.</p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_id = input;
         self
     }

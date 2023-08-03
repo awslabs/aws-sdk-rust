@@ -12,10 +12,7 @@ pub fn ser_update_trial_component_input(
     if let Some(var_3) = &input.status {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Status").start_object();
-        crate::protocol_serde::shape_trial_component_status::ser_trial_component_status(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_trial_component_status::ser_trial_component_status(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.start_time {

@@ -44,9 +44,7 @@ impl BatchFailedResultModel {
 
 /// A builder for [`BatchFailedResultModel`](crate::types::BatchFailedResultModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchFailedResultModelBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

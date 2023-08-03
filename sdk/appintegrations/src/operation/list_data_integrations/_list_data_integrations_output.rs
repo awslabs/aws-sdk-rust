@@ -5,8 +5,7 @@
 pub struct ListDataIntegrationsOutput {
     /// <p>The DataIntegrations associated with this account.</p>
     #[doc(hidden)]
-    pub data_integrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>>,
+    pub data_integrations: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDataIntegrationsOutput {
 }
 impl ListDataIntegrationsOutput {
     /// <p>The DataIntegrations associated with this account.</p>
-    pub fn data_integrations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataIntegrationSummary]> {
+    pub fn data_integrations(&self) -> ::std::option::Option<&[crate::types::DataIntegrationSummary]> {
         self.data_integrations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataIntegrationsOutput {
 }
 impl ListDataIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIntegrationsOutput`](crate::operation::list_data_integrations::ListDataIntegrationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_integrations::builders::ListDataIntegrationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_data_integrations::builders::ListDataIntegrationsOutputBuilder {
         crate::operation::list_data_integrations::builders::ListDataIntegrationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataIntegrationsOutput`](crate::operation::list_data_integrations::ListDataIntegrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIntegrationsOutputBuilder {
-    pub(crate) data_integrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>>,
+    pub(crate) data_integrations: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListDataIntegrationsOutputBuilder {
         self
     }
     /// <p>The DataIntegrations associated with this account.</p>
-    pub fn set_data_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>>,
-    ) -> Self {
+    pub fn set_data_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>>) -> Self {
         self.data_integrations = input;
         self
     }
     /// <p>The DataIntegrations associated with this account.</p>
-    pub fn get_data_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>> {
+    pub fn get_data_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationSummary>> {
         &self.data_integrations
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

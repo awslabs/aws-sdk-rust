@@ -23,9 +23,7 @@ impl LakeFormationDataPermissionDetails {
 
 /// A builder for [`LakeFormationDataPermissionDetails`](crate::types::LakeFormationDataPermissionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LakeFormationDataPermissionDetailsBuilder {
     pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyDetails>,
 }
@@ -36,10 +34,7 @@ impl LakeFormationDataPermissionDetailsBuilder {
         self
     }
     /// <p>Details about the LF-tag policy.</p>
-    pub fn set_lf_tag_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::LfTagPolicyDetails>,
-    ) -> Self {
+    pub fn set_lf_tag_policy(mut self, input: ::std::option::Option<crate::types::LfTagPolicyDetails>) -> Self {
         self.lf_tag_policy = input;
         self
     }

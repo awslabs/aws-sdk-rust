@@ -20,9 +20,7 @@ impl VectorEnrichmentJobDataSourceConfigInput {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3Data`](crate::types::VectorEnrichmentJobDataSourceConfigInput::S3Data), extracting the inner [`VectorEnrichmentJobS3Data`](crate::types::VectorEnrichmentJobS3Data).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_data(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VectorEnrichmentJobS3Data, &Self> {
+    pub fn as_s3_data(&self) -> ::std::result::Result<&crate::types::VectorEnrichmentJobS3Data, &Self> {
         if let VectorEnrichmentJobDataSourceConfigInput::S3Data(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -10,10 +10,7 @@ impl UpdateSafetyRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_safety_rule::UpdateSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_safety_rule::UpdateSafetyRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_safety_rule::UpdateSafetyRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_safety_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSafetyRuleFluentBuilder {
         }
     }
     /// Access the UpdateSafetyRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateSafetyRuleFluentBuilder {
             crate::operation::update_safety_rule::UpdateSafetyRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_safety_rule::UpdateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_safety_rule::UpdateSafetyRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateSafetyRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_safety_rule::UpdateSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_safety_rule::UpdateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_safety_rule::UpdateSafetyRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_safety_rule::UpdateSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_safety_rule::UpdateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_safety_rule::UpdateSafetyRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateSafetyRuleFluentBuilder {
             crate::operation::update_safety_rule::UpdateSafetyRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_safety_rule::UpdateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_safety_rule::UpdateSafetyRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl UpdateSafetyRuleFluentBuilder {
         self
     }
     /// <p>The assertion rule to update.</p>
-    pub fn set_assertion_rule_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AssertionRuleUpdate>,
-    ) -> Self {
+    pub fn set_assertion_rule_update(mut self, input: ::std::option::Option<crate::types::AssertionRuleUpdate>) -> Self {
         self.inner = self.inner.set_assertion_rule_update(input);
         self
     }
     /// <p>The assertion rule to update.</p>
-    pub fn get_assertion_rule_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssertionRuleUpdate> {
+    pub fn get_assertion_rule_update(&self) -> &::std::option::Option<crate::types::AssertionRuleUpdate> {
         self.inner.get_assertion_rule_update()
     }
     /// <p>The gating rule to update.</p>
@@ -147,10 +126,7 @@ impl UpdateSafetyRuleFluentBuilder {
         self
     }
     /// <p>The gating rule to update.</p>
-    pub fn set_gating_rule_update(
-        mut self,
-        input: ::std::option::Option<crate::types::GatingRuleUpdate>,
-    ) -> Self {
+    pub fn set_gating_rule_update(mut self, input: ::std::option::Option<crate::types::GatingRuleUpdate>) -> Self {
         self.inner = self.inner.set_gating_rule_update(input);
         self
     }

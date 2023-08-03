@@ -40,18 +40,14 @@ impl StopPipelineExecutionInput {
 }
 impl StopPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder {
         crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPipelineExecutionInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +56,12 @@ pub struct StopPipelineExecutionInputBuilder {
 }
 impl StopPipelineExecutionInputBuilder {
     /// <p>The name of the pipeline to stop.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline to stop.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -80,18 +70,12 @@ impl StopPipelineExecutionInputBuilder {
         &self.pipeline_name
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_id = input;
         self
     }
@@ -136,17 +120,13 @@ impl StopPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_pipeline_execution::StopPipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
-                pipeline_name: self.pipeline_name,
-                pipeline_execution_id: self.pipeline_execution_id,
-                abandon: self.abandon,
-                reason: self.reason,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
+            pipeline_name: self.pipeline_name,
+            pipeline_execution_id: self.pipeline_execution_id,
+            abandon: self.abandon,
+            reason: self.reason,
+        })
     }
 }

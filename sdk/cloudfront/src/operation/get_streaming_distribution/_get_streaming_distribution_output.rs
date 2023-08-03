@@ -14,9 +14,7 @@ pub struct GetStreamingDistributionOutput {
 }
 impl GetStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
-    pub fn streaming_distribution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDistribution> {
+    pub fn streaming_distribution(&self) -> ::std::option::Option<&crate::types::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -31,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetStreamingDistributionOutput {
 }
 impl GetStreamingDistributionOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionOutput`](crate::operation::get_streaming_distribution::GetStreamingDistributionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionOutputBuilder {
         crate::operation::get_streaming_distribution::builders::GetStreamingDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingDistributionOutput`](crate::operation::get_streaming_distribution::GetStreamingDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingDistributionOutputBuilder {
     pub(crate) streaming_distribution: ::std::option::Option<crate::types::StreamingDistribution>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -55,17 +49,12 @@ impl GetStreamingDistributionOutputBuilder {
         self
     }
     /// <p>The streaming distribution's information.</p>
-    pub fn set_streaming_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistribution>,
-    ) -> Self {
+    pub fn set_streaming_distribution(mut self, input: ::std::option::Option<crate::types::StreamingDistribution>) -> Self {
         self.streaming_distribution = input;
         self
     }
     /// <p>The streaming distribution's information.</p>
-    pub fn get_streaming_distribution(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDistribution> {
+    pub fn get_streaming_distribution(&self) -> &::std::option::Option<crate::types::StreamingDistribution> {
         &self.streaming_distribution
     }
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -92,9 +81,7 @@ impl GetStreamingDistributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetStreamingDistributionOutput`](crate::operation::get_streaming_distribution::GetStreamingDistributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_streaming_distribution::GetStreamingDistributionOutput {
+    pub fn build(self) -> crate::operation::get_streaming_distribution::GetStreamingDistributionOutput {
         crate::operation::get_streaming_distribution::GetStreamingDistributionOutput {
             streaming_distribution: self.streaming_distribution,
             e_tag: self.e_tag,

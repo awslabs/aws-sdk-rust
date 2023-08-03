@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ModifyAuthenticationProfileOutput {
 }
 impl ModifyAuthenticationProfileOutput {
     /// Creates a new builder-style object to manufacture [`ModifyAuthenticationProfileOutput`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput).
-    pub fn builder() -> crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileOutputBuilder{
+    pub fn builder() -> crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileOutputBuilder {
         crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyAuthenticationProfileOutput`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAuthenticationProfileOutputBuilder {
     pub(crate) authentication_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_profile_content: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct ModifyAuthenticationProfileOutputBuilder {
 }
 impl ModifyAuthenticationProfileOutputBuilder {
     /// <p>The name of the authentication profile that was replaced.</p>
-    pub fn authentication_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the authentication profile that was replaced.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_profile_name = input;
         self
     }
@@ -65,25 +57,17 @@ impl ModifyAuthenticationProfileOutputBuilder {
         &self.authentication_profile_name
     }
     /// <p>The updated content of the authentication profile in JSON format.</p>
-    pub fn authentication_profile_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated content of the authentication profile in JSON format.</p>
-    pub fn set_authentication_profile_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_profile_content = input;
         self
     }
     /// <p>The updated content of the authentication profile in JSON format.</p>
-    pub fn get_authentication_profile_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_authentication_profile_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +80,7 @@ impl ModifyAuthenticationProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyAuthenticationProfileOutput`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput {
+    pub fn build(self) -> crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput {
         crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput {
             authentication_profile_name: self.authentication_profile_name,
             authentication_profile_content: self.authentication_profile_content,

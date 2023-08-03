@@ -40,18 +40,14 @@ impl ListGeneratedCodeJobsInput {
 }
 impl ListGeneratedCodeJobsInput {
     /// Creates a new builder-style object to manufacture [`ListGeneratedCodeJobsInput`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder {
         crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeneratedCodeJobsInput`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeneratedCodeJobsInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -124,17 +120,13 @@ impl ListGeneratedCodeJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListGeneratedCodeJobsInput`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsInput {
+            game_name: self.game_name,
+            snapshot_id: self.snapshot_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -44,9 +44,7 @@ impl DeliveryStreamEncryptionConfiguration {
 
 /// A builder for [`DeliveryStreamEncryptionConfiguration`](crate::types::DeliveryStreamEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfigurationBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<crate::types::KeyType>,
@@ -88,17 +86,12 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
         self
     }
     /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamEncryptionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeliveryStreamEncryptionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionStatus> {
         &self.status
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
@@ -107,17 +100,12 @@ impl DeliveryStreamEncryptionConfigurationBuilder {
         self
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
-    pub fn set_failure_description(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDescription>,
-    ) -> Self {
+    pub fn set_failure_description(mut self, input: ::std::option::Option<crate::types::FailureDescription>) -> Self {
         self.failure_description = input;
         self
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
-    pub fn get_failure_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::FailureDescription> {
+    pub fn get_failure_description(&self) -> &::std::option::Option<crate::types::FailureDescription> {
         &self.failure_description
     }
     /// Consumes the builder and constructs a [`DeliveryStreamEncryptionConfiguration`](crate::types::DeliveryStreamEncryptionConfiguration).

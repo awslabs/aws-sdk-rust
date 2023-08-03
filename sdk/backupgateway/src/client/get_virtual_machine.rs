@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetVirtualMachineOutput`](crate::operation::get_virtual_machine::GetVirtualMachineOutput) with field(s):
     ///   - [`virtual_machine(Option<VirtualMachineDetails>)`](crate::operation::get_virtual_machine::GetVirtualMachineOutput::virtual_machine): <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     /// - On failure, responds with [`SdkError<GetVirtualMachineError>`](crate::operation::get_virtual_machine::GetVirtualMachineError)
-    pub fn get_virtual_machine(
-        &self,
-    ) -> crate::operation::get_virtual_machine::builders::GetVirtualMachineFluentBuilder {
-        crate::operation::get_virtual_machine::builders::GetVirtualMachineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_virtual_machine(&self) -> crate::operation::get_virtual_machine::builders::GetVirtualMachineFluentBuilder {
+        crate::operation::get_virtual_machine::builders::GetVirtualMachineFluentBuilder::new(self.handle.clone())
     }
 }

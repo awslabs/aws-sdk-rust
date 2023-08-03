@@ -39,18 +39,14 @@ impl InitiateMultipartUploadInput {
 }
 impl InitiateMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadInput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput).
-    pub fn builder(
-    ) -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder
-    {
+    pub fn builder() -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder {
         crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateMultipartUploadInput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -88,19 +84,13 @@ impl InitiateMultipartUploadInputBuilder {
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_description = input;
         self
     }
@@ -130,13 +120,11 @@ impl InitiateMultipartUploadInputBuilder {
         crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                archive_description: self.archive_description,
-                part_size: self.part_size,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            archive_description: self.archive_description,
+            part_size: self.part_size,
+        })
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableAwsServiceAccessOutput {
 }
 impl EnableAwsServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessOutput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessOutputBuilder {
         crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAwsServiceAccessOutput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAwsServiceAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl EnableAwsServiceAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableAwsServiceAccessOutput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput {
+    pub fn build(self) -> crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput {
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput {
             _request_id: self._request_id,
         }

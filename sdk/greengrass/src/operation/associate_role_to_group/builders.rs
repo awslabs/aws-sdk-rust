@@ -37,10 +37,7 @@ impl AssociateRoleToGroupFluentBuilder {
         }
     }
     /// Access the AssociateRoleToGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateRoleToGroupFluentBuilder {
             crate::operation::associate_role_to_group::AssociateRoleToGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_role_to_group::AssociateRoleToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_role_to_group::AssociateRoleToGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateRoleToGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateRoleToGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_role_to_group::AssociateRoleToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_role_to_group::AssociateRoleToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_role_to_group::AssociateRoleToGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateRoleToGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_role_to_group::AssociateRoleToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_role_to_group::AssociateRoleToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_role_to_group::AssociateRoleToGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AssociateRoleToGroupFluentBuilder {
             crate::operation::associate_role_to_group::AssociateRoleToGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_role_to_group::AssociateRoleToGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_role_to_group::AssociateRoleToGroupError>,
     > {
         self.customize_middleware().await
     }

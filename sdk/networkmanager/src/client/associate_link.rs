@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateLinkOutput`](crate::operation::associate_link::AssociateLinkOutput) with field(s):
     ///   - [`link_association(Option<LinkAssociation>)`](crate::operation::associate_link::AssociateLinkOutput::link_association): <p>The link association.</p>
     /// - On failure, responds with [`SdkError<AssociateLinkError>`](crate::operation::associate_link::AssociateLinkError)
-    pub fn associate_link(
-        &self,
-    ) -> crate::operation::associate_link::builders::AssociateLinkFluentBuilder {
-        crate::operation::associate_link::builders::AssociateLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_link(&self) -> crate::operation::associate_link::builders::AssociateLinkFluentBuilder {
+        crate::operation::associate_link::builders::AssociateLinkFluentBuilder::new(self.handle.clone())
     }
 }

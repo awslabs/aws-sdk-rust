@@ -5,15 +5,12 @@
 pub struct GetEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the requested environment account connection.</p>
     #[doc(hidden)]
-    pub environment_account_connection:
-        ::std::option::Option<crate::types::EnvironmentAccountConnection>,
+    pub environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }
 impl GetEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the requested environment account connection.</p>
-    pub fn environment_account_connection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentAccountConnection> {
+    pub fn environment_account_connection(&self) -> ::std::option::Option<&crate::types::EnvironmentAccountConnection> {
         self.environment_account_connection.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetEnvironmentAccountConnectionOutput
 }
 impl GetEnvironmentAccountConnectionOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentAccountConnectionOutput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput).
-    pub fn builder() -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionOutputBuilder {
         crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnvironmentAccountConnectionOutput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnectionOutputBuilder {
-    pub(crate) environment_account_connection:
-        ::std::option::Option<crate::types::EnvironmentAccountConnection>,
+    pub(crate) environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }
 impl GetEnvironmentAccountConnectionOutputBuilder {
     /// <p>The detailed data of the requested environment account connection.</p>
-    pub fn environment_account_connection(
-        mut self,
-        input: crate::types::EnvironmentAccountConnection,
-    ) -> Self {
+    pub fn environment_account_connection(mut self, input: crate::types::EnvironmentAccountConnection) -> Self {
         self.environment_account_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The detailed data of the requested environment account connection.</p>
-    pub fn set_environment_account_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
-    ) -> Self {
+    pub fn set_environment_account_connection(mut self, input: ::std::option::Option<crate::types::EnvironmentAccountConnection>) -> Self {
         self.environment_account_connection = input;
         self
     }
     /// <p>The detailed data of the requested environment account connection.</p>
-    pub fn get_environment_account_connection(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentAccountConnection> {
+    pub fn get_environment_account_connection(&self) -> &::std::option::Option<crate::types::EnvironmentAccountConnection> {
         &self.environment_account_connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl GetEnvironmentAccountConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentAccountConnectionOutput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput
-    {
+    pub fn build(self) -> crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput {
         crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput {
-            environment_account_connection: self.environment_account_connection
-            ,
+            environment_account_connection: self.environment_account_connection,
             _request_id: self._request_id,
         }
     }

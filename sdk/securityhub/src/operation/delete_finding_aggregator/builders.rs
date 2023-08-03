@@ -27,8 +27,7 @@ impl DeleteFindingAggregatorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFindingAggregatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder,
+    inner: crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder,
 }
 impl DeleteFindingAggregatorFluentBuilder {
     /// Creates a new `DeleteFindingAggregator`.
@@ -39,10 +38,7 @@ impl DeleteFindingAggregatorFluentBuilder {
         }
     }
     /// Access the DeleteFindingAggregator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeleteFindingAggregatorFluentBuilder {
             crate::operation::delete_finding_aggregator::DeleteFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeleteFindingAggregatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeleteFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeleteFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl DeleteFindingAggregatorFluentBuilder {
             crate::operation::delete_finding_aggregator::DeleteFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_finding_aggregator::DeleteFindingAggregatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_aggregator_arn(input.into());
         self
     }
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_aggregator_arn(input);
         self
     }

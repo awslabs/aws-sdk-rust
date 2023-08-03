@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`with_federation(bool)`](crate::operation::update_resource::builders::UpdateResourceFluentBuilder::with_federation) / [`set_with_federation(Option<bool>)`](crate::operation::update_resource::builders::UpdateResourceFluentBuilder::set_with_federation): <p>Whether or not the resource is a federated resource.</p>
     /// - On success, responds with [`UpdateResourceOutput`](crate::operation::update_resource::UpdateResourceOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::operation::update_resource::UpdateResourceError)
-    pub fn update_resource(
-        &self,
-    ) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
-        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource(&self) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
+        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(self.handle.clone())
     }
 }

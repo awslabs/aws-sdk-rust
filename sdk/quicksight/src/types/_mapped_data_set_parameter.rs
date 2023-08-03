@@ -30,27 +30,19 @@ impl MappedDataSetParameter {
 
 /// A builder for [`MappedDataSetParameter`](crate::types::MappedDataSetParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MappedDataSetParameterBuilder {
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl MappedDataSetParameterBuilder {
     /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-    pub fn data_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-    pub fn set_data_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_identifier = input;
         self
     }
@@ -59,18 +51,12 @@ impl MappedDataSetParameterBuilder {
         &self.data_set_identifier
     }
     /// <p>The name of the dataset parameter.</p>
-    pub fn data_set_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset parameter.</p>
-    pub fn set_data_set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_parameter_name = input;
         self
     }

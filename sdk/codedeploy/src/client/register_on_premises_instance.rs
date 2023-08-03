@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`iam_user_arn(impl ::std::convert::Into<String>)`](crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceFluentBuilder::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceFluentBuilder::set_iam_user_arn): <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     /// - On success, responds with [`RegisterOnPremisesInstanceOutput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput)
     /// - On failure, responds with [`SdkError<RegisterOnPremisesInstanceError>`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError)
-    pub fn register_on_premises_instance(&self) -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceFluentBuilder{
+    pub fn register_on_premises_instance(
+        &self,
+    ) -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceFluentBuilder {
         crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceFluentBuilder::new(self.handle.clone())
     }
 }

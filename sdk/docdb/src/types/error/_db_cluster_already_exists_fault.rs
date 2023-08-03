@@ -17,10 +17,7 @@ impl DbClusterAlreadyExistsFault {
 }
 impl ::std::fmt::Display for DbClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbClusterAlreadyExistsFault [DBClusterAlreadyExistsFault]"
-        )?;
+        ::std::write!(f, "DbClusterAlreadyExistsFault [DBClusterAlreadyExistsFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -50,9 +47,7 @@ impl DbClusterAlreadyExistsFault {
 
 /// A builder for [`DbClusterAlreadyExistsFault`](crate::types::error::DbClusterAlreadyExistsFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -79,10 +74,7 @@ impl DbClusterAlreadyExistsFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

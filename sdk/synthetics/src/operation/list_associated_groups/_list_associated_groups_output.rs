@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociatedGroupsOutput {
 }
 impl ListAssociatedGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsOutputBuilder {
         crate::operation::list_associated_groups::builders::ListAssociatedGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAssociatedGroupsOutputBuilder {
         self
     }
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
         &self.groups
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>

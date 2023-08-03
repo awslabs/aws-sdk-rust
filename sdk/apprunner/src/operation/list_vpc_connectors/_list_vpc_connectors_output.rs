@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListVpcConnectorsOutput {
 }
 impl ListVpcConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcConnectorsOutput`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder {
         crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcConnectorsOutput`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcConnectorsOutputBuilder {
     pub(crate) vpc_connectors: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListVpcConnectorsOutputBuilder {
         self
     }
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn set_vpc_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnector>>,
-    ) -> Self {
+    pub fn set_vpc_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnector>>) -> Self {
         self.vpc_connectors = input;
         self
     }
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn get_vpc_connectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConnector>> {
+    pub fn get_vpc_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConnector>> {
         &self.vpc_connectors
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>

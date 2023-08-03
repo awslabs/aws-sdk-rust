@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMediaStorageConfigurationOutput
 }
 impl UpdateMediaStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaStorageConfigurationOutput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput).
-    pub fn builder() -> crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationOutputBuilder {
         crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMediaStorageConfigurationOutput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMediaStorageConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateMediaStorageConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMediaStorageConfigurationOutput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput {
         crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput {
             _request_id: self._request_id,
         }

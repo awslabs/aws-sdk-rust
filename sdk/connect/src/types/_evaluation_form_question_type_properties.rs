@@ -21,9 +21,7 @@ pub enum EvaluationFormQuestionTypeProperties {
 impl EvaluationFormQuestionTypeProperties {
     /// Tries to convert the enum instance into [`Numeric`](crate::types::EvaluationFormQuestionTypeProperties::Numeric), extracting the inner [`EvaluationFormNumericQuestionProperties`](crate::types::EvaluationFormNumericQuestionProperties).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_numeric(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EvaluationFormNumericQuestionProperties, &Self> {
+    pub fn as_numeric(&self) -> ::std::result::Result<&crate::types::EvaluationFormNumericQuestionProperties, &Self> {
         if let EvaluationFormQuestionTypeProperties::Numeric(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,10 +34,7 @@ impl EvaluationFormQuestionTypeProperties {
     }
     /// Tries to convert the enum instance into [`SingleSelect`](crate::types::EvaluationFormQuestionTypeProperties::SingleSelect), extracting the inner [`EvaluationFormSingleSelectQuestionProperties`](crate::types::EvaluationFormSingleSelectQuestionProperties).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_single_select(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EvaluationFormSingleSelectQuestionProperties, &Self>
-    {
+    pub fn as_single_select(&self) -> ::std::result::Result<&crate::types::EvaluationFormSingleSelectQuestionProperties, &Self> {
         if let EvaluationFormQuestionTypeProperties::SingleSelect(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -29,16 +29,14 @@ impl RebootReplicationInstanceInput {
 }
 impl RebootReplicationInstanceInput {
     /// Creates a new builder-style object to manufacture [`RebootReplicationInstanceInput`](crate::operation::reboot_replication_instance::RebootReplicationInstanceInput).
-    pub fn builder() -> crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder{
+    pub fn builder() -> crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder {
         crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`RebootReplicationInstanceInput`](crate::operation::reboot_replication_instance::RebootReplicationInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootReplicationInstanceInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) force_failover: ::std::option::Option<bool>,
@@ -46,18 +44,12 @@ pub struct RebootReplicationInstanceInputBuilder {
 }
 impl RebootReplicationInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -100,12 +92,10 @@ impl RebootReplicationInstanceInputBuilder {
         crate::operation::reboot_replication_instance::RebootReplicationInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reboot_replication_instance::RebootReplicationInstanceInput {
-                replication_instance_arn: self.replication_instance_arn,
-                force_failover: self.force_failover,
-                force_planned_failover: self.force_planned_failover,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reboot_replication_instance::RebootReplicationInstanceInput {
+            replication_instance_arn: self.replication_instance_arn,
+            force_failover: self.force_failover,
+            force_planned_failover: self.force_planned_failover,
+        })
     }
 }

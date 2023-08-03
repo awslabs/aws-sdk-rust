@@ -37,9 +37,7 @@ impl TleData {
 
 /// A builder for [`TleData`](crate::types::TleData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TleDataBuilder {
     pub(crate) tle_line1: ::std::option::Option<::std::string::String>,
     pub(crate) tle_line2: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl TleDataBuilder {
         self
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
-    pub fn set_valid_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
+    pub fn set_valid_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.valid_time_range = input;
         self
     }

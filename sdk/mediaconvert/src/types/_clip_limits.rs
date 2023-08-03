@@ -44,9 +44,7 @@ impl ClipLimits {
 
 /// A builder for [`ClipLimits`](crate::types::ClipLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClipLimitsBuilder {
     pub(crate) maximum_rgb_tolerance: ::std::option::Option<i32>,
     pub(crate) maximum_yuv: ::std::option::Option<i32>,

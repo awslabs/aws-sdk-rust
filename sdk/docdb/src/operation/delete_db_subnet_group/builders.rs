@@ -39,9 +39,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
         }
     }
     /// Access the DeleteDBSubnetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
             crate::operation::delete_db_subnet_group::DeleteDBSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
             crate::operation::delete_db_subnet_group::DeleteDBSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +117,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
@@ -143,10 +127,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }

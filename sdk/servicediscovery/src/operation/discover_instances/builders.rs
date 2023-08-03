@@ -10,10 +10,7 @@ impl DiscoverInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::discover_instances::DiscoverInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_instances::DiscoverInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_instances::DiscoverInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.discover_instances();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DiscoverInstancesFluentBuilder {
         }
     }
     /// Access the DiscoverInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DiscoverInstancesFluentBuilder {
             crate::operation::discover_instances::DiscoverInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_instances::DiscoverInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_instances::DiscoverInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DiscoverInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DiscoverInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_instances::DiscoverInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_instances::DiscoverInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_instances::DiscoverInstancesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DiscoverInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_instances::DiscoverInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_instances::DiscoverInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_instances::DiscoverInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DiscoverInstancesFluentBuilder {
             crate::operation::discover_instances::DiscoverInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_instances::DiscoverInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_instances::DiscoverInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -186,19 +164,13 @@ impl DiscoverInstancesFluentBuilder {
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
     pub fn set_query_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_query_parameters(input);
         self
     }
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    pub fn get_query_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_query_parameters()
     }
     /// Adds a key-value pair to `OptionalParameters`.
@@ -217,19 +189,13 @@ impl DiscoverInstancesFluentBuilder {
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
     pub fn set_optional_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_optional_parameters(input);
         self
     }
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    pub fn get_optional_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_optional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_optional_parameters()
     }
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
@@ -290,10 +256,7 @@ impl DiscoverInstancesFluentBuilder {
     /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>
     /// </dd>
     /// </dl>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthStatusFilter>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatusFilter>) -> Self {
         self.inner = self.inner.set_health_status(input);
         self
     }

@@ -37,13 +37,7 @@
 /// <p>The type of provisioning that the connector supports, such as Lambda.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConnectorProvisioningType {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for ConnectorProvisioningType {
     fn from(s: &str) -> Self {
         match s {
             "LAMBDA" => ConnectorProvisioningType::Lambda,
-            other => ConnectorProvisioningType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConnectorProvisioningType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

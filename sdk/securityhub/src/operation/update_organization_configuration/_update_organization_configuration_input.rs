@@ -24,24 +24,20 @@ impl UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
     /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
-    pub fn auto_enable_standards(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoEnableStandards> {
+    pub fn auto_enable_standards(&self) -> ::std::option::Option<&crate::types::AutoEnableStandards> {
         self.auto_enable_standards.as_ref()
     }
 }
 impl UpdateOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) auto_enable_standards: ::std::option::Option<crate::types::AutoEnableStandards>,
@@ -77,19 +73,14 @@ impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
     /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
-    pub fn set_auto_enable_standards(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoEnableStandards>,
-    ) -> Self {
+    pub fn set_auto_enable_standards(mut self, input: ::std::option::Option<crate::types::AutoEnableStandards>) -> Self {
         self.auto_enable_standards = input;
         self
     }
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
     /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
-    pub fn get_auto_enable_standards(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoEnableStandards> {
+    pub fn get_auto_enable_standards(&self) -> &::std::option::Option<crate::types::AutoEnableStandards> {
         &self.auto_enable_standards
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
@@ -101,11 +92,9 @@ impl UpdateOrganizationConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
-                auto_enable: self.auto_enable
-                ,
-                auto_enable_standards: self.auto_enable_standards
-                ,
-            }
+                auto_enable: self.auto_enable,
+                auto_enable_standards: self.auto_enable_standards,
+            },
         )
     }
 }

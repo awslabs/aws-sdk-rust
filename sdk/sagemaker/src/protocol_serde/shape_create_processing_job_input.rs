@@ -9,10 +9,7 @@ pub fn ser_create_processing_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_processing_input::ser_processing_input(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_processing_input::ser_processing_input(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -21,10 +18,7 @@ pub fn ser_create_processing_job_input(
     if let Some(var_5) = &input.processing_output_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ProcessingOutputConfig").start_object();
-        crate::protocol_serde::shape_processing_output_config::ser_processing_output_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_processing_output_config::ser_processing_output_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.processing_job_name {
@@ -33,10 +27,7 @@ pub fn ser_create_processing_job_input(
     if let Some(var_8) = &input.processing_resources {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ProcessingResources").start_object();
-        crate::protocol_serde::shape_processing_resources::ser_processing_resources(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_processing_resources::ser_processing_resources(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.stopping_condition {
@@ -48,10 +39,7 @@ pub fn ser_create_processing_job_input(
     if let Some(var_12) = &input.app_specification {
         #[allow(unused_mut)]
         let mut object_13 = object.key("AppSpecification").start_object();
-        crate::protocol_serde::shape_app_specification::ser_app_specification(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_app_specification::ser_app_specification(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.environment {
@@ -88,10 +76,7 @@ pub fn ser_create_processing_job_input(
     if let Some(var_25) = &input.experiment_config {
         #[allow(unused_mut)]
         let mut object_26 = object.key("ExperimentConfig").start_object();
-        crate::protocol_serde::shape_experiment_config::ser_experiment_config(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_experiment_config::ser_experiment_config(&mut object_26, var_25)?;
         object_26.finish();
     }
     Ok(())

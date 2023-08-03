@@ -91,17 +91,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessDeviceOutput {
 }
 impl GetWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceOutput`](crate::operation::get_wireless_device::GetWirelessDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_wireless_device::builders::GetWirelessDeviceOutputBuilder {
+    pub fn builder() -> crate::operation::get_wireless_device::builders::GetWirelessDeviceOutputBuilder {
         crate::operation::get_wireless_device::builders::GetWirelessDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessDeviceOutput`](crate::operation::get_wireless_device::GetWirelessDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -123,10 +120,7 @@ impl GetWirelessDeviceOutputBuilder {
         self
     }
     /// <p>The wireless device type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -163,18 +157,12 @@ impl GetWirelessDeviceOutputBuilder {
         &self.description
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
@@ -244,10 +232,7 @@ impl GetWirelessDeviceOutputBuilder {
         self
     }
     /// <p>Information about the wireless device.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanDevice>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanDevice>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -261,10 +246,7 @@ impl GetWirelessDeviceOutputBuilder {
         self
     }
     /// <p>Sidewalk device object.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkDevice>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkDevice>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -278,10 +260,7 @@ impl GetWirelessDeviceOutputBuilder {
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn set_positioning(
-        mut self,
-        input: ::std::option::Option<crate::types::PositioningConfigStatus>,
-    ) -> Self {
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.positioning = input;
         self
     }

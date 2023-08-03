@@ -31,9 +31,7 @@ impl UpdateLinkInput {
 
 /// A builder for [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
@@ -67,27 +65,17 @@ impl UpdateLinkInputBuilder {
     }
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
         &self.resource_types
     }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_link::UpdateLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             identifier: self.identifier,
             resource_types: self.resource_types,

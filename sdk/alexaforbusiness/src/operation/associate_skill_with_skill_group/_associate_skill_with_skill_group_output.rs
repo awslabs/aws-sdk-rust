@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateSkillWithSkillGroupOutput {
 }
 impl AssociateSkillWithSkillGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSkillWithSkillGroupOutput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput).
-    pub fn builder() -> crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupOutputBuilder{
+    pub fn builder() -> crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupOutputBuilder {
         crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSkillWithSkillGroupOutput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSkillWithSkillGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateSkillWithSkillGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateSkillWithSkillGroupOutput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput
-    {
+    pub fn build(self) -> crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput {
         crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput {
             _request_id: self._request_id,
         }

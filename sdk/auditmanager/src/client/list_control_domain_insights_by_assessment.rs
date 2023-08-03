@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`control_domain_insights(Option<Vec<ControlDomainInsights>>)`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput::control_domain_insights): <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListControlDomainInsightsByAssessmentError>`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError)
-    pub fn list_control_domain_insights_by_assessment(&self) -> crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentFluentBuilder{
-        crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentFluentBuilder::new(self.handle.clone())
+    pub fn list_control_domain_insights_by_assessment(
+        &self,
+    ) -> crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentFluentBuilder {
+        crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

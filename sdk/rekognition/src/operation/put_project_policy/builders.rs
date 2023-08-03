@@ -10,10 +10,7 @@ impl PutProjectPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_project_policy::PutProjectPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_policy::PutProjectPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_policy::PutProjectPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_project_policy();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl PutProjectPolicyFluentBuilder {
         }
     }
     /// Access the PutProjectPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_project_policy::builders::PutProjectPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_project_policy::builders::PutProjectPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl PutProjectPolicyFluentBuilder {
             crate::operation::put_project_policy::PutProjectPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_policy::PutProjectPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_policy::PutProjectPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl PutProjectPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl PutProjectPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_project_policy::PutProjectPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_policy::PutProjectPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_policy::PutProjectPolicyError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl PutProjectPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_project_policy::PutProjectPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_policy::PutProjectPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_policy::PutProjectPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl PutProjectPolicyFluentBuilder {
             crate::operation::put_project_policy::PutProjectPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_policy::PutProjectPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_policy::PutProjectPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +140,12 @@ impl PutProjectPolicyFluentBuilder {
         self.inner.get_policy_name()
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
-    pub fn policy_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_revision_id(input.into());
         self
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
-    pub fn set_policy_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_revision_id(input);
         self
     }
@@ -176,18 +154,12 @@ impl PutProjectPolicyFluentBuilder {
         self.inner.get_policy_revision_id()
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

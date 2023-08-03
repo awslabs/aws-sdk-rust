@@ -29,7 +29,7 @@ impl AttachElasticLoadBalancerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachElasticLoadBalancerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder,
+    inner: crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder,
 }
 impl AttachElasticLoadBalancerFluentBuilder {
     /// Creates a new `AttachElasticLoadBalancer`.
@@ -40,7 +40,7 @@ impl AttachElasticLoadBalancerFluentBuilder {
         }
     }
     /// Access the AttachElasticLoadBalancer as a reference.
-    pub fn as_input(&self) -> &crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl AttachElasticLoadBalancerFluentBuilder {
             crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl AttachElasticLoadBalancerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl AttachElasticLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl AttachElasticLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl AttachElasticLoadBalancerFluentBuilder {
             crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn elastic_load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elastic_load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.elastic_load_balancer_name(input.into());
         self
     }
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn set_elastic_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_elastic_load_balancer_name(input);
         self
     }

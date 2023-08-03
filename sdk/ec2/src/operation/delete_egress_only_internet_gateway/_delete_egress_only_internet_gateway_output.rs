@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteEgressOnlyInternetGatewayOutput
 }
 impl DeleteEgressOnlyInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEgressOnlyInternetGatewayOutput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput).
-    pub fn builder() -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayOutputBuilder{
+    pub fn builder() -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayOutputBuilder {
         crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEgressOnlyInternetGatewayOutput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEgressOnlyInternetGatewayOutputBuilder {
     pub(crate) return_code: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl DeleteEgressOnlyInternetGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEgressOnlyInternetGatewayOutput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput
-    {
+    pub fn build(self) -> crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput {
         crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput {
-            return_code: self.return_code
-            ,
+            return_code: self.return_code,
             _request_id: self._request_id,
         }
     }

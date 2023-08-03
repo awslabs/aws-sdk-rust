@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartMessageMoveTaskOutput`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput) with field(s):
     ///   - [`task_handle(Option<String>)`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput::task_handle): <p>An identifier associated with a message movement task. You can use this identifier to cancel a specified message movement task using the <code>CancelMessageMoveTask</code> action.</p>
     /// - On failure, responds with [`SdkError<StartMessageMoveTaskError>`](crate::operation::start_message_move_task::StartMessageMoveTaskError)
-    pub fn start_message_move_task(
-        &self,
-    ) -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskFluentBuilder
-    {
-        crate::operation::start_message_move_task::builders::StartMessageMoveTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_message_move_task(&self) -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskFluentBuilder {
+        crate::operation::start_message_move_task::builders::StartMessageMoveTaskFluentBuilder::new(self.handle.clone())
     }
 }

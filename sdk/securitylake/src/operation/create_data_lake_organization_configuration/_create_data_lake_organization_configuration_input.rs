@@ -5,34 +5,26 @@
 pub struct CreateDataLakeOrganizationConfigurationInput {
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
     #[doc(hidden)]
-    pub auto_enable_new_account: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
-    >,
+    pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }
 impl CreateDataLakeOrganizationConfigurationInput {
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    pub fn auto_enable_new_account(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataLakeAutoEnableNewAccountConfiguration]> {
+    pub fn auto_enable_new_account(&self) -> ::std::option::Option<&[crate::types::DataLakeAutoEnableNewAccountConfiguration]> {
         self.auto_enable_new_account.as_deref()
     }
 }
 impl CreateDataLakeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateDataLakeOrganizationConfigurationInput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder {
         crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataLakeOrganizationConfigurationInput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataLakeOrganizationConfigurationInputBuilder {
-    pub(crate) auto_enable_new_account: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
-    >,
+    pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }
 impl CreateDataLakeOrganizationConfigurationInputBuilder {
     /// Appends an item to `auto_enable_new_account`.
@@ -40,10 +32,7 @@ impl CreateDataLakeOrganizationConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_auto_enable_new_account`](Self::set_auto_enable_new_account).
     ///
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    pub fn auto_enable_new_account(
-        mut self,
-        input: crate::types::DataLakeAutoEnableNewAccountConfiguration,
-    ) -> Self {
+    pub fn auto_enable_new_account(mut self, input: crate::types::DataLakeAutoEnableNewAccountConfiguration) -> Self {
         let mut v = self.auto_enable_new_account.unwrap_or_default();
         v.push(input);
         self.auto_enable_new_account = ::std::option::Option::Some(v);
@@ -52,28 +41,26 @@ impl CreateDataLakeOrganizationConfigurationInputBuilder {
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
     pub fn set_auto_enable_new_account(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     ) -> Self {
         self.auto_enable_new_account = input;
         self
     }
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    pub fn get_auto_enable_new_account(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
-    > {
+    pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
         &self.auto_enable_new_account
     }
     /// Consumes the builder and constructs a [`CreateDataLakeOrganizationConfigurationInput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput {
-                auto_enable_new_account: self.auto_enable_new_account
-                ,
-            }
+                auto_enable_new_account: self.auto_enable_new_account,
+            },
         )
     }
 }

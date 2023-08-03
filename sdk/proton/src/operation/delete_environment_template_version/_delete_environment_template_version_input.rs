@@ -29,16 +29,14 @@ impl DeleteEnvironmentTemplateVersionInput {
 }
 impl DeleteEnvironmentTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentTemplateVersionInput`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput).
-    pub fn builder() -> crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder {
         crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentTemplateVersionInput`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateVersionInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DeleteEnvironmentTemplateVersionInputBuilder {
 }
 impl DeleteEnvironmentTemplateVersionInputBuilder {
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>The environment template major version to delete.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment template major version to delete.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_version = input;
         self
     }
@@ -86,18 +72,12 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>The environment template minor version to delete.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment template minor version to delete.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minor_version = input;
         self
     }
@@ -106,16 +86,18 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         &self.minor_version
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentTemplateVersionInput`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput {
-                template_name: self.template_name
-                ,
-                major_version: self.major_version
-                ,
-                minor_version: self.minor_version
-                ,
-            }
+                template_name: self.template_name,
+                major_version: self.major_version,
+                minor_version: self.minor_version,
+            },
         )
     }
 }

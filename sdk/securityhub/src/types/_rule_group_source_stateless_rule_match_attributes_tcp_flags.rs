@@ -23,18 +23,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
-        crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
+        crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
     pub(crate) flags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) masks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +48,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
         self
     }
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
-    pub fn set_flags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.flags = input;
         self
     }
@@ -75,10 +68,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
         self
     }
     /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
-    pub fn set_masks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_masks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.masks = input;
         self
     }

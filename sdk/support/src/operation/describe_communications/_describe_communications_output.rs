@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeCommunicationsOutput {
 }
 impl DescribeCommunicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder {
         crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCommunicationsOutputBuilder {
     pub(crate) communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl DescribeCommunicationsOutputBuilder {
         self
     }
     /// <p>The communications for the case.</p>
-    pub fn set_communications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
-    ) -> Self {
+    pub fn set_communications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>) -> Self {
         self.communications = input;
         self
     }
     /// <p>The communications for the case.</p>
-    pub fn get_communications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Communication>> {
+    pub fn get_communications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Communication>> {
         &self.communications
     }
     /// <p>A resumption point for pagination.</p>

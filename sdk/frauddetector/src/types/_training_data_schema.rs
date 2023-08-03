@@ -30,9 +30,7 @@ impl TrainingDataSchema {
 
 /// A builder for [`TrainingDataSchema`](crate::types::TrainingDataSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataSchemaBuilder {
     pub(crate) model_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) label_schema: ::std::option::Option<crate::types::LabelSchema>,
@@ -43,27 +41,19 @@ impl TrainingDataSchemaBuilder {
     /// To override the contents of this collection use [`set_model_variables`](Self::set_model_variables).
     ///
     /// <p>The training data schema variables.</p>
-    pub fn model_variables(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.model_variables.unwrap_or_default();
         v.push(input.into());
         self.model_variables = ::std::option::Option::Some(v);
         self
     }
     /// <p>The training data schema variables.</p>
-    pub fn set_model_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_model_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.model_variables = input;
         self
     }
     /// <p>The training data schema variables.</p>
-    pub fn get_model_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_model_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.model_variables
     }
     /// <p>The label schema.</p>
@@ -72,10 +62,7 @@ impl TrainingDataSchemaBuilder {
         self
     }
     /// <p>The label schema.</p>
-    pub fn set_label_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelSchema>,
-    ) -> Self {
+    pub fn set_label_schema(mut self, input: ::std::option::Option<crate::types::LabelSchema>) -> Self {
         self.label_schema = input;
         self
     }

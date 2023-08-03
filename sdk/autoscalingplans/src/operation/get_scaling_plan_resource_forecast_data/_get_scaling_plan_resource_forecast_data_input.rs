@@ -78,16 +78,14 @@ impl GetScalingPlanResourceForecastDataInput {
 }
 impl GetScalingPlanResourceForecastDataInput {
     /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataInput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput).
-    pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder{
+    pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder {
         crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetScalingPlanResourceForecastDataInput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataInputBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
@@ -100,18 +98,12 @@ pub struct GetScalingPlanResourceForecastDataInputBuilder {
 }
 impl GetScalingPlanResourceForecastDataInputBuilder {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_plan_name = input;
         self
     }
@@ -139,10 +131,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         self
     }
     /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -170,17 +159,12 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         self
     }
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The type of forecast data to get.</p>
@@ -201,10 +185,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
     /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
     /// </ul>
-    pub fn set_forecast_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ForecastDataType>,
-    ) -> Self {
+    pub fn set_forecast_data_type(mut self, input: ::std::option::Option<crate::types::ForecastDataType>) -> Self {
         self.forecast_data_type = input;
         self
     }
@@ -224,10 +205,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         self
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -243,10 +221,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -256,26 +231,23 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataInput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput {
-                scaling_plan_name: self.scaling_plan_name
-                ,
-                scaling_plan_version: self.scaling_plan_version
-                ,
-                service_namespace: self.service_namespace
-                ,
-                resource_id: self.resource_id
-                ,
-                scalable_dimension: self.scalable_dimension
-                ,
-                forecast_data_type: self.forecast_data_type
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-            }
+                scaling_plan_name: self.scaling_plan_name,
+                scaling_plan_version: self.scaling_plan_version,
+                service_namespace: self.service_namespace,
+                resource_id: self.resource_id,
+                scalable_dimension: self.scalable_dimension,
+                forecast_data_type: self.forecast_data_type,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            },
         )
     }
 }

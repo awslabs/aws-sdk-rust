@@ -30,16 +30,14 @@ impl PutAlertManagerDefinitionInput {
 }
 impl PutAlertManagerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`PutAlertManagerDefinitionInput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput).
-    pub fn builder() -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionInputBuilder {
         crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAlertManagerDefinitionInput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -95,12 +93,10 @@ impl PutAlertManagerDefinitionInputBuilder {
         crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput {
-                workspace_id: self.workspace_id,
-                data: self.data,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput {
+            workspace_id: self.workspace_id,
+            data: self.data,
+            client_token: self.client_token,
+        })
     }
 }

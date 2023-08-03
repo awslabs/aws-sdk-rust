@@ -22,16 +22,15 @@ impl ::aws_http::request_id::RequestId for AcceptDomainTransferFromAnotherAwsAcc
 }
 impl AcceptDomainTransferFromAnotherAwsAccountOutput {
     /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput).
-    pub fn builder() -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountOutputBuilder {
         crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,10 +60,9 @@ impl AcceptDomainTransferFromAnotherAwsAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput).
-    pub fn build(self) -> crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput{
+    pub fn build(self) -> crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput {
         crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput {
-            operation_id: self.operation_id
-            ,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPolicyGenerationsOutput {
 }
 impl ListPolicyGenerationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyGenerationsOutput`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder {
         crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyGenerationsOutput`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyGenerationsOutputBuilder {
-    pub(crate) policy_generations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>,
+    pub(crate) policy_generations: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListPolicyGenerationsOutputBuilder {
         self
     }
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub fn set_policy_generations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>,
-    ) -> Self {
+    pub fn set_policy_generations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>) -> Self {
         self.policy_generations = input;
         self
     }
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub fn get_policy_generations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
+    pub fn get_policy_generations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
         &self.policy_generations
     }
     /// <p>A token used for pagination of results returned.</p>

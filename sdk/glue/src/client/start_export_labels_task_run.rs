@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartExportLabelsTaskRunOutput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput) with field(s):
     ///   - [`task_run_id(Option<String>)`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>
     /// - On failure, responds with [`SdkError<StartExportLabelsTaskRunError>`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError)
-    pub fn start_export_labels_task_run(&self) -> crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunFluentBuilder{
+    pub fn start_export_labels_task_run(&self) -> crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunFluentBuilder {
         crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunFluentBuilder::new(self.handle.clone())
     }
 }

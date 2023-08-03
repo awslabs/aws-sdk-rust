@@ -29,9 +29,7 @@ impl GetSceneInput {
 
 /// A builder for [`GetSceneInput`](crate::operation::get_scene::GetSceneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSceneInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetSceneInputBuilder {
         &self.scene_id
     }
     /// Consumes the builder and constructs a [`GetSceneInput`](crate::operation::get_scene::GetSceneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_scene::GetSceneInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scene::GetSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

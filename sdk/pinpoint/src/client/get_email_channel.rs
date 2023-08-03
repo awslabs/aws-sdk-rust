@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetEmailChannelOutput`](crate::operation::get_email_channel::GetEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::operation::get_email_channel::GetEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetEmailChannelError>`](crate::operation::get_email_channel::GetEmailChannelError)
-    pub fn get_email_channel(
-        &self,
-    ) -> crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder {
-        crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_email_channel(&self) -> crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder {
+        crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder::new(self.handle.clone())
     }
 }

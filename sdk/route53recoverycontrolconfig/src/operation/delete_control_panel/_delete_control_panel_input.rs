@@ -15,34 +15,25 @@ impl DeleteControlPanelInput {
 }
 impl DeleteControlPanelInput {
     /// Creates a new builder-style object to manufacture [`DeleteControlPanelInput`](crate::operation::delete_control_panel::DeleteControlPanelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_control_panel::builders::DeleteControlPanelInputBuilder {
+    pub fn builder() -> crate::operation::delete_control_panel::builders::DeleteControlPanelInputBuilder {
         crate::operation::delete_control_panel::builders::DeleteControlPanelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteControlPanelInput`](crate::operation::delete_control_panel::DeleteControlPanelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteControlPanelInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteControlPanelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteControlPanelInput`](crate::operation::delete_control_panel::DeleteControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_control_panel::DeleteControlPanelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_control_panel::DeleteControlPanelInput {
-                control_panel_arn: self.control_panel_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_control_panel::DeleteControlPanelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_control_panel::DeleteControlPanelInput {
+            control_panel_arn: self.control_panel_arn,
+        })
     }
 }

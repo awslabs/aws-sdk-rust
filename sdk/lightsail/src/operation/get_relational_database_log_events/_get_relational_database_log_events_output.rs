@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseLogEventsOutput 
 }
 impl GetRelationalDatabaseLogEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsOutput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput).
-    pub fn builder() -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsOutputBuilder {
         crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseLogEventsOutput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogEventsOutputBuilder {
     pub(crate) resource_log_events: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
     pub(crate) next_backward_token: ::std::option::Option<::std::string::String>,
@@ -64,32 +62,21 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
         self
     }
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub fn set_resource_log_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
-    ) -> Self {
+    pub fn set_resource_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>) -> Self {
         self.resource_log_events = input;
         self
     }
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub fn get_resource_log_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEvent>> {
+    pub fn get_resource_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEvent>> {
         &self.resource_log_events
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
-    pub fn next_backward_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_backward_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_backward_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
-    pub fn set_next_backward_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_backward_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_backward_token = input;
         self
     }
@@ -98,18 +85,12 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
         &self.next_backward_token
     }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
-    pub fn next_forward_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_forward_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_forward_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
-    pub fn set_next_forward_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_forward_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_forward_token = input;
         self
     }
@@ -127,10 +108,7 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogEventsOutput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput
-    {
+    pub fn build(self) -> crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput {
         crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput {
             resource_log_events: self.resource_log_events,
             next_backward_token: self.next_backward_token,

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`databases(Option<Vec<String>>)`](crate::operation::list_databases::ListDatabasesOutput::databases): <p>The names of databases. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_databases::ListDatabasesOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::operation::list_databases::ListDatabasesError)
-    pub fn list_databases(
-        &self,
-    ) -> crate::operation::list_databases::builders::ListDatabasesFluentBuilder {
-        crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_databases(&self) -> crate::operation::list_databases::builders::ListDatabasesFluentBuilder {
+        crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput) with field(s):
     ///   - [`public_key_list(Option<PublicKeyList>)`](crate::operation::list_public_keys::ListPublicKeysOutput::public_key_list): <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
     /// - On failure, responds with [`SdkError<ListPublicKeysError>`](crate::operation::list_public_keys::ListPublicKeysError)
-    pub fn list_public_keys(
-        &self,
-    ) -> crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder {
-        crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_public_keys(&self) -> crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder {
+        crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder::new(self.handle.clone())
     }
 }

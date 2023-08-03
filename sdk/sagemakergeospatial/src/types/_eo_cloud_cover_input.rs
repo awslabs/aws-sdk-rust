@@ -30,9 +30,7 @@ impl EoCloudCoverInput {
 
 /// A builder for [`EoCloudCoverInput`](crate::types::EoCloudCoverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EoCloudCoverInputBuilder {
     pub(crate) lower_bound: ::std::option::Option<f32>,
     pub(crate) upper_bound: ::std::option::Option<f32>,

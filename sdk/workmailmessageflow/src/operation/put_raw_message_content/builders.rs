@@ -40,10 +40,7 @@ impl PutRawMessageContentFluentBuilder {
         }
     }
     /// Access the PutRawMessageContent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl PutRawMessageContentFluentBuilder {
             crate::operation::put_raw_message_content::PutRawMessageContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_raw_message_content::PutRawMessageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_raw_message_content::PutRawMessageContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl PutRawMessageContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl PutRawMessageContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_raw_message_content::PutRawMessageContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_raw_message_content::PutRawMessageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_raw_message_content::PutRawMessageContentError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl PutRawMessageContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_raw_message_content::PutRawMessageContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_raw_message_content::PutRawMessageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_raw_message_content::PutRawMessageContentError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl PutRawMessageContentFluentBuilder {
             crate::operation::put_raw_message_content::PutRawMessageContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_raw_message_content::PutRawMessageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_raw_message_content::PutRawMessageContentError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +132,7 @@ impl PutRawMessageContentFluentBuilder {
         self
     }
     /// <p>Describes the raw message content of the updated email message.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::RawMessageContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::RawMessageContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }

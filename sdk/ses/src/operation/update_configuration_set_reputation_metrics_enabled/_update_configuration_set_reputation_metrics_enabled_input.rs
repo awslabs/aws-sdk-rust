@@ -23,34 +23,28 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
 }
 impl UpdateConfigurationSetReputationMetricsEnabledInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput).
-    pub fn builder() -> crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledInputBuilder
+    {
         crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
     /// <p>The name of the configuration set that you want to update.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to update.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -73,15 +67,17 @@ impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                enabled: self.enabled
-                    .unwrap_or_default()
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                enabled: self.enabled.unwrap_or_default(),
+            },
         )
     }
 }

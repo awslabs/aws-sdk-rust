@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`targets(Vec<TargetDescription>)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<TargetDescription>>)`](crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::set_targets): <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
     /// - On success, responds with [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput)
     /// - On failure, responds with [`SdkError<DeregisterTargetsError>`](crate::operation::deregister_targets::DeregisterTargetsError)
-    pub fn deregister_targets(
-        &self,
-    ) -> crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder {
-        crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_targets(&self) -> crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder {
+        crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::new(self.handle.clone())
     }
 }

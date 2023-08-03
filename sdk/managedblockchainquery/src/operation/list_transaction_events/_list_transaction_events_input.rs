@@ -42,18 +42,14 @@ impl ListTransactionEventsInput {
 }
 impl ListTransactionEventsInput {
     /// Creates a new builder-style object to manufacture [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
-    pub fn builder(
-    ) -> crate::operation::list_transaction_events::builders::ListTransactionEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_transaction_events::builders::ListTransactionEventsInputBuilder {
         crate::operation::list_transaction_events::builders::ListTransactionEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionEventsInputBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
@@ -62,18 +58,12 @@ pub struct ListTransactionEventsInputBuilder {
 }
 impl ListTransactionEventsInputBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn set_transaction_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
@@ -135,17 +125,13 @@ impl ListTransactionEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_transaction_events::ListTransactionEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_transaction_events::ListTransactionEventsInput {
-                transaction_hash: self.transaction_hash,
-                network: self.network,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsInput {
+            transaction_hash: self.transaction_hash,
+            network: self.network,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_world::DescribeWorldOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world.</p>
     ///   - [`world_description_body(Option<String>)`](crate::operation::describe_world::DescribeWorldOutput::world_description_body): <p>Returns the JSON formatted string that describes the contents of your world.</p>
     /// - On failure, responds with [`SdkError<DescribeWorldError>`](crate::operation::describe_world::DescribeWorldError)
-    pub fn describe_world(
-        &self,
-    ) -> crate::operation::describe_world::builders::DescribeWorldFluentBuilder {
-        crate::operation::describe_world::builders::DescribeWorldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_world(&self) -> crate::operation::describe_world::builders::DescribeWorldFluentBuilder {
+        crate::operation::describe_world::builders::DescribeWorldFluentBuilder::new(self.handle.clone())
     }
 }

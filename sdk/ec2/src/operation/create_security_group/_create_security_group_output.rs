@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateSecurityGroupOutput {
 }
 impl CreateSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityGroupOutput`](crate::operation::create_security_group::CreateSecurityGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_security_group::builders::CreateSecurityGroupOutputBuilder {
-        crate::operation::create_security_group::builders::CreateSecurityGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_security_group::builders::CreateSecurityGroupOutputBuilder {
+        crate::operation::create_security_group::builders::CreateSecurityGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSecurityGroupOutput`](crate::operation::create_security_group::CreateSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSecurityGroupOutputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -72,10 +68,7 @@ impl CreateSecurityGroupOutputBuilder {
         self
     }
     /// <p>The tags assigned to the security group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

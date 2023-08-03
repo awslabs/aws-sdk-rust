@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`offering_set(Option<Vec<HostOffering>>)`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput::offering_set): <p>Information about the offerings.</p>
     /// - On failure, responds with [`SdkError<DescribeHostReservationOfferingsError>`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError)
-    pub fn describe_host_reservation_offerings(&self) -> crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsFluentBuilder{
+    pub fn describe_host_reservation_offerings(
+        &self,
+    ) -> crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsFluentBuilder {
         crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

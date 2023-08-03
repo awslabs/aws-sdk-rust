@@ -51,9 +51,7 @@ impl RuleMetadata {
 
 /// A builder for [`RuleMetadata`](crate::types::RuleMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleMetadataBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl RuleMetadataBuilder {
         &self.rule_name
     }
     /// <p>A short description of the rule.</p>
-    pub fn short_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short description of the rule.</p>
-    pub fn set_short_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_description = input;
         self
     }
@@ -111,18 +103,12 @@ impl RuleMetadataBuilder {
         &self.short_description
     }
     /// <p>A long description of the rule.</p>
-    pub fn long_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn long_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.long_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A long description of the rule.</p>
-    pub fn set_long_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.long_description = input;
         self
     }
@@ -142,10 +128,7 @@ impl RuleMetadataBuilder {
         self
     }
     /// <p>Tags that are associated with the rule.</p>
-    pub fn set_rule_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule_tags = input;
         self
     }

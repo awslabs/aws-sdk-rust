@@ -38,9 +38,7 @@ impl DeleteCACertificateFluentBuilder {
         }
     }
     /// Access the DeleteCACertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_ca_certificate::builders::DeleteCaCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_ca_certificate::builders::DeleteCaCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteCACertificateFluentBuilder {
             crate::operation::delete_ca_certificate::DeleteCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ca_certificate::DeleteCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ca_certificate::DeleteCACertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteCACertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ca_certificate::DeleteCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ca_certificate::DeleteCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ca_certificate::DeleteCACertificateError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ca_certificate::DeleteCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ca_certificate::DeleteCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ca_certificate::DeleteCACertificateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeleteCACertificateFluentBuilder {
             crate::operation::delete_ca_certificate::DeleteCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ca_certificate::DeleteCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ca_certificate::DeleteCACertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

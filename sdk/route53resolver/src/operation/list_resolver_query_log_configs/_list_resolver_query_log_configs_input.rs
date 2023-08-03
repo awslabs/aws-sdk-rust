@@ -103,16 +103,14 @@ impl ListResolverQueryLogConfigsInput {
 }
 impl ListResolverQueryLogConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsInput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsInput).
-    pub fn builder() -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder {
         crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverQueryLogConfigsInput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -168,10 +166,7 @@ impl ListResolverQueryLogConfigsInputBuilder {
     /// <p>An optional specification to return a subset of query logging configurations.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -297,14 +292,12 @@ impl ListResolverQueryLogConfigsInputBuilder {
         crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

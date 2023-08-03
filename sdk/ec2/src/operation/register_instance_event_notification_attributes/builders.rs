@@ -5,16 +5,16 @@ pub use crate::operation::register_instance_event_notification_attributes::_regi
 
 impl RegisterInstanceEventNotificationAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.register_instance_event_notification_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterInstanceEventNotificationAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder,
+    inner: crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder,
 }
 impl RegisterInstanceEventNotificationAttributesFluentBuilder {
     /// Creates a new `RegisterInstanceEventNotificationAttributes`.
@@ -38,15 +38,24 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
         }
     }
     /// Access the RegisterInstanceEventNotificationAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +64,19 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +94,30 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -110,25 +135,17 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>Information about the tag keys to register.</p>
-    pub fn instance_tag_attribute(
-        mut self,
-        input: crate::types::RegisterInstanceTagAttributeRequest,
-    ) -> Self {
+    pub fn instance_tag_attribute(mut self, input: crate::types::RegisterInstanceTagAttributeRequest) -> Self {
         self.inner = self.inner.instance_tag_attribute(input);
         self
     }
     /// <p>Information about the tag keys to register.</p>
-    pub fn set_instance_tag_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
-    ) -> Self {
+    pub fn set_instance_tag_attribute(mut self, input: ::std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>) -> Self {
         self.inner = self.inner.set_instance_tag_attribute(input);
         self
     }
     /// <p>Information about the tag keys to register.</p>
-    pub fn get_instance_tag_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegisterInstanceTagAttributeRequest> {
+    pub fn get_instance_tag_attribute(&self) -> &::std::option::Option<crate::types::RegisterInstanceTagAttributeRequest> {
         self.inner.get_instance_tag_attribute()
     }
 }

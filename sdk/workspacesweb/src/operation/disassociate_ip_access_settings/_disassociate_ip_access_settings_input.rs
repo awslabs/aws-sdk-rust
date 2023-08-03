@@ -15,16 +15,14 @@ impl DisassociateIpAccessSettingsInput {
 }
 impl DisassociateIpAccessSettingsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpAccessSettingsInput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput).
-    pub fn builder() -> crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder {
         crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIpAccessSettingsInput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIpAccessSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DisassociateIpAccessSettingsInputBuilder {
         crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput {
-                portal_arn: self.portal_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput {
+            portal_arn: self.portal_arn,
+        })
     }
 }

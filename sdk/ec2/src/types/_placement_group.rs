@@ -72,9 +72,7 @@ impl PlacementGroup {
 
 /// A builder for [`PlacementGroup`](crate::types::PlacementGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementGroupBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::PlacementGroupState>,
@@ -106,10 +104,7 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>The state of the placement group.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementGroupState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::PlacementGroupState>) -> Self {
         self.state = input;
         self
     }
@@ -123,10 +118,7 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>The placement strategy.</p>
-    pub fn set_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementStrategy>,
-    ) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::PlacementStrategy>) -> Self {
         self.strategy = input;
         self
     }
@@ -174,10 +166,7 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>Any tags applied to the placement group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -205,10 +194,7 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
-    pub fn set_spread_level(
-        mut self,
-        input: ::std::option::Option<crate::types::SpreadLevel>,
-    ) -> Self {
+    pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
         self.spread_level = input;
         self
     }

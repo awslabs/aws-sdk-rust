@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_archive_rule::builders::UpdateArchiveRuleFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_archive_rule::builders::UpdateArchiveRuleFluentBuilder::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`UpdateArchiveRuleOutput`](crate::operation::update_archive_rule::UpdateArchiveRuleOutput)
     /// - On failure, responds with [`SdkError<UpdateArchiveRuleError>`](crate::operation::update_archive_rule::UpdateArchiveRuleError)
-    pub fn update_archive_rule(
-        &self,
-    ) -> crate::operation::update_archive_rule::builders::UpdateArchiveRuleFluentBuilder {
-        crate::operation::update_archive_rule::builders::UpdateArchiveRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_archive_rule(&self) -> crate::operation::update_archive_rule::builders::UpdateArchiveRuleFluentBuilder {
+        crate::operation::update_archive_rule::builders::UpdateArchiveRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for CountPendingDecisionTasksOutput {
 }
 impl CountPendingDecisionTasksOutput {
     /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput).
-    pub fn builder() -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksOutputBuilder{
+    pub fn builder() -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksOutputBuilder {
         crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`CountPendingDecisionTasksOutput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountPendingDecisionTasksOutputBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) truncated: ::std::option::Option<bool>,
@@ -83,9 +81,7 @@ impl CountPendingDecisionTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CountPendingDecisionTasksOutput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput {
+    pub fn build(self) -> crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput {
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput {
             count: self.count.unwrap_or_default(),
             truncated: self.truncated.unwrap_or_default(),

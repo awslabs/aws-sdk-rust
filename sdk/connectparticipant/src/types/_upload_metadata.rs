@@ -12,9 +12,7 @@ pub struct UploadMetadata {
     pub url_expiry: ::std::option::Option<::std::string::String>,
     /// <p>The headers to be provided while uploading the file to the URL.</p>
     #[doc(hidden)]
-    pub headers_to_include: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UploadMetadata {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
@@ -26,11 +24,7 @@ impl UploadMetadata {
         self.url_expiry.as_deref()
     }
     /// <p>The headers to be provided while uploading the file to the URL.</p>
-    pub fn headers_to_include(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn headers_to_include(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers_to_include.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl UploadMetadata {
 
 /// A builder for [`UploadMetadata`](crate::types::UploadMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadMetadataBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::std::string::String>,
-    pub(crate) headers_to_include: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UploadMetadataBuilder {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
@@ -100,19 +90,13 @@ impl UploadMetadataBuilder {
     /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn set_headers_to_include(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.headers_to_include = input;
         self
     }
     /// <p>The headers to be provided while uploading the file to the URL.</p>
-    pub fn get_headers_to_include(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_headers_to_include(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers_to_include
     }
     /// Consumes the builder and constructs a [`UploadMetadata`](crate::types::UploadMetadata).

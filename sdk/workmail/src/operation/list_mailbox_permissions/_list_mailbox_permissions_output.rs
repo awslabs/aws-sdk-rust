@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMailboxPermissionsOutput {
 }
 impl ListMailboxPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListMailboxPermissionsOutput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsOutputBuilder {
         crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMailboxPermissionsOutput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMailboxPermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListMailboxPermissionsOutputBuilder {
         self
     }
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>

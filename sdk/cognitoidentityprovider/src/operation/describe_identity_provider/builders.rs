@@ -26,7 +26,7 @@ impl DescribeIdentityProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder,
+    inner: crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder,
 }
 impl DescribeIdentityProviderFluentBuilder {
     /// Creates a new `DescribeIdentityProvider`.
@@ -37,10 +37,7 @@ impl DescribeIdentityProviderFluentBuilder {
         }
     }
     /// Access the DescribeIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeIdentityProviderFluentBuilder {
             crate::operation::describe_identity_provider::DescribeIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_provider::DescribeIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_provider::DescribeIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_provider::DescribeIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_provider::DescribeIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_provider::DescribeIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_provider::DescribeIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_provider::DescribeIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_provider::DescribeIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeIdentityProviderFluentBuilder {
             crate::operation::describe_identity_provider::DescribeIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_provider::DescribeIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_provider::DescribeIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DescribeIdentityProviderFluentBuilder {
         self.inner.get_user_pool_id()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }

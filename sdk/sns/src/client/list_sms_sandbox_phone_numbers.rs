@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`phone_numbers(Option<Vec<SmsSandboxPhoneNumber>>)`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput::phone_numbers): <p>A list of the calling account's pending and verified phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of records are available.</p>
     /// - On failure, responds with [`SdkError<ListSMSSandboxPhoneNumbersError>`](crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError)
-    pub fn list_sms_sandbox_phone_numbers(&self) -> crate::operation::list_sms_sandbox_phone_numbers::builders::ListSMSSandboxPhoneNumbersFluentBuilder{
+    pub fn list_sms_sandbox_phone_numbers(
+        &self,
+    ) -> crate::operation::list_sms_sandbox_phone_numbers::builders::ListSMSSandboxPhoneNumbersFluentBuilder {
         crate::operation::list_sms_sandbox_phone_numbers::builders::ListSMSSandboxPhoneNumbersFluentBuilder::new(self.handle.clone())
     }
 }

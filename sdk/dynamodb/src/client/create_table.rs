@@ -18,9 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTableOutput`](crate::operation::create_table::CreateTableOutput) with field(s):
     ///   - [`table_description(Option<TableDescription>)`](crate::operation::create_table::CreateTableOutput::table_description): <p>Represents the properties of the table.</p>
     /// - On failure, responds with [`SdkError<CreateTableError>`](crate::operation::create_table::CreateTableError)
-    pub fn create_table(
-        &self,
-    ) -> crate::operation::create_table::builders::CreateTableFluentBuilder {
+    pub fn create_table(&self) -> crate::operation::create_table::builders::CreateTableFluentBuilder {
         crate::operation::create_table::builders::CreateTableFluentBuilder::new(self.handle.clone())
     }
 }

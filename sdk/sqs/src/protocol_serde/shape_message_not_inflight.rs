@@ -3,10 +3,7 @@
 pub fn de_message_not_inflight_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::MessageNotInflightBuilder,
-) -> Result<
-    crate::types::error::builders::MessageNotInflightBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::MessageNotInflightBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

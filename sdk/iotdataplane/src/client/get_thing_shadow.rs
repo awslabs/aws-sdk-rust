@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetThingShadowOutput`](crate::operation::get_thing_shadow::GetThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::operation::get_thing_shadow::GetThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetThingShadowError>`](crate::operation::get_thing_shadow::GetThingShadowError)
-    pub fn get_thing_shadow(
-        &self,
-    ) -> crate::operation::get_thing_shadow::builders::GetThingShadowFluentBuilder {
-        crate::operation::get_thing_shadow::builders::GetThingShadowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_thing_shadow(&self) -> crate::operation::get_thing_shadow::builders::GetThingShadowFluentBuilder {
+        crate::operation::get_thing_shadow::builders::GetThingShadowFluentBuilder::new(self.handle.clone())
     }
 }

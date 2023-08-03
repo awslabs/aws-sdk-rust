@@ -12,8 +12,7 @@ pub struct Vp8Settings {
     pub framerate_control: ::std::option::Option<crate::types::Vp8FramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     #[doc(hidden)]
-    pub framerate_conversion_algorithm:
-        ::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm>,
+    pub framerate_conversion_algorithm: ::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
@@ -55,9 +54,7 @@ impl Vp8Settings {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Vp8FramerateConversionAlgorithm> {
+    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<&crate::types::Vp8FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -93,9 +90,7 @@ impl Vp8Settings {
         self.par_numerator
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
-    pub fn quality_tuning_level(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Vp8QualityTuningLevel> {
+    pub fn quality_tuning_level(&self) -> ::std::option::Option<&crate::types::Vp8QualityTuningLevel> {
         self.quality_tuning_level.as_ref()
     }
     /// With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
@@ -112,14 +107,11 @@ impl Vp8Settings {
 
 /// A builder for [`Vp8Settings`](crate::types::Vp8Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Vp8SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::Vp8FramerateControl>,
-    pub(crate) framerate_conversion_algorithm:
-        ::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm>,
+    pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm>,
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,
     pub(crate) gop_size: ::std::option::Option<f64>,
@@ -152,39 +144,26 @@ impl Vp8SettingsBuilder {
         self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn set_framerate_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Vp8FramerateControl>,
-    ) -> Self {
+    pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::Vp8FramerateControl>) -> Self {
         self.framerate_control = input;
         self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn get_framerate_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Vp8FramerateControl> {
+    pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::Vp8FramerateControl> {
         &self.framerate_control
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(
-        mut self,
-        input: crate::types::Vp8FramerateConversionAlgorithm,
-    ) -> Self {
+    pub fn framerate_conversion_algorithm(mut self, input: crate::types::Vp8FramerateConversionAlgorithm) -> Self {
         self.framerate_conversion_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn set_framerate_conversion_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm>,
-    ) -> Self {
+    pub fn set_framerate_conversion_algorithm(mut self, input: ::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm>) -> Self {
         self.framerate_conversion_algorithm = input;
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn get_framerate_conversion_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm> {
+    pub fn get_framerate_conversion_algorithm(&self) -> &::std::option::Option<crate::types::Vp8FramerateConversionAlgorithm> {
         &self.framerate_conversion_algorithm
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -263,10 +242,7 @@ impl Vp8SettingsBuilder {
         self
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
-    pub fn set_par_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Vp8ParControl>,
-    ) -> Self {
+    pub fn set_par_control(mut self, input: ::std::option::Option<crate::types::Vp8ParControl>) -> Self {
         self.par_control = input;
         self
     }
@@ -308,17 +284,12 @@ impl Vp8SettingsBuilder {
         self
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
-    pub fn set_quality_tuning_level(
-        mut self,
-        input: ::std::option::Option<crate::types::Vp8QualityTuningLevel>,
-    ) -> Self {
+    pub fn set_quality_tuning_level(mut self, input: ::std::option::Option<crate::types::Vp8QualityTuningLevel>) -> Self {
         self.quality_tuning_level = input;
         self
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
-    pub fn get_quality_tuning_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::Vp8QualityTuningLevel> {
+    pub fn get_quality_tuning_level(&self) -> &::std::option::Option<crate::types::Vp8QualityTuningLevel> {
         &self.quality_tuning_level
     }
     /// With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
@@ -327,17 +298,12 @@ impl Vp8SettingsBuilder {
         self
     }
     /// With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
-    pub fn set_rate_control_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Vp8RateControlMode>,
-    ) -> Self {
+    pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::Vp8RateControlMode>) -> Self {
         self.rate_control_mode = input;
         self
     }
     /// With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
-    pub fn get_rate_control_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::Vp8RateControlMode> {
+    pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Vp8RateControlMode> {
         &self.rate_control_mode
     }
     /// Consumes the builder and constructs a [`Vp8Settings`](crate::types::Vp8Settings).

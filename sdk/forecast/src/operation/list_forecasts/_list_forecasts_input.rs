@@ -52,9 +52,7 @@ impl ListForecastsInput {
 
 /// A builder for [`ListForecastsInput`](crate::operation::list_forecasts::ListForecastsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListForecastsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -117,10 +115,7 @@ impl ListForecastsInputBuilder {
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -139,10 +134,7 @@ impl ListForecastsInputBuilder {
     /// Consumes the builder and constructs a [`ListForecastsInput`](crate::operation::list_forecasts::ListForecastsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_forecasts::ListForecastsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_forecasts::ListForecastsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_forecasts::ListForecastsInput {
             next_token: self.next_token,
             max_results: self.max_results,

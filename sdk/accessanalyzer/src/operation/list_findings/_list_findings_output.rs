@@ -36,9 +36,7 @@ impl ListFindingsOutput {
 
 /// A builder for [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListFindingsOutputBuilder {
         self
     }
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>) -> Self {
         self.findings = input;
         self
     }
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>> {
         &self.findings
     }
     /// <p>A token used for pagination of results returned.</p>

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVolumeOutput`](crate::operation::update_volume::UpdateVolumeOutput) with field(s):
     ///   - [`volume(Option<Volume>)`](crate::operation::update_volume::UpdateVolumeOutput::volume): <p>A description of the volume just updated. Returned after a successful <code>UpdateVolume</code> API operation.</p>
     /// - On failure, responds with [`SdkError<UpdateVolumeError>`](crate::operation::update_volume::UpdateVolumeError)
-    pub fn update_volume(
-        &self,
-    ) -> crate::operation::update_volume::builders::UpdateVolumeFluentBuilder {
-        crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_volume(&self) -> crate::operation::update_volume::builders::UpdateVolumeFluentBuilder {
+        crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::new(self.handle.clone())
     }
 }

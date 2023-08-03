@@ -37,9 +37,7 @@ impl DeleteSchemaVersionFluentBuilder {
         }
     }
     /// Access the DeleteSchemaVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteSchemaVersionFluentBuilder {
             crate::operation::delete_schema_version::DeleteSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_schema_version::DeleteSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_schema_version::DeleteSchemaVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteSchemaVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_schema_version::DeleteSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_schema_version::DeleteSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_schema_version::DeleteSchemaVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_schema_version::DeleteSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_schema_version::DeleteSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_schema_version::DeleteSchemaVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteSchemaVersionFluentBuilder {
             crate::operation::delete_schema_version::DeleteSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_schema_version::DeleteSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_schema_version::DeleteSchemaVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
@@ -157,18 +138,12 @@ impl DeleteSchemaVersionFluentBuilder {
         self.inner.get_schema_name()
     }
     /// The version number of the schema
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version(input.into());
         self
     }
     /// The version number of the schema
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version(input);
         self
     }

@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`model_version_details(Option<Vec<ModelVersionDetail>>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::model_version_details): <p>The model version details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::next_token): <p>The next token.</p>
     /// - On failure, responds with [`SdkError<DescribeModelVersionsError>`](crate::operation::describe_model_versions::DescribeModelVersionsError)
-    pub fn describe_model_versions(
-        &self,
-    ) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder
-    {
-        crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_model_versions(&self) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder {
+        crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::new(self.handle.clone())
     }
 }

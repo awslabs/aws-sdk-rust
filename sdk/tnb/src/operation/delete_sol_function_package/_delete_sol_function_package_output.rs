@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSolFunctionPackageOutput {
 }
 impl DeleteSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSolFunctionPackageOutput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput).
-    pub fn builder() -> crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageOutputBuilder{
+    pub fn builder() -> crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageOutputBuilder {
         crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSolFunctionPackageOutput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolFunctionPackageOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSolFunctionPackageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSolFunctionPackageOutput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput {
+    pub fn build(self) -> crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput {
         crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput {
             _request_id: self._request_id,
         }

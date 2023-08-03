@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStageOutput`](crate::operation::update_stage::UpdateStageOutput) with field(s):
     ///   - [`stage(Option<StageDetails>)`](crate::operation::update_stage::UpdateStageOutput::stage): <p>Properties that provide details of the updated stage.</p>
     /// - On failure, responds with [`SdkError<UpdateStageError>`](crate::operation::update_stage::UpdateStageError)
-    pub fn update_stage(
-        &self,
-    ) -> crate::operation::update_stage::builders::UpdateStageFluentBuilder {
+    pub fn update_stage(&self) -> crate::operation::update_stage::builders::UpdateStageFluentBuilder {
         crate::operation::update_stage::builders::UpdateStageFluentBuilder::new(self.handle.clone())
     }
 }

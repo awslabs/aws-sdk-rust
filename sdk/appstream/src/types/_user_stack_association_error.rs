@@ -16,15 +16,11 @@ pub struct UserStackAssociationError {
 }
 impl UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
-    pub fn user_stack_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UserStackAssociation> {
+    pub fn user_stack_association(&self) -> ::std::option::Option<&crate::types::UserStackAssociation> {
         self.user_stack_association.as_ref()
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UserStackAssociationErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::UserStackAssociationErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
@@ -41,9 +37,7 @@ impl UserStackAssociationError {
 
 /// A builder for [`UserStackAssociationError`](crate::types::UserStackAssociationError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserStackAssociationErrorBuilder {
     pub(crate) user_stack_association: ::std::option::Option<crate::types::UserStackAssociation>,
     pub(crate) error_code: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,
@@ -56,17 +50,12 @@ impl UserStackAssociationErrorBuilder {
         self
     }
     /// <p>Information about the user and associated stack.</p>
-    pub fn set_user_stack_association(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStackAssociation>,
-    ) -> Self {
+    pub fn set_user_stack_association(mut self, input: ::std::option::Option<crate::types::UserStackAssociation>) -> Self {
         self.user_stack_association = input;
         self
     }
     /// <p>Information about the user and associated stack.</p>
-    pub fn get_user_stack_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserStackAssociation> {
+    pub fn get_user_stack_association(&self) -> &::std::option::Option<crate::types::UserStackAssociation> {
         &self.user_stack_association
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
@@ -75,32 +64,21 @@ impl UserStackAssociationErrorBuilder {
         self
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UserStackAssociationErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn get_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserStackAssociationErrorCode> {
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UserStackAssociationErrorCode> {
         &self.error_code
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

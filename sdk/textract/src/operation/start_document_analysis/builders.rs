@@ -40,10 +40,7 @@ impl StartDocumentAnalysisFluentBuilder {
         }
     }
     /// Access the StartDocumentAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl StartDocumentAnalysisFluentBuilder {
             crate::operation::start_document_analysis::StartDocumentAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_analysis::StartDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_analysis::StartDocumentAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl StartDocumentAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl StartDocumentAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_analysis::StartDocumentAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_analysis::StartDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_analysis::StartDocumentAnalysisError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl StartDocumentAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_analysis::StartDocumentAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_analysis::StartDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_analysis::StartDocumentAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl StartDocumentAnalysisFluentBuilder {
             crate::operation::start_document_analysis::StartDocumentAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_document_analysis::StartDocumentAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_analysis::StartDocumentAnalysisError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +118,7 @@ impl StartDocumentAnalysisFluentBuilder {
         self
     }
     /// <p>The location of the document to be processed.</p>
-    pub fn set_document_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
+    pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
         self.inner = self.inner.set_document_location(input);
         self
     }
@@ -153,32 +136,21 @@ impl StartDocumentAnalysisFluentBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn set_feature_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
-    ) -> Self {
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.inner = self.inner.set_feature_types(input);
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn get_feature_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         self.inner.get_feature_types()
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -206,17 +178,12 @@ impl StartDocumentAnalysisFluentBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
@@ -225,10 +192,7 @@ impl StartDocumentAnalysisFluentBuilder {
         self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -256,10 +220,7 @@ impl StartDocumentAnalysisFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_queries_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueriesConfig>,
-    ) -> Self {
+    pub fn set_queries_config(mut self, input: ::std::option::Option<crate::types::QueriesConfig>) -> Self {
         self.inner = self.inner.set_queries_config(input);
         self
     }

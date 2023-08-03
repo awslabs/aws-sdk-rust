@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput) with field(s):
     ///   - [`product_subscription_arn(Option<String>)`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput::product_subscription_arn): <p>The ARN of your subscription to the product to enable integrations for.</p>
     /// - On failure, responds with [`SdkError<EnableImportFindingsForProductError>`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError)
-    pub fn enable_import_findings_for_product(&self) -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder{
+    pub fn enable_import_findings_for_product(
+        &self,
+    ) -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder {
         crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder::new(self.handle.clone())
     }
 }

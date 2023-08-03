@@ -43,9 +43,7 @@ impl ListLedgersOutput {
 
 /// A builder for [`ListLedgersOutput`](crate::operation::list_ledgers::ListLedgersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLedgersOutputBuilder {
     pub(crate) ledgers: ::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,17 +62,12 @@ impl ListLedgersOutputBuilder {
         self
     }
     /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn set_ledgers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>>,
-    ) -> Self {
+    pub fn set_ledgers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>>) -> Self {
         self.ledgers = input;
         self
     }
     /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn get_ledgers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>> {
+    pub fn get_ledgers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>> {
         &self.ledgers
     }
     /// <p>A pagination token, indicating whether there are more results available:</p>

@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`ImportAsProvisionedProductOutput`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput) with field(s):
     ///   - [`record_detail(Option<RecordDetail>)`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput::record_detail): <p>Information about a request operation.</p>
     /// - On failure, responds with [`SdkError<ImportAsProvisionedProductError>`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError)
-    pub fn import_as_provisioned_product(&self) -> crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductFluentBuilder{
+    pub fn import_as_provisioned_product(
+        &self,
+    ) -> crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductFluentBuilder {
         crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductFluentBuilder::new(self.handle.clone())
     }
 }

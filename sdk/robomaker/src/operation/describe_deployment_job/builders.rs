@@ -42,10 +42,7 @@ impl DescribeDeploymentJobFluentBuilder {
         }
     }
     /// Access the DescribeDeploymentJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_deployment_job::builders::DescribeDeploymentJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_deployment_job::builders::DescribeDeploymentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl DescribeDeploymentJobFluentBuilder {
             crate::operation::describe_deployment_job::DescribeDeploymentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployment_job::DescribeDeploymentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl DescribeDeploymentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl DescribeDeploymentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_deployment_job::DescribeDeploymentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployment_job::DescribeDeploymentJobError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl DescribeDeploymentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_deployment_job::DescribeDeploymentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployment_job::DescribeDeploymentJobError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl DescribeDeploymentJobFluentBuilder {
             crate::operation::describe_deployment_job::DescribeDeploymentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_deployment_job::DescribeDeploymentJobError>,
     > {
         self.customize_middleware().await
     }

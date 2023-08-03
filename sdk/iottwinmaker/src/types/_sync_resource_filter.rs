@@ -51,9 +51,7 @@ impl SyncResourceFilter {
     }
     /// Tries to convert the enum instance into [`ResourceType`](crate::types::SyncResourceFilter::ResourceType), extracting the inner [`SyncResourceType`](crate::types::SyncResourceType).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_resource_type(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SyncResourceType, &Self> {
+    pub fn as_resource_type(&self) -> ::std::result::Result<&crate::types::SyncResourceType, &Self> {
         if let SyncResourceFilter::ResourceType(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

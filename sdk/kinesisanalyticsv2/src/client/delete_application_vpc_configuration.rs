@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput::application_arn): <p>The ARN of the Kinesis Data Analytics application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput::application_version_id): <p>The updated version ID of the application.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationVpcConfigurationError>`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationError)
-    pub fn delete_application_vpc_configuration(&self) -> crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationFluentBuilder{
+    pub fn delete_application_vpc_configuration(
+        &self,
+    ) -> crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationFluentBuilder {
         crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

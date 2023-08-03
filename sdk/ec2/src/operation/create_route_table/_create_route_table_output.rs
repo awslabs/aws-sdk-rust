@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateRouteTableOutput {
 }
 impl CreateRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateRouteTableOutput`](crate::operation::create_route_table::CreateRouteTableOutput).
-    pub fn builder() -> crate::operation::create_route_table::builders::CreateRouteTableOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_route_table::builders::CreateRouteTableOutputBuilder {
         crate::operation::create_route_table::builders::CreateRouteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRouteTableOutput`](crate::operation::create_route_table::CreateRouteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRouteTableOutputBuilder {
     pub(crate) route_table: ::std::option::Option<crate::types::RouteTable>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateRouteTableOutputBuilder {
         self
     }
     /// <p>Information about the route table.</p>
-    pub fn set_route_table(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteTable>,
-    ) -> Self {
+    pub fn set_route_table(mut self, input: ::std::option::Option<crate::types::RouteTable>) -> Self {
         self.route_table = input;
         self
     }

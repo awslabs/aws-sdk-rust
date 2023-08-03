@@ -63,25 +63,20 @@ impl CreateManagedPrefixListInput {
 }
 impl CreateManagedPrefixListInput {
     /// Creates a new builder-style object to manufacture [`CreateManagedPrefixListInput`](crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput).
-    pub fn builder(
-    ) -> crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder {
         crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateManagedPrefixListInput`](crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateManagedPrefixListInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
     pub(crate) max_entries: ::std::option::Option<i32>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) address_family: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -102,19 +97,13 @@ impl CreateManagedPrefixListInputBuilder {
     }
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
-    pub fn prefix_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
-    pub fn set_prefix_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_name = input;
         self
     }
@@ -135,17 +124,12 @@ impl CreateManagedPrefixListInputBuilder {
         self
     }
     /// <p>One or more entries for the prefix list.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>One or more entries for the prefix list.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
         &self.entries
     }
     /// <p>The maximum number of entries for the prefix list.</p>
@@ -174,34 +158,23 @@ impl CreateManagedPrefixListInputBuilder {
         self
     }
     /// <p>The tags to apply to the prefix list during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the prefix list during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
-    pub fn address_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_family = input;
         self
     }
@@ -234,16 +207,14 @@ impl CreateManagedPrefixListInputBuilder {
         crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput {
-                dry_run: self.dry_run,
-                prefix_list_name: self.prefix_list_name,
-                entries: self.entries,
-                max_entries: self.max_entries,
-                tag_specifications: self.tag_specifications,
-                address_family: self.address_family,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput {
+            dry_run: self.dry_run,
+            prefix_list_name: self.prefix_list_name,
+            entries: self.entries,
+            max_entries: self.max_entries,
+            tag_specifications: self.tag_specifications,
+            address_family: self.address_family,
+            client_token: self.client_token,
+        })
     }
 }

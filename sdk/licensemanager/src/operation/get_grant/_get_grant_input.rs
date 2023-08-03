@@ -29,9 +29,7 @@ impl GetGrantInput {
 
 /// A builder for [`GetGrantInput`](crate::operation::get_grant::GetGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGrantInputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetGrantInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetGrantInput`](crate::operation::get_grant::GetGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_grant::GetGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_grant::GetGrantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_grant::GetGrantInput {
             grant_arn: self.grant_arn,
             version: self.version,

@@ -11,9 +11,7 @@ pub fn ser_allocate_private_virtual_interface_input(
     }
     if let Some(var_3) = &input.new_private_virtual_interface_allocation {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("newPrivateVirtualInterfaceAllocation")
-            .start_object();
+        let mut object_4 = object.key("newPrivateVirtualInterfaceAllocation").start_object();
         crate::protocol_serde::shape_new_private_virtual_interface_allocation::ser_new_private_virtual_interface_allocation(&mut object_4, var_3)?;
         object_4.finish();
     }

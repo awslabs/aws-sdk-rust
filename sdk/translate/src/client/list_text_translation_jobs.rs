@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`text_translation_job_properties_list(Option<Vec<TextTranslationJobProperties>>)`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput::text_translation_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListTextTranslationJobsError>`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsError)
-    pub fn list_text_translation_jobs(
-        &self,
-    ) -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder
-    {
+    pub fn list_text_translation_jobs(&self) -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder {
         crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::new(self.handle.clone())
     }
 }

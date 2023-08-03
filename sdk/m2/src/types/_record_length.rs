@@ -30,9 +30,7 @@ impl RecordLength {
 
 /// A builder for [`RecordLength`](crate::types::RecordLength).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordLengthBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

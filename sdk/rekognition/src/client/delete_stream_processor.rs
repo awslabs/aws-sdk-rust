@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::set_name): <p>The name of the stream processor you want to delete.</p>
     /// - On success, responds with [`DeleteStreamProcessorOutput`](crate::operation::delete_stream_processor::DeleteStreamProcessorOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamProcessorError>`](crate::operation::delete_stream_processor::DeleteStreamProcessorError)
-    pub fn delete_stream_processor(
-        &self,
-    ) -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder
-    {
-        crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_stream_processor(&self) -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder {
+        crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::new(self.handle.clone())
     }
 }

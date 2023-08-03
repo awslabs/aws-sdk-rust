@@ -30,9 +30,7 @@ impl TurnSpecification {
 
 /// A builder for [`TurnSpecification`](crate::types::TurnSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TurnSpecificationBuilder {
     pub(crate) agent_turn: ::std::option::Option<crate::types::AgentTurnSpecification>,
     pub(crate) user_turn: ::std::option::Option<crate::types::UserTurnSpecification>,
@@ -44,10 +42,7 @@ impl TurnSpecificationBuilder {
         self
     }
     /// <p>Contains information about the agent messages in the turn.</p>
-    pub fn set_agent_turn(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentTurnSpecification>,
-    ) -> Self {
+    pub fn set_agent_turn(mut self, input: ::std::option::Option<crate::types::AgentTurnSpecification>) -> Self {
         self.agent_turn = input;
         self
     }
@@ -61,10 +56,7 @@ impl TurnSpecificationBuilder {
         self
     }
     /// <p>Contains information about the user messages in the turn.</p>
-    pub fn set_user_turn(
-        mut self,
-        input: ::std::option::Option<crate::types::UserTurnSpecification>,
-    ) -> Self {
+    pub fn set_user_turn(mut self, input: ::std::option::Option<crate::types::UserTurnSpecification>) -> Self {
         self.user_turn = input;
         self
     }

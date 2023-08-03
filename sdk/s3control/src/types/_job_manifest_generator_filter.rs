@@ -15,8 +15,7 @@ pub struct JobManifestGeneratorFilter {
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
     #[doc(hidden)]
-    pub object_replication_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
+    pub object_replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
 }
 impl JobManifestGeneratorFilter {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
@@ -32,9 +31,7 @@ impl JobManifestGeneratorFilter {
         self.created_before.as_ref()
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-    pub fn object_replication_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationStatus]> {
+    pub fn object_replication_statuses(&self) -> ::std::option::Option<&[crate::types::ReplicationStatus]> {
         self.object_replication_statuses.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl JobManifestGeneratorFilter {
 
 /// A builder for [`JobManifestGeneratorFilter`](crate::types::JobManifestGeneratorFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobManifestGeneratorFilterBuilder {
     pub(crate) eligible_for_replication: ::std::option::Option<bool>,
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) object_replication_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
+    pub(crate) object_replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
 }
 impl JobManifestGeneratorFilterBuilder {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
@@ -78,10 +72,7 @@ impl JobManifestGeneratorFilterBuilder {
         self
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -95,10 +86,7 @@ impl JobManifestGeneratorFilterBuilder {
         self
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -118,17 +106,12 @@ impl JobManifestGeneratorFilterBuilder {
         self
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-    pub fn set_object_replication_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
-    ) -> Self {
+    pub fn set_object_replication_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>) -> Self {
         self.object_replication_statuses = input;
         self
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-    pub fn get_object_replication_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>> {
+    pub fn get_object_replication_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>> {
         &self.object_replication_statuses
     }
     /// Consumes the builder and constructs a [`JobManifestGeneratorFilter`](crate::types::JobManifestGeneratorFilter).

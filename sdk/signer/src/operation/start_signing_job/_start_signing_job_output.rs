@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for StartSigningJobOutput {
 }
 impl StartSigningJobOutput {
     /// Creates a new builder-style object to manufacture [`StartSigningJobOutput`](crate::operation::start_signing_job::StartSigningJobOutput).
-    pub fn builder() -> crate::operation::start_signing_job::builders::StartSigningJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_signing_job::builders::StartSigningJobOutputBuilder {
         crate::operation::start_signing_job::builders::StartSigningJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSigningJobOutput`](crate::operation::start_signing_job::StartSigningJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSigningJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_owner: ::std::option::Option<::std::string::String>,

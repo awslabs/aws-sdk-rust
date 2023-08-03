@@ -27,7 +27,7 @@ impl GetClusterCredentialsWithIamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsWithIAMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder,
+    inner: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder,
 }
 impl GetClusterCredentialsWithIAMFluentBuilder {
     /// Creates a new `GetClusterCredentialsWithIAM`.
@@ -38,7 +38,7 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         }
     }
     /// Access the GetClusterCredentialsWithIAM as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
             crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
             crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self.inner.get_db_name()
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -173,18 +156,12 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self.inner.get_duration_seconds()
     }
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_domain_name(input.into());
         self
     }
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }

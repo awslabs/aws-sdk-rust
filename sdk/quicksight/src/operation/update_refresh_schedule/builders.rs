@@ -37,10 +37,7 @@ impl UpdateRefreshScheduleFluentBuilder {
         }
     }
     /// Access the UpdateRefreshSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateRefreshScheduleFluentBuilder {
             crate::operation::update_refresh_schedule::UpdateRefreshSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateRefreshScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateRefreshScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_refresh_schedule::UpdateRefreshScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateRefreshScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_refresh_schedule::UpdateRefreshScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateRefreshScheduleFluentBuilder {
             crate::operation::update_refresh_schedule::UpdateRefreshSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_refresh_schedule::UpdateRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateRefreshScheduleFluentBuilder {
         self.inner.get_data_set_id()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -163,10 +143,7 @@ impl UpdateRefreshScheduleFluentBuilder {
         self
     }
     /// <p>The refresh schedule.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::RefreshSchedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }

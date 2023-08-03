@@ -10,10 +10,7 @@ impl GetAppMonitorDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_app_monitor_data::GetAppMonitorDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_app_monitor_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAppMonitorDataFluentBuilder {
         }
     }
     /// Access the GetAppMonitorData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetAppMonitorDataFluentBuilder {
             crate::operation::get_app_monitor_data::GetAppMonitorData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetAppMonitorDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetAppMonitorDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_app_monitor_data::GetAppMonitorDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetAppMonitorDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_app_monitor_data::GetAppMonitorDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetAppMonitorDataFluentBuilder {
             crate::operation::get_app_monitor_data::GetAppMonitorData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator {
-        crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator {
+        crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,17 +150,12 @@ impl GetAppMonitorDataFluentBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return in one operation. </p>

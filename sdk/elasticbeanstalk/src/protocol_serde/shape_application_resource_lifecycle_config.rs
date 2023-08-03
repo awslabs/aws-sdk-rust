@@ -19,10 +19,7 @@ pub fn ser_application_resource_lifecycle_config(
 
 pub fn de_application_resource_lifecycle_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ApplicationResourceLifecycleConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ApplicationResourceLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ApplicationResourceLifecycleConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

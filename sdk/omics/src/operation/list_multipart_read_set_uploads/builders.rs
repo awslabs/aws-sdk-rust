@@ -26,7 +26,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder,
+    inner: crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder,
 }
 impl ListMultipartReadSetUploadsFluentBuilder {
     /// Creates a new `ListMultipartReadSetUploads`.
@@ -37,7 +37,7 @@ impl ListMultipartReadSetUploadsFluentBuilder {
         }
     }
     /// Access the ListMultipartReadSetUploads as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListMultipartReadSetUploadsFluentBuilder {
             crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploads,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListMultipartReadSetUploadsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListMultipartReadSetUploadsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListMultipartReadSetUploadsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListMultipartReadSetUploadsFluentBuilder {
             crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploads,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_multipart_read_set_uploads::paginator::ListMultipartReadSetUploadsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_multipart_read_set_uploads::paginator::ListMultipartReadSetUploadsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_multipart_read_set_uploads::paginator::ListMultipartReadSetUploadsPaginator {
         crate::operation::list_multipart_read_set_uploads::paginator::ListMultipartReadSetUploadsPaginator::new(self.handle, self.inner)
     }
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }

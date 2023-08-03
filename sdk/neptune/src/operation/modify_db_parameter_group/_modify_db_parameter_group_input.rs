@@ -36,18 +36,14 @@ impl ModifyDbParameterGroupInput {
 }
 impl ModifyDbParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder {
         crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbParameterGroupInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
@@ -58,10 +54,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -70,10 +63,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -103,10 +93,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
@@ -114,9 +101,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
@@ -126,11 +111,9 @@ impl ModifyDbParameterGroupInputBuilder {
         crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput {
-                db_parameter_group_name: self.db_parameter_group_name,
-                parameters: self.parameters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput {
+            db_parameter_group_name: self.db_parameter_group_name,
+            parameters: self.parameters,
+        })
     }
 }

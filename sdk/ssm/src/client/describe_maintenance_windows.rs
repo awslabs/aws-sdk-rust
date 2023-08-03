@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`window_identities(Option<Vec<MaintenanceWindowIdentity>>)`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput::window_identities): <p>Information about the maintenance windows.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsError>`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError)
-    pub fn describe_maintenance_windows(&self) -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder{
+    pub fn describe_maintenance_windows(&self) -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder {
         crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,16 +29,14 @@ impl ListMetricAttributionMetricsInput {
 }
 impl ListMetricAttributionMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListMetricAttributionMetricsInput`](crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput).
-    pub fn builder() -> crate::operation::list_metric_attribution_metrics::builders::ListMetricAttributionMetricsInputBuilder{
+    pub fn builder() -> crate::operation::list_metric_attribution_metrics::builders::ListMetricAttributionMetricsInputBuilder {
         crate::operation::list_metric_attribution_metrics::builders::ListMetricAttributionMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMetricAttributionMetricsInput`](crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricAttributionMetricsInputBuilder {
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListMetricAttributionMetricsInputBuilder {
 }
 impl ListMetricAttributionMetricsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
-    pub fn metric_attribution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_attribution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_attribution_arn = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListMetricAttributionMetricsInputBuilder {
         crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput {
-                metric_attribution_arn: self.metric_attribution_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput {
+            metric_attribution_arn: self.metric_attribution_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

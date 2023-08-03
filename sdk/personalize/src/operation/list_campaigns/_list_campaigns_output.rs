@@ -35,9 +35,7 @@ impl ListCampaignsOutput {
 
 /// A builder for [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCampaignsOutputBuilder {
     pub(crate) campaigns: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListCampaignsOutputBuilder {
         self
     }
     /// <p>A list of the campaigns.</p>
-    pub fn set_campaigns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
-    ) -> Self {
+    pub fn set_campaigns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>) -> Self {
         self.campaigns = input;
         self
     }
     /// <p>A list of the campaigns.</p>
-    pub fn get_campaigns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
+    pub fn get_campaigns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
         &self.campaigns
     }
     /// <p>A token for getting the next set of campaigns (if they exist).</p>

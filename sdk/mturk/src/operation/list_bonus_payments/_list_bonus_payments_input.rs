@@ -36,17 +36,14 @@ impl ListBonusPaymentsInput {
 }
 impl ListBonusPaymentsInput {
     /// Creates a new builder-style object to manufacture [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
+    pub fn builder() -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
         crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBonusPaymentsInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl ListBonusPaymentsInputBuilder {
         &self.hit_id
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl ListBonusPaymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bonus_payments::ListBonusPaymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_bonus_payments::ListBonusPaymentsInput {
-                hit_id: self.hit_id,
-                assignment_id: self.assignment_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_bonus_payments::ListBonusPaymentsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_bonus_payments::ListBonusPaymentsInput {
+            hit_id: self.hit_id,
+            assignment_id: self.assignment_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

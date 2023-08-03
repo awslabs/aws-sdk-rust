@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`instance_fleet(InstanceFleetModifyConfig)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::instance_fleet) / [`set_instance_fleet(Option<InstanceFleetModifyConfig>)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::set_instance_fleet): <p>The configuration parameters of the instance fleet.</p>
     /// - On success, responds with [`ModifyInstanceFleetOutput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetOutput)
     /// - On failure, responds with [`SdkError<ModifyInstanceFleetError>`](crate::operation::modify_instance_fleet::ModifyInstanceFleetError)
-    pub fn modify_instance_fleet(
-        &self,
-    ) -> crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder {
-        crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_instance_fleet(&self) -> crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder {
+        crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::new(self.handle.clone())
     }
 }

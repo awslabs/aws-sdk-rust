@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`replace_root_volume_tasks(Option<Vec<ReplaceRootVolumeTask>>)`](crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput::replace_root_volume_tasks): <p>Information about the root volume replacement task.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeReplaceRootVolumeTasksError>`](crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksError)
-    pub fn describe_replace_root_volume_tasks(&self) -> crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksFluentBuilder{
+    pub fn describe_replace_root_volume_tasks(
+        &self,
+    ) -> crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksFluentBuilder {
         crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksFluentBuilder::new(self.handle.clone())
     }
 }

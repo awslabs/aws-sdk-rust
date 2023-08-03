@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMultiplexOutput`](crate::operation::create_multiplex::CreateMultiplexOutput) with field(s):
     ///   - [`multiplex(Option<Multiplex>)`](crate::operation::create_multiplex::CreateMultiplexOutput::multiplex): The newly created multiplex.
     /// - On failure, responds with [`SdkError<CreateMultiplexError>`](crate::operation::create_multiplex::CreateMultiplexError)
-    pub fn create_multiplex(
-        &self,
-    ) -> crate::operation::create_multiplex::builders::CreateMultiplexFluentBuilder {
-        crate::operation::create_multiplex::builders::CreateMultiplexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_multiplex(&self) -> crate::operation::create_multiplex::builders::CreateMultiplexFluentBuilder {
+        crate::operation::create_multiplex::builders::CreateMultiplexFluentBuilder::new(self.handle.clone())
     }
 }

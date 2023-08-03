@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartFailbackLaunchOutput {
 }
 impl StartFailbackLaunchOutput {
     /// Creates a new builder-style object to manufacture [`StartFailbackLaunchOutput`](crate::operation::start_failback_launch::StartFailbackLaunchOutput).
-    pub fn builder(
-    ) -> crate::operation::start_failback_launch::builders::StartFailbackLaunchOutputBuilder {
-        crate::operation::start_failback_launch::builders::StartFailbackLaunchOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_failback_launch::builders::StartFailbackLaunchOutputBuilder {
+        crate::operation::start_failback_launch::builders::StartFailbackLaunchOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFailbackLaunchOutput`](crate::operation::start_failback_launch::StartFailbackLaunchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFailbackLaunchOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

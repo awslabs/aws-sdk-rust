@@ -15,34 +15,25 @@ impl GetCollaborationInput {
 }
 impl GetCollaborationInput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
-    pub fn builder() -> crate::operation::get_collaboration::builders::GetCollaborationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_collaboration::builders::GetCollaborationInputBuilder {
         crate::operation::get_collaboration::builders::GetCollaborationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCollaborationInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetCollaborationInputBuilder {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the collaboration.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_identifier = input;
         self
     }
@@ -53,10 +44,7 @@ impl GetCollaborationInputBuilder {
     /// Consumes the builder and constructs a [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_collaboration::GetCollaborationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_collaboration::GetCollaborationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_collaboration::GetCollaborationInput {
             collaboration_identifier: self.collaboration_identifier,
         })

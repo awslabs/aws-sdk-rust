@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`route_table_timestamp(Option<DateTime>)`](crate::operation::get_network_routes::GetNetworkRoutesOutput::route_table_timestamp): <p>The route table creation time.</p>
     ///   - [`network_routes(Option<Vec<NetworkRoute>>)`](crate::operation::get_network_routes::GetNetworkRoutesOutput::network_routes): <p>The network routes.</p>
     /// - On failure, responds with [`SdkError<GetNetworkRoutesError>`](crate::operation::get_network_routes::GetNetworkRoutesError)
-    pub fn get_network_routes(
-        &self,
-    ) -> crate::operation::get_network_routes::builders::GetNetworkRoutesFluentBuilder {
-        crate::operation::get_network_routes::builders::GetNetworkRoutesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_network_routes(&self) -> crate::operation::get_network_routes::builders::GetNetworkRoutesFluentBuilder {
+        crate::operation::get_network_routes::builders::GetNetworkRoutesFluentBuilder::new(self.handle.clone())
     }
 }

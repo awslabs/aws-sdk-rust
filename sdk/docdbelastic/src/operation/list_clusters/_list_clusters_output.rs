@@ -37,9 +37,7 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersOutputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +56,12 @@ impl ListClustersOutputBuilder {
         self
     }
     /// <p>A list of Elastic DocumentDB cluster.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>>) -> Self {
         self.clusters = input;
         self
     }
     /// <p>A list of Elastic DocumentDB cluster.</p>
-    pub fn get_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>> {
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>> {
         &self.clusters
     }
     /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>

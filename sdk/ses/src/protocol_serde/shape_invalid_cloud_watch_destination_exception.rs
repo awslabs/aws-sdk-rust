@@ -3,10 +3,7 @@
 pub fn de_invalid_cloud_watch_destination_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidCloudWatchDestinationExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidCloudWatchDestinationExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidCloudWatchDestinationExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

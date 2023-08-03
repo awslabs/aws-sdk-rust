@@ -15,17 +15,14 @@ impl DeclineInvitationsInput {
 }
 impl DeclineInvitationsInput {
     /// Creates a new builder-style object to manufacture [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
-    pub fn builder(
-    ) -> crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder {
+    pub fn builder() -> crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder {
         crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeclineInvitationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,30 +39,20 @@ impl DeclineInvitationsInputBuilder {
         self
     }
     /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::decline_invitations::DeclineInvitationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::decline_invitations::DeclineInvitationsInput {
-                account_ids: self.account_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::decline_invitations::DeclineInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::decline_invitations::DeclineInvitationsInput {
+            account_ids: self.account_ids,
+        })
     }
 }

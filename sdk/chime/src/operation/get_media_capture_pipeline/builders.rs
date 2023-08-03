@@ -26,14 +26,11 @@ impl GetMediaCapturePipelineInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaCapturePipeline.html">GetMediaCapturePipeline</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by GetMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace"
-)]
+#[deprecated(note = "Replaced by GetMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMediaCapturePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder,
+    inner: crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder,
 }
 impl GetMediaCapturePipelineFluentBuilder {
     /// Creates a new `GetMediaCapturePipeline`.
@@ -44,10 +41,7 @@ impl GetMediaCapturePipelineFluentBuilder {
         }
     }
     /// Access the GetMediaCapturePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +53,7 @@ impl GetMediaCapturePipelineFluentBuilder {
             crate::operation::get_media_capture_pipeline::GetMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +63,7 @@ impl GetMediaCapturePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +72,7 @@ impl GetMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         let op = self
             .inner
@@ -108,9 +95,7 @@ impl GetMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -124,25 +109,17 @@ impl GetMediaCapturePipelineFluentBuilder {
             crate::operation::get_media_capture_pipeline::GetMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_pipeline_id(input.into());
         self
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_pipeline_id(input);
         self
     }

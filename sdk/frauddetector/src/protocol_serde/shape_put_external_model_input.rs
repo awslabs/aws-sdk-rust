@@ -10,26 +10,18 @@ pub fn ser_put_external_model_input(
         object.key("modelSource").string(var_2.as_str());
     }
     if let Some(var_3) = &input.invoke_model_endpoint_role_arn {
-        object
-            .key("invokeModelEndpointRoleArn")
-            .string(var_3.as_str());
+        object.key("invokeModelEndpointRoleArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.input_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("inputConfiguration").start_object();
-        crate::protocol_serde::shape_model_input_configuration::ser_model_input_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_model_input_configuration::ser_model_input_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.output_configuration {
         #[allow(unused_mut)]
         let mut object_7 = object.key("outputConfiguration").start_object();
-        crate::protocol_serde::shape_model_output_configuration::ser_model_output_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_model_output_configuration::ser_model_output_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.model_endpoint_status {

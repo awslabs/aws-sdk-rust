@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::create_vocabulary::CreateVocabularyOutput::last_modified_time): <p>The date and time you created your custom vocabulary.</p>  <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::create_vocabulary::CreateVocabularyOutput::failure_reason): <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     /// - On failure, responds with [`SdkError<CreateVocabularyError>`](crate::operation::create_vocabulary::CreateVocabularyError)
-    pub fn create_vocabulary(
-        &self,
-    ) -> crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder {
-        crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vocabulary(&self) -> crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder {
+        crate::operation::create_vocabulary::builders::CreateVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

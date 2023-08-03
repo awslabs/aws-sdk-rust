@@ -26,27 +26,19 @@ impl AccountFindingsMetric {
         self.date.as_ref()
     }
     /// <p>The number of new findings of each severity in account on the specified date.</p>
-    pub fn new_findings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn new_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
         self.new_findings.as_ref()
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
-    pub fn closed_findings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn closed_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
         self.closed_findings.as_ref()
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
-    pub fn open_findings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn open_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
         self.open_findings.as_ref()
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
-    pub fn mean_time_to_close(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn mean_time_to_close(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
         self.mean_time_to_close.as_ref()
     }
 }
@@ -59,16 +51,13 @@ impl AccountFindingsMetric {
 
 /// A builder for [`AccountFindingsMetric`](crate::types::AccountFindingsMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountFindingsMetricBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) new_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     pub(crate) closed_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     pub(crate) open_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    pub(crate) mean_time_to_close:
-        ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
+    pub(crate) mean_time_to_close: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
 }
 impl AccountFindingsMetricBuilder {
     /// <p>The date from which the finding metrics were retrieved.</p>
@@ -91,17 +80,12 @@ impl AccountFindingsMetricBuilder {
         self
     }
     /// <p>The number of new findings of each severity in account on the specified date.</p>
-    pub fn set_new_findings(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    ) -> Self {
+    pub fn set_new_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
         self.new_findings = input;
         self
     }
     /// <p>The number of new findings of each severity in account on the specified date.</p>
-    pub fn get_new_findings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
+    pub fn get_new_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
         &self.new_findings
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
@@ -110,17 +94,12 @@ impl AccountFindingsMetricBuilder {
         self
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
-    pub fn set_closed_findings(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    ) -> Self {
+    pub fn set_closed_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
         self.closed_findings = input;
         self
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
-    pub fn get_closed_findings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
+    pub fn get_closed_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
         &self.closed_findings
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
@@ -129,39 +108,26 @@ impl AccountFindingsMetricBuilder {
         self
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
-    pub fn set_open_findings(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    ) -> Self {
+    pub fn set_open_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
         self.open_findings = input;
         self
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
-    pub fn get_open_findings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
+    pub fn get_open_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
         &self.open_findings
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
-    pub fn mean_time_to_close(
-        mut self,
-        input: crate::types::FindingMetricsValuePerSeverity,
-    ) -> Self {
+    pub fn mean_time_to_close(mut self, input: crate::types::FindingMetricsValuePerSeverity) -> Self {
         self.mean_time_to_close = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
-    pub fn set_mean_time_to_close(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    ) -> Self {
+    pub fn set_mean_time_to_close(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
         self.mean_time_to_close = input;
         self
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
-    pub fn get_mean_time_to_close(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
+    pub fn get_mean_time_to_close(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
         &self.mean_time_to_close
     }
     /// Consumes the builder and constructs a [`AccountFindingsMetric`](crate::types::AccountFindingsMetric).

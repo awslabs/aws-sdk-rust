@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssessmentTargetOutput {
 }
 impl UpdateAssessmentTargetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentTargetOutput`](crate::operation::update_assessment_target::UpdateAssessmentTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_assessment_target::builders::UpdateAssessmentTargetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assessment_target::builders::UpdateAssessmentTargetOutputBuilder {
         crate::operation::update_assessment_target::builders::UpdateAssessmentTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssessmentTargetOutput`](crate::operation::update_assessment_target::UpdateAssessmentTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssessmentTargetOutputBuilder {
     _request_id: Option<String>,
 }

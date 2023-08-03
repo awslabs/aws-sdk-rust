@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`trial_component_summaries(Option<Vec<TrialComponentSummary>>)`](crate::operation::list_trial_components::ListTrialComponentsOutput::trial_component_summaries): <p>A list of the summaries of your trial components.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trial_components::ListTrialComponentsOutput::next_token): <p>A token for getting the next set of components, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListTrialComponentsError>`](crate::operation::list_trial_components::ListTrialComponentsError)
-    pub fn list_trial_components(
-        &self,
-    ) -> crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder {
-        crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_trial_components(&self) -> crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder {
+        crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::new(self.handle.clone())
     }
 }

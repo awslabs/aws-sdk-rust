@@ -10,10 +10,7 @@ impl PutAccountPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_account_policy::PutAccountPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_policy::PutAccountPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_policy::PutAccountPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_account_policy();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl PutAccountPolicyFluentBuilder {
         }
     }
     /// Access the PutAccountPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl PutAccountPolicyFluentBuilder {
             crate::operation::put_account_policy::PutAccountPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_policy::PutAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_policy::PutAccountPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl PutAccountPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl PutAccountPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_policy::PutAccountPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_policy::PutAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_policy::PutAccountPolicyError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl PutAccountPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_policy::PutAccountPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_policy::PutAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_policy::PutAccountPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl PutAccountPolicyFluentBuilder {
             crate::operation::put_account_policy::PutAccountPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_policy::PutAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_policy::PutAccountPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +138,7 @@ impl PutAccountPolicyFluentBuilder {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
@@ -172,10 +153,7 @@ impl PutAccountPolicyFluentBuilder {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }
@@ -199,10 +177,7 @@ impl PutAccountPolicyFluentBuilder {
         self
     }
     /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }

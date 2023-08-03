@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VerificationFailedReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,15 +57,11 @@ pub enum VerificationFailedReason {
 impl ::std::convert::From<&str> for VerificationFailedReason {
     fn from(s: &str) -> Self {
         match s {
-            "INVALID_AUTH_REQUEST_CRYPTOGRAM" => {
-                VerificationFailedReason::InvalidAuthRequestCryptogram
-            }
+            "INVALID_AUTH_REQUEST_CRYPTOGRAM" => VerificationFailedReason::InvalidAuthRequestCryptogram,
             "INVALID_MAC" => VerificationFailedReason::InvalidMac,
             "INVALID_PIN" => VerificationFailedReason::InvalidPin,
             "INVALID_VALIDATION_DATA" => VerificationFailedReason::InvalidValidationData,
-            other => VerificationFailedReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VerificationFailedReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,9 +76,7 @@ impl VerificationFailedReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            VerificationFailedReason::InvalidAuthRequestCryptogram => {
-                "INVALID_AUTH_REQUEST_CRYPTOGRAM"
-            }
+            VerificationFailedReason::InvalidAuthRequestCryptogram => "INVALID_AUTH_REQUEST_CRYPTOGRAM",
             VerificationFailedReason::InvalidMac => "INVALID_MAC",
             VerificationFailedReason::InvalidPin => "INVALID_PIN",
             VerificationFailedReason::InvalidValidationData => "INVALID_VALIDATION_DATA",
@@ -97,12 +85,7 @@ impl VerificationFailedReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "INVALID_AUTH_REQUEST_CRYPTOGRAM",
-            "INVALID_MAC",
-            "INVALID_PIN",
-            "INVALID_VALIDATION_DATA",
-        ]
+        &["INVALID_AUTH_REQUEST_CRYPTOGRAM", "INVALID_MAC", "INVALID_PIN", "INVALID_VALIDATION_DATA"]
     }
 }
 impl ::std::convert::AsRef<str> for VerificationFailedReason {

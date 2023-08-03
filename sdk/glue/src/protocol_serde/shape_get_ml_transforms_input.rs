@@ -15,19 +15,13 @@ pub fn ser_get_ml_transforms_input(
     if let Some(var_3) = &input.filter {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_transform_filter_criteria::ser_transform_filter_criteria(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_transform_filter_criteria::ser_transform_filter_criteria(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.sort {
         #[allow(unused_mut)]
         let mut object_6 = object.key("Sort").start_object();
-        crate::protocol_serde::shape_transform_sort_criteria::ser_transform_sort_criteria(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_transform_sort_criteria::ser_transform_sort_criteria(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

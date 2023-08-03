@@ -35,9 +35,7 @@ impl ListRegistriesOutput {
 
 /// A builder for [`ListRegistriesOutput`](crate::operation::list_registries::ListRegistriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegistriesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) registries: ::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>>,
@@ -70,17 +68,12 @@ impl ListRegistriesOutputBuilder {
         self
     }
     /// <p>An array of registry summaries.</p>
-    pub fn set_registries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>>,
-    ) -> Self {
+    pub fn set_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>>) -> Self {
         self.registries = input;
         self
     }
     /// <p>An array of registry summaries.</p>
-    pub fn get_registries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>> {
+    pub fn get_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>> {
         &self.registries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

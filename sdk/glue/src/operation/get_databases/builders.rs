@@ -10,10 +10,7 @@ impl GetDatabasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_databases::GetDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_databases::GetDatabasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_databases::GetDatabasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_databases();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetDatabasesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_databases::GetDatabases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_databases::GetDatabases, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_databases::GetDatabasesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetDatabasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetDatabasesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_databases::GetDatabases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_databases::GetDatabases, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_databases::GetDatabasesError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl GetDatabasesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_databases::paginator::GetDatabasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_databases::paginator::GetDatabasesPaginator {
-        crate::operation::get_databases::paginator::GetDatabasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_databases::paginator::GetDatabasesPaginator {
+        crate::operation::get_databases::paginator::GetDatabasesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,10 +164,7 @@ impl GetDatabasesFluentBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    pub fn set_resource_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareType>,
-    ) -> Self {
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.inner = self.inner.set_resource_share_type(input);
         self
     }
@@ -194,9 +174,7 @@ impl GetDatabasesFluentBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    pub fn get_resource_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         self.inner.get_resource_share_type()
     }
 }

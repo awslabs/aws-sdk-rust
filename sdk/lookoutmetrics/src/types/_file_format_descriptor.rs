@@ -13,15 +13,11 @@ pub struct FileFormatDescriptor {
 }
 impl FileFormatDescriptor {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-    pub fn csv_format_descriptor(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CsvFormatDescriptor> {
+    pub fn csv_format_descriptor(&self) -> ::std::option::Option<&crate::types::CsvFormatDescriptor> {
         self.csv_format_descriptor.as_ref()
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-    pub fn json_format_descriptor(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JsonFormatDescriptor> {
+    pub fn json_format_descriptor(&self) -> ::std::option::Option<&crate::types::JsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
     }
 }
@@ -34,9 +30,7 @@ impl FileFormatDescriptor {
 
 /// A builder for [`FileFormatDescriptor`](crate::types::FileFormatDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileFormatDescriptorBuilder {
     pub(crate) csv_format_descriptor: ::std::option::Option<crate::types::CsvFormatDescriptor>,
     pub(crate) json_format_descriptor: ::std::option::Option<crate::types::JsonFormatDescriptor>,
@@ -48,17 +42,12 @@ impl FileFormatDescriptorBuilder {
         self
     }
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-    pub fn set_csv_format_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::CsvFormatDescriptor>,
-    ) -> Self {
+    pub fn set_csv_format_descriptor(mut self, input: ::std::option::Option<crate::types::CsvFormatDescriptor>) -> Self {
         self.csv_format_descriptor = input;
         self
     }
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-    pub fn get_csv_format_descriptor(
-        &self,
-    ) -> &::std::option::Option<crate::types::CsvFormatDescriptor> {
+    pub fn get_csv_format_descriptor(&self) -> &::std::option::Option<crate::types::CsvFormatDescriptor> {
         &self.csv_format_descriptor
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
@@ -67,17 +56,12 @@ impl FileFormatDescriptorBuilder {
         self
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-    pub fn set_json_format_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::JsonFormatDescriptor>,
-    ) -> Self {
+    pub fn set_json_format_descriptor(mut self, input: ::std::option::Option<crate::types::JsonFormatDescriptor>) -> Self {
         self.json_format_descriptor = input;
         self
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-    pub fn get_json_format_descriptor(
-        &self,
-    ) -> &::std::option::Option<crate::types::JsonFormatDescriptor> {
+    pub fn get_json_format_descriptor(&self) -> &::std::option::Option<crate::types::JsonFormatDescriptor> {
         &self.json_format_descriptor
     }
     /// Consumes the builder and constructs a [`FileFormatDescriptor`](crate::types::FileFormatDescriptor).

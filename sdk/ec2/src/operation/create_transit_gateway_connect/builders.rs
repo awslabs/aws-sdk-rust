@@ -27,7 +27,7 @@ impl CreateTransitGatewayConnectInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder,
+    inner: crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder,
 }
 impl CreateTransitGatewayConnectFluentBuilder {
     /// Creates a new `CreateTransitGatewayConnect`.
@@ -38,7 +38,7 @@ impl CreateTransitGatewayConnectFluentBuilder {
         }
     }
     /// Access the CreateTransitGatewayConnect as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateTransitGatewayConnectFluentBuilder {
             crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateTransitGatewayConnectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateTransitGatewayConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateTransitGatewayConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError>,
     > {
         self.send_middleware().await
     }
@@ -115,58 +106,36 @@ impl CreateTransitGatewayConnectFluentBuilder {
             crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    pub fn transport_transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .transport_transit_gateway_attachment_id(input.into());
+    pub fn transport_transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.transport_transit_gateway_attachment_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    pub fn set_transport_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_transport_transit_gateway_attachment_id(input);
+    pub fn set_transport_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_transport_transit_gateway_attachment_id(input);
         self
     }
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    pub fn get_transport_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transport_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transport_transit_gateway_attachment_id()
     }
     /// <p>The Connect attachment options.</p>
-    pub fn options(
-        mut self,
-        input: crate::types::CreateTransitGatewayConnectRequestOptions,
-    ) -> Self {
+    pub fn options(mut self, input: crate::types::CreateTransitGatewayConnectRequestOptions) -> Self {
         self.inner = self.inner.options(input);
         self
     }
     /// <p>The Connect attachment options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>The Connect attachment options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions> {
         self.inner.get_options()
     }
     /// Appends an item to `TagSpecifications`.
@@ -179,17 +148,12 @@ impl CreateTransitGatewayConnectFluentBuilder {
         self
     }
     /// <p>The tags to apply to the Connect attachment.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the Connect attachment.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

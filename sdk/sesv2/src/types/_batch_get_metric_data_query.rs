@@ -27,9 +27,7 @@ pub struct BatchGetMetricDataQuery {
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
     #[doc(hidden)]
-    pub dimensions: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>,
-    >,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>>,
     /// <p>Represents the start date for the query interval.</p>
     #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -63,11 +61,7 @@ impl BatchGetMetricDataQuery {
         self.metric.as_ref()
     }
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>,
-    > {
+    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>Represents the start date for the query interval.</p>
@@ -88,16 +82,12 @@ impl BatchGetMetricDataQuery {
 
 /// A builder for [`BatchGetMetricDataQuery`](crate::types::BatchGetMetricDataQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataQueryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<crate::types::MetricNamespace>,
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
-    pub(crate) dimensions: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>,
-    >,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -122,10 +112,7 @@ impl BatchGetMetricDataQueryBuilder {
         self
     }
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricNamespace>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::MetricNamespace>) -> Self {
         self.namespace = input;
         self
     }
@@ -188,11 +175,7 @@ impl BatchGetMetricDataQueryBuilder {
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    pub fn dimensions(
-        mut self,
-        k: crate::types::MetricDimensionName,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimensions(mut self, k: crate::types::MetricDimensionName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.dimensions = ::std::option::Option::Some(hash_map);
@@ -201,19 +184,13 @@ impl BatchGetMetricDataQueryBuilder {
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
     pub fn set_dimensions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>>,
     ) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>,
-    > {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>> {
         &self.dimensions
     }
     /// <p>Represents the start date for the query interval.</p>
@@ -222,10 +199,7 @@ impl BatchGetMetricDataQueryBuilder {
         self
     }
     /// <p>Represents the start date for the query interval.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -239,10 +213,7 @@ impl BatchGetMetricDataQueryBuilder {
         self
     }
     /// <p>Represents the end date for the query interval.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }

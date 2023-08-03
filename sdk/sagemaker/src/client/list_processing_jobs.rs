@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`processing_job_summaries(Option<Vec<ProcessingJobSummary>>)`](crate::operation::list_processing_jobs::ListProcessingJobsOutput::processing_job_summaries): <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_processing_jobs::ListProcessingJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListProcessingJobsError>`](crate::operation::list_processing_jobs::ListProcessingJobsError)
-    pub fn list_processing_jobs(
-        &self,
-    ) -> crate::operation::list_processing_jobs::builders::ListProcessingJobsFluentBuilder {
-        crate::operation::list_processing_jobs::builders::ListProcessingJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_processing_jobs(&self) -> crate::operation::list_processing_jobs::builders::ListProcessingJobsFluentBuilder {
+        crate::operation::list_processing_jobs::builders::ListProcessingJobsFluentBuilder::new(self.handle.clone())
     }
 }

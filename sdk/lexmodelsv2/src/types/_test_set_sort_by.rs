@@ -30,9 +30,7 @@ impl TestSetSortBy {
 
 /// A builder for [`TestSetSortBy`](crate::types::TestSetSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::TestSetSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl TestSetSortByBuilder {
         self
     }
     /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::TestSetSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

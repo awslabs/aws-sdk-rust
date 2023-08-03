@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopInstanceOutput`](crate::operation::stop_instance::StopInstanceOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::stop_instance::StopInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<StopInstanceError>`](crate::operation::stop_instance::StopInstanceError)
-    pub fn stop_instance(
-        &self,
-    ) -> crate::operation::stop_instance::builders::StopInstanceFluentBuilder {
-        crate::operation::stop_instance::builders::StopInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_instance(&self) -> crate::operation::stop_instance::builders::StopInstanceFluentBuilder {
+        crate::operation::stop_instance::builders::StopInstanceFluentBuilder::new(self.handle.clone())
     }
 }

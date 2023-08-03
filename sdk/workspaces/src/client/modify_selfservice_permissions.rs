@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`selfservice_permissions(SelfservicePermissions)`](crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsFluentBuilder::selfservice_permissions) / [`set_selfservice_permissions(Option<SelfservicePermissions>)`](crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsFluentBuilder::set_selfservice_permissions): <p>The permissions to enable or disable self-service capabilities.</p>
     /// - On success, responds with [`ModifySelfservicePermissionsOutput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput)
     /// - On failure, responds with [`SdkError<ModifySelfservicePermissionsError>`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError)
-    pub fn modify_selfservice_permissions(&self) -> crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsFluentBuilder{
+    pub fn modify_selfservice_permissions(
+        &self,
+    ) -> crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsFluentBuilder {
         crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

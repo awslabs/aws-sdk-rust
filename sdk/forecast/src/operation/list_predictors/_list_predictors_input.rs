@@ -52,9 +52,7 @@ impl ListPredictorsInput {
 
 /// A builder for [`ListPredictorsInput`](crate::operation::list_predictors::ListPredictorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPredictorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -117,10 +115,7 @@ impl ListPredictorsInputBuilder {
     /// </ul>
     /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -139,10 +134,7 @@ impl ListPredictorsInputBuilder {
     /// Consumes the builder and constructs a [`ListPredictorsInput`](crate::operation::list_predictors::ListPredictorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_predictors::ListPredictorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_predictors::ListPredictorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_predictors::ListPredictorsInput {
             next_token: self.next_token,
             max_results: self.max_results,

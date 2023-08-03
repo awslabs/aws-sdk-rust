@@ -10,10 +10,7 @@ impl ListSigningJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_signing_jobs::ListSigningJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_jobs::ListSigningJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_jobs::ListSigningJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_signing_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSigningJobsFluentBuilder {
         }
     }
     /// Access the ListSigningJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_signing_jobs::builders::ListSigningJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_signing_jobs::builders::ListSigningJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSigningJobsFluentBuilder {
             crate::operation::list_signing_jobs::ListSigningJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_jobs::ListSigningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_jobs::ListSigningJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSigningJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSigningJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_jobs::ListSigningJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_jobs::ListSigningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_jobs::ListSigningJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSigningJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_jobs::ListSigningJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_jobs::ListSigningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_jobs::ListSigningJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListSigningJobsFluentBuilder {
             crate::operation::list_signing_jobs::ListSigningJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_jobs::ListSigningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_jobs::ListSigningJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator {
-        crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator {
+        crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>A status value with which to filter your results.</p>
     pub fn status(mut self, input: crate::types::SigningStatus) -> Self {
@@ -223,17 +202,12 @@ impl ListSigningJobsFluentBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
-    pub fn set_signature_expires_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_expires_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_signature_expires_before(input);
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
-    pub fn get_signature_expires_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_signature_expires_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_signature_expires_before()
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
@@ -242,17 +216,12 @@ impl ListSigningJobsFluentBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
-    pub fn set_signature_expires_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_expires_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_signature_expires_after(input);
         self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
-    pub fn get_signature_expires_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_signature_expires_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_signature_expires_after()
     }
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>

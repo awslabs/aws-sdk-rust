@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetDistributionConfigOutput {
 }
 impl GetDistributionConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_distribution_config::builders::GetDistributionConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distribution_config::builders::GetDistributionConfigOutputBuilder {
         crate::operation::get_distribution_config::builders::GetDistributionConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionConfigOutputBuilder {
     pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl GetDistributionConfigOutputBuilder {
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfig>,
-    ) -> Self {
+    pub fn set_distribution_config(mut self, input: ::std::option::Option<crate::types::DistributionConfig>) -> Self {
         self.distribution_config = input;
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn get_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+    pub fn get_distribution_config(&self) -> &::std::option::Option<crate::types::DistributionConfig> {
         &self.distribution_config
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>

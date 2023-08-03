@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetResolverOutput`](crate::operation::get_resolver::GetResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::operation::get_resolver::GetResolverOutput::resolver): <p>The <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<GetResolverError>`](crate::operation::get_resolver::GetResolverError)
-    pub fn get_resolver(
-        &self,
-    ) -> crate::operation::get_resolver::builders::GetResolverFluentBuilder {
+    pub fn get_resolver(&self) -> crate::operation::get_resolver::builders::GetResolverFluentBuilder {
         crate::operation::get_resolver::builders::GetResolverFluentBuilder::new(self.handle.clone())
     }
 }

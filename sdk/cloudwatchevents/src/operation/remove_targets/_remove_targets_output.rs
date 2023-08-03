@@ -8,8 +8,7 @@ pub struct RemoveTargetsOutput {
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
     #[doc(hidden)]
-    pub failed_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
+    pub failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
     _request_id: Option<String>,
 }
 impl RemoveTargetsOutput {
@@ -18,9 +17,7 @@ impl RemoveTargetsOutput {
         self.failed_entry_count
     }
     /// <p>The failed target entries.</p>
-    pub fn failed_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RemoveTargetsResultEntry]> {
+    pub fn failed_entries(&self) -> ::std::option::Option<&[crate::types::RemoveTargetsResultEntry]> {
         self.failed_entries.as_deref()
     }
 }
@@ -38,13 +35,10 @@ impl RemoveTargetsOutput {
 
 /// A builder for [`RemoveTargetsOutput`](crate::operation::remove_targets::RemoveTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTargetsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
-    pub(crate) failed_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
+    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
     _request_id: Option<String>,
 }
 impl RemoveTargetsOutputBuilder {
@@ -74,17 +68,12 @@ impl RemoveTargetsOutputBuilder {
         self
     }
     /// <p>The failed target entries.</p>
-    pub fn set_failed_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
-    ) -> Self {
+    pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>) -> Self {
         self.failed_entries = input;
         self
     }
     /// <p>The failed target entries.</p>
-    pub fn get_failed_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>> {
+    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>> {
         &self.failed_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -20,9 +20,7 @@ impl DeploymentStage {
         self.stage_name.as_deref()
     }
     /// <p>Configuration of the devices in the stage.</p>
-    pub fn device_selection_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceSelectionConfig> {
+    pub fn device_selection_config(&self) -> ::std::option::Option<&crate::types::DeviceSelectionConfig> {
         self.device_selection_config.as_ref()
     }
     /// <p>Configuration of the deployment details.</p>
@@ -39,9 +37,7 @@ impl DeploymentStage {
 
 /// A builder for [`DeploymentStage`](crate::types::DeploymentStage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentStageBuilder {
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,
@@ -68,17 +64,12 @@ impl DeploymentStageBuilder {
         self
     }
     /// <p>Configuration of the devices in the stage.</p>
-    pub fn set_device_selection_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSelectionConfig>,
-    ) -> Self {
+    pub fn set_device_selection_config(mut self, input: ::std::option::Option<crate::types::DeviceSelectionConfig>) -> Self {
         self.device_selection_config = input;
         self
     }
     /// <p>Configuration of the devices in the stage.</p>
-    pub fn get_device_selection_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceSelectionConfig> {
+    pub fn get_device_selection_config(&self) -> &::std::option::Option<crate::types::DeviceSelectionConfig> {
         &self.device_selection_config
     }
     /// <p>Configuration of the deployment details.</p>
@@ -87,17 +78,12 @@ impl DeploymentStageBuilder {
         self
     }
     /// <p>Configuration of the deployment details.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeDeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::EdgeDeploymentConfig>) -> Self {
         self.deployment_config = input;
         self
     }
     /// <p>Configuration of the deployment details.</p>
-    pub fn get_deployment_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgeDeploymentConfig> {
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::EdgeDeploymentConfig> {
         &self.deployment_config
     }
     /// Consumes the builder and constructs a [`DeploymentStage`](crate::types::DeploymentStage).

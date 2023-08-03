@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGeoMatchSetOutput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteGeoMatchSetError>`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetError)
-    pub fn delete_geo_match_set(
-        &self,
-    ) -> crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetFluentBuilder {
-        crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_geo_match_set(&self) -> crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetFluentBuilder {
+        crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

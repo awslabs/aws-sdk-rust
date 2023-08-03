@@ -28,8 +28,7 @@ impl DeleteCustomActionTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomActionTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder,
+    inner: crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder,
 }
 impl DeleteCustomActionTypeFluentBuilder {
     /// Creates a new `DeleteCustomActionType`.
@@ -40,10 +39,7 @@ impl DeleteCustomActionTypeFluentBuilder {
         }
     }
     /// Access the DeleteCustomActionType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteCustomActionTypeFluentBuilder {
             crate::operation::delete_custom_action_type::DeleteCustomActionType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_action_type::DeleteCustomActionTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteCustomActionTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteCustomActionTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_action_type::DeleteCustomActionTypeError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteCustomActionTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_action_type::DeleteCustomActionTypeError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl DeleteCustomActionTypeFluentBuilder {
             crate::operation::delete_custom_action_type::DeleteCustomActionType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_action_type::DeleteCustomActionTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +117,7 @@ impl DeleteCustomActionTypeFluentBuilder {
         self
     }
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }

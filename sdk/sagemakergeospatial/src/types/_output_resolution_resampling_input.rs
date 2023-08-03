@@ -23,9 +23,7 @@ impl OutputResolutionResamplingInput {
 
 /// A builder for [`OutputResolutionResamplingInput`](crate::types::OutputResolutionResamplingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputResolutionResamplingInputBuilder {
     pub(crate) user_defined: ::std::option::Option<crate::types::UserDefined>,
 }
@@ -36,10 +34,7 @@ impl OutputResolutionResamplingInputBuilder {
         self
     }
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
-    pub fn set_user_defined(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDefined>,
-    ) -> Self {
+    pub fn set_user_defined(mut self, input: ::std::option::Option<crate::types::UserDefined>) -> Self {
         self.user_defined = input;
         self
     }

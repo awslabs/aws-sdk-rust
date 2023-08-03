@@ -70,9 +70,7 @@ impl ContainerServiceStateDetail {
 
 /// A builder for [`ContainerServiceStateDetail`](crate::types::ContainerServiceStateDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceStateDetailBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ContainerServiceStateDetailCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl ContainerServiceStateDetailBuilder {
     /// <li> <p> <code>UNKNOWN_ERROR</code> - An error was experienced when your container service was being created.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceStateDetailCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ContainerServiceStateDetailCode>) -> Self {
         self.code = input;
         self
     }
@@ -146,9 +141,7 @@ impl ContainerServiceStateDetailBuilder {
     /// <li> <p> <code>UNKNOWN_ERROR</code> - An error was experienced when your container service was being created.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceStateDetailCode> {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ContainerServiceStateDetailCode> {
         &self.code
     }
     /// <p>A message that provides more information for the state code.</p> <note>

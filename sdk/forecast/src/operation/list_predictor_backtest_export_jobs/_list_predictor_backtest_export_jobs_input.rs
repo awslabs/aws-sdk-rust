@@ -41,16 +41,14 @@ impl ListPredictorBacktestExportJobsInput {
 }
 impl ListPredictorBacktestExportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListPredictorBacktestExportJobsInput`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsInput).
-    pub fn builder() -> crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsInputBuilder {
         crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPredictorBacktestExportJobsInput`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPredictorBacktestExportJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -109,10 +107,7 @@ impl ListPredictorBacktestExportJobsInputBuilder {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -135,13 +130,10 @@ impl ListPredictorBacktestExportJobsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            },
         )
     }
 }

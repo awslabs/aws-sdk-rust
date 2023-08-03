@@ -11,9 +11,7 @@ pub struct StopRemoteAccessSessionOutput {
 }
 impl StopRemoteAccessSessionOutput {
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
-    pub fn remote_access_session(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RemoteAccessSession> {
+    pub fn remote_access_session(&self) -> ::std::option::Option<&crate::types::RemoteAccessSession> {
         self.remote_access_session.as_ref()
     }
 }
@@ -24,18 +22,14 @@ impl ::aws_http::request_id::RequestId for StopRemoteAccessSessionOutput {
 }
 impl StopRemoteAccessSessionOutput {
     /// Creates a new builder-style object to manufacture [`StopRemoteAccessSessionOutput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionOutputBuilder {
         crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopRemoteAccessSessionOutput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRemoteAccessSessionOutputBuilder {
     pub(crate) remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,
@@ -47,17 +41,12 @@ impl StopRemoteAccessSessionOutputBuilder {
         self
     }
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
-    pub fn set_remote_access_session(
-        mut self,
-        input: ::std::option::Option<crate::types::RemoteAccessSession>,
-    ) -> Self {
+    pub fn set_remote_access_session(mut self, input: ::std::option::Option<crate::types::RemoteAccessSession>) -> Self {
         self.remote_access_session = input;
         self
     }
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
-    pub fn get_remote_access_session(
-        &self,
-    ) -> &::std::option::Option<crate::types::RemoteAccessSession> {
+    pub fn get_remote_access_session(&self) -> &::std::option::Option<crate::types::RemoteAccessSession> {
         &self.remote_access_session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -70,9 +59,7 @@ impl StopRemoteAccessSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopRemoteAccessSessionOutput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput {
+    pub fn build(self) -> crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput {
         crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput {
             remote_access_session: self.remote_access_session,
             _request_id: self._request_id,

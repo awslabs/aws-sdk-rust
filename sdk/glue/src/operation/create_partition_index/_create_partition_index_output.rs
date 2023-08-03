@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreatePartitionIndexOutput {
 }
 impl CreatePartitionIndexOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartitionIndexOutput`](crate::operation::create_partition_index::CreatePartitionIndexOutput).
-    pub fn builder(
-    ) -> crate::operation::create_partition_index::builders::CreatePartitionIndexOutputBuilder {
+    pub fn builder() -> crate::operation::create_partition_index::builders::CreatePartitionIndexOutputBuilder {
         crate::operation::create_partition_index::builders::CreatePartitionIndexOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePartitionIndexOutput`](crate::operation::create_partition_index::CreatePartitionIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartitionIndexOutputBuilder {
     _request_id: Option<String>,
 }

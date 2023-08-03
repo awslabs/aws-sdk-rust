@@ -23,9 +23,7 @@ impl GetChangeInput {
 
 /// A builder for [`GetChangeInput`](crate::operation::get_change::GetChangeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangeInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl GetChangeInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetChangeInput`](crate::operation::get_change::GetChangeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_change::GetChangeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_change::GetChangeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_change::GetChangeInput { id: self.id })
     }
 }

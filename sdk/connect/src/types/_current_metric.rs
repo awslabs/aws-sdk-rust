@@ -30,9 +30,7 @@ impl CurrentMetric {
 
 /// A builder for [`CurrentMetric`](crate::types::CurrentMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::CurrentMetricName>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,
@@ -44,10 +42,7 @@ impl CurrentMetricBuilder {
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrentMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::CurrentMetricName>) -> Self {
         self.name = input;
         self
     }

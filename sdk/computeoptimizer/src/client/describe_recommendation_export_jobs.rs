@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`recommendation_export_jobs(Option<Vec<RecommendationExportJob>>)`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput::recommendation_export_jobs): <p>An array of objects that describe recommendation export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput::next_token): <p>The token to use to advance to the next page of export jobs.</p>  <p>This value is null when there are no more pages of export jobs to return.</p>
     /// - On failure, responds with [`SdkError<DescribeRecommendationExportJobsError>`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError)
-    pub fn describe_recommendation_export_jobs(&self) -> crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsFluentBuilder{
+    pub fn describe_recommendation_export_jobs(
+        &self,
+    ) -> crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsFluentBuilder {
         crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

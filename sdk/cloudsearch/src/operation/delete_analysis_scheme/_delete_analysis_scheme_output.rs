@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteAnalysisSchemeOutput {
 }
 impl DeleteAnalysisSchemeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeOutput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeOutputBuilder {
+    pub fn builder() -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeOutputBuilder {
         crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnalysisSchemeOutput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeOutputBuilder {
     pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl DeleteAnalysisSchemeOutputBuilder {
         self
     }
     /// <p>The status of the analysis scheme being deleted.</p>
-    pub fn set_analysis_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
-    ) -> Self {
+    pub fn set_analysis_scheme(mut self, input: ::std::option::Option<crate::types::AnalysisSchemeStatus>) -> Self {
         self.analysis_scheme = input;
         self
     }
     /// <p>The status of the analysis scheme being deleted.</p>
-    pub fn get_analysis_scheme(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalysisSchemeStatus> {
+    pub fn get_analysis_scheme(&self) -> &::std::option::Option<crate::types::AnalysisSchemeStatus> {
         &self.analysis_scheme
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

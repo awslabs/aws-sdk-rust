@@ -10,10 +10,7 @@ impl SearchAddressBooksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_address_books::SearchAddressBooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_address_books::SearchAddressBooksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_address_books::SearchAddressBooksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_address_books();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchAddressBooksFluentBuilder {
         }
     }
     /// Access the SearchAddressBooks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl SearchAddressBooksFluentBuilder {
             crate::operation::search_address_books::SearchAddressBooks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_address_books::SearchAddressBooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_address_books::SearchAddressBooksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl SearchAddressBooksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl SearchAddressBooksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_address_books::SearchAddressBooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_address_books::SearchAddressBooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_address_books::SearchAddressBooksError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl SearchAddressBooksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_address_books::SearchAddressBooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_address_books::SearchAddressBooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_address_books::SearchAddressBooksError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl SearchAddressBooksFluentBuilder {
             crate::operation::search_address_books::SearchAddressBooks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_address_books::SearchAddressBooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_address_books::SearchAddressBooksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_address_books::paginator::SearchAddressBooksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_address_books::paginator::SearchAddressBooksPaginator {
-        crate::operation::search_address_books::paginator::SearchAddressBooksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_address_books::paginator::SearchAddressBooksPaginator {
+        crate::operation::search_address_books::paginator::SearchAddressBooksPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -144,10 +123,7 @@ impl SearchAddressBooksFluentBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -165,10 +141,7 @@ impl SearchAddressBooksFluentBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

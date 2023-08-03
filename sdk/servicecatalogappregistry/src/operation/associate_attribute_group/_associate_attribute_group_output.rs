@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateAttributeGroupOutput {
 }
 impl AssociateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAttributeGroupOutput`](crate::operation::associate_attribute_group::AssociateAttributeGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_attribute_group::builders::AssociateAttributeGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_attribute_group::builders::AssociateAttributeGroupOutputBuilder {
         crate::operation::associate_attribute_group::builders::AssociateAttributeGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAttributeGroupOutput`](crate::operation::associate_attribute_group::AssociateAttributeGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAttributeGroupOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_group_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct AssociateAttributeGroupOutputBuilder {
 }
 impl AssociateAttributeGroupOutputBuilder {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -67,18 +57,12 @@ impl AssociateAttributeGroupOutputBuilder {
         &self.application_arn
     }
     /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
-    pub fn attribute_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
-    pub fn set_attribute_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_group_arn = input;
         self
     }
@@ -96,9 +80,7 @@ impl AssociateAttributeGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateAttributeGroupOutput`](crate::operation::associate_attribute_group::AssociateAttributeGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_attribute_group::AssociateAttributeGroupOutput {
+    pub fn build(self) -> crate::operation::associate_attribute_group::AssociateAttributeGroupOutput {
         crate::operation::associate_attribute_group::AssociateAttributeGroupOutput {
             application_arn: self.application_arn,
             attribute_group_arn: self.attribute_group_arn,

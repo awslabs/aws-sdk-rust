@@ -10,10 +10,7 @@ impl GetWorkflowRunsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_runs::GetWorkflowRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_runs::GetWorkflowRunsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_runs::GetWorkflowRunsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_workflow_runs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetWorkflowRunsFluentBuilder {
         }
     }
     /// Access the GetWorkflowRuns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_workflow_runs::builders::GetWorkflowRunsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_workflow_runs::builders::GetWorkflowRunsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetWorkflowRunsFluentBuilder {
             crate::operation::get_workflow_runs::GetWorkflowRuns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_runs::GetWorkflowRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_runs::GetWorkflowRunsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetWorkflowRunsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetWorkflowRunsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_runs::GetWorkflowRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_runs::GetWorkflowRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_runs::GetWorkflowRunsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetWorkflowRunsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_runs::GetWorkflowRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_runs::GetWorkflowRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_runs::GetWorkflowRunsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetWorkflowRunsFluentBuilder {
             crate::operation::get_workflow_runs::GetWorkflowRuns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_runs::GetWorkflowRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_runs::GetWorkflowRunsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_workflow_runs::paginator::GetWorkflowRunsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_workflow_runs::paginator::GetWorkflowRunsPaginator {
-        crate::operation::get_workflow_runs::paginator::GetWorkflowRunsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_workflow_runs::paginator::GetWorkflowRunsPaginator {
+        crate::operation::get_workflow_runs::paginator::GetWorkflowRunsPaginator::new(self.handle, self.inner)
     }
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

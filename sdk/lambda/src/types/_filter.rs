@@ -23,9 +23,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl FilterBuilder {
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            pattern: self.pattern,
-        }
+        crate::types::Filter { pattern: self.pattern }
     }
 }

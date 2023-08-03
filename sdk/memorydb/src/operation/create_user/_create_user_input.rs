@@ -43,9 +43,7 @@ impl CreateUserInput {
 
 /// A builder for [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
@@ -73,32 +71,21 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
+    pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
         self.authentication_mode = input;
         self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn get_authentication_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+    pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         &self.authentication_mode
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_string = input;
         self
     }
@@ -118,10 +105,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -130,12 +114,7 @@ impl CreateUserInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user::CreateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             user_name: self.user_name,
             authentication_mode: self.authentication_mode,

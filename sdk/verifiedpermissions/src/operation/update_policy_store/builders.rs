@@ -10,10 +10,7 @@ impl UpdatePolicyStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_policy_store::UpdatePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_store::UpdatePolicyStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_store::UpdatePolicyStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_policy_store();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePolicyStoreFluentBuilder {
         }
     }
     /// Access the UpdatePolicyStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePolicyStoreFluentBuilder {
             crate::operation::update_policy_store::UpdatePolicyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_store::UpdatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_store::UpdatePolicyStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePolicyStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePolicyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_policy_store::UpdatePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_store::UpdatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_store::UpdatePolicyStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePolicyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_policy_store::UpdatePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_store::UpdatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_store::UpdatePolicyStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdatePolicyStoreFluentBuilder {
             crate::operation::update_policy_store::UpdatePolicyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy_store::UpdatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy_store::UpdatePolicyStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that you want to update</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that you want to update</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -148,17 +126,12 @@ impl UpdatePolicyStoreFluentBuilder {
         self
     }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
-    pub fn set_validation_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationSettings>,
-    ) -> Self {
+    pub fn set_validation_settings(mut self, input: ::std::option::Option<crate::types::ValidationSettings>) -> Self {
         self.inner = self.inner.set_validation_settings(input);
         self
     }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
-    pub fn get_validation_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+    pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         self.inner.get_validation_settings()
     }
 }

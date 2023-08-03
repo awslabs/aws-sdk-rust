@@ -58,9 +58,7 @@ impl ViewFrame {
 
 /// A builder for [`ViewFrame`](crate::types::ViewFrame).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViewFrameBuilder {
     pub(crate) start_column_index: ::std::option::Option<i32>,
     pub(crate) column_range: ::std::option::Option<i32>,
@@ -103,27 +101,19 @@ impl ViewFrameBuilder {
     /// To override the contents of this collection use [`set_hidden_columns`](Self::set_hidden_columns).
     ///
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn hidden_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hidden_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hidden_columns.unwrap_or_default();
         v.push(input.into());
         self.hidden_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn set_hidden_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hidden_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hidden_columns = input;
         self
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn get_hidden_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hidden_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hidden_columns
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
@@ -160,10 +150,7 @@ impl ViewFrameBuilder {
         self
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
-    pub fn set_analytics(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMode>,
-    ) -> Self {
+    pub fn set_analytics(mut self, input: ::std::option::Option<crate::types::AnalyticsMode>) -> Self {
         self.analytics = input;
         self
     }

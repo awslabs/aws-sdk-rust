@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeDataSetPermissionsError>`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError)
-    pub fn describe_data_set_permissions(&self) -> crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsFluentBuilder{
+    pub fn describe_data_set_permissions(
+        &self,
+    ) -> crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsFluentBuilder {
         crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

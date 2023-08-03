@@ -39,17 +39,14 @@ impl ::aws_http::request_id::RequestId for DeleteInterconnectOutput {
 }
 impl DeleteInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::operation::delete_interconnect::DeleteInterconnectOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_interconnect::builders::DeleteInterconnectOutputBuilder {
+    pub fn builder() -> crate::operation::delete_interconnect::builders::DeleteInterconnectOutputBuilder {
         crate::operation::delete_interconnect::builders::DeleteInterconnectOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInterconnectOutput`](crate::operation::delete_interconnect::DeleteInterconnectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInterconnectOutputBuilder {
     pub(crate) interconnect_state: ::std::option::Option<crate::types::InterconnectState>,
     _request_id: Option<String>,
@@ -79,10 +76,7 @@ impl DeleteInterconnectOutputBuilder {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
-    pub fn set_interconnect_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InterconnectState>,
-    ) -> Self {
+    pub fn set_interconnect_state(mut self, input: ::std::option::Option<crate::types::InterconnectState>) -> Self {
         self.interconnect_state = input;
         self
     }
@@ -96,9 +90,7 @@ impl DeleteInterconnectOutputBuilder {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
-    pub fn get_interconnect_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::InterconnectState> {
+    pub fn get_interconnect_state(&self) -> &::std::option::Option<crate::types::InterconnectState> {
         &self.interconnect_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

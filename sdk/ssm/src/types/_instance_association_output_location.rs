@@ -24,9 +24,7 @@ impl InstanceAssociationOutputLocation {
 
 /// A builder for [`InstanceAssociationOutputLocation`](crate::types::InstanceAssociationOutputLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceAssociationOutputLocationBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3OutputLocation>,
 }
@@ -37,10 +35,7 @@ impl InstanceAssociationOutputLocationBuilder {
         self
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3OutputLocation>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3OutputLocation>) -> Self {
         self.s3_location = input;
         self
     }

@@ -22,33 +22,23 @@ pub struct LoggingConfigurationInput {
 }
 impl LoggingConfigurationInput {
     /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
-    pub fn dag_processing_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
+    pub fn dag_processing_logs(&self) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
         self.dag_processing_logs.as_ref()
     }
     /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
-    pub fn scheduler_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
+    pub fn scheduler_logs(&self) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
         self.scheduler_logs.as_ref()
     }
     /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
-    pub fn webserver_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
+    pub fn webserver_logs(&self) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
         self.webserver_logs.as_ref()
     }
     /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
-    pub fn worker_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
+    pub fn worker_logs(&self) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
         self.worker_logs.as_ref()
     }
     /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-    pub fn task_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
+    pub fn task_logs(&self) -> ::std::option::Option<&crate::types::ModuleLoggingConfigurationInput> {
         self.task_logs.as_ref()
     }
 }
@@ -61,12 +51,9 @@ impl LoggingConfigurationInput {
 
 /// A builder for [`LoggingConfigurationInput`](crate::types::LoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationInputBuilder {
-    pub(crate) dag_processing_logs:
-        ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
+    pub(crate) dag_processing_logs: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
     pub(crate) scheduler_logs: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
     pub(crate) webserver_logs: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
     pub(crate) worker_logs: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
@@ -74,25 +61,17 @@ pub struct LoggingConfigurationInputBuilder {
 }
 impl LoggingConfigurationInputBuilder {
     /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
-    pub fn dag_processing_logs(
-        mut self,
-        input: crate::types::ModuleLoggingConfigurationInput,
-    ) -> Self {
+    pub fn dag_processing_logs(mut self, input: crate::types::ModuleLoggingConfigurationInput) -> Self {
         self.dag_processing_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
-    pub fn set_dag_processing_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
-    ) -> Self {
+    pub fn set_dag_processing_logs(mut self, input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>) -> Self {
         self.dag_processing_logs = input;
         self
     }
     /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
-    pub fn get_dag_processing_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
+    pub fn get_dag_processing_logs(&self) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
         &self.dag_processing_logs
     }
     /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
@@ -101,17 +80,12 @@ impl LoggingConfigurationInputBuilder {
         self
     }
     /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
-    pub fn set_scheduler_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
-    ) -> Self {
+    pub fn set_scheduler_logs(mut self, input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>) -> Self {
         self.scheduler_logs = input;
         self
     }
     /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
-    pub fn get_scheduler_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
+    pub fn get_scheduler_logs(&self) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
         &self.scheduler_logs
     }
     /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
@@ -120,17 +94,12 @@ impl LoggingConfigurationInputBuilder {
         self
     }
     /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
-    pub fn set_webserver_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
-    ) -> Self {
+    pub fn set_webserver_logs(mut self, input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>) -> Self {
         self.webserver_logs = input;
         self
     }
     /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
-    pub fn get_webserver_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
+    pub fn get_webserver_logs(&self) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
         &self.webserver_logs
     }
     /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
@@ -139,17 +108,12 @@ impl LoggingConfigurationInputBuilder {
         self
     }
     /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
-    pub fn set_worker_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
-    ) -> Self {
+    pub fn set_worker_logs(mut self, input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>) -> Self {
         self.worker_logs = input;
         self
     }
     /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
-    pub fn get_worker_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
+    pub fn get_worker_logs(&self) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
         &self.worker_logs
     }
     /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
@@ -158,17 +122,12 @@ impl LoggingConfigurationInputBuilder {
         self
     }
     /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-    pub fn set_task_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>,
-    ) -> Self {
+    pub fn set_task_logs(mut self, input: ::std::option::Option<crate::types::ModuleLoggingConfigurationInput>) -> Self {
         self.task_logs = input;
         self
     }
     /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-    pub fn get_task_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
+    pub fn get_task_logs(&self) -> &::std::option::Option<crate::types::ModuleLoggingConfigurationInput> {
         &self.task_logs
     }
     /// Consumes the builder and constructs a [`LoggingConfigurationInput`](crate::types::LoggingConfigurationInput).

@@ -37,10 +37,7 @@ impl ListRotationOverridesFluentBuilder {
         }
     }
     /// Access the ListRotationOverrides as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_rotation_overrides::builders::ListRotationOverridesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_rotation_overrides::builders::ListRotationOverridesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListRotationOverridesFluentBuilder {
             crate::operation::list_rotation_overrides::ListRotationOverrides,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_overrides::ListRotationOverridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_overrides::ListRotationOverridesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListRotationOverridesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListRotationOverridesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rotation_overrides::ListRotationOverridesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_overrides::ListRotationOverridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_overrides::ListRotationOverridesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListRotationOverridesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rotation_overrides::ListRotationOverridesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_overrides::ListRotationOverridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_overrides::ListRotationOverridesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListRotationOverridesFluentBuilder {
             crate::operation::list_rotation_overrides::ListRotationOverrides,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_overrides::ListRotationOverridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_overrides::ListRotationOverridesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_rotation_overrides::paginator::ListRotationOverridesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_rotation_overrides::paginator::ListRotationOverridesPaginator {
-        crate::operation::list_rotation_overrides::paginator::ListRotationOverridesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_rotation_overrides::paginator::ListRotationOverridesPaginator {
+        crate::operation::list_rotation_overrides::paginator::ListRotationOverridesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve information about.</p>
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +135,7 @@ impl ListRotationOverridesFluentBuilder {
         self
     }
     /// <p>The date and time for the beginning of a time range for listing overrides.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -171,10 +149,7 @@ impl ListRotationOverridesFluentBuilder {
         self
     }
     /// <p>The date and time for the end of a time range for listing overrides.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

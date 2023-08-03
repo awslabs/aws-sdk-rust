@@ -28,8 +28,7 @@ impl DeleteChannelMembershipInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteChannelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder,
+    inner: crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder,
 }
 impl DeleteChannelMembershipFluentBuilder {
     /// Creates a new `DeleteChannelMembership`.
@@ -40,10 +39,7 @@ impl DeleteChannelMembershipFluentBuilder {
         }
     }
     /// Access the DeleteChannelMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteChannelMembershipFluentBuilder {
             crate::operation::delete_channel_membership::DeleteChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_channel_membership::DeleteChannelMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteChannelMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_channel_membership::DeleteChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_channel_membership::DeleteChannelMembershipError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_channel_membership::DeleteChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_channel_membership::DeleteChannelMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl DeleteChannelMembershipFluentBuilder {
             crate::operation::delete_channel_membership::DeleteChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_channel_membership::DeleteChannelMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -171,20 +156,14 @@ impl DeleteChannelMembershipFluentBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only for use by moderators.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only for use by moderators.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }

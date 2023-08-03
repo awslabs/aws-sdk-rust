@@ -73,9 +73,7 @@ impl UpdateDatasetInput {
 
 /// A builder for [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ impl UpdateDatasetInputBuilder {
         &self.dataset_id
     }
     /// <p>A display title for the Dataset.</p>
-    pub fn dataset_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A display title for the Dataset.</p>
-    pub fn set_dataset_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_title = input;
         self
     }
@@ -161,18 +153,12 @@ impl UpdateDatasetInputBuilder {
         &self.kind
     }
     /// <p>A description for the Dataset.</p>
-    pub fn dataset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the Dataset.</p>
-    pub fn set_dataset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_description = input;
         self
     }
@@ -200,10 +186,7 @@ impl UpdateDatasetInputBuilder {
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaUnion>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaUnion>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -214,10 +197,7 @@ impl UpdateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dataset::UpdateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

@@ -39,16 +39,14 @@ impl AuthorizeClusterSecurityGroupIngressInput {
 }
 impl AuthorizeClusterSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeClusterSecurityGroupIngressInput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder {
         crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeClusterSecurityGroupIngressInput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeClusterSecurityGroupIngressInputBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,
@@ -57,18 +55,12 @@ pub struct AuthorizeClusterSecurityGroupIngressInputBuilder {
 }
 impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     /// <p>The name of the security group to which the ingress rule is added.</p>
-    pub fn cluster_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security group to which the ingress rule is added.</p>
-    pub fn set_cluster_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_security_group_name = input;
         self
     }
@@ -91,18 +83,12 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
         &self.cidrip
     }
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -112,19 +98,13 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
     /// <p>Example: <code>111122223333</code> </p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
     /// <p>Example: <code>111122223333</code> </p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
@@ -134,18 +114,19 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`AuthorizeClusterSecurityGroupIngressInput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput {
-                cluster_security_group_name: self.cluster_security_group_name
-                ,
-                cidrip: self.cidrip
-                ,
-                ec2_security_group_name: self.ec2_security_group_name
-                ,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id
-                ,
-            }
+                cluster_security_group_name: self.cluster_security_group_name,
+                cidrip: self.cidrip,
+                ec2_security_group_name: self.ec2_security_group_name,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
+            },
         )
     }
 }

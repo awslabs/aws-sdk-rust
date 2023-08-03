@@ -5,26 +5,20 @@
 pub struct GetAccountBalanceInput {}
 impl GetAccountBalanceInput {
     /// Creates a new builder-style object to manufacture [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_account_balance::builders::GetAccountBalanceInputBuilder {
+    pub fn builder() -> crate::operation::get_account_balance::builders::GetAccountBalanceInputBuilder {
         crate::operation::get_account_balance::builders::GetAccountBalanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountBalanceInputBuilder {}
 impl GetAccountBalanceInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_account_balance::GetAccountBalanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_account_balance::GetAccountBalanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_balance::GetAccountBalanceInput {})
     }
 }

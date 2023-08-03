@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateLambdaFunctionOutput {
 }
 impl DisassociateLambdaFunctionOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLambdaFunctionOutput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput).
-    pub fn builder() -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionOutputBuilder {
         crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLambdaFunctionOutput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLambdaFunctionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateLambdaFunctionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateLambdaFunctionOutput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput {
+    pub fn build(self) -> crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput {
         crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput {
             _request_id: self._request_id,
         }

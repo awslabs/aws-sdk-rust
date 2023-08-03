@@ -37,8 +37,7 @@ impl DeleteSizeConstraintSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSizeConstraintSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder,
+    inner: crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder,
 }
 impl DeleteSizeConstraintSetFluentBuilder {
     /// Creates a new `DeleteSizeConstraintSet`.
@@ -49,10 +48,7 @@ impl DeleteSizeConstraintSetFluentBuilder {
         }
     }
     /// Access the DeleteSizeConstraintSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +60,7 @@ impl DeleteSizeConstraintSetFluentBuilder {
             crate::operation::delete_size_constraint_set::DeleteSizeConstraintSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +70,7 @@ impl DeleteSizeConstraintSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +79,7 @@ impl DeleteSizeConstraintSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError>,
     > {
         let op = self
             .inner
@@ -113,9 +102,7 @@ impl DeleteSizeConstraintSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError>,
     > {
         self.send_middleware().await
     }
@@ -129,25 +116,17 @@ impl DeleteSizeConstraintSetFluentBuilder {
             crate::operation::delete_size_constraint_set::DeleteSizeConstraintSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.size_constraint_set_id(input.into());
         self
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn set_size_constraint_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_size_constraint_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_size_constraint_set_id(input);
         self
     }

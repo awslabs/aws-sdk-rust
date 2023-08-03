@@ -30,9 +30,7 @@ impl EstimatedResourceSize {
 
 /// A builder for [`EstimatedResourceSize`](crate::types::EstimatedResourceSize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EstimatedResourceSizeBuilder {
     pub(crate) estimated_size_in_bytes: ::std::option::Option<f64>,
     pub(crate) estimated_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,10 +56,7 @@ impl EstimatedResourceSizeBuilder {
         self
     }
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    pub fn set_estimated_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_estimated_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.estimated_on = input;
         self
     }

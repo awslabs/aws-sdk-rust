@@ -40,9 +40,7 @@ impl SetTypeConfigurationFluentBuilder {
         }
     }
     /// Access the SetTypeConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl SetTypeConfigurationFluentBuilder {
             crate::operation::set_type_configuration::SetTypeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_configuration::SetTypeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_configuration::SetTypeConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl SetTypeConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl SetTypeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_type_configuration::SetTypeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_configuration::SetTypeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_configuration::SetTypeConfigurationError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl SetTypeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_type_configuration::SetTypeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_configuration::SetTypeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_configuration::SetTypeConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl SetTypeConfigurationFluentBuilder {
             crate::operation::set_type_configuration::SetTypeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_configuration::SetTypeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_configuration::SetTypeConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -147,19 +134,13 @@ impl SetTypeConfigurationFluentBuilder {
     }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration(input.into());
         self
     }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -170,19 +151,13 @@ impl SetTypeConfigurationFluentBuilder {
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
-    pub fn configuration_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_alias(input.into());
         self
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
-    pub fn set_configuration_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_alias(input);
         self
     }

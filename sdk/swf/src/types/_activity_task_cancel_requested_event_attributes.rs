@@ -30,9 +30,7 @@ impl ActivityTaskCancelRequestedEventAttributes {
 
 /// A builder for [`ActivityTaskCancelRequestedEventAttributes`](crate::types::ActivityTaskCancelRequestedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityTaskCancelRequestedEventAttributesBuilder {
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -72,9 +67,7 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ActivityTaskCancelRequestedEventAttributes`](crate::types::ActivityTaskCancelRequestedEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskCancelRequestedEventAttributes {
         crate::types::ActivityTaskCancelRequestedEventAttributes {
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             activity_id: self.activity_id,
         }
     }

@@ -10,10 +10,7 @@ impl SearchProductsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_products::SearchProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_products::SearchProductsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_products::SearchProductsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_products();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchProductsFluentBuilder {
         }
     }
     /// Access the SearchProducts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_products::builders::SearchProductsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_products::builders::SearchProductsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SearchProductsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,23 +109,15 @@ impl SearchProductsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_products::paginator::SearchProductsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_products::paginator::SearchProductsPaginator {
-        crate::operation::search_products::paginator::SearchProductsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_products::paginator::SearchProductsPaginator {
+        crate::operation::search_products::paginator::SearchProductsPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -142,10 +126,7 @@ impl SearchProductsFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -162,23 +143,14 @@ impl SearchProductsFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProductViewFilterBy,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ProductViewFilterBy,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -186,12 +158,7 @@ impl SearchProductsFluentBuilder {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -214,10 +181,7 @@ impl SearchProductsFluentBuilder {
         self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProductViewSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

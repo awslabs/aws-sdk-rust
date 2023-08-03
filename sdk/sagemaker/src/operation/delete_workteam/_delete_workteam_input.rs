@@ -22,26 +22,18 @@ impl DeleteWorkteamInput {
 
 /// A builder for [`DeleteWorkteamInput`](crate::operation::delete_workteam::DeleteWorkteamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkteamInputBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkteamInputBuilder {
     /// <p>The name of the work team to delete.</p>
-    pub fn workteam_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the work team to delete.</p>
-    pub fn set_workteam_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkteamInput`](crate::operation::delete_workteam::DeleteWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workteam::DeleteWorkteamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workteam::DeleteWorkteamInput {
             workteam_name: self.workteam_name,
         })

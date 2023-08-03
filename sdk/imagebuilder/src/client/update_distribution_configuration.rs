@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`distribution_configuration_arn(Option<String>)`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
     /// - On failure, responds with [`SdkError<UpdateDistributionConfigurationError>`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError)
-    pub fn update_distribution_configuration(&self) -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationFluentBuilder{
+    pub fn update_distribution_configuration(
+        &self,
+    ) -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationFluentBuilder {
         crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -54,10 +54,7 @@ pub fn ser_create_license_version_input(
     if let Some(var_17) = &input.consumption_configuration {
         #[allow(unused_mut)]
         let mut object_18 = object.key("ConsumptionConfiguration").start_object();
-        crate::protocol_serde::shape_consumption_configuration::ser_consumption_configuration(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_consumption_configuration::ser_consumption_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.status {

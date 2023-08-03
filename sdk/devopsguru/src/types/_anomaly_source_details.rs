@@ -6,24 +6,18 @@
 pub struct AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
     #[doc(hidden)]
-    pub cloud_watch_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
+    pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
     #[doc(hidden)]
-    pub performance_insights_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+    pub performance_insights_metrics: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
 }
 impl AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
-    pub fn cloud_watch_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudWatchMetricsDetail]> {
+    pub fn cloud_watch_metrics(&self) -> ::std::option::Option<&[crate::types::CloudWatchMetricsDetail]> {
         self.cloud_watch_metrics.as_deref()
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub fn performance_insights_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PerformanceInsightsMetricsDetail]> {
+    pub fn performance_insights_metrics(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsMetricsDetail]> {
         self.performance_insights_metrics.as_deref()
     }
 }
@@ -36,14 +30,10 @@ impl AnomalySourceDetails {
 
 /// A builder for [`AnomalySourceDetails`](crate::types::AnomalySourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalySourceDetailsBuilder {
-    pub(crate) cloud_watch_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
-    pub(crate) performance_insights_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+    pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
+    pub(crate) performance_insights_metrics: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
 }
 impl AnomalySourceDetailsBuilder {
     /// Appends an item to `cloud_watch_metrics`.
@@ -58,17 +48,12 @@ impl AnomalySourceDetailsBuilder {
         self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
-    pub fn set_cloud_watch_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
-    ) -> Self {
+    pub fn set_cloud_watch_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>) -> Self {
         self.cloud_watch_metrics = input;
         self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
-    pub fn get_cloud_watch_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>> {
+    pub fn get_cloud_watch_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>> {
         &self.cloud_watch_metrics
     }
     /// Appends an item to `performance_insights_metrics`.
@@ -76,10 +61,7 @@ impl AnomalySourceDetailsBuilder {
     /// To override the contents of this collection use [`set_performance_insights_metrics`](Self::set_performance_insights_metrics).
     ///
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub fn performance_insights_metrics(
-        mut self,
-        input: crate::types::PerformanceInsightsMetricsDetail,
-    ) -> Self {
+    pub fn performance_insights_metrics(mut self, input: crate::types::PerformanceInsightsMetricsDetail) -> Self {
         let mut v = self.performance_insights_metrics.unwrap_or_default();
         v.push(input);
         self.performance_insights_metrics = ::std::option::Option::Some(v);
@@ -88,18 +70,13 @@ impl AnomalySourceDetailsBuilder {
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
     pub fn set_performance_insights_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
     ) -> Self {
         self.performance_insights_metrics = input;
         self
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub fn get_performance_insights_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>
-    {
+    pub fn get_performance_insights_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>> {
         &self.performance_insights_metrics
     }
     /// Consumes the builder and constructs a [`AnomalySourceDetails`](crate::types::AnomalySourceDetails).

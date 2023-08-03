@@ -6,12 +6,10 @@
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
-    pub predefined_metric_specification:
-        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
+    pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
-    pub customized_metric_specification:
-        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
+    pub customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
@@ -23,15 +21,11 @@ pub struct TargetTrackingConfiguration {
 }
 impl TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
+    pub fn predefined_metric_specification(&self) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
         self.predefined_metric_specification.as_ref()
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn customized_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
+    pub fn customized_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
     /// <p>The target value for the metric.</p> <note>
@@ -54,60 +48,40 @@ impl TargetTrackingConfiguration {
 
 /// A builder for [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingConfigurationBuilder {
-    pub(crate) predefined_metric_specification:
-        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
-    pub(crate) customized_metric_specification:
-        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
+    pub(crate) predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
+    pub(crate) customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     pub(crate) target_value: ::std::option::Option<f64>,
     pub(crate) disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingConfigurationBuilder {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_metric_specification(
-        mut self,
-        input: crate::types::PredefinedMetricSpecification,
-    ) -> Self {
+    pub fn predefined_metric_specification(mut self, input: crate::types::PredefinedMetricSpecification) -> Self {
         self.predefined_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn set_predefined_metric_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
-    ) -> Self {
+    pub fn set_predefined_metric_specification(mut self, input: ::std::option::Option<crate::types::PredefinedMetricSpecification>) -> Self {
         self.predefined_metric_specification = input;
         self
     }
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn get_predefined_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
+    pub fn get_predefined_metric_specification(&self) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
         &self.predefined_metric_specification
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn customized_metric_specification(
-        mut self,
-        input: crate::types::CustomizedMetricSpecification,
-    ) -> Self {
+    pub fn customized_metric_specification(mut self, input: crate::types::CustomizedMetricSpecification) -> Self {
         self.customized_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn set_customized_metric_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
-    ) -> Self {
+    pub fn set_customized_metric_specification(mut self, input: ::std::option::Option<crate::types::CustomizedMetricSpecification>) -> Self {
         self.customized_metric_specification = input;
         self
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn get_customized_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
+    pub fn get_customized_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
         &self.customized_metric_specification
     }
     /// <p>The target value for the metric.</p> <note>

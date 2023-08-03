@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`control_insights_metadata(Option<Vec<ControlInsightsMetadataItem>>)`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput::control_insights_metadata): <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListControlInsightsByControlDomainError>`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError)
-    pub fn list_control_insights_by_control_domain(&self) -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainFluentBuilder{
+    pub fn list_control_insights_by_control_domain(
+        &self,
+    ) -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainFluentBuilder {
         crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainFluentBuilder::new(self.handle.clone())
     }
 }

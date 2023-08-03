@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`scheduled_update_group_actions(Option<Vec<ScheduledUpdateGroupAction>>)`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput::scheduled_update_group_actions): <p>The scheduled actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduledActionsError>`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsError)
-    pub fn describe_scheduled_actions(
-        &self,
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder
-    {
+    pub fn describe_scheduled_actions(&self) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder::new(self.handle.clone())
     }
 }

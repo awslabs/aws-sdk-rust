@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetEventsOutput {
 }
 impl DescribeFleetEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetEventsOutput`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsOutputBuilder {
-        crate::operation::describe_fleet_events::builders::DescribeFleetEventsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsOutputBuilder {
+        crate::operation::describe_fleet_events::builders::DescribeFleetEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetEventsOutput`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl DescribeFleetEventsOutputBuilder {
         self
     }
     /// <p>A collection of objects containing event log entries for the specified fleet.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }

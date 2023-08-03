@@ -18,9 +18,7 @@ pub struct ThingDocument {
     pub thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attributes.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     #[doc(hidden)]
@@ -51,11 +49,7 @@ impl ThingDocument {
         self.thing_group_names.as_deref()
     }
     /// <p>The attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The unnamed shadow and named shadow.</p>
@@ -82,17 +76,13 @@ impl ThingDocument {
 
 /// A builder for [`ThingDocument`](crate::types::ThingDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingDocumentBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) shadow: ::std::option::Option<::std::string::String>,
     pub(crate) device_defender: ::std::option::Option<::std::string::String>,
     pub(crate) connectivity: ::std::option::Option<crate::types::ThingConnectivity>,
@@ -127,18 +117,12 @@ impl ThingDocumentBuilder {
         &self.thing_id
     }
     /// <p>The thing type name.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing type name.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -151,27 +135,19 @@ impl ThingDocumentBuilder {
     /// To override the contents of this collection use [`set_thing_group_names`](Self::set_thing_group_names).
     ///
     /// <p>Thing group names.</p>
-    pub fn thing_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thing_group_names.unwrap_or_default();
         v.push(input.into());
         self.thing_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Thing group names.</p>
-    pub fn set_thing_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thing_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thing_group_names = input;
         self
     }
     /// <p>Thing group names.</p>
-    pub fn get_thing_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thing_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thing_group_names
     }
     /// Adds a key-value pair to `attributes`.
@@ -179,32 +155,19 @@ impl ThingDocumentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The attributes.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The unnamed shadow and named shadow.</p>
@@ -226,19 +189,13 @@ impl ThingDocumentBuilder {
     }
     /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
-    pub fn device_defender(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_defender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_defender = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
-    pub fn set_device_defender(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_defender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_defender = input;
         self
     }
@@ -253,10 +210,7 @@ impl ThingDocumentBuilder {
         self
     }
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
-    pub fn set_connectivity(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingConnectivity>,
-    ) -> Self {
+    pub fn set_connectivity(mut self, input: ::std::option::Option<crate::types::ThingConnectivity>) -> Self {
         self.connectivity = input;
         self
     }

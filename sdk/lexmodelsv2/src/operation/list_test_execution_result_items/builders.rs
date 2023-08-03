@@ -26,7 +26,7 @@ impl ListTestExecutionResultItemsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTestExecutionResultItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder,
+    inner: crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder,
 }
 impl ListTestExecutionResultItemsFluentBuilder {
     /// Creates a new `ListTestExecutionResultItems`.
@@ -37,7 +37,7 @@ impl ListTestExecutionResultItemsFluentBuilder {
         }
     }
     /// Access the ListTestExecutionResultItems as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTestExecutionResultItemsFluentBuilder {
             crate::operation::list_test_execution_result_items::ListTestExecutionResultItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTestExecutionResultItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTestExecutionResultItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTestExecutionResultItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListTestExecutionResultItemsFluentBuilder {
             crate::operation::list_test_execution_result_items::ListTestExecutionResultItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_execution_result_items::paginator::ListTestExecutionResultItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_test_execution_result_items::paginator::ListTestExecutionResultItemsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_test_execution_result_items::paginator::ListTestExecutionResultItemsPaginator {
         crate::operation::list_test_execution_result_items::paginator::ListTestExecutionResultItemsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the test execution to list the result items.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_execution_id(input.into());
         self
     }
     /// <p>The unique identifier of the test execution to list the result items.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_execution_id(input);
         self
     }
@@ -152,17 +135,12 @@ impl ListTestExecutionResultItemsFluentBuilder {
         self
     }
     /// <p>The filter for the list of results from the test set execution.</p>
-    pub fn set_result_filter_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionResultFilterBy>,
-    ) -> Self {
+    pub fn set_result_filter_by(mut self, input: ::std::option::Option<crate::types::TestExecutionResultFilterBy>) -> Self {
         self.inner = self.inner.set_result_filter_by(input);
         self
     }
     /// <p>The filter for the list of results from the test set execution.</p>
-    pub fn get_result_filter_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionResultFilterBy> {
+    pub fn get_result_filter_by(&self) -> &::std::option::Option<crate::types::TestExecutionResultFilterBy> {
         self.inner.get_result_filter_by()
     }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>

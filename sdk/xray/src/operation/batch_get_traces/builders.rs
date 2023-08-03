@@ -10,10 +10,7 @@ impl BatchGetTracesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_traces::BatchGetTracesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_traces::BatchGetTracesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_traces::BatchGetTracesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_traces();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetTracesFluentBuilder {
         }
     }
     /// Access the BatchGetTraces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_traces::builders::BatchGetTracesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_traces::builders::BatchGetTracesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetTracesFluentBuilder {
             crate::operation::batch_get_traces::BatchGetTraces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_traces::BatchGetTracesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_traces::BatchGetTracesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetTracesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetTracesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_traces::BatchGetTracesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_traces::BatchGetTracesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_traces::BatchGetTracesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetTracesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_traces::BatchGetTracesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_traces::BatchGetTracesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_traces::BatchGetTracesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl BatchGetTracesFluentBuilder {
             crate::operation::batch_get_traces::BatchGetTraces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_traces::BatchGetTracesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_traces::BatchGetTracesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator {
-        crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator {
+        crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `TraceIds`.
     ///
@@ -143,10 +122,7 @@ impl BatchGetTracesFluentBuilder {
         self
     }
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    pub fn set_trace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trace_ids(input);
         self
     }

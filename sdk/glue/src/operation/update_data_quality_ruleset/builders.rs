@@ -26,7 +26,7 @@ impl UpdateDataQualityRulesetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataQualityRulesetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder,
+    inner: crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder,
 }
 impl UpdateDataQualityRulesetFluentBuilder {
     /// Creates a new `UpdateDataQualityRuleset`.
@@ -37,7 +37,7 @@ impl UpdateDataQualityRulesetFluentBuilder {
         }
     }
     /// Access the UpdateDataQualityRuleset as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateDataQualityRulesetFluentBuilder {
             crate::operation::update_data_quality_ruleset::UpdateDataQualityRuleset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateDataQualityRulesetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateDataQualityRulesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateDataQualityRulesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateDataQualityRulesetFluentBuilder {
             crate::operation::update_data_quality_ruleset::UpdateDataQualityRuleset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError>,
     > {
         self.customize_middleware().await
     }

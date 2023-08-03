@@ -31,8 +31,7 @@ impl AdminResetUserPasswordInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminResetUserPasswordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::admin_reset_user_password::builders::AdminResetUserPasswordInputBuilder,
+    inner: crate::operation::admin_reset_user_password::builders::AdminResetUserPasswordInputBuilder,
 }
 impl AdminResetUserPasswordFluentBuilder {
     /// Creates a new `AdminResetUserPassword`.
@@ -43,10 +42,7 @@ impl AdminResetUserPasswordFluentBuilder {
         }
     }
     /// Access the AdminResetUserPassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_reset_user_password::builders::AdminResetUserPasswordInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::admin_reset_user_password::builders::AdminResetUserPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl AdminResetUserPasswordFluentBuilder {
             crate::operation::admin_reset_user_password::AdminResetUserPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_reset_user_password::AdminResetUserPasswordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl AdminResetUserPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl AdminResetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_reset_user_password::AdminResetUserPasswordError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl AdminResetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_reset_user_password::AdminResetUserPasswordError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl AdminResetUserPasswordFluentBuilder {
             crate::operation::admin_reset_user_password::AdminResetUserPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_reset_user_password::AdminResetUserPasswordError>,
     > {
         self.customize_middleware().await
     }
@@ -191,9 +176,7 @@ impl AdminResetUserPasswordFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -208,11 +191,7 @@ impl AdminResetUserPasswordFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

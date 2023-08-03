@@ -5,15 +5,12 @@
 pub struct StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
     #[doc(hidden)]
-    pub stopping_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub stopping_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
-    pub fn stopping_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
+    pub fn stopping_instances(&self) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
         self.stopping_instances.as_deref()
     }
 }
@@ -31,12 +28,9 @@ impl StopInstancesOutput {
 
 /// A builder for [`StopInstancesOutput`](crate::operation::stop_instances::StopInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInstancesOutputBuilder {
-    pub(crate) stopping_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub(crate) stopping_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl StopInstancesOutputBuilder {
@@ -52,17 +46,12 @@ impl StopInstancesOutputBuilder {
         self
     }
     /// <p>Information about the stopped instances.</p>
-    pub fn set_stopping_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
-    ) -> Self {
+    pub fn set_stopping_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>) -> Self {
         self.stopping_instances = input;
         self
     }
     /// <p>Information about the stopped instances.</p>
-    pub fn get_stopping_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
+    pub fn get_stopping_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
         &self.stopping_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

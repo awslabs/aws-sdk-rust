@@ -52,9 +52,7 @@ impl ExtendedKeyUsage {
 
 /// A builder for [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtendedKeyUsageBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
     pub(crate) oid: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl ExtendedKeyUsageBuilder {
         self
     }
     /// <p>The name of an Extended Key Usage value.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ExtendedKeyUsageName>) -> Self {
         self.name = input;
         self
     }

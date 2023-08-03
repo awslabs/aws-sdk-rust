@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`dimension_names(Option<Vec<String>>)`](crate::operation::list_dimensions::ListDimensionsOutput::dimension_names): <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dimensions::ListDimensionsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListDimensionsError>`](crate::operation::list_dimensions::ListDimensionsError)
-    pub fn list_dimensions(
-        &self,
-    ) -> crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder {
-        crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dimensions(&self) -> crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder {
+        crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::new(self.handle.clone())
     }
 }

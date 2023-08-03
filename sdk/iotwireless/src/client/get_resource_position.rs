@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetResourcePositionOutput`](crate::operation::get_resource_position::GetResourcePositionOutput) with field(s):
     ///   - [`geo_json_payload(Option<Blob>)`](crate::operation::get_resource_position::GetResourcePositionOutput::geo_json_payload): <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     /// - On failure, responds with [`SdkError<GetResourcePositionError>`](crate::operation::get_resource_position::GetResourcePositionError)
-    pub fn get_resource_position(
-        &self,
-    ) -> crate::operation::get_resource_position::builders::GetResourcePositionFluentBuilder {
-        crate::operation::get_resource_position::builders::GetResourcePositionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_position(&self) -> crate::operation::get_resource_position::builders::GetResourcePositionFluentBuilder {
+        crate::operation::get_resource_position::builders::GetResourcePositionFluentBuilder::new(self.handle.clone())
     }
 }

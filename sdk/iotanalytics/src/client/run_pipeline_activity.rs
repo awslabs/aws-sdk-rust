@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`payloads(Option<Vec<Blob>>)`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput::payloads): <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
     ///   - [`log_result(Option<String>)`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput::log_result): <p>In case the pipeline activity fails, the log message that is generated.</p>
     /// - On failure, responds with [`SdkError<RunPipelineActivityError>`](crate::operation::run_pipeline_activity::RunPipelineActivityError)
-    pub fn run_pipeline_activity(
-        &self,
-    ) -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityFluentBuilder {
-        crate::operation::run_pipeline_activity::builders::RunPipelineActivityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn run_pipeline_activity(&self) -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityFluentBuilder {
+        crate::operation::run_pipeline_activity::builders::RunPipelineActivityFluentBuilder::new(self.handle.clone())
     }
 }

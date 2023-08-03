@@ -108,25 +108,21 @@ impl RegisterWorkflowTypeInput {
 }
 impl RegisterWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeInput`](crate::operation::register_workflow_type::RegisterWorkflowTypeInput).
-    pub fn builder(
-    ) -> crate::operation::register_workflow_type::builders::RegisterWorkflowTypeInputBuilder {
+    pub fn builder() -> crate::operation::register_workflow_type::builders::RegisterWorkflowTypeInputBuilder {
         crate::operation::register_workflow_type::builders::RegisterWorkflowTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterWorkflowTypeInput`](crate::operation::register_workflow_type::RegisterWorkflowTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWorkflowTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) default_task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
-    pub(crate) default_execution_start_to_close_timeout:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) default_execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     pub(crate) default_task_list: ::std::option::Option<crate::types::TaskList>,
     pub(crate) default_task_priority: ::std::option::Option<::std::string::String>,
     pub(crate) default_child_policy: ::std::option::Option<crate::types::ChildPolicy>,
@@ -203,52 +199,36 @@ impl RegisterWorkflowTypeInputBuilder {
     }
     /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_task_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_task_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn set_default_task_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_task_start_to_close_timeout = input;
         self
     }
     /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn get_default_task_start_to_close_timeout(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_task_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_task_start_to_close_timeout
     }
     /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
-    pub fn default_execution_start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_execution_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_execution_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
-    pub fn set_default_execution_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_execution_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_execution_start_to_close_timeout = input;
         self
     }
     /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
-    pub fn get_default_execution_start_to_close_timeout(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_execution_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_execution_start_to_close_timeout
     }
     /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
@@ -257,10 +237,7 @@ impl RegisterWorkflowTypeInputBuilder {
         self
     }
     /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-    pub fn set_default_task_list(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskList>,
-    ) -> Self {
+    pub fn set_default_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.default_task_list = input;
         self
     }
@@ -270,19 +247,13 @@ impl RegisterWorkflowTypeInputBuilder {
     }
     /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn default_task_priority(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_task_priority = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn set_default_task_priority(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_task_priority = input;
         self
     }
@@ -309,10 +280,7 @@ impl RegisterWorkflowTypeInputBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn set_default_child_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChildPolicy>,
-    ) -> Self {
+    pub fn set_default_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.default_child_policy = input;
         self
     }
@@ -329,20 +297,14 @@ impl RegisterWorkflowTypeInputBuilder {
     /// <p>The default IAM role attached to this workflow type.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn default_lambda_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_lambda_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_lambda_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default IAM role attached to this workflow type.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn set_default_lambda_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_lambda_role = input;
         self
     }
@@ -355,24 +317,19 @@ impl RegisterWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterWorkflowTypeInput`](crate::operation::register_workflow_type::RegisterWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_workflow_type::RegisterWorkflowTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_workflow_type::RegisterWorkflowTypeInput {
-                domain: self.domain,
-                name: self.name,
-                version: self.version,
-                description: self.description,
-                default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
-                default_execution_start_to_close_timeout: self
-                    .default_execution_start_to_close_timeout,
-                default_task_list: self.default_task_list,
-                default_task_priority: self.default_task_priority,
-                default_child_policy: self.default_child_policy,
-                default_lambda_role: self.default_lambda_role,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_workflow_type::RegisterWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_workflow_type::RegisterWorkflowTypeInput {
+            domain: self.domain,
+            name: self.name,
+            version: self.version,
+            description: self.description,
+            default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
+            default_execution_start_to_close_timeout: self.default_execution_start_to_close_timeout,
+            default_task_list: self.default_task_list,
+            default_task_priority: self.default_task_priority,
+            default_child_policy: self.default_child_policy,
+            default_lambda_role: self.default_lambda_role,
+        })
     }
 }

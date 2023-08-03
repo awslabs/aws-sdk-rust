@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMediaConcatenationPipelineOutput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput) with field(s):
     ///   - [`media_concatenation_pipeline(Option<MediaConcatenationPipeline>)`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput::media_concatenation_pipeline): <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
     /// - On failure, responds with [`SdkError<CreateMediaConcatenationPipelineError>`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError)
-    pub fn create_media_concatenation_pipeline(&self) -> crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineFluentBuilder{
+    pub fn create_media_concatenation_pipeline(
+        &self,
+    ) -> crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineFluentBuilder {
         crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineFluentBuilder::new(self.handle.clone())
     }
 }

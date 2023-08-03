@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`agent_status_arn(Option<String>)`](crate::operation::create_agent_status::CreateAgentStatusOutput::agent_status_arn): <p>The Amazon Resource Name (ARN) of the agent status.</p>
     ///   - [`agent_status_id(Option<String>)`](crate::operation::create_agent_status::CreateAgentStatusOutput::agent_status_id): <p>The identifier of the agent status.</p>
     /// - On failure, responds with [`SdkError<CreateAgentStatusError>`](crate::operation::create_agent_status::CreateAgentStatusError)
-    pub fn create_agent_status(
-        &self,
-    ) -> crate::operation::create_agent_status::builders::CreateAgentStatusFluentBuilder {
-        crate::operation::create_agent_status::builders::CreateAgentStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_agent_status(&self) -> crate::operation::create_agent_status::builders::CreateAgentStatusFluentBuilder {
+        crate::operation::create_agent_status::builders::CreateAgentStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,8 +11,7 @@ pub struct ProtectiveEquipmentSummarizationAttributes {
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
     #[doc(hidden)]
-    pub required_equipment_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
+    pub required_equipment_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
 }
 impl ProtectiveEquipmentSummarizationAttributes {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
@@ -22,9 +21,7 @@ impl ProtectiveEquipmentSummarizationAttributes {
         self.min_confidence
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub fn required_equipment_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentType]> {
+    pub fn required_equipment_types(&self) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentType]> {
         self.required_equipment_types.as_deref()
     }
 }
@@ -37,13 +34,10 @@ impl ProtectiveEquipmentSummarizationAttributes {
 
 /// A builder for [`ProtectiveEquipmentSummarizationAttributes`](crate::types::ProtectiveEquipmentSummarizationAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummarizationAttributesBuilder {
     pub(crate) min_confidence: ::std::option::Option<f32>,
-    pub(crate) required_equipment_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
+    pub(crate) required_equipment_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
 }
 impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
@@ -71,27 +65,19 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// To override the contents of this collection use [`set_required_equipment_types`](Self::set_required_equipment_types).
     ///
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub fn required_equipment_types(
-        mut self,
-        input: crate::types::ProtectiveEquipmentType,
-    ) -> Self {
+    pub fn required_equipment_types(mut self, input: crate::types::ProtectiveEquipmentType) -> Self {
         let mut v = self.required_equipment_types.unwrap_or_default();
         v.push(input);
         self.required_equipment_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub fn set_required_equipment_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
-    ) -> Self {
+    pub fn set_required_equipment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>) -> Self {
         self.required_equipment_types = input;
         self
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub fn get_required_equipment_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>> {
+    pub fn get_required_equipment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>> {
         &self.required_equipment_types
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentSummarizationAttributes`](crate::types::ProtectiveEquipmentSummarizationAttributes).

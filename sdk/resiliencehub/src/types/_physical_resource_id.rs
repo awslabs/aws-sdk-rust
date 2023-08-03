@@ -72,9 +72,7 @@ impl PhysicalResourceId {
 
 /// A builder for [`PhysicalResourceId`](crate::types::PhysicalResourceId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhysicalResourceIdBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PhysicalIdentifierType>,
@@ -130,10 +128,7 @@ impl PhysicalResourceIdBuilder {
     /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhysicalIdentifierType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PhysicalIdentifierType>) -> Self {
         self.r#type = input;
         self
     }
@@ -170,18 +165,12 @@ impl PhysicalResourceIdBuilder {
         &self.aws_region
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }

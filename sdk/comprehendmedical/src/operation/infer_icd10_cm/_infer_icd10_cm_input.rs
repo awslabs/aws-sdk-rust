@@ -22,9 +22,7 @@ impl InferIcd10CmInput {
 
 /// A builder for [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferIcd10CmInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl InferIcd10CmInputBuilder {
     /// Consumes the builder and constructs a [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::infer_icd10_cm::InferIcd10CmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::infer_icd10_cm::InferIcd10CmInput {
-            text: self.text,
-        })
+    ) -> ::std::result::Result<crate::operation::infer_icd10_cm::InferIcd10CmInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::infer_icd10_cm::InferIcd10CmInput { text: self.text })
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::describe_scheduled_instance_availability::_describe_sc
 
 impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_scheduled_instance_availability();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder,
+    inner: crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder,
 }
 impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     /// Creates a new `DescribeScheduledInstanceAvailability`.
@@ -39,15 +39,22 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         }
     }
     /// Access the DescribeScheduledInstanceAvailability as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailability, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailability,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +63,17 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,24 +91,38 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailability, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailability,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_instance_availability::paginator::DescribeScheduledInstanceAvailabilityPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_scheduled_instance_availability::paginator::DescribeScheduledInstanceAvailabilityPaginator{
-        crate::operation::describe_scheduled_instance_availability::paginator::DescribeScheduledInstanceAvailabilityPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_scheduled_instance_availability::paginator::DescribeScheduledInstanceAvailabilityPaginator {
+        crate::operation::describe_scheduled_instance_availability::paginator::DescribeScheduledInstanceAvailabilityPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -136,10 +158,7 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -153,25 +172,17 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self.inner.get_filters()
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn first_slot_start_time_range(
-        mut self,
-        input: crate::types::SlotDateTimeRangeRequest,
-    ) -> Self {
+    pub fn first_slot_start_time_range(mut self, input: crate::types::SlotDateTimeRangeRequest) -> Self {
         self.inner = self.inner.first_slot_start_time_range(input);
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn set_first_slot_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
-    ) -> Self {
+    pub fn set_first_slot_start_time_range(mut self, input: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>) -> Self {
         self.inner = self.inner.set_first_slot_start_time_range(input);
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn get_first_slot_start_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotDateTimeRangeRequest> {
+    pub fn get_first_slot_start_time_range(&self) -> &::std::option::Option<crate::types::SlotDateTimeRangeRequest> {
         self.inner.get_first_slot_start_time_range()
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -236,17 +247,12 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn get_recurrence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest> {
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest> {
         self.inner.get_recurrence()
     }
 }

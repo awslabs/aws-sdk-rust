@@ -9,8 +9,7 @@ pub struct DashPackage {
     pub ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     #[doc(hidden)]
-    pub ads_on_delivery_restrictions:
-        ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
+    pub ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::DashEncryption>,
@@ -31,8 +30,7 @@ pub struct DashPackage {
     pub min_update_period_seconds: ::std::option::Option<i32>,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
     #[doc(hidden)]
-    pub period_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
+    pub period_triggers: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
     #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::Profile>,
@@ -61,9 +59,7 @@ impl DashPackage {
         self.ad_triggers.as_deref()
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn ads_on_delivery_restrictions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
+    pub fn ads_on_delivery_restrictions(&self) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
         self.ads_on_delivery_restrictions.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
@@ -103,9 +99,7 @@ impl DashPackage {
         self.segment_duration_seconds
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn segment_template_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SegmentTemplateFormat> {
+    pub fn segment_template_format(&self) -> ::std::option::Option<&crate::types::SegmentTemplateFormat> {
         self.segment_template_format.as_ref()
     }
     /// A StreamSelection configuration.
@@ -134,21 +128,17 @@ impl DashPackage {
 
 /// A builder for [`DashPackage`](crate::types::DashPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashPackageBuilder {
     pub(crate) ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
-    pub(crate) ads_on_delivery_restrictions:
-        ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
+    pub(crate) ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
     pub(crate) encryption: ::std::option::Option<crate::types::DashEncryption>,
     pub(crate) include_iframe_only_stream: ::std::option::Option<bool>,
     pub(crate) manifest_layout: ::std::option::Option<crate::types::ManifestLayout>,
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) min_buffer_time_seconds: ::std::option::Option<i32>,
     pub(crate) min_update_period_seconds: ::std::option::Option<i32>,
-    pub(crate) period_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
+    pub(crate) period_triggers: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
     pub(crate) profile: ::std::option::Option<crate::types::Profile>,
     pub(crate) segment_duration_seconds: ::std::option::Option<i32>,
     pub(crate) segment_template_format: ::std::option::Option<crate::types::SegmentTemplateFormat>,
@@ -170,39 +160,26 @@ impl DashPackageBuilder {
         self
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn set_ad_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
-    ) -> Self {
+    pub fn set_ad_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>) -> Self {
         self.ad_triggers = input;
         self
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn get_ad_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
+    pub fn get_ad_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
         &self.ad_triggers
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn ads_on_delivery_restrictions(
-        mut self,
-        input: crate::types::AdsOnDeliveryRestrictions,
-    ) -> Self {
+    pub fn ads_on_delivery_restrictions(mut self, input: crate::types::AdsOnDeliveryRestrictions) -> Self {
         self.ads_on_delivery_restrictions = ::std::option::Option::Some(input);
         self
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn set_ads_on_delivery_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
-    ) -> Self {
+    pub fn set_ads_on_delivery_restrictions(mut self, input: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>) -> Self {
         self.ads_on_delivery_restrictions = input;
         self
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn get_ads_on_delivery_restrictions(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
+    pub fn get_ads_on_delivery_restrictions(&self) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
         &self.ads_on_delivery_restrictions
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
@@ -211,10 +188,7 @@ impl DashPackageBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::DashEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::DashEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -242,10 +216,7 @@ impl DashPackageBuilder {
         self
     }
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    pub fn set_manifest_layout(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestLayout>,
-    ) -> Self {
+    pub fn set_manifest_layout(mut self, input: ::std::option::Option<crate::types::ManifestLayout>) -> Self {
         self.manifest_layout = input;
         self
     }
@@ -307,17 +278,12 @@ impl DashPackageBuilder {
         self
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
-    pub fn set_period_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
-    ) -> Self {
+    pub fn set_period_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>) -> Self {
         self.period_triggers = input;
         self
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
-    pub fn get_period_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>> {
+    pub fn get_period_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>> {
         &self.period_triggers
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
@@ -354,17 +320,12 @@ impl DashPackageBuilder {
         self
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn set_segment_template_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentTemplateFormat>,
-    ) -> Self {
+    pub fn set_segment_template_format(mut self, input: ::std::option::Option<crate::types::SegmentTemplateFormat>) -> Self {
         self.segment_template_format = input;
         self
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn get_segment_template_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::SegmentTemplateFormat> {
+    pub fn get_segment_template_format(&self) -> &::std::option::Option<crate::types::SegmentTemplateFormat> {
         &self.segment_template_format
     }
     /// A StreamSelection configuration.
@@ -373,10 +334,7 @@ impl DashPackageBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSelection>,
-    ) -> Self {
+    pub fn set_stream_selection(mut self, input: ::std::option::Option<crate::types::StreamSelection>) -> Self {
         self.stream_selection = input;
         self
     }
@@ -390,10 +348,7 @@ impl DashPackageBuilder {
         self
     }
     /// Duration (in seconds) to delay live content before presentation.
-    pub fn set_suggested_presentation_delay_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_suggested_presentation_delay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.suggested_presentation_delay_seconds = input;
         self
     }
@@ -416,18 +371,12 @@ impl DashPackageBuilder {
         &self.utc_timing
     }
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
-    pub fn utc_timing_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn utc_timing_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.utc_timing_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
-    pub fn set_utc_timing_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_utc_timing_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.utc_timing_uri = input;
         self
     }

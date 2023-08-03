@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`ns_instance_name(Option<String>)`](crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput::ns_instance_name): <p>Network instance name.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<CreateSolNetworkInstanceError>`](crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError)
-    pub fn create_sol_network_instance(&self) -> crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceFluentBuilder{
+    pub fn create_sol_network_instance(&self) -> crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceFluentBuilder {
         crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceFluentBuilder::new(self.handle.clone())
     }
 }

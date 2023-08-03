@@ -125,9 +125,7 @@ impl UpdateCanaryInput {
 
 /// A builder for [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::CanaryCodeInput>,
@@ -184,10 +182,7 @@ impl UpdateCanaryInputBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// </ul>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -201,10 +196,7 @@ impl UpdateCanaryInputBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// </ul>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -222,18 +214,12 @@ impl UpdateCanaryInputBuilder {
         &self.execution_role_arn
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn runtime_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn set_runtime_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_version = input;
         self
     }
@@ -247,10 +233,7 @@ impl UpdateCanaryInputBuilder {
         self
     }
     /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryScheduleInput>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::CanaryScheduleInput>) -> Self {
         self.schedule = input;
         self
     }
@@ -268,10 +251,7 @@ impl UpdateCanaryInputBuilder {
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p> <important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn set_run_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryRunConfigInput>,
-    ) -> Self {
+    pub fn set_run_config(mut self, input: ::std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
         self.run_config = input;
         self
     }
@@ -287,10 +267,7 @@ impl UpdateCanaryInputBuilder {
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
-    pub fn set_success_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success_retention_period_in_days = input;
         self
     }
@@ -304,10 +281,7 @@ impl UpdateCanaryInputBuilder {
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
-    pub fn set_failure_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_retention_period_in_days = input;
         self
     }
@@ -321,10 +295,7 @@ impl UpdateCanaryInputBuilder {
         self
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigInput>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigInput>) -> Self {
         self.vpc_config = input;
         self
     }
@@ -340,33 +311,22 @@ impl UpdateCanaryInputBuilder {
     }
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
     /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
-    pub fn set_visual_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualReferenceInput>,
-    ) -> Self {
+    pub fn set_visual_reference(mut self, input: ::std::option::Option<crate::types::VisualReferenceInput>) -> Self {
         self.visual_reference = input;
         self
     }
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
     /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
-    pub fn get_visual_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::VisualReferenceInput> {
+    pub fn get_visual_reference(&self) -> &::std::option::Option<crate::types::VisualReferenceInput> {
         &self.visual_reference
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn artifact_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn set_artifact_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_s3_location = input;
         self
     }
@@ -380,10 +340,7 @@ impl UpdateCanaryInputBuilder {
         self
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    pub fn set_artifact_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactConfigInput>,
-    ) -> Self {
+    pub fn set_artifact_config(mut self, input: ::std::option::Option<crate::types::ArtifactConfigInput>) -> Self {
         self.artifact_config = input;
         self
     }
@@ -392,12 +349,7 @@ impl UpdateCanaryInputBuilder {
         &self.artifact_config
     }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_canary::UpdateCanaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_canary::UpdateCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_canary::UpdateCanaryInput {
             name: self.name,
             code: self.code,

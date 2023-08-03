@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachLoadBalancerTargetGroupsOutput 
 }
 impl DetachLoadBalancerTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput).
-    pub fn builder() -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsOutputBuilder {
         crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DetachLoadBalancerTargetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput {
         crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput {
             _request_id: self._request_id,
         }

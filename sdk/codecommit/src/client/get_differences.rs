@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`differences(Option<Vec<Difference>>)`](crate::operation::get_differences::GetDifferencesOutput::differences): <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_differences::GetDifferencesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<GetDifferencesError>`](crate::operation::get_differences::GetDifferencesError)
-    pub fn get_differences(
-        &self,
-    ) -> crate::operation::get_differences::builders::GetDifferencesFluentBuilder {
-        crate::operation::get_differences::builders::GetDifferencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_differences(&self) -> crate::operation::get_differences::builders::GetDifferencesFluentBuilder {
+        crate::operation::get_differences::builders::GetDifferencesFluentBuilder::new(self.handle.clone())
     }
 }

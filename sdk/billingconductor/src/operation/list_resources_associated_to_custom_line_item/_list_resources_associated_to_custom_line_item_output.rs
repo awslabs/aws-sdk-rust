@@ -8,9 +8,7 @@ pub struct ListResourcesAssociatedToCustomLineItemOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
     #[doc(hidden)]
-    pub associated_resources: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
-    >,
+    pub associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,11 +20,7 @@ impl ListResourcesAssociatedToCustomLineItemOutput {
         self.arn.as_deref()
     }
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-    pub fn associated_resources(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::ListResourcesAssociatedToCustomLineItemResponseElement],
-    > {
+    pub fn associated_resources(&self) -> ::std::option::Option<&[crate::types::ListResourcesAssociatedToCustomLineItemResponseElement]> {
         self.associated_resources.as_deref()
     }
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
@@ -41,21 +35,18 @@ impl ::aws_http::request_id::RequestId for ListResourcesAssociatedToCustomLineIt
 }
 impl ListResourcesAssociatedToCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemOutput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput).
-    pub fn builder() -> crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemOutputBuilder{
+    pub fn builder() -> crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemOutputBuilder
+    {
         crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemOutput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_resources: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
-    >,
+    pub(crate) associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,10 +70,7 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
     /// To override the contents of this collection use [`set_associated_resources`](Self::set_associated_resources).
     ///
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-    pub fn associated_resources(
-        mut self,
-        input: crate::types::ListResourcesAssociatedToCustomLineItemResponseElement,
-    ) -> Self {
+    pub fn associated_resources(mut self, input: crate::types::ListResourcesAssociatedToCustomLineItemResponseElement) -> Self {
         let mut v = self.associated_resources.unwrap_or_default();
         v.push(input);
         self.associated_resources = ::std::option::Option::Some(v);
@@ -91,9 +79,7 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
     pub fn set_associated_resources(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
     ) -> Self {
         self.associated_resources = input;
         self
@@ -101,9 +87,7 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
     pub fn get_associated_resources(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>> {
         &self.associated_resources
     }
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
@@ -130,14 +114,11 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemOutput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput).
-    pub fn build(self) -> crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput{
+    pub fn build(self) -> crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput {
         crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput {
-            arn: self.arn
-            ,
-            associated_resources: self.associated_resources
-            ,
-            next_token: self.next_token
-            ,
+            arn: self.arn,
+            associated_resources: self.associated_resources,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

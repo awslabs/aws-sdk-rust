@@ -19,45 +19,31 @@ pub fn ser_pin_generation_attributes(
         crate::types::PinGenerationAttributes::Ibm3624PinOffset(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_3.key("Ibm3624PinOffset").start_object();
-            crate::protocol_serde::shape_ibm3624_pin_offset::ser_ibm3624_pin_offset(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ibm3624_pin_offset::ser_ibm3624_pin_offset(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::PinGenerationAttributes::Ibm3624NaturalPin(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_3.key("Ibm3624NaturalPin").start_object();
-            crate::protocol_serde::shape_ibm3624_natural_pin::ser_ibm3624_natural_pin(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ibm3624_natural_pin::ser_ibm3624_natural_pin(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::PinGenerationAttributes::Ibm3624RandomPin(inner) => {
             #[allow(unused_mut)]
             let mut object_5 = object_3.key("Ibm3624RandomPin").start_object();
-            crate::protocol_serde::shape_ibm3624_random_pin::ser_ibm3624_random_pin(
-                &mut object_5,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ibm3624_random_pin::ser_ibm3624_random_pin(&mut object_5, inner)?;
             object_5.finish();
         }
         crate::types::PinGenerationAttributes::Ibm3624PinFromOffset(inner) => {
             #[allow(unused_mut)]
             let mut object_6 = object_3.key("Ibm3624PinFromOffset").start_object();
-            crate::protocol_serde::shape_ibm3624_pin_from_offset::ser_ibm3624_pin_from_offset(
-                &mut object_6,
-                inner,
-            )?;
+            crate::protocol_serde::shape_ibm3624_pin_from_offset::ser_ibm3624_pin_from_offset(&mut object_6, inner)?;
             object_6.finish();
         }
         crate::types::PinGenerationAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "PinGenerationAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "PinGenerationAttributes",
+            ))
         }
     }
     Ok(())

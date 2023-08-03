@@ -44,13 +44,7 @@
 /// _Note: `DataSourceErrorInfoType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataSourceErrorInfoType {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for DataSourceErrorInfoType {
             "TIMEOUT" => DataSourceErrorInfoType::Timeout,
             "UNKNOWN" => DataSourceErrorInfoType::UnknownValue,
             "UNKNOWN_HOST" => DataSourceErrorInfoType::UnknownHost,
-            other => DataSourceErrorInfoType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataSourceErrorInfoType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

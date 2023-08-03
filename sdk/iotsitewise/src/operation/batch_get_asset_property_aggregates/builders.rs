@@ -5,16 +5,16 @@ pub use crate::operation::batch_get_asset_property_aggregates::_batch_get_asset_
 
 impl BatchGetAssetPropertyAggregatesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_get_asset_property_aggregates();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchGetAssetPropertyAggregatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder,
+    inner: crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder,
 }
 impl BatchGetAssetPropertyAggregatesFluentBuilder {
     /// Creates a new `BatchGetAssetPropertyAggregates`.
@@ -37,15 +37,20 @@ impl BatchGetAssetPropertyAggregatesFluentBuilder {
         }
     }
     /// Access the BatchGetAssetPropertyAggregates as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregates, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregates,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl BatchGetAssetPropertyAggregatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl BatchGetAssetPropertyAggregatesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregates, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregates,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::batch_get_asset_property_aggregates::paginator::BatchGetAssetPropertyAggregatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_aggregates::paginator::BatchGetAssetPropertyAggregatesPaginator{
+    pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_aggregates::paginator::BatchGetAssetPropertyAggregatesPaginator {
         crate::operation::batch_get_asset_property_aggregates::paginator::BatchGetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `entries`.
@@ -110,20 +125,12 @@ impl BatchGetAssetPropertyAggregatesFluentBuilder {
         self
     }
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>> {
         self.inner.get_entries()
     }
     /// <p>The token to be used for the next set of paginated results.</p>

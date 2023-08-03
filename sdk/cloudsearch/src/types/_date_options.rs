@@ -62,9 +62,7 @@ impl DateOptions {
 
 /// A builder for [`DateOptions`](crate::types::DateOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
     pub(crate) source_field: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ pub struct DateOptionsBuilder {
 }
 impl DateOptionsBuilder {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

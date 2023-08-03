@@ -39,9 +39,7 @@ impl ListMembersOutput {
 
 /// A builder for [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersOutputBuilder {
     pub(crate) member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,19 +62,14 @@ impl ListMembersOutputBuilder {
     /// <p>The list of member accounts in the behavior graph.</p>
     /// <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
-    pub fn set_member_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
-    ) -> Self {
+    pub fn set_member_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>) -> Self {
         self.member_details = input;
         self
     }
     /// <p>The list of member accounts in the behavior graph.</p>
     /// <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
-    pub fn get_member_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+    pub fn get_member_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
         &self.member_details
     }
     /// <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>

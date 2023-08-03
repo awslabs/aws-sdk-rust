@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkgroupOutput`](crate::operation::update_workgroup::UpdateWorkgroupOutput) with field(s):
     ///   - [`workgroup(Option<Workgroup>)`](crate::operation::update_workgroup::UpdateWorkgroupOutput::workgroup): <p>The updated workgroup object.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkgroupError>`](crate::operation::update_workgroup::UpdateWorkgroupError)
-    pub fn update_workgroup(
-        &self,
-    ) -> crate::operation::update_workgroup::builders::UpdateWorkgroupFluentBuilder {
-        crate::operation::update_workgroup::builders::UpdateWorkgroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workgroup(&self) -> crate::operation::update_workgroup::builders::UpdateWorkgroupFluentBuilder {
+        crate::operation::update_workgroup::builders::UpdateWorkgroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl StartFuotaTaskInput {
 
 /// A builder for [`StartFuotaTaskInput`](crate::operation::start_fuota_task::StartFuotaTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>,
@@ -57,10 +55,7 @@ impl StartFuotaTaskInputBuilder {
         self
     }
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -71,10 +66,7 @@ impl StartFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartFuotaTaskInput`](crate::operation::start_fuota_task::StartFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_fuota_task::StartFuotaTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_fuota_task::StartFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_fuota_task::StartFuotaTaskInput {
             id: self.id,
             lo_ra_wan: self.lo_ra_wan,

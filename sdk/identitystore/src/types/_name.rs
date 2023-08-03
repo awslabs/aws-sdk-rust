@@ -137,18 +137,12 @@ impl NameBuilder {
         &self.middle_name
     }
     /// <p>The honorific prefix of the user. For example, "Dr."</p>
-    pub fn honorific_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn honorific_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.honorific_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The honorific prefix of the user. For example, "Dr."</p>
-    pub fn set_honorific_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_honorific_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.honorific_prefix = input;
         self
     }
@@ -157,18 +151,12 @@ impl NameBuilder {
         &self.honorific_prefix
     }
     /// <p>The honorific suffix of the user. For example, "M.D."</p>
-    pub fn honorific_suffix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn honorific_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.honorific_suffix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The honorific suffix of the user. For example, "M.D."</p>
-    pub fn set_honorific_suffix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_honorific_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.honorific_suffix = input;
         self
     }

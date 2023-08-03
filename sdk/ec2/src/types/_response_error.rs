@@ -30,9 +30,7 @@ impl ResponseError {
 
 /// A builder for [`ResponseError`](crate::types::ResponseError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::LaunchTemplateErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ResponseErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::LaunchTemplateErrorCode>) -> Self {
         self.code = input;
         self
     }

@@ -44,9 +44,7 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl MessageBuilder {
         self
     }
     /// <p>The timestamp associated with the message.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampValue>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimestampValue>) -> Self {
         self.timestamp = input;
         self
     }

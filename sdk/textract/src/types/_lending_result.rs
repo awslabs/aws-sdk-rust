@@ -37,9 +37,7 @@ impl LendingResult {
 
 /// A builder for [`LendingResult`](crate::types::LendingResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LendingResultBuilder {
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) page_classification: ::std::option::Option<crate::types::PageClassification>,
@@ -66,17 +64,12 @@ impl LendingResultBuilder {
         self
     }
     /// <p>The classifier result for a given page.</p>
-    pub fn set_page_classification(
-        mut self,
-        input: ::std::option::Option<crate::types::PageClassification>,
-    ) -> Self {
+    pub fn set_page_classification(mut self, input: ::std::option::Option<crate::types::PageClassification>) -> Self {
         self.page_classification = input;
         self
     }
     /// <p>The classifier result for a given page.</p>
-    pub fn get_page_classification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PageClassification> {
+    pub fn get_page_classification(&self) -> &::std::option::Option<crate::types::PageClassification> {
         &self.page_classification
     }
     /// Appends an item to `extractions`.
@@ -91,17 +84,12 @@ impl LendingResultBuilder {
         self
     }
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
-    pub fn set_extractions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Extraction>>,
-    ) -> Self {
+    pub fn set_extractions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Extraction>>) -> Self {
         self.extractions = input;
         self
     }
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
-    pub fn get_extractions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Extraction>> {
+    pub fn get_extractions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Extraction>> {
         &self.extractions
     }
     /// Consumes the builder and constructs a [`LendingResult`](crate::types::LendingResult).

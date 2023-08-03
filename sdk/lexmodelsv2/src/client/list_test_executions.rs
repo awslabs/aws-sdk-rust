@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`test_executions(Option<Vec<TestExecutionSummary>>)`](crate::operation::list_test_executions::ListTestExecutionsOutput::test_executions): <p>The list of test executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_executions::ListTestExecutionsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTestExecutionsError>`](crate::operation::list_test_executions::ListTestExecutionsError)
-    pub fn list_test_executions(
-        &self,
-    ) -> crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder {
-        crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_test_executions(&self) -> crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder {
+        crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

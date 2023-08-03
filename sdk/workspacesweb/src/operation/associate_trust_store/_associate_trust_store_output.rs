@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateTrustStoreOutput {
 }
 impl AssociateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrustStoreOutput`](crate::operation::associate_trust_store::AssociateTrustStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder {
-        crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder {
+        crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrustStoreOutput`](crate::operation::associate_trust_store::AssociateTrustStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrustStoreOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl AssociateTrustStoreOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }

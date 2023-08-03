@@ -15,18 +15,14 @@ impl DeleteNotificationRuleInput {
 }
 impl DeleteNotificationRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder {
         crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationRuleInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteNotificationRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notification_rule::DeleteNotificationRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_notification_rule::DeleteNotificationRuleInput {
-                arn: self.arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_notification_rule::DeleteNotificationRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_notification_rule::DeleteNotificationRuleInput { arn: self.arn })
     }
 }

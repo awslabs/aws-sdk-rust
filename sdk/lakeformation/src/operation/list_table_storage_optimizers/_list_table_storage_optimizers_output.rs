@@ -5,8 +5,7 @@
 pub struct ListTableStorageOptimizersOutput {
     /// <p>A list of the storage optimizers associated with a table.</p>
     #[doc(hidden)]
-    pub storage_optimizer_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
+    pub storage_optimizer_list: ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTableStorageOptimizersOutput {
 }
 impl ListTableStorageOptimizersOutput {
     /// <p>A list of the storage optimizers associated with a table.</p>
-    pub fn storage_optimizer_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StorageOptimizer]> {
+    pub fn storage_optimizer_list(&self) -> ::std::option::Option<&[crate::types::StorageOptimizer]> {
         self.storage_optimizer_list.as_deref()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTableStorageOptimizersOutput {
 }
 impl ListTableStorageOptimizersOutput {
     /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersOutput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput).
-    pub fn builder() -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersOutputBuilder{
+    pub fn builder() -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersOutputBuilder {
         crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableStorageOptimizersOutput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableStorageOptimizersOutputBuilder {
-    pub(crate) storage_optimizer_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
+    pub(crate) storage_optimizer_list: ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListTableStorageOptimizersOutputBuilder {
         self
     }
     /// <p>A list of the storage optimizers associated with a table.</p>
-    pub fn set_storage_optimizer_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
-    ) -> Self {
+    pub fn set_storage_optimizer_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>) -> Self {
         self.storage_optimizer_list = input;
         self
     }
     /// <p>A list of the storage optimizers associated with a table.</p>
-    pub fn get_storage_optimizer_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>> {
+    pub fn get_storage_optimizer_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>> {
         &self.storage_optimizer_list
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
@@ -97,9 +86,7 @@ impl ListTableStorageOptimizersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTableStorageOptimizersOutput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput {
+    pub fn build(self) -> crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput {
         crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput {
             storage_optimizer_list: self.storage_optimizer_list,
             next_token: self.next_token,

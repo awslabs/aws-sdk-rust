@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateOrganizationOutput {
 }
 impl CreateOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_organization::builders::CreateOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::create_organization::builders::CreateOrganizationOutputBuilder {
         crate::operation::create_organization::builders::CreateOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrganizationOutputBuilder {
     pub(crate) organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateOrganizationOutputBuilder {
         self
     }
     /// <p>A structure that contains details about the newly created organization.</p>
-    pub fn set_organization(
-        mut self,
-        input: ::std::option::Option<crate::types::Organization>,
-    ) -> Self {
+    pub fn set_organization(mut self, input: ::std::option::Option<crate::types::Organization>) -> Self {
         self.organization = input;
         self
     }

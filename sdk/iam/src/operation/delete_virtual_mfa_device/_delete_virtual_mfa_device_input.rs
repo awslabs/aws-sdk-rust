@@ -17,37 +17,27 @@ impl DeleteVirtualMfaDeviceInput {
 }
 impl DeleteVirtualMfaDeviceInput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualMfaDeviceInput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder {
         crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualMfaDeviceInput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualMfaDeviceInputBuilder {
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualMfaDeviceInputBuilder {
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial_number = input;
         self
     }
@@ -63,10 +53,8 @@ impl DeleteVirtualMfaDeviceInputBuilder {
         crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceInput {
-                serial_number: self.serial_number,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceInput {
+            serial_number: self.serial_number,
+        })
     }
 }

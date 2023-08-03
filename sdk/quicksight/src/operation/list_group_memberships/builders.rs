@@ -37,9 +37,7 @@ impl ListGroupMembershipsFluentBuilder {
         }
     }
     /// Access the ListGroupMemberships as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListGroupMembershipsFluentBuilder {
             crate::operation::list_group_memberships::ListGroupMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships::ListGroupMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships::ListGroupMembershipsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListGroupMembershipsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListGroupMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_memberships::ListGroupMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships::ListGroupMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships::ListGroupMembershipsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListGroupMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_memberships::ListGroupMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships::ListGroupMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships::ListGroupMembershipsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListGroupMembershipsFluentBuilder {
             crate::operation::list_group_memberships::ListGroupMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships::ListGroupMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships::ListGroupMembershipsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator {
-        crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator {
+        crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the group that you want to see a membership list of.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,18 +158,12 @@ impl ListGroupMembershipsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -171,18 +171,12 @@ impl DescribeProjectOutputBuilder {
         &self.description
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -196,10 +190,7 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The date and time the project was created, in timestamp format.</p>
-    pub fn set_created_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time_stamp = input;
         self
     }
@@ -222,18 +213,12 @@ impl DescribeProjectOutputBuilder {
         &self.stack_id
     }
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
-    pub fn project_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
-    pub fn set_project_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_template_id = input;
         self
     }

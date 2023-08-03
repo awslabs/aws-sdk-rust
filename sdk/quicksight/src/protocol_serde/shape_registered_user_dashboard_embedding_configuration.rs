@@ -9,7 +9,10 @@ pub fn ser_registered_user_dashboard_embedding_configuration(
     if let Some(var_2) = &input.feature_configurations {
         #[allow(unused_mut)]
         let mut object_3 = object.key("FeatureConfigurations").start_object();
-        crate::protocol_serde::shape_registered_user_dashboard_feature_configurations::ser_registered_user_dashboard_feature_configurations(&mut object_3, var_2)?;
+        crate::protocol_serde::shape_registered_user_dashboard_feature_configurations::ser_registered_user_dashboard_feature_configurations(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     Ok(())

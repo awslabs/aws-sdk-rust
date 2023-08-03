@@ -6,19 +6,13 @@ pub fn ser_box_plot_chart_configuration(
     if let Some(var_1) = &input.field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldWells").start_object();
-        crate::protocol_serde::shape_box_plot_field_wells::ser_box_plot_field_wells(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_box_plot_field_wells::ser_box_plot_field_wells(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sort_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SortConfiguration").start_object();
-        crate::protocol_serde::shape_box_plot_sort_configuration::ser_box_plot_sort_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_box_plot_sort_configuration::ser_box_plot_sort_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.box_plot_options {
@@ -30,37 +24,25 @@ pub fn ser_box_plot_chart_configuration(
     if let Some(var_7) = &input.category_axis {
         #[allow(unused_mut)]
         let mut object_8 = object.key("CategoryAxis").start_object();
-        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.category_label_options {
         #[allow(unused_mut)]
         let mut object_10 = object.key("CategoryLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.primary_y_axis_display_options {
         #[allow(unused_mut)]
         let mut object_12 = object.key("PrimaryYAxisDisplayOptions").start_object();
-        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.primary_y_axis_label_options {
         #[allow(unused_mut)]
         let mut object_14 = object.key("PrimaryYAxisLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.legend {
@@ -81,10 +63,7 @@ pub fn ser_box_plot_chart_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_reference_line::ser_reference_line(
-                    &mut object_22,
-                    item_21,
-                )?;
+                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_22, item_21)?;
                 object_22.finish();
             }
         }
@@ -101,17 +80,9 @@ pub fn ser_box_plot_chart_configuration(
 
 pub(crate) fn de_box_plot_chart_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::BoxPlotChartConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::BoxPlotChartConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -121,85 +92,62 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FieldWells" => {
-                                builder = builder.set_field_wells(
-                                    crate::protocol_serde::shape_box_plot_field_wells::de_box_plot_field_wells(tokens)?
-                                );
-                            }
-                            "SortConfiguration" => {
-                                builder = builder.set_sort_configuration(
-                                    crate::protocol_serde::shape_box_plot_sort_configuration::de_box_plot_sort_configuration(tokens)?
-                                );
-                            }
-                            "BoxPlotOptions" => {
-                                builder = builder.set_box_plot_options(
-                                    crate::protocol_serde::shape_box_plot_options::de_box_plot_options(tokens)?
-                                );
-                            }
-                            "CategoryAxis" => {
-                                builder = builder.set_category_axis(
-                                    crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?
-                                );
-                            }
-                            "CategoryLabelOptions" => {
-                                builder = builder.set_category_label_options(
-                                    crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?
-                                );
-                            }
-                            "PrimaryYAxisDisplayOptions" => {
-                                builder = builder.set_primary_y_axis_display_options(
-                                    crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?
-                                );
-                            }
-                            "PrimaryYAxisLabelOptions" => {
-                                builder = builder.set_primary_y_axis_label_options(
-                                    crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?
-                                );
-                            }
-                            "Legend" => {
-                                builder = builder.set_legend(
-                                    crate::protocol_serde::shape_legend_options::de_legend_options(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Tooltip" => {
-                                builder = builder.set_tooltip(
-                                    crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?
-                                );
-                            }
-                            "ReferenceLines" => {
-                                builder = builder.set_reference_lines(
-                                    crate::protocol_serde::shape_reference_line_list::de_reference_line_list(tokens)?
-                                );
-                            }
-                            "VisualPalette" => {
-                                builder = builder.set_visual_palette(
-                                    crate::protocol_serde::shape_visual_palette::de_visual_palette(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FieldWells" => {
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_box_plot_field_wells::de_box_plot_field_wells(tokens)?);
                         }
-                    }
+                        "SortConfiguration" => {
+                            builder = builder.set_sort_configuration(
+                                crate::protocol_serde::shape_box_plot_sort_configuration::de_box_plot_sort_configuration(tokens)?,
+                            );
+                        }
+                        "BoxPlotOptions" => {
+                            builder = builder.set_box_plot_options(crate::protocol_serde::shape_box_plot_options::de_box_plot_options(tokens)?);
+                        }
+                        "CategoryAxis" => {
+                            builder = builder.set_category_axis(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?);
+                        }
+                        "CategoryLabelOptions" => {
+                            builder = builder.set_category_label_options(
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                            );
+                        }
+                        "PrimaryYAxisDisplayOptions" => {
+                            builder = builder.set_primary_y_axis_display_options(
+                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?,
+                            );
+                        }
+                        "PrimaryYAxisLabelOptions" => {
+                            builder = builder.set_primary_y_axis_label_options(
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                            );
+                        }
+                        "Legend" => {
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens)?);
+                        }
+                        "Tooltip" => {
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                        }
+                        "ReferenceLines" => {
+                            builder = builder.set_reference_lines(crate::protocol_serde::shape_reference_line_list::de_reference_line_list(tokens)?);
+                        }
+                        "VisualPalette" => {
+                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

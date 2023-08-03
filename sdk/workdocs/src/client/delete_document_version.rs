@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`delete_prior_versions(bool)`](crate::operation::delete_document_version::builders::DeleteDocumentVersionFluentBuilder::delete_prior_versions) / [`set_delete_prior_versions(Option<bool>)`](crate::operation::delete_document_version::builders::DeleteDocumentVersionFluentBuilder::set_delete_prior_versions): <p>Deletes all versions of a document prior to the current version.</p>
     /// - On success, responds with [`DeleteDocumentVersionOutput`](crate::operation::delete_document_version::DeleteDocumentVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteDocumentVersionError>`](crate::operation::delete_document_version::DeleteDocumentVersionError)
-    pub fn delete_document_version(
-        &self,
-    ) -> crate::operation::delete_document_version::builders::DeleteDocumentVersionFluentBuilder
-    {
-        crate::operation::delete_document_version::builders::DeleteDocumentVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_document_version(&self) -> crate::operation::delete_document_version::builders::DeleteDocumentVersionFluentBuilder {
+        crate::operation::delete_document_version::builders::DeleteDocumentVersionFluentBuilder::new(self.handle.clone())
     }
 }

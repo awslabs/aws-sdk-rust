@@ -22,34 +22,26 @@ impl ListSupportedInstanceTypesInput {
 }
 impl ListSupportedInstanceTypesInput {
     /// Creates a new builder-style object to manufacture [`ListSupportedInstanceTypesInput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput).
-    pub fn builder() -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder{
+    pub fn builder() -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder {
         crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSupportedInstanceTypesInput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSupportedInstanceTypesInputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl ListSupportedInstanceTypesInputBuilder {
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -78,11 +70,9 @@ impl ListSupportedInstanceTypesInputBuilder {
         crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput {
-                release_label: self.release_label,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput {
+            release_label: self.release_label,
+            marker: self.marker,
+        })
     }
 }

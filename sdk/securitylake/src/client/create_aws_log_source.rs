@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAwsLogSourceOutput`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput) with field(s):
     ///   - [`failed(Option<Vec<String>>)`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput::failed): <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
     /// - On failure, responds with [`SdkError<CreateAwsLogSourceError>`](crate::operation::create_aws_log_source::CreateAwsLogSourceError)
-    pub fn create_aws_log_source(
-        &self,
-    ) -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder {
-        crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_aws_log_source(&self) -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder {
+        crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder::new(self.handle.clone())
     }
 }

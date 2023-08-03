@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`public_ipv4_pools(Option<Vec<PublicIpv4Pool>>)`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput::public_ipv4_pools): <p>Information about the address pools.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribePublicIpv4PoolsError>`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError)
-    pub fn describe_public_ipv4_pools(
-        &self,
-    ) -> crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsFluentBuilder
-    {
+    pub fn describe_public_ipv4_pools(&self) -> crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsFluentBuilder {
         crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsFluentBuilder::new(self.handle.clone())
     }
 }

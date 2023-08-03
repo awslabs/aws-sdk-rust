@@ -22,17 +22,14 @@ impl DescribeActivityTypeInput {
 }
 impl DescribeActivityTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityTypeInput`](crate::operation::describe_activity_type::DescribeActivityTypeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_activity_type::builders::DescribeActivityTypeInputBuilder {
+    pub fn builder() -> crate::operation::describe_activity_type::builders::DescribeActivityTypeInputBuilder {
         crate::operation::describe_activity_type::builders::DescribeActivityTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActivityTypeInput`](crate::operation::describe_activity_type::DescribeActivityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivityTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
@@ -58,10 +55,7 @@ impl DescribeActivityTypeInputBuilder {
         self
     }
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.activity_type = input;
         self
     }
@@ -72,15 +66,11 @@ impl DescribeActivityTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivityTypeInput`](crate::operation::describe_activity_type::DescribeActivityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_activity_type::DescribeActivityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_activity_type::DescribeActivityTypeInput {
-                domain: self.domain,
-                activity_type: self.activity_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_activity_type::DescribeActivityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_activity_type::DescribeActivityTypeInput {
+            domain: self.domain,
+            activity_type: self.activity_type,
+        })
     }
 }

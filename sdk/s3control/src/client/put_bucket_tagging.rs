@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tagging(Tagging)`](crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::tagging) / [`set_tagging(Option<Tagging>)`](crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::set_tagging): <p></p>
     /// - On success, responds with [`PutBucketTaggingOutput`](crate::operation::put_bucket_tagging::PutBucketTaggingOutput)
     /// - On failure, responds with [`SdkError<PutBucketTaggingError>`](crate::operation::put_bucket_tagging::PutBucketTaggingError)
-    pub fn put_bucket_tagging(
-        &self,
-    ) -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder {
-        crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_tagging(&self) -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder {
+        crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::new(self.handle.clone())
     }
 }

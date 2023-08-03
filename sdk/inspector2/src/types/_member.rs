@@ -44,9 +44,7 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
@@ -74,32 +72,21 @@ impl MemberBuilder {
         self
     }
     /// <p>The status of the member account.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipStatus>,
-    ) -> Self {
+    pub fn set_relationship_status(mut self, input: ::std::option::Option<crate::types::RelationshipStatus>) -> Self {
         self.relationship_status = input;
         self
     }
     /// <p>The status of the member account.</p>
-    pub fn get_relationship_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationshipStatus> {
+    pub fn get_relationship_status(&self) -> &::std::option::Option<crate::types::RelationshipStatus> {
         &self.relationship_status
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
-    pub fn delegated_admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
-    pub fn set_delegated_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegated_admin_account_id = input;
         self
     }
@@ -113,10 +100,7 @@ impl MemberBuilder {
         self
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

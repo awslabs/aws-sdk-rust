@@ -10,10 +10,7 @@ impl DescribeClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_clusters();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeClustersFluentBuilder {
         }
     }
     /// Access the DescribeClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeClustersFluentBuilder {
             crate::operation::describe_clusters::DescribeClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeClustersFluentBuilder {
             crate::operation::describe_clusters::DescribeClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl DescribeClustersFluentBuilder {
         self
     }
     /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_clusters(input);
         self
     }
@@ -163,10 +144,7 @@ impl DescribeClustersFluentBuilder {
     /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
     /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
     /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
@@ -176,9 +154,7 @@ impl DescribeClustersFluentBuilder {
     /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
     /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
     /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterField>> {
         self.inner.get_include()
     }
 }

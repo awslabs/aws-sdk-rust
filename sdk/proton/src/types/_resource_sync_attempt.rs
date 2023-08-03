@@ -58,9 +58,7 @@ impl ResourceSyncAttempt {
 
 /// A builder for [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceSyncAttemptBuilder {
     pub(crate) initial_revision: ::std::option::Option<crate::types::Revision>,
     pub(crate) target_revision: ::std::option::Option<crate::types::Revision>,
@@ -76,10 +74,7 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>Detail data for the initial repository commit, path and push.</p>
-    pub fn set_initial_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::Revision>,
-    ) -> Self {
+    pub fn set_initial_revision(mut self, input: ::std::option::Option<crate::types::Revision>) -> Self {
         self.initial_revision = input;
         self
     }
@@ -93,10 +88,7 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>Detail data for the target revision.</p>
-    pub fn set_target_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::Revision>,
-    ) -> Self {
+    pub fn set_target_revision(mut self, input: ::std::option::Option<crate::types::Revision>) -> Self {
         self.target_revision = input;
         self
     }
@@ -124,10 +116,7 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -141,10 +130,7 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSyncStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSyncStatus>) -> Self {
         self.status = input;
         self
     }
@@ -164,17 +150,12 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>An array of events with detail data.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>An array of events with detail data.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).

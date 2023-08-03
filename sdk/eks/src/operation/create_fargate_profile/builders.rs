@@ -42,9 +42,7 @@ impl CreateFargateProfileFluentBuilder {
         }
     }
     /// Access the CreateFargateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_fargate_profile::builders::CreateFargateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_fargate_profile::builders::CreateFargateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl CreateFargateProfileFluentBuilder {
             crate::operation::create_fargate_profile::CreateFargateProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fargate_profile::CreateFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fargate_profile::CreateFargateProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl CreateFargateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl CreateFargateProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fargate_profile::CreateFargateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fargate_profile::CreateFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fargate_profile::CreateFargateProfileError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl CreateFargateProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fargate_profile::CreateFargateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fargate_profile::CreateFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fargate_profile::CreateFargateProfileError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +110,17 @@ impl CreateFargateProfileFluentBuilder {
             crate::operation::create_fargate_profile::CreateFargateProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fargate_profile::CreateFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fargate_profile::CreateFargateProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Fargate profile.</p>
-    pub fn fargate_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fargate_profile_name(input.into());
         self
     }
     /// <p>The name of the Fargate profile.</p>
-    pub fn set_fargate_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fargate_profile_name(input);
         self
     }
@@ -162,18 +143,12 @@ impl CreateFargateProfileFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn pod_execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pod_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pod_execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_pod_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pod_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pod_execution_role_arn(input);
         self
     }
@@ -191,10 +166,7 @@ impl CreateFargateProfileFluentBuilder {
         self
     }
     /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
     }
@@ -212,32 +184,21 @@ impl CreateFargateProfileFluentBuilder {
         self
     }
     /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
-    pub fn set_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>,
-    ) -> Self {
+    pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>) -> Self {
         self.inner = self.inner.set_selectors(input);
         self
     }
     /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
-    pub fn get_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>> {
+    pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>> {
         self.inner.get_selectors()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -250,30 +211,17 @@ impl CreateFargateProfileFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

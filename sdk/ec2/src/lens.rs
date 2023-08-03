@@ -1811,9 +1811,7 @@ pub(crate) fn lens_describe_launch_templates_output_launch_templates(
 
 pub(crate) fn lens_describe_local_gateway_route_table_virtual_interface_group_associations_output_local_gateway_route_table_virtual_interface_group_associations(
     input: crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
-) -> ::std::option::Option<
-    ::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
-> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>> {
     let input = match input.local_gateway_route_table_virtual_interface_group_associations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
@@ -2333,8 +2331,7 @@ pub(crate) fn lens_describe_verified_access_groups_output_verified_access_groups
 
 pub(crate) fn lens_describe_verified_access_instance_logging_configurations_output_logging_configurations(
     input: crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>>
-{
+) -> ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>> {
     let input = match input.logging_configurations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
@@ -2504,8 +2501,7 @@ pub(crate) fn lens_get_groups_for_capacity_reservation_output_capacity_reservati
 
 pub(crate) fn lens_get_instance_types_from_instance_requirements_output_instance_types(
     input: crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>>
-{
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>> {
     let input = match input.instance_types {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
@@ -2625,8 +2621,7 @@ pub(crate) fn lens_get_transit_gateway_attachment_propagations_output_transit_ga
 
 pub(crate) fn lens_get_transit_gateway_multicast_domain_associations_output_multicast_domain_associations(
     input: crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>>
-{
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>> {
     let input = match input.multicast_domain_associations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

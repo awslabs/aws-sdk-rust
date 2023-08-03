@@ -24,34 +24,26 @@ impl CreateCloudFormationTemplateInput {
 }
 impl CreateCloudFormationTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationTemplateInput`](crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateInput).
-    pub fn builder() -> crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder {
         crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCloudFormationTemplateInput`](crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCloudFormationTemplateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateCloudFormationTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -61,19 +53,13 @@ impl CreateCloudFormationTemplateInputBuilder {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -89,11 +75,9 @@ impl CreateCloudFormationTemplateInputBuilder {
         crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateInput {
-                application_id: self.application_id,
-                semantic_version: self.semantic_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateInput {
+            application_id: self.application_id,
+            semantic_version: self.semantic_version,
+        })
     }
 }

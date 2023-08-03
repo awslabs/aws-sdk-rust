@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EncoderProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for EncoderProfile {
         match s {
             "high" => EncoderProfile::High,
             "main" => EncoderProfile::Main,
-            other => {
-                EncoderProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EncoderProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

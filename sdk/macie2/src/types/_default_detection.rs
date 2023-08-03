@@ -37,9 +37,7 @@ impl DefaultDetection {
 
 /// A builder for [`DefaultDetection`](crate::types::DefaultDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultDetectionBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) occurrences: ::std::option::Option<crate::types::Occurrences>,
@@ -66,10 +64,7 @@ impl DefaultDetectionBuilder {
         self
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    pub fn set_occurrences(
-        mut self,
-        input: ::std::option::Option<crate::types::Occurrences>,
-    ) -> Self {
+    pub fn set_occurrences(mut self, input: ::std::option::Option<crate::types::Occurrences>) -> Self {
         self.occurrences = input;
         self
     }

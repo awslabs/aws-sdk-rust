@@ -33,8 +33,7 @@ impl InitiateMultipartUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder,
+    inner: crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder,
 }
 impl InitiateMultipartUploadFluentBuilder {
     /// Creates a new `InitiateMultipartUpload`.
@@ -45,10 +44,7 @@ impl InitiateMultipartUploadFluentBuilder {
         }
     }
     /// Access the InitiateMultipartUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl InitiateMultipartUploadFluentBuilder {
             crate::operation::initiate_multipart_upload::InitiateMultipartUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl InitiateMultipartUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl InitiateMultipartUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl InitiateMultipartUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +112,7 @@ impl InitiateMultipartUploadFluentBuilder {
             crate::operation::initiate_multipart_upload::InitiateMultipartUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError>,
     > {
         self.customize_middleware().await
     }
@@ -161,19 +146,13 @@ impl InitiateMultipartUploadFluentBuilder {
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.archive_description(input.into());
         self
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_archive_description(input);
         self
     }

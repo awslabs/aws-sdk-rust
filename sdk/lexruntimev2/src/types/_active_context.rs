@@ -14,9 +14,7 @@ pub struct ActiveContext {
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     #[doc(hidden)]
-    pub context_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub context_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContext {
     /// <p>The name of the context.</p>
@@ -29,11 +27,7 @@ impl ActiveContext {
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
-    pub fn context_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn context_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.context_attributes.as_ref()
     }
 }
@@ -46,15 +40,11 @@ impl ActiveContext {
 
 /// A builder for [`ActiveContext`](crate::types::ActiveContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
-    pub(crate) context_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) context_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContextBuilder {
     /// <p>The name of the context.</p>
@@ -77,17 +67,12 @@ impl ActiveContextBuilder {
         self
     }
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
-    pub fn set_time_to_live(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
-    ) -> Self {
+    pub fn set_time_to_live(mut self, input: ::std::option::Option<crate::types::ActiveContextTimeToLive>) -> Self {
         self.time_to_live = input;
         self
     }
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
-    pub fn get_time_to_live(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveContextTimeToLive> {
+    pub fn get_time_to_live(&self) -> &::std::option::Option<crate::types::ActiveContextTimeToLive> {
         &self.time_to_live
     }
     /// Adds a key-value pair to `context_attributes`.
@@ -110,20 +95,14 @@ impl ActiveContextBuilder {
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     pub fn set_context_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.context_attributes = input;
         self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
-    pub fn get_context_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_context_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.context_attributes
     }
     /// Consumes the builder and constructs a [`ActiveContext`](crate::types::ActiveContext).

@@ -23,9 +23,7 @@ impl AutoStartConfig {
 
 /// A builder for [`AutoStartConfig`](crate::types::AutoStartConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoStartConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl AutoStartConfigBuilder {
     }
     /// Consumes the builder and constructs a [`AutoStartConfig`](crate::types::AutoStartConfig).
     pub fn build(self) -> crate::types::AutoStartConfig {
-        crate::types::AutoStartConfig {
-            enabled: self.enabled,
-        }
+        crate::types::AutoStartConfig { enabled: self.enabled }
     }
 }

@@ -54,9 +54,7 @@ impl ::std::fmt::Debug for ListVectorEnrichmentJobsInput {
 }
 impl ListVectorEnrichmentJobsInput {
     /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobsInput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder {
         crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder::default()
     }
 }
@@ -73,18 +71,12 @@ pub struct ListVectorEnrichmentJobsInputBuilder {
 }
 impl ListVectorEnrichmentJobsInputBuilder {
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn status_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_equals = input;
         self
     }
@@ -155,15 +147,13 @@ impl ListVectorEnrichmentJobsInputBuilder {
         crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput {
-                status_equals: self.status_equals,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput {
+            status_equals: self.status_equals,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
 impl ::std::fmt::Debug for ListVectorEnrichmentJobsInputBuilder {

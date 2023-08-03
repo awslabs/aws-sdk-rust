@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`notification_types(Vec<String>)`](crate::operation::put_notification_configuration::builders::PutNotificationConfigurationFluentBuilder::notification_types) / [`set_notification_types(Option<Vec<String>>)`](crate::operation::put_notification_configuration::builders::PutNotificationConfigurationFluentBuilder::set_notification_types): <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
     /// - On success, responds with [`PutNotificationConfigurationOutput`](crate::operation::put_notification_configuration::PutNotificationConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutNotificationConfigurationError>`](crate::operation::put_notification_configuration::PutNotificationConfigurationError)
-    pub fn put_notification_configuration(&self) -> crate::operation::put_notification_configuration::builders::PutNotificationConfigurationFluentBuilder{
+    pub fn put_notification_configuration(
+        &self,
+    ) -> crate::operation::put_notification_configuration::builders::PutNotificationConfigurationFluentBuilder {
         crate::operation::put_notification_configuration::builders::PutNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

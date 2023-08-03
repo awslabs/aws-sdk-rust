@@ -10,10 +10,7 @@ impl CancelImportTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_import_task::CancelImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_import_task::CancelImportTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_import_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelImportTaskFluentBuilder {
         }
     }
     /// Access the CancelImportTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CancelImportTaskFluentBuilder {
             crate::operation::cancel_import_task::CancelImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_import_task::CancelImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CancelImportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CancelImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_import_task::CancelImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_import_task::CancelImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CancelImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_import_task::CancelImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_import_task::CancelImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CancelImportTaskFluentBuilder {
             crate::operation::cancel_import_task::CancelImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_import_task::CancelImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The reason for canceling the task.</p>
-    pub fn cancel_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cancel_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cancel_reason(input.into());
         self
     }
     /// <p>The reason for canceling the task.</p>
-    pub fn set_cancel_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cancel_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cancel_reason(input);
         self
     }
@@ -157,18 +135,12 @@ impl CancelImportTaskFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_task_id(input.into());
         self
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_task_id(input);
         self
     }

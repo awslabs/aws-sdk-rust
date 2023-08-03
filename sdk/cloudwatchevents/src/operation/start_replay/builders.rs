@@ -10,10 +10,7 @@ impl StartReplayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_replay::StartReplayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replay::StartReplayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replay::StartReplayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_replay();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartReplayFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_replay::StartReplay,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_replay::StartReplay, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_replay::StartReplayError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartReplayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl StartReplayFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_replay::StartReplay,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_replay::StartReplay, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_replay::StartReplayError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl StartReplayFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The ARN of the archive to replay events from.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_source_arn(input.into());
         self
     }
     /// <p>The ARN of the archive to replay events from.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
@@ -166,10 +148,7 @@ impl StartReplayFluentBuilder {
         self
     }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn set_event_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_event_start_time(input);
         self
     }
@@ -183,10 +162,7 @@ impl StartReplayFluentBuilder {
         self
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn set_event_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_event_end_time(input);
         self
     }
@@ -200,10 +176,7 @@ impl StartReplayFluentBuilder {
         self
     }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplayDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ReplayDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }

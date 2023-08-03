@@ -10,10 +10,7 @@ impl GetDataEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_data_endpoint::GetDataEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_endpoint::GetDataEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_endpoint::GetDataEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_data_endpoint();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetDataEndpointFluentBuilder {
         }
     }
     /// Access the GetDataEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_data_endpoint::builders::GetDataEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_data_endpoint::builders::GetDataEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl GetDataEndpointFluentBuilder {
             crate::operation::get_data_endpoint::GetDataEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_endpoint::GetDataEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_endpoint::GetDataEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl GetDataEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl GetDataEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_endpoint::GetDataEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_endpoint::GetDataEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_endpoint::GetDataEndpointError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl GetDataEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_endpoint::GetDataEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_endpoint::GetDataEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_endpoint::GetDataEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl GetDataEndpointFluentBuilder {
             crate::operation::get_data_endpoint::GetDataEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_endpoint::GetDataEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_endpoint::GetDataEndpointError>,
     > {
         self.customize_middleware().await
     }

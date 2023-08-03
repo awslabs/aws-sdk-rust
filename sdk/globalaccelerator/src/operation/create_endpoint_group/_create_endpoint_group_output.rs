@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEndpointGroupOutput {
 }
 impl CreateEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointGroupOutput`](crate::operation::create_endpoint_group::CreateEndpointGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_endpoint_group::builders::CreateEndpointGroupOutputBuilder {
-        crate::operation::create_endpoint_group::builders::CreateEndpointGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_endpoint_group::builders::CreateEndpointGroupOutputBuilder {
+        crate::operation::create_endpoint_group::builders::CreateEndpointGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEndpointGroupOutput`](crate::operation::create_endpoint_group::CreateEndpointGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEndpointGroupOutputBuilder {
     pub(crate) endpoint_group: ::std::option::Option<crate::types::EndpointGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateEndpointGroupOutputBuilder {
         self
     }
     /// <p>The information about the endpoint group that was created.</p>
-    pub fn set_endpoint_group(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointGroup>,
-    ) -> Self {
+    pub fn set_endpoint_group(mut self, input: ::std::option::Option<crate::types::EndpointGroup>) -> Self {
         self.endpoint_group = input;
         self
     }

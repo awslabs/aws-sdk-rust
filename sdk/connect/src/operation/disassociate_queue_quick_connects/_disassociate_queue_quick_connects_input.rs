@@ -29,16 +29,14 @@ impl DisassociateQueueQuickConnectsInput {
 }
 impl DisassociateQueueQuickConnectsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateQueueQuickConnectsInput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput).
-    pub fn builder() -> crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsInputBuilder {
         crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateQueueQuickConnectsInput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateQueueQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -78,27 +76,19 @@ impl DisassociateQueueQuickConnectsInputBuilder {
     /// To override the contents of this collection use [`set_quick_connect_ids`](Self::set_quick_connect_ids).
     ///
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub fn quick_connect_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.quick_connect_ids.unwrap_or_default();
         v.push(input.into());
         self.quick_connect_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub fn set_quick_connect_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_quick_connect_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.quick_connect_ids = input;
         self
     }
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub fn get_quick_connect_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_quick_connect_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.quick_connect_ids
     }
     /// Consumes the builder and constructs a [`DisassociateQueueQuickConnectsInput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput).
@@ -108,15 +98,10 @@ impl DisassociateQueueQuickConnectsInputBuilder {
         crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput {
-                instance_id: self.instance_id
-                ,
-                queue_id: self.queue_id
-                ,
-                quick_connect_ids: self.quick_connect_ids
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput {
+            instance_id: self.instance_id,
+            queue_id: self.queue_id,
+            quick_connect_ids: self.quick_connect_ids,
+        })
     }
 }

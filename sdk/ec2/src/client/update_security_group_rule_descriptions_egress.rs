@@ -11,7 +11,11 @@ impl super::Client {
     /// - On success, responds with [`UpdateSecurityGroupRuleDescriptionsEgressOutput`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     /// - On failure, responds with [`SdkError<UpdateSecurityGroupRuleDescriptionsEgressError>`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressError)
-    pub fn update_security_group_rule_descriptions_egress(&self) -> crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder{
-        crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder::new(self.handle.clone())
+    pub fn update_security_group_rule_descriptions_egress(
+        &self,
+    ) -> crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder {
+        crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

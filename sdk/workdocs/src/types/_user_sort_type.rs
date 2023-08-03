@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UserSortType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for UserSortType {
             "STORAGE_USED" => UserSortType::StorageUsed,
             "USER_NAME" => UserSortType::UserName,
             "USER_STATUS" => UserSortType::UserStatus,
-            other => {
-                UserSortType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => UserSortType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl UserSortType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FULL_NAME",
-            "STORAGE_LIMIT",
-            "STORAGE_USED",
-            "USER_NAME",
-            "USER_STATUS",
-        ]
+        &["FULL_NAME", "STORAGE_LIMIT", "STORAGE_USED", "USER_NAME", "USER_STATUS"]
     }
 }
 impl ::std::convert::AsRef<str> for UserSortType {

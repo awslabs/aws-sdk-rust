@@ -56,15 +56,12 @@ impl ListSlotTypesOutput {
 
 /// A builder for [`ListSlotTypesOutput`](crate::operation::list_slot_types::ListSlotTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlotTypesOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) slot_type_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeSummary>>,
+    pub(crate) slot_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -123,17 +120,12 @@ impl ListSlotTypesOutputBuilder {
         self
     }
     /// <p>Summary information for the slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_slot_type_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeSummary>>,
-    ) -> Self {
+    pub fn set_slot_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeSummary>>) -> Self {
         self.slot_type_summaries = input;
         self
     }
     /// <p>Summary information for the slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_slot_type_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeSummary>> {
+    pub fn get_slot_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeSummary>> {
         &self.slot_type_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlotTypes</code> operation request to get the next page of results.</p>

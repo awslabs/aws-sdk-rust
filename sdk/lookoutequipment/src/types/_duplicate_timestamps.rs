@@ -23,9 +23,7 @@ impl DuplicateTimestamps {
 
 /// A builder for [`DuplicateTimestamps`](crate::types::DuplicateTimestamps).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DuplicateTimestampsBuilder {
     pub(crate) total_number_of_duplicate_timestamps: ::std::option::Option<i32>,
 }
@@ -36,10 +34,7 @@ impl DuplicateTimestampsBuilder {
         self
     }
     /// <p> Indicates the total number of duplicate timestamps. </p>
-    pub fn set_total_number_of_duplicate_timestamps(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_total_number_of_duplicate_timestamps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_duplicate_timestamps = input;
         self
     }

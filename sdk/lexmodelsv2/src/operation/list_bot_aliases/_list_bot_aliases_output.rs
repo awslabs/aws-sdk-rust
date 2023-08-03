@@ -42,12 +42,9 @@ impl ListBotAliasesOutput {
 
 /// A builder for [`ListBotAliasesOutput`](crate::operation::list_bot_aliases::ListBotAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotAliasesOutputBuilder {
-    pub(crate) bot_alias_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
+    pub(crate) bot_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,17 +62,12 @@ impl ListBotAliasesOutputBuilder {
         self
     }
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_bot_alias_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
-    ) -> Self {
+    pub fn set_bot_alias_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>) -> Self {
         self.bot_alias_summaries = input;
         self
     }
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_bot_alias_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>> {
+    pub fn get_bot_alias_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>> {
         &self.bot_alias_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>

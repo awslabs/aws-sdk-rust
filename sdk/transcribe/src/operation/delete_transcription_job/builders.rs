@@ -37,10 +37,7 @@ impl DeleteTranscriptionJobFluentBuilder {
         }
     }
     /// Access the DeleteTranscriptionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteTranscriptionJobFluentBuilder {
             crate::operation::delete_transcription_job::DeleteTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transcription_job::DeleteTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transcription_job::DeleteTranscriptionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteTranscriptionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transcription_job::DeleteTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transcription_job::DeleteTranscriptionJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transcription_job::DeleteTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transcription_job::DeleteTranscriptionJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteTranscriptionJobFluentBuilder {
             crate::operation::delete_transcription_job::DeleteTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transcription_job::DeleteTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transcription_job::DeleteTranscriptionJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
-    pub fn transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transcription_job_name(input.into());
         self
     }
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
-    pub fn set_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transcription_job_name(input);
         self
     }

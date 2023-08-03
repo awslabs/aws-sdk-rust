@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRepositoryOutput {
 }
 impl UpdateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryOutput`](crate::operation::update_repository::UpdateRepositoryOutput).
-    pub fn builder() -> crate::operation::update_repository::builders::UpdateRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_repository::builders::UpdateRepositoryOutputBuilder {
         crate::operation::update_repository::builders::UpdateRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRepositoryOutput`](crate::operation::update_repository::UpdateRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRepositoryOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateRepositoryOutputBuilder {
         self
     }
     /// <p> The updated repository. </p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryDescription>,
-    ) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::RepositoryDescription>) -> Self {
         self.repository = input;
         self
     }

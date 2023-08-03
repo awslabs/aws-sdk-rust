@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::set_alias): <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     /// - On success, responds with [`AssociateAliasOutput`](crate::operation::associate_alias::AssociateAliasOutput)
     /// - On failure, responds with [`SdkError<AssociateAliasError>`](crate::operation::associate_alias::AssociateAliasError)
-    pub fn associate_alias(
-        &self,
-    ) -> crate::operation::associate_alias::builders::AssociateAliasFluentBuilder {
-        crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_alias(&self) -> crate::operation::associate_alias::builders::AssociateAliasFluentBuilder {
+        crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::new(self.handle.clone())
     }
 }

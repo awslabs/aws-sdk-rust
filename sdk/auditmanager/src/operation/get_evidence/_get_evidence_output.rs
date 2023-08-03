@@ -28,9 +28,7 @@ impl GetEvidenceOutput {
 
 /// A builder for [`GetEvidenceOutput`](crate::operation::get_evidence::GetEvidenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceOutputBuilder {
     pub(crate) evidence: ::std::option::Option<crate::types::Evidence>,
     _request_id: Option<String>,

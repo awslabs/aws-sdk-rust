@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`resource_type(ResourceType)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::set_resource_type): <p>The resource type for the encryption key.</p>
     /// - On success, responds with [`UpdateEncryptionKeyOutput`](crate::operation::update_encryption_key::UpdateEncryptionKeyOutput)
     /// - On failure, responds with [`SdkError<UpdateEncryptionKeyError>`](crate::operation::update_encryption_key::UpdateEncryptionKeyError)
-    pub fn update_encryption_key(
-        &self,
-    ) -> crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder {
-        crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_encryption_key(&self) -> crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder {
+        crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::new(self.handle.clone())
     }
 }

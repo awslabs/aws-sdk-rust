@@ -32,18 +32,14 @@ impl ::aws_http::request_id::RequestId for ListStreamConsumersOutput {
 }
 impl ListStreamConsumersOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamConsumersOutput`](crate::operation::list_stream_consumers::ListStreamConsumersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stream_consumers::builders::ListStreamConsumersOutputBuilder {
-        crate::operation::list_stream_consumers::builders::ListStreamConsumersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_stream_consumers::builders::ListStreamConsumersOutputBuilder {
+        crate::operation::list_stream_consumers::builders::ListStreamConsumersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamConsumersOutput`](crate::operation::list_stream_consumers::ListStreamConsumersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamConsumersOutputBuilder {
     pub(crate) consumers: ::std::option::Option<::std::vec::Vec<crate::types::Consumer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -62,10 +58,7 @@ impl ListStreamConsumersOutputBuilder {
         self
     }
     /// <p>An array of JSON objects. Each object represents one registered consumer.</p>
-    pub fn set_consumers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Consumer>>,
-    ) -> Self {
+    pub fn set_consumers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Consumer>>) -> Self {
         self.consumers = input;
         self
     }

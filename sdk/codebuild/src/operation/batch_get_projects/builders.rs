@@ -10,10 +10,7 @@ impl BatchGetProjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_projects::BatchGetProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_projects::BatchGetProjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_projects::BatchGetProjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_projects();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetProjectsFluentBuilder {
         }
     }
     /// Access the BatchGetProjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetProjectsFluentBuilder {
             crate::operation::batch_get_projects::BatchGetProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_projects::BatchGetProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_projects::BatchGetProjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetProjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_projects::BatchGetProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_projects::BatchGetProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_projects::BatchGetProjectsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_projects::BatchGetProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_projects::BatchGetProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_projects::BatchGetProjectsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetProjectsFluentBuilder {
             crate::operation::batch_get_projects::BatchGetProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_projects::BatchGetProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_projects::BatchGetProjectsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchGetProjectsFluentBuilder {
         self
     }
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

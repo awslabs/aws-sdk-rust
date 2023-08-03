@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for GetObjectAttributesOutput {
 }
 impl GetObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_object_attributes::builders::GetObjectAttributesOutputBuilder {
-        crate::operation::get_object_attributes::builders::GetObjectAttributesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_object_attributes::builders::GetObjectAttributesOutputBuilder {
+        crate::operation::get_object_attributes::builders::GetObjectAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectAttributesOutputBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     _request_id: Option<String>,
 }
 impl GetObjectAttributesOutputBuilder {
@@ -51,17 +46,12 @@ impl GetObjectAttributesOutputBuilder {
         self
     }
     /// <p>The attributes that are associated with the object.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes that are associated with the object.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

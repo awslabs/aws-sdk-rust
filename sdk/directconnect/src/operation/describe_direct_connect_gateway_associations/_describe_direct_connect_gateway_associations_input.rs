@@ -52,16 +52,15 @@ impl DescribeDirectConnectGatewayAssociationsInput {
 }
 impl DescribeDirectConnectGatewayAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsInput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder
+    {
         crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectConnectGatewayAssociationsInput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationsInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_gateway_id: ::std::option::Option<::std::string::String>,
@@ -72,18 +71,12 @@ pub struct DescribeDirectConnectGatewayAssociationsInputBuilder {
 }
 impl DescribeDirectConnectGatewayAssociationsInputBuilder {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -92,18 +85,12 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         &self.association_id
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn associated_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn set_associated_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_gateway_id = input;
         self
     }
@@ -112,18 +99,12 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         &self.associated_gateway_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -163,18 +144,12 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
-    pub fn virtual_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_id = input;
         self
     }
@@ -183,22 +158,21 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         &self.virtual_gateway_id
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsInput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput {
-                association_id: self.association_id
-                ,
-                associated_gateway_id: self.associated_gateway_id
-                ,
-                direct_connect_gateway_id: self.direct_connect_gateway_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                virtual_gateway_id: self.virtual_gateway_id
-                ,
-            }
+                association_id: self.association_id,
+                associated_gateway_id: self.associated_gateway_id,
+                direct_connect_gateway_id: self.direct_connect_gateway_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                virtual_gateway_id: self.virtual_gateway_id,
+            },
         )
     }
 }

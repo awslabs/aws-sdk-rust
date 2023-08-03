@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPoliciesForTargetOutput {
 }
 impl ListPoliciesForTargetOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesForTargetOutput`](crate::operation::list_policies_for_target::ListPoliciesForTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::list_policies_for_target::builders::ListPoliciesForTargetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policies_for_target::builders::ListPoliciesForTargetOutputBuilder {
         crate::operation::list_policies_for_target::builders::ListPoliciesForTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPoliciesForTargetOutput`](crate::operation::list_policies_for_target::ListPoliciesForTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesForTargetOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListPoliciesForTargetOutputBuilder {
         self
     }
     /// <p>The list of policies that match the criteria in the request.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>The list of policies that match the criteria in the request.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
         &self.policies
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>

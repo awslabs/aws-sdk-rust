@@ -10,10 +10,7 @@ impl StopWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_workspaces::StopWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_workspaces::StopWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_workspaces::StopWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_workspaces();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopWorkspacesFluentBuilder {
         }
     }
     /// Access the StopWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_workspaces::builders::StopWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_workspaces::builders::StopWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl StopWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -125,17 +117,12 @@ impl StopWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_stop_workspace_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StopRequest>>,
-    ) -> Self {
+    pub fn set_stop_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StopRequest>>) -> Self {
         self.inner = self.inner.set_stop_workspace_requests(input);
         self
     }
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_stop_workspace_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StopRequest>> {
+    pub fn get_stop_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StopRequest>> {
         self.inner.get_stop_workspace_requests()
     }
 }

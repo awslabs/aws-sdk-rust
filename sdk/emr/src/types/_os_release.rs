@@ -23,9 +23,7 @@ impl OsRelease {
 
 /// A builder for [`OsRelease`](crate::types::OsRelease).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OsReleaseBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
 }

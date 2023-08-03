@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::set_id): <p>The ID of the resource to update.</p>
     /// - On success, responds with [`DisassociateWirelessDeviceFromThingOutput`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingOutput)
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromThingError>`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingError)
-    pub fn disassociate_wireless_device_from_thing(&self) -> crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder{
-        crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_wireless_device_from_thing(
+        &self,
+    ) -> crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder {
+        crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

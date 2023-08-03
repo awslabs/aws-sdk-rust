@@ -44,9 +44,7 @@ impl DeveloperInfo {
 
 /// A builder for [`DeveloperInfo`](crate::types::DeveloperInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeveloperInfoBuilder {
     pub(crate) developer_name: ::std::option::Option<::std::string::String>,
     pub(crate) privacy_policy: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DeveloperInfoBuilder {
 }
 impl DeveloperInfoBuilder {
     /// <p>The name of the developer.</p>
-    pub fn developer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.developer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the developer.</p>
-    pub fn set_developer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.developer_name = input;
         self
     }
@@ -75,18 +67,12 @@ impl DeveloperInfoBuilder {
         &self.developer_name
     }
     /// <p>The URL of the privacy policy.</p>
-    pub fn privacy_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn privacy_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.privacy_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the privacy policy.</p>
-    pub fn set_privacy_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_privacy_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.privacy_policy = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput) with field(s):
     ///   - [`managed_products(Option<Vec<ManagedProductDescriptor>>)`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput::managed_products): <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
     /// - On failure, responds with [`SdkError<DescribeAllManagedProductsError>`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsError)
-    pub fn describe_all_managed_products(&self) -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsFluentBuilder{
+    pub fn describe_all_managed_products(
+        &self,
+    ) -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsFluentBuilder {
         crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsFluentBuilder::new(self.handle.clone())
     }
 }

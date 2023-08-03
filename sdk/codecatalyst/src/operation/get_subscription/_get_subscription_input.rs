@@ -22,9 +22,7 @@ impl GetSubscriptionInput {
 
 /// A builder for [`GetSubscriptionInput`](crate::operation::get_subscription::GetSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionInput`](crate::operation::get_subscription::GetSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_subscription::GetSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_subscription::GetSubscriptionInput {
-            space_name: self.space_name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_subscription::GetSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_subscription::GetSubscriptionInput { space_name: self.space_name })
     }
 }

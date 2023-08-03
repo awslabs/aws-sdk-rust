@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`wireless_gateway_log_options(Vec<WirelessGatewayLogOption>)`](crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesFluentBuilder::wireless_gateway_log_options) / [`set_wireless_gateway_log_options(Option<Vec<WirelessGatewayLogOption>>)`](crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesFluentBuilder::set_wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
     /// - On success, responds with [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput)
     /// - On failure, responds with [`SdkError<UpdateLogLevelsByResourceTypesError>`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError)
-    pub fn update_log_levels_by_resource_types(&self) -> crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesFluentBuilder{
+    pub fn update_log_levels_by_resource_types(
+        &self,
+    ) -> crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesFluentBuilder {
         crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesFluentBuilder::new(self.handle.clone())
     }
 }

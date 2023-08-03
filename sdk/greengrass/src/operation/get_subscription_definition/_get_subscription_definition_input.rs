@@ -15,33 +15,25 @@ impl GetSubscriptionDefinitionInput {
 }
 impl GetSubscriptionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionDefinitionInput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput).
-    pub fn builder() -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder {
         crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubscriptionDefinitionInput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionDefinitionInputBuilder {
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubscriptionDefinitionInputBuilder {
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_definition_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetSubscriptionDefinitionInputBuilder {
         crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput {
-                subscription_definition_id: self.subscription_definition_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput {
+            subscription_definition_id: self.subscription_definition_id,
+        })
     }
 }

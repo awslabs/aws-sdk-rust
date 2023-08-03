@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`topic_arn(impl ::std::convert::Into<String>)`](crate::operation::subscribe_to_event::builders::SubscribeToEventFluentBuilder::topic_arn) / [`set_topic_arn(Option<String>)`](crate::operation::subscribe_to_event::builders::SubscribeToEventFluentBuilder::set_topic_arn): <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
     /// - On success, responds with [`SubscribeToEventOutput`](crate::operation::subscribe_to_event::SubscribeToEventOutput)
     /// - On failure, responds with [`SdkError<SubscribeToEventError>`](crate::operation::subscribe_to_event::SubscribeToEventError)
-    pub fn subscribe_to_event(
-        &self,
-    ) -> crate::operation::subscribe_to_event::builders::SubscribeToEventFluentBuilder {
-        crate::operation::subscribe_to_event::builders::SubscribeToEventFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn subscribe_to_event(&self) -> crate::operation::subscribe_to_event::builders::SubscribeToEventFluentBuilder {
+        crate::operation::subscribe_to_event::builders::SubscribeToEventFluentBuilder::new(self.handle.clone())
     }
 }

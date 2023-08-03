@@ -29,9 +29,7 @@ impl DescribeComputeInput {
 
 /// A builder for [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeComputeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compute::DescribeComputeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_compute::DescribeComputeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_compute::DescribeComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

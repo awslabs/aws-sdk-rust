@@ -43,9 +43,7 @@ impl ListBotVersionsInput {
 
 /// A builder for [`ListBotVersionsInput`](crate::operation::list_bot_versions::ListBotVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotVersionsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::BotVersionSortBy>,
@@ -73,10 +71,7 @@ impl ListBotVersionsInputBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BotVersionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BotVersionSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -115,10 +110,7 @@ impl ListBotVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListBotVersionsInput`](crate::operation::list_bot_versions::ListBotVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bot_versions::ListBotVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_bot_versions::ListBotVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bot_versions::ListBotVersionsInput {
             bot_id: self.bot_id,
             sort_by: self.sort_by,

@@ -36,18 +36,14 @@ impl ListResourceDelegatesInput {
 }
 impl ListResourceDelegatesInput {
     /// Creates a new builder-style object to manufacture [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesInputBuilder {
         crate::operation::list_resource_delegates::builders::ListResourceDelegatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceDelegatesInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListResourceDelegatesInputBuilder {
 }
 impl ListResourceDelegatesInputBuilder {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListResourceDelegatesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_delegates::ListResourceDelegatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_delegates::ListResourceDelegatesInput {
-                organization_id: self.organization_id,
-                resource_id: self.resource_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resource_delegates::ListResourceDelegatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_resource_delegates::ListResourceDelegatesInput {
+            organization_id: self.organization_id,
+            resource_id: self.resource_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

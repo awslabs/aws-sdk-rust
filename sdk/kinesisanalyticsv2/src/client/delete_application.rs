@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`create_timestamp(DateTime)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::create_timestamp) / [`set_create_timestamp(Option<DateTime>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_create_timestamp): <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

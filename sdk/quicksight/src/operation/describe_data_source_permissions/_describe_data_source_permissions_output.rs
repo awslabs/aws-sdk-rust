@@ -49,39 +49,30 @@ impl ::aws_http::request_id::RequestId for DescribeDataSourcePermissionsOutput {
 }
 impl DescribeDataSourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcePermissionsOutput`](crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder {
         crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSourcePermissionsOutput`](crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSourcePermissionsOutputBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribeDataSourcePermissionsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn set_data_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_arn = input;
         self
     }
@@ -90,18 +81,12 @@ impl DescribeDataSourcePermissionsOutputBuilder {
         &self.data_source_arn
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -121,17 +106,12 @@ impl DescribeDataSourcePermissionsOutputBuilder {
         self
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -172,10 +152,7 @@ impl DescribeDataSourcePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataSourcePermissionsOutput`](crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput {
         crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput {
             data_source_arn: self.data_source_arn,
             data_source_id: self.data_source_id,

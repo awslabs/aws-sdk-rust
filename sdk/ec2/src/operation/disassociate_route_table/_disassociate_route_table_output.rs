@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateRouteTableOutput {
 }
 impl DisassociateRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRouteTableOutput`](crate::operation::disassociate_route_table::DisassociateRouteTableOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableOutputBuilder {
         crate::operation::disassociate_route_table::builders::DisassociateRouteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRouteTableOutput`](crate::operation::disassociate_route_table::DisassociateRouteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRouteTableOutputBuilder {
     _request_id: Option<String>,
 }

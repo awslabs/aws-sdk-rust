@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomPluginsOutput {
 }
 impl ListCustomPluginsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomPluginsOutput`](crate::operation::list_custom_plugins::ListCustomPluginsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_plugins::builders::ListCustomPluginsOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_plugins::builders::ListCustomPluginsOutputBuilder {
         crate::operation::list_custom_plugins::builders::ListCustomPluginsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomPluginsOutput`](crate::operation::list_custom_plugins::ListCustomPluginsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomPluginsOutputBuilder {
-    pub(crate) custom_plugins:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>>,
+    pub(crate) custom_plugins: ::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListCustomPluginsOutputBuilder {
         self
     }
     /// <p>An array of custom plugin descriptions.</p>
-    pub fn set_custom_plugins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>>,
-    ) -> Self {
+    pub fn set_custom_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>>) -> Self {
         self.custom_plugins = input;
         self
     }
     /// <p>An array of custom plugin descriptions.</p>
-    pub fn get_custom_plugins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>> {
+    pub fn get_custom_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>> {
         &self.custom_plugins
     }
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>

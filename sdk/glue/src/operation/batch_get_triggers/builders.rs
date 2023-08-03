@@ -10,10 +10,7 @@ impl BatchGetTriggersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_triggers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetTriggersFluentBuilder {
         }
     }
     /// Access the BatchGetTriggers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetTriggersFluentBuilder {
             crate::operation::batch_get_triggers::BatchGetTriggers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetTriggersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetTriggersFluentBuilder {
             crate::operation::batch_get_triggers::BatchGetTriggers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl BatchGetTriggersFluentBuilder {
     /// To override the contents of this collection use [`set_trigger_names`](Self::set_trigger_names).
     ///
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn trigger_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trigger_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trigger_names(input.into());
         self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn set_trigger_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trigger_names(input);
         self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn get_trigger_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_trigger_names()
     }
 }

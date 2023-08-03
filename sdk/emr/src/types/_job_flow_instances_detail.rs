@@ -107,17 +107,14 @@ impl JobFlowInstancesDetail {
 
 /// A builder for [`JobFlowInstancesDetail`](crate::types::JobFlowInstancesDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobFlowInstancesDetailBuilder {
     pub(crate) master_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) master_public_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) master_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) slave_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
-    pub(crate) instance_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>>,
     pub(crate) normalized_instance_hours: ::std::option::Option<i32>,
     pub(crate) ec2_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_subnet_id: ::std::option::Option<::std::string::String>,
@@ -128,18 +125,12 @@ pub struct JobFlowInstancesDetailBuilder {
 }
 impl JobFlowInstancesDetailBuilder {
     /// <p>The Amazon EC2 master node instance type.</p>
-    pub fn master_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 master node instance type.</p>
-    pub fn set_master_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_instance_type = input;
         self
     }
@@ -148,18 +139,12 @@ impl JobFlowInstancesDetailBuilder {
         &self.master_instance_type
     }
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    pub fn master_public_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    pub fn set_master_public_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_public_dns_name = input;
         self
     }
@@ -168,18 +153,12 @@ impl JobFlowInstancesDetailBuilder {
         &self.master_public_dns_name
     }
     /// <p>The Amazon EC2 instance identifier of the master node.</p>
-    pub fn master_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance identifier of the master node.</p>
-    pub fn set_master_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_instance_id = input;
         self
     }
@@ -188,18 +167,12 @@ impl JobFlowInstancesDetailBuilder {
         &self.master_instance_id
     }
     /// <p>The Amazon EC2 core and task node instance type.</p>
-    pub fn slave_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slave_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slave_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 core and task node instance type.</p>
-    pub fn set_slave_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slave_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slave_instance_type = input;
         self
     }
@@ -233,17 +206,12 @@ impl JobFlowInstancesDetailBuilder {
         self
     }
     /// <p>Details about the instance groups in a cluster.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>>) -> Self {
         self.instance_groups = input;
         self
     }
     /// <p>Details about the instance groups in a cluster.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupDetail>> {
         &self.instance_groups
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
@@ -275,18 +243,12 @@ impl JobFlowInstancesDetailBuilder {
         &self.ec2_key_name
     }
     /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
-    pub fn ec2_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
-    pub fn set_ec2_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_subnet_id = input;
         self
     }
@@ -300,10 +262,7 @@ impl JobFlowInstancesDetailBuilder {
         self
     }
     /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementType>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::PlacementType>) -> Self {
         self.placement = input;
         self
     }
@@ -317,10 +276,7 @@ impl JobFlowInstancesDetailBuilder {
         self
     }
     /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
-    pub fn set_keep_job_flow_alive_when_no_steps(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_keep_job_flow_alive_when_no_steps(mut self, input: ::std::option::Option<bool>) -> Self {
         self.keep_job_flow_alive_when_no_steps = input;
         self
     }
@@ -343,18 +299,12 @@ impl JobFlowInstancesDetailBuilder {
         &self.termination_protected
     }
     /// <p>The Hadoop version for the cluster.</p>
-    pub fn hadoop_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hadoop_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hadoop_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Hadoop version for the cluster.</p>
-    pub fn set_hadoop_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hadoop_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hadoop_version = input;
         self
     }
@@ -375,9 +325,7 @@ impl JobFlowInstancesDetailBuilder {
             ec2_key_name: self.ec2_key_name,
             ec2_subnet_id: self.ec2_subnet_id,
             placement: self.placement,
-            keep_job_flow_alive_when_no_steps: self
-                .keep_job_flow_alive_when_no_steps
-                .unwrap_or_default(),
+            keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps.unwrap_or_default(),
             termination_protected: self.termination_protected.unwrap_or_default(),
             hadoop_version: self.hadoop_version,
         }

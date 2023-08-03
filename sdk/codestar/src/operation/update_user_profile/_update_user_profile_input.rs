@@ -46,8 +46,7 @@ impl ::std::fmt::Debug for UpdateUserProfileInput {
 }
 impl UpdateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
         crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder::default()
     }
 }
@@ -91,18 +90,12 @@ impl UpdateUserProfileInputBuilder {
         &self.display_name
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -111,18 +104,12 @@ impl UpdateUserProfileInputBuilder {
         &self.email_address
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key = input;
         self
     }
@@ -133,18 +120,13 @@ impl UpdateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_profile::UpdateUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_profile::UpdateUserProfileInput {
-                user_arn: self.user_arn,
-                display_name: self.display_name,
-                email_address: self.email_address,
-                ssh_public_key: self.ssh_public_key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileInput {
+            user_arn: self.user_arn,
+            display_name: self.display_name,
+            email_address: self.email_address,
+            ssh_public_key: self.ssh_public_key,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateUserProfileInputBuilder {

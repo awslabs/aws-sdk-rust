@@ -5,16 +5,16 @@ pub use crate::operation::list_recovery_points_by_legal_hold::_list_recovery_poi
 
 impl ListRecoveryPointsByLegalHoldInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_recovery_points_by_legal_hold();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListRecoveryPointsByLegalHoldInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByLegalHoldFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder,
+    inner: crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder,
 }
 impl ListRecoveryPointsByLegalHoldFluentBuilder {
     /// Creates a new `ListRecoveryPointsByLegalHold`.
@@ -37,15 +37,20 @@ impl ListRecoveryPointsByLegalHoldFluentBuilder {
         }
     }
     /// Access the ListRecoveryPointsByLegalHold as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHold, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHold,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListRecoveryPointsByLegalHoldFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListRecoveryPointsByLegalHoldFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHold, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHold,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_points_by_legal_hold::paginator::ListRecoveryPointsByLegalHoldPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_legal_hold::paginator::ListRecoveryPointsByLegalHoldPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_legal_hold::paginator::ListRecoveryPointsByLegalHoldPaginator {
         crate::operation::list_recovery_points_by_legal_hold::paginator::ListRecoveryPointsByLegalHoldPaginator::new(self.handle, self.inner)
     }
     /// <p>This is the ID of the legal hold.</p>
-    pub fn legal_hold_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.legal_hold_id(input.into());
         self
     }
     /// <p>This is the ID of the legal hold.</p>
-    pub fn set_legal_hold_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_legal_hold_id(input);
         self
     }

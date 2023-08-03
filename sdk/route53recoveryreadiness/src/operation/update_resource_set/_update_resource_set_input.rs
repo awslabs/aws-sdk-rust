@@ -32,17 +32,14 @@ impl UpdateResourceSetInput {
 }
 impl UpdateResourceSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder {
+    pub fn builder() -> crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder {
         crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceSetInputBuilder {
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_type: ::std::option::Option<::std::string::String>,
@@ -50,18 +47,12 @@ pub struct UpdateResourceSetInputBuilder {
 }
 impl UpdateResourceSetInputBuilder {
     /// <p>Name of a resource set.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a resource set.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_name = input;
         self
     }
@@ -71,19 +62,13 @@ impl UpdateResourceSetInputBuilder {
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn set_resource_set_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_type = input;
         self
     }
@@ -104,10 +89,7 @@ impl UpdateResourceSetInputBuilder {
         self
     }
     /// <p>A list of resource objects.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -118,16 +100,11 @@ impl UpdateResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_set::UpdateResourceSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_set::UpdateResourceSetInput {
-                resource_set_name: self.resource_set_name,
-                resource_set_type: self.resource_set_type,
-                resources: self.resources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resource_set::UpdateResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_resource_set::UpdateResourceSetInput {
+            resource_set_name: self.resource_set_name,
+            resource_set_type: self.resource_set_type,
+            resources: self.resources,
+        })
     }
 }

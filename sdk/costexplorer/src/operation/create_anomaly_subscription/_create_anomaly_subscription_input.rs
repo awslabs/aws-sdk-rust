@@ -22,9 +22,7 @@ pub struct CreateAnomalySubscriptionInput {
 }
 impl CreateAnomalySubscriptionInput {
     /// <p>The cost anomaly subscription object that you want to create. </p>
-    pub fn anomaly_subscription(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalySubscription> {
+    pub fn anomaly_subscription(&self) -> ::std::option::Option<&crate::types::AnomalySubscription> {
         self.anomaly_subscription.as_ref()
     }
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
@@ -44,16 +42,14 @@ impl CreateAnomalySubscriptionInput {
 }
 impl CreateAnomalySubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionInput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput).
-    pub fn builder() -> crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder {
         crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnomalySubscriptionInput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionInputBuilder {
     pub(crate) anomaly_subscription: ::std::option::Option<crate::types::AnomalySubscription>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
@@ -65,17 +61,12 @@ impl CreateAnomalySubscriptionInputBuilder {
         self
     }
     /// <p>The cost anomaly subscription object that you want to create. </p>
-    pub fn set_anomaly_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySubscription>,
-    ) -> Self {
+    pub fn set_anomaly_subscription(mut self, input: ::std::option::Option<crate::types::AnomalySubscription>) -> Self {
         self.anomaly_subscription = input;
         self
     }
     /// <p>The cost anomaly subscription object that you want to create. </p>
-    pub fn get_anomaly_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalySubscription> {
+    pub fn get_anomaly_subscription(&self) -> &::std::option::Option<crate::types::AnomalySubscription> {
         &self.anomaly_subscription
     }
     /// Appends an item to `resource_tags`.
@@ -110,10 +101,7 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
@@ -128,9 +116,7 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// Consumes the builder and constructs a [`CreateAnomalySubscriptionInput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput).
@@ -140,11 +126,9 @@ impl CreateAnomalySubscriptionInputBuilder {
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput {
-                anomaly_subscription: self.anomaly_subscription,
-                resource_tags: self.resource_tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput {
+            anomaly_subscription: self.anomaly_subscription,
+            resource_tags: self.resource_tags,
+        })
     }
 }

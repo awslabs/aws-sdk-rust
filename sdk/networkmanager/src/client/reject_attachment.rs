@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RejectAttachmentOutput`](crate::operation::reject_attachment::RejectAttachmentOutput) with field(s):
     ///   - [`attachment(Option<Attachment>)`](crate::operation::reject_attachment::RejectAttachmentOutput::attachment): <p>Describes the rejected attachment request.</p>
     /// - On failure, responds with [`SdkError<RejectAttachmentError>`](crate::operation::reject_attachment::RejectAttachmentError)
-    pub fn reject_attachment(
-        &self,
-    ) -> crate::operation::reject_attachment::builders::RejectAttachmentFluentBuilder {
-        crate::operation::reject_attachment::builders::RejectAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reject_attachment(&self) -> crate::operation::reject_attachment::builders::RejectAttachmentFluentBuilder {
+        crate::operation::reject_attachment::builders::RejectAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

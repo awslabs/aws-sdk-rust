@@ -37,13 +37,10 @@ impl MemberSpecification {
 
 /// A builder for [`MemberSpecification`](crate::types::MemberSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberSpecificationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) member_abilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl MemberSpecificationBuilder {
@@ -73,17 +70,12 @@ impl MemberSpecificationBuilder {
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_member_abilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
-    ) -> Self {
+    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.member_abilities = input;
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn get_member_abilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
     /// <p>The member's display name.</p>

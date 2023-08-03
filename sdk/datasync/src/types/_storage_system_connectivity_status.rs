@@ -39,13 +39,7 @@
 /// _Note: `StorageSystemConnectivityStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StorageSystemConnectivityStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for StorageSystemConnectivityStatus {
             "FAIL" => StorageSystemConnectivityStatus::Fail,
             "PASS" => StorageSystemConnectivityStatus::Pass,
             "UNKNOWN" => StorageSystemConnectivityStatus::UnknownValue,
-            other => StorageSystemConnectivityStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => StorageSystemConnectivityStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

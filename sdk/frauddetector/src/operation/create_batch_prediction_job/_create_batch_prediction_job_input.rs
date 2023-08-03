@@ -66,18 +66,14 @@ impl CreateBatchPredictionJobInput {
 }
 impl CreateBatchPredictionJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionJobInput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder {
         crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchPredictionJobInput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_path: ::std::option::Option<::std::string::String>,
@@ -132,18 +128,12 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.output_path
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -152,18 +142,12 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.event_type_name
     }
     /// <p>The name of the detector.</p>
-    pub fn detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_name = input;
         self
     }
@@ -172,18 +156,12 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.detector_name
     }
     /// <p>The detector version.</p>
-    pub fn detector_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version.</p>
-    pub fn set_detector_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version = input;
         self
     }
@@ -220,10 +198,7 @@ impl CreateBatchPredictionJobInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -238,17 +213,15 @@ impl CreateBatchPredictionJobInputBuilder {
         crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput {
-                job_id: self.job_id,
-                input_path: self.input_path,
-                output_path: self.output_path,
-                event_type_name: self.event_type_name,
-                detector_name: self.detector_name,
-                detector_version: self.detector_version,
-                iam_role_arn: self.iam_role_arn,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput {
+            job_id: self.job_id,
+            input_path: self.input_path,
+            output_path: self.output_path,
+            event_type_name: self.event_type_name,
+            detector_name: self.detector_name,
+            detector_version: self.detector_version,
+            iam_role_arn: self.iam_role_arn,
+            tags: self.tags,
+        })
     }
 }

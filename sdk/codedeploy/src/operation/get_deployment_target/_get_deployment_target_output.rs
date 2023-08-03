@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDeploymentTargetOutput {
 }
 impl GetDeploymentTargetOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentTargetOutput`](crate::operation::get_deployment_target::GetDeploymentTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_target::builders::GetDeploymentTargetOutputBuilder {
-        crate::operation::get_deployment_target::builders::GetDeploymentTargetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_deployment_target::builders::GetDeploymentTargetOutputBuilder {
+        crate::operation::get_deployment_target::builders::GetDeploymentTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentTargetOutput`](crate::operation::get_deployment_target::GetDeploymentTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentTargetOutputBuilder {
     pub(crate) deployment_target: ::std::option::Option<crate::types::DeploymentTarget>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetDeploymentTargetOutputBuilder {
         self
     }
     /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-    pub fn set_deployment_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTarget>,
-    ) -> Self {
+    pub fn set_deployment_target(mut self, input: ::std::option::Option<crate::types::DeploymentTarget>) -> Self {
         self.deployment_target = input;
         self
     }

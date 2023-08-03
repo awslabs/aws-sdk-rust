@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`function_arns(Option<Vec<String>>)`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput::function_arns): <p>The function ARNs. </p>
     /// - On failure, responds with [`SdkError<ListFunctionsByCodeSigningConfigError>`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError)
-    pub fn list_functions_by_code_signing_config(&self) -> crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigFluentBuilder{
+    pub fn list_functions_by_code_signing_config(
+        &self,
+    ) -> crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigFluentBuilder {
         crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigFluentBuilder::new(self.handle.clone())
     }
 }

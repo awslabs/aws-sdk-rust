@@ -10,10 +10,7 @@ impl CreateProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_profile::CreateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profile::CreateProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_profile();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateProfileFluentBuilder {
         }
     }
     /// Access the CreateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -142,10 +134,7 @@ impl CreateProfileFluentBuilder {
     /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
     /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
     /// </ul>
-    pub fn set_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileType>,
-    ) -> Self {
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
         self.inner = self.inner.set_profile_type(input);
         self
     }
@@ -162,25 +151,17 @@ impl CreateProfileFluentBuilder {
     /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
     ///
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_ids(input.into());
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_ids(input);
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn get_certificate_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_ids()
     }
     /// Appends an item to `Tags`.
@@ -193,10 +174,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

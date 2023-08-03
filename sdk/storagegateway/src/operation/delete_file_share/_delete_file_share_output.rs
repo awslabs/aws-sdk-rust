@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for DeleteFileShareOutput {
 }
 impl DeleteFileShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileShareOutput`](crate::operation::delete_file_share::DeleteFileShareOutput).
-    pub fn builder() -> crate::operation::delete_file_share::builders::DeleteFileShareOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_share::builders::DeleteFileShareOutputBuilder {
         crate::operation::delete_file_share::builders::DeleteFileShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFileShareOutput`](crate::operation::delete_file_share::DeleteFileShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileShareOutputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteFileShareOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }

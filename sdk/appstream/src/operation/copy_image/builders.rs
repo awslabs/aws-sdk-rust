@@ -10,10 +10,7 @@ impl CopyImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_image::CopyImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_image::CopyImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_image::CopyImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_image();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CopyImageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::copy_image::CopyImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::copy_image::CopyImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::copy_image::CopyImageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CopyImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl CopyImageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::copy_image::CopyImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::copy_image::CopyImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::copy_image::CopyImageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the image to copy.</p>
-    pub fn source_image_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_image_name(input.into());
         self
     }
     /// <p>The name of the image to copy.</p>
-    pub fn set_source_image_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_image_name(input);
         self
     }
@@ -133,18 +115,12 @@ impl CopyImageFluentBuilder {
         self.inner.get_source_image_name()
     }
     /// <p>The name that the image will have when it is copied to the destination.</p>
-    pub fn destination_image_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_image_name(input.into());
         self
     }
     /// <p>The name that the image will have when it is copied to the destination.</p>
-    pub fn set_destination_image_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_image_name(input);
         self
     }
@@ -153,18 +129,12 @@ impl CopyImageFluentBuilder {
         self.inner.get_destination_image_name()
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_region(input.into());
         self
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_region(input);
         self
     }
@@ -173,25 +143,17 @@ impl CopyImageFluentBuilder {
         self.inner.get_destination_region()
     }
     /// <p>The description that the image will have when it is copied to the destination.</p>
-    pub fn destination_image_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_image_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_image_description(input.into());
         self
     }
     /// <p>The description that the image will have when it is copied to the destination.</p>
-    pub fn set_destination_image_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_image_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_image_description(input);
         self
     }
     /// <p>The description that the image will have when it is copied to the destination.</p>
-    pub fn get_destination_image_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_image_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_image_description()
     }
 }

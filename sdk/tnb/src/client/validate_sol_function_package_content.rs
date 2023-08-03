@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`vnfd_version(Option<String>)`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput::vnfd_version): <p>Function package descriptor version.</p>
     ///   - [`metadata(Option<ValidateSolFunctionPackageContentMetadata>)`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput::metadata): <p>Function package metadata.</p>
     /// - On failure, responds with [`SdkError<ValidateSolFunctionPackageContentError>`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError)
-    pub fn validate_sol_function_package_content(&self) -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentFluentBuilder{
+    pub fn validate_sol_function_package_content(
+        &self,
+    ) -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentFluentBuilder {
         crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentFluentBuilder::new(self.handle.clone())
     }
 }

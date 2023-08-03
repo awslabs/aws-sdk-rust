@@ -29,17 +29,14 @@ impl BatchGetBlueprintsInput {
 }
 impl BatchGetBlueprintsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
         crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetBlueprintsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_blueprint: ::std::option::Option<bool>,
@@ -58,10 +55,7 @@ impl BatchGetBlueprintsInputBuilder {
         self
     }
     /// <p>A list of blueprint names.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -100,16 +94,11 @@ impl BatchGetBlueprintsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_blueprints::BatchGetBlueprintsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_blueprints::BatchGetBlueprintsInput {
-                names: self.names,
-                include_blueprint: self.include_blueprint,
-                include_parameter_spec: self.include_parameter_spec,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_blueprints::BatchGetBlueprintsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_blueprints::BatchGetBlueprintsInput {
+            names: self.names,
+            include_blueprint: self.include_blueprint,
+            include_parameter_spec: self.include_parameter_spec,
+        })
     }
 }

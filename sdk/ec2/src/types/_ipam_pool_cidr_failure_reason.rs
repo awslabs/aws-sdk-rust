@@ -30,9 +30,7 @@ impl IpamPoolCidrFailureReason {
 
 /// A builder for [`IpamPoolCidrFailureReason`](crate::types::IpamPoolCidrFailureReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamPoolCidrFailureReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl IpamPoolCidrFailureReasonBuilder {
         self
     }
     /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>) -> Self {
         self.code = input;
         self
     }

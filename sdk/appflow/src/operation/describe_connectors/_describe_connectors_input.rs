@@ -29,17 +29,14 @@ impl DescribeConnectorsInput {
 }
 impl DescribeConnectorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
+    pub fn builder() -> crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
         crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorsInputBuilder {
     pub(crate) connector_types: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -58,17 +55,12 @@ impl DescribeConnectorsInputBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
-    ) -> Self {
+    pub fn set_connector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>) -> Self {
         self.connector_types = input;
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn get_connector_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
+    pub fn get_connector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
         &self.connector_types
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
@@ -102,16 +94,11 @@ impl DescribeConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connectors::DescribeConnectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connectors::DescribeConnectorsInput {
-                connector_types: self.connector_types,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_connectors::DescribeConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_connectors::DescribeConnectorsInput {
+            connector_types: self.connector_types,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

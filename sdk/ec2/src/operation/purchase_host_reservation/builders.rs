@@ -26,8 +26,7 @@ impl PurchaseHostReservationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseHostReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
+    inner: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
 }
 impl PurchaseHostReservationFluentBuilder {
     /// Creates a new `PurchaseHostReservation`.
@@ -38,10 +37,7 @@ impl PurchaseHostReservationFluentBuilder {
         }
     }
     /// Access the PurchaseHostReservation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl PurchaseHostReservationFluentBuilder {
             crate::operation::purchase_host_reservation::PurchaseHostReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl PurchaseHostReservationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl PurchaseHostReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl PurchaseHostReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl PurchaseHostReservationFluentBuilder {
             crate::operation::purchase_host_reservation::PurchaseHostReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +129,7 @@ impl PurchaseHostReservationFluentBuilder {
         self
     }
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
         self.inner = self.inner.set_currency_code(input);
         self
     }
@@ -165,17 +147,12 @@ impl PurchaseHostReservationFluentBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn set_host_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_id_set(input);
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn get_host_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_host_id_set()
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
@@ -216,17 +193,12 @@ impl PurchaseHostReservationFluentBuilder {
         self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

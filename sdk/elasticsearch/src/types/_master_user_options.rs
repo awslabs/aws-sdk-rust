@@ -54,18 +54,12 @@ pub struct MasterUserOptionsBuilder {
 }
 impl MasterUserOptionsBuilder {
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    pub fn master_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    pub fn set_master_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_arn = input;
         self
     }
@@ -74,18 +68,12 @@ impl MasterUserOptionsBuilder {
         &self.master_user_arn
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn set_master_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_name = input;
         self
     }
@@ -94,18 +82,12 @@ impl MasterUserOptionsBuilder {
         &self.master_user_name
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }

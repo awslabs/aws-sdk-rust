@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSourceNetworkReplicationOutput {
 }
 impl StartSourceNetworkReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput).
-    pub fn builder() -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationOutputBuilder{
+    pub fn builder() -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationOutputBuilder {
         crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSourceNetworkReplicationOutputBuilder {
     pub(crate) source_network: ::std::option::Option<crate::types::SourceNetwork>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartSourceNetworkReplicationOutputBuilder {
         self
     }
     /// <p>Source Network which was requested for replication.</p>
-    pub fn set_source_network(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceNetwork>,
-    ) -> Self {
+    pub fn set_source_network(mut self, input: ::std::option::Option<crate::types::SourceNetwork>) -> Self {
         self.source_network = input;
         self
     }
@@ -63,10 +58,7 @@ impl StartSourceNetworkReplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput
-    {
+    pub fn build(self) -> crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput {
         crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput {
             source_network: self.source_network,
             _request_id: self._request_id,

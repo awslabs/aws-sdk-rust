@@ -53,13 +53,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssetBundleExportJobDataSourcePropertyToOverride {
     #[allow(missing_docs)] // documentation missing in model
@@ -110,9 +104,7 @@ impl ::std::convert::From<&str> for AssetBundleExportJobDataSourcePropertyToOver
             "Domain" => AssetBundleExportJobDataSourcePropertyToOverride::Domain,
             "Host" => AssetBundleExportJobDataSourcePropertyToOverride::Host,
             "InstanceId" => AssetBundleExportJobDataSourcePropertyToOverride::InstanceId,
-            "ManifestFileLocation" => {
-                AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation
-            }
+            "ManifestFileLocation" => AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation,
             "Name" => AssetBundleExportJobDataSourcePropertyToOverride::Name,
             "Password" => AssetBundleExportJobDataSourcePropertyToOverride::Password,
             "Port" => AssetBundleExportJobDataSourcePropertyToOverride::Port,
@@ -121,9 +113,7 @@ impl ::std::convert::From<&str> for AssetBundleExportJobDataSourcePropertyToOver
             "Username" => AssetBundleExportJobDataSourcePropertyToOverride::Username,
             "Warehouse" => AssetBundleExportJobDataSourcePropertyToOverride::Warehouse,
             "WorkGroup" => AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup,
-            other => AssetBundleExportJobDataSourcePropertyToOverride::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AssetBundleExportJobDataSourcePropertyToOverride::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -146,9 +136,7 @@ impl AssetBundleExportJobDataSourcePropertyToOverride {
             AssetBundleExportJobDataSourcePropertyToOverride::Domain => "Domain",
             AssetBundleExportJobDataSourcePropertyToOverride::Host => "Host",
             AssetBundleExportJobDataSourcePropertyToOverride::InstanceId => "InstanceId",
-            AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => {
-                "ManifestFileLocation"
-            }
+            AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => "ManifestFileLocation",
             AssetBundleExportJobDataSourcePropertyToOverride::Name => "Name",
             AssetBundleExportJobDataSourcePropertyToOverride::Password => "Password",
             AssetBundleExportJobDataSourcePropertyToOverride::Port => "Port",

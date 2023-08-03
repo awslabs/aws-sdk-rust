@@ -9,28 +9,19 @@ pub fn ser_create_datastore_input(
     if let Some(var_2) = &input.datastore_partitions {
         #[allow(unused_mut)]
         let mut object_3 = object.key("datastorePartitions").start_object();
-        crate::protocol_serde::shape_datastore_partitions::ser_datastore_partitions(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_datastore_partitions::ser_datastore_partitions(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.datastore_storage {
         #[allow(unused_mut)]
         let mut object_5 = object.key("datastoreStorage").start_object();
-        crate::protocol_serde::shape_datastore_storage::ser_datastore_storage(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_datastore_storage::ser_datastore_storage(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.file_format_configuration {
         #[allow(unused_mut)]
         let mut object_7 = object.key("fileFormatConfiguration").start_object();
-        crate::protocol_serde::shape_file_format_configuration::ser_file_format_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_file_format_configuration::ser_file_format_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.retention_period {

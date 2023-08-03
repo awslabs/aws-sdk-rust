@@ -53,9 +53,7 @@ impl ListChildrenInput {
 
 /// A builder for [`ListChildrenInput`](crate::operation::list_children::ListChildrenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChildrenInputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) child_type: ::std::option::Option<crate::types::ChildType>,
@@ -135,12 +133,7 @@ impl ListChildrenInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListChildrenInput`](crate::operation::list_children::ListChildrenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_children::ListChildrenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_children::ListChildrenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_children::ListChildrenInput {
             parent_id: self.parent_id,
             child_type: self.child_type,

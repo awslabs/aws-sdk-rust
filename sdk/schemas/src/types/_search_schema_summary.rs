@@ -14,8 +14,7 @@ pub struct SearchSchemaSummary {
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of schema version summaries.</p>
     #[doc(hidden)]
-    pub schema_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>,
+    pub schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>,
 }
 impl SearchSchemaSummary {
     /// <p>The name of the registry.</p>
@@ -31,9 +30,7 @@ impl SearchSchemaSummary {
         self.schema_name.as_deref()
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn schema_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SearchSchemaVersionSummary]> {
+    pub fn schema_versions(&self) -> ::std::option::Option<&[crate::types::SearchSchemaVersionSummary]> {
         self.schema_versions.as_deref()
     }
 }
@@ -46,30 +43,21 @@ impl SearchSchemaSummary {
 
 /// A builder for [`SearchSchemaSummary`](crate::types::SearchSchemaSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSchemaSummaryBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
-    pub(crate) schema_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>,
+    pub(crate) schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>,
 }
 impl SearchSchemaSummaryBuilder {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -117,17 +105,12 @@ impl SearchSchemaSummaryBuilder {
         self
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn set_schema_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>,
-    ) -> Self {
+    pub fn set_schema_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>>) -> Self {
         self.schema_versions = input;
         self
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn get_schema_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>> {
+    pub fn get_schema_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaVersionSummary>> {
         &self.schema_versions
     }
     /// Consumes the builder and constructs a [`SearchSchemaSummary`](crate::types::SearchSchemaSummary).

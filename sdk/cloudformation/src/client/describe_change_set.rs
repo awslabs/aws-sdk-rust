@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`root_change_set_id(Option<String>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::root_change_set_id): <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
     ///   - [`on_stack_failure(Option<OnStackFailure>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::on_stack_failure): <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>  <ul>   <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.</p> </li>   <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>   <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeChangeSetError>`](crate::operation::describe_change_set::DescribeChangeSetError)
-    pub fn describe_change_set(
-        &self,
-    ) -> crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder {
-        crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_change_set(&self) -> crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder {
+        crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

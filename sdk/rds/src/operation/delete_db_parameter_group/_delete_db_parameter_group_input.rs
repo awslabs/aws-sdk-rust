@@ -28,18 +28,14 @@ impl DeleteDbParameterGroupInput {
 }
 impl DeleteDbParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupInput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupInputBuilder {
         crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbParameterGroupInput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbParameterGroupInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +47,7 @@ impl DeleteDbParameterGroupInputBuilder {
     /// <li> <p>You can't delete a default DB parameter group</p> </li>
     /// <li> <p>Can't be associated with any DB instances</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -65,10 +58,7 @@ impl DeleteDbParameterGroupInputBuilder {
     /// <li> <p>You can't delete a default DB parameter group</p> </li>
     /// <li> <p>Can't be associated with any DB instances</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -89,10 +79,8 @@ impl DeleteDbParameterGroupInputBuilder {
         crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput {
-                db_parameter_group_name: self.db_parameter_group_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput {
+            db_parameter_group_name: self.db_parameter_group_name,
+        })
     }
 }

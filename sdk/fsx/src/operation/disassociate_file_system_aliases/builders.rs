@@ -27,7 +27,7 @@ impl DisassociateFileSystemAliasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder,
+    inner: crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder,
 }
 impl DisassociateFileSystemAliasesFluentBuilder {
     /// Creates a new `DisassociateFileSystemAliases`.
@@ -38,7 +38,7 @@ impl DisassociateFileSystemAliasesFluentBuilder {
         }
     }
     /// Access the DisassociateFileSystemAliases as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateFileSystemAliasesFluentBuilder {
             crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateFileSystemAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateFileSystemAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateFileSystemAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DisassociateFileSystemAliasesFluentBuilder {
             crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -142,18 +125,12 @@ impl DisassociateFileSystemAliasesFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -171,10 +148,7 @@ impl DisassociateFileSystemAliasesFluentBuilder {
         self
     }
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_aliases(input);
         self
     }

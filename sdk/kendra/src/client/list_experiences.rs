@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`summary_items(Option<Vec<ExperiencesSummary>>)`](crate::operation::list_experiences::ListExperiencesOutput::summary_items): <p>An array of summary information for one or more Amazon Kendra experiences.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_experiences::ListExperiencesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
     /// - On failure, responds with [`SdkError<ListExperiencesError>`](crate::operation::list_experiences::ListExperiencesError)
-    pub fn list_experiences(
-        &self,
-    ) -> crate::operation::list_experiences::builders::ListExperiencesFluentBuilder {
-        crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_experiences(&self) -> crate::operation::list_experiences::builders::ListExperiencesFluentBuilder {
+        crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::new(self.handle.clone())
     }
 }

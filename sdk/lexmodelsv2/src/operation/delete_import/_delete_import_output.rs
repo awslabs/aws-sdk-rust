@@ -35,9 +35,7 @@ impl DeleteImportOutput {
 
 /// A builder for [`DeleteImportOutput`](crate::operation::delete_import::DeleteImportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImportOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_status: ::std::option::Option<crate::types::ImportStatus>,
@@ -64,10 +62,7 @@ impl DeleteImportOutputBuilder {
         self
     }
     /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
         self.import_status = input;
         self
     }

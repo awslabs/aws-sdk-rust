@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::upgrade_lens_review::builders::UpgradeLensReviewFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::upgrade_lens_review::builders::UpgradeLensReviewFluentBuilder::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`UpgradeLensReviewOutput`](crate::operation::upgrade_lens_review::UpgradeLensReviewOutput)
     /// - On failure, responds with [`SdkError<UpgradeLensReviewError>`](crate::operation::upgrade_lens_review::UpgradeLensReviewError)
-    pub fn upgrade_lens_review(
-        &self,
-    ) -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewFluentBuilder {
-        crate::operation::upgrade_lens_review::builders::UpgradeLensReviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upgrade_lens_review(&self) -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewFluentBuilder {
+        crate::operation::upgrade_lens_review::builders::UpgradeLensReviewFluentBuilder::new(self.handle.clone())
     }
 }

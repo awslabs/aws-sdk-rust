@@ -62,9 +62,7 @@ impl ConfigurationProfileSummary {
 
 /// A builder for [`ConfigurationProfileSummary`](crate::types::ConfigurationProfileSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationProfileSummaryBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ pub struct ConfigurationProfileSummaryBuilder {
 }
 impl ConfigurationProfileSummaryBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -148,17 +140,12 @@ impl ConfigurationProfileSummaryBuilder {
         self
     }
     /// <p>The types of validators in the configuration profile.</p>
-    pub fn set_validator_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>>,
-    ) -> Self {
+    pub fn set_validator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>>) -> Self {
         self.validator_types = input;
         self
     }
     /// <p>The types of validators in the configuration profile.</p>
-    pub fn get_validator_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>> {
+    pub fn get_validator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>> {
         &self.validator_types
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>

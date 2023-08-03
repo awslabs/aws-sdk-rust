@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`resource_set_identifier(Option<String>)`](crate::operation::batch_associate_resource::BatchAssociateResourceOutput::resource_set_identifier): <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     ///   - [`failed_items(Option<Vec<FailedItem>>)`](crate::operation::batch_associate_resource::BatchAssociateResourceOutput::failed_items): <p>The resources that failed to associate to the resource set.</p>
     /// - On failure, responds with [`SdkError<BatchAssociateResourceError>`](crate::operation::batch_associate_resource::BatchAssociateResourceError)
-    pub fn batch_associate_resource(
-        &self,
-    ) -> crate::operation::batch_associate_resource::builders::BatchAssociateResourceFluentBuilder
-    {
+    pub fn batch_associate_resource(&self) -> crate::operation::batch_associate_resource::builders::BatchAssociateResourceFluentBuilder {
         crate::operation::batch_associate_resource::builders::BatchAssociateResourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl WeightedQuantileLoss {
 
 /// A builder for [`WeightedQuantileLoss`](crate::types::WeightedQuantileLoss).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeightedQuantileLossBuilder {
     pub(crate) quantile: ::std::option::Option<f64>,
     pub(crate) loss_value: ::std::option::Option<f64>,

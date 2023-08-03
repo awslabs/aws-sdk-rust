@@ -58,9 +58,7 @@ impl Exclusion {
 
 /// A builder for [`Exclusion`](crate::types::Exclusion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExclusionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -113,18 +111,12 @@ impl ExclusionBuilder {
         &self.description
     }
     /// <p>The recommendation for the exclusion.</p>
-    pub fn recommendation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation for the exclusion.</p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation = input;
         self
     }
@@ -144,10 +136,7 @@ impl ExclusionBuilder {
         self
     }
     /// <p>The AWS resources for which the exclusion pertains.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>) -> Self {
         self.scopes = input;
         self
     }
@@ -167,17 +156,12 @@ impl ExclusionBuilder {
         self
     }
     /// <p>The system-defined attributes for the exclusion.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The system-defined attributes for the exclusion.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`Exclusion`](crate::types::Exclusion).

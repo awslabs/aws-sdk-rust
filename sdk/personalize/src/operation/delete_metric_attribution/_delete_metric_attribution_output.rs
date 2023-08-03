@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMetricAttributionOutput {
 }
 impl DeleteMetricAttributionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricAttributionOutput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionOutputBuilder {
         crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMetricAttributionOutput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMetricAttributionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteMetricAttributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMetricAttributionOutput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput {
+    pub fn build(self) -> crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput {
         crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput {
             _request_id: self._request_id,
         }

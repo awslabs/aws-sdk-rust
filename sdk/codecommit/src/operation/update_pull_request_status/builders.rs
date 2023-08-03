@@ -26,8 +26,7 @@ impl UpdatePullRequestStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePullRequestStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder,
+    inner: crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder,
 }
 impl UpdatePullRequestStatusFluentBuilder {
     /// Creates a new `UpdatePullRequestStatus`.
@@ -38,10 +37,7 @@ impl UpdatePullRequestStatusFluentBuilder {
         }
     }
     /// Access the UpdatePullRequestStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdatePullRequestStatusFluentBuilder {
             crate::operation::update_pull_request_status::UpdatePullRequestStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_status::UpdatePullRequestStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdatePullRequestStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdatePullRequestStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_status::UpdatePullRequestStatusError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdatePullRequestStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_status::UpdatePullRequestStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_status::UpdatePullRequestStatusError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdatePullRequestStatusFluentBuilder {
             crate::operation::update_pull_request_status::UpdatePullRequestStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_status::UpdatePullRequestStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -150,17 +129,12 @@ impl UpdatePullRequestStatusFluentBuilder {
         self
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn set_pull_request_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestStatusEnum>,
-    ) -> Self {
+    pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
         self.inner = self.inner.set_pull_request_status(input);
         self
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn get_pull_request_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+    pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
         self.inner.get_pull_request_status()
     }
 }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteStreamingSessionOutput`](crate::operation::delete_streaming_session::DeleteStreamingSessionOutput) with field(s):
     ///   - [`session(Option<StreamingSession>)`](crate::operation::delete_streaming_session::DeleteStreamingSessionOutput::session): <p>The session.</p>
     /// - On failure, responds with [`SdkError<DeleteStreamingSessionError>`](crate::operation::delete_streaming_session::DeleteStreamingSessionError)
-    pub fn delete_streaming_session(
-        &self,
-    ) -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionFluentBuilder
-    {
+    pub fn delete_streaming_session(&self) -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionFluentBuilder {
         crate::operation::delete_streaming_session::builders::DeleteStreamingSessionFluentBuilder::new(self.handle.clone())
     }
 }

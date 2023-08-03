@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::completion_time): <p>When the job completed.</p>
     ///   - [`sources(Option<Vec<ImportReadSetSourceItem>>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReadSetImportJobError>`](crate::operation::get_read_set_import_job::GetReadSetImportJobError)
-    pub fn get_read_set_import_job(
-        &self,
-    ) -> crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder {
-        crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_read_set_import_job(&self) -> crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder {
+        crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -53,9 +53,7 @@ impl ScheduleLambdaFunctionDecisionAttributes {
 
 /// A builder for [`ScheduleLambdaFunctionDecisionAttributes`](crate::types::ScheduleLambdaFunctionDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionDecisionAttributesBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -122,19 +120,13 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     }
     /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
-    pub fn start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
-    pub fn set_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_to_close_timeout = input;
         self
     }

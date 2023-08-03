@@ -45,9 +45,7 @@ impl HealthCheckConfig {
         self.protocol.as_ref()
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
-    pub fn protocol_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HealthCheckProtocolVersion> {
+    pub fn protocol_version(&self) -> ::std::option::Option<&crate::types::HealthCheckProtocolVersion> {
         self.protocol_version.as_ref()
     }
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
@@ -88,9 +86,7 @@ impl HealthCheckConfig {
 
 /// A builder for [`HealthCheckConfig`](crate::types::HealthCheckConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,
@@ -124,10 +120,7 @@ impl HealthCheckConfigBuilder {
         self
     }
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TargetGroupProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -141,17 +134,12 @@ impl HealthCheckConfigBuilder {
         self
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckProtocolVersion>,
-    ) -> Self {
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocolVersion>) -> Self {
         self.protocol_version = input;
         self
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
-    pub fn get_protocol_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckProtocolVersion> {
+    pub fn get_protocol_version(&self) -> &::std::option::Option<crate::types::HealthCheckProtocolVersion> {
         &self.protocol_version
     }
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>

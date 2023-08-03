@@ -39,13 +39,7 @@
 /// _Note: `IsMonitoredByJob::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IsMonitoredByJob {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for IsMonitoredByJob {
             "FALSE" => IsMonitoredByJob::False,
             "TRUE" => IsMonitoredByJob::True,
             "UNKNOWN" => IsMonitoredByJob::UnknownValue,
-            other => {
-                IsMonitoredByJob::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => IsMonitoredByJob::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

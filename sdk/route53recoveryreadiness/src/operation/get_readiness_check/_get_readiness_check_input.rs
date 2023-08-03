@@ -15,34 +15,25 @@ impl GetReadinessCheckInput {
 }
 impl GetReadinessCheckInput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckInput`](crate::operation::get_readiness_check::GetReadinessCheckInput).
-    pub fn builder(
-    ) -> crate::operation::get_readiness_check::builders::GetReadinessCheckInputBuilder {
+    pub fn builder() -> crate::operation::get_readiness_check::builders::GetReadinessCheckInputBuilder {
         crate::operation::get_readiness_check::builders::GetReadinessCheckInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadinessCheckInput`](crate::operation::get_readiness_check::GetReadinessCheckInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadinessCheckInputBuilder {
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
 }
 impl GetReadinessCheckInputBuilder {
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readiness_check_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetReadinessCheckInputBuilder {
     /// Consumes the builder and constructs a [`GetReadinessCheckInput`](crate::operation::get_readiness_check::GetReadinessCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_readiness_check::GetReadinessCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_readiness_check::GetReadinessCheckInput {
-                readiness_check_name: self.readiness_check_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_readiness_check::GetReadinessCheckInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_readiness_check::GetReadinessCheckInput {
+            readiness_check_name: self.readiness_check_name,
+        })
     }
 }

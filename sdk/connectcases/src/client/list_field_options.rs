@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`options(Option<Vec<FieldOption>>)`](crate::operation::list_field_options::ListFieldOptionsOutput::options): <p>A list of <code>FieldOption</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_field_options::ListFieldOptionsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListFieldOptionsError>`](crate::operation::list_field_options::ListFieldOptionsError)
-    pub fn list_field_options(
-        &self,
-    ) -> crate::operation::list_field_options::builders::ListFieldOptionsFluentBuilder {
-        crate::operation::list_field_options::builders::ListFieldOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_field_options(&self) -> crate::operation::list_field_options::builders::ListFieldOptionsFluentBuilder {
+        crate::operation::list_field_options::builders::ListFieldOptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl GetFleetInput {
 
 /// A builder for [`GetFleetInput`](crate::operation::get_fleet::GetFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFleetInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetFleetInputBuilder {
         &self.fleet_id
     }
     /// Consumes the builder and constructs a [`GetFleetInput`](crate::operation::get_fleet::GetFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_fleet::GetFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_fleet::GetFleetInput {
-            fleet_id: self.fleet_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_fleet::GetFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_fleet::GetFleetInput { fleet_id: self.fleet_id })
     }
 }

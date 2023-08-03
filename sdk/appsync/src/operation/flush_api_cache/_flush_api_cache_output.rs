@@ -20,9 +20,7 @@ impl FlushApiCacheOutput {
 
 /// A builder for [`FlushApiCacheOutput`](crate::operation::flush_api_cache::FlushApiCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlushApiCacheOutputBuilder {
     _request_id: Option<String>,
 }

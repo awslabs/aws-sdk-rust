@@ -10,10 +10,7 @@ impl AddWorkingStorageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_working_storage::AddWorkingStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_working_storage::AddWorkingStorageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_working_storage::AddWorkingStorageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_working_storage();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl AddWorkingStorageFluentBuilder {
         }
     }
     /// Access the AddWorkingStorage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl AddWorkingStorageFluentBuilder {
             crate::operation::add_working_storage::AddWorkingStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_working_storage::AddWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_working_storage::AddWorkingStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl AddWorkingStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl AddWorkingStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_working_storage::AddWorkingStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_working_storage::AddWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_working_storage::AddWorkingStorageError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl AddWorkingStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_working_storage::AddWorkingStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_working_storage::AddWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_working_storage::AddWorkingStorageError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl AddWorkingStorageFluentBuilder {
             crate::operation::add_working_storage::AddWorkingStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_working_storage::AddWorkingStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_working_storage::AddWorkingStorageError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +133,7 @@ impl AddWorkingStorageFluentBuilder {
         self
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn set_disk_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_disk_ids(input);
         self
     }

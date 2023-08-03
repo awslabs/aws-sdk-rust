@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`parent_target_arn(Option<String>)`](crate::operation::get_deployment::GetDeploymentOutput::parent_target_arn): <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_deployment::GetDeploymentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::operation::get_deployment::GetDeploymentError)
-    pub fn get_deployment(
-        &self,
-    ) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
-        crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment(&self) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
+        crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

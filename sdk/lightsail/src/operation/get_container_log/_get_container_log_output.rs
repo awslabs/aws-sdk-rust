@@ -32,20 +32,16 @@ impl ::aws_http::request_id::RequestId for GetContainerLogOutput {
 }
 impl GetContainerLogOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerLogOutput`](crate::operation::get_container_log::GetContainerLogOutput).
-    pub fn builder() -> crate::operation::get_container_log::builders::GetContainerLogOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_container_log::builders::GetContainerLogOutputBuilder {
         crate::operation::get_container_log::builders::GetContainerLogOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerLogOutput`](crate::operation::get_container_log::GetContainerLogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerLogOutputBuilder {
-    pub(crate) log_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>>,
+    pub(crate) log_events: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,36 +58,25 @@ impl GetContainerLogOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the log events of a container.</p>
-    pub fn set_log_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>>,
-    ) -> Self {
+    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>>) -> Self {
         self.log_events = input;
         self
     }
     /// <p>An array of objects that describe the log events of a container.</p>
-    pub fn get_log_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>> {
+    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>> {
         &self.log_events
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

@@ -19,9 +19,7 @@ impl RebootInstanceOutput {
 
 /// A builder for [`RebootInstanceOutput`](crate::operation::reboot_instance::RebootInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootInstanceOutputBuilder {
     _request_id: Option<String>,
 }

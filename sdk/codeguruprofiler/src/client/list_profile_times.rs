@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`profile_times(Option<Vec<ProfileTime>>)`](crate::operation::list_profile_times::ListProfileTimesOutput::profile_times): <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_times::ListProfileTimesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListProfileTimesError>`](crate::operation::list_profile_times::ListProfileTimesError)
-    pub fn list_profile_times(
-        &self,
-    ) -> crate::operation::list_profile_times::builders::ListProfileTimesFluentBuilder {
-        crate::operation::list_profile_times::builders::ListProfileTimesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_profile_times(&self) -> crate::operation::list_profile_times::builders::ListProfileTimesFluentBuilder {
+        crate::operation::list_profile_times::builders::ListProfileTimesFluentBuilder::new(self.handle.clone())
     }
 }

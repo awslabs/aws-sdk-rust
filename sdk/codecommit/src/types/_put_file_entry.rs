@@ -44,9 +44,7 @@ impl PutFileEntry {
 
 /// A builder for [`PutFileEntry`](crate::types::PutFileEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFileEntryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
@@ -74,10 +72,7 @@ impl PutFileEntryBuilder {
         self
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.file_mode = input;
         self
     }
@@ -91,10 +86,7 @@ impl PutFileEntryBuilder {
         self
     }
     /// <p>The content of the file, if a source file is not specified.</p>
-    pub fn set_file_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_file_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.file_content = input;
         self
     }
@@ -108,10 +100,7 @@ impl PutFileEntryBuilder {
         self
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-    pub fn set_source_file(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceFileSpecifier>,
-    ) -> Self {
+    pub fn set_source_file(mut self, input: ::std::option::Option<crate::types::SourceFileSpecifier>) -> Self {
         self.source_file = input;
         self
     }

@@ -24,16 +24,14 @@ impl DescribeDefaultParametersInput {
 }
 impl DescribeDefaultParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeDefaultParametersInput`](crate::operation::describe_default_parameters::DescribeDefaultParametersInput).
-    pub fn builder() -> crate::operation::describe_default_parameters::builders::DescribeDefaultParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_default_parameters::builders::DescribeDefaultParametersInputBuilder {
         crate::operation::describe_default_parameters::builders::DescribeDefaultParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDefaultParametersInput`](crate::operation::describe_default_parameters::DescribeDefaultParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDefaultParametersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -77,11 +75,9 @@ impl DescribeDefaultParametersInputBuilder {
         crate::operation::describe_default_parameters::DescribeDefaultParametersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_default_parameters::DescribeDefaultParametersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_default_parameters::DescribeDefaultParametersInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

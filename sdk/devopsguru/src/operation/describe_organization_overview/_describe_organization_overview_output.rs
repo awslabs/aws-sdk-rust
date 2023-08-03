@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationOverviewOutput {
 }
 impl DescribeOrganizationOverviewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewOutput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput).
-    pub fn builder() -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder {
         crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationOverviewOutput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewOutputBuilder {
     pub(crate) reactive_insights: ::std::option::Option<i32>,
     pub(crate) proactive_insights: ::std::option::Option<i32>,
@@ -82,9 +80,7 @@ impl DescribeOrganizationOverviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationOverviewOutput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput {
+    pub fn build(self) -> crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput {
         crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput {
             reactive_insights: self.reactive_insights.unwrap_or_default(),
             proactive_insights: self.proactive_insights.unwrap_or_default(),

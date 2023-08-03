@@ -24,11 +24,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNodegroupOutput`](crate::operation::create_nodegroup::CreateNodegroupOutput) with field(s):
     ///   - [`nodegroup(Option<Nodegroup>)`](crate::operation::create_nodegroup::CreateNodegroupOutput::nodegroup): <p>The full description of your new node group.</p>
     /// - On failure, responds with [`SdkError<CreateNodegroupError>`](crate::operation::create_nodegroup::CreateNodegroupError)
-    pub fn create_nodegroup(
-        &self,
-    ) -> crate::operation::create_nodegroup::builders::CreateNodegroupFluentBuilder {
-        crate::operation::create_nodegroup::builders::CreateNodegroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_nodegroup(&self) -> crate::operation::create_nodegroup::builders::CreateNodegroupFluentBuilder {
+        crate::operation::create_nodegroup::builders::CreateNodegroupFluentBuilder::new(self.handle.clone())
     }
 }

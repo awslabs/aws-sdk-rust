@@ -6,12 +6,7 @@ impl super::Client {
     /// - On success, responds with [`ListSourceCredentialsOutput`](crate::operation::list_source_credentials::ListSourceCredentialsOutput) with field(s):
     ///   - [`source_credentials_infos(Option<Vec<SourceCredentialsInfo>>)`](crate::operation::list_source_credentials::ListSourceCredentialsOutput::source_credentials_infos): <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
     /// - On failure, responds with [`SdkError<ListSourceCredentialsError>`](crate::operation::list_source_credentials::ListSourceCredentialsError)
-    pub fn list_source_credentials(
-        &self,
-    ) -> crate::operation::list_source_credentials::builders::ListSourceCredentialsFluentBuilder
-    {
-        crate::operation::list_source_credentials::builders::ListSourceCredentialsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_source_credentials(&self) -> crate::operation::list_source_credentials::builders::ListSourceCredentialsFluentBuilder {
+        crate::operation::list_source_credentials::builders::ListSourceCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

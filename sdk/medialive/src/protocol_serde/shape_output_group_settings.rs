@@ -6,10 +6,7 @@ pub fn ser_output_group_settings(
     if let Some(var_1) = &input.archive_group_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("archiveGroupSettings").start_object();
-        crate::protocol_serde::shape_archive_group_settings::ser_archive_group_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_archive_group_settings::ser_archive_group_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.frame_capture_group_settings {
@@ -21,10 +18,7 @@ pub fn ser_output_group_settings(
     if let Some(var_5) = &input.hls_group_settings {
         #[allow(unused_mut)]
         let mut object_6 = object.key("hlsGroupSettings").start_object();
-        crate::protocol_serde::shape_hls_group_settings::ser_hls_group_settings(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_hls_group_settings::ser_hls_group_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.media_package_group_settings {
@@ -36,37 +30,25 @@ pub fn ser_output_group_settings(
     if let Some(var_9) = &input.ms_smooth_group_settings {
         #[allow(unused_mut)]
         let mut object_10 = object.key("msSmoothGroupSettings").start_object();
-        crate::protocol_serde::shape_ms_smooth_group_settings::ser_ms_smooth_group_settings(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_ms_smooth_group_settings::ser_ms_smooth_group_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.multiplex_group_settings {
         #[allow(unused_mut)]
         let mut object_12 = object.key("multiplexGroupSettings").start_object();
-        crate::protocol_serde::shape_multiplex_group_settings::ser_multiplex_group_settings(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_multiplex_group_settings::ser_multiplex_group_settings(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.rtmp_group_settings {
         #[allow(unused_mut)]
         let mut object_14 = object.key("rtmpGroupSettings").start_object();
-        crate::protocol_serde::shape_rtmp_group_settings::ser_rtmp_group_settings(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_rtmp_group_settings::ser_rtmp_group_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.udp_group_settings {
         #[allow(unused_mut)]
         let mut object_16 = object.key("udpGroupSettings").start_object();
-        crate::protocol_serde::shape_udp_group_settings::ser_udp_group_settings(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_udp_group_settings::ser_udp_group_settings(&mut object_16, var_15)?;
         object_16.finish();
     }
     Ok(())
@@ -74,17 +56,9 @@ pub fn ser_output_group_settings(
 
 pub(crate) fn de_output_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::OutputGroupSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::OutputGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -94,66 +68,55 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "archiveGroupSettings" => {
-                                builder = builder.set_archive_group_settings(
-                                    crate::protocol_serde::shape_archive_group_settings::de_archive_group_settings(tokens)?
-                                );
-                            }
-                            "frameCaptureGroupSettings" => {
-                                builder = builder.set_frame_capture_group_settings(
-                                    crate::protocol_serde::shape_frame_capture_group_settings::de_frame_capture_group_settings(tokens)?
-                                );
-                            }
-                            "hlsGroupSettings" => {
-                                builder = builder.set_hls_group_settings(
-                                    crate::protocol_serde::shape_hls_group_settings::de_hls_group_settings(tokens)?
-                                );
-                            }
-                            "mediaPackageGroupSettings" => {
-                                builder = builder.set_media_package_group_settings(
-                                    crate::protocol_serde::shape_media_package_group_settings::de_media_package_group_settings(tokens)?
-                                );
-                            }
-                            "msSmoothGroupSettings" => {
-                                builder = builder.set_ms_smooth_group_settings(
-                                    crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens)?
-                                );
-                            }
-                            "multiplexGroupSettings" => {
-                                builder = builder.set_multiplex_group_settings(
-                                    crate::protocol_serde::shape_multiplex_group_settings::de_multiplex_group_settings(tokens)?
-                                );
-                            }
-                            "rtmpGroupSettings" => {
-                                builder = builder.set_rtmp_group_settings(
-                                    crate::protocol_serde::shape_rtmp_group_settings::de_rtmp_group_settings(tokens)?
-                                );
-                            }
-                            "udpGroupSettings" => {
-                                builder = builder.set_udp_group_settings(
-                                    crate::protocol_serde::shape_udp_group_settings::de_udp_group_settings(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "archiveGroupSettings" => {
+                            builder = builder
+                                .set_archive_group_settings(crate::protocol_serde::shape_archive_group_settings::de_archive_group_settings(tokens)?);
                         }
-                    }
+                        "frameCaptureGroupSettings" => {
+                            builder = builder.set_frame_capture_group_settings(
+                                crate::protocol_serde::shape_frame_capture_group_settings::de_frame_capture_group_settings(tokens)?,
+                            );
+                        }
+                        "hlsGroupSettings" => {
+                            builder = builder.set_hls_group_settings(crate::protocol_serde::shape_hls_group_settings::de_hls_group_settings(tokens)?);
+                        }
+                        "mediaPackageGroupSettings" => {
+                            builder = builder.set_media_package_group_settings(
+                                crate::protocol_serde::shape_media_package_group_settings::de_media_package_group_settings(tokens)?,
+                            );
+                        }
+                        "msSmoothGroupSettings" => {
+                            builder = builder.set_ms_smooth_group_settings(
+                                crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens)?,
+                            );
+                        }
+                        "multiplexGroupSettings" => {
+                            builder = builder.set_multiplex_group_settings(
+                                crate::protocol_serde::shape_multiplex_group_settings::de_multiplex_group_settings(tokens)?,
+                            );
+                        }
+                        "rtmpGroupSettings" => {
+                            builder =
+                                builder.set_rtmp_group_settings(crate::protocol_serde::shape_rtmp_group_settings::de_rtmp_group_settings(tokens)?);
+                        }
+                        "udpGroupSettings" => {
+                            builder = builder.set_udp_group_settings(crate::protocol_serde::shape_udp_group_settings::de_udp_group_settings(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

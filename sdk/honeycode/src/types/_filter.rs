@@ -59,18 +59,12 @@ impl FilterBuilder {
         &self.formula
     }
     /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
-    pub fn context_row_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context_row_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_row_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
-    pub fn set_context_row_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_context_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context_row_id = input;
         self
     }

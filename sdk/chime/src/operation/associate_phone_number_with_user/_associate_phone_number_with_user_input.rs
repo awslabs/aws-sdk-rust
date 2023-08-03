@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for AssociatePhoneNumberWithUserInput {
 }
 impl AssociatePhoneNumberWithUserInput {
     /// Creates a new builder-style object to manufacture [`AssociatePhoneNumberWithUserInput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput).
-    pub fn builder() -> crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder{
+    pub fn builder() -> crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder {
         crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder::default()
     }
 }
@@ -81,18 +81,12 @@ impl AssociatePhoneNumberWithUserInputBuilder {
         &self.user_id
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e164_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn set_e164_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_e164_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e164_phone_number = input;
         self
     }
@@ -107,13 +101,11 @@ impl AssociatePhoneNumberWithUserInputBuilder {
         crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput {
-                account_id: self.account_id,
-                user_id: self.user_id,
-                e164_phone_number: self.e164_phone_number,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput {
+            account_id: self.account_id,
+            user_id: self.user_id,
+            e164_phone_number: self.e164_phone_number,
+        })
     }
 }
 impl ::std::fmt::Debug for AssociatePhoneNumberWithUserInputBuilder {

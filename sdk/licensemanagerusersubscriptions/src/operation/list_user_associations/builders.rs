@@ -37,9 +37,7 @@ impl ListUserAssociationsFluentBuilder {
         }
     }
     /// Access the ListUserAssociations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListUserAssociationsFluentBuilder {
             crate::operation::list_user_associations::ListUserAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListUserAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListUserAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_associations::ListUserAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListUserAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_associations::ListUserAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListUserAssociationsFluentBuilder {
             crate::operation::list_user_associations::ListUserAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator {
-        crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator {
+        crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,10 +135,7 @@ impl ListUserAssociationsFluentBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
@@ -188,10 +167,7 @@ impl ListUserAssociationsFluentBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

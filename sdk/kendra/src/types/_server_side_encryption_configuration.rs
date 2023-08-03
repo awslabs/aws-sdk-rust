@@ -51,9 +51,7 @@ impl ServerSideEncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
-        crate::types::ServerSideEncryptionConfiguration {
-            kms_key_id: self.kms_key_id,
-        }
+        crate::types::ServerSideEncryptionConfiguration { kms_key_id: self.kms_key_id }
     }
 }
 impl ::std::fmt::Debug for ServerSideEncryptionConfigurationBuilder {

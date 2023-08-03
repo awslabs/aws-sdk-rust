@@ -26,7 +26,7 @@ impl DeregisterTransitGatewayInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterTransitGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder,
+    inner: crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder,
 }
 impl DeregisterTransitGatewayFluentBuilder {
     /// Creates a new `DeregisterTransitGateway`.
@@ -37,10 +37,7 @@ impl DeregisterTransitGatewayFluentBuilder {
         }
     }
     /// Access the DeregisterTransitGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeregisterTransitGatewayFluentBuilder {
             crate::operation::deregister_transit_gateway::DeregisterTransitGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeregisterTransitGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeregisterTransitGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeregisterTransitGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeregisterTransitGatewayFluentBuilder {
             crate::operation::deregister_transit_gateway::DeregisterTransitGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl DeregisterTransitGatewayFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn transit_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn set_transit_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_arn(input);
         self
     }

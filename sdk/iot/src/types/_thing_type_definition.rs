@@ -27,9 +27,7 @@ impl ThingTypeDefinition {
         self.thing_type_arn.as_deref()
     }
     /// <p>The ThingTypeProperties for the thing type.</p>
-    pub fn thing_type_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ThingTypeProperties> {
+    pub fn thing_type_properties(&self) -> ::std::option::Option<&crate::types::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
@@ -46,9 +44,7 @@ impl ThingTypeDefinition {
 
 /// A builder for [`ThingTypeDefinition`](crate::types::ThingTypeDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingTypeDefinitionBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_arn: ::std::option::Option<::std::string::String>,
@@ -57,18 +53,12 @@ pub struct ThingTypeDefinitionBuilder {
 }
 impl ThingTypeDefinitionBuilder {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -77,18 +67,12 @@ impl ThingTypeDefinitionBuilder {
         &self.thing_type_name
     }
     /// <p>The thing type ARN.</p>
-    pub fn thing_type_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing type ARN.</p>
-    pub fn set_thing_type_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_arn = input;
         self
     }
@@ -102,17 +86,12 @@ impl ThingTypeDefinitionBuilder {
         self
     }
     /// <p>The ThingTypeProperties for the thing type.</p>
-    pub fn set_thing_type_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingTypeProperties>,
-    ) -> Self {
+    pub fn set_thing_type_properties(mut self, input: ::std::option::Option<crate::types::ThingTypeProperties>) -> Self {
         self.thing_type_properties = input;
         self
     }
     /// <p>The ThingTypeProperties for the thing type.</p>
-    pub fn get_thing_type_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingTypeProperties> {
+    pub fn get_thing_type_properties(&self) -> &::std::option::Option<crate::types::ThingTypeProperties> {
         &self.thing_type_properties
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
@@ -121,17 +100,12 @@ impl ThingTypeDefinitionBuilder {
         self
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
-    pub fn set_thing_type_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingTypeMetadata>,
-    ) -> Self {
+    pub fn set_thing_type_metadata(mut self, input: ::std::option::Option<crate::types::ThingTypeMetadata>) -> Self {
         self.thing_type_metadata = input;
         self
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
-    pub fn get_thing_type_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingTypeMetadata> {
+    pub fn get_thing_type_metadata(&self) -> &::std::option::Option<crate::types::ThingTypeMetadata> {
         &self.thing_type_metadata
     }
     /// Consumes the builder and constructs a [`ThingTypeDefinition`](crate::types::ThingTypeDefinition).

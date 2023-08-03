@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`actions(Option<Vec<Action>>)`](crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetOutput::actions): <p> A list of the budget action resources information. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetOutput::next_token): <p> A generic string.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetActionsForBudgetError>`](crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError)
-    pub fn describe_budget_actions_for_budget(&self) -> crate::operation::describe_budget_actions_for_budget::builders::DescribeBudgetActionsForBudgetFluentBuilder{
+    pub fn describe_budget_actions_for_budget(
+        &self,
+    ) -> crate::operation::describe_budget_actions_for_budget::builders::DescribeBudgetActionsForBudgetFluentBuilder {
         crate::operation::describe_budget_actions_for_budget::builders::DescribeBudgetActionsForBudgetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput) with field(s):
     ///   - [`global_cluster(Option<GlobalCluster>)`](crate::operation::create_global_cluster::CreateGlobalClusterOutput::global_cluster): <p>A data type representing an Amazon DocumentDB global cluster.</p>
     /// - On failure, responds with [`SdkError<CreateGlobalClusterError>`](crate::operation::create_global_cluster::CreateGlobalClusterError)
-    pub fn create_global_cluster(
-        &self,
-    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_global_cluster(&self) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder::new(self.handle.clone())
     }
 }

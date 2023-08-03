@@ -22,9 +22,7 @@ impl GetVehicleInput {
 
 /// A builder for [`GetVehicleInput`](crate::operation::get_vehicle::GetVehicleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetVehicleInputBuilder {
         &self.vehicle_name
     }
     /// Consumes the builder and constructs a [`GetVehicleInput`](crate::operation::get_vehicle::GetVehicleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vehicle::GetVehicleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vehicle::GetVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vehicle::GetVehicleInput {
             vehicle_name: self.vehicle_name,
         })

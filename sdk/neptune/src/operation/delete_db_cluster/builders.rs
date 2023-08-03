@@ -10,10 +10,7 @@ impl DeleteDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster::DeleteDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster::DeleteDBClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster::DeleteDBClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_db_cluster();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteDBClusterFluentBuilder {
         }
     }
     /// Access the DeleteDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_db_cluster::builders::DeleteDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_db_cluster::builders::DeleteDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteDBClusterFluentBuilder {
             crate::operation::delete_db_cluster::DeleteDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster::DeleteDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster::DeleteDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster::DeleteDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster::DeleteDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster::DeleteDBClusterError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster::DeleteDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster::DeleteDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster::DeleteDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteDBClusterFluentBuilder {
             crate::operation::delete_db_cluster::DeleteDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster::DeleteDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster::DeleteDBClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -140,10 +121,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -187,10 +165,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_db_snapshot_identifier(input.into());
         self
     }
@@ -203,10 +178,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_final_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_db_snapshot_identifier(input);
         self
     }
@@ -219,9 +191,7 @@ impl DeleteDBClusterFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_final_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_db_snapshot_identifier()
     }
 }

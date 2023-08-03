@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`core_network_change_events(Option<Vec<CoreNetworkChangeEvent>>)`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput::core_network_change_events): <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetCoreNetworkChangeEventsError>`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError)
-    pub fn get_core_network_change_events(&self) -> crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsFluentBuilder{
+    pub fn get_core_network_change_events(
+        &self,
+    ) -> crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsFluentBuilder {
         crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsFluentBuilder::new(self.handle.clone())
     }
 }

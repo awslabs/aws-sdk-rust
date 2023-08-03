@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput) with field(s):
     ///   - [`index_fields(Option<Vec<IndexFieldStatus>>)`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput::index_fields): <p>The index fields configured for the domain.</p>
     /// - On failure, responds with [`SdkError<DescribeIndexFieldsError>`](crate::operation::describe_index_fields::DescribeIndexFieldsError)
-    pub fn describe_index_fields(
-        &self,
-    ) -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsFluentBuilder {
-        crate::operation::describe_index_fields::builders::DescribeIndexFieldsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_index_fields(&self) -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsFluentBuilder {
+        crate::operation::describe_index_fields::builders::DescribeIndexFieldsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,15 +5,12 @@
 pub struct NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
     #[doc(hidden)]
-    pub notify_workers_failure_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
+    pub notify_workers_failure_statuses: ::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
     _request_id: Option<String>,
 }
 impl NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-    pub fn notify_workers_failure_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotifyWorkersFailureStatus]> {
+    pub fn notify_workers_failure_statuses(&self) -> ::std::option::Option<&[crate::types::NotifyWorkersFailureStatus]> {
         self.notify_workers_failure_statuses.as_deref()
     }
 }
@@ -31,12 +28,9 @@ impl NotifyWorkersOutput {
 
 /// A builder for [`NotifyWorkersOutput`](crate::operation::notify_workers::NotifyWorkersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyWorkersOutputBuilder {
-    pub(crate) notify_workers_failure_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
+    pub(crate) notify_workers_failure_statuses: ::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
     _request_id: Option<String>,
 }
 impl NotifyWorkersOutputBuilder {
@@ -45,10 +39,7 @@ impl NotifyWorkersOutputBuilder {
     /// To override the contents of this collection use [`set_notify_workers_failure_statuses`](Self::set_notify_workers_failure_statuses).
     ///
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-    pub fn notify_workers_failure_statuses(
-        mut self,
-        input: crate::types::NotifyWorkersFailureStatus,
-    ) -> Self {
+    pub fn notify_workers_failure_statuses(mut self, input: crate::types::NotifyWorkersFailureStatus) -> Self {
         let mut v = self.notify_workers_failure_statuses.unwrap_or_default();
         v.push(input);
         self.notify_workers_failure_statuses = ::std::option::Option::Some(v);
@@ -63,9 +54,7 @@ impl NotifyWorkersOutputBuilder {
         self
     }
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-    pub fn get_notify_workers_failure_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>> {
+    pub fn get_notify_workers_failure_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>> {
         &self.notify_workers_failure_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

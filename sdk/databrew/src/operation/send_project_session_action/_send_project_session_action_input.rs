@@ -62,9 +62,7 @@ impl ::std::fmt::Debug for SendProjectSessionActionInput {
 }
 impl SendProjectSessionActionInput {
     /// Creates a new builder-style object to manufacture [`SendProjectSessionActionInput`](crate::operation::send_project_session_action::SendProjectSessionActionInput).
-    pub fn builder(
-    ) -> crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder {
         crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder::default()
     }
 }
@@ -115,10 +113,7 @@ impl SendProjectSessionActionInputBuilder {
         self
     }
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
-    pub fn set_recipe_step(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeStep>,
-    ) -> Self {
+    pub fn set_recipe_step(mut self, input: ::std::option::Option<crate::types::RecipeStep>) -> Self {
         self.recipe_step = input;
         self
     }
@@ -141,18 +136,12 @@ impl SendProjectSessionActionInputBuilder {
         &self.step_index
     }
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
-    pub fn client_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
-    pub fn set_client_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_session_id = input;
         self
     }
@@ -181,16 +170,14 @@ impl SendProjectSessionActionInputBuilder {
         crate::operation::send_project_session_action::SendProjectSessionActionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_project_session_action::SendProjectSessionActionInput {
-                preview: self.preview.unwrap_or_default(),
-                name: self.name,
-                recipe_step: self.recipe_step,
-                step_index: self.step_index,
-                client_session_id: self.client_session_id,
-                view_frame: self.view_frame,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_project_session_action::SendProjectSessionActionInput {
+            preview: self.preview.unwrap_or_default(),
+            name: self.name,
+            recipe_step: self.recipe_step,
+            step_index: self.step_index,
+            client_session_id: self.client_session_id,
+            view_frame: self.view_frame,
+        })
     }
 }
 impl ::std::fmt::Debug for SendProjectSessionActionInputBuilder {

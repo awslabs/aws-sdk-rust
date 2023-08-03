@@ -35,9 +35,7 @@ impl ResumeServiceOutput {
 
 /// A builder for [`ResumeServiceOutput`](crate::operation::resume_service::ResumeServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeServiceOutputBuilder {
     pub(crate) service: ::std::option::Option<crate::types::Service>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,

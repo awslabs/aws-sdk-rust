@@ -23,33 +23,23 @@ impl CacheHitResult {
 
 /// A builder for [`CacheHitResult`](crate::types::CacheHitResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheHitResultBuilder {
     pub(crate) source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheHitResultBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn source_pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_source_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_pipeline_execution_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn get_source_pipeline_execution_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_pipeline_execution_arn
     }
     /// Consumes the builder and constructs a [`CacheHitResult`](crate::types::CacheHitResult).

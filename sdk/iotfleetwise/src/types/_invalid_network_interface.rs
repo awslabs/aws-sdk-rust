@@ -30,9 +30,7 @@ impl InvalidNetworkInterface {
 
 /// A builder for [`InvalidNetworkInterface`](crate::types::InvalidNetworkInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidNetworkInterfaceBuilder {
     pub(crate) interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
@@ -58,17 +56,12 @@ impl InvalidNetworkInterfaceBuilder {
         self
     }
     /// <p>A message about why the interface isn't valid. </p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>) -> Self {
         self.reason = input;
         self
     }
     /// <p>A message about why the interface isn't valid. </p>
-    pub fn get_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceFailureReason> {
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::NetworkInterfaceFailureReason> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`InvalidNetworkInterface`](crate::types::InvalidNetworkInterface).

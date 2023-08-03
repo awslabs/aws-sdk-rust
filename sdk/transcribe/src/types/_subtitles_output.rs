@@ -45,9 +45,7 @@ impl SubtitlesOutput {
 
 /// A builder for [`SubtitlesOutput`](crate::types::SubtitlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubtitlesOutputBuilder {
     pub(crate) formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     pub(crate) subtitle_file_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,17 +64,12 @@ impl SubtitlesOutputBuilder {
         self
     }
     /// <p>Provides the format of your subtitle files. If your request included both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, both formats are shown.</p>
-    pub fn set_formats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
-    ) -> Self {
+    pub fn set_formats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>) -> Self {
         self.formats = input;
         self
     }
     /// <p>Provides the format of your subtitle files. If your request included both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, both formats are shown.</p>
-    pub fn get_formats(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>> {
+    pub fn get_formats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>> {
         &self.formats
     }
     /// Appends an item to `subtitle_file_uris`.
@@ -88,10 +81,7 @@ impl SubtitlesOutputBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your subtitle file is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your subtitle file.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn subtitle_file_uris(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subtitle_file_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subtitle_file_uris.unwrap_or_default();
         v.push(input.into());
         self.subtitle_file_uris = ::std::option::Option::Some(v);
@@ -102,10 +92,7 @@ impl SubtitlesOutputBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your subtitle file is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your subtitle file.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn set_subtitle_file_uris(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subtitle_file_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subtitle_file_uris = input;
         self
     }
@@ -114,9 +101,7 @@ impl SubtitlesOutputBuilder {
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your subtitle file is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your subtitle file.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    pub fn get_subtitle_file_uris(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subtitle_file_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subtitle_file_uris
     }
     /// <p>Provides the start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>

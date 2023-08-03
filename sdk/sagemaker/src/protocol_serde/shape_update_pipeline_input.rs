@@ -27,10 +27,7 @@ pub fn ser_update_pipeline_input(
     if let Some(var_8) = &input.parallelism_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ParallelismConfiguration").start_object();
-        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

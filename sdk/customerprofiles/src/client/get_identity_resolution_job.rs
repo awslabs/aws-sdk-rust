@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`exporting_location(Option<ExportingLocation>)`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput::exporting_location): <p>The S3 location where the Identity Resolution Job writes result files.</p>
     ///   - [`job_stats(Option<JobStats>)`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput::job_stats): <p>Statistics about the Identity Resolution Job.</p>
     /// - On failure, responds with [`SdkError<GetIdentityResolutionJobError>`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError)
-    pub fn get_identity_resolution_job(&self) -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobFluentBuilder{
+    pub fn get_identity_resolution_job(&self) -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobFluentBuilder {
         crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobFluentBuilder::new(self.handle.clone())
     }
 }

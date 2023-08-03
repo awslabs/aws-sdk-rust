@@ -34,9 +34,7 @@ impl CopyAction {
 
 /// A builder for [`CopyAction`](crate::types::CopyAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyActionBuilder {
     pub(crate) lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     pub(crate) destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
@@ -63,25 +61,17 @@ impl CopyActionBuilder {
         &self.lifecycle
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn destination_backup_vault_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn set_destination_backup_vault_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_backup_vault_arn = input;
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn get_destination_backup_vault_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_backup_vault_arn
     }
     /// Consumes the builder and constructs a [`CopyAction`](crate::types::CopyAction).

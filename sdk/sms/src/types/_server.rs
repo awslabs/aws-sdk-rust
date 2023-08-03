@@ -51,9 +51,7 @@ impl Server {
 
 /// A builder for [`Server`](crate::types::Server).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_type: ::std::option::Option<crate::types::ServerType>,
@@ -82,10 +80,7 @@ impl ServerBuilder {
         self
     }
     /// <p>The type of server.</p>
-    pub fn set_server_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerType>,
-    ) -> Self {
+    pub fn set_server_type(mut self, input: ::std::option::Option<crate::types::ServerType>) -> Self {
         self.server_type = input;
         self
     }
@@ -108,18 +103,12 @@ impl ServerBuilder {
         &self.vm_server
     }
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_job_id = input;
         self
     }

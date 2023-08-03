@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePublicDnsNamespaceOutput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<UpdatePublicDnsNamespaceError>`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError)
-    pub fn update_public_dns_namespace(&self) -> crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceFluentBuilder{
+    pub fn update_public_dns_namespace(&self) -> crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceFluentBuilder {
         crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,21 +23,17 @@ impl AddFlowVpcInterfacesInput {
 }
 impl AddFlowVpcInterfacesInput {
     /// Creates a new builder-style object to manufacture [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
-    pub fn builder(
-    ) -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder {
+    pub fn builder() -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder {
         crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder::default()
     }
 }
 
 /// A builder for [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
+    pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
 }
 impl AddFlowVpcInterfacesInputBuilder {
     /// The flow that you want to mutate.
@@ -66,31 +62,22 @@ impl AddFlowVpcInterfacesInputBuilder {
         self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn set_vpc_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
-    ) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
         self.vpc_interfaces = input;
         self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn get_vpc_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
         &self.vpc_interfaces
     }
     /// Consumes the builder and constructs a [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput {
-                flow_arn: self.flow_arn,
-                vpc_interfaces: self.vpc_interfaces,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput {
+            flow_arn: self.flow_arn,
+            vpc_interfaces: self.vpc_interfaces,
+        })
     }
 }

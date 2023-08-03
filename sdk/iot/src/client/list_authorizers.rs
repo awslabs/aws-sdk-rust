@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`authorizers(Option<Vec<AuthorizerSummary>>)`](crate::operation::list_authorizers::ListAuthorizersOutput::authorizers): <p>The authorizers.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_authorizers::ListAuthorizersOutput::next_marker): <p>A marker used to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAuthorizersError>`](crate::operation::list_authorizers::ListAuthorizersError)
-    pub fn list_authorizers(
-        &self,
-    ) -> crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder {
-        crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_authorizers(&self) -> crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder {
+        crate::operation::list_authorizers::builders::ListAuthorizersFluentBuilder::new(self.handle.clone())
     }
 }

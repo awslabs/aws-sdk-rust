@@ -15,10 +15,7 @@ pub fn ser_credential_pair(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

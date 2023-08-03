@@ -30,9 +30,7 @@ impl ExportServerSideEncryption {
 
 /// A builder for [`ExportServerSideEncryption`](crate::types::ExportServerSideEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportServerSideEncryptionBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
@@ -58,10 +56,7 @@ impl ExportServerSideEncryptionBuilder {
         self
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionTypes>) -> Self {
         self.r#type = input;
         self
     }

@@ -10,10 +10,7 @@ impl DescribeCodeReviewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_code_review::DescribeCodeReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_review::DescribeCodeReviewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_code_review();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeCodeReviewFluentBuilder {
         }
     }
     /// Access the DescribeCodeReview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeCodeReviewFluentBuilder {
             crate::operation::describe_code_review::DescribeCodeReview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_review::DescribeCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeCodeReviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeCodeReviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_code_review::DescribeCodeReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_review::DescribeCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeCodeReviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_code_review::DescribeCodeReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_review::DescribeCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeCodeReviewFluentBuilder {
             crate::operation::describe_code_review::DescribeCodeReview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_review::DescribeCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_review_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_review_arn(input);
         self
     }

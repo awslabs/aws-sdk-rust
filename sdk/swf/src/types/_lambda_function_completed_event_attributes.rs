@@ -37,9 +37,7 @@ impl LambdaFunctionCompletedEventAttributes {
 
 /// A builder for [`LambdaFunctionCompletedEventAttributes`](crate::types::LambdaFunctionCompletedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionCompletedEventAttributesBuilder {
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
     pub(crate) started_event_id: ::std::option::Option<i64>,

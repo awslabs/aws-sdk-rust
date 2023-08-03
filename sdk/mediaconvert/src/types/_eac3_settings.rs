@@ -24,12 +24,10 @@ pub struct Eac3Settings {
     pub dialnorm: ::std::option::Option<i32>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
-    pub dynamic_range_compression_line:
-        ::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine>,
+    pub dynamic_range_compression_line: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
-    pub dynamic_range_compression_rf:
-        ::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf>,
+    pub dynamic_range_compression_rf: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf>,
     /// When encoding 3/2 audio, controls whether the LFE channel is enabled
     #[doc(hidden)]
     pub lfe_control: ::std::option::Option<crate::types::Eac3LfeControl>,
@@ -72,9 +70,7 @@ pub struct Eac3Settings {
 }
 impl Eac3Settings {
     /// If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn attenuation_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AttenuationControl> {
+    pub fn attenuation_control(&self) -> ::std::option::Option<&crate::types::Eac3AttenuationControl> {
         self.attenuation_control.as_ref()
     }
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
@@ -98,15 +94,11 @@ impl Eac3Settings {
         self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_line(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3DynamicRangeCompressionLine> {
+    pub fn dynamic_range_compression_line(&self) -> ::std::option::Option<&crate::types::Eac3DynamicRangeCompressionLine> {
         self.dynamic_range_compression_line.as_ref()
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_rf(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3DynamicRangeCompressionRf> {
+    pub fn dynamic_range_compression_rf(&self) -> ::std::option::Option<&crate::types::Eac3DynamicRangeCompressionRf> {
         self.dynamic_range_compression_rf.as_ref()
     }
     /// When encoding 3/2 audio, controls whether the LFE channel is enabled
@@ -138,9 +130,7 @@ impl Eac3Settings {
         self.metadata_control.as_ref()
     }
     /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn passthrough_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3PassthroughControl> {
+    pub fn passthrough_control(&self) -> ::std::option::Option<&crate::types::Eac3PassthroughControl> {
         self.passthrough_control.as_ref()
     }
     /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
@@ -173,9 +163,7 @@ impl Eac3Settings {
 
 /// A builder for [`Eac3Settings`](crate::types::Eac3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Eac3SettingsBuilder {
     pub(crate) attenuation_control: ::std::option::Option<crate::types::Eac3AttenuationControl>,
     pub(crate) bitrate: ::std::option::Option<i32>,
@@ -183,10 +171,8 @@ pub struct Eac3SettingsBuilder {
     pub(crate) coding_mode: ::std::option::Option<crate::types::Eac3CodingMode>,
     pub(crate) dc_filter: ::std::option::Option<crate::types::Eac3DcFilter>,
     pub(crate) dialnorm: ::std::option::Option<i32>,
-    pub(crate) dynamic_range_compression_line:
-        ::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine>,
-    pub(crate) dynamic_range_compression_rf:
-        ::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf>,
+    pub(crate) dynamic_range_compression_line: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine>,
+    pub(crate) dynamic_range_compression_rf: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf>,
     pub(crate) lfe_control: ::std::option::Option<crate::types::Eac3LfeControl>,
     pub(crate) lfe_filter: ::std::option::Option<crate::types::Eac3LfeFilter>,
     pub(crate) lo_ro_center_mix_level: ::std::option::Option<f64>,
@@ -208,17 +194,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn set_attenuation_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AttenuationControl>,
-    ) -> Self {
+    pub fn set_attenuation_control(mut self, input: ::std::option::Option<crate::types::Eac3AttenuationControl>) -> Self {
         self.attenuation_control = input;
         self
     }
     /// If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn get_attenuation_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AttenuationControl> {
+    pub fn get_attenuation_control(&self) -> &::std::option::Option<crate::types::Eac3AttenuationControl> {
         &self.attenuation_control
     }
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
@@ -241,10 +222,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
-    pub fn set_bitstream_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3BitstreamMode>,
-    ) -> Self {
+    pub fn set_bitstream_mode(mut self, input: ::std::option::Option<crate::types::Eac3BitstreamMode>) -> Self {
         self.bitstream_mode = input;
         self
     }
@@ -258,10 +236,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Dolby Digital Plus coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3CodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Eac3CodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -275,10 +250,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Activates a DC highpass filter for all input channels.
-    pub fn set_dc_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3DcFilter>,
-    ) -> Self {
+    pub fn set_dc_filter(mut self, input: ::std::option::Option<crate::types::Eac3DcFilter>) -> Self {
         self.dc_filter = input;
         self
     }
@@ -301,47 +273,31 @@ impl Eac3SettingsBuilder {
         &self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_line(
-        mut self,
-        input: crate::types::Eac3DynamicRangeCompressionLine,
-    ) -> Self {
+    pub fn dynamic_range_compression_line(mut self, input: crate::types::Eac3DynamicRangeCompressionLine) -> Self {
         self.dynamic_range_compression_line = ::std::option::Option::Some(input);
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn set_dynamic_range_compression_line(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_line(mut self, input: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine>) -> Self {
         self.dynamic_range_compression_line = input;
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn get_dynamic_range_compression_line(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine> {
+    pub fn get_dynamic_range_compression_line(&self) -> &::std::option::Option<crate::types::Eac3DynamicRangeCompressionLine> {
         &self.dynamic_range_compression_line
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_rf(
-        mut self,
-        input: crate::types::Eac3DynamicRangeCompressionRf,
-    ) -> Self {
+    pub fn dynamic_range_compression_rf(mut self, input: crate::types::Eac3DynamicRangeCompressionRf) -> Self {
         self.dynamic_range_compression_rf = ::std::option::Option::Some(input);
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn set_dynamic_range_compression_rf(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_rf(mut self, input: ::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf>) -> Self {
         self.dynamic_range_compression_rf = input;
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn get_dynamic_range_compression_rf(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf> {
+    pub fn get_dynamic_range_compression_rf(&self) -> &::std::option::Option<crate::types::Eac3DynamicRangeCompressionRf> {
         &self.dynamic_range_compression_rf
     }
     /// When encoding 3/2 audio, controls whether the LFE channel is enabled
@@ -350,10 +306,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 3/2 audio, controls whether the LFE channel is enabled
-    pub fn set_lfe_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3LfeControl>,
-    ) -> Self {
+    pub fn set_lfe_control(mut self, input: ::std::option::Option<crate::types::Eac3LfeControl>) -> Self {
         self.lfe_control = input;
         self
     }
@@ -367,10 +320,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
-    pub fn set_lfe_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3LfeFilter>,
-    ) -> Self {
+    pub fn set_lfe_filter(mut self, input: ::std::option::Option<crate::types::Eac3LfeFilter>) -> Self {
         self.lfe_filter = input;
         self
     }
@@ -440,17 +390,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn set_metadata_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3MetadataControl>,
-    ) -> Self {
+    pub fn set_metadata_control(mut self, input: ::std::option::Option<crate::types::Eac3MetadataControl>) -> Self {
         self.metadata_control = input;
         self
     }
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn get_metadata_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3MetadataControl> {
+    pub fn get_metadata_control(&self) -> &::std::option::Option<crate::types::Eac3MetadataControl> {
         &self.metadata_control
     }
     /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
@@ -459,17 +404,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn set_passthrough_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3PassthroughControl>,
-    ) -> Self {
+    pub fn set_passthrough_control(mut self, input: ::std::option::Option<crate::types::Eac3PassthroughControl>) -> Self {
         self.passthrough_control = input;
         self
     }
     /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn get_passthrough_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3PassthroughControl> {
+    pub fn get_passthrough_control(&self) -> &::std::option::Option<crate::types::Eac3PassthroughControl> {
         &self.passthrough_control
     }
     /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
@@ -478,10 +418,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
-    pub fn set_phase_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3PhaseControl>,
-    ) -> Self {
+    pub fn set_phase_control(mut self, input: ::std::option::Option<crate::types::Eac3PhaseControl>) -> Self {
         self.phase_control = input;
         self
     }
@@ -509,10 +446,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Stereo downmix.
-    pub fn set_stereo_downmix(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3StereoDownmix>,
-    ) -> Self {
+    pub fn set_stereo_downmix(mut self, input: ::std::option::Option<crate::types::Eac3StereoDownmix>) -> Self {
         self.stereo_downmix = input;
         self
     }
@@ -526,10 +460,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
-    pub fn set_surround_ex_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3SurroundExMode>,
-    ) -> Self {
+    pub fn set_surround_ex_mode(mut self, input: ::std::option::Option<crate::types::Eac3SurroundExMode>) -> Self {
         self.surround_ex_mode = input;
         self
     }
@@ -543,10 +474,7 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
-    pub fn set_surround_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3SurroundMode>,
-    ) -> Self {
+    pub fn set_surround_mode(mut self, input: ::std::option::Option<crate::types::Eac3SurroundMode>) -> Self {
         self.surround_mode = input;
         self
     }

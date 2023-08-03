@@ -30,9 +30,7 @@ impl DeleteResourceInput {
 
 /// A builder for [`DeleteResourceInput`](crate::operation::delete_resource::DeleteResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl DeleteResourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::operation::delete_resource::DeleteResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource::DeleteResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resource::DeleteResourceInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

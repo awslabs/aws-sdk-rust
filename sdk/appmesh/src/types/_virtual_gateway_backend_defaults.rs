@@ -10,9 +10,7 @@ pub struct VirtualGatewayBackendDefaults {
 }
 impl VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn client_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualGatewayClientPolicy> {
+    pub fn client_policy(&self) -> ::std::option::Option<&crate::types::VirtualGatewayClientPolicy> {
         self.client_policy.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl VirtualGatewayBackendDefaults {
 
 /// A builder for [`VirtualGatewayBackendDefaults`](crate::types::VirtualGatewayBackendDefaults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayBackendDefaultsBuilder {
     pub(crate) client_policy: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
 }
@@ -38,17 +34,12 @@ impl VirtualGatewayBackendDefaultsBuilder {
         self
     }
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn set_client_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
-    ) -> Self {
+    pub fn set_client_policy(mut self, input: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>) -> Self {
         self.client_policy = input;
         self
     }
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn get_client_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualGatewayClientPolicy> {
+    pub fn get_client_policy(&self) -> &::std::option::Option<crate::types::VirtualGatewayClientPolicy> {
         &self.client_policy
     }
     /// Consumes the builder and constructs a [`VirtualGatewayBackendDefaults`](crate::types::VirtualGatewayBackendDefaults).

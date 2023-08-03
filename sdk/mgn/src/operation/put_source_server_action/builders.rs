@@ -37,10 +37,7 @@ impl PutSourceServerActionFluentBuilder {
         }
     }
     /// Access the PutSourceServerAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutSourceServerActionFluentBuilder {
             crate::operation::put_source_server_action::PutSourceServerAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutSourceServerActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutSourceServerActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_source_server_action::PutSourceServerActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutSourceServerActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_source_server_action::PutSourceServerActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl PutSourceServerActionFluentBuilder {
             crate::operation::put_source_server_action::PutSourceServerAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
@@ -158,18 +138,12 @@ impl PutSourceServerActionFluentBuilder {
         self.inner.get_action_name()
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn document_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_identifier(input.into());
         self
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn set_document_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_identifier(input);
         self
     }
@@ -206,18 +180,12 @@ impl PutSourceServerActionFluentBuilder {
         self.inner.get_action_id()
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -283,12 +251,7 @@ impl PutSourceServerActionFluentBuilder {
     /// <p>Source server post migration custom action parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
@@ -296,12 +259,7 @@ impl PutSourceServerActionFluentBuilder {
     /// <p>Source server post migration custom action parameters.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         self.inner.get_parameters()
     }
     /// Adds a key-value pair to `externalParameters`.
@@ -309,20 +267,14 @@ impl PutSourceServerActionFluentBuilder {
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
     ///
     /// <p>Source server post migration custom action external parameters.</p>
-    pub fn external_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SsmExternalParameter,
-    ) -> Self {
+    pub fn external_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SsmExternalParameter) -> Self {
         self.inner = self.inner.external_parameters(k.into(), v);
         self
     }
     /// <p>Source server post migration custom action external parameters.</p>
     pub fn set_external_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     ) -> Self {
         self.inner = self.inner.set_external_parameters(input);
         self
@@ -330,9 +282,7 @@ impl PutSourceServerActionFluentBuilder {
     /// <p>Source server post migration custom action external parameters.</p>
     pub fn get_external_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         self.inner.get_external_parameters()
     }
     /// <p>Source server post migration custom action description.</p>
@@ -355,10 +305,7 @@ impl PutSourceServerActionFluentBuilder {
         self
     }
     /// <p>Source server post migration custom action category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }

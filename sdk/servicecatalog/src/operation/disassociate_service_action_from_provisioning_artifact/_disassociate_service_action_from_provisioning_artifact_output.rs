@@ -19,9 +19,7 @@ impl DisassociateServiceActionFromProvisioningArtifactOutput {
 
 /// A builder for [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateServiceActionFromProvisioningArtifactOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,9 @@ impl DisassociateServiceActionFromProvisioningArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput).
-    pub fn build(self) -> crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput {
         crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput {
             _request_id: self._request_id,
         }

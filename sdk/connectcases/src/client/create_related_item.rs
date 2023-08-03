@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`related_item_id(Option<String>)`](crate::operation::create_related_item::CreateRelatedItemOutput::related_item_id): <p>The unique identifier of the related item.</p>
     ///   - [`related_item_arn(Option<String>)`](crate::operation::create_related_item::CreateRelatedItemOutput::related_item_arn): <p>The Amazon Resource Name (ARN) of the related item.</p>
     /// - On failure, responds with [`SdkError<CreateRelatedItemError>`](crate::operation::create_related_item::CreateRelatedItemError)
-    pub fn create_related_item(
-        &self,
-    ) -> crate::operation::create_related_item::builders::CreateRelatedItemFluentBuilder {
-        crate::operation::create_related_item::builders::CreateRelatedItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_related_item(&self) -> crate::operation::create_related_item::builders::CreateRelatedItemFluentBuilder {
+        crate::operation::create_related_item::builders::CreateRelatedItemFluentBuilder::new(self.handle.clone())
     }
 }

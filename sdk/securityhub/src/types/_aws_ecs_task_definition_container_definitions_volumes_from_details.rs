@@ -23,18 +23,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     pub(crate) read_only: ::std::option::Option<bool>,
     pub(crate) source_container: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
         &self.read_only
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
-    pub fn source_container(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_container = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
-    pub fn set_source_container(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_container = input;
         self
     }

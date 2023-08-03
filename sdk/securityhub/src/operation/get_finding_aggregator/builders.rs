@@ -37,9 +37,7 @@ impl GetFindingAggregatorFluentBuilder {
         }
     }
     /// Access the GetFindingAggregator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_finding_aggregator::builders::GetFindingAggregatorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_finding_aggregator::builders::GetFindingAggregatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetFindingAggregatorFluentBuilder {
             crate::operation::get_finding_aggregator::GetFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_aggregator::GetFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_aggregator::GetFindingAggregatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetFindingAggregatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_finding_aggregator::GetFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_aggregator::GetFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_aggregator::GetFindingAggregatorError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_finding_aggregator::GetFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_aggregator::GetFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_aggregator::GetFindingAggregatorError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetFindingAggregatorFluentBuilder {
             crate::operation::get_finding_aggregator::GetFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_aggregator::GetFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_aggregator::GetFindingAggregatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_aggregator_arn(input.into());
         self
     }
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_aggregator_arn(input);
         self
     }

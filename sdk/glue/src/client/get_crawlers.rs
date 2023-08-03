@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`crawlers(Option<Vec<Crawler>>)`](crate::operation::get_crawlers::GetCrawlersOutput::crawlers): <p>A list of crawler metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_crawlers::GetCrawlersOutput::next_token): <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     /// - On failure, responds with [`SdkError<GetCrawlersError>`](crate::operation::get_crawlers::GetCrawlersError)
-    pub fn get_crawlers(
-        &self,
-    ) -> crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder {
+    pub fn get_crawlers(&self) -> crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder {
         crate::operation::get_crawlers::builders::GetCrawlersFluentBuilder::new(self.handle.clone())
     }
 }

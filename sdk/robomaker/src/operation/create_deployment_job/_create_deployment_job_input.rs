@@ -17,13 +17,10 @@ pub struct CreateDeploymentJobInput {
     pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The deployment application configuration.</p>
     #[doc(hidden)]
-    pub deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
@@ -39,43 +36,30 @@ impl CreateDeploymentJobInput {
         self.fleet.as_deref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
+    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateDeploymentJobInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentJobInput`](crate::operation::create_deployment_job::CreateDeploymentJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_deployment_job::builders::CreateDeploymentJobInputBuilder {
-        crate::operation::create_deployment_job::builders::CreateDeploymentJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_deployment_job::builders::CreateDeploymentJobInputBuilder {
+        crate::operation::create_deployment_job::builders::CreateDeploymentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentJobInput`](crate::operation::create_deployment_job::CreateDeploymentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentJobInputBuilder {
     pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
-    pub(crate) deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeploymentJobInputBuilder {
     /// <p>The requested deployment configuration.</p>
@@ -84,10 +68,7 @@ impl CreateDeploymentJobInputBuilder {
         self
     }
     /// <p>The requested deployment configuration.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
         self.deployment_config = input;
         self
     }
@@ -96,18 +77,12 @@ impl CreateDeploymentJobInputBuilder {
         &self.deployment_config
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -134,10 +109,7 @@ impl CreateDeploymentJobInputBuilder {
     /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
     ///
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        mut self,
-        input: crate::types::DeploymentApplicationConfig,
-    ) -> Self {
+    pub fn deployment_application_configs(mut self, input: crate::types::DeploymentApplicationConfig) -> Self {
         let mut v = self.deployment_application_configs.unwrap_or_default();
         v.push(input);
         self.deployment_application_configs = ::std::option::Option::Some(v);
@@ -152,9 +124,7 @@ impl CreateDeploymentJobInputBuilder {
         self
     }
     /// <p>The deployment application configuration.</p>
-    pub fn get_deployment_application_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+    pub fn get_deployment_application_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
         &self.deployment_application_configs
     }
     /// Adds a key-value pair to `tags`.
@@ -162,49 +132,32 @@ impl CreateDeploymentJobInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeploymentJobInput`](crate::operation::create_deployment_job::CreateDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deployment_job::CreateDeploymentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_deployment_job::CreateDeploymentJobInput {
-                deployment_config: self.deployment_config,
-                client_request_token: self.client_request_token,
-                fleet: self.fleet,
-                deployment_application_configs: self.deployment_application_configs,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_deployment_job::CreateDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_deployment_job::CreateDeploymentJobInput {
+            deployment_config: self.deployment_config,
+            client_request_token: self.client_request_token,
+            fleet: self.fleet,
+            deployment_application_configs: self.deployment_application_configs,
+            tags: self.tags,
+        })
     }
 }

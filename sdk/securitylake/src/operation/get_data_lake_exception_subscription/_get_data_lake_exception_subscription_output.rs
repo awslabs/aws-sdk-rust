@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetDataLakeExceptionSubscriptionOutpu
 }
 impl GetDataLakeExceptionSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput).
-    pub fn builder() -> crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionOutputBuilder {
         crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeExceptionSubscriptionOutputBuilder {
     pub(crate) subscription_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) notification_endpoint: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct GetDataLakeExceptionSubscriptionOutputBuilder {
 }
 impl GetDataLakeExceptionSubscriptionOutputBuilder {
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn subscription_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn set_subscription_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_protocol = input;
         self
     }
@@ -73,18 +65,12 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
         &self.subscription_protocol
     }
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
-    pub fn notification_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
-    pub fn set_notification_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_endpoint = input;
         self
     }
@@ -116,14 +102,11 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput).
-    pub fn build(self) -> crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput{
+    pub fn build(self) -> crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput {
         crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput {
-            subscription_protocol: self.subscription_protocol
-            ,
-            notification_endpoint: self.notification_endpoint
-            ,
-            exception_time_to_live: self.exception_time_to_live
-            ,
+            subscription_protocol: self.subscription_protocol,
+            notification_endpoint: self.notification_endpoint,
+            exception_time_to_live: self.exception_time_to_live,
             _request_id: self._request_id,
         }
     }

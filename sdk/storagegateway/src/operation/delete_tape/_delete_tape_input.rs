@@ -37,9 +37,7 @@ impl DeleteTapeInput {
 
 /// A builder for [`DeleteTapeInput`](crate::operation::delete_tape::DeleteTapeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTapeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl DeleteTapeInputBuilder {
         &self.bypass_governance_retention
     }
     /// Consumes the builder and constructs a [`DeleteTapeInput`](crate::operation::delete_tape::DeleteTapeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_tape::DeleteTapeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tape::DeleteTapeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tape::DeleteTapeInput {
             gateway_arn: self.gateway_arn,
             tape_arn: self.tape_arn,

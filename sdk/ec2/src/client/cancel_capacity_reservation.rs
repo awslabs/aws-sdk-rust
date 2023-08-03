@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelCapacityReservationOutput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<CancelCapacityReservationError>`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationError)
-    pub fn cancel_capacity_reservation(&self) -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder{
+    pub fn cancel_capacity_reservation(&self) -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder {
         crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder::new(self.handle.clone())
     }
 }

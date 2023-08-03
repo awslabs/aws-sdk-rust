@@ -5,8 +5,7 @@
 pub struct GetPartitionIndexesOutput {
     /// <p>A list of index descriptors.</p>
     #[doc(hidden)]
-    pub partition_index_descriptor_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
+    pub partition_index_descriptor_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetPartitionIndexesOutput {
 }
 impl GetPartitionIndexesOutput {
     /// <p>A list of index descriptors.</p>
-    pub fn partition_index_descriptor_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PartitionIndexDescriptor]> {
+    pub fn partition_index_descriptor_list(&self) -> ::std::option::Option<&[crate::types::PartitionIndexDescriptor]> {
         self.partition_index_descriptor_list.as_deref()
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetPartitionIndexesOutput {
 }
 impl GetPartitionIndexesOutput {
     /// Creates a new builder-style object to manufacture [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder {
-        crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder {
+        crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartitionIndexesOutputBuilder {
-    pub(crate) partition_index_descriptor_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
+    pub(crate) partition_index_descriptor_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl GetPartitionIndexesOutputBuilder {
     /// To override the contents of this collection use [`set_partition_index_descriptor_list`](Self::set_partition_index_descriptor_list).
     ///
     /// <p>A list of index descriptors.</p>
-    pub fn partition_index_descriptor_list(
-        mut self,
-        input: crate::types::PartitionIndexDescriptor,
-    ) -> Self {
+    pub fn partition_index_descriptor_list(mut self, input: crate::types::PartitionIndexDescriptor) -> Self {
         let mut v = self.partition_index_descriptor_list.unwrap_or_default();
         v.push(input);
         self.partition_index_descriptor_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl GetPartitionIndexesOutputBuilder {
         self
     }
     /// <p>A list of index descriptors.</p>
-    pub fn get_partition_index_descriptor_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>> {
+    pub fn get_partition_index_descriptor_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>> {
         &self.partition_index_descriptor_list
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>

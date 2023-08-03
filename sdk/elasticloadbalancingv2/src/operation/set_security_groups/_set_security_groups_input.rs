@@ -22,35 +22,26 @@ impl SetSecurityGroupsInput {
 }
 impl SetSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`SetSecurityGroupsInput`](crate::operation::set_security_groups::SetSecurityGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder {
+    pub fn builder() -> crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder {
         crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`SetSecurityGroupsInput`](crate::operation::set_security_groups::SetSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetSecurityGroupsInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SetSecurityGroupsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_arn = input;
         self
     }
@@ -63,41 +54,28 @@ impl SetSecurityGroupsInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`SetSecurityGroupsInput`](crate::operation::set_security_groups::SetSecurityGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_security_groups::SetSecurityGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_security_groups::SetSecurityGroupsInput {
-                load_balancer_arn: self.load_balancer_arn,
-                security_groups: self.security_groups,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_security_groups::SetSecurityGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_security_groups::SetSecurityGroupsInput {
+            load_balancer_arn: self.load_balancer_arn,
+            security_groups: self.security_groups,
+        })
     }
 }

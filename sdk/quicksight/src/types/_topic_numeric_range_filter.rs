@@ -73,10 +73,7 @@ impl TopicNumericRangeFilterBuilder {
         self
     }
     /// <p>The constant used in a numeric range filter.</p>
-    pub fn set_constant(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
-    ) -> Self {
+    pub fn set_constant(mut self, input: ::std::option::Option<crate::types::TopicRangeFilterConstant>) -> Self {
         self.constant = input;
         self
     }
@@ -90,10 +87,7 @@ impl TopicNumericRangeFilterBuilder {
         self
     }
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::NamedFilterAggType>,
-    ) -> Self {
+    pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::NamedFilterAggType>) -> Self {
         self.aggregation = input;
         self
     }

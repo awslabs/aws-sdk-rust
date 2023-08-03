@@ -29,18 +29,14 @@ impl AssociateMemberToGroupInput {
 }
 impl AssociateMemberToGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateMemberToGroupInput`](crate::operation::associate_member_to_group::AssociateMemberToGroupInput).
-    pub fn builder(
-    ) -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder {
         crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateMemberToGroupInput`](crate::operation::associate_member_to_group::AssociateMemberToGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMemberToGroupInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct AssociateMemberToGroupInputBuilder {
 }
 impl AssociateMemberToGroupInputBuilder {
     /// <p>The organization under which the group exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization under which the group exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl AssociateMemberToGroupInputBuilder {
         crate::operation::associate_member_to_group::AssociateMemberToGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_member_to_group::AssociateMemberToGroupInput {
-                organization_id: self.organization_id,
-                group_id: self.group_id,
-                member_id: self.member_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_member_to_group::AssociateMemberToGroupInput {
+            organization_id: self.organization_id,
+            group_id: self.group_id,
+            member_id: self.member_id,
+        })
     }
 }

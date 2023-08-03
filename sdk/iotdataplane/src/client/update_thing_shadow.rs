@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::operation::update_thing_shadow::UpdateThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<UpdateThingShadowError>`](crate::operation::update_thing_shadow::UpdateThingShadowError)
-    pub fn update_thing_shadow(
-        &self,
-    ) -> crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder {
-        crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_thing_shadow(&self) -> crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder {
+        crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::new(self.handle.clone())
     }
 }

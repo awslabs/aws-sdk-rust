@@ -30,17 +30,14 @@ impl DescribeThumbnailsInput {
 }
 impl DescribeThumbnailsInput {
     /// Creates a new builder-style object to manufacture [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsInputBuilder {
+    pub fn builder() -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsInputBuilder {
         crate::operation::describe_thumbnails::builders::DescribeThumbnailsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThumbnailsInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl DescribeThumbnailsInputBuilder {
         &self.pipeline_id
     }
     /// thumbnail type
-    pub fn thumbnail_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbnail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thumbnail_type = ::std::option::Option::Some(input.into());
         self
     }
     /// thumbnail type
-    pub fn set_thumbnail_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thumbnail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thumbnail_type = input;
         self
     }
@@ -98,16 +89,11 @@ impl DescribeThumbnailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_thumbnails::DescribeThumbnailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_thumbnails::DescribeThumbnailsInput {
-                channel_id: self.channel_id,
-                pipeline_id: self.pipeline_id,
-                thumbnail_type: self.thumbnail_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_thumbnails::DescribeThumbnailsInput {
+            channel_id: self.channel_id,
+            pipeline_id: self.pipeline_id,
+            thumbnail_type: self.thumbnail_type,
+        })
     }
 }

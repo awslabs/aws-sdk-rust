@@ -15,18 +15,14 @@ impl DescribeResiliencyPolicyInput {
 }
 impl DescribeResiliencyPolicyInput {
     /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyInput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder {
         crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResiliencyPolicyInput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResiliencyPolicyInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DescribeResiliencyPolicyInputBuilder {
         crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput {
-                policy_arn: self.policy_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput { policy_arn: self.policy_arn })
     }
 }

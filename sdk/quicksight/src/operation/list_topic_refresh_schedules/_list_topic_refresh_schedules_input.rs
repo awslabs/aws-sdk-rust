@@ -22,34 +22,26 @@ impl ListTopicRefreshSchedulesInput {
 }
 impl ListTopicRefreshSchedulesInput {
     /// Creates a new builder-style object to manufacture [`ListTopicRefreshSchedulesInput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput).
-    pub fn builder() -> crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder{
+    pub fn builder() -> crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder {
         crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTopicRefreshSchedulesInput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRefreshSchedulesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
 }
 impl ListTopicRefreshSchedulesInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl ListTopicRefreshSchedulesInputBuilder {
         crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput {
-                aws_account_id: self.aws_account_id,
-                topic_id: self.topic_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput {
+            aws_account_id: self.aws_account_id,
+            topic_id: self.topic_id,
+        })
     }
 }

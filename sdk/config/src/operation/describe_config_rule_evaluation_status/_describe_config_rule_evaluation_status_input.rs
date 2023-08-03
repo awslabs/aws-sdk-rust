@@ -34,16 +34,14 @@ impl DescribeConfigRuleEvaluationStatusInput {
 }
 impl DescribeConfigRuleEvaluationStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigRuleEvaluationStatusInput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput).
-    pub fn builder() -> crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder {
         crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigRuleEvaluationStatusInput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusInputBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -55,27 +53,19 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
         v.push(input.into());
         self.config_rule_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.config_rule_names = input;
         self
     }
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.config_rule_names
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -113,16 +103,18 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeConfigRuleEvaluationStatusInput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput {
-                config_rule_names: self.config_rule_names
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
+                config_rule_names: self.config_rule_names,
+                next_token: self.next_token,
+                limit: self.limit,
+            },
         )
     }
 }

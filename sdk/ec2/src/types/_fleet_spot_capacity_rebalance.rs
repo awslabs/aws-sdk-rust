@@ -20,9 +20,7 @@ impl FleetSpotCapacityRebalance {
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
     /// <p> <code>launch</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet. EC2 Fleet does not terminate the instances that receive a rebalance notification. You can terminate the old instances, or you can leave them running. You are charged for all instances while they are running. </p>
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
-    pub fn replacement_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FleetReplacementStrategy> {
+    pub fn replacement_strategy(&self) -> ::std::option::Option<&crate::types::FleetReplacementStrategy> {
         self.replacement_strategy.as_ref()
     }
     /// <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot Instance after launching a new replacement Spot Instance.</p>
@@ -42,9 +40,7 @@ impl FleetSpotCapacityRebalance {
 
 /// A builder for [`FleetSpotCapacityRebalance`](crate::types::FleetSpotCapacityRebalance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetSpotCapacityRebalanceBuilder {
     pub(crate) replacement_strategy: ::std::option::Option<crate::types::FleetReplacementStrategy>,
     pub(crate) termination_delay: ::std::option::Option<i32>,
@@ -60,19 +56,14 @@ impl FleetSpotCapacityRebalanceBuilder {
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
     /// <p> <code>launch</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet. EC2 Fleet does not terminate the instances that receive a rebalance notification. You can terminate the old instances, or you can leave them running. You are charged for all instances while they are running. </p>
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
-    pub fn set_replacement_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetReplacementStrategy>,
-    ) -> Self {
+    pub fn set_replacement_strategy(mut self, input: ::std::option::Option<crate::types::FleetReplacementStrategy>) -> Self {
         self.replacement_strategy = input;
         self
     }
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
     /// <p> <code>launch</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet. EC2 Fleet does not terminate the instances that receive a rebalance notification. You can terminate the old instances, or you can leave them running. You are charged for all instances while they are running. </p>
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
-    pub fn get_replacement_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetReplacementStrategy> {
+    pub fn get_replacement_strategy(&self) -> &::std::option::Option<crate::types::FleetReplacementStrategy> {
         &self.replacement_strategy
     }
     /// <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot Instance after launching a new replacement Spot Instance.</p>

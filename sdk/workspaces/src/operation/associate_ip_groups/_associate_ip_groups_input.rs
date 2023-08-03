@@ -22,17 +22,14 @@ impl AssociateIpGroupsInput {
 }
 impl AssociateIpGroupsInput {
     /// Creates a new builder-style object to manufacture [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
+    pub fn builder() -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
         crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIpGroupsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +61,7 @@ impl AssociateIpGroupsInputBuilder {
         self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_ids = input;
         self
     }
@@ -78,15 +72,10 @@ impl AssociateIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_ip_groups::AssociateIpGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_ip_groups::AssociateIpGroupsInput {
-                directory_id: self.directory_id,
-                group_ids: self.group_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_ip_groups::AssociateIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::associate_ip_groups::AssociateIpGroupsInput {
+            directory_id: self.directory_id,
+            group_ids: self.group_ids,
+        })
     }
 }

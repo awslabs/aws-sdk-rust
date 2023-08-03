@@ -22,9 +22,7 @@ impl DeleteDatasetInput {
 
 /// A builder for [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dataset::DeleteDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput { name: self.name })
     }
 }

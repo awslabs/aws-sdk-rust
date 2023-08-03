@@ -27,7 +27,7 @@ impl DisassociateCustomDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateCustomDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder,
+    inner: crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder,
 }
 impl DisassociateCustomDomainFluentBuilder {
     /// Creates a new `DisassociateCustomDomain`.
@@ -38,10 +38,7 @@ impl DisassociateCustomDomainFluentBuilder {
         }
     }
     /// Access the DisassociateCustomDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DisassociateCustomDomainFluentBuilder {
             crate::operation::disassociate_custom_domain::DisassociateCustomDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_custom_domain::DisassociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_custom_domain::DisassociateCustomDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DisassociateCustomDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DisassociateCustomDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_custom_domain::DisassociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_custom_domain::DisassociateCustomDomainError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DisassociateCustomDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_custom_domain::DisassociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_custom_domain::DisassociateCustomDomainError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DisassociateCustomDomainFluentBuilder {
             crate::operation::disassociate_custom_domain::DisassociateCustomDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_custom_domain::DisassociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_custom_domain::DisassociateCustomDomainError>,
     > {
         self.customize_middleware().await
     }

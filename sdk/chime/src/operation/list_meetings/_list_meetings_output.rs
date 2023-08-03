@@ -35,9 +35,7 @@ impl ListMeetingsOutput {
 
 /// A builder for [`ListMeetingsOutput`](crate::operation::list_meetings::ListMeetingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMeetingsOutputBuilder {
     pub(crate) meetings: ::std::option::Option<::std::vec::Vec<crate::types::Meeting>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListMeetingsOutputBuilder {
         self
     }
     /// <p>The Amazon Chime SDK meeting information.</p>
-    pub fn set_meetings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Meeting>>,
-    ) -> Self {
+    pub fn set_meetings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Meeting>>) -> Self {
         self.meetings = input;
         self
     }

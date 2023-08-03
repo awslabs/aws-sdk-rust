@@ -26,7 +26,7 @@ impl DescribeLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder,
+    inner: crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder,
 }
 impl DescribeLoggingConfigurationFluentBuilder {
     /// Creates a new `DescribeLoggingConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeLoggingConfigurationFluentBuilder {
             crate::operation::describe_logging_configuration::DescribeLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeLoggingConfigurationFluentBuilder {
             crate::operation::describe_logging_configuration::DescribeLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -139,19 +128,13 @@ impl DescribeLoggingConfigurationFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }

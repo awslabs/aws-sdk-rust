@@ -22,21 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeCustomerGatewaysOutput {
 }
 impl DescribeCustomerGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder {
         crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomerGatewaysOutputBuilder {
-    pub(crate) customer_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
+    pub(crate) customer_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeCustomerGatewaysOutputBuilder {
@@ -52,17 +47,12 @@ impl DescribeCustomerGatewaysOutputBuilder {
         self
     }
     /// <p>Information about one or more customer gateways.</p>
-    pub fn set_customer_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
-    ) -> Self {
+    pub fn set_customer_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>) -> Self {
         self.customer_gateways = input;
         self
     }
     /// <p>Information about one or more customer gateways.</p>
-    pub fn get_customer_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>> {
+    pub fn get_customer_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>> {
         &self.customer_gateways
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,9 +65,7 @@ impl DescribeCustomerGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput {
+    pub fn build(self) -> crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput {
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput {
             customer_gateways: self.customer_gateways,
             _request_id: self._request_id,

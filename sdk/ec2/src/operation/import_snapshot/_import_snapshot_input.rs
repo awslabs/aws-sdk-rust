@@ -98,9 +98,7 @@ impl ImportSnapshotInput {
 
 /// A builder for [`ImportSnapshotInput`](crate::operation::import_snapshot::ImportSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSnapshotInputBuilder {
     pub(crate) client_data: ::std::option::Option<crate::types::ClientData>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -110,8 +108,7 @@ pub struct ImportSnapshotInputBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl ImportSnapshotInputBuilder {
     /// <p>The client-specific data.</p>
@@ -120,10 +117,7 @@ impl ImportSnapshotInputBuilder {
         self
     }
     /// <p>The client-specific data.</p>
-    pub fn set_client_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientData>,
-    ) -> Self {
+    pub fn set_client_data(mut self, input: ::std::option::Option<crate::types::ClientData>) -> Self {
         self.client_data = input;
         self
     }
@@ -165,17 +159,12 @@ impl ImportSnapshotInputBuilder {
         self
     }
     /// <p>Information about the disk container.</p>
-    pub fn set_disk_container(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotDiskContainer>,
-    ) -> Self {
+    pub fn set_disk_container(mut self, input: ::std::option::Option<crate::types::SnapshotDiskContainer>) -> Self {
         self.disk_container = input;
         self
     }
     /// <p>Information about the disk container.</p>
-    pub fn get_disk_container(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotDiskContainer> {
+    pub fn get_disk_container(&self) -> &::std::option::Option<crate::types::SnapshotDiskContainer> {
         &self.disk_container
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -276,26 +265,18 @@ impl ImportSnapshotInputBuilder {
         self
     }
     /// <p>The tags to apply to the import snapshot task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the import snapshot task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ImportSnapshotInput`](crate::operation::import_snapshot::ImportSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_snapshot::ImportSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::import_snapshot::ImportSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_snapshot::ImportSnapshotInput {
             client_data: self.client_data,
             client_token: self.client_token,

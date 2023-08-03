@@ -15,17 +15,14 @@ impl RestartSimulationJobInput {
 }
 impl RestartSimulationJobInput {
     /// Creates a new builder-style object to manufacture [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
-    pub fn builder(
-    ) -> crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder {
+    pub fn builder() -> crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder {
         crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestartSimulationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl RestartSimulationJobInputBuilder {
     /// Consumes the builder and constructs a [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restart_simulation_job::RestartSimulationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::restart_simulation_job::RestartSimulationJobInput { job: self.job },
-        )
+    ) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::restart_simulation_job::RestartSimulationJobInput { job: self.job })
     }
 }

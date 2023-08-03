@@ -8,8 +8,7 @@ pub struct GetHypervisorPropertyMappingsOutput {
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
     #[doc(hidden)]
-    pub vmware_to_aws_tag_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
+    pub vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl GetHypervisorPropertyMappingsOutput {
         self.hypervisor_arn.as_deref()
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn vmware_to_aws_tag_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VmwareToAwsTagMapping]> {
+    pub fn vmware_to_aws_tag_mappings(&self) -> ::std::option::Option<&[crate::types::VmwareToAwsTagMapping]> {
         self.vmware_to_aws_tag_mappings.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
@@ -38,37 +35,28 @@ impl ::aws_http::request_id::RequestId for GetHypervisorPropertyMappingsOutput {
 }
 impl GetHypervisorPropertyMappingsOutput {
     /// Creates a new builder-style object to manufacture [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput).
-    pub fn builder() -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsOutputBuilder {
         crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHypervisorPropertyMappingsOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vmware_to_aws_tag_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
+    pub(crate) vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetHypervisorPropertyMappingsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -81,27 +69,19 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
     ///
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn vmware_to_aws_tag_mappings(
-        mut self,
-        input: crate::types::VmwareToAwsTagMapping,
-    ) -> Self {
+    pub fn vmware_to_aws_tag_mappings(mut self, input: crate::types::VmwareToAwsTagMapping) -> Self {
         let mut v = self.vmware_to_aws_tag_mappings.unwrap_or_default();
         v.push(input);
         self.vmware_to_aws_tag_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn set_vmware_to_aws_tag_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
-    ) -> Self {
+    pub fn set_vmware_to_aws_tag_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>) -> Self {
         self.vmware_to_aws_tag_mappings = input;
         self
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn get_vmware_to_aws_tag_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
+    pub fn get_vmware_to_aws_tag_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
         &self.vmware_to_aws_tag_mappings
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
@@ -128,10 +108,7 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput
-    {
+    pub fn build(self) -> crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput {
         crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput {
             hypervisor_arn: self.hypervisor_arn,
             vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings,

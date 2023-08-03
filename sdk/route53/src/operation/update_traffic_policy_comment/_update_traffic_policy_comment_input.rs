@@ -30,16 +30,14 @@ impl UpdateTrafficPolicyCommentInput {
 }
 impl UpdateTrafficPolicyCommentInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentInput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput).
-    pub fn builder() -> crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder {
         crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrafficPolicyCommentInput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -95,12 +93,10 @@ impl UpdateTrafficPolicyCommentInputBuilder {
         crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput {
-                id: self.id,
-                version: self.version,
-                comment: self.comment,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput {
+            id: self.id,
+            version: self.version,
+            comment: self.comment,
+        })
     }
 }

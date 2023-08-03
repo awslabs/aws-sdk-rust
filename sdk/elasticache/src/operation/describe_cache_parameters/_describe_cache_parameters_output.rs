@@ -12,8 +12,7 @@ pub struct DescribeCacheParametersOutput {
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     #[doc(hidden)]
-    pub cache_node_type_specific_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    pub cache_node_type_specific_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParametersOutput {
@@ -26,9 +25,7 @@ impl DescribeCacheParametersOutput {
         self.parameters.as_deref()
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn cache_node_type_specific_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CacheNodeTypeSpecificParameter]> {
+    pub fn cache_node_type_specific_parameters(&self) -> ::std::option::Option<&[crate::types::CacheNodeTypeSpecificParameter]> {
         self.cache_node_type_specific_parameters.as_deref()
     }
 }
@@ -39,23 +36,18 @@ impl ::aws_http::request_id::RequestId for DescribeCacheParametersOutput {
 }
 impl DescribeCacheParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder {
         crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheParametersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) cache_node_type_specific_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    pub(crate) cache_node_type_specific_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParametersOutputBuilder {
@@ -85,17 +77,12 @@ impl DescribeCacheParametersOutputBuilder {
         self
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Appends an item to `cache_node_type_specific_parameters`.
@@ -103,10 +90,7 @@ impl DescribeCacheParametersOutputBuilder {
     /// To override the contents of this collection use [`set_cache_node_type_specific_parameters`](Self::set_cache_node_type_specific_parameters).
     ///
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn cache_node_type_specific_parameters(
-        mut self,
-        input: crate::types::CacheNodeTypeSpecificParameter,
-    ) -> Self {
+    pub fn cache_node_type_specific_parameters(mut self, input: crate::types::CacheNodeTypeSpecificParameter) -> Self {
         let mut v = self.cache_node_type_specific_parameters.unwrap_or_default();
         v.push(input);
         self.cache_node_type_specific_parameters = ::std::option::Option::Some(v);
@@ -121,9 +105,7 @@ impl DescribeCacheParametersOutputBuilder {
         self
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn get_cache_node_type_specific_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>> {
+    pub fn get_cache_node_type_specific_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>> {
         &self.cache_node_type_specific_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -136,9 +118,7 @@ impl DescribeCacheParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
+    pub fn build(self) -> crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
         crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
             marker: self.marker,
             parameters: self.parameters,

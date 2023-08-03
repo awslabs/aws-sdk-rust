@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateResiliencyPolicyOutput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput) with field(s):
     ///   - [`policy(Option<ResiliencyPolicy>)`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput::policy): <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     /// - On failure, responds with [`SdkError<UpdateResiliencyPolicyError>`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyError)
-    pub fn update_resiliency_policy(
-        &self,
-    ) -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyFluentBuilder
-    {
+    pub fn update_resiliency_policy(&self) -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyFluentBuilder {
         crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyFluentBuilder::new(self.handle.clone())
     }
 }

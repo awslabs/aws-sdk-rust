@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueFluentBuilder::set_name): <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
     /// - On success, responds with [`DeleteGameSessionQueueOutput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueOutput)
     /// - On failure, responds with [`SdkError<DeleteGameSessionQueueError>`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueError)
-    pub fn delete_game_session_queue(
-        &self,
-    ) -> crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueFluentBuilder
-    {
+    pub fn delete_game_session_queue(&self) -> crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueFluentBuilder {
         crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl SearchQuickConnectsFluentBuilder {
         }
     }
     /// Access the SearchQuickConnects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_quick_connects::builders::SearchQuickConnectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_quick_connects::builders::SearchQuickConnectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl SearchQuickConnectsFluentBuilder {
             crate::operation::search_quick_connects::SearchQuickConnects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quick_connects::SearchQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quick_connects::SearchQuickConnectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl SearchQuickConnectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl SearchQuickConnectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_quick_connects::SearchQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quick_connects::SearchQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quick_connects::SearchQuickConnectsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl SearchQuickConnectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_quick_connects::SearchQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quick_connects::SearchQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quick_connects::SearchQuickConnectsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl SearchQuickConnectsFluentBuilder {
             crate::operation::search_quick_connects::SearchQuickConnects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quick_connects::SearchQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quick_connects::SearchQuickConnectsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_quick_connects::paginator::SearchQuickConnectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_quick_connects::paginator::SearchQuickConnectsPaginator {
-        crate::operation::search_quick_connects::paginator::SearchQuickConnectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_quick_connects::paginator::SearchQuickConnectsPaginator {
+        crate::operation::search_quick_connects::paginator::SearchQuickConnectsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,17 +163,12 @@ impl SearchQuickConnectsFluentBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::QuickConnectSearchFilter>) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn get_search_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectSearchFilter> {
+    pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::QuickConnectSearchFilter> {
         self.inner.get_search_filter()
     }
     /// <p>The search criteria to be used to return quick connects.</p>
@@ -200,17 +177,12 @@ impl SearchQuickConnectsFluentBuilder {
         self
     }
     /// <p>The search criteria to be used to return quick connects.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::QuickConnectSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
     /// <p>The search criteria to be used to return quick connects.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::QuickConnectSearchCriteria> {
         self.inner.get_search_criteria()
     }
 }

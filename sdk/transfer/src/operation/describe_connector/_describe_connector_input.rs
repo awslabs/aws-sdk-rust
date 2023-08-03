@@ -15,17 +15,14 @@ impl DescribeConnectorInput {
 }
 impl DescribeConnectorInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
-    pub fn builder() -> crate::operation::describe_connector::builders::DescribeConnectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_connector::builders::DescribeConnectorInputBuilder {
         crate::operation::describe_connector::builders::DescribeConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DescribeConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connector::DescribeConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connector::DescribeConnectorInput {
-                connector_id: self.connector_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_connector::DescribeConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_connector::DescribeConnectorInput {
+            connector_id: self.connector_id,
+        })
     }
 }

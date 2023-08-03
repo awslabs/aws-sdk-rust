@@ -84,10 +84,7 @@ impl DiskImageDescriptionBuilder {
         self
     }
     /// <p>The disk image format.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.format = input;
         self
     }
@@ -97,19 +94,13 @@ impl DiskImageDescriptionBuilder {
     }
     /// <p>A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-    pub fn import_manifest_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_manifest_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_manifest_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-    pub fn set_import_manifest_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_manifest_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_manifest_url = input;
         self
     }

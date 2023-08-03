@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`transform_ids(Option<Vec<String>>)`](crate::operation::list_ml_transforms::ListMlTransformsOutput::transform_ids): <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ml_transforms::ListMlTransformsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
     /// - On failure, responds with [`SdkError<ListMLTransformsError>`](crate::operation::list_ml_transforms::ListMLTransformsError)
-    pub fn list_ml_transforms(
-        &self,
-    ) -> crate::operation::list_ml_transforms::builders::ListMLTransformsFluentBuilder {
-        crate::operation::list_ml_transforms::builders::ListMLTransformsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ml_transforms(&self) -> crate::operation::list_ml_transforms::builders::ListMLTransformsFluentBuilder {
+        crate::operation::list_ml_transforms::builders::ListMLTransformsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl StartModelPackagingJobInput {
         self.job_name.as_deref()
     }
     /// <p>The configuration for the model packaging job. </p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackagingConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ModelPackagingConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>A description for the model packaging job. </p>
@@ -56,18 +54,14 @@ impl StartModelPackagingJobInput {
 }
 impl StartModelPackagingJobInput {
     /// Creates a new builder-style object to manufacture [`StartModelPackagingJobInput`](crate::operation::start_model_packaging_job::StartModelPackagingJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder {
         crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartModelPackagingJobInput`](crate::operation::start_model_packaging_job::StartModelPackagingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartModelPackagingJobInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
@@ -92,18 +86,12 @@ impl StartModelPackagingJobInputBuilder {
         &self.project_name
     }
     /// <p> The version of the model within the project that you want to package. </p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of the model within the project that you want to package. </p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -131,17 +119,12 @@ impl StartModelPackagingJobInputBuilder {
         self
     }
     /// <p>The configuration for the model packaging job. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackagingConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ModelPackagingConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration for the model packaging job. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
         &self.configuration
     }
     /// <p>A description for the model packaging job. </p>
@@ -185,15 +168,13 @@ impl StartModelPackagingJobInputBuilder {
         crate::operation::start_model_packaging_job::StartModelPackagingJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_model_packaging_job::StartModelPackagingJobInput {
-                project_name: self.project_name,
-                model_version: self.model_version,
-                job_name: self.job_name,
-                configuration: self.configuration,
-                description: self.description,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_model_packaging_job::StartModelPackagingJobInput {
+            project_name: self.project_name,
+            model_version: self.model_version,
+            job_name: self.job_name,
+            configuration: self.configuration,
+            description: self.description,
+            client_token: self.client_token,
+        })
     }
 }

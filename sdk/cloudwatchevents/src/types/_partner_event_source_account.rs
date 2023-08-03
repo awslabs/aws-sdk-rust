@@ -44,9 +44,7 @@ impl PartnerEventSourceAccount {
 
 /// A builder for [`PartnerEventSourceAccount`](crate::types::PartnerEventSourceAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartnerEventSourceAccountBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +72,7 @@ impl PartnerEventSourceAccountBuilder {
         self
     }
     /// <p>The date and time the event source was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -91,10 +86,7 @@ impl PartnerEventSourceAccountBuilder {
         self
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
@@ -108,10 +100,7 @@ impl PartnerEventSourceAccountBuilder {
         self
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EventSourceState>) -> Self {
         self.state = input;
         self
     }

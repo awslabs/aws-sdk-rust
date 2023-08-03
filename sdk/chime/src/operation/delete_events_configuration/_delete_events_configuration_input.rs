@@ -22,16 +22,14 @@ impl DeleteEventsConfigurationInput {
 }
 impl DeleteEventsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventsConfigurationInput`](crate::operation::delete_events_configuration::DeleteEventsConfigurationInput).
-    pub fn builder() -> crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationInputBuilder {
         crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventsConfigurationInput`](crate::operation::delete_events_configuration::DeleteEventsConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventsConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DeleteEventsConfigurationInputBuilder {
         crate::operation::delete_events_configuration::DeleteEventsConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_events_configuration::DeleteEventsConfigurationInput {
-                account_id: self.account_id,
-                bot_id: self.bot_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_events_configuration::DeleteEventsConfigurationInput {
+            account_id: self.account_id,
+            bot_id: self.bot_id,
+        })
     }
 }

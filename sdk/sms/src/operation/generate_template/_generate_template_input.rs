@@ -22,17 +22,14 @@ impl GenerateTemplateInput {
 }
 impl GenerateTemplateInput {
     /// Creates a new builder-style object to manufacture [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
-    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateInputBuilder {
         crate::operation::generate_template::builders::GenerateTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateTemplateInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_format: ::std::option::Option<crate::types::OutputFormat>,
@@ -58,10 +55,7 @@ impl GenerateTemplateInputBuilder {
         self
     }
     /// <p>The format for generating the CloudFormation template.</p>
-    pub fn set_template_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_template_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.template_format = input;
         self
     }
@@ -72,10 +66,7 @@ impl GenerateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_template::GenerateTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::generate_template::GenerateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_template::GenerateTemplateInput {
             app_id: self.app_id,
             template_format: self.template_format,

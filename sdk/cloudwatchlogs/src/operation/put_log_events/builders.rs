@@ -10,10 +10,7 @@ impl PutLogEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_log_events::PutLogEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_log_events::PutLogEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_log_events::PutLogEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_log_events();
         fluent_builder.inner = self;
@@ -53,9 +50,7 @@ impl PutLogEventsFluentBuilder {
         }
     }
     /// Access the PutLogEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_log_events::builders::PutLogEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_log_events::builders::PutLogEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -77,10 +72,7 @@ impl PutLogEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -131,18 +123,12 @@ impl PutLogEventsFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -151,18 +137,12 @@ impl PutLogEventsFluentBuilder {
         self.inner.get_log_group_name()
     }
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_stream_name(input.into());
         self
     }
     /// <p>The name of the log stream.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_stream_name(input);
         self
     }
@@ -180,36 +160,25 @@ impl PutLogEventsFluentBuilder {
         self
     }
     /// <p>The log events.</p>
-    pub fn set_log_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>,
-    ) -> Self {
+    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>) -> Self {
         self.inner = self.inner.set_log_events(input);
         self
     }
     /// <p>The log events.</p>
-    pub fn get_log_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
+    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
         self.inner.get_log_events()
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
-    pub fn sequence_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_token(input.into());
         self
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
-    pub fn set_sequence_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_token(input);
         self
     }

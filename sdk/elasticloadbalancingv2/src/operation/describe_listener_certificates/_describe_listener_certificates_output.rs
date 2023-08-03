@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeListenerCertificatesOutput {
 }
 impl DescribeListenerCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerCertificatesOutput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput).
-    pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesOutputBuilder {
         crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenerCertificatesOutput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenerCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeListenerCertificatesOutputBuilder {
         self
     }
     /// <p>Information about the certificates.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>Information about the certificates.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -93,9 +86,7 @@ impl DescribeListenerCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeListenerCertificatesOutput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput {
+    pub fn build(self) -> crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput {
         crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput {
             certificates: self.certificates,
             next_marker: self.next_marker,

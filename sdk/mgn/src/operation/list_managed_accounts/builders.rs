@@ -37,9 +37,7 @@ impl ListManagedAccountsFluentBuilder {
         }
     }
     /// Access the ListManagedAccounts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_managed_accounts::builders::ListManagedAccountsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_managed_accounts::builders::ListManagedAccountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListManagedAccountsFluentBuilder {
             crate::operation::list_managed_accounts::ListManagedAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_accounts::ListManagedAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_accounts::ListManagedAccountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListManagedAccountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListManagedAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_accounts::ListManagedAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_accounts::ListManagedAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_accounts::ListManagedAccountsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListManagedAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_accounts::ListManagedAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_accounts::ListManagedAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_accounts::ListManagedAccountsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListManagedAccountsFluentBuilder {
             crate::operation::list_managed_accounts::ListManagedAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_accounts::ListManagedAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_accounts::ListManagedAccountsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_accounts::paginator::ListManagedAccountsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_managed_accounts::paginator::ListManagedAccountsPaginator {
-        crate::operation::list_managed_accounts::paginator::ListManagedAccountsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_managed_accounts::paginator::ListManagedAccountsPaginator {
+        crate::operation::list_managed_accounts::paginator::ListManagedAccountsPaginator::new(self.handle, self.inner)
     }
     /// <p>List managed accounts request max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {

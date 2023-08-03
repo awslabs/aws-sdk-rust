@@ -5,15 +5,12 @@
 pub struct DescribeEntitiesDetectionV2JobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEntitiesDetectionV2JobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribeEntitiesDetectionV2JobOutput 
 }
 impl DescribeEntitiesDetectionV2JobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobOutput`](crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput).
-    pub fn builder() -> crate::operation::describe_entities_detection_v2_job::builders::DescribeEntitiesDetectionV2JobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_entities_detection_v2_job::builders::DescribeEntitiesDetectionV2JobOutputBuilder {
         crate::operation::describe_entities_detection_v2_job::builders::DescribeEntitiesDetectionV2JobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionV2JobOutputBuilder {
-    pub(crate) comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEntitiesDetectionV2JobOutputBuilder {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
+    pub fn comprehend_medical_async_job_properties(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
         self.comprehend_medical_async_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribeEntitiesDetectionV2JobOutputBuilder {
         self
     }
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn get_comprehend_medical_async_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn get_comprehend_medical_async_job_properties(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
         &self.comprehend_medical_async_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,7 @@ impl DescribeEntitiesDetectionV2JobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEntitiesDetectionV2JobOutput`](crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput
-    {
+    pub fn build(self) -> crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput {
         crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput {
             comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties,
             _request_id: self._request_id,

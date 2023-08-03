@@ -26,7 +26,7 @@ impl DeleteElasticsearchDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder,
+    inner: crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder,
 }
 impl DeleteElasticsearchDomainFluentBuilder {
     /// Creates a new `DeleteElasticsearchDomain`.
@@ -37,7 +37,7 @@ impl DeleteElasticsearchDomainFluentBuilder {
         }
     }
     /// Access the DeleteElasticsearchDomain as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteElasticsearchDomainFluentBuilder {
             crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteElasticsearchDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteElasticsearchDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteElasticsearchDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteElasticsearchDomainFluentBuilder {
             crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError>,
     > {
         self.customize_middleware().await
     }

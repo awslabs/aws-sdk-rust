@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InProgressTableRestoreQuotaExceededFault {
     }
 }
 impl ::std::error::Error for InProgressTableRestoreQuotaExceededFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InProgressTableRestoreQuotaExceededFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InProgressTableRestoreQuotaExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InProgressTableRestoreQuotaExceededFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InProgressTableRestoreQuotaExceededFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InProgressTableRestoreQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`InProgressTableRestoreQuotaExceededFault`](crate::types::error::InProgressTableRestoreQuotaExceededFault).
-    pub fn builder(
-    ) -> crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder {
+    pub fn builder() -> crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder {
         crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder::default()
     }
 }
 
 /// A builder for [`InProgressTableRestoreQuotaExceededFault`](crate::types::error::InProgressTableRestoreQuotaExceededFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InProgressTableRestoreQuotaExceededFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InProgressTableRestoreQuotaExceededFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

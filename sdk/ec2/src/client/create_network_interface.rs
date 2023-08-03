@@ -23,10 +23,7 @@ impl super::Client {
     ///   - [`network_interface(Option<NetworkInterface>)`](crate::operation::create_network_interface::CreateNetworkInterfaceOutput::network_interface): <p>Information about the network interface.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_network_interface::CreateNetworkInterfaceOutput::client_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkInterfaceError>`](crate::operation::create_network_interface::CreateNetworkInterfaceError)
-    pub fn create_network_interface(
-        &self,
-    ) -> crate::operation::create_network_interface::builders::CreateNetworkInterfaceFluentBuilder
-    {
+    pub fn create_network_interface(&self) -> crate::operation::create_network_interface::builders::CreateNetworkInterfaceFluentBuilder {
         crate::operation::create_network_interface::builders::CreateNetworkInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

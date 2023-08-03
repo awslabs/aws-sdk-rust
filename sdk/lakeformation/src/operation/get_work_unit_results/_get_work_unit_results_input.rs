@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for GetWorkUnitResultsInput {
 }
 impl GetWorkUnitResultsInput {
     /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsInput`](crate::operation::get_work_unit_results::GetWorkUnitResultsInput).
-    pub fn builder(
-    ) -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder {
+    pub fn builder() -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder {
         crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder::default()
     }
 }
@@ -82,18 +81,12 @@ impl GetWorkUnitResultsInputBuilder {
         &self.work_unit_id
     }
     /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
-    pub fn work_unit_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn work_unit_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_unit_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
-    pub fn set_work_unit_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_work_unit_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_unit_token = input;
         self
     }
@@ -104,17 +97,13 @@ impl GetWorkUnitResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkUnitResultsInput`](crate::operation::get_work_unit_results::GetWorkUnitResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_work_unit_results::GetWorkUnitResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_work_unit_results::GetWorkUnitResultsInput {
-                query_id: self.query_id,
-                work_unit_id: self.work_unit_id,
-                work_unit_token: self.work_unit_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_work_unit_results::GetWorkUnitResultsInput {
+            query_id: self.query_id,
+            work_unit_id: self.work_unit_id,
+            work_unit_token: self.work_unit_token,
+        })
     }
 }
 impl ::std::fmt::Debug for GetWorkUnitResultsInputBuilder {

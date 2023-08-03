@@ -31,8 +31,7 @@ impl ModifySpotFleetRequestInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySpotFleetRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder,
+    inner: crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder,
 }
 impl ModifySpotFleetRequestFluentBuilder {
     /// Creates a new `ModifySpotFleetRequest`.
@@ -43,10 +42,7 @@ impl ModifySpotFleetRequestFluentBuilder {
         }
     }
     /// Access the ModifySpotFleetRequest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl ModifySpotFleetRequestFluentBuilder {
             crate::operation::modify_spot_fleet_request::ModifySpotFleetRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl ModifySpotFleetRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl ModifySpotFleetRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl ModifySpotFleetRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError>,
     > {
         self.send_middleware().await
     }
@@ -123,35 +110,25 @@ impl ModifySpotFleetRequestFluentBuilder {
             crate::operation::modify_spot_fleet_request::ModifySpotFleetRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        mut self,
-        input: crate::types::ExcessCapacityTerminationPolicy,
-    ) -> Self {
+    pub fn excess_capacity_termination_policy(mut self, input: crate::types::ExcessCapacityTerminationPolicy) -> Self {
         self.inner = self.inner.excess_capacity_termination_policy(input);
         self
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn set_excess_capacity_termination_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
-    ) -> Self {
+    pub fn set_excess_capacity_termination_policy(mut self, input: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>) -> Self {
         self.inner = self.inner.set_excess_capacity_termination_policy(input);
         self
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn get_excess_capacity_termination_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExcessCapacityTerminationPolicy> {
+    pub fn get_excess_capacity_termination_policy(&self) -> &::std::option::Option<crate::types::ExcessCapacityTerminationPolicy> {
         self.inner.get_excess_capacity_termination_policy()
     }
     /// Appends an item to `LaunchTemplateConfigs`.
@@ -164,32 +141,21 @@ impl ModifySpotFleetRequestFluentBuilder {
         self
     }
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
-    pub fn set_launch_template_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
-    ) -> Self {
+    pub fn set_launch_template_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>) -> Self {
         self.inner = self.inner.set_launch_template_configs(input);
         self
     }
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
-    pub fn get_launch_template_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>> {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>> {
         self.inner.get_launch_template_configs()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_fleet_request_id(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_id(input);
         self
     }

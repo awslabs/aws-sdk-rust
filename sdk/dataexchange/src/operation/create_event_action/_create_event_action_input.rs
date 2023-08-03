@@ -22,17 +22,14 @@ impl CreateEventActionInput {
 }
 impl CreateEventActionInput {
     /// Creates a new builder-style object to manufacture [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
-    pub fn builder(
-    ) -> crate::operation::create_event_action::builders::CreateEventActionInputBuilder {
+    pub fn builder() -> crate::operation::create_event_action::builders::CreateEventActionInputBuilder {
         crate::operation::create_event_action::builders::CreateEventActionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventActionInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) event: ::std::option::Option<crate::types::Event>,
@@ -69,15 +66,10 @@ impl CreateEventActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_event_action::CreateEventActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_event_action::CreateEventActionInput {
-                action: self.action,
-                event: self.event,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_event_action::CreateEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_event_action::CreateEventActionInput {
+            action: self.action,
+            event: self.event,
+        })
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreatePermissionOutput {
 }
 impl CreatePermissionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
-    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionOutputBuilder {
         crate::operation::create_permission::builders::CreatePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionOutputBuilder {
     _request_id: Option<String>,
 }

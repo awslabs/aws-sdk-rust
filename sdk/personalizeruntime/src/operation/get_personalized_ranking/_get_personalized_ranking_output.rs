@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetPersonalizedRankingOutput {
 }
 impl GetPersonalizedRankingOutput {
     /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingOutput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput).
-    pub fn builder(
-    ) -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingOutputBuilder {
         crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPersonalizedRankingOutput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPersonalizedRankingOutputBuilder {
-    pub(crate) personalized_ranking:
-        ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
+    pub(crate) personalized_ranking: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,32 +54,21 @@ impl GetPersonalizedRankingOutputBuilder {
         self
     }
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    pub fn set_personalized_ranking(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
-    ) -> Self {
+    pub fn set_personalized_ranking(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>) -> Self {
         self.personalized_ranking = input;
         self
     }
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    pub fn get_personalized_ranking(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
+    pub fn get_personalized_ranking(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
         &self.personalized_ranking
     }
     /// <p>The ID of the recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateResolverRuleOutput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput) with field(s):
     ///   - [`resolver_rule_association(Option<ResolverRuleAssociation>)`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput::resolver_rule_association): <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DisassociateResolverRuleError>`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError)
-    pub fn disassociate_resolver_rule(
-        &self,
-    ) -> crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleFluentBuilder
-    {
+    pub fn disassociate_resolver_rule(&self) -> crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleFluentBuilder {
         crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleFluentBuilder::new(self.handle.clone())
     }
 }

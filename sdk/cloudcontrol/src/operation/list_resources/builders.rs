@@ -10,10 +10,7 @@ impl ListResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_resources::ListResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources::ListResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_resources();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListResourcesFluentBuilder {
         }
     }
     /// Access the ListResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl ListResourcesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resources::paginator::ListResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
-        crate::operation::list_resources::paginator::ListResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
+        crate::operation::list_resources::paginator::ListResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the resource type.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,18 +128,12 @@ impl ListResourcesFluentBuilder {
         self.inner.get_type_name()
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_version_id(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_version_id(input);
         self
     }
@@ -209,18 +190,12 @@ impl ListResourcesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The resource model to use to select the resources to return.</p>
-    pub fn resource_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_model(input.into());
         self
     }
     /// <p>The resource model to use to select the resources to return.</p>
-    pub fn set_resource_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_model(input);
         self
     }

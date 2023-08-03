@@ -22,18 +22,14 @@ impl DescribeRuntimeVersionsInput {
 }
 impl DescribeRuntimeVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsInput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder {
         crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuntimeVersionsInput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuntimeVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl DescribeRuntimeVersionsInputBuilder {
         crate::operation::describe_runtime_versions::DescribeRuntimeVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_runtime_versions::DescribeRuntimeVersionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_runtime_versions::DescribeRuntimeVersionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

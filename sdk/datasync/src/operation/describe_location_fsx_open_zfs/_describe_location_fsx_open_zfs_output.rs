@@ -51,16 +51,14 @@ impl ::aws_http::request_id::RequestId for DescribeLocationFsxOpenZfsOutput {
 }
 impl DescribeLocationFsxOpenZfsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsOutput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput).
-    pub fn builder() -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsOutputBuilder {
         crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxOpenZfsOutput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
@@ -106,27 +104,19 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
@@ -149,10 +139,7 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
         self
     }
     /// <p>The time that the FSx for OpenZFS location was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -170,9 +157,7 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsOutput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput {
+    pub fn build(self) -> crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput {
         crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput {
             location_arn: self.location_arn,
             location_uri: self.location_uri,

@@ -37,10 +37,7 @@ impl UpdateResolverEndpointFluentBuilder {
         }
     }
     /// Access the UpdateResolverEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateResolverEndpointFluentBuilder {
             crate::operation::update_resolver_endpoint::UpdateResolverEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateResolverEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateResolverEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateResolverEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateResolverEndpointFluentBuilder {
             crate::operation::update_resolver_endpoint::UpdateResolverEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
     }
@@ -165,18 +145,13 @@ impl UpdateResolverEndpointFluentBuilder {
     }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    pub fn set_resolver_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpointType>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_type(input);
         self
     }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    pub fn get_resolver_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+    pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         self.inner.get_resolver_endpoint_type()
     }
     /// Appends an item to `UpdateIpAddresses`.
@@ -189,17 +164,12 @@ impl UpdateResolverEndpointFluentBuilder {
         self
     }
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
-    pub fn set_update_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
-    ) -> Self {
+    pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>) -> Self {
         self.inner = self.inner.set_update_ip_addresses(input);
         self
     }
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
-    pub fn get_update_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
+    pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
         self.inner.get_update_ip_addresses()
     }
 }

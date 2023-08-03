@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteServiceProfileOutput {
 }
 impl DeleteServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::operation::delete_service_profile::DeleteServiceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_profile::builders::DeleteServiceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::delete_service_profile::builders::DeleteServiceProfileOutputBuilder {
         crate::operation::delete_service_profile::builders::DeleteServiceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceProfileOutput`](crate::operation::delete_service_profile::DeleteServiceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceProfileOutputBuilder {
     _request_id: Option<String>,
 }

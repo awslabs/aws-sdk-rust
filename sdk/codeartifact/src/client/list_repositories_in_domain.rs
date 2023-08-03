@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainOutput::repositories): <p> The returned list of repositories. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListRepositoriesInDomainError>`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainError)
-    pub fn list_repositories_in_domain(&self) -> crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainFluentBuilder{
+    pub fn list_repositories_in_domain(&self) -> crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainFluentBuilder {
         crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainFluentBuilder::new(self.handle.clone())
     }
 }

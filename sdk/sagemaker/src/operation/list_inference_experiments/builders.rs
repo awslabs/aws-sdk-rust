@@ -26,7 +26,7 @@ impl ListInferenceExperimentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInferenceExperimentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_inference_experiments::builders::ListInferenceExperimentsInputBuilder,
+    inner: crate::operation::list_inference_experiments::builders::ListInferenceExperimentsInputBuilder,
 }
 impl ListInferenceExperimentsFluentBuilder {
     /// Creates a new `ListInferenceExperiments`.
@@ -37,10 +37,7 @@ impl ListInferenceExperimentsFluentBuilder {
         }
     }
     /// Access the ListInferenceExperiments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_inference_experiments::builders::ListInferenceExperimentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_inference_experiments::builders::ListInferenceExperimentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListInferenceExperimentsFluentBuilder {
             crate::operation::list_inference_experiments::ListInferenceExperiments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_experiments::ListInferenceExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_experiments::ListInferenceExperimentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListInferenceExperimentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListInferenceExperimentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_inference_experiments::ListInferenceExperimentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_experiments::ListInferenceExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_experiments::ListInferenceExperimentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListInferenceExperimentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_inference_experiments::ListInferenceExperimentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_experiments::ListInferenceExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_experiments::ListInferenceExperimentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,34 +105,23 @@ impl ListInferenceExperimentsFluentBuilder {
             crate::operation::list_inference_experiments::ListInferenceExperiments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_experiments::ListInferenceExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_experiments::ListInferenceExperimentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator {
         crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator::new(self.handle, self.inner)
     }
     /// <p>Selects inference experiments whose names contain this name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Selects inference experiments whose names contain this name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -158,10 +135,7 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceExperimentType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -175,17 +149,12 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p> Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
     /// <p> Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
         self.inner.get_status_equals()
     }
     /// <p>Selects inference experiments which were created after this timestamp.</p>
@@ -194,10 +163,7 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p>Selects inference experiments which were created after this timestamp.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -211,10 +177,7 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p>Selects inference experiments which were created before this timestamp.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -228,17 +191,12 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p>Selects inference experiments which were last modified after this timestamp.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>Selects inference experiments which were last modified after this timestamp.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
@@ -247,17 +205,12 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>The column by which to sort the listed inference experiments.</p>
@@ -266,10 +219,7 @@ impl ListInferenceExperimentsFluentBuilder {
         self
     }
     /// <p>The column by which to sort the listed inference experiments.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortInferenceExperimentsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortInferenceExperimentsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

@@ -37,10 +37,7 @@ impl CreateEventIntegrationFluentBuilder {
         }
     }
     /// Access the CreateEventIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateEventIntegrationFluentBuilder {
             crate::operation::create_event_integration::CreateEventIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_integration::CreateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_integration::CreateEventIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateEventIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateEventIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_integration::CreateEventIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_integration::CreateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_integration::CreateEventIntegrationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateEventIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_integration::CreateEventIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_integration::CreateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_integration::CreateEventIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateEventIntegrationFluentBuilder {
             crate::operation::create_event_integration::CreateEventIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_integration::CreateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_integration::CreateEventIntegrationError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl CreateEventIntegrationFluentBuilder {
         self
     }
     /// <p>The event filter.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventFilter>,
-    ) -> Self {
+    pub fn set_event_filter(mut self, input: ::std::option::Option<crate::types::EventFilter>) -> Self {
         self.inner = self.inner.set_event_filter(input);
         self
     }
@@ -169,18 +152,12 @@ impl CreateEventIntegrationFluentBuilder {
         self.inner.get_event_filter()
     }
     /// <p>The EventBridge bus.</p>
-    pub fn event_bridge_bus(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bridge_bus(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bridge_bus(input.into());
         self
     }
     /// <p>The EventBridge bus.</p>
-    pub fn set_event_bridge_bus(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bridge_bus(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bridge_bus(input);
         self
     }
@@ -207,30 +184,17 @@ impl CreateEventIntegrationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

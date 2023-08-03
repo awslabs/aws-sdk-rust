@@ -10,10 +10,7 @@ impl ListExecutorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_executors::ListExecutorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_executors::ListExecutorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_executors::ListExecutorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_executors();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListExecutorsFluentBuilder {
         }
     }
     /// Access the ListExecutors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_executors::builders::ListExecutorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_executors::builders::ListExecutorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListExecutorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListExecutorsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_executors::paginator::ListExecutorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_executors::paginator::ListExecutorsPaginator {
-        crate::operation::list_executors::paginator::ListExecutorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_executors::paginator::ListExecutorsPaginator {
+        crate::operation::list_executors::paginator::ListExecutorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The session ID.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,10 +144,7 @@ impl ListExecutorsFluentBuilder {
     /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    pub fn set_executor_state_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutorState>,
-    ) -> Self {
+    pub fn set_executor_state_filter(mut self, input: ::std::option::Option<crate::types::ExecutorState>) -> Self {
         self.inner = self.inner.set_executor_state_filter(input);
         self
     }

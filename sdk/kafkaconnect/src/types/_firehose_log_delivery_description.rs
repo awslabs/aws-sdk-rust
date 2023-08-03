@@ -30,27 +30,19 @@ impl FirehoseLogDeliveryDescription {
 
 /// A builder for [`FirehoseLogDeliveryDescription`](crate::types::FirehoseLogDeliveryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirehoseLogDeliveryDescriptionBuilder {
     pub(crate) delivery_stream: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl FirehoseLogDeliveryDescriptionBuilder {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-    pub fn delivery_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-    pub fn set_delivery_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream = input;
         self
     }

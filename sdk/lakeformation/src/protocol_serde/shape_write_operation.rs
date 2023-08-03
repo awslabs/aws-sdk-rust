@@ -12,10 +12,7 @@ pub fn ser_write_operation(
     if let Some(var_3) = &input.delete_object {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DeleteObject").start_object();
-        crate::protocol_serde::shape_delete_object_input::ser_delete_object_input(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_delete_object_input::ser_delete_object_input(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

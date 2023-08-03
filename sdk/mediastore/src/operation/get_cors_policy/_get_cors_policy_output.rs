@@ -28,9 +28,7 @@ impl GetCorsPolicyOutput {
 
 /// A builder for [`GetCorsPolicyOutput`](crate::operation::get_cors_policy::GetCorsPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCorsPolicyOutputBuilder {
     pub(crate) cors_policy: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetCorsPolicyOutputBuilder {
         self
     }
     /// <p>The CORS policy assigned to the container.</p>
-    pub fn set_cors_policy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
-    ) -> Self {
+    pub fn set_cors_policy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>) -> Self {
         self.cors_policy = input;
         self
     }
     /// <p>The CORS policy assigned to the container.</p>
-    pub fn get_cors_policy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+    pub fn get_cors_policy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
         &self.cors_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

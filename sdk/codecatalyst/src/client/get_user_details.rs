@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`primary_email(Option<EmailAddress>)`](crate::operation::get_user_details::GetUserDetailsOutput::primary_email): <p>The email address provided by the user when they signed up.</p>
     ///   - [`version(Option<String>)`](crate::operation::get_user_details::GetUserDetailsOutput::version): <p></p>
     /// - On failure, responds with [`SdkError<GetUserDetailsError>`](crate::operation::get_user_details::GetUserDetailsError)
-    pub fn get_user_details(
-        &self,
-    ) -> crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder {
-        crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_user_details(&self) -> crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder {
+        crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::new(self.handle.clone())
     }
 }

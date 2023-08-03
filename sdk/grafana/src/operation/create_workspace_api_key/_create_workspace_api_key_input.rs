@@ -38,18 +38,14 @@ impl CreateWorkspaceApiKeyInput {
 }
 impl CreateWorkspaceApiKeyInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder {
         crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_role: ::std::option::Option<::std::string::String>,
@@ -119,17 +115,13 @@ impl CreateWorkspaceApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
-                key_name: self.key_name,
-                key_role: self.key_role,
-                seconds_to_live: self.seconds_to_live,
-                workspace_id: self.workspace_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
+            key_name: self.key_name,
+            key_role: self.key_role,
+            seconds_to_live: self.seconds_to_live,
+            workspace_id: self.workspace_id,
+        })
     }
 }

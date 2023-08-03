@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetQueryResultsOutput {
 }
 impl GetQueryResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
-    pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder {
         crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutputBuilder {
     pub(crate) update_count: ::std::option::Option<i64>,
     pub(crate) result_set: ::std::option::Option<crate::types::ResultSet>,

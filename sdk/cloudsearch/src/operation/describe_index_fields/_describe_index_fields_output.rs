@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
 }
 impl DescribeIndexFieldsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder {
-        crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder {
+        crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsOutputBuilder {
     pub(crate) index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeIndexFieldsOutputBuilder {
         self
     }
     /// <p>The index fields configured for the domain.</p>
-    pub fn set_index_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
-    ) -> Self {
+    pub fn set_index_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>) -> Self {
         self.index_fields = input;
         self
     }
     /// <p>The index fields configured for the domain.</p>
-    pub fn get_index_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>> {
+    pub fn get_index_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>> {
         &self.index_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

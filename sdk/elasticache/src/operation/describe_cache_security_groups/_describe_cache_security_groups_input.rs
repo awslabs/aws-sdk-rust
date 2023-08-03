@@ -34,16 +34,14 @@ impl DescribeCacheSecurityGroupsInput {
 }
 impl DescribeCacheSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsInput`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput).
-    pub fn builder() -> crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder {
         crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheSecurityGroupsInput`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsInputBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -51,18 +49,12 @@ pub struct DescribeCacheSecurityGroupsInputBuilder {
 }
 impl DescribeCacheSecurityGroupsInputBuilder {
     /// <p>The name of the cache security group to return details for.</p>
-    pub fn cache_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache security group to return details for.</p>
-    pub fn set_cache_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_security_group_name = input;
         self
     }
@@ -111,12 +103,10 @@ impl DescribeCacheSecurityGroupsInputBuilder {
         crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput {
-                cache_security_group_name: self.cache_security_group_name,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput {
+            cache_security_group_name: self.cache_security_group_name,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

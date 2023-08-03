@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePullRequestOutput`](crate::operation::create_pull_request::CreatePullRequestOutput) with field(s):
     ///   - [`pull_request(Option<PullRequest>)`](crate::operation::create_pull_request::CreatePullRequestOutput::pull_request): <p>Information about the newly created pull request.</p>
     /// - On failure, responds with [`SdkError<CreatePullRequestError>`](crate::operation::create_pull_request::CreatePullRequestError)
-    pub fn create_pull_request(
-        &self,
-    ) -> crate::operation::create_pull_request::builders::CreatePullRequestFluentBuilder {
-        crate::operation::create_pull_request::builders::CreatePullRequestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pull_request(&self) -> crate::operation::create_pull_request::builders::CreatePullRequestFluentBuilder {
+        crate::operation::create_pull_request::builders::CreatePullRequestFluentBuilder::new(self.handle.clone())
     }
 }

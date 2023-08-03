@@ -52,9 +52,7 @@ impl SignOutput {
 
 /// A builder for [`SignOutput`](crate::operation::sign::SignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignOutputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) signature: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -111,17 +109,12 @@ impl SignOutputBuilder {
         self
     }
     /// <p>The signing algorithm that was used to sign the message.</p>
-    pub fn set_signing_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithmSpec>) -> Self {
         self.signing_algorithm = input;
         self
     }
     /// <p>The signing algorithm that was used to sign the message.</p>
-    pub fn get_signing_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
+    pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
         &self.signing_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

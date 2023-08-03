@@ -33,9 +33,7 @@ impl DeletePipeOutput {
         self.name.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RequestedPipeStateDescribeResponse> {
+    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::RequestedPipeStateDescribeResponse> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
@@ -65,14 +63,11 @@ impl DeletePipeOutput {
 
 /// A builder for [`DeletePipeOutput`](crate::operation::delete_pipe::DeletePipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePipeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) desired_state:
-        ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
+    pub(crate) desired_state: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
     pub(crate) current_state: ::std::option::Option<crate::types::PipeState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -108,25 +103,17 @@ impl DeletePipeOutputBuilder {
         &self.name
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(
-        mut self,
-        input: crate::types::RequestedPipeStateDescribeResponse,
-    ) -> Self {
+    pub fn desired_state(mut self, input: crate::types::RequestedPipeStateDescribeResponse) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>) -> Self {
         self.desired_state = input;
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn get_desired_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestedPipeStateDescribeResponse> {
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::RequestedPipeStateDescribeResponse> {
         &self.desired_state
     }
     /// <p>The state the pipe is in.</p>
@@ -135,10 +122,7 @@ impl DeletePipeOutputBuilder {
         self
     }
     /// <p>The state the pipe is in.</p>
-    pub fn set_current_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeState>,
-    ) -> Self {
+    pub fn set_current_state(mut self, input: ::std::option::Option<crate::types::PipeState>) -> Self {
         self.current_state = input;
         self
     }
@@ -152,10 +136,7 @@ impl DeletePipeOutputBuilder {
         self
     }
     /// <p>The time the pipe was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -169,10 +150,7 @@ impl DeletePipeOutputBuilder {
         self
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

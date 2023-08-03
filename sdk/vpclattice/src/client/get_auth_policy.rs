@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_auth_policy::GetAuthPolicyOutput::created_at): <p>The date and time that the auth policy was created, specified in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_auth_policy::GetAuthPolicyOutput::last_updated_at): <p>The date and time that the auth policy was last updated, specified in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetAuthPolicyError>`](crate::operation::get_auth_policy::GetAuthPolicyError)
-    pub fn get_auth_policy(
-        &self,
-    ) -> crate::operation::get_auth_policy::builders::GetAuthPolicyFluentBuilder {
-        crate::operation::get_auth_policy::builders::GetAuthPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_auth_policy(&self) -> crate::operation::get_auth_policy::builders::GetAuthPolicyFluentBuilder {
+        crate::operation::get_auth_policy::builders::GetAuthPolicyFluentBuilder::new(self.handle.clone())
     }
 }

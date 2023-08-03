@@ -10,9 +10,7 @@ pub struct AwsWafv2ActionBlockDetails {
 }
 impl AwsWafv2ActionBlockDetails {
     /// <p> Defines a custom response for the web request. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    pub fn custom_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2CustomResponseDetails> {
+    pub fn custom_response(&self) -> ::std::option::Option<&crate::types::AwsWafv2CustomResponseDetails> {
         self.custom_response.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl AwsWafv2ActionBlockDetails {
 
 /// A builder for [`AwsWafv2ActionBlockDetails`](crate::types::AwsWafv2ActionBlockDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2ActionBlockDetailsBuilder {
     pub(crate) custom_response: ::std::option::Option<crate::types::AwsWafv2CustomResponseDetails>,
 }
@@ -38,17 +34,12 @@ impl AwsWafv2ActionBlockDetailsBuilder {
         self
     }
     /// <p> Defines a custom response for the web request. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    pub fn set_custom_response(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2CustomResponseDetails>,
-    ) -> Self {
+    pub fn set_custom_response(mut self, input: ::std::option::Option<crate::types::AwsWafv2CustomResponseDetails>) -> Self {
         self.custom_response = input;
         self
     }
     /// <p> Defines a custom response for the web request. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    pub fn get_custom_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafv2CustomResponseDetails> {
+    pub fn get_custom_response(&self) -> &::std::option::Option<crate::types::AwsWafv2CustomResponseDetails> {
         &self.custom_response
     }
     /// Consumes the builder and constructs a [`AwsWafv2ActionBlockDetails`](crate::types::AwsWafv2ActionBlockDetails).

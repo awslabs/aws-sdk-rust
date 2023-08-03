@@ -52,13 +52,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GrantOperation {
     #[allow(missing_docs)] // documentation missing in model
@@ -105,9 +99,7 @@ impl ::std::convert::From<&str> for GrantOperation {
             "Encrypt" => GrantOperation::Encrypt,
             "GenerateDataKey" => GrantOperation::GenerateDataKey,
             "GenerateDataKeyPair" => GrantOperation::GenerateDataKeyPair,
-            "GenerateDataKeyPairWithoutPlaintext" => {
-                GrantOperation::GenerateDataKeyPairWithoutPlaintext
-            }
+            "GenerateDataKeyPairWithoutPlaintext" => GrantOperation::GenerateDataKeyPairWithoutPlaintext,
             "GenerateDataKeyWithoutPlaintext" => GrantOperation::GenerateDataKeyWithoutPlaintext,
             "GenerateMac" => GrantOperation::GenerateMac,
             "GetPublicKey" => GrantOperation::GetPublicKey,
@@ -117,9 +109,7 @@ impl ::std::convert::From<&str> for GrantOperation {
             "Sign" => GrantOperation::Sign,
             "Verify" => GrantOperation::Verify,
             "VerifyMac" => GrantOperation::VerifyMac,
-            other => {
-                GrantOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => GrantOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -140,9 +130,7 @@ impl GrantOperation {
             GrantOperation::Encrypt => "Encrypt",
             GrantOperation::GenerateDataKey => "GenerateDataKey",
             GrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
-            GrantOperation::GenerateDataKeyPairWithoutPlaintext => {
-                "GenerateDataKeyPairWithoutPlaintext"
-            }
+            GrantOperation::GenerateDataKeyPairWithoutPlaintext => "GenerateDataKeyPairWithoutPlaintext",
             GrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
             GrantOperation::GenerateMac => "GenerateMac",
             GrantOperation::GetPublicKey => "GetPublicKey",

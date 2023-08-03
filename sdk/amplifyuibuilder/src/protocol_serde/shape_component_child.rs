@@ -16,10 +16,7 @@ pub fn ser_component_child(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_component_property::ser_component_property(
-                    &mut object_7,
-                    value_6,
-                )?;
+                crate::protocol_serde::shape_component_property::ser_component_property(&mut object_7, value_6)?;
                 object_7.finish();
             }
         }
@@ -31,10 +28,7 @@ pub fn ser_component_child(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_component_child::ser_component_child(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_component_child::ser_component_child(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -47,10 +41,7 @@ pub fn ser_component_child(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_component_event::ser_component_event(
-                    &mut object_16,
-                    value_15,
-                )?;
+                crate::protocol_serde::shape_component_event::ser_component_event(&mut object_16, value_15)?;
                 object_16.finish();
             }
         }
@@ -64,17 +55,9 @@ pub fn ser_component_child(
 
 pub(crate) fn de_component_child<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ComponentChild>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ComponentChild>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -84,68 +67,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "componentType" => {
-                                builder = builder.set_component_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "componentType" => {
+                            builder = builder.set_component_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "properties" => {
-                                builder = builder.set_properties(
-                                    crate::protocol_serde::shape_component_properties::de_component_properties(tokens)?
-                                );
-                            }
-                            "children" => {
-                                builder = builder.set_children(
-                                    crate::protocol_serde::shape_component_child_list::de_component_child_list(tokens)?
-                                );
-                            }
-                            "events" => {
-                                builder = builder.set_events(
-                                    crate::protocol_serde::shape_component_events::de_component_events(tokens)?
-                                );
-                            }
-                            "sourceId" => {
-                                builder = builder.set_source_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "properties" => {
+                            builder = builder.set_properties(crate::protocol_serde::shape_component_properties::de_component_properties(tokens)?);
+                        }
+                        "children" => {
+                            builder = builder.set_children(crate::protocol_serde::shape_component_child_list::de_component_child_list(tokens)?);
+                        }
+                        "events" => {
+                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(tokens)?);
+                        }
+                        "sourceId" => {
+                            builder = builder.set_source_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

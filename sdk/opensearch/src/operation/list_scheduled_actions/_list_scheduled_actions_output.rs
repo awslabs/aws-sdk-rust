@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListScheduledActionsOutput {
 }
 impl ListScheduledActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduledActionsOutput`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsOutputBuilder {
         crate::operation::list_scheduled_actions::builders::ListScheduledActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduledActionsOutput`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledActionsOutputBuilder {
-    pub(crate) scheduled_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
+    pub(crate) scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListScheduledActionsOutputBuilder {
         self
     }
     /// <p>A list of actions that are scheduled for the domain.</p>
-    pub fn set_scheduled_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
-    ) -> Self {
+    pub fn set_scheduled_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>) -> Self {
         self.scheduled_actions = input;
         self
     }
     /// <p>A list of actions that are scheduled for the domain.</p>
-    pub fn get_scheduled_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
+    pub fn get_scheduled_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
         &self.scheduled_actions
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

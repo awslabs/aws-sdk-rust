@@ -26,7 +26,7 @@ impl DeregisterGatewayInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder,
+    inner: crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder,
 }
 impl DeregisterGatewayInstanceFluentBuilder {
     /// Creates a new `DeregisterGatewayInstance`.
@@ -37,7 +37,7 @@ impl DeregisterGatewayInstanceFluentBuilder {
         }
     }
     /// Access the DeregisterGatewayInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeregisterGatewayInstanceFluentBuilder {
             crate::operation::deregister_gateway_instance::DeregisterGatewayInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeregisterGatewayInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeregisterGatewayInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeregisterGatewayInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeregisterGatewayInstanceFluentBuilder {
             crate::operation::deregister_gateway_instance::DeregisterGatewayInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeregisterGatewayInstanceFluentBuilder {
         self.inner.get_force()
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_instance_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }

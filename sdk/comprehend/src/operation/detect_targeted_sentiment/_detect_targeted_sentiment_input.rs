@@ -30,9 +30,7 @@ impl ::std::fmt::Debug for DetectTargetedSentimentInput {
 }
 impl DetectTargetedSentimentInput {
     /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentInput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput).
-    pub fn builder(
-    ) -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder {
         crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder::default()
     }
 }
@@ -65,10 +63,7 @@ impl DetectTargetedSentimentInputBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -83,12 +78,10 @@ impl DetectTargetedSentimentInputBuilder {
         crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput {
-                text: self.text,
-                language_code: self.language_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput {
+            text: self.text,
+            language_code: self.language_code,
+        })
     }
 }
 impl ::std::fmt::Debug for DetectTargetedSentimentInputBuilder {

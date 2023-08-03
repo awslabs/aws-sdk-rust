@@ -11,12 +11,10 @@ pub struct DescribeNotebookInstanceLifecycleConfigOutput {
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The shell script that runs only once, when you create a notebook instance.</p>
     #[doc(hidden)]
-    pub on_create:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub on_create: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
     #[doc(hidden)]
-    pub on_start:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub on_start: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -35,15 +33,11 @@ impl DescribeNotebookInstanceLifecycleConfigOutput {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
     /// <p>The shell script that runs only once, when you create a notebook instance.</p>
-    pub fn on_create(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
+    pub fn on_create(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
         self.on_create.as_deref()
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
-    pub fn on_start(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
+    pub fn on_start(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
         self.on_start.as_deref()
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
@@ -62,71 +56,51 @@ impl ::aws_http::request_id::RequestId for DescribeNotebookInstanceLifecycleConf
 }
 impl DescribeNotebookInstanceLifecycleConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotebookInstanceLifecycleConfigOutput`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput).
-    pub fn builder() -> crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigOutputBuilder{
+    pub fn builder() -> crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigOutputBuilder
+    {
         crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotebookInstanceLifecycleConfigOutput`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotebookInstanceLifecycleConfigOutputBuilder {
     pub(crate) notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) notebook_instance_lifecycle_config_name:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) on_create:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
-    pub(crate) on_start:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub(crate) notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
+    pub(crate) on_create: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub(crate) on_start: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn get_notebook_instance_lifecycle_config_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_arn
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn get_notebook_instance_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_name
     }
     /// Appends an item to `on_create`.
@@ -141,17 +115,12 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// <p>The shell script that runs only once, when you create a notebook instance.</p>
-    pub fn set_on_create(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
-    ) -> Self {
+    pub fn set_on_create(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>) -> Self {
         self.on_create = input;
         self
     }
     /// <p>The shell script that runs only once, when you create a notebook instance.</p>
-    pub fn get_on_create(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+    pub fn get_on_create(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
         &self.on_create
     }
     /// Appends an item to `on_start`.
@@ -166,17 +135,12 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
-    pub fn set_on_start(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
-    ) -> Self {
+    pub fn set_on_start(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>) -> Self {
         self.on_start = input;
         self
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
-    pub fn get_on_start(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+    pub fn get_on_start(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
         &self.on_start
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
@@ -185,10 +149,7 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -202,10 +163,7 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -223,20 +181,14 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceLifecycleConfigOutput`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput).
-    pub fn build(self) -> crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput{
+    pub fn build(self) -> crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput {
         crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput {
-            notebook_instance_lifecycle_config_arn: self.notebook_instance_lifecycle_config_arn
-            ,
-            notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name
-            ,
-            on_create: self.on_create
-            ,
-            on_start: self.on_start
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            creation_time: self.creation_time
-            ,
+            notebook_instance_lifecycle_config_arn: self.notebook_instance_lifecycle_config_arn,
+            notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name,
+            on_create: self.on_create,
+            on_start: self.on_start,
+            last_modified_time: self.last_modified_time,
+            creation_time: self.creation_time,
             _request_id: self._request_id,
         }
     }

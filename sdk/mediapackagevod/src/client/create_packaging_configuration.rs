@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`packaging_group_id(Option<String>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<CreatePackagingConfigurationError>`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationError)
-    pub fn create_packaging_configuration(&self) -> crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationFluentBuilder{
+    pub fn create_packaging_configuration(
+        &self,
+    ) -> crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationFluentBuilder {
         crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

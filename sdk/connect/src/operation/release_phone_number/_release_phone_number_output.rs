@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ReleasePhoneNumberOutput {
 }
 impl ReleasePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder {
+    pub fn builder() -> crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder {
         crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleasePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

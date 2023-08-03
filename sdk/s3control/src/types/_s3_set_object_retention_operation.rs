@@ -30,9 +30,7 @@ impl S3SetObjectRetentionOperation {
 
 /// A builder for [`S3SetObjectRetentionOperation`](crate::types::S3SetObjectRetentionOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SetObjectRetentionOperationBuilder {
     pub(crate) bypass_governance_retention: ::std::option::Option<bool>,
     pub(crate) retention: ::std::option::Option<crate::types::S3Retention>,
@@ -58,10 +56,7 @@ impl S3SetObjectRetentionOperationBuilder {
         self
     }
     /// <p>Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_retention(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Retention>,
-    ) -> Self {
+    pub fn set_retention(mut self, input: ::std::option::Option<crate::types::S3Retention>) -> Self {
         self.retention = input;
         self
     }

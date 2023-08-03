@@ -36,16 +36,14 @@ impl ProvisionPublicIpv4PoolCidrInput {
 }
 impl ProvisionPublicIpv4PoolCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionPublicIpv4PoolCidrInput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput).
-    pub fn builder() -> crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder{
+    pub fn builder() -> crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder {
         crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionPublicIpv4PoolCidrInput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionPublicIpv4PoolCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -116,13 +114,11 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                pool_id: self.pool_id,
-                netmask_length: self.netmask_length,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            pool_id: self.pool_id,
+            netmask_length: self.netmask_length,
+        })
     }
 }

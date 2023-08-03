@@ -22,34 +22,26 @@ impl DisassociateSkillFromSkillGroupInput {
 }
 impl DisassociateSkillFromSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSkillFromSkillGroupInput`](crate::operation::disassociate_skill_from_skill_group::DisassociateSkillFromSkillGroupInput).
-    pub fn builder() -> crate::operation::disassociate_skill_from_skill_group::builders::DisassociateSkillFromSkillGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_skill_from_skill_group::builders::DisassociateSkillFromSkillGroupInputBuilder {
         crate::operation::disassociate_skill_from_skill_group::builders::DisassociateSkillFromSkillGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSkillFromSkillGroupInput`](crate::operation::disassociate_skill_from_skill_group::DisassociateSkillFromSkillGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSkillFromSkillGroupInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSkillFromSkillGroupInputBuilder {
     /// <p>The unique identifier of a skill. Required.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a skill. Required.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -80,11 +72,9 @@ impl DisassociateSkillFromSkillGroupInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_skill_from_skill_group::DisassociateSkillFromSkillGroupInput {
-                skill_group_arn: self.skill_group_arn
-                ,
-                skill_id: self.skill_id
-                ,
-            }
+                skill_group_arn: self.skill_group_arn,
+                skill_id: self.skill_id,
+            },
         )
     }
 }

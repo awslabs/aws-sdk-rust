@@ -10,10 +10,7 @@ impl BatchGetReportsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_reports::BatchGetReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_reports::BatchGetReportsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_reports::BatchGetReportsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_reports();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetReportsFluentBuilder {
         }
     }
     /// Access the BatchGetReports as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_reports::builders::BatchGetReportsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_reports::builders::BatchGetReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetReportsFluentBuilder {
             crate::operation::batch_get_reports::BatchGetReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_reports::BatchGetReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_reports::BatchGetReportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_reports::BatchGetReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_reports::BatchGetReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_reports::BatchGetReportsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_reports::BatchGetReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_reports::BatchGetReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_reports::BatchGetReportsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetReportsFluentBuilder {
             crate::operation::batch_get_reports::BatchGetReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_reports::BatchGetReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_reports::BatchGetReportsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl BatchGetReportsFluentBuilder {
         self
     }
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    pub fn set_report_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_report_arns(input);
         self
     }
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    pub fn get_report_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_report_arns()
     }
 }

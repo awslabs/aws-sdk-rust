@@ -5,8 +5,7 @@
 pub struct PutApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
     #[doc(hidden)]
-    pub statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
     _request_id: Option<String>,
 }
 impl PutApplicationPolicyOutput {
@@ -22,20 +21,16 @@ impl ::aws_http::request_id::RequestId for PutApplicationPolicyOutput {
 }
 impl PutApplicationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutApplicationPolicyOutput`](crate::operation::put_application_policy::PutApplicationPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_application_policy::builders::PutApplicationPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_application_policy::builders::PutApplicationPolicyOutputBuilder {
         crate::operation::put_application_policy::builders::PutApplicationPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutApplicationPolicyOutput`](crate::operation::put_application_policy::PutApplicationPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutApplicationPolicyOutputBuilder {
-    pub(crate) statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
     _request_id: Option<String>,
 }
 impl PutApplicationPolicyOutputBuilder {
@@ -51,17 +46,12 @@ impl PutApplicationPolicyOutputBuilder {
         self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>) -> Self {
         self.statements = input;
         self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
         &self.statements
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

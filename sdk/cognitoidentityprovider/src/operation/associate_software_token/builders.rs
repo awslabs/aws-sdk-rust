@@ -40,10 +40,7 @@ impl AssociateSoftwareTokenFluentBuilder {
         }
     }
     /// Access the AssociateSoftwareToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_software_token::builders::AssociateSoftwareTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_software_token::builders::AssociateSoftwareTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl AssociateSoftwareTokenFluentBuilder {
             crate::operation::associate_software_token::AssociateSoftwareToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_software_token::AssociateSoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_software_token::AssociateSoftwareTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl AssociateSoftwareTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl AssociateSoftwareTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_software_token::AssociateSoftwareTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_software_token::AssociateSoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_software_token::AssociateSoftwareTokenError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl AssociateSoftwareTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_software_token::AssociateSoftwareTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_software_token::AssociateSoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_software_token::AssociateSoftwareTokenError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl AssociateSoftwareTokenFluentBuilder {
             crate::operation::associate_software_token::AssociateSoftwareToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_software_token::AssociateSoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_software_token::AssociateSoftwareTokenError>,
     > {
         self.customize_middleware().await
     }

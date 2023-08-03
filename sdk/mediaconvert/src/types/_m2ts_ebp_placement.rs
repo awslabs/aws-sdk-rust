@@ -38,13 +38,7 @@
 /// Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsEbpPlacement {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsEbpPlacement {
         match s {
             "VIDEO_AND_AUDIO_PIDS" => M2tsEbpPlacement::VideoAndAudioPids,
             "VIDEO_PID" => M2tsEbpPlacement::VideoPid,
-            other => {
-                M2tsEbpPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsEbpPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

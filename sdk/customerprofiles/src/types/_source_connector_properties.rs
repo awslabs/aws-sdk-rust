@@ -51,9 +51,7 @@ impl SourceConnectorProperties {
 
 /// A builder for [`SourceConnectorProperties`](crate::types::SourceConnectorProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceConnectorPropertiesBuilder {
     pub(crate) marketo: ::std::option::Option<crate::types::MarketoSourceProperties>,
     pub(crate) s3: ::std::option::Option<crate::types::S3SourceProperties>,
@@ -68,10 +66,7 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
-    pub fn set_marketo(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketoSourceProperties>,
-    ) -> Self {
+    pub fn set_marketo(mut self, input: ::std::option::Option<crate::types::MarketoSourceProperties>) -> Self {
         self.marketo = input;
         self
     }
@@ -85,10 +80,7 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SourceProperties>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3SourceProperties>) -> Self {
         self.s3 = input;
         self
     }
@@ -102,17 +94,12 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
-    pub fn set_salesforce(
-        mut self,
-        input: ::std::option::Option<crate::types::SalesforceSourceProperties>,
-    ) -> Self {
+    pub fn set_salesforce(mut self, input: ::std::option::Option<crate::types::SalesforceSourceProperties>) -> Self {
         self.salesforce = input;
         self
     }
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
-    pub fn get_salesforce(
-        &self,
-    ) -> &::std::option::Option<crate::types::SalesforceSourceProperties> {
+    pub fn get_salesforce(&self) -> &::std::option::Option<crate::types::SalesforceSourceProperties> {
         &self.salesforce
     }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
@@ -121,17 +108,12 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
-    pub fn set_service_now(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNowSourceProperties>,
-    ) -> Self {
+    pub fn set_service_now(mut self, input: ::std::option::Option<crate::types::ServiceNowSourceProperties>) -> Self {
         self.service_now = input;
         self
     }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
-    pub fn get_service_now(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNowSourceProperties> {
+    pub fn get_service_now(&self) -> &::std::option::Option<crate::types::ServiceNowSourceProperties> {
         &self.service_now
     }
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
@@ -140,10 +122,7 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
-    pub fn set_zendesk(
-        mut self,
-        input: ::std::option::Option<crate::types::ZendeskSourceProperties>,
-    ) -> Self {
+    pub fn set_zendesk(mut self, input: ::std::option::Option<crate::types::ZendeskSourceProperties>) -> Self {
         self.zendesk = input;
         self
     }

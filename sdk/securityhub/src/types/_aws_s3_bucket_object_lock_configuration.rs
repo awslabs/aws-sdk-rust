@@ -17,9 +17,7 @@ impl AwsS3BucketObjectLockConfiguration {
         self.object_lock_enabled.as_deref()
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn rule(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsS3BucketObjectLockConfigurationRuleDetails> {
+    pub fn rule(&self) -> ::std::option::Option<&crate::types::AwsS3BucketObjectLockConfigurationRuleDetails> {
         self.rule.as_ref()
     }
 }
@@ -32,28 +30,19 @@ impl AwsS3BucketObjectLockConfiguration {
 
 /// A builder for [`AwsS3BucketObjectLockConfiguration`](crate::types::AwsS3BucketObjectLockConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationBuilder {
     pub(crate) object_lock_enabled: ::std::option::Option<::std::string::String>,
-    pub(crate) rule:
-        ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
+    pub(crate) rule: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
 }
 impl AwsS3BucketObjectLockConfigurationBuilder {
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
-    pub fn object_lock_enabled(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_lock_enabled(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_lock_enabled = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
-    pub fn set_object_lock_enabled(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_lock_enabled(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_lock_enabled = input;
         self
     }
@@ -62,25 +51,17 @@ impl AwsS3BucketObjectLockConfigurationBuilder {
         &self.object_lock_enabled
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn rule(
-        mut self,
-        input: crate::types::AwsS3BucketObjectLockConfigurationRuleDetails,
-    ) -> Self {
+    pub fn rule(mut self, input: crate::types::AwsS3BucketObjectLockConfigurationRuleDetails) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn set_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
-    ) -> Self {
+    pub fn set_rule(mut self, input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>) -> Self {
         self.rule = input;
         self
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn get_rule(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails> {
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails> {
         &self.rule
     }
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfiguration`](crate::types::AwsS3BucketObjectLockConfiguration).

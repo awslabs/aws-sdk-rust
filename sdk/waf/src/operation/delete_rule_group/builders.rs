@@ -10,10 +10,7 @@ impl DeleteRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_rule_group::DeleteRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_rule_group();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl DeleteRuleGroupFluentBuilder {
         }
     }
     /// Access the DeleteRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_rule_group::builders::DeleteRuleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_rule_group::builders::DeleteRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl DeleteRuleGroupFluentBuilder {
             crate::operation::delete_rule_group::DeleteRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl DeleteRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl DeleteRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rule_group::DeleteRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl DeleteRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rule_group::DeleteRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl DeleteRuleGroupFluentBuilder {
             crate::operation::delete_rule_group::DeleteRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_id(input.into());
         self
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_id(input);
         self
     }

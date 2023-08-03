@@ -93,9 +93,7 @@ impl AmazonTranscribeProcessorConfiguration {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>The vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn vocabulary_filter_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
@@ -111,9 +109,7 @@ impl AmazonTranscribeProcessorConfiguration {
     /// <p>The level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn partial_results_stability(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PartialResultsStability> {
+    pub fn partial_results_stability(&self) -> ::std::option::Option<&crate::types::PartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
@@ -156,9 +152,7 @@ impl AmazonTranscribeProcessorConfiguration {
         self.language_options.as_deref()
     }
     /// <p>The preferred language for the transcription.</p>
-    pub fn preferred_language(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
+    pub fn preferred_language(&self) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
         self.preferred_language.as_ref()
     }
     /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
@@ -179,19 +173,15 @@ impl AmazonTranscribeProcessorConfiguration {
 
 /// A builder for [`AmazonTranscribeProcessorConfiguration`](crate::types::AmazonTranscribeProcessorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonTranscribeProcessorConfigurationBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vocabulary_filter_method:
-        ::std::option::Option<crate::types::VocabularyFilterMethod>,
+    pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     pub(crate) show_speaker_label: ::std::option::Option<bool>,
     pub(crate) enable_partial_results_stabilization: ::std::option::Option<bool>,
-    pub(crate) partial_results_stability:
-        ::std::option::Option<crate::types::PartialResultsStability>,
+    pub(crate) partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
     pub(crate) content_identification_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) content_redaction_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) pii_entity_types: ::std::option::Option<::std::string::String>,
@@ -214,36 +204,25 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>The language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages that real-time Call Analytics supports, see the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages table</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages that real-time Call Analytics supports, see the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages table</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
         &self.language_code
     }
     /// <p>The name of the custom vocabulary that you specified in your Call Analytics request.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom vocabulary that you specified in your Call Analytics request.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -254,19 +233,13 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     }
     /// <p>The name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 200.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
@@ -281,17 +254,12 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
         self
     }
     /// <p>The vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn set_vocabulary_filter_method(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyFilterMethod>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
         self.vocabulary_filter_method = input;
         self
     }
     /// <p>The vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn get_vocabulary_filter_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
+    pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
         &self.vocabulary_filter_method
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
@@ -319,10 +287,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_enable_partial_results_stabilization(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_partial_results_stabilization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_partial_results_stabilization = input;
         self
     }
@@ -334,29 +299,21 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>The level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn partial_results_stability(
-        mut self,
-        input: crate::types::PartialResultsStability,
-    ) -> Self {
+    pub fn partial_results_stability(mut self, input: crate::types::PartialResultsStability) -> Self {
         self.partial_results_stability = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_partial_results_stability(
-        mut self,
-        input: ::std::option::Option<crate::types::PartialResultsStability>,
-    ) -> Self {
+    pub fn set_partial_results_stability(mut self, input: ::std::option::Option<crate::types::PartialResultsStability>) -> Self {
         self.partial_results_stability = input;
         self
     }
     /// <p>The level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn get_partial_results_stability(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartialResultsStability> {
+    pub fn get_partial_results_stability(&self) -> &::std::option::Option<crate::types::PartialResultsStability> {
         &self.partial_results_stability
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
@@ -371,10 +328,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_identification_type = input;
         self
     }
@@ -382,9 +336,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::ContentType> {
         &self.content_identification_type
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
@@ -399,10 +351,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>Content redaction is performed at the segment level; PII specified in PiiEntityTypes is redacted upon complete transcription of an audio segment.</p>
     /// <p>You can’t set ContentRedactionType and ContentIdentificationType in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_content_redaction_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_redaction_type = input;
         self
     }
@@ -417,10 +366,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>If you leave this parameter empty, the default behavior is equivalent to <code>ALL</code>.</p>
-    pub fn pii_entity_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pii_entity_types = ::std::option::Option::Some(input.into());
         self
     }
@@ -428,10 +374,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>, but you can't include both.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>If you leave this parameter empty, the default behavior is equivalent to <code>ALL</code>.</p>
-    pub fn set_pii_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pii_entity_types = input;
         self
     }
@@ -445,20 +388,14 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>The name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn language_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_language_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_model_name = input;
         self
     }
@@ -497,18 +434,12 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
         &self.identify_language
     }
     /// <p>The language options for the transcription, such as automatic language detection.</p>
-    pub fn language_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_options = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language options for the transcription, such as automatic language detection.</p>
-    pub fn set_language_options(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_options = input;
         self
     }
@@ -522,32 +453,21 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
         self
     }
     /// <p>The preferred language for the transcription.</p>
-    pub fn set_preferred_language(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
-    ) -> Self {
+    pub fn set_preferred_language(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
         self.preferred_language = input;
         self
     }
     /// <p>The preferred language for the transcription.</p>
-    pub fn get_preferred_language(
-        &self,
-    ) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+    pub fn get_preferred_language(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
         &self.preferred_language
     }
     /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
-    pub fn vocabulary_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_names = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
-    pub fn set_vocabulary_names(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_names = input;
         self
     }
@@ -556,18 +476,12 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
         &self.vocabulary_names
     }
     /// <p>The names of the custom vocabulary filter or filters using during transcription.</p>
-    pub fn vocabulary_filter_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_names = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the custom vocabulary filter or filters using during transcription.</p>
-    pub fn set_vocabulary_filter_names(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_names = input;
         self
     }
@@ -583,9 +497,7 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
             vocabulary_filter_name: self.vocabulary_filter_name,
             vocabulary_filter_method: self.vocabulary_filter_method,
             show_speaker_label: self.show_speaker_label.unwrap_or_default(),
-            enable_partial_results_stabilization: self
-                .enable_partial_results_stabilization
-                .unwrap_or_default(),
+            enable_partial_results_stabilization: self.enable_partial_results_stabilization.unwrap_or_default(),
             partial_results_stability: self.partial_results_stability,
             content_identification_type: self.content_identification_type,
             content_redaction_type: self.content_redaction_type,

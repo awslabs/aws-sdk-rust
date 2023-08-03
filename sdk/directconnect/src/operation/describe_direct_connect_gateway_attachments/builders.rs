@@ -5,16 +5,16 @@ pub use crate::operation::describe_direct_connect_gateway_attachments::_describe
 
 impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_direct_connect_gateway_attachments();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsInputBuilder,
+    inner: crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsInputBuilder,
 }
 impl DescribeDirectConnectGatewayAttachmentsFluentBuilder {
     /// Creates a new `DescribeDirectConnectGatewayAttachments`.
@@ -37,15 +37,24 @@ impl DescribeDirectConnectGatewayAttachmentsFluentBuilder {
         }
     }
     /// Access the DescribeDirectConnectGatewayAttachments as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachments, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachments,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeDirectConnectGatewayAttachmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +93,39 @@ impl DescribeDirectConnectGatewayAttachmentsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachments, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachments,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.direct_connect_gateway_id(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }
@@ -115,18 +134,12 @@ impl DescribeDirectConnectGatewayAttachmentsFluentBuilder {
         self.inner.get_direct_connect_gateway_id()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }

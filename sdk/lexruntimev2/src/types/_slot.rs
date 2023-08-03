@@ -15,9 +15,7 @@ pub struct Slot {
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
     /// <p>The constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub sub_slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    >,
+    pub sub_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
 }
 impl Slot {
     /// <p>The current value of the slot.</p>
@@ -33,11 +31,7 @@ impl Slot {
         self.values.as_deref()
     }
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn sub_slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    > {
+    pub fn sub_slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
         self.sub_slots.as_ref()
     }
 }
@@ -50,16 +44,12 @@ impl Slot {
 
 /// A builder for [`Slot`](crate::types::Slot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotBuilder {
     pub(crate) value: ::std::option::Option<crate::types::Value>,
     pub(crate) shape: ::std::option::Option<crate::types::Shape>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
-    pub(crate) sub_slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    >,
+    pub(crate) sub_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
 }
 impl SlotBuilder {
     /// <p>The current value of the slot.</p>
@@ -102,10 +92,7 @@ impl SlotBuilder {
         self
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>) -> Self {
         self.values = input;
         self
     }
@@ -118,32 +105,19 @@ impl SlotBuilder {
     /// To override the contents of this collection use [`set_sub_slots`](Self::set_sub_slots).
     ///
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn sub_slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Slot,
-    ) -> Self {
+    pub fn sub_slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Slot) -> Self {
         let mut hash_map = self.sub_slots.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.sub_slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn set_sub_slots(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-        >,
-    ) -> Self {
+    pub fn set_sub_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>) -> Self {
         self.sub_slots = input;
         self
     }
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn get_sub_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    > {
+    pub fn get_sub_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
         &self.sub_slots
     }
     /// Consumes the builder and constructs a [`Slot`](crate::types::Slot).

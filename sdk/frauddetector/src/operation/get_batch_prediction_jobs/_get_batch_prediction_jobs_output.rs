@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetBatchPredictionJobsOutput {
 }
 impl GetBatchPredictionJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsOutput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsOutputBuilder {
         crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchPredictionJobsOutput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchPredictionJobsOutputBuilder {
-    pub(crate) batch_predictions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
+    pub(crate) batch_predictions: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetBatchPredictionJobsOutputBuilder {
         self
     }
     /// <p>An array containing the details of each batch prediction job.</p>
-    pub fn set_batch_predictions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
-    ) -> Self {
+    pub fn set_batch_predictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>) -> Self {
         self.batch_predictions = input;
         self
     }
     /// <p>An array containing the details of each batch prediction job.</p>
-    pub fn get_batch_predictions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>> {
+    pub fn get_batch_predictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>> {
         &self.batch_predictions
     }
     /// <p>The next token for the subsequent request.</p>
@@ -96,9 +86,7 @@ impl GetBatchPredictionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBatchPredictionJobsOutput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput {
+    pub fn build(self) -> crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput {
         crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput {
             batch_predictions: self.batch_predictions,
             next_token: self.next_token,

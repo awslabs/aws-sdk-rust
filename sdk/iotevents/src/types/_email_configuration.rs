@@ -45,9 +45,7 @@ impl EmailConfiguration {
 
 /// A builder for [`EmailConfiguration`](crate::types::EmailConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailConfigurationBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::EmailContent>,
@@ -98,10 +96,7 @@ impl EmailConfigurationBuilder {
     /// <p>Contains the information of one or more recipients who receive the emails.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn set_recipients(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailRecipients>,
-    ) -> Self {
+    pub fn set_recipients(mut self, input: ::std::option::Option<crate::types::EmailRecipients>) -> Self {
         self.recipients = input;
         self
     }

@@ -44,9 +44,7 @@ impl Hits {
 
 /// A builder for [`Hits`](crate::types::Hits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HitsBuilder {
     pub(crate) found: ::std::option::Option<i64>,
     pub(crate) start: ::std::option::Option<i64>,
@@ -108,10 +106,7 @@ impl HitsBuilder {
         self
     }
     /// <p>A document that matches the search request.</p>
-    pub fn set_hit(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
-    ) -> Self {
+    pub fn set_hit(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>) -> Self {
         self.hit = input;
         self
     }

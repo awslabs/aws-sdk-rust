@@ -37,9 +37,7 @@ impl CreateSampleFindingsFluentBuilder {
         }
     }
     /// Access the CreateSampleFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateSampleFindingsFluentBuilder {
             crate::operation::create_sample_findings::CreateSampleFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sample_findings::CreateSampleFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sample_findings::CreateSampleFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateSampleFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateSampleFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sample_findings::CreateSampleFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sample_findings::CreateSampleFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sample_findings::CreateSampleFindingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateSampleFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sample_findings::CreateSampleFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sample_findings::CreateSampleFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sample_findings::CreateSampleFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateSampleFindingsFluentBuilder {
             crate::operation::create_sample_findings::CreateSampleFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sample_findings::CreateSampleFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sample_findings::CreateSampleFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +128,17 @@ impl CreateSampleFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
     ///
     /// <p>The types of sample findings to generate.</p>
-    pub fn finding_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_types(input.into());
         self
     }
     /// <p>The types of sample findings to generate.</p>
-    pub fn set_finding_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_types(input);
         self
     }
     /// <p>The types of sample findings to generate.</p>
-    pub fn get_finding_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_types()
     }
 }

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`backup_vault_arn(Option<String>)`](crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput::backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput::policy): <p>The backup vault access policy document in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetBackupVaultAccessPolicyError>`](crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError)
-    pub fn get_backup_vault_access_policy(&self) -> crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyFluentBuilder{
+    pub fn get_backup_vault_access_policy(
+        &self,
+    ) -> crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyFluentBuilder {
         crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

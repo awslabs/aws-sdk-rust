@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeStorageSystemResourceMetricsO
 }
 impl DescribeStorageSystemResourceMetricsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput).
-    pub fn builder() -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsOutputBuilder {
         crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourceMetricsOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
         self
     }
     /// <p>The details that your discovery job collected about your storage system resource.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The details that your discovery job collected about your storage system resource.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>> {
         &self.metrics
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
@@ -93,12 +86,10 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput).
-    pub fn build(self) -> crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput{
+    pub fn build(self) -> crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput {
         crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput {
-            metrics: self.metrics
-            ,
-            next_token: self.next_token
-            ,
+            metrics: self.metrics,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

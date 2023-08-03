@@ -12,9 +12,7 @@ pub struct OAuth2Properties {
     pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     #[doc(hidden)]
-    pub token_url_custom_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub token_url_custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
@@ -26,11 +24,7 @@ impl OAuth2Properties {
         self.o_auth2_grant_type.as_ref()
     }
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
-    pub fn token_url_custom_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn token_url_custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.token_url_custom_properties.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl OAuth2Properties {
 
 /// A builder for [`OAuth2Properties`](crate::types::OAuth2Properties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OAuth2PropertiesBuilder {
     pub(crate) token_url: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
-    pub(crate) token_url_custom_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) token_url_custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OAuth2PropertiesBuilder {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
@@ -74,10 +64,7 @@ impl OAuth2PropertiesBuilder {
         self
     }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
-    pub fn set_o_auth2_grant_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuth2GrantType>,
-    ) -> Self {
+    pub fn set_o_auth2_grant_type(mut self, input: ::std::option::Option<crate::types::OAuth2GrantType>) -> Self {
         self.o_auth2_grant_type = input;
         self
     }
@@ -103,9 +90,7 @@ impl OAuth2PropertiesBuilder {
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub fn set_token_url_custom_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.token_url_custom_properties = input;
         self
@@ -113,9 +98,7 @@ impl OAuth2PropertiesBuilder {
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub fn get_token_url_custom_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.token_url_custom_properties
     }
     /// Consumes the builder and constructs a [`OAuth2Properties`](crate::types::OAuth2Properties).

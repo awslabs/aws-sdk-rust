@@ -35,9 +35,7 @@ impl GetDatabasesOutput {
 
 /// A builder for [`GetDatabasesOutput`](crate::operation::get_databases::GetDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatabasesOutputBuilder {
     pub(crate) database_list: ::std::option::Option<::std::vec::Vec<crate::types::Database>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetDatabasesOutputBuilder {
         self
     }
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub fn set_database_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Database>>,
-    ) -> Self {
+    pub fn set_database_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Database>>) -> Self {
         self.database_list = input;
         self
     }
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub fn get_database_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Database>> {
+    pub fn get_database_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Database>> {
         &self.database_list
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>

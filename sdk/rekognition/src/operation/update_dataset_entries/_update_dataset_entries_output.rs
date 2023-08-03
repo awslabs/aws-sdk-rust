@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDatasetEntriesOutput {
 }
 impl UpdateDatasetEntriesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesOutput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput).
-    pub fn builder(
-    ) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesOutputBuilder {
+    pub fn builder() -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesOutputBuilder {
         crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasetEntriesOutput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetEntriesOutputBuilder {
     _request_id: Option<String>,
 }

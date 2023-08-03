@@ -22,17 +22,14 @@ impl ListEnvironmentsInput {
 }
 impl ListEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsInputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,10 +66,7 @@ impl ListEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environments::ListEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

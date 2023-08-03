@@ -85,9 +85,7 @@ impl Problem {
 
 /// A builder for [`Problem`](crate::types::Problem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProblemBuilder {
     pub(crate) run: ::std::option::Option<crate::types::ProblemDetail>,
     pub(crate) job: ::std::option::Option<crate::types::ProblemDetail>,
@@ -194,10 +192,7 @@ impl ProblemBuilder {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
         self
     }

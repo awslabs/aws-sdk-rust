@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`layers(Option<Vec<Layer>>)`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput::layers): <p>A list of image layer objects that correspond to the image layer references in the request.</p>
     ///   - [`failures(Option<Vec<LayerFailure>>)`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<BatchCheckLayerAvailabilityError>`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError)
-    pub fn batch_check_layer_availability(&self) -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityFluentBuilder{
+    pub fn batch_check_layer_availability(
+        &self,
+    ) -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityFluentBuilder {
         crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityFluentBuilder::new(self.handle.clone())
     }
 }

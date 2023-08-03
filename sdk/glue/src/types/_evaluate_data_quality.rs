@@ -41,15 +41,11 @@ impl EvaluateDataQuality {
         self.output.as_ref()
     }
     /// <p>Options to configure how your results are published.</p>
-    pub fn publishing_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DqResultsPublishingOptions> {
+    pub fn publishing_options(&self) -> ::std::option::Option<&crate::types::DqResultsPublishingOptions> {
         self.publishing_options.as_ref()
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    pub fn stop_job_on_failure_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DqStopJobOnFailureOptions> {
+    pub fn stop_job_on_failure_options(&self) -> ::std::option::Option<&crate::types::DqStopJobOnFailureOptions> {
         self.stop_job_on_failure_options.as_ref()
     }
 }
@@ -62,17 +58,14 @@ impl EvaluateDataQuality {
 
 /// A builder for [`EvaluateDataQuality`](crate::types::EvaluateDataQuality).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateDataQualityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ruleset: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<crate::types::DqTransformOutput>,
     pub(crate) publishing_options: ::std::option::Option<crate::types::DqResultsPublishingOptions>,
-    pub(crate) stop_job_on_failure_options:
-        ::std::option::Option<crate::types::DqStopJobOnFailureOptions>,
+    pub(crate) stop_job_on_failure_options: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>,
 }
 impl EvaluateDataQualityBuilder {
     /// <p>The name of the data quality evaluation.</p>
@@ -101,10 +94,7 @@ impl EvaluateDataQualityBuilder {
         self
     }
     /// <p>The inputs of your data quality evaluation.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -132,10 +122,7 @@ impl EvaluateDataQualityBuilder {
         self
     }
     /// <p>The output of your data quality evaluation.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<crate::types::DqTransformOutput>,
-    ) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<crate::types::DqTransformOutput>) -> Self {
         self.output = input;
         self
     }
@@ -149,39 +136,26 @@ impl EvaluateDataQualityBuilder {
         self
     }
     /// <p>Options to configure how your results are published.</p>
-    pub fn set_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DqResultsPublishingOptions>,
-    ) -> Self {
+    pub fn set_publishing_options(mut self, input: ::std::option::Option<crate::types::DqResultsPublishingOptions>) -> Self {
         self.publishing_options = input;
         self
     }
     /// <p>Options to configure how your results are published.</p>
-    pub fn get_publishing_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DqResultsPublishingOptions> {
+    pub fn get_publishing_options(&self) -> &::std::option::Option<crate::types::DqResultsPublishingOptions> {
         &self.publishing_options
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    pub fn stop_job_on_failure_options(
-        mut self,
-        input: crate::types::DqStopJobOnFailureOptions,
-    ) -> Self {
+    pub fn stop_job_on_failure_options(mut self, input: crate::types::DqStopJobOnFailureOptions) -> Self {
         self.stop_job_on_failure_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    pub fn set_stop_job_on_failure_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>,
-    ) -> Self {
+    pub fn set_stop_job_on_failure_options(mut self, input: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>) -> Self {
         self.stop_job_on_failure_options = input;
         self
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    pub fn get_stop_job_on_failure_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DqStopJobOnFailureOptions> {
+    pub fn get_stop_job_on_failure_options(&self) -> &::std::option::Option<crate::types::DqStopJobOnFailureOptions> {
         &self.stop_job_on_failure_options
     }
     /// Consumes the builder and constructs a [`EvaluateDataQuality`](crate::types::EvaluateDataQuality).

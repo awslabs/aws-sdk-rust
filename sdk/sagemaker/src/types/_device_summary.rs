@@ -79,9 +79,7 @@ impl DeviceSummary {
 
 /// A builder for [`DeviceSummary`](crate::types::DeviceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSummaryBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
@@ -137,18 +135,12 @@ impl DeviceSummaryBuilder {
         &self.description
     }
     /// <p>The name of the fleet the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -157,18 +149,12 @@ impl DeviceSummaryBuilder {
         &self.device_fleet_name
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
-    pub fn iot_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iot_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
-    pub fn set_iot_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iot_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_thing_name = input;
         self
     }
@@ -182,10 +168,7 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
-    pub fn set_registration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registration_time = input;
         self
     }
@@ -199,10 +182,7 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The last heartbeat received from the device.</p>
-    pub fn set_latest_heartbeat(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_heartbeat(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_heartbeat = input;
         self
     }
@@ -222,32 +202,21 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>Models on the device.</p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModelSummary>>,
-    ) -> Self {
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModelSummary>>) -> Self {
         self.models = input;
         self
     }
     /// <p>Models on the device.</p>
-    pub fn get_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModelSummary>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModelSummary>> {
         &self.models
     }
     /// <p>Edge Manager agent version.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Edge Manager agent version.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }

@@ -34,9 +34,7 @@ impl RuleGroupUpdate {
 
 /// A builder for [`RuleGroupUpdate`](crate::types::RuleGroupUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) activated_rule: ::std::option::Option<crate::types::ActivatedRule>,
@@ -62,10 +60,7 @@ impl RuleGroupUpdateBuilder {
         self
     }
     /// <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
-    pub fn set_activated_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivatedRule>,
-    ) -> Self {
+    pub fn set_activated_rule(mut self, input: ::std::option::Option<crate::types::ActivatedRule>) -> Self {
         self.activated_rule = input;
         self
     }

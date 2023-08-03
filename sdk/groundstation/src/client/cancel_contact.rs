@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelContactOutput`](crate::operation::cancel_contact::CancelContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::cancel_contact::CancelContactOutput::contact_id): <p>UUID of a contact.</p>
     /// - On failure, responds with [`SdkError<CancelContactError>`](crate::operation::cancel_contact::CancelContactError)
-    pub fn cancel_contact(
-        &self,
-    ) -> crate::operation::cancel_contact::builders::CancelContactFluentBuilder {
-        crate::operation::cancel_contact::builders::CancelContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_contact(&self) -> crate::operation::cancel_contact::builders::CancelContactFluentBuilder {
+        crate::operation::cancel_contact::builders::CancelContactFluentBuilder::new(self.handle.clone())
     }
 }

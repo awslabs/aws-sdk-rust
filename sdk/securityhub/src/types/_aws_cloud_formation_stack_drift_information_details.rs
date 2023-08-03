@@ -16,34 +16,25 @@ impl AwsCloudFormationStackDriftInformationDetails {
 }
 impl AwsCloudFormationStackDriftInformationDetails {
     /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDriftInformationDetails`](crate::types::AwsCloudFormationStackDriftInformationDetails).
-    pub fn builder() -> crate::types::builders::AwsCloudFormationStackDriftInformationDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCloudFormationStackDriftInformationDetailsBuilder {
         crate::types::builders::AwsCloudFormationStackDriftInformationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsCloudFormationStackDriftInformationDetails`](crate::types::AwsCloudFormationStackDriftInformationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFormationStackDriftInformationDetailsBuilder {
     pub(crate) stack_drift_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFormationStackDriftInformationDetailsBuilder {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
-    pub fn stack_drift_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_drift_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_drift_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
-    pub fn set_stack_drift_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_drift_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_drift_status = input;
         self
     }

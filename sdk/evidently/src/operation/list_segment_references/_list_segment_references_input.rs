@@ -36,18 +36,14 @@ impl ListSegmentReferencesInput {
 }
 impl ListSegmentReferencesInput {
     /// Creates a new builder-style object to manufacture [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
-    pub fn builder(
-    ) -> crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder {
         crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesInputBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -103,10 +99,7 @@ impl ListSegmentReferencesInputBuilder {
         self
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentReferenceResourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SegmentReferenceResourceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -117,17 +110,13 @@ impl ListSegmentReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_segment_references::ListSegmentReferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_segment_references::ListSegmentReferencesInput {
-                segment: self.segment,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                r#type: self.r#type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_segment_references::ListSegmentReferencesInput {
+            segment: self.segment,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            r#type: self.r#type,
+        })
     }
 }

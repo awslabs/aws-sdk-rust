@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceProfileDomainOutput {
 }
 impl GetVoiceProfileDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceProfileDomainOutput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainOutputBuilder {
         crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceProfileDomainOutput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceProfileDomainOutputBuilder {
     pub(crate) voice_profile_domain: ::std::option::Option<crate::types::VoiceProfileDomain>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetVoiceProfileDomainOutputBuilder {
         self
     }
     /// <p>The details of the voice profile domain.</p>
-    pub fn set_voice_profile_domain(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceProfileDomain>,
-    ) -> Self {
+    pub fn set_voice_profile_domain(mut self, input: ::std::option::Option<crate::types::VoiceProfileDomain>) -> Self {
         self.voice_profile_domain = input;
         self
     }
     /// <p>The details of the voice profile domain.</p>
-    pub fn get_voice_profile_domain(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceProfileDomain> {
+    pub fn get_voice_profile_domain(&self) -> &::std::option::Option<crate::types::VoiceProfileDomain> {
         &self.voice_profile_domain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

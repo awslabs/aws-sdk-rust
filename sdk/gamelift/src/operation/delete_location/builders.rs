@@ -10,10 +10,7 @@ impl DeleteLocationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_location::DeleteLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_location::DeleteLocationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_location::DeleteLocationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_location();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteLocationFluentBuilder {
         }
     }
     /// Access the DeleteLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_location::builders::DeleteLocationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_location::builders::DeleteLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DeleteLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl DeleteLocationFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The location name of the custom location to be deleted.</p>
-    pub fn location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_name(input.into());
         self
     }
     /// <p>The location name of the custom location to be deleted.</p>
-    pub fn set_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_name(input);
         self
     }

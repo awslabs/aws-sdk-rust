@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SetDesiredCapacityOutput {
 }
 impl SetDesiredCapacityOutput {
     /// Creates a new builder-style object to manufacture [`SetDesiredCapacityOutput`](crate::operation::set_desired_capacity::SetDesiredCapacityOutput).
-    pub fn builder(
-    ) -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder {
+    pub fn builder() -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder {
         crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetDesiredCapacityOutput`](crate::operation::set_desired_capacity::SetDesiredCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDesiredCapacityOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListProxySessionsOutput {
 }
 impl ListProxySessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProxySessionsOutput`](crate::operation::list_proxy_sessions::ListProxySessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_proxy_sessions::builders::ListProxySessionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_proxy_sessions::builders::ListProxySessionsOutputBuilder {
         crate::operation::list_proxy_sessions::builders::ListProxySessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProxySessionsOutput`](crate::operation::list_proxy_sessions::ListProxySessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProxySessionsOutputBuilder {
     pub(crate) proxy_sessions: ::std::option::Option<::std::vec::Vec<crate::types::ProxySession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListProxySessionsOutputBuilder {
         self
     }
     /// <p>The proxy session details.</p>
-    pub fn set_proxy_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProxySession>>,
-    ) -> Self {
+    pub fn set_proxy_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProxySession>>) -> Self {
         self.proxy_sessions = input;
         self
     }
     /// <p>The proxy session details.</p>
-    pub fn get_proxy_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProxySession>> {
+    pub fn get_proxy_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProxySession>> {
         &self.proxy_sessions
     }
     /// <p>The token to use to retrieve the next page of results.</p>

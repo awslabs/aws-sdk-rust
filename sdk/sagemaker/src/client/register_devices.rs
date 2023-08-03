@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_tags): <p>The tags associated with devices.</p>
     /// - On success, responds with [`RegisterDevicesOutput`](crate::operation::register_devices::RegisterDevicesOutput)
     /// - On failure, responds with [`SdkError<RegisterDevicesError>`](crate::operation::register_devices::RegisterDevicesError)
-    pub fn register_devices(
-        &self,
-    ) -> crate::operation::register_devices::builders::RegisterDevicesFluentBuilder {
-        crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_devices(&self) -> crate::operation::register_devices::builders::RegisterDevicesFluentBuilder {
+        crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::new(self.handle.clone())
     }
 }

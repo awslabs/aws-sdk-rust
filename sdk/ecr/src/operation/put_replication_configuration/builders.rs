@@ -28,7 +28,7 @@ impl PutReplicationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_replication_configuration::builders::PutReplicationConfigurationInputBuilder,
+    inner: crate::operation::put_replication_configuration::builders::PutReplicationConfigurationInputBuilder,
 }
 impl PutReplicationConfigurationFluentBuilder {
     /// Creates a new `PutReplicationConfiguration`.
@@ -39,7 +39,7 @@ impl PutReplicationConfigurationFluentBuilder {
         }
     }
     /// Access the PutReplicationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_replication_configuration::builders::PutReplicationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_replication_configuration::builders::PutReplicationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutReplicationConfigurationFluentBuilder {
             crate::operation::put_replication_configuration::PutReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_replication_configuration::PutReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_replication_configuration::PutReplicationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutReplicationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_replication_configuration::PutReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_replication_configuration::PutReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_replication_configuration::PutReplicationConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_replication_configuration::PutReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_replication_configuration::PutReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_replication_configuration::PutReplicationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +107,22 @@ impl PutReplicationConfigurationFluentBuilder {
             crate::operation::put_replication_configuration::PutReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_replication_configuration::PutReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_replication_configuration::PutReplicationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An object representing the replication configuration for a registry.</p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::ReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
         self.inner = self.inner.replication_configuration(input);
         self
     }
     /// <p>An object representing the replication configuration for a registry.</p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
         self.inner = self.inner.set_replication_configuration(input);
         self
     }
     /// <p>An object representing the replication configuration for a registry.</p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
         self.inner.get_replication_configuration()
     }
 }

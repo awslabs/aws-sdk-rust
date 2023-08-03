@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for PutLifecyclePolicyOutput {
 }
 impl PutLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyOutputBuilder {
         crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecyclePolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +65,12 @@ impl PutLifecyclePolicyOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -88,18 +79,12 @@ impl PutLifecyclePolicyOutputBuilder {
         &self.repository_name
     }
     /// <p>The JSON repository policy text.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON repository policy text.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_text = input;
         self
     }

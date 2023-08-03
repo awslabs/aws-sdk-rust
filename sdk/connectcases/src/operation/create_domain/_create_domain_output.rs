@@ -42,9 +42,7 @@ impl CreateDomainOutput {
 
 /// A builder for [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDomainOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl CreateDomainOutputBuilder {
         self
     }
     /// <p>The status of the domain.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.domain_status = input;
         self
     }

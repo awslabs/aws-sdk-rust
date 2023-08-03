@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`transit_gateway_peering_attachments(Option<Vec<TransitGatewayPeeringAttachment>>)`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput::transit_gateway_peering_attachments): <p>The transit gateway peering attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayPeeringAttachmentsError>`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsError)
-    pub fn describe_transit_gateway_peering_attachments(&self) -> crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsFluentBuilder{
-        crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsFluentBuilder::new(self.handle.clone())
+    pub fn describe_transit_gateway_peering_attachments(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsFluentBuilder {
+        crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

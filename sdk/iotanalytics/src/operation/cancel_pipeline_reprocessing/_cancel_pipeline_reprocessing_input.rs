@@ -22,34 +22,26 @@ impl CancelPipelineReprocessingInput {
 }
 impl CancelPipelineReprocessingInput {
     /// Creates a new builder-style object to manufacture [`CancelPipelineReprocessingInput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput).
-    pub fn builder() -> crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder{
+    pub fn builder() -> crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder {
         crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelPipelineReprocessingInput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelPipelineReprocessingInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) reprocessing_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelPipelineReprocessingInputBuilder {
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl CancelPipelineReprocessingInputBuilder {
         &self.pipeline_name
     }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
-    pub fn reprocessing_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reprocessing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reprocessing_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
-    pub fn set_reprocessing_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reprocessing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reprocessing_id = input;
         self
     }
@@ -84,11 +70,9 @@ impl CancelPipelineReprocessingInputBuilder {
         crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput {
-                pipeline_name: self.pipeline_name,
-                reprocessing_id: self.reprocessing_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput {
+            pipeline_name: self.pipeline_name,
+            reprocessing_id: self.reprocessing_id,
+        })
     }
 }

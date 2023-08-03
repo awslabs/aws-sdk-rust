@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteHealthCheckOutput {
 }
 impl DeleteHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder {
+    pub fn builder() -> crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder {
         crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }

@@ -30,18 +30,14 @@ impl DeleteCustomActionTypeInput {
 }
 impl DeleteCustomActionTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomActionTypeInput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder {
         crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomActionTypeInput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomActionTypeInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
@@ -54,10 +50,7 @@ impl DeleteCustomActionTypeInputBuilder {
         self
     }
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }
@@ -100,12 +93,10 @@ impl DeleteCustomActionTypeInputBuilder {
         crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput {
-                category: self.category,
-                provider: self.provider,
-                version: self.version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput {
+            category: self.category,
+            provider: self.provider,
+            version: self.version,
+        })
     }
 }

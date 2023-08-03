@@ -35,9 +35,7 @@ impl ListCrawlsOutput {
 
 /// A builder for [`ListCrawlsOutput`](crate::operation::list_crawls::ListCrawlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrawlsOutputBuilder {
     pub(crate) crawls: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListCrawlsOutputBuilder {
         self
     }
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    pub fn set_crawls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>,
-    ) -> Self {
+    pub fn set_crawls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>) -> Self {
         self.crawls = input;
         self
     }
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    pub fn get_crawls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>> {
+    pub fn get_crawls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>> {
         &self.crawls
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>

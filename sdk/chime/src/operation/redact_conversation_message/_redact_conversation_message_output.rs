@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RedactConversationMessageOutput {
 }
 impl RedactConversationMessageOutput {
     /// Creates a new builder-style object to manufacture [`RedactConversationMessageOutput`](crate::operation::redact_conversation_message::RedactConversationMessageOutput).
-    pub fn builder() -> crate::operation::redact_conversation_message::builders::RedactConversationMessageOutputBuilder{
+    pub fn builder() -> crate::operation::redact_conversation_message::builders::RedactConversationMessageOutputBuilder {
         crate::operation::redact_conversation_message::builders::RedactConversationMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`RedactConversationMessageOutput`](crate::operation::redact_conversation_message::RedactConversationMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactConversationMessageOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RedactConversationMessageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RedactConversationMessageOutput`](crate::operation::redact_conversation_message::RedactConversationMessageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::redact_conversation_message::RedactConversationMessageOutput {
+    pub fn build(self) -> crate::operation::redact_conversation_message::RedactConversationMessageOutput {
         crate::operation::redact_conversation_message::RedactConversationMessageOutput {
             _request_id: self._request_id,
         }

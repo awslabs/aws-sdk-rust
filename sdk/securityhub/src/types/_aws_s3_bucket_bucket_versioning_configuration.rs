@@ -30,9 +30,7 @@ impl AwsS3BucketBucketVersioningConfiguration {
 
 /// A builder for [`AwsS3BucketBucketVersioningConfiguration`](crate::types::AwsS3BucketBucketVersioningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketVersioningConfigurationBuilder {
     pub(crate) is_mfa_delete_enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

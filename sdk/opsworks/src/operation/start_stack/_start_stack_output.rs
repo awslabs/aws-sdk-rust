@@ -19,9 +19,7 @@ impl StartStackOutput {
 
 /// A builder for [`StartStackOutput`](crate::operation::start_stack::StartStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStackOutputBuilder {
     _request_id: Option<String>,
 }

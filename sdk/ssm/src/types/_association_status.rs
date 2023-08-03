@@ -44,9 +44,7 @@ impl AssociationStatus {
 
 /// A builder for [`AssociationStatus`](crate::types::AssociationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationStatusBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<crate::types::AssociationStatusName>,
@@ -74,10 +72,7 @@ impl AssociationStatusBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatusName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AssociationStatusName>) -> Self {
         self.name = input;
         self
     }
@@ -100,18 +95,12 @@ impl AssociationStatusBuilder {
         &self.message
     }
     /// <p>A user-defined string.</p>
-    pub fn additional_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_info = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-defined string.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_info = input;
         self
     }

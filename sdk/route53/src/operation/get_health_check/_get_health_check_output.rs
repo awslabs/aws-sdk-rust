@@ -29,9 +29,7 @@ impl GetHealthCheckOutput {
 
 /// A builder for [`GetHealthCheckOutput`](crate::operation::get_health_check::GetHealthCheckOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthCheckOutputBuilder {
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl GetHealthCheckOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheck>) -> Self {
         self.health_check = input;
         self
     }

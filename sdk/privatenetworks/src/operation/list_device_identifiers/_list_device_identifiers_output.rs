@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDeviceIdentifiersOutput {
 }
 impl ListDeviceIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceIdentifiersOutput`](crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersOutputBuilder {
         crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceIdentifiersOutput`](crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceIdentifiersOutputBuilder {
-    pub(crate) device_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>>,
+    pub(crate) device_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListDeviceIdentifiersOutputBuilder {
         self
     }
     /// <p>Information about the device identifiers.</p>
-    pub fn set_device_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>>,
-    ) -> Self {
+    pub fn set_device_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>>) -> Self {
         self.device_identifiers = input;
         self
     }
     /// <p>Information about the device identifiers.</p>
-    pub fn get_device_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>> {
+    pub fn get_device_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceIdentifier>> {
         &self.device_identifiers
     }
     /// <p>The token for the next page of results.</p>

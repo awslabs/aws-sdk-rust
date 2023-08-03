@@ -22,26 +22,18 @@ impl GetWorkgroupInput {
 
 /// A builder for [`GetWorkgroupInput`](crate::operation::get_workgroup::GetWorkgroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkgroupInputBuilder {
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkgroupInputBuilder {
     /// <p>The name of the workgroup to return information for.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup to return information for.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetWorkgroupInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`GetWorkgroupInput`](crate::operation::get_workgroup::GetWorkgroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workgroup::GetWorkgroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workgroup::GetWorkgroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workgroup::GetWorkgroupInput {
             workgroup_name: self.workgroup_name,
         })

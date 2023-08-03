@@ -22,8 +22,7 @@ pub struct ElasticsearchDestinationDescription {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index rotation period</p>
     #[doc(hidden)]
-    pub index_rotation_period:
-        ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
+    pub index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options.</p>
     #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
@@ -44,8 +43,7 @@ pub struct ElasticsearchDestinationDescription {
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     #[doc(hidden)]
-    pub vpc_configuration_description:
-        ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -70,15 +68,11 @@ impl ElasticsearchDestinationDescription {
         self.type_name.as_deref()
     }
     /// <p>The Elasticsearch index rotation period</p>
-    pub fn index_rotation_period(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchIndexRotationPeriod> {
+    pub fn index_rotation_period(&self) -> ::std::option::Option<&crate::types::ElasticsearchIndexRotationPeriod> {
         self.index_rotation_period.as_ref()
     }
     /// <p>The buffering options.</p>
-    pub fn buffering_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::ElasticsearchBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The Amazon ES retry options.</p>
@@ -86,33 +80,23 @@ impl ElasticsearchDestinationDescription {
         self.retry_options.as_ref()
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn s3_backup_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticsearchS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::ElasticsearchS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn s3_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn vpc_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
+    pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
 }
@@ -125,28 +109,21 @@ impl ElasticsearchDestinationDescription {
 
 /// A builder for [`ElasticsearchDestinationDescription`](crate::types::ElasticsearchDestinationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticsearchDestinationDescriptionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) index_rotation_period:
-        ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
+    pub(crate) index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     pub(crate) buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
     pub(crate) retry_options: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
-    pub(crate) s3_destination_description:
-        ::std::option::Option<crate::types::S3DestinationDescription>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    pub(crate) vpc_configuration_description:
-        ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl ElasticsearchDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -181,18 +158,12 @@ impl ElasticsearchDestinationDescriptionBuilder {
         &self.domain_arn
     }
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.</p>
-    pub fn cluster_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.</p>
-    pub fn set_cluster_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_endpoint = input;
         self
     }
@@ -229,25 +200,17 @@ impl ElasticsearchDestinationDescriptionBuilder {
         &self.type_name
     }
     /// <p>The Elasticsearch index rotation period</p>
-    pub fn index_rotation_period(
-        mut self,
-        input: crate::types::ElasticsearchIndexRotationPeriod,
-    ) -> Self {
+    pub fn index_rotation_period(mut self, input: crate::types::ElasticsearchIndexRotationPeriod) -> Self {
         self.index_rotation_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Elasticsearch index rotation period</p>
-    pub fn set_index_rotation_period(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
-    ) -> Self {
+    pub fn set_index_rotation_period(mut self, input: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>) -> Self {
         self.index_rotation_period = input;
         self
     }
     /// <p>The Elasticsearch index rotation period</p>
-    pub fn get_index_rotation_period(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod> {
+    pub fn get_index_rotation_period(&self) -> &::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod> {
         &self.index_rotation_period
     }
     /// <p>The buffering options.</p>
@@ -256,17 +219,12 @@ impl ElasticsearchDestinationDescriptionBuilder {
         self
     }
     /// <p>The buffering options.</p>
-    pub fn set_buffering_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
-    ) -> Self {
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::ElasticsearchBufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
     /// <p>The buffering options.</p>
-    pub fn get_buffering_hints(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchBufferingHints> {
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::ElasticsearchBufferingHints> {
         &self.buffering_hints
     }
     /// <p>The Amazon ES retry options.</p>
@@ -275,17 +233,12 @@ impl ElasticsearchDestinationDescriptionBuilder {
         self
     }
     /// <p>The Amazon ES retry options.</p>
-    pub fn set_retry_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
-    ) -> Self {
+    pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::ElasticsearchRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
     /// <p>The Amazon ES retry options.</p>
-    pub fn get_retry_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchRetryOptions> {
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::ElasticsearchRetryOptions> {
         &self.retry_options
     }
     /// <p>The Amazon S3 backup mode.</p>
@@ -294,105 +247,68 @@ impl ElasticsearchDestinationDescriptionBuilder {
         self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn get_s3_backup_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchS3BackupMode> {
+    pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::ElasticsearchS3BackupMode> {
         &self.s3_backup_mode
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn s3_destination_description(
-        mut self,
-        input: crate::types::S3DestinationDescription,
-    ) -> Self {
+    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn set_s3_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationDescription>,
-    ) -> Self {
+    pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_destination_description = input;
         self
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn get_s3_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+    pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>The Amazon CloudWatch logging options.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>The Amazon CloudWatch logging options.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn vpc_configuration_description(
-        mut self,
-        input: crate::types::VpcConfigurationDescription,
-    ) -> Self {
+    pub fn vpc_configuration_description(mut self, input: crate::types::VpcConfigurationDescription) -> Self {
         self.vpc_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn set_vpc_configuration_description(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigurationDescription>,
-    ) -> Self {
+    pub fn set_vpc_configuration_description(mut self, input: ::std::option::Option<crate::types::VpcConfigurationDescription>) -> Self {
         self.vpc_configuration_description = input;
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn get_vpc_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
+    pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
     /// Consumes the builder and constructs a [`ElasticsearchDestinationDescription`](crate::types::ElasticsearchDestinationDescription).

@@ -10,10 +10,7 @@ impl DeleteAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_analysis::DeleteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_analysis::DeleteAnalysisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_analysis();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteAnalysisFluentBuilder {
         }
     }
     /// Access the DeleteAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DeleteAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl DeleteAnalysisFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEdgeDeploymentPlanOutput {
 }
 impl DeleteEdgeDeploymentPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanOutput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput).
-    pub fn builder() -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanOutputBuilder{
+    pub fn builder() -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanOutputBuilder {
         crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEdgeDeploymentPlanOutput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEdgeDeploymentPlanOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteEdgeDeploymentPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEdgeDeploymentPlanOutput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput {
+    pub fn build(self) -> crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput {
         crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput {
             _request_id: self._request_id,
         }

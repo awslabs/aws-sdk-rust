@@ -22,9 +22,7 @@ impl AssociateMemberInput {
 
 /// A builder for [`AssociateMemberInput`](crate::operation::associate_member::AssociateMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMemberInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl AssociateMemberInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMemberInput`](crate::operation::associate_member::AssociateMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_member::AssociateMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_member::AssociateMemberInput {
-            account_id: self.account_id,
-        })
+    ) -> ::std::result::Result<crate::operation::associate_member::AssociateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::associate_member::AssociateMemberInput { account_id: self.account_id })
     }
 }

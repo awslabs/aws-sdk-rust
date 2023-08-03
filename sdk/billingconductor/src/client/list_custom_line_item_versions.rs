@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`custom_line_item_versions(Option<Vec<CustomLineItemVersionListElement>>)`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput::custom_line_item_versions): <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput::next_token): <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     /// - On failure, responds with [`SdkError<ListCustomLineItemVersionsError>`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError)
-    pub fn list_custom_line_item_versions(&self) -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder{
+    pub fn list_custom_line_item_versions(
+        &self,
+    ) -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder {
         crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::new(self.handle.clone())
     }
 }

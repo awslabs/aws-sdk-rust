@@ -29,16 +29,14 @@ impl GetArchitectureRecommendationsInput {
 }
 impl GetArchitectureRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetArchitectureRecommendationsInput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput).
-    pub fn builder() -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder {
         crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetArchitectureRecommendationsInput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetArchitectureRecommendationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl GetArchitectureRecommendationsInputBuilder {
         &self.next_token
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_group_name = input;
         self
     }
@@ -100,15 +92,10 @@ impl GetArchitectureRecommendationsInputBuilder {
         crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                recovery_group_name: self.recovery_group_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            recovery_group_name: self.recovery_group_name,
+        })
     }
 }

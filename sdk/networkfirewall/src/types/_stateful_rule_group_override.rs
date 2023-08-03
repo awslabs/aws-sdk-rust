@@ -23,9 +23,7 @@ impl StatefulRuleGroupOverride {
 
 /// A builder for [`StatefulRuleGroupOverride`](crate::types::StatefulRuleGroupOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupOverrideBuilder {
     pub(crate) action: ::std::option::Option<crate::types::OverrideAction>,
 }
@@ -36,10 +34,7 @@ impl StatefulRuleGroupOverrideBuilder {
         self
     }
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::OverrideAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::OverrideAction>) -> Self {
         self.action = input;
         self
     }
@@ -49,8 +44,6 @@ impl StatefulRuleGroupOverrideBuilder {
     }
     /// Consumes the builder and constructs a [`StatefulRuleGroupOverride`](crate::types::StatefulRuleGroupOverride).
     pub fn build(self) -> crate::types::StatefulRuleGroupOverride {
-        crate::types::StatefulRuleGroupOverride {
-            action: self.action,
-        }
+        crate::types::StatefulRuleGroupOverride { action: self.action }
     }
 }

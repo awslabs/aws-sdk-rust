@@ -36,9 +36,7 @@ impl DisconnectUserInput {
 
 /// A builder for [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectUserInputBuilder {
     pub(crate) room_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisconnectUserInputBuilder {
 }
 impl DisconnectUserInputBuilder {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    pub fn room_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    pub fn set_room_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_identifier = input;
         self
     }
@@ -96,10 +88,7 @@ impl DisconnectUserInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_user::DisconnectUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disconnect_user::DisconnectUserInput {
             room_identifier: self.room_identifier,
             user_id: self.user_id,

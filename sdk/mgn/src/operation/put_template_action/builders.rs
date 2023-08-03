@@ -10,10 +10,7 @@ impl PutTemplateActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_template_action::PutTemplateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_template_action();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutTemplateActionFluentBuilder {
         }
     }
     /// Access the PutTemplateAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_template_action::builders::PutTemplateActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_template_action::builders::PutTemplateActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutTemplateActionFluentBuilder {
             crate::operation::put_template_action::PutTemplateAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutTemplateActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutTemplateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_template_action::PutTemplateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutTemplateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_template_action::PutTemplateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +102,22 @@ impl PutTemplateActionFluentBuilder {
             crate::operation::put_template_action::PutTemplateAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn set_launch_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn get_launch_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_configuration_template_id()
     }
     /// <p>Template post migration custom action name.</p>
@@ -159,18 +135,12 @@ impl PutTemplateActionFluentBuilder {
         self.inner.get_action_name()
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_identifier(input.into());
         self
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn set_document_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_identifier(input);
         self
     }
@@ -207,18 +177,12 @@ impl PutTemplateActionFluentBuilder {
         self.inner.get_action_id()
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -284,12 +248,7 @@ impl PutTemplateActionFluentBuilder {
     /// <p>Template post migration custom action parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
@@ -297,27 +256,16 @@ impl PutTemplateActionFluentBuilder {
     /// <p>Template post migration custom action parameters.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         self.inner.get_parameters()
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn operating_system(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_system(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operating_system(input.into());
         self
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }
@@ -330,20 +278,14 @@ impl PutTemplateActionFluentBuilder {
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
     ///
     /// <p>Template post migration custom action external parameters.</p>
-    pub fn external_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SsmExternalParameter,
-    ) -> Self {
+    pub fn external_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SsmExternalParameter) -> Self {
         self.inner = self.inner.external_parameters(k.into(), v);
         self
     }
     /// <p>Template post migration custom action external parameters.</p>
     pub fn set_external_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     ) -> Self {
         self.inner = self.inner.set_external_parameters(input);
         self
@@ -351,9 +293,7 @@ impl PutTemplateActionFluentBuilder {
     /// <p>Template post migration custom action external parameters.</p>
     pub fn get_external_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         self.inner.get_external_parameters()
     }
     /// <p>Template post migration custom action description.</p>
@@ -376,10 +316,7 @@ impl PutTemplateActionFluentBuilder {
         self
     }
     /// <p>Template post migration custom action category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }

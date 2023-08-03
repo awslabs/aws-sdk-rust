@@ -58,9 +58,7 @@ impl AssetModelProperty {
 
 /// A builder for [`AssetModelProperty`](crate::types::AssetModelProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetModelPropertyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl AssetModelPropertyBuilder {
         self
     }
     /// <p>The data type of the asset model property.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
         self.data_type = input;
         self
     }
@@ -116,18 +111,12 @@ impl AssetModelPropertyBuilder {
         &self.data_type
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_type_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn set_data_type_spec(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_type_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type_spec = input;
         self
     }

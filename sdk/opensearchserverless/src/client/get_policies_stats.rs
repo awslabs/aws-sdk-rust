@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`security_config_stats(Option<SecurityConfigStats>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::security_config_stats): <p>Information about the security configurations in your account.</p>
     ///   - [`total_policy_count(Option<i64>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::total_policy_count): <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
     /// - On failure, responds with [`SdkError<GetPoliciesStatsError>`](crate::operation::get_policies_stats::GetPoliciesStatsError)
-    pub fn get_policies_stats(
-        &self,
-    ) -> crate::operation::get_policies_stats::builders::GetPoliciesStatsFluentBuilder {
-        crate::operation::get_policies_stats::builders::GetPoliciesStatsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_policies_stats(&self) -> crate::operation::get_policies_stats::builders::GetPoliciesStatsFluentBuilder {
+        crate::operation::get_policies_stats::builders::GetPoliciesStatsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DescribeReportDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReportDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder,
+    inner: crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder,
 }
 impl DescribeReportDefinitionsFluentBuilder {
     /// Creates a new `DescribeReportDefinitions`.
@@ -37,7 +37,7 @@ impl DescribeReportDefinitionsFluentBuilder {
         }
     }
     /// Access the DescribeReportDefinitions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeReportDefinitionsFluentBuilder {
             crate::operation::describe_report_definitions::DescribeReportDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_definitions::DescribeReportDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeReportDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeReportDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_definitions::DescribeReportDefinitionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeReportDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_definitions::DescribeReportDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeReportDefinitionsFluentBuilder {
             crate::operation::describe_report_definitions::DescribeReportDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_definitions::DescribeReportDefinitionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_report_definitions::paginator::DescribeReportDefinitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_report_definitions::paginator::DescribeReportDefinitionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_report_definitions::paginator::DescribeReportDefinitionsPaginator {
         crate::operation::describe_report_definitions::paginator::DescribeReportDefinitionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results that AWS returns for the operation.</p>

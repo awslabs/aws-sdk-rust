@@ -22,9 +22,7 @@ impl DescribeImageInput {
 
 /// A builder for [`DescribeImageInput`](crate::operation::describe_image::DescribeImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeImageInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageInput`](crate::operation::describe_image::DescribeImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image::DescribeImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_image::DescribeImageInput {
-            image_name: self.image_name,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_image::DescribeImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_image::DescribeImageInput { image_name: self.image_name })
     }
 }

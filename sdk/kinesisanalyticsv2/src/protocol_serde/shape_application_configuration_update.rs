@@ -5,25 +5,19 @@ pub fn ser_application_configuration_update(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sql_application_configuration_update {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("SqlApplicationConfigurationUpdate")
-            .start_object();
+        let mut object_2 = object.key("SqlApplicationConfigurationUpdate").start_object();
         crate::protocol_serde::shape_sql_application_configuration_update::ser_sql_application_configuration_update(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.application_code_configuration_update {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("ApplicationCodeConfigurationUpdate")
-            .start_object();
+        let mut object_4 = object.key("ApplicationCodeConfigurationUpdate").start_object();
         crate::protocol_serde::shape_application_code_configuration_update::ser_application_code_configuration_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.flink_application_configuration_update {
         #[allow(unused_mut)]
-        let mut object_6 = object
-            .key("FlinkApplicationConfigurationUpdate")
-            .start_object();
+        let mut object_6 = object.key("FlinkApplicationConfigurationUpdate").start_object();
         crate::protocol_serde::shape_flink_application_configuration_update::ser_flink_application_configuration_update(&mut object_6, var_5)?;
         object_6.finish();
     }
@@ -35,9 +29,7 @@ pub fn ser_application_configuration_update(
     }
     if let Some(var_9) = &input.application_snapshot_configuration_update {
         #[allow(unused_mut)]
-        let mut object_10 = object
-            .key("ApplicationSnapshotConfigurationUpdate")
-            .start_object();
+        let mut object_10 = object.key("ApplicationSnapshotConfigurationUpdate").start_object();
         crate::protocol_serde::shape_application_snapshot_configuration_update::ser_application_snapshot_configuration_update(&mut object_10, var_9)?;
         object_10.finish();
     }
@@ -55,10 +47,11 @@ pub fn ser_application_configuration_update(
     }
     if let Some(var_15) = &input.zeppelin_application_configuration_update {
         #[allow(unused_mut)]
-        let mut object_16 = object
-            .key("ZeppelinApplicationConfigurationUpdate")
-            .start_object();
-        crate::protocol_serde::shape_zeppelin_application_configuration_update::ser_zeppelin_application_configuration_update(&mut object_16, var_15)?;
+        let mut object_16 = object.key("ZeppelinApplicationConfigurationUpdate").start_object();
+        crate::protocol_serde::shape_zeppelin_application_configuration_update::ser_zeppelin_application_configuration_update(
+            &mut object_16,
+            var_15,
+        )?;
         object_16.finish();
     }
     Ok(())

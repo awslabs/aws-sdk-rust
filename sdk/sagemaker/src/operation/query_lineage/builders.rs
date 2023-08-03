@@ -10,10 +10,7 @@ impl QueryLineageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::query_lineage::QueryLineageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_lineage::QueryLineageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.query_lineage();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl QueryLineageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::query_lineage::QueryLineage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::query_lineage::QueryLineage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl QueryLineageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl QueryLineageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::query_lineage::QueryLineage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::query_lineage::QueryLineage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl QueryLineageFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::query_lineage::paginator::QueryLineagePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
-        crate::operation::query_lineage::paginator::QueryLineagePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
+        crate::operation::query_lineage::paginator::QueryLineagePaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `StartArns`.
     ///
@@ -133,10 +116,7 @@ impl QueryLineageFluentBuilder {
         self
     }
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn set_start_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_start_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_start_arns(input);
         self
     }

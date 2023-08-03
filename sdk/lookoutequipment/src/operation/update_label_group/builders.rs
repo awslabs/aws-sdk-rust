@@ -10,10 +10,7 @@ impl UpdateLabelGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_label_group::UpdateLabelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_label_group::UpdateLabelGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_label_group::UpdateLabelGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_label_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateLabelGroupFluentBuilder {
         }
     }
     /// Access the UpdateLabelGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateLabelGroupFluentBuilder {
             crate::operation::update_label_group::UpdateLabelGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_label_group::UpdateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_label_group::UpdateLabelGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateLabelGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateLabelGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_label_group::UpdateLabelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_label_group::UpdateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_label_group::UpdateLabelGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateLabelGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_label_group::UpdateLabelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_label_group::UpdateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_label_group::UpdateLabelGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateLabelGroupFluentBuilder {
             crate::operation::update_label_group::UpdateLabelGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_label_group::UpdateLabelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_label_group::UpdateLabelGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the label group to be updated. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
     /// <p> The name of the label group to be updated. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
@@ -154,18 +132,13 @@ impl UpdateLabelGroupFluentBuilder {
     }
     /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_fault_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fault_codes(input);
         self
     }
     /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn get_fault_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fault_codes()
     }
 }

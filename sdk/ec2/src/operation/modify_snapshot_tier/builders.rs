@@ -10,10 +10,7 @@ impl ModifySnapshotTierInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_tier::ModifySnapshotTierError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_tier::ModifySnapshotTierError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_snapshot_tier();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifySnapshotTierFluentBuilder {
         }
     }
     /// Access the ModifySnapshotTier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifySnapshotTierFluentBuilder {
             crate::operation::modify_snapshot_tier::ModifySnapshotTier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_tier::ModifySnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_tier::ModifySnapshotTierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifySnapshotTierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifySnapshotTierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_tier::ModifySnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_tier::ModifySnapshotTierError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifySnapshotTierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_tier::ModifySnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_tier::ModifySnapshotTierError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ModifySnapshotTierFluentBuilder {
             crate::operation::modify_snapshot_tier::ModifySnapshotTier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_tier::ModifySnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_tier::ModifySnapshotTierError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl ModifySnapshotTierFluentBuilder {
         self
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-    pub fn set_storage_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetStorageTier>,
-    ) -> Self {
+    pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::TargetStorageTier>) -> Self {
         self.inner = self.inner.set_storage_tier(input);
         self
     }

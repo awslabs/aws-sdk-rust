@@ -26,8 +26,7 @@ impl UpdateQuickConnectNameInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQuickConnectNameFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder,
+    inner: crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder,
 }
 impl UpdateQuickConnectNameFluentBuilder {
     /// Creates a new `UpdateQuickConnectName`.
@@ -38,10 +37,7 @@ impl UpdateQuickConnectNameFluentBuilder {
         }
     }
     /// Access the UpdateQuickConnectName as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateQuickConnectNameFluentBuilder {
             crate::operation::update_quick_connect_name::UpdateQuickConnectName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_quick_connect_name::UpdateQuickConnectNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_quick_connect_name::UpdateQuickConnectNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateQuickConnectNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateQuickConnectNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_quick_connect_name::UpdateQuickConnectNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_quick_connect_name::UpdateQuickConnectNameError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateQuickConnectNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_quick_connect_name::UpdateQuickConnectNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_quick_connect_name::UpdateQuickConnectNameError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateQuickConnectNameFluentBuilder {
             crate::operation::update_quick_connect_name::UpdateQuickConnectName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_quick_connect_name::UpdateQuickConnectNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_quick_connect_name::UpdateQuickConnectNameError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl UpdateQuickConnectNameFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quick_connect_id(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quick_connect_id(input);
         self
     }

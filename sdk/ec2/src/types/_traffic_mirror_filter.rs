@@ -9,16 +9,13 @@ pub struct TrafficMirrorFilter {
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
     #[doc(hidden)]
-    pub ingress_filter_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub ingress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
     #[doc(hidden)]
-    pub egress_filter_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub egress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
     #[doc(hidden)]
-    pub network_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>The description of the Traffic Mirror filter.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -32,21 +29,15 @@ impl TrafficMirrorFilter {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn ingress_filter_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
+    pub fn ingress_filter_rules(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
         self.ingress_filter_rules.as_deref()
     }
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn egress_filter_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
+    pub fn egress_filter_rules(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
         self.egress_filter_rules.as_deref()
     }
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    pub fn network_services(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
+    pub fn network_services(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
         self.network_services.as_deref()
     }
     /// <p>The description of the Traffic Mirror filter.</p>
@@ -67,34 +58,23 @@ impl TrafficMirrorFilter {
 
 /// A builder for [`TrafficMirrorFilter`](crate::types::TrafficMirrorFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficMirrorFilterBuilder {
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ingress_filter_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
-    pub(crate) egress_filter_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
-    pub(crate) network_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub(crate) ingress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub(crate) egress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub(crate) network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrafficMirrorFilterBuilder {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = input;
         self
     }
@@ -114,17 +94,12 @@ impl TrafficMirrorFilterBuilder {
         self
     }
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn set_ingress_filter_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
-    ) -> Self {
+    pub fn set_ingress_filter_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>) -> Self {
         self.ingress_filter_rules = input;
         self
     }
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn get_ingress_filter_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>> {
+    pub fn get_ingress_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>> {
         &self.ingress_filter_rules
     }
     /// Appends an item to `egress_filter_rules`.
@@ -139,17 +114,12 @@ impl TrafficMirrorFilterBuilder {
         self
     }
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn set_egress_filter_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
-    ) -> Self {
+    pub fn set_egress_filter_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>) -> Self {
         self.egress_filter_rules = input;
         self
     }
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn get_egress_filter_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>> {
+    pub fn get_egress_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>> {
         &self.egress_filter_rules
     }
     /// Appends an item to `network_services`.
@@ -164,17 +134,12 @@ impl TrafficMirrorFilterBuilder {
         self
     }
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    pub fn set_network_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
-    ) -> Self {
+    pub fn set_network_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>) -> Self {
         self.network_services = input;
         self
     }
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    pub fn get_network_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
+    pub fn get_network_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
         &self.network_services
     }
     /// <p>The description of the Traffic Mirror filter.</p>
@@ -203,10 +168,7 @@ impl TrafficMirrorFilterBuilder {
         self
     }
     /// <p>The tags assigned to the Traffic Mirror filter.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

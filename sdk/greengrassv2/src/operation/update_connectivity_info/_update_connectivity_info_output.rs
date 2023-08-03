@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateConnectivityInfoOutput {
 }
 impl UpdateConnectivityInfoOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoOutput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoOutputBuilder {
         crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectivityInfoOutput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectivityInfoOutputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

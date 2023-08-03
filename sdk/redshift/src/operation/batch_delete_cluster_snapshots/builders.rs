@@ -26,7 +26,7 @@ impl BatchDeleteClusterSnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder,
+    inner: crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder,
 }
 impl BatchDeleteClusterSnapshotsFluentBuilder {
     /// Creates a new `BatchDeleteClusterSnapshots`.
@@ -37,7 +37,7 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
         }
     }
     /// Access the BatchDeleteClusterSnapshots as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
             crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
             crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl BatchDeleteClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn set_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
-    ) -> Self {
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>) -> Self {
         self.inner = self.inner.set_identifiers(input);
         self
     }
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn get_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
         self.inner.get_identifiers()
     }
 }

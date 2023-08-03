@@ -10,10 +10,7 @@ impl UploadDocumentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_documents::UploadDocumentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.upload_documents();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UploadDocumentsFluentBuilder {
         }
     }
     /// Access the UploadDocuments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_documents::builders::UploadDocumentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::upload_documents::builders::UploadDocumentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UploadDocumentsFluentBuilder {
             crate::operation::upload_documents::UploadDocuments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_documents::UploadDocumentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UploadDocumentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UploadDocumentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_documents::UploadDocumentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UploadDocumentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_documents::UploadDocumentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl UploadDocumentsFluentBuilder {
             crate::operation::upload_documents::UploadDocuments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_documents::UploadDocumentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +114,12 @@ impl UploadDocumentsFluentBuilder {
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn get_documents(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         self.inner.get_documents()
     }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
@@ -157,10 +136,7 @@ impl UploadDocumentsFluentBuilder {
     /// <li>application/json</li>
     /// <li>application/xml</li>
     /// </ul>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }

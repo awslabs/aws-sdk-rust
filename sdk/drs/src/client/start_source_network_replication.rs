@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput) with field(s):
     ///   - [`source_network(Option<SourceNetwork>)`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput::source_network): <p>Source Network which was requested for replication.</p>
     /// - On failure, responds with [`SdkError<StartSourceNetworkReplicationError>`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationError)
-    pub fn start_source_network_replication(&self) -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationFluentBuilder{
+    pub fn start_source_network_replication(
+        &self,
+    ) -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationFluentBuilder {
         crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListIndexesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_indexes::ListIndexesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_indexes::ListIndexesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_indexes::ListIndexesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_indexes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListIndexesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_indexes::ListIndexes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_indexes::ListIndexes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_indexes::ListIndexesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListIndexesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListIndexesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_indexes::ListIndexes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_indexes::ListIndexes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_indexes::ListIndexesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListIndexesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_indexes::paginator::ListIndexesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_indexes::paginator::ListIndexesPaginator {
-        crate::operation::list_indexes::paginator::ListIndexesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_indexes::paginator::ListIndexesPaginator::new(self.handle, self.inner)
     }
     /// <p>If specified, limits the output to only indexes of the specified Type, either <code>LOCAL</code> or <code>AGGREGATOR</code>.</p>
     /// <p>Use this option to discover the aggregator index for your account.</p>
@@ -148,10 +133,7 @@ impl ListIndexesFluentBuilder {
         self
     }
     /// <p>If specified, limits the response to only information about the index in the specified list of Amazon Web Services Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }

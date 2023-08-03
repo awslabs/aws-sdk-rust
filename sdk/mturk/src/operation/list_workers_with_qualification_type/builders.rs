@@ -5,16 +5,16 @@ pub use crate::operation::list_workers_with_qualification_type::_list_workers_wi
 
 impl ListWorkersWithQualificationTypeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_workers_with_qualification_type();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListWorkersWithQualificationTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkersWithQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder,
+    inner: crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder,
 }
 impl ListWorkersWithQualificationTypeFluentBuilder {
     /// Creates a new `ListWorkersWithQualificationType`.
@@ -37,15 +37,20 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
         }
     }
     /// Access the ListWorkersWithQualificationType as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationType, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationType,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationType, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationType,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator{
+    pub fn into_paginator(self) -> crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator {
         crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }
@@ -126,10 +135,7 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
         self
     }
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QualificationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

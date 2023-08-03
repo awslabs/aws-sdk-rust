@@ -17,9 +17,7 @@ impl DefaultFormatting {
         self.display_format.as_ref()
     }
     /// <p>The additional options for display formatting.</p>
-    pub fn display_format_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DisplayFormatOptions> {
+    pub fn display_format_options(&self) -> ::std::option::Option<&crate::types::DisplayFormatOptions> {
         self.display_format_options.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl DefaultFormatting {
 
 /// A builder for [`DefaultFormatting`](crate::types::DefaultFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultFormattingBuilder {
     pub(crate) display_format: ::std::option::Option<crate::types::DisplayFormat>,
     pub(crate) display_format_options: ::std::option::Option<crate::types::DisplayFormatOptions>,
@@ -46,10 +42,7 @@ impl DefaultFormattingBuilder {
         self
     }
     /// <p>The display format. Valid values for this structure are <code>AUTO</code>, <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>, <code>DATE</code>, and <code>STRING</code>.</p>
-    pub fn set_display_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DisplayFormat>,
-    ) -> Self {
+    pub fn set_display_format(mut self, input: ::std::option::Option<crate::types::DisplayFormat>) -> Self {
         self.display_format = input;
         self
     }
@@ -63,17 +56,12 @@ impl DefaultFormattingBuilder {
         self
     }
     /// <p>The additional options for display formatting.</p>
-    pub fn set_display_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DisplayFormatOptions>,
-    ) -> Self {
+    pub fn set_display_format_options(mut self, input: ::std::option::Option<crate::types::DisplayFormatOptions>) -> Self {
         self.display_format_options = input;
         self
     }
     /// <p>The additional options for display formatting.</p>
-    pub fn get_display_format_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DisplayFormatOptions> {
+    pub fn get_display_format_options(&self) -> &::std::option::Option<crate::types::DisplayFormatOptions> {
         &self.display_format_options
     }
     /// Consumes the builder and constructs a [`DefaultFormatting`](crate::types::DefaultFormatting).

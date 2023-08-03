@@ -27,7 +27,7 @@ impl GetRightsizingRecommendationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRightsizingRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder,
+    inner: crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder,
 }
 impl GetRightsizingRecommendationFluentBuilder {
     /// Creates a new `GetRightsizingRecommendation`.
@@ -38,7 +38,7 @@ impl GetRightsizingRecommendationFluentBuilder {
         }
     }
     /// Access the GetRightsizingRecommendation as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetRightsizingRecommendationFluentBuilder {
             crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetRightsizingRecommendationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetRightsizingRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetRightsizingRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetRightsizingRecommendationFluentBuilder {
             crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError>,
     > {
         self.customize_middleware().await
     }
@@ -244,25 +233,17 @@ impl GetRightsizingRecommendationFluentBuilder {
         self.inner.get_filter()
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn configuration(
-        mut self,
-        input: crate::types::RightsizingRecommendationConfiguration,
-    ) -> Self {
+    pub fn configuration(mut self, input: crate::types::RightsizingRecommendationConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RightsizingRecommendationConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RightsizingRecommendationConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
@@ -294,18 +275,12 @@ impl GetRightsizingRecommendationFluentBuilder {
         self.inner.get_page_size()
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

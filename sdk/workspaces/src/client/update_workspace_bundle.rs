@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`image_id(impl ::std::convert::Into<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::image_id) / [`set_image_id(Option<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::set_image_id): <p>The identifier of the image.</p>
     /// - On success, responds with [`UpdateWorkspaceBundleOutput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkspaceBundleError>`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError)
-    pub fn update_workspace_bundle(
-        &self,
-    ) -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder
-    {
-        crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workspace_bundle(&self) -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder {
+        crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::new(self.handle.clone())
     }
 }

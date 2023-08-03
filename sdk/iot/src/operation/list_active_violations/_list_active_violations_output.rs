@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListActiveViolationsOutput {
 }
 impl ListActiveViolationsOutput {
     /// Creates a new builder-style object to manufacture [`ListActiveViolationsOutput`](crate::operation::list_active_violations::ListActiveViolationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder {
         crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListActiveViolationsOutput`](crate::operation::list_active_violations::ListActiveViolationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActiveViolationsOutputBuilder {
-    pub(crate) active_violations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActiveViolation>>,
+    pub(crate) active_violations: ::std::option::Option<::std::vec::Vec<crate::types::ActiveViolation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListActiveViolationsOutputBuilder {
         self
     }
     /// <p>The list of active violations.</p>
-    pub fn set_active_violations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveViolation>>,
-    ) -> Self {
+    pub fn set_active_violations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveViolation>>) -> Self {
         self.active_violations = input;
         self
     }
     /// <p>The list of active violations.</p>
-    pub fn get_active_violations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveViolation>> {
+    pub fn get_active_violations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveViolation>> {
         &self.active_violations
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

@@ -9,28 +9,19 @@ pub fn ser_additional_authentication_provider(
     if let Some(var_2) = &input.open_id_connect_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("openIDConnectConfig").start_object();
-        crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.user_pool_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("userPoolConfig").start_object();
-        crate::protocol_serde::shape_cognito_user_pool_config::ser_cognito_user_pool_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_cognito_user_pool_config::ser_cognito_user_pool_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.lambda_authorizer_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("lambdaAuthorizerConfig").start_object();
-        crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -38,75 +29,54 @@ pub fn ser_additional_authentication_provider(
 
 pub(crate) fn de_additional_authentication_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AdditionalAuthenticationProvider>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AdditionalAuthenticationProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AdditionalAuthenticationProviderBuilder::default();
+            let mut builder = crate::types::builders::AdditionalAuthenticationProviderBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "authenticationType" => {
-                                builder = builder.set_authentication_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::AuthenticationType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "authenticationType" => {
+                            builder = builder.set_authentication_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AuthenticationType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "openIDConnectConfig" => {
-                                builder = builder.set_open_id_connect_config(
-                                    crate::protocol_serde::shape_open_id_connect_config::de_open_id_connect_config(tokens)?
-                                );
-                            }
-                            "userPoolConfig" => {
-                                builder = builder.set_user_pool_config(
-                                    crate::protocol_serde::shape_cognito_user_pool_config::de_cognito_user_pool_config(tokens)?
-                                );
-                            }
-                            "lambdaAuthorizerConfig" => {
-                                builder = builder.set_lambda_authorizer_config(
-                                    crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "openIDConnectConfig" => {
+                            builder = builder
+                                .set_open_id_connect_config(crate::protocol_serde::shape_open_id_connect_config::de_open_id_connect_config(tokens)?);
+                        }
+                        "userPoolConfig" => {
+                            builder = builder.set_user_pool_config(
+                                crate::protocol_serde::shape_cognito_user_pool_config::de_cognito_user_pool_config(tokens)?,
+                            );
+                        }
+                        "lambdaAuthorizerConfig" => {
+                            builder = builder.set_lambda_authorizer_config(
+                                crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

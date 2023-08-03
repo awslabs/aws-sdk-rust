@@ -10,10 +10,7 @@ impl ImportImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_image::ImportImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_image::ImportImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_image();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl ImportImageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_image::ImportImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::import_image::ImportImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +59,7 @@ impl ImportImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,10 +101,7 @@ impl ImportImageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_image::ImportImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::import_image::ImportImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
     > {
         self.customize_middleware().await
@@ -141,10 +129,7 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>The client-specific data.</p>
-    pub fn set_client_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientData>,
-    ) -> Self {
+    pub fn set_client_data(mut self, input: ::std::option::Option<crate::types::ClientData>) -> Self {
         self.inner = self.inner.set_client_data(input);
         self
     }
@@ -190,17 +175,12 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn set_disk_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
-    ) -> Self {
+    pub fn set_disk_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>) -> Self {
         self.inner = self.inner.set_disk_containers(input);
         self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn get_disk_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
+    pub fn get_disk_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
         self.inner.get_disk_containers()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -348,28 +328,20 @@ impl ImportImageFluentBuilder {
     /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).
     ///
     /// <p>The ARNs of the license configurations.</p>
-    pub fn license_specifications(
-        mut self,
-        input: crate::types::ImportImageLicenseConfigurationRequest,
-    ) -> Self {
+    pub fn license_specifications(mut self, input: crate::types::ImportImageLicenseConfigurationRequest) -> Self {
         self.inner = self.inner.license_specifications(input);
         self
     }
     /// <p>The ARNs of the license configurations.</p>
     pub fn set_license_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
     ) -> Self {
         self.inner = self.inner.set_license_specifications(input);
         self
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn get_license_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>
-    {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>> {
         self.inner.get_license_specifications()
     }
     /// Appends an item to `TagSpecifications`.
@@ -382,32 +354,21 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn usage_operation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_operation(input.into());
         self
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn set_usage_operation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_operation(input);
         self
     }
@@ -421,10 +382,7 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>The boot mode of the virtual machine.</p>
-    pub fn set_boot_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BootModeValues>,
-    ) -> Self {
+    pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
     }

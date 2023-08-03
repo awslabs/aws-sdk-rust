@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`upload_id(impl ::std::convert::Into<String>)`](crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder::set_upload_id): <p>The upload ID of the multipart upload to delete.</p>
     /// - On success, responds with [`AbortMultipartUploadOutput`](crate::operation::abort_multipart_upload::AbortMultipartUploadOutput)
     /// - On failure, responds with [`SdkError<AbortMultipartUploadError>`](crate::operation::abort_multipart_upload::AbortMultipartUploadError)
-    pub fn abort_multipart_upload(
-        &self,
-    ) -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder {
-        crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn abort_multipart_upload(&self) -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder {
+        crate::operation::abort_multipart_upload::builders::AbortMultipartUploadFluentBuilder::new(self.handle.clone())
     }
 }

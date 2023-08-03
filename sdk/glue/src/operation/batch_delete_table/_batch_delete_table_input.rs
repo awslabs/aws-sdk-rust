@@ -36,17 +36,14 @@ impl BatchDeleteTableInput {
 }
 impl BatchDeleteTableInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
-    pub fn builder() -> crate::operation::batch_delete_table::builders::BatchDeleteTableInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_table::builders::BatchDeleteTableInputBuilder {
         crate::operation::batch_delete_table::builders::BatchDeleteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl BatchDeleteTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -93,42 +84,28 @@ impl BatchDeleteTableInputBuilder {
     /// To override the contents of this collection use [`set_tables_to_delete`](Self::set_tables_to_delete).
     ///
     /// <p>A list of the table to delete.</p>
-    pub fn tables_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tables_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tables_to_delete.unwrap_or_default();
         v.push(input.into());
         self.tables_to_delete = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the table to delete.</p>
-    pub fn set_tables_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tables_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tables_to_delete = input;
         self
     }
     /// <p>A list of the table to delete.</p>
-    pub fn get_tables_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tables_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tables_to_delete
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -139,17 +116,12 @@ impl BatchDeleteTableInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_table::BatchDeleteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_table::BatchDeleteTableInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                tables_to_delete: self.tables_to_delete,
-                transaction_id: self.transaction_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_delete_table::BatchDeleteTableInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            tables_to_delete: self.tables_to_delete,
+            transaction_id: self.transaction_id,
+        })
     }
 }

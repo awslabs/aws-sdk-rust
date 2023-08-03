@@ -6,20 +6,16 @@
 pub struct AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
     #[doc(hidden)]
-    pub list_server_strategy_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub list_server_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> List of ApplicationComponentStrategySummary. </p>
     #[doc(hidden)]
-    pub list_application_component_strategy_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub list_application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> List of AntipatternSeveritySummary. </p>
     #[doc(hidden)]
-    pub list_antipattern_severity_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     /// <p> List of ApplicationComponentSummary. </p>
     #[doc(hidden)]
-    pub list_application_component_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>>,
+    pub list_application_component_summary: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>>,
     /// <p> List of ServerSummary. </p>
     #[doc(hidden)]
     pub list_server_summary: ::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>>,
@@ -37,36 +33,26 @@ pub struct AssessmentSummary {
     pub last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>List of status summaries of the analyzed application components.</p>
     #[doc(hidden)]
-    pub list_application_component_status_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>,
+    pub list_application_component_status_summary: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>,
     /// <p>List of status summaries of the analyzed servers.</p>
     #[doc(hidden)]
-    pub list_server_status_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>,
+    pub list_server_status_summary: ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>,
 }
 impl AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
-    pub fn list_server_strategy_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StrategySummary]> {
+    pub fn list_server_strategy_summary(&self) -> ::std::option::Option<&[crate::types::StrategySummary]> {
         self.list_server_strategy_summary.as_deref()
     }
     /// <p> List of ApplicationComponentStrategySummary. </p>
-    pub fn list_application_component_strategy_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StrategySummary]> {
+    pub fn list_application_component_strategy_summary(&self) -> ::std::option::Option<&[crate::types::StrategySummary]> {
         self.list_application_component_strategy_summary.as_deref()
     }
     /// <p> List of AntipatternSeveritySummary. </p>
-    pub fn list_antipattern_severity_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
+    pub fn list_antipattern_severity_summary(&self) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
         self.list_antipattern_severity_summary.as_deref()
     }
     /// <p> List of ApplicationComponentSummary. </p>
-    pub fn list_application_component_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationComponentSummary]> {
+    pub fn list_application_component_summary(&self) -> ::std::option::Option<&[crate::types::ApplicationComponentSummary]> {
         self.list_application_component_summary.as_deref()
     }
     /// <p> List of ServerSummary. </p>
@@ -78,9 +64,7 @@ impl AssessmentSummary {
         self.antipattern_report_s3_object.as_ref()
     }
     /// <p> The status of the anti-pattern report. </p>
-    pub fn antipattern_report_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
+    pub fn antipattern_report_status(&self) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
         self.antipattern_report_status.as_ref()
     }
     /// <p> The status message of the anti-pattern report. </p>
@@ -92,15 +76,11 @@ impl AssessmentSummary {
         self.last_analyzed_timestamp.as_ref()
     }
     /// <p>List of status summaries of the analyzed application components.</p>
-    pub fn list_application_component_status_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationComponentStatusSummary]> {
+    pub fn list_application_component_status_summary(&self) -> ::std::option::Option<&[crate::types::ApplicationComponentStatusSummary]> {
         self.list_application_component_status_summary.as_deref()
     }
     /// <p>List of status summaries of the analyzed servers.</p>
-    pub fn list_server_status_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerStatusSummary]> {
+    pub fn list_server_status_summary(&self) -> ::std::option::Option<&[crate::types::ServerStatusSummary]> {
         self.list_server_status_summary.as_deref()
     }
 }
@@ -113,29 +93,19 @@ impl AssessmentSummary {
 
 /// A builder for [`AssessmentSummary`](crate::types::AssessmentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentSummaryBuilder {
-    pub(crate) list_server_strategy_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
-    pub(crate) list_application_component_strategy_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
-    pub(crate) list_antipattern_severity_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
-    pub(crate) list_application_component_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>>,
-    pub(crate) list_server_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>>,
+    pub(crate) list_server_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub(crate) list_application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub(crate) list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub(crate) list_application_component_summary: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>>,
+    pub(crate) list_server_summary: ::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>>,
     pub(crate) antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
-    pub(crate) antipattern_report_status:
-        ::std::option::Option<crate::types::AntipatternReportStatus>,
+    pub(crate) antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     pub(crate) antipattern_report_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) list_application_component_status_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>,
-    pub(crate) list_server_status_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>,
+    pub(crate) list_application_component_status_summary: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>,
+    pub(crate) list_server_status_summary: ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>,
 }
 impl AssessmentSummaryBuilder {
     /// Appends an item to `list_server_strategy_summary`.
@@ -150,17 +120,12 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> List of ServerStrategySummary. </p>
-    pub fn set_list_server_strategy_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
-    ) -> Self {
+    pub fn set_list_server_strategy_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>) -> Self {
         self.list_server_strategy_summary = input;
         self
     }
     /// <p> List of ServerStrategySummary. </p>
-    pub fn get_list_server_strategy_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
+    pub fn get_list_server_strategy_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
         &self.list_server_strategy_summary
     }
     /// Appends an item to `list_application_component_strategy_summary`.
@@ -168,13 +133,8 @@ impl AssessmentSummaryBuilder {
     /// To override the contents of this collection use [`set_list_application_component_strategy_summary`](Self::set_list_application_component_strategy_summary).
     ///
     /// <p> List of ApplicationComponentStrategySummary. </p>
-    pub fn list_application_component_strategy_summary(
-        mut self,
-        input: crate::types::StrategySummary,
-    ) -> Self {
-        let mut v = self
-            .list_application_component_strategy_summary
-            .unwrap_or_default();
+    pub fn list_application_component_strategy_summary(mut self, input: crate::types::StrategySummary) -> Self {
+        let mut v = self.list_application_component_strategy_summary.unwrap_or_default();
         v.push(input);
         self.list_application_component_strategy_summary = ::std::option::Option::Some(v);
         self
@@ -188,9 +148,7 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> List of ApplicationComponentStrategySummary. </p>
-    pub fn get_list_application_component_strategy_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
+    pub fn get_list_application_component_strategy_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
         &self.list_application_component_strategy_summary
     }
     /// Appends an item to `list_antipattern_severity_summary`.
@@ -198,10 +156,7 @@ impl AssessmentSummaryBuilder {
     /// To override the contents of this collection use [`set_list_antipattern_severity_summary`](Self::set_list_antipattern_severity_summary).
     ///
     /// <p> List of AntipatternSeveritySummary. </p>
-    pub fn list_antipattern_severity_summary(
-        mut self,
-        input: crate::types::AntipatternSeveritySummary,
-    ) -> Self {
+    pub fn list_antipattern_severity_summary(mut self, input: crate::types::AntipatternSeveritySummary) -> Self {
         let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
         v.push(input);
         self.list_antipattern_severity_summary = ::std::option::Option::Some(v);
@@ -216,9 +171,7 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> List of AntipatternSeveritySummary. </p>
-    pub fn get_list_antipattern_severity_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
+    pub fn get_list_antipattern_severity_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
         &self.list_antipattern_severity_summary
     }
     /// Appends an item to `list_application_component_summary`.
@@ -226,10 +179,7 @@ impl AssessmentSummaryBuilder {
     /// To override the contents of this collection use [`set_list_application_component_summary`](Self::set_list_application_component_summary).
     ///
     /// <p> List of ApplicationComponentSummary. </p>
-    pub fn list_application_component_summary(
-        mut self,
-        input: crate::types::ApplicationComponentSummary,
-    ) -> Self {
+    pub fn list_application_component_summary(mut self, input: crate::types::ApplicationComponentSummary) -> Self {
         let mut v = self.list_application_component_summary.unwrap_or_default();
         v.push(input);
         self.list_application_component_summary = ::std::option::Option::Some(v);
@@ -244,9 +194,7 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> List of ApplicationComponentSummary. </p>
-    pub fn get_list_application_component_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>> {
+    pub fn get_list_application_component_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>> {
         &self.list_application_component_summary
     }
     /// Appends an item to `list_server_summary`.
@@ -261,17 +209,12 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> List of ServerSummary. </p>
-    pub fn set_list_server_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>>,
-    ) -> Self {
+    pub fn set_list_server_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>>) -> Self {
         self.list_server_summary = input;
         self
     }
     /// <p> List of ServerSummary. </p>
-    pub fn get_list_server_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>> {
+    pub fn get_list_server_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>> {
         &self.list_server_summary
     }
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
@@ -280,61 +223,40 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
-    pub fn set_antipattern_report_s3_object(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Object>,
-    ) -> Self {
+    pub fn set_antipattern_report_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.antipattern_report_s3_object = input;
         self
     }
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
-    pub fn get_antipattern_report_s3_object(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3Object> {
+    pub fn get_antipattern_report_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.antipattern_report_s3_object
     }
     /// <p> The status of the anti-pattern report. </p>
-    pub fn antipattern_report_status(
-        mut self,
-        input: crate::types::AntipatternReportStatus,
-    ) -> Self {
+    pub fn antipattern_report_status(mut self, input: crate::types::AntipatternReportStatus) -> Self {
         self.antipattern_report_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the anti-pattern report. </p>
-    pub fn set_antipattern_report_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AntipatternReportStatus>,
-    ) -> Self {
+    pub fn set_antipattern_report_status(mut self, input: ::std::option::Option<crate::types::AntipatternReportStatus>) -> Self {
         self.antipattern_report_status = input;
         self
     }
     /// <p> The status of the anti-pattern report. </p>
-    pub fn get_antipattern_report_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
+    pub fn get_antipattern_report_status(&self) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
         &self.antipattern_report_status
     }
     /// <p> The status message of the anti-pattern report. </p>
-    pub fn antipattern_report_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn antipattern_report_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.antipattern_report_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status message of the anti-pattern report. </p>
-    pub fn set_antipattern_report_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_antipattern_report_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.antipattern_report_status_message = input;
         self
     }
     /// <p> The status message of the anti-pattern report. </p>
-    pub fn get_antipattern_report_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_antipattern_report_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.antipattern_report_status_message
     }
     /// <p> The time the assessment was performed. </p>
@@ -343,17 +265,12 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p> The time the assessment was performed. </p>
-    pub fn set_last_analyzed_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_analyzed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_analyzed_timestamp = input;
         self
     }
     /// <p> The time the assessment was performed. </p>
-    pub fn get_last_analyzed_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_analyzed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_analyzed_timestamp
     }
     /// Appends an item to `list_application_component_status_summary`.
@@ -361,13 +278,8 @@ impl AssessmentSummaryBuilder {
     /// To override the contents of this collection use [`set_list_application_component_status_summary`](Self::set_list_application_component_status_summary).
     ///
     /// <p>List of status summaries of the analyzed application components.</p>
-    pub fn list_application_component_status_summary(
-        mut self,
-        input: crate::types::ApplicationComponentStatusSummary,
-    ) -> Self {
-        let mut v = self
-            .list_application_component_status_summary
-            .unwrap_or_default();
+    pub fn list_application_component_status_summary(mut self, input: crate::types::ApplicationComponentStatusSummary) -> Self {
+        let mut v = self.list_application_component_status_summary.unwrap_or_default();
         v.push(input);
         self.list_application_component_status_summary = ::std::option::Option::Some(v);
         self
@@ -375,9 +287,7 @@ impl AssessmentSummaryBuilder {
     /// <p>List of status summaries of the analyzed application components.</p>
     pub fn set_list_application_component_status_summary(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>,
     ) -> Self {
         self.list_application_component_status_summary = input;
         self
@@ -385,8 +295,7 @@ impl AssessmentSummaryBuilder {
     /// <p>List of status summaries of the analyzed application components.</p>
     pub fn get_list_application_component_status_summary(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>> {
         &self.list_application_component_status_summary
     }
     /// Appends an item to `list_server_status_summary`.
@@ -401,25 +310,19 @@ impl AssessmentSummaryBuilder {
         self
     }
     /// <p>List of status summaries of the analyzed servers.</p>
-    pub fn set_list_server_status_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>,
-    ) -> Self {
+    pub fn set_list_server_status_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>>) -> Self {
         self.list_server_status_summary = input;
         self
     }
     /// <p>List of status summaries of the analyzed servers.</p>
-    pub fn get_list_server_status_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>> {
+    pub fn get_list_server_status_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>> {
         &self.list_server_status_summary
     }
     /// Consumes the builder and constructs a [`AssessmentSummary`](crate::types::AssessmentSummary).
     pub fn build(self) -> crate::types::AssessmentSummary {
         crate::types::AssessmentSummary {
             list_server_strategy_summary: self.list_server_strategy_summary,
-            list_application_component_strategy_summary: self
-                .list_application_component_strategy_summary,
+            list_application_component_strategy_summary: self.list_application_component_strategy_summary,
             list_antipattern_severity_summary: self.list_antipattern_severity_summary,
             list_application_component_summary: self.list_application_component_summary,
             list_server_summary: self.list_server_summary,
@@ -427,8 +330,7 @@ impl AssessmentSummaryBuilder {
             antipattern_report_status: self.antipattern_report_status,
             antipattern_report_status_message: self.antipattern_report_status_message,
             last_analyzed_timestamp: self.last_analyzed_timestamp,
-            list_application_component_status_summary: self
-                .list_application_component_status_summary,
+            list_application_component_status_summary: self.list_application_component_status_summary,
             list_server_status_summary: self.list_server_status_summary,
         }
     }

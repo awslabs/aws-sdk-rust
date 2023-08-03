@@ -18,16 +18,14 @@ impl ::aws_http::request_id::RequestId for DeleteBucketMetricsConfigurationOutpu
 }
 impl DeleteBucketMetricsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketMetricsConfigurationOutput`](crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationOutputBuilder {
         crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketMetricsConfigurationOutput`](crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfigurationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -38,10 +36,7 @@ impl DeleteBucketMetricsConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -55,10 +50,7 @@ impl DeleteBucketMetricsConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBucketMetricsConfigurationOutput`](crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput {
         crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput {
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,

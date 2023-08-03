@@ -12,8 +12,7 @@ pub struct LoRaWanGateway {
     pub rf_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
     #[doc(hidden)]
-    pub join_eui_filters:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub join_eui_filters: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
     #[doc(hidden)]
     pub net_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,9 +36,7 @@ impl LoRaWanGateway {
         self.rf_region.as_deref()
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn join_eui_filters(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
+    pub fn join_eui_filters(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.join_eui_filters.as_deref()
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
@@ -68,14 +65,11 @@ impl LoRaWanGateway {
 
 /// A builder for [`LoRaWanGateway`](crate::types::LoRaWanGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayBuilder {
     pub(crate) gateway_eui: ::std::option::Option<::std::string::String>,
     pub(crate) rf_region: ::std::option::Option<::std::string::String>,
-    pub(crate) join_eui_filters:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) join_eui_filters: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) net_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sub_bands: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) beaconing: ::std::option::Option<crate::types::Beaconing>,
@@ -122,17 +116,12 @@ impl LoRaWanGatewayBuilder {
         self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn set_join_eui_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_join_eui_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.join_eui_filters = input;
         self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn get_join_eui_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_join_eui_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.join_eui_filters
     }
     /// Appends an item to `net_id_filters`.
@@ -140,27 +129,19 @@ impl LoRaWanGatewayBuilder {
     /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).
     ///
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn net_id_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.net_id_filters.unwrap_or_default();
         v.push(input.into());
         self.net_id_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn set_net_id_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_net_id_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.net_id_filters = input;
         self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn get_net_id_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_net_id_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.net_id_filters
     }
     /// Appends an item to `sub_bands`.

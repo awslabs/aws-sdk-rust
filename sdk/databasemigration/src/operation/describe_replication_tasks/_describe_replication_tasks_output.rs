@@ -29,22 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationTasksOutput {
 }
 impl DescribeReplicationTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksOutputBuilder {
         crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTasksOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
+    pub(crate) replication_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTasksOutputBuilder {
@@ -74,17 +69,12 @@ impl DescribeReplicationTasksOutputBuilder {
         self
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn set_replication_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
-    ) -> Self {
+    pub fn set_replication_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>) -> Self {
         self.replication_tasks = input;
         self
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn get_replication_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>> {
+    pub fn get_replication_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>> {
         &self.replication_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +87,7 @@ impl DescribeReplicationTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput {
+    pub fn build(self) -> crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput {
         crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput {
             marker: self.marker,
             replication_tasks: self.replication_tasks,

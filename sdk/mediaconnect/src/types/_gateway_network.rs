@@ -30,9 +30,7 @@ impl GatewayNetwork {
 
 /// A builder for [`GatewayNetwork`](crate::types::GatewayNetwork).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayNetworkBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

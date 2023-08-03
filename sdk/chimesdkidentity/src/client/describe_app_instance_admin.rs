@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput) with field(s):
     ///   - [`app_instance_admin(Option<AppInstanceAdmin>)`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput::app_instance_admin): <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceAdminError>`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError)
-    pub fn describe_app_instance_admin(&self) -> crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminFluentBuilder{
+    pub fn describe_app_instance_admin(&self) -> crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminFluentBuilder {
         crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminFluentBuilder::new(self.handle.clone())
     }
 }

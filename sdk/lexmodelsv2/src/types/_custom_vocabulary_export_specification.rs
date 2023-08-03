@@ -37,9 +37,7 @@ impl CustomVocabularyExportSpecification {
 
 /// A builder for [`CustomVocabularyExportSpecification`](crate::types::CustomVocabularyExportSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomVocabularyExportSpecificationBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

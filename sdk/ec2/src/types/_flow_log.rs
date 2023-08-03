@@ -119,9 +119,7 @@ impl FlowLog {
         self.max_aggregation_interval
     }
     /// <p>The destination options.</p>
-    pub fn destination_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationOptionsResponse> {
+    pub fn destination_options(&self) -> ::std::option::Option<&crate::types::DestinationOptionsResponse> {
         self.destination_options.as_ref()
     }
 }
@@ -134,9 +132,7 @@ impl FlowLog {
 
 /// A builder for [`FlowLog`](crate::types::FlowLog).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowLogBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deliver_logs_error_message: ::std::option::Option<::std::string::String>,
@@ -162,10 +158,7 @@ impl FlowLogBuilder {
         self
     }
     /// <p>The date and time the flow log was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -174,18 +167,12 @@ impl FlowLogBuilder {
         &self.creation_time
     }
     /// <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    pub fn deliver_logs_error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deliver_logs_error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deliver_logs_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    pub fn set_deliver_logs_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deliver_logs_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deliver_logs_error_message = input;
         self
     }
@@ -194,18 +181,12 @@ impl FlowLogBuilder {
         &self.deliver_logs_error_message
     }
     /// <p>The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.</p>
-    pub fn deliver_logs_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deliver_logs_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deliver_logs_permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.</p>
-    pub fn set_deliver_logs_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deliver_logs_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deliver_logs_permission_arn = input;
         self
     }
@@ -214,18 +195,12 @@ impl FlowLogBuilder {
         &self.deliver_logs_permission_arn
     }
     /// <p>The ARN of the IAM role that allows the service to publish flow logs across accounts.</p>
-    pub fn deliver_cross_account_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deliver_cross_account_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deliver_cross_account_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that allows the service to publish flow logs across accounts.</p>
-    pub fn set_deliver_cross_account_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deliver_cross_account_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deliver_cross_account_role = input;
         self
     }
@@ -234,18 +209,12 @@ impl FlowLogBuilder {
         &self.deliver_cross_account_role
     }
     /// <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    pub fn deliver_logs_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deliver_logs_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deliver_logs_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    pub fn set_deliver_logs_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deliver_logs_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deliver_logs_status = input;
         self
     }
@@ -268,18 +237,12 @@ impl FlowLogBuilder {
         &self.flow_log_id
     }
     /// <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    pub fn flow_log_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_log_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_log_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    pub fn set_flow_log_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_log_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_log_status = input;
         self
     }
@@ -288,18 +251,12 @@ impl FlowLogBuilder {
         &self.flow_log_status
     }
     /// <p>The name of the flow log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the flow log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -327,10 +284,7 @@ impl FlowLogBuilder {
         self
     }
     /// <p>The type of traffic captured for the flow log.</p>
-    pub fn set_traffic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficType>,
-    ) -> Self {
+    pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
@@ -344,32 +298,21 @@ impl FlowLogBuilder {
         self
     }
     /// <p>The type of destination for the flow log data.</p>
-    pub fn set_log_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogDestinationType>,
-    ) -> Self {
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.log_destination_type = input;
         self
     }
     /// <p>The type of destination for the flow log data.</p>
-    pub fn get_log_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         &self.log_destination_type
     }
     /// <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
-    pub fn log_destination(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
-    pub fn set_log_destination(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_destination = input;
         self
     }
@@ -403,10 +346,7 @@ impl FlowLogBuilder {
         self
     }
     /// <p>The tags for the flow log.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -440,17 +380,12 @@ impl FlowLogBuilder {
         self
     }
     /// <p>The destination options.</p>
-    pub fn set_destination_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationOptionsResponse>,
-    ) -> Self {
+    pub fn set_destination_options(mut self, input: ::std::option::Option<crate::types::DestinationOptionsResponse>) -> Self {
         self.destination_options = input;
         self
     }
     /// <p>The destination options.</p>
-    pub fn get_destination_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationOptionsResponse> {
+    pub fn get_destination_options(&self) -> &::std::option::Option<crate::types::DestinationOptionsResponse> {
         &self.destination_options
     }
     /// Consumes the builder and constructs a [`FlowLog`](crate::types::FlowLog).

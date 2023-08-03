@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetLaunchTemplateDataOutput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput) with field(s):
     ///   - [`launch_template_data(Option<ResponseLaunchTemplateData>)`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput::launch_template_data): <p>The instance data.</p>
     /// - On failure, responds with [`SdkError<GetLaunchTemplateDataError>`](crate::operation::get_launch_template_data::GetLaunchTemplateDataError)
-    pub fn get_launch_template_data(
-        &self,
-    ) -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataFluentBuilder
-    {
+    pub fn get_launch_template_data(&self) -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataFluentBuilder {
         crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataFluentBuilder::new(self.handle.clone())
     }
 }

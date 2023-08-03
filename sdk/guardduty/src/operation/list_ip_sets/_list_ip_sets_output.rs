@@ -35,9 +35,7 @@ impl ListIpSetsOutput {
 
 /// A builder for [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpSetsOutputBuilder {
     pub(crate) ip_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListIpSetsOutputBuilder {
         self
     }
     /// <p>The IDs of the IPSet resources.</p>
-    pub fn set_ip_set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_set_ids = input;
         self
     }

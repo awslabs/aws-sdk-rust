@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`proposal_votes(Option<Vec<VoteSummary>>)`](crate::operation::list_proposal_votes::ListProposalVotesOutput::proposal_votes): <p> The list of votes. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_proposal_votes::ListProposalVotesOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
     /// - On failure, responds with [`SdkError<ListProposalVotesError>`](crate::operation::list_proposal_votes::ListProposalVotesError)
-    pub fn list_proposal_votes(
-        &self,
-    ) -> crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder {
-        crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_proposal_votes(&self) -> crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder {
+        crate::operation::list_proposal_votes::builders::ListProposalVotesFluentBuilder::new(self.handle.clone())
     }
 }

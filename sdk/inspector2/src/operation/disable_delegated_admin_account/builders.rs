@@ -26,7 +26,7 @@ impl DisableDelegatedAdminAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableDelegatedAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountInputBuilder,
+    inner: crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountInputBuilder,
 }
 impl DisableDelegatedAdminAccountFluentBuilder {
     /// Creates a new `DisableDelegatedAdminAccount`.
@@ -37,7 +37,7 @@ impl DisableDelegatedAdminAccountFluentBuilder {
         }
     }
     /// Access the DisableDelegatedAdminAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableDelegatedAdminAccountFluentBuilder {
             crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableDelegatedAdminAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableDelegatedAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableDelegatedAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisableDelegatedAdminAccountFluentBuilder {
             crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delegated_admin_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
-    pub fn set_delegated_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delegated_admin_account_id(input);
         self
     }

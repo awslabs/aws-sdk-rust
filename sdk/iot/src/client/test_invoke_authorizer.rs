@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`refresh_after_in_seconds(Option<i32>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::refresh_after_in_seconds): <p>The number of seconds after which the temporary credentials are refreshed.</p>
     ///   - [`disconnect_after_in_seconds(Option<i32>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::disconnect_after_in_seconds): <p>The number of seconds after which the connection is terminated.</p>
     /// - On failure, responds with [`SdkError<TestInvokeAuthorizerError>`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError)
-    pub fn test_invoke_authorizer(
-        &self,
-    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder {
-        crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_invoke_authorizer(&self) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder {
+        crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct DescribeVolumesModificationsOutput {
     /// <p>Information about the volume modifications.</p>
     #[doc(hidden)]
-    pub volumes_modifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
+    pub volumes_modifications: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVolumesModificationsOutput {
 }
 impl DescribeVolumesModificationsOutput {
     /// <p>Information about the volume modifications.</p>
-    pub fn volumes_modifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VolumeModification]> {
+    pub fn volumes_modifications(&self) -> ::std::option::Option<&[crate::types::VolumeModification]> {
         self.volumes_modifications.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVolumesModificationsOutput {
 }
 impl DescribeVolumesModificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumesModificationsOutput`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput).
-    pub fn builder() -> crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsOutputBuilder {
         crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVolumesModificationsOutput`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumesModificationsOutputBuilder {
-    pub(crate) volumes_modifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
+    pub(crate) volumes_modifications: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeVolumesModificationsOutputBuilder {
         self
     }
     /// <p>Information about the volume modifications.</p>
-    pub fn set_volumes_modifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
-    ) -> Self {
+    pub fn set_volumes_modifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>) -> Self {
         self.volumes_modifications = input;
         self
     }
     /// <p>Information about the volume modifications.</p>
-    pub fn get_volumes_modifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>> {
+    pub fn get_volumes_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>> {
         &self.volumes_modifications
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
@@ -97,9 +86,7 @@ impl DescribeVolumesModificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVolumesModificationsOutput`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput {
+    pub fn build(self) -> crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput {
         crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput {
             volumes_modifications: self.volumes_modifications,
             next_token: self.next_token,

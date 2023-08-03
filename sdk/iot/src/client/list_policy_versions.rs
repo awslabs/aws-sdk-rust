@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput) with field(s):
     ///   - [`policy_versions(Option<Vec<PolicyVersion>>)`](crate::operation::list_policy_versions::ListPolicyVersionsOutput::policy_versions): <p>The policy versions.</p>
     /// - On failure, responds with [`SdkError<ListPolicyVersionsError>`](crate::operation::list_policy_versions::ListPolicyVersionsError)
-    pub fn list_policy_versions(
-        &self,
-    ) -> crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder {
-        crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policy_versions(&self) -> crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder {
+        crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder::new(self.handle.clone())
     }
 }

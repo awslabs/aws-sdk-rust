@@ -29,9 +29,7 @@ impl GetAppsListInput {
 
 /// A builder for [`GetAppsListInput`](crate::operation::get_apps_list::GetAppsListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppsListInputBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_list: ::std::option::Option<bool>,
@@ -66,12 +64,7 @@ impl GetAppsListInputBuilder {
         &self.default_list
     }
     /// Consumes the builder and constructs a [`GetAppsListInput`](crate::operation::get_apps_list::GetAppsListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_apps_list::GetAppsListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_apps_list::GetAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_apps_list::GetAppsListInput {
             list_id: self.list_id,
             default_list: self.default_list,

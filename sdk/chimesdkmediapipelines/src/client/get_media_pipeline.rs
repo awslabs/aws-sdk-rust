@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetMediaPipelineOutput`](crate::operation::get_media_pipeline::GetMediaPipelineOutput) with field(s):
     ///   - [`media_pipeline(Option<MediaPipeline>)`](crate::operation::get_media_pipeline::GetMediaPipelineOutput::media_pipeline): <p>The media pipeline object.</p>
     /// - On failure, responds with [`SdkError<GetMediaPipelineError>`](crate::operation::get_media_pipeline::GetMediaPipelineError)
-    pub fn get_media_pipeline(
-        &self,
-    ) -> crate::operation::get_media_pipeline::builders::GetMediaPipelineFluentBuilder {
-        crate::operation::get_media_pipeline::builders::GetMediaPipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_media_pipeline(&self) -> crate::operation::get_media_pipeline::builders::GetMediaPipelineFluentBuilder {
+        crate::operation::get_media_pipeline::builders::GetMediaPipelineFluentBuilder::new(self.handle.clone())
     }
 }

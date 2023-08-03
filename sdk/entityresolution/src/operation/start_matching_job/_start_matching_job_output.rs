@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMatchingJobOutput {
 }
 impl StartMatchingJobOutput {
     /// Creates a new builder-style object to manufacture [`StartMatchingJobOutput`](crate::operation::start_matching_job::StartMatchingJobOutput).
-    pub fn builder() -> crate::operation::start_matching_job::builders::StartMatchingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_matching_job::builders::StartMatchingJobOutputBuilder {
         crate::operation::start_matching_job::builders::StartMatchingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMatchingJobOutput`](crate::operation::start_matching_job::StartMatchingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMatchingJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -34,18 +34,14 @@ impl ::aws_http::request_id::RequestId for DescribeChapCredentialsOutput {
 }
 impl DescribeChapCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChapCredentialsOutput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsOutputBuilder {
         crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChapCredentialsOutput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChapCredentialsOutputBuilder {
     pub(crate) chap_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     _request_id: Option<String>,
@@ -75,10 +71,7 @@ impl DescribeChapCredentialsOutputBuilder {
     /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
-    pub fn set_chap_credentials(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
-    ) -> Self {
+    pub fn set_chap_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>) -> Self {
         self.chap_credentials = input;
         self
     }
@@ -89,9 +82,7 @@ impl DescribeChapCredentialsOutputBuilder {
     /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
-    pub fn get_chap_credentials(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>> {
+    pub fn get_chap_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>> {
         &self.chap_credentials
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -104,9 +95,7 @@ impl DescribeChapCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeChapCredentialsOutput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput {
+    pub fn build(self) -> crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput {
         crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput {
             chap_credentials: self.chap_credentials,
             _request_id: self._request_id,

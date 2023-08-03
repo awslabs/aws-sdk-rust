@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ImportVolumeOutput`](crate::operation::import_volume::ImportVolumeOutput) with field(s):
     ///   - [`conversion_task(Option<ConversionTask>)`](crate::operation::import_volume::ImportVolumeOutput::conversion_task): <p>Information about the conversion task.</p>
     /// - On failure, responds with [`SdkError<ImportVolumeError>`](crate::operation::import_volume::ImportVolumeError)
-    pub fn import_volume(
-        &self,
-    ) -> crate::operation::import_volume::builders::ImportVolumeFluentBuilder {
-        crate::operation::import_volume::builders::ImportVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_volume(&self) -> crate::operation::import_volume::builders::ImportVolumeFluentBuilder {
+        crate::operation::import_volume::builders::ImportVolumeFluentBuilder::new(self.handle.clone())
     }
 }

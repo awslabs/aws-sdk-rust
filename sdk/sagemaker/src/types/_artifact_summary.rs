@@ -58,9 +58,7 @@ impl ArtifactSummary {
 
 /// A builder for [`ArtifactSummary`](crate::types::ArtifactSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactSummaryBuilder {
     pub(crate) artifact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl ArtifactSummaryBuilder {
         &self.artifact_arn
     }
     /// <p>The name of the artifact.</p>
-    pub fn artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the artifact.</p>
-    pub fn set_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_name = input;
         self
     }
@@ -110,10 +102,7 @@ impl ArtifactSummaryBuilder {
         self
     }
     /// <p>The source of the artifact.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
         self.source = input;
         self
     }
@@ -122,18 +111,12 @@ impl ArtifactSummaryBuilder {
         &self.source
     }
     /// <p>The type of the artifact.</p>
-    pub fn artifact_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the artifact.</p>
-    pub fn set_artifact_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_type = input;
         self
     }
@@ -147,10 +130,7 @@ impl ArtifactSummaryBuilder {
         self
     }
     /// <p>When the artifact was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -164,10 +144,7 @@ impl ArtifactSummaryBuilder {
         self
     }
     /// <p>When the artifact was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

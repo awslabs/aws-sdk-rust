@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateClusterConfigOutput`](crate::operation::update_cluster_config::UpdateClusterConfigOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::update_cluster_config::UpdateClusterConfigOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<UpdateClusterConfigError>`](crate::operation::update_cluster_config::UpdateClusterConfigError)
-    pub fn update_cluster_config(
-        &self,
-    ) -> crate::operation::update_cluster_config::builders::UpdateClusterConfigFluentBuilder {
-        crate::operation::update_cluster_config::builders::UpdateClusterConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_cluster_config(&self) -> crate::operation::update_cluster_config::builders::UpdateClusterConfigFluentBuilder {
+        crate::operation::update_cluster_config::builders::UpdateClusterConfigFluentBuilder::new(self.handle.clone())
     }
 }

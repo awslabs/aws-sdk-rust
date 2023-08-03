@@ -10,10 +10,7 @@ impl UpdateStudioInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_studio::UpdateStudioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_studio::UpdateStudioError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_studio();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateStudioFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_studio::UpdateStudio,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_studio::UpdateStudio, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateStudioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl UpdateStudioFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_studio::UpdateStudio,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_studio::UpdateStudio, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_role_arn(input.into());
         self
     }
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_admin_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_role_arn(input);
         self
     }
@@ -176,18 +158,12 @@ impl UpdateStudioFluentBuilder {
         self.inner.get_studio_id()
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_role_arn(input.into());
         self
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_user_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_role_arn(input);
         self
     }

@@ -33,8 +33,7 @@ pub struct MaintenanceWindowExecutionTaskIdentity {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
     #[doc(hidden)]
-    pub triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl MaintenanceWindowExecutionTaskIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
@@ -74,9 +73,7 @@ impl MaintenanceWindowExecutionTaskIdentity {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
-    pub fn triggered_alarms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
@@ -89,9 +86,7 @@ impl MaintenanceWindowExecutionTaskIdentity {
 
 /// A builder for [`MaintenanceWindowExecutionTaskIdentity`](crate::types::MaintenanceWindowExecutionTaskIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaintenanceWindowExecutionTaskIdentityBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_execution_id: ::std::option::Option<::std::string::String>,
@@ -102,23 +97,16 @@ pub struct MaintenanceWindowExecutionTaskIdentityBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl MaintenanceWindowExecutionTaskIdentityBuilder {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -127,18 +115,12 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         &self.window_execution_id
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    pub fn task_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    pub fn set_task_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_id = input;
         self
     }
@@ -152,32 +134,21 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         self
     }
     /// <p>The status of the task execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the task execution.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
         &self.status
     }
     /// <p>The details explaining the status of the task execution. Not available for all status values.</p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details explaining the status of the task execution. Not available for all status values.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -191,10 +162,7 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         self
     }
     /// <p>The time the task execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -208,10 +176,7 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         self
     }
     /// <p>The time the task execution finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -239,10 +204,7 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         self
     }
     /// <p>The type of task that ran.</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
         self.task_type = input;
         self
     }
@@ -256,17 +218,12 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
@@ -281,17 +238,12 @@ impl MaintenanceWindowExecutionTaskIdentityBuilder {
         self
     }
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
-    pub fn set_triggered_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
-    ) -> Self {
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
         self.triggered_alarms = input;
         self
     }
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
-    pub fn get_triggered_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowExecutionTaskIdentity`](crate::types::MaintenanceWindowExecutionTaskIdentity).

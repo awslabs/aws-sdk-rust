@@ -12,10 +12,7 @@ pub fn ser_update_pipe_source_managed_streaming_kafka_parameters(
     if let Some(var_2) = &input.credentials {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Credentials").start_object();
-        crate::protocol_serde::shape_msk_access_credentials::ser_msk_access_credentials(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_msk_access_credentials::ser_msk_access_credentials(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.maximum_batching_window_in_seconds {

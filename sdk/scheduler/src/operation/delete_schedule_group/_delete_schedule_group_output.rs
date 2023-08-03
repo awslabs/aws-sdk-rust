@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteScheduleGroupOutput {
 }
 impl DeleteScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleGroupOutput`](crate::operation::delete_schedule_group::DeleteScheduleGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder {
-        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder {
+        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScheduleGroupOutput`](crate::operation::delete_schedule_group::DeleteScheduleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduleGroupOutputBuilder {
     _request_id: Option<String>,
 }

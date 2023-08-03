@@ -38,10 +38,7 @@ impl CreateInstanceSnapshotFluentBuilder {
         }
     }
     /// Access the CreateInstanceSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateInstanceSnapshotFluentBuilder {
             crate::operation::create_instance_snapshot::CreateInstanceSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateInstanceSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateInstanceSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_snapshot::CreateInstanceSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateInstanceSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_snapshot::CreateInstanceSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl CreateInstanceSnapshotFluentBuilder {
             crate::operation::create_instance_snapshot::CreateInstanceSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for your new snapshot.</p>
-    pub fn instance_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_snapshot_name(input.into());
         self
     }
     /// <p>The name for your new snapshot.</p>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
     }
@@ -145,18 +125,12 @@ impl CreateInstanceSnapshotFluentBuilder {
         self.inner.get_instance_snapshot_name()
     }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
@@ -176,10 +150,7 @@ impl CreateInstanceSnapshotFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

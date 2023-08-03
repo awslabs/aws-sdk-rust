@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`display_language_code(Option<DisplayLanguageCode>)`](crate::operation::list_languages::ListLanguagesOutput::display_language_code): <p>The language code passed in with the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_languages::ListLanguagesOutput::next_token): <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     /// - On failure, responds with [`SdkError<ListLanguagesError>`](crate::operation::list_languages::ListLanguagesError)
-    pub fn list_languages(
-        &self,
-    ) -> crate::operation::list_languages::builders::ListLanguagesFluentBuilder {
-        crate::operation::list_languages::builders::ListLanguagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_languages(&self) -> crate::operation::list_languages::builders::ListLanguagesFluentBuilder {
+        crate::operation::list_languages::builders::ListLanguagesFluentBuilder::new(self.handle.clone())
     }
 }

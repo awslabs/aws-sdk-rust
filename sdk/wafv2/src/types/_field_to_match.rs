@@ -60,9 +60,7 @@ impl FieldToMatch {
     }
     /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
     /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
-    pub fn single_query_argument(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SingleQueryArgument> {
+    pub fn single_query_argument(&self) -> ::std::option::Option<&crate::types::SingleQueryArgument> {
         self.single_query_argument.as_ref()
     }
     /// <p>Inspect all query arguments. </p>
@@ -117,9 +115,7 @@ impl FieldToMatch {
 
 /// A builder for [`FieldToMatch`](crate::types::FieldToMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldToMatchBuilder {
     pub(crate) single_header: ::std::option::Option<crate::types::SingleHeader>,
     pub(crate) single_query_argument: ::std::option::Option<crate::types::SingleQueryArgument>,
@@ -144,10 +140,7 @@ impl FieldToMatchBuilder {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
     /// <p>Alternately, you can filter and inspect all headers with the <code>Headers</code> <code>FieldToMatch</code> setting. </p>
-    pub fn set_single_header(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleHeader>,
-    ) -> Self {
+    pub fn set_single_header(mut self, input: ::std::option::Option<crate::types::SingleHeader>) -> Self {
         self.single_header = input;
         self
     }
@@ -165,18 +158,13 @@ impl FieldToMatchBuilder {
     }
     /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
     /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
-    pub fn set_single_query_argument(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleQueryArgument>,
-    ) -> Self {
+    pub fn set_single_query_argument(mut self, input: ::std::option::Option<crate::types::SingleQueryArgument>) -> Self {
         self.single_query_argument = input;
         self
     }
     /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
     /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
-    pub fn get_single_query_argument(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleQueryArgument> {
+    pub fn get_single_query_argument(&self) -> &::std::option::Option<crate::types::SingleQueryArgument> {
         &self.single_query_argument
     }
     /// <p>Inspect all query arguments. </p>
@@ -185,17 +173,12 @@ impl FieldToMatchBuilder {
         self
     }
     /// <p>Inspect all query arguments. </p>
-    pub fn set_all_query_arguments(
-        mut self,
-        input: ::std::option::Option<crate::types::AllQueryArguments>,
-    ) -> Self {
+    pub fn set_all_query_arguments(mut self, input: ::std::option::Option<crate::types::AllQueryArguments>) -> Self {
         self.all_query_arguments = input;
         self
     }
     /// <p>Inspect all query arguments. </p>
-    pub fn get_all_query_arguments(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllQueryArguments> {
+    pub fn get_all_query_arguments(&self) -> &::std::option::Option<crate::types::AllQueryArguments> {
         &self.all_query_arguments
     }
     /// <p>Inspect the request URI path. This is the part of the web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
@@ -218,10 +201,7 @@ impl FieldToMatchBuilder {
         self
     }
     /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
-    pub fn set_query_string(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryString>,
-    ) -> Self {
+    pub fn set_query_string(mut self, input: ::std::option::Option<crate::types::QueryString>) -> Self {
         self.query_string = input;
         self
     }
@@ -323,10 +303,7 @@ impl FieldToMatchBuilder {
         self
     }
     /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
-    pub fn set_header_order(
-        mut self,
-        input: ::std::option::Option<crate::types::HeaderOrder>,
-    ) -> Self {
+    pub fn set_header_order(mut self, input: ::std::option::Option<crate::types::HeaderOrder>) -> Self {
         self.header_order = input;
         self
     }

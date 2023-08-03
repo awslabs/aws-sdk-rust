@@ -26,7 +26,7 @@ impl DescribeAssociationExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder,
+    inner: crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder,
 }
 impl DescribeAssociationExecutionsFluentBuilder {
     /// Creates a new `DescribeAssociationExecutions`.
@@ -37,7 +37,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
         }
     }
     /// Access the DescribeAssociationExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
             crate::operation::describe_association_executions::DescribeAssociationExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association_executions::DescribeAssociationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_executions::DescribeAssociationExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association_executions::DescribeAssociationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_executions::DescribeAssociationExecutionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association_executions::DescribeAssociationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_executions::DescribeAssociationExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeAssociationExecutionsFluentBuilder {
             crate::operation::describe_association_executions::DescribeAssociationExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association_executions::DescribeAssociationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_executions::DescribeAssociationExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator {
         crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The association ID for which you want to view execution history details.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID for which you want to view execution history details.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -162,10 +145,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
     /// <p>ExecutionId (EQUAL)</p>
     /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -173,9 +153,7 @@ impl DescribeAssociationExecutionsFluentBuilder {
     /// <p>ExecutionId (EQUAL)</p>
     /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

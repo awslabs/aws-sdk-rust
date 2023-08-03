@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`license_configuration_usage_list(Option<Vec<LicenseConfigurationUsage>>)`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput::license_configuration_usage_list): <p>Information about the license configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListUsageForLicenseConfigurationError>`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError)
-    pub fn list_usage_for_license_configuration(&self) -> crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationFluentBuilder{
+    pub fn list_usage_for_license_configuration(
+        &self,
+    ) -> crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationFluentBuilder {
         crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

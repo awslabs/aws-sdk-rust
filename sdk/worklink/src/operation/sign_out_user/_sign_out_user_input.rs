@@ -29,9 +29,7 @@ impl SignOutUserInput {
 
 /// A builder for [`SignOutUserInput`](crate::operation::sign_out_user::SignOutUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignOutUserInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl SignOutUserInputBuilder {
         &self.username
     }
     /// Consumes the builder and constructs a [`SignOutUserInput`](crate::operation::sign_out_user::SignOutUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::sign_out_user::SignOutUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_out_user::SignOutUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_out_user::SignOutUserInput {
             fleet_arn: self.fleet_arn,
             username: self.username,

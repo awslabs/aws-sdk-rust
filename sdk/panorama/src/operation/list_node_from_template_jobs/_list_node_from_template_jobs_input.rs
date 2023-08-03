@@ -22,16 +22,14 @@ impl ListNodeFromTemplateJobsInput {
 }
 impl ListNodeFromTemplateJobsInput {
     /// Creates a new builder-style object to manufacture [`ListNodeFromTemplateJobsInput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsInput).
-    pub fn builder() -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder {
         crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNodeFromTemplateJobsInput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodeFromTemplateJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListNodeFromTemplateJobsInputBuilder {
         crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopPipelineExecutionOutput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<StopPipelineExecutionError>`](crate::operation::stop_pipeline_execution::StopPipelineExecutionError)
-    pub fn stop_pipeline_execution(
-        &self,
-    ) -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionFluentBuilder
-    {
-        crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_pipeline_execution(&self) -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionFluentBuilder {
+        crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

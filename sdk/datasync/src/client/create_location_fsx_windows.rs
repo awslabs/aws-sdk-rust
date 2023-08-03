@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationFsxWindowsOutput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput::location_arn): <p>The ARN of the FSx for Windows File Server file system location you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationFsxWindowsError>`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsError)
-    pub fn create_location_fsx_windows(&self) -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsFluentBuilder{
+    pub fn create_location_fsx_windows(&self) -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsFluentBuilder {
         crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -63,9 +63,7 @@ impl JobReport {
 
 /// A builder for [`JobReport`](crate::types::JobReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobReportBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::JobReportFormat>,
@@ -94,10 +92,7 @@ impl JobReportBuilder {
         self
     }
     /// <p>The format of the specified job-completion report.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::JobReportFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::JobReportFormat>) -> Self {
         self.format = input;
         self
     }
@@ -157,10 +152,7 @@ impl JobReportBuilder {
         self
     }
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
-    pub fn set_report_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::JobReportScope>,
-    ) -> Self {
+    pub fn set_report_scope(mut self, input: ::std::option::Option<crate::types::JobReportScope>) -> Self {
         self.report_scope = input;
         self
     }

@@ -37,9 +37,7 @@ impl DeleteUserEndpointsFluentBuilder {
         }
     }
     /// Access the DeleteUserEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteUserEndpointsFluentBuilder {
             crate::operation::delete_user_endpoints::DeleteUserEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_endpoints::DeleteUserEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteUserEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteUserEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_endpoints::DeleteUserEndpointsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteUserEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_endpoints::DeleteUserEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteUserEndpointsFluentBuilder {
             crate::operation::delete_user_endpoints::DeleteUserEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_endpoints::DeleteUserEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

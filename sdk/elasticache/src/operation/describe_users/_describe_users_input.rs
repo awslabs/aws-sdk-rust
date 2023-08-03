@@ -50,9 +50,7 @@ impl DescribeUsersInput {
 
 /// A builder for [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsersInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl DescribeUsersInputBuilder {
         self
     }
     /// <p>Filter to determine the list of User IDs to return.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -143,10 +138,7 @@ impl DescribeUsersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_users::DescribeUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_users::DescribeUsersInput {
             engine: self.engine,
             user_id: self.user_id,

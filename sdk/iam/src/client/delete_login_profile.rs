@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::delete_login_profile::builders::DeleteLoginProfileFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_login_profile::builders::DeleteLoginProfileFluentBuilder::set_user_name): <p>The name of the user whose password you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`DeleteLoginProfileOutput`](crate::operation::delete_login_profile::DeleteLoginProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteLoginProfileError>`](crate::operation::delete_login_profile::DeleteLoginProfileError)
-    pub fn delete_login_profile(
-        &self,
-    ) -> crate::operation::delete_login_profile::builders::DeleteLoginProfileFluentBuilder {
-        crate::operation::delete_login_profile::builders::DeleteLoginProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_login_profile(&self) -> crate::operation::delete_login_profile::builders::DeleteLoginProfileFluentBuilder {
+        crate::operation::delete_login_profile::builders::DeleteLoginProfileFluentBuilder::new(self.handle.clone())
     }
 }

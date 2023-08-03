@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`metadata(Option<HashMap<String, String>>)`](crate::operation::sign_payload::SignPayloadOutput::metadata): <p>Information including the signing profile ARN and the signing job ID. Clients use metadata to signature records, for example, as annotations added to the signature manifest inside an OCI registry.</p>
     ///   - [`signature(Option<Blob>)`](crate::operation::sign_payload::SignPayloadOutput::signature): <p>A cryptographic signature.</p>
     /// - On failure, responds with [`SdkError<SignPayloadError>`](crate::operation::sign_payload::SignPayloadError)
-    pub fn sign_payload(
-        &self,
-    ) -> crate::operation::sign_payload::builders::SignPayloadFluentBuilder {
+    pub fn sign_payload(&self) -> crate::operation::sign_payload::builders::SignPayloadFluentBuilder {
         crate::operation::sign_payload::builders::SignPayloadFluentBuilder::new(self.handle.clone())
     }
 }

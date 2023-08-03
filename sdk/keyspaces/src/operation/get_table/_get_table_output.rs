@@ -78,21 +78,15 @@ impl GetTableOutput {
     /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
     /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
     /// </ul>
-    pub fn capacity_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacitySpecificationSummary> {
+    pub fn capacity_specification(&self) -> ::std::option::Option<&crate::types::CapacitySpecificationSummary> {
         self.capacity_specification.as_ref()
     }
     /// <p>The encryption settings of the specified table.</p>
-    pub fn encryption_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
+    pub fn encryption_specification(&self) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
         self.encryption_specification.as_ref()
     }
     /// <p>The point-in-time recovery status of the specified table.</p>
-    pub fn point_in_time_recovery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PointInTimeRecoverySummary> {
+    pub fn point_in_time_recovery(&self) -> ::std::option::Option<&crate::types::PointInTimeRecoverySummary> {
         self.point_in_time_recovery.as_ref()
     }
     /// <p>The custom Time to Live settings of the specified table.</p>
@@ -108,9 +102,7 @@ impl GetTableOutput {
         self.comment.as_ref()
     }
     /// <p> The client-side timestamps setting of the table.</p>
-    pub fn client_side_timestamps(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
+    pub fn client_side_timestamps(&self) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
         self.client_side_timestamps.as_ref()
     }
 }
@@ -128,9 +120,7 @@ impl GetTableOutput {
 
 /// A builder for [`GetTableOutput`](crate::operation::get_table::GetTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableOutputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
@@ -138,12 +128,9 @@ pub struct GetTableOutputBuilder {
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::TableStatus>,
     pub(crate) schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
-    pub(crate) capacity_specification:
-        ::std::option::Option<crate::types::CapacitySpecificationSummary>,
-    pub(crate) encryption_specification:
-        ::std::option::Option<crate::types::EncryptionSpecification>,
-    pub(crate) point_in_time_recovery:
-        ::std::option::Option<crate::types::PointInTimeRecoverySummary>,
+    pub(crate) capacity_specification: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
+    pub(crate) encryption_specification: ::std::option::Option<crate::types::EncryptionSpecification>,
+    pub(crate) point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecoverySummary>,
     pub(crate) ttl: ::std::option::Option<crate::types::TimeToLive>,
     pub(crate) default_time_to_live: ::std::option::Option<i32>,
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
@@ -152,18 +139,12 @@ pub struct GetTableOutputBuilder {
 }
 impl GetTableOutputBuilder {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace that the specified table is stored in.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyspace_name = input;
         self
     }
@@ -205,10 +186,7 @@ impl GetTableOutputBuilder {
         self
     }
     /// <p>The creation timestamp of the specified table.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -236,10 +214,7 @@ impl GetTableOutputBuilder {
         self
     }
     /// <p>The schema definition of the specified table.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -252,10 +227,7 @@ impl GetTableOutputBuilder {
     /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
     /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
     /// </ul>
-    pub fn capacity_specification(
-        mut self,
-        input: crate::types::CapacitySpecificationSummary,
-    ) -> Self {
+    pub fn capacity_specification(mut self, input: crate::types::CapacitySpecificationSummary) -> Self {
         self.capacity_specification = ::std::option::Option::Some(input);
         self
     }
@@ -264,10 +236,7 @@ impl GetTableOutputBuilder {
     /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
     /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
     /// </ul>
-    pub fn set_capacity_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
-    ) -> Self {
+    pub fn set_capacity_specification(mut self, input: ::std::option::Option<crate::types::CapacitySpecificationSummary>) -> Self {
         self.capacity_specification = input;
         self
     }
@@ -276,53 +245,35 @@ impl GetTableOutputBuilder {
     /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
     /// <li> <p> <code>throughputMode:PROVISIONED</code> </p> </li>
     /// </ul>
-    pub fn get_capacity_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacitySpecificationSummary> {
+    pub fn get_capacity_specification(&self) -> &::std::option::Option<crate::types::CapacitySpecificationSummary> {
         &self.capacity_specification
     }
     /// <p>The encryption settings of the specified table.</p>
-    pub fn encryption_specification(
-        mut self,
-        input: crate::types::EncryptionSpecification,
-    ) -> Self {
+    pub fn encryption_specification(mut self, input: crate::types::EncryptionSpecification) -> Self {
         self.encryption_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption settings of the specified table.</p>
-    pub fn set_encryption_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSpecification>,
-    ) -> Self {
+    pub fn set_encryption_specification(mut self, input: ::std::option::Option<crate::types::EncryptionSpecification>) -> Self {
         self.encryption_specification = input;
         self
     }
     /// <p>The encryption settings of the specified table.</p>
-    pub fn get_encryption_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSpecification> {
+    pub fn get_encryption_specification(&self) -> &::std::option::Option<crate::types::EncryptionSpecification> {
         &self.encryption_specification
     }
     /// <p>The point-in-time recovery status of the specified table.</p>
-    pub fn point_in_time_recovery(
-        mut self,
-        input: crate::types::PointInTimeRecoverySummary,
-    ) -> Self {
+    pub fn point_in_time_recovery(mut self, input: crate::types::PointInTimeRecoverySummary) -> Self {
         self.point_in_time_recovery = ::std::option::Option::Some(input);
         self
     }
     /// <p>The point-in-time recovery status of the specified table.</p>
-    pub fn set_point_in_time_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecoverySummary>,
-    ) -> Self {
+    pub fn set_point_in_time_recovery(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoverySummary>) -> Self {
         self.point_in_time_recovery = input;
         self
     }
     /// <p>The point-in-time recovery status of the specified table.</p>
-    pub fn get_point_in_time_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::PointInTimeRecoverySummary> {
+    pub fn get_point_in_time_recovery(&self) -> &::std::option::Option<crate::types::PointInTimeRecoverySummary> {
         &self.point_in_time_recovery
     }
     /// <p>The custom Time to Live settings of the specified table.</p>
@@ -373,17 +324,12 @@ impl GetTableOutputBuilder {
         self
     }
     /// <p> The client-side timestamps setting of the table.</p>
-    pub fn set_client_side_timestamps(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientSideTimestamps>,
-    ) -> Self {
+    pub fn set_client_side_timestamps(mut self, input: ::std::option::Option<crate::types::ClientSideTimestamps>) -> Self {
         self.client_side_timestamps = input;
         self
     }
     /// <p> The client-side timestamps setting of the table.</p>
-    pub fn get_client_side_timestamps(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
+    pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
         &self.client_side_timestamps
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

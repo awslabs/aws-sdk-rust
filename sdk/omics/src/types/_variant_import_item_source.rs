@@ -23,9 +23,7 @@ impl VariantImportItemSource {
 
 /// A builder for [`VariantImportItemSource`](crate::types::VariantImportItemSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariantImportItemSourceBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl VariantImportItemSourceBuilder {
     }
     /// Consumes the builder and constructs a [`VariantImportItemSource`](crate::types::VariantImportItemSource).
     pub fn build(self) -> crate::types::VariantImportItemSource {
-        crate::types::VariantImportItemSource {
-            source: self.source,
-        }
+        crate::types::VariantImportItemSource { source: self.source }
     }
 }

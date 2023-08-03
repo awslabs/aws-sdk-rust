@@ -26,7 +26,7 @@ impl ListBillingGroupCostReportsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder,
+    inner: crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder,
 }
 impl ListBillingGroupCostReportsFluentBuilder {
     /// Creates a new `ListBillingGroupCostReports`.
@@ -37,7 +37,7 @@ impl ListBillingGroupCostReportsFluentBuilder {
         }
     }
     /// Access the ListBillingGroupCostReports as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListBillingGroupCostReportsFluentBuilder {
             crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListBillingGroupCostReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListBillingGroupCostReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListBillingGroupCostReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListBillingGroupCostReportsFluentBuilder {
             crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator {
         crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator::new(self.handle, self.inner)
     }
     /// <p>The preferred billing period for your report. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p>The preferred billing period for your report. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -180,17 +163,12 @@ impl ListBillingGroupCostReportsFluentBuilder {
         self
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
         self.inner.get_filters()
     }
 }

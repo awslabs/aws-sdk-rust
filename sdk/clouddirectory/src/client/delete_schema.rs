@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::delete_schema::DeleteSchemaOutput::schema_arn): <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::operation::delete_schema::DeleteSchemaError)
-    pub fn delete_schema(
-        &self,
-    ) -> crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder {
-        crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schema(&self) -> crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder {
+        crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::new(self.handle.clone())
     }
 }

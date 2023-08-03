@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateAddressOutput {
 }
 impl DisassociateAddressOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAddressOutput`](crate::operation::disassociate_address::DisassociateAddressOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_address::builders::DisassociateAddressOutputBuilder {
-        crate::operation::disassociate_address::builders::DisassociateAddressOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_address::builders::DisassociateAddressOutputBuilder {
+        crate::operation::disassociate_address::builders::DisassociateAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAddressOutput`](crate::operation::disassociate_address::DisassociateAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAddressOutputBuilder {
     _request_id: Option<String>,
 }

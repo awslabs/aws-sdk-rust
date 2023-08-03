@@ -23,9 +23,7 @@ impl Oidc {
 
 /// A builder for [`Oidc`](crate::types::Oidc).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OidcBuilder {
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OidcBuilder {
     }
     /// Consumes the builder and constructs a [`Oidc`](crate::types::Oidc).
     pub fn build(self) -> crate::types::Oidc {
-        crate::types::Oidc {
-            issuer: self.issuer,
-        }
+        crate::types::Oidc { issuer: self.issuer }
     }
 }

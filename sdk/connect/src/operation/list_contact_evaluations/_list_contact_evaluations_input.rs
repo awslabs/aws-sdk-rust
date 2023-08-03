@@ -33,18 +33,14 @@ impl ListContactEvaluationsInput {
 }
 impl ListContactEvaluationsInput {
     /// Creates a new builder-style object to manufacture [`ListContactEvaluationsInput`](crate::operation::list_contact_evaluations::ListContactEvaluationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsInputBuilder {
         crate::operation::list_contact_evaluations::builders::ListContactEvaluationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactEvaluationsInput`](crate::operation::list_contact_evaluations::ListContactEvaluationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactEvaluationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -102,16 +98,12 @@ impl ListContactEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`ListContactEvaluationsInput`](crate::operation::list_contact_evaluations::ListContactEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_evaluations::ListContactEvaluationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_contact_evaluations::ListContactEvaluationsInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_contact_evaluations::ListContactEvaluationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_contact_evaluations::ListContactEvaluationsInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            next_token: self.next_token,
+        })
     }
 }

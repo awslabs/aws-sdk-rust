@@ -28,7 +28,7 @@ impl StartProductSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartProductSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder,
+    inner: crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder,
 }
 impl StartProductSubscriptionFluentBuilder {
     /// Creates a new `StartProductSubscription`.
@@ -39,10 +39,7 @@ impl StartProductSubscriptionFluentBuilder {
         }
     }
     /// Access the StartProductSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl StartProductSubscriptionFluentBuilder {
             crate::operation::start_product_subscription::StartProductSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl StartProductSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl StartProductSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_product_subscription::StartProductSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl StartProductSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_product_subscription::StartProductSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl StartProductSubscriptionFluentBuilder {
             crate::operation::start_product_subscription::StartProductSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +131,7 @@ impl StartProductSubscriptionFluentBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }

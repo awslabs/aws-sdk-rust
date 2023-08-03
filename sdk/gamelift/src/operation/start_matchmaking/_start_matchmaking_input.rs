@@ -31,17 +31,14 @@ impl StartMatchmakingInput {
 }
 impl StartMatchmakingInput {
     /// Creates a new builder-style object to manufacture [`StartMatchmakingInput`](crate::operation::start_matchmaking::StartMatchmakingInput).
-    pub fn builder() -> crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder {
         crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMatchmakingInput`](crate::operation::start_matchmaking::StartMatchmakingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMatchmakingInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ impl StartMatchmakingInputBuilder {
         &self.ticket_id
     }
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_name = input;
         self
     }
@@ -96,10 +87,7 @@ impl StartMatchmakingInputBuilder {
     }
     /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
-    pub fn set_players(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
-    ) -> Self {
+    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>) -> Self {
         self.players = input;
         self
     }
@@ -111,10 +99,7 @@ impl StartMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`StartMatchmakingInput`](crate::operation::start_matchmaking::StartMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_matchmaking::StartMatchmakingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_matchmaking::StartMatchmakingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_matchmaking::StartMatchmakingInput {
             ticket_id: self.ticket_id,
             configuration_name: self.configuration_name,

@@ -39,13 +39,7 @@
 /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobTemplateListBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for JobTemplateListBy {
             "CREATION_DATE" => JobTemplateListBy::CreationDate,
             "NAME" => JobTemplateListBy::Name,
             "SYSTEM" => JobTemplateListBy::System,
-            other => {
-                JobTemplateListBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobTemplateListBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

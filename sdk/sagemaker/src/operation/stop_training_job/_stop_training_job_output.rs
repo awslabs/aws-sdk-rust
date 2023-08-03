@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopTrainingJobOutput {
 }
 impl StopTrainingJobOutput {
     /// Creates a new builder-style object to manufacture [`StopTrainingJobOutput`](crate::operation::stop_training_job::StopTrainingJobOutput).
-    pub fn builder() -> crate::operation::stop_training_job::builders::StopTrainingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_training_job::builders::StopTrainingJobOutputBuilder {
         crate::operation::stop_training_job::builders::StopTrainingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopTrainingJobOutput`](crate::operation::stop_training_job::StopTrainingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTrainingJobOutputBuilder {
     _request_id: Option<String>,
 }

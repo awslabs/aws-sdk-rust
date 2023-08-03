@@ -36,18 +36,14 @@ impl DescribeSslPoliciesInput {
 }
 impl DescribeSslPoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSslPoliciesInput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder {
-        crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder {
+        crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSslPoliciesInput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSslPoliciesInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -67,10 +63,7 @@ impl DescribeSslPoliciesInputBuilder {
         self
     }
     /// <p>The names of the policies.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -112,33 +105,24 @@ impl DescribeSslPoliciesInputBuilder {
         self
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-    pub fn set_load_balancer_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
-    ) -> Self {
+    pub fn set_load_balancer_type(mut self, input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>) -> Self {
         self.load_balancer_type = input;
         self
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-    pub fn get_load_balancer_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
+    pub fn get_load_balancer_type(&self) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
         &self.load_balancer_type
     }
     /// Consumes the builder and constructs a [`DescribeSslPoliciesInput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ssl_policies::DescribeSslPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ssl_policies::DescribeSslPoliciesInput {
-                names: self.names,
-                marker: self.marker,
-                page_size: self.page_size,
-                load_balancer_type: self.load_balancer_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ssl_policies::DescribeSslPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_ssl_policies::DescribeSslPoliciesInput {
+            names: self.names,
+            marker: self.marker,
+            page_size: self.page_size,
+            load_balancer_type: self.load_balancer_type,
+        })
     }
 }

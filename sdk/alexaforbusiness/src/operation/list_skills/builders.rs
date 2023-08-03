@@ -10,10 +10,7 @@ impl ListSkillsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_skills::ListSkillsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_skills::ListSkillsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_skills::ListSkillsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_skills();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListSkillsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_skills::ListSkills,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_skills::ListSkills, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_skills::ListSkillsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListSkillsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListSkillsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_skills::ListSkills,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_skills::ListSkills, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_skills::ListSkillsError>,
     > {
         self.customize_middleware().await
@@ -120,18 +108,12 @@ impl ListSkillsFluentBuilder {
         crate::operation::list_skills::paginator::ListSkillsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the skill group for which to list enabled skills.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_group_arn(input.into());
         self
     }
     /// <p>The ARN of the skill group for which to list enabled skills.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
@@ -145,17 +127,12 @@ impl ListSkillsFluentBuilder {
         self
     }
     /// <p>Whether the skill is enabled under the user's account.</p>
-    pub fn set_enablement_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnablementTypeFilter>,
-    ) -> Self {
+    pub fn set_enablement_type(mut self, input: ::std::option::Option<crate::types::EnablementTypeFilter>) -> Self {
         self.inner = self.inner.set_enablement_type(input);
         self
     }
     /// <p>Whether the skill is enabled under the user's account.</p>
-    pub fn get_enablement_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnablementTypeFilter> {
+    pub fn get_enablement_type(&self) -> &::std::option::Option<crate::types::EnablementTypeFilter> {
         self.inner.get_enablement_type()
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
@@ -164,10 +141,7 @@ impl ListSkillsFluentBuilder {
         self
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
-    pub fn set_skill_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SkillTypeFilter>,
-    ) -> Self {
+    pub fn set_skill_type(mut self, input: ::std::option::Option<crate::types::SkillTypeFilter>) -> Self {
         self.inner = self.inner.set_skill_type(input);
         self
     }

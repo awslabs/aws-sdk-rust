@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`profile_arn(Option<String>)`](crate::operation::create_profile::CreateProfileOutput::profile_arn): <p>The profile ARN.</p>
     ///   - [`profile_version(Option<String>)`](crate::operation::create_profile::CreateProfileOutput::profile_version): <p>Version of the profile.</p>
     /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::operation::create_profile::CreateProfileError)
-    pub fn create_profile(
-        &self,
-    ) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {
-        crate::operation::create_profile::builders::CreateProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_profile(&self) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {
+        crate::operation::create_profile::builders::CreateProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListLongTermPricingOutput {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
     #[doc(hidden)]
-    pub long_term_pricing_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
+    pub long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLongTermPricingOutput {
 }
 impl ListLongTermPricingOutput {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
-    pub fn long_term_pricing_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LongTermPricingListEntry]> {
+    pub fn long_term_pricing_entries(&self) -> ::std::option::Option<&[crate::types::LongTermPricingListEntry]> {
         self.long_term_pricing_entries.as_deref()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLongTermPricingOutput {
 }
 impl ListLongTermPricingOutput {
     /// Creates a new builder-style object to manufacture [`ListLongTermPricingOutput`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput).
-    pub fn builder(
-    ) -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingOutputBuilder {
+    pub fn builder() -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingOutputBuilder {
         crate::operation::list_long_term_pricing::builders::ListLongTermPricingOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLongTermPricingOutput`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLongTermPricingOutputBuilder {
-    pub(crate) long_term_pricing_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
+    pub(crate) long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListLongTermPricingOutputBuilder {
     /// To override the contents of this collection use [`set_long_term_pricing_entries`](Self::set_long_term_pricing_entries).
     ///
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
-    pub fn long_term_pricing_entries(
-        mut self,
-        input: crate::types::LongTermPricingListEntry,
-    ) -> Self {
+    pub fn long_term_pricing_entries(mut self, input: crate::types::LongTermPricingListEntry) -> Self {
         let mut v = self.long_term_pricing_entries.unwrap_or_default();
         v.push(input);
         self.long_term_pricing_entries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
-    pub fn set_long_term_pricing_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
-    ) -> Self {
+    pub fn set_long_term_pricing_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>) -> Self {
         self.long_term_pricing_entries = input;
         self
     }
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
-    pub fn get_long_term_pricing_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>> {
+    pub fn get_long_term_pricing_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>> {
         &self.long_term_pricing_entries
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>

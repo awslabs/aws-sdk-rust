@@ -35,9 +35,7 @@ impl ListFeaturesOutput {
 
 /// A builder for [`ListFeaturesOutput`](crate::operation::list_features::ListFeaturesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFeaturesOutputBuilder {
     pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::FeatureSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFeaturesOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureSummary>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureSummary>>) -> Self {
         self.features = input;
         self
     }
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureSummary>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureSummary>> {
         &self.features
     }
     /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>

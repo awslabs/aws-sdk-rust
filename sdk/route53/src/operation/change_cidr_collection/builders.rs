@@ -46,9 +46,7 @@ impl ChangeCidrCollectionFluentBuilder {
         }
     }
     /// Access the ChangeCidrCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +58,7 @@ impl ChangeCidrCollectionFluentBuilder {
             crate::operation::change_cidr_collection::ChangeCidrCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +68,7 @@ impl ChangeCidrCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +77,7 @@ impl ChangeCidrCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>,
     > {
         let op = self
             .inner
@@ -109,9 +100,7 @@ impl ChangeCidrCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +114,7 @@ impl ChangeCidrCollectionFluentBuilder {
             crate::operation::change_cidr_collection::ChangeCidrCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>,
     > {
         self.customize_middleware().await
     }
@@ -184,17 +171,12 @@ impl ChangeCidrCollectionFluentBuilder {
         self
     }
     /// <p> Information about changes to a CIDR collection.</p>
-    pub fn set_changes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>,
-    ) -> Self {
+    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>) -> Self {
         self.inner = self.inner.set_changes(input);
         self
     }
     /// <p> Information about changes to a CIDR collection.</p>
-    pub fn get_changes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>> {
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>> {
         self.inner.get_changes()
     }
 }

@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateMicrosoftAdOutput {
 }
 impl CreateMicrosoftAdOutput {
     /// Creates a new builder-style object to manufacture [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput).
-    pub fn builder(
-    ) -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdOutputBuilder {
+    pub fn builder() -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdOutputBuilder {
         crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMicrosoftAdOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

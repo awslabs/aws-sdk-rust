@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput::next_token): <p>The point where pagination should resume when the response returns only partial results.</p>
     ///   - [`slack_channel_configurations(Option<Vec<SlackChannelConfiguration>>)`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput::slack_channel_configurations): <p>The configurations for a Slack channel.</p>
     /// - On failure, responds with [`SdkError<ListSlackChannelConfigurationsError>`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError)
-    pub fn list_slack_channel_configurations(&self) -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder{
+    pub fn list_slack_channel_configurations(
+        &self,
+    ) -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder {
         crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

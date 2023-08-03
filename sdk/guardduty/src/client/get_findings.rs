@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetFindingsOutput`](crate::operation::get_findings::GetFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<Finding>>)`](crate::operation::get_findings::GetFindingsOutput::findings): <p>A list of findings.</p>
     /// - On failure, responds with [`SdkError<GetFindingsError>`](crate::operation::get_findings::GetFindingsError)
-    pub fn get_findings(
-        &self,
-    ) -> crate::operation::get_findings::builders::GetFindingsFluentBuilder {
+    pub fn get_findings(&self) -> crate::operation::get_findings::builders::GetFindingsFluentBuilder {
         crate::operation::get_findings::builders::GetFindingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl GetTriggersInput {
 
 /// A builder for [`GetTriggersInput`](crate::operation::get_triggers::GetTriggersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTriggersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dependent_job_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl GetTriggersInputBuilder {
         &self.next_token
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
-    pub fn dependent_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dependent_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dependent_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
-    pub fn set_dependent_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dependent_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dependent_job_name = input;
         self
     }
@@ -94,12 +86,7 @@ impl GetTriggersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetTriggersInput`](crate::operation::get_triggers::GetTriggersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_triggers::GetTriggersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_triggers::GetTriggersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_triggers::GetTriggersInput {
             next_token: self.next_token,
             dependent_job_name: self.dependent_job_name,

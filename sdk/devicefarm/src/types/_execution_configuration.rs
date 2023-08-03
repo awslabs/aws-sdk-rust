@@ -53,9 +53,7 @@ impl ExecutionConfiguration {
 
 /// A builder for [`ExecutionConfiguration`](crate::types::ExecutionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionConfigurationBuilder {
     pub(crate) job_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) accounts_cleanup: ::std::option::Option<bool>,

@@ -30,9 +30,7 @@ impl ModelMetadataFilter {
 
 /// A builder for [`ModelMetadataFilter`](crate::types::ModelMetadataFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelMetadataFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ModelMetadataFilterType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ModelMetadataFilterBuilder {
         self
     }
     /// <p>The name of the of the model to filter by.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelMetadataFilterType>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ModelMetadataFilterType>) -> Self {
         self.name = input;
         self
     }

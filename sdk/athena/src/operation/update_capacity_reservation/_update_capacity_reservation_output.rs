@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCapacityReservationOutput {
 }
 impl UpdateCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCapacityReservationOutput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput).
-    pub fn builder() -> crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationOutputBuilder{
+    pub fn builder() -> crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationOutputBuilder {
         crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCapacityReservationOutput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCapacityReservationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateCapacityReservationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCapacityReservationOutput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput {
+    pub fn build(self) -> crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput {
         crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput {
             _request_id: self._request_id,
         }

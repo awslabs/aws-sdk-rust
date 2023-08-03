@@ -63,17 +63,14 @@ impl GetRecommendationsInput {
 }
 impl GetRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationsInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,18 +79,12 @@ pub struct GetRecommendationsInputBuilder {
 }
 impl GetRecommendationsInputBuilder {
     /// <p> The name of the profiling group to get analysis data about. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the profiling group to get analysis data about. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -107,10 +98,7 @@ impl GetRecommendationsInputBuilder {
         self
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -124,10 +112,7 @@ impl GetRecommendationsInputBuilder {
         self
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -191,17 +176,12 @@ impl GetRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommendations::GetRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommendations::GetRecommendationsInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                locale: self.locale,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
+            profiling_group_name: self.profiling_group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            locale: self.locale,
+        })
     }
 }

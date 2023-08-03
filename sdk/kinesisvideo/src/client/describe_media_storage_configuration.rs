@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput) with field(s):
     ///   - [`media_storage_configuration(Option<MediaStorageConfiguration>)`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput::media_storage_configuration): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     /// - On failure, responds with [`SdkError<DescribeMediaStorageConfigurationError>`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationError)
-    pub fn describe_media_storage_configuration(&self) -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationFluentBuilder{
+    pub fn describe_media_storage_configuration(
+        &self,
+    ) -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationFluentBuilder {
         crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

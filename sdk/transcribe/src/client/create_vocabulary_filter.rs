@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`language_code(Option<LanguageCode>)`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterOutput::language_code): <p>The language code you selected for your custom vocabulary filter.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterOutput::last_modified_time): <p>The date and time you created your custom vocabulary filter.</p>  <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     /// - On failure, responds with [`SdkError<CreateVocabularyFilterError>`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterError)
-    pub fn create_vocabulary_filter(
-        &self,
-    ) -> crate::operation::create_vocabulary_filter::builders::CreateVocabularyFilterFluentBuilder
-    {
+    pub fn create_vocabulary_filter(&self) -> crate::operation::create_vocabulary_filter::builders::CreateVocabularyFilterFluentBuilder {
         crate::operation::create_vocabulary_filter::builders::CreateVocabularyFilterFluentBuilder::new(self.handle.clone())
     }
 }

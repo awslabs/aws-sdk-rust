@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetViolationDetailsOutput`](crate::operation::get_violation_details::GetViolationDetailsOutput) with field(s):
     ///   - [`violation_detail(Option<ViolationDetail>)`](crate::operation::get_violation_details::GetViolationDetailsOutput::violation_detail): <p>Violation detail for a resource.</p>
     /// - On failure, responds with [`SdkError<GetViolationDetailsError>`](crate::operation::get_violation_details::GetViolationDetailsError)
-    pub fn get_violation_details(
-        &self,
-    ) -> crate::operation::get_violation_details::builders::GetViolationDetailsFluentBuilder {
-        crate::operation::get_violation_details::builders::GetViolationDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_violation_details(&self) -> crate::operation::get_violation_details::builders::GetViolationDetailsFluentBuilder {
+        crate::operation::get_violation_details::builders::GetViolationDetailsFluentBuilder::new(self.handle.clone())
     }
 }

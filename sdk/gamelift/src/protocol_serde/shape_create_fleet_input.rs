@@ -39,27 +39,19 @@ pub fn ser_create_fleet_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_ip_permission::ser_ip_permission(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_ip_permission::ser_ip_permission(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
         array_12.finish();
     }
     if let Some(var_15) = &input.new_game_session_protection_policy {
-        object
-            .key("NewGameSessionProtectionPolicy")
-            .string(var_15.as_str());
+        object.key("NewGameSessionProtectionPolicy").string(var_15.as_str());
     }
     if let Some(var_16) = &input.runtime_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("RuntimeConfiguration").start_object();
-        crate::protocol_serde::shape_runtime_configuration::ser_runtime_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_runtime_configuration::ser_runtime_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.resource_creation_limit_policy {
@@ -92,10 +84,7 @@ pub fn ser_create_fleet_input(
     if let Some(var_27) = &input.certificate_configuration {
         #[allow(unused_mut)]
         let mut object_28 = object.key("CertificateConfiguration").start_object();
-        crate::protocol_serde::shape_certificate_configuration::ser_certificate_configuration(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_certificate_configuration::ser_certificate_configuration(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.locations {
@@ -104,10 +93,7 @@ pub fn ser_create_fleet_input(
             {
                 #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_location_configuration::ser_location_configuration(
-                    &mut object_32,
-                    item_31,
-                )?;
+                crate::protocol_serde::shape_location_configuration::ser_location_configuration(&mut object_32, item_31)?;
                 object_32.finish();
             }
         }
@@ -131,10 +117,7 @@ pub fn ser_create_fleet_input(
     if let Some(var_38) = &input.anywhere_configuration {
         #[allow(unused_mut)]
         let mut object_39 = object.key("AnywhereConfiguration").start_object();
-        crate::protocol_serde::shape_anywhere_configuration::ser_anywhere_configuration(
-            &mut object_39,
-            var_38,
-        )?;
+        crate::protocol_serde::shape_anywhere_configuration::ser_anywhere_configuration(&mut object_39, var_38)?;
         object_39.finish();
     }
     Ok(())

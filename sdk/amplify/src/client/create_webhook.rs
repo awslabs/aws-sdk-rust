@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWebhookOutput`](crate::operation::create_webhook::CreateWebhookOutput) with field(s):
     ///   - [`webhook(Option<Webhook>)`](crate::operation::create_webhook::CreateWebhookOutput::webhook): <p> Describes a webhook that connects repository events to an Amplify app. </p>
     /// - On failure, responds with [`SdkError<CreateWebhookError>`](crate::operation::create_webhook::CreateWebhookError)
-    pub fn create_webhook(
-        &self,
-    ) -> crate::operation::create_webhook::builders::CreateWebhookFluentBuilder {
-        crate::operation::create_webhook::builders::CreateWebhookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_webhook(&self) -> crate::operation::create_webhook::builders::CreateWebhookFluentBuilder {
+        crate::operation::create_webhook::builders::CreateWebhookFluentBuilder::new(self.handle.clone())
     }
 }

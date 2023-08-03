@@ -37,9 +37,7 @@ impl CreateOriginEndpointFluentBuilder {
         }
     }
     /// Access the CreateOriginEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_origin_endpoint::builders::CreateOriginEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_origin_endpoint::builders::CreateOriginEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateOriginEndpointFluentBuilder {
             crate::operation::create_origin_endpoint::CreateOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateOriginEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_endpoint::CreateOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_endpoint::CreateOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateOriginEndpointFluentBuilder {
             crate::operation::create_origin_endpoint::CreateOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::Authorization>,
-    ) -> Self {
+    pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::Authorization>) -> Self {
         self.inner = self.inner.set_authorization(input);
         self
     }
@@ -154,25 +138,17 @@ impl CreateOriginEndpointFluentBuilder {
         self.inner.get_channel_id()
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn cmaf_package(
-        mut self,
-        input: crate::types::CmafPackageCreateOrUpdateParameters,
-    ) -> Self {
+    pub fn cmaf_package(mut self, input: crate::types::CmafPackageCreateOrUpdateParameters) -> Self {
         self.inner = self.inner.cmaf_package(input);
         self
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn set_cmaf_package(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters>,
-    ) -> Self {
+    pub fn set_cmaf_package(mut self, input: ::std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters>) -> Self {
         self.inner = self.inner.set_cmaf_package(input);
         self
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn get_cmaf_package(
-        &self,
-    ) -> &::std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters> {
+    pub fn get_cmaf_package(&self) -> &::std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters> {
         self.inner.get_cmaf_package()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -181,10 +157,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn set_dash_package(
-        mut self,
-        input: ::std::option::Option<crate::types::DashPackage>,
-    ) -> Self {
+    pub fn set_dash_package(mut self, input: ::std::option::Option<crate::types::DashPackage>) -> Self {
         self.inner = self.inner.set_dash_package(input);
         self
     }
@@ -212,10 +185,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn set_hls_package(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsPackage>,
-    ) -> Self {
+    pub fn set_hls_package(mut self, input: ::std::option::Option<crate::types::HlsPackage>) -> Self {
         self.inner = self.inner.set_hls_package(input);
         self
     }
@@ -238,18 +208,12 @@ impl CreateOriginEndpointFluentBuilder {
         self.inner.get_id()
     }
     /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
-    pub fn manifest_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.manifest_name(input.into());
         self
     }
     /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
-    pub fn set_manifest_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_manifest_name(input);
         self
     }
@@ -263,10 +227,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    pub fn set_mss_package(
-        mut self,
-        input: ::std::option::Option<crate::types::MssPackage>,
-    ) -> Self {
+    pub fn set_mss_package(mut self, input: ::std::option::Option<crate::types::MssPackage>) -> Self {
         self.inner = self.inner.set_mss_package(input);
         self
     }
@@ -280,10 +241,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    pub fn set_origination(
-        mut self,
-        input: ::std::option::Option<crate::types::Origination>,
-    ) -> Self {
+    pub fn set_origination(mut self, input: ::std::option::Option<crate::types::Origination>) -> Self {
         self.inner = self.inner.set_origination(input);
         self
     }
@@ -310,30 +268,17 @@ impl CreateOriginEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
@@ -360,10 +305,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn set_whitelist(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_whitelist(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_whitelist(input);
         self
     }

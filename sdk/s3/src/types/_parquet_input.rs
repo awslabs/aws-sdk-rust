@@ -13,9 +13,7 @@ impl ParquetInput {
 
 /// A builder for [`ParquetInput`](crate::types::ParquetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParquetInputBuilder {}
 impl ParquetInputBuilder {
     /// Consumes the builder and constructs a [`ParquetInput`](crate::types::ParquetInput).

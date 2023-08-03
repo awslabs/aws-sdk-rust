@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateAdminAccountOutput {
 }
 impl AssociateAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAdminAccountOutput`](crate::operation::associate_admin_account::AssociateAdminAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_admin_account::builders::AssociateAdminAccountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_admin_account::builders::AssociateAdminAccountOutputBuilder {
         crate::operation::associate_admin_account::builders::AssociateAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAdminAccountOutput`](crate::operation::associate_admin_account::AssociateAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAdminAccountOutputBuilder {
     _request_id: Option<String>,
 }

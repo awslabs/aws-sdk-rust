@@ -36,9 +36,7 @@ impl EcsEnvironmentFile {
 
 /// A builder for [`EcsEnvironmentFile`](crate::types::EcsEnvironmentFile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsEnvironmentFileBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl EcsEnvironmentFileBuilder {
         self
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EcsEnvironmentFileType>) -> Self {
         self.r#type = input;
         self
     }

@@ -28,9 +28,7 @@ impl AwsService {
 
 /// A builder for [`AwsService`](crate::types::AwsService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsServiceBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }

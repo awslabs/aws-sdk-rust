@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ListWorkersWithQualificationTypeOutpu
 }
 impl ListWorkersWithQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeOutput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput).
-    pub fn builder() -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeOutputBuilder{
+    pub fn builder() -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeOutputBuilder {
         crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkersWithQualificationTypeOutput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkersWithQualificationTypeOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -92,17 +90,12 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
         self
     }
     /// <p> The list of Qualification elements returned by this call. </p>
-    pub fn set_qualifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Qualification>>,
-    ) -> Self {
+    pub fn set_qualifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Qualification>>) -> Self {
         self.qualifications = input;
         self
     }
     /// <p> The list of Qualification elements returned by this call. </p>
-    pub fn get_qualifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Qualification>> {
+    pub fn get_qualifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Qualification>> {
         &self.qualifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -115,14 +108,11 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkersWithQualificationTypeOutput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput).
-    pub fn build(self) -> crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput{
+    pub fn build(self) -> crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput {
         crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput {
-            next_token: self.next_token
-            ,
-            num_results: self.num_results
-            ,
-            qualifications: self.qualifications
-            ,
+            next_token: self.next_token,
+            num_results: self.num_results,
+            qualifications: self.qualifications,
             _request_id: self._request_id,
         }
     }

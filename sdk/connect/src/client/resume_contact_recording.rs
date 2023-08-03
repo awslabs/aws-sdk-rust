@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`initial_contact_id(impl ::std::convert::Into<String>)`](crate::operation::resume_contact_recording::builders::ResumeContactRecordingFluentBuilder::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::operation::resume_contact_recording::builders::ResumeContactRecordingFluentBuilder::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     /// - On success, responds with [`ResumeContactRecordingOutput`](crate::operation::resume_contact_recording::ResumeContactRecordingOutput)
     /// - On failure, responds with [`SdkError<ResumeContactRecordingError>`](crate::operation::resume_contact_recording::ResumeContactRecordingError)
-    pub fn resume_contact_recording(
-        &self,
-    ) -> crate::operation::resume_contact_recording::builders::ResumeContactRecordingFluentBuilder
-    {
+    pub fn resume_contact_recording(&self) -> crate::operation::resume_contact_recording::builders::ResumeContactRecordingFluentBuilder {
         crate::operation::resume_contact_recording::builders::ResumeContactRecordingFluentBuilder::new(self.handle.clone())
     }
 }

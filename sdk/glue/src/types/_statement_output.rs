@@ -58,9 +58,7 @@ impl StatementOutput {
 
 /// A builder for [`StatementOutput`](crate::types::StatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatementOutputBuilder {
     pub(crate) data: ::std::option::Option<crate::types::StatementOutputData>,
     pub(crate) execution_count: ::std::option::Option<i32>,
@@ -76,10 +74,7 @@ impl StatementOutputBuilder {
         self
     }
     /// <p>The code execution output.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::StatementOutputData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::StatementOutputData>) -> Self {
         self.data = input;
         self
     }
@@ -107,10 +102,7 @@ impl StatementOutputBuilder {
         self
     }
     /// <p>The status of the code execution output.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatementState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatementState>) -> Self {
         self.status = input;
         self
     }
@@ -158,10 +150,7 @@ impl StatementOutputBuilder {
         self
     }
     /// <p>The traceback of the output.</p>
-    pub fn set_traceback(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_traceback(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.traceback = input;
         self
     }

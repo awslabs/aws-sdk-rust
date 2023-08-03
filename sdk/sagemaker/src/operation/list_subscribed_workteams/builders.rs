@@ -26,8 +26,7 @@ impl ListSubscribedWorkteamsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSubscribedWorkteamsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder,
+    inner: crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder,
 }
 impl ListSubscribedWorkteamsFluentBuilder {
     /// Creates a new `ListSubscribedWorkteams`.
@@ -38,10 +37,7 @@ impl ListSubscribedWorkteamsFluentBuilder {
         }
     }
     /// Access the ListSubscribedWorkteams as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListSubscribedWorkteamsFluentBuilder {
             crate::operation::list_subscribed_workteams::ListSubscribedWorkteams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListSubscribedWorkteamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListSubscribedWorkteamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListSubscribedWorkteamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListSubscribedWorkteamsFluentBuilder {
             crate::operation::list_subscribed_workteams::ListSubscribedWorkteams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginator {
         crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginator::new(self.handle, self.inner)
     }
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

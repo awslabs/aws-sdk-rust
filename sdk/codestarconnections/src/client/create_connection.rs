@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`connection_arn(Option<String>)`](crate::operation::create_connection::CreateConnectionOutput::connection_arn): <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>   <p>The ARN is never reused if the connection is deleted.</p>  </note>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_connection::CreateConnectionOutput::tags): <p>Specifies the tags applied to the resource.</p>
     /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::operation::create_connection::CreateConnectionError)
-    pub fn create_connection(
-        &self,
-    ) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
-        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connection(&self) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
+        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

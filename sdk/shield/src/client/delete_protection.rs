@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`protection_id(impl ::std::convert::Into<String>)`](crate::operation::delete_protection::builders::DeleteProtectionFluentBuilder::protection_id) / [`set_protection_id(Option<String>)`](crate::operation::delete_protection::builders::DeleteProtectionFluentBuilder::set_protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
     /// - On success, responds with [`DeleteProtectionOutput`](crate::operation::delete_protection::DeleteProtectionOutput)
     /// - On failure, responds with [`SdkError<DeleteProtectionError>`](crate::operation::delete_protection::DeleteProtectionError)
-    pub fn delete_protection(
-        &self,
-    ) -> crate::operation::delete_protection::builders::DeleteProtectionFluentBuilder {
-        crate::operation::delete_protection::builders::DeleteProtectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_protection(&self) -> crate::operation::delete_protection::builders::DeleteProtectionFluentBuilder {
+        crate::operation::delete_protection::builders::DeleteProtectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::operation::delete_profile::DeleteProfileError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_profile(
-        &self,
-    ) -> crate::operation::delete_profile::builders::DeleteProfileFluentBuilder {
-        crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_profile(&self) -> crate::operation::delete_profile::builders::DeleteProfileFluentBuilder {
+        crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::new(self.handle.clone())
     }
 }

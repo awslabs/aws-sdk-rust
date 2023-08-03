@@ -43,17 +43,14 @@ impl ListGatewayRoutesInput {
 }
 impl ListGatewayRoutesInput {
     /// Creates a new builder-style object to manufacture [`ListGatewayRoutesInput`](crate::operation::list_gateway_routes::ListGatewayRoutesInput).
-    pub fn builder(
-    ) -> crate::operation::list_gateway_routes::builders::ListGatewayRoutesInputBuilder {
+    pub fn builder() -> crate::operation::list_gateway_routes::builders::ListGatewayRoutesInputBuilder {
         crate::operation::list_gateway_routes::builders::ListGatewayRoutesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGatewayRoutesInput`](crate::operation::list_gateway_routes::ListGatewayRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewayRoutesInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +74,12 @@ impl ListGatewayRoutesInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_name = input;
         self
     }
@@ -141,18 +132,13 @@ impl ListGatewayRoutesInputBuilder {
     /// Consumes the builder and constructs a [`ListGatewayRoutesInput`](crate::operation::list_gateway_routes::ListGatewayRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_gateway_routes::ListGatewayRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_gateway_routes::ListGatewayRoutesInput {
-                mesh_name: self.mesh_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                next_token: self.next_token,
-                limit: self.limit,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_gateway_routes::ListGatewayRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_gateway_routes::ListGatewayRoutesInput {
+            mesh_name: self.mesh_name,
+            virtual_gateway_name: self.virtual_gateway_name,
+            next_token: self.next_token,
+            limit: self.limit,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

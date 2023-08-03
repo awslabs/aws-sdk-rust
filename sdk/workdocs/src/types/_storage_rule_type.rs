@@ -30,9 +30,7 @@ impl StorageRuleType {
 
 /// A builder for [`StorageRuleType`](crate::types::StorageRuleType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageRuleTypeBuilder {
     pub(crate) storage_allocated_in_bytes: ::std::option::Option<i64>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
@@ -58,10 +56,7 @@ impl StorageRuleTypeBuilder {
         self
     }
     /// <p>The type of storage.</p>
-    pub fn set_storage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageType>,
-    ) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
         self
     }

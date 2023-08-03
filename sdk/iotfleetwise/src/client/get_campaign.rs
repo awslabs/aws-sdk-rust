@@ -25,9 +25,7 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_campaign::GetCampaignOutput::last_modification_time): <p>The last time the campaign was modified.</p>
     ///   - [`data_destination_configs(Option<Vec<DataDestinationConfig>>)`](crate::operation::get_campaign::GetCampaignOutput::data_destination_configs): <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>  <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>  <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     /// - On failure, responds with [`SdkError<GetCampaignError>`](crate::operation::get_campaign::GetCampaignError)
-    pub fn get_campaign(
-        &self,
-    ) -> crate::operation::get_campaign::builders::GetCampaignFluentBuilder {
+    pub fn get_campaign(&self) -> crate::operation::get_campaign::builders::GetCampaignFluentBuilder {
         crate::operation::get_campaign::builders::GetCampaignFluentBuilder::new(self.handle.clone())
     }
 }

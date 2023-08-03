@@ -14,8 +14,7 @@ pub struct StartDevEnvironmentSessionInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the configuration of a Dev Environment session.</p>
     #[doc(hidden)]
-    pub session_configuration:
-        ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
+    pub session_configuration: ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
 }
 impl StartDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
@@ -31,30 +30,25 @@ impl StartDevEnvironmentSessionInput {
         self.id.as_deref()
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn session_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DevEnvironmentSessionConfiguration> {
+    pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::DevEnvironmentSessionConfiguration> {
         self.session_configuration.as_ref()
     }
 }
 impl StartDevEnvironmentSessionInput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentSessionInput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput).
-    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder{
+    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder {
         crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDevEnvironmentSessionInput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentSessionInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) session_configuration:
-        ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
+    pub(crate) session_configuration: ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
 }
 impl StartDevEnvironmentSessionInputBuilder {
     /// <p>The name of the space.</p>
@@ -100,25 +94,17 @@ impl StartDevEnvironmentSessionInputBuilder {
         &self.id
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn session_configuration(
-        mut self,
-        input: crate::types::DevEnvironmentSessionConfiguration,
-    ) -> Self {
+    pub fn session_configuration(mut self, input: crate::types::DevEnvironmentSessionConfiguration) -> Self {
         self.session_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn set_session_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
-    ) -> Self {
+    pub fn set_session_configuration(mut self, input: ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>) -> Self {
         self.session_configuration = input;
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn get_session_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DevEnvironmentSessionConfiguration> {
+    pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::DevEnvironmentSessionConfiguration> {
         &self.session_configuration
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentSessionInput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput).
@@ -128,13 +114,11 @@ impl StartDevEnvironmentSessionInputBuilder {
         crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                session_configuration: self.session_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+            session_configuration: self.session_configuration,
+        })
     }
 }

@@ -36,18 +36,14 @@ impl GetResourcePoliciesInput {
 }
 impl GetResourcePoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesInputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -60,27 +56,19 @@ impl GetResourcePoliciesInputBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
     /// <p>Specifies the principal.</p>
@@ -128,17 +116,13 @@ impl GetResourcePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_policies::GetResourcePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_policies::GetResourcePoliciesInput {
-                resource_arns: self.resource_arns,
-                principal: self.principal,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesInput {
+            resource_arns: self.resource_arns,
+            principal: self.principal,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

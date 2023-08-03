@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetStreamSessionOutput`](crate::operation::get_stream_session::GetStreamSessionOutput) with field(s):
     ///   - [`stream_session(Option<StreamSession>)`](crate::operation::get_stream_session::GetStreamSessionOutput::stream_session): <p>List of stream details.</p>
     /// - On failure, responds with [`SdkError<GetStreamSessionError>`](crate::operation::get_stream_session::GetStreamSessionError)
-    pub fn get_stream_session(
-        &self,
-    ) -> crate::operation::get_stream_session::builders::GetStreamSessionFluentBuilder {
-        crate::operation::get_stream_session::builders::GetStreamSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_stream_session(&self) -> crate::operation::get_stream_session::builders::GetStreamSessionFluentBuilder {
+        crate::operation::get_stream_session::builders::GetStreamSessionFluentBuilder::new(self.handle.clone())
     }
 }

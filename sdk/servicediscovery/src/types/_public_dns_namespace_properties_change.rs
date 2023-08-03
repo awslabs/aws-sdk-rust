@@ -10,9 +10,7 @@ pub struct PublicDnsNamespacePropertiesChange {
 }
 impl PublicDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-    pub fn dns_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PublicDnsPropertiesMutableChange> {
+    pub fn dns_properties(&self) -> ::std::option::Option<&crate::types::PublicDnsPropertiesMutableChange> {
         self.dns_properties.as_ref()
     }
 }
@@ -25,12 +23,9 @@ impl PublicDnsNamespacePropertiesChange {
 
 /// A builder for [`PublicDnsNamespacePropertiesChange`](crate::types::PublicDnsNamespacePropertiesChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicDnsNamespacePropertiesChangeBuilder {
-    pub(crate) dns_properties:
-        ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
+    pub(crate) dns_properties: ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
 }
 impl PublicDnsNamespacePropertiesChangeBuilder {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
@@ -39,17 +34,12 @@ impl PublicDnsNamespacePropertiesChangeBuilder {
         self
     }
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-    pub fn set_dns_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
-    ) -> Self {
+    pub fn set_dns_properties(mut self, input: ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>) -> Self {
         self.dns_properties = input;
         self
     }
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-    pub fn get_dns_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicDnsPropertiesMutableChange> {
+    pub fn get_dns_properties(&self) -> &::std::option::Option<crate::types::PublicDnsPropertiesMutableChange> {
         &self.dns_properties
     }
     /// Consumes the builder and constructs a [`PublicDnsNamespacePropertiesChange`](crate::types::PublicDnsNamespacePropertiesChange).

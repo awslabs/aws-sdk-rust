@@ -6,10 +6,7 @@ pub fn ser_create_slot_type_input(
     if let Some(var_1) = &input.composite_slot_type_setting {
         #[allow(unused_mut)]
         let mut object_2 = object.key("compositeSlotTypeSetting").start_object();
-        crate::protocol_serde::shape_composite_slot_type_setting::ser_composite_slot_type_setting(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_composite_slot_type_setting::ser_composite_slot_type_setting(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.description {
@@ -18,10 +15,7 @@ pub fn ser_create_slot_type_input(
     if let Some(var_4) = &input.external_source_setting {
         #[allow(unused_mut)]
         let mut object_5 = object.key("externalSourceSetting").start_object();
-        crate::protocol_serde::shape_external_source_setting::ser_external_source_setting(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_external_source_setting::ser_external_source_setting(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.parent_slot_type_signature {
@@ -36,10 +30,7 @@ pub fn ser_create_slot_type_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_slot_type_value::ser_slot_type_value(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_slot_type_value::ser_slot_type_value(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

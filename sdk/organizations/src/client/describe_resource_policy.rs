@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput) with field(s):
     ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::resource_policy): <p>A structure that contains details about the resource policy.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::operation::describe_resource_policy::DescribeResourcePolicyError)
-    pub fn describe_resource_policy(
-        &self,
-    ) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder
-    {
+    pub fn describe_resource_policy(&self) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

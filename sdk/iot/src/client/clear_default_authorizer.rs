@@ -5,10 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerFluentBuilder::send) it.
     /// - On success, responds with [`ClearDefaultAuthorizerOutput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput)
     /// - On failure, responds with [`SdkError<ClearDefaultAuthorizerError>`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError)
-    pub fn clear_default_authorizer(
-        &self,
-    ) -> crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerFluentBuilder
-    {
+    pub fn clear_default_authorizer(&self) -> crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerFluentBuilder {
         crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

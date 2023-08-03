@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RouteTableAssociationStateCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for RouteTableAssociationStateCode {
             "disassociated" => RouteTableAssociationStateCode::Disassociated,
             "disassociating" => RouteTableAssociationStateCode::Disassociating,
             "failed" => RouteTableAssociationStateCode::Failed,
-            other => RouteTableAssociationStateCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => RouteTableAssociationStateCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl RouteTableAssociationStateCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "associated",
-            "associating",
-            "disassociated",
-            "disassociating",
-            "failed",
-        ]
+        &["associated", "associating", "disassociated", "disassociating", "failed"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteTableAssociationStateCode {

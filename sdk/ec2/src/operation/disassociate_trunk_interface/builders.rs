@@ -29,7 +29,7 @@ impl DisassociateTrunkInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateTrunkInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder,
+    inner: crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder,
 }
 impl DisassociateTrunkInterfaceFluentBuilder {
     /// Creates a new `DisassociateTrunkInterface`.
@@ -40,7 +40,7 @@ impl DisassociateTrunkInterfaceFluentBuilder {
         }
     }
     /// Access the DisassociateTrunkInterface as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DisassociateTrunkInterfaceFluentBuilder {
             crate::operation::disassociate_trunk_interface::DisassociateTrunkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DisassociateTrunkInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DisassociateTrunkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DisassociateTrunkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl DisassociateTrunkInterfaceFluentBuilder {
             crate::operation::disassociate_trunk_interface::DisassociateTrunkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the association</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The ID of the association</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

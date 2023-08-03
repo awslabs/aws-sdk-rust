@@ -39,18 +39,14 @@ impl CreateVirtualMfaDeviceInput {
 }
 impl CreateVirtualMfaDeviceInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualMfaDeviceInput`](crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_mfa_device::builders::CreateVirtualMfaDeviceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_virtual_mfa_device::builders::CreateVirtualMfaDeviceInputBuilder {
         crate::operation::create_virtual_mfa_device::builders::CreateVirtualMfaDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualMfaDeviceInput`](crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualMfaDeviceInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_mfa_device_name: ::std::option::Option<::std::string::String>,
@@ -79,19 +75,13 @@ impl CreateVirtualMfaDeviceInputBuilder {
     }
     /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn virtual_mfa_device_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_mfa_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_mfa_device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_virtual_mfa_device_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_mfa_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_mfa_device_name = input;
         self
     }
@@ -116,10 +106,7 @@ impl CreateVirtualMfaDeviceInputBuilder {
     /// <p>A list of tags that you want to attach to the new IAM virtual MFA device. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -136,12 +123,10 @@ impl CreateVirtualMfaDeviceInputBuilder {
         crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceInput {
-                path: self.path,
-                virtual_mfa_device_name: self.virtual_mfa_device_name,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceInput {
+            path: self.path,
+            virtual_mfa_device_name: self.virtual_mfa_device_name,
+            tags: self.tags,
+        })
     }
 }

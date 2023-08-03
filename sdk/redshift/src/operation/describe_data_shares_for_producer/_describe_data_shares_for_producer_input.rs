@@ -36,16 +36,14 @@ impl DescribeDataSharesForProducerInput {
 }
 impl DescribeDataSharesForProducerInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSharesForProducerInput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput).
-    pub fn builder() -> crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder{
+    pub fn builder() -> crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder {
         crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSharesForProducerInput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSharesForProducerInputBuilder {
     pub(crate) producer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataShareStatusForProducer>,
@@ -73,10 +71,7 @@ impl DescribeDataSharesForProducerInputBuilder {
         self
     }
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataShareStatusForProducer>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataShareStatusForProducer>) -> Self {
         self.status = input;
         self
     }
@@ -119,17 +114,11 @@ impl DescribeDataSharesForProducerInputBuilder {
         crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput {
-                producer_arn: self.producer_arn
-                ,
-                status: self.status
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput {
+            producer_arn: self.producer_arn,
+            status: self.status,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

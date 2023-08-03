@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAdmChannelOutput`](crate::operation::get_adm_channel::GetAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::operation::get_adm_channel::GetAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetAdmChannelError>`](crate::operation::get_adm_channel::GetAdmChannelError)
-    pub fn get_adm_channel(
-        &self,
-    ) -> crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder {
-        crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_adm_channel(&self) -> crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder {
+        crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder::new(self.handle.clone())
     }
 }

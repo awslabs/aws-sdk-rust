@@ -62,16 +62,14 @@ impl ::aws_http::request_id::RequestId for GetLensVersionDifferenceOutput {
 }
 impl GetLensVersionDifferenceOutput {
     /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceOutput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput).
-    pub fn builder() -> crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceOutputBuilder{
+    pub fn builder() -> crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceOutputBuilder {
         crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLensVersionDifferenceOutput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLensVersionDifferenceOutputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
@@ -120,18 +118,12 @@ impl GetLensVersionDifferenceOutputBuilder {
         &self.lens_arn
     }
     /// <p>The base version of the lens.</p>
-    pub fn base_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_lens_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base version of the lens.</p>
-    pub fn set_base_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_lens_version = input;
         self
     }
@@ -140,18 +132,12 @@ impl GetLensVersionDifferenceOutputBuilder {
         &self.base_lens_version
     }
     /// <p>The target lens version for the lens.</p>
-    pub fn target_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_lens_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target lens version for the lens.</p>
-    pub fn set_target_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_lens_version = input;
         self
     }
@@ -160,18 +146,12 @@ impl GetLensVersionDifferenceOutputBuilder {
         &self.target_lens_version
     }
     /// <p>The latest version of the lens.</p>
-    pub fn latest_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_lens_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest version of the lens.</p>
-    pub fn set_latest_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_lens_version = input;
         self
     }
@@ -185,17 +165,12 @@ impl GetLensVersionDifferenceOutputBuilder {
         self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn set_version_differences(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionDifferences>,
-    ) -> Self {
+    pub fn set_version_differences(mut self, input: ::std::option::Option<crate::types::VersionDifferences>) -> Self {
         self.version_differences = input;
         self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn get_version_differences(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersionDifferences> {
+    pub fn get_version_differences(&self) -> &::std::option::Option<crate::types::VersionDifferences> {
         &self.version_differences
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -208,9 +183,7 @@ impl GetLensVersionDifferenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLensVersionDifferenceOutput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput {
+    pub fn build(self) -> crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput {
         crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput {
             lens_alias: self.lens_alias,
             lens_arn: self.lens_arn,

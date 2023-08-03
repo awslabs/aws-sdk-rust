@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`TestAuthorizationOutput`](crate::operation::test_authorization::TestAuthorizationOutput) with field(s):
     ///   - [`auth_results(Option<Vec<AuthResult>>)`](crate::operation::test_authorization::TestAuthorizationOutput::auth_results): <p>The authentication results.</p>
     /// - On failure, responds with [`SdkError<TestAuthorizationError>`](crate::operation::test_authorization::TestAuthorizationError)
-    pub fn test_authorization(
-        &self,
-    ) -> crate::operation::test_authorization::builders::TestAuthorizationFluentBuilder {
-        crate::operation::test_authorization::builders::TestAuthorizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_authorization(&self) -> crate::operation::test_authorization::builders::TestAuthorizationFluentBuilder {
+        crate::operation::test_authorization::builders::TestAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

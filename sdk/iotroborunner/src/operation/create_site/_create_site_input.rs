@@ -43,9 +43,7 @@ impl CreateSiteInput {
 
 /// A builder for [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSiteInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl CreateSiteInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_site::CreateSiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_site::CreateSiteInput {
             client_token: self.client_token,
             name: self.name,

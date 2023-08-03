@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`DiscoverInstancesOutput`](crate::operation::discover_instances::DiscoverInstancesOutput) with field(s):
     ///   - [`instances(Option<Vec<HttpInstanceSummary>>)`](crate::operation::discover_instances::DiscoverInstancesOutput::instances): <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     /// - On failure, responds with [`SdkError<DiscoverInstancesError>`](crate::operation::discover_instances::DiscoverInstancesError)
-    pub fn discover_instances(
-        &self,
-    ) -> crate::operation::discover_instances::builders::DiscoverInstancesFluentBuilder {
-        crate::operation::discover_instances::builders::DiscoverInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn discover_instances(&self) -> crate::operation::discover_instances::builders::DiscoverInstancesFluentBuilder {
+        crate::operation::discover_instances::builders::DiscoverInstancesFluentBuilder::new(self.handle.clone())
     }
 }

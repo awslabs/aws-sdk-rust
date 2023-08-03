@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`data_responses(Option<Vec<DataResponse>>)`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput::data_responses): <p>The list of data responses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetAwsNetworkPerformanceDataError>`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError)
-    pub fn get_aws_network_performance_data(&self) -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder{
+    pub fn get_aws_network_performance_data(
+        &self,
+    ) -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder {
         crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::new(self.handle.clone())
     }
 }

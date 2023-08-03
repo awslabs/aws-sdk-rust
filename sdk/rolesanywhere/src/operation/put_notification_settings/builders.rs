@@ -28,8 +28,7 @@ impl PutNotificationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutNotificationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_notification_settings::builders::PutNotificationSettingsInputBuilder,
+    inner: crate::operation::put_notification_settings::builders::PutNotificationSettingsInputBuilder,
 }
 impl PutNotificationSettingsFluentBuilder {
     /// Creates a new `PutNotificationSettings`.
@@ -40,10 +39,7 @@ impl PutNotificationSettingsFluentBuilder {
         }
     }
     /// Access the PutNotificationSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_notification_settings::builders::PutNotificationSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_notification_settings::builders::PutNotificationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl PutNotificationSettingsFluentBuilder {
             crate::operation::put_notification_settings::PutNotificationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_settings::PutNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_settings::PutNotificationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl PutNotificationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl PutNotificationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_notification_settings::PutNotificationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_settings::PutNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_settings::PutNotificationSettingsError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl PutNotificationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_notification_settings::PutNotificationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_settings::PutNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_settings::PutNotificationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl PutNotificationSettingsFluentBuilder {
             crate::operation::put_notification_settings::PutNotificationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_settings::PutNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_settings::PutNotificationSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor_id(input.into());
         self
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn set_trust_anchor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }
@@ -156,17 +135,12 @@ impl PutNotificationSettingsFluentBuilder {
         self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn set_notification_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
-    ) -> Self {
+    pub fn set_notification_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>) -> Self {
         self.inner = self.inner.set_notification_settings(input);
         self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn get_notification_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+    pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
         self.inner.get_notification_settings()
     }
 }

@@ -37,9 +37,7 @@ impl VerifySoftwareTokenFluentBuilder {
         }
     }
     /// Access the VerifySoftwareToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::verify_software_token::builders::VerifySoftwareTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::verify_software_token::builders::VerifySoftwareTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl VerifySoftwareTokenFluentBuilder {
             crate::operation::verify_software_token::VerifySoftwareToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_software_token::VerifySoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_software_token::VerifySoftwareTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl VerifySoftwareTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl VerifySoftwareTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_software_token::VerifySoftwareTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_software_token::VerifySoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_software_token::VerifySoftwareTokenError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl VerifySoftwareTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_software_token::VerifySoftwareTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_software_token::VerifySoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_software_token::VerifySoftwareTokenError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl VerifySoftwareTokenFluentBuilder {
             crate::operation::verify_software_token::VerifySoftwareToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_software_token::VerifySoftwareTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_software_token::VerifySoftwareTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +152,12 @@ impl VerifySoftwareTokenFluentBuilder {
         self.inner.get_user_code()
     }
     /// <p>The friendly device name.</p>
-    pub fn friendly_device_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn friendly_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.friendly_device_name(input.into());
         self
     }
     /// <p>The friendly device name.</p>
-    pub fn set_friendly_device_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_friendly_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_friendly_device_name(input);
         self
     }

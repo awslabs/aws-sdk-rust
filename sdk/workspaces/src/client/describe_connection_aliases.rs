@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`connection_aliases(Option<Vec<ConnectionAlias>>)`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput::connection_aliases): <p>Information about the specified connection aliases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectionAliasesError>`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesError)
-    pub fn describe_connection_aliases(&self) -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesFluentBuilder{
+    pub fn describe_connection_aliases(&self) -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesFluentBuilder {
         crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesFluentBuilder::new(self.handle.clone())
     }
 }

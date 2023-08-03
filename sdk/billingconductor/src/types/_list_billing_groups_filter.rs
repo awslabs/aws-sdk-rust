@@ -44,9 +44,7 @@ impl ListBillingGroupsFilter {
 
 /// A builder for [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsFilterBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pricing_plan: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl ListBillingGroupsFilterBuilder {
         self
     }
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }
@@ -103,17 +98,12 @@ impl ListBillingGroupsFilterBuilder {
         self
     }
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>) -> Self {
         self.statuses = input;
         self
     }
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
-    pub fn get_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>> {
         &self.statuses
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>

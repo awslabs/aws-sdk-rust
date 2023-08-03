@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStreamingImageOutput`](crate::operation::create_streaming_image::CreateStreamingImageOutput) with field(s):
     ///   - [`streaming_image(Option<StreamingImage>)`](crate::operation::create_streaming_image::CreateStreamingImageOutput::streaming_image): <p>The streaming image.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingImageError>`](crate::operation::create_streaming_image::CreateStreamingImageError)
-    pub fn create_streaming_image(
-        &self,
-    ) -> crate::operation::create_streaming_image::builders::CreateStreamingImageFluentBuilder {
-        crate::operation::create_streaming_image::builders::CreateStreamingImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_streaming_image(&self) -> crate::operation::create_streaming_image::builders::CreateStreamingImageFluentBuilder {
+        crate::operation::create_streaming_image::builders::CreateStreamingImageFluentBuilder::new(self.handle.clone())
     }
 }

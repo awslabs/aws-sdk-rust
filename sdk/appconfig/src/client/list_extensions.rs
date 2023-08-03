@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ExtensionSummary>>)`](crate::operation::list_extensions::ListExtensionsOutput::items): <p>The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extensions::ListExtensionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListExtensionsError>`](crate::operation::list_extensions::ListExtensionsError)
-    pub fn list_extensions(
-        &self,
-    ) -> crate::operation::list_extensions::builders::ListExtensionsFluentBuilder {
-        crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_extensions(&self) -> crate::operation::list_extensions::builders::ListExtensionsFluentBuilder {
+        crate::operation::list_extensions::builders::ListExtensionsFluentBuilder::new(self.handle.clone())
     }
 }

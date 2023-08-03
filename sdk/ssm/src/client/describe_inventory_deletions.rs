@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`inventory_deletions(Option<Vec<InventoryDeletionStatusItem>>)`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput::inventory_deletions): <p>A list of status items for deleted inventory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeInventoryDeletionsError>`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError)
-    pub fn describe_inventory_deletions(&self) -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder{
+    pub fn describe_inventory_deletions(&self) -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder {
         crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::new(self.handle.clone())
     }
 }

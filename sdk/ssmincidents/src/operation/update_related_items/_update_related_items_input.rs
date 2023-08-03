@@ -29,17 +29,14 @@ impl UpdateRelatedItemsInput {
 }
 impl UpdateRelatedItemsInput {
     /// Creates a new builder-style object to manufacture [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
-    pub fn builder(
-    ) -> crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
+    pub fn builder() -> crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
         crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRelatedItemsInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl UpdateRelatedItemsInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_record_arn = input;
         self
     }
@@ -86,32 +77,22 @@ impl UpdateRelatedItemsInputBuilder {
         self
     }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
-    pub fn set_related_items_update(
-        mut self,
-        input: ::std::option::Option<crate::types::RelatedItemsUpdate>,
-    ) -> Self {
+    pub fn set_related_items_update(mut self, input: ::std::option::Option<crate::types::RelatedItemsUpdate>) -> Self {
         self.related_items_update = input;
         self
     }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
-    pub fn get_related_items_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelatedItemsUpdate> {
+    pub fn get_related_items_update(&self) -> &::std::option::Option<crate::types::RelatedItemsUpdate> {
         &self.related_items_update
     }
     /// Consumes the builder and constructs a [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_related_items::UpdateRelatedItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_related_items::UpdateRelatedItemsInput {
-                client_token: self.client_token,
-                incident_record_arn: self.incident_record_arn,
-                related_items_update: self.related_items_update,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_related_items::UpdateRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_related_items::UpdateRelatedItemsInput {
+            client_token: self.client_token,
+            incident_record_arn: self.incident_record_arn,
+            related_items_update: self.related_items_update,
+        })
     }
 }

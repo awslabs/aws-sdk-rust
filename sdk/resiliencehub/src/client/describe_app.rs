@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput) with field(s):
     ///   - [`app(Option<App>)`](crate::operation::describe_app::DescribeAppOutput::app): <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::operation::describe_app::DescribeAppError)
-    pub fn describe_app(
-        &self,
-    ) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
+    pub fn describe_app(&self) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
         crate::operation::describe_app::builders::DescribeAppFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct GetApnsChannelOutput {
 }
 impl GetApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApnsChannelResponse> {
+    pub fn apns_channel_response(&self) -> ::std::option::Option<&crate::types::ApnsChannelResponse> {
         self.apns_channel_response.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl GetApnsChannelOutput {
 
 /// A builder for [`GetApnsChannelOutput`](crate::operation::get_apns_channel::GetApnsChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApnsChannelOutputBuilder {
     pub(crate) apns_channel_response: ::std::option::Option<crate::types::ApnsChannelResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetApnsChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn set_apns_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsChannelResponse>,
-    ) -> Self {
+    pub fn set_apns_channel_response(mut self, input: ::std::option::Option<crate::types::ApnsChannelResponse>) -> Self {
         self.apns_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn get_apns_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsChannelResponse> {
+    pub fn get_apns_channel_response(&self) -> &::std::option::Option<crate::types::ApnsChannelResponse> {
         &self.apns_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

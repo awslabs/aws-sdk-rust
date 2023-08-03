@@ -37,10 +37,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
         }
     }
     /// Access the CheckoutBorrowLicense as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
             crate::operation::checkout_borrow_license::CheckoutBorrowLicense,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
             crate::operation::checkout_borrow_license::CheckoutBorrowLicense,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self
     }
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
         self.inner.get_entitlements()
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
@@ -166,17 +147,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    pub fn set_digital_signature_method(
-        mut self,
-        input: ::std::option::Option<crate::types::DigitalSignatureMethod>,
-    ) -> Self {
+    pub fn set_digital_signature_method(mut self, input: ::std::option::Option<crate::types::DigitalSignatureMethod>) -> Self {
         self.inner = self.inner.set_digital_signature_method(input);
         self
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    pub fn get_digital_signature_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::DigitalSignatureMethod> {
+    pub fn get_digital_signature_method(&self) -> &::std::option::Option<crate::types::DigitalSignatureMethod> {
         self.inner.get_digital_signature_method()
     }
     /// <p>Node ID.</p>
@@ -203,17 +179,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self
     }
     /// <p>Information about constraints.</p>
-    pub fn set_checkout_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_checkout_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.inner = self.inner.set_checkout_metadata(input);
         self
     }
     /// <p>Information about constraints.</p>
-    pub fn get_checkout_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_checkout_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         self.inner.get_checkout_metadata()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

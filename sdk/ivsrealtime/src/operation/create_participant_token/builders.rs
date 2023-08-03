@@ -38,10 +38,7 @@ impl CreateParticipantTokenFluentBuilder {
         }
     }
     /// Access the CreateParticipantToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateParticipantTokenFluentBuilder {
             crate::operation::create_participant_token::CreateParticipantToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant_token::CreateParticipantTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant_token::CreateParticipantTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateParticipantTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateParticipantTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_participant_token::CreateParticipantTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant_token::CreateParticipantTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant_token::CreateParticipantTokenError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateParticipantTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_participant_token::CreateParticipantTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant_token::CreateParticipantTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant_token::CreateParticipantTokenError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateParticipantTokenFluentBuilder {
             crate::operation::create_participant_token::CreateParticipantToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_participant_token::CreateParticipantTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_participant_token::CreateParticipantTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -171,30 +157,17 @@ impl CreateParticipantTokenFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// Appends an item to `capabilities`.
@@ -207,17 +180,12 @@ impl CreateParticipantTokenFluentBuilder {
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
         self.inner.get_capabilities()
     }
 }

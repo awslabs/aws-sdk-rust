@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetComplianceSummaryByResourceTypeOutput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput) with field(s):
     ///   - [`compliance_summaries_by_resource_type(Option<Vec<ComplianceSummaryByResourceType>>)`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput::compliance_summaries_by_resource_type): <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
     /// - On failure, responds with [`SdkError<GetComplianceSummaryByResourceTypeError>`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError)
-    pub fn get_compliance_summary_by_resource_type(&self) -> crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeFluentBuilder{
+    pub fn get_compliance_summary_by_resource_type(
+        &self,
+    ) -> crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeFluentBuilder {
         crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DescribeDiscoveryJobFluentBuilder {
         }
     }
     /// Access the DescribeDiscoveryJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeDiscoveryJobFluentBuilder {
             crate::operation::describe_discovery_job::DescribeDiscoveryJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_discovery_job::DescribeDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_discovery_job::DescribeDiscoveryJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeDiscoveryJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeDiscoveryJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_discovery_job::DescribeDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_discovery_job::DescribeDiscoveryJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeDiscoveryJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_discovery_job::DescribeDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_discovery_job::DescribeDiscoveryJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeDiscoveryJobFluentBuilder {
             crate::operation::describe_discovery_job::DescribeDiscoveryJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_discovery_job::DescribeDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_discovery_job::DescribeDiscoveryJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }

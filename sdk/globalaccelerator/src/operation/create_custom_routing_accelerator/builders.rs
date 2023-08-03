@@ -5,16 +5,16 @@ pub use crate::operation::create_custom_routing_accelerator::_create_custom_rout
 
 impl CreateCustomRoutingAcceleratorInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_custom_routing_accelerator();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingAcceleratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorInputBuilder,
+    inner: crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorInputBuilder,
 }
 impl CreateCustomRoutingAcceleratorFluentBuilder {
     /// Creates a new `CreateCustomRoutingAccelerator`.
@@ -40,15 +40,20 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
         }
     }
     /// Access the CreateCustomRoutingAccelerator as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAccelerator, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAccelerator,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAccelerator, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAccelerator,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
@@ -117,10 +132,7 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -146,10 +158,7 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ip_addresses(input);
         self
     }
@@ -158,9 +167,7 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ip_addresses()
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -181,18 +188,12 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
         self.inner.get_enabled()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -212,10 +213,7 @@ impl CreateCustomRoutingAcceleratorFluentBuilder {
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

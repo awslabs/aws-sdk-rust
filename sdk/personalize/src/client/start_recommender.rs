@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartRecommenderOutput`](crate::operation::start_recommender::StartRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::operation::start_recommender::StartRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
     /// - On failure, responds with [`SdkError<StartRecommenderError>`](crate::operation::start_recommender::StartRecommenderError)
-    pub fn start_recommender(
-        &self,
-    ) -> crate::operation::start_recommender::builders::StartRecommenderFluentBuilder {
-        crate::operation::start_recommender::builders::StartRecommenderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_recommender(&self) -> crate::operation::start_recommender::builders::StartRecommenderFluentBuilder {
+        crate::operation::start_recommender::builders::StartRecommenderFluentBuilder::new(self.handle.clone())
     }
 }

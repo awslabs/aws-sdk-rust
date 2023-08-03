@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSkillsStoreCategoriesOutput {
 }
 impl ListSkillsStoreCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListSkillsStoreCategoriesOutput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput).
-    pub fn builder() -> crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesOutputBuilder{
+    pub fn builder() -> crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesOutputBuilder {
         crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSkillsStoreCategoriesOutput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsStoreCategoriesOutputBuilder {
     pub(crate) category_list: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSkillsStoreCategoriesOutputBuilder {
         self
     }
     /// <p>The list of categories.</p>
-    pub fn set_category_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
-    ) -> Self {
+    pub fn set_category_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>) -> Self {
         self.category_list = input;
         self
     }
     /// <p>The list of categories.</p>
-    pub fn get_category_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
+    pub fn get_category_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.category_list
     }
     /// <p>The tokens used for pagination.</p>
@@ -93,9 +86,7 @@ impl ListSkillsStoreCategoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSkillsStoreCategoriesOutput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput {
+    pub fn build(self) -> crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput {
         crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput {
             category_list: self.category_list,
             next_token: self.next_token,

@@ -22,16 +22,14 @@ impl StartExportLabelsTaskRunInput {
 }
 impl StartExportLabelsTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartExportLabelsTaskRunInput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput).
-    pub fn builder() -> crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder{
+    pub fn builder() -> crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder {
         crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartExportLabelsTaskRunInput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportLabelsTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl StartExportLabelsTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn output_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn set_output_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_path = input;
         self
     }
@@ -78,11 +70,9 @@ impl StartExportLabelsTaskRunInputBuilder {
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput {
-                transform_id: self.transform_id,
-                output_s3_path: self.output_s3_path,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput {
+            transform_id: self.transform_id,
+            output_s3_path: self.output_s3_path,
+        })
     }
 }

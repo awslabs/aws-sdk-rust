@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeIpGroupsOutput {
 }
 impl DescribeIpGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput).
-    pub fn builder() -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsOutputBuilder {
         crate::operation::describe_ip_groups::builders::DescribeIpGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpGroupsOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeIpGroupsOutputBuilder {
         self
     }
     /// <p>Information about the IP access control groups.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>) -> Self {
         self.result = input;
         self
     }
     /// <p>Information about the IP access control groups.</p>
-    pub fn get_result(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>> {
+    pub fn get_result(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>> {
         &self.result
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>

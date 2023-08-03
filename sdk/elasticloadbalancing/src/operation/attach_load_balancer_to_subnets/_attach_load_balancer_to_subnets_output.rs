@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
 }
 impl AttachLoadBalancerToSubnetsOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerToSubnetsOutput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput).
-    pub fn builder() -> crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder{
+    pub fn builder() -> crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder {
         crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachLoadBalancerToSubnetsOutput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsOutputBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl AttachLoadBalancerToSubnetsOutputBuilder {
         self
     }
     /// <p>The IDs of the subnets attached to the load balancer.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -70,9 +65,7 @@ impl AttachLoadBalancerToSubnetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerToSubnetsOutput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput {
+    pub fn build(self) -> crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput {
         crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput {
             subnets: self.subnets,
             _request_id: self._request_id,

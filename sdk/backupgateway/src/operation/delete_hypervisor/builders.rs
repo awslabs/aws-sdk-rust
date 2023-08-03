@@ -10,10 +10,7 @@ impl DeleteHypervisorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_hypervisor::DeleteHypervisorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hypervisor::DeleteHypervisorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hypervisor::DeleteHypervisorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_hypervisor();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteHypervisorFluentBuilder {
         }
     }
     /// Access the DeleteHypervisor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteHypervisorFluentBuilder {
             crate::operation::delete_hypervisor::DeleteHypervisor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hypervisor::DeleteHypervisorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hypervisor::DeleteHypervisorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteHypervisorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteHypervisorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hypervisor::DeleteHypervisorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hypervisor::DeleteHypervisorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hypervisor::DeleteHypervisorError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteHypervisorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hypervisor::DeleteHypervisorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hypervisor::DeleteHypervisorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hypervisor::DeleteHypervisorError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteHypervisorFluentBuilder {
             crate::operation::delete_hypervisor::DeleteHypervisor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hypervisor::DeleteHypervisorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hypervisor::DeleteHypervisorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hypervisor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }

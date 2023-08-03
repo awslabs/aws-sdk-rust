@@ -10,10 +10,7 @@ impl ListUserProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_user_profiles::ListUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_user_profiles();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListUserProfilesFluentBuilder {
         }
     }
     /// Access the ListUserProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListUserProfilesFluentBuilder {
             crate::operation::list_user_profiles::ListUserProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListUserProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListUserProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_profiles::ListUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListUserProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_profiles::ListUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListUserProfilesFluentBuilder {
             crate::operation::list_user_profiles::ListUserProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         self.customize_middleware().await
     }

@@ -26,8 +26,7 @@ impl ModifyCacheSubnetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCacheSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupInputBuilder,
+    inner: crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupInputBuilder,
 }
 impl ModifyCacheSubnetGroupFluentBuilder {
     /// Creates a new `ModifyCacheSubnetGroup`.
@@ -38,10 +37,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
         }
     }
     /// Access the ModifyCacheSubnetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
             crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,29 +105,21 @@ impl ModifyCacheSubnetGroupFluentBuilder {
             crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code> </p>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_subnet_group_name(input.into());
         self
     }
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code> </p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_subnet_group_name(input);
         self
     }
@@ -151,25 +130,17 @@ impl ModifyCacheSubnetGroupFluentBuilder {
         self.inner.get_cache_subnet_group_name()
     }
     /// <p>A description of the cache subnet group.</p>
-    pub fn cache_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_subnet_group_description(input.into());
         self
     }
     /// <p>A description of the cache subnet group.</p>
-    pub fn set_cache_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_subnet_group_description(input);
         self
     }
     /// <p>A description of the cache subnet group.</p>
-    pub fn get_cache_subnet_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_subnet_group_description()
     }
     /// Appends an item to `SubnetIds`.
@@ -182,10 +153,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
         self
     }
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

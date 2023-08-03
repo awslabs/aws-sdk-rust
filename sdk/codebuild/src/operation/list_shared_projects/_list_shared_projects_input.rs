@@ -52,17 +52,14 @@ impl ListSharedProjectsInput {
 }
 impl ListSharedProjectsInput {
     /// Creates a new builder-style object to manufacture [`ListSharedProjectsInput`](crate::operation::list_shared_projects::ListSharedProjectsInput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder {
+    pub fn builder() -> crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder {
         crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSharedProjectsInput`](crate::operation::list_shared_projects::ListSharedProjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSharedProjectsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::SharedResourceSortByType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
@@ -84,10 +81,7 @@ impl ListSharedProjectsInputBuilder {
     /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
     /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SharedResourceSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.sort_by = input;
         self
     }
@@ -113,10 +107,7 @@ impl ListSharedProjectsInputBuilder {
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -159,17 +150,12 @@ impl ListSharedProjectsInputBuilder {
     /// Consumes the builder and constructs a [`ListSharedProjectsInput`](crate::operation::list_shared_projects::ListSharedProjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_shared_projects::ListSharedProjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_shared_projects::ListSharedProjectsInput {
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_shared_projects::ListSharedProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_shared_projects::ListSharedProjectsInput {
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

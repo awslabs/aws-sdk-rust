@@ -37,10 +37,7 @@ impl ListTransactionEventsFluentBuilder {
         }
     }
     /// Access the ListTransactionEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_transaction_events::builders::ListTransactionEventsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_transaction_events::builders::ListTransactionEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListTransactionEventsFluentBuilder {
             crate::operation::list_transaction_events::ListTransactionEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transaction_events::ListTransactionEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transaction_events::ListTransactionEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListTransactionEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListTransactionEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_transaction_events::ListTransactionEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transaction_events::ListTransactionEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transaction_events::ListTransactionEventsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListTransactionEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_transaction_events::ListTransactionEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transaction_events::ListTransactionEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transaction_events::ListTransactionEventsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListTransactionEventsFluentBuilder {
             crate::operation::list_transaction_events::ListTransactionEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transaction_events::ListTransactionEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transaction_events::ListTransactionEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator {
-        crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator {
+        crate::operation::list_transaction_events::paginator::ListTransactionEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_hash(input.into());
         self
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn set_transaction_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_hash(input);
         self
     }

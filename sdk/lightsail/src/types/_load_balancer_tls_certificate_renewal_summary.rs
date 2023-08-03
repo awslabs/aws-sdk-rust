@@ -21,13 +21,10 @@ pub struct LoadBalancerTlsCertificateRenewalSummary {
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub renewal_status:
-        ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
+    pub renewal_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
     #[doc(hidden)]
-    pub domain_validation_options: ::std::option::Option<
-        ::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>,
-    >,
+    pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>>,
 }
 impl LoadBalancerTlsCertificateRenewalSummary {
     /// <p>The renewal status of the certificate.</p>
@@ -38,16 +35,11 @@ impl LoadBalancerTlsCertificateRenewalSummary {
     /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    pub fn renewal_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateRenewalStatus> {
+    pub fn renewal_status(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateRenewalStatus> {
         self.renewal_status.as_ref()
     }
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
-    pub fn domain_validation_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificateDomainValidationOption]>
-    {
+    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificateDomainValidationOption]> {
         self.domain_validation_options.as_deref()
     }
 }
@@ -60,15 +52,10 @@ impl LoadBalancerTlsCertificateRenewalSummary {
 
 /// A builder for [`LoadBalancerTlsCertificateRenewalSummary`](crate::types::LoadBalancerTlsCertificateRenewalSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateRenewalSummaryBuilder {
-    pub(crate) renewal_status:
-        ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
-    pub(crate) domain_validation_options: ::std::option::Option<
-        ::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>,
-    >,
+    pub(crate) renewal_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
+    pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>>,
 }
 impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// <p>The renewal status of the certificate.</p>
@@ -79,10 +66,7 @@ impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    pub fn renewal_status(
-        mut self,
-        input: crate::types::LoadBalancerTlsCertificateRenewalStatus,
-    ) -> Self {
+    pub fn renewal_status(mut self, input: crate::types::LoadBalancerTlsCertificateRenewalStatus) -> Self {
         self.renewal_status = ::std::option::Option::Some(input);
         self
     }
@@ -94,10 +78,7 @@ impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    pub fn set_renewal_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
-    ) -> Self {
+    pub fn set_renewal_status(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>) -> Self {
         self.renewal_status = input;
         self
     }
@@ -109,9 +90,7 @@ impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    pub fn get_renewal_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus> {
+    pub fn get_renewal_status(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus> {
         &self.renewal_status
     }
     /// Appends an item to `domain_validation_options`.
@@ -119,10 +98,7 @@ impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
     ///
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
-    pub fn domain_validation_options(
-        mut self,
-        input: crate::types::LoadBalancerTlsCertificateDomainValidationOption,
-    ) -> Self {
+    pub fn domain_validation_options(mut self, input: crate::types::LoadBalancerTlsCertificateDomainValidationOption) -> Self {
         let mut v = self.domain_validation_options.unwrap_or_default();
         v.push(input);
         self.domain_validation_options = ::std::option::Option::Some(v);
@@ -131,9 +107,7 @@ impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
     pub fn set_domain_validation_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>>,
     ) -> Self {
         self.domain_validation_options = input;
         self
@@ -141,9 +115,7 @@ impl LoadBalancerTlsCertificateRenewalSummaryBuilder {
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
     pub fn get_domain_validation_options(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>> {
         &self.domain_validation_options
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateRenewalSummary`](crate::types::LoadBalancerTlsCertificateRenewalSummary).

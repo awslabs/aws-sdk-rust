@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`ListMobileDeviceAccessRulesOutput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput) with field(s):
     ///   - [`rules(Option<Vec<MobileDeviceAccessRule>>)`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput::rules): <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     /// - On failure, responds with [`SdkError<ListMobileDeviceAccessRulesError>`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError)
-    pub fn list_mobile_device_access_rules(&self) -> crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder{
+    pub fn list_mobile_device_access_rules(
+        &self,
+    ) -> crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder {
         crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder::new(self.handle.clone())
     }
 }

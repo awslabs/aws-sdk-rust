@@ -18,12 +18,7 @@ pub struct RecurrenceSettings {
     pub number_of_on_calls: ::std::option::Option<i32>,
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
     #[doc(hidden)]
-    pub shift_coverages: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DayOfWeek,
-            ::std::vec::Vec<crate::types::CoverageTime>,
-        >,
-    >,
+    pub shift_coverages: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
     #[doc(hidden)]
     pub recurrence_multiplier: ::std::option::Option<i32>,
@@ -48,12 +43,7 @@ impl RecurrenceSettings {
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
     pub fn shift_coverages(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::DayOfWeek,
-            ::std::vec::Vec<crate::types::CoverageTime>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>> {
         self.shift_coverages.as_ref()
     }
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
@@ -70,21 +60,14 @@ impl RecurrenceSettings {
 
 /// A builder for [`RecurrenceSettings`](crate::types::RecurrenceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecurrenceSettingsBuilder {
-    pub(crate) monthly_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>>,
+    pub(crate) monthly_settings: ::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>>,
     pub(crate) weekly_settings: ::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>>,
     pub(crate) daily_settings: ::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>>,
     pub(crate) number_of_on_calls: ::std::option::Option<i32>,
-    pub(crate) shift_coverages: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DayOfWeek,
-            ::std::vec::Vec<crate::types::CoverageTime>,
-        >,
-    >,
+    pub(crate) shift_coverages:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
     pub(crate) recurrence_multiplier: ::std::option::Option<i32>,
 }
 impl RecurrenceSettingsBuilder {
@@ -100,17 +83,12 @@ impl RecurrenceSettingsBuilder {
         self
     }
     /// <p>Information about on-call rotations that recur monthly.</p>
-    pub fn set_monthly_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>>,
-    ) -> Self {
+    pub fn set_monthly_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>>) -> Self {
         self.monthly_settings = input;
         self
     }
     /// <p>Information about on-call rotations that recur monthly.</p>
-    pub fn get_monthly_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>> {
+    pub fn get_monthly_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonthlySetting>> {
         &self.monthly_settings
     }
     /// Appends an item to `weekly_settings`.
@@ -125,17 +103,12 @@ impl RecurrenceSettingsBuilder {
         self
     }
     /// <p>Information about on-call rotations that recur weekly.</p>
-    pub fn set_weekly_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>>,
-    ) -> Self {
+    pub fn set_weekly_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>>) -> Self {
         self.weekly_settings = input;
         self
     }
     /// <p>Information about on-call rotations that recur weekly.</p>
-    pub fn get_weekly_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>> {
+    pub fn get_weekly_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>> {
         &self.weekly_settings
     }
     /// Appends an item to `daily_settings`.
@@ -150,17 +123,12 @@ impl RecurrenceSettingsBuilder {
         self
     }
     /// <p>Information about on-call rotations that recur daily.</p>
-    pub fn set_daily_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>>,
-    ) -> Self {
+    pub fn set_daily_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>>) -> Self {
         self.daily_settings = input;
         self
     }
     /// <p>Information about on-call rotations that recur daily.</p>
-    pub fn get_daily_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>> {
+    pub fn get_daily_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>> {
         &self.daily_settings
     }
     /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
@@ -182,11 +150,7 @@ impl RecurrenceSettingsBuilder {
     /// To override the contents of this collection use [`set_shift_coverages`](Self::set_shift_coverages).
     ///
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
-    pub fn shift_coverages(
-        mut self,
-        k: crate::types::DayOfWeek,
-        v: ::std::vec::Vec<crate::types::CoverageTime>,
-    ) -> Self {
+    pub fn shift_coverages(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::CoverageTime>) -> Self {
         let mut hash_map = self.shift_coverages.unwrap_or_default();
         hash_map.insert(k, v);
         self.shift_coverages = ::std::option::Option::Some(hash_map);
@@ -195,12 +159,7 @@ impl RecurrenceSettingsBuilder {
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
     pub fn set_shift_coverages(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DayOfWeek,
-                ::std::vec::Vec<crate::types::CoverageTime>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
     ) -> Self {
         self.shift_coverages = input;
         self
@@ -208,12 +167,7 @@ impl RecurrenceSettingsBuilder {
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
     pub fn get_shift_coverages(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DayOfWeek,
-            ::std::vec::Vec<crate::types::CoverageTime>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>> {
         &self.shift_coverages
     }
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>

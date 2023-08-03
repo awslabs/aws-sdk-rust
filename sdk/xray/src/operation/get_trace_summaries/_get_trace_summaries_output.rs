@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetTraceSummariesOutput {
 }
 impl GetTraceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesOutputBuilder {
+    pub fn builder() -> crate::operation::get_trace_summaries::builders::GetTraceSummariesOutputBuilder {
         crate::operation::get_trace_summaries::builders::GetTraceSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTraceSummariesOutputBuilder {
     pub(crate) trace_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>>,
     pub(crate) approximate_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -73,17 +70,12 @@ impl GetTraceSummariesOutputBuilder {
         self
     }
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    pub fn set_trace_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>>,
-    ) -> Self {
+    pub fn set_trace_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>>) -> Self {
         self.trace_summaries = input;
         self
     }
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    pub fn get_trace_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>> {
+    pub fn get_trace_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>> {
         &self.trace_summaries
     }
     /// <p>The start time of this page of results.</p>
@@ -92,10 +84,7 @@ impl GetTraceSummariesOutputBuilder {
         self
     }
     /// <p>The start time of this page of results.</p>
-    pub fn set_approximate_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_approximate_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.approximate_time = input;
         self
     }

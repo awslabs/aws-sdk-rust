@@ -30,19 +30,16 @@ impl ::aws_http::request_id::RequestId for ListResourceProfileArtifactsOutput {
 }
 impl ListResourceProfileArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceProfileArtifactsOutput`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput).
-    pub fn builder() -> crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsOutputBuilder{
+    pub fn builder() -> crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsOutputBuilder {
         crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceProfileArtifactsOutput`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceProfileArtifactsOutputBuilder {
-    pub(crate) artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>>,
+    pub(crate) artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,18 +58,13 @@ impl ListResourceProfileArtifactsOutputBuilder {
     }
     /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
     /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
-    pub fn set_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>>,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>>) -> Self {
         self.artifacts = input;
         self
     }
     /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
     /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
-    pub fn get_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>> {
+    pub fn get_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>> {
         &self.artifacts
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -99,9 +91,7 @@ impl ListResourceProfileArtifactsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceProfileArtifactsOutput`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput {
+    pub fn build(self) -> crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput {
         crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput {
             artifacts: self.artifacts,
             next_token: self.next_token,

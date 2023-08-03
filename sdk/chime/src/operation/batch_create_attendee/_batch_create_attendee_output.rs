@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchCreateAttendeeOutput {
 }
 impl BatchCreateAttendeeOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder {
-        crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder {
+        crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateAttendeeOutputBuilder {
     pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>,
@@ -58,10 +54,7 @@ impl BatchCreateAttendeeOutputBuilder {
         self
     }
     /// <p>The attendee information, including attendees IDs and join tokens.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>) -> Self {
         self.attendees = input;
         self
     }
@@ -81,17 +74,12 @@ impl BatchCreateAttendeeOutputBuilder {
         self
     }
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

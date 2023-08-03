@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_image::DeleteImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_build_version_arn(Option<String>)`](crate::operation::delete_image::DeleteImageOutput::image_build_version_arn): <p>The ARN of the Image Builder image resource that this request deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::operation::delete_image::DeleteImageError)
-    pub fn delete_image(
-        &self,
-    ) -> crate::operation::delete_image::builders::DeleteImageFluentBuilder {
+    pub fn delete_image(&self) -> crate::operation::delete_image::builders::DeleteImageFluentBuilder {
         crate::operation::delete_image::builders::DeleteImageFluentBuilder::new(self.handle.clone())
     }
 }

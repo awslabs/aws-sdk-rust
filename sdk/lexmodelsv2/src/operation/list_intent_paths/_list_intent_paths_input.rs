@@ -60,9 +60,7 @@ impl ListIntentPathsInput {
 
 /// A builder for [`ListIntentPathsInput`](crate::operation::list_intent_paths::ListIntentPathsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentPathsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -91,10 +89,7 @@ impl ListIntentPathsInputBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -108,10 +103,7 @@ impl ListIntentPathsInputBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -160,26 +152,18 @@ impl ListIntentPathsInputBuilder {
         self
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListIntentPathsInput`](crate::operation::list_intent_paths::ListIntentPathsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_intent_paths::ListIntentPathsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_intent_paths::ListIntentPathsInput {
             bot_id: self.bot_id,
             start_date_time: self.start_date_time,

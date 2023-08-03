@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFleetUtilizationOutput {
 }
 impl DescribeFleetUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetUtilizationOutput`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationOutputBuilder {
         crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetUtilizationOutput`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetUtilizationOutputBuilder {
-    pub(crate) fleet_utilization:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>,
+    pub(crate) fleet_utilization: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeFleetUtilizationOutputBuilder {
         self
     }
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fn set_fleet_utilization(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>,
-    ) -> Self {
+    pub fn set_fleet_utilization(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>) -> Self {
         self.fleet_utilization = input;
         self
     }
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fn get_fleet_utilization(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>> {
+    pub fn get_fleet_utilization(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>> {
         &self.fleet_utilization
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -96,9 +86,7 @@ impl DescribeFleetUtilizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetUtilizationOutput`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput {
+    pub fn build(self) -> crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput {
         crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput {
             fleet_utilization: self.fleet_utilization,
             next_token: self.next_token,

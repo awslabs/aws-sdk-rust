@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`keyspace_name(impl ::std::convert::Into<String>)`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::set_keyspace_name): <p>The name of the keyspace to be deleted.</p>
     /// - On success, responds with [`DeleteKeyspaceOutput`](crate::operation::delete_keyspace::DeleteKeyspaceOutput)
     /// - On failure, responds with [`SdkError<DeleteKeyspaceError>`](crate::operation::delete_keyspace::DeleteKeyspaceError)
-    pub fn delete_keyspace(
-        &self,
-    ) -> crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder {
-        crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_keyspace(&self) -> crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder {
+        crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::new(self.handle.clone())
     }
 }

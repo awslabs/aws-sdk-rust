@@ -91,18 +91,12 @@ impl InviteBuilder {
         &self.status
     }
     /// <p>The email address to which the invite is sent.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address to which the invite is sent.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -116,10 +110,7 @@ impl InviteBuilder {
         self
     }
     /// <p>The status of the invite email.</p>
-    pub fn set_email_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailStatus>,
-    ) -> Self {
+    pub fn set_email_status(mut self, input: ::std::option::Option<crate::types::EmailStatus>) -> Self {
         self.email_status = input;
         self
     }

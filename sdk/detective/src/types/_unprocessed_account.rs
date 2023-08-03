@@ -30,9 +30,7 @@ impl UnprocessedAccount {
 
 /// A builder for [`UnprocessedAccount`](crate::types::UnprocessedAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedAccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

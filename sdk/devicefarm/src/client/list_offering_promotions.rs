@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`offering_promotions(Option<Vec<OfferingPromotion>>)`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput::offering_promotions): <p>Information about the offering promotions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput::next_token): <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListOfferingPromotionsError>`](crate::operation::list_offering_promotions::ListOfferingPromotionsError)
-    pub fn list_offering_promotions(
-        &self,
-    ) -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsFluentBuilder
-    {
+    pub fn list_offering_promotions(&self) -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsFluentBuilder {
         crate::operation::list_offering_promotions::builders::ListOfferingPromotionsFluentBuilder::new(self.handle.clone())
     }
 }

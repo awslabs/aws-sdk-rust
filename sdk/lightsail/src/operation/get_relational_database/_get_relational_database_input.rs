@@ -15,35 +15,25 @@ impl GetRelationalDatabaseInput {
 }
 impl GetRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseInput`](crate::operation::get_relational_database::GetRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::get_relational_database::builders::GetRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_relational_database::builders::GetRelationalDatabaseInputBuilder {
         crate::operation::get_relational_database::builders::GetRelationalDatabaseInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseInput`](crate::operation::get_relational_database::GetRelationalDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseInputBuilder {
     /// <p>The name of the database that you are looking up.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that you are looking up.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetRelationalDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`GetRelationalDatabaseInput`](crate::operation::get_relational_database::GetRelationalDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database::GetRelationalDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_relational_database::GetRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_relational_database::GetRelationalDatabaseInput {
+            relational_database_name: self.relational_database_name,
+        })
     }
 }

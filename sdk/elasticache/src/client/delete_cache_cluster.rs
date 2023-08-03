@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCacheClusterOutput`](crate::operation::delete_cache_cluster::DeleteCacheClusterOutput) with field(s):
     ///   - [`cache_cluster(Option<CacheCluster>)`](crate::operation::delete_cache_cluster::DeleteCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
     /// - On failure, responds with [`SdkError<DeleteCacheClusterError>`](crate::operation::delete_cache_cluster::DeleteCacheClusterError)
-    pub fn delete_cache_cluster(
-        &self,
-    ) -> crate::operation::delete_cache_cluster::builders::DeleteCacheClusterFluentBuilder {
-        crate::operation::delete_cache_cluster::builders::DeleteCacheClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cache_cluster(&self) -> crate::operation::delete_cache_cluster::builders::DeleteCacheClusterFluentBuilder {
+        crate::operation::delete_cache_cluster::builders::DeleteCacheClusterFluentBuilder::new(self.handle.clone())
     }
 }

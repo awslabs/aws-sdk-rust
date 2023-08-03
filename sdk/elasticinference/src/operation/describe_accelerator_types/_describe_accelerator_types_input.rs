@@ -5,18 +5,14 @@
 pub struct DescribeAcceleratorTypesInput {}
 impl DescribeAcceleratorTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorTypesInput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder {
         crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorTypesInput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorTypesInputBuilder {}
 impl DescribeAcceleratorTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcceleratorTypesInput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput).
@@ -26,8 +22,6 @@ impl DescribeAcceleratorTypesInputBuilder {
         crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput {})
     }
 }

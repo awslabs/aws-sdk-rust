@@ -37,9 +37,7 @@ impl CustomLogSourceAttributes {
 
 /// A builder for [`CustomLogSourceAttributes`](crate::types::CustomLogSourceAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomLogSourceAttributesBuilder {
     pub(crate) crawler_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,

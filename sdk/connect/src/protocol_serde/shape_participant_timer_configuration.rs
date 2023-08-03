@@ -12,10 +12,7 @@ pub fn ser_participant_timer_configuration(
     if let Some(var_3) = &input.timer_value {
         #[allow(unused_mut)]
         let mut object_4 = object.key("TimerValue").start_object();
-        crate::protocol_serde::shape_participant_timer_value::ser_participant_timer_value(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_participant_timer_value::ser_participant_timer_value(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

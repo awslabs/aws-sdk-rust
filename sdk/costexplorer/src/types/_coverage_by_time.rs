@@ -37,13 +37,10 @@ impl CoverageByTime {
 
 /// A builder for [`CoverageByTime`](crate::types::CoverageByTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageByTimeBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
-    pub(crate) groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
     pub(crate) total: ::std::option::Option<crate::types::Coverage>,
 }
 impl CoverageByTimeBuilder {
@@ -53,10 +50,7 @@ impl CoverageByTimeBuilder {
         self
     }
     /// <p>The period that this coverage was used over.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -76,17 +70,12 @@ impl CoverageByTimeBuilder {
         self
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>> {
         &self.groups
     }
     /// <p>The total reservation coverage, in hours.</p>

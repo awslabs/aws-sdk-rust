@@ -27,46 +27,27 @@ impl ListRecoveryPointsByBackupVaultInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.backup_vault_name;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("backup_vault_name", "cannot be empty or unset"))?;
+                let backup_vault_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if backup_vault_name.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "backup_vault_name",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let backup_vault_name = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if backup_vault_name.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "backup_vault_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 ::std::write!(
                     output,
@@ -79,8 +60,7 @@ impl ListRecoveryPointsByBackupVaultInput {
             fn uri_query(
                 _input: &crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
@@ -89,44 +69,29 @@ impl ListRecoveryPointsByBackupVaultInput {
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
                     if *inner_3 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
-                        );
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.by_resource_arn {
                     {
-                        query.push_kv(
-                            "resourceArn",
-                            &::aws_smithy_http::query::fmt_string(&inner_4),
-                        );
+                        query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.by_resource_type {
                     {
-                        query.push_kv(
-                            "resourceType",
-                            &::aws_smithy_http::query::fmt_string(&inner_5),
-                        );
+                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.by_backup_plan_id {
                     {
-                        query.push_kv(
-                            "backupPlanId",
-                            &::aws_smithy_http::query::fmt_string(&inner_6),
-                        );
+                        query.push_kv("backupPlanId", &::aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.by_created_before {
                     {
                         query.push_kv(
                             "createdBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_7,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_7, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
@@ -134,19 +99,13 @@ impl ListRecoveryPointsByBackupVaultInput {
                     {
                         query.push_kv(
                             "createdAfter",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_8,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_8, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.by_parent_recovery_point_arn {
                     {
-                        query.push_kv(
-                            "parentRecoveryPointArn",
-                            &::aws_smithy_http::query::fmt_string(&inner_9),
-                        );
+                        query.push_kv("parentRecoveryPointArn", &::aws_smithy_http::query::fmt_string(&inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -155,10 +114,7 @@ impl ListRecoveryPointsByBackupVaultInput {
             fn update_http_builder(
                 input: &crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -180,10 +136,8 @@ impl ListRecoveryPointsByBackupVaultInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -192,23 +146,19 @@ impl ListRecoveryPointsByBackupVaultInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault::new())
-                            .with_metadata(::aws_smithy_http::operation::Metadata::new("ListRecoveryPointsByBackupVault", "backup"));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault::new(),
+        )
+        .with_metadata(::aws_smithy_http::operation::Metadata::new("ListRecoveryPointsByBackupVault", "backup"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -225,16 +175,23 @@ impl ListRecoveryPointsByBackupVault {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByBackupVault {
-    type Output = ::std::result::Result<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput, crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>;
+    type Output = ::std::result::Result<
+        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
+        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError,
+    >;
     fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
-            crate::protocol_serde::shape_list_recovery_points_by_backup_vault::de_list_recovery_points_by_backup_vault_http_error(status, headers, body)
+            crate::protocol_serde::shape_list_recovery_points_by_backup_vault::de_list_recovery_points_by_backup_vault_http_error(
+                status, headers, body,
+            )
         } else {
-            crate::protocol_serde::shape_list_recovery_points_by_backup_vault::de_list_recovery_points_by_backup_vault_http_response_with_props(status, headers, body)
+            crate::protocol_serde::shape_list_recovery_points_by_backup_vault::de_list_recovery_points_by_backup_vault_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
 }
@@ -263,9 +220,7 @@ pub enum ListRecoveryPointsByBackupVaultError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for ListRecoveryPointsByBackupVaultError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -286,32 +241,18 @@ impl ::std::fmt::Display for ListRecoveryPointsByBackupVaultError {
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ListRecoveryPointsByBackupVaultError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListRecoveryPointsByBackupVaultError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidParameterValueException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MissingParameterValueException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceUnavailableException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MissingParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -327,27 +268,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListRecoveryPointsByBackupV
 impl ListRecoveryPointsByBackupVaultError {
     /// Creates the `ListRecoveryPointsByBackupVaultError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `ListRecoveryPointsByBackupVaultError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

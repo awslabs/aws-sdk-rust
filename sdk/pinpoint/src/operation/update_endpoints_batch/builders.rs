@@ -37,9 +37,7 @@ impl UpdateEndpointsBatchFluentBuilder {
         }
     }
     /// Access the UpdateEndpointsBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateEndpointsBatchFluentBuilder {
             crate::operation::update_endpoints_batch::UpdateEndpointsBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoints_batch::UpdateEndpointsBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateEndpointsBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateEndpointsBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoints_batch::UpdateEndpointsBatchError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateEndpointsBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoints_batch::UpdateEndpointsBatchError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateEndpointsBatchFluentBuilder {
             crate::operation::update_endpoints_batch::UpdateEndpointsBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoints_batch::UpdateEndpointsBatchError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -148,17 +129,12 @@ impl UpdateEndpointsBatchFluentBuilder {
         self
     }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
-    pub fn set_endpoint_batch_request(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointBatchRequest>,
-    ) -> Self {
+    pub fn set_endpoint_batch_request(mut self, input: ::std::option::Option<crate::types::EndpointBatchRequest>) -> Self {
         self.inner = self.inner.set_endpoint_batch_request(input);
         self
     }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
-    pub fn get_endpoint_batch_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointBatchRequest> {
+    pub fn get_endpoint_batch_request(&self) -> &::std::option::Option<crate::types::EndpointBatchRequest> {
         self.inner.get_endpoint_batch_request()
     }
 }

@@ -52,13 +52,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,51 +95,21 @@ impl ::std::convert::From<&str> for InstanceRecommendationFindingReasonCode {
         match s {
             "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
             "CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
-            "DiskIOPSOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned
-            }
-            "DiskIOPSUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned
-            }
-            "DiskThroughputOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned
-            }
-            "DiskThroughputUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned
-            }
-            "EBSIOPSOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned
-            }
-            "EBSIOPSUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned
-            }
-            "EBSThroughputOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned
-            }
-            "EBSThroughputUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned
-            }
-            "MemoryOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::MemoryOverProvisioned
-            }
-            "MemoryUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned
-            }
-            "NetworkBandwidthOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned
-            }
-            "NetworkBandwidthUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned
-            }
-            "NetworkPPSOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned
-            }
-            "NetworkPPSUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned
-            }
-            other => InstanceRecommendationFindingReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "DiskIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned,
+            "DiskIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned,
+            "DiskThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned,
+            "DiskThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned,
+            "EBSIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned,
+            "EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
+            "EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
+            "EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
+            "MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
+            "MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
+            "NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
+            "NetworkBandwidthUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned,
+            "NetworkPPSOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned,
+            "NetworkPPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned,
+            other => InstanceRecommendationFindingReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -162,48 +126,20 @@ impl InstanceRecommendationFindingReasonCode {
         match self {
             InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
             InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => {
-                "DiskIOPSOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => {
-                "DiskIOPSUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => {
-                "DiskThroughputOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => {
-                "DiskThroughputUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => {
-                "EBSIOPSOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => {
-                "EBSIOPSUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => {
-                "EBSThroughputOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => {
-                "EBSThroughputUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => {
-                "MemoryOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => {
-                "MemoryUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => {
-                "NetworkBandwidthOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => {
-                "NetworkBandwidthUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => {
-                "NetworkPPSOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => {
-                "NetworkPPSUnderprovisioned"
-            }
+            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => "DiskIOPSOverprovisioned",
+            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => "DiskIOPSUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => "DiskThroughputOverprovisioned",
+            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => "DiskThroughputUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
+            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
+            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
+            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => "NetworkPPSOverprovisioned",
+            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => "NetworkPPSUnderprovisioned",
             InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str(),
         }
     }

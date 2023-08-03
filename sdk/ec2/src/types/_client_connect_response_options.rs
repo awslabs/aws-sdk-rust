@@ -37,9 +37,7 @@ impl ClientConnectResponseOptions {
 
 /// A builder for [`ClientConnectResponseOptions`](crate::types::ClientConnectResponseOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientConnectResponseOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ClientConnectResponseOptionsBuilder {
         &self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }
@@ -86,17 +78,12 @@ impl ClientConnectResponseOptionsBuilder {
         self
     }
     /// <p>The status of any updates to the client connect options.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of any updates to the client connect options.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ClientConnectResponseOptions`](crate::types::ClientConnectResponseOptions).

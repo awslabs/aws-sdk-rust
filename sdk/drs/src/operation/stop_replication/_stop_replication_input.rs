@@ -22,26 +22,18 @@ impl StopReplicationInput {
 
 /// A builder for [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationInputBuilder {
     /// <p>The ID of the Source Server to stop replication for.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server to stop replication for.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_replication::StopReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_replication::StopReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_replication::StopReplicationInput {
             source_server_id: self.source_server_id,
         })

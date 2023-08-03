@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`tape_recovery_point_infos(Option<Vec<TapeRecoveryPointInfo>>)`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput::tape_recovery_point_infos): <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput::marker): <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>  <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
     /// - On failure, responds with [`SdkError<DescribeTapeRecoveryPointsError>`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError)
-    pub fn describe_tape_recovery_points(&self) -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsFluentBuilder{
+    pub fn describe_tape_recovery_points(
+        &self,
+    ) -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsFluentBuilder {
         crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -121,9 +121,7 @@ impl InstanceGroupDetail {
 
 /// A builder for [`InstanceGroupDetail`](crate::types::InstanceGroupDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceGroupDetailBuilder {
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -143,18 +141,12 @@ pub struct InstanceGroupDetailBuilder {
 }
 impl InstanceGroupDetailBuilder {
     /// <p>Unique identifier for the instance group.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the instance group.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_group_id = input;
         self
     }
@@ -196,10 +188,7 @@ impl InstanceGroupDetailBuilder {
         self
     }
     /// <p>Instance group role in the cluster</p>
-    pub fn set_instance_role(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRoleType>,
-    ) -> Self {
+    pub fn set_instance_role(mut self, input: ::std::option::Option<crate::types::InstanceRoleType>) -> Self {
         self.instance_role = input;
         self
     }
@@ -222,18 +211,12 @@ impl InstanceGroupDetailBuilder {
         &self.bid_price
     }
     /// <p>Amazon EC2 instance type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon EC2 instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -275,10 +258,7 @@ impl InstanceGroupDetailBuilder {
         self
     }
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceGroupState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceGroupState>) -> Self {
         self.state = input;
         self
     }
@@ -287,18 +267,12 @@ impl InstanceGroupDetailBuilder {
         &self.state
     }
     /// <p>Details regarding the state of the instance group.</p>
-    pub fn last_state_change_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_state_change_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_state_change_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details regarding the state of the instance group.</p>
-    pub fn set_last_state_change_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_state_change_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_state_change_reason = input;
         self
     }
@@ -312,10 +286,7 @@ impl InstanceGroupDetailBuilder {
         self
     }
     /// <p>The date/time the instance group was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -329,10 +300,7 @@ impl InstanceGroupDetailBuilder {
         self
     }
     /// <p>The date/time the instance group was started.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -346,10 +314,7 @@ impl InstanceGroupDetailBuilder {
         self
     }
     /// <p>The date/time the instance group was available to the cluster.</p>
-    pub fn set_ready_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ready_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ready_date_time = input;
         self
     }
@@ -363,10 +328,7 @@ impl InstanceGroupDetailBuilder {
         self
     }
     /// <p>The date/time the instance group was terminated.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -375,18 +337,12 @@ impl InstanceGroupDetailBuilder {
         &self.end_date_time
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn set_custom_ami_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_ami_id = input;
         self
     }

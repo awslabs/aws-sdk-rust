@@ -58,9 +58,7 @@ impl Fleet {
 
 /// A builder for [`Fleet`](crate::types::Fleet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl FleetBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -121,32 +116,21 @@ impl FleetBuilder {
         self
     }
     /// <p>The status of the last fleet deployment.</p>
-    pub fn set_last_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_last_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.last_deployment_status = input;
         self
     }
     /// <p>The status of the last fleet deployment.</p>
-    pub fn get_last_deployment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentStatus> {
+    pub fn get_last_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
         &self.last_deployment_status
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_deployment_job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_deployment_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn set_last_deployment_job(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_deployment_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_deployment_job = input;
         self
     }
@@ -160,10 +144,7 @@ impl FleetBuilder {
         self
     }
     /// <p>The time of the last deployment.</p>
-    pub fn set_last_deployment_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_deployment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_deployment_time = input;
         self
     }

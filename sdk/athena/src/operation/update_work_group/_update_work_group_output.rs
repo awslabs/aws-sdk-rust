@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkGroupOutput {
 }
 impl UpdateWorkGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkGroupOutput`](crate::operation::update_work_group::UpdateWorkGroupOutput).
-    pub fn builder() -> crate::operation::update_work_group::builders::UpdateWorkGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_work_group::builders::UpdateWorkGroupOutputBuilder {
         crate::operation::update_work_group::builders::UpdateWorkGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkGroupOutput`](crate::operation::update_work_group::UpdateWorkGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkGroupOutputBuilder {
     _request_id: Option<String>,
 }

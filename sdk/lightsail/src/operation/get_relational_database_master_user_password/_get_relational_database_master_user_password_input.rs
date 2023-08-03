@@ -20,43 +20,33 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn password_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelationalDatabasePasswordVersion> {
+    pub fn password_version(&self) -> ::std::option::Option<&crate::types::RelationalDatabasePasswordVersion> {
         self.password_version.as_ref()
     }
 }
 impl GetRelationalDatabaseMasterUserPasswordInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordInput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput).
-    pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder
+    {
         crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseMasterUserPasswordInput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseMasterUserPasswordInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) password_version:
-        ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>,
+    pub(crate) password_version: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>,
 }
 impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
     /// <p>The name of your database for which to get the master user password.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database for which to get the master user password.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -67,40 +57,35 @@ impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn password_version(
-        mut self,
-        input: crate::types::RelationalDatabasePasswordVersion,
-    ) -> Self {
+    pub fn password_version(mut self, input: crate::types::RelationalDatabasePasswordVersion) -> Self {
         self.password_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn set_password_version(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>,
-    ) -> Self {
+    pub fn set_password_version(mut self, input: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>) -> Self {
         self.password_version = input;
         self
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn get_password_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
+    pub fn get_password_version(&self) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
         &self.password_version
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseMasterUserPasswordInput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput {
-                relational_database_name: self.relational_database_name
-                ,
-                password_version: self.password_version
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+                password_version: self.password_version,
+            },
         )
     }
 }

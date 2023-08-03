@@ -30,9 +30,7 @@ impl NotificationSummary {
 
 /// A builder for [`NotificationSummary`](crate::types::NotificationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NotificationType>,
     pub(crate) lens_upgrade_summary: ::std::option::Option<crate::types::LensUpgradeSummary>,
@@ -44,10 +42,7 @@ impl NotificationSummaryBuilder {
         self
     }
     /// <p>The type of notification.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -61,17 +56,12 @@ impl NotificationSummaryBuilder {
         self
     }
     /// <p>Summary of lens upgrade.</p>
-    pub fn set_lens_upgrade_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::LensUpgradeSummary>,
-    ) -> Self {
+    pub fn set_lens_upgrade_summary(mut self, input: ::std::option::Option<crate::types::LensUpgradeSummary>) -> Self {
         self.lens_upgrade_summary = input;
         self
     }
     /// <p>Summary of lens upgrade.</p>
-    pub fn get_lens_upgrade_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::LensUpgradeSummary> {
+    pub fn get_lens_upgrade_summary(&self) -> &::std::option::Option<crate::types::LensUpgradeSummary> {
         &self.lens_upgrade_summary
     }
     /// Consumes the builder and constructs a [`NotificationSummary`](crate::types::NotificationSummary).

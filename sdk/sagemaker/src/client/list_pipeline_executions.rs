@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`pipeline_execution_summaries(Option<Vec<PipelineExecutionSummary>>)`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput::pipeline_execution_summaries): <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput::next_token): <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListPipelineExecutionsError>`](crate::operation::list_pipeline_executions::ListPipelineExecutionsError)
-    pub fn list_pipeline_executions(
-        &self,
-    ) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder
-    {
+    pub fn list_pipeline_executions(&self) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder {
         crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

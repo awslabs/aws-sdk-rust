@@ -44,18 +44,14 @@ impl CompleteMultipartUploadInput {
 }
 impl CompleteMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadInput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadInput).
-    pub fn builder(
-    ) -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder {
         crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMultipartUploadInput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMultipartUploadInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -141,14 +137,12 @@ impl CompleteMultipartUploadInputBuilder {
         crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::complete_multipart_upload::CompleteMultipartUploadInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                upload_id: self.upload_id,
-                archive_size: self.archive_size,
-                checksum: self.checksum,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::complete_multipart_upload::CompleteMultipartUploadInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            upload_id: self.upload_id,
+            archive_size: self.archive_size,
+            checksum: self.checksum,
+        })
     }
 }

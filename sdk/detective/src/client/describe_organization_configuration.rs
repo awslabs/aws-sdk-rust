@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(bool)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::auto_enable): <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationError)
-    pub fn describe_organization_configuration(&self) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder{
+    pub fn describe_organization_configuration(
+        &self,
+    ) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

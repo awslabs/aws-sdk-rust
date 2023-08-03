@@ -28,7 +28,7 @@ impl ListDecoderManifestSignalsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDecoderManifestSignalsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder,
+    inner: crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder,
 }
 impl ListDecoderManifestSignalsFluentBuilder {
     /// Creates a new `ListDecoderManifestSignals`.
@@ -39,7 +39,7 @@ impl ListDecoderManifestSignalsFluentBuilder {
         }
     }
     /// Access the ListDecoderManifestSignals as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListDecoderManifestSignalsFluentBuilder {
             crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignals,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListDecoderManifestSignalsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListDecoderManifestSignalsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListDecoderManifestSignalsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError>,
     > {
         self.send_middleware().await
     }
@@ -116,16 +107,14 @@ impl ListDecoderManifestSignalsFluentBuilder {
             crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignals,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_decoder_manifest_signals::paginator::ListDecoderManifestSignalsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_decoder_manifest_signals::paginator::ListDecoderManifestSignalsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_decoder_manifest_signals::paginator::ListDecoderManifestSignalsPaginator {
         crate::operation::list_decoder_manifest_signals::paginator::ListDecoderManifestSignalsPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the decoder manifest to list information about. </p>

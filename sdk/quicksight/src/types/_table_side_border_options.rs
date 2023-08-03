@@ -58,9 +58,7 @@ impl TableSideBorderOptions {
 
 /// A builder for [`TableSideBorderOptions`](crate::types::TableSideBorderOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableSideBorderOptionsBuilder {
     pub(crate) inner_vertical: ::std::option::Option<crate::types::TableBorderOptions>,
     pub(crate) inner_horizontal: ::std::option::Option<crate::types::TableBorderOptions>,
@@ -76,10 +74,7 @@ impl TableSideBorderOptionsBuilder {
         self
     }
     /// <p>The table border options of the inner vertical border.</p>
-    pub fn set_inner_vertical(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderOptions>,
-    ) -> Self {
+    pub fn set_inner_vertical(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
         self.inner_vertical = input;
         self
     }
@@ -93,10 +88,7 @@ impl TableSideBorderOptionsBuilder {
         self
     }
     /// <p>The table border options of the inner horizontal border.</p>
-    pub fn set_inner_horizontal(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderOptions>,
-    ) -> Self {
+    pub fn set_inner_horizontal(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
         self.inner_horizontal = input;
         self
     }
@@ -110,10 +102,7 @@ impl TableSideBorderOptionsBuilder {
         self
     }
     /// <p>The table border options of the left border.</p>
-    pub fn set_left(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderOptions>,
-    ) -> Self {
+    pub fn set_left(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
         self.left = input;
         self
     }
@@ -127,10 +116,7 @@ impl TableSideBorderOptionsBuilder {
         self
     }
     /// <p>The table border options of the right border.</p>
-    pub fn set_right(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderOptions>,
-    ) -> Self {
+    pub fn set_right(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
         self.right = input;
         self
     }
@@ -144,10 +130,7 @@ impl TableSideBorderOptionsBuilder {
         self
     }
     /// <p>The table border options of the top border.</p>
-    pub fn set_top(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderOptions>,
-    ) -> Self {
+    pub fn set_top(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
         self.top = input;
         self
     }
@@ -161,10 +144,7 @@ impl TableSideBorderOptionsBuilder {
         self
     }
     /// <p>The table border options of the bottom border.</p>
-    pub fn set_bottom(
-        mut self,
-        input: ::std::option::Option<crate::types::TableBorderOptions>,
-    ) -> Self {
+    pub fn set_bottom(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
         self.bottom = input;
         self
     }

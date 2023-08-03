@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`table_versions(Option<Vec<TableVersion>>)`](crate::operation::get_table_versions::GetTableVersionsOutput::table_versions): <p>A list of strings identifying available versions of the specified table.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_table_versions::GetTableVersionsOutput::next_token): <p>A continuation token, if the list of available versions does not include the last one.</p>
     /// - On failure, responds with [`SdkError<GetTableVersionsError>`](crate::operation::get_table_versions::GetTableVersionsError)
-    pub fn get_table_versions(
-        &self,
-    ) -> crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder {
-        crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_table_versions(&self) -> crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder {
+        crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::new(self.handle.clone())
     }
 }

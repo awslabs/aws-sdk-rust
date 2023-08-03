@@ -58,9 +58,7 @@ impl OutgoingCertificate {
 
 /// A builder for [`OutgoingCertificate`](crate::types::OutgoingCertificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutgoingCertificateBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct OutgoingCertificateBuilder {
 }
 impl OutgoingCertificateBuilder {
     /// <p>The certificate ARN.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ARN.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -91,18 +83,12 @@ impl OutgoingCertificateBuilder {
         &self.certificate_arn
     }
     /// <p>The certificate ID.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ID.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -111,18 +97,12 @@ impl OutgoingCertificateBuilder {
         &self.certificate_id
     }
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
-    pub fn transferred_to(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transferred_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transferred_to = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
-    pub fn set_transferred_to(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transferred_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transferred_to = input;
         self
     }
@@ -136,10 +116,7 @@ impl OutgoingCertificateBuilder {
         self
     }
     /// <p>The date the transfer was initiated.</p>
-    pub fn set_transfer_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_transfer_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.transfer_date = input;
         self
     }
@@ -148,18 +125,12 @@ impl OutgoingCertificateBuilder {
         &self.transfer_date
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transfer message.</p>
-    pub fn set_transfer_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transfer_message = input;
         self
     }
@@ -173,10 +144,7 @@ impl OutgoingCertificateBuilder {
         self
     }
     /// <p>The certificate creation date.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

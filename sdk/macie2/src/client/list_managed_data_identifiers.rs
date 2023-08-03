@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<ManagedDataIdentifierSummary>>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::items): <p>An array of objects, one for each managed data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListManagedDataIdentifiersError>`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError)
-    pub fn list_managed_data_identifiers(&self) -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder{
+    pub fn list_managed_data_identifiers(
+        &self,
+    ) -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder {
         crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::new(self.handle.clone())
     }
 }

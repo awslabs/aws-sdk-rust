@@ -12,10 +12,7 @@ pub fn ser_create_endpoint_input(
     if let Some(var_3) = &input.deployment_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DeploymentConfig").start_object();
-        crate::protocol_serde::shape_deployment_config::ser_deployment_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_deployment_config::ser_deployment_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

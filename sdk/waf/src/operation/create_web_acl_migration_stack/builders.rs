@@ -27,7 +27,7 @@ impl CreateWebAclMigrationStackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebACLMigrationStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder,
+    inner: crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder,
 }
 impl CreateWebACLMigrationStackFluentBuilder {
     /// Creates a new `CreateWebACLMigrationStack`.
@@ -38,7 +38,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
         }
     }
     /// Access the CreateWebACLMigrationStack as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
@@ -154,10 +140,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }

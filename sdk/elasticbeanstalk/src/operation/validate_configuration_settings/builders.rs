@@ -27,7 +27,7 @@ impl ValidateConfigurationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder,
+    inner: crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder,
 }
 impl ValidateConfigurationSettingsFluentBuilder {
     /// Creates a new `ValidateConfigurationSettings`.
@@ -38,7 +38,7 @@ impl ValidateConfigurationSettingsFluentBuilder {
         }
     }
     /// Access the ValidateConfigurationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ValidateConfigurationSettingsFluentBuilder {
             crate::operation::validate_configuration_settings::ValidateConfigurationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ValidateConfigurationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ValidateConfigurationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ValidateConfigurationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl ValidateConfigurationSettingsFluentBuilder {
             crate::operation::validate_configuration_settings::ValidateConfigurationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -143,19 +126,13 @@ impl ValidateConfigurationSettingsFluentBuilder {
     }
     /// <p>The name of the configuration template to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and an environment name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the configuration template to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and an environment name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -166,19 +143,13 @@ impl ValidateConfigurationSettingsFluentBuilder {
     }
     /// <p>The name of the environment to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and a configuration template name.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the environment to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and a configuration template name.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -197,17 +168,12 @@ impl ValidateConfigurationSettingsFluentBuilder {
         self
     }
     /// <p>A list of the options and desired values to evaluate.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
     /// <p>A list of the options and desired values to evaluate.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
 }

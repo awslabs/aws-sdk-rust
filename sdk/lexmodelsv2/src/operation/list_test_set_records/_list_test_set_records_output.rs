@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTestSetRecordsOutput {
 }
 impl ListTestSetRecordsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestSetRecordsOutput`](crate::operation::list_test_set_records::ListTestSetRecordsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_test_set_records::builders::ListTestSetRecordsOutputBuilder {
-        crate::operation::list_test_set_records::builders::ListTestSetRecordsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_test_set_records::builders::ListTestSetRecordsOutputBuilder {
+        crate::operation::list_test_set_records::builders::ListTestSetRecordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestSetRecordsOutput`](crate::operation::list_test_set_records::ListTestSetRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestSetRecordsOutputBuilder {
-    pub(crate) test_set_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>>,
+    pub(crate) test_set_records: ::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListTestSetRecordsOutputBuilder {
         self
     }
     /// <p>The list of records from the test set.</p>
-    pub fn set_test_set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>>,
-    ) -> Self {
+    pub fn set_test_set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>>) -> Self {
         self.test_set_records = input;
         self
     }
     /// <p>The list of records from the test set.</p>
-    pub fn get_test_set_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>> {
+    pub fn get_test_set_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>> {
         &self.test_set_records
     }
     /// <p>A token that indicates whether there are more records to return in a response to the ListTestSetRecords operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSetRecords operation request to get the next page of records.</p>

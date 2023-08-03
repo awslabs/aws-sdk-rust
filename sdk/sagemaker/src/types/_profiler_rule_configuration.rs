@@ -24,9 +24,7 @@ pub struct ProfilerRuleConfiguration {
     pub volume_size_in_gb: i32,
     /// <p>Runtime configuration for rule container.</p>
     #[doc(hidden)]
-    pub rule_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub rule_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProfilerRuleConfiguration {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
@@ -54,11 +52,7 @@ impl ProfilerRuleConfiguration {
         self.volume_size_in_gb
     }
     /// <p>Runtime configuration for rule container.</p>
-    pub fn rule_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn rule_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.rule_parameters.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl ProfilerRuleConfiguration {
 
 /// A builder for [`ProfilerRuleConfiguration`](crate::types::ProfilerRuleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfilerRuleConfigurationBuilder {
     pub(crate) rule_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
@@ -81,24 +73,16 @@ pub struct ProfilerRuleConfigurationBuilder {
     pub(crate) rule_evaluator_image: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
-    pub(crate) rule_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) rule_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProfilerRuleConfigurationBuilder {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
-    pub fn rule_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
-    pub fn set_rule_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_configuration_name = input;
         self
     }
@@ -121,18 +105,12 @@ impl ProfilerRuleConfigurationBuilder {
         &self.local_path
     }
     /// <p>Path to Amazon S3 storage location for rules.</p>
-    pub fn s3_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Path to Amazon S3 storage location for rules.</p>
-    pub fn set_s3_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_path = input;
         self
     }
@@ -141,18 +119,12 @@ impl ProfilerRuleConfigurationBuilder {
         &self.s3_output_path
     }
     /// <p>The Amazon Elastic Container Registry Image for the managed rule evaluation.</p>
-    pub fn rule_evaluator_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_evaluator_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_evaluator_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Elastic Container Registry Image for the managed rule evaluation.</p>
-    pub fn set_rule_evaluator_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_evaluator_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_evaluator_image = input;
         self
     }
@@ -166,17 +138,12 @@ impl ProfilerRuleConfigurationBuilder {
         self
     }
     /// <p>The instance type to deploy a custom rule for profiling a training job.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProcessingInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The instance type to deploy a custom rule for profiling a training job.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
         &self.instance_type
     }
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
@@ -211,19 +178,13 @@ impl ProfilerRuleConfigurationBuilder {
     /// <p>Runtime configuration for rule container.</p>
     pub fn set_rule_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.rule_parameters = input;
         self
     }
     /// <p>Runtime configuration for rule container.</p>
-    pub fn get_rule_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_rule_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.rule_parameters
     }
     /// Consumes the builder and constructs a [`ProfilerRuleConfiguration`](crate::types::ProfilerRuleConfiguration).

@@ -21,8 +21,7 @@ pub struct ActiveViolation {
     pub last_violation_value: ::std::option::Option<crate::types::MetricValue>,
     /// <p> The details of a violation event. </p>
     #[doc(hidden)]
-    pub violation_event_additional_info:
-        ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+    pub violation_event_additional_info: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     /// <p>The verification state of the violation (detect alarm).</p>
     #[doc(hidden)]
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
@@ -58,9 +57,7 @@ impl ActiveViolation {
         self.last_violation_value.as_ref()
     }
     /// <p> The details of a violation event. </p>
-    pub fn violation_event_additional_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
+    pub fn violation_event_additional_info(&self) -> ::std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
         self.violation_event_additional_info.as_ref()
     }
     /// <p>The verification state of the violation (detect alarm).</p>
@@ -89,17 +86,14 @@ impl ActiveViolation {
 
 /// A builder for [`ActiveViolation`](crate::types::ActiveViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveViolationBuilder {
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::Behavior>,
     pub(crate) last_violation_value: ::std::option::Option<crate::types::MetricValue>,
-    pub(crate) violation_event_additional_info:
-        ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+    pub(crate) violation_event_additional_info: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
     pub(crate) verification_state_description: ::std::option::Option<::std::string::String>,
     pub(crate) last_violation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -135,18 +129,12 @@ impl ActiveViolationBuilder {
         &self.thing_name
     }
     /// <p>The security profile with the behavior is in violation.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security profile with the behavior is in violation.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -174,10 +162,7 @@ impl ActiveViolationBuilder {
         self
     }
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
-    pub fn set_last_violation_value(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricValue>,
-    ) -> Self {
+    pub fn set_last_violation_value(mut self, input: ::std::option::Option<crate::types::MetricValue>) -> Self {
         self.last_violation_value = input;
         self
     }
@@ -186,25 +171,17 @@ impl ActiveViolationBuilder {
         &self.last_violation_value
     }
     /// <p> The details of a violation event. </p>
-    pub fn violation_event_additional_info(
-        mut self,
-        input: crate::types::ViolationEventAdditionalInfo,
-    ) -> Self {
+    pub fn violation_event_additional_info(mut self, input: crate::types::ViolationEventAdditionalInfo) -> Self {
         self.violation_event_additional_info = ::std::option::Option::Some(input);
         self
     }
     /// <p> The details of a violation event. </p>
-    pub fn set_violation_event_additional_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
-    ) -> Self {
+    pub fn set_violation_event_additional_info(mut self, input: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>) -> Self {
         self.violation_event_additional_info = input;
         self
     }
     /// <p> The details of a violation event. </p>
-    pub fn get_violation_event_additional_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ViolationEventAdditionalInfo> {
+    pub fn get_violation_event_additional_info(&self) -> &::std::option::Option<crate::types::ViolationEventAdditionalInfo> {
         &self.violation_event_additional_info
     }
     /// <p>The verification state of the violation (detect alarm).</p>
@@ -213,39 +190,26 @@ impl ActiveViolationBuilder {
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn verification_state_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_state_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_state_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn set_verification_state_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_state_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_state_description = input;
         self
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn get_verification_state_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verification_state_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.verification_state_description
     }
     /// <p>The time the most recent violation occurred.</p>
@@ -254,10 +218,7 @@ impl ActiveViolationBuilder {
         self
     }
     /// <p>The time the most recent violation occurred.</p>
-    pub fn set_last_violation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_violation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_violation_time = input;
         self
     }
@@ -271,10 +232,7 @@ impl ActiveViolationBuilder {
         self
     }
     /// <p>The time the violation started.</p>
-    pub fn set_violation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_violation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.violation_start_time = input;
         self
     }

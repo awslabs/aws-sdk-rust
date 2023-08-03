@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRescoreExecutionPlanOutput {
 }
 impl CreateRescoreExecutionPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateRescoreExecutionPlanOutput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder{
+    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder {
         crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRescoreExecutionPlanOutput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRescoreExecutionPlanOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl CreateRescoreExecutionPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRescoreExecutionPlanOutput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
+    pub fn build(self) -> crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
         crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
             id: self.id,
             arn: self.arn,

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>The pagination token.</p>
     ///   - [`migration_workflow_summary(Option<Vec<MigrationWorkflowSummary>>)`](crate::operation::list_workflows::ListWorkflowsOutput::migration_workflow_summary): <p>The summary of the migration workflow.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
-    pub fn list_workflows(
-        &self,
-    ) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
+        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

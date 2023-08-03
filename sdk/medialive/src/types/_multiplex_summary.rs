@@ -30,9 +30,7 @@ pub struct MultiplexSummary {
     pub state: ::std::option::Option<crate::types::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MultiplexSummary {
     /// The unique arn of the multiplex.
@@ -48,9 +46,7 @@ impl MultiplexSummary {
         self.id.as_deref()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexSettingsSummary> {
+    pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexSettingsSummary> {
         self.multiplex_settings.as_ref()
     }
     /// The name of the multiplex.
@@ -70,11 +66,7 @@ impl MultiplexSummary {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -87,9 +79,7 @@ impl MultiplexSummary {
 
 /// A builder for [`MultiplexSummary`](crate::types::MultiplexSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -99,9 +89,7 @@ pub struct MultiplexSummaryBuilder {
     pub(crate) pipelines_running_count: ::std::option::Option<i32>,
     pub(crate) program_count: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::MultiplexState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MultiplexSummaryBuilder {
     /// The unique arn of the multiplex.
@@ -123,27 +111,19 @@ impl MultiplexSummaryBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// A list of availability zones for the multiplex.
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// A list of availability zones for the multiplex.
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// The unique id of the multiplex.
@@ -166,17 +146,12 @@ impl MultiplexSummaryBuilder {
         self
     }
     /// Configuration for a multiplex event.
-    pub fn set_multiplex_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexSettingsSummary>,
-    ) -> Self {
+    pub fn set_multiplex_settings(mut self, input: ::std::option::Option<crate::types::MultiplexSettingsSummary>) -> Self {
         self.multiplex_settings = input;
         self
     }
     /// Configuration for a multiplex event.
-    pub fn get_multiplex_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexSettingsSummary> {
+    pub fn get_multiplex_settings(&self) -> &::std::option::Option<crate::types::MultiplexSettingsSummary> {
         &self.multiplex_settings
     }
     /// The name of the multiplex.
@@ -240,32 +215,19 @@ impl MultiplexSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`MultiplexSummary`](crate::types::MultiplexSummary).

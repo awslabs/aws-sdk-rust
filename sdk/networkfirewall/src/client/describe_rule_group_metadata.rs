@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`stateful_rule_options(Option<StatefulRuleOptions>)`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput::stateful_rule_options): <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput::last_modified_time): <p>The last time that the rule group was changed.</p>
     /// - On failure, responds with [`SdkError<DescribeRuleGroupMetadataError>`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError)
-    pub fn describe_rule_group_metadata(&self) -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataFluentBuilder{
+    pub fn describe_rule_group_metadata(&self) -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataFluentBuilder {
         crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataFluentBuilder::new(self.handle.clone())
     }
 }

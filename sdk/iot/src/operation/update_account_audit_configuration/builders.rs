@@ -5,16 +5,16 @@ pub use crate::operation::update_account_audit_configuration::_update_account_au
 
 impl UpdateAccountAuditConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_account_audit_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl UpdateAccountAuditConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountAuditConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder,
+    inner: crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder,
 }
 impl UpdateAccountAuditConfigurationFluentBuilder {
     /// Creates a new `UpdateAccountAuditConfiguration`.
@@ -38,15 +38,20 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateAccountAuditConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_account_audit_configuration::UpdateAccountAuditConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_account_audit_configuration::UpdateAccountAuditConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
@@ -125,27 +140,15 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub fn set_audit_notification_target_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::AuditNotificationType,
-                crate::types::AuditNotificationTarget,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_audit_notification_target_configurations(input);
+        self.inner = self.inner.set_audit_notification_target_configurations(input);
         self
     }
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub fn get_audit_notification_target_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         self.inner.get_audit_notification_target_configurations()
     }
     /// Adds a key-value pair to `auditCheckConfigurations`.
@@ -170,12 +173,7 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn set_audit_check_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::AuditCheckConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_audit_check_configurations(input);
         self
@@ -186,9 +184,7 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn get_audit_check_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
         self.inner.get_audit_check_configurations()
     }
 }

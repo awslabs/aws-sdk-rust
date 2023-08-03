@@ -32,17 +32,14 @@ impl CreatePolicyStoreInput {
 }
 impl CreatePolicyStoreInput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
-    pub fn builder(
-    ) -> crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuilder {
+    pub fn builder() -> crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuilder {
         crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePolicyStoreInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
@@ -80,10 +77,7 @@ impl CreatePolicyStoreInputBuilder {
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
-    pub fn set_validation_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationSettings>,
-    ) -> Self {
+    pub fn set_validation_settings(mut self, input: ::std::option::Option<crate::types::ValidationSettings>) -> Self {
         self.validation_settings = input;
         self
     }
@@ -91,23 +85,16 @@ impl CreatePolicyStoreInputBuilder {
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
-    pub fn get_validation_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+    pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         &self.validation_settings
     }
     /// Consumes the builder and constructs a [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_policy_store::CreatePolicyStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_policy_store::CreatePolicyStoreInput {
-                client_token: self.client_token,
-                validation_settings: self.validation_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_policy_store::CreatePolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_policy_store::CreatePolicyStoreInput {
+            client_token: self.client_token,
+            validation_settings: self.validation_settings,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl DescribePredictorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_predictor::DescribePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_predictor::DescribePredictorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor::DescribePredictorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_predictor();
         fluent_builder.inner = self;
@@ -49,9 +46,7 @@ impl DescribePredictorFluentBuilder {
         }
     }
     /// Access the DescribePredictor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_predictor::builders::DescribePredictorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_predictor::builders::DescribePredictorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +58,7 @@ impl DescribePredictorFluentBuilder {
             crate::operation::describe_predictor::DescribePredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_predictor::DescribePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor::DescribePredictorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +68,7 @@ impl DescribePredictorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +77,7 @@ impl DescribePredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_predictor::DescribePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_predictor::DescribePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor::DescribePredictorError>,
     > {
         let op = self
             .inner
@@ -112,9 +100,7 @@ impl DescribePredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_predictor::DescribePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_predictor::DescribePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor::DescribePredictorError>,
     > {
         self.send_middleware().await
     }
@@ -128,25 +114,17 @@ impl DescribePredictorFluentBuilder {
             crate::operation::describe_predictor::DescribePredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_predictor::DescribePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor::DescribePredictorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetModelTemplateOutput {
 }
 impl GetModelTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput).
-    pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateOutputBuilder {
         crate::operation::get_model_template::builders::GetModelTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelTemplateOutputBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<StackSetSummary>>)`](crate::operation::list_stack_sets::ListStackSetsOutput::summaries): <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stack_sets::ListStackSetsOutput::next_token): <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListStackSetsError>`](crate::operation::list_stack_sets::ListStackSetsError)
-    pub fn list_stack_sets(
-        &self,
-    ) -> crate::operation::list_stack_sets::builders::ListStackSetsFluentBuilder {
-        crate::operation::list_stack_sets::builders::ListStackSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stack_sets(&self) -> crate::operation::list_stack_sets::builders::ListStackSetsFluentBuilder {
+        crate::operation::list_stack_sets::builders::ListStackSetsFluentBuilder::new(self.handle.clone())
     }
 }

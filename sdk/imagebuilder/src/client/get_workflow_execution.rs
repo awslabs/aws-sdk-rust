@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`start_time(Option<String>)`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput::start_time): <p>The timestamp when the specified runtime instance of the workflow started.</p>
     ///   - [`end_time(Option<String>)`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput::end_time): <p>The timestamp when the specified runtime instance of the workflow finished.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowExecutionError>`](crate::operation::get_workflow_execution::GetWorkflowExecutionError)
-    pub fn get_workflow_execution(
-        &self,
-    ) -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder {
-        crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workflow_execution(&self) -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder {
+        crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder::new(self.handle.clone())
     }
 }

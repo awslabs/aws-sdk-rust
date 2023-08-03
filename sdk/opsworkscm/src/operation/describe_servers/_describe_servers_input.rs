@@ -36,9 +36,7 @@ impl DescribeServersInput {
 
 /// A builder for [`DescribeServersInput`](crate::operation::describe_servers::DescribeServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServersInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl DescribeServersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServersInput`](crate::operation::describe_servers::DescribeServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_servers::DescribeServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_servers::DescribeServersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_servers::DescribeServersInput {
             server_name: self.server_name,
             next_token: self.next_token,

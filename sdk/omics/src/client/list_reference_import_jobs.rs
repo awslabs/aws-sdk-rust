@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`import_jobs(Option<Vec<ImportReferenceJobItem>>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::import_jobs): <p>A lis of jobs.</p>
     /// - On failure, responds with [`SdkError<ListReferenceImportJobsError>`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsError)
-    pub fn list_reference_import_jobs(
-        &self,
-    ) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder
-    {
+    pub fn list_reference_import_jobs(&self) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder {
         crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

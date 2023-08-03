@@ -10,10 +10,7 @@ impl UpdateProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_profile::UpdateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_profile::UpdateProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateProfileFluentBuilder {
         }
     }
     /// Access the UpdateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,18 +136,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_profile_id()
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn additional_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_information(input.into());
         self
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn set_additional_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_information(input);
         self
     }
@@ -164,18 +150,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_additional_information()
     }
     /// <p>A unique account number that you have given to the customer.</p>
-    pub fn account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_number(input.into());
         self
     }
     /// <p>A unique account number that you have given to the customer.</p>
-    pub fn set_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_number(input);
         self
     }
@@ -198,18 +178,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_party_type()
     }
     /// <p>The name of the customer’s business.</p>
-    pub fn business_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn business_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.business_name(input.into());
         self
     }
     /// <p>The name of the customer’s business.</p>
-    pub fn set_business_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_business_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_business_name(input);
         self
     }
@@ -302,18 +276,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_phone_number()
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn mobile_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mobile_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mobile_phone_number(input.into());
         self
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn set_mobile_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mobile_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mobile_phone_number(input);
         self
     }
@@ -322,18 +290,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_mobile_phone_number()
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn home_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_phone_number(input.into());
         self
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn set_home_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_phone_number(input);
         self
     }
@@ -342,18 +304,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_home_phone_number()
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn business_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn business_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.business_phone_number(input.into());
         self
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn set_business_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_business_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_business_phone_number(input);
         self
     }
@@ -362,18 +318,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_business_phone_number()
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -382,18 +332,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_email_address()
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn personal_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn personal_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.personal_email_address(input.into());
         self
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn set_personal_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_personal_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_personal_email_address(input);
         self
     }
@@ -402,18 +346,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_personal_email_address()
     }
     /// <p>The customer’s business email address.</p>
-    pub fn business_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn business_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.business_email_address(input.into());
         self
     }
     /// <p>The customer’s business email address.</p>
-    pub fn set_business_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_business_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_business_email_address(input);
         self
     }
@@ -427,10 +365,7 @@ impl UpdateProfileFluentBuilder {
         self
     }
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
-    pub fn set_address(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::UpdateAddress>) -> Self {
         self.inner = self.inner.set_address(input);
         self
     }
@@ -444,10 +379,7 @@ impl UpdateProfileFluentBuilder {
         self
     }
     /// <p>The customer’s shipping address.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::UpdateAddress>) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
@@ -461,10 +393,7 @@ impl UpdateProfileFluentBuilder {
         self
     }
     /// <p>The customer’s mailing address.</p>
-    pub fn set_mailing_address(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
+    pub fn set_mailing_address(mut self, input: ::std::option::Option<crate::types::UpdateAddress>) -> Self {
         self.inner = self.inner.set_mailing_address(input);
         self
     }
@@ -478,10 +407,7 @@ impl UpdateProfileFluentBuilder {
         self
     }
     /// <p>The customer’s billing address.</p>
-    pub fn set_billing_address(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
+    pub fn set_billing_address(mut self, input: ::std::option::Option<crate::types::UpdateAddress>) -> Self {
         self.inner = self.inner.set_billing_address(input);
         self
     }
@@ -494,45 +420,26 @@ impl UpdateProfileFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn party_type_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn party_type_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.party_type_string(input.into());
         self
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn set_party_type_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_party_type_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_party_type_string(input);
         self
     }
@@ -541,18 +448,12 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_party_type_string()
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
-    pub fn gender_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gender_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gender_string(input.into());
         self
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
-    pub fn set_gender_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gender_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gender_string(input);
         self
     }

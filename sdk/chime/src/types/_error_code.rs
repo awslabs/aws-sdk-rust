@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -110,9 +104,7 @@ impl ::std::convert::From<&str> for ErrorCode {
             "Throttling" => ErrorCode::Throttling,
             "Unauthorized" => ErrorCode::Unauthorized,
             "Unprocessable" => ErrorCode::Unprocessable,
-            "VoiceConnectorGroupAssociationsExist" => {
-                ErrorCode::VoiceConnectorGroupAssociationsExist
-            }
+            "VoiceConnectorGroupAssociationsExist" => ErrorCode::VoiceConnectorGroupAssociationsExist,
             other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -142,9 +134,7 @@ impl ErrorCode {
             ErrorCode::Throttling => "Throttling",
             ErrorCode::Unauthorized => "Unauthorized",
             ErrorCode::Unprocessable => "Unprocessable",
-            ErrorCode::VoiceConnectorGroupAssociationsExist => {
-                "VoiceConnectorGroupAssociationsExist"
-            }
+            ErrorCode::VoiceConnectorGroupAssociationsExist => "VoiceConnectorGroupAssociationsExist",
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }

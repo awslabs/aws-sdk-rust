@@ -15,18 +15,14 @@ impl DescribeNotificationRuleInput {
 }
 impl DescribeNotificationRuleInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleInput`](crate::operation::describe_notification_rule::DescribeNotificationRuleInput).
-    pub fn builder(
-    ) -> crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder {
         crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotificationRuleInput`](crate::operation::describe_notification_rule::DescribeNotificationRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationRuleInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DescribeNotificationRuleInputBuilder {
         crate::operation::describe_notification_rule::DescribeNotificationRuleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_notification_rule::DescribeNotificationRuleInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_notification_rule::DescribeNotificationRuleInput { arn: self.arn })
     }
 }

@@ -8,8 +8,7 @@ pub struct DescribeDbClusterEndpointsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
     #[doc(hidden)]
-    pub db_cluster_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
+    pub db_cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterEndpointsOutput {
@@ -18,9 +17,7 @@ impl DescribeDbClusterEndpointsOutput {
         self.marker.as_deref()
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn db_cluster_endpoints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbClusterEndpoint]> {
+    pub fn db_cluster_endpoints(&self) -> ::std::option::Option<&[crate::types::DbClusterEndpoint]> {
         self.db_cluster_endpoints.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbClusterEndpointsOutput {
 }
 impl DescribeDbClusterEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsOutputBuilder {
         crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterEndpointsOutput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterEndpointsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
+    pub(crate) db_cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterEndpointsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeDbClusterEndpointsOutputBuilder {
         self
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn set_db_cluster_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>) -> Self {
         self.db_cluster_endpoints = input;
         self
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn get_db_cluster_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>> {
+    pub fn get_db_cluster_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>> {
         &self.db_cluster_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl DescribeDbClusterEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsOutput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput {
+    pub fn build(self) -> crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput {
         crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput {
             marker: self.marker,
             db_cluster_endpoints: self.db_cluster_endpoints,

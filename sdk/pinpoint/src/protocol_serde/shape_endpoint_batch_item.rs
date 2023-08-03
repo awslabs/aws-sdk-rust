@@ -28,10 +28,7 @@ pub fn ser_endpoint_batch_item(
     if let Some(var_9) = &input.demographic {
         #[allow(unused_mut)]
         let mut object_10 = object.key("Demographic").start_object();
-        crate::protocol_serde::shape_endpoint_demographic::ser_endpoint_demographic(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_endpoint_demographic::ser_endpoint_demographic(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.effective_date {
@@ -46,10 +43,7 @@ pub fn ser_endpoint_batch_item(
     if let Some(var_14) = &input.location {
         #[allow(unused_mut)]
         let mut object_15 = object.key("Location").start_object();
-        crate::protocol_serde::shape_endpoint_location::ser_endpoint_location(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_endpoint_location::ser_endpoint_location(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.metrics {

@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`target_arn(Option<String>)`](crate::operation::update_chap_credentials::UpdateChapCredentialsOutput::target_arn): <p>The Amazon Resource Name (ARN) of the target. This is the same target specified in the request.</p>
     ///   - [`initiator_name(Option<String>)`](crate::operation::update_chap_credentials::UpdateChapCredentialsOutput::initiator_name): <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateChapCredentialsError>`](crate::operation::update_chap_credentials::UpdateChapCredentialsError)
-    pub fn update_chap_credentials(
-        &self,
-    ) -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsFluentBuilder
-    {
-        crate::operation::update_chap_credentials::builders::UpdateChapCredentialsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_chap_credentials(&self) -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsFluentBuilder {
+        crate::operation::update_chap_credentials::builders::UpdateChapCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

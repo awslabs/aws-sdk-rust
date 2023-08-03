@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force_delete(bool)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::force_delete) / [`set_force_delete(bool)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_force_delete): <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     /// - On success, responds with [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput)
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::operation::delete_package::DeletePackageError)
-    pub fn delete_package(
-        &self,
-    ) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
-        crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_package(&self) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
+        crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(self.handle.clone())
     }
 }

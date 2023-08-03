@@ -39,9 +39,7 @@ impl AwsIamPolicyVersion {
 
 /// A builder for [`AwsIamPolicyVersion`](crate::types::AwsIamPolicyVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamPolicyVersionBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_default_version: ::std::option::Option<bool>,

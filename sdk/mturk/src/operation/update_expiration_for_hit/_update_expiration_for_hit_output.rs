@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateExpirationForHitOutput {
 }
 impl UpdateExpirationForHitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitOutput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput).
-    pub fn builder(
-    ) -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitOutputBuilder {
         crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExpirationForHitOutput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExpirationForHitOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateExpirationForHitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateExpirationForHitOutput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput {
+    pub fn build(self) -> crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput {
         crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput {
             _request_id: self._request_id,
         }

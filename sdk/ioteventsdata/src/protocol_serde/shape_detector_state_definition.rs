@@ -12,10 +12,7 @@ pub fn ser_detector_state_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_variable_definition::ser_variable_definition(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_variable_definition::ser_variable_definition(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_detector_state_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_timer_definition::ser_timer_definition(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_timer_definition::ser_timer_definition(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

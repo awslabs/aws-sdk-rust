@@ -5,16 +5,12 @@
 pub struct BatchStartViewerSessionRevocationOutput {
     /// <p>Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.</p>
     #[doc(hidden)]
-    pub errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>,
-    >,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>>,
     _request_id: Option<String>,
 }
 impl BatchStartViewerSessionRevocationOutput {
     /// <p>Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchStartViewerSessionRevocationError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchStartViewerSessionRevocationError]> {
         self.errors.as_deref()
     }
 }
@@ -25,20 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchStartViewerSessionRevocationOutp
 }
 impl BatchStartViewerSessionRevocationOutput {
     /// Creates a new builder-style object to manufacture [`BatchStartViewerSessionRevocationOutput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput).
-    pub fn builder() -> crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationOutputBuilder{
+    pub fn builder() -> crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationOutputBuilder {
         crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchStartViewerSessionRevocationOutput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationOutputBuilder {
-    pub(crate) errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>,
-    >,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>>,
     _request_id: Option<String>,
 }
 impl BatchStartViewerSessionRevocationOutputBuilder {
@@ -54,20 +46,12 @@ impl BatchStartViewerSessionRevocationOutputBuilder {
         self
     }
     /// <p>Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -80,10 +64,9 @@ impl BatchStartViewerSessionRevocationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationOutput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput).
-    pub fn build(self) -> crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput{
+    pub fn build(self) -> crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput {
         crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput {
-            errors: self.errors
-            ,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

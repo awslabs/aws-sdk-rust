@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeGameServerOutput`](crate::operation::describe_game_server::DescribeGameServerOutput) with field(s):
     ///   - [`game_server(Option<GameServer>)`](crate::operation::describe_game_server::DescribeGameServerOutput::game_server): <p>Object that describes the requested game server.</p>
     /// - On failure, responds with [`SdkError<DescribeGameServerError>`](crate::operation::describe_game_server::DescribeGameServerError)
-    pub fn describe_game_server(
-        &self,
-    ) -> crate::operation::describe_game_server::builders::DescribeGameServerFluentBuilder {
-        crate::operation::describe_game_server::builders::DescribeGameServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_game_server(&self) -> crate::operation::describe_game_server::builders::DescribeGameServerFluentBuilder {
+        crate::operation::describe_game_server::builders::DescribeGameServerFluentBuilder::new(self.handle.clone())
     }
 }

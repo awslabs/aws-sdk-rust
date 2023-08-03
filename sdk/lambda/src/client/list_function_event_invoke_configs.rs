@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`function_event_invoke_configs(Option<Vec<FunctionEventInvokeConfig>>)`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput::function_event_invoke_configs): <p>A list of configurations.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListFunctionEventInvokeConfigsError>`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsError)
-    pub fn list_function_event_invoke_configs(&self) -> crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsFluentBuilder{
+    pub fn list_function_event_invoke_configs(
+        &self,
+    ) -> crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsFluentBuilder {
         crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsFluentBuilder::new(self.handle.clone())
     }
 }

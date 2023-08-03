@@ -22,9 +22,7 @@ pub struct UpdateAnswerInput {
     pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     #[doc(hidden)]
-    pub choice_updates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-    >,
+    pub choice_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
     /// <p>The notes associated with the workload.</p>
     #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
@@ -57,11 +55,7 @@ impl UpdateAnswerInput {
         self.selected_choices.as_deref()
     }
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn choice_updates(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-    > {
+    pub fn choice_updates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
         self.choice_updates.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
@@ -86,17 +80,13 @@ impl UpdateAnswerInput {
 
 /// A builder for [`UpdateAnswerInput`](crate::operation::update_answer::UpdateAnswerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnswerInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) choice_updates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-    >,
+    pub(crate) choice_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
     pub(crate) is_applicable: ::std::option::Option<bool>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
@@ -159,10 +149,7 @@ impl UpdateAnswerInputBuilder {
     ///
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
         v.push(input.into());
         self.selected_choices = ::std::option::Option::Some(v);
@@ -170,18 +157,13 @@ impl UpdateAnswerInputBuilder {
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_choices = input;
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_choices
     }
     /// Adds a key-value pair to `choice_updates`.
@@ -189,11 +171,7 @@ impl UpdateAnswerInputBuilder {
     /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).
     ///
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn choice_updates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ChoiceUpdate,
-    ) -> Self {
+    pub fn choice_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ChoiceUpdate) -> Self {
         let mut hash_map = self.choice_updates.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.choice_updates = ::std::option::Option::Some(hash_map);
@@ -202,19 +180,13 @@ impl UpdateAnswerInputBuilder {
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     pub fn set_choice_updates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
     ) -> Self {
         self.choice_updates = input;
         self
     }
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn get_choice_updates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-    > {
+    pub fn get_choice_updates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
         &self.choice_updates
     }
     /// <p>The notes associated with the workload.</p>
@@ -260,12 +232,7 @@ impl UpdateAnswerInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`UpdateAnswerInput`](crate::operation::update_answer::UpdateAnswerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_answer::UpdateAnswerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_answer::UpdateAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_answer::UpdateAnswerInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

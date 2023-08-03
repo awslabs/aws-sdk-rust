@@ -29,16 +29,14 @@ impl ListKeywordsForDataSourceInput {
 }
 impl ListKeywordsForDataSourceInput {
     /// Creates a new builder-style object to manufacture [`ListKeywordsForDataSourceInput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput).
-    pub fn builder() -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder{
+    pub fn builder() -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder {
         crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`ListKeywordsForDataSourceInput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::SourceType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListKeywordsForDataSourceInputBuilder {
         crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput {
-                source: self.source,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput {
+            source: self.source,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

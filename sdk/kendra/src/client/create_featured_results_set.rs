@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFeaturedResultsSetOutput`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput) with field(s):
     ///   - [`featured_results_set(Option<FeaturedResultsSet>)`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput::featured_results_set): <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was created, and more.</p>
     /// - On failure, responds with [`SdkError<CreateFeaturedResultsSetError>`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetError)
-    pub fn create_featured_results_set(&self) -> crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetFluentBuilder{
+    pub fn create_featured_results_set(&self) -> crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetFluentBuilder {
         crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetFluentBuilder::new(self.handle.clone())
     }
 }

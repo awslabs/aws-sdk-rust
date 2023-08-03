@@ -26,7 +26,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeClientVpnIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder,
+    inner: crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder,
 }
 impl AuthorizeClientVpnIngressFluentBuilder {
     /// Creates a new `AuthorizeClientVpnIngress`.
@@ -37,7 +37,7 @@ impl AuthorizeClientVpnIngressFluentBuilder {
         }
     }
     /// Access the AuthorizeClientVpnIngress as a reference.
-    pub fn as_input(&self) -> &crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AuthorizeClientVpnIngressFluentBuilder {
             crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AuthorizeClientVpnIngressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AuthorizeClientVpnIngressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AuthorizeClientVpnIngressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AuthorizeClientVpnIngressFluentBuilder {
             crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl AuthorizeClientVpnIngressFluentBuilder {
         self.inner.get_client_vpn_endpoint_id()
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
-    pub fn target_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_network_cidr(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
-    pub fn set_target_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_network_cidr(input);
         self
     }
@@ -161,18 +138,12 @@ impl AuthorizeClientVpnIngressFluentBuilder {
         self.inner.get_target_network_cidr()
     }
     /// <p>The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
-    pub fn access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_group_id(input.into());
         self
     }
     /// <p>The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
-    pub fn set_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_group_id(input);
         self
     }

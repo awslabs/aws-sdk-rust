@@ -29,18 +29,14 @@ impl ListResiliencyPoliciesInput {
 }
 impl ListResiliencyPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListResiliencyPoliciesInput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesInputBuilder {
         crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResiliencyPoliciesInput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResiliencyPoliciesInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListResiliencyPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListResiliencyPoliciesInput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput {
-                policy_name: self.policy_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput {
+            policy_name: self.policy_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

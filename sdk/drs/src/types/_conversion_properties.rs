@@ -7,10 +7,7 @@ pub struct ConversionProperties {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
     #[doc(hidden)]
     pub volume_to_conversion_map: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The root volume name of a conversion job</p>
     #[doc(hidden)]
@@ -23,18 +20,14 @@ pub struct ConversionProperties {
     pub data_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A mapping between the volumes and their sizes</p>
     #[doc(hidden)]
-    pub volume_to_volume_size:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl ConversionProperties {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
     pub fn volume_to_conversion_map(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.volume_to_conversion_map.as_ref()
     }
@@ -51,9 +44,7 @@ impl ConversionProperties {
         self.data_timestamp.as_deref()
     }
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn volume_to_volume_size(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn volume_to_volume_size(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
         self.volume_to_volume_size.as_ref()
     }
 }
@@ -66,21 +57,15 @@ impl ConversionProperties {
 
 /// A builder for [`ConversionProperties`](crate::types::ConversionProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversionPropertiesBuilder {
     pub(crate) volume_to_conversion_map: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     pub(crate) root_volume_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_uefi: ::std::option::Option<bool>,
     pub(crate) data_timestamp: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_to_volume_size:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl ConversionPropertiesBuilder {
     /// Adds a key-value pair to `volume_to_conversion_map`.
@@ -102,10 +87,7 @@ impl ConversionPropertiesBuilder {
     pub fn set_volume_to_conversion_map(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.volume_to_conversion_map = input;
@@ -115,26 +97,17 @@ impl ConversionPropertiesBuilder {
     pub fn get_volume_to_conversion_map(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         &self.volume_to_conversion_map
     }
     /// <p>The root volume name of a conversion job</p>
-    pub fn root_volume_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_volume_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_volume_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The root volume name of a conversion job</p>
-    pub fn set_root_volume_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_volume_name = input;
         self
     }
@@ -157,18 +130,12 @@ impl ConversionPropertiesBuilder {
         &self.force_uefi
     }
     /// <p>The timestamp of when the snapshot being converted was taken</p>
-    pub fn data_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp of when the snapshot being converted was taken</p>
-    pub fn set_data_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_timestamp = input;
         self
     }
@@ -181,28 +148,19 @@ impl ConversionPropertiesBuilder {
     /// To override the contents of this collection use [`set_volume_to_volume_size`](Self::set_volume_to_volume_size).
     ///
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn volume_to_volume_size(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i64,
-    ) -> Self {
+    pub fn volume_to_volume_size(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i64) -> Self {
         let mut hash_map = self.volume_to_volume_size.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.volume_to_volume_size = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn set_volume_to_volume_size(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    ) -> Self {
+    pub fn set_volume_to_volume_size(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
         self.volume_to_volume_size = input;
         self
     }
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn get_volume_to_volume_size(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn get_volume_to_volume_size(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
         &self.volume_to_volume_size
     }
     /// Consumes the builder and constructs a [`ConversionProperties`](crate::types::ConversionProperties).

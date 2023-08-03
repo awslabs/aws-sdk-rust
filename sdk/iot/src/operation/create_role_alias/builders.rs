@@ -10,10 +10,7 @@ impl CreateRoleAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_role_alias::CreateRoleAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_role_alias();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateRoleAliasFluentBuilder {
         }
     }
     /// Access the CreateRoleAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_role_alias::builders::CreateRoleAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_role_alias::builders::CreateRoleAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateRoleAliasFluentBuilder {
             crate::operation::create_role_alias::CreateRoleAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateRoleAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateRoleAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_role_alias::CreateRoleAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateRoleAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_role_alias::CreateRoleAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateRoleAliasFluentBuilder {
             crate::operation::create_role_alias::CreateRoleAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>,
     > {
         self.customize_middleware().await
     }
@@ -186,10 +170,7 @@ impl CreateRoleAliasFluentBuilder {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

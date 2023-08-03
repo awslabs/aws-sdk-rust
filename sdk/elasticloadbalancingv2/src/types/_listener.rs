@@ -72,9 +72,7 @@ impl Listener {
 
 /// A builder for [`Listener`](crate::types::Listener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl ListenerBuilder {
         &self.listener_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_arn = input;
         self
     }
@@ -140,10 +132,7 @@ impl ListenerBuilder {
         self
     }
     /// <p>The protocol for connections from clients to the load balancer.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.protocol = input;
         self
     }
@@ -163,17 +152,12 @@ impl ListenerBuilder {
         self
     }
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
@@ -202,17 +186,12 @@ impl ListenerBuilder {
         self
     }
     /// <p>The default actions for the listener.</p>
-    pub fn set_default_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.default_actions = input;
         self
     }
     /// <p>The default actions for the listener.</p>
-    pub fn get_default_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         &self.default_actions
     }
     /// Appends an item to `alpn_policy`.
@@ -227,17 +206,12 @@ impl ListenerBuilder {
         self
     }
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
-    pub fn set_alpn_policy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alpn_policy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alpn_policy = input;
         self
     }
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
-    pub fn get_alpn_policy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alpn_policy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alpn_policy
     }
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).

@@ -6,8 +6,7 @@
 pub struct EcsTaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
     #[doc(hidden)]
-    pub container_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
+    pub container_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
     /// <p>The cpu override for the task.</p>
     #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
@@ -25,8 +24,7 @@ pub struct EcsTaskOverride {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator override for the task.</p>
     #[doc(hidden)]
-    pub inference_accelerator_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>,
+    pub inference_accelerator_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>,
     /// <p>The memory override for the task.</p>
     #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
@@ -36,9 +34,7 @@ pub struct EcsTaskOverride {
 }
 impl EcsTaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn container_overrides(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EcsContainerOverride]> {
+    pub fn container_overrides(&self) -> ::std::option::Option<&[crate::types::EcsContainerOverride]> {
         self.container_overrides.as_deref()
     }
     /// <p>The cpu override for the task.</p>
@@ -60,9 +56,7 @@ impl EcsTaskOverride {
         self.execution_role_arn.as_deref()
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EcsInferenceAcceleratorOverride]> {
+    pub fn inference_accelerator_overrides(&self) -> ::std::option::Option<&[crate::types::EcsInferenceAcceleratorOverride]> {
         self.inference_accelerator_overrides.as_deref()
     }
     /// <p>The memory override for the task.</p>
@@ -83,17 +77,13 @@ impl EcsTaskOverride {
 
 /// A builder for [`EcsTaskOverride`](crate::types::EcsTaskOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsTaskOverrideBuilder {
-    pub(crate) container_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
+    pub(crate) container_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EcsEphemeralStorage>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_accelerator_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>,
+    pub(crate) inference_accelerator_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -110,17 +100,12 @@ impl EcsTaskOverrideBuilder {
         self
     }
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn set_container_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
-    ) -> Self {
+    pub fn set_container_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>) -> Self {
         self.container_overrides = input;
         self
     }
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn get_container_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>> {
+    pub fn get_container_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>> {
         &self.container_overrides
     }
     /// <p>The cpu override for the task.</p>
@@ -155,10 +140,7 @@ impl EcsTaskOverrideBuilder {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_ephemeral_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsEphemeralStorage>,
-    ) -> Self {
+    pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EcsEphemeralStorage>) -> Self {
         self.ephemeral_storage = input;
         self
     }
@@ -169,24 +151,16 @@ impl EcsTaskOverrideBuilder {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_ephemeral_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::EcsEphemeralStorage> {
+    pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EcsEphemeralStorage> {
         &self.ephemeral_storage
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -199,10 +173,7 @@ impl EcsTaskOverrideBuilder {
     /// To override the contents of this collection use [`set_inference_accelerator_overrides`](Self::set_inference_accelerator_overrides).
     ///
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(
-        mut self,
-        input: crate::types::EcsInferenceAcceleratorOverride,
-    ) -> Self {
+    pub fn inference_accelerator_overrides(mut self, input: crate::types::EcsInferenceAcceleratorOverride) -> Self {
         let mut v = self.inference_accelerator_overrides.unwrap_or_default();
         v.push(input);
         self.inference_accelerator_overrides = ::std::option::Option::Some(v);
@@ -211,18 +182,13 @@ impl EcsTaskOverrideBuilder {
     /// <p>The Elastic Inference accelerator override for the task.</p>
     pub fn set_inference_accelerator_overrides(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>,
     ) -> Self {
         self.inference_accelerator_overrides = input;
         self
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn get_inference_accelerator_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>>
-    {
+    pub fn get_inference_accelerator_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsInferenceAcceleratorOverride>> {
         &self.inference_accelerator_overrides
     }
     /// <p>The memory override for the task.</p>
@@ -240,18 +206,12 @@ impl EcsTaskOverrideBuilder {
         &self.memory
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn task_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_task_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_role_arn = input;
         self
     }

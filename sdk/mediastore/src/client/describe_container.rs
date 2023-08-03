@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeContainerOutput`](crate::operation::describe_container::DescribeContainerOutput) with field(s):
     ///   - [`container(Option<Container>)`](crate::operation::describe_container::DescribeContainerOutput::container): <p>The name of the queried container.</p>
     /// - On failure, responds with [`SdkError<DescribeContainerError>`](crate::operation::describe_container::DescribeContainerError)
-    pub fn describe_container(
-        &self,
-    ) -> crate::operation::describe_container::builders::DescribeContainerFluentBuilder {
-        crate::operation::describe_container::builders::DescribeContainerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_container(&self) -> crate::operation::describe_container::builders::DescribeContainerFluentBuilder {
+        crate::operation::describe_container::builders::DescribeContainerFluentBuilder::new(self.handle.clone())
     }
 }

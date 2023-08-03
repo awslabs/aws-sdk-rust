@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`incremental_run_config(Option<IncrementalRunConfig>)`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput::incremental_run_config): <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     /// - On failure, responds with [`SdkError<UpdateMatchingWorkflowError>`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowError)
-    pub fn update_matching_workflow(
-        &self,
-    ) -> crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowFluentBuilder
-    {
+    pub fn update_matching_workflow(&self) -> crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowFluentBuilder {
         crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

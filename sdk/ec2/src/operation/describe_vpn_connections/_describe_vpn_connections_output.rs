@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpnConnectionsOutput {
 }
 impl DescribeVpnConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpnConnectionsOutput`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsOutputBuilder {
         crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpnConnectionsOutput`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpnConnectionsOutputBuilder {
     pub(crate) vpn_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeVpnConnectionsOutputBuilder {
         self
     }
     /// <p>Information about one or more VPN connections.</p>
-    pub fn set_vpn_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>,
-    ) -> Self {
+    pub fn set_vpn_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>) -> Self {
         self.vpn_connections = input;
         self
     }
     /// <p>Information about one or more VPN connections.</p>
-    pub fn get_vpn_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>> {
+    pub fn get_vpn_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>> {
         &self.vpn_connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

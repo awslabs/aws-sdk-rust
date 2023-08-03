@@ -26,7 +26,7 @@ impl CreateSubscriberNotificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSubscriberNotificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder,
+    inner: crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder,
 }
 impl CreateSubscriberNotificationFluentBuilder {
     /// Creates a new `CreateSubscriberNotification`.
@@ -37,7 +37,7 @@ impl CreateSubscriberNotificationFluentBuilder {
         }
     }
     /// Access the CreateSubscriberNotification as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateSubscriberNotificationFluentBuilder {
             crate::operation::create_subscriber_notification::CreateSubscriberNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscriber_notification::CreateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscriber_notification::CreateSubscriberNotificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateSubscriberNotificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateSubscriberNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscriber_notification::CreateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscriber_notification::CreateSubscriberNotificationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateSubscriberNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscriber_notification::CreateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscriber_notification::CreateSubscriberNotificationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateSubscriberNotificationFluentBuilder {
             crate::operation::create_subscriber_notification::CreateSubscriberNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscriber_notification::CreateSubscriberNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscriber_notification::CreateSubscriberNotificationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The subscriber ID for the notification subscription.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_id(input.into());
         self
     }
     /// <p>The subscriber ID for the notification subscription.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_id(input);
         self
     }
@@ -146,17 +129,12 @@ impl CreateSubscriberNotificationFluentBuilder {
         self
     }
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         self.inner.get_configuration()
     }
 }

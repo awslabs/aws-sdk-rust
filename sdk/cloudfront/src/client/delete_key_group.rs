@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_key_group::builders::DeleteKeyGroupFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_key_group::builders::DeleteKeyGroupFluentBuilder::set_if_match): <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     /// - On success, responds with [`DeleteKeyGroupOutput`](crate::operation::delete_key_group::DeleteKeyGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteKeyGroupError>`](crate::operation::delete_key_group::DeleteKeyGroupError)
-    pub fn delete_key_group(
-        &self,
-    ) -> crate::operation::delete_key_group::builders::DeleteKeyGroupFluentBuilder {
-        crate::operation::delete_key_group::builders::DeleteKeyGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_key_group(&self) -> crate::operation::delete_key_group::builders::DeleteKeyGroupFluentBuilder {
+        crate::operation::delete_key_group::builders::DeleteKeyGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,8 +11,7 @@ pub fn ser_updated_form_http_payload(
 
 pub fn ser_updated_form_payload(
     input: &crate::types::UpdateFormData,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_form_data::ser_update_form_data(&mut object, input)?;

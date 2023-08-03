@@ -15,17 +15,14 @@ impl BatchGetBuildBatchesInput {
 }
 impl BatchGetBuildBatchesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder {
         crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetBuildBatchesInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl BatchGetBuildBatchesInputBuilder {
         self
     }
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -56,12 +50,8 @@ impl BatchGetBuildBatchesInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput { ids: self.ids },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput { ids: self.ids })
     }
 }

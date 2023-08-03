@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IpPreference {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for IpPreference {
             "IPv4_PREFERRED" => IpPreference::IPv4Preferred,
             "IPv6_ONLY" => IpPreference::IPv6Only,
             "IPv6_PREFERRED" => IpPreference::IPv6Preferred,
-            other => {
-                IpPreference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => IpPreference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

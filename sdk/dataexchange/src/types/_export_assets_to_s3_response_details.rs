@@ -6,8 +6,7 @@
 pub struct ExportAssetsToS3ResponseDetails {
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
     #[doc(hidden)]
-    pub asset_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
+    pub asset_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
     #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ExportAssetsToS3ResponseDetails {
 }
 impl ExportAssetsToS3ResponseDetails {
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
-    pub fn asset_destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetDestinationEntry]> {
+    pub fn asset_destinations(&self) -> ::std::option::Option<&[crate::types::AssetDestinationEntry]> {
         self.asset_destinations.as_deref()
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
@@ -47,12 +44,9 @@ impl ExportAssetsToS3ResponseDetails {
 
 /// A builder for [`ExportAssetsToS3ResponseDetails`](crate::types::ExportAssetsToS3ResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportAssetsToS3ResponseDetailsBuilder {
-    pub(crate) asset_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
+    pub(crate) asset_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -70,17 +64,12 @@ impl ExportAssetsToS3ResponseDetailsBuilder {
         self
     }
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
-    pub fn set_asset_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
-    ) -> Self {
+    pub fn set_asset_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>) -> Self {
         self.asset_destinations = input;
         self
     }
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
-    pub fn get_asset_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>> {
+    pub fn get_asset_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>> {
         &self.asset_destinations
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
@@ -103,17 +92,12 @@ impl ExportAssetsToS3ResponseDetailsBuilder {
         self
     }
     /// <p>Encryption configuration of the export job.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportServerSideEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::ExportServerSideEncryption>) -> Self {
         self.encryption = input;
         self
     }
     /// <p>Encryption configuration of the export job.</p>
-    pub fn get_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
         &self.encryption
     }
     /// <p>The unique identifier for the revision associated with this export response.</p>

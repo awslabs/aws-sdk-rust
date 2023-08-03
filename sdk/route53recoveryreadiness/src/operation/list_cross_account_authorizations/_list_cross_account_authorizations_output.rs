@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCrossAccountAuthorizationsOutput 
 }
 impl ListCrossAccountAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput).
-    pub fn builder() -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsOutputBuilder {
         crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrossAccountAuthorizationsOutputBuilder {
-    pub(crate) cross_account_authorizations:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cross_account_authorizations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,27 +47,19 @@ impl ListCrossAccountAuthorizationsOutputBuilder {
     /// To override the contents of this collection use [`set_cross_account_authorizations`](Self::set_cross_account_authorizations).
     ///
     /// <p>A list of cross-account authorizations.</p>
-    pub fn cross_account_authorizations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cross_account_authorizations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cross_account_authorizations.unwrap_or_default();
         v.push(input.into());
         self.cross_account_authorizations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cross-account authorizations.</p>
-    pub fn set_cross_account_authorizations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cross_account_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cross_account_authorizations = input;
         self
     }
     /// <p>A list of cross-account authorizations.</p>
-    pub fn get_cross_account_authorizations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cross_account_authorizations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cross_account_authorizations
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -97,10 +86,7 @@ impl ListCrossAccountAuthorizationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput {
         crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput {
             cross_account_authorizations: self.cross_account_authorizations,
             next_token: self.next_token,

@@ -15,18 +15,14 @@ impl GetManagedScalingPolicyInput {
 }
 impl GetManagedScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetManagedScalingPolicyInput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder {
         crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedScalingPolicyInput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedScalingPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetManagedScalingPolicyInputBuilder {
         crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput {
-                cluster_id: self.cluster_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput { cluster_id: self.cluster_id })
     }
 }

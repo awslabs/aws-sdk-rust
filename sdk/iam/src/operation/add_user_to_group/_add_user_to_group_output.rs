@@ -19,9 +19,7 @@ impl AddUserToGroupOutput {
 
 /// A builder for [`AddUserToGroupOutput`](crate::operation::add_user_to_group::AddUserToGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddUserToGroupOutputBuilder {
     _request_id: Option<String>,
 }

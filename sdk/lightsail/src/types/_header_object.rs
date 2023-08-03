@@ -43,9 +43,7 @@ impl HeaderObject {
 
 /// A builder for [`HeaderObject`](crate::types::HeaderObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeaderObjectBuilder {
     pub(crate) option: ::std::option::Option<crate::types::ForwardValues>,
     pub(crate) headers_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,
@@ -95,17 +93,12 @@ impl HeaderObjectBuilder {
         self
     }
     /// <p>The specific headers to forward to your distribution's origin.</p>
-    pub fn set_headers_allow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,
-    ) -> Self {
+    pub fn set_headers_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>) -> Self {
         self.headers_allow_list = input;
         self
     }
     /// <p>The specific headers to forward to your distribution's origin.</p>
-    pub fn get_headers_allow_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>> {
+    pub fn get_headers_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>> {
         &self.headers_allow_list
     }
     /// Consumes the builder and constructs a [`HeaderObject`](crate::types::HeaderObject).

@@ -10,10 +10,7 @@ impl DescribeUserGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_user_groups::DescribeUserGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_groups::DescribeUserGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_groups::DescribeUserGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_user_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeUserGroupsFluentBuilder {
         }
     }
     /// Access the DescribeUserGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeUserGroupsFluentBuilder {
             crate::operation::describe_user_groups::DescribeUserGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_groups::DescribeUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_groups::DescribeUserGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeUserGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeUserGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_groups::DescribeUserGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_groups::DescribeUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_groups::DescribeUserGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeUserGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_groups::DescribeUserGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_groups::DescribeUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_groups::DescribeUserGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl DescribeUserGroupsFluentBuilder {
             crate::operation::describe_user_groups::DescribeUserGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_groups::DescribeUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_groups::DescribeUserGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator {
-        crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator {
+        crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_group_id(input.into());
         self
     }
     /// <p>The ID of the user group.</p>
-    pub fn set_user_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_group_id(input);
         self
     }

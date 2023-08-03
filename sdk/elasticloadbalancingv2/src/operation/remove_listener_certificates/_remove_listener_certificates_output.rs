@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveListenerCertificatesOutput {
 }
 impl RemoveListenerCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`RemoveListenerCertificatesOutput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput).
-    pub fn builder() -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesOutputBuilder{
+    pub fn builder() -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesOutputBuilder {
         crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveListenerCertificatesOutput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveListenerCertificatesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RemoveListenerCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveListenerCertificatesOutput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput {
+    pub fn build(self) -> crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput {
         crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput {
             _request_id: self._request_id,
         }

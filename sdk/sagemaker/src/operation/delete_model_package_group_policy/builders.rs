@@ -26,7 +26,7 @@ impl DeleteModelPackageGroupPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelPackageGroupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyInputBuilder,
+    inner: crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyInputBuilder,
 }
 impl DeleteModelPackageGroupPolicyFluentBuilder {
     /// Creates a new `DeleteModelPackageGroupPolicy`.
@@ -37,7 +37,7 @@ impl DeleteModelPackageGroupPolicyFluentBuilder {
         }
     }
     /// Access the DeleteModelPackageGroupPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteModelPackageGroupPolicyFluentBuilder {
             crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteModelPackageGroupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteModelPackageGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteModelPackageGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteModelPackageGroupPolicyFluentBuilder {
             crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model group for which to delete the policy.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
     /// <p>The name of the model group for which to delete the policy.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }

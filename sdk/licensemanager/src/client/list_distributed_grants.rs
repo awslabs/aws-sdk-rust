@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`grants(Option<Vec<Grant>>)`](crate::operation::list_distributed_grants::ListDistributedGrantsOutput::grants): <p>Distributed grant details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_distributed_grants::ListDistributedGrantsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDistributedGrantsError>`](crate::operation::list_distributed_grants::ListDistributedGrantsError)
-    pub fn list_distributed_grants(
-        &self,
-    ) -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsFluentBuilder
-    {
-        crate::operation::list_distributed_grants::builders::ListDistributedGrantsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_distributed_grants(&self) -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsFluentBuilder {
+        crate::operation::list_distributed_grants::builders::ListDistributedGrantsFluentBuilder::new(self.handle.clone())
     }
 }

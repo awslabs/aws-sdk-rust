@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`timezone(Option<String>)`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput::timezone): <p>A value that indicates the time zone of the gateway.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput::tags): <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotScheduleError>`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError)
-    pub fn describe_snapshot_schedule(
-        &self,
-    ) -> crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleFluentBuilder
-    {
+    pub fn describe_snapshot_schedule(&self) -> crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleFluentBuilder {
         crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<RouteResponse>>)`](crate::operation::get_route_responses::GetRouteResponsesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_route_responses::GetRouteResponsesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetRouteResponsesError>`](crate::operation::get_route_responses::GetRouteResponsesError)
-    pub fn get_route_responses(
-        &self,
-    ) -> crate::operation::get_route_responses::builders::GetRouteResponsesFluentBuilder {
-        crate::operation::get_route_responses::builders::GetRouteResponsesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_route_responses(&self) -> crate::operation::get_route_responses::builders::GetRouteResponsesFluentBuilder {
+        crate::operation::get_route_responses::builders::GetRouteResponsesFluentBuilder::new(self.handle.clone())
     }
 }

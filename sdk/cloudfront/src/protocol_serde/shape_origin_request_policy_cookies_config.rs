@@ -19,8 +19,7 @@ pub fn ser_origin_request_policy_cookies_config(
 
 pub fn de_origin_request_policy_cookies_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::OriginRequestPolicyCookiesConfig, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::OriginRequestPolicyCookiesConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginRequestPolicyCookiesConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

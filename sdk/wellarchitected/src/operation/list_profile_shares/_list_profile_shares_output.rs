@@ -5,8 +5,7 @@
 pub struct ListProfileSharesOutput {
     /// <p>Profile share summaries.</p>
     #[doc(hidden)]
-    pub profile_share_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>,
+    pub profile_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProfileSharesOutput {
 }
 impl ListProfileSharesOutput {
     /// <p>Profile share summaries.</p>
-    pub fn profile_share_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfileShareSummary]> {
+    pub fn profile_share_summaries(&self) -> ::std::option::Option<&[crate::types::ProfileShareSummary]> {
         self.profile_share_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProfileSharesOutput {
 }
 impl ListProfileSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileSharesOutput`](crate::operation::list_profile_shares::ListProfileSharesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_shares::builders::ListProfileSharesOutputBuilder {
+    pub fn builder() -> crate::operation::list_profile_shares::builders::ListProfileSharesOutputBuilder {
         crate::operation::list_profile_shares::builders::ListProfileSharesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileSharesOutput`](crate::operation::list_profile_shares::ListProfileSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileSharesOutputBuilder {
-    pub(crate) profile_share_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>,
+    pub(crate) profile_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListProfileSharesOutputBuilder {
         self
     }
     /// <p>Profile share summaries.</p>
-    pub fn set_profile_share_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>,
-    ) -> Self {
+    pub fn set_profile_share_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>) -> Self {
         self.profile_share_summaries = input;
         self
     }
     /// <p>Profile share summaries.</p>
-    pub fn get_profile_share_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>> {
+    pub fn get_profile_share_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>> {
         &self.profile_share_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

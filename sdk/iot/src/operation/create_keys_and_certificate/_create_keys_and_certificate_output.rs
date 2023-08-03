@@ -43,16 +43,14 @@ impl ::aws_http::request_id::RequestId for CreateKeysAndCertificateOutput {
 }
 impl CreateKeysAndCertificateOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeysAndCertificateOutput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput).
-    pub fn builder() -> crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder {
         crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKeysAndCertificateOutput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeysAndCertificateOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct CreateKeysAndCertificateOutputBuilder {
 }
 impl CreateKeysAndCertificateOutputBuilder {
     /// <p>The ARN of the certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -82,18 +74,12 @@ impl CreateKeysAndCertificateOutputBuilder {
         &self.certificate_arn
     }
     /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -102,18 +88,12 @@ impl CreateKeysAndCertificateOutputBuilder {
         &self.certificate_id
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -145,9 +125,7 @@ impl CreateKeysAndCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateKeysAndCertificateOutput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput {
+    pub fn build(self) -> crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput {
         crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput {
             certificate_arn: self.certificate_arn,
             certificate_id: self.certificate_id,

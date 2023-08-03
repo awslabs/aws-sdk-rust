@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayVpcAttachmentOutput`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput) with field(s):
     ///   - [`transit_gateway_vpc_attachment(Option<TransitGatewayVpcAttachment>)`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput::transit_gateway_vpc_attachment): <p>Information about the VPC attachment.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayVpcAttachmentError>`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError)
-    pub fn create_transit_gateway_vpc_attachment(&self) -> crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentFluentBuilder{
+    pub fn create_transit_gateway_vpc_attachment(
+        &self,
+    ) -> crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentFluentBuilder {
         crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

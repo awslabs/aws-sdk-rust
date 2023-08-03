@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAccessPreviewOutput {
 }
 impl CreateAccessPreviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder {
-        crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder {
+        crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

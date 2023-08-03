@@ -44,9 +44,7 @@ impl SpendLimit {
 
 /// A builder for [`SpendLimit`](crate::types::SpendLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpendLimitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SpendLimitName>,
     pub(crate) enforced_limit: ::std::option::Option<i64>,

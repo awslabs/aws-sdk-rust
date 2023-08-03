@@ -28,9 +28,7 @@ impl CreateNodegroupOutput {
 
 /// A builder for [`CreateNodegroupOutput`](crate::operation::create_nodegroup::CreateNodegroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNodegroupOutputBuilder {
     pub(crate) nodegroup: ::std::option::Option<crate::types::Nodegroup>,
     _request_id: Option<String>,

@@ -19,8 +19,7 @@ pub fn ser_origin_request_policy_headers_config(
 
 pub fn de_origin_request_policy_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::OriginRequestPolicyHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::OriginRequestPolicyHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginRequestPolicyHeadersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for DeleteBackendStorageOutput {
 }
 impl DeleteBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendStorageOutput`](crate::operation::delete_backend_storage::DeleteBackendStorageOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_backend_storage::builders::DeleteBackendStorageOutputBuilder {
+    pub fn builder() -> crate::operation::delete_backend_storage::builders::DeleteBackendStorageOutputBuilder {
         crate::operation::delete_backend_storage::builders::DeleteBackendStorageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackendStorageOutput`](crate::operation::delete_backend_storage::DeleteBackendStorageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackendStorageOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl DeleteBackendStorageOutputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }

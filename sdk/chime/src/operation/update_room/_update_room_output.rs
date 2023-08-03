@@ -28,9 +28,7 @@ impl UpdateRoomOutput {
 
 /// A builder for [`UpdateRoomOutput`](crate::operation::update_room::UpdateRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoomOutputBuilder {
     pub(crate) room: ::std::option::Option<crate::types::Room>,
     _request_id: Option<String>,

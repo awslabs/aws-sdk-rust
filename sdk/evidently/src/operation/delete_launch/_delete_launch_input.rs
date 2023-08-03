@@ -29,9 +29,7 @@ impl DeleteLaunchInput {
 
 /// A builder for [`DeleteLaunchInput`](crate::operation::delete_launch::DeleteLaunchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) launch: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DeleteLaunchInputBuilder {
         &self.launch
     }
     /// Consumes the builder and constructs a [`DeleteLaunchInput`](crate::operation::delete_launch::DeleteLaunchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_launch::DeleteLaunchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_launch::DeleteLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_launch::DeleteLaunchInput {
             project: self.project,
             launch: self.launch,

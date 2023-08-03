@@ -22,9 +22,7 @@ pub fn ser_create_transit_gateway_route_table_attachment_input(
         array_4.finish();
     }
     if let Some(var_7) = &input.transit_gateway_route_table_arn {
-        object
-            .key("TransitGatewayRouteTableArn")
-            .string(var_7.as_str());
+        object.key("TransitGatewayRouteTableArn").string(var_7.as_str());
     }
     Ok(())
 }

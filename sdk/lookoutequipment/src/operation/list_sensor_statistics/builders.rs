@@ -37,9 +37,7 @@ impl ListSensorStatisticsFluentBuilder {
         }
     }
     /// Access the ListSensorStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListSensorStatisticsFluentBuilder {
             crate::operation::list_sensor_statistics::ListSensorStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sensor_statistics::ListSensorStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sensor_statistics::ListSensorStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListSensorStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListSensorStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sensor_statistics::ListSensorStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sensor_statistics::ListSensorStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sensor_statistics::ListSensorStatisticsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListSensorStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sensor_statistics::ListSensorStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sensor_statistics::ListSensorStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sensor_statistics::ListSensorStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListSensorStatisticsFluentBuilder {
             crate::operation::list_sensor_statistics::ListSensorStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sensor_statistics::ListSensorStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sensor_statistics::ListSensorStatisticsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sensor_statistics::paginator::ListSensorStatisticsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sensor_statistics::paginator::ListSensorStatisticsPaginator {
-        crate::operation::list_sensor_statistics::paginator::ListSensorStatisticsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_sensor_statistics::paginator::ListSensorStatisticsPaginator {
+        crate::operation::list_sensor_statistics::paginator::ListSensorStatisticsPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +130,12 @@ impl ListSensorStatisticsFluentBuilder {
         self.inner.get_dataset_name()
     }
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    pub fn ingestion_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_job_id(input.into());
         self
     }
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    pub fn set_ingestion_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_job_id(input);
         self
     }

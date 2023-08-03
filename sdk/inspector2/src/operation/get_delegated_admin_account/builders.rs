@@ -26,7 +26,7 @@ impl GetDelegatedAdminAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDelegatedAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountInputBuilder,
+    inner: crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountInputBuilder,
 }
 impl GetDelegatedAdminAccountFluentBuilder {
     /// Creates a new `GetDelegatedAdminAccount`.
@@ -37,7 +37,7 @@ impl GetDelegatedAdminAccountFluentBuilder {
         }
     }
     /// Access the GetDelegatedAdminAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDelegatedAdminAccountFluentBuilder {
             crate::operation::get_delegated_admin_account::GetDelegatedAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDelegatedAdminAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDelegatedAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDelegatedAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetDelegatedAdminAccountFluentBuilder {
             crate::operation::get_delegated_admin_account::GetDelegatedAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError>,
     > {
         self.customize_middleware().await
     }

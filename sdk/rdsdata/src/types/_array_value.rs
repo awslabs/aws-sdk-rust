@@ -27,9 +27,7 @@ pub enum ArrayValue {
 impl ArrayValue {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::types::ArrayValue::ArrayValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_array_values(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::ArrayValue>, &Self> {
+    pub fn as_array_values(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::ArrayValue>, &Self> {
         if let ArrayValue::ArrayValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -81,9 +79,7 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::types::ArrayValue::StringValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let ArrayValue::StringValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

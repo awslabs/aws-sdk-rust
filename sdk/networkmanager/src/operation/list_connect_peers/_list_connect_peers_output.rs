@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListConnectPeersOutput {
 }
 impl ListConnectPeersOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput).
-    pub fn builder() -> crate::operation::list_connect_peers::builders::ListConnectPeersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_connect_peers::builders::ListConnectPeersOutputBuilder {
         crate::operation::list_connect_peers::builders::ListConnectPeersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectPeersOutputBuilder {
-    pub(crate) connect_peers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>>,
+    pub(crate) connect_peers: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListConnectPeersOutputBuilder {
         self
     }
     /// <p>Describes the Connect peers.</p>
-    pub fn set_connect_peers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>>,
-    ) -> Self {
+    pub fn set_connect_peers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>>) -> Self {
         self.connect_peers = input;
         self
     }
     /// <p>Describes the Connect peers.</p>
-    pub fn get_connect_peers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>> {
+    pub fn get_connect_peers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>> {
         &self.connect_peers
     }
     /// <p>The token for the next page of results.</p>

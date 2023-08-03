@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DetachCertificateFromDistributionOutp
 }
 impl DetachCertificateFromDistributionOutput {
     /// Creates a new builder-style object to manufacture [`DetachCertificateFromDistributionOutput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput).
-    pub fn builder() -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionOutputBuilder{
+    pub fn builder() -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionOutputBuilder {
         crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachCertificateFromDistributionOutput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachCertificateFromDistributionOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl DetachCertificateFromDistributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetachCertificateFromDistributionOutput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput).
-    pub fn build(self) -> crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput{
+    pub fn build(self) -> crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput {
         crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput {
-            operation: self.operation
-            ,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }

@@ -64,18 +64,14 @@ impl ListWirelessDevicesInput {
 }
 impl ListWirelessDevicesInput {
     /// Creates a new builder-style object to manufacture [`ListWirelessDevicesInput`](crate::operation::list_wireless_devices::ListWirelessDevicesInput).
-    pub fn builder(
-    ) -> crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder {
-        crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder {
+        crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWirelessDevicesInput`](crate::operation::list_wireless_devices::ListWirelessDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWirelessDevicesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -116,18 +112,12 @@ impl ListWirelessDevicesInputBuilder {
         &self.next_token
     }
     /// <p>A filter to list only the wireless devices that use this destination.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to list only the wireless devices that use this destination.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
@@ -136,18 +126,12 @@ impl ListWirelessDevicesInputBuilder {
         &self.destination_name
     }
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
-    pub fn device_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
-    pub fn set_device_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_profile_id = input;
         self
     }
@@ -156,18 +140,12 @@ impl ListWirelessDevicesInputBuilder {
         &self.device_profile_id
     }
     /// <p>A filter to list only the wireless devices that use this service profile.</p>
-    pub fn service_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to list only the wireless devices that use this service profile.</p>
-    pub fn set_service_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_profile_id = input;
         self
     }
@@ -181,32 +159,21 @@ impl ListWirelessDevicesInputBuilder {
         self
     }
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.wireless_device_type = input;
         self
     }
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-    pub fn get_wireless_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         &self.wireless_device_type
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn fuota_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fuota_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fuota_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn set_fuota_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fuota_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fuota_task_id = input;
         self
     }
@@ -215,18 +182,12 @@ impl ListWirelessDevicesInputBuilder {
         &self.fuota_task_id
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn multicast_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multicast_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn set_multicast_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multicast_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multicast_group_id = input;
         self
     }
@@ -237,21 +198,17 @@ impl ListWirelessDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListWirelessDevicesInput`](crate::operation::list_wireless_devices::ListWirelessDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_wireless_devices::ListWirelessDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_wireless_devices::ListWirelessDevicesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                destination_name: self.destination_name,
-                device_profile_id: self.device_profile_id,
-                service_profile_id: self.service_profile_id,
-                wireless_device_type: self.wireless_device_type,
-                fuota_task_id: self.fuota_task_id,
-                multicast_group_id: self.multicast_group_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_wireless_devices::ListWirelessDevicesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_wireless_devices::ListWirelessDevicesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            destination_name: self.destination_name,
+            device_profile_id: self.device_profile_id,
+            service_profile_id: self.service_profile_id,
+            wireless_device_type: self.wireless_device_type,
+            fuota_task_id: self.fuota_task_id,
+            multicast_group_id: self.multicast_group_id,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl SearchCasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_cases::SearchCasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_cases::SearchCasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_cases();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl SearchCasesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_cases::SearchCases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_cases::SearchCases, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl SearchCasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl SearchCasesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_cases::SearchCases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_cases::SearchCases, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl SearchCasesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_cases::paginator::SearchCasesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::search_cases::paginator::SearchCasesPaginator {
-        crate::operation::search_cases::paginator::SearchCasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::search_cases::paginator::SearchCasesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,10 +188,7 @@ impl SearchCasesFluentBuilder {
         self
     }
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
-    pub fn set_sorts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sorts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sorts(input);
         self
     }
@@ -224,17 +206,12 @@ impl SearchCasesFluentBuilder {
         self
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         self.inner.get_fields()
     }
 }

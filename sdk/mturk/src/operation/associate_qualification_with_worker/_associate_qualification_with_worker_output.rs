@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateQualificationWithWorkerOutpu
 }
 impl AssociateQualificationWithWorkerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput).
-    pub fn builder() -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerOutputBuilder{
+    pub fn builder() -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerOutputBuilder {
         crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateQualificationWithWorkerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateQualificationWithWorkerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput
-    {
+    pub fn build(self) -> crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput {
         crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput {
             _request_id: self._request_id,
         }

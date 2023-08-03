@@ -19,9 +19,7 @@ impl DeleteAccessOutput {
 
 /// A builder for [`DeleteAccessOutput`](crate::operation::delete_access::DeleteAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessOutputBuilder {
     _request_id: Option<String>,
 }

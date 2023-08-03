@@ -38,9 +38,7 @@ impl CreateModelManifestFluentBuilder {
         }
     }
     /// Access the CreateModelManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CreateModelManifestFluentBuilder {
             crate::operation::create_model_manifest::CreateModelManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_manifest::CreateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_manifest::CreateModelManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CreateModelManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CreateModelManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_manifest::CreateModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_manifest::CreateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_manifest::CreateModelManifestError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CreateModelManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_manifest::CreateModelManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_manifest::CreateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_manifest::CreateModelManifestError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl CreateModelManifestFluentBuilder {
             crate::operation::create_model_manifest::CreateModelManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_manifest::CreateModelManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_manifest::CreateModelManifestError>,
     > {
         self.customize_middleware().await
     }
@@ -161,10 +148,7 @@ impl CreateModelManifestFluentBuilder {
         self
     }
     /// <p> A list of nodes, which are a general abstraction of signals. </p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes(input);
         self
     }
@@ -173,18 +157,12 @@ impl CreateModelManifestFluentBuilder {
         self.inner.get_nodes()
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn signal_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
@@ -202,10 +180,7 @@ impl CreateModelManifestFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the vehicle model.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

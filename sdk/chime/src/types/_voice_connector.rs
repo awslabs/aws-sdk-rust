@@ -72,9 +72,7 @@ impl VoiceConnector {
 
 /// A builder for [`VoiceConnector`](crate::types::VoiceConnector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceConnectorBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
@@ -87,18 +85,12 @@ pub struct VoiceConnectorBuilder {
 }
 impl VoiceConnectorBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -112,10 +104,7 @@ impl VoiceConnectorBuilder {
         self
     }
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
-    pub fn set_aws_region(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
-    ) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
         self.aws_region = input;
         self
     }
@@ -138,18 +127,12 @@ impl VoiceConnectorBuilder {
         &self.name
     }
     /// <p>The outbound host name for the Amazon Chime Voice Connector.</p>
-    pub fn outbound_host_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_host_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_host_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outbound host name for the Amazon Chime Voice Connector.</p>
-    pub fn set_outbound_host_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_host_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_host_name = input;
         self
     }
@@ -177,10 +160,7 @@ impl VoiceConnectorBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -194,10 +174,7 @@ impl VoiceConnectorBuilder {
         self
     }
     /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -206,18 +183,12 @@ impl VoiceConnectorBuilder {
         &self.updated_timestamp
     }
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
-    pub fn voice_connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
-    pub fn set_voice_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_arn = input;
         self
     }

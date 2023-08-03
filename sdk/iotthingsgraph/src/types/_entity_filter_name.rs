@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EntityFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for EntityFilterName {
             "NAMESPACE" => EntityFilterName::Namespace,
             "REFERENCED_ENTITY_ID" => EntityFilterName::ReferencedEntityId,
             "SEMANTIC_TYPE_PATH" => EntityFilterName::SemanticTypePath,
-            other => {
-                EntityFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EntityFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl EntityFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NAME",
-            "NAMESPACE",
-            "REFERENCED_ENTITY_ID",
-            "SEMANTIC_TYPE_PATH",
-        ]
+        &["NAME", "NAMESPACE", "REFERENCED_ENTITY_ID", "SEMANTIC_TYPE_PATH"]
     }
 }
 impl ::std::convert::AsRef<str> for EntityFilterName {

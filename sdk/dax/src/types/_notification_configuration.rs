@@ -30,9 +30,7 @@ impl NotificationConfiguration {
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationConfigurationBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) topic_status: ::std::option::Option<::std::string::String>,

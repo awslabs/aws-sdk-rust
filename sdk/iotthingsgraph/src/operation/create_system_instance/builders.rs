@@ -42,9 +42,7 @@ impl CreateSystemInstanceFluentBuilder {
         }
     }
     /// Access the CreateSystemInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_system_instance::builders::CreateSystemInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_system_instance::builders::CreateSystemInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl CreateSystemInstanceFluentBuilder {
             crate::operation::create_system_instance::CreateSystemInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_system_instance::CreateSystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_system_instance::CreateSystemInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl CreateSystemInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl CreateSystemInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_system_instance::CreateSystemInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_system_instance::CreateSystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_system_instance::CreateSystemInstanceError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl CreateSystemInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_system_instance::CreateSystemInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_system_instance::CreateSystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_system_instance::CreateSystemInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +110,7 @@ impl CreateSystemInstanceFluentBuilder {
             crate::operation::create_system_instance::CreateSystemInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_system_instance::CreateSystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_system_instance::CreateSystemInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +124,7 @@ impl CreateSystemInstanceFluentBuilder {
         self
     }
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -154,10 +138,7 @@ impl CreateSystemInstanceFluentBuilder {
         self
     }
     /// <p>A document that defines an entity. </p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
@@ -171,10 +152,7 @@ impl CreateSystemInstanceFluentBuilder {
         self
     }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::DeploymentTarget>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
@@ -183,18 +161,12 @@ impl CreateSystemInstanceFluentBuilder {
         self.inner.get_target()
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn greengrass_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.greengrass_group_name(input.into());
         self
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn set_greengrass_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_greengrass_group_name(input);
         self
     }
@@ -203,18 +175,12 @@ impl CreateSystemInstanceFluentBuilder {
         self.inner.get_greengrass_group_name()
     }
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
@@ -228,32 +194,21 @@ impl CreateSystemInstanceFluentBuilder {
         self
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    pub fn set_metrics_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsConfiguration>,
-    ) -> Self {
+    pub fn set_metrics_configuration(mut self, input: ::std::option::Option<crate::types::MetricsConfiguration>) -> Self {
         self.inner = self.inner.set_metrics_configuration(input);
         self
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    pub fn get_metrics_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricsConfiguration> {
+    pub fn get_metrics_configuration(&self) -> &::std::option::Option<crate::types::MetricsConfiguration> {
         self.inner.get_metrics_configuration()
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-    pub fn flow_actions_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_actions_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_actions_role_arn(input.into());
         self
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-    pub fn set_flow_actions_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_actions_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_actions_role_arn(input);
         self
     }

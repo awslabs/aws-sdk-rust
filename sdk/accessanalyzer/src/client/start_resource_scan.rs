@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`resource_owner_account(impl ::std::convert::Into<String>)`](crate::operation::start_resource_scan::builders::StartResourceScanFluentBuilder::resource_owner_account) / [`set_resource_owner_account(Option<String>)`](crate::operation::start_resource_scan::builders::StartResourceScanFluentBuilder::set_resource_owner_account): <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     /// - On success, responds with [`StartResourceScanOutput`](crate::operation::start_resource_scan::StartResourceScanOutput)
     /// - On failure, responds with [`SdkError<StartResourceScanError>`](crate::operation::start_resource_scan::StartResourceScanError)
-    pub fn start_resource_scan(
-        &self,
-    ) -> crate::operation::start_resource_scan::builders::StartResourceScanFluentBuilder {
-        crate::operation::start_resource_scan::builders::StartResourceScanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_resource_scan(&self) -> crate::operation::start_resource_scan::builders::StartResourceScanFluentBuilder {
+        crate::operation::start_resource_scan::builders::StartResourceScanFluentBuilder::new(self.handle.clone())
     }
 }

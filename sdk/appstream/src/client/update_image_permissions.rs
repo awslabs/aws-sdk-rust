@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`image_permissions(ImagePermissions)`](crate::operation::update_image_permissions::builders::UpdateImagePermissionsFluentBuilder::image_permissions) / [`set_image_permissions(Option<ImagePermissions>)`](crate::operation::update_image_permissions::builders::UpdateImagePermissionsFluentBuilder::set_image_permissions): <p>The permissions for the image.</p>
     /// - On success, responds with [`UpdateImagePermissionsOutput`](crate::operation::update_image_permissions::UpdateImagePermissionsOutput)
     /// - On failure, responds with [`SdkError<UpdateImagePermissionsError>`](crate::operation::update_image_permissions::UpdateImagePermissionsError)
-    pub fn update_image_permissions(
-        &self,
-    ) -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsFluentBuilder
-    {
+    pub fn update_image_permissions(&self) -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsFluentBuilder {
         crate::operation::update_image_permissions::builders::UpdateImagePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

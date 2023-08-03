@@ -8,8 +8,7 @@ pub struct DetectEntitiesV2Output {
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
     #[doc(hidden)]
-    pub unmapped_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,
+    pub unmapped_attributes: ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,
     /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
     #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
@@ -43,21 +42,17 @@ impl ::aws_http::request_id::RequestId for DetectEntitiesV2Output {
 }
 impl DetectEntitiesV2Output {
     /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Output`](crate::operation::detect_entities_v2::DetectEntitiesV2Output).
-    pub fn builder() -> crate::operation::detect_entities_v2::builders::DetectEntitiesV2OutputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_entities_v2::builders::DetectEntitiesV2OutputBuilder {
         crate::operation::detect_entities_v2::builders::DetectEntitiesV2OutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectEntitiesV2Output`](crate::operation::detect_entities_v2::DetectEntitiesV2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectEntitiesV2OutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    pub(crate) unmapped_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,
+    pub(crate) unmapped_attributes: ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -75,10 +70,7 @@ impl DetectEntitiesV2OutputBuilder {
         self
     }
     /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.entities = input;
         self
     }
@@ -98,32 +90,21 @@ impl DetectEntitiesV2OutputBuilder {
         self
     }
     /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
-    pub fn set_unmapped_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,
-    ) -> Self {
+    pub fn set_unmapped_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>) -> Self {
         self.unmapped_attributes = input;
         self
     }
     /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
-    pub fn get_unmapped_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>> {
+    pub fn get_unmapped_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>> {
         &self.unmapped_attributes
     }
     /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
@@ -132,18 +113,12 @@ impl DetectEntitiesV2OutputBuilder {
         &self.pagination_token
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }

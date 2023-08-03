@@ -55,7 +55,7 @@ impl super::Client {
     ///   - [`scaling_config(Option<ScalingConfig>)`](crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput::scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     ///   - [`document_db_event_source_config(Option<DocumentDbEventSourceConfig>)`](crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput::document_db_event_source_config): <p>Specific configuration settings for a DocumentDB event source.</p>
     /// - On failure, responds with [`SdkError<CreateEventSourceMappingError>`](crate::operation::create_event_source_mapping::CreateEventSourceMappingError)
-    pub fn create_event_source_mapping(&self) -> crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingFluentBuilder{
+    pub fn create_event_source_mapping(&self) -> crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingFluentBuilder {
         crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingFluentBuilder::new(self.handle.clone())
     }
 }

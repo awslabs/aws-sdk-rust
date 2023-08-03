@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput::marker): <p>The marker for the custom domain association.</p>
     ///   - [`associations(Option<Vec<Association>>)`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput::associations): <p>The associations for the custom domain.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomDomainAssociationsError>`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError)
-    pub fn describe_custom_domain_associations(&self) -> crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder{
+    pub fn describe_custom_domain_associations(
+        &self,
+    ) -> crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder {
         crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

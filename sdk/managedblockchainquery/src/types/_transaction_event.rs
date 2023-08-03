@@ -86,9 +86,7 @@ impl TransactionEvent {
 
 /// A builder for [`TransactionEvent`](crate::types::TransactionEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactionEventBuilder {
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
@@ -117,18 +115,12 @@ impl TransactionEventBuilder {
         &self.network
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn set_transaction_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
@@ -142,17 +134,12 @@ impl TransactionEventBuilder {
         self
     }
     /// <p>The type of transaction event.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryTransactionEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::QueryTransactionEventType>) -> Self {
         self.event_type = input;
         self
     }
     /// <p>The type of transaction event.</p>
-    pub fn get_event_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryTransactionEventType> {
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::QueryTransactionEventType> {
         &self.event_type
     }
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
@@ -198,18 +185,12 @@ impl TransactionEventBuilder {
         &self.value
     }
     /// <p>The blockchain address. for the contract</p>
-    pub fn contract_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contract_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contract_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The blockchain address. for the contract</p>
-    pub fn set_contract_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contract_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contract_address = input;
         self
     }
@@ -232,18 +213,12 @@ impl TransactionEventBuilder {
         &self.token_id
     }
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }

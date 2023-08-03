@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDocumentOutput`](crate::operation::describe_document::DescribeDocumentOutput) with field(s):
     ///   - [`document(Option<DocumentDescription>)`](crate::operation::describe_document::DescribeDocumentOutput::document): <p>Information about the SSM document.</p>
     /// - On failure, responds with [`SdkError<DescribeDocumentError>`](crate::operation::describe_document::DescribeDocumentError)
-    pub fn describe_document(
-        &self,
-    ) -> crate::operation::describe_document::builders::DescribeDocumentFluentBuilder {
-        crate::operation::describe_document::builders::DescribeDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_document(&self) -> crate::operation::describe_document::builders::DescribeDocumentFluentBuilder {
+        crate::operation::describe_document::builders::DescribeDocumentFluentBuilder::new(self.handle.clone())
     }
 }

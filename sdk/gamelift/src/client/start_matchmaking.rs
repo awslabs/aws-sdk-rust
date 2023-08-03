@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartMatchmakingOutput`](crate::operation::start_matchmaking::StartMatchmakingOutput) with field(s):
     ///   - [`matchmaking_ticket(Option<MatchmakingTicket>)`](crate::operation::start_matchmaking::StartMatchmakingOutput::matchmaking_ticket): <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     /// - On failure, responds with [`SdkError<StartMatchmakingError>`](crate::operation::start_matchmaking::StartMatchmakingError)
-    pub fn start_matchmaking(
-        &self,
-    ) -> crate::operation::start_matchmaking::builders::StartMatchmakingFluentBuilder {
-        crate::operation::start_matchmaking::builders::StartMatchmakingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_matchmaking(&self) -> crate::operation::start_matchmaking::builders::StartMatchmakingFluentBuilder {
+        crate::operation::start_matchmaking::builders::StartMatchmakingFluentBuilder::new(self.handle.clone())
     }
 }

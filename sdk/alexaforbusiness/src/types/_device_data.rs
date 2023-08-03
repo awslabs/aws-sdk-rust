@@ -107,9 +107,7 @@ impl DeviceData {
 
 /// A builder for [`DeviceData`](crate::types::DeviceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceDataBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_serial_number: ::std::option::Option<::std::string::String>,
@@ -141,18 +139,12 @@ impl DeviceDataBuilder {
         &self.device_arn
     }
     /// <p>The serial number of a device.</p>
-    pub fn device_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of a device.</p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_serial_number = input;
         self
     }
@@ -189,18 +181,12 @@ impl DeviceDataBuilder {
         &self.device_name
     }
     /// <p>The software version of a device.</p>
-    pub fn software_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.software_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The software version of a device.</p>
-    pub fn set_software_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.software_version = input;
         self
     }
@@ -228,10 +214,7 @@ impl DeviceDataBuilder {
         self
     }
     /// <p>The status of a device.</p>
-    pub fn set_device_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatus>,
-    ) -> Self {
+    pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
         self.device_status = input;
         self
     }
@@ -240,18 +223,12 @@ impl DeviceDataBuilder {
         &self.device_status
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_profile_arn = input;
         self
     }
@@ -260,18 +237,12 @@ impl DeviceDataBuilder {
         &self.network_profile_arn
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn set_network_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_profile_name = input;
         self
     }
@@ -313,10 +284,7 @@ impl DeviceDataBuilder {
         self
     }
     /// <p>Detailed information about a device's status.</p>
-    pub fn set_device_status_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatusInfo>,
-    ) -> Self {
+    pub fn set_device_status_info(mut self, input: ::std::option::Option<crate::types::DeviceStatusInfo>) -> Self {
         self.device_status_info = input;
         self
     }
@@ -330,10 +298,7 @@ impl DeviceDataBuilder {
         self
     }
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

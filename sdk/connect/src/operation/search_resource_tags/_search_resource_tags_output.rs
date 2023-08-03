@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchResourceTagsOutput {
 }
 impl SearchResourceTagsOutput {
     /// Creates a new builder-style object to manufacture [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_resource_tags::builders::SearchResourceTagsOutputBuilder {
+    pub fn builder() -> crate::operation::search_resource_tags::builders::SearchResourceTagsOutputBuilder {
         crate::operation::search_resource_tags::builders::SearchResourceTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourceTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl SearchResourceTagsOutputBuilder {
         self
     }
     /// <p>A list of tags used in the Amazon Connect instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>) -> Self {
         self.tags = input;
         self
     }

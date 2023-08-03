@@ -36,9 +36,7 @@ impl GetSnapshotInput {
 
 /// A builder for [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnapshotInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl GetSnapshotInputBuilder {
         self
     }
     /// <p>The list of game configuration sections to be described.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sections = input;
         self
     }
@@ -97,12 +92,7 @@ impl GetSnapshotInputBuilder {
         &self.sections
     }
     /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_snapshot::GetSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot::GetSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshot::GetSnapshotInput {
             game_name: self.game_name,
             snapshot_id: self.snapshot_id,

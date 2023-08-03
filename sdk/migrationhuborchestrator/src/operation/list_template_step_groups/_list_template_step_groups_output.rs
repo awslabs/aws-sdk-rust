@@ -8,8 +8,7 @@ pub struct ListTemplateStepGroupsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the step group in the template.</p>
     #[doc(hidden)]
-    pub template_step_group_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>,
+    pub template_step_group_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListTemplateStepGroupsOutput {
@@ -18,9 +17,7 @@ impl ListTemplateStepGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of the step group in the template.</p>
-    pub fn template_step_group_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TemplateStepGroupSummary]> {
+    pub fn template_step_group_summary(&self) -> ::std::option::Option<&[crate::types::TemplateStepGroupSummary]> {
         self.template_step_group_summary.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTemplateStepGroupsOutput {
 }
 impl ListTemplateStepGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateStepGroupsOutput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsOutputBuilder {
         crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateStepGroupsOutput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateStepGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_step_group_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>,
+    pub(crate) template_step_group_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListTemplateStepGroupsOutputBuilder {
@@ -69,27 +61,19 @@ impl ListTemplateStepGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_template_step_group_summary`](Self::set_template_step_group_summary).
     ///
     /// <p>The summary of the step group in the template.</p>
-    pub fn template_step_group_summary(
-        mut self,
-        input: crate::types::TemplateStepGroupSummary,
-    ) -> Self {
+    pub fn template_step_group_summary(mut self, input: crate::types::TemplateStepGroupSummary) -> Self {
         let mut v = self.template_step_group_summary.unwrap_or_default();
         v.push(input);
         self.template_step_group_summary = ::std::option::Option::Some(v);
         self
     }
     /// <p>The summary of the step group in the template.</p>
-    pub fn set_template_step_group_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>,
-    ) -> Self {
+    pub fn set_template_step_group_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>) -> Self {
         self.template_step_group_summary = input;
         self
     }
     /// <p>The summary of the step group in the template.</p>
-    pub fn get_template_step_group_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>> {
+    pub fn get_template_step_group_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>> {
         &self.template_step_group_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +86,7 @@ impl ListTemplateStepGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTemplateStepGroupsOutput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput {
+    pub fn build(self) -> crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput {
         crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput {
             next_token: self.next_token,
             template_step_group_summary: self.template_step_group_summary,

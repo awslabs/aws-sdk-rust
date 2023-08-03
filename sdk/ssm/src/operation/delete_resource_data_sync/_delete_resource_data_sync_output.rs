@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteResourceDataSyncOutput {
 }
 impl DeleteResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceDataSyncOutput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncOutputBuilder {
         crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceDataSyncOutput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceDataSyncOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteResourceDataSyncOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteResourceDataSyncOutput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput {
+    pub fn build(self) -> crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput {
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput {
             _request_id: self._request_id,
         }

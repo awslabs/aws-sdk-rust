@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAliasOutput`](crate::operation::describe_alias::DescribeAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::operation::describe_alias::DescribeAliasOutput::alias): <p>The requested alias resource.</p>
     /// - On failure, responds with [`SdkError<DescribeAliasError>`](crate::operation::describe_alias::DescribeAliasError)
-    pub fn describe_alias(
-        &self,
-    ) -> crate::operation::describe_alias::builders::DescribeAliasFluentBuilder {
-        crate::operation::describe_alias::builders::DescribeAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_alias(&self) -> crate::operation::describe_alias::builders::DescribeAliasFluentBuilder {
+        crate::operation::describe_alias::builders::DescribeAliasFluentBuilder::new(self.handle.clone())
     }
 }

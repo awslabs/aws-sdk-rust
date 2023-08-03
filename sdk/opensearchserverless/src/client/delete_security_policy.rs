@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_security_policy::builders::DeleteSecurityPolicyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_security_policy::builders::DeleteSecurityPolicyFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     /// - On success, responds with [`DeleteSecurityPolicyOutput`](crate::operation::delete_security_policy::DeleteSecurityPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteSecurityPolicyError>`](crate::operation::delete_security_policy::DeleteSecurityPolicyError)
-    pub fn delete_security_policy(
-        &self,
-    ) -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyFluentBuilder {
-        crate::operation::delete_security_policy::builders::DeleteSecurityPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_security_policy(&self) -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyFluentBuilder {
+        crate::operation::delete_security_policy::builders::DeleteSecurityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

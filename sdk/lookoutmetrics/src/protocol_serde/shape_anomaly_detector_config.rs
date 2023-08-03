@@ -4,9 +4,7 @@ pub fn ser_anomaly_detector_config(
     input: &crate::types::AnomalyDetectorConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.anomaly_detector_frequency {
-        object
-            .key("AnomalyDetectorFrequency")
-            .string(var_1.as_str());
+        object.key("AnomalyDetectorFrequency").string(var_1.as_str());
     }
     Ok(())
 }

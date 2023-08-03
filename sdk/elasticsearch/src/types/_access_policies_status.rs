@@ -30,9 +30,7 @@ impl AccessPoliciesStatus {
 
 /// A builder for [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPoliciesStatusBuilder {
     pub(crate) options: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

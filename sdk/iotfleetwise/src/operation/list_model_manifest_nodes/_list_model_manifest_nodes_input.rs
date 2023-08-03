@@ -31,18 +31,14 @@ impl ListModelManifestNodesInput {
 }
 impl ListModelManifestNodesInput {
     /// Creates a new builder-style object to manufacture [`ListModelManifestNodesInput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder {
         crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelManifestNodesInput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelManifestNodesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -101,12 +97,10 @@ impl ListModelManifestNodesInputBuilder {
         crate::operation::list_model_manifest_nodes::ListModelManifestNodesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_model_manifest_nodes::ListModelManifestNodesInput {
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_model_manifest_nodes::ListModelManifestNodesInput {
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

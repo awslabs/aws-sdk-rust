@@ -59,9 +59,7 @@ impl ConfigurationRecorder {
 
 /// A builder for [`ConfigurationRecorder`](crate::types::ConfigurationRecorder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationRecorderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -131,10 +129,7 @@ impl ConfigurationRecorderBuilder {
     /// <p>You may notice increased activity in your account during your initial month recording with Config when compared to subsequent months. During the initial bootstrapping process, Config runs evaluations on all the resources in your account that you have selected for Config to record.</p>
     /// <p>If you are running ephemeral workloads, you may see increased activity from Config as it records configuration changes associated with creating and deleting these temporary resources. An <i>ephemeral workload</i> is a temporary use of computing resources that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid the increased activity from running ephemeral workloads, you can run these types of workloads in a separate account with Config turned off to avoid increased configuration recording and rule evaluations.</p>
     /// </note>
-    pub fn set_recording_group(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordingGroup>,
-    ) -> Self {
+    pub fn set_recording_group(mut self, input: ::std::option::Option<crate::types::RecordingGroup>) -> Self {
         self.recording_group = input;
         self
     }

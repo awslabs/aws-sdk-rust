@@ -7,14 +7,8 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`DisassociateDomainOutput`](crate::operation::disassociate_domain::DisassociateDomainOutput)
     /// - On failure, responds with [`SdkError<DisassociateDomainError>`](crate::operation::disassociate_domain::DisassociateDomainError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn disassociate_domain(
-        &self,
-    ) -> crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder {
-        crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn disassociate_domain(&self) -> crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder {
+        crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::new(self.handle.clone())
     }
 }

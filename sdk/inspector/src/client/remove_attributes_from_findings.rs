@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RemoveAttributesFromFindingsOutput`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput) with field(s):
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput::failed_items): <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<RemoveAttributesFromFindingsError>`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError)
-    pub fn remove_attributes_from_findings(&self) -> crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsFluentBuilder{
+    pub fn remove_attributes_from_findings(
+        &self,
+    ) -> crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsFluentBuilder {
         crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsFluentBuilder::new(self.handle.clone())
     }
 }

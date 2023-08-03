@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`pipelines(Option<Vec<Pipeline>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipelines): <p>An array of <code>Pipeline</code> objects.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_page_token): <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
-    pub fn list_pipelines(
-        &self,
-    ) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
+        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
     }
 }

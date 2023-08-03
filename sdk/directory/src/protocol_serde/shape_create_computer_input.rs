@@ -13,9 +13,7 @@ pub fn ser_create_computer_input(
         object.key("Password").string(var_3.as_str());
     }
     if let Some(var_4) = &input.organizational_unit_distinguished_name {
-        object
-            .key("OrganizationalUnitDistinguishedName")
-            .string(var_4.as_str());
+        object.key("OrganizationalUnitDistinguishedName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.computer_attributes {
         let mut array_6 = object.key("ComputerAttributes").start_array();

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateHealthCheckOutput {
 }
 impl DisassociateHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateHealthCheckOutput`](crate::operation::disassociate_health_check::DisassociateHealthCheckOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_health_check::builders::DisassociateHealthCheckOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_health_check::builders::DisassociateHealthCheckOutputBuilder {
         crate::operation::disassociate_health_check::builders::DisassociateHealthCheckOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateHealthCheckOutput`](crate::operation::disassociate_health_check::DisassociateHealthCheckOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateHealthCheckOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateHealthCheckOutput`](crate::operation::disassociate_health_check::DisassociateHealthCheckOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_health_check::DisassociateHealthCheckOutput {
+    pub fn build(self) -> crate::operation::disassociate_health_check::DisassociateHealthCheckOutput {
         crate::operation::disassociate_health_check::DisassociateHealthCheckOutput {
             _request_id: self._request_id,
         }

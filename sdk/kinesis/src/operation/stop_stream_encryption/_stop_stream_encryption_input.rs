@@ -50,17 +50,14 @@ impl StopStreamEncryptionInput {
 }
 impl StopStreamEncryptionInput {
     /// Creates a new builder-style object to manufacture [`StopStreamEncryptionInput`](crate::operation::stop_stream_encryption::StopStreamEncryptionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder {
+    pub fn builder() -> crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder {
         crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopStreamEncryptionInput`](crate::operation::stop_stream_encryption::StopStreamEncryptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamEncryptionInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
@@ -88,10 +85,7 @@ impl StopStreamEncryptionInputBuilder {
         self
     }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }
@@ -151,17 +145,13 @@ impl StopStreamEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamEncryptionInput`](crate::operation::stop_stream_encryption::StopStreamEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_stream_encryption::StopStreamEncryptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_stream_encryption::StopStreamEncryptionInput {
-                stream_name: self.stream_name,
-                encryption_type: self.encryption_type,
-                key_id: self.key_id,
-                stream_arn: self.stream_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_stream_encryption::StopStreamEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_stream_encryption::StopStreamEncryptionInput {
+            stream_name: self.stream_name,
+            encryption_type: self.encryption_type,
+            key_id: self.key_id,
+            stream_arn: self.stream_arn,
+        })
     }
 }

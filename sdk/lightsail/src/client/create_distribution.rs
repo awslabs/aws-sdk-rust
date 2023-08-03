@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`distribution(Option<LightsailDistribution>)`](crate::operation::create_distribution::CreateDistributionOutput::distribution): <p>An object that describes the distribution created.</p>
     ///   - [`operation(Option<Operation>)`](crate::operation::create_distribution::CreateDistributionOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateDistributionError>`](crate::operation::create_distribution::CreateDistributionError)
-    pub fn create_distribution(
-        &self,
-    ) -> crate::operation::create_distribution::builders::CreateDistributionFluentBuilder {
-        crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_distribution(&self) -> crate::operation::create_distribution::builders::CreateDistributionFluentBuilder {
+        crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::new(self.handle.clone())
     }
 }

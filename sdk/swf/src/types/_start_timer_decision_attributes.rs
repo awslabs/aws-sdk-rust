@@ -49,9 +49,7 @@ impl StartTimerDecisionAttributes {
 
 /// A builder for [`StartTimerDecisionAttributes`](crate::types::StartTimerDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTimerDecisionAttributesBuilder {
     pub(crate) timer_id: ::std::option::Option<::std::string::String>,
     pub(crate) control: ::std::option::Option<::std::string::String>,
@@ -91,19 +89,13 @@ impl StartTimerDecisionAttributesBuilder {
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn start_to_fire_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_fire_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_fire_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn set_start_to_fire_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_to_fire_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_to_fire_timeout = input;
         self
     }

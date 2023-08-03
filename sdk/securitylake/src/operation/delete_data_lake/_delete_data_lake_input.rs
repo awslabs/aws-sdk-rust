@@ -22,9 +22,7 @@ impl DeleteDataLakeInput {
 
 /// A builder for [`DeleteDataLakeInput`](crate::operation::delete_data_lake::DeleteDataLakeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataLakeInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl DeleteDataLakeInputBuilder {
         self
     }
     /// <p>The list of Regions where Security Lake is enabled.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -55,12 +50,7 @@ impl DeleteDataLakeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataLakeInput`](crate::operation::delete_data_lake::DeleteDataLakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_data_lake::DeleteDataLakeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_data_lake::DeleteDataLakeInput {
-            regions: self.regions,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_data_lake::DeleteDataLakeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_data_lake::DeleteDataLakeInput { regions: self.regions })
     }
 }

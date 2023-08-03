@@ -48,9 +48,7 @@ impl MilestoneSummary {
 
 /// A builder for [`MilestoneSummary`](crate::types::MilestoneSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MilestoneSummaryBuilder {
     pub(crate) milestone_number: ::std::option::Option<i32>,
     pub(crate) milestone_name: ::std::option::Option<::std::string::String>,
@@ -77,19 +75,13 @@ impl MilestoneSummaryBuilder {
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn milestone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn milestone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.milestone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn set_milestone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_milestone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.milestone_name = input;
         self
     }
@@ -104,10 +96,7 @@ impl MilestoneSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_recorded_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_recorded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.recorded_at = input;
         self
     }
@@ -121,10 +110,7 @@ impl MilestoneSummaryBuilder {
         self
     }
     /// <p>A workload summary return object.</p>
-    pub fn set_workload_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadSummary>,
-    ) -> Self {
+    pub fn set_workload_summary(mut self, input: ::std::option::Option<crate::types::WorkloadSummary>) -> Self {
         self.workload_summary = input;
         self
     }

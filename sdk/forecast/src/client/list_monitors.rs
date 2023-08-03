@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`monitors(Option<Vec<MonitorSummary>>)`](crate::operation::list_monitors::ListMonitorsOutput::monitors): <p>An array of objects that summarize each monitor's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitors::ListMonitorsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListMonitorsError>`](crate::operation::list_monitors::ListMonitorsError)
-    pub fn list_monitors(
-        &self,
-    ) -> crate::operation::list_monitors::builders::ListMonitorsFluentBuilder {
-        crate::operation::list_monitors::builders::ListMonitorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_monitors(&self) -> crate::operation::list_monitors::builders::ListMonitorsFluentBuilder {
+        crate::operation::list_monitors::builders::ListMonitorsFluentBuilder::new(self.handle.clone())
     }
 }

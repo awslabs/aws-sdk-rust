@@ -10,10 +10,7 @@ impl DeleteContainerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_container::DeleteContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container::DeleteContainerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_container();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteContainerFluentBuilder {
         }
     }
     /// Access the DeleteContainer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_container::builders::DeleteContainerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_container::builders::DeleteContainerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteContainerFluentBuilder {
             crate::operation::delete_container::DeleteContainer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container::DeleteContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteContainerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteContainerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_container::DeleteContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container::DeleteContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteContainerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_container::DeleteContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container::DeleteContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteContainerFluentBuilder {
             crate::operation::delete_container::DeleteContainer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container::DeleteContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the container to delete. </p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container to delete. </p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }

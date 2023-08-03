@@ -10,10 +10,7 @@ impl GetGroupVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_group_version::GetGroupVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_version::GetGroupVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_version::GetGroupVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_group_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetGroupVersionFluentBuilder {
         }
     }
     /// Access the GetGroupVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_group_version::builders::GetGroupVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_group_version::builders::GetGroupVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetGroupVersionFluentBuilder {
             crate::operation::get_group_version::GetGroupVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_version::GetGroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_version::GetGroupVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetGroupVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetGroupVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_group_version::GetGroupVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_version::GetGroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_version::GetGroupVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetGroupVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_group_version::GetGroupVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_version::GetGroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_version::GetGroupVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetGroupVersionFluentBuilder {
             crate::operation::get_group_version::GetGroupVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_version::GetGroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_version::GetGroupVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl GetGroupVersionFluentBuilder {
         self.inner.get_group_id()
     }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
-    pub fn group_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_version_id(input.into());
         self
     }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
-    pub fn set_group_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_version_id(input);
         self
     }

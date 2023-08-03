@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPolicyStoresOutput {
 }
 impl ListPolicyStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput).
-    pub fn builder() -> crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder {
         crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyStoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_stores: ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>>,
@@ -71,17 +68,12 @@ impl ListPolicyStoresOutputBuilder {
         self
     }
     /// <p>The list of policy stores in the account.</p>
-    pub fn set_policy_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>>,
-    ) -> Self {
+    pub fn set_policy_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>>) -> Self {
         self.policy_stores = input;
         self
     }
     /// <p>The list of policy stores in the account.</p>
-    pub fn get_policy_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>> {
+    pub fn get_policy_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>> {
         &self.policy_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

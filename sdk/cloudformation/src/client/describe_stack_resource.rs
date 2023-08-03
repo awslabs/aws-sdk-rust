@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput) with field(s):
     ///   - [`stack_resource_detail(Option<StackResourceDetail>)`](crate::operation::describe_stack_resource::DescribeStackResourceOutput::stack_resource_detail): <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     /// - On failure, responds with [`SdkError<DescribeStackResourceError>`](crate::operation::describe_stack_resource::DescribeStackResourceError)
-    pub fn describe_stack_resource(
-        &self,
-    ) -> crate::operation::describe_stack_resource::builders::DescribeStackResourceFluentBuilder
-    {
-        crate::operation::describe_stack_resource::builders::DescribeStackResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stack_resource(&self) -> crate::operation::describe_stack_resource::builders::DescribeStackResourceFluentBuilder {
+        crate::operation::describe_stack_resource::builders::DescribeStackResourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -88,9 +88,7 @@ impl InferenceExperimentSummary {
 
 /// A builder for [`InferenceExperimentSummary`](crate::types::InferenceExperimentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceExperimentSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
@@ -124,10 +122,7 @@ impl InferenceExperimentSummaryBuilder {
         self
     }
     /// <p>The type of the inference experiment.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceExperimentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -143,18 +138,13 @@ impl InferenceExperimentSummaryBuilder {
     }
     /// <p>The duration for which the inference experiment ran or will run.</p>
     /// <p>The maximum duration that you can set for an inference experiment is 30 days.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::InferenceExperimentSchedule>) -> Self {
         self.schedule = input;
         self
     }
     /// <p>The duration for which the inference experiment ran or will run.</p>
     /// <p>The maximum duration that you can set for an inference experiment is 30 days.</p>
-    pub fn get_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
         &self.schedule
     }
     /// <p>The status of the inference experiment.</p>
@@ -163,10 +153,7 @@ impl InferenceExperimentSummaryBuilder {
         self
     }
     /// <p>The status of the inference experiment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -175,18 +162,12 @@ impl InferenceExperimentSummaryBuilder {
         &self.status
     }
     /// <p>The error message for the inference experiment status result.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for the inference experiment status result.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -214,10 +195,7 @@ impl InferenceExperimentSummaryBuilder {
         self
     }
     /// <p>The timestamp at which the inference experiment was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -231,10 +209,7 @@ impl InferenceExperimentSummaryBuilder {
         self
     }
     /// <p>The timestamp at which the inference experiment was completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -248,10 +223,7 @@ impl InferenceExperimentSummaryBuilder {
         self
     }
     /// <p>The timestamp when you last modified the inference experiment.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

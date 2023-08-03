@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FindingSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for FindingSourceType {
             "POLICY" => FindingSourceType::Policy,
             "S3_ACCESS_POINT" => FindingSourceType::S3AccessPoint,
             "S3_ACCESS_POINT_ACCOUNT" => FindingSourceType::S3AccessPointAccount,
-            other => {
-                FindingSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl FindingSourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BUCKET_ACL",
-            "POLICY",
-            "S3_ACCESS_POINT",
-            "S3_ACCESS_POINT_ACCOUNT",
-        ]
+        &["BUCKET_ACL", "POLICY", "S3_ACCESS_POINT", "S3_ACCESS_POINT_ACCOUNT"]
     }
 }
 impl ::std::convert::AsRef<str> for FindingSourceType {

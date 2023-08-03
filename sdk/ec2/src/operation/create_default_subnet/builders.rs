@@ -37,9 +37,7 @@ impl CreateDefaultSubnetFluentBuilder {
         }
     }
     /// Access the CreateDefaultSubnet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateDefaultSubnetFluentBuilder {
             crate::operation::create_default_subnet::CreateDefaultSubnet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_default_subnet::CreateDefaultSubnetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_default_subnet::CreateDefaultSubnetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateDefaultSubnetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateDefaultSubnetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_default_subnet::CreateDefaultSubnetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_default_subnet::CreateDefaultSubnetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_default_subnet::CreateDefaultSubnetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateDefaultSubnetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_default_subnet::CreateDefaultSubnetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_default_subnet::CreateDefaultSubnetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_default_subnet::CreateDefaultSubnetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateDefaultSubnetFluentBuilder {
             crate::operation::create_default_subnet::CreateDefaultSubnet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_default_subnet::CreateDefaultSubnetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_default_subnet::CreateDefaultSubnetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Availability Zone in which to create the default subnet.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which to create the default subnet.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }

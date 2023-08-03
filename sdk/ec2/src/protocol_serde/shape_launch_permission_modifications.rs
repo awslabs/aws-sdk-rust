@@ -22,9 +22,7 @@ pub fn ser_launch_permission_modifications(
         for item_8 in var_7 {
             #[allow(unused_mut)]
             let mut entry_10 = list_9.entry();
-            crate::protocol_serde::shape_launch_permission::ser_launch_permission(
-                entry_10, item_8,
-            )?;
+            crate::protocol_serde::shape_launch_permission::ser_launch_permission(entry_10, item_8)?;
         }
         list_9.finish();
     }

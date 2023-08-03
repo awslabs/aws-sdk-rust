@@ -10,10 +10,7 @@ impl UpdatePipeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_pipe::UpdatePipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipe::UpdatePipeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipe::UpdatePipeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_pipe();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdatePipeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_pipe::UpdatePipe,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_pipe::UpdatePipe, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_pipe::UpdatePipeError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdatePipeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdatePipeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_pipe::UpdatePipe,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_pipe::UpdatePipe, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_pipe::UpdatePipeError>,
     > {
         self.customize_middleware().await
@@ -147,10 +135,7 @@ impl UpdatePipeFluentBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
@@ -164,17 +149,12 @@ impl UpdatePipeFluentBuilder {
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn set_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceParameters>,
-    ) -> Self {
+    pub fn set_source_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceParameters>) -> Self {
         self.inner = self.inner.set_source_parameters(input);
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn get_source_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceParameters> {
+    pub fn get_source_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceParameters> {
         self.inner.get_source_parameters()
     }
     /// <p>The ARN of the enrichment resource.</p>
@@ -197,17 +177,12 @@ impl UpdatePipeFluentBuilder {
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn set_enrichment_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeEnrichmentParameters>,
-    ) -> Self {
+    pub fn set_enrichment_parameters(mut self, input: ::std::option::Option<crate::types::PipeEnrichmentParameters>) -> Self {
         self.inner = self.inner.set_enrichment_parameters(input);
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn get_enrichment_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
+    pub fn get_enrichment_parameters(&self) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
         self.inner.get_enrichment_parameters()
     }
     /// <p>The ARN of the target resource.</p>
@@ -230,17 +205,12 @@ impl UpdatePipeFluentBuilder {
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn set_target_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeTargetParameters>,
-    ) -> Self {
+    pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.inner = self.inner.set_target_parameters(input);
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn get_target_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeTargetParameters> {
+    pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         self.inner.get_target_parameters()
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>

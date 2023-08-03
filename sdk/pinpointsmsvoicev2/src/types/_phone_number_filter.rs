@@ -30,9 +30,7 @@ impl PhoneNumberFilter {
 
 /// A builder for [`PhoneNumberFilter`](crate::types::PhoneNumberFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PhoneNumberFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl PhoneNumberFilterBuilder {
         self
     }
     /// <p>The name of the attribute to filter on.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::PhoneNumberFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl PhoneNumberFilterBuilder {
         self
     }
     /// <p>An array values to filter for.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

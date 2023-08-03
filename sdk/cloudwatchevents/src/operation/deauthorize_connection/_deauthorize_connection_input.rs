@@ -15,17 +15,14 @@ impl DeauthorizeConnectionInput {
 }
 impl DeauthorizeConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeauthorizeConnectionInput`](crate::operation::deauthorize_connection::DeauthorizeConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder {
+    pub fn builder() -> crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder {
         crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeauthorizeConnectionInput`](crate::operation::deauthorize_connection::DeauthorizeConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeauthorizeConnectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl DeauthorizeConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeauthorizeConnectionInput`](crate::operation::deauthorize_connection::DeauthorizeConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deauthorize_connection::DeauthorizeConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deauthorize_connection::DeauthorizeConnectionInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deauthorize_connection::DeauthorizeConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deauthorize_connection::DeauthorizeConnectionInput { name: self.name })
     }
 }

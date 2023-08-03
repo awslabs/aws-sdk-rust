@@ -42,7 +42,7 @@ impl PutBucketMetricsConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder,
+    inner: crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder,
 }
 impl PutBucketMetricsConfigurationFluentBuilder {
     /// Creates a new `PutBucketMetricsConfiguration`.
@@ -53,7 +53,7 @@ impl PutBucketMetricsConfigurationFluentBuilder {
         }
     }
     /// Access the PutBucketMetricsConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +65,7 @@ impl PutBucketMetricsConfigurationFluentBuilder {
             crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +75,7 @@ impl PutBucketMetricsConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +84,7 @@ impl PutBucketMetricsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError>,
     > {
         let op = self
             .inner
@@ -114,9 +107,7 @@ impl PutBucketMetricsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +121,7 @@ impl PutBucketMetricsConfigurationFluentBuilder {
             crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -170,32 +159,21 @@ impl PutBucketMetricsConfigurationFluentBuilder {
         self
     }
     /// <p>Specifies the metrics configuration.</p>
-    pub fn set_metrics_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsConfiguration>,
-    ) -> Self {
+    pub fn set_metrics_configuration(mut self, input: ::std::option::Option<crate::types::MetricsConfiguration>) -> Self {
         self.inner = self.inner.set_metrics_configuration(input);
         self
     }
     /// <p>Specifies the metrics configuration.</p>
-    pub fn get_metrics_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricsConfiguration> {
+    pub fn get_metrics_configuration(&self) -> &::std::option::Option<crate::types::MetricsConfiguration> {
         self.inner.get_metrics_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

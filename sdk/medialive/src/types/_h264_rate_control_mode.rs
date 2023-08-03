@@ -40,13 +40,7 @@
 /// H264 Rate Control Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for H264RateControlMode {
             "MULTIPLEX" => H264RateControlMode::Multiplex,
             "QVBR" => H264RateControlMode::Qvbr,
             "VBR" => H264RateControlMode::Vbr,
-            other => H264RateControlMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H264RateControlMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

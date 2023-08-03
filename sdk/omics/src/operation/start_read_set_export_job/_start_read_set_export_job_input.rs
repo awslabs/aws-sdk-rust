@@ -43,18 +43,14 @@ impl StartReadSetExportJobInput {
 }
 impl StartReadSetExportJobInput {
     /// Creates a new builder-style object to manufacture [`StartReadSetExportJobInput`](crate::operation::start_read_set_export_job::StartReadSetExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder {
         crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReadSetExportJobInput`](crate::operation::start_read_set_export_job::StartReadSetExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReadSetExportJobInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct StartReadSetExportJobInputBuilder {
 }
 impl StartReadSetExportJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -137,34 +127,25 @@ impl StartReadSetExportJobInputBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`StartReadSetExportJobInput`](crate::operation::start_read_set_export_job::StartReadSetExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_read_set_export_job::StartReadSetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_read_set_export_job::StartReadSetExportJobInput {
-                sequence_store_id: self.sequence_store_id,
-                destination: self.destination,
-                role_arn: self.role_arn,
-                client_token: self.client_token,
-                sources: self.sources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_read_set_export_job::StartReadSetExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_read_set_export_job::StartReadSetExportJobInput {
+            sequence_store_id: self.sequence_store_id,
+            destination: self.destination,
+            role_arn: self.role_arn,
+            client_token: self.client_token,
+            sources: self.sources,
+        })
     }
 }

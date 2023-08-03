@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`replication_set_arns(Option<Vec<String>>)`](crate::operation::list_replication_sets::ListReplicationSetsOutput::replication_set_arns): <p>The Amazon Resource Name (ARN) of the list replication set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_replication_sets::ListReplicationSetsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListReplicationSetsError>`](crate::operation::list_replication_sets::ListReplicationSetsError)
-    pub fn list_replication_sets(
-        &self,
-    ) -> crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder {
-        crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_replication_sets(&self) -> crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder {
+        crate::operation::list_replication_sets::builders::ListReplicationSetsFluentBuilder::new(self.handle.clone())
     }
 }

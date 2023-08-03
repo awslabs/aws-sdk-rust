@@ -26,7 +26,7 @@ impl PutDataSetRefreshPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDataSetRefreshPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder,
+    inner: crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder,
 }
 impl PutDataSetRefreshPropertiesFluentBuilder {
     /// Creates a new `PutDataSetRefreshProperties`.
@@ -37,7 +37,7 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
         }
     }
     /// Access the PutDataSetRefreshProperties as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
             crate::operation::put_data_set_refresh_properties::PutDataSetRefreshProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
             crate::operation::put_data_set_refresh_properties::PutDataSetRefreshProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -155,25 +138,17 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
         self.inner.get_data_set_id()
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        mut self,
-        input: crate::types::DataSetRefreshProperties,
-    ) -> Self {
+    pub fn data_set_refresh_properties(mut self, input: crate::types::DataSetRefreshProperties) -> Self {
         self.inner = self.inner.data_set_refresh_properties(input);
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn set_data_set_refresh_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetRefreshProperties>,
-    ) -> Self {
+    pub fn set_data_set_refresh_properties(mut self, input: ::std::option::Option<crate::types::DataSetRefreshProperties>) -> Self {
         self.inner = self.inner.set_data_set_refresh_properties(input);
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn get_data_set_refresh_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
+    pub fn get_data_set_refresh_properties(&self) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
         self.inner.get_data_set_refresh_properties()
     }
 }

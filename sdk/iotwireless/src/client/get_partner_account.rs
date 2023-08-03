@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`sidewalk(Option<SidewalkAccountInfoWithFingerprint>)`](crate::operation::get_partner_account::GetPartnerAccountOutput::sidewalk): <p>The Sidewalk account credentials.</p>
     ///   - [`account_linked(bool)`](crate::operation::get_partner_account::GetPartnerAccountOutput::account_linked): <p>Whether the partner account is linked to the AWS account.</p>
     /// - On failure, responds with [`SdkError<GetPartnerAccountError>`](crate::operation::get_partner_account::GetPartnerAccountError)
-    pub fn get_partner_account(
-        &self,
-    ) -> crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder {
-        crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_partner_account(&self) -> crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder {
+        crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::new(self.handle.clone())
     }
 }

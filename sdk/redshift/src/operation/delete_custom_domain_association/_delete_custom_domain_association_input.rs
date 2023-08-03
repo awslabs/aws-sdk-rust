@@ -15,33 +15,25 @@ impl DeleteCustomDomainAssociationInput {
 }
 impl DeleteCustomDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDomainAssociationInput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput).
-    pub fn builder() -> crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder {
         crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomDomainAssociationInput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomDomainAssociationInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomDomainAssociationInputBuilder {
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -56,11 +48,8 @@ impl DeleteCustomDomainAssociationInputBuilder {
         crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput {
+            cluster_identifier: self.cluster_identifier,
+        })
     }
 }

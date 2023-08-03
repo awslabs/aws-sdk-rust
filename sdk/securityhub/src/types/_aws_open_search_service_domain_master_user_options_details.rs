@@ -30,17 +30,14 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
     pub(crate) master_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
 }
 impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
-    pub fn master_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
-    pub fn set_master_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_arn = input;
         self
     }
@@ -68,18 +59,12 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
         &self.master_user_arn
     }
     /// <p>The username for the master user. </p>
-    pub fn master_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username for the master user. </p>
-    pub fn set_master_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_name = input;
         self
     }
@@ -88,18 +73,12 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
         &self.master_user_name
     }
     /// <p>The password for the master user. </p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the master user. </p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }

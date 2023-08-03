@@ -26,7 +26,7 @@ impl DisassociateExternalConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateExternalConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder,
+    inner: crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder,
 }
 impl DisassociateExternalConnectionFluentBuilder {
     /// Creates a new `DisassociateExternalConnection`.
@@ -37,7 +37,7 @@ impl DisassociateExternalConnectionFluentBuilder {
         }
     }
     /// Access the DisassociateExternalConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateExternalConnectionFluentBuilder {
             crate::operation::disassociate_external_connection::DisassociateExternalConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_external_connection::DisassociateExternalConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateExternalConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateExternalConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_external_connection::DisassociateExternalConnectionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateExternalConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_external_connection::DisassociateExternalConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisassociateExternalConnectionFluentBuilder {
             crate::operation::disassociate_external_connection::DisassociateExternalConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_external_connection::DisassociateExternalConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl DisassociateExternalConnectionFluentBuilder {
         self.inner.get_repository()
     }
     /// <p>The name of the external connection to be removed from the repository. </p>
-    pub fn external_connection(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
         self
     }
     /// <p>The name of the external connection to be removed from the repository. </p>
-    pub fn set_external_connection(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_connection(input);
         self
     }

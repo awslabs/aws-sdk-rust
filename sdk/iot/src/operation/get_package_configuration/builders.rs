@@ -27,8 +27,7 @@ impl GetPackageConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPackageConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder,
+    inner: crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder,
 }
 impl GetPackageConfigurationFluentBuilder {
     /// Creates a new `GetPackageConfiguration`.
@@ -39,10 +38,7 @@ impl GetPackageConfigurationFluentBuilder {
         }
     }
     /// Access the GetPackageConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl GetPackageConfigurationFluentBuilder {
             crate::operation::get_package_configuration::GetPackageConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_configuration::GetPackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_configuration::GetPackageConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl GetPackageConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl GetPackageConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_configuration::GetPackageConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_configuration::GetPackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_configuration::GetPackageConfigurationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl GetPackageConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_configuration::GetPackageConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_configuration::GetPackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_configuration::GetPackageConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl GetPackageConfigurationFluentBuilder {
             crate::operation::get_package_configuration::GetPackageConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_configuration::GetPackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_configuration::GetPackageConfigurationError>,
     > {
         self.customize_middleware().await
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_gateway::DescribeGatewayOutput::creation_date): <p>The date the gateway was created, in Unix epoch time.</p>
     ///   - [`last_update_date(Option<DateTime>)`](crate::operation::describe_gateway::DescribeGatewayOutput::last_update_date): <p>The date the gateway was last updated, in Unix epoch time.</p>
     /// - On failure, responds with [`SdkError<DescribeGatewayError>`](crate::operation::describe_gateway::DescribeGatewayError)
-    pub fn describe_gateway(
-        &self,
-    ) -> crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder {
-        crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_gateway(&self) -> crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder {
+        crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::new(self.handle.clone())
     }
 }

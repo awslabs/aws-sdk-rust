@@ -30,9 +30,7 @@ impl VpcOptions {
 
 /// A builder for [`VpcOptions`](crate::types::VpcOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcOptionsBuilder {
     pub(crate) ipv6_support: ::std::option::Option<bool>,
     pub(crate) appliance_mode_support: ::std::option::Option<bool>,

@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ListHiTsForQualificationTypeOutput {
 }
 impl ListHiTsForQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeOutput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput).
-    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeOutputBuilder{
+    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeOutputBuilder {
         crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHiTsForQualificationTypeOutput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHiTsForQualificationTypeOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -92,10 +90,7 @@ impl ListHiTsForQualificationTypeOutputBuilder {
         self
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn set_hi_ts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
-    ) -> Self {
+    pub fn set_hi_ts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>) -> Self {
         self.hi_ts = input;
         self
     }
@@ -113,10 +108,7 @@ impl ListHiTsForQualificationTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHiTsForQualificationTypeOutput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput
-    {
+    pub fn build(self) -> crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput {
         crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput {
             next_token: self.next_token,
             num_results: self.num_results,

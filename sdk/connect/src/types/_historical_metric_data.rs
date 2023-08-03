@@ -30,9 +30,7 @@ impl HistoricalMetricData {
 
 /// A builder for [`HistoricalMetricData`](crate::types::HistoricalMetricData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistoricalMetricDataBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::HistoricalMetric>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -44,10 +42,7 @@ impl HistoricalMetricDataBuilder {
         self
     }
     /// <p>Information about the metric.</p>
-    pub fn set_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoricalMetric>,
-    ) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<crate::types::HistoricalMetric>) -> Self {
         self.metric = input;
         self
     }

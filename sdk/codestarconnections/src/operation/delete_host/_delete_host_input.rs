@@ -22,9 +22,7 @@ impl DeleteHostInput {
 
 /// A builder for [`DeleteHostInput`](crate::operation::delete_host::DeleteHostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHostInputBuilder {
     pub(crate) host_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteHostInputBuilder {
         &self.host_arn
     }
     /// Consumes the builder and constructs a [`DeleteHostInput`](crate::operation::delete_host::DeleteHostInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_host::DeleteHostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_host::DeleteHostInput {
-            host_arn: self.host_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_host::DeleteHostInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_host::DeleteHostInput { host_arn: self.host_arn })
     }
 }

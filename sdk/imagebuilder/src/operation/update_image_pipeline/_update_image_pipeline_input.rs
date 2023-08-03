@@ -38,8 +38,7 @@ pub struct UpdateImagePipelineInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains settings for vulnerability scans.</p>
     #[doc(hidden)]
-    pub image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl UpdateImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
@@ -67,9 +66,7 @@ impl UpdateImagePipelineInput {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p>The image test configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
@@ -89,26 +86,20 @@ impl UpdateImagePipelineInput {
         self.client_token.as_deref()
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
 }
 impl UpdateImagePipelineInput {
     /// Creates a new builder-style object to manufacture [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
-    pub fn builder(
-    ) -> crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder {
-        crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder {
+        crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImagePipelineInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -116,29 +107,21 @@ pub struct UpdateImagePipelineInputBuilder {
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) image_tests_configuration:
-        ::std::option::Option<crate::types::ImageTestsConfiguration>,
+    pub(crate) image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     pub(crate) enhanced_image_metadata_enabled: ::std::option::Option<bool>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) status: ::std::option::Option<crate::types::PipelineStatus>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl UpdateImagePipelineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pipeline_arn = input;
         self
     }
@@ -161,18 +144,12 @@ impl UpdateImagePipelineInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
@@ -181,18 +158,12 @@ impl UpdateImagePipelineInputBuilder {
         &self.image_recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
@@ -201,69 +172,45 @@ impl UpdateImagePipelineInputBuilder {
         &self.container_recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
-    pub fn infrastructure_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
-    pub fn set_infrastructure_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
-    pub fn get_infrastructure_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     /// <p>The image test configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        mut self,
-        input: crate::types::ImageTestsConfiguration,
-    ) -> Self {
+    pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
         self.image_tests_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image test configuration of the image pipeline.</p>
-    pub fn set_image_tests_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTestsConfiguration>,
-    ) -> Self {
+    pub fn set_image_tests_configuration(mut self, input: ::std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
         self.image_tests_configuration = input;
         self
     }
     /// <p>The image test configuration of the image pipeline.</p>
-    pub fn get_image_tests_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
+    pub fn get_image_tests_configuration(&self) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
         &self.image_tests_configuration
     }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
@@ -272,10 +219,7 @@ impl UpdateImagePipelineInputBuilder {
         self
     }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-    pub fn set_enhanced_image_metadata_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enhanced_image_metadata_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_image_metadata_enabled = input;
         self
     }
@@ -303,10 +247,7 @@ impl UpdateImagePipelineInputBuilder {
         self
     }
     /// <p>The status of the image pipeline.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.status = input;
         self
     }
@@ -329,49 +270,37 @@ impl UpdateImagePipelineInputBuilder {
         &self.client_token
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
     /// Consumes the builder and constructs a [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_image_pipeline::UpdateImagePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_image_pipeline::UpdateImagePipelineInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                description: self.description,
-                image_recipe_arn: self.image_recipe_arn,
-                container_recipe_arn: self.container_recipe_arn,
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                distribution_configuration_arn: self.distribution_configuration_arn,
-                image_tests_configuration: self.image_tests_configuration,
-                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
-                schedule: self.schedule,
-                status: self.status,
-                client_token: self.client_token,
-                image_scanning_configuration: self.image_scanning_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_image_pipeline::UpdateImagePipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_image_pipeline::UpdateImagePipelineInput {
+            image_pipeline_arn: self.image_pipeline_arn,
+            description: self.description,
+            image_recipe_arn: self.image_recipe_arn,
+            container_recipe_arn: self.container_recipe_arn,
+            infrastructure_configuration_arn: self.infrastructure_configuration_arn,
+            distribution_configuration_arn: self.distribution_configuration_arn,
+            image_tests_configuration: self.image_tests_configuration,
+            enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
+            schedule: self.schedule,
+            status: self.status,
+            client_token: self.client_token,
+            image_scanning_configuration: self.image_scanning_configuration,
+        })
     }
 }

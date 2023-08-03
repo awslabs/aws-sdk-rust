@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AddTagsToStreamOutput {
 }
 impl AddTagsToStreamOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToStreamOutput`](crate::operation::add_tags_to_stream::AddTagsToStreamOutput).
-    pub fn builder() -> crate::operation::add_tags_to_stream::builders::AddTagsToStreamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_tags_to_stream::builders::AddTagsToStreamOutputBuilder {
         crate::operation::add_tags_to_stream::builders::AddTagsToStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddTagsToStreamOutput`](crate::operation::add_tags_to_stream::AddTagsToStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsToStreamOutputBuilder {
     _request_id: Option<String>,
 }

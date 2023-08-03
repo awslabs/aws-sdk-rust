@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`organization_conformance_pack_statuses(Option<Vec<OrganizationConformancePackStatus>>)`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput::organization_conformance_pack_statuses): <p>A list of <code>OrganizationConformancePackStatus</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConformancePackStatusesError>`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError)
-    pub fn describe_organization_conformance_pack_statuses(&self) -> crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesFluentBuilder{
-        crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesFluentBuilder::new(self.handle.clone())
+    pub fn describe_organization_conformance_pack_statuses(
+        &self,
+    ) -> crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesFluentBuilder {
+        crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

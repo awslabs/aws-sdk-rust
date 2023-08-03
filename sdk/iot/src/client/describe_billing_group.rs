@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`billing_group_properties(Option<BillingGroupProperties>)`](crate::operation::describe_billing_group::DescribeBillingGroupOutput::billing_group_properties): <p>The properties of the billing group.</p>
     ///   - [`billing_group_metadata(Option<BillingGroupMetadata>)`](crate::operation::describe_billing_group::DescribeBillingGroupOutput::billing_group_metadata): <p>Additional information about the billing group.</p>
     /// - On failure, responds with [`SdkError<DescribeBillingGroupError>`](crate::operation::describe_billing_group::DescribeBillingGroupError)
-    pub fn describe_billing_group(
-        &self,
-    ) -> crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder {
-        crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_billing_group(&self) -> crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder {
+        crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

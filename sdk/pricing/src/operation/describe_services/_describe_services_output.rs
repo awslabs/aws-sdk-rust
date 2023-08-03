@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeServicesOutput {
 }
 impl DescribeServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder {
         crate::operation::describe_services::builders::DescribeServicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesOutputBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     pub(crate) format_version: ::std::option::Option<::std::string::String>,
@@ -65,10 +62,7 @@ impl DescribeServicesOutputBuilder {
         self
     }
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>) -> Self {
         self.services = input;
         self
     }
@@ -77,18 +71,12 @@ impl DescribeServicesOutputBuilder {
         &self.services
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format_version = input;
         self
     }

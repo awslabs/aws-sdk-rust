@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`fragments(Option<Vec<Fragment>>)`](crate::operation::list_fragments::ListFragmentsOutput::fragments): <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fragments::ListFragmentsOutput::next_token): <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListFragmentsError>`](crate::operation::list_fragments::ListFragmentsError)
-    pub fn list_fragments(
-        &self,
-    ) -> crate::operation::list_fragments::builders::ListFragmentsFluentBuilder {
-        crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fragments(&self) -> crate::operation::list_fragments::builders::ListFragmentsFluentBuilder {
+        crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::new(self.handle.clone())
     }
 }

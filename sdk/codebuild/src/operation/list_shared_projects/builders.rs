@@ -10,10 +10,7 @@ impl ListSharedProjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_shared_projects::ListSharedProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_projects::ListSharedProjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_shared_projects();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSharedProjectsFluentBuilder {
         }
     }
     /// Access the ListSharedProjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSharedProjectsFluentBuilder {
             crate::operation::list_shared_projects::ListSharedProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_projects::ListSharedProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSharedProjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSharedProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_projects::ListSharedProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_projects::ListSharedProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSharedProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_projects::ListSharedProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_projects::ListSharedProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListSharedProjectsFluentBuilder {
             crate::operation::list_shared_projects::ListSharedProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_projects::ListSharedProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator {
-        crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator {
+        crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::new(self.handle, self.inner)
     }
     /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
@@ -147,10 +126,7 @@ impl ListSharedProjectsFluentBuilder {
     /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
     /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SharedResourceSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -176,10 +152,7 @@ impl ListSharedProjectsFluentBuilder {
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

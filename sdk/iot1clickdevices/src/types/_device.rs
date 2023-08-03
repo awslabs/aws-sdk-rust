@@ -36,9 +36,7 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::Attributes>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl DeviceBuilder {
         self
     }
     /// <p>The user specified attributes associated with the device for an event.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::Attributes>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::Attributes>) -> Self {
         self.attributes = input;
         self
     }

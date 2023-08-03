@@ -27,7 +27,7 @@ impl BatchStartRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchStartRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder,
+    inner: crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder,
 }
 impl BatchStartRecommendationsFluentBuilder {
     /// Creates a new `BatchStartRecommendations`.
@@ -38,7 +38,7 @@ impl BatchStartRecommendationsFluentBuilder {
         }
     }
     /// Access the BatchStartRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl BatchStartRecommendationsFluentBuilder {
             crate::operation::batch_start_recommendations::BatchStartRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_recommendations::BatchStartRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl BatchStartRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl BatchStartRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_start_recommendations::BatchStartRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_recommendations::BatchStartRecommendationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl BatchStartRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_start_recommendations::BatchStartRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_recommendations::BatchStartRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl BatchStartRecommendationsFluentBuilder {
             crate::operation::batch_start_recommendations::BatchStartRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_start_recommendations::BatchStartRecommendationsError>,
     > {
         self.customize_middleware().await
     }
@@ -131,20 +120,12 @@ impl BatchStartRecommendationsFluentBuilder {
         self
     }
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>,
-        >,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn get_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>
-    {
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>> {
         self.inner.get_data()
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`test_set_id(Option<String>)`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput::test_set_id): <p>The test set Id for the test set discrepancy report.</p>
     ///   - [`target(Option<TestSetDiscrepancyReportResourceTarget>)`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput::target): <p>The target bot for the test set discrepancy report.</p>
     /// - On failure, responds with [`SdkError<CreateTestSetDiscrepancyReportError>`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError)
-    pub fn create_test_set_discrepancy_report(&self) -> crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportFluentBuilder{
+    pub fn create_test_set_discrepancy_report(
+        &self,
+    ) -> crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportFluentBuilder {
         crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportFluentBuilder::new(self.handle.clone())
     }
 }

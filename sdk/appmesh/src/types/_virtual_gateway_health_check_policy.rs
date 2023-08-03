@@ -65,9 +65,7 @@ impl VirtualGatewayHealthCheckPolicy {
 
 /// A builder for [`VirtualGatewayHealthCheckPolicy`](crate::types::VirtualGatewayHealthCheckPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayHealthCheckPolicyBuilder {
     pub(crate) timeout_millis: ::std::option::Option<i64>,
     pub(crate) interval_millis: ::std::option::Option<i64>,
@@ -112,10 +110,7 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
         self
     }
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayPortProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VirtualGatewayPortProtocol>) -> Self {
         self.protocol = input;
         self
     }

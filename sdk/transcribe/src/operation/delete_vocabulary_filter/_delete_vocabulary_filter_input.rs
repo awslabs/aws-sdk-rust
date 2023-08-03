@@ -15,35 +15,25 @@ impl DeleteVocabularyFilterInput {
 }
 impl DeleteVocabularyFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterInput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterInputBuilder {
         crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVocabularyFilterInput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVocabularyFilterInputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVocabularyFilterInputBuilder {
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVocabularyFilterInput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput {
-                vocabulary_filter_name: self.vocabulary_filter_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput {
+            vocabulary_filter_name: self.vocabulary_filter_name,
+        })
     }
 }

@@ -39,9 +39,7 @@ impl UpdateServiceSettingFluentBuilder {
         }
     }
     /// Access the UpdateServiceSetting as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdateServiceSettingFluentBuilder {
             crate::operation::update_service_setting::UpdateServiceSetting,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdateServiceSettingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdateServiceSettingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_setting::UpdateServiceSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdateServiceSettingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_setting::UpdateServiceSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl UpdateServiceSettingFluentBuilder {
             crate::operation::update_service_setting::UpdateServiceSetting,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>,
     > {
         self.customize_middleware().await
     }
@@ -185,10 +172,7 @@ impl UpdateServiceSettingFluentBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
-    pub fn setting_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn setting_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.setting_value(input.into());
         self
     }
@@ -203,10 +187,7 @@ impl UpdateServiceSettingFluentBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
-    pub fn set_setting_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_setting_value(input);
         self
     }

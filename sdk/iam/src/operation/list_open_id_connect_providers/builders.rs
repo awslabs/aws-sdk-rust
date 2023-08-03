@@ -28,7 +28,7 @@ impl ListOpenIdConnectProvidersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOpenIDConnectProvidersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder,
+    inner: crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder,
 }
 impl ListOpenIDConnectProvidersFluentBuilder {
     /// Creates a new `ListOpenIDConnectProviders`.
@@ -39,7 +39,7 @@ impl ListOpenIDConnectProvidersFluentBuilder {
         }
     }
     /// Access the ListOpenIDConnectProviders as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListOpenIDConnectProvidersFluentBuilder {
             crate::operation::list_open_id_connect_providers::ListOpenIDConnectProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListOpenIDConnectProvidersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListOpenIDConnectProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListOpenIDConnectProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl ListOpenIDConnectProvidersFluentBuilder {
             crate::operation::list_open_id_connect_providers::ListOpenIDConnectProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError>,
     > {
         self.customize_middleware().await
     }

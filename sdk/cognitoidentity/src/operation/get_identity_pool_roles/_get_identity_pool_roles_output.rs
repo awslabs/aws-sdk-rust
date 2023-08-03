@@ -9,14 +9,10 @@ pub struct GetIdentityPoolRolesOutput {
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
     #[doc(hidden)]
-    pub roles: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub roles: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     #[doc(hidden)]
-    pub role_mappings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-    >,
+    pub role_mappings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoolRolesOutput {
@@ -25,19 +21,11 @@ impl GetIdentityPoolRolesOutput {
         self.identity_pool_id.as_deref()
     }
     /// <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
-    pub fn roles(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn roles(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.roles.as_ref()
     }
     /// <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
-    pub fn role_mappings(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-    > {
+    pub fn role_mappings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>> {
         self.role_mappings.as_ref()
     }
 }
@@ -48,42 +36,28 @@ impl ::aws_http::request_id::RequestId for GetIdentityPoolRolesOutput {
 }
 impl GetIdentityPoolRolesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityPoolRolesOutput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesOutputBuilder {
         crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityPoolRolesOutput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityPoolRolesOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) roles: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) role_mappings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-    >,
+    pub(crate) roles: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) role_mappings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoolRolesOutputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -96,32 +70,19 @@ impl GetIdentityPoolRolesOutputBuilder {
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
     ///
     /// <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
-    pub fn roles(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn roles(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.roles.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.roles = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.roles = input;
         self
     }
     /// <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
-    pub fn get_roles(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.roles
     }
     /// Adds a key-value pair to `role_mappings`.
@@ -129,11 +90,7 @@ impl GetIdentityPoolRolesOutputBuilder {
     /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
     ///
     /// <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
-    pub fn role_mappings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RoleMapping,
-    ) -> Self {
+    pub fn role_mappings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RoleMapping) -> Self {
         let mut hash_map = self.role_mappings.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.role_mappings = ::std::option::Option::Some(hash_map);
@@ -142,19 +99,13 @@ impl GetIdentityPoolRolesOutputBuilder {
     /// <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     pub fn set_role_mappings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>>,
     ) -> Self {
         self.role_mappings = input;
         self
     }
     /// <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
-    pub fn get_role_mappings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
-    > {
+    pub fn get_role_mappings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>> {
         &self.role_mappings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

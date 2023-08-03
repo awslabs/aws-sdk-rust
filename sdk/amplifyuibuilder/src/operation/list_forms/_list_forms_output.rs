@@ -35,9 +35,7 @@ impl ListFormsOutput {
 
 /// A builder for [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFormsOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFormsOutputBuilder {
         self
     }
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FormSummary>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormSummary>> {
         &self.entities
     }
     /// <p>The pagination token that's included if more results are available.</p>

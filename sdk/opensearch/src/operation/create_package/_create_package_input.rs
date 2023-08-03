@@ -44,9 +44,7 @@ impl CreatePackageInput {
 
 /// A builder for [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePackageInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) package_type: ::std::option::Option<crate::types::PackageType>,
@@ -74,10 +72,7 @@ impl CreatePackageInputBuilder {
         self
     }
     /// <p>The type of package.</p>
-    pub fn set_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageType>,
-    ) -> Self {
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
         self.package_type = input;
         self
     }
@@ -86,18 +81,12 @@ impl CreatePackageInputBuilder {
         &self.package_type
     }
     /// <p>Description of the package.</p>
-    pub fn package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_description = input;
         self
     }
@@ -111,10 +100,7 @@ impl CreatePackageInputBuilder {
         self
     }
     /// <p>The Amazon S3 location from which to import the package.</p>
-    pub fn set_package_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageSource>,
-    ) -> Self {
+    pub fn set_package_source(mut self, input: ::std::option::Option<crate::types::PackageSource>) -> Self {
         self.package_source = input;
         self
     }
@@ -125,10 +111,7 @@ impl CreatePackageInputBuilder {
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_package::CreatePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_package::CreatePackageInput {
             package_name: self.package_name,
             package_type: self.package_type,

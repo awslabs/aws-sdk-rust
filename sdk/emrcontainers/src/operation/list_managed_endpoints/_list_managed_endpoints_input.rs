@@ -57,17 +57,14 @@ impl ListManagedEndpointsInput {
 }
 impl ListManagedEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListManagedEndpointsInput`](crate::operation::list_managed_endpoints::ListManagedEndpointsInput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder {
+    pub fn builder() -> crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder {
         crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedEndpointsInput`](crate::operation::list_managed_endpoints::ListManagedEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedEndpointsInputBuilder {
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,18 +76,12 @@ pub struct ListManagedEndpointsInputBuilder {
 }
 impl ListManagedEndpointsInputBuilder {
     /// <p>The ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -104,10 +95,7 @@ impl ListManagedEndpointsInputBuilder {
         self
     }
     /// <p>The date and time before which the endpoints are created.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -121,10 +109,7 @@ impl ListManagedEndpointsInputBuilder {
         self
     }
     /// <p> The date and time after which the endpoints are created.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -144,10 +129,7 @@ impl ListManagedEndpointsInputBuilder {
         self
     }
     /// <p>The types of the managed endpoints.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }
@@ -167,17 +149,12 @@ impl ListManagedEndpointsInputBuilder {
         self
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointState>> {
         &self.states
     }
     /// <p>The maximum number of managed endpoints that can be listed.</p>
@@ -211,20 +188,16 @@ impl ListManagedEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListManagedEndpointsInput`](crate::operation::list_managed_endpoints::ListManagedEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_managed_endpoints::ListManagedEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_managed_endpoints::ListManagedEndpointsInput {
-                virtual_cluster_id: self.virtual_cluster_id,
-                created_before: self.created_before,
-                created_after: self.created_after,
-                types: self.types,
-                states: self.states,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_managed_endpoints::ListManagedEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_managed_endpoints::ListManagedEndpointsInput {
+            virtual_cluster_id: self.virtual_cluster_id,
+            created_before: self.created_before,
+            created_after: self.created_after,
+            types: self.types,
+            states: self.states,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

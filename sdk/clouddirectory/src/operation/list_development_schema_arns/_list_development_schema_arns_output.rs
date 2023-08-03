@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDevelopmentSchemaArnsOutput {
 }
 impl ListDevelopmentSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevelopmentSchemaArnsOutput`](crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput).
-    pub fn builder() -> crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsOutputBuilder{
+    pub fn builder() -> crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsOutputBuilder {
         crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevelopmentSchemaArnsOutput`](crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevelopmentSchemaArnsOutputBuilder {
     pub(crate) schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDevelopmentSchemaArnsOutputBuilder {
         self
     }
     /// <p>The ARNs of retrieved development schemas.</p>
-    pub fn set_schema_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schema_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schema_arns = input;
         self
     }
     /// <p>The ARNs of retrieved development schemas.</p>
-    pub fn get_schema_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schema_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.schema_arns
     }
     /// <p>The pagination token.</p>
@@ -93,9 +86,7 @@ impl ListDevelopmentSchemaArnsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDevelopmentSchemaArnsOutput`](crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput {
+    pub fn build(self) -> crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput {
         crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput {
             schema_arns: self.schema_arns,
             next_token: self.next_token,

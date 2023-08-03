@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCalculationExecutionCodeOutput {
 }
 impl GetCalculationExecutionCodeOutput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput).
-    pub fn builder() -> crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeOutputBuilder{
+    pub fn builder() -> crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeOutputBuilder {
         crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionCodeOutputBuilder {
     pub(crate) code_block: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl GetCalculationExecutionCodeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput {
+    pub fn build(self) -> crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput {
         crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput {
             code_block: self.code_block,
             _request_id: self._request_id,

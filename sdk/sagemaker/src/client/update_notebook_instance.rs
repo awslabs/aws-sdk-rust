@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`instance_metadata_service_configuration(InstanceMetadataServiceConfiguration)`](crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceFluentBuilder::instance_metadata_service_configuration) / [`set_instance_metadata_service_configuration(Option<InstanceMetadataServiceConfiguration>)`](crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceFluentBuilder::set_instance_metadata_service_configuration): <p>Information on the IMDS configuration of the notebook instance</p>
     /// - On success, responds with [`UpdateNotebookInstanceOutput`](crate::operation::update_notebook_instance::UpdateNotebookInstanceOutput)
     /// - On failure, responds with [`SdkError<UpdateNotebookInstanceError>`](crate::operation::update_notebook_instance::UpdateNotebookInstanceError)
-    pub fn update_notebook_instance(
-        &self,
-    ) -> crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceFluentBuilder
-    {
+    pub fn update_notebook_instance(&self) -> crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceFluentBuilder {
         crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceFluentBuilder::new(self.handle.clone())
     }
 }

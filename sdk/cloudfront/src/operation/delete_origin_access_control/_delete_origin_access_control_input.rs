@@ -22,16 +22,14 @@ impl DeleteOriginAccessControlInput {
 }
 impl DeleteOriginAccessControlInput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginAccessControlInput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput).
-    pub fn builder() -> crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder{
+    pub fn builder() -> crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder {
         crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOriginAccessControlInput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOriginAccessControlInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DeleteOriginAccessControlInputBuilder {
         crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput {
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

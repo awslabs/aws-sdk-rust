@@ -37,9 +37,7 @@ impl MonitoringDatasetFormat {
 
 /// A builder for [`MonitoringDatasetFormat`](crate::types::MonitoringDatasetFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringDatasetFormatBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>,
     pub(crate) json: ::std::option::Option<crate::types::MonitoringJsonDatasetFormat>,
@@ -52,10 +50,7 @@ impl MonitoringDatasetFormatBuilder {
         self
     }
     /// <p>The CSV dataset used in the monitoring job.</p>
-    pub fn set_csv(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>,
-    ) -> Self {
+    pub fn set_csv(mut self, input: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>) -> Self {
         self.csv = input;
         self
     }
@@ -69,10 +64,7 @@ impl MonitoringDatasetFormatBuilder {
         self
     }
     /// <p>The JSON dataset used in the monitoring job</p>
-    pub fn set_json(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringJsonDatasetFormat>,
-    ) -> Self {
+    pub fn set_json(mut self, input: ::std::option::Option<crate::types::MonitoringJsonDatasetFormat>) -> Self {
         self.json = input;
         self
     }
@@ -86,17 +78,12 @@ impl MonitoringDatasetFormatBuilder {
         self
     }
     /// <p>The Parquet dataset used in the monitoring job</p>
-    pub fn set_parquet(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringParquetDatasetFormat>,
-    ) -> Self {
+    pub fn set_parquet(mut self, input: ::std::option::Option<crate::types::MonitoringParquetDatasetFormat>) -> Self {
         self.parquet = input;
         self
     }
     /// <p>The Parquet dataset used in the monitoring job</p>
-    pub fn get_parquet(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringParquetDatasetFormat> {
+    pub fn get_parquet(&self) -> &::std::option::Option<crate::types::MonitoringParquetDatasetFormat> {
         &self.parquet
     }
     /// Consumes the builder and constructs a [`MonitoringDatasetFormat`](crate::types::MonitoringDatasetFormat).

@@ -18,10 +18,7 @@ pub fn ser_audio_codec_settings(
     if let Some(var_5) = &input.eac3_atmos_settings {
         #[allow(unused_mut)]
         let mut object_6 = object.key("eac3AtmosSettings").start_object();
-        crate::protocol_serde::shape_eac3_atmos_settings::ser_eac3_atmos_settings(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_eac3_atmos_settings::ser_eac3_atmos_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.eac3_settings {
@@ -39,10 +36,7 @@ pub fn ser_audio_codec_settings(
     if let Some(var_11) = &input.pass_through_settings {
         #[allow(unused_mut)]
         let mut object_12 = object.key("passThroughSettings").start_object();
-        crate::protocol_serde::shape_pass_through_settings::ser_pass_through_settings(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_pass_through_settings::ser_pass_through_settings(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.wav_settings {
@@ -56,17 +50,9 @@ pub fn ser_audio_codec_settings(
 
 pub(crate) fn de_audio_codec_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AudioCodecSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AudioCodecSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,64 +62,44 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "aacSettings" => {
-                            builder = builder.set_aac_settings(
-                                crate::protocol_serde::shape_aac_settings::de_aac_settings(tokens)?,
-                            );
+                            builder = builder.set_aac_settings(crate::protocol_serde::shape_aac_settings::de_aac_settings(tokens)?);
                         }
                         "ac3Settings" => {
-                            builder = builder.set_ac3_settings(
-                                crate::protocol_serde::shape_ac3_settings::de_ac3_settings(tokens)?,
-                            );
+                            builder = builder.set_ac3_settings(crate::protocol_serde::shape_ac3_settings::de_ac3_settings(tokens)?);
                         }
                         "eac3AtmosSettings" => {
-                            builder = builder.set_eac3_atmos_settings(
-                                    crate::protocol_serde::shape_eac3_atmos_settings::de_eac3_atmos_settings(tokens)?
-                                );
+                            builder =
+                                builder.set_eac3_atmos_settings(crate::protocol_serde::shape_eac3_atmos_settings::de_eac3_atmos_settings(tokens)?);
                         }
                         "eac3Settings" => {
-                            builder = builder.set_eac3_settings(
-                                crate::protocol_serde::shape_eac3_settings::de_eac3_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_eac3_settings(crate::protocol_serde::shape_eac3_settings::de_eac3_settings(tokens)?);
                         }
                         "mp2Settings" => {
-                            builder = builder.set_mp2_settings(
-                                crate::protocol_serde::shape_mp2_settings::de_mp2_settings(tokens)?,
-                            );
+                            builder = builder.set_mp2_settings(crate::protocol_serde::shape_mp2_settings::de_mp2_settings(tokens)?);
                         }
                         "passThroughSettings" => {
-                            builder = builder.set_pass_through_settings(
-                                    crate::protocol_serde::shape_pass_through_settings::de_pass_through_settings(tokens)?
-                                );
+                            builder = builder
+                                .set_pass_through_settings(crate::protocol_serde::shape_pass_through_settings::de_pass_through_settings(tokens)?);
                         }
                         "wavSettings" => {
-                            builder = builder.set_wav_settings(
-                                crate::protocol_serde::shape_wav_settings::de_wav_settings(tokens)?,
-                            );
+                            builder = builder.set_wav_settings(crate::protocol_serde::shape_wav_settings::de_wav_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

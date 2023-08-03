@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`security_configurations(Option<Vec<SecurityConfiguration>>)`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput::security_configurations): <p>A list of security configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput::next_token): <p>A continuation token, if there are more security configurations to return.</p>
     /// - On failure, responds with [`SdkError<GetSecurityConfigurationsError>`](crate::operation::get_security_configurations::GetSecurityConfigurationsError)
-    pub fn get_security_configurations(&self) -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder{
+    pub fn get_security_configurations(&self) -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder {
         crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -60,18 +60,14 @@ impl ListPoliciesForTargetInput {
 }
 impl ListPoliciesForTargetInput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesForTargetInput`](crate::operation::list_policies_for_target::ListPoliciesForTargetInput).
-    pub fn builder(
-    ) -> crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder {
         crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPoliciesForTargetInput`](crate::operation::list_policies_for_target::ListPoliciesForTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesForTargetInputBuilder {
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::PolicyType>,
@@ -174,17 +170,13 @@ impl ListPoliciesForTargetInputBuilder {
     /// Consumes the builder and constructs a [`ListPoliciesForTargetInput`](crate::operation::list_policies_for_target::ListPoliciesForTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policies_for_target::ListPoliciesForTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_policies_for_target::ListPoliciesForTargetInput {
-                target_id: self.target_id,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_policies_for_target::ListPoliciesForTargetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_policies_for_target::ListPoliciesForTargetInput {
+            target_id: self.target_id,
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

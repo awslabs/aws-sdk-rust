@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`version_id(i32)`](crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionFluentBuilder::version_id) / [`set_version_id(Option<i32>)`](crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionFluentBuilder::set_version_id): <p>The provisioning template version ID to delete.</p>
     /// - On success, responds with [`DeleteProvisioningTemplateVersionOutput`](crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteProvisioningTemplateVersionError>`](crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError)
-    pub fn delete_provisioning_template_version(&self) -> crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionFluentBuilder{
+    pub fn delete_provisioning_template_version(
+        &self,
+    ) -> crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionFluentBuilder {
         crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionFluentBuilder::new(self.handle.clone())
     }
 }

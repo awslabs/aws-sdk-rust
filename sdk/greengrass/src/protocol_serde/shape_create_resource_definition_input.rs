@@ -6,10 +6,7 @@ pub fn ser_create_resource_definition_input(
     if let Some(var_1) = &input.initial_version {
         #[allow(unused_mut)]
         let mut object_2 = object.key("InitialVersion").start_object();
-        crate::protocol_serde::shape_resource_definition_version::ser_resource_definition_version(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_resource_definition_version::ser_resource_definition_version(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.name {

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`TestFunctionOutput`](crate::operation::test_function::TestFunctionOutput) with field(s):
     ///   - [`test_result(Option<TestResult>)`](crate::operation::test_function::TestFunctionOutput::test_result): <p>An object that represents the result of running the function with the provided event object.</p>
     /// - On failure, responds with [`SdkError<TestFunctionError>`](crate::operation::test_function::TestFunctionError)
-    pub fn test_function(
-        &self,
-    ) -> crate::operation::test_function::builders::TestFunctionFluentBuilder {
-        crate::operation::test_function::builders::TestFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_function(&self) -> crate::operation::test_function::builders::TestFunctionFluentBuilder {
+        crate::operation::test_function::builders::TestFunctionFluentBuilder::new(self.handle.clone())
     }
 }

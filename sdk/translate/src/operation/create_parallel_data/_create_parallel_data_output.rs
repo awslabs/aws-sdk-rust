@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateParallelDataOutput {
 }
 impl CreateParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::operation::create_parallel_data::CreateParallelDataOutput).
-    pub fn builder(
-    ) -> crate::operation::create_parallel_data::builders::CreateParallelDataOutputBuilder {
+    pub fn builder() -> crate::operation::create_parallel_data::builders::CreateParallelDataOutputBuilder {
         crate::operation::create_parallel_data::builders::CreateParallelDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParallelDataOutput`](crate::operation::create_parallel_data::CreateParallelDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParallelDataOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ParallelDataStatus>,
@@ -65,10 +62,7 @@ impl CreateParallelDataOutputBuilder {
         self
     }
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ParallelDataStatus>) -> Self {
         self.status = input;
         self
     }

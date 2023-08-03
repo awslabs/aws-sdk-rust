@@ -27,7 +27,7 @@ impl CreateRescoreExecutionPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRescoreExecutionPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder,
+    inner: crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder,
 }
 impl CreateRescoreExecutionPlanFluentBuilder {
     /// Creates a new `CreateRescoreExecutionPlan`.
@@ -38,7 +38,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         }
     }
     /// Access the CreateRescoreExecutionPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
             crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
             crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError>,
     > {
         self.customize_middleware().await
     }
@@ -155,17 +144,12 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
         self.inner = self.inner.set_capacity_units(input);
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn get_capacity_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+    pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         self.inner.get_capacity_units()
     }
     /// Appends an item to `Tags`.
@@ -178,10 +162,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

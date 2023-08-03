@@ -13,7 +13,11 @@ impl super::Client {
     /// - On success, responds with [`RegisterTargetWithMaintenanceWindowOutput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput) with field(s):
     ///   - [`window_target_id(Option<String>)`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput::window_target_id): <p>The ID of the target definition in this maintenance window.</p>
     /// - On failure, responds with [`SdkError<RegisterTargetWithMaintenanceWindowError>`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError)
-    pub fn register_target_with_maintenance_window(&self) -> crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowFluentBuilder{
-        crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowFluentBuilder::new(self.handle.clone())
+    pub fn register_target_with_maintenance_window(
+        &self,
+    ) -> crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowFluentBuilder {
+        crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

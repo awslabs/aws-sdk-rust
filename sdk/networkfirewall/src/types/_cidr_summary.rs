@@ -12,9 +12,7 @@ pub struct CidrSummary {
     pub utilized_cidr_count: ::std::option::Option<i32>,
     /// <p>The list of the IP set references used by a firewall.</p>
     #[doc(hidden)]
-    pub ip_set_references: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
-    >,
+    pub ip_set_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>>,
 }
 impl CidrSummary {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
@@ -26,11 +24,7 @@ impl CidrSummary {
         self.utilized_cidr_count
     }
     /// <p>The list of the IP set references used by a firewall.</p>
-    pub fn ip_set_references(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
-    > {
+    pub fn ip_set_references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>> {
         self.ip_set_references.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl CidrSummary {
 
 /// A builder for [`CidrSummary`](crate::types::CidrSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CidrSummaryBuilder {
     pub(crate) available_cidr_count: ::std::option::Option<i32>,
     pub(crate) utilized_cidr_count: ::std::option::Option<i32>,
-    pub(crate) ip_set_references: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
-    >,
+    pub(crate) ip_set_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>>,
 }
 impl CidrSummaryBuilder {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
@@ -87,11 +77,7 @@ impl CidrSummaryBuilder {
     /// To override the contents of this collection use [`set_ip_set_references`](Self::set_ip_set_references).
     ///
     /// <p>The list of the IP set references used by a firewall.</p>
-    pub fn ip_set_references(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::IpSetMetadata,
-    ) -> Self {
+    pub fn ip_set_references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::IpSetMetadata) -> Self {
         let mut hash_map = self.ip_set_references.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.ip_set_references = ::std::option::Option::Some(hash_map);
@@ -100,19 +86,13 @@ impl CidrSummaryBuilder {
     /// <p>The list of the IP set references used by a firewall.</p>
     pub fn set_ip_set_references(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>>,
     ) -> Self {
         self.ip_set_references = input;
         self
     }
     /// <p>The list of the IP set references used by a firewall.</p>
-    pub fn get_ip_set_references(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
-    > {
+    pub fn get_ip_set_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>> {
         &self.ip_set_references
     }
     /// Consumes the builder and constructs a [`CidrSummary`](crate::types::CidrSummary).

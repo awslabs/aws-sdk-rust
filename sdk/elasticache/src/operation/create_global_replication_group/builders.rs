@@ -30,7 +30,7 @@ impl CreateGlobalReplicationGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGlobalReplicationGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupInputBuilder,
+    inner: crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupInputBuilder,
 }
 impl CreateGlobalReplicationGroupFluentBuilder {
     /// Creates a new `CreateGlobalReplicationGroup`.
@@ -41,7 +41,7 @@ impl CreateGlobalReplicationGroupFluentBuilder {
         }
     }
     /// Access the CreateGlobalReplicationGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl CreateGlobalReplicationGroupFluentBuilder {
             crate::operation::create_global_replication_group::CreateGlobalReplicationGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl CreateGlobalReplicationGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl CreateGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl CreateGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,81 +109,53 @@ impl CreateGlobalReplicationGroupFluentBuilder {
             crate::operation::create_global_replication_group::CreateGlobalReplicationGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions. </p>
     /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
-    pub fn global_replication_group_id_suffix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_replication_group_id_suffix(input.into());
         self
     }
     /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions. </p>
     /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
-    pub fn set_global_replication_group_id_suffix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_replication_group_id_suffix(input);
         self
     }
     /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions. </p>
     /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
-    pub fn get_global_replication_group_id_suffix(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_global_replication_group_id_suffix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_id_suffix()
     }
     /// <p>Provides details of the Global datastore</p>
-    pub fn global_replication_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .global_replication_group_description(input.into());
+    pub fn global_replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.global_replication_group_description(input.into());
         self
     }
     /// <p>Provides details of the Global datastore</p>
-    pub fn set_global_replication_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_replication_group_description(input);
         self
     }
     /// <p>Provides details of the Global datastore</p>
-    pub fn get_global_replication_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_description()
     }
     /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
-    pub fn primary_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_replication_group_id(input.into());
         self
     }
     /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
-    pub fn set_primary_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_replication_group_id(input);
         self
     }
     /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
-    pub fn get_primary_replication_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_primary_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_primary_replication_group_id()
     }
 }

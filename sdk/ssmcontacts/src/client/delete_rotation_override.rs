@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`rotation_override_id(impl ::std::convert::Into<String>)`](crate::operation::delete_rotation_override::builders::DeleteRotationOverrideFluentBuilder::rotation_override_id) / [`set_rotation_override_id(Option<String>)`](crate::operation::delete_rotation_override::builders::DeleteRotationOverrideFluentBuilder::set_rotation_override_id): <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
     /// - On success, responds with [`DeleteRotationOverrideOutput`](crate::operation::delete_rotation_override::DeleteRotationOverrideOutput)
     /// - On failure, responds with [`SdkError<DeleteRotationOverrideError>`](crate::operation::delete_rotation_override::DeleteRotationOverrideError)
-    pub fn delete_rotation_override(
-        &self,
-    ) -> crate::operation::delete_rotation_override::builders::DeleteRotationOverrideFluentBuilder
-    {
+    pub fn delete_rotation_override(&self) -> crate::operation::delete_rotation_override::builders::DeleteRotationOverrideFluentBuilder {
         crate::operation::delete_rotation_override::builders::DeleteRotationOverrideFluentBuilder::new(self.handle.clone())
     }
 }

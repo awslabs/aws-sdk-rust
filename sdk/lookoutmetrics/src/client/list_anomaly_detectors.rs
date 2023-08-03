@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`anomaly_detector_summary_list(Option<Vec<AnomalyDetectorSummary>>)`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput::anomaly_detector_summary_list): <p>A list of anomaly detectors in the account in the current region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListAnomalyDetectorsError>`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError)
-    pub fn list_anomaly_detectors(
-        &self,
-    ) -> crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder {
-        crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_anomaly_detectors(&self) -> crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder {
+        crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::new(self.handle.clone())
     }
 }

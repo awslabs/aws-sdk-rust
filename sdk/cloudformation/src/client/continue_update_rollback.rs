@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackFluentBuilder::set_client_request_token): <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
     /// - On success, responds with [`ContinueUpdateRollbackOutput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput)
     /// - On failure, responds with [`SdkError<ContinueUpdateRollbackError>`](crate::operation::continue_update_rollback::ContinueUpdateRollbackError)
-    pub fn continue_update_rollback(
-        &self,
-    ) -> crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackFluentBuilder
-    {
+    pub fn continue_update_rollback(&self) -> crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackFluentBuilder {
         crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackFluentBuilder::new(self.handle.clone())
     }
 }

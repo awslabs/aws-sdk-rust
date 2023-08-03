@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_continuation_token(Option<String>)`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput::next_continuation_token): <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     ///   - [`metrics_configuration_list(Option<Vec<MetricsConfiguration>>)`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput::metrics_configuration_list): <p>The list of metrics configurations for a bucket.</p>
     /// - On failure, responds with [`SdkError<ListBucketMetricsConfigurationsError>`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError)
-    pub fn list_bucket_metrics_configurations(&self) -> crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsFluentBuilder{
+    pub fn list_bucket_metrics_configurations(
+        &self,
+    ) -> crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsFluentBuilder {
         crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

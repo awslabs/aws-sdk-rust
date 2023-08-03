@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`workteams(Option<Vec<Workteam>>)`](crate::operation::list_workteams::ListWorkteamsOutput::workteams): <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workteams::ListWorkteamsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListWorkteamsError>`](crate::operation::list_workteams::ListWorkteamsError)
-    pub fn list_workteams(
-        &self,
-    ) -> crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder {
-        crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workteams(&self) -> crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder {
+        crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::new(self.handle.clone())
     }
 }

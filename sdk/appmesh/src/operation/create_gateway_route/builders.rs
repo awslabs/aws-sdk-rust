@@ -10,10 +10,7 @@ impl CreateGatewayRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_gateway_route::CreateGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_route::CreateGatewayRouteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_gateway_route();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateGatewayRouteFluentBuilder {
         }
     }
     /// Access the CreateGatewayRoute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateGatewayRouteFluentBuilder {
             crate::operation::create_gateway_route::CreateGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_route::CreateGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateGatewayRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gateway_route::CreateGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_route::CreateGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gateway_route::CreateGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_route::CreateGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl CreateGatewayRouteFluentBuilder {
             crate::operation::create_gateway_route::CreateGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_gateway_route::CreateGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name to use for the gateway route.</p>
-    pub fn gateway_route_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_route_name(input.into());
         self
     }
     /// <p>The name to use for the gateway route.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_route_name(input);
         self
     }
@@ -159,18 +137,12 @@ impl CreateGatewayRouteFluentBuilder {
         self.inner.get_mesh_name()
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_gateway_name(input.into());
         self
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }
@@ -184,10 +156,7 @@ impl CreateGatewayRouteFluentBuilder {
         self
     }
     /// <p>The gateway route specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::GatewayRouteSpec>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
     }
@@ -205,10 +174,7 @@ impl CreateGatewayRouteFluentBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

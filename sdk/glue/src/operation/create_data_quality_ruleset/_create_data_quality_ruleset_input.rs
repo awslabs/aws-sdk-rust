@@ -14,9 +14,7 @@ pub struct CreateDataQualityRulesetInput {
     pub ruleset: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags applied to the data quality ruleset.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A target table associated with the data quality ruleset.</p>
     #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
@@ -38,11 +36,7 @@ impl CreateDataQualityRulesetInput {
         self.ruleset.as_deref()
     }
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A target table associated with the data quality ruleset.</p>
@@ -56,25 +50,19 @@ impl CreateDataQualityRulesetInput {
 }
 impl CreateDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataQualityRulesetInput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput).
-    pub fn builder(
-    ) -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetInputBuilder {
         crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataQualityRulesetInput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataQualityRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ruleset: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -126,32 +114,19 @@ impl CreateDataQualityRulesetInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A target table associated with the data quality ruleset.</p>
@@ -160,10 +135,7 @@ impl CreateDataQualityRulesetInputBuilder {
         self
     }
     /// <p>A target table associated with the data quality ruleset.</p>
-    pub fn set_target_table(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityTargetTable>,
-    ) -> Self {
+    pub fn set_target_table(mut self, input: ::std::option::Option<crate::types::DataQualityTargetTable>) -> Self {
         self.target_table = input;
         self
     }
@@ -192,15 +164,13 @@ impl CreateDataQualityRulesetInputBuilder {
         crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput {
-                name: self.name,
-                description: self.description,
-                ruleset: self.ruleset,
-                tags: self.tags,
-                target_table: self.target_table,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput {
+            name: self.name,
+            description: self.description,
+            ruleset: self.ruleset,
+            tags: self.tags,
+            target_table: self.target_table,
+            client_token: self.client_token,
+        })
     }
 }

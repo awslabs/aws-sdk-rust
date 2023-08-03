@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`app_instance_bots(Option<Vec<AppInstanceBotSummary>>)`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput::app_instance_bots): <p>The information for each requested <code>AppInstanceBot</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput::next_token): <p>The token passed by previous API calls until all requested bots are returned.</p>
     /// - On failure, responds with [`SdkError<ListAppInstanceBotsError>`](crate::operation::list_app_instance_bots::ListAppInstanceBotsError)
-    pub fn list_app_instance_bots(
-        &self,
-    ) -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder {
-        crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_instance_bots(&self) -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder {
+        crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::new(self.handle.clone())
     }
 }

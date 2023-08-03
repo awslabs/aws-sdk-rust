@@ -22,18 +22,14 @@ impl ListServiceNetworksInput {
 }
 impl ListServiceNetworksInput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworksInput`](crate::operation::list_service_networks::ListServiceNetworksInput).
-    pub fn builder(
-    ) -> crate::operation::list_service_networks::builders::ListServiceNetworksInputBuilder {
-        crate::operation::list_service_networks::builders::ListServiceNetworksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_service_networks::builders::ListServiceNetworksInputBuilder {
+        crate::operation::list_service_networks::builders::ListServiceNetworksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceNetworksInput`](crate::operation::list_service_networks::ListServiceNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceNetworksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListServiceNetworksInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceNetworksInput`](crate::operation::list_service_networks::ListServiceNetworksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_networks::ListServiceNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_networks::ListServiceNetworksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_service_networks::ListServiceNetworksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_networks::ListServiceNetworksInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

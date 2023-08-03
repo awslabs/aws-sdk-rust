@@ -10,10 +10,7 @@ impl StopReplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_replication::StopReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication::StopReplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication::StopReplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_replication();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopReplicationFluentBuilder {
         }
     }
     /// Access the StopReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_replication::builders::StopReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_replication::builders::StopReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StopReplicationFluentBuilder {
             crate::operation::stop_replication::StopReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication::StopReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication::StopReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StopReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StopReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication::StopReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication::StopReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication::StopReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StopReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication::StopReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication::StopReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication::StopReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StopReplicationFluentBuilder {
             crate::operation::stop_replication::StopReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication::StopReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication::StopReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name of the replication to stop.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_config_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication to stop.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_config_arn(input);
         self
     }

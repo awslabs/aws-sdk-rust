@@ -10,7 +10,10 @@ impl super::Client {
     /// - On success, responds with [`DeregisterTransitGatewayMulticastGroupSourcesOutput`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput) with field(s):
     ///   - [`deregistered_multicast_group_sources(Option<TransitGatewayMulticastDeregisteredGroupSources>)`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput::deregistered_multicast_group_sources): <p>Information about the deregistered group sources.</p>
     /// - On failure, responds with [`SdkError<DeregisterTransitGatewayMulticastGroupSourcesError>`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesError)
-    pub fn deregister_transit_gateway_multicast_group_sources(&self) -> crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder{
+    pub fn deregister_transit_gateway_multicast_group_sources(
+        &self,
+    ) -> crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder
+    {
         crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder::new(self.handle.clone())
     }
 }

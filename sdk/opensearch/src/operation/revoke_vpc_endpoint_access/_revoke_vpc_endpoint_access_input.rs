@@ -22,18 +22,14 @@ impl RevokeVpcEndpointAccessInput {
 }
 impl RevokeVpcEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessInput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder {
         crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeVpcEndpointAccessInput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl RevokeVpcEndpointAccessInputBuilder {
         crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput {
-                domain_name: self.domain_name,
-                account: self.account,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput {
+            domain_name: self.domain_name,
+            account: self.account,
+        })
     }
 }

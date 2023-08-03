@@ -39,9 +39,7 @@ impl HeaderMatchPattern {
 
 /// A builder for [`HeaderMatchPattern`](crate::types::HeaderMatchPattern).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeaderMatchPatternBuilder {
     pub(crate) all: ::std::option::Option<crate::types::All>,
     pub(crate) included_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -67,27 +65,19 @@ impl HeaderMatchPatternBuilder {
     /// To override the contents of this collection use [`set_included_headers`](Self::set_included_headers).
     ///
     /// <p>Inspect only the headers that have a key that matches one of the strings specified here. </p>
-    pub fn included_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn included_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.included_headers.unwrap_or_default();
         v.push(input.into());
         self.included_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Inspect only the headers that have a key that matches one of the strings specified here. </p>
-    pub fn set_included_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_included_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.included_headers = input;
         self
     }
     /// <p>Inspect only the headers that have a key that matches one of the strings specified here. </p>
-    pub fn get_included_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_included_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.included_headers
     }
     /// Appends an item to `excluded_headers`.
@@ -95,27 +85,19 @@ impl HeaderMatchPatternBuilder {
     /// To override the contents of this collection use [`set_excluded_headers`](Self::set_excluded_headers).
     ///
     /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
-    pub fn excluded_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_headers.unwrap_or_default();
         v.push(input.into());
         self.excluded_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
-    pub fn set_excluded_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_excluded_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.excluded_headers = input;
         self
     }
     /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
-    pub fn get_excluded_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.excluded_headers
     }
     /// Consumes the builder and constructs a [`HeaderMatchPattern`](crate::types::HeaderMatchPattern).

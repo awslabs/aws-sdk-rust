@@ -62,9 +62,7 @@ impl S3Action {
 
 /// A builder for [`S3Action`](crate::types::S3Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl S3ActionBuilder {
         &self.bucket_name
     }
     /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</p>
-    pub fn object_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</p>
-    pub fn set_object_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key_prefix = input;
         self
     }

@@ -10,10 +10,7 @@ impl CancelContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_contact::CancelContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_contact::CancelContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_contact::CancelContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelContactFluentBuilder {
         }
     }
     /// Access the CancelContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_contact::builders::CancelContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_contact::builders::CancelContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CancelContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

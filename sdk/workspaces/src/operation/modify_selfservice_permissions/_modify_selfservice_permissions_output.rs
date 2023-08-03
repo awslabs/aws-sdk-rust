@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifySelfservicePermissionsOutput {
 }
 impl ModifySelfservicePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifySelfservicePermissionsOutput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput).
-    pub fn builder() -> crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsOutputBuilder {
         crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySelfservicePermissionsOutput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySelfservicePermissionsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ModifySelfservicePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifySelfservicePermissionsOutput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput {
+    pub fn build(self) -> crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput {
         crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput {
             _request_id: self._request_id,
         }

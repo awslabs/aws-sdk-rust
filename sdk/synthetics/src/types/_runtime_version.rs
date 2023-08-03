@@ -44,9 +44,7 @@ impl RuntimeVersion {
 
 /// A builder for [`RuntimeVersion`](crate::types::RuntimeVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeVersionBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl RuntimeVersionBuilder {
         self
     }
     /// <p>The date that the runtime version was released.</p>
-    pub fn set_release_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_release_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.release_date = input;
         self
     }
@@ -105,10 +100,7 @@ impl RuntimeVersionBuilder {
         self
     }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    pub fn set_deprecation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deprecation_date = input;
         self
     }

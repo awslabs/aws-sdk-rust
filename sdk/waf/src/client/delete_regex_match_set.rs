@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRegexMatchSetOutput`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRegexMatchSetError>`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetError)
-    pub fn delete_regex_match_set(
-        &self,
-    ) -> crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetFluentBuilder {
-        crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_regex_match_set(&self) -> crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetFluentBuilder {
+        crate::operation::delete_regex_match_set::builders::DeleteRegexMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

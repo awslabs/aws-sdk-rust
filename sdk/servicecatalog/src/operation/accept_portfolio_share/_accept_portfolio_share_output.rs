@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AcceptPortfolioShareOutput {
 }
 impl AcceptPortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`AcceptPortfolioShareOutput`](crate::operation::accept_portfolio_share::AcceptPortfolioShareOutput).
-    pub fn builder(
-    ) -> crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareOutputBuilder {
+    pub fn builder() -> crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareOutputBuilder {
         crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptPortfolioShareOutput`](crate::operation::accept_portfolio_share::AcceptPortfolioShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptPortfolioShareOutputBuilder {
     _request_id: Option<String>,
 }

@@ -5,16 +5,16 @@ pub use crate::operation::get_ec2_recommendation_projected_metrics::_get_ec2_rec
 
 impl GetEc2RecommendationProjectedMetricsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_ec2_recommendation_projected_metrics();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEC2RecommendationProjectedMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsInputBuilder,
+    inner: crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsInputBuilder,
 }
 impl GetEC2RecommendationProjectedMetricsFluentBuilder {
     /// Creates a new `GetEC2RecommendationProjectedMetrics`.
@@ -39,15 +39,22 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         }
     }
     /// Access the GetEC2RecommendationProjectedMetrics as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetrics, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetrics,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +63,17 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +91,26 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetrics, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetrics,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
@@ -144,10 +161,7 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         self
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -161,10 +175,7 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         self
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -173,25 +184,17 @@ impl GetEC2RecommendationProjectedMetricsFluentBuilder {
         self.inner.get_end_time()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
-    pub fn recommendation_preferences(
-        mut self,
-        input: crate::types::RecommendationPreferences,
-    ) -> Self {
+    pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.inner = self.inner.recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
-    pub fn set_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationPreferences>,
-    ) -> Self {
+    pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
-    pub fn get_recommendation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+    pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         self.inner.get_recommendation_preferences()
     }
 }

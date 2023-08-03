@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`security_configurations(Option<Vec<SecurityConfigurationSummary>>)`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput::security_configurations): <p>The creation date and time, and name, of each security configuration.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput::marker): <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     /// - On failure, responds with [`SdkError<ListSecurityConfigurationsError>`](crate::operation::list_security_configurations::ListSecurityConfigurationsError)
-    pub fn list_security_configurations(&self) -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder{
+    pub fn list_security_configurations(&self) -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder {
         crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

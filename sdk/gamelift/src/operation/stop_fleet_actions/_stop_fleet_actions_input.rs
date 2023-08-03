@@ -29,17 +29,14 @@ impl StopFleetActionsInput {
 }
 impl StopFleetActionsInput {
     /// Creates a new builder-style object to manufacture [`StopFleetActionsInput`](crate::operation::stop_fleet_actions::StopFleetActionsInput).
-    pub fn builder() -> crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilder {
         crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`StopFleetActionsInput`](crate::operation::stop_fleet_actions::StopFleetActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopFleetActionsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
@@ -72,17 +69,12 @@ impl StopFleetActionsInputBuilder {
         self
     }
     /// <p>List of actions to suspend on the fleet. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>List of actions to suspend on the fleet. </p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
         &self.actions
     }
     /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
@@ -102,16 +94,11 @@ impl StopFleetActionsInputBuilder {
     /// Consumes the builder and constructs a [`StopFleetActionsInput`](crate::operation::stop_fleet_actions::StopFleetActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_fleet_actions::StopFleetActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_fleet_actions::StopFleetActionsInput {
-                fleet_id: self.fleet_id,
-                actions: self.actions,
-                location: self.location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_fleet_actions::StopFleetActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_fleet_actions::StopFleetActionsInput {
+            fleet_id: self.fleet_id,
+            actions: self.actions,
+            location: self.location,
+        })
     }
 }

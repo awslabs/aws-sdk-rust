@@ -37,9 +37,7 @@ impl UpdateMultiplexInput {
 
 /// A builder for [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
@@ -66,17 +64,12 @@ impl UpdateMultiplexInputBuilder {
         self
     }
     /// The new settings for a multiplex.
-    pub fn set_multiplex_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexSettings>,
-    ) -> Self {
+    pub fn set_multiplex_settings(mut self, input: ::std::option::Option<crate::types::MultiplexSettings>) -> Self {
         self.multiplex_settings = input;
         self
     }
     /// The new settings for a multiplex.
-    pub fn get_multiplex_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+    pub fn get_multiplex_settings(&self) -> &::std::option::Option<crate::types::MultiplexSettings> {
         &self.multiplex_settings
     }
     /// Name of the multiplex.
@@ -96,10 +89,7 @@ impl UpdateMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_multiplex::UpdateMultiplexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_multiplex::UpdateMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_multiplex::UpdateMultiplexInput {
             multiplex_id: self.multiplex_id,
             multiplex_settings: self.multiplex_settings,

@@ -35,9 +35,7 @@ impl ListAppsOutput {
 
 /// A builder for [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsOutputBuilder {
     pub(crate) apps: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListAppsOutputBuilder {
         self
     }
     /// <p>The application summaries.</p>
-    pub fn set_apps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>,
-    ) -> Self {
+    pub fn set_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>) -> Self {
         self.apps = input;
         self
     }

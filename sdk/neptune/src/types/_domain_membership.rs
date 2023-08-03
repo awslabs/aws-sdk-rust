@@ -44,9 +44,7 @@ impl DomainMembership {
 
 /// A builder for [`DomainMembership`](crate::types::DomainMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainMembershipBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl DomainMembershipBuilder {
         &self.fqdn
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
-    pub fn iam_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
-    pub fn set_iam_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_name = input;
         self
     }

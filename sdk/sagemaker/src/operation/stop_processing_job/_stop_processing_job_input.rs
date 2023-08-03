@@ -15,34 +15,25 @@ impl StopProcessingJobInput {
 }
 impl StopProcessingJobInput {
     /// Creates a new builder-style object to manufacture [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder {
         crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopProcessingJobInputBuilder {
     pub(crate) processing_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopProcessingJobInputBuilder {
     /// <p>The name of the processing job to stop.</p>
-    pub fn processing_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the processing job to stop.</p>
-    pub fn set_processing_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.processing_job_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl StopProcessingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_processing_job::StopProcessingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_processing_job::StopProcessingJobInput {
-                processing_job_name: self.processing_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_processing_job::StopProcessingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_processing_job::StopProcessingJobInput {
+            processing_job_name: self.processing_job_name,
+        })
     }
 }

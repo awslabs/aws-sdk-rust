@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainNameserversOutput {
 }
 impl UpdateDomainNameserversOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversOutput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversOutputBuilder {
         crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainNameserversOutput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainNameserversOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,9 +59,7 @@ impl UpdateDomainNameserversOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameserversOutput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput {
+    pub fn build(self) -> crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput {
         crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput {
             operation_id: self.operation_id,
             _request_id: self._request_id,

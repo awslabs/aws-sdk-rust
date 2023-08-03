@@ -37,9 +37,7 @@ impl UpdateSourceLocationFluentBuilder {
         }
     }
     /// Access the UpdateSourceLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_source_location::builders::UpdateSourceLocationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_source_location::builders::UpdateSourceLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateSourceLocationFluentBuilder {
             crate::operation::update_source_location::UpdateSourceLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_location::UpdateSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_location::UpdateSourceLocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateSourceLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateSourceLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_source_location::UpdateSourceLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_location::UpdateSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_location::UpdateSourceLocationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateSourceLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_source_location::UpdateSourceLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_location::UpdateSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_location::UpdateSourceLocationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateSourceLocationFluentBuilder {
             crate::operation::update_source_location::UpdateSourceLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_location::UpdateSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_location::UpdateSourceLocationError>,
     > {
         self.customize_middleware().await
     }
@@ -128,24 +115,16 @@ impl UpdateSourceLocationFluentBuilder {
         self
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn set_access_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessConfiguration>,
-    ) -> Self {
+    pub fn set_access_configuration(mut self, input: ::std::option::Option<crate::types::AccessConfiguration>) -> Self {
         self.inner = self.inner.set_access_configuration(input);
         self
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn get_access_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessConfiguration> {
+    pub fn get_access_configuration(&self) -> &::std::option::Option<crate::types::AccessConfiguration> {
         self.inner.get_access_configuration()
     }
     /// <p>The optional configuration for the host server that serves segments.</p>
-    pub fn default_segment_delivery_configuration(
-        mut self,
-        input: crate::types::DefaultSegmentDeliveryConfiguration,
-    ) -> Self {
+    pub fn default_segment_delivery_configuration(mut self, input: crate::types::DefaultSegmentDeliveryConfiguration) -> Self {
         self.inner = self.inner.default_segment_delivery_configuration(input);
         self
     }
@@ -158,9 +137,7 @@ impl UpdateSourceLocationFluentBuilder {
         self
     }
     /// <p>The optional configuration for the host server that serves segments.</p>
-    pub fn get_default_segment_delivery_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
+    pub fn get_default_segment_delivery_configuration(&self) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
         self.inner.get_default_segment_delivery_configuration()
     }
     /// <p>The HTTP configuration for the source location.</p>
@@ -169,17 +146,12 @@ impl UpdateSourceLocationFluentBuilder {
         self
     }
     /// <p>The HTTP configuration for the source location.</p>
-    pub fn set_http_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpConfiguration>,
-    ) -> Self {
+    pub fn set_http_configuration(mut self, input: ::std::option::Option<crate::types::HttpConfiguration>) -> Self {
         self.inner = self.inner.set_http_configuration(input);
         self
     }
     /// <p>The HTTP configuration for the source location.</p>
-    pub fn get_http_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::HttpConfiguration> {
+    pub fn get_http_configuration(&self) -> &::std::option::Option<crate::types::HttpConfiguration> {
         self.inner.get_http_configuration()
     }
     /// Appends an item to `SegmentDeliveryConfigurations`.
@@ -187,10 +159,7 @@ impl UpdateSourceLocationFluentBuilder {
     /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
     ///
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(
-        mut self,
-        input: crate::types::SegmentDeliveryConfiguration,
-    ) -> Self {
+    pub fn segment_delivery_configurations(mut self, input: crate::types::SegmentDeliveryConfiguration) -> Self {
         self.inner = self.inner.segment_delivery_configurations(input);
         self
     }
@@ -203,24 +172,16 @@ impl UpdateSourceLocationFluentBuilder {
         self
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn get_segment_delivery_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
+    pub fn get_segment_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
         self.inner.get_segment_delivery_configurations()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }

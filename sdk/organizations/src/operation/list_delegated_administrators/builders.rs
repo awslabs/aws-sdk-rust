@@ -27,7 +27,7 @@ impl ListDelegatedAdministratorsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDelegatedAdministratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder,
+    inner: crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder,
 }
 impl ListDelegatedAdministratorsFluentBuilder {
     /// Creates a new `ListDelegatedAdministrators`.
@@ -38,7 +38,7 @@ impl ListDelegatedAdministratorsFluentBuilder {
         }
     }
     /// Access the ListDelegatedAdministrators as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListDelegatedAdministratorsFluentBuilder {
             crate::operation::list_delegated_administrators::ListDelegatedAdministrators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListDelegatedAdministratorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListDelegatedAdministratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListDelegatedAdministratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>,
     > {
         self.send_middleware().await
     }
@@ -115,33 +106,25 @@ impl ListDelegatedAdministratorsFluentBuilder {
             crate::operation::list_delegated_administrators::ListDelegatedAdministrators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator {
         crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
     /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
     }

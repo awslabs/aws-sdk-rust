@@ -5,8 +5,7 @@
 pub struct ListTextTranslationJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub text_translation_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>>,
+    pub text_translation_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTextTranslationJobsOutput {
 }
 impl ListTextTranslationJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn text_translation_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TextTranslationJobProperties]> {
+    pub fn text_translation_job_properties_list(&self) -> ::std::option::Option<&[crate::types::TextTranslationJobProperties]> {
         self.text_translation_job_properties_list.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTextTranslationJobsOutput {
 }
 impl ListTextTranslationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsOutput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsOutputBuilder {
         crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTextTranslationJobsOutput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTextTranslationJobsOutputBuilder {
-    pub(crate) text_translation_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>>,
+    pub(crate) text_translation_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,13 +47,8 @@ impl ListTextTranslationJobsOutputBuilder {
     /// To override the contents of this collection use [`set_text_translation_job_properties_list`](Self::set_text_translation_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn text_translation_job_properties_list(
-        mut self,
-        input: crate::types::TextTranslationJobProperties,
-    ) -> Self {
-        let mut v = self
-            .text_translation_job_properties_list
-            .unwrap_or_default();
+    pub fn text_translation_job_properties_list(mut self, input: crate::types::TextTranslationJobProperties) -> Self {
+        let mut v = self.text_translation_job_properties_list.unwrap_or_default();
         v.push(input);
         self.text_translation_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -75,9 +62,7 @@ impl ListTextTranslationJobsOutputBuilder {
         self
     }
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn get_text_translation_job_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>> {
+    pub fn get_text_translation_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>> {
         &self.text_translation_job_properties_list
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -104,9 +89,7 @@ impl ListTextTranslationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTextTranslationJobsOutput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput {
+    pub fn build(self) -> crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput {
         crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput {
             text_translation_job_properties_list: self.text_translation_job_properties_list,
             next_token: self.next_token,

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveTagsFromCertificateOutput {
 }
 impl RemoveTagsFromCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateOutput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput).
-    pub fn builder() -> crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateOutputBuilder {
         crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromCertificateOutput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RemoveTagsFromCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromCertificateOutput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput {
+    pub fn build(self) -> crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput {
         crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput {
             _request_id: self._request_id,
         }

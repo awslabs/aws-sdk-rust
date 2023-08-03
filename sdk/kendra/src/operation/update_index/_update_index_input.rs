@@ -17,23 +17,20 @@ pub struct UpdateIndexInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     #[doc(hidden)]
-    pub document_metadata_configuration_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
+    pub document_metadata_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     #[doc(hidden)]
     pub capacity_units: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
     /// <p>The user token configuration.</p>
     #[doc(hidden)]
-    pub user_token_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
     #[doc(hidden)]
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     #[doc(hidden)]
-    pub user_group_resolution_configuration:
-        ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl UpdateIndexInput {
     /// <p>The identifier of the index you want to update.</p>
@@ -53,22 +50,16 @@ impl UpdateIndexInput {
         self.description.as_deref()
     }
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configuration_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentMetadataConfiguration]> {
+    pub fn document_metadata_configuration_updates(&self) -> ::std::option::Option<&[crate::types::DocumentMetadataConfiguration]> {
         self.document_metadata_configuration_updates.as_deref()
     }
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
-    pub fn capacity_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityUnitsConfiguration> {
+    pub fn capacity_units(&self) -> ::std::option::Option<&crate::types::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
+    pub fn user_token_configurations(&self) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
         self.user_token_configurations.as_deref()
     }
     /// <p>The user context policy.</p>
@@ -76,9 +67,7 @@ impl UpdateIndexInput {
         self.user_context_policy.as_ref()
     }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
+    pub fn user_group_resolution_configuration(&self) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
 }
@@ -91,22 +80,17 @@ impl UpdateIndexInput {
 
 /// A builder for [`UpdateIndexInput`](crate::operation::update_index::UpdateIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIndexInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) document_metadata_configuration_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
+    pub(crate) document_metadata_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
     pub(crate) capacity_units: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    pub(crate) user_token_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub(crate) user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     pub(crate) user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
-    pub(crate) user_group_resolution_configuration:
-        ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub(crate) user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl UpdateIndexInputBuilder {
     /// <p>The identifier of the index you want to update.</p>
@@ -170,13 +154,8 @@ impl UpdateIndexInputBuilder {
     /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
     ///
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configuration_updates(
-        mut self,
-        input: crate::types::DocumentMetadataConfiguration,
-    ) -> Self {
-        let mut v = self
-            .document_metadata_configuration_updates
-            .unwrap_or_default();
+    pub fn document_metadata_configuration_updates(mut self, input: crate::types::DocumentMetadataConfiguration) -> Self {
+        let mut v = self.document_metadata_configuration_updates.unwrap_or_default();
         v.push(input);
         self.document_metadata_configuration_updates = ::std::option::Option::Some(v);
         self
@@ -203,18 +182,13 @@ impl UpdateIndexInputBuilder {
     }
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
         self.capacity_units = input;
         self
     }
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
-    pub fn get_capacity_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+    pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         &self.capacity_units
     }
     /// Appends an item to `user_token_configurations`.
@@ -222,27 +196,19 @@ impl UpdateIndexInputBuilder {
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).
     ///
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(
-        mut self,
-        input: crate::types::UserTokenConfiguration,
-    ) -> Self {
+    pub fn user_token_configurations(mut self, input: crate::types::UserTokenConfiguration) -> Self {
         let mut v = self.user_token_configurations.unwrap_or_default();
         v.push(input);
         self.user_token_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user token configuration.</p>
-    pub fn set_user_token_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
-    ) -> Self {
+    pub fn set_user_token_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>) -> Self {
         self.user_token_configurations = input;
         self
     }
     /// <p>The user token configuration.</p>
-    pub fn get_user_token_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
+    pub fn get_user_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
         &self.user_token_configurations
     }
     /// <p>The user context policy.</p>
@@ -251,48 +217,30 @@ impl UpdateIndexInputBuilder {
         self
     }
     /// <p>The user context policy.</p>
-    pub fn set_user_context_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextPolicy>,
-    ) -> Self {
+    pub fn set_user_context_policy(mut self, input: ::std::option::Option<crate::types::UserContextPolicy>) -> Self {
         self.user_context_policy = input;
         self
     }
     /// <p>The user context policy.</p>
-    pub fn get_user_context_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextPolicy> {
+    pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {
         &self.user_context_policy
     }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(
-        mut self,
-        input: crate::types::UserGroupResolutionConfiguration,
-    ) -> Self {
+    pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
         self.user_group_resolution_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn set_user_group_resolution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
-    ) -> Self {
+    pub fn set_user_group_resolution_configuration(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
         self.user_group_resolution_configuration = input;
         self
     }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn get_user_group_resolution_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
+    pub fn get_user_group_resolution_configuration(&self) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
         &self.user_group_resolution_configuration
     }
     /// Consumes the builder and constructs a [`UpdateIndexInput`](crate::operation::update_index::UpdateIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_index::UpdateIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_index::UpdateIndexInput {
             id: self.id,
             name: self.name,

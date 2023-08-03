@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`certificate_chain(Option<String>)`](crate::operation::export_certificate::ExportCertificateOutput::certificate_chain): <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
     ///   - [`private_key(Option<String>)`](crate::operation::export_certificate::ExportCertificateOutput::private_key): <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     /// - On failure, responds with [`SdkError<ExportCertificateError>`](crate::operation::export_certificate::ExportCertificateError)
-    pub fn export_certificate(
-        &self,
-    ) -> crate::operation::export_certificate::builders::ExportCertificateFluentBuilder {
-        crate::operation::export_certificate::builders::ExportCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_certificate(&self) -> crate::operation::export_certificate::builders::ExportCertificateFluentBuilder {
+        crate::operation::export_certificate::builders::ExportCertificateFluentBuilder::new(self.handle.clone())
     }
 }

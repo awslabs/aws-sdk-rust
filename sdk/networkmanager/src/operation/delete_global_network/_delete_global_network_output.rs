@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteGlobalNetworkOutput {
 }
 impl DeleteGlobalNetworkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkOutput`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkOutputBuilder {
-        crate::operation::delete_global_network::builders::DeleteGlobalNetworkOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkOutputBuilder {
+        crate::operation::delete_global_network::builders::DeleteGlobalNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGlobalNetworkOutput`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGlobalNetworkOutputBuilder {
     pub(crate) global_network: ::std::option::Option<crate::types::GlobalNetwork>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteGlobalNetworkOutputBuilder {
         self
     }
     /// <p>Information about the global network.</p>
-    pub fn set_global_network(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalNetwork>,
-    ) -> Self {
+    pub fn set_global_network(mut self, input: ::std::option::Option<crate::types::GlobalNetwork>) -> Self {
         self.global_network = input;
         self
     }

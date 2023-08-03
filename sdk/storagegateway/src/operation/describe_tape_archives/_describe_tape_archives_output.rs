@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeTapeArchivesOutput {
 }
 impl DescribeTapeArchivesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeArchivesOutput`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesOutputBuilder {
         crate::operation::describe_tape_archives::builders::DescribeTapeArchivesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTapeArchivesOutput`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapeArchivesOutputBuilder {
     pub(crate) tape_archives: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl DescribeTapeArchivesOutputBuilder {
         self
     }
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
-    pub fn set_tape_archives(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>,
-    ) -> Self {
+    pub fn set_tape_archives(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>) -> Self {
         self.tape_archives = input;
         self
     }
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
-    pub fn get_tape_archives(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>> {
+    pub fn get_tape_archives(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>> {
         &self.tape_archives
     }
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>

@@ -10,10 +10,7 @@ impl RegisterToWorkMailInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_to_work_mail::RegisterToWorkMailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_to_work_mail::RegisterToWorkMailError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_to_work_mail();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl RegisterToWorkMailFluentBuilder {
         }
     }
     /// Access the RegisterToWorkMail as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl RegisterToWorkMailFluentBuilder {
             crate::operation::register_to_work_mail::RegisterToWorkMail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_to_work_mail::RegisterToWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl RegisterToWorkMailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl RegisterToWorkMailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_to_work_mail::RegisterToWorkMailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_to_work_mail::RegisterToWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl RegisterToWorkMailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_to_work_mail::RegisterToWorkMailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_to_work_mail::RegisterToWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl RegisterToWorkMailFluentBuilder {
             crate::operation::register_to_work_mail::RegisterToWorkMail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_to_work_mail::RegisterToWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

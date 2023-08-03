@@ -9,10 +9,7 @@ pub fn ser_update_recipe_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_data_catalog_output::ser_data_catalog_output(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_data_catalog_output::ser_data_catalog_output(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_update_recipe_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_database_output::ser_database_output(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_database_output::ser_database_output(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

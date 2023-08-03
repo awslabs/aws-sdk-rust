@@ -23,9 +23,7 @@ impl ImageSource {
 
 /// A builder for [`ImageSource`](crate::types::ImageSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageSourceBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ImageSourceBuilder {
     }
     /// Consumes the builder and constructs a [`ImageSource`](crate::types::ImageSource).
     pub fn build(self) -> crate::types::ImageSource {
-        crate::types::ImageSource {
-            r#type: self.r#type,
-        }
+        crate::types::ImageSource { r#type: self.r#type }
     }
 }

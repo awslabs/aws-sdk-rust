@@ -16,30 +16,23 @@ impl UpdateResourceCollectionInput {
         self.action.as_ref()
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn resource_collection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateResourceCollectionFilter> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::UpdateResourceCollectionFilter> {
         self.resource_collection.as_ref()
     }
 }
 impl UpdateResourceCollectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceCollectionInput`](crate::operation::update_resource_collection::UpdateResourceCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder {
         crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceCollectionInput`](crate::operation::update_resource_collection::UpdateResourceCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceCollectionInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::UpdateResourceCollectionAction>,
-    pub(crate) resource_collection:
-        ::std::option::Option<crate::types::UpdateResourceCollectionFilter>,
+    pub(crate) resource_collection: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>,
 }
 impl UpdateResourceCollectionInputBuilder {
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
@@ -48,39 +41,26 @@ impl UpdateResourceCollectionInputBuilder {
         self
     }
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateResourceCollectionAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateResourceCollectionAction>) -> Self {
         self.action = input;
         self
     }
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
         &self.action
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn resource_collection(
-        mut self,
-        input: crate::types::UpdateResourceCollectionFilter,
-    ) -> Self {
+    pub fn resource_collection(mut self, input: crate::types::UpdateResourceCollectionFilter) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
         &self.resource_collection
     }
     /// Consumes the builder and constructs a [`UpdateResourceCollectionInput`](crate::operation::update_resource_collection::UpdateResourceCollectionInput).
@@ -90,11 +70,9 @@ impl UpdateResourceCollectionInputBuilder {
         crate::operation::update_resource_collection::UpdateResourceCollectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_collection::UpdateResourceCollectionInput {
-                action: self.action,
-                resource_collection: self.resource_collection,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_resource_collection::UpdateResourceCollectionInput {
+            action: self.action,
+            resource_collection: self.resource_collection,
+        })
     }
 }

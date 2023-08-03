@@ -17,9 +17,7 @@ impl GetSavingsPlanPurchaseRecommendationDetailsOutput {
         self.recommendation_detail_id.as_deref()
     }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    pub fn recommendation_detail_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationDetailData> {
+    pub fn recommendation_detail_data(&self) -> ::std::option::Option<&crate::types::RecommendationDetailData> {
         self.recommendation_detail_data.as_ref()
     }
 }
@@ -30,36 +28,28 @@ impl ::aws_http::request_id::RequestId for GetSavingsPlanPurchaseRecommendationD
 }
 impl GetSavingsPlanPurchaseRecommendationDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlanPurchaseRecommendationDetailsOutput`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput).
-    pub fn builder() -> crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
         crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSavingsPlanPurchaseRecommendationDetailsOutput`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
     pub(crate) recommendation_detail_id: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_detail_data:
-        ::std::option::Option<crate::types::RecommendationDetailData>,
+    pub(crate) recommendation_detail_data: ::std::option::Option<crate::types::RecommendationDetailData>,
     _request_id: Option<String>,
 }
 impl GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
     /// <p>The ID that is associated with the Savings Plan recommendation.</p>
-    pub fn recommendation_detail_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_detail_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_detail_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that is associated with the Savings Plan recommendation.</p>
-    pub fn set_recommendation_detail_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_detail_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_detail_id = input;
         self
     }
@@ -68,25 +58,17 @@ impl GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
         &self.recommendation_detail_id
     }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    pub fn recommendation_detail_data(
-        mut self,
-        input: crate::types::RecommendationDetailData,
-    ) -> Self {
+    pub fn recommendation_detail_data(mut self, input: crate::types::RecommendationDetailData) -> Self {
         self.recommendation_detail_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    pub fn set_recommendation_detail_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationDetailData>,
-    ) -> Self {
+    pub fn set_recommendation_detail_data(mut self, input: ::std::option::Option<crate::types::RecommendationDetailData>) -> Self {
         self.recommendation_detail_data = input;
         self
     }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    pub fn get_recommendation_detail_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationDetailData> {
+    pub fn get_recommendation_detail_data(&self) -> &::std::option::Option<crate::types::RecommendationDetailData> {
         &self.recommendation_detail_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,12 +81,10 @@ impl GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSavingsPlanPurchaseRecommendationDetailsOutput`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput).
-    pub fn build(self) -> crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput{
+    pub fn build(self) -> crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput {
         crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput {
-            recommendation_detail_id: self.recommendation_detail_id
-            ,
-            recommendation_detail_data: self.recommendation_detail_data
-            ,
+            recommendation_detail_id: self.recommendation_detail_id,
+            recommendation_detail_data: self.recommendation_detail_data,
             _request_id: self._request_id,
         }
     }

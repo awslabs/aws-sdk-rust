@@ -51,9 +51,7 @@ impl SetTaskStatusInput {
 
 /// A builder for [`SetTaskStatusInput`](crate::operation::set_task_status::SetTaskStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTaskStatusInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_status: ::std::option::Option<crate::types::TaskStatus>,
@@ -82,10 +80,7 @@ impl SetTaskStatusInputBuilder {
         self
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -108,18 +103,12 @@ impl SetTaskStatusInputBuilder {
         &self.error_id
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -128,18 +117,12 @@ impl SetTaskStatusInputBuilder {
         &self.error_message
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_stack_trace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_stack_trace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_stack_trace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn set_error_stack_trace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_stack_trace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_stack_trace = input;
         self
     }
@@ -150,10 +133,7 @@ impl SetTaskStatusInputBuilder {
     /// Consumes the builder and constructs a [`SetTaskStatusInput`](crate::operation::set_task_status::SetTaskStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_task_status::SetTaskStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::set_task_status::SetTaskStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_task_status::SetTaskStatusInput {
             task_id: self.task_id,
             task_status: self.task_status,

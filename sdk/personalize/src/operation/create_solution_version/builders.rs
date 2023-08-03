@@ -58,10 +58,7 @@ impl CreateSolutionVersionFluentBuilder {
         }
     }
     /// Access the CreateSolutionVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +70,7 @@ impl CreateSolutionVersionFluentBuilder {
             crate::operation::create_solution_version::CreateSolutionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_solution_version::CreateSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution_version::CreateSolutionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +80,7 @@ impl CreateSolutionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +89,7 @@ impl CreateSolutionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_solution_version::CreateSolutionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_solution_version::CreateSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution_version::CreateSolutionVersionError>,
     > {
         let op = self
             .inner
@@ -122,9 +112,7 @@ impl CreateSolutionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_solution_version::CreateSolutionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_solution_version::CreateSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution_version::CreateSolutionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -138,9 +126,7 @@ impl CreateSolutionVersionFluentBuilder {
             crate::operation::create_solution_version::CreateSolutionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_solution_version::CreateSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution_version::CreateSolutionVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -182,10 +168,7 @@ impl CreateSolutionVersionFluentBuilder {
     /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
-    pub fn set_training_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingMode>,
-    ) -> Self {
+    pub fn set_training_mode(mut self, input: ::std::option::Option<crate::types::TrainingMode>) -> Self {
         self.inner = self.inner.set_training_mode(input);
         self
     }
@@ -205,10 +188,7 @@ impl CreateSolutionVersionFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution version.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

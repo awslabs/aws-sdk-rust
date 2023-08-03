@@ -27,7 +27,7 @@ impl PutRumMetricsDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRumMetricsDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder,
+    inner: crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder,
 }
 impl PutRumMetricsDestinationFluentBuilder {
     /// Creates a new `PutRumMetricsDestination`.
@@ -38,7 +38,7 @@ impl PutRumMetricsDestinationFluentBuilder {
         }
     }
     /// Access the PutRumMetricsDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl PutRumMetricsDestinationFluentBuilder {
             crate::operation::put_rum_metrics_destination::PutRumMetricsDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl PutRumMetricsDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl PutRumMetricsDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl PutRumMetricsDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl PutRumMetricsDestinationFluentBuilder {
             crate::operation::put_rum_metrics_destination::PutRumMetricsDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
@@ -147,10 +130,7 @@ impl PutRumMetricsDestinationFluentBuilder {
         self
     }
     /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -159,18 +139,12 @@ impl PutRumMetricsDestinationFluentBuilder {
         self.inner.get_destination()
     }
     /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }

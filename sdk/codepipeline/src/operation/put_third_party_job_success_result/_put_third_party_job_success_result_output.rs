@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutThirdPartyJobSuccessResultOutput {
 }
 impl PutThirdPartyJobSuccessResultOutput {
     /// Creates a new builder-style object to manufacture [`PutThirdPartyJobSuccessResultOutput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput).
-    pub fn builder() -> crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultOutputBuilder{
+    pub fn builder() -> crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultOutputBuilder {
         crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutThirdPartyJobSuccessResultOutput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutThirdPartyJobSuccessResultOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutThirdPartyJobSuccessResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutThirdPartyJobSuccessResultOutput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput
-    {
+    pub fn build(self) -> crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput {
         crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput {
             _request_id: self._request_id,
         }

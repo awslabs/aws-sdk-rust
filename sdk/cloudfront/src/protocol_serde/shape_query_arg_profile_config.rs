@@ -6,17 +6,12 @@ pub fn ser_query_arg_profile_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.forward_when_query_arg_profile_is_unknown {
-        let mut inner_writer = scope
-            .start_el("ForwardWhenQueryArgProfileIsUnknown")
-            .finish();
+        let mut inner_writer = scope.start_el("ForwardWhenQueryArgProfileIsUnknown").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
     if let Some(var_2) = &input.query_arg_profiles {
         let inner_writer = scope.start_el("QueryArgProfiles");
-        crate::protocol_serde::shape_query_arg_profiles::ser_query_arg_profiles(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_query_arg_profiles::ser_query_arg_profiles(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

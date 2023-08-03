@@ -44,10 +44,7 @@ impl DescribeCommunicationsFluentBuilder {
         }
     }
     /// Access the DescribeCommunications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl DescribeCommunicationsFluentBuilder {
             crate::operation::describe_communications::DescribeCommunications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_communications::DescribeCommunicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_communications::DescribeCommunicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl DescribeCommunicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl DescribeCommunicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_communications::DescribeCommunicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_communications::DescribeCommunicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_communications::DescribeCommunicationsError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl DescribeCommunicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_communications::DescribeCommunicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_communications::DescribeCommunicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_communications::DescribeCommunicationsError>,
     > {
         self.send_middleware().await
     }
@@ -124,22 +112,15 @@ impl DescribeCommunicationsFluentBuilder {
             crate::operation::describe_communications::DescribeCommunications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_communications::DescribeCommunicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_communications::DescribeCommunicationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator {
-        crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator {
+        crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

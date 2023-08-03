@@ -58,17 +58,14 @@ impl PhoneNumberInformation {
 
 /// A builder for [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberInformationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) iso2_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) route_type: ::std::option::Option<crate::types::RouteType>,
-    pub(crate) number_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl PhoneNumberInformationBuilder {
     /// <p>The date and time when the phone number was created.</p>
@@ -77,10 +74,7 @@ impl PhoneNumberInformationBuilder {
         self
     }
     /// <p>The date and time when the phone number was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -117,18 +111,12 @@ impl PhoneNumberInformationBuilder {
         &self.status
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
-    pub fn iso2_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso2_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso2_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
-    pub fn set_iso2_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso2_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso2_country_code = input;
         self
     }
@@ -162,17 +150,12 @@ impl PhoneNumberInformationBuilder {
         self
     }
     /// <p>The capabilities of each phone number.</p>
-    pub fn set_number_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
-    ) -> Self {
+    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.number_capabilities = input;
         self
     }
     /// <p>The capabilities of each phone number.</p>
-    pub fn get_number_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
     /// Consumes the builder and constructs a [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).

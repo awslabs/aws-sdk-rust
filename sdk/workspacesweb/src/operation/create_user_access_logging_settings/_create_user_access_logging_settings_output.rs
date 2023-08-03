@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateUserAccessLoggingSettingsOutput
 }
 impl CreateUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsOutput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsOutputBuilder {
         crate::operation::create_user_access_logging_settings::builders::CreateUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserAccessLoggingSettingsOutput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserAccessLoggingSettingsOutputBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserAccessLoggingSettingsOutputBuilder {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn set_user_access_logging_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = input;
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn get_user_access_logging_settings_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_access_logging_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,13 +58,9 @@ impl CreateUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateUserAccessLoggingSettingsOutput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput {
         crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput {
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn
-            ,
+            user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             _request_id: self._request_id,
         }
     }

@@ -18,28 +18,19 @@ pub fn ser_instance_storage_config(
     if let Some(var_5) = &input.kinesis_video_stream_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("KinesisVideoStreamConfig").start_object();
-        crate::protocol_serde::shape_kinesis_video_stream_config::ser_kinesis_video_stream_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_kinesis_video_stream_config::ser_kinesis_video_stream_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.kinesis_stream_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("KinesisStreamConfig").start_object();
-        crate::protocol_serde::shape_kinesis_stream_config::ser_kinesis_stream_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_kinesis_stream_config::ser_kinesis_stream_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.kinesis_firehose_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("KinesisFirehoseConfig").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_config::ser_kinesis_firehose_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_kinesis_firehose_config::ser_kinesis_firehose_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())
@@ -47,17 +38,9 @@ pub fn ser_instance_storage_config(
 
 pub(crate) fn de_instance_storage_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::InstanceStorageConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::InstanceStorageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,67 +50,52 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AssociationId" => {
-                                builder = builder.set_association_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AssociationId" => {
+                            builder = builder.set_association_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "StorageType" => {
-                                builder = builder.set_storage_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::StorageType::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "S3Config" => {
-                                builder = builder.set_s3_config(
-                                    crate::protocol_serde::shape_s3_config::de_s3_config(tokens)?,
-                                );
-                            }
-                            "KinesisVideoStreamConfig" => {
-                                builder = builder.set_kinesis_video_stream_config(
-                                    crate::protocol_serde::shape_kinesis_video_stream_config::de_kinesis_video_stream_config(tokens)?
-                                );
-                            }
-                            "KinesisStreamConfig" => {
-                                builder = builder.set_kinesis_stream_config(
-                                    crate::protocol_serde::shape_kinesis_stream_config::de_kinesis_stream_config(tokens)?
-                                );
-                            }
-                            "KinesisFirehoseConfig" => {
-                                builder = builder.set_kinesis_firehose_config(
-                                    crate::protocol_serde::shape_kinesis_firehose_config::de_kinesis_firehose_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "StorageType" => {
+                            builder = builder.set_storage_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StorageType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3Config" => {
+                            builder = builder.set_s3_config(crate::protocol_serde::shape_s3_config::de_s3_config(tokens)?);
+                        }
+                        "KinesisVideoStreamConfig" => {
+                            builder = builder.set_kinesis_video_stream_config(
+                                crate::protocol_serde::shape_kinesis_video_stream_config::de_kinesis_video_stream_config(tokens)?,
+                            );
+                        }
+                        "KinesisStreamConfig" => {
+                            builder = builder
+                                .set_kinesis_stream_config(crate::protocol_serde::shape_kinesis_stream_config::de_kinesis_stream_config(tokens)?);
+                        }
+                        "KinesisFirehoseConfig" => {
+                            builder = builder.set_kinesis_firehose_config(
+                                crate::protocol_serde::shape_kinesis_firehose_config::de_kinesis_firehose_config(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

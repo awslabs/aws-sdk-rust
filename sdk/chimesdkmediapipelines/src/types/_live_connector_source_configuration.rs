@@ -9,8 +9,7 @@ pub struct LiveConnectorSourceConfiguration {
     pub source_type: ::std::option::Option<crate::types::LiveConnectorSourceType>,
     /// <p>The configuration settings of the connector pipeline.</p>
     #[doc(hidden)]
-    pub chime_sdk_meeting_live_connector_configuration:
-        ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
+    pub chime_sdk_meeting_live_connector_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
 }
 impl LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
@@ -18,9 +17,7 @@ impl LiveConnectorSourceConfiguration {
         self.source_type.as_ref()
     }
     /// <p>The configuration settings of the connector pipeline.</p>
-    pub fn chime_sdk_meeting_live_connector_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChimeSdkMeetingLiveConnectorConfiguration> {
+    pub fn chime_sdk_meeting_live_connector_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingLiveConnectorConfiguration> {
         self.chime_sdk_meeting_live_connector_configuration.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl LiveConnectorSourceConfiguration {
 
 /// A builder for [`LiveConnectorSourceConfiguration`](crate::types::LiveConnectorSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LiveConnectorSourceConfigurationBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::LiveConnectorSourceType>,
-    pub(crate) chime_sdk_meeting_live_connector_configuration:
-        ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
+    pub(crate) chime_sdk_meeting_live_connector_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
 }
 impl LiveConnectorSourceConfigurationBuilder {
     /// <p>The source configuration's media source type.</p>
@@ -48,10 +42,7 @@ impl LiveConnectorSourceConfigurationBuilder {
         self
     }
     /// <p>The source configuration's media source type.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LiveConnectorSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::LiveConnectorSourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -60,10 +51,7 @@ impl LiveConnectorSourceConfigurationBuilder {
         &self.source_type
     }
     /// <p>The configuration settings of the connector pipeline.</p>
-    pub fn chime_sdk_meeting_live_connector_configuration(
-        mut self,
-        input: crate::types::ChimeSdkMeetingLiveConnectorConfiguration,
-    ) -> Self {
+    pub fn chime_sdk_meeting_live_connector_configuration(mut self, input: crate::types::ChimeSdkMeetingLiveConnectorConfiguration) -> Self {
         self.chime_sdk_meeting_live_connector_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -85,8 +73,7 @@ impl LiveConnectorSourceConfigurationBuilder {
     pub fn build(self) -> crate::types::LiveConnectorSourceConfiguration {
         crate::types::LiveConnectorSourceConfiguration {
             source_type: self.source_type,
-            chime_sdk_meeting_live_connector_configuration: self
-                .chime_sdk_meeting_live_connector_configuration,
+            chime_sdk_meeting_live_connector_configuration: self.chime_sdk_meeting_live_connector_configuration,
         }
     }
 }

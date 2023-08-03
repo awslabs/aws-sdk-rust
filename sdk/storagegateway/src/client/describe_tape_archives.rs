@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`tape_archives(Option<Vec<TapeArchive>>)`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput::tape_archives): <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput::marker): <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
     /// - On failure, responds with [`SdkError<DescribeTapeArchivesError>`](crate::operation::describe_tape_archives::DescribeTapeArchivesError)
-    pub fn describe_tape_archives(
-        &self,
-    ) -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder {
-        crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tape_archives(&self) -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder {
+        crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::new(self.handle.clone())
     }
 }

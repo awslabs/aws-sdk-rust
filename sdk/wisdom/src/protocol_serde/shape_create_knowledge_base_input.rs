@@ -18,27 +18,19 @@ pub fn ser_create_knowledge_base_input(
     if let Some(var_5) = &input.rendering_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("renderingConfiguration").start_object();
-        crate::protocol_serde::shape_rendering_configuration::ser_rendering_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_rendering_configuration::ser_rendering_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object
-            .key("serverSideEncryptionConfiguration")
-            .start_object();
+        let mut object_8 = object.key("serverSideEncryptionConfiguration").start_object();
         crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.source_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("sourceConfiguration").start_object();
-        crate::protocol_serde::shape_source_configuration::ser_source_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.tags {

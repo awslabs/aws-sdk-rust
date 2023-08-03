@@ -15,10 +15,7 @@ pub fn ser_create_metric_attribution_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_metric_attribute::ser_metric_attribute(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_metric_attribute::ser_metric_attribute(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_create_metric_attribution_input(
     if let Some(var_7) = &input.metrics_output_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("metricsOutputConfig").start_object();
-        crate::protocol_serde::shape_metric_attribution_output::ser_metric_attribution_output(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_metric_attribution_output::ser_metric_attribution_output(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

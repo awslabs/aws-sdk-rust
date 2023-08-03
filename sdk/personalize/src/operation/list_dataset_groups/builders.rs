@@ -10,10 +10,7 @@ impl ListDatasetGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_groups::ListDatasetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_groups::ListDatasetGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_groups::ListDatasetGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_dataset_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDatasetGroupsFluentBuilder {
         }
     }
     /// Access the ListDatasetGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dataset_groups::builders::ListDatasetGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dataset_groups::builders::ListDatasetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDatasetGroupsFluentBuilder {
             crate::operation::list_dataset_groups::ListDatasetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_groups::ListDatasetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_groups::ListDatasetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDatasetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDatasetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_groups::ListDatasetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_groups::ListDatasetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_groups::ListDatasetGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDatasetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_groups::ListDatasetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_groups::ListDatasetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_groups::ListDatasetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListDatasetGroupsFluentBuilder {
             crate::operation::list_dataset_groups::ListDatasetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_groups::ListDatasetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_groups::ListDatasetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_groups::paginator::ListDatasetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_groups::paginator::ListDatasetGroupsPaginator {
-        crate::operation::list_dataset_groups::paginator::ListDatasetGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dataset_groups::paginator::ListDatasetGroupsPaginator {
+        crate::operation::list_dataset_groups::paginator::ListDatasetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

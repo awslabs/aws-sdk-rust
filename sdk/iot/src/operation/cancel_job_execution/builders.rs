@@ -10,10 +10,7 @@ impl CancelJobExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_job_execution::CancelJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_job_execution::CancelJobExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_job_execution::CancelJobExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_job_execution();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CancelJobExecutionFluentBuilder {
         }
     }
     /// Access the CancelJobExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CancelJobExecutionFluentBuilder {
             crate::operation::cancel_job_execution::CancelJobExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_job_execution::CancelJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_job_execution::CancelJobExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CancelJobExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CancelJobExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_job_execution::CancelJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_job_execution::CancelJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_job_execution::CancelJobExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CancelJobExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_job_execution::CancelJobExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_job_execution::CancelJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_job_execution::CancelJobExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CancelJobExecutionFluentBuilder {
             crate::operation::cancel_job_execution::CancelJobExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_job_execution::CancelJobExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_job_execution::CancelJobExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -198,19 +182,13 @@ impl CancelJobExecutionFluentBuilder {
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     pub fn set_status_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_status_details(input);
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_status_details()
     }
 }

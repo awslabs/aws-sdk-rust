@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_origin_endpoint_policy::builders::PutOriginEndpointPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_origin_endpoint_policy::builders::PutOriginEndpointPolicyFluentBuilder::set_policy): <p>The policy to attach to the specified origin endpoint.</p>
     /// - On success, responds with [`PutOriginEndpointPolicyOutput`](crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyOutput)
     /// - On failure, responds with [`SdkError<PutOriginEndpointPolicyError>`](crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyError)
-    pub fn put_origin_endpoint_policy(
-        &self,
-    ) -> crate::operation::put_origin_endpoint_policy::builders::PutOriginEndpointPolicyFluentBuilder
-    {
+    pub fn put_origin_endpoint_policy(&self) -> crate::operation::put_origin_endpoint_policy::builders::PutOriginEndpointPolicyFluentBuilder {
         crate::operation::put_origin_endpoint_policy::builders::PutOriginEndpointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

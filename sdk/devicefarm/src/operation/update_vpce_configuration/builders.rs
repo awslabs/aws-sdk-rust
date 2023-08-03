@@ -26,8 +26,7 @@ impl UpdateVpceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVPCEConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationInputBuilder,
+    inner: crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationInputBuilder,
 }
 impl UpdateVPCEConfigurationFluentBuilder {
     /// Creates a new `UpdateVPCEConfiguration`.
@@ -38,10 +37,7 @@ impl UpdateVPCEConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateVPCEConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateVPCEConfigurationFluentBuilder {
             crate::operation::update_vpce_configuration::UpdateVPCEConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateVPCEConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateVPCEConfigurationFluentBuilder {
             crate::operation::update_vpce_configuration::UpdateVPCEConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner.get_arn()
     }
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
-    pub fn vpce_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpce_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpce_configuration_name(input.into());
         self
     }
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
-    pub fn set_vpce_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpce_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpce_configuration_name(input);
         self
     }
@@ -159,18 +138,12 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner.get_vpce_configuration_name()
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn vpce_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpce_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpce_service_name(input.into());
         self
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn set_vpce_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpce_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpce_service_name(input);
         self
     }
@@ -179,18 +152,12 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner.get_vpce_service_name()
     }
     /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
-    pub fn service_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_dns_name(input.into());
         self
     }
     /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
-    pub fn set_service_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_dns_name(input);
         self
     }
@@ -199,25 +166,17 @@ impl UpdateVPCEConfigurationFluentBuilder {
         self.inner.get_service_dns_name()
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn vpce_configuration_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpce_configuration_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpce_configuration_description(input.into());
         self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpce_configuration_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpce_configuration_description(input);
         self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn get_vpce_configuration_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpce_configuration_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpce_configuration_description()
     }
 }

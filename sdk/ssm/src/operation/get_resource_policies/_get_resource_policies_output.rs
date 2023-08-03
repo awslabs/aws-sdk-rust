@@ -8,8 +8,7 @@ pub struct GetResourcePoliciesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of the <code>Policy</code> object.</p>
     #[doc(hidden)]
-    pub policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>,
+    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>,
     _request_id: Option<String>,
 }
 impl GetResourcePoliciesOutput {
@@ -18,9 +17,7 @@ impl GetResourcePoliciesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of the <code>Policy</code> object.</p>
-    pub fn policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GetResourcePoliciesResponseEntry]> {
+    pub fn policies(&self) -> ::std::option::Option<&[crate::types::GetResourcePoliciesResponseEntry]> {
         self.policies.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for GetResourcePoliciesOutput {
 }
 impl GetResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>,
     _request_id: Option<String>,
 }
 impl GetResourcePoliciesOutputBuilder {
@@ -76,20 +68,12 @@ impl GetResourcePoliciesOutputBuilder {
         self
     }
     /// <p>An array of the <code>Policy</code> object.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>,
-        >,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>An array of the <code>Policy</code> object.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>
-    {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>> {
         &self.policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

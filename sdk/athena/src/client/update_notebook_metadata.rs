@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataFluentBuilder::set_name): <p>The name to update the notebook to.</p>
     /// - On success, responds with [`UpdateNotebookMetadataOutput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateNotebookMetadataError>`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataError)
-    pub fn update_notebook_metadata(
-        &self,
-    ) -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataFluentBuilder
-    {
+    pub fn update_notebook_metadata(&self) -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataFluentBuilder {
         crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataFluentBuilder::new(self.handle.clone())
     }
 }

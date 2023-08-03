@@ -58,9 +58,7 @@ impl StackSummary {
 
 /// A builder for [`StackSummary`](crate::types::StackSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSummaryBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -146,10 +144,7 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-    pub fn set_instances_count(
-        mut self,
-        input: ::std::option::Option<crate::types::InstancesCount>,
-    ) -> Self {
+    pub fn set_instances_count(mut self, input: ::std::option::Option<crate::types::InstancesCount>) -> Self {
         self.instances_count = input;
         self
     }

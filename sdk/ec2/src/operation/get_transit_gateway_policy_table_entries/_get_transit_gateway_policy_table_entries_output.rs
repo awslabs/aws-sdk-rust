@@ -5,15 +5,12 @@
 pub struct GetTransitGatewayPolicyTableEntriesOutput {
     /// <p>The entries for the transit gateway policy table.</p>
     #[doc(hidden)]
-    pub transit_gateway_policy_table_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>>,
+    pub transit_gateway_policy_table_entries: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>>,
     _request_id: Option<String>,
 }
 impl GetTransitGatewayPolicyTableEntriesOutput {
     /// <p>The entries for the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayPolicyTableEntry]> {
+    pub fn transit_gateway_policy_table_entries(&self) -> ::std::option::Option<&[crate::types::TransitGatewayPolicyTableEntry]> {
         self.transit_gateway_policy_table_entries.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayPolicyTableEntriesOu
 }
 impl GetTransitGatewayPolicyTableEntriesOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPolicyTableEntriesOutput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesOutputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesOutputBuilder {
         crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayPolicyTableEntriesOutput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPolicyTableEntriesOutputBuilder {
-    pub(crate) transit_gateway_policy_table_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>>,
+    pub(crate) transit_gateway_policy_table_entries: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>>,
     _request_id: Option<String>,
 }
 impl GetTransitGatewayPolicyTableEntriesOutputBuilder {
@@ -45,13 +39,8 @@ impl GetTransitGatewayPolicyTableEntriesOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_policy_table_entries`](Self::set_transit_gateway_policy_table_entries).
     ///
     /// <p>The entries for the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_entries(
-        mut self,
-        input: crate::types::TransitGatewayPolicyTableEntry,
-    ) -> Self {
-        let mut v = self
-            .transit_gateway_policy_table_entries
-            .unwrap_or_default();
+    pub fn transit_gateway_policy_table_entries(mut self, input: crate::types::TransitGatewayPolicyTableEntry) -> Self {
+        let mut v = self.transit_gateway_policy_table_entries.unwrap_or_default();
         v.push(input);
         self.transit_gateway_policy_table_entries = ::std::option::Option::Some(v);
         self
@@ -65,9 +54,7 @@ impl GetTransitGatewayPolicyTableEntriesOutputBuilder {
         self
     }
     /// <p>The entries for the transit gateway policy table.</p>
-    pub fn get_transit_gateway_policy_table_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>> {
+    pub fn get_transit_gateway_policy_table_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>> {
         &self.transit_gateway_policy_table_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -80,10 +67,9 @@ impl GetTransitGatewayPolicyTableEntriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayPolicyTableEntriesOutput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput).
-    pub fn build(self) -> crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput{
+    pub fn build(self) -> crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput {
         crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput {
-            transit_gateway_policy_table_entries: self.transit_gateway_policy_table_entries
-            ,
+            transit_gateway_policy_table_entries: self.transit_gateway_policy_table_entries,
             _request_id: self._request_id,
         }
     }

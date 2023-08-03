@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListDeviceDefinitionVersionsError>`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError)
-    pub fn list_device_definition_versions(&self) -> crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsFluentBuilder{
+    pub fn list_device_definition_versions(
+        &self,
+    ) -> crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsFluentBuilder {
         crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

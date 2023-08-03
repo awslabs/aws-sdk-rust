@@ -36,19 +36,16 @@ impl ::aws_http::request_id::RequestId for DescribeSpotFleetInstancesOutput {
 }
 impl DescribeSpotFleetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotFleetInstancesOutput`](crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput).
-    pub fn builder() -> crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesOutputBuilder {
         crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotFleetInstancesOutput`](crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetInstancesOutputBuilder {
-    pub(crate) active_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
+    pub(crate) active_instances: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -66,17 +63,12 @@ impl DescribeSpotFleetInstancesOutputBuilder {
         self
     }
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub fn set_active_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
-    ) -> Self {
+    pub fn set_active_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>) -> Self {
         self.active_instances = input;
         self
     }
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub fn get_active_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
+    pub fn get_active_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
         &self.active_instances
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -94,18 +86,12 @@ impl DescribeSpotFleetInstancesOutputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_fleet_request_id = input;
         self
     }
@@ -123,9 +109,7 @@ impl DescribeSpotFleetInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSpotFleetInstancesOutput`](crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput {
         crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput {
             active_instances: self.active_instances,
             next_token: self.next_token,

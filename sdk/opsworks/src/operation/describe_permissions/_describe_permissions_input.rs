@@ -22,17 +22,14 @@ impl DescribePermissionsInput {
 }
 impl DescribePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribePermissionsInput`](crate::operation::describe_permissions::DescribePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder {
         crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePermissionsInput`](crate::operation::describe_permissions::DescribePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePermissionsInputBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl DescribePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribePermissionsInput`](crate::operation::describe_permissions::DescribePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_permissions::DescribePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_permissions::DescribePermissionsInput {
-                iam_user_arn: self.iam_user_arn,
-                stack_id: self.stack_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_permissions::DescribePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_permissions::DescribePermissionsInput {
+            iam_user_arn: self.iam_user_arn,
+            stack_id: self.stack_id,
+        })
     }
 }

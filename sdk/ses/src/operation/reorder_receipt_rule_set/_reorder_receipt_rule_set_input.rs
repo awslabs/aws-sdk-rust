@@ -23,36 +23,26 @@ impl ReorderReceiptRuleSetInput {
 }
 impl ReorderReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder {
         crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReorderReceiptRuleSetInputBuilder {
     /// <p>The name of the receipt rule set to reorder.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the receipt rule set to reorder.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -72,10 +62,7 @@ impl ReorderReceiptRuleSetInputBuilder {
         self
     }
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule_names = input;
         self
     }
@@ -86,15 +73,11 @@ impl ReorderReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput {
-                rule_set_name: self.rule_set_name,
-                rule_names: self.rule_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput {
+            rule_set_name: self.rule_set_name,
+            rule_names: self.rule_names,
+        })
     }
 }

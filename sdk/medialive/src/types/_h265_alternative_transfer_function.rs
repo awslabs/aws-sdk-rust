@@ -38,13 +38,7 @@
 /// H265 Alternative Transfer Function
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265AlternativeTransferFunction {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H265AlternativeTransferFunction {
         match s {
             "INSERT" => H265AlternativeTransferFunction::Insert,
             "OMIT" => H265AlternativeTransferFunction::Omit,
-            other => H265AlternativeTransferFunction::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => H265AlternativeTransferFunction::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

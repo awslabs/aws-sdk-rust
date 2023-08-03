@@ -64,9 +64,7 @@ impl GetLinksInput {
 
 /// A builder for [`GetLinksInput`](crate::operation::get_links::GetLinksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLinksInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) link_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,18 +76,12 @@ pub struct GetLinksInputBuilder {
 }
 impl GetLinksInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -109,10 +101,7 @@ impl GetLinksInputBuilder {
         self
     }
     /// <p>One or more link IDs. The maximum is 10.</p>
-    pub fn set_link_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_link_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.link_ids = input;
         self
     }
@@ -191,12 +180,7 @@ impl GetLinksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetLinksInput`](crate::operation::get_links::GetLinksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_links::GetLinksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_links::GetLinksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_links::GetLinksInput {
             global_network_id: self.global_network_id,
             link_ids: self.link_ids,

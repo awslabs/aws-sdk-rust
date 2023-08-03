@@ -80,9 +80,7 @@ impl ApplicationInfo {
 
 /// A builder for [`ApplicationInfo`](crate::types::ApplicationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationInfoBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) life_cycle: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct ApplicationInfoBuilder {
 }
 impl ApplicationInfoBuilder {
     /// <p>The name of the resource group used for the application.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group used for the application.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -129,18 +121,12 @@ impl ApplicationInfoBuilder {
         &self.life_cycle
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-    pub fn ops_item_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-    pub fn set_ops_item_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = input;
         self
     }
@@ -222,10 +208,7 @@ impl ApplicationInfoBuilder {
         self
     }
     /// <p> The method used by Application Insights to onboard your resources. </p>
-    pub fn set_discovery_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryType>,
-    ) -> Self {
+    pub fn set_discovery_type(mut self, input: ::std::option::Option<crate::types::DiscoveryType>) -> Self {
         self.discovery_type = input;
         self
     }

@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`route_table_id(impl ::std::convert::Into<String>)`](crate::operation::delete_route::builders::DeleteRouteFluentBuilder::route_table_id) / [`set_route_table_id(Option<String>)`](crate::operation::delete_route::builders::DeleteRouteFluentBuilder::set_route_table_id): <p>The ID of the route table.</p>
     /// - On success, responds with [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::operation::delete_route::DeleteRouteError)
-    pub fn delete_route(
-        &self,
-    ) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
+    pub fn delete_route(&self) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
         crate::operation::delete_route::builders::DeleteRouteFluentBuilder::new(self.handle.clone())
     }
 }

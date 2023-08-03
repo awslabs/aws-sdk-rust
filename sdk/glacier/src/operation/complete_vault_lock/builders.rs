@@ -10,10 +10,7 @@ impl CompleteVaultLockInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::complete_vault_lock::CompleteVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_vault_lock::CompleteVaultLockError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.complete_vault_lock();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CompleteVaultLockFluentBuilder {
         }
     }
     /// Access the CompleteVaultLock as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CompleteVaultLockFluentBuilder {
             crate::operation::complete_vault_lock::CompleteVaultLock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_vault_lock::CompleteVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CompleteVaultLockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CompleteVaultLockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_vault_lock::CompleteVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_vault_lock::CompleteVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CompleteVaultLockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_vault_lock::CompleteVaultLockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_vault_lock::CompleteVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CompleteVaultLockFluentBuilder {
             crate::operation::complete_vault_lock::CompleteVaultLock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_vault_lock::CompleteVaultLockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError>,
     > {
         self.customize_middleware().await
     }

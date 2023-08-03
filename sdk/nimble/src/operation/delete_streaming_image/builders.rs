@@ -37,9 +37,7 @@ impl DeleteStreamingImageFluentBuilder {
         }
     }
     /// Access the DeleteStreamingImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_streaming_image::builders::DeleteStreamingImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_streaming_image::builders::DeleteStreamingImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteStreamingImageFluentBuilder {
             crate::operation::delete_streaming_image::DeleteStreamingImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_image::DeleteStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_image::DeleteStreamingImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteStreamingImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteStreamingImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_streaming_image::DeleteStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_image::DeleteStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_image::DeleteStreamingImageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteStreamingImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_streaming_image::DeleteStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_image::DeleteStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_image::DeleteStreamingImageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteStreamingImageFluentBuilder {
             crate::operation::delete_streaming_image::DeleteStreamingImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_image::DeleteStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_image::DeleteStreamingImageError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteStreamingImageFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.streaming_image_id(input.into());
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_streaming_image_id(input);
         self
     }

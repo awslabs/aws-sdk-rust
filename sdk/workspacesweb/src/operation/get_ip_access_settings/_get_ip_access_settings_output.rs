@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetIpAccessSettingsOutput {
 }
 impl GetIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpAccessSettingsOutput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsOutputBuilder {
         crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpAccessSettingsOutput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpAccessSettingsOutputBuilder {
     pub(crate) ip_access_settings: ::std::option::Option<crate::types::IpAccessSettings>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetIpAccessSettingsOutputBuilder {
         self
     }
     /// <p>The IP access settings.</p>
-    pub fn set_ip_access_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAccessSettings>,
-    ) -> Self {
+    pub fn set_ip_access_settings(mut self, input: ::std::option::Option<crate::types::IpAccessSettings>) -> Self {
         self.ip_access_settings = input;
         self
     }

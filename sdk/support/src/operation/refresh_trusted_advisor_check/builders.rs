@@ -34,7 +34,7 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder,
+    inner: crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder,
 }
 impl RefreshTrustedAdvisorCheckFluentBuilder {
     /// Creates a new `RefreshTrustedAdvisorCheck`.
@@ -45,7 +45,7 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
         }
     }
     /// Access the RefreshTrustedAdvisorCheck as a reference.
-    pub fn as_input(&self) -> &crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
             crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
             crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError>,
     > {
         self.customize_middleware().await
     }

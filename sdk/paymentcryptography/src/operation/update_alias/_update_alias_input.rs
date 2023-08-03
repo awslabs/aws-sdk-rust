@@ -29,9 +29,7 @@ impl UpdateAliasInput {
 
 /// A builder for [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAliasInputBuilder {
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl UpdateAliasInputBuilder {
         &self.key_arn
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alias::UpdateAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
             alias_name: self.alias_name,
             key_arn: self.key_arn,

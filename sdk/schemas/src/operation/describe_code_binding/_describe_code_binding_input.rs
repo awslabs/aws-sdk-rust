@@ -36,18 +36,14 @@ impl DescribeCodeBindingInput {
 }
 impl DescribeCodeBindingInput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder {
-        crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder {
+        crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCodeBindingInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl DescribeCodeBindingInputBuilder {
         &self.language
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -104,18 +94,12 @@ impl DescribeCodeBindingInputBuilder {
         &self.schema_name
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
@@ -126,17 +110,13 @@ impl DescribeCodeBindingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_code_binding::DescribeCodeBindingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_code_binding::DescribeCodeBindingInput {
-                language: self.language,
-                registry_name: self.registry_name,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_code_binding::DescribeCodeBindingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_code_binding::DescribeCodeBindingInput {
+            language: self.language,
+            registry_name: self.registry_name,
+            schema_name: self.schema_name,
+            schema_version: self.schema_version,
+        })
     }
 }

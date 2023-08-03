@@ -7,9 +7,7 @@ pub fn ser_create_feature_group_input(
         object.key("FeatureGroupName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.record_identifier_feature_name {
-        object
-            .key("RecordIdentifierFeatureName")
-            .string(var_2.as_str());
+        object.key("RecordIdentifierFeatureName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.event_time_feature_name {
         object.key("EventTimeFeatureName").string(var_3.as_str());
@@ -20,10 +18,7 @@ pub fn ser_create_feature_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_feature_definition::ser_feature_definition(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_feature_definition::ser_feature_definition(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -32,19 +27,13 @@ pub fn ser_create_feature_group_input(
     if let Some(var_8) = &input.online_store_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("OnlineStoreConfig").start_object();
-        crate::protocol_serde::shape_online_store_config::ser_online_store_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_online_store_config::ser_online_store_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.offline_store_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("OfflineStoreConfig").start_object();
-        crate::protocol_serde::shape_offline_store_config::ser_offline_store_config(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_offline_store_config::ser_offline_store_config(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.role_arn {

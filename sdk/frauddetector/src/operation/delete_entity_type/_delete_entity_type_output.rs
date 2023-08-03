@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEntityTypeOutput {
 }
 impl DeleteEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityTypeOutput`](crate::operation::delete_entity_type::DeleteEntityTypeOutput).
-    pub fn builder() -> crate::operation::delete_entity_type::builders::DeleteEntityTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_entity_type::builders::DeleteEntityTypeOutputBuilder {
         crate::operation::delete_entity_type::builders::DeleteEntityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntityTypeOutput`](crate::operation::delete_entity_type::DeleteEntityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntityTypeOutputBuilder {
     _request_id: Option<String>,
 }

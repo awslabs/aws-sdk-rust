@@ -11,8 +11,7 @@ pub struct ListTopicRefreshSchedulesOutput {
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of topic refresh schedules.</p>
     #[doc(hidden)]
-    pub refresh_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>>,
+    pub refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>>,
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -31,9 +30,7 @@ impl ListTopicRefreshSchedulesOutput {
         self.topic_arn.as_deref()
     }
     /// <p>The list of topic refresh schedules.</p>
-    pub fn refresh_schedules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TopicRefreshScheduleSummary]> {
+    pub fn refresh_schedules(&self) -> ::std::option::Option<&[crate::types::TopicRefreshScheduleSummary]> {
         self.refresh_schedules.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -52,21 +49,18 @@ impl ::aws_http::request_id::RequestId for ListTopicRefreshSchedulesOutput {
 }
 impl ListTopicRefreshSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicRefreshSchedulesOutput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput).
-    pub fn builder() -> crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesOutputBuilder{
+    pub fn builder() -> crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesOutputBuilder {
         crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTopicRefreshSchedulesOutput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRefreshSchedulesOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) refresh_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>>,
+    pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -112,17 +106,12 @@ impl ListTopicRefreshSchedulesOutputBuilder {
         self
     }
     /// <p>The list of topic refresh schedules.</p>
-    pub fn set_refresh_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>>,
-    ) -> Self {
+    pub fn set_refresh_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>>) -> Self {
         self.refresh_schedules = input;
         self
     }
     /// <p>The list of topic refresh schedules.</p>
-    pub fn get_refresh_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>> {
+    pub fn get_refresh_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRefreshScheduleSummary>> {
         &self.refresh_schedules
     }
     /// <p>The HTTP status of the request.</p>
@@ -163,9 +152,7 @@ impl ListTopicRefreshSchedulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTopicRefreshSchedulesOutput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput {
+    pub fn build(self) -> crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput {
         crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput {
             topic_id: self.topic_id,
             topic_arn: self.topic_arn,

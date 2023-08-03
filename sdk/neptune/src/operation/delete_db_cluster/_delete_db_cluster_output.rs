@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbClusterOutput {
 }
 impl DeleteDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::operation::delete_db_cluster::DeleteDbClusterOutput).
-    pub fn builder() -> crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder {
         crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbClusterOutput`](crate::operation::delete_db_cluster::DeleteDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

@@ -6,20 +6,14 @@
 pub struct EnvironmentResponse {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
     #[doc(hidden)]
-    pub variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Error messages for environment variables that couldn't be applied.</p>
     #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::EnvironmentError>,
 }
 impl EnvironmentResponse {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
@@ -46,9 +40,7 @@ impl EnvironmentResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EnvironmentResponseBuilder {
-    pub(crate) variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::EnvironmentError>,
 }
 impl EnvironmentResponseBuilder {
@@ -57,32 +49,19 @@ impl EnvironmentResponseBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
         self
     }
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
@@ -91,10 +70,7 @@ impl EnvironmentResponseBuilder {
         self
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::EnvironmentError>) -> Self {
         self.error = input;
         self
     }

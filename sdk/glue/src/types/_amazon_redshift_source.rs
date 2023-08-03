@@ -30,9 +30,7 @@ impl AmazonRedshiftSource {
 
 /// A builder for [`AmazonRedshiftSource`](crate::types::AmazonRedshiftSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonRedshiftSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
@@ -58,10 +56,7 @@ impl AmazonRedshiftSourceBuilder {
         self
     }
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::AmazonRedshiftNodeData>) -> Self {
         self.data = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     #[doc(hidden)]
-    pub cost_allocation_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
+    pub cost_allocation_tags: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCostAllocationTagsOutput {
 }
 impl ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    pub fn cost_allocation_tags(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CostAllocationTag]> {
+    pub fn cost_allocation_tags(&self) -> ::std::option::Option<&[crate::types::CostAllocationTag]> {
         self.cost_allocation_tags.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCostAllocationTagsOutput {
 }
 impl ListCostAllocationTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsOutput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder {
         crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCostAllocationTagsOutput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsOutputBuilder {
-    pub(crate) cost_allocation_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
+    pub(crate) cost_allocation_tags: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListCostAllocationTagsOutputBuilder {
         self
     }
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    pub fn set_cost_allocation_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
-    ) -> Self {
+    pub fn set_cost_allocation_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>) -> Self {
         self.cost_allocation_tags = input;
         self
     }
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    pub fn get_cost_allocation_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>> {
+    pub fn get_cost_allocation_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>> {
         &self.cost_allocation_tags
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
@@ -99,9 +86,7 @@ impl ListCostAllocationTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCostAllocationTagsOutput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput {
+    pub fn build(self) -> crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput {
         crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput {
             cost_allocation_tags: self.cost_allocation_tags,
             next_token: self.next_token,

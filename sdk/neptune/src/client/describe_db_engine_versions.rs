@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_engine_versions(Option<Vec<DbEngineVersion>>)`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput::db_engine_versions): <p> A list of <code>DBEngineVersion</code> elements.</p>
     /// - On failure, responds with [`SdkError<DescribeDBEngineVersionsError>`](crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError)
-    pub fn describe_db_engine_versions(&self) -> crate::operation::describe_db_engine_versions::builders::DescribeDBEngineVersionsFluentBuilder{
+    pub fn describe_db_engine_versions(&self) -> crate::operation::describe_db_engine_versions::builders::DescribeDBEngineVersionsFluentBuilder {
         crate::operation::describe_db_engine_versions::builders::DescribeDBEngineVersionsFluentBuilder::new(self.handle.clone())
     }
 }

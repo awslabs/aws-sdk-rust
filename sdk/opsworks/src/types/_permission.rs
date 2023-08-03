@@ -67,9 +67,7 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,

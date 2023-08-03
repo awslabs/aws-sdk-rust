@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteExperimentTemplateOutput {
 }
 impl DeleteExperimentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateOutput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder {
         crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExperimentTemplateOutput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExperimentTemplateOutputBuilder {
     pub(crate) experiment_template: ::std::option::Option<crate::types::ExperimentTemplate>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DeleteExperimentTemplateOutputBuilder {
         self
     }
     /// <p>Information about the experiment template.</p>
-    pub fn set_experiment_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentTemplate>,
-    ) -> Self {
+    pub fn set_experiment_template(mut self, input: ::std::option::Option<crate::types::ExperimentTemplate>) -> Self {
         self.experiment_template = input;
         self
     }
     /// <p>Information about the experiment template.</p>
-    pub fn get_experiment_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentTemplate> {
+    pub fn get_experiment_template(&self) -> &::std::option::Option<crate::types::ExperimentTemplate> {
         &self.experiment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DeleteExperimentTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteExperimentTemplateOutput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput {
         crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput {
             experiment_template: self.experiment_template,
             _request_id: self._request_id,

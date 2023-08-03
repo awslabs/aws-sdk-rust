@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CustomDomainAssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,12 +72,8 @@ impl ::std::convert::From<&str> for CustomDomainAssociationStatus {
             "CREATING" => CustomDomainAssociationStatus::Creating,
             "DELETE_FAILED" => CustomDomainAssociationStatus::DeleteFailed,
             "DELETING" => CustomDomainAssociationStatus::Deleting,
-            "PENDING_CERTIFICATE_DNS_VALIDATION" => {
-                CustomDomainAssociationStatus::PendingCertificateDnsValidation
-            }
-            other => CustomDomainAssociationStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "PENDING_CERTIFICATE_DNS_VALIDATION" => CustomDomainAssociationStatus::PendingCertificateDnsValidation,
+            other => CustomDomainAssociationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -104,9 +94,7 @@ impl CustomDomainAssociationStatus {
             CustomDomainAssociationStatus::Creating => "CREATING",
             CustomDomainAssociationStatus::DeleteFailed => "DELETE_FAILED",
             CustomDomainAssociationStatus::Deleting => "DELETING",
-            CustomDomainAssociationStatus::PendingCertificateDnsValidation => {
-                "PENDING_CERTIFICATE_DNS_VALIDATION"
-            }
+            CustomDomainAssociationStatus::PendingCertificateDnsValidation => "PENDING_CERTIFICATE_DNS_VALIDATION",
             CustomDomainAssociationStatus::Unknown(value) => value.as_str(),
         }
     }

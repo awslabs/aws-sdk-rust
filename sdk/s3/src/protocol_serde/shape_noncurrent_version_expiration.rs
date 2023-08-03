@@ -50,14 +50,11 @@ pub fn ser_noncurrent_version_expiration(
     let mut scope = writer.finish();
     if input.noncurrent_days != 0 {
         let mut inner_writer = scope.start_el("NoncurrentDays").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     if input.newer_noncurrent_versions != 0 {
         let mut inner_writer = scope.start_el("NewerNoncurrentVersions").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.newer_noncurrent_versions).encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.newer_noncurrent_versions).encode());
     }
     scope.finish();
     Ok(())

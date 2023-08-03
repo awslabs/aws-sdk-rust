@@ -26,7 +26,7 @@ impl CreateEdgeDeploymentStageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentStageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder,
+    inner: crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder,
 }
 impl CreateEdgeDeploymentStageFluentBuilder {
     /// Creates a new `CreateEdgeDeploymentStage`.
@@ -37,7 +37,7 @@ impl CreateEdgeDeploymentStageFluentBuilder {
         }
     }
     /// Access the CreateEdgeDeploymentStage as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateEdgeDeploymentStageFluentBuilder {
             crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateEdgeDeploymentStageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateEdgeDeploymentStageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateEdgeDeploymentStageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateEdgeDeploymentStageFluentBuilder {
             crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_deployment_plan_name(input.into());
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
@@ -150,17 +133,12 @@ impl CreateEdgeDeploymentStageFluentBuilder {
         self
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn set_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
-    ) -> Self {
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>) -> Self {
         self.inner = self.inner.set_stages(input);
         self
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn get_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
         self.inner.get_stages()
     }
 }

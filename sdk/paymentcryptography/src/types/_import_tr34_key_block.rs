@@ -56,10 +56,7 @@ impl ::std::fmt::Debug for ImportTr34KeyBlock {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field(
-            "signing_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("import_token", &self.import_token);
         formatter.field("wrapped_key_block", &self.wrapped_key_block);
         formatter.field("key_block_format", &self.key_block_format);
@@ -78,8 +75,7 @@ impl ImportTr34KeyBlock {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ImportTr34KeyBlockBuilder {
-    pub(crate) certificate_authority_public_key_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) signing_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) import_token: ::std::option::Option<::std::string::String>,
     pub(crate) wrapped_key_block: ::std::option::Option<::std::string::String>,
@@ -88,41 +84,26 @@ pub struct ImportTr34KeyBlockBuilder {
 }
 impl ImportTr34KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
-    pub fn certificate_authority_public_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.certificate_authority_public_key_identifier =
-            ::std::option::Option::Some(input.into());
+    pub fn certificate_authority_public_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_authority_public_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
-    pub fn set_certificate_authority_public_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_public_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_public_key_identifier = input;
         self
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
-    pub fn get_certificate_authority_public_key_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_authority_public_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_public_key_identifier
     }
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 wrapped key block.</p>
-    pub fn signing_key_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 wrapped key block.</p>
-    pub fn set_signing_key_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate = input;
         self
     }
@@ -145,18 +126,12 @@ impl ImportTr34KeyBlockBuilder {
         &self.import_token
     }
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub fn wrapped_key_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapped_key_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapped_key_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub fn set_wrapped_key_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapped_key_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapped_key_block = input;
         self
     }
@@ -170,10 +145,7 @@ impl ImportTr34KeyBlockBuilder {
         self
     }
     /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
-    pub fn set_key_block_format(
-        mut self,
-        input: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
-    ) -> Self {
+    pub fn set_key_block_format(mut self, input: ::std::option::Option<crate::types::Tr34KeyBlockFormat>) -> Self {
         self.key_block_format = input;
         self
     }
@@ -198,8 +170,7 @@ impl ImportTr34KeyBlockBuilder {
     /// Consumes the builder and constructs a [`ImportTr34KeyBlock`](crate::types::ImportTr34KeyBlock).
     pub fn build(self) -> crate::types::ImportTr34KeyBlock {
         crate::types::ImportTr34KeyBlock {
-            certificate_authority_public_key_identifier: self
-                .certificate_authority_public_key_identifier,
+            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier,
             signing_key_certificate: self.signing_key_certificate,
             import_token: self.import_token,
             wrapped_key_block: self.wrapped_key_block,
@@ -215,10 +186,7 @@ impl ::std::fmt::Debug for ImportTr34KeyBlockBuilder {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field(
-            "signing_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("import_token", &self.import_token);
         formatter.field("wrapped_key_block", &self.wrapped_key_block);
         formatter.field("key_block_format", &self.key_block_format);

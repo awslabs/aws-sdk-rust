@@ -26,7 +26,7 @@ impl DescribePullThroughCacheRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePullThroughCacheRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder,
+    inner: crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder,
 }
 impl DescribePullThroughCacheRulesFluentBuilder {
     /// Creates a new `DescribePullThroughCacheRules`.
@@ -37,7 +37,7 @@ impl DescribePullThroughCacheRulesFluentBuilder {
         }
     }
     /// Access the DescribePullThroughCacheRules as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePullThroughCacheRulesFluentBuilder {
             crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePullThroughCacheRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePullThroughCacheRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePullThroughCacheRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribePullThroughCacheRulesFluentBuilder {
             crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_pull_through_cache_rules::paginator::DescribePullThroughCacheRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_pull_through_cache_rules::paginator::DescribePullThroughCacheRulesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_pull_through_cache_rules::paginator::DescribePullThroughCacheRulesPaginator {
         crate::operation::describe_pull_through_cache_rules::paginator::DescribePullThroughCacheRulesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
@@ -145,25 +134,17 @@ impl DescribePullThroughCacheRulesFluentBuilder {
     /// To override the contents of this collection use [`set_ecr_repository_prefixes`](Self::set_ecr_repository_prefixes).
     ///
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn ecr_repository_prefixes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecr_repository_prefixes(input.into());
         self
     }
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn set_ecr_repository_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ecr_repository_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ecr_repository_prefixes(input);
         self
     }
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn get_ecr_repository_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ecr_repository_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ecr_repository_prefixes()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>

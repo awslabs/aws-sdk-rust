@@ -26,7 +26,7 @@ impl ListEnabledProductsForImportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnabledProductsForImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportInputBuilder,
+    inner: crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportInputBuilder,
 }
 impl ListEnabledProductsForImportFluentBuilder {
     /// Creates a new `ListEnabledProductsForImport`.
@@ -37,7 +37,7 @@ impl ListEnabledProductsForImportFluentBuilder {
         }
     }
     /// Access the ListEnabledProductsForImport as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListEnabledProductsForImportFluentBuilder {
             crate::operation::list_enabled_products_for_import::ListEnabledProductsForImport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListEnabledProductsForImportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListEnabledProductsForImportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListEnabledProductsForImportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListEnabledProductsForImportFluentBuilder {
             crate::operation::list_enabled_products_for_import::ListEnabledProductsForImport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_enabled_products_for_import::paginator::ListEnabledProductsForImportPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_enabled_products_for_import::paginator::ListEnabledProductsForImportPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_enabled_products_for_import::paginator::ListEnabledProductsForImportPaginator {
         crate::operation::list_enabled_products_for_import::paginator::ListEnabledProductsForImportPaginator::new(self.handle, self.inner)
     }
     /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>

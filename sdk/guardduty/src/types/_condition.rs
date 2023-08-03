@@ -112,9 +112,7 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionBuilder {
     pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -144,10 +142,7 @@ impl ConditionBuilder {
     }
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_eq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eq = input;
         self
     }
@@ -170,10 +165,7 @@ impl ConditionBuilder {
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_neq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_neq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.neq = input;
         self
     }
@@ -262,10 +254,7 @@ impl ConditionBuilder {
         self
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_equals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.equals = input;
         self
     }
@@ -285,10 +274,7 @@ impl ConditionBuilder {
         self
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_not_equals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_equals = input;
         self
     }

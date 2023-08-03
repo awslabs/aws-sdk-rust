@@ -50,9 +50,7 @@ impl ListDevicesInput {
 
 /// A builder for [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -95,17 +93,12 @@ impl ListDevicesInputBuilder {
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn set_latest_heartbeat_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_heartbeat_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_heartbeat_after = input;
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn get_latest_heartbeat_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_heartbeat_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_heartbeat_after
     }
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
@@ -123,18 +116,12 @@ impl ListDevicesInputBuilder {
         &self.model_name
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -143,12 +130,7 @@ impl ListDevicesInputBuilder {
         &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_devices::ListDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

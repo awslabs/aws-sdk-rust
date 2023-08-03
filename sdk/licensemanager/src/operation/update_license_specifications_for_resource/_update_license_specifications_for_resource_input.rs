@@ -8,12 +8,10 @@ pub struct UpdateLicenseSpecificationsForResourceInput {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARNs of the license configurations to add.</p>
     #[doc(hidden)]
-    pub add_license_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub add_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
     /// <p>ARNs of the license configurations to remove.</p>
     #[doc(hidden)]
-    pub remove_license_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub remove_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
 }
 impl UpdateLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
@@ -21,36 +19,28 @@ impl UpdateLicenseSpecificationsForResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn add_license_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
+    pub fn add_license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
         self.add_license_specifications.as_deref()
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn remove_license_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
+    pub fn remove_license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
         self.remove_license_specifications.as_deref()
     }
 }
 impl UpdateLicenseSpecificationsForResourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceInput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput).
-    pub fn builder() -> crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceInputBuilder{
+    pub fn builder() -> crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceInputBuilder {
         crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLicenseSpecificationsForResourceInput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) add_license_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
-    pub(crate) remove_license_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub(crate) add_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub(crate) remove_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
 }
 impl UpdateLicenseSpecificationsForResourceInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
@@ -79,17 +69,12 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
         self
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn set_add_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
-    ) -> Self {
+    pub fn set_add_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>) -> Self {
         self.add_license_specifications = input;
         self
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn get_add_license_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+    pub fn get_add_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
         &self.add_license_specifications
     }
     /// Appends an item to `remove_license_specifications`.
@@ -97,40 +82,34 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
     /// To override the contents of this collection use [`set_remove_license_specifications`](Self::set_remove_license_specifications).
     ///
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn remove_license_specifications(
-        mut self,
-        input: crate::types::LicenseSpecification,
-    ) -> Self {
+    pub fn remove_license_specifications(mut self, input: crate::types::LicenseSpecification) -> Self {
         let mut v = self.remove_license_specifications.unwrap_or_default();
         v.push(input);
         self.remove_license_specifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn set_remove_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
-    ) -> Self {
+    pub fn set_remove_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>) -> Self {
         self.remove_license_specifications = input;
         self
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn get_remove_license_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+    pub fn get_remove_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
         &self.remove_license_specifications
     }
     /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceInput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                add_license_specifications: self.add_license_specifications
-                ,
-                remove_license_specifications: self.remove_license_specifications
-                ,
-            }
+                resource_arn: self.resource_arn,
+                add_license_specifications: self.add_license_specifications,
+                remove_license_specifications: self.remove_license_specifications,
+            },
         )
     }
 }

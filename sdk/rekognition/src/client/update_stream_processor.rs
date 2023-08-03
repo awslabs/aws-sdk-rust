@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`parameters_to_delete(Vec<StreamProcessorParameterToDelete>)`](crate::operation::update_stream_processor::builders::UpdateStreamProcessorFluentBuilder::parameters_to_delete) / [`set_parameters_to_delete(Option<Vec<StreamProcessorParameterToDelete>>)`](crate::operation::update_stream_processor::builders::UpdateStreamProcessorFluentBuilder::set_parameters_to_delete): <p> A list of parameters you want to delete from the stream processor. </p>
     /// - On success, responds with [`UpdateStreamProcessorOutput`](crate::operation::update_stream_processor::UpdateStreamProcessorOutput)
     /// - On failure, responds with [`SdkError<UpdateStreamProcessorError>`](crate::operation::update_stream_processor::UpdateStreamProcessorError)
-    pub fn update_stream_processor(
-        &self,
-    ) -> crate::operation::update_stream_processor::builders::UpdateStreamProcessorFluentBuilder
-    {
-        crate::operation::update_stream_processor::builders::UpdateStreamProcessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_stream_processor(&self) -> crate::operation::update_stream_processor::builders::UpdateStreamProcessorFluentBuilder {
+        crate::operation::update_stream_processor::builders::UpdateStreamProcessorFluentBuilder::new(self.handle.clone())
     }
 }

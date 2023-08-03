@@ -23,9 +23,7 @@ impl SearchExpression {
 
 /// A builder for [`SearchExpression`](crate::types::SearchExpression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchExpressionBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
@@ -42,10 +40,7 @@ impl SearchExpressionBuilder {
         self
     }
     /// <p>The search expression filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -55,8 +50,6 @@ impl SearchExpressionBuilder {
     }
     /// Consumes the builder and constructs a [`SearchExpression`](crate::types::SearchExpression).
     pub fn build(self) -> crate::types::SearchExpression {
-        crate::types::SearchExpression {
-            filters: self.filters,
-        }
+        crate::types::SearchExpression { filters: self.filters }
     }
 }

@@ -26,7 +26,7 @@ impl DeleteFirewallDomainListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallDomainListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListInputBuilder,
+    inner: crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListInputBuilder,
 }
 impl DeleteFirewallDomainListFluentBuilder {
     /// Creates a new `DeleteFirewallDomainList`.
@@ -37,7 +37,7 @@ impl DeleteFirewallDomainListFluentBuilder {
         }
     }
     /// Access the DeleteFirewallDomainList as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteFirewallDomainListFluentBuilder {
             crate::operation::delete_firewall_domain_list::DeleteFirewallDomainList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteFirewallDomainListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteFirewallDomainListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteFirewallDomainListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteFirewallDomainListFluentBuilder {
             crate::operation::delete_firewall_domain_list::DeleteFirewallDomainList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the domain list that you want to delete. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
     /// <p>The ID of the domain list that you want to delete. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_snapshots::ListSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshots::ListSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_snapshots();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSnapshotsFluentBuilder {
         }
     }
     /// Access the ListSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_snapshots::builders::ListSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_snapshots::builders::ListSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListSnapshotsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_snapshots::paginator::ListSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_snapshots::paginator::ListSnapshotsPaginator {
-        crate::operation::list_snapshots::paginator::ListSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_snapshots::paginator::ListSnapshotsPaginator {
+        crate::operation::list_snapshots::paginator::ListSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

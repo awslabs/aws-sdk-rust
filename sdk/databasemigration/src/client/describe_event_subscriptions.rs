@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`event_subscriptions_list(Option<Vec<EventSubscription>>)`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput::event_subscriptions_list): <p>A list of event subscriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError)
-    pub fn describe_event_subscriptions(&self) -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsFluentBuilder{
+    pub fn describe_event_subscriptions(&self) -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsFluentBuilder {
         crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

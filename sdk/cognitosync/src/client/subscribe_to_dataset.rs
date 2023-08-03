@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetFluentBuilder::set_device_id): <p>The unique ID generated for this device by Cognito.</p>
     /// - On success, responds with [`SubscribeToDatasetOutput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput)
     /// - On failure, responds with [`SdkError<SubscribeToDatasetError>`](crate::operation::subscribe_to_dataset::SubscribeToDatasetError)
-    pub fn subscribe_to_dataset(
-        &self,
-    ) -> crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetFluentBuilder {
-        crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn subscribe_to_dataset(&self) -> crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetFluentBuilder {
+        crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetFluentBuilder::new(self.handle.clone())
     }
 }

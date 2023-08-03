@@ -23,9 +23,7 @@ impl Query {
 
 /// A builder for [`Query`](crate::types::Query).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryBuilder {
     pub(crate) selectors: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>,
 }
@@ -42,10 +40,7 @@ impl QueryBuilder {
         self
     }
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    pub fn set_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>,
-    ) -> Self {
+    pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>) -> Self {
         self.selectors = input;
         self
     }
@@ -55,8 +50,6 @@ impl QueryBuilder {
     }
     /// Consumes the builder and constructs a [`Query`](crate::types::Query).
     pub fn build(self) -> crate::types::Query {
-        crate::types::Query {
-            selectors: self.selectors,
-        }
+        crate::types::Query { selectors: self.selectors }
     }
 }

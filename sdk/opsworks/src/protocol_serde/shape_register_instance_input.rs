@@ -24,10 +24,7 @@ pub fn ser_register_instance_input(
     if let Some(var_7) = &input.instance_identity {
         #[allow(unused_mut)]
         let mut object_8 = object.key("InstanceIdentity").start_object();
-        crate::protocol_serde::shape_instance_identity::ser_instance_identity(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_instance_identity::ser_instance_identity(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

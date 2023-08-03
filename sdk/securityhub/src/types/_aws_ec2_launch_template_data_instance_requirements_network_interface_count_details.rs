@@ -23,16 +23,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder {
     pub(crate) max: ::std::option::Option<i32>,
     pub(crate) min: ::std::option::Option<i32>,
@@ -67,10 +65,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
         &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails
-    {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
             max: self.max.unwrap_or_default(),
             min: self.min.unwrap_or_default(),

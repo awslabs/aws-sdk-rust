@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutputBuilder {
     pub(crate) account_limits: ::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeAccountLimitsOutputBuilder {
         self
     }
     /// <p>An array of AccountLimit objects that show the current spend limits.</p>
-    pub fn set_account_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>>,
-    ) -> Self {
+    pub fn set_account_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>>) -> Self {
         self.account_limits = input;
         self
     }
     /// <p>An array of AccountLimit objects that show the current spend limits.</p>
-    pub fn get_account_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>> {
+    pub fn get_account_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>> {
         &self.account_limits
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

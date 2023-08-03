@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for UpdatePhoneNumberInput {
 }
 impl UpdatePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
         crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder::default()
     }
 }
@@ -54,18 +53,12 @@ pub struct UpdatePhoneNumberInputBuilder {
 }
 impl UpdatePhoneNumberInputBuilder {
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number ID.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -79,10 +72,7 @@ impl UpdatePhoneNumberInputBuilder {
         self
     }
     /// <p>The product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
         self.product_type = input;
         self
     }
@@ -107,17 +97,12 @@ impl UpdatePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_phone_number::UpdatePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_phone_number::UpdatePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-                product_type: self.product_type,
-                calling_name: self.calling_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_phone_number::UpdatePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_phone_number::UpdatePhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+            product_type: self.product_type,
+            calling_name: self.calling_name,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdatePhoneNumberInputBuilder {

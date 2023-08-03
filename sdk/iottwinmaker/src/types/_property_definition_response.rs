@@ -33,9 +33,7 @@ pub struct PropertyDefinitionResponse {
     pub default_value: ::std::option::Option<crate::types::DataValue>,
     /// <p>A mapping that specifies configuration information about the property.</p>
     #[doc(hidden)]
-    pub configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A friendly name for the property.</p>
     #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
@@ -78,11 +76,7 @@ impl PropertyDefinitionResponse {
         self.default_value.as_ref()
     }
     /// <p>A mapping that specifies configuration information about the property.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.configuration.as_ref()
     }
     /// <p>A friendly name for the property.</p>
@@ -99,9 +93,7 @@ impl PropertyDefinitionResponse {
 
 /// A builder for [`PropertyDefinitionResponse`](crate::types::PropertyDefinitionResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyDefinitionResponseBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::DataType>,
     pub(crate) is_time_series: ::std::option::Option<bool>,
@@ -112,9 +104,7 @@ pub struct PropertyDefinitionResponseBuilder {
     pub(crate) is_final: ::std::option::Option<bool>,
     pub(crate) is_inherited: ::std::option::Option<bool>,
     pub(crate) default_value: ::std::option::Option<crate::types::DataValue>,
-    pub(crate) configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyDefinitionResponseBuilder {
@@ -236,10 +226,7 @@ impl PropertyDefinitionResponseBuilder {
         self
     }
     /// <p>An object that contains the default value.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DataValue>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
         self.default_value = input;
         self
     }
@@ -252,11 +239,7 @@ impl PropertyDefinitionResponseBuilder {
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
     ///
     /// <p>A mapping that specifies configuration information about the property.</p>
-    pub fn configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.configuration = ::std::option::Option::Some(hash_map);
@@ -265,19 +248,13 @@ impl PropertyDefinitionResponseBuilder {
     /// <p>A mapping that specifies configuration information about the property.</p>
     pub fn set_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.configuration = input;
         self
     }
     /// <p>A mapping that specifies configuration information about the property.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.configuration
     }
     /// <p>A friendly name for the property.</p>

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLongTermPricingOutput {
 }
 impl UpdateLongTermPricingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLongTermPricingOutput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput).
-    pub fn builder(
-    ) -> crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingOutputBuilder {
         crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLongTermPricingOutput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLongTermPricingOutputBuilder {
     _request_id: Option<String>,
 }

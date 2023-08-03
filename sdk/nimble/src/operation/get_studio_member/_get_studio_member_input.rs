@@ -29,9 +29,7 @@ impl GetStudioMemberInput {
 
 /// A builder for [`GetStudioMemberInput`](crate::operation::get_studio_member::GetStudioMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioMemberInputBuilder {
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetStudioMemberInputBuilder {
     /// Consumes the builder and constructs a [`GetStudioMemberInput`](crate::operation::get_studio_member::GetStudioMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_studio_member::GetStudioMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_studio_member::GetStudioMemberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_studio_member::GetStudioMemberInput {
             principal_id: self.principal_id,
             studio_id: self.studio_id,

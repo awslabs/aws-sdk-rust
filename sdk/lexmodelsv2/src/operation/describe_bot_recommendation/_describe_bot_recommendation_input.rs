@@ -36,16 +36,14 @@ impl DescribeBotRecommendationInput {
 }
 impl DescribeBotRecommendationInput {
     /// Creates a new builder-style object to manufacture [`DescribeBotRecommendationInput`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput).
-    pub fn builder() -> crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder{
+    pub fn builder() -> crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder {
         crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotRecommendationInput`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotRecommendationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl DescribeBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl DescribeBotRecommendationInputBuilder {
         crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            bot_recommendation_id: self.bot_recommendation_id,
+        })
     }
 }

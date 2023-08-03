@@ -10,10 +10,7 @@ impl DeleteArchiveRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_archive_rule::DeleteArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_archive_rule::DeleteArchiveRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_archive_rule::DeleteArchiveRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_archive_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteArchiveRuleFluentBuilder {
         }
     }
     /// Access the DeleteArchiveRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_archive_rule::builders::DeleteArchiveRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_archive_rule::builders::DeleteArchiveRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteArchiveRuleFluentBuilder {
             crate::operation::delete_archive_rule::DeleteArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_archive_rule::DeleteArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_archive_rule::DeleteArchiveRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteArchiveRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_archive_rule::DeleteArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_archive_rule::DeleteArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_archive_rule::DeleteArchiveRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteArchiveRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_archive_rule::DeleteArchiveRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_archive_rule::DeleteArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_archive_rule::DeleteArchiveRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteArchiveRuleFluentBuilder {
             crate::operation::delete_archive_rule::DeleteArchiveRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_archive_rule::DeleteArchiveRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_archive_rule::DeleteArchiveRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analyzer_name(input.into());
         self
     }
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }

@@ -22,17 +22,14 @@ impl ListAcceleratorsInput {
 }
 impl ListAcceleratorsInput {
     /// Creates a new builder-style object to manufacture [`ListAcceleratorsInput`](crate::operation::list_accelerators::ListAcceleratorsInput).
-    pub fn builder() -> crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder {
         crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAcceleratorsInput`](crate::operation::list_accelerators::ListAcceleratorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAcceleratorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +66,7 @@ impl ListAcceleratorsInputBuilder {
     /// Consumes the builder and constructs a [`ListAcceleratorsInput`](crate::operation::list_accelerators::ListAcceleratorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_accelerators::ListAcceleratorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_accelerators::ListAcceleratorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accelerators::ListAcceleratorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`vpce_configurations(Option<Vec<VpceConfiguration>>)`](crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput::vpce_configurations): <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListVPCEConfigurationsError>`](crate::operation::list_vpce_configurations::ListVPCEConfigurationsError)
-    pub fn list_vpce_configurations(
-        &self,
-    ) -> crate::operation::list_vpce_configurations::builders::ListVPCEConfigurationsFluentBuilder
-    {
+    pub fn list_vpce_configurations(&self) -> crate::operation::list_vpce_configurations::builders::ListVPCEConfigurationsFluentBuilder {
         crate::operation::list_vpce_configurations::builders::ListVPCEConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

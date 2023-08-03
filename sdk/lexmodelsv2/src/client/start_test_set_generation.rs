@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::start_test_set_generation::StartTestSetGenerationOutput::role_arn): <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     ///   - [`test_set_tags(Option<HashMap<String, String>>)`](crate::operation::start_test_set_generation::StartTestSetGenerationOutput::test_set_tags): <p>A list of tags that was used for the test set that is being generated.</p>
     /// - On failure, responds with [`SdkError<StartTestSetGenerationError>`](crate::operation::start_test_set_generation::StartTestSetGenerationError)
-    pub fn start_test_set_generation(
-        &self,
-    ) -> crate::operation::start_test_set_generation::builders::StartTestSetGenerationFluentBuilder
-    {
+    pub fn start_test_set_generation(&self) -> crate::operation::start_test_set_generation::builders::StartTestSetGenerationFluentBuilder {
         crate::operation::start_test_set_generation::builders::StartTestSetGenerationFluentBuilder::new(self.handle.clone())
     }
 }

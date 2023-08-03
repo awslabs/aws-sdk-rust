@@ -9,7 +9,10 @@ pub fn ser_virtual_gateway_listener_tls(
     if let Some(var_2) = &input.validation {
         #[allow(unused_mut)]
         let mut object_3 = object.key("validation").start_object();
-        crate::protocol_serde::shape_virtual_gateway_listener_tls_validation_context::ser_virtual_gateway_listener_tls_validation_context(&mut object_3, var_2)?;
+        crate::protocol_serde::shape_virtual_gateway_listener_tls_validation_context::ser_virtual_gateway_listener_tls_validation_context(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     if let Some(var_4) = &input.certificate {
@@ -23,17 +26,9 @@ pub fn ser_virtual_gateway_listener_tls(
 
 pub(crate) fn de_virtual_gateway_listener_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VirtualGatewayListenerTls>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VirtualGatewayListenerTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -47,17 +42,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "mode" => {
                                 builder = builder.set_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::VirtualGatewayListenerTlsMode::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::VirtualGatewayListenerTlsMode::from(u.as_ref())))
+                                        .transpose()?,
                                 );
                             }
                             "validation" => {
@@ -74,20 +61,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

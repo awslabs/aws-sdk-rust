@@ -9,43 +9,38 @@ pub fn de_continue_update_rollback_http_error(
     crate::operation::continue_update_rollback::ContinueUpdateRollbackError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::continue_update_rollback::ContinueUpdateRollbackError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::continue_update_rollback::ContinueUpdateRollbackError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::continue_update_rollback::ContinueUpdateRollbackError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::continue_update_rollback::ContinueUpdateRollbackError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "TokenAlreadyExistsException" => crate::operation::continue_update_rollback::ContinueUpdateRollbackError::TokenAlreadyExistsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TokenAlreadyExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_token_already_exists_exception::de_token_already_exists_exception_xml_err(_response_body, output).map_err(crate::operation::continue_update_rollback::ContinueUpdateRollbackError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TokenAlreadyExistsExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_token_already_exists_exception::de_token_already_exists_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::continue_update_rollback::ContinueUpdateRollbackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::continue_update_rollback::ContinueUpdateRollbackError::generic(generic)
+        _ => crate::operation::continue_update_rollback::ContinueUpdateRollbackError::generic(generic),
     })
 }
 
@@ -61,9 +56,7 @@ pub fn de_continue_update_rollback_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

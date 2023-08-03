@@ -14,9 +14,7 @@ pub struct UpdateWorkflowInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The input parameters required to update a migration workflow.</p>
     #[doc(hidden)]
-    pub input_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    >,
+    pub input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
     #[doc(hidden)]
     pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -35,11 +33,7 @@ impl UpdateWorkflowInput {
         self.description.as_deref()
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn input_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    > {
+    pub fn input_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
@@ -72,9 +66,7 @@ pub struct UpdateWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) input_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    >,
+    pub(crate) input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     pub(crate) step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateWorkflowInputBuilder {
@@ -125,11 +117,7 @@ impl UpdateWorkflowInputBuilder {
     /// To override the contents of this collection use [`set_input_parameters`](Self::set_input_parameters).
     ///
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn input_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::StepInput,
-    ) -> Self {
+    pub fn input_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::StepInput) -> Self {
         let mut hash_map = self.input_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.input_parameters = ::std::option::Option::Some(hash_map);
@@ -138,19 +126,13 @@ impl UpdateWorkflowInputBuilder {
     /// <p>The input parameters required to update a migration workflow.</p>
     pub fn set_input_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     ) -> Self {
         self.input_parameters = input;
         self
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn get_input_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    > {
+    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
         &self.input_parameters
     }
     /// Appends an item to `step_targets`.
@@ -165,26 +147,18 @@ impl UpdateWorkflowInputBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.step_targets = input;
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.step_targets
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workflow::UpdateWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
             id: self.id,
             name: self.name,

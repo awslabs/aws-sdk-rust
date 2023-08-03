@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StatefulRuleProtocol {
     #[allow(missing_docs)] // documentation missing in model
@@ -127,9 +121,7 @@ impl ::std::convert::From<&str> for StatefulRuleProtocol {
             "TFTP" => StatefulRuleProtocol::Tftp,
             "TLS" => StatefulRuleProtocol::Tls,
             "UDP" => StatefulRuleProtocol::Udp,
-            other => StatefulRuleProtocol::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StatefulRuleProtocol::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -169,8 +161,8 @@ impl StatefulRuleProtocol {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN",
-            "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS", "UDP",
+            "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN", "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS",
+            "UDP",
         ]
     }
 }

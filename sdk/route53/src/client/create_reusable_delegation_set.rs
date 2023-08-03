@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`delegation_set(Option<DelegationSet>)`](crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput::delegation_set): <p>A complex type that contains name server information.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput::location): <p>The unique URL representing the new reusable delegation set.</p>
     /// - On failure, responds with [`SdkError<CreateReusableDelegationSetError>`](crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError)
-    pub fn create_reusable_delegation_set(&self) -> crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetFluentBuilder{
+    pub fn create_reusable_delegation_set(
+        &self,
+    ) -> crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetFluentBuilder {
         crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetFluentBuilder::new(self.handle.clone())
     }
 }

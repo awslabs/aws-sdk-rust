@@ -26,7 +26,7 @@ impl DescribeRefreshSchemasStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRefreshSchemasStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder,
+    inner: crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder,
 }
 impl DescribeRefreshSchemasStatusFluentBuilder {
     /// Creates a new `DescribeRefreshSchemasStatus`.
@@ -37,7 +37,7 @@ impl DescribeRefreshSchemasStatusFluentBuilder {
         }
     }
     /// Access the DescribeRefreshSchemasStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRefreshSchemasStatusFluentBuilder {
             crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRefreshSchemasStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRefreshSchemasStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRefreshSchemasStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeRefreshSchemasStatusFluentBuilder {
             crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError>,
     > {
         self.customize_middleware().await
     }

@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`statistics(Option<CalculationStatistics>)`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput::statistics): <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
     ///   - [`result(Option<CalculationResult>)`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput::result): <p>Contains result information. This field is populated only if the calculation is completed.</p>
     /// - On failure, responds with [`SdkError<GetCalculationExecutionError>`](crate::operation::get_calculation_execution::GetCalculationExecutionError)
-    pub fn get_calculation_execution(
-        &self,
-    ) -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder
-    {
+    pub fn get_calculation_execution(&self) -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder {
         crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

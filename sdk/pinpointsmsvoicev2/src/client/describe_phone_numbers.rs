@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`phone_numbers(Option<Vec<PhoneNumberInformation>>)`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput::phone_numbers): <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribePhoneNumbersError>`](crate::operation::describe_phone_numbers::DescribePhoneNumbersError)
-    pub fn describe_phone_numbers(
-        &self,
-    ) -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder {
-        crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_phone_numbers(&self) -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder {
+        crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::new(self.handle.clone())
     }
 }

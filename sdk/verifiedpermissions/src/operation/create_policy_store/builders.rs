@@ -10,10 +10,7 @@ impl CreatePolicyStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_policy_store::CreatePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_store::CreatePolicyStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_store::CreatePolicyStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_policy_store();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreatePolicyStoreFluentBuilder {
         }
     }
     /// Access the CreatePolicyStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreatePolicyStoreFluentBuilder {
             crate::operation::create_policy_store::CreatePolicyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_store::CreatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_store::CreatePolicyStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreatePolicyStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreatePolicyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_policy_store::CreatePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_store::CreatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_store::CreatePolicyStoreError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreatePolicyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_policy_store::CreatePolicyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_store::CreatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_store::CreatePolicyStoreError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreatePolicyStoreFluentBuilder {
             crate::operation::create_policy_store::CreatePolicyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_store::CreatePolicyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_store::CreatePolicyStoreError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl CreatePolicyStoreFluentBuilder {
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
-    pub fn set_validation_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationSettings>,
-    ) -> Self {
+    pub fn set_validation_settings(mut self, input: ::std::option::Option<crate::types::ValidationSettings>) -> Self {
         self.inner = self.inner.set_validation_settings(input);
         self
     }
@@ -167,9 +148,7 @@ impl CreatePolicyStoreFluentBuilder {
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
-    pub fn get_validation_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+    pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         self.inner.get_validation_settings()
     }
 }

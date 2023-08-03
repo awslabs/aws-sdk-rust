@@ -16,18 +16,14 @@ impl BatchGetDeploymentsInput {
 }
 impl BatchGetDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder {
-        crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder {
+        crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentsInputBuilder {
     pub(crate) deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,40 +33,28 @@ impl BatchGetDeploymentsInputBuilder {
     /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
     ///
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub fn deployment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_ids.unwrap_or_default();
         v.push(input.into());
         self.deployment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub fn set_deployment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployment_ids = input;
         self
     }
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub fn get_deployment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployment_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_deployments::BatchGetDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_deployments::BatchGetDeploymentsInput {
-                deployment_ids: self.deployment_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_deployments::BatchGetDeploymentsInput {
+            deployment_ids: self.deployment_ids,
+        })
     }
 }

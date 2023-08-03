@@ -9,9 +9,7 @@ pub struct OpsEntityItem {
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>The details of an OpsData summary.</p>
     #[doc(hidden)]
-    pub content: ::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
 }
 impl OpsEntityItem {
     /// <p>The time the OpsData was captured.</p>
@@ -19,11 +17,7 @@ impl OpsEntityItem {
         self.capture_time.as_deref()
     }
     /// <p>The details of an OpsData summary.</p>
-    pub fn content(
-        &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<::std::string::String, ::std::string::String>],
-    > {
+    pub fn content(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
         self.content.as_deref()
     }
 }
@@ -36,14 +30,10 @@ impl OpsEntityItem {
 
 /// A builder for [`OpsEntityItem`](crate::types::OpsEntityItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsEntityItemBuilder {
     pub(crate) capture_time: ::std::option::Option<::std::string::String>,
-    pub(crate) content: ::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
 }
 impl OpsEntityItemBuilder {
     /// <p>The time the OpsData was captured.</p>
@@ -65,10 +55,7 @@ impl OpsEntityItemBuilder {
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
     /// <p>The details of an OpsData summary.</p>
-    pub fn content(
-        mut self,
-        input: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn content(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
         self.content = ::std::option::Option::Some(v);
@@ -77,21 +64,13 @@ impl OpsEntityItemBuilder {
     /// <p>The details of an OpsData summary.</p>
     pub fn set_content(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     ) -> Self {
         self.content = input;
         self
     }
     /// <p>The details of an OpsData summary.</p>
-    pub fn get_content(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
         &self.content
     }
     /// Consumes the builder and constructs a [`OpsEntityItem`](crate::types::OpsEntityItem).

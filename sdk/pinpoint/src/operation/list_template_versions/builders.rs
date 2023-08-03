@@ -37,9 +37,7 @@ impl ListTemplateVersionsFluentBuilder {
         }
     }
     /// Access the ListTemplateVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_template_versions::builders::ListTemplateVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_template_versions::builders::ListTemplateVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListTemplateVersionsFluentBuilder {
             crate::operation::list_template_versions::ListTemplateVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_versions::ListTemplateVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_versions::ListTemplateVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListTemplateVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListTemplateVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_versions::ListTemplateVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_versions::ListTemplateVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_versions::ListTemplateVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListTemplateVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_versions::ListTemplateVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_versions::ListTemplateVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_versions::ListTemplateVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListTemplateVersionsFluentBuilder {
             crate::operation::list_template_versions::ListTemplateVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_versions::ListTemplateVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_versions::ListTemplateVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl ListTemplateVersionsFluentBuilder {
         self.inner.get_page_size()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -171,18 +152,12 @@ impl ListTemplateVersionsFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    pub fn template_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_type(input.into());
         self
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }

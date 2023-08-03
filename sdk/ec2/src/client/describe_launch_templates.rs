@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`launch_templates(Option<Vec<LaunchTemplate>>)`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput::launch_templates): <p>Information about the launch templates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLaunchTemplatesError>`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesError)
-    pub fn describe_launch_templates(
-        &self,
-    ) -> crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesFluentBuilder
-    {
+    pub fn describe_launch_templates(&self) -> crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesFluentBuilder {
         crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

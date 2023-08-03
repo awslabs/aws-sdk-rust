@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeConnectClientAddInsOutput {
 }
 impl DescribeConnectClientAddInsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsOutput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput).
-    pub fn builder() -> crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsOutputBuilder {
         crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectClientAddInsOutput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectClientAddInsOutputBuilder {
     pub(crate) add_ins: ::std::option::Option<::std::vec::Vec<crate::types::ConnectClientAddIn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeConnectClientAddInsOutputBuilder {
         self
     }
     /// <p>Information about client add-ins.</p>
-    pub fn set_add_ins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectClientAddIn>>,
-    ) -> Self {
+    pub fn set_add_ins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectClientAddIn>>) -> Self {
         self.add_ins = input;
         self
     }
     /// <p>Information about client add-ins.</p>
-    pub fn get_add_ins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectClientAddIn>> {
+    pub fn get_add_ins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectClientAddIn>> {
         &self.add_ins
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -93,9 +86,7 @@ impl DescribeConnectClientAddInsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConnectClientAddInsOutput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput {
+    pub fn build(self) -> crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput {
         crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput {
             add_ins: self.add_ins,
             next_token: self.next_token,

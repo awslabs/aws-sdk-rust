@@ -35,9 +35,7 @@ impl ListRoutesOutput {
 
 /// A builder for [`ListRoutesOutput`](crate::operation::list_routes::ListRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::RouteRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListRoutesOutputBuilder {
         self
     }
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteRef>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteRef>>) -> Self {
         self.routes = input;
         self
     }

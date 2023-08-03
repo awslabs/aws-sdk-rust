@@ -24,10 +24,7 @@ pub fn ser_create_function_input(
     if let Some(var_7) = &input.dead_letter_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("DeadLetterConfig").start_object();
-        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.description {
@@ -42,10 +39,7 @@ pub fn ser_create_function_input(
     if let Some(var_12) = &input.ephemeral_storage {
         #[allow(unused_mut)]
         let mut object_13 = object.key("EphemeralStorage").start_object();
-        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.file_system_configs {
@@ -54,10 +48,7 @@ pub fn ser_create_function_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_file_system_config::ser_file_system_config(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_file_system_config::ser_file_system_config(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }

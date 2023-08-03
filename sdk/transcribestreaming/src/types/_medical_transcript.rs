@@ -24,9 +24,7 @@ impl MedicalTranscript {
 
 /// A builder for [`MedicalTranscript`](crate::types::MedicalTranscript).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalTranscriptBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>>,
 }
@@ -43,23 +41,16 @@ impl MedicalTranscriptBuilder {
         self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>> {
         &self.results
     }
     /// Consumes the builder and constructs a [`MedicalTranscript`](crate::types::MedicalTranscript).
     pub fn build(self) -> crate::types::MedicalTranscript {
-        crate::types::MedicalTranscript {
-            results: self.results,
-        }
+        crate::types::MedicalTranscript { results: self.results }
     }
 }

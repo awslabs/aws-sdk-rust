@@ -51,9 +51,7 @@ impl SelfManagedActiveDirectoryAttributes {
 
 /// A builder for [`SelfManagedActiveDirectoryAttributes`](crate::types::SelfManagedActiveDirectoryAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfManagedActiveDirectoryAttributesBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
@@ -77,47 +75,31 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
         &self.domain_name
     }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn organizational_unit_distinguished_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_distinguished_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn set_organizational_unit_distinguished_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_distinguished_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
     }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn get_organizational_unit_distinguished_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organizational_unit_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organizational_unit_distinguished_name
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
-    pub fn file_system_administrators_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_administrators_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_administrators_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
-    pub fn set_file_system_administrators_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_administrators_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_administrators_group = input;
         self
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
-    pub fn get_file_system_administrators_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_file_system_administrators_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_administrators_group
     }
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
@@ -146,10 +128,7 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
         self
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub fn set_dns_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ips = input;
         self
     }

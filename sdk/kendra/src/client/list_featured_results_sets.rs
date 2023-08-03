@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`featured_results_set_summary_items(Option<Vec<FeaturedResultsSetSummary>>)`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput::featured_results_set_summary_items): <p>An array of summary information for one or more featured results sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns a pagination token in the response.</p>
     /// - On failure, responds with [`SdkError<ListFeaturedResultsSetsError>`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError)
-    pub fn list_featured_results_sets(
-        &self,
-    ) -> crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsFluentBuilder
-    {
+    pub fn list_featured_results_sets(&self) -> crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsFluentBuilder {
         crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsFluentBuilder::new(self.handle.clone())
     }
 }

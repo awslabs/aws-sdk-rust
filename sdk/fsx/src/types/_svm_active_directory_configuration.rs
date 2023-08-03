@@ -9,8 +9,7 @@ pub struct SvmActiveDirectoryConfiguration {
     pub net_bios_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     #[doc(hidden)]
-    pub self_managed_active_directory_configuration:
-        ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
+    pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
 }
 impl SvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
@@ -18,9 +17,7 @@ impl SvmActiveDirectoryConfiguration {
         self.net_bios_name.as_deref()
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn self_managed_active_directory_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryAttributes> {
+    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryAttributes> {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
@@ -33,28 +30,19 @@ impl SvmActiveDirectoryConfiguration {
 
 /// A builder for [`SvmActiveDirectoryConfiguration`](crate::types::SvmActiveDirectoryConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SvmActiveDirectoryConfigurationBuilder {
     pub(crate) net_bios_name: ::std::option::Option<::std::string::String>,
-    pub(crate) self_managed_active_directory_configuration:
-        ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
+    pub(crate) self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
 }
 impl SvmActiveDirectoryConfigurationBuilder {
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
-    pub fn net_bios_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn net_bios_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.net_bios_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
-    pub fn set_net_bios_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_net_bios_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.net_bios_name = input;
         self
     }
@@ -63,10 +51,7 @@ impl SvmActiveDirectoryConfigurationBuilder {
         &self.net_bios_name
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn self_managed_active_directory_configuration(
-        mut self,
-        input: crate::types::SelfManagedActiveDirectoryAttributes,
-    ) -> Self {
+    pub fn self_managed_active_directory_configuration(mut self, input: crate::types::SelfManagedActiveDirectoryAttributes) -> Self {
         self.self_managed_active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -79,17 +64,14 @@ impl SvmActiveDirectoryConfigurationBuilder {
         self
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn get_self_managed_active_directory_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes> {
+    pub fn get_self_managed_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes> {
         &self.self_managed_active_directory_configuration
     }
     /// Consumes the builder and constructs a [`SvmActiveDirectoryConfiguration`](crate::types::SvmActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::SvmActiveDirectoryConfiguration {
         crate::types::SvmActiveDirectoryConfiguration {
             net_bios_name: self.net_bios_name,
-            self_managed_active_directory_configuration: self
-                .self_managed_active_directory_configuration,
+            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration,
         }
     }
 }

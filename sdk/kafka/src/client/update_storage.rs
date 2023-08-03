@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::update_storage::UpdateStorageOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::update_storage::UpdateStorageOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<UpdateStorageError>`](crate::operation::update_storage::UpdateStorageError)
-    pub fn update_storage(
-        &self,
-    ) -> crate::operation::update_storage::builders::UpdateStorageFluentBuilder {
-        crate::operation::update_storage::builders::UpdateStorageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_storage(&self) -> crate::operation::update_storage::builders::UpdateStorageFluentBuilder {
+        crate::operation::update_storage::builders::UpdateStorageFluentBuilder::new(self.handle.clone())
     }
 }

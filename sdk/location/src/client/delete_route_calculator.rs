@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`calculator_name(impl ::std::convert::Into<String>)`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::calculator_name) / [`set_calculator_name(Option<String>)`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::set_calculator_name): <p>The name of the route calculator resource to be deleted.</p>
     /// - On success, responds with [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteCalculatorError>`](crate::operation::delete_route_calculator::DeleteRouteCalculatorError)
-    pub fn delete_route_calculator(
-        &self,
-    ) -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder
-    {
-        crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_route_calculator(&self) -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder {
+        crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::new(self.handle.clone())
     }
 }

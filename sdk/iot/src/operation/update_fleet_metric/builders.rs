@@ -10,10 +10,7 @@ impl UpdateFleetMetricInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_metric::UpdateFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metric::UpdateFleetMetricError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metric::UpdateFleetMetricError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_fleet_metric();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateFleetMetricFluentBuilder {
         }
     }
     /// Access the UpdateFleetMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_fleet_metric::builders::UpdateFleetMetricInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_fleet_metric::builders::UpdateFleetMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateFleetMetricFluentBuilder {
             crate::operation::update_fleet_metric::UpdateFleetMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metric::UpdateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metric::UpdateFleetMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateFleetMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateFleetMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_metric::UpdateFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metric::UpdateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metric::UpdateFleetMetricError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateFleetMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_metric::UpdateFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metric::UpdateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metric::UpdateFleetMetricError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateFleetMetricFluentBuilder {
             crate::operation::update_fleet_metric::UpdateFleetMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metric::UpdateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metric::UpdateFleetMetricError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +141,7 @@ impl UpdateFleetMetricFluentBuilder {
         self
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.inner = self.inner.set_aggregation_type(input);
         self
     }
@@ -183,18 +164,12 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner.get_period()
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aggregation_field(input.into());
         self
     }
     /// <p>The field to aggregate.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
@@ -217,18 +192,12 @@ impl UpdateFleetMetricFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The version of the query.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_version(input.into());
         self
     }
     /// <p>The version of the query.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
     }

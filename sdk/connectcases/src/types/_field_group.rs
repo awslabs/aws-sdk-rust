@@ -30,9 +30,7 @@ impl FieldGroup {
 
 /// A builder for [`FieldGroup`](crate::types::FieldGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
@@ -64,10 +62,7 @@ impl FieldGroupBuilder {
         self
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>) -> Self {
         self.fields = input;
         self
     }

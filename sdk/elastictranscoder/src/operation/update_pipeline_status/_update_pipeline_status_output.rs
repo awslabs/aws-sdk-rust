@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdatePipelineStatusOutput {
 }
 impl UpdatePipelineStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusOutput`](crate::operation::update_pipeline_status::UpdatePipelineStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_pipeline_status::builders::UpdatePipelineStatusOutputBuilder {
+    pub fn builder() -> crate::operation::update_pipeline_status::builders::UpdatePipelineStatusOutputBuilder {
         crate::operation::update_pipeline_status::builders::UpdatePipelineStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePipelineStatusOutput`](crate::operation::update_pipeline_status::UpdatePipelineStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineStatusOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,

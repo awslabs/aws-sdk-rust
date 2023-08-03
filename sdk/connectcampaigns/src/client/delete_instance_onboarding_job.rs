@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`connect_instance_id(impl ::std::convert::Into<String>)`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::set_connect_instance_id): Amazon Connect Instance Id
     /// - On success, responds with [`DeleteInstanceOnboardingJobOutput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput)
     /// - On failure, responds with [`SdkError<DeleteInstanceOnboardingJobError>`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError)
-    pub fn delete_instance_onboarding_job(&self) -> crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder{
+    pub fn delete_instance_onboarding_job(
+        &self,
+    ) -> crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder {
         crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::new(self.handle.clone())
     }
 }

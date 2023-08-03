@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<DeleteThingShadowError>`](crate::operation::delete_thing_shadow::DeleteThingShadowError)
-    pub fn delete_thing_shadow(
-        &self,
-    ) -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder {
-        crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_thing_shadow(&self) -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder {
+        crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::new(self.handle.clone())
     }
 }

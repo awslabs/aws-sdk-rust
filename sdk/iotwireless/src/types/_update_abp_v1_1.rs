@@ -23,9 +23,7 @@ impl UpdateAbpV11 {
 
 /// A builder for [`UpdateAbpV11`](crate::types::UpdateAbpV11).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAbpV11Builder {
     pub(crate) f_cnt_start: ::std::option::Option<i32>,
 }

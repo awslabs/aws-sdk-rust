@@ -6,8 +6,7 @@
 pub struct PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.</p>
     #[doc(hidden)]
-    pub avail_matching_criteria:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
+    pub avail_matching_criteria: ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
     #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -17,9 +16,7 @@ pub struct PrefetchConsumption {
 }
 impl PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.</p>
-    pub fn avail_matching_criteria(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AvailMatchingCriteria]> {
+    pub fn avail_matching_criteria(&self) -> ::std::option::Option<&[crate::types::AvailMatchingCriteria]> {
         self.avail_matching_criteria.as_deref()
     }
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
@@ -40,12 +37,9 @@ impl PrefetchConsumption {
 
 /// A builder for [`PrefetchConsumption`](crate::types::PrefetchConsumption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefetchConsumptionBuilder {
-    pub(crate) avail_matching_criteria:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
+    pub(crate) avail_matching_criteria: ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -62,17 +56,12 @@ impl PrefetchConsumptionBuilder {
         self
     }
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.</p>
-    pub fn set_avail_matching_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
-    ) -> Self {
+    pub fn set_avail_matching_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>) -> Self {
         self.avail_matching_criteria = input;
         self
     }
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.</p>
-    pub fn get_avail_matching_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>> {
+    pub fn get_avail_matching_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>> {
         &self.avail_matching_criteria
     }
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
@@ -81,10 +70,7 @@ impl PrefetchConsumptionBuilder {
         self
     }
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -98,10 +84,7 @@ impl PrefetchConsumptionBuilder {
         self
     }
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }

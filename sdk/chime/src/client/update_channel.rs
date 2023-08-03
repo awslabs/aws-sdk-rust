@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::operation::update_channel::UpdateChannelError)
     #[deprecated(note = "Replaced by UpdateChannel in the Amazon Chime SDK Messaging Namespace")]
-    pub fn update_channel(
-        &self,
-    ) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
-        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel(&self) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
+        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,8 +39,7 @@ impl DeleteBucketReplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBucketReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder,
+    inner: crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder,
 }
 impl DeleteBucketReplicationFluentBuilder {
     /// Creates a new `DeleteBucketReplication`.
@@ -51,10 +50,7 @@ impl DeleteBucketReplicationFluentBuilder {
         }
     }
     /// Access the DeleteBucketReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +62,7 @@ impl DeleteBucketReplicationFluentBuilder {
             crate::operation::delete_bucket_replication::DeleteBucketReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_replication::DeleteBucketReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +72,7 @@ impl DeleteBucketReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +81,7 @@ impl DeleteBucketReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_replication::DeleteBucketReplicationError>,
     > {
         let op = self
             .inner
@@ -115,9 +104,7 @@ impl DeleteBucketReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_replication::DeleteBucketReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +118,7 @@ impl DeleteBucketReplicationFluentBuilder {
             crate::operation::delete_bucket_replication::DeleteBucketReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_replication::DeleteBucketReplicationError>,
     > {
         self.customize_middleware().await
     }

@@ -26,7 +26,7 @@ impl UpdateDocumentationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDocumentationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_documentation_version::builders::UpdateDocumentationVersionInputBuilder,
+    inner: crate::operation::update_documentation_version::builders::UpdateDocumentationVersionInputBuilder,
 }
 impl UpdateDocumentationVersionFluentBuilder {
     /// Creates a new `UpdateDocumentationVersion`.
@@ -37,7 +37,7 @@ impl UpdateDocumentationVersionFluentBuilder {
         }
     }
     /// Access the UpdateDocumentationVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_documentation_version::builders::UpdateDocumentationVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_documentation_version::builders::UpdateDocumentationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateDocumentationVersionFluentBuilder {
             crate::operation::update_documentation_version::UpdateDocumentationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_version::UpdateDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_version::UpdateDocumentationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateDocumentationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateDocumentationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_documentation_version::UpdateDocumentationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_version::UpdateDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_version::UpdateDocumentationVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateDocumentationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_documentation_version::UpdateDocumentationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_version::UpdateDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_version::UpdateDocumentationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateDocumentationVersionFluentBuilder {
             crate::operation::update_documentation_version::UpdateDocumentationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_version::UpdateDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_version::UpdateDocumentationVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateDocumentationVersionFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The version identifier of the to-be-updated documentation version.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.documentation_version(input.into());
         self
     }
     /// <p>The version identifier of the to-be-updated documentation version.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_documentation_version(input);
         self
     }
@@ -164,17 +147,12 @@ impl UpdateDocumentationVersionFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

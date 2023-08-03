@@ -27,9 +27,7 @@ pub struct ProfilingGroupDescription {
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p> A list of the tags that belong to this profiling group. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProfilingGroupDescription {
     /// <p>The name of the profiling group.</p>
@@ -37,9 +35,7 @@ impl ProfilingGroupDescription {
         self.name.as_deref()
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-    pub fn agent_orchestration_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AgentOrchestrationConfig> {
+    pub fn agent_orchestration_config(&self) -> ::std::option::Option<&crate::types::AgentOrchestrationConfig> {
         self.agent_orchestration_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
@@ -63,11 +59,7 @@ impl ProfilingGroupDescription {
         self.compute_platform.as_ref()
     }
     /// <p> A list of the tags that belong to this profiling group. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -80,21 +72,16 @@ impl ProfilingGroupDescription {
 
 /// A builder for [`ProfilingGroupDescription`](crate::types::ProfilingGroupDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfilingGroupDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_orchestration_config:
-        ::std::option::Option<crate::types::AgentOrchestrationConfig>,
+    pub(crate) agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) profiling_status: ::std::option::Option<crate::types::ProfilingStatus>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProfilingGroupDescriptionBuilder {
     /// <p>The name of the profiling group.</p>
@@ -112,25 +99,17 @@ impl ProfilingGroupDescriptionBuilder {
         &self.name
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-    pub fn agent_orchestration_config(
-        mut self,
-        input: crate::types::AgentOrchestrationConfig,
-    ) -> Self {
+    pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.agent_orchestration_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-    pub fn set_agent_orchestration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
-    ) -> Self {
+    pub fn set_agent_orchestration_config(mut self, input: ::std::option::Option<crate::types::AgentOrchestrationConfig>) -> Self {
         self.agent_orchestration_config = input;
         self
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-    pub fn get_agent_orchestration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
+    pub fn get_agent_orchestration_config(&self) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
         &self.agent_orchestration_config
     }
     /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
@@ -153,10 +132,7 @@ impl ProfilingGroupDescriptionBuilder {
         self
     }
     /// <p>The time when the profiling group was created. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -170,10 +146,7 @@ impl ProfilingGroupDescriptionBuilder {
         self
     }
     /// <p> The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -187,10 +160,7 @@ impl ProfilingGroupDescriptionBuilder {
         self
     }
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html"> <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
-    pub fn set_profiling_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfilingStatus>,
-    ) -> Self {
+    pub fn set_profiling_status(mut self, input: ::std::option::Option<crate::types::ProfilingStatus>) -> Self {
         self.profiling_status = input;
         self
     }
@@ -204,10 +174,7 @@ impl ProfilingGroupDescriptionBuilder {
         self
     }
     /// <p> The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. The default is <code>Default</code>. </p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.compute_platform = input;
         self
     }
@@ -220,32 +187,19 @@ impl ProfilingGroupDescriptionBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A list of the tags that belong to this profiling group. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A list of the tags that belong to this profiling group. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> A list of the tags that belong to this profiling group. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ProfilingGroupDescription`](crate::types::ProfilingGroupDescription).

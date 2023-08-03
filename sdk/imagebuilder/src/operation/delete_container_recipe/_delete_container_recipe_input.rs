@@ -15,35 +15,25 @@ impl DeleteContainerRecipeInput {
 }
 impl DeleteContainerRecipeInput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerRecipeInput`](crate::operation::delete_container_recipe::DeleteContainerRecipeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_container_recipe::builders::DeleteContainerRecipeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_container_recipe::builders::DeleteContainerRecipeInputBuilder {
         crate::operation::delete_container_recipe::builders::DeleteContainerRecipeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContainerRecipeInput`](crate::operation::delete_container_recipe::DeleteContainerRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContainerRecipeInputBuilder {
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContainerRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteContainerRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContainerRecipeInput`](crate::operation::delete_container_recipe::DeleteContainerRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_container_recipe::DeleteContainerRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_container_recipe::DeleteContainerRecipeInput {
-                container_recipe_arn: self.container_recipe_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_container_recipe::DeleteContainerRecipeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_container_recipe::DeleteContainerRecipeInput {
+            container_recipe_arn: self.container_recipe_arn,
+        })
     }
 }

@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateOpsMetadataOutput {
 }
 impl CreateOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`CreateOpsMetadataOutput`](crate::operation::create_ops_metadata::CreateOpsMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::create_ops_metadata::builders::CreateOpsMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::create_ops_metadata::builders::CreateOpsMetadataOutputBuilder {
         crate::operation::create_ops_metadata::builders::CreateOpsMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOpsMetadataOutput`](crate::operation::create_ops_metadata::CreateOpsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOpsMetadataOutputBuilder {
     pub(crate) ops_metadata_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateOpsMetadataOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
-    pub fn ops_metadata_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
-    pub fn set_ops_metadata_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_metadata_arn = input;
         self
     }

@@ -23,9 +23,7 @@ impl AssetValue {
 
 /// A builder for [`AssetValue`](crate::types::AssetValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetValueBuilder {
     pub(crate) href: ::std::option::Option<::std::string::String>,
 }

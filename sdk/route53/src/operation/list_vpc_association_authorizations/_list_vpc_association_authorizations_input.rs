@@ -30,16 +30,14 @@ impl ListVpcAssociationAuthorizationsInput {
 }
 impl ListVpcAssociationAuthorizationsInput {
     /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsInput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput).
-    pub fn builder() -> crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder {
         crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcAssociationAuthorizationsInput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcAssociationAuthorizationsInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ListVpcAssociationAuthorizationsInputBuilder {
 }
 impl ListVpcAssociationAuthorizationsInputBuilder {
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -95,16 +87,18 @@ impl ListVpcAssociationAuthorizationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListVpcAssociationAuthorizationsInput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput {
-                hosted_zone_id: self.hosted_zone_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                hosted_zone_id: self.hosted_zone_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

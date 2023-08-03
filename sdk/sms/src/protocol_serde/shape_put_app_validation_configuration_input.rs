@@ -19,9 +19,7 @@ pub fn ser_put_app_validation_configuration_input(
         array_3.finish();
     }
     if let Some(var_6) = &input.server_group_validation_configurations {
-        let mut array_7 = object
-            .key("serverGroupValidationConfigurations")
-            .start_array();
+        let mut array_7 = object.key("serverGroupValidationConfigurations").start_array();
         for item_8 in var_6 {
             {
                 #[allow(unused_mut)]

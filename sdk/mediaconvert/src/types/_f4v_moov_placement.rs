@@ -38,13 +38,7 @@
 /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum F4vMoovPlacement {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for F4vMoovPlacement {
         match s {
             "NORMAL" => F4vMoovPlacement::Normal,
             "PROGRESSIVE_DOWNLOAD" => F4vMoovPlacement::ProgressiveDownload,
-            other => {
-                F4vMoovPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => F4vMoovPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

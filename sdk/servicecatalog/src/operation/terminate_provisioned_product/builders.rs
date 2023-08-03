@@ -28,7 +28,7 @@ impl TerminateProvisionedProductInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateProvisionedProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder,
+    inner: crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder,
 }
 impl TerminateProvisionedProductFluentBuilder {
     /// Creates a new `TerminateProvisionedProduct`.
@@ -39,7 +39,7 @@ impl TerminateProvisionedProductFluentBuilder {
         }
     }
     /// Access the TerminateProvisionedProduct as a reference.
-    pub fn as_input(&self) -> &crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl TerminateProvisionedProductFluentBuilder {
             crate::operation::terminate_provisioned_product::TerminateProvisionedProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_provisioned_product::TerminateProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_provisioned_product::TerminateProvisionedProductError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl TerminateProvisionedProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl TerminateProvisionedProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_provisioned_product::TerminateProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_provisioned_product::TerminateProvisionedProductError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl TerminateProvisionedProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_provisioned_product::TerminateProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_provisioned_product::TerminateProvisionedProductError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl TerminateProvisionedProductFluentBuilder {
             crate::operation::terminate_provisioned_product::TerminateProvisionedProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_provisioned_product::TerminateProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_provisioned_product::TerminateProvisionedProductError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_name(input.into());
         self
     }
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
@@ -143,18 +126,12 @@ impl TerminateProvisionedProductFluentBuilder {
         self.inner.get_provisioned_product_name()
     }
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_id(input.into());
         self
     }
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_id(input);
         self
     }
@@ -163,18 +140,12 @@ impl TerminateProvisionedProductFluentBuilder {
         self.inner.get_provisioned_product_id()
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    pub fn terminate_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn terminate_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.terminate_token(input.into());
         self
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    pub fn set_terminate_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_terminate_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_terminate_token(input);
         self
     }
@@ -201,10 +172,7 @@ impl TerminateProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -213,10 +181,7 @@ impl TerminateProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

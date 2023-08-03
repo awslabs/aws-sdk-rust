@@ -21,9 +21,7 @@ impl super::Client {
     ///   - [`target(Option<Target>)`](crate::operation::get_schedule::GetScheduleOutput::target): <p>The schedule target.</p>
     ///   - [`flexible_time_window(Option<FlexibleTimeWindow>)`](crate::operation::get_schedule::GetScheduleOutput::flexible_time_window): <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
     /// - On failure, responds with [`SdkError<GetScheduleError>`](crate::operation::get_schedule::GetScheduleError)
-    pub fn get_schedule(
-        &self,
-    ) -> crate::operation::get_schedule::builders::GetScheduleFluentBuilder {
+    pub fn get_schedule(&self) -> crate::operation::get_schedule::builders::GetScheduleFluentBuilder {
         crate::operation::get_schedule::builders::GetScheduleFluentBuilder::new(self.handle.clone())
     }
 }

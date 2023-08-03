@@ -107,9 +107,7 @@ impl DomainStatus {
 
 /// A builder for [`DomainStatus`](crate::types::DomainStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainStatusBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -202,10 +200,7 @@ impl DomainStatusBuilder {
         self
     }
     /// <p>The service endpoint for updating documents in a search domain.</p>
-    pub fn set_doc_service(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceEndpoint>,
-    ) -> Self {
+    pub fn set_doc_service(mut self, input: ::std::option::Option<crate::types::ServiceEndpoint>) -> Self {
         self.doc_service = input;
         self
     }
@@ -219,10 +214,7 @@ impl DomainStatusBuilder {
         self
     }
     /// <p>The service endpoint for requesting search results from a search domain.</p>
-    pub fn set_search_service(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceEndpoint>,
-    ) -> Self {
+    pub fn set_search_service(mut self, input: ::std::option::Option<crate::types::ServiceEndpoint>) -> Self {
         self.search_service = input;
         self
     }
@@ -259,18 +251,12 @@ impl DomainStatusBuilder {
         &self.processing
     }
     /// <p>The instance type that is being used to process search requests.</p>
-    pub fn search_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type that is being used to process search requests.</p>
-    pub fn set_search_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_instance_type = input;
         self
     }

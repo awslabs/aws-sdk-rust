@@ -15,10 +15,7 @@ pub fn ser_update_user_defined_function_input(
     if let Some(var_4) = &input.function_input {
         #[allow(unused_mut)]
         let mut object_5 = object.key("FunctionInput").start_object();
-        crate::protocol_serde::shape_user_defined_function_input::ser_user_defined_function_input(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_user_defined_function_input::ser_user_defined_function_input(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

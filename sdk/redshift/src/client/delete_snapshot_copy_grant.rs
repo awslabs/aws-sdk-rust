@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`snapshot_copy_grant_name(impl ::std::convert::Into<String>)`](crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantFluentBuilder::snapshot_copy_grant_name) / [`set_snapshot_copy_grant_name(Option<String>)`](crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantFluentBuilder::set_snapshot_copy_grant_name): <p>The name of the snapshot copy grant to delete.</p>
     /// - On success, responds with [`DeleteSnapshotCopyGrantOutput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput)
     /// - On failure, responds with [`SdkError<DeleteSnapshotCopyGrantError>`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError)
-    pub fn delete_snapshot_copy_grant(
-        &self,
-    ) -> crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantFluentBuilder
-    {
+    pub fn delete_snapshot_copy_grant(&self) -> crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantFluentBuilder {
         crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantFluentBuilder::new(self.handle.clone())
     }
 }

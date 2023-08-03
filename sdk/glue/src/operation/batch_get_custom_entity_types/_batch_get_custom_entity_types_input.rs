@@ -15,16 +15,14 @@ impl BatchGetCustomEntityTypesInput {
 }
 impl BatchGetCustomEntityTypesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCustomEntityTypesInput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesInput).
-    pub fn builder() -> crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder {
         crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCustomEntityTypesInput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCustomEntityTypesInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetCustomEntityTypesInputBuilder {
         self
     }
     /// <p>A list of names of the custom patterns that you want to retrieve.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -59,10 +54,6 @@ impl BatchGetCustomEntityTypesInputBuilder {
         crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesInput {
-                names: self.names,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesInput { names: self.names })
     }
 }

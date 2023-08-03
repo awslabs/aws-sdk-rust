@@ -37,9 +37,7 @@ impl StartSchemaExtensionFluentBuilder {
         }
     }
     /// Access the StartSchemaExtension as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_schema_extension::builders::StartSchemaExtensionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_schema_extension::builders::StartSchemaExtensionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StartSchemaExtensionFluentBuilder {
             crate::operation::start_schema_extension::StartSchemaExtension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_extension::StartSchemaExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_extension::StartSchemaExtensionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StartSchemaExtensionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StartSchemaExtensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_schema_extension::StartSchemaExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_extension::StartSchemaExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_extension::StartSchemaExtensionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StartSchemaExtensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_schema_extension::StartSchemaExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_extension::StartSchemaExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_extension::StartSchemaExtensionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StartSchemaExtensionFluentBuilder {
             crate::operation::start_schema_extension::StartSchemaExtension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_schema_extension::StartSchemaExtensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_schema_extension::StartSchemaExtensionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,13 +129,8 @@ impl StartSchemaExtensionFluentBuilder {
         self
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
-    pub fn set_create_snapshot_before_schema_extension(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_create_snapshot_before_schema_extension(input);
+    pub fn set_create_snapshot_before_schema_extension(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_create_snapshot_before_schema_extension(input);
         self
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>

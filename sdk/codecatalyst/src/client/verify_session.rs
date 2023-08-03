@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`VerifySessionOutput`](crate::operation::verify_session::VerifySessionOutput) with field(s):
     ///   - [`identity(Option<String>)`](crate::operation::verify_session::VerifySessionOutput::identity): <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
     /// - On failure, responds with [`SdkError<VerifySessionError>`](crate::operation::verify_session::VerifySessionError)
-    pub fn verify_session(
-        &self,
-    ) -> crate::operation::verify_session::builders::VerifySessionFluentBuilder {
-        crate::operation::verify_session::builders::VerifySessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_session(&self) -> crate::operation::verify_session::builders::VerifySessionFluentBuilder {
+        crate::operation::verify_session::builders::VerifySessionFluentBuilder::new(self.handle.clone())
     }
 }

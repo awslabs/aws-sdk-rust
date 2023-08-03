@@ -10,10 +10,7 @@ impl AddAssociationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_association::AddAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_association::AddAssociationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_association::AddAssociationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_association();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddAssociationFluentBuilder {
         }
     }
     /// Access the AddAssociation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_association::builders::AddAssociationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_association::builders::AddAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl AddAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl AddAssociationFluentBuilder {
         self.inner.get_source_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
@@ -166,10 +152,7 @@ impl AddAssociationFluentBuilder {
     /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
     /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
     /// </ul>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationEdgeType>) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
     }
@@ -180,9 +163,7 @@ impl AddAssociationFluentBuilder {
     /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
     /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
     /// </ul>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationEdgeType> {
         self.inner.get_association_type()
     }
 }

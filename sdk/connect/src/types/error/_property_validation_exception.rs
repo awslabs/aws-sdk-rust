@@ -9,15 +9,12 @@ pub struct PropertyValidationException {
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub property_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>,
+    pub property_list: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PropertyValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn property_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PropertyValidationExceptionProperty]> {
+    pub fn property_list(&self) -> ::std::option::Option<&[crate::types::PropertyValidationExceptionProperty]> {
         self.property_list.as_deref()
     }
 }
@@ -59,13 +56,10 @@ impl PropertyValidationException {
 
 /// A builder for [`PropertyValidationException`](crate::types::error::PropertyValidationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) property_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>,
+    pub(crate) property_list: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl PropertyValidationExceptionBuilder {
@@ -87,30 +81,19 @@ impl PropertyValidationExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_property_list`](Self::set_property_list).
     ///
-    pub fn property_list(
-        mut self,
-        input: crate::types::PropertyValidationExceptionProperty,
-    ) -> Self {
+    pub fn property_list(mut self, input: crate::types::PropertyValidationExceptionProperty) -> Self {
         let mut v = self.property_list.unwrap_or_default();
         v.push(input);
         self.property_list = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_property_list(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>,
-        >,
-    ) -> Self {
+    pub fn set_property_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>) -> Self {
         self.property_list = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_property_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>
-    {
+    pub fn get_property_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>> {
         &self.property_list
     }
     /// Sets error metadata
@@ -120,10 +103,7 @@ impl PropertyValidationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

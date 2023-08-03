@@ -6,14 +6,10 @@
 pub struct GetOfferingStatusOutput {
     /// <p>When specified, gets the offering status for the current period.</p>
     #[doc(hidden)]
-    pub current: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    >,
+    pub current: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     /// <p>When specified, gets the offering status for the next period.</p>
     #[doc(hidden)]
-    pub next_period: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    >,
+    pub next_period: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,19 +17,11 @@ pub struct GetOfferingStatusOutput {
 }
 impl GetOfferingStatusOutput {
     /// <p>When specified, gets the offering status for the current period.</p>
-    pub fn current(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    > {
+    pub fn current(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>> {
         self.current.as_ref()
     }
     /// <p>When specified, gets the offering status for the next period.</p>
-    pub fn next_period(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    > {
+    pub fn next_period(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>> {
         self.next_period.as_ref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -48,24 +36,17 @@ impl ::aws_http::request_id::RequestId for GetOfferingStatusOutput {
 }
 impl GetOfferingStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_offering_status::builders::GetOfferingStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_offering_status::builders::GetOfferingStatusOutputBuilder {
         crate::operation::get_offering_status::builders::GetOfferingStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOfferingStatusOutputBuilder {
-    pub(crate) current: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    >,
-    pub(crate) next_period: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    >,
+    pub(crate) current: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
+    pub(crate) next_period: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,11 +56,7 @@ impl GetOfferingStatusOutputBuilder {
     /// To override the contents of this collection use [`set_current`](Self::set_current).
     ///
     /// <p>When specified, gets the offering status for the current period.</p>
-    pub fn current(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::OfferingStatus,
-    ) -> Self {
+    pub fn current(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OfferingStatus) -> Self {
         let mut hash_map = self.current.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.current = ::std::option::Option::Some(hash_map);
@@ -88,19 +65,13 @@ impl GetOfferingStatusOutputBuilder {
     /// <p>When specified, gets the offering status for the current period.</p>
     pub fn set_current(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     ) -> Self {
         self.current = input;
         self
     }
     /// <p>When specified, gets the offering status for the current period.</p>
-    pub fn get_current(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    > {
+    pub fn get_current(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>> {
         &self.current
     }
     /// Adds a key-value pair to `next_period`.
@@ -108,11 +79,7 @@ impl GetOfferingStatusOutputBuilder {
     /// To override the contents of this collection use [`set_next_period`](Self::set_next_period).
     ///
     /// <p>When specified, gets the offering status for the next period.</p>
-    pub fn next_period(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::OfferingStatus,
-    ) -> Self {
+    pub fn next_period(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OfferingStatus) -> Self {
         let mut hash_map = self.next_period.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.next_period = ::std::option::Option::Some(hash_map);
@@ -121,19 +88,13 @@ impl GetOfferingStatusOutputBuilder {
     /// <p>When specified, gets the offering status for the next period.</p>
     pub fn set_next_period(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     ) -> Self {
         self.next_period = input;
         self
     }
     /// <p>When specified, gets the offering status for the next period.</p>
-    pub fn get_next_period(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
-    > {
+    pub fn get_next_period(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>> {
         &self.next_period
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

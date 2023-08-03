@@ -3,10 +3,7 @@
 pub fn de_origin_request_policy_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::OriginRequestPolicyAlreadyExistsBuilder,
-) -> Result<
-    crate::types::error::builders::OriginRequestPolicyAlreadyExistsBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::OriginRequestPolicyAlreadyExistsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

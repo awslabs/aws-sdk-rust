@@ -15,10 +15,7 @@ pub fn ser_update_ml_transform_input(
     if let Some(var_4) = &input.parameters {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Parameters").start_object();
-        crate::protocol_serde::shape_transform_parameters::ser_transform_parameters(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_transform_parameters::ser_transform_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.role {

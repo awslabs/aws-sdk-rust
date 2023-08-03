@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::update_email_identity_policy::builders::UpdateEmailIdentityPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::update_email_identity_policy::builders::UpdateEmailIdentityPolicyFluentBuilder::set_policy): <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>  <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     /// - On success, responds with [`UpdateEmailIdentityPolicyOutput`](crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyOutput)
     /// - On failure, responds with [`SdkError<UpdateEmailIdentityPolicyError>`](crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError)
-    pub fn update_email_identity_policy(&self) -> crate::operation::update_email_identity_policy::builders::UpdateEmailIdentityPolicyFluentBuilder{
+    pub fn update_email_identity_policy(&self) -> crate::operation::update_email_identity_policy::builders::UpdateEmailIdentityPolicyFluentBuilder {
         crate::operation::update_email_identity_policy::builders::UpdateEmailIdentityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

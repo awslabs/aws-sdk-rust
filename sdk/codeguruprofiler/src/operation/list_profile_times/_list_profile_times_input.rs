@@ -72,17 +72,14 @@ impl ListProfileTimesInput {
 }
 impl ListProfileTimesInput {
     /// Creates a new builder-style object to manufacture [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
-    pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder {
         crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileTimesInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -94,18 +91,12 @@ pub struct ListProfileTimesInputBuilder {
 }
 impl ListProfileTimesInputBuilder {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -119,10 +110,7 @@ impl ListProfileTimesInputBuilder {
         self
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -136,10 +124,7 @@ impl ListProfileTimesInputBuilder {
         self
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -163,10 +148,7 @@ impl ListProfileTimesInputBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationPeriod>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.period = input;
         self
     }
@@ -230,20 +212,15 @@ impl ListProfileTimesInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profile_times::ListProfileTimesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profile_times::ListProfileTimesInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                order_by: self.order_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesInput {
+            profiling_group_name: self.profiling_group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            period: self.period,
+            order_by: self.order_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

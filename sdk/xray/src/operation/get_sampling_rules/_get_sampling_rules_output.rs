@@ -5,8 +5,7 @@
 pub struct GetSamplingRulesOutput {
     /// <p>Rule definitions and metadata.</p>
     #[doc(hidden)]
-    pub sampling_rule_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>,
+    pub sampling_rule_records: ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>,
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetSamplingRulesOutput {
 }
 impl GetSamplingRulesOutput {
     /// <p>Rule definitions and metadata.</p>
-    pub fn sampling_rule_records(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SamplingRuleRecord]> {
+    pub fn sampling_rule_records(&self) -> ::std::option::Option<&[crate::types::SamplingRuleRecord]> {
         self.sampling_rule_records.as_deref()
     }
     /// <p>Pagination token.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetSamplingRulesOutput {
 }
 impl GetSamplingRulesOutput {
     /// Creates a new builder-style object to manufacture [`GetSamplingRulesOutput`](crate::operation::get_sampling_rules::GetSamplingRulesOutput).
-    pub fn builder() -> crate::operation::get_sampling_rules::builders::GetSamplingRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sampling_rules::builders::GetSamplingRulesOutputBuilder {
         crate::operation::get_sampling_rules::builders::GetSamplingRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSamplingRulesOutput`](crate::operation::get_sampling_rules::GetSamplingRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSamplingRulesOutputBuilder {
-    pub(crate) sampling_rule_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>,
+    pub(crate) sampling_rule_records: ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl GetSamplingRulesOutputBuilder {
         self
     }
     /// <p>Rule definitions and metadata.</p>
-    pub fn set_sampling_rule_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>,
-    ) -> Self {
+    pub fn set_sampling_rule_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>) -> Self {
         self.sampling_rule_records = input;
         self
     }
     /// <p>Rule definitions and metadata.</p>
-    pub fn get_sampling_rule_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>> {
+    pub fn get_sampling_rule_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>> {
         &self.sampling_rule_records
     }
     /// <p>Pagination token.</p>

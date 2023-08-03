@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePartnersOutput`](crate::operation::describe_partners::DescribePartnersOutput) with field(s):
     ///   - [`partner_integration_info_list(Option<Vec<PartnerIntegrationInfo>>)`](crate::operation::describe_partners::DescribePartnersOutput::partner_integration_info_list): <p>A list of partner integrations.</p>
     /// - On failure, responds with [`SdkError<DescribePartnersError>`](crate::operation::describe_partners::DescribePartnersError)
-    pub fn describe_partners(
-        &self,
-    ) -> crate::operation::describe_partners::builders::DescribePartnersFluentBuilder {
-        crate::operation::describe_partners::builders::DescribePartnersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_partners(&self) -> crate::operation::describe_partners::builders::DescribePartnersFluentBuilder {
+        crate::operation::describe_partners::builders::DescribePartnersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -59,9 +59,7 @@ impl CreateConnectorInput {
 
 /// A builder for [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectorInputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
@@ -91,10 +89,7 @@ impl CreateConnectorInputBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn set_as2_config(
-        mut self,
-        input: ::std::option::Option<crate::types::As2ConnectorConfig>,
-    ) -> Self {
+    pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
         self.as2_config = input;
         self
     }
@@ -145,10 +140,7 @@ impl CreateConnectorInputBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,10 +154,7 @@ impl CreateConnectorInputBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn set_sftp_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
-    ) -> Self {
+    pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
         self.sftp_config = input;
         self
     }
@@ -176,10 +165,7 @@ impl CreateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connector::CreateConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
             url: self.url,
             as2_config: self.as2_config,

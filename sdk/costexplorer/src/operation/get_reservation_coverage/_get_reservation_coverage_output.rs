@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for GetReservationCoverageOutput {
 }
 impl GetReservationCoverageOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationCoverageOutput`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder {
         crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReservationCoverageOutput`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservationCoverageOutputBuilder {
-    pub(crate) coverages_by_time:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>,
+    pub(crate) coverages_by_time: ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>,
     pub(crate) total: ::std::option::Option<crate::types::Coverage>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -67,17 +62,12 @@ impl GetReservationCoverageOutputBuilder {
         self
     }
     /// <p>The amount of time that your reservations covered.</p>
-    pub fn set_coverages_by_time(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>,
-    ) -> Self {
+    pub fn set_coverages_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>) -> Self {
         self.coverages_by_time = input;
         self
     }
     /// <p>The amount of time that your reservations covered.</p>
-    pub fn get_coverages_by_time(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>> {
+    pub fn get_coverages_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>> {
         &self.coverages_by_time
     }
     /// <p>The total amount of instance usage that a reservation covered.</p>
@@ -95,18 +85,12 @@ impl GetReservationCoverageOutputBuilder {
         &self.total
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

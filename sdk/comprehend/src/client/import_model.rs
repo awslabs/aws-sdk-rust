@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ImportModelOutput`](crate::operation::import_model::ImportModelOutput) with field(s):
     ///   - [`model_arn(Option<String>)`](crate::operation::import_model::ImportModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
     /// - On failure, responds with [`SdkError<ImportModelError>`](crate::operation::import_model::ImportModelError)
-    pub fn import_model(
-        &self,
-    ) -> crate::operation::import_model::builders::ImportModelFluentBuilder {
+    pub fn import_model(&self) -> crate::operation::import_model::builders::ImportModelFluentBuilder {
         crate::operation::import_model::builders::ImportModelFluentBuilder::new(self.handle.clone())
     }
 }

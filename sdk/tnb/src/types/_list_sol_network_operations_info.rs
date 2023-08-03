@@ -52,9 +52,7 @@ impl ListSolNetworkOperationsInfo {
         self.error.as_ref()
     }
     /// <p>Metadata related to this network operation.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListSolNetworkOperationsMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolNetworkOperationsMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -67,9 +65,7 @@ impl ListSolNetworkOperationsInfo {
 
 /// A builder for [`ListSolNetworkOperationsInfo`](crate::types::ListSolNetworkOperationsInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -114,10 +110,7 @@ impl ListSolNetworkOperationsInfoBuilder {
         self
     }
     /// <p>The state of the network operation.</p>
-    pub fn set_operation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsLcmOperationState>,
-    ) -> Self {
+    pub fn set_operation_state(mut self, input: ::std::option::Option<crate::types::NsLcmOperationState>) -> Self {
         self.operation_state = input;
         self
     }
@@ -126,18 +119,12 @@ impl ListSolNetworkOperationsInfoBuilder {
         &self.operation_state
     }
     /// <p>ID of the network instance related to this operation.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network instance related to this operation.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_id = input;
         self
     }
@@ -151,10 +138,7 @@ impl ListSolNetworkOperationsInfoBuilder {
         self
     }
     /// <p>Type of lifecycle management network operation.</p>
-    pub fn set_lcm_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LcmOperationType>,
-    ) -> Self {
+    pub fn set_lcm_operation_type(mut self, input: ::std::option::Option<crate::types::LcmOperationType>) -> Self {
         self.lcm_operation_type = input;
         self
     }
@@ -182,17 +166,12 @@ impl ListSolNetworkOperationsInfoBuilder {
         self
     }
     /// <p>Metadata related to this network operation.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ListSolNetworkOperationsMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolNetworkOperationsMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata related to this network operation.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListSolNetworkOperationsMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolNetworkOperationsMetadata> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolNetworkOperationsInfo`](crate::types::ListSolNetworkOperationsInfo).

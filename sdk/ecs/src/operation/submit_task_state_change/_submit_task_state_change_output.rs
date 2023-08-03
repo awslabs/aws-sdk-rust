@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for SubmitTaskStateChangeOutput {
 }
 impl SubmitTaskStateChangeOutput {
     /// Creates a new builder-style object to manufacture [`SubmitTaskStateChangeOutput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput).
-    pub fn builder(
-    ) -> crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeOutputBuilder {
         crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeOutputBuilder::default()
     }
 }
 
 /// A builder for [`SubmitTaskStateChangeOutput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitTaskStateChangeOutputBuilder {
     pub(crate) acknowledgment: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SubmitTaskStateChangeOutputBuilder {
     /// <p>Acknowledgement of the state change.</p>
-    pub fn acknowledgment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acknowledgment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acknowledgment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Acknowledgement of the state change.</p>
-    pub fn set_acknowledgment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acknowledgment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acknowledgment = input;
         self
     }

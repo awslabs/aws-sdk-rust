@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::set_organization_id): <p>The AWS Organization ID to unshare the application from.</p>
     /// - On success, responds with [`UnshareApplicationOutput`](crate::operation::unshare_application::UnshareApplicationOutput)
     /// - On failure, responds with [`SdkError<UnshareApplicationError>`](crate::operation::unshare_application::UnshareApplicationError)
-    pub fn unshare_application(
-        &self,
-    ) -> crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder {
-        crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unshare_application(&self) -> crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder {
+        crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::new(self.handle.clone())
     }
 }

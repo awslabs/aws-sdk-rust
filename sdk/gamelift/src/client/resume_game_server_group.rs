@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ResumeGameServerGroupOutput`](crate::operation::resume_game_server_group::ResumeGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::resume_game_server_group::ResumeGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
     /// - On failure, responds with [`SdkError<ResumeGameServerGroupError>`](crate::operation::resume_game_server_group::ResumeGameServerGroupError)
-    pub fn resume_game_server_group(
-        &self,
-    ) -> crate::operation::resume_game_server_group::builders::ResumeGameServerGroupFluentBuilder
-    {
+    pub fn resume_game_server_group(&self) -> crate::operation::resume_game_server_group::builders::ResumeGameServerGroupFluentBuilder {
         crate::operation::resume_game_server_group::builders::ResumeGameServerGroupFluentBuilder::new(self.handle.clone())
     }
 }

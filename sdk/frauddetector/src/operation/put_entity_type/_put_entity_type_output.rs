@@ -19,9 +19,7 @@ impl PutEntityTypeOutput {
 
 /// A builder for [`PutEntityTypeOutput`](crate::operation::put_entity_type::PutEntityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEntityTypeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -6,8 +6,7 @@
 pub struct SnapshotUserConfiguration {
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
     #[doc(hidden)]
-    pub anonymous_users:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
+    pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
 }
 impl SnapshotUserConfiguration {
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
@@ -24,12 +23,9 @@ impl SnapshotUserConfiguration {
 
 /// A builder for [`SnapshotUserConfiguration`](crate::types::SnapshotUserConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotUserConfigurationBuilder {
-    pub(crate) anonymous_users:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
+    pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
 }
 impl SnapshotUserConfigurationBuilder {
     /// Appends an item to `anonymous_users`.
@@ -44,17 +40,12 @@ impl SnapshotUserConfigurationBuilder {
         self
     }
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    pub fn set_anonymous_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
-    ) -> Self {
+    pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>) -> Self {
         self.anonymous_users = input;
         self
     }
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    pub fn get_anonymous_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>> {
+    pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>> {
         &self.anonymous_users
     }
     /// Consumes the builder and constructs a [`SnapshotUserConfiguration`](crate::types::SnapshotUserConfiguration).

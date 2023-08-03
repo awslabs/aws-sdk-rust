@@ -28,9 +28,7 @@ impl CreateFolderOutput {
 
 /// A builder for [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFolderOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::FolderMetadata>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateFolderOutputBuilder {
         self
     }
     /// <p>The metadata of the folder.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::FolderMetadata>) -> Self {
         self.metadata = input;
         self
     }

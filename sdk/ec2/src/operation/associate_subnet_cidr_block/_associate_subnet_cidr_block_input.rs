@@ -22,36 +22,26 @@ impl AssociateSubnetCidrBlockInput {
 }
 impl AssociateSubnetCidrBlockInput {
     /// Creates a new builder-style object to manufacture [`AssociateSubnetCidrBlockInput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput).
-    pub fn builder(
-    ) -> crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder {
         crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSubnetCidrBlockInput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSubnetCidrBlockInputBuilder {
     pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSubnetCidrBlockInputBuilder {
     /// <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
@@ -80,11 +70,9 @@ impl AssociateSubnetCidrBlockInputBuilder {
         crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput {
-                ipv6_cidr_block: self.ipv6_cidr_block,
-                subnet_id: self.subnet_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput {
+            ipv6_cidr_block: self.ipv6_cidr_block,
+            subnet_id: self.subnet_id,
+        })
     }
 }

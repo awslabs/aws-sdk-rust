@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppInstanceAdminOutput {
 }
 impl DeleteAppInstanceAdminOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminOutputBuilder {
         crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteAppInstanceAdminOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput {
+    pub fn build(self) -> crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput {
         crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput {
             _request_id: self._request_id,
         }

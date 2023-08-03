@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DecreaseStreamRetentionPeriodOutput {
 }
 impl DecreaseStreamRetentionPeriodOutput {
     /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodOutput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput).
-    pub fn builder() -> crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodOutputBuilder{
+    pub fn builder() -> crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodOutputBuilder {
         crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodOutputBuilder::default()
     }
 }
 
 /// A builder for [`DecreaseStreamRetentionPeriodOutput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecreaseStreamRetentionPeriodOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DecreaseStreamRetentionPeriodOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DecreaseStreamRetentionPeriodOutput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput
-    {
+    pub fn build(self) -> crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput {
         crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput {
             _request_id: self._request_id,
         }

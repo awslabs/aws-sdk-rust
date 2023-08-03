@@ -26,7 +26,7 @@ impl SendDataToMulticastGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendDataToMulticastGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder,
+    inner: crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder,
 }
 impl SendDataToMulticastGroupFluentBuilder {
     /// Creates a new `SendDataToMulticastGroup`.
@@ -37,7 +37,7 @@ impl SendDataToMulticastGroupFluentBuilder {
         }
     }
     /// Access the SendDataToMulticastGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SendDataToMulticastGroupFluentBuilder {
             crate::operation::send_data_to_multicast_group::SendDataToMulticastGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SendDataToMulticastGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SendDataToMulticastGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SendDataToMulticastGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl SendDataToMulticastGroupFluentBuilder {
             crate::operation::send_data_to_multicast_group::SendDataToMulticastGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -154,17 +143,12 @@ impl SendDataToMulticastGroupFluentBuilder {
         self
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn set_wireless_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::MulticastWirelessMetadata>,
-    ) -> Self {
+    pub fn set_wireless_metadata(mut self, input: ::std::option::Option<crate::types::MulticastWirelessMetadata>) -> Self {
         self.inner = self.inner.set_wireless_metadata(input);
         self
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn get_wireless_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::MulticastWirelessMetadata> {
+    pub fn get_wireless_metadata(&self) -> &::std::option::Option<crate::types::MulticastWirelessMetadata> {
         self.inner.get_wireless_metadata()
     }
 }

@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_explainability::DescribeExplainabilityOutput::creation_time): <p>When the Explainability resource was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_explainability::DescribeExplainabilityOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeExplainabilityError>`](crate::operation::describe_explainability::DescribeExplainabilityError)
-    pub fn describe_explainability(
-        &self,
-    ) -> crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder
-    {
+    pub fn describe_explainability(&self) -> crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder {
         crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder::new(self.handle.clone())
     }
 }

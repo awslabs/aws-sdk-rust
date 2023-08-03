@@ -59,9 +59,7 @@ impl TargetTrackingMetricDataQuery {
 
 /// A builder for [`TargetTrackingMetricDataQuery`](crate::types::TargetTrackingMetricDataQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingMetricDataQueryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,13 @@ impl TargetTrackingMetricDataQueryBuilder {
     }
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
-    pub fn set_metric_stat(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingMetricStat>,
-    ) -> Self {
+    pub fn set_metric_stat(mut self, input: ::std::option::Option<crate::types::TargetTrackingMetricStat>) -> Self {
         self.metric_stat = input;
         self
     }
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
-    pub fn get_metric_stat(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetTrackingMetricStat> {
+    pub fn get_metric_stat(&self) -> &::std::option::Option<crate::types::TargetTrackingMetricStat> {
         &self.metric_stat
     }
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>

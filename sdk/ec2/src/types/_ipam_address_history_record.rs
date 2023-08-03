@@ -48,9 +48,7 @@ impl IpamAddressHistoryRecord {
         self.resource_region.as_deref()
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamAddressHistoryResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamAddressHistoryResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource.</p>
@@ -66,15 +64,11 @@ impl IpamAddressHistoryRecord {
         self.resource_name.as_deref()
     }
     /// <p>The compliance status of a resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn resource_compliance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamComplianceStatus> {
+    pub fn resource_compliance_status(&self) -> ::std::option::Option<&crate::types::IpamComplianceStatus> {
         self.resource_compliance_status.as_ref()
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn resource_overlap_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamOverlapStatus> {
+    pub fn resource_overlap_status(&self) -> ::std::option::Option<&crate::types::IpamOverlapStatus> {
         self.resource_overlap_status.as_ref()
     }
     /// <p>The VPC ID of the resource.</p>
@@ -99,9 +93,7 @@ impl IpamAddressHistoryRecord {
 
 /// A builder for [`IpamAddressHistoryRecord`](crate::types::IpamAddressHistoryRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamAddressHistoryRecordBuilder {
     pub(crate) resource_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_region: ::std::option::Option<::std::string::String>,
@@ -109,8 +101,7 @@ pub struct IpamAddressHistoryRecordBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_compliance_status:
-        ::std::option::Option<crate::types::IpamComplianceStatus>,
+    pub(crate) resource_compliance_status: ::std::option::Option<crate::types::IpamComplianceStatus>,
     pub(crate) resource_overlap_status: ::std::option::Option<crate::types::IpamOverlapStatus>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) sampled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -118,18 +109,12 @@ pub struct IpamAddressHistoryRecordBuilder {
 }
 impl IpamAddressHistoryRecordBuilder {
     /// <p>The ID of the resource owner.</p>
-    pub fn resource_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource owner.</p>
-    pub fn set_resource_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_id = input;
         self
     }
@@ -138,18 +123,12 @@ impl IpamAddressHistoryRecordBuilder {
         &self.resource_owner_id
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
-    pub fn resource_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
-    pub fn set_resource_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_region = input;
         self
     }
@@ -163,17 +142,12 @@ impl IpamAddressHistoryRecordBuilder {
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamAddressHistoryResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamAddressHistoryResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamAddressHistoryResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamAddressHistoryResourceType> {
         &self.resource_type
     }
     /// <p>The ID of the resource.</p>
@@ -191,18 +165,12 @@ impl IpamAddressHistoryRecordBuilder {
         &self.resource_id
     }
     /// <p>The CIDR of the resource.</p>
-    pub fn resource_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR of the resource.</p>
-    pub fn set_resource_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_cidr = input;
         self
     }
@@ -211,18 +179,12 @@ impl IpamAddressHistoryRecordBuilder {
         &self.resource_cidr
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -236,17 +198,12 @@ impl IpamAddressHistoryRecordBuilder {
         self
     }
     /// <p>The compliance status of a resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_resource_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamComplianceStatus>,
-    ) -> Self {
+    pub fn set_resource_compliance_status(mut self, input: ::std::option::Option<crate::types::IpamComplianceStatus>) -> Self {
         self.resource_compliance_status = input;
         self
     }
     /// <p>The compliance status of a resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_resource_compliance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamComplianceStatus> {
+    pub fn get_resource_compliance_status(&self) -> &::std::option::Option<crate::types::IpamComplianceStatus> {
         &self.resource_compliance_status
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
@@ -255,17 +212,12 @@ impl IpamAddressHistoryRecordBuilder {
         self
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_resource_overlap_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamOverlapStatus>,
-    ) -> Self {
+    pub fn set_resource_overlap_status(mut self, input: ::std::option::Option<crate::types::IpamOverlapStatus>) -> Self {
         self.resource_overlap_status = input;
         self
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_resource_overlap_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamOverlapStatus> {
+    pub fn get_resource_overlap_status(&self) -> &::std::option::Option<crate::types::IpamOverlapStatus> {
         &self.resource_overlap_status
     }
     /// <p>The VPC ID of the resource.</p>
@@ -288,10 +240,7 @@ impl IpamAddressHistoryRecordBuilder {
         self
     }
     /// <p>Sampled start time of the resource-to-CIDR association within the IPAM scope. Changes are picked up in periodic snapshots, so the start time may have occurred before this specific time.</p>
-    pub fn set_sampled_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sampled_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sampled_start_time = input;
         self
     }
@@ -305,10 +254,7 @@ impl IpamAddressHistoryRecordBuilder {
         self
     }
     /// <p>Sampled end time of the resource-to-CIDR association within the IPAM scope. Changes are picked up in periodic snapshots, so the end time may have occurred before this specific time.</p>
-    pub fn set_sampled_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sampled_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sampled_end_time = input;
         self
     }

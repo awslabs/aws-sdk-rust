@@ -10,10 +10,7 @@ impl ListOfferingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_offerings::ListOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_offerings::ListOfferingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_offerings::ListOfferingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_offerings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListOfferingsFluentBuilder {
         }
     }
     /// Access the ListOfferings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListOfferingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_offerings::paginator::ListOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_offerings::paginator::ListOfferingsPaginator {
-        crate::operation::list_offerings::paginator::ListOfferingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_offerings::paginator::ListOfferingsPaginator {
+        crate::operation::list_offerings::paginator::ListOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

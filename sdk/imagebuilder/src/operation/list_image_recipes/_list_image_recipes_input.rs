@@ -46,17 +46,14 @@ impl ListImageRecipesInput {
 }
 impl ListImageRecipesInput {
     /// Creates a new builder-style object to manufacture [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
-    pub fn builder() -> crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder {
         crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageRecipesInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -100,10 +97,7 @@ impl ListImageRecipesInputBuilder {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -147,17 +141,12 @@ impl ListImageRecipesInputBuilder {
     /// Consumes the builder and constructs a [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_image_recipes::ListImageRecipesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_image_recipes::ListImageRecipesInput {
-                owner: self.owner,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_image_recipes::ListImageRecipesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_image_recipes::ListImageRecipesInput {
+            owner: self.owner,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

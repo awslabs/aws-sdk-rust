@@ -30,27 +30,19 @@ impl ResourceTag {
 
 /// A builder for [`ResourceTag`](crate::types::ResourceTag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceTagBuilder {
     pub(crate) resource_tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) resource_tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceTagBuilder {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag key.</p>
-    pub fn set_resource_tag_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_tag_key = input;
         self
     }
@@ -59,18 +51,12 @@ impl ResourceTagBuilder {
         &self.resource_tag_key
     }
     /// <p>The tag value.</p>
-    pub fn resource_tag_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag value.</p>
-    pub fn set_resource_tag_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_tag_value = input;
         self
     }

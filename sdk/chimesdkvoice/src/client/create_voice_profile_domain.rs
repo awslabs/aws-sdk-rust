@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVoiceProfileDomainOutput`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput) with field(s):
     ///   - [`voice_profile_domain(Option<VoiceProfileDomain>)`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput::voice_profile_domain): <p>The requested voice profile domain.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceProfileDomainError>`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError)
-    pub fn create_voice_profile_domain(&self) -> crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainFluentBuilder{
+    pub fn create_voice_profile_domain(&self) -> crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainFluentBuilder {
         crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainFluentBuilder::new(self.handle.clone())
     }
 }

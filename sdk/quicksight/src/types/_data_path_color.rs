@@ -37,9 +37,7 @@ impl DataPathColor {
 
 /// A builder for [`DataPathColor`](crate::types::DataPathColor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPathColorBuilder {
     pub(crate) element: ::std::option::Option<crate::types::DataPathValue>,
     pub(crate) color: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl DataPathColorBuilder {
         self
     }
     /// <p>The element that the color needs to be applied to.</p>
-    pub fn set_element(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPathValue>,
-    ) -> Self {
+    pub fn set_element(mut self, input: ::std::option::Option<crate::types::DataPathValue>) -> Self {
         self.element = input;
         self
     }
@@ -83,10 +78,7 @@ impl DataPathColorBuilder {
         self
     }
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.time_granularity = input;
         self
     }

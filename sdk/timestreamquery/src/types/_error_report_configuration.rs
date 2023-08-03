@@ -23,9 +23,7 @@ impl ErrorReportConfiguration {
 
 /// A builder for [`ErrorReportConfiguration`](crate::types::ErrorReportConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorReportConfigurationBuilder {
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }
@@ -36,10 +34,7 @@ impl ErrorReportConfigurationBuilder {
         self
     }
     /// <p>The S3 configuration for the error reports.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Configuration>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3Configuration>) -> Self {
         self.s3_configuration = input;
         self
     }

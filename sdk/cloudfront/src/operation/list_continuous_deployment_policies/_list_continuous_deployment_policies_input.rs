@@ -22,16 +22,14 @@ impl ListContinuousDeploymentPoliciesInput {
 }
 impl ListContinuousDeploymentPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListContinuousDeploymentPoliciesInput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput).
-    pub fn builder() -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder {
         crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContinuousDeploymentPoliciesInput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContinuousDeploymentPoliciesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -66,14 +64,17 @@ impl ListContinuousDeploymentPoliciesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListContinuousDeploymentPoliciesInput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+            },
         )
     }
 }

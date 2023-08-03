@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateReplicationTaskOutput {
 }
 impl CreateReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationTaskOutput`](crate::operation::create_replication_task::CreateReplicationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_task::builders::CreateReplicationTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_replication_task::builders::CreateReplicationTaskOutputBuilder {
         crate::operation::create_replication_task::builders::CreateReplicationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationTaskOutput`](crate::operation::create_replication_task::CreateReplicationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl CreateReplicationTaskOutputBuilder {
         self
     }
     /// <p>The replication task that was created.</p>
-    pub fn set_replication_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
+    pub fn set_replication_task(mut self, input: ::std::option::Option<crate::types::ReplicationTask>) -> Self {
         self.replication_task = input;
         self
     }

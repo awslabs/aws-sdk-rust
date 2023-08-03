@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeMigrationTaskOutput {
 }
 impl DescribeMigrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskOutput`](crate::operation::describe_migration_task::DescribeMigrationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder {
         crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMigrationTaskOutput`](crate::operation::describe_migration_task::DescribeMigrationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMigrationTaskOutputBuilder {
     pub(crate) migration_task: ::std::option::Option<crate::types::MigrationTask>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeMigrationTaskOutputBuilder {
         self
     }
     /// <p>Object encapsulating information about the migration task.</p>
-    pub fn set_migration_task(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTask>,
-    ) -> Self {
+    pub fn set_migration_task(mut self, input: ::std::option::Option<crate::types::MigrationTask>) -> Self {
         self.migration_task = input;
         self
     }

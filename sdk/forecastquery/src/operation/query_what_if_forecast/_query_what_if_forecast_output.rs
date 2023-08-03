@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for QueryWhatIfForecastOutput {
 }
 impl QueryWhatIfForecastOutput {
     /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastOutput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput).
-    pub fn builder(
-    ) -> crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastOutputBuilder {
+    pub fn builder() -> crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastOutputBuilder {
         crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastOutputBuilder::default()
     }
 }
 
 /// A builder for [`QueryWhatIfForecastOutput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryWhatIfForecastOutputBuilder {
     pub(crate) forecast: ::std::option::Option<crate::types::Forecast>,
     _request_id: Option<String>,

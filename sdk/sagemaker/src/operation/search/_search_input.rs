@@ -51,9 +51,7 @@ impl SearchInput {
         self.max_results
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn cross_account_filter_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CrossAccountFilterOption> {
+    pub fn cross_account_filter_option(&self) -> ::std::option::Option<&crate::types::CrossAccountFilterOption> {
         self.cross_account_filter_option.as_ref()
     }
 }
@@ -66,9 +64,7 @@ impl SearchInput {
 
 /// A builder for [`SearchInput`](crate::operation::search::SearchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchInputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) search_expression: ::std::option::Option<crate::types::SearchExpression>,
@@ -76,8 +72,7 @@ pub struct SearchInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SearchSortOrder>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) cross_account_filter_option:
-        ::std::option::Option<crate::types::CrossAccountFilterOption>,
+    pub(crate) cross_account_filter_option: ::std::option::Option<crate::types::CrossAccountFilterOption>,
 }
 impl SearchInputBuilder {
     /// <p>The name of the SageMaker resource to search for.</p>
@@ -86,10 +81,7 @@ impl SearchInputBuilder {
         self
     }
     /// <p>The name of the SageMaker resource to search for.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource = input;
         self
     }
@@ -103,10 +95,7 @@ impl SearchInputBuilder {
         self
     }
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchExpression>,
-    ) -> Self {
+    pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::SearchExpression>) -> Self {
         self.search_expression = input;
         self
     }
@@ -134,10 +123,7 @@ impl SearchInputBuilder {
         self
     }
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SearchSortOrder>) -> Self {
         self.sort_order = input;
         self
     }
@@ -174,34 +160,21 @@ impl SearchInputBuilder {
         &self.max_results
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn cross_account_filter_option(
-        mut self,
-        input: crate::types::CrossAccountFilterOption,
-    ) -> Self {
+    pub fn cross_account_filter_option(mut self, input: crate::types::CrossAccountFilterOption) -> Self {
         self.cross_account_filter_option = ::std::option::Option::Some(input);
         self
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn set_cross_account_filter_option(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossAccountFilterOption>,
-    ) -> Self {
+    pub fn set_cross_account_filter_option(mut self, input: ::std::option::Option<crate::types::CrossAccountFilterOption>) -> Self {
         self.cross_account_filter_option = input;
         self
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn get_cross_account_filter_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
+    pub fn get_cross_account_filter_option(&self) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
         &self.cross_account_filter_option
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search::SearchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
             resource: self.resource,
             search_expression: self.search_expression,

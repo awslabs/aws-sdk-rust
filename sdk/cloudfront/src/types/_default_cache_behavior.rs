@@ -46,8 +46,7 @@ pub struct DefaultCacheBehavior {
     pub compress: ::std::option::Option<bool>,
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
     #[doc(hidden)]
-    pub lambda_function_associations:
-        ::std::option::Option<crate::types::LambdaFunctionAssociations>,
+    pub lambda_function_associations: ::std::option::Option<crate::types::LambdaFunctionAssociations>,
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     #[doc(hidden)]
     pub function_associations: ::std::option::Option<crate::types::FunctionAssociations>,
@@ -119,9 +118,7 @@ impl DefaultCacheBehavior {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
-    pub fn viewer_protocol_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ViewerProtocolPolicy> {
+    pub fn viewer_protocol_policy(&self) -> ::std::option::Option<&crate::types::ViewerProtocolPolicy> {
         self.viewer_protocol_policy.as_ref()
     }
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
@@ -143,15 +140,11 @@ impl DefaultCacheBehavior {
         self.compress
     }
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
-    pub fn lambda_function_associations(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaFunctionAssociations> {
+    pub fn lambda_function_associations(&self) -> ::std::option::Option<&crate::types::LambdaFunctionAssociations> {
         self.lambda_function_associations.as_ref()
     }
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn function_associations(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunctionAssociations> {
+    pub fn function_associations(&self) -> ::std::option::Option<&crate::types::FunctionAssociations> {
         self.function_associations.as_ref()
     }
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
@@ -213,9 +206,7 @@ impl DefaultCacheBehavior {
 
 /// A builder for [`DefaultCacheBehavior`](crate::types::DefaultCacheBehavior).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultCacheBehaviorBuilder {
     pub(crate) target_origin_id: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_signers: ::std::option::Option<crate::types::TrustedSigners>,
@@ -224,8 +215,7 @@ pub struct DefaultCacheBehaviorBuilder {
     pub(crate) allowed_methods: ::std::option::Option<crate::types::AllowedMethods>,
     pub(crate) smooth_streaming: ::std::option::Option<bool>,
     pub(crate) compress: ::std::option::Option<bool>,
-    pub(crate) lambda_function_associations:
-        ::std::option::Option<crate::types::LambdaFunctionAssociations>,
+    pub(crate) lambda_function_associations: ::std::option::Option<crate::types::LambdaFunctionAssociations>,
     pub(crate) function_associations: ::std::option::Option<crate::types::FunctionAssociations>,
     pub(crate) field_level_encryption_id: ::std::option::Option<::std::string::String>,
     pub(crate) realtime_log_config_arn: ::std::option::Option<::std::string::String>,
@@ -239,18 +229,12 @@ pub struct DefaultCacheBehaviorBuilder {
 }
 impl DefaultCacheBehaviorBuilder {
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the default cache behavior.</p>
-    pub fn target_origin_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_origin_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_origin_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the default cache behavior.</p>
-    pub fn set_target_origin_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_origin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_origin_id = input;
         self
     }
@@ -272,10 +256,7 @@ impl DefaultCacheBehaviorBuilder {
     /// </important>
     /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront key pair in a trusted signer's Amazon Web Services account. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_trusted_signers(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedSigners>,
-    ) -> Self {
+    pub fn set_trusted_signers(mut self, input: ::std::option::Option<crate::types::TrustedSigners>) -> Self {
         self.trusted_signers = input;
         self
     }
@@ -295,10 +276,7 @@ impl DefaultCacheBehaviorBuilder {
     }
     /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_trusted_key_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedKeyGroups>,
-    ) -> Self {
+    pub fn set_trusted_key_groups(mut self, input: ::std::option::Option<crate::types::TrustedKeyGroups>) -> Self {
         self.trusted_key_groups = input;
         self
     }
@@ -329,10 +307,7 @@ impl DefaultCacheBehaviorBuilder {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
-    pub fn set_viewer_protocol_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ViewerProtocolPolicy>,
-    ) -> Self {
+    pub fn set_viewer_protocol_policy(mut self, input: ::std::option::Option<crate::types::ViewerProtocolPolicy>) -> Self {
         self.viewer_protocol_policy = input;
         self
     }
@@ -345,9 +320,7 @@ impl DefaultCacheBehaviorBuilder {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
-    pub fn get_viewer_protocol_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ViewerProtocolPolicy> {
+    pub fn get_viewer_protocol_policy(&self) -> &::std::option::Option<crate::types::ViewerProtocolPolicy> {
         &self.viewer_protocol_policy
     }
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
@@ -368,10 +341,7 @@ impl DefaultCacheBehaviorBuilder {
     /// <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li>
     /// </ul>
     /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
-    pub fn set_allowed_methods(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowedMethods>,
-    ) -> Self {
+    pub fn set_allowed_methods(mut self, input: ::std::option::Option<crate::types::AllowedMethods>) -> Self {
         self.allowed_methods = input;
         self
     }
@@ -414,25 +384,17 @@ impl DefaultCacheBehaviorBuilder {
         &self.compress
     }
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
-    pub fn lambda_function_associations(
-        mut self,
-        input: crate::types::LambdaFunctionAssociations,
-    ) -> Self {
+    pub fn lambda_function_associations(mut self, input: crate::types::LambdaFunctionAssociations) -> Self {
         self.lambda_function_associations = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
-    pub fn set_lambda_function_associations(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFunctionAssociations>,
-    ) -> Self {
+    pub fn set_lambda_function_associations(mut self, input: ::std::option::Option<crate::types::LambdaFunctionAssociations>) -> Self {
         self.lambda_function_associations = input;
         self
     }
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
-    pub fn get_lambda_function_associations(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaFunctionAssociations> {
+    pub fn get_lambda_function_associations(&self) -> &::std::option::Option<crate::types::LambdaFunctionAssociations> {
         &self.lambda_function_associations
     }
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
@@ -441,32 +403,21 @@ impl DefaultCacheBehaviorBuilder {
         self
     }
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn set_function_associations(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionAssociations>,
-    ) -> Self {
+    pub fn set_function_associations(mut self, input: ::std::option::Option<crate::types::FunctionAssociations>) -> Self {
         self.function_associations = input;
         self
     }
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn get_function_associations(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionAssociations> {
+    pub fn get_function_associations(&self) -> &::std::option::Option<crate::types::FunctionAssociations> {
         &self.function_associations
     }
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
-    pub fn field_level_encryption_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn field_level_encryption_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_level_encryption_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
-    pub fn set_field_level_encryption_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_field_level_encryption_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_level_encryption_id = input;
         self
     }
@@ -475,18 +426,12 @@ impl DefaultCacheBehaviorBuilder {
         &self.field_level_encryption_id
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn realtime_log_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn realtime_log_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realtime_log_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_realtime_log_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_realtime_log_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.realtime_log_config_arn = input;
         self
     }
@@ -496,19 +441,13 @@ impl DefaultCacheBehaviorBuilder {
     }
     /// <p>The unique identifier of the cache policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
-    pub fn cache_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cache policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
-    pub fn set_cache_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_policy_id = input;
         self
     }
@@ -518,18 +457,12 @@ impl DefaultCacheBehaviorBuilder {
         &self.cache_policy_id
     }
     /// <p>The unique identifier of the origin request policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_request_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_request_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_request_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the origin request policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_request_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_request_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_request_policy_id = input;
         self
     }
@@ -538,18 +471,12 @@ impl DefaultCacheBehaviorBuilder {
         &self.origin_request_policy_id
     }
     /// <p>The identifier for a response headers policy.</p>
-    pub fn response_headers_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_headers_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_headers_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a response headers policy.</p>
-    pub fn set_response_headers_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_headers_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_headers_policy_id = input;
         self
     }
@@ -573,10 +500,7 @@ impl DefaultCacheBehaviorBuilder {
     /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
     /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
     #[deprecated]
-    pub fn set_forwarded_values(
-        mut self,
-        input: ::std::option::Option<crate::types::ForwardedValues>,
-    ) -> Self {
+    pub fn set_forwarded_values(mut self, input: ::std::option::Option<crate::types::ForwardedValues>) -> Self {
         self.forwarded_values = input;
         self
     }

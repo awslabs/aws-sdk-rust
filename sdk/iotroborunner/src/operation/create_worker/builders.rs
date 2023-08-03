@@ -10,10 +10,7 @@ impl CreateWorkerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_worker::CreateWorkerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker::CreateWorkerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker::CreateWorkerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_worker();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateWorkerFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_worker::CreateWorker,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_worker::CreateWorker, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_worker::CreateWorkerError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateWorkerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateWorkerFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_worker::CreateWorker,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_worker::CreateWorker, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_worker::CreateWorkerError>,
     > {
         self.customize_middleware().await
@@ -155,40 +143,26 @@ impl CreateWorkerFluentBuilder {
         self.inner.get_fleet()
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn additional_transient_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_transient_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_transient_properties(input.into());
         self
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn set_additional_transient_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_transient_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_transient_properties(input);
         self
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn get_additional_transient_properties(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_additional_transient_properties(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_additional_transient_properties()
     }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    pub fn additional_fixed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_fixed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_fixed_properties(input.into());
         self
     }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    pub fn set_additional_fixed_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_fixed_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_fixed_properties(input);
         self
     }
@@ -202,10 +176,7 @@ impl CreateWorkerFluentBuilder {
         self
     }
     /// Properties of the worker that are provided by the vendor FMS.
-    pub fn set_vendor_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorProperties>,
-    ) -> Self {
+    pub fn set_vendor_properties(mut self, input: ::std::option::Option<crate::types::VendorProperties>) -> Self {
         self.inner = self.inner.set_vendor_properties(input);
         self
     }
@@ -219,10 +190,7 @@ impl CreateWorkerFluentBuilder {
         self
     }
     /// Supported coordinates for worker position.
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionCoordinates>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::PositionCoordinates>) -> Self {
         self.inner = self.inner.set_position(input);
         self
     }
@@ -236,10 +204,7 @@ impl CreateWorkerFluentBuilder {
         self
     }
     /// Worker orientation measured in units clockwise from north.
-    pub fn set_orientation(
-        mut self,
-        input: ::std::option::Option<crate::types::Orientation>,
-    ) -> Self {
+    pub fn set_orientation(mut self, input: ::std::option::Option<crate::types::Orientation>) -> Self {
         self.inner = self.inner.set_orientation(input);
         self
     }

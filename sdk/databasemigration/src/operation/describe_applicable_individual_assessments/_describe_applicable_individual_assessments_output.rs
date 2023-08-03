@@ -29,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeApplicableIndividualAssessmen
 }
 impl DescribeApplicableIndividualAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicableIndividualAssessmentsOutput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput).
-    pub fn builder() -> crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsOutputBuilder {
         crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicableIndividualAssessmentsOutput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsOutputBuilder {
-    pub(crate) individual_assessment_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) individual_assessment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,27 +48,19 @@ impl DescribeApplicableIndividualAssessmentsOutputBuilder {
     /// To override the contents of this collection use [`set_individual_assessment_names`](Self::set_individual_assessment_names).
     ///
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn individual_assessment_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn individual_assessment_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.individual_assessment_names.unwrap_or_default();
         v.push(input.into());
         self.individual_assessment_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn set_individual_assessment_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_individual_assessment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.individual_assessment_names = input;
         self
     }
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn get_individual_assessment_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_individual_assessment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.individual_assessment_names
     }
     /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
@@ -98,12 +87,10 @@ impl DescribeApplicableIndividualAssessmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeApplicableIndividualAssessmentsOutput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput).
-    pub fn build(self) -> crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput{
+    pub fn build(self) -> crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput {
         crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput {
-            individual_assessment_names: self.individual_assessment_names
-            ,
-            marker: self.marker
-            ,
+            individual_assessment_names: self.individual_assessment_names,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }

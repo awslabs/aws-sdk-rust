@@ -33,10 +33,7 @@ impl ::std::fmt::Debug for SparkSubmitJobDriver {
         let mut formatter = f.debug_struct("SparkSubmitJobDriver");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
         formatter.field("entry_point_arguments", &self.entry_point_arguments);
-        formatter.field(
-            "spark_submit_parameters",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -75,42 +72,28 @@ impl SparkSubmitJobDriverBuilder {
     /// To override the contents of this collection use [`set_entry_point_arguments`](Self::set_entry_point_arguments).
     ///
     /// <p>The arguments for job application.</p>
-    pub fn entry_point_arguments(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entry_point_arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entry_point_arguments.unwrap_or_default();
         v.push(input.into());
         self.entry_point_arguments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The arguments for job application.</p>
-    pub fn set_entry_point_arguments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entry_point_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entry_point_arguments = input;
         self
     }
     /// <p>The arguments for job application.</p>
-    pub fn get_entry_point_arguments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entry_point_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entry_point_arguments
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn spark_submit_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spark_submit_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spark_submit_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn set_spark_submit_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spark_submit_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spark_submit_parameters = input;
         self
     }
@@ -132,10 +115,7 @@ impl ::std::fmt::Debug for SparkSubmitJobDriverBuilder {
         let mut formatter = f.debug_struct("SparkSubmitJobDriverBuilder");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
         formatter.field("entry_point_arguments", &self.entry_point_arguments);
-        formatter.field(
-            "spark_submit_parameters",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

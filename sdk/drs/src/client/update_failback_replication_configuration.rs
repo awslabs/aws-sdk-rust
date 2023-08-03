@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`use_private_ip(bool)`](crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationFluentBuilder::use_private_ip) / [`set_use_private_ip(Option<bool>)`](crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationFluentBuilder::set_use_private_ip): <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     /// - On success, responds with [`UpdateFailbackReplicationConfigurationOutput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateFailbackReplicationConfigurationError>`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationError)
-    pub fn update_failback_replication_configuration(&self) -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationFluentBuilder{
-        crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn update_failback_replication_configuration(
+        &self,
+    ) -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationFluentBuilder {
+        crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

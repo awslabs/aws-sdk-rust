@@ -36,16 +36,14 @@ impl DescribeStaleSecurityGroupsInput {
 }
 impl DescribeStaleSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeStaleSecurityGroupsInput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput).
-    pub fn builder() -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder {
         crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStaleSecurityGroupsInput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -116,13 +114,11 @@ impl DescribeStaleSecurityGroupsInputBuilder {
         crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput {
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                vpc_id: self.vpc_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput {
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            vpc_id: self.vpc_id,
+        })
     }
 }

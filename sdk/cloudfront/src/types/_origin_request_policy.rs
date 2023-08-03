@@ -19,8 +19,7 @@ pub struct OriginRequestPolicy {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The origin request policy configuration.</p>
     #[doc(hidden)]
-    pub origin_request_policy_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
 impl OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
@@ -32,9 +31,7 @@ impl OriginRequestPolicy {
         self.last_modified_time.as_ref()
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    pub fn origin_request_policy_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
 }
@@ -47,14 +44,11 @@ impl OriginRequestPolicy {
 
 /// A builder for [`OriginRequestPolicy`](crate::types::OriginRequestPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginRequestPolicyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) origin_request_policy_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub(crate) origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
 impl OriginRequestPolicyBuilder {
     /// <p>The unique identifier for the origin request policy.</p>
@@ -77,10 +71,7 @@ impl OriginRequestPolicyBuilder {
         self
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -89,25 +80,17 @@ impl OriginRequestPolicyBuilder {
         &self.last_modified_time
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        mut self,
-        input: crate::types::OriginRequestPolicyConfig,
-    ) -> Self {
+    pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.origin_request_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn set_origin_request_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
-    ) -> Self {
+    pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
         self.origin_request_policy_config = input;
         self
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn get_origin_request_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+    pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
         &self.origin_request_policy_config
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicy`](crate::types::OriginRequestPolicy).

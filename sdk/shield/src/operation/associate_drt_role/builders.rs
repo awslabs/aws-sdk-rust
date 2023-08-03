@@ -10,10 +10,7 @@ impl AssociateDrtRoleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_drt_role::AssociateDrtRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_role::AssociateDRTRoleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_role::AssociateDRTRoleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_drt_role();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl AssociateDRTRoleFluentBuilder {
         }
     }
     /// Access the AssociateDRTRole as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_drt_role::builders::AssociateDrtRoleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_drt_role::builders::AssociateDrtRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl AssociateDRTRoleFluentBuilder {
             crate::operation::associate_drt_role::AssociateDRTRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_role::AssociateDRTRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_role::AssociateDRTRoleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl AssociateDRTRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl AssociateDRTRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_drt_role::AssociateDrtRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_role::AssociateDRTRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_role::AssociateDRTRoleError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl AssociateDRTRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_drt_role::AssociateDrtRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_role::AssociateDRTRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_role::AssociateDRTRoleError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl AssociateDRTRoleFluentBuilder {
             crate::operation::associate_drt_role::AssociateDRTRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_role::AssociateDRTRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_role::AssociateDRTRoleError>,
     > {
         self.customize_middleware().await
     }

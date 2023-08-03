@@ -6,18 +6,14 @@ pub fn ser_export_preferences(
     match input {
         crate::types::ExportPreferences::Ec2RecommendationsPreferences(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_11
-                .key("ec2RecommendationsPreferences")
-                .start_object();
+            let mut object_1 = object_11.key("ec2RecommendationsPreferences").start_object();
             crate::protocol_serde::shape_ec2_recommendations_export_preferences::ser_ec2_recommendations_export_preferences(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::ExportPreferences::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ExportPreferences",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ExportPreferences",
+            ))
         }
     }
     Ok(())

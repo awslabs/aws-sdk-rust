@@ -86,9 +86,7 @@ impl ProxySession {
         self.participants.as_deref()
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn number_selection_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumberSelectionBehavior> {
+    pub fn number_selection_behavior(&self) -> ::std::option::Option<&crate::types::NumberSelectionBehavior> {
         self.number_selection_behavior.as_ref()
     }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
@@ -109,9 +107,7 @@ impl ProxySession {
 
 /// A builder for [`ProxySession`](crate::types::ProxySession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProxySessionBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_session_id: ::std::option::Option<::std::string::String>,
@@ -123,25 +119,18 @@ pub struct ProxySessionBuilder {
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) participants: ::std::option::Option<::std::vec::Vec<crate::types::Participant>>,
-    pub(crate) number_selection_behavior:
-        ::std::option::Option<crate::types::NumberSelectionBehavior>,
+    pub(crate) number_selection_behavior: ::std::option::Option<crate::types::NumberSelectionBehavior>,
     pub(crate) geo_match_level: ::std::option::Option<crate::types::GeoMatchLevel>,
     pub(crate) geo_match_params: ::std::option::Option<crate::types::GeoMatchParams>,
 }
 impl ProxySessionBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -150,18 +139,12 @@ impl ProxySessionBuilder {
         &self.voice_connector_id
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The proxy session ID.</p>
-    pub fn set_proxy_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proxy_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proxy_session_id = input;
         self
     }
@@ -189,10 +172,7 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The proxy session status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProxySessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProxySessionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -226,17 +206,12 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         &self.capabilities
     }
     /// <p>The created time stamp, in ISO 8601 format.</p>
@@ -245,10 +220,7 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The created time stamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -262,10 +234,7 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The updated time stamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -279,10 +248,7 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The ended time stamp, in ISO 8601 format.</p>
-    pub fn set_ended_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_timestamp = input;
         self
     }
@@ -302,39 +268,26 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The proxy session participants.</p>
-    pub fn set_participants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Participant>>,
-    ) -> Self {
+    pub fn set_participants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Participant>>) -> Self {
         self.participants = input;
         self
     }
     /// <p>The proxy session participants.</p>
-    pub fn get_participants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Participant>> {
+    pub fn get_participants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Participant>> {
         &self.participants
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn number_selection_behavior(
-        mut self,
-        input: crate::types::NumberSelectionBehavior,
-    ) -> Self {
+    pub fn number_selection_behavior(mut self, input: crate::types::NumberSelectionBehavior) -> Self {
         self.number_selection_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn set_number_selection_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberSelectionBehavior>,
-    ) -> Self {
+    pub fn set_number_selection_behavior(mut self, input: ::std::option::Option<crate::types::NumberSelectionBehavior>) -> Self {
         self.number_selection_behavior = input;
         self
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn get_number_selection_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumberSelectionBehavior> {
+    pub fn get_number_selection_behavior(&self) -> &::std::option::Option<crate::types::NumberSelectionBehavior> {
         &self.number_selection_behavior
     }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
@@ -343,10 +296,7 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
-    pub fn set_geo_match_level(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchLevel>,
-    ) -> Self {
+    pub fn set_geo_match_level(mut self, input: ::std::option::Option<crate::types::GeoMatchLevel>) -> Self {
         self.geo_match_level = input;
         self
     }
@@ -360,10 +310,7 @@ impl ProxySessionBuilder {
         self
     }
     /// <p>The country and area code for the proxy phone number.</p>
-    pub fn set_geo_match_params(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchParams>,
-    ) -> Self {
+    pub fn set_geo_match_params(mut self, input: ::std::option::Option<crate::types::GeoMatchParams>) -> Self {
         self.geo_match_params = input;
         self
     }

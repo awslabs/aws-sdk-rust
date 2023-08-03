@@ -19,9 +19,7 @@ impl DeleteAlertOutput {
 
 /// A builder for [`DeleteAlertOutput`](crate::operation::delete_alert::DeleteAlertOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlertOutputBuilder {
     _request_id: Option<String>,
 }

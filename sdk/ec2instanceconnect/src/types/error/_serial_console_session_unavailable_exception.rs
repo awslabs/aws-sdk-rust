@@ -27,34 +27,27 @@ impl ::std::fmt::Display for SerialConsoleSessionUnavailableException {
     }
 }
 impl ::std::error::Error for SerialConsoleSessionUnavailableException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::SerialConsoleSessionUnavailableException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::SerialConsoleSessionUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SerialConsoleSessionUnavailableException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SerialConsoleSessionUnavailableException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl SerialConsoleSessionUnavailableException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleSessionUnavailableException`](crate::types::error::SerialConsoleSessionUnavailableException).
-    pub fn builder(
-    ) -> crate::types::error::builders::SerialConsoleSessionUnavailableExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::SerialConsoleSessionUnavailableExceptionBuilder {
         crate::types::error::builders::SerialConsoleSessionUnavailableExceptionBuilder::default()
     }
 }
 
 /// A builder for [`SerialConsoleSessionUnavailableException`](crate::types::error::SerialConsoleSessionUnavailableException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SerialConsoleSessionUnavailableExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl SerialConsoleSessionUnavailableExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

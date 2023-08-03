@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayAttachmentsOutput {
     /// <p>Information about the attachments.</p>
     #[doc(hidden)]
-    pub transit_gateway_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>>,
+    pub transit_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTransitGatewayAttachmentsOutput {
 }
 impl DescribeTransitGatewayAttachmentsOutput {
     /// <p>Information about the attachments.</p>
-    pub fn transit_gateway_attachments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayAttachment]> {
+    pub fn transit_gateway_attachments(&self) -> ::std::option::Option<&[crate::types::TransitGatewayAttachment]> {
         self.transit_gateway_attachments.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewayAttachmentsOutp
 }
 impl DescribeTransitGatewayAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayAttachmentsOutput`](crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsOutputBuilder {
         crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayAttachmentsOutput`](crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayAttachmentsOutputBuilder {
-    pub(crate) transit_gateway_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>>,
+    pub(crate) transit_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeTransitGatewayAttachmentsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_attachments`](Self::set_transit_gateway_attachments).
     ///
     /// <p>Information about the attachments.</p>
-    pub fn transit_gateway_attachments(
-        mut self,
-        input: crate::types::TransitGatewayAttachment,
-    ) -> Self {
+    pub fn transit_gateway_attachments(mut self, input: crate::types::TransitGatewayAttachment) -> Self {
         let mut v = self.transit_gateway_attachments.unwrap_or_default();
         v.push(input);
         self.transit_gateway_attachments = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the attachments.</p>
-    pub fn set_transit_gateway_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>>) -> Self {
         self.transit_gateway_attachments = input;
         self
     }
     /// <p>Information about the attachments.</p>
-    pub fn get_transit_gateway_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>> {
+    pub fn get_transit_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachment>> {
         &self.transit_gateway_attachments
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +86,10 @@ impl DescribeTransitGatewayAttachmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayAttachmentsOutput`](crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput{
+    pub fn build(self) -> crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput {
         crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput {
-            transit_gateway_attachments: self.transit_gateway_attachments
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_attachments: self.transit_gateway_attachments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

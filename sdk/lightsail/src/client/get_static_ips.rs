@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`static_ips(Option<Vec<StaticIp>>)`](crate::operation::get_static_ips::GetStaticIpsOutput::static_ips): <p>An array of key-value pairs containing information about your get static IPs request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_static_ips::GetStaticIpsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetStaticIpsError>`](crate::operation::get_static_ips::GetStaticIpsError)
-    pub fn get_static_ips(
-        &self,
-    ) -> crate::operation::get_static_ips::builders::GetStaticIpsFluentBuilder {
-        crate::operation::get_static_ips::builders::GetStaticIpsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_static_ips(&self) -> crate::operation::get_static_ips::builders::GetStaticIpsFluentBuilder {
+        crate::operation::get_static_ips::builders::GetStaticIpsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl EnableVgwRoutePropagationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableVgwRoutePropagationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder,
+    inner: crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder,
 }
 impl EnableVgwRoutePropagationFluentBuilder {
     /// Creates a new `EnableVgwRoutePropagation`.
@@ -37,7 +37,7 @@ impl EnableVgwRoutePropagationFluentBuilder {
         }
     }
     /// Access the EnableVgwRoutePropagation as a reference.
-    pub fn as_input(&self) -> &crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl EnableVgwRoutePropagationFluentBuilder {
             crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl EnableVgwRoutePropagationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl EnableVgwRoutePropagationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl EnableVgwRoutePropagationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl EnableVgwRoutePropagationFluentBuilder {
             crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl EnableVgwRoutePropagationFluentBuilder {
         self.inner.get_gateway_id()
     }
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }

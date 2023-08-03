@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`attributes(Option<Vec<TypedLinkAttributeDefinition>>)`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput::attributes): <p>An ordered set of attributes associate with the typed link.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListTypedLinkFacetAttributesError>`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError)
-    pub fn list_typed_link_facet_attributes(&self) -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesFluentBuilder{
+    pub fn list_typed_link_facet_attributes(
+        &self,
+    ) -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesFluentBuilder {
         crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesFluentBuilder::new(self.handle.clone())
     }
 }

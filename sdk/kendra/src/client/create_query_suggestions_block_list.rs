@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateQuerySuggestionsBlockListOutput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput::id): <p>The identifier of the block list.</p>
     /// - On failure, responds with [`SdkError<CreateQuerySuggestionsBlockListError>`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError)
-    pub fn create_query_suggestions_block_list(&self) -> crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListFluentBuilder{
+    pub fn create_query_suggestions_block_list(
+        &self,
+    ) -> crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListFluentBuilder {
         crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListFluentBuilder::new(self.handle.clone())
     }
 }

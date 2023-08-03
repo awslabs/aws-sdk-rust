@@ -22,17 +22,14 @@ impl DescribeWorkflowTypeInput {
 }
 impl DescribeWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder {
+    pub fn builder() -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder {
         crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkflowTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -58,10 +55,7 @@ impl DescribeWorkflowTypeInputBuilder {
         self
     }
     /// <p>The workflow type to describe.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -72,15 +66,11 @@ impl DescribeWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workflow_type::DescribeWorkflowTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workflow_type::DescribeWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_workflow_type::DescribeWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_workflow_type::DescribeWorkflowTypeInput {
+            domain: self.domain,
+            workflow_type: self.workflow_type,
+        })
     }
 }

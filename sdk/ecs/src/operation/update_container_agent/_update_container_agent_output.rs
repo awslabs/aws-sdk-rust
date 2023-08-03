@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateContainerAgentOutput {
 }
 impl UpdateContainerAgentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerAgentOutput`](crate::operation::update_container_agent::UpdateContainerAgentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_container_agent::builders::UpdateContainerAgentOutputBuilder {
+    pub fn builder() -> crate::operation::update_container_agent::builders::UpdateContainerAgentOutputBuilder {
         crate::operation::update_container_agent::builders::UpdateContainerAgentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContainerAgentOutput`](crate::operation::update_container_agent::UpdateContainerAgentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContainerAgentOutputBuilder {
     pub(crate) container_instance: ::std::option::Option<crate::types::ContainerInstance>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl UpdateContainerAgentOutputBuilder {
         self
     }
     /// <p>The container instance that the container agent was updated for.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerInstance>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<crate::types::ContainerInstance>) -> Self {
         self.container_instance = input;
         self
     }
     /// <p>The container instance that the container agent was updated for.</p>
-    pub fn get_container_instance(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerInstance> {
+    pub fn get_container_instance(&self) -> &::std::option::Option<crate::types::ContainerInstance> {
         &self.container_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

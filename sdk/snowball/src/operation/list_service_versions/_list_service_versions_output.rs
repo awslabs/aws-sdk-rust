@@ -42,24 +42,18 @@ impl ::aws_http::request_id::RequestId for ListServiceVersionsOutput {
 }
 impl ListServiceVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceVersionsOutput`](crate::operation::list_service_versions::ListServiceVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder {
-        crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder {
+        crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceVersionsOutput`](crate::operation::list_service_versions::ListServiceVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceVersionsOutputBuilder {
-    pub(crate) service_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
+    pub(crate) service_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
-    pub(crate) dependent_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
+    pub(crate) dependent_services: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -76,17 +70,12 @@ impl ListServiceVersionsOutputBuilder {
         self
     }
     /// <p>A list of supported versions.</p>
-    pub fn set_service_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
-    ) -> Self {
+    pub fn set_service_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>) -> Self {
         self.service_versions = input;
         self
     }
     /// <p>A list of supported versions.</p>
-    pub fn get_service_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>> {
+    pub fn get_service_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>> {
         &self.service_versions
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
@@ -95,10 +84,7 @@ impl ListServiceVersionsOutputBuilder {
         self
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.service_name = input;
         self
     }
@@ -118,17 +104,12 @@ impl ListServiceVersionsOutputBuilder {
         self
     }
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    pub fn set_dependent_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
-    ) -> Self {
+    pub fn set_dependent_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>) -> Self {
         self.dependent_services = input;
         self
     }
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    pub fn get_dependent_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+    pub fn get_dependent_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
         &self.dependent_services
     }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>

@@ -37,9 +37,7 @@ impl BatchDescribeMergeConflictsError {
 
 /// A builder for [`BatchDescribeMergeConflictsError`](crate::types::BatchDescribeMergeConflictsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsErrorBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) exception_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl BatchDescribeMergeConflictsErrorBuilder {
         &self.file_path
     }
     /// <p>The name of the exception.</p>
-    pub fn exception_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exception_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the exception.</p>
-    pub fn set_exception_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exception_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exception_name = input;
         self
     }

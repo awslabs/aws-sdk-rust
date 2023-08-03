@@ -10,10 +10,7 @@ impl EnableControlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_control::EnableControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_control::EnableControlError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_control::EnableControlError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_control();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EnableControlFluentBuilder {
         }
     }
     /// Access the EnableControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_control::builders::EnableControlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_control::builders::EnableControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl EnableControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl EnableControlFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn control_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_identifier(input.into());
         self
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn set_control_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_identifier(input);
         self
     }
@@ -135,18 +121,12 @@ impl EnableControlFluentBuilder {
         self.inner.get_control_identifier()
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn target_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_identifier(input.into());
         self
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn set_target_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_identifier(input);
         self
     }

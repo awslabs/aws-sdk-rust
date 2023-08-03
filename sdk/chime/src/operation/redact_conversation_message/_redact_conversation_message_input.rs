@@ -29,16 +29,14 @@ impl RedactConversationMessageInput {
 }
 impl RedactConversationMessageInput {
     /// Creates a new builder-style object to manufacture [`RedactConversationMessageInput`](crate::operation::redact_conversation_message::RedactConversationMessageInput).
-    pub fn builder() -> crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder{
+    pub fn builder() -> crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder {
         crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`RedactConversationMessageInput`](crate::operation::redact_conversation_message::RedactConversationMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactConversationMessageInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl RedactConversationMessageInputBuilder {
         &self.account_id
     }
     /// <p>The conversation ID.</p>
-    pub fn conversation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The conversation ID.</p>
-    pub fn set_conversation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversation_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl RedactConversationMessageInputBuilder {
         crate::operation::redact_conversation_message::RedactConversationMessageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::redact_conversation_message::RedactConversationMessageInput {
-                account_id: self.account_id,
-                conversation_id: self.conversation_id,
-                message_id: self.message_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::redact_conversation_message::RedactConversationMessageInput {
+            account_id: self.account_id,
+            conversation_id: self.conversation_id,
+            message_id: self.message_id,
+        })
     }
 }

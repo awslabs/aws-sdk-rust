@@ -19,12 +19,7 @@ impl super::Client {
     #[deprecated(
         note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     )]
-    pub fn describe_deployment_job(
-        &self,
-    ) -> crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder
-    {
-        crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_deployment_job(&self) -> crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder {
+        crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder::new(self.handle.clone())
     }
 }

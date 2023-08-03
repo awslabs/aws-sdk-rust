@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeValidDbInstanceModificationsOutput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput) with field(s):
     ///   - [`valid_db_instance_modifications_message(Option<ValidDbInstanceModificationsMessage>)`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput::valid_db_instance_modifications_message): <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeValidDBInstanceModificationsError>`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDBInstanceModificationsError)
-    pub fn describe_valid_db_instance_modifications(&self) -> crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDBInstanceModificationsFluentBuilder{
-        crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDBInstanceModificationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_valid_db_instance_modifications(
+        &self,
+    ) -> crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDBInstanceModificationsFluentBuilder {
+        crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDBInstanceModificationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

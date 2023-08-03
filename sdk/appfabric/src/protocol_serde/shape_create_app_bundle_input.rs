@@ -7,9 +7,7 @@ pub fn ser_create_app_bundle_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.customer_managed_key_identifier {
-        object
-            .key("customerManagedKeyIdentifier")
-            .string(var_2.as_str());
+        object.key("customerManagedKeyIdentifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
         let mut array_4 = object.key("tags").start_array();

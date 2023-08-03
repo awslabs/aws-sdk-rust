@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`portfolio_detail(Option<PortfolioDetail>)`](crate::operation::update_portfolio::UpdatePortfolioOutput::portfolio_detail): <p>Information about the portfolio.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::update_portfolio::UpdatePortfolioOutput::tags): <p>Information about the tags associated with the portfolio.</p>
     /// - On failure, responds with [`SdkError<UpdatePortfolioError>`](crate::operation::update_portfolio::UpdatePortfolioError)
-    pub fn update_portfolio(
-        &self,
-    ) -> crate::operation::update_portfolio::builders::UpdatePortfolioFluentBuilder {
-        crate::operation::update_portfolio::builders::UpdatePortfolioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_portfolio(&self) -> crate::operation::update_portfolio::builders::UpdatePortfolioFluentBuilder {
+        crate::operation::update_portfolio::builders::UpdatePortfolioFluentBuilder::new(self.handle.clone())
     }
 }

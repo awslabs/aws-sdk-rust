@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLabelGroupOutput {
 }
 impl UpdateLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLabelGroupOutput`](crate::operation::update_label_group::UpdateLabelGroupOutput).
-    pub fn builder() -> crate::operation::update_label_group::builders::UpdateLabelGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_label_group::builders::UpdateLabelGroupOutputBuilder {
         crate::operation::update_label_group::builders::UpdateLabelGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLabelGroupOutput`](crate::operation::update_label_group::UpdateLabelGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLabelGroupOutputBuilder {
     _request_id: Option<String>,
 }

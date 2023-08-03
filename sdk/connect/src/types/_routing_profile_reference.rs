@@ -30,9 +30,7 @@ impl RoutingProfileReference {
 
 /// A builder for [`RoutingProfileReference`](crate::types::RoutingProfileReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingProfileReferenceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl RoutingProfileReferenceBuilder {
     }
     /// Consumes the builder and constructs a [`RoutingProfileReference`](crate::types::RoutingProfileReference).
     pub fn build(self) -> crate::types::RoutingProfileReference {
-        crate::types::RoutingProfileReference {
-            id: self.id,
-            arn: self.arn,
-        }
+        crate::types::RoutingProfileReference { id: self.id, arn: self.arn }
     }
 }

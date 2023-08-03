@@ -26,8 +26,7 @@ impl StartSupportDataExportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSupportDataExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_support_data_export::builders::StartSupportDataExportInputBuilder,
+    inner: crate::operation::start_support_data_export::builders::StartSupportDataExportInputBuilder,
 }
 impl StartSupportDataExportFluentBuilder {
     /// Creates a new `StartSupportDataExport`.
@@ -38,10 +37,7 @@ impl StartSupportDataExportFluentBuilder {
         }
     }
     /// Access the StartSupportDataExport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_support_data_export::builders::StartSupportDataExportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_support_data_export::builders::StartSupportDataExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StartSupportDataExportFluentBuilder {
             crate::operation::start_support_data_export::StartSupportDataExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_support_data_export::StartSupportDataExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StartSupportDataExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StartSupportDataExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_support_data_export::StartSupportDataExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StartSupportDataExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_support_data_export::StartSupportDataExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StartSupportDataExportFluentBuilder {
             crate::operation::start_support_data_export::StartSupportDataExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_support_data_export::StartSupportDataExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +127,7 @@ impl StartSupportDataExportFluentBuilder {
     /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
     /// </ul>
     /// <p></p>
-    pub fn set_data_set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportDataSetType>,
-    ) -> Self {
+    pub fn set_data_set_type(mut self, input: ::std::option::Option<crate::types::SupportDataSetType>) -> Self {
         self.inner = self.inner.set_data_set_type(input);
         self
     }
@@ -165,10 +147,7 @@ impl StartSupportDataExportFluentBuilder {
         self
     }
     /// The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
-    pub fn set_from_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from_date(input);
         self
     }
@@ -177,18 +156,12 @@ impl StartSupportDataExportFluentBuilder {
         self.inner.get_from_date()
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn role_name_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn set_role_name_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name_arn(input);
         self
     }
@@ -197,18 +170,12 @@ impl StartSupportDataExportFluentBuilder {
         self.inner.get_role_name_arn()
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn destination_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_s3_bucket_name(input.into());
         self
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn set_destination_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_s3_bucket_name(input);
         self
     }
@@ -217,18 +184,12 @@ impl StartSupportDataExportFluentBuilder {
         self.inner.get_destination_s3_bucket_name()
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn destination_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_s3_prefix(input.into());
         self
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn set_destination_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_s3_prefix(input);
         self
     }
@@ -237,18 +198,12 @@ impl StartSupportDataExportFluentBuilder {
         self.inner.get_destination_s3_prefix()
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -272,19 +227,13 @@ impl StartSupportDataExportFluentBuilder {
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
     pub fn set_customer_defined_values(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_customer_defined_values(input);
         self
     }
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
-    pub fn get_customer_defined_values(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_customer_defined_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_customer_defined_values()
     }
 }

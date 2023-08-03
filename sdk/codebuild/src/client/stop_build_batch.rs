@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopBuildBatchOutput`](crate::operation::stop_build_batch::StopBuildBatchOutput) with field(s):
     ///   - [`build_batch(Option<BuildBatch>)`](crate::operation::stop_build_batch::StopBuildBatchOutput::build_batch): <p>Contains information about a batch build.</p>
     /// - On failure, responds with [`SdkError<StopBuildBatchError>`](crate::operation::stop_build_batch::StopBuildBatchError)
-    pub fn stop_build_batch(
-        &self,
-    ) -> crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder {
-        crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_build_batch(&self) -> crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder {
+        crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder::new(self.handle.clone())
     }
 }

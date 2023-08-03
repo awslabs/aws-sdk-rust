@@ -22,18 +22,14 @@ impl DisableImageDeprecationInput {
 }
 impl DisableImageDeprecationInput {
     /// Creates a new builder-style object to manufacture [`DisableImageDeprecationInput`](crate::operation::disable_image_deprecation::DisableImageDeprecationInput).
-    pub fn builder(
-    ) -> crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder {
         crate::operation::disable_image_deprecation::builders::DisableImageDeprecationInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableImageDeprecationInput`](crate::operation::disable_image_deprecation::DisableImageDeprecationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableImageDeprecationInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -74,11 +70,9 @@ impl DisableImageDeprecationInputBuilder {
         crate::operation::disable_image_deprecation::DisableImageDeprecationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_image_deprecation::DisableImageDeprecationInput {
-                image_id: self.image_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disable_image_deprecation::DisableImageDeprecationInput {
+            image_id: self.image_id,
+            dry_run: self.dry_run,
+        })
     }
 }

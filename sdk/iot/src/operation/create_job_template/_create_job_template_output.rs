@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateJobTemplateOutput {
 }
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobTemplateOutputBuilder {
     pub(crate) job_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_template_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateJobTemplateOutputBuilder {
 }
 impl CreateJobTemplateOutputBuilder {
     /// <p>The ARN of the job template.</p>
-    pub fn job_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the job template.</p>
-    pub fn set_job_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_template_arn = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateJobTemplateOutputBuilder {
         &self.job_template_arn
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn set_job_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_template_id = input;
         self
     }

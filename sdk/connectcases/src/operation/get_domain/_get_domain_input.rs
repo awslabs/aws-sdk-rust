@@ -22,9 +22,7 @@ impl GetDomainInput {
 
 /// A builder for [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetDomainInputBuilder {
         &self.domain_id
     }
     /// Consumes the builder and constructs a [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain::GetDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput {
-            domain_id: self.domain_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput { domain_id: self.domain_id })
     }
 }

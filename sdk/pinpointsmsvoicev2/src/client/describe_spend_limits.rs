@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`spend_limits(Option<Vec<SpendLimit>>)`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput::spend_limits): <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeSpendLimitsError>`](crate::operation::describe_spend_limits::DescribeSpendLimitsError)
-    pub fn describe_spend_limits(
-        &self,
-    ) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder {
-        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_spend_limits(&self) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder {
+        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`app_instance_user_arn(Option<String>)`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     ///   - [`expiration_settings(Option<ExpirationSettings>)`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput::expiration_settings): <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     /// - On failure, responds with [`SdkError<PutAppInstanceUserExpirationSettingsError>`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError)
-    pub fn put_app_instance_user_expiration_settings(&self) -> crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsFluentBuilder{
-        crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsFluentBuilder::new(self.handle.clone())
+    pub fn put_app_instance_user_expiration_settings(
+        &self,
+    ) -> crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsFluentBuilder {
+        crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

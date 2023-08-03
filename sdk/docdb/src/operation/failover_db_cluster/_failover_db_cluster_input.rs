@@ -33,17 +33,14 @@ impl FailoverDbClusterInput {
 }
 impl FailoverDbClusterInput {
     /// Creates a new builder-style object to manufacture [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
-    pub fn builder(
-    ) -> crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
+    pub fn builder() -> crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
         crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailoverDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -54,10 +51,7 @@ impl FailoverDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -66,10 +60,7 @@ impl FailoverDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -83,41 +74,28 @@ impl FailoverDbClusterInputBuilder {
     }
     /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
-    pub fn target_db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
-    pub fn set_target_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_instance_identifier = input;
         self
     }
     /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
-    pub fn get_target_db_instance_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_instance_identifier
     }
     /// Consumes the builder and constructs a [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::failover_db_cluster::FailoverDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::failover_db_cluster::FailoverDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                target_db_instance_identifier: self.target_db_instance_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::failover_db_cluster::FailoverDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::failover_db_cluster::FailoverDbClusterInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            target_db_instance_identifier: self.target_db_instance_identifier,
+        })
     }
 }

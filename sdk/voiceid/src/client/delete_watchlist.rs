@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`watchlist_id(impl ::std::convert::Into<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::watchlist_id) / [`set_watchlist_id(Option<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::set_watchlist_id): <p>The identifier of the watchlist to be deleted.</p>
     /// - On success, responds with [`DeleteWatchlistOutput`](crate::operation::delete_watchlist::DeleteWatchlistOutput)
     /// - On failure, responds with [`SdkError<DeleteWatchlistError>`](crate::operation::delete_watchlist::DeleteWatchlistError)
-    pub fn delete_watchlist(
-        &self,
-    ) -> crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder {
-        crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_watchlist(&self) -> crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder {
+        crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::new(self.handle.clone())
     }
 }

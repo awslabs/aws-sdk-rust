@@ -23,9 +23,7 @@ impl KeyGroupSummary {
 
 /// A builder for [`KeyGroupSummary`](crate::types::KeyGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyGroupSummaryBuilder {
     pub(crate) key_group: ::std::option::Option<crate::types::KeyGroup>,
 }
@@ -46,8 +44,6 @@ impl KeyGroupSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`KeyGroupSummary`](crate::types::KeyGroupSummary).
     pub fn build(self) -> crate::types::KeyGroupSummary {
-        crate::types::KeyGroupSummary {
-            key_group: self.key_group,
-        }
+        crate::types::KeyGroupSummary { key_group: self.key_group }
     }
 }

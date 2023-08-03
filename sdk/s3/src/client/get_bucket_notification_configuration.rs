@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`lambda_function_configurations(Option<Vec<LambdaFunctionConfiguration>>)`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput::lambda_function_configurations): <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
     ///   - [`event_bridge_configuration(Option<EventBridgeConfiguration>)`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput::event_bridge_configuration): <p>Enables delivery of events to Amazon EventBridge.</p>
     /// - On failure, responds with [`SdkError<GetBucketNotificationConfigurationError>`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationError)
-    pub fn get_bucket_notification_configuration(&self) -> crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationFluentBuilder{
+    pub fn get_bucket_notification_configuration(
+        &self,
+    ) -> crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationFluentBuilder {
         crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

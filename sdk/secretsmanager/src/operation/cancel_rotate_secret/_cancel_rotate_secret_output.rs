@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CancelRotateSecretOutput {
 }
 impl CancelRotateSecretOutput {
     /// Creates a new builder-style object to manufacture [`CancelRotateSecretOutput`](crate::operation::cancel_rotate_secret::CancelRotateSecretOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_rotate_secret::builders::CancelRotateSecretOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_rotate_secret::builders::CancelRotateSecretOutputBuilder {
         crate::operation::cancel_rotate_secret::builders::CancelRotateSecretOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelRotateSecretOutput`](crate::operation::cancel_rotate_secret::CancelRotateSecretOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelRotateSecretOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

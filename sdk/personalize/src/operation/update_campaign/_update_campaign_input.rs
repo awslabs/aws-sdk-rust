@@ -43,9 +43,7 @@ impl UpdateCampaignInput {
 
 /// A builder for [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl UpdateCampaignInputBuilder {
         &self.campaign_arn
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
@@ -107,10 +99,7 @@ impl UpdateCampaignInputBuilder {
         self
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn set_campaign_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignConfig>,
-    ) -> Self {
+    pub fn set_campaign_config(mut self, input: ::std::option::Option<crate::types::CampaignConfig>) -> Self {
         self.campaign_config = input;
         self
     }
@@ -121,10 +110,7 @@ impl UpdateCampaignInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_campaign::UpdateCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
             campaign_arn: self.campaign_arn,
             solution_version_arn: self.solution_version_arn,

@@ -64,10 +64,7 @@ impl TopicDateRangeFilterBuilder {
         self
     }
     /// <p>The constant used in a date range filter.</p>
-    pub fn set_constant(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
-    ) -> Self {
+    pub fn set_constant(mut self, input: ::std::option::Option<crate::types::TopicRangeFilterConstant>) -> Self {
         self.constant = input;
         self
     }

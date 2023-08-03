@@ -15,18 +15,14 @@ impl GetEarthObservationJobInput {
 }
 impl GetEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobInputBuilder {
         crate::operation::get_earth_observation_job::builders::GetEarthObservationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEarthObservationJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetEarthObservationJobInputBuilder {
         crate::operation::get_earth_observation_job::GetEarthObservationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_earth_observation_job::GetEarthObservationJobInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_earth_observation_job::GetEarthObservationJobInput { arn: self.arn })
     }
 }

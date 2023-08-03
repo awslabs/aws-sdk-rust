@@ -10,10 +10,7 @@ impl UpdateVpcEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_vpc_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateVpcEndpointFluentBuilder {
         }
     }
     /// Access the UpdateVpcEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateVpcEndpointFluentBuilder {
             crate::operation::update_vpc_endpoint::UpdateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateVpcEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateVpcEndpointFluentBuilder {
             crate::operation::update_vpc_endpoint::UpdateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_id(input.into());
         self
     }
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateVpcEndpointFluentBuilder {
         self
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
-    pub fn set_vpc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcOptions>,
-    ) -> Self {
+    pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.inner = self.inner.set_vpc_options(input);
         self
     }

@@ -26,8 +26,7 @@ impl ListDiscoveredResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
+    inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
 }
 impl ListDiscoveredResourcesFluentBuilder {
     /// Creates a new `ListDiscoveredResources`.
@@ -38,10 +37,7 @@ impl ListDiscoveredResourcesFluentBuilder {
         }
     }
     /// Access the ListDiscoveredResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListDiscoveredResourcesFluentBuilder {
             crate::operation::list_discovered_resources::ListDiscoveredResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListDiscoveredResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListDiscoveredResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListDiscoveredResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListDiscoveredResourcesFluentBuilder {
             crate::operation::list_discovered_resources::ListDiscoveredResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator {
         crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -154,18 +130,12 @@ impl ListDiscoveredResourcesFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }

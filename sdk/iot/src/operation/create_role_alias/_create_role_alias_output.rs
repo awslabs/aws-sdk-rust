@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRoleAliasOutput {
 }
 impl CreateRoleAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoleAliasOutput`](crate::operation::create_role_alias::CreateRoleAliasOutput).
-    pub fn builder() -> crate::operation::create_role_alias::builders::CreateRoleAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_role_alias::builders::CreateRoleAliasOutputBuilder {
         crate::operation::create_role_alias::builders::CreateRoleAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRoleAliasOutput`](crate::operation::create_role_alias::CreateRoleAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoleAliasOutputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_alias_arn: ::std::option::Option<::std::string::String>,
@@ -60,18 +57,12 @@ impl CreateRoleAliasOutputBuilder {
         &self.role_alias
     }
     /// <p>The role alias ARN.</p>
-    pub fn role_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role alias ARN.</p>
-    pub fn set_role_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_alias_arn = input;
         self
     }

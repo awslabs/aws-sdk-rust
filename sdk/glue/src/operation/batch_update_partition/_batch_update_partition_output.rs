@@ -5,15 +5,12 @@
 pub struct BatchUpdatePartitionOutput {
     /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>,
     _request_id: Option<String>,
 }
 impl BatchUpdatePartitionOutput {
     /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchUpdatePartitionFailureEntry]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchUpdatePartitionFailureEntry]> {
         self.errors.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchUpdatePartitionOutput {
 }
 impl BatchUpdatePartitionOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdatePartitionOutput`](crate::operation::batch_update_partition::BatchUpdatePartitionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_partition::builders::BatchUpdatePartitionOutputBuilder {
+    pub fn builder() -> crate::operation::batch_update_partition::builders::BatchUpdatePartitionOutputBuilder {
         crate::operation::batch_update_partition::builders::BatchUpdatePartitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdatePartitionOutput`](crate::operation::batch_update_partition::BatchUpdatePartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>,
     _request_id: Option<String>,
 }
 impl BatchUpdatePartitionOutputBuilder {
@@ -53,20 +46,12 @@ impl BatchUpdatePartitionOutputBuilder {
         self
     }
     /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

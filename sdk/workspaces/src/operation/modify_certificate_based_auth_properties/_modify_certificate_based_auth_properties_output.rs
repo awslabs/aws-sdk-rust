@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyCertificateBasedAuthPropertiesO
 }
 impl ModifyCertificateBasedAuthPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesOutput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput).
-    pub fn builder() -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesOutputBuilder {
         crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCertificateBasedAuthPropertiesOutput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCertificateBasedAuthPropertiesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl ModifyCertificateBasedAuthPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyCertificateBasedAuthPropertiesOutput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput).
-    pub fn build(self) -> crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput{
+    pub fn build(self) -> crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput {
         crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput {
             _request_id: self._request_id,
         }

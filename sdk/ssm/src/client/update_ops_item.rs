@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`ops_item_arn(impl ::std::convert::Into<String>)`](crate::operation::update_ops_item::builders::UpdateOpsItemFluentBuilder::ops_item_arn) / [`set_ops_item_arn(Option<String>)`](crate::operation::update_ops_item::builders::UpdateOpsItemFluentBuilder::set_ops_item_arn): <p>The OpsItem Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`UpdateOpsItemOutput`](crate::operation::update_ops_item::UpdateOpsItemOutput)
     /// - On failure, responds with [`SdkError<UpdateOpsItemError>`](crate::operation::update_ops_item::UpdateOpsItemError)
-    pub fn update_ops_item(
-        &self,
-    ) -> crate::operation::update_ops_item::builders::UpdateOpsItemFluentBuilder {
-        crate::operation::update_ops_item::builders::UpdateOpsItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ops_item(&self) -> crate::operation::update_ops_item::builders::UpdateOpsItemFluentBuilder {
+        crate::operation::update_ops_item::builders::UpdateOpsItemFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,34 +15,25 @@ impl DeregisterEcsClusterInput {
 }
 impl DeregisterEcsClusterInput {
     /// Creates a new builder-style object to manufacture [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterInputBuilder {
+    pub fn builder() -> crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterInputBuilder {
         crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterEcsClusterInputBuilder {
     pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterEcsClusterInputBuilder {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecs_cluster_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeregisterEcsClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput {
-                ecs_cluster_arn: self.ecs_cluster_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput {
+            ecs_cluster_arn: self.ecs_cluster_arn,
+        })
     }
 }

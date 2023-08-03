@@ -43,9 +43,7 @@ impl GetMlTransformsInput {
 
 /// A builder for [`GetMlTransformsInput`](crate::operation::get_ml_transforms::GetMlTransformsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTransformsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,10 +85,7 @@ impl GetMlTransformsInputBuilder {
         self
     }
     /// <p>The filter transformation criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TransformFilterCriteria>) -> Self {
         self.filter = input;
         self
     }
@@ -104,10 +99,7 @@ impl GetMlTransformsInputBuilder {
         self
     }
     /// <p>The sorting criteria.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformSortCriteria>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::TransformSortCriteria>) -> Self {
         self.sort = input;
         self
     }
@@ -118,10 +110,7 @@ impl GetMlTransformsInputBuilder {
     /// Consumes the builder and constructs a [`GetMlTransformsInput`](crate::operation::get_ml_transforms::GetMlTransformsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ml_transforms::GetMlTransformsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_ml_transforms::GetMlTransformsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_transforms::GetMlTransformsInput {
             next_token: self.next_token,
             max_results: self.max_results,

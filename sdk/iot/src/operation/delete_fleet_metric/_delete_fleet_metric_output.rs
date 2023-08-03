@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFleetMetricOutput {
 }
 impl DeleteFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetMetricOutput`](crate::operation::delete_fleet_metric::DeleteFleetMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricOutputBuilder {
+    pub fn builder() -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricOutputBuilder {
         crate::operation::delete_fleet_metric::builders::DeleteFleetMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetMetricOutput`](crate::operation::delete_fleet_metric::DeleteFleetMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetMetricOutputBuilder {
     _request_id: Option<String>,
 }

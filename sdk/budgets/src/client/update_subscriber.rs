@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`new_subscriber(Subscriber)`](crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder::new_subscriber) / [`set_new_subscriber(Option<Subscriber>)`](crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder::set_new_subscriber): <p>The updated subscriber that is associated with a budget notification.</p>
     /// - On success, responds with [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput)
     /// - On failure, responds with [`SdkError<UpdateSubscriberError>`](crate::operation::update_subscriber::UpdateSubscriberError)
-    pub fn update_subscriber(
-        &self,
-    ) -> crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder {
-        crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_subscriber(&self) -> crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder {
+        crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder::new(self.handle.clone())
     }
 }

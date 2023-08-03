@@ -9,10 +9,7 @@ pub fn ser_trigger_config(
     if let Some(var_2) = &input.trigger_properties {
         #[allow(unused_mut)]
         let mut object_3 = object.key("TriggerProperties").start_object();
-        crate::protocol_serde::shape_trigger_properties::ser_trigger_properties(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_trigger_properties::ser_trigger_properties(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

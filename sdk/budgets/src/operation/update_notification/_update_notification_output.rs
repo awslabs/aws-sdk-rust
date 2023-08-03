@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for UpdateNotificationOutput {
 }
 impl UpdateNotificationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::operation::update_notification::UpdateNotificationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_notification::builders::UpdateNotificationOutputBuilder {
+    pub fn builder() -> crate::operation::update_notification::builders::UpdateNotificationOutputBuilder {
         crate::operation::update_notification::builders::UpdateNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNotificationOutput`](crate::operation::update_notification::UpdateNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotificationOutputBuilder {
     _request_id: Option<String>,
 }

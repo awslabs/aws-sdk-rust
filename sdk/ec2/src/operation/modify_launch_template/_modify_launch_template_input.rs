@@ -49,17 +49,14 @@ impl ModifyLaunchTemplateInput {
 }
 impl ModifyLaunchTemplateInput {
     /// Creates a new builder-style object to manufacture [`ModifyLaunchTemplateInput`](crate::operation::modify_launch_template::ModifyLaunchTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder {
+    pub fn builder() -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder {
         crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLaunchTemplateInput`](crate::operation::modify_launch_template::ModifyLaunchTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLaunchTemplateInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -101,19 +98,13 @@ impl ModifyLaunchTemplateInputBuilder {
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_id = input;
         self
     }
@@ -124,19 +115,13 @@ impl ModifyLaunchTemplateInputBuilder {
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_name = input;
         self
     }
@@ -146,18 +131,12 @@ impl ModifyLaunchTemplateInputBuilder {
         &self.launch_template_name
     }
     /// <p>The version number of the launch template to set as the default version.</p>
-    pub fn default_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the launch template to set as the default version.</p>
-    pub fn set_default_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version = input;
         self
     }
@@ -168,18 +147,14 @@ impl ModifyLaunchTemplateInputBuilder {
     /// Consumes the builder and constructs a [`ModifyLaunchTemplateInput`](crate::operation::modify_launch_template::ModifyLaunchTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_launch_template::ModifyLaunchTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_launch_template::ModifyLaunchTemplateInput {
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-                launch_template_id: self.launch_template_id,
-                launch_template_name: self.launch_template_name,
-                default_version: self.default_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_launch_template::ModifyLaunchTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_launch_template::ModifyLaunchTemplateInput {
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+            launch_template_id: self.launch_template_id,
+            launch_template_name: self.launch_template_name,
+            default_version: self.default_version,
+        })
     }
 }

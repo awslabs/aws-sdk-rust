@@ -10,10 +10,7 @@ impl ReplicateInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::replicate_instance::ReplicateInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_instance::ReplicateInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_instance::ReplicateInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.replicate_instance();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ReplicateInstanceFluentBuilder {
         }
     }
     /// Access the ReplicateInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::replicate_instance::builders::ReplicateInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::replicate_instance::builders::ReplicateInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ReplicateInstanceFluentBuilder {
             crate::operation::replicate_instance::ReplicateInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_instance::ReplicateInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_instance::ReplicateInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ReplicateInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ReplicateInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replicate_instance::ReplicateInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_instance::ReplicateInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_instance::ReplicateInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ReplicateInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replicate_instance::ReplicateInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_instance::ReplicateInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_instance::ReplicateInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl ReplicateInstanceFluentBuilder {
             crate::operation::replicate_instance::ReplicateInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replicate_instance::ReplicateInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replicate_instance::ReplicateInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl ReplicateInstanceFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
-    pub fn replica_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replica_region(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
-    pub fn set_replica_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replica_region(input);
         self
     }
@@ -172,18 +150,12 @@ impl ReplicateInstanceFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
-    pub fn replica_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replica_alias(input.into());
         self
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
-    pub fn set_replica_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replica_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replica_alias(input);
         self
     }

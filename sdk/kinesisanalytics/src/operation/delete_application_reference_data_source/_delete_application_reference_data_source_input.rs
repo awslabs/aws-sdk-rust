@@ -29,16 +29,14 @@ impl DeleteApplicationReferenceDataSourceInput {
 }
 impl DeleteApplicationReferenceDataSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceInput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput).
-    pub fn builder() -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder{
+    pub fn builder() -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder {
         crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationReferenceDataSourceInput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
@@ -46,18 +44,12 @@ pub struct DeleteApplicationReferenceDataSourceInputBuilder {
 }
 impl DeleteApplicationReferenceDataSourceInputBuilder {
     /// <p>Name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -94,16 +86,18 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
         &self.reference_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceInput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput {
-                application_name: self.application_name
-                ,
-                current_application_version_id: self.current_application_version_id
-                ,
-                reference_id: self.reference_id
-                ,
-            }
+                application_name: self.application_name,
+                current_application_version_id: self.current_application_version_id,
+                reference_id: self.reference_id,
+            },
         )
     }
 }

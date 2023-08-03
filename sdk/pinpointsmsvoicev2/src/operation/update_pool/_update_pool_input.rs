@@ -64,9 +64,7 @@ impl UpdatePoolInput {
 
 /// A builder for [`UpdatePoolInput`](crate::operation::update_pool::UpdatePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePoolInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
@@ -106,18 +104,12 @@ impl UpdatePoolInputBuilder {
         &self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn two_way_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.two_way_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn set_two_way_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.two_way_channel_arn = input;
         self
     }
@@ -140,18 +132,12 @@ impl UpdatePoolInputBuilder {
         &self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -188,12 +174,7 @@ impl UpdatePoolInputBuilder {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePoolInput`](crate::operation::update_pool::UpdatePoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pool::UpdatePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pool::UpdatePoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pool::UpdatePoolInput {
             pool_id: self.pool_id,
             two_way_enabled: self.two_way_enabled,

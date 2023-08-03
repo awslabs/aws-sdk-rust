@@ -23,9 +23,7 @@ impl ActiveContext {
 
 /// A builder for [`ActiveContext`](crate::types::ActiveContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

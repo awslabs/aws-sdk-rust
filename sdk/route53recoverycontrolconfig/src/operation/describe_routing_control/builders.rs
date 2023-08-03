@@ -38,10 +38,7 @@ impl DescribeRoutingControlFluentBuilder {
         }
     }
     /// Access the DescribeRoutingControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_routing_control::builders::DescribeRoutingControlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_routing_control::builders::DescribeRoutingControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeRoutingControlFluentBuilder {
             crate::operation::describe_routing_control::DescribeRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_control::DescribeRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_control::DescribeRoutingControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeRoutingControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_routing_control::DescribeRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_control::DescribeRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_control::DescribeRoutingControlError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_routing_control::DescribeRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_control::DescribeRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_control::DescribeRoutingControlError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeRoutingControlFluentBuilder {
             crate::operation::describe_routing_control::DescribeRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_control::DescribeRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_control::DescribeRoutingControlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }

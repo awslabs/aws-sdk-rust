@@ -10,10 +10,7 @@ impl ListParallelDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_parallel_data::ListParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_parallel_data::ListParallelDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_parallel_data::ListParallelDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_parallel_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListParallelDataFluentBuilder {
         }
     }
     /// Access the ListParallelData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_parallel_data::builders::ListParallelDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_parallel_data::builders::ListParallelDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListParallelDataFluentBuilder {
             crate::operation::list_parallel_data::ListParallelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_parallel_data::ListParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_parallel_data::ListParallelDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListParallelDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListParallelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_parallel_data::ListParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_parallel_data::ListParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_parallel_data::ListParallelDataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListParallelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_parallel_data::ListParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_parallel_data::ListParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_parallel_data::ListParallelDataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListParallelDataFluentBuilder {
             crate::operation::list_parallel_data::ListParallelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_parallel_data::ListParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_parallel_data::ListParallelDataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_parallel_data::paginator::ListParallelDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_parallel_data::paginator::ListParallelDataPaginator {
-        crate::operation::list_parallel_data::paginator::ListParallelDataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_parallel_data::paginator::ListParallelDataPaginator {
+        crate::operation::list_parallel_data::paginator::ListParallelDataPaginator::new(self.handle, self.inner)
     }
     /// <p>A string that specifies the next page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

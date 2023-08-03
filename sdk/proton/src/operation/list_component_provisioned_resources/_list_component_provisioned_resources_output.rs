@@ -8,8 +8,7 @@ pub struct ListComponentProvisionedResourcesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of provisioned resources for a component.</p>
     #[doc(hidden)]
-    pub provisioned_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
+    pub provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
     _request_id: Option<String>,
 }
 impl ListComponentProvisionedResourcesOutput {
@@ -18,9 +17,7 @@ impl ListComponentProvisionedResourcesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of provisioned resources for a component.</p>
-    pub fn provisioned_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisionedResource]> {
+    pub fn provisioned_resources(&self) -> ::std::option::Option<&[crate::types::ProvisionedResource]> {
         self.provisioned_resources.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListComponentProvisionedResourcesOutp
 }
 impl ListComponentProvisionedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentProvisionedResourcesOutput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput).
-    pub fn builder() -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesOutputBuilder {
         crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentProvisionedResourcesOutput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentProvisionedResourcesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
+    pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
     _request_id: Option<String>,
 }
 impl ListComponentProvisionedResourcesOutputBuilder {
@@ -74,17 +68,12 @@ impl ListComponentProvisionedResourcesOutputBuilder {
         self
     }
     /// <p>An array of provisioned resources for a component.</p>
-    pub fn set_provisioned_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
-    ) -> Self {
+    pub fn set_provisioned_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>) -> Self {
         self.provisioned_resources = input;
         self
     }
     /// <p>An array of provisioned resources for a component.</p>
-    pub fn get_provisioned_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
+    pub fn get_provisioned_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
         &self.provisioned_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,12 +86,10 @@ impl ListComponentProvisionedResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListComponentProvisionedResourcesOutput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput).
-    pub fn build(self) -> crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput{
+    pub fn build(self) -> crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput {
         crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput {
-            next_token: self.next_token
-            ,
-            provisioned_resources: self.provisioned_resources
-            ,
+            next_token: self.next_token,
+            provisioned_resources: self.provisioned_resources,
             _request_id: self._request_id,
         }
     }

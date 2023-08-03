@@ -23,9 +23,7 @@ impl AwsLambdaFunctionDeadLetterConfig {
 
 /// A builder for [`AwsLambdaFunctionDeadLetterConfig`](crate::types::AwsLambdaFunctionDeadLetterConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionDeadLetterConfigBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AwsLambdaFunctionDeadLetterConfigBuilder {
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionDeadLetterConfig`](crate::types::AwsLambdaFunctionDeadLetterConfig).
     pub fn build(self) -> crate::types::AwsLambdaFunctionDeadLetterConfig {
-        crate::types::AwsLambdaFunctionDeadLetterConfig {
-            target_arn: self.target_arn,
-        }
+        crate::types::AwsLambdaFunctionDeadLetterConfig { target_arn: self.target_arn }
     }
 }

@@ -26,7 +26,7 @@ impl GetAccessPointPolicyStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder,
+    inner: crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder,
 }
 impl GetAccessPointPolicyStatusFluentBuilder {
     /// Creates a new `GetAccessPointPolicyStatus`.
@@ -37,7 +37,7 @@ impl GetAccessPointPolicyStatusFluentBuilder {
         }
     }
     /// Access the GetAccessPointPolicyStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAccessPointPolicyStatusFluentBuilder {
             crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAccessPointPolicyStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAccessPointPolicyStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAccessPointPolicyStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetAccessPointPolicyStatusFluentBuilder {
             crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError>,
     > {
         self.customize_middleware().await
     }

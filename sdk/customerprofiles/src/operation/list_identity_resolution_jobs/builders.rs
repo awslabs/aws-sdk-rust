@@ -26,7 +26,7 @@ impl ListIdentityResolutionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentityResolutionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder,
+    inner: crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder,
 }
 impl ListIdentityResolutionJobsFluentBuilder {
     /// Creates a new `ListIdentityResolutionJobs`.
@@ -37,7 +37,7 @@ impl ListIdentityResolutionJobsFluentBuilder {
         }
     }
     /// Access the ListIdentityResolutionJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListIdentityResolutionJobsFluentBuilder {
             crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListIdentityResolutionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListIdentityResolutionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListIdentityResolutionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListIdentityResolutionJobsFluentBuilder {
             crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError>,
     > {
         self.customize_middleware().await
     }

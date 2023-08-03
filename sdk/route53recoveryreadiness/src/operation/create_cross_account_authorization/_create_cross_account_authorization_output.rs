@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateCrossAccountAuthorizationOutput
 }
 impl CreateCrossAccountAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCrossAccountAuthorizationOutput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput).
-    pub fn builder() -> crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationOutputBuilder {
         crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCrossAccountAuthorizationOutput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCrossAccountAuthorizationOutputBuilder {
     pub(crate) cross_account_authorization: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateCrossAccountAuthorizationOutputBuilder {
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cross_account_authorization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_account_authorization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cross-account authorization.</p>
-    pub fn set_cross_account_authorization(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cross_account_authorization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cross_account_authorization = input;
         self
     }
@@ -66,13 +58,9 @@ impl CreateCrossAccountAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCrossAccountAuthorizationOutput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput
-    {
+    pub fn build(self) -> crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput {
         crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput {
-            cross_account_authorization: self.cross_account_authorization
-            ,
+            cross_account_authorization: self.cross_account_authorization,
             _request_id: self._request_id,
         }
     }

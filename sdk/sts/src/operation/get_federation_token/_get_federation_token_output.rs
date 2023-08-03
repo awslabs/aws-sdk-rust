@@ -50,8 +50,7 @@ impl ::aws_http::request_id::RequestId for GetFederationTokenOutput {
 }
 impl GetFederationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder {
+    pub fn builder() -> crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder {
         crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder::default()
     }
 }
@@ -76,10 +75,7 @@ impl GetFederationTokenOutputBuilder {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -95,10 +91,7 @@ impl GetFederationTokenOutputBuilder {
         self
     }
     /// <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    pub fn set_federated_user(
-        mut self,
-        input: ::std::option::Option<crate::types::FederatedUser>,
-    ) -> Self {
+    pub fn set_federated_user(mut self, input: ::std::option::Option<crate::types::FederatedUser>) -> Self {
         self.federated_user = input;
         self
     }

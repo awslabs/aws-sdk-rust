@@ -37,9 +37,7 @@ impl OrganizationAggregationSource {
 
 /// A builder for [`OrganizationAggregationSource`](crate::types::OrganizationAggregationSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationAggregationSourceBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,17 +70,12 @@ impl OrganizationAggregationSourceBuilder {
         self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn set_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aws_regions = input;
         self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn get_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aws_regions
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>

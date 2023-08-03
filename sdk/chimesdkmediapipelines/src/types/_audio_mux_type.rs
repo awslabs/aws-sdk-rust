@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioMuxType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AudioMuxType {
             "AudioOnly" => AudioMuxType::AudioOnly,
             "AudioWithActiveSpeakerVideo" => AudioMuxType::AudioWithActiveSpeakerVideo,
             "AudioWithCompositedVideo" => AudioMuxType::AudioWithCompositedVideo,
-            other => {
-                AudioMuxType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AudioMuxType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl AudioMuxType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AudioOnly",
-            "AudioWithActiveSpeakerVideo",
-            "AudioWithCompositedVideo",
-        ]
+        &["AudioOnly", "AudioWithActiveSpeakerVideo", "AudioWithCompositedVideo"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioMuxType {

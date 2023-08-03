@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeCustomRoutingEndpointGroupOutput`](crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<CustomRoutingEndpointGroup>)`](crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupOutput::endpoint_group): <p>The description of an endpoint group for a custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomRoutingEndpointGroupError>`](crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupError)
-    pub fn describe_custom_routing_endpoint_group(&self) -> crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupFluentBuilder{
+    pub fn describe_custom_routing_endpoint_group(
+        &self,
+    ) -> crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupFluentBuilder {
         crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePromptOutput`](crate::operation::describe_prompt::DescribePromptOutput) with field(s):
     ///   - [`prompt(Option<Prompt>)`](crate::operation::describe_prompt::DescribePromptOutput::prompt): <p>Information about the prompt.</p>
     /// - On failure, responds with [`SdkError<DescribePromptError>`](crate::operation::describe_prompt::DescribePromptError)
-    pub fn describe_prompt(
-        &self,
-    ) -> crate::operation::describe_prompt::builders::DescribePromptFluentBuilder {
-        crate::operation::describe_prompt::builders::DescribePromptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_prompt(&self) -> crate::operation::describe_prompt::builders::DescribePromptFluentBuilder {
+        crate::operation::describe_prompt::builders::DescribePromptFluentBuilder::new(self.handle.clone())
     }
 }

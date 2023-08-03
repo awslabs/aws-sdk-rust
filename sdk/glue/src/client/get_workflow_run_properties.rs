@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkflowRunPropertiesOutput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput) with field(s):
     ///   - [`run_properties(Option<HashMap<String, String>>)`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput::run_properties): <p>The workflow run properties which were set during the specified run.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowRunPropertiesError>`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError)
-    pub fn get_workflow_run_properties(&self) -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesFluentBuilder{
+    pub fn get_workflow_run_properties(&self) -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesFluentBuilder {
         crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,10 +9,7 @@ pub fn ser_update_app_image_config_input(
     if let Some(var_2) = &input.kernel_gateway_image_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("KernelGatewayImageConfig").start_object();
-        crate::protocol_serde::shape_kernel_gateway_image_config::ser_kernel_gateway_image_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_kernel_gateway_image_config::ser_kernel_gateway_image_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -9,10 +9,8 @@ impl super::Client {
     /// - On success, responds with [`UpdateSipMediaApplicationOutput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput) with field(s):
     ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput::sip_media_application): <p>The updated SIP media application details.</p>
     /// - On failure, responds with [`SdkError<UpdateSipMediaApplicationError>`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationError)
-    #[deprecated(
-        note = "Replaced by UpdateSipMediaApplication in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn update_sip_media_application(&self) -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationFluentBuilder{
+    #[deprecated(note = "Replaced by UpdateSipMediaApplication in the Amazon Chime SDK Voice Namespace")]
+    pub fn update_sip_media_application(&self) -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationFluentBuilder {
         crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationFluentBuilder::new(self.handle.clone())
     }
 }

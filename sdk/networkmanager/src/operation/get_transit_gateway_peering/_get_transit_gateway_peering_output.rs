@@ -10,9 +10,7 @@ pub struct GetTransitGatewayPeeringOutput {
 }
 impl GetTransitGatewayPeeringOutput {
     /// <p>Returns information about a transit gateway peering. </p>
-    pub fn transit_gateway_peering(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPeering> {
+    pub fn transit_gateway_peering(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeering> {
         self.transit_gateway_peering.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayPeeringOutput {
 }
 impl GetTransitGatewayPeeringOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringOutput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringOutputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringOutputBuilder {
         crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayPeeringOutput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringOutputBuilder {
     pub(crate) transit_gateway_peering: ::std::option::Option<crate::types::TransitGatewayPeering>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetTransitGatewayPeeringOutputBuilder {
         self
     }
     /// <p>Returns information about a transit gateway peering. </p>
-    pub fn set_transit_gateway_peering(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPeering>,
-    ) -> Self {
+    pub fn set_transit_gateway_peering(mut self, input: ::std::option::Option<crate::types::TransitGatewayPeering>) -> Self {
         self.transit_gateway_peering = input;
         self
     }
     /// <p>Returns information about a transit gateway peering. </p>
-    pub fn get_transit_gateway_peering(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPeering> {
+    pub fn get_transit_gateway_peering(&self) -> &::std::option::Option<crate::types::TransitGatewayPeering> {
         &self.transit_gateway_peering
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl GetTransitGatewayPeeringOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayPeeringOutput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput {
+    pub fn build(self) -> crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput {
         crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput {
             transit_gateway_peering: self.transit_gateway_peering,
             _request_id: self._request_id,

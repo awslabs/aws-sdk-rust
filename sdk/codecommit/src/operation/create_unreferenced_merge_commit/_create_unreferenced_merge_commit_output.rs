@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateUnreferencedMergeCommitOutput {
 }
 impl CreateUnreferencedMergeCommitOutput {
     /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitOutput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput).
-    pub fn builder() -> crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitOutputBuilder{
+    pub fn builder() -> crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitOutputBuilder {
         crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUnreferencedMergeCommitOutput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUnreferencedMergeCommitOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl CreateUnreferencedMergeCommitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateUnreferencedMergeCommitOutput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput
-    {
+    pub fn build(self) -> crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput {
         crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput {
             commit_id: self.commit_id,
             tree_id: self.tree_id,

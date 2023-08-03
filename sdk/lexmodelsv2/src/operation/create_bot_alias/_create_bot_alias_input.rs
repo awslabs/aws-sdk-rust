@@ -14,9 +14,7 @@ pub struct CreateBotAliasInput {
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
     #[doc(hidden)]
-    pub bot_alias_locale_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    >,
+    pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
     #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
@@ -28,9 +26,7 @@ pub struct CreateBotAliasInput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBotAliasInput {
     /// <p>The alias to create. The name must be unique for the bot.</p>
@@ -48,21 +44,15 @@ impl CreateBotAliasInput {
     /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
     pub fn bot_alias_locale_settings(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>> {
         self.bot_alias_locale_settings.as_ref()
     }
     /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
-    pub fn conversation_log_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogSettings> {
+    pub fn conversation_log_settings(&self) -> ::std::option::Option<&crate::types::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SentimentAnalysisSettings> {
+    pub fn sentiment_analysis_settings(&self) -> ::std::option::Option<&crate::types::SentimentAnalysisSettings> {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>The unique identifier of the bot that the alias applies to.</p>
@@ -70,11 +60,7 @@ impl CreateBotAliasInput {
         self.bot_id.as_deref()
     }
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -87,39 +73,26 @@ impl CreateBotAliasInput {
 
 /// A builder for [`CreateBotAliasInput`](crate::operation::create_bot_alias::CreateBotAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBotAliasInputBuilder {
     pub(crate) bot_alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_alias_locale_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    >,
-    pub(crate) conversation_log_settings:
-        ::std::option::Option<crate::types::ConversationLogSettings>,
-    pub(crate) sentiment_analysis_settings:
-        ::std::option::Option<crate::types::SentimentAnalysisSettings>,
+    pub(crate) bot_alias_locale_settings:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
+    pub(crate) conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
+    pub(crate) sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBotAliasInputBuilder {
     /// <p>The alias to create. The name must be unique for the bot.</p>
-    pub fn bot_alias_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias to create. The name must be unique for the bot.</p>
-    pub fn set_bot_alias_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_name = input;
         self
     }
@@ -160,11 +133,7 @@ impl CreateBotAliasInputBuilder {
     /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
     ///
     /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
-    pub fn bot_alias_locale_settings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::BotAliasLocaleSettings,
-    ) -> Self {
+    pub fn bot_alias_locale_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BotAliasLocaleSettings) -> Self {
         let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.bot_alias_locale_settings = ::std::option::Option::Some(hash_map);
@@ -173,12 +142,7 @@ impl CreateBotAliasInputBuilder {
     /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
     pub fn set_bot_alias_locale_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BotAliasLocaleSettings,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     ) -> Self {
         self.bot_alias_locale_settings = input;
         self
@@ -186,53 +150,35 @@ impl CreateBotAliasInputBuilder {
     /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
     pub fn get_bot_alias_locale_settings(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>> {
         &self.bot_alias_locale_settings
     }
     /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
-    pub fn conversation_log_settings(
-        mut self,
-        input: crate::types::ConversationLogSettings,
-    ) -> Self {
+    pub fn conversation_log_settings(mut self, input: crate::types::ConversationLogSettings) -> Self {
         self.conversation_log_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
-    pub fn set_conversation_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogSettings>,
-    ) -> Self {
+    pub fn set_conversation_log_settings(mut self, input: ::std::option::Option<crate::types::ConversationLogSettings>) -> Self {
         self.conversation_log_settings = input;
         self
     }
     /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
-    pub fn get_conversation_log_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogSettings> {
+    pub fn get_conversation_log_settings(&self) -> &::std::option::Option<crate::types::ConversationLogSettings> {
         &self.conversation_log_settings
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        mut self,
-        input: crate::types::SentimentAnalysisSettings,
-    ) -> Self {
+    pub fn sentiment_analysis_settings(mut self, input: crate::types::SentimentAnalysisSettings) -> Self {
         self.sentiment_analysis_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn set_sentiment_analysis_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
-    ) -> Self {
+    pub fn set_sentiment_analysis_settings(mut self, input: ::std::option::Option<crate::types::SentimentAnalysisSettings>) -> Self {
         self.sentiment_analysis_settings = input;
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn get_sentiment_analysis_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
+    pub fn get_sentiment_analysis_settings(&self) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
         &self.sentiment_analysis_settings
     }
     /// <p>The unique identifier of the bot that the alias applies to.</p>
@@ -254,41 +200,25 @@ impl CreateBotAliasInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBotAliasInput`](crate::operation::create_bot_alias::CreateBotAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bot_alias::CreateBotAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_bot_alias::CreateBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot_alias::CreateBotAliasInput {
             bot_alias_name: self.bot_alias_name,
             description: self.description,

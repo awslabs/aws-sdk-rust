@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`what_if_forecast_exports(Option<Vec<WhatIfForecastExportSummary>>)`](crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput::what_if_forecast_exports): <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput::next_token): <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListWhatIfForecastExportsError>`](crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError)
-    pub fn list_what_if_forecast_exports(&self) -> crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsFluentBuilder{
+    pub fn list_what_if_forecast_exports(&self) -> crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsFluentBuilder {
         crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsFluentBuilder::new(self.handle.clone())
     }
 }

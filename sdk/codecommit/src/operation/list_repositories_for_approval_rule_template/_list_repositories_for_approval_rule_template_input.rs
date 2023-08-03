@@ -29,16 +29,15 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
 }
 impl ListRepositoriesForApprovalRuleTemplateInput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateInput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput).
-    pub fn builder() -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder{
+    pub fn builder() -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder
+    {
         crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesForApprovalRuleTemplateInput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesForApprovalRuleTemplateInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +45,12 @@ pub struct ListRepositoriesForApprovalRuleTemplateInputBuilder {
 }
 impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
@@ -94,16 +87,18 @@ impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRepositoriesForApprovalRuleTemplateInput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput {
-                approval_rule_template_name: self.approval_rule_template_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                approval_rule_template_name: self.approval_rule_template_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

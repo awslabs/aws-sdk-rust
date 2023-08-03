@@ -68,8 +68,7 @@ impl ::std::fmt::Debug for TestIdentityProviderInput {
 }
 impl TestIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder {
+    pub fn builder() -> crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder {
         crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder::default()
     }
 }
@@ -119,10 +118,7 @@ impl TestIdentityProviderInputBuilder {
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
-    pub fn set_server_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::Protocol>,
-    ) -> Self {
+    pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.server_protocol = input;
         self
     }
@@ -166,18 +162,12 @@ impl TestIdentityProviderInputBuilder {
         &self.user_name
     }
     /// <p>The password of the account to be tested.</p>
-    pub fn user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the account to be tested.</p>
-    pub fn set_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_password = input;
         self
     }
@@ -188,19 +178,15 @@ impl TestIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_identity_provider::TestIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::test_identity_provider::TestIdentityProviderInput {
-                server_id: self.server_id,
-                server_protocol: self.server_protocol,
-                source_ip: self.source_ip,
-                user_name: self.user_name,
-                user_password: self.user_password,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::test_identity_provider::TestIdentityProviderInput {
+            server_id: self.server_id,
+            server_protocol: self.server_protocol,
+            source_ip: self.source_ip,
+            user_name: self.user_name,
+            user_password: self.user_password,
+        })
     }
 }
 impl ::std::fmt::Debug for TestIdentityProviderInputBuilder {

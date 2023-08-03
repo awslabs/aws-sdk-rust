@@ -91,17 +91,14 @@ impl ::aws_http::request_id::RequestId for GetImportFileTaskOutput {
 }
 impl GetImportFileTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetImportFileTaskOutput`](crate::operation::get_import_file_task::GetImportFileTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::get_import_file_task::builders::GetImportFileTaskOutputBuilder {
+    pub fn builder() -> crate::operation::get_import_file_task::builders::GetImportFileTaskOutputBuilder {
         crate::operation::get_import_file_task::builders::GetImportFileTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetImportFileTaskOutput`](crate::operation::get_import_file_task::GetImportFileTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImportFileTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ImportFileTaskStatus>,
@@ -137,10 +134,7 @@ impl GetImportFileTaskOutputBuilder {
         self
     }
     /// <p> Status of import file task. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportFileTaskStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportFileTaskStatus>) -> Self {
         self.status = input;
         self
     }
@@ -154,10 +148,7 @@ impl GetImportFileTaskOutputBuilder {
         self
     }
     /// <p> Start time of the import task. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -166,18 +157,12 @@ impl GetImportFileTaskOutputBuilder {
         &self.start_time
     }
     /// <p> The S3 bucket where import file is located. </p>
-    pub fn input_s3_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The S3 bucket where import file is located. </p>
-    pub fn set_input_s3_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_s3_bucket = input;
         self
     }
@@ -200,18 +185,12 @@ impl GetImportFileTaskOutputBuilder {
         &self.input_s3_key
     }
     /// <p> The S3 bucket name for status report of import task. </p>
-    pub fn status_report_s3_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_report_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_report_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The S3 bucket name for status report of import task. </p>
-    pub fn set_status_report_s3_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_report_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_report_s3_bucket = input;
         self
     }
@@ -220,18 +199,12 @@ impl GetImportFileTaskOutputBuilder {
         &self.status_report_s3_bucket
     }
     /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
-    pub fn status_report_s3_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_report_s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_report_s3_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
-    pub fn set_status_report_s3_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_report_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_report_s3_key = input;
         self
     }
@@ -245,10 +218,7 @@ impl GetImportFileTaskOutputBuilder {
         self
     }
     /// <p> The time that the import task completed. </p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }

@@ -15,40 +15,30 @@ impl DeleteAccessLogSubscriptionInput {
 }
 impl DeleteAccessLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder {
         crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessLogSubscriptionInputBuilder {
     pub(crate) access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn set_access_log_subscription_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = input;
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn get_access_log_subscription_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_log_subscription_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
@@ -58,10 +48,8 @@ impl DeleteAccessLogSubscriptionInputBuilder {
         crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput {
-                access_log_subscription_identifier: self.access_log_subscription_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput {
+            access_log_subscription_identifier: self.access_log_subscription_identifier,
+        })
     }
 }

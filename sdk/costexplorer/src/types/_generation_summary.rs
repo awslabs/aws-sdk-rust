@@ -51,9 +51,7 @@ impl GenerationSummary {
 
 /// A builder for [`GenerationSummary`](crate::types::GenerationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerationSummaryBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_status: ::std::option::Option<crate::types::GenerationStatus>,
@@ -63,18 +61,12 @@ pub struct GenerationSummaryBuilder {
 }
 impl GenerationSummaryBuilder {
     /// <p>Indicates the ID for this specific recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the ID for this specific recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -88,10 +80,7 @@ impl GenerationSummaryBuilder {
         self
     }
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
-    pub fn set_generation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GenerationStatus>,
-    ) -> Self {
+    pub fn set_generation_status(mut self, input: ::std::option::Option<crate::types::GenerationStatus>) -> Self {
         self.generation_status = input;
         self
     }
@@ -100,18 +89,12 @@ impl GenerationSummaryBuilder {
         &self.generation_status
     }
     /// <p>Indicates the start time of the recommendation generation.</p>
-    pub fn generation_started_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_started_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_started_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the start time of the recommendation generation.</p>
-    pub fn set_generation_started_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_started_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_started_time = input;
         self
     }
@@ -120,18 +103,12 @@ impl GenerationSummaryBuilder {
         &self.generation_started_time
     }
     /// <p>Indicates the completion time of the recommendation generation.</p>
-    pub fn generation_completion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_completion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_completion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the completion time of the recommendation generation.</p>
-    pub fn set_generation_completion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_completion_time = input;
         self
     }
@@ -140,18 +117,12 @@ impl GenerationSummaryBuilder {
         &self.generation_completion_time
     }
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
-    pub fn estimated_completion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_completion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_completion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
-    pub fn set_estimated_completion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_completion_time = input;
         self
     }

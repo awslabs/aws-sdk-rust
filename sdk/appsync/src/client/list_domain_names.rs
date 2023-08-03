@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`domain_name_configs(Option<Vec<DomainNameConfig>>)`](crate::operation::list_domain_names::ListDomainNamesOutput::domain_name_configs): <p>Lists configurations for multiple domain names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domain_names::ListDomainNamesOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListDomainNamesError>`](crate::operation::list_domain_names::ListDomainNamesError)
-    pub fn list_domain_names(
-        &self,
-    ) -> crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder {
-        crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_domain_names(&self) -> crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder {
+        crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::new(self.handle.clone())
     }
 }

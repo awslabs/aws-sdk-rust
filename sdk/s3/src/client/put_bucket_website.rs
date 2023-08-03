@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_website::builders::PutBucketWebsiteFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_website::builders::PutBucketWebsiteFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketWebsiteOutput`](crate::operation::put_bucket_website::PutBucketWebsiteOutput)
     /// - On failure, responds with [`SdkError<PutBucketWebsiteError>`](crate::operation::put_bucket_website::PutBucketWebsiteError)
-    pub fn put_bucket_website(
-        &self,
-    ) -> crate::operation::put_bucket_website::builders::PutBucketWebsiteFluentBuilder {
-        crate::operation::put_bucket_website::builders::PutBucketWebsiteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_website(&self) -> crate::operation::put_bucket_website::builders::PutBucketWebsiteFluentBuilder {
+        crate::operation::put_bucket_website::builders::PutBucketWebsiteFluentBuilder::new(self.handle.clone())
     }
 }

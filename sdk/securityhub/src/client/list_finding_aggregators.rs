@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`finding_aggregators(Option<Vec<FindingAggregator>>)`](crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput::finding_aggregators): <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput::next_token): <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>  <p>This operation currently only returns a single result. </p>
     /// - On failure, responds with [`SdkError<ListFindingAggregatorsError>`](crate::operation::list_finding_aggregators::ListFindingAggregatorsError)
-    pub fn list_finding_aggregators(
-        &self,
-    ) -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsFluentBuilder
-    {
+    pub fn list_finding_aggregators(&self) -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsFluentBuilder {
         crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsFluentBuilder::new(self.handle.clone())
     }
 }

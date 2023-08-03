@@ -36,21 +36,16 @@ impl ::aws_http::request_id::RequestId for ListVirtualMfaDevicesOutput {
 }
 impl ListVirtualMfaDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMfaDevicesOutput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesOutputBuilder {
         crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualMfaDevicesOutput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualMfaDevicesOutputBuilder {
-    pub(crate) virtual_mfa_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>>,
+    pub(crate) virtual_mfa_devices: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -68,17 +63,12 @@ impl ListVirtualMfaDevicesOutputBuilder {
         self
     }
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
-    pub fn set_virtual_mfa_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>>,
-    ) -> Self {
+    pub fn set_virtual_mfa_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>>) -> Self {
         self.virtual_mfa_devices = input;
         self
     }
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
-    pub fn get_virtual_mfa_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>> {
+    pub fn get_virtual_mfa_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>> {
         &self.virtual_mfa_devices
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>

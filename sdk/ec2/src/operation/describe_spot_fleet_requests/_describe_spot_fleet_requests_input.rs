@@ -37,22 +37,19 @@ impl DescribeSpotFleetRequestsInput {
 }
 impl DescribeSpotFleetRequestsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotFleetRequestsInput`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput).
-    pub fn builder() -> crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder {
         crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotFleetRequestsInput`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) spot_fleet_request_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) spot_fleet_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSpotFleetRequestsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -102,27 +99,19 @@ impl DescribeSpotFleetRequestsInputBuilder {
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
     ///
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn spot_fleet_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.spot_fleet_request_ids.unwrap_or_default();
         v.push(input.into());
         self.spot_fleet_request_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn set_spot_fleet_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.spot_fleet_request_ids = input;
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn get_spot_fleet_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.spot_fleet_request_ids
     }
     /// Consumes the builder and constructs a [`DescribeSpotFleetRequestsInput`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput).
@@ -132,13 +121,11 @@ impl DescribeSpotFleetRequestsInputBuilder {
         crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput {
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                spot_fleet_request_ids: self.spot_fleet_request_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput {
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            spot_fleet_request_ids: self.spot_fleet_request_ids,
+        })
     }
 }

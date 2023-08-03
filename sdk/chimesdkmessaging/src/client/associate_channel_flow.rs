@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`chime_bearer(impl ::std::convert::Into<String>)`](crate::operation::associate_channel_flow::builders::AssociateChannelFlowFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::associate_channel_flow::builders::AssociateChannelFlowFluentBuilder::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     /// - On success, responds with [`AssociateChannelFlowOutput`](crate::operation::associate_channel_flow::AssociateChannelFlowOutput)
     /// - On failure, responds with [`SdkError<AssociateChannelFlowError>`](crate::operation::associate_channel_flow::AssociateChannelFlowError)
-    pub fn associate_channel_flow(
-        &self,
-    ) -> crate::operation::associate_channel_flow::builders::AssociateChannelFlowFluentBuilder {
-        crate::operation::associate_channel_flow::builders::AssociateChannelFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_channel_flow(&self) -> crate::operation::associate_channel_flow::builders::AssociateChannelFlowFluentBuilder {
+        crate::operation::associate_channel_flow::builders::AssociateChannelFlowFluentBuilder::new(self.handle.clone())
     }
 }

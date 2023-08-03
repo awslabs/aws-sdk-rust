@@ -15,34 +15,25 @@ impl DescribePipelineInput {
 }
 impl DescribePipelineInput {
     /// Creates a new builder-style object to manufacture [`DescribePipelineInput`](crate::operation::describe_pipeline::DescribePipelineInput).
-    pub fn builder() -> crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder {
         crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePipelineInput`](crate::operation::describe_pipeline::DescribePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineInputBuilder {
     /// <p>The name of the pipeline whose information is retrieved.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline whose information is retrieved.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -53,10 +44,7 @@ impl DescribePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DescribePipelineInput`](crate::operation::describe_pipeline::DescribePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pipeline::DescribePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_pipeline::DescribePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pipeline::DescribePipelineInput {
             pipeline_name: self.pipeline_name,
         })

@@ -21,8 +21,7 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     pub authorized_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration of the experience that you are embedding.</p>
     #[doc(hidden)]
-    pub experience_configuration:
-        ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>,
+    pub experience_configuration: ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>,
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     #[doc(hidden)]
@@ -51,9 +50,7 @@ impl GenerateEmbedUrlForAnonymousUserInput {
         self.authorized_resource_arns.as_deref()
     }
     /// <p>The configuration of the experience that you are embedding.</p>
-    pub fn experience_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnonymousUserEmbeddingExperienceConfiguration> {
+    pub fn experience_configuration(&self) -> ::std::option::Option<&crate::types::AnonymousUserEmbeddingExperienceConfiguration> {
         self.experience_configuration.as_ref()
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
@@ -64,41 +61,31 @@ impl GenerateEmbedUrlForAnonymousUserInput {
 }
 impl GenerateEmbedUrlForAnonymousUserInput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserInput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput).
-    pub fn builder() -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserInputBuilder{
+    pub fn builder() -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserInputBuilder {
         crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateEmbedUrlForAnonymousUserInput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForAnonymousUserInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_lifetime_in_minutes: ::std::option::Option<i64>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) session_tags: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>,
-    pub(crate) authorized_resource_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) experience_configuration:
-        ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>,
+    pub(crate) authorized_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) experience_configuration: ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>,
     pub(crate) allowed_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -148,18 +135,13 @@ impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     }
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
     /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_session_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>,
-    ) -> Self {
+    pub fn set_session_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>) -> Self {
         self.session_tags = input;
         self
     }
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
     /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn get_session_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
+    pub fn get_session_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
         &self.session_tags
     }
     /// Appends an item to `authorized_resource_arns`.
@@ -167,49 +149,33 @@ impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
-    pub fn authorized_resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_resource_arns.unwrap_or_default();
         v.push(input.into());
         self.authorized_resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
-    pub fn set_authorized_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_authorized_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.authorized_resource_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
-    pub fn get_authorized_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.authorized_resource_arns
     }
     /// <p>The configuration of the experience that you are embedding.</p>
-    pub fn experience_configuration(
-        mut self,
-        input: crate::types::AnonymousUserEmbeddingExperienceConfiguration,
-    ) -> Self {
+    pub fn experience_configuration(mut self, input: crate::types::AnonymousUserEmbeddingExperienceConfiguration) -> Self {
         self.experience_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the experience that you are embedding.</p>
-    pub fn set_experience_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>,
-    ) -> Self {
+    pub fn set_experience_configuration(mut self, input: ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>) -> Self {
         self.experience_configuration = input;
         self
     }
     /// <p>The configuration of the experience that you are embedding.</p>
-    pub fn get_experience_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration> {
+    pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration> {
         &self.experience_configuration
     }
     /// Appends an item to `allowed_domains`.
@@ -218,10 +184,7 @@ impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     ///
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn allowed_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_domains.unwrap_or_default();
         v.push(input.into());
         self.allowed_domains = ::std::option::Option::Some(v);
@@ -229,39 +192,32 @@ impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn set_allowed_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_domains = input;
         self
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn get_allowed_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_domains
     }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserInput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput {
-                aws_account_id: self.aws_account_id
-                ,
-                session_lifetime_in_minutes: self.session_lifetime_in_minutes
-                ,
-                namespace: self.namespace
-                ,
-                session_tags: self.session_tags
-                ,
-                authorized_resource_arns: self.authorized_resource_arns
-                ,
-                experience_configuration: self.experience_configuration
-                ,
-                allowed_domains: self.allowed_domains
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
+                namespace: self.namespace,
+                session_tags: self.session_tags,
+                authorized_resource_arns: self.authorized_resource_arns,
+                experience_configuration: self.experience_configuration,
+                allowed_domains: self.allowed_domains,
+            },
         )
     }
 }

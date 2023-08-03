@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListBuildsForProjectOutput {
 }
 impl ListBuildsForProjectOutput {
     /// Creates a new builder-style object to manufacture [`ListBuildsForProjectOutput`](crate::operation::list_builds_for_project::ListBuildsForProjectOutput).
-    pub fn builder(
-    ) -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectOutputBuilder {
         crate::operation::list_builds_for_project::builders::ListBuildsForProjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuildsForProjectOutput`](crate::operation::list_builds_for_project::ListBuildsForProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildsForProjectOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListBuildsForProjectOutputBuilder {
         self
     }
     /// <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }

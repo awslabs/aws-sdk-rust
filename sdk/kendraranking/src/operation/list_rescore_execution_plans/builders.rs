@@ -26,7 +26,7 @@ impl ListRescoreExecutionPlansInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRescoreExecutionPlansFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder,
+    inner: crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder,
 }
 impl ListRescoreExecutionPlansFluentBuilder {
     /// Creates a new `ListRescoreExecutionPlans`.
@@ -37,7 +37,7 @@ impl ListRescoreExecutionPlansFluentBuilder {
         }
     }
     /// Access the ListRescoreExecutionPlans as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRescoreExecutionPlansFluentBuilder {
             crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRescoreExecutionPlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRescoreExecutionPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRescoreExecutionPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListRescoreExecutionPlansFluentBuilder {
             crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator {
         crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator::new(self.handle, self.inner)
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>

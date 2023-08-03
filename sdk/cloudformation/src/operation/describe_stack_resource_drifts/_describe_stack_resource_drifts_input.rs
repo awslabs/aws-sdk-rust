@@ -14,8 +14,7 @@ pub struct DescribeStackResourceDriftsInput {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stack_resource_drift_status_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -35,9 +34,7 @@ impl DescribeStackResourceDriftsInput {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status_filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StackResourceDriftStatus]> {
+    pub fn stack_resource_drift_status_filters(&self) -> ::std::option::Option<&[crate::types::StackResourceDriftStatus]> {
         self.stack_resource_drift_status_filters.as_deref()
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
@@ -51,20 +48,17 @@ impl DescribeStackResourceDriftsInput {
 }
 impl DescribeStackResourceDriftsInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceDriftsInput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput).
-    pub fn builder() -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder{
+    pub fn builder() -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder {
         crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackResourceDriftsInput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
-    pub(crate) stack_resource_drift_status_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub(crate) stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -94,10 +88,7 @@ impl DescribeStackResourceDriftsInputBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status_filters(
-        mut self,
-        input: crate::types::StackResourceDriftStatus,
-    ) -> Self {
+    pub fn stack_resource_drift_status_filters(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         let mut v = self.stack_resource_drift_status_filters.unwrap_or_default();
         v.push(input);
         self.stack_resource_drift_status_filters = ::std::option::Option::Some(v);
@@ -124,9 +115,7 @@ impl DescribeStackResourceDriftsInputBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn get_stack_resource_drift_status_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
+    pub fn get_stack_resource_drift_status_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
         &self.stack_resource_drift_status_filters
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
@@ -164,13 +153,11 @@ impl DescribeStackResourceDriftsInputBuilder {
         crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
-                stack_name: self.stack_name,
-                stack_resource_drift_status_filters: self.stack_resource_drift_status_filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
+            stack_name: self.stack_name,
+            stack_resource_drift_status_filters: self.stack_resource_drift_status_filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

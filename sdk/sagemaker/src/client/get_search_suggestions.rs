@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetSearchSuggestionsOutput`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput) with field(s):
     ///   - [`property_name_suggestions(Option<Vec<PropertyNameSuggestion>>)`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput::property_name_suggestions): <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
     /// - On failure, responds with [`SdkError<GetSearchSuggestionsError>`](crate::operation::get_search_suggestions::GetSearchSuggestionsError)
-    pub fn get_search_suggestions(
-        &self,
-    ) -> crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder {
-        crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_search_suggestions(&self) -> crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder {
+        crate::operation::get_search_suggestions::builders::GetSearchSuggestionsFluentBuilder::new(self.handle.clone())
     }
 }

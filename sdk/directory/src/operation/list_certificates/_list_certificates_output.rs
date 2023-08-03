@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>,
+    pub(crate) certificates_info: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutputBuilder {
@@ -72,17 +68,12 @@ impl ListCertificatesOutputBuilder {
         self
     }
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    pub fn set_certificates_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>,
-    ) -> Self {
+    pub fn set_certificates_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>) -> Self {
         self.certificates_info = input;
         self
     }
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    pub fn get_certificates_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>> {
+    pub fn get_certificates_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>> {
         &self.certificates_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

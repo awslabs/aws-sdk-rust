@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StartRecommendationsOutput {
 }
 impl StartRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`StartRecommendationsOutput`](crate::operation::start_recommendations::StartRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::start_recommendations::builders::StartRecommendationsOutputBuilder {
+    pub fn builder() -> crate::operation::start_recommendations::builders::StartRecommendationsOutputBuilder {
         crate::operation::start_recommendations::builders::StartRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartRecommendationsOutput`](crate::operation::start_recommendations::StartRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }

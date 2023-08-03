@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartProjectVersionOutput`](crate::operation::start_project_version::StartProjectVersionOutput) with field(s):
     ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::start_project_version::StartProjectVersionOutput::status): <p>The current running status of the model. </p>
     /// - On failure, responds with [`SdkError<StartProjectVersionError>`](crate::operation::start_project_version::StartProjectVersionError)
-    pub fn start_project_version(
-        &self,
-    ) -> crate::operation::start_project_version::builders::StartProjectVersionFluentBuilder {
-        crate::operation::start_project_version::builders::StartProjectVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_project_version(&self) -> crate::operation::start_project_version::builders::StartProjectVersionFluentBuilder {
+        crate::operation::start_project_version::builders::StartProjectVersionFluentBuilder::new(self.handle.clone())
     }
 }

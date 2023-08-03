@@ -36,9 +36,7 @@ impl ListDatabasesInput {
 
 /// A builder for [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatabasesInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListDatabasesInputBuilder {
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_databases::ListDatabasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_databases::ListDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_databases::ListDatabasesInput {
             catalog_name: self.catalog_name,
             next_token: self.next_token,

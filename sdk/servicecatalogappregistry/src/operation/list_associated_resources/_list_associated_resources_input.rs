@@ -29,18 +29,14 @@ impl ListAssociatedResourcesInput {
 }
 impl ListAssociatedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedResourcesInput`](crate::operation::list_associated_resources::ListAssociatedResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder {
         crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedResourcesInput`](crate::operation::list_associated_resources::ListAssociatedResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedResourcesInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListAssociatedResourcesInputBuilder {
         crate::operation::list_associated_resources::ListAssociatedResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_associated_resources::ListAssociatedResourcesInput {
-                application: self.application,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_associated_resources::ListAssociatedResourcesInput {
+            application: self.application,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

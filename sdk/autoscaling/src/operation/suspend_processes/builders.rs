@@ -10,10 +10,7 @@ impl SuspendProcessesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::suspend_processes::SuspendProcessesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_processes::SuspendProcessesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_processes::SuspendProcessesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.suspend_processes();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl SuspendProcessesFluentBuilder {
         }
     }
     /// Access the SuspendProcesses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl SuspendProcessesFluentBuilder {
             crate::operation::suspend_processes::SuspendProcesses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_processes::SuspendProcessesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_processes::SuspendProcessesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl SuspendProcessesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl SuspendProcessesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_processes::SuspendProcessesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_processes::SuspendProcessesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_processes::SuspendProcessesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl SuspendProcessesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_processes::SuspendProcessesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_processes::SuspendProcessesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_processes::SuspendProcessesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl SuspendProcessesFluentBuilder {
             crate::operation::suspend_processes::SuspendProcesses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_processes::SuspendProcessesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_processes::SuspendProcessesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -161,10 +139,7 @@ impl SuspendProcessesFluentBuilder {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn scaling_processes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_processes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_processes(input.into());
         self
     }
@@ -181,10 +156,7 @@ impl SuspendProcessesFluentBuilder {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn set_scaling_processes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scaling_processes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scaling_processes(input);
         self
     }
@@ -201,9 +173,7 @@ impl SuspendProcessesFluentBuilder {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn get_scaling_processes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scaling_processes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scaling_processes()
     }
 }

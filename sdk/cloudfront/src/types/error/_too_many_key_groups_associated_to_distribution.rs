@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
     }
 }
 impl ::std::error::Error for TooManyKeyGroupsAssociatedToDistribution {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyKeyGroupsAssociatedToDistribution
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyKeyGroupsAssociatedToDistribution {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyKeyGroupsAssociatedToDistribution
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyKeyGroupsAssociatedToDistribution {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyKeyGroupsAssociatedToDistribution {
     /// Creates a new builder-style object to manufacture [`TooManyKeyGroupsAssociatedToDistribution`](crate::types::error::TooManyKeyGroupsAssociatedToDistribution).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder {
         crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder::default()
     }
 }
 
 /// A builder for [`TooManyKeyGroupsAssociatedToDistribution`](crate::types::error::TooManyKeyGroupsAssociatedToDistribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyKeyGroupsAssociatedToDistributionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyKeyGroupsAssociatedToDistributionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

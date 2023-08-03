@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`CreateSubnetCidrReservationOutput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput) with field(s):
     ///   - [`subnet_cidr_reservation(Option<SubnetCidrReservation>)`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput::subnet_cidr_reservation): <p>Information about the created subnet CIDR reservation.</p>
     /// - On failure, responds with [`SdkError<CreateSubnetCidrReservationError>`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError)
-    pub fn create_subnet_cidr_reservation(&self) -> crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationFluentBuilder{
+    pub fn create_subnet_cidr_reservation(
+        &self,
+    ) -> crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationFluentBuilder {
         crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationFluentBuilder::new(self.handle.clone())
     }
 }

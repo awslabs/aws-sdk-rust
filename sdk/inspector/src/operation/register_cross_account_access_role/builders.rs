@@ -5,16 +5,16 @@ pub use crate::operation::register_cross_account_access_role::_register_cross_ac
 
 impl RegisterCrossAccountAccessRoleInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.register_cross_account_access_role();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RegisterCrossAccountAccessRoleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterCrossAccountAccessRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder,
+    inner: crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder,
 }
 impl RegisterCrossAccountAccessRoleFluentBuilder {
     /// Creates a new `RegisterCrossAccountAccessRole`.
@@ -37,15 +37,20 @@ impl RegisterCrossAccountAccessRoleFluentBuilder {
         }
     }
     /// Access the RegisterCrossAccountAccessRole as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRole, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRole,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RegisterCrossAccountAccessRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl RegisterCrossAccountAccessRoleFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRole, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRole,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>

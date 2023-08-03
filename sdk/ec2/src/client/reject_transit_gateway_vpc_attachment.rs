@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RejectTransitGatewayVpcAttachmentOutput`](crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentOutput) with field(s):
     ///   - [`transit_gateway_vpc_attachment(Option<TransitGatewayVpcAttachment>)`](crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentOutput::transit_gateway_vpc_attachment): <p>Information about the attachment.</p>
     /// - On failure, responds with [`SdkError<RejectTransitGatewayVpcAttachmentError>`](crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentError)
-    pub fn reject_transit_gateway_vpc_attachment(&self) -> crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentFluentBuilder{
+    pub fn reject_transit_gateway_vpc_attachment(
+        &self,
+    ) -> crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentFluentBuilder {
         crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

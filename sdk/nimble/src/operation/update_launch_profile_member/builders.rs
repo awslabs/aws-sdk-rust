@@ -26,7 +26,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder,
+    inner: crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder,
 }
 impl UpdateLaunchProfileMemberFluentBuilder {
     /// Creates a new `UpdateLaunchProfileMember`.
@@ -37,7 +37,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
         }
     }
     /// Access the UpdateLaunchProfileMember as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
             crate::operation::update_launch_profile_member::UpdateLaunchProfileMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
             crate::operation::update_launch_profile_member::UpdateLaunchProfileMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateLaunchProfileMemberFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }
@@ -160,10 +143,7 @@ impl UpdateLaunchProfileMemberFluentBuilder {
         self
     }
     /// <p>The persona.</p>
-    pub fn set_persona(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfilePersona>,
-    ) -> Self {
+    pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
         self.inner = self.inner.set_persona(input);
         self
     }

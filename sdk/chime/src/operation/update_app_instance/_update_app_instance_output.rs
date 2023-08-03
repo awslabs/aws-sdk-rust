@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateAppInstanceOutput {
 }
 impl UpdateAppInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceOutput`](crate::operation::update_app_instance::UpdateAppInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_app_instance::builders::UpdateAppInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance::builders::UpdateAppInstanceOutputBuilder {
         crate::operation::update_app_instance::builders::UpdateAppInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAppInstanceOutput`](crate::operation::update_app_instance::UpdateAppInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppInstanceOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateAppInstanceOutputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>. </p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>. </p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }

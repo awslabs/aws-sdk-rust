@@ -44,18 +44,14 @@ impl DescribePortfolioSharesInput {
 }
 impl DescribePortfolioSharesInput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioSharesInput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder {
         crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePortfolioSharesInput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortfolioSharesInputBuilder {
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DescribePortfolioShareType>,
@@ -91,10 +87,7 @@ impl DescribePortfolioSharesInputBuilder {
     /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
     /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribePortfolioShareType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DescribePortfolioShareType>) -> Self {
         self.r#type = input;
         self
     }
@@ -141,13 +134,11 @@ impl DescribePortfolioSharesInputBuilder {
         crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput {
-                portfolio_id: self.portfolio_id,
-                r#type: self.r#type,
-                page_token: self.page_token,
-                page_size: self.page_size,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput {
+            portfolio_id: self.portfolio_id,
+            r#type: self.r#type,
+            page_token: self.page_token,
+            page_size: self.page_size,
+        })
     }
 }

@@ -17,7 +17,11 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionOutput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     /// - On failure, responds with [`SdkError<DescribeModelExplainabilityJobDefinitionError>`](crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionError)
-    pub fn describe_model_explainability_job_definition(&self) -> crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionFluentBuilder{
-        crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionFluentBuilder::new(self.handle.clone())
+    pub fn describe_model_explainability_job_definition(
+        &self,
+    ) -> crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionFluentBuilder {
+        crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

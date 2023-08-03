@@ -6,63 +6,43 @@
 pub struct AwsS3BucketObjectLockConfigurationRuleDetails {
     /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
     #[doc(hidden)]
-    pub default_retention: ::std::option::Option<
-        crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
-    >,
+    pub default_retention: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
 }
 impl AwsS3BucketObjectLockConfigurationRuleDetails {
     /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
-    pub fn default_retention(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
-    > {
+    pub fn default_retention(&self) -> ::std::option::Option<&crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails> {
         self.default_retention.as_ref()
     }
 }
 impl AwsS3BucketObjectLockConfigurationRuleDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketObjectLockConfigurationRuleDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketObjectLockConfigurationRuleDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
         crate::types::builders::AwsS3BucketObjectLockConfigurationRuleDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketObjectLockConfigurationRuleDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
-    pub(crate) default_retention: ::std::option::Option<
-        crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
-    >,
+    pub(crate) default_retention: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
 }
 impl AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
     /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
-    pub fn default_retention(
-        mut self,
-        input: crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
-    ) -> Self {
+    pub fn default_retention(mut self, input: crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails) -> Self {
         self.default_retention = ::std::option::Option::Some(input);
         self
     }
     /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
     pub fn set_default_retention(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
     ) -> Self {
         self.default_retention = input;
         self
     }
     /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
-    pub fn get_default_retention(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
-    > {
+    pub fn get_default_retention(&self) -> &::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails> {
         &self.default_retention
     }
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfigurationRuleDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDetails).

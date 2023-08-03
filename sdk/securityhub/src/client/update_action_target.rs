@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_action_target::builders::UpdateActionTargetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_action_target::builders::UpdateActionTargetFluentBuilder::set_description): <p>The updated description for the custom action target.</p>
     /// - On success, responds with [`UpdateActionTargetOutput`](crate::operation::update_action_target::UpdateActionTargetOutput)
     /// - On failure, responds with [`SdkError<UpdateActionTargetError>`](crate::operation::update_action_target::UpdateActionTargetError)
-    pub fn update_action_target(
-        &self,
-    ) -> crate::operation::update_action_target::builders::UpdateActionTargetFluentBuilder {
-        crate::operation::update_action_target::builders::UpdateActionTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_action_target(&self) -> crate::operation::update_action_target::builders::UpdateActionTargetFluentBuilder {
+        crate::operation::update_action_target::builders::UpdateActionTargetFluentBuilder::new(self.handle.clone())
     }
 }

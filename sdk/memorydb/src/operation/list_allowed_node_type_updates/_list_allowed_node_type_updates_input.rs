@@ -15,16 +15,14 @@ impl ListAllowedNodeTypeUpdatesInput {
 }
 impl ListAllowedNodeTypeUpdatesInput {
     /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
-    pub fn builder() -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder{
+    pub fn builder() -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder {
         crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeUpdatesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl ListAllowedNodeTypeUpdatesInputBuilder {
         crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput {
-                cluster_name: self.cluster_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput {
+            cluster_name: self.cluster_name,
+        })
     }
 }

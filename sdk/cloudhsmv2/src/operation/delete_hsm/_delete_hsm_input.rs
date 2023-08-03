@@ -43,9 +43,7 @@ impl DeleteHsmInput {
 
 /// A builder for [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHsmInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_id: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl DeleteHsmInputBuilder {
         &self.eni_ip
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hsm::DeleteHsmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hsm::DeleteHsmInput {
             cluster_id: self.cluster_id,
             hsm_id: self.hsm_id,

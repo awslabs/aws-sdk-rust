@@ -10,14 +10,10 @@ pub fn ser_list_notebook_executions_input(
         object.key("Status").string(var_2.as_str());
     }
     if let Some(var_3) = &input.from {
-        object
-            .key("From")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("From").date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_4) = &input.to {
-        object
-            .key("To")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("To").date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_5) = &input.marker {
         object.key("Marker").string(var_5.as_str());

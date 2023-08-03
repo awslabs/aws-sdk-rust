@@ -28,9 +28,7 @@ impl EnableUserOutput {
 
 /// A builder for [`EnableUserOutput`](crate::operation::enable_user::EnableUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableUserOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

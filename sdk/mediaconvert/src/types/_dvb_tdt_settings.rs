@@ -23,9 +23,7 @@ impl DvbTdtSettings {
 
 /// A builder for [`DvbTdtSettings`](crate::types::DvbTdtSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DvbTdtSettingsBuilder {
     pub(crate) tdt_interval: ::std::option::Option<i32>,
 }

@@ -26,7 +26,7 @@ impl UpdateIntegrationResponseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIntegrationResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder,
+    inner: crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder,
 }
 impl UpdateIntegrationResponseFluentBuilder {
     /// Creates a new `UpdateIntegrationResponse`.
@@ -37,7 +37,7 @@ impl UpdateIntegrationResponseFluentBuilder {
         }
     }
     /// Access the UpdateIntegrationResponse as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateIntegrationResponseFluentBuilder {
             crate::operation::update_integration_response::UpdateIntegrationResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration_response::UpdateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration_response::UpdateIntegrationResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateIntegrationResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateIntegrationResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_integration_response::UpdateIntegrationResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration_response::UpdateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration_response::UpdateIntegrationResponseError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateIntegrationResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_integration_response::UpdateIntegrationResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration_response::UpdateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration_response::UpdateIntegrationResponseError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateIntegrationResponseFluentBuilder {
             crate::operation::update_integration_response::UpdateIntegrationResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration_response::UpdateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration_response::UpdateIntegrationResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -186,17 +175,12 @@ impl UpdateIntegrationResponseFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

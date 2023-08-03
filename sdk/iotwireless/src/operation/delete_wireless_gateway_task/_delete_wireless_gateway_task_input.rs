@@ -15,16 +15,14 @@ impl DeleteWirelessGatewayTaskInput {
 }
 impl DeleteWirelessGatewayTaskInput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskInput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskInput).
-    pub fn builder() -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskInputBuilder{
+    pub fn builder() -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskInputBuilder {
         crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWirelessGatewayTaskInput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteWirelessGatewayTaskInputBuilder {
         crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskInput { id: self.id })
     }
 }

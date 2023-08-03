@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`metric_transformations(Vec<MetricTransformation>)`](crate::operation::put_metric_filter::builders::PutMetricFilterFluentBuilder::metric_transformations) / [`set_metric_transformations(Option<Vec<MetricTransformation>>)`](crate::operation::put_metric_filter::builders::PutMetricFilterFluentBuilder::set_metric_transformations): <p>A collection of information that defines how metric data gets emitted.</p>
     /// - On success, responds with [`PutMetricFilterOutput`](crate::operation::put_metric_filter::PutMetricFilterOutput)
     /// - On failure, responds with [`SdkError<PutMetricFilterError>`](crate::operation::put_metric_filter::PutMetricFilterError)
-    pub fn put_metric_filter(
-        &self,
-    ) -> crate::operation::put_metric_filter::builders::PutMetricFilterFluentBuilder {
-        crate::operation::put_metric_filter::builders::PutMetricFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_metric_filter(&self) -> crate::operation::put_metric_filter::builders::PutMetricFilterFluentBuilder {
+        crate::operation::put_metric_filter::builders::PutMetricFilterFluentBuilder::new(self.handle.clone())
     }
 }

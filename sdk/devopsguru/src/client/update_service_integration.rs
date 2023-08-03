@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`service_integration(UpdateServiceIntegrationConfig)`](crate::operation::update_service_integration::builders::UpdateServiceIntegrationFluentBuilder::service_integration) / [`set_service_integration(Option<UpdateServiceIntegrationConfig>)`](crate::operation::update_service_integration::builders::UpdateServiceIntegrationFluentBuilder::set_service_integration): <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     /// - On success, responds with [`UpdateServiceIntegrationOutput`](crate::operation::update_service_integration::UpdateServiceIntegrationOutput)
     /// - On failure, responds with [`SdkError<UpdateServiceIntegrationError>`](crate::operation::update_service_integration::UpdateServiceIntegrationError)
-    pub fn update_service_integration(
-        &self,
-    ) -> crate::operation::update_service_integration::builders::UpdateServiceIntegrationFluentBuilder
-    {
+    pub fn update_service_integration(&self) -> crate::operation::update_service_integration::builders::UpdateServiceIntegrationFluentBuilder {
         crate::operation::update_service_integration::builders::UpdateServiceIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

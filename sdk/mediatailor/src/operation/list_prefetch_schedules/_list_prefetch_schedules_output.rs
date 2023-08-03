@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPrefetchSchedulesOutput {
 }
 impl ListPrefetchSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesOutput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesOutputBuilder {
         crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrefetchSchedulesOutput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrefetchSchedulesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::PrefetchSchedule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListPrefetchSchedulesOutputBuilder {
         self
     }
     /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrefetchSchedule>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrefetchSchedule>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefetchSchedule>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefetchSchedule>> {
         &self.items
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>

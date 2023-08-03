@@ -26,7 +26,7 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceDiscoveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder,
+    inner: crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder,
 }
 impl ModifyIpamResourceDiscoveryFluentBuilder {
     /// Creates a new `ModifyIpamResourceDiscovery`.
@@ -37,7 +37,7 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         }
     }
     /// Access the ModifyIpamResourceDiscovery as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
             crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
             crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_resource_discovery_id(input.into());
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }
@@ -178,17 +161,12 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         self
     }
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn set_add_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_add_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
         self.inner = self.inner.set_add_operating_regions(input);
         self
     }
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn get_add_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_add_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
         self.inner.get_add_operating_regions()
     }
     /// Appends an item to `RemoveOperatingRegions`.
@@ -196,25 +174,17 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
     /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).
     ///
     /// <p>Remove operating Regions.</p>
-    pub fn remove_operating_regions(
-        mut self,
-        input: crate::types::RemoveIpamOperatingRegion,
-    ) -> Self {
+    pub fn remove_operating_regions(mut self, input: crate::types::RemoveIpamOperatingRegion) -> Self {
         self.inner = self.inner.remove_operating_regions(input);
         self
     }
     /// <p>Remove operating Regions.</p>
-    pub fn set_remove_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_remove_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>) -> Self {
         self.inner = self.inner.set_remove_operating_regions(input);
         self
     }
     /// <p>Remove operating Regions.</p>
-    pub fn get_remove_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+    pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
         self.inner.get_remove_operating_regions()
     }
 }

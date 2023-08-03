@@ -22,16 +22,14 @@ impl DescribeImageGenerationConfigurationInput {
 }
 impl DescribeImageGenerationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationInput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder {
         crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageGenerationConfigurationInput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageGenerationConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeImageGenerationConfigurationInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`DescribeImageGenerationConfigurationInput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-            }
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+            },
         )
     }
 }

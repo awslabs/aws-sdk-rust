@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PurchaseReservedDbInstancesOfferingOu
 }
 impl PurchaseReservedDbInstancesOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingOutput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingOutputBuilder {
         crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedDbInstancesOfferingOutput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedDbInstancesOfferingOutputBuilder {
     pub(crate) reserved_db_instance: ::std::option::Option<crate::types::ReservedDbInstance>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl PurchaseReservedDbInstancesOfferingOutputBuilder {
         self
     }
     /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
-    pub fn set_reserved_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedDbInstance>,
-    ) -> Self {
+    pub fn set_reserved_db_instance(mut self, input: ::std::option::Option<crate::types::ReservedDbInstance>) -> Self {
         self.reserved_db_instance = input;
         self
     }
     /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
-    pub fn get_reserved_db_instance(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedDbInstance> {
+    pub fn get_reserved_db_instance(&self) -> &::std::option::Option<crate::types::ReservedDbInstance> {
         &self.reserved_db_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl PurchaseReservedDbInstancesOfferingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedDbInstancesOfferingOutput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput).
-    pub fn build(self) -> crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput{
+    pub fn build(self) -> crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput {
         crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput {
-            reserved_db_instance: self.reserved_db_instance
-            ,
+            reserved_db_instance: self.reserved_db_instance,
             _request_id: self._request_id,
         }
     }

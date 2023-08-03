@@ -23,9 +23,7 @@ impl TestResult {
 
 /// A builder for [`TestResult`](crate::types::TestResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestResultBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
 }
@@ -42,10 +40,7 @@ impl TestResultBuilder {
         self
     }
     /// <p>Show each group of test results.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>) -> Self {
         self.groups = input;
         self
     }
@@ -55,8 +50,6 @@ impl TestResultBuilder {
     }
     /// Consumes the builder and constructs a [`TestResult`](crate::types::TestResult).
     pub fn build(self) -> crate::types::TestResult {
-        crate::types::TestResult {
-            groups: self.groups,
-        }
+        crate::types::TestResult { groups: self.groups }
     }
 }

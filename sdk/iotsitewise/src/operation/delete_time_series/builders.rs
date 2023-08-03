@@ -10,10 +10,7 @@ impl DeleteTimeSeriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_time_series::DeleteTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_time_series::DeleteTimeSeriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_time_series();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl DeleteTimeSeriesFluentBuilder {
         }
     }
     /// Access the DeleteTimeSeries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl DeleteTimeSeriesFluentBuilder {
             crate::operation::delete_time_series::DeleteTimeSeries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_time_series::DeleteTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl DeleteTimeSeriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl DeleteTimeSeriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_time_series::DeleteTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_time_series::DeleteTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl DeleteTimeSeriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_time_series::DeleteTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_time_series::DeleteTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl DeleteTimeSeriesFluentBuilder {
             crate::operation::delete_time_series::DeleteTimeSeries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_time_series::DeleteTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError>,
     > {
         self.customize_middleware().await
     }

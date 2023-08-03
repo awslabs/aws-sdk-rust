@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFeatureGroupOutput`](crate::operation::update_feature_group::UpdateFeatureGroupOutput) with field(s):
     ///   - [`feature_group_arn(Option<String>)`](crate::operation::update_feature_group::UpdateFeatureGroupOutput::feature_group_arn): <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
     /// - On failure, responds with [`SdkError<UpdateFeatureGroupError>`](crate::operation::update_feature_group::UpdateFeatureGroupError)
-    pub fn update_feature_group(
-        &self,
-    ) -> crate::operation::update_feature_group::builders::UpdateFeatureGroupFluentBuilder {
-        crate::operation::update_feature_group::builders::UpdateFeatureGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_feature_group(&self) -> crate::operation::update_feature_group::builders::UpdateFeatureGroupFluentBuilder {
+        crate::operation::update_feature_group::builders::UpdateFeatureGroupFluentBuilder::new(self.handle.clone())
     }
 }

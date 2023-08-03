@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeActiveReceiptRuleSetOutput {
 }
 impl DescribeActiveReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
-    pub fn builder() -> crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetOutputBuilder{
+    pub fn builder() -> crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetOutputBuilder {
         crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
@@ -51,10 +49,7 @@ impl DescribeActiveReceiptRuleSetOutputBuilder {
         self
     }
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -74,10 +69,7 @@ impl DescribeActiveReceiptRuleSetOutputBuilder {
         self
     }
     /// <p>The receipt rules that belong to the active rule set.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>) -> Self {
         self.rules = input;
         self
     }
@@ -95,10 +87,7 @@ impl DescribeActiveReceiptRuleSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput
-    {
+    pub fn build(self) -> crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput {
         crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput {
             metadata: self.metadata,
             rules: self.rules,

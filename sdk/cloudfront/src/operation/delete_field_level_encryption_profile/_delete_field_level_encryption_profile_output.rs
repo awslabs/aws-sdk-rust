@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFieldLevelEncryptionProfileOutp
 }
 impl DeleteFieldLevelEncryptionProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionProfileOutput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput).
-    pub fn builder() -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileOutputBuilder{
+    pub fn builder() -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileOutputBuilder {
         crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFieldLevelEncryptionProfileOutput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionProfileOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteFieldLevelEncryptionProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFieldLevelEncryptionProfileOutput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput).
-    pub fn build(self) -> crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput{
+    pub fn build(self) -> crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput {
         crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput {
             _request_id: self._request_id,
         }

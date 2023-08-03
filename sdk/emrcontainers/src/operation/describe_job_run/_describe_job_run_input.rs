@@ -29,9 +29,7 @@ impl DescribeJobRunInput {
 
 /// A builder for [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobRunInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeJobRunInputBuilder {
         &self.id
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl DescribeJobRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_run::DescribeJobRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_run::DescribeJobRunInput {
             id: self.id,
             virtual_cluster_id: self.virtual_cluster_id,

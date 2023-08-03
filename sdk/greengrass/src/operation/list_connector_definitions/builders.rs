@@ -26,7 +26,7 @@ impl ListConnectorDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConnectorDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsInputBuilder,
+    inner: crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsInputBuilder,
 }
 impl ListConnectorDefinitionsFluentBuilder {
     /// Creates a new `ListConnectorDefinitions`.
@@ -37,10 +37,7 @@ impl ListConnectorDefinitionsFluentBuilder {
         }
     }
     /// Access the ListConnectorDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListConnectorDefinitionsFluentBuilder {
             crate::operation::list_connector_definitions::ListConnectorDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_definitions::ListConnectorDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_definitions::ListConnectorDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListConnectorDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListConnectorDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connector_definitions::ListConnectorDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_definitions::ListConnectorDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_definitions::ListConnectorDefinitionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListConnectorDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connector_definitions::ListConnectorDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_definitions::ListConnectorDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_definitions::ListConnectorDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListConnectorDefinitionsFluentBuilder {
             crate::operation::list_connector_definitions::ListConnectorDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connector_definitions::ListConnectorDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connector_definitions::ListConnectorDefinitionsError>,
     > {
         self.customize_middleware().await
     }

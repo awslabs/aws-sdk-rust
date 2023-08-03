@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCoreNetworkOutput {
 }
 impl CreateCoreNetworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateCoreNetworkOutput`](crate::operation::create_core_network::CreateCoreNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::create_core_network::builders::CreateCoreNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::create_core_network::builders::CreateCoreNetworkOutputBuilder {
         crate::operation::create_core_network::builders::CreateCoreNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCoreNetworkOutput`](crate::operation::create_core_network::CreateCoreNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateCoreNetworkOutputBuilder {
         self
     }
     /// <p>Returns details about a core network.</p>
-    pub fn set_core_network(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetwork>,
-    ) -> Self {
+    pub fn set_core_network(mut self, input: ::std::option::Option<crate::types::CoreNetwork>) -> Self {
         self.core_network = input;
         self
     }

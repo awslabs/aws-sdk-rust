@@ -35,9 +35,7 @@ impl ListFirewallsOutput {
 
 /// A builder for [`ListFirewallsOutput`](crate::operation::list_firewalls::ListFirewallsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewalls: ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>>,
@@ -70,17 +68,12 @@ impl ListFirewallsOutputBuilder {
         self
     }
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
-    pub fn set_firewalls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>>,
-    ) -> Self {
+    pub fn set_firewalls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>>) -> Self {
         self.firewalls = input;
         self
     }
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
-    pub fn get_firewalls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>> {
+    pub fn get_firewalls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>> {
         &self.firewalls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

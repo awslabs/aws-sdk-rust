@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for SignalApplicationInstanceNodeInstance
 }
 impl SignalApplicationInstanceNodeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`SignalApplicationInstanceNodeInstancesOutput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput).
-    pub fn builder() -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder {
         crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SignalApplicationInstanceNodeInstancesOutput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalApplicationInstanceNodeInstancesOutputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SignalApplicationInstanceNodeInstancesOutputBuilder {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_instance_id = input;
         self
     }
@@ -66,10 +58,9 @@ impl SignalApplicationInstanceNodeInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesOutput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput).
-    pub fn build(self) -> crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput{
+    pub fn build(self) -> crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput {
         crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput {
-            application_instance_id: self.application_instance_id
-            ,
+            application_instance_id: self.application_instance_id,
             _request_id: self._request_id,
         }
     }

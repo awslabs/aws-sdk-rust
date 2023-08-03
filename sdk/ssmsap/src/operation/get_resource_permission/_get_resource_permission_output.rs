@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResourcePermissionOutput {
 }
 impl GetResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePermissionOutput`](crate::operation::get_resource_permission::GetResourcePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_permission::builders::GetResourcePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_permission::builders::GetResourcePermissionOutputBuilder {
         crate::operation::get_resource_permission::builders::GetResourcePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePermissionOutput`](crate::operation::get_resource_permission::GetResourcePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

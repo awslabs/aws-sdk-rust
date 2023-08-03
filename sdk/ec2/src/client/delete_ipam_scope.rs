@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput) with field(s):
     ///   - [`ipam_scope(Option<IpamScope>)`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput::ipam_scope): <p>Information about the results of the deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteIpamScopeError>`](crate::operation::delete_ipam_scope::DeleteIpamScopeError)
-    pub fn delete_ipam_scope(
-        &self,
-    ) -> crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder {
-        crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ipam_scope(&self) -> crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder {
+        crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::new(self.handle.clone())
     }
 }

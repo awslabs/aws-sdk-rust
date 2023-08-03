@@ -55,9 +55,7 @@ impl AccessorSummary {
 
 /// A builder for [`AccessorSummary`](crate::types::AccessorSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessorSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::AccessorType>,
@@ -106,10 +104,7 @@ impl AccessorSummaryBuilder {
         self
     }
     /// <p>The current status of the accessor.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccessorStatus>) -> Self {
         self.status = input;
         self
     }
@@ -123,10 +118,7 @@ impl AccessorSummaryBuilder {
         self
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

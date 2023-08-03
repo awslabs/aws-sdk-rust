@@ -9,10 +9,7 @@ pub fn ser_get_buckets_aggregation_input(
     if let Some(var_2) = &input.buckets_aggregation_type {
         #[allow(unused_mut)]
         let mut object_3 = object.key("bucketsAggregationType").start_object();
-        crate::protocol_serde::shape_buckets_aggregation_type::ser_buckets_aggregation_type(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_buckets_aggregation_type::ser_buckets_aggregation_type(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.index_name {

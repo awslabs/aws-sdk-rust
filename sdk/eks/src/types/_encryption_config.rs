@@ -30,9 +30,7 @@ impl EncryptionConfig {
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) provider: ::std::option::Option<crate::types::Provider>,
@@ -50,10 +48,7 @@ impl EncryptionConfigBuilder {
         self
     }
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }

@@ -30,9 +30,7 @@ impl GroupOwnerSetting {
 
 /// A builder for [`GroupOwnerSetting`](crate::types::GroupOwnerSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupOwnerSettingBuilder {
     pub(crate) auto_add_group_owner: ::std::option::Option<bool>,
     pub(crate) group_owner: ::std::option::Option<::std::string::String>,

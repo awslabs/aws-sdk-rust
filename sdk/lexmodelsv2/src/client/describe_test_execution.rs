@@ -16,12 +16,7 @@ impl super::Client {
     ///   - [`test_execution_modality(Option<TestExecutionModality>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::test_execution_modality): <p>Indicates whether test set is audio or text.</p>
     ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::failure_reasons): <p>Reasons for the failure of the test set execution.</p>
     /// - On failure, responds with [`SdkError<DescribeTestExecutionError>`](crate::operation::describe_test_execution::DescribeTestExecutionError)
-    pub fn describe_test_execution(
-        &self,
-    ) -> crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder
-    {
-        crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_test_execution(&self) -> crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder {
+        crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::new(self.handle.clone())
     }
 }

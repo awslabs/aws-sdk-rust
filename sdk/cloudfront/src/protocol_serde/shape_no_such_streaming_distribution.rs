@@ -3,10 +3,7 @@
 pub fn de_no_such_streaming_distribution_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::NoSuchStreamingDistributionBuilder,
-) -> Result<
-    crate::types::error::builders::NoSuchStreamingDistributionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::NoSuchStreamingDistributionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

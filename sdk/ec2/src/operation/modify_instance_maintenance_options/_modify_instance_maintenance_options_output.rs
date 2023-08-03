@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ModifyInstanceMaintenanceOptionsOutpu
 }
 impl ModifyInstanceMaintenanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMaintenanceOptionsOutput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput).
-    pub fn builder() -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder {
         crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceMaintenanceOptionsOutput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceMaintenanceOptionsOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
@@ -64,17 +62,12 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
         self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>) -> Self {
         self.auto_recovery = input;
         self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn get_auto_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         &self.auto_recovery
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -87,15 +80,10 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyInstanceMaintenanceOptionsOutput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput
-    {
+    pub fn build(self) -> crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput {
         crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput {
-            instance_id: self.instance_id
-            ,
-            auto_recovery: self.auto_recovery
-            ,
+            instance_id: self.instance_id,
+            auto_recovery: self.auto_recovery,
             _request_id: self._request_id,
         }
     }

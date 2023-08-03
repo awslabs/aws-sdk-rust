@@ -102,18 +102,14 @@ impl ::aws_http::request_id::RequestId for DescribePatchGroupStateOutput {
 }
 impl DescribePatchGroupStateOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchGroupStateOutput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateOutputBuilder {
         crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchGroupStateOutput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchGroupStateOutputBuilder {
     pub(crate) instances: ::std::option::Option<i32>,
     pub(crate) instances_with_installed_patches: ::std::option::Option<i32>,
@@ -150,10 +146,7 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes with installed patches.</p>
-    pub fn set_instances_with_installed_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_installed_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_installed_patches = input;
         self
     }
@@ -167,10 +160,7 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
-    pub fn set_instances_with_installed_other_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_installed_other_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_installed_other_patches = input;
         self
     }
@@ -184,17 +174,12 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    pub fn set_instances_with_installed_pending_reboot_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_installed_pending_reboot_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_installed_pending_reboot_patches = input;
         self
     }
     /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    pub fn get_instances_with_installed_pending_reboot_patches(
-        &self,
-    ) -> &::std::option::Option<i32> {
+    pub fn get_instances_with_installed_pending_reboot_patches(&self) -> &::std::option::Option<i32> {
         &self.instances_with_installed_pending_reboot_patches
     }
     /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
@@ -207,10 +192,7 @@ impl DescribePatchGroupStateOutputBuilder {
     /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
-    pub fn set_instances_with_installed_rejected_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_installed_rejected_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_installed_rejected_patches = input;
         self
     }
@@ -254,10 +236,7 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes with patches that aren't applicable.</p>
-    pub fn set_instances_with_not_applicable_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_not_applicable_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_not_applicable_patches = input;
         self
     }
@@ -271,17 +250,12 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn set_instances_with_unreported_not_applicable_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_unreported_not_applicable_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_unreported_not_applicable_patches = input;
         self
     }
     /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn get_instances_with_unreported_not_applicable_patches(
-        &self,
-    ) -> &::std::option::Option<i32> {
+    pub fn get_instances_with_unreported_not_applicable_patches(&self) -> &::std::option::Option<i32> {
         &self.instances_with_unreported_not_applicable_patches
     }
     /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
@@ -290,10 +264,7 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    pub fn set_instances_with_critical_non_compliant_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_critical_non_compliant_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_critical_non_compliant_patches = input;
         self
     }
@@ -307,10 +278,7 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    pub fn set_instances_with_security_non_compliant_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_security_non_compliant_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_security_non_compliant_patches = input;
         self
     }
@@ -324,10 +292,7 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    pub fn set_instances_with_other_non_compliant_patches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_with_other_non_compliant_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_other_non_compliant_patches = input;
         self
     }
@@ -345,34 +310,20 @@ impl DescribePatchGroupStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePatchGroupStateOutput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput {
+    pub fn build(self) -> crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput {
         crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput {
             instances: self.instances.unwrap_or_default(),
-            instances_with_installed_patches: self
-                .instances_with_installed_patches
-                .unwrap_or_default(),
-            instances_with_installed_other_patches: self
-                .instances_with_installed_other_patches
-                .unwrap_or_default(),
-            instances_with_installed_pending_reboot_patches: self
-                .instances_with_installed_pending_reboot_patches,
-            instances_with_installed_rejected_patches: self
-                .instances_with_installed_rejected_patches,
+            instances_with_installed_patches: self.instances_with_installed_patches.unwrap_or_default(),
+            instances_with_installed_other_patches: self.instances_with_installed_other_patches.unwrap_or_default(),
+            instances_with_installed_pending_reboot_patches: self.instances_with_installed_pending_reboot_patches,
+            instances_with_installed_rejected_patches: self.instances_with_installed_rejected_patches,
             instances_with_missing_patches: self.instances_with_missing_patches.unwrap_or_default(),
             instances_with_failed_patches: self.instances_with_failed_patches.unwrap_or_default(),
-            instances_with_not_applicable_patches: self
-                .instances_with_not_applicable_patches
-                .unwrap_or_default(),
-            instances_with_unreported_not_applicable_patches: self
-                .instances_with_unreported_not_applicable_patches,
-            instances_with_critical_non_compliant_patches: self
-                .instances_with_critical_non_compliant_patches,
-            instances_with_security_non_compliant_patches: self
-                .instances_with_security_non_compliant_patches,
-            instances_with_other_non_compliant_patches: self
-                .instances_with_other_non_compliant_patches,
+            instances_with_not_applicable_patches: self.instances_with_not_applicable_patches.unwrap_or_default(),
+            instances_with_unreported_not_applicable_patches: self.instances_with_unreported_not_applicable_patches,
+            instances_with_critical_non_compliant_patches: self.instances_with_critical_non_compliant_patches,
+            instances_with_security_non_compliant_patches: self.instances_with_security_non_compliant_patches,
+            instances_with_other_non_compliant_patches: self.instances_with_other_non_compliant_patches,
             _request_id: self._request_id,
         }
     }

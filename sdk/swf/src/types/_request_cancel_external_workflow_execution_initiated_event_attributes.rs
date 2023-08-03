@@ -37,18 +37,14 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 }
 impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn builder(
-    ) -> crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -90,10 +86,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -116,15 +109,11 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         &self.control
     }
     /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn build(
-        self,
-    ) -> crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+    pub fn build(self) -> crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
         crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
             workflow_id: self.workflow_id,
             run_id: self.run_id,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             control: self.control,
         }
     }

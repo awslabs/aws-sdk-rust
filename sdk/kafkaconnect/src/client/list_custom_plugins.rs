@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`custom_plugins(Option<Vec<CustomPluginSummary>>)`](crate::operation::list_custom_plugins::ListCustomPluginsOutput::custom_plugins): <p>An array of custom plugin descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_plugins::ListCustomPluginsOutput::next_token): <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     /// - On failure, responds with [`SdkError<ListCustomPluginsError>`](crate::operation::list_custom_plugins::ListCustomPluginsError)
-    pub fn list_custom_plugins(
-        &self,
-    ) -> crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder {
-        crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_custom_plugins(&self) -> crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder {
+        crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::new(self.handle.clone())
     }
 }

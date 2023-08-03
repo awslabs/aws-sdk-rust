@@ -36,17 +36,14 @@ impl PutStudioMembersInput {
 }
 impl PutStudioMembersInput {
     /// Creates a new builder-style object to manufacture [`PutStudioMembersInput`](crate::operation::put_studio_members::PutStudioMembersInput).
-    pub fn builder() -> crate::operation::put_studio_members::builders::PutStudioMembersInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_studio_members::builders::PutStudioMembersInputBuilder {
         crate::operation::put_studio_members::builders::PutStudioMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`PutStudioMembersInput`](crate::operation::put_studio_members::PutStudioMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStudioMembersInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl PutStudioMembersInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -100,17 +91,12 @@ impl PutStudioMembersInputBuilder {
         self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>>) -> Self {
         self.members = input;
         self
     }
     /// <p>A list of members.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>> {
         &self.members
     }
     /// <p>The studio ID. </p>
@@ -130,17 +116,12 @@ impl PutStudioMembersInputBuilder {
     /// Consumes the builder and constructs a [`PutStudioMembersInput`](crate::operation::put_studio_members::PutStudioMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_studio_members::PutStudioMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_studio_members::PutStudioMembersInput {
-                client_token: self.client_token,
-                identity_store_id: self.identity_store_id,
-                members: self.members,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_studio_members::PutStudioMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_studio_members::PutStudioMembersInput {
+            client_token: self.client_token,
+            identity_store_id: self.identity_store_id,
+            members: self.members,
+            studio_id: self.studio_id,
+        })
     }
 }

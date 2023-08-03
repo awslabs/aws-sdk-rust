@@ -18,9 +18,7 @@ pub struct UpdateSecurityInput {
 }
 impl UpdateSecurityInput {
     /// <p>Includes all client authentication related information.</p>
-    pub fn client_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientAuthentication> {
+    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
         self.client_authentication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -45,9 +43,7 @@ impl UpdateSecurityInput {
 
 /// A builder for [`UpdateSecurityInput`](crate::operation::update_security::UpdateSecurityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityInputBuilder {
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
@@ -61,17 +57,12 @@ impl UpdateSecurityInputBuilder {
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.client_authentication = input;
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn get_client_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
         &self.client_authentication
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -89,18 +80,12 @@ impl UpdateSecurityInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -114,10 +99,7 @@ impl UpdateSecurityInputBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.encryption_info = input;
         self
     }
@@ -128,10 +110,7 @@ impl UpdateSecurityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityInput`](crate::operation::update_security::UpdateSecurityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_security::UpdateSecurityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_security::UpdateSecurityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_security::UpdateSecurityInput {
             client_authentication: self.client_authentication,
             cluster_arn: self.cluster_arn,

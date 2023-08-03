@@ -5,8 +5,7 @@
 pub struct GetTransitGatewayAttachmentPropagationsOutput {
     /// <p>Information about the propagation route tables.</p>
     #[doc(hidden)]
-    pub transit_gateway_attachment_propagations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
+    pub transit_gateway_attachment_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetTransitGatewayAttachmentPropagationsOutput {
 }
 impl GetTransitGatewayAttachmentPropagationsOutput {
     /// <p>Information about the propagation route tables.</p>
-    pub fn transit_gateway_attachment_propagations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayAttachmentPropagation]> {
+    pub fn transit_gateway_attachment_propagations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayAttachmentPropagation]> {
         self.transit_gateway_attachment_propagations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayAttachmentPropagatio
 }
 impl GetTransitGatewayAttachmentPropagationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayAttachmentPropagationsOutput`](crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsOutputBuilder
+    {
         crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayAttachmentPropagationsOutput`](crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayAttachmentPropagationsOutputBuilder {
-    pub(crate) transit_gateway_attachment_propagations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
+    pub(crate) transit_gateway_attachment_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +48,8 @@ impl GetTransitGatewayAttachmentPropagationsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_attachment_propagations`](Self::set_transit_gateway_attachment_propagations).
     ///
     /// <p>Information about the propagation route tables.</p>
-    pub fn transit_gateway_attachment_propagations(
-        mut self,
-        input: crate::types::TransitGatewayAttachmentPropagation,
-    ) -> Self {
-        let mut v = self
-            .transit_gateway_attachment_propagations
-            .unwrap_or_default();
+    pub fn transit_gateway_attachment_propagations(mut self, input: crate::types::TransitGatewayAttachmentPropagation) -> Self {
+        let mut v = self.transit_gateway_attachment_propagations.unwrap_or_default();
         v.push(input);
         self.transit_gateway_attachment_propagations = ::std::option::Option::Some(v);
         self
@@ -67,9 +57,7 @@ impl GetTransitGatewayAttachmentPropagationsOutputBuilder {
     /// <p>Information about the propagation route tables.</p>
     pub fn set_transit_gateway_attachment_propagations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
     ) -> Self {
         self.transit_gateway_attachment_propagations = input;
         self
@@ -77,8 +65,7 @@ impl GetTransitGatewayAttachmentPropagationsOutputBuilder {
     /// <p>Information about the propagation route tables.</p>
     pub fn get_transit_gateway_attachment_propagations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>> {
         &self.transit_gateway_attachment_propagations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -105,12 +92,10 @@ impl GetTransitGatewayAttachmentPropagationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayAttachmentPropagationsOutput`](crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput).
-    pub fn build(self) -> crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput{
+    pub fn build(self) -> crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput {
         crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput {
-            transit_gateway_attachment_propagations: self.transit_gateway_attachment_propagations
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_attachment_propagations: self.transit_gateway_attachment_propagations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

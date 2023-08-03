@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCommentOutput`](crate::operation::create_comment::CreateCommentOutput) with field(s):
     ///   - [`comment(Option<Comment>)`](crate::operation::create_comment::CreateCommentOutput::comment): <p>The comment that has been created.</p>
     /// - On failure, responds with [`SdkError<CreateCommentError>`](crate::operation::create_comment::CreateCommentError)
-    pub fn create_comment(
-        &self,
-    ) -> crate::operation::create_comment::builders::CreateCommentFluentBuilder {
-        crate::operation::create_comment::builders::CreateCommentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_comment(&self) -> crate::operation::create_comment::builders::CreateCommentFluentBuilder {
+        crate::operation::create_comment::builders::CreateCommentFluentBuilder::new(self.handle.clone())
     }
 }

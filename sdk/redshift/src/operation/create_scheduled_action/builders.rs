@@ -37,10 +37,7 @@ impl CreateScheduledActionFluentBuilder {
         }
     }
     /// Access the CreateScheduledAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_scheduled_action::builders::CreateScheduledActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_scheduled_action::builders::CreateScheduledActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateScheduledActionFluentBuilder {
             crate::operation::create_scheduled_action::CreateScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduled_action::CreateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateScheduledActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_scheduled_action::CreateScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduled_action::CreateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_scheduled_action::CreateScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduled_action::CreateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateScheduledActionFluentBuilder {
             crate::operation::create_scheduled_action::CreateScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduled_action::CreateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
     /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl CreateScheduledActionFluentBuilder {
         self
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_target_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionType>,
-    ) -> Self {
+    pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionType>) -> Self {
         self.inner = self.inner.set_target_action(input);
         self
     }
@@ -189,25 +166,17 @@ impl CreateScheduledActionFluentBuilder {
         self.inner.get_iam_role()
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn scheduled_action_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_description(input.into());
         self
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn set_scheduled_action_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_description(input);
         self
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn get_scheduled_action_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_scheduled_action_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_action_description()
     }
     /// <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
@@ -216,10 +185,7 @@ impl CreateScheduledActionFluentBuilder {
         self
     }
     /// <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -233,10 +199,7 @@ impl CreateScheduledActionFluentBuilder {
         self
     }
     /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

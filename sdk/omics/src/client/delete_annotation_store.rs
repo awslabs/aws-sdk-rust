@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput) with field(s):
     ///   - [`status(Option<StoreStatus>)`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput::status): <p>The store's status.</p>
     /// - On failure, responds with [`SdkError<DeleteAnnotationStoreError>`](crate::operation::delete_annotation_store::DeleteAnnotationStoreError)
-    pub fn delete_annotation_store(
-        &self,
-    ) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder
-    {
-        crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_annotation_store(&self) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder {
+        crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::new(self.handle.clone())
     }
 }

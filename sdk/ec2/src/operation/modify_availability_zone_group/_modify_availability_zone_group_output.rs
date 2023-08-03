@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyAvailabilityZoneGroupOutput {
 }
 impl ModifyAvailabilityZoneGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyAvailabilityZoneGroupOutput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput).
-    pub fn builder() -> crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder{
+    pub fn builder() -> crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder {
         crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyAvailabilityZoneGroupOutput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAvailabilityZoneGroupOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ModifyAvailabilityZoneGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyAvailabilityZoneGroupOutput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput {
+    pub fn build(self) -> crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput {
         crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

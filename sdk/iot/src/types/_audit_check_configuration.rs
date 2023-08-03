@@ -23,9 +23,7 @@ impl AuditCheckConfiguration {
 
 /// A builder for [`AuditCheckConfiguration`](crate::types::AuditCheckConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditCheckConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

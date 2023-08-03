@@ -26,12 +26,7 @@ impl super::Client {
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::operation::create_event_data_store::CreateEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::create_event_data_store::CreateEventDataStoreOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<CreateEventDataStoreError>`](crate::operation::create_event_data_store::CreateEventDataStoreError)
-    pub fn create_event_data_store(
-        &self,
-    ) -> crate::operation::create_event_data_store::builders::CreateEventDataStoreFluentBuilder
-    {
-        crate::operation::create_event_data_store::builders::CreateEventDataStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_event_data_store(&self) -> crate::operation::create_event_data_store::builders::CreateEventDataStoreFluentBuilder {
+        crate::operation::create_event_data_store::builders::CreateEventDataStoreFluentBuilder::new(self.handle.clone())
     }
 }

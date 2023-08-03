@@ -10,10 +10,7 @@ impl CreateAccessKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_access_key::CreateAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_key::CreateAccessKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_key::CreateAccessKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_access_key();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateAccessKeyFluentBuilder {
         }
     }
     /// Access the CreateAccessKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_key::builders::CreateAccessKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_key::builders::CreateAccessKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CreateAccessKeyFluentBuilder {
             crate::operation::create_access_key::CreateAccessKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_key::CreateAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_key::CreateAccessKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CreateAccessKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CreateAccessKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_key::CreateAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_key::CreateAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_key::CreateAccessKeyError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CreateAccessKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_key::CreateAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_key::CreateAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_key::CreateAccessKeyError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CreateAccessKeyFluentBuilder {
             crate::operation::create_access_key::CreateAccessKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_key::CreateAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_key::CreateAccessKeyError>,
     > {
         self.customize_middleware().await
     }

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<HostedConfigurationVersionSummary>>)`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListHostedConfigurationVersionsError>`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError)
-    pub fn list_hosted_configuration_versions(&self) -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder{
+    pub fn list_hosted_configuration_versions(
+        &self,
+    ) -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder {
         crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AcceptCertificateTransferOutput {
 }
 impl AcceptCertificateTransferOutput {
     /// Creates a new builder-style object to manufacture [`AcceptCertificateTransferOutput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput).
-    pub fn builder() -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferOutputBuilder{
+    pub fn builder() -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferOutputBuilder {
         crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptCertificateTransferOutput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptCertificateTransferOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AcceptCertificateTransferOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptCertificateTransferOutput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput {
+    pub fn build(self) -> crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput {
         crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput {
             _request_id: self._request_id,
         }

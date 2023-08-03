@@ -22,18 +22,14 @@ impl ModifyReportDefinitionInput {
 }
 impl ModifyReportDefinitionInput {
     /// Creates a new builder-style object to manufacture [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder {
         crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReportDefinitionInputBuilder {
     pub(crate) report_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_definition: ::std::option::Option<crate::types::ReportDefinition>,
@@ -59,10 +55,7 @@ impl ModifyReportDefinitionInputBuilder {
         self
     }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
-    pub fn set_report_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDefinition>,
-    ) -> Self {
+    pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
         self.report_definition = input;
         self
     }
@@ -73,15 +66,11 @@ impl ModifyReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_report_definition::ModifyReportDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_report_definition::ModifyReportDefinitionInput {
-                report_name: self.report_name,
-                report_definition: self.report_definition,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_report_definition::ModifyReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_report_definition::ModifyReportDefinitionInput {
+            report_name: self.report_name,
+            report_definition: self.report_definition,
+        })
     }
 }

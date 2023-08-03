@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_function::CreateFunctionOutput::location): <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_function::CreateFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::operation::create_function::CreateFunctionError)
-    pub fn create_function(
-        &self,
-    ) -> crate::operation::create_function::builders::CreateFunctionFluentBuilder {
-        crate::operation::create_function::builders::CreateFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_function(&self) -> crate::operation::create_function::builders::CreateFunctionFluentBuilder {
+        crate::operation::create_function::builders::CreateFunctionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl ProvisionedThroughput {
 
 /// A builder for [`ProvisionedThroughput`](crate::types::ProvisionedThroughput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedThroughputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) volume_throughput: ::std::option::Option<i32>,

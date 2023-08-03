@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CompleteMultipartReadSetUploadOutput 
 }
 impl CompleteMultipartReadSetUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput).
-    pub fn builder() -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder{
+    pub fn builder() -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder {
         crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMultipartReadSetUploadOutputBuilder {
     pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl CompleteMultipartReadSetUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput
-    {
+    pub fn build(self) -> crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput {
         crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput {
             read_set_id: self.read_set_id,
             _request_id: self._request_id,

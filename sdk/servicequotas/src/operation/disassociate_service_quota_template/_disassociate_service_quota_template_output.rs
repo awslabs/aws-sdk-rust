@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateServiceQuotaTemplateOutpu
 }
 impl DisassociateServiceQuotaTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateOutput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput).
-    pub fn builder() -> crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateOutputBuilder {
         crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateServiceQuotaTemplateOutput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateServiceQuotaTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateServiceQuotaTemplateOutput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput {
         crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput {
             _request_id: self._request_id,
         }

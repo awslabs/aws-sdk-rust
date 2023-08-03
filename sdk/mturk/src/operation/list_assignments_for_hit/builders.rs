@@ -41,10 +41,7 @@ impl ListAssignmentsForHITFluentBuilder {
         }
     }
     /// Access the ListAssignmentsForHIT as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl ListAssignmentsForHITFluentBuilder {
             crate::operation::list_assignments_for_hit::ListAssignmentsForHIT,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl ListAssignmentsForHITFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl ListAssignmentsForHITFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl ListAssignmentsForHITFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +109,15 @@ impl ListAssignmentsForHITFluentBuilder {
             crate::operation::list_assignments_for_hit::ListAssignmentsForHIT,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator {
-        crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator {
+        crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the HIT.</p>
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -190,17 +171,12 @@ impl ListAssignmentsForHITFluentBuilder {
         self
     }
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    pub fn set_assignment_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>,
-    ) -> Self {
+    pub fn set_assignment_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>) -> Self {
         self.inner = self.inner.set_assignment_statuses(input);
         self
     }
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    pub fn get_assignment_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>> {
+    pub fn get_assignment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>> {
         self.inner.get_assignment_statuses()
     }
 }

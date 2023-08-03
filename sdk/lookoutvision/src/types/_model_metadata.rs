@@ -65,9 +65,7 @@ impl ModelMetadata {
 
 /// A builder for [`ModelMetadata`](crate::types::ModelMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelMetadataBuilder {
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl ModelMetadataBuilder {
         self
     }
     /// <p>The unix timestamp for the date and time that the model was created. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -96,18 +91,12 @@ impl ModelMetadataBuilder {
         &self.creation_timestamp
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -158,18 +147,12 @@ impl ModelMetadataBuilder {
         &self.status
     }
     /// <p>The status message for the model.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the model.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -183,10 +166,7 @@ impl ModelMetadataBuilder {
         self
     }
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
-    pub fn set_performance(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPerformance>,
-    ) -> Self {
+    pub fn set_performance(mut self, input: ::std::option::Option<crate::types::ModelPerformance>) -> Self {
         self.performance = input;
         self
     }

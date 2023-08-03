@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AttributeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for AttributeType {
             "EXCLUSIVE" => AttributeType::Exclusive,
             "INCLUSIVE" => AttributeType::Inclusive,
             "ON" => AttributeType::On,
-            other => {
-                AttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl AttributeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AFTER",
-            "BEFORE",
-            "BETWEEN",
-            "CONTAINS",
-            "EXCLUSIVE",
-            "INCLUSIVE",
-            "ON",
-        ]
+        &["AFTER", "BEFORE", "BETWEEN", "CONTAINS", "EXCLUSIVE", "INCLUSIVE", "ON"]
     }
 }
 impl ::std::convert::AsRef<str> for AttributeType {

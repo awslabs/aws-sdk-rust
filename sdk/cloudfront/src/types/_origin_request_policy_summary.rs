@@ -17,9 +17,7 @@ impl OriginRequestPolicySummary {
         self.r#type.as_ref()
     }
     /// <p>The origin request policy.</p>
-    pub fn origin_request_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
+    pub fn origin_request_policy(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
         self.origin_request_policy.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl OriginRequestPolicySummary {
 
 /// A builder for [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginRequestPolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
     pub(crate) origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
@@ -46,10 +42,7 @@ impl OriginRequestPolicySummaryBuilder {
         self
     }
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -63,17 +56,12 @@ impl OriginRequestPolicySummaryBuilder {
         self
     }
     /// <p>The origin request policy.</p>
-    pub fn set_origin_request_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicy>,
-    ) -> Self {
+    pub fn set_origin_request_policy(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicy>) -> Self {
         self.origin_request_policy = input;
         self
     }
     /// <p>The origin request policy.</p>
-    pub fn get_origin_request_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
+    pub fn get_origin_request_policy(&self) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
         &self.origin_request_policy
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).

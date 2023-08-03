@@ -10,9 +10,7 @@ pub struct S3SetObjectAclOperation {
 }
 impl S3SetObjectAclOperation {
     /// <p></p>
-    pub fn access_control_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3AccessControlPolicy> {
+    pub fn access_control_policy(&self) -> ::std::option::Option<&crate::types::S3AccessControlPolicy> {
         self.access_control_policy.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl S3SetObjectAclOperation {
 
 /// A builder for [`S3SetObjectAclOperation`](crate::types::S3SetObjectAclOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SetObjectAclOperationBuilder {
     pub(crate) access_control_policy: ::std::option::Option<crate::types::S3AccessControlPolicy>,
 }
@@ -38,17 +34,12 @@ impl S3SetObjectAclOperationBuilder {
         self
     }
     /// <p></p>
-    pub fn set_access_control_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::S3AccessControlPolicy>,
-    ) -> Self {
+    pub fn set_access_control_policy(mut self, input: ::std::option::Option<crate::types::S3AccessControlPolicy>) -> Self {
         self.access_control_policy = input;
         self
     }
     /// <p></p>
-    pub fn get_access_control_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3AccessControlPolicy> {
+    pub fn get_access_control_policy(&self) -> &::std::option::Option<crate::types::S3AccessControlPolicy> {
         &self.access_control_policy
     }
     /// Consumes the builder and constructs a [`S3SetObjectAclOperation`](crate::types::S3SetObjectAclOperation).

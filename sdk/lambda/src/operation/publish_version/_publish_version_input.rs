@@ -57,9 +57,7 @@ impl PublishVersionInput {
 
 /// A builder for [`PublishVersionInput`](crate::operation::publish_version::PublishVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishVersionInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) code_sha256: ::std::option::Option<::std::string::String>,
@@ -75,10 +73,7 @@ impl PublishVersionInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -90,10 +85,7 @@ impl PublishVersionInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -153,10 +145,7 @@ impl PublishVersionInputBuilder {
     /// Consumes the builder and constructs a [`PublishVersionInput`](crate::operation::publish_version::PublishVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_version::PublishVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::publish_version::PublishVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_version::PublishVersionInput {
             function_name: self.function_name,
             code_sha256: self.code_sha256,

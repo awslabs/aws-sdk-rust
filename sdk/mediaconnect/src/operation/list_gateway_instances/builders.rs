@@ -37,9 +37,7 @@ impl ListGatewayInstancesFluentBuilder {
         }
     }
     /// Access the ListGatewayInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListGatewayInstancesFluentBuilder {
             crate::operation::list_gateway_instances::ListGatewayInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_gateway_instances::ListGatewayInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_gateway_instances::ListGatewayInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListGatewayInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListGatewayInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_gateway_instances::ListGatewayInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_gateway_instances::ListGatewayInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_gateway_instances::ListGatewayInstancesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListGatewayInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_gateway_instances::ListGatewayInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_gateway_instances::ListGatewayInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_gateway_instances::ListGatewayInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListGatewayInstancesFluentBuilder {
             crate::operation::list_gateway_instances::ListGatewayInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_gateway_instances::ListGatewayInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_gateway_instances::ListGatewayInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator {
-        crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator {
+        crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::new(self.handle, self.inner)
     }
     /// Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

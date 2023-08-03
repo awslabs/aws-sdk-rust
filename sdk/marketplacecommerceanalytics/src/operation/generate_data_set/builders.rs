@@ -10,10 +10,7 @@ impl GenerateDataSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::generate_data_set::GenerateDataSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_data_set::GenerateDataSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.generate_data_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GenerateDataSetFluentBuilder {
         }
     }
     /// Access the GenerateDataSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::generate_data_set::builders::GenerateDataSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::generate_data_set::builders::GenerateDataSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GenerateDataSetFluentBuilder {
             crate::operation::generate_data_set::GenerateDataSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_data_set::GenerateDataSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GenerateDataSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GenerateDataSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_data_set::GenerateDataSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_data_set::GenerateDataSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GenerateDataSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_data_set::GenerateDataSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_data_set::GenerateDataSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GenerateDataSetFluentBuilder {
             crate::operation::generate_data_set::GenerateDataSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_data_set::GenerateDataSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError>,
     > {
         self.customize_middleware().await
     }
@@ -186,10 +170,7 @@ impl GenerateDataSetFluentBuilder {
     /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
     /// </ul>
     /// <p></p>
-    pub fn set_data_set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetType>,
-    ) -> Self {
+    pub fn set_data_set_type(mut self, input: ::std::option::Option<crate::types::DataSetType>) -> Self {
         self.inner = self.inner.set_data_set_type(input);
         self
     }
@@ -232,32 +213,21 @@ impl GenerateDataSetFluentBuilder {
         self
     }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub fn set_data_set_publication_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_set_publication_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_data_set_publication_date(input);
         self
     }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub fn get_data_set_publication_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_data_set_publication_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_data_set_publication_date()
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn role_name_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn set_role_name_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name_arn(input);
         self
     }
@@ -266,18 +236,12 @@ impl GenerateDataSetFluentBuilder {
         self.inner.get_role_name_arn()
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn destination_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_s3_bucket_name(input.into());
         self
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn set_destination_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_s3_bucket_name(input);
         self
     }
@@ -286,18 +250,12 @@ impl GenerateDataSetFluentBuilder {
         self.inner.get_destination_s3_bucket_name()
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn destination_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_s3_prefix(input.into());
         self
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn set_destination_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_s3_prefix(input);
         self
     }
@@ -306,18 +264,12 @@ impl GenerateDataSetFluentBuilder {
         self.inner.get_destination_s3_prefix()
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -341,19 +293,13 @@ impl GenerateDataSetFluentBuilder {
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
     pub fn set_customer_defined_values(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_customer_defined_values(input);
         self
     }
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
-    pub fn get_customer_defined_values(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_customer_defined_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_customer_defined_values()
     }
 }

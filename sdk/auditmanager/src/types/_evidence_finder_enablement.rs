@@ -41,9 +41,7 @@ impl EvidenceFinderEnablement {
     /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
     /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
     /// </ul>
-    pub fn enablement_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvidenceFinderEnablementStatus> {
+    pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EvidenceFinderEnablementStatus> {
         self.enablement_status.as_ref()
     }
     /// <p>The current status of the evidence data backfill process. </p>
@@ -53,9 +51,7 @@ impl EvidenceFinderEnablement {
     /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
     /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
     /// </ul>
-    pub fn backfill_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvidenceFinderBackfillStatus> {
+    pub fn backfill_status(&self) -> ::std::option::Option<&crate::types::EvidenceFinderBackfillStatus> {
         self.backfill_status.as_ref()
     }
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
@@ -72,30 +68,21 @@ impl EvidenceFinderEnablement {
 
 /// A builder for [`EvidenceFinderEnablement`](crate::types::EvidenceFinderEnablement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvidenceFinderEnablementBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) enablement_status:
-        ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
+    pub(crate) enablement_status: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
     pub(crate) backfill_status: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
 }
 impl EvidenceFinderEnablementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
-    pub fn event_data_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
-    pub fn set_event_data_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store_arn = input;
         self
     }
@@ -110,10 +97,7 @@ impl EvidenceFinderEnablementBuilder {
     /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
     /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
     /// </ul>
-    pub fn enablement_status(
-        mut self,
-        input: crate::types::EvidenceFinderEnablementStatus,
-    ) -> Self {
+    pub fn enablement_status(mut self, input: crate::types::EvidenceFinderEnablementStatus) -> Self {
         self.enablement_status = ::std::option::Option::Some(input);
         self
     }
@@ -124,10 +108,7 @@ impl EvidenceFinderEnablementBuilder {
     /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
     /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
     /// </ul>
-    pub fn set_enablement_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
-    ) -> Self {
+    pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>) -> Self {
         self.enablement_status = input;
         self
     }
@@ -138,9 +119,7 @@ impl EvidenceFinderEnablementBuilder {
     /// <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p> </li>
     /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
     /// </ul>
-    pub fn get_enablement_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvidenceFinderEnablementStatus> {
+    pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EvidenceFinderEnablementStatus> {
         &self.enablement_status
     }
     /// <p>The current status of the evidence data backfill process. </p>
@@ -161,10 +140,7 @@ impl EvidenceFinderEnablementBuilder {
     /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
     /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
     /// </ul>
-    pub fn set_backfill_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
-    ) -> Self {
+    pub fn set_backfill_status(mut self, input: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>) -> Self {
         self.backfill_status = input;
         self
     }
@@ -175,9 +151,7 @@ impl EvidenceFinderEnablementBuilder {
     /// <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data. </p> </li>
     /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
     /// </ul>
-    pub fn get_backfill_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvidenceFinderBackfillStatus> {
+    pub fn get_backfill_status(&self) -> &::std::option::Option<crate::types::EvidenceFinderBackfillStatus> {
         &self.backfill_status
     }
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>

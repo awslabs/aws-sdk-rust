@@ -10,9 +10,7 @@ pub fn ser_create_certificate_authority_audit_report_input(
         object.key("S3BucketName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.audit_report_response_format {
-        object
-            .key("AuditReportResponseFormat")
-            .string(var_3.as_str());
+        object.key("AuditReportResponseFormat").string(var_3.as_str());
     }
     Ok(())
 }

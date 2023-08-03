@@ -27,25 +27,20 @@ impl CreateUserPoolDomainInput {
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
-    pub fn custom_domain_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
+    pub fn custom_domain_config(&self) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
     }
 }
 impl CreateUserPoolDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolDomainInput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainInput).
-    pub fn builder(
-    ) -> crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainInputBuilder {
+    pub fn builder() -> crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainInputBuilder {
         crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserPoolDomainInput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserPoolDomainInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
@@ -90,34 +85,25 @@ impl CreateUserPoolDomainInputBuilder {
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
-    pub fn set_custom_domain_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomainConfigType>,
-    ) -> Self {
+    pub fn set_custom_domain_config(mut self, input: ::std::option::Option<crate::types::CustomDomainConfigType>) -> Self {
         self.custom_domain_config = input;
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
-    pub fn get_custom_domain_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+    pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         &self.custom_domain_config
     }
     /// Consumes the builder and constructs a [`CreateUserPoolDomainInput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_pool_domain::CreateUserPoolDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_user_pool_domain::CreateUserPoolDomainInput {
-                domain: self.domain,
-                user_pool_id: self.user_pool_id,
-                custom_domain_config: self.custom_domain_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_user_pool_domain::CreateUserPoolDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_user_pool_domain::CreateUserPoolDomainInput {
+            domain: self.domain,
+            user_pool_id: self.user_pool_id,
+            custom_domain_config: self.custom_domain_config,
+        })
     }
 }

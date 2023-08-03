@@ -12,8 +12,7 @@ pub struct AwsKinesisStreamDetails {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
     #[doc(hidden)]
-    pub stream_encryption:
-        ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
+    pub stream_encryption: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
     /// <p>The number of shards that the stream uses. </p>
     #[doc(hidden)]
     pub shard_count: i32,
@@ -31,9 +30,7 @@ impl AwsKinesisStreamDetails {
         self.arn.as_deref()
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
-    pub fn stream_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsKinesisStreamStreamEncryptionDetails> {
+    pub fn stream_encryption(&self) -> ::std::option::Option<&crate::types::AwsKinesisStreamStreamEncryptionDetails> {
         self.stream_encryption.as_ref()
     }
     /// <p>The number of shards that the stream uses. </p>
@@ -54,14 +51,11 @@ impl AwsKinesisStreamDetails {
 
 /// A builder for [`AwsKinesisStreamDetails`](crate::types::AwsKinesisStreamDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsKinesisStreamDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) stream_encryption:
-        ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
+    pub(crate) stream_encryption: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
     pub(crate) shard_count: ::std::option::Option<i32>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,
 }
@@ -95,25 +89,17 @@ impl AwsKinesisStreamDetailsBuilder {
         &self.arn
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
-    pub fn stream_encryption(
-        mut self,
-        input: crate::types::AwsKinesisStreamStreamEncryptionDetails,
-    ) -> Self {
+    pub fn stream_encryption(mut self, input: crate::types::AwsKinesisStreamStreamEncryptionDetails) -> Self {
         self.stream_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
-    pub fn set_stream_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
-    ) -> Self {
+    pub fn set_stream_encryption(mut self, input: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>) -> Self {
         self.stream_encryption = input;
         self
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
-    pub fn get_stream_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails> {
+    pub fn get_stream_encryption(&self) -> &::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails> {
         &self.stream_encryption
     }
     /// <p>The number of shards that the stream uses. </p>

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutDomainPermissionsPolicyOutput {
 }
 impl PutDomainPermissionsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutDomainPermissionsPolicyOutput`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput).
-    pub fn builder() -> crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyOutputBuilder {
         crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDomainPermissionsPolicyOutput`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PutDomainPermissionsPolicyOutputBuilder {
         self
     }
     /// <p> The resource policy that was set after processing the request. </p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResourcePolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -63,9 +58,7 @@ impl PutDomainPermissionsPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDomainPermissionsPolicyOutput`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput {
+    pub fn build(self) -> crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput {
         crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput {
             policy: self.policy,
             _request_id: self._request_id,

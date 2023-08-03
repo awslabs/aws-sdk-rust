@@ -37,10 +37,7 @@ impl GetInsightImpactGraphFluentBuilder {
         }
     }
     /// Access the GetInsightImpactGraph as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetInsightImpactGraphFluentBuilder {
             crate::operation::get_insight_impact_graph::GetInsightImpactGraph,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_impact_graph::GetInsightImpactGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_impact_graph::GetInsightImpactGraphError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetInsightImpactGraphFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetInsightImpactGraphFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_impact_graph::GetInsightImpactGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_impact_graph::GetInsightImpactGraphError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetInsightImpactGraphFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_impact_graph::GetInsightImpactGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_impact_graph::GetInsightImpactGraphError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetInsightImpactGraphFluentBuilder {
             crate::operation::get_insight_impact_graph::GetInsightImpactGraph,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_impact_graph::GetInsightImpactGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_impact_graph::GetInsightImpactGraphError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl GetInsightImpactGraphFluentBuilder {
         self
     }
     /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -160,10 +143,7 @@ impl GetInsightImpactGraphFluentBuilder {
         self
     }
     /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

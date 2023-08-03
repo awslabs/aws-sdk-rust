@@ -51,9 +51,7 @@ impl CanaryRun {
 
 /// A builder for [`CanaryRun`](crate::types::CanaryRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanaryRunBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl CanaryRunBuilder {
         self
     }
     /// <p>The status of this run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryRunStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CanaryRunStatus>) -> Self {
         self.status = input;
         self
     }
@@ -113,10 +108,7 @@ impl CanaryRunBuilder {
         self
     }
     /// <p>A structure that contains the start and end times of this run.</p>
-    pub fn set_timeline(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryRunTimeline>,
-    ) -> Self {
+    pub fn set_timeline(mut self, input: ::std::option::Option<crate::types::CanaryRunTimeline>) -> Self {
         self.timeline = input;
         self
     }
@@ -125,18 +117,12 @@ impl CanaryRunBuilder {
         &self.timeline
     }
     /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
-    pub fn artifact_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
-    pub fn set_artifact_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_s3_location = input;
         self
     }

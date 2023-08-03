@@ -9,10 +9,7 @@ pub fn ser_put_data_lake_settings_input(
     if let Some(var_2) = &input.data_lake_settings {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DataLakeSettings").start_object();
-        crate::protocol_serde::shape_data_lake_settings::ser_data_lake_settings(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_data_lake_settings::ser_data_lake_settings(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

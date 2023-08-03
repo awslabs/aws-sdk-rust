@@ -17,10 +17,7 @@ impl DbClusterRoleAlreadyExistsFault {
 }
 impl ::std::fmt::Display for DbClusterRoleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
-        )?;
+        ::std::write!(f, "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -50,9 +47,7 @@ impl DbClusterRoleAlreadyExistsFault {
 
 /// A builder for [`DbClusterRoleAlreadyExistsFault`](crate::types::error::DbClusterRoleAlreadyExistsFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterRoleAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -79,10 +74,7 @@ impl DbClusterRoleAlreadyExistsFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -65,9 +65,7 @@ impl DatabaseInstanceSoftwareDetailsResponse {
 
 /// A builder for [`DatabaseInstanceSoftwareDetailsResponse`](crate::types::DatabaseInstanceSoftwareDetailsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseInstanceSoftwareDetailsResponseBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         &self.engine
     }
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -113,18 +105,12 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         &self.engine_version
     }
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
-    pub fn engine_edition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_edition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_edition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
-    pub fn set_engine_edition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_edition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_edition = input;
         self
     }
@@ -147,18 +133,12 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         &self.service_pack
     }
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
-    pub fn support_level(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
-    pub fn set_support_level(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_level = input;
         self
     }

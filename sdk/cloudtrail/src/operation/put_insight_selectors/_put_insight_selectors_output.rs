@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for PutInsightSelectorsOutput {
 }
 impl PutInsightSelectorsOutput {
     /// Creates a new builder-style object to manufacture [`PutInsightSelectorsOutput`](crate::operation::put_insight_selectors::PutInsightSelectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsOutputBuilder {
-        crate::operation::put_insight_selectors::builders::PutInsightSelectorsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsOutputBuilder {
+        crate::operation::put_insight_selectors::builders::PutInsightSelectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutInsightSelectorsOutput`](crate::operation::put_insight_selectors::PutInsightSelectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsOutputBuilder {
     pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) insight_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
     _request_id: Option<String>,
 }
 impl PutInsightSelectorsOutputBuilder {
@@ -73,17 +68,12 @@ impl PutInsightSelectorsOutputBuilder {
         self
     }
     /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
-    pub fn set_insight_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
-    ) -> Self {
+    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
         self.insight_selectors = input;
         self
     }
     /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
-    pub fn get_insight_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         &self.insight_selectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

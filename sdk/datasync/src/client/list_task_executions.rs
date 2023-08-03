@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`task_executions(Option<Vec<TaskExecutionListEntry>>)`](crate::operation::list_task_executions::ListTaskExecutionsOutput::task_executions): <p>A list of executed tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_task_executions::ListTaskExecutionsOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
     /// - On failure, responds with [`SdkError<ListTaskExecutionsError>`](crate::operation::list_task_executions::ListTaskExecutionsError)
-    pub fn list_task_executions(
-        &self,
-    ) -> crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder {
-        crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_task_executions(&self) -> crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder {
+        crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

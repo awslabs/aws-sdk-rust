@@ -30,9 +30,7 @@ impl PipelineInfo {
 
 /// A builder for [`PipelineInfo`](crate::types::PipelineInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineInfoBuilder {
     pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     pub(crate) pipeline_configuration_time_stamp: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl PipelineInfoBuilder {
         self
     }
     /// <p>The type of pipeline.</p>
-    pub fn set_pipeline_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineType>,
-    ) -> Self {
+    pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
         self.pipeline_type = input;
         self
     }
@@ -56,25 +51,17 @@ impl PipelineInfoBuilder {
         &self.pipeline_type
     }
     /// <p>The time when the pipeline info was configured.</p>
-    pub fn pipeline_configuration_time_stamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_time_stamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_time_stamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the pipeline info was configured.</p>
-    pub fn set_pipeline_configuration_time_stamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_configuration_time_stamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_configuration_time_stamp = input;
         self
     }
     /// <p>The time when the pipeline info was configured.</p>
-    pub fn get_pipeline_configuration_time_stamp(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_configuration_time_stamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_configuration_time_stamp
     }
     /// Consumes the builder and constructs a [`PipelineInfo`](crate::types::PipelineInfo).

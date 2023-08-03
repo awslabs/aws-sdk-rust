@@ -12,12 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartSegmentDetectionOutput`](crate::operation::start_segment_detection::StartSegmentDetectionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_segment_detection::StartSegmentDetectionOutput::job_id): <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
     /// - On failure, responds with [`SdkError<StartSegmentDetectionError>`](crate::operation::start_segment_detection::StartSegmentDetectionError)
-    pub fn start_segment_detection(
-        &self,
-    ) -> crate::operation::start_segment_detection::builders::StartSegmentDetectionFluentBuilder
-    {
-        crate::operation::start_segment_detection::builders::StartSegmentDetectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_segment_detection(&self) -> crate::operation::start_segment_detection::builders::StartSegmentDetectionFluentBuilder {
+        crate::operation::start_segment_detection::builders::StartSegmentDetectionFluentBuilder::new(self.handle.clone())
     }
 }

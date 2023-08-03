@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for StartInferenceSchedulerOutput {
 }
 impl StartInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`StartInferenceSchedulerOutput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput).
-    pub fn builder(
-    ) -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerOutputBuilder {
         crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartInferenceSchedulerOutput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInferenceSchedulerOutputBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
@@ -99,18 +95,12 @@ impl StartInferenceSchedulerOutputBuilder {
         &self.model_name
     }
     /// <p>The name of the inference scheduler being started. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler being started. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -119,18 +109,12 @@ impl StartInferenceSchedulerOutputBuilder {
         &self.inference_scheduler_name
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
-    pub fn inference_scheduler_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
-    pub fn set_inference_scheduler_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_arn = input;
         self
     }
@@ -144,10 +128,7 @@ impl StartInferenceSchedulerOutputBuilder {
         self
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
         self.status = input;
         self
     }
@@ -165,9 +146,7 @@ impl StartInferenceSchedulerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartInferenceSchedulerOutput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput {
+    pub fn build(self) -> crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput {
         crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput {
             model_arn: self.model_arn,
             model_name: self.model_name,

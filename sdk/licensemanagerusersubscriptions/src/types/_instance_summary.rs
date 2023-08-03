@@ -51,9 +51,7 @@ impl InstanceSummary {
 
 /// A builder for [`InstanceSummary`](crate::types::InstanceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceSummaryBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl InstanceSummaryBuilder {
         self
     }
     /// <p>A list of provided user-based subscription products.</p>
-    pub fn set_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.products = input;
         self
     }
@@ -114,18 +109,12 @@ impl InstanceSummaryBuilder {
         &self.products
     }
     /// <p>The date of the last status check.</p>
-    pub fn last_status_check_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_status_check_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_status_check_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date of the last status check.</p>
-    pub fn set_last_status_check_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_status_check_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_status_check_date = input;
         self
     }
@@ -134,18 +123,12 @@ impl InstanceSummaryBuilder {
         &self.last_status_check_date
     }
     /// <p>The status message for an EC2 instance.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for an EC2 instance.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

@@ -42,9 +42,7 @@ impl ListExecutionsOutput {
 
 /// A builder for [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -92,17 +90,12 @@ impl ListExecutionsOutputBuilder {
         self
     }
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    pub fn set_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>>,
-    ) -> Self {
+    pub fn set_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>>) -> Self {
         self.executions = input;
         self
     }
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    pub fn get_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>> {
+    pub fn get_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>> {
         &self.executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -35,9 +35,7 @@ impl DescribeGroupsOutput {
 
 /// A builder for [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeGroupsOutputBuilder {
         self
     }
     /// <p>The list of groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The list of groups.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>> {
         &self.groups
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>

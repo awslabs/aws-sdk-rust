@@ -26,7 +26,7 @@ impl CreateDocumentClassifierInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDocumentClassifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder,
+    inner: crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder,
 }
 impl CreateDocumentClassifierFluentBuilder {
     /// Creates a new `CreateDocumentClassifier`.
@@ -37,10 +37,7 @@ impl CreateDocumentClassifierFluentBuilder {
         }
     }
     /// Access the CreateDocumentClassifier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateDocumentClassifierFluentBuilder {
             crate::operation::create_document_classifier::CreateDocumentClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_document_classifier::CreateDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_document_classifier::CreateDocumentClassifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateDocumentClassifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateDocumentClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_document_classifier::CreateDocumentClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_document_classifier::CreateDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_document_classifier::CreateDocumentClassifierError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateDocumentClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_document_classifier::CreateDocumentClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_document_classifier::CreateDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_document_classifier::CreateDocumentClassifierError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateDocumentClassifierFluentBuilder {
             crate::operation::create_document_classifier::CreateDocumentClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_document_classifier::CreateDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_document_classifier::CreateDocumentClassifierError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the document classifier.</p>
-    pub fn document_classifier_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_classifier_name(input.into());
         self
     }
     /// <p>The name of the document classifier.</p>
-    pub fn set_document_classifier_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_classifier_name(input);
         self
     }
@@ -158,18 +138,12 @@ impl CreateDocumentClassifierFluentBuilder {
         self.inner.get_version_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -187,10 +161,7 @@ impl CreateDocumentClassifierFluentBuilder {
         self
     }
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -199,62 +170,40 @@ impl CreateDocumentClassifierFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(
-        mut self,
-        input: crate::types::DocumentClassifierInputDataConfig,
-    ) -> Self {
+    pub fn input_data_config(mut self, input: crate::types::DocumentClassifierInputDataConfig) -> Self {
         self.inner = self.inner.input_data_config(input);
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
         self.inner.get_input_data_config()
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn output_data_config(
-        mut self,
-        input: crate::types::DocumentClassifierOutputDataConfig,
-    ) -> Self {
+    pub fn output_data_config(mut self, input: crate::types::DocumentClassifierOutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
         self
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
         self.inner.get_output_data_config()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -268,10 +217,7 @@ impl CreateDocumentClassifierFluentBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -284,10 +230,7 @@ impl CreateDocumentClassifierFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_kms_key_id(input.into());
         self
     }
@@ -296,10 +239,7 @@ impl CreateDocumentClassifierFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_kms_key_id(input);
         self
     }
@@ -331,10 +271,7 @@ impl CreateDocumentClassifierFluentBuilder {
         self
     }
     /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -347,10 +284,7 @@ impl CreateDocumentClassifierFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn model_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_kms_key_id(input.into());
         self
     }
@@ -359,10 +293,7 @@ impl CreateDocumentClassifierFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_model_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_kms_key_id(input);
         self
     }

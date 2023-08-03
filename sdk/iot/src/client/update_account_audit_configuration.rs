@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`audit_check_configurations(HashMap<String, AuditCheckConfiguration>)`](crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationFluentBuilder::audit_check_configurations) / [`set_audit_check_configurations(Option<HashMap<String, AuditCheckConfiguration>>)`](crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationFluentBuilder::set_audit_check_configurations): <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>  <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>  <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>  <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     /// - On success, responds with [`UpdateAccountAuditConfigurationOutput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateAccountAuditConfigurationError>`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationError)
-    pub fn update_account_audit_configuration(&self) -> crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationFluentBuilder{
+    pub fn update_account_audit_configuration(
+        &self,
+    ) -> crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationFluentBuilder {
         crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

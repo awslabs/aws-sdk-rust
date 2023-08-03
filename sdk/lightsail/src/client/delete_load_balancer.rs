@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::operation::delete_load_balancer::DeleteLoadBalancerError)
-    pub fn delete_load_balancer(
-        &self,
-    ) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder {
-        crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_load_balancer(&self) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder {
+        crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

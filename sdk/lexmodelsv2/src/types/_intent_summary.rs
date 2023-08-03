@@ -65,9 +65,7 @@ impl IntentSummary {
 
 /// A builder for [`IntentSummary`](crate::types::IntentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentSummaryBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
@@ -121,18 +119,12 @@ impl IntentSummaryBuilder {
         &self.description
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
-    pub fn parent_intent_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_intent_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_intent_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
-    pub fn set_parent_intent_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_intent_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_intent_signature = input;
         self
     }
@@ -152,17 +144,12 @@ impl IntentSummaryBuilder {
         self
     }
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    pub fn set_input_contexts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
-    ) -> Self {
+    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>) -> Self {
         self.input_contexts = input;
         self
     }
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    pub fn get_input_contexts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
+    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
         &self.input_contexts
     }
     /// Appends an item to `output_contexts`.
@@ -177,17 +164,12 @@ impl IntentSummaryBuilder {
         self
     }
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    pub fn set_output_contexts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
-    ) -> Self {
+    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>) -> Self {
         self.output_contexts = input;
         self
     }
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    pub fn get_output_contexts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
+    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
         &self.output_contexts
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
@@ -196,17 +178,12 @@ impl IntentSummaryBuilder {
         self
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`IntentSummary`](crate::types::IntentSummary).

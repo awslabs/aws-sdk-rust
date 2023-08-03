@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`backup_jobs(Option<Vec<BackupJob>>)`](crate::operation::list_backup_jobs::ListBackupJobsOutput::backup_jobs): <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backup_jobs::ListBackupJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListBackupJobsError>`](crate::operation::list_backup_jobs::ListBackupJobsError)
-    pub fn list_backup_jobs(
-        &self,
-    ) -> crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder {
-        crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_backup_jobs(&self) -> crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder {
+        crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::new(self.handle.clone())
     }
 }

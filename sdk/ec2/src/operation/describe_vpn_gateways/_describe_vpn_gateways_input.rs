@@ -66,18 +66,14 @@ impl DescribeVpnGatewaysInput {
 }
 impl DescribeVpnGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysInputBuilder {
-        crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysInputBuilder {
+        crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpnGatewaysInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) vpn_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -130,10 +126,7 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
     /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -164,10 +157,7 @@ impl DescribeVpnGatewaysInputBuilder {
     ///
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub fn vpn_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpn_gateway_ids.unwrap_or_default();
         v.push(input.into());
         self.vpn_gateway_ids = ::std::option::Option::Some(v);
@@ -175,18 +165,13 @@ impl DescribeVpnGatewaysInputBuilder {
     }
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub fn set_vpn_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpn_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpn_gateway_ids = input;
         self
     }
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub fn get_vpn_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpn_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpn_gateway_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -206,16 +191,12 @@ impl DescribeVpnGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput {
-                filters: self.filters,
-                vpn_gateway_ids: self.vpn_gateway_ids,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput {
+            filters: self.filters,
+            vpn_gateway_ids: self.vpn_gateway_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

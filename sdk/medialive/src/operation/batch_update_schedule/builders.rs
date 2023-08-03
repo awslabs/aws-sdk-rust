@@ -37,9 +37,7 @@ impl BatchUpdateScheduleFluentBuilder {
         }
     }
     /// Access the BatchUpdateSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchUpdateScheduleFluentBuilder {
             crate::operation::batch_update_schedule::BatchUpdateSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_schedule::BatchUpdateScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_schedule::BatchUpdateScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchUpdateScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchUpdateScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_schedule::BatchUpdateScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_schedule::BatchUpdateScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_schedule::BatchUpdateScheduleError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchUpdateScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_schedule::BatchUpdateScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_schedule::BatchUpdateScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_schedule::BatchUpdateScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchUpdateScheduleFluentBuilder {
             crate::operation::batch_update_schedule::BatchUpdateSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_schedule::BatchUpdateScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_schedule::BatchUpdateScheduleError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +129,12 @@ impl BatchUpdateScheduleFluentBuilder {
         self
     }
     /// Schedule actions to create in the schedule.
-    pub fn set_creates(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
-    ) -> Self {
+    pub fn set_creates(mut self, input: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>) -> Self {
         self.inner = self.inner.set_creates(input);
         self
     }
     /// Schedule actions to create in the schedule.
-    pub fn get_creates(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchScheduleActionCreateRequest> {
+    pub fn get_creates(&self) -> &::std::option::Option<crate::types::BatchScheduleActionCreateRequest> {
         self.inner.get_creates()
     }
     /// Schedule actions to delete from the schedule.
@@ -161,17 +143,12 @@ impl BatchUpdateScheduleFluentBuilder {
         self
     }
     /// Schedule actions to delete from the schedule.
-    pub fn set_deletes(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
-    ) -> Self {
+    pub fn set_deletes(mut self, input: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>) -> Self {
         self.inner = self.inner.set_deletes(input);
         self
     }
     /// Schedule actions to delete from the schedule.
-    pub fn get_deletes(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteRequest> {
+    pub fn get_deletes(&self) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteRequest> {
         self.inner.get_deletes()
     }
 }

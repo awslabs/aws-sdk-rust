@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`RejectInboundCrossClusterSearchConnectionOutput`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionOutput) with field(s):
     ///   - [`cross_cluster_search_connection(Option<InboundCrossClusterSearchConnection>)`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of rejected inbound connection. </p>
     /// - On failure, responds with [`SdkError<RejectInboundCrossClusterSearchConnectionError>`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionError)
-    pub fn reject_inbound_cross_cluster_search_connection(&self) -> crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionFluentBuilder{
-        crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionFluentBuilder::new(self.handle.clone())
+    pub fn reject_inbound_cross_cluster_search_connection(
+        &self,
+    ) -> crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionFluentBuilder {
+        crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

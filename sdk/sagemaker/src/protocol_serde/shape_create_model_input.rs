@@ -9,10 +9,7 @@ pub fn ser_create_model_input(
     if let Some(var_2) = &input.primary_container {
         #[allow(unused_mut)]
         let mut object_3 = object.key("PrimaryContainer").start_object();
-        crate::protocol_serde::shape_container_definition::ser_container_definition(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_container_definition::ser_container_definition(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.containers {
@@ -21,10 +18,7 @@ pub fn ser_create_model_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_container_definition::ser_container_definition(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_container_definition::ser_container_definition(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -33,10 +27,7 @@ pub fn ser_create_model_input(
     if let Some(var_8) = &input.inference_execution_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("InferenceExecutionConfig").start_object();
-        crate::protocol_serde::shape_inference_execution_config::ser_inference_execution_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_inference_execution_config::ser_inference_execution_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.execution_role_arn {

@@ -10,10 +10,7 @@ impl CreateSavingsPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_savings_plan::CreateSavingsPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_savings_plan::CreateSavingsPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_savings_plan::CreateSavingsPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_savings_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateSavingsPlanFluentBuilder {
         }
     }
     /// Access the CreateSavingsPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_savings_plan::builders::CreateSavingsPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_savings_plan::builders::CreateSavingsPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateSavingsPlanFluentBuilder {
             crate::operation::create_savings_plan::CreateSavingsPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_savings_plan::CreateSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_savings_plan::CreateSavingsPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateSavingsPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateSavingsPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_savings_plan::CreateSavingsPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_savings_plan::CreateSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_savings_plan::CreateSavingsPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateSavingsPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_savings_plan::CreateSavingsPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_savings_plan::CreateSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_savings_plan::CreateSavingsPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateSavingsPlanFluentBuilder {
             crate::operation::create_savings_plan::CreateSavingsPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_savings_plan::CreateSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_savings_plan::CreateSavingsPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the offering.</p>
-    pub fn savings_plan_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.savings_plan_offering_id(input.into());
         self
     }
     /// <p>The ID of the offering.</p>
-    pub fn set_savings_plan_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plan_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_savings_plan_offering_id(input);
         self
     }
@@ -157,18 +135,12 @@ impl CreateSavingsPlanFluentBuilder {
         self.inner.get_commitment()
     }
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-    pub fn upfront_payment_amount(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upfront_payment_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upfront_payment_amount(input.into());
         self
     }
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-    pub fn set_upfront_payment_amount(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upfront_payment_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upfront_payment_amount(input);
         self
     }
@@ -182,10 +154,7 @@ impl CreateSavingsPlanFluentBuilder {
         self
     }
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-    pub fn set_purchase_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_purchase_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_purchase_time(input);
         self
     }
@@ -212,30 +181,17 @@ impl CreateSavingsPlanFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

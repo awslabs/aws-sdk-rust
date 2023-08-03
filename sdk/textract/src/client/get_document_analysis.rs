@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     ///   - [`analyze_document_model_version(Option<String>)`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput::analyze_document_model_version): <p></p>
     /// - On failure, responds with [`SdkError<GetDocumentAnalysisError>`](crate::operation::get_document_analysis::GetDocumentAnalysisError)
-    pub fn get_document_analysis(
-        &self,
-    ) -> crate::operation::get_document_analysis::builders::GetDocumentAnalysisFluentBuilder {
-        crate::operation::get_document_analysis::builders::GetDocumentAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_document_analysis(&self) -> crate::operation::get_document_analysis::builders::GetDocumentAnalysisFluentBuilder {
+        crate::operation::get_document_analysis::builders::GetDocumentAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

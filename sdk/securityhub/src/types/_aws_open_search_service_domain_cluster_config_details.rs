@@ -18,9 +18,7 @@ pub struct AwsOpenSearchServiceDomainClusterConfigDetails {
     pub dedicated_master_enabled: bool,
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     #[doc(hidden)]
-    pub zone_awareness_config: ::std::option::Option<
-        crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails,
-    >,
+    pub zone_awareness_config: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>,
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
     #[doc(hidden)]
     pub dedicated_master_count: i32,
@@ -57,11 +55,7 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
         self.dedicated_master_enabled
     }
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    pub fn zone_awareness_config(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails,
-    > {
+    pub fn zone_awareness_config(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails> {
         self.zone_awareness_config.as_ref()
     }
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
@@ -89,25 +83,20 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
 }
 impl AwsOpenSearchServiceDomainClusterConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainClusterConfigDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainClusterConfigDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) warm_enabled: ::std::option::Option<bool>,
     pub(crate) warm_count: ::std::option::Option<i32>,
     pub(crate) dedicated_master_enabled: ::std::option::Option<bool>,
-    pub(crate) zone_awareness_config: ::std::option::Option<
-        crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails,
-    >,
+    pub(crate) zone_awareness_config: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>,
     pub(crate) dedicated_master_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) warm_type: ::std::option::Option<::std::string::String>,
@@ -172,19 +161,14 @@ impl AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
         &self.dedicated_master_enabled
     }
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    pub fn zone_awareness_config(
-        mut self,
-        input: crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails,
-    ) -> Self {
+    pub fn zone_awareness_config(mut self, input: crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails) -> Self {
         self.zone_awareness_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     pub fn set_zone_awareness_config(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>,
     ) -> Self {
         self.zone_awareness_config = input;
         self
@@ -192,9 +176,7 @@ impl AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     pub fn get_zone_awareness_config(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails> {
         &self.zone_awareness_config
     }
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
@@ -213,19 +195,13 @@ impl AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
     }
     /// <p>The instance type for your data nodes.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type for your data nodes.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -264,19 +240,13 @@ impl AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
     /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
-    pub fn dedicated_master_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dedicated_master_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedicated_master_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
     /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
-    pub fn set_dedicated_master_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dedicated_master_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedicated_master_type = input;
         self
     }

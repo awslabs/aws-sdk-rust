@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`conflict_metadata_list(Option<Vec<ConflictMetadata>>)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::conflict_metadata_list): <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<GetMergeConflictsError>`](crate::operation::get_merge_conflicts::GetMergeConflictsError)
-    pub fn get_merge_conflicts(
-        &self,
-    ) -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder {
-        crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_merge_conflicts(&self) -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder {
+        crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::new(self.handle.clone())
     }
 }

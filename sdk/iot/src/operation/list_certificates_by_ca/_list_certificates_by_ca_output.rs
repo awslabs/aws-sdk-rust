@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListCertificatesByCaOutput {
 }
 impl ListCertificatesByCaOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesByCaOutput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput).
-    pub fn builder(
-    ) -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaOutputBuilder {
         crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesByCaOutput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesByCaOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl ListCertificatesByCaOutputBuilder {
         self
     }
     /// <p>The device certificates signed by the specified CA certificate.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The device certificates signed by the specified CA certificate.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>

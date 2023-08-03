@@ -10,10 +10,7 @@ impl DescribeServersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_servers::DescribeServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_servers::DescribeServersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_servers();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeServersFluentBuilder {
         }
     }
     /// Access the DescribeServers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_servers::builders::DescribeServersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_servers::builders::DescribeServersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeServersFluentBuilder {
             crate::operation::describe_servers::DescribeServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_servers::DescribeServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_servers::DescribeServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_servers::DescribeServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_servers::DescribeServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_servers::DescribeServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl DescribeServersFluentBuilder {
             crate::operation::describe_servers::DescribeServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_servers::DescribeServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_servers::paginator::DescribeServersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_servers::paginator::DescribeServersPaginator {
-        crate::operation::describe_servers::paginator::DescribeServersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_servers::paginator::DescribeServersPaginator {
+        crate::operation::describe_servers::paginator::DescribeServersPaginator::new(self.handle, self.inner)
     }
     /// <p>Describes the server with the specified ServerName.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

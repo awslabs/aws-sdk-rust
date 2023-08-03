@@ -26,7 +26,7 @@ impl PostCommentForComparedCommitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PostCommentForComparedCommitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder,
+    inner: crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder,
 }
 impl PostCommentForComparedCommitFluentBuilder {
     /// Creates a new `PostCommentForComparedCommit`.
@@ -37,7 +37,7 @@ impl PostCommentForComparedCommitFluentBuilder {
         }
     }
     /// Access the PostCommentForComparedCommit as a reference.
-    pub fn as_input(&self) -> &crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PostCommentForComparedCommitFluentBuilder {
             crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PostCommentForComparedCommitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PostCommentForComparedCommitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PostCommentForComparedCommitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PostCommentForComparedCommitFluentBuilder {
             crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl PostCommentForComparedCommitFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_commit_id(input.into());
         self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_commit_id(input);
         self
     }
@@ -161,18 +138,12 @@ impl PostCommentForComparedCommitFluentBuilder {
         self.inner.get_before_commit_id()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_commit_id(input.into());
         self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_commit_id(input);
         self
     }
@@ -209,18 +180,12 @@ impl PostCommentForComparedCommitFluentBuilder {
         self.inner.get_content()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

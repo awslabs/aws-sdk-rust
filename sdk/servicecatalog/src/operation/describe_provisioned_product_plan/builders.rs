@@ -5,16 +5,16 @@ pub use crate::operation::describe_provisioned_product_plan::_describe_provision
 
 impl DescribeProvisionedProductPlanInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_provisioned_product_plan();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProvisionedProductPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanInputBuilder,
+    inner: crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanInputBuilder,
 }
 impl DescribeProvisionedProductPlanFluentBuilder {
     /// Creates a new `DescribeProvisionedProductPlan`.
@@ -37,15 +37,20 @@ impl DescribeProvisionedProductPlanFluentBuilder {
         }
     }
     /// Access the DescribeProvisionedProductPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlan, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlan,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeProvisionedProductPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DescribeProvisionedProductPlanFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlan, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlan,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The language code.</p>
@@ -99,10 +114,7 @@ impl DescribeProvisionedProductPlanFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -111,10 +123,7 @@ impl DescribeProvisionedProductPlanFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

@@ -26,8 +26,7 @@ impl StopEarthObservationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopEarthObservationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder,
+    inner: crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder,
 }
 impl StopEarthObservationJobFluentBuilder {
     /// Creates a new `StopEarthObservationJob`.
@@ -38,10 +37,7 @@ impl StopEarthObservationJobFluentBuilder {
         }
     }
     /// Access the StopEarthObservationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StopEarthObservationJobFluentBuilder {
             crate::operation::stop_earth_observation_job::StopEarthObservationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StopEarthObservationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StopEarthObservationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StopEarthObservationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StopEarthObservationJobFluentBuilder {
             crate::operation::stop_earth_observation_job::StopEarthObservationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError>,
     > {
         self.customize_middleware().await
     }

@@ -79,9 +79,7 @@ impl MigrationSummary {
 
 /// A builder for [`MigrationSummary`](crate::types::MigrationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MigrationSummaryBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
     pub(crate) v1_bot_name: ::std::option::Option<::std::string::String>,
@@ -123,18 +121,12 @@ impl MigrationSummaryBuilder {
         &self.v1_bot_name
     }
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn v1_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v1_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn set_v1_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.v1_bot_version = input;
         self
     }
@@ -190,10 +182,7 @@ impl MigrationSummaryBuilder {
         self
     }
     /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn set_migration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStatus>,
-    ) -> Self {
+    pub fn set_migration_status(mut self, input: ::std::option::Option<crate::types::MigrationStatus>) -> Self {
         self.migration_status = input;
         self
     }
@@ -207,17 +196,12 @@ impl MigrationSummaryBuilder {
         self
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn set_migration_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStrategy>,
-    ) -> Self {
+    pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
         self.migration_strategy = input;
         self
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn get_migration_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationStrategy> {
+    pub fn get_migration_strategy(&self) -> &::std::option::Option<crate::types::MigrationStrategy> {
         &self.migration_strategy
     }
     /// <p>The date and time that the migration started.</p>
@@ -226,10 +210,7 @@ impl MigrationSummaryBuilder {
         self
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn set_migration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_migration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.migration_timestamp = input;
         self
     }

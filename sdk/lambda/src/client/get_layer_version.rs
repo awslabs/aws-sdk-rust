@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`license_info(Option<String>)`](crate::operation::get_layer_version::GetLayerVersionOutput::license_info): <p>The layer's software license.</p>
     ///   - [`compatible_architectures(Option<Vec<Architecture>>)`](crate::operation::get_layer_version::GetLayerVersionOutput::compatible_architectures): <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     /// - On failure, responds with [`SdkError<GetLayerVersionError>`](crate::operation::get_layer_version::GetLayerVersionError)
-    pub fn get_layer_version(
-        &self,
-    ) -> crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder {
-        crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_layer_version(&self) -> crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder {
+        crate::operation::get_layer_version::builders::GetLayerVersionFluentBuilder::new(self.handle.clone())
     }
 }

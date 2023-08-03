@@ -39,13 +39,7 @@
 /// Eac3 Coding Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3CodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Eac3CodingMode {
             "CODING_MODE_1_0" => Eac3CodingMode::CodingMode10,
             "CODING_MODE_2_0" => Eac3CodingMode::CodingMode20,
             "CODING_MODE_3_2" => Eac3CodingMode::CodingMode32,
-            other => {
-                Eac3CodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Eac3CodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

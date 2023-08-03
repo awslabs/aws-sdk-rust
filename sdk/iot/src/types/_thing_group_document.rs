@@ -15,9 +15,7 @@ pub struct ThingGroupDocument {
     pub thing_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The thing group attributes.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Parent group names.</p>
     #[doc(hidden)]
     pub parent_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -36,11 +34,7 @@ impl ThingGroupDocument {
         self.thing_group_description.as_deref()
     }
     /// <p>The thing group attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Parent group names.</p>
@@ -57,32 +51,22 @@ impl ThingGroupDocument {
 
 /// A builder for [`ThingGroupDocument`](crate::types::ThingGroupDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingGroupDocumentBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) parent_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThingGroupDocumentBuilder {
     /// <p>The thing group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -91,18 +75,12 @@ impl ThingGroupDocumentBuilder {
         &self.thing_group_name
     }
     /// <p>The thing group ID.</p>
-    pub fn thing_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group ID.</p>
-    pub fn set_thing_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_id = input;
         self
     }
@@ -111,18 +89,12 @@ impl ThingGroupDocumentBuilder {
         &self.thing_group_id
     }
     /// <p>The thing group description.</p>
-    pub fn thing_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group description.</p>
-    pub fn set_thing_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_description = input;
         self
     }
@@ -135,32 +107,19 @@ impl ThingGroupDocumentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The thing group attributes.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The thing group attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The thing group attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Appends an item to `parent_group_names`.
@@ -168,27 +127,19 @@ impl ThingGroupDocumentBuilder {
     /// To override the contents of this collection use [`set_parent_group_names`](Self::set_parent_group_names).
     ///
     /// <p>Parent group names.</p>
-    pub fn parent_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parent_group_names.unwrap_or_default();
         v.push(input.into());
         self.parent_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Parent group names.</p>
-    pub fn set_parent_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parent_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.parent_group_names = input;
         self
     }
     /// <p>Parent group names.</p>
-    pub fn get_parent_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parent_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.parent_group_names
     }
     /// Consumes the builder and constructs a [`ThingGroupDocument`](crate::types::ThingGroupDocument).

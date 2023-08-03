@@ -5,7 +5,10 @@ pub(crate) fn de_message_body_payload(
     ::std::option::Option<crate::types::MessageBody>,
     crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_message_body::de_message_body_payload(body).map_err(crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_message_body::de_message_body_payload(body)
+                .map_err(crate::operation::update_template_active_version::UpdateTemplateActiveVersionError::unhandled)
+        })
+        .transpose()
 }

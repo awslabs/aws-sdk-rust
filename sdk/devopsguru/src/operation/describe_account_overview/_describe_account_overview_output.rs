@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountOverviewOutput {
 }
 impl DescribeAccountOverviewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountOverviewOutput`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder {
         crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountOverviewOutput`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewOutputBuilder {
     pub(crate) reactive_insights: ::std::option::Option<i32>,
     pub(crate) proactive_insights: ::std::option::Option<i32>,
@@ -88,10 +84,7 @@ impl DescribeAccountOverviewOutputBuilder {
         self
     }
     /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
-    pub fn set_mean_time_to_recover_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_mean_time_to_recover_in_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.mean_time_to_recover_in_milliseconds = input;
         self
     }
@@ -109,9 +102,7 @@ impl DescribeAccountOverviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountOverviewOutput`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
+    pub fn build(self) -> crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
         crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
             reactive_insights: self.reactive_insights.unwrap_or_default(),
             proactive_insights: self.proactive_insights.unwrap_or_default(),

@@ -36,18 +36,14 @@ impl ListApiDestinationsInput {
 }
 impl ListApiDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListApiDestinationsInput`](crate::operation::list_api_destinations::ListApiDestinationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder {
-        crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder {
+        crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApiDestinationsInput`](crate::operation::list_api_destinations::ListApiDestinationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiDestinationsInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl ListApiDestinationsInputBuilder {
         &self.name_prefix
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListApiDestinationsInputBuilder {
     /// Consumes the builder and constructs a [`ListApiDestinationsInput`](crate::operation::list_api_destinations::ListApiDestinationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_api_destinations::ListApiDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_api_destinations::ListApiDestinationsInput {
-                name_prefix: self.name_prefix,
-                connection_arn: self.connection_arn,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_api_destinations::ListApiDestinationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_api_destinations::ListApiDestinationsInput {
+            name_prefix: self.name_prefix,
+            connection_arn: self.connection_arn,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

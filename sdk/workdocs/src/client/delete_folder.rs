@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`folder_id(impl ::std::convert::Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DeleteFolderOutput`](crate::operation::delete_folder::DeleteFolderOutput)
     /// - On failure, responds with [`SdkError<DeleteFolderError>`](crate::operation::delete_folder::DeleteFolderError)
-    pub fn delete_folder(
-        &self,
-    ) -> crate::operation::delete_folder::builders::DeleteFolderFluentBuilder {
-        crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_folder(&self) -> crate::operation::delete_folder::builders::DeleteFolderFluentBuilder {
+        crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::new(self.handle.clone())
     }
 }

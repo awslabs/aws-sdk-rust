@@ -5,33 +5,26 @@
 pub struct BatchGetTokenBalanceInput {
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
     #[doc(hidden)]
-    pub get_token_balance_inputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
+    pub get_token_balance_inputs: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
 }
 impl BatchGetTokenBalanceInput {
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
-    pub fn get_token_balance_inputs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceInputItem]> {
+    pub fn get_token_balance_inputs(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceInputItem]> {
         self.get_token_balance_inputs.as_deref()
     }
 }
 impl BatchGetTokenBalanceInput {
     /// Creates a new builder-style object to manufacture [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder {
         crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceInputBuilder {
-    pub(crate) get_token_balance_inputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
+    pub(crate) get_token_balance_inputs: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
 }
 impl BatchGetTokenBalanceInputBuilder {
     /// Appends an item to `get_token_balance_inputs`.
@@ -39,10 +32,7 @@ impl BatchGetTokenBalanceInputBuilder {
     /// To override the contents of this collection use [`set_get_token_balance_inputs`](Self::set_get_token_balance_inputs).
     ///
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
-    pub fn get_token_balance_inputs(
-        mut self,
-        input: crate::types::BatchGetTokenBalanceInputItem,
-    ) -> Self {
+    pub fn get_token_balance_inputs(mut self, input: crate::types::BatchGetTokenBalanceInputItem) -> Self {
         let mut v = self.get_token_balance_inputs.unwrap_or_default();
         v.push(input);
         self.get_token_balance_inputs = ::std::option::Option::Some(v);
@@ -57,22 +47,16 @@ impl BatchGetTokenBalanceInputBuilder {
         self
     }
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
-    pub fn get_get_token_balance_inputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
+    pub fn get_get_token_balance_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
         &self.get_token_balance_inputs
     }
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput {
-                get_token_balance_inputs: self.get_token_balance_inputs,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput {
+            get_token_balance_inputs: self.get_token_balance_inputs,
+        })
     }
 }

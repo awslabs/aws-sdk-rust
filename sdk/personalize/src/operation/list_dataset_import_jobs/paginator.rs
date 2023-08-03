@@ -2,8 +2,7 @@
 /// Paginator for [`ListDatasetImportJobs`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobs)
 pub struct ListDatasetImportJobsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder,
+    builder: crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,13 +31,8 @@ impl ListDatasetImportJobsPaginator {
     ///
     /// This paginator automatically flattens results using `dataset_import_jobs`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginatorItems
-    {
-        crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginatorItems(
-            self,
-        )
+    pub fn items(self) -> crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginatorItems {
+        crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -61,9 +55,7 @@ impl ListDatasetImportJobsPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -73,10 +65,7 @@ impl ListDatasetImportJobsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -101,15 +90,9 @@ impl ListDatasetImportJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_dataset_import_jobs_output_next_token(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_dataset_import_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();
@@ -147,9 +130,7 @@ impl ListDatasetImportJobsPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::DatasetImportJobSummary,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

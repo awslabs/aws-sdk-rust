@@ -10,10 +10,7 @@ impl ListTestSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_test_sets::ListTestSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_sets::ListTestSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_sets::ListTestSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_test_sets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTestSetsFluentBuilder {
         }
     }
     /// Access the ListTestSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_test_sets::builders::ListTestSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_test_sets::builders::ListTestSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListTestSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListTestSetsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_sets::paginator::ListTestSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_test_sets::paginator::ListTestSetsPaginator {
-        crate::operation::list_test_sets::paginator::ListTestSetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_test_sets::paginator::ListTestSetsPaginator {
+        crate::operation::list_test_sets::paginator::ListTestSetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The sort order for the list of test sets.</p>
     pub fn sort_by(mut self, input: crate::types::TestSetSortBy) -> Self {
@@ -131,10 +118,7 @@ impl ListTestSetsFluentBuilder {
         self
     }
     /// <p>The sort order for the list of test sets.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TestSetSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

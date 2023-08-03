@@ -69,8 +69,7 @@ pub struct AwsRdsDbClusterDetails {
     pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of VPC security groups that the DB cluster belongs to.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
     /// <p>Specifies the identifier that Amazon Route 53 assigns when you create a hosted zone.</p>
     #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
@@ -85,16 +84,14 @@ pub struct AwsRdsDbClusterDetails {
     pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
     #[doc(hidden)]
-    pub associated_roles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
+    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub enabled_cloud_watch_logs_exports:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>global</code> </p> </li>
@@ -128,8 +125,7 @@ pub struct AwsRdsDbClusterDetails {
     pub cross_account_clone: bool,
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
     #[doc(hidden)]
-    pub domain_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
+    pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
@@ -138,15 +134,13 @@ pub struct AwsRdsDbClusterDetails {
     pub db_subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>The list of option group memberships for this DB cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_option_group_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>,
+    pub db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>,
     /// <p>The DB cluster identifier that the user assigned to the cluster. This identifier is the unique key that identifies a DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of instances that make up the DB cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_members:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
+    pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
     #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
@@ -232,9 +226,7 @@ impl AwsRdsDbClusterDetails {
         self.read_replica_identifiers.as_deref()
     }
     /// <p>A list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbInstanceVpcSecurityGroup]> {
+    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbInstanceVpcSecurityGroup]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>Specifies the identifier that Amazon Route 53 assigns when you create a hosted zone.</p>
@@ -254,9 +246,7 @@ impl AwsRdsDbClusterDetails {
         self.db_cluster_resource_id.as_deref()
     }
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
-    pub fn associated_roles(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterAssociatedRole]> {
+    pub fn associated_roles(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterAssociatedRole]> {
         self.associated_roles.as_deref()
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
@@ -265,9 +255,7 @@ impl AwsRdsDbClusterDetails {
         self.cluster_create_time.as_deref()
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    pub fn enabled_cloud_watch_logs_exports(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn enabled_cloud_watch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.enabled_cloud_watch_logs_exports.as_deref()
     }
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
@@ -308,9 +296,7 @@ impl AwsRdsDbClusterDetails {
         self.cross_account_clone
     }
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
-    pub fn domain_memberships(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbDomainMembership]> {
+    pub fn domain_memberships(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbDomainMembership]> {
         self.domain_memberships.as_deref()
     }
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
@@ -322,9 +308,7 @@ impl AwsRdsDbClusterDetails {
         self.db_subnet_group.as_deref()
     }
     /// <p>The list of option group memberships for this DB cluster.</p>
-    pub fn db_cluster_option_group_memberships(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterOptionGroupMembership]> {
+    pub fn db_cluster_option_group_memberships(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterOptionGroupMembership]> {
         self.db_cluster_option_group_memberships.as_deref()
     }
     /// <p>The DB cluster identifier that the user assigned to the cluster. This identifier is the unique key that identifies a DB cluster.</p>
@@ -332,9 +316,7 @@ impl AwsRdsDbClusterDetails {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The list of instances that make up the DB cluster.</p>
-    pub fn db_cluster_members(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterMember]> {
+    pub fn db_cluster_members(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterMember]> {
         self.db_cluster_members.as_deref()
     }
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
@@ -351,9 +333,7 @@ impl AwsRdsDbClusterDetails {
 
 /// A builder for [`AwsRdsDbClusterDetails`](crate::types::AwsRdsDbClusterDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterDetailsBuilder {
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -370,34 +350,27 @@ pub struct AwsRdsDbClusterDetailsBuilder {
     pub(crate) master_username: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    pub(crate) read_replica_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
+    pub(crate) read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_roles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
+    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
     pub(crate) cluster_create_time: ::std::option::Option<::std::string::String>,
-    pub(crate) enabled_cloud_watch_logs_exports:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) http_endpoint_enabled: ::std::option::Option<bool>,
     pub(crate) activity_stream_status: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
     pub(crate) cross_account_clone: ::std::option::Option<bool>,
-    pub(crate) domain_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
+    pub(crate) domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
     pub(crate) db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_option_group_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>,
+    pub(crate) db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_members:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
+    pub(crate) db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
 }
 impl AwsRdsDbClusterDetailsBuilder {
@@ -420,27 +393,19 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The number of days for which automated backups are retained.</p>
@@ -458,18 +423,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.backup_retention_period
     }
     /// <p>The name of the database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -506,18 +465,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.endpoint
     }
     /// <p>The reader endpoint for the DB cluster.</p>
-    pub fn reader_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reader_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reader_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reader endpoint for the DB cluster.</p>
-    pub fn set_reader_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reader_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reader_endpoint = input;
         self
     }
@@ -530,27 +483,19 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_custom_endpoints`](Self::set_custom_endpoints).
     ///
     /// <p>A list of custom endpoints for the DB cluster.</p>
-    pub fn custom_endpoints(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_endpoints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_endpoints.unwrap_or_default();
         v.push(input.into());
         self.custom_endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of custom endpoints for the DB cluster.</p>
-    pub fn set_custom_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.custom_endpoints = input;
         self
     }
     /// <p>A list of custom endpoints for the DB cluster.</p>
-    pub fn get_custom_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_endpoints
     }
     /// <p>Whether the DB cluster has instances in multiple Availability Zones.</p>
@@ -597,18 +542,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.engine
     }
     /// <p>The version number of the database engine to use.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the database engine to use.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -631,18 +570,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.port
     }
     /// <p>The name of the master user for the DB cluster.</p>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the master user for the DB cluster.</p>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -652,19 +585,13 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
@@ -683,10 +610,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// </day></code>.</p>
     /// <p>For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.</p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code>.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -700,10 +624,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// </day></code>.</p>
     /// <p>For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.</p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code>.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -717,9 +638,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// </day></code>.</p>
     /// <p>For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.</p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code>.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// Appends an item to `read_replica_identifiers`.
@@ -727,27 +646,19 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_read_replica_identifiers`](Self::set_read_replica_identifiers).
     ///
     /// <p>The identifiers of the read replicas that are associated with this DB cluster.</p>
-    pub fn read_replica_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn read_replica_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.read_replica_identifiers.unwrap_or_default();
         v.push(input.into());
         self.read_replica_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the read replicas that are associated with this DB cluster.</p>
-    pub fn set_read_replica_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_read_replica_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.read_replica_identifiers = input;
         self
     }
     /// <p>The identifiers of the read replicas that are associated with this DB cluster.</p>
-    pub fn get_read_replica_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_replica_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.read_replica_identifiers
     }
     /// Appends an item to `vpc_security_groups`.
@@ -755,45 +666,28 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
     ///
     /// <p>A list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn vpc_security_groups(
-        mut self,
-        input: crate::types::AwsRdsDbInstanceVpcSecurityGroup,
-    ) -> Self {
+    pub fn vpc_security_groups(mut self, input: crate::types::AwsRdsDbInstanceVpcSecurityGroup) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
         v.push(input);
         self.vpc_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn set_vpc_security_groups(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>,
-        >,
-    ) -> Self {
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>) -> Self {
         self.vpc_security_groups = input;
         self
     }
     /// <p>A list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn get_vpc_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>
-    {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>> {
         &self.vpc_security_groups
     }
     /// <p>Specifies the identifier that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the identifier that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -830,18 +724,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.kms_key_id
     }
     /// <p>The identifier of the DB cluster. The identifier must be unique within each Amazon Web Services Region and is immutable.</p>
-    pub fn db_cluster_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the DB cluster. The identifier must be unique within each Amazon Web Services Region and is immutable.</p>
-    pub fn set_db_cluster_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_resource_id = input;
         self
     }
@@ -861,34 +749,23 @@ impl AwsRdsDbClusterDetailsBuilder {
         self
     }
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
-    pub fn set_associated_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
-    ) -> Self {
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>) -> Self {
         self.associated_roles = input;
         self
     }
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
-    pub fn get_associated_roles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>> {
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>> {
         &self.associated_roles
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn cluster_create_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_cluster_create_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_create_time = input;
         self
     }
@@ -902,27 +779,19 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_enabled_cloud_watch_logs_exports`](Self::set_enabled_cloud_watch_logs_exports).
     ///
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    pub fn enabled_cloud_watch_logs_exports(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enabled_cloud_watch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_cloud_watch_logs_exports.unwrap_or_default();
         v.push(input.into());
         self.enabled_cloud_watch_logs_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    pub fn set_enabled_cloud_watch_logs_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_enabled_cloud_watch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enabled_cloud_watch_logs_exports = input;
         self
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    pub fn get_enabled_cloud_watch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_cloud_watch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enabled_cloud_watch_logs_exports
     }
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
@@ -995,10 +864,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// <li> <p> <code>stopped</code> </p> </li>
     /// <li> <p> <code>stopping</code> </p> </li>
     /// </ul>
-    pub fn activity_stream_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activity_stream_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_stream_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -1009,10 +875,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// <li> <p> <code>stopped</code> </p> </li>
     /// <li> <p> <code>stopping</code> </p> </li>
     /// </ul>
-    pub fn set_activity_stream_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activity_stream_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_stream_status = input;
         self
     }
@@ -1066,32 +929,21 @@ impl AwsRdsDbClusterDetailsBuilder {
         self
     }
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
-    pub fn set_domain_memberships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
-    ) -> Self {
+    pub fn set_domain_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>) -> Self {
         self.domain_memberships = input;
         self
     }
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
-    pub fn get_domain_memberships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>> {
+    pub fn get_domain_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>> {
         &self.domain_memberships
     }
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
-    pub fn db_cluster_parameter_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
-    pub fn set_db_cluster_parameter_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group = input;
         self
     }
@@ -1100,18 +952,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.db_cluster_parameter_group
     }
     /// <p>The subnet group that is associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-    pub fn db_subnet_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet group that is associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-    pub fn set_db_subnet_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group = input;
         self
     }
@@ -1124,10 +970,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_db_cluster_option_group_memberships`](Self::set_db_cluster_option_group_memberships).
     ///
     /// <p>The list of option group memberships for this DB cluster.</p>
-    pub fn db_cluster_option_group_memberships(
-        mut self,
-        input: crate::types::AwsRdsDbClusterOptionGroupMembership,
-    ) -> Self {
+    pub fn db_cluster_option_group_memberships(mut self, input: crate::types::AwsRdsDbClusterOptionGroupMembership) -> Self {
         let mut v = self.db_cluster_option_group_memberships.unwrap_or_default();
         v.push(input);
         self.db_cluster_option_group_memberships = ::std::option::Option::Some(v);
@@ -1136,9 +979,7 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// <p>The list of option group memberships for this DB cluster.</p>
     pub fn set_db_cluster_option_group_memberships(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>,
     ) -> Self {
         self.db_cluster_option_group_memberships = input;
         self
@@ -1146,23 +987,16 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// <p>The list of option group memberships for this DB cluster.</p>
     pub fn get_db_cluster_option_group_memberships(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>> {
         &self.db_cluster_option_group_memberships
     }
     /// <p>The DB cluster identifier that the user assigned to the cluster. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB cluster identifier that the user assigned to the cluster. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -1182,17 +1016,12 @@ impl AwsRdsDbClusterDetailsBuilder {
         self
     }
     /// <p>The list of instances that make up the DB cluster.</p>
-    pub fn set_db_cluster_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
-    ) -> Self {
+    pub fn set_db_cluster_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>) -> Self {
         self.db_cluster_members = input;
         self
     }
     /// <p>The list of instances that make up the DB cluster.</p>
-    pub fn get_db_cluster_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>> {
+    pub fn get_db_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>> {
         &self.db_cluster_members
     }
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
@@ -1201,10 +1030,7 @@ impl AwsRdsDbClusterDetailsBuilder {
         self
     }
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
@@ -1251,9 +1077,7 @@ impl AwsRdsDbClusterDetailsBuilder {
             db_cluster_option_group_memberships: self.db_cluster_option_group_memberships,
             db_cluster_identifier: self.db_cluster_identifier,
             db_cluster_members: self.db_cluster_members,
-            iam_database_authentication_enabled: self
-                .iam_database_authentication_enabled
-                .unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
         }
     }
 }

@@ -29,9 +29,7 @@ impl PutWebhookInput {
 
 /// A builder for [`PutWebhookInput`](crate::operation::put_webhook::PutWebhookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutWebhookInputBuilder {
     pub(crate) webhook: ::std::option::Option<crate::types::WebhookDefinition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -43,10 +41,7 @@ impl PutWebhookInputBuilder {
         self
     }
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
-    pub fn set_webhook(
-        mut self,
-        input: ::std::option::Option<crate::types::WebhookDefinition>,
-    ) -> Self {
+    pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::WebhookDefinition>) -> Self {
         self.webhook = input;
         self
     }
@@ -66,10 +61,7 @@ impl PutWebhookInputBuilder {
         self
     }
     /// <p>The tags for the webhook.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -78,12 +70,7 @@ impl PutWebhookInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutWebhookInput`](crate::operation::put_webhook::PutWebhookInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_webhook::PutWebhookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_webhook::PutWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_webhook::PutWebhookInput {
             webhook: self.webhook,
             tags: self.tags,

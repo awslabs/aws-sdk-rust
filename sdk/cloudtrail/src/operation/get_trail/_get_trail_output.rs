@@ -28,9 +28,7 @@ impl GetTrailOutput {
 
 /// A builder for [`GetTrailOutput`](crate::operation::get_trail::GetTrailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrailOutputBuilder {
     pub(crate) trail: ::std::option::Option<crate::types::Trail>,
     _request_id: Option<String>,

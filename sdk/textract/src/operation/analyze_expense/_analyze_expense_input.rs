@@ -32,9 +32,7 @@ impl AnalyzeExpenseInput {
 
 /// A builder for [`AnalyzeExpenseInput`](crate::operation::analyze_expense::AnalyzeExpenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeExpenseInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::Document>,
 }
@@ -71,12 +69,7 @@ impl AnalyzeExpenseInputBuilder {
     /// Consumes the builder and constructs a [`AnalyzeExpenseInput`](crate::operation::analyze_expense::AnalyzeExpenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_expense::AnalyzeExpenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::analyze_expense::AnalyzeExpenseInput {
-            document: self.document,
-        })
+    ) -> ::std::result::Result<crate::operation::analyze_expense::AnalyzeExpenseInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::analyze_expense::AnalyzeExpenseInput { document: self.document })
     }
 }

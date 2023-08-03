@@ -39,7 +39,7 @@ impl GetServiceLastAccessedDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceLastAccessedDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsInputBuilder,
+    inner: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsInputBuilder,
 }
 impl GetServiceLastAccessedDetailsFluentBuilder {
     /// Creates a new `GetServiceLastAccessedDetails`.
@@ -50,7 +50,7 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
         }
     }
     /// Access the GetServiceLastAccessedDetails as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +62,7 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
             crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +72,7 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +81,7 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError>,
     > {
         let op = self
             .inner
@@ -111,9 +104,7 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +118,7 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
             crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError>,
     > {
         self.customize_middleware().await
     }

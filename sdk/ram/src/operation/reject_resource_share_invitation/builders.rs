@@ -26,7 +26,7 @@ impl RejectResourceShareInvitationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectResourceShareInvitationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationInputBuilder,
+    inner: crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationInputBuilder,
 }
 impl RejectResourceShareInvitationFluentBuilder {
     /// Creates a new `RejectResourceShareInvitation`.
@@ -37,7 +37,7 @@ impl RejectResourceShareInvitationFluentBuilder {
         }
     }
     /// Access the RejectResourceShareInvitation as a reference.
-    pub fn as_input(&self) -> &crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RejectResourceShareInvitationFluentBuilder {
             crate::operation::reject_resource_share_invitation::RejectResourceShareInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RejectResourceShareInvitationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RejectResourceShareInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RejectResourceShareInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl RejectResourceShareInvitationFluentBuilder {
             crate::operation::reject_resource_share_invitation::RejectResourceShareInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation that you want to reject.</p>
-    pub fn resource_share_invitation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_invitation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_invitation_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation that you want to reject.</p>
-    pub fn set_resource_share_invitation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_invitation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_share_invitation_arn(input);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation that you want to reject.</p>
-    pub fn get_resource_share_invitation_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resource_share_invitation_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_share_invitation_arn()
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>

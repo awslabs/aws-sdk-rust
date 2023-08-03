@@ -10,10 +10,7 @@ impl RebootDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reboot_db_cluster::RebootDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_db_cluster::RebootDBClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_db_cluster::RebootDBClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reboot_db_cluster();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl RebootDBClusterFluentBuilder {
         }
     }
     /// Access the RebootDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reboot_db_cluster::builders::RebootDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reboot_db_cluster::builders::RebootDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl RebootDBClusterFluentBuilder {
             crate::operation::reboot_db_cluster::RebootDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_db_cluster::RebootDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_db_cluster::RebootDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl RebootDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl RebootDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_db_cluster::RebootDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_db_cluster::RebootDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_db_cluster::RebootDBClusterError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl RebootDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_db_cluster::RebootDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_db_cluster::RebootDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_db_cluster::RebootDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl RebootDBClusterFluentBuilder {
             crate::operation::reboot_db_cluster::RebootDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_db_cluster::RebootDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_db_cluster::RebootDBClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +114,7 @@ impl RebootDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -142,10 +123,7 @@ impl RebootDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }

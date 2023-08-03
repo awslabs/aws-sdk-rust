@@ -5,9 +5,7 @@
 pub struct DescribeGlobalSettingsOutput {
     /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
     #[doc(hidden)]
-    pub global_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -15,11 +13,7 @@ pub struct DescribeGlobalSettingsOutput {
 }
 impl DescribeGlobalSettingsOutput {
     /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
-    pub fn global_settings(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn global_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.global_settings.as_ref()
     }
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -34,22 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeGlobalSettingsOutput {
 }
 impl DescribeGlobalSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalSettingsOutput`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_global_settings::builders::DescribeGlobalSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_global_settings::builders::DescribeGlobalSettingsOutputBuilder {
         crate::operation::describe_global_settings::builders::DescribeGlobalSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalSettingsOutput`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalSettingsOutputBuilder {
-    pub(crate) global_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -72,19 +60,13 @@ impl DescribeGlobalSettingsOutputBuilder {
     /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
     pub fn set_global_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.global_settings = input;
         self
     }
     /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
-    pub fn get_global_settings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.global_settings
     }
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -93,10 +75,7 @@ impl DescribeGlobalSettingsOutputBuilder {
         self
     }
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

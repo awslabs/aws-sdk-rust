@@ -76,15 +76,11 @@ impl ReplicationConfig {
         self.table_mappings.as_deref()
     }
     /// <p>The time the serverless replication config was created.</p>
-    pub fn replication_config_create_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_config_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_config_create_time.as_ref()
     }
     /// <p>The time the serverless replication config was updated.</p>
-    pub fn replication_config_update_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_config_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_config_update_time.as_ref()
     }
 }
@@ -97,9 +93,7 @@ impl ReplicationConfig {
 
 /// A builder for [`ReplicationConfig`](crate::types::ReplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigBuilder {
     pub(crate) replication_config_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
@@ -115,40 +109,26 @@ pub struct ReplicationConfigBuilder {
 }
 impl ReplicationConfigBuilder {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn replication_config_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn set_replication_config_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_identifier = input;
         self
     }
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn get_replication_config_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_config_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_config_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of this DMS Serverless replication configuration.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this DMS Serverless replication configuration.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -157,18 +137,12 @@ impl ReplicationConfigBuilder {
         &self.replication_config_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
-    pub fn source_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
-    pub fn set_source_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_endpoint_arn = input;
         self
     }
@@ -177,18 +151,12 @@ impl ReplicationConfigBuilder {
         &self.source_endpoint_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
-    pub fn target_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
-    pub fn set_target_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_endpoint_arn = input;
         self
     }
@@ -202,10 +170,7 @@ impl ReplicationConfigBuilder {
         self
     }
     /// <p>The type of the replication.</p>
-    pub fn set_replication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTypeValue>,
-    ) -> Self {
+    pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.replication_type = input;
         self
     }
@@ -219,10 +184,7 @@ impl ReplicationConfigBuilder {
         self
     }
     /// <p>Configuration parameters for provisioning an DMS serverless replication.</p>
-    pub fn set_compute_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeConfig>,
-    ) -> Self {
+    pub fn set_compute_config(mut self, input: ::std::option::Option<crate::types::ComputeConfig>) -> Self {
         self.compute_config = input;
         self
     }
@@ -231,18 +193,12 @@ impl ReplicationConfigBuilder {
         &self.compute_config
     }
     /// <p>Configuration parameters for an DMS serverless replication.</p>
-    pub fn replication_settings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_settings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Configuration parameters for an DMS serverless replication.</p>
-    pub fn set_replication_settings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_settings = input;
         self
     }
@@ -251,18 +207,12 @@ impl ReplicationConfigBuilder {
         &self.replication_settings
     }
     /// <p>Additional parameters for an DMS serverless replication.</p>
-    pub fn supplemental_settings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supplemental_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.supplemental_settings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional parameters for an DMS serverless replication.</p>
-    pub fn set_supplemental_settings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_supplemental_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.supplemental_settings = input;
         self
     }
@@ -271,18 +221,12 @@ impl ReplicationConfigBuilder {
         &self.supplemental_settings
     }
     /// <p>Table mappings specified in the replication.</p>
-    pub fn table_mappings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_mappings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_mappings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Table mappings specified in the replication.</p>
-    pub fn set_table_mappings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_mappings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_mappings = input;
         self
     }
@@ -296,17 +240,12 @@ impl ReplicationConfigBuilder {
         self
     }
     /// <p>The time the serverless replication config was created.</p>
-    pub fn set_replication_config_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replication_config_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replication_config_create_time = input;
         self
     }
     /// <p>The time the serverless replication config was created.</p>
-    pub fn get_replication_config_create_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_replication_config_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_config_create_time
     }
     /// <p>The time the serverless replication config was updated.</p>
@@ -315,17 +254,12 @@ impl ReplicationConfigBuilder {
         self
     }
     /// <p>The time the serverless replication config was updated.</p>
-    pub fn set_replication_config_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replication_config_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replication_config_update_time = input;
         self
     }
     /// <p>The time the serverless replication config was updated.</p>
-    pub fn get_replication_config_update_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_replication_config_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_config_update_time
     }
     /// Consumes the builder and constructs a [`ReplicationConfig`](crate::types::ReplicationConfig).

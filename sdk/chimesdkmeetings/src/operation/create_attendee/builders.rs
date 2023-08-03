@@ -10,10 +10,7 @@ impl CreateAttendeeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_attendee::CreateAttendeeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_attendee::CreateAttendeeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_attendee::CreateAttendeeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_attendee();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAttendeeFluentBuilder {
         }
     }
     /// Access the CreateAttendee as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_attendee::builders::CreateAttendeeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_attendee::builders::CreateAttendeeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateAttendeeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -131,20 +123,14 @@ impl CreateAttendeeFluentBuilder {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
-    pub fn external_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_user_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
-    pub fn set_external_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_user_id(input);
         self
     }
@@ -176,10 +162,7 @@ impl CreateAttendeeFluentBuilder {
     /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AttendeeCapabilities>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }

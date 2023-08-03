@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetOtaUpdateOutput`](crate::operation::get_ota_update::GetOtaUpdateOutput) with field(s):
     ///   - [`ota_update_info(Option<OtaUpdateInfo>)`](crate::operation::get_ota_update::GetOtaUpdateOutput::ota_update_info): <p>The OTA update info.</p>
     /// - On failure, responds with [`SdkError<GetOTAUpdateError>`](crate::operation::get_ota_update::GetOTAUpdateError)
-    pub fn get_ota_update(
-        &self,
-    ) -> crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder {
-        crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ota_update(&self) -> crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder {
+        crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,24 +23,20 @@ impl PutBucketLifecycleConfigurationInput {
         self.bucket.as_deref()
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    pub fn lifecycle_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
 }
 impl PutBucketLifecycleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
-    pub fn builder() -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder {
         crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -81,17 +77,12 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         self
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    pub fn set_lifecycle_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
         self.lifecycle_configuration = input;
         self
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    pub fn get_lifecycle_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
+    pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
@@ -103,13 +94,10 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput {
-                account_id: self.account_id
-                ,
-                bucket: self.bucket
-                ,
-                lifecycle_configuration: self.lifecycle_configuration
-                ,
-            }
+                account_id: self.account_id,
+                bucket: self.bucket,
+                lifecycle_configuration: self.lifecycle_configuration,
+            },
         )
     }
 }

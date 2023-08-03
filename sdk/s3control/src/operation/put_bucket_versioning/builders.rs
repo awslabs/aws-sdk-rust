@@ -55,9 +55,7 @@ impl PutBucketVersioningFluentBuilder {
         }
     }
     /// Access the PutBucketVersioning as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +67,7 @@ impl PutBucketVersioningFluentBuilder {
             crate::operation::put_bucket_versioning::PutBucketVersioning,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_versioning::PutBucketVersioningError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_versioning::PutBucketVersioningError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +77,7 @@ impl PutBucketVersioningFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +86,7 @@ impl PutBucketVersioningFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_versioning::PutBucketVersioningOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_versioning::PutBucketVersioningError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_versioning::PutBucketVersioningError>,
     > {
         let op = self
             .inner
@@ -118,9 +109,7 @@ impl PutBucketVersioningFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_versioning::PutBucketVersioningOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_versioning::PutBucketVersioningError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_versioning::PutBucketVersioningError>,
     > {
         self.send_middleware().await
     }
@@ -134,9 +123,7 @@ impl PutBucketVersioningFluentBuilder {
             crate::operation::put_bucket_versioning::PutBucketVersioning,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_versioning::PutBucketVersioningError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_versioning::PutBucketVersioningError>,
     > {
         self.customize_middleware().await
     }
@@ -183,25 +170,17 @@ impl PutBucketVersioningFluentBuilder {
         self.inner.get_mfa()
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn versioning_configuration(
-        mut self,
-        input: crate::types::VersioningConfiguration,
-    ) -> Self {
+    pub fn versioning_configuration(mut self, input: crate::types::VersioningConfiguration) -> Self {
         self.inner = self.inner.versioning_configuration(input);
         self
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn set_versioning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VersioningConfiguration>,
-    ) -> Self {
+    pub fn set_versioning_configuration(mut self, input: ::std::option::Option<crate::types::VersioningConfiguration>) -> Self {
         self.inner = self.inner.set_versioning_configuration(input);
         self
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn get_versioning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersioningConfiguration> {
+    pub fn get_versioning_configuration(&self) -> &::std::option::Option<crate::types::VersioningConfiguration> {
         self.inner.get_versioning_configuration()
     }
 }

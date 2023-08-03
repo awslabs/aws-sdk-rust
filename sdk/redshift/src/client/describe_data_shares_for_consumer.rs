@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`data_shares(Option<Vec<DataShare>>)`](crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput::data_shares): <p>Shows the results of datashares available for consumers.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// - On failure, responds with [`SdkError<DescribeDataSharesForConsumerError>`](crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError)
-    pub fn describe_data_shares_for_consumer(&self) -> crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerFluentBuilder{
+    pub fn describe_data_shares_for_consumer(
+        &self,
+    ) -> crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerFluentBuilder {
         crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerFluentBuilder::new(self.handle.clone())
     }
 }

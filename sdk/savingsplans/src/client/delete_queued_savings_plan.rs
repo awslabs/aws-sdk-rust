@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`savings_plan_id(impl ::std::convert::Into<String>)`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::savings_plan_id) / [`set_savings_plan_id(Option<String>)`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::set_savings_plan_id): <p>The ID of the Savings Plan.</p>
     /// - On success, responds with [`DeleteQueuedSavingsPlanOutput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteQueuedSavingsPlanError>`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError)
-    pub fn delete_queued_savings_plan(
-        &self,
-    ) -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder
-    {
+    pub fn delete_queued_savings_plan(&self) -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder {
         crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::new(self.handle.clone())
     }
 }

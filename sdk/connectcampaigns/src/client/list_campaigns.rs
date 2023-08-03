@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_campaigns::ListCampaignsOutput::next_token): The token for the next set of results.
     ///   - [`campaign_summary_list(Option<Vec<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaign_summary_list): A list of Amazon Connect campaigns.
     /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::operation::list_campaigns::ListCampaignsError)
-    pub fn list_campaigns(
-        &self,
-    ) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {
-        crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_campaigns(&self) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {
+        crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(self.handle.clone())
     }
 }

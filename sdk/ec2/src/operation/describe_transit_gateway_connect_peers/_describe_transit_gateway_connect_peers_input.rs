@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayConnectPeersInput {
     /// <p>The IDs of the Connect peers.</p>
     #[doc(hidden)]
-    pub transit_gateway_connect_peer_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub transit_gateway_connect_peer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -27,9 +26,7 @@ pub struct DescribeTransitGatewayConnectPeersInput {
 }
 impl DescribeTransitGatewayConnectPeersInput {
     /// <p>The IDs of the Connect peers.</p>
-    pub fn transit_gateway_connect_peer_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn transit_gateway_connect_peer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.transit_gateway_connect_peer_ids.as_deref()
     }
     /// <p>One or more filters. The possible values are:</p>
@@ -56,19 +53,16 @@ impl DescribeTransitGatewayConnectPeersInput {
 }
 impl DescribeTransitGatewayConnectPeersInput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayConnectPeersInput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersInputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersInputBuilder {
         crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayConnectPeersInput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayConnectPeersInputBuilder {
-    pub(crate) transit_gateway_connect_peer_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_connect_peer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -80,27 +74,19 @@ impl DescribeTransitGatewayConnectPeersInputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_connect_peer_ids`](Self::set_transit_gateway_connect_peer_ids).
     ///
     /// <p>The IDs of the Connect peers.</p>
-    pub fn transit_gateway_connect_peer_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_connect_peer_ids.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_connect_peer_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn set_transit_gateway_connect_peer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_connect_peer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_connect_peer_ids = input;
         self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn get_transit_gateway_connect_peer_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_connect_peer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_connect_peer_ids
     }
     /// Appends an item to `filters`.
@@ -125,10 +111,7 @@ impl DescribeTransitGatewayConnectPeersInputBuilder {
     /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
     /// <li> <p> <code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -184,20 +167,20 @@ impl DescribeTransitGatewayConnectPeersInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayConnectPeersInput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput {
-                transit_gateway_connect_peer_ids: self.transit_gateway_connect_peer_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_connect_peer_ids: self.transit_gateway_connect_peer_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

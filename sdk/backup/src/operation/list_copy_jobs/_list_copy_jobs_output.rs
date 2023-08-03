@@ -35,9 +35,7 @@ impl ListCopyJobsOutput {
 
 /// A builder for [`ListCopyJobsOutput`](crate::operation::list_copy_jobs::ListCopyJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCopyJobsOutputBuilder {
     pub(crate) copy_jobs: ::std::option::Option<::std::vec::Vec<crate::types::CopyJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListCopyJobsOutputBuilder {
         self
     }
     /// <p>An array of structures containing metadata about your copy jobs returned in JSON format. </p>
-    pub fn set_copy_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CopyJob>>,
-    ) -> Self {
+    pub fn set_copy_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CopyJob>>) -> Self {
         self.copy_jobs = input;
         self
     }

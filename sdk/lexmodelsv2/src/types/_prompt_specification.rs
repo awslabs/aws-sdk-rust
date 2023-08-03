@@ -18,12 +18,8 @@ pub struct PromptSpecification {
     pub message_selection_strategy: ::std::option::Option<crate::types::MessageSelectionStrategy>,
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
     #[doc(hidden)]
-    pub prompt_attempts_specification: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::PromptAttempt,
-            crate::types::PromptAttemptSpecification,
-        >,
-    >,
+    pub prompt_attempts_specification:
+        ::std::option::Option<::std::collections::HashMap<crate::types::PromptAttempt, crate::types::PromptAttemptSpecification>>,
 }
 impl PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
@@ -39,20 +35,13 @@ impl PromptSpecification {
         self.allow_interrupt
     }
     /// <p>Indicates how a message is selected from a message group among retries.</p>
-    pub fn message_selection_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageSelectionStrategy> {
+    pub fn message_selection_strategy(&self) -> ::std::option::Option<&crate::types::MessageSelectionStrategy> {
         self.message_selection_strategy.as_ref()
     }
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
     pub fn prompt_attempts_specification(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::PromptAttempt,
-            crate::types::PromptAttemptSpecification,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::PromptAttempt, crate::types::PromptAttemptSpecification>> {
         self.prompt_attempts_specification.as_ref()
     }
 }
@@ -65,21 +54,14 @@ impl PromptSpecification {
 
 /// A builder for [`PromptSpecification`](crate::types::PromptSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromptSpecificationBuilder {
     pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     pub(crate) max_retries: ::std::option::Option<i32>,
     pub(crate) allow_interrupt: ::std::option::Option<bool>,
-    pub(crate) message_selection_strategy:
-        ::std::option::Option<crate::types::MessageSelectionStrategy>,
-    pub(crate) prompt_attempts_specification: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::PromptAttempt,
-            crate::types::PromptAttemptSpecification,
-        >,
-    >,
+    pub(crate) message_selection_strategy: ::std::option::Option<crate::types::MessageSelectionStrategy>,
+    pub(crate) prompt_attempts_specification:
+        ::std::option::Option<::std::collections::HashMap<crate::types::PromptAttempt, crate::types::PromptAttemptSpecification>>,
 }
 impl PromptSpecificationBuilder {
     /// Appends an item to `message_groups`.
@@ -94,17 +76,12 @@ impl PromptSpecificationBuilder {
         self
     }
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-    pub fn set_message_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
-    ) -> Self {
+    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>) -> Self {
         self.message_groups = input;
         self
     }
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-    pub fn get_message_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
         &self.message_groups
     }
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
@@ -136,25 +113,17 @@ impl PromptSpecificationBuilder {
         &self.allow_interrupt
     }
     /// <p>Indicates how a message is selected from a message group among retries.</p>
-    pub fn message_selection_strategy(
-        mut self,
-        input: crate::types::MessageSelectionStrategy,
-    ) -> Self {
+    pub fn message_selection_strategy(mut self, input: crate::types::MessageSelectionStrategy) -> Self {
         self.message_selection_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how a message is selected from a message group among retries.</p>
-    pub fn set_message_selection_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageSelectionStrategy>,
-    ) -> Self {
+    pub fn set_message_selection_strategy(mut self, input: ::std::option::Option<crate::types::MessageSelectionStrategy>) -> Self {
         self.message_selection_strategy = input;
         self
     }
     /// <p>Indicates how a message is selected from a message group among retries.</p>
-    pub fn get_message_selection_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageSelectionStrategy> {
+    pub fn get_message_selection_strategy(&self) -> &::std::option::Option<crate::types::MessageSelectionStrategy> {
         &self.message_selection_strategy
     }
     /// Adds a key-value pair to `prompt_attempts_specification`.
@@ -162,11 +131,7 @@ impl PromptSpecificationBuilder {
     /// To override the contents of this collection use [`set_prompt_attempts_specification`](Self::set_prompt_attempts_specification).
     ///
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
-    pub fn prompt_attempts_specification(
-        mut self,
-        k: crate::types::PromptAttempt,
-        v: crate::types::PromptAttemptSpecification,
-    ) -> Self {
+    pub fn prompt_attempts_specification(mut self, k: crate::types::PromptAttempt, v: crate::types::PromptAttemptSpecification) -> Self {
         let mut hash_map = self.prompt_attempts_specification.unwrap_or_default();
         hash_map.insert(k, v);
         self.prompt_attempts_specification = ::std::option::Option::Some(hash_map);
@@ -175,12 +140,7 @@ impl PromptSpecificationBuilder {
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
     pub fn set_prompt_attempts_specification(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::PromptAttempt,
-                crate::types::PromptAttemptSpecification,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::PromptAttempt, crate::types::PromptAttemptSpecification>>,
     ) -> Self {
         self.prompt_attempts_specification = input;
         self
@@ -188,12 +148,7 @@ impl PromptSpecificationBuilder {
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
     pub fn get_prompt_attempts_specification(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::PromptAttempt,
-            crate::types::PromptAttemptSpecification,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::PromptAttempt, crate::types::PromptAttemptSpecification>> {
         &self.prompt_attempts_specification
     }
     /// Consumes the builder and constructs a [`PromptSpecification`](crate::types::PromptSpecification).

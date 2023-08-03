@@ -29,17 +29,14 @@ impl ListRuleBasedMatchesInput {
 }
 impl ListRuleBasedMatchesInput {
     /// Creates a new builder-style object to manufacture [`ListRuleBasedMatchesInput`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput).
-    pub fn builder(
-    ) -> crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesInputBuilder {
+    pub fn builder() -> crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesInputBuilder {
         crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRuleBasedMatchesInput`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleBasedMatchesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl ListRuleBasedMatchesInputBuilder {
     /// Consumes the builder and constructs a [`ListRuleBasedMatchesInput`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_rule_based_matches::ListRuleBasedMatchesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            domain_name: self.domain_name,
+        })
     }
 }

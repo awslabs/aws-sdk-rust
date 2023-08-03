@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput) with field(s):
     ///   - [`repository_metadata(Option<RepositoryMetadata>)`](crate::operation::get_repository::GetRepositoryOutput::repository_metadata): <p>Information about the repository.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::operation::get_repository::GetRepositoryError)
-    pub fn get_repository(
-        &self,
-    ) -> crate::operation::get_repository::builders::GetRepositoryFluentBuilder {
-        crate::operation::get_repository::builders::GetRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_repository(&self) -> crate::operation::get_repository::builders::GetRepositoryFluentBuilder {
+        crate::operation::get_repository::builders::GetRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

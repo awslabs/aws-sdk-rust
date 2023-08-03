@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`description(Option<SystemTemplateDescription>)`](crate::operation::get_system_template::GetSystemTemplateOutput::description): <p>An object that contains summary data about the system.</p>
     /// - On failure, responds with [`SdkError<GetSystemTemplateError>`](crate::operation::get_system_template::GetSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_system_template(
-        &self,
-    ) -> crate::operation::get_system_template::builders::GetSystemTemplateFluentBuilder {
-        crate::operation::get_system_template::builders::GetSystemTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_system_template(&self) -> crate::operation::get_system_template::builders::GetSystemTemplateFluentBuilder {
+        crate::operation::get_system_template::builders::GetSystemTemplateFluentBuilder::new(self.handle.clone())
     }
 }

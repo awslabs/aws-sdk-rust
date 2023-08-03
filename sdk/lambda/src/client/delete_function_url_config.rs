@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`qualifier(impl ::std::convert::Into<String>)`](crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigFluentBuilder::qualifier) / [`set_qualifier(Option<String>)`](crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigFluentBuilder::set_qualifier): <p>The alias name.</p>
     /// - On success, responds with [`DeleteFunctionUrlConfigOutput`](crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionUrlConfigError>`](crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError)
-    pub fn delete_function_url_config(
-        &self,
-    ) -> crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigFluentBuilder
-    {
+    pub fn delete_function_url_config(&self) -> crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigFluentBuilder {
         crate::operation::delete_function_url_config::builders::DeleteFunctionUrlConfigFluentBuilder::new(self.handle.clone())
     }
 }

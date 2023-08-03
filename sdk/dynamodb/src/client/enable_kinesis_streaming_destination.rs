@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`stream_arn(Option<String>)`](crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationOutput::stream_arn): <p>The ARN for the specific Kinesis data stream.</p>
     ///   - [`destination_status(Option<DestinationStatus>)`](crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationOutput::destination_status): <p>The current status of the replication.</p>
     /// - On failure, responds with [`SdkError<EnableKinesisStreamingDestinationError>`](crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationError)
-    pub fn enable_kinesis_streaming_destination(&self) -> crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationFluentBuilder{
+    pub fn enable_kinesis_streaming_destination(
+        &self,
+    ) -> crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationFluentBuilder {
         crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationFluentBuilder::new(self.handle.clone())
     }
 }

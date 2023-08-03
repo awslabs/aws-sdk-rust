@@ -26,7 +26,7 @@ impl DescribeStudioLifecycleConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStudioLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder,
+    inner: crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder,
 }
 impl DescribeStudioLifecycleConfigFluentBuilder {
     /// Creates a new `DescribeStudioLifecycleConfig`.
@@ -37,7 +37,7 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
         }
     }
     /// Access the DescribeStudioLifecycleConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
             crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
             crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn studio_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_name(input.into());
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn set_studio_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn get_studio_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_name()
     }
 }

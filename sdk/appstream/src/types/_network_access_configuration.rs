@@ -30,27 +30,19 @@ impl NetworkAccessConfiguration {
 
 /// A builder for [`NetworkAccessConfiguration`](crate::types::NetworkAccessConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkAccessConfigurationBuilder {
     pub(crate) eni_private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) eni_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkAccessConfigurationBuilder {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    pub fn eni_private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn eni_private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eni_private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    pub fn set_eni_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_eni_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eni_private_ip_address = input;
         self
     }

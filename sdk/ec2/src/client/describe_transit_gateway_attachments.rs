@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`transit_gateway_attachments(Option<Vec<TransitGatewayAttachment>>)`](crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput::transit_gateway_attachments): <p>Information about the attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayAttachmentsError>`](crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsError)
-    pub fn describe_transit_gateway_attachments(&self) -> crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsFluentBuilder{
+    pub fn describe_transit_gateway_attachments(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsFluentBuilder {
         crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsFluentBuilder::new(self.handle.clone())
     }
 }

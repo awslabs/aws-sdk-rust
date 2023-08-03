@@ -5,16 +5,16 @@ pub use crate::operation::create_environment_account_connection::_create_environ
 
 impl CreateEnvironmentAccountConnectionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_environment_account_connection();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentAccountConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder,
+    inner: crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder,
 }
 impl CreateEnvironmentAccountConnectionFluentBuilder {
     /// Creates a new `CreateEnvironmentAccountConnection`.
@@ -38,15 +38,20 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         }
     }
     /// Access the CreateEnvironmentAccountConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
@@ -110,18 +125,12 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    pub fn management_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn management_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.management_account_id(input.into());
         self
     }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    pub fn set_management_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_management_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_management_account_id(input);
         self
     }
@@ -144,18 +153,12 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -175,10 +178,7 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -190,20 +190,14 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_component_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_role_arn(input);
         self
     }
@@ -214,18 +208,12 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         self.inner.get_component_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-    pub fn codebuild_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn codebuild_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.codebuild_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-    pub fn set_codebuild_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_codebuild_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_codebuild_role_arn(input);
         self
     }

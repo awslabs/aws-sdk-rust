@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteClusterParameterGroupOutput {
 }
 impl DeleteClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterParameterGroupOutput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput).
-    pub fn builder() -> crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupOutputBuilder {
         crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterParameterGroupOutput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteClusterParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteClusterParameterGroupOutput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput {
+    pub fn build(self) -> crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput {
         crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput {
             _request_id: self._request_id,
         }

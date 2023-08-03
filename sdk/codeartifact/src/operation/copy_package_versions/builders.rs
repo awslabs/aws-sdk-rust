@@ -39,9 +39,7 @@ impl CopyPackageVersionsFluentBuilder {
         }
     }
     /// Access the CopyPackageVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_package_versions::builders::CopyPackageVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_package_versions::builders::CopyPackageVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CopyPackageVersionsFluentBuilder {
             crate::operation::copy_package_versions::CopyPackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_package_versions::CopyPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_package_versions::CopyPackageVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CopyPackageVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CopyPackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_package_versions::CopyPackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_package_versions::CopyPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_package_versions::CopyPackageVersionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CopyPackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_package_versions::CopyPackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_package_versions::CopyPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_package_versions::CopyPackageVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CopyPackageVersionsFluentBuilder {
             crate::operation::copy_package_versions::CopyPackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_package_versions::CopyPackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_package_versions::CopyPackageVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -153,18 +140,12 @@ impl CopyPackageVersionsFluentBuilder {
         self.inner.get_domain_owner()
     }
     /// <p> The name of the repository that contains the package versions to be copied. </p>
-    pub fn source_repository(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_repository(input.into());
         self
     }
     /// <p> The name of the repository that contains the package versions to be copied. </p>
-    pub fn set_source_repository(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_repository(input);
         self
     }
@@ -173,18 +154,12 @@ impl CopyPackageVersionsFluentBuilder {
         self.inner.get_source_repository()
     }
     /// <p> The name of the repository into which package versions are copied. </p>
-    pub fn destination_repository(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_repository(input.into());
         self
     }
     /// <p> The name of the repository into which package versions are copied. </p>
-    pub fn set_destination_repository(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_repository(input);
         self
     }
@@ -266,10 +241,7 @@ impl CopyPackageVersionsFluentBuilder {
     /// <p> The versions of the package to be copied. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
@@ -299,9 +271,7 @@ impl CopyPackageVersionsFluentBuilder {
     /// </note>
     pub fn set_version_revisions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_version_revisions(input);
         self
@@ -309,11 +279,7 @@ impl CopyPackageVersionsFluentBuilder {
     /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn get_version_revisions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_version_revisions()
     }
     /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>

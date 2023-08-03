@@ -12,9 +12,7 @@ pub fn ser_path_statement_request(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ResourceStatement");
     if let Some(var_4) = &input.resource_statement {
-        crate::protocol_serde::shape_resource_statement_request::ser_resource_statement_request(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_resource_statement_request::ser_resource_statement_request(scope_3, var_4)?;
     }
     Ok(())
 }

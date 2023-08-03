@@ -127,16 +127,13 @@ impl BuildSummary {
 
 /// A builder for [`BuildSummary`](crate::types::BuildSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) requested_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) build_status: ::std::option::Option<crate::types::StatusType>,
     pub(crate) primary_artifact: ::std::option::Option<crate::types::ResolvedArtifact>,
-    pub(crate) secondary_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>,
+    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>,
 }
 impl BuildSummaryBuilder {
     /// <p>The batch build ARN.</p>
@@ -159,10 +156,7 @@ impl BuildSummaryBuilder {
         self
     }
     /// <p>When the build was started, expressed in Unix time format.</p>
-    pub fn set_requested_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_on = input;
         self
     }
@@ -252,10 +246,7 @@ impl BuildSummaryBuilder {
     /// <p>The build group timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn set_build_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusType>,
-    ) -> Self {
+    pub fn set_build_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.build_status = input;
         self
     }
@@ -307,10 +298,7 @@ impl BuildSummaryBuilder {
         self
     }
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
-    pub fn set_primary_artifact(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolvedArtifact>,
-    ) -> Self {
+    pub fn set_primary_artifact(mut self, input: ::std::option::Option<crate::types::ResolvedArtifact>) -> Self {
         self.primary_artifact = input;
         self
     }
@@ -330,17 +318,12 @@ impl BuildSummaryBuilder {
         self
     }
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    pub fn set_secondary_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>,
-    ) -> Self {
+    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>) -> Self {
         self.secondary_artifacts = input;
         self
     }
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    pub fn get_secondary_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>> {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>> {
         &self.secondary_artifacts
     }
     /// Consumes the builder and constructs a [`BuildSummary`](crate::types::BuildSummary).

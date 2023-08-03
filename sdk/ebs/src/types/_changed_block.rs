@@ -68,18 +68,12 @@ impl ChangedBlockBuilder {
         &self.block_index
     }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
-    pub fn first_block_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_block_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_block_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
-    pub fn set_first_block_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_block_token = input;
         self
     }
@@ -88,18 +82,12 @@ impl ChangedBlockBuilder {
         &self.first_block_token
     }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
-    pub fn second_block_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn second_block_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.second_block_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
-    pub fn set_second_block_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_second_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.second_block_token = input;
         self
     }

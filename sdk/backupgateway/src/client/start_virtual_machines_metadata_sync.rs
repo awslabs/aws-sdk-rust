@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StartVirtualMachinesMetadataSyncOutput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     /// - On failure, responds with [`SdkError<StartVirtualMachinesMetadataSyncError>`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncError)
-    pub fn start_virtual_machines_metadata_sync(&self) -> crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder{
+    pub fn start_virtual_machines_metadata_sync(
+        &self,
+    ) -> crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder {
         crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder::new(self.handle.clone())
     }
 }

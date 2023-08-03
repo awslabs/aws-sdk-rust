@@ -28,7 +28,7 @@ impl GetDomainPermissionsPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder,
+    inner: crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder,
 }
 impl GetDomainPermissionsPolicyFluentBuilder {
     /// Creates a new `GetDomainPermissionsPolicy`.
@@ -39,7 +39,7 @@ impl GetDomainPermissionsPolicyFluentBuilder {
         }
     }
     /// Access the GetDomainPermissionsPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetDomainPermissionsPolicyFluentBuilder {
             crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetDomainPermissionsPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetDomainPermissionsPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetDomainPermissionsPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl GetDomainPermissionsPolicyFluentBuilder {
             crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError>,
     > {
         self.customize_middleware().await
     }

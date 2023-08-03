@@ -23,9 +23,7 @@ impl VisibleRangeOptions {
 
 /// A builder for [`VisibleRangeOptions`](crate::types::VisibleRangeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VisibleRangeOptionsBuilder {
     pub(crate) percent_range: ::std::option::Option<crate::types::PercentVisibleRange>,
 }
@@ -36,10 +34,7 @@ impl VisibleRangeOptionsBuilder {
         self
     }
     /// <p>The percent range in the visible range.</p>
-    pub fn set_percent_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PercentVisibleRange>,
-    ) -> Self {
+    pub fn set_percent_range(mut self, input: ::std::option::Option<crate::types::PercentVisibleRange>) -> Self {
         self.percent_range = input;
         self
     }

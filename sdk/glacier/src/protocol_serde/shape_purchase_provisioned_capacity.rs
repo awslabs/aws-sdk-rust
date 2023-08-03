@@ -9,81 +9,91 @@ pub fn de_purchase_provisioned_capacity_http_error(
     crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "LimitExceededException" => crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "MissingParameterValueException" => crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::MissingParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "MissingParameterValueException" => {
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ServiceUnavailableException" => crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::generic(generic),
     })
 }
 
@@ -100,12 +110,13 @@ pub fn de_purchase_provisioned_capacity_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder::default();
         output = output.set_capacity_id(
-            crate::protocol_serde::shape_purchase_provisioned_capacity_output::de_capacity_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled("Failed to parse capacityId from header `x-amz-capacity-id"))?
+            crate::protocol_serde::shape_purchase_provisioned_capacity_output::de_capacity_id_header(_response_headers).map_err(|_| {
+                crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::unhandled(
+                    "Failed to parse capacityId from header `x-amz-capacity-id",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -30,9 +30,7 @@ impl IntentSortBy {
 
 /// A builder for [`IntentSortBy`](crate::types::IntentSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::IntentSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl IntentSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list of intents.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::IntentSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

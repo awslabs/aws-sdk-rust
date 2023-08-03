@@ -9,8 +9,7 @@ pub struct GetRecommendationSummariesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that summarize a recommendation.</p>
     #[doc(hidden)]
-    pub recommendation_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub recommendation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationSummariesOutput {
@@ -20,9 +19,7 @@ impl GetRecommendationSummariesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that summarize a recommendation.</p>
-    pub fn recommendation_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationSummary]> {
+    pub fn recommendation_summaries(&self) -> ::std::option::Option<&[crate::types::RecommendationSummary]> {
         self.recommendation_summaries.as_deref()
     }
 }
@@ -33,20 +30,17 @@ impl ::aws_http::request_id::RequestId for GetRecommendationSummariesOutput {
 }
 impl GetRecommendationSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesOutput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput).
-    pub fn builder() -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder {
         crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationSummariesOutput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationSummariesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub(crate) recommendation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationSummariesOutputBuilder {
@@ -79,17 +73,12 @@ impl GetRecommendationSummariesOutputBuilder {
         self
     }
     /// <p>An array of objects that summarize a recommendation.</p>
-    pub fn set_recommendation_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
-    ) -> Self {
+    pub fn set_recommendation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>) -> Self {
         self.recommendation_summaries = input;
         self
     }
     /// <p>An array of objects that summarize a recommendation.</p>
-    pub fn get_recommendation_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
+    pub fn get_recommendation_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
         &self.recommendation_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +91,7 @@ impl GetRecommendationSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecommendationSummariesOutput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput {
+    pub fn build(self) -> crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput {
         crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput {
             next_token: self.next_token,
             recommendation_summaries: self.recommendation_summaries,

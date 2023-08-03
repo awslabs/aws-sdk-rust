@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p>The endpoints returned by the call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
-    pub fn list_endpoints(
-        &self,
-    ) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
+        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

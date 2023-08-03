@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`feature(impl ::std::convert::Into<String>)`](crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::feature) / [`set_feature(Option<String>)`](crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::set_feature): <p>The name of the feature to delete.</p>
     /// - On success, responds with [`DeleteFeatureOutput`](crate::operation::delete_feature::DeleteFeatureOutput)
     /// - On failure, responds with [`SdkError<DeleteFeatureError>`](crate::operation::delete_feature::DeleteFeatureError)
-    pub fn delete_feature(
-        &self,
-    ) -> crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder {
-        crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_feature(&self) -> crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder {
+        crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::new(self.handle.clone())
     }
 }

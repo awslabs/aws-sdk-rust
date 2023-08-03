@@ -43,9 +43,7 @@ impl GetBotAliasesInput {
 
 /// A builder for [`GetBotAliasesInput`](crate::operation::get_bot_aliases::GetBotAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotAliasesInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl GetBotAliasesInputBuilder {
         &self.max_results
     }
     /// <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -118,10 +110,7 @@ impl GetBotAliasesInputBuilder {
     /// Consumes the builder and constructs a [`GetBotAliasesInput`](crate::operation::get_bot_aliases::GetBotAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bot_aliases::GetBotAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_bot_aliases::GetBotAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bot_aliases::GetBotAliasesInput {
             bot_name: self.bot_name,
             next_token: self.next_token,

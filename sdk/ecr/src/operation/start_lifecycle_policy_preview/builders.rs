@@ -26,7 +26,7 @@ impl StartLifecyclePolicyPreviewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartLifecyclePolicyPreviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder,
+    inner: crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder,
 }
 impl StartLifecyclePolicyPreviewFluentBuilder {
     /// Creates a new `StartLifecyclePolicyPreview`.
@@ -37,7 +37,7 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
         }
     }
     /// Access the StartLifecyclePolicyPreview as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
             crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
             crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository to be evaluated.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to be evaluated.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -155,18 +138,12 @@ impl StartLifecyclePolicyPreviewFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_policy_text(input.into());
         self
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_policy_text(input);
         self
     }

@@ -41,9 +41,7 @@ impl DeleteFleetLocationsFluentBuilder {
         }
     }
     /// Access the DeleteFleetLocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DeleteFleetLocationsFluentBuilder {
             crate::operation::delete_fleet_locations::DeleteFleetLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_locations::DeleteFleetLocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DeleteFleetLocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DeleteFleetLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_locations::DeleteFleetLocationsError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DeleteFleetLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_locations::DeleteFleetLocationsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl DeleteFleetLocationsFluentBuilder {
             crate::operation::delete_fleet_locations::DeleteFleetLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleet_locations::DeleteFleetLocationsError>,
     > {
         self.customize_middleware().await
     }
@@ -150,10 +137,7 @@ impl DeleteFleetLocationsFluentBuilder {
         self
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_locations(input);
         self
     }

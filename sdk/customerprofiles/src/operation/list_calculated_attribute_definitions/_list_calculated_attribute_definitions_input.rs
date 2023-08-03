@@ -29,16 +29,14 @@ impl ListCalculatedAttributeDefinitionsInput {
 }
 impl ListCalculatedAttributeDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListCalculatedAttributeDefinitionsInput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput).
-    pub fn builder() -> crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsInputBuilder {
         crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCalculatedAttributeDefinitionsInput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculatedAttributeDefinitionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl ListCalculatedAttributeDefinitionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCalculatedAttributeDefinitionsInput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput {
-                domain_name: self.domain_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                domain_name: self.domain_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

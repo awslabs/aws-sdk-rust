@@ -168,9 +168,7 @@ impl AudioParameters {
 
 /// A builder for [`AudioParameters`](crate::types::AudioParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioParametersBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) sample_rate: ::std::option::Option<::std::string::String>,
@@ -314,10 +312,7 @@ impl AudioParametersBuilder {
     /// <li> <p> <code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven MOS tracks</p> </li>
     /// <li> <p> <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
     /// </ul>
-    pub fn audio_packing_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_packing_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_packing_mode = ::std::option::Option::Some(input.into());
         self
     }
@@ -363,10 +358,7 @@ impl AudioParametersBuilder {
     /// <li> <p> <code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven MOS tracks</p> </li>
     /// <li> <p> <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
     /// </ul>
-    pub fn set_audio_packing_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_packing_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_packing_mode = input;
         self
     }
@@ -425,10 +417,7 @@ impl AudioParametersBuilder {
     /// <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile to use. Valid values include:</p>
     /// <p> <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
-    pub fn set_codec_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioCodecOptions>,
-    ) -> Self {
+    pub fn set_codec_options(mut self, input: ::std::option::Option<crate::types::AudioCodecOptions>) -> Self {
         self.codec_options = input;
         self
     }

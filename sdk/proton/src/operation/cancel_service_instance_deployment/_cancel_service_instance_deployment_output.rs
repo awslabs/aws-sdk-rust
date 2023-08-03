@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelServiceInstanceDeploymentOutput
 }
 impl CancelServiceInstanceDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder {
         crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelServiceInstanceDeploymentOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CancelServiceInstanceDeploymentOutputBuilder {
         self
     }
     /// <p>The service instance summary data that's returned by Proton.</p>
-    pub fn set_service_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceInstance>,
-    ) -> Self {
+    pub fn set_service_instance(mut self, input: ::std::option::Option<crate::types::ServiceInstance>) -> Self {
         self.service_instance = input;
         self
     }
@@ -63,13 +58,9 @@ impl CancelServiceInstanceDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput
-    {
+    pub fn build(self) -> crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput {
         crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput {
-            service_instance: self.service_instance
-            ,
+            service_instance: self.service_instance,
             _request_id: self._request_id,
         }
     }

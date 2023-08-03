@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNotificationChannelOutput {
 }
 impl DeleteNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationChannelOutput`](crate::operation::delete_notification_channel::DeleteNotificationChannelOutput).
-    pub fn builder() -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelOutputBuilder{
+    pub fn builder() -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelOutputBuilder {
         crate::operation::delete_notification_channel::builders::DeleteNotificationChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationChannelOutput`](crate::operation::delete_notification_channel::DeleteNotificationChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationChannelOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteNotificationChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteNotificationChannelOutput`](crate::operation::delete_notification_channel::DeleteNotificationChannelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_notification_channel::DeleteNotificationChannelOutput {
+    pub fn build(self) -> crate::operation::delete_notification_channel::DeleteNotificationChannelOutput {
         crate::operation::delete_notification_channel::DeleteNotificationChannelOutput {
             _request_id: self._request_id,
         }

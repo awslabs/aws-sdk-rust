@@ -10,10 +10,7 @@ impl CreateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_channel::CreateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel::CreateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_channel();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateChannelFluentBuilder {
         }
     }
     /// Access the CreateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl CreateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,18 +110,12 @@ impl CreateChannelFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
@@ -171,10 +157,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.inner = self.inner.set_privacy(input);
         self
     }
@@ -197,18 +180,12 @@ impl CreateChannelFluentBuilder {
         self.inner.get_metadata()
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -226,10 +203,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The tags for the creation request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -275,17 +249,12 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The ARNs of the channel members in the request.</p>
-    pub fn set_member_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_member_arns(input);
         self
     }
     /// <p>The ARNs of the channel members in the request.</p>
-    pub fn get_member_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_member_arns()
     }
     /// Appends an item to `ModeratorArns`.
@@ -293,47 +262,31 @@ impl CreateChannelFluentBuilder {
     /// To override the contents of this collection use [`set_moderator_arns`](Self::set_moderator_arns).
     ///
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn moderator_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn moderator_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.moderator_arns(input.into());
         self
     }
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn set_moderator_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_moderator_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_moderator_arns(input);
         self
     }
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn get_moderator_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_moderator_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_moderator_arns()
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn elastic_channel_configuration(
-        mut self,
-        input: crate::types::ElasticChannelConfiguration,
-    ) -> Self {
+    pub fn elastic_channel_configuration(mut self, input: crate::types::ElasticChannelConfiguration) -> Self {
         self.inner = self.inner.elastic_channel_configuration(input);
         self
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn set_elastic_channel_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
-    ) -> Self {
+    pub fn set_elastic_channel_configuration(mut self, input: ::std::option::Option<crate::types::ElasticChannelConfiguration>) -> Self {
         self.inner = self.inner.set_elastic_channel_configuration(input);
         self
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn get_elastic_channel_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
+    pub fn get_elastic_channel_configuration(&self) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
         self.inner.get_elastic_channel_configuration()
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
@@ -342,17 +295,12 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.inner = self.inner.set_expiration_settings(input);
         self
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         self.inner.get_expiration_settings()
     }
 }

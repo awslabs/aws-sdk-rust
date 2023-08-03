@@ -26,7 +26,7 @@ impl ListResolverDnssecConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResolverDnssecConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder,
+    inner: crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder,
 }
 impl ListResolverDnssecConfigsFluentBuilder {
     /// Creates a new `ListResolverDnssecConfigs`.
@@ -37,7 +37,7 @@ impl ListResolverDnssecConfigsFluentBuilder {
         }
     }
     /// Access the ListResolverDnssecConfigs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListResolverDnssecConfigsFluentBuilder {
             crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListResolverDnssecConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListResolverDnssecConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListResolverDnssecConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListResolverDnssecConfigsFluentBuilder {
             crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator {
         crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p> <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
@@ -173,10 +159,7 @@ impl ListResolverDnssecConfigsFluentBuilder {
         self
     }
     /// <p>An optional specification to return a subset of objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

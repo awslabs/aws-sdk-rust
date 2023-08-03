@@ -11,8 +11,7 @@ pub struct GetEventPredictionOutput {
     pub rule_results: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
     /// <p>The model scores for Amazon SageMaker models.</p>
     #[doc(hidden)]
-    pub external_model_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>,
+    pub external_model_outputs: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>,
     _request_id: Option<String>,
 }
 impl GetEventPredictionOutput {
@@ -25,9 +24,7 @@ impl GetEventPredictionOutput {
         self.rule_results.as_deref()
     }
     /// <p>The model scores for Amazon SageMaker models.</p>
-    pub fn external_model_outputs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExternalModelOutputs]> {
+    pub fn external_model_outputs(&self) -> ::std::option::Option<&[crate::types::ExternalModelOutputs]> {
         self.external_model_outputs.as_deref()
     }
 }
@@ -38,22 +35,18 @@ impl ::aws_http::request_id::RequestId for GetEventPredictionOutput {
 }
 impl GetEventPredictionOutput {
     /// Creates a new builder-style object to manufacture [`GetEventPredictionOutput`](crate::operation::get_event_prediction::GetEventPredictionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_event_prediction::builders::GetEventPredictionOutputBuilder {
+    pub fn builder() -> crate::operation::get_event_prediction::builders::GetEventPredictionOutputBuilder {
         crate::operation::get_event_prediction::builders::GetEventPredictionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventPredictionOutput`](crate::operation::get_event_prediction::GetEventPredictionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventPredictionOutputBuilder {
     pub(crate) model_scores: ::std::option::Option<::std::vec::Vec<crate::types::ModelScores>>,
     pub(crate) rule_results: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
-    pub(crate) external_model_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>,
+    pub(crate) external_model_outputs: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>,
     _request_id: Option<String>,
 }
 impl GetEventPredictionOutputBuilder {
@@ -69,17 +62,12 @@ impl GetEventPredictionOutputBuilder {
         self
     }
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-    pub fn set_model_scores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelScores>>,
-    ) -> Self {
+    pub fn set_model_scores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelScores>>) -> Self {
         self.model_scores = input;
         self
     }
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-    pub fn get_model_scores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelScores>> {
+    pub fn get_model_scores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelScores>> {
         &self.model_scores
     }
     /// Appends an item to `rule_results`.
@@ -94,17 +82,12 @@ impl GetEventPredictionOutputBuilder {
         self
     }
     /// <p>The results from the rules.</p>
-    pub fn set_rule_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
-    ) -> Self {
+    pub fn set_rule_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>) -> Self {
         self.rule_results = input;
         self
     }
     /// <p>The results from the rules.</p>
-    pub fn get_rule_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleResult>> {
+    pub fn get_rule_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleResult>> {
         &self.rule_results
     }
     /// Appends an item to `external_model_outputs`.
@@ -119,17 +102,12 @@ impl GetEventPredictionOutputBuilder {
         self
     }
     /// <p>The model scores for Amazon SageMaker models.</p>
-    pub fn set_external_model_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>,
-    ) -> Self {
+    pub fn set_external_model_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>>) -> Self {
         self.external_model_outputs = input;
         self
     }
     /// <p>The model scores for Amazon SageMaker models.</p>
-    pub fn get_external_model_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>> {
+    pub fn get_external_model_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalModelOutputs>> {
         &self.external_model_outputs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

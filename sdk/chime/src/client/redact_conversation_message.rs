@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`message_id(impl ::std::convert::Into<String>)`](crate::operation::redact_conversation_message::builders::RedactConversationMessageFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::redact_conversation_message::builders::RedactConversationMessageFluentBuilder::set_message_id): <p>The message ID.</p>
     /// - On success, responds with [`RedactConversationMessageOutput`](crate::operation::redact_conversation_message::RedactConversationMessageOutput)
     /// - On failure, responds with [`SdkError<RedactConversationMessageError>`](crate::operation::redact_conversation_message::RedactConversationMessageError)
-    pub fn redact_conversation_message(&self) -> crate::operation::redact_conversation_message::builders::RedactConversationMessageFluentBuilder{
+    pub fn redact_conversation_message(&self) -> crate::operation::redact_conversation_message::builders::RedactConversationMessageFluentBuilder {
         crate::operation::redact_conversation_message::builders::RedactConversationMessageFluentBuilder::new(self.handle.clone())
     }
 }

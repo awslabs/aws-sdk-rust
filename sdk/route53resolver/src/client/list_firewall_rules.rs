@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_firewall_rules::ListFirewallRulesOutput::next_token): <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     ///   - [`firewall_rules(Option<Vec<FirewallRule>>)`](crate::operation::list_firewall_rules::ListFirewallRulesOutput::firewall_rules): <p>A list of the rules that you have defined. </p>  <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     /// - On failure, responds with [`SdkError<ListFirewallRulesError>`](crate::operation::list_firewall_rules::ListFirewallRulesError)
-    pub fn list_firewall_rules(
-        &self,
-    ) -> crate::operation::list_firewall_rules::builders::ListFirewallRulesFluentBuilder {
-        crate::operation::list_firewall_rules::builders::ListFirewallRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_firewall_rules(&self) -> crate::operation::list_firewall_rules::builders::ListFirewallRulesFluentBuilder {
+        crate::operation::list_firewall_rules::builders::ListFirewallRulesFluentBuilder::new(self.handle.clone())
     }
 }

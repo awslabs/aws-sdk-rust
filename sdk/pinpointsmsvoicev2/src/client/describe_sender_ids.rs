@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`sender_ids(Option<Vec<SenderIdInformation>>)`](crate::operation::describe_sender_ids::DescribeSenderIdsOutput::sender_ids): <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_sender_ids::DescribeSenderIdsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeSenderIdsError>`](crate::operation::describe_sender_ids::DescribeSenderIdsError)
-    pub fn describe_sender_ids(
-        &self,
-    ) -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsFluentBuilder {
-        crate::operation::describe_sender_ids::builders::DescribeSenderIdsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_sender_ids(&self) -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsFluentBuilder {
+        crate::operation::describe_sender_ids::builders::DescribeSenderIdsFluentBuilder::new(self.handle.clone())
     }
 }

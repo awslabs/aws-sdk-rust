@@ -86,9 +86,7 @@ impl Address {
 
 /// A builder for [`Address`](crate::types::Address).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressBuilder {
     pub(crate) address1: ::std::option::Option<::std::string::String>,
     pub(crate) address2: ::std::option::Option<::std::string::String>,

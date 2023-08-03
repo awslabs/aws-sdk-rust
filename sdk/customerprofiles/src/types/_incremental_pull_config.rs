@@ -23,26 +23,18 @@ impl IncrementalPullConfig {
 
 /// A builder for [`IncrementalPullConfig`](crate::types::IncrementalPullConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncrementalPullConfigBuilder {
     pub(crate) datetime_type_field_name: ::std::option::Option<::std::string::String>,
 }
 impl IncrementalPullConfigBuilder {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
-    pub fn datetime_type_field_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datetime_type_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datetime_type_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
-    pub fn set_datetime_type_field_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datetime_type_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datetime_type_field_name = input;
         self
     }

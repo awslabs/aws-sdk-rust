@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<OriginEndpointListConfiguration>>)`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput::items): <p>The objects being returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput::next_token): <p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListOriginEndpointsError>`](crate::operation::list_origin_endpoints::ListOriginEndpointsError)
-    pub fn list_origin_endpoints(
-        &self,
-    ) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_origin_endpoints(&self) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder {
+        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

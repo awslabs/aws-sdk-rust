@@ -28,7 +28,7 @@ impl StartMlEvaluationTaskRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMLEvaluationTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder,
+    inner: crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder,
 }
 impl StartMLEvaluationTaskRunFluentBuilder {
     /// Creates a new `StartMLEvaluationTaskRun`.
@@ -39,7 +39,7 @@ impl StartMLEvaluationTaskRunFluentBuilder {
         }
     }
     /// Access the StartMLEvaluationTaskRun as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl StartMLEvaluationTaskRunFluentBuilder {
             crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl StartMLEvaluationTaskRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl StartMLEvaluationTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl StartMLEvaluationTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl StartMLEvaluationTaskRunFluentBuilder {
             crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError>,
     > {
         self.customize_middleware().await
     }

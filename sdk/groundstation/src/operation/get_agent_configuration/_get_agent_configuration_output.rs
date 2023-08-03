@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAgentConfigurationOutput {
 }
 impl GetAgentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAgentConfigurationOutput`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationOutputBuilder {
         crate::operation::get_agent_configuration::builders::GetAgentConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAgentConfigurationOutput`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAgentConfigurationOutputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) tasking_document: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl GetAgentConfigurationOutputBuilder {
         &self.agent_id
     }
     /// <p>Tasking document for agent.</p>
-    pub fn tasking_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tasking_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tasking_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Tasking document for agent.</p>
-    pub fn set_tasking_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tasking_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tasking_document = input;
         self
     }

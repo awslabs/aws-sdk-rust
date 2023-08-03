@@ -15,17 +15,14 @@ impl CreateDefaultVpcInput {
 }
 impl CreateDefaultVpcInput {
     /// Creates a new builder-style object to manufacture [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
-    pub fn builder() -> crate::operation::create_default_vpc::builders::CreateDefaultVpcInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_default_vpc::builders::CreateDefaultVpcInputBuilder {
         crate::operation::create_default_vpc::builders::CreateDefaultVpcInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDefaultVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -47,14 +44,7 @@ impl CreateDefaultVpcInputBuilder {
     /// Consumes the builder and constructs a [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_default_vpc::CreateDefaultVpcInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_default_vpc::CreateDefaultVpcInput {
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_default_vpc::CreateDefaultVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_default_vpc::CreateDefaultVpcInput { dry_run: self.dry_run })
     }
 }

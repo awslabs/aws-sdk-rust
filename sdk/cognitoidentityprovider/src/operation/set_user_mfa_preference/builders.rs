@@ -37,10 +37,7 @@ impl SetUserMFAPreferenceFluentBuilder {
         }
     }
     /// Access the SetUserMFAPreference as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SetUserMFAPreferenceFluentBuilder {
             crate::operation::set_user_mfa_preference::SetUserMFAPreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SetUserMFAPreferenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SetUserMFAPreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SetUserMFAPreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl SetUserMFAPreferenceFluentBuilder {
             crate::operation::set_user_mfa_preference::SetUserMFAPreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl SetUserMFAPreferenceFluentBuilder {
         self
     }
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
-    pub fn set_sms_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaSettingsType>,
-    ) -> Self {
+    pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
         self.inner = self.inner.set_sms_mfa_settings(input);
         self
     }
@@ -141,25 +124,17 @@ impl SetUserMFAPreferenceFluentBuilder {
         self.inner.get_sms_mfa_settings()
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    pub fn software_token_mfa_settings(
-        mut self,
-        input: crate::types::SoftwareTokenMfaSettingsType,
-    ) -> Self {
+    pub fn software_token_mfa_settings(mut self, input: crate::types::SoftwareTokenMfaSettingsType) -> Self {
         self.inner = self.inner.software_token_mfa_settings(input);
         self
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    pub fn set_software_token_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
         self.inner = self.inner.set_software_token_mfa_settings(input);
         self
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    pub fn get_software_token_mfa_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+    pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
         self.inner.get_software_token_mfa_settings()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>

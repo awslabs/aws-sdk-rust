@@ -24,9 +24,7 @@ pub struct DataValue {
     pub list_value: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>,
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
     #[doc(hidden)]
-    pub map_value: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataValue>,
-    >,
+    pub map_value: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>,
     /// <p>A value that relates a component to another component.</p>
     #[doc(hidden)]
     pub relationship_value: ::std::option::Option<crate::types::RelationshipValue>,
@@ -60,11 +58,7 @@ impl DataValue {
         self.list_value.as_deref()
     }
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    pub fn map_value(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::DataValue>,
-    > {
+    pub fn map_value(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DataValue>> {
         self.map_value.as_ref()
     }
     /// <p>A value that relates a component to another component.</p>
@@ -85,9 +79,7 @@ impl DataValue {
 
 /// A builder for [`DataValue`](crate::types::DataValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataValueBuilder {
     pub(crate) boolean_value: ::std::option::Option<bool>,
     pub(crate) double_value: ::std::option::Option<f64>,
@@ -95,9 +87,7 @@ pub struct DataValueBuilder {
     pub(crate) long_value: ::std::option::Option<i64>,
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
     pub(crate) list_value: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>,
-    pub(crate) map_value: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataValue>,
-    >,
+    pub(crate) map_value: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>,
     pub(crate) relationship_value: ::std::option::Option<crate::types::RelationshipValue>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
@@ -184,17 +174,12 @@ impl DataValueBuilder {
         self
     }
     /// <p>A list of multiple values.</p>
-    pub fn set_list_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>,
-    ) -> Self {
+    pub fn set_list_value(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>) -> Self {
         self.list_value = input;
         self
     }
     /// <p>A list of multiple values.</p>
-    pub fn get_list_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataValue>> {
+    pub fn get_list_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataValue>> {
         &self.list_value
     }
     /// Adds a key-value pair to `map_value`.
@@ -202,11 +187,7 @@ impl DataValueBuilder {
     /// To override the contents of this collection use [`set_map_value`](Self::set_map_value).
     ///
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    pub fn map_value(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::DataValue,
-    ) -> Self {
+    pub fn map_value(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DataValue) -> Self {
         let mut hash_map = self.map_value.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.map_value = ::std::option::Option::Some(hash_map);
@@ -215,19 +196,13 @@ impl DataValueBuilder {
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
     pub fn set_map_value(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::DataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>,
     ) -> Self {
         self.map_value = input;
         self
     }
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    pub fn get_map_value(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataValue>,
-    > {
+    pub fn get_map_value(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataValue>> {
         &self.map_value
     }
     /// <p>A value that relates a component to another component.</p>
@@ -236,17 +211,12 @@ impl DataValueBuilder {
         self
     }
     /// <p>A value that relates a component to another component.</p>
-    pub fn set_relationship_value(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipValue>,
-    ) -> Self {
+    pub fn set_relationship_value(mut self, input: ::std::option::Option<crate::types::RelationshipValue>) -> Self {
         self.relationship_value = input;
         self
     }
     /// <p>A value that relates a component to another component.</p>
-    pub fn get_relationship_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationshipValue> {
+    pub fn get_relationship_value(&self) -> &::std::option::Option<crate::types::RelationshipValue> {
         &self.relationship_value
     }
     /// <p>An expression that produces the value.</p>

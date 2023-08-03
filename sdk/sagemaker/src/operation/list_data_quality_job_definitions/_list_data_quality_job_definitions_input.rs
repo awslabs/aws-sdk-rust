@@ -64,16 +64,14 @@ impl ListDataQualityJobDefinitionsInput {
 }
 impl ListDataQualityJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityJobDefinitionsInput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput).
-    pub fn builder() -> crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsInputBuilder {
         crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityJobDefinitionsInput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityJobDefinitionsInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
@@ -86,18 +84,12 @@ pub struct ListDataQualityJobDefinitionsInputBuilder {
 }
 impl ListDataQualityJobDefinitionsInputBuilder {
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -111,17 +103,12 @@ impl ListDataQualityJobDefinitionsInputBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
         &self.sort_by
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -167,18 +154,12 @@ impl ListDataQualityJobDefinitionsInputBuilder {
         &self.max_results
     }
     /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -192,10 +173,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -209,10 +187,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -227,25 +202,15 @@ impl ListDataQualityJobDefinitionsInputBuilder {
         crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput {
-                endpoint_name: self.endpoint_name
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                name_contains: self.name_contains
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                creation_time_after: self.creation_time_after
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput {
+            endpoint_name: self.endpoint_name,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+            creation_time_before: self.creation_time_before,
+            creation_time_after: self.creation_time_after,
+        })
     }
 }

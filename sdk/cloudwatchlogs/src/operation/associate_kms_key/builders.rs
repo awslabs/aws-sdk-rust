@@ -10,10 +10,7 @@ impl AssociateKmsKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_kms_key::AssociateKmsKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_kms_key::AssociateKmsKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_kms_key::AssociateKmsKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_kms_key();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl AssociateKmsKeyFluentBuilder {
         }
     }
     /// Access the AssociateKmsKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_kms_key::builders::AssociateKmsKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_kms_key::builders::AssociateKmsKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl AssociateKmsKeyFluentBuilder {
             crate::operation::associate_kms_key::AssociateKmsKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_kms_key::AssociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_kms_key::AssociateKmsKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl AssociateKmsKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl AssociateKmsKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_kms_key::AssociateKmsKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_kms_key::AssociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_kms_key::AssociateKmsKeyError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl AssociateKmsKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_kms_key::AssociateKmsKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_kms_key::AssociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_kms_key::AssociateKmsKeyError>,
     > {
         self.send_middleware().await
     }
@@ -127,27 +113,19 @@ impl AssociateKmsKeyFluentBuilder {
             crate::operation::associate_kms_key::AssociateKmsKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_kms_key::AssociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_kms_key::AssociateKmsKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -176,10 +154,7 @@ impl AssociateKmsKeyFluentBuilder {
     /// <li> <p>Specify the ARN of a log group to have CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>
     /// </ul>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
@@ -189,10 +164,7 @@ impl AssociateKmsKeyFluentBuilder {
     /// <li> <p>Specify the ARN of a log group to have CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>
     /// </ul>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

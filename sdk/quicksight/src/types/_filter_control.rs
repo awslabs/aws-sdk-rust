@@ -29,9 +29,7 @@ pub struct FilterControl {
 }
 impl FilterControl {
     /// <p>A control from a date filter that is used to specify date and time.</p>
-    pub fn date_time_picker(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilterDateTimePickerControl> {
+    pub fn date_time_picker(&self) -> ::std::option::Option<&crate::types::FilterDateTimePickerControl> {
         self.date_time_picker.as_ref()
     }
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
@@ -55,9 +53,7 @@ impl FilterControl {
         self.slider.as_ref()
     }
     /// <p>A control from a date filter that is used to specify the relative date.</p>
-    pub fn relative_date_time(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilterRelativeDateTimeControl> {
+    pub fn relative_date_time(&self) -> ::std::option::Option<&crate::types::FilterRelativeDateTimeControl> {
         self.relative_date_time.as_ref()
     }
 }
@@ -70,9 +66,7 @@ impl FilterControl {
 
 /// A builder for [`FilterControl`](crate::types::FilterControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterControlBuilder {
     pub(crate) date_time_picker: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
     pub(crate) list: ::std::option::Option<crate::types::FilterListControl>,
@@ -80,8 +74,7 @@ pub struct FilterControlBuilder {
     pub(crate) text_field: ::std::option::Option<crate::types::FilterTextFieldControl>,
     pub(crate) text_area: ::std::option::Option<crate::types::FilterTextAreaControl>,
     pub(crate) slider: ::std::option::Option<crate::types::FilterSliderControl>,
-    pub(crate) relative_date_time:
-        ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
+    pub(crate) relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
 }
 impl FilterControlBuilder {
     /// <p>A control from a date filter that is used to specify date and time.</p>
@@ -90,17 +83,12 @@ impl FilterControlBuilder {
         self
     }
     /// <p>A control from a date filter that is used to specify date and time.</p>
-    pub fn set_date_time_picker(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
-    ) -> Self {
+    pub fn set_date_time_picker(mut self, input: ::std::option::Option<crate::types::FilterDateTimePickerControl>) -> Self {
         self.date_time_picker = input;
         self
     }
     /// <p>A control from a date filter that is used to specify date and time.</p>
-    pub fn get_date_time_picker(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterDateTimePickerControl> {
+    pub fn get_date_time_picker(&self) -> &::std::option::Option<crate::types::FilterDateTimePickerControl> {
         &self.date_time_picker
     }
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
@@ -109,10 +97,7 @@ impl FilterControlBuilder {
         self
     }
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
-    pub fn set_list(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterListControl>,
-    ) -> Self {
+    pub fn set_list(mut self, input: ::std::option::Option<crate::types::FilterListControl>) -> Self {
         self.list = input;
         self
     }
@@ -126,10 +111,7 @@ impl FilterControlBuilder {
         self
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
-    pub fn set_dropdown(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterDropDownControl>,
-    ) -> Self {
+    pub fn set_dropdown(mut self, input: ::std::option::Option<crate::types::FilterDropDownControl>) -> Self {
         self.dropdown = input;
         self
     }
@@ -143,10 +125,7 @@ impl FilterControlBuilder {
         self
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
-    pub fn set_text_field(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterTextFieldControl>,
-    ) -> Self {
+    pub fn set_text_field(mut self, input: ::std::option::Option<crate::types::FilterTextFieldControl>) -> Self {
         self.text_field = input;
         self
     }
@@ -160,10 +139,7 @@ impl FilterControlBuilder {
         self
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
-    pub fn set_text_area(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterTextAreaControl>,
-    ) -> Self {
+    pub fn set_text_area(mut self, input: ::std::option::Option<crate::types::FilterTextAreaControl>) -> Self {
         self.text_area = input;
         self
     }
@@ -177,10 +153,7 @@ impl FilterControlBuilder {
         self
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
-    pub fn set_slider(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterSliderControl>,
-    ) -> Self {
+    pub fn set_slider(mut self, input: ::std::option::Option<crate::types::FilterSliderControl>) -> Self {
         self.slider = input;
         self
     }
@@ -189,25 +162,17 @@ impl FilterControlBuilder {
         &self.slider
     }
     /// <p>A control from a date filter that is used to specify the relative date.</p>
-    pub fn relative_date_time(
-        mut self,
-        input: crate::types::FilterRelativeDateTimeControl,
-    ) -> Self {
+    pub fn relative_date_time(mut self, input: crate::types::FilterRelativeDateTimeControl) -> Self {
         self.relative_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control from a date filter that is used to specify the relative date.</p>
-    pub fn set_relative_date_time(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
-    ) -> Self {
+    pub fn set_relative_date_time(mut self, input: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>) -> Self {
         self.relative_date_time = input;
         self
     }
     /// <p>A control from a date filter that is used to specify the relative date.</p>
-    pub fn get_relative_date_time(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterRelativeDateTimeControl> {
+    pub fn get_relative_date_time(&self) -> &::std::option::Option<crate::types::FilterRelativeDateTimeControl> {
         &self.relative_date_time
     }
     /// Consumes the builder and constructs a [`FilterControl`](crate::types::FilterControl).

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelModeratorOutput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput) with field(s):
     ///   - [`channel_moderator(Option<ChannelModerator>)`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput::channel_moderator): <p>The details of the channel moderator.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelModeratorError>`](crate::operation::describe_channel_moderator::DescribeChannelModeratorError)
-    pub fn describe_channel_moderator(
-        &self,
-    ) -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorFluentBuilder
-    {
+    pub fn describe_channel_moderator(&self) -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorFluentBuilder {
         crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorFluentBuilder::new(self.handle.clone())
     }
 }

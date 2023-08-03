@@ -9,10 +9,7 @@ pub fn ser_update_virtual_service_input(
     if let Some(var_2) = &input.spec {
         #[allow(unused_mut)]
         let mut object_3 = object.key("spec").start_object();
-        crate::protocol_serde::shape_virtual_service_spec::ser_virtual_service_spec(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_virtual_service_spec::ser_virtual_service_spec(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ListOpenIdConnectProviderTagsOutput {
 }
 impl ListOpenIdConnectProviderTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProviderTagsOutput`](crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput).
-    pub fn builder() -> crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsOutputBuilder{
+    pub fn builder() -> crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsOutputBuilder {
         crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpenIdConnectProviderTagsOutput`](crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpenIdConnectProviderTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
@@ -64,10 +62,7 @@ impl ListOpenIdConnectProviderTagsOutputBuilder {
         self
     }
     /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -113,10 +108,7 @@ impl ListOpenIdConnectProviderTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOpenIdConnectProviderTagsOutput`](crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput
-    {
+    pub fn build(self) -> crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput {
         crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput {
             tags: self.tags,
             is_truncated: self.is_truncated.unwrap_or_default(),

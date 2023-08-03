@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`description(Option<FlowTemplateDescription>)`](crate::operation::get_flow_template::GetFlowTemplateOutput::description): <p>The object that describes the specified workflow.</p>
     /// - On failure, responds with [`SdkError<GetFlowTemplateError>`](crate::operation::get_flow_template::GetFlowTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_flow_template(
-        &self,
-    ) -> crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder {
-        crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_flow_template(&self) -> crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder {
+        crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::new(self.handle.clone())
     }
 }

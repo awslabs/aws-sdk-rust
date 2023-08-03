@@ -22,34 +22,26 @@ impl EvaluatePullRequestApprovalRulesInput {
 }
 impl EvaluatePullRequestApprovalRulesInput {
     /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesInput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput).
-    pub fn builder() -> crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesInputBuilder{
+    pub fn builder() -> crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesInputBuilder {
         crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`EvaluatePullRequestApprovalRulesInput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluatePullRequestApprovalRulesInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluatePullRequestApprovalRulesInputBuilder {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -72,14 +64,17 @@ impl EvaluatePullRequestApprovalRulesInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`EvaluatePullRequestApprovalRulesInput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput {
-                pull_request_id: self.pull_request_id
-                ,
-                revision_id: self.revision_id
-                ,
-            }
+                pull_request_id: self.pull_request_id,
+                revision_id: self.revision_id,
+            },
         )
     }
 }

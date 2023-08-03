@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     ///   - [`recovery_points(Option<Vec<RecoveryPointByResource>>)`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput::recovery_points): <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>   <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>  </note>
     /// - On failure, responds with [`SdkError<ListRecoveryPointsByResourceError>`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceError)
-    pub fn list_recovery_points_by_resource(&self) -> crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder{
+    pub fn list_recovery_points_by_resource(
+        &self,
+    ) -> crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder {
         crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::new(self.handle.clone())
     }
 }

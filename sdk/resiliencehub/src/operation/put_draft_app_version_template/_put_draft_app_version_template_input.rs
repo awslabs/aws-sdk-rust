@@ -152,16 +152,14 @@ impl PutDraftAppVersionTemplateInput {
 }
 impl PutDraftAppVersionTemplateInput {
     /// Creates a new builder-style object to manufacture [`PutDraftAppVersionTemplateInput`](crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput).
-    pub fn builder() -> crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder{
+    pub fn builder() -> crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder {
         crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`PutDraftAppVersionTemplateInput`](crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDraftAppVersionTemplateInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_template_body: ::std::option::Option<::std::string::String>,
@@ -247,10 +245,7 @@ impl PutDraftAppVersionTemplateInputBuilder {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    pub fn app_template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_template_body = ::std::option::Option::Some(input.into());
         self
     }
@@ -320,10 +315,7 @@ impl PutDraftAppVersionTemplateInputBuilder {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    pub fn set_app_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_template_body = input;
         self
     }
@@ -403,11 +395,9 @@ impl PutDraftAppVersionTemplateInputBuilder {
         crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput {
-                app_arn: self.app_arn,
-                app_template_body: self.app_template_body,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput {
+            app_arn: self.app_arn,
+            app_template_body: self.app_template_body,
+        })
     }
 }

@@ -15,17 +15,14 @@ impl GetImportFileTaskInput {
 }
 impl GetImportFileTaskInput {
     /// Creates a new builder-style object to manufacture [`GetImportFileTaskInput`](crate::operation::get_import_file_task::GetImportFileTaskInput).
-    pub fn builder(
-    ) -> crate::operation::get_import_file_task::builders::GetImportFileTaskInputBuilder {
+    pub fn builder() -> crate::operation::get_import_file_task::builders::GetImportFileTaskInputBuilder {
         crate::operation::get_import_file_task::builders::GetImportFileTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetImportFileTaskInput`](crate::operation::get_import_file_task::GetImportFileTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImportFileTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetImportFileTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetImportFileTaskInput`](crate::operation::get_import_file_task::GetImportFileTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_import_file_task::GetImportFileTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_import_file_task::GetImportFileTaskInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_import_file_task::GetImportFileTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_import_file_task::GetImportFileTaskInput { id: self.id })
     }
 }

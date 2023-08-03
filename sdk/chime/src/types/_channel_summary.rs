@@ -128,10 +128,7 @@ impl ChannelSummaryBuilder {
         self
     }
     /// <p>The privacy setting of the channel.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.privacy = input;
         self
     }
@@ -159,17 +156,12 @@ impl ChannelSummaryBuilder {
         self
     }
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub fn set_last_message_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_message_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_message_timestamp = input;
         self
     }
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub fn get_last_message_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_message_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_message_timestamp
     }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).

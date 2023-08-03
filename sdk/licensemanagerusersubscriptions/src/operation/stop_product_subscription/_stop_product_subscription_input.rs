@@ -36,18 +36,14 @@ impl StopProductSubscriptionInput {
 }
 impl StopProductSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`StopProductSubscriptionInput`](crate::operation::stop_product_subscription::StopProductSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder {
         crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopProductSubscriptionInput`](crate::operation::stop_product_subscription::StopProductSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopProductSubscriptionInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
@@ -75,10 +71,7 @@ impl StopProductSubscriptionInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -121,13 +114,11 @@ impl StopProductSubscriptionInputBuilder {
         crate::operation::stop_product_subscription::StopProductSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_product_subscription::StopProductSubscriptionInput {
-                username: self.username,
-                identity_provider: self.identity_provider,
-                product: self.product,
-                domain: self.domain,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_product_subscription::StopProductSubscriptionInput {
+            username: self.username,
+            identity_provider: self.identity_provider,
+            product: self.product,
+            domain: self.domain,
+        })
     }
 }

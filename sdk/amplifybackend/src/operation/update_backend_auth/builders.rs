@@ -10,10 +10,7 @@ impl UpdateBackendAuthInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_backend_auth::UpdateBackendAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_auth::UpdateBackendAuthError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_auth::UpdateBackendAuthError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_backend_auth();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBackendAuthFluentBuilder {
         }
     }
     /// Access the UpdateBackendAuth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBackendAuthFluentBuilder {
             crate::operation::update_backend_auth::UpdateBackendAuth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_auth::UpdateBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_auth::UpdateBackendAuthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBackendAuthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBackendAuthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_backend_auth::UpdateBackendAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_auth::UpdateBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_auth::UpdateBackendAuthError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBackendAuthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_backend_auth::UpdateBackendAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_auth::UpdateBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_auth::UpdateBackendAuthError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBackendAuthFluentBuilder {
             crate::operation::update_backend_auth::UpdateBackendAuth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_auth::UpdateBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_auth::UpdateBackendAuthError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateBackendAuthFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
@@ -162,32 +140,21 @@ impl UpdateBackendAuthFluentBuilder {
         self
     }
     /// <p>The resource configuration for this request object.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBackendAuthResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::UpdateBackendAuthResourceConfig>) -> Self {
         self.inner = self.inner.set_resource_config(input);
         self
     }
     /// <p>The resource configuration for this request object.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBackendAuthResourceConfig> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::UpdateBackendAuthResourceConfig> {
         self.inner.get_resource_config()
     }
     /// <p>The name of this resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of this resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

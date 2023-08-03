@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAgreementOutput {
 }
 impl DescribeAgreementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder {
+    pub fn builder() -> crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder {
         crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgreementOutputBuilder {
     pub(crate) agreement: ::std::option::Option<crate::types::DescribedAgreement>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeAgreementOutputBuilder {
         self
     }
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
-    pub fn set_agreement(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedAgreement>,
-    ) -> Self {
+    pub fn set_agreement(mut self, input: ::std::option::Option<crate::types::DescribedAgreement>) -> Self {
         self.agreement = input;
         self
     }

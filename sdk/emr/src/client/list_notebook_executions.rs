@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`notebook_executions(Option<Vec<NotebookExecutionSummary>>)`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput::notebook_executions): <p>A list of notebook executions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput::marker): <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListNotebookExecutionsError>`](crate::operation::list_notebook_executions::ListNotebookExecutionsError)
-    pub fn list_notebook_executions(
-        &self,
-    ) -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsFluentBuilder
-    {
+    pub fn list_notebook_executions(&self) -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsFluentBuilder {
         crate::operation::list_notebook_executions::builders::ListNotebookExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl GetConnectPeerAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectPeerAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder,
+    inner: crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder,
 }
 impl GetConnectPeerAssociationsFluentBuilder {
     /// Creates a new `GetConnectPeerAssociations`.
@@ -37,7 +37,7 @@ impl GetConnectPeerAssociationsFluentBuilder {
         }
     }
     /// Access the GetConnectPeerAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetConnectPeerAssociationsFluentBuilder {
             crate::operation::get_connect_peer_associations::GetConnectPeerAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetConnectPeerAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetConnectPeerAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetConnectPeerAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl GetConnectPeerAssociationsFluentBuilder {
             crate::operation::get_connect_peer_associations::GetConnectPeerAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_connect_peer_associations::paginator::GetConnectPeerAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_connect_peer_associations::paginator::GetConnectPeerAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_connect_peer_associations::paginator::GetConnectPeerAssociationsPaginator {
         crate::operation::get_connect_peer_associations::paginator::GetConnectPeerAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -151,25 +134,17 @@ impl GetConnectPeerAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_connect_peer_ids`](Self::set_connect_peer_ids).
     ///
     /// <p>The IDs of the Connect peers.</p>
-    pub fn connect_peer_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_peer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_peer_ids(input.into());
         self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn set_connect_peer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connect_peer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_connect_peer_ids(input);
         self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn get_connect_peer_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connect_peer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_connect_peer_ids()
     }
     /// <p>The maximum number of results to return.</p>

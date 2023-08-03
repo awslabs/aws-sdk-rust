@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for TransferDomainToAnotherAwsAccountOutp
 }
 impl TransferDomainToAnotherAwsAccountOutput {
     /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
-    pub fn builder() -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder{
+    pub fn builder() -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder {
         crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferDomainToAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -83,12 +81,10 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
-    pub fn build(self) -> crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput{
+    pub fn build(self) -> crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput {
         crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput {
-            operation_id: self.operation_id
-            ,
-            password: self.password
-            ,
+            operation_id: self.operation_id,
+            password: self.password,
             _request_id: self._request_id,
         }
     }

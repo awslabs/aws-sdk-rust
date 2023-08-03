@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::update_workflow::UpdateWorkflowOutput::last_modified_time): <p>The time at which the migration workflow was last modified.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::tags): <p>The tags added to the migration workflow.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkflowError>`](crate::operation::update_workflow::UpdateWorkflowError)
-    pub fn update_workflow(
-        &self,
-    ) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
-        crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workflow(&self) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
+        crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

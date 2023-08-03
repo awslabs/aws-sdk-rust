@@ -37,9 +37,7 @@ impl Account {
 
 /// A builder for [`Account`](crate::types::Account).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -80,10 +78,7 @@ impl AccountBuilder {
         self
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.resource_status = input;
         self
     }

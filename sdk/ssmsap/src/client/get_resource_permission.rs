@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetResourcePermissionOutput`](crate::operation::get_resource_permission::GetResourcePermissionOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_resource_permission::GetResourcePermissionOutput::policy): <p></p>
     /// - On failure, responds with [`SdkError<GetResourcePermissionError>`](crate::operation::get_resource_permission::GetResourcePermissionError)
-    pub fn get_resource_permission(
-        &self,
-    ) -> crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder
-    {
-        crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_permission(&self) -> crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder {
+        crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::new(self.handle.clone())
     }
 }

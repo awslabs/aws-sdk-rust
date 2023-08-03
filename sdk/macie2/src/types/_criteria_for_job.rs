@@ -30,9 +30,7 @@ impl CriteriaForJob {
 
 /// A builder for [`CriteriaForJob`](crate::types::CriteriaForJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CriteriaForJobBuilder {
     pub(crate) simple_criterion: ::std::option::Option<crate::types::SimpleCriterionForJob>,
     pub(crate) tag_criterion: ::std::option::Option<crate::types::TagCriterionForJob>,
@@ -44,17 +42,12 @@ impl CriteriaForJobBuilder {
         self
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
-    pub fn set_simple_criterion(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleCriterionForJob>,
-    ) -> Self {
+    pub fn set_simple_criterion(mut self, input: ::std::option::Option<crate::types::SimpleCriterionForJob>) -> Self {
         self.simple_criterion = input;
         self
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
-    pub fn get_simple_criterion(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimpleCriterionForJob> {
+    pub fn get_simple_criterion(&self) -> &::std::option::Option<crate::types::SimpleCriterionForJob> {
         &self.simple_criterion
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
@@ -63,10 +56,7 @@ impl CriteriaForJobBuilder {
         self
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
-    pub fn set_tag_criterion(
-        mut self,
-        input: ::std::option::Option<crate::types::TagCriterionForJob>,
-    ) -> Self {
+    pub fn set_tag_criterion(mut self, input: ::std::option::Option<crate::types::TagCriterionForJob>) -> Self {
         self.tag_criterion = input;
         self
     }

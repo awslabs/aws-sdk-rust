@@ -10,10 +10,7 @@ impl GetBucketAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_acl::GetBucketAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_acl::GetBucketAclError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_acl::GetBucketAclError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_bucket_acl();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl GetBucketAclFluentBuilder {
         }
     }
     /// Access the GetBucketAcl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bucket_acl::builders::GetBucketAclInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_bucket_acl::builders::GetBucketAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl GetBucketAclFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,18 +135,12 @@ impl GetBucketAclFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

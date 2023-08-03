@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput::locale_id): <p>The language and locale of the intents in the list.</p>
     /// - On failure, responds with [`SdkError<ListBuiltInIntentsError>`](crate::operation::list_built_in_intents::ListBuiltInIntentsError)
-    pub fn list_built_in_intents(
-        &self,
-    ) -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder {
-        crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_built_in_intents(&self) -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder {
+        crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::new(self.handle.clone())
     }
 }

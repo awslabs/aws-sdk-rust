@@ -41,13 +41,7 @@
 /// Aac Coding Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AacCodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for AacCodingMode {
             "CODING_MODE_1_1" => AacCodingMode::CodingMode11,
             "CODING_MODE_2_0" => AacCodingMode::CodingMode20,
             "CODING_MODE_5_1" => AacCodingMode::CodingMode51,
-            other => {
-                AacCodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AacCodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

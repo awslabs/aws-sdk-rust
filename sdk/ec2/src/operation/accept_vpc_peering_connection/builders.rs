@@ -27,7 +27,7 @@ impl AcceptVpcPeeringConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptVpcPeeringConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder,
+    inner: crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder,
 }
 impl AcceptVpcPeeringConnectionFluentBuilder {
     /// Creates a new `AcceptVpcPeeringConnection`.
@@ -38,7 +38,7 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
         }
     }
     /// Access the AcceptVpcPeeringConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
             crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
             crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_peering_connection_id(input.into());
         self
     }
     /// <p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
     }

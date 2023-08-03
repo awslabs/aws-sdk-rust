@@ -37,9 +37,7 @@ impl TrustedKeyGroups {
 
 /// A builder for [`TrustedKeyGroups`](crate::types::TrustedKeyGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedKeyGroupsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -86,10 +84,7 @@ impl TrustedKeyGroupsBuilder {
         self
     }
     /// <p>A list of key groups identifiers.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.items = input;
         self
     }

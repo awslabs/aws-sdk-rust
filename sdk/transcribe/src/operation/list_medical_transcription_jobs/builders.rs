@@ -27,7 +27,7 @@ impl ListMedicalTranscriptionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder,
+    inner: crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder,
 }
 impl ListMedicalTranscriptionJobsFluentBuilder {
     /// Creates a new `ListMedicalTranscriptionJobs`.
@@ -38,7 +38,7 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
         }
     }
     /// Access the ListMedicalTranscriptionJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
             crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
             crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator {
         crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
@@ -133,10 +122,7 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
         self
     }
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -145,18 +131,12 @@ impl ListMedicalTranscriptionJobsFluentBuilder {
         self.inner.get_status()
     }
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn job_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name_contains(input.into());
         self
     }
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_job_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name_contains(input);
         self
     }

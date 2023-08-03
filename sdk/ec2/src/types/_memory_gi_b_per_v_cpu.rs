@@ -31,9 +31,7 @@ impl MemoryGiBPerVCpu {
 
 /// A builder for [`MemoryGiBPerVCpu`](crate::types::MemoryGiBPerVCpu).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemoryGiBPerVCpuBuilder {
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,

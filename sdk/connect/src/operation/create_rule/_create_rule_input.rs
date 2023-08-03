@@ -35,9 +35,7 @@ impl CreateRuleInput {
         self.name.as_deref()
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn trigger_event_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuleTriggerEventSource> {
+    pub fn trigger_event_source(&self) -> ::std::option::Option<&crate::types::RuleTriggerEventSource> {
         self.trigger_event_source.as_ref()
     }
     /// <p>The conditions of the rule.</p>
@@ -66,9 +64,7 @@ impl CreateRuleInput {
 
 /// A builder for [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -113,17 +109,12 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn set_trigger_event_source(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleTriggerEventSource>,
-    ) -> Self {
+    pub fn set_trigger_event_source(mut self, input: ::std::option::Option<crate::types::RuleTriggerEventSource>) -> Self {
         self.trigger_event_source = input;
         self
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn get_trigger_event_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleTriggerEventSource> {
+    pub fn get_trigger_event_source(&self) -> &::std::option::Option<crate::types::RuleTriggerEventSource> {
         &self.trigger_event_source
     }
     /// <p>The conditions of the rule.</p>
@@ -152,10 +143,7 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>) -> Self {
         self.actions = input;
         self
     }
@@ -169,10 +157,7 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
+    pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
         self.publish_status = input;
         self
     }
@@ -195,12 +180,7 @@ impl CreateRuleInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_rule::CreateRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             instance_id: self.instance_id,
             name: self.name,

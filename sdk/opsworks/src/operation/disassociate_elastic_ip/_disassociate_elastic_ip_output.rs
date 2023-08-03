@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateElasticIpOutput {
 }
 impl DisassociateElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateElasticIpOutput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpOutputBuilder {
         crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateElasticIpOutput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

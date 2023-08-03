@@ -23,10 +23,7 @@ impl super::Client {
     ///   - [`output_config(Option<OutputConfig>)`](crate::operation::describe_compilation_job::DescribeCompilationJobOutput::output_config): <p>Information about the output location for the compiled model and the target device that the model runs on.</p>
     ///   - [`vpc_config(Option<NeoVpcConfig>)`](crate::operation::describe_compilation_job::DescribeCompilationJobOutput::vpc_config): <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeCompilationJobError>`](crate::operation::describe_compilation_job::DescribeCompilationJobError)
-    pub fn describe_compilation_job(
-        &self,
-    ) -> crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder
-    {
+    pub fn describe_compilation_job(&self) -> crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder {
         crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder::new(self.handle.clone())
     }
 }

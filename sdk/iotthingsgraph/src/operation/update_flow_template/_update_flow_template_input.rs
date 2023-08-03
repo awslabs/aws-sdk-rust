@@ -35,17 +35,14 @@ impl UpdateFlowTemplateInput {
 }
 impl UpdateFlowTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder {
+    pub fn builder() -> crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder {
         crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
@@ -78,10 +75,7 @@ impl UpdateFlowTemplateInputBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }
@@ -109,16 +103,11 @@ impl UpdateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow_template::UpdateFlowTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_flow_template::UpdateFlowTemplateInput {
-                id: self.id,
-                definition: self.definition,
-                compatible_namespace_version: self.compatible_namespace_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_flow_template::UpdateFlowTemplateInput {
+            id: self.id,
+            definition: self.definition,
+            compatible_namespace_version: self.compatible_namespace_version,
+        })
     }
 }

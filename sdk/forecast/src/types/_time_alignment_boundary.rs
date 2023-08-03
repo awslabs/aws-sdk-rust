@@ -45,9 +45,7 @@ impl TimeAlignmentBoundary {
 
 /// A builder for [`TimeAlignmentBoundary`](crate::types::TimeAlignmentBoundary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeAlignmentBoundaryBuilder {
     pub(crate) month: ::std::option::Option<crate::types::Month>,
     pub(crate) day_of_month: ::std::option::Option<i32>,
@@ -89,10 +87,7 @@ impl TimeAlignmentBoundaryBuilder {
         self
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }

@@ -27,7 +27,7 @@ impl UpdateProjectDataDeliveryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProjectDataDeliveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder,
+    inner: crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder,
 }
 impl UpdateProjectDataDeliveryFluentBuilder {
     /// Creates a new `UpdateProjectDataDelivery`.
@@ -38,7 +38,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
         }
     }
     /// Access the UpdateProjectDataDelivery as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
             crate::operation::update_project_data_delivery::UpdateProjectDataDelivery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
             crate::operation::update_project_data_delivery::UpdateProjectDataDelivery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl UpdateProjectDataDeliveryFluentBuilder {
         self
     }
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfig>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3DestinationConfig>) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }
@@ -153,25 +139,17 @@ impl UpdateProjectDataDeliveryFluentBuilder {
         self.inner.get_s3_destination()
     }
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
-    pub fn cloud_watch_logs(
-        mut self,
-        input: crate::types::CloudWatchLogsDestinationConfig,
-    ) -> Self {
+    pub fn cloud_watch_logs(mut self, input: crate::types::CloudWatchLogsDestinationConfig) -> Self {
         self.inner = self.inner.cloud_watch_logs(input);
         self
     }
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs(input);
         self
     }
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
-    pub fn get_cloud_watch_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestinationConfig> {
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestinationConfig> {
         self.inner.get_cloud_watch_logs()
     }
 }

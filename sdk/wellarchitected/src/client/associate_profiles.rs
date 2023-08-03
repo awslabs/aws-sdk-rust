@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`profile_arns(Vec<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::profile_arns) / [`set_profile_arns(Option<Vec<String>>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_profile_arns): <p>The list of profile ARNs to associate with the workload.</p>
     /// - On success, responds with [`AssociateProfilesOutput`](crate::operation::associate_profiles::AssociateProfilesOutput)
     /// - On failure, responds with [`SdkError<AssociateProfilesError>`](crate::operation::associate_profiles::AssociateProfilesError)
-    pub fn associate_profiles(
-        &self,
-    ) -> crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder {
-        crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_profiles(&self) -> crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder {
+        crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::new(self.handle.clone())
     }
 }

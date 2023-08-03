@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateChannelModeratorOutput {
 }
 impl CreateChannelModeratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelModeratorOutput`](crate::operation::create_channel_moderator::CreateChannelModeratorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_channel_moderator::builders::CreateChannelModeratorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_channel_moderator::builders::CreateChannelModeratorOutputBuilder {
         crate::operation::create_channel_moderator::builders::CreateChannelModeratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChannelModeratorOutput`](crate::operation::create_channel_moderator::CreateChannelModeratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChannelModeratorOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_moderator: ::std::option::Option<crate::types::Identity>,
@@ -66,10 +62,7 @@ impl CreateChannelModeratorOutputBuilder {
         self
     }
     /// <p>The ARNs of the channel and the moderator.</p>
-    pub fn set_channel_moderator(
-        mut self,
-        input: ::std::option::Option<crate::types::Identity>,
-    ) -> Self {
+    pub fn set_channel_moderator(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.channel_moderator = input;
         self
     }

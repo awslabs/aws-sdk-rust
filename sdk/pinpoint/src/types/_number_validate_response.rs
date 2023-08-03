@@ -114,9 +114,7 @@ impl NumberValidateResponse {
 
 /// A builder for [`NumberValidateResponse`](crate::types::NumberValidateResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumberValidateResponseBuilder {
     pub(crate) carrier: ::std::option::Option<::std::string::String>,
     pub(crate) city: ::std::option::Option<::std::string::String>,
@@ -163,18 +161,12 @@ impl NumberValidateResponseBuilder {
         &self.city
     }
     /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
-    pub fn cleansed_phone_number_e164(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cleansed_phone_number_e164(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cleansed_phone_number_e164 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
-    pub fn set_cleansed_phone_number_e164(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cleansed_phone_number_e164(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cleansed_phone_number_e164 = input;
         self
     }
@@ -183,25 +175,17 @@ impl NumberValidateResponseBuilder {
         &self.cleansed_phone_number_e164
     }
     /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
-    pub fn cleansed_phone_number_national(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cleansed_phone_number_national(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cleansed_phone_number_national = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
-    pub fn set_cleansed_phone_number_national(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cleansed_phone_number_national(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cleansed_phone_number_national = input;
         self
     }
     /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
-    pub fn get_cleansed_phone_number_national(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cleansed_phone_number_national(&self) -> &::std::option::Option<::std::string::String> {
         &self.cleansed_phone_number_national
     }
     /// <p>The name of the country or region where the phone number was originally registered.</p>
@@ -219,18 +203,12 @@ impl NumberValidateResponseBuilder {
         &self.country
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
-    pub fn country_code_iso2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn country_code_iso2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code_iso2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
-    pub fn set_country_code_iso2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_country_code_iso2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code_iso2 = input;
         self
     }
@@ -239,18 +217,12 @@ impl NumberValidateResponseBuilder {
         &self.country_code_iso2
     }
     /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
-    pub fn country_code_numeric(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn country_code_numeric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code_numeric = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
-    pub fn set_country_code_numeric(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_country_code_numeric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code_numeric = input;
         self
     }
@@ -273,18 +245,12 @@ impl NumberValidateResponseBuilder {
         &self.county
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
-    pub fn original_country_code_iso2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_country_code_iso2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_country_code_iso2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
-    pub fn set_original_country_code_iso2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_country_code_iso2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_country_code_iso2 = input;
         self
     }
@@ -293,18 +259,12 @@ impl NumberValidateResponseBuilder {
         &self.original_country_code_iso2
     }
     /// <p>The phone number that was sent in the request body.</p>
-    pub fn original_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number that was sent in the request body.</p>
-    pub fn set_original_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_phone_number = input;
         self
     }

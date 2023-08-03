@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartImportLabelsTaskRunOutput {
 }
 impl StartImportLabelsTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartImportLabelsTaskRunOutput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput).
-    pub fn builder() -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunOutputBuilder {
         crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartImportLabelsTaskRunOutput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportLabelsTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartImportLabelsTaskRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartImportLabelsTaskRunOutput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput {
+    pub fn build(self) -> crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput {
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput {
             task_run_id: self.task_run_id,
             _request_id: self._request_id,

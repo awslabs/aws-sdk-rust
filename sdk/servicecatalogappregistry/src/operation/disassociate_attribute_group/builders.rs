@@ -26,7 +26,7 @@ impl DisassociateAttributeGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAttributeGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder,
+    inner: crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder,
 }
 impl DisassociateAttributeGroupFluentBuilder {
     /// Creates a new `DisassociateAttributeGroup`.
@@ -37,7 +37,7 @@ impl DisassociateAttributeGroupFluentBuilder {
         }
     }
     /// Access the DisassociateAttributeGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateAttributeGroupFluentBuilder {
             crate::operation::disassociate_attribute_group::DisassociateAttributeGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateAttributeGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateAttributeGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateAttributeGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisassociateAttributeGroupFluentBuilder {
             crate::operation::disassociate_attribute_group::DisassociateAttributeGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DisassociateAttributeGroupFluentBuilder {
         self.inner.get_application()
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_group(input.into());
         self
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn set_attribute_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self
     }

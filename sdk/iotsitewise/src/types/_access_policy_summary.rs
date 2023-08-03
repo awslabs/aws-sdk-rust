@@ -58,9 +58,7 @@ impl AccessPolicySummary {
 
 /// A builder for [`AccessPolicySummary`](crate::types::AccessPolicySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPolicySummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) identity: ::std::option::Option<crate::types::Identity>,
@@ -118,10 +116,7 @@ impl AccessPolicySummaryBuilder {
         self
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.permission = input;
         self
     }
@@ -135,10 +130,7 @@ impl AccessPolicySummaryBuilder {
         self
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -152,10 +144,7 @@ impl AccessPolicySummaryBuilder {
         self
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_date = input;
         self
     }

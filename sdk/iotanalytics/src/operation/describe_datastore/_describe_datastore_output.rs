@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatastoreOutput {
 }
 impl DescribeDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatastoreOutput`](crate::operation::describe_datastore::DescribeDatastoreOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_datastore::builders::DescribeDatastoreOutputBuilder {
+    pub fn builder() -> crate::operation::describe_datastore::builders::DescribeDatastoreOutputBuilder {
         crate::operation::describe_datastore::builders::DescribeDatastoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatastoreOutput`](crate::operation::describe_datastore::DescribeDatastoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatastoreOutputBuilder {
     pub(crate) datastore: ::std::option::Option<crate::types::Datastore>,
     pub(crate) statistics: ::std::option::Option<crate::types::DatastoreStatistics>,
@@ -65,10 +62,7 @@ impl DescribeDatastoreOutputBuilder {
         self
     }
     /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::DatastoreStatistics>) -> Self {
         self.statistics = input;
         self
     }

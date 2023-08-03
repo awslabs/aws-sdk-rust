@@ -5,16 +5,16 @@ pub use crate::operation::describe_spot_fleet_request_history::_describe_spot_fl
 
 impl DescribeSpotFleetRequestHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_spot_fleet_request_history();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder,
+    inner: crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder,
 }
 impl DescribeSpotFleetRequestHistoryFluentBuilder {
     /// Creates a new `DescribeSpotFleetRequestHistory`.
@@ -39,15 +39,20 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
         }
     }
     /// Access the DescribeSpotFleetRequestHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistory,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistory,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -153,18 +168,12 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_fleet_request_id(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_id(input);
         self
     }
@@ -178,10 +187,7 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
         self
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }

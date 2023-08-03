@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnomalyDetectionTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for AnomalyDetectionTaskStatus {
             "FAILED_TO_SCHEDULE" => AnomalyDetectionTaskStatus::FailedToSchedule,
             "IN_PROGRESS" => AnomalyDetectionTaskStatus::InProgress,
             "PENDING" => AnomalyDetectionTaskStatus::Pending,
-            other => AnomalyDetectionTaskStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnomalyDetectionTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl AnomalyDetectionTaskStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED",
-            "FAILED",
-            "FAILED_TO_SCHEDULE",
-            "IN_PROGRESS",
-            "PENDING",
-        ]
+        &["COMPLETED", "FAILED", "FAILED_TO_SCHEDULE", "IN_PROGRESS", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for AnomalyDetectionTaskStatus {

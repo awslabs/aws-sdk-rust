@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for FlushStageAuthorizersCacheOutput {
 }
 impl FlushStageAuthorizersCacheOutput {
     /// Creates a new builder-style object to manufacture [`FlushStageAuthorizersCacheOutput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput).
-    pub fn builder() -> crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheOutputBuilder{
+    pub fn builder() -> crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheOutputBuilder {
         crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`FlushStageAuthorizersCacheOutput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlushStageAuthorizersCacheOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl FlushStageAuthorizersCacheOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`FlushStageAuthorizersCacheOutput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput {
+    pub fn build(self) -> crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput {
         crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput {
             _request_id: self._request_id,
         }

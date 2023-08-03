@@ -26,7 +26,7 @@ impl ListAccessPreviewFindingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder,
+    inner: crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder,
 }
 impl ListAccessPreviewFindingsFluentBuilder {
     /// Creates a new `ListAccessPreviewFindings`.
@@ -37,7 +37,7 @@ impl ListAccessPreviewFindingsFluentBuilder {
         }
     }
     /// Access the ListAccessPreviewFindings as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAccessPreviewFindingsFluentBuilder {
             crate::operation::list_access_preview_findings::ListAccessPreviewFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAccessPreviewFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAccessPreviewFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAccessPreviewFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl ListAccessPreviewFindingsFluentBuilder {
             crate::operation::list_access_preview_findings::ListAccessPreviewFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_access_preview_findings::paginator::ListAccessPreviewFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_access_preview_findings::paginator::ListAccessPreviewFindingsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_access_preview_findings::paginator::ListAccessPreviewFindingsPaginator {
         crate::operation::list_access_preview_findings::paginator::ListAccessPreviewFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID for the access preview.</p>
-    pub fn access_preview_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_preview_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_preview_id(input.into());
         self
     }
     /// <p>The unique ID for the access preview.</p>
-    pub fn set_access_preview_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_preview_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_preview_id(input);
         self
     }
@@ -168,30 +148,17 @@ impl ListAccessPreviewFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         self.inner = self.inner.filter(k.into(), v);
         self
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.inner.get_filter()
     }
     /// <p>A token used for pagination of results returned.</p>

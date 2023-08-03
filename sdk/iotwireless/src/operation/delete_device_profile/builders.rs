@@ -37,9 +37,7 @@ impl DeleteDeviceProfileFluentBuilder {
         }
     }
     /// Access the DeleteDeviceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_device_profile::builders::DeleteDeviceProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_device_profile::builders::DeleteDeviceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteDeviceProfileFluentBuilder {
             crate::operation::delete_device_profile::DeleteDeviceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_profile::DeleteDeviceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_profile::DeleteDeviceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteDeviceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteDeviceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_device_profile::DeleteDeviceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_profile::DeleteDeviceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_profile::DeleteDeviceProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteDeviceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_device_profile::DeleteDeviceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_profile::DeleteDeviceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_profile::DeleteDeviceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteDeviceProfileFluentBuilder {
             crate::operation::delete_device_profile::DeleteDeviceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_profile::DeleteDeviceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_profile::DeleteDeviceProfileError>,
     > {
         self.customize_middleware().await
     }

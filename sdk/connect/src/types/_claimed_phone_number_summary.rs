@@ -27,9 +27,7 @@ pub struct ClaimedPhoneNumberSummary {
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the phone number.</p>
     /// <ul>
     /// <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li>
@@ -55,9 +53,7 @@ impl ClaimedPhoneNumberSummary {
         self.phone_number.as_deref()
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
+    pub fn phone_number_country_code(&self) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
         self.phone_number_country_code.as_ref()
     }
     /// <p>The type of phone number.</p>
@@ -73,11 +69,7 @@ impl ClaimedPhoneNumberSummary {
         self.target_arn.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The status of the phone number.</p>
@@ -101,37 +93,26 @@ impl ClaimedPhoneNumberSummary {
 
 /// A builder for [`ClaimedPhoneNumberSummary`](crate::types::ClaimedPhoneNumberSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimedPhoneNumberSummaryBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number_arn: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
-    pub(crate) phone_number_country_code:
-        ::std::option::Option<crate::types::PhoneNumberCountryCode>,
+    pub(crate) phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     pub(crate) phone_number_description: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) phone_number_status: ::std::option::Option<crate::types::PhoneNumberStatus>,
 }
 impl ClaimedPhoneNumberSummaryBuilder {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -140,18 +121,12 @@ impl ClaimedPhoneNumberSummaryBuilder {
         &self.phone_number_id
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn phone_number_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn set_phone_number_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_arn = input;
         self
     }
@@ -174,25 +149,17 @@ impl ClaimedPhoneNumberSummaryBuilder {
         &self.phone_number
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(
-        mut self,
-        input: crate::types::PhoneNumberCountryCode,
-    ) -> Self {
+    pub fn phone_number_country_code(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
         self.phone_number_country_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_code(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
-    ) -> Self {
+    pub fn set_phone_number_country_code(mut self, input: ::std::option::Option<crate::types::PhoneNumberCountryCode>) -> Self {
         self.phone_number_country_code = input;
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+    pub fn get_phone_number_country_code(&self) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
         &self.phone_number_country_code
     }
     /// <p>The type of phone number.</p>
@@ -201,10 +168,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberType>,
-    ) -> Self {
+    pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.phone_number_type = input;
         self
     }
@@ -213,18 +177,12 @@ impl ClaimedPhoneNumberSummaryBuilder {
         &self.phone_number_type
     }
     /// <p>The description of the phone number.</p>
-    pub fn phone_number_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the phone number.</p>
-    pub fn set_phone_number_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_description = input;
         self
     }
@@ -251,32 +209,19 @@ impl ClaimedPhoneNumberSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The status of the phone number.</p>
@@ -299,10 +244,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     /// </ul> <note>
     /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
     /// </note>
-    pub fn set_phone_number_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberStatus>,
-    ) -> Self {
+    pub fn set_phone_number_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberStatus>) -> Self {
         self.phone_number_status = input;
         self
     }
@@ -314,9 +256,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     /// </ul> <note>
     /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
     /// </note>
-    pub fn get_phone_number_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
+    pub fn get_phone_number_status(&self) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
         &self.phone_number_status
     }
     /// Consumes the builder and constructs a [`ClaimedPhoneNumberSummary`](crate::types::ClaimedPhoneNumberSummary).

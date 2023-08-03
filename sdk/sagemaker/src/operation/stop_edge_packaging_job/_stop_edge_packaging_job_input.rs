@@ -15,34 +15,25 @@ impl StopEdgePackagingJobInput {
 }
 impl StopEdgePackagingJobInput {
     /// Creates a new builder-style object to manufacture [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder {
         crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEdgePackagingJobInputBuilder {
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopEdgePackagingJobInputBuilder {
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_packaging_job_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl StopEdgePackagingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput {
-                edge_packaging_job_name: self.edge_packaging_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput {
+            edge_packaging_job_name: self.edge_packaging_job_name,
+        })
     }
 }

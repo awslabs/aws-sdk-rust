@@ -22,18 +22,14 @@ impl DeleteImagePermissionsInput {
 }
 impl DeleteImagePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder {
         crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImagePermissionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) shared_account_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteImagePermissionsInputBuilder {
         &self.name
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_account_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteImagePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_image_permissions::DeleteImagePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_image_permissions::DeleteImagePermissionsInput {
-                name: self.name,
-                shared_account_id: self.shared_account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_image_permissions::DeleteImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_image_permissions::DeleteImagePermissionsInput {
+            name: self.name,
+            shared_account_id: self.shared_account_id,
+        })
     }
 }

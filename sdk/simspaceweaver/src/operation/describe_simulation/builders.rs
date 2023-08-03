@@ -10,10 +10,7 @@ impl DescribeSimulationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_simulation::DescribeSimulationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_simulation::DescribeSimulationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_simulation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSimulationFluentBuilder {
         }
     }
     /// Access the DescribeSimulation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_simulation::builders::DescribeSimulationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_simulation::builders::DescribeSimulationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSimulationFluentBuilder {
             crate::operation::describe_simulation::DescribeSimulation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_simulation::DescribeSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSimulationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSimulationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_simulation::DescribeSimulationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_simulation::DescribeSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSimulationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_simulation::DescribeSimulationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_simulation::DescribeSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeSimulationFluentBuilder {
             crate::operation::describe_simulation::DescribeSimulation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_simulation::DescribeSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError>,
     > {
         self.customize_middleware().await
     }

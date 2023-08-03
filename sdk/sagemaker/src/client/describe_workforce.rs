@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeWorkforceOutput`](crate::operation::describe_workforce::DescribeWorkforceOutput) with field(s):
     ///   - [`workforce(Option<Workforce>)`](crate::operation::describe_workforce::DescribeWorkforceOutput::workforce): <p>A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkforceError>`](crate::operation::describe_workforce::DescribeWorkforceError)
-    pub fn describe_workforce(
-        &self,
-    ) -> crate::operation::describe_workforce::builders::DescribeWorkforceFluentBuilder {
-        crate::operation::describe_workforce::builders::DescribeWorkforceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_workforce(&self) -> crate::operation::describe_workforce::builders::DescribeWorkforceFluentBuilder {
+        crate::operation::describe_workforce::builders::DescribeWorkforceFluentBuilder::new(self.handle.clone())
     }
 }

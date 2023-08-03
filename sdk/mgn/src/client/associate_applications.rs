@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`AssociateApplicationsOutput`](crate::operation::associate_applications::AssociateApplicationsOutput)
     /// - On failure, responds with [`SdkError<AssociateApplicationsError>`](crate::operation::associate_applications::AssociateApplicationsError)
-    pub fn associate_applications(
-        &self,
-    ) -> crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder
-    {
-        crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_applications(&self) -> crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder {
+        crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

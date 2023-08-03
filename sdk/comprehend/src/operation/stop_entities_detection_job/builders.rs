@@ -29,7 +29,7 @@ impl StopEntitiesDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopEntitiesDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder,
+    inner: crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder,
 }
 impl StopEntitiesDetectionJobFluentBuilder {
     /// Creates a new `StopEntitiesDetectionJob`.
@@ -40,7 +40,7 @@ impl StopEntitiesDetectionJobFluentBuilder {
         }
     }
     /// Access the StopEntitiesDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl StopEntitiesDetectionJobFluentBuilder {
             crate::operation::stop_entities_detection_job::StopEntitiesDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl StopEntitiesDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl StopEntitiesDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl StopEntitiesDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl StopEntitiesDetectionJobFluentBuilder {
             crate::operation::stop_entities_detection_job::StopEntitiesDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError>,
     > {
         self.customize_middleware().await
     }

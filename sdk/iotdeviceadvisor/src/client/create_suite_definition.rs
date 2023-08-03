@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`suite_definition_name(Option<String>)`](crate::operation::create_suite_definition::CreateSuiteDefinitionOutput::suite_definition_name): <p>The suite definition name of the test suite. This is a required parameter.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_suite_definition::CreateSuiteDefinitionOutput::created_at): <p>The timestamp of when the test suite was created.</p>
     /// - On failure, responds with [`SdkError<CreateSuiteDefinitionError>`](crate::operation::create_suite_definition::CreateSuiteDefinitionError)
-    pub fn create_suite_definition(
-        &self,
-    ) -> crate::operation::create_suite_definition::builders::CreateSuiteDefinitionFluentBuilder
-    {
-        crate::operation::create_suite_definition::builders::CreateSuiteDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_suite_definition(&self) -> crate::operation::create_suite_definition::builders::CreateSuiteDefinitionFluentBuilder {
+        crate::operation::create_suite_definition::builders::CreateSuiteDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

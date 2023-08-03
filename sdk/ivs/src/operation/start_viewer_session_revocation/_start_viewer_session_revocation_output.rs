@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StartViewerSessionRevocationOutput {
 }
 impl StartViewerSessionRevocationOutput {
     /// Creates a new builder-style object to manufacture [`StartViewerSessionRevocationOutput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput).
-    pub fn builder() -> crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationOutputBuilder{
+    pub fn builder() -> crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationOutputBuilder {
         crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartViewerSessionRevocationOutput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartViewerSessionRevocationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StartViewerSessionRevocationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartViewerSessionRevocationOutput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput {
+    pub fn build(self) -> crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput {
         crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput {
             _request_id: self._request_id,
         }

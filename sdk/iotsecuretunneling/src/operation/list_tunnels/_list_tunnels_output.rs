@@ -35,12 +35,9 @@ impl ListTunnelsOutput {
 
 /// A builder for [`ListTunnelsOutput`](crate::operation::list_tunnels::ListTunnelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTunnelsOutputBuilder {
-    pub(crate) tunnel_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>>,
+    pub(crate) tunnel_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListTunnelsOutputBuilder {
         self
     }
     /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
-    pub fn set_tunnel_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>>,
-    ) -> Self {
+    pub fn set_tunnel_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>>) -> Self {
         self.tunnel_summaries = input;
         self
     }
     /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
-    pub fn get_tunnel_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>> {
+    pub fn get_tunnel_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TunnelSummary>> {
         &self.tunnel_summaries
     }
     /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>

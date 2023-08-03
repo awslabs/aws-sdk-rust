@@ -32,9 +32,7 @@ impl CheckoutBorrowLicenseInput {
         self.entitlements.as_deref()
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    pub fn digital_signature_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DigitalSignatureMethod> {
+    pub fn digital_signature_method(&self) -> ::std::option::Option<&crate::types::DigitalSignatureMethod> {
         self.digital_signature_method.as_ref()
     }
     /// <p>Node ID.</p>
@@ -52,23 +50,18 @@ impl CheckoutBorrowLicenseInput {
 }
 impl CheckoutBorrowLicenseInput {
     /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
-    pub fn builder(
-    ) -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder
-    {
+    pub fn builder() -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder {
         crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder::default()
     }
 }
 
 /// A builder for [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    pub(crate) digital_signature_method:
-        ::std::option::Option<crate::types::DigitalSignatureMethod>,
+    pub(crate) digital_signature_method: ::std::option::Option<crate::types::DigitalSignatureMethod>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) checkout_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -100,17 +93,12 @@ impl CheckoutBorrowLicenseInputBuilder {
         self
     }
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
         self.entitlements = input;
         self
     }
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
         &self.entitlements
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
@@ -119,17 +107,12 @@ impl CheckoutBorrowLicenseInputBuilder {
         self
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    pub fn set_digital_signature_method(
-        mut self,
-        input: ::std::option::Option<crate::types::DigitalSignatureMethod>,
-    ) -> Self {
+    pub fn set_digital_signature_method(mut self, input: ::std::option::Option<crate::types::DigitalSignatureMethod>) -> Self {
         self.digital_signature_method = input;
         self
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    pub fn get_digital_signature_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::DigitalSignatureMethod> {
+    pub fn get_digital_signature_method(&self) -> &::std::option::Option<crate::types::DigitalSignatureMethod> {
         &self.digital_signature_method
     }
     /// <p>Node ID.</p>
@@ -158,17 +141,12 @@ impl CheckoutBorrowLicenseInputBuilder {
         self
     }
     /// <p>Information about constraints.</p>
-    pub fn set_checkout_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_checkout_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.checkout_metadata = input;
         self
     }
     /// <p>Information about constraints.</p>
-    pub fn get_checkout_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_checkout_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         &self.checkout_metadata
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -188,19 +166,15 @@ impl CheckoutBorrowLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput {
-                license_arn: self.license_arn,
-                entitlements: self.entitlements,
-                digital_signature_method: self.digital_signature_method,
-                node_id: self.node_id,
-                checkout_metadata: self.checkout_metadata,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput {
+            license_arn: self.license_arn,
+            entitlements: self.entitlements,
+            digital_signature_method: self.digital_signature_method,
+            node_id: self.node_id,
+            checkout_metadata: self.checkout_metadata,
+            client_token: self.client_token,
+        })
     }
 }

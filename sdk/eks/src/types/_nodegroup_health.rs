@@ -23,9 +23,7 @@ impl NodegroupHealth {
 
 /// A builder for [`NodegroupHealth`](crate::types::NodegroupHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodegroupHealthBuilder {
     pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
 }
@@ -42,10 +40,7 @@ impl NodegroupHealthBuilder {
         self
     }
     /// <p>Any issues that are associated with the node group. </p>
-    pub fn set_issues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
-    ) -> Self {
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>) -> Self {
         self.issues = input;
         self
     }
@@ -55,8 +50,6 @@ impl NodegroupHealthBuilder {
     }
     /// Consumes the builder and constructs a [`NodegroupHealth`](crate::types::NodegroupHealth).
     pub fn build(self) -> crate::types::NodegroupHealth {
-        crate::types::NodegroupHealth {
-            issues: self.issues,
-        }
+        crate::types::NodegroupHealth { issues: self.issues }
     }
 }

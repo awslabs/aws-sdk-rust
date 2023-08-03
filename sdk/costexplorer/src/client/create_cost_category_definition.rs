@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`cost_category_arn(Option<String>)`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput::cost_category_arn): <p>The unique identifier for your newly created Cost Category. </p>
     ///   - [`effective_start(Option<String>)`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput::effective_start): <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     /// - On failure, responds with [`SdkError<CreateCostCategoryDefinitionError>`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError)
-    pub fn create_cost_category_definition(&self) -> crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionFluentBuilder{
+    pub fn create_cost_category_definition(
+        &self,
+    ) -> crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionFluentBuilder {
         crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

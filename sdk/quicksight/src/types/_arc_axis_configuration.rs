@@ -30,9 +30,7 @@ impl ArcAxisConfiguration {
 
 /// A builder for [`ArcAxisConfiguration`](crate::types::ArcAxisConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArcAxisConfigurationBuilder {
     pub(crate) range: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
     pub(crate) reserve_range: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl ArcAxisConfigurationBuilder {
         self
     }
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_range(
-        mut self,
-        input: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
-    ) -> Self {
+    pub fn set_range(mut self, input: ::std::option::Option<crate::types::ArcAxisDisplayRange>) -> Self {
         self.range = input;
         self
     }

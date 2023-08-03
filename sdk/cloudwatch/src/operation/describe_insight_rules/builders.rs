@@ -38,9 +38,7 @@ impl DescribeInsightRulesFluentBuilder {
         }
     }
     /// Access the DescribeInsightRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeInsightRulesFluentBuilder {
             crate::operation::describe_insight_rules::DescribeInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight_rules::DescribeInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight_rules::DescribeInsightRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeInsightRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_insight_rules::DescribeInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight_rules::DescribeInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight_rules::DescribeInsightRulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_insight_rules::DescribeInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight_rules::DescribeInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight_rules::DescribeInsightRulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl DescribeInsightRulesFluentBuilder {
             crate::operation::describe_insight_rules::DescribeInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_insight_rules::DescribeInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_insight_rules::DescribeInsightRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator {
-        crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator {
+        crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::new(self.handle, self.inner)
     }
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -37,9 +37,7 @@ impl DescribeLocationNfsFluentBuilder {
         }
     }
     /// Access the DescribeLocationNfs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_location_nfs::builders::DescribeLocationNfsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_location_nfs::builders::DescribeLocationNfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeLocationNfsFluentBuilder {
             crate::operation::describe_location_nfs::DescribeLocationNfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_nfs::DescribeLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_nfs::DescribeLocationNfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeLocationNfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeLocationNfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_nfs::DescribeLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_nfs::DescribeLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_nfs::DescribeLocationNfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeLocationNfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_nfs::DescribeLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_nfs::DescribeLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_nfs::DescribeLocationNfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeLocationNfsFluentBuilder {
             crate::operation::describe_location_nfs::DescribeLocationNfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_nfs::DescribeLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_nfs::DescribeLocationNfsError>,
     > {
         self.customize_middleware().await
     }

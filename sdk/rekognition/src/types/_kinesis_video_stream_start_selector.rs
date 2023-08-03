@@ -30,9 +30,7 @@ impl KinesisVideoStreamStartSelector {
 
 /// A builder for [`KinesisVideoStreamStartSelector`](crate::types::KinesisVideoStreamStartSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamStartSelectorBuilder {
     pub(crate) producer_timestamp: ::std::option::Option<i64>,
     pub(crate) fragment_number: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl KinesisVideoStreamStartSelectorBuilder {
         &self.producer_timestamp
     }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
-    pub fn fragment_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fragment_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fragment_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
-    pub fn set_fragment_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fragment_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fragment_number = input;
         self
     }

@@ -10,10 +10,7 @@ impl CreateUploadUrlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_upload_url::CreateUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_upload_url::CreateUploadUrlError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_upload_url::CreateUploadUrlError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_upload_url();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateUploadUrlFluentBuilder {
         }
     }
     /// Access the CreateUploadUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_upload_url::builders::CreateUploadUrlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_upload_url::builders::CreateUploadUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateUploadUrlFluentBuilder {
             crate::operation::create_upload_url::CreateUploadUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_upload_url::CreateUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_upload_url::CreateUploadUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateUploadUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateUploadUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_upload_url::CreateUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_upload_url::CreateUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_upload_url::CreateUploadUrlError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateUploadUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_upload_url::CreateUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_upload_url::CreateUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_upload_url::CreateUploadUrlError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateUploadUrlFluentBuilder {
             crate::operation::create_upload_url::CreateUploadUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_upload_url::CreateUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_upload_url::CreateUploadUrlError>,
     > {
         self.customize_middleware().await
     }

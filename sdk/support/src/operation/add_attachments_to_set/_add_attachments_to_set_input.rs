@@ -24,36 +24,26 @@ impl AddAttachmentsToSetInput {
 }
 impl AddAttachmentsToSetInput {
     /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
-    pub fn builder(
-    ) -> crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder {
-        crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder {
+        crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder::default()
     }
 }
 
 /// A builder for [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddAttachmentsToSetInputBuilder {
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
 }
 impl AddAttachmentsToSetInputBuilder {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn attachment_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn set_attachment_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_set_id = input;
         self
     }
@@ -75,32 +65,23 @@ impl AddAttachmentsToSetInputBuilder {
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
         &self.attachments
     }
     /// Consumes the builder and constructs a [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetInput {
-                attachment_set_id: self.attachment_set_id,
-                attachments: self.attachments,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_attachments_to_set::AddAttachmentsToSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_attachments_to_set::AddAttachmentsToSetInput {
+            attachment_set_id: self.attachment_set_id,
+            attachments: self.attachments,
+        })
     }
 }

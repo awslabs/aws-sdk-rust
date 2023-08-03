@@ -29,16 +29,14 @@ impl DescribeChannelMembershipInput {
 }
 impl DescribeChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipInput`](crate::operation::describe_channel_membership::DescribeChannelMembershipInput).
-    pub fn builder() -> crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder{
+    pub fn builder() -> crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder {
         crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChannelMembershipInput`](crate::operation::describe_channel_membership::DescribeChannelMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl DescribeChannelMembershipInputBuilder {
         crate::operation::describe_channel_membership::DescribeChannelMembershipInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_channel_membership::DescribeChannelMembershipInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_channel_membership::DescribeChannelMembershipInput {
+            channel_arn: self.channel_arn,
+            member_arn: self.member_arn,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }

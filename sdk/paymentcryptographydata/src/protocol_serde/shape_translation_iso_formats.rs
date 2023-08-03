@@ -29,11 +29,9 @@ pub fn ser_translation_iso_formats(
             object_4.finish();
         }
         crate::types::TranslationIsoFormats::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "TranslationIsoFormats",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "TranslationIsoFormats",
+            ))
         }
     }
     Ok(())

@@ -5,8 +5,7 @@
 pub struct DescribeClientVpnTargetNetworksOutput {
     /// <p>Information about the associated target networks.</p>
     #[doc(hidden)]
-    pub client_vpn_target_networks:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>,
+    pub client_vpn_target_networks: ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeClientVpnTargetNetworksOutput {
 }
 impl DescribeClientVpnTargetNetworksOutput {
     /// <p>Information about the associated target networks.</p>
-    pub fn client_vpn_target_networks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TargetNetwork]> {
+    pub fn client_vpn_target_networks(&self) -> ::std::option::Option<&[crate::types::TargetNetwork]> {
         self.client_vpn_target_networks.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeClientVpnTargetNetworksOutput
 }
 impl DescribeClientVpnTargetNetworksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnTargetNetworksOutput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput).
-    pub fn builder() -> crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksOutputBuilder {
         crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnTargetNetworksOutput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnTargetNetworksOutputBuilder {
-    pub(crate) client_vpn_target_networks:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>,
+    pub(crate) client_vpn_target_networks: ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeClientVpnTargetNetworksOutputBuilder {
         self
     }
     /// <p>Information about the associated target networks.</p>
-    pub fn set_client_vpn_target_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>,
-    ) -> Self {
+    pub fn set_client_vpn_target_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>) -> Self {
         self.client_vpn_target_networks = input;
         self
     }
     /// <p>Information about the associated target networks.</p>
-    pub fn get_client_vpn_target_networks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>> {
+    pub fn get_client_vpn_target_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>> {
         &self.client_vpn_target_networks
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,15 +86,10 @@ impl DescribeClientVpnTargetNetworksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnTargetNetworksOutput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput
-    {
+    pub fn build(self) -> crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput {
         crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput {
-            client_vpn_target_networks: self.client_vpn_target_networks
-            ,
-            next_token: self.next_token
-            ,
+            client_vpn_target_networks: self.client_vpn_target_networks,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

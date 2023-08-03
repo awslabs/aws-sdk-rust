@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`vector_enrichment_job_summaries(Option<Vec<ListVectorEnrichmentJobOutputConfig>>)`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput::vector_enrichment_job_summaries): <p>Contains summary information about the Vector Enrichment jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListVectorEnrichmentJobsError>`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError)
-    pub fn list_vector_enrichment_jobs(&self) -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder{
+    pub fn list_vector_enrichment_jobs(&self) -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder {
         crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::new(self.handle.clone())
     }
 }

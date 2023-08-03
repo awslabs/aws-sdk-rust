@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopBulkDeploymentOutput {
 }
 impl StopBulkDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StopBulkDeploymentOutput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentOutputBuilder {
+    pub fn builder() -> crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentOutputBuilder {
         crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopBulkDeploymentOutput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBulkDeploymentOutputBuilder {
     _request_id: Option<String>,
 }

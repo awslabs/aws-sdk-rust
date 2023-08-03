@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`start_time(Option<String>)`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput::start_time): The start of the time-window which will be harvested.
     ///   - [`status(Option<Status>)`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput::status): The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     /// - On failure, responds with [`SdkError<DescribeHarvestJobError>`](crate::operation::describe_harvest_job::DescribeHarvestJobError)
-    pub fn describe_harvest_job(
-        &self,
-    ) -> crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder {
-        crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_harvest_job(&self) -> crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder {
+        crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder::new(self.handle.clone())
     }
 }

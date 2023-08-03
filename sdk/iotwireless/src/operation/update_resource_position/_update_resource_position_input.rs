@@ -29,18 +29,14 @@ impl UpdateResourcePositionInput {
 }
 impl UpdateResourcePositionInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder {
         crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourcePositionInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
@@ -48,18 +44,12 @@ pub struct UpdateResourcePositionInputBuilder {
 }
 impl UpdateResourcePositionInputBuilder {
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -73,10 +63,7 @@ impl UpdateResourcePositionInputBuilder {
         self
     }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -90,10 +77,7 @@ impl UpdateResourcePositionInputBuilder {
         self
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn set_geo_json_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_geo_json_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.geo_json_payload = input;
         self
     }
@@ -104,16 +88,12 @@ impl UpdateResourcePositionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_position::UpdateResourcePositionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_position::UpdateResourcePositionInput {
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-                geo_json_payload: self.geo_json_payload,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resource_position::UpdateResourcePositionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_resource_position::UpdateResourcePositionInput {
+            resource_identifier: self.resource_identifier,
+            resource_type: self.resource_type,
+            geo_json_payload: self.geo_json_payload,
+        })
     }
 }

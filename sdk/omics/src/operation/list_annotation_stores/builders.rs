@@ -37,9 +37,7 @@ impl ListAnnotationStoresFluentBuilder {
         }
     }
     /// Access the ListAnnotationStores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAnnotationStoresFluentBuilder {
             crate::operation::list_annotation_stores::ListAnnotationStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_stores::ListAnnotationStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_stores::ListAnnotationStoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAnnotationStoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAnnotationStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_stores::ListAnnotationStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_stores::ListAnnotationStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_stores::ListAnnotationStoresError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAnnotationStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_stores::ListAnnotationStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_stores::ListAnnotationStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_stores::ListAnnotationStoresError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListAnnotationStoresFluentBuilder {
             crate::operation::list_annotation_stores::ListAnnotationStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_stores::ListAnnotationStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_stores::ListAnnotationStoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator {
-        crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator {
+        crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ids`.
     ///
@@ -143,10 +125,7 @@ impl ListAnnotationStoresFluentBuilder {
         self
     }
     /// <p>IDs of stores to list.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }
@@ -188,10 +167,7 @@ impl ListAnnotationStoresFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAnnotationStoresFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAnnotationStoresFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListUserGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_user_groups::ListUserGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_groups::ListUserGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_groups::ListUserGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_user_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListUserGroupsFluentBuilder {
         }
     }
     /// Access the ListUserGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_groups::builders::ListUserGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_groups::builders::ListUserGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListUserGroupsFluentBuilder {
             crate::operation::list_user_groups::ListUserGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_groups::ListUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_groups::ListUserGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListUserGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListUserGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_groups::ListUserGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_groups::ListUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_groups::ListUserGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListUserGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_groups::ListUserGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_groups::ListUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_groups::ListUserGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListUserGroupsFluentBuilder {
             crate::operation::list_user_groups::ListUserGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_groups::ListUserGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_groups::ListUserGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_groups::paginator::ListUserGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_user_groups::paginator::ListUserGroupsPaginator {
-        crate::operation::list_user_groups::paginator::ListUserGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_user_groups::paginator::ListUserGroupsPaginator {
+        crate::operation::list_user_groups::paginator::ListUserGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListUserGroupsFluentBuilder {
         self.inner.get_user_name()
     }
     /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

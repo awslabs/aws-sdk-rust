@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`service_arns(Option<Vec<String>>)`](crate::operation::list_services::ListServicesOutput::service_arns): <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListServices</code> request. When the results of a <code>ListServices</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
-    pub fn list_services(
-        &self,
-    ) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
+        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
     }
 }

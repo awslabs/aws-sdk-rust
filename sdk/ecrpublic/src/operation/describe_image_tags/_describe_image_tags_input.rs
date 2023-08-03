@@ -36,17 +36,14 @@ impl DescribeImageTagsInput {
 }
 impl DescribeImageTagsInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageTagsInput`](crate::operation::describe_image_tags::DescribeImageTagsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_tags::builders::DescribeImageTagsInputBuilder {
+    pub fn builder() -> crate::operation::describe_image_tags::builders::DescribeImageTagsInputBuilder {
         crate::operation::describe_image_tags::builders::DescribeImageTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageTagsInput`](crate::operation::describe_image_tags::DescribeImageTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageTagsInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl DescribeImageTagsInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that contains the image tag details to describe.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the image tag details to describe.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -119,17 +110,12 @@ impl DescribeImageTagsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageTagsInput`](crate::operation::describe_image_tags::DescribeImageTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image_tags::DescribeImageTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_image_tags::DescribeImageTagsInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_image_tags::DescribeImageTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_image_tags::DescribeImageTagsInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

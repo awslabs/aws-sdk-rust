@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListHealthEventsOutput {
 }
 impl ListHealthEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
-    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder {
         crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHealthEventsOutputBuilder {
     pub(crate) health_events: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListHealthEventsOutputBuilder {
         self
     }
     /// <p>A list of health events.</p>
-    pub fn set_health_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>,
-    ) -> Self {
+    pub fn set_health_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>) -> Self {
         self.health_events = input;
         self
     }
     /// <p>A list of health events.</p>
-    pub fn get_health_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>> {
+    pub fn get_health_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>> {
         &self.health_events
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>

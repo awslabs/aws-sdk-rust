@@ -10,10 +10,7 @@ impl GetPromptFileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_prompt_file::GetPromptFileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_prompt_file::GetPromptFileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_prompt_file::GetPromptFileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_prompt_file();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetPromptFileFluentBuilder {
         }
     }
     /// Access the GetPromptFile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_prompt_file::builders::GetPromptFileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_prompt_file::builders::GetPromptFileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetPromptFileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

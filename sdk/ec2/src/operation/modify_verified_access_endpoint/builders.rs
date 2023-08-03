@@ -26,7 +26,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointInputBuilder,
+    inner: crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointInputBuilder,
 }
 impl ModifyVerifiedAccessEndpointFluentBuilder {
     /// Creates a new `ModifyVerifiedAccessEndpoint`.
@@ -37,7 +37,7 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
         }
     }
     /// Access the ModifyVerifiedAccessEndpoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
             crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
             crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_endpoint_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
         self.inner.get_verified_access_endpoint_id()
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_group_id(input);
         self
     }
@@ -161,47 +138,31 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
         self.inner.get_verified_access_group_id()
     }
     /// <p>The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.</p>
-    pub fn load_balancer_options(
-        mut self,
-        input: crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions,
-    ) -> Self {
+    pub fn load_balancer_options(mut self, input: crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions) -> Self {
         self.inner = self.inner.load_balancer_options(input);
         self
     }
     /// <p>The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.</p>
-    pub fn set_load_balancer_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions>,
-    ) -> Self {
+    pub fn set_load_balancer_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions>) -> Self {
         self.inner = self.inner.set_load_balancer_options(input);
         self
     }
     /// <p>The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.</p>
-    pub fn get_load_balancer_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions> {
+    pub fn get_load_balancer_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions> {
         self.inner.get_load_balancer_options()
     }
     /// <p>The network interface options.</p>
-    pub fn network_interface_options(
-        mut self,
-        input: crate::types::ModifyVerifiedAccessEndpointEniOptions,
-    ) -> Self {
+    pub fn network_interface_options(mut self, input: crate::types::ModifyVerifiedAccessEndpointEniOptions) -> Self {
         self.inner = self.inner.network_interface_options(input);
         self
     }
     /// <p>The network interface options.</p>
-    pub fn set_network_interface_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointEniOptions>,
-    ) -> Self {
+    pub fn set_network_interface_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointEniOptions>) -> Self {
         self.inner = self.inner.set_network_interface_options(input);
         self
     }
     /// <p>The network interface options.</p>
-    pub fn get_network_interface_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointEniOptions> {
+    pub fn get_network_interface_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointEniOptions> {
         self.inner.get_network_interface_options()
     }
     /// <p>A description for the Verified Access endpoint.</p>

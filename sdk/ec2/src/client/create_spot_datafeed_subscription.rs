@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateSpotDatafeedSubscriptionOutput`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionOutput) with field(s):
     ///   - [`spot_datafeed_subscription(Option<SpotDatafeedSubscription>)`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionOutput::spot_datafeed_subscription): <p>The Spot Instance data feed subscription.</p>
     /// - On failure, responds with [`SdkError<CreateSpotDatafeedSubscriptionError>`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionError)
-    pub fn create_spot_datafeed_subscription(&self) -> crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionFluentBuilder{
+    pub fn create_spot_datafeed_subscription(
+        &self,
+    ) -> crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionFluentBuilder {
         crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

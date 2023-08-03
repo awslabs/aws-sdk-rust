@@ -50,9 +50,7 @@ impl ListRunsInput {
 
 /// A builder for [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_group_id: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl ListRunsInputBuilder {
         &self.run_group_id
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_starting_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_token = input;
         self
     }
@@ -138,12 +130,7 @@ impl ListRunsInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_runs::ListRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_runs::ListRunsInput {
             name: self.name,
             run_group_id: self.run_group_id,

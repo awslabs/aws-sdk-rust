@@ -21,8 +21,7 @@ pub struct HealthCheck {
     pub health_check_version: ::std::option::Option<i64>,
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
     #[doc(hidden)]
-    pub cloud_watch_alarm_configuration:
-        ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
+    pub cloud_watch_alarm_configuration: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheck {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
@@ -46,9 +45,7 @@ impl HealthCheck {
         self.health_check_version
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-    pub fn cloud_watch_alarm_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchAlarmConfiguration> {
+    pub fn cloud_watch_alarm_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchAlarmConfiguration> {
         self.cloud_watch_alarm_configuration.as_ref()
     }
 }
@@ -61,17 +58,14 @@ impl HealthCheck {
 
 /// A builder for [`HealthCheck`](crate::types::HealthCheck).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) linked_service: ::std::option::Option<crate::types::LinkedService>,
     pub(crate) health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
     pub(crate) health_check_version: ::std::option::Option<i64>,
-    pub(crate) cloud_watch_alarm_configuration:
-        ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
+    pub(crate) cloud_watch_alarm_configuration: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheckBuilder {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
@@ -89,18 +83,12 @@ impl HealthCheckBuilder {
         &self.id
     }
     /// <p>A unique string that you specified when you created the health check.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that you specified when you created the health check.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -114,10 +102,7 @@ impl HealthCheckBuilder {
         self
     }
     /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn set_linked_service(
-        mut self,
-        input: ::std::option::Option<crate::types::LinkedService>,
-    ) -> Self {
+    pub fn set_linked_service(mut self, input: ::std::option::Option<crate::types::LinkedService>) -> Self {
         self.linked_service = input;
         self
     }
@@ -131,17 +116,12 @@ impl HealthCheckBuilder {
         self
     }
     /// <p>A complex type that contains detailed information about one health check.</p>
-    pub fn set_health_check_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check_config = input;
         self
     }
     /// <p>A complex type that contains detailed information about one health check.</p>
-    pub fn get_health_check_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
@@ -159,25 +139,17 @@ impl HealthCheckBuilder {
         &self.health_check_version
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-    pub fn cloud_watch_alarm_configuration(
-        mut self,
-        input: crate::types::CloudWatchAlarmConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_alarm_configuration(mut self, input: crate::types::CloudWatchAlarmConfiguration) -> Self {
         self.cloud_watch_alarm_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-    pub fn set_cloud_watch_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_alarm_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>) -> Self {
         self.cloud_watch_alarm_configuration = input;
         self
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-    pub fn get_cloud_watch_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchAlarmConfiguration> {
+    pub fn get_cloud_watch_alarm_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchAlarmConfiguration> {
         &self.cloud_watch_alarm_configuration
     }
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).

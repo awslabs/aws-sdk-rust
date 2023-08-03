@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`opt_out_list_name(Option<String>)`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput::opt_out_list_name): <p>The name of the OptOutList that was removed.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput::created_timestamp): <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<DeleteOptOutListError>`](crate::operation::delete_opt_out_list::DeleteOptOutListError)
-    pub fn delete_opt_out_list(
-        &self,
-    ) -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListFluentBuilder {
-        crate::operation::delete_opt_out_list::builders::DeleteOptOutListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_opt_out_list(&self) -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListFluentBuilder {
+        crate::operation::delete_opt_out_list::builders::DeleteOptOutListFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,19 +9,13 @@ pub fn ser_create_license_conversion_task_for_resource_input(
     if let Some(var_2) = &input.source_license_context {
         #[allow(unused_mut)]
         let mut object_3 = object.key("SourceLicenseContext").start_object();
-        crate::protocol_serde::shape_license_conversion_context::ser_license_conversion_context(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_license_conversion_context::ser_license_conversion_context(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.destination_license_context {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DestinationLicenseContext").start_object();
-        crate::protocol_serde::shape_license_conversion_context::ser_license_conversion_context(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_license_conversion_context::ser_license_conversion_context(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

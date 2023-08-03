@@ -36,9 +36,7 @@ impl DeleteDashboardInput {
 
 /// A builder for [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDashboardInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DeleteDashboardInputBuilder {
 }
 impl DeleteDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl DeleteDashboardInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dashboard::DeleteDashboardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dashboard::DeleteDashboardInput {
             aws_account_id: self.aws_account_id,
             dashboard_id: self.dashboard_id,

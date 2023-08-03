@@ -38,9 +38,7 @@ impl PutInsightSelectorsFluentBuilder {
         }
     }
     /// Access the PutInsightSelectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl PutInsightSelectorsFluentBuilder {
             crate::operation::put_insight_selectors::PutInsightSelectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_insight_selectors::PutInsightSelectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl PutInsightSelectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl PutInsightSelectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_insight_selectors::PutInsightSelectorsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl PutInsightSelectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_insight_selectors::PutInsightSelectorsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl PutInsightSelectorsFluentBuilder {
             crate::operation::put_insight_selectors::PutInsightSelectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_insight_selectors::PutInsightSelectorsError>,
     > {
         self.customize_middleware().await
     }
@@ -151,19 +138,14 @@ impl PutInsightSelectorsFluentBuilder {
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn set_insight_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
-    ) -> Self {
+    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
         self.inner = self.inner.set_insight_selectors(input);
         self
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn get_insight_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         self.inner.get_insight_selectors()
     }
 }

@@ -10,10 +10,7 @@ impl UpdateServerConfigInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_server_config::UpdateServerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_config::UpdateServerConfigError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_config::UpdateServerConfigError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_server_config();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateServerConfigFluentBuilder {
         }
     }
     /// Access the UpdateServerConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_server_config::builders::UpdateServerConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_server_config::builders::UpdateServerConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateServerConfigFluentBuilder {
             crate::operation::update_server_config::UpdateServerConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_config::UpdateServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_config::UpdateServerConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateServerConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateServerConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_server_config::UpdateServerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_config::UpdateServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_config::UpdateServerConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateServerConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_server_config::UpdateServerConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_config::UpdateServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_config::UpdateServerConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateServerConfigFluentBuilder {
             crate::operation::update_server_config::UpdateServerConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_config::UpdateServerConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_config::UpdateServerConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl UpdateServerConfigFluentBuilder {
         self
     }
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
-    pub fn set_strategy_option(
-        mut self,
-        input: ::std::option::Option<crate::types::StrategyOption>,
-    ) -> Self {
+    pub fn set_strategy_option(mut self, input: ::std::option::Option<crate::types::StrategyOption>) -> Self {
         self.inner = self.inner.set_strategy_option(input);
         self
     }

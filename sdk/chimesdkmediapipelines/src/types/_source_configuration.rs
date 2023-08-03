@@ -10,9 +10,7 @@ pub struct SourceConfiguration {
 }
 impl SourceConfiguration {
     /// <p>The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.</p>
-    pub fn selected_video_streams(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelectedVideoStreams> {
+    pub fn selected_video_streams(&self) -> ::std::option::Option<&crate::types::SelectedVideoStreams> {
         self.selected_video_streams.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl SourceConfiguration {
 
 /// A builder for [`SourceConfiguration`](crate::types::SourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceConfigurationBuilder {
     pub(crate) selected_video_streams: ::std::option::Option<crate::types::SelectedVideoStreams>,
 }
@@ -38,17 +34,12 @@ impl SourceConfigurationBuilder {
         self
     }
     /// <p>The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.</p>
-    pub fn set_selected_video_streams(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectedVideoStreams>,
-    ) -> Self {
+    pub fn set_selected_video_streams(mut self, input: ::std::option::Option<crate::types::SelectedVideoStreams>) -> Self {
         self.selected_video_streams = input;
         self
     }
     /// <p>The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.</p>
-    pub fn get_selected_video_streams(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelectedVideoStreams> {
+    pub fn get_selected_video_streams(&self) -> &::std::option::Option<crate::types::SelectedVideoStreams> {
         &self.selected_video_streams
     }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).

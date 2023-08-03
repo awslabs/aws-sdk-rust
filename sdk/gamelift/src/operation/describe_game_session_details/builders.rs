@@ -37,7 +37,7 @@ impl DescribeGameSessionDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameSessionDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder,
+    inner: crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder,
 }
 impl DescribeGameSessionDetailsFluentBuilder {
     /// Creates a new `DescribeGameSessionDetails`.
@@ -48,7 +48,7 @@ impl DescribeGameSessionDetailsFluentBuilder {
         }
     }
     /// Access the DescribeGameSessionDetails as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +60,7 @@ impl DescribeGameSessionDetailsFluentBuilder {
             crate::operation::describe_game_session_details::DescribeGameSessionDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_details::DescribeGameSessionDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +70,7 @@ impl DescribeGameSessionDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +79,7 @@ impl DescribeGameSessionDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_details::DescribeGameSessionDetailsError>,
     > {
         let op = self
             .inner
@@ -109,9 +102,7 @@ impl DescribeGameSessionDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_details::DescribeGameSessionDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -125,16 +116,14 @@ impl DescribeGameSessionDetailsFluentBuilder {
             crate::operation::describe_game_session_details::DescribeGameSessionDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_details::DescribeGameSessionDetailsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_game_session_details::paginator::DescribeGameSessionDetailsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_game_session_details::paginator::DescribeGameSessionDetailsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_game_session_details::paginator::DescribeGameSessionDetailsPaginator {
         crate::operation::describe_game_session_details::paginator::DescribeGameSessionDetailsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
@@ -152,18 +141,12 @@ impl DescribeGameSessionDetailsFluentBuilder {
         self.inner.get_fleet_id()
     }
     /// <p>A unique identifier for the game session to retrieve. </p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to retrieve. </p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
@@ -200,18 +183,12 @@ impl DescribeGameSessionDetailsFluentBuilder {
         self.inner.get_location()
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
-    pub fn status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_filter(input.into());
         self
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }

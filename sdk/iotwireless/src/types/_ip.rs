@@ -23,9 +23,7 @@ impl Ip {
 
 /// A builder for [`Ip`](crate::types::Ip).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl IpBuilder {
     }
     /// Consumes the builder and constructs a [`Ip`](crate::types::Ip).
     pub fn build(self) -> crate::types::Ip {
-        crate::types::Ip {
-            ip_address: self.ip_address,
-        }
+        crate::types::Ip { ip_address: self.ip_address }
     }
 }

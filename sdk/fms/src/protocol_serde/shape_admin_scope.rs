@@ -3,12 +3,7 @@ pub(crate) fn de_admin_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::AdminScope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,50 +13,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AccountScope" => {
-                            builder = builder.set_account_scope(
-                                crate::protocol_serde::shape_account_scope::de_account_scope(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_account_scope(crate::protocol_serde::shape_account_scope::de_account_scope(tokens)?);
                         }
                         "OrganizationalUnitScope" => {
                             builder = builder.set_organizational_unit_scope(
-                                    crate::protocol_serde::shape_organizational_unit_scope::de_organizational_unit_scope(tokens)?
-                                );
-                        }
-                        "RegionScope" => {
-                            builder = builder.set_region_scope(
-                                crate::protocol_serde::shape_region_scope::de_region_scope(tokens)?,
+                                crate::protocol_serde::shape_organizational_unit_scope::de_organizational_unit_scope(tokens)?,
                             );
                         }
+                        "RegionScope" => {
+                            builder = builder.set_region_scope(crate::protocol_serde::shape_region_scope::de_region_scope(tokens)?);
+                        }
                         "PolicyTypeScope" => {
-                            builder = builder.set_policy_type_scope(
-                                    crate::protocol_serde::shape_policy_type_scope::de_policy_type_scope(tokens)?
-                                );
+                            builder = builder.set_policy_type_scope(crate::protocol_serde::shape_policy_type_scope::de_policy_type_scope(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }
 
@@ -78,10 +59,7 @@ pub fn ser_admin_scope(
     if let Some(var_3) = &input.organizational_unit_scope {
         #[allow(unused_mut)]
         let mut object_4 = object.key("OrganizationalUnitScope").start_object();
-        crate::protocol_serde::shape_organizational_unit_scope::ser_organizational_unit_scope(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_organizational_unit_scope::ser_organizational_unit_scope(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.region_scope {
@@ -93,10 +71,7 @@ pub fn ser_admin_scope(
     if let Some(var_7) = &input.policy_type_scope {
         #[allow(unused_mut)]
         let mut object_8 = object.key("PolicyTypeScope").start_object();
-        crate::protocol_serde::shape_policy_type_scope::ser_policy_type_scope(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_policy_type_scope::ser_policy_type_scope(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

@@ -32,9 +32,7 @@ impl ElasticInferenceAccelerator {
 
 /// A builder for [`ElasticInferenceAccelerator`](crate::types::ElasticInferenceAccelerator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

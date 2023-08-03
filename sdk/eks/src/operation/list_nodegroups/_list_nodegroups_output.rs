@@ -35,9 +35,7 @@ impl ListNodegroupsOutput {
 
 /// A builder for [`ListNodegroupsOutput`](crate::operation::list_nodegroups::ListNodegroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodegroupsOutputBuilder {
     pub(crate) nodegroups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListNodegroupsOutputBuilder {
         self
     }
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
-    pub fn set_nodegroups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodegroups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodegroups = input;
         self
     }

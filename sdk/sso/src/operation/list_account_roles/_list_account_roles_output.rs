@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccountRolesOutput {
 }
 impl ListAccountRolesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountRolesOutput`](crate::operation::list_account_roles::ListAccountRolesOutput).
-    pub fn builder() -> crate::operation::list_account_roles::builders::ListAccountRolesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_roles::builders::ListAccountRolesOutputBuilder {
         crate::operation::list_account_roles::builders::ListAccountRolesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountRolesOutput`](crate::operation::list_account_roles::ListAccountRolesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountRolesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) role_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleInfo>>,
@@ -71,10 +68,7 @@ impl ListAccountRolesOutputBuilder {
         self
     }
     /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
-    pub fn set_role_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoleInfo>>,
-    ) -> Self {
+    pub fn set_role_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoleInfo>>) -> Self {
         self.role_list = input;
         self
     }

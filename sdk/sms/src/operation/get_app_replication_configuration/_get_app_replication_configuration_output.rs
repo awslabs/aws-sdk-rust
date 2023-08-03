@@ -5,15 +5,12 @@
 pub struct GetAppReplicationConfigurationOutput {
     /// <p>The replication configurations associated with server groups in this application.</p>
     #[doc(hidden)]
-    pub server_group_replication_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
+    pub server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAppReplicationConfigurationOutput {
     /// <p>The replication configurations associated with server groups in this application.</p>
-    pub fn server_group_replication_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerGroupReplicationConfiguration]> {
+    pub fn server_group_replication_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupReplicationConfiguration]> {
         self.server_group_replication_configurations.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetAppReplicationConfigurationOutput 
 }
 impl GetAppReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAppReplicationConfigurationOutput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationOutputBuilder {
         crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppReplicationConfigurationOutput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppReplicationConfigurationOutputBuilder {
-    pub(crate) server_group_replication_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
+    pub(crate) server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAppReplicationConfigurationOutputBuilder {
@@ -45,13 +39,8 @@ impl GetAppReplicationConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_server_group_replication_configurations`](Self::set_server_group_replication_configurations).
     ///
     /// <p>The replication configurations associated with server groups in this application.</p>
-    pub fn server_group_replication_configurations(
-        mut self,
-        input: crate::types::ServerGroupReplicationConfiguration,
-    ) -> Self {
-        let mut v = self
-            .server_group_replication_configurations
-            .unwrap_or_default();
+    pub fn server_group_replication_configurations(mut self, input: crate::types::ServerGroupReplicationConfiguration) -> Self {
+        let mut v = self.server_group_replication_configurations.unwrap_or_default();
         v.push(input);
         self.server_group_replication_configurations = ::std::option::Option::Some(v);
         self
@@ -59,9 +48,7 @@ impl GetAppReplicationConfigurationOutputBuilder {
     /// <p>The replication configurations associated with server groups in this application.</p>
     pub fn set_server_group_replication_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
     ) -> Self {
         self.server_group_replication_configurations = input;
         self
@@ -69,8 +56,7 @@ impl GetAppReplicationConfigurationOutputBuilder {
     /// <p>The replication configurations associated with server groups in this application.</p>
     pub fn get_server_group_replication_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>> {
         &self.server_group_replication_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -83,10 +69,7 @@ impl GetAppReplicationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAppReplicationConfigurationOutput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput {
         crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput {
             server_group_replication_configurations: self.server_group_replication_configurations,
             _request_id: self._request_id,

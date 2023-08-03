@@ -69,9 +69,7 @@ pub fn ser_alias_target(
     }
     {
         let mut inner_writer = scope.start_el("EvaluateTargetHealth").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.evaluate_target_health).encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.evaluate_target_health).encode());
     }
     scope.finish();
     Ok(())

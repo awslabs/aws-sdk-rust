@@ -10,10 +10,7 @@ impl AssociateFacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_faces::AssociateFacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_faces::AssociateFacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_faces::AssociateFacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_faces();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl AssociateFacesFluentBuilder {
         }
     }
     /// Access the AssociateFaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_faces::builders::AssociateFacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_faces::builders::AssociateFacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl AssociateFacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -123,18 +115,12 @@ impl AssociateFacesFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -166,10 +152,7 @@ impl AssociateFacesFluentBuilder {
         self
     }
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    pub fn set_face_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
     }
@@ -192,18 +175,12 @@ impl AssociateFacesFluentBuilder {
         self.inner.get_user_match_threshold()
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

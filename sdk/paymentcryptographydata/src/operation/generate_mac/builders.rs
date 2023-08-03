@@ -10,10 +10,7 @@ impl GenerateMacInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::generate_mac::GenerateMacOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_mac::GenerateMacError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_mac::GenerateMacError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.generate_mac();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl GenerateMacFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::generate_mac::GenerateMac,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::generate_mac::GenerateMac, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::generate_mac::GenerateMacError>,
     > {
         let handle = self.handle.clone();
@@ -66,10 +60,7 @@ impl GenerateMacFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -111,27 +102,18 @@ impl GenerateMacFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::generate_mac::GenerateMac,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::generate_mac::GenerateMac, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::generate_mac::GenerateMacError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
@@ -159,10 +141,7 @@ impl GenerateMacFluentBuilder {
         self
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_generation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MacAttributes>,
-    ) -> Self {
+    pub fn set_generation_attributes(mut self, input: ::std::option::Option<crate::types::MacAttributes>) -> Self {
         self.inner = self.inner.set_generation_attributes(input);
         self
     }

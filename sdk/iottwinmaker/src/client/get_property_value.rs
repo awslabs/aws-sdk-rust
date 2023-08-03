@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_property_value::GetPropertyValueOutput::next_token): <p>The string that specifies the next page of results.</p>
     ///   - [`tabular_property_values(Option<Vec<Vec<HashMap<String, DataValue>>>>)`](crate::operation::get_property_value::GetPropertyValueOutput::tabular_property_values): <p>A table of property values.</p>
     /// - On failure, responds with [`SdkError<GetPropertyValueError>`](crate::operation::get_property_value::GetPropertyValueError)
-    pub fn get_property_value(
-        &self,
-    ) -> crate::operation::get_property_value::builders::GetPropertyValueFluentBuilder {
-        crate::operation::get_property_value::builders::GetPropertyValueFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_property_value(&self) -> crate::operation::get_property_value::builders::GetPropertyValueFluentBuilder {
+        crate::operation::get_property_value::builders::GetPropertyValueFluentBuilder::new(self.handle.clone())
     }
 }

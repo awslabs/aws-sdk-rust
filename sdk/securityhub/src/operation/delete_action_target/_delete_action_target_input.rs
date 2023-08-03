@@ -15,34 +15,25 @@ impl DeleteActionTargetInput {
 }
 impl DeleteActionTargetInput {
     /// Creates a new builder-style object to manufacture [`DeleteActionTargetInput`](crate::operation::delete_action_target::DeleteActionTargetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder {
+    pub fn builder() -> crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder {
         crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteActionTargetInput`](crate::operation::delete_action_target::DeleteActionTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteActionTargetInputBuilder {
     pub(crate) action_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActionTargetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
-    pub fn action_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
-    pub fn set_action_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_target_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteActionTargetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActionTargetInput`](crate::operation::delete_action_target::DeleteActionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_action_target::DeleteActionTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_action_target::DeleteActionTargetInput {
-                action_target_arn: self.action_target_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_action_target::DeleteActionTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_action_target::DeleteActionTargetInput {
+            action_target_arn: self.action_target_arn,
+        })
     }
 }

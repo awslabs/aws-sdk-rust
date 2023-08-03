@@ -4,45 +4,34 @@ pub fn de_get_metric_data_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_metric_data::GetMetricDataOutput,
-    crate::operation::get_metric_data::GetMetricDataError,
-> {
+) -> std::result::Result<crate::operation::get_metric_data::GetMetricDataOutput, crate::operation::get_metric_data::GetMetricDataError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_metric_data::GetMetricDataError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_metric_data::GetMetricDataError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::get_metric_data::GetMetricDataError::unhandled(generic))
-        }
+        None => return Err(crate::operation::get_metric_data::GetMetricDataError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::operation::get_metric_data::GetMetricDataError::InvalidNextToken({
+        "InvalidNextToken" => crate::operation::get_metric_data::GetMetricDataError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidNextTokenBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output).map_err(crate::operation::get_metric_data::GetMetricDataError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
+                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_metric_data::GetMetricDataError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_metric_data::GetMetricDataError::generic(generic),
     })
 }
@@ -52,22 +41,13 @@ pub fn de_get_metric_data_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_metric_data::GetMetricDataOutput,
-    crate::operation::get_metric_data::GetMetricDataError,
-> {
+) -> std::result::Result<crate::operation::get_metric_data::GetMetricDataOutput, crate::operation::get_metric_data::GetMetricDataError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_metric_data::builders::GetMetricDataOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_metric_data::de_get_metric_data(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_metric_data::GetMetricDataError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::get_metric_data::builders::GetMetricDataOutputBuilder::default();
+        output = crate::protocol_serde::shape_get_metric_data::de_get_metric_data(_response_body, output)
+            .map_err(crate::operation::get_metric_data::GetMetricDataError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -76,10 +56,7 @@ pub fn de_get_metric_data_http_response_with_props(
 pub fn de_get_metric_data(
     inp: &[u8],
     mut builder: crate::operation::get_metric_data::builders::GetMetricDataOutputBuilder,
-) -> Result<
-    crate::operation::get_metric_data::builders::GetMetricDataOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_metric_data::builders::GetMetricDataOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -139,9 +116,7 @@ pub fn de_get_metric_data(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetMetricDataResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetMetricDataResult tag"));
     };
     Ok(builder)
 }

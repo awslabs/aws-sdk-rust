@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateMergedGraphqlApiOutput`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput) with field(s):
     ///   - [`source_api_association(Option<SourceApiAssociation>)`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput::source_api_association): <p>The <code>SourceApiAssociation</code> object data.</p>
     /// - On failure, responds with [`SdkError<AssociateMergedGraphqlApiError>`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError)
-    pub fn associate_merged_graphql_api(&self) -> crate::operation::associate_merged_graphql_api::builders::AssociateMergedGraphqlApiFluentBuilder{
+    pub fn associate_merged_graphql_api(&self) -> crate::operation::associate_merged_graphql_api::builders::AssociateMergedGraphqlApiFluentBuilder {
         crate::operation::associate_merged_graphql_api::builders::AssociateMergedGraphqlApiFluentBuilder::new(self.handle.clone())
     }
 }

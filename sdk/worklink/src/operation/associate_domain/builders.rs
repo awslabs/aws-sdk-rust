@@ -10,10 +10,7 @@ impl AssociateDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_domain::AssociateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_domain::AssociateDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_domain::AssociateDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_domain();
         fluent_builder.inner = self;
@@ -23,9 +20,7 @@ impl AssociateDomainInputBuilder {
 /// Fluent builder constructing a request to `AssociateDomain`.
 ///
 /// <p>Specifies a domain to be associated to Amazon WorkLink.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +35,7 @@ impl AssociateDomainFluentBuilder {
         }
     }
     /// Access the AssociateDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_domain::builders::AssociateDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_domain::builders::AssociateDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +47,7 @@ impl AssociateDomainFluentBuilder {
             crate::operation::associate_domain::AssociateDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_domain::AssociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_domain::AssociateDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +57,7 @@ impl AssociateDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +66,7 @@ impl AssociateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_domain::AssociateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_domain::AssociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_domain::AssociateDomainError>,
     > {
         let op = self
             .inner
@@ -103,9 +89,7 @@ impl AssociateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_domain::AssociateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_domain::AssociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_domain::AssociateDomainError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +103,7 @@ impl AssociateDomainFluentBuilder {
             crate::operation::associate_domain::AssociateDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_domain::AssociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_domain::AssociateDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -168,18 +150,12 @@ impl AssociateDomainFluentBuilder {
         self.inner.get_display_name()
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn acm_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acm_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.acm_certificate_arn(input.into());
         self
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn set_acm_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acm_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_acm_certificate_arn(input);
         self
     }

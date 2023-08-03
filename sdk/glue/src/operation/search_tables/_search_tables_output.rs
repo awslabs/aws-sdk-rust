@@ -35,9 +35,7 @@ impl SearchTablesOutput {
 
 /// A builder for [`SearchTablesOutput`](crate::operation::search_tables::SearchTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTablesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) table_list: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
@@ -70,10 +68,7 @@ impl SearchTablesOutputBuilder {
         self
     }
     /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
-    pub fn set_table_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
-    ) -> Self {
+    pub fn set_table_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Table>>) -> Self {
         self.table_list = input;
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`recommendation_preference_names(Vec<RecommendationPreferenceName>)`](crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesFluentBuilder::recommendation_preference_names) / [`set_recommendation_preference_names(Option<Vec<RecommendationPreferenceName>>)`](crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesFluentBuilder::set_recommendation_preference_names): <p>The name of the recommendation preference to delete.</p>
     /// - On success, responds with [`DeleteRecommendationPreferencesOutput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput)
     /// - On failure, responds with [`SdkError<DeleteRecommendationPreferencesError>`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError)
-    pub fn delete_recommendation_preferences(&self) -> crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesFluentBuilder{
+    pub fn delete_recommendation_preferences(
+        &self,
+    ) -> crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesFluentBuilder {
         crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

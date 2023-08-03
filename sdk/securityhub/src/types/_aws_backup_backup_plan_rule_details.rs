@@ -27,9 +27,7 @@ pub struct AwsBackupBackupPlanRuleDetails {
     pub completion_window_minutes: i64,
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
     #[doc(hidden)]
-    pub copy_actions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>,
-    >,
+    pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>>,
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
     #[doc(hidden)]
@@ -65,16 +63,12 @@ impl AwsBackupBackupPlanRuleDetails {
         self.completion_window_minutes
     }
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
-    pub fn copy_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsBackupBackupPlanRuleCopyActionsDetails]> {
+    pub fn copy_actions(&self) -> ::std::option::Option<&[crate::types::AwsBackupBackupPlanRuleCopyActionsDetails]> {
         self.copy_actions.as_deref()
     }
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    pub fn lifecycle(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsBackupBackupPlanLifecycleDetails> {
+    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::AwsBackupBackupPlanLifecycleDetails> {
         self.lifecycle.as_ref()
     }
 }
@@ -87,9 +81,7 @@ impl AwsBackupBackupPlanRuleDetails {
 
 /// A builder for [`AwsBackupBackupPlanRuleDetails`](crate::types::AwsBackupBackupPlanRuleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsBackupBackupPlanRuleDetailsBuilder {
     pub(crate) target_backup_vault: ::std::option::Option<::std::string::String>,
     pub(crate) start_window_minutes: ::std::option::Option<i64>,
@@ -98,25 +90,17 @@ pub struct AwsBackupBackupPlanRuleDetailsBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
     pub(crate) completion_window_minutes: ::std::option::Option<i64>,
-    pub(crate) copy_actions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>,
-    >,
+    pub(crate) copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>,
 }
 impl AwsBackupBackupPlanRuleDetailsBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
-    pub fn target_backup_vault(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_backup_vault(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_backup_vault = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
-    pub fn set_target_backup_vault(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_backup_vault(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_backup_vault = input;
         self
     }
@@ -139,18 +123,12 @@ impl AwsBackupBackupPlanRuleDetailsBuilder {
         &self.start_window_minutes
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
@@ -219,10 +197,7 @@ impl AwsBackupBackupPlanRuleDetailsBuilder {
     /// To override the contents of this collection use [`set_copy_actions`](Self::set_copy_actions).
     ///
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
-    pub fn copy_actions(
-        mut self,
-        input: crate::types::AwsBackupBackupPlanRuleCopyActionsDetails,
-    ) -> Self {
+    pub fn copy_actions(mut self, input: crate::types::AwsBackupBackupPlanRuleCopyActionsDetails) -> Self {
         let mut v = self.copy_actions.unwrap_or_default();
         v.push(input);
         self.copy_actions = ::std::option::Option::Some(v);
@@ -231,19 +206,13 @@ impl AwsBackupBackupPlanRuleDetailsBuilder {
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
     pub fn set_copy_actions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>>,
     ) -> Self {
         self.copy_actions = input;
         self
     }
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
-    pub fn get_copy_actions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>,
-    > {
+    pub fn get_copy_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>> {
         &self.copy_actions
     }
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
@@ -254,18 +223,13 @@ impl AwsBackupBackupPlanRuleDetailsBuilder {
     }
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>) -> Self {
         self.lifecycle = input;
         self
     }
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    pub fn get_lifecycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails> {
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails> {
         &self.lifecycle
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanRuleDetails`](crate::types::AwsBackupBackupPlanRuleDetails).

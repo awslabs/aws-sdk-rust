@@ -44,9 +44,7 @@ impl SourceNetworkData {
 
 /// A builder for [`SourceNetworkData`](crate::types::SourceNetworkData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceNetworkDataBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_vpc: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct SourceNetworkDataBuilder {
 }
 impl SourceNetworkDataBuilder {
     /// <p>Source Network ID.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source Network ID.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }

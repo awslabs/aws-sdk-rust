@@ -26,7 +26,7 @@ impl GetDefaultRetentionPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDefaultRetentionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder,
+    inner: crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder,
 }
 impl GetDefaultRetentionPolicyFluentBuilder {
     /// Creates a new `GetDefaultRetentionPolicy`.
@@ -37,7 +37,7 @@ impl GetDefaultRetentionPolicyFluentBuilder {
         }
     }
     /// Access the GetDefaultRetentionPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDefaultRetentionPolicyFluentBuilder {
             crate::operation::get_default_retention_policy::GetDefaultRetentionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDefaultRetentionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDefaultRetentionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDefaultRetentionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetDefaultRetentionPolicyFluentBuilder {
             crate::operation::get_default_retention_policy::GetDefaultRetentionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

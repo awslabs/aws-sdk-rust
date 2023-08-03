@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsOnInterconnectError>`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectError)
     #[deprecated]
-    pub fn describe_connections_on_interconnect(&self) -> crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectFluentBuilder{
+    pub fn describe_connections_on_interconnect(
+        &self,
+    ) -> crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectFluentBuilder {
         crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectFluentBuilder::new(self.handle.clone())
     }
 }

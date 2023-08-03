@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ModelHostingStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ModelHostingStatus {
             "STARTING_HOSTING" => ModelHostingStatus::StartingHosting,
             "STOPPING_HOSTING" => ModelHostingStatus::StoppingHosting,
             "SYSTEM_UPDATING" => ModelHostingStatus::SystemUpdating,
-            other => ModelHostingStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ModelHostingStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ModelHostingStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "HOSTED",
-            "HOSTING_FAILED",
-            "STARTING_HOSTING",
-            "STOPPING_HOSTING",
-            "SYSTEM_UPDATING",
-        ]
+        &["HOSTED", "HOSTING_FAILED", "STARTING_HOSTING", "STOPPING_HOSTING", "SYSTEM_UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for ModelHostingStatus {

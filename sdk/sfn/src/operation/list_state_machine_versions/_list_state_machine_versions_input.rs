@@ -31,18 +31,14 @@ impl ListStateMachineVersionsInput {
 }
 impl ListStateMachineVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListStateMachineVersionsInput`](crate::operation::list_state_machine_versions::ListStateMachineVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder {
         crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStateMachineVersionsInput`](crate::operation::list_state_machine_versions::ListStateMachineVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStateMachineVersionsInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,18 +46,12 @@ pub struct ListStateMachineVersionsInputBuilder {
 }
 impl ListStateMachineVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -107,12 +97,10 @@ impl ListStateMachineVersionsInputBuilder {
         crate::operation::list_state_machine_versions::ListStateMachineVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_state_machine_versions::ListStateMachineVersionsInput {
-                state_machine_arn: self.state_machine_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_state_machine_versions::ListStateMachineVersionsInput {
+            state_machine_arn: self.state_machine_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

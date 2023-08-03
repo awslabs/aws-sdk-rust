@@ -10,9 +10,7 @@ pub struct BootstrapActionDetail {
 }
 impl BootstrapActionDetail {
     /// <p>A description of the bootstrap action.</p>
-    pub fn bootstrap_action_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BootstrapActionConfig> {
+    pub fn bootstrap_action_config(&self) -> ::std::option::Option<&crate::types::BootstrapActionConfig> {
         self.bootstrap_action_config.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl BootstrapActionDetail {
 
 /// A builder for [`BootstrapActionDetail`](crate::types::BootstrapActionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BootstrapActionDetailBuilder {
     pub(crate) bootstrap_action_config: ::std::option::Option<crate::types::BootstrapActionConfig>,
 }
@@ -38,17 +34,12 @@ impl BootstrapActionDetailBuilder {
         self
     }
     /// <p>A description of the bootstrap action.</p>
-    pub fn set_bootstrap_action_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BootstrapActionConfig>,
-    ) -> Self {
+    pub fn set_bootstrap_action_config(mut self, input: ::std::option::Option<crate::types::BootstrapActionConfig>) -> Self {
         self.bootstrap_action_config = input;
         self
     }
     /// <p>A description of the bootstrap action.</p>
-    pub fn get_bootstrap_action_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BootstrapActionConfig> {
+    pub fn get_bootstrap_action_config(&self) -> &::std::option::Option<crate::types::BootstrapActionConfig> {
         &self.bootstrap_action_config
     }
     /// Consumes the builder and constructs a [`BootstrapActionDetail`](crate::types::BootstrapActionDetail).

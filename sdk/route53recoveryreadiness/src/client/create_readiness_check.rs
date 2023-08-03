@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`resource_set(Option<String>)`](crate::operation::create_readiness_check::CreateReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_readiness_check::CreateReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<CreateReadinessCheckError>`](crate::operation::create_readiness_check::CreateReadinessCheckError)
-    pub fn create_readiness_check(
-        &self,
-    ) -> crate::operation::create_readiness_check::builders::CreateReadinessCheckFluentBuilder {
-        crate::operation::create_readiness_check::builders::CreateReadinessCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_readiness_check(&self) -> crate::operation::create_readiness_check::builders::CreateReadinessCheckFluentBuilder {
+        crate::operation::create_readiness_check::builders::CreateReadinessCheckFluentBuilder::new(self.handle.clone())
     }
 }

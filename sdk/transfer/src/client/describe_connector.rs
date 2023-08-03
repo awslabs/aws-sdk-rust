@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput) with field(s):
     ///   - [`connector(Option<DescribedConnector>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector): <p>The structure that contains the details of the connector.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectorError>`](crate::operation::describe_connector::DescribeConnectorError)
-    pub fn describe_connector(
-        &self,
-    ) -> crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder {
-        crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_connector(&self) -> crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder {
+        crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::new(self.handle.clone())
     }
 }

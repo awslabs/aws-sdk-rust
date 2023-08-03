@@ -9,20 +9,13 @@ pub struct S3BucketConfiguration {
     pub bucket_policy: ::std::option::Option<::std::string::String>,
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
     #[doc(hidden)]
-    pub bucket_acl_grants:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,
+    pub bucket_acl_grants: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_public_access_block:
-        ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
+    pub bucket_public_access_block: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     #[doc(hidden)]
-    pub access_points: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::S3AccessPointConfiguration,
-        >,
-    >,
+    pub access_points: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::S3AccessPointConfiguration>>,
 }
 impl S3BucketConfiguration {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
@@ -30,26 +23,17 @@ impl S3BucketConfiguration {
         self.bucket_policy.as_deref()
     }
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-    pub fn bucket_acl_grants(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::S3BucketAclGrantConfiguration]> {
+    pub fn bucket_acl_grants(&self) -> ::std::option::Option<&[crate::types::S3BucketAclGrantConfiguration]> {
         self.bucket_acl_grants.as_deref()
     }
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-    pub fn bucket_public_access_block(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3PublicAccessBlockConfiguration> {
+    pub fn bucket_public_access_block(&self) -> ::std::option::Option<&crate::types::S3PublicAccessBlockConfiguration> {
         self.bucket_public_access_block.as_ref()
     }
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     pub fn access_points(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::S3AccessPointConfiguration,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::S3AccessPointConfiguration>> {
         self.access_points.as_ref()
     }
 }
@@ -62,36 +46,21 @@ impl S3BucketConfiguration {
 
 /// A builder for [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketConfigurationBuilder {
     pub(crate) bucket_policy: ::std::option::Option<::std::string::String>,
-    pub(crate) bucket_acl_grants:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,
-    pub(crate) bucket_public_access_block:
-        ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
-    pub(crate) access_points: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::S3AccessPointConfiguration,
-        >,
-    >,
+    pub(crate) bucket_acl_grants: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,
+    pub(crate) bucket_public_access_block: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
+    pub(crate) access_points: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::S3AccessPointConfiguration>>,
 }
 impl S3BucketConfigurationBuilder {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
-    pub fn bucket_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
-    pub fn set_bucket_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_policy = input;
         self
     }
@@ -111,39 +80,26 @@ impl S3BucketConfigurationBuilder {
         self
     }
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-    pub fn set_bucket_acl_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,
-    ) -> Self {
+    pub fn set_bucket_acl_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>) -> Self {
         self.bucket_acl_grants = input;
         self
     }
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-    pub fn get_bucket_acl_grants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>> {
+    pub fn get_bucket_acl_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>> {
         &self.bucket_acl_grants
     }
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-    pub fn bucket_public_access_block(
-        mut self,
-        input: crate::types::S3PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn bucket_public_access_block(mut self, input: crate::types::S3PublicAccessBlockConfiguration) -> Self {
         self.bucket_public_access_block = ::std::option::Option::Some(input);
         self
     }
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-    pub fn set_bucket_public_access_block(
-        mut self,
-        input: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_bucket_public_access_block(mut self, input: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>) -> Self {
         self.bucket_public_access_block = input;
         self
     }
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-    pub fn get_bucket_public_access_block(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3PublicAccessBlockConfiguration> {
+    pub fn get_bucket_public_access_block(&self) -> &::std::option::Option<crate::types::S3PublicAccessBlockConfiguration> {
         &self.bucket_public_access_block
     }
     /// Adds a key-value pair to `access_points`.
@@ -151,11 +107,7 @@ impl S3BucketConfigurationBuilder {
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
-    pub fn access_points(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::S3AccessPointConfiguration,
-    ) -> Self {
+    pub fn access_points(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::S3AccessPointConfiguration) -> Self {
         let mut hash_map = self.access_points.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.access_points = ::std::option::Option::Some(hash_map);
@@ -164,12 +116,7 @@ impl S3BucketConfigurationBuilder {
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     pub fn set_access_points(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::S3AccessPointConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::S3AccessPointConfiguration>>,
     ) -> Self {
         self.access_points = input;
         self
@@ -177,12 +124,7 @@ impl S3BucketConfigurationBuilder {
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     pub fn get_access_points(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::S3AccessPointConfiguration,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::S3AccessPointConfiguration>> {
         &self.access_points
     }
     /// Consumes the builder and constructs a [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).

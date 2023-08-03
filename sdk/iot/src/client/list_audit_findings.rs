@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`findings(Option<Vec<AuditFinding>>)`](crate::operation::list_audit_findings::ListAuditFindingsOutput::findings): <p>The findings (results) of the audit.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_findings::ListAuditFindingsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAuditFindingsError>`](crate::operation::list_audit_findings::ListAuditFindingsError)
-    pub fn list_audit_findings(
-        &self,
-    ) -> crate::operation::list_audit_findings::builders::ListAuditFindingsFluentBuilder {
-        crate::operation::list_audit_findings::builders::ListAuditFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_audit_findings(&self) -> crate::operation::list_audit_findings::builders::ListAuditFindingsFluentBuilder {
+        crate::operation::list_audit_findings::builders::ListAuditFindingsFluentBuilder::new(self.handle.clone())
     }
 }

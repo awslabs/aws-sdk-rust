@@ -39,9 +39,7 @@ impl CreateRoutingControlFluentBuilder {
         }
     }
     /// Access the CreateRoutingControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_routing_control::builders::CreateRoutingControlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_routing_control::builders::CreateRoutingControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateRoutingControlFluentBuilder {
             crate::operation::create_routing_control::CreateRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_control::CreateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_control::CreateRoutingControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateRoutingControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_routing_control::CreateRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_control::CreateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_control::CreateRoutingControlError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_routing_control::CreateRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_control::CreateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_control::CreateRoutingControlError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreateRoutingControlFluentBuilder {
             crate::operation::create_routing_control::CreateRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_routing_control::CreateRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_routing_control::CreateRoutingControlError>,
     > {
         self.customize_middleware().await
     }
@@ -153,18 +140,12 @@ impl CreateRoutingControlFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_arn(input);
         self
     }
@@ -173,18 +154,12 @@ impl CreateRoutingControlFluentBuilder {
         self.inner.get_control_panel_arn()
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_name(input.into());
         self
     }
     /// <p>The name of the routing control.</p>
-    pub fn set_routing_control_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_name(input);
         self
     }

@@ -8,99 +8,69 @@ pub struct UpdateGlobalSettingsInput {
     pub organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
     /// <p>The status of discovery support settings.</p>
     #[doc(hidden)]
-    pub discovery_integration_status:
-        ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
+    pub discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
 }
 impl UpdateGlobalSettingsInput {
     /// <p>The status of organization sharing settings.</p>
-    pub fn organization_sharing_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationSharingStatus> {
+    pub fn organization_sharing_status(&self) -> ::std::option::Option<&crate::types::OrganizationSharingStatus> {
         self.organization_sharing_status.as_ref()
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn discovery_integration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DiscoveryIntegrationStatus> {
+    pub fn discovery_integration_status(&self) -> ::std::option::Option<&crate::types::DiscoveryIntegrationStatus> {
         self.discovery_integration_status.as_ref()
     }
 }
 impl UpdateGlobalSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn builder() -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInputBuilder {
-    pub(crate) organization_sharing_status:
-        ::std::option::Option<crate::types::OrganizationSharingStatus>,
-    pub(crate) discovery_integration_status:
-        ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
+    pub(crate) organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
+    pub(crate) discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
 }
 impl UpdateGlobalSettingsInputBuilder {
     /// <p>The status of organization sharing settings.</p>
-    pub fn organization_sharing_status(
-        mut self,
-        input: crate::types::OrganizationSharingStatus,
-    ) -> Self {
+    pub fn organization_sharing_status(mut self, input: crate::types::OrganizationSharingStatus) -> Self {
         self.organization_sharing_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of organization sharing settings.</p>
-    pub fn set_organization_sharing_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationSharingStatus>,
-    ) -> Self {
+    pub fn set_organization_sharing_status(mut self, input: ::std::option::Option<crate::types::OrganizationSharingStatus>) -> Self {
         self.organization_sharing_status = input;
         self
     }
     /// <p>The status of organization sharing settings.</p>
-    pub fn get_organization_sharing_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationSharingStatus> {
+    pub fn get_organization_sharing_status(&self) -> &::std::option::Option<crate::types::OrganizationSharingStatus> {
         &self.organization_sharing_status
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn discovery_integration_status(
-        mut self,
-        input: crate::types::DiscoveryIntegrationStatus,
-    ) -> Self {
+    pub fn discovery_integration_status(mut self, input: crate::types::DiscoveryIntegrationStatus) -> Self {
         self.discovery_integration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn set_discovery_integration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
-    ) -> Self {
+    pub fn set_discovery_integration_status(mut self, input: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>) -> Self {
         self.discovery_integration_status = input;
         self
     }
     /// <p>The status of discovery support settings.</p>
-    pub fn get_discovery_integration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
+    pub fn get_discovery_integration_status(&self) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
         &self.discovery_integration_status
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_global_settings::UpdateGlobalSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_global_settings::UpdateGlobalSettingsInput {
-                organization_sharing_status: self.organization_sharing_status,
-                discovery_integration_status: self.discovery_integration_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_global_settings::UpdateGlobalSettingsInput {
+            organization_sharing_status: self.organization_sharing_status,
+            discovery_integration_status: self.discovery_integration_status,
+        })
     }
 }

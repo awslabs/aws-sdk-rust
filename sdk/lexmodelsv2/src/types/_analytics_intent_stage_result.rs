@@ -9,12 +9,10 @@ pub struct AnalyticsIntentStageResult {
     pub bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
     #[doc(hidden)]
-    pub group_by_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>,
+    pub group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>,
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
     #[doc(hidden)]
-    pub metrics_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>>,
+    pub metrics_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>>,
 }
 impl AnalyticsIntentStageResult {
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
@@ -22,15 +20,11 @@ impl AnalyticsIntentStageResult {
         self.bin_keys.as_deref()
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    pub fn group_by_keys(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageGroupByKey]> {
+    pub fn group_by_keys(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageGroupByKey]> {
         self.group_by_keys.as_deref()
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn metrics_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageMetricResult]> {
+    pub fn metrics_results(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageMetricResult]> {
         self.metrics_results.as_deref()
     }
 }
@@ -43,15 +37,11 @@ impl AnalyticsIntentStageResult {
 
 /// A builder for [`AnalyticsIntentStageResult`](crate::types::AnalyticsIntentStageResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageResultBuilder {
     pub(crate) bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
-    pub(crate) group_by_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>,
-    pub(crate) metrics_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>>,
+    pub(crate) group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>,
+    pub(crate) metrics_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>>,
 }
 impl AnalyticsIntentStageResultBuilder {
     /// Appends an item to `bin_keys`.
@@ -66,17 +56,12 @@ impl AnalyticsIntentStageResultBuilder {
         self
     }
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    pub fn set_bin_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
-    ) -> Self {
+    pub fn set_bin_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>) -> Self {
         self.bin_keys = input;
         self
     }
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    pub fn get_bin_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>> {
+    pub fn get_bin_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>> {
         &self.bin_keys
     }
     /// Appends an item to `group_by_keys`.
@@ -91,17 +76,12 @@ impl AnalyticsIntentStageResultBuilder {
         self
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    pub fn set_group_by_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>,
-    ) -> Self {
+    pub fn set_group_by_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>) -> Self {
         self.group_by_keys = input;
         self
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    pub fn get_group_by_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>> {
+    pub fn get_group_by_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>> {
         &self.group_by_keys
     }
     /// Appends an item to `metrics_results`.
@@ -109,30 +89,19 @@ impl AnalyticsIntentStageResultBuilder {
     /// To override the contents of this collection use [`set_metrics_results`](Self::set_metrics_results).
     ///
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn metrics_results(
-        mut self,
-        input: crate::types::AnalyticsIntentStageMetricResult,
-    ) -> Self {
+    pub fn metrics_results(mut self, input: crate::types::AnalyticsIntentStageMetricResult) -> Self {
         let mut v = self.metrics_results.unwrap_or_default();
         v.push(input);
         self.metrics_results = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn set_metrics_results(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>,
-        >,
-    ) -> Self {
+    pub fn set_metrics_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>>) -> Self {
         self.metrics_results = input;
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn get_metrics_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>>
-    {
+    pub fn get_metrics_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetricResult>> {
         &self.metrics_results
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentStageResult`](crate::types::AnalyticsIntentStageResult).

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVoiceConnectorOutput`](crate::operation::update_voice_connector::UpdateVoiceConnectorOutput) with field(s):
     ///   - [`voice_connector(Option<VoiceConnector>)`](crate::operation::update_voice_connector::UpdateVoiceConnectorOutput::voice_connector): <p>The updated Voice Connector details.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceConnectorError>`](crate::operation::update_voice_connector::UpdateVoiceConnectorError)
-    pub fn update_voice_connector(
-        &self,
-    ) -> crate::operation::update_voice_connector::builders::UpdateVoiceConnectorFluentBuilder {
-        crate::operation::update_voice_connector::builders::UpdateVoiceConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_voice_connector(&self) -> crate::operation::update_voice_connector::builders::UpdateVoiceConnectorFluentBuilder {
+        crate::operation::update_voice_connector::builders::UpdateVoiceConnectorFluentBuilder::new(self.handle.clone())
     }
 }

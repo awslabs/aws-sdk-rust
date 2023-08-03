@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateApplicationSnapshotOutput {
 }
 impl CreateApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotOutput`](crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput).
-    pub fn builder() -> crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotOutputBuilder {
         crate::operation::create_application_snapshot::builders::CreateApplicationSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationSnapshotOutput`](crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateApplicationSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateApplicationSnapshotOutput`](crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput {
+    pub fn build(self) -> crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput {
         crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput {
             _request_id: self._request_id,
         }

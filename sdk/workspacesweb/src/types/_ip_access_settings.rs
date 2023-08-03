@@ -73,8 +73,7 @@ impl IpAccessSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IpAccessSettingsBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_portal_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -82,18 +81,12 @@ pub struct IpAccessSettingsBuilder {
 }
 impl IpAccessSettingsBuilder {
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -106,27 +99,19 @@ impl IpAccessSettingsBuilder {
     /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
     ///
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    pub fn associated_portal_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_portal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
         v.push(input.into());
         self.associated_portal_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    pub fn set_associated_portal_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.associated_portal_arns = input;
         self
     }
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    pub fn get_associated_portal_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_portal_arns
     }
     /// Appends an item to `ip_rules`.
@@ -141,10 +126,7 @@ impl IpAccessSettingsBuilder {
         self
     }
     /// <p>The IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
-    ) -> Self {
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
         self.ip_rules = input;
         self
     }
@@ -186,10 +168,7 @@ impl IpAccessSettingsBuilder {
         self
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

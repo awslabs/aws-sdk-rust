@@ -10,9 +10,7 @@ pub struct CreateVpcIngressConnectionOutput {
 }
 impl CreateVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
-    pub fn vpc_ingress_connection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcIngressConnection> {
+    pub fn vpc_ingress_connection(&self) -> ::std::option::Option<&crate::types::VpcIngressConnection> {
         self.vpc_ingress_connection.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateVpcIngressConnectionOutput {
 }
 impl CreateVpcIngressConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcIngressConnectionOutput`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput).
-    pub fn builder() -> crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionOutputBuilder {
         crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcIngressConnectionOutput`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcIngressConnectionOutputBuilder {
     pub(crate) vpc_ingress_connection: ::std::option::Option<crate::types::VpcIngressConnection>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateVpcIngressConnectionOutputBuilder {
         self
     }
     /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
-    pub fn set_vpc_ingress_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcIngressConnection>,
-    ) -> Self {
+    pub fn set_vpc_ingress_connection(mut self, input: ::std::option::Option<crate::types::VpcIngressConnection>) -> Self {
         self.vpc_ingress_connection = input;
         self
     }
     /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
-    pub fn get_vpc_ingress_connection(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcIngressConnection> {
+    pub fn get_vpc_ingress_connection(&self) -> &::std::option::Option<crate::types::VpcIngressConnection> {
         &self.vpc_ingress_connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateVpcIngressConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVpcIngressConnectionOutput`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput {
+    pub fn build(self) -> crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput {
         crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput {
             vpc_ingress_connection: self.vpc_ingress_connection,
             _request_id: self._request_id,

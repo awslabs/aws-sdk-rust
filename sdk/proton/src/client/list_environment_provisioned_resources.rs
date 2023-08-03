@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     ///   - [`provisioned_resources(Option<Vec<ProvisionedResource>>)`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput::provisioned_resources): <p>An array of environment provisioned resources.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentProvisionedResourcesError>`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesError)
-    pub fn list_environment_provisioned_resources(&self) -> crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder{
+    pub fn list_environment_provisioned_resources(
+        &self,
+    ) -> crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder {
         crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::new(self.handle.clone())
     }
 }

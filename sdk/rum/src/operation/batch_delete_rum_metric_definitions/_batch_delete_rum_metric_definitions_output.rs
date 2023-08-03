@@ -5,8 +5,7 @@
 pub struct BatchDeleteRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
     /// <p>The IDs of the metric definitions that were deleted.</p>
     #[doc(hidden)]
     pub metric_definition_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -14,9 +13,7 @@ pub struct BatchDeleteRumMetricDefinitionsOutput {
 }
 impl BatchDeleteRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchDeleteRumMetricDefinitionsError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDeleteRumMetricDefinitionsError]> {
         self.errors.as_deref()
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteRumMetricDefinitionsOutput
 }
 impl BatchDeleteRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsOutput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder {
         crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteRumMetricDefinitionsOutput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
     pub(crate) metric_definition_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>> {
         &self.errors
     }
     /// Appends an item to `metric_definition_ids`.
@@ -81,27 +67,19 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
     /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).
     ///
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub fn metric_definition_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_definition_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_definition_ids.unwrap_or_default();
         v.push(input.into());
         self.metric_definition_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub fn set_metric_definition_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_definition_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_definition_ids = input;
         self
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub fn get_metric_definition_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_definition_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_definition_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -114,15 +92,10 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsOutput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput
-    {
+    pub fn build(self) -> crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput {
         crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput {
-            errors: self.errors
-            ,
-            metric_definition_ids: self.metric_definition_ids
-            ,
+            errors: self.errors,
+            metric_definition_ids: self.metric_definition_ids,
             _request_id: self._request_id,
         }
     }

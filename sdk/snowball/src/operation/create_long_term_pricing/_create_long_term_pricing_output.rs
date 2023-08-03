@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateLongTermPricingOutput {
 }
 impl CreateLongTermPricingOutput {
     /// Creates a new builder-style object to manufacture [`CreateLongTermPricingOutput`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput).
-    pub fn builder(
-    ) -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingOutputBuilder {
         crate::operation::create_long_term_pricing::builders::CreateLongTermPricingOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLongTermPricingOutput`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLongTermPricingOutputBuilder {
     pub(crate) long_term_pricing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLongTermPricingOutputBuilder {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn long_term_pricing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.long_term_pricing_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn set_long_term_pricing_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_long_term_pricing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.long_term_pricing_id = input;
         self
     }

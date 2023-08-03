@@ -15,17 +15,14 @@ impl GetSigningPlatformInput {
 }
 impl GetSigningPlatformInput {
     /// Creates a new builder-style object to manufacture [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder {
+    pub fn builder() -> crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder {
         crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSigningPlatformInputBuilder {
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetSigningPlatformInputBuilder {
     /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signing_platform::GetSigningPlatformInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_signing_platform::GetSigningPlatformInput {
-                platform_id: self.platform_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_signing_platform::GetSigningPlatformInput {
+            platform_id: self.platform_id,
+        })
     }
 }

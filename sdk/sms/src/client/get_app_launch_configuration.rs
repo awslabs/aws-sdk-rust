@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`auto_launch(Option<bool>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::auto_launch): <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     ///   - [`server_group_launch_configurations(Option<Vec<ServerGroupLaunchConfiguration>>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::server_group_launch_configurations): <p>The launch configurations for server groups in this application.</p>
     /// - On failure, responds with [`SdkError<GetAppLaunchConfigurationError>`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError)
-    pub fn get_app_launch_configuration(&self) -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder{
+    pub fn get_app_launch_configuration(&self) -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder {
         crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,14 @@ impl RegisterSlackWorkspaceForOrganizationInput {
 }
 impl RegisterSlackWorkspaceForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationInput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput).
-    pub fn builder() -> crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder {
         crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterSlackWorkspaceForOrganizationInput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationInputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl RegisterSlackWorkspaceForOrganizationInputBuilder {
         &self.team_id
     }
     /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationInput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput {
-                team_id: self.team_id
-                ,
-            }
+            crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput { team_id: self.team_id },
         )
     }
 }

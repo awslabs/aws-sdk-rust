@@ -9,21 +9,14 @@ pub fn ser_update_account_settings_input(
     if let Some(var_2) = &input.pipeline_provisioning_repository {
         #[allow(unused_mut)]
         let mut object_3 = object.key("pipelineProvisioningRepository").start_object();
-        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.delete_pipeline_provisioning_repository {
-        object
-            .key("deletePipelineProvisioningRepository")
-            .boolean(*var_4);
+        object.key("deletePipelineProvisioningRepository").boolean(*var_4);
     }
     if let Some(var_5) = &input.pipeline_codebuild_role_arn {
-        object
-            .key("pipelineCodebuildRoleArn")
-            .string(var_5.as_str());
+        object.key("pipelineCodebuildRoleArn").string(var_5.as_str());
     }
     Ok(())
 }

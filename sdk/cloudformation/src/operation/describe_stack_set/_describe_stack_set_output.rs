@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeStackSetOutput {
 }
 impl DescribeStackSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSetOutput`](crate::operation::describe_stack_set::DescribeStackSetOutput).
-    pub fn builder() -> crate::operation::describe_stack_set::builders::DescribeStackSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_set::builders::DescribeStackSetOutputBuilder {
         crate::operation::describe_stack_set::builders::DescribeStackSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackSetOutput`](crate::operation::describe_stack_set::DescribeStackSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackSetOutputBuilder {
     pub(crate) stack_set: ::std::option::Option<crate::types::StackSet>,
     _request_id: Option<String>,

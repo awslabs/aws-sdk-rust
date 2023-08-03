@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetRouteResponsesOutput {
 }
 impl GetRouteResponsesOutput {
     /// Creates a new builder-style object to manufacture [`GetRouteResponsesOutput`](crate::operation::get_route_responses::GetRouteResponsesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_route_responses::builders::GetRouteResponsesOutputBuilder {
+    pub fn builder() -> crate::operation::get_route_responses::builders::GetRouteResponsesOutputBuilder {
         crate::operation::get_route_responses::builders::GetRouteResponsesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRouteResponsesOutput`](crate::operation::get_route_responses::GetRouteResponsesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRouteResponsesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RouteResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetRouteResponsesOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteResponse>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteResponse>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteResponse>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteResponse>> {
         &self.items
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>

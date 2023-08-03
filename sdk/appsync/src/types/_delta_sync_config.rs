@@ -37,9 +37,7 @@ impl DeltaSyncConfig {
 
 /// A builder for [`DeltaSyncConfig`](crate::types::DeltaSyncConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeltaSyncConfigBuilder {
     pub(crate) base_table_ttl: ::std::option::Option<i64>,
     pub(crate) delta_sync_table_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DeltaSyncConfigBuilder {
         &self.base_table_ttl
     }
     /// <p>The Delta Sync table name.</p>
-    pub fn delta_sync_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delta_sync_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delta_sync_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Delta Sync table name.</p>
-    pub fn set_delta_sync_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delta_sync_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delta_sync_table_name = input;
         self
     }

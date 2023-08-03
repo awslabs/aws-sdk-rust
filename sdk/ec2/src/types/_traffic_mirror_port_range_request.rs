@@ -30,9 +30,7 @@ impl TrafficMirrorPortRangeRequest {
 
 /// A builder for [`TrafficMirrorPortRangeRequest`](crate::types::TrafficMirrorPortRangeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficMirrorPortRangeRequestBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,

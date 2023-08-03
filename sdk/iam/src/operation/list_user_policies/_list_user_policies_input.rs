@@ -33,17 +33,14 @@ impl ListUserPoliciesInput {
 }
 impl ListUserPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListUserPoliciesInput`](crate::operation::list_user_policies::ListUserPoliciesInput).
-    pub fn builder() -> crate::operation::list_user_policies::builders::ListUserPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_policies::builders::ListUserPoliciesInputBuilder {
         crate::operation::list_user_policies::builders::ListUserPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserPoliciesInput`](crate::operation::list_user_policies::ListUserPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserPoliciesInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -101,16 +98,11 @@ impl ListUserPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListUserPoliciesInput`](crate::operation::list_user_policies::ListUserPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_user_policies::ListUserPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_policies::ListUserPoliciesInput {
-                user_name: self.user_name,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_user_policies::ListUserPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_user_policies::ListUserPoliciesInput {
+            user_name: self.user_name,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

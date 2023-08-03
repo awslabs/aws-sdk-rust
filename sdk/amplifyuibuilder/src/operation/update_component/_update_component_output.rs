@@ -28,9 +28,7 @@ impl UpdateComponentOutput {
 
 /// A builder for [`UpdateComponentOutput`](crate::operation::update_component::UpdateComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentOutputBuilder {
     pub(crate) entity: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,

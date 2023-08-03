@@ -21,10 +21,7 @@ impl super::Client {
     ///   - [`last_launched_time(Option<AttributeValue>)`](crate::operation::describe_image_attribute::DescribeImageAttributeOutput::last_launched_time): <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>   <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>  </note>
     ///   - [`imds_support(Option<AttributeValue>)`](crate::operation::describe_image_attribute::DescribeImageAttributeOutput::imds_support): <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DescribeImageAttributeError>`](crate::operation::describe_image_attribute::DescribeImageAttributeError)
-    pub fn describe_image_attribute(
-        &self,
-    ) -> crate::operation::describe_image_attribute::builders::DescribeImageAttributeFluentBuilder
-    {
+    pub fn describe_image_attribute(&self) -> crate::operation::describe_image_attribute::builders::DescribeImageAttributeFluentBuilder {
         crate::operation::describe_image_attribute::builders::DescribeImageAttributeFluentBuilder::new(self.handle.clone())
     }
 }

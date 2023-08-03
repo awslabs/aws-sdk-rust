@@ -58,7 +58,7 @@ impl ::std::fmt::Debug for DescribeUserStackAssociationsInput {
 }
 impl DescribeUserStackAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserStackAssociationsInput`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput).
-    pub fn builder() -> crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder {
         crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder::default()
     }
 }
@@ -114,17 +114,12 @@ impl DescribeUserStackAssociationsInputBuilder {
         self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
     /// <p>The maximum size of each page of results.</p>
@@ -162,20 +157,13 @@ impl DescribeUserStackAssociationsInputBuilder {
         crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput {
-                stack_name: self.stack_name
-                ,
-                user_name: self.user_name
-                ,
-                authentication_type: self.authentication_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput {
+            stack_name: self.stack_name,
+            user_name: self.user_name,
+            authentication_type: self.authentication_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeUserStackAssociationsInputBuilder {

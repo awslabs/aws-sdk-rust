@@ -55,9 +55,7 @@ impl RetireGrantInput {
 
 /// A builder for [`RetireGrantInput`](crate::operation::retire_grant::RetireGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetireGrantInputBuilder {
     pub(crate) grant_token: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -140,12 +138,7 @@ impl RetireGrantInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`RetireGrantInput`](crate::operation::retire_grant::RetireGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::retire_grant::RetireGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::retire_grant::RetireGrantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::retire_grant::RetireGrantInput {
             grant_token: self.grant_token,
             key_id: self.key_id,

@@ -69,9 +69,7 @@ impl ZonalShiftInResource {
 
 /// A builder for [`ZonalShiftInResource`](crate::types::ZonalShiftInResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZonalShiftInResourceBuilder {
     pub(crate) applied_status: ::std::option::Option<crate::types::AppliedStatus>,
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ZonalShiftInResourceBuilder {
         self
     }
     /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
-    pub fn set_applied_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppliedStatus>,
-    ) -> Self {
+    pub fn set_applied_status(mut self, input: ::std::option::Option<crate::types::AppliedStatus>) -> Self {
         self.applied_status = input;
         self
     }
@@ -100,18 +95,12 @@ impl ZonalShiftInResourceBuilder {
         &self.applied_status
     }
     /// <p>The identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zonal_shift_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zonal_shift_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a zonal shift.</p>
-    pub fn set_zonal_shift_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zonal_shift_id = input;
         self
     }
@@ -121,19 +110,13 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -164,10 +147,7 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
-    pub fn set_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }
@@ -182,10 +162,7 @@ impl ZonalShiftInResourceBuilder {
         self
     }
     /// <p>The time (UTC) when the zonal shift is started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }

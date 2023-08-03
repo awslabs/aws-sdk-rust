@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`access_key_id(impl ::std::convert::Into<String>)`](crate::operation::delete_access_key::builders::DeleteAccessKeyFluentBuilder::access_key_id) / [`set_access_key_id(Option<String>)`](crate::operation::delete_access_key::builders::DeleteAccessKeyFluentBuilder::set_access_key_id): <p>The access key ID for the access key ID and secret access key you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     /// - On success, responds with [`DeleteAccessKeyOutput`](crate::operation::delete_access_key::DeleteAccessKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessKeyError>`](crate::operation::delete_access_key::DeleteAccessKeyError)
-    pub fn delete_access_key(
-        &self,
-    ) -> crate::operation::delete_access_key::builders::DeleteAccessKeyFluentBuilder {
-        crate::operation::delete_access_key::builders::DeleteAccessKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_access_key(&self) -> crate::operation::delete_access_key::builders::DeleteAccessKeyFluentBuilder {
+        crate::operation::delete_access_key::builders::DeleteAccessKeyFluentBuilder::new(self.handle.clone())
     }
 }

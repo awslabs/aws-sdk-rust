@@ -10,10 +10,7 @@ impl AddProfileKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_profile_key::AddProfileKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_profile_key::AddProfileKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_profile_key();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AddProfileKeyFluentBuilder {
         }
     }
     /// Access the AddProfileKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_profile_key::builders::AddProfileKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_profile_key::builders::AddProfileKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl AddProfileKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -153,10 +145,7 @@ impl AddProfileKeyFluentBuilder {
         self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values(input);
         self
     }

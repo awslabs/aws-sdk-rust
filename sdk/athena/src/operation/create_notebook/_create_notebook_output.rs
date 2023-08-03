@@ -28,9 +28,7 @@ impl CreateNotebookOutput {
 
 /// A builder for [`CreateNotebookOutput`](crate::operation::create_notebook::CreateNotebookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotebookOutputBuilder {
     pub(crate) notebook_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

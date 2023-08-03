@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<DataQualityResultDescription>>)`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput::results): <p>A list of <code>DataQualityResultDescription</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDataQualityResultsError>`](crate::operation::list_data_quality_results::ListDataQualityResultsError)
-    pub fn list_data_quality_results(
-        &self,
-    ) -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder
-    {
+    pub fn list_data_quality_results(&self) -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder {
         crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::new(self.handle.clone())
     }
 }

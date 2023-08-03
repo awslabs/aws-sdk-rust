@@ -23,26 +23,20 @@ impl CreateCodeSigningConfigInput {
         self.allowed_publishers.as_ref()
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn code_signing_policies(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
+    pub fn code_signing_policies(&self) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
 }
 impl CreateCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder {
         crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCodeSigningConfigInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,
@@ -69,17 +63,12 @@ impl CreateCodeSigningConfigInputBuilder {
         self
     }
     /// <p>Signing profiles for this code signing configuration.</p>
-    pub fn set_allowed_publishers(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowedPublishers>,
-    ) -> Self {
+    pub fn set_allowed_publishers(mut self, input: ::std::option::Option<crate::types::AllowedPublishers>) -> Self {
         self.allowed_publishers = input;
         self
     }
     /// <p>Signing profiles for this code signing configuration.</p>
-    pub fn get_allowed_publishers(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllowedPublishers> {
+    pub fn get_allowed_publishers(&self) -> &::std::option::Option<crate::types::AllowedPublishers> {
         &self.allowed_publishers
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
@@ -88,17 +77,12 @@ impl CreateCodeSigningConfigInputBuilder {
         self
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn set_code_signing_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeSigningPolicies>,
-    ) -> Self {
+    pub fn set_code_signing_policies(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
         self.code_signing_policies = input;
         self
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn get_code_signing_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
+    pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
         &self.code_signing_policies
     }
     /// Consumes the builder and constructs a [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
@@ -108,12 +92,10 @@ impl CreateCodeSigningConfigInputBuilder {
         crate::operation::create_code_signing_config::CreateCodeSigningConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_code_signing_config::CreateCodeSigningConfigInput {
-                description: self.description,
-                allowed_publishers: self.allowed_publishers,
-                code_signing_policies: self.code_signing_policies,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_code_signing_config::CreateCodeSigningConfigInput {
+            description: self.description,
+            allowed_publishers: self.allowed_publishers,
+            code_signing_policies: self.code_signing_policies,
+        })
     }
 }

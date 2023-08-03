@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachInternetGatewayOutput {
 }
 impl AttachInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`AttachInternetGatewayOutput`](crate::operation::attach_internet_gateway::AttachInternetGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_internet_gateway::builders::AttachInternetGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_internet_gateway::builders::AttachInternetGatewayOutputBuilder {
         crate::operation::attach_internet_gateway::builders::AttachInternetGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachInternetGatewayOutput`](crate::operation::attach_internet_gateway::AttachInternetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachInternetGatewayOutputBuilder {
     _request_id: Option<String>,
 }

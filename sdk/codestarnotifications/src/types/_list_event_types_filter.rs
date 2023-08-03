@@ -30,9 +30,7 @@ impl ListEventTypesFilter {
 
 /// A builder for [`ListEventTypesFilter`](crate::types::ListEventTypesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventTypesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListEventTypesFilterName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ListEventTypesFilterBuilder {
         self
     }
     /// <p>The system-generated name of the filter type you want to filter by.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ListEventTypesFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListEventTypesFilterName>) -> Self {
         self.name = input;
         self
     }

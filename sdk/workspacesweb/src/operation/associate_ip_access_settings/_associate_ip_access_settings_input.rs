@@ -22,16 +22,14 @@ impl AssociateIpAccessSettingsInput {
 }
 impl AssociateIpAccessSettingsInput {
     /// Creates a new builder-style object to manufacture [`AssociateIpAccessSettingsInput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput).
-    pub fn builder() -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder{
+    pub fn builder() -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder {
         crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIpAccessSettingsInput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIpAccessSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl AssociateIpAccessSettingsInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl AssociateIpAccessSettingsInputBuilder {
         crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput {
-                portal_arn: self.portal_arn,
-                ip_access_settings_arn: self.ip_access_settings_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput {
+            portal_arn: self.portal_arn,
+            ip_access_settings_arn: self.ip_access_settings_arn,
+        })
     }
 }

@@ -43,9 +43,7 @@ impl ChannelFlowCallbackFluentBuilder {
         }
     }
     /// Access the ChannelFlowCallback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl ChannelFlowCallbackFluentBuilder {
             crate::operation::channel_flow_callback::ChannelFlowCallback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::channel_flow_callback::ChannelFlowCallbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::channel_flow_callback::ChannelFlowCallbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl ChannelFlowCallbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl ChannelFlowCallbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::channel_flow_callback::ChannelFlowCallbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::channel_flow_callback::ChannelFlowCallbackError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl ChannelFlowCallbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::channel_flow_callback::ChannelFlowCallbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::channel_flow_callback::ChannelFlowCallbackError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl ChannelFlowCallbackFluentBuilder {
             crate::operation::channel_flow_callback::ChannelFlowCallback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::channel_flow_callback::ChannelFlowCallbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::channel_flow_callback::ChannelFlowCallbackError>,
     > {
         self.customize_middleware().await
     }
@@ -176,17 +163,12 @@ impl ChannelFlowCallbackFluentBuilder {
         self
     }
     /// <p>Stores information about the processed message.</p>
-    pub fn set_channel_message(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageCallback>,
-    ) -> Self {
+    pub fn set_channel_message(mut self, input: ::std::option::Option<crate::types::ChannelMessageCallback>) -> Self {
         self.inner = self.inner.set_channel_message(input);
         self
     }
     /// <p>Stores information about the processed message.</p>
-    pub fn get_channel_message(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
+    pub fn get_channel_message(&self) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
         self.inner.get_channel_message()
     }
 }

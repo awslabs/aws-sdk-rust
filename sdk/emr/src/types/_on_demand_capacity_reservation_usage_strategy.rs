@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OnDemandCapacityReservationUsageStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum OnDemandCapacityReservationUsageStrategy {
 impl ::std::convert::From<&str> for OnDemandCapacityReservationUsageStrategy {
     fn from(s: &str) -> Self {
         match s {
-            "use-capacity-reservations-first" => {
-                OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst
-            }
-            other => OnDemandCapacityReservationUsageStrategy::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "use-capacity-reservations-first" => OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst,
+            other => OnDemandCapacityReservationUsageStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl OnDemandCapacityReservationUsageStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst => {
-                "use-capacity-reservations-first"
-            }
+            OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst => "use-capacity-reservations-first",
             OnDemandCapacityReservationUsageStrategy::Unknown(value) => value.as_str(),
         }
     }

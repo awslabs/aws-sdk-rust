@@ -35,9 +35,7 @@ impl ListChunksOutput {
 
 /// A builder for [`ListChunksOutput`](crate::operation::list_chunks::ListChunksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChunksOutputBuilder {
     pub(crate) chunk_list: ::std::option::Option<::std::vec::Vec<crate::types::Chunk>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListChunksOutputBuilder {
         self
     }
     /// List of chunks
-    pub fn set_chunk_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Chunk>>,
-    ) -> Self {
+    pub fn set_chunk_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Chunk>>) -> Self {
         self.chunk_list = input;
         self
     }

@@ -10,10 +10,7 @@ impl SendOtpMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_otp_message::SendOtpMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_otp_message::SendOTPMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_otp_message();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendOTPMessageFluentBuilder {
         }
     }
     /// Access the SendOTPMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_otp_message::builders::SendOtpMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_otp_message::builders::SendOtpMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SendOTPMessageFluentBuilder {
             crate::operation::send_otp_message::SendOTPMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_otp_message::SendOTPMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SendOTPMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SendOTPMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_otp_message::SendOtpMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_otp_message::SendOTPMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SendOTPMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_otp_message::SendOtpMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_otp_message::SendOTPMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl SendOTPMessageFluentBuilder {
             crate::operation::send_otp_message::SendOTPMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_otp_message::SendOTPMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -143,25 +121,17 @@ impl SendOTPMessageFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>Send OTP message request parameters.</p>
-    pub fn send_otp_message_request_parameters(
-        mut self,
-        input: crate::types::SendOtpMessageRequestParameters,
-    ) -> Self {
+    pub fn send_otp_message_request_parameters(mut self, input: crate::types::SendOtpMessageRequestParameters) -> Self {
         self.inner = self.inner.send_otp_message_request_parameters(input);
         self
     }
     /// <p>Send OTP message request parameters.</p>
-    pub fn set_send_otp_message_request_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SendOtpMessageRequestParameters>,
-    ) -> Self {
+    pub fn set_send_otp_message_request_parameters(mut self, input: ::std::option::Option<crate::types::SendOtpMessageRequestParameters>) -> Self {
         self.inner = self.inner.set_send_otp_message_request_parameters(input);
         self
     }
     /// <p>Send OTP message request parameters.</p>
-    pub fn get_send_otp_message_request_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SendOtpMessageRequestParameters> {
+    pub fn get_send_otp_message_request_parameters(&self) -> &::std::option::Option<crate::types::SendOtpMessageRequestParameters> {
         self.inner.get_send_otp_message_request_parameters()
     }
 }

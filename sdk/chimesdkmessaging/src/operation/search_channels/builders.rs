@@ -10,10 +10,7 @@ impl SearchChannelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_channels::SearchChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_channels::SearchChannelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_channels::SearchChannelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_channels();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchChannelsFluentBuilder {
         }
     }
     /// Access the SearchChannels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_channels::builders::SearchChannelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_channels::builders::SearchChannelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SearchChannelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl SearchChannelsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_channels::paginator::SearchChannelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_channels::paginator::SearchChannelsPaginator {
-        crate::operation::search_channels::paginator::SearchChannelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_channels::paginator::SearchChannelsPaginator {
+        crate::operation::search_channels::paginator::SearchChannelsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,10 +137,7 @@ impl SearchChannelsFluentBuilder {
         self
     }
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchField>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }

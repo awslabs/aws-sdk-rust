@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`project_version_descriptions(Option<Vec<ProjectVersionDescription>>)`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput::project_version_descriptions): <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<DescribeProjectVersionsError>`](crate::operation::describe_project_versions::DescribeProjectVersionsError)
-    pub fn describe_project_versions(
-        &self,
-    ) -> crate::operation::describe_project_versions::builders::DescribeProjectVersionsFluentBuilder
-    {
+    pub fn describe_project_versions(&self) -> crate::operation::describe_project_versions::builders::DescribeProjectVersionsFluentBuilder {
         crate::operation::describe_project_versions::builders::DescribeProjectVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DescribeHomeRegionControlsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder,
+    inner: crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder,
 }
 impl DescribeHomeRegionControlsFluentBuilder {
     /// Creates a new `DescribeHomeRegionControls`.
@@ -37,7 +37,7 @@ impl DescribeHomeRegionControlsFluentBuilder {
         }
     }
     /// Access the DescribeHomeRegionControls as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeHomeRegionControlsFluentBuilder {
             crate::operation::describe_home_region_controls::DescribeHomeRegionControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeHomeRegionControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeHomeRegionControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeHomeRegionControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeHomeRegionControlsFluentBuilder {
             crate::operation::describe_home_region_controls::DescribeHomeRegionControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator {
         crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>

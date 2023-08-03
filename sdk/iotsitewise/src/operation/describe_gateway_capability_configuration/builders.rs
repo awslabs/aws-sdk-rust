@@ -5,16 +5,16 @@ pub use crate::operation::describe_gateway_capability_configuration::_describe_g
 
 impl DescribeGatewayCapabilityConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_gateway_capability_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder,
+    inner: crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder,
 }
 impl DescribeGatewayCapabilityConfigurationFluentBuilder {
     /// Creates a new `DescribeGatewayCapabilityConfiguration`.
@@ -37,15 +37,22 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeGatewayCapabilityConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the gateway that defines the capability configuration.</p>
@@ -109,18 +126,12 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
         self.inner.get_gateway_id()
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capability_namespace(input.into());
         self
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn set_capability_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capability_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capability_namespace(input);
         self
     }

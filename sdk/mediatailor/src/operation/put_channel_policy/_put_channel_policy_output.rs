@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutChannelPolicyOutput {
 }
 impl PutChannelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutChannelPolicyOutput`](crate::operation::put_channel_policy::PutChannelPolicyOutput).
-    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyOutputBuilder {
         crate::operation::put_channel_policy::builders::PutChannelPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutChannelPolicyOutput`](crate::operation::put_channel_policy::PutChannelPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutChannelPolicyOutputBuilder {
     _request_id: Option<String>,
 }

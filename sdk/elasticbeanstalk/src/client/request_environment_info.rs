@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`info_type(EnvironmentInfoType)`](crate::operation::request_environment_info::builders::RequestEnvironmentInfoFluentBuilder::info_type) / [`set_info_type(Option<EnvironmentInfoType>)`](crate::operation::request_environment_info::builders::RequestEnvironmentInfoFluentBuilder::set_info_type): <p>The type of information to request.</p>
     /// - On success, responds with [`RequestEnvironmentInfoOutput`](crate::operation::request_environment_info::RequestEnvironmentInfoOutput)
     /// - On failure, responds with [`SdkError<RequestEnvironmentInfoError>`](crate::operation::request_environment_info::RequestEnvironmentInfoError)
-    pub fn request_environment_info(
-        &self,
-    ) -> crate::operation::request_environment_info::builders::RequestEnvironmentInfoFluentBuilder
-    {
+    pub fn request_environment_info(&self) -> crate::operation::request_environment_info::builders::RequestEnvironmentInfoFluentBuilder {
         crate::operation::request_environment_info::builders::RequestEnvironmentInfoFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,9 +43,7 @@ impl ListContactsInput {
 
 /// A builder for [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactsInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::ListContactsFilter>,
@@ -54,18 +52,12 @@ pub struct ListContactsInputBuilder {
 }
 impl ListContactsInputBuilder {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_list_name = input;
         self
     }
@@ -79,10 +71,7 @@ impl ListContactsInputBuilder {
         self
     }
     /// <p>A filter that can be applied to a list of contacts.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListContactsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListContactsFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -119,12 +108,7 @@ impl ListContactsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contacts::ListContactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contacts::ListContactsInput {
             contact_list_name: self.contact_list_name,
             filter: self.filter,

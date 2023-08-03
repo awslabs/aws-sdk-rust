@@ -51,9 +51,7 @@ impl TranslatedDocumentBuilder {
     }
     /// Consumes the builder and constructs a [`TranslatedDocument`](crate::types::TranslatedDocument).
     pub fn build(self) -> crate::types::TranslatedDocument {
-        crate::types::TranslatedDocument {
-            content: self.content,
-        }
+        crate::types::TranslatedDocument { content: self.content }
     }
 }
 impl ::std::fmt::Debug for TranslatedDocumentBuilder {

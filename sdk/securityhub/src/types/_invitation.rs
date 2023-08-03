@@ -44,9 +44,7 @@ impl Invitation {
 
 /// A builder for [`Invitation`](crate::types::Invitation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvitationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl InvitationBuilder {
         &self.account_id
     }
     /// <p>The ID of the invitation sent to the member account.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the invitation sent to the member account.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -94,10 +86,7 @@ impl InvitationBuilder {
         self
     }
     /// <p>The timestamp of when the invitation was sent.</p>
-    pub fn set_invited_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invited_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invited_at = input;
         self
     }
@@ -106,18 +95,12 @@ impl InvitationBuilder {
         &self.invited_at
     }
     /// <p>The current status of the association between the member and administrator accounts.</p>
-    pub fn member_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the association between the member and administrator accounts.</p>
-    pub fn set_member_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_status = input;
         self
     }

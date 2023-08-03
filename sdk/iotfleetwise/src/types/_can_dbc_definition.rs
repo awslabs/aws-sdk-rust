@@ -12,9 +12,7 @@ pub struct CanDbcDefinition {
     pub can_dbc_files: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
     #[doc(hidden)]
-    pub signals_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub signals_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
@@ -26,11 +24,7 @@ impl CanDbcDefinition {
         self.can_dbc_files.as_deref()
     }
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-    pub fn signals_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn signals_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.signals_map.as_ref()
     }
 }
@@ -43,30 +37,20 @@ impl CanDbcDefinition {
 
 /// A builder for [`CanDbcDefinition`](crate::types::CanDbcDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanDbcDefinitionBuilder {
     pub(crate) network_interface: ::std::option::Option<::std::string::String>,
     pub(crate) can_dbc_files: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    pub(crate) signals_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) signals_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CanDbcDefinitionBuilder {
     /// <p>Contains information about a network interface.</p>
-    pub fn network_interface(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains information about a network interface.</p>
-    pub fn set_network_interface(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface = input;
         self
     }
@@ -86,17 +70,12 @@ impl CanDbcDefinitionBuilder {
         self
     }
     /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-    pub fn set_can_dbc_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_can_dbc_files(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.can_dbc_files = input;
         self
     }
     /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-    pub fn get_can_dbc_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_can_dbc_files(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.can_dbc_files
     }
     /// Adds a key-value pair to `signals_map`.
@@ -104,11 +83,7 @@ impl CanDbcDefinitionBuilder {
     /// To override the contents of this collection use [`set_signals_map`](Self::set_signals_map).
     ///
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-    pub fn signals_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signals_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.signals_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.signals_map = ::std::option::Option::Some(hash_map);
@@ -117,19 +92,13 @@ impl CanDbcDefinitionBuilder {
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
     pub fn set_signals_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.signals_map = input;
         self
     }
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-    pub fn get_signals_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_signals_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.signals_map
     }
     /// Consumes the builder and constructs a [`CanDbcDefinition`](crate::types::CanDbcDefinition).

@@ -15,18 +15,14 @@ impl GetEventIntegrationInput {
 }
 impl GetEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder {
-        crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder {
+        crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl GetEventIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_integration::GetEventIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_event_integration::GetEventIntegrationInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::get_event_integration::GetEventIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_event_integration::GetEventIntegrationInput { name: self.name })
     }
 }

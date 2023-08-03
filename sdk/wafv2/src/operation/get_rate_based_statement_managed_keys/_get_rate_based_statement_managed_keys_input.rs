@@ -53,16 +53,14 @@ impl GetRateBasedStatementManagedKeysInput {
 }
 impl GetRateBasedStatementManagedKeysInput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedStatementManagedKeysInput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput).
-    pub fn builder() -> crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder{
+    pub fn builder() -> crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder {
         crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRateBasedStatementManagedKeysInput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) web_acl_name: ::std::option::Option<::std::string::String>,
@@ -129,18 +127,12 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         &self.web_acl_id
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    pub fn rule_group_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    pub fn set_rule_group_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_rule_name = input;
         self
     }
@@ -163,20 +155,20 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         &self.rule_name
     }
     /// Consumes the builder and constructs a [`GetRateBasedStatementManagedKeysInput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput {
-                scope: self.scope
-                ,
-                web_acl_name: self.web_acl_name
-                ,
-                web_acl_id: self.web_acl_id
-                ,
-                rule_group_rule_name: self.rule_group_rule_name
-                ,
-                rule_name: self.rule_name
-                ,
-            }
+                scope: self.scope,
+                web_acl_name: self.web_acl_name,
+                web_acl_id: self.web_acl_id,
+                rule_group_rule_name: self.rule_group_rule_name,
+                rule_name: self.rule_name,
+            },
         )
     }
 }

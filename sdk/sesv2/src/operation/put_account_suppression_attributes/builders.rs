@@ -5,16 +5,16 @@ pub use crate::operation::put_account_suppression_attributes::_put_account_suppr
 
 impl PutAccountSuppressionAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_account_suppression_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutAccountSuppressionAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountSuppressionAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder,
+    inner: crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder,
 }
 impl PutAccountSuppressionAttributesFluentBuilder {
     /// Creates a new `PutAccountSuppressionAttributes`.
@@ -37,15 +37,20 @@ impl PutAccountSuppressionAttributesFluentBuilder {
         }
     }
     /// Access the PutAccountSuppressionAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutAccountSuppressionAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl PutAccountSuppressionAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `SuppressedReasons`.
@@ -112,10 +127,7 @@ impl PutAccountSuppressionAttributesFluentBuilder {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn set_suppressed_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
-    ) -> Self {
+    pub fn set_suppressed_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
         self.inner = self.inner.set_suppressed_reasons(input);
         self
     }
@@ -124,9 +136,7 @@ impl PutAccountSuppressionAttributesFluentBuilder {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn get_suppressed_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+    pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         self.inner.get_suppressed_reasons()
     }
 }

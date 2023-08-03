@@ -10,10 +10,7 @@ impl DescribeEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_events::DescribeEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events::DescribeEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events::DescribeEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_events();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeEventsFluentBuilder {
         }
     }
     /// Access the DescribeEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -135,10 +127,7 @@ impl DescribeEventsFluentBuilder {
         self
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
@@ -152,10 +141,7 @@ impl DescribeEventsFluentBuilder {
         self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -169,10 +155,7 @@ impl DescribeEventsFluentBuilder {
         self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::error_message): <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::arn): <p>The Amazon Resource Name (ARN) of the organization.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationError>`](crate::operation::describe_organization::DescribeOrganizationError)
-    pub fn describe_organization(
-        &self,
-    ) -> crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder {
-        crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_organization(&self) -> crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder {
+        crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

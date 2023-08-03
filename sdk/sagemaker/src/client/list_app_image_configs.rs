@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::next_token): <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
     ///   - [`app_image_configs(Option<Vec<AppImageConfigDetails>>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::app_image_configs): <p>A list of AppImageConfigs and their properties.</p>
     /// - On failure, responds with [`SdkError<ListAppImageConfigsError>`](crate::operation::list_app_image_configs::ListAppImageConfigsError)
-    pub fn list_app_image_configs(
-        &self,
-    ) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder {
-        crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_image_configs(&self) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder {
+        crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::new(self.handle.clone())
     }
 }

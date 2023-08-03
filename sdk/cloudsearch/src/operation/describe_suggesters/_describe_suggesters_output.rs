@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeSuggestersOutput {
 }
 impl DescribeSuggestersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder {
         crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSuggestersOutputBuilder {
     pub(crate) suggesters: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl DescribeSuggestersOutputBuilder {
         self
     }
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn set_suggesters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
-    ) -> Self {
+    pub fn set_suggesters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>) -> Self {
         self.suggesters = input;
         self
     }
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn get_suggesters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>> {
+    pub fn get_suggesters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>> {
         &self.suggesters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,10 +10,7 @@ impl DeleteExpressionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_expression::DeleteExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_expression::DeleteExpressionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_expression::DeleteExpressionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_expression();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteExpressionFluentBuilder {
         }
     }
     /// Access the DeleteExpression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_expression::builders::DeleteExpressionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_expression::builders::DeleteExpressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteExpressionFluentBuilder {
             crate::operation::delete_expression::DeleteExpression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_expression::DeleteExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_expression::DeleteExpressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteExpressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteExpressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_expression::DeleteExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_expression::DeleteExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_expression::DeleteExpressionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteExpressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_expression::DeleteExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_expression::DeleteExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_expression::DeleteExpressionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteExpressionFluentBuilder {
             crate::operation::delete_expression::DeleteExpression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_expression::DeleteExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_expression::DeleteExpressionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteExpressionFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-    pub fn expression_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression_name(input.into());
         self
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-    pub fn set_expression_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expression_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expression_name(input);
         self
     }

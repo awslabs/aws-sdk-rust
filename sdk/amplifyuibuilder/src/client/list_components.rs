@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<ComponentSummary>>)`](crate::operation::list_components::ListComponentsOutput::entities): <p>The list of components for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
-    pub fn list_components(
-        &self,
-    ) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
+        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DisassociateFirewallRuleGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateFirewallRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupInputBuilder,
+    inner: crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupInputBuilder,
 }
 impl DisassociateFirewallRuleGroupFluentBuilder {
     /// Creates a new `DisassociateFirewallRuleGroup`.
@@ -37,7 +37,7 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
         }
     }
     /// Access the DisassociateFirewallRuleGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
             crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
             crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn firewall_rule_group_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_association_id(input.into());
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn set_firewall_rule_group_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_association_id(input);
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn get_firewall_rule_group_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_association_id()
     }
 }

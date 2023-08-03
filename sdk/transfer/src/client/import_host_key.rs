@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::import_host_key::ImportHostKeyOutput::server_id): <p>Returns the server identifier that contains the imported key.</p>
     ///   - [`host_key_id(Option<String>)`](crate::operation::import_host_key::ImportHostKeyOutput::host_key_id): <p>Returns the host key identifier for the imported key.</p>
     /// - On failure, responds with [`SdkError<ImportHostKeyError>`](crate::operation::import_host_key::ImportHostKeyError)
-    pub fn import_host_key(
-        &self,
-    ) -> crate::operation::import_host_key::builders::ImportHostKeyFluentBuilder {
-        crate::operation::import_host_key::builders::ImportHostKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_host_key(&self) -> crate::operation::import_host_key::builders::ImportHostKeyFluentBuilder {
+        crate::operation::import_host_key::builders::ImportHostKeyFluentBuilder::new(self.handle.clone())
     }
 }

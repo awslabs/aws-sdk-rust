@@ -10,10 +10,7 @@ impl UpdateCampaignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_campaign::UpdateCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_campaign::UpdateCampaignError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_campaign();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateCampaignFluentBuilder {
         }
     }
     /// Access the UpdateCampaign as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_campaign::builders::UpdateCampaignInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_campaign::builders::UpdateCampaignInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateCampaignFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,27 +140,19 @@ impl UpdateCampaignFluentBuilder {
     ///
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_extra_dimensions(input.into());
         self
     }
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn set_data_extra_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_data_extra_dimensions(input);
         self
     }
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn get_data_extra_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_data_extra_dimensions()
     }
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
@@ -189,10 +173,7 @@ impl UpdateCampaignFluentBuilder {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCampaignAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateCampaignAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }

@@ -37,9 +37,7 @@ impl UpdateProtectedQueryFluentBuilder {
         }
     }
     /// Access the UpdateProtectedQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateProtectedQueryFluentBuilder {
             crate::operation::update_protected_query::UpdateProtectedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protected_query::UpdateProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protected_query::UpdateProtectedQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateProtectedQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateProtectedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_protected_query::UpdateProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protected_query::UpdateProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protected_query::UpdateProtectedQueryError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateProtectedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_protected_query::UpdateProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protected_query::UpdateProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protected_query::UpdateProtectedQueryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateProtectedQueryFluentBuilder {
             crate::operation::update_protected_query::UpdateProtectedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_protected_query::UpdateProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_protected_query::UpdateProtectedQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -143,18 +124,12 @@ impl UpdateProtectedQueryFluentBuilder {
         self.inner.get_membership_identifier()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protected_query_identifier(input.into());
         self
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn set_protected_query_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protected_query_identifier(input);
         self
     }
@@ -168,17 +143,12 @@ impl UpdateProtectedQueryFluentBuilder {
         self
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetProtectedQueryStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::TargetProtectedQueryStatus>) -> Self {
         self.inner = self.inner.set_target_status(input);
         self
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    pub fn get_target_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetProtectedQueryStatus> {
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::TargetProtectedQueryStatus> {
         self.inner.get_target_status()
     }
 }

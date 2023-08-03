@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`seconds_before_timeout(Option<i32>)`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput::seconds_before_timeout): <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
     ///   - [`timeout_action(Option<String>)`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput::timeout_action): <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// - On failure, responds with [`SdkError<ModifyCurrentDBClusterCapacityError>`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError)
-    pub fn modify_current_db_cluster_capacity(&self) -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDBClusterCapacityFluentBuilder{
+    pub fn modify_current_db_cluster_capacity(
+        &self,
+    ) -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDBClusterCapacityFluentBuilder {
         crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDBClusterCapacityFluentBuilder::new(self.handle.clone())
     }
 }

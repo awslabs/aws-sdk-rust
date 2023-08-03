@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateIpamResourceDiscoveryOutput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryOutput) with field(s):
     ///   - [`ipam_resource_discovery_association(Option<IpamResourceDiscoveryAssociation>)`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryOutput::ipam_resource_discovery_association): <p>A resource discovery association. An associated resource discovery is a resource discovery that has been associated with an IPAM.</p>
     /// - On failure, responds with [`SdkError<AssociateIpamResourceDiscoveryError>`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError)
-    pub fn associate_ipam_resource_discovery(&self) -> crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryFluentBuilder{
+    pub fn associate_ipam_resource_discovery(
+        &self,
+    ) -> crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryFluentBuilder {
         crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryFluentBuilder::new(self.handle.clone())
     }
 }

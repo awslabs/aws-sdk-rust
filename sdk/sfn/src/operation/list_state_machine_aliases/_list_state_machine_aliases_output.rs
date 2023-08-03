@@ -5,8 +5,7 @@
 pub struct ListStateMachineAliasesOutput {
     /// <p>Aliases for the state machine.</p>
     #[doc(hidden)]
-    pub state_machine_aliases:
-        ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
+    pub state_machine_aliases: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListStateMachineAliasesOutput {
 }
 impl ListStateMachineAliasesOutput {
     /// <p>Aliases for the state machine.</p>
-    pub fn state_machine_aliases(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StateMachineAliasListItem]> {
+    pub fn state_machine_aliases(&self) -> ::std::option::Option<&[crate::types::StateMachineAliasListItem]> {
         self.state_machine_aliases.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStateMachineAliasesOutput {
 }
 impl ListStateMachineAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListStateMachineAliasesOutput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder {
         crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStateMachineAliasesOutput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStateMachineAliasesOutputBuilder {
-    pub(crate) state_machine_aliases:
-        ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
+    pub(crate) state_machine_aliases: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListStateMachineAliasesOutputBuilder {
         self
     }
     /// <p>Aliases for the state machine.</p>
-    pub fn set_state_machine_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
-    ) -> Self {
+    pub fn set_state_machine_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>) -> Self {
         self.state_machine_aliases = input;
         self
     }
     /// <p>Aliases for the state machine.</p>
-    pub fn get_state_machine_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>> {
+    pub fn get_state_machine_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>> {
         &self.state_machine_aliases
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -99,9 +86,7 @@ impl ListStateMachineAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStateMachineAliasesOutput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput {
+    pub fn build(self) -> crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput {
         crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput {
             state_machine_aliases: self.state_machine_aliases,
             next_token: self.next_token,

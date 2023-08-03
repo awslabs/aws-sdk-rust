@@ -10,9 +10,7 @@ pub struct UpdateEmailChannelOutput {
 }
 impl UpdateEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn email_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmailChannelResponse> {
+    pub fn email_channel_response(&self) -> ::std::option::Option<&crate::types::EmailChannelResponse> {
         self.email_channel_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateEmailChannelOutput {
 }
 impl UpdateEmailChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailChannelOutput`](crate::operation::update_email_channel::UpdateEmailChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_email_channel::builders::UpdateEmailChannelOutputBuilder {
+    pub fn builder() -> crate::operation::update_email_channel::builders::UpdateEmailChannelOutputBuilder {
         crate::operation::update_email_channel::builders::UpdateEmailChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEmailChannelOutput`](crate::operation::update_email_channel::UpdateEmailChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEmailChannelOutputBuilder {
     pub(crate) email_channel_response: ::std::option::Option<crate::types::EmailChannelResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl UpdateEmailChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn set_email_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailChannelResponse>,
-    ) -> Self {
+    pub fn set_email_channel_response(mut self, input: ::std::option::Option<crate::types::EmailChannelResponse>) -> Self {
         self.email_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn get_email_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmailChannelResponse> {
+    pub fn get_email_channel_response(&self) -> &::std::option::Option<crate::types::EmailChannelResponse> {
         &self.email_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

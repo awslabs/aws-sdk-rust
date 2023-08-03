@@ -37,9 +37,7 @@ impl AppInstanceUserMembershipSummary {
 
 /// A builder for [`AppInstanceUserMembershipSummary`](crate::types::AppInstanceUserMembershipSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppInstanceUserMembershipSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     pub(crate) read_marker_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,10 +50,7 @@ impl AppInstanceUserMembershipSummaryBuilder {
         self
     }
     /// <p>The type of <code>ChannelMembership</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -69,32 +64,21 @@ impl AppInstanceUserMembershipSummaryBuilder {
         self
     }
     /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
-    pub fn set_read_marker_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_read_marker_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.read_marker_timestamp = input;
         self
     }
     /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
-    pub fn get_read_marker_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_read_marker_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.read_marker_timestamp
     }
     /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }

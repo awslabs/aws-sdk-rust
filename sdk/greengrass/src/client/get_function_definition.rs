@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::name): The name of the definition.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetFunctionDefinitionError>`](crate::operation::get_function_definition::GetFunctionDefinitionError)
-    pub fn get_function_definition(
-        &self,
-    ) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder
-    {
-        crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_function_definition(&self) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder {
+        crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

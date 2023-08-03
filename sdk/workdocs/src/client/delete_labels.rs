@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`delete_all(bool)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::delete_all) / [`set_delete_all(Option<bool>)`](crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::set_delete_all): <p>Flag to request removal of all labels from the specified resource.</p>
     /// - On success, responds with [`DeleteLabelsOutput`](crate::operation::delete_labels::DeleteLabelsOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelsError>`](crate::operation::delete_labels::DeleteLabelsError)
-    pub fn delete_labels(
-        &self,
-    ) -> crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder {
-        crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_labels(&self) -> crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder {
+        crate::operation::delete_labels::builders::DeleteLabelsFluentBuilder::new(self.handle.clone())
     }
 }

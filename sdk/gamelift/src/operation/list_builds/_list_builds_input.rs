@@ -48,9 +48,7 @@ impl ListBuildsInput {
 
 /// A builder for [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BuildStatus>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -118,12 +116,7 @@ impl ListBuildsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_builds::ListBuildsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_builds::ListBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_builds::ListBuildsInput {
             status: self.status,
             limit: self.limit,

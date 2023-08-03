@@ -23,9 +23,7 @@ impl ColumnConfiguration {
         self.column.as_ref()
     }
     /// <p>The format configuration of a column.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::FormatConfiguration> {
         self.format_configuration.as_ref()
     }
     /// <p>The role of the column.</p>
@@ -33,9 +31,7 @@ impl ColumnConfiguration {
         self.role.as_ref()
     }
     /// <p>The color configurations of the column.</p>
-    pub fn colors_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ColorsConfiguration> {
+    pub fn colors_configuration(&self) -> ::std::option::Option<&crate::types::ColorsConfiguration> {
         self.colors_configuration.as_ref()
     }
 }
@@ -48,9 +44,7 @@ impl ColumnConfiguration {
 
 /// A builder for [`ColumnConfiguration`](crate::types::ColumnConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnConfigurationBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) format_configuration: ::std::option::Option<crate::types::FormatConfiguration>,
@@ -64,10 +58,7 @@ impl ColumnConfigurationBuilder {
         self
     }
     /// <p>The column.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -81,17 +72,12 @@ impl ColumnConfigurationBuilder {
         self
     }
     /// <p>The format configuration of a column.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FormatConfiguration>,
-    ) -> Self {
+    pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::FormatConfiguration>) -> Self {
         self.format_configuration = input;
         self
     }
     /// <p>The format configuration of a column.</p>
-    pub fn get_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FormatConfiguration> {
+    pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::FormatConfiguration> {
         &self.format_configuration
     }
     /// <p>The role of the column.</p>
@@ -114,17 +100,12 @@ impl ColumnConfigurationBuilder {
         self
     }
     /// <p>The color configurations of the column.</p>
-    pub fn set_colors_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorsConfiguration>,
-    ) -> Self {
+    pub fn set_colors_configuration(mut self, input: ::std::option::Option<crate::types::ColorsConfiguration>) -> Self {
         self.colors_configuration = input;
         self
     }
     /// <p>The color configurations of the column.</p>
-    pub fn get_colors_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColorsConfiguration> {
+    pub fn get_colors_configuration(&self) -> &::std::option::Option<crate::types::ColorsConfiguration> {
         &self.colors_configuration
     }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).

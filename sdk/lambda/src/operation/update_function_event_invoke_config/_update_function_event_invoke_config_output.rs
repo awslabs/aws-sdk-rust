@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for UpdateFunctionEventInvokeConfigOutput
 }
 impl UpdateFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionEventInvokeConfigOutput`](crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput).
-    pub fn builder() -> crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigOutputBuilder {
         crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFunctionEventInvokeConfigOutput`](crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigOutputBuilder {
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl UpdateFunctionEventInvokeConfigOutputBuilder {
         self
     }
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -161,10 +156,7 @@ impl UpdateFunctionEventInvokeConfigOutputBuilder {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn set_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfig>,
-    ) -> Self {
+    pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.destination_config = input;
         self
     }
@@ -176,9 +168,7 @@ impl UpdateFunctionEventInvokeConfigOutputBuilder {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn get_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+    pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -191,21 +181,13 @@ impl UpdateFunctionEventInvokeConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFunctionEventInvokeConfigOutput`](crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput
-    {
+    pub fn build(self) -> crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput {
         crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput {
-            last_modified: self.last_modified
-            ,
-            function_arn: self.function_arn
-            ,
-            maximum_retry_attempts: self.maximum_retry_attempts
-            ,
-            maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
-            ,
-            destination_config: self.destination_config
-            ,
+            last_modified: self.last_modified,
+            function_arn: self.function_arn,
+            maximum_retry_attempts: self.maximum_retry_attempts,
+            maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
+            destination_config: self.destination_config,
             _request_id: self._request_id,
         }
     }

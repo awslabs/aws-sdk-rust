@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput)
     /// - On failure, responds with [`SdkError<NotifyMigrationTaskStateError>`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError)
-    pub fn notify_migration_task_state(&self) -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateFluentBuilder{
+    pub fn notify_migration_task_state(&self) -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateFluentBuilder {
         crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,8 +13,7 @@ pub struct DescribeCreateCaseOptionsOutput {
     pub language_availability: ::std::option::Option<::std::string::String>,
     /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
     #[doc(hidden)]
-    pub communication_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
+    pub communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
     _request_id: Option<String>,
 }
 impl DescribeCreateCaseOptionsOutput {
@@ -28,9 +27,7 @@ impl DescribeCreateCaseOptionsOutput {
         self.language_availability.as_deref()
     }
     /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
-    pub fn communication_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CommunicationTypeOptions]> {
+    pub fn communication_types(&self) -> ::std::option::Option<&[crate::types::CommunicationTypeOptions]> {
         self.communication_types.as_deref()
     }
 }
@@ -41,20 +38,17 @@ impl ::aws_http::request_id::RequestId for DescribeCreateCaseOptionsOutput {
 }
 impl DescribeCreateCaseOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateCaseOptionsOutput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput).
-    pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsOutputBuilder {
         crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCreateCaseOptionsOutput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCreateCaseOptionsOutputBuilder {
     pub(crate) language_availability: ::std::option::Option<::std::string::String>,
-    pub(crate) communication_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
+    pub(crate) communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
     _request_id: Option<String>,
 }
 impl DescribeCreateCaseOptionsOutputBuilder {
@@ -64,10 +58,7 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     /// <li> <p> best_effort </p> </li>
     /// <li> <p> unavailable </p> </li>
     /// </ul>
-    pub fn language_availability(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_availability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_availability = ::std::option::Option::Some(input.into());
         self
     }
@@ -77,10 +68,7 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     /// <li> <p> best_effort </p> </li>
     /// <li> <p> unavailable </p> </li>
     /// </ul>
-    pub fn set_language_availability(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_availability = input;
         self
     }
@@ -105,17 +93,12 @@ impl DescribeCreateCaseOptionsOutputBuilder {
         self
     }
     /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
-    pub fn set_communication_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
-    ) -> Self {
+    pub fn set_communication_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>) -> Self {
         self.communication_types = input;
         self
     }
     /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
-    pub fn get_communication_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>> {
+    pub fn get_communication_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>> {
         &self.communication_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -128,9 +111,7 @@ impl DescribeCreateCaseOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCreateCaseOptionsOutput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput {
+    pub fn build(self) -> crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput {
         crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput {
             language_availability: self.language_availability,
             communication_types: self.communication_types,

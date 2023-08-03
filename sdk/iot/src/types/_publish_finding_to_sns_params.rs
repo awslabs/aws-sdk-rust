@@ -23,9 +23,7 @@ impl PublishFindingToSnsParams {
 
 /// A builder for [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishFindingToSnsParamsBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PublishFindingToSnsParamsBuilder {
     }
     /// Consumes the builder and constructs a [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
     pub fn build(self) -> crate::types::PublishFindingToSnsParams {
-        crate::types::PublishFindingToSnsParams {
-            topic_arn: self.topic_arn,
-        }
+        crate::types::PublishFindingToSnsParams { topic_arn: self.topic_arn }
     }
 }

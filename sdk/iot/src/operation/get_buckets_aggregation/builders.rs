@@ -38,10 +38,7 @@ impl GetBucketsAggregationFluentBuilder {
         }
     }
     /// Access the GetBucketsAggregation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetBucketsAggregationFluentBuilder {
             crate::operation::get_buckets_aggregation::GetBucketsAggregation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_buckets_aggregation::GetBucketsAggregationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_buckets_aggregation::GetBucketsAggregationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetBucketsAggregationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetBucketsAggregationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_buckets_aggregation::GetBucketsAggregationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_buckets_aggregation::GetBucketsAggregationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetBucketsAggregationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_buckets_aggregation::GetBucketsAggregationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_buckets_aggregation::GetBucketsAggregationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetBucketsAggregationFluentBuilder {
             crate::operation::get_buckets_aggregation::GetBucketsAggregation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_buckets_aggregation::GetBucketsAggregationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_buckets_aggregation::GetBucketsAggregationError>,
     > {
         self.customize_middleware().await
     }
@@ -153,18 +139,12 @@ impl GetBucketsAggregationFluentBuilder {
         self.inner.get_query_string()
     }
     /// <p>The aggregation field.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aggregation_field(input.into());
         self
     }
     /// <p>The aggregation field.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
@@ -173,18 +153,12 @@ impl GetBucketsAggregationFluentBuilder {
         self.inner.get_aggregation_field()
     }
     /// <p>The version of the query.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_version(input.into());
         self
     }
     /// <p>The version of the query.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
     }
@@ -198,17 +172,12 @@ impl GetBucketsAggregationFluentBuilder {
         self
     }
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
-    pub fn set_buckets_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketsAggregationType>,
-    ) -> Self {
+    pub fn set_buckets_aggregation_type(mut self, input: ::std::option::Option<crate::types::BucketsAggregationType>) -> Self {
         self.inner = self.inner.set_buckets_aggregation_type(input);
         self
     }
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
-    pub fn get_buckets_aggregation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketsAggregationType> {
+    pub fn get_buckets_aggregation_type(&self) -> &::std::option::Option<crate::types::BucketsAggregationType> {
         self.inner.get_buckets_aggregation_type()
     }
 }

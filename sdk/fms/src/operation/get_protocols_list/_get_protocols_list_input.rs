@@ -22,17 +22,14 @@ impl GetProtocolsListInput {
 }
 impl GetProtocolsListInput {
     /// Creates a new builder-style object to manufacture [`GetProtocolsListInput`](crate::operation::get_protocols_list::GetProtocolsListInput).
-    pub fn builder() -> crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder {
         crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProtocolsListInput`](crate::operation::get_protocols_list::GetProtocolsListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProtocolsListInputBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_list: ::std::option::Option<bool>,
@@ -69,15 +66,10 @@ impl GetProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`GetProtocolsListInput`](crate::operation::get_protocols_list::GetProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_protocols_list::GetProtocolsListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_protocols_list::GetProtocolsListInput {
-                list_id: self.list_id,
-                default_list: self.default_list,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_protocols_list::GetProtocolsListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_protocols_list::GetProtocolsListInput {
+            list_id: self.list_id,
+            default_list: self.default_list,
+        })
     }
 }

@@ -28,9 +28,7 @@ impl DescribeRecipeOutput {
 
 /// A builder for [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecipeOutputBuilder {
     pub(crate) recipe: ::std::option::Option<crate::types::Recipe>,
     _request_id: Option<String>,

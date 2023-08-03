@@ -40,13 +40,7 @@
 /// Audio Type
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +85,7 @@ impl AudioType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLEAN_EFFECTS",
-            "HEARING_IMPAIRED",
-            "UNDEFINED",
-            "VISUAL_IMPAIRED_COMMENTARY",
-        ]
+        &["CLEAN_EFFECTS", "HEARING_IMPAIRED", "UNDEFINED", "VISUAL_IMPAIRED_COMMENTARY"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioType {

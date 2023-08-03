@@ -10,10 +10,7 @@ impl ReserveContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reserve_contact::ReserveContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reserve_contact::ReserveContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reserve_contact::ReserveContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reserve_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ReserveContactFluentBuilder {
         }
     }
     /// Access the ReserveContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reserve_contact::builders::ReserveContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reserve_contact::builders::ReserveContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ReserveContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ReserveContactFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mission_profile_arn(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mission_profile_arn(input);
         self
     }
@@ -135,18 +121,12 @@ impl ReserveContactFluentBuilder {
         self.inner.get_mission_profile_arn()
     }
     /// <p>ARN of a satellite</p>
-    pub fn satellite_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.satellite_arn(input.into());
         self
     }
     /// <p>ARN of a satellite</p>
-    pub fn set_satellite_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_satellite_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_satellite_arn(input);
         self
     }
@@ -160,10 +140,7 @@ impl ReserveContactFluentBuilder {
         self
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -177,10 +154,7 @@ impl ReserveContactFluentBuilder {
         self
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -189,18 +163,12 @@ impl ReserveContactFluentBuilder {
         self.inner.get_end_time()
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ground_station(input.into());
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn set_ground_station(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ground_station(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ground_station(input);
         self
     }
@@ -213,30 +181,17 @@ impl ReserveContactFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a contact.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

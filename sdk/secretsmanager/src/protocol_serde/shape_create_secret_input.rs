@@ -16,9 +16,7 @@ pub fn ser_create_secret_input(
         object.key("KmsKeyId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.secret_binary {
-        object
-            .key("SecretBinary")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_5));
+        object.key("SecretBinary").string_unchecked(&::aws_smithy_types::base64::encode(var_5));
     }
     if let Some(var_6) = &input.secret_string {
         object.key("SecretString").string(var_6.as_str());
@@ -41,10 +39,7 @@ pub fn ser_create_secret_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_replica_region_type::ser_replica_region_type(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_replica_region_type::ser_replica_region_type(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

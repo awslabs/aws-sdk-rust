@@ -24,9 +24,7 @@ pub struct CreateSessionInput {
     pub idle_timeout: ::std::option::Option<i32>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     #[doc(hidden)]
-    pub default_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of connections to use for the session. </p>
     #[doc(hidden)]
     pub connections: ::std::option::Option<crate::types::ConnectionsList>,
@@ -54,9 +52,7 @@ pub struct CreateSessionInput {
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The origin of the request. </p>
     #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
@@ -87,11 +83,7 @@ impl CreateSessionInput {
         self.idle_timeout
     }
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
-    pub fn default_arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_arguments.as_ref()
     }
     /// <p>The number of connections to use for the session. </p>
@@ -126,11 +118,7 @@ impl CreateSessionInput {
         self.glue_version.as_deref()
     }
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The origin of the request. </p>
@@ -147,9 +135,7 @@ impl CreateSessionInput {
 
 /// A builder for [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -157,18 +143,14 @@ pub struct CreateSessionInputBuilder {
     pub(crate) command: ::std::option::Option<crate::types::SessionCommand>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) idle_timeout: ::std::option::Option<i32>,
-    pub(crate) default_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) connections: ::std::option::Option<crate::types::ConnectionsList>,
     pub(crate) max_capacity: ::std::option::Option<f64>,
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) worker_type: ::std::option::Option<crate::types::WorkerType>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) glue_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
 }
 impl CreateSessionInputBuilder {
@@ -220,10 +202,7 @@ impl CreateSessionInputBuilder {
         self
     }
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionCommand>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::SessionCommand>) -> Self {
         self.command = input;
         self
     }
@@ -277,19 +256,13 @@ impl CreateSessionInputBuilder {
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn set_default_arguments(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_arguments = input;
         self
     }
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
-    pub fn get_default_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_arguments
     }
     /// <p>The number of connections to use for the session. </p>
@@ -298,10 +271,7 @@ impl CreateSessionInputBuilder {
         self
     }
     /// <p>The number of connections to use for the session. </p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionsList>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<crate::types::ConnectionsList>) -> Self {
         self.connections = input;
         self
     }
@@ -357,10 +327,7 @@ impl CreateSessionInputBuilder {
     /// <li> <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the <code>G.4X</code> worker type.</p> </li>
     /// <li> <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -376,18 +343,12 @@ impl CreateSessionInputBuilder {
         &self.worker_type
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -414,47 +375,28 @@ impl CreateSessionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The origin of the request. </p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request. </p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_origin = input;
         self
     }
@@ -465,10 +407,7 @@ impl CreateSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_session::CreateSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_session::CreateSessionInput {
             id: self.id,
             description: self.description,

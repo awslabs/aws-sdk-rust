@@ -28,9 +28,7 @@ impl SearchAvailablePhoneNumbersInput {
         self.target_arn.as_deref()
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
+    pub fn phone_number_country_code(&self) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
         self.phone_number_country_code.as_ref()
     }
     /// <p>The type of phone number.</p>
@@ -52,20 +50,17 @@ impl SearchAvailablePhoneNumbersInput {
 }
 impl SearchAvailablePhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder{
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder {
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) phone_number_country_code:
-        ::std::option::Option<crate::types::PhoneNumberCountryCode>,
+    pub(crate) phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     pub(crate) phone_number_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,25 +82,17 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         &self.target_arn
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(
-        mut self,
-        input: crate::types::PhoneNumberCountryCode,
-    ) -> Self {
+    pub fn phone_number_country_code(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
         self.phone_number_country_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_code(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
-    ) -> Self {
+    pub fn set_phone_number_country_code(mut self, input: ::std::option::Option<crate::types::PhoneNumberCountryCode>) -> Self {
         self.phone_number_country_code = input;
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+    pub fn get_phone_number_country_code(&self) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
         &self.phone_number_country_code
     }
     /// <p>The type of phone number.</p>
@@ -114,10 +101,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberType>,
-    ) -> Self {
+    pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.phone_number_type = input;
         self
     }
@@ -126,18 +110,12 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         &self.phone_number_type
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn phone_number_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn set_phone_number_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_prefix = input;
         self
     }
@@ -180,15 +158,13 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput {
-                target_arn: self.target_arn,
-                phone_number_country_code: self.phone_number_country_code,
-                phone_number_type: self.phone_number_type,
-                phone_number_prefix: self.phone_number_prefix,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput {
+            target_arn: self.target_arn,
+            phone_number_country_code: self.phone_number_country_code,
+            phone_number_type: self.phone_number_type,
+            phone_number_prefix: self.phone_number_prefix,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

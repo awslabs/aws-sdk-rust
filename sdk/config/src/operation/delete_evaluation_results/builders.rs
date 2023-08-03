@@ -26,8 +26,7 @@ impl DeleteEvaluationResultsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEvaluationResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder,
+    inner: crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder,
 }
 impl DeleteEvaluationResultsFluentBuilder {
     /// Creates a new `DeleteEvaluationResults`.
@@ -38,10 +37,7 @@ impl DeleteEvaluationResultsFluentBuilder {
         }
     }
     /// Access the DeleteEvaluationResults as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteEvaluationResultsFluentBuilder {
             crate::operation::delete_evaluation_results::DeleteEvaluationResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation_results::DeleteEvaluationResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteEvaluationResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteEvaluationResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation_results::DeleteEvaluationResultsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteEvaluationResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation_results::DeleteEvaluationResultsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteEvaluationResultsFluentBuilder {
             crate::operation::delete_evaluation_results::DeleteEvaluationResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_evaluation_results::DeleteEvaluationResultsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
     /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }

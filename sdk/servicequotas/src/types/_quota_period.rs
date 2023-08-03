@@ -30,9 +30,7 @@ impl QuotaPeriod {
 
 /// A builder for [`QuotaPeriod`](crate::types::QuotaPeriod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuotaPeriodBuilder {
     pub(crate) period_value: ::std::option::Option<i32>,
     pub(crate) period_unit: ::std::option::Option<crate::types::PeriodUnit>,
@@ -58,10 +56,7 @@ impl QuotaPeriodBuilder {
         self
     }
     /// <p>The time unit.</p>
-    pub fn set_period_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::PeriodUnit>,
-    ) -> Self {
+    pub fn set_period_unit(mut self, input: ::std::option::Option<crate::types::PeriodUnit>) -> Self {
         self.period_unit = input;
         self
     }

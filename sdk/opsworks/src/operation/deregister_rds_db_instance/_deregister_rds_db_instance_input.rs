@@ -15,35 +15,25 @@ impl DeregisterRdsDbInstanceInput {
 }
 impl DeregisterRdsDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterRdsDbInstanceInput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder {
         crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterRdsDbInstanceInput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterRdsDbInstanceInputBuilder {
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterRdsDbInstanceInputBuilder {
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rds_db_instance_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeregisterRdsDbInstanceInputBuilder {
         crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput {
-                rds_db_instance_arn: self.rds_db_instance_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput {
+            rds_db_instance_arn: self.rds_db_instance_arn,
+        })
     }
 }

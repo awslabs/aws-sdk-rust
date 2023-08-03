@@ -22,18 +22,14 @@ impl ListPhoneNumberOrdersInput {
 }
 impl ListPhoneNumberOrdersInput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumberOrdersInput`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput).
-    pub fn builder(
-    ) -> crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersInputBuilder {
         crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumberOrdersInput`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumberOrdersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListPhoneNumberOrdersInputBuilder {
     /// Consumes the builder and constructs a [`ListPhoneNumberOrdersInput`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

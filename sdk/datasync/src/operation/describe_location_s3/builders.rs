@@ -10,10 +10,7 @@ impl DescribeLocationS3InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_location_s3::DescribeLocationS3Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_s3::DescribeLocationS3Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_s3::DescribeLocationS3Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_location_s3();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeLocationS3FluentBuilder {
         }
     }
     /// Access the DescribeLocationS3 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeLocationS3FluentBuilder {
             crate::operation::describe_location_s3::DescribeLocationS3,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_s3::DescribeLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_s3::DescribeLocationS3Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeLocationS3FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeLocationS3FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_s3::DescribeLocationS3Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_s3::DescribeLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_s3::DescribeLocationS3Error>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeLocationS3FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_s3::DescribeLocationS3Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_s3::DescribeLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_s3::DescribeLocationS3Error>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeLocationS3FluentBuilder {
             crate::operation::describe_location_s3::DescribeLocationS3,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_s3::DescribeLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_s3::DescribeLocationS3Error>,
     > {
         self.customize_middleware().await
     }

@@ -10,10 +10,7 @@ impl UpdateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_channel::UpdateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel::UpdateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateChannelFluentBuilder {
         }
     }
     /// Access the UpdateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,17 +112,12 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// Specification of CDI inputs for this channel
-    pub fn set_cdi_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CdiInputSpecification>,
-    ) -> Self {
+    pub fn set_cdi_input_specification(mut self, input: ::std::option::Option<crate::types::CdiInputSpecification>) -> Self {
         self.inner = self.inner.set_cdi_input_specification(input);
         self
     }
     /// Specification of CDI inputs for this channel
-    pub fn get_cdi_input_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CdiInputSpecification> {
+    pub fn get_cdi_input_specification(&self) -> &::std::option::Option<crate::types::CdiInputSpecification> {
         self.inner.get_cdi_input_specification()
     }
     /// channel ID
@@ -157,17 +144,12 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// A list of output destinations for this channel.
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// A list of output destinations for this channel.
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
         self.inner.get_destinations()
     }
     /// The encoder settings for this channel.
@@ -176,10 +158,7 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// The encoder settings for this channel.
-    pub fn set_encoder_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::EncoderSettings>,
-    ) -> Self {
+    pub fn set_encoder_settings(mut self, input: ::std::option::Option<crate::types::EncoderSettings>) -> Self {
         self.inner = self.inner.set_encoder_settings(input);
         self
     }
@@ -197,17 +176,12 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// Placeholder documentation for __listOfInputAttachment
-    pub fn set_input_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
-    ) -> Self {
+    pub fn set_input_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>) -> Self {
         self.inner = self.inner.set_input_attachments(input);
         self
     }
     /// Placeholder documentation for __listOfInputAttachment
-    pub fn get_input_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
+    pub fn get_input_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
         self.inner.get_input_attachments()
     }
     /// Specification of network and file inputs for this channel
@@ -216,17 +190,12 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// Specification of network and file inputs for this channel
-    pub fn set_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSpecification>,
-    ) -> Self {
+    pub fn set_input_specification(mut self, input: ::std::option::Option<crate::types::InputSpecification>) -> Self {
         self.inner = self.inner.set_input_specification(input);
         self
     }
     /// Specification of network and file inputs for this channel
-    pub fn get_input_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputSpecification> {
+    pub fn get_input_specification(&self) -> &::std::option::Option<crate::types::InputSpecification> {
         self.inner.get_input_specification()
     }
     /// The log level to write to CloudWatch Logs.
@@ -249,17 +218,12 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// Maintenance settings for this channel.
-    pub fn set_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceUpdateSettings>,
-    ) -> Self {
+    pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::MaintenanceUpdateSettings>) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }
     /// Maintenance settings for this channel.
-    pub fn get_maintenance(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceUpdateSettings> {
+    pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::MaintenanceUpdateSettings> {
         self.inner.get_maintenance()
     }
     /// The name of the channel.

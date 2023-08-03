@@ -19,15 +19,11 @@ pub struct EmbeddedSourceSettings {
 }
 impl EmbeddedSourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn convert608_to708(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmbeddedConvert608To708> {
+    pub fn convert608_to708(&self) -> ::std::option::Option<&crate::types::EmbeddedConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
-    pub fn scte20_detection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmbeddedScte20Detection> {
+    pub fn scte20_detection(&self) -> ::std::option::Option<&crate::types::EmbeddedScte20Detection> {
         self.scte20_detection.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
@@ -48,9 +44,7 @@ impl EmbeddedSourceSettings {
 
 /// A builder for [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmbeddedSourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     pub(crate) scte20_detection: ::std::option::Option<crate::types::EmbeddedScte20Detection>,
@@ -64,17 +58,12 @@ impl EmbeddedSourceSettingsBuilder {
         self
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn set_convert608_to708(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
-    ) -> Self {
+    pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::EmbeddedConvert608To708>) -> Self {
         self.convert608_to708 = input;
         self
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn get_convert608_to708(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmbeddedConvert608To708> {
+    pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::EmbeddedConvert608To708> {
         &self.convert608_to708
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
@@ -83,17 +72,12 @@ impl EmbeddedSourceSettingsBuilder {
         self
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
-    pub fn set_scte20_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddedScte20Detection>,
-    ) -> Self {
+    pub fn set_scte20_detection(mut self, input: ::std::option::Option<crate::types::EmbeddedScte20Detection>) -> Self {
         self.scte20_detection = input;
         self
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
-    pub fn get_scte20_detection(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmbeddedScte20Detection> {
+    pub fn get_scte20_detection(&self) -> &::std::option::Option<crate::types::EmbeddedScte20Detection> {
         &self.scte20_detection
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.

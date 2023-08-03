@@ -36,18 +36,14 @@ impl StartContactEvaluationInput {
 }
 impl StartContactEvaluationInput {
     /// Creates a new builder-style object to manufacture [`StartContactEvaluationInput`](crate::operation::start_contact_evaluation::StartContactEvaluationInput).
-    pub fn builder(
-    ) -> crate::operation::start_contact_evaluation::builders::StartContactEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_contact_evaluation::builders::StartContactEvaluationInputBuilder {
         crate::operation::start_contact_evaluation::builders::StartContactEvaluationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartContactEvaluationInput`](crate::operation::start_contact_evaluation::StartContactEvaluationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContactEvaluationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ impl StartContactEvaluationInputBuilder {
         &self.contact_id
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl StartContactEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`StartContactEvaluationInput`](crate::operation::start_contact_evaluation::StartContactEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_contact_evaluation::StartContactEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_contact_evaluation::StartContactEvaluationInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                evaluation_form_id: self.evaluation_form_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_contact_evaluation::StartContactEvaluationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_contact_evaluation::StartContactEvaluationInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            evaluation_form_id: self.evaluation_form_id,
+            client_token: self.client_token,
+        })
     }
 }

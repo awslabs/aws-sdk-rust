@@ -19,10 +19,7 @@ pub fn ser_replication_rule(
     }
     if let Some(var_4) = &input.filter {
         let inner_writer = scope.start_el("Filter");
-        crate::protocol_serde::shape_replication_rule_filter::ser_replication_rule_filter(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_replication_rule_filter::ser_replication_rule_filter(var_4, inner_writer)?
     }
     if let Some(var_5) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
@@ -30,17 +27,11 @@ pub fn ser_replication_rule(
     }
     if let Some(var_6) = &input.source_selection_criteria {
         let inner_writer = scope.start_el("SourceSelectionCriteria");
-        crate::protocol_serde::shape_source_selection_criteria::ser_source_selection_criteria(
-            var_6,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_source_selection_criteria::ser_source_selection_criteria(var_6, inner_writer)?
     }
     if let Some(var_7) = &input.existing_object_replication {
         let inner_writer = scope.start_el("ExistingObjectReplication");
-        crate::protocol_serde::shape_existing_object_replication::ser_existing_object_replication(
-            var_7,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_existing_object_replication::ser_existing_object_replication(var_7, inner_writer)?
     }
     if let Some(var_8) = &input.destination {
         let inner_writer = scope.start_el("Destination");
@@ -48,10 +39,7 @@ pub fn ser_replication_rule(
     }
     if let Some(var_9) = &input.delete_marker_replication {
         let inner_writer = scope.start_el("DeleteMarkerReplication");
-        crate::protocol_serde::shape_delete_marker_replication::ser_delete_marker_replication(
-            var_9,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_delete_marker_replication::ser_delete_marker_replication(var_9, inner_writer)?
     }
     if let Some(var_10) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();

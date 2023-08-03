@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`verified_access_endpoints(Option<Vec<VerifiedAccessEndpoint>>)`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput::verified_access_endpoints): <p>The ID of the Verified Access endpoint.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVerifiedAccessEndpointsError>`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsError)
-    pub fn describe_verified_access_endpoints(&self) -> crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder{
+    pub fn describe_verified_access_endpoints(
+        &self,
+    ) -> crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder {
         crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

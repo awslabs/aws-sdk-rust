@@ -10,10 +10,7 @@ impl CreateSubscriptionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_subscription::CreateSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscription::CreateSubscriptionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscription::CreateSubscriptionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_subscription();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_subscription::builders::CreateSubscriptionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_subscription::builders::CreateSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateSubscriptionFluentBuilder {
             crate::operation::create_subscription::CreateSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscription::CreateSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscription::CreateSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subscription::CreateSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscription::CreateSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscription::CreateSubscriptionError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subscription::CreateSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscription::CreateSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscription::CreateSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateSubscriptionFluentBuilder {
             crate::operation::create_subscription::CreateSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscription::CreateSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subscription::CreateSubscriptionError>,
     > {
         self.customize_middleware().await
     }

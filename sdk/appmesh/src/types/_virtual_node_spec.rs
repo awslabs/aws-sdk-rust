@@ -51,9 +51,7 @@ impl VirtualNodeSpec {
 
 /// A builder for [`VirtualNodeSpec`](crate::types::VirtualNodeSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualNodeSpecBuilder {
     pub(crate) service_discovery: ::std::option::Option<crate::types::ServiceDiscovery>,
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
@@ -68,10 +66,7 @@ impl VirtualNodeSpecBuilder {
         self
     }
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
-    pub fn set_service_discovery(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceDiscovery>,
-    ) -> Self {
+    pub fn set_service_discovery(mut self, input: ::std::option::Option<crate::types::ServiceDiscovery>) -> Self {
         self.service_discovery = input;
         self
     }
@@ -91,10 +86,7 @@ impl VirtualNodeSpecBuilder {
         self
     }
     /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.listeners = input;
         self
     }
@@ -114,10 +106,7 @@ impl VirtualNodeSpecBuilder {
         self
     }
     /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-    pub fn set_backends(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Backend>>,
-    ) -> Self {
+    pub fn set_backends(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Backend>>) -> Self {
         self.backends = input;
         self
     }
@@ -131,10 +120,7 @@ impl VirtualNodeSpecBuilder {
         self
     }
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    pub fn set_backend_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendDefaults>,
-    ) -> Self {
+    pub fn set_backend_defaults(mut self, input: ::std::option::Option<crate::types::BackendDefaults>) -> Self {
         self.backend_defaults = input;
         self
     }

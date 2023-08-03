@@ -38,13 +38,7 @@
 /// H264 Gop Size Units
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264GopSizeUnits {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264GopSizeUnits {
         match s {
             "FRAMES" => H264GopSizeUnits::Frames,
             "SECONDS" => H264GopSizeUnits::Seconds,
-            other => {
-                H264GopSizeUnits::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H264GopSizeUnits::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

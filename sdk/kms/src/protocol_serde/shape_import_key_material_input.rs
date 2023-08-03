@@ -7,9 +7,7 @@ pub fn ser_import_key_material_input(
         object.key("KeyId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.import_token {
-        object
-            .key("ImportToken")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("ImportToken").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.encrypted_key_material {
         object

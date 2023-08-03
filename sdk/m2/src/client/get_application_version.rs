@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_application_version::GetApplicationVersionOutput::creation_time): <p>The timestamp when the application version was created.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_application_version::GetApplicationVersionOutput::status_reason): <p>The reason for the reported status.</p>
     /// - On failure, responds with [`SdkError<GetApplicationVersionError>`](crate::operation::get_application_version::GetApplicationVersionError)
-    pub fn get_application_version(
-        &self,
-    ) -> crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder
-    {
-        crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_application_version(&self) -> crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder {
+        crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DeleteComponentTypeFluentBuilder {
         }
     }
     /// Access the DeleteComponentType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_component_type::builders::DeleteComponentTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_component_type::builders::DeleteComponentTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteComponentTypeFluentBuilder {
             crate::operation::delete_component_type::DeleteComponentType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_component_type::DeleteComponentTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_component_type::DeleteComponentTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteComponentTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteComponentTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_component_type::DeleteComponentTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_component_type::DeleteComponentTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_component_type::DeleteComponentTypeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteComponentTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_component_type::DeleteComponentTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_component_type::DeleteComponentTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_component_type::DeleteComponentTypeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteComponentTypeFluentBuilder {
             crate::operation::delete_component_type::DeleteComponentType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_component_type::DeleteComponentTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_component_type::DeleteComponentTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteComponentTypeFluentBuilder {
         self.inner.get_workspace_id()
     }
     /// <p>The ID of the component type to delete.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_type_id(input.into());
         self
     }
     /// <p>The ID of the component type to delete.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
     }

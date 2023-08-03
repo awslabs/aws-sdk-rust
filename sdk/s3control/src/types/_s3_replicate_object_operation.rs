@@ -13,9 +13,7 @@ impl S3ReplicateObjectOperation {
 
 /// A builder for [`S3ReplicateObjectOperation`](crate::types::S3ReplicateObjectOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ReplicateObjectOperationBuilder {}
 impl S3ReplicateObjectOperationBuilder {
     /// Consumes the builder and constructs a [`S3ReplicateObjectOperation`](crate::types::S3ReplicateObjectOperation).

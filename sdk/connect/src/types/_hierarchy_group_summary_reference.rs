@@ -30,9 +30,7 @@ impl HierarchyGroupSummaryReference {
 
 /// A builder for [`HierarchyGroupSummaryReference`](crate::types::HierarchyGroupSummaryReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchyGroupSummaryReferenceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl HierarchyGroupSummaryReferenceBuilder {
     }
     /// Consumes the builder and constructs a [`HierarchyGroupSummaryReference`](crate::types::HierarchyGroupSummaryReference).
     pub fn build(self) -> crate::types::HierarchyGroupSummaryReference {
-        crate::types::HierarchyGroupSummaryReference {
-            id: self.id,
-            arn: self.arn,
-        }
+        crate::types::HierarchyGroupSummaryReference { id: self.id, arn: self.arn }
     }
 }

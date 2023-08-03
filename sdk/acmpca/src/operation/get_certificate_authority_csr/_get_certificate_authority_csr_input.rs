@@ -17,35 +17,27 @@ impl GetCertificateAuthorityCsrInput {
 }
 impl GetCertificateAuthorityCsrInput {
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCsrInput`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrInput).
-    pub fn builder() -> crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrInputBuilder{
+    pub fn builder() -> crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrInputBuilder {
         crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCertificateAuthorityCsrInput`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCertificateAuthorityCsrInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetCertificateAuthorityCsrInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -61,10 +53,8 @@ impl GetCertificateAuthorityCsrInputBuilder {
         crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrInput {
-                certificate_authority_arn: self.certificate_authority_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrInput {
+            certificate_authority_arn: self.certificate_authority_arn,
+        })
     }
 }

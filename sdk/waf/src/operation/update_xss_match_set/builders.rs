@@ -10,10 +10,7 @@ impl UpdateXssMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_xss_match_set::UpdateXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_xss_match_set();
         fluent_builder.inner = self;
@@ -54,9 +51,7 @@ impl UpdateXssMatchSetFluentBuilder {
         }
     }
     /// Access the UpdateXssMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_xss_match_set::builders::UpdateXssMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_xss_match_set::builders::UpdateXssMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,9 +63,7 @@ impl UpdateXssMatchSetFluentBuilder {
             crate::operation::update_xss_match_set::UpdateXssMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -80,10 +73,7 @@ impl UpdateXssMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -92,9 +82,7 @@ impl UpdateXssMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_xss_match_set::UpdateXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError>,
     > {
         let op = self
             .inner
@@ -117,9 +105,7 @@ impl UpdateXssMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_xss_match_set::UpdateXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -133,25 +119,17 @@ impl UpdateXssMatchSetFluentBuilder {
             crate::operation::update_xss_match_set::UpdateXssMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.xss_match_set_id(input.into());
         self
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn set_xss_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_xss_match_set_id(input);
         self
     }
@@ -193,10 +171,7 @@ impl UpdateXssMatchSetFluentBuilder {
     /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -206,9 +181,7 @@ impl UpdateXssMatchSetFluentBuilder {
     /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>> {
         self.inner.get_updates()
     }
 }

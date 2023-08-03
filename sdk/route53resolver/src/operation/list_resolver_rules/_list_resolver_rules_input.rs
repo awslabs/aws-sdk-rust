@@ -35,17 +35,14 @@ impl ListResolverRulesInput {
 }
 impl ListResolverRulesInput {
     /// Creates a new builder-style object to manufacture [`ListResolverRulesInput`](crate::operation::list_resolver_rules::ListResolverRulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_resolver_rules::builders::ListResolverRulesInputBuilder {
+    pub fn builder() -> crate::operation::list_resolver_rules::builders::ListResolverRulesInputBuilder {
         crate::operation::list_resolver_rules::builders::ListResolverRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverRulesInput`](crate::operation::list_resolver_rules::ListResolverRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverRulesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -99,10 +96,7 @@ impl ListResolverRulesInputBuilder {
     /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -115,16 +109,11 @@ impl ListResolverRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListResolverRulesInput`](crate::operation::list_resolver_rules::ListResolverRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resolver_rules::ListResolverRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resolver_rules::ListResolverRulesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resolver_rules::ListResolverRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_resolver_rules::ListResolverRulesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

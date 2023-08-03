@@ -35,9 +35,7 @@ impl StartDiscovererOutput {
 
 /// A builder for [`StartDiscovererOutput`](crate::operation::start_discoverer::StartDiscovererOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDiscovererOutputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,
@@ -45,18 +43,12 @@ pub struct StartDiscovererOutputBuilder {
 }
 impl StartDiscovererOutputBuilder {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_id = input;
         self
     }
@@ -70,10 +62,7 @@ impl StartDiscovererOutputBuilder {
         self
     }
     /// <p>The state of the discoverer.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscovererState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiscovererState>) -> Self {
         self.state = input;
         self
     }

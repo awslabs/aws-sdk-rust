@@ -37,9 +37,7 @@ impl MetricStreamFilter {
 
 /// A builder for [`MetricStreamFilter`](crate::types::MetricStreamFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricStreamFilterBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,19 +76,14 @@ impl MetricStreamFilterBuilder {
     /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
-    pub fn set_metric_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_names = input;
         self
     }
     /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
-    pub fn get_metric_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_names
     }
     /// Consumes the builder and constructs a [`MetricStreamFilter`](crate::types::MetricStreamFilter).

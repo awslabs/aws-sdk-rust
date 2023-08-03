@@ -70,9 +70,7 @@ impl ConnectorOperator {
         self.dynatrace.as_ref()
     }
     /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
-    pub fn google_analytics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GoogleAnalyticsConnectorOperator> {
+    pub fn google_analytics(&self) -> ::std::option::Option<&crate::types::GoogleAnalyticsConnectorOperator> {
         self.google_analytics.as_ref()
     }
     /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
@@ -137,15 +135,12 @@ impl ConnectorOperator {
 
 /// A builder for [`ConnectorOperator`](crate::types::ConnectorOperator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorOperatorBuilder {
     pub(crate) amplitude: ::std::option::Option<crate::types::AmplitudeConnectorOperator>,
     pub(crate) datadog: ::std::option::Option<crate::types::DatadogConnectorOperator>,
     pub(crate) dynatrace: ::std::option::Option<crate::types::DynatraceConnectorOperator>,
-    pub(crate) google_analytics:
-        ::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator>,
+    pub(crate) google_analytics: ::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator>,
     pub(crate) infor_nexus: ::std::option::Option<crate::types::InforNexusConnectorOperator>,
     pub(crate) marketo: ::std::option::Option<crate::types::MarketoConnectorOperator>,
     pub(crate) s3: ::std::option::Option<crate::types::S3ConnectorOperator>,
@@ -167,17 +162,12 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Amplitude source fields. </p>
-    pub fn set_amplitude(
-        mut self,
-        input: ::std::option::Option<crate::types::AmplitudeConnectorOperator>,
-    ) -> Self {
+    pub fn set_amplitude(mut self, input: ::std::option::Option<crate::types::AmplitudeConnectorOperator>) -> Self {
         self.amplitude = input;
         self
     }
     /// <p> The operation to be performed on the provided Amplitude source fields. </p>
-    pub fn get_amplitude(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmplitudeConnectorOperator> {
+    pub fn get_amplitude(&self) -> &::std::option::Option<crate::types::AmplitudeConnectorOperator> {
         &self.amplitude
     }
     /// <p> The operation to be performed on the provided Datadog source fields. </p>
@@ -186,10 +176,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Datadog source fields. </p>
-    pub fn set_datadog(
-        mut self,
-        input: ::std::option::Option<crate::types::DatadogConnectorOperator>,
-    ) -> Self {
+    pub fn set_datadog(mut self, input: ::std::option::Option<crate::types::DatadogConnectorOperator>) -> Self {
         self.datadog = input;
         self
     }
@@ -203,39 +190,26 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Dynatrace source fields. </p>
-    pub fn set_dynatrace(
-        mut self,
-        input: ::std::option::Option<crate::types::DynatraceConnectorOperator>,
-    ) -> Self {
+    pub fn set_dynatrace(mut self, input: ::std::option::Option<crate::types::DynatraceConnectorOperator>) -> Self {
         self.dynatrace = input;
         self
     }
     /// <p> The operation to be performed on the provided Dynatrace source fields. </p>
-    pub fn get_dynatrace(
-        &self,
-    ) -> &::std::option::Option<crate::types::DynatraceConnectorOperator> {
+    pub fn get_dynatrace(&self) -> &::std::option::Option<crate::types::DynatraceConnectorOperator> {
         &self.dynatrace
     }
     /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
-    pub fn google_analytics(
-        mut self,
-        input: crate::types::GoogleAnalyticsConnectorOperator,
-    ) -> Self {
+    pub fn google_analytics(mut self, input: crate::types::GoogleAnalyticsConnectorOperator) -> Self {
         self.google_analytics = ::std::option::Option::Some(input);
         self
     }
     /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
-    pub fn set_google_analytics(
-        mut self,
-        input: ::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator>,
-    ) -> Self {
+    pub fn set_google_analytics(mut self, input: ::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator>) -> Self {
         self.google_analytics = input;
         self
     }
     /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
-    pub fn get_google_analytics(
-        &self,
-    ) -> &::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator> {
+    pub fn get_google_analytics(&self) -> &::std::option::Option<crate::types::GoogleAnalyticsConnectorOperator> {
         &self.google_analytics
     }
     /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
@@ -244,17 +218,12 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
-    pub fn set_infor_nexus(
-        mut self,
-        input: ::std::option::Option<crate::types::InforNexusConnectorOperator>,
-    ) -> Self {
+    pub fn set_infor_nexus(mut self, input: ::std::option::Option<crate::types::InforNexusConnectorOperator>) -> Self {
         self.infor_nexus = input;
         self
     }
     /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
-    pub fn get_infor_nexus(
-        &self,
-    ) -> &::std::option::Option<crate::types::InforNexusConnectorOperator> {
+    pub fn get_infor_nexus(&self) -> &::std::option::Option<crate::types::InforNexusConnectorOperator> {
         &self.infor_nexus
     }
     /// <p> The operation to be performed on the provided Marketo source fields. </p>
@@ -263,10 +232,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Marketo source fields. </p>
-    pub fn set_marketo(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketoConnectorOperator>,
-    ) -> Self {
+    pub fn set_marketo(mut self, input: ::std::option::Option<crate::types::MarketoConnectorOperator>) -> Self {
         self.marketo = input;
         self
     }
@@ -280,10 +246,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Amazon S3 source fields. </p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ConnectorOperator>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ConnectorOperator>) -> Self {
         self.s3 = input;
         self
     }
@@ -297,17 +260,12 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Salesforce source fields. </p>
-    pub fn set_salesforce(
-        mut self,
-        input: ::std::option::Option<crate::types::SalesforceConnectorOperator>,
-    ) -> Self {
+    pub fn set_salesforce(mut self, input: ::std::option::Option<crate::types::SalesforceConnectorOperator>) -> Self {
         self.salesforce = input;
         self
     }
     /// <p> The operation to be performed on the provided Salesforce source fields. </p>
-    pub fn get_salesforce(
-        &self,
-    ) -> &::std::option::Option<crate::types::SalesforceConnectorOperator> {
+    pub fn get_salesforce(&self) -> &::std::option::Option<crate::types::SalesforceConnectorOperator> {
         &self.salesforce
     }
     /// <p> The operation to be performed on the provided ServiceNow source fields. </p>
@@ -316,17 +274,12 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided ServiceNow source fields. </p>
-    pub fn set_service_now(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNowConnectorOperator>,
-    ) -> Self {
+    pub fn set_service_now(mut self, input: ::std::option::Option<crate::types::ServiceNowConnectorOperator>) -> Self {
         self.service_now = input;
         self
     }
     /// <p> The operation to be performed on the provided ServiceNow source fields. </p>
-    pub fn get_service_now(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNowConnectorOperator> {
+    pub fn get_service_now(&self) -> &::std::option::Option<crate::types::ServiceNowConnectorOperator> {
         &self.service_now
     }
     /// <p> The operation to be performed on the provided Singular source fields. </p>
@@ -335,10 +288,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Singular source fields. </p>
-    pub fn set_singular(
-        mut self,
-        input: ::std::option::Option<crate::types::SingularConnectorOperator>,
-    ) -> Self {
+    pub fn set_singular(mut self, input: ::std::option::Option<crate::types::SingularConnectorOperator>) -> Self {
         self.singular = input;
         self
     }
@@ -352,10 +302,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Slack source fields. </p>
-    pub fn set_slack(
-        mut self,
-        input: ::std::option::Option<crate::types::SlackConnectorOperator>,
-    ) -> Self {
+    pub fn set_slack(mut self, input: ::std::option::Option<crate::types::SlackConnectorOperator>) -> Self {
         self.slack = input;
         self
     }
@@ -369,17 +316,12 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Trend Micro source fields. </p>
-    pub fn set_trendmicro(
-        mut self,
-        input: ::std::option::Option<crate::types::TrendmicroConnectorOperator>,
-    ) -> Self {
+    pub fn set_trendmicro(mut self, input: ::std::option::Option<crate::types::TrendmicroConnectorOperator>) -> Self {
         self.trendmicro = input;
         self
     }
     /// <p> The operation to be performed on the provided Trend Micro source fields. </p>
-    pub fn get_trendmicro(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrendmicroConnectorOperator> {
+    pub fn get_trendmicro(&self) -> &::std::option::Option<crate::types::TrendmicroConnectorOperator> {
         &self.trendmicro
     }
     /// <p> The operation to be performed on the provided Veeva source fields. </p>
@@ -388,10 +330,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Veeva source fields. </p>
-    pub fn set_veeva(
-        mut self,
-        input: ::std::option::Option<crate::types::VeevaConnectorOperator>,
-    ) -> Self {
+    pub fn set_veeva(mut self, input: ::std::option::Option<crate::types::VeevaConnectorOperator>) -> Self {
         self.veeva = input;
         self
     }
@@ -405,10 +344,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided Zendesk source fields. </p>
-    pub fn set_zendesk(
-        mut self,
-        input: ::std::option::Option<crate::types::ZendeskConnectorOperator>,
-    ) -> Self {
+    pub fn set_zendesk(mut self, input: ::std::option::Option<crate::types::ZendeskConnectorOperator>) -> Self {
         self.zendesk = input;
         self
     }
@@ -422,10 +358,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p> The operation to be performed on the provided SAPOData source fields. </p>
-    pub fn set_sapo_data(
-        mut self,
-        input: ::std::option::Option<crate::types::SapoDataConnectorOperator>,
-    ) -> Self {
+    pub fn set_sapo_data(mut self, input: ::std::option::Option<crate::types::SapoDataConnectorOperator>) -> Self {
         self.sapo_data = input;
         self
     }
@@ -439,10 +372,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p>Operators supported by the custom connector.</p>
-    pub fn set_custom_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::Operator>,
-    ) -> Self {
+    pub fn set_custom_connector(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.custom_connector = input;
         self
     }
@@ -456,10 +386,7 @@ impl ConnectorOperatorBuilder {
         self
     }
     /// <p>The operation to be performed on the provided Salesforce Pardot source fields.</p>
-    pub fn set_pardot(
-        mut self,
-        input: ::std::option::Option<crate::types::PardotConnectorOperator>,
-    ) -> Self {
+    pub fn set_pardot(mut self, input: ::std::option::Option<crate::types::PardotConnectorOperator>) -> Self {
         self.pardot = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateFeatureMetadataOutput {
 }
 impl UpdateFeatureMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataOutput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataOutputBuilder {
         crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFeatureMetadataOutput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFeatureMetadataOutputBuilder {
     _request_id: Option<String>,
 }

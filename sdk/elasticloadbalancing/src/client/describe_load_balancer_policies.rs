@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeLoadBalancerPoliciesOutput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput) with field(s):
     ///   - [`policy_descriptions(Option<Vec<PolicyDescription>>)`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput::policy_descriptions): <p>Information about the policies.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancerPoliciesError>`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError)
-    pub fn describe_load_balancer_policies(&self) -> crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder{
+    pub fn describe_load_balancer_policies(
+        &self,
+    ) -> crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder {
         crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

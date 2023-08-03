@@ -43,9 +43,7 @@ impl ListTemplatesInput {
 
 /// A builder for [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -107,26 +105,18 @@ impl ListTemplatesInputBuilder {
         self
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>>) -> Self {
         self.status = input;
         self
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_templates::ListTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

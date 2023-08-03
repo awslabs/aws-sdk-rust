@@ -5,8 +5,7 @@
 pub struct ListUserHierarchyGroupsOutput {
     /// <p>Information about the hierarchy groups.</p>
     #[doc(hidden)]
-    pub user_hierarchy_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>>,
+    pub user_hierarchy_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListUserHierarchyGroupsOutput {
 }
 impl ListUserHierarchyGroupsOutput {
     /// <p>Information about the hierarchy groups.</p>
-    pub fn user_hierarchy_group_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HierarchyGroupSummary]> {
+    pub fn user_hierarchy_group_summary_list(&self) -> ::std::option::Option<&[crate::types::HierarchyGroupSummary]> {
         self.user_hierarchy_group_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListUserHierarchyGroupsOutput {
 }
 impl ListUserHierarchyGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserHierarchyGroupsOutput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsOutputBuilder {
         crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserHierarchyGroupsOutput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserHierarchyGroupsOutputBuilder {
-    pub(crate) user_hierarchy_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>>,
+    pub(crate) user_hierarchy_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListUserHierarchyGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_user_hierarchy_group_summary_list`](Self::set_user_hierarchy_group_summary_list).
     ///
     /// <p>Information about the hierarchy groups.</p>
-    pub fn user_hierarchy_group_summary_list(
-        mut self,
-        input: crate::types::HierarchyGroupSummary,
-    ) -> Self {
+    pub fn user_hierarchy_group_summary_list(mut self, input: crate::types::HierarchyGroupSummary) -> Self {
         let mut v = self.user_hierarchy_group_summary_list.unwrap_or_default();
         v.push(input);
         self.user_hierarchy_group_summary_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListUserHierarchyGroupsOutputBuilder {
         self
     }
     /// <p>Information about the hierarchy groups.</p>
-    pub fn get_user_hierarchy_group_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>> {
+    pub fn get_user_hierarchy_group_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>> {
         &self.user_hierarchy_group_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -102,9 +89,7 @@ impl ListUserHierarchyGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUserHierarchyGroupsOutput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput {
+    pub fn build(self) -> crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput {
         crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput {
             user_hierarchy_group_summary_list: self.user_hierarchy_group_summary_list,
             next_token: self.next_token,

@@ -10,10 +10,7 @@ impl SynthesizeSpeechInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.synthesize_speech();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SynthesizeSpeechFluentBuilder {
         }
     }
     /// Access the SynthesizeSpeech as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SynthesizeSpeechFluentBuilder {
             crate::operation::synthesize_speech::SynthesizeSpeech,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SynthesizeSpeechFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SynthesizeSpeechFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SynthesizeSpeechFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SynthesizeSpeechFluentBuilder {
             crate::operation::synthesize_speech::SynthesizeSpeech,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
     > {
         self.customize_middleware().await
     }
@@ -137,15 +121,9 @@ impl SynthesizeSpeechFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError, ::aws_smithy_http::operation::Response>,
     > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         input.presigned(&self.handle.conf, presigning_config).await
     }
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
@@ -191,10 +169,7 @@ impl SynthesizeSpeechFluentBuilder {
     }
     /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -208,25 +183,17 @@ impl SynthesizeSpeechFluentBuilder {
     /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
     ///
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn lexicon_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lexicon_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lexicon_names(input.into());
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn set_lexicon_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lexicon_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lexicon_names(input);
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn get_lexicon_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_lexicon_names()
     }
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
@@ -237,10 +204,7 @@ impl SynthesizeSpeechFluentBuilder {
     }
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
@@ -279,17 +243,12 @@ impl SynthesizeSpeechFluentBuilder {
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn set_speech_mark_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
-    ) -> Self {
+    pub fn set_speech_mark_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>) -> Self {
         self.inner = self.inner.set_speech_mark_types(input);
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn get_speech_mark_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+    pub fn get_speech_mark_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
         self.inner.get_speech_mark_types()
     }
     /// <p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>

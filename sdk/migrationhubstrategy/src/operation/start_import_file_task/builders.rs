@@ -37,9 +37,7 @@ impl StartImportFileTaskFluentBuilder {
         }
     }
     /// Access the StartImportFileTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StartImportFileTaskFluentBuilder {
             crate::operation::start_import_file_task::StartImportFileTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_file_task::StartImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_file_task::StartImportFileTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StartImportFileTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StartImportFileTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_file_task::StartImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_file_task::StartImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_file_task::StartImportFileTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StartImportFileTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_file_task::StartImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_file_task::StartImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_file_task::StartImportFileTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StartImportFileTaskFluentBuilder {
             crate::operation::start_import_file_task::StartImportFileTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_file_task::StartImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_file_task::StartImportFileTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +157,7 @@ impl StartImportFileTaskFluentBuilder {
         self
     }
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
-    pub fn set_data_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceType>,
-    ) -> Self {
+    pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.inner = self.inner.set_data_source_type(input);
         self
     }
@@ -191,10 +175,7 @@ impl StartImportFileTaskFluentBuilder {
         self
     }
     /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-    pub fn set_group_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }
@@ -203,18 +184,12 @@ impl StartImportFileTaskFluentBuilder {
         self.inner.get_group_id()
     }
     /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
-    pub fn s3bucket_for_report_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3bucket_for_report_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3bucket_for_report_data(input.into());
         self
     }
     /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
-    pub fn set_s3bucket_for_report_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3bucket_for_report_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3bucket_for_report_data(input);
         self
     }

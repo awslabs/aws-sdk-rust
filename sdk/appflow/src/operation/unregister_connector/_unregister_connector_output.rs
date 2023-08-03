@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UnregisterConnectorOutput {
 }
 impl UnregisterConnectorOutput {
     /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::operation::unregister_connector::UnregisterConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::unregister_connector::builders::UnregisterConnectorOutputBuilder {
-        crate::operation::unregister_connector::builders::UnregisterConnectorOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::unregister_connector::builders::UnregisterConnectorOutputBuilder {
+        crate::operation::unregister_connector::builders::UnregisterConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnregisterConnectorOutput`](crate::operation::unregister_connector::UnregisterConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnregisterConnectorOutputBuilder {
     _request_id: Option<String>,
 }

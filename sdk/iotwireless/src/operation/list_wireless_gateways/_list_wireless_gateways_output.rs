@@ -8,8 +8,7 @@ pub struct ListWirelessGatewaysOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless gateway.</p>
     #[doc(hidden)]
-    pub wireless_gateway_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
+    pub wireless_gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
     _request_id: Option<String>,
 }
 impl ListWirelessGatewaysOutput {
@@ -18,9 +17,7 @@ impl ListWirelessGatewaysOutput {
         self.next_token.as_deref()
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn wireless_gateway_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WirelessGatewayStatistics]> {
+    pub fn wireless_gateway_list(&self) -> ::std::option::Option<&[crate::types::WirelessGatewayStatistics]> {
         self.wireless_gateway_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListWirelessGatewaysOutput {
 }
 impl ListWirelessGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysOutputBuilder {
+    pub fn builder() -> crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysOutputBuilder {
         crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWirelessGatewaysOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) wireless_gateway_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
+    pub(crate) wireless_gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
     _request_id: Option<String>,
 }
 impl ListWirelessGatewaysOutputBuilder {
@@ -75,17 +68,12 @@ impl ListWirelessGatewaysOutputBuilder {
         self
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn set_wireless_gateway_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
-    ) -> Self {
+    pub fn set_wireless_gateway_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>) -> Self {
         self.wireless_gateway_list = input;
         self
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn get_wireless_gateway_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>> {
+    pub fn get_wireless_gateway_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>> {
         &self.wireless_gateway_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

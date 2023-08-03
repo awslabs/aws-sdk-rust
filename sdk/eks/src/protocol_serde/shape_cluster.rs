@@ -3,12 +3,7 @@ pub(crate) fn de_cluster<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Cluster>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,169 +13,127 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "createdAt" => {
-                                builder = builder.set_created_at(
-                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
-                                );
-                            }
-                            "version" => {
-                                builder = builder.set_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "endpoint" => {
-                                builder = builder.set_endpoint(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "roleArn" => {
-                                builder = builder.set_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "resourcesVpcConfig" => {
-                                builder = builder.set_resources_vpc_config(
-                                    crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens)?
-                                );
-                            }
-                            "kubernetesNetworkConfig" => {
-                                builder = builder.set_kubernetes_network_config(
-                                    crate::protocol_serde::shape_kubernetes_network_config_response::de_kubernetes_network_config_response(tokens)?
-                                );
-                            }
-                            "logging" => {
-                                builder = builder.set_logging(
-                                    crate::protocol_serde::shape_logging::de_logging(tokens)?,
-                                );
-                            }
-                            "identity" => {
-                                builder = builder.set_identity(
-                                    crate::protocol_serde::shape_identity::de_identity(tokens)?,
-                                );
-                            }
-                            "status" => {
-                                builder = builder.set_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::ClusterStatus::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "certificateAuthority" => {
-                                builder = builder.set_certificate_authority(
-                                    crate::protocol_serde::shape_certificate::de_certificate(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "clientRequestToken" => {
-                                builder = builder.set_client_request_token(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "platformVersion" => {
-                                builder = builder.set_platform_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "tags" => {
-                                builder = builder.set_tags(
-                                    crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?,
-                                );
-                            }
-                            "encryptionConfig" => {
-                                builder = builder.set_encryption_config(
-                                    crate::protocol_serde::shape_encryption_config_list::de_encryption_config_list(tokens)?
-                                );
-                            }
-                            "connectorConfig" => {
-                                builder = builder.set_connector_config(
-                                    crate::protocol_serde::shape_connector_config_response::de_connector_config_response(tokens)?
-                                );
-                            }
-                            "id" => {
-                                builder = builder.set_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "health" => {
-                                builder = builder.set_health(
-                                    crate::protocol_serde::shape_cluster_health::de_cluster_health(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "outpostConfig" => {
-                                builder = builder.set_outpost_config(
-                                    crate::protocol_serde::shape_outpost_config_response::de_outpost_config_response(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "createdAt" => {
+                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "version" => {
+                            builder = builder.set_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "endpoint" => {
+                            builder = builder.set_endpoint(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "roleArn" => {
+                            builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "resourcesVpcConfig" => {
+                            builder =
+                                builder.set_resources_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens)?);
+                        }
+                        "kubernetesNetworkConfig" => {
+                            builder = builder.set_kubernetes_network_config(
+                                crate::protocol_serde::shape_kubernetes_network_config_response::de_kubernetes_network_config_response(tokens)?,
+                            );
+                        }
+                        "logging" => {
+                            builder = builder.set_logging(crate::protocol_serde::shape_logging::de_logging(tokens)?);
+                        }
+                        "identity" => {
+                            builder = builder.set_identity(crate::protocol_serde::shape_identity::de_identity(tokens)?);
+                        }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ClusterStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "certificateAuthority" => {
+                            builder = builder.set_certificate_authority(crate::protocol_serde::shape_certificate::de_certificate(tokens)?);
+                        }
+                        "clientRequestToken" => {
+                            builder = builder.set_client_request_token(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "platformVersion" => {
+                            builder = builder.set_platform_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                        }
+                        "encryptionConfig" => {
+                            builder = builder
+                                .set_encryption_config(crate::protocol_serde::shape_encryption_config_list::de_encryption_config_list(tokens)?);
+                        }
+                        "connectorConfig" => {
+                            builder = builder.set_connector_config(
+                                crate::protocol_serde::shape_connector_config_response::de_connector_config_response(tokens)?,
+                            );
+                        }
+                        "id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "health" => {
+                            builder = builder.set_health(crate::protocol_serde::shape_cluster_health::de_cluster_health(tokens)?);
+                        }
+                        "outpostConfig" => {
+                            builder =
+                                builder.set_outpost_config(crate::protocol_serde::shape_outpost_config_response::de_outpost_config_response(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

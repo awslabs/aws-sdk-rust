@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutRawMessageContentOutput {
 }
 impl PutRawMessageContentOutput {
     /// Creates a new builder-style object to manufacture [`PutRawMessageContentOutput`](crate::operation::put_raw_message_content::PutRawMessageContentOutput).
-    pub fn builder(
-    ) -> crate::operation::put_raw_message_content::builders::PutRawMessageContentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_raw_message_content::builders::PutRawMessageContentOutputBuilder {
         crate::operation::put_raw_message_content::builders::PutRawMessageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRawMessageContentOutput`](crate::operation::put_raw_message_content::PutRawMessageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRawMessageContentOutputBuilder {
     _request_id: Option<String>,
 }

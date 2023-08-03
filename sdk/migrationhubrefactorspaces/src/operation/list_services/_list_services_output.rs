@@ -35,12 +35,9 @@ impl ListServicesOutput {
 
 /// A builder for [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesOutputBuilder {
-    pub(crate) service_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
+    pub(crate) service_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListServicesOutputBuilder {
         self
     }
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
-    pub fn set_service_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
-    ) -> Self {
+    pub fn set_service_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>) -> Self {
         self.service_summary_list = input;
         self
     }
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
-    pub fn get_service_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
+    pub fn get_service_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
         &self.service_summary_list
     }
     /// <p>The token for the next page of results.</p>

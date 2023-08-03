@@ -22,34 +22,26 @@ impl DescribeComponentConfigurationInput {
 }
 impl DescribeComponentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentConfigurationInput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationInput).
-    pub fn builder() -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder {
         crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeComponentConfigurationInput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComponentConfigurationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComponentConfigurationInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl DescribeComponentConfigurationInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -84,13 +70,9 @@ impl DescribeComponentConfigurationInputBuilder {
         crate::operation::describe_component_configuration::DescribeComponentConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_component_configuration::DescribeComponentConfigurationInput {
-                resource_group_name: self.resource_group_name
-                ,
-                component_name: self.component_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_component_configuration::DescribeComponentConfigurationInput {
+            resource_group_name: self.resource_group_name,
+            component_name: self.component_name,
+        })
     }
 }

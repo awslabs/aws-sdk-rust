@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_filter::DeleteFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the filter that has been deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::operation::delete_filter::DeleteFilterError)
-    pub fn delete_filter(
-        &self,
-    ) -> crate::operation::delete_filter::builders::DeleteFilterFluentBuilder {
-        crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_filter(&self) -> crate::operation::delete_filter::builders::DeleteFilterFluentBuilder {
+        crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl BusinessReportS3Location {
 
 /// A builder for [`BusinessReportS3Location`](crate::types::BusinessReportS3Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BusinessReportS3LocationBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

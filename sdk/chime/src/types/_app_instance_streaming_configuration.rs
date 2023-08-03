@@ -13,9 +13,7 @@ pub struct AppInstanceStreamingConfiguration {
 }
 impl AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
-    pub fn app_instance_data_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppInstanceDataType> {
+    pub fn app_instance_data_type(&self) -> ::std::option::Option<&crate::types::AppInstanceDataType> {
         self.app_instance_data_type.as_ref()
     }
     /// <p>The resource ARN.</p>
@@ -52,17 +50,12 @@ impl AppInstanceStreamingConfigurationBuilder {
         self
     }
     /// <p>The type of data to be streamed.</p>
-    pub fn set_app_instance_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceDataType>,
-    ) -> Self {
+    pub fn set_app_instance_data_type(mut self, input: ::std::option::Option<crate::types::AppInstanceDataType>) -> Self {
         self.app_instance_data_type = input;
         self
     }
     /// <p>The type of data to be streamed.</p>
-    pub fn get_app_instance_data_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppInstanceDataType> {
+    pub fn get_app_instance_data_type(&self) -> &::std::option::Option<crate::types::AppInstanceDataType> {
         &self.app_instance_data_type
     }
     /// <p>The resource ARN.</p>

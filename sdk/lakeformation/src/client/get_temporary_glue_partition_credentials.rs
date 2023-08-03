@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`session_token(Option<String>)`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput::session_token): <p>The session token for the temporary credentials.</p>
     ///   - [`expiration(Option<DateTime>)`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput::expiration): <p>The date and time when the temporary credentials expire.</p>
     /// - On failure, responds with [`SdkError<GetTemporaryGluePartitionCredentialsError>`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError)
-    pub fn get_temporary_glue_partition_credentials(&self) -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsFluentBuilder{
-        crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsFluentBuilder::new(self.handle.clone())
+    pub fn get_temporary_glue_partition_credentials(
+        &self,
+    ) -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsFluentBuilder {
+        crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

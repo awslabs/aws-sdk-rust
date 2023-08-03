@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeIdentityIdFormatOutput {
 }
 impl DescribeIdentityIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityIdFormatOutput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput).
-    pub fn builder() -> crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatOutputBuilder{
+    pub fn builder() -> crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatOutputBuilder {
         crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityIdFormatOutput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityIdFormatOutputBuilder {
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl DescribeIdentityIdFormatOutputBuilder {
         self
     }
     /// <p>Information about the ID format for the resources.</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>) -> Self {
         self.statuses = input;
         self
     }
@@ -69,9 +64,7 @@ impl DescribeIdentityIdFormatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeIdentityIdFormatOutput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput {
+    pub fn build(self) -> crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput {
         crate::operation::describe_identity_id_format::DescribeIdentityIdFormatOutput {
             statuses: self.statuses,
             _request_id: self._request_id,

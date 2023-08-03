@@ -28,7 +28,7 @@ impl CreateClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder,
+    inner: crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder,
 }
 impl CreateClusterParameterGroupFluentBuilder {
     /// Creates a new `CreateClusterParameterGroup`.
@@ -39,7 +39,7 @@ impl CreateClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the CreateClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateClusterParameterGroupFluentBuilder {
             crate::operation::create_cluster_parameter_group::CreateClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateClusterParameterGroupFluentBuilder {
             crate::operation::create_cluster_parameter_group::CreateClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +121,7 @@ impl CreateClusterParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
@@ -149,10 +135,7 @@ impl CreateClusterParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -171,19 +154,13 @@ impl CreateClusterParameterGroupFluentBuilder {
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_family(input.into());
         self
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn set_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_family(input);
         self
     }
@@ -216,10 +193,7 @@ impl CreateClusterParameterGroupFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

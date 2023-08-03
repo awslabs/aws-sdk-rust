@@ -80,13 +80,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProcessingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -227,9 +221,7 @@ impl ::std::convert::From<&str> for ProcessingInstanceType {
             "ml.t3.large" => ProcessingInstanceType::MlT3Large,
             "ml.t3.medium" => ProcessingInstanceType::MlT3Medium,
             "ml.t3.xlarge" => ProcessingInstanceType::MlT3Xlarge,
-            other => ProcessingInstanceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProcessingInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

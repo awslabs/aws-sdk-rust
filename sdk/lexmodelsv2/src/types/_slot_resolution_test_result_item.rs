@@ -17,9 +17,7 @@ impl SlotResolutionTestResultItem {
         self.slot_name.as_deref()
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
-    pub fn result_counts(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotResolutionTestResultItemCounts> {
+    pub fn result_counts(&self) -> ::std::option::Option<&crate::types::SlotResolutionTestResultItemCounts> {
         self.result_counts.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl SlotResolutionTestResultItem {
 
 /// A builder for [`SlotResolutionTestResultItem`](crate::types::SlotResolutionTestResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotResolutionTestResultItemBuilder {
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,
-    pub(crate) result_counts:
-        ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,
+    pub(crate) result_counts: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,
 }
 impl SlotResolutionTestResultItemBuilder {
     /// <p>The name of the slot.</p>
@@ -56,25 +51,17 @@ impl SlotResolutionTestResultItemBuilder {
         &self.slot_name
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
-    pub fn result_counts(
-        mut self,
-        input: crate::types::SlotResolutionTestResultItemCounts,
-    ) -> Self {
+    pub fn result_counts(mut self, input: crate::types::SlotResolutionTestResultItemCounts) -> Self {
         self.result_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
-    pub fn set_result_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,
-    ) -> Self {
+    pub fn set_result_counts(mut self, input: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>) -> Self {
         self.result_counts = input;
         self
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
-    pub fn get_result_counts(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotResolutionTestResultItemCounts> {
+    pub fn get_result_counts(&self) -> &::std::option::Option<crate::types::SlotResolutionTestResultItemCounts> {
         &self.result_counts
     }
     /// Consumes the builder and constructs a [`SlotResolutionTestResultItem`](crate::types::SlotResolutionTestResultItem).

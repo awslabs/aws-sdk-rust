@@ -163,9 +163,7 @@ impl ScalableTarget {
 
 /// A builder for [`ScalableTarget`](crate::types::ScalableTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalableTargetBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -184,10 +182,7 @@ impl ScalableTargetBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -318,10 +313,7 @@ impl ScalableTargetBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -349,9 +341,7 @@ impl ScalableTargetBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
@@ -402,10 +392,7 @@ impl ScalableTargetBuilder {
         self
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -419,10 +406,7 @@ impl ScalableTargetBuilder {
         self
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
-    pub fn set_suspended_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SuspendedState>,
-    ) -> Self {
+    pub fn set_suspended_state(mut self, input: ::std::option::Option<crate::types::SuspendedState>) -> Self {
         self.suspended_state = input;
         self
     }
@@ -431,18 +415,12 @@ impl ScalableTargetBuilder {
         &self.suspended_state
     }
     /// <p>The ARN of the scalable target.</p>
-    pub fn scalable_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scalable_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scalable_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the scalable target.</p>
-    pub fn set_scalable_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scalable_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scalable_target_arn = input;
         self
     }

@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_bot_alias::CreateBotAliasOutput::creation_date_time): <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_bot_alias::CreateBotAliasOutput::tags): <p>A list of tags associated with the bot alias.</p>
     /// - On failure, responds with [`SdkError<CreateBotAliasError>`](crate::operation::create_bot_alias::CreateBotAliasError)
-    pub fn create_bot_alias(
-        &self,
-    ) -> crate::operation::create_bot_alias::builders::CreateBotAliasFluentBuilder {
-        crate::operation::create_bot_alias::builders::CreateBotAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bot_alias(&self) -> crate::operation::create_bot_alias::builders::CreateBotAliasFluentBuilder {
+        crate::operation::create_bot_alias::builders::CreateBotAliasFluentBuilder::new(self.handle.clone())
     }
 }

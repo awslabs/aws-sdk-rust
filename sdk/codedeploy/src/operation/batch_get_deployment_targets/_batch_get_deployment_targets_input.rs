@@ -42,34 +42,26 @@ impl BatchGetDeploymentTargetsInput {
 }
 impl BatchGetDeploymentTargetsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentTargetsInput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput).
-    pub fn builder() -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder {
         crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentTargetsInput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentTargetsInputBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -109,10 +101,7 @@ impl BatchGetDeploymentTargetsInputBuilder {
     /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
     /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
-    pub fn set_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_ids = input;
         self
     }
@@ -137,11 +126,9 @@ impl BatchGetDeploymentTargetsInputBuilder {
         crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput {
-                deployment_id: self.deployment_id,
-                target_ids: self.target_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput {
+            deployment_id: self.deployment_id,
+            target_ids: self.target_ids,
+        })
     }
 }

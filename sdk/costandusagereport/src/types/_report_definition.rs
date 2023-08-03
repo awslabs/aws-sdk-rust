@@ -18,8 +18,7 @@ pub struct ReportDefinition {
     pub compression: ::std::option::Option<crate::types::CompressionFormat>,
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
     #[doc(hidden)]
-    pub additional_schema_elements:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
+    pub additional_schema_elements: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
     /// <p>The S3 bucket where AWS delivers the report.</p>
     #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
@@ -31,8 +30,7 @@ pub struct ReportDefinition {
     pub s3_region: ::std::option::Option<crate::types::AwsRegion>,
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
     #[doc(hidden)]
-    pub additional_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
+    pub additional_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     #[doc(hidden)]
     pub refresh_closed_reports: ::std::option::Option<bool>,
@@ -61,9 +59,7 @@ impl ReportDefinition {
         self.compression.as_ref()
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-    pub fn additional_schema_elements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SchemaElement]> {
+    pub fn additional_schema_elements(&self) -> ::std::option::Option<&[crate::types::SchemaElement]> {
         self.additional_schema_elements.as_deref()
     }
     /// <p>The S3 bucket where AWS delivers the report.</p>
@@ -79,9 +75,7 @@ impl ReportDefinition {
         self.s3_region.as_ref()
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn additional_artifacts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdditionalArtifact]> {
+    pub fn additional_artifacts(&self) -> ::std::option::Option<&[crate::types::AdditionalArtifact]> {
         self.additional_artifacts.as_deref()
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
@@ -106,21 +100,17 @@ impl ReportDefinition {
 
 /// A builder for [`ReportDefinition`](crate::types::ReportDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportDefinitionBuilder {
     pub(crate) report_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
     pub(crate) format: ::std::option::Option<crate::types::ReportFormat>,
     pub(crate) compression: ::std::option::Option<crate::types::CompressionFormat>,
-    pub(crate) additional_schema_elements:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
+    pub(crate) additional_schema_elements: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) s3_region: ::std::option::Option<crate::types::AwsRegion>,
-    pub(crate) additional_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
+    pub(crate) additional_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
     pub(crate) refresh_closed_reports: ::std::option::Option<bool>,
     pub(crate) report_versioning: ::std::option::Option<crate::types::ReportVersioning>,
     pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
@@ -174,10 +164,7 @@ impl ReportDefinitionBuilder {
         self
     }
     /// <p>The compression format that AWS uses for the report.</p>
-    pub fn set_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionFormat>,
-    ) -> Self {
+    pub fn set_compression(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
         self.compression = input;
         self
     }
@@ -197,17 +184,12 @@ impl ReportDefinitionBuilder {
         self
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-    pub fn set_additional_schema_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
-    ) -> Self {
+    pub fn set_additional_schema_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>) -> Self {
         self.additional_schema_elements = input;
         self
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-    pub fn get_additional_schema_elements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>> {
+    pub fn get_additional_schema_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>> {
         &self.additional_schema_elements
     }
     /// <p>The S3 bucket where AWS delivers the report.</p>
@@ -264,17 +246,12 @@ impl ReportDefinitionBuilder {
         self
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn set_additional_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
-    ) -> Self {
+    pub fn set_additional_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>) -> Self {
         self.additional_artifacts = input;
         self
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn get_additional_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>> {
+    pub fn get_additional_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>> {
         &self.additional_artifacts
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
@@ -297,10 +274,7 @@ impl ReportDefinitionBuilder {
         self
     }
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
-    pub fn set_report_versioning(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportVersioning>,
-    ) -> Self {
+    pub fn set_report_versioning(mut self, input: ::std::option::Option<crate::types::ReportVersioning>) -> Self {
         self.report_versioning = input;
         self
     }
@@ -309,18 +283,12 @@ impl ReportDefinitionBuilder {
         &self.report_versioning
     }
     /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
-    pub fn billing_view_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_view_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
-    pub fn set_billing_view_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_view_arn = input;
         self
     }

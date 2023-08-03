@@ -71,9 +71,7 @@ impl ListImagesInput {
 
 /// A builder for [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -123,10 +121,7 @@ impl ListImagesInputBuilder {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -198,12 +193,7 @@ impl ListImagesInputBuilder {
         &self.include_deprecated
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_images::ListImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_images::ListImagesInput {
             owner: self.owner,
             filters: self.filters,

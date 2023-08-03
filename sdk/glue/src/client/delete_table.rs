@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`transaction_id(impl ::std::convert::Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_transaction_id): <p>The transaction ID at which to delete the table contents.</p>
     /// - On success, responds with [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput)
     /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::operation::delete_table::DeleteTableError)
-    pub fn delete_table(
-        &self,
-    ) -> crate::operation::delete_table::builders::DeleteTableFluentBuilder {
+    pub fn delete_table(&self) -> crate::operation::delete_table::builders::DeleteTableFluentBuilder {
         crate::operation::delete_table::builders::DeleteTableFluentBuilder::new(self.handle.clone())
     }
 }

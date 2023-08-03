@@ -26,7 +26,7 @@ impl DeleteCacheParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCacheParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder,
+    inner: crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder,
 }
 impl DeleteCacheParameterGroupFluentBuilder {
     /// Creates a new `DeleteCacheParameterGroup`.
@@ -37,7 +37,7 @@ impl DeleteCacheParameterGroupFluentBuilder {
         }
     }
     /// Access the DeleteCacheParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteCacheParameterGroupFluentBuilder {
             crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteCacheParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteCacheParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteCacheParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,29 +105,21 @@ impl DeleteCacheParameterGroupFluentBuilder {
             crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }

@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateOrderOutput`](crate::operation::create_order::CreateOrderOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::operation::create_order::CreateOrderOutput::order): <p>Information about this order.</p>
     /// - On failure, responds with [`SdkError<CreateOrderError>`](crate::operation::create_order::CreateOrderError)
-    pub fn create_order(
-        &self,
-    ) -> crate::operation::create_order::builders::CreateOrderFluentBuilder {
+    pub fn create_order(&self) -> crate::operation::create_order::builders::CreateOrderFluentBuilder {
         crate::operation::create_order::builders::CreateOrderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -96,10 +96,7 @@ impl DataFieldSeriesItemBuilder {
         self
     }
     /// <p>The axis that you are binding the field to.</p>
-    pub fn set_axis_binding(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisBinding>,
-    ) -> Self {
+    pub fn set_axis_binding(mut self, input: ::std::option::Option<crate::types::AxisBinding>) -> Self {
         self.axis_binding = input;
         self
     }
@@ -113,10 +110,7 @@ impl DataFieldSeriesItemBuilder {
         self
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::LineChartSeriesSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::LineChartSeriesSettings>) -> Self {
         self.settings = input;
         self
     }

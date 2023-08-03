@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetManagedEndpointSessionCredentialsO
 }
 impl GetManagedEndpointSessionCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedEndpointSessionCredentialsOutput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput).
-    pub fn builder() -> crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsOutputBuilder {
         crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedEndpointSessionCredentialsOutput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedEndpointSessionCredentialsOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
@@ -72,10 +70,7 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
         self
     }
     /// <p>The structure containing the session credentials.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -89,10 +84,7 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time when the session token will expire.</p>
-    pub fn set_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_at = input;
         self
     }
@@ -110,14 +102,11 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetManagedEndpointSessionCredentialsOutput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput).
-    pub fn build(self) -> crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput{
+    pub fn build(self) -> crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput {
         crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput {
-            id: self.id
-            ,
-            credentials: self.credentials
-            ,
-            expires_at: self.expires_at
-            ,
+            id: self.id,
+            credentials: self.credentials,
+            expires_at: self.expires_at,
             _request_id: self._request_id,
         }
     }

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`bot_channel_associations(Option<Vec<BotChannelAssociation>>)`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput::bot_channel_associations): <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput::next_token): <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     /// - On failure, responds with [`SdkError<GetBotChannelAssociationsError>`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError)
-    pub fn get_bot_channel_associations(&self) -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder{
+    pub fn get_bot_channel_associations(&self) -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder {
         crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

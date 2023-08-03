@@ -30,9 +30,7 @@ impl HlsWebdavSettings {
         self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
-    pub fn http_transfer_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsWebdavHttpTransferMode> {
+    pub fn http_transfer_mode(&self) -> ::std::option::Option<&crate::types::HlsWebdavHttpTransferMode> {
         self.http_transfer_mode.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
@@ -53,9 +51,7 @@ impl HlsWebdavSettings {
 
 /// A builder for [`HlsWebdavSettings`](crate::types::HlsWebdavSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsWebdavSettingsBuilder {
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,
     pub(crate) filecache_duration: ::std::option::Option<i32>,
@@ -98,17 +94,12 @@ impl HlsWebdavSettingsBuilder {
         self
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
-    pub fn set_http_transfer_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
-    ) -> Self {
+    pub fn set_http_transfer_mode(mut self, input: ::std::option::Option<crate::types::HlsWebdavHttpTransferMode>) -> Self {
         self.http_transfer_mode = input;
         self
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
-    pub fn get_http_transfer_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsWebdavHttpTransferMode> {
+    pub fn get_http_transfer_mode(&self) -> &::std::option::Option<crate::types::HlsWebdavHttpTransferMode> {
         &self.http_transfer_mode
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.

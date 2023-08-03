@@ -64,9 +64,7 @@ impl ReplacePermissionAssociationsWork {
     /// <li> <p> <code>COMPLETED</code> </p> </li>
     /// <li> <p> <code>FAILED</code> </p> </li>
     /// </ul>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the reason for a <code>FAILED</code> status. This field is present only when there <code>status</code> is <code>FAILED</code>.</p>
@@ -91,9 +89,7 @@ impl ReplacePermissionAssociationsWork {
 
 /// A builder for [`ReplacePermissionAssociationsWork`](crate::types::ReplacePermissionAssociationsWork).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplacePermissionAssociationsWorkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) from_permission_arn: ::std::option::Option<::std::string::String>,
@@ -121,18 +117,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
         &self.id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that this background task is replacing.</p>
-    pub fn from_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that this background task is replacing.</p>
-    pub fn set_from_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_permission_arn = input;
         self
     }
@@ -141,18 +131,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
         &self.from_permission_arn
     }
     /// <p>The version of the managed permission that this background task is replacing.</p>
-    pub fn from_permission_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_permission_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_permission_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the managed permission that this background task is replacing.</p>
-    pub fn set_from_permission_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_permission_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_permission_version = input;
         self
     }
@@ -161,18 +145,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
         &self.from_permission_version
     }
     /// <p>The ARN of the managed permission that this background task is associating with the resource shares in place of the managed permission and version specified in <code>fromPermissionArn</code> and <code>fromPermissionVersion</code>.</p>
-    pub fn to_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the managed permission that this background task is associating with the resource shares in place of the managed permission and version specified in <code>fromPermissionArn</code> and <code>fromPermissionVersion</code>.</p>
-    pub fn set_to_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_permission_arn = input;
         self
     }
@@ -181,18 +159,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
         &self.to_permission_arn
     }
     /// <p>The version of the managed permission that this background task is associating with the resource shares. This is always the version that is currently the default for this managed permission.</p>
-    pub fn to_permission_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_permission_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_permission_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the managed permission that this background task is associating with the resource shares. This is always the version that is currently the default for this managed permission.</p>
-    pub fn set_to_permission_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_permission_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_permission_version = input;
         self
     }
@@ -216,10 +188,7 @@ impl ReplacePermissionAssociationsWorkBuilder {
     /// <li> <p> <code>COMPLETED</code> </p> </li>
     /// <li> <p> <code>FAILED</code> </p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>) -> Self {
         self.status = input;
         self
     }
@@ -229,24 +198,16 @@ impl ReplacePermissionAssociationsWorkBuilder {
     /// <li> <p> <code>COMPLETED</code> </p> </li>
     /// <li> <p> <code>FAILED</code> </p> </li>
     /// </ul>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
         &self.status
     }
     /// <p>Specifies the reason for a <code>FAILED</code> status. This field is present only when there <code>status</code> is <code>FAILED</code>.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the reason for a <code>FAILED</code> status. This field is present only when there <code>status</code> is <code>FAILED</code>.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -260,10 +221,7 @@ impl ReplacePermissionAssociationsWorkBuilder {
         self
     }
     /// <p>The date and time when this asynchronous background task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -277,10 +235,7 @@ impl ReplacePermissionAssociationsWorkBuilder {
         self
     }
     /// <p>The date and time when the status of this background task was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

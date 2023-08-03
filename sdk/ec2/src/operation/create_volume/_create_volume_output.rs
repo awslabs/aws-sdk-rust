@@ -134,9 +134,7 @@ impl CreateVolumeOutput {
 
 /// A builder for [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVolumeOutputBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -169,32 +167,21 @@ impl CreateVolumeOutputBuilder {
         self
     }
     /// <p>Information about the volume attachments.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>Information about the volume attachments.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>> {
         &self.attachments
     }
     /// <p>The Availability Zone for the volume.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the volume.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -208,10 +195,7 @@ impl CreateVolumeOutputBuilder {
         self
     }
     /// <p>The time stamp when volume creation was initiated.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -343,10 +327,7 @@ impl CreateVolumeOutputBuilder {
         self
     }
     /// <p>Any tags assigned to the volume.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -360,10 +341,7 @@ impl CreateVolumeOutputBuilder {
         self
     }
     /// <p>The volume type.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }

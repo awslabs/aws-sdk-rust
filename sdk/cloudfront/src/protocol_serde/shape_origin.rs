@@ -27,10 +27,7 @@ pub fn ser_origin(
     }
     if let Some(var_6) = &input.custom_origin_config {
         let inner_writer = scope.start_el("CustomOriginConfig");
-        crate::protocol_serde::shape_custom_origin_config::ser_custom_origin_config(
-            var_6,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_custom_origin_config::ser_custom_origin_config(var_6, inner_writer)?
     }
     if let Some(var_7) = &input.connection_attempts {
         let mut inner_writer = scope.start_el("ConnectionAttempts").finish();
@@ -52,9 +49,7 @@ pub fn ser_origin(
     Ok(())
 }
 
-pub fn de_origin(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Origin, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_origin(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Origin, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Origin::builder();
     while let Some(mut tag) = decoder.next_tag() {

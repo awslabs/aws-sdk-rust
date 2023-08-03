@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`change_set_summary_list(Option<Vec<ChangeSetSummaryListItem>>)`](crate::operation::list_change_sets::ListChangeSetsOutput::change_set_summary_list): <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_change_sets::ListChangeSetsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListChangeSetsError>`](crate::operation::list_change_sets::ListChangeSetsError)
-    pub fn list_change_sets(
-        &self,
-    ) -> crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder {
-        crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_change_sets(&self) -> crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder {
+        crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder::new(self.handle.clone())
     }
 }

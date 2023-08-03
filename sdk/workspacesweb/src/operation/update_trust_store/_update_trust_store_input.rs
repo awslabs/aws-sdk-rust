@@ -38,39 +38,28 @@ impl UpdateTrustStoreInput {
 }
 impl UpdateTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrustStoreInput`](crate::operation::update_trust_store::UpdateTrustStoreInput).
-    pub fn builder() -> crate::operation::update_trust_store::builders::UpdateTrustStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_trust_store::builders::UpdateTrustStoreInputBuilder {
         crate::operation::update_trust_store::builders::UpdateTrustStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrustStoreInput`](crate::operation::update_trust_store::UpdateTrustStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrustStoreInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates_to_add:
-        ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    pub(crate) certificates_to_delete:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificates_to_add: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
+    pub(crate) certificates_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTrustStoreInputBuilder {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -90,17 +79,12 @@ impl UpdateTrustStoreInputBuilder {
         self
     }
     /// <p>A list of CA certificates to add to the trust store.</p>
-    pub fn set_certificates_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_certificates_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.certificates_to_add = input;
         self
     }
     /// <p>A list of CA certificates to add to the trust store.</p>
-    pub fn get_certificates_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_certificates_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.certificates_to_add
     }
     /// Appends an item to `certificates_to_delete`.
@@ -108,27 +92,19 @@ impl UpdateTrustStoreInputBuilder {
     /// To override the contents of this collection use [`set_certificates_to_delete`](Self::set_certificates_to_delete).
     ///
     /// <p>A list of CA certificates to delete from a trust store.</p>
-    pub fn certificates_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificates_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificates_to_delete.unwrap_or_default();
         v.push(input.into());
         self.certificates_to_delete = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of CA certificates to delete from a trust store.</p>
-    pub fn set_certificates_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificates_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificates_to_delete = input;
         self
     }
     /// <p>A list of CA certificates to delete from a trust store.</p>
-    pub fn get_certificates_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificates_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificates_to_delete
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
@@ -151,17 +127,12 @@ impl UpdateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTrustStoreInput`](crate::operation::update_trust_store::UpdateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_trust_store::UpdateTrustStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_trust_store::UpdateTrustStoreInput {
-                trust_store_arn: self.trust_store_arn,
-                certificates_to_add: self.certificates_to_add,
-                certificates_to_delete: self.certificates_to_delete,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_trust_store::UpdateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_trust_store::UpdateTrustStoreInput {
+            trust_store_arn: self.trust_store_arn,
+            certificates_to_add: self.certificates_to_add,
+            certificates_to_delete: self.certificates_to_delete,
+            client_token: self.client_token,
+        })
     }
 }

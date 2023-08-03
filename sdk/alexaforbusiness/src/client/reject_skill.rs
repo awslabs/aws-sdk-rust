@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RejectSkillOutput`](crate::operation::reject_skill::RejectSkillOutput)
     /// - On failure, responds with [`SdkError<RejectSkillError>`](crate::operation::reject_skill::RejectSkillError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn reject_skill(
-        &self,
-    ) -> crate::operation::reject_skill::builders::RejectSkillFluentBuilder {
+    pub fn reject_skill(&self) -> crate::operation::reject_skill::builders::RejectSkillFluentBuilder {
         crate::operation::reject_skill::builders::RejectSkillFluentBuilder::new(self.handle.clone())
     }
 }

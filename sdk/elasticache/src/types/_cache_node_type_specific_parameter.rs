@@ -27,8 +27,7 @@ pub struct CacheNodeTypeSpecificParameter {
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
     #[doc(hidden)]
-    pub cache_node_type_specific_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>>,
+    pub cache_node_type_specific_values: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>>,
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
@@ -63,9 +62,7 @@ impl CacheNodeTypeSpecificParameter {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
-    pub fn cache_node_type_specific_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CacheNodeTypeSpecificValue]> {
+    pub fn cache_node_type_specific_values(&self) -> ::std::option::Option<&[crate::types::CacheNodeTypeSpecificValue]> {
         self.cache_node_type_specific_values.as_deref()
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
@@ -82,9 +79,7 @@ impl CacheNodeTypeSpecificParameter {
 
 /// A builder for [`CacheNodeTypeSpecificParameter`](crate::types::CacheNodeTypeSpecificParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheNodeTypeSpecificParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -93,24 +88,17 @@ pub struct CacheNodeTypeSpecificParameterBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::string::String>,
     pub(crate) is_modifiable: ::std::option::Option<bool>,
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_node_type_specific_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>>,
+    pub(crate) cache_node_type_specific_values: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>>,
     pub(crate) change_type: ::std::option::Option<crate::types::ChangeType>,
 }
 impl CacheNodeTypeSpecificParameterBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -161,18 +149,12 @@ impl CacheNodeTypeSpecificParameterBuilder {
         &self.data_type
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_values = input;
         self
     }
@@ -195,18 +177,12 @@ impl CacheNodeTypeSpecificParameterBuilder {
         &self.is_modifiable
     }
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
@@ -219,10 +195,7 @@ impl CacheNodeTypeSpecificParameterBuilder {
     /// To override the contents of this collection use [`set_cache_node_type_specific_values`](Self::set_cache_node_type_specific_values).
     ///
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
-    pub fn cache_node_type_specific_values(
-        mut self,
-        input: crate::types::CacheNodeTypeSpecificValue,
-    ) -> Self {
+    pub fn cache_node_type_specific_values(mut self, input: crate::types::CacheNodeTypeSpecificValue) -> Self {
         let mut v = self.cache_node_type_specific_values.unwrap_or_default();
         v.push(input);
         self.cache_node_type_specific_values = ::std::option::Option::Some(v);
@@ -237,9 +210,7 @@ impl CacheNodeTypeSpecificParameterBuilder {
         self
     }
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
-    pub fn get_cache_node_type_specific_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>> {
+    pub fn get_cache_node_type_specific_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>> {
         &self.cache_node_type_specific_values
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
@@ -248,10 +219,7 @@ impl CacheNodeTypeSpecificParameterBuilder {
         self
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
-    pub fn set_change_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeType>,
-    ) -> Self {
+    pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.change_type = input;
         self
     }

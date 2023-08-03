@@ -38,13 +38,7 @@
 /// Fec Output Include Fec
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FecOutputIncludeFec {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for FecOutputIncludeFec {
         match s {
             "COLUMN" => FecOutputIncludeFec::Column,
             "COLUMN_AND_ROW" => FecOutputIncludeFec::ColumnAndRow,
-            other => FecOutputIncludeFec::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FecOutputIncludeFec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

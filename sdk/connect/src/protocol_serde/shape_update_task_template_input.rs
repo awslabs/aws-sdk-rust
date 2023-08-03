@@ -6,10 +6,7 @@ pub fn ser_update_task_template_input(
     if let Some(var_1) = &input.constraints {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Constraints").start_object();
-        crate::protocol_serde::shape_task_template_constraints::ser_task_template_constraints(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_task_template_constraints::ser_task_template_constraints(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.contact_flow_id {
@@ -18,10 +15,7 @@ pub fn ser_update_task_template_input(
     if let Some(var_4) = &input.defaults {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Defaults").start_object();
-        crate::protocol_serde::shape_task_template_defaults::ser_task_template_defaults(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_task_template_defaults::ser_task_template_defaults(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.description {
@@ -33,10 +27,7 @@ pub fn ser_update_task_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_task_template_field::ser_task_template_field(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_task_template_field::ser_task_template_field(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

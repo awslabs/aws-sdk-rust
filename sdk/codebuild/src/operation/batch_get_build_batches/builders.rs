@@ -37,10 +37,7 @@ impl BatchGetBuildBatchesFluentBuilder {
         }
     }
     /// Access the BatchGetBuildBatches as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchGetBuildBatchesFluentBuilder {
             crate::operation::batch_get_build_batches::BatchGetBuildBatches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_build_batches::BatchGetBuildBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_build_batches::BatchGetBuildBatchesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchGetBuildBatchesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchGetBuildBatchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_build_batches::BatchGetBuildBatchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_build_batches::BatchGetBuildBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_build_batches::BatchGetBuildBatchesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchGetBuildBatchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_build_batches::BatchGetBuildBatchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_build_batches::BatchGetBuildBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_build_batches::BatchGetBuildBatchesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchGetBuildBatchesFluentBuilder {
             crate::operation::batch_get_build_batches::BatchGetBuildBatches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_build_batches::BatchGetBuildBatchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_build_batches::BatchGetBuildBatchesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl BatchGetBuildBatchesFluentBuilder {
         self
     }
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }

@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for DisassociateApprovalRuleTemplateFromR
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput).
-    pub fn builder() -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder
+    {
         crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput).
-    pub fn build(self) -> crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput {
         crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput {
             _request_id: self._request_id,
         }

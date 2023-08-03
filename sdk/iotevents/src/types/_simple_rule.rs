@@ -37,9 +37,7 @@ impl SimpleRule {
 
 /// A builder for [`SimpleRule`](crate::types::SimpleRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimpleRuleBuilder {
     pub(crate) input_property: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
@@ -47,18 +45,12 @@ pub struct SimpleRuleBuilder {
 }
 impl SimpleRuleBuilder {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
-    pub fn input_property(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_property = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
-    pub fn set_input_property(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_property = input;
         self
     }
@@ -72,17 +64,12 @@ impl SimpleRuleBuilder {
         self
     }
     /// <p>The comparison operator.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The comparison operator.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>

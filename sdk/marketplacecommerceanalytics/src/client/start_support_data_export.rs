@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartSupportDataExportOutput`](crate::operation::start_support_data_export::StartSupportDataExportOutput) with field(s):
     ///   - [`data_set_request_id(Option<String>)`](crate::operation::start_support_data_export::StartSupportDataExportOutput::data_set_request_id): A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     /// - On failure, responds with [`SdkError<StartSupportDataExportError>`](crate::operation::start_support_data_export::StartSupportDataExportError)
-    pub fn start_support_data_export(
-        &self,
-    ) -> crate::operation::start_support_data_export::builders::StartSupportDataExportFluentBuilder
-    {
+    pub fn start_support_data_export(&self) -> crate::operation::start_support_data_export::builders::StartSupportDataExportFluentBuilder {
         crate::operation::start_support_data_export::builders::StartSupportDataExportFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CopyDistributionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_distribution::CopyDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_distribution::CopyDistributionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_distribution::CopyDistributionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_distribution();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CopyDistributionFluentBuilder {
         }
     }
     /// Access the CopyDistribution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_distribution::builders::CopyDistributionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_distribution::builders::CopyDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CopyDistributionFluentBuilder {
             crate::operation::copy_distribution::CopyDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_distribution::CopyDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_distribution::CopyDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CopyDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CopyDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_distribution::CopyDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_distribution::CopyDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_distribution::CopyDistributionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CopyDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_distribution::CopyDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_distribution::CopyDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_distribution::CopyDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CopyDistributionFluentBuilder {
             crate::operation::copy_distribution::CopyDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_distribution::CopyDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_distribution::CopyDistributionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
-    pub fn primary_distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_distribution_id(input.into());
         self
     }
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
-    pub fn set_primary_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_distribution_id(input);
         self
     }
@@ -172,18 +150,12 @@ impl CopyDistributionFluentBuilder {
         self.inner.get_if_match()
     }
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
     }
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
     }

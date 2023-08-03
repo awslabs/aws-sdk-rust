@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`documentation_version(impl ::std::convert::Into<String>)`](crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionFluentBuilder::documentation_version) / [`set_documentation_version(Option<String>)`](crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionFluentBuilder::set_documentation_version): <p>The version identifier of a to-be-deleted documentation snapshot.</p>
     /// - On success, responds with [`DeleteDocumentationVersionOutput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteDocumentationVersionError>`](crate::operation::delete_documentation_version::DeleteDocumentationVersionError)
-    pub fn delete_documentation_version(&self) -> crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionFluentBuilder{
+    pub fn delete_documentation_version(&self) -> crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionFluentBuilder {
         crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionFluentBuilder::new(self.handle.clone())
     }
 }

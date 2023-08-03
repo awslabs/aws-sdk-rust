@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput) with field(s):
     ///   - [`lags(Option<Vec<Lag>>)`](crate::operation::describe_lags::DescribeLagsOutput::lags): <p>The LAGs.</p>
     /// - On failure, responds with [`SdkError<DescribeLagsError>`](crate::operation::describe_lags::DescribeLagsError)
-    pub fn describe_lags(
-        &self,
-    ) -> crate::operation::describe_lags::builders::DescribeLagsFluentBuilder {
-        crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_lags(&self) -> crate::operation::describe_lags::builders::DescribeLagsFluentBuilder {
+        crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::new(self.handle.clone())
     }
 }

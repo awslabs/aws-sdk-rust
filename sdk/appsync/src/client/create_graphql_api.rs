@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGraphqlApiOutput`](crate::operation::create_graphql_api::CreateGraphqlApiOutput) with field(s):
     ///   - [`graphql_api(Option<GraphqlApi>)`](crate::operation::create_graphql_api::CreateGraphqlApiOutput::graphql_api): <p>The <code>GraphqlApi</code>.</p>
     /// - On failure, responds with [`SdkError<CreateGraphqlApiError>`](crate::operation::create_graphql_api::CreateGraphqlApiError)
-    pub fn create_graphql_api(
-        &self,
-    ) -> crate::operation::create_graphql_api::builders::CreateGraphqlApiFluentBuilder {
-        crate::operation::create_graphql_api::builders::CreateGraphqlApiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_graphql_api(&self) -> crate::operation::create_graphql_api::builders::CreateGraphqlApiFluentBuilder {
+        crate::operation::create_graphql_api::builders::CreateGraphqlApiFluentBuilder::new(self.handle.clone())
     }
 }

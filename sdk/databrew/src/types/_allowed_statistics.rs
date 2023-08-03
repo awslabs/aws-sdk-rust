@@ -23,9 +23,7 @@ impl AllowedStatistics {
 
 /// A builder for [`AllowedStatistics`](crate::types::AllowedStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedStatisticsBuilder {
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl AllowedStatisticsBuilder {
         self
     }
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.statistics = input;
         self
     }
@@ -55,8 +50,6 @@ impl AllowedStatisticsBuilder {
     }
     /// Consumes the builder and constructs a [`AllowedStatistics`](crate::types::AllowedStatistics).
     pub fn build(self) -> crate::types::AllowedStatistics {
-        crate::types::AllowedStatistics {
-            statistics: self.statistics,
-        }
+        crate::types::AllowedStatistics { statistics: self.statistics }
     }
 }

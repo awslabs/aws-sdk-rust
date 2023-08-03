@@ -27,7 +27,7 @@ impl DeregisterStreamConsumerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterStreamConsumerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder,
+    inner: crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder,
 }
 impl DeregisterStreamConsumerFluentBuilder {
     /// Creates a new `DeregisterStreamConsumer`.
@@ -38,10 +38,7 @@ impl DeregisterStreamConsumerFluentBuilder {
         }
     }
     /// Access the DeregisterStreamConsumer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeregisterStreamConsumerFluentBuilder {
             crate::operation::deregister_stream_consumer::DeregisterStreamConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeregisterStreamConsumerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeregisterStreamConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeregisterStreamConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeregisterStreamConsumerFluentBuilder {
             crate::operation::deregister_stream_consumer::DeregisterStreamConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl DeregisterStreamConsumerFluentBuilder {
         self.inner.get_stream_arn()
     }
     /// <p>The name that you gave to the consumer.</p>
-    pub fn consumer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_name(input.into());
         self
     }
     /// <p>The name that you gave to the consumer.</p>
-    pub fn set_consumer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_name(input);
         self
     }

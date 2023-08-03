@@ -50,9 +50,7 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`EntityIdentifier`](crate::types::AttributeValue::EntityIdentifier), extracting the inner [`EntityIdentifier`](crate::types::EntityIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_entity_identifier(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EntityIdentifier, &Self> {
+    pub fn as_entity_identifier(&self) -> ::std::result::Result<&crate::types::EntityIdentifier, &Self> {
         if let AttributeValue::EntityIdentifier(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -78,12 +76,7 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Record`](crate::types::AttributeValue::Record), extracting the inner [`HashMap`](::std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_record(
-        &self,
-    ) -> ::std::result::Result<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        &Self,
-    > {
+    pub fn as_record(&self) -> ::std::result::Result<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>, &Self> {
         if let AttributeValue::Record(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -96,9 +89,7 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Set`](crate::types::AttributeValue::Set), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_set(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::AttributeValue>, &Self> {
+    pub fn as_set(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::AttributeValue>, &Self> {
         if let AttributeValue::Set(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

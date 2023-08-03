@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateReplicationJobOutput {
 }
 impl CreateReplicationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationJobOutput`](crate::operation::create_replication_job::CreateReplicationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_job::builders::CreateReplicationJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_replication_job::builders::CreateReplicationJobOutputBuilder {
         crate::operation::create_replication_job::builders::CreateReplicationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationJobOutput`](crate::operation::create_replication_job::CreateReplicationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationJobOutputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateReplicationJobOutputBuilder {
     /// <p>The unique identifier of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_job_id = input;
         self
     }

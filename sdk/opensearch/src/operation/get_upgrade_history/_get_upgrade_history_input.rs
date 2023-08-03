@@ -30,17 +30,14 @@ impl GetUpgradeHistoryInput {
 }
 impl GetUpgradeHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryInput`](crate::operation::get_upgrade_history::GetUpgradeHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder {
+    pub fn builder() -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder {
         crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUpgradeHistoryInput`](crate::operation::get_upgrade_history::GetUpgradeHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUpgradeHistoryInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +89,11 @@ impl GetUpgradeHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetUpgradeHistoryInput`](crate::operation::get_upgrade_history::GetUpgradeHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_upgrade_history::GetUpgradeHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_upgrade_history::GetUpgradeHistoryInput {
-                domain_name: self.domain_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_upgrade_history::GetUpgradeHistoryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_upgrade_history::GetUpgradeHistoryInput {
+            domain_name: self.domain_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

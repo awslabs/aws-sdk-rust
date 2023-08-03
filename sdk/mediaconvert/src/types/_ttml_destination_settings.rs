@@ -23,9 +23,7 @@ impl TtmlDestinationSettings {
 
 /// A builder for [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TtmlDestinationSettingsBuilder {
     pub(crate) style_passthrough: ::std::option::Option<crate::types::TtmlStylePassthrough>,
 }
@@ -36,17 +34,12 @@ impl TtmlDestinationSettingsBuilder {
         self
     }
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
-    pub fn set_style_passthrough(
-        mut self,
-        input: ::std::option::Option<crate::types::TtmlStylePassthrough>,
-    ) -> Self {
+    pub fn set_style_passthrough(mut self, input: ::std::option::Option<crate::types::TtmlStylePassthrough>) -> Self {
         self.style_passthrough = input;
         self
     }
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
-    pub fn get_style_passthrough(
-        &self,
-    ) -> &::std::option::Option<crate::types::TtmlStylePassthrough> {
+    pub fn get_style_passthrough(&self) -> &::std::option::Option<crate::types::TtmlStylePassthrough> {
         &self.style_passthrough
     }
     /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).

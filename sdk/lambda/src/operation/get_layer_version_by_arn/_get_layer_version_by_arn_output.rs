@@ -30,8 +30,7 @@ pub struct GetLayerVersionByArnOutput {
     pub license_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     #[doc(hidden)]
-    pub compatible_architectures:
-        ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
+    pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     _request_id: Option<String>,
 }
 impl GetLayerVersionByArnOutput {
@@ -80,18 +79,14 @@ impl ::aws_http::request_id::RequestId for GetLayerVersionByArnOutput {
 }
 impl GetLayerVersionByArnOutput {
     /// Creates a new builder-style object to manufacture [`GetLayerVersionByArnOutput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput).
-    pub fn builder(
-    ) -> crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnOutputBuilder {
         crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLayerVersionByArnOutput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLayerVersionByArnOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::LayerVersionContentOutput>,
     pub(crate) layer_arn: ::std::option::Option<::std::string::String>,
@@ -101,8 +96,7 @@ pub struct GetLayerVersionByArnOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     pub(crate) license_info: ::std::option::Option<::std::string::String>,
-    pub(crate) compatible_architectures:
-        ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
+    pub(crate) compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     _request_id: Option<String>,
 }
 impl GetLayerVersionByArnOutputBuilder {
@@ -112,10 +106,7 @@ impl GetLayerVersionByArnOutputBuilder {
         self
     }
     /// <p>Details about the layer version.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::LayerVersionContentOutput>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayerVersionContentOutput>) -> Self {
         self.content = input;
         self
     }
@@ -138,18 +129,12 @@ impl GetLayerVersionByArnOutputBuilder {
         &self.layer_arn
     }
     /// <p>The ARN of the layer version.</p>
-    pub fn layer_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn layer_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the layer version.</p>
-    pub fn set_layer_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_layer_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_version_arn = input;
         self
     }
@@ -213,18 +198,13 @@ impl GetLayerVersionByArnOutputBuilder {
     }
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn set_compatible_runtimes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
-    ) -> Self {
+    pub fn set_compatible_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>) -> Self {
         self.compatible_runtimes = input;
         self
     }
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn get_compatible_runtimes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Runtime>> {
+    pub fn get_compatible_runtimes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runtime>> {
         &self.compatible_runtimes
     }
     /// <p>The layer's software license.</p>
@@ -253,17 +233,12 @@ impl GetLayerVersionByArnOutputBuilder {
         self
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn set_compatible_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
+    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
         self.compatible_architectures = input;
         self
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn get_compatible_architectures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
         &self.compatible_architectures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

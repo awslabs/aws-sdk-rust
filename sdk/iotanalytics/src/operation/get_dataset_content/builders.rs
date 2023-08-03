@@ -10,10 +10,7 @@ impl GetDatasetContentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_dataset_content::GetDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataset_content::GetDatasetContentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataset_content::GetDatasetContentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_dataset_content();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDatasetContentFluentBuilder {
         }
     }
     /// Access the GetDatasetContent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDatasetContentFluentBuilder {
             crate::operation::get_dataset_content::GetDatasetContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataset_content::GetDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataset_content::GetDatasetContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDatasetContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDatasetContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dataset_content::GetDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataset_content::GetDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataset_content::GetDatasetContentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDatasetContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dataset_content::GetDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataset_content::GetDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataset_content::GetDatasetContentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetDatasetContentFluentBuilder {
             crate::operation::get_dataset_content::GetDatasetContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataset_content::GetDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataset_content::GetDatasetContentError>,
     > {
         self.customize_middleware().await
     }

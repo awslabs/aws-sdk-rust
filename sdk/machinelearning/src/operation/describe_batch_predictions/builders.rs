@@ -26,7 +26,7 @@ impl DescribeBatchPredictionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBatchPredictionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder,
+    inner: crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder,
 }
 impl DescribeBatchPredictionsFluentBuilder {
     /// Creates a new `DescribeBatchPredictions`.
@@ -37,10 +37,7 @@ impl DescribeBatchPredictionsFluentBuilder {
         }
     }
     /// Access the DescribeBatchPredictions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeBatchPredictionsFluentBuilder {
             crate::operation::describe_batch_predictions::DescribeBatchPredictions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_predictions::DescribeBatchPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_predictions::DescribeBatchPredictionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeBatchPredictionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeBatchPredictionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_predictions::DescribeBatchPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_predictions::DescribeBatchPredictionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeBatchPredictionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_predictions::DescribeBatchPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_predictions::DescribeBatchPredictionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeBatchPredictionsFluentBuilder {
             crate::operation::describe_batch_predictions::DescribeBatchPredictions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_predictions::DescribeBatchPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_predictions::DescribeBatchPredictionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_batch_predictions::paginator::DescribeBatchPredictionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_batch_predictions::paginator::DescribeBatchPredictionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_batch_predictions::paginator::DescribeBatchPredictionsPaginator {
         crate::operation::describe_batch_predictions::paginator::DescribeBatchPredictionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
@@ -156,10 +139,7 @@ impl DescribeBatchPredictionsFluentBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
     /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchPredictionFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::BatchPredictionFilterVariable>) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
@@ -173,9 +153,7 @@ impl DescribeBatchPredictionsFluentBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
     /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchPredictionFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::BatchPredictionFilterVariable> {
         self.inner.get_filter_variable()
     }
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>

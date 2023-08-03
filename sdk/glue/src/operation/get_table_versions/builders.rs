@@ -10,10 +10,7 @@ impl GetTableVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_table_versions::GetTableVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_versions::GetTableVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_versions::GetTableVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_table_versions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTableVersionsFluentBuilder {
         }
     }
     /// Access the GetTableVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_table_versions::builders::GetTableVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_table_versions::builders::GetTableVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetTableVersionsFluentBuilder {
             crate::operation::get_table_versions::GetTableVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_versions::GetTableVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_versions::GetTableVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetTableVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetTableVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_table_versions::GetTableVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_versions::GetTableVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_versions::GetTableVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetTableVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_table_versions::GetTableVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_versions::GetTableVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_versions::GetTableVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetTableVersionsFluentBuilder {
             crate::operation::get_table_versions::GetTableVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_versions::GetTableVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_versions::GetTableVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_table_versions::paginator::GetTableVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_table_versions::paginator::GetTableVersionsPaginator {
-        crate::operation::get_table_versions::paginator::GetTableVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_table_versions::paginator::GetTableVersionsPaginator {
+        crate::operation::get_table_versions::paginator::GetTableVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl GetTableVersionsFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

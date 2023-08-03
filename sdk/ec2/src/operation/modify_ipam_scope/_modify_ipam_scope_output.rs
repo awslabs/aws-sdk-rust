@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyIpamScopeOutput {
 }
 impl ModifyIpamScopeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamScopeOutput`](crate::operation::modify_ipam_scope::ModifyIpamScopeOutput).
-    pub fn builder() -> crate::operation::modify_ipam_scope::builders::ModifyIpamScopeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_ipam_scope::builders::ModifyIpamScopeOutputBuilder {
         crate::operation::modify_ipam_scope::builders::ModifyIpamScopeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyIpamScopeOutput`](crate::operation::modify_ipam_scope::ModifyIpamScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamScopeOutputBuilder {
     pub(crate) ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,

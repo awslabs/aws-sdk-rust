@@ -5,8 +5,7 @@
 pub struct DescribeBrokerInstanceOptionsOutput {
     /// <p>List of available broker instance options.</p>
     #[doc(hidden)]
-    pub broker_instance_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>>,
+    pub broker_instance_options: ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>>,
     /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -17,9 +16,7 @@ pub struct DescribeBrokerInstanceOptionsOutput {
 }
 impl DescribeBrokerInstanceOptionsOutput {
     /// <p>List of available broker instance options.</p>
-    pub fn broker_instance_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BrokerInstanceOption]> {
+    pub fn broker_instance_options(&self) -> ::std::option::Option<&[crate::types::BrokerInstanceOption]> {
         self.broker_instance_options.as_deref()
     }
     /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -38,19 +35,16 @@ impl ::aws_http::request_id::RequestId for DescribeBrokerInstanceOptionsOutput {
 }
 impl DescribeBrokerInstanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerInstanceOptionsOutput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput).
-    pub fn builder() -> crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder {
         crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBrokerInstanceOptionsOutput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptionsOutputBuilder {
-    pub(crate) broker_instance_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>>,
+    pub(crate) broker_instance_options: ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -68,17 +62,12 @@ impl DescribeBrokerInstanceOptionsOutputBuilder {
         self
     }
     /// <p>List of available broker instance options.</p>
-    pub fn set_broker_instance_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>>,
-    ) -> Self {
+    pub fn set_broker_instance_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>>) -> Self {
         self.broker_instance_options = input;
         self
     }
     /// <p>List of available broker instance options.</p>
-    pub fn get_broker_instance_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>> {
+    pub fn get_broker_instance_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerInstanceOption>> {
         &self.broker_instance_options
     }
     /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -119,10 +108,7 @@ impl DescribeBrokerInstanceOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBrokerInstanceOptionsOutput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput {
         crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput {
             broker_instance_options: self.broker_instance_options,
             max_results: self.max_results,

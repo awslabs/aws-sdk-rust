@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`processing_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::set_processing_job_name): <p>The name of the processing job to stop.</p>
     /// - On success, responds with [`StopProcessingJobOutput`](crate::operation::stop_processing_job::StopProcessingJobOutput)
     /// - On failure, responds with [`SdkError<StopProcessingJobError>`](crate::operation::stop_processing_job::StopProcessingJobError)
-    pub fn stop_processing_job(
-        &self,
-    ) -> crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder {
-        crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_processing_job(&self) -> crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder {
+        crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::new(self.handle.clone())
     }
 }

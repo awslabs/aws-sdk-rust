@@ -15,16 +15,14 @@ impl DescribeNodeFromTemplateJobInput {
 }
 impl DescribeNodeFromTemplateJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeNodeFromTemplateJobInput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobInput).
-    pub fn builder() -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder {
         crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNodeFromTemplateJobInput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodeFromTemplateJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeNodeFromTemplateJobInputBuilder {
         crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobInput { job_id: self.job_id })
     }
 }

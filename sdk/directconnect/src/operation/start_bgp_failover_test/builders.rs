@@ -40,10 +40,7 @@ impl StartBgpFailoverTestFluentBuilder {
         }
     }
     /// Access the StartBgpFailoverTest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl StartBgpFailoverTestFluentBuilder {
             crate::operation::start_bgp_failover_test::StartBgpFailoverTest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bgp_failover_test::StartBgpFailoverTestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl StartBgpFailoverTestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl StartBgpFailoverTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bgp_failover_test::StartBgpFailoverTestError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl StartBgpFailoverTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bgp_failover_test::StartBgpFailoverTestError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +108,17 @@ impl StartBgpFailoverTestFluentBuilder {
             crate::operation::start_bgp_failover_test::StartBgpFailoverTest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bgp_failover_test::StartBgpFailoverTestError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface you want to test.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface you want to test.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
@@ -156,10 +136,7 @@ impl StartBgpFailoverTestFluentBuilder {
         self
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub fn set_bgp_peers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_bgp_peers(input);
         self
     }

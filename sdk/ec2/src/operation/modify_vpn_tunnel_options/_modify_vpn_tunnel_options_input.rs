@@ -30,9 +30,7 @@ impl ModifyVpnTunnelOptionsInput {
         self.vpn_tunnel_outside_ip_address.as_deref()
     }
     /// <p>The tunnel options to modify.</p>
-    pub fn tunnel_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModifyVpnTunnelOptionsSpecification> {
+    pub fn tunnel_options(&self) -> ::std::option::Option<&crate::types::ModifyVpnTunnelOptionsSpecification> {
         self.tunnel_options.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -49,10 +47,7 @@ impl ::std::fmt::Debug for ModifyVpnTunnelOptionsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpnTunnelOptionsInput");
         formatter.field("vpn_connection_id", &self.vpn_connection_id);
-        formatter.field(
-            "vpn_tunnel_outside_ip_address",
-            &self.vpn_tunnel_outside_ip_address,
-        );
+        formatter.field("vpn_tunnel_outside_ip_address", &self.vpn_tunnel_outside_ip_address);
         formatter.field("tunnel_options", &"*** Sensitive Data Redacted ***");
         formatter.field("dry_run", &self.dry_run);
         formatter.field("skip_tunnel_replacement", &self.skip_tunnel_replacement);
@@ -61,9 +56,7 @@ impl ::std::fmt::Debug for ModifyVpnTunnelOptionsInput {
 }
 impl ModifyVpnTunnelOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelOptionsInput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder {
         crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder::default()
     }
 }
@@ -74,25 +67,18 @@ impl ModifyVpnTunnelOptionsInput {
 pub struct ModifyVpnTunnelOptionsInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) tunnel_options:
-        ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
+    pub(crate) tunnel_options: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) skip_tunnel_replacement: ::std::option::Option<bool>,
 }
 impl ModifyVpnTunnelOptionsInputBuilder {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -101,47 +87,31 @@ impl ModifyVpnTunnelOptionsInputBuilder {
         &self.vpn_connection_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = input;
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn get_vpn_tunnel_outside_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_tunnel_outside_ip_address
     }
     /// <p>The tunnel options to modify.</p>
-    pub fn tunnel_options(
-        mut self,
-        input: crate::types::ModifyVpnTunnelOptionsSpecification,
-    ) -> Self {
+    pub fn tunnel_options(mut self, input: crate::types::ModifyVpnTunnelOptionsSpecification) -> Self {
         self.tunnel_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tunnel options to modify.</p>
-    pub fn set_tunnel_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
-    ) -> Self {
+    pub fn set_tunnel_options(mut self, input: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>) -> Self {
         self.tunnel_options = input;
         self
     }
     /// <p>The tunnel options to modify.</p>
-    pub fn get_tunnel_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification> {
+    pub fn get_tunnel_options(&self) -> &::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification> {
         &self.tunnel_options
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -182,25 +152,20 @@ impl ModifyVpnTunnelOptionsInputBuilder {
         crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput {
-                vpn_connection_id: self.vpn_connection_id,
-                vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
-                tunnel_options: self.tunnel_options,
-                dry_run: self.dry_run,
-                skip_tunnel_replacement: self.skip_tunnel_replacement,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput {
+            vpn_connection_id: self.vpn_connection_id,
+            vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
+            tunnel_options: self.tunnel_options,
+            dry_run: self.dry_run,
+            skip_tunnel_replacement: self.skip_tunnel_replacement,
+        })
     }
 }
 impl ::std::fmt::Debug for ModifyVpnTunnelOptionsInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpnTunnelOptionsInputBuilder");
         formatter.field("vpn_connection_id", &self.vpn_connection_id);
-        formatter.field(
-            "vpn_tunnel_outside_ip_address",
-            &self.vpn_tunnel_outside_ip_address,
-        );
+        formatter.field("vpn_tunnel_outside_ip_address", &self.vpn_tunnel_outside_ip_address);
         formatter.field("tunnel_options", &"*** Sensitive Data Redacted ***");
         formatter.field("dry_run", &self.dry_run);
         formatter.field("skip_tunnel_replacement", &self.skip_tunnel_replacement);

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::disassociate_route_table::builders::DisassociateRouteTableFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::disassociate_route_table::builders::DisassociateRouteTableFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DisassociateRouteTableOutput`](crate::operation::disassociate_route_table::DisassociateRouteTableOutput)
     /// - On failure, responds with [`SdkError<DisassociateRouteTableError>`](crate::operation::disassociate_route_table::DisassociateRouteTableError)
-    pub fn disassociate_route_table(
-        &self,
-    ) -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableFluentBuilder
-    {
+    pub fn disassociate_route_table(&self) -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableFluentBuilder {
         crate::operation::disassociate_route_table::builders::DisassociateRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

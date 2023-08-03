@@ -58,9 +58,7 @@ impl ConferenceProvider {
 
 /// A builder for [`ConferenceProvider`](crate::types::ConferenceProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConferenceProviderBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl ConferenceProviderBuilder {
         self
     }
     /// <p>The type of conference providers.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConferenceProviderType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConferenceProviderType>) -> Self {
         self.r#type = input;
         self
     }
@@ -135,10 +130,7 @@ impl ConferenceProviderBuilder {
         self
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn set_pstn_dial_in(
-        mut self,
-        input: ::std::option::Option<crate::types::PstnDialIn>,
-    ) -> Self {
+    pub fn set_pstn_dial_in(mut self, input: ::std::option::Option<crate::types::PstnDialIn>) -> Self {
         self.pstn_dial_in = input;
         self
     }
@@ -152,10 +144,7 @@ impl ConferenceProviderBuilder {
         self
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn set_meeting_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingSetting>,
-    ) -> Self {
+    pub fn set_meeting_setting(mut self, input: ::std::option::Option<crate::types::MeetingSetting>) -> Self {
         self.meeting_setting = input;
         self
     }

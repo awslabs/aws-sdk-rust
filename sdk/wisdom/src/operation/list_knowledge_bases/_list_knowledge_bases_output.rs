@@ -5,8 +5,7 @@
 pub struct ListKnowledgeBasesOutput {
     /// <p>Information about the knowledge bases.</p>
     #[doc(hidden)]
-    pub knowledge_base_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
+    pub knowledge_base_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListKnowledgeBasesOutput {
 }
 impl ListKnowledgeBasesOutput {
     /// <p>Information about the knowledge bases.</p>
-    pub fn knowledge_base_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::KnowledgeBaseSummary]> {
+    pub fn knowledge_base_summaries(&self) -> ::std::option::Option<&[crate::types::KnowledgeBaseSummary]> {
         self.knowledge_base_summaries.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListKnowledgeBasesOutput {
 }
 impl ListKnowledgeBasesOutput {
     /// Creates a new builder-style object to manufacture [`ListKnowledgeBasesOutput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder {
+    pub fn builder() -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder {
         crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKnowledgeBasesOutput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKnowledgeBasesOutputBuilder {
-    pub(crate) knowledge_base_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
+    pub(crate) knowledge_base_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListKnowledgeBasesOutputBuilder {
         self
     }
     /// <p>Information about the knowledge bases.</p>
-    pub fn set_knowledge_base_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
-    ) -> Self {
+    pub fn set_knowledge_base_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>) -> Self {
         self.knowledge_base_summaries = input;
         self
     }
     /// <p>Information about the knowledge bases.</p>
-    pub fn get_knowledge_base_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
+    pub fn get_knowledge_base_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
         &self.knowledge_base_summaries
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

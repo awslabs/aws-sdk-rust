@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartCodegenJobOutput {
 }
 impl StartCodegenJobOutput {
     /// Creates a new builder-style object to manufacture [`StartCodegenJobOutput`](crate::operation::start_codegen_job::StartCodegenJobOutput).
-    pub fn builder() -> crate::operation::start_codegen_job::builders::StartCodegenJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_codegen_job::builders::StartCodegenJobOutputBuilder {
         crate::operation::start_codegen_job::builders::StartCodegenJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartCodegenJobOutput`](crate::operation::start_codegen_job::StartCodegenJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCodegenJobOutputBuilder {
     pub(crate) entity: ::std::option::Option<crate::types::CodegenJob>,
     _request_id: Option<String>,

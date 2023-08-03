@@ -9,8 +9,7 @@ pub struct GetEc2InstanceRecommendationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe instance recommendations.</p>
     #[doc(hidden)]
-    pub instance_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,
+    pub instance_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
     #[doc(hidden)]
@@ -24,9 +23,7 @@ impl GetEc2InstanceRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe instance recommendations.</p>
-    pub fn instance_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceRecommendation]> {
+    pub fn instance_recommendations(&self) -> ::std::option::Option<&[crate::types::InstanceRecommendation]> {
         self.instance_recommendations.as_deref()
     }
     /// <p>An array of objects that describe errors of the request.</p>
@@ -42,20 +39,17 @@ impl ::aws_http::request_id::RequestId for GetEc2InstanceRecommendationsOutput {
 }
 impl GetEc2InstanceRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsOutput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput).
-    pub fn builder() -> crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsOutputBuilder {
         crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEc2InstanceRecommendationsOutput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEc2InstanceRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,
+    pub(crate) instance_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
@@ -89,17 +83,12 @@ impl GetEc2InstanceRecommendationsOutputBuilder {
         self
     }
     /// <p>An array of objects that describe instance recommendations.</p>
-    pub fn set_instance_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,
-    ) -> Self {
+    pub fn set_instance_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>) -> Self {
         self.instance_recommendations = input;
         self
     }
     /// <p>An array of objects that describe instance recommendations.</p>
-    pub fn get_instance_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>> {
+    pub fn get_instance_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>> {
         &self.instance_recommendations
     }
     /// Appends an item to `errors`.
@@ -116,18 +105,13 @@ impl GetEc2InstanceRecommendationsOutputBuilder {
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -140,10 +124,7 @@ impl GetEc2InstanceRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEc2InstanceRecommendationsOutput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput
-    {
+    pub fn build(self) -> crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput {
         crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput {
             next_token: self.next_token,
             instance_recommendations: self.instance_recommendations,

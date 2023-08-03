@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`ingestion_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_ingestion::builders::DeleteIngestionFluentBuilder::ingestion_identifier) / [`set_ingestion_identifier(Option<String>)`](crate::operation::delete_ingestion::builders::DeleteIngestionFluentBuilder::set_ingestion_identifier): <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     /// - On success, responds with [`DeleteIngestionOutput`](crate::operation::delete_ingestion::DeleteIngestionOutput)
     /// - On failure, responds with [`SdkError<DeleteIngestionError>`](crate::operation::delete_ingestion::DeleteIngestionError)
-    pub fn delete_ingestion(
-        &self,
-    ) -> crate::operation::delete_ingestion::builders::DeleteIngestionFluentBuilder {
-        crate::operation::delete_ingestion::builders::DeleteIngestionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ingestion(&self) -> crate::operation::delete_ingestion::builders::DeleteIngestionFluentBuilder {
+        crate::operation::delete_ingestion::builders::DeleteIngestionFluentBuilder::new(self.handle.clone())
     }
 }

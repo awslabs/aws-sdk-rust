@@ -30,9 +30,7 @@ impl UsageInstruction {
 
 /// A builder for [`UsageInstruction`](crate::types::UsageInstruction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageInstructionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

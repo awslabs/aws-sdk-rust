@@ -26,7 +26,7 @@ impl GetWorkflowRunPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder,
+    inner: crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder,
 }
 impl GetWorkflowRunPropertiesFluentBuilder {
     /// Creates a new `GetWorkflowRunProperties`.
@@ -37,7 +37,7 @@ impl GetWorkflowRunPropertiesFluentBuilder {
         }
     }
     /// Access the GetWorkflowRunProperties as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetWorkflowRunPropertiesFluentBuilder {
             crate::operation::get_workflow_run_properties::GetWorkflowRunProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetWorkflowRunPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetWorkflowRunPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetWorkflowRunPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetWorkflowRunPropertiesFluentBuilder {
             crate::operation::get_workflow_run_properties::GetWorkflowRunProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError>,
     > {
         self.customize_middleware().await
     }

@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for RetryStageExecutionOutput {
 }
 impl RetryStageExecutionOutput {
     /// Creates a new builder-style object to manufacture [`RetryStageExecutionOutput`](crate::operation::retry_stage_execution::RetryStageExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::retry_stage_execution::builders::RetryStageExecutionOutputBuilder {
-        crate::operation::retry_stage_execution::builders::RetryStageExecutionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::retry_stage_execution::builders::RetryStageExecutionOutputBuilder {
+        crate::operation::retry_stage_execution::builders::RetryStageExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RetryStageExecutionOutput`](crate::operation::retry_stage_execution::RetryStageExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryStageExecutionOutputBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetryStageExecutionOutputBuilder {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the current workflow execution in the failed stage.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_id = input;
         self
     }

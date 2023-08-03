@@ -9,7 +9,10 @@ pub fn ser_aws_dynamo_db_table_details(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_aws_dynamo_db_table_attribute_definition::ser_aws_dynamo_db_table_attribute_definition(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_aws_dynamo_db_table_attribute_definition::ser_aws_dynamo_db_table_attribute_definition(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }
@@ -30,7 +33,10 @@ pub fn ser_aws_dynamo_db_table_details(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_aws_dynamo_db_table_global_secondary_index::ser_aws_dynamo_db_table_global_secondary_index(&mut object_11, item_10)?;
+                crate::protocol_serde::shape_aws_dynamo_db_table_global_secondary_index::ser_aws_dynamo_db_table_global_secondary_index(
+                    &mut object_11,
+                    item_10,
+                )?;
                 object_11.finish();
             }
         }
@@ -69,7 +75,10 @@ pub fn ser_aws_dynamo_db_table_details(
             {
                 #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_aws_dynamo_db_table_local_secondary_index::ser_aws_dynamo_db_table_local_secondary_index(&mut object_22, item_21)?;
+                crate::protocol_serde::shape_aws_dynamo_db_table_local_secondary_index::ser_aws_dynamo_db_table_local_secondary_index(
+                    &mut object_22,
+                    item_21,
+                )?;
                 object_22.finish();
             }
         }
@@ -78,7 +87,10 @@ pub fn ser_aws_dynamo_db_table_details(
     if let Some(var_23) = &input.provisioned_throughput {
         #[allow(unused_mut)]
         let mut object_24 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::ser_aws_dynamo_db_table_provisioned_throughput(&mut object_24, var_23)?;
+        crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::ser_aws_dynamo_db_table_provisioned_throughput(
+            &mut object_24,
+            var_23,
+        )?;
         object_24.finish();
     }
     if let Some(var_25) = &input.replicas {
@@ -131,17 +143,9 @@ pub fn ser_aws_dynamo_db_table_details(
 
 pub(crate) fn de_aws_dynamo_db_table_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsDynamoDbTableDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsDynamoDbTableDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -165,11 +169,9 @@ where
                             }
                             "CreationDateTime" => {
                                 builder = builder.set_creation_date_time(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "GlobalSecondaryIndexes" => {
@@ -179,43 +181,35 @@ where
                             }
                             "GlobalTableVersion" => {
                                 builder = builder.set_global_table_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "ItemCount" => {
                                 builder = builder.set_item_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
                             }
                             "KeySchema" => {
                                 builder = builder.set_key_schema(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_key_schema_list::de_aws_dynamo_db_table_key_schema_list(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_key_schema_list::de_aws_dynamo_db_table_key_schema_list(tokens)?,
                                 );
                             }
                             "LatestStreamArn" => {
                                 builder = builder.set_latest_stream_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "LatestStreamLabel" => {
                                 builder = builder.set_latest_stream_label(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "LocalSecondaryIndexes" => {
@@ -230,17 +224,17 @@ where
                             }
                             "Replicas" => {
                                 builder = builder.set_replicas(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_replica_list::de_aws_dynamo_db_table_replica_list(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_replica_list::de_aws_dynamo_db_table_replica_list(tokens)?,
                                 );
                             }
                             "RestoreSummary" => {
                                 builder = builder.set_restore_summary(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_restore_summary::de_aws_dynamo_db_table_restore_summary(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_restore_summary::de_aws_dynamo_db_table_restore_summary(tokens)?,
                                 );
                             }
                             "SseDescription" => {
                                 builder = builder.set_sse_description(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_sse_description::de_aws_dynamo_db_table_sse_description(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_sse_description::de_aws_dynamo_db_table_sse_description(tokens)?,
                                 );
                             }
                             "StreamSpecification" => {
@@ -250,58 +244,47 @@ where
                             }
                             "TableId" => {
                                 builder = builder.set_table_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "TableName" => {
                                 builder = builder.set_table_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "TableSizeBytes" => {
                                 builder = builder.set_table_size_bytes(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i64::try_from)
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
+                                        .transpose()?,
                                 );
                             }
                             "TableStatus" => {
                                 builder = builder.set_table_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

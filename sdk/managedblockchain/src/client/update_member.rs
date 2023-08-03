@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`log_publishing_configuration(MemberLogPublishingConfiguration)`](crate::operation::update_member::builders::UpdateMemberFluentBuilder::log_publishing_configuration) / [`set_log_publishing_configuration(Option<MemberLogPublishingConfiguration>)`](crate::operation::update_member::builders::UpdateMemberFluentBuilder::set_log_publishing_configuration): <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     /// - On success, responds with [`UpdateMemberOutput`](crate::operation::update_member::UpdateMemberOutput)
     /// - On failure, responds with [`SdkError<UpdateMemberError>`](crate::operation::update_member::UpdateMemberError)
-    pub fn update_member(
-        &self,
-    ) -> crate::operation::update_member::builders::UpdateMemberFluentBuilder {
-        crate::operation::update_member::builders::UpdateMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_member(&self) -> crate::operation::update_member::builders::UpdateMemberFluentBuilder {
+        crate::operation::update_member::builders::UpdateMemberFluentBuilder::new(self.handle.clone())
     }
 }

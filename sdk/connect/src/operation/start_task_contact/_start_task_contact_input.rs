@@ -16,17 +16,13 @@ pub struct StartTaskContactInput {
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
-    pub references: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-    >,
+    pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -62,11 +58,7 @@ impl StartTaskContactInput {
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -74,11 +66,7 @@ impl StartTaskContactInput {
         self.name.as_deref()
     }
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
-    pub fn references(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-    > {
+    pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -108,28 +96,21 @@ impl StartTaskContactInput {
 }
 impl StartTaskContactInput {
     /// Creates a new builder-style object to manufacture [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
-    pub fn builder() -> crate::operation::start_task_contact::builders::StartTaskContactInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_task_contact::builders::StartTaskContactInputBuilder {
         crate::operation::start_task_contact::builders::StartTaskContactInputBuilder::default()
     }
 }
 
 /// A builder for [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTaskContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) previous_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) references: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-    >,
+    pub(crate) references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -153,18 +134,12 @@ impl StartTaskContactInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
-    pub fn previous_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
-    pub fn set_previous_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_contact_id = input;
         self
     }
@@ -174,19 +149,13 @@ impl StartTaskContactInputBuilder {
     }
     /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
@@ -201,11 +170,7 @@ impl StartTaskContactInputBuilder {
     ///
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -213,22 +178,13 @@ impl StartTaskContactInputBuilder {
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -250,11 +206,7 @@ impl StartTaskContactInputBuilder {
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
-    pub fn references(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Reference,
-    ) -> Self {
+    pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         let mut hash_map = self.references.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.references = ::std::option::Option::Some(hash_map);
@@ -263,19 +215,13 @@ impl StartTaskContactInputBuilder {
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn set_references(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     ) -> Self {
         self.references = input;
         self
     }
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
-    pub fn get_references(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-    > {
+    pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         &self.references
     }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -312,10 +258,7 @@ impl StartTaskContactInputBuilder {
         self
     }
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-    pub fn set_scheduled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_time = input;
         self
     }
@@ -324,18 +267,12 @@ impl StartTaskContactInputBuilder {
         &self.scheduled_time
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_template_id = input;
         self
     }
@@ -344,18 +281,12 @@ impl StartTaskContactInputBuilder {
         &self.task_template_id
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quick_connect_id = input;
         self
     }
@@ -364,18 +295,12 @@ impl StartTaskContactInputBuilder {
         &self.quick_connect_id
     }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
-    pub fn related_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
-    pub fn set_related_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
@@ -386,25 +311,20 @@ impl StartTaskContactInputBuilder {
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_task_contact::StartTaskContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_task_contact::StartTaskContactInput {
-                instance_id: self.instance_id,
-                previous_contact_id: self.previous_contact_id,
-                contact_flow_id: self.contact_flow_id,
-                attributes: self.attributes,
-                name: self.name,
-                references: self.references,
-                description: self.description,
-                client_token: self.client_token,
-                scheduled_time: self.scheduled_time,
-                task_template_id: self.task_template_id,
-                quick_connect_id: self.quick_connect_id,
-                related_contact_id: self.related_contact_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_task_contact::StartTaskContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_task_contact::StartTaskContactInput {
+            instance_id: self.instance_id,
+            previous_contact_id: self.previous_contact_id,
+            contact_flow_id: self.contact_flow_id,
+            attributes: self.attributes,
+            name: self.name,
+            references: self.references,
+            description: self.description,
+            client_token: self.client_token,
+            scheduled_time: self.scheduled_time,
+            task_template_id: self.task_template_id,
+            quick_connect_id: self.quick_connect_id,
+            related_contact_id: self.related_contact_id,
+        })
     }
 }

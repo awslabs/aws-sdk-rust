@@ -9,8 +9,7 @@ pub struct AvailabilityZone {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub supported_platforms:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
+    pub supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
 }
 impl AvailabilityZone {
     /// <p>The name of the availability zone.</p>
@@ -31,13 +30,10 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_platforms:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
+    pub(crate) supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the availability zone.</p>
@@ -66,17 +62,12 @@ impl AvailabilityZoneBuilder {
         self
     }
     /// <p></p>
-    pub fn set_supported_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
-    ) -> Self {
+    pub fn set_supported_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>) -> Self {
         self.supported_platforms = input;
         self
     }
     /// <p></p>
-    pub fn get_supported_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>> {
+    pub fn get_supported_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>> {
         &self.supported_platforms
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).

@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetDefaultViewOutput`](crate::operation::get_default_view::GetDefaultViewOutput) with field(s):
     ///   - [`view_arn(Option<String>)`](crate::operation::get_default_view::GetDefaultViewOutput::view_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
     /// - On failure, responds with [`SdkError<GetDefaultViewError>`](crate::operation::get_default_view::GetDefaultViewError)
-    pub fn get_default_view(
-        &self,
-    ) -> crate::operation::get_default_view::builders::GetDefaultViewFluentBuilder {
-        crate::operation::get_default_view::builders::GetDefaultViewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_default_view(&self) -> crate::operation::get_default_view::builders::GetDefaultViewFluentBuilder {
+        crate::operation::get_default_view::builders::GetDefaultViewFluentBuilder::new(self.handle.clone())
     }
 }

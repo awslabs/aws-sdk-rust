@@ -23,12 +23,9 @@ impl DataSetSchema {
 
 /// A builder for [`DataSetSchema`](crate::types::DataSetSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetSchemaBuilder {
-    pub(crate) column_schema_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
+    pub(crate) column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
 }
 impl DataSetSchemaBuilder {
     /// Appends an item to `column_schema_list`.
@@ -43,17 +40,12 @@ impl DataSetSchemaBuilder {
         self
     }
     /// <p>A structure containing the list of column schemas.</p>
-    pub fn set_column_schema_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
-    ) -> Self {
+    pub fn set_column_schema_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>) -> Self {
         self.column_schema_list = input;
         self
     }
     /// <p>A structure containing the list of column schemas.</p>
-    pub fn get_column_schema_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>> {
+    pub fn get_column_schema_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>> {
         &self.column_schema_list
     }
     /// Consumes the builder and constructs a [`DataSetSchema`](crate::types::DataSetSchema).

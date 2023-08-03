@@ -37,9 +37,7 @@ impl DescribeExportTasksFluentBuilder {
         }
     }
     /// Access the DescribeExportTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeExportTasksFluentBuilder {
             crate::operation::describe_export_tasks::DescribeExportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeExportTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeExportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeExportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeExportTasksFluentBuilder {
             crate::operation::describe_export_tasks::DescribeExportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl DescribeExportTasksFluentBuilder {
         self
     }
     /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ExportTaskStatusCode>) -> Self {
         self.inner = self.inner.set_status_code(input);
         self
     }

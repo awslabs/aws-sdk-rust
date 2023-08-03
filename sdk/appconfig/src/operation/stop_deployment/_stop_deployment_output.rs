@@ -168,9 +168,7 @@ impl StopDeploymentOutput {
 
 /// A builder for [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDeploymentOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -190,26 +188,19 @@ pub struct StopDeploymentOutputBuilder {
     pub(crate) percentage_complete: ::std::option::Option<f32>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) applied_extensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
+    pub(crate) applied_extensions: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopDeploymentOutputBuilder {
     /// <p>The ID of the application that was deployed.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application that was deployed.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -218,18 +209,12 @@ impl StopDeploymentOutputBuilder {
         &self.application_id
     }
     /// <p>The ID of the environment that was deployed.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment that was deployed.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -238,18 +223,12 @@ impl StopDeploymentOutputBuilder {
         &self.environment_id
     }
     /// <p>The ID of the deployment strategy that was deployed.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment strategy that was deployed.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_strategy_id = input;
         self
     }
@@ -258,18 +237,12 @@ impl StopDeploymentOutputBuilder {
         &self.deployment_strategy_id
     }
     /// <p>The ID of the configuration profile that was deployed.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the configuration profile that was deployed.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -292,18 +265,12 @@ impl StopDeploymentOutputBuilder {
         &self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_name = input;
         self
     }
@@ -312,18 +279,12 @@ impl StopDeploymentOutputBuilder {
         &self.configuration_name
     }
     /// <p>Information about the source location of the configuration.</p>
-    pub fn configuration_location_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the source location of the configuration.</p>
-    pub fn set_configuration_location_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_location_uri = input;
         self
     }
@@ -332,18 +293,12 @@ impl StopDeploymentOutputBuilder {
         &self.configuration_location_uri
     }
     /// <p>The configuration version that was deployed.</p>
-    pub fn configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration version that was deployed.</p>
-    pub fn set_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_version = input;
         self
     }
@@ -385,10 +340,7 @@ impl StopDeploymentOutputBuilder {
         self
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
@@ -430,10 +382,7 @@ impl StopDeploymentOutputBuilder {
         self
     }
     /// <p>The state of the deployment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DeploymentState>) -> Self {
         self.state = input;
         self
     }
@@ -453,17 +402,12 @@ impl StopDeploymentOutputBuilder {
         self
     }
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    pub fn set_event_log(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentEvent>>,
-    ) -> Self {
+    pub fn set_event_log(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentEvent>>) -> Self {
         self.event_log = input;
         self
     }
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    pub fn get_event_log(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentEvent>> {
+    pub fn get_event_log(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentEvent>> {
         &self.event_log
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
@@ -486,10 +430,7 @@ impl StopDeploymentOutputBuilder {
         self
     }
     /// <p>The time the deployment started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -503,10 +444,7 @@ impl StopDeploymentOutputBuilder {
         self
     }
     /// <p>The time the deployment completed. </p>
-    pub fn set_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_at = input;
         self
     }
@@ -526,17 +464,12 @@ impl StopDeploymentOutputBuilder {
         self
     }
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    pub fn set_applied_extensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
-    ) -> Self {
+    pub fn set_applied_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>) -> Self {
         self.applied_extensions = input;
         self
     }
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    pub fn get_applied_extensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>> {
+    pub fn get_applied_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>> {
         &self.applied_extensions
     }
     /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
@@ -554,18 +487,12 @@ impl StopDeploymentOutputBuilder {
         &self.kms_key_arn
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
-    pub fn kms_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
-    pub fn set_kms_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_identifier = input;
         self
     }

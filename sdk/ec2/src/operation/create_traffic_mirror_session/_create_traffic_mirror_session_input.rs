@@ -82,16 +82,14 @@ impl CreateTrafficMirrorSessionInput {
 }
 impl CreateTrafficMirrorSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficMirrorSessionInput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput).
-    pub fn builder() -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionInputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionInputBuilder {
         crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficMirrorSessionInput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorSessionInputBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_mirror_target_id: ::std::option::Option<::std::string::String>,
@@ -100,25 +98,18 @@ pub struct CreateTrafficMirrorSessionInputBuilder {
     pub(crate) session_number: ::std::option::Option<i32>,
     pub(crate) virtual_network_id: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrafficMirrorSessionInputBuilder {
     /// <p>The ID of the source network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -127,18 +118,12 @@ impl CreateTrafficMirrorSessionInputBuilder {
         &self.network_interface_id
     }
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn traffic_mirror_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn set_traffic_mirror_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_target_id = input;
         self
     }
@@ -147,18 +132,12 @@ impl CreateTrafficMirrorSessionInputBuilder {
         &self.traffic_mirror_target_id
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = input;
         self
     }
@@ -240,17 +219,12 @@ impl CreateTrafficMirrorSessionInputBuilder {
         self
     }
     /// <p>The tags to assign to a Traffic Mirror session.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to a Traffic Mirror session.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -288,19 +262,17 @@ impl CreateTrafficMirrorSessionInputBuilder {
         crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput {
-                network_interface_id: self.network_interface_id,
-                traffic_mirror_target_id: self.traffic_mirror_target_id,
-                traffic_mirror_filter_id: self.traffic_mirror_filter_id,
-                packet_length: self.packet_length,
-                session_number: self.session_number,
-                virtual_network_id: self.virtual_network_id,
-                description: self.description,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput {
+            network_interface_id: self.network_interface_id,
+            traffic_mirror_target_id: self.traffic_mirror_target_id,
+            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
+            packet_length: self.packet_length,
+            session_number: self.session_number,
+            virtual_network_id: self.virtual_network_id,
+            description: self.description,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+        })
     }
 }

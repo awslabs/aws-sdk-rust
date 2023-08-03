@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRemediationConfigurationOutput 
 }
 impl DeleteRemediationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRemediationConfigurationOutput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationOutputBuilder {
         crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRemediationConfigurationOutput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRemediationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteRemediationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRemediationConfigurationOutput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput {
         crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput {
             _request_id: self._request_id,
         }

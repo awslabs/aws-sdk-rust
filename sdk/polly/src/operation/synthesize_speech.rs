@@ -9,10 +9,7 @@ impl SynthesizeSpeechInput {
         &self,
         _config: &crate::config::Config,
     ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::synthesize_speech::SynthesizeSpeech,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        ::aws_smithy_http::operation::Operation<crate::operation::synthesize_speech::SynthesizeSpeech, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::operation::error::BuildError,
     > {
         assert_ne!(
@@ -27,27 +24,16 @@ impl SynthesizeSpeechInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v1/speech").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -55,8 +41,7 @@ impl SynthesizeSpeechInput {
             fn uri_query(
                 _input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.engine {
                     {
@@ -65,65 +50,42 @@ impl SynthesizeSpeechInput {
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.language_code {
                     {
-                        query.push_kv(
-                            "LanguageCode",
-                            &::aws_smithy_http::query::fmt_string(&inner_2),
-                        );
+                        query.push_kv("LanguageCode", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.lexicon_names {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv(
-                                "LexiconNames",
-                                &::aws_smithy_http::query::fmt_string(&inner_4),
-                            );
+                            query.push_kv("LexiconNames", &::aws_smithy_http::query::fmt_string(&inner_4));
                         }
                     }
                 }
                 let inner_5 = &_input.output_format;
-                let inner_5 = inner_5.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "output_format",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "OutputFormat",
-                    &::aws_smithy_http::query::fmt_string(&inner_5),
-                );
+                let inner_5 = inner_5
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("output_format", "cannot be empty or unset"))?;
+                query.push_kv("OutputFormat", &::aws_smithy_http::query::fmt_string(&inner_5));
                 if let ::std::option::Option::Some(inner_6) = &_input.sample_rate {
                     {
-                        query.push_kv(
-                            "SampleRate",
-                            &::aws_smithy_http::query::fmt_string(&inner_6),
-                        );
+                        query.push_kv("SampleRate", &::aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.speech_mark_types {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv(
-                                "SpeechMarkTypes",
-                                &::aws_smithy_http::query::fmt_string(&inner_8),
-                            );
+                            query.push_kv("SpeechMarkTypes", &::aws_smithy_http::query::fmt_string(&inner_8));
                         }
                     }
                 }
                 let inner_9 = &_input.text;
-                let inner_9 = inner_9.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let inner_9 = inner_9
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("text", "cannot be empty or unset"))?;
+                if inner_9.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "text",
                         "cannot be empty or unset",
-                    )
-                })?;
-                if inner_9.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "text",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 query.push_kv("Text", &::aws_smithy_http::query::fmt_string(&inner_9));
                 if let ::std::option::Option::Some(inner_10) = &_input.text_type {
@@ -132,12 +94,9 @@ impl SynthesizeSpeechInput {
                     }
                 }
                 let inner_11 = &_input.voice_id;
-                let inner_11 = inner_11.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "voice_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_11 = inner_11
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("voice_id", "cannot be empty or unset"))?;
                 query.push_kv("VoiceId", &::aws_smithy_http::query::fmt_string(&inner_11));
                 ::std::result::Result::Ok(())
             }
@@ -145,10 +104,7 @@ impl SynthesizeSpeechInput {
             fn update_http_builder(
                 input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -170,10 +126,8 @@ impl SynthesizeSpeechInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -182,29 +136,16 @@ impl SynthesizeSpeechInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::synthesize_speech::SynthesizeSpeech::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "SynthesizeSpeech",
-            "polly",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::synthesize_speech::SynthesizeSpeech::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("SynthesizeSpeech", "polly"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -222,12 +163,8 @@ impl SynthesizeSpeechInput {
         self,
         config: &crate::config::Config,
         presigning_config: crate::presigning::PresigningConfig,
-    ) -> Result<
-        crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-        >,
-    > {
+    ) -> Result<crate::presigning::PresignedRequest, ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>>
+    {
         let (mut request, _) = self
             ._make_presigned_operation(config)
             .await
@@ -236,15 +173,12 @@ impl SynthesizeSpeechInput {
         {
             // Change signature type to query params and wire up presigning config
             let mut props = request.properties_mut();
-            props.insert(::aws_smithy_async::time::SharedTimeSource::new(
-                presigning_config.start_time(),
-            ));
+            props.insert(::aws_smithy_async::time::SharedTimeSource::new(presigning_config.start_time()));
             props.insert(::aws_sigv4::http_request::SignableBody::Bytes(b""));
             let config = props
                 .get_mut::<::aws_sig_auth::signer::OperationSigningConfig>()
                 .expect("signing config added by make_operation()");
-            config.signature_type =
-                ::aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
+            config.signature_type = ::aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
             config.expires_in = Some(presigning_config.expires());
         }
         let middleware = crate::middleware::DefaultMiddleware::default();
@@ -263,10 +197,7 @@ impl SynthesizeSpeechInput {
         &self,
         _config: &crate::config::Config,
     ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::synthesize_speech::SynthesizeSpeech,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        ::aws_smithy_http::operation::Operation<crate::operation::synthesize_speech::SynthesizeSpeech, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::operation::error::BuildError,
     > {
         assert_ne!(
@@ -281,27 +212,16 @@ impl SynthesizeSpeechInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v1/speech").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -310,33 +230,20 @@ impl SynthesizeSpeechInput {
             fn update_http_builder(
                 input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_synthesize_speech::ser_synthesize_speech_input(&self)?,
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_synthesize_speech::ser_synthesize_speech_input(&self)?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -348,10 +255,8 @@ impl SynthesizeSpeechInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -360,29 +265,16 @@ impl SynthesizeSpeechInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::synthesize_speech::SynthesizeSpeech::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "SynthesizeSpeech",
-            "polly",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::synthesize_speech::SynthesizeSpeech::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("SynthesizeSpeech", "polly"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -403,20 +295,13 @@ impl ::aws_smithy_http::response::ParseHttpResponse for SynthesizeSpeech {
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
         crate::operation::synthesize_speech::SynthesizeSpeechError,
     >;
-    fn parse_unloaded(
-        &self,
-        response: &mut ::aws_smithy_http::operation::Response,
-    ) -> ::std::option::Option<Self::Output> {
+    fn parse_unloaded(&self, response: &mut ::aws_smithy_http::operation::Response) -> ::std::option::Option<Self::Output> {
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         // This is an error, defer to the non-streaming parser
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return ::std::option::Option::None;
         }
-        ::std::option::Option::Some(
-            crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_op_response(
-                response,
-            ),
-        )
+        ::std::option::Option::Some(crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_op_response(response))
     }
     fn parse_loaded(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
@@ -455,9 +340,7 @@ pub enum SynthesizeSpeechError {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
-    SsmlMarksNotSupportedForTextTypeException(
-        crate::types::error::SsmlMarksNotSupportedForTextTypeException,
-    ),
+    SsmlMarksNotSupportedForTextTypeException(crate::types::error::SsmlMarksNotSupportedForTextTypeException),
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::types::error::TextLengthExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -465,9 +348,7 @@ pub enum SynthesizeSpeechError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for SynthesizeSpeechError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -496,42 +377,20 @@ impl ::std::fmt::Display for SynthesizeSpeechError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SynthesizeSpeechError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::EngineNotSupportedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidSampleRateException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidSsmlException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::LanguageNotSupportedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::LexiconNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MarksNotSupportedForFormatException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceFailureException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TextLengthExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::EngineNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSampleRateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSsmlException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LanguageNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LexiconNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MarksNotSupportedForFormatException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TextLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::synthesize_speech::SynthesizeSpeechError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::synthesize_speech::SynthesizeSpeechError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -547,27 +406,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for SynthesizeSpeechError {
 impl SynthesizeSpeechError {
     /// Creates the `SynthesizeSpeechError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `SynthesizeSpeechError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -633,13 +479,9 @@ impl ::std::error::Error for SynthesizeSpeechError {
             Self::InvalidSsmlException(_inner) => ::std::option::Option::Some(_inner),
             Self::LanguageNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::LexiconNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::MarksNotSupportedForFormatException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::MarksNotSupportedForFormatException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
-            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::TextLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

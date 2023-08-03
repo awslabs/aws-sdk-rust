@@ -15,34 +15,25 @@ impl ReverseReplicationInput {
 }
 impl ReverseReplicationInput {
     /// Creates a new builder-style object to manufacture [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder {
+    pub fn builder() -> crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder {
         crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReverseReplicationInputBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ReverseReplicationInputBuilder {
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_instance_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl ReverseReplicationInputBuilder {
     /// Consumes the builder and constructs a [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reverse_replication::ReverseReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reverse_replication::ReverseReplicationInput {
-                recovery_instance_id: self.recovery_instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reverse_replication::ReverseReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reverse_replication::ReverseReplicationInput {
+            recovery_instance_id: self.recovery_instance_id,
+        })
     }
 }

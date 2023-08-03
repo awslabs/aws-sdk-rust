@@ -36,10 +36,7 @@ pub fn ser_new_public_virtual_interface(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

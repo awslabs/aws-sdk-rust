@@ -9,8 +9,7 @@ pub struct TableLfTagPolicyAndPermissions {
     pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
     /// <p>The permissions granted to subscribers on table resources.</p>
     #[doc(hidden)]
-    pub permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
 }
 impl TableLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
@@ -18,9 +17,7 @@ impl TableLfTagPolicyAndPermissions {
         self.expression.as_deref()
     }
     /// <p>The permissions granted to subscribers on table resources.</p>
-    pub fn permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TableTagPolicyLfPermission]> {
+    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::TableTagPolicyLfPermission]> {
         self.permissions.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl TableLfTagPolicyAndPermissions {
 
 /// A builder for [`TableLfTagPolicyAndPermissions`](crate::types::TableLfTagPolicyAndPermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableLfTagPolicyAndPermissionsBuilder {
     pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
 }
 impl TableLfTagPolicyAndPermissionsBuilder {
     /// Appends an item to `expression`.
@@ -54,10 +48,7 @@ impl TableLfTagPolicyAndPermissionsBuilder {
         self
     }
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
         self.expression = input;
         self
     }
@@ -77,17 +68,12 @@ impl TableLfTagPolicyAndPermissionsBuilder {
         self
     }
     /// <p>The permissions granted to subscribers on table resources.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions granted to subscribers on table resources.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`TableLfTagPolicyAndPermissions`](crate::types::TableLfTagPolicyAndPermissions).

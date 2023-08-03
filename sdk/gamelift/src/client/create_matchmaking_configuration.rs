@@ -21,7 +21,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMatchmakingConfigurationOutput`](crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput) with field(s):
     ///   - [`configuration(Option<MatchmakingConfiguration>)`](crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput::configuration): <p>Object that describes the newly created matchmaking configuration.</p>
     /// - On failure, responds with [`SdkError<CreateMatchmakingConfigurationError>`](crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError)
-    pub fn create_matchmaking_configuration(&self) -> crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationFluentBuilder{
+    pub fn create_matchmaking_configuration(
+        &self,
+    ) -> crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationFluentBuilder {
         crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -3,10 +3,7 @@
 pub fn de_policy_evaluation_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::PolicyEvaluationExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::PolicyEvaluationExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::PolicyEvaluationExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

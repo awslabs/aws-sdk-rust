@@ -44,9 +44,7 @@ impl DiscoveredResource {
 
 /// A builder for [`DiscoveredResource`](crate::types::DiscoveredResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoveredResourceBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

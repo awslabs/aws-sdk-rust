@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetThingRuntimeConfigurationOutput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput) with field(s):
     ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput::runtime_configuration): Runtime configuration for a thing.
     /// - On failure, responds with [`SdkError<GetThingRuntimeConfigurationError>`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError)
-    pub fn get_thing_runtime_configuration(&self) -> crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder{
+    pub fn get_thing_runtime_configuration(
+        &self,
+    ) -> crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder {
         crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

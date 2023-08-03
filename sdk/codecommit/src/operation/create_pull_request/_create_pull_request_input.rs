@@ -40,17 +40,14 @@ impl CreatePullRequestInput {
 }
 impl CreatePullRequestInput {
     /// Creates a new builder-style object to manufacture [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
-    pub fn builder(
-    ) -> crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
+    pub fn builder() -> crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
         crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePullRequestInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -98,10 +95,7 @@ impl CreatePullRequestInputBuilder {
         self
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -112,20 +106,14 @@ impl CreatePullRequestInputBuilder {
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -138,17 +126,12 @@ impl CreatePullRequestInputBuilder {
     /// Consumes the builder and constructs a [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pull_request::CreatePullRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_pull_request::CreatePullRequestInput {
-                title: self.title,
-                description: self.description,
-                targets: self.targets,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_pull_request::CreatePullRequestInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_pull_request::CreatePullRequestInput {
+            title: self.title,
+            description: self.description,
+            targets: self.targets,
+            client_request_token: self.client_request_token,
+        })
     }
 }

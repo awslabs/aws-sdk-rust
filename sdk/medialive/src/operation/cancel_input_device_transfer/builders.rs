@@ -26,7 +26,7 @@ impl CancelInputDeviceTransferInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelInputDeviceTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder,
+    inner: crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder,
 }
 impl CancelInputDeviceTransferFluentBuilder {
     /// Creates a new `CancelInputDeviceTransfer`.
@@ -37,7 +37,7 @@ impl CancelInputDeviceTransferFluentBuilder {
         }
     }
     /// Access the CancelInputDeviceTransfer as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelInputDeviceTransferFluentBuilder {
             crate::operation::cancel_input_device_transfer::CancelInputDeviceTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelInputDeviceTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelInputDeviceTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelInputDeviceTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CancelInputDeviceTransferFluentBuilder {
             crate::operation::cancel_input_device_transfer::CancelInputDeviceTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError>,
     > {
         self.customize_middleware().await
     }
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }

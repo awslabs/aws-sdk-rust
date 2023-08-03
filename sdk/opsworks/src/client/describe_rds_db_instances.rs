@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput) with field(s):
     ///   - [`rds_db_instances(Option<Vec<RdsDbInstance>>)`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput::rds_db_instances): <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     /// - On failure, responds with [`SdkError<DescribeRdsDbInstancesError>`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError)
-    pub fn describe_rds_db_instances(
-        &self,
-    ) -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesFluentBuilder
-    {
+    pub fn describe_rds_db_instances(&self) -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesFluentBuilder {
         crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesFluentBuilder::new(self.handle.clone())
     }
 }

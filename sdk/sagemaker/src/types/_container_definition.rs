@@ -31,9 +31,7 @@ pub struct ContainerDefinition {
     pub model_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
     #[doc(hidden)]
     pub model_package_name: ::std::option::Option<::std::string::String>,
@@ -81,11 +79,7 @@ impl ContainerDefinition {
         self.model_data_url.as_deref()
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
@@ -116,18 +110,14 @@ impl ContainerDefinition {
 
 /// A builder for [`ContainerDefinition`](crate::types::ContainerDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerDefinitionBuilder {
     pub(crate) container_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) image_config: ::std::option::Option<crate::types::ImageConfig>,
     pub(crate) mode: ::std::option::Option<crate::types::ContainerMode>,
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
@@ -136,19 +126,13 @@ pub struct ContainerDefinitionBuilder {
 impl ContainerDefinitionBuilder {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
-    pub fn container_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
-    pub fn set_container_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_hostname = input;
         self
     }
@@ -187,10 +171,7 @@ impl ContainerDefinitionBuilder {
     /// <p>Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a Private Docker Registry for Real-Time Inference Containers</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    pub fn set_image_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfig>,
-    ) -> Self {
+    pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
         self.image_config = input;
         self
     }
@@ -220,10 +201,7 @@ impl ContainerDefinitionBuilder {
     /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your Amazon Web Services account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
-    pub fn model_data_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_data_url = ::std::option::Option::Some(input.into());
         self
     }
@@ -233,10 +211,7 @@ impl ContainerDefinitionBuilder {
     /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your Amazon Web Services account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
-    pub fn set_model_data_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_data_url = input;
         self
     }
@@ -254,11 +229,7 @@ impl ContainerDefinitionBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
@@ -267,34 +238,22 @@ impl ContainerDefinitionBuilder {
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
-    pub fn model_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_name = input;
         self
     }
@@ -303,25 +262,17 @@ impl ContainerDefinitionBuilder {
         &self.model_package_name
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_specification_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_specification_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn set_inference_specification_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_specification_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_specification_name = input;
         self
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn get_inference_specification_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_inference_specification_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_specification_name
     }
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
@@ -330,10 +281,7 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
-    pub fn set_multi_model_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiModelConfig>,
-    ) -> Self {
+    pub fn set_multi_model_config(mut self, input: ::std::option::Option<crate::types::MultiModelConfig>) -> Self {
         self.multi_model_config = input;
         self
     }
@@ -351,10 +299,7 @@ impl ContainerDefinitionBuilder {
     /// <p>Specifies the location of ML model data to deploy.</p> <note>
     /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
     /// </note>
-    pub fn set_model_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDataSource>,
-    ) -> Self {
+    pub fn set_model_data_source(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
         self.model_data_source = input;
         self
     }

@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`asset_property(Option<Property>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_property): <p>The asset property's definition, alias, and notification state.</p>  <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     ///   - [`composite_model(Option<CompositeModelProperty>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::composite_model): <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetPropertyError>`](crate::operation::describe_asset_property::DescribeAssetPropertyError)
-    pub fn describe_asset_property(
-        &self,
-    ) -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder
-    {
-        crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_asset_property(&self) -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder {
+        crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,14 @@ impl DescribeOrganizationConfigurationInput {
 }
 impl DescribeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeOrganizationConfigurationInputBuilder {
         &self.graph_arn
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
-                graph_arn: self.graph_arn
-                ,
-            }
+            crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput { graph_arn: self.graph_arn },
         )
     }
 }

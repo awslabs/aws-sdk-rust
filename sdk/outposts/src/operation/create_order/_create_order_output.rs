@@ -28,9 +28,7 @@ impl CreateOrderOutput {
 
 /// A builder for [`CreateOrderOutput`](crate::operation::create_order::CreateOrderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrderOutputBuilder {
     pub(crate) order: ::std::option::Option<crate::types::Order>,
     _request_id: Option<String>,

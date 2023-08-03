@@ -27,7 +27,7 @@ impl DeleteLicenseConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder,
+    inner: crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder,
 }
 impl DeleteLicenseConfigurationFluentBuilder {
     /// Creates a new `DeleteLicenseConfiguration`.
@@ -38,7 +38,7 @@ impl DeleteLicenseConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteLicenseConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteLicenseConfigurationFluentBuilder {
             crate::operation::delete_license_configuration::DeleteLicenseConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteLicenseConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteLicenseConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteLicenseConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteLicenseConfigurationFluentBuilder {
             crate::operation::delete_license_configuration::DeleteLicenseConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_configuration_arn(input.into());
         self
     }
     /// <p>ID of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_configuration_arn(input);
         self
     }

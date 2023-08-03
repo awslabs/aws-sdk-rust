@@ -18,12 +18,10 @@ pub struct Project {
     pub project_description: ::std::option::Option<::std::string::String>,
     /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     #[doc(hidden)]
-    pub service_catalog_provisioning_details:
-        ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    pub service_catalog_provisioning_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     /// <p>Details of a provisioned service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     #[doc(hidden)]
-    pub service_catalog_provisioned_product_details:
-        ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
+    pub service_catalog_provisioned_product_details: ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     /// <p>The status of the project.</p>
     #[doc(hidden)]
     pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
@@ -61,15 +59,11 @@ impl Project {
         self.project_description.as_deref()
     }
     /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceCatalogProvisioningDetails> {
+    pub fn service_catalog_provisioning_details(&self) -> ::std::option::Option<&crate::types::ServiceCatalogProvisioningDetails> {
         self.service_catalog_provisioning_details.as_ref()
     }
     /// <p>Details of a provisioned service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioned_product_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceCatalogProvisionedProductDetails> {
+    pub fn service_catalog_provisioned_product_details(&self) -> ::std::option::Option<&crate::types::ServiceCatalogProvisionedProductDetails> {
         self.service_catalog_provisioned_product_details.as_ref()
     }
     /// <p>The status of the project.</p>
@@ -106,18 +100,14 @@ impl Project {
 
 /// A builder for [`Project`](crate::types::Project).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
-    pub(crate) service_catalog_provisioning_details:
-        ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
-    pub(crate) service_catalog_provisioned_product_details:
-        ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
+    pub(crate) service_catalog_provisioning_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    pub(crate) service_catalog_provisioned_product_details: ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     pub(crate) project_status: ::std::option::Option<crate::types::ProjectStatus>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -169,18 +159,12 @@ impl ProjectBuilder {
         &self.project_id
     }
     /// <p>The description of the project.</p>
-    pub fn project_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_description = input;
         self
     }
@@ -189,32 +173,21 @@ impl ProjectBuilder {
         &self.project_description
     }
     /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisioningDetails,
-    ) -> Self {
+    pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.service_catalog_provisioning_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn set_service_catalog_provisioning_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
-    ) -> Self {
+    pub fn set_service_catalog_provisioning_details(mut self, input: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>) -> Self {
         self.service_catalog_provisioning_details = input;
         self
     }
     /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn get_service_catalog_provisioning_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningDetails> {
+    pub fn get_service_catalog_provisioning_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningDetails> {
         &self.service_catalog_provisioning_details
     }
     /// <p>Details of a provisioned service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioned_product_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisionedProductDetails,
-    ) -> Self {
+    pub fn service_catalog_provisioned_product_details(mut self, input: crate::types::ServiceCatalogProvisionedProductDetails) -> Self {
         self.service_catalog_provisioned_product_details = ::std::option::Option::Some(input);
         self
     }
@@ -227,9 +200,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>Details of a provisioned service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn get_service_catalog_provisioned_product_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails> {
+    pub fn get_service_catalog_provisioned_product_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails> {
         &self.service_catalog_provisioned_product_details
     }
     /// <p>The status of the project.</p>
@@ -238,10 +209,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>The status of the project.</p>
-    pub fn set_project_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectStatus>,
-    ) -> Self {
+    pub fn set_project_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
         self.project_status = input;
         self
     }
@@ -255,10 +223,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>Who created the project.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -272,10 +237,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>A timestamp specifying when the project was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -295,10 +257,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -312,10 +271,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>A timestamp container for when the project was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -329,10 +285,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -348,8 +301,7 @@ impl ProjectBuilder {
             project_id: self.project_id,
             project_description: self.project_description,
             service_catalog_provisioning_details: self.service_catalog_provisioning_details,
-            service_catalog_provisioned_product_details: self
-                .service_catalog_provisioned_product_details,
+            service_catalog_provisioned_product_details: self.service_catalog_provisioned_product_details,
             project_status: self.project_status,
             created_by: self.created_by,
             creation_time: self.creation_time,

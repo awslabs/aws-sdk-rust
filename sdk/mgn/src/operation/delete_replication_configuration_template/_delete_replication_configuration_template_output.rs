@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteReplicationConfigurationTemplat
 }
 impl DeleteReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationTemplateOutput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput).
-    pub fn builder() -> crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateOutputBuilder {
         crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationConfigurationTemplateOutput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteReplicationConfigurationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationTemplateOutput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput).
-    pub fn build(self) -> crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput{
+    pub fn build(self) -> crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput {
         crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput {
             _request_id: self._request_id,
         }

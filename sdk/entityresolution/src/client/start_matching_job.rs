@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartMatchingJobOutput`](crate::operation::start_matching_job::StartMatchingJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_matching_job::StartMatchingJobOutput::job_id): <p>The ID of the job.</p>
     /// - On failure, responds with [`SdkError<StartMatchingJobError>`](crate::operation::start_matching_job::StartMatchingJobError)
-    pub fn start_matching_job(
-        &self,
-    ) -> crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder {
-        crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_matching_job(&self) -> crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder {
+        crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder::new(self.handle.clone())
     }
 }

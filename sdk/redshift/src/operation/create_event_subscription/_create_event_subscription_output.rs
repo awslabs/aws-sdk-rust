@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEventSubscriptionOutput {
 }
 impl CreateEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::operation::create_event_subscription::CreateEventSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_event_subscription::builders::CreateEventSubscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_event_subscription::builders::CreateEventSubscriptionOutputBuilder {
         crate::operation::create_event_subscription::builders::CreateEventSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEventSubscriptionOutput`](crate::operation::create_event_subscription::CreateEventSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventSubscriptionOutputBuilder {
     pub(crate) event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateEventSubscriptionOutputBuilder {
         self
     }
     /// <p>Describes event subscriptions.</p>
-    pub fn set_event_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSubscription>,
-    ) -> Self {
+    pub fn set_event_subscription(mut self, input: ::std::option::Option<crate::types::EventSubscription>) -> Self {
         self.event_subscription = input;
         self
     }
     /// <p>Describes event subscriptions.</p>
-    pub fn get_event_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventSubscription> {
+    pub fn get_event_subscription(&self) -> &::std::option::Option<crate::types::EventSubscription> {
         &self.event_subscription
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateEventSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::operation::create_event_subscription::CreateEventSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_event_subscription::CreateEventSubscriptionOutput {
+    pub fn build(self) -> crate::operation::create_event_subscription::CreateEventSubscriptionOutput {
         crate::operation::create_event_subscription::CreateEventSubscriptionOutput {
             event_subscription: self.event_subscription,
             _request_id: self._request_id,

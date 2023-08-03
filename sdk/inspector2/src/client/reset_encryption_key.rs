@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`resource_type(ResourceType)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::set_resource_type): <p>The resource type the key encrypts.</p>
     /// - On success, responds with [`ResetEncryptionKeyOutput`](crate::operation::reset_encryption_key::ResetEncryptionKeyOutput)
     /// - On failure, responds with [`SdkError<ResetEncryptionKeyError>`](crate::operation::reset_encryption_key::ResetEncryptionKeyError)
-    pub fn reset_encryption_key(
-        &self,
-    ) -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder {
-        crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_encryption_key(&self) -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder {
+        crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::new(self.handle.clone())
     }
 }

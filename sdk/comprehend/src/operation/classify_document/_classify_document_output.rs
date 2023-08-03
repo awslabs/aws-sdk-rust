@@ -71,8 +71,7 @@ impl ::aws_http::request_id::RequestId for ClassifyDocumentOutput {
 }
 impl ClassifyDocumentOutput {
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentOutput`](crate::operation::classify_document::ClassifyDocumentOutput).
-    pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentOutputBuilder {
         crate::operation::classify_document::builders::ClassifyDocumentOutputBuilder::default()
     }
 }
@@ -84,8 +83,7 @@ pub struct ClassifyDocumentOutputBuilder {
     pub(crate) classes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>,
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    pub(crate) document_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
+    pub(crate) document_type: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>>,
     _request_id: Option<String>,
@@ -103,17 +101,12 @@ impl ClassifyDocumentOutputBuilder {
         self
     }
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    pub fn set_classes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>,
-    ) -> Self {
+    pub fn set_classes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>) -> Self {
         self.classes = input;
         self
     }
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    pub fn get_classes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>> {
+    pub fn get_classes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>> {
         &self.classes
     }
     /// Appends an item to `labels`.
@@ -128,17 +121,12 @@ impl ClassifyDocumentOutputBuilder {
         self
     }
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>) -> Self {
         self.labels = input;
         self
     }
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
-    pub fn get_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>> {
         &self.labels
     }
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
@@ -147,10 +135,7 @@ impl ClassifyDocumentOutputBuilder {
         self
     }
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -170,17 +155,12 @@ impl ClassifyDocumentOutputBuilder {
         self
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    pub fn set_document_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>) -> Self {
         self.document_type = input;
         self
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    pub fn get_document_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>> {
+    pub fn get_document_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>> {
         &self.document_type
     }
     /// Appends an item to `errors`.
@@ -195,17 +175,12 @@ impl ClassifyDocumentOutputBuilder {
         self
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>> {
         &self.errors
     }
     /// Appends an item to `warnings`.
@@ -222,18 +197,13 @@ impl ClassifyDocumentOutputBuilder {
     }
     /// <p>Warnings detected while processing the input document. The response includes a warning if there is a mismatch between the input document type and the model type associated with the endpoint that you specified. The response can also include warnings for individual pages that have a mismatch. </p>
     /// <p>The field is empty if the system generated no warnings.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>>) -> Self {
         self.warnings = input;
         self
     }
     /// <p>Warnings detected while processing the input document. The response includes a warning if there is a mismatch between the input document type and the model type associated with the endpoint that you specified. The response can also include warnings for individual pages that have a mismatch. </p>
     /// <p>The field is empty if the system generated no warnings.</p>
-    pub fn get_warnings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WarningsListItem>> {
         &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

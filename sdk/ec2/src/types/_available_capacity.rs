@@ -6,17 +6,14 @@
 pub struct AvailableCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
     #[doc(hidden)]
-    pub available_instance_capacity:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
+    pub available_instance_capacity: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
     #[doc(hidden)]
     pub available_v_cpus: ::std::option::Option<i32>,
 }
 impl AvailableCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
-    pub fn available_instance_capacity(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceCapacity]> {
+    pub fn available_instance_capacity(&self) -> ::std::option::Option<&[crate::types::InstanceCapacity]> {
         self.available_instance_capacity.as_deref()
     }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
@@ -33,12 +30,9 @@ impl AvailableCapacity {
 
 /// A builder for [`AvailableCapacity`](crate::types::AvailableCapacity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailableCapacityBuilder {
-    pub(crate) available_instance_capacity:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
+    pub(crate) available_instance_capacity: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
     pub(crate) available_v_cpus: ::std::option::Option<i32>,
 }
 impl AvailableCapacityBuilder {
@@ -54,17 +48,12 @@ impl AvailableCapacityBuilder {
         self
     }
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
-    pub fn set_available_instance_capacity(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
-    ) -> Self {
+    pub fn set_available_instance_capacity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>) -> Self {
         self.available_instance_capacity = input;
         self
     }
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
-    pub fn get_available_instance_capacity(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>> {
+    pub fn get_available_instance_capacity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>> {
         &self.available_instance_capacity
     }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>

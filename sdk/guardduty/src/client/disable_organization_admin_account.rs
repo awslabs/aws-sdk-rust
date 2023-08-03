@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`admin_account_id(impl ::std::convert::Into<String>)`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::set_admin_account_id): <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError)
-    pub fn disable_organization_admin_account(&self) -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder{
+    pub fn disable_organization_admin_account(
+        &self,
+    ) -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder {
         crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

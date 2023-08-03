@@ -5,12 +5,8 @@
 pub struct ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     #[doc(hidden)]
-    pub connector_entity_map: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ConnectorEntity>,
-        >,
-    >,
+    pub connector_entity_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>>,
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,12 +16,7 @@ impl ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     pub fn connector_entity_map(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ConnectorEntity>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>> {
         self.connector_entity_map.as_ref()
     }
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
@@ -40,25 +31,17 @@ impl ::aws_http::request_id::RequestId for ListConnectorEntitiesOutput {
 }
 impl ListConnectorEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesOutput`](crate::operation::list_connector_entities::ListConnectorEntitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesOutputBuilder {
         crate::operation::list_connector_entities::builders::ListConnectorEntitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectorEntitiesOutput`](crate::operation::list_connector_entities::ListConnectorEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorEntitiesOutputBuilder {
-    pub(crate) connector_entity_map: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ConnectorEntity>,
-        >,
-    >,
+    pub(crate) connector_entity_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -81,12 +64,7 @@ impl ListConnectorEntitiesOutputBuilder {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     pub fn set_connector_entity_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::ConnectorEntity>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>>,
     ) -> Self {
         self.connector_entity_map = input;
         self
@@ -94,12 +72,7 @@ impl ListConnectorEntitiesOutputBuilder {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     pub fn get_connector_entity_map(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ConnectorEntity>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>> {
         &self.connector_entity_map
     }
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>

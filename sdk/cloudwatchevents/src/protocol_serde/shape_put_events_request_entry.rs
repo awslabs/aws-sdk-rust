@@ -4,9 +4,7 @@ pub fn ser_put_events_request_entry(
     input: &crate::types::PutEventsRequestEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.time {
-        object
-            .key("Time")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("Time").date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_2) = &input.source {
         object.key("Source").string(var_2.as_str());

@@ -29,9 +29,7 @@ impl RebootNodeInput {
 
 /// A builder for [`RebootNodeInput`](crate::operation::reboot_node::RebootNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootNodeInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl RebootNodeInputBuilder {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`RebootNodeInput`](crate::operation::reboot_node::RebootNodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_node::RebootNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_node::RebootNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_node::RebootNodeInput {
             cluster_name: self.cluster_name,
             node_id: self.node_id,

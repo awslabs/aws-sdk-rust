@@ -41,13 +41,10 @@ pub struct GetVectorEnrichmentJobOutput {
     pub export_status: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>,
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
     #[doc(hidden)]
-    pub export_error_details:
-        ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
+    pub export_error_details: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetVectorEnrichmentJobOutput {
@@ -80,9 +77,7 @@ impl GetVectorEnrichmentJobOutput {
         self.kms_key_id.as_deref()
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    pub fn input_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VectorEnrichmentJobInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
@@ -94,29 +89,19 @@ impl GetVectorEnrichmentJobOutput {
         self.execution_role_arn.as_deref()
     }
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-    pub fn error_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VectorEnrichmentJobErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobErrorDetails> {
         self.error_details.as_ref()
     }
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
-    pub fn export_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    pub fn export_error_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportErrorDetails> {
+    pub fn export_error_details(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportErrorDetails> {
         self.export_error_details.as_ref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -127,18 +112,14 @@ impl ::aws_http::request_id::RequestId for GetVectorEnrichmentJobOutput {
 }
 impl GetVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder {
         crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVectorEnrichmentJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::VectorEnrichmentJobType>,
@@ -152,11 +133,8 @@ pub struct GetVectorEnrichmentJobOutputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_details: ::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails>,
     pub(crate) export_status: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>,
-    pub(crate) export_error_details:
-        ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) export_error_details: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetVectorEnrichmentJobOutputBuilder {
@@ -180,10 +158,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The type of the Vector Enrichment job being initiated.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobType>) -> Self {
         self.r#type = input;
         self
     }
@@ -211,10 +186,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -242,10 +214,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The status of the initiated Vector Enrichment job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -273,17 +242,12 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobInputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobInputConfig>) -> Self {
         self.input_config = input;
         self
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    pub fn get_input_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobInputConfig> {
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobInputConfig> {
         &self.input_config
     }
     /// <p>An object containing information about the job configuration.</p>
@@ -292,32 +256,21 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn set_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>,
-    ) -> Self {
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>) -> Self {
         self.job_config = input;
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn get_job_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobConfig> {
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobConfig> {
         &self.job_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -331,17 +284,12 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails>) -> Self {
         self.error_details = input;
         self
     }
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-    pub fn get_error_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails> {
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails> {
         &self.error_details
     }
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
@@ -350,39 +298,26 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>) -> Self {
         self.export_status = input;
         self
     }
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
-    pub fn get_export_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportStatus> {
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportStatus> {
         &self.export_status
     }
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    pub fn export_error_details(
-        mut self,
-        input: crate::types::VectorEnrichmentJobExportErrorDetails,
-    ) -> Self {
+    pub fn export_error_details(mut self, input: crate::types::VectorEnrichmentJobExportErrorDetails) -> Self {
         self.export_error_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    pub fn set_export_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
-    ) -> Self {
+    pub fn set_export_error_details(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>) -> Self {
         self.export_error_details = input;
         self
     }
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    pub fn get_export_error_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails> {
+    pub fn get_export_error_details(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails> {
         &self.export_error_details
     }
     /// Adds a key-value pair to `tags`.
@@ -390,32 +325,19 @@ impl GetVectorEnrichmentJobOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -428,9 +350,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
+    pub fn build(self) -> crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
         crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
             arn: self.arn,
             r#type: self.r#type,

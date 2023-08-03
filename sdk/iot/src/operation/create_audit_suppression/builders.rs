@@ -38,10 +38,7 @@ impl CreateAuditSuppressionFluentBuilder {
         }
     }
     /// Access the CreateAuditSuppression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateAuditSuppressionFluentBuilder {
             crate::operation::create_audit_suppression::CreateAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_audit_suppression::CreateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_audit_suppression::CreateAuditSuppressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateAuditSuppressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_audit_suppression::CreateAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_audit_suppression::CreateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_audit_suppression::CreateAuditSuppressionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_audit_suppression::CreateAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_audit_suppression::CreateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_audit_suppression::CreateAuditSuppressionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateAuditSuppressionFluentBuilder {
             crate::operation::create_audit_suppression::CreateAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_audit_suppression::CreateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_audit_suppression::CreateAuditSuppressionError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +130,12 @@ impl CreateAuditSuppressionFluentBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
@@ -163,10 +144,7 @@ impl CreateAuditSuppressionFluentBuilder {
         self
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_date(input);
         self
     }
@@ -203,18 +181,12 @@ impl CreateAuditSuppressionFluentBuilder {
         self.inner.get_description()
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

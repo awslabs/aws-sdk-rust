@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeConnectionAliasesOutput {
 }
 impl DescribeConnectionAliasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasesOutput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput).
-    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesOutputBuilder {
         crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionAliasesOutput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasesOutputBuilder {
-    pub(crate) connection_aliases:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>>,
+    pub(crate) connection_aliases: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeConnectionAliasesOutputBuilder {
         self
     }
     /// <p>Information about the specified connection aliases.</p>
-    pub fn set_connection_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>>,
-    ) -> Self {
+    pub fn set_connection_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>>) -> Self {
         self.connection_aliases = input;
         self
     }
     /// <p>Information about the specified connection aliases.</p>
-    pub fn get_connection_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>> {
+    pub fn get_connection_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>> {
         &self.connection_aliases
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -94,9 +86,7 @@ impl DescribeConnectionAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasesOutput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput {
+    pub fn build(self) -> crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput {
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput {
             connection_aliases: self.connection_aliases,
             next_token: self.next_token,

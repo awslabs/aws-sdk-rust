@@ -10,10 +10,7 @@ impl GetSlotTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_slot_type::GetSlotTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_slot_type::GetSlotTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type::GetSlotTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_slot_type();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetSlotTypeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_slot_type::GetSlotType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_slot_type::GetSlotType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type::GetSlotTypeError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetSlotTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetSlotTypeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_slot_type::GetSlotType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_slot_type::GetSlotType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_slot_type::GetSlotTypeError>,
     > {
         self.customize_middleware().await

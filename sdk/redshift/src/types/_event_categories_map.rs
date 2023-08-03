@@ -30,9 +30,7 @@ impl EventCategoriesMap {
 
 /// A builder for [`EventCategoriesMap`](crate::types::EventCategoriesMap).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventCategoriesMapBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventInfoMap>>,
@@ -64,17 +62,12 @@ impl EventCategoriesMapBuilder {
         self
     }
     /// <p>The events in the event category.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventInfoMap>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventInfoMap>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The events in the event category.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventInfoMap>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventInfoMap>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`EventCategoriesMap`](crate::types::EventCategoriesMap).

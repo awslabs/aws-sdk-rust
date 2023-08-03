@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AddSourceIdentifierToSubscriptionOutput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput) with field(s):
     ///   - [`event_subscription(Option<EventSubscription>)`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     /// - On failure, responds with [`SdkError<AddSourceIdentifierToSubscriptionError>`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionError)
-    pub fn add_source_identifier_to_subscription(&self) -> crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionFluentBuilder{
+    pub fn add_source_identifier_to_subscription(
+        &self,
+    ) -> crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionFluentBuilder {
         crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

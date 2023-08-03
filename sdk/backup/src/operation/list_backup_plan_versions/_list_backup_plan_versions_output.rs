@@ -8,8 +8,7 @@ pub struct ListBackupPlanVersionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of version list items containing metadata about your backup plans.</p>
     #[doc(hidden)]
-    pub backup_plan_versions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
+    pub backup_plan_versions_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
     _request_id: Option<String>,
 }
 impl ListBackupPlanVersionsOutput {
@@ -18,9 +17,7 @@ impl ListBackupPlanVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of version list items containing metadata about your backup plans.</p>
-    pub fn backup_plan_versions_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BackupPlansListMember]> {
+    pub fn backup_plan_versions_list(&self) -> ::std::option::Option<&[crate::types::BackupPlansListMember]> {
         self.backup_plan_versions_list.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListBackupPlanVersionsOutput {
 }
 impl ListBackupPlanVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupPlanVersionsOutput`](crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsOutputBuilder {
         crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupPlanVersionsOutput`](crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupPlanVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_plan_versions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
+    pub(crate) backup_plan_versions_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
     _request_id: Option<String>,
 }
 impl ListBackupPlanVersionsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListBackupPlanVersionsOutputBuilder {
         self
     }
     /// <p>An array of version list items containing metadata about your backup plans.</p>
-    pub fn set_backup_plan_versions_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
-    ) -> Self {
+    pub fn set_backup_plan_versions_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>) -> Self {
         self.backup_plan_versions_list = input;
         self
     }
     /// <p>An array of version list items containing metadata about your backup plans.</p>
-    pub fn get_backup_plan_versions_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
+    pub fn get_backup_plan_versions_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
         &self.backup_plan_versions_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListBackupPlanVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBackupPlanVersionsOutput`](crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput {
+    pub fn build(self) -> crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput {
         crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput {
             next_token: self.next_token,
             backup_plan_versions_list: self.backup_plan_versions_list,

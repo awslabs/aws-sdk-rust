@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateReplicationJobOutput {
 }
 impl UpdateReplicationJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationJobOutput`](crate::operation::update_replication_job::UpdateReplicationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::update_replication_job::builders::UpdateReplicationJobOutputBuilder {
+    pub fn builder() -> crate::operation::update_replication_job::builders::UpdateReplicationJobOutputBuilder {
         crate::operation::update_replication_job::builders::UpdateReplicationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReplicationJobOutput`](crate::operation::update_replication_job::UpdateReplicationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReplicationJobOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,16 +22,14 @@ impl ListAdminsManagingAccountInput {
 }
 impl ListAdminsManagingAccountInput {
     /// Creates a new builder-style object to manufacture [`ListAdminsManagingAccountInput`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountInput).
-    pub fn builder() -> crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountInputBuilder{
+    pub fn builder() -> crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountInputBuilder {
         crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAdminsManagingAccountInput`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAdminsManagingAccountInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListAdminsManagingAccountInputBuilder {
         crate::operation::list_admins_managing_account::ListAdminsManagingAccountInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_admins_managing_account::ListAdminsManagingAccountInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_admins_managing_account::ListAdminsManagingAccountInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartLabelDetectionOutput`](crate::operation::start_label_detection::StartLabelDetectionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_label_detection::StartLabelDetectionOutput::job_id): <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
     /// - On failure, responds with [`SdkError<StartLabelDetectionError>`](crate::operation::start_label_detection::StartLabelDetectionError)
-    pub fn start_label_detection(
-        &self,
-    ) -> crate::operation::start_label_detection::builders::StartLabelDetectionFluentBuilder {
-        crate::operation::start_label_detection::builders::StartLabelDetectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_label_detection(&self) -> crate::operation::start_label_detection::builders::StartLabelDetectionFluentBuilder {
+        crate::operation::start_label_detection::builders::StartLabelDetectionFluentBuilder::new(self.handle.clone())
     }
 }

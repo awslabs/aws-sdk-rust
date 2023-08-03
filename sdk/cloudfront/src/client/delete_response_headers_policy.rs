@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyFluentBuilder::set_if_match): <p>The version of the response headers policy that you are deleting.</p>  <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     /// - On success, responds with [`DeleteResponseHeadersPolicyOutput`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteResponseHeadersPolicyError>`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError)
-    pub fn delete_response_headers_policy(&self) -> crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyFluentBuilder{
+    pub fn delete_response_headers_policy(
+        &self,
+    ) -> crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyFluentBuilder {
         crate::operation::delete_response_headers_policy::builders::DeleteResponseHeadersPolicyFluentBuilder::new(self.handle.clone())
     }
 }

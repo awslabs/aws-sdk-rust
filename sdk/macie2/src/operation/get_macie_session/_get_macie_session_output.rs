@@ -8,8 +8,7 @@ pub struct GetMacieSessionOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     #[doc(hidden)]
-    pub finding_publishing_frequency:
-        ::std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
     #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
@@ -27,9 +26,7 @@ impl GetMacieSessionOutput {
         self.created_at.as_ref()
     }
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn finding_publishing_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(&self) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
@@ -52,21 +49,17 @@ impl ::aws_http::request_id::RequestId for GetMacieSessionOutput {
 }
 impl GetMacieSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetMacieSessionOutput`](crate::operation::get_macie_session::GetMacieSessionOutput).
-    pub fn builder() -> crate::operation::get_macie_session::builders::GetMacieSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_macie_session::builders::GetMacieSessionOutputBuilder {
         crate::operation::get_macie_session::builders::GetMacieSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMacieSessionOutput`](crate::operation::get_macie_session::GetMacieSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMacieSessionOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) finding_publishing_frequency:
-        ::std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MacieStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,10 +72,7 @@ impl GetMacieSessionOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -91,25 +81,17 @@ impl GetMacieSessionOutputBuilder {
         &self.created_at
     }
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.finding_publishing_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.finding_publishing_frequency = input;
         self
     }
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         &self.finding_publishing_frequency
     }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
@@ -146,10 +128,7 @@ impl GetMacieSessionOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

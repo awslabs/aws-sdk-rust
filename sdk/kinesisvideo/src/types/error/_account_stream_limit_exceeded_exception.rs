@@ -27,17 +27,13 @@ impl ::std::fmt::Display for AccountStreamLimitExceededException {
     }
 }
 impl ::std::error::Error for AccountStreamLimitExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::AccountStreamLimitExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::AccountStreamLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for AccountStreamLimitExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AccountStreamLimitExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -51,9 +47,7 @@ impl AccountStreamLimitExceededException {
 
 /// A builder for [`AccountStreamLimitExceededException`](crate::types::error::AccountStreamLimitExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountStreamLimitExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -80,10 +74,7 @@ impl AccountStreamLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

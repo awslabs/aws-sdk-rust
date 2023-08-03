@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelResourceRequestOutput {
 }
 impl CancelResourceRequestOutput {
     /// Creates a new builder-style object to manufacture [`CancelResourceRequestOutput`](crate::operation::cancel_resource_request::CancelResourceRequestOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder {
         crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelResourceRequestOutput`](crate::operation::cancel_resource_request::CancelResourceRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelResourceRequestOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CancelResourceRequestOutputBuilder {
         self
     }
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn set_progress_event(
-        mut self,
-        input: ::std::option::Option<crate::types::ProgressEvent>,
-    ) -> Self {
+    pub fn set_progress_event(mut self, input: ::std::option::Option<crate::types::ProgressEvent>) -> Self {
         self.progress_event = input;
         self
     }

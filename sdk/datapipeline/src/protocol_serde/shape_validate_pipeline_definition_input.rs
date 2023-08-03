@@ -12,10 +12,7 @@ pub fn ser_validate_pipeline_definition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_pipeline_object::ser_pipeline_object(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_pipeline_object::ser_pipeline_object(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_validate_pipeline_definition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_parameter_object::ser_parameter_object(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_parameter_object::ser_parameter_object(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -42,10 +36,7 @@ pub fn ser_validate_pipeline_definition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_parameter_value::ser_parameter_value(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_parameter_value::ser_parameter_value(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

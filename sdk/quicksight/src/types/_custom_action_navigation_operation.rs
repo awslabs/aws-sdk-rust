@@ -7,14 +7,11 @@
 pub struct CustomActionNavigationOperation {
     /// <p>The configuration that chooses the navigation target.</p>
     #[doc(hidden)]
-    pub local_navigation_configuration:
-        ::std::option::Option<crate::types::LocalNavigationConfiguration>,
+    pub local_navigation_configuration: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }
 impl CustomActionNavigationOperation {
     /// <p>The configuration that chooses the navigation target.</p>
-    pub fn local_navigation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LocalNavigationConfiguration> {
+    pub fn local_navigation_configuration(&self) -> ::std::option::Option<&crate::types::LocalNavigationConfiguration> {
         self.local_navigation_configuration.as_ref()
     }
 }
@@ -27,34 +24,23 @@ impl CustomActionNavigationOperation {
 
 /// A builder for [`CustomActionNavigationOperation`](crate::types::CustomActionNavigationOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomActionNavigationOperationBuilder {
-    pub(crate) local_navigation_configuration:
-        ::std::option::Option<crate::types::LocalNavigationConfiguration>,
+    pub(crate) local_navigation_configuration: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }
 impl CustomActionNavigationOperationBuilder {
     /// <p>The configuration that chooses the navigation target.</p>
-    pub fn local_navigation_configuration(
-        mut self,
-        input: crate::types::LocalNavigationConfiguration,
-    ) -> Self {
+    pub fn local_navigation_configuration(mut self, input: crate::types::LocalNavigationConfiguration) -> Self {
         self.local_navigation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that chooses the navigation target.</p>
-    pub fn set_local_navigation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
-    ) -> Self {
+    pub fn set_local_navigation_configuration(mut self, input: ::std::option::Option<crate::types::LocalNavigationConfiguration>) -> Self {
         self.local_navigation_configuration = input;
         self
     }
     /// <p>The configuration that chooses the navigation target.</p>
-    pub fn get_local_navigation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LocalNavigationConfiguration> {
+    pub fn get_local_navigation_configuration(&self) -> &::std::option::Option<crate::types::LocalNavigationConfiguration> {
         &self.local_navigation_configuration
     }
     /// Consumes the builder and constructs a [`CustomActionNavigationOperation`](crate::types::CustomActionNavigationOperation).

@@ -37,21 +37,18 @@ impl ::aws_http::request_id::RequestId for ListUtteranceAnalyticsDataOutput {
 }
 impl ListUtteranceAnalyticsDataOutput {
     /// Creates a new builder-style object to manufacture [`ListUtteranceAnalyticsDataOutput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput).
-    pub fn builder() -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataOutputBuilder{
+    pub fn builder() -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataOutputBuilder {
         crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUtteranceAnalyticsDataOutput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUtteranceAnalyticsDataOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) utterances:
-        ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>,
+    pub(crate) utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>,
     _request_id: Option<String>,
 }
 impl ListUtteranceAnalyticsDataOutputBuilder {
@@ -98,17 +95,12 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    pub fn set_utterances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>,
-    ) -> Self {
+    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>) -> Self {
         self.utterances = input;
         self
     }
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    pub fn get_utterances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>> {
+    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>> {
         &self.utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -121,9 +113,7 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUtteranceAnalyticsDataOutput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput {
+    pub fn build(self) -> crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput {
         crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput {
             bot_id: self.bot_id,
             next_token: self.next_token,

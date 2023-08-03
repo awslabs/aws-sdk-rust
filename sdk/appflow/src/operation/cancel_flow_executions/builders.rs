@@ -43,9 +43,7 @@ impl CancelFlowExecutionsFluentBuilder {
         }
     }
     /// Access the CancelFlowExecutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl CancelFlowExecutionsFluentBuilder {
             crate::operation::cancel_flow_executions::CancelFlowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_flow_executions::CancelFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_flow_executions::CancelFlowExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl CancelFlowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl CancelFlowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_flow_executions::CancelFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_flow_executions::CancelFlowExecutionsError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl CancelFlowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_flow_executions::CancelFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_flow_executions::CancelFlowExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl CancelFlowExecutionsFluentBuilder {
             crate::operation::cancel_flow_executions::CancelFlowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_flow_executions::CancelFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_flow_executions::CancelFlowExecutionsError>,
     > {
         self.customize_middleware().await
     }
@@ -148,27 +135,19 @@ impl CancelFlowExecutionsFluentBuilder {
     ///
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn execution_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_ids(input.into());
         self
     }
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn set_execution_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_execution_ids(input);
         self
     }
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn get_execution_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_execution_ids()
     }
 }

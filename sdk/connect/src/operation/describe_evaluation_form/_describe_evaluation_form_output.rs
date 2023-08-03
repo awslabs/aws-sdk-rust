@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEvaluationFormOutput {
 }
 impl DescribeEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationFormOutput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormOutputBuilder {
         crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEvaluationFormOutput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEvaluationFormOutputBuilder {
     pub(crate) evaluation_form: ::std::option::Option<crate::types::EvaluationForm>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeEvaluationFormOutputBuilder {
         self
     }
     /// <p>Information about the evaluation form.</p>
-    pub fn set_evaluation_form(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationForm>,
-    ) -> Self {
+    pub fn set_evaluation_form(mut self, input: ::std::option::Option<crate::types::EvaluationForm>) -> Self {
         self.evaluation_form = input;
         self
     }

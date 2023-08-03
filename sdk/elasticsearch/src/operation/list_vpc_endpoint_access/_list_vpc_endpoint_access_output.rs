@@ -6,8 +6,7 @@
 pub struct ListVpcEndpointAccessOutput {
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
     #[doc(hidden)]
-    pub authorized_principal_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    pub authorized_principal_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListVpcEndpointAccessOutput {
 }
 impl ListVpcEndpointAccessOutput {
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
-    pub fn authorized_principal_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthorizedPrincipal]> {
+    pub fn authorized_principal_list(&self) -> ::std::option::Option<&[crate::types::AuthorizedPrincipal]> {
         self.authorized_principal_list.as_deref()
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListVpcEndpointAccessOutput {
 }
 impl ListVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder {
         crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointAccessOutputBuilder {
-    pub(crate) authorized_principal_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    pub(crate) authorized_principal_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListVpcEndpointAccessOutputBuilder {
         self
     }
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
-    pub fn set_authorized_principal_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
-    ) -> Self {
+    pub fn set_authorized_principal_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>) -> Self {
         self.authorized_principal_list = input;
         self
     }
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
-    pub fn get_authorized_principal_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>> {
+    pub fn get_authorized_principal_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>> {
         &self.authorized_principal_list
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>

@@ -70,10 +70,8 @@ impl ::std::fmt::Debug for ListChannelMessagesInput {
 }
 impl ListChannelMessagesInput {
     /// Creates a new builder-style object to manufacture [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
-        crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
+        crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder::default()
     }
 }
 
@@ -124,10 +122,7 @@ impl ListChannelMessagesInputBuilder {
         self
     }
     /// <p>The initial or starting time stamp for your requested messages.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_before = input;
         self
     }
@@ -141,10 +136,7 @@ impl ListChannelMessagesInputBuilder {
         self
     }
     /// <p>The final or ending time stamp for your requested messages.</p>
-    pub fn set_not_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_after = input;
         self
     }
@@ -197,21 +189,17 @@ impl ListChannelMessagesInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_messages::ListChannelMessagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_channel_messages::ListChannelMessagesInput {
-                channel_arn: self.channel_arn,
-                sort_order: self.sort_order,
-                not_before: self.not_before,
-                not_after: self.not_after,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_channel_messages::ListChannelMessagesInput {
+            channel_arn: self.channel_arn,
+            sort_order: self.sort_order,
+            not_before: self.not_before,
+            not_after: self.not_after,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }
 impl ::std::fmt::Debug for ListChannelMessagesInputBuilder {

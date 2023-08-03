@@ -22,8 +22,7 @@ pub struct CreateTrustInput {
     pub trust_type: ::std::option::Option<crate::types::TrustType>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     #[doc(hidden)]
-    pub conditional_forwarder_ip_addrs:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     #[doc(hidden)]
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
@@ -50,9 +49,7 @@ impl CreateTrustInput {
         self.trust_type.as_ref()
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn conditional_forwarder_ip_addrs(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn conditional_forwarder_ip_addrs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.conditional_forwarder_ip_addrs.as_deref()
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
@@ -68,10 +65,7 @@ impl ::std::fmt::Debug for CreateTrustInput {
         formatter.field("trust_password", &"*** Sensitive Data Redacted ***");
         formatter.field("trust_direction", &self.trust_direction);
         formatter.field("trust_type", &self.trust_type);
-        formatter.field(
-            "conditional_forwarder_ip_addrs",
-            &self.conditional_forwarder_ip_addrs,
-        );
+        formatter.field("conditional_forwarder_ip_addrs", &self.conditional_forwarder_ip_addrs);
         formatter.field("selective_auth", &self.selective_auth);
         formatter.finish()
     }
@@ -92,8 +86,7 @@ pub struct CreateTrustInputBuilder {
     pub(crate) trust_password: ::std::option::Option<::std::string::String>,
     pub(crate) trust_direction: ::std::option::Option<crate::types::TrustDirection>,
     pub(crate) trust_type: ::std::option::Option<crate::types::TrustType>,
-    pub(crate) conditional_forwarder_ip_addrs:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl CreateTrustInputBuilder {
@@ -112,18 +105,12 @@ impl CreateTrustInputBuilder {
         &self.directory_id
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_domain_name = input;
         self
     }
@@ -132,18 +119,12 @@ impl CreateTrustInputBuilder {
         &self.remote_domain_name
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    pub fn trust_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    pub fn set_trust_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_password = input;
         self
     }
@@ -157,10 +138,7 @@ impl CreateTrustInputBuilder {
         self
     }
     /// <p>The direction of the trust relationship.</p>
-    pub fn set_trust_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustDirection>,
-    ) -> Self {
+    pub fn set_trust_direction(mut self, input: ::std::option::Option<crate::types::TrustDirection>) -> Self {
         self.trust_direction = input;
         self
     }
@@ -187,27 +165,19 @@ impl CreateTrustInputBuilder {
     /// To override the contents of this collection use [`set_conditional_forwarder_ip_addrs`](Self::set_conditional_forwarder_ip_addrs).
     ///
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn conditional_forwarder_ip_addrs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_forwarder_ip_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.conditional_forwarder_ip_addrs.unwrap_or_default();
         v.push(input.into());
         self.conditional_forwarder_ip_addrs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn set_conditional_forwarder_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_conditional_forwarder_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.conditional_forwarder_ip_addrs = input;
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn get_conditional_forwarder_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conditional_forwarder_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.conditional_forwarder_ip_addrs
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
@@ -216,10 +186,7 @@ impl CreateTrustInputBuilder {
         self
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
-    pub fn set_selective_auth(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectiveAuth>,
-    ) -> Self {
+    pub fn set_selective_auth(mut self, input: ::std::option::Option<crate::types::SelectiveAuth>) -> Self {
         self.selective_auth = input;
         self
     }
@@ -228,12 +195,7 @@ impl CreateTrustInputBuilder {
         &self.selective_auth
     }
     /// Consumes the builder and constructs a [`CreateTrustInput`](crate::operation::create_trust::CreateTrustInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_trust::CreateTrustInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trust::CreateTrustInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trust::CreateTrustInput {
             directory_id: self.directory_id,
             remote_domain_name: self.remote_domain_name,
@@ -253,10 +215,7 @@ impl ::std::fmt::Debug for CreateTrustInputBuilder {
         formatter.field("trust_password", &"*** Sensitive Data Redacted ***");
         formatter.field("trust_direction", &self.trust_direction);
         formatter.field("trust_type", &self.trust_type);
-        formatter.field(
-            "conditional_forwarder_ip_addrs",
-            &self.conditional_forwarder_ip_addrs,
-        );
+        formatter.field("conditional_forwarder_ip_addrs", &self.conditional_forwarder_ip_addrs);
         formatter.field("selective_auth", &self.selective_auth);
         formatter.finish()
     }

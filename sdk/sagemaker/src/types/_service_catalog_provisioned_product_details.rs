@@ -44,27 +44,19 @@ impl ServiceCatalogProvisionedProductDetails {
 
 /// A builder for [`ServiceCatalogProvisionedProductDetails`](crate::types::ServiceCatalogProvisionedProductDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceCatalogProvisionedProductDetailsBuilder {
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ServiceCatalogProvisionedProductDetailsBuilder {
     /// <p>The ID of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -80,10 +72,7 @@ impl ServiceCatalogProvisionedProductDetailsBuilder {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p> </li>
     /// </ul>
-    pub fn provisioned_product_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_status_message = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +84,7 @@ impl ServiceCatalogProvisionedProductDetailsBuilder {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p> </li>
     /// </ul>
-    pub fn set_provisioned_product_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_status_message = input;
         self
     }
@@ -110,9 +96,7 @@ impl ServiceCatalogProvisionedProductDetailsBuilder {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p> </li>
     /// </ul>
-    pub fn get_provisioned_product_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_provisioned_product_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_product_status_message
     }
     /// Consumes the builder and constructs a [`ServiceCatalogProvisionedProductDetails`](crate::types::ServiceCatalogProvisionedProductDetails).

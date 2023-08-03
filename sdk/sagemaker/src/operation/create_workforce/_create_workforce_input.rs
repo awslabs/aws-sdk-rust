@@ -48,9 +48,7 @@ impl CreateWorkforceInput {
         self.tags.as_deref()
     }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
-    pub fn workforce_vpc_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkforceVpcConfigRequest> {
+    pub fn workforce_vpc_config(&self) -> ::std::option::Option<&crate::types::WorkforceVpcConfigRequest> {
         self.workforce_vpc_config.as_ref()
     }
 }
@@ -63,9 +61,7 @@ impl CreateWorkforceInput {
 
 /// A builder for [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkforceInputBuilder {
     pub(crate) cognito_config: ::std::option::Option<crate::types::CognitoConfig>,
     pub(crate) oidc_config: ::std::option::Option<crate::types::OidcConfig>,
@@ -83,10 +79,7 @@ impl CreateWorkforceInputBuilder {
     }
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
-    pub fn set_cognito_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CognitoConfig>,
-    ) -> Self {
+    pub fn set_cognito_config(mut self, input: ::std::option::Option<crate::types::CognitoConfig>) -> Self {
         self.cognito_config = input;
         self
     }
@@ -103,10 +96,7 @@ impl CreateWorkforceInputBuilder {
     }
     /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
     /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
-    pub fn set_oidc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OidcConfig>,
-    ) -> Self {
+    pub fn set_oidc_config(mut self, input: ::std::option::Option<crate::types::OidcConfig>) -> Self {
         self.oidc_config = input;
         self
     }
@@ -121,10 +111,7 @@ impl CreateWorkforceInputBuilder {
         self
     }
     /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
-    pub fn set_source_ip_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceIpConfig>,
-    ) -> Self {
+    pub fn set_source_ip_config(mut self, input: ::std::option::Option<crate::types::SourceIpConfig>) -> Self {
         self.source_ip_config = input;
         self
     }
@@ -133,18 +120,12 @@ impl CreateWorkforceInputBuilder {
         &self.source_ip_config
     }
     /// <p>The name of the private workforce.</p>
-    pub fn workforce_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the private workforce.</p>
-    pub fn set_workforce_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workforce_name = input;
         self
     }
@@ -164,10 +145,7 @@ impl CreateWorkforceInputBuilder {
         self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -181,26 +159,18 @@ impl CreateWorkforceInputBuilder {
         self
     }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
-    pub fn set_workforce_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
-    ) -> Self {
+    pub fn set_workforce_vpc_config(mut self, input: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>) -> Self {
         self.workforce_vpc_config = input;
         self
     }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
-    pub fn get_workforce_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
+    pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
         &self.workforce_vpc_config
     }
     /// Consumes the builder and constructs a [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workforce::CreateWorkforceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_workforce::CreateWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workforce::CreateWorkforceInput {
             cognito_config: self.cognito_config,
             oidc_config: self.oidc_config,

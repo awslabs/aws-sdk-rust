@@ -51,9 +51,7 @@ impl UriPathRouteInput {
 
 /// A builder for [`UriPathRouteInput`](crate::types::UriPathRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UriPathRouteInputBuilder {
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
     pub(crate) activation_state: ::std::option::Option<crate::types::RouteActivationState>,
@@ -82,17 +80,12 @@ impl UriPathRouteInputBuilder {
         self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn set_activation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteActivationState>,
-    ) -> Self {
+    pub fn set_activation_state(mut self, input: ::std::option::Option<crate::types::RouteActivationState>) -> Self {
         self.activation_state = input;
         self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn get_activation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteActivationState> {
+    pub fn get_activation_state(&self) -> &::std::option::Option<crate::types::RouteActivationState> {
         &self.activation_state
     }
     /// Appends an item to `methods`.
@@ -107,10 +100,7 @@ impl UriPathRouteInputBuilder {
         self
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn set_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
-    ) -> Self {
+    pub fn set_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>) -> Self {
         self.methods = input;
         self
     }

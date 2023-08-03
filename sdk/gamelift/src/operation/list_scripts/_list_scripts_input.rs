@@ -29,9 +29,7 @@ impl ListScriptsInput {
 
 /// A builder for [`ListScriptsInput`](crate::operation::list_scripts::ListScriptsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScriptsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl ListScriptsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListScriptsInput`](crate::operation::list_scripts::ListScriptsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_scripts::ListScriptsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_scripts::ListScriptsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_scripts::ListScriptsInput {
             limit: self.limit,
             next_token: self.next_token,

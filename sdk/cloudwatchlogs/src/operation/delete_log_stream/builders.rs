@@ -10,10 +10,7 @@ impl DeleteLogStreamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_log_stream::DeleteLogStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_log_stream::DeleteLogStreamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_log_stream::DeleteLogStreamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_log_stream();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteLogStreamFluentBuilder {
         }
     }
     /// Access the DeleteLogStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_log_stream::builders::DeleteLogStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_log_stream::builders::DeleteLogStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteLogStreamFluentBuilder {
             crate::operation::delete_log_stream::DeleteLogStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_log_stream::DeleteLogStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_log_stream::DeleteLogStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteLogStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteLogStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_log_stream::DeleteLogStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_log_stream::DeleteLogStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_log_stream::DeleteLogStreamError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteLogStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_log_stream::DeleteLogStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_log_stream::DeleteLogStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_log_stream::DeleteLogStreamError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteLogStreamFluentBuilder {
             crate::operation::delete_log_stream::DeleteLogStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_log_stream::DeleteLogStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_log_stream::DeleteLogStreamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl DeleteLogStreamFluentBuilder {
         self.inner.get_log_group_name()
     }
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_stream_name(input.into());
         self
     }
     /// <p>The name of the log stream.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_stream_name(input);
         self
     }

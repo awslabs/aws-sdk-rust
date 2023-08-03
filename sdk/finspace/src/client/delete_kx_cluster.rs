@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_kx_cluster::builders::DeleteKxClusterFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_kx_cluster::builders::DeleteKxClusterFluentBuilder::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     /// - On success, responds with [`DeleteKxClusterOutput`](crate::operation::delete_kx_cluster::DeleteKxClusterOutput)
     /// - On failure, responds with [`SdkError<DeleteKxClusterError>`](crate::operation::delete_kx_cluster::DeleteKxClusterError)
-    pub fn delete_kx_cluster(
-        &self,
-    ) -> crate::operation::delete_kx_cluster::builders::DeleteKxClusterFluentBuilder {
-        crate::operation::delete_kx_cluster::builders::DeleteKxClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_kx_cluster(&self) -> crate::operation::delete_kx_cluster::builders::DeleteKxClusterFluentBuilder {
+        crate::operation::delete_kx_cluster::builders::DeleteKxClusterFluentBuilder::new(self.handle.clone())
     }
 }

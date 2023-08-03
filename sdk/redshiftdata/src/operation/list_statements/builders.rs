@@ -10,10 +10,7 @@ impl ListStatementsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_statements::ListStatementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_statements::ListStatementsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_statements::ListStatementsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_statements();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListStatementsFluentBuilder {
         }
     }
     /// Access the ListStatements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_statements::builders::ListStatementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_statements::builders::ListStatementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListStatementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl ListStatementsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_statements::paginator::ListStatementsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_statements::paginator::ListStatementsPaginator {
-        crate::operation::list_statements::paginator::ListStatementsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_statements::paginator::ListStatementsPaginator {
+        crate::operation::list_statements::paginator::ListStatementsPaginator::new(self.handle, self.inner)
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,18 +142,12 @@ impl ListStatementsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_name(input.into());
         self
     }
     /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_name(input);
         self
     }

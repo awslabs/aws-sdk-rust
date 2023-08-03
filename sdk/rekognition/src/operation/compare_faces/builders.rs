@@ -10,10 +10,7 @@ impl CompareFacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::compare_faces::CompareFacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::compare_faces::CompareFacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.compare_faces();
         fluent_builder.inner = self;
@@ -60,10 +57,7 @@ impl CompareFacesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::compare_faces::CompareFaces,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::compare_faces::CompareFaces, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
     > {
         let handle = self.handle.clone();
@@ -74,10 +68,7 @@ impl CompareFacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,10 +110,7 @@ impl CompareFacesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::compare_faces::CompareFaces,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::compare_faces::CompareFaces, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
     > {
         self.customize_middleware().await
@@ -183,10 +171,7 @@ impl CompareFacesFluentBuilder {
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    pub fn set_quality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QualityFilter>,
-    ) -> Self {
+    pub fn set_quality_filter(mut self, input: ::std::option::Option<crate::types::QualityFilter>) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self
     }

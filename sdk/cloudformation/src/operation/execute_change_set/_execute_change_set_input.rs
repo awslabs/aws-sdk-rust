@@ -47,17 +47,14 @@ impl ExecuteChangeSetInput {
 }
 impl ExecuteChangeSetInput {
     /// Creates a new builder-style object to manufacture [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
-    pub fn builder() -> crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder {
         crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteChangeSetInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -66,18 +63,12 @@ pub struct ExecuteChangeSetInputBuilder {
 }
 impl ExecuteChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -100,18 +91,12 @@ impl ExecuteChangeSetInputBuilder {
         &self.stack_name
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -151,17 +136,12 @@ impl ExecuteChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_change_set::ExecuteChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::execute_change_set::ExecuteChangeSetInput {
-                change_set_name: self.change_set_name,
-                stack_name: self.stack_name,
-                client_request_token: self.client_request_token,
-                disable_rollback: self.disable_rollback,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::execute_change_set::ExecuteChangeSetInput {
+            change_set_name: self.change_set_name,
+            stack_name: self.stack_name,
+            client_request_token: self.client_request_token,
+            disable_rollback: self.disable_rollback,
+        })
     }
 }

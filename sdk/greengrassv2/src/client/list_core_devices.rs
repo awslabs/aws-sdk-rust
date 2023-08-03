@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`core_devices(Option<Vec<CoreDevice>>)`](crate::operation::list_core_devices::ListCoreDevicesOutput::core_devices): <p>A list that summarizes each core device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_devices::ListCoreDevicesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListCoreDevicesError>`](crate::operation::list_core_devices::ListCoreDevicesError)
-    pub fn list_core_devices(
-        &self,
-    ) -> crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder {
-        crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_core_devices(&self) -> crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder {
+        crate::operation::list_core_devices::builders::ListCoreDevicesFluentBuilder::new(self.handle.clone())
     }
 }

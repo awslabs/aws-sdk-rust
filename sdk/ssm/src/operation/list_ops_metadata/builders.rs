@@ -10,10 +10,7 @@ impl ListOpsMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_ops_metadata::ListOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_ops_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListOpsMetadataFluentBuilder {
         }
     }
     /// Access the ListOpsMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ops_metadata::builders::ListOpsMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_ops_metadata::builders::ListOpsMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListOpsMetadataFluentBuilder {
             crate::operation::list_ops_metadata::ListOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListOpsMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ops_metadata::ListOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ops_metadata::ListOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListOpsMetadataFluentBuilder {
             crate::operation::list_ops_metadata::ListOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator {
-        crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator {
+        crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -143,17 +122,12 @@ impl ListOpsMetadataFluentBuilder {
         self
     }
     /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

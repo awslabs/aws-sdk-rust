@@ -29,16 +29,14 @@ impl DisassociatePersonasFromEntitiesInput {
 }
 impl DisassociatePersonasFromEntitiesInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePersonasFromEntitiesInput`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput).
-    pub fn builder() -> crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesInputBuilder {
         crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePersonasFromEntitiesInput`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePersonasFromEntitiesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
         self
     }
     /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
-    pub fn set_entity_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_ids = input;
         self
     }
@@ -97,16 +92,18 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
         &self.entity_ids
     }
     /// Consumes the builder and constructs a [`DisassociatePersonasFromEntitiesInput`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput {
-                id: self.id
-                ,
-                index_id: self.index_id
-                ,
-                entity_ids: self.entity_ids
-                ,
-            }
+                id: self.id,
+                index_id: self.index_id,
+                entity_ids: self.entity_ids,
+            },
         )
     }
 }

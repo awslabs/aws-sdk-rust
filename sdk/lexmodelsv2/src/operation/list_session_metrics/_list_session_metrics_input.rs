@@ -24,8 +24,7 @@ pub struct ListSessionMetricsInput {
     /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub group_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>,
+    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
@@ -63,9 +62,7 @@ impl ListSessionMetricsInput {
     /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
     /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
-    pub fn group_by(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnalyticsSessionGroupBySpecification]> {
+    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsSessionGroupBySpecification]> {
         self.group_by.as_deref()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
@@ -84,29 +81,22 @@ impl ListSessionMetricsInput {
 }
 impl ListSessionMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListSessionMetricsInput`](crate::operation::list_session_metrics::ListSessionMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::list_session_metrics::builders::ListSessionMetricsInputBuilder {
+    pub fn builder() -> crate::operation::list_session_metrics::builders::ListSessionMetricsInputBuilder {
         crate::operation::list_session_metrics::builders::ListSessionMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSessionMetricsInput`](crate::operation::list_session_metrics::ListSessionMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSessionMetricsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionMetric>>,
-    pub(crate) bin_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    pub(crate) group_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionMetric>>,
+    pub(crate) bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -131,10 +121,7 @@ impl ListSessionMetricsInputBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see session metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -148,10 +135,7 @@ impl ListSessionMetricsInputBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see session metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -171,17 +155,12 @@ impl ListSessionMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionMetric>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionMetric>> {
         &self.metrics
     }
     /// Appends an item to `bin_by`.
@@ -196,17 +175,12 @@ impl ListSessionMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn set_bin_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    ) -> Self {
+    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>) -> Self {
         self.bin_by = input;
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn get_bin_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
         &self.bin_by
     }
     /// Appends an item to `group_by`.
@@ -229,12 +203,7 @@ impl ListSessionMetricsInputBuilder {
     /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
     /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>,
-        >,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>) -> Self {
         self.group_by = input;
         self
     }
@@ -243,10 +212,7 @@ impl ListSessionMetricsInputBuilder {
     /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
     /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>
-    {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>> {
         &self.group_by
     }
     /// Appends an item to `filters`.
@@ -261,17 +227,12 @@ impl ListSessionMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -308,22 +269,17 @@ impl ListSessionMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListSessionMetricsInput`](crate::operation::list_session_metrics::ListSessionMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_session_metrics::ListSessionMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_session_metrics::ListSessionMetricsInput {
-                bot_id: self.bot_id,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                metrics: self.metrics,
-                bin_by: self.bin_by,
-                group_by: self.group_by,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_session_metrics::ListSessionMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_session_metrics::ListSessionMetricsInput {
+            bot_id: self.bot_id,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            metrics: self.metrics,
+            bin_by: self.bin_by,
+            group_by: self.group_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

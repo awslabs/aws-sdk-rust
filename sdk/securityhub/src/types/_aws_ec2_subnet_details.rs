@@ -42,8 +42,7 @@ pub struct AwsEc2SubnetDetails {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
 }
 impl AwsEc2SubnetDetails {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
@@ -95,9 +94,7 @@ impl AwsEc2SubnetDetails {
         self.vpc_id.as_deref()
     }
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv6CidrBlockAssociation]> {
+    pub fn ipv6_cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::Ipv6CidrBlockAssociation]> {
         self.ipv6_cidr_block_association_set.as_deref()
     }
 }
@@ -110,9 +107,7 @@ impl AwsEc2SubnetDetails {
 
 /// A builder for [`AwsEc2SubnetDetails`](crate::types::AwsEc2SubnetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2SubnetDetailsBuilder {
     pub(crate) assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -126,8 +121,7 @@ pub struct AwsEc2SubnetDetailsBuilder {
     pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
 }
 impl AwsEc2SubnetDetailsBuilder {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
@@ -136,10 +130,7 @@ impl AwsEc2SubnetDetailsBuilder {
         self
     }
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
-    pub fn set_assign_ipv6_address_on_creation(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_assign_ipv6_address_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assign_ipv6_address_on_creation = input;
         self
     }
@@ -148,18 +139,12 @@ impl AwsEc2SubnetDetailsBuilder {
         &self.assign_ipv6_address_on_creation
     }
     /// <p>The Availability Zone for the subnet.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the subnet.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -168,18 +153,12 @@ impl AwsEc2SubnetDetailsBuilder {
         &self.availability_zone
     }
     /// <p>The identifier of the Availability Zone for the subnet.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Availability Zone for the subnet.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -318,10 +297,7 @@ impl AwsEc2SubnetDetailsBuilder {
     /// To override the contents of this collection use [`set_ipv6_cidr_block_association_set`](Self::set_ipv6_cidr_block_association_set).
     ///
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(
-        mut self,
-        input: crate::types::Ipv6CidrBlockAssociation,
-    ) -> Self {
+    pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::Ipv6CidrBlockAssociation) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
         v.push(input);
         self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
@@ -336,17 +312,13 @@ impl AwsEc2SubnetDetailsBuilder {
         self
     }
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    pub fn get_ipv6_cidr_block_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
+    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
         &self.ipv6_cidr_block_association_set
     }
     /// Consumes the builder and constructs a [`AwsEc2SubnetDetails`](crate::types::AwsEc2SubnetDetails).
     pub fn build(self) -> crate::types::AwsEc2SubnetDetails {
         crate::types::AwsEc2SubnetDetails {
-            assign_ipv6_address_on_creation: self
-                .assign_ipv6_address_on_creation
-                .unwrap_or_default(),
+            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation.unwrap_or_default(),
             availability_zone: self.availability_zone,
             availability_zone_id: self.availability_zone_id,
             available_ip_address_count: self.available_ip_address_count.unwrap_or_default(),

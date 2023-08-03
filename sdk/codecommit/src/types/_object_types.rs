@@ -37,9 +37,7 @@ impl ObjectTypes {
 
 /// A builder for [`ObjectTypes`](crate::types::ObjectTypes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectTypesBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ObjectTypeEnum>,
     pub(crate) destination: ::std::option::Option<crate::types::ObjectTypeEnum>,
@@ -52,10 +50,7 @@ impl ObjectTypesBuilder {
         self
     }
     /// <p>The type of the object in the source branch.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectTypeEnum>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
         self.source = input;
         self
     }
@@ -69,10 +64,7 @@ impl ObjectTypesBuilder {
         self
     }
     /// <p>The type of the object in the destination branch.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectTypeEnum>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
         self.destination = input;
         self
     }

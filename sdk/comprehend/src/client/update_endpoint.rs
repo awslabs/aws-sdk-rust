@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput) with field(s):
     ///   - [`desired_model_arn(Option<String>)`](crate::operation::update_endpoint::UpdateEndpointOutput::desired_model_arn): <p>The Amazon Resource Number (ARN) of the new model.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::operation::update_endpoint::UpdateEndpointError)
-    pub fn update_endpoint(
-        &self,
-    ) -> crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder {
-        crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_endpoint(&self) -> crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder {
+        crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder::new(self.handle.clone())
     }
 }

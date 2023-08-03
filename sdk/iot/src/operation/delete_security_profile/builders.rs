@@ -38,10 +38,7 @@ impl DeleteSecurityProfileFluentBuilder {
         }
     }
     /// Access the DeleteSecurityProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteSecurityProfileFluentBuilder {
             crate::operation::delete_security_profile::DeleteSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_profile::DeleteSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_profile::DeleteSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_profile::DeleteSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_profile::DeleteSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_profile::DeleteSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_profile::DeleteSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_profile::DeleteSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_profile::DeleteSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DeleteSecurityProfileFluentBuilder {
             crate::operation::delete_security_profile::DeleteSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_profile::DeleteSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_profile::DeleteSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the security profile to be deleted.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The name of the security profile to be deleted.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }

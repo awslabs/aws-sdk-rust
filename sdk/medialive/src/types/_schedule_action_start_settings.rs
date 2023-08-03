@@ -6,34 +6,25 @@
 pub struct ScheduleActionStartSettings {
     /// Option for specifying the start time for an action.
     #[doc(hidden)]
-    pub fixed_mode_schedule_action_start_settings:
-        ::std::option::Option<crate::types::FixedModeScheduleActionStartSettings>,
+    pub fixed_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FixedModeScheduleActionStartSettings>,
     /// Option for specifying an action as relative to another action.
     #[doc(hidden)]
-    pub follow_mode_schedule_action_start_settings:
-        ::std::option::Option<crate::types::FollowModeScheduleActionStartSettings>,
+    pub follow_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FollowModeScheduleActionStartSettings>,
     /// Option for specifying an action that should be applied immediately.
     #[doc(hidden)]
-    pub immediate_mode_schedule_action_start_settings:
-        ::std::option::Option<crate::types::ImmediateModeScheduleActionStartSettings>,
+    pub immediate_mode_schedule_action_start_settings: ::std::option::Option<crate::types::ImmediateModeScheduleActionStartSettings>,
 }
 impl ScheduleActionStartSettings {
     /// Option for specifying the start time for an action.
-    pub fn fixed_mode_schedule_action_start_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FixedModeScheduleActionStartSettings> {
+    pub fn fixed_mode_schedule_action_start_settings(&self) -> ::std::option::Option<&crate::types::FixedModeScheduleActionStartSettings> {
         self.fixed_mode_schedule_action_start_settings.as_ref()
     }
     /// Option for specifying an action as relative to another action.
-    pub fn follow_mode_schedule_action_start_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FollowModeScheduleActionStartSettings> {
+    pub fn follow_mode_schedule_action_start_settings(&self) -> ::std::option::Option<&crate::types::FollowModeScheduleActionStartSettings> {
         self.follow_mode_schedule_action_start_settings.as_ref()
     }
     /// Option for specifying an action that should be applied immediately.
-    pub fn immediate_mode_schedule_action_start_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImmediateModeScheduleActionStartSettings> {
+    pub fn immediate_mode_schedule_action_start_settings(&self) -> ::std::option::Option<&crate::types::ImmediateModeScheduleActionStartSettings> {
         self.immediate_mode_schedule_action_start_settings.as_ref()
     }
 }
@@ -46,23 +37,15 @@ impl ScheduleActionStartSettings {
 
 /// A builder for [`ScheduleActionStartSettings`](crate::types::ScheduleActionStartSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleActionStartSettingsBuilder {
-    pub(crate) fixed_mode_schedule_action_start_settings:
-        ::std::option::Option<crate::types::FixedModeScheduleActionStartSettings>,
-    pub(crate) follow_mode_schedule_action_start_settings:
-        ::std::option::Option<crate::types::FollowModeScheduleActionStartSettings>,
-    pub(crate) immediate_mode_schedule_action_start_settings:
-        ::std::option::Option<crate::types::ImmediateModeScheduleActionStartSettings>,
+    pub(crate) fixed_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FixedModeScheduleActionStartSettings>,
+    pub(crate) follow_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FollowModeScheduleActionStartSettings>,
+    pub(crate) immediate_mode_schedule_action_start_settings: ::std::option::Option<crate::types::ImmediateModeScheduleActionStartSettings>,
 }
 impl ScheduleActionStartSettingsBuilder {
     /// Option for specifying the start time for an action.
-    pub fn fixed_mode_schedule_action_start_settings(
-        mut self,
-        input: crate::types::FixedModeScheduleActionStartSettings,
-    ) -> Self {
+    pub fn fixed_mode_schedule_action_start_settings(mut self, input: crate::types::FixedModeScheduleActionStartSettings) -> Self {
         self.fixed_mode_schedule_action_start_settings = ::std::option::Option::Some(input);
         self
     }
@@ -75,16 +58,11 @@ impl ScheduleActionStartSettingsBuilder {
         self
     }
     /// Option for specifying the start time for an action.
-    pub fn get_fixed_mode_schedule_action_start_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FixedModeScheduleActionStartSettings> {
+    pub fn get_fixed_mode_schedule_action_start_settings(&self) -> &::std::option::Option<crate::types::FixedModeScheduleActionStartSettings> {
         &self.fixed_mode_schedule_action_start_settings
     }
     /// Option for specifying an action as relative to another action.
-    pub fn follow_mode_schedule_action_start_settings(
-        mut self,
-        input: crate::types::FollowModeScheduleActionStartSettings,
-    ) -> Self {
+    pub fn follow_mode_schedule_action_start_settings(mut self, input: crate::types::FollowModeScheduleActionStartSettings) -> Self {
         self.follow_mode_schedule_action_start_settings = ::std::option::Option::Some(input);
         self
     }
@@ -97,16 +75,11 @@ impl ScheduleActionStartSettingsBuilder {
         self
     }
     /// Option for specifying an action as relative to another action.
-    pub fn get_follow_mode_schedule_action_start_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FollowModeScheduleActionStartSettings> {
+    pub fn get_follow_mode_schedule_action_start_settings(&self) -> &::std::option::Option<crate::types::FollowModeScheduleActionStartSettings> {
         &self.follow_mode_schedule_action_start_settings
     }
     /// Option for specifying an action that should be applied immediately.
-    pub fn immediate_mode_schedule_action_start_settings(
-        mut self,
-        input: crate::types::ImmediateModeScheduleActionStartSettings,
-    ) -> Self {
+    pub fn immediate_mode_schedule_action_start_settings(mut self, input: crate::types::ImmediateModeScheduleActionStartSettings) -> Self {
         self.immediate_mode_schedule_action_start_settings = ::std::option::Option::Some(input);
         self
     }
@@ -127,12 +100,9 @@ impl ScheduleActionStartSettingsBuilder {
     /// Consumes the builder and constructs a [`ScheduleActionStartSettings`](crate::types::ScheduleActionStartSettings).
     pub fn build(self) -> crate::types::ScheduleActionStartSettings {
         crate::types::ScheduleActionStartSettings {
-            fixed_mode_schedule_action_start_settings: self
-                .fixed_mode_schedule_action_start_settings,
-            follow_mode_schedule_action_start_settings: self
-                .follow_mode_schedule_action_start_settings,
-            immediate_mode_schedule_action_start_settings: self
-                .immediate_mode_schedule_action_start_settings,
+            fixed_mode_schedule_action_start_settings: self.fixed_mode_schedule_action_start_settings,
+            follow_mode_schedule_action_start_settings: self.follow_mode_schedule_action_start_settings,
+            immediate_mode_schedule_action_start_settings: self.immediate_mode_schedule_action_start_settings,
         }
     }
 }

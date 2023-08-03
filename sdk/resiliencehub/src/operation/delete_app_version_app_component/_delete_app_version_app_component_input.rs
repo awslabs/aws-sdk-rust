@@ -29,16 +29,14 @@ impl DeleteAppVersionAppComponentInput {
 }
 impl DeleteAppVersionAppComponentInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppVersionAppComponentInput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput).
-    pub fn builder() -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder{
+    pub fn builder() -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder {
         crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppVersionAppComponentInput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppVersionAppComponentInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl DeleteAppVersionAppComponentInputBuilder {
         crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput {
-                app_arn: self.app_arn,
-                id: self.id,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput {
+            app_arn: self.app_arn,
+            id: self.id,
+            client_token: self.client_token,
+        })
     }
 }

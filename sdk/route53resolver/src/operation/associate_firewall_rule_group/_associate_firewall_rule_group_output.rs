@@ -5,15 +5,12 @@
 pub struct AssociateFirewallRuleGroupOutput {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
     #[doc(hidden)]
-    pub firewall_rule_group_association:
-        ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
+    pub firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateFirewallRuleGroupOutput {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-    pub fn firewall_rule_group_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociation> {
+    pub fn firewall_rule_group_association(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for AssociateFirewallRuleGroupOutput {
 }
 impl AssociateFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupOutput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput).
-    pub fn builder() -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupOutputBuilder{
+    pub fn builder() -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupOutputBuilder {
         crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateFirewallRuleGroupOutput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupOutputBuilder {
-    pub(crate) firewall_rule_group_association:
-        ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
+    pub(crate) firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateFirewallRuleGroupOutputBuilder {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-    pub fn firewall_rule_group_association(
-        mut self,
-        input: crate::types::FirewallRuleGroupAssociation,
-    ) -> Self {
+    pub fn firewall_rule_group_association(mut self, input: crate::types::FirewallRuleGroupAssociation) -> Self {
         self.firewall_rule_group_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-    pub fn set_firewall_rule_group_association(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_association(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>) -> Self {
         self.firewall_rule_group_association = input;
         self
     }
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-    pub fn get_firewall_rule_group_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociation> {
+    pub fn get_firewall_rule_group_association(&self) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociation> {
         &self.firewall_rule_group_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl AssociateFirewallRuleGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateFirewallRuleGroupOutput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput {
+    pub fn build(self) -> crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput {
         crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput {
             firewall_rule_group_association: self.firewall_rule_group_association,
             _request_id: self._request_id,

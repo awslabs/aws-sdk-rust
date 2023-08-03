@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`studio_id(Option<String>)`](crate::operation::create_studio::CreateStudioOutput::studio_id): <p>The ID of the Amazon EMR Studio.</p>
     ///   - [`url(Option<String>)`](crate::operation::create_studio::CreateStudioOutput::url): <p>The unique Studio access URL.</p>
     /// - On failure, responds with [`SdkError<CreateStudioError>`](crate::operation::create_studio::CreateStudioError)
-    pub fn create_studio(
-        &self,
-    ) -> crate::operation::create_studio::builders::CreateStudioFluentBuilder {
-        crate::operation::create_studio::builders::CreateStudioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_studio(&self) -> crate::operation::create_studio::builders::CreateStudioFluentBuilder {
+        crate::operation::create_studio::builders::CreateStudioFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,8 +8,7 @@ pub struct ListMultipartReadSetUploadsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> An array of multipart uploads. </p>
     #[doc(hidden)]
-    pub uploads:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,
+    pub uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,
     _request_id: Option<String>,
 }
 impl ListMultipartReadSetUploadsOutput {
@@ -18,9 +17,7 @@ impl ListMultipartReadSetUploadsOutput {
         self.next_token.as_deref()
     }
     /// <p> An array of multipart uploads. </p>
-    pub fn uploads(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MultipartReadSetUploadListItem]> {
+    pub fn uploads(&self) -> ::std::option::Option<&[crate::types::MultipartReadSetUploadListItem]> {
         self.uploads.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListMultipartReadSetUploadsOutput {
 }
 impl ListMultipartReadSetUploadsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultipartReadSetUploadsOutput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput).
-    pub fn builder() -> crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsOutputBuilder{
+    pub fn builder() -> crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsOutputBuilder {
         crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultipartReadSetUploadsOutput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) uploads:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,
+    pub(crate) uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,
     _request_id: Option<String>,
 }
 impl ListMultipartReadSetUploadsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListMultipartReadSetUploadsOutputBuilder {
         self
     }
     /// <p> An array of multipart uploads. </p>
-    pub fn set_uploads(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,
-    ) -> Self {
+    pub fn set_uploads(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>) -> Self {
         self.uploads = input;
         self
     }
     /// <p> An array of multipart uploads. </p>
-    pub fn get_uploads(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>> {
+    pub fn get_uploads(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>> {
         &self.uploads
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListMultipartReadSetUploadsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMultipartReadSetUploadsOutput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput {
+    pub fn build(self) -> crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput {
         crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput {
             next_token: self.next_token,
             uploads: self.uploads,

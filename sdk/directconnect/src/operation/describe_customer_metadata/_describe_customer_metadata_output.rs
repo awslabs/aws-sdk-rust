@@ -38,18 +38,14 @@ impl ::aws_http::request_id::RequestId for DescribeCustomerMetadataOutput {
 }
 impl DescribeCustomerMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder {
         crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomerMetadataOutputBuilder {
     pub(crate) agreements: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
     pub(crate) nni_partner_type: ::std::option::Option<crate::types::NniPartnerType>,
@@ -68,17 +64,12 @@ impl DescribeCustomerMetadataOutputBuilder {
         self
     }
     /// <p>The list of customer agreements.</p>
-    pub fn set_agreements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
-    ) -> Self {
+    pub fn set_agreements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>) -> Self {
         self.agreements = input;
         self
     }
     /// <p>The list of customer agreements.</p>
-    pub fn get_agreements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>> {
+    pub fn get_agreements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>> {
         &self.agreements
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
@@ -97,10 +88,7 @@ impl DescribeCustomerMetadataOutputBuilder {
     /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
     /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
-    pub fn set_nni_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NniPartnerType>,
-    ) -> Self {
+    pub fn set_nni_partner_type(mut self, input: ::std::option::Option<crate::types::NniPartnerType>) -> Self {
         self.nni_partner_type = input;
         self
     }
@@ -123,9 +111,7 @@ impl DescribeCustomerMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
+    pub fn build(self) -> crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
         crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
             agreements: self.agreements,
             nni_partner_type: self.nni_partner_type,

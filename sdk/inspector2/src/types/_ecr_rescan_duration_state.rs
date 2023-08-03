@@ -37,9 +37,7 @@ impl EcrRescanDurationState {
 
 /// A builder for [`EcrRescanDurationState`](crate::types::EcrRescanDurationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcrRescanDurationStateBuilder {
     pub(crate) rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
     pub(crate) status: ::std::option::Option<crate::types::EcrRescanDurationStatus>,
@@ -52,10 +50,7 @@ impl EcrRescanDurationStateBuilder {
         self
     }
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    pub fn set_rescan_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::EcrRescanDuration>,
-    ) -> Self {
+    pub fn set_rescan_duration(mut self, input: ::std::option::Option<crate::types::EcrRescanDuration>) -> Self {
         self.rescan_duration = input;
         self
     }
@@ -69,10 +64,7 @@ impl EcrRescanDurationStateBuilder {
         self
     }
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EcrRescanDurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EcrRescanDurationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -86,10 +78,7 @@ impl EcrRescanDurationStateBuilder {
         self
     }
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

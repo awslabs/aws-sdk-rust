@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`regional_bucket_list(Option<Vec<RegionalBucket>>)`](crate::operation::list_regional_buckets::ListRegionalBucketsOutput::regional_bucket_list): <p></p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_regional_buckets::ListRegionalBucketsOutput::next_token): <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
     /// - On failure, responds with [`SdkError<ListRegionalBucketsError>`](crate::operation::list_regional_buckets::ListRegionalBucketsError)
-    pub fn list_regional_buckets(
-        &self,
-    ) -> crate::operation::list_regional_buckets::builders::ListRegionalBucketsFluentBuilder {
-        crate::operation::list_regional_buckets::builders::ListRegionalBucketsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_regional_buckets(&self) -> crate::operation::list_regional_buckets::builders::ListRegionalBucketsFluentBuilder {
+        crate::operation::list_regional_buckets::builders::ListRegionalBucketsFluentBuilder::new(self.handle.clone())
     }
 }

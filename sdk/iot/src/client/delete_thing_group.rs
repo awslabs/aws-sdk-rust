@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`expected_version(i64)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::set_expected_version): <p>The expected version of the thing group to delete.</p>
     /// - On success, responds with [`DeleteThingGroupOutput`](crate::operation::delete_thing_group::DeleteThingGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteThingGroupError>`](crate::operation::delete_thing_group::DeleteThingGroupError)
-    pub fn delete_thing_group(
-        &self,
-    ) -> crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder {
-        crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_thing_group(&self) -> crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder {
+        crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

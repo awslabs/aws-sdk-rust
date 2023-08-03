@@ -10,9 +10,7 @@ pub struct DeleteInstanceConnectEndpointOutput {
 }
 impl DeleteInstanceConnectEndpointOutput {
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Ec2InstanceConnectEndpoint> {
+    pub fn instance_connect_endpoint(&self) -> ::std::option::Option<&crate::types::Ec2InstanceConnectEndpoint> {
         self.instance_connect_endpoint.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteInstanceConnectEndpointOutput {
 }
 impl DeleteInstanceConnectEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceConnectEndpointOutput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput).
-    pub fn builder() -> crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointOutputBuilder {
         crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInstanceConnectEndpointOutput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceConnectEndpointOutputBuilder {
-    pub(crate) instance_connect_endpoint:
-        ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
+    pub(crate) instance_connect_endpoint: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
     _request_id: Option<String>,
 }
 impl DeleteInstanceConnectEndpointOutputBuilder {
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint(
-        mut self,
-        input: crate::types::Ec2InstanceConnectEndpoint,
-    ) -> Self {
+    pub fn instance_connect_endpoint(mut self, input: crate::types::Ec2InstanceConnectEndpoint) -> Self {
         self.instance_connect_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn set_instance_connect_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint(mut self, input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>) -> Self {
         self.instance_connect_endpoint = input;
         self
     }
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn get_instance_connect_endpoint(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpoint> {
+    pub fn get_instance_connect_endpoint(&self) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpoint> {
         &self.instance_connect_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,7 @@ impl DeleteInstanceConnectEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInstanceConnectEndpointOutput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput
-    {
+    pub fn build(self) -> crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput {
         crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput {
             instance_connect_endpoint: self.instance_connect_endpoint,
             _request_id: self._request_id,

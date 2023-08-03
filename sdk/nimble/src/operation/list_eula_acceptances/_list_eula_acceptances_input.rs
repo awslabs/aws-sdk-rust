@@ -29,18 +29,14 @@ impl ListEulaAcceptancesInput {
 }
 impl ListEulaAcceptancesInput {
     /// Creates a new builder-style object to manufacture [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
-        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
+        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEulaAcceptancesInputBuilder {
     pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl ListEulaAcceptancesInputBuilder {
         self
     }
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eula_ids = input;
         self
     }
@@ -101,16 +94,12 @@ impl ListEulaAcceptancesInputBuilder {
     /// Consumes the builder and constructs a [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_eula_acceptances::ListEulaAcceptancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
-                eula_ids: self.eula_ids,
-                next_token: self.next_token,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
+            eula_ids: self.eula_ids,
+            next_token: self.next_token,
+            studio_id: self.studio_id,
+        })
     }
 }

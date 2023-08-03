@@ -34,9 +34,7 @@ impl EndpointIdentifier {
 
 /// A builder for [`EndpointIdentifier`](crate::types::EndpointIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointIdentifierBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_ip_preservation_enabled: ::std::option::Option<bool>,
@@ -67,10 +65,7 @@ impl EndpointIdentifierBuilder {
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    pub fn set_client_ip_preservation_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_client_ip_preservation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.client_ip_preservation_enabled = input;
         self
     }

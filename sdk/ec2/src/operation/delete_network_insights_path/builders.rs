@@ -26,7 +26,7 @@ impl DeleteNetworkInsightsPathInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsPathFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder,
+    inner: crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder,
 }
 impl DeleteNetworkInsightsPathFluentBuilder {
     /// Creates a new `DeleteNetworkInsightsPath`.
@@ -37,7 +37,7 @@ impl DeleteNetworkInsightsPathFluentBuilder {
         }
     }
     /// Access the DeleteNetworkInsightsPath as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteNetworkInsightsPathFluentBuilder {
             crate::operation::delete_network_insights_path::DeleteNetworkInsightsPath,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteNetworkInsightsPathFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteNetworkInsightsPathFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteNetworkInsightsPathFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteNetworkInsightsPathFluentBuilder {
             crate::operation::delete_network_insights_path::DeleteNetworkInsightsPath,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteNetworkInsightsPathFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_insights_path_id(input.into());
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_insights_path_id(input);
         self
     }

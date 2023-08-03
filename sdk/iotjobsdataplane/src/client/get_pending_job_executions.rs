@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`in_progress_jobs(Option<Vec<JobExecutionSummary>>)`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput::in_progress_jobs): <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
     ///   - [`queued_jobs(Option<Vec<JobExecutionSummary>>)`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput::queued_jobs): <p>A list of JobExecutionSummary objects with status QUEUED.</p>
     /// - On failure, responds with [`SdkError<GetPendingJobExecutionsError>`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsError)
-    pub fn get_pending_job_executions(
-        &self,
-    ) -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder
-    {
+    pub fn get_pending_job_executions(&self) -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder {
         crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

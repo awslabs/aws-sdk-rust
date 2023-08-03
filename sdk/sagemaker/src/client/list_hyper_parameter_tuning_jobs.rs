@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`hyper_parameter_tuning_job_summaries(Option<Vec<HyperParameterTuningJobSummary>>)`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput::hyper_parameter_tuning_job_summaries): <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput::next_token): <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListHyperParameterTuningJobsError>`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError)
-    pub fn list_hyper_parameter_tuning_jobs(&self) -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder{
+    pub fn list_hyper_parameter_tuning_jobs(
+        &self,
+    ) -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder {
         crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::new(self.handle.clone())
     }
 }

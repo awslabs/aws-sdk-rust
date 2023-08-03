@@ -28,12 +28,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUserPoolClientOutput`](crate::operation::create_user_pool_client::CreateUserPoolClientOutput) with field(s):
     ///   - [`user_pool_client(Option<UserPoolClientType>)`](crate::operation::create_user_pool_client::CreateUserPoolClientOutput::user_pool_client): <p>The user pool client that was just created.</p>
     /// - On failure, responds with [`SdkError<CreateUserPoolClientError>`](crate::operation::create_user_pool_client::CreateUserPoolClientError)
-    pub fn create_user_pool_client(
-        &self,
-    ) -> crate::operation::create_user_pool_client::builders::CreateUserPoolClientFluentBuilder
-    {
-        crate::operation::create_user_pool_client::builders::CreateUserPoolClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_user_pool_client(&self) -> crate::operation::create_user_pool_client::builders::CreateUserPoolClientFluentBuilder {
+        crate::operation::create_user_pool_client::builders::CreateUserPoolClientFluentBuilder::new(self.handle.clone())
     }
 }

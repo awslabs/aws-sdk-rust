@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSigningJobsOutput {
 }
 impl ListSigningJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput).
-    pub fn builder() -> crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder {
         crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListSigningJobsOutputBuilder {
         self
     }
     /// <p>A list of your signing jobs.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>) -> Self {
         self.jobs = input;
         self
     }

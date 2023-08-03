@@ -37,9 +37,7 @@ impl BatchGetCodeSnippetFluentBuilder {
         }
     }
     /// Access the BatchGetCodeSnippet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchGetCodeSnippetFluentBuilder {
             crate::operation::batch_get_code_snippet::BatchGetCodeSnippet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchGetCodeSnippetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchGetCodeSnippetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchGetCodeSnippetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchGetCodeSnippetFluentBuilder {
             crate::operation::batch_get_code_snippet::BatchGetCodeSnippet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl BatchGetCodeSnippetFluentBuilder {
         self
     }
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_arns()
     }
 }

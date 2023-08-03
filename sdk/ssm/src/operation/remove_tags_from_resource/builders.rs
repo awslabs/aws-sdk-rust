@@ -26,8 +26,7 @@ impl RemoveTagsFromResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder,
+    inner: crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder,
 }
 impl RemoveTagsFromResourceFluentBuilder {
     /// Creates a new `RemoveTagsFromResource`.
@@ -38,10 +37,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         }
     }
     /// Access the RemoveTagsFromResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RemoveTagsFromResourceFluentBuilder {
             crate::operation::remove_tags_from_resource::RemoveTagsFromResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RemoveTagsFromResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RemoveTagsFromResourceFluentBuilder {
             crate::operation::remove_tags_from_resource::RemoveTagsFromResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -134,19 +119,14 @@ impl RemoveTagsFromResourceFluentBuilder {
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTypeForTagging>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
         self.inner.get_resource_type()
     }
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
@@ -197,10 +177,7 @@ impl RemoveTagsFromResourceFluentBuilder {
         self
     }
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

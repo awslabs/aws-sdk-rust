@@ -37,9 +37,7 @@ impl CreateBranchInput {
 
 /// A builder for [`CreateBranchInput`](crate::operation::create_branch::CreateBranchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBranchInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CreateBranchInputBuilder {
 }
 impl CreateBranchInputBuilder {
     /// <p>The name of the repository in which you want to create the new branch.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository in which you want to create the new branch.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -95,12 +87,7 @@ impl CreateBranchInputBuilder {
         &self.commit_id
     }
     /// Consumes the builder and constructs a [`CreateBranchInput`](crate::operation::create_branch::CreateBranchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_branch::CreateBranchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_branch::CreateBranchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_branch::CreateBranchInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

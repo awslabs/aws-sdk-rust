@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ActivateKeySigningKeyOutput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
     /// - On failure, responds with [`SdkError<ActivateKeySigningKeyError>`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyError)
-    pub fn activate_key_signing_key(
-        &self,
-    ) -> crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyFluentBuilder
-    {
+    pub fn activate_key_signing_key(&self) -> crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyFluentBuilder {
         crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetLegalHoldInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_legal_hold::GetLegalHoldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_legal_hold::GetLegalHoldError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_legal_hold::GetLegalHoldError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_legal_hold();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetLegalHoldFluentBuilder {
         }
     }
     /// Access the GetLegalHold as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_legal_hold::builders::GetLegalHoldInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_legal_hold::builders::GetLegalHoldInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetLegalHoldFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetLegalHoldFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
-    pub fn legal_hold_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.legal_hold_id(input.into());
         self
     }
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
-    pub fn set_legal_hold_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_legal_hold_id(input);
         self
     }

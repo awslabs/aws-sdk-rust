@@ -30,9 +30,7 @@ impl AwsElbLoadBalancerListenerDescription {
 
 /// A builder for [`AwsElbLoadBalancerListenerDescription`](crate::types::AwsElbLoadBalancerListenerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerListenerDescriptionBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl AwsElbLoadBalancerListenerDescriptionBuilder {
         self
     }
     /// <p>Information about the listener.</p>
-    pub fn set_listener(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
-    ) -> Self {
+    pub fn set_listener(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>) -> Self {
         self.listener = input;
         self
     }
@@ -67,17 +62,12 @@ impl AwsElbLoadBalancerListenerDescriptionBuilder {
         self
     }
     /// <p>The policies enabled for the listener.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>The policies enabled for the listener.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerListenerDescription`](crate::types::AwsElbLoadBalancerListenerDescription).

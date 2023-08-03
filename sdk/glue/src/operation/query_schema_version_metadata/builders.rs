@@ -26,7 +26,7 @@ impl QuerySchemaVersionMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct QuerySchemaVersionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder,
+    inner: crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder,
 }
 impl QuerySchemaVersionMetadataFluentBuilder {
     /// Creates a new `QuerySchemaVersionMetadata`.
@@ -37,7 +37,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         }
     }
     /// Access the QuerySchemaVersionMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
             crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
             crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -140,32 +129,21 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         self.inner.get_schema_version_number()
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version_id(input.into());
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version_id(input);
         self
     }
@@ -183,17 +161,12 @@ impl QuerySchemaVersionMetadataFluentBuilder {
         self
     }
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-    pub fn set_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>,
-    ) -> Self {
+    pub fn set_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>) -> Self {
         self.inner = self.inner.set_metadata_list(input);
         self
     }
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-    pub fn get_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>> {
+    pub fn get_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>> {
         self.inner.get_metadata_list()
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>

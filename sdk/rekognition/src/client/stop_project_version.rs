@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput) with field(s):
     ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::stop_project_version::StopProjectVersionOutput::status): <p>The current status of the stop operation. </p>
     /// - On failure, responds with [`SdkError<StopProjectVersionError>`](crate::operation::stop_project_version::StopProjectVersionError)
-    pub fn stop_project_version(
-        &self,
-    ) -> crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder {
-        crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_project_version(&self) -> crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder {
+        crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::new(self.handle.clone())
     }
 }

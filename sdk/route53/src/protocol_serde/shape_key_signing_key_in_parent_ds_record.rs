@@ -3,10 +3,7 @@
 pub fn de_key_signing_key_in_parent_ds_record_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::KeySigningKeyInParentDsRecordBuilder,
-) -> Result<
-    crate::types::error::builders::KeySigningKeyInParentDsRecordBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::KeySigningKeyInParentDsRecordBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

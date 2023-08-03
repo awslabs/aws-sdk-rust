@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`ModifyTrafficMirrorFilterNetworkServicesOutput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput) with field(s):
     ///   - [`traffic_mirror_filter(Option<TrafficMirrorFilter>)`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput::traffic_mirror_filter): <p>The Traffic Mirror filter that the network service is associated with.</p>
     /// - On failure, responds with [`SdkError<ModifyTrafficMirrorFilterNetworkServicesError>`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesError)
-    pub fn modify_traffic_mirror_filter_network_services(&self) -> crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesFluentBuilder{
-        crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesFluentBuilder::new(self.handle.clone())
+    pub fn modify_traffic_mirror_filter_network_services(
+        &self,
+    ) -> crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
+        crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

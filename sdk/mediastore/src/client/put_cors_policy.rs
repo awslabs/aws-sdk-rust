@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`cors_policy(Vec<CorsRule>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::cors_policy) / [`set_cors_policy(Option<Vec<CorsRule>>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::set_cors_policy): <p>The CORS policy to apply to the container. </p>
     /// - On success, responds with [`PutCorsPolicyOutput`](crate::operation::put_cors_policy::PutCorsPolicyOutput)
     /// - On failure, responds with [`SdkError<PutCorsPolicyError>`](crate::operation::put_cors_policy::PutCorsPolicyError)
-    pub fn put_cors_policy(
-        &self,
-    ) -> crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder {
-        crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_cors_policy(&self) -> crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder {
+        crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

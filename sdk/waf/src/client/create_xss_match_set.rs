@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`xss_match_set(Option<XssMatchSet>)`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput::xss_match_set): <p>An <code>XssMatchSet</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateXssMatchSetError>`](crate::operation::create_xss_match_set::CreateXssMatchSetError)
-    pub fn create_xss_match_set(
-        &self,
-    ) -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetFluentBuilder {
-        crate::operation::create_xss_match_set::builders::CreateXssMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_xss_match_set(&self) -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetFluentBuilder {
+        crate::operation::create_xss_match_set::builders::CreateXssMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,9 +26,7 @@ pub struct GetFunctionDefinitionOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFunctionDefinitionOutput {
@@ -61,11 +59,7 @@ impl GetFunctionDefinitionOutput {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -76,18 +70,14 @@ impl ::aws_http::request_id::RequestId for GetFunctionDefinitionOutput {
 }
 impl GetFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionDefinitionOutput`](crate::operation::get_function_definition::GetFunctionDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_function_definition::builders::GetFunctionDefinitionOutputBuilder {
         crate::operation::get_function_definition::builders::GetFunctionDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFunctionDefinitionOutput`](crate::operation::get_function_definition::GetFunctionDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionDefinitionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -96,9 +86,7 @@ pub struct GetFunctionDefinitionOutputBuilder {
     pub(crate) latest_version: ::std::option::Option<::std::string::String>,
     pub(crate) latest_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFunctionDefinitionOutputBuilder {
@@ -117,18 +105,12 @@ impl GetFunctionDefinitionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -151,18 +133,12 @@ impl GetFunctionDefinitionOutputBuilder {
         &self.id
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
@@ -171,18 +147,12 @@ impl GetFunctionDefinitionOutputBuilder {
         &self.last_updated_timestamp
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the latest version associated with the definition.
-    pub fn set_latest_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_version = input;
         self
     }
@@ -191,18 +161,12 @@ impl GetFunctionDefinitionOutputBuilder {
         &self.latest_version
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn set_latest_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_version_arn = input;
         self
     }
@@ -229,32 +193,19 @@ impl GetFunctionDefinitionOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// Tag(s) attached to the resource arn.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// Tag(s) attached to the resource arn.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::operation::update_config::UpdateConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
     ///   - [`config_arn(Option<String>)`](crate::operation::update_config::UpdateConfigOutput::config_arn): <p>ARN of a <code>Config</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateConfigError>`](crate::operation::update_config::UpdateConfigError)
-    pub fn update_config(
-        &self,
-    ) -> crate::operation::update_config::builders::UpdateConfigFluentBuilder {
-        crate::operation::update_config::builders::UpdateConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_config(&self) -> crate::operation::update_config::builders::UpdateConfigFluentBuilder {
+        crate::operation::update_config::builders::UpdateConfigFluentBuilder::new(self.handle.clone())
     }
 }

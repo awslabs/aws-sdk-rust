@@ -41,16 +41,11 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub task_parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    >,
+    pub task_parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
     #[doc(hidden)]
-    pub task_invocation_parameters:
-        ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
+    pub task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
     #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
@@ -140,18 +135,11 @@ impl RegisterTaskWithMaintenanceWindowInput {
     /// </note>
     pub fn task_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         self.task_parameters.as_ref()
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn task_invocation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskInvocationParameters> {
+    pub fn task_invocation_parameters(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskInvocationParameters> {
         self.task_invocation_parameters.as_ref()
     }
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
@@ -199,9 +187,7 @@ impl RegisterTaskWithMaintenanceWindowInput {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn cutoff_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn cutoff_behavior(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
@@ -218,10 +204,7 @@ impl ::std::fmt::Debug for RegisterTaskWithMaintenanceWindowInput {
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("task_type", &self.task_type);
         formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "task_invocation_parameters",
-            &self.task_invocation_parameters,
-        );
+        formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
         formatter.field("priority", &self.priority);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);
@@ -236,7 +219,7 @@ impl ::std::fmt::Debug for RegisterTaskWithMaintenanceWindowInput {
 }
 impl RegisterTaskWithMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskWithMaintenanceWindowInput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput).
-    pub fn builder() -> crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder{
+    pub fn builder() -> crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder {
         crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder::default()
     }
 }
@@ -250,14 +233,9 @@ pub struct RegisterTaskWithMaintenanceWindowInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    pub(crate) task_parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    >,
-    pub(crate) task_invocation_parameters:
-        ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
+    pub(crate) task_parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
+    pub(crate) task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) max_concurrency: ::std::option::Option<::std::string::String>,
     pub(crate) max_errors: ::std::option::Option<::std::string::String>,
@@ -265,8 +243,7 @@ pub struct RegisterTaskWithMaintenanceWindowInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) cutoff_behavior:
-        ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
+    pub(crate) cutoff_behavior: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl RegisterTaskWithMaintenanceWindowInputBuilder {
@@ -324,10 +301,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code> </p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -369,10 +343,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -382,10 +353,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role_arn = input;
         self
     }
@@ -404,10 +372,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
         self
     }
     /// <p>The type of task being registered.</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
         self.task_type = input;
         self
     }
@@ -437,12 +402,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// </note>
     pub fn set_task_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     ) -> Self {
         self.task_parameters = input;
         self
@@ -452,34 +412,21 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// </note>
     pub fn get_task_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         &self.task_parameters
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn task_invocation_parameters(
-        mut self,
-        input: crate::types::MaintenanceWindowTaskInvocationParameters,
-    ) -> Self {
+    pub fn task_invocation_parameters(mut self, input: crate::types::MaintenanceWindowTaskInvocationParameters) -> Self {
         self.task_invocation_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn set_task_invocation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
-    ) -> Self {
+    pub fn set_task_invocation_parameters(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>) -> Self {
         self.task_invocation_parameters = input;
         self
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
-    pub fn get_task_invocation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
+    pub fn get_task_invocation_parameters(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
         &self.task_invocation_parameters
     }
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
@@ -500,10 +447,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
@@ -511,10 +455,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -558,10 +499,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
@@ -622,10 +560,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn cutoff_behavior(
-        mut self,
-        input: crate::types::MaintenanceWindowTaskCutoffBehavior,
-    ) -> Self {
+    pub fn cutoff_behavior(mut self, input: crate::types::MaintenanceWindowTaskCutoffBehavior) -> Self {
         self.cutoff_behavior = ::std::option::Option::Some(input);
         self
     }
@@ -638,10 +573,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn set_cutoff_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
-    ) -> Self {
+    pub fn set_cutoff_behavior(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>) -> Self {
         self.cutoff_behavior = input;
         self
     }
@@ -654,9 +586,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
-    pub fn get_cutoff_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn get_cutoff_behavior(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
         &self.cutoff_behavior
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
@@ -665,56 +595,40 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
         self
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Consumes the builder and constructs a [`RegisterTaskWithMaintenanceWindowInput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput {
-                window_id: self.window_id
-                ,
-                targets: self.targets
-                ,
-                task_arn: self.task_arn
-                ,
-                service_role_arn: self.service_role_arn
-                ,
-                task_type: self.task_type
-                ,
-                task_parameters: self.task_parameters
-                ,
-                task_invocation_parameters: self.task_invocation_parameters
-                ,
-                priority: self.priority
-                ,
-                max_concurrency: self.max_concurrency
-                ,
-                max_errors: self.max_errors
-                ,
-                logging_info: self.logging_info
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                client_token: self.client_token
-                ,
-                cutoff_behavior: self.cutoff_behavior
-                ,
-                alarm_configuration: self.alarm_configuration
-                ,
-            }
+                window_id: self.window_id,
+                targets: self.targets,
+                task_arn: self.task_arn,
+                service_role_arn: self.service_role_arn,
+                task_type: self.task_type,
+                task_parameters: self.task_parameters,
+                task_invocation_parameters: self.task_invocation_parameters,
+                priority: self.priority,
+                max_concurrency: self.max_concurrency,
+                max_errors: self.max_errors,
+                logging_info: self.logging_info,
+                name: self.name,
+                description: self.description,
+                client_token: self.client_token,
+                cutoff_behavior: self.cutoff_behavior,
+                alarm_configuration: self.alarm_configuration,
+            },
         )
     }
 }
@@ -727,10 +641,7 @@ impl ::std::fmt::Debug for RegisterTaskWithMaintenanceWindowInputBuilder {
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("task_type", &self.task_type);
         formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "task_invocation_parameters",
-            &self.task_invocation_parameters,
-        );
+        formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
         formatter.field("priority", &self.priority);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);

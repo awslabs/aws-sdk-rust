@@ -10,10 +10,7 @@ impl SetLoggingOptionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_logging_options::SetLoggingOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_logging_options::SetLoggingOptionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_logging_options::SetLoggingOptionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_logging_options();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl SetLoggingOptionsFluentBuilder {
         }
     }
     /// Access the SetLoggingOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_logging_options::builders::SetLoggingOptionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_logging_options::builders::SetLoggingOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl SetLoggingOptionsFluentBuilder {
             crate::operation::set_logging_options::SetLoggingOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_logging_options::SetLoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_logging_options::SetLoggingOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl SetLoggingOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl SetLoggingOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_logging_options::SetLoggingOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_logging_options::SetLoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_logging_options::SetLoggingOptionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl SetLoggingOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_logging_options::SetLoggingOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_logging_options::SetLoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_logging_options::SetLoggingOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl SetLoggingOptionsFluentBuilder {
             crate::operation::set_logging_options::SetLoggingOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_logging_options::SetLoggingOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_logging_options::SetLoggingOptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +114,12 @@ impl SetLoggingOptionsFluentBuilder {
         self
     }
     /// <p>The logging options payload.</p>
-    pub fn set_logging_options_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingOptionsPayload>,
-    ) -> Self {
+    pub fn set_logging_options_payload(mut self, input: ::std::option::Option<crate::types::LoggingOptionsPayload>) -> Self {
         self.inner = self.inner.set_logging_options_payload(input);
         self
     }
     /// <p>The logging options payload.</p>
-    pub fn get_logging_options_payload(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingOptionsPayload> {
+    pub fn get_logging_options_payload(&self) -> &::std::option::Option<crate::types::LoggingOptionsPayload> {
         self.inner.get_logging_options_payload()
     }
 }

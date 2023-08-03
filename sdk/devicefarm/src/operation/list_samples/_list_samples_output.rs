@@ -36,9 +36,7 @@ impl ListSamplesOutput {
 
 /// A builder for [`ListSamplesOutput`](crate::operation::list_samples::ListSamplesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSamplesOutputBuilder {
     pub(crate) samples: ::std::option::Option<::std::vec::Vec<crate::types::Sample>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListSamplesOutputBuilder {
         self
     }
     /// <p>Information about the samples.</p>
-    pub fn set_samples(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sample>>,
-    ) -> Self {
+    pub fn set_samples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sample>>) -> Self {
         self.samples = input;
         self
     }

@@ -26,7 +26,7 @@ impl DescribeReturnShippingLabelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReturnShippingLabelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder,
+    inner: crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder,
 }
 impl DescribeReturnShippingLabelFluentBuilder {
     /// Creates a new `DescribeReturnShippingLabel`.
@@ -37,7 +37,7 @@ impl DescribeReturnShippingLabelFluentBuilder {
         }
     }
     /// Access the DescribeReturnShippingLabel as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeReturnShippingLabelFluentBuilder {
             crate::operation::describe_return_shipping_label::DescribeReturnShippingLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeReturnShippingLabelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeReturnShippingLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeReturnShippingLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeReturnShippingLabelFluentBuilder {
             crate::operation::describe_return_shipping_label::DescribeReturnShippingLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError>,
     > {
         self.customize_middleware().await
     }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`region_name(Option<String>)`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput::region_name): <p>The Region code that was passed in.</p>
     ///   - [`region_opt_status(Option<RegionOptStatus>)`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput::region_opt_status): <p>One of the potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
     /// - On failure, responds with [`SdkError<GetRegionOptStatusError>`](crate::operation::get_region_opt_status::GetRegionOptStatusError)
-    pub fn get_region_opt_status(
-        &self,
-    ) -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusFluentBuilder {
-        crate::operation::get_region_opt_status::builders::GetRegionOptStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_region_opt_status(&self) -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusFluentBuilder {
+        crate::operation::get_region_opt_status::builders::GetRegionOptStatusFluentBuilder::new(self.handle.clone())
     }
 }

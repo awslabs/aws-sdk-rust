@@ -10,10 +10,7 @@ impl ListProposalVotesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_proposal_votes::ListProposalVotesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proposal_votes::ListProposalVotesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proposal_votes::ListProposalVotesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_proposal_votes();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListProposalVotesFluentBuilder {
         }
     }
     /// Access the ListProposalVotes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_proposal_votes::builders::ListProposalVotesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_proposal_votes::builders::ListProposalVotesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListProposalVotesFluentBuilder {
             crate::operation::list_proposal_votes::ListProposalVotes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proposal_votes::ListProposalVotesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proposal_votes::ListProposalVotesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListProposalVotesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListProposalVotesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_proposal_votes::ListProposalVotesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proposal_votes::ListProposalVotesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proposal_votes::ListProposalVotesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListProposalVotesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_proposal_votes::ListProposalVotesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proposal_votes::ListProposalVotesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proposal_votes::ListProposalVotesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListProposalVotesFluentBuilder {
             crate::operation::list_proposal_votes::ListProposalVotes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_proposal_votes::ListProposalVotesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_proposal_votes::ListProposalVotesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_proposal_votes::paginator::ListProposalVotesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_proposal_votes::paginator::ListProposalVotesPaginator {
-        crate::operation::list_proposal_votes::paginator::ListProposalVotesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_proposal_votes::paginator::ListProposalVotesPaginator {
+        crate::operation::list_proposal_votes::paginator::ListProposalVotesPaginator::new(self.handle, self.inner)
     }
     /// <p> The unique identifier of the network. </p>
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

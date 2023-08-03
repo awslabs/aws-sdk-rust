@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetSegmentVersionsOutput`](crate::operation::get_segment_versions::GetSegmentVersionsOutput) with field(s):
     ///   - [`segments_response(Option<SegmentsResponse>)`](crate::operation::get_segment_versions::GetSegmentVersionsOutput::segments_response): <p>Provides information about all the segments that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetSegmentVersionsError>`](crate::operation::get_segment_versions::GetSegmentVersionsError)
-    pub fn get_segment_versions(
-        &self,
-    ) -> crate::operation::get_segment_versions::builders::GetSegmentVersionsFluentBuilder {
-        crate::operation::get_segment_versions::builders::GetSegmentVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_segment_versions(&self) -> crate::operation::get_segment_versions::builders::GetSegmentVersionsFluentBuilder {
+        crate::operation::get_segment_versions::builders::GetSegmentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

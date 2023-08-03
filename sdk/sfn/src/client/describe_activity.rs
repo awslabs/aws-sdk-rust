@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_activity::DescribeActivityOutput::name): <p>The name of the activity.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_activity::DescribeActivityOutput::creation_date): <p>The date the activity is created.</p>
     /// - On failure, responds with [`SdkError<DescribeActivityError>`](crate::operation::describe_activity::DescribeActivityError)
-    pub fn describe_activity(
-        &self,
-    ) -> crate::operation::describe_activity::builders::DescribeActivityFluentBuilder {
-        crate::operation::describe_activity::builders::DescribeActivityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_activity(&self) -> crate::operation::describe_activity::builders::DescribeActivityFluentBuilder {
+        crate::operation::describe_activity::builders::DescribeActivityFluentBuilder::new(self.handle.clone())
     }
 }

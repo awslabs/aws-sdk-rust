@@ -8,8 +8,7 @@ pub struct ListResourcesOutput {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the specified resources, including primary identifier and resource model.</p>
     #[doc(hidden)]
-    pub resource_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>>,
+    pub resource_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListResourcesOutput {
         self.type_name.as_deref()
     }
     /// <p>Information about the specified resources, including primary identifier and resource model.</p>
-    pub fn resource_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceDescription]> {
+    pub fn resource_descriptions(&self) -> ::std::option::Option<&[crate::types::ResourceDescription]> {
         self.resource_descriptions.as_deref()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
@@ -45,13 +42,10 @@ impl ListResourcesOutput {
 
 /// A builder for [`ListResourcesOutput`](crate::operation::list_resources::ListResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesOutputBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>>,
+    pub(crate) resource_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -82,17 +76,12 @@ impl ListResourcesOutputBuilder {
         self
     }
     /// <p>Information about the specified resources, including primary identifier and resource model.</p>
-    pub fn set_resource_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>>,
-    ) -> Self {
+    pub fn set_resource_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>>) -> Self {
         self.resource_descriptions = input;
         self
     }
     /// <p>Information about the specified resources, including primary identifier and resource model.</p>
-    pub fn get_resource_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>> {
+    pub fn get_resource_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>> {
         &self.resource_descriptions
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>

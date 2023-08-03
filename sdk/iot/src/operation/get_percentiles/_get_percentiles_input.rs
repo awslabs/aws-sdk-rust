@@ -50,9 +50,7 @@ impl GetPercentilesInput {
 
 /// A builder for [`GetPercentilesInput`](crate::operation::get_percentiles::GetPercentilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPercentilesInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl GetPercentilesInputBuilder {
         &self.query_string
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field to aggregate.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_field = input;
         self
     }
@@ -110,18 +102,12 @@ impl GetPercentilesInputBuilder {
         &self.aggregation_field
     }
     /// <p>The query version.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query version.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -152,10 +138,7 @@ impl GetPercentilesInputBuilder {
     /// Consumes the builder and constructs a [`GetPercentilesInput`](crate::operation::get_percentiles::GetPercentilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_percentiles::GetPercentilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_percentiles::GetPercentilesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_percentiles::GetPercentilesInput {
             index_name: self.index_name,
             query_string: self.query_string,

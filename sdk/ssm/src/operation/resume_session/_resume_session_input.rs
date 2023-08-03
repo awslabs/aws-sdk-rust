@@ -22,9 +22,7 @@ impl ResumeSessionInput {
 
 /// A builder for [`ResumeSessionInput`](crate::operation::resume_session::ResumeSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl ResumeSessionInputBuilder {
     /// Consumes the builder and constructs a [`ResumeSessionInput`](crate::operation::resume_session::ResumeSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_session::ResumeSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::resume_session::ResumeSessionInput {
-            session_id: self.session_id,
-        })
+    ) -> ::std::result::Result<crate::operation::resume_session::ResumeSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::resume_session::ResumeSessionInput { session_id: self.session_id })
     }
 }

@@ -15,8 +15,7 @@ pub struct CertificateSummary {
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     #[doc(hidden)]
-    pub subject_alternative_name_summaries:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subject_alternative_name_summaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     #[doc(hidden)]
     pub has_additional_subject_alternative_names: ::std::option::Option<bool>,
@@ -35,8 +34,7 @@ pub struct CertificateSummary {
     pub key_usages: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
     #[doc(hidden)]
-    pub extended_key_usages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
+    pub extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     #[doc(hidden)]
     pub in_use: ::std::option::Option<bool>,
@@ -78,9 +76,7 @@ impl CertificateSummary {
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    pub fn subject_alternative_name_summaries(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subject_alternative_name_summaries(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subject_alternative_name_summaries.as_deref()
     }
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
@@ -105,9 +101,7 @@ impl CertificateSummary {
         self.key_usages.as_deref()
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
-    pub fn extended_key_usages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExtendedKeyUsageName]> {
+    pub fn extended_key_usages(&self) -> ::std::option::Option<&[crate::types::ExtendedKeyUsageName]> {
         self.extended_key_usages.as_deref()
     }
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
@@ -156,21 +150,17 @@ impl CertificateSummary {
 
 /// A builder for [`CertificateSummary`](crate::types::CertificateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateSummaryBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) subject_alternative_name_summaries:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subject_alternative_name_summaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) has_additional_subject_alternative_names: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::CertificateStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::CertificateType>,
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) key_usages: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
-    pub(crate) extended_key_usages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
+    pub(crate) extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     pub(crate) in_use: ::std::option::Option<bool>,
     pub(crate) exported: ::std::option::Option<bool>,
     pub(crate) renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
@@ -185,20 +175,14 @@ impl CertificateSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -228,10 +212,7 @@ impl CertificateSummaryBuilder {
     ///
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    pub fn subject_alternative_name_summaries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subject_alternative_name_summaries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_name_summaries.unwrap_or_default();
         v.push(input.into());
         self.subject_alternative_name_summaries = ::std::option::Option::Some(v);
@@ -239,18 +220,13 @@ impl CertificateSummaryBuilder {
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    pub fn set_subject_alternative_name_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subject_alternative_name_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subject_alternative_name_summaries = input;
         self
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    pub fn get_subject_alternative_name_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_name_summaries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_name_summaries
     }
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
@@ -259,10 +235,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    pub fn set_has_additional_subject_alternative_names(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_has_additional_subject_alternative_names(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_additional_subject_alternative_names = input;
         self
     }
@@ -278,10 +251,7 @@ impl CertificateSummaryBuilder {
     }
     /// <p>The status of the certificate.</p>
     /// <p>A certificate enters status PENDING_VALIDATION upon being requested, unless it fails for any of the reasons given in the troubleshooting topic <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate request fails</a>. ACM makes repeated attempts to validate a certificate for 72 hours and then times out. If a certificate shows status FAILED or VALIDATION_TIMED_OUT, delete the request, correct the issue with <a href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email validation</a>, and try again. If validation succeeds, the certificate enters status ISSUED. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -310,10 +280,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
-    pub fn set_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.key_algorithm = input;
         self
     }
@@ -333,17 +300,12 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
-    pub fn set_key_usages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
-    ) -> Self {
+    pub fn set_key_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>) -> Self {
         self.key_usages = input;
         self
     }
     /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
-    pub fn get_key_usages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>> {
+    pub fn get_key_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>> {
         &self.key_usages
     }
     /// Appends an item to `extended_key_usages`.
@@ -358,17 +320,12 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
-    pub fn set_extended_key_usages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
-    ) -> Self {
+    pub fn set_extended_key_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>) -> Self {
         self.extended_key_usages = input;
         self
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
-    pub fn get_extended_key_usages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>> {
+    pub fn get_extended_key_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>> {
         &self.extended_key_usages
     }
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
@@ -405,17 +362,12 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
-    pub fn set_renewal_eligibility(
-        mut self,
-        input: ::std::option::Option<crate::types::RenewalEligibility>,
-    ) -> Self {
+    pub fn set_renewal_eligibility(mut self, input: ::std::option::Option<crate::types::RenewalEligibility>) -> Self {
         self.renewal_eligibility = input;
         self
     }
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
-    pub fn get_renewal_eligibility(
-        &self,
-    ) -> &::std::option::Option<crate::types::RenewalEligibility> {
+    pub fn get_renewal_eligibility(&self) -> &::std::option::Option<crate::types::RenewalEligibility> {
         &self.renewal_eligibility
     }
     /// <p>The time before which the certificate is not valid.</p>
@@ -424,10 +376,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The time before which the certificate is not valid.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_before = input;
         self
     }
@@ -441,10 +390,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The time after which the certificate is not valid.</p>
-    pub fn set_not_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_after = input;
         self
     }
@@ -458,10 +404,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The time at which the certificate was requested.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -475,10 +418,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
-    pub fn set_issued_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_issued_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.issued_at = input;
         self
     }
@@ -492,10 +432,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The date and time when the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>
-    pub fn set_imported_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_imported_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.imported_at = input;
         self
     }
@@ -509,10 +446,7 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
-    pub fn set_revoked_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_revoked_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.revoked_at = input;
         self
     }

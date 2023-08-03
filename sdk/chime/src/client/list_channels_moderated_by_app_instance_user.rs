@@ -12,10 +12,12 @@ impl super::Client {
     ///   - [`channels(Option<Vec<ChannelModeratedByAppInstanceUserSummary>>)`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput::channels): <p>The moderated channels in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     /// - On failure, responds with [`SdkError<ListChannelsModeratedByAppInstanceUserError>`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserError)
-    #[deprecated(
-        note = "Replaced by ListChannelsModeratedByAppInstanceUser in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn list_channels_moderated_by_app_instance_user(&self) -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder{
-        crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Replaced by ListChannelsModeratedByAppInstanceUser in the Amazon Chime SDK Messaging Namespace")]
+    pub fn list_channels_moderated_by_app_instance_user(
+        &self,
+    ) -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder {
+        crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -132,16 +132,14 @@ impl DescribeNetworkInterfacesInput {
 }
 impl DescribeNetworkInterfacesInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfacesInput`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput).
-    pub fn builder() -> crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder {
         crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfacesInput`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -248,10 +246,7 @@ impl DescribeNetworkInterfacesInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the network interface.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -322,10 +317,7 @@ impl DescribeNetworkInterfacesInputBuilder {
     ///
     /// <p>The network interface IDs.</p>
     /// <p>Default: Describes all your network interfaces.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
@@ -333,18 +325,13 @@ impl DescribeNetworkInterfacesInputBuilder {
     }
     /// <p>The network interface IDs.</p>
     /// <p>Default: Describes all your network interfaces.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
     /// <p>The network interface IDs.</p>
     /// <p>Default: Describes all your network interfaces.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -382,14 +369,12 @@ impl DescribeNetworkInterfacesInputBuilder {
         crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                network_interface_ids: self.network_interface_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            network_interface_ids: self.network_interface_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

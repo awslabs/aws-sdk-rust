@@ -26,7 +26,7 @@ impl BatchUpdateAutomationRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateAutomationRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesInputBuilder,
+    inner: crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesInputBuilder,
 }
 impl BatchUpdateAutomationRulesFluentBuilder {
     /// Creates a new `BatchUpdateAutomationRules`.
@@ -37,7 +37,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
         }
     }
     /// Access the BatchUpdateAutomationRules as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
             crate::operation::batch_update_automation_rules::BatchUpdateAutomationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
             crate::operation::batch_update_automation_rules::BatchUpdateAutomationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,19 +114,14 @@ impl BatchUpdateAutomationRulesFluentBuilder {
     /// To override the contents of this collection use [`set_update_automation_rules_request_items`](Self::set_update_automation_rules_request_items).
     ///
     /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
-    pub fn update_automation_rules_request_items(
-        mut self,
-        input: crate::types::UpdateAutomationRulesRequestItem,
-    ) -> Self {
+    pub fn update_automation_rules_request_items(mut self, input: crate::types::UpdateAutomationRulesRequestItem) -> Self {
         self.inner = self.inner.update_automation_rules_request_items(input);
         self
     }
     /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
     pub fn set_update_automation_rules_request_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>,
     ) -> Self {
         self.inner = self.inner.set_update_automation_rules_request_items(input);
         self
@@ -145,8 +129,7 @@ impl BatchUpdateAutomationRulesFluentBuilder {
     /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
     pub fn get_update_automation_rules_request_items(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>> {
         self.inner.get_update_automation_rules_request_items()
     }
 }

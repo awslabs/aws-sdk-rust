@@ -6,10 +6,7 @@ pub fn ser_get_token_balance_input(
     if let Some(var_1) = &input.at_blockchain_instant {
         #[allow(unused_mut)]
         let mut object_2 = object.key("atBlockchainInstant").start_object();
-        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.owner_identifier {

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for InvokeScreenAutomationOutput {
 }
 impl InvokeScreenAutomationOutput {
     /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationOutput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput).
-    pub fn builder(
-    ) -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationOutputBuilder {
         crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationOutputBuilder::default()
     }
 }
 
 /// A builder for [`InvokeScreenAutomationOutput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokeScreenAutomationOutputBuilder {
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
     _request_id: Option<String>,

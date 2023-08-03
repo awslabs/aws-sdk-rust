@@ -36,8 +36,7 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     pub projection: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
     #[doc(hidden)]
-    pub provisioned_throughput:
-        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
+    pub provisioned_throughput: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
 }
 impl AwsDynamoDbTableGlobalSecondaryIndex {
     /// <p>Whether the index is currently backfilling.</p>
@@ -79,9 +78,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.projection.as_ref()
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
 }
@@ -94,9 +91,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
 
 /// A builder for [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableGlobalSecondaryIndex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     pub(crate) backfilling: ::std::option::Option<bool>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,
@@ -104,11 +99,9 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     pub(crate) index_size_bytes: ::std::option::Option<i64>,
     pub(crate) index_status: ::std::option::Option<::std::string::String>,
     pub(crate) item_count: ::std::option::Option<i32>,
-    pub(crate) key_schema:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     pub(crate) projection: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
-    pub(crate) provisioned_throughput:
-        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
+    pub(crate) provisioned_throughput: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
 }
 impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     /// <p>Whether the index is currently backfilling.</p>
@@ -225,17 +218,12 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
         self
     }
     /// <p>The key schema for the index.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
-    ) -> Self {
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>) -> Self {
         self.key_schema = input;
         self
     }
     /// <p>The key schema for the index.</p>
-    pub fn get_key_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
         &self.key_schema
     }
     /// <p>Attributes that are copied from the table into an index.</p>
@@ -244,39 +232,26 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
         self
     }
     /// <p>Attributes that are copied from the table into an index.</p>
-    pub fn set_projection(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
-    ) -> Self {
+    pub fn set_projection(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>) -> Self {
         self.projection = input;
         self
     }
     /// <p>Attributes that are copied from the table into an index.</p>
-    pub fn get_projection(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProjection> {
+    pub fn get_projection(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableProjection> {
         &self.projection
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn provisioned_throughput(
-        mut self,
-        input: crate::types::AwsDynamoDbTableProvisionedThroughput,
-    ) -> Self {
+    pub fn provisioned_throughput(mut self, input: crate::types::AwsDynamoDbTableProvisionedThroughput) -> Self {
         self.provisioned_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>) -> Self {
         self.provisioned_throughput = input;
         self
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput> {
         &self.provisioned_throughput
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableGlobalSecondaryIndex).

@@ -27,8 +27,7 @@ impl CreateServiceLinkedRoleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceLinkedRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_service_linked_role::builders::CreateServiceLinkedRoleInputBuilder,
+    inner: crate::operation::create_service_linked_role::builders::CreateServiceLinkedRoleInputBuilder,
 }
 impl CreateServiceLinkedRoleFluentBuilder {
     /// Creates a new `CreateServiceLinkedRole`.
@@ -39,10 +38,7 @@ impl CreateServiceLinkedRoleFluentBuilder {
         }
     }
     /// Access the CreateServiceLinkedRole as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_service_linked_role::builders::CreateServiceLinkedRoleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_service_linked_role::builders::CreateServiceLinkedRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreateServiceLinkedRoleFluentBuilder {
             crate::operation::create_service_linked_role::CreateServiceLinkedRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_linked_role::CreateServiceLinkedRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_linked_role::CreateServiceLinkedRoleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreateServiceLinkedRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreateServiceLinkedRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_linked_role::CreateServiceLinkedRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_linked_role::CreateServiceLinkedRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_linked_role::CreateServiceLinkedRoleError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreateServiceLinkedRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_linked_role::CreateServiceLinkedRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_linked_role::CreateServiceLinkedRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_linked_role::CreateServiceLinkedRoleError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +106,19 @@ impl CreateServiceLinkedRoleFluentBuilder {
             crate::operation::create_service_linked_role::CreateServiceLinkedRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_linked_role::CreateServiceLinkedRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_linked_role::CreateServiceLinkedRoleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
     /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
-    pub fn aws_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_service_name(input.into());
         self
     }
     /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
     /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
-    pub fn set_aws_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_service_name(input);
         self
     }
@@ -165,20 +144,14 @@ impl CreateServiceLinkedRoleFluentBuilder {
     /// <p></p>
     /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
     /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
-    pub fn custom_suffix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_suffix(input.into());
         self
     }
     /// <p></p>
     /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
     /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
-    pub fn set_custom_suffix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_suffix(input);
         self
     }

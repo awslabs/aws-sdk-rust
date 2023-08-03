@@ -27,9 +27,7 @@ pub struct AgentStatus {
     pub state: ::std::option::Option<crate::types::AgentStatusState>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AgentStatus {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
@@ -61,11 +59,7 @@ impl AgentStatus {
         self.state.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -78,9 +72,7 @@ impl AgentStatus {
 
 /// A builder for [`AgentStatus`](crate::types::AgentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentStatusBuilder {
     pub(crate) agent_status_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_status_id: ::std::option::Option<::std::string::String>,
@@ -89,24 +81,16 @@ pub struct AgentStatusBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AgentStatusType>,
     pub(crate) display_order: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::AgentStatusState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AgentStatusBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
-    pub fn agent_status_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
-    pub fn set_agent_status_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_status_arn = input;
         self
     }
@@ -115,18 +99,12 @@ impl AgentStatusBuilder {
         &self.agent_status_arn
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn set_agent_status_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_status_id = input;
         self
     }
@@ -196,10 +174,7 @@ impl AgentStatusBuilder {
         self
     }
     /// <p>The state of the agent status.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentStatusState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AgentStatusState>) -> Self {
         self.state = input;
         self
     }
@@ -212,32 +187,19 @@ impl AgentStatusBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AgentStatus`](crate::types::AgentStatus).

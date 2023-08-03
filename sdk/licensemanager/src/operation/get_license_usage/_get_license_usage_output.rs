@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetLicenseUsageOutput {
 }
 impl GetLicenseUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput).
-    pub fn builder() -> crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder {
         crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLicenseUsageOutputBuilder {
     pub(crate) license_usage: ::std::option::Option<crate::types::LicenseUsage>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetLicenseUsageOutputBuilder {
         self
     }
     /// <p>License usage details.</p>
-    pub fn set_license_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseUsage>,
-    ) -> Self {
+    pub fn set_license_usage(mut self, input: ::std::option::Option<crate::types::LicenseUsage>) -> Self {
         self.license_usage = input;
         self
     }

@@ -10,10 +10,7 @@ impl DescribeLunaClientInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_luna_client::DescribeLunaClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_luna_client::DescribeLunaClientError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_luna_client::DescribeLunaClientError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_luna_client();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeLunaClientFluentBuilder {
         }
     }
     /// Access the DescribeLunaClient as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeLunaClientFluentBuilder {
             crate::operation::describe_luna_client::DescribeLunaClient,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_luna_client::DescribeLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_luna_client::DescribeLunaClientError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeLunaClientFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeLunaClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_luna_client::DescribeLunaClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_luna_client::DescribeLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_luna_client::DescribeLunaClientError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeLunaClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_luna_client::DescribeLunaClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_luna_client::DescribeLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_luna_client::DescribeLunaClientError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DescribeLunaClientFluentBuilder {
             crate::operation::describe_luna_client::DescribeLunaClient,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_luna_client::DescribeLunaClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_luna_client::DescribeLunaClientError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl DescribeLunaClientFluentBuilder {
         self.inner.get_client_arn()
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn certificate_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_fingerprint(input.into());
         self
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn set_certificate_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_fingerprint(input);
         self
     }

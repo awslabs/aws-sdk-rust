@@ -31,8 +31,7 @@ impl GetOriginRequestPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOriginRequestPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_origin_request_policy::builders::GetOriginRequestPolicyInputBuilder,
+    inner: crate::operation::get_origin_request_policy::builders::GetOriginRequestPolicyInputBuilder,
 }
 impl GetOriginRequestPolicyFluentBuilder {
     /// Creates a new `GetOriginRequestPolicy`.
@@ -43,10 +42,7 @@ impl GetOriginRequestPolicyFluentBuilder {
         }
     }
     /// Access the GetOriginRequestPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_origin_request_policy::builders::GetOriginRequestPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_origin_request_policy::builders::GetOriginRequestPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl GetOriginRequestPolicyFluentBuilder {
             crate::operation::get_origin_request_policy::GetOriginRequestPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_request_policy::GetOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl GetOriginRequestPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl GetOriginRequestPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_request_policy::GetOriginRequestPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_request_policy::GetOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl GetOriginRequestPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_request_policy::GetOriginRequestPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_request_policy::GetOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl GetOriginRequestPolicyFluentBuilder {
             crate::operation::get_origin_request_policy::GetOriginRequestPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_request_policy::GetOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError>,
     > {
         self.customize_middleware().await
     }

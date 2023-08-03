@@ -33,15 +33,11 @@ impl ReEncryptDataInput {
         self.cipher_text.as_deref()
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn incoming_encryption_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
+    pub fn incoming_encryption_attributes(&self) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
         self.incoming_encryption_attributes.as_ref()
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_encryption_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
+    pub fn outgoing_encryption_attributes(&self) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
         self.outgoing_encryption_attributes.as_ref()
     }
 }
@@ -51,14 +47,8 @@ impl ::std::fmt::Debug for ReEncryptDataInput {
         formatter.field("incoming_key_identifier", &self.incoming_key_identifier);
         formatter.field("outgoing_key_identifier", &self.outgoing_key_identifier);
         formatter.field("cipher_text", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "incoming_encryption_attributes",
-            &self.incoming_encryption_attributes,
-        );
-        formatter.field(
-            "outgoing_encryption_attributes",
-            &self.outgoing_encryption_attributes,
-        );
+        formatter.field("incoming_encryption_attributes", &self.incoming_encryption_attributes);
+        formatter.field("outgoing_encryption_attributes", &self.outgoing_encryption_attributes);
         formatter.finish()
     }
 }
@@ -76,25 +66,17 @@ pub struct ReEncryptDataInputBuilder {
     pub(crate) incoming_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) outgoing_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cipher_text: ::std::option::Option<::std::string::String>,
-    pub(crate) incoming_encryption_attributes:
-        ::std::option::Option<crate::types::ReEncryptionAttributes>,
-    pub(crate) outgoing_encryption_attributes:
-        ::std::option::Option<crate::types::ReEncryptionAttributes>,
+    pub(crate) incoming_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
+    pub(crate) outgoing_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
 }
 impl ReEncryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
-    pub fn incoming_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incoming_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
-    pub fn set_incoming_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incoming_key_identifier = input;
         self
     }
@@ -103,18 +85,12 @@ impl ReEncryptDataInputBuilder {
         &self.incoming_key_identifier
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outgoing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outgoing_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn set_outgoing_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outgoing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outgoing_key_identifier = input;
         self
     }
@@ -137,56 +113,37 @@ impl ReEncryptDataInputBuilder {
         &self.cipher_text
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn incoming_encryption_attributes(
-        mut self,
-        input: crate::types::ReEncryptionAttributes,
-    ) -> Self {
+    pub fn incoming_encryption_attributes(mut self, input: crate::types::ReEncryptionAttributes) -> Self {
         self.incoming_encryption_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn set_incoming_encryption_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ReEncryptionAttributes>,
-    ) -> Self {
+    pub fn set_incoming_encryption_attributes(mut self, input: ::std::option::Option<crate::types::ReEncryptionAttributes>) -> Self {
         self.incoming_encryption_attributes = input;
         self
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn get_incoming_encryption_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
+    pub fn get_incoming_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
         &self.incoming_encryption_attributes
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_encryption_attributes(
-        mut self,
-        input: crate::types::ReEncryptionAttributes,
-    ) -> Self {
+    pub fn outgoing_encryption_attributes(mut self, input: crate::types::ReEncryptionAttributes) -> Self {
         self.outgoing_encryption_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn set_outgoing_encryption_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ReEncryptionAttributes>,
-    ) -> Self {
+    pub fn set_outgoing_encryption_attributes(mut self, input: ::std::option::Option<crate::types::ReEncryptionAttributes>) -> Self {
         self.outgoing_encryption_attributes = input;
         self
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn get_outgoing_encryption_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
+    pub fn get_outgoing_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
         &self.outgoing_encryption_attributes
     }
     /// Consumes the builder and constructs a [`ReEncryptDataInput`](crate::operation::re_encrypt_data::ReEncryptDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::re_encrypt_data::ReEncryptDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::re_encrypt_data::ReEncryptDataInput {
             incoming_key_identifier: self.incoming_key_identifier,
             outgoing_key_identifier: self.outgoing_key_identifier,
@@ -202,14 +159,8 @@ impl ::std::fmt::Debug for ReEncryptDataInputBuilder {
         formatter.field("incoming_key_identifier", &self.incoming_key_identifier);
         formatter.field("outgoing_key_identifier", &self.outgoing_key_identifier);
         formatter.field("cipher_text", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "incoming_encryption_attributes",
-            &self.incoming_encryption_attributes,
-        );
-        formatter.field(
-            "outgoing_encryption_attributes",
-            &self.outgoing_encryption_attributes,
-        );
+        formatter.field("incoming_encryption_attributes", &self.incoming_encryption_attributes);
+        formatter.field("outgoing_encryption_attributes", &self.outgoing_encryption_attributes);
         formatter.finish()
     }
 }

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput::app_instance_retention_settings): <p>The time in days to retain data. Data type: number.</p>
     ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput::initiate_deletion_timestamp): <p>The time at which the API deletes data.</p>
     /// - On failure, responds with [`SdkError<PutAppInstanceRetentionSettingsError>`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError)
-    pub fn put_app_instance_retention_settings(&self) -> crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsFluentBuilder{
+    pub fn put_app_instance_retention_settings(
+        &self,
+    ) -> crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsFluentBuilder {
         crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsFluentBuilder::new(self.handle.clone())
     }
 }

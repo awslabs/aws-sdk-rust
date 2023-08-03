@@ -22,18 +22,14 @@ impl GetDevicesInPlacementInput {
 }
 impl GetDevicesInPlacementInput {
     /// Creates a new builder-style object to manufacture [`GetDevicesInPlacementInput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementInput).
-    pub fn builder(
-    ) -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder {
         crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicesInPlacementInput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicesInPlacementInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl GetDevicesInPlacementInputBuilder {
         &self.project_name
     }
     /// <p>The name of the placement to get the devices from.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement to get the devices from.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetDevicesInPlacementInputBuilder {
     /// Consumes the builder and constructs a [`GetDevicesInPlacementInput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_devices_in_placement::GetDevicesInPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_devices_in_placement::GetDevicesInPlacementInput {
-                project_name: self.project_name,
-                placement_name: self.placement_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_devices_in_placement::GetDevicesInPlacementInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_devices_in_placement::GetDevicesInPlacementInput {
+            project_name: self.project_name,
+            placement_name: self.placement_name,
+        })
     }
 }

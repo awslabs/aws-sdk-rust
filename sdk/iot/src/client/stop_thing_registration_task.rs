@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::set_task_id): <p>The bulk thing provisioning task ID.</p>
     /// - On success, responds with [`StopThingRegistrationTaskOutput`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput)
     /// - On failure, responds with [`SdkError<StopThingRegistrationTaskError>`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError)
-    pub fn stop_thing_registration_task(&self) -> crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder{
+    pub fn stop_thing_registration_task(&self) -> crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder {
         crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::new(self.handle.clone())
     }
 }

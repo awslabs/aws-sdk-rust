@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStacksOutput`](crate::operation::describe_stacks::DescribeStacksOutput) with field(s):
     ///   - [`stacks(Option<Vec<Stack>>)`](crate::operation::describe_stacks::DescribeStacksOutput::stacks): <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     /// - On failure, responds with [`SdkError<DescribeStacksError>`](crate::operation::describe_stacks::DescribeStacksError)
-    pub fn describe_stacks(
-        &self,
-    ) -> crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder {
-        crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stacks(&self) -> crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder {
+        crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::new(self.handle.clone())
     }
 }

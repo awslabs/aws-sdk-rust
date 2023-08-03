@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`model_card_version_summary_list(Option<Vec<ModelCardVersionSummary>>)`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput::model_card_version_summary_list): <p>The summaries of the listed versions of the model card.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelCardVersionsError>`](crate::operation::list_model_card_versions::ListModelCardVersionsError)
-    pub fn list_model_card_versions(
-        &self,
-    ) -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder
-    {
+    pub fn list_model_card_versions(&self) -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder {
         crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::new(self.handle.clone())
     }
 }

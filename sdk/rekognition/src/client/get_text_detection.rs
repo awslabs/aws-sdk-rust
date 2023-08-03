@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`video(Option<Video>)`](crate::operation::get_text_detection::GetTextDetectionOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_text_detection::GetTextDetectionOutput::job_tag): <p>A job identifier specified in the call to StartTextDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     /// - On failure, responds with [`SdkError<GetTextDetectionError>`](crate::operation::get_text_detection::GetTextDetectionError)
-    pub fn get_text_detection(
-        &self,
-    ) -> crate::operation::get_text_detection::builders::GetTextDetectionFluentBuilder {
-        crate::operation::get_text_detection::builders::GetTextDetectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_text_detection(&self) -> crate::operation::get_text_detection::builders::GetTextDetectionFluentBuilder {
+        crate::operation::get_text_detection::builders::GetTextDetectionFluentBuilder::new(self.handle.clone())
     }
 }

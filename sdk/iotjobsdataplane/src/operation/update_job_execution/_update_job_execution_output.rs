@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateJobExecutionOutput {
 }
 impl UpdateJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobExecutionOutput`](crate::operation::update_job_execution::UpdateJobExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_job_execution::builders::UpdateJobExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::update_job_execution::builders::UpdateJobExecutionOutputBuilder {
         crate::operation::update_job_execution::builders::UpdateJobExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobExecutionOutput`](crate::operation::update_job_execution::UpdateJobExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobExecutionOutputBuilder {
     pub(crate) execution_state: ::std::option::Option<crate::types::JobExecutionState>,
     pub(crate) job_document: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl UpdateJobExecutionOutputBuilder {
         self
     }
     /// <p>A JobExecutionState object.</p>
-    pub fn set_execution_state(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionState>,
-    ) -> Self {
+    pub fn set_execution_state(mut self, input: ::std::option::Option<crate::types::JobExecutionState>) -> Self {
         self.execution_state = input;
         self
     }

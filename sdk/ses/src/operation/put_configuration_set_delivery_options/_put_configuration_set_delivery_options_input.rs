@@ -23,34 +23,26 @@ impl PutConfigurationSetDeliveryOptionsInput {
 }
 impl PutConfigurationSetDeliveryOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder {
         crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
 }
 impl PutConfigurationSetDeliveryOptionsInputBuilder {
     /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -64,10 +56,7 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
         self
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
-    pub fn set_delivery_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryOptions>,
-    ) -> Self {
+    pub fn set_delivery_options(mut self, input: ::std::option::Option<crate::types::DeliveryOptions>) -> Self {
         self.delivery_options = input;
         self
     }
@@ -76,14 +65,17 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
         &self.delivery_options
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                delivery_options: self.delivery_options
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                delivery_options: self.delivery_options,
+            },
         )
     }
 }

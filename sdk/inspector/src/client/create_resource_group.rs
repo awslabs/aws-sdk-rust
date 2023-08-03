@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput) with field(s):
     ///   - [`resource_group_arn(Option<String>)`](crate::operation::create_resource_group::CreateResourceGroupOutput::resource_group_arn): <p>The ARN that specifies the resource group that is created.</p>
     /// - On failure, responds with [`SdkError<CreateResourceGroupError>`](crate::operation::create_resource_group::CreateResourceGroupError)
-    pub fn create_resource_group(
-        &self,
-    ) -> crate::operation::create_resource_group::builders::CreateResourceGroupFluentBuilder {
-        crate::operation::create_resource_group::builders::CreateResourceGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resource_group(&self) -> crate::operation::create_resource_group::builders::CreateResourceGroupFluentBuilder {
+        crate::operation::create_resource_group::builders::CreateResourceGroupFluentBuilder::new(self.handle.clone())
     }
 }

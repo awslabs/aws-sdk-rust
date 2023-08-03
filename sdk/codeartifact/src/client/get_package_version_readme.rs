@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`version_revision(Option<String>)`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput::version_revision): <p> The current revision associated with the package version. </p>
     ///   - [`readme(Option<String>)`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput::readme): <p> The text of the returned readme file. </p>
     /// - On failure, responds with [`SdkError<GetPackageVersionReadmeError>`](crate::operation::get_package_version_readme::GetPackageVersionReadmeError)
-    pub fn get_package_version_readme(
-        &self,
-    ) -> crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeFluentBuilder
-    {
+    pub fn get_package_version_readme(&self) -> crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeFluentBuilder {
         crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeFluentBuilder::new(self.handle.clone())
     }
 }

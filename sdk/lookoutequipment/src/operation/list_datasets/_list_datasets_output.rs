@@ -35,13 +35,10 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) dataset_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
+    pub(crate) dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutputBuilder {
@@ -71,17 +68,12 @@ impl ListDatasetsOutputBuilder {
         self
     }
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
-    pub fn set_dataset_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
-    ) -> Self {
+    pub fn set_dataset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>) -> Self {
         self.dataset_summaries = input;
         self
     }
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
-    pub fn get_dataset_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    pub fn get_dataset_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
         &self.dataset_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -4,17 +4,10 @@ pub fn de_describe_regions_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_regions::DescribeRegionsOutput,
-    crate::operation::describe_regions::DescribeRegionsError,
-> {
+) -> std::result::Result<crate::operation::describe_regions::DescribeRegionsOutput, crate::operation::describe_regions::DescribeRegionsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_regions::DescribeRegionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_regions::DescribeRegionsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::describe_regions::DescribeRegionsError::generic(generic))
@@ -25,22 +18,13 @@ pub fn de_describe_regions_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_regions::DescribeRegionsOutput,
-    crate::operation::describe_regions::DescribeRegionsError,
-> {
+) -> std::result::Result<crate::operation::describe_regions::DescribeRegionsOutput, crate::operation::describe_regions::DescribeRegionsError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_regions::de_describe_regions(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_regions::DescribeRegionsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder::default();
+        output = crate::protocol_serde::shape_describe_regions::de_describe_regions(_response_body, output)
+            .map_err(crate::operation::describe_regions::DescribeRegionsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -49,10 +33,7 @@ pub fn de_describe_regions_http_response_with_props(
 pub fn de_describe_regions(
     inp: &[u8],
     mut builder: crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder,
-) -> Result<
-    crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

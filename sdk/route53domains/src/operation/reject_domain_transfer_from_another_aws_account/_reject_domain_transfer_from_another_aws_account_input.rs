@@ -16,16 +16,15 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
 }
 impl RejectDomainTransferFromAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput).
-    pub fn builder() -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountInputBuilder {
         crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectDomainTransferFromAnotherAwsAccountInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +44,16 @@ impl RejectDomainTransferFromAnotherAwsAccountInputBuilder {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput {
-                domain_name: self.domain_name
-                ,
-            }
+                domain_name: self.domain_name,
+            },
         )
     }
 }

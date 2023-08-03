@@ -36,17 +36,14 @@ impl CreateRoomMembershipInput {
 }
 impl CreateRoomMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateRoomMembershipInput`](crate::operation::create_room_membership::CreateRoomMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder {
+    pub fn builder() -> crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder {
         crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRoomMembershipInput`](crate::operation::create_room_membership::CreateRoomMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl CreateRoomMembershipInputBuilder {
         self
     }
     /// <p>The role of the member.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembershipRole>,
-    ) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
         self.role = input;
         self
     }
@@ -116,17 +110,13 @@ impl CreateRoomMembershipInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoomMembershipInput`](crate::operation::create_room_membership::CreateRoomMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_room_membership::CreateRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_room_membership::CreateRoomMembershipInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                member_id: self.member_id,
-                role: self.role,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_room_membership::CreateRoomMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_room_membership::CreateRoomMembershipInput {
+            account_id: self.account_id,
+            room_id: self.room_id,
+            member_id: self.member_id,
+            role: self.role,
+        })
     }
 }

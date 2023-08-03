@@ -26,8 +26,7 @@ impl DescribeAppInstanceBotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder,
+    inner: crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder,
 }
 impl DescribeAppInstanceBotFluentBuilder {
     /// Creates a new `DescribeAppInstanceBot`.
@@ -38,10 +37,7 @@ impl DescribeAppInstanceBotFluentBuilder {
         }
     }
     /// Access the DescribeAppInstanceBot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeAppInstanceBotFluentBuilder {
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeAppInstanceBotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeAppInstanceBotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeAppInstanceBotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeAppInstanceBotFluentBuilder {
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bot_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_bot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_bot_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bot_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_bot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_bot_arn(input);
         self
     }

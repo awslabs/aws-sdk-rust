@@ -28,7 +28,7 @@ impl DeleteTrafficPolicyInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrafficPolicyInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder,
+    inner: crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder,
 }
 impl DeleteTrafficPolicyInstanceFluentBuilder {
     /// Creates a new `DeleteTrafficPolicyInstance`.
@@ -39,7 +39,7 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
         }
     }
     /// Access the DeleteTrafficPolicyInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
             crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
             crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError>,
     > {
         self.customize_middleware().await
     }

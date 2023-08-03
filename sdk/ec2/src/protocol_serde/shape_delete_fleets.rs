@@ -4,22 +4,13 @@ pub fn de_delete_fleets_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_fleets::DeleteFleetsOutput,
-    crate::operation::delete_fleets::DeleteFleetsError,
-> {
+) -> std::result::Result<crate::operation::delete_fleets::DeleteFleetsOutput, crate::operation::delete_fleets::DeleteFleetsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_fleets::DeleteFleetsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_fleets::DeleteFleetsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::delete_fleets::DeleteFleetsError::generic(
-        generic,
-    ))
+    Err(crate::operation::delete_fleets::DeleteFleetsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,20 +18,13 @@ pub fn de_delete_fleets_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_fleets::DeleteFleetsOutput,
-    crate::operation::delete_fleets::DeleteFleetsError,
-> {
+) -> std::result::Result<crate::operation::delete_fleets::DeleteFleetsOutput, crate::operation::delete_fleets::DeleteFleetsError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_delete_fleets::de_delete_fleets(_response_body, output)
-                .map_err(crate::operation::delete_fleets::DeleteFleetsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder::default();
+        output = crate::protocol_serde::shape_delete_fleets::de_delete_fleets(_response_body, output)
+            .map_err(crate::operation::delete_fleets::DeleteFleetsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -49,10 +33,7 @@ pub fn de_delete_fleets_http_response_with_props(
 pub fn de_delete_fleets(
     inp: &[u8],
     mut builder: crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder,
-) -> Result<
-    crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

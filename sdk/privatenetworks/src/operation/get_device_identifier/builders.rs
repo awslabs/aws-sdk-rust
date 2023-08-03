@@ -37,9 +37,7 @@ impl GetDeviceIdentifierFluentBuilder {
         }
     }
     /// Access the GetDeviceIdentifier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_device_identifier::builders::GetDeviceIdentifierInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_device_identifier::builders::GetDeviceIdentifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetDeviceIdentifierFluentBuilder {
             crate::operation::get_device_identifier::GetDeviceIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_identifier::GetDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_identifier::GetDeviceIdentifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetDeviceIdentifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetDeviceIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_identifier::GetDeviceIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_identifier::GetDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_identifier::GetDeviceIdentifierError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetDeviceIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_identifier::GetDeviceIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_identifier::GetDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_identifier::GetDeviceIdentifierError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetDeviceIdentifierFluentBuilder {
             crate::operation::get_device_identifier::GetDeviceIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_identifier::GetDeviceIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_identifier::GetDeviceIdentifierError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_identifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_identifier_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn set_device_identifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_identifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_identifier_arn(input);
         self
     }

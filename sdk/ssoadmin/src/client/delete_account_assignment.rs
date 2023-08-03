@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAccountAssignmentOutput`](crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput) with field(s):
     ///   - [`account_assignment_deletion_status(Option<AccountAssignmentOperationStatus>)`](crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput::account_assignment_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     /// - On failure, responds with [`SdkError<DeleteAccountAssignmentError>`](crate::operation::delete_account_assignment::DeleteAccountAssignmentError)
-    pub fn delete_account_assignment(
-        &self,
-    ) -> crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentFluentBuilder
-    {
+    pub fn delete_account_assignment(&self) -> crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentFluentBuilder {
         crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,15 @@ impl DisassociateWirelessGatewayFromCertificateInput {
 }
 impl DisassociateWirelessGatewayFromCertificateInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateInput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput).
-    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder {
         crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWirelessGatewayFromCertificateInput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromCertificateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +43,14 @@ impl DisassociateWirelessGatewayFromCertificateInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromCertificateInput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput {
-                id: self.id
-                ,
-            }
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput { id: self.id },
         )
     }
 }

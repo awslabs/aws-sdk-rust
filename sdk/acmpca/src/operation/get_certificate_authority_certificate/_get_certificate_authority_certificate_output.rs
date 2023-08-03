@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetCertificateAuthorityCertificateOut
 }
 impl GetCertificateAuthorityCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCertificateOutput`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput).
-    pub fn builder() -> crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateOutputBuilder {
         crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCertificateAuthorityCertificateOutput`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCertificateAuthorityCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl GetCertificateAuthorityCertificateOutputBuilder {
         &self.certificate
     }
     /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
-    pub fn certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }
@@ -88,12 +80,10 @@ impl GetCertificateAuthorityCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCertificateAuthorityCertificateOutput`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput).
-    pub fn build(self) -> crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput{
+    pub fn build(self) -> crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput {
         crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput {
-            certificate: self.certificate
-            ,
-            certificate_chain: self.certificate_chain
-            ,
+            certificate: self.certificate,
+            certificate_chain: self.certificate_chain,
             _request_id: self._request_id,
         }
     }

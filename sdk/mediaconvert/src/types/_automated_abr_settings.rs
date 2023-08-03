@@ -44,9 +44,7 @@ impl AutomatedAbrSettings {
 
 /// A builder for [`AutomatedAbrSettings`](crate::types::AutomatedAbrSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomatedAbrSettingsBuilder {
     pub(crate) max_abr_bitrate: ::std::option::Option<i32>,
     pub(crate) max_renditions: ::std::option::Option<i32>,
@@ -108,17 +106,12 @@ impl AutomatedAbrSettingsBuilder {
         self
     }
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>>) -> Self {
         self.rules = input;
         self
     }
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`AutomatedAbrSettings`](crate::types::AutomatedAbrSettings).

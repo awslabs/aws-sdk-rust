@@ -65,9 +65,7 @@ impl ListWebhookItem {
 
 /// A builder for [`ListWebhookItem`](crate::types::ListWebhookItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebhookItemBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::WebhookDefinition>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl ListWebhookItemBuilder {
         self
     }
     /// <p>The detail returned for each webhook, such as the webhook authentication type and filter rules.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::WebhookDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::WebhookDefinition>) -> Self {
         self.definition = input;
         self
     }
@@ -110,18 +105,12 @@ impl ListWebhookItemBuilder {
         &self.url
     }
     /// <p>The text of the error message about the webhook.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the error message about the webhook.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -149,10 +138,7 @@ impl ListWebhookItemBuilder {
         self
     }
     /// <p>The date and time a webhook was last successfully triggered, in timestamp format.</p>
-    pub fn set_last_triggered(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_triggered(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_triggered = input;
         self
     }
@@ -186,10 +172,7 @@ impl ListWebhookItemBuilder {
         self
     }
     /// <p>Specifies the tags applied to the webhook.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

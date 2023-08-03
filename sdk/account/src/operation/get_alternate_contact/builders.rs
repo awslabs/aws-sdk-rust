@@ -40,9 +40,7 @@ impl GetAlternateContactFluentBuilder {
         }
     }
     /// Access the GetAlternateContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_alternate_contact::builders::GetAlternateContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_alternate_contact::builders::GetAlternateContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl GetAlternateContactFluentBuilder {
             crate::operation::get_alternate_contact::GetAlternateContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alternate_contact::GetAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl GetAlternateContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl GetAlternateContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_alternate_contact::GetAlternateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alternate_contact::GetAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl GetAlternateContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_alternate_contact::GetAlternateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alternate_contact::GetAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl GetAlternateContactFluentBuilder {
             crate::operation::get_alternate_contact::GetAlternateContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alternate_contact::GetAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError>,
     > {
         self.customize_middleware().await
     }
@@ -131,17 +118,12 @@ impl GetAlternateContactFluentBuilder {
         self
     }
     /// <p>Specifies which alternate contact you want to retrieve.</p>
-    pub fn set_alternate_contact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateContactType>,
-    ) -> Self {
+    pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.inner = self.inner.set_alternate_contact_type(input);
         self
     }
     /// <p>Specifies which alternate contact you want to retrieve.</p>
-    pub fn get_alternate_contact_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+    pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         self.inner.get_alternate_contact_type()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>

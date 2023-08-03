@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`agent_arns(Option<Vec<String>>)`](crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput::agent_arns): <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput::creation_time): <p>The time that the HDFS location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationHdfsError>`](crate::operation::describe_location_hdfs::DescribeLocationHdfsError)
-    pub fn describe_location_hdfs(
-        &self,
-    ) -> crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder {
-        crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_location_hdfs(&self) -> crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder {
+        crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder::new(self.handle.clone())
     }
 }

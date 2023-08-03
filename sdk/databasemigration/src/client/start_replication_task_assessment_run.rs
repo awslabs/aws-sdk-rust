@@ -15,7 +15,9 @@ impl super::Client {
     /// - On success, responds with [`StartReplicationTaskAssessmentRunOutput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput) with field(s):
     ///   - [`replication_task_assessment_run(Option<ReplicationTaskAssessmentRun>)`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput::replication_task_assessment_run): <p>The premigration assessment run that was started.</p>
     /// - On failure, responds with [`SdkError<StartReplicationTaskAssessmentRunError>`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError)
-    pub fn start_replication_task_assessment_run(&self) -> crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunFluentBuilder{
+    pub fn start_replication_task_assessment_run(
+        &self,
+    ) -> crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunFluentBuilder {
         crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunFluentBuilder::new(self.handle.clone())
     }
 }

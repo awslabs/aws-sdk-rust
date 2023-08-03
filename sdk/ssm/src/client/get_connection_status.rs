@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`target(Option<String>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::target): <p>The ID of the managed node to check connection status. </p>
     ///   - [`status(Option<ConnectionStatus>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::status): <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     /// - On failure, responds with [`SdkError<GetConnectionStatusError>`](crate::operation::get_connection_status::GetConnectionStatusError)
-    pub fn get_connection_status(
-        &self,
-    ) -> crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder {
-        crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connection_status(&self) -> crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder {
+        crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::new(self.handle.clone())
     }
 }

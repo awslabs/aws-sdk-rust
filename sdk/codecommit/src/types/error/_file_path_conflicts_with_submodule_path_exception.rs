@@ -27,34 +27,27 @@ impl ::std::fmt::Display for FilePathConflictsWithSubmodulePathException {
     }
 }
 impl ::std::error::Error for FilePathConflictsWithSubmodulePathException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::FilePathConflictsWithSubmodulePathException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::FilePathConflictsWithSubmodulePathException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FilePathConflictsWithSubmodulePathException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FilePathConflictsWithSubmodulePathException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl FilePathConflictsWithSubmodulePathException {
     /// Creates a new builder-style object to manufacture [`FilePathConflictsWithSubmodulePathException`](crate::types::error::FilePathConflictsWithSubmodulePathException).
-    pub fn builder(
-    ) -> crate::types::error::builders::FilePathConflictsWithSubmodulePathExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::FilePathConflictsWithSubmodulePathExceptionBuilder {
         crate::types::error::builders::FilePathConflictsWithSubmodulePathExceptionBuilder::default()
     }
 }
 
 /// A builder for [`FilePathConflictsWithSubmodulePathException`](crate::types::error::FilePathConflictsWithSubmodulePathException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilePathConflictsWithSubmodulePathExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl FilePathConflictsWithSubmodulePathExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

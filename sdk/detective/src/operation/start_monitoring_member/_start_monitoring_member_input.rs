@@ -24,18 +24,14 @@ impl StartMonitoringMemberInput {
 }
 impl StartMonitoringMemberInput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringMemberInput`](crate::operation::start_monitoring_member::StartMonitoringMemberInput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder {
         crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMonitoringMemberInput`](crate::operation::start_monitoring_member::StartMonitoringMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMonitoringMemberInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -75,15 +71,11 @@ impl StartMonitoringMemberInputBuilder {
     /// Consumes the builder and constructs a [`StartMonitoringMemberInput`](crate::operation::start_monitoring_member::StartMonitoringMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_monitoring_member::StartMonitoringMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_monitoring_member::StartMonitoringMemberInput {
-                graph_arn: self.graph_arn,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_monitoring_member::StartMonitoringMemberInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_monitoring_member::StartMonitoringMemberInput {
+            graph_arn: self.graph_arn,
+            account_id: self.account_id,
+        })
     }
 }

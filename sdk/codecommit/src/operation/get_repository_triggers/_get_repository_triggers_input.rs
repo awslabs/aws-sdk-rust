@@ -16,35 +16,25 @@ impl GetRepositoryTriggersInput {
 }
 impl GetRepositoryTriggersInput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_triggers::builders::GetRepositoryTriggersInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_repository_triggers::builders::GetRepositoryTriggersInputBuilder {
         crate::operation::get_repository_triggers::builders::GetRepositoryTriggersInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryTriggersInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRepositoryTriggersInputBuilder {
     /// <p>The name of the repository for which the trigger is configured.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository for which the trigger is configured.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -55,14 +45,10 @@ impl GetRepositoryTriggersInputBuilder {
     /// Consumes the builder and constructs a [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_repository_triggers::GetRepositoryTriggersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_repository_triggers::GetRepositoryTriggersInput {
-                repository_name: self.repository_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_repository_triggers::GetRepositoryTriggersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_repository_triggers::GetRepositoryTriggersInput {
+            repository_name: self.repository_name,
+        })
     }
 }

@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for TestInvokeAuthorizerOutput {
 }
 impl TestInvokeAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
-    pub fn builder(
-    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder {
+    pub fn builder() -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder {
         crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerOutputBuilder {
     pub(crate) is_authenticated: ::std::option::Option<bool>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -102,27 +99,19 @@ impl TestInvokeAuthorizerOutputBuilder {
     /// To override the contents of this collection use [`set_policy_documents`](Self::set_policy_documents).
     ///
     /// <p>IAM policy documents.</p>
-    pub fn policy_documents(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_documents(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_documents.unwrap_or_default();
         v.push(input.into());
         self.policy_documents = ::std::option::Option::Some(v);
         self
     }
     /// <p>IAM policy documents.</p>
-    pub fn set_policy_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_documents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_documents = input;
         self
     }
     /// <p>IAM policy documents.</p>
-    pub fn get_policy_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_documents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_documents
     }
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>

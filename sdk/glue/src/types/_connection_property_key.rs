@@ -66,13 +66,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -148,12 +142,8 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "CONNECTOR_URL" => ConnectionPropertyKey::ConnectorUrl,
             "CUSTOM_JDBC_CERT" => ConnectionPropertyKey::CustomJdbcCert,
             "CUSTOM_JDBC_CERT_STRING" => ConnectionPropertyKey::CustomJdbcCertString,
-            "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" => {
-                ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword
-            }
-            "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" => {
-                ConnectionPropertyKey::EncryptedKafkaClientKeyPassword
-            }
+            "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword,
+            "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeyPassword,
             "ENCRYPTED_PASSWORD" => ConnectionPropertyKey::EncryptedPassword,
             "HOST" => ConnectionPropertyKey::Host,
             "INSTANCE_ID" => ConnectionPropertyKey::InstanceId,
@@ -168,20 +158,14 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::KafkaClientKeystorePassword,
             "KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::KafkaClientKeyPassword,
             "KAFKA_CUSTOM_CERT" => ConnectionPropertyKey::KafkaCustomCert,
-            "KAFKA_SKIP_CUSTOM_CERT_VALIDATION" => {
-                ConnectionPropertyKey::KafkaSkipCustomCertValidation
-            }
+            "KAFKA_SKIP_CUSTOM_CERT_VALIDATION" => ConnectionPropertyKey::KafkaSkipCustomCertValidation,
             "KAFKA_SSL_ENABLED" => ConnectionPropertyKey::KafkaSslEnabled,
             "PASSWORD" => ConnectionPropertyKey::Password,
             "PORT" => ConnectionPropertyKey::Port,
             "SECRET_ID" => ConnectionPropertyKey::SecretId,
-            "SKIP_CUSTOM_JDBC_CERT_VALIDATION" => {
-                ConnectionPropertyKey::SkipCustomJdbcCertValidation
-            }
+            "SKIP_CUSTOM_JDBC_CERT_VALIDATION" => ConnectionPropertyKey::SkipCustomJdbcCertValidation,
             "USERNAME" => ConnectionPropertyKey::UserName,
-            other => ConnectionPropertyKey::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConnectionPropertyKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -203,12 +187,8 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::ConnectorUrl => "CONNECTOR_URL",
             ConnectionPropertyKey::CustomJdbcCert => "CUSTOM_JDBC_CERT",
             ConnectionPropertyKey::CustomJdbcCertString => "CUSTOM_JDBC_CERT_STRING",
-            ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => {
-                "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD"
-            }
-            ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => {
-                "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD"
-            }
+            ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
+            ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
             ConnectionPropertyKey::EncryptedPassword => "ENCRYPTED_PASSWORD",
             ConnectionPropertyKey::Host => "HOST",
             ConnectionPropertyKey::InstanceId => "INSTANCE_ID",
@@ -223,16 +203,12 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::KafkaClientKeystorePassword => "KAFKA_CLIENT_KEYSTORE_PASSWORD",
             ConnectionPropertyKey::KafkaClientKeyPassword => "KAFKA_CLIENT_KEY_PASSWORD",
             ConnectionPropertyKey::KafkaCustomCert => "KAFKA_CUSTOM_CERT",
-            ConnectionPropertyKey::KafkaSkipCustomCertValidation => {
-                "KAFKA_SKIP_CUSTOM_CERT_VALIDATION"
-            }
+            ConnectionPropertyKey::KafkaSkipCustomCertValidation => "KAFKA_SKIP_CUSTOM_CERT_VALIDATION",
             ConnectionPropertyKey::KafkaSslEnabled => "KAFKA_SSL_ENABLED",
             ConnectionPropertyKey::Password => "PASSWORD",
             ConnectionPropertyKey::Port => "PORT",
             ConnectionPropertyKey::SecretId => "SECRET_ID",
-            ConnectionPropertyKey::SkipCustomJdbcCertValidation => {
-                "SKIP_CUSTOM_JDBC_CERT_VALIDATION"
-            }
+            ConnectionPropertyKey::SkipCustomJdbcCertValidation => "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
             ConnectionPropertyKey::UserName => "USERNAME",
             ConnectionPropertyKey::Unknown(value) => value.as_str(),
         }

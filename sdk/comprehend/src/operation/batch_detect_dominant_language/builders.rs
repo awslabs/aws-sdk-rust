@@ -26,7 +26,7 @@ impl BatchDetectDominantLanguageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDetectDominantLanguageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder,
+    inner: crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder,
 }
 impl BatchDetectDominantLanguageFluentBuilder {
     /// Creates a new `BatchDetectDominantLanguage`.
@@ -37,7 +37,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
         }
     }
     /// Access the BatchDetectDominantLanguage as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
             crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
             crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl BatchDetectDominantLanguageFluentBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_text_list(input);
         self
     }

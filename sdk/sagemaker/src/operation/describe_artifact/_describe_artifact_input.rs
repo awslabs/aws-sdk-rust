@@ -15,17 +15,14 @@ impl DescribeArtifactInput {
 }
 impl DescribeArtifactInput {
     /// Creates a new builder-style object to manufacture [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
-    pub fn builder() -> crate::operation::describe_artifact::builders::DescribeArtifactInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_artifact::builders::DescribeArtifactInputBuilder {
         crate::operation::describe_artifact::builders::DescribeArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeArtifactInputBuilder {
     pub(crate) artifact_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeArtifactInputBuilder {
     /// Consumes the builder and constructs a [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_artifact::DescribeArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_artifact::DescribeArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_artifact::DescribeArtifactInput {
             artifact_arn: self.artifact_arn,
         })

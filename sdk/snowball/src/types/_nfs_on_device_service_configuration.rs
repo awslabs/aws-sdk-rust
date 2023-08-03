@@ -32,9 +32,7 @@ impl NfsOnDeviceServiceConfiguration {
 
 /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::types::NfsOnDeviceServiceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NfsOnDeviceServiceConfigurationBuilder {
     pub(crate) storage_limit: ::std::option::Option<i32>,
     pub(crate) storage_unit: ::std::option::Option<crate::types::StorageUnit>,
@@ -62,10 +60,7 @@ impl NfsOnDeviceServiceConfigurationBuilder {
     }
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
-    pub fn set_storage_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageUnit>,
-    ) -> Self {
+    pub fn set_storage_unit(mut self, input: ::std::option::Option<crate::types::StorageUnit>) -> Self {
         self.storage_unit = input;
         self
     }

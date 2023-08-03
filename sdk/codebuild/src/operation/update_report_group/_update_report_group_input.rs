@@ -39,17 +39,14 @@ impl UpdateReportGroupInput {
 }
 impl UpdateReportGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateReportGroupInput`](crate::operation::update_report_group::UpdateReportGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder {
         crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReportGroupInput`](crate::operation::update_report_group::UpdateReportGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReportGroupInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_config: ::std::option::Option<crate::types::ReportExportConfig>,
@@ -84,10 +81,7 @@ impl UpdateReportGroupInputBuilder {
     /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
     /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
-    pub fn set_export_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportExportConfig>,
-    ) -> Self {
+    pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.export_config = input;
         self
     }
@@ -113,10 +107,7 @@ impl UpdateReportGroupInputBuilder {
     }
     /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -128,16 +119,11 @@ impl UpdateReportGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReportGroupInput`](crate::operation::update_report_group::UpdateReportGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_report_group::UpdateReportGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_report_group::UpdateReportGroupInput {
-                arn: self.arn,
-                export_config: self.export_config,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_report_group::UpdateReportGroupInput {
+            arn: self.arn,
+            export_config: self.export_config,
+            tags: self.tags,
+        })
     }
 }

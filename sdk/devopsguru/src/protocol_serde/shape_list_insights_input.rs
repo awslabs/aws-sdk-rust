@@ -15,10 +15,7 @@ pub fn ser_list_insights_input(
     if let Some(var_3) = &input.status_filter {
         #[allow(unused_mut)]
         let mut object_4 = object.key("StatusFilter").start_object();
-        crate::protocol_serde::shape_list_insights_status_filter::ser_list_insights_status_filter(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_list_insights_status_filter::ser_list_insights_status_filter(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

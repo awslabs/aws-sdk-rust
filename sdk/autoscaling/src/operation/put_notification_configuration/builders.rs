@@ -29,7 +29,7 @@ impl PutNotificationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder,
+    inner: crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder,
 }
 impl PutNotificationConfigurationFluentBuilder {
     /// Creates a new `PutNotificationConfiguration`.
@@ -40,7 +40,7 @@ impl PutNotificationConfigurationFluentBuilder {
         }
     }
     /// Access the PutNotificationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl PutNotificationConfigurationFluentBuilder {
             crate::operation::put_notification_configuration::PutNotificationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_configuration::PutNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_configuration::PutNotificationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl PutNotificationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl PutNotificationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_notification_configuration::PutNotificationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_configuration::PutNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_configuration::PutNotificationConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl PutNotificationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_notification_configuration::PutNotificationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_configuration::PutNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_configuration::PutNotificationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl PutNotificationConfigurationFluentBuilder {
             crate::operation::put_notification_configuration::PutNotificationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_configuration::PutNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_configuration::PutNotificationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -162,25 +145,17 @@ impl PutNotificationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_notification_types`](Self::set_notification_types).
     ///
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn notification_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_types(input.into());
         self
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn set_notification_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_notification_types(input);
         self
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn get_notification_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_notification_types()
     }
 }

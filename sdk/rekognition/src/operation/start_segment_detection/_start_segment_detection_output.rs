@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSegmentDetectionOutput {
 }
 impl StartSegmentDetectionOutput {
     /// Creates a new builder-style object to manufacture [`StartSegmentDetectionOutput`](crate::operation::start_segment_detection::StartSegmentDetectionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_segment_detection::builders::StartSegmentDetectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_segment_detection::builders::StartSegmentDetectionOutputBuilder {
         crate::operation::start_segment_detection::builders::StartSegmentDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSegmentDetectionOutput`](crate::operation::start_segment_detection::StartSegmentDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSegmentDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

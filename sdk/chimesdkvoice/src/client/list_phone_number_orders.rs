@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`phone_number_orders(Option<Vec<PhoneNumberOrder>>)`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersOutput::phone_number_orders): <p>The phone number order details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersOutput::next_token): <p>The token used to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPhoneNumberOrdersError>`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersError)
-    pub fn list_phone_number_orders(
-        &self,
-    ) -> crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersFluentBuilder
-    {
+    pub fn list_phone_number_orders(&self) -> crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersFluentBuilder {
         crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersFluentBuilder::new(self.handle.clone())
     }
 }

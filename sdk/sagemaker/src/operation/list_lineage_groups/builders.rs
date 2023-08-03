@@ -10,10 +10,7 @@ impl ListLineageGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_lineage_groups::ListLineageGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lineage_groups::ListLineageGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lineage_groups::ListLineageGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_lineage_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListLineageGroupsFluentBuilder {
         }
     }
     /// Access the ListLineageGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListLineageGroupsFluentBuilder {
             crate::operation::list_lineage_groups::ListLineageGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lineage_groups::ListLineageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lineage_groups::ListLineageGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListLineageGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListLineageGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_lineage_groups::ListLineageGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lineage_groups::ListLineageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lineage_groups::ListLineageGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListLineageGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_lineage_groups::ListLineageGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lineage_groups::ListLineageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lineage_groups::ListLineageGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListLineageGroupsFluentBuilder {
             crate::operation::list_lineage_groups::ListLineageGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lineage_groups::ListLineageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lineage_groups::ListLineageGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_lineage_groups::paginator::ListLineageGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_lineage_groups::paginator::ListLineageGroupsPaginator {
-        crate::operation::list_lineage_groups::paginator::ListLineageGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_lineage_groups::paginator::ListLineageGroupsPaginator {
+        crate::operation::list_lineage_groups::paginator::ListLineageGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,10 +118,7 @@ impl ListLineageGroupsFluentBuilder {
         self
     }
     /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -156,10 +132,7 @@ impl ListLineageGroupsFluentBuilder {
         self
     }
     /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -173,10 +146,7 @@ impl ListLineageGroupsFluentBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortLineageGroupsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortLineageGroupsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

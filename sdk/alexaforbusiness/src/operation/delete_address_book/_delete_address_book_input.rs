@@ -15,34 +15,25 @@ impl DeleteAddressBookInput {
 }
 impl DeleteAddressBookInput {
     /// Creates a new builder-style object to manufacture [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
-    pub fn builder(
-    ) -> crate::operation::delete_address_book::builders::DeleteAddressBookInputBuilder {
+    pub fn builder() -> crate::operation::delete_address_book::builders::DeleteAddressBookInputBuilder {
         crate::operation::delete_address_book::builders::DeleteAddressBookInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAddressBookInputBuilder {
     pub(crate) address_book_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAddressBookInputBuilder {
     /// <p>The ARN of the address book to delete.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the address book to delete.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_book_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_address_book::DeleteAddressBookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_address_book::DeleteAddressBookInput {
-                address_book_arn: self.address_book_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_address_book::DeleteAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_address_book::DeleteAddressBookInput {
+            address_book_arn: self.address_book_arn,
+        })
     }
 }

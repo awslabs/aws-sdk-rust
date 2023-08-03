@@ -10,10 +10,7 @@ impl ContinueDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::continue_deployment::ContinueDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_deployment::ContinueDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_deployment::ContinueDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.continue_deployment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ContinueDeploymentFluentBuilder {
         }
     }
     /// Access the ContinueDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ContinueDeploymentFluentBuilder {
             crate::operation::continue_deployment::ContinueDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_deployment::ContinueDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_deployment::ContinueDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ContinueDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ContinueDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::continue_deployment::ContinueDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_deployment::ContinueDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_deployment::ContinueDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ContinueDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::continue_deployment::ContinueDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_deployment::ContinueDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_deployment::ContinueDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ContinueDeploymentFluentBuilder {
             crate::operation::continue_deployment::ContinueDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_deployment::ContinueDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_deployment::ContinueDeploymentError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -148,17 +126,12 @@ impl ContinueDeploymentFluentBuilder {
         self
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    pub fn set_deployment_wait_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentWaitType>,
-    ) -> Self {
+    pub fn set_deployment_wait_type(mut self, input: ::std::option::Option<crate::types::DeploymentWaitType>) -> Self {
         self.inner = self.inner.set_deployment_wait_type(input);
         self
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    pub fn get_deployment_wait_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentWaitType> {
+    pub fn get_deployment_wait_type(&self) -> &::std::option::Option<crate::types::DeploymentWaitType> {
         self.inner.get_deployment_wait_type()
     }
 }

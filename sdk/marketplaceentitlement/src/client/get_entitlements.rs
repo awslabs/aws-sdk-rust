@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::operation::get_entitlements::GetEntitlementsOutput::entitlements): <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_entitlements::GetEntitlementsOutput::next_token): <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     /// - On failure, responds with [`SdkError<GetEntitlementsError>`](crate::operation::get_entitlements::GetEntitlementsError)
-    pub fn get_entitlements(
-        &self,
-    ) -> crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder {
-        crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_entitlements(&self) -> crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder {
+        crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,8 +30,7 @@ pub struct DataSource {
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
     #[doc(hidden)]
-    pub alternate_data_source_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
+    pub alternate_data_source_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     #[doc(hidden)]
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
@@ -75,21 +74,15 @@ impl DataSource {
         self.last_updated_time.as_ref()
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn data_source_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceParameters> {
+    pub fn data_source_parameters(&self) -> ::std::option::Option<&crate::types::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
-    pub fn alternate_data_source_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSourceParameters]> {
+    pub fn alternate_data_source_parameters(&self) -> ::std::option::Option<&[crate::types::DataSourceParameters]> {
         self.alternate_data_source_parameters.as_deref()
     }
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn vpc_connection_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
+    pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
@@ -114,9 +107,7 @@ impl DataSource {
 
 /// A builder for [`DataSource`](crate::types::DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -126,10 +117,8 @@ pub struct DataSourceBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
-    pub(crate) alternate_data_source_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
-    pub(crate) vpc_connection_properties:
-        ::std::option::Option<crate::types::VpcConnectionProperties>,
+    pub(crate) alternate_data_source_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
+    pub(crate) vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     pub(crate) ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     pub(crate) error_info: ::std::option::Option<crate::types::DataSourceErrorInfo>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -150,18 +139,12 @@ impl DataSourceBuilder {
         &self.arn
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -203,10 +186,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The HTTP status of the request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -220,10 +200,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The time that this data source was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -237,10 +214,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The last time that this data source was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -254,17 +228,12 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn set_data_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceParameters>,
-    ) -> Self {
+    pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.data_source_parameters = input;
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn get_data_source_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceParameters> {
+    pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         &self.data_source_parameters
     }
     /// Appends an item to `alternate_data_source_parameters`.
@@ -272,49 +241,33 @@ impl DataSourceBuilder {
     /// To override the contents of this collection use [`set_alternate_data_source_parameters`](Self::set_alternate_data_source_parameters).
     ///
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
-    pub fn alternate_data_source_parameters(
-        mut self,
-        input: crate::types::DataSourceParameters,
-    ) -> Self {
+    pub fn alternate_data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
         let mut v = self.alternate_data_source_parameters.unwrap_or_default();
         v.push(input);
         self.alternate_data_source_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
-    pub fn set_alternate_data_source_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
-    ) -> Self {
+    pub fn set_alternate_data_source_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>) -> Self {
         self.alternate_data_source_parameters = input;
         self
     }
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
-    pub fn get_alternate_data_source_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>> {
+    pub fn get_alternate_data_source_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>> {
         &self.alternate_data_source_parameters
     }
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn vpc_connection_properties(
-        mut self,
-        input: crate::types::VpcConnectionProperties,
-    ) -> Self {
+    pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.vpc_connection_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn set_vpc_connection_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    ) -> Self {
+    pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
         self.vpc_connection_properties = input;
         self
     }
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn get_vpc_connection_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+    pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         &self.vpc_connection_properties
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
@@ -323,10 +276,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    pub fn set_ssl_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SslProperties>,
-    ) -> Self {
+    pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.ssl_properties = input;
         self
     }
@@ -340,10 +290,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>Error information from the last update or the creation of the data source.</p>
-    pub fn set_error_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceErrorInfo>,
-    ) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::DataSourceErrorInfo>) -> Self {
         self.error_info = input;
         self
     }

@@ -42,52 +42,39 @@ impl ListPendingInvitationResourcesInput {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn resource_region_scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
         self.resource_region_scope.as_ref()
     }
 }
 impl ListPendingInvitationResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesInput`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput).
-    pub fn builder() -> crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder{
+    pub fn builder() -> crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder {
         crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPendingInvitationResourcesInput`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesInputBuilder {
     pub(crate) resource_share_invitation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) resource_region_scope:
-        ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
+    pub(crate) resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
 }
 impl ListPendingInvitationResourcesInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
-    pub fn resource_share_invitation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_invitation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_invitation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
-    pub fn set_resource_share_invitation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_invitation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_invitation_arn = input;
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
-    pub fn get_resource_share_invitation_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resource_share_invitation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_invitation_arn
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -136,10 +123,7 @@ impl ListPendingInvitationResourcesInputBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
         self.resource_region_scope = input;
         self
     }
@@ -150,9 +134,7 @@ impl ListPendingInvitationResourcesInputBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn get_resource_region_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
+    pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
         &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`ListPendingInvitationResourcesInput`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput).
@@ -162,17 +144,11 @@ impl ListPendingInvitationResourcesInputBuilder {
         crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput {
-                resource_share_invitation_arn: self.resource_share_invitation_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                resource_region_scope: self.resource_region_scope
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput {
+            resource_share_invitation_arn: self.resource_share_invitation_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            resource_region_scope: self.resource_region_scope,
+        })
     }
 }

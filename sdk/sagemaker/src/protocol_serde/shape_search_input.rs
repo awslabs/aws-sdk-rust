@@ -9,10 +9,7 @@ pub fn ser_search_input(
     if let Some(var_2) = &input.search_expression {
         #[allow(unused_mut)]
         let mut object_3 = object.key("SearchExpression").start_object();
-        crate::protocol_serde::shape_search_expression::ser_search_expression(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_search_expression::ser_search_expression(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.sort_by {
@@ -31,9 +28,7 @@ pub fn ser_search_input(
         );
     }
     if let Some(var_8) = &input.cross_account_filter_option {
-        object
-            .key("CrossAccountFilterOption")
-            .string(var_8.as_str());
+        object.key("CrossAccountFilterOption").string(var_8.as_str());
     }
     Ok(())
 }

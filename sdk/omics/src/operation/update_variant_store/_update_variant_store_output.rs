@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for UpdateVariantStoreOutput {
 }
 impl UpdateVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVariantStoreOutput`](crate::operation::update_variant_store::UpdateVariantStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder {
+    pub fn builder() -> crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder {
         crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVariantStoreOutput`](crate::operation::update_variant_store::UpdateVariantStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVariantStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
@@ -105,10 +102,7 @@ impl UpdateVariantStoreOutputBuilder {
         self
     }
     /// <p>The store's genome reference.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -164,10 +158,7 @@ impl UpdateVariantStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -181,10 +172,7 @@ impl UpdateVariantStoreOutputBuilder {
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

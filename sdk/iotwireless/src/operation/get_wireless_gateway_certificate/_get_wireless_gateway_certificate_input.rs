@@ -15,16 +15,14 @@ impl GetWirelessGatewayCertificateInput {
 }
 impl GetWirelessGatewayCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder {
         crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayCertificateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl GetWirelessGatewayCertificateInputBuilder {
         crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput {
-                id: self.id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput { id: self.id })
     }
 }

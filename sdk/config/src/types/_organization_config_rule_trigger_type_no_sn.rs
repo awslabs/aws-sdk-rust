@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OrganizationConfigRuleTriggerTypeNoSn {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum OrganizationConfigRuleTriggerTypeNoSn {
 impl ::std::convert::From<&str> for OrganizationConfigRuleTriggerTypeNoSn {
     fn from(s: &str) -> Self {
         match s {
-            "ConfigurationItemChangeNotification" => {
-                OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification
-            }
-            "OversizedConfigurationItemChangeNotification" => {
-                OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation
-            }
-            other => OrganizationConfigRuleTriggerTypeNoSn::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "ConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification,
+            "OversizedConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation,
+            other => OrganizationConfigRuleTriggerTypeNoSn::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl OrganizationConfigRuleTriggerTypeNoSn {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification => {
-                "ConfigurationItemChangeNotification"
-            }
-            OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => {
-                "OversizedConfigurationItemChangeNotification"
-            }
+            OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
+            OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => "OversizedConfigurationItemChangeNotification",
             OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ConfigurationItemChangeNotification",
-            "OversizedConfigurationItemChangeNotification",
-        ]
+        &["ConfigurationItemChangeNotification", "OversizedConfigurationItemChangeNotification"]
     }
 }
 impl ::std::convert::AsRef<str> for OrganizationConfigRuleTriggerTypeNoSn {

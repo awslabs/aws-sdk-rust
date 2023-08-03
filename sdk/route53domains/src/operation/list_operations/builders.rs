@@ -10,10 +10,7 @@ impl ListOperationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_operations::ListOperationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_operations::ListOperationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_operations();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListOperationsFluentBuilder {
         }
     }
     /// Access the ListOperations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_operations::builders::ListOperationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_operations::builders::ListOperationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListOperationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl ListOperationsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_operations::paginator::ListOperationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
-        crate::operation::list_operations::paginator::ListOperationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
+        crate::operation::list_operations::paginator::ListOperationsPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn submitted_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,10 +119,7 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn set_submitted_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_submitted_since(input);
         self
     }
@@ -184,17 +168,12 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p> The status of the operations. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p> The status of the operations. </p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
         self.inner.get_status()
     }
     /// Appends an item to `Type`.
@@ -207,10 +186,7 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p> An arrays of the domains operation types. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -224,17 +200,12 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p> The sort type for returned values. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p> The sort type for returned values. </p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
         self.inner.get_sort_by()
     }
     /// <p> The sort order ofr returned values, either ascending or descending. </p>

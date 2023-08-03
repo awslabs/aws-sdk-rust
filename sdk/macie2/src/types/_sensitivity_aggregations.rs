@@ -48,9 +48,7 @@ impl SensitivityAggregations {
 
 /// A builder for [`SensitivityAggregations`](crate::types::SensitivityAggregations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SensitivityAggregationsBuilder {
     pub(crate) classifiable_size_in_bytes: ::std::option::Option<i64>,
     pub(crate) publicly_accessible_count: ::std::option::Option<i64>,

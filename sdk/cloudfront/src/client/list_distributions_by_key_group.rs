@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsByKeyGroupOutput`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput) with field(s):
     ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput::distribution_id_list): <p>A list of distribution IDs.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByKeyGroupError>`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError)
-    pub fn list_distributions_by_key_group(&self) -> crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupFluentBuilder{
+    pub fn list_distributions_by_key_group(
+        &self,
+    ) -> crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupFluentBuilder {
         crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupFluentBuilder::new(self.handle.clone())
     }
 }

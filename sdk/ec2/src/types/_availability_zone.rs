@@ -48,9 +48,7 @@ impl AvailabilityZone {
     }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn opt_in_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AvailabilityZoneOptInStatus> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneOptInStatus> {
         self.opt_in_status.as_ref()
     }
     /// <p>Any messages about the Availability Zone, Local Zone, or Wavelength Zone.</p>
@@ -101,14 +99,11 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AvailabilityZoneState>,
     pub(crate) opt_in_status: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>,
-    pub(crate) messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) zone_id: ::std::option::Option<::std::string::String>,
@@ -125,10 +120,7 @@ impl AvailabilityZoneBuilder {
         self
     }
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailabilityZoneState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneState>) -> Self {
         self.state = input;
         self
     }
@@ -144,18 +136,13 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>,
-    ) -> Self {
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>) -> Self {
         self.opt_in_status = input;
         self
     }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
     /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn get_opt_in_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AvailabilityZoneOptInStatus> {
+    pub fn get_opt_in_status(&self) -> &::std::option::Option<crate::types::AvailabilityZoneOptInStatus> {
         &self.opt_in_status
     }
     /// Appends an item to `messages`.
@@ -170,17 +157,12 @@ impl AvailabilityZoneBuilder {
         self
     }
     /// <p>Any messages about the Availability Zone, Local Zone, or Wavelength Zone.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>) -> Self {
         self.messages = input;
         self
     }
     /// <p>Any messages about the Availability Zone, Local Zone, or Wavelength Zone.</p>
-    pub fn get_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>> {
         &self.messages
     }
     /// <p>The name of the Region.</p>
@@ -246,18 +228,12 @@ impl AvailabilityZoneBuilder {
         &self.group_name
     }
     /// <p>The name of the network border group.</p>
-    pub fn network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the network border group.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
@@ -280,18 +256,12 @@ impl AvailabilityZoneBuilder {
         &self.zone_type
     }
     /// <p>The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
-    pub fn parent_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
-    pub fn set_parent_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_zone_name = input;
         self
     }
@@ -300,18 +270,12 @@ impl AvailabilityZoneBuilder {
         &self.parent_zone_name
     }
     /// <p>The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
-    pub fn parent_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
-    pub fn set_parent_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_zone_id = input;
         self
     }

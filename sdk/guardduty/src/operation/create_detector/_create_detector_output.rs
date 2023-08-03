@@ -17,9 +17,7 @@ impl CreateDetectorOutput {
         self.detector_id.as_deref()
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
-    pub fn unprocessed_data_sources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UnprocessedDataSourcesResult> {
+    pub fn unprocessed_data_sources(&self) -> ::std::option::Option<&crate::types::UnprocessedDataSourcesResult> {
         self.unprocessed_data_sources.as_ref()
     }
 }
@@ -37,13 +35,10 @@ impl CreateDetectorOutput {
 
 /// A builder for [`CreateDetectorOutput`](crate::operation::create_detector::CreateDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDetectorOutputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) unprocessed_data_sources:
-        ::std::option::Option<crate::types::UnprocessedDataSourcesResult>,
+    pub(crate) unprocessed_data_sources: ::std::option::Option<crate::types::UnprocessedDataSourcesResult>,
     _request_id: Option<String>,
 }
 impl CreateDetectorOutputBuilder {
@@ -62,25 +57,17 @@ impl CreateDetectorOutputBuilder {
         &self.detector_id
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
-    pub fn unprocessed_data_sources(
-        mut self,
-        input: crate::types::UnprocessedDataSourcesResult,
-    ) -> Self {
+    pub fn unprocessed_data_sources(mut self, input: crate::types::UnprocessedDataSourcesResult) -> Self {
         self.unprocessed_data_sources = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
-    pub fn set_unprocessed_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::UnprocessedDataSourcesResult>,
-    ) -> Self {
+    pub fn set_unprocessed_data_sources(mut self, input: ::std::option::Option<crate::types::UnprocessedDataSourcesResult>) -> Self {
         self.unprocessed_data_sources = input;
         self
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
-    pub fn get_unprocessed_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::UnprocessedDataSourcesResult> {
+    pub fn get_unprocessed_data_sources(&self) -> &::std::option::Option<crate::types::UnprocessedDataSourcesResult> {
         &self.unprocessed_data_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

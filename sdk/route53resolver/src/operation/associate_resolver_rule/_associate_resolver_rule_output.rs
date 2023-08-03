@@ -10,9 +10,7 @@ pub struct AssociateResolverRuleOutput {
 }
 impl AssociateResolverRuleOutput {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverRuleAssociation> {
+    pub fn resolver_rule_association(&self) -> ::std::option::Option<&crate::types::ResolverRuleAssociation> {
         self.resolver_rule_association.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for AssociateResolverRuleOutput {
 }
 impl AssociateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverRuleOutput`](crate::operation::associate_resolver_rule::AssociateResolverRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleOutputBuilder {
         crate::operation::associate_resolver_rule::builders::AssociateResolverRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResolverRuleOutput`](crate::operation::associate_resolver_rule::AssociateResolverRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResolverRuleOutputBuilder {
-    pub(crate) resolver_rule_association:
-        ::std::option::Option<crate::types::ResolverRuleAssociation>,
+    pub(crate) resolver_rule_association: ::std::option::Option<crate::types::ResolverRuleAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateResolverRuleOutputBuilder {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule_association(
-        mut self,
-        input: crate::types::ResolverRuleAssociation,
-    ) -> Self {
+    pub fn resolver_rule_association(mut self, input: crate::types::ResolverRuleAssociation) -> Self {
         self.resolver_rule_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-    pub fn set_resolver_rule_association(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverRuleAssociation>,
-    ) -> Self {
+    pub fn set_resolver_rule_association(mut self, input: ::std::option::Option<crate::types::ResolverRuleAssociation>) -> Self {
         self.resolver_rule_association = input;
         self
     }
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-    pub fn get_resolver_rule_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverRuleAssociation> {
+    pub fn get_resolver_rule_association(&self) -> &::std::option::Option<crate::types::ResolverRuleAssociation> {
         &self.resolver_rule_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

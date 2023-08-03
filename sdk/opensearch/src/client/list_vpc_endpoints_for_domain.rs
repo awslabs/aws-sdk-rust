@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput::vpc_endpoint_summary_list): <p>Information about each endpoint associated with the domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListVpcEndpointsForDomainError>`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError)
-    pub fn list_vpc_endpoints_for_domain(&self) -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainFluentBuilder{
+    pub fn list_vpc_endpoints_for_domain(&self) -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainFluentBuilder {
         crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainFluentBuilder::new(self.handle.clone())
     }
 }

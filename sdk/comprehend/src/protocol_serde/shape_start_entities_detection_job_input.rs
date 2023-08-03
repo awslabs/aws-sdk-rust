@@ -6,19 +6,13 @@ pub fn ser_start_entities_detection_job_input(
     if let Some(var_1) = &input.input_data_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("InputDataConfig").start_object();
-        crate::protocol_serde::shape_input_data_config::ser_input_data_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.data_access_role_arn {

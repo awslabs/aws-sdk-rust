@@ -60,15 +60,11 @@ impl BehaviorCriteria {
         self.consecutive_datapoints_to_clear
     }
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
-    pub fn statistical_threshold(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatisticalThreshold> {
+    pub fn statistical_threshold(&self) -> ::std::option::Option<&crate::types::StatisticalThreshold> {
         self.statistical_threshold.as_ref()
     }
     /// <p> The configuration of an ML Detect </p>
-    pub fn ml_detection_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MachineLearningDetectionConfig> {
+    pub fn ml_detection_config(&self) -> ::std::option::Option<&crate::types::MachineLearningDetectionConfig> {
         self.ml_detection_config.as_ref()
     }
 }
@@ -81,9 +77,7 @@ impl BehaviorCriteria {
 
 /// A builder for [`BehaviorCriteria`](crate::types::BehaviorCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BehaviorCriteriaBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) value: ::std::option::Option<crate::types::MetricValue>,
@@ -91,8 +85,7 @@ pub struct BehaviorCriteriaBuilder {
     pub(crate) consecutive_datapoints_to_alarm: ::std::option::Option<i32>,
     pub(crate) consecutive_datapoints_to_clear: ::std::option::Option<i32>,
     pub(crate) statistical_threshold: ::std::option::Option<crate::types::StatisticalThreshold>,
-    pub(crate) ml_detection_config:
-        ::std::option::Option<crate::types::MachineLearningDetectionConfig>,
+    pub(crate) ml_detection_config: ::std::option::Option<crate::types::MachineLearningDetectionConfig>,
 }
 impl BehaviorCriteriaBuilder {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
@@ -113,10 +106,7 @@ impl BehaviorCriteriaBuilder {
     /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
     /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
     /// </ul>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
@@ -127,9 +117,7 @@ impl BehaviorCriteriaBuilder {
     /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
     /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
     /// </ul>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>The value to be compared with the <code>metric</code>.</p>
@@ -166,10 +154,7 @@ impl BehaviorCriteriaBuilder {
         self
     }
     /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
-    pub fn set_consecutive_datapoints_to_alarm(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_consecutive_datapoints_to_alarm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.consecutive_datapoints_to_alarm = input;
         self
     }
@@ -183,10 +168,7 @@ impl BehaviorCriteriaBuilder {
         self
     }
     /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
-    pub fn set_consecutive_datapoints_to_clear(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_consecutive_datapoints_to_clear(mut self, input: ::std::option::Option<i32>) -> Self {
         self.consecutive_datapoints_to_clear = input;
         self
     }
@@ -200,39 +182,26 @@ impl BehaviorCriteriaBuilder {
         self
     }
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
-    pub fn set_statistical_threshold(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticalThreshold>,
-    ) -> Self {
+    pub fn set_statistical_threshold(mut self, input: ::std::option::Option<crate::types::StatisticalThreshold>) -> Self {
         self.statistical_threshold = input;
         self
     }
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
-    pub fn get_statistical_threshold(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatisticalThreshold> {
+    pub fn get_statistical_threshold(&self) -> &::std::option::Option<crate::types::StatisticalThreshold> {
         &self.statistical_threshold
     }
     /// <p> The configuration of an ML Detect </p>
-    pub fn ml_detection_config(
-        mut self,
-        input: crate::types::MachineLearningDetectionConfig,
-    ) -> Self {
+    pub fn ml_detection_config(mut self, input: crate::types::MachineLearningDetectionConfig) -> Self {
         self.ml_detection_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configuration of an ML Detect </p>
-    pub fn set_ml_detection_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MachineLearningDetectionConfig>,
-    ) -> Self {
+    pub fn set_ml_detection_config(mut self, input: ::std::option::Option<crate::types::MachineLearningDetectionConfig>) -> Self {
         self.ml_detection_config = input;
         self
     }
     /// <p> The configuration of an ML Detect </p>
-    pub fn get_ml_detection_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MachineLearningDetectionConfig> {
+    pub fn get_ml_detection_config(&self) -> &::std::option::Option<crate::types::MachineLearningDetectionConfig> {
         &self.ml_detection_config
     }
     /// Consumes the builder and constructs a [`BehaviorCriteria`](crate::types::BehaviorCriteria).

@@ -36,16 +36,14 @@ impl CreateFleetAdvisorCollectorInput {
 }
 impl CreateFleetAdvisorCollectorInput {
     /// Creates a new builder-style object to manufacture [`CreateFleetAdvisorCollectorInput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput).
-    pub fn builder() -> crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder{
+    pub fn builder() -> crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder {
         crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFleetAdvisorCollectorInput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetAdvisorCollectorInputBuilder {
     pub(crate) collector_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct CreateFleetAdvisorCollectorInputBuilder {
 }
 impl CreateFleetAdvisorCollectorInputBuilder {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    pub fn collector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    pub fn set_collector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collector_name = input;
         self
     }
@@ -88,18 +80,12 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         &self.description
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn service_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
@@ -108,18 +94,12 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         &self.service_access_role_arn
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -134,13 +114,11 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput {
-                collector_name: self.collector_name,
-                description: self.description,
-                service_access_role_arn: self.service_access_role_arn,
-                s3_bucket_name: self.s3_bucket_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput {
+            collector_name: self.collector_name,
+            description: self.description,
+            service_access_role_arn: self.service_access_role_arn,
+            s3_bucket_name: self.s3_bucket_name,
+        })
     }
 }

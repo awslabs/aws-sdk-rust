@@ -10,10 +10,7 @@ impl ModifyOptionGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_option_group::ModifyOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_option_group::ModifyOptionGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_option_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyOptionGroupFluentBuilder {
         }
     }
     /// Access the ModifyOptionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifyOptionGroupFluentBuilder {
             crate::operation::modify_option_group::ModifyOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_option_group::ModifyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifyOptionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifyOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_option_group::ModifyOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_option_group::ModifyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifyOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_option_group::ModifyOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_option_group::ModifyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl ModifyOptionGroupFluentBuilder {
             crate::operation::modify_option_group::ModifyOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_option_group::ModifyOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
@@ -155,17 +133,12 @@ impl ModifyOptionGroupFluentBuilder {
         self
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub fn set_options_to_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>,
-    ) -> Self {
+    pub fn set_options_to_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>) -> Self {
         self.inner = self.inner.set_options_to_include(input);
         self
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub fn get_options_to_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>> {
+    pub fn get_options_to_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>> {
         self.inner.get_options_to_include()
     }
     /// Appends an item to `OptionsToRemove`.
@@ -173,25 +146,17 @@ impl ModifyOptionGroupFluentBuilder {
     /// To override the contents of this collection use [`set_options_to_remove`](Self::set_options_to_remove).
     ///
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn options_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn options_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.options_to_remove(input.into());
         self
     }
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn set_options_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn get_options_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_options_to_remove()
     }
     /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::associate_assets::builders::AssociateAssetsFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::associate_assets::builders::AssociateAssetsFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`AssociateAssetsOutput`](crate::operation::associate_assets::AssociateAssetsOutput)
     /// - On failure, responds with [`SdkError<AssociateAssetsError>`](crate::operation::associate_assets::AssociateAssetsError)
-    pub fn associate_assets(
-        &self,
-    ) -> crate::operation::associate_assets::builders::AssociateAssetsFluentBuilder {
-        crate::operation::associate_assets::builders::AssociateAssetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_assets(&self) -> crate::operation::associate_assets::builders::AssociateAssetsFluentBuilder {
+        crate::operation::associate_assets::builders::AssociateAssetsFluentBuilder::new(self.handle.clone())
     }
 }

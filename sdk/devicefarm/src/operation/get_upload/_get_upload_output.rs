@@ -29,9 +29,7 @@ impl GetUploadOutput {
 
 /// A builder for [`GetUploadOutput`](crate::operation::get_upload::GetUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUploadOutputBuilder {
     pub(crate) upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,

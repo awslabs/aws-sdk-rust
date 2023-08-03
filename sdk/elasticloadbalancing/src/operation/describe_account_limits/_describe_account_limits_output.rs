@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutputBuilder {
     pub(crate) limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl DescribeAccountLimitsOutputBuilder {
         self
     }
     /// <p>Information about the limits.</p>
-    pub fn set_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
-    ) -> Self {
+    pub fn set_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>) -> Self {
         self.limits = input;
         self
     }

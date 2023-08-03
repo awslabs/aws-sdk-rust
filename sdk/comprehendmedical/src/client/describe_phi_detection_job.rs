@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePhiDetectionJobOutput`](crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribePHIDetectionJobError>`](crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError)
-    pub fn describe_phi_detection_job(
-        &self,
-    ) -> crate::operation::describe_phi_detection_job::builders::DescribePHIDetectionJobFluentBuilder
-    {
+    pub fn describe_phi_detection_job(&self) -> crate::operation::describe_phi_detection_job::builders::DescribePHIDetectionJobFluentBuilder {
         crate::operation::describe_phi_detection_job::builders::DescribePHIDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

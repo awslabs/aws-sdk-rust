@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::delete_group_policy::builders::DeleteGroupPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_group_policy::builders::DeleteGroupPolicyFluentBuilder::set_policy_name): <p>The name identifying the policy document to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`DeleteGroupPolicyOutput`](crate::operation::delete_group_policy::DeleteGroupPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupPolicyError>`](crate::operation::delete_group_policy::DeleteGroupPolicyError)
-    pub fn delete_group_policy(
-        &self,
-    ) -> crate::operation::delete_group_policy::builders::DeleteGroupPolicyFluentBuilder {
-        crate::operation::delete_group_policy::builders::DeleteGroupPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_group_policy(&self) -> crate::operation::delete_group_policy::builders::DeleteGroupPolicyFluentBuilder {
+        crate::operation::delete_group_policy::builders::DeleteGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

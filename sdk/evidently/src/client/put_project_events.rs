@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`failed_event_count(Option<i32>)`](crate::operation::put_project_events::PutProjectEventsOutput::failed_event_count): <p>The number of events in the operation that could not be used by Evidently.</p>
     ///   - [`event_results(Option<Vec<PutProjectEventsResultEntry>>)`](crate::operation::put_project_events::PutProjectEventsOutput::event_results): <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
     /// - On failure, responds with [`SdkError<PutProjectEventsError>`](crate::operation::put_project_events::PutProjectEventsError)
-    pub fn put_project_events(
-        &self,
-    ) -> crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder {
-        crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_project_events(&self) -> crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder {
+        crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::new(self.handle.clone())
     }
 }

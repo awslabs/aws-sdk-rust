@@ -26,7 +26,7 @@ impl CreateIntegrationResponseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntegrationResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_integration_response::builders::CreateIntegrationResponseInputBuilder,
+    inner: crate::operation::create_integration_response::builders::CreateIntegrationResponseInputBuilder,
 }
 impl CreateIntegrationResponseFluentBuilder {
     /// Creates a new `CreateIntegrationResponse`.
@@ -37,7 +37,7 @@ impl CreateIntegrationResponseFluentBuilder {
         }
     }
     /// Access the CreateIntegrationResponse as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_integration_response::builders::CreateIntegrationResponseInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_integration_response::builders::CreateIntegrationResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateIntegrationResponseFluentBuilder {
             crate::operation::create_integration_response::CreateIntegrationResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_response::CreateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_response::CreateIntegrationResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateIntegrationResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateIntegrationResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_response::CreateIntegrationResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_response::CreateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_response::CreateIntegrationResponseError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateIntegrationResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_response::CreateIntegrationResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_response::CreateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_response::CreateIntegrationResponseError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateIntegrationResponseFluentBuilder {
             crate::operation::create_integration_response::CreateIntegrationResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_response::CreateIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_response::CreateIntegrationResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -138,10 +127,7 @@ impl CreateIntegrationResponseFluentBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn content_handling_strategy(
-        mut self,
-        input: crate::types::ContentHandlingStrategy,
-    ) -> Self {
+    pub fn content_handling_strategy(mut self, input: crate::types::ContentHandlingStrategy) -> Self {
         self.inner = self.inner.content_handling_strategy(input);
         self
     }
@@ -149,10 +135,7 @@ impl CreateIntegrationResponseFluentBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn set_content_handling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentHandlingStrategy>,
-    ) -> Self {
+    pub fn set_content_handling_strategy(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
         self.inner = self.inner.set_content_handling_strategy(input);
         self
     }
@@ -160,24 +143,16 @@ impl CreateIntegrationResponseFluentBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn get_content_handling_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+    pub fn get_content_handling_strategy(&self) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
         self.inner.get_content_handling_strategy()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
@@ -186,18 +161,12 @@ impl CreateIntegrationResponseFluentBuilder {
         self.inner.get_integration_id()
     }
     /// <p>The integration response key.</p>
-    pub fn integration_response_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_response_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_response_key(input.into());
         self
     }
     /// <p>The integration response key.</p>
-    pub fn set_integration_response_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_response_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_response_key(input);
         self
     }
@@ -221,19 +190,13 @@ impl CreateIntegrationResponseFluentBuilder {
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
     pub fn set_response_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_parameters()
     }
     /// Adds a key-value pair to `ResponseTemplates`.
@@ -252,41 +215,27 @@ impl CreateIntegrationResponseFluentBuilder {
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
     pub fn set_response_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_response_templates(input);
         self
     }
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn get_response_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_templates()
     }
     /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
-    pub fn template_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_selection_expression(input.into());
         self
     }
     /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
-    pub fn set_template_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_selection_expression(input);
         self
     }
     /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
-    pub fn get_template_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_template_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_selection_expression()
     }
 }

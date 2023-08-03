@@ -5,8 +5,7 @@
 pub struct GetCoreNetworkChangeEventsOutput {
     /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
     #[doc(hidden)]
-    pub core_network_change_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
+    pub core_network_change_events: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetCoreNetworkChangeEventsOutput {
 }
 impl GetCoreNetworkChangeEventsOutput {
     /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
-    pub fn core_network_change_events(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoreNetworkChangeEvent]> {
+    pub fn core_network_change_events(&self) -> ::std::option::Option<&[crate::types::CoreNetworkChangeEvent]> {
         self.core_network_change_events.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetCoreNetworkChangeEventsOutput {
 }
 impl GetCoreNetworkChangeEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeEventsOutput`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput).
-    pub fn builder() -> crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsOutputBuilder{
+    pub fn builder() -> crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsOutputBuilder {
         crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoreNetworkChangeEventsOutput`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreNetworkChangeEventsOutputBuilder {
-    pub(crate) core_network_change_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
+    pub(crate) core_network_change_events: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetCoreNetworkChangeEventsOutputBuilder {
     /// To override the contents of this collection use [`set_core_network_change_events`](Self::set_core_network_change_events).
     ///
     /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
-    pub fn core_network_change_events(
-        mut self,
-        input: crate::types::CoreNetworkChangeEvent,
-    ) -> Self {
+    pub fn core_network_change_events(mut self, input: crate::types::CoreNetworkChangeEvent) -> Self {
         let mut v = self.core_network_change_events.unwrap_or_default();
         v.push(input);
         self.core_network_change_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
-    pub fn set_core_network_change_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
-    ) -> Self {
+    pub fn set_core_network_change_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>) -> Self {
         self.core_network_change_events = input;
         self
     }
     /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
-    pub fn get_core_network_change_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>> {
+    pub fn get_core_network_change_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>> {
         &self.core_network_change_events
     }
     /// <p>The token for the next page of results.</p>
@@ -100,9 +86,7 @@ impl GetCoreNetworkChangeEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCoreNetworkChangeEventsOutput`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput {
+    pub fn build(self) -> crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput {
         crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput {
             core_network_change_events: self.core_network_change_events,
             next_token: self.next_token,

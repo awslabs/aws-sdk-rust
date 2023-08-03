@@ -22,9 +22,7 @@ impl DescribeIndexInput {
 
 /// A builder for [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeIndexInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_index::DescribeIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_index::DescribeIndexInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_index::DescribeIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_index::DescribeIndexInput { id: self.id })
     }
 }

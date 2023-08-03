@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateTableStorageOptimizerOutput {
 }
 impl UpdateTableStorageOptimizerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerOutput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput).
-    pub fn builder() -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerOutputBuilder{
+    pub fn builder() -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerOutputBuilder {
         crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTableStorageOptimizerOutput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateTableStorageOptimizerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTableStorageOptimizerOutput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput {
+    pub fn build(self) -> crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput {
         crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput {
             result: self.result,
             _request_id: self._request_id,

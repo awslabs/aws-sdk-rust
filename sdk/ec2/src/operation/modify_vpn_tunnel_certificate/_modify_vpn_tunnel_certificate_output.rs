@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpnTunnelCertificateOutput {
 }
 impl ModifyVpnTunnelCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelCertificateOutput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput).
-    pub fn builder() -> crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateOutputBuilder {
         crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnTunnelCertificateOutput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnTunnelCertificateOutputBuilder {
     pub(crate) vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ModifyVpnTunnelCertificateOutputBuilder {
         self
     }
     /// <p>Information about the VPN connection.</p>
-    pub fn set_vpn_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnection>,
-    ) -> Self {
+    pub fn set_vpn_connection(mut self, input: ::std::option::Option<crate::types::VpnConnection>) -> Self {
         self.vpn_connection = input;
         self
     }
@@ -63,9 +58,7 @@ impl ModifyVpnTunnelCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelCertificateOutput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput {
+    pub fn build(self) -> crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput {
         crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput {
             vpn_connection: self.vpn_connection,
             _request_id: self._request_id,

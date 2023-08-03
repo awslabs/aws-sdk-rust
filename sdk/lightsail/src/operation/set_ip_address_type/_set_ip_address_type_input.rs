@@ -37,17 +37,14 @@ impl SetIpAddressTypeInput {
 }
 impl SetIpAddressTypeInput {
     /// Creates a new builder-style object to manufacture [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
-    pub fn builder() -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder {
         crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIpAddressTypeInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
@@ -66,10 +63,7 @@ impl SetIpAddressTypeInputBuilder {
     /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -81,18 +75,12 @@ impl SetIpAddressTypeInputBuilder {
         &self.resource_type
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -108,10 +96,7 @@ impl SetIpAddressTypeInputBuilder {
     }
     /// <p>The IP address type to set for the specified resource.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -123,16 +108,11 @@ impl SetIpAddressTypeInputBuilder {
     /// Consumes the builder and constructs a [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_ip_address_type::SetIpAddressTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_ip_address_type::SetIpAddressTypeInput {
-                resource_type: self.resource_type,
-                resource_name: self.resource_name,
-                ip_address_type: self.ip_address_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_ip_address_type::SetIpAddressTypeInput {
+            resource_type: self.resource_type,
+            resource_name: self.resource_name,
+            ip_address_type: self.ip_address_type,
+        })
     }
 }

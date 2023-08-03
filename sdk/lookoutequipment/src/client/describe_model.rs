@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`server_side_kms_key_id(Option<String>)`](crate::operation::describe_model::DescribeModelOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     ///   - [`off_condition(Option<String>)`](crate::operation::describe_model::DescribeModelOutput::off_condition): <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::operation::describe_model::DescribeModelError)
-    pub fn describe_model(
-        &self,
-    ) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
-        crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_model(&self) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
+        crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(self.handle.clone())
     }
 }

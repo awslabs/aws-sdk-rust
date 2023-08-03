@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_message): Error message
     ///   - [`updated_at(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::updated_at): The time, in milliseconds since the epoch, when the deployment status was updated.
     /// - On failure, responds with [`SdkError<GetDeploymentStatusError>`](crate::operation::get_deployment_status::GetDeploymentStatusError)
-    pub fn get_deployment_status(
-        &self,
-    ) -> crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder {
-        crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment_status(&self) -> crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder {
+        crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::new(self.handle.clone())
     }
 }

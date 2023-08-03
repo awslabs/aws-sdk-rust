@@ -37,10 +37,7 @@ impl UpdateAppImageConfigFluentBuilder {
         }
     }
     /// Access the UpdateAppImageConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_app_image_config::builders::UpdateAppImageConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_app_image_config::builders::UpdateAppImageConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateAppImageConfigFluentBuilder {
             crate::operation::update_app_image_config::UpdateAppImageConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_image_config::UpdateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_image_config::UpdateAppImageConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateAppImageConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateAppImageConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_image_config::UpdateAppImageConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_image_config::UpdateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_image_config::UpdateAppImageConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateAppImageConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_image_config::UpdateAppImageConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_image_config::UpdateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_image_config::UpdateAppImageConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateAppImageConfigFluentBuilder {
             crate::operation::update_app_image_config::UpdateAppImageConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_image_config::UpdateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_image_config::UpdateAppImageConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the AppImageConfig to update.</p>
-    pub fn app_image_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_image_config_name(input.into());
         self
     }
     /// <p>The name of the AppImageConfig to update.</p>
-    pub fn set_app_image_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_image_config_name(input);
         self
     }
@@ -144,25 +124,17 @@ impl UpdateAppImageConfigFluentBuilder {
         self.inner.get_app_image_config_name()
     }
     /// <p>The new KernelGateway app to run on the image.</p>
-    pub fn kernel_gateway_image_config(
-        mut self,
-        input: crate::types::KernelGatewayImageConfig,
-    ) -> Self {
+    pub fn kernel_gateway_image_config(mut self, input: crate::types::KernelGatewayImageConfig) -> Self {
         self.inner = self.inner.kernel_gateway_image_config(input);
         self
     }
     /// <p>The new KernelGateway app to run on the image.</p>
-    pub fn set_kernel_gateway_image_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
-    ) -> Self {
+    pub fn set_kernel_gateway_image_config(mut self, input: ::std::option::Option<crate::types::KernelGatewayImageConfig>) -> Self {
         self.inner = self.inner.set_kernel_gateway_image_config(input);
         self
     }
     /// <p>The new KernelGateway app to run on the image.</p>
-    pub fn get_kernel_gateway_image_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
+    pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
         self.inner.get_kernel_gateway_image_config()
     }
 }

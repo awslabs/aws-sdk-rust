@@ -15,40 +15,30 @@ impl DeleteUserAccessLoggingSettingsInput {
 }
 impl DeleteUserAccessLoggingSettingsInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsInput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput).
-    pub fn builder() -> crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsInputBuilder{
+    pub fn builder() -> crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsInputBuilder {
         crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserAccessLoggingSettingsInput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserAccessLoggingSettingsInputBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserAccessLoggingSettingsInputBuilder {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn set_user_access_logging_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = input;
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn get_user_access_logging_settings_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_access_logging_settings_arn
     }
     /// Consumes the builder and constructs a [`DeleteUserAccessLoggingSettingsInput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput).
@@ -60,9 +50,8 @@ impl DeleteUserAccessLoggingSettingsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput {
-                user_access_logging_settings_arn: self.user_access_logging_settings_arn
-                ,
-            }
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            },
         )
     }
 }

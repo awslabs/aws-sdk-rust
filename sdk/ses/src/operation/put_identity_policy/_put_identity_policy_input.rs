@@ -36,17 +36,14 @@ impl PutIdentityPolicyInput {
 }
 impl PutIdentityPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutIdentityPolicyInput`](crate::operation::put_identity_policy::PutIdentityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_identity_policy::builders::PutIdentityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_identity_policy::builders::PutIdentityPolicyInputBuilder {
         crate::operation::put_identity_policy::builders::PutIdentityPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutIdentityPolicyInput`](crate::operation::put_identity_policy::PutIdentityPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutIdentityPolicyInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -107,16 +104,11 @@ impl PutIdentityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutIdentityPolicyInput`](crate::operation::put_identity_policy::PutIdentityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_identity_policy::PutIdentityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_identity_policy::PutIdentityPolicyInput {
-                identity: self.identity,
-                policy_name: self.policy_name,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_identity_policy::PutIdentityPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_identity_policy::PutIdentityPolicyInput {
+            identity: self.identity,
+            policy_name: self.policy_name,
+            policy: self.policy,
+        })
     }
 }

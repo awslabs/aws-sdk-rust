@@ -37,10 +37,7 @@ impl BatchGetReportGroupsFluentBuilder {
         }
     }
     /// Access the BatchGetReportGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchGetReportGroupsFluentBuilder {
             crate::operation::batch_get_report_groups::BatchGetReportGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_report_groups::BatchGetReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_report_groups::BatchGetReportGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchGetReportGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchGetReportGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_report_groups::BatchGetReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_report_groups::BatchGetReportGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchGetReportGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_report_groups::BatchGetReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_report_groups::BatchGetReportGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchGetReportGroupsFluentBuilder {
             crate::operation::batch_get_report_groups::BatchGetReportGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_report_groups::BatchGetReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_report_groups::BatchGetReportGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl BatchGetReportGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_report_group_arns`](Self::set_report_group_arns).
     ///
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn report_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_group_arns(input.into());
         self
     }
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn set_report_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_report_group_arns(input);
         self
     }
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
-    pub fn get_report_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_report_group_arns()
     }
 }

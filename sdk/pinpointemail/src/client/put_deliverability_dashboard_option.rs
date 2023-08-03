@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`subscribed_domains(Vec<DomainDeliverabilityTrackingOption>)`](crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionFluentBuilder::subscribed_domains) / [`set_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionFluentBuilder::set_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     /// - On success, responds with [`PutDeliverabilityDashboardOptionOutput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput)
     /// - On failure, responds with [`SdkError<PutDeliverabilityDashboardOptionError>`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError)
-    pub fn put_deliverability_dashboard_option(&self) -> crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionFluentBuilder{
+    pub fn put_deliverability_dashboard_option(
+        &self,
+    ) -> crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionFluentBuilder {
         crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionFluentBuilder::new(self.handle.clone())
     }
 }

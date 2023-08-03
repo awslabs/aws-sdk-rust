@@ -33,10 +33,7 @@ pub fn ser_create_job_template_input(
     if let Some(var_10) = &input.job_executions_retry_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("jobExecutionsRetryConfig").start_object();
-        crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.job_executions_rollout_config {
@@ -51,10 +48,7 @@ pub fn ser_create_job_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -63,10 +57,7 @@ pub fn ser_create_job_template_input(
     if let Some(var_18) = &input.presigned_url_config {
         #[allow(unused_mut)]
         let mut object_19 = object.key("presignedUrlConfig").start_object();
-        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.tags {

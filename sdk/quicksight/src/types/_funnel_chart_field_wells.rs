@@ -7,14 +7,11 @@
 pub struct FunnelChartFieldWells {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
     #[doc(hidden)]
-    pub funnel_chart_aggregated_field_wells:
-        ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
+    pub funnel_chart_aggregated_field_wells: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
 }
 impl FunnelChartFieldWells {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn funnel_chart_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunnelChartAggregatedFieldWells> {
+    pub fn funnel_chart_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::FunnelChartAggregatedFieldWells> {
         self.funnel_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -27,34 +24,23 @@ impl FunnelChartFieldWells {
 
 /// A builder for [`FunnelChartFieldWells`](crate::types::FunnelChartFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunnelChartFieldWellsBuilder {
-    pub(crate) funnel_chart_aggregated_field_wells:
-        ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
+    pub(crate) funnel_chart_aggregated_field_wells: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
 }
 impl FunnelChartFieldWellsBuilder {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn funnel_chart_aggregated_field_wells(
-        mut self,
-        input: crate::types::FunnelChartAggregatedFieldWells,
-    ) -> Self {
+    pub fn funnel_chart_aggregated_field_wells(mut self, input: crate::types::FunnelChartAggregatedFieldWells) -> Self {
         self.funnel_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn set_funnel_chart_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_funnel_chart_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>) -> Self {
         self.funnel_chart_aggregated_field_wells = input;
         self
     }
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn get_funnel_chart_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunnelChartAggregatedFieldWells> {
+    pub fn get_funnel_chart_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::FunnelChartAggregatedFieldWells> {
         &self.funnel_chart_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`FunnelChartFieldWells`](crate::types::FunnelChartFieldWells).

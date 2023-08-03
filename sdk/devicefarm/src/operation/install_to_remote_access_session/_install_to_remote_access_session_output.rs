@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for InstallToRemoteAccessSessionOutput {
 }
 impl InstallToRemoteAccessSessionOutput {
     /// Creates a new builder-style object to manufacture [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
-    pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder{
+    pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder {
         crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionOutputBuilder {
     pub(crate) app_upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
@@ -61,10 +59,7 @@ impl InstallToRemoteAccessSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput
-    {
+    pub fn build(self) -> crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput {
         crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput {
             app_upload: self.app_upload,
             _request_id: self._request_id,

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`function_name(impl ::std::convert::Into<String>)`](crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionFluentBuilder::function_name) / [`set_function_name(Option<String>)`](crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionFluentBuilder::set_function_name): <p>The name of the function definition to be deleted.</p>
     /// - On success, responds with [`DeleteUserDefinedFunctionOutput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionOutput)
     /// - On failure, responds with [`SdkError<DeleteUserDefinedFunctionError>`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError)
-    pub fn delete_user_defined_function(&self) -> crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionFluentBuilder{
+    pub fn delete_user_defined_function(&self) -> crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionFluentBuilder {
         crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionFluentBuilder::new(self.handle.clone())
     }
 }

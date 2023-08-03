@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`input_id(impl ::std::convert::Into<String>)`](crate::operation::delete_input::builders::DeleteInputFluentBuilder::input_id) / [`set_input_id(Option<String>)`](crate::operation::delete_input::builders::DeleteInputFluentBuilder::set_input_id): Unique ID of the input
     /// - On success, responds with [`DeleteInputOutput`](crate::operation::delete_input::DeleteInputOutput)
     /// - On failure, responds with [`SdkError<DeleteInputError>`](crate::operation::delete_input::DeleteInputError)
-    pub fn delete_input(
-        &self,
-    ) -> crate::operation::delete_input::builders::DeleteInputFluentBuilder {
+    pub fn delete_input(&self) -> crate::operation::delete_input::builders::DeleteInputFluentBuilder {
         crate::operation::delete_input::builders::DeleteInputFluentBuilder::new(self.handle.clone())
     }
 }

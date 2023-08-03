@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`suppressed_destination_summaries(Option<Vec<SuppressedDestinationSummary>>)`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput::suppressed_destination_summaries): <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput::next_token): <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<ListSuppressedDestinationsError>`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError)
-    pub fn list_suppressed_destinations(&self) -> crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder{
+    pub fn list_suppressed_destinations(&self) -> crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder {
         crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

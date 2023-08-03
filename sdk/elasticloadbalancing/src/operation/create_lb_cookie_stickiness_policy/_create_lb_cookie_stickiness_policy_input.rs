@@ -30,16 +30,14 @@ impl CreateLbCookieStickinessPolicyInput {
 }
 impl CreateLbCookieStickinessPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateLbCookieStickinessPolicyInput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput).
-    pub fn builder() -> crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder{
+    pub fn builder() -> crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder {
         crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLbCookieStickinessPolicyInput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLbCookieStickinessPolicyInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CreateLbCookieStickinessPolicyInputBuilder {
 }
 impl CreateLbCookieStickinessPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -103,13 +95,10 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                policy_name: self.policy_name
-                ,
-                cookie_expiration_period: self.cookie_expiration_period
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                policy_name: self.policy_name,
+                cookie_expiration_period: self.cookie_expiration_period,
+            },
         )
     }
 }

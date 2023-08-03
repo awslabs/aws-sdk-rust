@@ -47,17 +47,14 @@ impl SearchFacesByImageInput {
 }
 impl SearchFacesByImageInput {
     /// Creates a new builder-style object to manufacture [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
-    pub fn builder(
-    ) -> crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
+    pub fn builder() -> crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
         crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFacesByImageInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,
@@ -67,18 +64,12 @@ pub struct SearchFacesByImageInputBuilder {
 }
 impl SearchFacesByImageInputBuilder {
     /// <p>ID of the collection to search.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the collection to search.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -139,10 +130,7 @@ impl SearchFacesByImageInputBuilder {
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    pub fn set_quality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QualityFilter>,
-    ) -> Self {
+    pub fn set_quality_filter(mut self, input: ::std::option::Option<crate::types::QualityFilter>) -> Self {
         self.quality_filter = input;
         self
     }
@@ -154,18 +142,14 @@ impl SearchFacesByImageInputBuilder {
     /// Consumes the builder and constructs a [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_faces_by_image::SearchFacesByImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_faces_by_image::SearchFacesByImageInput {
-                collection_id: self.collection_id,
-                image: self.image,
-                max_faces: self.max_faces,
-                face_match_threshold: self.face_match_threshold,
-                quality_filter: self.quality_filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_faces_by_image::SearchFacesByImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_faces_by_image::SearchFacesByImageInput {
+            collection_id: self.collection_id,
+            image: self.image,
+            max_faces: self.max_faces,
+            face_match_threshold: self.face_match_threshold,
+            quality_filter: self.quality_filter,
+        })
     }
 }

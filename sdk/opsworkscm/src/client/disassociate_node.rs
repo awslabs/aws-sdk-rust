@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateNodeOutput`](crate::operation::disassociate_node::DisassociateNodeOutput) with field(s):
     ///   - [`node_association_status_token(Option<String>)`](crate::operation::disassociate_node::DisassociateNodeOutput::node_association_status_token): <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     /// - On failure, responds with [`SdkError<DisassociateNodeError>`](crate::operation::disassociate_node::DisassociateNodeError)
-    pub fn disassociate_node(
-        &self,
-    ) -> crate::operation::disassociate_node::builders::DisassociateNodeFluentBuilder {
-        crate::operation::disassociate_node::builders::DisassociateNodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_node(&self) -> crate::operation::disassociate_node::builders::DisassociateNodeFluentBuilder {
+        crate::operation::disassociate_node::builders::DisassociateNodeFluentBuilder::new(self.handle.clone())
     }
 }

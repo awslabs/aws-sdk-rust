@@ -56,9 +56,7 @@ impl RealtimeEndpointInfo {
 
 /// A builder for [`RealtimeEndpointInfo`](crate::types::RealtimeEndpointInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealtimeEndpointInfoBuilder {
     pub(crate) peak_requests_per_second: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -86,10 +84,7 @@ impl RealtimeEndpointInfoBuilder {
         self
     }
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -130,10 +125,7 @@ impl RealtimeEndpointInfoBuilder {
     /// <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
     /// </ul>
-    pub fn set_endpoint_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RealtimeEndpointStatus>,
-    ) -> Self {
+    pub fn set_endpoint_status(mut self, input: ::std::option::Option<crate::types::RealtimeEndpointStatus>) -> Self {
         self.endpoint_status = input;
         self
     }
@@ -143,9 +135,7 @@ impl RealtimeEndpointInfoBuilder {
     /// <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
     /// </ul>
-    pub fn get_endpoint_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RealtimeEndpointStatus> {
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::RealtimeEndpointStatus> {
         &self.endpoint_status
     }
     /// Consumes the builder and constructs a [`RealtimeEndpointInfo`](crate::types::RealtimeEndpointInfo).

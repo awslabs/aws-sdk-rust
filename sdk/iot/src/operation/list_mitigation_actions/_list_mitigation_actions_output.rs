@@ -5,8 +5,7 @@
 pub struct ListMitigationActionsOutput {
     /// <p>A set of actions that matched the specified filter criteria.</p>
     #[doc(hidden)]
-    pub action_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>,
+    pub action_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>,
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMitigationActionsOutput {
 }
 impl ListMitigationActionsOutput {
     /// <p>A set of actions that matched the specified filter criteria.</p>
-    pub fn action_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MitigationActionIdentifier]> {
+    pub fn action_identifiers(&self) -> ::std::option::Option<&[crate::types::MitigationActionIdentifier]> {
         self.action_identifiers.as_deref()
     }
     /// <p>The token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMitigationActionsOutput {
 }
 impl ListMitigationActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListMitigationActionsOutput`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsOutputBuilder {
         crate::operation::list_mitigation_actions::builders::ListMitigationActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMitigationActionsOutput`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMitigationActionsOutputBuilder {
-    pub(crate) action_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>,
+    pub(crate) action_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListMitigationActionsOutputBuilder {
         self
     }
     /// <p>A set of actions that matched the specified filter criteria.</p>
-    pub fn set_action_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>,
-    ) -> Self {
+    pub fn set_action_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>) -> Self {
         self.action_identifiers = input;
         self
     }
     /// <p>A set of actions that matched the specified filter criteria.</p>
-    pub fn get_action_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>> {
+    pub fn get_action_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>> {
         &self.action_identifiers
     }
     /// <p>The token for the next set of results.</p>

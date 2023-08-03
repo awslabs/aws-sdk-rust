@@ -33,9 +33,7 @@ pub enum TransformOperation {
 impl TransformOperation {
     /// Tries to convert the enum instance into [`CastColumnTypeOperation`](crate::types::TransformOperation::CastColumnTypeOperation), extracting the inner [`CastColumnTypeOperation`](crate::types::CastColumnTypeOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_cast_column_type_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CastColumnTypeOperation, &Self> {
+    pub fn as_cast_column_type_operation(&self) -> ::std::result::Result<&crate::types::CastColumnTypeOperation, &Self> {
         if let TransformOperation::CastColumnTypeOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -48,9 +46,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`CreateColumnsOperation`](crate::types::TransformOperation::CreateColumnsOperation), extracting the inner [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_create_columns_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CreateColumnsOperation, &Self> {
+    pub fn as_create_columns_operation(&self) -> ::std::result::Result<&crate::types::CreateColumnsOperation, &Self> {
         if let TransformOperation::CreateColumnsOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -63,9 +59,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`FilterOperation`](crate::types::TransformOperation::FilterOperation), extracting the inner [`FilterOperation`](crate::types::FilterOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_filter_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FilterOperation, &Self> {
+    pub fn as_filter_operation(&self) -> ::std::result::Result<&crate::types::FilterOperation, &Self> {
         if let TransformOperation::FilterOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -78,9 +72,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`OverrideDatasetParameterOperation`](crate::types::TransformOperation::OverrideDatasetParameterOperation), extracting the inner [`OverrideDatasetParameterOperation`](crate::types::OverrideDatasetParameterOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_override_dataset_parameter_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::OverrideDatasetParameterOperation, &Self> {
+    pub fn as_override_dataset_parameter_operation(&self) -> ::std::result::Result<&crate::types::OverrideDatasetParameterOperation, &Self> {
         if let TransformOperation::OverrideDatasetParameterOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -93,9 +85,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`ProjectOperation`](crate::types::TransformOperation::ProjectOperation), extracting the inner [`ProjectOperation`](crate::types::ProjectOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_project_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ProjectOperation, &Self> {
+    pub fn as_project_operation(&self) -> ::std::result::Result<&crate::types::ProjectOperation, &Self> {
         if let TransformOperation::ProjectOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -108,9 +98,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`RenameColumnOperation`](crate::types::TransformOperation::RenameColumnOperation), extracting the inner [`RenameColumnOperation`](crate::types::RenameColumnOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rename_column_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RenameColumnOperation, &Self> {
+    pub fn as_rename_column_operation(&self) -> ::std::result::Result<&crate::types::RenameColumnOperation, &Self> {
         if let TransformOperation::RenameColumnOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -123,9 +111,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`TagColumnOperation`](crate::types::TransformOperation::TagColumnOperation), extracting the inner [`TagColumnOperation`](crate::types::TagColumnOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tag_column_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TagColumnOperation, &Self> {
+    pub fn as_tag_column_operation(&self) -> ::std::result::Result<&crate::types::TagColumnOperation, &Self> {
         if let TransformOperation::TagColumnOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -138,9 +124,7 @@ impl TransformOperation {
     }
     /// Tries to convert the enum instance into [`UntagColumnOperation`](crate::types::TransformOperation::UntagColumnOperation), extracting the inner [`UntagColumnOperation`](crate::types::UntagColumnOperation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_untag_column_operation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::UntagColumnOperation, &Self> {
+    pub fn as_untag_column_operation(&self) -> ::std::result::Result<&crate::types::UntagColumnOperation, &Self> {
         if let TransformOperation::UntagColumnOperation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

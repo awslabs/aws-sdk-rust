@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`vnfd_version(Option<String>)`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput::vnfd_version): <p>Function package descriptor version.</p>
     ///   - [`metadata(Option<PutSolFunctionPackageContentMetadata>)`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput::metadata): <p>Function package metadata.</p>
     /// - On failure, responds with [`SdkError<PutSolFunctionPackageContentError>`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError)
-    pub fn put_sol_function_package_content(&self) -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentFluentBuilder{
+    pub fn put_sol_function_package_content(
+        &self,
+    ) -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentFluentBuilder {
         crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentFluentBuilder::new(self.handle.clone())
     }
 }

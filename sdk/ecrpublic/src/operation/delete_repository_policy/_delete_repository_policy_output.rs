@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteRepositoryPolicyOutput {
 }
 impl DeleteRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyOutput`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyOutputBuilder {
         crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRepositoryPolicyOutput`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRepositoryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl DeleteRepositoryPolicyOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }

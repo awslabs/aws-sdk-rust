@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::set_tags): <p>A set of key-value pairs to use to create the tags.</p>
     /// - On success, responds with [`TagDeliveryStreamOutput`](crate::operation::tag_delivery_stream::TagDeliveryStreamOutput)
     /// - On failure, responds with [`SdkError<TagDeliveryStreamError>`](crate::operation::tag_delivery_stream::TagDeliveryStreamError)
-    pub fn tag_delivery_stream(
-        &self,
-    ) -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder {
-        crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn tag_delivery_stream(&self) -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder {
+        crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::new(self.handle.clone())
     }
 }

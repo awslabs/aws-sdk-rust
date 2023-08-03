@@ -23,9 +23,7 @@ impl DeadLetterConfig {
 
 /// A builder for [`DeadLetterConfig`](crate::types::DeadLetterConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeadLetterConfigBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DeadLetterConfigBuilder {
     }
     /// Consumes the builder and constructs a [`DeadLetterConfig`](crate::types::DeadLetterConfig).
     pub fn build(self) -> crate::types::DeadLetterConfig {
-        crate::types::DeadLetterConfig {
-            target_arn: self.target_arn,
-        }
+        crate::types::DeadLetterConfig { target_arn: self.target_arn }
     }
 }

@@ -94,9 +94,7 @@ impl Dataset {
 
 /// A builder for [`Dataset`](crate::types::Dataset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -139,18 +137,12 @@ impl DatasetBuilder {
         &self.dataset_arn
     }
     /// <p>Display title for a Dataset.</p>
-    pub fn dataset_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Display title for a Dataset.</p>
-    pub fn set_dataset_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_title = input;
         self
     }
@@ -185,18 +177,12 @@ impl DatasetBuilder {
         &self.kind
     }
     /// <p>Description for a Dataset.</p>
-    pub fn dataset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description for a Dataset.</p>
-    pub fn set_dataset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_description = input;
         self
     }
@@ -210,10 +196,7 @@ impl DatasetBuilder {
         self
     }
     /// <p>Contact information for a Dataset owner.</p>
-    pub fn set_owner_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetOwnerInfo>,
-    ) -> Self {
+    pub fn set_owner_info(mut self, input: ::std::option::Option<crate::types::DatasetOwnerInfo>) -> Self {
         self.owner_info = input;
         self
     }
@@ -255,10 +238,7 @@ impl DatasetBuilder {
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaUnion>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaUnion>) -> Self {
         self.schema_definition = input;
         self
     }

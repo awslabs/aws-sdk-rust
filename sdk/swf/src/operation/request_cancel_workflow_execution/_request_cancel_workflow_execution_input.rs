@@ -29,16 +29,14 @@ impl RequestCancelWorkflowExecutionInput {
 }
 impl RequestCancelWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionInput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput).
-    pub fn builder() -> crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionInputBuilder{
+    pub fn builder() -> crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionInputBuilder {
         crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`RequestCancelWorkflowExecutionInput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -94,15 +92,10 @@ impl RequestCancelWorkflowExecutionInputBuilder {
         crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput {
-                domain: self.domain
-                ,
-                workflow_id: self.workflow_id
-                ,
-                run_id: self.run_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput {
+            domain: self.domain,
+            workflow_id: self.workflow_id,
+            run_id: self.run_id,
+        })
     }
 }

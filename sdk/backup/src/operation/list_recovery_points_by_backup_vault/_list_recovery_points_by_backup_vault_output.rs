@@ -8,8 +8,7 @@ pub struct ListRecoveryPointsByBackupVaultOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
     #[doc(hidden)]
-    pub recovery_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
+    pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryPointsByBackupVaultOutput {
@@ -18,9 +17,7 @@ impl ListRecoveryPointsByBackupVaultOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub fn recovery_points(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecoveryPointByBackupVault]> {
+    pub fn recovery_points(&self) -> ::std::option::Option<&[crate::types::RecoveryPointByBackupVault]> {
         self.recovery_points.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRecoveryPointsByBackupVaultOutput
 }
 impl ListRecoveryPointsByBackupVaultOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsByBackupVaultOutput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput).
-    pub fn builder() -> crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder{
+    pub fn builder() -> crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder {
         crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryPointsByBackupVaultOutput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recovery_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
+    pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryPointsByBackupVaultOutputBuilder {
@@ -74,17 +68,12 @@ impl ListRecoveryPointsByBackupVaultOutputBuilder {
         self
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub fn set_recovery_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
-    ) -> Self {
+    pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>) -> Self {
         self.recovery_points = input;
         self
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub fn get_recovery_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>> {
+    pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>> {
         &self.recovery_points
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,15 +86,10 @@ impl ListRecoveryPointsByBackupVaultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecoveryPointsByBackupVaultOutput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput
-    {
+    pub fn build(self) -> crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput {
         crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput {
-            next_token: self.next_token
-            ,
-            recovery_points: self.recovery_points
-            ,
+            next_token: self.next_token,
+            recovery_points: self.recovery_points,
             _request_id: self._request_id,
         }
     }

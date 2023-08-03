@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`locale_id(Option<String>)`](crate::operation::delete_bot_locale::DeleteBotLocaleOutput::locale_id): <p>The language and locale of the deleted locale.</p>
     ///   - [`bot_locale_status(Option<BotLocaleStatus>)`](crate::operation::delete_bot_locale::DeleteBotLocaleOutput::bot_locale_status): <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
     /// - On failure, responds with [`SdkError<DeleteBotLocaleError>`](crate::operation::delete_bot_locale::DeleteBotLocaleError)
-    pub fn delete_bot_locale(
-        &self,
-    ) -> crate::operation::delete_bot_locale::builders::DeleteBotLocaleFluentBuilder {
-        crate::operation::delete_bot_locale::builders::DeleteBotLocaleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bot_locale(&self) -> crate::operation::delete_bot_locale::builders::DeleteBotLocaleFluentBuilder {
+        crate::operation::delete_bot_locale::builders::DeleteBotLocaleFluentBuilder::new(self.handle.clone())
     }
 }

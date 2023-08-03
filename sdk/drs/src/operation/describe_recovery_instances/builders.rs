@@ -26,7 +26,7 @@ impl DescribeRecoveryInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder,
+    inner: crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder,
 }
 impl DescribeRecoveryInstancesFluentBuilder {
     /// Creates a new `DescribeRecoveryInstances`.
@@ -37,7 +37,7 @@ impl DescribeRecoveryInstancesFluentBuilder {
         }
     }
     /// Access the DescribeRecoveryInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRecoveryInstancesFluentBuilder {
             crate::operation::describe_recovery_instances::DescribeRecoveryInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRecoveryInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRecoveryInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRecoveryInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeRecoveryInstancesFluentBuilder {
             crate::operation::describe_recovery_instances::DescribeRecoveryInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator {
         crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
@@ -135,17 +121,12 @@ impl DescribeRecoveryInstancesFluentBuilder {
         self
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters> {
         self.inner.get_filters()
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>

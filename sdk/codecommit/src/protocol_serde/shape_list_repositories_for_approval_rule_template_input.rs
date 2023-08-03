@@ -4,9 +4,7 @@ pub fn ser_list_repositories_for_approval_rule_template_input(
     input: &crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.approval_rule_template_name {
-        object
-            .key("approvalRuleTemplateName")
-            .string(var_1.as_str());
+        object.key("approvalRuleTemplateName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());

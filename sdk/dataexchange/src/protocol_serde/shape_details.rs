@@ -3,12 +3,7 @@ pub(crate) fn de_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Details>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,36 +13,31 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ImportAssetFromSignedUrlJobErrorDetails" => {
-                                builder = builder.set_import_asset_from_signed_url_job_error_details(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ImportAssetFromSignedUrlJobErrorDetails" => {
+                            builder = builder.set_import_asset_from_signed_url_job_error_details(
                                     crate::protocol_serde::shape_import_asset_from_signed_url_job_error_details::de_import_asset_from_signed_url_job_error_details(tokens)?
                                 );
-                            }
-                            "ImportAssetsFromS3JobErrorDetails" => {
-                                builder = builder.set_import_assets_from_s3_job_error_details(
-                                    crate::protocol_serde::shape_list_of_asset_source_entry::de_list_of_asset_source_entry(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "ImportAssetsFromS3JobErrorDetails" => {
+                            builder = builder.set_import_assets_from_s3_job_error_details(
+                                crate::protocol_serde::shape_list_of_asset_source_entry::de_list_of_asset_source_entry(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

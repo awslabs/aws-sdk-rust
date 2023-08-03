@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataQualityMetricsOutput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput) with field(s):
     ///   - [`anomaly_detector_data_quality_metric_list(Option<Vec<AnomalyDetectorDataQualityMetric>>)`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput::anomaly_detector_data_quality_metric_list): <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
     /// - On failure, responds with [`SdkError<GetDataQualityMetricsError>`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsError)
-    pub fn get_data_quality_metrics(
-        &self,
-    ) -> crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsFluentBuilder
-    {
+    pub fn get_data_quality_metrics(&self) -> crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsFluentBuilder {
         crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsFluentBuilder::new(self.handle.clone())
     }
 }

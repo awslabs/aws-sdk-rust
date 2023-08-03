@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`contact_channel_id(impl ::std::convert::Into<String>)`](crate::operation::send_activation_code::builders::SendActivationCodeFluentBuilder::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::operation::send_activation_code::builders::SendActivationCodeFluentBuilder::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     /// - On success, responds with [`SendActivationCodeOutput`](crate::operation::send_activation_code::SendActivationCodeOutput)
     /// - On failure, responds with [`SdkError<SendActivationCodeError>`](crate::operation::send_activation_code::SendActivationCodeError)
-    pub fn send_activation_code(
-        &self,
-    ) -> crate::operation::send_activation_code::builders::SendActivationCodeFluentBuilder {
-        crate::operation::send_activation_code::builders::SendActivationCodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_activation_code(&self) -> crate::operation::send_activation_code::builders::SendActivationCodeFluentBuilder {
+        crate::operation::send_activation_code::builders::SendActivationCodeFluentBuilder::new(self.handle.clone())
     }
 }

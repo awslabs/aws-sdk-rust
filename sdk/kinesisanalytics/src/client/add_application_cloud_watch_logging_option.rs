@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`cloud_watch_logging_option(CloudWatchLoggingOption)`](crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder::cloud_watch_logging_option) / [`set_cloud_watch_logging_option(Option<CloudWatchLoggingOption>)`](crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder::set_cloud_watch_logging_option): <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
     /// - On success, responds with [`AddApplicationCloudWatchLoggingOptionOutput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput)
     /// - On failure, responds with [`SdkError<AddApplicationCloudWatchLoggingOptionError>`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError)
-    pub fn add_application_cloud_watch_logging_option(&self) -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder{
-        crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder::new(self.handle.clone())
+    pub fn add_application_cloud_watch_logging_option(
+        &self,
+    ) -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder {
+        crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

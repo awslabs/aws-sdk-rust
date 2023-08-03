@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`routing_control_state(Option<RoutingControlState>)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_state): <p>The state of the routing control.</p>
     ///   - [`routing_control_name(Option<String>)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_name): <p>The routing control name.</p>
     /// - On failure, responds with [`SdkError<GetRoutingControlStateError>`](crate::operation::get_routing_control_state::GetRoutingControlStateError)
-    pub fn get_routing_control_state(
-        &self,
-    ) -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder
-    {
+    pub fn get_routing_control_state(&self) -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder {
         crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder::new(self.handle.clone())
     }
 }

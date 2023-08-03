@@ -10,25 +10,18 @@ pub fn ser_update_file_system_ontap_configuration(
         );
     }
     if let Some(var_2) = &input.daily_automatic_backup_start_time {
-        object
-            .key("DailyAutomaticBackupStartTime")
-            .string(var_2.as_str());
+        object.key("DailyAutomaticBackupStartTime").string(var_2.as_str());
     }
     if let Some(var_3) = &input.fsx_admin_password {
         object.key("FsxAdminPassword").string(var_3.as_str());
     }
     if let Some(var_4) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_4.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_4.as_str());
     }
     if let Some(var_5) = &input.disk_iops_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DiskIopsConfiguration").start_object();
-        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.throughput_capacity {

@@ -32,13 +32,11 @@ pub struct ManagedRuleGroupStatement {
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub managed_rule_group_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
+    pub managed_rule_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     #[doc(hidden)]
-    pub rule_action_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
+    pub rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl ManagedRuleGroupStatement {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
@@ -70,16 +68,12 @@ impl ManagedRuleGroupStatement {
     /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
-    pub fn managed_rule_group_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ManagedRuleGroupConfig]> {
+    pub fn managed_rule_group_configs(&self) -> ::std::option::Option<&[crate::types::ManagedRuleGroupConfig]> {
         self.managed_rule_group_configs.as_deref()
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn rule_action_overrides(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RuleActionOverride]> {
+    pub fn rule_action_overrides(&self) -> ::std::option::Option<&[crate::types::RuleActionOverride]> {
         self.rule_action_overrides.as_deref()
     }
 }
@@ -92,20 +86,15 @@ impl ManagedRuleGroupStatement {
 
 /// A builder for [`ManagedRuleGroupStatement`](crate::types::ManagedRuleGroupStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupStatementBuilder {
     pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
-    pub(crate) scope_down_statement:
-        ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
-    pub(crate) managed_rule_group_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
-    pub(crate) rule_action_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
+    pub(crate) scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
+    pub(crate) managed_rule_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
+    pub(crate) rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl ManagedRuleGroupStatementBuilder {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
@@ -166,41 +155,28 @@ impl ManagedRuleGroupStatementBuilder {
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn set_excluded_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
-    ) -> Self {
+    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>) -> Self {
         self.excluded_rules = input;
         self
     }
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn get_excluded_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
+    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
         &self.excluded_rules
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
-    pub fn scope_down_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Statement>>,
-    ) -> Self {
+    pub fn scope_down_statement(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Statement>>) -> Self {
         self.scope_down_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
-    pub fn set_scope_down_statement(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
-    ) -> Self {
+    pub fn set_scope_down_statement(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>) -> Self {
         self.scope_down_statement = input;
         self
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
-    pub fn get_scope_down_statement(
-        &self,
-    ) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
+    pub fn get_scope_down_statement(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
         &self.scope_down_statement
     }
     /// Appends an item to `managed_rule_group_configs`.
@@ -214,10 +190,7 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
-    pub fn managed_rule_group_configs(
-        mut self,
-        input: crate::types::ManagedRuleGroupConfig,
-    ) -> Self {
+    pub fn managed_rule_group_configs(mut self, input: crate::types::ManagedRuleGroupConfig) -> Self {
         let mut v = self.managed_rule_group_configs.unwrap_or_default();
         v.push(input);
         self.managed_rule_group_configs = ::std::option::Option::Some(v);
@@ -230,10 +203,7 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
-    pub fn set_managed_rule_group_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
-    ) -> Self {
+    pub fn set_managed_rule_group_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>) -> Self {
         self.managed_rule_group_configs = input;
         self
     }
@@ -244,9 +214,7 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
-    pub fn get_managed_rule_group_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>> {
+    pub fn get_managed_rule_group_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>> {
         &self.managed_rule_group_configs
     }
     /// Appends an item to `rule_action_overrides`.
@@ -263,18 +231,13 @@ impl ManagedRuleGroupStatementBuilder {
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn set_rule_action_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
-    ) -> Self {
+    pub fn set_rule_action_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>) -> Self {
         self.rule_action_overrides = input;
         self
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn get_rule_action_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
+    pub fn get_rule_action_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
         &self.rule_action_overrides
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupStatement`](crate::types::ManagedRuleGroupStatement).

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`configuration_status(Option<ConfigurationStatus>)`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput::configuration_status): <p>Contains current status information for the configuration.</p>
     ///   - [`last_update_date(Option<DateTime>)`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput::last_update_date): <p>The date the storage configuration was last updated, in Unix epoch time.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageConfigurationError>`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationError)
-    pub fn describe_storage_configuration(&self) -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationFluentBuilder{
+    pub fn describe_storage_configuration(
+        &self,
+    ) -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationFluentBuilder {
         crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

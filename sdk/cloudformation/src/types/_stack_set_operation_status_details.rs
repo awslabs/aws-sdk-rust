@@ -23,9 +23,7 @@ impl StackSetOperationStatusDetails {
 
 /// A builder for [`StackSetOperationStatusDetails`](crate::types::StackSetOperationStatusDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetOperationStatusDetailsBuilder {
     pub(crate) failed_stack_instances_count: ::std::option::Option<i32>,
 }

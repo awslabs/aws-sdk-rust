@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`DeleteAnalyzerOutput`](crate::operation::delete_analyzer::DeleteAnalyzerOutput)
     /// - On failure, responds with [`SdkError<DeleteAnalyzerError>`](crate::operation::delete_analyzer::DeleteAnalyzerError)
-    pub fn delete_analyzer(
-        &self,
-    ) -> crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder {
-        crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_analyzer(&self) -> crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder {
+        crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::new(self.handle.clone())
     }
 }

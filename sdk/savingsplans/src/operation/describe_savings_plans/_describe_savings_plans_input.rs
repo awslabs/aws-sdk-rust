@@ -50,17 +50,14 @@ impl DescribeSavingsPlansInput {
 }
 impl DescribeSavingsPlansInput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansInput`](crate::operation::describe_savings_plans::DescribeSavingsPlansInput).
-    pub fn builder(
-    ) -> crate::operation::describe_savings_plans::builders::DescribeSavingsPlansInputBuilder {
+    pub fn builder() -> crate::operation::describe_savings_plans::builders::DescribeSavingsPlansInputBuilder {
         crate::operation::describe_savings_plans::builders::DescribeSavingsPlansInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSavingsPlansInput`](crate::operation::describe_savings_plans::DescribeSavingsPlansInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansInputBuilder {
     pub(crate) savings_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) savings_plan_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,27 +72,19 @@ impl DescribeSavingsPlansInputBuilder {
     /// To override the contents of this collection use [`set_savings_plan_arns`](Self::set_savings_plan_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn savings_plan_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.savings_plan_arns.unwrap_or_default();
         v.push(input.into());
         self.savings_plan_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn set_savings_plan_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_savings_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.savings_plan_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn get_savings_plan_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_savings_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.savings_plan_arns
     }
     /// Appends an item to `savings_plan_ids`.
@@ -103,27 +92,19 @@ impl DescribeSavingsPlansInputBuilder {
     /// To override the contents of this collection use [`set_savings_plan_ids`](Self::set_savings_plan_ids).
     ///
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn savings_plan_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.savings_plan_ids.unwrap_or_default();
         v.push(input.into());
         self.savings_plan_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn set_savings_plan_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_savings_plan_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.savings_plan_ids = input;
         self
     }
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn get_savings_plan_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_savings_plan_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.savings_plan_ids
     }
     /// <p>The token for the next page of results.</p>
@@ -166,17 +147,12 @@ impl DescribeSavingsPlansInputBuilder {
         self
     }
     /// <p>The states.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>The states.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
         &self.states
     }
     /// Appends an item to `filters`.
@@ -191,35 +167,26 @@ impl DescribeSavingsPlansInputBuilder {
         self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansInput`](crate::operation::describe_savings_plans::DescribeSavingsPlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_savings_plans::DescribeSavingsPlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_savings_plans::DescribeSavingsPlansInput {
-                savings_plan_arns: self.savings_plan_arns,
-                savings_plan_ids: self.savings_plan_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                states: self.states,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_savings_plans::DescribeSavingsPlansInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_savings_plans::DescribeSavingsPlansInput {
+            savings_plan_arns: self.savings_plan_arns,
+            savings_plan_ids: self.savings_plan_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            states: self.states,
+            filters: self.filters,
+        })
     }
 }

@@ -37,10 +37,7 @@ impl StopInferenceSchedulerFluentBuilder {
         }
     }
     /// Access the StopInferenceScheduler as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StopInferenceSchedulerFluentBuilder {
             crate::operation::stop_inference_scheduler::StopInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_scheduler::StopInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_scheduler::StopInferenceSchedulerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StopInferenceSchedulerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StopInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_scheduler::StopInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_scheduler::StopInferenceSchedulerError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StopInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_scheduler::StopInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_scheduler::StopInferenceSchedulerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl StopInferenceSchedulerFluentBuilder {
             crate::operation::stop_inference_scheduler::StopInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_scheduler::StopInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_scheduler::StopInferenceSchedulerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the inference scheduler to be stopped. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
     /// <p>The name of the inference scheduler to be stopped. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }

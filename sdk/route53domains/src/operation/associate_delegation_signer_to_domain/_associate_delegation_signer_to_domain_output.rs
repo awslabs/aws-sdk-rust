@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateDelegationSignerToDomainOutp
 }
 impl AssociateDelegationSignerToDomainOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput).
-    pub fn builder() -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder{
+    pub fn builder() -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder {
         crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDelegationSignerToDomainOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl AssociateDelegationSignerToDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput).
-    pub fn build(self) -> crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput{
+    pub fn build(self) -> crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput {
         crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput {
-            operation_id: self.operation_id
-            ,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

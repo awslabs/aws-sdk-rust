@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`vnf_pkg_ids(Option<Vec<String>>)`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput::vnf_pkg_ids): <p>Function package IDs.</p>
     ///   - [`metadata(Option<PutSolNetworkPackageContentMetadata>)`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput::metadata): <p>Network package metadata.</p>
     /// - On failure, responds with [`SdkError<PutSolNetworkPackageContentError>`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError)
-    pub fn put_sol_network_package_content(&self) -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentFluentBuilder{
+    pub fn put_sol_network_package_content(
+        &self,
+    ) -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentFluentBuilder {
         crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`content_summaries(Option<Vec<ContentSummary>>)`](crate::operation::search_content::SearchContentOutput::content_summaries): <p>Summary information about the content.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_content::SearchContentOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<SearchContentError>`](crate::operation::search_content::SearchContentError)
-    pub fn search_content(
-        &self,
-    ) -> crate::operation::search_content::builders::SearchContentFluentBuilder {
-        crate::operation::search_content::builders::SearchContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_content(&self) -> crate::operation::search_content::builders::SearchContentFluentBuilder {
+        crate::operation::search_content::builders::SearchContentFluentBuilder::new(self.handle.clone())
     }
 }

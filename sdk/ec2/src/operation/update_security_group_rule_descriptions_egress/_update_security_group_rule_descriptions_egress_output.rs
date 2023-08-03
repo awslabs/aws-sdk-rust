@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for UpdateSecurityGroupRuleDescriptionsEg
 }
 impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityGroupRuleDescriptionsEgressOutput`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput).
-    pub fn builder() -> crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder {
         crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecurityGroupRuleDescriptionsEgressOutput`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +59,9 @@ impl UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSecurityGroupRuleDescriptionsEgressOutput`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput).
-    pub fn build(self) -> crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput{
+    pub fn build(self) -> crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput {
         crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

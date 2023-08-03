@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::create_state_machine::CreateStateMachineOutput::creation_date): <p>The date the state machine is created.</p>
     ///   - [`state_machine_version_arn(Option<String>)`](crate::operation::create_state_machine::CreateStateMachineOutput::state_machine_version_arn): <p>The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the <code>publish</code> parameter to <code>true</code>, this field returns null value.</p>
     /// - On failure, responds with [`SdkError<CreateStateMachineError>`](crate::operation::create_state_machine::CreateStateMachineError)
-    pub fn create_state_machine(
-        &self,
-    ) -> crate::operation::create_state_machine::builders::CreateStateMachineFluentBuilder {
-        crate::operation::create_state_machine::builders::CreateStateMachineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_state_machine(&self) -> crate::operation::create_state_machine::builders::CreateStateMachineFluentBuilder {
+        crate::operation::create_state_machine::builders::CreateStateMachineFluentBuilder::new(self.handle.clone())
     }
 }

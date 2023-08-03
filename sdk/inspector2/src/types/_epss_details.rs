@@ -23,9 +23,7 @@ impl EpssDetails {
 
 /// A builder for [`EpssDetails`](crate::types::EpssDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EpssDetailsBuilder {
     pub(crate) score: ::std::option::Option<f64>,
 }

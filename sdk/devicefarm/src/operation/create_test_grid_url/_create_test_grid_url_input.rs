@@ -22,17 +22,14 @@ impl CreateTestGridUrlInput {
 }
 impl CreateTestGridUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
-    pub fn builder(
-    ) -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder {
+    pub fn builder() -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder {
         crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTestGridUrlInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in_seconds: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl CreateTestGridUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_test_grid_url::CreateTestGridUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_test_grid_url::CreateTestGridUrlInput {
-                project_arn: self.project_arn,
-                expires_in_seconds: self.expires_in_seconds,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_test_grid_url::CreateTestGridUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_test_grid_url::CreateTestGridUrlInput {
+            project_arn: self.project_arn,
+            expires_in_seconds: self.expires_in_seconds,
+        })
     }
 }

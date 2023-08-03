@@ -37,9 +37,7 @@ impl PreviewOverride {
 
 /// A builder for [`PreviewOverride`](crate::types::PreviewOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PreviewOverrideBuilder {
     pub(crate) new_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,17 +56,12 @@ impl PreviewOverrideBuilder {
         self
     }
     /// <p>Information about contacts to add to an on-call rotation override.</p>
-    pub fn set_new_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_new_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.new_members = input;
         self
     }
     /// <p>Information about contacts to add to an on-call rotation override.</p>
-    pub fn get_new_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_new_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.new_members
     }
     /// <p>Information about the time a rotation override would begin.</p>
@@ -77,10 +70,7 @@ impl PreviewOverrideBuilder {
         self
     }
     /// <p>Information about the time a rotation override would begin.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -94,10 +84,7 @@ impl PreviewOverrideBuilder {
         self
     }
     /// <p>Information about the time a rotation override would end.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

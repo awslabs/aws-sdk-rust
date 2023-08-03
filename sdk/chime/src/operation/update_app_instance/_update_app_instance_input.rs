@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for UpdateAppInstanceInput {
 }
 impl UpdateAppInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceInput`](crate::operation::update_app_instance::UpdateAppInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::update_app_instance::builders::UpdateAppInstanceInputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance::builders::UpdateAppInstanceInputBuilder {
         crate::operation::update_app_instance::builders::UpdateAppInstanceInputBuilder::default()
     }
 }
@@ -54,18 +53,12 @@ pub struct UpdateAppInstanceInputBuilder {
 }
 impl UpdateAppInstanceInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -104,17 +97,12 @@ impl UpdateAppInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppInstanceInput`](crate::operation::update_app_instance::UpdateAppInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_instance::UpdateAppInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_app_instance::UpdateAppInstanceInput {
-                app_instance_arn: self.app_instance_arn,
-                name: self.name,
-                metadata: self.metadata,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_app_instance::UpdateAppInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_app_instance::UpdateAppInstanceInput {
+            app_instance_arn: self.app_instance_arn,
+            name: self.name,
+            metadata: self.metadata,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateAppInstanceInputBuilder {

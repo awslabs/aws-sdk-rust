@@ -22,9 +22,7 @@ impl GetCanaryInput {
 
 /// A builder for [`GetCanaryInput`](crate::operation::get_canary::GetCanaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetCanaryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetCanaryInput`](crate::operation::get_canary::GetCanaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_canary::GetCanaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_canary::GetCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_canary::GetCanaryInput { name: self.name })
     }
 }

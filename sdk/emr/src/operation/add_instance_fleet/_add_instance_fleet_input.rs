@@ -22,17 +22,14 @@ impl AddInstanceFleetInput {
 }
 impl AddInstanceFleetInput {
     /// Creates a new builder-style object to manufacture [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
-    pub fn builder() -> crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder {
         crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddInstanceFleetInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_fleet: ::std::option::Option<crate::types::InstanceFleetConfig>,
@@ -58,10 +55,7 @@ impl AddInstanceFleetInputBuilder {
         self
     }
     /// <p>Specifies the configuration of the instance fleet.</p>
-    pub fn set_instance_fleet(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetConfig>,
-    ) -> Self {
+    pub fn set_instance_fleet(mut self, input: ::std::option::Option<crate::types::InstanceFleetConfig>) -> Self {
         self.instance_fleet = input;
         self
     }
@@ -72,15 +66,10 @@ impl AddInstanceFleetInputBuilder {
     /// Consumes the builder and constructs a [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_instance_fleet::AddInstanceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_instance_fleet::AddInstanceFleetInput {
-                cluster_id: self.cluster_id,
-                instance_fleet: self.instance_fleet,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_instance_fleet::AddInstanceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_instance_fleet::AddInstanceFleetInput {
+            cluster_id: self.cluster_id,
+            instance_fleet: self.instance_fleet,
+        })
     }
 }

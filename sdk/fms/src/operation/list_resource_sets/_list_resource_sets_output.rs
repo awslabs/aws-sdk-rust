@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceSetsOutput {
 }
 impl ListResourceSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetsOutput`](crate::operation::list_resource_sets::ListResourceSetsOutput).
-    pub fn builder() -> crate::operation::list_resource_sets::builders::ListResourceSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_sets::builders::ListResourceSetsOutputBuilder {
         crate::operation::list_resource_sets::builders::ListResourceSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceSetsOutput`](crate::operation::list_resource_sets::ListResourceSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceSetsOutputBuilder {
-    pub(crate) resource_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetSummary>>,
+    pub(crate) resource_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListResourceSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
-    pub fn set_resource_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetSummary>>,
-    ) -> Self {
+    pub fn set_resource_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetSummary>>) -> Self {
         self.resource_sets = input;
         self
     }
     /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
-    pub fn get_resource_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSetSummary>> {
+    pub fn get_resource_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSetSummary>> {
         &self.resource_sets
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>

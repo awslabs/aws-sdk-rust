@@ -12,9 +12,7 @@ pub struct EventDetails {
     pub event_description: ::std::option::Option<crate::types::EventDescription>,
     /// <p>Additional metadata about the event.</p>
     #[doc(hidden)]
-    pub event_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub event_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventDetails {
     /// <p>Summary information about the event.</p>
@@ -26,11 +24,7 @@ impl EventDetails {
         self.event_description.as_ref()
     }
     /// <p>Additional metadata about the event.</p>
-    pub fn event_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn event_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.event_metadata.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl EventDetails {
 
 /// A builder for [`EventDetails`](crate::types::EventDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDetailsBuilder {
     pub(crate) event: ::std::option::Option<crate::types::Event>,
     pub(crate) event_description: ::std::option::Option<crate::types::EventDescription>,
-    pub(crate) event_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) event_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventDetailsBuilder {
     /// <p>Summary information about the event.</p>
@@ -74,10 +64,7 @@ impl EventDetailsBuilder {
         self
     }
     /// <p>The most recent description of the event.</p>
-    pub fn set_event_description(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDescription>,
-    ) -> Self {
+    pub fn set_event_description(mut self, input: ::std::option::Option<crate::types::EventDescription>) -> Self {
         self.event_description = input;
         self
     }
@@ -103,19 +90,13 @@ impl EventDetailsBuilder {
     /// <p>Additional metadata about the event.</p>
     pub fn set_event_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.event_metadata = input;
         self
     }
     /// <p>Additional metadata about the event.</p>
-    pub fn get_event_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_event_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.event_metadata
     }
     /// Consumes the builder and constructs a [`EventDetails`](crate::types::EventDetails).

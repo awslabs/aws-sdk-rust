@@ -10,10 +10,7 @@ impl BatchDeleteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_delete::BatchDeleteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete::BatchDeleteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete::BatchDeleteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_delete();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl BatchDeleteFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_delete::BatchDelete,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::batch_delete::BatchDelete, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::batch_delete::BatchDeleteError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl BatchDeleteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl BatchDeleteFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_delete::BatchDelete,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::batch_delete::BatchDelete, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::batch_delete::BatchDeleteError>,
     > {
         self.customize_middleware().await
@@ -122,17 +110,12 @@ impl BatchDeleteFluentBuilder {
         self
     }
     /// List of channel IDs
-    pub fn set_channel_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_channel_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_channel_ids(input);
         self
     }
     /// List of channel IDs
-    pub fn get_channel_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_channel_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_channel_ids()
     }
     /// Appends an item to `InputIds`.
@@ -145,10 +128,7 @@ impl BatchDeleteFluentBuilder {
         self
     }
     /// List of input IDs
-    pub fn set_input_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_input_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_input_ids(input);
         self
     }
@@ -161,25 +141,17 @@ impl BatchDeleteFluentBuilder {
     /// To override the contents of this collection use [`set_input_security_group_ids`](Self::set_input_security_group_ids).
     ///
     /// List of input security group IDs
-    pub fn input_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_security_group_ids(input.into());
         self
     }
     /// List of input security group IDs
-    pub fn set_input_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_input_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_input_security_group_ids(input);
         self
     }
     /// List of input security group IDs
-    pub fn get_input_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_input_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_input_security_group_ids()
     }
     /// Appends an item to `MultiplexIds`.
@@ -187,25 +159,17 @@ impl BatchDeleteFluentBuilder {
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
     ///
     /// List of multiplex IDs
-    pub fn multiplex_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multiplex_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multiplex_ids(input.into());
         self
     }
     /// List of multiplex IDs
-    pub fn set_multiplex_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_multiplex_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_multiplex_ids(input);
         self
     }
     /// List of multiplex IDs
-    pub fn get_multiplex_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multiplex_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_multiplex_ids()
     }
 }

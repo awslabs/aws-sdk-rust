@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`created(Option<DateTime>)`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput::created): <p>The date when the image was created.</p>
     ///   - [`owner_account_id(Option<String>)`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput::owner_account_id): <p>The identifier of the Amazon Web Services account that owns the image.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceImageError>`](crate::operation::create_workspace_image::CreateWorkspaceImageError)
-    pub fn create_workspace_image(
-        &self,
-    ) -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageFluentBuilder {
-        crate::operation::create_workspace_image::builders::CreateWorkspaceImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workspace_image(&self) -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageFluentBuilder {
+        crate::operation::create_workspace_image::builders::CreateWorkspaceImageFluentBuilder::new(self.handle.clone())
     }
 }

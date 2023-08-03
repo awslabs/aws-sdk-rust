@@ -121,32 +121,25 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
 }
 impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         crate::types::builders::AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     pub(crate) dpd_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) ike_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) outside_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) phase1_encryption_algorithms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) phase1_integrity_algorithms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) phase1_lifetime_seconds: ::std::option::Option<i32>,
     pub(crate) phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) phase2_encryption_algorithms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) phase2_integrity_algorithms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) phase2_lifetime_seconds: ::std::option::Option<i32>,
     pub(crate) pre_shared_key: ::std::option::Option<::std::string::String>,
     pub(crate) rekey_fuzz_percentage: ::std::option::Option<i32>,
@@ -181,32 +174,21 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self
     }
     /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
-    pub fn set_ike_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ike_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ike_versions = input;
         self
     }
     /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
-    pub fn get_ike_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ike_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ike_versions
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outside_ip_address = input;
         self
     }
@@ -226,10 +208,7 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn set_phase1_dh_group_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_phase1_dh_group_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.phase1_dh_group_numbers = input;
         self
     }
@@ -242,27 +221,19 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     /// To override the contents of this collection use [`set_phase1_encryption_algorithms`](Self::set_phase1_encryption_algorithms).
     ///
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn phase1_encryption_algorithms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phase1_encryption_algorithms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phase1_encryption_algorithms.unwrap_or_default();
         v.push(input.into());
         self.phase1_encryption_algorithms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn set_phase1_encryption_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phase1_encryption_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phase1_encryption_algorithms = input;
         self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn get_phase1_encryption_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phase1_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phase1_encryption_algorithms
     }
     /// Appends an item to `phase1_integrity_algorithms`.
@@ -270,27 +241,19 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     /// To override the contents of this collection use [`set_phase1_integrity_algorithms`](Self::set_phase1_integrity_algorithms).
     ///
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn phase1_integrity_algorithms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phase1_integrity_algorithms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phase1_integrity_algorithms.unwrap_or_default();
         v.push(input.into());
         self.phase1_integrity_algorithms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn set_phase1_integrity_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phase1_integrity_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phase1_integrity_algorithms = input;
         self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn get_phase1_integrity_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phase1_integrity_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phase1_integrity_algorithms
     }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
@@ -319,10 +282,7 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn set_phase2_dh_group_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_phase2_dh_group_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.phase2_dh_group_numbers = input;
         self
     }
@@ -335,27 +295,19 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     /// To override the contents of this collection use [`set_phase2_encryption_algorithms`](Self::set_phase2_encryption_algorithms).
     ///
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn phase2_encryption_algorithms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phase2_encryption_algorithms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phase2_encryption_algorithms.unwrap_or_default();
         v.push(input.into());
         self.phase2_encryption_algorithms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn set_phase2_encryption_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phase2_encryption_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phase2_encryption_algorithms = input;
         self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn get_phase2_encryption_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phase2_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phase2_encryption_algorithms
     }
     /// Appends an item to `phase2_integrity_algorithms`.
@@ -363,27 +315,19 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     /// To override the contents of this collection use [`set_phase2_integrity_algorithms`](Self::set_phase2_integrity_algorithms).
     ///
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn phase2_integrity_algorithms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phase2_integrity_algorithms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phase2_integrity_algorithms.unwrap_or_default();
         v.push(input.into());
         self.phase2_integrity_algorithms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn set_phase2_integrity_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phase2_integrity_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phase2_integrity_algorithms = input;
         self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn get_phase2_integrity_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phase2_integrity_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phase2_integrity_algorithms
     }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
@@ -401,18 +345,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         &self.phase2_lifetime_seconds
     }
     /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
-    pub fn pre_shared_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_shared_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_shared_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
-    pub fn set_pre_shared_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_shared_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_shared_key = input;
         self
     }
@@ -463,18 +401,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         &self.replay_window_size
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
-    pub fn tunnel_inside_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tunnel_inside_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_inside_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
-    pub fn set_tunnel_inside_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tunnel_inside_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tunnel_inside_cidr = input;
         self
     }

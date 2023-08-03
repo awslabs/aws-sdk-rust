@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CompleteVaultLockOutput {
 }
 impl CompleteVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`CompleteVaultLockOutput`](crate::operation::complete_vault_lock::CompleteVaultLockOutput).
-    pub fn builder(
-    ) -> crate::operation::complete_vault_lock::builders::CompleteVaultLockOutputBuilder {
+    pub fn builder() -> crate::operation::complete_vault_lock::builders::CompleteVaultLockOutputBuilder {
         crate::operation::complete_vault_lock::builders::CompleteVaultLockOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteVaultLockOutput`](crate::operation::complete_vault_lock::CompleteVaultLockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteVaultLockOutputBuilder {
     _request_id: Option<String>,
 }

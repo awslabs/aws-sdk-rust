@@ -9,10 +9,7 @@ pub fn ser_add_instance_fleet_input(
     if let Some(var_2) = &input.instance_fleet {
         #[allow(unused_mut)]
         let mut object_3 = object.key("InstanceFleet").start_object();
-        crate::protocol_serde::shape_instance_fleet_config::ser_instance_fleet_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_instance_fleet_config::ser_instance_fleet_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

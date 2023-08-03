@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSchemaVersionsOutput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput) with field(s):
     ///   - [`schema_version_errors(Option<Vec<SchemaVersionErrorItem>>)`](crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput::schema_version_errors): <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
     /// - On failure, responds with [`SdkError<DeleteSchemaVersionsError>`](crate::operation::delete_schema_versions::DeleteSchemaVersionsError)
-    pub fn delete_schema_versions(
-        &self,
-    ) -> crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsFluentBuilder {
-        crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schema_versions(&self) -> crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsFluentBuilder {
+        crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsFluentBuilder::new(self.handle.clone())
     }
 }

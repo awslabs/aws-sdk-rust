@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`version_id(Option<String>)`](crate::operation::get_object_tagging::GetObjectTaggingOutput::version_id): <p>The versionId of the object for which you got the tagging information.</p>
     ///   - [`tag_set(Option<Vec<Tag>>)`](crate::operation::get_object_tagging::GetObjectTaggingOutput::tag_set): <p>Contains the tag set.</p>
     /// - On failure, responds with [`SdkError<GetObjectTaggingError>`](crate::operation::get_object_tagging::GetObjectTaggingError)
-    pub fn get_object_tagging(
-        &self,
-    ) -> crate::operation::get_object_tagging::builders::GetObjectTaggingFluentBuilder {
-        crate::operation::get_object_tagging::builders::GetObjectTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_tagging(&self) -> crate::operation::get_object_tagging::builders::GetObjectTaggingFluentBuilder {
+        crate::operation::get_object_tagging::builders::GetObjectTaggingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl ReshardingStatus {
 
 /// A builder for [`ReshardingStatus`](crate::types::ReshardingStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReshardingStatusBuilder {
     pub(crate) slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }
@@ -36,10 +34,7 @@ impl ReshardingStatusBuilder {
         self
     }
     /// <p>Represents the progress of an online resharding operation.</p>
-    pub fn set_slot_migration(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotMigration>,
-    ) -> Self {
+    pub fn set_slot_migration(mut self, input: ::std::option::Option<crate::types::SlotMigration>) -> Self {
         self.slot_migration = input;
         self
     }

@@ -40,9 +40,7 @@ impl DetachThingPrincipalFluentBuilder {
         }
     }
     /// Access the DetachThingPrincipal as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_thing_principal::builders::DetachThingPrincipalInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detach_thing_principal::builders::DetachThingPrincipalInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl DetachThingPrincipalFluentBuilder {
             crate::operation::detach_thing_principal::DetachThingPrincipal,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_thing_principal::DetachThingPrincipalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_thing_principal::DetachThingPrincipalError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl DetachThingPrincipalFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl DetachThingPrincipalFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_thing_principal::DetachThingPrincipalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_thing_principal::DetachThingPrincipalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_thing_principal::DetachThingPrincipalError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl DetachThingPrincipalFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_thing_principal::DetachThingPrincipalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_thing_principal::DetachThingPrincipalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_thing_principal::DetachThingPrincipalError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl DetachThingPrincipalFluentBuilder {
             crate::operation::detach_thing_principal::DetachThingPrincipal,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_thing_principal::DetachThingPrincipalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_thing_principal::DetachThingPrincipalError>,
     > {
         self.customize_middleware().await
     }

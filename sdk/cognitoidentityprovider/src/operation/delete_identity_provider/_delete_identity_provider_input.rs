@@ -22,18 +22,14 @@ impl DeleteIdentityProviderInput {
 }
 impl DeleteIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder {
         crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentityProviderInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteIdentityProviderInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
-                user_pool_id: self.user_pool_id,
-                provider_name: self.provider_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
+            user_pool_id: self.user_pool_id,
+            provider_name: self.provider_name,
+        })
     }
 }

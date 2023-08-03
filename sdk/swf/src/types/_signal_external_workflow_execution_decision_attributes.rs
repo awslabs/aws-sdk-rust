@@ -52,17 +52,14 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
 }
 impl SignalExternalWorkflowExecutionDecisionAttributes {
     /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::types::SignalExternalWorkflowExecutionDecisionAttributes).
-    pub fn builder(
-    ) -> crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder {
+    pub fn builder() -> crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder {
         crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder::default()
     }
 }
 
 /// A builder for [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::types::SignalExternalWorkflowExecutionDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,

@@ -29,18 +29,14 @@ impl CreateJobForDevicesInput {
 }
 impl CreateJobForDevicesInput {
     /// Creates a new builder-style object to manufacture [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
-    pub fn builder(
-    ) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
-        crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
+        crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobForDevicesInputBuilder {
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) device_job_config: ::std::option::Option<crate::types::DeviceJobConfig>,
@@ -59,10 +55,7 @@ impl CreateJobForDevicesInputBuilder {
         self
     }
     /// <p>ID of target device.</p>
-    pub fn set_device_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.device_ids = input;
         self
     }
@@ -76,10 +69,7 @@ impl CreateJobForDevicesInputBuilder {
         self
     }
     /// <p>Configuration settings for a software update job.</p>
-    pub fn set_device_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceJobConfig>,
-    ) -> Self {
+    pub fn set_device_job_config(mut self, input: ::std::option::Option<crate::types::DeviceJobConfig>) -> Self {
         self.device_job_config = input;
         self
     }
@@ -104,16 +94,12 @@ impl CreateJobForDevicesInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_job_for_devices::CreateJobForDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_job_for_devices::CreateJobForDevicesInput {
-                device_ids: self.device_ids,
-                device_job_config: self.device_job_config,
-                job_type: self.job_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_job_for_devices::CreateJobForDevicesInput {
+            device_ids: self.device_ids,
+            device_job_config: self.device_job_config,
+            job_type: self.job_type,
+        })
     }
 }

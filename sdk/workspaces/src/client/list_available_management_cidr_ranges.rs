@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`management_cidr_ranges(Option<Vec<String>>)`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput::management_cidr_ranges): <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListAvailableManagementCidrRangesError>`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError)
-    pub fn list_available_management_cidr_ranges(&self) -> crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesFluentBuilder{
+    pub fn list_available_management_cidr_ranges(
+        &self,
+    ) -> crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesFluentBuilder {
         crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesFluentBuilder::new(self.handle.clone())
     }
 }

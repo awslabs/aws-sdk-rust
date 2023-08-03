@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`reserved_instances_modifications(Option<Vec<ReservedInstancesModification>>)`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput::reserved_instances_modifications): <p>The Reserved Instance modification information.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstancesModificationsError>`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError)
-    pub fn describe_reserved_instances_modifications(&self) -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsFluentBuilder{
-        crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_reserved_instances_modifications(
+        &self,
+    ) -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsFluentBuilder {
+        crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

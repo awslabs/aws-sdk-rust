@@ -23,10 +23,7 @@ pub fn ser_streaming_distribution_config(
     }
     if let Some(var_5) = &input.logging {
         let inner_writer = scope.start_el("Logging");
-        crate::protocol_serde::shape_streaming_logging_config::ser_streaming_logging_config(
-            var_5,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_streaming_logging_config::ser_streaming_logging_config(var_5, inner_writer)?
     }
     if let Some(var_6) = &input.trusted_signers {
         let inner_writer = scope.start_el("TrustedSigners");

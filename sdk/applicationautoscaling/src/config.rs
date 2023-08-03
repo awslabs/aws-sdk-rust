@@ -18,8 +18,7 @@
 ///
 #[derive(::std::clone::Clone)]
 pub struct Config {
-    pub(crate) endpoint_resolver:
-        ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
+    pub(crate) endpoint_resolver: ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     retry_config: ::std::option::Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: ::std::option::Option<::aws_smithy_types::timeout::TimeoutConfig>,
@@ -47,9 +46,7 @@ impl Config {
         Builder::default()
     }
     /// Returns the endpoint resolver.
-    pub fn endpoint_resolver(
-        &self,
-    ) -> ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params> {
+    pub fn endpoint_resolver(&self) -> ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params> {
         self.endpoint_resolver.clone()
     }
     /// Return a reference to the retry configuration contained in this config, if any.
@@ -58,16 +55,12 @@ impl Config {
     }
 
     /// Return a cloned shared async sleep implementation from this config, if any.
-    pub fn sleep_impl(
-        &self,
-    ) -> ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep> {
+    pub fn sleep_impl(&self) -> ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep> {
         self.sleep_impl.clone()
     }
 
     /// Return a reference to the timeout configuration contained in this config, if any.
-    pub fn timeout_config(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::timeout::TimeoutConfig> {
+    pub fn timeout_config(&self) -> ::std::option::Option<&::aws_smithy_types::timeout::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// Return time source used for this service.
@@ -108,9 +101,7 @@ impl Config {
 /// Builder for creating a `Config`.
 #[derive(Clone, Default)]
 pub struct Builder {
-    endpoint_resolver: ::std::option::Option<
-        ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
-    >,
+    endpoint_resolver: ::std::option::Option<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>>,
     retry_config: ::std::option::Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: ::std::option::Option<::aws_smithy_types::timeout::TimeoutConfig>,
@@ -121,8 +112,7 @@ pub struct Builder {
     use_fips: ::std::option::Option<bool>,
     http_connector: Option<::aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: ::std::option::Option<::aws_types::region::Region>,
-    credentials_provider:
-        ::std::option::Option<::aws_credential_types::provider::SharedCredentialsProvider>,
+    credentials_provider: ::std::option::Option<::aws_credential_types::provider::SharedCredentialsProvider>,
     credentials_cache: ::std::option::Option<::aws_credential_types::cache::CredentialsCache>,
 }
 impl std::fmt::Debug for Builder {
@@ -171,12 +161,11 @@ impl Builder {
 
     pub fn endpoint_resolver(
         mut self,
-        endpoint_resolver: impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>
-            + 'static,
+        endpoint_resolver: impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> + 'static,
     ) -> Self {
-        self.set_endpoint_resolver(::std::option::Option::Some(
-            ::aws_smithy_http::endpoint::SharedEndpointResolver::new(endpoint_resolver),
-        ));
+        self.set_endpoint_resolver(::std::option::Option::Some(::aws_smithy_http::endpoint::SharedEndpointResolver::new(
+            endpoint_resolver,
+        )));
         self
     }
 
@@ -186,9 +175,7 @@ impl Builder {
     /// rules for `aws_sdk_applicationautoscaling`.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: ::std::option::Option<
-            ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
-        >,
+        endpoint_resolver: ::std::option::Option<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>>,
     ) -> &mut Self {
         self.endpoint_resolver = endpoint_resolver;
         self
@@ -224,10 +211,7 @@ impl Builder {
     /// disable_retries(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_retry_config(
-        &mut self,
-        retry_config: ::std::option::Option<::aws_smithy_types::retry::RetryConfig>,
-    ) -> &mut Self {
+    pub fn set_retry_config(&mut self, retry_config: ::std::option::Option<::aws_smithy_types::retry::RetryConfig>) -> &mut Self {
         self.retry_config = retry_config;
         self
     }
@@ -250,10 +234,7 @@ impl Builder {
     /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = Config::builder().sleep_impl(sleep_impl).build();
     /// ```
-    pub fn sleep_impl(
-        mut self,
-        sleep_impl: ::aws_smithy_async::rt::sleep::SharedAsyncSleep,
-    ) -> Self {
+    pub fn sleep_impl(mut self, sleep_impl: ::aws_smithy_async::rt::sleep::SharedAsyncSleep) -> Self {
         self.set_sleep_impl(Some(sleep_impl));
         self
     }
@@ -283,10 +264,7 @@ impl Builder {
     /// set_never_ending_sleep_impl(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_sleep_impl(
-        &mut self,
-        sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
-    ) -> &mut Self {
+    pub fn set_sleep_impl(&mut self, sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>) -> &mut Self {
         self.sleep_impl = sleep_impl;
         self
     }
@@ -304,10 +282,7 @@ impl Builder {
     ///     .build();
     /// let config = Config::builder().timeout_config(timeout_config).build();
     /// ```
-    pub fn timeout_config(
-        mut self,
-        timeout_config: ::aws_smithy_types::timeout::TimeoutConfig,
-    ) -> Self {
+    pub fn timeout_config(mut self, timeout_config: ::aws_smithy_types::timeout::TimeoutConfig) -> Self {
         self.set_timeout_config(Some(timeout_config));
         self
     }
@@ -332,26 +307,17 @@ impl Builder {
     /// set_request_timeout(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_timeout_config(
-        &mut self,
-        timeout_config: ::std::option::Option<::aws_smithy_types::timeout::TimeoutConfig>,
-    ) -> &mut Self {
+    pub fn set_timeout_config(&mut self, timeout_config: ::std::option::Option<::aws_smithy_types::timeout::TimeoutConfig>) -> &mut Self {
         self.timeout_config = timeout_config;
         self
     }
     /// Sets the time source used for this service
-    pub fn time_source(
-        mut self,
-        time_source: impl ::std::convert::Into<::aws_smithy_async::time::SharedTimeSource>,
-    ) -> Self {
+    pub fn time_source(mut self, time_source: impl ::std::convert::Into<::aws_smithy_async::time::SharedTimeSource>) -> Self {
         self.set_time_source(::std::option::Option::Some(time_source.into()));
         self
     }
     /// Sets the time source used for this service
-    pub fn set_time_source(
-        &mut self,
-        time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>,
-    ) -> &mut Self {
+    pub fn set_time_source(&mut self, time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>) -> &mut Self {
         self.time_source = time_source;
         self
     }
@@ -367,10 +333,7 @@ impl Builder {
     ///
     /// This _optional_ name is used to identify the application in the user agent that
     /// gets sent along with requests.
-    pub fn set_app_name(
-        &mut self,
-        app_name: ::std::option::Option<::aws_types::app_name::AppName>,
-    ) -> &mut Self {
+    pub fn set_app_name(&mut self, app_name: ::std::option::Option<::aws_types::app_name::AppName>) -> &mut Self {
         self.app_name = app_name;
         self
     }
@@ -443,10 +406,7 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn http_connector(
-        mut self,
-        http_connector: impl Into<::aws_smithy_client::http_connector::HttpConnector>,
-    ) -> Self {
+    pub fn http_connector(mut self, http_connector: impl Into<::aws_smithy_client::http_connector::HttpConnector>) -> Self {
         self.set_http_connector(::std::option::Option::Some(http_connector));
         self
     }
@@ -491,9 +451,7 @@ impl Builder {
     /// ```
     pub fn set_http_connector(
         &mut self,
-        http_connector: ::std::option::Option<
-            impl ::std::convert::Into<::aws_smithy_client::http_connector::HttpConnector>,
-        >,
+        http_connector: ::std::option::Option<impl ::std::convert::Into<::aws_smithy_client::http_connector::HttpConnector>>,
     ) -> &mut Self {
         self.http_connector = http_connector.map(|inner| inner.into());
         self
@@ -509,26 +467,17 @@ impl Builder {
     ///     .region(Region::new("us-east-1"))
     ///     .build();
     /// ```
-    pub fn region(
-        mut self,
-        region: impl ::std::convert::Into<::std::option::Option<::aws_types::region::Region>>,
-    ) -> Self {
+    pub fn region(mut self, region: impl ::std::convert::Into<::std::option::Option<::aws_types::region::Region>>) -> Self {
         self.set_region(region.into());
         self
     }
     /// Sets the AWS region to use when making requests.
-    pub fn set_region(
-        &mut self,
-        region: ::std::option::Option<::aws_types::region::Region>,
-    ) -> &mut Self {
+    pub fn set_region(&mut self, region: ::std::option::Option<::aws_types::region::Region>) -> &mut Self {
         self.region = region;
         self
     }
     /// Sets the credentials provider for this service
-    pub fn credentials_provider(
-        mut self,
-        credentials_provider: impl ::aws_credential_types::provider::ProvideCredentials + 'static,
-    ) -> Self {
+    pub fn credentials_provider(mut self, credentials_provider: impl ::aws_credential_types::provider::ProvideCredentials + 'static) -> Self {
         self.set_credentials_provider(::std::option::Option::Some(
             ::aws_credential_types::provider::SharedCredentialsProvider::new(credentials_provider),
         ));
@@ -537,26 +486,18 @@ impl Builder {
     /// Sets the credentials provider for this service
     pub fn set_credentials_provider(
         &mut self,
-        credentials_provider: ::std::option::Option<
-            ::aws_credential_types::provider::SharedCredentialsProvider,
-        >,
+        credentials_provider: ::std::option::Option<::aws_credential_types::provider::SharedCredentialsProvider>,
     ) -> &mut Self {
         self.credentials_provider = credentials_provider;
         self
     }
     /// Sets the credentials cache for this service
-    pub fn credentials_cache(
-        mut self,
-        credentials_cache: ::aws_credential_types::cache::CredentialsCache,
-    ) -> Self {
+    pub fn credentials_cache(mut self, credentials_cache: ::aws_credential_types::cache::CredentialsCache) -> Self {
         self.set_credentials_cache(::std::option::Option::Some(credentials_cache));
         self
     }
     /// Sets the credentials cache for this service
-    pub fn set_credentials_cache(
-        &mut self,
-        credentials_cache: Option<::aws_credential_types::cache::CredentialsCache>,
-    ) -> &mut Self {
+    pub fn set_credentials_cache(&mut self, credentials_cache: Option<::aws_credential_types::cache::CredentialsCache>) -> &mut Self {
         self.credentials_cache = credentials_cache;
         self
     }
@@ -564,11 +505,9 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn set_test_defaults(&mut self) -> &mut Self {
-        self.set_credentials_provider(Some(
-            ::aws_credential_types::provider::SharedCredentialsProvider::new(
-                ::aws_credential_types::Credentials::for_tests(),
-            ),
-        ));
+        self.set_credentials_provider(Some(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::Credentials::for_tests(),
+        )));
         self
     }
     #[cfg(any(feature = "test-util", test))]
@@ -581,11 +520,9 @@ impl Builder {
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
-            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
-                ::aws_smithy_http::endpoint::SharedEndpointResolver::new(
-                    crate::endpoint::DefaultResolver::new(),
-                )
-            }),
+            endpoint_resolver: self
+                .endpoint_resolver
+                .unwrap_or_else(|| ::aws_smithy_http::endpoint::SharedEndpointResolver::new(crate::endpoint::DefaultResolver::new())),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl.clone(),
             timeout_config: self.timeout_config,
@@ -601,19 +538,16 @@ impl Builder {
                 .unwrap_or_else({
                     let sleep = self.sleep_impl.clone();
                     || match sleep {
-                        Some(sleep) => {
-                            ::aws_credential_types::cache::CredentialsCache::lazy_builder()
-                                .sleep(sleep)
-                                .into_credentials_cache()
-                        }
+                        Some(sleep) => ::aws_credential_types::cache::CredentialsCache::lazy_builder()
+                            .sleep(sleep)
+                            .into_credentials_cache(),
                         None => ::aws_credential_types::cache::CredentialsCache::lazy(),
                     }
                 })
-                .create_cache(self.credentials_provider.unwrap_or_else(|| {
-                    ::aws_credential_types::provider::SharedCredentialsProvider::new(
-                        crate::no_credentials::NoCredentials,
-                    )
-                })),
+                .create_cache(
+                    self.credentials_provider
+                        .unwrap_or_else(|| ::aws_credential_types::provider::SharedCredentialsProvider::new(crate::no_credentials::NoCredentials)),
+                ),
         }
     }
 }

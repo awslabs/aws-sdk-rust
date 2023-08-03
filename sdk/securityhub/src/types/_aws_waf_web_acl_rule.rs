@@ -68,13 +68,10 @@ impl AwsWafWebAclRule {
 
 /// A builder for [`AwsWafWebAclRule`](crate::types::AwsWafWebAclRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafWebAclRuleBuilder {
     pub(crate) action: ::std::option::Option<crate::types::WafAction>,
-    pub(crate) excluded_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>,
+    pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>,
     pub(crate) override_action: ::std::option::Option<crate::types::WafOverrideAction>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
@@ -107,17 +104,12 @@ impl AwsWafWebAclRuleBuilder {
         self
     }
     /// <p>Rules to exclude from a rule group.</p>
-    pub fn set_excluded_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>,
-    ) -> Self {
+    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>) -> Self {
         self.excluded_rules = input;
         self
     }
     /// <p>Rules to exclude from a rule group.</p>
-    pub fn get_excluded_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>> {
+    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>> {
         &self.excluded_rules
     }
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
@@ -132,10 +124,7 @@ impl AwsWafWebAclRuleBuilder {
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
     /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
-    pub fn set_override_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafOverrideAction>,
-    ) -> Self {
+    pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::WafOverrideAction>) -> Self {
         self.override_action = input;
         self
     }

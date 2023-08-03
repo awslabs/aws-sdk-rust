@@ -26,7 +26,7 @@ impl GetSamplingStatisticSummariesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSamplingStatisticSummariesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder,
+    inner: crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder,
 }
 impl GetSamplingStatisticSummariesFluentBuilder {
     /// Creates a new `GetSamplingStatisticSummaries`.
@@ -37,7 +37,7 @@ impl GetSamplingStatisticSummariesFluentBuilder {
         }
     }
     /// Access the GetSamplingStatisticSummaries as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSamplingStatisticSummariesFluentBuilder {
             crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSamplingStatisticSummariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSamplingStatisticSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSamplingStatisticSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetSamplingStatisticSummariesFluentBuilder {
             crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_sampling_statistic_summaries::paginator::GetSamplingStatisticSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_sampling_statistic_summaries::paginator::GetSamplingStatisticSummariesPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_sampling_statistic_summaries::paginator::GetSamplingStatisticSummariesPaginator {
         crate::operation::get_sampling_statistic_summaries::paginator::GetSamplingStatisticSummariesPaginator::new(self.handle, self.inner)
     }
     /// <p>Pagination token.</p>

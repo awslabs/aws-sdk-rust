@@ -48,18 +48,14 @@ impl DescribeCacheClustersInput {
 }
 impl DescribeCacheClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder {
         crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheClustersInputBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -69,18 +65,12 @@ pub struct DescribeCacheClustersInputBuilder {
 }
 impl DescribeCacheClustersInputBuilder {
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -142,35 +132,25 @@ impl DescribeCacheClustersInputBuilder {
         self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
-    pub fn set_show_cache_clusters_not_in_replication_groups(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_show_cache_clusters_not_in_replication_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_cache_clusters_not_in_replication_groups = input;
         self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
-    pub fn get_show_cache_clusters_not_in_replication_groups(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_show_cache_clusters_not_in_replication_groups(&self) -> &::std::option::Option<bool> {
         &self.show_cache_clusters_not_in_replication_groups
     }
     /// Consumes the builder and constructs a [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cache_clusters::DescribeCacheClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cache_clusters::DescribeCacheClustersInput {
-                cache_cluster_id: self.cache_cluster_id,
-                max_records: self.max_records,
-                marker: self.marker,
-                show_cache_node_info: self.show_cache_node_info,
-                show_cache_clusters_not_in_replication_groups: self
-                    .show_cache_clusters_not_in_replication_groups,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_cache_clusters::DescribeCacheClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_cache_clusters::DescribeCacheClustersInput {
+            cache_cluster_id: self.cache_cluster_id,
+            max_records: self.max_records,
+            marker: self.marker,
+            show_cache_node_info: self.show_cache_node_info,
+            show_cache_clusters_not_in_replication_groups: self.show_cache_clusters_not_in_replication_groups,
+        })
     }
 }

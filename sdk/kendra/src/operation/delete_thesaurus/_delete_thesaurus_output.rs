@@ -19,9 +19,7 @@ impl DeleteThesaurusOutput {
 
 /// A builder for [`DeleteThesaurusOutput`](crate::operation::delete_thesaurus::DeleteThesaurusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThesaurusOutputBuilder {
     _request_id: Option<String>,
 }

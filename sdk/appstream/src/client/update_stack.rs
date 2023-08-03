@@ -19,9 +19,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStackOutput`](crate::operation::update_stack::UpdateStackOutput) with field(s):
     ///   - [`stack(Option<Stack>)`](crate::operation::update_stack::UpdateStackOutput::stack): <p>Information about the stack.</p>
     /// - On failure, responds with [`SdkError<UpdateStackError>`](crate::operation::update_stack::UpdateStackError)
-    pub fn update_stack(
-        &self,
-    ) -> crate::operation::update_stack::builders::UpdateStackFluentBuilder {
+    pub fn update_stack(&self) -> crate::operation::update_stack::builders::UpdateStackFluentBuilder {
         crate::operation::update_stack::builders::UpdateStackFluentBuilder::new(self.handle.clone())
     }
 }

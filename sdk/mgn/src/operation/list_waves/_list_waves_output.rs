@@ -35,9 +35,7 @@ impl ListWavesOutput {
 
 /// A builder for [`ListWavesOutput`](crate::operation::list_waves::ListWavesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWavesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Wave>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListWavesOutputBuilder {
         self
     }
     /// <p>Waves list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Wave>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Wave>>) -> Self {
         self.items = input;
         self
     }

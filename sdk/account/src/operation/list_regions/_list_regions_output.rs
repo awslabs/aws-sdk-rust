@@ -35,9 +35,7 @@ impl ListRegionsOutput {
 
 /// A builder for [`ListRegionsOutput`](crate::operation::list_regions::ListRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
@@ -70,10 +68,7 @@ impl ListRegionsOutputBuilder {
         self
     }
     /// <p>This is a list of Regions for a given account, or if the filtered parameter was used, a list of Regions that match the filter criteria set in the <code>filter</code> parameter.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>) -> Self {
         self.regions = input;
         self
     }

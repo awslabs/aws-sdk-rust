@@ -58,9 +58,7 @@ impl Summary {
 
 /// A builder for [`Summary`](crate::types::Summary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SummaryBuilder {
     pub(crate) last_updated: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl SummaryBuilder {
         self
     }
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
-    pub fn set_target_id_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetIdType>,
-    ) -> Self {
+    pub fn set_target_id_type(mut self, input: ::std::option::Option<crate::types::TargetIdType>) -> Self {
         self.target_id_type = input;
         self
     }
@@ -130,18 +125,12 @@ impl SummaryBuilder {
         &self.region
     }
     /// <p>The Amazon Web Services resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }

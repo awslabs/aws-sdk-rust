@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for SendPipelineExecutionStepFailureOutpu
 }
 impl SendPipelineExecutionStepFailureOutput {
     /// Creates a new builder-style object to manufacture [`SendPipelineExecutionStepFailureOutput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput).
-    pub fn builder() -> crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureOutputBuilder{
+    pub fn builder() -> crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureOutputBuilder {
         crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendPipelineExecutionStepFailureOutput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepFailureOutputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendPipelineExecutionStepFailureOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }
@@ -66,10 +58,9 @@ impl SendPipelineExecutionStepFailureOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendPipelineExecutionStepFailureOutput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput).
-    pub fn build(self) -> crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput{
+    pub fn build(self) -> crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput {
         crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput {
-            pipeline_execution_arn: self.pipeline_execution_arn
-            ,
+            pipeline_execution_arn: self.pipeline_execution_arn,
             _request_id: self._request_id,
         }
     }

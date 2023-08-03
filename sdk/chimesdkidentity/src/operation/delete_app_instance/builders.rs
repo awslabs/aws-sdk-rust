@@ -10,10 +10,7 @@ impl DeleteAppInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance::DeleteAppInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_app_instance();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAppInstanceFluentBuilder {
         }
     }
     /// Access the DeleteAppInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_instance::builders::DeleteAppInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_app_instance::builders::DeleteAppInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAppInstanceFluentBuilder {
             crate::operation::delete_app_instance::DeleteAppInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAppInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAppInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance::DeleteAppInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAppInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance::DeleteAppInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteAppInstanceFluentBuilder {
             crate::operation::delete_app_instance::DeleteAppInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }

@@ -30,27 +30,19 @@ impl DataflowEndpointConfig {
 
 /// A builder for [`DataflowEndpointConfig`](crate::types::DataflowEndpointConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataflowEndpointConfigBuilder {
     pub(crate) dataflow_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_endpoint_region: ::std::option::Option<::std::string::String>,
 }
 impl DataflowEndpointConfigBuilder {
     /// <p>Name of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a dataflow endpoint.</p>
-    pub fn set_dataflow_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl DataflowEndpointConfigBuilder {
         &self.dataflow_endpoint_name
     }
     /// <p>Region of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Region of a dataflow endpoint.</p>
-    pub fn set_dataflow_endpoint_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_region = input;
         self
     }

@@ -10,10 +10,7 @@ impl GetPartitionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_partitions::GetPartitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partitions::GetPartitionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_partitions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetPartitionsFluentBuilder {
         }
     }
     /// Access the GetPartitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_partitions::builders::GetPartitionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_partitions::builders::GetPartitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetPartitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetPartitionsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_partitions::paginator::GetPartitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_partitions::paginator::GetPartitionsPaginator {
-        crate::operation::get_partitions::paginator::GetPartitionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_partitions::paginator::GetPartitionsPaginator {
+        crate::operation::get_partitions::paginator::GetPartitionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,18 +127,12 @@ impl GetPartitionsFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -448,18 +429,12 @@ impl GetPartitionsFluentBuilder {
         self.inner.get_exclude_column_schema()
     }
     /// <p>The transaction ID at which to read the partition contents.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction ID at which to read the partition contents.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -473,10 +448,7 @@ impl GetPartitionsFluentBuilder {
         self
     }
     /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn set_query_as_of_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_as_of_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self
     }

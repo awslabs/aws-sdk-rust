@@ -10,9 +10,7 @@ async fn operation_input_test_put_events_1() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_eventbridge::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_eventbridge::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         builder.build()
     };
@@ -24,9 +22,7 @@ async fn operation_input_test_put_events_1() {
             .set_entries(::std::option::Option::Some(vec![
                 aws_sdk_eventbridge::types::PutEventsRequestEntry::builder()
                     .set_detail_type(::std::option::Option::Some("detailType".to_owned()))
-                    .set_detail(::std::option::Option::Some(
-                        "{ \"test\": [\"test\"] }".to_owned()
-                    ))
+                    .set_detail(::std::option::Option::Some("{ \"test\": [\"test\"] }".to_owned()))
                     .set_event_bus_name(::std::option::Option::Some("my-sdk-app".to_owned()))
                     .build(),
             ]))
@@ -35,5 +31,9 @@ async fn operation_input_test_put_events_1() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://abc123.456def.endpoint.events.amazonaws.com"), "expected URI to start with `https://abc123.456def.endpoint.events.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://abc123.456def.endpoint.events.amazonaws.com"),
+        "expected URI to start with `https://abc123.456def.endpoint.events.amazonaws.com` but it was `{}`",
+        uri
+    );
 }

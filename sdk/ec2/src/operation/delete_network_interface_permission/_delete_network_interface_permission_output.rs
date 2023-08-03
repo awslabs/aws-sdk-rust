@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkInterfacePermissionOutpu
 }
 impl DeleteNetworkInterfacePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInterfacePermissionOutput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput).
-    pub fn builder() -> crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionOutputBuilder {
         crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkInterfacePermissionOutput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInterfacePermissionOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -61,13 +59,9 @@ impl DeleteNetworkInterfacePermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInterfacePermissionOutput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput
-    {
+    pub fn build(self) -> crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput {
         crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

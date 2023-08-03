@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateIAMPolicyAssignmentError>`](crate::operation::update_iam_policy_assignment::UpdateIAMPolicyAssignmentError)
-    pub fn update_iam_policy_assignment(&self) -> crate::operation::update_iam_policy_assignment::builders::UpdateIAMPolicyAssignmentFluentBuilder{
+    pub fn update_iam_policy_assignment(&self) -> crate::operation::update_iam_policy_assignment::builders::UpdateIAMPolicyAssignmentFluentBuilder {
         crate::operation::update_iam_policy_assignment::builders::UpdateIAMPolicyAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

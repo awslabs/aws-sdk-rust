@@ -48,10 +48,7 @@ impl DeleteGameServerGroupFluentBuilder {
         }
     }
     /// Access the DeleteGameServerGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_game_server_group::builders::DeleteGameServerGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_game_server_group::builders::DeleteGameServerGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +60,7 @@ impl DeleteGameServerGroupFluentBuilder {
             crate::operation::delete_game_server_group::DeleteGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_server_group::DeleteGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_server_group::DeleteGameServerGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +70,7 @@ impl DeleteGameServerGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +79,7 @@ impl DeleteGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_game_server_group::DeleteGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_server_group::DeleteGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_server_group::DeleteGameServerGroupError>,
     > {
         let op = self
             .inner
@@ -112,9 +102,7 @@ impl DeleteGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_game_server_group::DeleteGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_server_group::DeleteGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_server_group::DeleteGameServerGroupError>,
     > {
         self.send_middleware().await
     }
@@ -128,25 +116,17 @@ impl DeleteGameServerGroupFluentBuilder {
             crate::operation::delete_game_server_group::DeleteGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_server_group::DeleteGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_server_group::DeleteGameServerGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -170,10 +150,7 @@ impl DeleteGameServerGroupFluentBuilder {
     /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
     /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
-    pub fn set_delete_option(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroupDeleteOption>,
-    ) -> Self {
+    pub fn set_delete_option(mut self, input: ::std::option::Option<crate::types::GameServerGroupDeleteOption>) -> Self {
         self.inner = self.inner.set_delete_option(input);
         self
     }
@@ -183,9 +160,7 @@ impl DeleteGameServerGroupFluentBuilder {
     /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
     /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
-    pub fn get_delete_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameServerGroupDeleteOption> {
+    pub fn get_delete_option(&self) -> &::std::option::Option<crate::types::GameServerGroupDeleteOption> {
         self.inner.get_delete_option()
     }
 }

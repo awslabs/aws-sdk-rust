@@ -28,27 +28,19 @@ impl StartHumanLoopOutput {
 
 /// A builder for [`StartHumanLoopOutput`](crate::operation::start_human_loop::StartHumanLoopOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartHumanLoopOutputBuilder {
     pub(crate) human_loop_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartHumanLoopOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn human_loop_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn set_human_loop_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_arn = input;
         self
     }

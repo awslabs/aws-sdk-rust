@@ -39,9 +39,7 @@ pub enum Configuration {
 impl Configuration {
     /// Tries to convert the enum instance into [`EbsSnapshot`](crate::types::Configuration::EbsSnapshot), extracting the inner [`EbsSnapshotConfiguration`](crate::types::EbsSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ebs_snapshot(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EbsSnapshotConfiguration, &Self> {
+    pub fn as_ebs_snapshot(&self) -> ::std::result::Result<&crate::types::EbsSnapshotConfiguration, &Self> {
         if let Configuration::EbsSnapshot(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -54,9 +52,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`EcrRepository`](crate::types::Configuration::EcrRepository), extracting the inner [`EcrRepositoryConfiguration`](crate::types::EcrRepositoryConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ecr_repository(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EcrRepositoryConfiguration, &Self> {
+    pub fn as_ecr_repository(&self) -> ::std::result::Result<&crate::types::EcrRepositoryConfiguration, &Self> {
         if let Configuration::EcrRepository(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -69,9 +65,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`EfsFileSystem`](crate::types::Configuration::EfsFileSystem), extracting the inner [`EfsFileSystemConfiguration`](crate::types::EfsFileSystemConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_efs_file_system(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EfsFileSystemConfiguration, &Self> {
+    pub fn as_efs_file_system(&self) -> ::std::result::Result<&crate::types::EfsFileSystemConfiguration, &Self> {
         if let Configuration::EfsFileSystem(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -110,9 +104,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`RdsDbClusterSnapshot`](crate::types::Configuration::RdsDbClusterSnapshot), extracting the inner [`RdsDbClusterSnapshotConfiguration`](crate::types::RdsDbClusterSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_db_cluster_snapshot(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RdsDbClusterSnapshotConfiguration, &Self> {
+    pub fn as_rds_db_cluster_snapshot(&self) -> ::std::result::Result<&crate::types::RdsDbClusterSnapshotConfiguration, &Self> {
         if let Configuration::RdsDbClusterSnapshot(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -125,9 +117,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`RdsDbSnapshot`](crate::types::Configuration::RdsDbSnapshot), extracting the inner [`RdsDbSnapshotConfiguration`](crate::types::RdsDbSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_db_snapshot(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RdsDbSnapshotConfiguration, &Self> {
+    pub fn as_rds_db_snapshot(&self) -> ::std::result::Result<&crate::types::RdsDbSnapshotConfiguration, &Self> {
         if let Configuration::RdsDbSnapshot(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -140,9 +130,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`S3Bucket`](crate::types::Configuration::S3Bucket), extracting the inner [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_bucket(
-        &self,
-    ) -> ::std::result::Result<&crate::types::S3BucketConfiguration, &Self> {
+    pub fn as_s3_bucket(&self) -> ::std::result::Result<&crate::types::S3BucketConfiguration, &Self> {
         if let Configuration::S3Bucket(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -155,9 +143,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`SecretsManagerSecret`](crate::types::Configuration::SecretsManagerSecret), extracting the inner [`SecretsManagerSecretConfiguration`](crate::types::SecretsManagerSecretConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_secrets_manager_secret(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SecretsManagerSecretConfiguration, &Self> {
+    pub fn as_secrets_manager_secret(&self) -> ::std::result::Result<&crate::types::SecretsManagerSecretConfiguration, &Self> {
         if let Configuration::SecretsManagerSecret(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -170,9 +156,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`SnsTopic`](crate::types::Configuration::SnsTopic), extracting the inner [`SnsTopicConfiguration`](crate::types::SnsTopicConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sns_topic(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SnsTopicConfiguration, &Self> {
+    pub fn as_sns_topic(&self) -> ::std::result::Result<&crate::types::SnsTopicConfiguration, &Self> {
         if let Configuration::SnsTopic(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -185,9 +169,7 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`SqsQueue`](crate::types::Configuration::SqsQueue), extracting the inner [`SqsQueueConfiguration`](crate::types::SqsQueueConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sqs_queue(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SqsQueueConfiguration, &Self> {
+    pub fn as_sqs_queue(&self) -> ::std::result::Result<&crate::types::SqsQueueConfiguration, &Self> {
         if let Configuration::SqsQueue(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

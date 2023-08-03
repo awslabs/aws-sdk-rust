@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetUnfilteredPartitionMetadataOutput 
 }
 impl GetUnfilteredPartitionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataOutput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput).
-    pub fn builder() -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataOutputBuilder {
         crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUnfilteredPartitionMetadataOutput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataOutputBuilder {
     pub(crate) partition: ::std::option::Option<crate::types::Partition>,
     pub(crate) authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,27 +69,19 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
     ///
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub fn authorized_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_columns.unwrap_or_default();
         v.push(input.into());
         self.authorized_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub fn set_authorized_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_authorized_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.authorized_columns = input;
         self
     }
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub fn get_authorized_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.authorized_columns
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
@@ -100,10 +90,7 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
         self
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
-    pub fn set_is_registered_with_lake_formation(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_registered_with_lake_formation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_registered_with_lake_formation = input;
         self
     }
@@ -121,16 +108,11 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataOutput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput
-    {
+    pub fn build(self) -> crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput {
         crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput {
             partition: self.partition,
             authorized_columns: self.authorized_columns,
-            is_registered_with_lake_formation: self
-                .is_registered_with_lake_formation
-                .unwrap_or_default(),
+            is_registered_with_lake_formation: self.is_registered_with_lake_formation.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

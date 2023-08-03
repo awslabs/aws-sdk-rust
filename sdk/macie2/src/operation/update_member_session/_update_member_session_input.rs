@@ -22,18 +22,14 @@ impl UpdateMemberSessionInput {
 }
 impl UpdateMemberSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberSessionInput`](crate::operation::update_member_session::UpdateMemberSessionInput).
-    pub fn builder(
-    ) -> crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder {
-        crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder {
+        crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMemberSessionInput`](crate::operation::update_member_session::UpdateMemberSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMemberSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MacieStatus>,
@@ -70,15 +66,11 @@ impl UpdateMemberSessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMemberSessionInput`](crate::operation::update_member_session::UpdateMemberSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_member_session::UpdateMemberSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_member_session::UpdateMemberSessionInput {
-                id: self.id,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_member_session::UpdateMemberSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_member_session::UpdateMemberSessionInput {
+            id: self.id,
+            status: self.status,
+        })
     }
 }

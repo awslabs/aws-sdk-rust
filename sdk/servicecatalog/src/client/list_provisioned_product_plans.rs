@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`provisioned_product_plans(Option<Vec<ProvisionedProductPlanSummary>>)`](crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput::provisioned_product_plans): <p>Information about the plans.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListProvisionedProductPlansError>`](crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError)
-    pub fn list_provisioned_product_plans(&self) -> crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansFluentBuilder{
+    pub fn list_provisioned_product_plans(
+        &self,
+    ) -> crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansFluentBuilder {
         crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansFluentBuilder::new(self.handle.clone())
     }
 }

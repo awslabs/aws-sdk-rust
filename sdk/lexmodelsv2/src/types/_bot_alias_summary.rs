@@ -65,9 +65,7 @@ impl BotAliasSummary {
 
 /// A builder for [`BotAliasSummary`](crate::types::BotAliasSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotAliasSummaryBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_name: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl BotAliasSummaryBuilder {
         &self.bot_alias_id
     }
     /// <p>The name of the bot alias.</p>
-    pub fn bot_alias_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bot alias.</p>
-    pub fn set_bot_alias_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_name = input;
         self
     }
@@ -146,10 +138,7 @@ impl BotAliasSummaryBuilder {
         self
     }
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
-    pub fn set_bot_alias_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotAliasStatus>,
-    ) -> Self {
+    pub fn set_bot_alias_status(mut self, input: ::std::option::Option<crate::types::BotAliasStatus>) -> Self {
         self.bot_alias_status = input;
         self
     }
@@ -163,10 +152,7 @@ impl BotAliasSummaryBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -180,17 +166,12 @@ impl BotAliasSummaryBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`BotAliasSummary`](crate::types::BotAliasSummary).

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTimeToLiveOutput`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput) with field(s):
     ///   - [`time_to_live_specification(Option<TimeToLiveSpecification>)`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput::time_to_live_specification): <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
     /// - On failure, responds with [`SdkError<UpdateTimeToLiveError>`](crate::operation::update_time_to_live::UpdateTimeToLiveError)
-    pub fn update_time_to_live(
-        &self,
-    ) -> crate::operation::update_time_to_live::builders::UpdateTimeToLiveFluentBuilder {
-        crate::operation::update_time_to_live::builders::UpdateTimeToLiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_time_to_live(&self) -> crate::operation::update_time_to_live::builders::UpdateTimeToLiveFluentBuilder {
+        crate::operation::update_time_to_live::builders::UpdateTimeToLiveFluentBuilder::new(self.handle.clone())
     }
 }

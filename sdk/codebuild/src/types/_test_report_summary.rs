@@ -9,8 +9,7 @@ pub struct TestReportSummary {
     pub total: ::std::option::Option<i32>,
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
     #[doc(hidden)]
-    pub status_counts:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub status_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
     #[doc(hidden)]
     pub duration_in_nano_seconds: ::std::option::Option<i64>,
@@ -21,9 +20,7 @@ impl TestReportSummary {
         self.total
     }
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    pub fn status_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn status_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.status_counts.as_ref()
     }
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
@@ -40,13 +37,10 @@ impl TestReportSummary {
 
 /// A builder for [`TestReportSummary`](crate::types::TestReportSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestReportSummaryBuilder {
     pub(crate) total: ::std::option::Option<i32>,
-    pub(crate) status_counts:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) status_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     pub(crate) duration_in_nano_seconds: ::std::option::Option<i64>,
 }
 impl TestReportSummaryBuilder {
@@ -69,28 +63,19 @@ impl TestReportSummaryBuilder {
     /// To override the contents of this collection use [`set_status_counts`](Self::set_status_counts).
     ///
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    pub fn status_counts(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
+    pub fn status_counts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.status_counts.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.status_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    pub fn set_status_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
-    ) -> Self {
+    pub fn set_status_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.status_counts = input;
         self
     }
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    pub fn get_status_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_status_counts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.status_counts
     }
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>

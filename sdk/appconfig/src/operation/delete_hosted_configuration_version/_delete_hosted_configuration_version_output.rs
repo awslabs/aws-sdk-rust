@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHostedConfigurationVersionOutpu
 }
 impl DeleteHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHostedConfigurationVersionOutput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput).
-    pub fn builder() -> crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionOutputBuilder {
         crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHostedConfigurationVersionOutput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHostedConfigurationVersionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteHostedConfigurationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteHostedConfigurationVersionOutput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput
-    {
+    pub fn build(self) -> crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput {
         crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput {
             _request_id: self._request_id,
         }

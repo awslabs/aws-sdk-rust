@@ -66,9 +66,7 @@ impl UpgradeStepItem {
 
 /// A builder for [`UpgradeStepItem`](crate::types::UpgradeStepItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeStepItemBuilder {
     pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     pub(crate) upgrade_step_status: ::std::option::Option<crate::types::UpgradeStatus>,
@@ -92,10 +90,7 @@ impl UpgradeStepItemBuilder {
     /// <li> <p>Snapshot</p> </li>
     /// <li> <p>Upgrade</p> </li>
     /// </ul>
-    pub fn set_upgrade_step(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStep>,
-    ) -> Self {
+    pub fn set_upgrade_step(mut self, input: ::std::option::Option<crate::types::UpgradeStep>) -> Self {
         self.upgrade_step = input;
         self
     }
@@ -126,10 +121,7 @@ impl UpgradeStepItemBuilder {
     /// <li> <p>Succeeded with Issues</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
-    pub fn set_upgrade_step_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStatus>,
-    ) -> Self {
+    pub fn set_upgrade_step_status(mut self, input: ::std::option::Option<crate::types::UpgradeStatus>) -> Self {
         self.upgrade_step_status = input;
         self
     }
@@ -155,10 +147,7 @@ impl UpgradeStepItemBuilder {
         self
     }
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
-    pub fn set_issues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.issues = input;
         self
     }

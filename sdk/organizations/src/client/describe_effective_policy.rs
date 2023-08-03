@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput) with field(s):
     ///   - [`effective_policy(Option<EffectivePolicy>)`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput::effective_policy): <p>The contents of the effective policy.</p>
     /// - On failure, responds with [`SdkError<DescribeEffectivePolicyError>`](crate::operation::describe_effective_policy::DescribeEffectivePolicyError)
-    pub fn describe_effective_policy(
-        &self,
-    ) -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyFluentBuilder
-    {
+    pub fn describe_effective_policy(&self) -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyFluentBuilder {
         crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,35 +15,25 @@ impl GetIdentityProviderInput {
 }
 impl GetIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder {
-        crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder {
+        crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityProviderInputBuilder {
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetIdentityProviderInputBuilder {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_provider::GetIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_identity_provider::GetIdentityProviderInput {
-                identity_provider_arn: self.identity_provider_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_identity_provider::GetIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_identity_provider::GetIdentityProviderInput {
+            identity_provider_arn: self.identity_provider_arn,
+        })
     }
 }

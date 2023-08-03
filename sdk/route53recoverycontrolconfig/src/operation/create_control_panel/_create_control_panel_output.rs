@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateControlPanelOutput {
 }
 impl CreateControlPanelOutput {
     /// Creates a new builder-style object to manufacture [`CreateControlPanelOutput`](crate::operation::create_control_panel::CreateControlPanelOutput).
-    pub fn builder(
-    ) -> crate::operation::create_control_panel::builders::CreateControlPanelOutputBuilder {
+    pub fn builder() -> crate::operation::create_control_panel::builders::CreateControlPanelOutputBuilder {
         crate::operation::create_control_panel::builders::CreateControlPanelOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateControlPanelOutput`](crate::operation::create_control_panel::CreateControlPanelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateControlPanelOutputBuilder {
     pub(crate) control_panel: ::std::option::Option<crate::types::ControlPanel>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateControlPanelOutputBuilder {
         self
     }
     /// <p>Information about a control panel.</p>
-    pub fn set_control_panel(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlPanel>,
-    ) -> Self {
+    pub fn set_control_panel(mut self, input: ::std::option::Option<crate::types::ControlPanel>) -> Self {
         self.control_panel = input;
         self
     }

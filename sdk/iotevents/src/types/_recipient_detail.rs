@@ -23,9 +23,7 @@ impl RecipientDetail {
 
 /// A builder for [`RecipientDetail`](crate::types::RecipientDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipientDetailBuilder {
     pub(crate) sso_identity: ::std::option::Option<crate::types::SsoIdentity>,
 }
@@ -36,10 +34,7 @@ impl RecipientDetailBuilder {
         self
     }
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
-    pub fn set_sso_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::SsoIdentity>,
-    ) -> Self {
+    pub fn set_sso_identity(mut self, input: ::std::option::Option<crate::types::SsoIdentity>) -> Self {
         self.sso_identity = input;
         self
     }

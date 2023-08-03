@@ -36,8 +36,7 @@ pub struct SpotFleetRequestConfigData {
     pub allocation_strategy: ::std::option::Option<crate::types::AllocationStrategy>,
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
     #[doc(hidden)]
-    pub on_demand_allocation_strategy:
-        ::std::option::Option<crate::types::OnDemandAllocationStrategy>,
+    pub on_demand_allocation_strategy: ::std::option::Option<crate::types::OnDemandAllocationStrategy>,
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
     #[doc(hidden)]
     pub spot_maintenance_strategies: ::std::option::Option<crate::types::SpotMaintenanceStrategies>,
@@ -47,8 +46,7 @@ pub struct SpotFleetRequestConfigData {
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
-    pub excess_capacity_termination_policy:
-        ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
+    pub excess_capacity_termination_policy: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     /// <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>
     #[doc(hidden)]
     pub fulfilled_capacity: ::std::option::Option<f64>,
@@ -60,12 +58,10 @@ pub struct SpotFleetRequestConfigData {
     pub iam_fleet_role: ::std::option::Option<::std::string::String>,
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
     #[doc(hidden)]
-    pub launch_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
+    pub launch_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
     #[doc(hidden)]
-    pub launch_template_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+    pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
@@ -100,8 +96,7 @@ pub struct SpotFleetRequestConfigData {
     pub replace_unhealthy_instances: ::std::option::Option<bool>,
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
     #[doc(hidden)]
-    pub instance_interruption_behavior:
-        ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
     #[doc(hidden)]
@@ -154,15 +149,11 @@ impl SpotFleetRequestConfigData {
         self.allocation_strategy.as_ref()
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
-    pub fn on_demand_allocation_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnDemandAllocationStrategy> {
+    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<&crate::types::OnDemandAllocationStrategy> {
         self.on_demand_allocation_strategy.as_ref()
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
-    pub fn spot_maintenance_strategies(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpotMaintenanceStrategies> {
+    pub fn spot_maintenance_strategies(&self) -> ::std::option::Option<&crate::types::SpotMaintenanceStrategies> {
         self.spot_maintenance_strategies.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -171,9 +162,7 @@ impl SpotFleetRequestConfigData {
     }
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
+    pub fn excess_capacity_termination_policy(&self) -> ::std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>
@@ -189,15 +178,11 @@ impl SpotFleetRequestConfigData {
         self.iam_fleet_role.as_deref()
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn launch_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpotFleetLaunchSpecification]> {
+    pub fn launch_specifications(&self) -> ::std::option::Option<&[crate::types::SpotFleetLaunchSpecification]> {
         self.launch_specifications.as_deref()
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn launch_template_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LaunchTemplateConfig]> {
+    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateConfig]> {
         self.launch_template_configs.as_deref()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -243,16 +228,12 @@ impl SpotFleetRequestConfigData {
         self.replace_unhealthy_instances
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
-    pub fn load_balancers_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoadBalancersConfig> {
+    pub fn load_balancers_config(&self) -> ::std::option::Option<&crate::types::LoadBalancersConfig> {
         self.load_balancers_config.as_ref()
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
@@ -266,9 +247,7 @@ impl SpotFleetRequestConfigData {
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
+    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your Resources</a>.</p>
@@ -285,25 +264,18 @@ impl SpotFleetRequestConfigData {
 
 /// A builder for [`SpotFleetRequestConfigData`](crate::types::SpotFleetRequestConfigData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotFleetRequestConfigDataBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::AllocationStrategy>,
-    pub(crate) on_demand_allocation_strategy:
-        ::std::option::Option<crate::types::OnDemandAllocationStrategy>,
-    pub(crate) spot_maintenance_strategies:
-        ::std::option::Option<crate::types::SpotMaintenanceStrategies>,
+    pub(crate) on_demand_allocation_strategy: ::std::option::Option<crate::types::OnDemandAllocationStrategy>,
+    pub(crate) spot_maintenance_strategies: ::std::option::Option<crate::types::SpotMaintenanceStrategies>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) excess_capacity_termination_policy:
-        ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
+    pub(crate) excess_capacity_termination_policy: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     pub(crate) fulfilled_capacity: ::std::option::Option<f64>,
     pub(crate) on_demand_fulfilled_capacity: ::std::option::Option<f64>,
     pub(crate) iam_fleet_role: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
-    pub(crate) launch_template_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+    pub(crate) launch_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
+    pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
     pub(crate) target_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_target_capacity: ::std::option::Option<i32>,
@@ -314,15 +286,12 @@ pub struct SpotFleetRequestConfigDataBuilder {
     pub(crate) valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replace_unhealthy_instances: ::std::option::Option<bool>,
-    pub(crate) instance_interruption_behavior:
-        ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub(crate) instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
     pub(crate) load_balancers_config: ::std::option::Option<crate::types::LoadBalancersConfig>,
     pub(crate) instance_pools_to_use_count: ::std::option::Option<i32>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
-    pub(crate) target_capacity_unit_type:
-        ::std::option::Option<crate::types::TargetCapacityUnitType>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl SpotFleetRequestConfigDataBuilder {
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -385,10 +354,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowestPrice</code> </p>
-    pub fn set_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AllocationStrategy>,
-    ) -> Self {
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::AllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
     }
@@ -420,53 +386,35 @@ impl SpotFleetRequestConfigDataBuilder {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowestPrice</code> </p>
-    pub fn get_allocation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllocationStrategy> {
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::AllocationStrategy> {
         &self.allocation_strategy
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
-    pub fn on_demand_allocation_strategy(
-        mut self,
-        input: crate::types::OnDemandAllocationStrategy,
-    ) -> Self {
+    pub fn on_demand_allocation_strategy(mut self, input: crate::types::OnDemandAllocationStrategy) -> Self {
         self.on_demand_allocation_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
-    pub fn set_on_demand_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDemandAllocationStrategy>,
-    ) -> Self {
+    pub fn set_on_demand_allocation_strategy(mut self, input: ::std::option::Option<crate::types::OnDemandAllocationStrategy>) -> Self {
         self.on_demand_allocation_strategy = input;
         self
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
-    pub fn get_on_demand_allocation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDemandAllocationStrategy> {
+    pub fn get_on_demand_allocation_strategy(&self) -> &::std::option::Option<crate::types::OnDemandAllocationStrategy> {
         &self.on_demand_allocation_strategy
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
-    pub fn spot_maintenance_strategies(
-        mut self,
-        input: crate::types::SpotMaintenanceStrategies,
-    ) -> Self {
+    pub fn spot_maintenance_strategies(mut self, input: crate::types::SpotMaintenanceStrategies) -> Self {
         self.spot_maintenance_strategies = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
-    pub fn set_spot_maintenance_strategies(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotMaintenanceStrategies>,
-    ) -> Self {
+    pub fn set_spot_maintenance_strategies(mut self, input: ::std::option::Option<crate::types::SpotMaintenanceStrategies>) -> Self {
         self.spot_maintenance_strategies = input;
         self
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
-    pub fn get_spot_maintenance_strategies(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpotMaintenanceStrategies> {
+    pub fn get_spot_maintenance_strategies(&self) -> &::std::option::Option<crate::types::SpotMaintenanceStrategies> {
         &self.spot_maintenance_strategies
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -485,27 +433,19 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        mut self,
-        input: crate::types::ExcessCapacityTerminationPolicy,
-    ) -> Self {
+    pub fn excess_capacity_termination_policy(mut self, input: crate::types::ExcessCapacityTerminationPolicy) -> Self {
         self.excess_capacity_termination_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn set_excess_capacity_termination_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
-    ) -> Self {
+    pub fn set_excess_capacity_termination_policy(mut self, input: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>) -> Self {
         self.excess_capacity_termination_policy = input;
         self
     }
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn get_excess_capacity_termination_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExcessCapacityTerminationPolicy> {
+    pub fn get_excess_capacity_termination_policy(&self) -> &::std::option::Option<crate::types::ExcessCapacityTerminationPolicy> {
         &self.excess_capacity_termination_policy
     }
     /// <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>
@@ -537,18 +477,12 @@ impl SpotFleetRequestConfigDataBuilder {
         &self.on_demand_fulfilled_capacity
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
-    pub fn iam_fleet_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_fleet_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_fleet_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
-    pub fn set_iam_fleet_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_fleet_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_fleet_role = input;
         self
     }
@@ -561,27 +495,19 @@ impl SpotFleetRequestConfigDataBuilder {
     /// To override the contents of this collection use [`set_launch_specifications`](Self::set_launch_specifications).
     ///
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn launch_specifications(
-        mut self,
-        input: crate::types::SpotFleetLaunchSpecification,
-    ) -> Self {
+    pub fn launch_specifications(mut self, input: crate::types::SpotFleetLaunchSpecification) -> Self {
         let mut v = self.launch_specifications.unwrap_or_default();
         v.push(input);
         self.launch_specifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn set_launch_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
-    ) -> Self {
+    pub fn set_launch_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>) -> Self {
         self.launch_specifications = input;
         self
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn get_launch_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>> {
+    pub fn get_launch_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>> {
         &self.launch_specifications
     }
     /// Appends an item to `launch_template_configs`.
@@ -596,17 +522,12 @@ impl SpotFleetRequestConfigDataBuilder {
         self
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn set_launch_template_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
-    ) -> Self {
+    pub fn set_launch_template_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>) -> Self {
         self.launch_template_configs = input;
         self
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn get_launch_template_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>> {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>> {
         &self.launch_template_configs
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -658,18 +579,12 @@ impl SpotFleetRequestConfigDataBuilder {
         &self.on_demand_target_capacity
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p>
-    pub fn on_demand_max_total_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_demand_max_total_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_demand_max_total_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p>
-    pub fn set_on_demand_max_total_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_demand_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_demand_max_total_price = input;
         self
     }
@@ -678,18 +593,12 @@ impl SpotFleetRequestConfigDataBuilder {
         &self.on_demand_max_total_price
     }
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. You can use the <code>spotdMaxTotalPrice</code> parameter, the <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p>
-    pub fn spot_max_total_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_max_total_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_max_total_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. You can use the <code>spotdMaxTotalPrice</code> parameter, the <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p>
-    pub fn set_spot_max_total_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_max_total_price = input;
         self
     }
@@ -703,10 +612,7 @@ impl SpotFleetRequestConfigDataBuilder {
         self
     }
     /// <p>Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.</p>
-    pub fn set_terminate_instances_with_expiration(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_terminate_instances_with_expiration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_instances_with_expiration = input;
         self
     }
@@ -734,10 +640,7 @@ impl SpotFleetRequestConfigDataBuilder {
         self
     }
     /// <p>The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the request immediately.</p>
-    pub fn set_valid_from(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_from = input;
         self
     }
@@ -751,10 +654,7 @@ impl SpotFleetRequestConfigDataBuilder {
         self
     }
     /// <p>The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel it.</p>
-    pub fn set_valid_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_until = input;
         self
     }
@@ -777,25 +677,17 @@ impl SpotFleetRequestConfigDataBuilder {
         &self.replace_unhealthy_instances
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: crate::types::InstanceInterruptionBehavior,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
-    ) -> Self {
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn get_instance_interruption_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
         &self.instance_interruption_behavior
     }
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
@@ -806,18 +698,13 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
-    pub fn set_load_balancers_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancersConfig>,
-    ) -> Self {
+    pub fn set_load_balancers_config(mut self, input: ::std::option::Option<crate::types::LoadBalancersConfig>) -> Self {
         self.load_balancers_config = input;
         self
     }
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
-    pub fn get_load_balancers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancersConfig> {
+    pub fn get_load_balancers_config(&self) -> &::std::option::Option<crate::types::LoadBalancersConfig> {
         &self.load_balancers_config
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
@@ -853,27 +740,19 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        mut self,
-        input: crate::types::TargetCapacityUnitType,
-    ) -> Self {
+    pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.target_capacity_unit_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn set_target_capacity_unit_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacityUnitType>,
-    ) -> Self {
+    pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.target_capacity_unit_type = input;
         self
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn get_target_capacity_unit_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
+    pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         &self.target_capacity_unit_type
     }
     /// Appends an item to `tag_specifications`.
@@ -888,17 +767,12 @@ impl SpotFleetRequestConfigDataBuilder {
         self
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your Resources</a>.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your Resources</a>.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`SpotFleetRequestConfigData`](crate::types::SpotFleetRequestConfigData).

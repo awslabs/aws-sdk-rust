@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`remove_thing_type(bool)`](crate::operation::update_thing::builders::UpdateThingFluentBuilder::remove_thing_type) / [`set_remove_thing_type(Option<bool>)`](crate::operation::update_thing::builders::UpdateThingFluentBuilder::set_remove_thing_type): <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     /// - On success, responds with [`UpdateThingOutput`](crate::operation::update_thing::UpdateThingOutput)
     /// - On failure, responds with [`SdkError<UpdateThingError>`](crate::operation::update_thing::UpdateThingError)
-    pub fn update_thing(
-        &self,
-    ) -> crate::operation::update_thing::builders::UpdateThingFluentBuilder {
+    pub fn update_thing(&self) -> crate::operation::update_thing::builders::UpdateThingFluentBuilder {
         crate::operation::update_thing::builders::UpdateThingFluentBuilder::new(self.handle.clone())
     }
 }

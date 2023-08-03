@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for StartGeneratedCodeJobOutput {
 }
 impl StartGeneratedCodeJobOutput {
     /// Creates a new builder-style object to manufacture [`StartGeneratedCodeJobOutput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobOutputBuilder {
         crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartGeneratedCodeJobOutput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartGeneratedCodeJobOutputBuilder {
     pub(crate) generated_code_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartGeneratedCodeJobOutputBuilder {
     /// <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
-    pub fn generated_code_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_code_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_code_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
-    pub fn set_generated_code_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_code_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_code_job_id = input;
         self
     }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SavingsPlansDataType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for SavingsPlansDataType {
             "ATTRIBUTES" => SavingsPlansDataType::Attributes,
             "SAVINGS" => SavingsPlansDataType::Savings,
             "UTILIZATION" => SavingsPlansDataType::Utilization,
-            other => SavingsPlansDataType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlansDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl SavingsPlansDataType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMORTIZED_COMMITMENT",
-            "ATTRIBUTES",
-            "SAVINGS",
-            "UTILIZATION",
-        ]
+        &["AMORTIZED_COMMITMENT", "ATTRIBUTES", "SAVINGS", "UTILIZATION"]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlansDataType {

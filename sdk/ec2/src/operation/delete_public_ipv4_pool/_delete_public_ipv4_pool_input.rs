@@ -22,17 +22,14 @@ impl DeletePublicIpv4PoolInput {
 }
 impl DeletePublicIpv4PoolInput {
     /// Creates a new builder-style object to manufacture [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
-    pub fn builder(
-    ) -> crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolInputBuilder {
+    pub fn builder() -> crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolInputBuilder {
         crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePublicIpv4PoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl DeletePublicIpv4PoolInputBuilder {
     /// Consumes the builder and constructs a [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
-                dry_run: self.dry_run,
-                pool_id: self.pool_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
+            dry_run: self.dry_run,
+            pool_id: self.pool_id,
+        })
     }
 }

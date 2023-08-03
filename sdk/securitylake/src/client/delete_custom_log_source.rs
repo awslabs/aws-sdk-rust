@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`source_version(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::source_version) / [`set_source_version(Option<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::set_source_version): <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
     /// - On success, responds with [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomLogSourceError>`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceError)
-    pub fn delete_custom_log_source(
-        &self,
-    ) -> crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder
-    {
+    pub fn delete_custom_log_source(&self) -> crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder {
         crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::new(self.handle.clone())
     }
 }

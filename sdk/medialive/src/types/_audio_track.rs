@@ -23,9 +23,7 @@ impl AudioTrack {
 
 /// A builder for [`AudioTrack`](crate::types::AudioTrack).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioTrackBuilder {
     pub(crate) track: ::std::option::Option<i32>,
 }

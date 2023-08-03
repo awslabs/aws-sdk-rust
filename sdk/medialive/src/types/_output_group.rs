@@ -20,9 +20,7 @@ impl OutputGroup {
         self.name.as_deref()
     }
     /// Settings associated with the output group.
-    pub fn output_group_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputGroupSettings> {
+    pub fn output_group_settings(&self) -> ::std::option::Option<&crate::types::OutputGroupSettings> {
         self.output_group_settings.as_ref()
     }
     /// Placeholder documentation for __listOfOutput
@@ -39,9 +37,7 @@ impl OutputGroup {
 
 /// A builder for [`OutputGroup`](crate::types::OutputGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,
@@ -68,17 +64,12 @@ impl OutputGroupBuilder {
         self
     }
     /// Settings associated with the output group.
-    pub fn set_output_group_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputGroupSettings>,
-    ) -> Self {
+    pub fn set_output_group_settings(mut self, input: ::std::option::Option<crate::types::OutputGroupSettings>) -> Self {
         self.output_group_settings = input;
         self
     }
     /// Settings associated with the output group.
-    pub fn get_output_group_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputGroupSettings> {
+    pub fn get_output_group_settings(&self) -> &::std::option::Option<crate::types::OutputGroupSettings> {
         &self.output_group_settings
     }
     /// Appends an item to `outputs`.
@@ -93,10 +84,7 @@ impl OutputGroupBuilder {
         self
     }
     /// Placeholder documentation for __listOfOutput
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }

@@ -35,9 +35,7 @@ impl DescribeImagesOutput {
 
 /// A builder for [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagesOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl DescribeImagesOutputBuilder {
         self
     }
     /// <p>Information about the images.</p>
-    pub fn set_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
-    ) -> Self {
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>) -> Self {
         self.images = input;
         self
     }

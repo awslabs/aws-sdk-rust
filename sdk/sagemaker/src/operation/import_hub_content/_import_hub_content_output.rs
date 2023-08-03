@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ImportHubContentOutput {
 }
 impl ImportHubContentOutput {
     /// Creates a new builder-style object to manufacture [`ImportHubContentOutput`](crate::operation::import_hub_content::ImportHubContentOutput).
-    pub fn builder() -> crate::operation::import_hub_content::builders::ImportHubContentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_hub_content::builders::ImportHubContentOutputBuilder {
         crate::operation::import_hub_content::builders::ImportHubContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportHubContentOutput`](crate::operation::import_hub_content::ImportHubContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportHubContentOutputBuilder {
     pub(crate) hub_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,
@@ -60,18 +57,12 @@ impl ImportHubContentOutputBuilder {
         &self.hub_arn
     }
     /// <p>The ARN of the hub content that was imported.</p>
-    pub fn hub_content_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the hub content that was imported.</p>
-    pub fn set_hub_content_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_arn = input;
         self
     }

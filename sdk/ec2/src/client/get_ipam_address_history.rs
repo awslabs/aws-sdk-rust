@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`history_records(Option<Vec<IpamAddressHistoryRecord>>)`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput::history_records): <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetIpamAddressHistoryError>`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryError)
-    pub fn get_ipam_address_history(
-        &self,
-    ) -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryFluentBuilder
-    {
+    pub fn get_ipam_address_history(&self) -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryFluentBuilder {
         crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryFluentBuilder::new(self.handle.clone())
     }
 }

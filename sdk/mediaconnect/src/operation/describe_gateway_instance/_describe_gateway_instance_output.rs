@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeGatewayInstanceOutput {
 }
 impl DescribeGatewayInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayInstanceOutput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceOutputBuilder {
         crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGatewayInstanceOutput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceOutputBuilder {
     pub(crate) gateway_instance: ::std::option::Option<crate::types::GatewayInstance>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeGatewayInstanceOutputBuilder {
         self
     }
     /// The settings for an instance in a gateway.
-    pub fn set_gateway_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayInstance>,
-    ) -> Self {
+    pub fn set_gateway_instance(mut self, input: ::std::option::Option<crate::types::GatewayInstance>) -> Self {
         self.gateway_instance = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeGatewayInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGatewayInstanceOutput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput {
+    pub fn build(self) -> crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput {
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput {
             gateway_instance: self.gateway_instance,
             _request_id: self._request_id,

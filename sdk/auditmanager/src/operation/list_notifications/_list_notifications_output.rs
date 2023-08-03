@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListNotificationsOutput {
 }
 impl ListNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
         crate::operation::list_notifications::builders::ListNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationsOutputBuilder {
     pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListNotificationsOutputBuilder {
         self
     }
     /// <p> The returned list of notifications. </p>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>) -> Self {
         self.notifications = input;
         self
     }
     /// <p> The returned list of notifications. </p>
-    pub fn get_notifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Notification>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Notification>> {
         &self.notifications
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>

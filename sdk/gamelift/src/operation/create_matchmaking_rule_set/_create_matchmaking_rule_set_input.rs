@@ -29,18 +29,14 @@ impl CreateMatchmakingRuleSetInput {
 }
 impl CreateMatchmakingRuleSetInput {
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingRuleSetInput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder {
         crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMatchmakingRuleSetInput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMatchmakingRuleSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_set_body: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl CreateMatchmakingRuleSetInputBuilder {
         &self.name
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn rule_set_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn set_rule_set_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_body = input;
         self
     }
@@ -93,10 +83,7 @@ impl CreateMatchmakingRuleSetInputBuilder {
         self
     }
     /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -111,12 +98,10 @@ impl CreateMatchmakingRuleSetInputBuilder {
         crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput {
-                name: self.name,
-                rule_set_body: self.rule_set_body,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput {
+            name: self.name,
+            rule_set_body: self.rule_set_body,
+            tags: self.tags,
+        })
     }
 }

@@ -38,9 +38,7 @@ impl RevokeSnapshotAccessFluentBuilder {
         }
     }
     /// Access the RevokeSnapshotAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl RevokeSnapshotAccessFluentBuilder {
             crate::operation::revoke_snapshot_access::RevokeSnapshotAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl RevokeSnapshotAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl RevokeSnapshotAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl RevokeSnapshotAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl RevokeSnapshotAccessFluentBuilder {
             crate::operation::revoke_snapshot_access::RevokeSnapshotAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -158,18 +139,12 @@ impl RevokeSnapshotAccessFluentBuilder {
         self.inner.get_snapshot_arn()
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
     }
@@ -178,18 +153,12 @@ impl RevokeSnapshotAccessFluentBuilder {
         self.inner.get_snapshot_cluster_identifier()
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
-    pub fn account_with_restore_access(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_with_restore_access(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
-    pub fn set_account_with_restore_access(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_with_restore_access(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_with_restore_access(input);
         self
     }

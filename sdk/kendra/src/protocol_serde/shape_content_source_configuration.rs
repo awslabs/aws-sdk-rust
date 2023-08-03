@@ -22,26 +22,16 @@ pub fn ser_content_source_configuration(
         array_5.finish();
     }
     if input.direct_put_content {
-        object
-            .key("DirectPutContent")
-            .boolean(input.direct_put_content);
+        object.key("DirectPutContent").boolean(input.direct_put_content);
     }
     Ok(())
 }
 
 pub(crate) fn de_content_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ContentSourceConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ContentSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -51,44 +41,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataSourceIds" => {
-                            builder = builder.set_data_source_ids(
-                                    crate::protocol_serde::shape_data_source_id_list::de_data_source_id_list(tokens)?
-                                );
+                            builder = builder.set_data_source_ids(crate::protocol_serde::shape_data_source_id_list::de_data_source_id_list(tokens)?);
                         }
                         "FaqIds" => {
-                            builder = builder.set_faq_ids(
-                                crate::protocol_serde::shape_faq_ids_list::de_faq_ids_list(tokens)?,
-                            );
+                            builder = builder.set_faq_ids(crate::protocol_serde::shape_faq_ids_list::de_faq_ids_list(tokens)?);
                         }
                         "DirectPutContent" => {
-                            builder = builder.set_direct_put_content(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_direct_put_content(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

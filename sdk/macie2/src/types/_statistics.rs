@@ -30,9 +30,7 @@ impl Statistics {
 
 /// A builder for [`Statistics`](crate::types::Statistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticsBuilder {
     pub(crate) approximate_number_of_objects_to_process: ::std::option::Option<f64>,
     pub(crate) number_of_runs: ::std::option::Option<f64>,
@@ -44,10 +42,7 @@ impl StatisticsBuilder {
         self
     }
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
-    pub fn set_approximate_number_of_objects_to_process(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_approximate_number_of_objects_to_process(mut self, input: ::std::option::Option<f64>) -> Self {
         self.approximate_number_of_objects_to_process = input;
         self
     }

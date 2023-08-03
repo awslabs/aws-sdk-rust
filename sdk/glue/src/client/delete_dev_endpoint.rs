@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::set_endpoint_name): <p>The name of the <code>DevEndpoint</code>.</p>
     /// - On success, responds with [`DeleteDevEndpointOutput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteDevEndpointError>`](crate::operation::delete_dev_endpoint::DeleteDevEndpointError)
-    pub fn delete_dev_endpoint(
-        &self,
-    ) -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder {
-        crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dev_endpoint(&self) -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder {
+        crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::new(self.handle.clone())
     }
 }

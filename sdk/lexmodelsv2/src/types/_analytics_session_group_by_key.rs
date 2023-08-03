@@ -30,9 +30,7 @@ impl AnalyticsSessionGroupByKey {
 
 /// A builder for [`AnalyticsSessionGroupByKey`](crate::types::AnalyticsSessionGroupByKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsSessionGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AnalyticsSessionGroupByKeyBuilder {
         self
     }
     /// <p>The category by which the session analytics were grouped.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSessionField>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionField>) -> Self {
         self.name = input;
         self
     }

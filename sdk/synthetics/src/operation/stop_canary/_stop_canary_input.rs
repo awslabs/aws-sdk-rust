@@ -22,9 +22,7 @@ impl StopCanaryInput {
 
 /// A builder for [`StopCanaryInput`](crate::operation::stop_canary::StopCanaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopCanaryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopCanaryInput`](crate::operation::stop_canary::StopCanaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_canary::StopCanaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_canary::StopCanaryInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_canary::StopCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_canary::StopCanaryInput { name: self.name })
     }
 }

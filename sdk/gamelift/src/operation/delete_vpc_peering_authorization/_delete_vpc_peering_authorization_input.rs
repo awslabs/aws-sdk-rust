@@ -22,34 +22,26 @@ impl DeleteVpcPeeringAuthorizationInput {
 }
 impl DeleteVpcPeeringAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringAuthorizationInput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput).
-    pub fn builder() -> crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationInputBuilder {
         crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcPeeringAuthorizationInput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringAuthorizationInputBuilder {
     pub(crate) game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcPeeringAuthorizationInputBuilder {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn game_lift_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_lift_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_lift_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn set_game_lift_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_lift_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_lift_aws_account_id = input;
         self
     }
@@ -78,13 +70,9 @@ impl DeleteVpcPeeringAuthorizationInputBuilder {
         crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput {
-                game_lift_aws_account_id: self.game_lift_aws_account_id
-                ,
-                peer_vpc_id: self.peer_vpc_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput {
+            game_lift_aws_account_id: self.game_lift_aws_account_id,
+            peer_vpc_id: self.peer_vpc_id,
+        })
     }
 }

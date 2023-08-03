@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`block_size(Option<i32>)`](crate::operation::list_changed_blocks::ListChangedBlocksOutput::block_size): <p>The size of the blocks in the snapshot, in bytes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_changed_blocks::ListChangedBlocksOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListChangedBlocksError>`](crate::operation::list_changed_blocks::ListChangedBlocksError)
-    pub fn list_changed_blocks(
-        &self,
-    ) -> crate::operation::list_changed_blocks::builders::ListChangedBlocksFluentBuilder {
-        crate::operation::list_changed_blocks::builders::ListChangedBlocksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_changed_blocks(&self) -> crate::operation::list_changed_blocks::builders::ListChangedBlocksFluentBuilder {
+        crate::operation::list_changed_blocks::builders::ListChangedBlocksFluentBuilder::new(self.handle.clone())
     }
 }

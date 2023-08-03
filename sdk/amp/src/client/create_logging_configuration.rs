@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput) with field(s):
     ///   - [`status(Option<LoggingConfigurationStatus>)`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput::status): The status of the logging configuration.
     /// - On failure, responds with [`SdkError<CreateLoggingConfigurationError>`](crate::operation::create_logging_configuration::CreateLoggingConfigurationError)
-    pub fn create_logging_configuration(&self) -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationFluentBuilder{
+    pub fn create_logging_configuration(&self) -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationFluentBuilder {
         crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

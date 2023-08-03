@@ -6,10 +6,7 @@ pub fn ser_code_review_type(
     if let Some(var_1) = &input.repository_analysis {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RepositoryAnalysis").start_object();
-        crate::protocol_serde::shape_repository_analysis::ser_repository_analysis(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_repository_analysis::ser_repository_analysis(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.analysis_types {

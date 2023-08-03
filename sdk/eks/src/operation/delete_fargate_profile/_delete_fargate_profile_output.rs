@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteFargateProfileOutput {
 }
 impl DeleteFargateProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFargateProfileOutput`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder {
+    pub fn builder() -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder {
         crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFargateProfileOutput`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFargateProfileOutputBuilder {
     pub(crate) fargate_profile: ::std::option::Option<crate::types::FargateProfile>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteFargateProfileOutputBuilder {
         self
     }
     /// <p>The deleted Fargate profile.</p>
-    pub fn set_fargate_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::FargateProfile>,
-    ) -> Self {
+    pub fn set_fargate_profile(mut self, input: ::std::option::Option<crate::types::FargateProfile>) -> Self {
         self.fargate_profile = input;
         self
     }

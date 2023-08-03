@@ -22,36 +22,26 @@ impl GetTrustStoreCertificateInput {
 }
 impl GetTrustStoreCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetTrustStoreCertificateInput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder {
         crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrustStoreCertificateInput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustStoreCertificateInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) thumbprint: ::std::option::Option<::std::string::String>,
 }
 impl GetTrustStoreCertificateInputBuilder {
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -80,11 +70,9 @@ impl GetTrustStoreCertificateInputBuilder {
         crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput {
-                trust_store_arn: self.trust_store_arn,
-                thumbprint: self.thumbprint,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput {
+            trust_store_arn: self.trust_store_arn,
+            thumbprint: self.thumbprint,
+        })
     }
 }

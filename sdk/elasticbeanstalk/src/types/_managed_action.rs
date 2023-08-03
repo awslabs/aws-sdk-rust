@@ -51,9 +51,7 @@ impl ManagedAction {
 
 /// A builder for [`ManagedAction`](crate::types::ManagedAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedActionBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_description: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl ManagedActionBuilder {
         &self.action_id
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the managed action.</p>
-    pub fn set_action_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_description = input;
         self
     }
@@ -102,10 +94,7 @@ impl ManagedActionBuilder {
         self
     }
     /// <p>The type of managed action.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -133,10 +122,7 @@ impl ManagedActionBuilder {
         self
     }
     /// <p>The start time of the maintenance window in which the managed action will execute.</p>
-    pub fn set_window_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_window_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.window_start_time = input;
         self
     }

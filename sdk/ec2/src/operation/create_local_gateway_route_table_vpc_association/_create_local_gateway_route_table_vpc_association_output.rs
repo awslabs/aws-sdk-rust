@@ -5,15 +5,12 @@
 pub struct CreateLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
-    pub local_gateway_route_table_vpc_association:
-        ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
+    pub local_gateway_route_table_vpc_association: ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
     _request_id: Option<String>,
 }
 impl CreateLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
-    pub fn local_gateway_route_table_vpc_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LocalGatewayRouteTableVpcAssociation> {
+    pub fn local_gateway_route_table_vpc_association(&self) -> ::std::option::Option<&crate::types::LocalGatewayRouteTableVpcAssociation> {
         self.local_gateway_route_table_vpc_association.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for CreateLocalGatewayRouteTableVpcAssoci
 }
 impl CreateLocalGatewayRouteTableVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput).
-    pub fn builder() -> crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationOutputBuilder{
-        crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
+        crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`CreateLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
-    pub(crate) local_gateway_route_table_vpc_association:
-        ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
+    pub(crate) local_gateway_route_table_vpc_association: ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
     _request_id: Option<String>,
 }
 impl CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
     /// <p>Information about the association.</p>
-    pub fn local_gateway_route_table_vpc_association(
-        mut self,
-        input: crate::types::LocalGatewayRouteTableVpcAssociation,
-    ) -> Self {
+    pub fn local_gateway_route_table_vpc_association(mut self, input: crate::types::LocalGatewayRouteTableVpcAssociation) -> Self {
         self.local_gateway_route_table_vpc_association = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
         self
     }
     /// <p>Information about the association.</p>
-    pub fn get_local_gateway_route_table_vpc_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation> {
+    pub fn get_local_gateway_route_table_vpc_association(&self) -> &::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation> {
         &self.local_gateway_route_table_vpc_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput).
-    pub fn build(self) -> crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput{
+    pub fn build(self) -> crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput {
         crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput {
-            local_gateway_route_table_vpc_association: self.local_gateway_route_table_vpc_association
-            ,
+            local_gateway_route_table_vpc_association: self.local_gateway_route_table_vpc_association,
             _request_id: self._request_id,
         }
     }

@@ -26,8 +26,7 @@ impl UpdateMedicalVocabularyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMedicalVocabularyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder,
+    inner: crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder,
 }
 impl UpdateMedicalVocabularyFluentBuilder {
     /// Creates a new `UpdateMedicalVocabulary`.
@@ -38,10 +37,7 @@ impl UpdateMedicalVocabularyFluentBuilder {
         }
     }
     /// Access the UpdateMedicalVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateMedicalVocabularyFluentBuilder {
             crate::operation::update_medical_vocabulary::UpdateMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateMedicalVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdateMedicalVocabularyFluentBuilder {
             crate::operation::update_medical_vocabulary::UpdateMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
@@ -150,10 +129,7 @@ impl UpdateMedicalVocabularyFluentBuilder {
         self
     }
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -163,19 +139,13 @@ impl UpdateMedicalVocabularyFluentBuilder {
     }
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    pub fn vocabulary_file_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_file_uri(input.into());
         self
     }
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    pub fn set_vocabulary_file_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_file_uri(input);
         self
     }

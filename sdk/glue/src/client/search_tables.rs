@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_tables::SearchTablesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     ///   - [`table_list(Option<Vec<Table>>)`](crate::operation::search_tables::SearchTablesOutput::table_list): <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
     /// - On failure, responds with [`SdkError<SearchTablesError>`](crate::operation::search_tables::SearchTablesError)
-    pub fn search_tables(
-        &self,
-    ) -> crate::operation::search_tables::builders::SearchTablesFluentBuilder {
-        crate::operation::search_tables::builders::SearchTablesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_tables(&self) -> crate::operation::search_tables::builders::SearchTablesFluentBuilder {
+        crate::operation::search_tables::builders::SearchTablesFluentBuilder::new(self.handle.clone())
     }
 }

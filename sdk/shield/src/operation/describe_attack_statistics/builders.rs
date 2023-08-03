@@ -28,7 +28,7 @@ impl DescribeAttackStatisticsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAttackStatisticsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder,
+    inner: crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder,
 }
 impl DescribeAttackStatisticsFluentBuilder {
     /// Creates a new `DescribeAttackStatistics`.
@@ -39,10 +39,7 @@ impl DescribeAttackStatisticsFluentBuilder {
         }
     }
     /// Access the DescribeAttackStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeAttackStatisticsFluentBuilder {
             crate::operation::describe_attack_statistics::DescribeAttackStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attack_statistics::DescribeAttackStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attack_statistics::DescribeAttackStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeAttackStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeAttackStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attack_statistics::DescribeAttackStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attack_statistics::DescribeAttackStatisticsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeAttackStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attack_statistics::DescribeAttackStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attack_statistics::DescribeAttackStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DescribeAttackStatisticsFluentBuilder {
             crate::operation::describe_attack_statistics::DescribeAttackStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_attack_statistics::DescribeAttackStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_attack_statistics::DescribeAttackStatisticsError>,
     > {
         self.customize_middleware().await
     }

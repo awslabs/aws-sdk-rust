@@ -5,43 +5,25 @@
 pub struct BatchDescribeModelPackageOutput {
     /// <p>The summaries for the model package versions</p>
     #[doc(hidden)]
-    pub model_package_summaries: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageSummary,
-        >,
-    >,
+    pub model_package_summaries:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>>,
     /// <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
     #[doc(hidden)]
-    pub batch_describe_model_package_error_map: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageError,
-        >,
-    >,
+    pub batch_describe_model_package_error_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageError>>,
     _request_id: Option<String>,
 }
 impl BatchDescribeModelPackageOutput {
     /// <p>The summaries for the model package versions</p>
     pub fn model_package_summaries(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageSummary,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>> {
         self.model_package_summaries.as_ref()
     }
     /// <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
     pub fn batch_describe_model_package_error_map(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageError,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageError>> {
         self.batch_describe_model_package_error_map.as_ref()
     }
 }
@@ -52,29 +34,19 @@ impl ::aws_http::request_id::RequestId for BatchDescribeModelPackageOutput {
 }
 impl BatchDescribeModelPackageOutput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageOutput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput).
-    pub fn builder() -> crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageOutputBuilder{
+    pub fn builder() -> crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageOutputBuilder {
         crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDescribeModelPackageOutput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageOutputBuilder {
-    pub(crate) model_package_summaries: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageSummary,
-        >,
-    >,
-    pub(crate) batch_describe_model_package_error_map: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageError,
-        >,
-    >,
+    pub(crate) model_package_summaries:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>>,
+    pub(crate) batch_describe_model_package_error_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageError>>,
     _request_id: Option<String>,
 }
 impl BatchDescribeModelPackageOutputBuilder {
@@ -96,12 +68,7 @@ impl BatchDescribeModelPackageOutputBuilder {
     /// <p>The summaries for the model package versions</p>
     pub fn set_model_package_summaries(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BatchDescribeModelPackageSummary,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>>,
     ) -> Self {
         self.model_package_summaries = input;
         self
@@ -109,12 +76,7 @@ impl BatchDescribeModelPackageOutputBuilder {
     /// <p>The summaries for the model package versions</p>
     pub fn get_model_package_summaries(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageSummary,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>> {
         &self.model_package_summaries
     }
     /// Adds a key-value pair to `batch_describe_model_package_error_map`.
@@ -127,9 +89,7 @@ impl BatchDescribeModelPackageOutputBuilder {
         k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::BatchDescribeModelPackageError,
     ) -> Self {
-        let mut hash_map = self
-            .batch_describe_model_package_error_map
-            .unwrap_or_default();
+        let mut hash_map = self.batch_describe_model_package_error_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.batch_describe_model_package_error_map = ::std::option::Option::Some(hash_map);
         self
@@ -137,12 +97,7 @@ impl BatchDescribeModelPackageOutputBuilder {
     /// <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
     pub fn set_batch_describe_model_package_error_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BatchDescribeModelPackageError,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageError>>,
     ) -> Self {
         self.batch_describe_model_package_error_map = input;
         self
@@ -150,12 +105,7 @@ impl BatchDescribeModelPackageOutputBuilder {
     /// <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
     pub fn get_batch_describe_model_package_error_map(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BatchDescribeModelPackageError,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageError>> {
         &self.batch_describe_model_package_error_map
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -168,9 +118,7 @@ impl BatchDescribeModelPackageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageOutput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput {
+    pub fn build(self) -> crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput {
         crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput {
             model_package_summaries: self.model_package_summaries,
             batch_describe_model_package_error_map: self.batch_describe_model_package_error_map,

@@ -37,9 +37,7 @@ impl ApplicationConfig {
 
 /// A builder for [`ApplicationConfig`](crate::types::ApplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationConfigBuilder {
     pub(crate) f_port: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApplicationConfigType>,
@@ -66,10 +64,7 @@ impl ApplicationConfigBuilder {
         self
     }
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationConfigType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApplicationConfigType>) -> Self {
         self.r#type = input;
         self
     }
@@ -78,18 +73,12 @@ impl ApplicationConfigBuilder {
         &self.r#type
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }

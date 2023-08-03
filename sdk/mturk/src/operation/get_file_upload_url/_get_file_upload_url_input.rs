@@ -22,35 +22,26 @@ impl GetFileUploadUrlInput {
 }
 impl GetFileUploadUrlInput {
     /// Creates a new builder-style object to manufacture [`GetFileUploadUrlInput`](crate::operation::get_file_upload_url::GetFileUploadUrlInput).
-    pub fn builder() -> crate::operation::get_file_upload_url::builders::GetFileUploadUrlInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_file_upload_url::builders::GetFileUploadUrlInputBuilder {
         crate::operation::get_file_upload_url::builders::GetFileUploadUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFileUploadUrlInput`](crate::operation::get_file_upload_url::GetFileUploadUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFileUploadUrlInputBuilder {
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetFileUploadUrlInputBuilder {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -59,18 +50,12 @@ impl GetFileUploadUrlInputBuilder {
         &self.assignment_id
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
-    pub fn question_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
-    pub fn set_question_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_identifier = input;
         self
     }
@@ -81,15 +66,10 @@ impl GetFileUploadUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetFileUploadUrlInput`](crate::operation::get_file_upload_url::GetFileUploadUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_file_upload_url::GetFileUploadUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_file_upload_url::GetFileUploadUrlInput {
-                assignment_id: self.assignment_id,
-                question_identifier: self.question_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_file_upload_url::GetFileUploadUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_file_upload_url::GetFileUploadUrlInput {
+            assignment_id: self.assignment_id,
+            question_identifier: self.question_identifier,
+        })
     }
 }

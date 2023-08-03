@@ -30,9 +30,7 @@ impl S3SourceAdditionalOptions {
 
 /// A builder for [`S3SourceAdditionalOptions`](crate::types::S3SourceAdditionalOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SourceAdditionalOptionsBuilder {
     pub(crate) bounded_size: ::std::option::Option<i64>,
     pub(crate) bounded_files: ::std::option::Option<i64>,

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`outputs(Option<Vec<RecordOutput>>)`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput::outputs): <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<GetProvisionedProductOutputsError>`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsError)
-    pub fn get_provisioned_product_outputs(&self) -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsFluentBuilder{
+    pub fn get_provisioned_product_outputs(
+        &self,
+    ) -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsFluentBuilder {
         crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsFluentBuilder::new(self.handle.clone())
     }
 }

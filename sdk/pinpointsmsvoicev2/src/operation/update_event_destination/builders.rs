@@ -38,10 +38,7 @@ impl UpdateEventDestinationFluentBuilder {
         }
     }
     /// Access the UpdateEventDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateEventDestinationFluentBuilder {
             crate::operation::update_event_destination::UpdateEventDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_destination::UpdateEventDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateEventDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_destination::UpdateEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_destination::UpdateEventDestinationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_destination::UpdateEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_destination::UpdateEventDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl UpdateEventDestinationFluentBuilder {
             crate::operation::update_event_destination::UpdateEventDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_destination::UpdateEventDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -145,18 +125,12 @@ impl UpdateEventDestinationFluentBuilder {
         self.inner.get_configuration_set_name()
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_destination_name(input.into());
         self
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
     }
@@ -188,61 +162,40 @@ impl UpdateEventDestinationFluentBuilder {
         self
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn set_matching_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.inner = self.inner.set_matching_event_types(input);
         self
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn get_matching_event_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         self.inner.get_matching_event_types()
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_destination(
-        mut self,
-        input: crate::types::CloudWatchLogsDestination,
-    ) -> Self {
+    pub fn cloud_watch_logs_destination(mut self, input: crate::types::CloudWatchLogsDestination) -> Self {
         self.inner = self.inner.cloud_watch_logs_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn get_cloud_watch_logs_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+    pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         self.inner.get_cloud_watch_logs_destination()
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        mut self,
-        input: crate::types::KinesisFirehoseDestination,
-    ) -> Self {
+    pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.inner = self.inner.kinesis_firehose_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn set_kinesis_firehose_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
         self.inner = self.inner.set_kinesis_firehose_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn get_kinesis_firehose_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+    pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
         self.inner.get_kinesis_firehose_destination()
     }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
@@ -251,10 +204,7 @@ impl UpdateEventDestinationFluentBuilder {
         self
     }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-    pub fn set_sns_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::SnsDestination>,
-    ) -> Self {
+    pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
         self.inner = self.inner.set_sns_destination(input);
         self
     }

@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::send) it.
     /// - On success, responds with [`InitializeServiceOutput`](crate::operation::initialize_service::InitializeServiceOutput)
     /// - On failure, responds with [`SdkError<InitializeServiceError>`](crate::operation::initialize_service::InitializeServiceError)
-    pub fn initialize_service(
-        &self,
-    ) -> crate::operation::initialize_service::builders::InitializeServiceFluentBuilder {
-        crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn initialize_service(&self) -> crate::operation::initialize_service::builders::InitializeServiceFluentBuilder {
+        crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::new(self.handle.clone())
     }
 }

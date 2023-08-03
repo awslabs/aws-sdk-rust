@@ -27,9 +27,7 @@ pub struct BackupRule {
     pub lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>An array of key-value pair strings that are assigned to resources that are associated with this rule when restored from backup.</p>
     #[doc(hidden)]
-    pub recovery_point_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources.</p>
     #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
@@ -69,11 +67,7 @@ impl BackupRule {
         self.lifecycle.as_ref()
     }
     /// <p>An array of key-value pair strings that are assigned to resources that are associated with this rule when restored from backup.</p>
-    pub fn recovery_point_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn recovery_point_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.recovery_point_tags.as_ref()
     }
     /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources.</p>
@@ -122,9 +116,7 @@ pub struct BackupRuleBuilder {
     pub(crate) start_window_minutes: ::std::option::Option<i64>,
     pub(crate) completion_window_minutes: ::std::option::Option<i64>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::Lifecycle>,
-    pub(crate) recovery_point_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
@@ -145,18 +137,12 @@ impl BackupRuleBuilder {
         &self.rule_name
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn target_backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_target_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_backup_vault_name = input;
         self
     }
@@ -165,18 +151,12 @@ impl BackupRuleBuilder {
         &self.target_backup_vault_name
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
@@ -253,19 +233,13 @@ impl BackupRuleBuilder {
     /// <p>An array of key-value pair strings that are assigned to resources that are associated with this rule when restored from backup.</p>
     pub fn set_recovery_point_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.recovery_point_tags = input;
         self
     }
     /// <p>An array of key-value pair strings that are assigned to resources that are associated with this rule when restored from backup.</p>
-    pub fn get_recovery_point_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_recovery_point_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.recovery_point_tags
     }
     /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources.</p>
@@ -294,17 +268,12 @@ impl BackupRuleBuilder {
         self
     }
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
-    pub fn set_copy_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
-    ) -> Self {
+    pub fn set_copy_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>) -> Self {
         self.copy_actions = input;
         self
     }
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
-    pub fn get_copy_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyAction>> {
+    pub fn get_copy_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyAction>> {
         &self.copy_actions
     }
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>

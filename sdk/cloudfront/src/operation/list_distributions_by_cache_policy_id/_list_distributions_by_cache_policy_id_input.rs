@@ -29,16 +29,14 @@ impl ListDistributionsByCachePolicyIdInput {
 }
 impl ListDistributionsByCachePolicyIdInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByCachePolicyIdInput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput).
-    pub fn builder() -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdInputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdInputBuilder {
         crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByCachePolicyIdInput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -74,18 +72,12 @@ impl ListDistributionsByCachePolicyIdInputBuilder {
         &self.max_items
     }
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-    pub fn cache_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-    pub fn set_cache_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_policy_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListDistributionsByCachePolicyIdInputBuilder {
         &self.cache_policy_id
     }
     /// Consumes the builder and constructs a [`ListDistributionsByCachePolicyIdInput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-                cache_policy_id: self.cache_policy_id
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+                cache_policy_id: self.cache_policy_id,
+            },
         )
     }
 }

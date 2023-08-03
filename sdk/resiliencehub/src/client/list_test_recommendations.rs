@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`test_recommendations(Option<Vec<TestRecommendation>>)`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput::test_recommendations): <p>The test recommendations for the Resilience Hub application.</p>
     /// - On failure, responds with [`SdkError<ListTestRecommendationsError>`](crate::operation::list_test_recommendations::ListTestRecommendationsError)
-    pub fn list_test_recommendations(
-        &self,
-    ) -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsFluentBuilder
-    {
+    pub fn list_test_recommendations(&self) -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsFluentBuilder {
         crate::operation::list_test_recommendations::builders::ListTestRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

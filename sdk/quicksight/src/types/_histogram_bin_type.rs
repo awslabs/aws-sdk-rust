@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HistogramBinType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HistogramBinType {
         match s {
             "BIN_COUNT" => HistogramBinType::BinCount,
             "BIN_WIDTH" => HistogramBinType::BinWidth,
-            other => {
-                HistogramBinType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HistogramBinType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

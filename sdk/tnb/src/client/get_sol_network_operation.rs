@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`tasks(Option<Vec<GetSolNetworkOperationTaskDetails>>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::tasks): <p>All tasks associated with this operation occurrence.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<GetSolNetworkOperationError>`](crate::operation::get_sol_network_operation::GetSolNetworkOperationError)
-    pub fn get_sol_network_operation(
-        &self,
-    ) -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder
-    {
+    pub fn get_sol_network_operation(&self) -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder {
         crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::new(self.handle.clone())
     }
 }

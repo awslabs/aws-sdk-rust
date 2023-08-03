@@ -44,9 +44,7 @@ impl ProtocolsListDataSummary {
 
 /// A builder for [`ProtocolsListDataSummary`](crate::types::ProtocolsListDataSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtocolsListDataSummaryBuilder {
     pub(crate) list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
@@ -101,27 +99,19 @@ impl ProtocolsListDataSummaryBuilder {
     /// To override the contents of this collection use [`set_protocols_list`](Self::set_protocols_list).
     ///
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocols_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protocols_list.unwrap_or_default();
         v.push(input.into());
         self.protocols_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn set_protocols_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_protocols_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.protocols_list = input;
         self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn get_protocols_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_protocols_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.protocols_list
     }
     /// Consumes the builder and constructs a [`ProtocolsListDataSummary`](crate::types::ProtocolsListDataSummary).

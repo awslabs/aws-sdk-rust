@@ -44,9 +44,7 @@ impl ScanThreatName {
 
 /// A builder for [`ScanThreatName`](crate::types::ScanThreatName).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanThreatNameBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<::std::string::String>,
@@ -108,17 +106,12 @@ impl ScanThreatNameBuilder {
         self
     }
     /// <p>List of infected files in EBS volume with details.</p>
-    pub fn set_file_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilePath>>,
-    ) -> Self {
+    pub fn set_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilePath>>) -> Self {
         self.file_paths = input;
         self
     }
     /// <p>List of infected files in EBS volume with details.</p>
-    pub fn get_file_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanFilePath>> {
+    pub fn get_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanFilePath>> {
         &self.file_paths
     }
     /// Consumes the builder and constructs a [`ScanThreatName`](crate::types::ScanThreatName).

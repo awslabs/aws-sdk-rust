@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetUsageStatisticsOutput {
 }
 impl GetUsageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder {
+    pub fn builder() -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder {
         crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsOutputBuilder {
     pub(crate) usage_statistics: ::std::option::Option<crate::types::UsageStatistics>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl GetUsageStatisticsOutputBuilder {
         self
     }
     /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
-    pub fn set_usage_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatistics>,
-    ) -> Self {
+    pub fn set_usage_statistics(mut self, input: ::std::option::Option<crate::types::UsageStatistics>) -> Self {
         self.usage_statistics = input;
         self
     }

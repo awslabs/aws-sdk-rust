@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutBandwidthRateLimitScheduleOutput {
 }
 impl PutBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`PutBandwidthRateLimitScheduleOutput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput).
-    pub fn builder() -> crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleOutputBuilder {
         crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBandwidthRateLimitScheduleOutput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBandwidthRateLimitScheduleOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl PutBandwidthRateLimitScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutBandwidthRateLimitScheduleOutput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput
-    {
+    pub fn build(self) -> crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput {
         crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

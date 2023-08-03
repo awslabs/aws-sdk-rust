@@ -4,104 +4,79 @@ pub fn de_build_suggesters_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::build_suggesters::BuildSuggestersOutput,
-    crate::operation::build_suggesters::BuildSuggestersError,
-> {
+) -> std::result::Result<crate::operation::build_suggesters::BuildSuggestersOutput, crate::operation::build_suggesters::BuildSuggestersError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::build_suggesters::BuildSuggestersError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::build_suggesters::BuildSuggestersError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => {
-            crate::operation::build_suggesters::BuildSuggestersError::BaseException({
+        "BaseException" => crate::operation::build_suggesters::BuildSuggestersError::BaseException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(
-                            _response_body,
-                            output,
-                        )
-                        .map_err(
-                            crate::operation::build_suggesters::BuildSuggestersError::unhandled,
-                        )?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalException" => {
-            crate::operation::build_suggesters::BuildSuggestersError::InternalException({
+                let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalException" => crate::operation::build_suggesters::BuildSuggestersError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output).map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFound" => {
-            crate::operation::build_suggesters::BuildSuggestersError::ResourceNotFoundException({
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::operation::build_suggesters::BuildSuggestersError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::operation::build_suggesters::BuildSuggestersError::ValidationException({
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::build_suggesters::BuildSuggestersError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output).map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::build_suggesters::BuildSuggestersError::generic(generic),
     })
 }
@@ -111,22 +86,13 @@ pub fn de_build_suggesters_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::build_suggesters::BuildSuggestersOutput,
-    crate::operation::build_suggesters::BuildSuggestersError,
-> {
+) -> std::result::Result<crate::operation::build_suggesters::BuildSuggestersOutput, crate::operation::build_suggesters::BuildSuggestersError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::build_suggesters::builders::BuildSuggestersOutputBuilder::default();
-        output = crate::protocol_serde::shape_build_suggesters::de_build_suggesters(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::build_suggesters::builders::BuildSuggestersOutputBuilder::default();
+        output = crate::protocol_serde::shape_build_suggesters::de_build_suggesters(_response_body, output)
+            .map_err(crate::operation::build_suggesters::BuildSuggestersError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -135,10 +101,7 @@ pub fn de_build_suggesters_http_response_with_props(
 pub fn de_build_suggesters(
     inp: &[u8],
     mut builder: crate::operation::build_suggesters::builders::BuildSuggestersOutputBuilder,
-) -> Result<
-    crate::operation::build_suggesters::builders::BuildSuggestersOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::build_suggesters::builders::BuildSuggestersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -175,9 +138,7 @@ pub fn de_build_suggesters(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected BuildSuggestersResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected BuildSuggestersResult tag"));
     };
     Ok(builder)
 }

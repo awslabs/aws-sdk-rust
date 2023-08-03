@@ -5,25 +5,19 @@
 pub struct GetMemberDetectorsOutput {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
     #[doc(hidden)]
-    pub member_data_source_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
+    pub member_data_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     #[doc(hidden)]
-    pub unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl GetMemberDetectorsOutput {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub fn member_data_source_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MemberDataSourceConfiguration]> {
+    pub fn member_data_source_configurations(&self) -> ::std::option::Option<&[crate::types::MemberDataSourceConfiguration]> {
         self.member_data_source_configurations.as_deref()
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn unprocessed_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
@@ -34,22 +28,17 @@ impl ::aws_http::request_id::RequestId for GetMemberDetectorsOutput {
 }
 impl GetMemberDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetMemberDetectorsOutput`](crate::operation::get_member_detectors::GetMemberDetectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_member_detectors::builders::GetMemberDetectorsOutputBuilder {
+    pub fn builder() -> crate::operation::get_member_detectors::builders::GetMemberDetectorsOutputBuilder {
         crate::operation::get_member_detectors::builders::GetMemberDetectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMemberDetectorsOutput`](crate::operation::get_member_detectors::GetMemberDetectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMemberDetectorsOutputBuilder {
-    pub(crate) member_data_source_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
-    pub(crate) unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) member_data_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl GetMemberDetectorsOutputBuilder {
@@ -58,10 +47,7 @@ impl GetMemberDetectorsOutputBuilder {
     /// To override the contents of this collection use [`set_member_data_source_configurations`](Self::set_member_data_source_configurations).
     ///
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub fn member_data_source_configurations(
-        mut self,
-        input: crate::types::MemberDataSourceConfiguration,
-    ) -> Self {
+    pub fn member_data_source_configurations(mut self, input: crate::types::MemberDataSourceConfiguration) -> Self {
         let mut v = self.member_data_source_configurations.unwrap_or_default();
         v.push(input);
         self.member_data_source_configurations = ::std::option::Option::Some(v);
@@ -76,9 +62,7 @@ impl GetMemberDetectorsOutputBuilder {
         self
     }
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub fn get_member_data_source_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>> {
+    pub fn get_member_data_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>> {
         &self.member_data_source_configurations
     }
     /// Appends an item to `unprocessed_accounts`.
@@ -93,17 +77,12 @@ impl GetMemberDetectorsOutputBuilder {
         self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,10 +10,7 @@ impl CreateNamedQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_named_query::CreateNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_named_query::CreateNamedQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_named_query::CreateNamedQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_named_query();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateNamedQueryFluentBuilder {
         }
     }
     /// Access the CreateNamedQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateNamedQueryFluentBuilder {
             crate::operation::create_named_query::CreateNamedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_named_query::CreateNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_named_query::CreateNamedQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateNamedQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateNamedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_named_query::CreateNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_named_query::CreateNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_named_query::CreateNamedQueryError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateNamedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_named_query::CreateNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_named_query::CreateNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_named_query::CreateNamedQueryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateNamedQueryFluentBuilder {
             crate::operation::create_named_query::CreateNamedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_named_query::CreateNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_named_query::CreateNamedQueryError>,
     > {
         self.customize_middleware().await
     }
@@ -182,20 +166,14 @@ impl CreateNamedQueryFluentBuilder {
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

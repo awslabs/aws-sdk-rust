@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateKeySigningKeyOutput {
 }
 impl CreateKeySigningKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyOutput`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder {
+    pub fn builder() -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder {
         crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKeySigningKeyOutput`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     pub(crate) key_signing_key: ::std::option::Option<crate::types::KeySigningKey>,
@@ -59,10 +56,7 @@ impl CreateKeySigningKeyOutputBuilder {
         self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -76,10 +70,7 @@ impl CreateKeySigningKeyOutputBuilder {
         self
     }
     /// <p>The key-signing key (KSK) that the request creates.</p>
-    pub fn set_key_signing_key(
-        mut self,
-        input: ::std::option::Option<crate::types::KeySigningKey>,
-    ) -> Self {
+    pub fn set_key_signing_key(mut self, input: ::std::option::Option<crate::types::KeySigningKey>) -> Self {
         self.key_signing_key = input;
         self
     }

@@ -27,8 +27,7 @@ impl GetPropertyValueHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder,
+    inner: crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder,
 }
 impl GetPropertyValueHistoryFluentBuilder {
     /// Creates a new `GetPropertyValueHistory`.
@@ -39,10 +38,7 @@ impl GetPropertyValueHistoryFluentBuilder {
         }
     }
     /// Access the GetPropertyValueHistory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl GetPropertyValueHistoryFluentBuilder {
             crate::operation::get_property_value_history::GetPropertyValueHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value_history::GetPropertyValueHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl GetPropertyValueHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl GetPropertyValueHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value_history::GetPropertyValueHistoryError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl GetPropertyValueHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value_history::GetPropertyValueHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl GetPropertyValueHistoryFluentBuilder {
             crate::operation::get_property_value_history::GetPropertyValueHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_property_value_history::GetPropertyValueHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator {
         crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the workspace.</p>
@@ -163,18 +145,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner.get_entity_id()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }
@@ -183,18 +159,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner.get_component_name()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_type_id(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
     }
@@ -207,25 +177,17 @@ impl GetPropertyValueHistoryFluentBuilder {
     /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
     ///
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn selected_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selected_properties(input.into());
         self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn set_selected_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_selected_properties(input);
         self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn get_selected_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_selected_properties()
     }
     /// Appends an item to `propertyFilters`.
@@ -238,68 +200,45 @@ impl GetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn set_property_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
-    ) -> Self {
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>) -> Self {
         self.inner = self.inner.set_property_filters(input);
         self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn get_property_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+    pub fn get_property_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
         self.inner.get_property_filters()
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date_time(input);
         self
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
     pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_date_time()
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date_time(input);
         self
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(
-        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
-    )]
+    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_date_time()
     }
@@ -309,17 +248,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    pub fn set_interpolation(
-        mut self,
-        input: ::std::option::Option<crate::types::InterpolationParameters>,
-    ) -> Self {
+    pub fn set_interpolation(mut self, input: ::std::option::Option<crate::types::InterpolationParameters>) -> Self {
         self.inner = self.inner.set_interpolation(input);
         self
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    pub fn get_interpolation(
-        &self,
-    ) -> &::std::option::Option<crate::types::InterpolationParameters> {
+    pub fn get_interpolation(&self) -> &::std::option::Option<crate::types::InterpolationParameters> {
         self.inner.get_interpolation()
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -359,10 +293,7 @@ impl GetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>The time direction to use in the result order.</p>
-    pub fn set_order_by_time(
-        mut self,
-        input: ::std::option::Option<crate::types::OrderByTime>,
-    ) -> Self {
+    pub fn set_order_by_time(mut self, input: ::std::option::Option<crate::types::OrderByTime>) -> Self {
         self.inner = self.inner.set_order_by_time(input);
         self
     }

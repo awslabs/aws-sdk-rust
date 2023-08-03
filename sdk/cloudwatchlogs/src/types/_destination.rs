@@ -58,9 +58,7 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// <p>The name of the destination.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
@@ -119,18 +111,12 @@ impl DestinationBuilder {
         &self.role_arn
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
-    pub fn access_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
-    pub fn set_access_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policy = input;
         self
     }

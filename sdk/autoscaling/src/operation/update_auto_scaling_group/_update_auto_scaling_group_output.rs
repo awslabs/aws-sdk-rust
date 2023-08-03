@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAutoScalingGroupOutput {
 }
 impl UpdateAutoScalingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAutoScalingGroupOutput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupOutputBuilder {
         crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAutoScalingGroupOutput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAutoScalingGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateAutoScalingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAutoScalingGroupOutput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput {
+    pub fn build(self) -> crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput {
         crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput {
             _request_id: self._request_id,
         }

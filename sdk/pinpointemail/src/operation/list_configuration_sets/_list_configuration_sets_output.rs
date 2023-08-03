@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListConfigurationSetsOutput {
 }
 impl ListConfigurationSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder {
         crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationSetsOutputBuilder {
     pub(crate) configuration_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl ListConfigurationSetsOutputBuilder {
     /// To override the contents of this collection use [`set_configuration_sets`](Self::set_configuration_sets).
     ///
     /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn configuration_sets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_sets.unwrap_or_default();
         v.push(input.into());
         self.configuration_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn set_configuration_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_sets = input;
         self
     }
     /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn get_configuration_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.configuration_sets
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>

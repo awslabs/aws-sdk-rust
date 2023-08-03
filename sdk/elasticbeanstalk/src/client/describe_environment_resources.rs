@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeEnvironmentResourcesOutput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput) with field(s):
     ///   - [`environment_resources(Option<EnvironmentResourceDescription>)`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput::environment_resources): <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeEnvironmentResourcesError>`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError)
-    pub fn describe_environment_resources(&self) -> crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesFluentBuilder{
+    pub fn describe_environment_resources(
+        &self,
+    ) -> crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesFluentBuilder {
         crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesFluentBuilder::new(self.handle.clone())
     }
 }

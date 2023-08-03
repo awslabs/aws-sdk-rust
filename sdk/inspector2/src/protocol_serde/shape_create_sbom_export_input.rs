@@ -9,10 +9,7 @@ pub fn ser_create_sbom_export_input(
     if let Some(var_2) = &input.resource_filter_criteria {
         #[allow(unused_mut)]
         let mut object_3 = object.key("resourceFilterCriteria").start_object();
-        crate::protocol_serde::shape_resource_filter_criteria::ser_resource_filter_criteria(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_resource_filter_criteria::ser_resource_filter_criteria(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.s3_destination {

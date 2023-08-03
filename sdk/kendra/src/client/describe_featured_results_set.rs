@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`last_updated_timestamp(Option<i64>)`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetOutput::last_updated_timestamp): <p>The timestamp when the set of featured results was last updated.</p>
     ///   - [`creation_timestamp(Option<i64>)`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetOutput::creation_timestamp): <p>The Unix timestamp when the set of the featured results was created.</p>
     /// - On failure, responds with [`SdkError<DescribeFeaturedResultsSetError>`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError)
-    pub fn describe_featured_results_set(&self) -> crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetFluentBuilder{
+    pub fn describe_featured_results_set(
+        &self,
+    ) -> crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetFluentBuilder {
         crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetFluentBuilder::new(self.handle.clone())
     }
 }

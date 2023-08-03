@@ -38,9 +38,7 @@ impl DeregisterEcsClusterFluentBuilder {
         }
     }
     /// Access the DeregisterEcsCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeregisterEcsClusterFluentBuilder {
             crate::operation::deregister_ecs_cluster::DeregisterEcsCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeregisterEcsClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeregisterEcsClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_ecs_cluster::DeregisterEcsClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeregisterEcsClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_ecs_cluster::DeregisterEcsClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeregisterEcsClusterFluentBuilder {
             crate::operation::deregister_ecs_cluster::DeregisterEcsCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecs_cluster_arn(input.into());
         self
     }
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ecs_cluster_arn(input);
         self
     }

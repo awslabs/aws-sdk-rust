@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCoreNetworkOutput {
 }
 impl DeleteCoreNetworkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkOutput`](crate::operation::delete_core_network::DeleteCoreNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_core_network::builders::DeleteCoreNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::delete_core_network::builders::DeleteCoreNetworkOutputBuilder {
         crate::operation::delete_core_network::builders::DeleteCoreNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCoreNetworkOutput`](crate::operation::delete_core_network::DeleteCoreNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteCoreNetworkOutputBuilder {
         self
     }
     /// <p>Information about the deleted core network.</p>
-    pub fn set_core_network(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetwork>,
-    ) -> Self {
+    pub fn set_core_network(mut self, input: ::std::option::Option<crate::types::CoreNetwork>) -> Self {
         self.core_network = input;
         self
     }

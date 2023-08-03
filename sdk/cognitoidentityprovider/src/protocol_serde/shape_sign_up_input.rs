@@ -21,10 +21,7 @@ pub fn ser_sign_up_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_attribute_type::ser_attribute_type(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_attribute_type::ser_attribute_type(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_sign_up_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_attribute_type::ser_attribute_type(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_attribute_type::ser_attribute_type(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -48,19 +42,13 @@ pub fn ser_sign_up_input(
     if let Some(var_13) = &input.analytics_metadata {
         #[allow(unused_mut)]
         let mut object_14 = object.key("AnalyticsMetadata").start_object();
-        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.user_context_data {
         #[allow(unused_mut)]
         let mut object_16 = object.key("UserContextData").start_object();
-        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.client_metadata {

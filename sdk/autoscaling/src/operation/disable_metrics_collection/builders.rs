@@ -26,7 +26,7 @@ impl DisableMetricsCollectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableMetricsCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionInputBuilder,
+    inner: crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionInputBuilder,
 }
 impl DisableMetricsCollectionFluentBuilder {
     /// Creates a new `DisableMetricsCollection`.
@@ -37,10 +37,7 @@ impl DisableMetricsCollectionFluentBuilder {
         }
     }
     /// Access the DisableMetricsCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisableMetricsCollectionFluentBuilder {
             crate::operation::disable_metrics_collection::DisableMetricsCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_metrics_collection::DisableMetricsCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_metrics_collection::DisableMetricsCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisableMetricsCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisableMetricsCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_metrics_collection::DisableMetricsCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_metrics_collection::DisableMetricsCollectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisableMetricsCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_metrics_collection::DisableMetricsCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_metrics_collection::DisableMetricsCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DisableMetricsCollectionFluentBuilder {
             crate::operation::disable_metrics_collection::DisableMetricsCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_metrics_collection::DisableMetricsCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_metrics_collection::DisableMetricsCollectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -203,10 +183,7 @@ impl DisableMetricsCollectionFluentBuilder {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }

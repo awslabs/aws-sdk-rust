@@ -37,9 +37,7 @@ impl Positioning {
 
 /// A builder for [`Positioning`](crate::types::Positioning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PositioningBuilder {
     pub(crate) clock_sync: ::std::option::Option<i32>,
     pub(crate) stream: ::std::option::Option<i32>,

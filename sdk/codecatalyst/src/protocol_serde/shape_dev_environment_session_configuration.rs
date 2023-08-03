@@ -8,9 +8,7 @@ pub fn ser_dev_environment_session_configuration(
     }
     if let Some(var_2) = &input.execute_command_session_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("executeCommandSessionConfiguration")
-            .start_object();
+        let mut object_3 = object.key("executeCommandSessionConfiguration").start_object();
         crate::protocol_serde::shape_execute_command_session_configuration::ser_execute_command_session_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }

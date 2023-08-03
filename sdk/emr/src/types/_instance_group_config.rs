@@ -92,9 +92,7 @@ impl InstanceGroupConfig {
 
 /// A builder for [`InstanceGroupConfig`](crate::types::InstanceGroupConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceGroupConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) market: ::std::option::Option<crate::types::MarketType>,
@@ -142,10 +140,7 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <p>The role of the instance group in the cluster.</p>
-    pub fn set_instance_role(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRoleType>,
-    ) -> Self {
+    pub fn set_instance_role(mut self, input: ::std::option::Option<crate::types::InstanceRoleType>) -> Self {
         self.instance_role = input;
         self
     }
@@ -168,18 +163,12 @@ impl InstanceGroupConfigBuilder {
         &self.bid_price
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -219,10 +208,7 @@ impl InstanceGroupConfigBuilder {
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
@@ -230,9 +216,7 @@ impl InstanceGroupConfigBuilder {
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
@@ -241,10 +225,7 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
-    pub fn set_ebs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsConfiguration>,
-    ) -> Self {
+    pub fn set_ebs_configuration(mut self, input: ::std::option::Option<crate::types::EbsConfiguration>) -> Self {
         self.ebs_configuration = input;
         self
     }
@@ -258,32 +239,21 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
-    pub fn set_auto_scaling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingPolicy>,
-    ) -> Self {
+    pub fn set_auto_scaling_policy(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicy>) -> Self {
         self.auto_scaling_policy = input;
         self
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
-    pub fn get_auto_scaling_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
+    pub fn get_auto_scaling_policy(&self) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
         &self.auto_scaling_policy
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn set_custom_ami_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_ami_id = input;
         self
     }

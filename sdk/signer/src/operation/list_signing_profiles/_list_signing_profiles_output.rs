@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSigningProfilesOutput {
 }
 impl ListSigningProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder {
-        crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder {
+        crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningProfilesOutputBuilder {
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListSigningProfilesOutputBuilder {
         self
     }
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    pub fn set_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>>,
-    ) -> Self {
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>>) -> Self {
         self.profiles = input;
         self
     }
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    pub fn get_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>> {
         &self.profiles
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>

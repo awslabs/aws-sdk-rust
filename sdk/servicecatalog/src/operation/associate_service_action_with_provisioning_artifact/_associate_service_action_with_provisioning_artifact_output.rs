@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for AssociateServiceActionWithProvisionin
 }
 impl AssociateServiceActionWithProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn builder() -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactOutputBuilder
+    {
         crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateServiceActionWithProvisioningArtifactOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,9 @@ impl AssociateServiceActionWithProvisioningArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn build(self) -> crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput {
         crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput {
             _request_id: self._request_id,
         }

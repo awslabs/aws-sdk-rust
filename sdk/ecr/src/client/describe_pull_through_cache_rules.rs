@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`pull_through_cache_rules(Option<Vec<PullThroughCacheRule>>)`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput::pull_through_cache_rules): <p>The details of the pull through cache rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribePullThroughCacheRulesError>`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError)
-    pub fn describe_pull_through_cache_rules(&self) -> crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesFluentBuilder{
+    pub fn describe_pull_through_cache_rules(
+        &self,
+    ) -> crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesFluentBuilder {
         crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesFluentBuilder::new(self.handle.clone())
     }
 }

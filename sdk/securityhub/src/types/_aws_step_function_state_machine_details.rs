@@ -9,8 +9,7 @@ pub struct AwsStepFunctionStateMachineDetails {
     pub label: ::std::option::Option<::std::string::String>,
     /// <p> Used to set CloudWatch Logs options. </p>
     #[doc(hidden)]
-    pub logging_configuration:
-        ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
+    pub logging_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
     /// <p> The name of the state machine. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,8 +24,7 @@ pub struct AwsStepFunctionStateMachineDetails {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
     #[doc(hidden)]
-    pub tracing_configuration:
-        ::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
+    pub tracing_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
     /// <p> The type of the state machine (STANDARD or EXPRESS). </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -37,10 +35,7 @@ impl AwsStepFunctionStateMachineDetails {
         self.label.as_deref()
     }
     /// <p> Used to set CloudWatch Logs options. </p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>
-    {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails> {
         self.logging_configuration.as_ref()
     }
     /// <p> The name of the state machine. </p>
@@ -60,10 +55,7 @@ impl AwsStepFunctionStateMachineDetails {
         self.status.as_deref()
     }
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
-    pub fn tracing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>
-    {
+    pub fn tracing_configuration(&self) -> ::std::option::Option<&crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails> {
         self.tracing_configuration.as_ref()
     }
     /// <p> The type of the state machine (STANDARD or EXPRESS). </p>
@@ -80,19 +72,15 @@ impl AwsStepFunctionStateMachineDetails {
 
 /// A builder for [`AwsStepFunctionStateMachineDetails`](crate::types::AwsStepFunctionStateMachineDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineDetailsBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) logging_configuration:
-        ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) tracing_configuration:
-        ::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
+    pub(crate) tracing_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsStepFunctionStateMachineDetailsBuilder {
@@ -111,28 +99,20 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         &self.label
     }
     /// <p> Used to set CloudWatch Logs options. </p>
-    pub fn logging_configuration(
-        mut self,
-        input: crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails,
-    ) -> Self {
+    pub fn logging_configuration(mut self, input: crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Used to set CloudWatch Logs options. </p>
     pub fn set_logging_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
     ) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p> Used to set CloudWatch Logs options. </p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>
-    {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails> {
         &self.logging_configuration
     }
     /// <p> The name of the state machine. </p>
@@ -164,18 +144,12 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         &self.role_arn
     }
     /// <p> The ARN that identifies the state machine. </p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN that identifies the state machine. </p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -198,28 +172,20 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         &self.status
     }
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
-    pub fn tracing_configuration(
-        mut self,
-        input: crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails,
-    ) -> Self {
+    pub fn tracing_configuration(mut self, input: crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails) -> Self {
         self.tracing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
     pub fn set_tracing_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
     ) -> Self {
         self.tracing_configuration = input;
         self
     }
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
-    pub fn get_tracing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>
-    {
+    pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails> {
         &self.tracing_configuration
     }
     /// <p> The type of the state machine (STANDARD or EXPRESS). </p>

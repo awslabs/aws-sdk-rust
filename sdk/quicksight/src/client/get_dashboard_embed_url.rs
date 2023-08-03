@@ -18,12 +18,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<GetDashboardEmbedUrlError>`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError)
-    pub fn get_dashboard_embed_url(
-        &self,
-    ) -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlFluentBuilder
-    {
-        crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dashboard_embed_url(&self) -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlFluentBuilder {
+        crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlFluentBuilder::new(self.handle.clone())
     }
 }

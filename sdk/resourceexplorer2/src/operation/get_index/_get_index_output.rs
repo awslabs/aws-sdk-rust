@@ -28,9 +28,7 @@ pub struct GetIndexOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tag key and value pairs that are attached to the index.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIndexOutput {
@@ -65,11 +63,7 @@ impl GetIndexOutput {
         self.last_updated_at.as_ref()
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -87,9 +81,7 @@ impl GetIndexOutput {
 
 /// A builder for [`GetIndexOutput`](crate::operation::get_index::GetIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIndexOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
@@ -98,9 +90,7 @@ pub struct GetIndexOutputBuilder {
     pub(crate) replicating_to: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIndexOutputBuilder {
@@ -152,10 +142,7 @@ impl GetIndexOutputBuilder {
     ///
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn replicating_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replicating_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replicating_from.unwrap_or_default();
         v.push(input.into());
         self.replicating_from = ::std::option::Option::Some(v);
@@ -163,18 +150,13 @@ impl GetIndexOutputBuilder {
     }
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn set_replicating_from(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replicating_from(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replicating_from = input;
         self
     }
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn get_replicating_from(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replicating_from(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replicating_from
     }
     /// Appends an item to `replicating_to`.
@@ -183,10 +165,7 @@ impl GetIndexOutputBuilder {
     ///
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-    pub fn replicating_to(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replicating_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replicating_to.unwrap_or_default();
         v.push(input.into());
         self.replicating_to = ::std::option::Option::Some(v);
@@ -194,18 +173,13 @@ impl GetIndexOutputBuilder {
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-    pub fn set_replicating_to(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replicating_to(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replicating_to = input;
         self
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-    pub fn get_replicating_to(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replicating_to(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replicating_to
     }
     /// <p>The date and time when the index was originally created.</p>
@@ -214,10 +188,7 @@ impl GetIndexOutputBuilder {
         self
     }
     /// <p>The date and time when the index was originally created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -231,10 +202,7 @@ impl GetIndexOutputBuilder {
         self
     }
     /// <p>The date and time when the index was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -247,32 +215,19 @@ impl GetIndexOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

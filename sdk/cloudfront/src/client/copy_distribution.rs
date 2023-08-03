@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::copy_distribution::CopyDistributionOutput::location): <p>The URL of the staging distribution.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::copy_distribution::CopyDistributionOutput::e_tag): <p>The version identifier for the current version of the staging distribution.</p>
     /// - On failure, responds with [`SdkError<CopyDistributionError>`](crate::operation::copy_distribution::CopyDistributionError)
-    pub fn copy_distribution(
-        &self,
-    ) -> crate::operation::copy_distribution::builders::CopyDistributionFluentBuilder {
-        crate::operation::copy_distribution::builders::CopyDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_distribution(&self) -> crate::operation::copy_distribution::builders::CopyDistributionFluentBuilder {
+        crate::operation::copy_distribution::builders::CopyDistributionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,17 +8,14 @@
 pub struct AttachedPermissionsBoundary {
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
     #[doc(hidden)]
-    pub permissions_boundary_type:
-        ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
+    pub permissions_boundary_type: ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
     #[doc(hidden)]
     pub permissions_boundary_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachedPermissionsBoundary {
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
-    pub fn permissions_boundary_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PermissionsBoundaryAttachmentType> {
+    pub fn permissions_boundary_type(&self) -> ::std::option::Option<&crate::types::PermissionsBoundaryAttachmentType> {
         self.permissions_boundary_type.as_ref()
     }
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
@@ -35,50 +32,33 @@ impl AttachedPermissionsBoundary {
 
 /// A builder for [`AttachedPermissionsBoundary`](crate::types::AttachedPermissionsBoundary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachedPermissionsBoundaryBuilder {
-    pub(crate) permissions_boundary_type:
-        ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
+    pub(crate) permissions_boundary_type: ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
     pub(crate) permissions_boundary_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachedPermissionsBoundaryBuilder {
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
-    pub fn permissions_boundary_type(
-        mut self,
-        input: crate::types::PermissionsBoundaryAttachmentType,
-    ) -> Self {
+    pub fn permissions_boundary_type(mut self, input: crate::types::PermissionsBoundaryAttachmentType) -> Self {
         self.permissions_boundary_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
-    pub fn set_permissions_boundary_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
-    ) -> Self {
+    pub fn set_permissions_boundary_type(mut self, input: ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>) -> Self {
         self.permissions_boundary_type = input;
         self
     }
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
-    pub fn get_permissions_boundary_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionsBoundaryAttachmentType> {
+    pub fn get_permissions_boundary_type(&self) -> &::std::option::Option<crate::types::PermissionsBoundaryAttachmentType> {
         &self.permissions_boundary_type
     }
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
-    pub fn permissions_boundary_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permissions_boundary_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permissions_boundary_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
-    pub fn set_permissions_boundary_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permissions_boundary_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permissions_boundary_arn = input;
         self
     }

@@ -30,27 +30,19 @@ impl LivePreRollConfiguration {
 
 /// A builder for [`LivePreRollConfiguration`](crate::types::LivePreRollConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LivePreRollConfigurationBuilder {
     pub(crate) ad_decision_server_url: ::std::option::Option<::std::string::String>,
     pub(crate) max_duration_seconds: ::std::option::Option<i32>,
 }
 impl LivePreRollConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn ad_decision_server_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ad_decision_server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ad_decision_server_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn set_ad_decision_server_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ad_decision_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ad_decision_server_url = input;
         self
     }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCaseEventConfigurationOutput {
 }
 impl GetCaseEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput).
-    pub fn builder() -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder {
         crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCaseEventConfigurationOutputBuilder {
     pub(crate) event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetCaseEventConfigurationOutputBuilder {
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn set_event_bridge(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBridgeConfiguration>,
-    ) -> Self {
+    pub fn set_event_bridge(mut self, input: ::std::option::Option<crate::types::EventBridgeConfiguration>) -> Self {
         self.event_bridge = input;
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn get_event_bridge(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+    pub fn get_event_bridge(&self) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
         &self.event_bridge
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl GetCaseEventConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput {
         crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput {
             event_bridge: self.event_bridge,
             _request_id: self._request_id,

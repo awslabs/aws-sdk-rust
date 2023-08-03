@@ -14,9 +14,7 @@ pub struct GetScreenDataInput {
     pub screen_id: ::std::option::Option<::std::string::String>,
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
     #[doc(hidden)]
-    pub variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    >,
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
     /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
     #[doc(hidden)]
@@ -40,11 +38,7 @@ impl GetScreenDataInput {
         self.screen_id.as_deref()
     }
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    pub fn variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    > {
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         self.variables.as_ref()
     }
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
@@ -84,9 +78,7 @@ pub struct GetScreenDataInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) screen_id: ::std::option::Option<::std::string::String>,
-    pub(crate) variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    >,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -138,11 +130,7 @@ impl GetScreenDataInputBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::VariableValue,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VariableValue) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.variables = ::std::option::Option::Some(hash_map);
@@ -151,19 +139,13 @@ impl GetScreenDataInputBuilder {
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
     pub fn set_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     ) -> Self {
         self.variables = input;
         self
     }
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         &self.variables
     }
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
@@ -203,10 +185,7 @@ impl GetScreenDataInputBuilder {
     /// Consumes the builder and constructs a [`GetScreenDataInput`](crate::operation::get_screen_data::GetScreenDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_screen_data::GetScreenDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_screen_data::GetScreenDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_screen_data::GetScreenDataInput {
             workbook_id: self.workbook_id,
             app_id: self.app_id,

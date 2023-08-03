@@ -10,10 +10,7 @@ impl UpdatePoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_pool::UpdatePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pool::UpdatePoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_pool();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdatePoolFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_pool::UpdatePool,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_pool::UpdatePool, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdatePoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdatePoolFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_pool::UpdatePool,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_pool::UpdatePool, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl UpdatePoolFluentBuilder {
         self.inner.get_two_way_enabled()
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn two_way_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.two_way_channel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn set_two_way_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_two_way_channel_arn(input);
         self
     }
@@ -175,18 +157,12 @@ impl UpdatePoolFluentBuilder {
         self.inner.get_self_managed_opt_outs_enabled()
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }

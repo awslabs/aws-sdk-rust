@@ -37,10 +37,7 @@ impl CreateAnnotationStoreFluentBuilder {
         }
     }
     /// Access the CreateAnnotationStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_annotation_store::builders::CreateAnnotationStoreInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_annotation_store::builders::CreateAnnotationStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAnnotationStoreFluentBuilder {
             crate::operation::create_annotation_store::CreateAnnotationStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_annotation_store::CreateAnnotationStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_annotation_store::CreateAnnotationStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAnnotationStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAnnotationStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_annotation_store::CreateAnnotationStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_annotation_store::CreateAnnotationStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_annotation_store::CreateAnnotationStoreError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAnnotationStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_annotation_store::CreateAnnotationStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_annotation_store::CreateAnnotationStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_annotation_store::CreateAnnotationStoreError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateAnnotationStoreFluentBuilder {
             crate::operation::create_annotation_store::CreateAnnotationStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_annotation_store::CreateAnnotationStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_annotation_store::CreateAnnotationStoreError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl CreateAnnotationStoreFluentBuilder {
         self
     }
     /// <p>The genome reference for the store's annotations.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.inner = self.inner.set_reference(input);
         self
     }
@@ -173,30 +156,17 @@ impl CreateAnnotationStoreFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the store.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags for the store.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags for the store.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
@@ -219,10 +189,7 @@ impl CreateAnnotationStoreFluentBuilder {
         self
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn set_store_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreFormat>,
-    ) -> Self {
+    pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
         self.inner = self.inner.set_store_format(input);
         self
     }
@@ -236,10 +203,7 @@ impl CreateAnnotationStoreFluentBuilder {
         self
     }
     /// <p>File parsing options for the annotation store.</p>
-    pub fn set_store_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreOptions>,
-    ) -> Self {
+    pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
         self.inner = self.inner.set_store_options(input);
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRoutingControlOutput {
 }
 impl DeleteRoutingControlOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRoutingControlOutput`](crate::operation::delete_routing_control::DeleteRoutingControlOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_routing_control::builders::DeleteRoutingControlOutputBuilder {
+    pub fn builder() -> crate::operation::delete_routing_control::builders::DeleteRoutingControlOutputBuilder {
         crate::operation::delete_routing_control::builders::DeleteRoutingControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoutingControlOutput`](crate::operation::delete_routing_control::DeleteRoutingControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoutingControlOutputBuilder {
     _request_id: Option<String>,
 }

@@ -44,9 +44,7 @@ impl DocumentMetadataConfiguration {
 
 /// A builder for [`DocumentMetadataConfiguration`](crate::types::DocumentMetadataConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentMetadataConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentAttributeValueType>,
@@ -74,10 +72,7 @@ impl DocumentMetadataConfigurationBuilder {
         self
     }
     /// <p>The data type of the index field. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttributeValueType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValueType>) -> Self {
         self.r#type = input;
         self
     }

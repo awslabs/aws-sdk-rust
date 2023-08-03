@@ -9,92 +9,82 @@ pub fn de_revoke_snapshot_access_http_error(
     crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessToSnapshotDenied" => crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::AccessToSnapshotDeniedFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessToSnapshotDeniedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_access_to_snapshot_denied_fault::de_access_to_snapshot_denied_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessToSnapshotDeniedFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_access_to_snapshot_denied_fault::de_access_to_snapshot_denied_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "AuthorizationNotFound" => crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::AuthorizationNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ClusterSnapshotNotFound" => crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::ClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnsupportedOperation" => crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::UnsupportedOperationFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::generic(generic)
+        _ => crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::generic(generic),
     })
 }
 
@@ -110,14 +100,9 @@ pub fn de_revoke_snapshot_access_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder::default();
-        output = crate::protocol_serde::shape_revoke_snapshot_access::de_revoke_snapshot_access(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_revoke_snapshot_access::de_revoke_snapshot_access(_response_body, output)
+            .map_err(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -126,10 +111,7 @@ pub fn de_revoke_snapshot_access_http_response_with_props(
 pub fn de_revoke_snapshot_access(
     inp: &[u8],
     mut builder: crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder,
-) -> Result<
-    crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

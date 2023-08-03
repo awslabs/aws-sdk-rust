@@ -37,9 +37,7 @@ impl DescribeJobLogItemsFluentBuilder {
         }
     }
     /// Access the DescribeJobLogItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeJobLogItemsFluentBuilder {
             crate::operation::describe_job_log_items::DescribeJobLogItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_log_items::DescribeJobLogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_log_items::DescribeJobLogItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeJobLogItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeJobLogItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_log_items::DescribeJobLogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_log_items::DescribeJobLogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_log_items::DescribeJobLogItemsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeJobLogItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_log_items::DescribeJobLogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_log_items::DescribeJobLogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_log_items::DescribeJobLogItemsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeJobLogItemsFluentBuilder {
             crate::operation::describe_job_log_items::DescribeJobLogItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_log_items::DescribeJobLogItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_log_items::DescribeJobLogItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator {
-        crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator {
+        crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::new(self.handle, self.inner)
     }
     /// <p>Request to describe Job log job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

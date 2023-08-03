@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,9 +59,7 @@ impl RemoveTagsFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
+    pub fn build(self) -> crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
             resource_arn: self.resource_arn,
             _request_id: self._request_id,

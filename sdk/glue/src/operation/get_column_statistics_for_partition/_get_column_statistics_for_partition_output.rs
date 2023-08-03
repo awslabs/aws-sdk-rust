@@ -5,8 +5,7 @@
 pub struct GetColumnStatisticsForPartitionOutput {
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
     #[doc(hidden)]
-    pub column_statistics_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
+    pub column_statistics_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
     /// <p>Error occurred during retrieving column statistics data.</p>
     #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnError>>,
@@ -14,9 +13,7 @@ pub struct GetColumnStatisticsForPartitionOutput {
 }
 impl GetColumnStatisticsForPartitionOutput {
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    pub fn column_statistics_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ColumnStatistics]> {
+    pub fn column_statistics_list(&self) -> ::std::option::Option<&[crate::types::ColumnStatistics]> {
         self.column_statistics_list.as_deref()
     }
     /// <p>Error occurred during retrieving column statistics data.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetColumnStatisticsForPartitionOutput
 }
 impl GetColumnStatisticsForPartitionOutput {
     /// Creates a new builder-style object to manufacture [`GetColumnStatisticsForPartitionOutput`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput).
-    pub fn builder() -> crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionOutputBuilder{
+    pub fn builder() -> crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionOutputBuilder {
         crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetColumnStatisticsForPartitionOutput`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetColumnStatisticsForPartitionOutputBuilder {
-    pub(crate) column_statistics_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
+    pub(crate) column_statistics_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnError>>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetColumnStatisticsForPartitionOutputBuilder {
         self
     }
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    pub fn set_column_statistics_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
-    ) -> Self {
+    pub fn set_column_statistics_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>) -> Self {
         self.column_statistics_list = input;
         self
     }
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    pub fn get_column_statistics_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>> {
+    pub fn get_column_statistics_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>> {
         &self.column_statistics_list
     }
     /// Appends an item to `errors`.
@@ -85,10 +74,7 @@ impl GetColumnStatisticsForPartitionOutputBuilder {
         self
     }
     /// <p>Error occurred during retrieving column statistics data.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnError>>) -> Self {
         self.errors = input;
         self
     }
@@ -106,15 +92,10 @@ impl GetColumnStatisticsForPartitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetColumnStatisticsForPartitionOutput`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput
-    {
+    pub fn build(self) -> crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput {
         crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput {
-            column_statistics_list: self.column_statistics_list
-            ,
-            errors: self.errors
-            ,
+            column_statistics_list: self.column_statistics_list,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

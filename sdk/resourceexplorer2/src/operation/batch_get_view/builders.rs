@@ -10,10 +10,7 @@ impl BatchGetViewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_view::BatchGetViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_view::BatchGetViewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_view::BatchGetViewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_view();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetViewFluentBuilder {
         }
     }
     /// Access the BatchGetView as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_view::builders::BatchGetViewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_view::builders::BatchGetViewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl BatchGetViewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl BatchGetViewFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    pub fn set_view_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_view_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_view_arns(input);
         self
     }

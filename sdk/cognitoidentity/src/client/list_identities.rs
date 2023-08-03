@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`identities(Option<Vec<IdentityDescription>>)`](crate::operation::list_identities::ListIdentitiesOutput::identities): <p>An object containing a set of identities and associated mappings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identities::ListIdentitiesOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListIdentitiesError>`](crate::operation::list_identities::ListIdentitiesError)
-    pub fn list_identities(
-        &self,
-    ) -> crate::operation::list_identities::builders::ListIdentitiesFluentBuilder {
-        crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_identities(&self) -> crate::operation::list_identities::builders::ListIdentitiesFluentBuilder {
+        crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::new(self.handle.clone())
     }
 }

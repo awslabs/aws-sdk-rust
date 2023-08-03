@@ -44,15 +44,12 @@ impl ResponseHeadersPolicyList {
 
 /// A builder for [`ResponseHeadersPolicyList`](crate::types::ResponseHeadersPolicyList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>,
 }
 impl ResponseHeadersPolicyListBuilder {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
@@ -109,17 +106,12 @@ impl ResponseHeadersPolicyListBuilder {
         self
     }
     /// <p>The response headers policies in the list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The response headers policies in the list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyList`](crate::types::ResponseHeadersPolicyList).

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput) with field(s):
     ///   - [`user_access_results_list(Option<Vec<UserAccessResultItem>>)`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput::user_access_results_list): <p>Contains a list of user access results.</p>
     /// - On failure, responds with [`SdkError<BatchGetUserAccessTasksError>`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError)
-    pub fn batch_get_user_access_tasks(
-        &self,
-    ) -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksFluentBuilder
-    {
+    pub fn batch_get_user_access_tasks(&self) -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksFluentBuilder {
         crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksFluentBuilder::new(self.handle.clone())
     }
 }

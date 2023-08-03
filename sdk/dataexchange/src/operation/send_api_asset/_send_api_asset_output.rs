@@ -8,9 +8,7 @@ pub struct SendApiAssetOutput {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
     #[doc(hidden)]
-    pub response_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl SendApiAssetOutput {
@@ -19,11 +17,7 @@ impl SendApiAssetOutput {
         self.body.as_deref()
     }
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn response_headers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_headers.as_ref()
     }
 }
@@ -41,14 +35,10 @@ impl SendApiAssetOutput {
 
 /// A builder for [`SendApiAssetOutput`](crate::operation::send_api_asset::SendApiAssetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendApiAssetOutputBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
-    pub(crate) response_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) response_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl SendApiAssetOutputBuilder {
@@ -84,19 +74,13 @@ impl SendApiAssetOutputBuilder {
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
     pub fn set_response_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_headers = input;
         self
     }
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn get_response_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_headers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

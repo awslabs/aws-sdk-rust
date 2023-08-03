@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput) with field(s):
     ///   - [`pipeline_id(Option<String>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline_id): <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::operation::create_pipeline::CreatePipelineError)
-    pub fn create_pipeline(
-        &self,
-    ) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
-        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pipeline(&self) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
+        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

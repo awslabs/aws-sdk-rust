@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`addresses(Option<Vec<AddressAttribute>>)`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput::addresses): <p>Information about the IP addresses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeAddressesAttributeError>`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError)
-    pub fn describe_addresses_attribute(&self) -> crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeFluentBuilder{
+    pub fn describe_addresses_attribute(&self) -> crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeFluentBuilder {
         crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeFluentBuilder::new(self.handle.clone())
     }
 }

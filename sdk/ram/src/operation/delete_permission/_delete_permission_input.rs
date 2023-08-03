@@ -26,35 +26,26 @@ impl DeletePermissionInput {
 }
 impl DeletePermissionInput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
-    pub fn builder() -> crate::operation::delete_permission::builders::DeletePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_permission::builders::DeletePermissionInputBuilder {
         crate::operation::delete_permission::builders::DeletePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeletePermissionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission that you want to delete.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission that you want to delete.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -85,10 +76,7 @@ impl DeletePermissionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_permission::DeletePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_permission::DeletePermissionInput {
             permission_arn: self.permission_arn,
             client_token: self.client_token,

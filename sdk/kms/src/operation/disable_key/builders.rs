@@ -10,10 +10,7 @@ impl DisableKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_key::DisableKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_key::DisableKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_key::DisableKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_key();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl DisableKeyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disable_key::DisableKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::disable_key::DisableKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::disable_key::DisableKeyError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl DisableKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl DisableKeyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disable_key::DisableKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::disable_key::DisableKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::disable_key::DisableKeyError>,
     > {
         self.customize_middleware().await

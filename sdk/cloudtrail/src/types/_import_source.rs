@@ -23,9 +23,7 @@ impl ImportSource {
 
 /// A builder for [`ImportSource`](crate::types::ImportSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSourceBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3ImportSource>,
 }

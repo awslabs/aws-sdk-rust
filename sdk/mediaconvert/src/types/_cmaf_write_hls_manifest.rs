@@ -38,13 +38,7 @@
 /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmafWriteHlsManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmafWriteHlsManifest {
         match s {
             "DISABLED" => CmafWriteHlsManifest::Disabled,
             "ENABLED" => CmafWriteHlsManifest::Enabled,
-            other => CmafWriteHlsManifest::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CmafWriteHlsManifest::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

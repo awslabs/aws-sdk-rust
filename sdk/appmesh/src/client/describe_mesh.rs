@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeMeshOutput`](crate::operation::describe_mesh::DescribeMeshOutput) with field(s):
     ///   - [`mesh(Option<MeshData>)`](crate::operation::describe_mesh::DescribeMeshOutput::mesh): <p>The full description of your service mesh.</p>
     /// - On failure, responds with [`SdkError<DescribeMeshError>`](crate::operation::describe_mesh::DescribeMeshError)
-    pub fn describe_mesh(
-        &self,
-    ) -> crate::operation::describe_mesh::builders::DescribeMeshFluentBuilder {
-        crate::operation::describe_mesh::builders::DescribeMeshFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_mesh(&self) -> crate::operation::describe_mesh::builders::DescribeMeshFluentBuilder {
+        crate::operation::describe_mesh::builders::DescribeMeshFluentBuilder::new(self.handle.clone())
     }
 }

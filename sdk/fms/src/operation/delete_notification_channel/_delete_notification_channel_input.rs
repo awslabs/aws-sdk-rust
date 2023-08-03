@@ -5,16 +5,14 @@
 pub struct DeleteNotificationChannelInput {}
 impl DeleteNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
-    pub fn builder() -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder{
+    pub fn builder() -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder {
         crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationChannelInputBuilder {}
 impl DeleteNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
@@ -24,8 +22,6 @@ impl DeleteNotificationChannelInputBuilder {
         crate::operation::delete_notification_channel::DeleteNotificationChannelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_notification_channel::DeleteNotificationChannelInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::delete_notification_channel::DeleteNotificationChannelInput {})
     }
 }

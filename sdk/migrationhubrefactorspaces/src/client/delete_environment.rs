@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`state(Option<EnvironmentState>)`](crate::operation::delete_environment::DeleteEnvironmentOutput::state): <p>The current state of the environment. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_environment::DeleteEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::operation::delete_environment::DeleteEnvironmentError)
-    pub fn delete_environment(
-        &self,
-    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder {
-        crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_environment(&self) -> crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder {
+        crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ pub struct CreateDataCatalogInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -63,11 +61,7 @@ impl CreateDataCatalogInput {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
@@ -77,24 +71,19 @@ impl CreateDataCatalogInput {
 }
 impl CreateDataCatalogInput {
     /// Creates a new builder-style object to manufacture [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder {
+    pub fn builder() -> crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder {
         crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataCatalogInputBuilder {
@@ -159,11 +148,7 @@ impl CreateDataCatalogInputBuilder {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -184,12 +169,7 @@ impl CreateDataCatalogInputBuilder {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
@@ -208,11 +188,7 @@ impl CreateDataCatalogInputBuilder {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Appends an item to `tags`.
@@ -227,10 +203,7 @@ impl CreateDataCatalogInputBuilder {
         self
     }
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -241,18 +214,13 @@ impl CreateDataCatalogInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_catalog::CreateDataCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_catalog::CreateDataCatalogInput {
-                name: self.name,
-                r#type: self.r#type,
-                description: self.description,
-                parameters: self.parameters,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_data_catalog::CreateDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_data_catalog::CreateDataCatalogInput {
+            name: self.name,
+            r#type: self.r#type,
+            description: self.description,
+            parameters: self.parameters,
+            tags: self.tags,
+        })
     }
 }

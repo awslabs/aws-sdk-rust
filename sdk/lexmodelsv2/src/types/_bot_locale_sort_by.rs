@@ -30,9 +30,7 @@ impl BotLocaleSortBy {
 
 /// A builder for [`BotLocaleSortBy`](crate::types::BotLocaleSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotLocaleSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BotLocaleSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl BotLocaleSortByBuilder {
         self
     }
     /// <p>The bot locale attribute to sort by.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BotLocaleSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`member_accounts(Option<Vec<MemberAccount>>)`](crate::operation::list_member_accounts::ListMemberAccountsOutput::member_accounts): <p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_member_accounts::ListMemberAccountsOutput::next_token): <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListMemberAccountsError>`](crate::operation::list_member_accounts::ListMemberAccountsError)
-    pub fn list_member_accounts(
-        &self,
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder {
-        crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_member_accounts(&self) -> crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder {
+        crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::new(self.handle.clone())
     }
 }

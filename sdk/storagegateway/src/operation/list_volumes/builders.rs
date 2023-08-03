@@ -10,10 +10,7 @@ impl ListVolumesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_volumes::ListVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volumes::ListVolumesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volumes::ListVolumesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_volumes();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListVolumesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_volumes::ListVolumes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_volumes::ListVolumes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_volumes::ListVolumesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListVolumesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListVolumesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_volumes::ListVolumes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_volumes::ListVolumes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_volumes::ListVolumesError>,
     > {
         self.customize_middleware().await
@@ -117,10 +105,7 @@ impl ListVolumesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_volumes::paginator::ListVolumesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_volumes::paginator::ListVolumesPaginator {
-        crate::operation::list_volumes::paginator::ListVolumesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_volumes::paginator::ListVolumesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

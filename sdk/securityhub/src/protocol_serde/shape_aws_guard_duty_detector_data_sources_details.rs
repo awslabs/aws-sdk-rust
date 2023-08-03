@@ -36,7 +36,10 @@ pub fn ser_aws_guard_duty_detector_data_sources_details(
     if let Some(var_11) = &input.s3_logs {
         #[allow(unused_mut)]
         let mut object_12 = object.key("S3Logs").start_object();
-        crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_s3_logs_details::ser_aws_guard_duty_detector_data_sources_s3_logs_details(&mut object_12, var_11)?;
+        crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_s3_logs_details::ser_aws_guard_duty_detector_data_sources_s3_logs_details(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     Ok(())
@@ -44,77 +47,63 @@ pub fn ser_aws_guard_duty_detector_data_sources_details(
 
 pub(crate) fn de_aws_guard_duty_detector_data_sources_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsGuardDutyDetectorDataSourcesDetailsBuilder::default();
+            let mut builder = crate::types::builders::AwsGuardDutyDetectorDataSourcesDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CloudTrail" => {
-                                builder = builder.set_cloud_trail(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CloudTrail" => {
+                            builder = builder.set_cloud_trail(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_cloud_trail_details::de_aws_guard_duty_detector_data_sources_cloud_trail_details(tokens)?
                                 );
-                            }
-                            "DnsLogs" => {
-                                builder = builder.set_dns_logs(
+                        }
+                        "DnsLogs" => {
+                            builder = builder.set_dns_logs(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_dns_logs_details::de_aws_guard_duty_detector_data_sources_dns_logs_details(tokens)?
                                 );
-                            }
-                            "FlowLogs" => {
-                                builder = builder.set_flow_logs(
+                        }
+                        "FlowLogs" => {
+                            builder = builder.set_flow_logs(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_flow_logs_details::de_aws_guard_duty_detector_data_sources_flow_logs_details(tokens)?
                                 );
-                            }
-                            "Kubernetes" => {
-                                builder = builder.set_kubernetes(
+                        }
+                        "Kubernetes" => {
+                            builder = builder.set_kubernetes(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_kubernetes_details::de_aws_guard_duty_detector_data_sources_kubernetes_details(tokens)?
                                 );
-                            }
-                            "MalwareProtection" => {
-                                builder = builder.set_malware_protection(
+                        }
+                        "MalwareProtection" => {
+                            builder = builder.set_malware_protection(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_malware_protection_details::de_aws_guard_duty_detector_data_sources_malware_protection_details(tokens)?
                                 );
-                            }
-                            "S3Logs" => {
-                                builder = builder.set_s3_logs(
+                        }
+                        "S3Logs" => {
+                            builder = builder.set_s3_logs(
                                     crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_s3_logs_details::de_aws_guard_duty_detector_data_sources_s3_logs_details(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

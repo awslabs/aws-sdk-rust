@@ -10,10 +10,7 @@ impl DescribeRegistriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_registries::DescribeRegistriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_registries::DescribeRegistriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_registries::DescribeRegistriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_registries();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeRegistriesFluentBuilder {
         }
     }
     /// Access the DescribeRegistries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_registries::builders::DescribeRegistriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_registries::builders::DescribeRegistriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeRegistriesFluentBuilder {
             crate::operation::describe_registries::DescribeRegistries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_registries::DescribeRegistriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_registries::DescribeRegistriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeRegistriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeRegistriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_registries::DescribeRegistriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_registries::DescribeRegistriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_registries::DescribeRegistriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeRegistriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_registries::DescribeRegistriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_registries::DescribeRegistriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_registries::DescribeRegistriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeRegistriesFluentBuilder {
             crate::operation::describe_registries::DescribeRegistries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_registries::DescribeRegistriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_registries::DescribeRegistriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_registries::paginator::DescribeRegistriesPaginator {
-        crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_registries::paginator::DescribeRegistriesPaginator {
+        crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>

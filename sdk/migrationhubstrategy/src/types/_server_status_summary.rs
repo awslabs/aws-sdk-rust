@@ -13,9 +13,7 @@ pub struct ServerStatusSummary {
 }
 impl ServerStatusSummary {
     /// <p>The status of the run time.</p>
-    pub fn run_time_assessment_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
+    pub fn run_time_assessment_status(&self) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
         self.run_time_assessment_status.as_ref()
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
@@ -32,35 +30,24 @@ impl ServerStatusSummary {
 
 /// A builder for [`ServerStatusSummary`](crate::types::ServerStatusSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerStatusSummaryBuilder {
-    pub(crate) run_time_assessment_status:
-        ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
+    pub(crate) run_time_assessment_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     pub(crate) count: ::std::option::Option<i32>,
 }
 impl ServerStatusSummaryBuilder {
     /// <p>The status of the run time.</p>
-    pub fn run_time_assessment_status(
-        mut self,
-        input: crate::types::RunTimeAssessmentStatus,
-    ) -> Self {
+    pub fn run_time_assessment_status(mut self, input: crate::types::RunTimeAssessmentStatus) -> Self {
         self.run_time_assessment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the run time.</p>
-    pub fn set_run_time_assessment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
-    ) -> Self {
+    pub fn set_run_time_assessment_status(mut self, input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>) -> Self {
         self.run_time_assessment_status = input;
         self
     }
     /// <p>The status of the run time.</p>
-    pub fn get_run_time_assessment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunTimeAssessmentStatus> {
+    pub fn get_run_time_assessment_status(&self) -> &::std::option::Option<crate::types::RunTimeAssessmentStatus> {
         &self.run_time_assessment_status
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>

@@ -15,16 +15,14 @@ impl DescribeQuerySuggestionsConfigInput {
 }
 impl DescribeQuerySuggestionsConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
-    pub fn builder() -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder{
+    pub fn builder() -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder {
         crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsConfigInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl DescribeQuerySuggestionsConfigInputBuilder {
         crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput {
-                index_id: self.index_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput {
+            index_id: self.index_id,
+        })
     }
 }

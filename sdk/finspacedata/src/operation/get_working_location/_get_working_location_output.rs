@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetWorkingLocationOutput {
 }
 impl GetWorkingLocationOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkingLocationOutput`](crate::operation::get_working_location::GetWorkingLocationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_working_location::builders::GetWorkingLocationOutputBuilder {
+    pub fn builder() -> crate::operation::get_working_location::builders::GetWorkingLocationOutputBuilder {
         crate::operation::get_working_location::builders::GetWorkingLocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkingLocationOutput`](crate::operation::get_working_location::GetWorkingLocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkingLocationOutputBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_path: ::std::option::Option<::std::string::String>,

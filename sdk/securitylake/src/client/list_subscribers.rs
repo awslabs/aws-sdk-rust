@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`subscribers(Option<Vec<SubscriberResource>>)`](crate::operation::list_subscribers::ListSubscribersOutput::subscribers): <p>The subscribers available for the specified Security Lake account ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscribers::ListSubscribersOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListSubscribersError>`](crate::operation::list_subscribers::ListSubscribersError)
-    pub fn list_subscribers(
-        &self,
-    ) -> crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder {
-        crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_subscribers(&self) -> crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder {
+        crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::new(self.handle.clone())
     }
 }

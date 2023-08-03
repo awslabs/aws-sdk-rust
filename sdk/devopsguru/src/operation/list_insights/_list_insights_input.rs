@@ -36,9 +36,7 @@ impl ListInsightsInput {
 
 /// A builder for [`ListInsightsInput`](crate::operation::list_insights::ListInsightsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInsightsInputBuilder {
     pub(crate) status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -51,17 +49,12 @@ impl ListInsightsInputBuilder {
         self
     }
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         &self.status_filter
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -93,12 +86,7 @@ impl ListInsightsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInsightsInput`](crate::operation::list_insights::ListInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_insights::ListInsightsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_insights::ListInsightsInput {
             status_filter: self.status_filter,
             max_results: self.max_results,

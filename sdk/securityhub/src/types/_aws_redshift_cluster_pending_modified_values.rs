@@ -93,9 +93,7 @@ impl AwsRedshiftClusterPendingModifiedValues {
 
 /// A builder for [`AwsRedshiftClusterPendingModifiedValues`](crate::types::AwsRedshiftClusterPendingModifiedValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterPendingModifiedValuesBuilder {
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -116,10 +114,7 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         self
     }
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
-    pub fn set_automated_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automated_snapshot_retention_period = input;
         self
     }
@@ -128,18 +123,12 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         &self.automated_snapshot_retention_period
     }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -162,18 +151,12 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         &self.cluster_type
     }
     /// <p>The pending or in-progress change to the service version.</p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the service version.</p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -182,18 +165,12 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         &self.cluster_version
     }
     /// <p>The encryption type for a cluster.</p>
-    pub fn encryption_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption type for a cluster.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_type = input;
         self
     }
@@ -216,18 +193,12 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         &self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -236,18 +207,12 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
         &self.maintenance_track_name
     }
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -300,9 +265,7 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterPendingModifiedValues`](crate::types::AwsRedshiftClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::AwsRedshiftClusterPendingModifiedValues {
         crate::types::AwsRedshiftClusterPendingModifiedValues {
-            automated_snapshot_retention_period: self
-                .automated_snapshot_retention_period
-                .unwrap_or_default(),
+            automated_snapshot_retention_period: self.automated_snapshot_retention_period.unwrap_or_default(),
             cluster_identifier: self.cluster_identifier,
             cluster_type: self.cluster_type,
             cluster_version: self.cluster_version,

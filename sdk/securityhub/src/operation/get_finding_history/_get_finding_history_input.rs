@@ -23,9 +23,7 @@ pub struct GetFindingHistoryInput {
 }
 impl GetFindingHistoryInput {
     /// <p>Identifies which finding to get the finding history for.</p>
-    pub fn finding_identifier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
+    pub fn finding_identifier(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
@@ -49,20 +47,16 @@ impl GetFindingHistoryInput {
 }
 impl GetFindingHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetFindingHistoryInput`](crate::operation::get_finding_history::GetFindingHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_history::builders::GetFindingHistoryInputBuilder {
+    pub fn builder() -> crate::operation::get_finding_history::builders::GetFindingHistoryInputBuilder {
         crate::operation::get_finding_history::builders::GetFindingHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingHistoryInput`](crate::operation::get_finding_history::GetFindingHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingHistoryInputBuilder {
-    pub(crate) finding_identifier:
-        ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
+    pub(crate) finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,17 +69,12 @@ impl GetFindingHistoryInputBuilder {
         self
     }
     /// <p>Identifies which finding to get the finding history for.</p>
-    pub fn set_finding_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
-    ) -> Self {
+    pub fn set_finding_identifier(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>) -> Self {
         self.finding_identifier = input;
         self
     }
     /// <p>Identifies which finding to get the finding history for.</p>
-    pub fn get_finding_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
+    pub fn get_finding_identifier(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
         &self.finding_identifier
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
@@ -96,10 +85,7 @@ impl GetFindingHistoryInputBuilder {
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     /// <p>If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding history for the specified time period. If you provide a value for <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns finding history from the <code>StartTime</code> to the time at which the API is called. If you provide a value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub returns finding history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a> timestamp of the finding to the <code>EndTime</code>. If you provide neither <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is limited to 100 results, and the maximum time period is limited to 90 days. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -116,10 +102,7 @@ impl GetFindingHistoryInputBuilder {
     }
     /// <p> An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     /// <p>If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding history for the specified time period. If you provide a value for <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns finding history from the <code>StartTime</code> to the time at which the API is called. If you provide a value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub returns finding history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a> timestamp of the finding to the <code>EndTime</code>. If you provide neither <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is limited to 100 results, and the maximum time period is limited to 90 days.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -159,18 +142,13 @@ impl GetFindingHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingHistoryInput`](crate::operation::get_finding_history::GetFindingHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_finding_history::GetFindingHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_finding_history::GetFindingHistoryInput {
-                finding_identifier: self.finding_identifier,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_finding_history::GetFindingHistoryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_finding_history::GetFindingHistoryInput {
+            finding_identifier: self.finding_identifier,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

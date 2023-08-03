@@ -48,8 +48,7 @@ pub struct ScheduledQueryDescription {
     pub last_run_summary: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
     #[doc(hidden)]
-    pub recently_failed_runs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
+    pub recently_failed_runs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
 }
 impl ScheduledQueryDescription {
     /// <p>Scheduled query ARN.</p>
@@ -81,21 +80,15 @@ impl ScheduledQueryDescription {
         self.next_invocation_time.as_ref()
     }
     /// <p>Schedule configuration.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>Notification configuration.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>Scheduled query target store configuration.</p>
-    pub fn target_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetConfiguration> {
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
@@ -107,21 +100,15 @@ impl ScheduledQueryDescription {
         self.kms_key_id.as_deref()
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
-    pub fn error_report_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
+    pub fn error_report_configuration(&self) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
         self.error_report_configuration.as_ref()
     }
     /// <p>Runtime summary for the last scheduled query run. </p>
-    pub fn last_run_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduledQueryRunSummary> {
+    pub fn last_run_summary(&self) -> ::std::option::Option<&crate::types::ScheduledQueryRunSummary> {
         self.last_run_summary.as_ref()
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub fn recently_failed_runs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledQueryRunSummary]> {
+    pub fn recently_failed_runs(&self) -> ::std::option::Option<&[crate::types::ScheduledQueryRunSummary]> {
         self.recently_failed_runs.as_deref()
     }
 }
@@ -136,20 +123,11 @@ impl ::std::fmt::Debug for ScheduledQueryDescription {
         formatter.field("previous_invocation_time", &self.previous_invocation_time);
         formatter.field("next_invocation_time", &self.next_invocation_time);
         formatter.field("schedule_configuration", &self.schedule_configuration);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("target_configuration", &self.target_configuration);
-        formatter.field(
-            "scheduled_query_execution_role_arn",
-            &self.scheduled_query_execution_role_arn,
-        );
+        formatter.field("scheduled_query_execution_role_arn", &self.scheduled_query_execution_role_arn);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "error_report_configuration",
-            &self.error_report_configuration,
-        );
+        formatter.field("error_report_configuration", &self.error_report_configuration);
         formatter.field("last_run_summary", &self.last_run_summary);
         formatter.field("recently_failed_runs", &self.recently_failed_runs);
         formatter.finish()
@@ -174,16 +152,13 @@ pub struct ScheduledQueryDescriptionBuilder {
     pub(crate) previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) scheduled_query_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) error_report_configuration:
-        ::std::option::Option<crate::types::ErrorReportConfiguration>,
+    pub(crate) error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
     pub(crate) last_run_summary: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
-    pub(crate) recently_failed_runs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
+    pub(crate) recently_failed_runs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
 }
 impl ScheduledQueryDescriptionBuilder {
     /// <p>Scheduled query ARN.</p>
@@ -234,10 +209,7 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>Creation time of the scheduled query.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -251,10 +223,7 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>State of the scheduled query. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledQueryState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
@@ -268,17 +237,12 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>Last time the query was run.</p>
-    pub fn set_previous_invocation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_previous_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.previous_invocation_time = input;
         self
     }
     /// <p>Last time the query was run.</p>
-    pub fn get_previous_invocation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_previous_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.previous_invocation_time
     }
     /// <p>The next time the scheduled query is scheduled to run.</p>
@@ -287,10 +251,7 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>The next time the scheduled query is scheduled to run.</p>
-    pub fn set_next_invocation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_invocation_time = input;
         self
     }
@@ -304,39 +265,26 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>Schedule configuration.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.schedule_configuration = input;
         self
     }
     /// <p>Schedule configuration.</p>
-    pub fn get_schedule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+    pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         &self.schedule_configuration
     }
     /// <p>Notification configuration.</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Notification configuration.</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>Notification configuration.</p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// <p>Scheduled query target store configuration.</p>
@@ -345,39 +293,26 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>Scheduled query target store configuration.</p>
-    pub fn set_target_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetConfiguration>,
-    ) -> Self {
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::TargetConfiguration>) -> Self {
         self.target_configuration = input;
         self
     }
     /// <p>Scheduled query target store configuration.</p>
-    pub fn get_target_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetConfiguration> {
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::TargetConfiguration> {
         &self.target_configuration
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
-    pub fn scheduled_query_execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
-    pub fn set_scheduled_query_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = input;
         self
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
-    pub fn get_scheduled_query_execution_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_scheduled_query_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_execution_role_arn
     }
     /// <p>A customer provided KMS key used to encrypt the scheduled query resource.</p>
@@ -395,25 +330,17 @@ impl ScheduledQueryDescriptionBuilder {
         &self.kms_key_id
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
-    pub fn error_report_configuration(
-        mut self,
-        input: crate::types::ErrorReportConfiguration,
-    ) -> Self {
+    pub fn error_report_configuration(mut self, input: crate::types::ErrorReportConfiguration) -> Self {
         self.error_report_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
-    pub fn set_error_report_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorReportConfiguration>,
-    ) -> Self {
+    pub fn set_error_report_configuration(mut self, input: ::std::option::Option<crate::types::ErrorReportConfiguration>) -> Self {
         self.error_report_configuration = input;
         self
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
-    pub fn get_error_report_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
+    pub fn get_error_report_configuration(&self) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
         &self.error_report_configuration
     }
     /// <p>Runtime summary for the last scheduled query run. </p>
@@ -422,17 +349,12 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>Runtime summary for the last scheduled query run. </p>
-    pub fn set_last_run_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
-    ) -> Self {
+    pub fn set_last_run_summary(mut self, input: ::std::option::Option<crate::types::ScheduledQueryRunSummary>) -> Self {
         self.last_run_summary = input;
         self
     }
     /// <p>Runtime summary for the last scheduled query run. </p>
-    pub fn get_last_run_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledQueryRunSummary> {
+    pub fn get_last_run_summary(&self) -> &::std::option::Option<crate::types::ScheduledQueryRunSummary> {
         &self.last_run_summary
     }
     /// Appends an item to `recently_failed_runs`.
@@ -447,17 +369,12 @@ impl ScheduledQueryDescriptionBuilder {
         self
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub fn set_recently_failed_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
-    ) -> Self {
+    pub fn set_recently_failed_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>) -> Self {
         self.recently_failed_runs = input;
         self
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub fn get_recently_failed_runs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>> {
+    pub fn get_recently_failed_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>> {
         &self.recently_failed_runs
     }
     /// Consumes the builder and constructs a [`ScheduledQueryDescription`](crate::types::ScheduledQueryDescription).
@@ -492,20 +409,11 @@ impl ::std::fmt::Debug for ScheduledQueryDescriptionBuilder {
         formatter.field("previous_invocation_time", &self.previous_invocation_time);
         formatter.field("next_invocation_time", &self.next_invocation_time);
         formatter.field("schedule_configuration", &self.schedule_configuration);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("target_configuration", &self.target_configuration);
-        formatter.field(
-            "scheduled_query_execution_role_arn",
-            &self.scheduled_query_execution_role_arn,
-        );
+        formatter.field("scheduled_query_execution_role_arn", &self.scheduled_query_execution_role_arn);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "error_report_configuration",
-            &self.error_report_configuration,
-        );
+        formatter.field("error_report_configuration", &self.error_report_configuration);
         formatter.field("last_run_summary", &self.last_run_summary);
         formatter.field("recently_failed_runs", &self.recently_failed_runs);
         formatter.finish()

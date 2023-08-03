@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeregisterEventTopicOutput {
 }
 impl DeregisterEventTopicOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterEventTopicOutput`](crate::operation::deregister_event_topic::DeregisterEventTopicOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_event_topic::builders::DeregisterEventTopicOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_event_topic::builders::DeregisterEventTopicOutputBuilder {
         crate::operation::deregister_event_topic::builders::DeregisterEventTopicOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterEventTopicOutput`](crate::operation::deregister_event_topic::DeregisterEventTopicOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterEventTopicOutputBuilder {
     _request_id: Option<String>,
 }

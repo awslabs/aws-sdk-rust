@@ -29,9 +29,7 @@ impl ModifyHsmOutput {
 
 /// A builder for [`ModifyHsmOutput`](crate::operation::modify_hsm::ModifyHsmOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyHsmOutputBuilder {
     pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

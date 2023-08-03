@@ -36,9 +36,7 @@ impl ListTapePoolsInput {
 
 /// A builder for [`ListTapePoolsInput`](crate::operation::list_tape_pools::ListTapePoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapePoolsInputBuilder {
     pub(crate) pool_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListTapePoolsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn set_pool_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ar_ns = input;
         self
     }
@@ -99,10 +94,7 @@ impl ListTapePoolsInputBuilder {
     /// Consumes the builder and constructs a [`ListTapePoolsInput`](crate::operation::list_tape_pools::ListTapePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tape_pools::ListTapePoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_tape_pools::ListTapePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tape_pools::ListTapePoolsInput {
             pool_ar_ns: self.pool_ar_ns,
             marker: self.marker,

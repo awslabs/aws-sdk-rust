@@ -29,7 +29,7 @@ impl GetPredictiveScalingForecastInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder,
+    inner: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder,
 }
 impl GetPredictiveScalingForecastFluentBuilder {
     /// Creates a new `GetPredictiveScalingForecast`.
@@ -40,7 +40,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
         }
     }
     /// Access the GetPredictiveScalingForecast as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
             crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl GetPredictiveScalingForecastFluentBuilder {
             crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -163,10 +146,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
         self
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -182,10 +162,7 @@ impl GetPredictiveScalingForecastFluentBuilder {
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

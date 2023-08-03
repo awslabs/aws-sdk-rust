@@ -35,9 +35,7 @@ impl ListAssetsOutput {
 
 /// A builder for [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetsOutputBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListAssetsOutputBuilder {
         self
     }
     /// <p>Information about the hardware assets.</p>
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetInfo>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetInfo>>) -> Self {
         self.assets = input;
         self
     }

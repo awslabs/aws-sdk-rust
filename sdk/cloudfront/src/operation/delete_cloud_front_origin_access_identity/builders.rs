@@ -5,16 +5,16 @@ pub use crate::operation::delete_cloud_front_origin_access_identity::_delete_clo
 
 impl DeleteCloudFrontOriginAccessIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_cloud_front_origin_access_identity();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeleteCloudFrontOriginAccessIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCloudFrontOriginAccessIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder,
+    inner: crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder,
 }
 impl DeleteCloudFrontOriginAccessIdentityFluentBuilder {
     /// Creates a new `DeleteCloudFrontOriginAccessIdentity`.
@@ -37,15 +37,22 @@ impl DeleteCloudFrontOriginAccessIdentityFluentBuilder {
         }
     }
     /// Access the DeleteCloudFrontOriginAccessIdentity as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl DeleteCloudFrontOriginAccessIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl DeleteCloudFrontOriginAccessIdentityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The origin access identity's ID.</p>

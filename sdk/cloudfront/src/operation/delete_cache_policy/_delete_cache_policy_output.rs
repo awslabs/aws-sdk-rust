@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCachePolicyOutput {
 }
 impl DeleteCachePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCachePolicyOutput`](crate::operation::delete_cache_policy::DeleteCachePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cache_policy::builders::DeleteCachePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_cache_policy::builders::DeleteCachePolicyOutputBuilder {
         crate::operation::delete_cache_policy::builders::DeleteCachePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCachePolicyOutput`](crate::operation::delete_cache_policy::DeleteCachePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCachePolicyOutputBuilder {
     _request_id: Option<String>,
 }

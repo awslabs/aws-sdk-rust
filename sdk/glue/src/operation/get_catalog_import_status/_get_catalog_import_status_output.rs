@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCatalogImportStatusOutput {
 }
 impl GetCatalogImportStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusOutputBuilder {
         crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCatalogImportStatusOutputBuilder {
     pub(crate) import_status: ::std::option::Option<crate::types::CatalogImportStatus>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetCatalogImportStatusOutputBuilder {
         self
     }
     /// <p>The status of the specified catalog migration.</p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CatalogImportStatus>,
-    ) -> Self {
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::CatalogImportStatus>) -> Self {
         self.import_status = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetCatalogImportStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput {
+    pub fn build(self) -> crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput {
         crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput {
             import_status: self.import_status,
             _request_id: self._request_id,

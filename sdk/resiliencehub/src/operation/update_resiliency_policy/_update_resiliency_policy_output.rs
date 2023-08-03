@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateResiliencyPolicyOutput {
 }
 impl UpdateResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyOutput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyOutputBuilder {
         crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResiliencyPolicyOutput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResiliencyPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateResiliencyPolicyOutputBuilder {
         self
     }
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResiliencyPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicy>) -> Self {
         self.policy = input;
         self
     }

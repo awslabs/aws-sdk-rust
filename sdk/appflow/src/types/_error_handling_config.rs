@@ -37,9 +37,7 @@ impl ErrorHandlingConfig {
 
 /// A builder for [`ErrorHandlingConfig`](crate::types::ErrorHandlingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorHandlingConfigBuilder {
     pub(crate) fail_on_first_destination_error: ::std::option::Option<bool>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ErrorHandlingConfigBuilder {
         self
     }
     /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
-    pub fn set_fail_on_first_destination_error(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_fail_on_first_destination_error(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fail_on_first_destination_error = input;
         self
     }
@@ -64,18 +59,12 @@ impl ErrorHandlingConfigBuilder {
         &self.fail_on_first_destination_error
     }
     /// <p> Specifies the Amazon S3 bucket prefix. </p>
-    pub fn bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the Amazon S3 bucket prefix. </p>
-    pub fn set_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_prefix = input;
         self
     }
@@ -100,9 +89,7 @@ impl ErrorHandlingConfigBuilder {
     /// Consumes the builder and constructs a [`ErrorHandlingConfig`](crate::types::ErrorHandlingConfig).
     pub fn build(self) -> crate::types::ErrorHandlingConfig {
         crate::types::ErrorHandlingConfig {
-            fail_on_first_destination_error: self
-                .fail_on_first_destination_error
-                .unwrap_or_default(),
+            fail_on_first_destination_error: self.fail_on_first_destination_error.unwrap_or_default(),
             bucket_prefix: self.bucket_prefix,
             bucket_name: self.bucket_name,
         }

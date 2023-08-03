@@ -38,13 +38,7 @@
 /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AacSpecification {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AacSpecification {
         match s {
             "MPEG2" => AacSpecification::Mpeg2,
             "MPEG4" => AacSpecification::Mpeg4,
-            other => {
-                AacSpecification::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AacSpecification::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

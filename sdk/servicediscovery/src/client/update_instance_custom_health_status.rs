@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`status(CustomHealthStatus)`](crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusFluentBuilder::status) / [`set_status(Option<CustomHealthStatus>)`](crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusFluentBuilder::set_status): <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     /// - On success, responds with [`UpdateInstanceCustomHealthStatusOutput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateInstanceCustomHealthStatusError>`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError)
-    pub fn update_instance_custom_health_status(&self) -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusFluentBuilder{
+    pub fn update_instance_custom_health_status(
+        &self,
+    ) -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusFluentBuilder {
         crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusFluentBuilder::new(self.handle.clone())
     }
 }

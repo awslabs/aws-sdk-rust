@@ -17,9 +17,7 @@ impl super::Client {
     ///   - [`schemas(Option<Vec<String>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>The schemas that match the request pattern. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
-    pub fn list_schemas(
-        &self,
-    ) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
+    pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
         crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
     }
 }

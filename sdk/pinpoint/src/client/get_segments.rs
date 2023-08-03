@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetSegmentsOutput`](crate::operation::get_segments::GetSegmentsOutput) with field(s):
     ///   - [`segments_response(Option<SegmentsResponse>)`](crate::operation::get_segments::GetSegmentsOutput::segments_response): <p>Provides information about all the segments that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetSegmentsError>`](crate::operation::get_segments::GetSegmentsError)
-    pub fn get_segments(
-        &self,
-    ) -> crate::operation::get_segments::builders::GetSegmentsFluentBuilder {
+    pub fn get_segments(&self) -> crate::operation::get_segments::builders::GetSegmentsFluentBuilder {
         crate::operation::get_segments::builders::GetSegmentsFluentBuilder::new(self.handle.clone())
     }
 }

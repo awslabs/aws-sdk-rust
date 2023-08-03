@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_rule_groups::ListRuleGroupsOutput::next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     ///   - [`rule_groups(Option<Vec<RuleGroupMetadata>>)`](crate::operation::list_rule_groups::ListRuleGroupsOutput::rule_groups): <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
     /// - On failure, responds with [`SdkError<ListRuleGroupsError>`](crate::operation::list_rule_groups::ListRuleGroupsError)
-    pub fn list_rule_groups(
-        &self,
-    ) -> crate::operation::list_rule_groups::builders::ListRuleGroupsFluentBuilder {
-        crate::operation::list_rule_groups::builders::ListRuleGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rule_groups(&self) -> crate::operation::list_rule_groups::builders::ListRuleGroupsFluentBuilder {
+        crate::operation::list_rule_groups::builders::ListRuleGroupsFluentBuilder::new(self.handle.clone())
     }
 }

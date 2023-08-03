@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_arn(impl ::std::convert::Into<String>)`](crate::operation::attach_group_policy::builders::AttachGroupPolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::attach_group_policy::builders::AttachGroupPolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput)
     /// - On failure, responds with [`SdkError<AttachGroupPolicyError>`](crate::operation::attach_group_policy::AttachGroupPolicyError)
-    pub fn attach_group_policy(
-        &self,
-    ) -> crate::operation::attach_group_policy::builders::AttachGroupPolicyFluentBuilder {
-        crate::operation::attach_group_policy::builders::AttachGroupPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_group_policy(&self) -> crate::operation::attach_group_policy::builders::AttachGroupPolicyFluentBuilder {
+        crate::operation::attach_group_policy::builders::AttachGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

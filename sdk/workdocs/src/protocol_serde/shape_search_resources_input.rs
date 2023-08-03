@@ -33,10 +33,7 @@ pub fn ser_search_resources_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_search_sort_result::ser_search_sort_result(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_search_sort_result::ser_search_sort_result(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

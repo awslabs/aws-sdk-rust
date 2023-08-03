@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`config_rule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_config_rule::builders::DeleteConfigRuleFluentBuilder::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::operation::delete_config_rule::builders::DeleteConfigRuleFluentBuilder::set_config_rule_name): <p>The name of the Config rule that you want to delete.</p>
     /// - On success, responds with [`DeleteConfigRuleOutput`](crate::operation::delete_config_rule::DeleteConfigRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigRuleError>`](crate::operation::delete_config_rule::DeleteConfigRuleError)
-    pub fn delete_config_rule(
-        &self,
-    ) -> crate::operation::delete_config_rule::builders::DeleteConfigRuleFluentBuilder {
-        crate::operation::delete_config_rule::builders::DeleteConfigRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_config_rule(&self) -> crate::operation::delete_config_rule::builders::DeleteConfigRuleFluentBuilder {
+        crate::operation::delete_config_rule::builders::DeleteConfigRuleFluentBuilder::new(self.handle.clone())
     }
 }

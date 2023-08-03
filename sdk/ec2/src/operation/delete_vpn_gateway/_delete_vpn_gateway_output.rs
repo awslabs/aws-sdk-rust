@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpnGatewayOutput {
 }
 impl DeleteVpnGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpnGatewayOutput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayOutput).
-    pub fn builder() -> crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayOutputBuilder {
         crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpnGatewayOutput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpnGatewayOutputBuilder {
     _request_id: Option<String>,
 }

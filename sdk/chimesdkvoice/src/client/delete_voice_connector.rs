@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorOutput`](crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorError>`](crate::operation::delete_voice_connector::DeleteVoiceConnectorError)
-    pub fn delete_voice_connector(
-        &self,
-    ) -> crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorFluentBuilder {
-        crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_voice_connector(&self) -> crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorFluentBuilder {
+        crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorFluentBuilder::new(self.handle.clone())
     }
 }

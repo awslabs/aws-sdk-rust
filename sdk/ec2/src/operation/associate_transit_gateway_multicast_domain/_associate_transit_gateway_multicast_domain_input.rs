@@ -36,16 +36,14 @@ impl AssociateTransitGatewayMulticastDomainInput {
 }
 impl AssociateTransitGatewayMulticastDomainInput {
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayMulticastDomainInput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput).
-    pub fn builder() -> crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder{
+    pub fn builder() -> crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder {
         crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTransitGatewayMulticastDomainInput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayMulticastDomainInputBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
@@ -54,47 +52,31 @@ pub struct AssociateTransitGatewayMulticastDomainInputBuilder {
 }
 impl AssociateTransitGatewayMulticastDomainInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_id
     }
     /// <p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// Appends an item to `subnet_ids`.
@@ -109,10 +91,7 @@ impl AssociateTransitGatewayMulticastDomainInputBuilder {
         self
     }
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -135,18 +114,19 @@ impl AssociateTransitGatewayMulticastDomainInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayMulticastDomainInput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput {
-                transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
-                ,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+                subnet_ids: self.subnet_ids,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

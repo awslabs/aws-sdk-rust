@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAlgorithmOutput`](crate::operation::create_algorithm::CreateAlgorithmOutput) with field(s):
     ///   - [`algorithm_arn(Option<String>)`](crate::operation::create_algorithm::CreateAlgorithmOutput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
     /// - On failure, responds with [`SdkError<CreateAlgorithmError>`](crate::operation::create_algorithm::CreateAlgorithmError)
-    pub fn create_algorithm(
-        &self,
-    ) -> crate::operation::create_algorithm::builders::CreateAlgorithmFluentBuilder {
-        crate::operation::create_algorithm::builders::CreateAlgorithmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_algorithm(&self) -> crate::operation::create_algorithm::builders::CreateAlgorithmFluentBuilder {
+        crate::operation::create_algorithm::builders::CreateAlgorithmFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`status_message(impl ::std::convert::Into<String>)`](crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder::status_message) / [`set_status_message(Option<String>)`](crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder::set_status_message): <p>The deployment status message for your provisioned resource.</p>
     /// - On success, responds with [`NotifyResourceDeploymentStatusChangeOutput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput)
     /// - On failure, responds with [`SdkError<NotifyResourceDeploymentStatusChangeError>`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError)
-    pub fn notify_resource_deployment_status_change(&self) -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder{
-        crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder::new(self.handle.clone())
+    pub fn notify_resource_deployment_status_change(
+        &self,
+    ) -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder {
+        crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

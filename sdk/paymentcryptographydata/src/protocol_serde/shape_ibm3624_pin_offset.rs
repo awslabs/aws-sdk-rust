@@ -10,9 +10,7 @@ pub fn ser_ibm3624_pin_offset(
         object.key("DecimalizationTable").string(var_2.as_str());
     }
     if let Some(var_3) = &input.pin_validation_data_pad_character {
-        object
-            .key("PinValidationDataPadCharacter")
-            .string(var_3.as_str());
+        object.key("PinValidationDataPadCharacter").string(var_3.as_str());
     }
     if let Some(var_4) = &input.pin_validation_data {
         object.key("PinValidationData").string(var_4.as_str());

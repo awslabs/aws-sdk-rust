@@ -36,18 +36,14 @@ impl GetCoreNetworkChangeSetInput {
 }
 impl GetCoreNetworkChangeSetInput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetInput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetInputBuilder {
         crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoreNetworkChangeSetInput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreNetworkChangeSetInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,
@@ -56,18 +52,12 @@ pub struct GetCoreNetworkChangeSetInputBuilder {
 }
 impl GetCoreNetworkChangeSetInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -124,13 +114,11 @@ impl GetCoreNetworkChangeSetInputBuilder {
         crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput {
-                core_network_id: self.core_network_id,
-                policy_version_id: self.policy_version_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput {
+            core_network_id: self.core_network_id,
+            policy_version_id: self.policy_version_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

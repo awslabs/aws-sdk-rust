@@ -26,7 +26,7 @@ impl ListSpeechSynthesisTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder,
+    inner: crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder,
 }
 impl ListSpeechSynthesisTasksFluentBuilder {
     /// Creates a new `ListSpeechSynthesisTasks`.
@@ -37,7 +37,7 @@ impl ListSpeechSynthesisTasksFluentBuilder {
         }
     }
     /// Access the ListSpeechSynthesisTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSpeechSynthesisTasksFluentBuilder {
             crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSpeechSynthesisTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSpeechSynthesisTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSpeechSynthesisTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListSpeechSynthesisTasksFluentBuilder {
             crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_speech_synthesis_tasks::paginator::ListSpeechSynthesisTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_speech_synthesis_tasks::paginator::ListSpeechSynthesisTasksPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_speech_synthesis_tasks::paginator::ListSpeechSynthesisTasksPaginator {
         crate::operation::list_speech_synthesis_tasks::paginator::ListSpeechSynthesisTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>

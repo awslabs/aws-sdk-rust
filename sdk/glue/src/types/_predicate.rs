@@ -30,9 +30,7 @@ impl Predicate {
 
 /// A builder for [`Predicate`](crate::types::Predicate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredicateBuilder {
     pub(crate) logical: ::std::option::Option<crate::types::Logical>,
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
@@ -64,17 +62,12 @@ impl PredicateBuilder {
         self
     }
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>) -> Self {
         self.conditions = input;
         self
     }
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
-    pub fn get_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).

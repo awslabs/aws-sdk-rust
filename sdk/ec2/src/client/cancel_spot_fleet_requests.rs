@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`successful_fleet_requests(Option<Vec<CancelSpotFleetRequestsSuccessItem>>)`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput::successful_fleet_requests): <p>Information about the Spot Fleet requests that are successfully canceled.</p>
     ///   - [`unsuccessful_fleet_requests(Option<Vec<CancelSpotFleetRequestsErrorItem>>)`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput::unsuccessful_fleet_requests): <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
     /// - On failure, responds with [`SdkError<CancelSpotFleetRequestsError>`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError)
-    pub fn cancel_spot_fleet_requests(
-        &self,
-    ) -> crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsFluentBuilder
-    {
+    pub fn cancel_spot_fleet_requests(&self) -> crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsFluentBuilder {
         crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsFluentBuilder::new(self.handle.clone())
     }
 }

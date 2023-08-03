@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for GetUsagePlanKeysOutput {
 }
 impl GetUsagePlanKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetUsagePlanKeysOutput`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput).
-    pub fn builder(
-    ) -> crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysOutputBuilder {
+    pub fn builder() -> crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysOutputBuilder {
         crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsagePlanKeysOutput`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlanKeysOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -58,10 +55,7 @@ impl GetUsagePlanKeysOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>) -> Self {
         self.items = input;
         self
     }

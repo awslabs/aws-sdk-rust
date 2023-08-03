@@ -56,9 +56,7 @@ impl ListSolNetworkPackageInfo {
         self.nsd_onboarding_state.as_ref()
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn nsd_operational_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NsdOperationalState> {
+    pub fn nsd_operational_state(&self) -> ::std::option::Option<&crate::types::NsdOperationalState> {
         self.nsd_operational_state.as_ref()
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
@@ -103,9 +101,7 @@ impl ListSolNetworkPackageInfo {
 
 /// A builder for [`ListSolNetworkPackageInfo`](crate::types::ListSolNetworkPackageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkPackageInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -155,17 +151,12 @@ impl ListSolNetworkPackageInfoBuilder {
         self
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_onboarding_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsdOnboardingState>,
-    ) -> Self {
+    pub fn set_nsd_onboarding_state(mut self, input: ::std::option::Option<crate::types::NsdOnboardingState>) -> Self {
         self.nsd_onboarding_state = input;
         self
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    pub fn get_nsd_onboarding_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::NsdOnboardingState> {
+    pub fn get_nsd_onboarding_state(&self) -> &::std::option::Option<crate::types::NsdOnboardingState> {
         &self.nsd_onboarding_state
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
@@ -174,17 +165,12 @@ impl ListSolNetworkPackageInfoBuilder {
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsdOperationalState>,
-    ) -> Self {
+    pub fn set_nsd_operational_state(mut self, input: ::std::option::Option<crate::types::NsdOperationalState>) -> Self {
         self.nsd_operational_state = input;
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn get_nsd_operational_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+    pub fn get_nsd_operational_state(&self) -> &::std::option::Option<crate::types::NsdOperationalState> {
         &self.nsd_operational_state
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
@@ -193,10 +179,7 @@ impl ListSolNetworkPackageInfoBuilder {
         self
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_usage_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsdUsageState>,
-    ) -> Self {
+    pub fn set_nsd_usage_state(mut self, input: ::std::option::Option<crate::types::NsdUsageState>) -> Self {
         self.nsd_usage_state = input;
         self
     }
@@ -261,18 +244,12 @@ impl ListSolNetworkPackageInfoBuilder {
         &self.nsd_designer
     }
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
-    pub fn nsd_invariant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nsd_invariant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_invariant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
-    pub fn set_nsd_invariant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nsd_invariant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_invariant_id = input;
         self
     }
@@ -292,17 +269,12 @@ impl ListSolNetworkPackageInfoBuilder {
         self
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn set_vnf_pkg_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vnf_pkg_ids = input;
         self
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn get_vnf_pkg_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vnf_pkg_ids
     }
     /// <p>The metadata of the network package.</p>
@@ -311,17 +283,12 @@ impl ListSolNetworkPackageInfoBuilder {
         self
     }
     /// <p>The metadata of the network package.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ListSolNetworkPackageMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolNetworkPackageMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The metadata of the network package.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListSolNetworkPackageMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolNetworkPackageMetadata> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolNetworkPackageInfo`](crate::types::ListSolNetworkPackageInfo).

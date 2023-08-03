@@ -28,9 +28,7 @@ impl GetSubjectOutput {
 
 /// A builder for [`GetSubjectOutput`](crate::operation::get_subject::GetSubjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubjectOutputBuilder {
     pub(crate) subject: ::std::option::Option<crate::types::SubjectDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetSubjectOutputBuilder {
         self
     }
     /// <p>The state of the subject after a read or write operation.</p>
-    pub fn set_subject(
-        mut self,
-        input: ::std::option::Option<crate::types::SubjectDetail>,
-    ) -> Self {
+    pub fn set_subject(mut self, input: ::std::option::Option<crate::types::SubjectDetail>) -> Self {
         self.subject = input;
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`fargate_profile_names(Option<Vec<String>>)`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput::fargate_profile_names): <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListFargateProfilesError>`](crate::operation::list_fargate_profiles::ListFargateProfilesError)
-    pub fn list_fargate_profiles(
-        &self,
-    ) -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder {
-        crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fargate_profiles(&self) -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder {
+        crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::new(self.handle.clone())
     }
 }

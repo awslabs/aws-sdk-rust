@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEngineDefaultParametersOutput
 }
 impl DescribeEngineDefaultParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput).
-    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersOutputBuilder {
         crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersOutputBuilder {
     pub(crate) engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeEngineDefaultParametersOutputBuilder {
         self
     }
     /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
-    pub fn set_engine_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineDefaults>,
-    ) -> Self {
+    pub fn set_engine_defaults(mut self, input: ::std::option::Option<crate::types::EngineDefaults>) -> Self {
         self.engine_defaults = input;
         self
     }
@@ -63,13 +58,9 @@ impl DescribeEngineDefaultParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput
-    {
+    pub fn build(self) -> crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput {
         crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput {
-            engine_defaults: self.engine_defaults
-            ,
+            engine_defaults: self.engine_defaults,
             _request_id: self._request_id,
         }
     }

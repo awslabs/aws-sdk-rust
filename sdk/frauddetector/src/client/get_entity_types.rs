@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entity_types(Option<Vec<EntityType>>)`](crate::operation::get_entity_types::GetEntityTypesOutput::entity_types): <p>An array of entity types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_entity_types::GetEntityTypesOutput::next_token): <p>The next page token.</p>
     /// - On failure, responds with [`SdkError<GetEntityTypesError>`](crate::operation::get_entity_types::GetEntityTypesError)
-    pub fn get_entity_types(
-        &self,
-    ) -> crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder {
-        crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_entity_types(&self) -> crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder {
+        crate::operation::get_entity_types::builders::GetEntityTypesFluentBuilder::new(self.handle.clone())
     }
 }

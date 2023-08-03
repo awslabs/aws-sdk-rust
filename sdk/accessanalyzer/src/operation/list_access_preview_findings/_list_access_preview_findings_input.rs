@@ -11,9 +11,7 @@ pub struct ListAccessPreviewFindingsInput {
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>Criteria to filter the returned findings.</p>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -31,11 +29,7 @@ impl ListAccessPreviewFindingsInput {
         self.analyzer_arn.as_deref()
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>A token used for pagination of results returned.</p>
@@ -49,39 +43,29 @@ impl ListAccessPreviewFindingsInput {
 }
 impl ListAccessPreviewFindingsInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsInput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput).
-    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder{
+    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder {
         crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPreviewFindingsInput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsInputBuilder {
     pub(crate) access_preview_id: ::std::option::Option<::std::string::String>,
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListAccessPreviewFindingsInputBuilder {
     /// <p>The unique ID for the access preview.</p>
-    pub fn access_preview_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_preview_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_preview_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the access preview.</p>
-    pub fn set_access_preview_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_preview_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_preview_id = input;
         self
     }
@@ -108,32 +92,19 @@ impl ListAccessPreviewFindingsInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// <p>A token used for pagination of results returned.</p>
@@ -171,14 +142,12 @@ impl ListAccessPreviewFindingsInputBuilder {
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput {
-                access_preview_id: self.access_preview_id,
-                analyzer_arn: self.analyzer_arn,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput {
+            access_preview_id: self.access_preview_id,
+            analyzer_arn: self.analyzer_arn,
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

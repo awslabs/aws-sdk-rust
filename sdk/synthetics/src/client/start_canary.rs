@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_canary::builders::StartCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_canary::builders::StartCanaryFluentBuilder::set_name): <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     /// - On success, responds with [`StartCanaryOutput`](crate::operation::start_canary::StartCanaryOutput)
     /// - On failure, responds with [`SdkError<StartCanaryError>`](crate::operation::start_canary::StartCanaryError)
-    pub fn start_canary(
-        &self,
-    ) -> crate::operation::start_canary::builders::StartCanaryFluentBuilder {
+    pub fn start_canary(&self) -> crate::operation::start_canary::builders::StartCanaryFluentBuilder {
         crate::operation::start_canary::builders::StartCanaryFluentBuilder::new(self.handle.clone())
     }
 }

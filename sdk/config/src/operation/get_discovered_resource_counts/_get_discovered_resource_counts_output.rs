@@ -47,16 +47,14 @@ impl ::aws_http::request_id::RequestId for GetDiscoveredResourceCountsOutput {
 }
 impl GetDiscoveredResourceCountsOutput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredResourceCountsOutput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput).
-    pub fn builder() -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsOutputBuilder{
+    pub fn builder() -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsOutputBuilder {
         crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDiscoveredResourceCountsOutput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiscoveredResourceCountsOutputBuilder {
     pub(crate) total_discovered_resources: ::std::option::Option<i64>,
     pub(crate) resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>>,
@@ -108,17 +106,12 @@ impl GetDiscoveredResourceCountsOutputBuilder {
         self
     }
     /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
-    pub fn set_resource_counts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>>,
-    ) -> Self {
+    pub fn set_resource_counts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>>) -> Self {
         self.resource_counts = input;
         self
     }
     /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
-    pub fn get_resource_counts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>> {
+    pub fn get_resource_counts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>> {
         &self.resource_counts
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -145,9 +138,7 @@ impl GetDiscoveredResourceCountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDiscoveredResourceCountsOutput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput {
+    pub fn build(self) -> crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput {
         crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput {
             total_discovered_resources: self.total_discovered_resources.unwrap_or_default(),
             resource_counts: self.resource_counts,

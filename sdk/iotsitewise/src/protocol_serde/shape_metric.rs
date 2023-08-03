@@ -12,10 +12,7 @@ pub fn ser_metric(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_expression_variable::ser_expression_variable(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_expression_variable::ser_expression_variable(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_metric(
     if let Some(var_8) = &input.processing_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("processingConfig").start_object();
-        crate::protocol_serde::shape_metric_processing_config::ser_metric_processing_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_metric_processing_config::ser_metric_processing_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())
@@ -43,12 +37,7 @@ pub(crate) fn de_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Metric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,52 +47,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "expression" => {
-                                builder = builder.set_expression(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "expression" => {
+                            builder = builder.set_expression(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "variables" => {
-                                builder = builder.set_variables(
-                                    crate::protocol_serde::shape_expression_variables::de_expression_variables(tokens)?
-                                );
-                            }
-                            "window" => {
-                                builder = builder.set_window(
-                                    crate::protocol_serde::shape_metric_window::de_metric_window(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "processingConfig" => {
-                                builder = builder.set_processing_config(
-                                    crate::protocol_serde::shape_metric_processing_config::de_metric_processing_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "variables" => {
+                            builder = builder.set_variables(crate::protocol_serde::shape_expression_variables::de_expression_variables(tokens)?);
+                        }
+                        "window" => {
+                            builder = builder.set_window(crate::protocol_serde::shape_metric_window::de_metric_window(tokens)?);
+                        }
+                        "processingConfig" => {
+                            builder = builder.set_processing_config(
+                                crate::protocol_serde::shape_metric_processing_config::de_metric_processing_config(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

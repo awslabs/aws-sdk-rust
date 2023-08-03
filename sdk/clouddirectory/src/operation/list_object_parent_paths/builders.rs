@@ -38,10 +38,7 @@ impl ListObjectParentPathsFluentBuilder {
         }
     }
     /// Access the ListObjectParentPaths as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_object_parent_paths::builders::ListObjectParentPathsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_object_parent_paths::builders::ListObjectParentPathsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListObjectParentPathsFluentBuilder {
             crate::operation::list_object_parent_paths::ListObjectParentPaths,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_parent_paths::ListObjectParentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_parent_paths::ListObjectParentPathsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListObjectParentPathsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListObjectParentPathsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_parent_paths::ListObjectParentPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_parent_paths::ListObjectParentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_parent_paths::ListObjectParentPathsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListObjectParentPathsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_parent_paths::ListObjectParentPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_parent_paths::ListObjectParentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_parent_paths::ListObjectParentPathsError>,
     > {
         self.send_middleware().await
     }
@@ -118,36 +106,23 @@ impl ListObjectParentPathsFluentBuilder {
             crate::operation::list_object_parent_paths::ListObjectParentPaths,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_parent_paths::ListObjectParentPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_parent_paths::ListObjectParentPathsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator {
-        crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator {
+        crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the directory to which the parent path applies.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory to which the parent path applies.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -161,10 +136,7 @@ impl ListObjectParentPathsFluentBuilder {
         self
     }
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }

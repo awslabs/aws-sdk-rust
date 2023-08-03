@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTaskDefinitionFamiliesOutput {
 }
 impl ListTaskDefinitionFamiliesOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskDefinitionFamiliesOutput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput).
-    pub fn builder() -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesOutputBuilder{
+    pub fn builder() -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesOutputBuilder {
         crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTaskDefinitionFamiliesOutput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskDefinitionFamiliesOutputBuilder {
     pub(crate) families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListTaskDefinitionFamiliesOutputBuilder {
         self
     }
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
-    pub fn set_families(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_families(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.families = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListTaskDefinitionFamiliesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTaskDefinitionFamiliesOutput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput {
+    pub fn build(self) -> crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput {
         crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput {
             families: self.families,
             next_token: self.next_token,

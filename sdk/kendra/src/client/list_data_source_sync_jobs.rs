@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`history(Option<Vec<DataSourceSyncJob>>)`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput::history): <p>A history of synchronization jobs for the data source connector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
     /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError)
-    pub fn list_data_source_sync_jobs(
-        &self,
-    ) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder
-    {
+    pub fn list_data_source_sync_jobs(&self) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder {
         crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,26 +23,18 @@ impl LocalNavigationConfiguration {
 
 /// A builder for [`LocalNavigationConfiguration`](crate::types::LocalNavigationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalNavigationConfigurationBuilder {
     pub(crate) target_sheet_id: ::std::option::Option<::std::string::String>,
 }
 impl LocalNavigationConfigurationBuilder {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
-    pub fn target_sheet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_sheet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
-    pub fn set_target_sheet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_sheet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_sheet_id = input;
         self
     }

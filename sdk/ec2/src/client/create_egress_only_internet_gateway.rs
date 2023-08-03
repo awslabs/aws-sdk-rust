@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`egress_only_internet_gateway(Option<EgressOnlyInternetGateway>)`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput::egress_only_internet_gateway): <p>Information about the egress-only internet gateway.</p>
     /// - On failure, responds with [`SdkError<CreateEgressOnlyInternetGatewayError>`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError)
-    pub fn create_egress_only_internet_gateway(&self) -> crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayFluentBuilder{
+    pub fn create_egress_only_internet_gateway(
+        &self,
+    ) -> crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayFluentBuilder {
         crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayFluentBuilder::new(self.handle.clone())
     }
 }

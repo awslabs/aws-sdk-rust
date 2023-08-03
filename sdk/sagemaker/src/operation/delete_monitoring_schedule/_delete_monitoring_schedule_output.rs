@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMonitoringScheduleOutput {
 }
 impl DeleteMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleOutputBuilder {
         crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMonitoringScheduleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteMonitoringScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput {
+    pub fn build(self) -> crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput {
         crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput {
             _request_id: self._request_id,
         }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHsmClientCertificateOutput {
 }
 impl DeleteHsmClientCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHsmClientCertificateOutput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput).
-    pub fn builder() -> crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateOutputBuilder {
         crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHsmClientCertificateOutput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHsmClientCertificateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteHsmClientCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteHsmClientCertificateOutput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput {
+    pub fn build(self) -> crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput {
         crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput {
             _request_id: self._request_id,
         }

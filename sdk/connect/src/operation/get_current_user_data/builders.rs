@@ -10,10 +10,7 @@ impl GetCurrentUserDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_current_user_data::GetCurrentUserDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_current_user_data::GetCurrentUserDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_current_user_data::GetCurrentUserDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_current_user_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetCurrentUserDataFluentBuilder {
         }
     }
     /// Access the GetCurrentUserData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetCurrentUserDataFluentBuilder {
             crate::operation::get_current_user_data::GetCurrentUserData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_current_user_data::GetCurrentUserDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_current_user_data::GetCurrentUserDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetCurrentUserDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetCurrentUserDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_current_user_data::GetCurrentUserDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_current_user_data::GetCurrentUserDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_current_user_data::GetCurrentUserDataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetCurrentUserDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_current_user_data::GetCurrentUserDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_current_user_data::GetCurrentUserDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_current_user_data::GetCurrentUserDataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetCurrentUserDataFluentBuilder {
             crate::operation::get_current_user_data::GetCurrentUserData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_current_user_data::GetCurrentUserDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_current_user_data::GetCurrentUserDataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_current_user_data::paginator::GetCurrentUserDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_current_user_data::paginator::GetCurrentUserDataPaginator {
-        crate::operation::get_current_user_data::paginator::GetCurrentUserDataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_current_user_data::paginator::GetCurrentUserDataPaginator {
+        crate::operation::get_current_user_data::paginator::GetCurrentUserDataPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,10 +150,7 @@ impl GetCurrentUserDataFluentBuilder {
     /// </ul>
     /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDataFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::UserDataFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

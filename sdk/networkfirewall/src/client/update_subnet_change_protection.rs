@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`firewall_name(Option<String>)`](crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionOutput::firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     ///   - [`subnet_change_protection(bool)`](crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionOutput::subnet_change_protection): <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSubnetChangeProtectionError>`](crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError)
-    pub fn update_subnet_change_protection(&self) -> crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionFluentBuilder{
+    pub fn update_subnet_change_protection(
+        &self,
+    ) -> crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionFluentBuilder {
         crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionFluentBuilder::new(self.handle.clone())
     }
 }

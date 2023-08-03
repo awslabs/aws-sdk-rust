@@ -10,10 +10,7 @@ impl SplitShardInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::split_shard::SplitShardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::split_shard::SplitShardError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::split_shard::SplitShardError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.split_shard();
         fluent_builder.inner = self;
@@ -56,10 +53,7 @@ impl SplitShardFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::split_shard::SplitShard,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::split_shard::SplitShard, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::split_shard::SplitShardError>,
     > {
         let handle = self.handle.clone();
@@ -70,10 +64,7 @@ impl SplitShardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,10 +106,7 @@ impl SplitShardFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::split_shard::SplitShard,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::split_shard::SplitShard, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::split_shard::SplitShardError>,
     > {
         self.customize_middleware().await
@@ -138,18 +126,12 @@ impl SplitShardFluentBuilder {
         self.inner.get_stream_name()
     }
     /// <p>The shard ID of the shard to split.</p>
-    pub fn shard_to_split(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_to_split(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shard_to_split(input.into());
         self
     }
     /// <p>The shard ID of the shard to split.</p>
-    pub fn set_shard_to_split(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shard_to_split(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shard_to_split(input);
         self
     }
@@ -158,18 +140,12 @@ impl SplitShardFluentBuilder {
         self.inner.get_shard_to_split()
     }
     /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    pub fn new_starting_hash_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_starting_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_starting_hash_key(input.into());
         self
     }
     /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    pub fn set_new_starting_hash_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_starting_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_starting_hash_key(input);
         self
     }

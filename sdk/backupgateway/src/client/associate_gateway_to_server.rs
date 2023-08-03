@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateGatewayToServerOutput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of a gateway.</p>
     /// - On failure, responds with [`SdkError<AssociateGatewayToServerError>`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerError)
-    pub fn associate_gateway_to_server(&self) -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerFluentBuilder{
+    pub fn associate_gateway_to_server(&self) -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerFluentBuilder {
         crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerFluentBuilder::new(self.handle.clone())
     }
 }

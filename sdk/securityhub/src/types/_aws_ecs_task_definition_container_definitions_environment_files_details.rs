@@ -23,16 +23,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -67,9 +65,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
             r#type: self.r#type,
             value: self.value,

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDomainAssociationOutput`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput) with field(s):
     ///   - [`domain_association(Option<DomainAssociation>)`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput::domain_association): <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     /// - On failure, responds with [`SdkError<DeleteDomainAssociationError>`](crate::operation::delete_domain_association::DeleteDomainAssociationError)
-    pub fn delete_domain_association(
-        &self,
-    ) -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder
-    {
+    pub fn delete_domain_association(&self) -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder {
         crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::new(self.handle.clone())
     }
 }

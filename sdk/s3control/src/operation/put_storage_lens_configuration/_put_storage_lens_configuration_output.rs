@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutStorageLensConfigurationOutput {
 }
 impl PutStorageLensConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationOutput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput).
-    pub fn builder() -> crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationOutputBuilder {
         crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutStorageLensConfigurationOutput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStorageLensConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutStorageLensConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutStorageLensConfigurationOutput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput {
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput {
             _request_id: self._request_id,
         }

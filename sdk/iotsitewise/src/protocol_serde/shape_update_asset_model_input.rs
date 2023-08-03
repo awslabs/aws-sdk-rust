@@ -24,10 +24,7 @@ pub fn ser_update_asset_model_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_asset_model_hierarchy::ser_asset_model_hierarchy(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_asset_model_hierarchy::ser_asset_model_hierarchy(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -42,10 +39,7 @@ pub fn ser_update_asset_model_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_asset_model_property::ser_asset_model_property(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_asset_model_property::ser_asset_model_property(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

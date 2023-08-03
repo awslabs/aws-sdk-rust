@@ -10,10 +10,7 @@ impl SubscribeToEventInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::subscribe_to_event::SubscribeToEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_event::SubscribeToEventError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_event::SubscribeToEventError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.subscribe_to_event();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SubscribeToEventFluentBuilder {
         }
     }
     /// Access the SubscribeToEvent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SubscribeToEventFluentBuilder {
             crate::operation::subscribe_to_event::SubscribeToEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_event::SubscribeToEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_event::SubscribeToEventError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SubscribeToEventFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SubscribeToEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::subscribe_to_event::SubscribeToEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_event::SubscribeToEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_event::SubscribeToEventError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SubscribeToEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::subscribe_to_event::SubscribeToEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_event::SubscribeToEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_event::SubscribeToEventError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SubscribeToEventFluentBuilder {
             crate::operation::subscribe_to_event::SubscribeToEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_event::SubscribeToEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_event::SubscribeToEventError>,
     > {
         self.customize_middleware().await
     }

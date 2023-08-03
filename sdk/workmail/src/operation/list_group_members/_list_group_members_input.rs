@@ -36,17 +36,14 @@ impl ListGroupMembersInput {
 }
 impl ListGroupMembersInput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembersInput`](crate::operation::list_group_members::ListGroupMembersInput).
-    pub fn builder() -> crate::operation::list_group_members::builders::ListGroupMembersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_group_members::builders::ListGroupMembersInputBuilder {
         crate::operation::list_group_members::builders::ListGroupMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupMembersInput`](crate::operation::list_group_members::ListGroupMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupMembersInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListGroupMembersInputBuilder {
 }
 impl ListGroupMembersInputBuilder {
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl ListGroupMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupMembersInput`](crate::operation::list_group_members::ListGroupMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_group_members::ListGroupMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_group_members::ListGroupMembersInput {
-                organization_id: self.organization_id,
-                group_id: self.group_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_group_members::ListGroupMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_group_members::ListGroupMembersInput {
+            organization_id: self.organization_id,
+            group_id: self.group_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

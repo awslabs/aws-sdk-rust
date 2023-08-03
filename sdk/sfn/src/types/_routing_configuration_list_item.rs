@@ -32,9 +32,7 @@ impl RoutingConfigurationListItem {
 
 /// A builder for [`RoutingConfigurationListItem`](crate::types::RoutingConfigurationListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingConfigurationListItemBuilder {
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,
@@ -42,19 +40,13 @@ pub struct RoutingConfigurationListItemBuilder {
 impl RoutingConfigurationListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
-    pub fn state_machine_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
-    pub fn set_state_machine_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_version_arn = input;
         self
     }

@@ -31,7 +31,7 @@ impl CreateAccountSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccountSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_account_subscription::builders::CreateAccountSubscriptionInputBuilder,
+    inner: crate::operation::create_account_subscription::builders::CreateAccountSubscriptionInputBuilder,
 }
 impl CreateAccountSubscriptionFluentBuilder {
     /// Creates a new `CreateAccountSubscription`.
@@ -42,7 +42,7 @@ impl CreateAccountSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateAccountSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_account_subscription::builders::CreateAccountSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_account_subscription::builders::CreateAccountSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl CreateAccountSubscriptionFluentBuilder {
             crate::operation::create_account_subscription::CreateAccountSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_subscription::CreateAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_subscription::CreateAccountSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl CreateAccountSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl CreateAccountSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_subscription::CreateAccountSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_subscription::CreateAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_subscription::CreateAccountSubscriptionError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl CreateAccountSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_subscription::CreateAccountSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_subscription::CreateAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_subscription::CreateAccountSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl CreateAccountSubscriptionFluentBuilder {
             crate::operation::create_account_subscription::CreateAccountSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_subscription::CreateAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_subscription::CreateAccountSubscriptionError>,
     > {
         self.customize_middleware().await
     }
@@ -162,42 +151,28 @@ impl CreateAccountSubscriptionFluentBuilder {
     }
     /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
-    pub fn authentication_method(
-        mut self,
-        input: crate::types::AuthenticationMethodOption,
-    ) -> Self {
+    pub fn authentication_method(mut self, input: crate::types::AuthenticationMethodOption) -> Self {
         self.inner = self.inner.authentication_method(input);
         self
     }
     /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
-    pub fn set_authentication_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMethodOption>,
-    ) -> Self {
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethodOption>) -> Self {
         self.inner = self.inner.set_authentication_method(input);
         self
     }
     /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
-    pub fn get_authentication_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMethodOption> {
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethodOption> {
         self.inner.get_authentication_method()
     }
     /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -220,18 +195,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self.inner.get_account_name()
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
-    pub fn notification_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_email(input.into());
         self
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
-    pub fn set_notification_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_email(input);
         self
     }
@@ -240,18 +209,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self.inner.get_notification_email()
     }
     /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
-    pub fn active_directory_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.active_directory_name(input.into());
         self
     }
     /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
-    pub fn set_active_directory_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_active_directory_name(input);
         self
     }
@@ -297,17 +260,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self
     }
     /// <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
-    pub fn set_admin_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_admin_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_admin_group(input);
         self
     }
     /// <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
-    pub fn get_admin_group(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_admin_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_admin_group()
     }
     /// Appends an item to `AuthorGroup`.
@@ -320,17 +278,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self
     }
     /// <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
-    pub fn set_author_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_author_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_author_group(input);
         self
     }
     /// <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
-    pub fn get_author_group(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_author_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_author_group()
     }
     /// Appends an item to `ReaderGroup`.
@@ -343,17 +296,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self
     }
     /// <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_reader_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reader_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_reader_group(input);
         self
     }
     /// <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn get_reader_group(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reader_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reader_group()
     }
     /// <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
@@ -385,18 +333,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self.inner.get_last_name()
     }
     /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -405,18 +347,12 @@ impl CreateAccountSubscriptionFluentBuilder {
         self.inner.get_email_address()
     }
     /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    pub fn contact_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_number(input.into());
         self
     }
     /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    pub fn set_contact_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_number(input);
         self
     }

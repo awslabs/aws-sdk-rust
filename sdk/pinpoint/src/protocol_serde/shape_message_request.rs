@@ -10,10 +10,7 @@ pub fn ser_message_request(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_address_configuration::ser_address_configuration(
-                    &mut object_5,
-                    value_4,
-                )?;
+                crate::protocol_serde::shape_address_configuration::ser_address_configuration(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }
@@ -51,10 +48,7 @@ pub fn ser_message_request(
     if let Some(var_17) = &input.template_configuration {
         #[allow(unused_mut)]
         let mut object_18 = object.key("TemplateConfiguration").start_object();
-        crate::protocol_serde::shape_template_configuration::ser_template_configuration(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_template_configuration::ser_template_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.trace_id {

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateWorkloadShareOutput {
 }
 impl CreateWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkloadShareOutput`](crate::operation::create_workload_share::CreateWorkloadShareOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workload_share::builders::CreateWorkloadShareOutputBuilder {
-        crate::operation::create_workload_share::builders::CreateWorkloadShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_workload_share::builders::CreateWorkloadShareOutputBuilder {
+        crate::operation::create_workload_share::builders::CreateWorkloadShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkloadShareOutput`](crate::operation::create_workload_share::CreateWorkloadShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkloadShareOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_id: ::std::option::Option<::std::string::String>,

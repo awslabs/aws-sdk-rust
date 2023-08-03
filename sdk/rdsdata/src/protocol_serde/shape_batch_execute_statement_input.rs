@@ -15,10 +15,7 @@ pub fn ser_batch_execute_statement_input(
                     {
                         #[allow(unused_mut)]
                         let mut object_7 = array_5.value().start_object();
-                        crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(
-                            &mut object_7,
-                            item_6,
-                        )?;
+                        crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_7, item_6)?;
                         object_7.finish();
                     }
                 }

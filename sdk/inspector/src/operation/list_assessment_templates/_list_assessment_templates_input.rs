@@ -38,21 +38,16 @@ impl ListAssessmentTemplatesInput {
 }
 impl ListAssessmentTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentTemplatesInput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder {
         crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentTemplatesInput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentTemplatesInputBuilder {
-    pub(crate) assessment_target_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter: ::std::option::Option<crate::types::AssessmentTemplateFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -63,27 +58,19 @@ impl ListAssessmentTemplatesInputBuilder {
     /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
     ///
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn assessment_target_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_target_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_target_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn set_assessment_target_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_target_arns = input;
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn get_assessment_target_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_target_arns
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
@@ -94,10 +81,7 @@ impl ListAssessmentTemplatesInputBuilder {
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentTemplateFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AssessmentTemplateFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -141,13 +125,11 @@ impl ListAssessmentTemplatesInputBuilder {
         crate::operation::list_assessment_templates::ListAssessmentTemplatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesInput {
-                assessment_target_arns: self.assessment_target_arns,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_assessment_templates::ListAssessmentTemplatesInput {
+            assessment_target_arns: self.assessment_target_arns,
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

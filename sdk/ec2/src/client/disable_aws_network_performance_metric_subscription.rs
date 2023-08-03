@@ -11,7 +11,10 @@ impl super::Client {
     /// - On success, responds with [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput) with field(s):
     ///   - [`output(Option<bool>)`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput::output): <p>Indicates whether the unsubscribe action was successful.</p>
     /// - On failure, responds with [`SdkError<DisableAwsNetworkPerformanceMetricSubscriptionError>`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError)
-    pub fn disable_aws_network_performance_metric_subscription(&self) -> crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder{
+    pub fn disable_aws_network_performance_metric_subscription(
+        &self,
+    ) -> crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder
+    {
         crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

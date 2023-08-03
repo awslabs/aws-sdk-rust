@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::list_managed_endpoints::ListManagedEndpointsOutput::endpoints): <p>The managed endpoints to be listed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_endpoints::ListManagedEndpointsOutput::next_token): <p> The token for the next set of endpoints to return. </p>
     /// - On failure, responds with [`SdkError<ListManagedEndpointsError>`](crate::operation::list_managed_endpoints::ListManagedEndpointsError)
-    pub fn list_managed_endpoints(
-        &self,
-    ) -> crate::operation::list_managed_endpoints::builders::ListManagedEndpointsFluentBuilder {
-        crate::operation::list_managed_endpoints::builders::ListManagedEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_managed_endpoints(&self) -> crate::operation::list_managed_endpoints::builders::ListManagedEndpointsFluentBuilder {
+        crate::operation::list_managed_endpoints::builders::ListManagedEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

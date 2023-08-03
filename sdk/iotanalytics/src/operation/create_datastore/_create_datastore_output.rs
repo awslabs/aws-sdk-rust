@@ -42,9 +42,7 @@ impl CreateDatastoreOutput {
 
 /// A builder for [`CreateDatastoreOutput`](crate::operation::create_datastore::CreateDatastoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatastoreOutputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct CreateDatastoreOutputBuilder {
 }
 impl CreateDatastoreOutputBuilder {
     /// <p>The name of the data store.</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data store.</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_name = input;
         self
     }
@@ -73,18 +65,12 @@ impl CreateDatastoreOutputBuilder {
         &self.datastore_name
     }
     /// <p>The ARN of the data store.</p>
-    pub fn datastore_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the data store.</p>
-    pub fn set_datastore_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_arn = input;
         self
     }
@@ -98,10 +84,7 @@ impl CreateDatastoreOutputBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the data store.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }

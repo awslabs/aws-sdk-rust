@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLicenseManagerReportGeneratorOu
 }
 impl DeleteLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorOutput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorOutputBuilder{
+    pub fn builder() -> crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorOutputBuilder {
         crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLicenseManagerReportGeneratorOutput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteLicenseManagerReportGeneratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorOutput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput).
-    pub fn build(self) -> crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput{
+    pub fn build(self) -> crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput {
         crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput {
             _request_id: self._request_id,
         }

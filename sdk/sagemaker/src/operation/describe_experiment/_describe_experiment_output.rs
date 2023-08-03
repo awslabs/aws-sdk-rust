@@ -77,17 +77,14 @@ impl ::aws_http::request_id::RequestId for DescribeExperimentOutput {
 }
 impl DescribeExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExperimentOutput`](crate::operation::describe_experiment::DescribeExperimentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_experiment::builders::DescribeExperimentOutputBuilder {
+    pub fn builder() -> crate::operation::describe_experiment::builders::DescribeExperimentOutputBuilder {
         crate::operation::describe_experiment::builders::DescribeExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExperimentOutput`](crate::operation::describe_experiment::DescribeExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExperimentOutputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,
@@ -102,18 +99,12 @@ pub struct DescribeExperimentOutputBuilder {
 }
 impl DescribeExperimentOutputBuilder {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -122,18 +113,12 @@ impl DescribeExperimentOutputBuilder {
         &self.experiment_name
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn set_experiment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_arn = input;
         self
     }
@@ -161,10 +146,7 @@ impl DescribeExperimentOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ExperimentSource>) -> Self {
         self.source = input;
         self
     }
@@ -192,10 +174,7 @@ impl DescribeExperimentOutputBuilder {
         self
     }
     /// <p>When the experiment was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -209,10 +188,7 @@ impl DescribeExperimentOutputBuilder {
         self
     }
     /// <p>Who created the experiment.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -226,10 +202,7 @@ impl DescribeExperimentOutputBuilder {
         self
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -243,10 +216,7 @@ impl DescribeExperimentOutputBuilder {
         self
     }
     /// <p>Who last modified the experiment.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }

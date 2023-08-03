@@ -21,8 +21,7 @@ pub struct AuthEventType {
     pub event_risk: ::std::option::Option<crate::types::EventRiskType>,
     /// <p>The challenge responses.</p>
     #[doc(hidden)]
-    pub challenge_responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
+    pub challenge_responses: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
     #[doc(hidden)]
     pub event_context_data: ::std::option::Option<crate::types::EventContextDataType>,
@@ -52,9 +51,7 @@ impl AuthEventType {
         self.event_risk.as_ref()
     }
     /// <p>The challenge responses.</p>
-    pub fn challenge_responses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChallengeResponseType]> {
+    pub fn challenge_responses(&self) -> ::std::option::Option<&[crate::types::ChallengeResponseType]> {
         self.challenge_responses.as_deref()
     }
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
@@ -75,17 +72,14 @@ impl AuthEventType {
 
 /// A builder for [`AuthEventType`](crate::types::AuthEventType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthEventTypeBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_response: ::std::option::Option<crate::types::EventResponseType>,
     pub(crate) event_risk: ::std::option::Option<crate::types::EventRiskType>,
-    pub(crate) challenge_responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
+    pub(crate) challenge_responses: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
     pub(crate) event_context_data: ::std::option::Option<crate::types::EventContextDataType>,
     pub(crate) event_feedback: ::std::option::Option<crate::types::EventFeedbackType>,
 }
@@ -124,10 +118,7 @@ impl AuthEventTypeBuilder {
         self
     }
     /// <p>The creation date</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -141,10 +132,7 @@ impl AuthEventTypeBuilder {
         self
     }
     /// <p>The event response.</p>
-    pub fn set_event_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EventResponseType>,
-    ) -> Self {
+    pub fn set_event_response(mut self, input: ::std::option::Option<crate::types::EventResponseType>) -> Self {
         self.event_response = input;
         self
     }
@@ -158,10 +146,7 @@ impl AuthEventTypeBuilder {
         self
     }
     /// <p>The event risk.</p>
-    pub fn set_event_risk(
-        mut self,
-        input: ::std::option::Option<crate::types::EventRiskType>,
-    ) -> Self {
+    pub fn set_event_risk(mut self, input: ::std::option::Option<crate::types::EventRiskType>) -> Self {
         self.event_risk = input;
         self
     }
@@ -181,17 +166,12 @@ impl AuthEventTypeBuilder {
         self
     }
     /// <p>The challenge responses.</p>
-    pub fn set_challenge_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
-    ) -> Self {
+    pub fn set_challenge_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>) -> Self {
         self.challenge_responses = input;
         self
     }
     /// <p>The challenge responses.</p>
-    pub fn get_challenge_responses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>> {
+    pub fn get_challenge_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>> {
         &self.challenge_responses
     }
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
@@ -200,17 +180,12 @@ impl AuthEventTypeBuilder {
         self
     }
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
-    pub fn set_event_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::EventContextDataType>,
-    ) -> Self {
+    pub fn set_event_context_data(mut self, input: ::std::option::Option<crate::types::EventContextDataType>) -> Self {
         self.event_context_data = input;
         self
     }
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
-    pub fn get_event_context_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventContextDataType> {
+    pub fn get_event_context_data(&self) -> &::std::option::Option<crate::types::EventContextDataType> {
         &self.event_context_data
     }
     /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
@@ -219,10 +194,7 @@ impl AuthEventTypeBuilder {
         self
     }
     /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
-    pub fn set_event_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::EventFeedbackType>,
-    ) -> Self {
+    pub fn set_event_feedback(mut self, input: ::std::option::Option<crate::types::EventFeedbackType>) -> Self {
         self.event_feedback = input;
         self
     }

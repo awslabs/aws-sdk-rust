@@ -39,9 +39,7 @@ impl TargetHealth {
 
 /// A builder for [`TargetHealth`](crate::types::TargetHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetHealthBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TargetState>,
     pub(crate) reason: ::std::option::Option<crate::types::TargetHealthReason>,
@@ -71,10 +69,7 @@ impl TargetHealthBuilder {
         self
     }
     /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetHealthReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::TargetHealthReason>) -> Self {
         self.reason = input;
         self
     }

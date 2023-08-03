@@ -22,18 +22,14 @@ impl DescribeResourcePoliciesInput {
 }
 impl DescribeResourcePoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePoliciesInput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder {
         crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourcePoliciesInput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourcePoliciesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl DescribeResourcePoliciesInputBuilder {
         crate::operation::describe_resource_policies::DescribeResourcePoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_resource_policies::DescribeResourcePoliciesInput {
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_resource_policies::DescribeResourcePoliciesInput {
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

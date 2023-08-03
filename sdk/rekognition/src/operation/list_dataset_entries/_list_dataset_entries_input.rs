@@ -57,17 +57,14 @@ impl ListDatasetEntriesInput {
 }
 impl ListDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
         crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetEntriesInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contains_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -97,27 +94,19 @@ impl ListDatasetEntriesInputBuilder {
     /// To override the contents of this collection use [`set_contains_labels`](Self::set_contains_labels).
     ///
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn contains_labels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contains_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contains_labels.unwrap_or_default();
         v.push(input.into());
         self.contains_labels = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn set_contains_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contains_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contains_labels = input;
         self
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn get_contains_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contains_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contains_labels
     }
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
@@ -135,18 +124,12 @@ impl ListDatasetEntriesInputBuilder {
         &self.labeled
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn source_ref_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ref_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ref_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ref_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_ref_contains = input;
         self
     }
@@ -199,20 +182,15 @@ impl ListDatasetEntriesInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_entries::ListDatasetEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dataset_entries::ListDatasetEntriesInput {
-                dataset_arn: self.dataset_arn,
-                contains_labels: self.contains_labels,
-                labeled: self.labeled,
-                source_ref_contains: self.source_ref_contains,
-                has_errors: self.has_errors,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dataset_entries::ListDatasetEntriesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_dataset_entries::ListDatasetEntriesInput {
+            dataset_arn: self.dataset_arn,
+            contains_labels: self.contains_labels,
+            labeled: self.labeled,
+            source_ref_contains: self.source_ref_contains,
+            has_errors: self.has_errors,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

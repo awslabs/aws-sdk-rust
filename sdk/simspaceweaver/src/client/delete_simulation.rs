@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`simulation(impl ::std::convert::Into<String>)`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::set_simulation): <p>The name of the simulation.</p>
     /// - On success, responds with [`DeleteSimulationOutput`](crate::operation::delete_simulation::DeleteSimulationOutput)
     /// - On failure, responds with [`SdkError<DeleteSimulationError>`](crate::operation::delete_simulation::DeleteSimulationError)
-    pub fn delete_simulation(
-        &self,
-    ) -> crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder {
-        crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_simulation(&self) -> crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder {
+        crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput) with field(s):
     ///   - [`expressions(Option<Vec<ExpressionStatus>>)`](crate::operation::describe_expressions::DescribeExpressionsOutput::expressions): <p>The expressions configured for the domain.</p>
     /// - On failure, responds with [`SdkError<DescribeExpressionsError>`](crate::operation::describe_expressions::DescribeExpressionsError)
-    pub fn describe_expressions(
-        &self,
-    ) -> crate::operation::describe_expressions::builders::DescribeExpressionsFluentBuilder {
-        crate::operation::describe_expressions::builders::DescribeExpressionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_expressions(&self) -> crate::operation::describe_expressions::builders::DescribeExpressionsFluentBuilder {
+        crate::operation::describe_expressions::builders::DescribeExpressionsFluentBuilder::new(self.handle.clone())
     }
 }

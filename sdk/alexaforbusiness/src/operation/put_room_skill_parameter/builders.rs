@@ -38,10 +38,7 @@ impl PutRoomSkillParameterFluentBuilder {
         }
     }
     /// Access the PutRoomSkillParameter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl PutRoomSkillParameterFluentBuilder {
             crate::operation::put_room_skill_parameter::PutRoomSkillParameter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_room_skill_parameter::PutRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_room_skill_parameter::PutRoomSkillParameterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl PutRoomSkillParameterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl PutRoomSkillParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_room_skill_parameter::PutRoomSkillParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_room_skill_parameter::PutRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_room_skill_parameter::PutRoomSkillParameterError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl PutRoomSkillParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_room_skill_parameter::PutRoomSkillParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_room_skill_parameter::PutRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_room_skill_parameter::PutRoomSkillParameterError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl PutRoomSkillParameterFluentBuilder {
             crate::operation::put_room_skill_parameter::PutRoomSkillParameter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_room_skill_parameter::PutRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_room_skill_parameter::PutRoomSkillParameterError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +144,12 @@ impl PutRoomSkillParameterFluentBuilder {
         self
     }
     /// <p>The updated room skill parameter. Required.</p>
-    pub fn set_room_skill_parameter(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomSkillParameter>,
-    ) -> Self {
+    pub fn set_room_skill_parameter(mut self, input: ::std::option::Option<crate::types::RoomSkillParameter>) -> Self {
         self.inner = self.inner.set_room_skill_parameter(input);
         self
     }
     /// <p>The updated room skill parameter. Required.</p>
-    pub fn get_room_skill_parameter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoomSkillParameter> {
+    pub fn get_room_skill_parameter(&self) -> &::std::option::Option<crate::types::RoomSkillParameter> {
         self.inner.get_room_skill_parameter()
     }
 }

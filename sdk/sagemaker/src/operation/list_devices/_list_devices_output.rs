@@ -35,12 +35,9 @@ impl ListDevicesOutput {
 
 /// A builder for [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesOutputBuilder {
-    pub(crate) device_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
+    pub(crate) device_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDevicesOutputBuilder {
         self
     }
     /// <p>Summary of devices.</p>
-    pub fn set_device_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
-    ) -> Self {
+    pub fn set_device_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>) -> Self {
         self.device_summaries = input;
         self
     }
     /// <p>Summary of devices.</p>
-    pub fn get_device_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
+    pub fn get_device_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
         &self.device_summaries
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>

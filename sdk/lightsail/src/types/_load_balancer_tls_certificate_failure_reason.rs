@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,16 +60,12 @@ pub enum LoadBalancerTlsCertificateFailureReason {
 impl ::std::convert::From<&str> for LoadBalancerTlsCertificateFailureReason {
     fn from(s: &str) -> Self {
         match s {
-            "ADDITIONAL_VERIFICATION_REQUIRED" => {
-                LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired
-            }
+            "ADDITIONAL_VERIFICATION_REQUIRED" => LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired,
             "DOMAIN_NOT_ALLOWED" => LoadBalancerTlsCertificateFailureReason::DomainNotAllowed,
             "INVALID_PUBLIC_DOMAIN" => LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain,
             "NO_AVAILABLE_CONTACTS" => LoadBalancerTlsCertificateFailureReason::NoAvailableContacts,
             "OTHER" => LoadBalancerTlsCertificateFailureReason::Other,
-            other => LoadBalancerTlsCertificateFailureReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => LoadBalancerTlsCertificateFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,9 +80,7 @@ impl LoadBalancerTlsCertificateFailureReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired => {
-                "ADDITIONAL_VERIFICATION_REQUIRED"
-            }
+            LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
             LoadBalancerTlsCertificateFailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
             LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
             LoadBalancerTlsCertificateFailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",

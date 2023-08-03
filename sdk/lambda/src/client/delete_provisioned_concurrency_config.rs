@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`qualifier(impl ::std::convert::Into<String>)`](crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigFluentBuilder::qualifier) / [`set_qualifier(Option<String>)`](crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigFluentBuilder::set_qualifier): <p>The version number or alias name.</p>
     /// - On success, responds with [`DeleteProvisionedConcurrencyConfigOutput`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteProvisionedConcurrencyConfigError>`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError)
-    pub fn delete_provisioned_concurrency_config(&self) -> crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigFluentBuilder{
+    pub fn delete_provisioned_concurrency_config(
+        &self,
+    ) -> crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigFluentBuilder {
         crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigFluentBuilder::new(self.handle.clone())
     }
 }

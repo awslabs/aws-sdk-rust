@@ -31,9 +31,7 @@ impl ApplicationVersionLifecycleConfig {
 
 /// A builder for [`ApplicationVersionLifecycleConfig`](crate::types::ApplicationVersionLifecycleConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationVersionLifecycleConfigBuilder {
     pub(crate) max_count_rule: ::std::option::Option<crate::types::MaxCountRule>,
     pub(crate) max_age_rule: ::std::option::Option<crate::types::MaxAgeRule>,
@@ -45,10 +43,7 @@ impl ApplicationVersionLifecycleConfigBuilder {
         self
     }
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
-    pub fn set_max_count_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::MaxCountRule>,
-    ) -> Self {
+    pub fn set_max_count_rule(mut self, input: ::std::option::Option<crate::types::MaxCountRule>) -> Self {
         self.max_count_rule = input;
         self
     }
@@ -62,10 +57,7 @@ impl ApplicationVersionLifecycleConfigBuilder {
         self
     }
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
-    pub fn set_max_age_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::MaxAgeRule>,
-    ) -> Self {
+    pub fn set_max_age_rule(mut self, input: ::std::option::Option<crate::types::MaxAgeRule>) -> Self {
         self.max_age_rule = input;
         self
     }

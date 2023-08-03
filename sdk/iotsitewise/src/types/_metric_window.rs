@@ -23,9 +23,7 @@ impl MetricWindow {
 
 /// A builder for [`MetricWindow`](crate::types::MetricWindow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricWindowBuilder {
     pub(crate) tumbling: ::std::option::Option<crate::types::TumblingWindow>,
 }
@@ -36,10 +34,7 @@ impl MetricWindowBuilder {
         self
     }
     /// <p>The tumbling time interval window.</p>
-    pub fn set_tumbling(
-        mut self,
-        input: ::std::option::Option<crate::types::TumblingWindow>,
-    ) -> Self {
+    pub fn set_tumbling(mut self, input: ::std::option::Option<crate::types::TumblingWindow>) -> Self {
         self.tumbling = input;
         self
     }
@@ -49,8 +44,6 @@ impl MetricWindowBuilder {
     }
     /// Consumes the builder and constructs a [`MetricWindow`](crate::types::MetricWindow).
     pub fn build(self) -> crate::types::MetricWindow {
-        crate::types::MetricWindow {
-            tumbling: self.tumbling,
-        }
+        crate::types::MetricWindow { tumbling: self.tumbling }
     }
 }

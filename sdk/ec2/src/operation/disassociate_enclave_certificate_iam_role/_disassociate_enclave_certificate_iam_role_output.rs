@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateEnclaveCertificateIamRole
 }
 impl DisassociateEnclaveCertificateIamRoleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
-    pub fn builder() -> crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder {
         crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateEnclaveCertificateIamRoleOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl DisassociateEnclaveCertificateIamRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
-    pub fn build(self) -> crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput{
+    pub fn build(self) -> crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput {
         crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

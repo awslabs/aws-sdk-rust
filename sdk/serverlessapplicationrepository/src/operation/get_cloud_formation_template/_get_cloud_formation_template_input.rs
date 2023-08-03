@@ -24,34 +24,26 @@ impl GetCloudFormationTemplateInput {
 }
 impl GetCloudFormationTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetCloudFormationTemplateInput`](crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput).
-    pub fn builder() -> crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateInputBuilder {
         crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCloudFormationTemplateInput`](crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCloudFormationTemplateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCloudFormationTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -83,11 +75,9 @@ impl GetCloudFormationTemplateInputBuilder {
         crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput {
-                application_id: self.application_id,
-                template_id: self.template_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput {
+            application_id: self.application_id,
+            template_id: self.template_id,
+        })
     }
 }

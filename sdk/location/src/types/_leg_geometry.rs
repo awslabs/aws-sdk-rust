@@ -31,9 +31,7 @@ impl LegGeometry {
 
 /// A builder for [`LegGeometry`](crate::types::LegGeometry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LegGeometryBuilder {
     pub(crate) line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
@@ -58,10 +56,7 @@ impl LegGeometryBuilder {
     /// <ul>
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
-    pub fn set_line_string(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
-    ) -> Self {
+    pub fn set_line_string(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.line_string = input;
         self
     }

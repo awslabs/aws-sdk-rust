@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disassociate_drt_role::builders::DisassociateDRTRoleFluentBuilder::send) it.
     /// - On success, responds with [`DisassociateDrtRoleOutput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleOutput)
     /// - On failure, responds with [`SdkError<DisassociateDRTRoleError>`](crate::operation::disassociate_drt_role::DisassociateDRTRoleError)
-    pub fn disassociate_drt_role(
-        &self,
-    ) -> crate::operation::disassociate_drt_role::builders::DisassociateDRTRoleFluentBuilder {
-        crate::operation::disassociate_drt_role::builders::DisassociateDRTRoleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_drt_role(&self) -> crate::operation::disassociate_drt_role::builders::DisassociateDRTRoleFluentBuilder {
+        crate::operation::disassociate_drt_role::builders::DisassociateDRTRoleFluentBuilder::new(self.handle.clone())
     }
 }

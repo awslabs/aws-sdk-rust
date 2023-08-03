@@ -58,9 +58,7 @@ impl S3Target {
 
 /// A builder for [`S3Target`](crate::types::S3Target).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3TargetBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -96,10 +94,7 @@ impl S3TargetBuilder {
         self
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn set_exclusions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusions = input;
         self
     }
@@ -108,18 +103,12 @@ impl S3TargetBuilder {
         &self.exclusions
     }
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -142,18 +131,12 @@ impl S3TargetBuilder {
         &self.sample_size
     }
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
-    pub fn event_queue_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
-    pub fn set_event_queue_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_queue_arn = input;
         self
     }
@@ -162,18 +145,12 @@ impl S3TargetBuilder {
         &self.event_queue_arn
     }
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
-    pub fn dlq_event_queue_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dlq_event_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dlq_event_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
-    pub fn set_dlq_event_queue_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dlq_event_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dlq_event_queue_arn = input;
         self
     }

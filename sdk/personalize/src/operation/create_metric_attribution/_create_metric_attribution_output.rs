@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateMetricAttributionOutput {
 }
 impl CreateMetricAttributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateMetricAttributionOutput`](crate::operation::create_metric_attribution::CreateMetricAttributionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_metric_attribution::builders::CreateMetricAttributionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_metric_attribution::builders::CreateMetricAttributionOutputBuilder {
         crate::operation::create_metric_attribution::builders::CreateMetricAttributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMetricAttributionOutput`](crate::operation::create_metric_attribution::CreateMetricAttributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMetricAttributionOutputBuilder {
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMetricAttributionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
-    pub fn metric_attribution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_attribution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_attribution_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateMetricAttributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateMetricAttributionOutput`](crate::operation::create_metric_attribution::CreateMetricAttributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_metric_attribution::CreateMetricAttributionOutput {
+    pub fn build(self) -> crate::operation::create_metric_attribution::CreateMetricAttributionOutput {
         crate::operation::create_metric_attribution::CreateMetricAttributionOutput {
             metric_attribution_arn: self.metric_attribution_arn,
             _request_id: self._request_id,

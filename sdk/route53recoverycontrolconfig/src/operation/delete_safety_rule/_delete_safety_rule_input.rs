@@ -15,34 +15,25 @@ impl DeleteSafetyRuleInput {
 }
 impl DeleteSafetyRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteSafetyRuleInput`](crate::operation::delete_safety_rule::DeleteSafetyRuleInput).
-    pub fn builder() -> crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder {
         crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSafetyRuleInput`](crate::operation::delete_safety_rule::DeleteSafetyRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSafetyRuleInputBuilder {
     pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSafetyRuleInputBuilder {
     /// <p>The ARN of the safety rule.</p>
-    pub fn safety_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the safety rule.</p>
-    pub fn set_safety_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.safety_rule_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteSafetyRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSafetyRuleInput`](crate::operation::delete_safety_rule::DeleteSafetyRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_safety_rule::DeleteSafetyRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_safety_rule::DeleteSafetyRuleInput {
-                safety_rule_arn: self.safety_rule_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_safety_rule::DeleteSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_safety_rule::DeleteSafetyRuleInput {
+            safety_rule_arn: self.safety_rule_arn,
+        })
     }
 }

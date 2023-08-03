@@ -37,9 +37,7 @@ impl Cost {
 
 /// A builder for [`Cost`](crate::types::Cost).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostBuilder {
     pub(crate) amount: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl CostBuilder {
         self
     }
     /// <p>The cost frequency.</p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::CostFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::CostFrequency>) -> Self {
         self.frequency = input;
         self
     }

@@ -13,9 +13,7 @@ pub struct ApplicationLayerAutomaticResponseConfiguration {
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationLayerAutomaticResponseStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationLayerAutomaticResponseStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
@@ -25,17 +23,14 @@ impl ApplicationLayerAutomaticResponseConfiguration {
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
     /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::types::ApplicationLayerAutomaticResponseConfiguration).
-    pub fn builder() -> crate::types::builders::ApplicationLayerAutomaticResponseConfigurationBuilder
-    {
+    pub fn builder() -> crate::types::builders::ApplicationLayerAutomaticResponseConfigurationBuilder {
         crate::types::builders::ApplicationLayerAutomaticResponseConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`ApplicationLayerAutomaticResponseConfiguration`](crate::types::ApplicationLayerAutomaticResponseConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationLayerAutomaticResponseConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseStatus>,
     pub(crate) action: ::std::option::Option<crate::types::ResponseAction>,
@@ -47,17 +42,12 @@ impl ApplicationLayerAutomaticResponseConfigurationBuilder {
         self
     }
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationLayerAutomaticResponseStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationLayerAutomaticResponseStatus> {
         &self.status
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
@@ -66,10 +56,7 @@ impl ApplicationLayerAutomaticResponseConfigurationBuilder {
         self
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ResponseAction>) -> Self {
         self.action = input;
         self
     }

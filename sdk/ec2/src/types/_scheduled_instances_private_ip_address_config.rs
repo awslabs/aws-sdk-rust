@@ -30,9 +30,7 @@ impl ScheduledInstancesPrivateIpAddressConfig {
 
 /// A builder for [`ScheduledInstancesPrivateIpAddressConfig`](crate::types::ScheduledInstancesPrivateIpAddressConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstancesPrivateIpAddressConfigBuilder {
     pub(crate) primary: ::std::option::Option<bool>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ScheduledInstancesPrivateIpAddressConfigBuilder {
         &self.primary
     }
     /// <p>The IPv4 address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }

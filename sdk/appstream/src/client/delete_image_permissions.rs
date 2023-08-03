@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`shared_account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_image_permissions::builders::DeleteImagePermissionsFluentBuilder::shared_account_id) / [`set_shared_account_id(Option<String>)`](crate::operation::delete_image_permissions::builders::DeleteImagePermissionsFluentBuilder::set_shared_account_id): <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
     /// - On success, responds with [`DeleteImagePermissionsOutput`](crate::operation::delete_image_permissions::DeleteImagePermissionsOutput)
     /// - On failure, responds with [`SdkError<DeleteImagePermissionsError>`](crate::operation::delete_image_permissions::DeleteImagePermissionsError)
-    pub fn delete_image_permissions(
-        &self,
-    ) -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsFluentBuilder
-    {
+    pub fn delete_image_permissions(&self) -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsFluentBuilder {
         crate::operation::delete_image_permissions::builders::DeleteImagePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

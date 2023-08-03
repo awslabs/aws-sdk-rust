@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetInstanceUefiDataOutput {
 }
 impl GetInstanceUefiDataOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceUefiDataOutput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataOutputBuilder {
+    pub fn builder() -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataOutputBuilder {
         crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceUefiDataOutput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceUefiDataOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) uefi_data: ::std::option::Option<::std::string::String>,

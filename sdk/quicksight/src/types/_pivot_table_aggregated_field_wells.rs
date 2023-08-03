@@ -37,9 +37,7 @@ impl PivotTableAggregatedFieldWells {
 
 /// A builder for [`PivotTableAggregatedFieldWells`](crate::types::PivotTableAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableAggregatedFieldWellsBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -58,17 +56,12 @@ impl PivotTableAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The rows field well for a pivot table. Values are grouped by rows fields.</p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.rows = input;
         self
     }
     /// <p>The rows field well for a pivot table. Values are grouped by rows fields.</p>
-    pub fn get_rows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.rows
     }
     /// Appends an item to `columns`.
@@ -83,17 +76,12 @@ impl PivotTableAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The columns field well for a pivot table. Values are grouped by columns fields.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>The columns field well for a pivot table. Values are grouped by columns fields.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.columns
     }
     /// Appends an item to `values`.
@@ -108,17 +96,12 @@ impl PivotTableAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The values field well for a pivot table. Values are aggregated based on rows and columns fields.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The values field well for a pivot table. Values are aggregated based on rows and columns fields.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`PivotTableAggregatedFieldWells`](crate::types::PivotTableAggregatedFieldWells).

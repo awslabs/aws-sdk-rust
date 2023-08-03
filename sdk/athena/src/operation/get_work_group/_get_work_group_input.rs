@@ -22,9 +22,7 @@ impl GetWorkGroupInput {
 
 /// A builder for [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_work_group::GetWorkGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_work_group::GetWorkGroupInput {
-            work_group: self.work_group,
-        })
+    ) -> ::std::result::Result<crate::operation::get_work_group::GetWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_work_group::GetWorkGroupInput { work_group: self.work_group })
     }
 }

@@ -28,9 +28,7 @@ impl UpdateFleetOutput {
 
 /// A builder for [`UpdateFleetOutput`](crate::operation::update_fleet::UpdateFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetOutputBuilder {
     pub(crate) fleet: ::std::option::Option<crate::types::Fleet>,
     _request_id: Option<String>,

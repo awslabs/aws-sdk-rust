@@ -30,12 +30,9 @@ impl InferenceAcceleratorInfo {
 
 /// A builder for [`InferenceAcceleratorInfo`](crate::types::InferenceAcceleratorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceAcceleratorInfoBuilder {
-    pub(crate) accelerators:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
+    pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
     pub(crate) total_inference_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl InferenceAcceleratorInfoBuilder {
@@ -51,17 +48,12 @@ impl InferenceAcceleratorInfoBuilder {
         self
     }
     /// <p>Describes the Inference accelerators for the instance type.</p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
-    ) -> Self {
+    pub fn set_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>) -> Self {
         self.accelerators = input;
         self
     }
     /// <p>Describes the Inference accelerators for the instance type.</p>
-    pub fn get_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>> {
+    pub fn get_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>> {
         &self.accelerators
     }
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>

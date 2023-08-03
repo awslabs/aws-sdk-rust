@@ -7,42 +7,30 @@ pub fn ser_create_direct_connect_gateway_association_proposal_input(
         object.key("directConnectGatewayId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.direct_connect_gateway_owner_account {
-        object
-            .key("directConnectGatewayOwnerAccount")
-            .string(var_2.as_str());
+        object.key("directConnectGatewayOwnerAccount").string(var_2.as_str());
     }
     if let Some(var_3) = &input.gateway_id {
         object.key("gatewayId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.add_allowed_prefixes_to_direct_connect_gateway {
-        let mut array_5 = object
-            .key("addAllowedPrefixesToDirectConnectGateway")
-            .start_array();
+        let mut array_5 = object.key("addAllowedPrefixesToDirectConnectGateway").start_array();
         for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
         array_5.finish();
     }
     if let Some(var_8) = &input.remove_allowed_prefixes_to_direct_connect_gateway {
-        let mut array_9 = object
-            .key("removeAllowedPrefixesToDirectConnectGateway")
-            .start_array();
+        let mut array_9 = object.key("removeAllowedPrefixesToDirectConnectGateway").start_array();
         for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`device_identifiers(Option<Vec<DeviceIdentifier>>)`](crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput::device_identifiers): <p>Information about the device identifiers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListDeviceIdentifiersError>`](crate::operation::list_device_identifiers::ListDeviceIdentifiersError)
-    pub fn list_device_identifiers(
-        &self,
-    ) -> crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersFluentBuilder
-    {
-        crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_identifiers(&self) -> crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersFluentBuilder {
+        crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersFluentBuilder::new(self.handle.clone())
     }
 }

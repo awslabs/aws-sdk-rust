@@ -30,9 +30,7 @@ impl DecimalDefaultValues {
 
 /// A builder for [`DecimalDefaultValues`](crate::types::DecimalDefaultValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -44,10 +42,7 @@ impl DecimalDefaultValuesBuilder {
         self
     }
     /// <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
-    pub fn set_dynamic_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamicDefaultValue>,
-    ) -> Self {
+    pub fn set_dynamic_value(mut self, input: ::std::option::Option<crate::types::DynamicDefaultValue>) -> Self {
         self.dynamic_value = input;
         self
     }

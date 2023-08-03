@@ -22,9 +22,7 @@ impl GetRunGroupInput {
 
 /// A builder for [`GetRunGroupInput`](crate::operation::get_run_group::GetRunGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRunGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetRunGroupInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetRunGroupInput`](crate::operation::get_run_group::GetRunGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_run_group::GetRunGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_run_group::GetRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_run_group::GetRunGroupInput { id: self.id })
     }
 }

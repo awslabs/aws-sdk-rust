@@ -37,9 +37,7 @@ impl DateTimeDefaultValues {
 
 /// A builder for [`DateTimeDefaultValues`](crate::types::DateTimeDefaultValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimeDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
@@ -52,10 +50,7 @@ impl DateTimeDefaultValuesBuilder {
         self
     }
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
-    pub fn set_dynamic_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamicDefaultValue>,
-    ) -> Self {
+    pub fn set_dynamic_value(mut self, input: ::std::option::Option<crate::types::DynamicDefaultValue>) -> Self {
         self.dynamic_value = input;
         self
     }
@@ -75,17 +70,12 @@ impl DateTimeDefaultValuesBuilder {
         self
     }
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    pub fn set_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.static_values = input;
         self
     }
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    pub fn get_static_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.static_values
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
@@ -94,17 +84,12 @@ impl DateTimeDefaultValuesBuilder {
         self
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
-    pub fn set_rolling_date(
-        mut self,
-        input: ::std::option::Option<crate::types::RollingDateConfiguration>,
-    ) -> Self {
+    pub fn set_rolling_date(mut self, input: ::std::option::Option<crate::types::RollingDateConfiguration>) -> Self {
         self.rolling_date = input;
         self
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
-    pub fn get_rolling_date(
-        &self,
-    ) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
+    pub fn get_rolling_date(&self) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
         &self.rolling_date
     }
     /// Consumes the builder and constructs a [`DateTimeDefaultValues`](crate::types::DateTimeDefaultValues).

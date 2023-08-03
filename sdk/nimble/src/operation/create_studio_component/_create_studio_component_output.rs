@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateStudioComponentOutput {
 }
 impl CreateStudioComponentOutput {
     /// Creates a new builder-style object to manufacture [`CreateStudioComponentOutput`](crate::operation::create_studio_component::CreateStudioComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_studio_component::builders::CreateStudioComponentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_studio_component::builders::CreateStudioComponentOutputBuilder {
         crate::operation::create_studio_component::builders::CreateStudioComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStudioComponentOutput`](crate::operation::create_studio_component::CreateStudioComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStudioComponentOutputBuilder {
     pub(crate) studio_component: ::std::option::Option<crate::types::StudioComponent>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateStudioComponentOutputBuilder {
         self
     }
     /// <p>Information about the studio component.</p>
-    pub fn set_studio_component(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponent>,
-    ) -> Self {
+    pub fn set_studio_component(mut self, input: ::std::option::Option<crate::types::StudioComponent>) -> Self {
         self.studio_component = input;
         self
     }

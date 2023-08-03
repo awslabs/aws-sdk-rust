@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableAlarmActionsOutput {
 }
 impl EnableAlarmActionsOutput {
     /// Creates a new builder-style object to manufacture [`EnableAlarmActionsOutput`](crate::operation::enable_alarm_actions::EnableAlarmActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_alarm_actions::builders::EnableAlarmActionsOutputBuilder {
+    pub fn builder() -> crate::operation::enable_alarm_actions::builders::EnableAlarmActionsOutputBuilder {
         crate::operation::enable_alarm_actions::builders::EnableAlarmActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAlarmActionsOutput`](crate::operation::enable_alarm_actions::EnableAlarmActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAlarmActionsOutputBuilder {
     _request_id: Option<String>,
 }

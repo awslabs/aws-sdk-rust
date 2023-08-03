@@ -17,9 +17,7 @@ pub struct UpdateBotAliasInput {
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     #[doc(hidden)]
-    pub bot_alias_locale_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    >,
+    pub bot_alias_locale_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
     #[doc(hidden)]
     pub conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
@@ -50,21 +48,15 @@ impl UpdateBotAliasInput {
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub fn bot_alias_locale_settings(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>> {
         self.bot_alias_locale_settings.as_ref()
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn conversation_log_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogSettings> {
+    pub fn conversation_log_settings(&self) -> ::std::option::Option<&crate::types::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SentimentAnalysisSettings> {
+    pub fn sentiment_analysis_settings(&self) -> ::std::option::Option<&crate::types::SentimentAnalysisSettings> {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>The identifier of the bot with the updated alias.</p>
@@ -81,21 +73,16 @@ impl UpdateBotAliasInput {
 
 /// A builder for [`UpdateBotAliasInput`](crate::operation::update_bot_alias::UpdateBotAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBotAliasInputBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_alias_locale_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    >,
-    pub(crate) conversation_log_settings:
-        ::std::option::Option<crate::types::ConversationLogSettings>,
-    pub(crate) sentiment_analysis_settings:
-        ::std::option::Option<crate::types::SentimentAnalysisSettings>,
+    pub(crate) bot_alias_locale_settings:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
+    pub(crate) conversation_log_settings: ::std::option::Option<crate::types::ConversationLogSettings>,
+    pub(crate) sentiment_analysis_settings: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBotAliasInputBuilder {
@@ -114,18 +101,12 @@ impl UpdateBotAliasInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The new name to assign to the bot alias.</p>
-    pub fn bot_alias_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name to assign to the bot alias.</p>
-    pub fn set_bot_alias_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_name = input;
         self
     }
@@ -166,11 +147,7 @@ impl UpdateBotAliasInputBuilder {
     /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
     ///
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
-    pub fn bot_alias_locale_settings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::BotAliasLocaleSettings,
-    ) -> Self {
+    pub fn bot_alias_locale_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BotAliasLocaleSettings) -> Self {
         let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.bot_alias_locale_settings = ::std::option::Option::Some(hash_map);
@@ -179,12 +156,7 @@ impl UpdateBotAliasInputBuilder {
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub fn set_bot_alias_locale_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BotAliasLocaleSettings,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     ) -> Self {
         self.bot_alias_locale_settings = input;
         self
@@ -192,53 +164,35 @@ impl UpdateBotAliasInputBuilder {
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub fn get_bot_alias_locale_settings(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>> {
         &self.bot_alias_locale_settings
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn conversation_log_settings(
-        mut self,
-        input: crate::types::ConversationLogSettings,
-    ) -> Self {
+    pub fn conversation_log_settings(mut self, input: crate::types::ConversationLogSettings) -> Self {
         self.conversation_log_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn set_conversation_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogSettings>,
-    ) -> Self {
+    pub fn set_conversation_log_settings(mut self, input: ::std::option::Option<crate::types::ConversationLogSettings>) -> Self {
         self.conversation_log_settings = input;
         self
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn get_conversation_log_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogSettings> {
+    pub fn get_conversation_log_settings(&self) -> &::std::option::Option<crate::types::ConversationLogSettings> {
         &self.conversation_log_settings
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        mut self,
-        input: crate::types::SentimentAnalysisSettings,
-    ) -> Self {
+    pub fn sentiment_analysis_settings(mut self, input: crate::types::SentimentAnalysisSettings) -> Self {
         self.sentiment_analysis_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn set_sentiment_analysis_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
-    ) -> Self {
+    pub fn set_sentiment_analysis_settings(mut self, input: ::std::option::Option<crate::types::SentimentAnalysisSettings>) -> Self {
         self.sentiment_analysis_settings = input;
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn get_sentiment_analysis_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
+    pub fn get_sentiment_analysis_settings(&self) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
         &self.sentiment_analysis_settings
     }
     /// <p>The identifier of the bot with the updated alias.</p>
@@ -258,10 +212,7 @@ impl UpdateBotAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBotAliasInput`](crate::operation::update_bot_alias::UpdateBotAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bot_alias::UpdateBotAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_bot_alias::UpdateBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bot_alias::UpdateBotAliasInput {
             bot_alias_id: self.bot_alias_id,
             bot_alias_name: self.bot_alias_name,

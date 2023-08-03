@@ -46,8 +46,7 @@ impl ::std::fmt::Debug for CreateMeetingDialOutInput {
 }
 impl CreateMeetingDialOutInput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingDialOutInput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput).
-    pub fn builder(
-    ) -> crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder {
+    pub fn builder() -> crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder {
         crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder::default()
     }
 }
@@ -77,18 +76,12 @@ impl CreateMeetingDialOutInputBuilder {
         &self.meeting_id
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    pub fn from_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    pub fn set_from_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_phone_number = input;
         self
     }
@@ -97,18 +90,12 @@ impl CreateMeetingDialOutInputBuilder {
         &self.from_phone_number
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn to_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn set_to_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_phone_number = input;
         self
     }
@@ -133,18 +120,14 @@ impl CreateMeetingDialOutInputBuilder {
     /// Consumes the builder and constructs a [`CreateMeetingDialOutInput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput {
-                meeting_id: self.meeting_id,
-                from_phone_number: self.from_phone_number,
-                to_phone_number: self.to_phone_number,
-                join_token: self.join_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput {
+            meeting_id: self.meeting_id,
+            from_phone_number: self.from_phone_number,
+            to_phone_number: self.to_phone_number,
+            join_token: self.join_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateMeetingDialOutInputBuilder {

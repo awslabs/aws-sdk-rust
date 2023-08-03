@@ -22,16 +22,14 @@ impl ListFieldLevelEncryptionProfilesInput {
 }
 impl ListFieldLevelEncryptionProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionProfilesInput`](crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput).
-    pub fn builder() -> crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesInputBuilder{
+    pub fn builder() -> crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesInputBuilder {
         crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFieldLevelEncryptionProfilesInput`](crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionProfilesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -66,14 +64,17 @@ impl ListFieldLevelEncryptionProfilesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFieldLevelEncryptionProfilesInput`](crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+            },
         )
     }
 }

@@ -22,36 +22,26 @@ impl CancelImageCreationInput {
 }
 impl CancelImageCreationInput {
     /// Creates a new builder-style object to manufacture [`CancelImageCreationInput`](crate::operation::cancel_image_creation::CancelImageCreationInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_image_creation::builders::CancelImageCreationInputBuilder {
-        crate::operation::cancel_image_creation::builders::CancelImageCreationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_image_creation::builders::CancelImageCreationInputBuilder {
+        crate::operation::cancel_image_creation::builders::CancelImageCreationInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelImageCreationInput`](crate::operation::cancel_image_creation::CancelImageCreationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelImageCreationInputBuilder {
     pub(crate) image_build_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelImageCreationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -76,15 +66,11 @@ impl CancelImageCreationInputBuilder {
     /// Consumes the builder and constructs a [`CancelImageCreationInput`](crate::operation::cancel_image_creation::CancelImageCreationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_image_creation::CancelImageCreationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_image_creation::CancelImageCreationInput {
-                image_build_version_arn: self.image_build_version_arn,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_image_creation::CancelImageCreationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_image_creation::CancelImageCreationInput {
+            image_build_version_arn: self.image_build_version_arn,
+            client_token: self.client_token,
+        })
     }
 }

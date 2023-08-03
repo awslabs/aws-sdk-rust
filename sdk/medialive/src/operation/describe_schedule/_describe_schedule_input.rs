@@ -30,17 +30,14 @@ impl DescribeScheduleInput {
 }
 impl DescribeScheduleInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
-    pub fn builder() -> crate::operation::describe_schedule::builders::DescribeScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_schedule::builders::DescribeScheduleInputBuilder {
         crate::operation::describe_schedule::builders::DescribeScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduleInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,10 +89,7 @@ impl DescribeScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_schedule::DescribeScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_schedule::DescribeScheduleInput {
             channel_id: self.channel_id,
             max_results: self.max_results,

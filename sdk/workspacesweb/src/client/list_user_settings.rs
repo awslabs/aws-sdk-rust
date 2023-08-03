@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`user_settings(Option<Vec<UserSettingsSummary>>)`](crate::operation::list_user_settings::ListUserSettingsOutput::user_settings): <p>The user settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_settings::ListUserSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
     /// - On failure, responds with [`SdkError<ListUserSettingsError>`](crate::operation::list_user_settings::ListUserSettingsError)
-    pub fn list_user_settings(
-        &self,
-    ) -> crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder {
-        crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_settings(&self) -> crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder {
+        crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

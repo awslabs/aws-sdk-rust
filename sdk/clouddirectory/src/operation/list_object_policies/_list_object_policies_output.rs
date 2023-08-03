@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListObjectPoliciesOutput {
 }
 impl ListObjectPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectPoliciesOutput`](crate::operation::list_object_policies::ListObjectPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_policies::builders::ListObjectPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_object_policies::builders::ListObjectPoliciesOutputBuilder {
         crate::operation::list_object_policies::builders::ListObjectPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectPoliciesOutput`](crate::operation::list_object_policies::ListObjectPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectPoliciesOutputBuilder {
     pub(crate) attached_policy_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListObjectPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_attached_policy_ids`](Self::set_attached_policy_ids).
     ///
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    pub fn attached_policy_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attached_policy_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attached_policy_ids.unwrap_or_default();
         v.push(input.into());
         self.attached_policy_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    pub fn set_attached_policy_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attached_policy_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attached_policy_ids = input;
         self
     }
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    pub fn get_attached_policy_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attached_policy_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attached_policy_ids
     }
     /// <p>The pagination token.</p>

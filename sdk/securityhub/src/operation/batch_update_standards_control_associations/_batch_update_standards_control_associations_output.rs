@@ -5,16 +5,12 @@
 pub struct BatchUpdateStandardsControlAssociationsOutput {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
     #[doc(hidden)]
-    pub unprocessed_association_updates: ::std::option::Option<
-        ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>,
-    >,
+    pub unprocessed_association_updates: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateStandardsControlAssociationsOutput {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
-    pub fn unprocessed_association_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedStandardsControlAssociationUpdate]> {
+    pub fn unprocessed_association_updates(&self) -> ::std::option::Option<&[crate::types::UnprocessedStandardsControlAssociationUpdate]> {
         self.unprocessed_association_updates.as_deref()
     }
 }
@@ -25,20 +21,17 @@ impl ::aws_http::request_id::RequestId for BatchUpdateStandardsControlAssociatio
 }
 impl BatchUpdateStandardsControlAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateStandardsControlAssociationsOutput`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput).
-    pub fn builder() -> crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsOutputBuilder
+    {
         crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateStandardsControlAssociationsOutput`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateStandardsControlAssociationsOutputBuilder {
-    pub(crate) unprocessed_association_updates: ::std::option::Option<
-        ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>,
-    >,
+    pub(crate) unprocessed_association_updates: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateStandardsControlAssociationsOutputBuilder {
@@ -47,10 +40,7 @@ impl BatchUpdateStandardsControlAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_association_updates`](Self::set_unprocessed_association_updates).
     ///
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
-    pub fn unprocessed_association_updates(
-        mut self,
-        input: crate::types::UnprocessedStandardsControlAssociationUpdate,
-    ) -> Self {
+    pub fn unprocessed_association_updates(mut self, input: crate::types::UnprocessedStandardsControlAssociationUpdate) -> Self {
         let mut v = self.unprocessed_association_updates.unwrap_or_default();
         v.push(input);
         self.unprocessed_association_updates = ::std::option::Option::Some(v);
@@ -59,9 +49,7 @@ impl BatchUpdateStandardsControlAssociationsOutputBuilder {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
     pub fn set_unprocessed_association_updates(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>>,
     ) -> Self {
         self.unprocessed_association_updates = input;
         self
@@ -69,9 +57,7 @@ impl BatchUpdateStandardsControlAssociationsOutputBuilder {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
     pub fn get_unprocessed_association_updates(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>> {
         &self.unprocessed_association_updates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -84,10 +70,9 @@ impl BatchUpdateStandardsControlAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchUpdateStandardsControlAssociationsOutput`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput).
-    pub fn build(self) -> crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput{
+    pub fn build(self) -> crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput {
         crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput {
-            unprocessed_association_updates: self.unprocessed_association_updates
-            ,
+            unprocessed_association_updates: self.unprocessed_association_updates,
             _request_id: self._request_id,
         }
     }

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`interface_associations(Option<Vec<TrunkInterfaceAssociation>>)`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput::interface_associations): <p>Information about the trunk associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTrunkInterfaceAssociationsError>`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError)
-    pub fn describe_trunk_interface_associations(&self) -> crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsFluentBuilder{
+    pub fn describe_trunk_interface_associations(
+        &self,
+    ) -> crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsFluentBuilder {
         crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

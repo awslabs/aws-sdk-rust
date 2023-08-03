@@ -86,9 +86,7 @@ impl ManagedPrefixList {
 
 /// A builder for [`ManagedPrefixList`](crate::types::ManagedPrefixList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedPrefixListBuilder {
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_family: ::std::option::Option<::std::string::String>,
@@ -103,18 +101,12 @@ pub struct ManagedPrefixListBuilder {
 }
 impl ManagedPrefixListBuilder {
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -123,18 +115,12 @@ impl ManagedPrefixListBuilder {
         &self.prefix_list_id
     }
     /// <p>The IP address version.</p>
-    pub fn address_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address version.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_family = input;
         self
     }
@@ -148,10 +134,7 @@ impl ManagedPrefixListBuilder {
         self
     }
     /// <p>The current state of the prefix list.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefixListState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::PrefixListState>) -> Self {
         self.state = input;
         self
     }
@@ -160,18 +143,12 @@ impl ManagedPrefixListBuilder {
         &self.state
     }
     /// <p>The state message.</p>
-    pub fn state_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state message.</p>
-    pub fn set_state_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_message = input;
         self
     }
@@ -180,18 +157,12 @@ impl ManagedPrefixListBuilder {
         &self.state_message
     }
     /// <p>The Amazon Resource Name (ARN) for the prefix list.</p>
-    pub fn prefix_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the prefix list.</p>
-    pub fn set_prefix_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_arn = input;
         self
     }
@@ -200,18 +171,12 @@ impl ManagedPrefixListBuilder {
         &self.prefix_list_arn
     }
     /// <p>The name of the prefix list.</p>
-    pub fn prefix_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prefix list.</p>
-    pub fn set_prefix_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_name = input;
         self
     }
@@ -259,10 +224,7 @@ impl ManagedPrefixListBuilder {
         self
     }
     /// <p>The tags for the prefix list.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

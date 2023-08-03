@@ -10,10 +10,7 @@ impl VerifyEmailAddressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::verify_email_address::VerifyEmailAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_email_address::VerifyEmailAddressError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_email_address::VerifyEmailAddressError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.verify_email_address();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl VerifyEmailAddressFluentBuilder {
         }
     }
     /// Access the VerifyEmailAddress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl VerifyEmailAddressFluentBuilder {
             crate::operation::verify_email_address::VerifyEmailAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_email_address::VerifyEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_email_address::VerifyEmailAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl VerifyEmailAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl VerifyEmailAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_email_address::VerifyEmailAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_email_address::VerifyEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_email_address::VerifyEmailAddressError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl VerifyEmailAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_email_address::VerifyEmailAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_email_address::VerifyEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_email_address::VerifyEmailAddressError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl VerifyEmailAddressFluentBuilder {
             crate::operation::verify_email_address::VerifyEmailAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_email_address::VerifyEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_email_address::VerifyEmailAddressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email address to be verified.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The email address to be verified.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }

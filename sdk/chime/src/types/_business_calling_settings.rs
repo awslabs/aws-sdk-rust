@@ -23,9 +23,7 @@ impl BusinessCallingSettings {
 
 /// A builder for [`BusinessCallingSettings`](crate::types::BusinessCallingSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BusinessCallingSettingsBuilder {
     pub(crate) cdr_bucket: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl BusinessCallingSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`BusinessCallingSettings`](crate::types::BusinessCallingSettings).
     pub fn build(self) -> crate::types::BusinessCallingSettings {
-        crate::types::BusinessCallingSettings {
-            cdr_bucket: self.cdr_bucket,
-        }
+        crate::types::BusinessCallingSettings { cdr_bucket: self.cdr_bucket }
     }
 }

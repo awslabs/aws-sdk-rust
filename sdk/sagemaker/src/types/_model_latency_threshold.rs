@@ -30,9 +30,7 @@ impl ModelLatencyThreshold {
 
 /// A builder for [`ModelLatencyThreshold`](crate::types::ModelLatencyThreshold).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelLatencyThresholdBuilder {
     pub(crate) percentile: ::std::option::Option<::std::string::String>,
     pub(crate) value_in_milliseconds: ::std::option::Option<i32>,

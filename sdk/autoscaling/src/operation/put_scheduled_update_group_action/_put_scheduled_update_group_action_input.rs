@@ -90,16 +90,14 @@ impl PutScheduledUpdateGroupActionInput {
 }
 impl PutScheduledUpdateGroupActionInput {
     /// Creates a new builder-style object to manufacture [`PutScheduledUpdateGroupActionInput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput).
-    pub fn builder() -> crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder{
+    pub fn builder() -> crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder {
         crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutScheduledUpdateGroupActionInput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutScheduledUpdateGroupActionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
@@ -114,18 +112,12 @@ pub struct PutScheduledUpdateGroupActionInputBuilder {
 }
 impl PutScheduledUpdateGroupActionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -134,18 +126,12 @@ impl PutScheduledUpdateGroupActionInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name of this scaling action.</p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this scaling action.</p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -175,10 +161,7 @@ impl PutScheduledUpdateGroupActionInputBuilder {
     }
     /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).</p>
     /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -193,10 +176,7 @@ impl PutScheduledUpdateGroupActionInputBuilder {
         self
     }
     /// <p>The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -296,29 +276,17 @@ impl PutScheduledUpdateGroupActionInputBuilder {
         crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                scheduled_action_name: self.scheduled_action_name
-                ,
-                time: self.time
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                recurrence: self.recurrence
-                ,
-                min_size: self.min_size
-                ,
-                max_size: self.max_size
-                ,
-                desired_capacity: self.desired_capacity
-                ,
-                time_zone: self.time_zone
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            scheduled_action_name: self.scheduled_action_name,
+            time: self.time,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            recurrence: self.recurrence,
+            min_size: self.min_size,
+            max_size: self.max_size,
+            desired_capacity: self.desired_capacity,
+            time_zone: self.time_zone,
+        })
     }
 }

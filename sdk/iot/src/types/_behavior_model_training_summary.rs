@@ -33,9 +33,7 @@ impl BehaviorModelTrainingSummary {
         self.behavior_name.as_deref()
     }
     /// <p> The date a training model started collecting data. </p>
-    pub fn training_data_collection_start_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_collection_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.training_data_collection_start_date.as_ref()
     }
     /// <p> The status of the behavior model. </p>
@@ -60,32 +58,23 @@ impl BehaviorModelTrainingSummary {
 
 /// A builder for [`BehaviorModelTrainingSummary`](crate::types::BehaviorModelTrainingSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BehaviorModelTrainingSummaryBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) behavior_name: ::std::option::Option<::std::string::String>,
-    pub(crate) training_data_collection_start_date:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) training_data_collection_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_status: ::std::option::Option<crate::types::ModelStatus>,
     pub(crate) datapoints_collection_percentage: ::std::option::Option<f64>,
     pub(crate) last_model_refresh_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BehaviorModelTrainingSummaryBuilder {
     /// <p> The name of the security profile. </p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the security profile. </p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -94,18 +83,12 @@ impl BehaviorModelTrainingSummaryBuilder {
         &self.security_profile_name
     }
     /// <p> The name of the behavior. </p>
-    pub fn behavior_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn behavior_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.behavior_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the behavior. </p>
-    pub fn set_behavior_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_behavior_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.behavior_name = input;
         self
     }
@@ -114,25 +97,17 @@ impl BehaviorModelTrainingSummaryBuilder {
         &self.behavior_name
     }
     /// <p> The date a training model started collecting data. </p>
-    pub fn training_data_collection_start_date(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn training_data_collection_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.training_data_collection_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date a training model started collecting data. </p>
-    pub fn set_training_data_collection_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_data_collection_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_data_collection_start_date = input;
         self
     }
     /// <p> The date a training model started collecting data. </p>
-    pub fn get_training_data_collection_start_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_training_data_collection_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.training_data_collection_start_date
     }
     /// <p> The status of the behavior model. </p>
@@ -141,10 +116,7 @@ impl BehaviorModelTrainingSummaryBuilder {
         self
     }
     /// <p> The status of the behavior model. </p>
-    pub fn set_model_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelStatus>,
-    ) -> Self {
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.model_status = input;
         self
     }
@@ -158,10 +130,7 @@ impl BehaviorModelTrainingSummaryBuilder {
         self
     }
     /// <p> The percentage of datapoints collected. </p>
-    pub fn set_datapoints_collection_percentage(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_datapoints_collection_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.datapoints_collection_percentage = input;
         self
     }
@@ -175,17 +144,12 @@ impl BehaviorModelTrainingSummaryBuilder {
         self
     }
     /// <p> The date the model was last refreshed. </p>
-    pub fn set_last_model_refresh_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_model_refresh_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_model_refresh_date = input;
         self
     }
     /// <p> The date the model was last refreshed. </p>
-    pub fn get_last_model_refresh_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_model_refresh_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_model_refresh_date
     }
     /// Consumes the builder and constructs a [`BehaviorModelTrainingSummary`](crate::types::BehaviorModelTrainingSummary).

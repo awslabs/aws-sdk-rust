@@ -37,16 +37,15 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInput {
 }
 impl DescribeFleetAdvisorSchemaObjectSummaryInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder
+    {
         crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -73,10 +72,7 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -117,16 +113,18 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput {
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            },
         )
     }
 }

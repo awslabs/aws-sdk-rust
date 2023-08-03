@@ -45,10 +45,7 @@ pub fn ser_create_custom_data_identifier_input(
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_severity_level::ser_severity_level(
-                    &mut object_15,
-                    item_14,
-                )?;
+                crate::protocol_serde::shape_severity_level::ser_severity_level(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }

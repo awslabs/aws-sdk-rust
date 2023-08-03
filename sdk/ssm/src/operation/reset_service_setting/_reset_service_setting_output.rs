@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for ResetServiceSettingOutput {
 }
 impl ResetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder {
-        crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder {
+        crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetServiceSettingOutputBuilder {
     pub(crate) service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl ResetServiceSettingOutputBuilder {
         self
     }
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-    pub fn set_service_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSetting>,
-    ) -> Self {
+    pub fn set_service_setting(mut self, input: ::std::option::Option<crate::types::ServiceSetting>) -> Self {
         self.service_setting = input;
         self
     }

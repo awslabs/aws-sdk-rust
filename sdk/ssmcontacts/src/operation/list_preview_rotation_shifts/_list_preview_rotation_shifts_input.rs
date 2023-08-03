@@ -71,16 +71,14 @@ impl ListPreviewRotationShiftsInput {
 }
 impl ListPreviewRotationShiftsInput {
     /// Creates a new builder-style object to manufacture [`ListPreviewRotationShiftsInput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput).
-    pub fn builder() -> crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder{
+    pub fn builder() -> crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder {
         crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPreviewRotationShiftsInput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPreviewRotationShiftsInputBuilder {
     pub(crate) rotation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -99,10 +97,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         self
     }
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
-    pub fn set_rotation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_rotation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.rotation_start_time = input;
         self
     }
@@ -116,10 +111,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         self
     }
     /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -133,10 +125,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         self
     }
     /// <p>The date and time a rotation shift would end.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -156,10 +145,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         self
     }
     /// <p>The contacts that would be assigned to a rotation.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.members = input;
         self
     }
@@ -187,10 +173,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         self
     }
     /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
         self.recurrence = input;
         self
     }
@@ -210,17 +193,12 @@ impl ListPreviewRotationShiftsInputBuilder {
         self
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>>) -> Self {
         self.overrides = input;
         self
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>> {
         &self.overrides
     }
     /// <p>A token to start the list. This token is used to get the next set of results.</p>
@@ -258,18 +236,16 @@ impl ListPreviewRotationShiftsInputBuilder {
         crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput {
-                rotation_start_time: self.rotation_start_time,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                members: self.members,
-                time_zone_id: self.time_zone_id,
-                recurrence: self.recurrence,
-                overrides: self.overrides,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput {
+            rotation_start_time: self.rotation_start_time,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            members: self.members,
+            time_zone_id: self.time_zone_id,
+            recurrence: self.recurrence,
+            overrides: self.overrides,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

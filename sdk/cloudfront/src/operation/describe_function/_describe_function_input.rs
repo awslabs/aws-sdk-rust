@@ -22,17 +22,14 @@ impl DescribeFunctionInput {
 }
 impl DescribeFunctionInput {
     /// Creates a new builder-style object to manufacture [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
-    pub fn builder() -> crate::operation::describe_function::builders::DescribeFunctionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_function::builders::DescribeFunctionInputBuilder {
         crate::operation::describe_function::builders::DescribeFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<crate::types::FunctionStage>,
@@ -69,10 +66,7 @@ impl DescribeFunctionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_function::DescribeFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_function::DescribeFunctionInput {
             name: self.name,
             stage: self.stage,

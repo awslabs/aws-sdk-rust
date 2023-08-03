@@ -6,8 +6,7 @@
 pub struct ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
     #[doc(hidden)]
-    pub task_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>,
+    pub task_executions: ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListTaskExecutionsOutput {
 }
 impl ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
-    pub fn task_executions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TaskExecutionListEntry]> {
+    pub fn task_executions(&self) -> ::std::option::Option<&[crate::types::TaskExecutionListEntry]> {
         self.task_executions.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
@@ -32,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListTaskExecutionsOutput {
 }
 impl ListTaskExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskExecutionsOutput`](crate::operation::list_task_executions::ListTaskExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_task_executions::builders::ListTaskExecutionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_task_executions::builders::ListTaskExecutionsOutputBuilder {
         crate::operation::list_task_executions::builders::ListTaskExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTaskExecutionsOutput`](crate::operation::list_task_executions::ListTaskExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskExecutionsOutputBuilder {
-    pub(crate) task_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>,
+    pub(crate) task_executions: ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +55,12 @@ impl ListTaskExecutionsOutputBuilder {
         self
     }
     /// <p>A list of executed tasks.</p>
-    pub fn set_task_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>,
-    ) -> Self {
+    pub fn set_task_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>) -> Self {
         self.task_executions = input;
         self
     }
     /// <p>A list of executed tasks.</p>
-    pub fn get_task_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>> {
+    pub fn get_task_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>> {
         &self.task_executions
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>

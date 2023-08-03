@@ -26,8 +26,7 @@ impl RetrieveDomainAuthCodeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveDomainAuthCodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder,
+    inner: crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder,
 }
 impl RetrieveDomainAuthCodeFluentBuilder {
     /// Creates a new `RetrieveDomainAuthCode`.
@@ -38,10 +37,7 @@ impl RetrieveDomainAuthCodeFluentBuilder {
         }
     }
     /// Access the RetrieveDomainAuthCode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RetrieveDomainAuthCodeFluentBuilder {
             crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RetrieveDomainAuthCodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RetrieveDomainAuthCodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RetrieveDomainAuthCodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RetrieveDomainAuthCodeFluentBuilder {
             crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError>,
     > {
         self.customize_middleware().await
     }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAssociationOutput`](crate::operation::describe_association::DescribeAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::operation::describe_association::DescribeAssociationOutput::association_description): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<DescribeAssociationError>`](crate::operation::describe_association::DescribeAssociationError)
-    pub fn describe_association(
-        &self,
-    ) -> crate::operation::describe_association::builders::DescribeAssociationFluentBuilder {
-        crate::operation::describe_association::builders::DescribeAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_association(&self) -> crate::operation::describe_association::builders::DescribeAssociationFluentBuilder {
+        crate::operation::describe_association::builders::DescribeAssociationFluentBuilder::new(self.handle.clone())
     }
 }

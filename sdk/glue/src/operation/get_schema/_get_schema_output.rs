@@ -112,9 +112,7 @@ impl GetSchemaOutput {
 
 /// A builder for [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaOutputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ pub struct GetSchemaOutputBuilder {
 }
 impl GetSchemaOutputBuilder {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -214,10 +206,7 @@ impl GetSchemaOutputBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }
@@ -231,10 +220,7 @@ impl GetSchemaOutputBuilder {
         self
     }
     /// <p>The compatibility mode of the schema.</p>
-    pub fn set_compatibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Compatibility>,
-    ) -> Self {
+    pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::Compatibility>) -> Self {
         self.compatibility = input;
         self
     }
@@ -290,10 +276,7 @@ impl GetSchemaOutputBuilder {
         self
     }
     /// <p>The status of the schema.</p>
-    pub fn set_schema_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaStatus>,
-    ) -> Self {
+    pub fn set_schema_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
         self.schema_status = input;
         self
     }

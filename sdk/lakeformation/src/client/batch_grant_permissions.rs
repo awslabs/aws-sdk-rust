@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchGrantPermissionsOutput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput) with field(s):
     ///   - [`failures(Option<Vec<BatchPermissionsFailureEntry>>)`](crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput::failures): <p>A list of failures to grant permissions to the resources.</p>
     /// - On failure, responds with [`SdkError<BatchGrantPermissionsError>`](crate::operation::batch_grant_permissions::BatchGrantPermissionsError)
-    pub fn batch_grant_permissions(
-        &self,
-    ) -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsFluentBuilder
-    {
-        crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_grant_permissions(&self) -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsFluentBuilder {
+        crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

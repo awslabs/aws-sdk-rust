@@ -29,16 +29,14 @@ impl ListLicenseSpecificationsForResourceInput {
 }
 impl ListLicenseSpecificationsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceInput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput).
-    pub fn builder() -> crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder{
+    pub fn builder() -> crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder {
         crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseSpecificationsForResourceInput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl ListLicenseSpecificationsForResourceInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLicenseSpecificationsForResourceInput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resource_arn: self.resource_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

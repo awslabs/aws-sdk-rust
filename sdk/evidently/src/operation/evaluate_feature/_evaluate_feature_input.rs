@@ -45,9 +45,7 @@ impl EvaluateFeatureInput {
 
 /// A builder for [`EvaluateFeatureInput`](crate::operation::evaluate_feature::EvaluateFeatureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateFeatureInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) feature: ::std::option::Option<::std::string::String>,
@@ -99,19 +97,13 @@ impl EvaluateFeatureInputBuilder {
     }
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
-    pub fn evaluation_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
-    pub fn set_evaluation_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_context = input;
         self
     }
@@ -123,10 +115,7 @@ impl EvaluateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateFeatureInput`](crate::operation::evaluate_feature::EvaluateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::evaluate_feature::EvaluateFeatureInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::evaluate_feature::EvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_feature::EvaluateFeatureInput {
             project: self.project,
             feature: self.feature,

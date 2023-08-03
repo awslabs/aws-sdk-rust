@@ -35,9 +35,7 @@ impl ListComputeOutput {
 
 /// A builder for [`ListComputeOutput`](crate::operation::list_compute::ListComputeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComputeOutputBuilder {
     pub(crate) compute_list: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListComputeOutputBuilder {
         self
     }
     /// <p>A list of compute resources registered to the fleet you specified.</p>
-    pub fn set_compute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
-    ) -> Self {
+    pub fn set_compute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>) -> Self {
         self.compute_list = input;
         self
     }
     /// <p>A list of compute resources registered to the fleet you specified.</p>
-    pub fn get_compute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Compute>> {
+    pub fn get_compute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compute>> {
         &self.compute_list
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>

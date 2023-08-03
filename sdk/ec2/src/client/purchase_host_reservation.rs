@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`total_hourly_price(Option<String>)`](crate::operation::purchase_host_reservation::PurchaseHostReservationOutput::total_hourly_price): <p>The total hourly price of the reservation calculated per hour.</p>
     ///   - [`total_upfront_price(Option<String>)`](crate::operation::purchase_host_reservation::PurchaseHostReservationOutput::total_upfront_price): <p>The total amount charged to your account when you purchase the reservation.</p>
     /// - On failure, responds with [`SdkError<PurchaseHostReservationError>`](crate::operation::purchase_host_reservation::PurchaseHostReservationError)
-    pub fn purchase_host_reservation(
-        &self,
-    ) -> crate::operation::purchase_host_reservation::builders::PurchaseHostReservationFluentBuilder
-    {
+    pub fn purchase_host_reservation(&self) -> crate::operation::purchase_host_reservation::builders::PurchaseHostReservationFluentBuilder {
         crate::operation::purchase_host_reservation::builders::PurchaseHostReservationFluentBuilder::new(self.handle.clone())
     }
 }

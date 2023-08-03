@@ -26,14 +26,10 @@ pub struct UpdateIntegrationOutput {
     pub credentials: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
     #[doc(hidden)]
-    pub request_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
     #[doc(hidden)]
-    pub request_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
     #[doc(hidden)]
     pub passthrough_behavior: ::std::option::Option<::std::string::String>,
@@ -52,9 +48,7 @@ pub struct UpdateIntegrationOutput {
     pub cache_key_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the integration's responses.</p>
     #[doc(hidden)]
-    pub integration_responses: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>,
-    >,
+    pub integration_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>>,
     /// <p>Specifies the TLS configuration for an integration.</p>
     #[doc(hidden)]
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
@@ -88,19 +82,11 @@ impl UpdateIntegrationOutput {
         self.credentials.as_deref()
     }
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
-    pub fn request_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_parameters.as_ref()
     }
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
-    pub fn request_templates(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_templates.as_ref()
     }
     /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
@@ -109,9 +95,7 @@ impl UpdateIntegrationOutput {
     }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-    pub fn content_handling(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
+    pub fn content_handling(&self) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
         self.content_handling.as_ref()
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
@@ -129,9 +113,7 @@ impl UpdateIntegrationOutput {
     /// <p>Specifies the integration's responses.</p>
     pub fn integration_responses(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>> {
         self.integration_responses.as_ref()
     }
     /// <p>Specifies the TLS configuration for an integration.</p>
@@ -146,17 +128,14 @@ impl ::aws_http::request_id::RequestId for UpdateIntegrationOutput {
 }
 impl UpdateIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIntegrationOutput`](crate::operation::update_integration::UpdateIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_integration::builders::UpdateIntegrationOutputBuilder {
+    pub fn builder() -> crate::operation::update_integration::builders::UpdateIntegrationOutputBuilder {
         crate::operation::update_integration::builders::UpdateIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIntegrationOutput`](crate::operation::update_integration::UpdateIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIntegrationOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IntegrationType>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
@@ -164,20 +143,14 @@ pub struct UpdateIntegrationOutputBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<::std::string::String>,
-    pub(crate) request_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) request_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) passthrough_behavior: ::std::option::Option<::std::string::String>,
     pub(crate) content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     pub(crate) timeout_in_millis: ::std::option::Option<i32>,
     pub(crate) cache_namespace: ::std::option::Option<::std::string::String>,
     pub(crate) cache_key_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) integration_responses: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>,
-    >,
+    pub(crate) integration_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
     _request_id: Option<String>,
 }
@@ -236,10 +209,7 @@ impl UpdateIntegrationOutputBuilder {
         self
     }
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
         self.connection_type = input;
         self
     }
@@ -248,18 +218,12 @@ impl UpdateIntegrationOutputBuilder {
         &self.connection_type
     }
     /// <p>The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -299,19 +263,13 @@ impl UpdateIntegrationOutputBuilder {
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
     pub fn set_request_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_parameters = input;
         self
     }
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
-    pub fn get_request_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_parameters
     }
     /// Adds a key-value pair to `request_templates`.
@@ -332,34 +290,22 @@ impl UpdateIntegrationOutputBuilder {
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
     pub fn set_request_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_templates = input;
         self
     }
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
-    pub fn get_request_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_templates
     }
     /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
-    pub fn passthrough_behavior(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn passthrough_behavior(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.passthrough_behavior = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
-    pub fn set_passthrough_behavior(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_passthrough_behavior(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.passthrough_behavior = input;
         self
     }
@@ -375,18 +321,13 @@ impl UpdateIntegrationOutputBuilder {
     }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-    pub fn set_content_handling(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentHandlingStrategy>,
-    ) -> Self {
+    pub fn set_content_handling(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
         self.content_handling = input;
         self
     }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-    pub fn get_content_handling(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+    pub fn get_content_handling(&self) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
         &self.content_handling
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
@@ -404,18 +345,12 @@ impl UpdateIntegrationOutputBuilder {
         &self.timeout_in_millis
     }
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-    pub fn cache_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-    pub fn set_cache_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_namespace = input;
         self
     }
@@ -428,27 +363,19 @@ impl UpdateIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).
     ///
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
-    pub fn cache_key_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_key_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cache_key_parameters.unwrap_or_default();
         v.push(input.into());
         self.cache_key_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
-    pub fn set_cache_key_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cache_key_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cache_key_parameters = input;
         self
     }
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
-    pub fn get_cache_key_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_key_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cache_key_parameters
     }
     /// Adds a key-value pair to `integration_responses`.
@@ -456,11 +383,7 @@ impl UpdateIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_integration_responses`](Self::set_integration_responses).
     ///
     /// <p>Specifies the integration's responses.</p>
-    pub fn integration_responses(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::IntegrationResponse,
-    ) -> Self {
+    pub fn integration_responses(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::IntegrationResponse) -> Self {
         let mut hash_map = self.integration_responses.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.integration_responses = ::std::option::Option::Some(hash_map);
@@ -469,9 +392,7 @@ impl UpdateIntegrationOutputBuilder {
     /// <p>Specifies the integration's responses.</p>
     pub fn set_integration_responses(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>>,
     ) -> Self {
         self.integration_responses = input;
         self
@@ -479,9 +400,7 @@ impl UpdateIntegrationOutputBuilder {
     /// <p>Specifies the integration's responses.</p>
     pub fn get_integration_responses(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>> {
         &self.integration_responses
     }
     /// <p>Specifies the TLS configuration for an integration.</p>

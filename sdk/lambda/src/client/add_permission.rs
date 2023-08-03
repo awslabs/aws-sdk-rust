@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`AddPermissionOutput`](crate::operation::add_permission::AddPermissionOutput) with field(s):
     ///   - [`statement(Option<String>)`](crate::operation::add_permission::AddPermissionOutput::statement): <p>The permission statement that's added to the function policy.</p>
     /// - On failure, responds with [`SdkError<AddPermissionError>`](crate::operation::add_permission::AddPermissionError)
-    pub fn add_permission(
-        &self,
-    ) -> crate::operation::add_permission::builders::AddPermissionFluentBuilder {
-        crate::operation::add_permission::builders::AddPermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_permission(&self) -> crate::operation::add_permission::builders::AddPermissionFluentBuilder {
+        crate::operation::add_permission::builders::AddPermissionFluentBuilder::new(self.handle.clone())
     }
 }

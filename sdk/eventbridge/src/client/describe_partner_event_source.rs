@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput::arn): <p>The ARN of the event source.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput::name): <p>The name of the event source.</p>
     /// - On failure, responds with [`SdkError<DescribePartnerEventSourceError>`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceError)
-    pub fn describe_partner_event_source(&self) -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder{
+    pub fn describe_partner_event_source(
+        &self,
+    ) -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder {
         crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder::new(self.handle.clone())
     }
 }

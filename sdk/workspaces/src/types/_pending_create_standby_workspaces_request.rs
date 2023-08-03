@@ -46,9 +46,7 @@ impl PendingCreateStandbyWorkspacesRequest {
 
 /// A builder for [`PendingCreateStandbyWorkspacesRequest`](crate::types::PendingCreateStandbyWorkspacesRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingCreateStandbyWorkspacesRequestBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,

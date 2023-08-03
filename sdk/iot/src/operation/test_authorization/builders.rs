@@ -10,10 +10,7 @@ impl TestAuthorizationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::test_authorization::TestAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_authorization::TestAuthorizationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.test_authorization();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl TestAuthorizationFluentBuilder {
         }
     }
     /// Access the TestAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_authorization::builders::TestAuthorizationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::test_authorization::builders::TestAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl TestAuthorizationFluentBuilder {
             crate::operation::test_authorization::TestAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_authorization::TestAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl TestAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl TestAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_authorization::TestAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_authorization::TestAuthorizationError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl TestAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_authorization::TestAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_authorization::TestAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl TestAuthorizationFluentBuilder {
             crate::operation::test_authorization::TestAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_authorization::TestAuthorizationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl TestAuthorizationFluentBuilder {
         self.inner.get_principal()
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cognito_identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cognito_identity_pool_id(input.into());
         self
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn set_cognito_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cognito_identity_pool_id(input);
         self
     }
@@ -167,17 +145,12 @@ impl TestAuthorizationFluentBuilder {
         self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn set_auth_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>,
-    ) -> Self {
+    pub fn set_auth_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>) -> Self {
         self.inner = self.inner.set_auth_infos(input);
         self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn get_auth_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>> {
+    pub fn get_auth_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>> {
         self.inner.get_auth_infos()
     }
     /// <p>The MQTT client ID.</p>
@@ -199,25 +172,17 @@ impl TestAuthorizationFluentBuilder {
     /// To override the contents of this collection use [`set_policy_names_to_add`](Self::set_policy_names_to_add).
     ///
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn policy_names_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_names_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_names_to_add(input.into());
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names_to_add(input);
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn get_policy_names_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names_to_add()
     }
     /// Appends an item to `policyNamesToSkip`.
@@ -225,25 +190,17 @@ impl TestAuthorizationFluentBuilder {
     /// To override the contents of this collection use [`set_policy_names_to_skip`](Self::set_policy_names_to_skip).
     ///
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn policy_names_to_skip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_names_to_skip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_names_to_skip(input.into());
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_skip(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names_to_skip(input);
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn get_policy_names_to_skip(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names_to_skip(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names_to_skip()
     }
 }

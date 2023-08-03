@@ -10,10 +10,7 @@ impl CreateInputInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_input::CreateInputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_input::CreateInputError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_input::CreateInputError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_input();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateInputFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_input::CreateInput,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_input::CreateInput, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_input::CreateInputError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateInputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateInputFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_input::CreateInput,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_input::CreateInput, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_input::CreateInputError>,
     > {
         self.customize_middleware().await
@@ -122,17 +110,12 @@ impl CreateInputFluentBuilder {
         self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>> {
         self.inner.get_destinations()
     }
     /// Appends an item to `InputDevices`.
@@ -145,17 +128,12 @@ impl CreateInputFluentBuilder {
         self
     }
     /// Settings for the devices.
-    pub fn set_input_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
-    ) -> Self {
+    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>) -> Self {
         self.inner = self.inner.set_input_devices(input);
         self
     }
     /// Settings for the devices.
-    pub fn get_input_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>> {
+    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>> {
         self.inner.get_input_devices()
     }
     /// Appends an item to `InputSecurityGroups`.
@@ -163,25 +141,17 @@ impl CreateInputFluentBuilder {
     /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
     ///
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn input_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_security_groups(input.into());
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn set_input_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_input_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_input_security_groups(input);
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn get_input_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_input_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_input_security_groups()
     }
     /// Appends an item to `MediaConnectFlows`.
@@ -194,17 +164,12 @@ impl CreateInputFluentBuilder {
         self
     }
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn set_media_connect_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
-    ) -> Self {
+    pub fn set_media_connect_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>) -> Self {
         self.inner = self.inner.set_media_connect_flows(input);
         self
     }
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn get_media_connect_flows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>> {
+    pub fn get_media_connect_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>> {
         self.inner.get_media_connect_flows()
     }
     /// Name of the input.
@@ -259,17 +224,12 @@ impl CreateInputFluentBuilder {
         self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
         self.inner.get_sources()
     }
     /// Adds a key-value pair to `Tags`.
@@ -277,30 +237,17 @@ impl CreateInputFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.

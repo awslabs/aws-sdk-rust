@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RemoveLfTagsFromResourceOutput {
 }
 impl RemoveLfTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput).
-    pub fn builder() -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder{
+    pub fn builder() -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder {
         crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveLfTagsFromResourceOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl RemoveLfTagsFromResourceOutputBuilder {
         self
     }
     /// <p>A list of failures to untag a resource.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>A list of failures to untag a resource.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagError>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagError>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl RemoveLfTagsFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput {
+    pub fn build(self) -> crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput {
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput {
             failures: self.failures,
             _request_id: self._request_id,

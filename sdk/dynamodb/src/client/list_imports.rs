@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`import_summary_list(Option<Vec<ImportSummary>>)`](crate::operation::list_imports::ListImportsOutput::import_summary_list): <p> A list of <code>ImportSummary</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
-    pub fn list_imports(
-        &self,
-    ) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
+    pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
         crate::operation::list_imports::builders::ListImportsFluentBuilder::new(self.handle.clone())
     }
 }

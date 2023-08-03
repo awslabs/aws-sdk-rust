@@ -29,9 +29,7 @@ impl DeleteFeatureInput {
 
 /// A builder for [`DeleteFeatureInput`](crate::operation::delete_feature::DeleteFeatureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFeatureInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) feature: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteFeatureInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFeatureInput`](crate::operation::delete_feature::DeleteFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_feature::DeleteFeatureInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_feature::DeleteFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_feature::DeleteFeatureInput {
             project: self.project,
             feature: self.feature,

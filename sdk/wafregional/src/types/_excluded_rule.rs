@@ -27,9 +27,7 @@ impl ExcludedRule {
 
 /// A builder for [`ExcludedRule`](crate::types::ExcludedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExcludedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,8 +48,6 @@ impl ExcludedRuleBuilder {
     }
     /// Consumes the builder and constructs a [`ExcludedRule`](crate::types::ExcludedRule).
     pub fn build(self) -> crate::types::ExcludedRule {
-        crate::types::ExcludedRule {
-            rule_id: self.rule_id,
-        }
+        crate::types::ExcludedRule { rule_id: self.rule_id }
     }
 }

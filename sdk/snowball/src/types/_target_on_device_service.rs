@@ -30,9 +30,7 @@ impl TargetOnDeviceService {
 
 /// A builder for [`TargetOnDeviceService`](crate::types::TargetOnDeviceService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetOnDeviceServiceBuilder {
     pub(crate) service_name: ::std::option::Option<crate::types::DeviceServiceName>,
     pub(crate) transfer_option: ::std::option::Option<crate::types::TransferOption>,
@@ -44,10 +42,7 @@ impl TargetOnDeviceServiceBuilder {
         self
     }
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::DeviceServiceName>) -> Self {
         self.service_name = input;
         self
     }
@@ -61,10 +56,7 @@ impl TargetOnDeviceServiceBuilder {
         self
     }
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
-    pub fn set_transfer_option(
-        mut self,
-        input: ::std::option::Option<crate::types::TransferOption>,
-    ) -> Self {
+    pub fn set_transfer_option(mut self, input: ::std::option::Option<crate::types::TransferOption>) -> Self {
         self.transfer_option = input;
         self
     }

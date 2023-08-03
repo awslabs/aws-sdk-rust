@@ -14,8 +14,7 @@ pub struct MonitorContactInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
     #[doc(hidden)]
-    pub allowed_monitor_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
+    pub allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ impl MonitorContactInput {
         self.user_id.as_deref()
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
-    pub fn allowed_monitor_capabilities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitorCapability]> {
+    pub fn allowed_monitor_capabilities(&self) -> ::std::option::Option<&[crate::types::MonitorCapability]> {
         self.allowed_monitor_capabilities.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -53,15 +50,12 @@ impl MonitorContactInput {
 
 /// A builder for [`MonitorContactInput`](crate::operation::monitor_contact::MonitorContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_monitor_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
+    pub(crate) allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl MonitorContactInputBuilder {
@@ -119,17 +113,12 @@ impl MonitorContactInputBuilder {
         self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
-    pub fn set_allowed_monitor_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
-    ) -> Self {
+    pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>) -> Self {
         self.allowed_monitor_capabilities = input;
         self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
-    pub fn get_allowed_monitor_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
+    pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
         &self.allowed_monitor_capabilities
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -149,10 +138,7 @@ impl MonitorContactInputBuilder {
     /// Consumes the builder and constructs a [`MonitorContactInput`](crate::operation::monitor_contact::MonitorContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::monitor_contact::MonitorContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::monitor_contact::MonitorContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::monitor_contact::MonitorContactInput {
             instance_id: self.instance_id,
             contact_id: self.contact_id,

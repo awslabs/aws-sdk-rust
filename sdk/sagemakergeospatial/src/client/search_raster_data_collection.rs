@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     ///   - [`items(Option<Vec<ItemSource>>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::items): <p>List of items matching the Raster DataCollectionQuery.</p>
     /// - On failure, responds with [`SdkError<SearchRasterDataCollectionError>`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionError)
-    pub fn search_raster_data_collection(&self) -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder{
+    pub fn search_raster_data_collection(
+        &self,
+    ) -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder {
         crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::new(self.handle.clone())
     }
 }

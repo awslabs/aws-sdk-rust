@@ -29,16 +29,15 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
 }
 impl UpdateRoutingProfileDefaultOutboundQueueInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput).
-    pub fn builder() -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueInputBuilder{
+    pub fn builder() -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueInputBuilder
+    {
         crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +59,12 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_id = input;
         self
     }
@@ -80,18 +73,12 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         &self.routing_profile_id
     }
     /// <p>The identifier for the default outbound queue.</p>
-    pub fn default_outbound_queue_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_outbound_queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_outbound_queue_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the default outbound queue.</p>
-    pub fn set_default_outbound_queue_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_outbound_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_outbound_queue_id = input;
         self
     }
@@ -100,16 +87,18 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         &self.default_outbound_queue_id
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput {
-                instance_id: self.instance_id
-                ,
-                routing_profile_id: self.routing_profile_id
-                ,
-                default_outbound_queue_id: self.default_outbound_queue_id
-                ,
-            }
+                instance_id: self.instance_id,
+                routing_profile_id: self.routing_profile_id,
+                default_outbound_queue_id: self.default_outbound_queue_id,
+            },
         )
     }
 }

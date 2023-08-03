@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`scaling_policies(Option<Vec<ScalingPolicy>>)`](crate::operation::describe_policies::DescribePoliciesOutput::scaling_policies): <p>The scaling policies.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_policies::DescribePoliciesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribePoliciesError>`](crate::operation::describe_policies::DescribePoliciesError)
-    pub fn describe_policies(
-        &self,
-    ) -> crate::operation::describe_policies::builders::DescribePoliciesFluentBuilder {
-        crate::operation::describe_policies::builders::DescribePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_policies(&self) -> crate::operation::describe_policies::builders::DescribePoliciesFluentBuilder {
+        crate::operation::describe_policies::builders::DescribePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

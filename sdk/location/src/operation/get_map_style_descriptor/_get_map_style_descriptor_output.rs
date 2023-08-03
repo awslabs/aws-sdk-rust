@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetMapStyleDescriptorOutput {
 }
 impl GetMapStyleDescriptorOutput {
     /// Creates a new builder-style object to manufacture [`GetMapStyleDescriptorOutput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput).
-    pub fn builder(
-    ) -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorOutputBuilder {
         crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMapStyleDescriptorOutput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMapStyleDescriptorOutputBuilder {
     pub(crate) blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -83,18 +79,12 @@ impl GetMapStyleDescriptorOutputBuilder {
         &self.content_type
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
-    pub fn cache_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
-    pub fn set_cache_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_control = input;
         self
     }

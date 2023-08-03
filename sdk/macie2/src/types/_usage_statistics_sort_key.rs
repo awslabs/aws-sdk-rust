@@ -40,13 +40,7 @@
 /// <p>The field to use to sort the results of a query for Amazon Macie account quotas and usage data. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UsageStatisticsSortKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for UsageStatisticsSortKey {
             "freeTrialStartDate" => UsageStatisticsSortKey::FreeTrialStartDate,
             "serviceLimitValue" => UsageStatisticsSortKey::ServiceLimitValue,
             "total" => UsageStatisticsSortKey::Total,
-            other => UsageStatisticsSortKey::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UsageStatisticsSortKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl UsageStatisticsSortKey {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "accountId",
-            "freeTrialStartDate",
-            "serviceLimitValue",
-            "total",
-        ]
+        &["accountId", "freeTrialStartDate", "serviceLimitValue", "total"]
     }
 }
 impl ::std::convert::AsRef<str> for UsageStatisticsSortKey {

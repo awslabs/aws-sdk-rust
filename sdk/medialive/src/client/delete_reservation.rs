@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::delete_reservation::DeleteReservationOutput::tags): A collection of key-value pairs
     ///   - [`usage_price(Option<f64>)`](crate::operation::delete_reservation::DeleteReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
     /// - On failure, responds with [`SdkError<DeleteReservationError>`](crate::operation::delete_reservation::DeleteReservationError)
-    pub fn delete_reservation(
-        &self,
-    ) -> crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder {
-        crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_reservation(&self) -> crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder {
+        crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl ListLabelGroupsInput {
 
 /// A builder for [`ListLabelGroupsInput`](crate::operation::list_label_groups::ListLabelGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelGroupsInputBuilder {
     pub(crate) label_group_name_begins_with: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,25 +44,17 @@ pub struct ListLabelGroupsInputBuilder {
 }
 impl ListLabelGroupsInputBuilder {
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn label_group_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn set_label_group_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name_begins_with = input;
         self
     }
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn get_label_group_name_begins_with(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_label_group_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name_begins_with
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
@@ -98,10 +88,7 @@ impl ListLabelGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListLabelGroupsInput`](crate::operation::list_label_groups::ListLabelGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_label_groups::ListLabelGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_label_groups::ListLabelGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_label_groups::ListLabelGroupsInput {
             label_group_name_begins_with: self.label_group_name_begins_with,
             next_token: self.next_token,

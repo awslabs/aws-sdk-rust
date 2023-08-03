@@ -34,9 +34,7 @@ impl ExecuteCommandConfiguration {
         self.logging.as_ref()
     }
     /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is specified, a <code>logConfiguration</code> must be provided.</p>
-    pub fn log_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExecuteCommandLogConfiguration> {
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::ExecuteCommandLogConfiguration> {
         self.log_configuration.as_ref()
     }
 }
@@ -49,14 +47,11 @@ impl ExecuteCommandConfiguration {
 
 /// A builder for [`ExecuteCommandConfiguration`](crate::types::ExecuteCommandConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCommandConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) logging: ::std::option::Option<crate::types::ExecuteCommandLogging>,
-    pub(crate) log_configuration:
-        ::std::option::Option<crate::types::ExecuteCommandLogConfiguration>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::ExecuteCommandLogConfiguration>,
 }
 impl ExecuteCommandConfigurationBuilder {
     /// <p>Specify an Key Management Service key ID to encrypt the data between the local client and the container.</p>
@@ -89,10 +84,7 @@ impl ExecuteCommandConfigurationBuilder {
     /// <li> <p> <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p> </li>
     /// <li> <p> <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p> </li>
     /// </ul>
-    pub fn set_logging(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecuteCommandLogging>,
-    ) -> Self {
+    pub fn set_logging(mut self, input: ::std::option::Option<crate::types::ExecuteCommandLogging>) -> Self {
         self.logging = input;
         self
     }
@@ -106,25 +98,17 @@ impl ExecuteCommandConfigurationBuilder {
         &self.logging
     }
     /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is specified, a <code>logConfiguration</code> must be provided.</p>
-    pub fn log_configuration(
-        mut self,
-        input: crate::types::ExecuteCommandLogConfiguration,
-    ) -> Self {
+    pub fn log_configuration(mut self, input: crate::types::ExecuteCommandLogConfiguration) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is specified, a <code>logConfiguration</code> must be provided.</p>
-    pub fn set_log_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecuteCommandLogConfiguration>,
-    ) -> Self {
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::ExecuteCommandLogConfiguration>) -> Self {
         self.log_configuration = input;
         self
     }
     /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is specified, a <code>logConfiguration</code> must be provided.</p>
-    pub fn get_log_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecuteCommandLogConfiguration> {
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::ExecuteCommandLogConfiguration> {
         &self.log_configuration
     }
     /// Consumes the builder and constructs a [`ExecuteCommandConfiguration`](crate::types::ExecuteCommandConfiguration).

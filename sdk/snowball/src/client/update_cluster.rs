@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`forwarding_address_id(impl ::std::convert::Into<String>)`](crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::forwarding_address_id) / [`set_forwarding_address_id(Option<String>)`](crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::set_forwarding_address_id): <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     /// - On success, responds with [`UpdateClusterOutput`](crate::operation::update_cluster::UpdateClusterOutput)
     /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::operation::update_cluster::UpdateClusterError)
-    pub fn update_cluster(
-        &self,
-    ) -> crate::operation::update_cluster::builders::UpdateClusterFluentBuilder {
-        crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_cluster(&self) -> crate::operation::update_cluster::builders::UpdateClusterFluentBuilder {
+        crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::new(self.handle.clone())
     }
 }

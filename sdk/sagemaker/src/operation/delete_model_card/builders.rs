@@ -10,10 +10,7 @@ impl DeleteModelCardInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_model_card::DeleteModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_card::DeleteModelCardError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_card::DeleteModelCardError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_model_card();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteModelCardFluentBuilder {
         }
     }
     /// Access the DeleteModelCard as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_model_card::builders::DeleteModelCardInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_model_card::builders::DeleteModelCardInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteModelCardFluentBuilder {
             crate::operation::delete_model_card::DeleteModelCard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_card::DeleteModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_card::DeleteModelCardError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteModelCardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteModelCardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_card::DeleteModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_card::DeleteModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_card::DeleteModelCardError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteModelCardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_card::DeleteModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_card::DeleteModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_card::DeleteModelCardError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteModelCardFluentBuilder {
             crate::operation::delete_model_card::DeleteModelCard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_card::DeleteModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_card::DeleteModelCardError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model card to delete.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>The name of the model card to delete.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }

@@ -9,21 +9,13 @@ pub fn de_delete_instance_event_window_http_error(
     crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -38,16 +30,19 @@ pub fn de_delete_instance_event_window_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowOutputBuilder::default();
-        output = crate::protocol_serde::shape_delete_instance_event_window::de_delete_instance_event_window(_response_body, output).map_err(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_delete_instance_event_window::de_delete_instance_event_window(_response_body, output)
+            .map_err(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_delete_instance_event_window(inp: &[u8], mut builder: crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowOutputBuilder) -> Result<crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_delete_instance_event_window(
+    inp: &[u8],
+    mut builder: crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowOutputBuilder,
+) -> Result<crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -10,10 +10,7 @@ impl DescribeUsersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_users::DescribeUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_users::DescribeUsersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_users();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeUsersFluentBuilder {
         }
     }
     /// Access the DescribeUsers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_users::builders::DescribeUsersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_users::builders::DescribeUsersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,27 +110,16 @@ impl DescribeUsersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_users::paginator::DescribeUsersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
-        crate::operation::describe_users::paginator::DescribeUsersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
+        crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -147,18 +128,12 @@ impl DescribeUsersFluentBuilder {
         self.inner.get_authentication_token()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -218,10 +193,7 @@ impl DescribeUsersFluentBuilder {
         self
     }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<crate::types::UserFilterType>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<crate::types::UserFilterType>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }

@@ -24,10 +24,7 @@ pub fn ser_publish_layer_version_input(
     if let Some(var_7) = &input.content {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Content").start_object();
-        crate::protocol_serde::shape_layer_version_content_input::ser_layer_version_content_input(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_layer_version_content_input::ser_layer_version_content_input(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.description {

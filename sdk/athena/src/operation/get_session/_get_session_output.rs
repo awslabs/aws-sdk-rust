@@ -50,9 +50,7 @@ impl GetSessionOutput {
         self.engine_version.as_deref()
     }
     /// <p>Contains engine configuration information like DPU usage.</p>
-    pub fn engine_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EngineConfiguration> {
+    pub fn engine_configuration(&self) -> ::std::option::Option<&crate::types::EngineConfiguration> {
         self.engine_configuration.as_ref()
     }
     /// <p>The notebook version.</p>
@@ -60,9 +58,7 @@ impl GetSessionOutput {
         self.notebook_version.as_deref()
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
-    pub fn session_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SessionConfiguration> {
+    pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::SessionConfiguration> {
         self.session_configuration.as_ref()
     }
     /// <p>Contains information about the status of the session.</p>
@@ -88,9 +84,7 @@ impl GetSessionOutput {
 
 /// A builder for [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -147,18 +141,12 @@ impl GetSessionOutputBuilder {
         &self.work_group
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -172,32 +160,21 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>Contains engine configuration information like DPU usage.</p>
-    pub fn set_engine_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineConfiguration>,
-    ) -> Self {
+    pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
         self.engine_configuration = input;
         self
     }
     /// <p>Contains engine configuration information like DPU usage.</p>
-    pub fn get_engine_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EngineConfiguration> {
+    pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
         &self.engine_configuration
     }
     /// <p>The notebook version.</p>
-    pub fn notebook_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notebook version.</p>
-    pub fn set_notebook_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_version = input;
         self
     }
@@ -211,17 +188,12 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
-    pub fn set_session_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionConfiguration>,
-    ) -> Self {
+    pub fn set_session_configuration(mut self, input: ::std::option::Option<crate::types::SessionConfiguration>) -> Self {
         self.session_configuration = input;
         self
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
-    pub fn get_session_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SessionConfiguration> {
+    pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::SessionConfiguration> {
         &self.session_configuration
     }
     /// <p>Contains information about the status of the session.</p>
@@ -244,10 +216,7 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>Contains the DPU execution time.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::SessionStatistics>) -> Self {
         self.statistics = input;
         self
     }

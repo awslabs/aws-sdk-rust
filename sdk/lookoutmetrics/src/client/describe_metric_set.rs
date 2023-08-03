@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`metric_source(Option<MetricSource>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::metric_source): <p>Contains information about the dataset's source data.</p>
     ///   - [`dimension_filter_list(Option<Vec<MetricSetDimensionFilter>>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::dimension_filter_list): <p>The dimensions and their values that were used to filter the dataset.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricSetError>`](crate::operation::describe_metric_set::DescribeMetricSetError)
-    pub fn describe_metric_set(
-        &self,
-    ) -> crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder {
-        crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_metric_set(&self) -> crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder {
+        crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::new(self.handle.clone())
     }
 }

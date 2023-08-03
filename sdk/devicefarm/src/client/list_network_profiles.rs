@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`network_profiles(Option<Vec<NetworkProfile>>)`](crate::operation::list_network_profiles::ListNetworkProfilesOutput::network_profiles): <p>A list of the available network profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_profiles::ListNetworkProfilesOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListNetworkProfilesError>`](crate::operation::list_network_profiles::ListNetworkProfilesError)
-    pub fn list_network_profiles(
-        &self,
-    ) -> crate::operation::list_network_profiles::builders::ListNetworkProfilesFluentBuilder {
-        crate::operation::list_network_profiles::builders::ListNetworkProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_network_profiles(&self) -> crate::operation::list_network_profiles::builders::ListNetworkProfilesFluentBuilder {
+        crate::operation::list_network_profiles::builders::ListNetworkProfilesFluentBuilder::new(self.handle.clone())
     }
 }

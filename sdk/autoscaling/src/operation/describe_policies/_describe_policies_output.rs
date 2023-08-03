@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribePoliciesOutput {
 }
 impl DescribePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePoliciesOutput`](crate::operation::describe_policies::DescribePoliciesOutput).
-    pub fn builder() -> crate::operation::describe_policies::builders::DescribePoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_policies::builders::DescribePoliciesOutputBuilder {
         crate::operation::describe_policies::builders::DescribePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePoliciesOutput`](crate::operation::describe_policies::DescribePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePoliciesOutputBuilder {
-    pub(crate) scaling_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub(crate) scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribePoliciesOutputBuilder {
         self
     }
     /// <p>The scaling policies.</p>
-    pub fn set_scaling_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
-    ) -> Self {
+    pub fn set_scaling_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>) -> Self {
         self.scaling_policies = input;
         self
     }
     /// <p>The scaling policies.</p>
-    pub fn get_scaling_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
+    pub fn get_scaling_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
         &self.scaling_policies
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>

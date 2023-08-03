@@ -44,9 +44,7 @@ impl ComputeCapacityStatus {
 
 /// A builder for [`ComputeCapacityStatus`](crate::types::ComputeCapacityStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeCapacityStatusBuilder {
     pub(crate) desired: ::std::option::Option<i32>,
     pub(crate) running: ::std::option::Option<i32>,

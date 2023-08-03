@@ -8,8 +8,7 @@ pub struct GetSavingsPlansPurchaseRecommendationOutput {
     pub metadata: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>,
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
     #[doc(hidden)]
-    pub savings_plans_purchase_recommendation:
-        ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation>,
+    pub savings_plans_purchase_recommendation: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -17,15 +16,11 @@ pub struct GetSavingsPlansPurchaseRecommendationOutput {
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>Information that regards this specific recommendation set.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendationMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-    pub fn savings_plans_purchase_recommendation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendation> {
+    pub fn savings_plans_purchase_recommendation(&self) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendation> {
         self.savings_plans_purchase_recommendation.as_ref()
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -40,52 +35,37 @@ impl ::aws_http::request_id::RequestId for GetSavingsPlansPurchaseRecommendation
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationOutput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput).
-    pub fn builder() -> crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationOutputBuilder{
+    pub fn builder() -> crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationOutputBuilder {
         crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSavingsPlansPurchaseRecommendationOutput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendationOutputBuilder {
-    pub(crate) metadata:
-        ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>,
-    pub(crate) savings_plans_purchase_recommendation:
-        ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation>,
+    pub(crate) metadata: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>,
+    pub(crate) savings_plans_purchase_recommendation: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSavingsPlansPurchaseRecommendationOutputBuilder {
     /// <p>Information that regards this specific recommendation set.</p>
-    pub fn metadata(
-        mut self,
-        input: crate::types::SavingsPlansPurchaseRecommendationMetadata,
-    ) -> Self {
+    pub fn metadata(mut self, input: crate::types::SavingsPlansPurchaseRecommendationMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information that regards this specific recommendation set.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Information that regards this specific recommendation set.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata> {
         &self.metadata
     }
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-    pub fn savings_plans_purchase_recommendation(
-        mut self,
-        input: crate::types::SavingsPlansPurchaseRecommendation,
-    ) -> Self {
+    pub fn savings_plans_purchase_recommendation(mut self, input: crate::types::SavingsPlansPurchaseRecommendation) -> Self {
         self.savings_plans_purchase_recommendation = ::std::option::Option::Some(input);
         self
     }
@@ -98,24 +78,16 @@ impl GetSavingsPlansPurchaseRecommendationOutputBuilder {
         self
     }
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-    pub fn get_savings_plans_purchase_recommendation(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation> {
+    pub fn get_savings_plans_purchase_recommendation(&self) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation> {
         &self.savings_plans_purchase_recommendation
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -133,14 +105,11 @@ impl GetSavingsPlansPurchaseRecommendationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansPurchaseRecommendationOutput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput).
-    pub fn build(self) -> crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput{
+    pub fn build(self) -> crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput {
         crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput {
-            metadata: self.metadata
-            ,
-            savings_plans_purchase_recommendation: self.savings_plans_purchase_recommendation
-            ,
-            next_page_token: self.next_page_token
-            ,
+            metadata: self.metadata,
+            savings_plans_purchase_recommendation: self.savings_plans_purchase_recommendation,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

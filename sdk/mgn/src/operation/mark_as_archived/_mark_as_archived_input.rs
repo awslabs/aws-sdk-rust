@@ -29,27 +29,19 @@ impl MarkAsArchivedInput {
 
 /// A builder for [`MarkAsArchivedInput`](crate::operation::mark_as_archived::MarkAsArchivedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarkAsArchivedInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl MarkAsArchivedInputBuilder {
     /// <p>Mark as archived by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Mark as archived by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl MarkAsArchivedInputBuilder {
     /// Consumes the builder and constructs a [`MarkAsArchivedInput`](crate::operation::mark_as_archived::MarkAsArchivedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::mark_as_archived::MarkAsArchivedInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::mark_as_archived::MarkAsArchivedInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::mark_as_archived::MarkAsArchivedInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAnomalySubscriptionOutput {
 }
 impl CreateAnomalySubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionOutput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput).
-    pub fn builder() -> crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionOutputBuilder {
         crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnomalySubscriptionOutput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionOutputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAnomalySubscriptionOutputBuilder {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_arn = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateAnomalySubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAnomalySubscriptionOutput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput {
+    pub fn build(self) -> crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput {
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput {
             subscription_arn: self.subscription_arn,
             _request_id: self._request_id,

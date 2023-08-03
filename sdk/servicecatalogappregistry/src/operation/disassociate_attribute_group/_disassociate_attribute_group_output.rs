@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DisassociateAttributeGroupOutput {
 }
 impl DisassociateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAttributeGroupOutput`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput).
-    pub fn builder() -> crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupOutputBuilder {
         crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAttributeGroupOutput`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAttributeGroupOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_group_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct DisassociateAttributeGroupOutputBuilder {
 }
 impl DisassociateAttributeGroupOutputBuilder {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -65,18 +57,12 @@ impl DisassociateAttributeGroupOutputBuilder {
         &self.application_arn
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-    pub fn attribute_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-    pub fn set_attribute_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_group_arn = input;
         self
     }
@@ -94,9 +80,7 @@ impl DisassociateAttributeGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateAttributeGroupOutput`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput {
+    pub fn build(self) -> crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput {
         crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput {
             application_arn: self.application_arn,
             attribute_group_arn: self.attribute_group_arn,

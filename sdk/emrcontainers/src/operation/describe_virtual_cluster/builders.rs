@@ -37,10 +37,7 @@ impl DescribeVirtualClusterFluentBuilder {
         }
     }
     /// Access the DescribeVirtualCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeVirtualClusterFluentBuilder {
             crate::operation::describe_virtual_cluster::DescribeVirtualCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_cluster::DescribeVirtualClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_cluster::DescribeVirtualClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeVirtualClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeVirtualClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_cluster::DescribeVirtualClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_cluster::DescribeVirtualClusterError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeVirtualClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_cluster::DescribeVirtualClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_cluster::DescribeVirtualClusterError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeVirtualClusterFluentBuilder {
             crate::operation::describe_virtual_cluster::DescribeVirtualCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_cluster::DescribeVirtualClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_cluster::DescribeVirtualClusterError>,
     > {
         self.customize_middleware().await
     }

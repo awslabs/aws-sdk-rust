@@ -16,17 +16,14 @@ impl ListVpcEndpointsInput {
 }
 impl ListVpcEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
-    pub fn builder() -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder {
         crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,7 @@ impl ListVpcEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpc_endpoints::ListVpcEndpointsInput {
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_vpc_endpoints::ListVpcEndpointsInput { next_token: self.next_token })
     }
 }

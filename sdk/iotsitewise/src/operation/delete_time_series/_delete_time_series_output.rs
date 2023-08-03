@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTimeSeriesOutput {
 }
 impl DeleteTimeSeriesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesOutput`](crate::operation::delete_time_series::DeleteTimeSeriesOutput).
-    pub fn builder() -> crate::operation::delete_time_series::builders::DeleteTimeSeriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_time_series::builders::DeleteTimeSeriesOutputBuilder {
         crate::operation::delete_time_series::builders::DeleteTimeSeriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTimeSeriesOutput`](crate::operation::delete_time_series::DeleteTimeSeriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTimeSeriesOutputBuilder {
     _request_id: Option<String>,
 }

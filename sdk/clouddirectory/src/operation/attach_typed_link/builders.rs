@@ -10,10 +10,7 @@ impl AttachTypedLinkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_typed_link::AttachTypedLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_typed_link::AttachTypedLinkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_typed_link::AttachTypedLinkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.attach_typed_link();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AttachTypedLinkFluentBuilder {
         }
     }
     /// Access the AttachTypedLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_typed_link::builders::AttachTypedLinkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::attach_typed_link::builders::AttachTypedLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AttachTypedLinkFluentBuilder {
             crate::operation::attach_typed_link::AttachTypedLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_typed_link::AttachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_typed_link::AttachTypedLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AttachTypedLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AttachTypedLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_typed_link::AttachTypedLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_typed_link::AttachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_typed_link::AttachTypedLinkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AttachTypedLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_typed_link::AttachTypedLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_typed_link::AttachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_typed_link::AttachTypedLinkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl AttachTypedLinkFluentBuilder {
             crate::operation::attach_typed_link::AttachTypedLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_typed_link::AttachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_typed_link::AttachTypedLinkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,17 +126,12 @@ impl AttachTypedLinkFluentBuilder {
         self
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn set_source_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_source_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_source_object_reference(input);
         self
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn get_source_object_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectReference> {
+    pub fn get_source_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
         self.inner.get_source_object_reference()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
@@ -167,17 +140,12 @@ impl AttachTypedLinkFluentBuilder {
         self
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn set_target_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_target_object_reference(input);
         self
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn get_target_object_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectReference> {
+    pub fn get_target_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
         self.inner.get_target_object_reference()
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
@@ -186,17 +154,12 @@ impl AttachTypedLinkFluentBuilder {
         self
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    pub fn set_typed_link_facet(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
-    ) -> Self {
+    pub fn set_typed_link_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>) -> Self {
         self.inner = self.inner.set_typed_link_facet(input);
         self
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    pub fn get_typed_link_facet(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn get_typed_link_facet(&self) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
         self.inner.get_typed_link_facet()
     }
     /// Appends an item to `Attributes`.
@@ -209,17 +172,12 @@ impl AttachTypedLinkFluentBuilder {
         self
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
         self.inner.get_attributes()
     }
 }

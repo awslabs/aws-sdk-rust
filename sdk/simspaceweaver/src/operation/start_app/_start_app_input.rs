@@ -155,10 +155,7 @@ impl StartAppInputBuilder {
         self
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
-    pub fn set_launch_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchOverrides>,
-    ) -> Self {
+    pub fn set_launch_overrides(mut self, input: ::std::option::Option<crate::types::LaunchOverrides>) -> Self {
         self.launch_overrides = input;
         self
     }
@@ -167,12 +164,7 @@ impl StartAppInputBuilder {
         &self.launch_overrides
     }
     /// Consumes the builder and constructs a [`StartAppInput`](crate::operation::start_app::StartAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_app::StartAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_app::StartAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_app::StartAppInput {
             client_token: self.client_token,
             simulation: self.simulation,

@@ -18,8 +18,7 @@ pub struct InferredWorkloadSaving {
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub inferred_workload_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
     #[doc(hidden)]
     pub estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
@@ -38,15 +37,11 @@ impl InferredWorkloadSaving {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    pub fn inferred_workload_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
+    pub fn inferred_workload_types(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
         self.inferred_workload_types.as_deref()
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
-    pub fn estimated_monthly_savings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EstimatedMonthlySavings> {
+    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&crate::types::EstimatedMonthlySavings> {
         self.estimated_monthly_savings.as_ref()
     }
 }
@@ -59,14 +54,10 @@ impl InferredWorkloadSaving {
 
 /// A builder for [`InferredWorkloadSaving`](crate::types::InferredWorkloadSaving).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferredWorkloadSavingBuilder {
-    pub(crate) inferred_workload_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
-    pub(crate) estimated_monthly_savings:
-        ::std::option::Option<crate::types::EstimatedMonthlySavings>,
+    pub(crate) inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    pub(crate) estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
 }
 impl InferredWorkloadSavingBuilder {
     /// Appends an item to `inferred_workload_types`.
@@ -105,10 +96,7 @@ impl InferredWorkloadSavingBuilder {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    pub fn set_inferred_workload_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
-    ) -> Self {
+    pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>) -> Self {
         self.inferred_workload_types = input;
         self
     }
@@ -125,31 +113,21 @@ impl InferredWorkloadSavingBuilder {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    pub fn get_inferred_workload_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
+    pub fn get_inferred_workload_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
         &self.inferred_workload_types
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
-    pub fn estimated_monthly_savings(
-        mut self,
-        input: crate::types::EstimatedMonthlySavings,
-    ) -> Self {
+    pub fn estimated_monthly_savings(mut self, input: crate::types::EstimatedMonthlySavings) -> Self {
         self.estimated_monthly_savings = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
-    pub fn set_estimated_monthly_savings(
-        mut self,
-        input: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
-    ) -> Self {
+    pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<crate::types::EstimatedMonthlySavings>) -> Self {
         self.estimated_monthly_savings = input;
         self
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
-    pub fn get_estimated_monthly_savings(
-        &self,
-    ) -> &::std::option::Option<crate::types::EstimatedMonthlySavings> {
+    pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<crate::types::EstimatedMonthlySavings> {
         &self.estimated_monthly_savings
     }
     /// Consumes the builder and constructs a [`InferredWorkloadSaving`](crate::types::InferredWorkloadSaving).

@@ -22,18 +22,14 @@ impl GetRotationOverrideInput {
 }
 impl GetRotationOverrideInput {
     /// Creates a new builder-style object to manufacture [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
-    pub fn builder(
-    ) -> crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
-        crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
+        crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRotationOverrideInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl GetRotationOverrideInputBuilder {
         &self.rotation_id
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn rotation_override_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn set_rotation_override_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_override_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_override_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetRotationOverrideInputBuilder {
     /// Consumes the builder and constructs a [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rotation_override::GetRotationOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_rotation_override::GetRotationOverrideInput {
-                rotation_id: self.rotation_id,
-                rotation_override_id: self.rotation_override_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_rotation_override::GetRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_rotation_override::GetRotationOverrideInput {
+            rotation_id: self.rotation_id,
+            rotation_override_id: self.rotation_override_id,
+        })
     }
 }

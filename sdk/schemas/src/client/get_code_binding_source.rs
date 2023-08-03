@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetCodeBindingSourceOutput`](crate::operation::get_code_binding_source::GetCodeBindingSourceOutput) with field(s):
     ///   - [`body(Option<Blob>)`](crate::operation::get_code_binding_source::GetCodeBindingSourceOutput::body): (undocumented)
     /// - On failure, responds with [`SdkError<GetCodeBindingSourceError>`](crate::operation::get_code_binding_source::GetCodeBindingSourceError)
-    pub fn get_code_binding_source(
-        &self,
-    ) -> crate::operation::get_code_binding_source::builders::GetCodeBindingSourceFluentBuilder
-    {
-        crate::operation::get_code_binding_source::builders::GetCodeBindingSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_code_binding_source(&self) -> crate::operation::get_code_binding_source::builders::GetCodeBindingSourceFluentBuilder {
+        crate::operation::get_code_binding_source::builders::GetCodeBindingSourceFluentBuilder::new(self.handle.clone())
     }
 }

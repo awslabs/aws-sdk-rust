@@ -38,13 +38,7 @@
 /// H264 Force Field Pictures
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264ForceFieldPictures {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264ForceFieldPictures {
         match s {
             "DISABLED" => H264ForceFieldPictures::Disabled,
             "ENABLED" => H264ForceFieldPictures::Enabled,
-            other => H264ForceFieldPictures::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H264ForceFieldPictures::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

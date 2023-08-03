@@ -23,17 +23,14 @@ impl DeleteIndexFieldInput {
 }
 impl DeleteIndexFieldInput {
     /// Creates a new builder-style object to manufacture [`DeleteIndexFieldInput`](crate::operation::delete_index_field::DeleteIndexFieldInput).
-    pub fn builder() -> crate::operation::delete_index_field::builders::DeleteIndexFieldInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_index_field::builders::DeleteIndexFieldInputBuilder {
         crate::operation::delete_index_field::builders::DeleteIndexFieldInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIndexFieldInput`](crate::operation::delete_index_field::DeleteIndexFieldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIndexFieldInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_field_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl DeleteIndexFieldInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-    pub fn index_field_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn index_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-    pub fn set_index_field_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_index_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_field_name = input;
         self
     }
@@ -76,15 +67,10 @@ impl DeleteIndexFieldInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIndexFieldInput`](crate::operation::delete_index_field::DeleteIndexFieldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_index_field::DeleteIndexFieldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_index_field::DeleteIndexFieldInput {
-                domain_name: self.domain_name,
-                index_field_name: self.index_field_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_index_field::DeleteIndexFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_index_field::DeleteIndexFieldInput {
+            domain_name: self.domain_name,
+            index_field_name: self.index_field_name,
+        })
     }
 }

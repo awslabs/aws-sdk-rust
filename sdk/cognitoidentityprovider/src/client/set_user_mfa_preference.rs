@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`access_token(impl ::std::convert::Into<String>)`](crate::operation::set_user_mfa_preference::builders::SetUserMFAPreferenceFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::set_user_mfa_preference::builders::SetUserMFAPreferenceFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     /// - On success, responds with [`SetUserMfaPreferenceOutput`](crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput)
     /// - On failure, responds with [`SdkError<SetUserMFAPreferenceError>`](crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError)
-    pub fn set_user_mfa_preference(
-        &self,
-    ) -> crate::operation::set_user_mfa_preference::builders::SetUserMFAPreferenceFluentBuilder
-    {
-        crate::operation::set_user_mfa_preference::builders::SetUserMFAPreferenceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_user_mfa_preference(&self) -> crate::operation::set_user_mfa_preference::builders::SetUserMFAPreferenceFluentBuilder {
+        crate::operation::set_user_mfa_preference::builders::SetUserMFAPreferenceFluentBuilder::new(self.handle.clone())
     }
 }

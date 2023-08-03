@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFargateProfileOutput`](crate::operation::describe_fargate_profile::DescribeFargateProfileOutput) with field(s):
     ///   - [`fargate_profile(Option<FargateProfile>)`](crate::operation::describe_fargate_profile::DescribeFargateProfileOutput::fargate_profile): <p>The full description of your Fargate profile.</p>
     /// - On failure, responds with [`SdkError<DescribeFargateProfileError>`](crate::operation::describe_fargate_profile::DescribeFargateProfileError)
-    pub fn describe_fargate_profile(
-        &self,
-    ) -> crate::operation::describe_fargate_profile::builders::DescribeFargateProfileFluentBuilder
-    {
+    pub fn describe_fargate_profile(&self) -> crate::operation::describe_fargate_profile::builders::DescribeFargateProfileFluentBuilder {
         crate::operation::describe_fargate_profile::builders::DescribeFargateProfileFluentBuilder::new(self.handle.clone())
     }
 }

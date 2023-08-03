@@ -24,9 +24,7 @@ impl super::Client {
     /// - On success, responds with [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput) with field(s):
     ///   - [`command(Option<Command>)`](crate::operation::send_command::SendCommandOutput::command): <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     /// - On failure, responds with [`SdkError<SendCommandError>`](crate::operation::send_command::SendCommandError)
-    pub fn send_command(
-        &self,
-    ) -> crate::operation::send_command::builders::SendCommandFluentBuilder {
+    pub fn send_command(&self) -> crate::operation::send_command::builders::SendCommandFluentBuilder {
         crate::operation::send_command::builders::SendCommandFluentBuilder::new(self.handle.clone())
     }
 }

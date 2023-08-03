@@ -26,7 +26,7 @@ impl PutCaseEventConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder,
+    inner: crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder,
 }
 impl PutCaseEventConfigurationFluentBuilder {
     /// Creates a new `PutCaseEventConfiguration`.
@@ -37,7 +37,7 @@ impl PutCaseEventConfigurationFluentBuilder {
         }
     }
     /// Access the PutCaseEventConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutCaseEventConfigurationFluentBuilder {
             crate::operation::put_case_event_configuration::PutCaseEventConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_case_event_configuration::PutCaseEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_case_event_configuration::PutCaseEventConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutCaseEventConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutCaseEventConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_case_event_configuration::PutCaseEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_case_event_configuration::PutCaseEventConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutCaseEventConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_case_event_configuration::PutCaseEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_case_event_configuration::PutCaseEventConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutCaseEventConfigurationFluentBuilder {
             crate::operation::put_case_event_configuration::PutCaseEventConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_case_event_configuration::PutCaseEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_case_event_configuration::PutCaseEventConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,17 +129,12 @@ impl PutCaseEventConfigurationFluentBuilder {
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn set_event_bridge(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBridgeConfiguration>,
-    ) -> Self {
+    pub fn set_event_bridge(mut self, input: ::std::option::Option<crate::types::EventBridgeConfiguration>) -> Self {
         self.inner = self.inner.set_event_bridge(input);
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn get_event_bridge(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+    pub fn get_event_bridge(&self) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
         self.inner.get_event_bridge()
     }
 }

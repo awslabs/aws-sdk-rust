@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`instance_profiles(Option<Vec<InstanceProfile>>)`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput::instance_profiles): <p>An object that contains information about your instance profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput::next_token): <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListInstanceProfilesError>`](crate::operation::list_instance_profiles::ListInstanceProfilesError)
-    pub fn list_instance_profiles(
-        &self,
-    ) -> crate::operation::list_instance_profiles::builders::ListInstanceProfilesFluentBuilder {
-        crate::operation::list_instance_profiles::builders::ListInstanceProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instance_profiles(&self) -> crate::operation::list_instance_profiles::builders::ListInstanceProfilesFluentBuilder {
+        crate::operation::list_instance_profiles::builders::ListInstanceProfilesFluentBuilder::new(self.handle.clone())
     }
 }

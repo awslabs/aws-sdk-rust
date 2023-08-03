@@ -9,17 +9,11 @@ pub struct DescribeAccountAuditConfigurationOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
     #[doc(hidden)]
-    pub audit_notification_target_configurations: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    >,
+    pub audit_notification_target_configurations:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     /// <p>Which audit checks are enabled and disabled for this account.</p>
     #[doc(hidden)]
-    pub audit_check_configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    >,
+    pub audit_check_configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAuditConfigurationOutput {
@@ -31,20 +25,13 @@ impl DescribeAccountAuditConfigurationOutput {
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
     pub fn audit_notification_target_configurations(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         self.audit_notification_target_configurations.as_ref()
     }
     /// <p>Which audit checks are enabled and disabled for this account.</p>
     pub fn audit_check_configurations(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
         self.audit_check_configurations.as_ref()
     }
 }
@@ -55,27 +42,20 @@ impl ::aws_http::request_id::RequestId for DescribeAccountAuditConfigurationOutp
 }
 impl DescribeAccountAuditConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAuditConfigurationOutput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder {
         crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAuditConfigurationOutput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAuditConfigurationOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) audit_notification_target_configurations: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    >,
-    pub(crate) audit_check_configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    >,
+    pub(crate) audit_notification_target_configurations:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
+    pub(crate) audit_check_configurations:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAuditConfigurationOutputBuilder {
@@ -106,9 +86,7 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
         k: crate::types::AuditNotificationType,
         v: crate::types::AuditNotificationTarget,
     ) -> Self {
-        let mut hash_map = self
-            .audit_notification_target_configurations
-            .unwrap_or_default();
+        let mut hash_map = self.audit_notification_target_configurations.unwrap_or_default();
         hash_map.insert(k, v);
         self.audit_notification_target_configurations = ::std::option::Option::Some(hash_map);
         self
@@ -116,12 +94,7 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
     pub fn set_audit_notification_target_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::AuditNotificationType,
-                crate::types::AuditNotificationTarget,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     ) -> Self {
         self.audit_notification_target_configurations = input;
         self
@@ -129,12 +102,7 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
     pub fn get_audit_notification_target_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         &self.audit_notification_target_configurations
     }
     /// Adds a key-value pair to `audit_check_configurations`.
@@ -155,12 +123,7 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// <p>Which audit checks are enabled and disabled for this account.</p>
     pub fn set_audit_check_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::AuditCheckConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
     ) -> Self {
         self.audit_check_configurations = input;
         self
@@ -168,9 +131,7 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// <p>Which audit checks are enabled and disabled for this account.</p>
     pub fn get_audit_check_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
         &self.audit_check_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -183,14 +144,11 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountAuditConfigurationOutput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput {
         crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput {
-            role_arn: self.role_arn
-            ,
-            audit_notification_target_configurations: self.audit_notification_target_configurations
-            ,
-            audit_check_configurations: self.audit_check_configurations
-            ,
+            role_arn: self.role_arn,
+            audit_notification_target_configurations: self.audit_notification_target_configurations,
+            audit_check_configurations: self.audit_check_configurations,
             _request_id: self._request_id,
         }
     }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetFunctionConcurrencyOutput`](crate::operation::get_function_concurrency::GetFunctionConcurrencyOutput) with field(s):
     ///   - [`reserved_concurrent_executions(Option<i32>)`](crate::operation::get_function_concurrency::GetFunctionConcurrencyOutput::reserved_concurrent_executions): <p>The number of simultaneous executions that are reserved for the function.</p>
     /// - On failure, responds with [`SdkError<GetFunctionConcurrencyError>`](crate::operation::get_function_concurrency::GetFunctionConcurrencyError)
-    pub fn get_function_concurrency(
-        &self,
-    ) -> crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyFluentBuilder
-    {
+    pub fn get_function_concurrency(&self) -> crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyFluentBuilder {
         crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyFluentBuilder::new(self.handle.clone())
     }
 }

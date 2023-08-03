@@ -37,10 +37,7 @@ impl StopSpeakerSearchTaskFluentBuilder {
         }
     }
     /// Access the StopSpeakerSearchTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StopSpeakerSearchTaskFluentBuilder {
             crate::operation::stop_speaker_search_task::StopSpeakerSearchTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StopSpeakerSearchTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StopSpeakerSearchTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StopSpeakerSearchTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl StopSpeakerSearchTaskFluentBuilder {
             crate::operation::stop_speaker_search_task::StopSpeakerSearchTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl StopSpeakerSearchTaskFluentBuilder {
         self.inner.get_voice_connector_id()
     }
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.speaker_search_task_id(input.into());
         self
     }
     /// <p>The speaker search task ID.</p>
-    pub fn set_speaker_search_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_speaker_search_task_id(input);
         self
     }

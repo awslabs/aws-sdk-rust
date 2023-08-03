@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteGeofenceOutput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchDeleteGeofenceError>>)`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput::errors): <p>Contains error details for each geofence that failed to delete.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteGeofenceError>`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceError)
-    pub fn batch_delete_geofence(
-        &self,
-    ) -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder {
-        crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_geofence(&self) -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder {
+        crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceFluentBuilder::new(self.handle.clone())
     }
 }

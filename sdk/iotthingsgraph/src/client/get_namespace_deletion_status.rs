@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput::error_message): <p>An error code returned by the namespace deletion task.</p>
     /// - On failure, responds with [`SdkError<GetNamespaceDeletionStatusError>`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_namespace_deletion_status(&self) -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusFluentBuilder{
+    pub fn get_namespace_deletion_status(
+        &self,
+    ) -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusFluentBuilder {
         crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusFluentBuilder::new(self.handle.clone())
     }
 }

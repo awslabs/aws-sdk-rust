@@ -43,9 +43,7 @@ impl AddAttachmentsToSetFluentBuilder {
         }
     }
     /// Access the AddAttachmentsToSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl AddAttachmentsToSetFluentBuilder {
             crate::operation::add_attachments_to_set::AddAttachmentsToSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attachments_to_set::AddAttachmentsToSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl AddAttachmentsToSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl AddAttachmentsToSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attachments_to_set::AddAttachmentsToSetError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl AddAttachmentsToSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attachments_to_set::AddAttachmentsToSetError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +111,17 @@ impl AddAttachmentsToSetFluentBuilder {
             crate::operation::add_attachments_to_set::AddAttachmentsToSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_attachments_to_set::AddAttachmentsToSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn attachment_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_set_id(input.into());
         self
     }
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn set_attachment_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_set_id(input);
         self
     }
@@ -160,18 +141,13 @@ impl AddAttachmentsToSetFluentBuilder {
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
         self.inner.get_attachments()
     }
 }

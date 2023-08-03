@@ -38,13 +38,7 @@
 /// When set to GZIP, compresses HLS playlist.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmafManifestCompression {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmafManifestCompression {
         match s {
             "GZIP" => CmafManifestCompression::Gzip,
             "NONE" => CmafManifestCompression::None,
-            other => CmafManifestCompression::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CmafManifestCompression::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StopInstancesOutput`](crate::operation::stop_instances::StopInstancesOutput) with field(s):
     ///   - [`stopping_instances(Option<Vec<InstanceStateChange>>)`](crate::operation::stop_instances::StopInstancesOutput::stopping_instances): <p>Information about the stopped instances.</p>
     /// - On failure, responds with [`SdkError<StopInstancesError>`](crate::operation::stop_instances::StopInstancesError)
-    pub fn stop_instances(
-        &self,
-    ) -> crate::operation::stop_instances::builders::StopInstancesFluentBuilder {
-        crate::operation::stop_instances::builders::StopInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_instances(&self) -> crate::operation::stop_instances::builders::StopInstancesFluentBuilder {
+        crate::operation::stop_instances::builders::StopInstancesFluentBuilder::new(self.handle.clone())
     }
 }

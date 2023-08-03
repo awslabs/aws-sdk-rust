@@ -55,9 +55,7 @@ impl SparkSql {
 
 /// A builder for [`SparkSql`](crate::types::SparkSql).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SparkSqlBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -92,10 +90,7 @@ impl SparkSqlBuilder {
         self
     }
     /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -133,19 +128,14 @@ impl SparkSqlBuilder {
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
     /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
-    pub fn set_sql_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>>,
-    ) -> Self {
+    pub fn set_sql_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>>) -> Self {
         self.sql_aliases = input;
         self
     }
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
     /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
-    pub fn get_sql_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>> {
+    pub fn get_sql_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>> {
         &self.sql_aliases
     }
     /// Appends an item to `output_schemas`.
@@ -160,17 +150,12 @@ impl SparkSqlBuilder {
         self
     }
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SparkSql`](crate::types::SparkSql).

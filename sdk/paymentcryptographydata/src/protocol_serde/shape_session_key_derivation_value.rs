@@ -8,16 +8,12 @@ pub fn ser_session_key_derivation_value(
             object_6.key("ApplicationCryptogram").string(inner.as_str());
         }
         crate::types::SessionKeyDerivationValue::ApplicationTransactionCounter(inner) => {
-            object_6
-                .key("ApplicationTransactionCounter")
-                .string(inner.as_str());
+            object_6.key("ApplicationTransactionCounter").string(inner.as_str());
         }
         crate::types::SessionKeyDerivationValue::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "SessionKeyDerivationValue",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "SessionKeyDerivationValue",
+            ))
         }
     }
     Ok(())

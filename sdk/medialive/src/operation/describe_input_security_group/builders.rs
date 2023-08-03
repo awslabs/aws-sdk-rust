@@ -26,7 +26,7 @@ impl DescribeInputSecurityGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder,
+    inner: crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder,
 }
 impl DescribeInputSecurityGroupFluentBuilder {
     /// Creates a new `DescribeInputSecurityGroup`.
@@ -37,7 +37,7 @@ impl DescribeInputSecurityGroupFluentBuilder {
         }
     }
     /// Access the DescribeInputSecurityGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInputSecurityGroupFluentBuilder {
             crate::operation::describe_input_security_group::DescribeInputSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_security_group::DescribeInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_security_group::DescribeInputSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInputSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInputSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_security_group::DescribeInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_security_group::DescribeInputSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInputSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_security_group::DescribeInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_security_group::DescribeInputSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeInputSecurityGroupFluentBuilder {
             crate::operation::describe_input_security_group::DescribeInputSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_security_group::DescribeInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_security_group::DescribeInputSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
     /// The id of the Input Security Group to describe
-    pub fn input_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_security_group_id(input.into());
         self
     }
     /// The id of the Input Security Group to describe
-    pub fn set_input_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_security_group_id(input);
         self
     }

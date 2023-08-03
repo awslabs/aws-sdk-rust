@@ -56,9 +56,7 @@ impl CreateScanOutput {
 
 /// A builder for [`CreateScanOutput`](crate::operation::create_scan::CreateScanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScanOutputBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl CreateScanOutputBuilder {
         self
     }
     /// <p>The identifier for the resource object that contains resources that were scanned.</p>
-    pub fn set_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceId>,
-    ) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<crate::types::ResourceId>) -> Self {
         self.resource_id = input;
         self
     }
@@ -128,18 +123,12 @@ impl CreateScanOutputBuilder {
         &self.scan_state
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn scan_name_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scan_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn set_scan_name_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scan_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_name_arn = input;
         self
     }

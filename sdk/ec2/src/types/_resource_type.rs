@@ -122,13 +122,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -343,22 +337,14 @@ impl ::std::convert::From<&str> for ResourceType {
             "launch-template" => ResourceType::LaunchTemplate,
             "local-gateway" => ResourceType::LocalGateway,
             "local-gateway-route-table" => ResourceType::LocalGatewayRouteTable,
-            "local-gateway-route-table-virtual-interface-group-association" => {
-                ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation
-            }
-            "local-gateway-route-table-vpc-association" => {
-                ResourceType::LocalGatewayRouteTableVpcAssociation
-            }
+            "local-gateway-route-table-virtual-interface-group-association" => ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+            "local-gateway-route-table-vpc-association" => ResourceType::LocalGatewayRouteTableVpcAssociation,
             "local-gateway-virtual-interface" => ResourceType::LocalGatewayVirtualInterface,
-            "local-gateway-virtual-interface-group" => {
-                ResourceType::LocalGatewayVirtualInterfaceGroup
-            }
+            "local-gateway-virtual-interface-group" => ResourceType::LocalGatewayVirtualInterfaceGroup,
             "natgateway" => ResourceType::Natgateway,
             "network-acl" => ResourceType::NetworkAcl,
             "network-insights-access-scope" => ResourceType::NetworkInsightsAccessScope,
-            "network-insights-access-scope-analysis" => {
-                ResourceType::NetworkInsightsAccessScopeAnalysis
-            }
+            "network-insights-access-scope-analysis" => ResourceType::NetworkInsightsAccessScopeAnalysis,
             "network-insights-analysis" => ResourceType::NetworkInsightsAnalysis,
             "network-insights-path" => ResourceType::NetworkInsightsPath,
             "network-interface" => ResourceType::NetworkInterface,
@@ -384,9 +370,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "transit-gateway-multicast-domain" => ResourceType::TransitGatewayMulticastDomain,
             "transit-gateway-policy-table" => ResourceType::TransitGatewayPolicyTable,
             "transit-gateway-route-table" => ResourceType::TransitGatewayRouteTable,
-            "transit-gateway-route-table-announcement" => {
-                ResourceType::TransitGatewayRouteTableAnnouncement
-            }
+            "transit-gateway-route-table-announcement" => ResourceType::TransitGatewayRouteTableAnnouncement,
             "verified-access-endpoint" => ResourceType::VerifiedAccessEndpoint,
             "verified-access-group" => ResourceType::VerifiedAccessGroup,
             "verified-access-instance" => ResourceType::VerifiedAccessInstance,
@@ -405,9 +389,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "vpn-connection" => ResourceType::VpnConnection,
             "vpn-connection-device-type" => ResourceType::VpnConnectionDeviceType,
             "vpn-gateway" => ResourceType::VpnGateway,
-            other => {
-                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -456,22 +438,14 @@ impl ResourceType {
             ResourceType::LaunchTemplate => "launch-template",
             ResourceType::LocalGateway => "local-gateway",
             ResourceType::LocalGatewayRouteTable => "local-gateway-route-table",
-            ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation => {
-                "local-gateway-route-table-virtual-interface-group-association"
-            }
-            ResourceType::LocalGatewayRouteTableVpcAssociation => {
-                "local-gateway-route-table-vpc-association"
-            }
+            ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation => "local-gateway-route-table-virtual-interface-group-association",
+            ResourceType::LocalGatewayRouteTableVpcAssociation => "local-gateway-route-table-vpc-association",
             ResourceType::LocalGatewayVirtualInterface => "local-gateway-virtual-interface",
-            ResourceType::LocalGatewayVirtualInterfaceGroup => {
-                "local-gateway-virtual-interface-group"
-            }
+            ResourceType::LocalGatewayVirtualInterfaceGroup => "local-gateway-virtual-interface-group",
             ResourceType::Natgateway => "natgateway",
             ResourceType::NetworkAcl => "network-acl",
             ResourceType::NetworkInsightsAccessScope => "network-insights-access-scope",
-            ResourceType::NetworkInsightsAccessScopeAnalysis => {
-                "network-insights-access-scope-analysis"
-            }
+            ResourceType::NetworkInsightsAccessScopeAnalysis => "network-insights-access-scope-analysis",
             ResourceType::NetworkInsightsAnalysis => "network-insights-analysis",
             ResourceType::NetworkInsightsPath => "network-insights-path",
             ResourceType::NetworkInterface => "network-interface",
@@ -497,9 +471,7 @@ impl ResourceType {
             ResourceType::TransitGatewayMulticastDomain => "transit-gateway-multicast-domain",
             ResourceType::TransitGatewayPolicyTable => "transit-gateway-policy-table",
             ResourceType::TransitGatewayRouteTable => "transit-gateway-route-table",
-            ResourceType::TransitGatewayRouteTableAnnouncement => {
-                "transit-gateway-route-table-announcement"
-            }
+            ResourceType::TransitGatewayRouteTableAnnouncement => "transit-gateway-route-table-announcement",
             ResourceType::VerifiedAccessEndpoint => "verified-access-endpoint",
             ResourceType::VerifiedAccessGroup => "verified-access-group",
             ResourceType::VerifiedAccessInstance => "verified-access-instance",

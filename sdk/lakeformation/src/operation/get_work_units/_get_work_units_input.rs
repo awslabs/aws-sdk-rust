@@ -36,9 +36,7 @@ impl GetWorkUnitsInput {
 
 /// A builder for [`GetWorkUnitsInput`](crate::operation::get_work_units::GetWorkUnitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkUnitsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl GetWorkUnitsInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkUnitsInput`](crate::operation::get_work_units::GetWorkUnitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_work_units::GetWorkUnitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_work_units::GetWorkUnitsInput {
             next_token: self.next_token,
             page_size: self.page_size,

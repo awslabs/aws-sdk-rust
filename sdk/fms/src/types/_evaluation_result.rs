@@ -16,9 +16,7 @@ pub struct EvaluationResult {
 }
 impl EvaluationResult {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
-    pub fn compliance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PolicyComplianceStatusType> {
+    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::PolicyComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
@@ -39,9 +37,7 @@ impl EvaluationResult {
 
 /// A builder for [`EvaluationResult`](crate::types::EvaluationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationResultBuilder {
     pub(crate) compliance_status: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
     pub(crate) violator_count: ::std::option::Option<i64>,
@@ -54,17 +50,12 @@ impl EvaluationResultBuilder {
         self
     }
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::PolicyComplianceStatusType>) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
-    pub fn get_compliance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PolicyComplianceStatusType> {
+    pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::PolicyComplianceStatusType> {
         &self.compliance_status
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>

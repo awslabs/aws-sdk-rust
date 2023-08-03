@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput) with field(s):
     ///   - [`document_classification_job_properties(Option<DocumentClassificationJobProperties>)`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput::document_classification_job_properties): <p>An object that describes the properties associated with the document classification job.</p>
     /// - On failure, responds with [`SdkError<DescribeDocumentClassificationJobError>`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobError)
-    pub fn describe_document_classification_job(&self) -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobFluentBuilder{
+    pub fn describe_document_classification_job(
+        &self,
+    ) -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobFluentBuilder {
         crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobFluentBuilder::new(self.handle.clone())
     }
 }

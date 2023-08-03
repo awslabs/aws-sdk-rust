@@ -11,11 +11,7 @@ impl super::Client {
     #[deprecated(
         note = "Attendee Tags are not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
     )]
-    pub fn untag_attendee(
-        &self,
-    ) -> crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder {
-        crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_attendee(&self) -> crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder {
+        crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder::new(self.handle.clone())
     }
 }

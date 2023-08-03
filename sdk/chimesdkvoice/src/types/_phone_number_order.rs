@@ -18,8 +18,7 @@ pub struct PhoneNumberOrder {
     pub order_type: ::std::option::Option<crate::types::PhoneNumberOrderType>,
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
     #[doc(hidden)]
-    pub ordered_phone_numbers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
+    pub ordered_phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,9 +44,7 @@ impl PhoneNumberOrder {
         self.order_type.as_ref()
     }
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
-    pub fn ordered_phone_numbers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrderedPhoneNumber]> {
+    pub fn ordered_phone_numbers(&self) -> ::std::option::Option<&[crate::types::OrderedPhoneNumber]> {
         self.ordered_phone_numbers.as_deref()
     }
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
@@ -68,33 +65,24 @@ impl PhoneNumberOrder {
 
 /// A builder for [`PhoneNumberOrder`](crate::types::PhoneNumberOrder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberOrderBuilder {
     pub(crate) phone_number_order_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     pub(crate) status: ::std::option::Option<crate::types::PhoneNumberOrderStatus>,
     pub(crate) order_type: ::std::option::Option<crate::types::PhoneNumberOrderType>,
-    pub(crate) ordered_phone_numbers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
+    pub(crate) ordered_phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PhoneNumberOrderBuilder {
     /// <p>The ID of the phone order.</p>
-    pub fn phone_number_order_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_order_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the phone order.</p>
-    pub fn set_phone_number_order_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_order_id = input;
         self
     }
@@ -108,10 +96,7 @@ impl PhoneNumberOrderBuilder {
         self
     }
     /// <p>The phone number order product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
         self.product_type = input;
         self
     }
@@ -125,10 +110,7 @@ impl PhoneNumberOrderBuilder {
         self
     }
     /// <p>The status of the phone number order.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberOrderStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberOrderStatus>) -> Self {
         self.status = input;
         self
     }
@@ -142,10 +124,7 @@ impl PhoneNumberOrderBuilder {
         self
     }
     /// <p>The type of phone number being ordered, local or toll-free.</p>
-    pub fn set_order_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberOrderType>,
-    ) -> Self {
+    pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberOrderType>) -> Self {
         self.order_type = input;
         self
     }
@@ -165,17 +144,12 @@ impl PhoneNumberOrderBuilder {
         self
     }
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
-    pub fn set_ordered_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
-    ) -> Self {
+    pub fn set_ordered_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>) -> Self {
         self.ordered_phone_numbers = input;
         self
     }
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
-    pub fn get_ordered_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>> {
+    pub fn get_ordered_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>> {
         &self.ordered_phone_numbers
     }
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
@@ -184,10 +158,7 @@ impl PhoneNumberOrderBuilder {
         self
     }
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -201,10 +172,7 @@ impl PhoneNumberOrderBuilder {
         self
     }
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }

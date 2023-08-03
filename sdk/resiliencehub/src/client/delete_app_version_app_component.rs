@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`app_version(Option<String>)`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput::app_version): <p>The Resilience Hub application version.</p>
     ///   - [`app_component(Option<AppComponent>)`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput::app_component): <p>The list of Application Components that belong to this resource.</p>
     /// - On failure, responds with [`SdkError<DeleteAppVersionAppComponentError>`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError)
-    pub fn delete_app_version_app_component(&self) -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentFluentBuilder{
+    pub fn delete_app_version_app_component(
+        &self,
+    ) -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentFluentBuilder {
         crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentFluentBuilder::new(self.handle.clone())
     }
 }

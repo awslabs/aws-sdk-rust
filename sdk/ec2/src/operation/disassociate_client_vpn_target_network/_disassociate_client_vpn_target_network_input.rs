@@ -29,16 +29,14 @@ impl DisassociateClientVpnTargetNetworkInput {
 }
 impl DisassociateClientVpnTargetNetworkInput {
     /// Creates a new builder-style object to manufacture [`DisassociateClientVpnTargetNetworkInput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput).
-    pub fn builder() -> crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkInputBuilder {
         crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateClientVpnTargetNetworkInput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateClientVpnTargetNetworkInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisassociateClientVpnTargetNetworkInputBuilder {
 }
 impl DisassociateClientVpnTargetNetworkInputBuilder {
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The ID of the target network association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target network association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -100,16 +86,18 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateClientVpnTargetNetworkInput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id
-                ,
-                association_id: self.association_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+                association_id: self.association_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

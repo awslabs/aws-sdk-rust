@@ -22,19 +22,16 @@ impl DescribeAccountAttributesInput {
 }
 impl DescribeAccountAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
-    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesInputBuilder {
-    pub(crate) attribute_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAccountAttributesInputBuilder {
@@ -50,17 +47,12 @@ impl DescribeAccountAttributesInputBuilder {
         self
     }
     /// <p>The account attribute names.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>) -> Self {
         self.attribute_names = input;
         self
     }
     /// <p>The account attribute names.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>> {
         &self.attribute_names
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -84,11 +76,9 @@ impl DescribeAccountAttributesInputBuilder {
         crate::operation::describe_account_attributes::DescribeAccountAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_attributes::DescribeAccountAttributesInput {
-                attribute_names: self.attribute_names,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_attributes::DescribeAccountAttributesInput {
+            attribute_names: self.attribute_names,
+            dry_run: self.dry_run,
+        })
     }
 }

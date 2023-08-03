@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVerifiedAccessGroupOutput`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupOutput) with field(s):
     ///   - [`verified_access_group(Option<VerifiedAccessGroup>)`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupOutput::verified_access_group): <p>The ID of the Verified Access group.</p>
     /// - On failure, responds with [`SdkError<CreateVerifiedAccessGroupError>`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupError)
-    pub fn create_verified_access_group(&self) -> crate::operation::create_verified_access_group::builders::CreateVerifiedAccessGroupFluentBuilder{
+    pub fn create_verified_access_group(&self) -> crate::operation::create_verified_access_group::builders::CreateVerifiedAccessGroupFluentBuilder {
         crate::operation::create_verified_access_group::builders::CreateVerifiedAccessGroupFluentBuilder::new(self.handle.clone())
     }
 }

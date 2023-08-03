@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetEvidenceOutput`](crate::operation::get_evidence::GetEvidenceOutput) with field(s):
     ///   - [`evidence(Option<Evidence>)`](crate::operation::get_evidence::GetEvidenceOutput::evidence): <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetEvidenceError>`](crate::operation::get_evidence::GetEvidenceError)
-    pub fn get_evidence(
-        &self,
-    ) -> crate::operation::get_evidence::builders::GetEvidenceFluentBuilder {
+    pub fn get_evidence(&self) -> crate::operation::get_evidence::builders::GetEvidenceFluentBuilder {
         crate::operation::get_evidence::builders::GetEvidenceFluentBuilder::new(self.handle.clone())
     }
 }

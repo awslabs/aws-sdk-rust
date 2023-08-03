@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::update_broker_type::UpdateBrokerTypeOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::update_broker_type::UpdateBrokerTypeOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<UpdateBrokerTypeError>`](crate::operation::update_broker_type::UpdateBrokerTypeError)
-    pub fn update_broker_type(
-        &self,
-    ) -> crate::operation::update_broker_type::builders::UpdateBrokerTypeFluentBuilder {
-        crate::operation::update_broker_type::builders::UpdateBrokerTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_broker_type(&self) -> crate::operation::update_broker_type::builders::UpdateBrokerTypeFluentBuilder {
+        crate::operation::update_broker_type::builders::UpdateBrokerTypeFluentBuilder::new(self.handle.clone())
     }
 }

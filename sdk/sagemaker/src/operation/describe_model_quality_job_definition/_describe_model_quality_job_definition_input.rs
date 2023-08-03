@@ -15,33 +15,25 @@ impl DescribeModelQualityJobDefinitionInput {
 }
 impl DescribeModelQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelQualityJobDefinitionInput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput).
-    pub fn builder() -> crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionInputBuilder {
         crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelQualityJobDefinitionInput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelQualityJobDefinitionInputBuilder {
     /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -50,12 +42,16 @@ impl DescribeModelQualityJobDefinitionInputBuilder {
         &self.job_definition_name
     }
     /// Consumes the builder and constructs a [`DescribeModelQualityJobDefinitionInput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+            },
         )
     }
 }

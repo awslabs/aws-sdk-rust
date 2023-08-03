@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceDirectoriesOutput {
 }
 impl DescribeWorkspaceDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesOutput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput).
-    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesOutputBuilder {
         crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceDirectoriesOutput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceDirectoriesOutputBuilder {
-    pub(crate) directories:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceDirectory>>,
+    pub(crate) directories: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceDirectory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeWorkspaceDirectoriesOutputBuilder {
         self
     }
     /// <p>Information about the directories.</p>
-    pub fn set_directories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceDirectory>>,
-    ) -> Self {
+    pub fn set_directories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceDirectory>>) -> Self {
         self.directories = input;
         self
     }
     /// <p>Information about the directories.</p>
-    pub fn get_directories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceDirectory>> {
+    pub fn get_directories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceDirectory>> {
         &self.directories
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -94,9 +86,7 @@ impl DescribeWorkspaceDirectoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceDirectoriesOutput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput {
+    pub fn build(self) -> crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput {
         crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput {
             directories: self.directories,
             next_token: self.next_token,

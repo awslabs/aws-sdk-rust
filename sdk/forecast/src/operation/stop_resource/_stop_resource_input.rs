@@ -22,9 +22,7 @@ impl StopResourceInput {
 
 /// A builder for [`StopResourceInput`](crate::operation::stop_resource::StopResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl StopResourceInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`StopResourceInput`](crate::operation::stop_resource::StopResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_resource::StopResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_resource::StopResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_resource::StopResourceInput {
             resource_arn: self.resource_arn,
         })

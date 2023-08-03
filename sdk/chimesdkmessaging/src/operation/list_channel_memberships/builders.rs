@@ -40,10 +40,7 @@ impl ListChannelMembershipsFluentBuilder {
         }
     }
     /// Access the ListChannelMemberships as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_channel_memberships::builders::ListChannelMembershipsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_channel_memberships::builders::ListChannelMembershipsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl ListChannelMembershipsFluentBuilder {
             crate::operation::list_channel_memberships::ListChannelMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_memberships::ListChannelMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships::ListChannelMembershipsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl ListChannelMembershipsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl ListChannelMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_memberships::ListChannelMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_memberships::ListChannelMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships::ListChannelMembershipsError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl ListChannelMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_memberships::ListChannelMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_memberships::ListChannelMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships::ListChannelMembershipsError>,
     > {
         self.send_middleware().await
     }
@@ -120,23 +108,15 @@ impl ListChannelMembershipsFluentBuilder {
             crate::operation::list_channel_memberships::ListChannelMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_memberships::ListChannelMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships::ListChannelMembershipsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_channel_memberships::paginator::ListChannelMembershipsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_channel_memberships::paginator::ListChannelMembershipsPaginator
-    {
-        crate::operation::list_channel_memberships::paginator::ListChannelMembershipsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_channel_memberships::paginator::ListChannelMembershipsPaginator {
+        crate::operation::list_channel_memberships::paginator::ListChannelMembershipsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,10 +138,7 @@ impl ListChannelMembershipsFluentBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -214,20 +191,14 @@ impl ListChannelMembershipsFluentBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }

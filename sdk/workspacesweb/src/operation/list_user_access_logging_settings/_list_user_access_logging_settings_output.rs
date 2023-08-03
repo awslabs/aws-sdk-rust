@@ -5,8 +5,7 @@
 pub struct ListUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
     #[doc(hidden)]
-    pub user_access_logging_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
+    pub user_access_logging_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListUserAccessLoggingSettingsOutput {
 }
 impl ListUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserAccessLoggingSettingsSummary]> {
+    pub fn user_access_logging_settings(&self) -> ::std::option::Option<&[crate::types::UserAccessLoggingSettingsSummary]> {
         self.user_access_logging_settings.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListUserAccessLoggingSettingsOutput {
 }
 impl ListUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsOutputBuilder {
         crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserAccessLoggingSettingsOutputBuilder {
-    pub(crate) user_access_logging_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
+    pub(crate) user_access_logging_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListUserAccessLoggingSettingsOutputBuilder {
     /// To override the contents of this collection use [`set_user_access_logging_settings`](Self::set_user_access_logging_settings).
     ///
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(
-        mut self,
-        input: crate::types::UserAccessLoggingSettingsSummary,
-    ) -> Self {
+    pub fn user_access_logging_settings(mut self, input: crate::types::UserAccessLoggingSettingsSummary) -> Self {
         let mut v = self.user_access_logging_settings.unwrap_or_default();
         v.push(input);
         self.user_access_logging_settings = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl ListUserAccessLoggingSettingsOutputBuilder {
     /// <p>The user access logging settings.</p>
     pub fn set_user_access_logging_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
     ) -> Self {
         self.user_access_logging_settings = input;
         self
     }
     /// <p>The user access logging settings.</p>
-    pub fn get_user_access_logging_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>
-    {
+    pub fn get_user_access_logging_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>> {
         &self.user_access_logging_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -103,10 +89,7 @@ impl ListUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput {
         crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput {
             user_access_logging_settings: self.user_access_logging_settings,
             next_token: self.next_token,

@@ -14,8 +14,7 @@ pub struct AddApplicationInputProcessingConfigurationOutput {
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     #[doc(hidden)]
-    pub input_processing_configuration_description:
-        ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
+    pub input_processing_configuration_description: ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
     _request_id: Option<String>,
 }
 impl AddApplicationInputProcessingConfigurationOutput {
@@ -32,9 +31,7 @@ impl AddApplicationInputProcessingConfigurationOutput {
         self.input_id.as_deref()
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn input_processing_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputProcessingConfigurationDescription> {
+    pub fn input_processing_configuration_description(&self) -> ::std::option::Option<&crate::types::InputProcessingConfigurationDescription> {
         self.input_processing_configuration_description.as_ref()
     }
 }
@@ -45,38 +42,30 @@ impl ::aws_http::request_id::RequestId for AddApplicationInputProcessingConfigur
 }
 impl AddApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationOutputBuilder {
         crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_processing_configuration_description:
-        ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
+    pub(crate) input_processing_configuration_description: ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
     _request_id: Option<String>,
 }
 impl AddApplicationInputProcessingConfigurationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -113,10 +102,7 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
         &self.input_id
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn input_processing_configuration_description(
-        mut self,
-        input: crate::types::InputProcessingConfigurationDescription,
-    ) -> Self {
+    pub fn input_processing_configuration_description(mut self, input: crate::types::InputProcessingConfigurationDescription) -> Self {
         self.input_processing_configuration_description = ::std::option::Option::Some(input);
         self
     }
@@ -129,9 +115,7 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
         self
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn get_input_processing_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfigurationDescription> {
+    pub fn get_input_processing_configuration_description(&self) -> &::std::option::Option<crate::types::InputProcessingConfigurationDescription> {
         &self.input_processing_configuration_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -144,16 +128,12 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
-    pub fn build(self) -> crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput{
+    pub fn build(self) -> crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput {
         crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput {
-            application_arn: self.application_arn
-            ,
-            application_version_id: self.application_version_id
-            ,
-            input_id: self.input_id
-            ,
-            input_processing_configuration_description: self.input_processing_configuration_description
-            ,
+            application_arn: self.application_arn,
+            application_version_id: self.application_version_id,
+            input_id: self.input_id,
+            input_processing_configuration_description: self.input_processing_configuration_description,
             _request_id: self._request_id,
         }
     }

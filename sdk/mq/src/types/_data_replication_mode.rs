@@ -38,13 +38,7 @@
 /// <p>Specifies whether a broker is a part of a data replication pair.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataReplicationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DataReplicationMode {
         match s {
             "CRDR" => DataReplicationMode::Crdr,
             "NONE" => DataReplicationMode::None,
-            other => DataReplicationMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataReplicationMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

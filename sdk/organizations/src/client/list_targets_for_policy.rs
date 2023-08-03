@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`targets(Option<Vec<PolicyTargetSummary>>)`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput::targets): <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListTargetsForPolicyError>`](crate::operation::list_targets_for_policy::ListTargetsForPolicyError)
-    pub fn list_targets_for_policy(
-        &self,
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder
-    {
-        crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_targets_for_policy(&self) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder {
+        crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::new(self.handle.clone())
     }
 }

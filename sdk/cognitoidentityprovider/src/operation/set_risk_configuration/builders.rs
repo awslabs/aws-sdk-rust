@@ -38,9 +38,7 @@ impl SetRiskConfigurationFluentBuilder {
         }
     }
     /// Access the SetRiskConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl SetRiskConfigurationFluentBuilder {
             crate::operation::set_risk_configuration::SetRiskConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_risk_configuration::SetRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_risk_configuration::SetRiskConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl SetRiskConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl SetRiskConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_risk_configuration::SetRiskConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_risk_configuration::SetRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_risk_configuration::SetRiskConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl SetRiskConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_risk_configuration::SetRiskConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_risk_configuration::SetRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_risk_configuration::SetRiskConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl SetRiskConfigurationFluentBuilder {
             crate::operation::set_risk_configuration::SetRiskConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_risk_configuration::SetRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_risk_configuration::SetRiskConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -155,10 +142,7 @@ impl SetRiskConfigurationFluentBuilder {
         self.inner.get_client_id()
     }
     /// <p>The compromised credentials risk configuration.</p>
-    pub fn compromised_credentials_risk_configuration(
-        mut self,
-        input: crate::types::CompromisedCredentialsRiskConfigurationType,
-    ) -> Self {
+    pub fn compromised_credentials_risk_configuration(mut self, input: crate::types::CompromisedCredentialsRiskConfigurationType) -> Self {
         self.inner = self.inner.compromised_credentials_risk_configuration(input);
         self
     }
@@ -167,9 +151,7 @@ impl SetRiskConfigurationFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_compromised_credentials_risk_configuration(input);
+        self.inner = self.inner.set_compromised_credentials_risk_configuration(input);
         self
     }
     /// <p>The compromised credentials risk configuration.</p>
@@ -179,10 +161,7 @@ impl SetRiskConfigurationFluentBuilder {
         self.inner.get_compromised_credentials_risk_configuration()
     }
     /// <p>The account takeover risk configuration.</p>
-    pub fn account_takeover_risk_configuration(
-        mut self,
-        input: crate::types::AccountTakeoverRiskConfigurationType,
-    ) -> Self {
+    pub fn account_takeover_risk_configuration(mut self, input: crate::types::AccountTakeoverRiskConfigurationType) -> Self {
         self.inner = self.inner.account_takeover_risk_configuration(input);
         self
     }
@@ -195,31 +174,21 @@ impl SetRiskConfigurationFluentBuilder {
         self
     }
     /// <p>The account takeover risk configuration.</p>
-    pub fn get_account_takeover_risk_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
+    pub fn get_account_takeover_risk_configuration(&self) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
         self.inner.get_account_takeover_risk_configuration()
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn risk_exception_configuration(
-        mut self,
-        input: crate::types::RiskExceptionConfigurationType,
-    ) -> Self {
+    pub fn risk_exception_configuration(mut self, input: crate::types::RiskExceptionConfigurationType) -> Self {
         self.inner = self.inner.risk_exception_configuration(input);
         self
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn set_risk_exception_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
-    ) -> Self {
+    pub fn set_risk_exception_configuration(mut self, input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>) -> Self {
         self.inner = self.inner.set_risk_exception_configuration(input);
         self
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn get_risk_exception_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
+    pub fn get_risk_exception_configuration(&self) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
         self.inner.get_risk_exception_configuration()
     }
 }

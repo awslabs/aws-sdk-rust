@@ -6,12 +6,7 @@ pub(crate) fn de_asset_bundle_export_job_refresh_schedule_property_to_override_l
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -24,13 +19,12 @@ where
                         break;
                     }
                     _ => {
-                        let value =
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                s.to_unescaped().map(|u|
-                                    crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride::from(u.as_ref())
-                                )
-                            ).transpose()?
-                        ;
+                        let value = ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride::from(u.as_ref()))
+                            })
+                            .transpose()?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -39,10 +33,8 @@ where
             }
             Ok(Some(items))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start array or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start array or null",
+        )),
     }
 }

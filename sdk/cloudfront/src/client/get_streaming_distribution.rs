@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::operation::get_streaming_distribution::GetStreamingDistributionOutput::streaming_distribution): <p>The streaming distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_streaming_distribution::GetStreamingDistributionOutput::e_tag): <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<GetStreamingDistributionError>`](crate::operation::get_streaming_distribution::GetStreamingDistributionError)
-    pub fn get_streaming_distribution(
-        &self,
-    ) -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionFluentBuilder
-    {
+    pub fn get_streaming_distribution(&self) -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionFluentBuilder {
         crate::operation::get_streaming_distribution::builders::GetStreamingDistributionFluentBuilder::new(self.handle.clone())
     }
 }

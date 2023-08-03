@@ -39,8 +39,7 @@ pub struct CreateConfigurationTemplateOutput {
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration set.</p>
     #[doc(hidden)]
-    pub option_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     _request_id: Option<String>,
 }
 impl CreateConfigurationTemplateOutput {
@@ -75,9 +74,7 @@ impl CreateConfigurationTemplateOutput {
     /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
     /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
-    pub fn deployment_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationDeploymentStatus> {
+    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::ConfigurationDeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
@@ -89,9 +86,7 @@ impl CreateConfigurationTemplateOutput {
         self.date_updated.as_ref()
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn option_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
+    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
         self.option_settings.as_deref()
     }
 }
@@ -102,16 +97,14 @@ impl ::aws_http::request_id::RequestId for CreateConfigurationTemplateOutput {
 }
 impl CreateConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationTemplateOutput`](crate::operation::create_configuration_template::CreateConfigurationTemplateOutput).
-    pub fn builder() -> crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder {
         crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationTemplateOutput`](crate::operation::create_configuration_template::CreateConfigurationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationTemplateOutputBuilder {
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
@@ -119,28 +112,20 @@ pub struct CreateConfigurationTemplateOutputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) deployment_status:
-        ::std::option::Option<crate::types::ConfigurationDeploymentStatus>,
+    pub(crate) deployment_status: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>,
     pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) option_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     _request_id: Option<String>,
 }
 impl CreateConfigurationTemplateOutputBuilder {
     /// <p>The name of the solution stack this configuration set uses.</p>
-    pub fn solution_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the solution stack this configuration set uses.</p>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_stack_name = input;
         self
     }
@@ -163,18 +148,12 @@ impl CreateConfigurationTemplateOutputBuilder {
         &self.platform_arn
     }
     /// <p>The name of the application associated with this configuration set.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application associated with this configuration set.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -183,18 +162,12 @@ impl CreateConfigurationTemplateOutputBuilder {
         &self.application_name
     }
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -217,18 +190,12 @@ impl CreateConfigurationTemplateOutputBuilder {
         &self.description
     }
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -254,10 +221,7 @@ impl CreateConfigurationTemplateOutputBuilder {
     /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
     /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -268,9 +232,7 @@ impl CreateConfigurationTemplateOutputBuilder {
     /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
     /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
-    pub fn get_deployment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationDeploymentStatus> {
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::ConfigurationDeploymentStatus> {
         &self.deployment_status
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
@@ -279,10 +241,7 @@ impl CreateConfigurationTemplateOutputBuilder {
         self
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub fn set_date_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_created = input;
         self
     }
@@ -296,10 +255,7 @@ impl CreateConfigurationTemplateOutputBuilder {
         self
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub fn set_date_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_updated = input;
         self
     }
@@ -319,17 +275,12 @@ impl CreateConfigurationTemplateOutputBuilder {
         self
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.option_settings = input;
         self
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         &self.option_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -342,9 +293,7 @@ impl CreateConfigurationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateConfigurationTemplateOutput`](crate::operation::create_configuration_template::CreateConfigurationTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_configuration_template::CreateConfigurationTemplateOutput {
+    pub fn build(self) -> crate::operation::create_configuration_template::CreateConfigurationTemplateOutput {
         crate::operation::create_configuration_template::CreateConfigurationTemplateOutput {
             solution_stack_name: self.solution_stack_name,
             platform_arn: self.platform_arn,

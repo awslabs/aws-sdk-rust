@@ -19,15 +19,11 @@ pub(super) fn resolve_endpoint(
     let endpoint = &_params.endpoint;
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
-        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-            .url(endpoint.to_owned())
-            .build());
+        return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned()).build());
     }
     if !(region.is_some()) {
         #[allow(unused_variables)]
-        if let Some(partition_result) =
-            partition_resolver.resolve_partition("us-west-2", _diagnostic_collector)
-        {
+        if let Some(partition_result) = partition_resolver.resolve_partition("us-west-2", _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (false) {
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -58,9 +54,7 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) =
-            partition_resolver.resolve_partition(region, _diagnostic_collector)
-        {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (false) {
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -89,10 +83,8 @@ pub(super) fn resolve_endpoint(
         }
     }
     #[allow(unreachable_code)]
-    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-        format!(
-            "No rules matched these parameters. This is a bug. {:?}",
-            _params
-        ),
-    ));
+    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+        "No rules matched these parameters. This is a bug. {:?}",
+        _params
+    )));
 }

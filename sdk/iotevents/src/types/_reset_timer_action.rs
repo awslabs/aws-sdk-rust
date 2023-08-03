@@ -23,9 +23,7 @@ impl ResetTimerAction {
 
 /// A builder for [`ResetTimerAction`](crate::types::ResetTimerAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetTimerActionBuilder {
     pub(crate) timer_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ResetTimerActionBuilder {
     }
     /// Consumes the builder and constructs a [`ResetTimerAction`](crate::types::ResetTimerAction).
     pub fn build(self) -> crate::types::ResetTimerAction {
-        crate::types::ResetTimerAction {
-            timer_name: self.timer_name,
-        }
+        crate::types::ResetTimerAction { timer_name: self.timer_name }
     }
 }

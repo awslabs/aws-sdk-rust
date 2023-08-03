@@ -10,10 +10,7 @@ impl ListLicensesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_licenses::ListLicensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_licenses::ListLicensesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_licenses::ListLicensesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_licenses();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListLicensesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_licenses::ListLicenses,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_licenses::ListLicenses, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_licenses::ListLicensesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListLicensesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListLicensesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_licenses::ListLicenses,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_licenses::ListLicenses, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_licenses::ListLicensesError>,
     > {
         self.customize_middleware().await
@@ -122,17 +110,12 @@ impl ListLicensesFluentBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn set_license_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_license_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_license_arns(input);
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn get_license_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_license_arns()
     }
     /// Appends an item to `Filters`.
@@ -157,10 +140,7 @@ impl ListLicensesFluentBuilder {
     /// <li> <p> <code>Fingerprint</code> </p> </li>
     /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

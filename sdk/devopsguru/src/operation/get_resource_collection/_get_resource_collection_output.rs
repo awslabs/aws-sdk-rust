@@ -13,9 +13,7 @@ pub struct GetResourceCollectionOutput {
 }
 impl GetResourceCollectionOutput {
     /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceCollectionFilter> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollectionFilter> {
         self.resource_collection.as_ref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -30,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetResourceCollectionOutput {
 }
 impl GetResourceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceCollectionOutput`](crate::operation::get_resource_collection::GetResourceCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder {
         crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceCollectionOutput`](crate::operation::get_resource_collection::GetResourceCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceCollectionOutputBuilder {
     pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollectionFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,17 +48,12 @@ impl GetResourceCollectionOutputBuilder {
         self
     }
     /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollectionFilter>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollectionFilter>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollectionFilter> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollectionFilter> {
         &self.resource_collection
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

@@ -39,9 +39,7 @@ impl KinesisVideoStreamConfig {
 
 /// A builder for [`KinesisVideoStreamConfig`](crate::types::KinesisVideoStreamConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamConfigBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,
@@ -85,10 +83,7 @@ impl KinesisVideoStreamConfigBuilder {
         self
     }
     /// <p>The encryption configuration.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }

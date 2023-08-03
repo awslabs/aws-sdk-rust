@@ -10,10 +10,7 @@ impl PutWebhookInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_webhook::PutWebhookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_webhook::PutWebhookError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_webhook::PutWebhookError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_webhook();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutWebhookFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_webhook::PutWebhook,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_webhook::PutWebhook, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_webhook::PutWebhookError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutWebhookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl PutWebhookFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_webhook::PutWebhook,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_webhook::PutWebhook, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_webhook::PutWebhookError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl PutWebhookFluentBuilder {
         self
     }
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
-    pub fn set_webhook(
-        mut self,
-        input: ::std::option::Option<crate::types::WebhookDefinition>,
-    ) -> Self {
+    pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::WebhookDefinition>) -> Self {
         self.inner = self.inner.set_webhook(input);
         self
     }
@@ -139,10 +124,7 @@ impl PutWebhookFluentBuilder {
         self
     }
     /// <p>The tags for the webhook.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

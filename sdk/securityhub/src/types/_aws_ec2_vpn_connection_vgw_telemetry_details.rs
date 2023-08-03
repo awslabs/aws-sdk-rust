@@ -60,9 +60,7 @@ impl AwsEc2VpnConnectionVgwTelemetryDetails {
 
 /// A builder for [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::types::AwsEc2VpnConnectionVgwTelemetryDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     pub(crate) accepted_route_count: ::std::option::Option<i32>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         &self.accepted_route_count
     }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -108,19 +100,13 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     }
     /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_status_change(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_status_change(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_status_change = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_status_change(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_status_change(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_status_change = input;
         self
     }
@@ -130,18 +116,12 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         &self.last_status_change
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    pub fn outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    pub fn set_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outside_ip_address = input;
         self
     }
@@ -164,18 +144,12 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         &self.status
     }
     /// <p>If an error occurs, a description of the error.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurs, a description of the error.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

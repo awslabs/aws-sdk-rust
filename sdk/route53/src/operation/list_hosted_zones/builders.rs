@@ -10,10 +10,7 @@ impl ListHostedZonesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones::ListHostedZonesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones::ListHostedZonesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_hosted_zones();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListHostedZonesFluentBuilder {
         }
     }
     /// Access the ListHostedZones as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_hosted_zones::builders::ListHostedZonesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_hosted_zones::builders::ListHostedZonesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListHostedZonesFluentBuilder {
             crate::operation::list_hosted_zones::ListHostedZones,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones::ListHostedZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListHostedZonesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListHostedZonesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones::ListHostedZonesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones::ListHostedZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListHostedZonesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones::ListHostedZonesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones::ListHostedZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListHostedZonesFluentBuilder {
             crate::operation::list_hosted_zones::ListHostedZones,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones::ListHostedZonesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_hosted_zones::paginator::ListHostedZonesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_hosted_zones::paginator::ListHostedZonesPaginator {
-        crate::operation::list_hosted_zones::paginator::ListHostedZonesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_hosted_zones::paginator::ListHostedZonesPaginator {
+        crate::operation::list_hosted_zones::paginator::ListHostedZonesPaginator::new(self.handle, self.inner)
     }
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
@@ -169,18 +148,12 @@ impl ListHostedZonesFluentBuilder {
         self.inner.get_max_items()
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-    pub fn delegation_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delegation_set_id(input.into());
         self
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegation_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delegation_set_id(input);
         self
     }

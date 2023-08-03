@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobFluentBuilder::set_job_id): <p>The ID of the batch prediction job to cancel.</p>
     /// - On success, responds with [`CancelBatchPredictionJobOutput`](crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobOutput)
     /// - On failure, responds with [`SdkError<CancelBatchPredictionJobError>`](crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError)
-    pub fn cancel_batch_prediction_job(&self) -> crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobFluentBuilder{
+    pub fn cancel_batch_prediction_job(&self) -> crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobFluentBuilder {
         crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobFluentBuilder::new(self.handle.clone())
     }
 }

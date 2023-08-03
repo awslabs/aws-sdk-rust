@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput) with field(s):
     ///   - [`pipeline_description_list(Option<Vec<PipelineDescription>>)`](crate::operation::describe_pipelines::DescribePipelinesOutput::pipeline_description_list): <p>An array of descriptions for the specified pipelines.</p>
     /// - On failure, responds with [`SdkError<DescribePipelinesError>`](crate::operation::describe_pipelines::DescribePipelinesError)
-    pub fn describe_pipelines(
-        &self,
-    ) -> crate::operation::describe_pipelines::builders::DescribePipelinesFluentBuilder {
-        crate::operation::describe_pipelines::builders::DescribePipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_pipelines(&self) -> crate::operation::describe_pipelines::builders::DescribePipelinesFluentBuilder {
+        crate::operation::describe_pipelines::builders::DescribePipelinesFluentBuilder::new(self.handle.clone())
     }
 }

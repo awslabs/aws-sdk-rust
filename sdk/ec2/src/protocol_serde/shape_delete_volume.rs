@@ -4,22 +4,13 @@ pub fn de_delete_volume_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_volume::DeleteVolumeOutput,
-    crate::operation::delete_volume::DeleteVolumeError,
-> {
+) -> std::result::Result<crate::operation::delete_volume::DeleteVolumeOutput, crate::operation::delete_volume::DeleteVolumeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_volume::DeleteVolumeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_volume::DeleteVolumeError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::delete_volume::DeleteVolumeError::generic(
-        generic,
-    ))
+    Err(crate::operation::delete_volume::DeleteVolumeError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,17 +18,11 @@ pub fn de_delete_volume_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_volume::DeleteVolumeOutput,
-    crate::operation::delete_volume::DeleteVolumeError,
-> {
+) -> std::result::Result<crate::operation::delete_volume::DeleteVolumeOutput, crate::operation::delete_volume::DeleteVolumeError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_volume::builders::DeleteVolumeOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::delete_volume::builders::DeleteVolumeOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

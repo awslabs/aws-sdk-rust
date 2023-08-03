@@ -38,24 +38,19 @@ impl UpdateMemberDetectorsInput {
 }
 impl UpdateMemberDetectorsInput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
-    pub fn builder(
-    ) -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder {
         crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMemberDetectorsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_sources: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    pub(crate) features:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
 }
 impl UpdateMemberDetectorsInputBuilder {
     /// <p>The detector ID of the administrator account.</p>
@@ -84,17 +79,12 @@ impl UpdateMemberDetectorsInputBuilder {
         self
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p>Describes which data sources will be updated.</p>
@@ -105,18 +95,13 @@ impl UpdateMemberDetectorsInputBuilder {
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         &self.data_sources
     }
     /// Appends an item to `features`.
@@ -131,33 +116,24 @@ impl UpdateMemberDetectorsInputBuilder {
         self
     }
     /// <p>A list of features that will be updated for the specified member accounts.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>>) -> Self {
         self.features = input;
         self
     }
     /// <p>A list of features that will be updated for the specified member accounts.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>> {
         &self.features
     }
     /// Consumes the builder and constructs a [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_member_detectors::UpdateMemberDetectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_member_detectors::UpdateMemberDetectorsInput {
-                detector_id: self.detector_id,
-                account_ids: self.account_ids,
-                data_sources: self.data_sources,
-                features: self.features,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_member_detectors::UpdateMemberDetectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_member_detectors::UpdateMemberDetectorsInput {
+            detector_id: self.detector_id,
+            account_ids: self.account_ids,
+            data_sources: self.data_sources,
+            features: self.features,
+        })
     }
 }

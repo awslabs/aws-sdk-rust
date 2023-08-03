@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`entitlement(Option<Entitlement>)`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput::entitlement): The new configuration of the entitlement that you updated.
     ///   - [`flow_arn(Option<String>)`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput::flow_arn): The ARN of the flow that this entitlement was granted on.
     /// - On failure, responds with [`SdkError<UpdateFlowEntitlementError>`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementError)
-    pub fn update_flow_entitlement(
-        &self,
-    ) -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementFluentBuilder
-    {
-        crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_flow_entitlement(&self) -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementFluentBuilder {
+        crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementFluentBuilder::new(self.handle.clone())
     }
 }

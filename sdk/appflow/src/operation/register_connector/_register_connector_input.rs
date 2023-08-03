@@ -14,8 +14,7 @@ pub struct RegisterConnectorInput {
     pub connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
     #[doc(hidden)]
-    pub connector_provisioning_config:
-        ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
+    pub connector_provisioning_config: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>
@@ -32,15 +31,11 @@ impl RegisterConnectorInput {
         self.description.as_deref()
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    pub fn connector_provisioning_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
+    pub fn connector_provisioning_type(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
         self.connector_provisioning_type.as_ref()
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    pub fn connector_provisioning_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorProvisioningConfig> {
+    pub fn connector_provisioning_config(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningConfig> {
         self.connector_provisioning_config.as_ref()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -52,40 +47,29 @@ impl RegisterConnectorInput {
 }
 impl RegisterConnectorInput {
     /// Creates a new builder-style object to manufacture [`RegisterConnectorInput`](crate::operation::register_connector::RegisterConnectorInput).
-    pub fn builder() -> crate::operation::register_connector::builders::RegisterConnectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_connector::builders::RegisterConnectorInputBuilder {
         crate::operation::register_connector::builders::RegisterConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterConnectorInput`](crate::operation::register_connector::RegisterConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterConnectorInputBuilder {
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) connector_provisioning_type:
-        ::std::option::Option<crate::types::ConnectorProvisioningType>,
-    pub(crate) connector_provisioning_config:
-        ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
+    pub(crate) connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
+    pub(crate) connector_provisioning_config: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterConnectorInputBuilder {
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
@@ -108,47 +92,31 @@ impl RegisterConnectorInputBuilder {
         &self.description
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    pub fn connector_provisioning_type(
-        mut self,
-        input: crate::types::ConnectorProvisioningType,
-    ) -> Self {
+    pub fn connector_provisioning_type(mut self, input: crate::types::ConnectorProvisioningType) -> Self {
         self.connector_provisioning_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    pub fn set_connector_provisioning_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProvisioningType>,
-    ) -> Self {
+    pub fn set_connector_provisioning_type(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningType>) -> Self {
         self.connector_provisioning_type = input;
         self
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    pub fn get_connector_provisioning_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
+    pub fn get_connector_provisioning_type(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
         &self.connector_provisioning_type
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    pub fn connector_provisioning_config(
-        mut self,
-        input: crate::types::ConnectorProvisioningConfig,
-    ) -> Self {
+    pub fn connector_provisioning_config(mut self, input: crate::types::ConnectorProvisioningConfig) -> Self {
         self.connector_provisioning_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    pub fn set_connector_provisioning_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
-    ) -> Self {
+    pub fn set_connector_provisioning_config(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningConfig>) -> Self {
         self.connector_provisioning_config = input;
         self
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    pub fn get_connector_provisioning_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
+    pub fn get_connector_provisioning_config(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
         &self.connector_provisioning_config
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -174,18 +142,13 @@ impl RegisterConnectorInputBuilder {
     /// Consumes the builder and constructs a [`RegisterConnectorInput`](crate::operation::register_connector::RegisterConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_connector::RegisterConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_connector::RegisterConnectorInput {
-                connector_label: self.connector_label,
-                description: self.description,
-                connector_provisioning_type: self.connector_provisioning_type,
-                connector_provisioning_config: self.connector_provisioning_config,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_connector::RegisterConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_connector::RegisterConnectorInput {
+            connector_label: self.connector_label,
+            description: self.description,
+            connector_provisioning_type: self.connector_provisioning_type,
+            connector_provisioning_config: self.connector_provisioning_config,
+            client_token: self.client_token,
+        })
     }
 }

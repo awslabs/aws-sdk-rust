@@ -22,9 +22,7 @@ impl DescribeGatewayInput {
 
 /// A builder for [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGatewayInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_gateway::DescribeGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_gateway::DescribeGatewayInput {
-            gateway_id: self.gateway_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_gateway::DescribeGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_gateway::DescribeGatewayInput { gateway_id: self.gateway_id })
     }
 }

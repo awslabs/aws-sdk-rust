@@ -64,9 +64,7 @@ impl ListEndpointsInput {
         self.creation_time_after.as_ref()
     }
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
@@ -87,9 +85,7 @@ impl ListEndpointsInput {
 
 /// A builder for [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::EndpointSortKey>,
     pub(crate) sort_order: ::std::option::Option<crate::types::OrderKey>,
@@ -109,10 +105,7 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::EndpointSortKey>) -> Self {
         self.sort_by = input;
         self
     }
@@ -163,18 +156,12 @@ impl ListEndpointsInputBuilder {
         &self.max_results
     }
     /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -188,10 +175,7 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -205,10 +189,7 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -222,17 +203,12 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
@@ -241,17 +217,12 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p> A filter that returns only endpoints with the specified status.</p>
@@ -260,10 +231,7 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p> A filter that returns only endpoints with the specified status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -274,10 +242,7 @@ impl ListEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_endpoints::ListEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_endpoints::ListEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_endpoints::ListEndpointsInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

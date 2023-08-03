@@ -37,9 +37,7 @@ impl GlobalClusterMember {
 
 /// A builder for [`GlobalClusterMember`](crate::types::GlobalClusterMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalClusterMemberBuilder {
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,18 +45,12 @@ pub struct GlobalClusterMemberBuilder {
 }
 impl GlobalClusterMemberBuilder {
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
-    pub fn db_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
-    pub fn set_db_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_arn = input;
         self
     }
@@ -78,10 +70,7 @@ impl GlobalClusterMemberBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
-    pub fn set_readers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_readers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.readers = input;
         self
     }

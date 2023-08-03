@@ -8,8 +8,7 @@ pub struct ListSolFunctionPackagesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
     #[doc(hidden)]
-    pub function_packages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
+    pub function_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolFunctionPackagesOutput {
@@ -18,9 +17,7 @@ impl ListSolFunctionPackagesOutput {
         self.next_token.as_deref()
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn function_packages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListSolFunctionPackageInfo]> {
+    pub fn function_packages(&self) -> ::std::option::Option<&[crate::types::ListSolFunctionPackageInfo]> {
         self.function_packages.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSolFunctionPackagesOutput {
 }
 impl ListSolFunctionPackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder {
         crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) function_packages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
+    pub(crate) function_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolFunctionPackagesOutputBuilder {
@@ -76,17 +68,12 @@ impl ListSolFunctionPackagesOutputBuilder {
         self
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn set_function_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
-    ) -> Self {
+    pub fn set_function_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>) -> Self {
         self.function_packages = input;
         self
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn get_function_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>> {
+    pub fn get_function_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>> {
         &self.function_packages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListSolFunctionPackagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
+    pub fn build(self) -> crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
         crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
             next_token: self.next_token,
             function_packages: self.function_packages,

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveAttributesOutput`](crate::operation::remove_attributes::RemoveAttributesOutput) with field(s):
     ///   - [`attributes_resource(Option<AttributesResource>)`](crate::operation::remove_attributes::RemoveAttributesOutput::attributes_resource): <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<RemoveAttributesError>`](crate::operation::remove_attributes::RemoveAttributesError)
-    pub fn remove_attributes(
-        &self,
-    ) -> crate::operation::remove_attributes::builders::RemoveAttributesFluentBuilder {
-        crate::operation::remove_attributes::builders::RemoveAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_attributes(&self) -> crate::operation::remove_attributes::builders::RemoveAttributesFluentBuilder {
+        crate::operation::remove_attributes::builders::RemoveAttributesFluentBuilder::new(self.handle.clone())
     }
 }

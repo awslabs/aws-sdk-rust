@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProgressUpdateStreamOutput {
 }
 impl DeleteProgressUpdateStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamOutput`](crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput).
-    pub fn builder() -> crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamOutputBuilder{
+    pub fn builder() -> crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamOutputBuilder {
         crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProgressUpdateStreamOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteProgressUpdateStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteProgressUpdateStreamOutput`](crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput {
+    pub fn build(self) -> crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput {
         crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput {
             _request_id: self._request_id,
         }

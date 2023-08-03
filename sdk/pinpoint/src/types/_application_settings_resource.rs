@@ -63,9 +63,7 @@ impl ApplicationSettingsResource {
 
 /// A builder for [`ApplicationSettingsResource`](crate::types::ApplicationSettingsResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSettingsResourceBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
@@ -75,18 +73,12 @@ pub struct ApplicationSettingsResourceBuilder {
 }
 impl ApplicationSettingsResourceBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -100,10 +92,7 @@ impl ApplicationSettingsResourceBuilder {
         self
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    pub fn set_campaign_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignHook>,
-    ) -> Self {
+    pub fn set_campaign_hook(mut self, input: ::std::option::Option<crate::types::CampaignHook>) -> Self {
         self.campaign_hook = input;
         self
     }
@@ -112,18 +101,12 @@ impl ApplicationSettingsResourceBuilder {
         &self.campaign_hook
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -137,10 +120,7 @@ impl ApplicationSettingsResourceBuilder {
         self
     }
     /// <p>The default sending limits for campaigns in the application.</p>
-    pub fn set_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignLimits>,
-    ) -> Self {
+    pub fn set_limits(mut self, input: ::std::option::Option<crate::types::CampaignLimits>) -> Self {
         self.limits = input;
         self
     }

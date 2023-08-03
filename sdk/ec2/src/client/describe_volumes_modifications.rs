@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`volumes_modifications(Option<Vec<VolumeModification>>)`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput::volumes_modifications): <p>Information about the volume modifications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVolumesModificationsError>`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError)
-    pub fn describe_volumes_modifications(&self) -> crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsFluentBuilder{
+    pub fn describe_volumes_modifications(
+        &self,
+    ) -> crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsFluentBuilder {
         crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsFluentBuilder::new(self.handle.clone())
     }
 }

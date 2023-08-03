@@ -50,9 +50,7 @@ impl VerifyMacInput {
 
 /// A builder for [`VerifyMacInput`](crate::operation::verify_mac::VerifyMacInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyMacInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) message_data: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct VerifyMacInputBuilder {
 }
 impl VerifyMacInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -115,17 +107,12 @@ impl VerifyMacInputBuilder {
         self
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_verification_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MacAttributes>,
-    ) -> Self {
+    pub fn set_verification_attributes(mut self, input: ::std::option::Option<crate::types::MacAttributes>) -> Self {
         self.verification_attributes = input;
         self
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
-    pub fn get_verification_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MacAttributes> {
+    pub fn get_verification_attributes(&self) -> &::std::option::Option<crate::types::MacAttributes> {
         &self.verification_attributes
     }
     /// <p>The length of the MAC.</p>
@@ -143,12 +130,7 @@ impl VerifyMacInputBuilder {
         &self.mac_length
     }
     /// Consumes the builder and constructs a [`VerifyMacInput`](crate::operation::verify_mac::VerifyMacInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_mac::VerifyMacInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_mac::VerifyMacInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_mac::VerifyMacInput {
             key_identifier: self.key_identifier,
             message_data: self.message_data,

@@ -37,9 +37,7 @@ impl PutJobFailureResultFluentBuilder {
         }
     }
     /// Access the PutJobFailureResult as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutJobFailureResultFluentBuilder {
             crate::operation::put_job_failure_result::PutJobFailureResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_job_failure_result::PutJobFailureResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_job_failure_result::PutJobFailureResultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutJobFailureResultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutJobFailureResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_job_failure_result::PutJobFailureResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_job_failure_result::PutJobFailureResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_job_failure_result::PutJobFailureResultError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutJobFailureResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_job_failure_result::PutJobFailureResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_job_failure_result::PutJobFailureResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_job_failure_result::PutJobFailureResultError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PutJobFailureResultFluentBuilder {
             crate::operation::put_job_failure_result::PutJobFailureResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_job_failure_result::PutJobFailureResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_job_failure_result::PutJobFailureResultError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl PutJobFailureResultFluentBuilder {
         self
     }
     /// <p>The details about the failure of a job.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.inner = self.inner.set_failure_details(input);
         self
     }

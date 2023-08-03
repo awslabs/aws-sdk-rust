@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`status_code(impl ::std::convert::Into<String>)`](crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder::status_code) / [`set_status_code(Option<String>)`](crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder::set_status_code): <p>Specifies a delete integration response request's status code.</p>
     /// - On success, responds with [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput)
     /// - On failure, responds with [`SdkError<DeleteIntegrationResponseError>`](crate::operation::delete_integration_response::DeleteIntegrationResponseError)
-    pub fn delete_integration_response(&self) -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder{
+    pub fn delete_integration_response(&self) -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder {
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder::new(self.handle.clone())
     }
 }

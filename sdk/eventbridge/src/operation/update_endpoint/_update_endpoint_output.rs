@@ -84,9 +84,7 @@ impl UpdateEndpointOutput {
 
 /// A builder for [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl UpdateEndpointOutputBuilder {
         self
     }
     /// <p>The routing configuration you updated in this request.</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.routing_config = input;
         self
     }
@@ -151,17 +146,12 @@ impl UpdateEndpointOutputBuilder {
         self
     }
     /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.replication_config = input;
         self
     }
     /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     /// Appends an item to `event_buses`.
@@ -176,17 +166,12 @@ impl UpdateEndpointOutputBuilder {
         self
     }
     /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.event_buses = input;
         self
     }
     /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
         &self.event_buses
     }
     /// <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>

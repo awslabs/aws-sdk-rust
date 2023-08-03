@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`group_id(Option<String>)`](crate::operation::create_security_group::CreateSecurityGroupOutput::group_id): <p>The ID of the security group.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_security_group::CreateSecurityGroupOutput::tags): <p>The tags assigned to the security group.</p>
     /// - On failure, responds with [`SdkError<CreateSecurityGroupError>`](crate::operation::create_security_group::CreateSecurityGroupError)
-    pub fn create_security_group(
-        &self,
-    ) -> crate::operation::create_security_group::builders::CreateSecurityGroupFluentBuilder {
-        crate::operation::create_security_group::builders::CreateSecurityGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_security_group(&self) -> crate::operation::create_security_group::builders::CreateSecurityGroupFluentBuilder {
+        crate::operation::create_security_group::builders::CreateSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

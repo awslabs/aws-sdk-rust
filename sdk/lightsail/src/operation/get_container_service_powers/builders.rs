@@ -27,7 +27,7 @@ impl GetContainerServicePowersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContainerServicePowersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder,
+    inner: crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder,
 }
 impl GetContainerServicePowersFluentBuilder {
     /// Creates a new `GetContainerServicePowers`.
@@ -38,7 +38,7 @@ impl GetContainerServicePowersFluentBuilder {
         }
     }
     /// Access the GetContainerServicePowers as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetContainerServicePowersFluentBuilder {
             crate::operation::get_container_service_powers::GetContainerServicePowers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_powers::GetContainerServicePowersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_powers::GetContainerServicePowersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetContainerServicePowersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetContainerServicePowersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_service_powers::GetContainerServicePowersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_powers::GetContainerServicePowersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_powers::GetContainerServicePowersError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetContainerServicePowersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_service_powers::GetContainerServicePowersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_powers::GetContainerServicePowersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_powers::GetContainerServicePowersError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetContainerServicePowersFluentBuilder {
             crate::operation::get_container_service_powers::GetContainerServicePowers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_powers::GetContainerServicePowersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_powers::GetContainerServicePowersError>,
     > {
         self.customize_middleware().await
     }

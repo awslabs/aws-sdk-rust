@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`last_backup_time(Option<DateTime>)`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput::last_backup_time): <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput::resource_name): <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     /// - On failure, responds with [`SdkError<DescribeProtectedResourceError>`](crate::operation::describe_protected_resource::DescribeProtectedResourceError)
-    pub fn describe_protected_resource(&self) -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceFluentBuilder{
+    pub fn describe_protected_resource(&self) -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceFluentBuilder {
         crate::operation::describe_protected_resource::builders::DescribeProtectedResourceFluentBuilder::new(self.handle.clone())
     }
 }

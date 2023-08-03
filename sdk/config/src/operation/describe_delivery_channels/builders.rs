@@ -28,7 +28,7 @@ impl DescribeDeliveryChannelsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsInputBuilder,
+    inner: crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsInputBuilder,
 }
 impl DescribeDeliveryChannelsFluentBuilder {
     /// Creates a new `DescribeDeliveryChannels`.
@@ -39,10 +39,7 @@ impl DescribeDeliveryChannelsFluentBuilder {
         }
     }
     /// Access the DescribeDeliveryChannels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeDeliveryChannelsFluentBuilder {
             crate::operation::describe_delivery_channels::DescribeDeliveryChannels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeDeliveryChannelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeDeliveryChannelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_delivery_channels::DescribeDeliveryChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeDeliveryChannelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_delivery_channels::DescribeDeliveryChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DescribeDeliveryChannelsFluentBuilder {
             crate::operation::describe_delivery_channels::DescribeDeliveryChannels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,25 +116,17 @@ impl DescribeDeliveryChannelsFluentBuilder {
     /// To override the contents of this collection use [`set_delivery_channel_names`](Self::set_delivery_channel_names).
     ///
     /// <p>A list of delivery channel names.</p>
-    pub fn delivery_channel_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_channel_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_channel_names(input.into());
         self
     }
     /// <p>A list of delivery channel names.</p>
-    pub fn set_delivery_channel_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_delivery_channel_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_delivery_channel_names(input);
         self
     }
     /// <p>A list of delivery channel names.</p>
-    pub fn get_delivery_channel_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delivery_channel_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_delivery_channel_names()
     }
 }

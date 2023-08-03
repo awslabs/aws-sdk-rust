@@ -29,18 +29,14 @@ impl ListQueryExecutionsInput {
 }
 impl ListQueryExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListQueryExecutionsInput`](crate::operation::list_query_executions::ListQueryExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_query_executions::builders::ListQueryExecutionsInputBuilder {
-        crate::operation::list_query_executions::builders::ListQueryExecutionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_query_executions::builders::ListQueryExecutionsInputBuilder {
+        crate::operation::list_query_executions::builders::ListQueryExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueryExecutionsInput`](crate::operation::list_query_executions::ListQueryExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueryExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListQueryExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListQueryExecutionsInput`](crate::operation::list_query_executions::ListQueryExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_query_executions::ListQueryExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_query_executions::ListQueryExecutionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                work_group: self.work_group,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_query_executions::ListQueryExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_query_executions::ListQueryExecutionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            work_group: self.work_group,
+        })
     }
 }

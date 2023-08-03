@@ -5,8 +5,7 @@
 pub struct GetResourceShareAssociationsOutput {
     /// <p>An array of objects that contain the details about the associations.</p>
     #[doc(hidden)]
-    pub resource_share_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    pub resource_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetResourceShareAssociationsOutput {
 }
 impl GetResourceShareAssociationsOutput {
     /// <p>An array of objects that contain the details about the associations.</p>
-    pub fn resource_share_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceShareAssociation]> {
+    pub fn resource_share_associations(&self) -> ::std::option::Option<&[crate::types::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetResourceShareAssociationsOutput {
 }
 impl GetResourceShareAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsOutput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput).
-    pub fn builder() -> crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsOutputBuilder {
         crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceShareAssociationsOutput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceShareAssociationsOutputBuilder {
-    pub(crate) resource_share_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    pub(crate) resource_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetResourceShareAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
     ///
     /// <p>An array of objects that contain the details about the associations.</p>
-    pub fn resource_share_associations(
-        mut self,
-        input: crate::types::ResourceShareAssociation,
-    ) -> Self {
+    pub fn resource_share_associations(mut self, input: crate::types::ResourceShareAssociation) -> Self {
         let mut v = self.resource_share_associations.unwrap_or_default();
         v.push(input);
         self.resource_share_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that contain the details about the associations.</p>
-    pub fn set_resource_share_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
-    ) -> Self {
+    pub fn set_resource_share_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>) -> Self {
         self.resource_share_associations = input;
         self
     }
     /// <p>An array of objects that contain the details about the associations.</p>
-    pub fn get_resource_share_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>> {
+    pub fn get_resource_share_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>> {
         &self.resource_share_associations
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -100,9 +86,7 @@ impl GetResourceShareAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResourceShareAssociationsOutput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput {
+    pub fn build(self) -> crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput {
         crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput {
             resource_share_associations: self.resource_share_associations,
             next_token: self.next_token,

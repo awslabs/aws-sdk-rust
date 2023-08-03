@@ -23,9 +23,7 @@ impl LifecyclePolicyRuleAction {
 
 /// A builder for [`LifecyclePolicyRuleAction`](crate::types::LifecyclePolicyRuleAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecyclePolicyRuleActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ImageActionType>,
 }
@@ -46,8 +44,6 @@ impl LifecyclePolicyRuleActionBuilder {
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyRuleAction`](crate::types::LifecyclePolicyRuleAction).
     pub fn build(self) -> crate::types::LifecyclePolicyRuleAction {
-        crate::types::LifecyclePolicyRuleAction {
-            r#type: self.r#type,
-        }
+        crate::types::LifecyclePolicyRuleAction { r#type: self.r#type }
     }
 }

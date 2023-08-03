@@ -44,9 +44,7 @@ impl Variant {
 
 /// A builder for [`Variant`](crate::types::Variant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariantBuilder {
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
     pub(crate) integer_value: ::std::option::Option<i32>,

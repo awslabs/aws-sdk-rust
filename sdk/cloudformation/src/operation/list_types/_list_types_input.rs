@@ -110,9 +110,7 @@ impl ListTypesInput {
 
 /// A builder for [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypesInputBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
@@ -149,10 +147,7 @@ impl ListTypesInputBuilder {
     /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -190,10 +185,7 @@ impl ListTypesInputBuilder {
     /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
-    pub fn set_provisioning_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningType>,
-    ) -> Self {
+    pub fn set_provisioning_type(mut self, input: ::std::option::Option<crate::types::ProvisioningType>) -> Self {
         self.provisioning_type = input;
         self
     }
@@ -224,10 +216,7 @@ impl ListTypesInputBuilder {
     /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
     /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
-    pub fn set_deprecated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeprecatedStatus>,
-    ) -> Self {
+    pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
         self.deprecated_status = input;
         self
     }
@@ -300,12 +289,7 @@ impl ListTypesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_types::ListTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_types::ListTypesInput {
             visibility: self.visibility,
             provisioning_type: self.provisioning_type,

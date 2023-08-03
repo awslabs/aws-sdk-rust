@@ -23,9 +23,7 @@ impl PutMetadataFlagBody {
 
 /// A builder for [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetadataFlagBodyBuilder {
     pub(crate) new_value: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PutMetadataFlagBodyBuilder {
     }
     /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
     pub fn build(self) -> crate::types::PutMetadataFlagBody {
-        crate::types::PutMetadataFlagBody {
-            new_value: self.new_value,
-        }
+        crate::types::PutMetadataFlagBody { new_value: self.new_value }
     }
 }

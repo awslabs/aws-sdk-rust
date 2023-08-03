@@ -15,18 +15,14 @@ impl DeleteOutpostResolverInput {
 }
 impl DeleteOutpostResolverInput {
     /// Creates a new builder-style object to manufacture [`DeleteOutpostResolverInput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput).
-    pub fn builder(
-    ) -> crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverInputBuilder {
         crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOutpostResolverInput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOutpostResolverInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DeleteOutpostResolverInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOutpostResolverInput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput { id: self.id })
     }
 }

@@ -13,15 +13,11 @@ pub struct KubernetesDetails {
 }
 impl KubernetesDetails {
     /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-    pub fn kubernetes_user_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KubernetesUserDetails> {
+    pub fn kubernetes_user_details(&self) -> ::std::option::Option<&crate::types::KubernetesUserDetails> {
         self.kubernetes_user_details.as_ref()
     }
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    pub fn kubernetes_workload_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KubernetesWorkloadDetails> {
+    pub fn kubernetes_workload_details(&self) -> ::std::option::Option<&crate::types::KubernetesWorkloadDetails> {
         self.kubernetes_workload_details.as_ref()
     }
 }
@@ -34,13 +30,10 @@ impl KubernetesDetails {
 
 /// A builder for [`KubernetesDetails`](crate::types::KubernetesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesDetailsBuilder {
     pub(crate) kubernetes_user_details: ::std::option::Option<crate::types::KubernetesUserDetails>,
-    pub(crate) kubernetes_workload_details:
-        ::std::option::Option<crate::types::KubernetesWorkloadDetails>,
+    pub(crate) kubernetes_workload_details: ::std::option::Option<crate::types::KubernetesWorkloadDetails>,
 }
 impl KubernetesDetailsBuilder {
     /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
@@ -49,39 +42,26 @@ impl KubernetesDetailsBuilder {
         self
     }
     /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-    pub fn set_kubernetes_user_details(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesUserDetails>,
-    ) -> Self {
+    pub fn set_kubernetes_user_details(mut self, input: ::std::option::Option<crate::types::KubernetesUserDetails>) -> Self {
         self.kubernetes_user_details = input;
         self
     }
     /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-    pub fn get_kubernetes_user_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesUserDetails> {
+    pub fn get_kubernetes_user_details(&self) -> &::std::option::Option<crate::types::KubernetesUserDetails> {
         &self.kubernetes_user_details
     }
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    pub fn kubernetes_workload_details(
-        mut self,
-        input: crate::types::KubernetesWorkloadDetails,
-    ) -> Self {
+    pub fn kubernetes_workload_details(mut self, input: crate::types::KubernetesWorkloadDetails) -> Self {
         self.kubernetes_workload_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    pub fn set_kubernetes_workload_details(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesWorkloadDetails>,
-    ) -> Self {
+    pub fn set_kubernetes_workload_details(mut self, input: ::std::option::Option<crate::types::KubernetesWorkloadDetails>) -> Self {
         self.kubernetes_workload_details = input;
         self
     }
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    pub fn get_kubernetes_workload_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesWorkloadDetails> {
+    pub fn get_kubernetes_workload_details(&self) -> &::std::option::Option<crate::types::KubernetesWorkloadDetails> {
         &self.kubernetes_workload_details
     }
     /// Consumes the builder and constructs a [`KubernetesDetails`](crate::types::KubernetesDetails).

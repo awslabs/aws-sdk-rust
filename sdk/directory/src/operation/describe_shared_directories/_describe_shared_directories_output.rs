@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeSharedDirectoriesOutput {
 }
 impl DescribeSharedDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSharedDirectoriesOutput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput).
-    pub fn builder() -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesOutputBuilder {
         crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSharedDirectoriesOutput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesOutputBuilder {
-    pub(crate) shared_directories:
-        ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
+    pub(crate) shared_directories: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeSharedDirectoriesOutputBuilder {
         self
     }
     /// <p>A list of all shared directories in your account.</p>
-    pub fn set_shared_directories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
-    ) -> Self {
+    pub fn set_shared_directories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>) -> Self {
         self.shared_directories = input;
         self
     }
     /// <p>A list of all shared directories in your account.</p>
-    pub fn get_shared_directories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>> {
+    pub fn get_shared_directories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>> {
         &self.shared_directories
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
@@ -94,9 +86,7 @@ impl DescribeSharedDirectoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSharedDirectoriesOutput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput {
+    pub fn build(self) -> crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput {
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput {
             shared_directories: self.shared_directories,
             next_token: self.next_token,

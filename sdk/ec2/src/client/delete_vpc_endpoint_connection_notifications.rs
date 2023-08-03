@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteVpcEndpointConnectionNotificationsOutput`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput) with field(s):
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput::unsuccessful): <p>Information about the notifications that could not be deleted successfully.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcEndpointConnectionNotificationsError>`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsError)
-    pub fn delete_vpc_endpoint_connection_notifications(&self) -> crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsFluentBuilder{
-        crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsFluentBuilder::new(self.handle.clone())
+    pub fn delete_vpc_endpoint_connection_notifications(
+        &self,
+    ) -> crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsFluentBuilder {
+        crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

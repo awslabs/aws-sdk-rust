@@ -7,11 +7,7 @@ pub fn ser_s3_retention(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.retain_until_date {
         let mut inner_writer = scope.start_el("RetainUntilDate").finish();
-        inner_writer.data(
-            var_1
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_1.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if let Some(var_2) = &input.mode {
         let mut inner_writer = scope.start_el("Mode").finish();

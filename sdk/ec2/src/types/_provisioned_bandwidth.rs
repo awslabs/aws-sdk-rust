@@ -51,9 +51,7 @@ impl ProvisionedBandwidth {
 
 /// A builder for [`ProvisionedBandwidth`](crate::types::ProvisionedBandwidth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedBandwidthBuilder {
     pub(crate) provision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioned: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ProvisionedBandwidthBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn set_provision_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_provision_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.provision_time = input;
         self
     }
@@ -99,10 +94,7 @@ impl ProvisionedBandwidthBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn set_request_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.request_time = input;
         self
     }

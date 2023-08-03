@@ -10,10 +10,7 @@ impl DetachFromIndexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detach_from_index::DetachFromIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_from_index::DetachFromIndexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_from_index::DetachFromIndexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detach_from_index();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DetachFromIndexFluentBuilder {
         }
     }
     /// Access the DetachFromIndex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_from_index::builders::DetachFromIndexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detach_from_index::builders::DetachFromIndexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DetachFromIndexFluentBuilder {
             crate::operation::detach_from_index::DetachFromIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_from_index::DetachFromIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_from_index::DetachFromIndexError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DetachFromIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DetachFromIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_from_index::DetachFromIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_from_index::DetachFromIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_from_index::DetachFromIndexError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DetachFromIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_from_index::DetachFromIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_from_index::DetachFromIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_from_index::DetachFromIndexError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DetachFromIndexFluentBuilder {
             crate::operation::detach_from_index::DetachFromIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_from_index::DetachFromIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_from_index::DetachFromIndexError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,10 +126,7 @@ impl DetachFromIndexFluentBuilder {
         self
     }
     /// <p>A reference to the index object.</p>
-    pub fn set_index_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_index_reference(input);
         self
     }
@@ -165,10 +140,7 @@ impl DetachFromIndexFluentBuilder {
         self
     }
     /// <p>A reference to the object being detached from the index.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_target_reference(input);
         self
     }

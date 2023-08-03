@@ -15,10 +15,7 @@ pub fn ser_update_member_detectors_input(
     if let Some(var_4) = &input.data_sources {
         #[allow(unused_mut)]
         let mut object_5 = object.key("dataSources").start_object();
-        crate::protocol_serde::shape_data_source_configurations::ser_data_source_configurations(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_data_source_configurations::ser_data_source_configurations(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.features {

@@ -30,9 +30,7 @@ impl RelevanceFeedback {
 
 /// A builder for [`RelevanceFeedback`](crate::types::RelevanceFeedback).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelevanceFeedbackBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) relevance_value: ::std::option::Option<crate::types::RelevanceType>,
@@ -58,10 +56,7 @@ impl RelevanceFeedbackBuilder {
         self
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
-    pub fn set_relevance_value(
-        mut self,
-        input: ::std::option::Option<crate::types::RelevanceType>,
-    ) -> Self {
+    pub fn set_relevance_value(mut self, input: ::std::option::Option<crate::types::RelevanceType>) -> Self {
         self.relevance_value = input;
         self
     }

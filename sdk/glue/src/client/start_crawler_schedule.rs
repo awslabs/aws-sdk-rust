@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`crawler_name(impl ::std::convert::Into<String>)`](crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleFluentBuilder::crawler_name) / [`set_crawler_name(Option<String>)`](crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleFluentBuilder::set_crawler_name): <p>Name of the crawler to schedule.</p>
     /// - On success, responds with [`StartCrawlerScheduleOutput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput)
     /// - On failure, responds with [`SdkError<StartCrawlerScheduleError>`](crate::operation::start_crawler_schedule::StartCrawlerScheduleError)
-    pub fn start_crawler_schedule(
-        &self,
-    ) -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleFluentBuilder {
-        crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_crawler_schedule(&self) -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleFluentBuilder {
+        crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleFluentBuilder::new(self.handle.clone())
     }
 }

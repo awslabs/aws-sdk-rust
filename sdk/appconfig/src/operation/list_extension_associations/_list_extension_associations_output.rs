@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListExtensionAssociationsOutput {
 }
 impl ListExtensionAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListExtensionAssociationsOutput`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput).
-    pub fn builder() -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsOutputBuilder {
         crate::operation::list_extension_associations::builders::ListExtensionAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensionAssociationsOutput`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensionAssociationsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListExtensionAssociationsOutputBuilder {
         self
     }
     /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>> {
         &self.items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -94,9 +86,7 @@ impl ListExtensionAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListExtensionAssociationsOutput`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_extension_associations::ListExtensionAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_extension_associations::ListExtensionAssociationsOutput {
         crate::operation::list_extension_associations::ListExtensionAssociationsOutput {
             items: self.items,
             next_token: self.next_token,

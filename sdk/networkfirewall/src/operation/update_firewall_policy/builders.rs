@@ -37,9 +37,7 @@ impl UpdateFirewallPolicyFluentBuilder {
         }
     }
     /// Access the UpdateFirewallPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateFirewallPolicyFluentBuilder {
             crate::operation::update_firewall_policy::UpdateFirewallPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_policy::UpdateFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy::UpdateFirewallPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateFirewallPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateFirewallPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_policy::UpdateFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy::UpdateFirewallPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateFirewallPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_policy::UpdateFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy::UpdateFirewallPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateFirewallPolicyFluentBuilder {
             crate::operation::update_firewall_policy::UpdateFirewallPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_policy::UpdateFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy::UpdateFirewallPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -141,19 +128,13 @@ impl UpdateFirewallPolicyFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_policy_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_policy_arn(input);
         self
     }
@@ -164,19 +145,13 @@ impl UpdateFirewallPolicyFluentBuilder {
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_policy_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_policy_name(input);
         self
     }
@@ -191,10 +166,7 @@ impl UpdateFirewallPolicyFluentBuilder {
         self
     }
     /// <p>The updated firewall policy to use for the firewall. </p>
-    pub fn set_firewall_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallPolicy>,
-    ) -> Self {
+    pub fn set_firewall_policy(mut self, input: ::std::option::Option<crate::types::FirewallPolicy>) -> Self {
         self.inner = self.inner.set_firewall_policy(input);
         self
     }
@@ -237,25 +209,17 @@ impl UpdateFirewallPolicyFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
 }

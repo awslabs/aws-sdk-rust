@@ -15,9 +15,7 @@ pub struct DatasetSource {
 }
 impl DatasetSource {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn ground_truth_manifest(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
@@ -34,9 +32,7 @@ impl DatasetSource {
 
 /// A builder for [`DatasetSource`](crate::types::DatasetSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetSourceBuilder {
     pub(crate) ground_truth_manifest: ::std::option::Option<crate::types::GroundTruthManifest>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -48,17 +44,12 @@ impl DatasetSourceBuilder {
         self
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn set_ground_truth_manifest(
-        mut self,
-        input: ::std::option::Option<crate::types::GroundTruthManifest>,
-    ) -> Self {
+    pub fn set_ground_truth_manifest(mut self, input: ::std::option::Option<crate::types::GroundTruthManifest>) -> Self {
         self.ground_truth_manifest = input;
         self
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn get_ground_truth_manifest(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroundTruthManifest> {
+    pub fn get_ground_truth_manifest(&self) -> &::std::option::Option<crate::types::GroundTruthManifest> {
         &self.ground_truth_manifest
     }
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`SendDiagnosticInterruptOutput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput)
     /// - On failure, responds with [`SdkError<SendDiagnosticInterruptError>`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError)
-    pub fn send_diagnostic_interrupt(
-        &self,
-    ) -> crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptFluentBuilder
-    {
+    pub fn send_diagnostic_interrupt(&self) -> crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptFluentBuilder {
         crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl GetFunctionCodeSigningConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFunctionCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigInputBuilder,
+    inner: crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigInputBuilder,
 }
 impl GetFunctionCodeSigningConfigFluentBuilder {
     /// Creates a new `GetFunctionCodeSigningConfig`.
@@ -37,7 +37,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
         }
     }
     /// Access the GetFunctionCodeSigningConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
             crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
             crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +117,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl GetFunctionCodeSigningConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

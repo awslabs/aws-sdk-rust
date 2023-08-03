@@ -15,34 +15,25 @@ impl DescribeBillingGroupInput {
 }
 impl DescribeBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_billing_group::builders::DescribeBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_billing_group::builders::DescribeBillingGroupInputBuilder {
         crate::operation::describe_billing_group::builders::DescribeBillingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBillingGroupInputBuilder {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_billing_group::DescribeBillingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_billing_group::DescribeBillingGroupInput {
-                billing_group_name: self.billing_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_billing_group::DescribeBillingGroupInput {
+            billing_group_name: self.billing_group_name,
+        })
     }
 }

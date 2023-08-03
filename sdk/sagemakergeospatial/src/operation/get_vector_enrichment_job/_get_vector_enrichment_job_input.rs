@@ -15,18 +15,14 @@ impl GetVectorEnrichmentJobInput {
 }
 impl GetVectorEnrichmentJobInput {
     /// Creates a new builder-style object to manufacture [`GetVectorEnrichmentJobInput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobInputBuilder {
         crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVectorEnrichmentJobInput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVectorEnrichmentJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetVectorEnrichmentJobInputBuilder {
         crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput { arn: self.arn })
     }
 }

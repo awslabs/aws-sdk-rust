@@ -50,16 +50,14 @@ impl GetIpamDiscoveredAccountsInput {
 }
 impl GetIpamDiscoveredAccountsInput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredAccountsInput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput).
-    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder{
+    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder {
         crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamDiscoveredAccountsInput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = input;
         self
     }
@@ -104,18 +96,12 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         &self.ipam_resource_discovery_id
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
-    pub fn discovery_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
-    pub fn set_discovery_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_region = input;
         self
     }
@@ -135,10 +121,7 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         self
     }
     /// <p>Discovered account filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -181,15 +164,13 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput {
-                dry_run: self.dry_run,
-                ipam_resource_discovery_id: self.ipam_resource_discovery_id,
-                discovery_region: self.discovery_region,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput {
+            dry_run: self.dry_run,
+            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
+            discovery_region: self.discovery_region,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

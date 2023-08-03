@@ -37,9 +37,7 @@ impl HttpMatch {
 
 /// A builder for [`HttpMatch`](crate::types::HttpMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpMatchBuilder {
     pub(crate) method: ::std::option::Option<::std::string::String>,
     pub(crate) path_match: ::std::option::Option<crate::types::PathMatch>,
@@ -86,17 +84,12 @@ impl HttpMatchBuilder {
         self
     }
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
-    pub fn set_header_matches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderMatch>>,
-    ) -> Self {
+    pub fn set_header_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderMatch>>) -> Self {
         self.header_matches = input;
         self
     }
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
-    pub fn get_header_matches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderMatch>> {
+    pub fn get_header_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderMatch>> {
         &self.header_matches
     }
     /// Consumes the builder and constructs a [`HttpMatch`](crate::types::HttpMatch).

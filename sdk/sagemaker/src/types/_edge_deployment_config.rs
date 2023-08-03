@@ -10,9 +10,7 @@ pub struct EdgeDeploymentConfig {
 }
 impl EdgeDeploymentConfig {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
-    pub fn failure_handling_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FailureHandlingPolicy> {
+    pub fn failure_handling_policy(&self) -> ::std::option::Option<&crate::types::FailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl EdgeDeploymentConfig {
 
 /// A builder for [`EdgeDeploymentConfig`](crate::types::EdgeDeploymentConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeDeploymentConfigBuilder {
     pub(crate) failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
 }
@@ -38,17 +34,12 @@ impl EdgeDeploymentConfigBuilder {
         self
     }
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
-    pub fn set_failure_handling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureHandlingPolicy>,
-    ) -> Self {
+    pub fn set_failure_handling_policy(mut self, input: ::std::option::Option<crate::types::FailureHandlingPolicy>) -> Self {
         self.failure_handling_policy = input;
         self
     }
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
-    pub fn get_failure_handling_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FailureHandlingPolicy> {
+    pub fn get_failure_handling_policy(&self) -> &::std::option::Option<crate::types::FailureHandlingPolicy> {
         &self.failure_handling_policy
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentConfig`](crate::types::EdgeDeploymentConfig).

@@ -23,9 +23,7 @@ impl ServiceMetadata {
 
 /// A builder for [`ServiceMetadata`](crate::types::ServiceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceMetadataBuilder {
     pub(crate) user_details: ::std::option::Option<crate::types::UserDetails>,
 }
@@ -36,10 +34,7 @@ impl ServiceMetadataBuilder {
         self
     }
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
-    pub fn set_user_details(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDetails>,
-    ) -> Self {
+    pub fn set_user_details(mut self, input: ::std::option::Option<crate::types::UserDetails>) -> Self {
         self.user_details = input;
         self
     }

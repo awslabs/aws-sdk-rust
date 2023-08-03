@@ -45,9 +45,7 @@ impl ResponseItem {
         self.comment_metadata.as_ref()
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn document_version_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentVersionMetadata> {
+    pub fn document_version_metadata(&self) -> ::std::option::Option<&crate::types::DocumentVersionMetadata> {
         self.document_version_metadata.as_ref()
     }
 }
@@ -79,8 +77,7 @@ pub struct ResponseItemBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) folder_metadata: ::std::option::Option<crate::types::FolderMetadata>,
     pub(crate) comment_metadata: ::std::option::Option<crate::types::CommentMetadata>,
-    pub(crate) document_version_metadata:
-        ::std::option::Option<crate::types::DocumentVersionMetadata>,
+    pub(crate) document_version_metadata: ::std::option::Option<crate::types::DocumentVersionMetadata>,
 }
 impl ResponseItemBuilder {
     /// <p>The type of item being returned.</p>
@@ -89,10 +86,7 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The type of item being returned.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseItemType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResponseItemType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -120,10 +114,7 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The document that matches the query.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -137,10 +128,7 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The folder that matches the query.</p>
-    pub fn set_folder_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderMetadata>,
-    ) -> Self {
+    pub fn set_folder_metadata(mut self, input: ::std::option::Option<crate::types::FolderMetadata>) -> Self {
         self.folder_metadata = input;
         self
     }
@@ -154,10 +142,7 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The comment that matches the query.</p>
-    pub fn set_comment_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentMetadata>,
-    ) -> Self {
+    pub fn set_comment_metadata(mut self, input: ::std::option::Option<crate::types::CommentMetadata>) -> Self {
         self.comment_metadata = input;
         self
     }
@@ -166,25 +151,17 @@ impl ResponseItemBuilder {
         &self.comment_metadata
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn document_version_metadata(
-        mut self,
-        input: crate::types::DocumentVersionMetadata,
-    ) -> Self {
+    pub fn document_version_metadata(mut self, input: crate::types::DocumentVersionMetadata) -> Self {
         self.document_version_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn set_document_version_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentVersionMetadata>,
-    ) -> Self {
+    pub fn set_document_version_metadata(mut self, input: ::std::option::Option<crate::types::DocumentVersionMetadata>) -> Self {
         self.document_version_metadata = input;
         self
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn get_document_version_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentVersionMetadata> {
+    pub fn get_document_version_metadata(&self) -> &::std::option::Option<crate::types::DocumentVersionMetadata> {
         &self.document_version_metadata
     }
     /// Consumes the builder and constructs a [`ResponseItem`](crate::types::ResponseItem).

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`commands(Option<Vec<Command>>)`](crate::operation::list_commands::ListCommandsOutput::commands): <p>(Optional) The list of commands requested by the user. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_commands::ListCommandsOutput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     /// - On failure, responds with [`SdkError<ListCommandsError>`](crate::operation::list_commands::ListCommandsError)
-    pub fn list_commands(
-        &self,
-    ) -> crate::operation::list_commands::builders::ListCommandsFluentBuilder {
-        crate::operation::list_commands::builders::ListCommandsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_commands(&self) -> crate::operation::list_commands::builders::ListCommandsFluentBuilder {
+        crate::operation::list_commands::builders::ListCommandsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateLicenseConversionTaskForResourc
 }
 impl CreateLicenseConversionTaskForResourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput).
-    pub fn builder() -> crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceOutputBuilder{
+    pub fn builder() -> crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceOutputBuilder {
         crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResourceOutputBuilder {
     pub(crate) license_conversion_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLicenseConversionTaskForResourceOutputBuilder {
     /// <p>The ID of the created license type conversion task.</p>
-    pub fn license_conversion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_conversion_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the created license type conversion task.</p>
-    pub fn set_license_conversion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_conversion_task_id = input;
         self
     }
@@ -66,10 +58,9 @@ impl CreateLicenseConversionTaskForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput).
-    pub fn build(self) -> crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput{
+    pub fn build(self) -> crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput {
         crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput {
-            license_conversion_task_id: self.license_conversion_task_id
-            ,
+            license_conversion_task_id: self.license_conversion_task_id,
             _request_id: self._request_id,
         }
     }

@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceSyncBlockerOutput {
 }
 impl UpdateServiceSyncBlockerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSyncBlockerOutput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput).
-    pub fn builder() -> crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder{
+    pub fn builder() -> crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder {
         crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceSyncBlockerOutput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncBlockerOutputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -92,10 +84,7 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self
     }
     /// <p>The detailed data on the service sync blocker that was updated.</p>
-    pub fn set_service_sync_blocker(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncBlocker>,
-    ) -> Self {
+    pub fn set_service_sync_blocker(mut self, input: ::std::option::Option<crate::types::SyncBlocker>) -> Self {
         self.service_sync_blocker = input;
         self
     }
@@ -113,9 +102,7 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncBlockerOutput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
+    pub fn build(self) -> crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
         crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
             service_name: self.service_name,
             service_instance_name: self.service_instance_name,

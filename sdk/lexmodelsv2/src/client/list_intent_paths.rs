@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ListIntentPathsOutput`](crate::operation::list_intent_paths::ListIntentPathsOutput) with field(s):
     ///   - [`node_summaries(Option<Vec<AnalyticsIntentNodeSummary>>)`](crate::operation::list_intent_paths::ListIntentPathsOutput::node_summaries): <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
     /// - On failure, responds with [`SdkError<ListIntentPathsError>`](crate::operation::list_intent_paths::ListIntentPathsError)
-    pub fn list_intent_paths(
-        &self,
-    ) -> crate::operation::list_intent_paths::builders::ListIntentPathsFluentBuilder {
-        crate::operation::list_intent_paths::builders::ListIntentPathsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_intent_paths(&self) -> crate::operation::list_intent_paths::builders::ListIntentPathsFluentBuilder {
+        crate::operation::list_intent_paths::builders::ListIntentPathsFluentBuilder::new(self.handle.clone())
     }
 }

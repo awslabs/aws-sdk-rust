@@ -10,10 +10,7 @@ impl StopDevEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_dev_environment::StopDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_dev_environment::StopDevEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_dev_environment::StopDevEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_dev_environment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopDevEnvironmentFluentBuilder {
         }
     }
     /// Access the StopDevEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StopDevEnvironmentFluentBuilder {
             crate::operation::stop_dev_environment::StopDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_dev_environment::StopDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_dev_environment::StopDevEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StopDevEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StopDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_dev_environment::StopDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_dev_environment::StopDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_dev_environment::StopDevEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StopDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_dev_environment::StopDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_dev_environment::StopDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_dev_environment::StopDevEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StopDevEnvironmentFluentBuilder {
             crate::operation::stop_dev_environment::StopDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_dev_environment::StopDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_dev_environment::StopDevEnvironmentError>,
     > {
         self.customize_middleware().await
     }

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::operation::get_response_headers_policy::GetResponseHeadersPolicyOutput::response_headers_policy): <p>Contains a response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_response_headers_policy::GetResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
     /// - On failure, responds with [`SdkError<GetResponseHeadersPolicyError>`](crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError)
-    pub fn get_response_headers_policy(&self) -> crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyFluentBuilder{
+    pub fn get_response_headers_policy(&self) -> crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyFluentBuilder {
         crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyFluentBuilder::new(self.handle.clone())
     }
 }

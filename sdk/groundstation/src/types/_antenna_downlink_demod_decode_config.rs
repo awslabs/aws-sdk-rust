@@ -37,9 +37,7 @@ impl AntennaDownlinkDemodDecodeConfig {
 
 /// A builder for [`AntennaDownlinkDemodDecodeConfig`](crate::types::AntennaDownlinkDemodDecodeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AntennaDownlinkDemodDecodeConfigBuilder {
     pub(crate) spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
     pub(crate) demodulation_config: ::std::option::Option<crate::types::DemodulationConfig>,
@@ -52,10 +50,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         self
     }
     /// <p>Information about the spectral <code>Config</code>.</p>
-    pub fn set_spectrum_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SpectrumConfig>,
-    ) -> Self {
+    pub fn set_spectrum_config(mut self, input: ::std::option::Option<crate::types::SpectrumConfig>) -> Self {
         self.spectrum_config = input;
         self
     }
@@ -69,17 +64,12 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         self
     }
     /// <p>Information about the demodulation <code>Config</code>.</p>
-    pub fn set_demodulation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DemodulationConfig>,
-    ) -> Self {
+    pub fn set_demodulation_config(mut self, input: ::std::option::Option<crate::types::DemodulationConfig>) -> Self {
         self.demodulation_config = input;
         self
     }
     /// <p>Information about the demodulation <code>Config</code>.</p>
-    pub fn get_demodulation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DemodulationConfig> {
+    pub fn get_demodulation_config(&self) -> &::std::option::Option<crate::types::DemodulationConfig> {
         &self.demodulation_config
     }
     /// <p>Information about the decode <code>Config</code>.</p>
@@ -88,10 +78,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         self
     }
     /// <p>Information about the decode <code>Config</code>.</p>
-    pub fn set_decode_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DecodeConfig>,
-    ) -> Self {
+    pub fn set_decode_config(mut self, input: ::std::option::Option<crate::types::DecodeConfig>) -> Self {
         self.decode_config = input;
         self
     }

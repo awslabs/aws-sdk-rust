@@ -27,7 +27,7 @@ impl ReplaceRouteTableAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder,
+    inner: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder,
 }
 impl ReplaceRouteTableAssociationFluentBuilder {
     /// Creates a new `ReplaceRouteTableAssociation`.
@@ -38,7 +38,7 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         }
     }
     /// Access the ReplaceRouteTableAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ReplaceRouteTableAssociationFluentBuilder {
             crate::operation::replace_route_table_association::ReplaceRouteTableAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ReplaceRouteTableAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl ReplaceRouteTableAssociationFluentBuilder {
             crate::operation::replace_route_table_association::ReplaceRouteTableAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The association ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -156,18 +139,12 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }

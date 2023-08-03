@@ -10,10 +10,7 @@ impl DeleteVirtualNodeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_node::DeleteVirtualNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_node::DeleteVirtualNodeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_virtual_node();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteVirtualNodeFluentBuilder {
         }
     }
     /// Access the DeleteVirtualNode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_virtual_node::builders::DeleteVirtualNodeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_virtual_node::builders::DeleteVirtualNodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteVirtualNodeFluentBuilder {
             crate::operation::delete_virtual_node::DeleteVirtualNode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_node::DeleteVirtualNodeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteVirtualNodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteVirtualNodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_node::DeleteVirtualNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_node::DeleteVirtualNodeError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteVirtualNodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_node::DeleteVirtualNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_node::DeleteVirtualNodeError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteVirtualNodeFluentBuilder {
             crate::operation::delete_virtual_node::DeleteVirtualNode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_node::DeleteVirtualNodeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual node to delete.</p>
-    pub fn virtual_node_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_node_name(input.into());
         self
     }
     /// <p>The name of the virtual node to delete.</p>
-    pub fn set_virtual_node_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_node_name(input);
         self
     }

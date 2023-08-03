@@ -10,10 +10,7 @@ impl ListWorkteamsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_workteams::ListWorkteamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workteams::ListWorkteamsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workteams::ListWorkteamsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_workteams();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWorkteamsFluentBuilder {
         }
     }
     /// Access the ListWorkteams as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workteams::builders::ListWorkteamsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_workteams::builders::ListWorkteamsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListWorkteamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListWorkteamsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workteams::paginator::ListWorkteamsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workteams::paginator::ListWorkteamsPaginator {
-        crate::operation::list_workteams::paginator::ListWorkteamsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workteams::paginator::ListWorkteamsPaginator {
+        crate::operation::list_workteams::paginator::ListWorkteamsPaginator::new(self.handle, self.inner)
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ListWorkteamsSortByOptions) -> Self {
@@ -131,10 +118,7 @@ impl ListWorkteamsFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -157,18 +141,12 @@ impl ListWorkteamsFluentBuilder {
         self.inner.get_sort_order()
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

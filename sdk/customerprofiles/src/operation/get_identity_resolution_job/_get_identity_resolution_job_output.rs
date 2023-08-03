@@ -109,16 +109,14 @@ impl ::aws_http::request_id::RequestId for GetIdentityResolutionJobOutput {
 }
 impl GetIdentityResolutionJobOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobOutput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput).
-    pub fn builder() -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder{
+    pub fn builder() -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder {
         crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityResolutionJobOutput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityResolutionJobOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -186,10 +184,7 @@ impl GetIdentityResolutionJobOutputBuilder {
     /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
     /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityResolutionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IdentityResolutionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -226,10 +221,7 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
-    pub fn set_job_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_start_time = input;
         self
     }
@@ -243,10 +235,7 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
-    pub fn set_job_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_end_time = input;
         self
     }
@@ -260,10 +249,7 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -277,10 +263,7 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
-    pub fn set_job_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_expiration_time = input;
         self
     }
@@ -294,10 +277,7 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
-    pub fn set_auto_merging(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMerging>,
-    ) -> Self {
+    pub fn set_auto_merging(mut self, input: ::std::option::Option<crate::types::AutoMerging>) -> Self {
         self.auto_merging = input;
         self
     }
@@ -311,17 +291,12 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    pub fn set_exporting_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportingLocation>,
-    ) -> Self {
+    pub fn set_exporting_location(mut self, input: ::std::option::Option<crate::types::ExportingLocation>) -> Self {
         self.exporting_location = input;
         self
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    pub fn get_exporting_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportingLocation> {
+    pub fn get_exporting_location(&self) -> &::std::option::Option<crate::types::ExportingLocation> {
         &self.exporting_location
     }
     /// <p>Statistics about the Identity Resolution Job.</p>
@@ -348,9 +323,7 @@ impl GetIdentityResolutionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityResolutionJobOutput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput {
+    pub fn build(self) -> crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput {
         crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput {
             domain_name: self.domain_name,
             job_id: self.job_id,

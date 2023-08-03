@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput) with field(s):
     ///   - [`distribution_list(Option<DistributionList>)`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByWebACLIdError>`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError)
-    pub fn list_distributions_by_web_acl_id(&self) -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebACLIdFluentBuilder{
+    pub fn list_distributions_by_web_acl_id(
+        &self,
+    ) -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebACLIdFluentBuilder {
         crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebACLIdFluentBuilder::new(self.handle.clone())
     }
 }

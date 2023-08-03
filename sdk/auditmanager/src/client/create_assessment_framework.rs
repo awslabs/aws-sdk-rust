@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssessmentFrameworkOutput`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput) with field(s):
     ///   - [`framework(Option<Framework>)`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput::framework): <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     /// - On failure, responds with [`SdkError<CreateAssessmentFrameworkError>`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkError)
-    pub fn create_assessment_framework(&self) -> crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkFluentBuilder{
+    pub fn create_assessment_framework(&self) -> crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkFluentBuilder {
         crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

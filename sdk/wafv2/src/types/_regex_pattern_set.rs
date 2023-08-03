@@ -52,9 +52,7 @@ impl RegexPatternSet {
 
 /// A builder for [`RegexPatternSet`](crate::types::RegexPatternSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegexPatternSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -131,17 +129,12 @@ impl RegexPatternSetBuilder {
         self
     }
     /// <p>The regular expression patterns in the set.</p>
-    pub fn set_regular_expression_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
-    ) -> Self {
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
         self.regular_expression_list = input;
         self
     }
     /// <p>The regular expression patterns in the set.</p>
-    pub fn get_regular_expression_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         &self.regular_expression_list
     }
     /// Consumes the builder and constructs a [`RegexPatternSet`](crate::types::RegexPatternSet).

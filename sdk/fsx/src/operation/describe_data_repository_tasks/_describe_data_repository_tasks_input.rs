@@ -36,20 +36,17 @@ impl DescribeDataRepositoryTasksInput {
 }
 impl DescribeDataRepositoryTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryTasksInput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput).
-    pub fn builder() -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder{
+    pub fn builder() -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder {
         crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataRepositoryTasksInput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksInputBuilder {
     pub(crate) task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -66,10 +63,7 @@ impl DescribeDataRepositoryTasksInputBuilder {
         self
     }
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    pub fn set_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_ids = input;
         self
     }
@@ -89,17 +83,12 @@ impl DescribeDataRepositoryTasksInputBuilder {
         self
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>> {
         &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -137,13 +126,11 @@ impl DescribeDataRepositoryTasksInputBuilder {
         crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput {
-                task_ids: self.task_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput {
+            task_ids: self.task_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

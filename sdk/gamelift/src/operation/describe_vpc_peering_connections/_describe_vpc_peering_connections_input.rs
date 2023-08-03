@@ -15,16 +15,14 @@ impl DescribeVpcPeeringConnectionsInput {
 }
 impl DescribeVpcPeeringConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
-    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder {
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput {
-                fleet_id: self.fleet_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput { fleet_id: self.fleet_id })
     }
 }

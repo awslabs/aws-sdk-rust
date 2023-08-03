@@ -13,9 +13,7 @@ pub struct CostCategorySplitChargeRuleParameter {
 }
 impl CostCategorySplitChargeRuleParameter {
     /// <p>The parameter type. </p>
-    pub fn r#type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CostCategorySplitChargeRuleParameterType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CostCategorySplitChargeRuleParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The parameter values. </p>
@@ -32,12 +30,9 @@ impl CostCategorySplitChargeRuleParameter {
 
 /// A builder for [`CostCategorySplitChargeRuleParameter`](crate::types::CostCategorySplitChargeRuleParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategorySplitChargeRuleParameterBuilder {
-    pub(crate) r#type:
-        ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CostCategorySplitChargeRuleParameterBuilder {
@@ -47,17 +42,12 @@ impl CostCategorySplitChargeRuleParameterBuilder {
         self
     }
     /// <p>The parameter type. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The parameter type. </p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType> {
         &self.r#type
     }
     /// Appends an item to `values`.
@@ -72,10 +62,7 @@ impl CostCategorySplitChargeRuleParameterBuilder {
         self
     }
     /// <p>The parameter values. </p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

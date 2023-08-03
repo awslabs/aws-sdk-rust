@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCapacityProviderOutput {
 }
 impl CreateCapacityProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityProviderOutput`](crate::operation::create_capacity_provider::CreateCapacityProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder {
         crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityProviderOutput`](crate::operation::create_capacity_provider::CreateCapacityProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityProviderOutputBuilder {
     pub(crate) capacity_provider: ::std::option::Option<crate::types::CapacityProvider>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateCapacityProviderOutputBuilder {
         self
     }
     /// <p>The full description of the new capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityProvider>,
-    ) -> Self {
+    pub fn set_capacity_provider(mut self, input: ::std::option::Option<crate::types::CapacityProvider>) -> Self {
         self.capacity_provider = input;
         self
     }

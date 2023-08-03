@@ -10,10 +10,7 @@ impl UpdateJourneyStateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_journey_state::UpdateJourneyStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_journey_state::UpdateJourneyStateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_journey_state::UpdateJourneyStateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_journey_state();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateJourneyStateFluentBuilder {
         }
     }
     /// Access the UpdateJourneyState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_journey_state::builders::UpdateJourneyStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_journey_state::builders::UpdateJourneyStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateJourneyStateFluentBuilder {
             crate::operation::update_journey_state::UpdateJourneyState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_journey_state::UpdateJourneyStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_journey_state::UpdateJourneyStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateJourneyStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateJourneyStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_journey_state::UpdateJourneyStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_journey_state::UpdateJourneyStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_journey_state::UpdateJourneyStateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateJourneyStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_journey_state::UpdateJourneyStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_journey_state::UpdateJourneyStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_journey_state::UpdateJourneyStateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateJourneyStateFluentBuilder {
             crate::operation::update_journey_state::UpdateJourneyState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_journey_state::UpdateJourneyStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_journey_state::UpdateJourneyStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -162,17 +140,12 @@ impl UpdateJourneyStateFluentBuilder {
         self
     }
     /// <p>Changes the status of a journey.</p>
-    pub fn set_journey_state_request(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyStateRequest>,
-    ) -> Self {
+    pub fn set_journey_state_request(mut self, input: ::std::option::Option<crate::types::JourneyStateRequest>) -> Self {
         self.inner = self.inner.set_journey_state_request(input);
         self
     }
     /// <p>Changes the status of a journey.</p>
-    pub fn get_journey_state_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::JourneyStateRequest> {
+    pub fn get_journey_state_request(&self) -> &::std::option::Option<crate::types::JourneyStateRequest> {
         self.inner.get_journey_state_request()
     }
 }

@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_human_loop::DeleteHumanLoopError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_human_loop::DeleteHumanLoopError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_human_loop::DeleteHumanLoopError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_human_loop::DeleteHumanLoopError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -74,32 +58,16 @@ impl From<crate::operation::delete_human_loop::DeleteHumanLoopError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -110,39 +78,25 @@ impl From<crate::operation::describe_human_loop::DescribeHumanLoopError> for Err
     fn from(err: crate::operation::describe_human_loop::DescribeHumanLoopError) -> Self {
         match err {
             crate::operation::describe_human_loop::DescribeHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_human_loop::DescribeHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_human_loop::DescribeHumanLoopError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_human_loop::DescribeHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_human_loop::DescribeHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_human_loop::DescribeHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -152,50 +106,24 @@ where
 impl From<crate::operation::list_human_loops::ListHumanLoopsError> for Error {
     fn from(err: crate::operation::list_human_loops::ListHumanLoopsError) -> Self {
         match err {
-            crate::operation::list_human_loops::ListHumanLoopsError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_human_loops::ListHumanLoopsError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_human_loops::ListHumanLoopsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_human_loops::ListHumanLoopsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_human_loops::ListHumanLoopsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_human_loops::ListHumanLoopsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_human_loop::StartHumanLoopError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -207,39 +135,25 @@ impl From<crate::operation::start_human_loop::StartHumanLoopError> for Error {
         match err {
             crate::operation::start_human_loop::StartHumanLoopError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_human_loop::StartHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::start_human_loop::StartHumanLoopError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::start_human_loop::StartHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_human_loop::StartHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_human_loop::StartHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_human_loop::StopHumanLoopError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_human_loop::StopHumanLoopError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_human_loop::StopHumanLoopError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_human_loop::StopHumanLoopError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -249,21 +163,11 @@ where
 impl From<crate::operation::stop_human_loop::StopHumanLoopError> for Error {
     fn from(err: crate::operation::stop_human_loop::StopHumanLoopError) -> Self {
         match err {
-            crate::operation::stop_human_loop::StopHumanLoopError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::stop_human_loop::StopHumanLoopError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::stop_human_loop::StopHumanLoopError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::stop_human_loop::StopHumanLoopError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::stop_human_loop::StopHumanLoopError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::stop_human_loop::StopHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

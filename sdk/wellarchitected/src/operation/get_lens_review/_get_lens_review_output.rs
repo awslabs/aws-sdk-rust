@@ -45,9 +45,7 @@ impl GetLensReviewOutput {
 
 /// A builder for [`GetLensReviewOutput`](crate::operation::get_lens_review::GetLensReviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLensReviewOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
@@ -92,10 +90,7 @@ impl GetLensReviewOutputBuilder {
         self
     }
     /// <p>A lens review of a question.</p>
-    pub fn set_lens_review(
-        mut self,
-        input: ::std::option::Option<crate::types::LensReview>,
-    ) -> Self {
+    pub fn set_lens_review(mut self, input: ::std::option::Option<crate::types::LensReview>) -> Self {
         self.lens_review = input;
         self
     }

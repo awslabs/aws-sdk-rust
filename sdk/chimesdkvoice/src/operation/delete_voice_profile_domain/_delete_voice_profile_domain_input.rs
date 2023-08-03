@@ -15,35 +15,25 @@ impl DeleteVoiceProfileDomainInput {
 }
 impl DeleteVoiceProfileDomainInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceProfileDomainInput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput).
-    pub fn builder(
-    ) -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder {
         crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceProfileDomainInput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceProfileDomainInputBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceProfileDomainInputBuilder {
     /// <p>The voice profile domain ID.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The voice profile domain ID.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteVoiceProfileDomainInputBuilder {
         crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput {
-                voice_profile_domain_id: self.voice_profile_domain_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput {
+            voice_profile_domain_id: self.voice_profile_domain_id,
+        })
     }
 }

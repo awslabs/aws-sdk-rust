@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePackageVersionOutput {
 }
 impl UpdatePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePackageVersionOutput`](crate::operation::update_package_version::UpdatePackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_package_version::builders::UpdatePackageVersionOutputBuilder {
+    pub fn builder() -> crate::operation::update_package_version::builders::UpdatePackageVersionOutputBuilder {
         crate::operation::update_package_version::builders::UpdatePackageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePackageVersionOutput`](crate::operation::update_package_version::UpdatePackageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackageVersionOutputBuilder {
     _request_id: Option<String>,
 }

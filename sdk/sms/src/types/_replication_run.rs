@@ -59,9 +59,7 @@ impl ReplicationRun {
         self.r#type.as_ref()
     }
     /// <p>Details about the current stage of the replication run.</p>
-    pub fn stage_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationRunStageDetails> {
+    pub fn stage_details(&self) -> ::std::option::Option<&crate::types::ReplicationRunStageDetails> {
         self.stage_details.as_ref()
     }
     /// <p>The description of the current status of the replication job.</p>
@@ -109,9 +107,7 @@ impl ReplicationRun {
 
 /// A builder for [`ReplicationRun`](crate::types::ReplicationRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationRunBuilder {
     pub(crate) replication_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplicationRunState>,
@@ -127,18 +123,12 @@ pub struct ReplicationRunBuilder {
 }
 impl ReplicationRunBuilder {
     /// <p>The ID of the replication run.</p>
-    pub fn replication_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication run.</p>
-    pub fn set_replication_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_run_id = input;
         self
     }
@@ -152,10 +142,7 @@ impl ReplicationRunBuilder {
         self
     }
     /// <p>The state of the replication run.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationRunState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplicationRunState>) -> Self {
         self.state = input;
         self
     }
@@ -169,10 +156,7 @@ impl ReplicationRunBuilder {
         self
     }
     /// <p>The type of replication run.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationRunType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReplicationRunType>) -> Self {
         self.r#type = input;
         self
     }
@@ -186,32 +170,21 @@ impl ReplicationRunBuilder {
         self
     }
     /// <p>Details about the current stage of the replication run.</p>
-    pub fn set_stage_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationRunStageDetails>,
-    ) -> Self {
+    pub fn set_stage_details(mut self, input: ::std::option::Option<crate::types::ReplicationRunStageDetails>) -> Self {
         self.stage_details = input;
         self
     }
     /// <p>Details about the current stage of the replication run.</p>
-    pub fn get_stage_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationRunStageDetails> {
+    pub fn get_stage_details(&self) -> &::std::option::Option<crate::types::ReplicationRunStageDetails> {
         &self.stage_details
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -239,10 +212,7 @@ impl ReplicationRunBuilder {
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn set_scheduled_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_start_time = input;
         self
     }
@@ -256,10 +226,7 @@ impl ReplicationRunBuilder {
         self
     }
     /// <p>The completion time of the last replication run.</p>
-    pub fn set_completed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_time = input;
         self
     }

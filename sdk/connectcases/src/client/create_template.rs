@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`template_id(Option<String>)`](crate::operation::create_template::CreateTemplateOutput::template_id): <p>A unique identifier of a template.</p>
     ///   - [`template_arn(Option<String>)`](crate::operation::create_template::CreateTemplateOutput::template_arn): <p>The Amazon Resource Name (ARN) of the newly created template.</p>
     /// - On failure, responds with [`SdkError<CreateTemplateError>`](crate::operation::create_template::CreateTemplateError)
-    pub fn create_template(
-        &self,
-    ) -> crate::operation::create_template::builders::CreateTemplateFluentBuilder {
-        crate::operation::create_template::builders::CreateTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_template(&self) -> crate::operation::create_template::builders::CreateTemplateFluentBuilder {
+        crate::operation::create_template::builders::CreateTemplateFluentBuilder::new(self.handle.clone())
     }
 }

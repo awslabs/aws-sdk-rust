@@ -52,9 +52,7 @@ impl EvaluationFormContent {
         self.items.as_deref()
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn scoring_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
+    pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
         self.scoring_strategy.as_ref()
     }
 }
@@ -67,9 +65,7 @@ impl EvaluationFormContent {
 
 /// A builder for [`EvaluationFormContent`](crate::types::EvaluationFormContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormContentBuilder {
     pub(crate) evaluation_form_version: ::std::option::Option<i32>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ impl EvaluationFormContentBuilder {
         &self.evaluation_form_version
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -115,18 +105,12 @@ impl EvaluationFormContentBuilder {
         &self.evaluation_form_id
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn set_evaluation_form_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_arn = input;
         self
     }
@@ -174,17 +158,12 @@ impl EvaluationFormContentBuilder {
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
         &self.items
     }
     /// <p>A scoring strategy of the evaluation form.</p>
@@ -193,17 +172,12 @@ impl EvaluationFormContentBuilder {
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn set_scoring_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
-    ) -> Self {
+    pub fn set_scoring_strategy(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>) -> Self {
         self.scoring_strategy = input;
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn get_scoring_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
+    pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         &self.scoring_strategy
     }
     /// Consumes the builder and constructs a [`EvaluationFormContent`](crate::types::EvaluationFormContent).

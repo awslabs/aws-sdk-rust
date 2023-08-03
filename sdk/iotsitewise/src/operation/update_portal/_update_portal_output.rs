@@ -28,9 +28,7 @@ impl UpdatePortalOutput {
 
 /// A builder for [`UpdatePortalOutput`](crate::operation::update_portal::UpdatePortalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePortalOutputBuilder {
     pub(crate) portal_status: ::std::option::Option<crate::types::PortalStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdatePortalOutputBuilder {
         self
     }
     /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_portal_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PortalStatus>,
-    ) -> Self {
+    pub fn set_portal_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
         self.portal_status = input;
         self
     }

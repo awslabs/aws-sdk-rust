@@ -36,7 +36,9 @@ impl super::Client {
     ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput::cutoff_behavior): <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     ///   - [`alarm_configuration(Option<AlarmConfiguration>)`](crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput::alarm_configuration): <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowTaskError>`](crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError)
-    pub fn update_maintenance_window_task(&self) -> crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskFluentBuilder{
+    pub fn update_maintenance_window_task(
+        &self,
+    ) -> crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskFluentBuilder {
         crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskFluentBuilder::new(self.handle.clone())
     }
 }

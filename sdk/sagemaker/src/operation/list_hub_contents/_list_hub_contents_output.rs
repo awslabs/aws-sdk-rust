@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListHubContentsOutput {
 }
 impl ListHubContentsOutput {
     /// Creates a new builder-style object to manufacture [`ListHubContentsOutput`](crate::operation::list_hub_contents::ListHubContentsOutput).
-    pub fn builder() -> crate::operation::list_hub_contents::builders::ListHubContentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hub_contents::builders::ListHubContentsOutputBuilder {
         crate::operation::list_hub_contents::builders::ListHubContentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHubContentsOutput`](crate::operation::list_hub_contents::ListHubContentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHubContentsOutputBuilder {
-    pub(crate) hub_content_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>,
+    pub(crate) hub_content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListHubContentsOutputBuilder {
         self
     }
     /// <p>The summaries of the listed hub content.</p>
-    pub fn set_hub_content_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>,
-    ) -> Self {
+    pub fn set_hub_content_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>>) -> Self {
         self.hub_content_summaries = input;
         self
     }
     /// <p>The summaries of the listed hub content.</p>
-    pub fn get_hub_content_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>> {
+    pub fn get_hub_content_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>> {
         &self.hub_content_summaries
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>

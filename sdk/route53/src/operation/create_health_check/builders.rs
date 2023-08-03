@@ -10,10 +10,7 @@ impl CreateHealthCheckInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_health_check::CreateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_health_check::CreateHealthCheckError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_health_check::CreateHealthCheckError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_health_check();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl CreateHealthCheckFluentBuilder {
         }
     }
     /// Access the CreateHealthCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_health_check::builders::CreateHealthCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_health_check::builders::CreateHealthCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl CreateHealthCheckFluentBuilder {
             crate::operation::create_health_check::CreateHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_health_check::CreateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_health_check::CreateHealthCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl CreateHealthCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl CreateHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_health_check::CreateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_health_check::CreateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_health_check::CreateHealthCheckError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl CreateHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_health_check::CreateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_health_check::CreateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_health_check::CreateHealthCheckError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl CreateHealthCheckFluentBuilder {
             crate::operation::create_health_check::CreateHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_health_check::CreateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_health_check::CreateHealthCheckError>,
     > {
         self.customize_middleware().await
     }
@@ -139,10 +123,7 @@ impl CreateHealthCheckFluentBuilder {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
     }
@@ -153,10 +134,7 @@ impl CreateHealthCheckFluentBuilder {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
     }
@@ -176,17 +154,12 @@ impl CreateHealthCheckFluentBuilder {
         self
     }
     /// <p>A complex type that contains settings for a new health check.</p>
-    pub fn set_health_check_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.inner = self.inner.set_health_check_config(input);
         self
     }
     /// <p>A complex type that contains settings for a new health check.</p>
-    pub fn get_health_check_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         self.inner.get_health_check_config()
     }
 }

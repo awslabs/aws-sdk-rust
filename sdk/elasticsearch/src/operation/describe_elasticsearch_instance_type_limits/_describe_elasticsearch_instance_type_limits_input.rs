@@ -30,16 +30,14 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
 }
 impl DescribeElasticsearchInstanceTypeLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
@@ -66,32 +64,21 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         self
     }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EsPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
         &self.instance_type
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
-    pub fn elasticsearch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elasticsearch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
-    pub fn set_elasticsearch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elasticsearch_version = input;
         self
     }
@@ -100,16 +87,18 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         &self.elasticsearch_version
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput {
-                domain_name: self.domain_name
-                ,
-                instance_type: self.instance_type
-                ,
-                elasticsearch_version: self.elasticsearch_version
-                ,
-            }
+                domain_name: self.domain_name,
+                instance_type: self.instance_type,
+                elasticsearch_version: self.elasticsearch_version,
+            },
         )
     }
 }

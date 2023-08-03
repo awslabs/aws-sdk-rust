@@ -91,17 +91,14 @@ impl ::aws_http::request_id::RequestId for DescribeExperienceOutput {
 }
 impl DescribeExperienceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExperienceOutput`](crate::operation::describe_experience::DescribeExperienceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_experience::builders::DescribeExperienceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_experience::builders::DescribeExperienceOutputBuilder {
         crate::operation::describe_experience::builders::DescribeExperienceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExperienceOutput`](crate::operation::describe_experience::DescribeExperienceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExperienceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -171,17 +168,12 @@ impl DescribeExperienceOutputBuilder {
         self
     }
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>> {
         &self.endpoints
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
@@ -190,17 +182,12 @@ impl DescribeExperienceOutputBuilder {
         self
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
         &self.configuration
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
@@ -209,10 +196,7 @@ impl DescribeExperienceOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -226,10 +210,7 @@ impl DescribeExperienceOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -257,10 +238,7 @@ impl DescribeExperienceOutputBuilder {
         self
     }
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperienceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -283,18 +261,12 @@ impl DescribeExperienceOutputBuilder {
         &self.role_arn
     }
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

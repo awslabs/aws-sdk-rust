@@ -27,7 +27,7 @@ impl super::Client {
     ///   - [`supported_gateway_capacities(Option<Vec<GatewayCapacity>>)`](crate::operation::describe_gateway_information::DescribeGatewayInformationOutput::supported_gateway_capacities): <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
     ///   - [`host_environment_id(Option<String>)`](crate::operation::describe_gateway_information::DescribeGatewayInformationOutput::host_environment_id): <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     /// - On failure, responds with [`SdkError<DescribeGatewayInformationError>`](crate::operation::describe_gateway_information::DescribeGatewayInformationError)
-    pub fn describe_gateway_information(&self) -> crate::operation::describe_gateway_information::builders::DescribeGatewayInformationFluentBuilder{
+    pub fn describe_gateway_information(&self) -> crate::operation::describe_gateway_information::builders::DescribeGatewayInformationFluentBuilder {
         crate::operation::describe_gateway_information::builders::DescribeGatewayInformationFluentBuilder::new(self.handle.clone())
     }
 }

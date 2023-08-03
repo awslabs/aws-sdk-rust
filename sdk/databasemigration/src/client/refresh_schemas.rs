@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RefreshSchemasOutput`](crate::operation::refresh_schemas::RefreshSchemasOutput) with field(s):
     ///   - [`refresh_schemas_status(Option<RefreshSchemasStatus>)`](crate::operation::refresh_schemas::RefreshSchemasOutput::refresh_schemas_status): <p>The status of the refreshed schema.</p>
     /// - On failure, responds with [`SdkError<RefreshSchemasError>`](crate::operation::refresh_schemas::RefreshSchemasError)
-    pub fn refresh_schemas(
-        &self,
-    ) -> crate::operation::refresh_schemas::builders::RefreshSchemasFluentBuilder {
-        crate::operation::refresh_schemas::builders::RefreshSchemasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn refresh_schemas(&self) -> crate::operation::refresh_schemas::builders::RefreshSchemasFluentBuilder {
+        crate::operation::refresh_schemas::builders::RefreshSchemasFluentBuilder::new(self.handle.clone())
     }
 }

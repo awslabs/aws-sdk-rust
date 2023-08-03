@@ -29,9 +29,7 @@ pub struct CreateEphemerisInput {
     pub ephemeris: ::std::option::Option<crate::types::EphemerisData>,
     /// <p>Tags assigned to an ephemeris.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEphemerisInput {
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
@@ -66,11 +64,7 @@ impl CreateEphemerisInput {
         self.ephemeris.as_ref()
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -83,9 +77,7 @@ impl CreateEphemerisInput {
 
 /// A builder for [`CreateEphemerisInput`](crate::operation::create_ephemeris::CreateEphemerisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEphemerisInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -94,9 +86,7 @@ pub struct CreateEphemerisInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ephemeris: ::std::option::Option<crate::types::EphemerisData>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEphemerisInputBuilder {
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
@@ -156,10 +146,7 @@ impl CreateEphemerisInputBuilder {
         self
     }
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
@@ -201,10 +188,7 @@ impl CreateEphemerisInputBuilder {
         self
     }
     /// <p>Ephemeris data.</p>
-    pub fn set_ephemeris(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemerisData>,
-    ) -> Self {
+    pub fn set_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisData>) -> Self {
         self.ephemeris = input;
         self
     }
@@ -217,41 +201,25 @@ impl CreateEphemerisInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEphemerisInput`](crate::operation::create_ephemeris::CreateEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ephemeris::CreateEphemerisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_ephemeris::CreateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ephemeris::CreateEphemerisInput {
             satellite_id: self.satellite_id,
             enabled: self.enabled,

@@ -23,11 +23,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkloadOutput`](crate::operation::update_workload::UpdateWorkloadOutput) with field(s):
     ///   - [`workload(Option<Workload>)`](crate::operation::update_workload::UpdateWorkloadOutput::workload): <p>A workload return object.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkloadError>`](crate::operation::update_workload::UpdateWorkloadError)
-    pub fn update_workload(
-        &self,
-    ) -> crate::operation::update_workload::builders::UpdateWorkloadFluentBuilder {
-        crate::operation::update_workload::builders::UpdateWorkloadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workload(&self) -> crate::operation::update_workload::builders::UpdateWorkloadFluentBuilder {
+        crate::operation::update_workload::builders::UpdateWorkloadFluentBuilder::new(self.handle.clone())
     }
 }

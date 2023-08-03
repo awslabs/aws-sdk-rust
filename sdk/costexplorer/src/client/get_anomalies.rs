@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`anomalies(Option<Vec<Anomaly>>)`](crate::operation::get_anomalies::GetAnomaliesOutput::anomalies): <p>A list of cost anomalies. </p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_anomalies::GetAnomaliesOutput::next_page_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     /// - On failure, responds with [`SdkError<GetAnomaliesError>`](crate::operation::get_anomalies::GetAnomaliesError)
-    pub fn get_anomalies(
-        &self,
-    ) -> crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder {
-        crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_anomalies(&self) -> crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder {
+        crate::operation::get_anomalies::builders::GetAnomaliesFluentBuilder::new(self.handle.clone())
     }
 }

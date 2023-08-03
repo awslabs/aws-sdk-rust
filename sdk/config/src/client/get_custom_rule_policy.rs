@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCustomRulePolicyOutput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput) with field(s):
     ///   - [`policy_text(Option<String>)`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput::policy_text): <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     /// - On failure, responds with [`SdkError<GetCustomRulePolicyError>`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyError)
-    pub fn get_custom_rule_policy(
-        &self,
-    ) -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyFluentBuilder {
-        crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_custom_rule_policy(&self) -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyFluentBuilder {
+        crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyFluentBuilder::new(self.handle.clone())
     }
 }

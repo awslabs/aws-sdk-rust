@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AddUploadBufferOutput {
 }
 impl AddUploadBufferOutput {
     /// Creates a new builder-style object to manufacture [`AddUploadBufferOutput`](crate::operation::add_upload_buffer::AddUploadBufferOutput).
-    pub fn builder() -> crate::operation::add_upload_buffer::builders::AddUploadBufferOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_upload_buffer::builders::AddUploadBufferOutputBuilder {
         crate::operation::add_upload_buffer::builders::AddUploadBufferOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddUploadBufferOutput`](crate::operation::add_upload_buffer::AddUploadBufferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddUploadBufferOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -15,18 +15,14 @@ impl GetConnectionStatusInput {
 }
 impl GetConnectionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
-        crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
+        crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionStatusInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetConnectionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connection_status::GetConnectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_connection_status::GetConnectionStatusInput {
-                target: self.target,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_connection_status::GetConnectionStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_connection_status::GetConnectionStatusInput { target: self.target })
     }
 }

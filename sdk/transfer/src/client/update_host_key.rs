@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::update_host_key::UpdateHostKeyOutput::server_id): <p>Returns the server identifier for the server that contains the updated host key.</p>
     ///   - [`host_key_id(Option<String>)`](crate::operation::update_host_key::UpdateHostKeyOutput::host_key_id): <p>Returns the host key identifier for the updated host key.</p>
     /// - On failure, responds with [`SdkError<UpdateHostKeyError>`](crate::operation::update_host_key::UpdateHostKeyError)
-    pub fn update_host_key(
-        &self,
-    ) -> crate::operation::update_host_key::builders::UpdateHostKeyFluentBuilder {
-        crate::operation::update_host_key::builders::UpdateHostKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_host_key(&self) -> crate::operation::update_host_key::builders::UpdateHostKeyFluentBuilder {
+        crate::operation::update_host_key::builders::UpdateHostKeyFluentBuilder::new(self.handle.clone())
     }
 }

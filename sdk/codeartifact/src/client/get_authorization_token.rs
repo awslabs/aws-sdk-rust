@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`authorization_token(Option<String>)`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput::authorization_token): <p> The returned authentication token. </p>
     ///   - [`expiration(Option<DateTime>)`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput::expiration): <p> A timestamp that specifies the date and time the authorization token expires. </p>
     /// - On failure, responds with [`SdkError<GetAuthorizationTokenError>`](crate::operation::get_authorization_token::GetAuthorizationTokenError)
-    pub fn get_authorization_token(
-        &self,
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder
-    {
-        crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_authorization_token(&self) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder {
+        crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder::new(self.handle.clone())
     }
 }

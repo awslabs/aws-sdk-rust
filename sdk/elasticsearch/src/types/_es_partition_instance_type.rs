@@ -94,13 +94,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EsPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -281,15 +275,9 @@ impl ::std::convert::From<&str> for EsPartitionInstanceType {
             "t2.medium.elasticsearch" => EsPartitionInstanceType::T2MediumElasticsearch,
             "t2.micro.elasticsearch" => EsPartitionInstanceType::T2MicroElasticsearch,
             "t2.small.elasticsearch" => EsPartitionInstanceType::T2SmallElasticsearch,
-            "ultrawarm1.large.elasticsearch" => {
-                EsPartitionInstanceType::Ultrawarm1LargeElasticsearch
-            }
-            "ultrawarm1.medium.elasticsearch" => {
-                EsPartitionInstanceType::Ultrawarm1MediumElasticsearch
-            }
-            other => EsPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "ultrawarm1.large.elasticsearch" => EsPartitionInstanceType::Ultrawarm1LargeElasticsearch,
+            "ultrawarm1.medium.elasticsearch" => EsPartitionInstanceType::Ultrawarm1MediumElasticsearch,
+            other => EsPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -360,12 +348,8 @@ impl EsPartitionInstanceType {
             EsPartitionInstanceType::T2MediumElasticsearch => "t2.medium.elasticsearch",
             EsPartitionInstanceType::T2MicroElasticsearch => "t2.micro.elasticsearch",
             EsPartitionInstanceType::T2SmallElasticsearch => "t2.small.elasticsearch",
-            EsPartitionInstanceType::Ultrawarm1LargeElasticsearch => {
-                "ultrawarm1.large.elasticsearch"
-            }
-            EsPartitionInstanceType::Ultrawarm1MediumElasticsearch => {
-                "ultrawarm1.medium.elasticsearch"
-            }
+            EsPartitionInstanceType::Ultrawarm1LargeElasticsearch => "ultrawarm1.large.elasticsearch",
+            EsPartitionInstanceType::Ultrawarm1MediumElasticsearch => "ultrawarm1.medium.elasticsearch",
             EsPartitionInstanceType::Unknown(value) => value.as_str(),
         }
     }

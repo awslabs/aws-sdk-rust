@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput::id): <p>The import task ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput::arn): <p>The ARN (Amazon Resource Name) of the import task.</p>
     /// - On failure, responds with [`SdkError<StartWirelessDeviceImportTaskError>`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError)
-    pub fn start_wireless_device_import_task(&self) -> crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskFluentBuilder{
+    pub fn start_wireless_device_import_task(
+        &self,
+    ) -> crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskFluentBuilder {
         crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

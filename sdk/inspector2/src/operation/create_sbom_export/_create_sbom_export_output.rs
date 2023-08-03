@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateSbomExportOutput {
 }
 impl CreateSbomExportOutput {
     /// Creates a new builder-style object to manufacture [`CreateSbomExportOutput`](crate::operation::create_sbom_export::CreateSbomExportOutput).
-    pub fn builder() -> crate::operation::create_sbom_export::builders::CreateSbomExportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_sbom_export::builders::CreateSbomExportOutputBuilder {
         crate::operation::create_sbom_export::builders::CreateSbomExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSbomExportOutput`](crate::operation::create_sbom_export::CreateSbomExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSbomExportOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

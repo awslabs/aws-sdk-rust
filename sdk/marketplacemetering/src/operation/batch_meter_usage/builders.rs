@@ -10,10 +10,7 @@ impl BatchMeterUsageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_meter_usage();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl BatchMeterUsageFluentBuilder {
         }
     }
     /// Access the BatchMeterUsage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl BatchMeterUsageFluentBuilder {
             crate::operation::batch_meter_usage::BatchMeterUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl BatchMeterUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl BatchMeterUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl BatchMeterUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl BatchMeterUsageFluentBuilder {
             crate::operation::batch_meter_usage::BatchMeterUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError>,
     > {
         self.customize_middleware().await
     }
@@ -141,17 +125,12 @@ impl BatchMeterUsageFluentBuilder {
         self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn set_usage_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
-    ) -> Self {
+    pub fn set_usage_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>) -> Self {
         self.inner = self.inner.set_usage_records(input);
         self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn get_usage_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
+    pub fn get_usage_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
         self.inner.get_usage_records()
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>

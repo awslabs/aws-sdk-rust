@@ -15,34 +15,25 @@ impl GetBrowserSettingsInput {
 }
 impl GetBrowserSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_browser_settings::builders::GetBrowserSettingsInputBuilder {
+    pub fn builder() -> crate::operation::get_browser_settings::builders::GetBrowserSettingsInputBuilder {
         crate::operation::get_browser_settings::builders::GetBrowserSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBrowserSettingsInputBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetBrowserSettingsInputBuilder {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.browser_settings_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_browser_settings::GetBrowserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_browser_settings::GetBrowserSettingsInput {
-                browser_settings_arn: self.browser_settings_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_browser_settings::GetBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_browser_settings::GetBrowserSettingsInput {
+            browser_settings_arn: self.browser_settings_arn,
+        })
     }
 }

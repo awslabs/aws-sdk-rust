@@ -11,9 +11,7 @@ pub struct GetDeploymentConfigOutput {
 }
 impl GetDeploymentConfigOutput {
     /// <p>Information about the deployment configuration.</p>
-    pub fn deployment_config_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentConfigInfo> {
+    pub fn deployment_config_info(&self) -> ::std::option::Option<&crate::types::DeploymentConfigInfo> {
         self.deployment_config_info.as_ref()
     }
 }
@@ -24,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetDeploymentConfigOutput {
 }
 impl GetDeploymentConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentConfigOutput`](crate::operation::get_deployment_config::GetDeploymentConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_config::builders::GetDeploymentConfigOutputBuilder {
-        crate::operation::get_deployment_config::builders::GetDeploymentConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_deployment_config::builders::GetDeploymentConfigOutputBuilder {
+        crate::operation::get_deployment_config::builders::GetDeploymentConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentConfigOutput`](crate::operation::get_deployment_config::GetDeploymentConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentConfigOutputBuilder {
     pub(crate) deployment_config_info: ::std::option::Option<crate::types::DeploymentConfigInfo>,
     _request_id: Option<String>,
@@ -47,17 +41,12 @@ impl GetDeploymentConfigOutputBuilder {
         self
     }
     /// <p>Information about the deployment configuration.</p>
-    pub fn set_deployment_config_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfigInfo>,
-    ) -> Self {
+    pub fn set_deployment_config_info(mut self, input: ::std::option::Option<crate::types::DeploymentConfigInfo>) -> Self {
         self.deployment_config_info = input;
         self
     }
     /// <p>Information about the deployment configuration.</p>
-    pub fn get_deployment_config_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentConfigInfo> {
+    pub fn get_deployment_config_info(&self) -> &::std::option::Option<crate::types::DeploymentConfigInfo> {
         &self.deployment_config_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

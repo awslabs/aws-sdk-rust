@@ -24,8 +24,7 @@ pub struct DataSetSummary {
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     /// <p>The row-level security configuration for the dataset.</p>
     #[doc(hidden)]
-    pub row_level_permission_data_set:
-        ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
+    pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     /// <p>Whether or not the row level permission tags are applied.</p>
     #[doc(hidden)]
     pub row_level_permission_tag_configuration_applied: bool,
@@ -59,9 +58,7 @@ impl DataSetSummary {
         self.import_mode.as_ref()
     }
     /// <p>The row-level security configuration for the dataset.</p>
-    pub fn row_level_permission_data_set(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
+    pub fn row_level_permission_data_set(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
         self.row_level_permission_data_set.as_ref()
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
@@ -82,9 +79,7 @@ impl DataSetSummary {
 
 /// A builder for [`DataSetSummary`](crate::types::DataSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -92,8 +87,7 @@ pub struct DataSetSummaryBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
-    pub(crate) row_level_permission_data_set:
-        ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
+    pub(crate) row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     pub(crate) row_level_permission_tag_configuration_applied: ::std::option::Option<bool>,
     pub(crate) column_level_permission_rules_applied: ::std::option::Option<bool>,
 }
@@ -146,10 +140,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>The time that this dataset was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -163,10 +154,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>The last time that this dataset was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -180,10 +168,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
-    pub fn set_import_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetImportMode>,
-    ) -> Self {
+    pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::DataSetImportMode>) -> Self {
         self.import_mode = input;
         self
     }
@@ -192,25 +177,17 @@ impl DataSetSummaryBuilder {
         &self.import_mode
     }
     /// <p>The row-level security configuration for the dataset.</p>
-    pub fn row_level_permission_data_set(
-        mut self,
-        input: crate::types::RowLevelPermissionDataSet,
-    ) -> Self {
+    pub fn row_level_permission_data_set(mut self, input: crate::types::RowLevelPermissionDataSet) -> Self {
         self.row_level_permission_data_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>The row-level security configuration for the dataset.</p>
-    pub fn set_row_level_permission_data_set(
-        mut self,
-        input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
-    ) -> Self {
+    pub fn set_row_level_permission_data_set(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>) -> Self {
         self.row_level_permission_data_set = input;
         self
     }
     /// <p>The row-level security configuration for the dataset.</p>
-    pub fn get_row_level_permission_data_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
+    pub fn get_row_level_permission_data_set(&self) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
         &self.row_level_permission_data_set
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
@@ -219,17 +196,12 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
-    pub fn set_row_level_permission_tag_configuration_applied(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_row_level_permission_tag_configuration_applied(mut self, input: ::std::option::Option<bool>) -> Self {
         self.row_level_permission_tag_configuration_applied = input;
         self
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
-    pub fn get_row_level_permission_tag_configuration_applied(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_row_level_permission_tag_configuration_applied(&self) -> &::std::option::Option<bool> {
         &self.row_level_permission_tag_configuration_applied
     }
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
@@ -238,10 +210,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
-    pub fn set_column_level_permission_rules_applied(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_column_level_permission_rules_applied(mut self, input: ::std::option::Option<bool>) -> Self {
         self.column_level_permission_rules_applied = input;
         self
     }
@@ -259,12 +228,8 @@ impl DataSetSummaryBuilder {
             last_updated_time: self.last_updated_time,
             import_mode: self.import_mode,
             row_level_permission_data_set: self.row_level_permission_data_set,
-            row_level_permission_tag_configuration_applied: self
-                .row_level_permission_tag_configuration_applied
-                .unwrap_or_default(),
-            column_level_permission_rules_applied: self
-                .column_level_permission_rules_applied
-                .unwrap_or_default(),
+            row_level_permission_tag_configuration_applied: self.row_level_permission_tag_configuration_applied.unwrap_or_default(),
+            column_level_permission_rules_applied: self.column_level_permission_rules_applied.unwrap_or_default(),
         }
     }
 }

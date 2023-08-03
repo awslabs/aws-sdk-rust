@@ -36,9 +36,7 @@ impl UpdateDataSetInput {
 
 /// A builder for [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataSetInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateDataSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_set::UpdateDataSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_data_set::UpdateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_set::UpdateDataSetInput {
             data_set_id: self.data_set_id,
             description: self.description,

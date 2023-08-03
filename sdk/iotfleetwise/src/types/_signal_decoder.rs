@@ -51,9 +51,7 @@ impl SignalDecoder {
 
 /// A builder for [`SignalDecoder`](crate::types::SignalDecoder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalDecoderBuilder {
     pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SignalDecoderType>,
@@ -63,18 +61,12 @@ pub struct SignalDecoderBuilder {
 }
 impl SignalDecoderBuilder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
-    pub fn fully_qualified_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
-    pub fn set_fully_qualified_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fully_qualified_name = input;
         self
     }
@@ -88,10 +80,7 @@ impl SignalDecoderBuilder {
         self
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SignalDecoderType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SignalDecoderType>) -> Self {
         self.r#type = input;
         self
     }

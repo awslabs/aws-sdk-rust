@@ -37,10 +37,7 @@ impl GetBackupPlanFromJSONFluentBuilder {
         }
     }
     /// Access the GetBackupPlanFromJSON as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetBackupPlanFromJSONFluentBuilder {
             crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSON,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetBackupPlanFromJSONFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetBackupPlanFromJSONFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetBackupPlanFromJSONFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetBackupPlanFromJSONFluentBuilder {
             crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSON,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A customer-supplied backup plan document in JSON format.</p>
-    pub fn backup_plan_template_json(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_template_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_template_json(input.into());
         self
     }
     /// <p>A customer-supplied backup plan document in JSON format.</p>
-    pub fn set_backup_plan_template_json(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_template_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_template_json(input);
         self
     }

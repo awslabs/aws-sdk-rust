@@ -30,9 +30,7 @@ impl Settings {
 
 /// A builder for [`Settings`](crate::types::Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SettingsBuilder {
     pub(crate) mfa_types: ::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>>,
     pub(crate) sms_message: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl SettingsBuilder {
         self
     }
     /// <p>The supported MFA types.</p>
-    pub fn set_mfa_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>>,
-    ) -> Self {
+    pub fn set_mfa_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>>) -> Self {
         self.mfa_types = input;
         self
     }
     /// <p>The supported MFA types.</p>
-    pub fn get_mfa_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>> {
+    pub fn get_mfa_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>> {
         &self.mfa_types
     }
     /// <p>The body of the SMS message.</p>

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`contact_pre_pass_duration_seconds(Option<i32>)`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput::contact_pre_pass_duration_seconds): <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
     ///   - [`contact_post_pass_duration_seconds(Option<i32>)`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput::contact_post_pass_duration_seconds): <p>Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
     /// - On failure, responds with [`SdkError<GetDataflowEndpointGroupError>`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError)
-    pub fn get_dataflow_endpoint_group(&self) -> crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder{
+    pub fn get_dataflow_endpoint_group(&self) -> crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder {
         crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

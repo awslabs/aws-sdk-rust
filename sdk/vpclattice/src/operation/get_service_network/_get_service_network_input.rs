@@ -15,34 +15,25 @@ impl GetServiceNetworkInput {
 }
 impl GetServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder {
+    pub fn builder() -> crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder {
         crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceNetworkInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceNetworkInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetServiceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_network::GetServiceNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_network::GetServiceNetworkInput {
-                service_network_identifier: self.service_network_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_service_network::GetServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_service_network::GetServiceNetworkInput {
+            service_network_identifier: self.service_network_identifier,
+        })
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput::resource_arn): <p>The ARN of the resource.</p>
     ///   - [`metadata(Option<HashMap<String, String>>)`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput::metadata): <p>The updated resource metadata.</p>
     /// - On failure, responds with [`SdkError<UpdateNetworkResourceMetadataError>`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError)
-    pub fn update_network_resource_metadata(&self) -> crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataFluentBuilder{
+    pub fn update_network_resource_metadata(
+        &self,
+    ) -> crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataFluentBuilder {
         crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,9 +31,7 @@ impl ColumnImportance {
 
 /// A builder for [`ColumnImportance`](crate::types::ColumnImportance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnImportanceBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) importance: ::std::option::Option<f64>,

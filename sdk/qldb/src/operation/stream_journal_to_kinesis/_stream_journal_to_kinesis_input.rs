@@ -12,12 +12,7 @@ pub struct StreamJournalToKinesisInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
@@ -46,14 +41,7 @@ impl StreamJournalToKinesisInput {
         self.role_arn.as_deref()
     }
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
@@ -68,9 +56,7 @@ impl StreamJournalToKinesisInput {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-    pub fn kinesis_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisConfiguration> {
+    pub fn kinesis_configuration(&self) -> ::std::option::Option<&crate::types::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
     /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
@@ -81,27 +67,18 @@ impl StreamJournalToKinesisInput {
 }
 impl StreamJournalToKinesisInput {
     /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisInput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput).
-    pub fn builder(
-    ) -> crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder
-    {
+    pub fn builder() -> crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder {
         crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder::default()
     }
 }
 
 /// A builder for [`StreamJournalToKinesisInput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamJournalToKinesisInputBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kinesis_configuration: ::std::option::Option<crate::types::KinesisConfiguration>,
@@ -144,11 +121,7 @@ impl StreamJournalToKinesisInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
@@ -157,12 +130,7 @@ impl StreamJournalToKinesisInputBuilder {
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::option::Option<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.tags = input;
         self
@@ -170,12 +138,7 @@ impl StreamJournalToKinesisInputBuilder {
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn get_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
@@ -188,10 +151,7 @@ impl StreamJournalToKinesisInputBuilder {
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
-    pub fn set_inclusive_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inclusive_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inclusive_start_time = input;
         self
     }
@@ -209,10 +169,7 @@ impl StreamJournalToKinesisInputBuilder {
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
-    pub fn set_exclusive_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_exclusive_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.exclusive_end_time = input;
         self
     }
@@ -227,17 +184,12 @@ impl StreamJournalToKinesisInputBuilder {
         self
     }
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-    pub fn set_kinesis_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisConfiguration>,
-    ) -> Self {
+    pub fn set_kinesis_configuration(mut self, input: ::std::option::Option<crate::types::KinesisConfiguration>) -> Self {
         self.kinesis_configuration = input;
         self
     }
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-    pub fn get_kinesis_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisConfiguration> {
+    pub fn get_kinesis_configuration(&self) -> &::std::option::Option<crate::types::KinesisConfiguration> {
         &self.kinesis_configuration
     }
     /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
@@ -264,16 +216,14 @@ impl StreamJournalToKinesisInputBuilder {
         crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput {
-                ledger_name: self.ledger_name,
-                role_arn: self.role_arn,
-                tags: self.tags,
-                inclusive_start_time: self.inclusive_start_time,
-                exclusive_end_time: self.exclusive_end_time,
-                kinesis_configuration: self.kinesis_configuration,
-                stream_name: self.stream_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput {
+            ledger_name: self.ledger_name,
+            role_arn: self.role_arn,
+            tags: self.tags,
+            inclusive_start_time: self.inclusive_start_time,
+            exclusive_end_time: self.exclusive_end_time,
+            kinesis_configuration: self.kinesis_configuration,
+            stream_name: self.stream_name,
+        })
     }
 }

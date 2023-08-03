@@ -37,9 +37,7 @@ impl DescribeAccessPolicyFluentBuilder {
         }
     }
     /// Access the DescribeAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_access_policy::builders::DescribeAccessPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_access_policy::builders::DescribeAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeAccessPolicyFluentBuilder {
             crate::operation::describe_access_policy::DescribeAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_policy::DescribeAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_policy::DescribeAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_access_policy::DescribeAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_policy::DescribeAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_policy::DescribeAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_access_policy::DescribeAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_policy::DescribeAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_policy::DescribeAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeAccessPolicyFluentBuilder {
             crate::operation::describe_access_policy::DescribeAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_access_policy::DescribeAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_access_policy::DescribeAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_policy_id(input.into());
         self
     }
     /// <p>The ID of the access policy.</p>
-    pub fn set_access_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_policy_id(input);
         self
     }

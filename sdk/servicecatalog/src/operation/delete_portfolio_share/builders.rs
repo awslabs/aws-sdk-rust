@@ -38,9 +38,7 @@ impl DeletePortfolioShareFluentBuilder {
         }
     }
     /// Access the DeletePortfolioShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_portfolio_share::builders::DeletePortfolioShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_portfolio_share::builders::DeletePortfolioShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeletePortfolioShareFluentBuilder {
             crate::operation::delete_portfolio_share::DeletePortfolioShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_portfolio_share::DeletePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_portfolio_share::DeletePortfolioShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeletePortfolioShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeletePortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_portfolio_share::DeletePortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_portfolio_share::DeletePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_portfolio_share::DeletePortfolioShareError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeletePortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_portfolio_share::DeletePortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_portfolio_share::DeletePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_portfolio_share::DeletePortfolioShareError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeletePortfolioShareFluentBuilder {
             crate::operation::delete_portfolio_share::DeletePortfolioShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_portfolio_share::DeletePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_portfolio_share::DeletePortfolioShareError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl DeletePortfolioShareFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -140,10 +124,7 @@ impl DeletePortfolioShareFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -189,10 +170,7 @@ impl DeletePortfolioShareFluentBuilder {
         self
     }
     /// <p>The organization node to whom you are going to stop sharing.</p>
-    pub fn set_organization_node(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNode>,
-    ) -> Self {
+    pub fn set_organization_node(mut self, input: ::std::option::Option<crate::types::OrganizationNode>) -> Self {
         self.inner = self.inner.set_organization_node(input);
         self
     }

@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`app_version(Option<String>)`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput::app_version): <p>The Resilience Hub application version.</p>
     ///   - [`physical_resource(Option<PhysicalResource>)`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput::physical_resource): <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
     /// - On failure, responds with [`SdkError<DeleteAppVersionResourceError>`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceError)
-    pub fn delete_app_version_resource(&self) -> crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceFluentBuilder{
+    pub fn delete_app_version_resource(&self) -> crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceFluentBuilder {
         crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceFluentBuilder::new(self.handle.clone())
     }
 }

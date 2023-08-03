@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetHostnameSuggestionOutput {
 }
 impl GetHostnameSuggestionOutput {
     /// Creates a new builder-style object to manufacture [`GetHostnameSuggestionOutput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionOutputBuilder {
         crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostnameSuggestionOutput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostnameSuggestionOutputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,

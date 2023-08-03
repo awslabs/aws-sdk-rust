@@ -26,7 +26,7 @@ impl DescribeEntityAggregatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder,
+    inner: crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder,
 }
 impl DescribeEntityAggregatesFluentBuilder {
     /// Creates a new `DescribeEntityAggregates`.
@@ -37,10 +37,7 @@ impl DescribeEntityAggregatesFluentBuilder {
         }
     }
     /// Access the DescribeEntityAggregates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEntityAggregatesFluentBuilder {
             crate::operation::describe_entity_aggregates::DescribeEntityAggregates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEntityAggregatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEntityAggregatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEntityAggregatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeEntityAggregatesFluentBuilder {
             crate::operation::describe_entity_aggregates::DescribeEntityAggregates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl DescribeEntityAggregatesFluentBuilder {
         self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn set_event_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_arns(input);
         self
     }

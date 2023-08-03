@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationFluentBuilder::set_environment_name): <p>The name of the environment to delete the draft configuration from.</p>
     /// - On success, responds with [`DeleteEnvironmentConfigurationOutput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteEnvironmentConfigurationError>`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationError)
-    pub fn delete_environment_configuration(&self) -> crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationFluentBuilder{
+    pub fn delete_environment_configuration(
+        &self,
+    ) -> crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationFluentBuilder {
         crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

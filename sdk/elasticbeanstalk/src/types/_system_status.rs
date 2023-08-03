@@ -30,9 +30,7 @@ impl SystemStatus {
 
 /// A builder for [`SystemStatus`](crate::types::SystemStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemStatusBuilder {
     pub(crate) cpu_utilization: ::std::option::Option<crate::types::CpuUtilization>,
     pub(crate) load_average: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -44,10 +42,7 @@ impl SystemStatusBuilder {
         self
     }
     /// <p>CPU utilization metrics for the instance.</p>
-    pub fn set_cpu_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::CpuUtilization>,
-    ) -> Self {
+    pub fn set_cpu_utilization(mut self, input: ::std::option::Option<crate::types::CpuUtilization>) -> Self {
         self.cpu_utilization = input;
         self
     }

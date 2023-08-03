@@ -39,10 +39,7 @@ impl CreateCustomerGatewayFluentBuilder {
         }
     }
     /// Access the CreateCustomerGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateCustomerGatewayFluentBuilder {
             crate::operation::create_customer_gateway::CreateCustomerGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_customer_gateway::CreateCustomerGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateCustomerGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateCustomerGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_customer_gateway::CreateCustomerGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_customer_gateway::CreateCustomerGatewayError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateCustomerGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_customer_gateway::CreateCustomerGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_customer_gateway::CreateCustomerGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl CreateCustomerGatewayFluentBuilder {
             crate::operation::create_customer_gateway::CreateCustomerGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_customer_gateway::CreateCustomerGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -157,18 +143,12 @@ impl CreateCustomerGatewayFluentBuilder {
         self.inner.get_public_ip()
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
@@ -200,17 +180,12 @@ impl CreateCustomerGatewayFluentBuilder {
         self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>A name for the customer gateway device.</p>

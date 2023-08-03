@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`db_password(impl ::std::convert::Into<String>)`](crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceFluentBuilder::db_password) / [`set_db_password(Option<String>)`](crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceFluentBuilder::set_db_password): <p>The database password.</p>
     /// - On success, responds with [`UpdateRdsDbInstanceOutput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceOutput)
     /// - On failure, responds with [`SdkError<UpdateRdsDbInstanceError>`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError)
-    pub fn update_rds_db_instance(
-        &self,
-    ) -> crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceFluentBuilder {
-        crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rds_db_instance(&self) -> crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceFluentBuilder {
+        crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for GetSagemakerServicecatalogPortfolioSt
 }
 impl GetSagemakerServicecatalogPortfolioStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSagemakerServicecatalogPortfolioStatusOutput`](crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput).
-    pub fn builder() -> crate::operation::get_sagemaker_servicecatalog_portfolio_status::builders::GetSagemakerServicecatalogPortfolioStatusOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_sagemaker_servicecatalog_portfolio_status::builders::GetSagemakerServicecatalogPortfolioStatusOutputBuilder {
         crate::operation::get_sagemaker_servicecatalog_portfolio_status::builders::GetSagemakerServicecatalogPortfolioStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSagemakerServicecatalogPortfolioStatusOutput`](crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSagemakerServicecatalogPortfolioStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SagemakerServicecatalogStatus>,
     _request_id: Option<String>,
@@ -42,17 +41,12 @@ impl GetSagemakerServicecatalogPortfolioStatusOutputBuilder {
         self
     }
     /// <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SagemakerServicecatalogStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SagemakerServicecatalogStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SagemakerServicecatalogStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SagemakerServicecatalogStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +59,9 @@ impl GetSagemakerServicecatalogPortfolioStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSagemakerServicecatalogPortfolioStatusOutput`](crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput).
-    pub fn build(self) -> crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput{
+    pub fn build(self) -> crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput {
         crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput {
-            status: self.status
-            ,
+            status: self.status,
             _request_id: self._request_id,
         }
     }

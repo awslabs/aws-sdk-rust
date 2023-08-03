@@ -10,10 +10,7 @@ impl UpdateInsightInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_insight::UpdateInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_insight::UpdateInsightError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_insight::UpdateInsightError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_insight();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateInsightFluentBuilder {
         }
     }
     /// Access the UpdateInsight as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_insight::builders::UpdateInsightInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_insight::builders::UpdateInsightInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateInsightFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl UpdateInsightFluentBuilder {
         self
     }
     /// <p>The updated filters that define this insight.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -160,18 +149,12 @@ impl UpdateInsightFluentBuilder {
         self.inner.get_filters()
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    pub fn group_by_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_by_attribute(input.into());
         self
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    pub fn set_group_by_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_by_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_by_attribute(input);
         self
     }

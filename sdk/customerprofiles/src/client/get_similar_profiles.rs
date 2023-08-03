@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`confidence_score(Option<f64>)`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput::confidence_score): <p>It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used as an absolute measure of matching quality.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput::next_token): <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     /// - On failure, responds with [`SdkError<GetSimilarProfilesError>`](crate::operation::get_similar_profiles::GetSimilarProfilesError)
-    pub fn get_similar_profiles(
-        &self,
-    ) -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesFluentBuilder {
-        crate::operation::get_similar_profiles::builders::GetSimilarProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_similar_profiles(&self) -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesFluentBuilder {
+        crate::operation::get_similar_profiles::builders::GetSimilarProfilesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -56,9 +56,7 @@ impl CalculateRouteOutput {
 
 /// A builder for [`CalculateRouteOutput`](crate::operation::calculate_route::CalculateRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculateRouteOutputBuilder {
     pub(crate) legs: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>,
     pub(crate) summary: ::std::option::Option<crate::types::CalculateRouteSummary>,
@@ -97,10 +95,7 @@ impl CalculateRouteOutputBuilder {
     /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
     /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
-    pub fn set_legs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>,
-    ) -> Self {
+    pub fn set_legs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>) -> Self {
         self.legs = input;
         self
     }
@@ -124,10 +119,7 @@ impl CalculateRouteOutputBuilder {
         self
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculateRouteSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::CalculateRouteSummary>) -> Self {
         self.summary = input;
         self
     }

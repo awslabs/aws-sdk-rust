@@ -5,16 +5,16 @@ pub use crate::operation::execute_provisioned_product_service_action::_execute_p
 
 impl ExecuteProvisionedProductServiceActionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.execute_provisioned_product_service_action();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ExecuteProvisionedProductServiceActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteProvisionedProductServiceActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionInputBuilder,
+    inner: crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionInputBuilder,
 }
 impl ExecuteProvisionedProductServiceActionFluentBuilder {
     /// Creates a new `ExecuteProvisionedProductServiceAction`.
@@ -37,15 +37,24 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
         }
     }
     /// Access the ExecuteProvisionedProductServiceAction as a reference.
-    pub fn as_input(&self) -> &crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceAction,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +93,39 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceAction,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_id(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_id(input);
         self
     }
@@ -115,18 +134,12 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
         self.inner.get_provisioned_product_id()
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_action_id(input.into());
         self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn set_service_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_action_id(input);
         self
     }
@@ -135,18 +148,12 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
         self.inner.get_service_action_id()
     }
     /// <p>An idempotency token that uniquely identifies the execute request.</p>
-    pub fn execute_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execute_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execute_token(input.into());
         self
     }
     /// <p>An idempotency token that uniquely identifies the execute request.</p>
-    pub fn set_execute_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execute_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execute_token(input);
         self
     }
@@ -159,10 +166,7 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -171,10 +175,7 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -191,23 +192,14 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
@@ -215,9 +207,7 @@ impl ExecuteProvisionedProductServiceActionFluentBuilder {
     /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_parameters()
     }
 }

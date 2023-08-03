@@ -41,9 +41,7 @@ impl OrganizationResourceDetailedStatusFilters {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatus> {
         self.status.as_ref()
     }
 }
@@ -56,9 +54,7 @@ impl OrganizationResourceDetailedStatusFilters {
 
 /// A builder for [`OrganizationResourceDetailedStatusFilters`](crate::types::OrganizationResourceDetailedStatusFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationResourceDetailedStatusFiltersBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
@@ -108,10 +104,7 @@ impl OrganizationResourceDetailedStatusFiltersBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>) -> Self {
         self.status = input;
         self
     }
@@ -128,9 +121,7 @@ impl OrganizationResourceDetailedStatusFiltersBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationResourceDetailedStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationResourceDetailedStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`OrganizationResourceDetailedStatusFilters`](crate::types::OrganizationResourceDetailedStatusFilters).

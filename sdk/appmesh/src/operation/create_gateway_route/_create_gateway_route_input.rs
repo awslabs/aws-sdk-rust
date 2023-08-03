@@ -57,17 +57,14 @@ impl CreateGatewayRouteInput {
 }
 impl CreateGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
-    pub fn builder(
-    ) -> crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder {
+    pub fn builder() -> crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder {
         crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGatewayRouteInputBuilder {
     pub(crate) gateway_route_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +76,12 @@ pub struct CreateGatewayRouteInputBuilder {
 }
 impl CreateGatewayRouteInputBuilder {
     /// <p>The name to use for the gateway route.</p>
-    pub fn gateway_route_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the gateway route.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_route_name = input;
         self
     }
@@ -113,18 +104,12 @@ impl CreateGatewayRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_name = input;
         self
     }
@@ -138,10 +123,7 @@ impl CreateGatewayRouteInputBuilder {
         self
     }
     /// <p>The gateway route specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::GatewayRouteSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -161,10 +143,7 @@ impl CreateGatewayRouteInputBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.tags = input;
         self
     }
@@ -203,20 +182,15 @@ impl CreateGatewayRouteInputBuilder {
     /// Consumes the builder and constructs a [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_gateway_route::CreateGatewayRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_gateway_route::CreateGatewayRouteInput {
-                gateway_route_name: self.gateway_route_name,
-                mesh_name: self.mesh_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                spec: self.spec,
-                tags: self.tags,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_gateway_route::CreateGatewayRouteInput {
+            gateway_route_name: self.gateway_route_name,
+            mesh_name: self.mesh_name,
+            virtual_gateway_name: self.virtual_gateway_name,
+            spec: self.spec,
+            tags: self.tags,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

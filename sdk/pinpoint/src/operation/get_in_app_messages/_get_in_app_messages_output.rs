@@ -10,9 +10,7 @@ pub struct GetInAppMessagesOutput {
 }
 impl GetInAppMessagesOutput {
     /// <p>Get in-app messages response object.</p>
-    pub fn in_app_messages_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InAppMessagesResponse> {
+    pub fn in_app_messages_response(&self) -> ::std::option::Option<&crate::types::InAppMessagesResponse> {
         self.in_app_messages_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInAppMessagesOutput {
 }
 impl GetInAppMessagesOutput {
     /// Creates a new builder-style object to manufacture [`GetInAppMessagesOutput`](crate::operation::get_in_app_messages::GetInAppMessagesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_in_app_messages::builders::GetInAppMessagesOutputBuilder {
+    pub fn builder() -> crate::operation::get_in_app_messages::builders::GetInAppMessagesOutputBuilder {
         crate::operation::get_in_app_messages::builders::GetInAppMessagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInAppMessagesOutput`](crate::operation::get_in_app_messages::GetInAppMessagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInAppMessagesOutputBuilder {
     pub(crate) in_app_messages_response: ::std::option::Option<crate::types::InAppMessagesResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetInAppMessagesOutputBuilder {
         self
     }
     /// <p>Get in-app messages response object.</p>
-    pub fn set_in_app_messages_response(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppMessagesResponse>,
-    ) -> Self {
+    pub fn set_in_app_messages_response(mut self, input: ::std::option::Option<crate::types::InAppMessagesResponse>) -> Self {
         self.in_app_messages_response = input;
         self
     }
     /// <p>Get in-app messages response object.</p>
-    pub fn get_in_app_messages_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::InAppMessagesResponse> {
+    pub fn get_in_app_messages_response(&self) -> &::std::option::Option<crate::types::InAppMessagesResponse> {
         &self.in_app_messages_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

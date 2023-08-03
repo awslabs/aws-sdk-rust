@@ -44,9 +44,7 @@ impl GpuDeviceInfo {
 
 /// A builder for [`GpuDeviceInfo`](crate::types::GpuDeviceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GpuDeviceInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl GpuDeviceInfoBuilder {
         self
     }
     /// <p>Describes the memory available to the GPU accelerator.</p>
-    pub fn set_memory_info(
-        mut self,
-        input: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
-    ) -> Self {
+    pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>) -> Self {
         self.memory_info = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`s3_path(Option<String>)`](crate::operation::get_working_location::GetWorkingLocationOutput::s3_path): <p>Returns the Amazon S3 Path for the working location.</p>
     ///   - [`s3_bucket(Option<String>)`](crate::operation::get_working_location::GetWorkingLocationOutput::s3_bucket): <p>Returns the Amazon S3 bucket name for the working location.</p>
     /// - On failure, responds with [`SdkError<GetWorkingLocationError>`](crate::operation::get_working_location::GetWorkingLocationError)
-    pub fn get_working_location(
-        &self,
-    ) -> crate::operation::get_working_location::builders::GetWorkingLocationFluentBuilder {
-        crate::operation::get_working_location::builders::GetWorkingLocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_working_location(&self) -> crate::operation::get_working_location::builders::GetWorkingLocationFluentBuilder {
+        crate::operation::get_working_location::builders::GetWorkingLocationFluentBuilder::new(self.handle.clone())
     }
 }

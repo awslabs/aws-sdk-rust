@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateListenerOutput`](crate::operation::create_listener::CreateListenerOutput) with field(s):
     ///   - [`listeners(Option<Vec<Listener>>)`](crate::operation::create_listener::CreateListenerOutput::listeners): <p>Information about the listener.</p>
     /// - On failure, responds with [`SdkError<CreateListenerError>`](crate::operation::create_listener::CreateListenerError)
-    pub fn create_listener(
-        &self,
-    ) -> crate::operation::create_listener::builders::CreateListenerFluentBuilder {
-        crate::operation::create_listener::builders::CreateListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_listener(&self) -> crate::operation::create_listener::builders::CreateListenerFluentBuilder {
+        crate::operation::create_listener::builders::CreateListenerFluentBuilder::new(self.handle.clone())
     }
 }

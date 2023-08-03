@@ -5,8 +5,7 @@
 pub struct GetJourneyRunExecutionActivityMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity for a particular journey run, and provides information about that query.</p>
     #[doc(hidden)]
-    pub journey_run_execution_activity_metrics_response:
-        ::std::option::Option<crate::types::JourneyRunExecutionActivityMetricsResponse>,
+    pub journey_run_execution_activity_metrics_response: ::std::option::Option<crate::types::JourneyRunExecutionActivityMetricsResponse>,
     _request_id: Option<String>,
 }
 impl GetJourneyRunExecutionActivityMetricsOutput {
@@ -14,8 +13,7 @@ impl GetJourneyRunExecutionActivityMetricsOutput {
     pub fn journey_run_execution_activity_metrics_response(
         &self,
     ) -> ::std::option::Option<&crate::types::JourneyRunExecutionActivityMetricsResponse> {
-        self.journey_run_execution_activity_metrics_response
-            .as_ref()
+        self.journey_run_execution_activity_metrics_response.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetJourneyRunExecutionActivityMetricsOutput {
@@ -25,27 +23,21 @@ impl ::aws_http::request_id::RequestId for GetJourneyRunExecutionActivityMetrics
 }
 impl GetJourneyRunExecutionActivityMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyRunExecutionActivityMetricsOutput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput).
-    pub fn builder() -> crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsOutputBuilder{
+    pub fn builder() -> crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsOutputBuilder {
         crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetJourneyRunExecutionActivityMetricsOutput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyRunExecutionActivityMetricsOutputBuilder {
-    pub(crate) journey_run_execution_activity_metrics_response:
-        ::std::option::Option<crate::types::JourneyRunExecutionActivityMetricsResponse>,
+    pub(crate) journey_run_execution_activity_metrics_response: ::std::option::Option<crate::types::JourneyRunExecutionActivityMetricsResponse>,
     _request_id: Option<String>,
 }
 impl GetJourneyRunExecutionActivityMetricsOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity for a particular journey run, and provides information about that query.</p>
-    pub fn journey_run_execution_activity_metrics_response(
-        mut self,
-        input: crate::types::JourneyRunExecutionActivityMetricsResponse,
-    ) -> Self {
+    pub fn journey_run_execution_activity_metrics_response(mut self, input: crate::types::JourneyRunExecutionActivityMetricsResponse) -> Self {
         self.journey_run_execution_activity_metrics_response = ::std::option::Option::Some(input);
         self
     }
@@ -73,10 +65,9 @@ impl GetJourneyRunExecutionActivityMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetJourneyRunExecutionActivityMetricsOutput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput).
-    pub fn build(self) -> crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput{
+    pub fn build(self) -> crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput {
         crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput {
-            journey_run_execution_activity_metrics_response: self.journey_run_execution_activity_metrics_response
-            ,
+            journey_run_execution_activity_metrics_response: self.journey_run_execution_activity_metrics_response,
             _request_id: self._request_id,
         }
     }

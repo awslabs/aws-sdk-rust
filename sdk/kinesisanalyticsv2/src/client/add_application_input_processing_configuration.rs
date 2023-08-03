@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`input_id(Option<String>)`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput::input_id): <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
     ///   - [`input_processing_configuration_description(Option<InputProcessingConfigurationDescription>)`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput::input_processing_configuration_description): <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     /// - On failure, responds with [`SdkError<AddApplicationInputProcessingConfigurationError>`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError)
-    pub fn add_application_input_processing_configuration(&self) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder{
-        crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn add_application_input_processing_configuration(
+        &self,
+    ) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder {
+        crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -23,9 +23,7 @@ impl MagneticStoreRejectedDataLocation {
 
 /// A builder for [`MagneticStoreRejectedDataLocation`](crate::types::MagneticStoreRejectedDataLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MagneticStoreRejectedDataLocationBuilder {
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }
@@ -36,10 +34,7 @@ impl MagneticStoreRejectedDataLocationBuilder {
         self
     }
     /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Configuration>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3Configuration>) -> Self {
         self.s3_configuration = input;
         self
     }

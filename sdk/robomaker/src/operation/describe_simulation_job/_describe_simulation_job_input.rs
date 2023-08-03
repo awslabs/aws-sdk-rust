@@ -15,18 +15,14 @@ impl DescribeSimulationJobInput {
 }
 impl DescribeSimulationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_simulation_job::builders::DescribeSimulationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_simulation_job::builders::DescribeSimulationJobInputBuilder {
         crate::operation::describe_simulation_job::builders::DescribeSimulationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSimulationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DescribeSimulationJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_simulation_job::DescribeSimulationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_simulation_job::DescribeSimulationJobInput { job: self.job },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_simulation_job::DescribeSimulationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_simulation_job::DescribeSimulationJobInput { job: self.job })
     }
 }

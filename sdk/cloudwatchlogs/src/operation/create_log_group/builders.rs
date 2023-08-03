@@ -10,10 +10,7 @@ impl CreateLogGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_log_group::CreateLogGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_log_group::CreateLogGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_log_group::CreateLogGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_log_group();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl CreateLogGroupFluentBuilder {
         }
     }
     /// Access the CreateLogGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_log_group::builders::CreateLogGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_log_group::builders::CreateLogGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl CreateLogGroupFluentBuilder {
             crate::operation::create_log_group::CreateLogGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_log_group::CreateLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_log_group::CreateLogGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl CreateLogGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl CreateLogGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_log_group::CreateLogGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_log_group::CreateLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_log_group::CreateLogGroupError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl CreateLogGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_log_group::CreateLogGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_log_group::CreateLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_log_group::CreateLogGroupError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl CreateLogGroupFluentBuilder {
             crate::operation::create_log_group::CreateLogGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_log_group::CreateLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_log_group::CreateLogGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -173,32 +151,19 @@ impl CreateLogGroupFluentBuilder {
     ///
     /// <p>The key-value pairs to use for the tags.</p>
     /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The key-value pairs to use for the tags.</p>
     /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The key-value pairs to use for the tags.</p>
     /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -26,8 +26,7 @@ impl DisassociateS3ResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateS3ResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder,
+    inner: crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder,
 }
 impl DisassociateS3ResourcesFluentBuilder {
     /// Creates a new `DisassociateS3Resources`.
@@ -38,10 +37,7 @@ impl DisassociateS3ResourcesFluentBuilder {
         }
     }
     /// Access the DisassociateS3Resources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DisassociateS3ResourcesFluentBuilder {
             crate::operation::disassociate_s3_resources::DisassociateS3Resources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DisassociateS3ResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DisassociateS3ResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DisassociateS3ResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DisassociateS3ResourcesFluentBuilder {
             crate::operation::disassociate_s3_resources::DisassociateS3Resources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());
         self
     }
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
@@ -154,17 +133,12 @@ impl DisassociateS3ResourcesFluentBuilder {
         self
     }
     /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-    pub fn set_associated_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
-    ) -> Self {
+    pub fn set_associated_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>) -> Self {
         self.inner = self.inner.set_associated_s3_resources(input);
         self
     }
     /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-    pub fn get_associated_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Resource>> {
+    pub fn get_associated_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Resource>> {
         self.inner.get_associated_s3_resources()
     }
 }

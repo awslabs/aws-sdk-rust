@@ -27,7 +27,7 @@ impl DisassociateRecoveryPointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateRecoveryPointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder,
+    inner: crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder,
 }
 impl DisassociateRecoveryPointFluentBuilder {
     /// Creates a new `DisassociateRecoveryPoint`.
@@ -38,7 +38,7 @@ impl DisassociateRecoveryPointFluentBuilder {
         }
     }
     /// Access the DisassociateRecoveryPoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateRecoveryPointFluentBuilder {
             crate::operation::disassociate_recovery_point::DisassociateRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateRecoveryPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DisassociateRecoveryPointFluentBuilder {
             crate::operation::disassociate_recovery_point::DisassociateRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique name of an Backup vault.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The unique name of an Backup vault.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
@@ -142,18 +125,12 @@ impl DisassociateRecoveryPointFluentBuilder {
         self.inner.get_backup_vault_name()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_point_arn(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
     }

@@ -27,27 +27,16 @@ impl MergeBranchesBySquashInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +45,13 @@ impl MergeBranchesBySquashInput {
             fn update_http_builder(
                 input: &crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,15 +61,11 @@ impl MergeBranchesBySquashInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_merge_branches_by_squash::ser_merge_branches_by_squash_input(&self)?
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_merge_branches_by_squash::ser_merge_branches_by_squash_input(
+            &self,
+        )?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +77,8 @@ impl MergeBranchesBySquashInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +87,16 @@ impl MergeBranchesBySquashInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::merge_branches_by_squash::MergeBranchesBySquash::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "MergeBranchesBySquash",
-            "codecommit",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::merge_branches_by_squash::MergeBranchesBySquash::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("MergeBranchesBySquash", "codecommit"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -193,9 +156,7 @@ pub enum MergeBranchesBySquashError {
     /// <p>The merge cannot be completed because the target branch has been modified. Another user might have modified the target branch while the merge was in progress. Wait a few minutes, and then try again.</p>
     ConcurrentReferenceUpdateException(crate::types::error::ConcurrentReferenceUpdateException),
     /// <p>An encryption integrity check failed.</p>
-    EncryptionIntegrityChecksFailedException(
-        crate::types::error::EncryptionIntegrityChecksFailedException,
-    ),
+    EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),
     /// <p>An encryption key could not be accessed.</p>
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
@@ -205,15 +166,11 @@ pub enum MergeBranchesBySquashError {
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
-    FileContentSizeLimitExceededException(
-        crate::types::error::FileContentSizeLimitExceededException,
-    ),
+    FileContentSizeLimitExceededException(crate::types::error::FileContentSizeLimitExceededException),
     /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
     FileModeRequiredException(crate::types::error::FileModeRequiredException),
     /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
-    FolderContentSizeLimitExceededException(
-        crate::types::error::FolderContentSizeLimitExceededException,
-    ),
+    FolderContentSizeLimitExceededException(crate::types::error::FolderContentSizeLimitExceededException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::types::error::InvalidBranchNameException),
     /// <p>The specified commit is not valid.</p>
@@ -223,9 +180,7 @@ pub enum MergeBranchesBySquashError {
     /// <p>The specified conflict resolution list is not valid.</p>
     InvalidConflictResolutionException(crate::types::error::InvalidConflictResolutionException),
     /// <p>The specified conflict resolution strategy is not valid.</p>
-    InvalidConflictResolutionStrategyException(
-        crate::types::error::InvalidConflictResolutionStrategyException,
-    ),
+    InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
     /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
@@ -245,21 +200,13 @@ pub enum MergeBranchesBySquashError {
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
     ManualMergeRequiredException(crate::types::error::ManualMergeRequiredException),
     /// <p>The number of allowed conflict resolution entries was exceeded.</p>
-    MaximumConflictResolutionEntriesExceededException(
-        crate::types::error::MaximumConflictResolutionEntriesExceededException,
-    ),
+    MaximumConflictResolutionEntriesExceededException(crate::types::error::MaximumConflictResolutionEntriesExceededException),
     /// <p>The number of files to load exceeds the allowed limit.</p>
-    MaximumFileContentToLoadExceededException(
-        crate::types::error::MaximumFileContentToLoadExceededException,
-    ),
+    MaximumFileContentToLoadExceededException(crate::types::error::MaximumFileContentToLoadExceededException),
     /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
-    MaximumItemsToCompareExceededException(
-        crate::types::error::MaximumItemsToCompareExceededException,
-    ),
+    MaximumItemsToCompareExceededException(crate::types::error::MaximumItemsToCompareExceededException),
     /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
-    MultipleConflictResolutionEntriesException(
-        crate::types::error::MultipleConflictResolutionEntriesException,
-    ),
+    MultipleConflictResolutionEntriesException(crate::types::error::MultipleConflictResolutionEntriesException),
     /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The folderPath for a location cannot be null.</p>
@@ -279,9 +226,7 @@ pub enum MergeBranchesBySquashError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for MergeBranchesBySquashError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -340,132 +285,52 @@ impl ::std::fmt::Display for MergeBranchesBySquashError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MergeBranchesBySquashError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BranchDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::BranchNameIsTagNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::BranchNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommitDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommitMessageLengthExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommitRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ConcurrentReferenceUpdateException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyAccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyDisabledException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyUnavailableException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FileContentSizeLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FileModeRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FolderContentSizeLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidBranchNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidCommitException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidConflictDetailLevelException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidConflictResolutionException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidConflictResolutionStrategyException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidEmailException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidFileModeException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidPathException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidReplacementContentException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidReplacementTypeException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidRepositoryNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTargetBranchException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ManualMergeRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::BranchDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BranchNameIsTagNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BranchNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommitDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommitMessageLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommitRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConcurrentReferenceUpdateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FileContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FileModeRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FolderContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidBranchNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidCommitException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidConflictDetailLevelException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidConflictResolutionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidConflictResolutionStrategyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEmailException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidFileModeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidPathException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidReplacementContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidReplacementTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTargetBranchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ManualMergeRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MaximumConflictResolutionEntriesExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::MaximumFileContentToLoadExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MaximumItemsToCompareExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MultipleConflictResolutionEntriesException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NameLengthExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PathRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ReplacementContentRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ReplacementTypeRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TipsDivergenceExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::MaximumFileContentToLoadExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MaximumItemsToCompareExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MultipleConflictResolutionEntriesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NameLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PathRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReplacementContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReplacementTypeRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TipsDivergenceExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::merge_branches_by_squash::MergeBranchesBySquashError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::merge_branches_by_squash::MergeBranchesBySquashError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -481,27 +346,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for MergeBranchesBySquashError 
 impl MergeBranchesBySquashError {
     /// Creates the `MergeBranchesBySquashError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `MergeBranchesBySquashError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -666,10 +518,7 @@ impl MergeBranchesBySquashError {
     }
     /// Returns `true` if the error kind is `MergeBranchesBySquashError::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::MaximumConflictResolutionEntriesExceededException(_)
-        )
+        matches!(self, Self::MaximumConflictResolutionEntriesExceededException(_))
     }
     /// Returns `true` if the error kind is `MergeBranchesBySquashError::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
@@ -719,34 +568,22 @@ impl ::std::error::Error for MergeBranchesBySquashError {
             Self::BranchNameIsTagNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::BranchNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::CommitDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommitMessageLengthExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::CommitMessageLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::CommitRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConcurrentReferenceUpdateException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
-            Self::FileContentSizeLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::FileContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::FileModeRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::FolderContentSizeLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::FolderContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidBranchNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCommitException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidConflictDetailLevelException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidConflictDetailLevelException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidConflictResolutionException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidConflictResolutionStrategyException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidConflictResolutionStrategyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEmailException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidFileModeException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidPathException(_inner) => ::std::option::Option::Some(_inner),
@@ -755,23 +592,13 @@ impl ::std::error::Error for MergeBranchesBySquashError {
             Self::InvalidRepositoryNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTargetBranchException(_inner) => ::std::option::Option::Some(_inner),
             Self::ManualMergeRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::MaximumFileContentToLoadExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::MaximumItemsToCompareExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::MultipleConflictResolutionEntriesException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::MaximumFileContentToLoadExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::MaximumItemsToCompareExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::MultipleConflictResolutionEntriesException(_inner) => ::std::option::Option::Some(_inner),
             Self::NameLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::PathRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ReplacementContentRequiredException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::ReplacementContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::ReplacementTypeRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNameRequiredException(_inner) => ::std::option::Option::Some(_inner),

@@ -43,17 +43,14 @@ impl GetAppMonitorDataInput {
 }
 impl GetAppMonitorDataInput {
     /// Creates a new builder-style object to manufacture [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder {
+    pub fn builder() -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder {
         crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppMonitorDataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,
@@ -102,17 +99,12 @@ impl GetAppMonitorDataInputBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in one operation. </p>
@@ -146,18 +138,13 @@ impl GetAppMonitorDataInputBuilder {
     /// Consumes the builder and constructs a [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_app_monitor_data::GetAppMonitorDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_app_monitor_data::GetAppMonitorDataInput {
-                name: self.name,
-                time_range: self.time_range,
-                filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_app_monitor_data::GetAppMonitorDataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_app_monitor_data::GetAppMonitorDataInput {
+            name: self.name,
+            time_range: self.time_range,
+            filters: self.filters,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

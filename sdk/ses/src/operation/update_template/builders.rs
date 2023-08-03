@@ -10,10 +10,7 @@ impl UpdateTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_template::UpdateTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template::UpdateTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template::UpdateTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateTemplateFluentBuilder {
         }
     }
     /// Access the UpdateTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

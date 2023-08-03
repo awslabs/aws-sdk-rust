@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartAssessmentRunOutput`](crate::operation::start_assessment_run::StartAssessmentRunOutput) with field(s):
     ///   - [`assessment_run_arn(Option<String>)`](crate::operation::start_assessment_run::StartAssessmentRunOutput::assessment_run_arn): <p>The ARN of the assessment run that has been started.</p>
     /// - On failure, responds with [`SdkError<StartAssessmentRunError>`](crate::operation::start_assessment_run::StartAssessmentRunError)
-    pub fn start_assessment_run(
-        &self,
-    ) -> crate::operation::start_assessment_run::builders::StartAssessmentRunFluentBuilder {
-        crate::operation::start_assessment_run::builders::StartAssessmentRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_assessment_run(&self) -> crate::operation::start_assessment_run::builders::StartAssessmentRunFluentBuilder {
+        crate::operation::start_assessment_run::builders::StartAssessmentRunFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,8 +6,7 @@
 pub struct ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
     #[doc(hidden)]
-    pub outgoing_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
+    pub outgoing_certificates: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
     /// <p>The marker for the next set of results.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListOutgoingCertificatesOutput {
 }
 impl ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
-    pub fn outgoing_certificates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OutgoingCertificate]> {
+    pub fn outgoing_certificates(&self) -> ::std::option::Option<&[crate::types::OutgoingCertificate]> {
         self.outgoing_certificates.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListOutgoingCertificatesOutput {
 }
 impl ListOutgoingCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListOutgoingCertificatesOutput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesOutputBuilder {
         crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOutgoingCertificatesOutput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutgoingCertificatesOutputBuilder {
-    pub(crate) outgoing_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
+    pub(crate) outgoing_certificates: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListOutgoingCertificatesOutputBuilder {
         self
     }
     /// <p>The certificates that are being transferred but not yet accepted.</p>
-    pub fn set_outgoing_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
-    ) -> Self {
+    pub fn set_outgoing_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>) -> Self {
         self.outgoing_certificates = input;
         self
     }
     /// <p>The certificates that are being transferred but not yet accepted.</p>
-    pub fn get_outgoing_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>> {
+    pub fn get_outgoing_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>> {
         &self.outgoing_certificates
     }
     /// <p>The marker for the next set of results.</p>
@@ -100,9 +87,7 @@ impl ListOutgoingCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOutgoingCertificatesOutput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput {
+    pub fn build(self) -> crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput {
         crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput {
             outgoing_certificates: self.outgoing_certificates,
             next_marker: self.next_marker,

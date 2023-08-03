@@ -9,8 +9,7 @@ pub struct ColumnGroupSchema {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing the list of schemas for column group columns.</p>
     #[doc(hidden)]
-    pub column_group_column_schema_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,
+    pub column_group_column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,
 }
 impl ColumnGroupSchema {
     /// <p>The name of the column group schema.</p>
@@ -18,9 +17,7 @@ impl ColumnGroupSchema {
         self.name.as_deref()
     }
     /// <p>A structure containing the list of schemas for column group columns.</p>
-    pub fn column_group_column_schema_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ColumnGroupColumnSchema]> {
+    pub fn column_group_column_schema_list(&self) -> ::std::option::Option<&[crate::types::ColumnGroupColumnSchema]> {
         self.column_group_column_schema_list.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl ColumnGroupSchema {
 
 /// A builder for [`ColumnGroupSchema`](crate::types::ColumnGroupSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnGroupSchemaBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) column_group_column_schema_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,
+    pub(crate) column_group_column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,
 }
 impl ColumnGroupSchemaBuilder {
     /// <p>The name of the column group schema.</p>
@@ -61,10 +55,7 @@ impl ColumnGroupSchemaBuilder {
     /// To override the contents of this collection use [`set_column_group_column_schema_list`](Self::set_column_group_column_schema_list).
     ///
     /// <p>A structure containing the list of schemas for column group columns.</p>
-    pub fn column_group_column_schema_list(
-        mut self,
-        input: crate::types::ColumnGroupColumnSchema,
-    ) -> Self {
+    pub fn column_group_column_schema_list(mut self, input: crate::types::ColumnGroupColumnSchema) -> Self {
         let mut v = self.column_group_column_schema_list.unwrap_or_default();
         v.push(input);
         self.column_group_column_schema_list = ::std::option::Option::Some(v);
@@ -79,9 +70,7 @@ impl ColumnGroupSchemaBuilder {
         self
     }
     /// <p>A structure containing the list of schemas for column group columns.</p>
-    pub fn get_column_group_column_schema_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>> {
+    pub fn get_column_group_column_schema_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>> {
         &self.column_group_column_schema_list
     }
     /// Consumes the builder and constructs a [`ColumnGroupSchema`](crate::types::ColumnGroupSchema).

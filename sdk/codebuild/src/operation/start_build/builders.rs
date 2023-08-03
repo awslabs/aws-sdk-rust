@@ -10,10 +10,7 @@ impl StartBuildInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_build::StartBuildOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_build::StartBuildError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_build::StartBuildError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_build();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartBuildFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_build::StartBuild,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_build::StartBuild, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_build::StartBuildError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartBuildFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl StartBuildFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_build::StartBuild,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_build::StartBuild, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_build::StartBuildError>,
     > {
         self.customize_middleware().await
@@ -136,17 +124,12 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn set_secondary_sources_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
-    ) -> Self {
+    pub fn set_secondary_sources_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
         self.inner = self.inner.set_secondary_sources_override(input);
         self
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn get_secondary_sources_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+    pub fn get_secondary_sources_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
         self.inner.get_secondary_sources_override()
     }
     /// Appends an item to `secondarySourcesVersionOverride`.
@@ -154,10 +137,7 @@ impl StartBuildFluentBuilder {
     /// To override the contents of this collection use [`set_secondary_sources_version_override`](Self::set_secondary_sources_version_override).
     ///
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-    pub fn secondary_sources_version_override(
-        mut self,
-        input: crate::types::ProjectSourceVersion,
-    ) -> Self {
+    pub fn secondary_sources_version_override(mut self, input: crate::types::ProjectSourceVersion) -> Self {
         self.inner = self.inner.secondary_sources_version_override(input);
         self
     }
@@ -170,9 +150,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-    pub fn get_secondary_sources_version_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+    pub fn get_secondary_sources_version_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
         self.inner.get_secondary_sources_version_override()
     }
     /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
@@ -204,10 +182,7 @@ impl StartBuildFluentBuilder {
     /// </dl>
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
@@ -240,10 +215,7 @@ impl StartBuildFluentBuilder {
     /// </dl>
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
@@ -285,10 +257,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
-    pub fn set_artifacts_override(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectArtifacts>,
-    ) -> Self {
+    pub fn set_artifacts_override(mut self, input: ::std::option::Option<crate::types::ProjectArtifacts>) -> Self {
         self.inner = self.inner.set_artifacts_override(input);
         self
     }
@@ -306,17 +275,12 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn set_secondary_artifacts_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
-    ) -> Self {
+    pub fn set_secondary_artifacts_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
         self.inner = self.inner.set_secondary_artifacts_override(input);
         self
     }
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn get_secondary_artifacts_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+    pub fn get_secondary_artifacts_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
         self.inner.get_secondary_artifacts_override()
     }
     /// Appends an item to `environmentVariablesOverride`.
@@ -324,25 +288,17 @@ impl StartBuildFluentBuilder {
     /// To override the contents of this collection use [`set_environment_variables_override`](Self::set_environment_variables_override).
     ///
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    pub fn environment_variables_override(
-        mut self,
-        input: crate::types::EnvironmentVariable,
-    ) -> Self {
+    pub fn environment_variables_override(mut self, input: crate::types::EnvironmentVariable) -> Self {
         self.inner = self.inner.environment_variables_override(input);
         self
     }
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    pub fn set_environment_variables_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
-    ) -> Self {
+    pub fn set_environment_variables_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
         self.inner = self.inner.set_environment_variables_override(input);
         self
     }
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    pub fn get_environment_variables_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+    pub fn get_environment_variables_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
         self.inner.get_environment_variables_override()
     }
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
@@ -351,10 +307,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
-    pub fn set_source_type_override(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type_override(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.inner = self.inner.set_source_type_override(input);
         self
     }
@@ -363,18 +316,12 @@ impl StartBuildFluentBuilder {
         self.inner.get_source_type_override()
     }
     /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
-    pub fn source_location_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_override(input.into());
         self
     }
     /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
-    pub fn set_source_location_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_override(input);
         self
     }
@@ -388,10 +335,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-    pub fn set_source_auth_override(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceAuth>,
-    ) -> Self {
+    pub fn set_source_auth_override(mut self, input: ::std::option::Option<crate::types::SourceAuth>) -> Self {
         self.inner = self.inner.set_source_auth_override(input);
         self
     }
@@ -414,42 +358,28 @@ impl StartBuildFluentBuilder {
         self.inner.get_git_clone_depth_override()
     }
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-    pub fn git_submodules_config_override(
-        mut self,
-        input: crate::types::GitSubmodulesConfig,
-    ) -> Self {
+    pub fn git_submodules_config_override(mut self, input: crate::types::GitSubmodulesConfig) -> Self {
         self.inner = self.inner.git_submodules_config_override(input);
         self
     }
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-    pub fn set_git_submodules_config_override(
-        mut self,
-        input: ::std::option::Option<crate::types::GitSubmodulesConfig>,
-    ) -> Self {
+    pub fn set_git_submodules_config_override(mut self, input: ::std::option::Option<crate::types::GitSubmodulesConfig>) -> Self {
         self.inner = self.inner.set_git_submodules_config_override(input);
         self
     }
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-    pub fn get_git_submodules_config_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::GitSubmodulesConfig> {
+    pub fn get_git_submodules_config_override(&self) -> &::std::option::Option<crate::types::GitSubmodulesConfig> {
         self.inner.get_git_submodules_config_override()
     }
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    pub fn buildspec_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn buildspec_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.buildspec_override(input.into());
         self
     }
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    pub fn set_buildspec_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_buildspec_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_buildspec_override(input);
         self
     }
@@ -501,17 +431,12 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    pub fn set_build_status_config_override(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildStatusConfig>,
-    ) -> Self {
+    pub fn set_build_status_config_override(mut self, input: ::std::option::Option<crate::types::BuildStatusConfig>) -> Self {
         self.inner = self.inner.set_build_status_config_override(input);
         self
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    pub fn get_build_status_config_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::BuildStatusConfig> {
+    pub fn get_build_status_config_override(&self) -> &::std::option::Option<crate::types::BuildStatusConfig> {
         self.inner.get_build_status_config_override()
     }
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
@@ -520,32 +445,21 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
-    pub fn set_environment_type_override(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentType>,
-    ) -> Self {
+    pub fn set_environment_type_override(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
         self.inner = self.inner.set_environment_type_override(input);
         self
     }
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
-    pub fn get_environment_type_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentType> {
+    pub fn get_environment_type_override(&self) -> &::std::option::Option<crate::types::EnvironmentType> {
         self.inner.get_environment_type_override()
     }
     /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
-    pub fn image_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_override(input.into());
         self
     }
     /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
-    pub fn set_image_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_override(input);
         self
     }
@@ -559,10 +473,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
-    pub fn set_compute_type_override(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type_override(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.inner = self.inner.set_compute_type_override(input);
         self
     }
@@ -571,18 +482,12 @@ impl StartBuildFluentBuilder {
         self.inner.get_compute_type_override()
     }
     /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
-    pub fn certificate_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_override(input.into());
         self
     }
     /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
-    pub fn set_certificate_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_override(input);
         self
     }
@@ -596,10 +501,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
-    pub fn set_cache_override(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectCache>,
-    ) -> Self {
+    pub fn set_cache_override(mut self, input: ::std::option::Option<crate::types::ProjectCache>) -> Self {
         self.inner = self.inner.set_cache_override(input);
         self
     }
@@ -608,18 +510,12 @@ impl StartBuildFluentBuilder {
         self.inner.get_cache_override()
     }
     /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
-    pub fn service_role_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_override(input.into());
         self
     }
     /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
-    pub fn set_service_role_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_override(input);
         self
     }
@@ -661,10 +557,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-    pub fn set_queued_timeout_in_minutes_override(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_queued_timeout_in_minutes_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_queued_timeout_in_minutes_override(input);
         self
     }
@@ -677,10 +570,7 @@ impl StartBuildFluentBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    pub fn encryption_key_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key_override(input.into());
         self
     }
@@ -689,10 +579,7 @@ impl StartBuildFluentBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    pub fn set_encryption_key_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key_override(input);
         self
     }
@@ -705,18 +592,12 @@ impl StartBuildFluentBuilder {
         self.inner.get_encryption_key_override()
     }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -730,10 +611,7 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p> Log settings for this build that override the log settings defined in the build project. </p>
-    pub fn set_logs_config_override(
-        mut self,
-        input: ::std::option::Option<crate::types::LogsConfig>,
-    ) -> Self {
+    pub fn set_logs_config_override(mut self, input: ::std::option::Option<crate::types::LogsConfig>) -> Self {
         self.inner = self.inner.set_logs_config_override(input);
         self
     }
@@ -747,17 +625,12 @@ impl StartBuildFluentBuilder {
         self
     }
     /// <p> The credentials for access to a private registry. </p>
-    pub fn set_registry_credential_override(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryCredential>,
-    ) -> Self {
+    pub fn set_registry_credential_override(mut self, input: ::std::option::Option<crate::types::RegistryCredential>) -> Self {
         self.inner = self.inner.set_registry_credential_override(input);
         self
     }
     /// <p> The credentials for access to a private registry. </p>
-    pub fn get_registry_credential_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistryCredential> {
+    pub fn get_registry_credential_override(&self) -> &::std::option::Option<crate::types::RegistryCredential> {
         self.inner.get_registry_credential_override()
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
@@ -776,10 +649,7 @@ impl StartBuildFluentBuilder {
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    pub fn image_pull_credentials_type_override(
-        mut self,
-        input: crate::types::ImagePullCredentialsType,
-    ) -> Self {
+    pub fn image_pull_credentials_type_override(mut self, input: crate::types::ImagePullCredentialsType) -> Self {
         self.inner = self.inner.image_pull_credentials_type_override(input);
         self
     }
@@ -799,10 +669,7 @@ impl StartBuildFluentBuilder {
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    pub fn set_image_pull_credentials_type_override(
-        mut self,
-        input: ::std::option::Option<crate::types::ImagePullCredentialsType>,
-    ) -> Self {
+    pub fn set_image_pull_credentials_type_override(mut self, input: ::std::option::Option<crate::types::ImagePullCredentialsType>) -> Self {
         self.inner = self.inner.set_image_pull_credentials_type_override(input);
         self
     }
@@ -822,9 +689,7 @@ impl StartBuildFluentBuilder {
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    pub fn get_image_pull_credentials_type_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
+    pub fn get_image_pull_credentials_type_override(&self) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
         self.inner.get_image_pull_credentials_type_override()
     }
     /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>

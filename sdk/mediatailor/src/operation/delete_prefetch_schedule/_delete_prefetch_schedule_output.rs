@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePrefetchScheduleOutput {
 }
 impl DeletePrefetchScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeletePrefetchScheduleOutput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleOutputBuilder {
         crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePrefetchScheduleOutput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePrefetchScheduleOutputBuilder {
     _request_id: Option<String>,
 }

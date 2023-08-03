@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DeleteThemeAliasOutput {
 }
 impl DeleteThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThemeAliasOutput`](crate::operation::delete_theme_alias::DeleteThemeAliasOutput).
-    pub fn builder() -> crate::operation::delete_theme_alias::builders::DeleteThemeAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_theme_alias::builders::DeleteThemeAliasOutputBuilder {
         crate::operation::delete_theme_alias::builders::DeleteThemeAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThemeAliasOutput`](crate::operation::delete_theme_alias::DeleteThemeAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThemeAliasOutputBuilder {
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

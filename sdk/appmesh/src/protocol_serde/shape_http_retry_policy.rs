@@ -38,17 +38,9 @@ pub fn ser_http_retry_policy(
 
 pub(crate) fn de_http_retry_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HttpRetryPolicy>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HttpRetryPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,50 +50,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "perRetryTimeout" => {
-                                builder = builder.set_per_retry_timeout(
-                                    crate::protocol_serde::shape_duration::de_duration(tokens)?,
-                                );
-                            }
-                            "maxRetries" => {
-                                builder = builder.set_max_retries(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "perRetryTimeout" => {
+                            builder = builder.set_per_retry_timeout(crate::protocol_serde::shape_duration::de_duration(tokens)?);
+                        }
+                        "maxRetries" => {
+                            builder = builder.set_max_retries(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "httpRetryEvents" => {
-                                builder = builder.set_http_retry_events(
-                                    crate::protocol_serde::shape_http_retry_policy_events::de_http_retry_policy_events(tokens)?
-                                );
-                            }
-                            "tcpRetryEvents" => {
-                                builder = builder.set_tcp_retry_events(
-                                    crate::protocol_serde::shape_tcp_retry_policy_events::de_tcp_retry_policy_events(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "httpRetryEvents" => {
+                            builder = builder.set_http_retry_events(
+                                crate::protocol_serde::shape_http_retry_policy_events::de_http_retry_policy_events(tokens)?,
+                            );
+                        }
+                        "tcpRetryEvents" => {
+                            builder = builder
+                                .set_tcp_retry_events(crate::protocol_serde::shape_tcp_retry_policy_events::de_tcp_retry_policy_events(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

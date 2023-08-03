@@ -27,7 +27,7 @@ impl GetEc2InstanceRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEC2InstanceRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder,
+    inner: crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder,
 }
 impl GetEC2InstanceRecommendationsFluentBuilder {
     /// Creates a new `GetEC2InstanceRecommendations`.
@@ -38,7 +38,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
         }
     }
     /// Access the GetEC2InstanceRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>,
     > {
         self.customize_middleware().await
     }
@@ -126,25 +115,17 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// To override the contents of this collection use [`set_instance_arns`](Self::set_instance_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn instance_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn set_instance_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_arns(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn get_instance_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_arns()
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
@@ -188,10 +169,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -213,41 +191,28 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
-    pub fn recommendation_preferences(
-        mut self,
-        input: crate::types::RecommendationPreferences,
-    ) -> Self {
+    pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.inner = self.inner.recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
-    pub fn set_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationPreferences>,
-    ) -> Self {
+    pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
-    pub fn get_recommendation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+    pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         self.inner.get_recommendation_preferences()
     }
 }

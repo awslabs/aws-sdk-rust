@@ -10,10 +10,7 @@ impl RequestSpotFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::request_spot_fleet::RequestSpotFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_fleet::RequestSpotFleetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_fleet::RequestSpotFleetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.request_spot_fleet();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl RequestSpotFleetFluentBuilder {
         }
     }
     /// Access the RequestSpotFleet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::request_spot_fleet::builders::RequestSpotFleetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::request_spot_fleet::builders::RequestSpotFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl RequestSpotFleetFluentBuilder {
             crate::operation::request_spot_fleet::RequestSpotFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_fleet::RequestSpotFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_fleet::RequestSpotFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl RequestSpotFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl RequestSpotFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_spot_fleet::RequestSpotFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_fleet::RequestSpotFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_fleet::RequestSpotFleetError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl RequestSpotFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_spot_fleet::RequestSpotFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_fleet::RequestSpotFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_fleet::RequestSpotFleetError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl RequestSpotFleetFluentBuilder {
             crate::operation::request_spot_fleet::RequestSpotFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_fleet::RequestSpotFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_fleet::RequestSpotFleetError>,
     > {
         self.customize_middleware().await
     }
@@ -145,25 +129,17 @@ impl RequestSpotFleetFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn spot_fleet_request_config(
-        mut self,
-        input: crate::types::SpotFleetRequestConfigData,
-    ) -> Self {
+    pub fn spot_fleet_request_config(mut self, input: crate::types::SpotFleetRequestConfigData) -> Self {
         self.inner = self.inner.spot_fleet_request_config(input);
         self
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_config(mut self, input: ::std::option::Option<crate::types::SpotFleetRequestConfigData>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_config(input);
         self
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn get_spot_fleet_request_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
+    pub fn get_spot_fleet_request_config(&self) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
         self.inner.get_spot_fleet_request_config()
     }
 }

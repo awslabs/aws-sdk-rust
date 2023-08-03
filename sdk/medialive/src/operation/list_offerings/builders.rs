@@ -10,10 +10,7 @@ impl ListOfferingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_offerings::ListOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_offerings::ListOfferingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_offerings::ListOfferingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_offerings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListOfferingsFluentBuilder {
         }
     }
     /// Access the ListOfferings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListOfferingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_offerings::paginator::ListOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_offerings::paginator::ListOfferingsPaginator {
-        crate::operation::list_offerings::paginator::ListOfferingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_offerings::paginator::ListOfferingsPaginator {
+        crate::operation::list_offerings::paginator::ListOfferingsPaginator::new(self.handle, self.inner)
     }
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn channel_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_class(input.into());
         self
     }
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn set_channel_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_class(input);
         self
     }
@@ -146,18 +127,12 @@ impl ListOfferingsFluentBuilder {
         self.inner.get_channel_class()
     }
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-    pub fn channel_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_configuration(input.into());
         self
     }
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-    pub fn set_channel_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_configuration(input);
         self
     }
@@ -208,18 +183,12 @@ impl ListOfferingsFluentBuilder {
         self.inner.get_max_results()
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn maximum_bitrate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_bitrate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.maximum_bitrate(input.into());
         self
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn set_maximum_bitrate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_bitrate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_maximum_bitrate(input);
         self
     }
@@ -228,18 +197,12 @@ impl ListOfferingsFluentBuilder {
         self.inner.get_maximum_bitrate()
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn maximum_framerate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_framerate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.maximum_framerate(input.into());
         self
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn set_maximum_framerate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_framerate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_maximum_framerate(input);
         self
     }
@@ -276,18 +239,12 @@ impl ListOfferingsFluentBuilder {
         self.inner.get_resolution()
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -296,18 +253,12 @@ impl ListOfferingsFluentBuilder {
         self.inner.get_resource_type()
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn special_feature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn special_feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.special_feature(input.into());
         self
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn set_special_feature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_special_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_special_feature(input);
         self
     }
@@ -316,18 +267,12 @@ impl ListOfferingsFluentBuilder {
         self.inner.get_special_feature()
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn video_quality(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn video_quality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.video_quality(input.into());
         self
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn set_video_quality(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_video_quality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_video_quality(input);
         self
     }

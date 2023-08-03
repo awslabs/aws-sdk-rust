@@ -10,10 +10,7 @@ impl UpdateDestinationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_destination::UpdateDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_destination::UpdateDestinationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_destination();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDestinationFluentBuilder {
         }
     }
     /// Access the UpdateDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_destination::builders::UpdateDestinationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_destination::builders::UpdateDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDestinationFluentBuilder {
             crate::operation::update_destination::UpdateDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_destination::UpdateDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_destination::UpdateDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_destination::UpdateDestinationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_destination::UpdateDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_destination::UpdateDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDestinationFluentBuilder {
             crate::operation::update_destination::UpdateDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_destination::UpdateDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl UpdateDestinationFluentBuilder {
         self
     }
     /// State of the destination.
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DestinationState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
@@ -168,18 +149,12 @@ impl UpdateDestinationFluentBuilder {
         self.inner.get_state()
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn additional_fixed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_fixed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_fixed_properties(input.into());
         self
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn set_additional_fixed_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_fixed_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_fixed_properties(input);
         self
     }

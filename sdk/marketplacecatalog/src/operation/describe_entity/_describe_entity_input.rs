@@ -29,9 +29,7 @@ impl DescribeEntityInput {
 
 /// A builder for [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeEntityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_entity::DescribeEntityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_entity::DescribeEntityInput {
             catalog: self.catalog,
             entity_id: self.entity_id,

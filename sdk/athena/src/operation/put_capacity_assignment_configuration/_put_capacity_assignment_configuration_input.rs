@@ -8,8 +8,7 @@ pub struct PutCapacityAssignmentConfigurationInput {
     pub capacity_reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of assignments for the capacity assignment configuration.</p>
     #[doc(hidden)]
-    pub capacity_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
+    pub capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
 }
 impl PutCapacityAssignmentConfigurationInput {
     /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
@@ -17,43 +16,32 @@ impl PutCapacityAssignmentConfigurationInput {
         self.capacity_reservation_name.as_deref()
     }
     /// <p>The list of assignments for the capacity assignment configuration.</p>
-    pub fn capacity_assignments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityAssignment]> {
+    pub fn capacity_assignments(&self) -> ::std::option::Option<&[crate::types::CapacityAssignment]> {
         self.capacity_assignments.as_deref()
     }
 }
 impl PutCapacityAssignmentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutCapacityAssignmentConfigurationInput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput).
-    pub fn builder() -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder {
         crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutCapacityAssignmentConfigurationInput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCapacityAssignmentConfigurationInputBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
+    pub(crate) capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
 }
 impl PutCapacityAssignmentConfigurationInputBuilder {
     /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
-    pub fn capacity_reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
-    pub fn set_capacity_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_name = input;
         self
     }
@@ -73,28 +61,26 @@ impl PutCapacityAssignmentConfigurationInputBuilder {
         self
     }
     /// <p>The list of assignments for the capacity assignment configuration.</p>
-    pub fn set_capacity_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
-    ) -> Self {
+    pub fn set_capacity_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>) -> Self {
         self.capacity_assignments = input;
         self
     }
     /// <p>The list of assignments for the capacity assignment configuration.</p>
-    pub fn get_capacity_assignments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+    pub fn get_capacity_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
         &self.capacity_assignments
     }
     /// Consumes the builder and constructs a [`PutCapacityAssignmentConfigurationInput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput {
-                capacity_reservation_name: self.capacity_reservation_name
-                ,
-                capacity_assignments: self.capacity_assignments
-                ,
-            }
+                capacity_reservation_name: self.capacity_reservation_name,
+                capacity_assignments: self.capacity_assignments,
+            },
         )
     }
 }

@@ -51,9 +51,7 @@ impl LogsSummary {
 
 /// A builder for [`LogsSummary`](crate::types::LogsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogsSummaryBuilder {
     pub(crate) audit: ::std::option::Option<bool>,
     pub(crate) audit_log_group: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl LogsSummaryBuilder {
         &self.audit
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-    pub fn audit_log_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-    pub fn set_audit_log_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_log_group = input;
         self
     }
@@ -111,18 +103,12 @@ impl LogsSummaryBuilder {
         &self.general
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    pub fn general_log_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn general_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.general_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    pub fn set_general_log_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_general_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.general_log_group = input;
         self
     }

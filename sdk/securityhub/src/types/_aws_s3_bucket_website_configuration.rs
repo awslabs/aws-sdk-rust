@@ -12,13 +12,10 @@ pub struct AwsS3BucketWebsiteConfiguration {
     pub index_document_suffix: ::std::option::Option<::std::string::String>,
     /// <p>The redirect behavior for requests to the website.</p>
     #[doc(hidden)]
-    pub redirect_all_requests_to:
-        ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>,
+    pub redirect_all_requests_to: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>,
     /// <p>The rules for applying redirects for requests to the website.</p>
     #[doc(hidden)]
-    pub routing_rules: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>,
-    >,
+    pub routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>>,
 }
 impl AwsS3BucketWebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
@@ -30,15 +27,11 @@ impl AwsS3BucketWebsiteConfiguration {
         self.index_document_suffix.as_deref()
     }
     /// <p>The redirect behavior for requests to the website.</p>
-    pub fn redirect_all_requests_to(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfigurationRedirectTo> {
+    pub fn redirect_all_requests_to(&self) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfigurationRedirectTo> {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>The rules for applying redirects for requests to the website.</p>
-    pub fn routing_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsS3BucketWebsiteConfigurationRoutingRule]> {
+    pub fn routing_rules(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketWebsiteConfigurationRoutingRule]> {
         self.routing_rules.as_deref()
     }
 }
@@ -51,32 +44,21 @@ impl AwsS3BucketWebsiteConfiguration {
 
 /// A builder for [`AwsS3BucketWebsiteConfiguration`](crate::types::AwsS3BucketWebsiteConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationBuilder {
     pub(crate) error_document: ::std::option::Option<::std::string::String>,
     pub(crate) index_document_suffix: ::std::option::Option<::std::string::String>,
-    pub(crate) redirect_all_requests_to:
-        ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>,
-    pub(crate) routing_rules: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>,
-    >,
+    pub(crate) redirect_all_requests_to: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>,
+    pub(crate) routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>>,
 }
 impl AwsS3BucketWebsiteConfigurationBuilder {
     /// <p>The name of the error document for the website.</p>
-    pub fn error_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the error document for the website.</p>
-    pub fn set_error_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_document = input;
         self
     }
@@ -85,18 +67,12 @@ impl AwsS3BucketWebsiteConfigurationBuilder {
         &self.error_document
     }
     /// <p>The name of the index document for the website.</p>
-    pub fn index_document_suffix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn index_document_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_document_suffix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the index document for the website.</p>
-    pub fn set_index_document_suffix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_index_document_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_document_suffix = input;
         self
     }
@@ -105,25 +81,17 @@ impl AwsS3BucketWebsiteConfigurationBuilder {
         &self.index_document_suffix
     }
     /// <p>The redirect behavior for requests to the website.</p>
-    pub fn redirect_all_requests_to(
-        mut self,
-        input: crate::types::AwsS3BucketWebsiteConfigurationRedirectTo,
-    ) -> Self {
+    pub fn redirect_all_requests_to(mut self, input: crate::types::AwsS3BucketWebsiteConfigurationRedirectTo) -> Self {
         self.redirect_all_requests_to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The redirect behavior for requests to the website.</p>
-    pub fn set_redirect_all_requests_to(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>,
-    ) -> Self {
+    pub fn set_redirect_all_requests_to(mut self, input: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo>) -> Self {
         self.redirect_all_requests_to = input;
         self
     }
     /// <p>The redirect behavior for requests to the website.</p>
-    pub fn get_redirect_all_requests_to(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo> {
+    pub fn get_redirect_all_requests_to(&self) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRedirectTo> {
         &self.redirect_all_requests_to
     }
     /// Appends an item to `routing_rules`.
@@ -131,10 +99,7 @@ impl AwsS3BucketWebsiteConfigurationBuilder {
     /// To override the contents of this collection use [`set_routing_rules`](Self::set_routing_rules).
     ///
     /// <p>The rules for applying redirects for requests to the website.</p>
-    pub fn routing_rules(
-        mut self,
-        input: crate::types::AwsS3BucketWebsiteConfigurationRoutingRule,
-    ) -> Self {
+    pub fn routing_rules(mut self, input: crate::types::AwsS3BucketWebsiteConfigurationRoutingRule) -> Self {
         let mut v = self.routing_rules.unwrap_or_default();
         v.push(input);
         self.routing_rules = ::std::option::Option::Some(v);
@@ -143,19 +108,13 @@ impl AwsS3BucketWebsiteConfigurationBuilder {
     /// <p>The rules for applying redirects for requests to the website.</p>
     pub fn set_routing_rules(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>>,
     ) -> Self {
         self.routing_rules = input;
         self
     }
     /// <p>The rules for applying redirects for requests to the website.</p>
-    pub fn get_routing_rules(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>,
-    > {
+    pub fn get_routing_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>> {
         &self.routing_rules
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfiguration`](crate::types::AwsS3BucketWebsiteConfiguration).

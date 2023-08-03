@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCallAnalyticsJobOutput {
 }
 impl GetCallAnalyticsJobOutput {
     /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobOutput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobOutputBuilder {
+    pub fn builder() -> crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobOutputBuilder {
         crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCallAnalyticsJobOutput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCallAnalyticsJobOutputBuilder {
     pub(crate) call_analytics_job: ::std::option::Option<crate::types::CallAnalyticsJob>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetCallAnalyticsJobOutputBuilder {
         self
     }
     /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
-    pub fn set_call_analytics_job(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsJob>,
-    ) -> Self {
+    pub fn set_call_analytics_job(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJob>) -> Self {
         self.call_analytics_job = input;
         self
     }

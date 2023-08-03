@@ -6,10 +6,8 @@ impl super::Client {
     ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorProxyOutput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorProxyError>`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyError)
-    #[deprecated(
-        note = "Replaced by DeleteVoiceConnectorProxy in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn delete_voice_connector_proxy(&self) -> crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder{
+    #[deprecated(note = "Replaced by DeleteVoiceConnectorProxy in the Amazon Chime SDK Voice Namespace")]
+    pub fn delete_voice_connector_proxy(&self) -> crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder {
         crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyFluentBuilder::new(self.handle.clone())
     }
 }

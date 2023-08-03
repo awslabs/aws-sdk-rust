@@ -51,18 +51,14 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn builder(
-    ) -> crate::types::builders::SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         crate::types::builders::SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -134,10 +130,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -166,9 +159,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
             run_id: self.run_id,
             signal_name: self.signal_name,
             input: self.input,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             control: self.control,
         }
     }

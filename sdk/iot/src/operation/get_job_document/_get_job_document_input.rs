@@ -22,9 +22,7 @@ impl GetJobDocumentInput {
 
 /// A builder for [`GetJobDocumentInput`](crate::operation::get_job_document::GetJobDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobDocumentInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetJobDocumentInputBuilder {
     /// Consumes the builder and constructs a [`GetJobDocumentInput`](crate::operation::get_job_document::GetJobDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_job_document::GetJobDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_job_document::GetJobDocumentInput {
-            job_id: self.job_id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_job_document::GetJobDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_job_document::GetJobDocumentInput { job_id: self.job_id })
     }
 }

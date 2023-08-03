@@ -5,15 +5,12 @@
 pub struct DeregisterTransitGatewayMulticastGroupSourcesOutput {
     /// <p>Information about the deregistered group sources.</p>
     #[doc(hidden)]
-    pub deregistered_multicast_group_sources:
-        ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupSources>,
+    pub deregistered_multicast_group_sources: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupSources>,
     _request_id: Option<String>,
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesOutput {
     /// <p>Information about the deregistered group sources.</p>
-    pub fn deregistered_multicast_group_sources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDeregisteredGroupSources> {
+    pub fn deregistered_multicast_group_sources(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDeregisteredGroupSources> {
         self.deregistered_multicast_group_sources.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for DeregisterTransitGatewayMulticastGrou
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayMulticastGroupSourcesOutput`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput).
-    pub fn builder() -> crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder
+    {
         crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTransitGatewayMulticastGroupSourcesOutput`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder {
-    pub(crate) deregistered_multicast_group_sources:
-        ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupSources>,
+    pub(crate) deregistered_multicast_group_sources: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupSources>,
     _request_id: Option<String>,
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder {
     /// <p>Information about the deregistered group sources.</p>
-    pub fn deregistered_multicast_group_sources(
-        mut self,
-        input: crate::types::TransitGatewayMulticastDeregisteredGroupSources,
-    ) -> Self {
+    pub fn deregistered_multicast_group_sources(mut self, input: crate::types::TransitGatewayMulticastDeregisteredGroupSources) -> Self {
         self.deregistered_multicast_group_sources = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder {
         self
     }
     /// <p>Information about the deregistered group sources.</p>
-    pub fn get_deregistered_multicast_group_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupSources> {
+    pub fn get_deregistered_multicast_group_sources(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupSources> {
         &self.deregistered_multicast_group_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterTransitGatewayMulticastGroupSourcesOutput`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput).
-    pub fn build(self) -> crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput{
+    pub fn build(self) -> crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput {
         crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput {
-            deregistered_multicast_group_sources: self.deregistered_multicast_group_sources
-            ,
+            deregistered_multicast_group_sources: self.deregistered_multicast_group_sources,
             _request_id: self._request_id,
         }
     }

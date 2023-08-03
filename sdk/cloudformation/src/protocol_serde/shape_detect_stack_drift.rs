@@ -4,17 +4,10 @@ pub fn de_detect_stack_drift_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::detect_stack_drift::DetectStackDriftOutput,
-    crate::operation::detect_stack_drift::DetectStackDriftError,
-> {
+) -> std::result::Result<crate::operation::detect_stack_drift::DetectStackDriftOutput, crate::operation::detect_stack_drift::DetectStackDriftError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::detect_stack_drift::DetectStackDriftError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::detect_stack_drift::DetectStackDriftError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::detect_stack_drift::DetectStackDriftError::generic(generic))
@@ -25,23 +18,13 @@ pub fn de_detect_stack_drift_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::detect_stack_drift::DetectStackDriftOutput,
-    crate::operation::detect_stack_drift::DetectStackDriftError,
-> {
+) -> std::result::Result<crate::operation::detect_stack_drift::DetectStackDriftOutput, crate::operation::detect_stack_drift::DetectStackDriftError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_detect_stack_drift::de_detect_stack_drift(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::detect_stack_drift::DetectStackDriftError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder::default();
+        output = crate::protocol_serde::shape_detect_stack_drift::de_detect_stack_drift(_response_body, output)
+            .map_err(crate::operation::detect_stack_drift::DetectStackDriftError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -50,10 +33,7 @@ pub fn de_detect_stack_drift_http_response_with_props(
 pub fn de_detect_stack_drift(
     inp: &[u8],
     mut builder: crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder,
-) -> Result<
-    crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -93,9 +73,7 @@ pub fn de_detect_stack_drift(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DetectStackDriftResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DetectStackDriftResult tag"));
     };
     Ok(builder)
 }

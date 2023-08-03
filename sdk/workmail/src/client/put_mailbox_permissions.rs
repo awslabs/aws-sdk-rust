@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`permission_values(Vec<PermissionType>)`](crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsFluentBuilder::permission_values) / [`set_permission_values(Option<Vec<PermissionType>>)`](crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsFluentBuilder::set_permission_values): <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     /// - On success, responds with [`PutMailboxPermissionsOutput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput)
     /// - On failure, responds with [`SdkError<PutMailboxPermissionsError>`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsError)
-    pub fn put_mailbox_permissions(
-        &self,
-    ) -> crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsFluentBuilder
-    {
-        crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_mailbox_permissions(&self) -> crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsFluentBuilder {
+        crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

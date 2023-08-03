@@ -10,10 +10,7 @@ impl DescribeSuggestersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_suggesters::DescribeSuggestersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_suggesters::DescribeSuggestersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_suggesters::DescribeSuggestersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_suggesters();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSuggestersFluentBuilder {
         }
     }
     /// Access the DescribeSuggesters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_suggesters::builders::DescribeSuggestersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_suggesters::builders::DescribeSuggestersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSuggestersFluentBuilder {
             crate::operation::describe_suggesters::DescribeSuggesters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_suggesters::DescribeSuggestersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_suggesters::DescribeSuggestersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSuggestersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSuggestersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_suggesters::DescribeSuggestersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_suggesters::DescribeSuggestersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_suggesters::DescribeSuggestersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSuggestersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_suggesters::DescribeSuggestersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_suggesters::DescribeSuggestersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_suggesters::DescribeSuggestersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeSuggestersFluentBuilder {
             crate::operation::describe_suggesters::DescribeSuggesters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_suggesters::DescribeSuggestersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_suggesters::DescribeSuggestersError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +125,17 @@ impl DescribeSuggestersFluentBuilder {
     /// To override the contents of this collection use [`set_suggester_names`](Self::set_suggester_names).
     ///
     /// <p>The suggesters you want to describe.</p>
-    pub fn suggester_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggester_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suggester_names(input.into());
         self
     }
     /// <p>The suggesters you want to describe.</p>
-    pub fn set_suggester_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_suggester_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_suggester_names(input);
         self
     }
     /// <p>The suggesters you want to describe.</p>
-    pub fn get_suggester_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_suggester_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_suggester_names()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>

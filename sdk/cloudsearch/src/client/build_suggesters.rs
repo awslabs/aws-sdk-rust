@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BuildSuggestersOutput`](crate::operation::build_suggesters::BuildSuggestersOutput) with field(s):
     ///   - [`field_names(Option<Vec<String>>)`](crate::operation::build_suggesters::BuildSuggestersOutput::field_names): <p>A list of field names.</p>
     /// - On failure, responds with [`SdkError<BuildSuggestersError>`](crate::operation::build_suggesters::BuildSuggestersError)
-    pub fn build_suggesters(
-        &self,
-    ) -> crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder {
-        crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn build_suggesters(&self) -> crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder {
+        crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder::new(self.handle.clone())
     }
 }

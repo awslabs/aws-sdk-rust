@@ -15,18 +15,14 @@ impl UpdateEventSourcesConfigInput {
 }
 impl UpdateEventSourcesConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventSourcesConfigInput`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder {
         crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventSourcesConfigInput`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventSourcesConfigInputBuilder {
     pub(crate) event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
 }
@@ -37,10 +33,7 @@ impl UpdateEventSourcesConfigInputBuilder {
         self
     }
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
-    pub fn set_event_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourcesConfig>,
-    ) -> Self {
+    pub fn set_event_sources(mut self, input: ::std::option::Option<crate::types::EventSourcesConfig>) -> Self {
         self.event_sources = input;
         self
     }
@@ -55,10 +48,8 @@ impl UpdateEventSourcesConfigInputBuilder {
         crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput {
-                event_sources: self.event_sources,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput {
+            event_sources: self.event_sources,
+        })
     }
 }

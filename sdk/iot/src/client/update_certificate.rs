@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`new_status(CertificateStatus)`](crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder::new_status) / [`set_new_status(Option<CertificateStatus>)`](crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder::set_new_status): <p>The new status.</p>  <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>  <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     /// - On success, responds with [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput)
     /// - On failure, responds with [`SdkError<UpdateCertificateError>`](crate::operation::update_certificate::UpdateCertificateError)
-    pub fn update_certificate(
-        &self,
-    ) -> crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder {
-        crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_certificate(&self) -> crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder {
+        crate::operation::update_certificate::builders::UpdateCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMFAPreferenceFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMFAPreferenceFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
     /// - On success, responds with [`AdminSetUserMfaPreferenceOutput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceOutput)
     /// - On failure, responds with [`SdkError<AdminSetUserMFAPreferenceError>`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError)
-    pub fn admin_set_user_mfa_preference(&self) -> crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMFAPreferenceFluentBuilder{
+    pub fn admin_set_user_mfa_preference(&self) -> crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMFAPreferenceFluentBuilder {
         crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMFAPreferenceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`feature_name(impl ::std::convert::Into<String>)`](crate::operation::add_role_to_db_instance::builders::AddRoleToDBInstanceFluentBuilder::feature_name) / [`set_feature_name(Option<String>)`](crate::operation::add_role_to_db_instance::builders::AddRoleToDBInstanceFluentBuilder::set_feature_name): <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     /// - On success, responds with [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput)
     /// - On failure, responds with [`SdkError<AddRoleToDBInstanceError>`](crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError)
-    pub fn add_role_to_db_instance(
-        &self,
-    ) -> crate::operation::add_role_to_db_instance::builders::AddRoleToDBInstanceFluentBuilder {
-        crate::operation::add_role_to_db_instance::builders::AddRoleToDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_role_to_db_instance(&self) -> crate::operation::add_role_to_db_instance::builders::AddRoleToDBInstanceFluentBuilder {
+        crate::operation::add_role_to_db_instance::builders::AddRoleToDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

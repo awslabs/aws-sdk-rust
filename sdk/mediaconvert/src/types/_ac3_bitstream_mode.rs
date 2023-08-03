@@ -44,13 +44,7 @@
 /// Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ac3BitstreamMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for Ac3BitstreamMode {
             "MUSIC_AND_EFFECTS" => Ac3BitstreamMode::MusicAndEffects,
             "VISUALLY_IMPAIRED" => Ac3BitstreamMode::VisuallyImpaired,
             "VOICE_OVER" => Ac3BitstreamMode::VoiceOver,
-            other => {
-                Ac3BitstreamMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Ac3BitstreamMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

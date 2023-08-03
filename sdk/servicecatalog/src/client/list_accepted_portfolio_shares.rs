@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput::portfolio_details): <p>Information about the portfolios.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListAcceptedPortfolioSharesError>`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError)
-    pub fn list_accepted_portfolio_shares(&self) -> crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesFluentBuilder{
+    pub fn list_accepted_portfolio_shares(
+        &self,
+    ) -> crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesFluentBuilder {
         crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesFluentBuilder::new(self.handle.clone())
     }
 }

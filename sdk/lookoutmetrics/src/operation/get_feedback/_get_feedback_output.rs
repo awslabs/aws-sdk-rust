@@ -5,8 +5,7 @@
 pub struct GetFeedbackOutput {
     /// <p>Feedback for an anomalous metric.</p>
     #[doc(hidden)]
-    pub anomaly_group_time_series_feedback:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
+    pub anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetFeedbackOutput {
 }
 impl GetFeedbackOutput {
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TimeSeriesFeedback]> {
+    pub fn anomaly_group_time_series_feedback(&self) -> ::std::option::Option<&[crate::types::TimeSeriesFeedback]> {
         self.anomaly_group_time_series_feedback.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -38,12 +35,9 @@ impl GetFeedbackOutput {
 
 /// A builder for [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFeedbackOutputBuilder {
-    pub(crate) anomaly_group_time_series_feedback:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
+    pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetFeedbackOutputBuilder {
     /// To override the contents of this collection use [`set_anomaly_group_time_series_feedback`](Self::set_anomaly_group_time_series_feedback).
     ///
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(
-        mut self,
-        input: crate::types::TimeSeriesFeedback,
-    ) -> Self {
+    pub fn anomaly_group_time_series_feedback(mut self, input: crate::types::TimeSeriesFeedback) -> Self {
         let mut v = self.anomaly_group_time_series_feedback.unwrap_or_default();
         v.push(input);
         self.anomaly_group_time_series_feedback = ::std::option::Option::Some(v);
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn set_anomaly_group_time_series_feedback(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
-    ) -> Self {
+    pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>) -> Self {
         self.anomaly_group_time_series_feedback = input;
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn get_anomaly_group_time_series_feedback(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>> {
+    pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>> {
         &self.anomaly_group_time_series_feedback
     }
     /// <p>The pagination token that's included if more results are available.</p>

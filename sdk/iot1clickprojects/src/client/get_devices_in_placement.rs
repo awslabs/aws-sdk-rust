@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDevicesInPlacementOutput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput) with field(s):
     ///   - [`devices(Option<HashMap<String, String>>)`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput::devices): <p>An object containing the devices (zero or more) within the placement.</p>
     /// - On failure, responds with [`SdkError<GetDevicesInPlacementError>`](crate::operation::get_devices_in_placement::GetDevicesInPlacementError)
-    pub fn get_devices_in_placement(
-        &self,
-    ) -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementFluentBuilder
-    {
+    pub fn get_devices_in_placement(&self) -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementFluentBuilder {
         crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementFluentBuilder::new(self.handle.clone())
     }
 }

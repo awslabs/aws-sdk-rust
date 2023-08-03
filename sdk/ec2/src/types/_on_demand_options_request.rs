@@ -13,8 +13,7 @@ pub struct OnDemandOptionsRequest {
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     #[doc(hidden)]
-    pub capacity_reservation_options:
-        ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
+    pub capacity_reservation_options: ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     #[doc(hidden)]
@@ -37,16 +36,12 @@ impl OnDemandOptionsRequest {
     /// <p> <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn allocation_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FleetOnDemandAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::FleetOnDemandAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn capacity_reservation_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationOptionsRequest> {
+    pub fn capacity_reservation_options(&self) -> ::std::option::Option<&crate::types::CapacityReservationOptionsRequest> {
         self.capacity_reservation_options.as_ref()
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
@@ -79,14 +74,10 @@ impl OnDemandOptionsRequest {
 
 /// A builder for [`OnDemandOptionsRequest`](crate::types::OnDemandOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnDemandOptionsRequestBuilder {
-    pub(crate) allocation_strategy:
-        ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
-    pub(crate) capacity_reservation_options:
-        ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
+    pub(crate) allocation_strategy: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
+    pub(crate) capacity_reservation_options: ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
     pub(crate) single_instance_type: ::std::option::Option<bool>,
     pub(crate) single_availability_zone: ::std::option::Option<bool>,
     pub(crate) min_target_capacity: ::std::option::Option<i32>,
@@ -97,10 +88,7 @@ impl OnDemandOptionsRequestBuilder {
     /// <p> <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn allocation_strategy(
-        mut self,
-        input: crate::types::FleetOnDemandAllocationStrategy,
-    ) -> Self {
+    pub fn allocation_strategy(mut self, input: crate::types::FleetOnDemandAllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
     }
@@ -108,10 +96,7 @@ impl OnDemandOptionsRequestBuilder {
     /// <p> <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn set_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
-    ) -> Self {
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
     }
@@ -119,34 +104,24 @@ impl OnDemandOptionsRequestBuilder {
     /// <p> <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code> </p>
-    pub fn get_allocation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetOnDemandAllocationStrategy> {
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::FleetOnDemandAllocationStrategy> {
         &self.allocation_strategy
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn capacity_reservation_options(
-        mut self,
-        input: crate::types::CapacityReservationOptionsRequest,
-    ) -> Self {
+    pub fn capacity_reservation_options(mut self, input: crate::types::CapacityReservationOptionsRequest) -> Self {
         self.capacity_reservation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn set_capacity_reservation_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
-    ) -> Self {
+    pub fn set_capacity_reservation_options(mut self, input: ::std::option::Option<crate::types::CapacityReservationOptionsRequest>) -> Self {
         self.capacity_reservation_options = input;
         self
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn get_capacity_reservation_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationOptionsRequest> {
+    pub fn get_capacity_reservation_options(&self) -> &::std::option::Option<crate::types::CapacityReservationOptionsRequest> {
         &self.capacity_reservation_options
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
@@ -204,18 +179,12 @@ impl OnDemandOptionsRequestBuilder {
         &self.min_target_capacity
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
-    pub fn max_total_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_total_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_total_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
-    pub fn set_max_total_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_total_price = input;
         self
     }

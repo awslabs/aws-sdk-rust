@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`video(Option<Video>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::job_tag): <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     /// - On failure, responds with [`SdkError<GetCelebrityRecognitionError>`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError)
-    pub fn get_celebrity_recognition(
-        &self,
-    ) -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder
-    {
+    pub fn get_celebrity_recognition(&self) -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder {
         crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::new(self.handle.clone())
     }
 }

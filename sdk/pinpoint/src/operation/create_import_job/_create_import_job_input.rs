@@ -29,27 +29,19 @@ impl CreateImportJobInput {
 
 /// A builder for [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImportJobInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_job_request: ::std::option::Option<crate::types::ImportJobRequest>,
 }
 impl CreateImportJobInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl CreateImportJobInputBuilder {
         self
     }
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn set_import_job_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobRequest>,
-    ) -> Self {
+    pub fn set_import_job_request(mut self, input: ::std::option::Option<crate::types::ImportJobRequest>) -> Self {
         self.import_job_request = input;
         self
     }
@@ -77,10 +66,7 @@ impl CreateImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_import_job::CreateImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_import_job::CreateImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_import_job::CreateImportJobInput {
             application_id: self.application_id,
             import_job_request: self.import_job_request,

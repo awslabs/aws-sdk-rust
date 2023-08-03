@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RestoreOpenZfsVolumeOption {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for RestoreOpenZfsVolumeOption {
     fn from(s: &str) -> Self {
         match s {
             "DELETE_CLONED_VOLUMES" => RestoreOpenZfsVolumeOption::DeleteClonedVolumes,
-            "DELETE_INTERMEDIATE_SNAPSHOTS" => {
-                RestoreOpenZfsVolumeOption::DeleteIntermediateSnapshots
-            }
-            other => RestoreOpenZfsVolumeOption::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "DELETE_INTERMEDIATE_SNAPSHOTS" => RestoreOpenZfsVolumeOption::DeleteIntermediateSnapshots,
+            other => RestoreOpenZfsVolumeOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl RestoreOpenZfsVolumeOption {
     pub fn as_str(&self) -> &str {
         match self {
             RestoreOpenZfsVolumeOption::DeleteClonedVolumes => "DELETE_CLONED_VOLUMES",
-            RestoreOpenZfsVolumeOption::DeleteIntermediateSnapshots => {
-                "DELETE_INTERMEDIATE_SNAPSHOTS"
-            }
+            RestoreOpenZfsVolumeOption::DeleteIntermediateSnapshots => "DELETE_INTERMEDIATE_SNAPSHOTS",
             RestoreOpenZfsVolumeOption::Unknown(value) => value.as_str(),
         }
     }

@@ -23,9 +23,7 @@ impl SnsConfiguration {
 
 /// A builder for [`SnsConfiguration`](crate::types::SnsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnsConfigurationBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SnsConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`SnsConfiguration`](crate::types::SnsConfiguration).
     pub fn build(self) -> crate::types::SnsConfiguration {
-        crate::types::SnsConfiguration {
-            topic_arn: self.topic_arn,
-        }
+        crate::types::SnsConfiguration { topic_arn: self.topic_arn }
     }
 }

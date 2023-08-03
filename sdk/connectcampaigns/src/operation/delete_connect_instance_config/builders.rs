@@ -26,7 +26,7 @@ impl DeleteConnectInstanceConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder,
+    inner: crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder,
 }
 impl DeleteConnectInstanceConfigFluentBuilder {
     /// Creates a new `DeleteConnectInstanceConfig`.
@@ -37,7 +37,7 @@ impl DeleteConnectInstanceConfigFluentBuilder {
         }
     }
     /// Access the DeleteConnectInstanceConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteConnectInstanceConfigFluentBuilder {
             crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteConnectInstanceConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteConnectInstanceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteConnectInstanceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteConnectInstanceConfigFluentBuilder {
             crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError>,
     > {
         self.customize_middleware().await
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_instance_id(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connect_instance_id(input);
         self
     }

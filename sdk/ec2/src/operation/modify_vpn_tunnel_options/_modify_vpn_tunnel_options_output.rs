@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpnTunnelOptionsOutput {
 }
 impl ModifyVpnTunnelOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelOptionsOutput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder {
         crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnTunnelOptionsOutput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnTunnelOptionsOutputBuilder {
     pub(crate) vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyVpnTunnelOptionsOutputBuilder {
         self
     }
     /// <p>Information about the VPN connection.</p>
-    pub fn set_vpn_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnection>,
-    ) -> Self {
+    pub fn set_vpn_connection(mut self, input: ::std::option::Option<crate::types::VpnConnection>) -> Self {
         self.vpn_connection = input;
         self
     }
@@ -65,9 +58,7 @@ impl ModifyVpnTunnelOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsOutput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput {
+    pub fn build(self) -> crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput {
         crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput {
             vpn_connection: self.vpn_connection,
             _request_id: self._request_id,

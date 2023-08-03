@@ -47,9 +47,7 @@ impl UpdateEphemerisInput {
 
 /// A builder for [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEphemerisInputBuilder {
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -122,10 +120,7 @@ impl UpdateEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ephemeris::UpdateEphemerisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_ephemeris::UpdateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ephemeris::UpdateEphemerisInput {
             ephemeris_id: self.ephemeris_id,
             enabled: self.enabled,

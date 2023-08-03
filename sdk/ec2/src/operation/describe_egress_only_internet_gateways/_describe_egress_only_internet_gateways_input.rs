@@ -8,8 +8,7 @@ pub struct DescribeEgressOnlyInternetGatewaysInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the egress-only internet gateways.</p>
     #[doc(hidden)]
-    pub egress_only_internet_gateway_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub egress_only_internet_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -36,9 +35,7 @@ impl DescribeEgressOnlyInternetGatewaysInput {
         self.dry_run
     }
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn egress_only_internet_gateway_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn egress_only_internet_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.egress_only_internet_gateway_ids.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -66,20 +63,17 @@ impl DescribeEgressOnlyInternetGatewaysInput {
 }
 impl DescribeEgressOnlyInternetGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeEgressOnlyInternetGatewaysInput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysInput).
-    pub fn builder() -> crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder{
+    pub fn builder() -> crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder {
         crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEgressOnlyInternetGatewaysInput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEgressOnlyInternetGatewaysInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) egress_only_internet_gateway_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) egress_only_internet_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -104,27 +98,19 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
     /// To override the contents of this collection use [`set_egress_only_internet_gateway_ids`](Self::set_egress_only_internet_gateway_ids).
     ///
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn egress_only_internet_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_only_internet_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.egress_only_internet_gateway_ids.unwrap_or_default();
         v.push(input.into());
         self.egress_only_internet_gateway_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn set_egress_only_internet_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_egress_only_internet_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.egress_only_internet_gateway_ids = input;
         self
     }
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn get_egress_only_internet_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_egress_only_internet_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.egress_only_internet_gateway_ids
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -187,10 +173,7 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -209,20 +192,20 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeEgressOnlyInternetGatewaysInput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysInput {
-                dry_run: self.dry_run
-                ,
-                egress_only_internet_gateway_ids: self.egress_only_internet_gateway_ids
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-            }
+                dry_run: self.dry_run,
+                egress_only_internet_gateway_ids: self.egress_only_internet_gateway_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+            },
         )
     }
 }

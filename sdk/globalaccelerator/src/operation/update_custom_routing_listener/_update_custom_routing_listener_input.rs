@@ -24,16 +24,14 @@ impl UpdateCustomRoutingListenerInput {
 }
 impl UpdateCustomRoutingListenerInput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerInput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput).
-    pub fn builder() -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder{
+    pub fn builder() -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder {
         crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCustomRoutingListenerInput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
@@ -67,18 +65,13 @@ impl UpdateCustomRoutingListenerInputBuilder {
     }
     /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn set_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.port_ranges = input;
         self
     }
     /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn get_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.port_ranges
     }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingListenerInput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput).
@@ -88,11 +81,9 @@ impl UpdateCustomRoutingListenerInputBuilder {
         crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput {
-                listener_arn: self.listener_arn,
-                port_ranges: self.port_ranges,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerInput {
+            listener_arn: self.listener_arn,
+            port_ranges: self.port_ranges,
+        })
     }
 }

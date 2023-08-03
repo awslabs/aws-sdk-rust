@@ -9,10 +9,7 @@ pub fn ser_update_resolver_rule_input(
     if let Some(var_2) = &input.config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Config").start_object();
-        crate::protocol_serde::shape_resolver_rule_config::ser_resolver_rule_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_resolver_rule_config::ser_resolver_rule_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -68,18 +68,14 @@ impl ::aws_http::request_id::RequestId for ListHostedZonesByNameOutput {
 }
 impl ListHostedZonesByNameOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameOutput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput).
-    pub fn builder(
-    ) -> crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameOutputBuilder {
         crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHostedZonesByNameOutput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedZonesByNameOutputBuilder {
     pub(crate) hosted_zones: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
@@ -103,17 +99,12 @@ impl ListHostedZonesByNameOutputBuilder {
         self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn set_hosted_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
-    ) -> Self {
+    pub fn set_hosted_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>) -> Self {
         self.hosted_zones = input;
         self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn get_hosted_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
+    pub fn get_hosted_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
         &self.hosted_zones
     }
     /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the <code>dnsname</code> parameter in the request that produced the current response.</p>
@@ -131,18 +122,12 @@ impl ListHostedZonesByNameOutputBuilder {
         &self.dns_name
     }
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -166,19 +151,13 @@ impl ListHostedZonesByNameOutputBuilder {
     }
     /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn next_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn set_next_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_dns_name = input;
         self
     }
@@ -189,19 +168,13 @@ impl ListHostedZonesByNameOutputBuilder {
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn next_hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn set_next_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_hosted_zone_id = input;
         self
     }

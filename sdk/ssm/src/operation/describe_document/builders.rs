@@ -10,10 +10,7 @@ impl DescribeDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_document::DescribeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document::DescribeDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document::DescribeDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_document();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeDocumentFluentBuilder {
         }
     }
     /// Access the DescribeDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_document::builders::DescribeDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_document::builders::DescribeDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeDocumentFluentBuilder {
             crate::operation::describe_document::DescribeDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document::DescribeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document::DescribeDocumentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document::DescribeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document::DescribeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document::DescribeDocumentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document::DescribeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document::DescribeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document::DescribeDocumentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeDocumentFluentBuilder {
             crate::operation::describe_document::DescribeDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document::DescribeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document::DescribeDocumentError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DescribeDocumentFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }

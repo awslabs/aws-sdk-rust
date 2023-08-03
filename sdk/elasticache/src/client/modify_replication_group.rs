@@ -35,10 +35,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyReplicationGroupOutput`](crate::operation::modify_replication_group::ModifyReplicationGroupOutput) with field(s):
     ///   - [`replication_group(Option<ReplicationGroup>)`](crate::operation::modify_replication_group::ModifyReplicationGroupOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
     /// - On failure, responds with [`SdkError<ModifyReplicationGroupError>`](crate::operation::modify_replication_group::ModifyReplicationGroupError)
-    pub fn modify_replication_group(
-        &self,
-    ) -> crate::operation::modify_replication_group::builders::ModifyReplicationGroupFluentBuilder
-    {
+    pub fn modify_replication_group(&self) -> crate::operation::modify_replication_group::builders::ModifyReplicationGroupFluentBuilder {
         crate::operation::modify_replication_group::builders::ModifyReplicationGroupFluentBuilder::new(self.handle.clone())
     }
 }

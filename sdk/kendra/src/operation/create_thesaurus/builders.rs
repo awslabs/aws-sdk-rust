@@ -10,10 +10,7 @@ impl CreateThesaurusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_thesaurus::CreateThesaurusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thesaurus::CreateThesaurusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thesaurus::CreateThesaurusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_thesaurus();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateThesaurusFluentBuilder {
         }
     }
     /// Access the CreateThesaurus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_thesaurus::builders::CreateThesaurusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_thesaurus::builders::CreateThesaurusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateThesaurusFluentBuilder {
             crate::operation::create_thesaurus::CreateThesaurus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thesaurus::CreateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thesaurus::CreateThesaurusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateThesaurusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateThesaurusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_thesaurus::CreateThesaurusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thesaurus::CreateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thesaurus::CreateThesaurusError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateThesaurusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_thesaurus::CreateThesaurusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thesaurus::CreateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thesaurus::CreateThesaurusError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateThesaurusFluentBuilder {
             crate::operation::create_thesaurus::CreateThesaurus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thesaurus::CreateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thesaurus::CreateThesaurusError>,
     > {
         self.customize_middleware().await
     }
@@ -189,10 +173,7 @@ impl CreateThesaurusFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -206,10 +187,7 @@ impl CreateThesaurusFluentBuilder {
         self
     }
     /// <p>The path to the thesaurus file in S3.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.inner = self.inner.set_source_s3_path(input);
         self
     }

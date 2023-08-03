@@ -27,8 +27,7 @@ impl ListSolFunctionPackagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder,
+    inner: crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder,
 }
 impl ListSolFunctionPackagesFluentBuilder {
     /// Creates a new `ListSolFunctionPackages`.
@@ -39,10 +38,7 @@ impl ListSolFunctionPackagesFluentBuilder {
         }
     }
     /// Access the ListSolFunctionPackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListSolFunctionPackagesFluentBuilder {
             crate::operation::list_sol_function_packages::ListSolFunctionPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListSolFunctionPackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListSolFunctionPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListSolFunctionPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl ListSolFunctionPackagesFluentBuilder {
             crate::operation::list_sol_function_packages::ListSolFunctionPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator {
         crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to include in the response.</p>

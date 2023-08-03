@@ -30,9 +30,7 @@ impl PendingCloudwatchLogsExports {
 
 /// A builder for [`PendingCloudwatchLogsExports`](crate::types::PendingCloudwatchLogsExports).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingCloudwatchLogsExportsBuilder {
     pub(crate) log_types_to_enable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_types_to_disable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -43,27 +41,19 @@ impl PendingCloudwatchLogsExportsBuilder {
     /// To override the contents of this collection use [`set_log_types_to_enable`](Self::set_log_types_to_enable).
     ///
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub fn log_types_to_enable(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_types_to_enable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_types_to_enable.unwrap_or_default();
         v.push(input.into());
         self.log_types_to_enable = ::std::option::Option::Some(v);
         self
     }
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub fn set_log_types_to_enable(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_types_to_enable(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_types_to_enable = input;
         self
     }
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub fn get_log_types_to_enable(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_types_to_enable(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_types_to_enable
     }
     /// Appends an item to `log_types_to_disable`.
@@ -71,27 +61,19 @@ impl PendingCloudwatchLogsExportsBuilder {
     /// To override the contents of this collection use [`set_log_types_to_disable`](Self::set_log_types_to_disable).
     ///
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
-    pub fn log_types_to_disable(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_types_to_disable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_types_to_disable.unwrap_or_default();
         v.push(input.into());
         self.log_types_to_disable = ::std::option::Option::Some(v);
         self
     }
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
-    pub fn set_log_types_to_disable(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_types_to_disable(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_types_to_disable = input;
         self
     }
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
-    pub fn get_log_types_to_disable(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_types_to_disable(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_types_to_disable
     }
     /// Consumes the builder and constructs a [`PendingCloudwatchLogsExports`](crate::types::PendingCloudwatchLogsExports).

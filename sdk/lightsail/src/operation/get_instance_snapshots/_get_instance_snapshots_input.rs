@@ -17,17 +17,14 @@ impl GetInstanceSnapshotsInput {
 }
 impl GetInstanceSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotsInput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsInputBuilder {
+    pub fn builder() -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsInputBuilder {
         crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceSnapshotsInput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -52,14 +49,8 @@ impl GetInstanceSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceSnapshotsInput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput {
-                page_token: self.page_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_instance_snapshots::GetInstanceSnapshotsInput { page_token: self.page_token })
     }
 }

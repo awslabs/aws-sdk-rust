@@ -11,9 +11,7 @@ pub struct DescribeStackResourceOutput {
 }
 impl DescribeStackResourceOutput {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    pub fn stack_resource_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackResourceDetail> {
+    pub fn stack_resource_detail(&self) -> ::std::option::Option<&crate::types::StackResourceDetail> {
         self.stack_resource_detail.as_ref()
     }
 }
@@ -24,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeStackResourceOutput {
 }
 impl DescribeStackResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_resource::builders::DescribeStackResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_resource::builders::DescribeStackResourceOutputBuilder {
         crate::operation::describe_stack_resource::builders::DescribeStackResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourceOutputBuilder {
     pub(crate) stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,
@@ -47,17 +41,12 @@ impl DescribeStackResourceOutputBuilder {
         self
     }
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    pub fn set_stack_resource_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::StackResourceDetail>,
-    ) -> Self {
+    pub fn set_stack_resource_detail(mut self, input: ::std::option::Option<crate::types::StackResourceDetail>) -> Self {
         self.stack_resource_detail = input;
         self
     }
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    pub fn get_stack_resource_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackResourceDetail> {
+    pub fn get_stack_resource_detail(&self) -> &::std::option::Option<crate::types::StackResourceDetail> {
         &self.stack_resource_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

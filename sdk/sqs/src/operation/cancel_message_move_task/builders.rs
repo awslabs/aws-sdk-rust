@@ -42,10 +42,7 @@ impl CancelMessageMoveTaskFluentBuilder {
         }
     }
     /// Access the CancelMessageMoveTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_message_move_task::builders::CancelMessageMoveTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::cancel_message_move_task::builders::CancelMessageMoveTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl CancelMessageMoveTaskFluentBuilder {
             crate::operation::cancel_message_move_task::CancelMessageMoveTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_message_move_task::CancelMessageMoveTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl CancelMessageMoveTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl CancelMessageMoveTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_message_move_task::CancelMessageMoveTaskError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl CancelMessageMoveTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_message_move_task::CancelMessageMoveTaskError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl CancelMessageMoveTaskFluentBuilder {
             crate::operation::cancel_message_move_task::CancelMessageMoveTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_message_move_task::CancelMessageMoveTaskError>,
     > {
         self.customize_middleware().await
     }

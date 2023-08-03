@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_secret::DeleteSecretOutput::name): <p>The name of the secret.</p>
     ///   - [`deletion_date(Option<DateTime>)`](crate::operation::delete_secret::DeleteSecretOutput::deletion_date): <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSecretError>`](crate::operation::delete_secret::DeleteSecretError)
-    pub fn delete_secret(
-        &self,
-    ) -> crate::operation::delete_secret::builders::DeleteSecretFluentBuilder {
-        crate::operation::delete_secret::builders::DeleteSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_secret(&self) -> crate::operation::delete_secret::builders::DeleteSecretFluentBuilder {
+        crate::operation::delete_secret::builders::DeleteSecretFluentBuilder::new(self.handle.clone())
     }
 }

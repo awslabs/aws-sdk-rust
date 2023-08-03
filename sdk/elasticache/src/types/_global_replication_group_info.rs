@@ -30,27 +30,19 @@ impl GlobalReplicationGroupInfo {
 
 /// A builder for [`GlobalReplicationGroupInfo`](crate::types::GlobalReplicationGroupInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalReplicationGroupInfoBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_replication_group_member_role: ::std::option::Option<::std::string::String>,
 }
 impl GlobalReplicationGroupInfoBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -59,25 +51,17 @@ impl GlobalReplicationGroupInfoBuilder {
         &self.global_replication_group_id
     }
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
-    pub fn global_replication_group_member_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_member_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_member_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
-    pub fn set_global_replication_group_member_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_member_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_member_role = input;
         self
     }
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
-    pub fn get_global_replication_group_member_role(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_global_replication_group_member_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_member_role
     }
     /// Consumes the builder and constructs a [`GlobalReplicationGroupInfo`](crate::types::GlobalReplicationGroupInfo).

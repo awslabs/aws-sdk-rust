@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`distribution(Option<Distribution>)`](crate::operation::update_distribution::UpdateDistributionOutput::distribution): <p>The distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_distribution::UpdateDistributionOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateDistributionError>`](crate::operation::update_distribution::UpdateDistributionError)
-    pub fn update_distribution(
-        &self,
-    ) -> crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder {
-        crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_distribution(&self) -> crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder {
+        crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder::new(self.handle.clone())
     }
 }

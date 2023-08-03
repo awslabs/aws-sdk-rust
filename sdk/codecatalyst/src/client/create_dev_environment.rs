@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`project_name(Option<String>)`](crate::operation::create_dev_environment::CreateDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_dev_environment::CreateDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
     /// - On failure, responds with [`SdkError<CreateDevEnvironmentError>`](crate::operation::create_dev_environment::CreateDevEnvironmentError)
-    pub fn create_dev_environment(
-        &self,
-    ) -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentFluentBuilder {
-        crate::operation::create_dev_environment::builders::CreateDevEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dev_environment(&self) -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentFluentBuilder {
+        crate::operation::create_dev_environment::builders::CreateDevEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

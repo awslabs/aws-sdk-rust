@@ -4,14 +4,10 @@ pub fn ser_create_application_instance_input(
     input: &crate::operation::create_application_instance::CreateApplicationInstanceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_instance_id_to_replace {
-        object
-            .key("ApplicationInstanceIdToReplace")
-            .string(var_1.as_str());
+        object.key("ApplicationInstanceIdToReplace").string(var_1.as_str());
     }
     if let Some(var_2) = &input.default_runtime_context_device {
-        object
-            .key("DefaultRuntimeContextDevice")
-            .string(var_2.as_str());
+        object.key("DefaultRuntimeContextDevice").string(var_2.as_str());
     }
     if let Some(var_3) = &input.description {
         object.key("Description").string(var_3.as_str());
@@ -19,10 +15,7 @@ pub fn ser_create_application_instance_input(
     if let Some(var_4) = &input.manifest_overrides_payload {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ManifestOverridesPayload").start_object();
-        crate::protocol_serde::shape_manifest_overrides_payload::ser_manifest_overrides_payload(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_manifest_overrides_payload::ser_manifest_overrides_payload(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.manifest_payload {

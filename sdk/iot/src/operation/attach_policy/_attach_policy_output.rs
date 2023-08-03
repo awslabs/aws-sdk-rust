@@ -19,9 +19,7 @@ impl AttachPolicyOutput {
 
 /// A builder for [`AttachPolicyOutput`](crate::operation::attach_policy::AttachPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDatabaseOutput`](crate::operation::create_database::CreateDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::create_database::CreateDatabaseOutput::database): <p>The newly created Timestream database.</p>
     /// - On failure, responds with [`SdkError<CreateDatabaseError>`](crate::operation::create_database::CreateDatabaseError)
-    pub fn create_database(
-        &self,
-    ) -> crate::operation::create_database::builders::CreateDatabaseFluentBuilder {
-        crate::operation::create_database::builders::CreateDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_database(&self) -> crate::operation::create_database::builders::CreateDatabaseFluentBuilder {
+        crate::operation::create_database::builders::CreateDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

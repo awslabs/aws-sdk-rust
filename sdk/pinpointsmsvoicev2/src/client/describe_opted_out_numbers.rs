@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`opted_out_numbers(Option<Vec<OptedOutNumberInformation>>)`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput::opted_out_numbers): <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeOptedOutNumbersError>`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError)
-    pub fn describe_opted_out_numbers(
-        &self,
-    ) -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder
-    {
+    pub fn describe_opted_out_numbers(&self) -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder {
         crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl DeleteWorkspaceOutput {
 
 /// A builder for [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteWorkspaceOutputBuilder {
         self
     }
     /// <p>A structure containing information about the workspace that was deleted.</p>
-    pub fn set_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDescription>,
-    ) -> Self {
+    pub fn set_workspace(mut self, input: ::std::option::Option<crate::types::WorkspaceDescription>) -> Self {
         self.workspace = input;
         self
     }

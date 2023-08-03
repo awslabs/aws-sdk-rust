@@ -22,9 +22,7 @@ impl DescribePortalInput {
 
 /// A builder for [`DescribePortalInput`](crate::operation::describe_portal::DescribePortalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortalInputBuilder {
     pub(crate) portal_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribePortalInputBuilder {
     /// Consumes the builder and constructs a [`DescribePortalInput`](crate::operation::describe_portal::DescribePortalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_portal::DescribePortalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_portal::DescribePortalInput {
-            portal_id: self.portal_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_portal::DescribePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_portal::DescribePortalInput { portal_id: self.portal_id })
     }
 }

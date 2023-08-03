@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`templates(Option<Vec<JobTemplate>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::templates): <p>This output lists information about the specified job templates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::next_token): <p> This output displays the token for the next set of job templates.</p>
     /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
-    pub fn list_job_templates(
-        &self,
-    ) -> crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder {
-        crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_job_templates(&self) -> crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder {
+        crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

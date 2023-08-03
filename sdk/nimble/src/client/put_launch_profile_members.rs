@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`studio_id(impl ::std::convert::Into<String>)`](crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersFluentBuilder::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`PutLaunchProfileMembersOutput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput)
     /// - On failure, responds with [`SdkError<PutLaunchProfileMembersError>`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersError)
-    pub fn put_launch_profile_members(
-        &self,
-    ) -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersFluentBuilder
-    {
+    pub fn put_launch_profile_members(&self) -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersFluentBuilder {
         crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersFluentBuilder::new(self.handle.clone())
     }
 }

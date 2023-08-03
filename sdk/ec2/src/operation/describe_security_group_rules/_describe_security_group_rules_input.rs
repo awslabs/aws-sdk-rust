@@ -65,20 +65,17 @@ impl DescribeSecurityGroupRulesInput {
 }
 impl DescribeSecurityGroupRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupRulesInput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesInput).
-    pub fn builder() -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder{
+    pub fn builder() -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder {
         crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityGroupRulesInput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupRulesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) security_group_rule_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -118,10 +115,7 @@ impl DescribeSecurityGroupRulesInputBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -145,27 +139,19 @@ impl DescribeSecurityGroupRulesInputBuilder {
     /// To override the contents of this collection use [`set_security_group_rule_ids`](Self::set_security_group_rule_ids).
     ///
     /// <p>The IDs of the security group rules.</p>
-    pub fn security_group_rule_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_rule_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_rule_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_rule_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn set_security_group_rule_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_rule_ids = input;
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn get_security_group_rule_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_rule_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -217,14 +203,12 @@ impl DescribeSecurityGroupRulesInputBuilder {
         crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesInput {
-                filters: self.filters,
-                security_group_rule_ids: self.security_group_rule_ids,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesInput {
+            filters: self.filters,
+            security_group_rule_ids: self.security_group_rule_ids,
+            dry_run: self.dry_run,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -28,9 +28,7 @@ impl GetTrustAnchorOutput {
 
 /// A builder for [`GetTrustAnchorOutput`](crate::operation::get_trust_anchor::GetTrustAnchorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustAnchorOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetTrustAnchorOutputBuilder {
         self
     }
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn set_trust_anchor(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustAnchorDetail>,
-    ) -> Self {
+    pub fn set_trust_anchor(mut self, input: ::std::option::Option<crate::types::TrustAnchorDetail>) -> Self {
         self.trust_anchor = input;
         self
     }

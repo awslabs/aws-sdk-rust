@@ -15,33 +15,25 @@ impl DescribeConnectionsOnInterconnectInput {
 }
 impl DescribeConnectionsOnInterconnectInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectInput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput).
-    pub fn builder() -> crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectInputBuilder{
+    pub fn builder() -> crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectInputBuilder {
         crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionsOnInterconnectInput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionsOnInterconnectInputBuilder {
     pub(crate) interconnect_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectionsOnInterconnectInputBuilder {
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn set_interconnect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interconnect_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl DescribeConnectionsOnInterconnectInputBuilder {
         &self.interconnect_id
     }
     /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectInput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput {
-                interconnect_id: self.interconnect_id
-                ,
-            }
+                interconnect_id: self.interconnect_id,
+            },
         )
     }
 }

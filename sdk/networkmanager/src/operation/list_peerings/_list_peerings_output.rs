@@ -35,9 +35,7 @@ impl ListPeeringsOutput {
 
 /// A builder for [`ListPeeringsOutput`](crate::operation::list_peerings::ListPeeringsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPeeringsOutputBuilder {
     pub(crate) peerings: ::std::option::Option<::std::vec::Vec<crate::types::Peering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListPeeringsOutputBuilder {
         self
     }
     /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
-    pub fn set_peerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Peering>>,
-    ) -> Self {
+    pub fn set_peerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Peering>>) -> Self {
         self.peerings = input;
         self
     }

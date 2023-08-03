@@ -35,9 +35,7 @@ impl PauseServiceOutput {
 
 /// A builder for [`PauseServiceOutput`](crate::operation::pause_service::PauseServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PauseServiceOutputBuilder {
     pub(crate) service: ::std::option::Option<crate::types::Service>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,

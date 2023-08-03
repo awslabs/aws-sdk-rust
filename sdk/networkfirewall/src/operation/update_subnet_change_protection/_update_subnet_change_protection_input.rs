@@ -44,16 +44,14 @@ impl UpdateSubnetChangeProtectionInput {
 }
 impl UpdateSubnetChangeProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubnetChangeProtectionInput`](crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput).
-    pub fn builder() -> crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder{
+    pub fn builder() -> crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder {
         crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubnetChangeProtectionInput`](crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubnetChangeProtectionInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
@@ -100,19 +98,13 @@ impl UpdateSubnetChangeProtectionInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -142,13 +134,11 @@ impl UpdateSubnetChangeProtectionInputBuilder {
         crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput {
-                update_token: self.update_token,
-                firewall_arn: self.firewall_arn,
-                firewall_name: self.firewall_name,
-                subnet_change_protection: self.subnet_change_protection,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput {
+            update_token: self.update_token,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            subnet_change_protection: self.subnet_change_protection,
+        })
     }
 }

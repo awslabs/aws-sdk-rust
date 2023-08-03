@@ -26,7 +26,7 @@ impl ListExtensionAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListExtensionAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder,
+    inner: crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder,
 }
 impl ListExtensionAssociationsFluentBuilder {
     /// Creates a new `ListExtensionAssociations`.
@@ -37,7 +37,7 @@ impl ListExtensionAssociationsFluentBuilder {
         }
     }
     /// Access the ListExtensionAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListExtensionAssociationsFluentBuilder {
             crate::operation::list_extension_associations::ListExtensionAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_extension_associations::ListExtensionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_extension_associations::ListExtensionAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListExtensionAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListExtensionAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_extension_associations::ListExtensionAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_extension_associations::ListExtensionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_extension_associations::ListExtensionAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListExtensionAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_extension_associations::ListExtensionAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_extension_associations::ListExtensionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_extension_associations::ListExtensionAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl ListExtensionAssociationsFluentBuilder {
             crate::operation::list_extension_associations::ListExtensionAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_extension_associations::ListExtensionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_extension_associations::ListExtensionAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_extension_associations::paginator::ListExtensionAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_extension_associations::paginator::ListExtensionAssociationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_extension_associations::paginator::ListExtensionAssociationsPaginator {
         crate::operation::list_extension_associations::paginator::ListExtensionAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -150,18 +130,12 @@ impl ListExtensionAssociationsFluentBuilder {
         self.inner.get_resource_identifier()
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_identifier(input.into());
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_identifier(input);
         self
     }

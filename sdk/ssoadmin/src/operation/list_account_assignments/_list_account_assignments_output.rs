@@ -5,8 +5,7 @@
 pub struct ListAccountAssignmentsOutput {
     /// <p>The list of assignments that match the input AWS account and permission set.</p>
     #[doc(hidden)]
-    pub account_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>,
+    pub account_assignments: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccountAssignmentsOutput {
 }
 impl ListAccountAssignmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsOutput`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsOutputBuilder {
         crate::operation::list_account_assignments::builders::ListAccountAssignmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssignmentsOutput`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentsOutputBuilder {
-    pub(crate) account_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>,
+    pub(crate) account_assignments: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAccountAssignmentsOutputBuilder {
         self
     }
     /// <p>The list of assignments that match the input AWS account and permission set.</p>
-    pub fn set_account_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>,
-    ) -> Self {
+    pub fn set_account_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>) -> Self {
         self.account_assignments = input;
         self
     }
     /// <p>The list of assignments that match the input AWS account and permission set.</p>
-    pub fn get_account_assignments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>> {
+    pub fn get_account_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>> {
         &self.account_assignments
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>

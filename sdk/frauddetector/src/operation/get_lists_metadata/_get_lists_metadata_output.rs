@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetListsMetadataOutput {
 }
 impl GetListsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetListsMetadataOutput`](crate::operation::get_lists_metadata::GetListsMetadataOutput).
-    pub fn builder() -> crate::operation::get_lists_metadata::builders::GetListsMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_lists_metadata::builders::GetListsMetadataOutputBuilder {
         crate::operation::get_lists_metadata::builders::GetListsMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetListsMetadataOutput`](crate::operation::get_lists_metadata::GetListsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetListsMetadataOutputBuilder {
     pub(crate) lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetListsMetadataOutputBuilder {
         self
     }
     /// <p> The metadata of the specified list or all lists under the account. </p>
-    pub fn set_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
-    ) -> Self {
+    pub fn set_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>) -> Self {
         self.lists = input;
         self
     }
     /// <p> The metadata of the specified list or all lists under the account. </p>
-    pub fn get_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>> {
+    pub fn get_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>> {
         &self.lists
     }
     /// <p> The next page token. </p>

@@ -51,17 +51,14 @@ impl ::aws_http::request_id::RequestId for CreateBulkImportJobOutput {
 }
 impl CreateBulkImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBulkImportJobOutput`](crate::operation::create_bulk_import_job::CreateBulkImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder {
         crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBulkImportJobOutput`](crate::operation::create_bulk_import_job::CreateBulkImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBulkImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

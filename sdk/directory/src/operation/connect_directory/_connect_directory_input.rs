@@ -48,9 +48,7 @@ impl ConnectDirectoryInput {
         self.size.as_ref()
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn connect_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectoryConnectSettings> {
+    pub fn connect_settings(&self) -> ::std::option::Option<&crate::types::DirectoryConnectSettings> {
         self.connect_settings.as_ref()
     }
     /// <p>The tags to be assigned to AD Connector.</p>
@@ -73,8 +71,7 @@ impl ::std::fmt::Debug for ConnectDirectoryInput {
 }
 impl ConnectDirectoryInput {
     /// Creates a new builder-style object to manufacture [`ConnectDirectoryInput`](crate::operation::connect_directory::ConnectDirectoryInput).
-    pub fn builder() -> crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder {
         crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder::default()
     }
 }
@@ -168,17 +165,12 @@ impl ConnectDirectoryInputBuilder {
         self
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn set_connect_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConnectSettings>,
-    ) -> Self {
+    pub fn set_connect_settings(mut self, input: ::std::option::Option<crate::types::DirectoryConnectSettings>) -> Self {
         self.connect_settings = input;
         self
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn get_connect_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryConnectSettings> {
+    pub fn get_connect_settings(&self) -> &::std::option::Option<crate::types::DirectoryConnectSettings> {
         &self.connect_settings
     }
     /// Appends an item to `tags`.
@@ -193,10 +185,7 @@ impl ConnectDirectoryInputBuilder {
         self
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -207,10 +196,7 @@ impl ConnectDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`ConnectDirectoryInput`](crate::operation::connect_directory::ConnectDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::connect_directory::ConnectDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::connect_directory::ConnectDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::connect_directory::ConnectDirectoryInput {
             name: self.name,
             short_name: self.short_name,

@@ -25,32 +25,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::join_storage_session::JoinStorageSessionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::join_storage_session::JoinStorageSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::join_storage_session::JoinStorageSessionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::join_storage_session::JoinStorageSessionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -61,9 +45,15 @@ impl From<crate::operation::join_storage_session::JoinStorageSessionError> for E
     fn from(err: crate::operation::join_storage_session::JoinStorageSessionError) -> Self {
         match err {
             crate::operation::join_storage_session::JoinStorageSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::join_storage_session::JoinStorageSessionError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-            crate::operation::join_storage_session::JoinStorageSessionError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::join_storage_session::JoinStorageSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::join_storage_session::JoinStorageSessionError::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::operation::join_storage_session::JoinStorageSessionError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::join_storage_session::JoinStorageSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::join_storage_session::JoinStorageSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

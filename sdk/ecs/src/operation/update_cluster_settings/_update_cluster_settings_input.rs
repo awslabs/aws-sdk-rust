@@ -26,18 +26,14 @@ impl UpdateClusterSettingsInput {
 }
 impl UpdateClusterSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_cluster_settings::builders::UpdateClusterSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_cluster_settings::builders::UpdateClusterSettingsInputBuilder {
         crate::operation::update_cluster_settings::builders::UpdateClusterSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterSettingsInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
@@ -73,33 +69,24 @@ impl UpdateClusterSettingsInputBuilder {
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>) -> Self {
         self.settings = input;
         self
     }
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn get_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cluster_settings::UpdateClusterSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_cluster_settings::UpdateClusterSettingsInput {
-                cluster: self.cluster,
-                settings: self.settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_cluster_settings::UpdateClusterSettingsInput {
+            cluster: self.cluster,
+            settings: self.settings,
+        })
     }
 }

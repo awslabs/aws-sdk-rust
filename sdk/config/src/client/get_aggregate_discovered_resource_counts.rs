@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`grouped_resource_counts(Option<Vec<GroupedResourceCount>>)`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput::grouped_resource_counts): <p>Returns a list of GroupedResourceCount objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetAggregateDiscoveredResourceCountsError>`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError)
-    pub fn get_aggregate_discovered_resource_counts(&self) -> crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsFluentBuilder{
-        crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsFluentBuilder::new(self.handle.clone())
+    pub fn get_aggregate_discovered_resource_counts(
+        &self,
+    ) -> crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsFluentBuilder {
+        crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

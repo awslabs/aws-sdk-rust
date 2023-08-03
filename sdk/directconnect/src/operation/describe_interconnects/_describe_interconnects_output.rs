@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeInterconnectsOutput {
 }
 impl DescribeInterconnectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::operation::describe_interconnects::DescribeInterconnectsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_interconnects::builders::DescribeInterconnectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_interconnects::builders::DescribeInterconnectsOutputBuilder {
         crate::operation::describe_interconnects::builders::DescribeInterconnectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInterconnectsOutput`](crate::operation::describe_interconnects::DescribeInterconnectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInterconnectsOutputBuilder {
     pub(crate) interconnects: ::std::option::Option<::std::vec::Vec<crate::types::Interconnect>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeInterconnectsOutputBuilder {
         self
     }
     /// <p>The interconnects.</p>
-    pub fn set_interconnects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Interconnect>>,
-    ) -> Self {
+    pub fn set_interconnects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Interconnect>>) -> Self {
         self.interconnects = input;
         self
     }
     /// <p>The interconnects.</p>
-    pub fn get_interconnects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Interconnect>> {
+    pub fn get_interconnects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Interconnect>> {
         &self.interconnects
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

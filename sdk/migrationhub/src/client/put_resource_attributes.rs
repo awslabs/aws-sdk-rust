@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::put_resource_attributes::builders::PutResourceAttributesFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::put_resource_attributes::builders::PutResourceAttributesFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`PutResourceAttributesOutput`](crate::operation::put_resource_attributes::PutResourceAttributesOutput)
     /// - On failure, responds with [`SdkError<PutResourceAttributesError>`](crate::operation::put_resource_attributes::PutResourceAttributesError)
-    pub fn put_resource_attributes(
-        &self,
-    ) -> crate::operation::put_resource_attributes::builders::PutResourceAttributesFluentBuilder
-    {
-        crate::operation::put_resource_attributes::builders::PutResourceAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_attributes(&self) -> crate::operation::put_resource_attributes::builders::PutResourceAttributesFluentBuilder {
+        crate::operation::put_resource_attributes::builders::PutResourceAttributesFluentBuilder::new(self.handle.clone())
     }
 }

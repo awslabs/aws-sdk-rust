@@ -5,9 +5,7 @@
 pub struct ListObjectChildrenOutput {
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     #[doc(hidden)]
-    pub children: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub children: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,11 +13,7 @@ pub struct ListObjectChildrenOutput {
 }
 impl ListObjectChildrenOutput {
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn children(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn children(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.children.as_ref()
     }
     /// <p>The pagination token.</p>
@@ -34,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListObjectChildrenOutput {
 }
 impl ListObjectChildrenOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectChildrenOutput`](crate::operation::list_object_children::ListObjectChildrenOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_children::builders::ListObjectChildrenOutputBuilder {
+    pub fn builder() -> crate::operation::list_object_children::builders::ListObjectChildrenOutputBuilder {
         crate::operation::list_object_children::builders::ListObjectChildrenOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectChildrenOutput`](crate::operation::list_object_children::ListObjectChildrenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectChildrenOutputBuilder {
-    pub(crate) children: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) children: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,32 +47,19 @@ impl ListObjectChildrenOutputBuilder {
     /// To override the contents of this collection use [`set_children`](Self::set_children).
     ///
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn children(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn children(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.children.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.children = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn set_children(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_children(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.children = input;
         self
     }
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn get_children(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_children(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.children
     }
     /// <p>The pagination token.</p>

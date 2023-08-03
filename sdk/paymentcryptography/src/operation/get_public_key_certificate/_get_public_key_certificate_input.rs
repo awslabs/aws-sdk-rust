@@ -15,35 +15,25 @@ impl GetPublicKeyCertificateInput {
 }
 impl GetPublicKeyCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyCertificateInput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder {
         crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPublicKeyCertificateInput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPublicKeyCertificateInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetPublicKeyCertificateInputBuilder {
     /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetPublicKeyCertificateInputBuilder {
         crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput {
-                key_identifier: self.key_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput {
+            key_identifier: self.key_identifier,
+        })
     }
 }

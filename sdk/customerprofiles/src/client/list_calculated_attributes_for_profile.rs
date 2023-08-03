@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListCalculatedAttributeForProfileItem>>)`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput::items): <p>The list of calculated attributes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput::next_token): <p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>
     /// - On failure, responds with [`SdkError<ListCalculatedAttributesForProfileError>`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError)
-    pub fn list_calculated_attributes_for_profile(&self) -> crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileFluentBuilder{
+    pub fn list_calculated_attributes_for_profile(
+        &self,
+    ) -> crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileFluentBuilder {
         crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileFluentBuilder::new(self.handle.clone())
     }
 }

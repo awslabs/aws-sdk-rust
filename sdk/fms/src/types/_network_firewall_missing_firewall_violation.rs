@@ -44,9 +44,7 @@ impl NetworkFirewallMissingFirewallViolation {
 
 /// A builder for [`NetworkFirewallMissingFirewallViolation`](crate::types::NetworkFirewallMissingFirewallViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallMissingFirewallViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct NetworkFirewallMissingFirewallViolationBuilder {
 }
 impl NetworkFirewallMissingFirewallViolationBuilder {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -89,18 +81,12 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
         &self.vpc
     }
     /// <p>The Availability Zone of a violating subnet. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of a violating subnet. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -109,18 +95,12 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
         &self.availability_zone
     }
     /// <p>The reason the resource has this violation, if one is available. </p>
-    pub fn target_violation_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_violation_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_violation_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the resource has this violation, if one is available. </p>
-    pub fn set_target_violation_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_violation_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_violation_reason = input;
         self
     }

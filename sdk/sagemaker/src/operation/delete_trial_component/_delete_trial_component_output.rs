@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteTrialComponentOutput {
 }
 impl DeleteTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrialComponentOutput`](crate::operation::delete_trial_component::DeleteTrialComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_trial_component::builders::DeleteTrialComponentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_trial_component::builders::DeleteTrialComponentOutputBuilder {
         crate::operation::delete_trial_component::builders::DeleteTrialComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrialComponentOutput`](crate::operation::delete_trial_component::DeleteTrialComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrialComponentOutputBuilder {
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteTrialComponentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
-    pub fn trial_component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_arn = input;
         self
     }

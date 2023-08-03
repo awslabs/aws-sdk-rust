@@ -26,7 +26,7 @@ impl DescribeSubscriptionFiltersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSubscriptionFiltersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder,
+    inner: crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder,
 }
 impl DescribeSubscriptionFiltersFluentBuilder {
     /// Creates a new `DescribeSubscriptionFilters`.
@@ -37,7 +37,7 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         }
     }
     /// Access the DescribeSubscriptionFilters as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSubscriptionFiltersFluentBuilder {
             crate::operation::describe_subscription_filters::DescribeSubscriptionFilters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSubscriptionFiltersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeSubscriptionFiltersFluentBuilder {
             crate::operation::describe_subscription_filters::DescribeSubscriptionFilters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator {
         crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -147,18 +130,12 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self.inner.get_log_group_name()
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn filter_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name_prefix(input.into());
         self
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_filter_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name_prefix(input);
         self
     }

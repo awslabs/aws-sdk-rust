@@ -25,9 +25,7 @@ impl super::Client {
     ///   - [`encoding_type(Option<EncodingType>)`](crate::operation::list_objects::ListObjectsOutput::encoding_type): <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::list_objects::ListObjectsOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<ListObjectsError>`](crate::operation::list_objects::ListObjectsError)
-    pub fn list_objects(
-        &self,
-    ) -> crate::operation::list_objects::builders::ListObjectsFluentBuilder {
+    pub fn list_objects(&self) -> crate::operation::list_objects::builders::ListObjectsFluentBuilder {
         crate::operation::list_objects::builders::ListObjectsFluentBuilder::new(self.handle.clone())
     }
 }

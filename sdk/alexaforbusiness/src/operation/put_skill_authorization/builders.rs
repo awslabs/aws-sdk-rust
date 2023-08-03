@@ -38,10 +38,7 @@ impl PutSkillAuthorizationFluentBuilder {
         }
     }
     /// Access the PutSkillAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl PutSkillAuthorizationFluentBuilder {
             crate::operation::put_skill_authorization::PutSkillAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_skill_authorization::PutSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_skill_authorization::PutSkillAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl PutSkillAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl PutSkillAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_skill_authorization::PutSkillAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_skill_authorization::PutSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_skill_authorization::PutSkillAuthorizationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl PutSkillAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_skill_authorization::PutSkillAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_skill_authorization::PutSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_skill_authorization::PutSkillAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl PutSkillAuthorizationFluentBuilder {
             crate::operation::put_skill_authorization::PutSkillAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_skill_authorization::PutSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_skill_authorization::PutSkillAuthorizationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,19 +126,13 @@ impl PutSkillAuthorizationFluentBuilder {
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
     pub fn set_authorization_result(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_authorization_result(input);
         self
     }
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-    pub fn get_authorization_result(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_authorization_result(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_authorization_result()
     }
     /// <p>The unique identifier of a skill.</p>

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`attribute_value(impl ::std::convert::Into<String>)`](crate::operation::set_topic_attributes::builders::SetTopicAttributesFluentBuilder::attribute_value) / [`set_attribute_value(Option<String>)`](crate::operation::set_topic_attributes::builders::SetTopicAttributesFluentBuilder::set_attribute_value): <p>The new value for the attribute.</p>
     /// - On success, responds with [`SetTopicAttributesOutput`](crate::operation::set_topic_attributes::SetTopicAttributesOutput)
     /// - On failure, responds with [`SdkError<SetTopicAttributesError>`](crate::operation::set_topic_attributes::SetTopicAttributesError)
-    pub fn set_topic_attributes(
-        &self,
-    ) -> crate::operation::set_topic_attributes::builders::SetTopicAttributesFluentBuilder {
-        crate::operation::set_topic_attributes::builders::SetTopicAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_topic_attributes(&self) -> crate::operation::set_topic_attributes::builders::SetTopicAttributesFluentBuilder {
+        crate::operation::set_topic_attributes::builders::SetTopicAttributesFluentBuilder::new(self.handle.clone())
     }
 }

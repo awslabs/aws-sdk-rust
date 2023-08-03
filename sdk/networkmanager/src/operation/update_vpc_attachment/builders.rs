@@ -37,9 +37,7 @@ impl UpdateVpcAttachmentFluentBuilder {
         }
     }
     /// Access the UpdateVpcAttachment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateVpcAttachmentFluentBuilder {
             crate::operation::update_vpc_attachment::UpdateVpcAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_attachment::UpdateVpcAttachmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateVpcAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateVpcAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_attachment::UpdateVpcAttachmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateVpcAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_attachment::UpdateVpcAttachmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateVpcAttachmentFluentBuilder {
             crate::operation::update_vpc_attachment::UpdateVpcAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_attachment::UpdateVpcAttachmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }
@@ -147,25 +128,17 @@ impl UpdateVpcAttachmentFluentBuilder {
     /// To override the contents of this collection use [`set_add_subnet_arns`](Self::set_add_subnet_arns).
     ///
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn add_subnet_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_subnet_arns(input.into());
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn set_add_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_subnet_arns(input);
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn get_add_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_subnet_arns()
     }
     /// Appends an item to `RemoveSubnetArns`.
@@ -173,25 +146,17 @@ impl UpdateVpcAttachmentFluentBuilder {
     /// To override the contents of this collection use [`set_remove_subnet_arns`](Self::set_remove_subnet_arns).
     ///
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn remove_subnet_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_subnet_arns(input.into());
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn set_remove_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_subnet_arns(input);
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn get_remove_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_subnet_arns()
     }
     /// <p>Additional options for updating the VPC attachment. </p>

@@ -26,7 +26,7 @@ impl DescribeContainerInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContainerInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder,
+    inner: crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder,
 }
 impl DescribeContainerInstancesFluentBuilder {
     /// Creates a new `DescribeContainerInstances`.
@@ -37,7 +37,7 @@ impl DescribeContainerInstancesFluentBuilder {
         }
     }
     /// Access the DescribeContainerInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeContainerInstancesFluentBuilder {
             crate::operation::describe_container_instances::DescribeContainerInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container_instances::DescribeContainerInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeContainerInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeContainerInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container_instances::DescribeContainerInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeContainerInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container_instances::DescribeContainerInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeContainerInstancesFluentBuilder {
             crate::operation::describe_container_instances::DescribeContainerInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container_instances::DescribeContainerInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -139,25 +128,17 @@ impl DescribeContainerInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
     ///
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn container_instances(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instances(input.into());
         self
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn set_container_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_container_instances(input);
         self
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn get_container_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_container_instances()
     }
     /// Appends an item to `include`.
@@ -170,17 +151,12 @@ impl DescribeContainerInstancesFluentBuilder {
         self
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>> {
         self.inner.get_include()
     }
 }

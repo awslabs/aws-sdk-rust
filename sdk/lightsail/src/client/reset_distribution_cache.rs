@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`create_time(Option<DateTime>)`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput::create_time): <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     ///   - [`operation(Option<Operation>)`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<ResetDistributionCacheError>`](crate::operation::reset_distribution_cache::ResetDistributionCacheError)
-    pub fn reset_distribution_cache(
-        &self,
-    ) -> crate::operation::reset_distribution_cache::builders::ResetDistributionCacheFluentBuilder
-    {
+    pub fn reset_distribution_cache(&self) -> crate::operation::reset_distribution_cache::builders::ResetDistributionCacheFluentBuilder {
         crate::operation::reset_distribution_cache::builders::ResetDistributionCacheFluentBuilder::new(self.handle.clone())
     }
 }

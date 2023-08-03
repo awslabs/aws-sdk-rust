@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput) with field(s):
     ///   - [`streaming_configuration(Option<StreamingConfiguration>)`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput::streaming_configuration): <p>The details of the streaming configuration.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorStreamingConfigurationError>`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationError)
-    pub fn get_voice_connector_streaming_configuration(&self) -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationFluentBuilder{
-        crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn get_voice_connector_streaming_configuration(
+        &self,
+    ) -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationFluentBuilder {
+        crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

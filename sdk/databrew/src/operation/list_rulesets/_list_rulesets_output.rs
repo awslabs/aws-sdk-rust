@@ -35,9 +35,7 @@ impl ListRulesetsOutput {
 
 /// A builder for [`ListRulesetsOutput`](crate::operation::list_rulesets::ListRulesetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesetsOutputBuilder {
     pub(crate) rulesets: ::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListRulesetsOutputBuilder {
         self
     }
     /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
-    pub fn set_rulesets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>>,
-    ) -> Self {
+    pub fn set_rulesets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>>) -> Self {
         self.rulesets = input;
         self
     }
     /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
-    pub fn get_rulesets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>> {
+    pub fn get_rulesets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>> {
         &self.rulesets
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConversionTasksOutput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput) with field(s):
     ///   - [`conversion_tasks(Option<Vec<ConversionTask>>)`](crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput::conversion_tasks): <p>Information about the conversion tasks.</p>
     /// - On failure, responds with [`SdkError<DescribeConversionTasksError>`](crate::operation::describe_conversion_tasks::DescribeConversionTasksError)
-    pub fn describe_conversion_tasks(
-        &self,
-    ) -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksFluentBuilder
-    {
+    pub fn describe_conversion_tasks(&self) -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksFluentBuilder {
         crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksFluentBuilder::new(self.handle.clone())
     }
 }

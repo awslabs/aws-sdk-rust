@@ -6,34 +6,25 @@
 pub struct ParameterRange {
     /// <p>A <code>IntegerParameterRangeSpecification</code> object that defines the possible values for an integer hyperparameter.</p>
     #[doc(hidden)]
-    pub integer_parameter_range_specification:
-        ::std::option::Option<crate::types::IntegerParameterRangeSpecification>,
+    pub integer_parameter_range_specification: ::std::option::Option<crate::types::IntegerParameterRangeSpecification>,
     /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
     #[doc(hidden)]
-    pub continuous_parameter_range_specification:
-        ::std::option::Option<crate::types::ContinuousParameterRangeSpecification>,
+    pub continuous_parameter_range_specification: ::std::option::Option<crate::types::ContinuousParameterRangeSpecification>,
     /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
     #[doc(hidden)]
-    pub categorical_parameter_range_specification:
-        ::std::option::Option<crate::types::CategoricalParameterRangeSpecification>,
+    pub categorical_parameter_range_specification: ::std::option::Option<crate::types::CategoricalParameterRangeSpecification>,
 }
 impl ParameterRange {
     /// <p>A <code>IntegerParameterRangeSpecification</code> object that defines the possible values for an integer hyperparameter.</p>
-    pub fn integer_parameter_range_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IntegerParameterRangeSpecification> {
+    pub fn integer_parameter_range_specification(&self) -> ::std::option::Option<&crate::types::IntegerParameterRangeSpecification> {
         self.integer_parameter_range_specification.as_ref()
     }
     /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
-    pub fn continuous_parameter_range_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousParameterRangeSpecification> {
+    pub fn continuous_parameter_range_specification(&self) -> ::std::option::Option<&crate::types::ContinuousParameterRangeSpecification> {
         self.continuous_parameter_range_specification.as_ref()
     }
     /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
-    pub fn categorical_parameter_range_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoricalParameterRangeSpecification> {
+    pub fn categorical_parameter_range_specification(&self) -> ::std::option::Option<&crate::types::CategoricalParameterRangeSpecification> {
         self.categorical_parameter_range_specification.as_ref()
     }
 }
@@ -46,23 +37,15 @@ impl ParameterRange {
 
 /// A builder for [`ParameterRange`](crate::types::ParameterRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterRangeBuilder {
-    pub(crate) integer_parameter_range_specification:
-        ::std::option::Option<crate::types::IntegerParameterRangeSpecification>,
-    pub(crate) continuous_parameter_range_specification:
-        ::std::option::Option<crate::types::ContinuousParameterRangeSpecification>,
-    pub(crate) categorical_parameter_range_specification:
-        ::std::option::Option<crate::types::CategoricalParameterRangeSpecification>,
+    pub(crate) integer_parameter_range_specification: ::std::option::Option<crate::types::IntegerParameterRangeSpecification>,
+    pub(crate) continuous_parameter_range_specification: ::std::option::Option<crate::types::ContinuousParameterRangeSpecification>,
+    pub(crate) categorical_parameter_range_specification: ::std::option::Option<crate::types::CategoricalParameterRangeSpecification>,
 }
 impl ParameterRangeBuilder {
     /// <p>A <code>IntegerParameterRangeSpecification</code> object that defines the possible values for an integer hyperparameter.</p>
-    pub fn integer_parameter_range_specification(
-        mut self,
-        input: crate::types::IntegerParameterRangeSpecification,
-    ) -> Self {
+    pub fn integer_parameter_range_specification(mut self, input: crate::types::IntegerParameterRangeSpecification) -> Self {
         self.integer_parameter_range_specification = ::std::option::Option::Some(input);
         self
     }
@@ -75,16 +58,11 @@ impl ParameterRangeBuilder {
         self
     }
     /// <p>A <code>IntegerParameterRangeSpecification</code> object that defines the possible values for an integer hyperparameter.</p>
-    pub fn get_integer_parameter_range_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntegerParameterRangeSpecification> {
+    pub fn get_integer_parameter_range_specification(&self) -> &::std::option::Option<crate::types::IntegerParameterRangeSpecification> {
         &self.integer_parameter_range_specification
     }
     /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
-    pub fn continuous_parameter_range_specification(
-        mut self,
-        input: crate::types::ContinuousParameterRangeSpecification,
-    ) -> Self {
+    pub fn continuous_parameter_range_specification(mut self, input: crate::types::ContinuousParameterRangeSpecification) -> Self {
         self.continuous_parameter_range_specification = ::std::option::Option::Some(input);
         self
     }
@@ -97,16 +75,11 @@ impl ParameterRangeBuilder {
         self
     }
     /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
-    pub fn get_continuous_parameter_range_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousParameterRangeSpecification> {
+    pub fn get_continuous_parameter_range_specification(&self) -> &::std::option::Option<crate::types::ContinuousParameterRangeSpecification> {
         &self.continuous_parameter_range_specification
     }
     /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
-    pub fn categorical_parameter_range_specification(
-        mut self,
-        input: crate::types::CategoricalParameterRangeSpecification,
-    ) -> Self {
+    pub fn categorical_parameter_range_specification(mut self, input: crate::types::CategoricalParameterRangeSpecification) -> Self {
         self.categorical_parameter_range_specification = ::std::option::Option::Some(input);
         self
     }
@@ -119,9 +92,7 @@ impl ParameterRangeBuilder {
         self
     }
     /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
-    pub fn get_categorical_parameter_range_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoricalParameterRangeSpecification> {
+    pub fn get_categorical_parameter_range_specification(&self) -> &::std::option::Option<crate::types::CategoricalParameterRangeSpecification> {
         &self.categorical_parameter_range_specification
     }
     /// Consumes the builder and constructs a [`ParameterRange`](crate::types::ParameterRange).
@@ -129,8 +100,7 @@ impl ParameterRangeBuilder {
         crate::types::ParameterRange {
             integer_parameter_range_specification: self.integer_parameter_range_specification,
             continuous_parameter_range_specification: self.continuous_parameter_range_specification,
-            categorical_parameter_range_specification: self
-                .categorical_parameter_range_specification,
+            categorical_parameter_range_specification: self.categorical_parameter_range_specification,
         }
     }
 }

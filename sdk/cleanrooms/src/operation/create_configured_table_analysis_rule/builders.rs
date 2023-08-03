@@ -5,16 +5,16 @@ pub use crate::operation::create_configured_table_analysis_rule::_create_configu
 
 impl CreateConfiguredTableAnalysisRuleInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_configured_table_analysis_rule();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAnalysisRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleInputBuilder,
+    inner: crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleInputBuilder,
 }
 impl CreateConfiguredTableAnalysisRuleFluentBuilder {
     /// Creates a new `CreateConfiguredTableAnalysisRule`.
@@ -37,15 +37,20 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
         }
     }
     /// Access the CreateConfiguredTableAnalysisRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRule, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRule,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRule, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRule,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-    pub fn configured_table_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configured_table_identifier(input.into());
         self
     }
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }
@@ -115,47 +124,31 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
         self.inner.get_configured_table_identifier()
     }
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-    pub fn analysis_rule_type(
-        mut self,
-        input: crate::types::ConfiguredTableAnalysisRuleType,
-    ) -> Self {
+    pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.inner = self.inner.analysis_rule_type(input);
         self
     }
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-    pub fn set_analysis_rule_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
-    ) -> Self {
+    pub fn set_analysis_rule_type(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
         self.inner = self.inner.set_analysis_rule_type(input);
         self
     }
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-    pub fn get_analysis_rule_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+    pub fn get_analysis_rule_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         self.inner.get_analysis_rule_type()
     }
     /// <p>The entire created configured table analysis rule object.</p>
-    pub fn analysis_rule_policy(
-        mut self,
-        input: crate::types::ConfiguredTableAnalysisRulePolicy,
-    ) -> Self {
+    pub fn analysis_rule_policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
         self.inner = self.inner.analysis_rule_policy(input);
         self
     }
     /// <p>The entire created configured table analysis rule object.</p>
-    pub fn set_analysis_rule_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
-    ) -> Self {
+    pub fn set_analysis_rule_policy(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>) -> Self {
         self.inner = self.inner.set_analysis_rule_policy(input);
         self
     }
     /// <p>The entire created configured table analysis rule object.</p>
-    pub fn get_analysis_rule_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
+    pub fn get_analysis_rule_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.inner.get_analysis_rule_policy()
     }
 }

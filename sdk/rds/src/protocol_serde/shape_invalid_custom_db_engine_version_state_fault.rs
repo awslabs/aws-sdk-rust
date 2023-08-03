@@ -3,10 +3,7 @@
 pub fn de_invalid_custom_db_engine_version_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

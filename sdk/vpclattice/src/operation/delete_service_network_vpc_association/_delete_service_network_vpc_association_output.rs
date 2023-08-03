@@ -20,9 +20,7 @@ impl DeleteServiceNetworkVpcAssociationOutput {
         self.id.as_deref()
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteServiceNetworkVpcAssociationOut
 }
 impl DeleteServiceNetworkVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceNetworkVpcAssociationOutput`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput).
-    pub fn builder() -> crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationOutputBuilder {
         crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceNetworkVpcAssociationOutput`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
@@ -74,17 +70,12 @@ impl DeleteServiceNetworkVpcAssociationOutputBuilder {
         self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -111,14 +102,11 @@ impl DeleteServiceNetworkVpcAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkVpcAssociationOutput`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput).
-    pub fn build(self) -> crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput{
+    pub fn build(self) -> crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput {
         crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput {
-            id: self.id
-            ,
-            status: self.status
-            ,
-            arn: self.arn
-            ,
+            id: self.id,
+            status: self.status,
+            arn: self.arn,
             _request_id: self._request_id,
         }
     }

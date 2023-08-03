@@ -43,9 +43,7 @@ pub fn ser_create_classification_job_input(
         array_12.finish();
     }
     if let Some(var_14) = &input.managed_data_identifier_selector {
-        object
-            .key("managedDataIdentifierSelector")
-            .string(var_14.as_str());
+        object.key("managedDataIdentifierSelector").string(var_14.as_str());
     }
     if let Some(var_15) = &input.name {
         object.key("name").string(var_15.as_str());
@@ -53,10 +51,7 @@ pub fn ser_create_classification_job_input(
     if let Some(var_16) = &input.s3_job_definition {
         #[allow(unused_mut)]
         let mut object_17 = object.key("s3JobDefinition").start_object();
-        crate::protocol_serde::shape_s3_job_definition::ser_s3_job_definition(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_s3_job_definition::ser_s3_job_definition(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.sampling_percentage {
@@ -68,10 +63,7 @@ pub fn ser_create_classification_job_input(
     if let Some(var_19) = &input.schedule_frequency {
         #[allow(unused_mut)]
         let mut object_20 = object.key("scheduleFrequency").start_object();
-        crate::protocol_serde::shape_job_schedule_frequency::ser_job_schedule_frequency(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_job_schedule_frequency::ser_job_schedule_frequency(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.tags {

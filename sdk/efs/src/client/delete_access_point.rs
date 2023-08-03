@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`access_point_id(impl ::std::convert::Into<String>)`](crate::operation::delete_access_point::builders::DeleteAccessPointFluentBuilder::access_point_id) / [`set_access_point_id(Option<String>)`](crate::operation::delete_access_point::builders::DeleteAccessPointFluentBuilder::set_access_point_id): <p>The ID of the access point that you want to delete.</p>
     /// - On success, responds with [`DeleteAccessPointOutput`](crate::operation::delete_access_point::DeleteAccessPointOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessPointError>`](crate::operation::delete_access_point::DeleteAccessPointError)
-    pub fn delete_access_point(
-        &self,
-    ) -> crate::operation::delete_access_point::builders::DeleteAccessPointFluentBuilder {
-        crate::operation::delete_access_point::builders::DeleteAccessPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_access_point(&self) -> crate::operation::delete_access_point::builders::DeleteAccessPointFluentBuilder {
+        crate::operation::delete_access_point::builders::DeleteAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

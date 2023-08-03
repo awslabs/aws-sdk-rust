@@ -37,10 +37,7 @@ impl DeleteConnectorProfileFluentBuilder {
         }
     }
     /// Access the DeleteConnectorProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_connector_profile::builders::DeleteConnectorProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_connector_profile::builders::DeleteConnectorProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteConnectorProfileFluentBuilder {
             crate::operation::delete_connector_profile::DeleteConnectorProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_profile::DeleteConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_profile::DeleteConnectorProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteConnectorProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteConnectorProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connector_profile::DeleteConnectorProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_profile::DeleteConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_profile::DeleteConnectorProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteConnectorProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connector_profile::DeleteConnectorProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_profile::DeleteConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_profile::DeleteConnectorProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteConnectorProfileFluentBuilder {
             crate::operation::delete_connector_profile::DeleteConnectorProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connector_profile::DeleteConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connector_profile::DeleteConnectorProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }

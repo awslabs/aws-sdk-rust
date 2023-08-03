@@ -24,10 +24,7 @@ pub fn ser_create_dataset_input(
     if let Some(var_7) = &input.encryption_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("EncryptionConfig").start_object();
-        crate::protocol_serde::shape_encryption_config::ser_encryption_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.tags {

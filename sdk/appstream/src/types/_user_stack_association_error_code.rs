@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UserStackAssociationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for UserStackAssociationErrorCode {
             "INTERNAL_ERROR" => UserStackAssociationErrorCode::InternalError,
             "STACK_NOT_FOUND" => UserStackAssociationErrorCode::StackNotFound,
             "USER_NAME_NOT_FOUND" => UserStackAssociationErrorCode::UserNameNotFound,
-            other => UserStackAssociationErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => UserStackAssociationErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl UserStackAssociationErrorCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIRECTORY_NOT_FOUND",
-            "INTERNAL_ERROR",
-            "STACK_NOT_FOUND",
-            "USER_NAME_NOT_FOUND",
-        ]
+        &["DIRECTORY_NOT_FOUND", "INTERNAL_ERROR", "STACK_NOT_FOUND", "USER_NAME_NOT_FOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for UserStackAssociationErrorCode {

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameFluentBuilder::set_description): <p>The description of the quick connect.</p>
     /// - On success, responds with [`UpdateQuickConnectNameOutput`](crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput)
     /// - On failure, responds with [`SdkError<UpdateQuickConnectNameError>`](crate::operation::update_quick_connect_name::UpdateQuickConnectNameError)
-    pub fn update_quick_connect_name(
-        &self,
-    ) -> crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameFluentBuilder
-    {
+    pub fn update_quick_connect_name(&self) -> crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameFluentBuilder {
         crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameFluentBuilder::new(self.handle.clone())
     }
 }

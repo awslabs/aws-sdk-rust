@@ -86,9 +86,7 @@ impl ScheduleEntry {
 
 /// A builder for [`ScheduleEntry`](crate::types::ScheduleEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleEntryBuilder {
     pub(crate) approximate_duration_seconds: ::std::option::Option<i64>,
     pub(crate) approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -96,8 +94,7 @@ pub struct ScheduleEntryBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_ad_breaks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
+    pub(crate) schedule_ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
     pub(crate) schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
@@ -123,17 +120,12 @@ impl ScheduleEntryBuilder {
         self
     }
     /// <p>The approximate time that the program will start playing.</p>
-    pub fn set_approximate_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_approximate_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.approximate_start_time = input;
         self
     }
     /// <p>The approximate time that the program will start playing.</p>
-    pub fn get_approximate_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_approximate_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.approximate_start_time
     }
     /// <p>The ARN of the program.</p>
@@ -165,18 +157,12 @@ impl ScheduleEntryBuilder {
         &self.channel_name
     }
     /// <p>The name of the live source used for the program.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the live source used for the program.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.live_source_name = input;
         self
     }
@@ -210,17 +196,12 @@ impl ScheduleEntryBuilder {
         self
     }
     /// <p>The schedule's ad break properties.</p>
-    pub fn set_schedule_ad_breaks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
-    ) -> Self {
+    pub fn set_schedule_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>) -> Self {
         self.schedule_ad_breaks = input;
         self
     }
     /// <p>The schedule's ad break properties.</p>
-    pub fn get_schedule_ad_breaks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>> {
+    pub fn get_schedule_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>> {
         &self.schedule_ad_breaks
     }
     /// <p>The type of schedule entry.</p>
@@ -229,32 +210,21 @@ impl ScheduleEntryBuilder {
         self
     }
     /// <p>The type of schedule entry.</p>
-    pub fn set_schedule_entry_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleEntryType>,
-    ) -> Self {
+    pub fn set_schedule_entry_type(mut self, input: ::std::option::Option<crate::types::ScheduleEntryType>) -> Self {
         self.schedule_entry_type = input;
         self
     }
     /// <p>The type of schedule entry.</p>
-    pub fn get_schedule_entry_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleEntryType> {
+    pub fn get_schedule_entry_type(&self) -> &::std::option::Option<crate::types::ScheduleEntryType> {
         &self.schedule_entry_type
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -263,18 +233,12 @@ impl ScheduleEntryBuilder {
         &self.source_location_name
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vod_source_name = input;
         self
     }

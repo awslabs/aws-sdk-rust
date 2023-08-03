@@ -26,8 +26,7 @@ impl DescribeBatchSegmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBatchSegmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder,
+    inner: crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder,
 }
 impl DescribeBatchSegmentJobFluentBuilder {
     /// Creates a new `DescribeBatchSegmentJob`.
@@ -38,10 +37,7 @@ impl DescribeBatchSegmentJobFluentBuilder {
         }
     }
     /// Access the DescribeBatchSegmentJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeBatchSegmentJobFluentBuilder {
             crate::operation::describe_batch_segment_job::DescribeBatchSegmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeBatchSegmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeBatchSegmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeBatchSegmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeBatchSegmentJobFluentBuilder {
             crate::operation::describe_batch_segment_job::DescribeBatchSegmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the batch segment job to describe.</p>
-    pub fn batch_segment_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_segment_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_segment_job_arn(input.into());
         self
     }
     /// <p>The ARN of the batch segment job to describe.</p>
-    pub fn set_batch_segment_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_segment_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_segment_job_arn(input);
         self
     }

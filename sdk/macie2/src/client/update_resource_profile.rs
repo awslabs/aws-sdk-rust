@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`sensitivity_score_override(i32)`](crate::operation::update_resource_profile::builders::UpdateResourceProfileFluentBuilder::sensitivity_score_override) / [`set_sensitivity_score_override(Option<i32>)`](crate::operation::update_resource_profile::builders::UpdateResourceProfileFluentBuilder::set_sensitivity_score_override): <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
     /// - On success, responds with [`UpdateResourceProfileOutput`](crate::operation::update_resource_profile::UpdateResourceProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceProfileError>`](crate::operation::update_resource_profile::UpdateResourceProfileError)
-    pub fn update_resource_profile(
-        &self,
-    ) -> crate::operation::update_resource_profile::builders::UpdateResourceProfileFluentBuilder
-    {
-        crate::operation::update_resource_profile::builders::UpdateResourceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource_profile(&self) -> crate::operation::update_resource_profile::builders::UpdateResourceProfileFluentBuilder {
+        crate::operation::update_resource_profile::builders::UpdateResourceProfileFluentBuilder::new(self.handle.clone())
     }
 }

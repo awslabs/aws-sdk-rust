@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateResponsePlanOutput {
 }
 impl UpdateResponsePlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResponsePlanOutput`](crate::operation::update_response_plan::UpdateResponsePlanOutput).
-    pub fn builder(
-    ) -> crate::operation::update_response_plan::builders::UpdateResponsePlanOutputBuilder {
+    pub fn builder() -> crate::operation::update_response_plan::builders::UpdateResponsePlanOutputBuilder {
         crate::operation::update_response_plan::builders::UpdateResponsePlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResponsePlanOutput`](crate::operation::update_response_plan::UpdateResponsePlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResponsePlanOutputBuilder {
     _request_id: Option<String>,
 }

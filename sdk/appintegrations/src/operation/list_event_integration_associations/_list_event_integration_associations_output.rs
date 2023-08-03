@@ -5,8 +5,7 @@
 pub struct ListEventIntegrationAssociationsOutput {
     /// <p>The event integration associations.</p>
     #[doc(hidden)]
-    pub event_integration_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventIntegrationAssociation>>,
+    pub event_integration_associations: ::std::option::Option<::std::vec::Vec<crate::types::EventIntegrationAssociation>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEventIntegrationAssociationsOutput {
 }
 impl ListEventIntegrationAssociationsOutput {
     /// <p>The event integration associations.</p>
-    pub fn event_integration_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventIntegrationAssociation]> {
+    pub fn event_integration_associations(&self) -> ::std::option::Option<&[crate::types::EventIntegrationAssociation]> {
         self.event_integration_associations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventIntegrationAssociationsOutpu
 }
 impl ListEventIntegrationAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsOutput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput).
-    pub fn builder() -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsOutputBuilder {
         crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventIntegrationAssociationsOutput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventIntegrationAssociationsOutputBuilder {
-    pub(crate) event_integration_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventIntegrationAssociation>>,
+    pub(crate) event_integration_associations: ::std::option::Option<::std::vec::Vec<crate::types::EventIntegrationAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListEventIntegrationAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_event_integration_associations`](Self::set_event_integration_associations).
     ///
     /// <p>The event integration associations.</p>
-    pub fn event_integration_associations(
-        mut self,
-        input: crate::types::EventIntegrationAssociation,
-    ) -> Self {
+    pub fn event_integration_associations(mut self, input: crate::types::EventIntegrationAssociation) -> Self {
         let mut v = self.event_integration_associations.unwrap_or_default();
         v.push(input);
         self.event_integration_associations = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListEventIntegrationAssociationsOutputBuilder {
         self
     }
     /// <p>The event integration associations.</p>
-    pub fn get_event_integration_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventIntegrationAssociation>> {
+    pub fn get_event_integration_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventIntegrationAssociation>> {
         &self.event_integration_associations
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -100,15 +89,10 @@ impl ListEventIntegrationAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEventIntegrationAssociationsOutput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput {
         crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput {
-            event_integration_associations: self.event_integration_associations
-            ,
-            next_token: self.next_token
-            ,
+            event_integration_associations: self.event_integration_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

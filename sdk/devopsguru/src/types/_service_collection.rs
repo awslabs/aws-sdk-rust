@@ -23,9 +23,7 @@ impl ServiceCollection {
 
 /// A builder for [`ServiceCollection`](crate::types::ServiceCollection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceCollectionBuilder {
     pub(crate) service_names: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
 }
@@ -42,17 +40,12 @@ impl ServiceCollectionBuilder {
         self
     }
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn set_service_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
-    ) -> Self {
+    pub fn set_service_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>) -> Self {
         self.service_names = input;
         self
     }
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn get_service_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceName>> {
+    pub fn get_service_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceName>> {
         &self.service_names
     }
     /// Consumes the builder and constructs a [`ServiceCollection`](crate::types::ServiceCollection).

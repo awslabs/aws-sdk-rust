@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`direct_connect_gateway_attachments(Option<Vec<DirectConnectGatewayAttachment>>)`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput::direct_connect_gateway_attachments): <p>The attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput::next_token): <p>The token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewayAttachmentsError>`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError)
-    pub fn describe_direct_connect_gateway_attachments(&self) -> crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsFluentBuilder{
-        crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsFluentBuilder::new(self.handle.clone())
+    pub fn describe_direct_connect_gateway_attachments(
+        &self,
+    ) -> crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsFluentBuilder {
+        crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

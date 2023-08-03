@@ -38,10 +38,7 @@ impl DescribeMyUserProfileFluentBuilder {
         }
     }
     /// Access the DescribeMyUserProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeMyUserProfileFluentBuilder {
             crate::operation::describe_my_user_profile::DescribeMyUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_my_user_profile::DescribeMyUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_my_user_profile::DescribeMyUserProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeMyUserProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeMyUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_my_user_profile::DescribeMyUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_my_user_profile::DescribeMyUserProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeMyUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_my_user_profile::DescribeMyUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_my_user_profile::DescribeMyUserProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeMyUserProfileFluentBuilder {
             crate::operation::describe_my_user_profile::DescribeMyUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_my_user_profile::DescribeMyUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_my_user_profile::DescribeMyUserProfileError>,
     > {
         self.customize_middleware().await
     }

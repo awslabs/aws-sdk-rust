@@ -20,9 +20,7 @@ impl InputPrepareScheduleActionSettings {
         self.input_attachment_name_reference.as_deref()
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
-    pub fn input_clipping_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputClippingSettings> {
+    pub fn input_clipping_settings(&self) -> ::std::option::Option<&crate::types::InputClippingSettings> {
         self.input_clipping_settings.as_ref()
     }
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
@@ -39,9 +37,7 @@ impl InputPrepareScheduleActionSettings {
 
 /// A builder for [`InputPrepareScheduleActionSettings`](crate::types::InputPrepareScheduleActionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputPrepareScheduleActionSettingsBuilder {
     pub(crate) input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     pub(crate) input_clipping_settings: ::std::option::Option<crate::types::InputClippingSettings>,
@@ -49,25 +45,17 @@ pub struct InputPrepareScheduleActionSettingsBuilder {
 }
 impl InputPrepareScheduleActionSettingsBuilder {
     /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
-    pub fn input_attachment_name_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_attachment_name_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_attachment_name_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
-    pub fn set_input_attachment_name_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_attachment_name_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_attachment_name_reference = input;
         self
     }
     /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
-    pub fn get_input_attachment_name_reference(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_input_attachment_name_reference(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_attachment_name_reference
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
@@ -76,17 +64,12 @@ impl InputPrepareScheduleActionSettingsBuilder {
         self
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
-    pub fn set_input_clipping_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputClippingSettings>,
-    ) -> Self {
+    pub fn set_input_clipping_settings(mut self, input: ::std::option::Option<crate::types::InputClippingSettings>) -> Self {
         self.input_clipping_settings = input;
         self
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
-    pub fn get_input_clipping_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputClippingSettings> {
+    pub fn get_input_clipping_settings(&self) -> &::std::option::Option<crate::types::InputClippingSettings> {
         &self.input_clipping_settings
     }
     /// Appends an item to `url_path`.
@@ -101,10 +84,7 @@ impl InputPrepareScheduleActionSettingsBuilder {
         self
     }
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
-    pub fn set_url_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_url_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.url_path = input;
         self
     }

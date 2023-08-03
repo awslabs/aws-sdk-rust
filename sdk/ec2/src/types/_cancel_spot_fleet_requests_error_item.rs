@@ -30,9 +30,7 @@ impl CancelSpotFleetRequestsErrorItem {
 
 /// A builder for [`CancelSpotFleetRequestsErrorItem`](crate::types::CancelSpotFleetRequestsErrorItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsErrorItemBuilder {
     pub(crate) error: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>,
     pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl CancelSpotFleetRequestsErrorItemBuilder {
         self
     }
     /// <p>The error.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>) -> Self {
         self.error = input;
         self
     }
@@ -56,18 +51,12 @@ impl CancelSpotFleetRequestsErrorItemBuilder {
         &self.error
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_fleet_request_id = input;
         self
     }

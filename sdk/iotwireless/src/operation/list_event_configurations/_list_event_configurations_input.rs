@@ -15,9 +15,7 @@ pub struct ListEventConfigurationsInput {
 }
 impl ListEventConfigurationsInput {
     /// <p>Resource type to filter event configurations.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventNotificationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::EventNotificationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -31,18 +29,14 @@ impl ListEventConfigurationsInput {
 }
 impl ListEventConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListEventConfigurationsInput`](crate::operation::list_event_configurations::ListEventConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder {
         crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventConfigurationsInput`](crate::operation::list_event_configurations::ListEventConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventConfigurationsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::EventNotificationResourceType>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -55,17 +49,12 @@ impl ListEventConfigurationsInputBuilder {
         self
     }
     /// <p>Resource type to filter event configurations.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::EventNotificationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Resource type to filter event configurations.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventNotificationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::EventNotificationResourceType> {
         &self.resource_type
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -103,12 +92,10 @@ impl ListEventConfigurationsInputBuilder {
         crate::operation::list_event_configurations::ListEventConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_event_configurations::ListEventConfigurationsInput {
-                resource_type: self.resource_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_event_configurations::ListEventConfigurationsInput {
+            resource_type: self.resource_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

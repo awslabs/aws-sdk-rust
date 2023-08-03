@@ -21,9 +21,7 @@ impl VariantProperty {
     /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
     /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
     /// </ul>
-    pub fn variant_property_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VariantPropertyType> {
+    pub fn variant_property_type(&self) -> ::std::option::Option<&crate::types::VariantPropertyType> {
         self.variant_property_type.as_ref()
     }
 }
@@ -36,9 +34,7 @@ impl VariantProperty {
 
 /// A builder for [`VariantProperty`](crate::types::VariantProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariantPropertyBuilder {
     pub(crate) variant_property_type: ::std::option::Option<crate::types::VariantPropertyType>,
 }
@@ -59,10 +55,7 @@ impl VariantPropertyBuilder {
     /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
     /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
     /// </ul>
-    pub fn set_variant_property_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VariantPropertyType>,
-    ) -> Self {
+    pub fn set_variant_property_type(mut self, input: ::std::option::Option<crate::types::VariantPropertyType>) -> Self {
         self.variant_property_type = input;
         self
     }
@@ -72,9 +65,7 @@ impl VariantPropertyBuilder {
     /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
     /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
     /// </ul>
-    pub fn get_variant_property_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::VariantPropertyType> {
+    pub fn get_variant_property_type(&self) -> &::std::option::Option<crate::types::VariantPropertyType> {
         &self.variant_property_type
     }
     /// Consumes the builder and constructs a [`VariantProperty`](crate::types::VariantProperty).

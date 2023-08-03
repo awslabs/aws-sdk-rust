@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`planning_statistics(Option<PlanningStatistics>)`](crate::operation::get_query_statistics::GetQueryStatisticsOutput::planning_statistics): <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
     ///   - [`query_submission_time(Option<DateTime>)`](crate::operation::get_query_statistics::GetQueryStatisticsOutput::query_submission_time): <p>The time that the query was submitted.</p>
     /// - On failure, responds with [`SdkError<GetQueryStatisticsError>`](crate::operation::get_query_statistics::GetQueryStatisticsError)
-    pub fn get_query_statistics(
-        &self,
-    ) -> crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder {
-        crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_query_statistics(&self) -> crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder {
+        crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

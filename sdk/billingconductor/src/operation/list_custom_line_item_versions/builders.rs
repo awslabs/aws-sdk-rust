@@ -26,7 +26,7 @@ impl ListCustomLineItemVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder,
+    inner: crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder,
 }
 impl ListCustomLineItemVersionsFluentBuilder {
     /// Creates a new `ListCustomLineItemVersions`.
@@ -37,7 +37,7 @@ impl ListCustomLineItemVersionsFluentBuilder {
         }
     }
     /// Access the ListCustomLineItemVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCustomLineItemVersionsFluentBuilder {
             crate::operation::list_custom_line_item_versions::ListCustomLineItemVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCustomLineItemVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCustomLineItemVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCustomLineItemVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListCustomLineItemVersionsFluentBuilder {
             crate::operation::list_custom_line_item_versions::ListCustomLineItemVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator {
         crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
@@ -174,17 +163,12 @@ impl ListCustomLineItemVersionsFluentBuilder {
         self
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCustomLineItemVersionsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemVersionsFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListCustomLineItemVersionsFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListCustomLineItemVersionsFilter> {
         self.inner.get_filters()
     }
 }

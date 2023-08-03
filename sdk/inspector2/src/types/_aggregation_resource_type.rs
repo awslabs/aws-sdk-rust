@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AggregationResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AggregationResourceType {
             "AWS_EC2_INSTANCE" => AggregationResourceType::AwsEc2Instance,
             "AWS_ECR_CONTAINER_IMAGE" => AggregationResourceType::AwsEcrContainerImage,
             "AWS_LAMBDA_FUNCTION" => AggregationResourceType::AwsLambdaFunction,
-            other => AggregationResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AggregationResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl AggregationResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_EC2_INSTANCE",
-            "AWS_ECR_CONTAINER_IMAGE",
-            "AWS_LAMBDA_FUNCTION",
-        ]
+        &["AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER_IMAGE", "AWS_LAMBDA_FUNCTION"]
     }
 }
 impl ::std::convert::AsRef<str> for AggregationResourceType {

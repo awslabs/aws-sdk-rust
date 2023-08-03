@@ -50,16 +50,14 @@ impl DescribeSnapshotSchedulesInput {
 }
 impl DescribeSnapshotSchedulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotSchedulesInput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput).
-    pub fn builder() -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder {
         crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotSchedulesInput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotSchedulesInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct DescribeSnapshotSchedulesInputBuilder {
 }
 impl DescribeSnapshotSchedulesInputBuilder {
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -90,18 +82,12 @@ impl DescribeSnapshotSchedulesInputBuilder {
         &self.cluster_identifier
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
-    pub fn schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_identifier = input;
         self
     }
@@ -121,10 +107,7 @@ impl DescribeSnapshotSchedulesInputBuilder {
         self
     }
     /// <p>The key value for a snapshot schedule tag.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -144,10 +127,7 @@ impl DescribeSnapshotSchedulesInputBuilder {
         self
     }
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -190,15 +170,13 @@ impl DescribeSnapshotSchedulesInputBuilder {
         crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput {
-                cluster_identifier: self.cluster_identifier,
-                schedule_identifier: self.schedule_identifier,
-                tag_keys: self.tag_keys,
-                tag_values: self.tag_values,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput {
+            cluster_identifier: self.cluster_identifier,
+            schedule_identifier: self.schedule_identifier,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+            marker: self.marker,
+            max_records: self.max_records,
+        })
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateSecurityKeyOutput {
 }
 impl DisassociateSecurityKeyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSecurityKeyOutput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyOutputBuilder {
         crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSecurityKeyOutput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSecurityKeyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateSecurityKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateSecurityKeyOutput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput {
+    pub fn build(self) -> crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput {
         crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput {
             _request_id: self._request_id,
         }

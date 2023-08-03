@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateHostedZoneCommentOutput {
 }
 impl UpdateHostedZoneCommentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentOutput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentOutputBuilder {
         crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHostedZoneCommentOutput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHostedZoneCommentOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl UpdateHostedZoneCommentOutputBuilder {
         self
     }
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
-    pub fn set_hosted_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZone>,
-    ) -> Self {
+    pub fn set_hosted_zone(mut self, input: ::std::option::Option<crate::types::HostedZone>) -> Self {
         self.hosted_zone = input;
         self
     }
@@ -66,9 +59,7 @@ impl UpdateHostedZoneCommentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateHostedZoneCommentOutput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput {
+    pub fn build(self) -> crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput {
         crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput {
             hosted_zone: self.hosted_zone,
             _request_id: self._request_id,

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutRepositoryCatalogDataOutput {
 }
 impl PutRepositoryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput).
-    pub fn builder() -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataOutputBuilder{
+    pub fn builder() -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataOutputBuilder {
         crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRepositoryCatalogDataOutputBuilder {
     pub(crate) catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PutRepositoryCatalogDataOutputBuilder {
         self
     }
     /// <p>The catalog data for the repository.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCatalogData>,
-    ) -> Self {
+    pub fn set_catalog_data(mut self, input: ::std::option::Option<crate::types::RepositoryCatalogData>) -> Self {
         self.catalog_data = input;
         self
     }
@@ -63,9 +58,7 @@ impl PutRepositoryCatalogDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput {
+    pub fn build(self) -> crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput {
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput {
             catalog_data: self.catalog_data,
             _request_id: self._request_id,

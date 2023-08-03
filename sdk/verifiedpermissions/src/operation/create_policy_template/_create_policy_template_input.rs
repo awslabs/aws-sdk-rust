@@ -40,17 +40,14 @@ impl CreatePolicyTemplateInput {
 }
 impl CreatePolicyTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyTemplateInput`](crate::operation::create_policy_template::CreatePolicyTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_policy_template::builders::CreatePolicyTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_policy_template::builders::CreatePolicyTemplateInputBuilder {
         crate::operation::create_policy_template::builders::CreatePolicyTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePolicyTemplateInput`](crate::operation::create_policy_template::CreatePolicyTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePolicyTemplateInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
@@ -79,18 +76,12 @@ impl CreatePolicyTemplateInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -129,17 +120,13 @@ impl CreatePolicyTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreatePolicyTemplateInput`](crate::operation::create_policy_template::CreatePolicyTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_policy_template::CreatePolicyTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_policy_template::CreatePolicyTemplateInput {
-                client_token: self.client_token,
-                policy_store_id: self.policy_store_id,
-                description: self.description,
-                statement: self.statement,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_policy_template::CreatePolicyTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_policy_template::CreatePolicyTemplateInput {
+            client_token: self.client_token,
+            policy_store_id: self.policy_store_id,
+            description: self.description,
+            statement: self.statement,
+        })
     }
 }

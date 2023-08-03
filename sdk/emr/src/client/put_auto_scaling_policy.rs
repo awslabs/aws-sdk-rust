@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`auto_scaling_policy(Option<AutoScalingPolicyDescription>)`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput::auto_scaling_policy): <p>The automatic scaling policy definition.</p>
     ///   - [`cluster_arn(Option<String>)`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     /// - On failure, responds with [`SdkError<PutAutoScalingPolicyError>`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError)
-    pub fn put_auto_scaling_policy(
-        &self,
-    ) -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyFluentBuilder
-    {
-        crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_auto_scaling_policy(&self) -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyFluentBuilder {
+        crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

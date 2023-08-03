@@ -19,9 +19,7 @@ impl DeleteWatchlistOutput {
 
 /// A builder for [`DeleteWatchlistOutput`](crate::operation::delete_watchlist::DeleteWatchlistOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWatchlistOutputBuilder {
     _request_id: Option<String>,
 }

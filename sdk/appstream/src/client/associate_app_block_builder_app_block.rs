@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput) with field(s):
     ///   - [`app_block_builder_app_block_association(Option<AppBlockBuilderAppBlockAssociation>)`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput::app_block_builder_app_block_association): <p>The list of app block builders associated with app blocks.</p>
     /// - On failure, responds with [`SdkError<AssociateAppBlockBuilderAppBlockError>`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError)
-    pub fn associate_app_block_builder_app_block(&self) -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockFluentBuilder{
+    pub fn associate_app_block_builder_app_block(
+        &self,
+    ) -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockFluentBuilder {
         crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockFluentBuilder::new(self.handle.clone())
     }
 }

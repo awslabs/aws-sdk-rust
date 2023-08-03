@@ -28,8 +28,7 @@ pub struct Compliance {
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
     #[doc(hidden)]
-    pub associated_standards:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
+    pub associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
 }
 impl Compliance {
     /// <p>The result of a standards check.</p>
@@ -59,9 +58,7 @@ impl Compliance {
         self.security_control_id.as_deref()
     }
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
-    pub fn associated_standards(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociatedStandard]> {
+    pub fn associated_standards(&self) -> ::std::option::Option<&[crate::types::AssociatedStandard]> {
         self.associated_standards.as_deref()
     }
 }
@@ -74,16 +71,13 @@ impl Compliance {
 
 /// A builder for [`Compliance`](crate::types::Compliance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_standards:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
+    pub(crate) associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
 }
 impl ComplianceBuilder {
     /// <p>The result of a standards check.</p>
@@ -112,10 +106,7 @@ impl ComplianceBuilder {
     /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -138,27 +129,19 @@ impl ComplianceBuilder {
     /// To override the contents of this collection use [`set_related_requirements`](Self::set_related_requirements).
     ///
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
-    pub fn related_requirements(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_requirements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_requirements.unwrap_or_default();
         v.push(input.into());
         self.related_requirements = ::std::option::Option::Some(v);
         self
     }
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
-    pub fn set_related_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_related_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.related_requirements = input;
         self
     }
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
-    pub fn get_related_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_related_requirements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.related_requirements
     }
     /// Appends an item to `status_reasons`.
@@ -173,32 +156,21 @@ impl ComplianceBuilder {
         self
     }
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn set_status_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
-    ) -> Self {
+    pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>) -> Self {
         self.status_reasons = input;
         self
     }
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn get_status_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StatusReason>> {
+    pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatusReason>> {
         &self.status_reasons
     }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -218,17 +190,12 @@ impl ComplianceBuilder {
         self
     }
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
-    pub fn set_associated_standards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
-    ) -> Self {
+    pub fn set_associated_standards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>) -> Self {
         self.associated_standards = input;
         self
     }
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
-    pub fn get_associated_standards(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>> {
+    pub fn get_associated_standards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>> {
         &self.associated_standards
     }
     /// Consumes the builder and constructs a [`Compliance`](crate::types::Compliance).

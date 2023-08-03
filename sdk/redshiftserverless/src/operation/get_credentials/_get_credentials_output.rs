@@ -103,10 +103,7 @@ impl GetCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }
@@ -120,10 +117,7 @@ impl GetCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
-    pub fn set_next_refresh_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_refresh_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_refresh_time = input;
         self
     }

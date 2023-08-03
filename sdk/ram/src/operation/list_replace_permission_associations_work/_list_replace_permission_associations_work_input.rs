@@ -22,9 +22,7 @@ impl ListReplacePermissionAssociationsWorkInput {
         self.work_ids.as_deref()
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -38,16 +36,14 @@ impl ListReplacePermissionAssociationsWorkInput {
 }
 impl ListReplacePermissionAssociationsWorkInput {
     /// Creates a new builder-style object to manufacture [`ListReplacePermissionAssociationsWorkInput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput).
-    pub fn builder() -> crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder{
+    pub fn builder() -> crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder {
         crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReplacePermissionAssociationsWorkInput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplacePermissionAssociationsWorkInputBuilder {
     pub(crate) work_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
@@ -67,10 +63,7 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
         self
     }
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation. </p>
-    pub fn set_work_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_work_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.work_ids = input;
         self
     }
@@ -84,17 +77,12 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
         self
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
         &self.status
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -126,18 +114,19 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReplacePermissionAssociationsWorkInput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput {
-                work_ids: self.work_ids
-                ,
-                status: self.status
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                work_ids: self.work_ids,
+                status: self.status,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

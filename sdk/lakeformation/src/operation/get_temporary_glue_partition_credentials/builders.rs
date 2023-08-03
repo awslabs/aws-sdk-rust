@@ -5,16 +5,16 @@ pub use crate::operation::get_temporary_glue_partition_credentials::_get_tempora
 
 impl GetTemporaryGluePartitionCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_temporary_glue_partition_credentials();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetTemporaryGluePartitionCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTemporaryGluePartitionCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder,
+    inner: crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder,
 }
 impl GetTemporaryGluePartitionCredentialsFluentBuilder {
     /// Creates a new `GetTemporaryGluePartitionCredentials`.
@@ -37,15 +37,22 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
         }
     }
     /// Access the GetTemporaryGluePartitionCredentials as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentials,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentials,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the partitions' table.</p>
@@ -114,10 +131,7 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
         self
     }
     /// <p>A list of partition values identifying a single partition.</p>
-    pub fn set_partition(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionValueList>,
-    ) -> Self {
+    pub fn set_partition(mut self, input: ::std::option::Option<crate::types::PartitionValueList>) -> Self {
         self.inner = self.inner.set_partition(input);
         self
     }
@@ -135,17 +149,12 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions()
     }
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
@@ -168,10 +177,7 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
         self
     }
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
     }
@@ -189,17 +195,12 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
         self
     }
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
     }
 }

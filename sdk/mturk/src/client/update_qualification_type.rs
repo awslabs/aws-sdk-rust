@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateQualificationTypeOutput`](crate::operation::update_qualification_type::UpdateQualificationTypeOutput) with field(s):
     ///   - [`qualification_type(Option<QualificationType>)`](crate::operation::update_qualification_type::UpdateQualificationTypeOutput::qualification_type): <p> Contains a QualificationType data structure.</p>
     /// - On failure, responds with [`SdkError<UpdateQualificationTypeError>`](crate::operation::update_qualification_type::UpdateQualificationTypeError)
-    pub fn update_qualification_type(
-        &self,
-    ) -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeFluentBuilder
-    {
+    pub fn update_qualification_type(&self) -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeFluentBuilder {
         crate::operation::update_qualification_type::builders::UpdateQualificationTypeFluentBuilder::new(self.handle.clone())
     }
 }

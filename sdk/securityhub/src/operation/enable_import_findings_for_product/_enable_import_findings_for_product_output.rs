@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for EnableImportFindingsForProductOutput 
 }
 impl EnableImportFindingsForProductOutput {
     /// Creates a new builder-style object to manufacture [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput).
-    pub fn builder() -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder{
+    pub fn builder() -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder {
         crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableImportFindingsForProductOutputBuilder {
     pub(crate) product_subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableImportFindingsForProductOutputBuilder {
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
-    pub fn product_subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
-    pub fn set_product_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_subscription_arn = input;
         self
     }
@@ -66,10 +58,7 @@ impl EnableImportFindingsForProductOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput
-    {
+    pub fn build(self) -> crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput {
         crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput {
             product_subscription_arn: self.product_subscription_arn,
             _request_id: self._request_id,

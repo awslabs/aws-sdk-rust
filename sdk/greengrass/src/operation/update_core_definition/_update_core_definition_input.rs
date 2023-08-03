@@ -22,35 +22,26 @@ impl UpdateCoreDefinitionInput {
 }
 impl UpdateCoreDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateCoreDefinitionInput`](crate::operation::update_core_definition::UpdateCoreDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionInputBuilder {
         crate::operation::update_core_definition::builders::UpdateCoreDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCoreDefinitionInput`](crate::operation::update_core_definition::UpdateCoreDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCoreDefinitionInputBuilder {
     pub(crate) core_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCoreDefinitionInputBuilder {
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_definition_id = input;
         self
     }
@@ -75,15 +66,11 @@ impl UpdateCoreDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCoreDefinitionInput`](crate::operation::update_core_definition::UpdateCoreDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_core_definition::UpdateCoreDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_core_definition::UpdateCoreDefinitionInput {
-                core_definition_id: self.core_definition_id,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_core_definition::UpdateCoreDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_core_definition::UpdateCoreDefinitionInput {
+            core_definition_id: self.core_definition_id,
+            name: self.name,
+        })
     }
 }

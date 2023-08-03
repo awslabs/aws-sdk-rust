@@ -20,9 +20,7 @@ impl GetRoutingControlStateOutput {
         self.routing_control_arn.as_deref()
     }
     /// <p>The state of the routing control.</p>
-    pub fn routing_control_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoutingControlState> {
+    pub fn routing_control_state(&self) -> ::std::option::Option<&crate::types::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
     /// <p>The routing control name.</p>
@@ -37,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetRoutingControlStateOutput {
 }
 impl GetRoutingControlStateOutput {
     /// Creates a new builder-style object to manufacture [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder {
         crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRoutingControlStateOutputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
@@ -57,18 +51,12 @@ pub struct GetRoutingControlStateOutputBuilder {
 }
 impl GetRoutingControlStateOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }
@@ -82,32 +70,21 @@ impl GetRoutingControlStateOutputBuilder {
         self
     }
     /// <p>The state of the routing control.</p>
-    pub fn set_routing_control_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingControlState>,
-    ) -> Self {
+    pub fn set_routing_control_state(mut self, input: ::std::option::Option<crate::types::RoutingControlState>) -> Self {
         self.routing_control_state = input;
         self
     }
     /// <p>The state of the routing control.</p>
-    pub fn get_routing_control_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingControlState> {
+    pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
         &self.routing_control_state
     }
     /// <p>The routing control name.</p>
-    pub fn routing_control_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The routing control name.</p>
-    pub fn set_routing_control_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_name = input;
         self
     }
@@ -125,9 +102,7 @@ impl GetRoutingControlStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
+    pub fn build(self) -> crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
         crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
             routing_control_arn: self.routing_control_arn,
             routing_control_state: self.routing_control_state,

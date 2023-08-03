@@ -30,9 +30,7 @@ impl EmailContent {
 
 /// A builder for [`EmailContent`](crate::types::EmailContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailContentBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) additional_message: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl EmailContentBuilder {
         &self.subject
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn additional_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn set_additional_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_message = input;
         self
     }

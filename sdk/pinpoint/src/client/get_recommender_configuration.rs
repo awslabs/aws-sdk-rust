@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetRecommenderConfigurationOutput`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationOutput) with field(s):
     ///   - [`recommender_configuration_response(Option<RecommenderConfigurationResponse>)`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationOutput::recommender_configuration_response): <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     /// - On failure, responds with [`SdkError<GetRecommenderConfigurationError>`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationError)
-    pub fn get_recommender_configuration(&self) -> crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationFluentBuilder{
+    pub fn get_recommender_configuration(
+        &self,
+    ) -> crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationFluentBuilder {
         crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

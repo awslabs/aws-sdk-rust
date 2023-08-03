@@ -22,9 +22,7 @@ pub struct StartDevEnvironmentSessionOutput {
 }
 impl StartDevEnvironmentSessionOutput {
     /// <p>Information about connection details for a Dev Environment.</p>
-    pub fn access_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DevEnvironmentAccessDetails> {
+    pub fn access_details(&self) -> ::std::option::Option<&crate::types::DevEnvironmentAccessDetails> {
         self.access_details.as_ref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
@@ -63,7 +61,7 @@ impl ::aws_http::request_id::RequestId for StartDevEnvironmentSessionOutput {
 }
 impl StartDevEnvironmentSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentSessionOutput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput).
-    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder{
+    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder {
         crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder::default()
     }
 }
@@ -86,17 +84,12 @@ impl StartDevEnvironmentSessionOutputBuilder {
         self
     }
     /// <p>Information about connection details for a Dev Environment.</p>
-    pub fn set_access_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEnvironmentAccessDetails>,
-    ) -> Self {
+    pub fn set_access_details(mut self, input: ::std::option::Option<crate::types::DevEnvironmentAccessDetails>) -> Self {
         self.access_details = input;
         self
     }
     /// <p>Information about connection details for a Dev Environment.</p>
-    pub fn get_access_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DevEnvironmentAccessDetails> {
+    pub fn get_access_details(&self) -> &::std::option::Option<crate::types::DevEnvironmentAccessDetails> {
         &self.access_details
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
@@ -165,9 +158,7 @@ impl StartDevEnvironmentSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentSessionOutput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput {
+    pub fn build(self) -> crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput {
         crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput {
             access_details: self.access_details,
             session_id: self.session_id,

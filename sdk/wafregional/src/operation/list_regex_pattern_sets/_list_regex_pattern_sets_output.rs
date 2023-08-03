@@ -8,8 +8,7 @@ pub struct ListRegexPatternSetsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub regex_pattern_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
+    pub regex_pattern_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListRegexPatternSetsOutput {
@@ -18,9 +17,7 @@ impl ListRegexPatternSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-    pub fn regex_pattern_sets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RegexPatternSetSummary]> {
+    pub fn regex_pattern_sets(&self) -> ::std::option::Option<&[crate::types::RegexPatternSetSummary]> {
         self.regex_pattern_sets.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRegexPatternSetsOutput {
 }
 impl ListRegexPatternSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsOutput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsOutputBuilder {
         crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRegexPatternSetsOutput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegexPatternSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) regex_pattern_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
+    pub(crate) regex_pattern_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListRegexPatternSetsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListRegexPatternSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-    pub fn set_regex_pattern_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
-    ) -> Self {
+    pub fn set_regex_pattern_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>) -> Self {
         self.regex_pattern_sets = input;
         self
     }
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-    pub fn get_regex_pattern_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>> {
+    pub fn get_regex_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>> {
         &self.regex_pattern_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

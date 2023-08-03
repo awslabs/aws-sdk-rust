@@ -44,9 +44,7 @@ impl PendingLogDeliveryConfiguration {
 
 /// A builder for [`PendingLogDeliveryConfiguration`](crate::types::PendingLogDeliveryConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingLogDeliveryConfigurationBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
@@ -74,10 +72,7 @@ impl PendingLogDeliveryConfigurationBuilder {
         self
     }
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
         self.destination_type = input;
         self
     }
@@ -91,17 +86,12 @@ impl PendingLogDeliveryConfigurationBuilder {
         self
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    pub fn set_destination_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationDetails>,
-    ) -> Self {
+    pub fn set_destination_details(mut self, input: ::std::option::Option<crate::types::DestinationDetails>) -> Self {
         self.destination_details = input;
         self
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    pub fn get_destination_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationDetails> {
+    pub fn get_destination_details(&self) -> &::std::option::Option<crate::types::DestinationDetails> {
         &self.destination_details
     }
     /// <p>Returns the log format, either JSON or TEXT</p>

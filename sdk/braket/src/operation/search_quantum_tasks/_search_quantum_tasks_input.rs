@@ -29,22 +29,18 @@ impl SearchQuantumTasksInput {
 }
 impl SearchQuantumTasksInput {
     /// Creates a new builder-style object to manufacture [`SearchQuantumTasksInput`](crate::operation::search_quantum_tasks::SearchQuantumTasksInput).
-    pub fn builder(
-    ) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder {
+    pub fn builder() -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder {
         crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchQuantumTasksInput`](crate::operation::search_quantum_tasks::SearchQuantumTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>,
 }
 impl SearchQuantumTasksInputBuilder {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
@@ -87,32 +83,22 @@ impl SearchQuantumTasksInputBuilder {
         self
     }
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchQuantumTasksInput`](crate::operation::search_quantum_tasks::SearchQuantumTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_quantum_tasks::SearchQuantumTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_quantum_tasks::SearchQuantumTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_quantum_tasks::SearchQuantumTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_quantum_tasks::SearchQuantumTasksInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

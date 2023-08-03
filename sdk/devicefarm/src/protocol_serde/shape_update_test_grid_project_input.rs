@@ -15,10 +15,7 @@ pub fn ser_update_test_grid_project_input(
     if let Some(var_4) = &input.vpc_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("vpcConfig").start_object();
-        crate::protocol_serde::shape_test_grid_vpc_config::ser_test_grid_vpc_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_test_grid_vpc_config::ser_test_grid_vpc_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

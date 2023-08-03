@@ -21,9 +21,7 @@ pub enum ChatChannel {
 impl ChatChannel {
     /// Tries to convert the enum instance into [`ChatbotSns`](crate::types::ChatChannel::ChatbotSns), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_chatbot_sns(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+    pub fn as_chatbot_sns(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let ChatChannel::ChatbotSns(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

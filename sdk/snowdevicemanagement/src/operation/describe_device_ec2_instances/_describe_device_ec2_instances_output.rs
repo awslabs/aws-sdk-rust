@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeDeviceEc2InstancesOutput {
 }
 impl DescribeDeviceEc2InstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput).
-    pub fn builder() -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesOutputBuilder {
         crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DescribeDeviceEc2InstancesOutputBuilder {
         self
     }
     /// <p>A list of structures containing information about each instance. </p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>A list of structures containing information about each instance. </p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
         &self.instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl DescribeDeviceEc2InstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput {
+    pub fn build(self) -> crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput {
         crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput {
             instances: self.instances,
             _request_id: self._request_id,

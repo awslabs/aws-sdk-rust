@@ -19,9 +19,7 @@ impl EnableRegionOutput {
 
 /// A builder for [`EnableRegionOutput`](crate::operation::enable_region::EnableRegionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableRegionOutputBuilder {
     _request_id: Option<String>,
 }

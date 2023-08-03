@@ -26,7 +26,7 @@ impl DescribeWorkerConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkerConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder,
+    inner: crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder,
 }
 impl DescribeWorkerConfigurationFluentBuilder {
     /// Creates a new `DescribeWorkerConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeWorkerConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeWorkerConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeWorkerConfigurationFluentBuilder {
             crate::operation::describe_worker_configuration::DescribeWorkerConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeWorkerConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeWorkerConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeWorkerConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeWorkerConfigurationFluentBuilder {
             crate::operation::describe_worker_configuration::DescribeWorkerConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub fn worker_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub fn set_worker_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_configuration_arn(input);
         self
     }

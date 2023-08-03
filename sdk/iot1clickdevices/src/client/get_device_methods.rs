@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput) with field(s):
     ///   - [`device_methods(Option<Vec<DeviceMethod>>)`](crate::operation::get_device_methods::GetDeviceMethodsOutput::device_methods): <p>List of available device APIs.</p>
     /// - On failure, responds with [`SdkError<GetDeviceMethodsError>`](crate::operation::get_device_methods::GetDeviceMethodsError)
-    pub fn get_device_methods(
-        &self,
-    ) -> crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder {
-        crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_methods(&self) -> crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder {
+        crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::new(self.handle.clone())
     }
 }

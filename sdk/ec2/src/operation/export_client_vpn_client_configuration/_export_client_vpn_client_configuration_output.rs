@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for ExportClientVpnClientConfigurationOut
 }
 impl ExportClientVpnClientConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ExportClientVpnClientConfigurationOutput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput).
-    pub fn builder() -> crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationOutputBuilder {
         crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportClientVpnClientConfigurationOutput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportClientVpnClientConfigurationOutputBuilder {
     pub(crate) client_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExportClientVpnClientConfigurationOutputBuilder {
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
-    pub fn client_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
-    pub fn set_client_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_configuration = input;
         self
     }
@@ -66,10 +58,9 @@ impl ExportClientVpnClientConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportClientVpnClientConfigurationOutput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput).
-    pub fn build(self) -> crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput{
+    pub fn build(self) -> crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput {
         crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput {
-            client_configuration: self.client_configuration
-            ,
+            client_configuration: self.client_configuration,
             _request_id: self._request_id,
         }
     }

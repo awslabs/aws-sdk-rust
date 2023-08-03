@@ -21,10 +21,7 @@ pub fn ser_sql_application_configuration_update(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_output_update::ser_output_update(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_output_update::ser_output_update(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

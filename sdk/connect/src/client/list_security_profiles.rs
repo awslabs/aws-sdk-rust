@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`security_profile_summary_list(Option<Vec<SecurityProfileSummary>>)`](crate::operation::list_security_profiles::ListSecurityProfilesOutput::security_profile_summary_list): <p>Information about the security profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profiles::ListSecurityProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSecurityProfilesError>`](crate::operation::list_security_profiles::ListSecurityProfilesError)
-    pub fn list_security_profiles(
-        &self,
-    ) -> crate::operation::list_security_profiles::builders::ListSecurityProfilesFluentBuilder {
-        crate::operation::list_security_profiles::builders::ListSecurityProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_security_profiles(&self) -> crate::operation::list_security_profiles::builders::ListSecurityProfilesFluentBuilder {
+        crate::operation::list_security_profiles::builders::ListSecurityProfilesFluentBuilder::new(self.handle.clone())
     }
 }

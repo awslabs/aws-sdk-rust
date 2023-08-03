@@ -37,9 +37,7 @@ impl HeaderFooterSectionConfiguration {
 
 /// A builder for [`HeaderFooterSectionConfiguration`](crate::types::HeaderFooterSectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeaderFooterSectionConfigurationBuilder {
     pub(crate) section_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
@@ -66,10 +64,7 @@ impl HeaderFooterSectionConfigurationBuilder {
         self
     }
     /// <p>The layout configuration of the header or footer section.</p>
-    pub fn set_layout(
-        mut self,
-        input: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
-    ) -> Self {
+    pub fn set_layout(mut self, input: ::std::option::Option<crate::types::SectionLayoutConfiguration>) -> Self {
         self.layout = input;
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopHyperParameterTuningJobOutput {
 }
 impl StopHyperParameterTuningJobOutput {
     /// Creates a new builder-style object to manufacture [`StopHyperParameterTuningJobOutput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput).
-    pub fn builder() -> crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobOutputBuilder {
         crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopHyperParameterTuningJobOutput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopHyperParameterTuningJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StopHyperParameterTuningJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopHyperParameterTuningJobOutput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput {
+    pub fn build(self) -> crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput {
         crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput {
             _request_id: self._request_id,
         }

@@ -5,8 +5,7 @@
 pub struct GetEffectivePermissionsForPathOutput {
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
     #[doc(hidden)]
-    pub permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetEffectivePermissionsForPathOutput {
 }
 impl GetEffectivePermissionsForPathOutput {
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-    pub fn permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrincipalResourcePermissions]> {
+    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalResourcePermissions]> {
         self.permissions.as_deref()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetEffectivePermissionsForPathOutput 
 }
 impl GetEffectivePermissionsForPathOutput {
     /// Creates a new builder-style object to manufacture [`GetEffectivePermissionsForPathOutput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput).
-    pub fn builder() -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathOutputBuilder{
+    pub fn builder() -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathOutputBuilder {
         crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEffectivePermissionsForPathOutput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEffectivePermissionsForPathOutputBuilder {
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetEffectivePermissionsForPathOutputBuilder {
         self
     }
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>> {
         &self.permissions
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -97,10 +86,7 @@ impl GetEffectivePermissionsForPathOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEffectivePermissionsForPathOutput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput
-    {
+    pub fn build(self) -> crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput {
         crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput {
             permissions: self.permissions,
             next_token: self.next_token,

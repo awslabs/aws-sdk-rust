@@ -5,16 +5,16 @@ pub use crate::operation::associate_instance_storage_config::_associate_instance
 
 impl AssociateInstanceStorageConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_instance_storage_config();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl AssociateInstanceStorageConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateInstanceStorageConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder,
+    inner: crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder,
 }
 impl AssociateInstanceStorageConfigFluentBuilder {
     /// Creates a new `AssociateInstanceStorageConfig`.
@@ -39,15 +39,20 @@ impl AssociateInstanceStorageConfigFluentBuilder {
         }
     }
     /// Access the AssociateInstanceStorageConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl AssociateInstanceStorageConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl AssociateInstanceStorageConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -116,17 +131,12 @@ impl AssociateInstanceStorageConfigFluentBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         self.inner.get_resource_type()
     }
     /// <p>A valid storage type.</p>
@@ -135,17 +145,12 @@ impl AssociateInstanceStorageConfigFluentBuilder {
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn set_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageConfig>,
-    ) -> Self {
+    pub fn set_storage_config(mut self, input: ::std::option::Option<crate::types::InstanceStorageConfig>) -> Self {
         self.inner = self.inner.set_storage_config(input);
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn get_storage_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
+    pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
         self.inner.get_storage_config()
     }
 }

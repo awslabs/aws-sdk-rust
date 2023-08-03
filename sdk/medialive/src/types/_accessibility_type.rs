@@ -38,13 +38,7 @@
 /// Accessibility Type
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessibilityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum AccessibilityType {
 impl ::std::convert::From<&str> for AccessibilityType {
     fn from(s: &str) -> Self {
         match s {
-            "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES" => {
-                AccessibilityType::DoesNotImplementAccessibilityFeatures
-            }
-            "IMPLEMENTS_ACCESSIBILITY_FEATURES" => {
-                AccessibilityType::ImplementsAccessibilityFeatures
-            }
-            other => {
-                AccessibilityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES" => AccessibilityType::DoesNotImplementAccessibilityFeatures,
+            "IMPLEMENTS_ACCESSIBILITY_FEATURES" => AccessibilityType::ImplementsAccessibilityFeatures,
+            other => AccessibilityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl AccessibilityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AccessibilityType::DoesNotImplementAccessibilityFeatures => {
-                "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES"
-            }
-            AccessibilityType::ImplementsAccessibilityFeatures => {
-                "IMPLEMENTS_ACCESSIBILITY_FEATURES"
-            }
+            AccessibilityType::DoesNotImplementAccessibilityFeatures => "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES",
+            AccessibilityType::ImplementsAccessibilityFeatures => "IMPLEMENTS_ACCESSIBILITY_FEATURES",
             AccessibilityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES",
-            "IMPLEMENTS_ACCESSIBILITY_FEATURES",
-        ]
+        &["DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES", "IMPLEMENTS_ACCESSIBILITY_FEATURES"]
     }
 }
 impl ::std::convert::AsRef<str> for AccessibilityType {

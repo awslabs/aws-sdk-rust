@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`suppressed_reasons(Vec<SuppressionListReason>)`](crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsFluentBuilder::suppressed_reasons) / [`set_suppressed_reasons(Option<Vec<SuppressionListReason>>)`](crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsFluentBuilder::set_suppressed_reasons): <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>  <ul>   <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>   <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>  </ul>
     /// - On success, responds with [`PutConfigurationSetSuppressionOptionsOutput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetSuppressionOptionsError>`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsError)
-    pub fn put_configuration_set_suppression_options(&self) -> crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsFluentBuilder{
-        crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsFluentBuilder::new(self.handle.clone())
+    pub fn put_configuration_set_suppression_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsFluentBuilder {
+        crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

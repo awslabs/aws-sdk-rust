@@ -22,9 +22,7 @@ impl Unauthenticated {
 
 /// A builder for [`Unauthenticated`](crate::types::Unauthenticated).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnauthenticatedBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -45,8 +43,6 @@ impl UnauthenticatedBuilder {
     }
     /// Consumes the builder and constructs a [`Unauthenticated`](crate::types::Unauthenticated).
     pub fn build(self) -> crate::types::Unauthenticated {
-        crate::types::Unauthenticated {
-            enabled: self.enabled,
-        }
+        crate::types::Unauthenticated { enabled: self.enabled }
     }
 }

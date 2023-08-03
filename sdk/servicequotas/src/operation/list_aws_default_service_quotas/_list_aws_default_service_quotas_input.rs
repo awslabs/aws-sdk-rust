@@ -29,16 +29,14 @@ impl ListAwsDefaultServiceQuotasInput {
 }
 impl ListAwsDefaultServiceQuotasInput {
     /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasInput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput).
-    pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasInputBuilder{
+    pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasInputBuilder {
         crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAwsDefaultServiceQuotasInput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListAwsDefaultServiceQuotasInputBuilder {
         crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput {
-                service_code: self.service_code,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput {
+            service_code: self.service_code,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

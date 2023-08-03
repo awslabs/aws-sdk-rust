@@ -13,9 +13,7 @@ pub struct RightsizingRecommendationConfiguration {
 }
 impl RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn recommendation_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationTarget> {
+    pub fn recommendation_target(&self) -> ::std::option::Option<&crate::types::RecommendationTarget> {
         self.recommendation_target.as_ref()
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
@@ -32,9 +30,7 @@ impl RightsizingRecommendationConfiguration {
 
 /// A builder for [`RightsizingRecommendationConfiguration`](crate::types::RightsizingRecommendationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RightsizingRecommendationConfigurationBuilder {
     pub(crate) recommendation_target: ::std::option::Option<crate::types::RecommendationTarget>,
     pub(crate) benefits_considered: ::std::option::Option<bool>,
@@ -46,17 +42,12 @@ impl RightsizingRecommendationConfigurationBuilder {
         self
     }
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn set_recommendation_target(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationTarget>,
-    ) -> Self {
+    pub fn set_recommendation_target(mut self, input: ::std::option::Option<crate::types::RecommendationTarget>) -> Self {
         self.recommendation_target = input;
         self
     }
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn get_recommendation_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationTarget> {
+    pub fn get_recommendation_target(&self) -> &::std::option::Option<crate::types::RecommendationTarget> {
         &self.recommendation_target
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>

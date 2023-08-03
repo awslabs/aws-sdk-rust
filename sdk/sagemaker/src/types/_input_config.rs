@@ -252,9 +252,7 @@ impl InputConfig {
 
 /// A builder for [`InputConfig`](crate::types::InputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
@@ -380,10 +378,7 @@ impl InputConfigBuilder {
     /// <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn data_input_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_input_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_input_config = ::std::option::Option::Some(input.into());
         self
     }
@@ -491,10 +486,7 @@ impl InputConfigBuilder {
     /// <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_data_input_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_input_config = input;
         self
     }
@@ -621,19 +613,13 @@ impl InputConfigBuilder {
     }
     /// <p>Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p>
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p>
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }

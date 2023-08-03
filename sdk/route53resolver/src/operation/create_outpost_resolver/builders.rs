@@ -37,10 +37,7 @@ impl CreateOutpostResolverFluentBuilder {
         }
     }
     /// Access the CreateOutpostResolver as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_outpost_resolver::builders::CreateOutpostResolverInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_outpost_resolver::builders::CreateOutpostResolverInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateOutpostResolverFluentBuilder {
             crate::operation::create_outpost_resolver::CreateOutpostResolver,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outpost_resolver::CreateOutpostResolverError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateOutpostResolverFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateOutpostResolverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_outpost_resolver::CreateOutpostResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outpost_resolver::CreateOutpostResolverError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateOutpostResolverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_outpost_resolver::CreateOutpostResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outpost_resolver::CreateOutpostResolverError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +105,19 @@ impl CreateOutpostResolverFluentBuilder {
             crate::operation::create_outpost_resolver::CreateOutpostResolver,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outpost_resolver::CreateOutpostResolverError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
     /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
     /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -175,18 +155,12 @@ impl CreateOutpostResolverFluentBuilder {
         self.inner.get_instance_count()
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
-    pub fn preferred_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_instance_type(input.into());
         self
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
-    pub fn set_preferred_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
     }
@@ -218,10 +192,7 @@ impl CreateOutpostResolverFluentBuilder {
         self
     }
     /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -10,10 +10,7 @@ impl GetResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_resources::GetResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resources::GetResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_resources();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetResourcesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_resources::GetResources,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_resources::GetResources, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl GetResourcesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_resources::GetResources,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_resources::GetResources, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -152,17 +134,12 @@ impl GetResourcesFluentBuilder {
         self
     }
     /// <p>The collection type.</p>
-    pub fn set_collection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollectionType>,
-    ) -> Self {
+    pub fn set_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
         self.inner = self.inner.set_collection_type(input);
         self
     }
     /// <p>The collection type.</p>
-    pub fn get_collection_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+    pub fn get_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
         self.inner.get_collection_type()
     }
     /// <p>The maximum number of resources to return.</p>

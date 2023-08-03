@@ -23,16 +23,14 @@ impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
 }
 impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -67,10 +65,7 @@ impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsBu
         &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails
-    {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
         crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
             name: self.name,
             value: self.value,

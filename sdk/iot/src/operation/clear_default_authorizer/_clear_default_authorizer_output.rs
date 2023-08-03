@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ClearDefaultAuthorizerOutput {
 }
 impl ClearDefaultAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`ClearDefaultAuthorizerOutput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput).
-    pub fn builder(
-    ) -> crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerOutputBuilder {
         crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`ClearDefaultAuthorizerOutput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClearDefaultAuthorizerOutputBuilder {
     _request_id: Option<String>,
 }

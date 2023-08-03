@@ -26,7 +26,7 @@ impl TerminateTargetInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateTargetInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::terminate_target_instances::builders::TerminateTargetInstancesInputBuilder,
+    inner: crate::operation::terminate_target_instances::builders::TerminateTargetInstancesInputBuilder,
 }
 impl TerminateTargetInstancesFluentBuilder {
     /// Creates a new `TerminateTargetInstances`.
@@ -37,10 +37,7 @@ impl TerminateTargetInstancesFluentBuilder {
         }
     }
     /// Access the TerminateTargetInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::terminate_target_instances::builders::TerminateTargetInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::terminate_target_instances::builders::TerminateTargetInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl TerminateTargetInstancesFluentBuilder {
             crate::operation::terminate_target_instances::TerminateTargetInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_target_instances::TerminateTargetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_target_instances::TerminateTargetInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl TerminateTargetInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl TerminateTargetInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_target_instances::TerminateTargetInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_target_instances::TerminateTargetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_target_instances::TerminateTargetInstancesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl TerminateTargetInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_target_instances::TerminateTargetInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_target_instances::TerminateTargetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_target_instances::TerminateTargetInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl TerminateTargetInstancesFluentBuilder {
             crate::operation::terminate_target_instances::TerminateTargetInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_target_instances::TerminateTargetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_target_instances::TerminateTargetInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl TerminateTargetInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>Terminate Target instance by Source Server IDs.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_i_ds(input.into());
         self
     }
     /// <p>Terminate Target instance by Source Server IDs.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_server_i_ds(input);
         self
     }
     /// <p>Terminate Target instance by Source Server IDs.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_server_i_ds()
     }
     /// Adds a key-value pair to `tags`.
@@ -154,30 +132,17 @@ impl TerminateTargetInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Terminate Target instance by Tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Terminate Target instance by Tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Terminate Target instance by Tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Terminate Target instance by Account ID</p>

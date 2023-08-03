@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for StartQueryExecutionOutput {
 }
 impl StartQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartQueryExecutionOutput`](crate::operation::start_query_execution::StartQueryExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_query_execution::builders::StartQueryExecutionOutputBuilder {
-        crate::operation::start_query_execution::builders::StartQueryExecutionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_query_execution::builders::StartQueryExecutionOutputBuilder {
+        crate::operation::start_query_execution::builders::StartQueryExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartQueryExecutionOutput`](crate::operation::start_query_execution::StartQueryExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartQueryExecutionOutputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartQueryExecutionOutputBuilder {
     /// <p>The unique ID of the query that ran as a result of this request.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query that ran as a result of this request.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_execution_id = input;
         self
     }

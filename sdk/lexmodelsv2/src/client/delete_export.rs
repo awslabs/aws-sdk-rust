@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`export_id(Option<String>)`](crate::operation::delete_export::DeleteExportOutput::export_id): <p>The unique identifier of the deleted export.</p>
     ///   - [`export_status(Option<ExportStatus>)`](crate::operation::delete_export::DeleteExportOutput::export_status): <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     /// - On failure, responds with [`SdkError<DeleteExportError>`](crate::operation::delete_export::DeleteExportError)
-    pub fn delete_export(
-        &self,
-    ) -> crate::operation::delete_export::builders::DeleteExportFluentBuilder {
-        crate::operation::delete_export::builders::DeleteExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_export(&self) -> crate::operation::delete_export::builders::DeleteExportFluentBuilder {
+        crate::operation::delete_export::builders::DeleteExportFluentBuilder::new(self.handle.clone())
     }
 }

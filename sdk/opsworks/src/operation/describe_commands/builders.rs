@@ -10,10 +10,7 @@ impl DescribeCommandsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_commands::DescribeCommandsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_commands::DescribeCommandsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_commands::DescribeCommandsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_commands();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeCommandsFluentBuilder {
         }
     }
     /// Access the DescribeCommands as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_commands::builders::DescribeCommandsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_commands::builders::DescribeCommandsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeCommandsFluentBuilder {
             crate::operation::describe_commands::DescribeCommands,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_commands::DescribeCommandsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_commands::DescribeCommandsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeCommandsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeCommandsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_commands::DescribeCommandsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_commands::DescribeCommandsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_commands::DescribeCommandsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeCommandsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_commands::DescribeCommandsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_commands::DescribeCommandsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_commands::DescribeCommandsError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl DescribeCommandsFluentBuilder {
             crate::operation::describe_commands::DescribeCommands,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_commands::DescribeCommandsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_commands::DescribeCommandsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -169,17 +147,12 @@ impl DescribeCommandsFluentBuilder {
         self
     }
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
-    pub fn set_command_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_command_ids(input);
         self
     }
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
-    pub fn get_command_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_command_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_command_ids()
     }
 }

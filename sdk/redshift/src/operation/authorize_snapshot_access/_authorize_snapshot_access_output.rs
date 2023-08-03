@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AuthorizeSnapshotAccessOutput {
 }
 impl AuthorizeSnapshotAccessOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeSnapshotAccessOutput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessOutputBuilder {
         crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeSnapshotAccessOutput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeSnapshotAccessOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl AuthorizeSnapshotAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AuthorizeSnapshotAccessOutput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput {
+    pub fn build(self) -> crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput {
         crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput {
             snapshot: self.snapshot,
             _request_id: self._request_id,

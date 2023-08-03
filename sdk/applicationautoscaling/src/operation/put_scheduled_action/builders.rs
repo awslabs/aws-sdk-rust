@@ -10,10 +10,7 @@ impl PutScheduledActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_action::PutScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_action::PutScheduledActionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_scheduled_action();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl PutScheduledActionFluentBuilder {
         }
     }
     /// Access the PutScheduledAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_scheduled_action::builders::PutScheduledActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_scheduled_action::builders::PutScheduledActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl PutScheduledActionFluentBuilder {
             crate::operation::put_scheduled_action::PutScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_action::PutScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl PutScheduledActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl PutScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_action::PutScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_action::PutScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl PutScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_action::PutScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_action::PutScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl PutScheduledActionFluentBuilder {
             crate::operation::put_scheduled_action::PutScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scheduled_action::PutScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +118,7 @@ impl PutScheduledActionFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -207,18 +188,12 @@ impl PutScheduledActionFluentBuilder {
         self.inner.get_timezone()
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
@@ -349,10 +324,7 @@ impl PutScheduledActionFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -380,9 +352,7 @@ impl PutScheduledActionFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
@@ -391,10 +361,7 @@ impl PutScheduledActionFluentBuilder {
         self
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -408,10 +375,7 @@ impl PutScheduledActionFluentBuilder {
         self
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -425,17 +389,12 @@ impl PutScheduledActionFluentBuilder {
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn set_scalable_target_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableTargetAction>,
-    ) -> Self {
+    pub fn set_scalable_target_action(mut self, input: ::std::option::Option<crate::types::ScalableTargetAction>) -> Self {
         self.inner = self.inner.set_scalable_target_action(input);
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn get_scalable_target_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableTargetAction> {
+    pub fn get_scalable_target_action(&self) -> &::std::option::Option<crate::types::ScalableTargetAction> {
         self.inner.get_scalable_target_action()
     }
 }

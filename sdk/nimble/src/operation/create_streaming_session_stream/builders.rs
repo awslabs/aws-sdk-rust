@@ -27,7 +27,7 @@ impl CreateStreamingSessionStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamingSessionStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder,
+    inner: crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder,
 }
 impl CreateStreamingSessionStreamFluentBuilder {
     /// Creates a new `CreateStreamingSessionStream`.
@@ -38,7 +38,7 @@ impl CreateStreamingSessionStreamFluentBuilder {
         }
     }
     /// Access the CreateStreamingSessionStream as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateStreamingSessionStreamFluentBuilder {
             crate::operation::create_streaming_session_stream::CreateStreamingSessionStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateStreamingSessionStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateStreamingSessionStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateStreamingSessionStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateStreamingSessionStreamFluentBuilder {
             crate::operation::create_streaming_session_stream::CreateStreamingSessionStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError>,
     > {
         self.customize_middleware().await
     }

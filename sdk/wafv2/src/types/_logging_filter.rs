@@ -31,9 +31,7 @@ impl LoggingFilter {
 
 /// A builder for [`LoggingFilter`](crate::types::LoggingFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingFilterBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) default_behavior: ::std::option::Option<crate::types::FilterBehavior>,
@@ -51,10 +49,7 @@ impl LoggingFilterBuilder {
         self
     }
     /// <p>The filters that you want to apply to the logs. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -68,10 +63,7 @@ impl LoggingFilterBuilder {
         self
     }
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
-    pub fn set_default_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterBehavior>,
-    ) -> Self {
+    pub fn set_default_behavior(mut self, input: ::std::option::Option<crate::types::FilterBehavior>) -> Self {
         self.default_behavior = input;
         self
     }

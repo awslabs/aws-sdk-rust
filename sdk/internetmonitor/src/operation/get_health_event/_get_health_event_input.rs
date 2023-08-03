@@ -29,9 +29,7 @@ impl GetHealthEventInput {
 
 /// A builder for [`GetHealthEventInput`](crate::operation::get_health_event::GetHealthEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthEventInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetHealthEventInputBuilder {
     /// Consumes the builder and constructs a [`GetHealthEventInput`](crate::operation::get_health_event::GetHealthEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_health_event::GetHealthEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_health_event::GetHealthEventInput {
             monitor_name: self.monitor_name,
             event_id: self.event_id,

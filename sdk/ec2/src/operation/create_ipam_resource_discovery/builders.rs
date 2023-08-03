@@ -26,7 +26,7 @@ impl CreateIpamResourceDiscoveryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIpamResourceDiscoveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder,
+    inner: crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder,
 }
 impl CreateIpamResourceDiscoveryFluentBuilder {
     /// Creates a new `CreateIpamResourceDiscovery`.
@@ -37,7 +37,7 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
         }
     }
     /// Access the CreateIpamResourceDiscovery as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
             crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
             crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +147,12 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
         self
     }
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn set_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
         self.inner = self.inner.set_operating_regions(input);
         self
     }
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn get_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
         self.inner.get_operating_regions()
     }
     /// Appends an item to `TagSpecifications`.
@@ -181,17 +165,12 @@ impl CreateIpamResourceDiscoveryFluentBuilder {
         self
     }
     /// <p>Tag specifications for the IPAM resource discovery.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>Tag specifications for the IPAM resource discovery.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>A client token for the IPAM resource discovery.</p>

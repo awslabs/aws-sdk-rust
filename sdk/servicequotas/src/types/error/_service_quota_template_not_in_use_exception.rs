@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ServiceQuotaTemplateNotInUseException {
     }
 }
 impl ::std::error::Error for ServiceQuotaTemplateNotInUseException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ServiceQuotaTemplateNotInUseException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ServiceQuotaTemplateNotInUseException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ServiceQuotaTemplateNotInUseException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceQuotaTemplateNotInUseException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ServiceQuotaTemplateNotInUseException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaTemplateNotInUseException`](crate::types::error::ServiceQuotaTemplateNotInUseException).
-    pub fn builder() -> crate::types::error::builders::ServiceQuotaTemplateNotInUseExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::ServiceQuotaTemplateNotInUseExceptionBuilder {
         crate::types::error::builders::ServiceQuotaTemplateNotInUseExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ServiceQuotaTemplateNotInUseException`](crate::types::error::ServiceQuotaTemplateNotInUseException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceQuotaTemplateNotInUseExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ServiceQuotaTemplateNotInUseExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

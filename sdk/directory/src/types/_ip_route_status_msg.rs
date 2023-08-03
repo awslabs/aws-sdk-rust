@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IpRouteStatusMsg {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for IpRouteStatusMsg {
             "RemoveFailed" => IpRouteStatusMsg::RemoveFailed,
             "Removed" => IpRouteStatusMsg::Removed,
             "Removing" => IpRouteStatusMsg::Removing,
-            other => {
-                IpRouteStatusMsg::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => IpRouteStatusMsg::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl IpRouteStatusMsg {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AddFailed",
-            "Added",
-            "Adding",
-            "RemoveFailed",
-            "Removed",
-            "Removing",
-        ]
+        &["AddFailed", "Added", "Adding", "RemoveFailed", "Removed", "Removing"]
     }
 }
 impl ::std::convert::AsRef<str> for IpRouteStatusMsg {

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`recipe(Option<Blob>)`](crate::operation::get_component::GetComponentOutput::recipe): <p>The recipe of the component version.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_component::GetComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)
-    pub fn get_component(
-        &self,
-    ) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
-        crate::operation::get_component::builders::GetComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_component(&self) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
+        crate::operation::get_component::builders::GetComponentFluentBuilder::new(self.handle.clone())
     }
 }

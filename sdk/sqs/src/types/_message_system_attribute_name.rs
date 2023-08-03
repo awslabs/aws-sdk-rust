@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MessageSystemAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for MessageSystemAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "AWSTraceHeader" => MessageSystemAttributeName::AwsTraceHeader,
-            "ApproximateFirstReceiveTimestamp" => {
-                MessageSystemAttributeName::ApproximateFirstReceiveTimestamp
-            }
+            "ApproximateFirstReceiveTimestamp" => MessageSystemAttributeName::ApproximateFirstReceiveTimestamp,
             "ApproximateReceiveCount" => MessageSystemAttributeName::ApproximateReceiveCount,
             "DeadLetterQueueSourceArn" => MessageSystemAttributeName::DeadLetterQueueSourceArn,
             "MessageDeduplicationId" => MessageSystemAttributeName::MessageDeduplicationId,
@@ -89,9 +81,7 @@ impl ::std::convert::From<&str> for MessageSystemAttributeName {
             "SenderId" => MessageSystemAttributeName::SenderId,
             "SentTimestamp" => MessageSystemAttributeName::SentTimestamp,
             "SequenceNumber" => MessageSystemAttributeName::SequenceNumber,
-            other => MessageSystemAttributeName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MessageSystemAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -107,9 +97,7 @@ impl MessageSystemAttributeName {
     pub fn as_str(&self) -> &str {
         match self {
             MessageSystemAttributeName::AwsTraceHeader => "AWSTraceHeader",
-            MessageSystemAttributeName::ApproximateFirstReceiveTimestamp => {
-                "ApproximateFirstReceiveTimestamp"
-            }
+            MessageSystemAttributeName::ApproximateFirstReceiveTimestamp => "ApproximateFirstReceiveTimestamp",
             MessageSystemAttributeName::ApproximateReceiveCount => "ApproximateReceiveCount",
             MessageSystemAttributeName::DeadLetterQueueSourceArn => "DeadLetterQueueSourceArn",
             MessageSystemAttributeName::MessageDeduplicationId => "MessageDeduplicationId",

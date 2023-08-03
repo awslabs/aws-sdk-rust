@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`service_provider_saml_metadata(Option<String>)`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput::service_provider_saml_metadata): <p>The service provider SAML metadata.</p>
     /// - On failure, responds with [`SdkError<GetPortalServiceProviderMetadataError>`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataError)
-    pub fn get_portal_service_provider_metadata(&self) -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder{
+    pub fn get_portal_service_provider_metadata(
+        &self,
+    ) -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder {
         crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,14 @@ impl BatchGetDataQualityResultInput {
 }
 impl BatchGetDataQualityResultInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
-    pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder {
         crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultInputBuilder {
     pub(crate) result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetDataQualityResultInputBuilder {
         self
     }
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn set_result_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_result_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.result_ids = input;
         self
     }
@@ -59,10 +54,6 @@ impl BatchGetDataQualityResultInputBuilder {
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput {
-                result_ids: self.result_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput { result_ids: self.result_ids })
     }
 }

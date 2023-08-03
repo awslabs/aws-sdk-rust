@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`notifications_with_subscribers(Vec<NotificationWithSubscribers>)`](crate::operation::create_budget::builders::CreateBudgetFluentBuilder::notifications_with_subscribers) / [`set_notifications_with_subscribers(Option<Vec<NotificationWithSubscribers>>)`](crate::operation::create_budget::builders::CreateBudgetFluentBuilder::set_notifications_with_subscribers): <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     /// - On success, responds with [`CreateBudgetOutput`](crate::operation::create_budget::CreateBudgetOutput)
     /// - On failure, responds with [`SdkError<CreateBudgetError>`](crate::operation::create_budget::CreateBudgetError)
-    pub fn create_budget(
-        &self,
-    ) -> crate::operation::create_budget::builders::CreateBudgetFluentBuilder {
-        crate::operation::create_budget::builders::CreateBudgetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_budget(&self) -> crate::operation::create_budget::builders::CreateBudgetFluentBuilder {
+        crate::operation::create_budget::builders::CreateBudgetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct CreateSipMediaApplicationCallOutput {
 }
 impl CreateSipMediaApplicationCallOutput {
     /// <p>The actual call.</p>
-    pub fn sip_media_application_call(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SipMediaApplicationCall> {
+    pub fn sip_media_application_call(&self) -> ::std::option::Option<&crate::types::SipMediaApplicationCall> {
         self.sip_media_application_call.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateSipMediaApplicationCallOutput {
 }
 impl CreateSipMediaApplicationCallOutput {
     /// Creates a new builder-style object to manufacture [`CreateSipMediaApplicationCallOutput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput).
-    pub fn builder() -> crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallOutputBuilder{
+    pub fn builder() -> crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallOutputBuilder {
         crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSipMediaApplicationCallOutput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCallOutputBuilder {
-    pub(crate) sip_media_application_call:
-        ::std::option::Option<crate::types::SipMediaApplicationCall>,
+    pub(crate) sip_media_application_call: ::std::option::Option<crate::types::SipMediaApplicationCall>,
     _request_id: Option<String>,
 }
 impl CreateSipMediaApplicationCallOutputBuilder {
     /// <p>The actual call.</p>
-    pub fn sip_media_application_call(
-        mut self,
-        input: crate::types::SipMediaApplicationCall,
-    ) -> Self {
+    pub fn sip_media_application_call(mut self, input: crate::types::SipMediaApplicationCall) -> Self {
         self.sip_media_application_call = ::std::option::Option::Some(input);
         self
     }
     /// <p>The actual call.</p>
-    pub fn set_sip_media_application_call(
-        mut self,
-        input: ::std::option::Option<crate::types::SipMediaApplicationCall>,
-    ) -> Self {
+    pub fn set_sip_media_application_call(mut self, input: ::std::option::Option<crate::types::SipMediaApplicationCall>) -> Self {
         self.sip_media_application_call = input;
         self
     }
     /// <p>The actual call.</p>
-    pub fn get_sip_media_application_call(
-        &self,
-    ) -> &::std::option::Option<crate::types::SipMediaApplicationCall> {
+    pub fn get_sip_media_application_call(&self) -> &::std::option::Option<crate::types::SipMediaApplicationCall> {
         &self.sip_media_application_call
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,7 @@ impl CreateSipMediaApplicationCallOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationCallOutput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput
-    {
+    pub fn build(self) -> crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput {
         crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput {
             sip_media_application_call: self.sip_media_application_call,
             _request_id: self._request_id,

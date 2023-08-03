@@ -55,9 +55,7 @@ impl Cookies {
 
 /// A builder for [`Cookies`](crate::types::Cookies).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CookiesBuilder {
     pub(crate) match_pattern: ::std::option::Option<crate::types::CookieMatchPattern>,
     pub(crate) match_scope: ::std::option::Option<crate::types::MapMatchScope>,
@@ -74,10 +72,7 @@ impl CookiesBuilder {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
-    pub fn set_match_pattern(
-        mut self,
-        input: ::std::option::Option<crate::types::CookieMatchPattern>,
-    ) -> Self {
+    pub fn set_match_pattern(mut self, input: ::std::option::Option<crate::types::CookieMatchPattern>) -> Self {
         self.match_pattern = input;
         self
     }
@@ -93,10 +88,7 @@ impl CookiesBuilder {
         self
     }
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
-    pub fn set_match_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::MapMatchScope>,
-    ) -> Self {
+    pub fn set_match_scope(mut self, input: ::std::option::Option<crate::types::MapMatchScope>) -> Self {
         self.match_scope = input;
         self
     }
@@ -122,10 +114,7 @@ impl CookiesBuilder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn set_oversize_handling(
-        mut self,
-        input: ::std::option::Option<crate::types::OversizeHandling>,
-    ) -> Self {
+    pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
         self.oversize_handling = input;
         self
     }

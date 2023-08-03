@@ -37,9 +37,7 @@ impl AgentStatusReference {
 
 /// A builder for [`AgentStatusReference`](crate::types::AgentStatusReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentStatusReferenceBuilder {
     pub(crate) status_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_arn: ::std::option::Option<::std::string::String>,
@@ -52,17 +50,12 @@ impl AgentStatusReferenceBuilder {
         self
     }
     /// <p>The start timestamp of the agent's status.</p>
-    pub fn set_status_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_status_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.status_start_timestamp = input;
         self
     }
     /// <p>The start timestamp of the agent's status.</p>
-    pub fn get_status_start_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_status_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.status_start_timestamp
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>

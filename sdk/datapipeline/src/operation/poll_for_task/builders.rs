@@ -10,10 +10,7 @@ impl PollForTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::poll_for_task::PollForTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_task::PollForTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_task::PollForTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.poll_for_task();
         fluent_builder.inner = self;
@@ -53,10 +50,7 @@ impl PollForTaskFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::poll_for_task::PollForTask,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::poll_for_task::PollForTask, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::poll_for_task::PollForTaskError>,
     > {
         let handle = self.handle.clone();
@@ -67,10 +61,7 @@ impl PollForTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -112,10 +103,7 @@ impl PollForTaskFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::poll_for_task::PollForTask,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::poll_for_task::PollForTask, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::poll_for_task::PollForTaskError>,
     > {
         self.customize_middleware().await
@@ -154,10 +142,7 @@ impl PollForTaskFluentBuilder {
         self
     }
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-    pub fn set_instance_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceIdentity>,
-    ) -> Self {
+    pub fn set_instance_identity(mut self, input: ::std::option::Option<crate::types::InstanceIdentity>) -> Self {
         self.inner = self.inner.set_instance_identity(input);
         self
     }

@@ -37,10 +37,7 @@ impl UpdateLongTermPricingFluentBuilder {
         }
     }
     /// Access the UpdateLongTermPricing as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateLongTermPricingFluentBuilder {
             crate::operation::update_long_term_pricing::UpdateLongTermPricing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_long_term_pricing::UpdateLongTermPricingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateLongTermPricingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateLongTermPricingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_long_term_pricing::UpdateLongTermPricingError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateLongTermPricingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_long_term_pricing::UpdateLongTermPricingError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateLongTermPricingFluentBuilder {
             crate::operation::update_long_term_pricing::UpdateLongTermPricing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_long_term_pricing::UpdateLongTermPricingError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn long_term_pricing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.long_term_pricing_id(input.into());
         self
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn set_long_term_pricing_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_long_term_pricing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_long_term_pricing_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl UpdateLongTermPricingFluentBuilder {
         self.inner.get_long_term_pricing_id()
     }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
-    pub fn replacement_job(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replacement_job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replacement_job(input.into());
         self
     }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
-    pub fn set_replacement_job(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replacement_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replacement_job(input);
         self
     }
@@ -169,10 +143,7 @@ impl UpdateLongTermPricingFluentBuilder {
         self
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
-    pub fn set_is_long_term_pricing_auto_renew(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_long_term_pricing_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_long_term_pricing_auto_renew(input);
         self
     }

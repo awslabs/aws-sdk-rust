@@ -35,9 +35,7 @@ impl ListRulesOutput {
 
 /// A builder for [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesOutputBuilder {
     pub(crate) rule_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListRulesOutputBuilder {
         self
     }
     /// <p>Summary information about a rule.</p>
-    pub fn set_rule_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
-    ) -> Self {
+    pub fn set_rule_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>) -> Self {
         self.rule_summary_list = input;
         self
     }
     /// <p>Summary information about a rule.</p>
-    pub fn get_rule_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
+    pub fn get_rule_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
         &self.rule_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

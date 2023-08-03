@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ServiceSummary>>)`](crate::operation::list_services::ListServicesOutput::items): <p>The services.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
-    pub fn list_services(
-        &self,
-    ) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
+        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
     }
 }

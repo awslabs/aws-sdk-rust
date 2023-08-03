@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`registry_id(Option<String>)`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput::registry_id): <p>The ID of the registry.</p>
     ///   - [`scanning_configuration(Option<RegistryScanningConfiguration>)`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput::scanning_configuration): <p>The scanning configuration for the registry.</p>
     /// - On failure, responds with [`SdkError<GetRegistryScanningConfigurationError>`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationError)
-    pub fn get_registry_scanning_configuration(&self) -> crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationFluentBuilder{
+    pub fn get_registry_scanning_configuration(
+        &self,
+    ) -> crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationFluentBuilder {
         crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

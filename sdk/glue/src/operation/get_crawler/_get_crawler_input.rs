@@ -22,9 +22,7 @@ impl GetCrawlerInput {
 
 /// A builder for [`GetCrawlerInput`](crate::operation::get_crawler::GetCrawlerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCrawlerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetCrawlerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetCrawlerInput`](crate::operation::get_crawler::GetCrawlerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_crawler::GetCrawlerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_crawler::GetCrawlerInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_crawler::GetCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_crawler::GetCrawlerInput { name: self.name })
     }
 }

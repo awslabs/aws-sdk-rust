@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`export_id(Option<String>)`](crate::operation::export_configurations::ExportConfigurationsOutput::export_id): <p>A unique identifier that you can use to query the export status.</p>
     /// - On failure, responds with [`SdkError<ExportConfigurationsError>`](crate::operation::export_configurations::ExportConfigurationsError)
     #[deprecated]
-    pub fn export_configurations(
-        &self,
-    ) -> crate::operation::export_configurations::builders::ExportConfigurationsFluentBuilder {
-        crate::operation::export_configurations::builders::ExportConfigurationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_configurations(&self) -> crate::operation::export_configurations::builders::ExportConfigurationsFluentBuilder {
+        crate::operation::export_configurations::builders::ExportConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

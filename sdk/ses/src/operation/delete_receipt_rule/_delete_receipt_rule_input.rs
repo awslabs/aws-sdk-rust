@@ -23,35 +23,26 @@ impl DeleteReceiptRuleInput {
 }
 impl DeleteReceiptRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleInput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder {
         crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReceiptRuleInput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReceiptRuleInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReceiptRuleInputBuilder {
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -76,15 +67,10 @@ impl DeleteReceiptRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReceiptRuleInput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_receipt_rule::DeleteReceiptRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_receipt_rule::DeleteReceiptRuleInput {
-                rule_set_name: self.rule_set_name,
-                rule_name: self.rule_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_receipt_rule::DeleteReceiptRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_receipt_rule::DeleteReceiptRuleInput {
+            rule_set_name: self.rule_set_name,
+            rule_name: self.rule_name,
+        })
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetEncryptionKeyOutput {
 }
 impl ResetEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`ResetEncryptionKeyOutput`](crate::operation::reset_encryption_key::ResetEncryptionKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyOutputBuilder {
+    pub fn builder() -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyOutputBuilder {
         crate::operation::reset_encryption_key::builders::ResetEncryptionKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetEncryptionKeyOutput`](crate::operation::reset_encryption_key::ResetEncryptionKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetEncryptionKeyOutputBuilder {
     _request_id: Option<String>,
 }

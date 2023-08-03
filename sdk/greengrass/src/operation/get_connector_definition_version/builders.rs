@@ -26,7 +26,7 @@ impl GetConnectorDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectorDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionInputBuilder,
+    inner: crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionInputBuilder,
 }
 impl GetConnectorDefinitionVersionFluentBuilder {
     /// Creates a new `GetConnectorDefinitionVersion`.
@@ -37,7 +37,7 @@ impl GetConnectorDefinitionVersionFluentBuilder {
         }
     }
     /// Access the GetConnectorDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetConnectorDefinitionVersionFluentBuilder {
             crate::operation::get_connector_definition_version::GetConnectorDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetConnectorDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetConnectorDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetConnectorDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetConnectorDefinitionVersionFluentBuilder {
             crate::operation::get_connector_definition_version::GetConnectorDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_definition_id(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_definition_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl GetConnectorDefinitionVersionFluentBuilder {
         self.inner.get_connector_definition_id()
     }
     /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn connector_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_definition_version_id(input.into());
         self
     }
     /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_connector_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_definition_version_id(input);
         self
     }
     /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn get_connector_definition_version_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_connector_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_definition_version_id()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.

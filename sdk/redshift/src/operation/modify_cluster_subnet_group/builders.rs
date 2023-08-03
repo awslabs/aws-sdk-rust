@@ -26,7 +26,7 @@ impl ModifyClusterSubnetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder,
+    inner: crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder,
 }
 impl ModifyClusterSubnetGroupFluentBuilder {
     /// Creates a new `ModifyClusterSubnetGroup`.
@@ -37,7 +37,7 @@ impl ModifyClusterSubnetGroupFluentBuilder {
         }
     }
     /// Access the ModifyClusterSubnetGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyClusterSubnetGroupFluentBuilder {
             crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyClusterSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyClusterSubnetGroupFluentBuilder {
             crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the subnet group to be modified.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());
         self
     }
     /// <p>The name of the subnet group to be modified.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }
@@ -164,10 +147,7 @@ impl ModifyClusterSubnetGroupFluentBuilder {
         self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

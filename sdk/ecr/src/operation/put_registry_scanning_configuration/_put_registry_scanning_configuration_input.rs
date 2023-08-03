@@ -26,16 +26,14 @@ impl PutRegistryScanningConfigurationInput {
 }
 impl PutRegistryScanningConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationInput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput).
-    pub fn builder() -> crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder {
         crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRegistryScanningConfigurationInput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRegistryScanningConfigurationInputBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
@@ -73,28 +71,26 @@ impl PutRegistryScanningConfigurationInputBuilder {
         self
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationInput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput {
-                scan_type: self.scan_type
-                ,
-                rules: self.rules
-                ,
-            }
+                scan_type: self.scan_type,
+                rules: self.rules,
+            },
         )
     }
 }

@@ -26,7 +26,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionInputBuilder,
+    inner: crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionInputBuilder,
 }
 impl ModifyTrafficMirrorSessionFluentBuilder {
     /// Creates a new `ModifyTrafficMirrorSession`.
@@ -37,7 +37,7 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
         }
     }
     /// Access the ModifyTrafficMirrorSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
             crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
             crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_session_id(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_mirror_session_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
         self.inner.get_traffic_mirror_session_id()
     }
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
-    pub fn traffic_mirror_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_target_id(input.into());
         self
     }
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
-    pub fn set_traffic_mirror_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_mirror_target_id(input);
         self
     }
@@ -161,18 +138,12 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
         self.inner.get_traffic_mirror_target_id()
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_filter_id(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_mirror_filter_id(input);
         self
     }
@@ -251,18 +222,13 @@ impl ModifyTrafficMirrorSessionFluentBuilder {
     }
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    pub fn set_remove_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>>,
-    ) -> Self {
+    pub fn set_remove_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>>) -> Self {
         self.inner = self.inner.set_remove_fields(input);
         self
     }
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    pub fn get_remove_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>> {
+    pub fn get_remove_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>> {
         self.inner.get_remove_fields()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

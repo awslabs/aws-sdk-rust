@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StartDeliveryStreamEncryptionOutput {
 }
 impl StartDeliveryStreamEncryptionOutput {
     /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionOutput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput).
-    pub fn builder() -> crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionOutputBuilder{
+    pub fn builder() -> crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionOutputBuilder {
         crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDeliveryStreamEncryptionOutput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl StartDeliveryStreamEncryptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDeliveryStreamEncryptionOutput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput
-    {
+    pub fn build(self) -> crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput {
         crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput {
             _request_id: self._request_id,
         }

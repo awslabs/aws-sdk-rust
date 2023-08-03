@@ -15,16 +15,14 @@ impl BatchDeleteAutomationRulesInput {
 }
 impl BatchDeleteAutomationRulesInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteAutomationRulesInput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput).
-    pub fn builder() -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder {
         crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteAutomationRulesInput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesInputBuilder {
     pub(crate) automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -34,27 +32,19 @@ impl BatchDeleteAutomationRulesInputBuilder {
     /// To override the contents of this collection use [`set_automation_rules_arns`](Self::set_automation_rules_arns).
     ///
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn automation_rules_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.automation_rules_arns.unwrap_or_default();
         v.push(input.into());
         self.automation_rules_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn set_automation_rules_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.automation_rules_arns = input;
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn get_automation_rules_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.automation_rules_arns
     }
     /// Consumes the builder and constructs a [`BatchDeleteAutomationRulesInput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput).
@@ -64,10 +54,8 @@ impl BatchDeleteAutomationRulesInputBuilder {
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput {
-                automation_rules_arns: self.automation_rules_arns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput {
+            automation_rules_arns: self.automation_rules_arns,
+        })
     }
 }

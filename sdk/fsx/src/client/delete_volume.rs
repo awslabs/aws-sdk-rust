@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`lifecycle(Option<VolumeLifecycle>)`](crate::operation::delete_volume::DeleteVolumeOutput::lifecycle): <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
     ///   - [`ontap_response(Option<DeleteVolumeOntapResponse>)`](crate::operation::delete_volume::DeleteVolumeOutput::ontap_response): <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
     /// - On failure, responds with [`SdkError<DeleteVolumeError>`](crate::operation::delete_volume::DeleteVolumeError)
-    pub fn delete_volume(
-        &self,
-    ) -> crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder {
-        crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_volume(&self) -> crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder {
+        crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::new(self.handle.clone())
     }
 }

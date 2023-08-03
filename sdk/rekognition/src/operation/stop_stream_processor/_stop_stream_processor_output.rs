@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopStreamProcessorOutput {
 }
 impl StopStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`StopStreamProcessorOutput`](crate::operation::stop_stream_processor::StopStreamProcessorOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_stream_processor::builders::StopStreamProcessorOutputBuilder {
-        crate::operation::stop_stream_processor::builders::StopStreamProcessorOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_stream_processor::builders::StopStreamProcessorOutputBuilder {
+        crate::operation::stop_stream_processor::builders::StopStreamProcessorOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopStreamProcessorOutput`](crate::operation::stop_stream_processor::StopStreamProcessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamProcessorOutputBuilder {
     _request_id: Option<String>,
 }

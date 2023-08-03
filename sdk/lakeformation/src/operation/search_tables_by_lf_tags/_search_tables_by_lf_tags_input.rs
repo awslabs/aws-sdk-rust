@@ -36,18 +36,14 @@ impl SearchTablesByLfTagsInput {
 }
 impl SearchTablesByLfTagsInput {
     /// Creates a new builder-style object to manufacture [`SearchTablesByLfTagsInput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput).
-    pub fn builder(
-    ) -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder {
         crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchTablesByLfTagsInput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTablesByLfTagsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -109,10 +105,7 @@ impl SearchTablesByLfTagsInputBuilder {
         self
     }
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
         self.expression = input;
         self
     }
@@ -123,17 +116,13 @@ impl SearchTablesByLfTagsInputBuilder {
     /// Consumes the builder and constructs a [`SearchTablesByLfTagsInput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                catalog_id: self.catalog_id,
-                expression: self.expression,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            catalog_id: self.catalog_id,
+            expression: self.expression,
+        })
     }
 }

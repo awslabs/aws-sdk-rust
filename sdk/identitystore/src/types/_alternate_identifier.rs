@@ -34,9 +34,7 @@ impl AlternateIdentifier {
     }
     /// Tries to convert the enum instance into [`UniqueAttribute`](crate::types::AlternateIdentifier::UniqueAttribute), extracting the inner [`UniqueAttribute`](crate::types::UniqueAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_unique_attribute(
-        &self,
-    ) -> ::std::result::Result<&crate::types::UniqueAttribute, &Self> {
+    pub fn as_unique_attribute(&self) -> ::std::result::Result<&crate::types::UniqueAttribute, &Self> {
         if let AlternateIdentifier::UniqueAttribute(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

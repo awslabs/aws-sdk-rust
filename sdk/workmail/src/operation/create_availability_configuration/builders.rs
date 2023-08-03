@@ -5,16 +5,16 @@ pub use crate::operation::create_availability_configuration::_create_availabilit
 
 impl CreateAvailabilityConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_availability_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateAvailabilityConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAvailabilityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationInputBuilder,
+    inner: crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationInputBuilder,
 }
 impl CreateAvailabilityConfigurationFluentBuilder {
     /// Creates a new `CreateAvailabilityConfiguration`.
@@ -37,15 +37,20 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         }
     }
     /// Access the CreateAvailabilityConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_availability_configuration::CreateAvailabilityConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_availability_configuration::CreateAvailabilityConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateAvailabilityConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl CreateAvailabilityConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_availability_configuration::CreateAvailabilityConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_availability_configuration::CreateAvailabilityConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
@@ -109,18 +124,12 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -148,17 +157,12 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         self
     }
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    pub fn set_ews_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::EwsAvailabilityProvider>,
-    ) -> Self {
+    pub fn set_ews_provider(mut self, input: ::std::option::Option<crate::types::EwsAvailabilityProvider>) -> Self {
         self.inner = self.inner.set_ews_provider(input);
         self
     }
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    pub fn get_ews_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
+    pub fn get_ews_provider(&self) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
         self.inner.get_ews_provider()
     }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
@@ -167,17 +171,12 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         self
     }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    pub fn set_lambda_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
-    ) -> Self {
+    pub fn set_lambda_provider(mut self, input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>) -> Self {
         self.inner = self.inner.set_lambda_provider(input);
         self
     }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    pub fn get_lambda_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
+    pub fn get_lambda_provider(&self) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
         self.inner.get_lambda_provider()
     }
 }

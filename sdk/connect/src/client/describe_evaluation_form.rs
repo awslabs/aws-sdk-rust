@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEvaluationFormOutput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput) with field(s):
     ///   - [`evaluation_form(Option<EvaluationForm>)`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput::evaluation_form): <p>Information about the evaluation form.</p>
     /// - On failure, responds with [`SdkError<DescribeEvaluationFormError>`](crate::operation::describe_evaluation_form::DescribeEvaluationFormError)
-    pub fn describe_evaluation_form(
-        &self,
-    ) -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormFluentBuilder
-    {
+    pub fn describe_evaluation_form(&self) -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormFluentBuilder {
         crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormFluentBuilder::new(self.handle.clone())
     }
 }

@@ -70,9 +70,7 @@ impl CreateLinkInput {
 
 /// A builder for [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ pub struct CreateLinkInputBuilder {
 }
 impl CreateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -194,10 +186,7 @@ impl CreateLinkInputBuilder {
         self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -206,12 +195,7 @@ impl CreateLinkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_link::CreateLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_link::CreateLinkInput {
             global_network_id: self.global_network_id,
             description: self.description,

@@ -29,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeReportDefinitionsOutput {
 }
 impl DescribeReportDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput).
-    pub fn builder() -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsOutputBuilder {
         crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReportDefinitionsOutputBuilder {
-    pub(crate) report_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
+    pub(crate) report_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +55,12 @@ impl DescribeReportDefinitionsOutputBuilder {
         self
     }
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
-    pub fn set_report_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
-    ) -> Self {
+    pub fn set_report_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>) -> Self {
         self.report_definitions = input;
         self
     }
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
-    pub fn get_report_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
+    pub fn get_report_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
         &self.report_definitions
     }
     /// <p>A generic string.</p>
@@ -95,9 +87,7 @@ impl DescribeReportDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput {
+    pub fn build(self) -> crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput {
         crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput {
             report_definitions: self.report_definitions,
             next_token: self.next_token,

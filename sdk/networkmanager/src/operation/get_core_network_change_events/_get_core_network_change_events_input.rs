@@ -36,16 +36,14 @@ impl GetCoreNetworkChangeEventsInput {
 }
 impl GetCoreNetworkChangeEventsInput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeEventsInput`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsInput).
-    pub fn builder() -> crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder{
+    pub fn builder() -> crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder {
         crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoreNetworkChangeEventsInput`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreNetworkChangeEventsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct GetCoreNetworkChangeEventsInputBuilder {
 }
 impl GetCoreNetworkChangeEventsInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl GetCoreNetworkChangeEventsInputBuilder {
         crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsInput {
-                core_network_id: self.core_network_id,
-                policy_version_id: self.policy_version_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsInput {
+            core_network_id: self.core_network_id,
+            policy_version_id: self.policy_version_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

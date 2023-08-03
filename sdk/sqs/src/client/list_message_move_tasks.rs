@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListMessageMoveTasksOutput`](crate::operation::list_message_move_tasks::ListMessageMoveTasksOutput) with field(s):
     ///   - [`results(Option<Vec<ListMessageMoveTasksResultEntry>>)`](crate::operation::list_message_move_tasks::ListMessageMoveTasksOutput::results): <p>A list of message movement tasks and their attributes.</p>
     /// - On failure, responds with [`SdkError<ListMessageMoveTasksError>`](crate::operation::list_message_move_tasks::ListMessageMoveTasksError)
-    pub fn list_message_move_tasks(
-        &self,
-    ) -> crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksFluentBuilder
-    {
-        crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_message_move_tasks(&self) -> crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksFluentBuilder {
+        crate::operation::list_message_move_tasks::builders::ListMessageMoveTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListDeviceProfilesOutput {
 }
 impl ListDeviceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceProfilesOutput`](crate::operation::list_device_profiles::ListDeviceProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_profiles::builders::ListDeviceProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::list_device_profiles::builders::ListDeviceProfilesOutputBuilder {
         crate::operation::list_device_profiles::builders::ListDeviceProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceProfilesOutput`](crate::operation::list_device_profiles::ListDeviceProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) device_profile_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>>,
+    pub(crate) device_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>>,
     _request_id: Option<String>,
 }
 impl ListDeviceProfilesOutputBuilder {
@@ -72,17 +68,12 @@ impl ListDeviceProfilesOutputBuilder {
         self
     }
     /// <p>The list of device profiles.</p>
-    pub fn set_device_profile_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>>,
-    ) -> Self {
+    pub fn set_device_profile_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>>) -> Self {
         self.device_profile_list = input;
         self
     }
     /// <p>The list of device profiles.</p>
-    pub fn get_device_profile_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>> {
+    pub fn get_device_profile_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>> {
         &self.device_profile_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

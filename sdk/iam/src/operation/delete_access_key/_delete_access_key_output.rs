@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessKeyOutput {
 }
 impl DeleteAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessKeyOutput`](crate::operation::delete_access_key::DeleteAccessKeyOutput).
-    pub fn builder() -> crate::operation::delete_access_key::builders::DeleteAccessKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_access_key::builders::DeleteAccessKeyOutputBuilder {
         crate::operation::delete_access_key::builders::DeleteAccessKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessKeyOutput`](crate::operation::delete_access_key::DeleteAccessKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessKeyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`ModifyVolumeAttributeOutput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifyVolumeAttributeError>`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeError)
-    pub fn modify_volume_attribute(
-        &self,
-    ) -> crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeFluentBuilder
-    {
-        crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_volume_attribute(&self) -> crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeFluentBuilder {
+        crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeFluentBuilder::new(self.handle.clone())
     }
 }

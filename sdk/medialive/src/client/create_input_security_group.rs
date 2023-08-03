@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInputSecurityGroupOutput`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput) with field(s):
     ///   - [`security_group(Option<InputSecurityGroup>)`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput::security_group): An Input Security Group
     /// - On failure, responds with [`SdkError<CreateInputSecurityGroupError>`](crate::operation::create_input_security_group::CreateInputSecurityGroupError)
-    pub fn create_input_security_group(&self) -> crate::operation::create_input_security_group::builders::CreateInputSecurityGroupFluentBuilder{
+    pub fn create_input_security_group(&self) -> crate::operation::create_input_security_group::builders::CreateInputSecurityGroupFluentBuilder {
         crate::operation::create_input_security_group::builders::CreateInputSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

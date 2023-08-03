@@ -46,9 +46,7 @@ impl UsageCriteria {
 
 /// A builder for [`UsageCriteria`](crate::types::UsageCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageCriteriaBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
@@ -68,17 +66,12 @@ impl UsageCriteriaBuilder {
         self
     }
     /// <p>The account IDs to aggregate usage statistics from.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The account IDs to aggregate usage statistics from.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `data_sources`.
@@ -95,18 +88,13 @@ impl UsageCriteriaBuilder {
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
     /// Appends an item to `resources`.
@@ -121,10 +109,7 @@ impl UsageCriteriaBuilder {
         self
     }
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
@@ -144,17 +129,12 @@ impl UsageCriteriaBuilder {
         self
     }
     /// <p>The features to aggregate usage statistics from.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageFeature>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageFeature>>) -> Self {
         self.features = input;
         self
     }
     /// <p>The features to aggregate usage statistics from.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageFeature>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageFeature>> {
         &self.features
     }
     /// Consumes the builder and constructs a [`UsageCriteria`](crate::types::UsageCriteria).

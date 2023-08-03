@@ -29,16 +29,14 @@ impl ListNamedShadowsForThingInput {
 }
 impl ListNamedShadowsForThingInput {
     /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingInput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput).
-    pub fn builder() -> crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingInputBuilder{
+    pub fn builder() -> crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingInputBuilder {
         crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNamedShadowsForThingInput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamedShadowsForThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListNamedShadowsForThingInputBuilder {
         crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput {
-                thing_name: self.thing_name,
-                next_token: self.next_token,
-                page_size: self.page_size,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput {
+            thing_name: self.thing_name,
+            next_token: self.next_token,
+            page_size: self.page_size,
+        })
     }
 }

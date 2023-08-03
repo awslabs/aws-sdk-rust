@@ -50,9 +50,7 @@ impl ListUtteranceMetricsFluentBuilder {
         }
     }
     /// Access the ListUtteranceMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +62,7 @@ impl ListUtteranceMetricsFluentBuilder {
             crate::operation::list_utterance_metrics::ListUtteranceMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_metrics::ListUtteranceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_metrics::ListUtteranceMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +72,7 @@ impl ListUtteranceMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +81,7 @@ impl ListUtteranceMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_metrics::ListUtteranceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_metrics::ListUtteranceMetricsError>,
     > {
         let op = self
             .inner
@@ -113,9 +104,7 @@ impl ListUtteranceMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_metrics::ListUtteranceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_metrics::ListUtteranceMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -129,22 +118,15 @@ impl ListUtteranceMetricsFluentBuilder {
             crate::operation::list_utterance_metrics::ListUtteranceMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_utterance_metrics::ListUtteranceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_utterance_metrics::ListUtteranceMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_utterance_metrics::paginator::ListUtteranceMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_utterance_metrics::paginator::ListUtteranceMetricsPaginator {
-        crate::operation::list_utterance_metrics::paginator::ListUtteranceMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_utterance_metrics::paginator::ListUtteranceMetricsPaginator {
+        crate::operation::list_utterance_metrics::paginator::ListUtteranceMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the bot for which you want to retrieve utterance metrics.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,10 +148,7 @@ impl ListUtteranceMetricsFluentBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
@@ -183,10 +162,7 @@ impl ListUtteranceMetricsFluentBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
@@ -204,17 +180,12 @@ impl ListUtteranceMetricsFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>> {
         self.inner.get_metrics()
     }
     /// Appends an item to `binBy`.
@@ -227,17 +198,12 @@ impl ListUtteranceMetricsFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn set_bin_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    ) -> Self {
+    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>) -> Self {
         self.inner = self.inner.set_bin_by(input);
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn get_bin_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
         self.inner.get_bin_by()
     }
     /// Appends an item to `groupBy`.
@@ -258,12 +224,7 @@ impl ListUtteranceMetricsFluentBuilder {
     /// <li> <p> <code>UtteranceText</code> – The transcription of the utterance.</p> </li>
     /// <li> <p> <code>UtteranceState</code> – The state of the utterance. The possible states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-utterances">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>,
-        >,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
@@ -272,10 +233,7 @@ impl ListUtteranceMetricsFluentBuilder {
     /// <li> <p> <code>UtteranceText</code> – The transcription of the utterance.</p> </li>
     /// <li> <p> <code>UtteranceState</code> – The state of the utterance. The possible states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-utterances">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>>
-    {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>> {
         self.inner.get_group_by()
     }
     /// Appends an item to `attributes`.
@@ -294,10 +252,7 @@ impl ListUtteranceMetricsFluentBuilder {
     /// <ul>
     /// <li> <p> <code>LastUsedIntent</code> – The last used intent at the time of the utterance.</p> </li>
     /// </ul>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
@@ -305,9 +260,7 @@ impl ListUtteranceMetricsFluentBuilder {
     /// <ul>
     /// <li> <p> <code>LastUsedIntent</code> – The last used intent at the time of the utterance.</p> </li>
     /// </ul>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>> {
         self.inner.get_attributes()
     }
     /// Appends an item to `filters`.
@@ -320,17 +273,12 @@ impl ListUtteranceMetricsFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>

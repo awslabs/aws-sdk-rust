@@ -10,10 +10,7 @@ impl AssociateWebAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_web_acl::AssociateWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_web_acl::AssociateWebACLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_web_acl::AssociateWebACLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_web_acl();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl AssociateWebACLFluentBuilder {
         }
     }
     /// Access the AssociateWebACL as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_web_acl::builders::AssociateWebAclInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_web_acl::builders::AssociateWebAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl AssociateWebACLFluentBuilder {
             crate::operation::associate_web_acl::AssociateWebACL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_web_acl::AssociateWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_web_acl::AssociateWebACLError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl AssociateWebACLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl AssociateWebACLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_web_acl::AssociateWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_web_acl::AssociateWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_web_acl::AssociateWebACLError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl AssociateWebACLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_web_acl::AssociateWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_web_acl::AssociateWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_web_acl::AssociateWebACLError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl AssociateWebACLFluentBuilder {
             crate::operation::associate_web_acl::AssociateWebACL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_web_acl::AssociateWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_web_acl::AssociateWebACLError>,
     > {
         self.customize_middleware().await
     }

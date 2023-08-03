@@ -39,9 +39,7 @@ impl AssociateChannelFlowFluentBuilder {
         }
     }
     /// Access the AssociateChannelFlow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_channel_flow::builders::AssociateChannelFlowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_channel_flow::builders::AssociateChannelFlowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl AssociateChannelFlowFluentBuilder {
             crate::operation::associate_channel_flow::AssociateChannelFlow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_channel_flow::AssociateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_channel_flow::AssociateChannelFlowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl AssociateChannelFlowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl AssociateChannelFlowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_channel_flow::AssociateChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_channel_flow::AssociateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_channel_flow::AssociateChannelFlowError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl AssociateChannelFlowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_channel_flow::AssociateChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_channel_flow::AssociateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_channel_flow::AssociateChannelFlowError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl AssociateChannelFlowFluentBuilder {
             crate::operation::associate_channel_flow::AssociateChannelFlow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_channel_flow::AssociateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_channel_flow::AssociateChannelFlowError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +126,12 @@ impl AssociateChannelFlowFluentBuilder {
         self.inner.get_channel_arn()
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_flow_arn(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_flow_arn(input);
         self
     }

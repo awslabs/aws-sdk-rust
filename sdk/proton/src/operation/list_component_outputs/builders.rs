@@ -38,9 +38,7 @@ impl ListComponentOutputsFluentBuilder {
         }
     }
     /// Access the ListComponentOutputs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListComponentOutputsFluentBuilder {
             crate::operation::list_component_outputs::ListComponentOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_outputs::ListComponentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_outputs::ListComponentOutputsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListComponentOutputsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListComponentOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_outputs::ListComponentOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_outputs::ListComponentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_outputs::ListComponentOutputsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListComponentOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_outputs::ListComponentOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_outputs::ListComponentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_outputs::ListComponentOutputsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +106,23 @@ impl ListComponentOutputsFluentBuilder {
             crate::operation::list_component_outputs::ListComponentOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_outputs::ListComponentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_outputs::ListComponentOutputsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_component_outputs::paginator::ListComponentOutputsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_component_outputs::paginator::ListComponentOutputsPaginator {
-        crate::operation::list_component_outputs::paginator::ListComponentOutputsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_component_outputs::paginator::ListComponentOutputsPaginator {
+        crate::operation::list_component_outputs::paginator::ListComponentOutputsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }
@@ -169,18 +145,12 @@ impl ListComponentOutputsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

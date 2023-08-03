@@ -44,9 +44,7 @@ impl ClientPolicyTls {
 
 /// A builder for [`ClientPolicyTls`](crate::types::ClientPolicyTls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientPolicyTlsBuilder {
     pub(crate) enforce: ::std::option::Option<bool>,
     pub(crate) ports: ::std::option::Option<::std::vec::Vec<i32>>,
@@ -94,10 +92,7 @@ impl ClientPolicyTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a client's TLS certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientTlsCertificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::ClientTlsCertificate>) -> Self {
         self.certificate = input;
         self
     }
@@ -111,10 +106,7 @@ impl ClientPolicyTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a TLS validation context.</p>
-    pub fn set_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsValidationContext>,
-    ) -> Self {
+    pub fn set_validation(mut self, input: ::std::option::Option<crate::types::TlsValidationContext>) -> Self {
         self.validation = input;
         self
     }

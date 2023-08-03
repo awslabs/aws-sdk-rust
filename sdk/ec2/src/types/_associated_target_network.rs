@@ -30,9 +30,7 @@ impl AssociatedTargetNetwork {
 
 /// A builder for [`AssociatedTargetNetwork`](crate::types::AssociatedTargetNetwork).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedTargetNetworkBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<crate::types::AssociatedNetworkType>,
@@ -58,10 +56,7 @@ impl AssociatedTargetNetworkBuilder {
         self
     }
     /// <p>The target network type.</p>
-    pub fn set_network_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociatedNetworkType>,
-    ) -> Self {
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AssociatedNetworkType>) -> Self {
         self.network_type = input;
         self
     }

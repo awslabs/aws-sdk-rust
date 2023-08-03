@@ -10,10 +10,7 @@ impl ModifyAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_account::ModifyAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_account::ModifyAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_account::ModifyAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_account();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyAccountFluentBuilder {
         }
     }
     /// Access the ModifyAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_account::builders::ModifyAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_account::builders::ModifyAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ModifyAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,51 +107,31 @@ impl ModifyAccountFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The status of BYOL.</p>
-    pub fn dedicated_tenancy_support(
-        mut self,
-        input: crate::types::DedicatedTenancySupportEnum,
-    ) -> Self {
+    pub fn dedicated_tenancy_support(mut self, input: crate::types::DedicatedTenancySupportEnum) -> Self {
         self.inner = self.inner.dedicated_tenancy_support(input);
         self
     }
     /// <p>The status of BYOL.</p>
-    pub fn set_dedicated_tenancy_support(
-        mut self,
-        input: ::std::option::Option<crate::types::DedicatedTenancySupportEnum>,
-    ) -> Self {
+    pub fn set_dedicated_tenancy_support(mut self, input: ::std::option::Option<crate::types::DedicatedTenancySupportEnum>) -> Self {
         self.inner = self.inner.set_dedicated_tenancy_support(input);
         self
     }
     /// <p>The status of BYOL.</p>
-    pub fn get_dedicated_tenancy_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::DedicatedTenancySupportEnum> {
+    pub fn get_dedicated_tenancy_support(&self) -> &::std::option::Option<crate::types::DedicatedTenancySupportEnum> {
         self.inner.get_dedicated_tenancy_support()
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
-    pub fn dedicated_tenancy_management_cidr_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .dedicated_tenancy_management_cidr_range(input.into());
+    pub fn dedicated_tenancy_management_cidr_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dedicated_tenancy_management_cidr_range(input.into());
         self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
-    pub fn set_dedicated_tenancy_management_cidr_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_dedicated_tenancy_management_cidr_range(input);
+    pub fn set_dedicated_tenancy_management_cidr_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dedicated_tenancy_management_cidr_range(input);
         self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
-    pub fn get_dedicated_tenancy_management_cidr_range(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_dedicated_tenancy_management_cidr_range(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dedicated_tenancy_management_cidr_range()
     }
 }

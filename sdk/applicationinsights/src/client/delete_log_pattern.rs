@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`pattern_name(impl ::std::convert::Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::pattern_name) / [`set_pattern_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_pattern_name): <p>The name of the log pattern.</p>
     /// - On success, responds with [`DeleteLogPatternOutput`](crate::operation::delete_log_pattern::DeleteLogPatternOutput)
     /// - On failure, responds with [`SdkError<DeleteLogPatternError>`](crate::operation::delete_log_pattern::DeleteLogPatternError)
-    pub fn delete_log_pattern(
-        &self,
-    ) -> crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder {
-        crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_log_pattern(&self) -> crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder {
+        crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::new(self.handle.clone())
     }
 }

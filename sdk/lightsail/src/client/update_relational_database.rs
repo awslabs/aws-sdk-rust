@@ -16,10 +16,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRelationalDatabaseOutput`](crate::operation::update_relational_database::UpdateRelationalDatabaseOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::update_relational_database::UpdateRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateRelationalDatabaseError>`](crate::operation::update_relational_database::UpdateRelationalDatabaseError)
-    pub fn update_relational_database(
-        &self,
-    ) -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseFluentBuilder
-    {
+    pub fn update_relational_database(&self) -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseFluentBuilder {
         crate::operation::update_relational_database::builders::UpdateRelationalDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

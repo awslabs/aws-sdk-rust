@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`availability_configurations(Option<Vec<AvailabilityConfiguration>>)`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput::availability_configurations): <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
     /// - On failure, responds with [`SdkError<ListAvailabilityConfigurationsError>`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError)
-    pub fn list_availability_configurations(&self) -> crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder{
+    pub fn list_availability_configurations(
+        &self,
+    ) -> crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder {
         crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

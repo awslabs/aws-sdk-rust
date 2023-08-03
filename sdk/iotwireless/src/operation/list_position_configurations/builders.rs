@@ -29,7 +29,7 @@ impl ListPositionConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPositionConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder,
+    inner: crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder,
 }
 impl ListPositionConfigurationsFluentBuilder {
     /// Creates a new `ListPositionConfigurations`.
@@ -40,7 +40,7 @@ impl ListPositionConfigurationsFluentBuilder {
         }
     }
     /// Access the ListPositionConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl ListPositionConfigurationsFluentBuilder {
             crate::operation::list_position_configurations::ListPositionConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_position_configurations::ListPositionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_position_configurations::ListPositionConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl ListPositionConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl ListPositionConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_position_configurations::ListPositionConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_position_configurations::ListPositionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_position_configurations::ListPositionConfigurationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl ListPositionConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_position_configurations::ListPositionConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_position_configurations::ListPositionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_position_configurations::ListPositionConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,16 +108,14 @@ impl ListPositionConfigurationsFluentBuilder {
             crate::operation::list_position_configurations::ListPositionConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_position_configurations::ListPositionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_position_configurations::ListPositionConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator {
         crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Resource type for which position configurations are listed.</p>
@@ -135,10 +124,7 @@ impl ListPositionConfigurationsFluentBuilder {
         self
     }
     /// <p>Resource type for which position configurations are listed.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

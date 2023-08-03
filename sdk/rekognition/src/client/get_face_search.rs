@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`video(Option<Video>)`](crate::operation::get_face_search::GetFaceSearchOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_face_search::GetFaceSearchOutput::job_tag): <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     /// - On failure, responds with [`SdkError<GetFaceSearchError>`](crate::operation::get_face_search::GetFaceSearchError)
-    pub fn get_face_search(
-        &self,
-    ) -> crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder {
-        crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_face_search(&self) -> crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder {
+        crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::new(self.handle.clone())
     }
 }

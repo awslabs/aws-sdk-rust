@@ -22,34 +22,26 @@ impl DeleteTrafficMirrorFilterInput {
 }
 impl DeleteTrafficMirrorFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorFilterInput`](crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder {
         crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficMirrorFilterInput`](crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterInputBuilder {
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTrafficMirrorFilterInputBuilder {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteTrafficMirrorFilterInputBuilder {
         crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput {
-                traffic_mirror_filter_id: self.traffic_mirror_filter_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput {
+            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
+            dry_run: self.dry_run,
+        })
     }
 }

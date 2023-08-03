@@ -37,9 +37,7 @@ impl RemoveBackendConfigFluentBuilder {
         }
     }
     /// Access the RemoveBackendConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_backend_config::builders::RemoveBackendConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_backend_config::builders::RemoveBackendConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RemoveBackendConfigFluentBuilder {
             crate::operation::remove_backend_config::RemoveBackendConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_backend_config::RemoveBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_backend_config::RemoveBackendConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RemoveBackendConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RemoveBackendConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_backend_config::RemoveBackendConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_backend_config::RemoveBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_backend_config::RemoveBackendConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RemoveBackendConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_backend_config::RemoveBackendConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_backend_config::RemoveBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_backend_config::RemoveBackendConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl RemoveBackendConfigFluentBuilder {
             crate::operation::remove_backend_config::RemoveBackendConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_backend_config::RemoveBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_backend_config::RemoveBackendConfigError>,
     > {
         self.customize_middleware().await
     }

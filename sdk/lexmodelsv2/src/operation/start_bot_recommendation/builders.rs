@@ -37,10 +37,7 @@ impl StartBotRecommendationFluentBuilder {
         }
     }
     /// Access the StartBotRecommendation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartBotRecommendationFluentBuilder {
             crate::operation::start_bot_recommendation::StartBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bot_recommendation::StartBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bot_recommendation::StartBotRecommendationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartBotRecommendationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_bot_recommendation::StartBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bot_recommendation::StartBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bot_recommendation::StartBotRecommendationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_bot_recommendation::StartBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bot_recommendation::StartBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bot_recommendation::StartBotRecommendationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartBotRecommendationFluentBuilder {
             crate::operation::start_bot_recommendation::StartBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bot_recommendation::StartBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bot_recommendation::StartBotRecommendationError>,
     > {
         self.customize_middleware().await
     }
@@ -166,25 +152,17 @@ impl StartBotRecommendationFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        mut self,
-        input: crate::types::TranscriptSourceSetting,
-    ) -> Self {
+    pub fn transcript_source_setting(mut self, input: crate::types::TranscriptSourceSetting) -> Self {
         self.inner = self.inner.transcript_source_setting(input);
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn set_transcript_source_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptSourceSetting>,
-    ) -> Self {
+    pub fn set_transcript_source_setting(mut self, input: ::std::option::Option<crate::types::TranscriptSourceSetting>) -> Self {
         self.inner = self.inner.set_transcript_source_setting(input);
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn get_transcript_source_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
+    pub fn get_transcript_source_setting(&self) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
         self.inner.get_transcript_source_setting()
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -193,17 +171,12 @@ impl StartBotRecommendationFluentBuilder {
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
         self.inner = self.inner.set_encryption_setting(input);
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn get_encryption_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         self.inner.get_encryption_setting()
     }
 }

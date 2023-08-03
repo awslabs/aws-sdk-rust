@@ -20,9 +20,7 @@ impl Function {
         self.function_arn.as_deref()
     }
     /// The configuration of the Lambda function.
-    pub fn function_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunctionConfiguration> {
+    pub fn function_configuration(&self) -> ::std::option::Option<&crate::types::FunctionConfiguration> {
         self.function_configuration.as_ref()
     }
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
@@ -39,9 +37,7 @@ impl Function {
 
 /// A builder for [`Function`](crate::types::Function).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
@@ -68,17 +64,12 @@ impl FunctionBuilder {
         self
     }
     /// The configuration of the Lambda function.
-    pub fn set_function_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfiguration>,
-    ) -> Self {
+    pub fn set_function_configuration(mut self, input: ::std::option::Option<crate::types::FunctionConfiguration>) -> Self {
         self.function_configuration = input;
         self
     }
     /// The configuration of the Lambda function.
-    pub fn get_function_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionConfiguration> {
+    pub fn get_function_configuration(&self) -> &::std::option::Option<crate::types::FunctionConfiguration> {
         &self.function_configuration
     }
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.

@@ -26,7 +26,7 @@ impl AssociatePhoneNumberWithUserInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePhoneNumberWithUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder,
+    inner: crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder,
 }
 impl AssociatePhoneNumberWithUserFluentBuilder {
     /// Creates a new `AssociatePhoneNumberWithUser`.
@@ -37,7 +37,7 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
         }
     }
     /// Access the AssociatePhoneNumberWithUser as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
             crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
             crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl AssociatePhoneNumberWithUserFluentBuilder {
         self.inner.get_user_id()
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e164_phone_number(input.into());
         self
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn set_e164_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_e164_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_e164_phone_number(input);
         self
     }

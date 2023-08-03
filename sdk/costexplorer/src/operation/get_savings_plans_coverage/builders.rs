@@ -33,8 +33,7 @@ impl GetSavingsPlansCoverageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder,
+    inner: crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder,
 }
 impl GetSavingsPlansCoverageFluentBuilder {
     /// Creates a new `GetSavingsPlansCoverage`.
@@ -45,10 +44,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
         }
     }
     /// Access the GetSavingsPlansCoverage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
             crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError>,
     > {
         self.send_middleware().await
     }
@@ -125,19 +112,14 @@ impl GetSavingsPlansCoverageFluentBuilder {
             crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator {
         crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator::new(self.handle, self.inner)
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -146,10 +128,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -167,17 +146,12 @@ impl GetSavingsPlansCoverageFluentBuilder {
         self
     }
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         self.inner.get_group_by()
     }
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
@@ -188,10 +162,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
     }
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }
@@ -248,10 +219,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
         self
     }
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
@@ -315,10 +283,7 @@ impl GetSavingsPlansCoverageFluentBuilder {
     /// <li> <p> <code>Service</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

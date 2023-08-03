@@ -40,17 +40,14 @@ impl ListStageDeploymentsInput {
 }
 impl ListStageDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ListStageDeploymentsInput`](crate::operation::list_stage_deployments::ListStageDeploymentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_stage_deployments::builders::ListStageDeploymentsInputBuilder {
+    pub fn builder() -> crate::operation::list_stage_deployments::builders::ListStageDeploymentsInputBuilder {
         crate::operation::list_stage_deployments::builders::ListStageDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStageDeploymentsInput`](crate::operation::list_stage_deployments::ListStageDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStageDeploymentsInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -123,17 +120,13 @@ impl ListStageDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListStageDeploymentsInput`](crate::operation::list_stage_deployments::ListStageDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stage_deployments::ListStageDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stage_deployments::ListStageDeploymentsInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_stage_deployments::ListStageDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_stage_deployments::ListStageDeploymentsInput {
+            game_name: self.game_name,
+            stage_name: self.stage_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

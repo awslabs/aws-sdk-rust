@@ -10,10 +10,7 @@ impl AssociateAddressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_address::AssociateAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_address::AssociateAddressError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_address::AssociateAddressError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_address();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl AssociateAddressFluentBuilder {
         }
     }
     /// Access the AssociateAddress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_address::builders::AssociateAddressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_address::builders::AssociateAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl AssociateAddressFluentBuilder {
             crate::operation::associate_address::AssociateAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_address::AssociateAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_address::AssociateAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl AssociateAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl AssociateAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_address::AssociateAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_address::AssociateAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_address::AssociateAddressError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl AssociateAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_address::AssociateAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_address::AssociateAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_address::AssociateAddressError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl AssociateAddressFluentBuilder {
             crate::operation::associate_address::AssociateAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_address::AssociateAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_address::AssociateAddressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The allocation ID. This is required.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_id(input.into());
         self
     }
     /// <p>The allocation ID. This is required.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
@@ -205,19 +183,13 @@ impl AssociateAddressFluentBuilder {
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -227,18 +199,12 @@ impl AssociateAddressFluentBuilder {
         self.inner.get_network_interface_id()
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_ip_address(input.into());
         self
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_private_ip_address(input);
         self
     }

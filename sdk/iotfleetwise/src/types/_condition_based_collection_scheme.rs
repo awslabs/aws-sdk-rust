@@ -48,9 +48,7 @@ impl ConditionBasedCollectionScheme {
 
 /// A builder for [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionBasedCollectionSchemeBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_trigger_interval_ms: ::std::option::Option<i64>,
@@ -98,10 +96,7 @@ impl ConditionBasedCollectionSchemeBuilder {
         self
     }
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
-    pub fn set_trigger_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerMode>,
-    ) -> Self {
+    pub fn set_trigger_mode(mut self, input: ::std::option::Option<crate::types::TriggerMode>) -> Self {
         self.trigger_mode = input;
         self
     }

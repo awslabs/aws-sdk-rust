@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`PutRepositoryPermissionsPolicyOutput`](crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput::policy): <p> The resource policy that was set after processing the request. </p>
     /// - On failure, responds with [`SdkError<PutRepositoryPermissionsPolicyError>`](crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError)
-    pub fn put_repository_permissions_policy(&self) -> crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyFluentBuilder{
+    pub fn put_repository_permissions_policy(
+        &self,
+    ) -> crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyFluentBuilder {
         crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::description): <p>The description provided of the task and managed devices.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_task::DescribeTaskOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::operation::describe_task::DescribeTaskError)
-    pub fn describe_task(
-        &self,
-    ) -> crate::operation::describe_task::builders::DescribeTaskFluentBuilder {
-        crate::operation::describe_task::builders::DescribeTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_task(&self) -> crate::operation::describe_task::builders::DescribeTaskFluentBuilder {
+        crate::operation::describe_task::builders::DescribeTaskFluentBuilder::new(self.handle.clone())
     }
 }

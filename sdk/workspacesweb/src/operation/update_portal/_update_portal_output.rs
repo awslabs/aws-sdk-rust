@@ -28,9 +28,7 @@ impl UpdatePortalOutput {
 
 /// A builder for [`UpdatePortalOutput`](crate::operation::update_portal::UpdatePortalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePortalOutputBuilder {
     pub(crate) portal: ::std::option::Option<crate::types::Portal>,
     _request_id: Option<String>,

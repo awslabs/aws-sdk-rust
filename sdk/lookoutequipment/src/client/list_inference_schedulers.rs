@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     ///   - [`inference_scheduler_summaries(Option<Vec<InferenceSchedulerSummary>>)`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput::inference_scheduler_summaries): <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     /// - On failure, responds with [`SdkError<ListInferenceSchedulersError>`](crate::operation::list_inference_schedulers::ListInferenceSchedulersError)
-    pub fn list_inference_schedulers(
-        &self,
-    ) -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersFluentBuilder
-    {
+    pub fn list_inference_schedulers(&self) -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersFluentBuilder {
         crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVoiceTemplateOutput`](crate::operation::create_voice_template::CreateVoiceTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::operation::create_voice_template::CreateVoiceTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceTemplateError>`](crate::operation::create_voice_template::CreateVoiceTemplateError)
-    pub fn create_voice_template(
-        &self,
-    ) -> crate::operation::create_voice_template::builders::CreateVoiceTemplateFluentBuilder {
-        crate::operation::create_voice_template::builders::CreateVoiceTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_voice_template(&self) -> crate::operation::create_voice_template::builders::CreateVoiceTemplateFluentBuilder {
+        crate::operation::create_voice_template::builders::CreateVoiceTemplateFluentBuilder::new(self.handle.clone())
     }
 }

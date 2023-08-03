@@ -22,9 +22,7 @@ pub fn ser_update_provisioned_product_input(
         object.key("ProvisioningArtifactId").string(var_6.as_str());
     }
     if let Some(var_7) = &input.provisioning_artifact_name {
-        object
-            .key("ProvisioningArtifactName")
-            .string(var_7.as_str());
+        object.key("ProvisioningArtifactName").string(var_7.as_str());
     }
     if let Some(var_8) = &input.path_id {
         object.key("PathId").string(var_8.as_str());

@@ -26,7 +26,7 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAwsNetworkPerformanceDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder,
+    inner: crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder,
 }
 impl GetAwsNetworkPerformanceDataFluentBuilder {
     /// Creates a new `GetAwsNetworkPerformanceData`.
@@ -37,7 +37,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         }
     }
     /// Access the GetAwsNetworkPerformanceData as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
             crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
             crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator {
         crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `DataQueries`.
@@ -136,17 +125,12 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self
     }
     /// <p>A list of network performance data queries.</p>
-    pub fn set_data_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataQuery>>,
-    ) -> Self {
+    pub fn set_data_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQuery>>) -> Self {
         self.inner = self.inner.set_data_queries(input);
         self
     }
     /// <p>A list of network performance data queries.</p>
-    pub fn get_data_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQuery>> {
+    pub fn get_data_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQuery>> {
         self.inner.get_data_queries()
     }
     /// <p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
@@ -155,10 +139,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self
     }
     /// <p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -172,10 +153,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self
     }
     /// <p>The ending time for the performance data request. The end time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

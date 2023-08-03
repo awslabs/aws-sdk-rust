@@ -23,9 +23,7 @@ impl GetSdkTypeInput {
 
 /// A builder for [`GetSdkTypeInput`](crate::operation::get_sdk_type::GetSdkTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSdkTypeInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl GetSdkTypeInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSdkTypeInput`](crate::operation::get_sdk_type::GetSdkTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sdk_type::GetSdkTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sdk_type::GetSdkTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sdk_type::GetSdkTypeInput { id: self.id })
     }
 }

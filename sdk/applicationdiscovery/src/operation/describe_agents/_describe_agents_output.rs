@@ -35,9 +35,7 @@ impl DescribeAgentsOutput {
 
 /// A builder for [`DescribeAgentsOutput`](crate::operation::describe_agents::DescribeAgentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentsOutputBuilder {
     pub(crate) agents_info: ::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeAgentsOutputBuilder {
         self
     }
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
-    pub fn set_agents_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>>,
-    ) -> Self {
+    pub fn set_agents_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>>) -> Self {
         self.agents_info = input;
         self
     }
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
-    pub fn get_agents_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>> {
+    pub fn get_agents_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>> {
         &self.agents_info
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>

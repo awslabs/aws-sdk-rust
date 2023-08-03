@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`enabled(bool)`](crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledFluentBuilder::enabled) / [`set_enabled(bool)`](crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledFluentBuilder::set_enabled): <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>  <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     /// - On success, responds with [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput)
     /// - On failure, responds with [`SdkError<SetIdentityHeadersInNotificationsEnabledError>`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError)
-    pub fn set_identity_headers_in_notifications_enabled(&self) -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledFluentBuilder{
-        crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledFluentBuilder::new(self.handle.clone())
+    pub fn set_identity_headers_in_notifications_enabled(
+        &self,
+    ) -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledFluentBuilder {
+        crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

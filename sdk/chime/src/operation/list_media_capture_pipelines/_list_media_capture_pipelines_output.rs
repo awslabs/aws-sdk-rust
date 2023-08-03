@@ -5,8 +5,7 @@
 pub struct ListMediaCapturePipelinesOutput {
     /// <p>The media capture pipeline objects in the list.</p>
     #[doc(hidden)]
-    pub media_capture_pipelines:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>,
+    pub media_capture_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>,
     /// <p>The token used to retrieve the next page of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMediaCapturePipelinesOutput {
 }
 impl ListMediaCapturePipelinesOutput {
     /// <p>The media capture pipeline objects in the list.</p>
-    pub fn media_capture_pipelines(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MediaCapturePipeline]> {
+    pub fn media_capture_pipelines(&self) -> ::std::option::Option<&[crate::types::MediaCapturePipeline]> {
         self.media_capture_pipelines.as_deref()
     }
     /// <p>The token used to retrieve the next page of results. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMediaCapturePipelinesOutput {
 }
 impl ListMediaCapturePipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesOutput`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput).
-    pub fn builder() -> crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesOutputBuilder{
+    pub fn builder() -> crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesOutputBuilder {
         crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMediaCapturePipelinesOutput`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesOutputBuilder {
-    pub(crate) media_capture_pipelines:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>,
+    pub(crate) media_capture_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListMediaCapturePipelinesOutputBuilder {
         self
     }
     /// <p>The media capture pipeline objects in the list.</p>
-    pub fn set_media_capture_pipelines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>,
-    ) -> Self {
+    pub fn set_media_capture_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>) -> Self {
         self.media_capture_pipelines = input;
         self
     }
     /// <p>The media capture pipeline objects in the list.</p>
-    pub fn get_media_capture_pipelines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>> {
+    pub fn get_media_capture_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>> {
         &self.media_capture_pipelines
     }
     /// <p>The token used to retrieve the next page of results. </p>
@@ -97,9 +86,7 @@ impl ListMediaCapturePipelinesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMediaCapturePipelinesOutput`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput {
+    pub fn build(self) -> crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput {
         crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput {
             media_capture_pipelines: self.media_capture_pipelines,
             next_token: self.next_token,

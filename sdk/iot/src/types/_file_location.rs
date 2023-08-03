@@ -30,9 +30,7 @@ impl FileLocation {
 
 /// A builder for [`FileLocation`](crate::types::FileLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileLocationBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::Stream>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
@@ -58,10 +56,7 @@ impl FileLocationBuilder {
         self
     }
     /// <p>The location of the updated firmware in S3.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_location = input;
         self
     }

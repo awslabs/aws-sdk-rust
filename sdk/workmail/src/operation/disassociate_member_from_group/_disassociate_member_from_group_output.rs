@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateMemberFromGroupOutput {
 }
 impl DisassociateMemberFromGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberFromGroupOutput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput).
-    pub fn builder() -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupOutputBuilder {
         crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMemberFromGroupOutput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateMemberFromGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateMemberFromGroupOutput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput {
+    pub fn build(self) -> crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput {
         crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput {
             _request_id: self._request_id,
         }

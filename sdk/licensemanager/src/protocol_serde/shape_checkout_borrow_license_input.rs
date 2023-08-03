@@ -12,10 +12,7 @@ pub fn ser_checkout_borrow_license_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_entitlement_data::ser_entitlement_data(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_entitlement_data::ser_entitlement_data(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

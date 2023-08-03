@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::name): <p>The name of the project in the space.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::display_name): <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
-    pub fn delete_project(
-        &self,
-    ) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
-        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
+        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }
 }

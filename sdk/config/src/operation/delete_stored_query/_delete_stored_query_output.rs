@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStoredQueryOutput {
 }
 impl DeleteStoredQueryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStoredQueryOutput`](crate::operation::delete_stored_query::DeleteStoredQueryOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_stored_query::builders::DeleteStoredQueryOutputBuilder {
+    pub fn builder() -> crate::operation::delete_stored_query::builders::DeleteStoredQueryOutputBuilder {
         crate::operation::delete_stored_query::builders::DeleteStoredQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStoredQueryOutput`](crate::operation::delete_stored_query::DeleteStoredQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStoredQueryOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteAdmChannelOutput {
 }
 impl DeleteAdmChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput).
-    pub fn builder() -> crate::operation::delete_adm_channel::builders::DeleteAdmChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_adm_channel::builders::DeleteAdmChannelOutputBuilder {
         crate::operation::delete_adm_channel::builders::DeleteAdmChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAdmChannelOutputBuilder {
     pub(crate) adm_channel_response: ::std::option::Option<crate::types::AdmChannelResponse>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl DeleteAdmChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn set_adm_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::AdmChannelResponse>,
-    ) -> Self {
+    pub fn set_adm_channel_response(mut self, input: ::std::option::Option<crate::types::AdmChannelResponse>) -> Self {
         self.adm_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn get_adm_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdmChannelResponse> {
+    pub fn get_adm_channel_response(&self) -> &::std::option::Option<crate::types::AdmChannelResponse> {
         &self.adm_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

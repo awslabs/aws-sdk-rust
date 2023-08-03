@@ -30,9 +30,7 @@ impl Beaconing {
 
 /// A builder for [`Beaconing`](crate::types::Beaconing).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BeaconingBuilder {
     pub(crate) data_rate: ::std::option::Option<i32>,
     pub(crate) frequencies: ::std::option::Option<::std::vec::Vec<i32>>,

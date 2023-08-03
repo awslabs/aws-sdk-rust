@@ -28,9 +28,7 @@ impl StopLaunchOutput {
 
 /// A builder for [`StopLaunchOutput`](crate::operation::stop_launch::StopLaunchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopLaunchOutputBuilder {
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopLaunchOutputBuilder {
         self
     }
     /// <p>The date and time that the launch stopped.</p>
-    pub fn set_ended_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_time = input;
         self
     }

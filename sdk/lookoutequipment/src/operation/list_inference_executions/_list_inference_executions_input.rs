@@ -50,18 +50,14 @@ impl ListInferenceExecutionsInput {
 }
 impl ListInferenceExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceExecutionsInput`](crate::operation::list_inference_executions::ListInferenceExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsInputBuilder {
         crate::operation::list_inference_executions::builders::ListInferenceExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceExecutionsInput`](crate::operation::list_inference_executions::ListInferenceExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -100,18 +96,12 @@ impl ListInferenceExecutionsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -125,17 +115,12 @@ impl ListInferenceExecutionsInputBuilder {
         self
     }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-    pub fn set_data_start_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_start_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_start_time_after = input;
         self
     }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-    pub fn get_data_start_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_data_start_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.data_start_time_after
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
@@ -144,10 +129,7 @@ impl ListInferenceExecutionsInputBuilder {
         self
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
-    pub fn set_data_end_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_end_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_end_time_before = input;
         self
     }
@@ -161,10 +143,7 @@ impl ListInferenceExecutionsInputBuilder {
         self
     }
     /// <p>The status of the inference execution. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -179,15 +158,13 @@ impl ListInferenceExecutionsInputBuilder {
         crate::operation::list_inference_executions::ListInferenceExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_inference_executions::ListInferenceExecutionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                inference_scheduler_name: self.inference_scheduler_name,
-                data_start_time_after: self.data_start_time_after,
-                data_end_time_before: self.data_end_time_before,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_inference_executions::ListInferenceExecutionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            inference_scheduler_name: self.inference_scheduler_name,
+            data_start_time_after: self.data_start_time_after,
+            data_end_time_before: self.data_end_time_before,
+            status: self.status,
+        })
     }
 }

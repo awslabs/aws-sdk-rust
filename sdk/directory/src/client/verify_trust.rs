@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::operation::verify_trust::VerifyTrustOutput::trust_id): <p>The unique Trust ID of the trust relationship that was verified.</p>
     /// - On failure, responds with [`SdkError<VerifyTrustError>`](crate::operation::verify_trust::VerifyTrustError)
-    pub fn verify_trust(
-        &self,
-    ) -> crate::operation::verify_trust::builders::VerifyTrustFluentBuilder {
+    pub fn verify_trust(&self) -> crate::operation::verify_trust::builders::VerifyTrustFluentBuilder {
         crate::operation::verify_trust::builders::VerifyTrustFluentBuilder::new(self.handle.clone())
     }
 }

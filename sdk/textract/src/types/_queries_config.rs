@@ -23,9 +23,7 @@ impl QueriesConfig {
 
 /// A builder for [`QueriesConfig`](crate::types::QueriesConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueriesConfigBuilder {
     pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
 }
@@ -42,10 +40,7 @@ impl QueriesConfigBuilder {
         self
     }
     /// <p></p>
-    pub fn set_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
-    ) -> Self {
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Query>>) -> Self {
         self.queries = input;
         self
     }
@@ -55,8 +50,6 @@ impl QueriesConfigBuilder {
     }
     /// Consumes the builder and constructs a [`QueriesConfig`](crate::types::QueriesConfig).
     pub fn build(self) -> crate::types::QueriesConfig {
-        crate::types::QueriesConfig {
-            queries: self.queries,
-        }
+        crate::types::QueriesConfig { queries: self.queries }
     }
 }

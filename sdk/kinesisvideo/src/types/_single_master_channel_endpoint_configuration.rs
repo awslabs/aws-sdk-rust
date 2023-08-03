@@ -30,9 +30,7 @@ impl SingleMasterChannelEndpointConfiguration {
 
 /// A builder for [`SingleMasterChannelEndpointConfiguration`](crate::types::SingleMasterChannelEndpointConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SingleMasterChannelEndpointConfigurationBuilder {
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>>,
     pub(crate) role: ::std::option::Option<crate::types::ChannelRole>,
@@ -50,17 +48,12 @@ impl SingleMasterChannelEndpointConfigurationBuilder {
         self
     }
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>>) -> Self {
         self.protocols = input;
         self
     }
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
-    pub fn get_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>> {
         &self.protocols
     }
     /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>

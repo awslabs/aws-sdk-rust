@@ -22,17 +22,14 @@ impl CreateDomainEntryInput {
 }
 impl CreateDomainEntryInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainEntryInput`](crate::operation::create_domain_entry::CreateDomainEntryInput).
-    pub fn builder(
-    ) -> crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder {
+    pub fn builder() -> crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder {
         crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDomainEntryInput`](crate::operation::create_domain_entry::CreateDomainEntryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDomainEntryInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_entry: ::std::option::Option<crate::types::DomainEntry>,
@@ -58,10 +55,7 @@ impl CreateDomainEntryInputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
-    pub fn set_domain_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEntry>,
-    ) -> Self {
+    pub fn set_domain_entry(mut self, input: ::std::option::Option<crate::types::DomainEntry>) -> Self {
         self.domain_entry = input;
         self
     }
@@ -72,15 +66,10 @@ impl CreateDomainEntryInputBuilder {
     /// Consumes the builder and constructs a [`CreateDomainEntryInput`](crate::operation::create_domain_entry::CreateDomainEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_domain_entry::CreateDomainEntryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_domain_entry::CreateDomainEntryInput {
-                domain_name: self.domain_name,
-                domain_entry: self.domain_entry,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_domain_entry::CreateDomainEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_domain_entry::CreateDomainEntryInput {
+            domain_name: self.domain_name,
+            domain_entry: self.domain_entry,
+        })
     }
 }

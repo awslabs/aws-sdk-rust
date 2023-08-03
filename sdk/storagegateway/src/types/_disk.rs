@@ -74,9 +74,7 @@ impl Disk {
 
 /// A builder for [`Disk`](crate::types::Disk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskBuilder {
     pub(crate) disk_id: ::std::option::Option<::std::string::String>,
     pub(crate) disk_path: ::std::option::Option<::std::string::String>,
@@ -160,19 +158,13 @@ impl DiskBuilder {
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-    pub fn disk_allocation_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_allocation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_allocation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-    pub fn set_disk_allocation_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_allocation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_allocation_type = input;
         self
     }
@@ -182,18 +174,12 @@ impl DiskBuilder {
         &self.disk_allocation_type
     }
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-    pub fn disk_allocation_resource(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_allocation_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_allocation_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-    pub fn set_disk_allocation_resource(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_allocation_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_allocation_resource = input;
         self
     }
@@ -206,27 +192,19 @@ impl DiskBuilder {
     /// To override the contents of this collection use [`set_disk_attribute_list`](Self::set_disk_attribute_list).
     ///
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn disk_attribute_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_attribute_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disk_attribute_list.unwrap_or_default();
         v.push(input.into());
         self.disk_attribute_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn set_disk_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disk_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disk_attribute_list = input;
         self
     }
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn get_disk_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disk_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disk_attribute_list
     }
     /// Consumes the builder and constructs a [`Disk`](crate::types::Disk).

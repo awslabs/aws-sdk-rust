@@ -5,16 +5,16 @@ pub use crate::operation::describe_key_phrases_detection_job::_describe_key_phra
 
 impl DescribeKeyPhrasesDetectionJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_key_phrases_detection_job();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeKeyPhrasesDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyPhrasesDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder,
+    inner: crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder,
 }
 impl DescribeKeyPhrasesDetectionJobFluentBuilder {
     /// Creates a new `DescribeKeyPhrasesDetectionJob`.
@@ -37,15 +37,20 @@ impl DescribeKeyPhrasesDetectionJobFluentBuilder {
         }
     }
     /// Access the DescribeKeyPhrasesDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeKeyPhrasesDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DescribeKeyPhrasesDetectionJobFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartKeyPhrasesDetectionJob</code> operation returns this identifier in its response.</p>

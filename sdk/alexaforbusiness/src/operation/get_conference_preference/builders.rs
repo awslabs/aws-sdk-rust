@@ -27,8 +27,7 @@ impl GetConferencePreferenceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConferencePreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder,
+    inner: crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder,
 }
 impl GetConferencePreferenceFluentBuilder {
     /// Creates a new `GetConferencePreference`.
@@ -39,10 +38,7 @@ impl GetConferencePreferenceFluentBuilder {
         }
     }
     /// Access the GetConferencePreference as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl GetConferencePreferenceFluentBuilder {
             crate::operation::get_conference_preference::GetConferencePreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_preference::GetConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_preference::GetConferencePreferenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl GetConferencePreferenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl GetConferencePreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_conference_preference::GetConferencePreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_preference::GetConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_preference::GetConferencePreferenceError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl GetConferencePreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_conference_preference::GetConferencePreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_preference::GetConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_preference::GetConferencePreferenceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl GetConferencePreferenceFluentBuilder {
             crate::operation::get_conference_preference::GetConferencePreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_conference_preference::GetConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_conference_preference::GetConferencePreferenceError>,
     > {
         self.customize_middleware().await
     }

@@ -26,8 +26,7 @@ impl GetMediaCapturePipelineInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMediaCapturePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder,
+    inner: crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder,
 }
 impl GetMediaCapturePipelineFluentBuilder {
     /// Creates a new `GetMediaCapturePipeline`.
@@ -38,10 +37,7 @@ impl GetMediaCapturePipelineFluentBuilder {
         }
     }
     /// Access the GetMediaCapturePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetMediaCapturePipelineFluentBuilder {
             crate::operation::get_media_capture_pipeline::GetMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetMediaCapturePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetMediaCapturePipelineFluentBuilder {
             crate::operation::get_media_capture_pipeline::GetMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_pipeline_id(input.into());
         self
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_pipeline_id(input);
         self
     }

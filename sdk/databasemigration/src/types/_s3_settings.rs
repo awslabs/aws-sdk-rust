@@ -358,15 +358,11 @@ impl S3Settings {
         self.date_partition_enabled
     }
     /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn date_partition_sequence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatePartitionSequenceValue> {
+    pub fn date_partition_sequence(&self) -> ::std::option::Option<&crate::types::DatePartitionSequenceValue> {
         self.date_partition_sequence.as_ref()
     }
     /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn date_partition_delimiter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatePartitionDelimiterValue> {
+    pub fn date_partition_delimiter(&self) -> ::std::option::Option<&crate::types::DatePartitionDelimiterValue> {
         self.date_partition_delimiter.as_ref()
     }
     /// <p>This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"> <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these columns.</p> <note>
@@ -403,9 +399,7 @@ impl S3Settings {
     }
     /// <p>A value that enables DMS to specify a predefined (canned) access control list for objects created in an Amazon S3 bucket as .csv or .parquet files. For more information about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p>
     /// <p>The default value is NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and BUCKET_OWNER_FULL_CONTROL.</p>
-    pub fn canned_acl_for_objects(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CannedAclForObjectsValue> {
+    pub fn canned_acl_for_objects(&self) -> ::std::option::Option<&crate::types::CannedAclForObjectsValue> {
         self.canned_acl_for_objects.as_ref()
     }
     /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use to add column name information to the .csv output file.</p>
@@ -475,9 +469,7 @@ impl S3Settings {
 
 /// A builder for [`S3Settings`](crate::types::S3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SettingsBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_table_definition: ::std::option::Option<::std::string::String>,
@@ -501,17 +493,14 @@ pub struct S3SettingsBuilder {
     pub(crate) parquet_timestamp_in_millisecond: ::std::option::Option<bool>,
     pub(crate) cdc_inserts_and_updates: ::std::option::Option<bool>,
     pub(crate) date_partition_enabled: ::std::option::Option<bool>,
-    pub(crate) date_partition_sequence:
-        ::std::option::Option<crate::types::DatePartitionSequenceValue>,
-    pub(crate) date_partition_delimiter:
-        ::std::option::Option<crate::types::DatePartitionDelimiterValue>,
+    pub(crate) date_partition_sequence: ::std::option::Option<crate::types::DatePartitionSequenceValue>,
+    pub(crate) date_partition_delimiter: ::std::option::Option<crate::types::DatePartitionDelimiterValue>,
     pub(crate) use_csv_no_sup_value: ::std::option::Option<bool>,
     pub(crate) csv_no_sup_value: ::std::option::Option<::std::string::String>,
     pub(crate) preserve_transactions: ::std::option::Option<bool>,
     pub(crate) cdc_path: ::std::option::Option<::std::string::String>,
     pub(crate) use_task_start_time_for_full_load_timestamp: ::std::option::Option<bool>,
-    pub(crate) canned_acl_for_objects:
-        ::std::option::Option<crate::types::CannedAclForObjectsValue>,
+    pub(crate) canned_acl_for_objects: ::std::option::Option<crate::types::CannedAclForObjectsValue>,
     pub(crate) add_column_name: ::std::option::Option<bool>,
     pub(crate) cdc_max_batch_interval: ::std::option::Option<i32>,
     pub(crate) cdc_min_file_size: ::std::option::Option<i32>,
@@ -526,18 +515,12 @@ pub struct S3SettingsBuilder {
 }
 impl S3SettingsBuilder {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
-    pub fn service_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
@@ -546,18 +529,12 @@ impl S3SettingsBuilder {
         &self.service_access_role_arn
     }
     /// <p> Specifies how tables are defined in the S3 source files only. </p>
-    pub fn external_table_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_table_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_table_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies how tables are defined in the S3 source files only. </p>
-    pub fn set_external_table_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_table_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_table_definition = input;
         self
     }
@@ -566,18 +543,12 @@ impl S3SettingsBuilder {
         &self.external_table_definition
     }
     /// <p> The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return (<code>\n</code>). </p>
-    pub fn csv_row_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn csv_row_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_row_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return (<code>\n</code>). </p>
-    pub fn set_csv_row_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_csv_row_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_row_delimiter = input;
         self
     }
@@ -586,18 +557,12 @@ impl S3SettingsBuilder {
         &self.csv_row_delimiter
     }
     /// <p> The delimiter used to separate columns in the .csv file for both source and target. The default is a comma. </p>
-    pub fn csv_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn csv_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The delimiter used to separate columns in the .csv file for both source and target. The default is a comma. </p>
-    pub fn set_csv_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_csv_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_delimiter = input;
         self
     }
@@ -606,18 +571,12 @@ impl S3SettingsBuilder {
         &self.csv_delimiter
     }
     /// <p> An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>. </p>
-    pub fn bucket_folder(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_folder = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>. </p>
-    pub fn set_bucket_folder(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_folder = input;
         self
     }
@@ -645,17 +604,12 @@ impl S3SettingsBuilder {
         self
     }
     /// <p>An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies to both .csv and .parquet file formats. </p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionTypeValue>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionTypeValue>) -> Self {
         self.compression_type = input;
         self
     }
     /// <p>An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies to both .csv and .parquet file formats. </p>
-    pub fn get_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompressionTypeValue> {
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::CompressionTypeValue> {
         &self.compression_type
     }
     /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
@@ -696,10 +650,7 @@ impl S3SettingsBuilder {
     /// <li> <p> <code>s3:PutBucketPolicy</code> </p> </li>
     /// <li> <p> <code>s3:DeleteBucketPolicy</code> </p> </li>
     /// </ul>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionModeValue>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionModeValue>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -725,27 +676,19 @@ impl S3SettingsBuilder {
     }
     /// <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows use of the key.</p>
     /// <p>Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code> </p>
-    pub fn server_side_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows use of the key.</p>
     /// <p>Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code> </p>
-    pub fn set_server_side_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_side_encryption_kms_key_id = input;
         self
     }
     /// <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows use of the key.</p>
     /// <p>Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code> </p>
-    pub fn get_server_side_encryption_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_server_side_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_side_encryption_kms_key_id
     }
     /// <p>The format of the data that you want to use for output. You can choose one of the following: </p>
@@ -762,10 +705,7 @@ impl S3SettingsBuilder {
     /// <li> <p> <code>csv</code> : This is a row-based file format with comma-separated values (.csv). </p> </li>
     /// <li> <p> <code>parquet</code> : Apache Parquet (.parquet) is a columnar storage file format that features efficient compression and provides faster query response. </p> </li>
     /// </ul>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormatValue>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormatValue>) -> Self {
         self.data_format = input;
         self
     }
@@ -793,10 +733,7 @@ impl S3SettingsBuilder {
     /// <li> <p> <code>PLAIN</code> doesn't use encoding at all. Values are stored as they are.</p> </li>
     /// <li> <p> <code>PLAIN_DICTIONARY</code> builds a dictionary of the values encountered in a given column. The dictionary is stored in a dictionary page for each column chunk.</p> </li>
     /// </ul>
-    pub fn set_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingTypeValue>,
-    ) -> Self {
+    pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingTypeValue>) -> Self {
         self.encoding_type = input;
         self
     }
@@ -860,10 +797,7 @@ impl S3SettingsBuilder {
         self
     }
     /// <p>The version of the Apache Parquet format that you want to use: <code>parquet_1_0</code> (the default) or <code>parquet_2_0</code>.</p>
-    pub fn set_parquet_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetVersionValue>,
-    ) -> Self {
+    pub fn set_parquet_version(mut self, input: ::std::option::Option<crate::types::ParquetVersionValue>) -> Self {
         self.parquet_version = input;
         self
     }
@@ -951,10 +885,7 @@ impl S3SettingsBuilder {
     /// <p>For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of that row in the source database.</p>
     /// <p>The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit timestamp supported by DMS for the source database.</p>
     /// <p>When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the timestamp column that you set with <code>TimestampColumnName</code>.</p>
-    pub fn timestamp_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestamp_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_column_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -966,10 +897,7 @@ impl S3SettingsBuilder {
     /// <p>For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of that row in the source database.</p>
     /// <p>The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit timestamp supported by DMS for the source database.</p>
     /// <p>When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the timestamp column that you set with <code>TimestampColumnName</code>.</p>
-    pub fn set_timestamp_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestamp_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_column_name = input;
         self
     }
@@ -1004,10 +932,7 @@ impl S3SettingsBuilder {
     /// <p>DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond precision.</p>
     /// <p>Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column value that is inserted by setting the <code>TimestampColumnName</code> parameter.</p>
     /// </note>
-    pub fn set_parquet_timestamp_in_millisecond(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_parquet_timestamp_in_millisecond(mut self, input: ::std::option::Option<bool>) -> Self {
         self.parquet_timestamp_in_millisecond = input;
         self
     }
@@ -1069,47 +994,31 @@ impl S3SettingsBuilder {
         &self.date_partition_enabled
     }
     /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn date_partition_sequence(
-        mut self,
-        input: crate::types::DatePartitionSequenceValue,
-    ) -> Self {
+    pub fn date_partition_sequence(mut self, input: crate::types::DatePartitionSequenceValue) -> Self {
         self.date_partition_sequence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn set_date_partition_sequence(
-        mut self,
-        input: ::std::option::Option<crate::types::DatePartitionSequenceValue>,
-    ) -> Self {
+    pub fn set_date_partition_sequence(mut self, input: ::std::option::Option<crate::types::DatePartitionSequenceValue>) -> Self {
         self.date_partition_sequence = input;
         self
     }
     /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn get_date_partition_sequence(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatePartitionSequenceValue> {
+    pub fn get_date_partition_sequence(&self) -> &::std::option::Option<crate::types::DatePartitionSequenceValue> {
         &self.date_partition_sequence
     }
     /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn date_partition_delimiter(
-        mut self,
-        input: crate::types::DatePartitionDelimiterValue,
-    ) -> Self {
+    pub fn date_partition_delimiter(mut self, input: crate::types::DatePartitionDelimiterValue) -> Self {
         self.date_partition_delimiter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn set_date_partition_delimiter(
-        mut self,
-        input: ::std::option::Option<crate::types::DatePartitionDelimiterValue>,
-    ) -> Self {
+    pub fn set_date_partition_delimiter(mut self, input: ::std::option::Option<crate::types::DatePartitionDelimiterValue>) -> Self {
         self.date_partition_delimiter = input;
         self
     }
     /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
-    pub fn get_date_partition_delimiter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatePartitionDelimiterValue> {
+    pub fn get_date_partition_delimiter(&self) -> &::std::option::Option<crate::types::DatePartitionDelimiterValue> {
         &self.date_partition_delimiter
     }
     /// <p>This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"> <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these columns.</p> <note>
@@ -1135,20 +1044,14 @@ impl S3SettingsBuilder {
     /// <p>This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in .csv format. If <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"> <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
     /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
     /// </note>
-    pub fn csv_no_sup_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn csv_no_sup_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_no_sup_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in .csv format. If <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"> <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
     /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
     /// </note>
-    pub fn set_csv_no_sup_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_csv_no_sup_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_no_sup_value = input;
         self
     }
@@ -1215,10 +1118,7 @@ impl S3SettingsBuilder {
     }
     /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads, each row of the timestamp column contains the transaction commit time.</p>
     /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp in the timestamp column increments with the time data arrives at the target. </p>
-    pub fn set_use_task_start_time_for_full_load_timestamp(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_task_start_time_for_full_load_timestamp(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_task_start_time_for_full_load_timestamp = input;
         self
     }
@@ -1235,18 +1135,13 @@ impl S3SettingsBuilder {
     }
     /// <p>A value that enables DMS to specify a predefined (canned) access control list for objects created in an Amazon S3 bucket as .csv or .parquet files. For more information about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p>
     /// <p>The default value is NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and BUCKET_OWNER_FULL_CONTROL.</p>
-    pub fn set_canned_acl_for_objects(
-        mut self,
-        input: ::std::option::Option<crate::types::CannedAclForObjectsValue>,
-    ) -> Self {
+    pub fn set_canned_acl_for_objects(mut self, input: ::std::option::Option<crate::types::CannedAclForObjectsValue>) -> Self {
         self.canned_acl_for_objects = input;
         self
     }
     /// <p>A value that enables DMS to specify a predefined (canned) access control list for objects created in an Amazon S3 bucket as .csv or .parquet files. For more information about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p>
     /// <p>The default value is NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and BUCKET_OWNER_FULL_CONTROL.</p>
-    pub fn get_canned_acl_for_objects(
-        &self,
-    ) -> &::std::option::Option<crate::types::CannedAclForObjectsValue> {
+    pub fn get_canned_acl_for_objects(&self) -> &::std::option::Option<crate::types::CannedAclForObjectsValue> {
         &self.canned_acl_for_objects
     }
     /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use to add column name information to the .csv output file.</p>
@@ -1308,19 +1203,13 @@ impl S3SettingsBuilder {
     }
     /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
-    pub fn csv_null_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn csv_null_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_null_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
-    pub fn set_csv_null_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_csv_null_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_null_value = input;
         self
     }
@@ -1385,19 +1274,13 @@ impl S3SettingsBuilder {
     }
     /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
     /// <p> <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code> </p>
-    pub fn date_partition_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn date_partition_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_partition_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
     /// <p> <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code> </p>
-    pub fn set_date_partition_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_date_partition_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_partition_timezone = input;
         self
     }
@@ -1412,10 +1295,7 @@ impl S3SettingsBuilder {
         self
     }
     /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
-    pub fn set_add_trailing_padding_character(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_add_trailing_padding_character(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_trailing_padding_character = input;
         self
     }
@@ -1426,20 +1306,14 @@ impl S3SettingsBuilder {
     /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
     /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
     /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
     /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
     /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -1494,8 +1368,7 @@ impl S3SettingsBuilder {
             csv_no_sup_value: self.csv_no_sup_value,
             preserve_transactions: self.preserve_transactions,
             cdc_path: self.cdc_path,
-            use_task_start_time_for_full_load_timestamp: self
-                .use_task_start_time_for_full_load_timestamp,
+            use_task_start_time_for_full_load_timestamp: self.use_task_start_time_for_full_load_timestamp,
             canned_acl_for_objects: self.canned_acl_for_objects,
             add_column_name: self.add_column_name,
             cdc_max_batch_interval: self.cdc_max_batch_interval,

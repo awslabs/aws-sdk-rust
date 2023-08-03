@@ -10,10 +10,7 @@ impl ListSlotTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_slot_types::ListSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_slot_types::ListSlotTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_slot_types::ListSlotTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_slot_types();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSlotTypesFluentBuilder {
         }
     }
     /// Access the ListSlotTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_slot_types::builders::ListSlotTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_slot_types::builders::ListSlotTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListSlotTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListSlotTypesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_slot_types::paginator::ListSlotTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_slot_types::paginator::ListSlotTypesPaginator {
-        crate::operation::list_slot_types::paginator::ListSlotTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_slot_types::paginator::ListSlotTypesPaginator {
+        crate::operation::list_slot_types::paginator::ListSlotTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the bot that contains the slot types.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,10 +160,7 @@ impl ListSlotTypesFluentBuilder {
         self
     }
     /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotTypeSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SlotTypeSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -194,17 +178,12 @@ impl ListSlotTypesFluentBuilder {
         self
     }
     /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>

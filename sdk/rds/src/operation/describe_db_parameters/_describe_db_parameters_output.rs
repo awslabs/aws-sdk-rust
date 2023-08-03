@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbParametersOutput {
 }
 impl DescribeDbParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder {
         crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl DescribeDbParametersOutputBuilder {
         self
     }
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>

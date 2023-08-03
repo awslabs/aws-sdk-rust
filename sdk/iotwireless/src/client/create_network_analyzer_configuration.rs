@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput::name): <p>Name of the network analyzer configuration.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkAnalyzerConfigurationError>`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError)
-    pub fn create_network_analyzer_configuration(&self) -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationFluentBuilder{
+    pub fn create_network_analyzer_configuration(
+        &self,
+    ) -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationFluentBuilder {
         crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

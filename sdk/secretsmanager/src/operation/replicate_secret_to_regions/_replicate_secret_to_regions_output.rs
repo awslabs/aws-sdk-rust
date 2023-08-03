@@ -8,8 +8,7 @@ pub struct ReplicateSecretToRegionsOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of replication.</p>
     #[doc(hidden)]
-    pub replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl ReplicateSecretToRegionsOutput {
@@ -18,9 +17,7 @@ impl ReplicateSecretToRegionsOutput {
         self.arn.as_deref()
     }
     /// <p>The status of replication.</p>
-    pub fn replication_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ReplicateSecretToRegionsOutput {
 }
 impl ReplicateSecretToRegionsOutput {
     /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsOutput`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput).
-    pub fn builder() -> crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsOutputBuilder{
+    pub fn builder() -> crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsOutputBuilder {
         crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReplicateSecretToRegionsOutput`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub(crate) replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl ReplicateSecretToRegionsOutputBuilder {
@@ -74,17 +68,12 @@ impl ReplicateSecretToRegionsOutputBuilder {
         self
     }
     /// <p>The status of replication.</p>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>) -> Self {
         self.replication_status = input;
         self
     }
     /// <p>The status of replication.</p>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ReplicateSecretToRegionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReplicateSecretToRegionsOutput`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput {
+    pub fn build(self) -> crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput {
         crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput {
             arn: self.arn,
             replication_status: self.replication_status,

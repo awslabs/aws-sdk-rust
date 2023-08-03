@@ -28,7 +28,7 @@ impl DeletePartnerEventSourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePartnerEventSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder,
+    inner: crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder,
 }
 impl DeletePartnerEventSourceFluentBuilder {
     /// Creates a new `DeletePartnerEventSource`.
@@ -39,7 +39,7 @@ impl DeletePartnerEventSourceFluentBuilder {
         }
     }
     /// Access the DeletePartnerEventSource as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeletePartnerEventSourceFluentBuilder {
             crate::operation::delete_partner_event_source::DeletePartnerEventSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partner_event_source::DeletePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partner_event_source::DeletePartnerEventSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeletePartnerEventSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeletePartnerEventSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partner_event_source::DeletePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partner_event_source::DeletePartnerEventSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeletePartnerEventSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partner_event_source::DeletePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partner_event_source::DeletePartnerEventSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeletePartnerEventSourceFluentBuilder {
             crate::operation::delete_partner_event_source::DeletePartnerEventSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_partner_event_source::DeletePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_partner_event_source::DeletePartnerEventSourceError>,
     > {
         self.customize_middleware().await
     }

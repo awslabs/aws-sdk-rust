@@ -10,9 +10,7 @@ pub struct GetSmsTemplateOutput {
 }
 impl GetSmsTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn sms_template_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmsTemplateResponse> {
+    pub fn sms_template_response(&self) -> ::std::option::Option<&crate::types::SmsTemplateResponse> {
         self.sms_template_response.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl GetSmsTemplateOutput {
 
 /// A builder for [`GetSmsTemplateOutput`](crate::operation::get_sms_template::GetSmsTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSmsTemplateOutputBuilder {
     pub(crate) sms_template_response: ::std::option::Option<crate::types::SmsTemplateResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetSmsTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn set_sms_template_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsTemplateResponse>,
-    ) -> Self {
+    pub fn set_sms_template_response(mut self, input: ::std::option::Option<crate::types::SmsTemplateResponse>) -> Self {
         self.sms_template_response = input;
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn get_sms_template_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsTemplateResponse> {
+    pub fn get_sms_template_response(&self) -> &::std::option::Option<crate::types::SmsTemplateResponse> {
         &self.sms_template_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

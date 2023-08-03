@@ -6,10 +6,7 @@ pub fn ser_get_clip_input(
     if let Some(var_1) = &input.clip_fragment_selector {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ClipFragmentSelector").start_object();
-        crate::protocol_serde::shape_clip_fragment_selector::ser_clip_fragment_selector(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_clip_fragment_selector::ser_clip_fragment_selector(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.stream_arn {

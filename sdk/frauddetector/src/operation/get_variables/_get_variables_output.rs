@@ -35,9 +35,7 @@ impl GetVariablesOutput {
 
 /// A builder for [`GetVariablesOutput`](crate::operation::get_variables::GetVariablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVariablesOutputBuilder {
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetVariablesOutputBuilder {
         self
     }
     /// <p>The names of the variables returned. </p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>) -> Self {
         self.variables = input;
         self
     }

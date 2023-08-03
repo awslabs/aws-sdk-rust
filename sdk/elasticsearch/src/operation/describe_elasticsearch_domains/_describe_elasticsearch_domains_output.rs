@@ -6,15 +6,12 @@
 pub struct DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
     #[doc(hidden)]
-    pub domain_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+    pub domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn domain_status_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ElasticsearchDomainStatus]> {
+    pub fn domain_status_list(&self) -> ::std::option::Option<&[crate::types::ElasticsearchDomainStatus]> {
         self.domain_status_list.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeElasticsearchDomainsOutput {
 }
 impl DescribeElasticsearchDomainsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsOutputBuilder {
         crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsOutputBuilder {
-    pub(crate) domain_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+    pub(crate) domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainsOutputBuilder {
@@ -53,17 +47,12 @@ impl DescribeElasticsearchDomainsOutputBuilder {
         self
     }
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn set_domain_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
-    ) -> Self {
+    pub fn set_domain_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>) -> Self {
         self.domain_status_list = input;
         self
     }
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn get_domain_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>> {
+    pub fn get_domain_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>> {
         &self.domain_status_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,9 +65,7 @@ impl DescribeElasticsearchDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
+    pub fn build(self) -> crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
         crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
             domain_status_list: self.domain_status_list,
             _request_id: self._request_id,

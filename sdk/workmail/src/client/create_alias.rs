@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_alias): <p>The alias to add to the member set.</p>
     /// - On success, responds with [`CreateAliasOutput`](crate::operation::create_alias::CreateAliasOutput)
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::operation::create_alias::CreateAliasError)
-    pub fn create_alias(
-        &self,
-    ) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
+    pub fn create_alias(&self) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
         crate::operation::create_alias::builders::CreateAliasFluentBuilder::new(self.handle.clone())
     }
 }

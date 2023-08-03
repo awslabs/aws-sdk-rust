@@ -48,16 +48,14 @@ impl DescribeClusterParameterGroupsInput {
 }
 impl DescribeClusterParameterGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterParameterGroupsInput`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsInput).
-    pub fn builder() -> crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder {
         crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterParameterGroupsInput`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterParameterGroupsInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -67,18 +65,12 @@ pub struct DescribeClusterParameterGroupsInputBuilder {
 }
 impl DescribeClusterParameterGroupsInputBuilder {
     /// <p>The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -132,10 +124,7 @@ impl DescribeClusterParameterGroupsInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster parameter groups that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -155,10 +144,7 @@ impl DescribeClusterParameterGroupsInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -173,19 +159,12 @@ impl DescribeClusterParameterGroupsInputBuilder {
         crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsInput {
-                parameter_group_name: self.parameter_group_name
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-                tag_keys: self.tag_keys
-                ,
-                tag_values: self.tag_values
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsInput {
+            parameter_group_name: self.parameter_group_name,
+            max_records: self.max_records,
+            marker: self.marker,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+        })
     }
 }

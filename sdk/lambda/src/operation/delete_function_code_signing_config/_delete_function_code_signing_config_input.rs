@@ -29,16 +29,14 @@ impl DeleteFunctionCodeSigningConfigInput {
 }
 impl DeleteFunctionCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionCodeSigningConfigInput`](crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigInput).
-    pub fn builder() -> crate::operation::delete_function_code_signing_config::builders::DeleteFunctionCodeSigningConfigInputBuilder{
+    pub fn builder() -> crate::operation::delete_function_code_signing_config::builders::DeleteFunctionCodeSigningConfigInputBuilder {
         crate::operation::delete_function_code_signing_config::builders::DeleteFunctionCodeSigningConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFunctionCodeSigningConfigInput`](crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFunctionCodeSigningConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl DeleteFunctionCodeSigningConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -66,10 +61,7 @@ impl DeleteFunctionCodeSigningConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -93,9 +85,8 @@ impl DeleteFunctionCodeSigningConfigInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigInput {
-                function_name: self.function_name
-                ,
-            }
+                function_name: self.function_name,
+            },
         )
     }
 }

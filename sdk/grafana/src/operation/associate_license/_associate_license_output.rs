@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateLicenseOutput {
 }
 impl AssociateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`AssociateLicenseOutput`](crate::operation::associate_license::AssociateLicenseOutput).
-    pub fn builder() -> crate::operation::associate_license::builders::AssociateLicenseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_license::builders::AssociateLicenseOutputBuilder {
         crate::operation::associate_license::builders::AssociateLicenseOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateLicenseOutput`](crate::operation::associate_license::AssociateLicenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLicenseOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl AssociateLicenseOutputBuilder {
         self
     }
     /// <p>A structure containing data about the workspace.</p>
-    pub fn set_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDescription>,
-    ) -> Self {
+    pub fn set_workspace(mut self, input: ::std::option::Option<crate::types::WorkspaceDescription>) -> Self {
         self.workspace = input;
         self
     }

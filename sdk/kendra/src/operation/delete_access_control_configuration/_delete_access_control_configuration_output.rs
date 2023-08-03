@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessControlConfigurationOutpu
 }
 impl DeleteAccessControlConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessControlConfigurationOutput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationOutputBuilder {
         crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessControlConfigurationOutput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessControlConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteAccessControlConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccessControlConfigurationOutput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput {
         crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput {
             _request_id: self._request_id,
         }

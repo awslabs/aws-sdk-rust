@@ -227,9 +227,7 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::DeviceAttribute>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleOperator>,
@@ -432,10 +430,7 @@ impl RuleBuilder {
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// </dl>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::DeviceAttribute>) -> Self {
         self.attribute = input;
         self
     }
@@ -544,10 +539,7 @@ impl RuleBuilder {
         self
     }
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::RuleOperator>) -> Self {
         self.operator = input;
         self
     }

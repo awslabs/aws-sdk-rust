@@ -44,9 +44,7 @@ impl PositionConfigurationItem {
 
 /// A builder for [`PositionConfigurationItem`](crate::types::PositionConfigurationItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PositionConfigurationItemBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
@@ -55,18 +53,12 @@ pub struct PositionConfigurationItemBuilder {
 }
 impl PositionConfigurationItemBuilder {
     /// <p>Resource identifier for the position configuration.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource identifier for the position configuration.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -80,10 +72,7 @@ impl PositionConfigurationItemBuilder {
         self
     }
     /// <p>Resource type of the resource for the position configuration.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -97,10 +86,7 @@ impl PositionConfigurationItemBuilder {
         self
     }
     /// <p>The details of the positioning solver object used to compute the location.</p>
-    pub fn set_solvers(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverDetails>,
-    ) -> Self {
+    pub fn set_solvers(mut self, input: ::std::option::Option<crate::types::PositionSolverDetails>) -> Self {
         self.solvers = input;
         self
     }

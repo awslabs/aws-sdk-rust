@@ -8,8 +8,7 @@ pub struct DescribeProductAsAdminOutput {
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
+    pub provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
     /// <p>Information about the tags associated with the product.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -27,9 +26,7 @@ impl DescribeProductAsAdminOutput {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub fn provisioning_artifact_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisioningArtifactSummary]> {
+    pub fn provisioning_artifact_summaries(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifactSummary]> {
         self.provisioning_artifact_summaries.as_deref()
     }
     /// <p>Information about the tags associated with the product.</p>
@@ -52,22 +49,17 @@ impl ::aws_http::request_id::RequestId for DescribeProductAsAdminOutput {
 }
 impl DescribeProductAsAdminOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductAsAdminOutput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminOutputBuilder {
         crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProductAsAdminOutput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductAsAdminOutputBuilder {
     pub(crate) product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
-    pub(crate) provisioning_artifact_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
+    pub(crate) provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) tag_options: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
     pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
@@ -80,17 +72,12 @@ impl DescribeProductAsAdminOutputBuilder {
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn set_product_view_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewDetail>,
-    ) -> Self {
+    pub fn set_product_view_detail(mut self, input: ::std::option::Option<crate::types::ProductViewDetail>) -> Self {
         self.product_view_detail = input;
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn get_product_view_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductViewDetail> {
+    pub fn get_product_view_detail(&self) -> &::std::option::Option<crate::types::ProductViewDetail> {
         &self.product_view_detail
     }
     /// Appends an item to `provisioning_artifact_summaries`.
@@ -98,10 +85,7 @@ impl DescribeProductAsAdminOutputBuilder {
     /// To override the contents of this collection use [`set_provisioning_artifact_summaries`](Self::set_provisioning_artifact_summaries).
     ///
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub fn provisioning_artifact_summaries(
-        mut self,
-        input: crate::types::ProvisioningArtifactSummary,
-    ) -> Self {
+    pub fn provisioning_artifact_summaries(mut self, input: crate::types::ProvisioningArtifactSummary) -> Self {
         let mut v = self.provisioning_artifact_summaries.unwrap_or_default();
         v.push(input);
         self.provisioning_artifact_summaries = ::std::option::Option::Some(v);
@@ -116,9 +100,7 @@ impl DescribeProductAsAdminOutputBuilder {
         self
     }
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub fn get_provisioning_artifact_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>> {
+    pub fn get_provisioning_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>> {
         &self.provisioning_artifact_summaries
     }
     /// Appends an item to `tags`.
@@ -133,10 +115,7 @@ impl DescribeProductAsAdminOutputBuilder {
         self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -156,17 +135,12 @@ impl DescribeProductAsAdminOutputBuilder {
         self
     }
     /// <p>Information about the TagOptions associated with the product.</p>
-    pub fn set_tag_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
-    ) -> Self {
+    pub fn set_tag_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>) -> Self {
         self.tag_options = input;
         self
     }
     /// <p>Information about the TagOptions associated with the product.</p>
-    pub fn get_tag_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
+    pub fn get_tag_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
         &self.tag_options
     }
     /// Appends an item to `budgets`.
@@ -181,17 +155,12 @@ impl DescribeProductAsAdminOutputBuilder {
         self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
-    ) -> Self {
+    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
         self.budgets = input;
         self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn get_budgets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
         &self.budgets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -204,9 +173,7 @@ impl DescribeProductAsAdminOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProductAsAdminOutput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput {
+    pub fn build(self) -> crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput {
         crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput {
             product_view_detail: self.product_view_detail,
             provisioning_artifact_summaries: self.provisioning_artifact_summaries,

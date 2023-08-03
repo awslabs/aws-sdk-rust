@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput::job): <p>The Job for terminating the Recovery Instances.</p>
     /// - On failure, responds with [`SdkError<TerminateRecoveryInstancesError>`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError)
-    pub fn terminate_recovery_instances(&self) -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesFluentBuilder{
+    pub fn terminate_recovery_instances(&self) -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesFluentBuilder {
         crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesFluentBuilder::new(self.handle.clone())
     }
 }

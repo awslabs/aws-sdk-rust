@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`revision(Option<RevisionLocation>)`](crate::operation::get_application_revision::GetApplicationRevisionOutput::revision): <p>Additional information about the revision, including type and location.</p>
     ///   - [`revision_info(Option<GenericRevisionInfo>)`](crate::operation::get_application_revision::GetApplicationRevisionOutput::revision_info): <p>General information about the revision.</p>
     /// - On failure, responds with [`SdkError<GetApplicationRevisionError>`](crate::operation::get_application_revision::GetApplicationRevisionError)
-    pub fn get_application_revision(
-        &self,
-    ) -> crate::operation::get_application_revision::builders::GetApplicationRevisionFluentBuilder
-    {
+    pub fn get_application_revision(&self) -> crate::operation::get_application_revision::builders::GetApplicationRevisionFluentBuilder {
         crate::operation::get_application_revision::builders::GetApplicationRevisionFluentBuilder::new(self.handle.clone())
     }
 }

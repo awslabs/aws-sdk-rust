@@ -51,16 +51,14 @@ impl DescribeConfigurationOptionsInput {
 }
 impl DescribeConfigurationOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationOptionsInput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput).
-    pub fn builder() -> crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder {
         crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationOptionsInput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct DescribeConfigurationOptionsInputBuilder {
 }
 impl DescribeConfigurationOptionsInputBuilder {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -91,18 +83,12 @@ impl DescribeConfigurationOptionsInputBuilder {
         &self.application_name
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -111,18 +97,12 @@ impl DescribeConfigurationOptionsInputBuilder {
         &self.template_name
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -131,18 +111,12 @@ impl DescribeConfigurationOptionsInputBuilder {
         &self.environment_name
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
-    pub fn solution_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_stack_name = input;
         self
     }
@@ -176,17 +150,12 @@ impl DescribeConfigurationOptionsInputBuilder {
         self
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.options = input;
         self
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationOptionsInput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput).
@@ -196,15 +165,13 @@ impl DescribeConfigurationOptionsInputBuilder {
         crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput {
-                application_name: self.application_name,
-                template_name: self.template_name,
-                environment_name: self.environment_name,
-                solution_stack_name: self.solution_stack_name,
-                platform_arn: self.platform_arn,
-                options: self.options,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput {
+            application_name: self.application_name,
+            template_name: self.template_name,
+            environment_name: self.environment_name,
+            solution_stack_name: self.solution_stack_name,
+            platform_arn: self.platform_arn,
+            options: self.options,
+        })
     }
 }

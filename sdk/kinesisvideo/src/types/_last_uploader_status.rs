@@ -44,9 +44,7 @@ impl LastUploaderStatus {
 
 /// A builder for [`LastUploaderStatus`](crate::types::LastUploaderStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastUploaderStatusBuilder {
     pub(crate) job_status_details: ::std::option::Option<::std::string::String>,
     pub(crate) last_collected_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -55,18 +53,12 @@ pub struct LastUploaderStatusBuilder {
 }
 impl LastUploaderStatusBuilder {
     /// <p>A description of an uploader job’s latest status.</p>
-    pub fn job_status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of an uploader job’s latest status.</p>
-    pub fn set_job_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_status_details = input;
         self
     }
@@ -80,10 +72,7 @@ impl LastUploaderStatusBuilder {
         self
     }
     /// <p>The timestamp at which the uploader job was last executed and media collected to the cloud.</p>
-    pub fn set_last_collected_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_collected_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_collected_time = input;
         self
     }
@@ -97,10 +86,7 @@ impl LastUploaderStatusBuilder {
         self
     }
     /// <p>The timestamp at which the uploader status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -114,10 +100,7 @@ impl LastUploaderStatusBuilder {
         self
     }
     /// <p>The status of the latest uploader job.</p>
-    pub fn set_uploader_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UploaderStatus>,
-    ) -> Self {
+    pub fn set_uploader_status(mut self, input: ::std::option::Option<crate::types::UploaderStatus>) -> Self {
         self.uploader_status = input;
         self
     }

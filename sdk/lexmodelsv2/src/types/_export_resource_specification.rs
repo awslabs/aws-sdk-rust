@@ -9,40 +9,29 @@ pub struct ExportResourceSpecification {
     pub bot_export_specification: ::std::option::Option<crate::types::BotExportSpecification>,
     /// <p>Parameters for exporting a bot locale.</p>
     #[doc(hidden)]
-    pub bot_locale_export_specification:
-        ::std::option::Option<crate::types::BotLocaleExportSpecification>,
+    pub bot_locale_export_specification: ::std::option::Option<crate::types::BotLocaleExportSpecification>,
     /// <p>The parameters required to export a custom vocabulary.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_export_specification:
-        ::std::option::Option<crate::types::CustomVocabularyExportSpecification>,
+    pub custom_vocabulary_export_specification: ::std::option::Option<crate::types::CustomVocabularyExportSpecification>,
     /// <p>Specifications for the test set that is exported as a resource.</p>
     #[doc(hidden)]
-    pub test_set_export_specification:
-        ::std::option::Option<crate::types::TestSetExportSpecification>,
+    pub test_set_export_specification: ::std::option::Option<crate::types::TestSetExportSpecification>,
 }
 impl ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
-    pub fn bot_export_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BotExportSpecification> {
+    pub fn bot_export_specification(&self) -> ::std::option::Option<&crate::types::BotExportSpecification> {
         self.bot_export_specification.as_ref()
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn bot_locale_export_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BotLocaleExportSpecification> {
+    pub fn bot_locale_export_specification(&self) -> ::std::option::Option<&crate::types::BotLocaleExportSpecification> {
         self.bot_locale_export_specification.as_ref()
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn custom_vocabulary_export_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomVocabularyExportSpecification> {
+    pub fn custom_vocabulary_export_specification(&self) -> ::std::option::Option<&crate::types::CustomVocabularyExportSpecification> {
         self.custom_vocabulary_export_specification.as_ref()
     }
     /// <p>Specifications for the test set that is exported as a resource.</p>
-    pub fn test_set_export_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestSetExportSpecification> {
+    pub fn test_set_export_specification(&self) -> ::std::option::Option<&crate::types::TestSetExportSpecification> {
         self.test_set_export_specification.as_ref()
     }
 }
@@ -55,18 +44,12 @@ impl ExportResourceSpecification {
 
 /// A builder for [`ExportResourceSpecification`](crate::types::ExportResourceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportResourceSpecificationBuilder {
-    pub(crate) bot_export_specification:
-        ::std::option::Option<crate::types::BotExportSpecification>,
-    pub(crate) bot_locale_export_specification:
-        ::std::option::Option<crate::types::BotLocaleExportSpecification>,
-    pub(crate) custom_vocabulary_export_specification:
-        ::std::option::Option<crate::types::CustomVocabularyExportSpecification>,
-    pub(crate) test_set_export_specification:
-        ::std::option::Option<crate::types::TestSetExportSpecification>,
+    pub(crate) bot_export_specification: ::std::option::Option<crate::types::BotExportSpecification>,
+    pub(crate) bot_locale_export_specification: ::std::option::Option<crate::types::BotLocaleExportSpecification>,
+    pub(crate) custom_vocabulary_export_specification: ::std::option::Option<crate::types::CustomVocabularyExportSpecification>,
+    pub(crate) test_set_export_specification: ::std::option::Option<crate::types::TestSetExportSpecification>,
 }
 impl ExportResourceSpecificationBuilder {
     /// <p>Parameters for exporting a bot.</p>
@@ -75,46 +58,30 @@ impl ExportResourceSpecificationBuilder {
         self
     }
     /// <p>Parameters for exporting a bot.</p>
-    pub fn set_bot_export_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::BotExportSpecification>,
-    ) -> Self {
+    pub fn set_bot_export_specification(mut self, input: ::std::option::Option<crate::types::BotExportSpecification>) -> Self {
         self.bot_export_specification = input;
         self
     }
     /// <p>Parameters for exporting a bot.</p>
-    pub fn get_bot_export_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::BotExportSpecification> {
+    pub fn get_bot_export_specification(&self) -> &::std::option::Option<crate::types::BotExportSpecification> {
         &self.bot_export_specification
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn bot_locale_export_specification(
-        mut self,
-        input: crate::types::BotLocaleExportSpecification,
-    ) -> Self {
+    pub fn bot_locale_export_specification(mut self, input: crate::types::BotLocaleExportSpecification) -> Self {
         self.bot_locale_export_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn set_bot_locale_export_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleExportSpecification>,
-    ) -> Self {
+    pub fn set_bot_locale_export_specification(mut self, input: ::std::option::Option<crate::types::BotLocaleExportSpecification>) -> Self {
         self.bot_locale_export_specification = input;
         self
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn get_bot_locale_export_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::BotLocaleExportSpecification> {
+    pub fn get_bot_locale_export_specification(&self) -> &::std::option::Option<crate::types::BotLocaleExportSpecification> {
         &self.bot_locale_export_specification
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn custom_vocabulary_export_specification(
-        mut self,
-        input: crate::types::CustomVocabularyExportSpecification,
-    ) -> Self {
+    pub fn custom_vocabulary_export_specification(mut self, input: crate::types::CustomVocabularyExportSpecification) -> Self {
         self.custom_vocabulary_export_specification = ::std::option::Option::Some(input);
         self
     }
@@ -127,31 +94,21 @@ impl ExportResourceSpecificationBuilder {
         self
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn get_custom_vocabulary_export_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomVocabularyExportSpecification> {
+    pub fn get_custom_vocabulary_export_specification(&self) -> &::std::option::Option<crate::types::CustomVocabularyExportSpecification> {
         &self.custom_vocabulary_export_specification
     }
     /// <p>Specifications for the test set that is exported as a resource.</p>
-    pub fn test_set_export_specification(
-        mut self,
-        input: crate::types::TestSetExportSpecification,
-    ) -> Self {
+    pub fn test_set_export_specification(mut self, input: crate::types::TestSetExportSpecification) -> Self {
         self.test_set_export_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifications for the test set that is exported as a resource.</p>
-    pub fn set_test_set_export_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetExportSpecification>,
-    ) -> Self {
+    pub fn set_test_set_export_specification(mut self, input: ::std::option::Option<crate::types::TestSetExportSpecification>) -> Self {
         self.test_set_export_specification = input;
         self
     }
     /// <p>Specifications for the test set that is exported as a resource.</p>
-    pub fn get_test_set_export_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetExportSpecification> {
+    pub fn get_test_set_export_specification(&self) -> &::std::option::Option<crate::types::TestSetExportSpecification> {
         &self.test_set_export_specification
     }
     /// Consumes the builder and constructs a [`ExportResourceSpecification`](crate::types::ExportResourceSpecification).

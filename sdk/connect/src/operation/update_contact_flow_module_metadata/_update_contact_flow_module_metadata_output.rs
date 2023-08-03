@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateContactFlowModuleMetadataOutput
 }
 impl UpdateContactFlowModuleMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleMetadataOutput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput).
-    pub fn builder() -> crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataOutputBuilder {
         crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactFlowModuleMetadataOutput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactFlowModuleMetadataOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateContactFlowModuleMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowModuleMetadataOutput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput
-    {
+    pub fn build(self) -> crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput {
         crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput {
             _request_id: self._request_id,
         }

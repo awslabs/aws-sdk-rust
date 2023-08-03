@@ -4,17 +4,12 @@ pub fn ser_put_storage_configuration_input(
     input: &crate::operation::put_storage_configuration::PutStorageConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.disassociated_data_storage {
-        object
-            .key("disassociatedDataStorage")
-            .string(var_1.as_str());
+        object.key("disassociatedDataStorage").string(var_1.as_str());
     }
     if let Some(var_2) = &input.multi_layer_storage {
         #[allow(unused_mut)]
         let mut object_3 = object.key("multiLayerStorage").start_object();
-        crate::protocol_serde::shape_multi_layer_storage::ser_multi_layer_storage(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_multi_layer_storage::ser_multi_layer_storage(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.retention_period {

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SendAutomationSignalOutput {
 }
 impl SendAutomationSignalOutput {
     /// Creates a new builder-style object to manufacture [`SendAutomationSignalOutput`](crate::operation::send_automation_signal::SendAutomationSignalOutput).
-    pub fn builder(
-    ) -> crate::operation::send_automation_signal::builders::SendAutomationSignalOutputBuilder {
+    pub fn builder() -> crate::operation::send_automation_signal::builders::SendAutomationSignalOutputBuilder {
         crate::operation::send_automation_signal::builders::SendAutomationSignalOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendAutomationSignalOutput`](crate::operation::send_automation_signal::SendAutomationSignalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAutomationSignalOutputBuilder {
     _request_id: Option<String>,
 }

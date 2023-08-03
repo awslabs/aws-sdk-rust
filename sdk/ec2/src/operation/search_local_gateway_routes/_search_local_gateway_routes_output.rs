@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchLocalGatewayRoutesOutput {
 }
 impl SearchLocalGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`SearchLocalGatewayRoutesOutput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput).
-    pub fn builder() -> crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesOutputBuilder{
+    pub fn builder() -> crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesOutputBuilder {
         crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchLocalGatewayRoutesOutput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchLocalGatewayRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRoute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl SearchLocalGatewayRoutesOutputBuilder {
         self
     }
     /// <p>Information about the routes.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRoute>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRoute>>) -> Self {
         self.routes = input;
         self
     }
     /// <p>Information about the routes.</p>
-    pub fn get_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRoute>> {
         &self.routes
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -93,9 +86,7 @@ impl SearchLocalGatewayRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchLocalGatewayRoutesOutput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput {
+    pub fn build(self) -> crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput {
         crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput {
             routes: self.routes,
             next_token: self.next_token,

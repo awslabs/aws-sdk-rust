@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput::arn): <p>The Amazon Resource Name (ARN) for the ledger.</p>
     ///   - [`permissions_mode(Option<PermissionsMode>)`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput::permissions_mode): <p>The current permissions mode of the ledger.</p>
     /// - On failure, responds with [`SdkError<UpdateLedgerPermissionsModeError>`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError)
-    pub fn update_ledger_permissions_mode(&self) -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeFluentBuilder{
+    pub fn update_ledger_permissions_mode(
+        &self,
+    ) -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeFluentBuilder {
         crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeFluentBuilder::new(self.handle.clone())
     }
 }

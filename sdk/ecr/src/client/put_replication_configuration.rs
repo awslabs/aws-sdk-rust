@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`PutReplicationConfigurationOutput`](crate::operation::put_replication_configuration::PutReplicationConfigurationOutput) with field(s):
     ///   - [`replication_configuration(Option<ReplicationConfiguration>)`](crate::operation::put_replication_configuration::PutReplicationConfigurationOutput::replication_configuration): <p>The contents of the replication configuration for the registry.</p>
     /// - On failure, responds with [`SdkError<PutReplicationConfigurationError>`](crate::operation::put_replication_configuration::PutReplicationConfigurationError)
-    pub fn put_replication_configuration(&self) -> crate::operation::put_replication_configuration::builders::PutReplicationConfigurationFluentBuilder{
+    pub fn put_replication_configuration(
+        &self,
+    ) -> crate::operation::put_replication_configuration::builders::PutReplicationConfigurationFluentBuilder {
         crate::operation::put_replication_configuration::builders::PutReplicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

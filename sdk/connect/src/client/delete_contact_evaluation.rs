@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`evaluation_id(impl ::std::convert::Into<String>)`](crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationFluentBuilder::evaluation_id) / [`set_evaluation_id(Option<String>)`](crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationFluentBuilder::set_evaluation_id): <p>A unique identifier for the contact evaluation.</p>
     /// - On success, responds with [`DeleteContactEvaluationOutput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput)
     /// - On failure, responds with [`SdkError<DeleteContactEvaluationError>`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationError)
-    pub fn delete_contact_evaluation(
-        &self,
-    ) -> crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationFluentBuilder
-    {
+    pub fn delete_contact_evaluation(&self) -> crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationFluentBuilder {
         crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

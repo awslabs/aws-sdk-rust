@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePushTemplateOutput`](crate::operation::update_push_template::UpdatePushTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_push_template::UpdatePushTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdatePushTemplateError>`](crate::operation::update_push_template::UpdatePushTemplateError)
-    pub fn update_push_template(
-        &self,
-    ) -> crate::operation::update_push_template::builders::UpdatePushTemplateFluentBuilder {
-        crate::operation::update_push_template::builders::UpdatePushTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_push_template(&self) -> crate::operation::update_push_template::builders::UpdatePushTemplateFluentBuilder {
+        crate::operation::update_push_template::builders::UpdatePushTemplateFluentBuilder::new(self.handle.clone())
     }
 }

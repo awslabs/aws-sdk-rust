@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`fragment_interval_ms(i32)`](crate::operation::update_fuota_task::builders::UpdateFuotaTaskFluentBuilder::fragment_interval_ms) / [`set_fragment_interval_ms(Option<i32>)`](crate::operation::update_fuota_task::builders::UpdateFuotaTaskFluentBuilder::set_fragment_interval_ms): <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>   <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>  </note>
     /// - On success, responds with [`UpdateFuotaTaskOutput`](crate::operation::update_fuota_task::UpdateFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<UpdateFuotaTaskError>`](crate::operation::update_fuota_task::UpdateFuotaTaskError)
-    pub fn update_fuota_task(
-        &self,
-    ) -> crate::operation::update_fuota_task::builders::UpdateFuotaTaskFluentBuilder {
-        crate::operation::update_fuota_task::builders::UpdateFuotaTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_fuota_task(&self) -> crate::operation::update_fuota_task::builders::UpdateFuotaTaskFluentBuilder {
+        crate::operation::update_fuota_task::builders::UpdateFuotaTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListGroupPoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_group_policies::ListGroupPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_policies::ListGroupPoliciesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_policies::ListGroupPoliciesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_group_policies();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListGroupPoliciesFluentBuilder {
         }
     }
     /// Access the ListGroupPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_group_policies::builders::ListGroupPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_group_policies::builders::ListGroupPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListGroupPoliciesFluentBuilder {
             crate::operation::list_group_policies::ListGroupPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_policies::ListGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_policies::ListGroupPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListGroupPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListGroupPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_policies::ListGroupPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_policies::ListGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_policies::ListGroupPoliciesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListGroupPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_policies::ListGroupPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_policies::ListGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_policies::ListGroupPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListGroupPoliciesFluentBuilder {
             crate::operation::list_group_policies::ListGroupPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_policies::ListGroupPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_policies::ListGroupPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_group_policies::paginator::ListGroupPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_group_policies::paginator::ListGroupPoliciesPaginator {
-        crate::operation::list_group_policies::paginator::ListGroupPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_group_policies::paginator::ListGroupPoliciesPaginator {
+        crate::operation::list_group_policies::paginator::ListGroupPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the group to list policies for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

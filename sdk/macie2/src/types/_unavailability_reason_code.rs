@@ -41,13 +41,7 @@
 /// <p>Specifies why occurrences of sensitive data can't be retrieved for a finding. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UnavailabilityReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,16 +60,12 @@ pub enum UnavailabilityReasonCode {
 impl ::std::convert::From<&str> for UnavailabilityReasonCode {
     fn from(s: &str) -> Self {
         match s {
-            "INVALID_CLASSIFICATION_RESULT" => {
-                UnavailabilityReasonCode::InvalidClassificationResult
-            }
+            "INVALID_CLASSIFICATION_RESULT" => UnavailabilityReasonCode::InvalidClassificationResult,
             "OBJECT_EXCEEDS_SIZE_QUOTA" => UnavailabilityReasonCode::ObjectExceedsSizeQuota,
             "OBJECT_UNAVAILABLE" => UnavailabilityReasonCode::ObjectUnavailable,
             "UNSUPPORTED_FINDING_TYPE" => UnavailabilityReasonCode::UnsupportedFindingType,
             "UNSUPPORTED_OBJECT_TYPE" => UnavailabilityReasonCode::UnsupportedObjectType,
-            other => UnavailabilityReasonCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UnavailabilityReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,9 +80,7 @@ impl UnavailabilityReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            UnavailabilityReasonCode::InvalidClassificationResult => {
-                "INVALID_CLASSIFICATION_RESULT"
-            }
+            UnavailabilityReasonCode::InvalidClassificationResult => "INVALID_CLASSIFICATION_RESULT",
             UnavailabilityReasonCode::ObjectExceedsSizeQuota => "OBJECT_EXCEEDS_SIZE_QUOTA",
             UnavailabilityReasonCode::ObjectUnavailable => "OBJECT_UNAVAILABLE",
             UnavailabilityReasonCode::UnsupportedFindingType => "UNSUPPORTED_FINDING_TYPE",

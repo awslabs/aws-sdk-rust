@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`processed_automation_rules(Option<Vec<String>>)`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput::processed_automation_rules): <p> A list of properly processed rule ARNs. </p>
     ///   - [`unprocessed_automation_rules(Option<Vec<UnprocessedAutomationRule>>)`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput::unprocessed_automation_rules): <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why. </p>
     /// - On failure, responds with [`SdkError<BatchDeleteAutomationRulesError>`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError)
-    pub fn batch_delete_automation_rules(&self) -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesFluentBuilder{
+    pub fn batch_delete_automation_rules(
+        &self,
+    ) -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesFluentBuilder {
         crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`launch_template_version(Option<LaunchTemplateVersion>)`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput::launch_template_version): <p>Information about the launch template version.</p>
     ///   - [`warning(Option<ValidationWarning>)`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput::warning): <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchTemplateVersionError>`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError)
-    pub fn create_launch_template_version(&self) -> crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionFluentBuilder{
+    pub fn create_launch_template_version(
+        &self,
+    ) -> crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionFluentBuilder {
         crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionFluentBuilder::new(self.handle.clone())
     }
 }

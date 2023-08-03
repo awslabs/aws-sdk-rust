@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`status(StatusType)`](crate::operation::update_ssh_public_key::builders::UpdateSSHPublicKeyFluentBuilder::status) / [`set_status(Option<StatusType>)`](crate::operation::update_ssh_public_key::builders::UpdateSSHPublicKeyFluentBuilder::set_status): <p>The status to assign to the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
     /// - On success, responds with [`UpdateSshPublicKeyOutput`](crate::operation::update_ssh_public_key::UpdateSshPublicKeyOutput)
     /// - On failure, responds with [`SdkError<UpdateSSHPublicKeyError>`](crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError)
-    pub fn update_ssh_public_key(
-        &self,
-    ) -> crate::operation::update_ssh_public_key::builders::UpdateSSHPublicKeyFluentBuilder {
-        crate::operation::update_ssh_public_key::builders::UpdateSSHPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ssh_public_key(&self) -> crate::operation::update_ssh_public_key::builders::UpdateSSHPublicKeyFluentBuilder {
+        crate::operation::update_ssh_public_key::builders::UpdateSSHPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

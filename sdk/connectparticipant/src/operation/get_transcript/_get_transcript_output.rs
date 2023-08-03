@@ -42,9 +42,7 @@ impl GetTranscriptOutput {
 
 /// A builder for [`GetTranscriptOutput`](crate::operation::get_transcript::GetTranscriptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTranscriptOutputBuilder {
     pub(crate) initial_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) transcript: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
@@ -53,18 +51,12 @@ pub struct GetTranscriptOutputBuilder {
 }
 impl GetTranscriptOutputBuilder {
     /// <p>The initial contact ID for the contact. </p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The initial contact ID for the contact. </p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_contact_id = input;
         self
     }
@@ -84,10 +76,7 @@ impl GetTranscriptOutputBuilder {
         self
     }
     /// <p>The list of messages in the session.</p>
-    pub fn set_transcript(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
+    pub fn set_transcript(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>) -> Self {
         self.transcript = input;
         self
     }

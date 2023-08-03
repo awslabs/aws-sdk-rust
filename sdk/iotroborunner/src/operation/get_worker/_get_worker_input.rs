@@ -22,9 +22,7 @@ impl GetWorkerInput {
 
 /// A builder for [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkerInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetWorkerInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_worker::GetWorkerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_worker::GetWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_worker::GetWorkerInput { id: self.id })
     }
 }

@@ -53,9 +53,7 @@ impl FileShareInfo {
 
 /// A builder for [`FileShareInfo`](crate::types::FileShareInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileShareInfoBuilder {
     pub(crate) file_share_type: ::std::option::Option<crate::types::FileShareType>,
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
@@ -70,10 +68,7 @@ impl FileShareInfoBuilder {
         self
     }
     /// <p>The type of the file share.</p>
-    pub fn set_file_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileShareType>,
-    ) -> Self {
+    pub fn set_file_share_type(mut self, input: ::std::option::Option<crate::types::FileShareType>) -> Self {
         self.file_share_type = input;
         self
     }
@@ -82,18 +77,12 @@ impl FileShareInfoBuilder {
         &self.file_share_type
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }
@@ -102,18 +91,12 @@ impl FileShareInfoBuilder {
         &self.file_share_arn
     }
     /// <p>The ID of the file share.</p>
-    pub fn file_share_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file share.</p>
-    pub fn set_file_share_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_id = input;
         self
     }
@@ -123,19 +106,13 @@ impl FileShareInfoBuilder {
     }
     /// <p>The status of the file share.</p>
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn file_share_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the file share.</p>
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn set_file_share_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_status = input;
         self
     }

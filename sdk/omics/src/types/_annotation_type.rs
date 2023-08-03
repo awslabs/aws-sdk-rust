@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnnotationType {
     /// Contains contig and 1-base position
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for AnnotationType {
             "CHR_START_END_REF_ALT_ZERO_BASE" => AnnotationType::ChrStartEndRefAltZeroBase,
             "CHR_START_END_ZERO_BASE" => AnnotationType::ChrStartEndZeroBase,
             "GENERIC" => AnnotationType::Generic,
-            other => {
-                AnnotationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AnnotationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

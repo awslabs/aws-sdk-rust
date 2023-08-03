@@ -27,7 +27,7 @@ impl AssociateNatGatewayAddressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressInputBuilder,
+    inner: crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressInputBuilder,
 }
 impl AssociateNatGatewayAddressFluentBuilder {
     /// Creates a new `AssociateNatGatewayAddress`.
@@ -38,7 +38,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
         }
     }
     /// Access the AssociateNatGatewayAddress as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
             crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl AssociateNatGatewayAddressFluentBuilder {
             crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
@@ -146,25 +129,17 @@ impl AssociateNatGatewayAddressFluentBuilder {
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
     /// <p>The allocation IDs of EIPs that you want to associate with your NAT gateway.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_ids(input.into());
         self
     }
     /// <p>The allocation IDs of EIPs that you want to associate with your NAT gateway.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allocation_ids(input);
         self
     }
     /// <p>The allocation IDs of EIPs that you want to associate with your NAT gateway.</p>
-    pub fn get_allocation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allocation_ids()
     }
     /// Appends an item to `PrivateIpAddresses`.
@@ -172,25 +147,17 @@ impl AssociateNatGatewayAddressFluentBuilder {
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p>The private IPv4 addresses that you want to assign to the NAT gateway.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_ip_addresses(input.into());
         self
     }
     /// <p>The private IPv4 addresses that you want to assign to the NAT gateway.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
     /// <p>The private IPv4 addresses that you want to assign to the NAT gateway.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

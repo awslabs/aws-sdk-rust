@@ -12,8 +12,7 @@ pub struct RecommendationPreferences {
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub cpu_vendor_architectures:
-        ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
+    pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
 }
 impl RecommendationPreferences {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
@@ -23,9 +22,7 @@ impl RecommendationPreferences {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
-    pub fn cpu_vendor_architectures(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CpuVendorArchitecture]> {
+    pub fn cpu_vendor_architectures(&self) -> ::std::option::Option<&[crate::types::CpuVendorArchitecture]> {
         self.cpu_vendor_architectures.as_deref()
     }
 }
@@ -38,12 +35,9 @@ impl RecommendationPreferences {
 
 /// A builder for [`RecommendationPreferences`](crate::types::RecommendationPreferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationPreferencesBuilder {
-    pub(crate) cpu_vendor_architectures:
-        ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
+    pub(crate) cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
 }
 impl RecommendationPreferencesBuilder {
     /// Appends an item to `cpu_vendor_architectures`.
@@ -70,10 +64,7 @@ impl RecommendationPreferencesBuilder {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
-    pub fn set_cpu_vendor_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
-    ) -> Self {
+    pub fn set_cpu_vendor_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>) -> Self {
         self.cpu_vendor_architectures = input;
         self
     }
@@ -84,9 +75,7 @@ impl RecommendationPreferencesBuilder {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
-    pub fn get_cpu_vendor_architectures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>> {
+    pub fn get_cpu_vendor_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>> {
         &self.cpu_vendor_architectures
     }
     /// Consumes the builder and constructs a [`RecommendationPreferences`](crate::types::RecommendationPreferences).

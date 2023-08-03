@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDatabaseOutput`](crate::operation::get_database::GetDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::get_database::GetDatabaseOutput::database): <p>The database returned.</p>
     /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::operation::get_database::GetDatabaseError)
-    pub fn get_database(
-        &self,
-    ) -> crate::operation::get_database::builders::GetDatabaseFluentBuilder {
+    pub fn get_database(&self) -> crate::operation::get_database::builders::GetDatabaseFluentBuilder {
         crate::operation::get_database::builders::GetDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

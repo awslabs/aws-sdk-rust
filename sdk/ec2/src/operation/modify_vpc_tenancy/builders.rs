@@ -10,10 +10,7 @@ impl ModifyVpcTenancyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_vpc_tenancy();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ModifyVpcTenancyFluentBuilder {
         }
     }
     /// Access the ModifyVpcTenancy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ModifyVpcTenancyFluentBuilder {
             crate::operation::modify_vpc_tenancy::ModifyVpcTenancy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ModifyVpcTenancyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ModifyVpcTenancyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ModifyVpcTenancyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl ModifyVpcTenancyFluentBuilder {
             crate::operation::modify_vpc_tenancy::ModifyVpcTenancy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl ModifyVpcTenancyFluentBuilder {
         self
     }
     /// <p>The instance tenancy attribute for the VPC. </p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcTenancy>,
-    ) -> Self {
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::VpcTenancy>) -> Self {
         self.inner = self.inner.set_instance_tenancy(input);
         self
     }

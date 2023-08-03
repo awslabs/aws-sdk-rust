@@ -10,10 +10,7 @@ impl DescribeCampaignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_campaign::DescribeCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_campaign::DescribeCampaignError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_campaign::DescribeCampaignError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_campaign();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DescribeCampaignFluentBuilder {
         }
     }
     /// Access the DescribeCampaign as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_campaign::builders::DescribeCampaignInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_campaign::builders::DescribeCampaignInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DescribeCampaignFluentBuilder {
             crate::operation::describe_campaign::DescribeCampaign,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_campaign::DescribeCampaignError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_campaign::DescribeCampaignError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DescribeCampaignFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DescribeCampaignFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_campaign::DescribeCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_campaign::DescribeCampaignError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_campaign::DescribeCampaignError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DescribeCampaignFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_campaign::DescribeCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_campaign::DescribeCampaignError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_campaign::DescribeCampaignError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl DescribeCampaignFluentBuilder {
             crate::operation::describe_campaign::DescribeCampaign,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_campaign::DescribeCampaignError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_campaign::DescribeCampaignError>,
     > {
         self.customize_middleware().await
     }

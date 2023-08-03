@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExplainabilityExportOutput`](crate::operation::create_explainability_export::CreateExplainabilityExportOutput) with field(s):
     ///   - [`explainability_export_arn(Option<String>)`](crate::operation::create_explainability_export::CreateExplainabilityExportOutput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the export.</p>
     /// - On failure, responds with [`SdkError<CreateExplainabilityExportError>`](crate::operation::create_explainability_export::CreateExplainabilityExportError)
-    pub fn create_explainability_export(&self) -> crate::operation::create_explainability_export::builders::CreateExplainabilityExportFluentBuilder{
+    pub fn create_explainability_export(&self) -> crate::operation::create_explainability_export::builders::CreateExplainabilityExportFluentBuilder {
         crate::operation::create_explainability_export::builders::CreateExplainabilityExportFluentBuilder::new(self.handle.clone())
     }
 }

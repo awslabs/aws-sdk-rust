@@ -31,9 +31,7 @@ impl GlobalClusterMember {
         self.is_writer
     }
     /// <p>Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
-    pub fn global_write_forwarding_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WriteForwardingStatus> {
+    pub fn global_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::WriteForwardingStatus> {
         self.global_write_forwarding_status.as_ref()
     }
 }
@@ -46,30 +44,21 @@ impl GlobalClusterMember {
 
 /// A builder for [`GlobalClusterMember`](crate::types::GlobalClusterMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalClusterMemberBuilder {
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_writer: ::std::option::Option<bool>,
-    pub(crate) global_write_forwarding_status:
-        ::std::option::Option<crate::types::WriteForwardingStatus>,
+    pub(crate) global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
 }
 impl GlobalClusterMemberBuilder {
     /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
-    pub fn db_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
-    pub fn set_db_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_arn = input;
         self
     }
@@ -89,10 +78,7 @@ impl GlobalClusterMemberBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database.</p>
-    pub fn set_readers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_readers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.readers = input;
         self
     }
@@ -115,25 +101,17 @@ impl GlobalClusterMemberBuilder {
         &self.is_writer
     }
     /// <p>Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
-    pub fn global_write_forwarding_status(
-        mut self,
-        input: crate::types::WriteForwardingStatus,
-    ) -> Self {
+    pub fn global_write_forwarding_status(mut self, input: crate::types::WriteForwardingStatus) -> Self {
         self.global_write_forwarding_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
-    pub fn set_global_write_forwarding_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WriteForwardingStatus>,
-    ) -> Self {
+    pub fn set_global_write_forwarding_status(mut self, input: ::std::option::Option<crate::types::WriteForwardingStatus>) -> Self {
         self.global_write_forwarding_status = input;
         self
     }
     /// <p>Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
-    pub fn get_global_write_forwarding_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::WriteForwardingStatus> {
+    pub fn get_global_write_forwarding_status(&self) -> &::std::option::Option<crate::types::WriteForwardingStatus> {
         &self.global_write_forwarding_status
     }
     /// Consumes the builder and constructs a [`GlobalClusterMember`](crate::types::GlobalClusterMember).

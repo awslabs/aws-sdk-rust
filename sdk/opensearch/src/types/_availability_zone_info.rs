@@ -68,9 +68,7 @@ impl AvailabilityZoneInfo {
 
 /// A builder for [`AvailabilityZoneInfo`](crate::types::AvailabilityZoneInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneInfoBuilder {
     pub(crate) availability_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) zone_status: ::std::option::Option<crate::types::ZoneStatus>,
@@ -81,18 +79,12 @@ pub struct AvailabilityZoneInfoBuilder {
 }
 impl AvailabilityZoneInfoBuilder {
     /// <p>The name of the Availability Zone.</p>
-    pub fn availability_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone.</p>
-    pub fn set_availability_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_name = input;
         self
     }
@@ -116,10 +108,7 @@ impl AvailabilityZoneInfoBuilder {
     /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
     /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
-    pub fn set_zone_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ZoneStatus>,
-    ) -> Self {
+    pub fn set_zone_status(mut self, input: ::std::option::Option<crate::types::ZoneStatus>) -> Self {
         self.zone_status = input;
         self
     }
@@ -133,18 +122,12 @@ impl AvailabilityZoneInfoBuilder {
         &self.zone_status
     }
     /// <p>The total number of data nodes configured in the Availability Zone.</p>
-    pub fn configured_data_node_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_data_node_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_data_node_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total number of data nodes configured in the Availability Zone.</p>
-    pub fn set_configured_data_node_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_data_node_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_data_node_count = input;
         self
     }
@@ -153,18 +136,12 @@ impl AvailabilityZoneInfoBuilder {
         &self.configured_data_node_count
     }
     /// <p>The number of data nodes active in the Availability Zone.</p>
-    pub fn available_data_node_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn available_data_node_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.available_data_node_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of data nodes active in the Availability Zone.</p>
-    pub fn set_available_data_node_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_available_data_node_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.available_data_node_count = input;
         self
     }
@@ -187,18 +164,12 @@ impl AvailabilityZoneInfoBuilder {
         &self.total_shards
     }
     /// <p>The total number of primary and replica shards that aren't allocated to any of the nodes in the Availability Zone.</p>
-    pub fn total_un_assigned_shards(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_un_assigned_shards(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_un_assigned_shards = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total number of primary and replica shards that aren't allocated to any of the nodes in the Availability Zone.</p>
-    pub fn set_total_un_assigned_shards(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_total_un_assigned_shards(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_un_assigned_shards = input;
         self
     }

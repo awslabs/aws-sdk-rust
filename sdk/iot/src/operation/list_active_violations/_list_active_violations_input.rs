@@ -35,9 +35,7 @@ impl ListActiveViolationsInput {
         self.security_profile_name.as_deref()
     }
     /// <p> The criteria for a behavior. </p>
-    pub fn behavior_criteria_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BehaviorCriteriaType> {
+    pub fn behavior_criteria_type(&self) -> ::std::option::Option<&crate::types::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
     /// <p> A list of all suppressed alerts. </p>
@@ -59,17 +57,14 @@ impl ListActiveViolationsInput {
 }
 impl ListActiveViolationsInput {
     /// Creates a new builder-style object to manufacture [`ListActiveViolationsInput`](crate::operation::list_active_violations::ListActiveViolationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_active_violations::builders::ListActiveViolationsInputBuilder {
+    pub fn builder() -> crate::operation::list_active_violations::builders::ListActiveViolationsInputBuilder {
         crate::operation::list_active_violations::builders::ListActiveViolationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListActiveViolationsInput`](crate::operation::list_active_violations::ListActiveViolationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActiveViolationsInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
@@ -95,18 +90,12 @@ impl ListActiveViolationsInputBuilder {
         &self.thing_name
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -120,17 +109,12 @@ impl ListActiveViolationsInputBuilder {
         self
     }
     /// <p> The criteria for a behavior. </p>
-    pub fn set_behavior_criteria_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorCriteriaType>,
-    ) -> Self {
+    pub fn set_behavior_criteria_type(mut self, input: ::std::option::Option<crate::types::BehaviorCriteriaType>) -> Self {
         self.behavior_criteria_type = input;
         self
     }
     /// <p> The criteria for a behavior. </p>
-    pub fn get_behavior_criteria_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
+    pub fn get_behavior_criteria_type(&self) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
         &self.behavior_criteria_type
     }
     /// <p> A list of all suppressed alerts. </p>
@@ -153,17 +137,12 @@ impl ListActiveViolationsInputBuilder {
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p>The token for the next set of results.</p>
@@ -197,20 +176,16 @@ impl ListActiveViolationsInputBuilder {
     /// Consumes the builder and constructs a [`ListActiveViolationsInput`](crate::operation::list_active_violations::ListActiveViolationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_active_violations::ListActiveViolationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_active_violations::ListActiveViolationsInput {
-                thing_name: self.thing_name,
-                security_profile_name: self.security_profile_name,
-                behavior_criteria_type: self.behavior_criteria_type,
-                list_suppressed_alerts: self.list_suppressed_alerts,
-                verification_state: self.verification_state,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_active_violations::ListActiveViolationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_active_violations::ListActiveViolationsInput {
+            thing_name: self.thing_name,
+            security_profile_name: self.security_profile_name,
+            behavior_criteria_type: self.behavior_criteria_type,
+            list_suppressed_alerts: self.list_suppressed_alerts,
+            verification_state: self.verification_state,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

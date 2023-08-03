@@ -32,9 +32,7 @@ impl AssociateLensesInput {
 
 /// A builder for [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLensesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -68,27 +66,19 @@ impl AssociateLensesInputBuilder {
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lens_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lens_aliases = input;
         self
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn get_lens_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lens_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lens_aliases
     }
     /// Consumes the builder and constructs a [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_lenses::AssociateLensesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_lenses::AssociateLensesInput {
             workload_id: self.workload_id,
             lens_aliases: self.lens_aliases,

@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for RestoreDbInstanceFromDbSnapshotOutput
 }
 impl RestoreDbInstanceFromDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotOutput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput).
-    pub fn builder() -> crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder {
         crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbInstanceFromDbSnapshotOutput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbInstanceFromDbSnapshotOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -46,10 +44,7 @@ impl RestoreDbInstanceFromDbSnapshotOutputBuilder {
     }
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }
@@ -68,13 +63,9 @@ impl RestoreDbInstanceFromDbSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotOutput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput
-    {
+    pub fn build(self) -> crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput {
         crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput {
-            db_instance: self.db_instance
-            ,
+            db_instance: self.db_instance,
             _request_id: self._request_id,
         }
     }

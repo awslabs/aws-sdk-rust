@@ -22,17 +22,14 @@ impl ListAttendeeTagsInput {
 }
 impl ListAttendeeTagsInput {
     /// Creates a new builder-style object to manufacture [`ListAttendeeTagsInput`](crate::operation::list_attendee_tags::ListAttendeeTagsInput).
-    pub fn builder() -> crate::operation::list_attendee_tags::builders::ListAttendeeTagsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_attendee_tags::builders::ListAttendeeTagsInputBuilder {
         crate::operation::list_attendee_tags::builders::ListAttendeeTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttendeeTagsInput`](crate::operation::list_attendee_tags::ListAttendeeTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttendeeTagsInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListAttendeeTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListAttendeeTagsInput`](crate::operation::list_attendee_tags::ListAttendeeTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attendee_tags::ListAttendeeTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_attendee_tags::ListAttendeeTagsInput {
-                meeting_id: self.meeting_id,
-                attendee_id: self.attendee_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_attendee_tags::ListAttendeeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_attendee_tags::ListAttendeeTagsInput {
+            meeting_id: self.meeting_id,
+            attendee_id: self.attendee_id,
+        })
     }
 }

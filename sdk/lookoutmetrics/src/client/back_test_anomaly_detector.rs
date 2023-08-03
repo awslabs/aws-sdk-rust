@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`anomaly_detector_arn(impl ::std::convert::Into<String>)`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     /// - On success, responds with [`BackTestAnomalyDetectorOutput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<BackTestAnomalyDetectorError>`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorError)
-    pub fn back_test_anomaly_detector(
-        &self,
-    ) -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder
-    {
+    pub fn back_test_anomaly_detector(&self) -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder {
         crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::new(self.handle.clone())
     }
 }

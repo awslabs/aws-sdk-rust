@@ -43,9 +43,7 @@ impl ListQueuesInput {
 
 /// A builder for [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_types: ::std::option::Option<::std::vec::Vec<crate::types::QueueType>>,
@@ -79,17 +77,12 @@ impl ListQueuesInputBuilder {
         self
     }
     /// <p>The type of queue.</p>
-    pub fn set_queue_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueType>>,
-    ) -> Self {
+    pub fn set_queue_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueType>>) -> Self {
         self.queue_types = input;
         self
     }
     /// <p>The type of queue.</p>
-    pub fn get_queue_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueType>> {
+    pub fn get_queue_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueType>> {
         &self.queue_types
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -121,12 +114,7 @@ impl ListQueuesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_queues::ListQueuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queues::ListQueuesInput {
             instance_id: self.instance_id,
             queue_types: self.queue_types,

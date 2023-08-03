@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateContainerServiceOutput {
 }
 impl CreateContainerServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceOutput`](crate::operation::create_container_service::CreateContainerServiceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_container_service::builders::CreateContainerServiceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_container_service::builders::CreateContainerServiceOutputBuilder {
         crate::operation::create_container_service::builders::CreateContainerServiceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContainerServiceOutput`](crate::operation::create_container_service::CreateContainerServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContainerServiceOutputBuilder {
     pub(crate) container_service: ::std::option::Option<crate::types::ContainerService>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateContainerServiceOutputBuilder {
         self
     }
     /// <p>An object that describes a container service.</p>
-    pub fn set_container_service(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerService>,
-    ) -> Self {
+    pub fn set_container_service(mut self, input: ::std::option::Option<crate::types::ContainerService>) -> Self {
         self.container_service = input;
         self
     }

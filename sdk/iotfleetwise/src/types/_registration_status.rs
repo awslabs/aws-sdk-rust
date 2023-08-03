@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RegistrationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for RegistrationStatus {
             "REGISTRATION_FAILURE" => RegistrationStatus::RegistrationFailure,
             "REGISTRATION_PENDING" => RegistrationStatus::RegistrationPending,
             "REGISTRATION_SUCCESS" => RegistrationStatus::RegistrationSuccess,
-            other => RegistrationStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RegistrationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl RegistrationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "REGISTRATION_FAILURE",
-            "REGISTRATION_PENDING",
-            "REGISTRATION_SUCCESS",
-        ]
+        &["REGISTRATION_FAILURE", "REGISTRATION_PENDING", "REGISTRATION_SUCCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for RegistrationStatus {

@@ -35,9 +35,7 @@ impl ListNamespacesOutput {
 
 /// A builder for [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>,
@@ -70,17 +68,12 @@ impl ListNamespacesOutputBuilder {
         self
     }
     /// <p>The list of returned namespaces.</p>
-    pub fn set_namespaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>,
-    ) -> Self {
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>) -> Self {
         self.namespaces = input;
         self
     }
     /// <p>The list of returned namespaces.</p>
-    pub fn get_namespaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Namespace>> {
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Namespace>> {
         &self.namespaces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

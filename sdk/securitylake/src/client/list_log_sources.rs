@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`sources(Option<Vec<LogSource>>)`](crate::operation::list_log_sources::ListLogSourcesOutput::sources): <p>The list of log sources in your organization that send data to the data lake.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_log_sources::ListLogSourcesOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListLogSourcesError>`](crate::operation::list_log_sources::ListLogSourcesError)
-    pub fn list_log_sources(
-        &self,
-    ) -> crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder {
-        crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_log_sources(&self) -> crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder {
+        crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::new(self.handle.clone())
     }
 }

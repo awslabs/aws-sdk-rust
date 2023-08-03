@@ -16,17 +16,14 @@ impl DescribeIdentityInput {
 }
 impl DescribeIdentityInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
-    pub fn builder() -> crate::operation::describe_identity::builders::DescribeIdentityInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_identity::builders::DescribeIdentityInputBuilder {
         crate::operation::describe_identity::builders::DescribeIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,10 +45,7 @@ impl DescribeIdentityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_identity::DescribeIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_identity::DescribeIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_identity::DescribeIdentityInput {
             identity_id: self.identity_id,
         })

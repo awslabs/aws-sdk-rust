@@ -10,9 +10,7 @@ pub struct LogDestination {
 }
 impl LogDestination {
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    pub fn cloud_watch_logs_log_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsLogGroup> {
+    pub fn cloud_watch_logs_log_group(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsLogGroup> {
         self.cloud_watch_logs_log_group.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl LogDestination {
 
 /// A builder for [`LogDestination`](crate::types::LogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogDestinationBuilder {
-    pub(crate) cloud_watch_logs_log_group:
-        ::std::option::Option<crate::types::CloudWatchLogsLogGroup>,
+    pub(crate) cloud_watch_logs_log_group: ::std::option::Option<crate::types::CloudWatchLogsLogGroup>,
 }
 impl LogDestinationBuilder {
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    pub fn cloud_watch_logs_log_group(
-        mut self,
-        input: crate::types::CloudWatchLogsLogGroup,
-    ) -> Self {
+    pub fn cloud_watch_logs_log_group(mut self, input: crate::types::CloudWatchLogsLogGroup) -> Self {
         self.cloud_watch_logs_log_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    pub fn set_cloud_watch_logs_log_group(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsLogGroup>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_log_group(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsLogGroup>) -> Self {
         self.cloud_watch_logs_log_group = input;
         self
     }
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    pub fn get_cloud_watch_logs_log_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsLogGroup> {
+    pub fn get_cloud_watch_logs_log_group(&self) -> &::std::option::Option<crate::types::CloudWatchLogsLogGroup> {
         &self.cloud_watch_logs_log_group
     }
     /// Consumes the builder and constructs a [`LogDestination`](crate::types::LogDestination).

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`channel_id(impl ::std::convert::Into<String>)`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::set_channel_id): <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     /// - On success, responds with [`DeleteSlackChannelConfigurationOutput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteSlackChannelConfigurationError>`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError)
-    pub fn delete_slack_channel_configuration(&self) -> crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder{
+    pub fn delete_slack_channel_configuration(
+        &self,
+    ) -> crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder {
         crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

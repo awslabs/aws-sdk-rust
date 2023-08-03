@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ExecuteProvisionedProductPlanOutput`](crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanOutput) with field(s):
     ///   - [`record_detail(Option<RecordDetail>)`](crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanOutput::record_detail): <p>Information about the result of provisioning the product.</p>
     /// - On failure, responds with [`SdkError<ExecuteProvisionedProductPlanError>`](crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError)
-    pub fn execute_provisioned_product_plan(&self) -> crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanFluentBuilder{
+    pub fn execute_provisioned_product_plan(
+        &self,
+    ) -> crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanFluentBuilder {
         crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanFluentBuilder::new(self.handle.clone())
     }
 }

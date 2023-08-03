@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`hypervisors(Option<Vec<Hypervisor>>)`](crate::operation::list_hypervisors::ListHypervisorsOutput::hypervisors): <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hypervisors::ListHypervisorsOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListHypervisorsError>`](crate::operation::list_hypervisors::ListHypervisorsError)
-    pub fn list_hypervisors(
-        &self,
-    ) -> crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder {
-        crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_hypervisors(&self) -> crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder {
+        crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::new(self.handle.clone())
     }
 }

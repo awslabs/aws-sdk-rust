@@ -30,27 +30,19 @@ impl DataClassificationDetails {
 
 /// A builder for [`DataClassificationDetails`](crate::types::DataClassificationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataClassificationDetailsBuilder {
     pub(crate) detailed_results_location: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<crate::types::ClassificationResult>,
 }
 impl DataClassificationDetailsBuilder {
     /// <p>The path to the folder or file that contains the sensitive data.</p>
-    pub fn detailed_results_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_results_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_results_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the folder or file that contains the sensitive data.</p>
-    pub fn set_detailed_results_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_results_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_results_location = input;
         self
     }
@@ -64,10 +56,7 @@ impl DataClassificationDetailsBuilder {
         self
     }
     /// <p>The details about the sensitive data that was detected on the resource.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ClassificationResult>) -> Self {
         self.result = input;
         self
     }

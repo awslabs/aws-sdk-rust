@@ -37,10 +37,7 @@ impl DeleteDeploymentGroupFluentBuilder {
         }
     }
     /// Access the DeleteDeploymentGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteDeploymentGroupFluentBuilder {
             crate::operation::delete_deployment_group::DeleteDeploymentGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_group::DeleteDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_group::DeleteDeploymentGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteDeploymentGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteDeploymentGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_group::DeleteDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_group::DeleteDeploymentGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteDeploymentGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_group::DeleteDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_group::DeleteDeploymentGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteDeploymentGroupFluentBuilder {
             crate::operation::delete_deployment_group::DeleteDeploymentGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_group::DeleteDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_group::DeleteDeploymentGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl DeleteDeploymentGroupFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_group_name(input.into());
         self
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn set_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_group_name(input);
         self
     }

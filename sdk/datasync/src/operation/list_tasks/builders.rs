@@ -10,10 +10,7 @@ impl ListTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tasks::ListTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tasks::ListTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tasks::ListTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tasks();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListTasksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tasks::ListTasks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tasks::ListTasks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tasks::ListTasksError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListTasksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tasks::ListTasks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tasks::ListTasks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tasks::ListTasksError>,
     > {
         self.customize_middleware().await
@@ -156,10 +144,7 @@ impl ListTasksFluentBuilder {
         self
     }
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput) with field(s):
     ///   - [`deleted_branch(Option<BranchInfo>)`](crate::operation::delete_branch::DeleteBranchOutput::deleted_branch): <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     /// - On failure, responds with [`SdkError<DeleteBranchError>`](crate::operation::delete_branch::DeleteBranchError)
-    pub fn delete_branch(
-        &self,
-    ) -> crate::operation::delete_branch::builders::DeleteBranchFluentBuilder {
-        crate::operation::delete_branch::builders::DeleteBranchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_branch(&self) -> crate::operation::delete_branch::builders::DeleteBranchFluentBuilder {
+        crate::operation::delete_branch::builders::DeleteBranchFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`access_policy_creation_date(Option<DateTime>)`](crate::operation::describe_access_policy::DescribeAccessPolicyOutput::access_policy_creation_date): <p>The date the access policy was created, in Unix epoch time.</p>
     ///   - [`access_policy_last_update_date(Option<DateTime>)`](crate::operation::describe_access_policy::DescribeAccessPolicyOutput::access_policy_last_update_date): <p>The date the access policy was last updated, in Unix epoch time.</p>
     /// - On failure, responds with [`SdkError<DescribeAccessPolicyError>`](crate::operation::describe_access_policy::DescribeAccessPolicyError)
-    pub fn describe_access_policy(
-        &self,
-    ) -> crate::operation::describe_access_policy::builders::DescribeAccessPolicyFluentBuilder {
-        crate::operation::describe_access_policy::builders::DescribeAccessPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_access_policy(&self) -> crate::operation::describe_access_policy::builders::DescribeAccessPolicyFluentBuilder {
+        crate::operation::describe_access_policy::builders::DescribeAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

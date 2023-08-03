@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeReceiptRuleOutput {
 }
 impl DescribeReceiptRuleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleOutput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleOutputBuilder {
-        crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleOutputBuilder {
+        crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReceiptRuleOutput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReceiptRuleOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::ReceiptRule>,
     _request_id: Option<String>,

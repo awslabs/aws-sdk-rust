@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListReportDefinitionsOutput {
 }
 impl ListReportDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListReportDefinitionsOutput`](crate::operation::list_report_definitions::ListReportDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder {
         crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportDefinitionsOutput`](crate::operation::list_report_definitions::ListReportDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportDefinitionsOutputBuilder {
-    pub(crate) report_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
+    pub(crate) report_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListReportDefinitionsOutputBuilder {
         self
     }
     /// <p>The retrieved reports.</p>
-    pub fn set_report_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
-    ) -> Self {
+    pub fn set_report_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>) -> Self {
         self.report_definitions = input;
         self
     }
     /// <p>The retrieved reports.</p>
-    pub fn get_report_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
+    pub fn get_report_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
         &self.report_definitions
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>

@@ -6,14 +6,11 @@
 pub struct DeployAsApplicationConfigurationUpdate {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
     #[doc(hidden)]
-    pub s3_content_location_update:
-        ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
+    pub s3_content_location_update: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
 }
 impl DeployAsApplicationConfigurationUpdate {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn s3_content_location_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ContentBaseLocationUpdate> {
+    pub fn s3_content_location_update(&self) -> ::std::option::Option<&crate::types::S3ContentBaseLocationUpdate> {
         self.s3_content_location_update.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl DeployAsApplicationConfigurationUpdate {
 
 /// A builder for [`DeployAsApplicationConfigurationUpdate`](crate::types::DeployAsApplicationConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeployAsApplicationConfigurationUpdateBuilder {
-    pub(crate) s3_content_location_update:
-        ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
+    pub(crate) s3_content_location_update: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
 }
 impl DeployAsApplicationConfigurationUpdateBuilder {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn s3_content_location_update(
-        mut self,
-        input: crate::types::S3ContentBaseLocationUpdate,
-    ) -> Self {
+    pub fn s3_content_location_update(mut self, input: crate::types::S3ContentBaseLocationUpdate) -> Self {
         self.s3_content_location_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn set_s3_content_location_update(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
-    ) -> Self {
+    pub fn set_s3_content_location_update(mut self, input: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>) -> Self {
         self.s3_content_location_update = input;
         self
     }
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn get_s3_content_location_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ContentBaseLocationUpdate> {
+    pub fn get_s3_content_location_update(&self) -> &::std::option::Option<crate::types::S3ContentBaseLocationUpdate> {
         &self.s3_content_location_update
     }
     /// Consumes the builder and constructs a [`DeployAsApplicationConfigurationUpdate`](crate::types::DeployAsApplicationConfigurationUpdate).

@@ -32,9 +32,7 @@ impl RetryBuildOutput {
 
 /// A builder for [`RetryBuildOutput`](crate::operation::retry_build::RetryBuildOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryBuildOutputBuilder {
     pub(crate) build_value: ::std::option::Option<crate::types::Build>,
     _request_id: Option<String>,

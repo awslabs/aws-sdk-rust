@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeRootFoldersOutput {
 }
 impl DescribeRootFoldersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRootFoldersOutput`](crate::operation::describe_root_folders::DescribeRootFoldersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder {
-        crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder {
+        crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRootFoldersOutput`](crate::operation::describe_root_folders::DescribeRootFoldersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRootFoldersOutputBuilder {
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeRootFoldersOutputBuilder {
         self
     }
     /// <p>The user's special folders.</p>
-    pub fn set_folders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
-    ) -> Self {
+    pub fn set_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>) -> Self {
         self.folders = input;
         self
     }
     /// <p>The user's special folders.</p>
-    pub fn get_folders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
+    pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
         &self.folders
     }
     /// <p>The marker for the next set of results.</p>

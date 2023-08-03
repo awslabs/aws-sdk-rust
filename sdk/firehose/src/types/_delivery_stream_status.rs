@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeliveryStreamStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for DeliveryStreamStatus {
             "CREATING_FAILED" => DeliveryStreamStatus::CreatingFailed,
             "DELETING" => DeliveryStreamStatus::Deleting,
             "DELETING_FAILED" => DeliveryStreamStatus::DeletingFailed,
-            other => DeliveryStreamStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeliveryStreamStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl DeliveryStreamStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "CREATING_FAILED",
-            "DELETING",
-            "DELETING_FAILED",
-        ]
+        &["ACTIVE", "CREATING", "CREATING_FAILED", "DELETING", "DELETING_FAILED"]
     }
 }
 impl ::std::convert::AsRef<str> for DeliveryStreamStatus {

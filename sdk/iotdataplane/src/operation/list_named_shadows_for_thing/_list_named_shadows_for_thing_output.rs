@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ListNamedShadowsForThingOutput {
 }
 impl ListNamedShadowsForThingOutput {
     /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingOutput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput).
-    pub fn builder() -> crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingOutputBuilder{
+    pub fn builder() -> crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingOutputBuilder {
         crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNamedShadowsForThingOutput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamedShadowsForThingOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl ListNamedShadowsForThingOutputBuilder {
         self
     }
     /// <p>The list of shadows for the specified thing.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.results = input;
         self
     }
@@ -113,9 +108,7 @@ impl ListNamedShadowsForThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNamedShadowsForThingOutput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput {
+    pub fn build(self) -> crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput {
         crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput {
             results: self.results,
             next_token: self.next_token,

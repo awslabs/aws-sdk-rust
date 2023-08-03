@@ -37,9 +37,7 @@ impl PullRequestMergedStateChangedEventMetadata {
 
 /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::types::PullRequestMergedStateChangedEventMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullRequestMergedStateChangedEventMetadataBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_reference: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct PullRequestMergedStateChangedEventMetadataBuilder {
 }
 impl PullRequestMergedStateChangedEventMetadataBuilder {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch that the pull request is merged into.</p>
-    pub fn destination_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the branch that the pull request is merged into.</p>
-    pub fn set_destination_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_reference = input;
         self
     }
@@ -92,10 +78,7 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
         self
     }
     /// <p>Information about the merge state change event.</p>
-    pub fn set_merge_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeMetadata>,
-    ) -> Self {
+    pub fn set_merge_metadata(mut self, input: ::std::option::Option<crate::types::MergeMetadata>) -> Self {
         self.merge_metadata = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`ExportSourceNetworkCfnTemplateOutput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput) with field(s):
     ///   - [`s3_destination_url(Option<String>)`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput::s3_destination_url): <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
     /// - On failure, responds with [`SdkError<ExportSourceNetworkCfnTemplateError>`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError)
-    pub fn export_source_network_cfn_template(&self) -> crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateFluentBuilder{
+    pub fn export_source_network_cfn_template(
+        &self,
+    ) -> crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateFluentBuilder {
         crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateFluentBuilder::new(self.handle.clone())
     }
 }

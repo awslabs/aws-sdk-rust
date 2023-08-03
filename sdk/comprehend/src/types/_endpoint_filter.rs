@@ -44,9 +44,7 @@ impl EndpointFilter {
 
 /// A builder for [`EndpointFilter`](crate::types::EndpointFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointFilterBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EndpointStatus>,
@@ -74,10 +72,7 @@ impl EndpointFilterBuilder {
         self
     }
     /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -91,10 +86,7 @@ impl EndpointFilterBuilder {
         self
     }
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -108,10 +100,7 @@ impl EndpointFilterBuilder {
         self
     }
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }

@@ -72,9 +72,7 @@ impl CommentsForPullRequest {
 
 /// A builder for [`CommentsForPullRequest`](crate::types::CommentsForPullRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommentsForPullRequestBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct CommentsForPullRequestBuilder {
 }
 impl CommentsForPullRequestBuilder {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -107,18 +99,12 @@ impl CommentsForPullRequestBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -127,18 +113,12 @@ impl CommentsForPullRequestBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -147,18 +127,12 @@ impl CommentsForPullRequestBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -167,18 +141,12 @@ impl CommentsForPullRequestBuilder {
         &self.after_commit_id
     }
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
-    pub fn before_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
-    pub fn set_before_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_blob_id = input;
         self
     }
@@ -187,18 +155,12 @@ impl CommentsForPullRequestBuilder {
         &self.before_blob_id
     }
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
-    pub fn after_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
-    pub fn set_after_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_blob_id = input;
         self
     }
@@ -232,10 +194,7 @@ impl CommentsForPullRequestBuilder {
         self
     }
     /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
-    pub fn set_comments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
-    ) -> Self {
+    pub fn set_comments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>) -> Self {
         self.comments = input;
         self
     }

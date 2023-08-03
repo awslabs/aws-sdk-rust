@@ -37,9 +37,7 @@ impl UpdateSettings {
 
 /// A builder for [`UpdateSettings`](crate::types::UpdateSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSettingsBuilder {
     pub(crate) add_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) remove_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,17 +56,12 @@ impl UpdateSettingsBuilder {
         self
     }
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn set_add_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_subnets = input;
         self
     }
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn get_add_subnets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_subnets
     }
     /// Appends an item to `remove_subnets`.
@@ -76,42 +69,28 @@ impl UpdateSettingsBuilder {
     /// To override the contents of this collection use [`set_remove_subnets`](Self::set_remove_subnets).
     ///
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn remove_subnets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_subnets.unwrap_or_default();
         v.push(input.into());
         self.remove_subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn set_remove_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_subnets = input;
         self
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn get_remove_subnets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_subnets
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_id = input;
         self
     }

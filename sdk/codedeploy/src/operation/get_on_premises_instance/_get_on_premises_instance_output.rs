@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetOnPremisesInstanceOutput {
 }
 impl GetOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceOutputBuilder {
         crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOnPremisesInstanceOutputBuilder {
     pub(crate) instance_info: ::std::option::Option<crate::types::InstanceInfo>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl GetOnPremisesInstanceOutputBuilder {
         self
     }
     /// <p> Information about the on-premises instance. </p>
-    pub fn set_instance_info(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceInfo>,
-    ) -> Self {
+    pub fn set_instance_info(mut self, input: ::std::option::Option<crate::types::InstanceInfo>) -> Self {
         self.instance_info = input;
         self
     }

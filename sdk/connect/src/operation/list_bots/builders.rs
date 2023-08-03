@@ -10,10 +10,7 @@ impl ListBotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_bots::ListBotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bots::ListBotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bots::ListBotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_bots();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListBotsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_bots::ListBots,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_bots::ListBots, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_bots::ListBotsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListBotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListBotsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_bots::ListBots,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_bots::ListBots, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_bots::ListBotsError>,
     > {
         self.customize_middleware().await
@@ -167,10 +155,7 @@ impl ListBotsFluentBuilder {
         self
     }
     /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
-    pub fn set_lex_version(
-        mut self,
-        input: ::std::option::Option<crate::types::LexVersion>,
-    ) -> Self {
+    pub fn set_lex_version(mut self, input: ::std::option::Option<crate::types::LexVersion>) -> Self {
         self.inner = self.inner.set_lex_version(input);
         self
     }

@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for ListChannelFlowsInput {
 }
 impl ListChannelFlowsInput {
     /// Creates a new builder-style object to manufacture [`ListChannelFlowsInput`](crate::operation::list_channel_flows::ListChannelFlowsInput).
-    pub fn builder() -> crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder {
         crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder::default()
     }
 }
@@ -54,18 +53,12 @@ pub struct ListChannelFlowsInputBuilder {
 }
 impl ListChannelFlowsInputBuilder {
     /// <p>The ARN of the app instance.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the app instance.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -104,17 +97,12 @@ impl ListChannelFlowsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelFlowsInput`](crate::operation::list_channel_flows::ListChannelFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_flows::ListChannelFlowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_channel_flows::ListChannelFlowsInput {
-                app_instance_arn: self.app_instance_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_channel_flows::ListChannelFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_channel_flows::ListChannelFlowsInput {
+            app_instance_arn: self.app_instance_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
 impl ::std::fmt::Debug for ListChannelFlowsInputBuilder {

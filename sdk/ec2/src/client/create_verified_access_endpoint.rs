@@ -20,7 +20,9 @@ impl super::Client {
     /// - On success, responds with [`CreateVerifiedAccessEndpointOutput`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointOutput) with field(s):
     ///   - [`verified_access_endpoint(Option<VerifiedAccessEndpoint>)`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointOutput::verified_access_endpoint): <p>The ID of the Verified Access endpoint.</p>
     /// - On failure, responds with [`SdkError<CreateVerifiedAccessEndpointError>`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointError)
-    pub fn create_verified_access_endpoint(&self) -> crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointFluentBuilder{
+    pub fn create_verified_access_endpoint(
+        &self,
+    ) -> crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointFluentBuilder {
         crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointFluentBuilder::new(self.handle.clone())
     }
 }

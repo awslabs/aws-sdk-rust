@@ -15,16 +15,14 @@ impl DisassociateWirelessGatewayFromThingInput {
 }
 impl DisassociateWirelessGatewayFromThingInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingInput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput).
-    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingInputBuilder {
         crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWirelessGatewayFromThingInput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromThingInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DisassociateWirelessGatewayFromThingInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingInput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput {
-                id: self.id
-                ,
-            }
+            crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput { id: self.id },
         )
     }
 }

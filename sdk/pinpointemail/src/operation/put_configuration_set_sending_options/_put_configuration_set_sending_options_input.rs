@@ -23,34 +23,26 @@ impl PutConfigurationSetSendingOptionsInput {
 }
 impl PutConfigurationSetSendingOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsInput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsInputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsInputBuilder {
         crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetSendingOptionsInput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) sending_enabled: ::std::option::Option<bool>,
 }
 impl PutConfigurationSetSendingOptionsInputBuilder {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -73,15 +65,17 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
         &self.sending_enabled
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsInput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                sending_enabled: self.sending_enabled
-                    .unwrap_or_default()
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                sending_enabled: self.sending_enabled.unwrap_or_default(),
+            },
         )
     }
 }

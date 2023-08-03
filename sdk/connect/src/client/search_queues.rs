@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_queues::SearchQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_queues::SearchQueuesOutput::approximate_total_count): <p>The total number of queues which matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchQueuesError>`](crate::operation::search_queues::SearchQueuesError)
-    pub fn search_queues(
-        &self,
-    ) -> crate::operation::search_queues::builders::SearchQueuesFluentBuilder {
-        crate::operation::search_queues::builders::SearchQueuesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_queues(&self) -> crate::operation::search_queues::builders::SearchQueuesFluentBuilder {
+        crate::operation::search_queues::builders::SearchQueuesFluentBuilder::new(self.handle.clone())
     }
 }

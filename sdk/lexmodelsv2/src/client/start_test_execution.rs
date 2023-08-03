@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`api_mode(Option<TestExecutionApiMode>)`](crate::operation::start_test_execution::StartTestExecutionOutput::api_mode): <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Amazon Lex Runtime API is used. Whereas for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
     ///   - [`test_execution_modality(Option<TestExecutionModality>)`](crate::operation::start_test_execution::StartTestExecutionOutput::test_execution_modality): <p>Indicates whether audio or text is used.</p>
     /// - On failure, responds with [`SdkError<StartTestExecutionError>`](crate::operation::start_test_execution::StartTestExecutionError)
-    pub fn start_test_execution(
-        &self,
-    ) -> crate::operation::start_test_execution::builders::StartTestExecutionFluentBuilder {
-        crate::operation::start_test_execution::builders::StartTestExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_test_execution(&self) -> crate::operation::start_test_execution::builders::StartTestExecutionFluentBuilder {
+        crate::operation::start_test_execution::builders::StartTestExecutionFluentBuilder::new(self.handle.clone())
     }
 }

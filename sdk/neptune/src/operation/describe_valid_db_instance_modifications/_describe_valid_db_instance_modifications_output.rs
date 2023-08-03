@@ -5,15 +5,12 @@
 pub struct DescribeValidDbInstanceModificationsOutput {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     #[doc(hidden)]
-    pub valid_db_instance_modifications_message:
-        ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
+    pub valid_db_instance_modifications_message: ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
     _request_id: Option<String>,
 }
 impl DescribeValidDbInstanceModificationsOutput {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
-    pub fn valid_db_instance_modifications_message(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ValidDbInstanceModificationsMessage> {
+    pub fn valid_db_instance_modifications_message(&self) -> ::std::option::Option<&crate::types::ValidDbInstanceModificationsMessage> {
         self.valid_db_instance_modifications_message.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribeValidDbInstanceModificationsO
 }
 impl DescribeValidDbInstanceModificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsOutput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput).
-    pub fn builder() -> crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsOutputBuilder {
         crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeValidDbInstanceModificationsOutput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeValidDbInstanceModificationsOutputBuilder {
-    pub(crate) valid_db_instance_modifications_message:
-        ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
+    pub(crate) valid_db_instance_modifications_message: ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
     _request_id: Option<String>,
 }
 impl DescribeValidDbInstanceModificationsOutputBuilder {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
-    pub fn valid_db_instance_modifications_message(
-        mut self,
-        input: crate::types::ValidDbInstanceModificationsMessage,
-    ) -> Self {
+    pub fn valid_db_instance_modifications_message(mut self, input: crate::types::ValidDbInstanceModificationsMessage) -> Self {
         self.valid_db_instance_modifications_message = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribeValidDbInstanceModificationsOutputBuilder {
         self
     }
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
-    pub fn get_valid_db_instance_modifications_message(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidDbInstanceModificationsMessage> {
+    pub fn get_valid_db_instance_modifications_message(&self) -> &::std::option::Option<crate::types::ValidDbInstanceModificationsMessage> {
         &self.valid_db_instance_modifications_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl DescribeValidDbInstanceModificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsOutput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput).
-    pub fn build(self) -> crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput{
+    pub fn build(self) -> crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput {
         crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput {
-            valid_db_instance_modifications_message: self.valid_db_instance_modifications_message
-            ,
+            valid_db_instance_modifications_message: self.valid_db_instance_modifications_message,
             _request_id: self._request_id,
         }
     }

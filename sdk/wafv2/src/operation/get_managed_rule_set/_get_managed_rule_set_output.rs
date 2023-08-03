@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetManagedRuleSetOutput {
 }
 impl GetManagedRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedRuleSetOutput`](crate::operation::get_managed_rule_set::GetManagedRuleSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_managed_rule_set::builders::GetManagedRuleSetOutputBuilder {
+    pub fn builder() -> crate::operation::get_managed_rule_set::builders::GetManagedRuleSetOutputBuilder {
         crate::operation::get_managed_rule_set::builders::GetManagedRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedRuleSetOutput`](crate::operation::get_managed_rule_set::GetManagedRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedRuleSetOutputBuilder {
     pub(crate) managed_rule_set: ::std::option::Option<crate::types::ManagedRuleSet>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl GetManagedRuleSetOutputBuilder {
         self
     }
     /// <p>The managed rule set that you requested. </p>
-    pub fn set_managed_rule_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedRuleSet>,
-    ) -> Self {
+    pub fn set_managed_rule_set(mut self, input: ::std::option::Option<crate::types::ManagedRuleSet>) -> Self {
         self.managed_rule_set = input;
         self
     }

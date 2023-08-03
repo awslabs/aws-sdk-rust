@@ -30,17 +30,14 @@ impl DeleteArchiveRuleInput {
 }
 impl DeleteArchiveRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveRuleInput`](crate::operation::delete_archive_rule::DeleteArchiveRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_archive_rule::builders::DeleteArchiveRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_archive_rule::builders::DeleteArchiveRuleInputBuilder {
         crate::operation::delete_archive_rule::builders::DeleteArchiveRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteArchiveRuleInput`](crate::operation::delete_archive_rule::DeleteArchiveRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct DeleteArchiveRuleInputBuilder {
 }
 impl DeleteArchiveRuleInputBuilder {
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_name = input;
         self
     }
@@ -98,16 +89,11 @@ impl DeleteArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArchiveRuleInput`](crate::operation::delete_archive_rule::DeleteArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_archive_rule::DeleteArchiveRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_archive_rule::DeleteArchiveRuleInput {
-                analyzer_name: self.analyzer_name,
-                rule_name: self.rule_name,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_archive_rule::DeleteArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_archive_rule::DeleteArchiveRuleInput {
+            analyzer_name: self.analyzer_name,
+            rule_name: self.rule_name,
+            client_token: self.client_token,
+        })
     }
 }

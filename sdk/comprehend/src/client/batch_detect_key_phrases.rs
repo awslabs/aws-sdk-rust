@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`result_list(Option<Vec<BatchDetectKeyPhrasesItemResult>>)`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     /// - On failure, responds with [`SdkError<BatchDetectKeyPhrasesError>`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesError)
-    pub fn batch_detect_key_phrases(
-        &self,
-    ) -> crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesFluentBuilder
-    {
+    pub fn batch_detect_key_phrases(&self) -> crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesFluentBuilder {
         crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesFluentBuilder::new(self.handle.clone())
     }
 }

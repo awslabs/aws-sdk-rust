@@ -73,18 +73,14 @@ impl DescribeEnvironmentsInput {
 }
 impl DescribeEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
-        crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
+        crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
@@ -97,18 +93,12 @@ pub struct DescribeEnvironmentsInputBuilder {
 }
 impl DescribeEnvironmentsInputBuilder {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -117,18 +107,12 @@ impl DescribeEnvironmentsInputBuilder {
         &self.application_name
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -141,27 +125,19 @@ impl DescribeEnvironmentsInputBuilder {
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
     ///
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn environment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.environment_ids.unwrap_or_default();
         v.push(input.into());
         self.environment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn set_environment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.environment_ids = input;
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn get_environment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.environment_ids
     }
     /// Appends an item to `environment_names`.
@@ -169,27 +145,19 @@ impl DescribeEnvironmentsInputBuilder {
     /// To override the contents of this collection use [`set_environment_names`](Self::set_environment_names).
     ///
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn environment_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.environment_names.unwrap_or_default();
         v.push(input.into());
         self.environment_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn set_environment_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.environment_names = input;
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn get_environment_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.environment_names
     }
     /// <p>Indicates whether to include deleted environments:</p>
@@ -218,17 +186,12 @@ impl DescribeEnvironmentsInputBuilder {
         self
     }
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
-    pub fn set_included_deleted_back_to(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_included_deleted_back_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.included_deleted_back_to = input;
         self
     }
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
-    pub fn get_included_deleted_back_to(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_included_deleted_back_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.included_deleted_back_to
     }
     /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
@@ -268,21 +231,17 @@ impl DescribeEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_environments::DescribeEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_environments::DescribeEnvironmentsInput {
-                application_name: self.application_name,
-                version_label: self.version_label,
-                environment_ids: self.environment_ids,
-                environment_names: self.environment_names,
-                include_deleted: self.include_deleted,
-                included_deleted_back_to: self.included_deleted_back_to,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_environments::DescribeEnvironmentsInput {
+            application_name: self.application_name,
+            version_label: self.version_label,
+            environment_ids: self.environment_ids,
+            environment_names: self.environment_names,
+            include_deleted: self.include_deleted,
+            included_deleted_back_to: self.included_deleted_back_to,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

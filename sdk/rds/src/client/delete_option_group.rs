@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`option_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_option_group::builders::DeleteOptionGroupFluentBuilder::option_group_name) / [`set_option_group_name(Option<String>)`](crate::operation::delete_option_group::builders::DeleteOptionGroupFluentBuilder::set_option_group_name): <p>The name of the option group to be deleted.</p> <note>   <p>You can't delete default option groups.</p>  </note>
     /// - On success, responds with [`DeleteOptionGroupOutput`](crate::operation::delete_option_group::DeleteOptionGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteOptionGroupError>`](crate::operation::delete_option_group::DeleteOptionGroupError)
-    pub fn delete_option_group(
-        &self,
-    ) -> crate::operation::delete_option_group::builders::DeleteOptionGroupFluentBuilder {
-        crate::operation::delete_option_group::builders::DeleteOptionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_option_group(&self) -> crate::operation::delete_option_group::builders::DeleteOptionGroupFluentBuilder {
+        crate::operation::delete_option_group::builders::DeleteOptionGroupFluentBuilder::new(self.handle.clone())
     }
 }

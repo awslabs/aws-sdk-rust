@@ -43,9 +43,7 @@ impl UpdateApiKeyInput {
 
 /// A builder for [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiKeyInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl UpdateApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api_key::UpdateApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_api_key::UpdateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_api_key::UpdateApiKeyInput {
             api_id: self.api_id,
             id: self.id,

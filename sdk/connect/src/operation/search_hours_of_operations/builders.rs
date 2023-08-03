@@ -26,8 +26,7 @@ impl SearchHoursOfOperationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchHoursOfOperationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder,
+    inner: crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder,
 }
 impl SearchHoursOfOperationsFluentBuilder {
     /// Creates a new `SearchHoursOfOperations`.
@@ -38,10 +37,7 @@ impl SearchHoursOfOperationsFluentBuilder {
         }
     }
     /// Access the SearchHoursOfOperations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl SearchHoursOfOperationsFluentBuilder {
             crate::operation::search_hours_of_operations::SearchHoursOfOperations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl SearchHoursOfOperationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl SearchHoursOfOperationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl SearchHoursOfOperationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl SearchHoursOfOperationsFluentBuilder {
             crate::operation::search_hours_of_operations::SearchHoursOfOperations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_hours_of_operations::paginator::SearchHoursOfOperationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_hours_of_operations::paginator::SearchHoursOfOperationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::search_hours_of_operations::paginator::SearchHoursOfOperationsPaginator {
         crate::operation::search_hours_of_operations::paginator::SearchHoursOfOperationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -181,17 +163,12 @@ impl SearchHoursOfOperationsFluentBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::HoursOfOperationSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::HoursOfOperationSearchFilter>) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn get_search_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::HoursOfOperationSearchFilter> {
+    pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::HoursOfOperationSearchFilter> {
         self.inner.get_search_filter()
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
@@ -200,17 +177,12 @@ impl SearchHoursOfOperationsFluentBuilder {
         self
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::HoursOfOperationSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::HoursOfOperationSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::HoursOfOperationSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::HoursOfOperationSearchCriteria> {
         self.inner.get_search_criteria()
     }
 }

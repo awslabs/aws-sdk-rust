@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetRoleCredentialsOutput`](crate::operation::get_role_credentials::GetRoleCredentialsOutput) with field(s):
     ///   - [`role_credentials(Option<RoleCredentials>)`](crate::operation::get_role_credentials::GetRoleCredentialsOutput::role_credentials): <p>The credentials for the role that is assigned to the user.</p>
     /// - On failure, responds with [`SdkError<GetRoleCredentialsError>`](crate::operation::get_role_credentials::GetRoleCredentialsError)
-    pub fn get_role_credentials(
-        &self,
-    ) -> crate::operation::get_role_credentials::builders::GetRoleCredentialsFluentBuilder {
-        crate::operation::get_role_credentials::builders::GetRoleCredentialsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_role_credentials(&self) -> crate::operation::get_role_credentials::builders::GetRoleCredentialsFluentBuilder {
+        crate::operation::get_role_credentials::builders::GetRoleCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

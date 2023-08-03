@@ -37,9 +37,7 @@ impl PrestoParameters {
 
 /// A builder for [`PrestoParameters`](crate::types::PrestoParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrestoParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

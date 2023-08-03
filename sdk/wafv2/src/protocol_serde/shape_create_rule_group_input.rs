@@ -33,10 +33,7 @@ pub fn ser_create_rule_group_input(
     if let Some(var_9) = &input.visibility_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("VisibilityConfig").start_object();
-        crate::protocol_serde::shape_visibility_config::ser_visibility_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_visibility_config::ser_visibility_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.tags {
@@ -58,10 +55,7 @@ pub fn ser_create_rule_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = object_16.key(key_17.as_str()).start_object();
-                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(
-                    &mut object_19,
-                    value_18,
-                )?;
+                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_19, value_18)?;
                 object_19.finish();
             }
         }

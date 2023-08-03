@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAttackOutput`](crate::operation::describe_attack::DescribeAttackOutput) with field(s):
     ///   - [`attack(Option<AttackDetail>)`](crate::operation::describe_attack::DescribeAttackOutput::attack): <p>The attack that you requested. </p>
     /// - On failure, responds with [`SdkError<DescribeAttackError>`](crate::operation::describe_attack::DescribeAttackError)
-    pub fn describe_attack(
-        &self,
-    ) -> crate::operation::describe_attack::builders::DescribeAttackFluentBuilder {
-        crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_attack(&self) -> crate::operation::describe_attack::builders::DescribeAttackFluentBuilder {
+        crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::new(self.handle.clone())
     }
 }

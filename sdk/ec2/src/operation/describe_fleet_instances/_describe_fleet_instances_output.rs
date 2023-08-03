@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for DescribeFleetInstancesOutput {
 }
 impl DescribeFleetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetInstancesOutput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesOutputBuilder {
         crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetInstancesOutput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetInstancesOutputBuilder {
-    pub(crate) active_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
+    pub(crate) active_instances: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -67,17 +62,12 @@ impl DescribeFleetInstancesOutputBuilder {
         self
     }
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub fn set_active_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
-    ) -> Self {
+    pub fn set_active_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>) -> Self {
         self.active_instances = input;
         self
     }
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub fn get_active_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
+    pub fn get_active_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
         &self.active_instances
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

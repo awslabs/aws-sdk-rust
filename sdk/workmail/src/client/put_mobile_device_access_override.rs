@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideFluentBuilder::set_description): <p>A description of the override.</p>
     /// - On success, responds with [`PutMobileDeviceAccessOverrideOutput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput)
     /// - On failure, responds with [`SdkError<PutMobileDeviceAccessOverrideError>`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError)
-    pub fn put_mobile_device_access_override(&self) -> crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideFluentBuilder{
+    pub fn put_mobile_device_access_override(
+        &self,
+    ) -> crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideFluentBuilder {
         crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideFluentBuilder::new(self.handle.clone())
     }
 }

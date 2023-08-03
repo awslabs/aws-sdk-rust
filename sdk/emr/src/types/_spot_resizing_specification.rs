@@ -23,9 +23,7 @@ impl SpotResizingSpecification {
 
 /// A builder for [`SpotResizingSpecification`](crate::types::SpotResizingSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotResizingSpecificationBuilder {
     pub(crate) timeout_duration_minutes: ::std::option::Option<i32>,
 }

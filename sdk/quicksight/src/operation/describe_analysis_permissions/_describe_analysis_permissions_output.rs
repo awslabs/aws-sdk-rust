@@ -49,21 +49,18 @@ impl ::aws_http::request_id::RequestId for DescribeAnalysisPermissionsOutput {
 }
 impl DescribeAnalysisPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisPermissionsOutput`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput).
-    pub fn builder() -> crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsOutputBuilder {
         crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnalysisPermissionsOutput`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisPermissionsOutputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -109,17 +106,12 @@ impl DescribeAnalysisPermissionsOutputBuilder {
         self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The HTTP status of the request.</p>
@@ -160,9 +152,7 @@ impl DescribeAnalysisPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisPermissionsOutput`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput {
         crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput {
             analysis_id: self.analysis_id,
             analysis_arn: self.analysis_arn,

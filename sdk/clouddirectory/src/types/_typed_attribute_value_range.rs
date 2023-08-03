@@ -44,9 +44,7 @@ impl TypedAttributeValueRange {
 
 /// A builder for [`TypedAttributeValueRange`](crate::types::TypedAttributeValueRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypedAttributeValueRangeBuilder {
     pub(crate) start_mode: ::std::option::Option<crate::types::RangeMode>,
     pub(crate) start_value: ::std::option::Option<crate::types::TypedAttributeValue>,
@@ -74,10 +72,7 @@ impl TypedAttributeValueRangeBuilder {
         self
     }
     /// <p>The value to start the range at.</p>
-    pub fn set_start_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
+    pub fn set_start_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
         self.start_value = input;
         self
     }
@@ -105,10 +100,7 @@ impl TypedAttributeValueRangeBuilder {
         self
     }
     /// <p>The attribute value to terminate the range at.</p>
-    pub fn set_end_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
+    pub fn set_end_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
         self.end_value = input;
         self
     }

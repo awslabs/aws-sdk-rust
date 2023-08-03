@@ -10,10 +10,7 @@ impl DeleteEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_environment::DeleteEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_environment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteEnvironmentFluentBuilder {
         }
     }
     /// Access the DeleteEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteEnvironmentFluentBuilder {
             crate::operation::delete_environment::DeleteEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment::DeleteEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment::DeleteEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteEnvironmentFluentBuilder {
             crate::operation::delete_environment::DeleteEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the runtime environment you want to delete.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The unique identifier of the runtime environment you want to delete.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

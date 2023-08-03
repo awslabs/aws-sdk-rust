@@ -37,9 +37,7 @@ impl GetConnectivityInfoFluentBuilder {
         }
     }
     /// Access the GetConnectivityInfo as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_connectivity_info::builders::GetConnectivityInfoInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_connectivity_info::builders::GetConnectivityInfoInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetConnectivityInfoFluentBuilder {
             crate::operation::get_connectivity_info::GetConnectivityInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectivity_info::GetConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connectivity_info::GetConnectivityInfoError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetConnectivityInfoFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetConnectivityInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connectivity_info::GetConnectivityInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectivity_info::GetConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connectivity_info::GetConnectivityInfoError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetConnectivityInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connectivity_info::GetConnectivityInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectivity_info::GetConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connectivity_info::GetConnectivityInfoError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetConnectivityInfoFluentBuilder {
             crate::operation::get_connectivity_info::GetConnectivityInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectivity_info::GetConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connectivity_info::GetConnectivityInfoError>,
     > {
         self.customize_middleware().await
     }

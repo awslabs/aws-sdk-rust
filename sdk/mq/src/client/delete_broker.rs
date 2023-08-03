@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBrokerOutput`](crate::operation::delete_broker::DeleteBrokerOutput) with field(s):
     ///   - [`broker_id(Option<String>)`](crate::operation::delete_broker::DeleteBrokerOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On failure, responds with [`SdkError<DeleteBrokerError>`](crate::operation::delete_broker::DeleteBrokerError)
-    pub fn delete_broker(
-        &self,
-    ) -> crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder {
-        crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_broker(&self) -> crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder {
+        crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder::new(self.handle.clone())
     }
 }

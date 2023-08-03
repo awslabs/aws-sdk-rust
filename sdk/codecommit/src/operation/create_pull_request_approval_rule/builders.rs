@@ -26,7 +26,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePullRequestApprovalRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder,
+    inner: crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder,
 }
 impl CreatePullRequestApprovalRuleFluentBuilder {
     /// Creates a new `CreatePullRequestApprovalRule`.
@@ -37,7 +37,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
         }
     }
     /// Access the CreatePullRequestApprovalRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
             crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
             crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
         self.inner.get_pull_request_id()
     }
     /// <p>The name for the approval rule.</p>
-    pub fn approval_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_name(input.into());
         self
     }
     /// <p>The name for the approval rule.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_name(input);
         self
     }
@@ -172,10 +149,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn approval_rule_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_content(input.into());
         self
     }
@@ -191,10 +165,7 @@ impl CreatePullRequestApprovalRuleFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn set_approval_rule_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_content(input);
         self
     }

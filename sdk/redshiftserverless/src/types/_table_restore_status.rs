@@ -121,9 +121,7 @@ impl TableRestoreStatus {
 
 /// A builder for [`TableRestoreStatus`](crate::types::TableRestoreStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableRestoreStatusBuilder {
     pub(crate) table_restore_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -143,18 +141,12 @@ pub struct TableRestoreStatusBuilder {
 }
 impl TableRestoreStatusBuilder {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
-    pub fn table_restore_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_restore_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_restore_request_id = input;
         self
     }
@@ -196,10 +188,7 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-    pub fn set_request_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.request_time = input;
         self
     }
@@ -208,18 +197,12 @@ impl TableRestoreStatusBuilder {
         &self.request_time
     }
     /// <p>The namespace of the table being restored from.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the table being restored from.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -228,18 +211,12 @@ impl TableRestoreStatusBuilder {
         &self.namespace_name
     }
     /// <p>The name of the workgroup being restored from.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup being restored from.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -248,18 +225,12 @@ impl TableRestoreStatusBuilder {
         &self.workgroup_name
     }
     /// <p>The name of the snapshot being restored from.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot being restored from.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -296,18 +267,12 @@ impl TableRestoreStatusBuilder {
         &self.total_data_in_mega_bytes
     }
     /// <p>The name of the source database being restored from.</p>
-    pub fn source_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source database being restored from.</p>
-    pub fn set_source_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_database_name = input;
         self
     }
@@ -316,18 +281,12 @@ impl TableRestoreStatusBuilder {
         &self.source_database_name
     }
     /// <p>The name of the source schema being restored from.</p>
-    pub fn source_schema_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source schema being restored from.</p>
-    pub fn set_source_schema_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_schema_name = input;
         self
     }
@@ -336,18 +295,12 @@ impl TableRestoreStatusBuilder {
         &self.source_schema_name
     }
     /// <p>The name of the source table being restored from.</p>
-    pub fn source_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source table being restored from.</p>
-    pub fn set_source_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_table_name = input;
         self
     }
@@ -356,18 +309,12 @@ impl TableRestoreStatusBuilder {
         &self.source_table_name
     }
     /// <p>The name of the database to restore to.</p>
-    pub fn target_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database to restore to.</p>
-    pub fn set_target_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_database_name = input;
         self
     }
@@ -376,18 +323,12 @@ impl TableRestoreStatusBuilder {
         &self.target_database_name
     }
     /// <p>The name of the schema to restore to.</p>
-    pub fn target_schema_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schema to restore to.</p>
-    pub fn set_target_schema_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_schema_name = input;
         self
     }
@@ -396,18 +337,12 @@ impl TableRestoreStatusBuilder {
         &self.target_schema_name
     }
     /// <p>The name of the table to create from the restore operation.</p>
-    pub fn new_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table to create from the restore operation.</p>
-    pub fn set_new_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_table_name = input;
         self
     }

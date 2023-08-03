@@ -9,9 +9,7 @@ pub struct AwsCodeBuildProjectEnvironment {
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     #[doc(hidden)]
-    pub environment_variables: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
-    >,
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
     #[doc(hidden)]
     pub privileged_mode: bool,
@@ -26,8 +24,7 @@ pub struct AwsCodeBuildProjectEnvironment {
     pub image_pull_credentials_type: ::std::option::Option<::std::string::String>,
     /// <p>The credentials for access to a private registry.</p>
     #[doc(hidden)]
-    pub registry_credential:
-        ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
+    pub registry_credential: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
     /// <p>The type of build environment to use for related builds.</p>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
@@ -42,11 +39,7 @@ impl AwsCodeBuildProjectEnvironment {
         self.certificate.as_deref()
     }
     /// <p>A set of environment variables to make available to builds for the build project.</p>
-    pub fn environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails],
-    > {
+    pub fn environment_variables(&self) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails]> {
         self.environment_variables.as_deref()
     }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
@@ -64,10 +57,7 @@ impl AwsCodeBuildProjectEnvironment {
         self.image_pull_credentials_type.as_deref()
     }
     /// <p>The credentials for access to a private registry.</p>
-    pub fn registry_credential(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>
-    {
+    pub fn registry_credential(&self) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential> {
         self.registry_credential.as_ref()
     }
     /// <p>The type of build environment to use for related builds.</p>
@@ -88,18 +78,13 @@ impl AwsCodeBuildProjectEnvironment {
 
 /// A builder for [`AwsCodeBuildProjectEnvironment`](crate::types::AwsCodeBuildProjectEnvironment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectEnvironmentBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_variables: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
-    >,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     pub(crate) privileged_mode: ::std::option::Option<bool>,
     pub(crate) image_pull_credentials_type: ::std::option::Option<::std::string::String>,
-    pub(crate) registry_credential:
-        ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
+    pub(crate) registry_credential: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectEnvironmentBuilder {
@@ -122,10 +107,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p>A set of environment variables to make available to builds for the build project.</p>
-    pub fn environment_variables(
-        mut self,
-        input: crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails,
-    ) -> Self {
+    pub fn environment_variables(mut self, input: crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails) -> Self {
         let mut v = self.environment_variables.unwrap_or_default();
         v.push(input);
         self.environment_variables = ::std::option::Option::Some(v);
@@ -134,11 +116,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     pub fn set_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     ) -> Self {
         self.environment_variables = input;
         self
@@ -146,9 +124,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     pub fn get_environment_variables(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>> {
         &self.environment_variables
     }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
@@ -172,10 +148,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
-    pub fn image_pull_credentials_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pull_credentials_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pull_credentials_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -186,10 +159,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
-    pub fn set_image_pull_credentials_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pull_credentials_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pull_credentials_type = input;
         self
     }
@@ -204,28 +174,17 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         &self.image_pull_credentials_type
     }
     /// <p>The credentials for access to a private registry.</p>
-    pub fn registry_credential(
-        mut self,
-        input: crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential,
-    ) -> Self {
+    pub fn registry_credential(mut self, input: crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential) -> Self {
         self.registry_credential = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials for access to a private registry.</p>
-    pub fn set_registry_credential(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential,
-        >,
-    ) -> Self {
+    pub fn set_registry_credential(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>) -> Self {
         self.registry_credential = input;
         self
     }
     /// <p>The credentials for access to a private registry.</p>
-    pub fn get_registry_credential(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>
-    {
+    pub fn get_registry_credential(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential> {
         &self.registry_credential
     }
     /// <p>The type of build environment to use for related builds.</p>

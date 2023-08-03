@@ -29,9 +29,7 @@ impl CreateRescoreExecutionPlanInput {
         self.description.as_deref()
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn capacity_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityUnitsConfiguration> {
+    pub fn capacity_units(&self) -> ::std::option::Option<&crate::types::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
     /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
@@ -45,16 +43,14 @@ impl CreateRescoreExecutionPlanInput {
 }
 impl CreateRescoreExecutionPlanInput {
     /// Creates a new builder-style object to manufacture [`CreateRescoreExecutionPlanInput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput).
-    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder{
+    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder {
         crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRescoreExecutionPlanInput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRescoreExecutionPlanInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -97,17 +93,12 @@ impl CreateRescoreExecutionPlanInputBuilder {
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
         self.capacity_units = input;
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn get_capacity_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+    pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         &self.capacity_units
     }
     /// Appends an item to `tags`.
@@ -122,10 +113,7 @@ impl CreateRescoreExecutionPlanInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -154,14 +142,12 @@ impl CreateRescoreExecutionPlanInputBuilder {
         crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput {
-                name: self.name,
-                description: self.description,
-                capacity_units: self.capacity_units,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput {
+            name: self.name,
+            description: self.description,
+            capacity_units: self.capacity_units,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`vocabulary_name(impl ::std::convert::Into<String>)`](crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder::set_vocabulary_name): <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
     /// - On success, responds with [`DeleteVocabularyOutput`](crate::operation::delete_vocabulary::DeleteVocabularyOutput)
     /// - On failure, responds with [`SdkError<DeleteVocabularyError>`](crate::operation::delete_vocabulary::DeleteVocabularyError)
-    pub fn delete_vocabulary(
-        &self,
-    ) -> crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder {
-        crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vocabulary(&self) -> crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder {
+        crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

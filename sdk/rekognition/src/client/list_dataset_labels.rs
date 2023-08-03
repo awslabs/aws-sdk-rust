@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`dataset_label_descriptions(Option<Vec<DatasetLabelDescription>>)`](crate::operation::list_dataset_labels::ListDatasetLabelsOutput::dataset_label_descriptions): <p> A list of the labels in the dataset. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_labels::ListDatasetLabelsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListDatasetLabelsError>`](crate::operation::list_dataset_labels::ListDatasetLabelsError)
-    pub fn list_dataset_labels(
-        &self,
-    ) -> crate::operation::list_dataset_labels::builders::ListDatasetLabelsFluentBuilder {
-        crate::operation::list_dataset_labels::builders::ListDatasetLabelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dataset_labels(&self) -> crate::operation::list_dataset_labels::builders::ListDatasetLabelsFluentBuilder {
+        crate::operation::list_dataset_labels::builders::ListDatasetLabelsFluentBuilder::new(self.handle.clone())
     }
 }

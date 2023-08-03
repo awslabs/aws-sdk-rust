@@ -28,7 +28,7 @@ impl ListPreviewRotationShiftsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPreviewRotationShiftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder,
+    inner: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder,
 }
 impl ListPreviewRotationShiftsFluentBuilder {
     /// Creates a new `ListPreviewRotationShifts`.
@@ -39,7 +39,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         }
     }
     /// Access the ListPreviewRotationShifts as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
             crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl ListPreviewRotationShiftsFluentBuilder {
             crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator {
         crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::new(self.handle, self.inner)
     }
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
@@ -137,10 +123,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
-    pub fn set_rotation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_rotation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_rotation_start_time(input);
         self
     }
@@ -154,10 +137,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -171,10 +151,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>The date and time a rotation shift would end.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -192,10 +169,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>The contacts that would be assigned to a rotation.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }
@@ -223,10 +197,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
     }
@@ -244,17 +215,12 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>>) -> Self {
         self.inner = self.inner.set_overrides(input);
         self
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>> {
         self.inner.get_overrides()
     }
     /// <p>A token to start the list. This token is used to get the next set of results.</p>

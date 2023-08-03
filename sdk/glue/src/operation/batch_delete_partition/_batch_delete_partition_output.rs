@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchDeletePartitionOutput {
 }
 impl BatchDeletePartitionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeletePartitionOutput`](crate::operation::batch_delete_partition::BatchDeletePartitionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_partition::builders::BatchDeletePartitionOutputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_partition::builders::BatchDeletePartitionOutputBuilder {
         crate::operation::batch_delete_partition::builders::BatchDeletePartitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeletePartitionOutput`](crate::operation::batch_delete_partition::BatchDeletePartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeletePartitionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::PartitionError>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl BatchDeletePartitionOutputBuilder {
         self
     }
     /// <p>The errors encountered when trying to delete the requested partitions.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>The errors encountered when trying to delete the requested partitions.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

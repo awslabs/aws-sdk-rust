@@ -15,19 +15,16 @@ impl DescribeAssessmentTargetsInput {
 }
 impl DescribeAssessmentTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentTargetsInput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput).
-    pub fn builder() -> crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder{
+    pub fn builder() -> crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder {
         crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssessmentTargetsInput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsInputBuilder {
-    pub(crate) assessment_target_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAssessmentTargetsInputBuilder {
     /// Appends an item to `assessment_target_arns`.
@@ -35,27 +32,19 @@ impl DescribeAssessmentTargetsInputBuilder {
     /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
     ///
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn assessment_target_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_target_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_target_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn set_assessment_target_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_target_arns = input;
         self
     }
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn get_assessment_target_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_target_arns
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentTargetsInput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput).
@@ -65,10 +54,8 @@ impl DescribeAssessmentTargetsInputBuilder {
         crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput {
-                assessment_target_arns: self.assessment_target_arns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput {
+            assessment_target_arns: self.assessment_target_arns,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl ListPoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_policies::ListPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policies::ListPoliciesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies::ListPoliciesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_policies();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl ListPoliciesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_policies::ListPolicies,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_policies::ListPolicies, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_policies::ListPoliciesError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl ListPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl ListPoliciesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_policies::ListPolicies,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_policies::ListPolicies, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_policies::ListPoliciesError>,
     > {
         self.customize_middleware().await
@@ -118,13 +106,8 @@ impl ListPoliciesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policies::paginator::ListPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
-        crate::operation::list_policies::paginator::ListPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
+        crate::operation::list_policies::paginator::ListPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the type of policy that you want to include in the response. You must specify one of the following values:</p>
     /// <ul>

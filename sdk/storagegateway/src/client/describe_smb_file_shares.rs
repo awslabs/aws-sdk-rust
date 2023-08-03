@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSmbFileSharesOutput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesOutput) with field(s):
     ///   - [`smb_file_share_info_list(Option<Vec<SmbFileShareInfo>>)`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesOutput::smb_file_share_info_list): <p>An array containing a description for each requested file share.</p>
     /// - On failure, responds with [`SdkError<DescribeSMBFileSharesError>`](crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError)
-    pub fn describe_smb_file_shares(
-        &self,
-    ) -> crate::operation::describe_smb_file_shares::builders::DescribeSMBFileSharesFluentBuilder
-    {
+    pub fn describe_smb_file_shares(&self) -> crate::operation::describe_smb_file_shares::builders::DescribeSMBFileSharesFluentBuilder {
         crate::operation::describe_smb_file_shares::builders::DescribeSMBFileSharesFluentBuilder::new(self.handle.clone())
     }
 }

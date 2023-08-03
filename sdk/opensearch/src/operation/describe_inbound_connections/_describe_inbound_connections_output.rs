@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeInboundConnectionsOutput {
 }
 impl DescribeInboundConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundConnectionsOutput`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsOutputBuilder {
         crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInboundConnectionsOutput`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInboundConnectionsOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::InboundConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl DescribeInboundConnectionsOutputBuilder {
         self
     }
     /// <p>List of inbound connections.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InboundConnection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InboundConnection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>List of inbound connections.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InboundConnection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InboundConnection>> {
         &self.connections
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -94,9 +87,7 @@ impl DescribeInboundConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInboundConnectionsOutput`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput {
+    pub fn build(self) -> crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput {
         crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput {
             connections: self.connections,
             next_token: self.next_token,

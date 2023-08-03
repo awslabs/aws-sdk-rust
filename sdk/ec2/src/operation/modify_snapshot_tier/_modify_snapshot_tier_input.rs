@@ -29,17 +29,14 @@ impl ModifySnapshotTierInput {
 }
 impl ModifySnapshotTierInput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
-    pub fn builder(
-    ) -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
+    pub fn builder() -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
         crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySnapshotTierInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_tier: ::std::option::Option<crate::types::TargetStorageTier>,
@@ -66,10 +63,7 @@ impl ModifySnapshotTierInputBuilder {
         self
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-    pub fn set_storage_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetStorageTier>,
-    ) -> Self {
+    pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::TargetStorageTier>) -> Self {
         self.storage_tier = input;
         self
     }
@@ -94,16 +88,11 @@ impl ModifySnapshotTierInputBuilder {
     /// Consumes the builder and constructs a [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_snapshot_tier::ModifySnapshotTierInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_snapshot_tier::ModifySnapshotTierInput {
-                snapshot_id: self.snapshot_id,
-                storage_tier: self.storage_tier,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_snapshot_tier::ModifySnapshotTierInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_snapshot_tier::ModifySnapshotTierInput {
+            snapshot_id: self.snapshot_id,
+            storage_tier: self.storage_tier,
+            dry_run: self.dry_run,
+        })
     }
 }

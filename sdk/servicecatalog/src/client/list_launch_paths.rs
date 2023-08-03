@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`launch_path_summaries(Option<Vec<LaunchPathSummary>>)`](crate::operation::list_launch_paths::ListLaunchPathsOutput::launch_path_summaries): <p>Information about the launch path.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_launch_paths::ListLaunchPathsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListLaunchPathsError>`](crate::operation::list_launch_paths::ListLaunchPathsError)
-    pub fn list_launch_paths(
-        &self,
-    ) -> crate::operation::list_launch_paths::builders::ListLaunchPathsFluentBuilder {
-        crate::operation::list_launch_paths::builders::ListLaunchPathsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_launch_paths(&self) -> crate::operation::list_launch_paths::builders::ListLaunchPathsFluentBuilder {
+        crate::operation::list_launch_paths::builders::ListLaunchPathsFluentBuilder::new(self.handle.clone())
     }
 }

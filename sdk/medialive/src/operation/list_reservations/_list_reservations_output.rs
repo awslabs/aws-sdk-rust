@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListReservationsOutput {
 }
 impl ListReservationsOutput {
     /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput).
-    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsOutputBuilder {
         crate::operation::list_reservations::builders::ListReservationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReservationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reservations: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
@@ -72,17 +69,12 @@ impl ListReservationsOutputBuilder {
         self
     }
     /// List of reservations
-    pub fn set_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
-    ) -> Self {
+    pub fn set_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>) -> Self {
         self.reservations = input;
         self
     }
     /// List of reservations
-    pub fn get_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
+    pub fn get_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
         &self.reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

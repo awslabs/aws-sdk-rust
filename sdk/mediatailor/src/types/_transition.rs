@@ -61,9 +61,7 @@ impl Transition {
 
 /// A builder for [`Transition`](crate::types::Transition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitionBuilder {
     pub(crate) duration_millis: ::std::option::Option<i64>,
     pub(crate) relative_position: ::std::option::Option<crate::types::RelativePosition>,
@@ -92,10 +90,7 @@ impl TransitionBuilder {
         self
     }
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
-    pub fn set_relative_position(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativePosition>,
-    ) -> Self {
+    pub fn set_relative_position(mut self, input: ::std::option::Option<crate::types::RelativePosition>) -> Self {
         self.relative_position = input;
         self
     }
@@ -104,18 +99,12 @@ impl TransitionBuilder {
         &self.relative_position
     }
     /// <p>The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.</p>
-    pub fn relative_program(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relative_program(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_program = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.</p>
-    pub fn set_relative_program(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relative_program(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_program = input;
         self
     }

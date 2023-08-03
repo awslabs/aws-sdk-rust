@@ -33,9 +33,7 @@ impl ResponseHeadersPolicyFrameOptions {
 
 /// A builder for [`ResponseHeadersPolicyFrameOptions`](crate::types::ResponseHeadersPolicyFrameOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyFrameOptionsBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) frame_option: ::std::option::Option<crate::types::FrameOptionsList>,
@@ -63,10 +61,7 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
-    pub fn set_frame_option(
-        mut self,
-        input: ::std::option::Option<crate::types::FrameOptionsList>,
-    ) -> Self {
+    pub fn set_frame_option(mut self, input: ::std::option::Option<crate::types::FrameOptionsList>) -> Self {
         self.frame_option = input;
         self
     }

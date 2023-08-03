@@ -44,9 +44,7 @@ impl DqResultsPublishingOptions {
 
 /// A builder for [`DqResultsPublishingOptions`](crate::types::DqResultsPublishingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DqResultsPublishingOptionsBuilder {
     pub(crate) evaluation_context: ::std::option::Option<::std::string::String>,
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DqResultsPublishingOptionsBuilder {
 }
 impl DqResultsPublishingOptionsBuilder {
     /// <p>The context of the evaluation.</p>
-    pub fn evaluation_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The context of the evaluation.</p>
-    pub fn set_evaluation_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_context = input;
         self
     }
@@ -75,18 +67,12 @@ impl DqResultsPublishingOptionsBuilder {
         &self.evaluation_context
     }
     /// <p>The Amazon S3 prefix prepended to the results.</p>
-    pub fn results_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn results_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.results_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix prepended to the results.</p>
-    pub fn set_results_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_results_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.results_s3_prefix = input;
         self
     }

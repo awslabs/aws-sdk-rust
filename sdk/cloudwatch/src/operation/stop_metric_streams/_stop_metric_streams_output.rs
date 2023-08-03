@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopMetricStreamsOutput {
 }
 impl StopMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`StopMetricStreamsOutput`](crate::operation::stop_metric_streams::StopMetricStreamsOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_metric_streams::builders::StopMetricStreamsOutputBuilder {
+    pub fn builder() -> crate::operation::stop_metric_streams::builders::StopMetricStreamsOutputBuilder {
         crate::operation::stop_metric_streams::builders::StopMetricStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopMetricStreamsOutput`](crate::operation::stop_metric_streams::StopMetricStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMetricStreamsOutputBuilder {
     _request_id: Option<String>,
 }

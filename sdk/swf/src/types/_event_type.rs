@@ -90,13 +90,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -229,16 +223,12 @@ impl ::std::convert::From<&str> for EventType {
             "ChildWorkflowExecutionTerminated" => EventType::ChildWorkflowExecutionTerminated,
             "ChildWorkflowExecutionTimedOut" => EventType::ChildWorkflowExecutionTimedOut,
             "CompleteWorkflowExecutionFailed" => EventType::CompleteWorkflowExecutionFailed,
-            "ContinueAsNewWorkflowExecutionFailed" => {
-                EventType::ContinueAsNewWorkflowExecutionFailed
-            }
+            "ContinueAsNewWorkflowExecutionFailed" => EventType::ContinueAsNewWorkflowExecutionFailed,
             "DecisionTaskCompleted" => EventType::DecisionTaskCompleted,
             "DecisionTaskScheduled" => EventType::DecisionTaskScheduled,
             "DecisionTaskStarted" => EventType::DecisionTaskStarted,
             "DecisionTaskTimedOut" => EventType::DecisionTaskTimedOut,
-            "ExternalWorkflowExecutionCancelRequested" => {
-                EventType::ExternalWorkflowExecutionCancelRequested
-            }
+            "ExternalWorkflowExecutionCancelRequested" => EventType::ExternalWorkflowExecutionCancelRequested,
             "ExternalWorkflowExecutionSignaled" => EventType::ExternalWorkflowExecutionSignaled,
             "FailWorkflowExecutionFailed" => EventType::FailWorkflowExecutionFailed,
             "LambdaFunctionCompleted" => EventType::LambdaFunctionCompleted,
@@ -249,24 +239,14 @@ impl ::std::convert::From<&str> for EventType {
             "MarkerRecorded" => EventType::MarkerRecorded,
             "RecordMarkerFailed" => EventType::RecordMarkerFailed,
             "RequestCancelActivityTaskFailed" => EventType::RequestCancelActivityTaskFailed,
-            "RequestCancelExternalWorkflowExecutionFailed" => {
-                EventType::RequestCancelExternalWorkflowExecutionFailed
-            }
-            "RequestCancelExternalWorkflowExecutionInitiated" => {
-                EventType::RequestCancelExternalWorkflowExecutionInitiated
-            }
+            "RequestCancelExternalWorkflowExecutionFailed" => EventType::RequestCancelExternalWorkflowExecutionFailed,
+            "RequestCancelExternalWorkflowExecutionInitiated" => EventType::RequestCancelExternalWorkflowExecutionInitiated,
             "ScheduleActivityTaskFailed" => EventType::ScheduleActivityTaskFailed,
             "ScheduleLambdaFunctionFailed" => EventType::ScheduleLambdaFunctionFailed,
-            "SignalExternalWorkflowExecutionFailed" => {
-                EventType::SignalExternalWorkflowExecutionFailed
-            }
-            "SignalExternalWorkflowExecutionInitiated" => {
-                EventType::SignalExternalWorkflowExecutionInitiated
-            }
+            "SignalExternalWorkflowExecutionFailed" => EventType::SignalExternalWorkflowExecutionFailed,
+            "SignalExternalWorkflowExecutionInitiated" => EventType::SignalExternalWorkflowExecutionInitiated,
             "StartChildWorkflowExecutionFailed" => EventType::StartChildWorkflowExecutionFailed,
-            "StartChildWorkflowExecutionInitiated" => {
-                EventType::StartChildWorkflowExecutionInitiated
-            }
+            "StartChildWorkflowExecutionInitiated" => EventType::StartChildWorkflowExecutionInitiated,
             "StartLambdaFunctionFailed" => EventType::StartLambdaFunctionFailed,
             "StartTimerFailed" => EventType::StartTimerFailed,
             "TimerCanceled" => EventType::TimerCanceled,
@@ -312,16 +292,12 @@ impl EventType {
             EventType::ChildWorkflowExecutionTerminated => "ChildWorkflowExecutionTerminated",
             EventType::ChildWorkflowExecutionTimedOut => "ChildWorkflowExecutionTimedOut",
             EventType::CompleteWorkflowExecutionFailed => "CompleteWorkflowExecutionFailed",
-            EventType::ContinueAsNewWorkflowExecutionFailed => {
-                "ContinueAsNewWorkflowExecutionFailed"
-            }
+            EventType::ContinueAsNewWorkflowExecutionFailed => "ContinueAsNewWorkflowExecutionFailed",
             EventType::DecisionTaskCompleted => "DecisionTaskCompleted",
             EventType::DecisionTaskScheduled => "DecisionTaskScheduled",
             EventType::DecisionTaskStarted => "DecisionTaskStarted",
             EventType::DecisionTaskTimedOut => "DecisionTaskTimedOut",
-            EventType::ExternalWorkflowExecutionCancelRequested => {
-                "ExternalWorkflowExecutionCancelRequested"
-            }
+            EventType::ExternalWorkflowExecutionCancelRequested => "ExternalWorkflowExecutionCancelRequested",
             EventType::ExternalWorkflowExecutionSignaled => "ExternalWorkflowExecutionSignaled",
             EventType::FailWorkflowExecutionFailed => "FailWorkflowExecutionFailed",
             EventType::LambdaFunctionCompleted => "LambdaFunctionCompleted",
@@ -332,24 +308,14 @@ impl EventType {
             EventType::MarkerRecorded => "MarkerRecorded",
             EventType::RecordMarkerFailed => "RecordMarkerFailed",
             EventType::RequestCancelActivityTaskFailed => "RequestCancelActivityTaskFailed",
-            EventType::RequestCancelExternalWorkflowExecutionFailed => {
-                "RequestCancelExternalWorkflowExecutionFailed"
-            }
-            EventType::RequestCancelExternalWorkflowExecutionInitiated => {
-                "RequestCancelExternalWorkflowExecutionInitiated"
-            }
+            EventType::RequestCancelExternalWorkflowExecutionFailed => "RequestCancelExternalWorkflowExecutionFailed",
+            EventType::RequestCancelExternalWorkflowExecutionInitiated => "RequestCancelExternalWorkflowExecutionInitiated",
             EventType::ScheduleActivityTaskFailed => "ScheduleActivityTaskFailed",
             EventType::ScheduleLambdaFunctionFailed => "ScheduleLambdaFunctionFailed",
-            EventType::SignalExternalWorkflowExecutionFailed => {
-                "SignalExternalWorkflowExecutionFailed"
-            }
-            EventType::SignalExternalWorkflowExecutionInitiated => {
-                "SignalExternalWorkflowExecutionInitiated"
-            }
+            EventType::SignalExternalWorkflowExecutionFailed => "SignalExternalWorkflowExecutionFailed",
+            EventType::SignalExternalWorkflowExecutionInitiated => "SignalExternalWorkflowExecutionInitiated",
             EventType::StartChildWorkflowExecutionFailed => "StartChildWorkflowExecutionFailed",
-            EventType::StartChildWorkflowExecutionInitiated => {
-                "StartChildWorkflowExecutionInitiated"
-            }
+            EventType::StartChildWorkflowExecutionInitiated => "StartChildWorkflowExecutionInitiated",
             EventType::StartLambdaFunctionFailed => "StartLambdaFunctionFailed",
             EventType::StartTimerFailed => "StartTimerFailed",
             EventType::TimerCanceled => "TimerCanceled",

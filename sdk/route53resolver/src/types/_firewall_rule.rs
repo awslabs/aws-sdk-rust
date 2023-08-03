@@ -91,9 +91,7 @@ impl FirewallRule {
         self.block_override_domain.as_deref()
     }
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn block_override_dns_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BlockOverrideDnsType> {
+    pub fn block_override_dns_type(&self) -> ::std::option::Option<&crate::types::BlockOverrideDnsType> {
         self.block_override_dns_type.as_ref()
     }
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -122,9 +120,7 @@ impl FirewallRule {
 
 /// A builder for [`FirewallRule`](crate::types::FirewallRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallRuleBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
@@ -141,18 +137,12 @@ pub struct FirewallRuleBuilder {
 }
 impl FirewallRuleBuilder {
     /// <p>The unique identifier of the firewall rule group of the rule. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group of the rule. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
@@ -161,18 +151,12 @@ impl FirewallRuleBuilder {
         &self.firewall_rule_group_id
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
@@ -253,10 +237,7 @@ impl FirewallRuleBuilder {
     /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
     /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
     /// </ul>
-    pub fn set_block_response(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockResponse>,
-    ) -> Self {
+    pub fn set_block_response(mut self, input: ::std::option::Option<crate::types::BlockResponse>) -> Self {
         self.block_response = input;
         self
     }
@@ -270,18 +251,12 @@ impl FirewallRuleBuilder {
         &self.block_response
     }
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn block_override_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn block_override_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.block_override_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn set_block_override_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_block_override_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.block_override_domain = input;
         self
     }
@@ -295,17 +270,12 @@ impl FirewallRuleBuilder {
         self
     }
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn set_block_override_dns_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockOverrideDnsType>,
-    ) -> Self {
+    pub fn set_block_override_dns_type(mut self, input: ::std::option::Option<crate::types::BlockOverrideDnsType>) -> Self {
         self.block_override_dns_type = input;
         self
     }
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn get_block_override_dns_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockOverrideDnsType> {
+    pub fn get_block_override_dns_type(&self) -> &::std::option::Option<crate::types::BlockOverrideDnsType> {
         &self.block_override_dns_type
     }
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -323,18 +293,12 @@ impl FirewallRuleBuilder {
         &self.block_override_ttl
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of executing the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of executing the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -343,18 +307,12 @@ impl FirewallRuleBuilder {
         &self.creator_request_id
     }
     /// <p>The date and time that the rule was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the rule was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -363,18 +321,12 @@ impl FirewallRuleBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn modification_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_modification_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modification_time = input;
         self
     }

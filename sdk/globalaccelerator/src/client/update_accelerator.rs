@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAcceleratorOutput`](crate::operation::update_accelerator::UpdateAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<Accelerator>)`](crate::operation::update_accelerator::UpdateAcceleratorOutput::accelerator): <p>Information about the updated accelerator.</p>
     /// - On failure, responds with [`SdkError<UpdateAcceleratorError>`](crate::operation::update_accelerator::UpdateAcceleratorError)
-    pub fn update_accelerator(
-        &self,
-    ) -> crate::operation::update_accelerator::builders::UpdateAcceleratorFluentBuilder {
-        crate::operation::update_accelerator::builders::UpdateAcceleratorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_accelerator(&self) -> crate::operation::update_accelerator::builders::UpdateAcceleratorFluentBuilder {
+        crate::operation::update_accelerator::builders::UpdateAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

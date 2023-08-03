@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for RecommendationSourceType {
             "Ec2Instance" => RecommendationSourceType::Ec2Instance,
             "EcsService" => RecommendationSourceType::EcsService,
             "LambdaFunction" => RecommendationSourceType::LambdaFunction,
-            other => RecommendationSourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecommendationSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl RecommendationSourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AutoScalingGroup",
-            "EbsVolume",
-            "Ec2Instance",
-            "EcsService",
-            "LambdaFunction",
-        ]
+        &["AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationSourceType {

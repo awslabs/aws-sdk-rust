@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchDeleteTableRowsOutput {
 }
 impl BatchDeleteTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsOutput`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsOutputBuilder {
         crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteTableRowsOutput`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableRowsOutputBuilder {
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
-    pub(crate) failed_batch_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
+    pub(crate) failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteTableRowsOutputBuilder {
@@ -73,17 +68,12 @@ impl BatchDeleteTableRowsOutputBuilder {
         self
     }
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-    pub fn set_failed_batch_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
-    ) -> Self {
+    pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
         self.failed_batch_items = input;
         self
     }
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-    pub fn get_failed_batch_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
+    pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

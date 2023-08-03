@@ -78,8 +78,7 @@ impl DetectEntitiesOutput {
 pub struct DetectEntitiesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    pub(crate) document_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
+    pub(crate) document_type: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
     pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>,
     _request_id: Option<String>,
@@ -99,10 +98,7 @@ impl DetectEntitiesOutputBuilder {
     }
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.entities = input;
         self
     }
@@ -117,10 +113,7 @@ impl DetectEntitiesOutputBuilder {
         self
     }
     /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -140,17 +133,12 @@ impl DetectEntitiesOutputBuilder {
         self
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    pub fn set_document_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>) -> Self {
         self.document_type = input;
         self
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    pub fn get_document_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>> {
+    pub fn get_document_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>> {
         &self.document_type
     }
     /// Appends an item to `blocks`.
@@ -169,10 +157,7 @@ impl DetectEntitiesOutputBuilder {
     /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
-    pub fn set_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }
@@ -194,17 +179,12 @@ impl DetectEntitiesOutputBuilder {
         self
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorsListItem>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

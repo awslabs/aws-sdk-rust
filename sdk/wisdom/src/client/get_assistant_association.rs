@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssistantAssociationOutput`](crate::operation::get_assistant_association::GetAssistantAssociationOutput) with field(s):
     ///   - [`assistant_association(Option<AssistantAssociationData>)`](crate::operation::get_assistant_association::GetAssistantAssociationOutput::assistant_association): <p>The assistant association.</p>
     /// - On failure, responds with [`SdkError<GetAssistantAssociationError>`](crate::operation::get_assistant_association::GetAssistantAssociationError)
-    pub fn get_assistant_association(
-        &self,
-    ) -> crate::operation::get_assistant_association::builders::GetAssistantAssociationFluentBuilder
-    {
+    pub fn get_assistant_association(&self) -> crate::operation::get_assistant_association::builders::GetAssistantAssociationFluentBuilder {
         crate::operation::get_assistant_association::builders::GetAssistantAssociationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentTemplateVersionOutput`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput) with field(s):
     ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template version detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentTemplateVersionError>`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError)
-    pub fn update_environment_template_version(&self) -> crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionFluentBuilder{
+    pub fn update_environment_template_version(
+        &self,
+    ) -> crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionFluentBuilder {
         crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionFluentBuilder::new(self.handle.clone())
     }
 }

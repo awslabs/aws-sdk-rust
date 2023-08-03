@@ -44,9 +44,7 @@ impl TimeRangeDrillDownFilter {
 
 /// A builder for [`TimeRangeDrillDownFilter`](crate::types::TimeRangeDrillDownFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeRangeDrillDownFilterBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) range_minimum: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,10 +58,7 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -77,10 +72,7 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn set_range_minimum(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_range_minimum(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.range_minimum = input;
         self
     }
@@ -94,10 +86,7 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn set_range_maximum(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_range_maximum(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.range_maximum = input;
         self
     }
@@ -111,10 +100,7 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.time_granularity = input;
         self
     }

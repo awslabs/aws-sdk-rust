@@ -15,10 +15,7 @@ pub fn ser_update_job_input(
     if let Some(var_4) = &input.job_executions_retry_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("jobExecutionsRetryConfig").start_object();
-        crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.job_executions_rollout_config {
@@ -30,10 +27,7 @@ pub fn ser_update_job_input(
     if let Some(var_8) = &input.presigned_url_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("presignedUrlConfig").start_object();
-        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.timeout_config {

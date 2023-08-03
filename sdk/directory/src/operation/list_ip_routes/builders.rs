@@ -10,10 +10,7 @@ impl ListIpRoutesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_ip_routes::ListIpRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ip_routes::ListIpRoutesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ip_routes::ListIpRoutesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_ip_routes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListIpRoutesFluentBuilder {
         }
     }
     /// Access the ListIpRoutes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ip_routes::builders::ListIpRoutesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_ip_routes::builders::ListIpRoutesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListIpRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListIpRoutesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator {
-        crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator {
+        crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::new(self.handle, self.inner)
     }
     /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

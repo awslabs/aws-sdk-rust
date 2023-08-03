@@ -43,18 +43,14 @@ impl DescribeReplicationTasksInput {
 }
 impl DescribeReplicationTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTasksInput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksInputBuilder {
         crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTasksInput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTasksInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -76,10 +72,7 @@ impl DescribeReplicationTasksInputBuilder {
     }
     /// <p>Filters applied to replication tasks.</p>
     /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -143,13 +136,11 @@ impl DescribeReplicationTasksInputBuilder {
         crate::operation::describe_replication_tasks::DescribeReplicationTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_replication_tasks::DescribeReplicationTasksInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                without_settings: self.without_settings,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_replication_tasks::DescribeReplicationTasksInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+            without_settings: self.without_settings,
+        })
     }
 }

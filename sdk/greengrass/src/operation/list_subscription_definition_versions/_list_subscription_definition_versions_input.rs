@@ -29,16 +29,14 @@ impl ListSubscriptionDefinitionVersionsInput {
 }
 impl ListSubscriptionDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionDefinitionVersionsInput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsInputBuilder {
         crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscriptionDefinitionVersionsInput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscriptionDefinitionVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
         &self.next_token
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_definition_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
         &self.subscription_definition_id
     }
     /// Consumes the builder and constructs a [`ListSubscriptionDefinitionVersionsInput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                subscription_definition_id: self.subscription_definition_id
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                subscription_definition_id: self.subscription_definition_id,
+            },
         )
     }
 }

@@ -10,10 +10,7 @@ impl StopExperimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_experiment::StopExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_experiment::StopExperimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_experiment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopExperimentFluentBuilder {
         }
     }
     /// Access the StopExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_experiment::builders::StopExperimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_experiment::builders::StopExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StopExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,17 +140,12 @@ impl StopExperimentFluentBuilder {
         self
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStopDesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::ExperimentStopDesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn get_desired_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
         self.inner.get_desired_state()
     }
     /// <p>A string that describes why you are stopping the experiment.</p>

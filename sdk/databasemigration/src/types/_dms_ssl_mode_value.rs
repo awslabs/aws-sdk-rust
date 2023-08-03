@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DmsSslModeValue {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DmsSslModeValue {
             "require" => DmsSslModeValue::Require,
             "verify-ca" => DmsSslModeValue::VerifyCa,
             "verify-full" => DmsSslModeValue::VerifyFull,
-            other => {
-                DmsSslModeValue::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DmsSslModeValue::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

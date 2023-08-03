@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RemoveAttributesOutput {
 }
 impl RemoveAttributesOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAttributesOutput`](crate::operation::remove_attributes::RemoveAttributesOutput).
-    pub fn builder() -> crate::operation::remove_attributes::builders::RemoveAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_attributes::builders::RemoveAttributesOutputBuilder {
         crate::operation::remove_attributes::builders::RemoveAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAttributesOutput`](crate::operation::remove_attributes::RemoveAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAttributesOutputBuilder {
     pub(crate) attributes_resource: ::std::option::Option<crate::types::AttributesResource>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl RemoveAttributesOutputBuilder {
         self
     }
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
-    pub fn set_attributes_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributesResource>,
-    ) -> Self {
+    pub fn set_attributes_resource(mut self, input: ::std::option::Option<crate::types::AttributesResource>) -> Self {
         self.attributes_resource = input;
         self
     }
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
-    pub fn get_attributes_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributesResource> {
+    pub fn get_attributes_resource(&self) -> &::std::option::Option<crate::types::AttributesResource> {
         &self.attributes_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

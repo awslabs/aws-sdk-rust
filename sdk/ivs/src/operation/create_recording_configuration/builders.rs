@@ -28,7 +28,7 @@ impl CreateRecordingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRecordingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationInputBuilder,
+    inner: crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationInputBuilder,
 }
 impl CreateRecordingConfigurationFluentBuilder {
     /// Creates a new `CreateRecordingConfiguration`.
@@ -39,7 +39,7 @@ impl CreateRecordingConfigurationFluentBuilder {
         }
     }
     /// Access the CreateRecordingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateRecordingConfigurationFluentBuilder {
             crate::operation::create_recording_configuration::CreateRecordingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recording_configuration::CreateRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recording_configuration::CreateRecordingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateRecordingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateRecordingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recording_configuration::CreateRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recording_configuration::CreateRecordingConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateRecordingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recording_configuration::CreateRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recording_configuration::CreateRecordingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateRecordingConfigurationFluentBuilder {
             crate::operation::create_recording_configuration::CreateRecordingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recording_configuration::CreateRecordingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recording_configuration::CreateRecordingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -137,25 +126,17 @@ impl CreateRecordingConfigurationFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         self.inner.get_destination_configuration()
     }
     /// Adds a key-value pair to `tags`.
@@ -163,30 +144,17 @@ impl CreateRecordingConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
@@ -195,17 +163,12 @@ impl CreateRecordingConfigurationFluentBuilder {
         self
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    pub fn set_thumbnail_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ThumbnailConfiguration>,
-    ) -> Self {
+    pub fn set_thumbnail_configuration(mut self, input: ::std::option::Option<crate::types::ThumbnailConfiguration>) -> Self {
         self.inner = self.inner.set_thumbnail_configuration(input);
         self
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    pub fn get_thumbnail_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThumbnailConfiguration> {
+    pub fn get_thumbnail_configuration(&self) -> &::std::option::Option<crate::types::ThumbnailConfiguration> {
         self.inner.get_thumbnail_configuration()
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
@@ -214,10 +177,7 @@ impl CreateRecordingConfigurationFluentBuilder {
         self
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
-    pub fn set_recording_reconnect_window_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_recording_reconnect_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_recording_reconnect_window_seconds(input);
         self
     }
@@ -231,17 +191,12 @@ impl CreateRecordingConfigurationFluentBuilder {
         self
     }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
-    pub fn set_rendition_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RenditionConfiguration>,
-    ) -> Self {
+    pub fn set_rendition_configuration(mut self, input: ::std::option::Option<crate::types::RenditionConfiguration>) -> Self {
         self.inner = self.inner.set_rendition_configuration(input);
         self
     }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
-    pub fn get_rendition_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RenditionConfiguration> {
+    pub fn get_rendition_configuration(&self) -> &::std::option::Option<crate::types::RenditionConfiguration> {
         self.inner.get_rendition_configuration()
     }
 }

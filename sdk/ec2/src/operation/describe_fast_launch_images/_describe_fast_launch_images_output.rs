@@ -5,8 +5,7 @@
 pub struct DescribeFastLaunchImagesOutput {
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
     #[doc(hidden)]
-    pub fast_launch_images:
-        ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
+    pub fast_launch_images: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeFastLaunchImagesOutput {
 }
 impl DescribeFastLaunchImagesOutput {
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
-    pub fn fast_launch_images(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DescribeFastLaunchImagesSuccessItem]> {
+    pub fn fast_launch_images(&self) -> ::std::option::Option<&[crate::types::DescribeFastLaunchImagesSuccessItem]> {
         self.fast_launch_images.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFastLaunchImagesOutput {
 }
 impl DescribeFastLaunchImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFastLaunchImagesOutput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput).
-    pub fn builder() -> crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesOutputBuilder {
         crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFastLaunchImagesOutput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesOutputBuilder {
-    pub(crate) fast_launch_images:
-        ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
+    pub(crate) fast_launch_images: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeFastLaunchImagesOutputBuilder {
     /// To override the contents of this collection use [`set_fast_launch_images`](Self::set_fast_launch_images).
     ///
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
-    pub fn fast_launch_images(
-        mut self,
-        input: crate::types::DescribeFastLaunchImagesSuccessItem,
-    ) -> Self {
+    pub fn fast_launch_images(mut self, input: crate::types::DescribeFastLaunchImagesSuccessItem) -> Self {
         let mut v = self.fast_launch_images.unwrap_or_default();
         v.push(input);
         self.fast_launch_images = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl DescribeFastLaunchImagesOutputBuilder {
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
     pub fn set_fast_launch_images(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
     ) -> Self {
         self.fast_launch_images = input;
         self
     }
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
-    pub fn get_fast_launch_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>
-    {
+    pub fn get_fast_launch_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>> {
         &self.fast_launch_images
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -103,9 +89,7 @@ impl DescribeFastLaunchImagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFastLaunchImagesOutput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput {
+    pub fn build(self) -> crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput {
         crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput {
             fast_launch_images: self.fast_launch_images,
             next_token: self.next_token,

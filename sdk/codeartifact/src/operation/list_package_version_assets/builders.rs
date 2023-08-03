@@ -26,7 +26,7 @@ impl ListPackageVersionAssetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPackageVersionAssetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder,
+    inner: crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder,
 }
 impl ListPackageVersionAssetsFluentBuilder {
     /// Creates a new `ListPackageVersionAssets`.
@@ -37,7 +37,7 @@ impl ListPackageVersionAssetsFluentBuilder {
         }
     }
     /// Access the ListPackageVersionAssets as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListPackageVersionAssetsFluentBuilder {
             crate::operation::list_package_version_assets::ListPackageVersionAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_version_assets::ListPackageVersionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_assets::ListPackageVersionAssetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListPackageVersionAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListPackageVersionAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_version_assets::ListPackageVersionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_assets::ListPackageVersionAssetsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListPackageVersionAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_version_assets::ListPackageVersionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_assets::ListPackageVersionAssetsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListPackageVersionAssetsFluentBuilder {
             crate::operation::list_package_version_assets::ListPackageVersionAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_version_assets::ListPackageVersionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_assets::ListPackageVersionAssetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_package_version_assets::paginator::ListPackageVersionAssetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_package_version_assets::paginator::ListPackageVersionAssetsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_package_version_assets::paginator::ListPackageVersionAssetsPaginator {
         crate::operation::list_package_version_assets::paginator::ListPackageVersionAssetsPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
@@ -232,18 +218,12 @@ impl ListPackageVersionAssetsFluentBuilder {
         self.inner.get_package()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }

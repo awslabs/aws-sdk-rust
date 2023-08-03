@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVirtualNodeOutput`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput::virtual_node): <p>The virtual node that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualNodeError>`](crate::operation::delete_virtual_node::DeleteVirtualNodeError)
-    pub fn delete_virtual_node(
-        &self,
-    ) -> crate::operation::delete_virtual_node::builders::DeleteVirtualNodeFluentBuilder {
-        crate::operation::delete_virtual_node::builders::DeleteVirtualNodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_virtual_node(&self) -> crate::operation::delete_virtual_node::builders::DeleteVirtualNodeFluentBuilder {
+        crate::operation::delete_virtual_node::builders::DeleteVirtualNodeFluentBuilder::new(self.handle.clone())
     }
 }

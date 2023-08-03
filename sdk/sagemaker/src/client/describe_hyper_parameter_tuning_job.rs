@@ -24,7 +24,9 @@ impl super::Client {
     ///   - [`consumed_resources(Option<HyperParameterTuningJobConsumedResources>)`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput::consumed_resources): <p>The total resources consumed by your hyperparameter tuning job.</p>
     ///   - [`autotune(Option<Autotune>)`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput::autotune): <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
     /// - On failure, responds with [`SdkError<DescribeHyperParameterTuningJobError>`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobError)
-    pub fn describe_hyper_parameter_tuning_job(&self) -> crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobFluentBuilder{
+    pub fn describe_hyper_parameter_tuning_job(
+        &self,
+    ) -> crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobFluentBuilder {
         crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobFluentBuilder::new(self.handle.clone())
     }
 }

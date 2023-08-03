@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`template_name(Option<String>)`](crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput::template_name): <p>The name of the provisioning template.</p>
     ///   - [`default_version_id(Option<i32>)`](crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput::default_version_id): <p>The default version of the provisioning template.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningTemplateError>`](crate::operation::create_provisioning_template::CreateProvisioningTemplateError)
-    pub fn create_provisioning_template(&self) -> crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateFluentBuilder{
+    pub fn create_provisioning_template(&self) -> crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateFluentBuilder {
         crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateFluentBuilder::new(self.handle.clone())
     }
 }

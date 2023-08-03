@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>A list of domains.</p>
     ///   - [`next_page_marker(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_page_marker): <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,18 +15,14 @@ impl GetAdministratorAccountInput {
 }
 impl GetAdministratorAccountInput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-    pub fn builder(
-    ) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder {
         crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl GetAdministratorAccountInputBuilder {
         crate::operation::get_administrator_account::GetAdministratorAccountInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_administrator_account::GetAdministratorAccountInput {
-                detector_id: self.detector_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_administrator_account::GetAdministratorAccountInput {
+            detector_id: self.detector_id,
+        })
     }
 }

@@ -24,9 +24,7 @@ pub struct RasterDataCollectionMetadata {
     pub supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RasterDataCollectionMetadata {
     /// <p>The name of the raster data collection.</p>
@@ -54,11 +52,7 @@ impl RasterDataCollectionMetadata {
         self.supported_filters.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl RasterDataCollectionMetadata {
 
 /// A builder for [`RasterDataCollectionMetadata`](crate::types::RasterDataCollectionMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RasterDataCollectionMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct RasterDataCollectionMetadataBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) description_page_url: ::std::option::Option<::std::string::String>,
     pub(crate) supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RasterDataCollectionMetadataBuilder {
     /// <p>The name of the raster data collection.</p>
@@ -120,10 +110,7 @@ impl RasterDataCollectionMetadataBuilder {
         self
     }
     /// <p>The type of raster data collection.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCollectionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCollectionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -146,18 +133,12 @@ impl RasterDataCollectionMetadataBuilder {
         &self.description
     }
     /// <p>The description URL of the raster data collection.</p>
-    pub fn description_page_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn description_page_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description_page_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description URL of the raster data collection.</p>
-    pub fn set_description_page_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_description_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description_page_url = input;
         self
     }
@@ -177,17 +158,12 @@ impl RasterDataCollectionMetadataBuilder {
         self
     }
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub fn set_supported_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_supported_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.supported_filters = input;
         self
     }
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub fn get_supported_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_supported_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.supported_filters
     }
     /// Adds a key-value pair to `tags`.
@@ -195,32 +171,19 @@ impl RasterDataCollectionMetadataBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionMetadata`](crate::types::RasterDataCollectionMetadata).

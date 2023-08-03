@@ -18,9 +18,7 @@ pub struct ComplianceItemEntry {
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     #[doc(hidden)]
-    pub details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItemEntry {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
@@ -40,11 +38,7 @@ impl ComplianceItemEntry {
         self.status.as_ref()
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.details.as_ref()
     }
 }
@@ -57,17 +51,13 @@ impl ComplianceItemEntry {
 
 /// A builder for [`ComplianceItemEntry`](crate::types::ComplianceItemEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceItemEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
-    pub(crate) details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItemEntryBuilder {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
@@ -104,10 +94,7 @@ impl ComplianceItemEntryBuilder {
         self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ComplianceSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -121,10 +108,7 @@ impl ComplianceItemEntryBuilder {
         self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -137,32 +121,19 @@ impl ComplianceItemEntryBuilder {
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.details = input;
         self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`ComplianceItemEntry`](crate::types::ComplianceItemEntry).

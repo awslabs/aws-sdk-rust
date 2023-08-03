@@ -270,9 +270,7 @@ impl BuildPhase {
 
 /// A builder for [`BuildPhase`](crate::types::BuildPhase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildPhaseBuilder {
     pub(crate) phase_type: ::std::option::Option<crate::types::BuildPhaseType>,
     pub(crate) phase_status: ::std::option::Option<crate::types::StatusType>,
@@ -424,10 +422,7 @@ impl BuildPhaseBuilder {
     /// <p>Build output artifacts are being uploaded to the output location.</p>
     /// </dd>
     /// </dl>
-    pub fn set_phase_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildPhaseType>,
-    ) -> Self {
+    pub fn set_phase_type(mut self, input: ::std::option::Option<crate::types::BuildPhaseType>) -> Self {
         self.phase_type = input;
         self
     }
@@ -585,10 +580,7 @@ impl BuildPhaseBuilder {
     /// <p>The build phase timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn set_phase_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusType>,
-    ) -> Self {
+    pub fn set_phase_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.phase_status = input;
         self
     }
@@ -640,10 +632,7 @@ impl BuildPhaseBuilder {
         self
     }
     /// <p>When the build phase started, expressed in Unix time format.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -657,10 +646,7 @@ impl BuildPhaseBuilder {
         self
     }
     /// <p>When the build phase ended, expressed in Unix time format.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -694,17 +680,12 @@ impl BuildPhaseBuilder {
         self
     }
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
-    pub fn set_contexts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>>,
-    ) -> Self {
+    pub fn set_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>>) -> Self {
         self.contexts = input;
         self
     }
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
-    pub fn get_contexts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>> {
+    pub fn get_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>> {
         &self.contexts
     }
     /// Consumes the builder and constructs a [`BuildPhase`](crate::types::BuildPhase).

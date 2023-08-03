@@ -85,9 +85,7 @@ impl ConnectorMetadata {
         self.dynatrace.as_ref()
     }
     /// <p> The connector metadata specific to Google Analytics. </p>
-    pub fn google_analytics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GoogleAnalyticsMetadata> {
+    pub fn google_analytics(&self) -> ::std::option::Option<&crate::types::GoogleAnalyticsMetadata> {
         self.google_analytics.as_ref()
     }
     /// <p> The connector metadata specific to Infor Nexus. </p>
@@ -147,9 +145,7 @@ impl ConnectorMetadata {
         self.upsolver.as_ref()
     }
     /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
-    pub fn customer_profiles(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomerProfilesMetadata> {
+    pub fn customer_profiles(&self) -> ::std::option::Option<&crate::types::CustomerProfilesMetadata> {
         self.customer_profiles.as_ref()
     }
     /// <p> The connector metadata specific to Amazon Honeycode. </p>
@@ -174,9 +170,7 @@ impl ConnectorMetadata {
 
 /// A builder for [`ConnectorMetadata`](crate::types::ConnectorMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorMetadataBuilder {
     pub(crate) amplitude: ::std::option::Option<crate::types::AmplitudeMetadata>,
     pub(crate) datadog: ::std::option::Option<crate::types::DatadogMetadata>,
@@ -208,10 +202,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Amplitude. </p>
-    pub fn set_amplitude(
-        mut self,
-        input: ::std::option::Option<crate::types::AmplitudeMetadata>,
-    ) -> Self {
+    pub fn set_amplitude(mut self, input: ::std::option::Option<crate::types::AmplitudeMetadata>) -> Self {
         self.amplitude = input;
         self
     }
@@ -225,10 +216,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Datadog. </p>
-    pub fn set_datadog(
-        mut self,
-        input: ::std::option::Option<crate::types::DatadogMetadata>,
-    ) -> Self {
+    pub fn set_datadog(mut self, input: ::std::option::Option<crate::types::DatadogMetadata>) -> Self {
         self.datadog = input;
         self
     }
@@ -242,10 +230,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Dynatrace. </p>
-    pub fn set_dynatrace(
-        mut self,
-        input: ::std::option::Option<crate::types::DynatraceMetadata>,
-    ) -> Self {
+    pub fn set_dynatrace(mut self, input: ::std::option::Option<crate::types::DynatraceMetadata>) -> Self {
         self.dynatrace = input;
         self
     }
@@ -259,17 +244,12 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Google Analytics. </p>
-    pub fn set_google_analytics(
-        mut self,
-        input: ::std::option::Option<crate::types::GoogleAnalyticsMetadata>,
-    ) -> Self {
+    pub fn set_google_analytics(mut self, input: ::std::option::Option<crate::types::GoogleAnalyticsMetadata>) -> Self {
         self.google_analytics = input;
         self
     }
     /// <p> The connector metadata specific to Google Analytics. </p>
-    pub fn get_google_analytics(
-        &self,
-    ) -> &::std::option::Option<crate::types::GoogleAnalyticsMetadata> {
+    pub fn get_google_analytics(&self) -> &::std::option::Option<crate::types::GoogleAnalyticsMetadata> {
         &self.google_analytics
     }
     /// <p> The connector metadata specific to Infor Nexus. </p>
@@ -278,10 +258,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Infor Nexus. </p>
-    pub fn set_infor_nexus(
-        mut self,
-        input: ::std::option::Option<crate::types::InforNexusMetadata>,
-    ) -> Self {
+    pub fn set_infor_nexus(mut self, input: ::std::option::Option<crate::types::InforNexusMetadata>) -> Self {
         self.infor_nexus = input;
         self
     }
@@ -295,10 +272,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Marketo. </p>
-    pub fn set_marketo(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketoMetadata>,
-    ) -> Self {
+    pub fn set_marketo(mut self, input: ::std::option::Option<crate::types::MarketoMetadata>) -> Self {
         self.marketo = input;
         self
     }
@@ -312,10 +286,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Amazon Redshift. </p>
-    pub fn set_redshift(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftMetadata>,
-    ) -> Self {
+    pub fn set_redshift(mut self, input: ::std::option::Option<crate::types::RedshiftMetadata>) -> Self {
         self.redshift = input;
         self
     }
@@ -343,10 +314,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Salesforce. </p>
-    pub fn set_salesforce(
-        mut self,
-        input: ::std::option::Option<crate::types::SalesforceMetadata>,
-    ) -> Self {
+    pub fn set_salesforce(mut self, input: ::std::option::Option<crate::types::SalesforceMetadata>) -> Self {
         self.salesforce = input;
         self
     }
@@ -360,10 +328,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to ServiceNow. </p>
-    pub fn set_service_now(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNowMetadata>,
-    ) -> Self {
+    pub fn set_service_now(mut self, input: ::std::option::Option<crate::types::ServiceNowMetadata>) -> Self {
         self.service_now = input;
         self
     }
@@ -377,10 +342,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Singular. </p>
-    pub fn set_singular(
-        mut self,
-        input: ::std::option::Option<crate::types::SingularMetadata>,
-    ) -> Self {
+    pub fn set_singular(mut self, input: ::std::option::Option<crate::types::SingularMetadata>) -> Self {
         self.singular = input;
         self
     }
@@ -408,10 +370,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Snowflake. </p>
-    pub fn set_snowflake(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowflakeMetadata>,
-    ) -> Self {
+    pub fn set_snowflake(mut self, input: ::std::option::Option<crate::types::SnowflakeMetadata>) -> Self {
         self.snowflake = input;
         self
     }
@@ -425,10 +384,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Trend Micro. </p>
-    pub fn set_trendmicro(
-        mut self,
-        input: ::std::option::Option<crate::types::TrendmicroMetadata>,
-    ) -> Self {
+    pub fn set_trendmicro(mut self, input: ::std::option::Option<crate::types::TrendmicroMetadata>) -> Self {
         self.trendmicro = input;
         self
     }
@@ -456,10 +412,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Zendesk. </p>
-    pub fn set_zendesk(
-        mut self,
-        input: ::std::option::Option<crate::types::ZendeskMetadata>,
-    ) -> Self {
+    pub fn set_zendesk(mut self, input: ::std::option::Option<crate::types::ZendeskMetadata>) -> Self {
         self.zendesk = input;
         self
     }
@@ -473,10 +426,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Amazon EventBridge. </p>
-    pub fn set_event_bridge(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBridgeMetadata>,
-    ) -> Self {
+    pub fn set_event_bridge(mut self, input: ::std::option::Option<crate::types::EventBridgeMetadata>) -> Self {
         self.event_bridge = input;
         self
     }
@@ -490,10 +440,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Upsolver. </p>
-    pub fn set_upsolver(
-        mut self,
-        input: ::std::option::Option<crate::types::UpsolverMetadata>,
-    ) -> Self {
+    pub fn set_upsolver(mut self, input: ::std::option::Option<crate::types::UpsolverMetadata>) -> Self {
         self.upsolver = input;
         self
     }
@@ -507,17 +454,12 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
-    pub fn set_customer_profiles(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerProfilesMetadata>,
-    ) -> Self {
+    pub fn set_customer_profiles(mut self, input: ::std::option::Option<crate::types::CustomerProfilesMetadata>) -> Self {
         self.customer_profiles = input;
         self
     }
     /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
-    pub fn get_customer_profiles(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomerProfilesMetadata> {
+    pub fn get_customer_profiles(&self) -> &::std::option::Option<crate::types::CustomerProfilesMetadata> {
         &self.customer_profiles
     }
     /// <p> The connector metadata specific to Amazon Honeycode. </p>
@@ -526,10 +468,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to Amazon Honeycode. </p>
-    pub fn set_honeycode(
-        mut self,
-        input: ::std::option::Option<crate::types::HoneycodeMetadata>,
-    ) -> Self {
+    pub fn set_honeycode(mut self, input: ::std::option::Option<crate::types::HoneycodeMetadata>) -> Self {
         self.honeycode = input;
         self
     }
@@ -543,10 +482,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p> The connector metadata specific to SAPOData. </p>
-    pub fn set_sapo_data(
-        mut self,
-        input: ::std::option::Option<crate::types::SapoDataMetadata>,
-    ) -> Self {
+    pub fn set_sapo_data(mut self, input: ::std::option::Option<crate::types::SapoDataMetadata>) -> Self {
         self.sapo_data = input;
         self
     }
@@ -560,10 +496,7 @@ impl ConnectorMetadataBuilder {
         self
     }
     /// <p>The connector metadata specific to Salesforce Pardot.</p>
-    pub fn set_pardot(
-        mut self,
-        input: ::std::option::Option<crate::types::PardotMetadata>,
-    ) -> Self {
+    pub fn set_pardot(mut self, input: ::std::option::Option<crate::types::PardotMetadata>) -> Self {
         self.pardot = input;
         self
     }

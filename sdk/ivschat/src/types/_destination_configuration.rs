@@ -23,9 +23,7 @@ pub enum DestinationConfiguration {
 impl DestinationConfiguration {
     /// Tries to convert the enum instance into [`CloudWatchLogs`](crate::types::DestinationConfiguration::CloudWatchLogs), extracting the inner [`CloudWatchLogsDestinationConfiguration`](crate::types::CloudWatchLogsDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_cloud_watch_logs(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CloudWatchLogsDestinationConfiguration, &Self> {
+    pub fn as_cloud_watch_logs(&self) -> ::std::result::Result<&crate::types::CloudWatchLogsDestinationConfiguration, &Self> {
         if let DestinationConfiguration::CloudWatchLogs(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -38,9 +36,7 @@ impl DestinationConfiguration {
     }
     /// Tries to convert the enum instance into [`Firehose`](crate::types::DestinationConfiguration::Firehose), extracting the inner [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_firehose(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FirehoseDestinationConfiguration, &Self> {
+    pub fn as_firehose(&self) -> ::std::result::Result<&crate::types::FirehoseDestinationConfiguration, &Self> {
         if let DestinationConfiguration::Firehose(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -23,9 +23,7 @@ impl MissingCompleteSensorData {
 
 /// A builder for [`MissingCompleteSensorData`](crate::types::MissingCompleteSensorData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissingCompleteSensorDataBuilder {
     pub(crate) affected_sensor_count: ::std::option::Option<i32>,
 }

@@ -29,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationGroupsOutput {
 }
 impl DescribeReplicationGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationGroupsOutput`](crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput).
-    pub fn builder() -> crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsOutputBuilder {
         crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationGroupsOutput`](crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>>,
+    pub(crate) replication_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationGroupsOutputBuilder {
@@ -72,17 +69,12 @@ impl DescribeReplicationGroupsOutputBuilder {
         self
     }
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    pub fn set_replication_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>>,
-    ) -> Self {
+    pub fn set_replication_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>>) -> Self {
         self.replication_groups = input;
         self
     }
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    pub fn get_replication_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>> {
+    pub fn get_replication_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>> {
         &self.replication_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +87,7 @@ impl DescribeReplicationGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationGroupsOutput`](crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput {
         crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput {
             marker: self.marker,
             replication_groups: self.replication_groups,

@@ -22,9 +22,7 @@ impl DescribeTrackerInput {
 
 /// A builder for [`DescribeTrackerInput`](crate::operation::describe_tracker::DescribeTrackerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrackerInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeTrackerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrackerInput`](crate::operation::describe_tracker::DescribeTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tracker::DescribeTrackerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tracker::DescribeTrackerInput {
             tracker_name: self.tracker_name,
         })

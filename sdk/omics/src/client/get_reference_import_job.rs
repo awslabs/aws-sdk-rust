@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::completion_time): <p>When the job completed.</p>
     ///   - [`sources(Option<Vec<ImportReferenceSourceItem>>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReferenceImportJobError>`](crate::operation::get_reference_import_job::GetReferenceImportJobError)
-    pub fn get_reference_import_job(
-        &self,
-    ) -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder
-    {
+    pub fn get_reference_import_job(&self) -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder {
         crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::new(self.handle.clone())
     }
 }

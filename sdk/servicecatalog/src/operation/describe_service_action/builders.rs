@@ -37,10 +37,7 @@ impl DescribeServiceActionFluentBuilder {
         }
     }
     /// Access the DescribeServiceAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_service_action::builders::DescribeServiceActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_service_action::builders::DescribeServiceActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeServiceActionFluentBuilder {
             crate::operation::describe_service_action::DescribeServiceAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_action::DescribeServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_action::DescribeServiceActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeServiceActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeServiceActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_action::DescribeServiceActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_action::DescribeServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_action::DescribeServiceActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeServiceActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_action::DescribeServiceActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_action::DescribeServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_action::DescribeServiceActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeServiceActionFluentBuilder {
             crate::operation::describe_service_action::DescribeServiceAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_action::DescribeServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_action::DescribeServiceActionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +128,7 @@ impl DescribeServiceActionFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -154,10 +137,7 @@ impl DescribeServiceActionFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

@@ -57,17 +57,14 @@ impl ListAssociatedAssetsInput {
 }
 impl ListAssociatedAssetsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAssetsInput`](crate::operation::list_associated_assets::ListAssociatedAssetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsInputBuilder {
+    pub fn builder() -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsInputBuilder {
         crate::operation::list_associated_assets::builders::ListAssociatedAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedAssetsInput`](crate::operation::list_associated_assets::ListAssociatedAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedAssetsInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
@@ -123,10 +120,7 @@ impl ListAssociatedAssetsInputBuilder {
     /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
     /// <p>Default: <code>CHILD</code> </p>
-    pub fn set_traversal_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TraversalDirection>,
-    ) -> Self {
+    pub fn set_traversal_direction(mut self, input: ::std::option::Option<crate::types::TraversalDirection>) -> Self {
         self.traversal_direction = input;
         self
     }
@@ -136,9 +130,7 @@ impl ListAssociatedAssetsInputBuilder {
     /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
     /// <p>Default: <code>CHILD</code> </p>
-    pub fn get_traversal_direction(
-        &self,
-    ) -> &::std::option::Option<crate::types::TraversalDirection> {
+    pub fn get_traversal_direction(&self) -> &::std::option::Option<crate::types::TraversalDirection> {
         &self.traversal_direction
     }
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -175,18 +167,14 @@ impl ListAssociatedAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedAssetsInput`](crate::operation::list_associated_assets::ListAssociatedAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associated_assets::ListAssociatedAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_associated_assets::ListAssociatedAssetsInput {
-                asset_id: self.asset_id,
-                hierarchy_id: self.hierarchy_id,
-                traversal_direction: self.traversal_direction,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_associated_assets::ListAssociatedAssetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_associated_assets::ListAssociatedAssetsInput {
+            asset_id: self.asset_id,
+            hierarchy_id: self.hierarchy_id,
+            traversal_direction: self.traversal_direction,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

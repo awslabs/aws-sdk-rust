@@ -26,7 +26,7 @@ impl DeleteInferenceSchedulerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder,
+    inner: crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder,
 }
 impl DeleteInferenceSchedulerFluentBuilder {
     /// Creates a new `DeleteInferenceScheduler`.
@@ -37,10 +37,7 @@ impl DeleteInferenceSchedulerFluentBuilder {
         }
     }
     /// Access the DeleteInferenceScheduler as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteInferenceSchedulerFluentBuilder {
             crate::operation::delete_inference_scheduler::DeleteInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteInferenceSchedulerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteInferenceSchedulerFluentBuilder {
             crate::operation::delete_inference_scheduler::DeleteInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the inference scheduler to be deleted. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
     /// <p>The name of the inference scheduler to be deleted. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }

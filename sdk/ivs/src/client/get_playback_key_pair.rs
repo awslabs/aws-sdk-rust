@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPlaybackKeyPairOutput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput) with field(s):
     ///   - [`key_pair(Option<PlaybackKeyPair>)`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput::key_pair): (undocumented)
     /// - On failure, responds with [`SdkError<GetPlaybackKeyPairError>`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairError)
-    pub fn get_playback_key_pair(
-        &self,
-    ) -> crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder {
-        crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_playback_key_pair(&self) -> crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder {
+        crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

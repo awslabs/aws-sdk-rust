@@ -10,10 +10,7 @@ impl ListWorkforcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_workforces::ListWorkforcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workforces::ListWorkforcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workforces::ListWorkforcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_workforces();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWorkforcesFluentBuilder {
         }
     }
     /// Access the ListWorkforces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workforces::builders::ListWorkforcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_workforces::builders::ListWorkforcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListWorkforcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListWorkforcesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workforces::paginator::ListWorkforcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workforces::paginator::ListWorkforcesPaginator {
-        crate::operation::list_workforces::paginator::ListWorkforcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workforces::paginator::ListWorkforcesPaginator {
+        crate::operation::list_workforces::paginator::ListWorkforcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Sort workforces using the workforce name or creation date.</p>
     pub fn sort_by(mut self, input: crate::types::ListWorkforcesSortByOptions) -> Self {
@@ -131,10 +118,7 @@ impl ListWorkforcesFluentBuilder {
         self
     }
     /// <p>Sort workforces using the workforce name or creation date.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -157,18 +141,12 @@ impl ListWorkforcesFluentBuilder {
         self.inner.get_sort_order()
     }
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

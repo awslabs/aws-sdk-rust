@@ -29,17 +29,14 @@ impl ListClusterSnapshotsInput {
 }
 impl ListClusterSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`ListClusterSnapshotsInput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput).
-    pub fn builder(
-    ) -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsInputBuilder {
+    pub fn builder() -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsInputBuilder {
         crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListClusterSnapshotsInput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClusterSnapshotsInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl ListClusterSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`ListClusterSnapshotsInput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput {
-                cluster_arn: self.cluster_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput {
+            cluster_arn: self.cluster_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

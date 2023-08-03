@@ -77,18 +77,12 @@ impl MarketoConnectorProfileCredentialsBuilder {
         &self.client_id
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }
@@ -116,17 +110,12 @@ impl MarketoConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn set_o_auth_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
-    ) -> Self {
+    pub fn set_o_auth_request(mut self, input: ::std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
         self.o_auth_request = input;
         self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn get_o_auth_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
+    pub fn get_o_auth_request(&self) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
         &self.o_auth_request
     }
     /// Consumes the builder and constructs a [`MarketoConnectorProfileCredentials`](crate::types::MarketoConnectorProfileCredentials).

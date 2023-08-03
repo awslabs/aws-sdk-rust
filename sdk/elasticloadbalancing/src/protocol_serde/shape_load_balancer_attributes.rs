@@ -7,9 +7,7 @@ pub fn ser_load_balancer_attributes(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CrossZoneLoadBalancing");
     if let Some(var_2) = &input.cross_zone_load_balancing {
-        crate::protocol_serde::shape_cross_zone_load_balancing::ser_cross_zone_load_balancing(
-            scope_1, var_2,
-        )?;
+        crate::protocol_serde::shape_cross_zone_load_balancing::ser_cross_zone_load_balancing(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("AccessLog");
@@ -33,9 +31,7 @@ pub fn ser_load_balancer_attributes(
         for item_11 in var_10 {
             #[allow(unused_mut)]
             let mut entry_13 = list_12.entry();
-            crate::protocol_serde::shape_additional_attribute::ser_additional_attribute(
-                entry_13, item_11,
-            )?;
+            crate::protocol_serde::shape_additional_attribute::ser_additional_attribute(entry_13, item_11)?;
         }
         list_12.finish();
     }

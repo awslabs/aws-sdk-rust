@@ -30,9 +30,7 @@ impl ArtifactDetails {
 
 /// A builder for [`ArtifactDetails`](crate::types::ArtifactDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactDetailsBuilder {
     pub(crate) minimum_count: ::std::option::Option<i32>,
     pub(crate) maximum_count: ::std::option::Option<i32>,

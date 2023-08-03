@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartGuiSessionOutput`](crate::operation::start_gui_session::StartGuiSessionOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::start_gui_session::StartGuiSessionOutput::operations): <p>The available API operations.</p>
     /// - On failure, responds with [`SdkError<StartGUISessionError>`](crate::operation::start_gui_session::StartGUISessionError)
-    pub fn start_gui_session(
-        &self,
-    ) -> crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder {
-        crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_gui_session(&self) -> crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder {
+        crate::operation::start_gui_session::builders::StartGUISessionFluentBuilder::new(self.handle.clone())
     }
 }

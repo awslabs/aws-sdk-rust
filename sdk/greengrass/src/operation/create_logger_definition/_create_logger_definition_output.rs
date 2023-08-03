@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for CreateLoggerDefinitionOutput {
 }
 impl CreateLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggerDefinitionOutput`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_logger_definition::builders::CreateLoggerDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_logger_definition::builders::CreateLoggerDefinitionOutputBuilder {
         crate::operation::create_logger_definition::builders::CreateLoggerDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoggerDefinitionOutput`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoggerDefinitionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -101,18 +97,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -135,18 +125,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         &self.id
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
@@ -155,18 +139,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         &self.last_updated_timestamp
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the latest version associated with the definition.
-    pub fn set_latest_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_version = input;
         self
     }
@@ -175,18 +153,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         &self.latest_version
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn set_latest_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_version_arn = input;
         self
     }

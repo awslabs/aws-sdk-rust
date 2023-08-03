@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociatePackageOutput`](crate::operation::associate_package::AssociatePackageOutput) with field(s):
     ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::operation::associate_package::AssociatePackageOutput::domain_package_details): <p><code>DomainPackageDetails</code></p>
     /// - On failure, responds with [`SdkError<AssociatePackageError>`](crate::operation::associate_package::AssociatePackageError)
-    pub fn associate_package(
-        &self,
-    ) -> crate::operation::associate_package::builders::AssociatePackageFluentBuilder {
-        crate::operation::associate_package::builders::AssociatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_package(&self) -> crate::operation::associate_package::builders::AssociatePackageFluentBuilder {
+        crate::operation::associate_package::builders::AssociatePackageFluentBuilder::new(self.handle.clone())
     }
 }

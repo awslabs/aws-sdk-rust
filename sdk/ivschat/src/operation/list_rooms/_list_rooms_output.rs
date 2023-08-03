@@ -35,9 +35,7 @@ impl ListRoomsOutput {
 
 /// A builder for [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomsOutputBuilder {
     pub(crate) rooms: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListRoomsOutputBuilder {
         self
     }
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn set_rooms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>,
-    ) -> Self {
+    pub fn set_rooms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>) -> Self {
         self.rooms = input;
         self
     }

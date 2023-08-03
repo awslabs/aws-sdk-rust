@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`parameter_group_name(Option<String>)`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput::parameter_group_name): <p>The name of the cluster parameter group.</p>
     ///   - [`parameter_group_status(Option<String>)`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput::parameter_group_status): <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     /// - On failure, responds with [`SdkError<ResetClusterParameterGroupError>`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError)
-    pub fn reset_cluster_parameter_group(&self) -> crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupFluentBuilder{
+    pub fn reset_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupFluentBuilder {
         crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

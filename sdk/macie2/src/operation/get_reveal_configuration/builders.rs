@@ -37,10 +37,7 @@ impl GetRevealConfigurationFluentBuilder {
         }
     }
     /// Access the GetRevealConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetRevealConfigurationFluentBuilder {
             crate::operation::get_reveal_configuration::GetRevealConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reveal_configuration::GetRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reveal_configuration::GetRevealConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetRevealConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetRevealConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reveal_configuration::GetRevealConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reveal_configuration::GetRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reveal_configuration::GetRevealConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetRevealConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reveal_configuration::GetRevealConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reveal_configuration::GetRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reveal_configuration::GetRevealConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetRevealConfigurationFluentBuilder {
             crate::operation::get_reveal_configuration::GetRevealConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reveal_configuration::GetRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reveal_configuration::GetRevealConfigurationError>,
     > {
         self.customize_middleware().await
     }

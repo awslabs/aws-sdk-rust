@@ -39,13 +39,7 @@
 /// H264 Look Ahead Rate Control
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264LookAheadRateControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for H264LookAheadRateControl {
             "HIGH" => H264LookAheadRateControl::High,
             "LOW" => H264LookAheadRateControl::Low,
             "MEDIUM" => H264LookAheadRateControl::Medium,
-            other => H264LookAheadRateControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H264LookAheadRateControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

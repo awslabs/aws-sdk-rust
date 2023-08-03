@@ -19,9 +19,7 @@ impl DeleteAgreementOutput {
 
 /// A builder for [`DeleteAgreementOutput`](crate::operation::delete_agreement::DeleteAgreementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAgreementOutputBuilder {
     _request_id: Option<String>,
 }

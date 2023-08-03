@@ -37,9 +37,7 @@ impl UpdateUserHierarchyFluentBuilder {
         }
     }
     /// Access the UpdateUserHierarchy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateUserHierarchyFluentBuilder {
             crate::operation::update_user_hierarchy::UpdateUserHierarchy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy::UpdateUserHierarchyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy::UpdateUserHierarchyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateUserHierarchyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateUserHierarchyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy::UpdateUserHierarchyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy::UpdateUserHierarchyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy::UpdateUserHierarchyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateUserHierarchyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy::UpdateUserHierarchyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy::UpdateUserHierarchyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy::UpdateUserHierarchyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateUserHierarchyFluentBuilder {
             crate::operation::update_user_hierarchy::UpdateUserHierarchy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy::UpdateUserHierarchyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy::UpdateUserHierarchyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hierarchy_group_id(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hierarchy_group_id(input);
         self
     }

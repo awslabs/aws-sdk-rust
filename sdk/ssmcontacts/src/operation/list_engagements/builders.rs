@@ -10,10 +10,7 @@ impl ListEngagementsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_engagements::ListEngagementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engagements::ListEngagementsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engagements::ListEngagementsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_engagements();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListEngagementsFluentBuilder {
         }
     }
     /// Access the ListEngagements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_engagements::builders::ListEngagementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_engagements::builders::ListEngagementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListEngagementsFluentBuilder {
             crate::operation::list_engagements::ListEngagements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engagements::ListEngagementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engagements::ListEngagementsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListEngagementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListEngagementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_engagements::ListEngagementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engagements::ListEngagementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engagements::ListEngagementsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListEngagementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_engagements::ListEngagementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engagements::ListEngagementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engagements::ListEngagementsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListEngagementsFluentBuilder {
             crate::operation::list_engagements::ListEngagements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engagements::ListEngagementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engagements::ListEngagementsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_engagements::paginator::ListEngagementsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_engagements::paginator::ListEngagementsPaginator {
-        crate::operation::list_engagements::paginator::ListEngagementsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_engagements::paginator::ListEngagementsPaginator {
+        crate::operation::list_engagements::paginator::ListEngagementsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,10 +160,7 @@ impl ListEngagementsFluentBuilder {
         self
     }
     /// <p>The time range to lists engagements for an incident.</p>
-    pub fn set_time_range_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
+    pub fn set_time_range_value(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.inner = self.inner.set_time_range_value(input);
         self
     }

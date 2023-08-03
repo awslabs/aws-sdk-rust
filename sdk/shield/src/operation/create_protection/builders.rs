@@ -10,10 +10,7 @@ impl CreateProtectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_protection::CreateProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_protection::CreateProtectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_protection::CreateProtectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_protection();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateProtectionFluentBuilder {
         }
     }
     /// Access the CreateProtection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_protection::builders::CreateProtectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_protection::builders::CreateProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateProtectionFluentBuilder {
             crate::operation::create_protection::CreateProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_protection::CreateProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_protection::CreateProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_protection::CreateProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_protection::CreateProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_protection::CreateProtectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_protection::CreateProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_protection::CreateProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_protection::CreateProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateProtectionFluentBuilder {
             crate::operation::create_protection::CreateProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_protection::CreateProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_protection::CreateProtectionError>,
     > {
         self.customize_middleware().await
     }
@@ -188,10 +172,7 @@ impl CreateProtectionFluentBuilder {
         self
     }
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -65,9 +65,7 @@ impl ApiGatewayProxyConfig {
 
 /// A builder for [`ApiGatewayProxyConfig`](crate::types::ApiGatewayProxyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApiGatewayProxyConfigBuilder {
     pub(crate) proxy_url: ::std::option::Option<::std::string::String>,
     pub(crate) api_gateway_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl ApiGatewayProxyConfigBuilder {
         &self.proxy_url
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn api_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn set_api_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_gateway_id = input;
         self
     }
@@ -160,17 +152,12 @@ impl ApiGatewayProxyConfigBuilder {
         self
     }
     /// <p>The type of API Gateway endpoint created. </p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiGatewayEndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::ApiGatewayEndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The type of API Gateway endpoint created. </p>
-    pub fn get_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiGatewayEndpointType> {
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::ApiGatewayEndpointType> {
         &self.endpoint_type
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>

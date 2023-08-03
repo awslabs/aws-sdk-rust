@@ -31,9 +31,7 @@ impl ManagedExecution {
 
 /// A builder for [`ManagedExecution`](crate::types::ManagedExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedExecutionBuilder {
     pub(crate) active: ::std::option::Option<bool>,
 }
@@ -66,8 +64,6 @@ impl ManagedExecutionBuilder {
     }
     /// Consumes the builder and constructs a [`ManagedExecution`](crate::types::ManagedExecution).
     pub fn build(self) -> crate::types::ManagedExecution {
-        crate::types::ManagedExecution {
-            active: self.active,
-        }
+        crate::types::ManagedExecution { active: self.active }
     }
 }

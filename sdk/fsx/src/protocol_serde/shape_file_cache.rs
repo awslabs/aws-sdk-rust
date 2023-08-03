@@ -3,12 +3,7 @@ pub(crate) fn de_file_cache<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::FileCache>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,153 +13,119 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "OwnerId" => {
-                                builder = builder.set_owner_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "OwnerId" => {
+                            builder = builder.set_owner_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CreationTime" => {
-                                builder = builder.set_creation_time(
-                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
-                                );
-                            }
-                            "FileCacheId" => {
-                                builder = builder.set_file_cache_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "CreationTime" => {
+                            builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "FileCacheId" => {
+                            builder = builder.set_file_cache_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "FileCacheType" => {
-                                builder = builder.set_file_cache_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::FileCacheType::from(u.as_ref()))
-                                    })
+                            );
+                        }
+                        "FileCacheType" => {
+                            builder = builder.set_file_cache_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FileCacheType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "FileCacheTypeVersion" => {
-                                builder = builder.set_file_cache_type_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "FileCacheTypeVersion" => {
+                            builder = builder.set_file_cache_type_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Lifecycle" => {
-                                builder = builder.set_lifecycle(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::FileCacheLifecycle::from(u.as_ref())
-                                        })
-                                    })
+                            );
+                        }
+                        "Lifecycle" => {
+                            builder = builder.set_lifecycle(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FileCacheLifecycle::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "FailureDetails" => {
-                                builder = builder.set_failure_details(
-                                    crate::protocol_serde::shape_file_cache_failure_details::de_file_cache_failure_details(tokens)?
-                                );
-                            }
-                            "StorageCapacity" => {
-                                builder = builder.set_storage_capacity(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "FailureDetails" => {
+                            builder = builder.set_failure_details(
+                                crate::protocol_serde::shape_file_cache_failure_details::de_file_cache_failure_details(tokens)?,
+                            );
+                        }
+                        "StorageCapacity" => {
+                            builder = builder.set_storage_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "VpcId" => {
-                                builder = builder.set_vpc_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "SubnetIds" => {
-                                builder = builder.set_subnet_ids(
-                                    crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens)?,
-                                );
-                            }
-                            "NetworkInterfaceIds" => {
-                                builder = builder.set_network_interface_ids(
-                                    crate::protocol_serde::shape_network_interface_ids::de_network_interface_ids(tokens)?
-                                );
-                            }
-                            "DNSName" => {
-                                builder = builder.set_dns_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "KmsKeyId" => {
-                                builder = builder.set_kms_key_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ResourceARN" => {
-                                builder = builder.set_resource_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "LustreConfiguration" => {
-                                builder = builder.set_lustre_configuration(
-                                    crate::protocol_serde::shape_file_cache_lustre_configuration::de_file_cache_lustre_configuration(tokens)?
-                                );
-                            }
-                            "DataRepositoryAssociationIds" => {
-                                builder = builder.set_data_repository_association_ids(
-                                    crate::protocol_serde::shape_data_repository_association_ids::de_data_repository_association_ids(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "VpcId" => {
+                            builder = builder.set_vpc_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SubnetIds" => {
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens)?);
+                        }
+                        "NetworkInterfaceIds" => {
+                            builder = builder
+                                .set_network_interface_ids(crate::protocol_serde::shape_network_interface_ids::de_network_interface_ids(tokens)?);
+                        }
+                        "DNSName" => {
+                            builder = builder.set_dns_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "KmsKeyId" => {
+                            builder = builder.set_kms_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceARN" => {
+                            builder = builder.set_resource_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LustreConfiguration" => {
+                            builder = builder.set_lustre_configuration(
+                                crate::protocol_serde::shape_file_cache_lustre_configuration::de_file_cache_lustre_configuration(tokens)?,
+                            );
+                        }
+                        "DataRepositoryAssociationIds" => {
+                            builder = builder.set_data_repository_association_ids(
+                                crate::protocol_serde::shape_data_repository_association_ids::de_data_repository_association_ids(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

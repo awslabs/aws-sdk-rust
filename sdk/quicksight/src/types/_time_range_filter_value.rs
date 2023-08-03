@@ -38,9 +38,7 @@ impl TimeRangeFilterValue {
 
 /// A builder for [`TimeRangeFilterValue`](crate::types::TimeRangeFilterValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeRangeFilterValueBuilder {
     pub(crate) static_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
@@ -53,10 +51,7 @@ impl TimeRangeFilterValueBuilder {
         self
     }
     /// <p>The static input value.</p>
-    pub fn set_static_value(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_static_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.static_value = input;
         self
     }
@@ -70,17 +65,12 @@ impl TimeRangeFilterValueBuilder {
         self
     }
     /// <p>The rolling date input value.</p>
-    pub fn set_rolling_date(
-        mut self,
-        input: ::std::option::Option<crate::types::RollingDateConfiguration>,
-    ) -> Self {
+    pub fn set_rolling_date(mut self, input: ::std::option::Option<crate::types::RollingDateConfiguration>) -> Self {
         self.rolling_date = input;
         self
     }
     /// <p>The rolling date input value.</p>
-    pub fn get_rolling_date(
-        &self,
-    ) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
+    pub fn get_rolling_date(&self) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
         &self.rolling_date
     }
     /// <p>The parameter type input value.</p>

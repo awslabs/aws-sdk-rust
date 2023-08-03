@@ -36,17 +36,14 @@ impl RedactChannelMessageInput {
 }
 impl RedactChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder {
         crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactChannelMessageInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +94,12 @@ impl RedactChannelMessageInputBuilder {
         &self.chime_bearer
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -119,17 +110,13 @@ impl RedactChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::redact_channel_message::RedactChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::redact_channel_message::RedactChannelMessageInput {
-                channel_arn: self.channel_arn,
-                message_id: self.message_id,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::redact_channel_message::RedactChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::redact_channel_message::RedactChannelMessageInput {
+            channel_arn: self.channel_arn,
+            message_id: self.message_id,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }

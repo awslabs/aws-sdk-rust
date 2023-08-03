@@ -42,13 +42,7 @@
 /// Use Profile to specify the type of Apple ProRes codec to use for this output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProresCodecProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ProresCodecProfile {
             "APPLE_PRORES_422_PROXY" => ProresCodecProfile::AppleProres422Proxy,
             "APPLE_PRORES_4444" => ProresCodecProfile::AppleProres4444,
             "APPLE_PRORES_4444_XQ" => ProresCodecProfile::AppleProres4444Xq,
-            other => ProresCodecProfile::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProresCodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

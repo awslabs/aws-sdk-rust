@@ -4,9 +4,7 @@ pub fn ser_get_medical_transcription_job_input(
     input: &crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.medical_transcription_job_name {
-        object
-            .key("MedicalTranscriptionJobName")
-            .string(var_1.as_str());
+        object.key("MedicalTranscriptionJobName").string(var_1.as_str());
     }
     Ok(())
 }

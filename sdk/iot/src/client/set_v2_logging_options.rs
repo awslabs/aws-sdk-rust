@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`disable_all_logs(bool)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::disable_all_logs) / [`set_disable_all_logs(Option<bool>)`](crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::set_disable_all_logs): <p>If true all logs are disabled. The default is false.</p>
     /// - On success, responds with [`SetV2LoggingOptionsOutput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<SetV2LoggingOptionsError>`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsError)
-    pub fn set_v2_logging_options(
-        &self,
-    ) -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder {
-        crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_v2_logging_options(&self) -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder {
+        crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

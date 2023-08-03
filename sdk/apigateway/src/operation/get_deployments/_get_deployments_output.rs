@@ -36,9 +36,7 @@ impl GetDeploymentsOutput {
 
 /// A builder for [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl GetDeploymentsOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>) -> Self {
         self.items = input;
         self
     }

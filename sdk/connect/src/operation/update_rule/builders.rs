@@ -10,10 +10,7 @@ impl UpdateRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_rule::UpdateRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule::UpdateRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule::UpdateRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_rule();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateRuleFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_rule::UpdateRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_rule::UpdateRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_rule::UpdateRuleError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateRuleFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_rule::UpdateRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_rule::UpdateRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_rule::UpdateRuleError>,
     > {
         self.customize_middleware().await
@@ -179,10 +167,7 @@ impl UpdateRuleFluentBuilder {
         self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -196,10 +181,7 @@ impl UpdateRuleFluentBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
+    pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
         self.inner = self.inner.set_publish_status(input);
         self
     }

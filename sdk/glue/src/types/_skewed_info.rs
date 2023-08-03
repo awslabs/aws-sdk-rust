@@ -12,9 +12,7 @@ pub struct SkewedInfo {
     pub skewed_column_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     #[doc(hidden)]
-    pub skewed_column_value_location_maps: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub skewed_column_value_location_maps: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SkewedInfo {
     /// <p>A list of names of columns that contain skewed values.</p>
@@ -28,9 +26,7 @@ impl SkewedInfo {
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     pub fn skewed_column_value_location_maps(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.skewed_column_value_location_maps.as_ref()
     }
 }
@@ -43,15 +39,11 @@ impl SkewedInfo {
 
 /// A builder for [`SkewedInfo`](crate::types::SkewedInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SkewedInfoBuilder {
     pub(crate) skewed_column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) skewed_column_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) skewed_column_value_location_maps: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) skewed_column_value_location_maps: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SkewedInfoBuilder {
     /// Appends an item to `skewed_column_names`.
@@ -59,27 +51,19 @@ impl SkewedInfoBuilder {
     /// To override the contents of this collection use [`set_skewed_column_names`](Self::set_skewed_column_names).
     ///
     /// <p>A list of names of columns that contain skewed values.</p>
-    pub fn skewed_column_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skewed_column_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.skewed_column_names.unwrap_or_default();
         v.push(input.into());
         self.skewed_column_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of names of columns that contain skewed values.</p>
-    pub fn set_skewed_column_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_skewed_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.skewed_column_names = input;
         self
     }
     /// <p>A list of names of columns that contain skewed values.</p>
-    pub fn get_skewed_column_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_skewed_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.skewed_column_names
     }
     /// Appends an item to `skewed_column_values`.
@@ -87,27 +71,19 @@ impl SkewedInfoBuilder {
     /// To override the contents of this collection use [`set_skewed_column_values`](Self::set_skewed_column_values).
     ///
     /// <p>A list of values that appear so frequently as to be considered skewed.</p>
-    pub fn skewed_column_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skewed_column_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.skewed_column_values.unwrap_or_default();
         v.push(input.into());
         self.skewed_column_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values that appear so frequently as to be considered skewed.</p>
-    pub fn set_skewed_column_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_skewed_column_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.skewed_column_values = input;
         self
     }
     /// <p>A list of values that appear so frequently as to be considered skewed.</p>
-    pub fn get_skewed_column_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_skewed_column_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.skewed_column_values
     }
     /// Adds a key-value pair to `skewed_column_value_location_maps`.
@@ -128,9 +104,7 @@ impl SkewedInfoBuilder {
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     pub fn set_skewed_column_value_location_maps(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.skewed_column_value_location_maps = input;
         self
@@ -138,9 +112,7 @@ impl SkewedInfoBuilder {
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     pub fn get_skewed_column_value_location_maps(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.skewed_column_value_location_maps
     }
     /// Consumes the builder and constructs a [`SkewedInfo`](crate::types::SkewedInfo).

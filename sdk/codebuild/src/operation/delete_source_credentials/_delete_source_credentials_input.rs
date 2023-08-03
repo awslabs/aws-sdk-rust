@@ -15,18 +15,14 @@ impl DeleteSourceCredentialsInput {
 }
 impl DeleteSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsInputBuilder {
         crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceCredentialsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteSourceCredentialsInputBuilder {
         crate::operation::delete_source_credentials::DeleteSourceCredentialsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_source_credentials::DeleteSourceCredentialsInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_source_credentials::DeleteSourceCredentialsInput { arn: self.arn })
     }
 }

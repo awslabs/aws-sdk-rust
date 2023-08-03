@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`provisioning_artifact_details(Option<Vec<ProvisioningArtifactDetail>>)`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput::provisioning_artifact_details): <p>Information about the provisioning artifacts.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListProvisioningArtifactsError>`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError)
-    pub fn list_provisioning_artifacts(&self) -> crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsFluentBuilder{
+    pub fn list_provisioning_artifacts(&self) -> crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsFluentBuilder {
         crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsFluentBuilder::new(self.handle.clone())
     }
 }

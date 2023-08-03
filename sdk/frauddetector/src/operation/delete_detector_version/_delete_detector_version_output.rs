@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDetectorVersionOutput {
 }
 impl DeleteDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorVersionOutput`](crate::operation::delete_detector_version::DeleteDetectorVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_detector_version::builders::DeleteDetectorVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_detector_version::builders::DeleteDetectorVersionOutputBuilder {
         crate::operation::delete_detector_version::builders::DeleteDetectorVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDetectorVersionOutput`](crate::operation::delete_detector_version::DeleteDetectorVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDetectorVersionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,34 +22,26 @@ impl AssociateHostedConnectionInput {
 }
 impl AssociateHostedConnectionInput {
     /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionInput`](crate::operation::associate_hosted_connection::AssociateHostedConnectionInput).
-    pub fn builder() -> crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder{
+    pub fn builder() -> crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder {
         crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateHostedConnectionInput`](crate::operation::associate_hosted_connection::AssociateHostedConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateHostedConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateHostedConnectionInputBuilder {
     /// <p>The ID of the hosted connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl AssociateHostedConnectionInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the interconnect or the LAG.</p>
-    pub fn parent_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect or the LAG.</p>
-    pub fn set_parent_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_connection_id = input;
         self
     }
@@ -84,11 +70,9 @@ impl AssociateHostedConnectionInputBuilder {
         crate::operation::associate_hosted_connection::AssociateHostedConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_hosted_connection::AssociateHostedConnectionInput {
-                connection_id: self.connection_id,
-                parent_connection_id: self.parent_connection_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_hosted_connection::AssociateHostedConnectionInput {
+            connection_id: self.connection_id,
+            parent_connection_id: self.parent_connection_id,
+        })
     }
 }

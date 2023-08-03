@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`notification(Notification)`](crate::operation::delete_notification::builders::DeleteNotificationFluentBuilder::notification) / [`set_notification(Option<Notification>)`](crate::operation::delete_notification::builders::DeleteNotificationFluentBuilder::set_notification): <p>The notification that you want to delete.</p>
     /// - On success, responds with [`DeleteNotificationOutput`](crate::operation::delete_notification::DeleteNotificationOutput)
     /// - On failure, responds with [`SdkError<DeleteNotificationError>`](crate::operation::delete_notification::DeleteNotificationError)
-    pub fn delete_notification(
-        &self,
-    ) -> crate::operation::delete_notification::builders::DeleteNotificationFluentBuilder {
-        crate::operation::delete_notification::builders::DeleteNotificationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_notification(&self) -> crate::operation::delete_notification::builders::DeleteNotificationFluentBuilder {
+        crate::operation::delete_notification::builders::DeleteNotificationFluentBuilder::new(self.handle.clone())
     }
 }

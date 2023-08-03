@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePositionOutput`](crate::operation::update_position::UpdatePositionOutput)
     /// - On failure, responds with [`SdkError<UpdatePositionError>`](crate::operation::update_position::UpdatePositionError)
     #[deprecated(note = "This operation is no longer supported.")]
-    pub fn update_position(
-        &self,
-    ) -> crate::operation::update_position::builders::UpdatePositionFluentBuilder {
-        crate::operation::update_position::builders::UpdatePositionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_position(&self) -> crate::operation::update_position::builders::UpdatePositionFluentBuilder {
+        crate::operation::update_position::builders::UpdatePositionFluentBuilder::new(self.handle.clone())
     }
 }

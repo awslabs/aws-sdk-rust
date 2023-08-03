@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoints::DescribeEndpointsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::describe_endpoints::DescribeEndpointsOutput::endpoints): <p>Endpoint description.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointsError>`](crate::operation::describe_endpoints::DescribeEndpointsError)
-    pub fn describe_endpoints(
-        &self,
-    ) -> crate::operation::describe_endpoints::builders::DescribeEndpointsFluentBuilder {
-        crate::operation::describe_endpoints::builders::DescribeEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoints(&self) -> crate::operation::describe_endpoints::builders::DescribeEndpointsFluentBuilder {
+        crate::operation::describe_endpoints::builders::DescribeEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

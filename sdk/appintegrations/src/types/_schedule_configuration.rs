@@ -37,9 +37,7 @@ impl ScheduleConfiguration {
 
 /// A builder for [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) first_execution_from: ::std::option::Option<::std::string::String>,
     pub(crate) object: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ScheduleConfigurationBuilder {
 }
 impl ScheduleConfigurationBuilder {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
-    pub fn first_execution_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_execution_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_execution_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
-    pub fn set_first_execution_from(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_execution_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_execution_from = input;
         self
     }
@@ -81,18 +73,12 @@ impl ScheduleConfigurationBuilder {
         &self.object
     }
     /// <p>How often the data should be pulled from data source.</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How often the data should be pulled from data source.</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }

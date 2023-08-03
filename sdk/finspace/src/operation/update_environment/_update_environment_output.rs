@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateEnvironmentOutput {
 }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateEnvironmentOutputBuilder {
         self
     }
     /// <p>Returns the FinSpace environment object.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }

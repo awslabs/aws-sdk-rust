@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::set_container_name): <p>The name of the container that you want to start access logging on.</p>
     /// - On success, responds with [`StartAccessLoggingOutput`](crate::operation::start_access_logging::StartAccessLoggingOutput)
     /// - On failure, responds with [`SdkError<StartAccessLoggingError>`](crate::operation::start_access_logging::StartAccessLoggingError)
-    pub fn start_access_logging(
-        &self,
-    ) -> crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder {
-        crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_access_logging(&self) -> crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder {
+        crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::new(self.handle.clone())
     }
 }

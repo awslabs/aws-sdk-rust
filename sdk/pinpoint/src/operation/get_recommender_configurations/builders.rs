@@ -26,7 +26,7 @@ impl GetRecommenderConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommenderConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder,
+    inner: crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder,
 }
 impl GetRecommenderConfigurationsFluentBuilder {
     /// Creates a new `GetRecommenderConfigurations`.
@@ -37,7 +37,7 @@ impl GetRecommenderConfigurationsFluentBuilder {
         }
     }
     /// Access the GetRecommenderConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetRecommenderConfigurationsFluentBuilder {
             crate::operation::get_recommender_configurations::GetRecommenderConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetRecommenderConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetRecommenderConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetRecommenderConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetRecommenderConfigurationsFluentBuilder {
             crate::operation::get_recommender_configurations::GetRecommenderConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError>,
     > {
         self.customize_middleware().await
     }

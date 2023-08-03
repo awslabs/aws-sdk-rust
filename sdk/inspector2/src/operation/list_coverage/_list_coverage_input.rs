@@ -36,9 +36,7 @@ impl ListCoverageInput {
 
 /// A builder for [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -79,26 +77,16 @@ impl ListCoverageInputBuilder {
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         &self.filter_criteria
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_coverage::ListCoverageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_coverage::ListCoverageInput {
             max_results: self.max_results,
             next_token: self.next_token,

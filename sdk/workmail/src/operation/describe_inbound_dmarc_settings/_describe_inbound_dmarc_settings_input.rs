@@ -15,33 +15,25 @@ impl DescribeInboundDmarcSettingsInput {
 }
 impl DescribeInboundDmarcSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundDmarcSettingsInput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput).
-    pub fn builder() -> crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder {
         crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInboundDmarcSettingsInput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInboundDmarcSettingsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInboundDmarcSettingsInputBuilder {
     /// <p>Lists the ID of the given organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists the ID of the given organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeInboundDmarcSettingsInputBuilder {
         crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput {
-                organization_id: self.organization_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput {
+            organization_id: self.organization_id,
+        })
     }
 }

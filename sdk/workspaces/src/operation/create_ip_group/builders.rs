@@ -10,10 +10,7 @@ impl CreateIpGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ip_group::CreateIpGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ip_group::CreateIpGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ip_group();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateIpGroupFluentBuilder {
         }
     }
     /// Access the CreateIpGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl CreateIpGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -154,17 +146,12 @@ impl CreateIpGroupFluentBuilder {
         self
     }
     /// <p>The rules to add to the group.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
     }
     /// <p>The rules to add to the group.</p>
-    pub fn get_user_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
         self.inner.get_user_rules()
     }
     /// Appends an item to `Tags`.
@@ -177,10 +164,7 @@ impl CreateIpGroupFluentBuilder {
         self
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

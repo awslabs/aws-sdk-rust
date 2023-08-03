@@ -30,9 +30,7 @@ impl KeyListEntry {
 
 /// A builder for [`KeyListEntry`](crate::types::KeyListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyListEntryBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,

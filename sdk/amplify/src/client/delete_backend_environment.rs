@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBackendEnvironmentOutput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput) with field(s):
     ///   - [`backend_environment(Option<BackendEnvironment>)`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput::backend_environment): <p> Describes the backend environment for an Amplify app. </p>
     /// - On failure, responds with [`SdkError<DeleteBackendEnvironmentError>`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentError)
-    pub fn delete_backend_environment(
-        &self,
-    ) -> crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentFluentBuilder
-    {
+    pub fn delete_backend_environment(&self) -> crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentFluentBuilder {
         crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

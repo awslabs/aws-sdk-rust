@@ -11,13 +11,8 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorProxyOutput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput) with field(s):
     ///   - [`proxy(Option<Proxy>)`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput::proxy): <p>The proxy configuration details.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorProxyError>`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyError)
-    #[deprecated(
-        note = "Replaced by PutVoiceConnectorProxy in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn put_voice_connector_proxy(
-        &self,
-    ) -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyFluentBuilder
-    {
+    #[deprecated(note = "Replaced by PutVoiceConnectorProxy in the Amazon Chime SDK Voice Namespace")]
+    pub fn put_voice_connector_proxy(&self) -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyFluentBuilder {
         crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyFluentBuilder::new(self.handle.clone())
     }
 }

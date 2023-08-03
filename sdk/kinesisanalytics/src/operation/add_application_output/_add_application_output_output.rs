@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for AddApplicationOutputOutput {
 }
 impl AddApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
-    pub fn builder(
-    ) -> crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder {
+    pub fn builder() -> crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder {
         crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationOutputOutputBuilder {
     _request_id: Option<String>,
 }

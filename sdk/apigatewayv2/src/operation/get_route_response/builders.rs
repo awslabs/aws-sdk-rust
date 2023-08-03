@@ -10,10 +10,7 @@ impl GetRouteResponseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_route_response::GetRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_response::GetRouteResponseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_response::GetRouteResponseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_route_response();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetRouteResponseFluentBuilder {
         }
     }
     /// Access the GetRouteResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_route_response::builders::GetRouteResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_route_response::builders::GetRouteResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetRouteResponseFluentBuilder {
             crate::operation::get_route_response::GetRouteResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_response::GetRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_response::GetRouteResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetRouteResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetRouteResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_route_response::GetRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_response::GetRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_response::GetRouteResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetRouteResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_route_response::GetRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_response::GetRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_response::GetRouteResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetRouteResponseFluentBuilder {
             crate::operation::get_route_response::GetRouteResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_response::GetRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_response::GetRouteResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl GetRouteResponseFluentBuilder {
         self.inner.get_route_id()
     }
     /// <p>The route response ID.</p>
-    pub fn route_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_response_id(input.into());
         self
     }
     /// <p>The route response ID.</p>
-    pub fn set_route_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_response_id(input);
         self
     }

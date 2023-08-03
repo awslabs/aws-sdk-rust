@@ -10,9 +10,7 @@ pub struct CreateEnvironmentTemplateOutput {
 }
 impl CreateEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by Proton.</p>
-    pub fn environment_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
+    pub fn environment_template(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
         self.environment_template.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentTemplateOutput {
 }
 impl CreateEnvironmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentTemplateOutput`](crate::operation::create_environment_template::CreateEnvironmentTemplateOutput).
-    pub fn builder() -> crate::operation::create_environment_template::builders::CreateEnvironmentTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::create_environment_template::builders::CreateEnvironmentTemplateOutputBuilder {
         crate::operation::create_environment_template::builders::CreateEnvironmentTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentTemplateOutput`](crate::operation::create_environment_template::CreateEnvironmentTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentTemplateOutputBuilder {
     pub(crate) environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateEnvironmentTemplateOutputBuilder {
         self
     }
     /// <p>The environment template detail data that's returned by Proton.</p>
-    pub fn set_environment_template(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentTemplate>,
-    ) -> Self {
+    pub fn set_environment_template(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplate>) -> Self {
         self.environment_template = input;
         self
     }
     /// <p>The environment template detail data that's returned by Proton.</p>
-    pub fn get_environment_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
+    pub fn get_environment_template(&self) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
         &self.environment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateEnvironmentTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateOutput`](crate::operation::create_environment_template::CreateEnvironmentTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_environment_template::CreateEnvironmentTemplateOutput {
+    pub fn build(self) -> crate::operation::create_environment_template::CreateEnvironmentTemplateOutput {
         crate::operation::create_environment_template::CreateEnvironmentTemplateOutput {
             environment_template: self.environment_template,
             _request_id: self._request_id,

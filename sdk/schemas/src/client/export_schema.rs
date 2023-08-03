@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`schema_version(Option<String>)`](crate::operation::export_schema::ExportSchemaOutput::schema_version): (undocumented)
     ///   - [`r#type(Option<String>)`](crate::operation::export_schema::ExportSchemaOutput::type): (undocumented)
     /// - On failure, responds with [`SdkError<ExportSchemaError>`](crate::operation::export_schema::ExportSchemaError)
-    pub fn export_schema(
-        &self,
-    ) -> crate::operation::export_schema::builders::ExportSchemaFluentBuilder {
-        crate::operation::export_schema::builders::ExportSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_schema(&self) -> crate::operation::export_schema::builders::ExportSchemaFluentBuilder {
+        crate::operation::export_schema::builders::ExportSchemaFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct UpdateGlobalTableOutput {
 }
 impl UpdateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
-    pub fn global_table_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GlobalTableDescription> {
+    pub fn global_table_description(&self) -> ::std::option::Option<&crate::types::GlobalTableDescription> {
         self.global_table_description.as_ref()
     }
 }
@@ -23,20 +21,16 @@ impl ::aws_http::request_id::RequestId for UpdateGlobalTableOutput {
 }
 impl UpdateGlobalTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableOutput`](crate::operation::update_global_table::UpdateGlobalTableOutput).
-    pub fn builder(
-    ) -> crate::operation::update_global_table::builders::UpdateGlobalTableOutputBuilder {
+    pub fn builder() -> crate::operation::update_global_table::builders::UpdateGlobalTableOutputBuilder {
         crate::operation::update_global_table::builders::UpdateGlobalTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalTableOutput`](crate::operation::update_global_table::UpdateGlobalTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableOutputBuilder {
-    pub(crate) global_table_description:
-        ::std::option::Option<crate::types::GlobalTableDescription>,
+    pub(crate) global_table_description: ::std::option::Option<crate::types::GlobalTableDescription>,
     _request_id: Option<String>,
 }
 impl UpdateGlobalTableOutputBuilder {
@@ -46,17 +40,12 @@ impl UpdateGlobalTableOutputBuilder {
         self
     }
     /// <p>Contains the details of the global table.</p>
-    pub fn set_global_table_description(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalTableDescription>,
-    ) -> Self {
+    pub fn set_global_table_description(mut self, input: ::std::option::Option<crate::types::GlobalTableDescription>) -> Self {
         self.global_table_description = input;
         self
     }
     /// <p>Contains the details of the global table.</p>
-    pub fn get_global_table_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlobalTableDescription> {
+    pub fn get_global_table_description(&self) -> &::std::option::Option<crate::types::GlobalTableDescription> {
         &self.global_table_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

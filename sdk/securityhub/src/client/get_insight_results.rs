@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput) with field(s):
     ///   - [`insight_results(Option<InsightResults>)`](crate::operation::get_insight_results::GetInsightResultsOutput::insight_results): <p>The insight results returned by the operation.</p>
     /// - On failure, responds with [`SdkError<GetInsightResultsError>`](crate::operation::get_insight_results::GetInsightResultsError)
-    pub fn get_insight_results(
-        &self,
-    ) -> crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder {
-        crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_insight_results(&self) -> crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder {
+        crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder::new(self.handle.clone())
     }
 }

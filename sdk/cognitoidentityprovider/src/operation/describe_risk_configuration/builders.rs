@@ -26,7 +26,7 @@ impl DescribeRiskConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRiskConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder,
+    inner: crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder,
 }
 impl DescribeRiskConfigurationFluentBuilder {
     /// Creates a new `DescribeRiskConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeRiskConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeRiskConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRiskConfigurationFluentBuilder {
             crate::operation::describe_risk_configuration::DescribeRiskConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_risk_configuration::DescribeRiskConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRiskConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRiskConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_risk_configuration::DescribeRiskConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRiskConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_risk_configuration::DescribeRiskConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeRiskConfigurationFluentBuilder {
             crate::operation::describe_risk_configuration::DescribeRiskConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_risk_configuration::DescribeRiskConfigurationError>,
     > {
         self.customize_middleware().await
     }

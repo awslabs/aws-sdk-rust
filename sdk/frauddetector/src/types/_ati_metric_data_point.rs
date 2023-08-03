@@ -44,9 +44,7 @@ impl AtiMetricDataPoint {
 
 /// A builder for [`AtiMetricDataPoint`](crate::types::AtiMetricDataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AtiMetricDataPointBuilder {
     pub(crate) cr: ::std::option::Option<f32>,
     pub(crate) adr: ::std::option::Option<f32>,

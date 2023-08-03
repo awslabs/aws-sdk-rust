@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_decoder_manifest::CreateDecoderManifestOutput::name): <p> The name of the created decoder manifest. </p>
     ///   - [`arn(Option<String>)`](crate::operation::create_decoder_manifest::CreateDecoderManifestOutput::arn): <p> The ARN of the created decoder manifest. </p>
     /// - On failure, responds with [`SdkError<CreateDecoderManifestError>`](crate::operation::create_decoder_manifest::CreateDecoderManifestError)
-    pub fn create_decoder_manifest(
-        &self,
-    ) -> crate::operation::create_decoder_manifest::builders::CreateDecoderManifestFluentBuilder
-    {
-        crate::operation::create_decoder_manifest::builders::CreateDecoderManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_decoder_manifest(&self) -> crate::operation::create_decoder_manifest::builders::CreateDecoderManifestFluentBuilder {
+        crate::operation::create_decoder_manifest::builders::CreateDecoderManifestFluentBuilder::new(self.handle.clone())
     }
 }

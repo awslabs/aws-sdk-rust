@@ -30,17 +30,14 @@ impl DescribeSuggestersInput {
 }
 impl DescribeSuggestersInput {
     /// Creates a new builder-style object to manufacture [`DescribeSuggestersInput`](crate::operation::describe_suggesters::DescribeSuggestersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_suggesters::builders::DescribeSuggestersInputBuilder {
+    pub fn builder() -> crate::operation::describe_suggesters::builders::DescribeSuggestersInputBuilder {
         crate::operation::describe_suggesters::builders::DescribeSuggestersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSuggestersInput`](crate::operation::describe_suggesters::DescribeSuggestersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSuggestersInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggester_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,27 +63,19 @@ impl DescribeSuggestersInputBuilder {
     /// To override the contents of this collection use [`set_suggester_names`](Self::set_suggester_names).
     ///
     /// <p>The suggesters you want to describe.</p>
-    pub fn suggester_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggester_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.suggester_names.unwrap_or_default();
         v.push(input.into());
         self.suggester_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The suggesters you want to describe.</p>
-    pub fn set_suggester_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_suggester_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.suggester_names = input;
         self
     }
     /// <p>The suggesters you want to describe.</p>
-    pub fn get_suggester_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_suggester_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.suggester_names
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -106,16 +95,11 @@ impl DescribeSuggestersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSuggestersInput`](crate::operation::describe_suggesters::DescribeSuggestersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_suggesters::DescribeSuggestersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_suggesters::DescribeSuggestersInput {
-                domain_name: self.domain_name,
-                suggester_names: self.suggester_names,
-                deployed: self.deployed,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_suggesters::DescribeSuggestersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_suggesters::DescribeSuggestersInput {
+            domain_name: self.domain_name,
+            suggester_names: self.suggester_names,
+            deployed: self.deployed,
+        })
     }
 }

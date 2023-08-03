@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWebhookOutput`](crate::operation::update_webhook::UpdateWebhookOutput) with field(s):
     ///   - [`webhook(Option<Webhook>)`](crate::operation::update_webhook::UpdateWebhookOutput::webhook): <p> Describes a webhook that connects repository events to an Amplify app. </p>
     /// - On failure, responds with [`SdkError<UpdateWebhookError>`](crate::operation::update_webhook::UpdateWebhookError)
-    pub fn update_webhook(
-        &self,
-    ) -> crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder {
-        crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_webhook(&self) -> crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder {
+        crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::new(self.handle.clone())
     }
 }

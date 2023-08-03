@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateContactOutput`](crate::operation::create_contact::CreateContactOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::operation::create_contact::CreateContactOutput::contact_arn): <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     /// - On failure, responds with [`SdkError<CreateContactError>`](crate::operation::create_contact::CreateContactError)
-    pub fn create_contact(
-        &self,
-    ) -> crate::operation::create_contact::builders::CreateContactFluentBuilder {
-        crate::operation::create_contact::builders::CreateContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_contact(&self) -> crate::operation::create_contact::builders::CreateContactFluentBuilder {
+        crate::operation::create_contact::builders::CreateContactFluentBuilder::new(self.handle.clone())
     }
 }

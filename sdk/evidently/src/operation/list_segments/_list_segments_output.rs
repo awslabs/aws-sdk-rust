@@ -35,9 +35,7 @@ impl ListSegmentsOutput {
 
 /// A builder for [`ListSegmentsOutput`](crate::operation::list_segments::ListSegmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSegmentsOutputBuilder {
     pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListSegmentsOutputBuilder {
         self
     }
     /// <p>An array of structures that contain information about the segments in this Region.</p>
-    pub fn set_segments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
-    ) -> Self {
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>) -> Self {
         self.segments = input;
         self
     }

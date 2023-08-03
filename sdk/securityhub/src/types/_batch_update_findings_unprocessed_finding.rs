@@ -32,9 +32,7 @@ pub struct BatchUpdateFindingsUnprocessedFinding {
 }
 impl BatchUpdateFindingsUnprocessedFinding {
     /// <p>The identifier of the finding that was not updated.</p>
-    pub fn finding_identifier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
+    pub fn finding_identifier(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
     /// <p>The code associated with the error. Possible values are:</p>
@@ -71,12 +69,9 @@ impl BatchUpdateFindingsUnprocessedFinding {
 
 /// A builder for [`BatchUpdateFindingsUnprocessedFinding`](crate::types::BatchUpdateFindingsUnprocessedFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsUnprocessedFindingBuilder {
-    pub(crate) finding_identifier:
-        ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
+    pub(crate) finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
@@ -87,17 +82,12 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
         self
     }
     /// <p>The identifier of the finding that was not updated.</p>
-    pub fn set_finding_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
-    ) -> Self {
+    pub fn set_finding_identifier(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>) -> Self {
         self.finding_identifier = input;
         self
     }
     /// <p>The identifier of the finding that was not updated.</p>
-    pub fn get_finding_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
+    pub fn get_finding_identifier(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
         &self.finding_identifier
     }
     /// <p>The code associated with the error. Possible values are:</p>
@@ -147,10 +137,7 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <li> <p> <code>Internal service failure</code> </p> </li>
     /// <li> <p> <code>Invalid Input</code> </p> </li>
     /// </ul>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
@@ -163,10 +150,7 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <li> <p> <code>Internal service failure</code> </p> </li>
     /// <li> <p> <code>Invalid Input</code> </p> </li>
     /// </ul>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTestGridProjectOutput {
 }
 impl DeleteTestGridProjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTestGridProjectOutput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectOutputBuilder {
         crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTestGridProjectOutput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTestGridProjectOutputBuilder {
     _request_id: Option<String>,
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_core_definition::GetCoreDefinitionOutput::name): The name of the definition.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_core_definition::GetCoreDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetCoreDefinitionError>`](crate::operation::get_core_definition::GetCoreDefinitionError)
-    pub fn get_core_definition(
-        &self,
-    ) -> crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder {
-        crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_core_definition(&self) -> crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder {
+        crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

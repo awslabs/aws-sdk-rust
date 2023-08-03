@@ -37,9 +37,7 @@ impl DetectMitigationActionsTaskTarget {
 
 /// A builder for [`DetectMitigationActionsTaskTarget`](crate::types::DetectMitigationActionsTaskTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskTargetBuilder {
     pub(crate) violation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
@@ -51,42 +49,28 @@ impl DetectMitigationActionsTaskTargetBuilder {
     /// To override the contents of this collection use [`set_violation_ids`](Self::set_violation_ids).
     ///
     /// <p> The unique identifiers of the violations. </p>
-    pub fn violation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.violation_ids.unwrap_or_default();
         v.push(input.into());
         self.violation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p> The unique identifiers of the violations. </p>
-    pub fn set_violation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_violation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.violation_ids = input;
         self
     }
     /// <p> The unique identifiers of the violations. </p>
-    pub fn get_violation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_violation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.violation_ids
     }
     /// <p> The name of the security profile. </p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the security profile. </p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -95,18 +79,12 @@ impl DetectMitigationActionsTaskTargetBuilder {
         &self.security_profile_name
     }
     /// <p> The name of the behavior. </p>
-    pub fn behavior_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn behavior_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.behavior_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the behavior. </p>
-    pub fn set_behavior_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_behavior_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.behavior_name = input;
         self
     }

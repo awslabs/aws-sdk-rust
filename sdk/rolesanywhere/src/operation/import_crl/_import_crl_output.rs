@@ -28,9 +28,7 @@ impl ImportCrlOutput {
 
 /// A builder for [`ImportCrlOutput`](crate::operation::import_crl::ImportCrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportCrlOutputBuilder {
     pub(crate) crl: ::std::option::Option<crate::types::CrlDetail>,
     _request_id: Option<String>,

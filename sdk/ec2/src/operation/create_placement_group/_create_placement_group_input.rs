@@ -60,24 +60,20 @@ impl CreatePlacementGroupInput {
 }
 impl CreatePlacementGroupInput {
     /// Creates a new builder-style object to manufacture [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder {
         crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) strategy: ::std::option::Option<crate::types::PlacementStrategy>,
     pub(crate) partition_count: ::std::option::Option<i32>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl CreatePlacementGroupInputBuilder {
@@ -118,10 +114,7 @@ impl CreatePlacementGroupInputBuilder {
         self
     }
     /// <p>The placement strategy.</p>
-    pub fn set_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementStrategy>,
-    ) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::PlacementStrategy>) -> Self {
         self.strategy = input;
         self
     }
@@ -155,17 +148,12 @@ impl CreatePlacementGroupInputBuilder {
         self
     }
     /// <p>The tags to apply to the new placement group.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the new placement group.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Determines how placement groups spread instances. </p>
@@ -182,10 +170,7 @@ impl CreatePlacementGroupInputBuilder {
     /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
     /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
-    pub fn set_spread_level(
-        mut self,
-        input: ::std::option::Option<crate::types::SpreadLevel>,
-    ) -> Self {
+    pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
         self.spread_level = input;
         self
     }
@@ -200,19 +185,15 @@ impl CreatePlacementGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_placement_group::CreatePlacementGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_placement_group::CreatePlacementGroupInput {
-                dry_run: self.dry_run,
-                group_name: self.group_name,
-                strategy: self.strategy,
-                partition_count: self.partition_count,
-                tag_specifications: self.tag_specifications,
-                spread_level: self.spread_level,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_placement_group::CreatePlacementGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_placement_group::CreatePlacementGroupInput {
+            dry_run: self.dry_run,
+            group_name: self.group_name,
+            strategy: self.strategy,
+            partition_count: self.partition_count,
+            tag_specifications: self.tag_specifications,
+            spread_level: self.spread_level,
+        })
     }
 }

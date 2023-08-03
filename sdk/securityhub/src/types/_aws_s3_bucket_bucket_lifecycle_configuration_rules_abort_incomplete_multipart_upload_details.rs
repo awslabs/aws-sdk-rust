@@ -16,18 +16,15 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder
-{
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder {
     pub(crate) days_after_initiation: ::std::option::Option<i32>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder {
@@ -46,11 +43,9 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
         &self.days_after_initiation
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
-    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails{
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
-            days_after_initiation: self.days_after_initiation
-                .unwrap_or_default()
-            ,
+            days_after_initiation: self.days_after_initiation.unwrap_or_default(),
         }
     }
 }

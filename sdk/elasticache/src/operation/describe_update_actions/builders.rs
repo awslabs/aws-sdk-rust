@@ -37,10 +37,7 @@ impl DescribeUpdateActionsFluentBuilder {
         }
     }
     /// Access the DescribeUpdateActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_update_actions::builders::DescribeUpdateActionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_update_actions::builders::DescribeUpdateActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeUpdateActionsFluentBuilder {
             crate::operation::describe_update_actions::DescribeUpdateActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_actions::DescribeUpdateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_actions::DescribeUpdateActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeUpdateActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeUpdateActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_update_actions::DescribeUpdateActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_actions::DescribeUpdateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_actions::DescribeUpdateActionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeUpdateActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_update_actions::DescribeUpdateActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_actions::DescribeUpdateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_actions::DescribeUpdateActionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl DescribeUpdateActionsFluentBuilder {
             crate::operation::describe_update_actions::DescribeUpdateActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update_actions::DescribeUpdateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update_actions::DescribeUpdateActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator {
-        crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator {
+        crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_update_name(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_update_name(input);
         self
     }
@@ -159,25 +134,17 @@ impl DescribeUpdateActionsFluentBuilder {
     /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
     ///
     /// <p>The replication group IDs</p>
-    pub fn replication_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_ids(input.into());
         self
     }
     /// <p>The replication group IDs</p>
-    pub fn set_replication_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_replication_group_ids(input);
         self
     }
     /// <p>The replication group IDs</p>
-    pub fn get_replication_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_group_ids()
     }
     /// Appends an item to `CacheClusterIds`.
@@ -185,25 +152,17 @@ impl DescribeUpdateActionsFluentBuilder {
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
     ///
     /// <p>The cache cluster IDs</p>
-    pub fn cache_cluster_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_ids(input.into());
         self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn set_cache_cluster_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cache_cluster_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cache_cluster_ids(input);
         self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn get_cache_cluster_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_cluster_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cache_cluster_ids()
     }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
@@ -230,17 +189,12 @@ impl DescribeUpdateActionsFluentBuilder {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_service_update_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
-    ) -> Self {
+    pub fn set_service_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
         self.inner = self.inner.set_service_update_status(input);
         self
     }
     /// <p>The status of the service update</p>
-    pub fn get_service_update_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+    pub fn get_service_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
         self.inner.get_service_update_status()
     }
     /// <p>The range of time specified to search for service updates that are in available status</p>
@@ -249,17 +203,12 @@ impl DescribeUpdateActionsFluentBuilder {
         self
     }
     /// <p>The range of time specified to search for service updates that are in available status</p>
-    pub fn set_service_update_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRangeFilter>,
-    ) -> Self {
+    pub fn set_service_update_time_range(mut self, input: ::std::option::Option<crate::types::TimeRangeFilter>) -> Self {
         self.inner = self.inner.set_service_update_time_range(input);
         self
     }
     /// <p>The range of time specified to search for service updates that are in available status</p>
-    pub fn get_service_update_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeRangeFilter> {
+    pub fn get_service_update_time_range(&self) -> &::std::option::Option<crate::types::TimeRangeFilter> {
         self.inner.get_service_update_time_range()
     }
     /// Appends an item to `UpdateActionStatus`.
@@ -272,17 +221,12 @@ impl DescribeUpdateActionsFluentBuilder {
         self
     }
     /// <p>The status of the update action.</p>
-    pub fn set_update_action_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>>,
-    ) -> Self {
+    pub fn set_update_action_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>>) -> Self {
         self.inner = self.inner.set_update_action_status(input);
         self
     }
     /// <p>The status of the update action.</p>
-    pub fn get_update_action_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>> {
+    pub fn get_update_action_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>> {
         self.inner.get_update_action_status()
     }
     /// <p>Dictates whether to include node level update status in the response </p>

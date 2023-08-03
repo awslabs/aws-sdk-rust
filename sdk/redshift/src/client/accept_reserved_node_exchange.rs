@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AcceptReservedNodeExchangeOutput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput) with field(s):
     ///   - [`exchanged_reserved_node(Option<ReservedNode>)`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput::exchanged_reserved_node): <p></p>
     /// - On failure, responds with [`SdkError<AcceptReservedNodeExchangeError>`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError)
-    pub fn accept_reserved_node_exchange(&self) -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeFluentBuilder{
+    pub fn accept_reserved_node_exchange(
+        &self,
+    ) -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeFluentBuilder {
         crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeFluentBuilder::new(self.handle.clone())
     }
 }

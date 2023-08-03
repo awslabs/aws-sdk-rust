@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`segments(Option<Vec<Segment>>)`](crate::operation::list_segments::ListSegmentsOutput::segments): <p>An array of structures that contain information about the segments in this Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_segments::ListSegmentsOutput::next_token): <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSegmentsError>`](crate::operation::list_segments::ListSegmentsError)
-    pub fn list_segments(
-        &self,
-    ) -> crate::operation::list_segments::builders::ListSegmentsFluentBuilder {
-        crate::operation::list_segments::builders::ListSegmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_segments(&self) -> crate::operation::list_segments::builders::ListSegmentsFluentBuilder {
+        crate::operation::list_segments::builders::ListSegmentsFluentBuilder::new(self.handle.clone())
     }
 }

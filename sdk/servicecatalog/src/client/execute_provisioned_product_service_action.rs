@@ -11,7 +11,11 @@ impl super::Client {
     /// - On success, responds with [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput) with field(s):
     ///   - [`record_detail(Option<RecordDetail>)`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput::record_detail): <p>An object containing detailed information about the result of provisioning the product.</p>
     /// - On failure, responds with [`SdkError<ExecuteProvisionedProductServiceActionError>`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionError)
-    pub fn execute_provisioned_product_service_action(&self) -> crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionFluentBuilder{
-        crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionFluentBuilder::new(self.handle.clone())
+    pub fn execute_provisioned_product_service_action(
+        &self,
+    ) -> crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionFluentBuilder {
+        crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

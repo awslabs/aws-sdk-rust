@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for RemoveFromGlobalClusterOutput {
 }
 impl RemoveFromGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder {
         crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
@@ -48,10 +44,7 @@ impl RemoveFromGlobalClusterOutputBuilder {
     }
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
+    pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
         self.global_cluster = input;
         self
     }
@@ -70,9 +63,7 @@ impl RemoveFromGlobalClusterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput {
+    pub fn build(self) -> crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput {
         crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput {
             global_cluster: self.global_cluster,
             _request_id: self._request_id,

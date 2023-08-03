@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateLaunchOutput`](crate::operation::update_launch::UpdateLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::operation::update_launch::UpdateLaunchOutput::launch): <p>A structure that contains the new configuration of the launch that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchError>`](crate::operation::update_launch::UpdateLaunchError)
-    pub fn update_launch(
-        &self,
-    ) -> crate::operation::update_launch::builders::UpdateLaunchFluentBuilder {
-        crate::operation::update_launch::builders::UpdateLaunchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_launch(&self) -> crate::operation::update_launch::builders::UpdateLaunchFluentBuilder {
+        crate::operation::update_launch::builders::UpdateLaunchFluentBuilder::new(self.handle.clone())
     }
 }

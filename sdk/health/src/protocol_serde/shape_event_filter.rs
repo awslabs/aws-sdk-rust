@@ -54,10 +54,7 @@ pub fn ser_event_filter(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }
@@ -69,10 +66,7 @@ pub fn ser_event_filter(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(
-                    &mut object_23,
-                    item_22,
-                )?;
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
@@ -84,10 +78,7 @@ pub fn ser_event_filter(
             {
                 #[allow(unused_mut)]
                 let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(
-                    &mut object_27,
-                    item_26,
-                )?;
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_27, item_26)?;
                 object_27.finish();
             }
         }

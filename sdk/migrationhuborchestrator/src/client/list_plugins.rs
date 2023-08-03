@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_plugins::ListPluginsOutput::next_token): <p>The pagination token.</p>
     ///   - [`plugins(Option<Vec<PluginSummary>>)`](crate::operation::list_plugins::ListPluginsOutput::plugins): <p>Migration Hub Orchestrator plugins.</p>
     /// - On failure, responds with [`SdkError<ListPluginsError>`](crate::operation::list_plugins::ListPluginsError)
-    pub fn list_plugins(
-        &self,
-    ) -> crate::operation::list_plugins::builders::ListPluginsFluentBuilder {
+    pub fn list_plugins(&self) -> crate::operation::list_plugins::builders::ListPluginsFluentBuilder {
         crate::operation::list_plugins::builders::ListPluginsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,16 +29,14 @@ impl CreateCoreDefinitionVersionInput {
 }
 impl CreateCoreDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateCoreDefinitionVersionInput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder {
         crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCoreDefinitionVersionInput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCoreDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) core_definition_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateCoreDefinitionVersionInputBuilder {
 }
 impl CreateCoreDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -66,18 +58,12 @@ impl CreateCoreDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_definition_id = input;
         self
     }
@@ -97,10 +83,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
         self
     }
     /// A list of cores in the core definition version.
-    pub fn set_cores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
-    ) -> Self {
+    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>) -> Self {
         self.cores = input;
         self
     }
@@ -115,12 +98,10 @@ impl CreateCoreDefinitionVersionInputBuilder {
         crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token,
-                core_definition_id: self.core_definition_id,
-                cores: self.cores,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
+            amzn_client_token: self.amzn_client_token,
+            core_definition_id: self.core_definition_id,
+            cores: self.cores,
+        })
     }
 }

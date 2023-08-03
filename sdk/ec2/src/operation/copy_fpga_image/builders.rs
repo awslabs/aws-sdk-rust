@@ -10,10 +10,7 @@ impl CopyFpgaImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_fpga_image::CopyFpgaImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_fpga_image::CopyFpgaImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_fpga_image::CopyFpgaImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_fpga_image();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CopyFpgaImageFluentBuilder {
         }
     }
     /// Access the CopyFpgaImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_fpga_image::builders::CopyFpgaImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_fpga_image::builders::CopyFpgaImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CopyFpgaImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CopyFpgaImageFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the source AFI.</p>
-    pub fn source_fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_fpga_image_id(input.into());
         self
     }
     /// <p>The ID of the source AFI.</p>
-    pub fn set_source_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_fpga_image_id(input);
         self
     }
@@ -177,18 +163,12 @@ impl CopyFpgaImageFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The Region that contains the source AFI.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_region(input.into());
         self
     }
     /// <p>The Region that contains the source AFI.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_region(input);
         self
     }

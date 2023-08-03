@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`logins_to_remove(Vec<String>)`](crate::operation::unlink_identity::builders::UnlinkIdentityFluentBuilder::logins_to_remove) / [`set_logins_to_remove(Option<Vec<String>>)`](crate::operation::unlink_identity::builders::UnlinkIdentityFluentBuilder::set_logins_to_remove): <p>Provider names to unlink from this identity.</p>
     /// - On success, responds with [`UnlinkIdentityOutput`](crate::operation::unlink_identity::UnlinkIdentityOutput)
     /// - On failure, responds with [`SdkError<UnlinkIdentityError>`](crate::operation::unlink_identity::UnlinkIdentityError)
-    pub fn unlink_identity(
-        &self,
-    ) -> crate::operation::unlink_identity::builders::UnlinkIdentityFluentBuilder {
-        crate::operation::unlink_identity::builders::UnlinkIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unlink_identity(&self) -> crate::operation::unlink_identity::builders::UnlinkIdentityFluentBuilder {
+        crate::operation::unlink_identity::builders::UnlinkIdentityFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetAccountLimitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_account_limit::GetAccountLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_limit::GetAccountLimitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_limit::GetAccountLimitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_account_limit();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetAccountLimitFluentBuilder {
         }
     }
     /// Access the GetAccountLimit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_account_limit::builders::GetAccountLimitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_account_limit::builders::GetAccountLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl GetAccountLimitFluentBuilder {
             crate::operation::get_account_limit::GetAccountLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_limit::GetAccountLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_limit::GetAccountLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl GetAccountLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl GetAccountLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_limit::GetAccountLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_limit::GetAccountLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_limit::GetAccountLimitError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl GetAccountLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_limit::GetAccountLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_limit::GetAccountLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_limit::GetAccountLimitError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl GetAccountLimitFluentBuilder {
             crate::operation::get_account_limit::GetAccountLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_limit::GetAccountLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_limit::GetAccountLimitError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +129,7 @@ impl GetAccountLimitFluentBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountLimitType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccountLimitType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

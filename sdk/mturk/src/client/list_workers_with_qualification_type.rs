@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`num_results(Option<i32>)`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput::num_results): <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     ///   - [`qualifications(Option<Vec<Qualification>>)`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput::qualifications): <p> The list of Qualification elements returned by this call. </p>
     /// - On failure, responds with [`SdkError<ListWorkersWithQualificationTypeError>`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError)
-    pub fn list_workers_with_qualification_type(&self) -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeFluentBuilder{
+    pub fn list_workers_with_qualification_type(
+        &self,
+    ) -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeFluentBuilder {
         crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,28 +24,19 @@ pub fn ser_schedule_run_input(
     if let Some(var_7) = &input.test {
         #[allow(unused_mut)]
         let mut object_8 = object.key("test").start_object();
-        crate::protocol_serde::shape_schedule_run_test::ser_schedule_run_test(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_schedule_run_test::ser_schedule_run_test(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("configuration").start_object();
-        crate::protocol_serde::shape_schedule_run_configuration::ser_schedule_run_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_schedule_run_configuration::ser_schedule_run_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.execution_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("executionConfiguration").start_object();
-        crate::protocol_serde::shape_execution_configuration::ser_execution_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_execution_configuration::ser_execution_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

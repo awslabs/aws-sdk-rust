@@ -37,9 +37,7 @@ impl HumanLoopConfig {
 
 /// A builder for [`HumanLoopConfig`](crate::types::HumanLoopConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HumanLoopConfigBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
     pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct HumanLoopConfigBuilder {
 }
 impl HumanLoopConfigBuilder {
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl HumanLoopConfigBuilder {
         &self.human_loop_name
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn flow_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn set_flow_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_definition_arn = input;
         self
     }
@@ -92,17 +78,12 @@ impl HumanLoopConfigBuilder {
         self
     }
     /// <p>Sets attributes of the input data.</p>
-    pub fn set_data_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
-    ) -> Self {
+    pub fn set_data_attributes(mut self, input: ::std::option::Option<crate::types::HumanLoopDataAttributes>) -> Self {
         self.data_attributes = input;
         self
     }
     /// <p>Sets attributes of the input data.</p>
-    pub fn get_data_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
+    pub fn get_data_attributes(&self) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
         &self.data_attributes
     }
     /// Consumes the builder and constructs a [`HumanLoopConfig`](crate::types::HumanLoopConfig).

@@ -5,8 +5,7 @@
 pub struct ListRoutingProfilesOutput {
     /// <p>Information about the routing profiles.</p>
     #[doc(hidden)]
-    pub routing_profile_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>,
+    pub routing_profile_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRoutingProfilesOutput {
 }
 impl ListRoutingProfilesOutput {
     /// <p>Information about the routing profiles.</p>
-    pub fn routing_profile_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RoutingProfileSummary]> {
+    pub fn routing_profile_summary_list(&self) -> ::std::option::Option<&[crate::types::RoutingProfileSummary]> {
         self.routing_profile_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRoutingProfilesOutput {
 }
 impl ListRoutingProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoutingProfilesOutput`](crate::operation::list_routing_profiles::ListRoutingProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder {
-        crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder {
+        crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoutingProfilesOutput`](crate::operation::list_routing_profiles::ListRoutingProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutingProfilesOutputBuilder {
-    pub(crate) routing_profile_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>,
+    pub(crate) routing_profile_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListRoutingProfilesOutputBuilder {
     /// To override the contents of this collection use [`set_routing_profile_summary_list`](Self::set_routing_profile_summary_list).
     ///
     /// <p>Information about the routing profiles.</p>
-    pub fn routing_profile_summary_list(
-        mut self,
-        input: crate::types::RoutingProfileSummary,
-    ) -> Self {
+    pub fn routing_profile_summary_list(mut self, input: crate::types::RoutingProfileSummary) -> Self {
         let mut v = self.routing_profile_summary_list.unwrap_or_default();
         v.push(input);
         self.routing_profile_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the routing profiles.</p>
-    pub fn set_routing_profile_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>,
-    ) -> Self {
+    pub fn set_routing_profile_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>) -> Self {
         self.routing_profile_summary_list = input;
         self
     }
     /// <p>Information about the routing profiles.</p>
-    pub fn get_routing_profile_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>> {
+    pub fn get_routing_profile_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>> {
         &self.routing_profile_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

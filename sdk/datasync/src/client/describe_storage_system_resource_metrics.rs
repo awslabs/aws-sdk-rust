@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`metrics(Option<Vec<ResourceMetrics>>)`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput::metrics): <p>The details that your discovery job collected about your storage system resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageSystemResourceMetricsError>`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError)
-    pub fn describe_storage_system_resource_metrics(&self) -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder{
-        crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::new(self.handle.clone())
+    pub fn describe_storage_system_resource_metrics(
+        &self,
+    ) -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder {
+        crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`vdm_options(VdmOptions)`](crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsFluentBuilder::vdm_options) / [`set_vdm_options(Option<VdmOptions>)`](crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsFluentBuilder::set_vdm_options): <p>The VDM options to apply to the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetVdmOptionsOutput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetVdmOptionsError>`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError)
-    pub fn put_configuration_set_vdm_options(&self) -> crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsFluentBuilder{
+    pub fn put_configuration_set_vdm_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsFluentBuilder {
         crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTestGridSessionActionsOutput {
 }
 impl ListTestGridSessionActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionActionsOutput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput).
-    pub fn builder() -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsOutputBuilder {
         crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridSessionActionsOutput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridSessionActionsOutputBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTestGridSessionActionsOutputBuilder {
         self
     }
     /// <p>The action taken by the session.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The action taken by the session.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>> {
         &self.actions
     }
     /// <p>Pagination token.</p>
@@ -93,9 +86,7 @@ impl ListTestGridSessionActionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionActionsOutput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput {
+    pub fn build(self) -> crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput {
         crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput {
             actions: self.actions,
             next_token: self.next_token,

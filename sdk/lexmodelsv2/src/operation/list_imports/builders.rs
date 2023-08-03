@@ -10,10 +10,7 @@ impl ListImportsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_imports::ListImportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_imports::ListImportsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_imports();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListImportsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_imports::ListImports,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_imports::ListImports, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListImportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListImportsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_imports::ListImports,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_imports::ListImports, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListImportsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_imports::paginator::ListImportsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_imports::paginator::ListImportsPaginator {
-        crate::operation::list_imports::paginator::ListImportsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_imports::paginator::ListImportsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,17 +158,12 @@ impl ListImportsFluentBuilder {
         self
     }
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>

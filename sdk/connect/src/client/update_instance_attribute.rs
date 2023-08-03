@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`value(impl ::std::convert::Into<String>)`](crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeFluentBuilder::value) / [`set_value(Option<String>)`](crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeFluentBuilder::set_value): <p>The value for the attribute. Maximum character limit is 100. </p>
     /// - On success, responds with [`UpdateInstanceAttributeOutput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput)
     /// - On failure, responds with [`SdkError<UpdateInstanceAttributeError>`](crate::operation::update_instance_attribute::UpdateInstanceAttributeError)
-    pub fn update_instance_attribute(
-        &self,
-    ) -> crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeFluentBuilder
-    {
+    pub fn update_instance_attribute(&self) -> crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeFluentBuilder {
         crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

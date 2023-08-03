@@ -37,10 +37,7 @@ impl CreateDeploymentConfigFluentBuilder {
         }
     }
     /// Access the CreateDeploymentConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_deployment_config::builders::CreateDeploymentConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_deployment_config::builders::CreateDeploymentConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateDeploymentConfigFluentBuilder {
             crate::operation::create_deployment_config::CreateDeploymentConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_config::CreateDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_config::CreateDeploymentConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateDeploymentConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateDeploymentConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment_config::CreateDeploymentConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_config::CreateDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_config::CreateDeploymentConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateDeploymentConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment_config::CreateDeploymentConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_config::CreateDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_config::CreateDeploymentConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateDeploymentConfigFluentBuilder {
             crate::operation::create_deployment_config::CreateDeploymentConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment_config::CreateDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment_config::CreateDeploymentConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the deployment configuration to create.</p>
-    pub fn deployment_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_config_name(input.into());
         self
     }
     /// <p>The name of the deployment configuration to create.</p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_config_name(input);
         self
     }
@@ -163,10 +143,7 @@ impl CreateDeploymentConfigFluentBuilder {
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
-    pub fn set_minimum_healthy_hosts(
-        mut self,
-        input: ::std::option::Option<crate::types::MinimumHealthyHosts>,
-    ) -> Self {
+    pub fn set_minimum_healthy_hosts(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHosts>) -> Self {
         self.inner = self.inner.set_minimum_healthy_hosts(input);
         self
     }
@@ -178,9 +155,7 @@ impl CreateDeploymentConfigFluentBuilder {
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
-    pub fn get_minimum_healthy_hosts(
-        &self,
-    ) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
+    pub fn get_minimum_healthy_hosts(&self) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
         self.inner.get_minimum_healthy_hosts()
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
@@ -189,17 +164,12 @@ impl CreateDeploymentConfigFluentBuilder {
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-    pub fn set_traffic_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoutingConfig>,
-    ) -> Self {
+    pub fn set_traffic_routing_config(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfig>) -> Self {
         self.inner = self.inner.set_traffic_routing_config(input);
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-    pub fn get_traffic_routing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
+    pub fn get_traffic_routing_config(&self) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
         self.inner.get_traffic_routing_config()
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
@@ -208,10 +178,7 @@ impl CreateDeploymentConfigFluentBuilder {
         self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.inner = self.inner.set_compute_platform(input);
         self
     }

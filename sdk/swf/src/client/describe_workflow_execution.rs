@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_activity_task_timestamp(Option<DateTime>)`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput::latest_activity_task_timestamp): <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
     ///   - [`latest_execution_context(Option<String>)`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput::latest_execution_context): <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkflowExecutionError>`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionError)
-    pub fn describe_workflow_execution(&self) -> crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder{
+    pub fn describe_workflow_execution(&self) -> crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder {
         crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::new(self.handle.clone())
     }
 }

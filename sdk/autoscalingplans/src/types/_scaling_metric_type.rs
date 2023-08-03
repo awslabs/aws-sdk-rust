@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalingMetricType {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,29 +89,15 @@ impl ::std::convert::From<&str> for ScalingMetricType {
             "ASGAverageNetworkIn" => ScalingMetricType::AsgAverageNetworkIn,
             "ASGAverageNetworkOut" => ScalingMetricType::AsgAverageNetworkOut,
             "DynamoDBReadCapacityUtilization" => ScalingMetricType::DynamoDbReadCapacityUtilization,
-            "DynamoDBWriteCapacityUtilization" => {
-                ScalingMetricType::DynamoDbWriteCapacityUtilization
-            }
-            "EC2SpotFleetRequestAverageCPUUtilization" => {
-                ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization
-            }
-            "EC2SpotFleetRequestAverageNetworkIn" => {
-                ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn
-            }
-            "EC2SpotFleetRequestAverageNetworkOut" => {
-                ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut
-            }
+            "DynamoDBWriteCapacityUtilization" => ScalingMetricType::DynamoDbWriteCapacityUtilization,
+            "EC2SpotFleetRequestAverageCPUUtilization" => ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization,
+            "EC2SpotFleetRequestAverageNetworkIn" => ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn,
+            "EC2SpotFleetRequestAverageNetworkOut" => ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut,
             "ECSServiceAverageCPUUtilization" => ScalingMetricType::EcsServiceAverageCpuUtilization,
-            "ECSServiceAverageMemoryUtilization" => {
-                ScalingMetricType::EcsServiceAverageMemoryUtilization
-            }
+            "ECSServiceAverageMemoryUtilization" => ScalingMetricType::EcsServiceAverageMemoryUtilization,
             "RDSReaderAverageCPUUtilization" => ScalingMetricType::RdsReaderAverageCpuUtilization,
-            "RDSReaderAverageDatabaseConnections" => {
-                ScalingMetricType::RdsReaderAverageDatabaseConnections
-            }
-            other => {
-                ScalingMetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "RDSReaderAverageDatabaseConnections" => ScalingMetricType::RdsReaderAverageDatabaseConnections,
+            other => ScalingMetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -137,26 +117,14 @@ impl ScalingMetricType {
             ScalingMetricType::AsgAverageNetworkIn => "ASGAverageNetworkIn",
             ScalingMetricType::AsgAverageNetworkOut => "ASGAverageNetworkOut",
             ScalingMetricType::DynamoDbReadCapacityUtilization => "DynamoDBReadCapacityUtilization",
-            ScalingMetricType::DynamoDbWriteCapacityUtilization => {
-                "DynamoDBWriteCapacityUtilization"
-            }
-            ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization => {
-                "EC2SpotFleetRequestAverageCPUUtilization"
-            }
-            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn => {
-                "EC2SpotFleetRequestAverageNetworkIn"
-            }
-            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut => {
-                "EC2SpotFleetRequestAverageNetworkOut"
-            }
+            ScalingMetricType::DynamoDbWriteCapacityUtilization => "DynamoDBWriteCapacityUtilization",
+            ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization => "EC2SpotFleetRequestAverageCPUUtilization",
+            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
+            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
             ScalingMetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
-            ScalingMetricType::EcsServiceAverageMemoryUtilization => {
-                "ECSServiceAverageMemoryUtilization"
-            }
+            ScalingMetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
             ScalingMetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
-            ScalingMetricType::RdsReaderAverageDatabaseConnections => {
-                "RDSReaderAverageDatabaseConnections"
-            }
+            ScalingMetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
             ScalingMetricType::Unknown(value) => value.as_str(),
         }
     }

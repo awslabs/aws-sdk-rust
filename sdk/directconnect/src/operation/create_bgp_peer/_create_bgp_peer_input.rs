@@ -29,27 +29,19 @@ impl CreateBgpPeerInput {
 
 /// A builder for [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBgpPeerInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_bgp_peer: ::std::option::Option<crate::types::NewBgpPeer>,
 }
 impl CreateBgpPeerInputBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl CreateBgpPeerInputBuilder {
         self
     }
     /// <p>Information about the BGP peer.</p>
-    pub fn set_new_bgp_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::NewBgpPeer>,
-    ) -> Self {
+    pub fn set_new_bgp_peer(mut self, input: ::std::option::Option<crate::types::NewBgpPeer>) -> Self {
         self.new_bgp_peer = input;
         self
     }
@@ -77,10 +66,7 @@ impl CreateBgpPeerInputBuilder {
     /// Consumes the builder and constructs a [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bgp_peer::CreateBgpPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_bgp_peer::CreateBgpPeerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bgp_peer::CreateBgpPeerInput {
             virtual_interface_id: self.virtual_interface_id,
             new_bgp_peer: self.new_bgp_peer,

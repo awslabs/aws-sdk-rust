@@ -5,8 +5,7 @@
 pub struct CreateMediaLiveConnectorPipelineInput {
     /// <p>The media live connector pipeline's data sources.</p>
     #[doc(hidden)]
-    pub sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
     /// <p>The media live connector pipeline's data sinks.</p>
     #[doc(hidden)]
     pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
@@ -19,9 +18,7 @@ pub struct CreateMediaLiveConnectorPipelineInput {
 }
 impl CreateMediaLiveConnectorPipelineInput {
     /// <p>The media live connector pipeline's data sources.</p>
-    pub fn sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LiveConnectorSourceConfiguration]> {
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LiveConnectorSourceConfiguration]> {
         self.sources.as_deref()
     }
     /// <p>The media live connector pipeline's data sinks.</p>
@@ -49,7 +46,7 @@ impl ::std::fmt::Debug for CreateMediaLiveConnectorPipelineInput {
 }
 impl CreateMediaLiveConnectorPipelineInput {
     /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineInput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput).
-    pub fn builder() -> crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineInputBuilder{
+    pub fn builder() -> crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineInputBuilder {
         crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineInputBuilder::default()
     }
 }
@@ -58,10 +55,8 @@ impl CreateMediaLiveConnectorPipelineInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateMediaLiveConnectorPipelineInputBuilder {
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
-    pub(crate) sinks:
-        ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
+    pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -78,20 +73,12 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
         self
     }
     /// <p>The media live connector pipeline's data sources.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>,
-        >,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The media live connector pipeline's data sources.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>
-    {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>> {
         &self.sources
     }
     /// Appends an item to `sinks`.
@@ -106,32 +93,21 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
         self
     }
     /// <p>The media live connector pipeline's data sinks.</p>
-    pub fn set_sinks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
-    ) -> Self {
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>) -> Self {
         self.sinks = input;
         self
     }
     /// <p>The media live connector pipeline's data sinks.</p>
-    pub fn get_sinks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>> {
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>> {
         &self.sinks
     }
     /// <p>The token assigned to the client making the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token assigned to the client making the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -151,10 +127,7 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
         self
     }
     /// <p>The tags associated with the media live connector pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -163,18 +136,19 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMediaLiveConnectorPipelineInput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput {
-                sources: self.sources
-                ,
-                sinks: self.sinks
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                sources: self.sources,
+                sinks: self.sinks,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }

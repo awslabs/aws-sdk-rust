@@ -31,9 +31,7 @@ pub struct GetSavingsPlansPurchaseRecommendationInput {
 }
 impl GetSavingsPlansPurchaseRecommendationInput {
     /// <p>The Savings Plans recommendation type that's requested.</p>
-    pub fn savings_plans_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SupportedSavingsPlansType> {
+    pub fn savings_plans_type(&self) -> ::std::option::Option<&crate::types::SupportedSavingsPlansType> {
         self.savings_plans_type.as_ref()
     }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
@@ -57,9 +55,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         self.page_size
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
-    pub fn lookback_period_in_days(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> ::std::option::Option<&crate::types::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
@@ -70,16 +66,14 @@ impl GetSavingsPlansPurchaseRecommendationInput {
 }
 impl GetSavingsPlansPurchaseRecommendationInput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationInput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput).
-    pub fn builder() -> crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder{
+    pub fn builder() -> crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder {
         crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSavingsPlansPurchaseRecommendationInput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendationInputBuilder {
     pub(crate) savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
     pub(crate) term_in_years: ::std::option::Option<crate::types::TermInYears>,
@@ -97,17 +91,12 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         self
     }
     /// <p>The Savings Plans recommendation type that's requested.</p>
-    pub fn set_savings_plans_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
-    ) -> Self {
+    pub fn set_savings_plans_type(mut self, input: ::std::option::Option<crate::types::SupportedSavingsPlansType>) -> Self {
         self.savings_plans_type = input;
         self
     }
     /// <p>The Savings Plans recommendation type that's requested.</p>
-    pub fn get_savings_plans_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
+    pub fn get_savings_plans_type(&self) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
         &self.savings_plans_type
     }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
@@ -116,10 +105,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         self
     }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
-    pub fn set_term_in_years(
-        mut self,
-        input: ::std::option::Option<crate::types::TermInYears>,
-    ) -> Self {
+    pub fn set_term_in_years(mut self, input: ::std::option::Option<crate::types::TermInYears>) -> Self {
         self.term_in_years = input;
         self
     }
@@ -133,10 +119,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         self
     }
     /// <p>The payment option that's used to generate these recommendations.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
@@ -150,10 +133,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         self
     }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    pub fn set_account_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountScope>,
-    ) -> Self {
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
         self.account_scope = input;
         self
     }
@@ -162,18 +142,12 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         &self.account_scope
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -201,17 +175,12 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         self
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
-    pub fn set_lookback_period_in_days(
-        mut self,
-        input: ::std::option::Option<crate::types::LookbackPeriodInDays>,
-    ) -> Self {
+    pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<crate::types::LookbackPeriodInDays>) -> Self {
         self.lookback_period_in_days = input;
         self
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
-    pub fn get_lookback_period_in_days(
-        &self,
-    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+    pub fn get_lookback_period_in_days(&self) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
         &self.lookback_period_in_days
     }
     /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
@@ -232,26 +201,23 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansPurchaseRecommendationInput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput {
-                savings_plans_type: self.savings_plans_type
-                ,
-                term_in_years: self.term_in_years
-                ,
-                payment_option: self.payment_option
-                ,
-                account_scope: self.account_scope
-                ,
-                next_page_token: self.next_page_token
-                ,
-                page_size: self.page_size
-                ,
-                lookback_period_in_days: self.lookback_period_in_days
-                ,
-                filter: self.filter
-                ,
-            }
+                savings_plans_type: self.savings_plans_type,
+                term_in_years: self.term_in_years,
+                payment_option: self.payment_option,
+                account_scope: self.account_scope,
+                next_page_token: self.next_page_token,
+                page_size: self.page_size,
+                lookback_period_in_days: self.lookback_period_in_days,
+                filter: self.filter,
+            },
         )
     }
 }

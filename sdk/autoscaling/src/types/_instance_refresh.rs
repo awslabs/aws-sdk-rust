@@ -105,9 +105,7 @@ impl InstanceRefresh {
         self.instances_to_update
     }
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
-    pub fn progress_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRefreshProgressDetails> {
+    pub fn progress_details(&self) -> ::std::option::Option<&crate::types::InstanceRefreshProgressDetails> {
         self.progress_details.as_ref()
     }
     /// <p>The preferences for an instance refresh.</p>
@@ -115,9 +113,7 @@ impl InstanceRefresh {
         self.preferences.as_ref()
     }
     /// <p>Describes the desired configuration for the instance refresh.</p>
-    pub fn desired_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DesiredConfiguration> {
+    pub fn desired_configuration(&self) -> ::std::option::Option<&crate::types::DesiredConfiguration> {
         self.desired_configuration.as_ref()
     }
     /// <p>The rollback details.</p>
@@ -134,9 +130,7 @@ impl InstanceRefresh {
 
 /// A builder for [`InstanceRefresh`](crate::types::InstanceRefresh).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceRefreshBuilder {
     pub(crate) instance_refresh_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -146,26 +140,19 @@ pub struct InstanceRefreshBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percentage_complete: ::std::option::Option<i32>,
     pub(crate) instances_to_update: ::std::option::Option<i32>,
-    pub(crate) progress_details:
-        ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
+    pub(crate) progress_details: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
     pub(crate) preferences: ::std::option::Option<crate::types::RefreshPreferences>,
     pub(crate) desired_configuration: ::std::option::Option<crate::types::DesiredConfiguration>,
     pub(crate) rollback_details: ::std::option::Option<crate::types::RollbackDetails>,
 }
 impl InstanceRefreshBuilder {
     /// <p>The instance refresh ID.</p>
-    pub fn instance_refresh_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_refresh_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance refresh ID.</p>
-    pub fn set_instance_refresh_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_refresh_id = input;
         self
     }
@@ -174,18 +161,12 @@ impl InstanceRefreshBuilder {
         &self.instance_refresh_id
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -221,10 +202,7 @@ impl InstanceRefreshBuilder {
     /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li>
     /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRefreshStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceRefreshStatus>) -> Self {
         self.status = input;
         self
     }
@@ -244,18 +222,12 @@ impl InstanceRefreshBuilder {
         &self.status
     }
     /// <p>The explanation for the specific status assigned to this operation.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The explanation for the specific status assigned to this operation.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -269,10 +241,7 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The date and time at which the instance refresh began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -286,10 +255,7 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The date and time at which the instance refresh ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -343,17 +309,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
-    pub fn set_progress_details(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
-    ) -> Self {
+    pub fn set_progress_details(mut self, input: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>) -> Self {
         self.progress_details = input;
         self
     }
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
-    pub fn get_progress_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRefreshProgressDetails> {
+    pub fn get_progress_details(&self) -> &::std::option::Option<crate::types::InstanceRefreshProgressDetails> {
         &self.progress_details
     }
     /// <p>The preferences for an instance refresh.</p>
@@ -362,10 +323,7 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The preferences for an instance refresh.</p>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
         self.preferences = input;
         self
     }
@@ -379,17 +337,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>Describes the desired configuration for the instance refresh.</p>
-    pub fn set_desired_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredConfiguration>,
-    ) -> Self {
+    pub fn set_desired_configuration(mut self, input: ::std::option::Option<crate::types::DesiredConfiguration>) -> Self {
         self.desired_configuration = input;
         self
     }
     /// <p>Describes the desired configuration for the instance refresh.</p>
-    pub fn get_desired_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DesiredConfiguration> {
+    pub fn get_desired_configuration(&self) -> &::std::option::Option<crate::types::DesiredConfiguration> {
         &self.desired_configuration
     }
     /// <p>The rollback details.</p>
@@ -398,10 +351,7 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The rollback details.</p>
-    pub fn set_rollback_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RollbackDetails>,
-    ) -> Self {
+    pub fn set_rollback_details(mut self, input: ::std::option::Option<crate::types::RollbackDetails>) -> Self {
         self.rollback_details = input;
         self
     }

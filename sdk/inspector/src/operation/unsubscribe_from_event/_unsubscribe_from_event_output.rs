@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UnsubscribeFromEventOutput {
 }
 impl UnsubscribeFromEventOutput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeFromEventOutput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput).
-    pub fn builder(
-    ) -> crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventOutputBuilder {
+    pub fn builder() -> crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventOutputBuilder {
         crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnsubscribeFromEventOutput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsubscribeFromEventOutputBuilder {
     _request_id: Option<String>,
 }

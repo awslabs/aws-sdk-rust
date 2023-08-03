@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetSnapshotAttributeOutput {
 }
 impl ResetSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ResetSnapshotAttributeOutput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeOutputBuilder {
         crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetSnapshotAttributeOutput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetSnapshotAttributeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,8 +8,7 @@ pub struct BatchGetCollectionOutput {
     pub collection_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
     /// <p>Error information for the request.</p>
     #[doc(hidden)]
-    pub collection_error_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
+    pub collection_error_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchGetCollectionOutput {
@@ -18,9 +17,7 @@ impl BatchGetCollectionOutput {
         self.collection_details.as_deref()
     }
     /// <p>Error information for the request.</p>
-    pub fn collection_error_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CollectionErrorDetail]> {
+    pub fn collection_error_details(&self) -> ::std::option::Option<&[crate::types::CollectionErrorDetail]> {
         self.collection_error_details.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetCollectionOutput {
 }
 impl BatchGetCollectionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCollectionOutput`](crate::operation::batch_get_collection::BatchGetCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_collection::builders::BatchGetCollectionOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_collection::builders::BatchGetCollectionOutputBuilder {
         crate::operation::batch_get_collection::builders::BatchGetCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCollectionOutput`](crate::operation::batch_get_collection::BatchGetCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCollectionOutputBuilder {
-    pub(crate) collection_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
-    pub(crate) collection_error_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
+    pub(crate) collection_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
+    pub(crate) collection_error_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchGetCollectionOutputBuilder {
@@ -62,17 +54,12 @@ impl BatchGetCollectionOutputBuilder {
         self
     }
     /// <p>Details about each collection.</p>
-    pub fn set_collection_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
-    ) -> Self {
+    pub fn set_collection_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>) -> Self {
         self.collection_details = input;
         self
     }
     /// <p>Details about each collection.</p>
-    pub fn get_collection_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>> {
+    pub fn get_collection_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>> {
         &self.collection_details
     }
     /// Appends an item to `collection_error_details`.
@@ -87,17 +74,12 @@ impl BatchGetCollectionOutputBuilder {
         self
     }
     /// <p>Error information for the request.</p>
-    pub fn set_collection_error_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
-    ) -> Self {
+    pub fn set_collection_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>) -> Self {
         self.collection_error_details = input;
         self
     }
     /// <p>Error information for the request.</p>
-    pub fn get_collection_error_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>> {
+    pub fn get_collection_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>> {
         &self.collection_error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

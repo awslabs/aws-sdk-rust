@@ -10,10 +10,7 @@ impl UpdateFirewallRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_rule::UpdateFirewallRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_rule::UpdateFirewallRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_firewall_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFirewallRuleFluentBuilder {
         }
     }
     /// Access the UpdateFirewallRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_firewall_rule::builders::UpdateFirewallRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_firewall_rule::builders::UpdateFirewallRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateFirewallRuleFluentBuilder {
             crate::operation::update_firewall_rule::UpdateFirewallRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_rule::UpdateFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateFirewallRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateFirewallRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_rule::UpdateFirewallRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_rule::UpdateFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateFirewallRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_rule::UpdateFirewallRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_rule::UpdateFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateFirewallRuleFluentBuilder {
             crate::operation::update_firewall_rule::UpdateFirewallRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_rule::UpdateFirewallRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the firewall rule group for the rule. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group for the rule. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateFirewallRuleFluentBuilder {
         self.inner.get_firewall_rule_group_id()
     }
     /// <p>The ID of the domain list to use in the rule. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
     /// <p>The ID of the domain list to use in the rule. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
@@ -224,10 +196,7 @@ impl UpdateFirewallRuleFluentBuilder {
     /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
     /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
     /// </ul>
-    pub fn set_block_response(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockResponse>,
-    ) -> Self {
+    pub fn set_block_response(mut self, input: ::std::option::Option<crate::types::BlockResponse>) -> Self {
         self.inner = self.inner.set_block_response(input);
         self
     }
@@ -241,18 +210,12 @@ impl UpdateFirewallRuleFluentBuilder {
         self.inner.get_block_response()
     }
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn block_override_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn block_override_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.block_override_domain(input.into());
         self
     }
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn set_block_override_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_block_override_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_block_override_domain(input);
         self
     }
@@ -266,17 +229,12 @@ impl UpdateFirewallRuleFluentBuilder {
         self
     }
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn set_block_override_dns_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockOverrideDnsType>,
-    ) -> Self {
+    pub fn set_block_override_dns_type(mut self, input: ::std::option::Option<crate::types::BlockOverrideDnsType>) -> Self {
         self.inner = self.inner.set_block_override_dns_type(input);
         self
     }
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-    pub fn get_block_override_dns_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockOverrideDnsType> {
+    pub fn get_block_override_dns_type(&self) -> &::std::option::Option<crate::types::BlockOverrideDnsType> {
         self.inner.get_block_override_dns_type()
     }
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>

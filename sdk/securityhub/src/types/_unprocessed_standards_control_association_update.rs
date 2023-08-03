@@ -6,8 +6,7 @@
 pub struct UnprocessedStandardsControlAssociationUpdate {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
     #[doc(hidden)]
-    pub standards_control_association_update:
-        ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
+    pub standards_control_association_update: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
     #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
@@ -17,9 +16,7 @@ pub struct UnprocessedStandardsControlAssociationUpdate {
 }
 impl UnprocessedStandardsControlAssociationUpdate {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn standards_control_association_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StandardsControlAssociationUpdate> {
+    pub fn standards_control_association_update(&self) -> ::std::option::Option<&crate::types::StandardsControlAssociationUpdate> {
         self.standards_control_association_update.as_ref()
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
@@ -33,44 +30,32 @@ impl UnprocessedStandardsControlAssociationUpdate {
 }
 impl UnprocessedStandardsControlAssociationUpdate {
     /// Creates a new builder-style object to manufacture [`UnprocessedStandardsControlAssociationUpdate`](crate::types::UnprocessedStandardsControlAssociationUpdate).
-    pub fn builder() -> crate::types::builders::UnprocessedStandardsControlAssociationUpdateBuilder
-    {
+    pub fn builder() -> crate::types::builders::UnprocessedStandardsControlAssociationUpdateBuilder {
         crate::types::builders::UnprocessedStandardsControlAssociationUpdateBuilder::default()
     }
 }
 
 /// A builder for [`UnprocessedStandardsControlAssociationUpdate`](crate::types::UnprocessedStandardsControlAssociationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedStandardsControlAssociationUpdateBuilder {
-    pub(crate) standards_control_association_update:
-        ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
+    pub(crate) standards_control_association_update: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
     pub(crate) error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedStandardsControlAssociationUpdateBuilder {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn standards_control_association_update(
-        mut self,
-        input: crate::types::StandardsControlAssociationUpdate,
-    ) -> Self {
+    pub fn standards_control_association_update(mut self, input: crate::types::StandardsControlAssociationUpdate) -> Self {
         self.standards_control_association_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn set_standards_control_association_update(
-        mut self,
-        input: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
-    ) -> Self {
+    pub fn set_standards_control_association_update(mut self, input: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>) -> Self {
         self.standards_control_association_update = input;
         self
     }
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn get_standards_control_association_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::StandardsControlAssociationUpdate> {
+    pub fn get_standards_control_association_update(&self) -> &::std::option::Option<crate::types::StandardsControlAssociationUpdate> {
         &self.standards_control_association_update
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
@@ -79,10 +64,7 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
         self
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::UnprocessedErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
         self.error_code = input;
         self
     }

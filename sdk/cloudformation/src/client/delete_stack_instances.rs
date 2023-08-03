@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteStackInstancesOutput`](crate::operation::delete_stack_instances::DeleteStackInstancesOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::delete_stack_instances::DeleteStackInstancesOutput::operation_id): <p>The unique identifier for this stack set operation.</p>
     /// - On failure, responds with [`SdkError<DeleteStackInstancesError>`](crate::operation::delete_stack_instances::DeleteStackInstancesError)
-    pub fn delete_stack_instances(
-        &self,
-    ) -> crate::operation::delete_stack_instances::builders::DeleteStackInstancesFluentBuilder {
-        crate::operation::delete_stack_instances::builders::DeleteStackInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_stack_instances(&self) -> crate::operation::delete_stack_instances::builders::DeleteStackInstancesFluentBuilder {
+        crate::operation::delete_stack_instances::builders::DeleteStackInstancesFluentBuilder::new(self.handle.clone())
     }
 }

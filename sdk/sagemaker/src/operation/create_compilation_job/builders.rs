@@ -47,9 +47,7 @@ impl CreateCompilationJobFluentBuilder {
         }
     }
     /// Access the CreateCompilationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_compilation_job::builders::CreateCompilationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_compilation_job::builders::CreateCompilationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +59,7 @@ impl CreateCompilationJobFluentBuilder {
             crate::operation::create_compilation_job::CreateCompilationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compilation_job::CreateCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compilation_job::CreateCompilationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +69,7 @@ impl CreateCompilationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +78,7 @@ impl CreateCompilationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_compilation_job::CreateCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compilation_job::CreateCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compilation_job::CreateCompilationJobError>,
     > {
         let op = self
             .inner
@@ -110,9 +101,7 @@ impl CreateCompilationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_compilation_job::CreateCompilationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compilation_job::CreateCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compilation_job::CreateCompilationJobError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +115,17 @@ impl CreateCompilationJobFluentBuilder {
             crate::operation::create_compilation_job::CreateCompilationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compilation_job::CreateCompilationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compilation_job::CreateCompilationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compilation_job_name(input.into());
         self
     }
     /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
     }
@@ -191,18 +172,12 @@ impl CreateCompilationJobFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
-    pub fn model_package_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
-    pub fn set_model_package_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_version_arn(input);
         self
     }
@@ -216,10 +191,7 @@ impl CreateCompilationJobFluentBuilder {
         self
     }
     /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::InputConfig>) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
     }
@@ -233,10 +205,7 @@ impl CreateCompilationJobFluentBuilder {
         self
     }
     /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -250,10 +219,7 @@ impl CreateCompilationJobFluentBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NeoVpcConfig>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::NeoVpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
     }
@@ -267,17 +233,12 @@ impl CreateCompilationJobFluentBuilder {
         self
     }
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::StoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::StoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::StoppingCondition> {
         self.inner.get_stopping_condition()
     }
     /// Appends an item to `Tags`.
@@ -290,10 +251,7 @@ impl CreateCompilationJobFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

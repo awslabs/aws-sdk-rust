@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`job_arn(Option<String>)`](crate::operation::start_events_detection_job::StartEventsDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :events-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_events_detection_job::StartEventsDetectionJobOutput::job_status): <p>The status of the events detection job.</p>
     /// - On failure, responds with [`SdkError<StartEventsDetectionJobError>`](crate::operation::start_events_detection_job::StartEventsDetectionJobError)
-    pub fn start_events_detection_job(
-        &self,
-    ) -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobFluentBuilder
-    {
+    pub fn start_events_detection_job(&self) -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobFluentBuilder {
         crate::operation::start_events_detection_job::builders::StartEventsDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

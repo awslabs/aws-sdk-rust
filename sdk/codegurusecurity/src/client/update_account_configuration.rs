@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput) with field(s):
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput::encryption_config): <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountConfigurationError>`](crate::operation::update_account_configuration::UpdateAccountConfigurationError)
-    pub fn update_account_configuration(&self) -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder{
+    pub fn update_account_configuration(&self) -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder {
         crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

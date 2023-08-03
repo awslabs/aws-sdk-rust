@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`role_mappings(HashMap<String, RoleMapping>)`](crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesFluentBuilder::role_mappings) / [`set_role_mappings(Option<HashMap<String, RoleMapping>>)`](crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesFluentBuilder::set_role_mappings): <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>  <p>Up to 25 rules can be specified per identity provider.</p>
     /// - On success, responds with [`SetIdentityPoolRolesOutput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput)
     /// - On failure, responds with [`SdkError<SetIdentityPoolRolesError>`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError)
-    pub fn set_identity_pool_roles(
-        &self,
-    ) -> crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesFluentBuilder
-    {
-        crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_identity_pool_roles(&self) -> crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesFluentBuilder {
+        crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesFluentBuilder::new(self.handle.clone())
     }
 }

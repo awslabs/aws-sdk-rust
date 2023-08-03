@@ -23,12 +23,9 @@ impl TcpRouteAction {
 
 /// A builder for [`TcpRouteAction`](crate::types::TcpRouteAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TcpRouteActionBuilder {
-    pub(crate) weighted_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
+    pub(crate) weighted_targets: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
 }
 impl TcpRouteActionBuilder {
     /// Appends an item to `weighted_targets`.
@@ -43,17 +40,12 @@ impl TcpRouteActionBuilder {
         self
     }
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn set_weighted_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
-    ) -> Self {
+    pub fn set_weighted_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>) -> Self {
         self.weighted_targets = input;
         self
     }
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn get_weighted_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>> {
+    pub fn get_weighted_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>> {
         &self.weighted_targets
     }
     /// Consumes the builder and constructs a [`TcpRouteAction`](crate::types::TcpRouteAction).

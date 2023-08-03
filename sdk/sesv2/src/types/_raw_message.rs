@@ -41,9 +41,7 @@ impl RawMessage {
 
 /// A builder for [`RawMessage`](crate::types::RawMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RawMessageBuilder {
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
 }

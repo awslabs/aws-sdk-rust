@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCoreNetworkOutput`](crate::operation::create_core_network::CreateCoreNetworkOutput) with field(s):
     ///   - [`core_network(Option<CoreNetwork>)`](crate::operation::create_core_network::CreateCoreNetworkOutput::core_network): <p>Returns details about a core network.</p>
     /// - On failure, responds with [`SdkError<CreateCoreNetworkError>`](crate::operation::create_core_network::CreateCoreNetworkError)
-    pub fn create_core_network(
-        &self,
-    ) -> crate::operation::create_core_network::builders::CreateCoreNetworkFluentBuilder {
-        crate::operation::create_core_network::builders::CreateCoreNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_core_network(&self) -> crate::operation::create_core_network::builders::CreateCoreNetworkFluentBuilder {
+        crate::operation::create_core_network::builders::CreateCoreNetworkFluentBuilder::new(self.handle.clone())
     }
 }

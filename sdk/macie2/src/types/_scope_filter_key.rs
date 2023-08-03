@@ -40,13 +40,7 @@
 /// <p>The property to use in a condition that determines whether an S3 object is included or excluded from a classification job. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScopeFilterKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ScopeFilterKey {
             "OBJECT_KEY" => ScopeFilterKey::ObjectKey,
             "OBJECT_LAST_MODIFIED_DATE" => ScopeFilterKey::ObjectLastModifiedDate,
             "OBJECT_SIZE" => ScopeFilterKey::ObjectSize,
-            other => {
-                ScopeFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScopeFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ScopeFilterKey {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "OBJECT_EXTENSION",
-            "OBJECT_KEY",
-            "OBJECT_LAST_MODIFIED_DATE",
-            "OBJECT_SIZE",
-        ]
+        &["OBJECT_EXTENSION", "OBJECT_KEY", "OBJECT_LAST_MODIFIED_DATE", "OBJECT_SIZE"]
     }
 }
 impl ::std::convert::AsRef<str> for ScopeFilterKey {

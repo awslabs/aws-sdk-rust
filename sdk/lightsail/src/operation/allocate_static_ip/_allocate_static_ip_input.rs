@@ -15,34 +15,25 @@ impl AllocateStaticIpInput {
 }
 impl AllocateStaticIpInput {
     /// Creates a new builder-style object to manufacture [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
-    pub fn builder() -> crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder
-    {
+    pub fn builder() -> crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder {
         crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder::default()
     }
 }
 
 /// A builder for [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
 }
 impl AllocateStaticIpInputBuilder {
     /// <p>The name of the static IP address.</p>
-    pub fn static_ip_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the static IP address.</p>
-    pub fn set_static_ip_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_static_ip_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.static_ip_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl AllocateStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::allocate_static_ip::AllocateStaticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::allocate_static_ip::AllocateStaticIpInput {
-                static_ip_name: self.static_ip_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::allocate_static_ip::AllocateStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::allocate_static_ip::AllocateStaticIpInput {
+            static_ip_name: self.static_ip_name,
+        })
     }
 }

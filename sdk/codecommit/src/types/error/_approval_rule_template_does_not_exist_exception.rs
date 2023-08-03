@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ApprovalRuleTemplateDoesNotExistException {
     }
 }
 impl ::std::error::Error for ApprovalRuleTemplateDoesNotExistException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ApprovalRuleTemplateDoesNotExistException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ApprovalRuleTemplateDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ApprovalRuleTemplateDoesNotExistException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ApprovalRuleTemplateDoesNotExistException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ApprovalRuleTemplateDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplateDoesNotExistException`](crate::types::error::ApprovalRuleTemplateDoesNotExistException).
-    pub fn builder(
-    ) -> crate::types::error::builders::ApprovalRuleTemplateDoesNotExistExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::ApprovalRuleTemplateDoesNotExistExceptionBuilder {
         crate::types::error::builders::ApprovalRuleTemplateDoesNotExistExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ApprovalRuleTemplateDoesNotExistException`](crate::types::error::ApprovalRuleTemplateDoesNotExistException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleTemplateDoesNotExistExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ApprovalRuleTemplateDoesNotExistExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

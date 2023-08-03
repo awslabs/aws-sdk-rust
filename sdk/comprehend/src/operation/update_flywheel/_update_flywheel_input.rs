@@ -30,9 +30,7 @@ impl UpdateFlywheelInput {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn data_security_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateDataSecurityConfig> {
+    pub fn data_security_config(&self) -> ::std::option::Option<&crate::types::UpdateDataSecurityConfig> {
         self.data_security_config.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl UpdateFlywheelInput {
 
 /// A builder for [`UpdateFlywheelInput`](crate::operation::update_flywheel::UpdateFlywheelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlywheelInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_model_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl UpdateFlywheelInputBuilder {
         &self.flywheel_arn
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn active_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn set_active_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_model_arn = input;
         self
     }
@@ -90,18 +80,12 @@ impl UpdateFlywheelInputBuilder {
         &self.active_model_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -115,26 +99,18 @@ impl UpdateFlywheelInputBuilder {
         self
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn set_data_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateDataSecurityConfig>,
-    ) -> Self {
+    pub fn set_data_security_config(mut self, input: ::std::option::Option<crate::types::UpdateDataSecurityConfig>) -> Self {
         self.data_security_config = input;
         self
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn get_data_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateDataSecurityConfig> {
+    pub fn get_data_security_config(&self) -> &::std::option::Option<crate::types::UpdateDataSecurityConfig> {
         &self.data_security_config
     }
     /// Consumes the builder and constructs a [`UpdateFlywheelInput`](crate::operation::update_flywheel::UpdateFlywheelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flywheel::UpdateFlywheelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_flywheel::UpdateFlywheelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flywheel::UpdateFlywheelInput {
             flywheel_arn: self.flywheel_arn,
             active_model_arn: self.active_model_arn,

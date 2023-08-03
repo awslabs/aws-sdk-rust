@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`action_id(Option<String>)`](crate::operation::execute_budget_action::ExecuteBudgetActionOutput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     ///   - [`execution_type(Option<ExecutionType>)`](crate::operation::execute_budget_action::ExecuteBudgetActionOutput::execution_type): <p> The type of execution. </p>
     /// - On failure, responds with [`SdkError<ExecuteBudgetActionError>`](crate::operation::execute_budget_action::ExecuteBudgetActionError)
-    pub fn execute_budget_action(
-        &self,
-    ) -> crate::operation::execute_budget_action::builders::ExecuteBudgetActionFluentBuilder {
-        crate::operation::execute_budget_action::builders::ExecuteBudgetActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_budget_action(&self) -> crate::operation::execute_budget_action::builders::ExecuteBudgetActionFluentBuilder {
+        crate::operation::execute_budget_action::builders::ExecuteBudgetActionFluentBuilder::new(self.handle.clone())
     }
 }

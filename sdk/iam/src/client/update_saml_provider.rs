@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSamlProviderOutput`](crate::operation::update_saml_provider::UpdateSamlProviderOutput) with field(s):
     ///   - [`saml_provider_arn(Option<String>)`](crate::operation::update_saml_provider::UpdateSamlProviderOutput::saml_provider_arn): <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateSAMLProviderError>`](crate::operation::update_saml_provider::UpdateSAMLProviderError)
-    pub fn update_saml_provider(
-        &self,
-    ) -> crate::operation::update_saml_provider::builders::UpdateSAMLProviderFluentBuilder {
-        crate::operation::update_saml_provider::builders::UpdateSAMLProviderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_saml_provider(&self) -> crate::operation::update_saml_provider::builders::UpdateSAMLProviderFluentBuilder {
+        crate::operation::update_saml_provider::builders::UpdateSAMLProviderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`registries(Option<Vec<Registry>>)`](crate::operation::describe_registries::DescribeRegistriesOutput::registries): <p>An object that contains the details for a public registry.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_registries::DescribeRegistriesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeRegistriesError>`](crate::operation::describe_registries::DescribeRegistriesError)
-    pub fn describe_registries(
-        &self,
-    ) -> crate::operation::describe_registries::builders::DescribeRegistriesFluentBuilder {
-        crate::operation::describe_registries::builders::DescribeRegistriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_registries(&self) -> crate::operation::describe_registries::builders::DescribeRegistriesFluentBuilder {
+        crate::operation::describe_registries::builders::DescribeRegistriesFluentBuilder::new(self.handle.clone())
     }
 }

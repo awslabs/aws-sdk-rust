@@ -50,9 +50,7 @@ impl StartImportInput {
 
 /// A builder for [`StartImportInput`](crate::operation::start_import::StartImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportInputBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) import_source: ::std::option::Option<crate::types::ImportSource>,
@@ -73,17 +71,12 @@ impl StartImportInputBuilder {
         self
     }
     /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destinations
     }
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
@@ -92,10 +85,7 @@ impl StartImportInputBuilder {
         self
     }
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
-    pub fn set_import_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportSource>,
-    ) -> Self {
+    pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportSource>) -> Self {
         self.import_source = input;
         self
     }
@@ -109,10 +99,7 @@ impl StartImportInputBuilder {
         self
     }
     /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
-    pub fn set_start_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_event_time = input;
         self
     }
@@ -126,10 +113,7 @@ impl StartImportInputBuilder {
         self
     }
     /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
-    pub fn set_end_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_event_time = input;
         self
     }
@@ -152,12 +136,7 @@ impl StartImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_import::StartImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             destinations: self.destinations,
             import_source: self.import_source,

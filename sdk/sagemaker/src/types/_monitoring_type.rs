@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MonitoringType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for MonitoringType {
             "ModelBias" => MonitoringType::ModelBias,
             "ModelExplainability" => MonitoringType::ModelExplainability,
             "ModelQuality" => MonitoringType::ModelQuality,
-            other => {
-                MonitoringType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MonitoringType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl MonitoringType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DataQuality",
-            "ModelBias",
-            "ModelExplainability",
-            "ModelQuality",
-        ]
+        &["DataQuality", "ModelBias", "ModelExplainability", "ModelQuality"]
     }
 }
 impl ::std::convert::AsRef<str> for MonitoringType {

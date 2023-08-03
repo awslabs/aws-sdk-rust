@@ -5,16 +5,16 @@ pub use crate::operation::update_virtual_interface_attributes::_update_virtual_i
 
 impl UpdateVirtualInterfaceAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_virtual_interface_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder,
+    inner: crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder,
 }
 impl UpdateVirtualInterfaceAttributesFluentBuilder {
     /// Creates a new `UpdateVirtualInterfaceAttributes`.
@@ -38,15 +38,20 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
         }
     }
     /// Access the UpdateVirtualInterfaceAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual private interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual private interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
@@ -144,18 +153,12 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
         self.inner.get_enable_site_link()
     }
     /// <p>The name of the virtual private interface.</p>
-    pub fn virtual_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_name(input.into());
         self
     }
     /// <p>The name of the virtual private interface.</p>
-    pub fn set_virtual_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_name(input);
         self
     }

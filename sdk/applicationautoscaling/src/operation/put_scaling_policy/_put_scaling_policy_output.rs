@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for PutScalingPolicyOutput {
 }
 impl PutScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutScalingPolicyOutput`](crate::operation::put_scaling_policy::PutScalingPolicyOutput).
-    pub fn builder() -> crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder {
         crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutScalingPolicyOutput`](crate::operation::put_scaling_policy::PutScalingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutScalingPolicyOutputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
@@ -71,10 +68,7 @@ impl PutScalingPolicyOutputBuilder {
         self
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
         self.alarms = input;
         self
     }

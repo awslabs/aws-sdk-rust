@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateForecastExportJobOutput`](crate::operation::create_forecast_export_job::CreateForecastExportJobOutput) with field(s):
     ///   - [`forecast_export_job_arn(Option<String>)`](crate::operation::create_forecast_export_job::CreateForecastExportJobOutput::forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the export job.</p>
     /// - On failure, responds with [`SdkError<CreateForecastExportJobError>`](crate::operation::create_forecast_export_job::CreateForecastExportJobError)
-    pub fn create_forecast_export_job(
-        &self,
-    ) -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobFluentBuilder
-    {
+    pub fn create_forecast_export_job(&self) -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobFluentBuilder {
         crate::operation::create_forecast_export_job::builders::CreateForecastExportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,9 +14,7 @@ pub struct ConflictException {
 }
 impl ConflictException {
     /// <p>The type of ConflictException.</p>
-    pub fn conflict_exception_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConflictExceptionType> {
+    pub fn conflict_exception_type(&self) -> ::std::option::Option<&crate::types::ConflictExceptionType> {
         self.conflict_exception_type.as_ref()
     }
 }
@@ -58,9 +56,7 @@ impl ConflictException {
 
 /// A builder for [`ConflictException`](crate::types::error::ConflictException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) conflict_exception_type: ::std::option::Option<crate::types::ConflictExceptionType>,
@@ -87,17 +83,12 @@ impl ConflictExceptionBuilder {
         self
     }
     /// <p>The type of ConflictException.</p>
-    pub fn set_conflict_exception_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictExceptionType>,
-    ) -> Self {
+    pub fn set_conflict_exception_type(mut self, input: ::std::option::Option<crate::types::ConflictExceptionType>) -> Self {
         self.conflict_exception_type = input;
         self
     }
     /// <p>The type of ConflictException.</p>
-    pub fn get_conflict_exception_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictExceptionType> {
+    pub fn get_conflict_exception_type(&self) -> &::std::option::Option<crate::types::ConflictExceptionType> {
         &self.conflict_exception_type
     }
     /// Sets error metadata
@@ -107,10 +98,7 @@ impl ConflictExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

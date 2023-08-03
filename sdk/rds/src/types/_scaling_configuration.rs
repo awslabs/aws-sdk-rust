@@ -89,9 +89,7 @@ impl ScalingConfiguration {
 
 /// A builder for [`ScalingConfiguration`](crate::types::ScalingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingConfigurationBuilder {
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
@@ -190,10 +188,7 @@ impl ScalingConfigurationBuilder {
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn timeout_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timeout_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timeout_action = ::std::option::Option::Some(input.into());
         self
     }
@@ -203,10 +198,7 @@ impl ScalingConfigurationBuilder {
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_timeout_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timeout_action = input;
         self
     }

@@ -27,8 +27,7 @@ impl UpdateDomainNameserversInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainNameserversFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder,
+    inner: crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder,
 }
 impl UpdateDomainNameserversFluentBuilder {
     /// Creates a new `UpdateDomainNameservers`.
@@ -39,10 +38,7 @@ impl UpdateDomainNameserversFluentBuilder {
         }
     }
     /// Access the UpdateDomainNameservers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UpdateDomainNameserversFluentBuilder {
             crate::operation::update_domain_nameservers::UpdateDomainNameservers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_nameservers::UpdateDomainNameserversError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UpdateDomainNameserversFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UpdateDomainNameserversFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_nameservers::UpdateDomainNameserversError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UpdateDomainNameserversFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_nameservers::UpdateDomainNameserversError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl UpdateDomainNameserversFluentBuilder {
             crate::operation::update_domain_nameservers::UpdateDomainNameservers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_nameservers::UpdateDomainNameserversError>,
     > {
         self.customize_middleware().await
     }
@@ -166,17 +151,12 @@ impl UpdateDomainNameserversFluentBuilder {
         self
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn set_nameservers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
-    ) -> Self {
+    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>) -> Self {
         self.inner = self.inner.set_nameservers(input);
         self
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn get_nameservers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
         self.inner.get_nameservers()
     }
 }

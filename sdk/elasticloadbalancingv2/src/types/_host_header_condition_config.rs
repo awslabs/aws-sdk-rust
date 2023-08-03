@@ -25,9 +25,7 @@ impl HostHeaderConditionConfig {
 
 /// A builder for [`HostHeaderConditionConfig`](crate::types::HostHeaderConditionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostHeaderConditionConfigBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -46,10 +44,7 @@ impl HostHeaderConditionConfigBuilder {
     }
     /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -60,8 +55,6 @@ impl HostHeaderConditionConfigBuilder {
     }
     /// Consumes the builder and constructs a [`HostHeaderConditionConfig`](crate::types::HostHeaderConditionConfig).
     pub fn build(self) -> crate::types::HostHeaderConditionConfig {
-        crate::types::HostHeaderConditionConfig {
-            values: self.values,
-        }
+        crate::types::HostHeaderConditionConfig { values: self.values }
     }
 }

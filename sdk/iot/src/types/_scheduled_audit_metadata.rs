@@ -51,9 +51,7 @@ impl ScheduledAuditMetadata {
 
 /// A builder for [`ScheduledAuditMetadata`](crate::types::ScheduledAuditMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledAuditMetadataBuilder {
     pub(crate) scheduled_audit_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_audit_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ScheduledAuditMetadataBuilder {
 }
 impl ScheduledAuditMetadataBuilder {
     /// <p>The name of the scheduled audit.</p>
-    pub fn scheduled_audit_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled audit.</p>
-    pub fn set_scheduled_audit_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_name = input;
         self
     }
@@ -83,18 +75,12 @@ impl ScheduledAuditMetadataBuilder {
         &self.scheduled_audit_name
     }
     /// <p>The ARN of the scheduled audit.</p>
-    pub fn scheduled_audit_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the scheduled audit.</p>
-    pub fn set_scheduled_audit_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_arn = input;
         self
     }
@@ -108,10 +94,7 @@ impl ScheduledAuditMetadataBuilder {
         self
     }
     /// <p>How often the scheduled audit occurs.</p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::AuditFrequency>) -> Self {
         self.frequency = input;
         self
     }
@@ -139,10 +122,7 @@ impl ScheduledAuditMetadataBuilder {
         self
     }
     /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }

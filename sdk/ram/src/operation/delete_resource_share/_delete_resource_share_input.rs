@@ -26,36 +26,26 @@ impl DeleteResourceShareInput {
 }
 impl DeleteResourceShareInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceShareInput`](crate::operation::delete_resource_share::DeleteResourceShareInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_share::builders::DeleteResourceShareInputBuilder {
-        crate::operation::delete_resource_share::builders::DeleteResourceShareInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_resource_share::builders::DeleteResourceShareInputBuilder {
+        crate::operation::delete_resource_share::builders::DeleteResourceShareInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceShareInput`](crate::operation::delete_resource_share::DeleteResourceShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceShareInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to delete.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to delete.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
@@ -86,15 +76,11 @@ impl DeleteResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceShareInput`](crate::operation::delete_resource_share::DeleteResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_share::DeleteResourceShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resource_share::DeleteResourceShareInput {
-                resource_share_arn: self.resource_share_arn,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_resource_share::DeleteResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_resource_share::DeleteResourceShareInput {
+            resource_share_arn: self.resource_share_arn,
+            client_token: self.client_token,
+        })
     }
 }

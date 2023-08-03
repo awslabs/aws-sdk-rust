@@ -5,25 +5,19 @@
 pub struct EnableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
     #[doc(hidden)]
-    pub successful:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>>,
+    pub successful: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>>,
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
     #[doc(hidden)]
-    pub unsuccessful:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>>,
+    pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>>,
     _request_id: Option<String>,
 }
 impl EnableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
-    pub fn successful(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreSuccessItem]> {
+    pub fn successful(&self) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreSuccessItem]> {
         self.successful.as_deref()
     }
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
-    pub fn unsuccessful(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreErrorItem]> {
+    pub fn unsuccessful(&self) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreErrorItem]> {
         self.unsuccessful.as_deref()
     }
 }
@@ -34,21 +28,17 @@ impl ::aws_http::request_id::RequestId for EnableFastSnapshotRestoresOutput {
 }
 impl EnableFastSnapshotRestoresOutput {
     /// Creates a new builder-style object to manufacture [`EnableFastSnapshotRestoresOutput`](crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput).
-    pub fn builder() -> crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresOutputBuilder{
+    pub fn builder() -> crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresOutputBuilder {
         crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableFastSnapshotRestoresOutput`](crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableFastSnapshotRestoresOutputBuilder {
-    pub(crate) successful:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>>,
-    pub(crate) unsuccessful:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>>,
+    pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>>,
+    pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>>,
     _request_id: Option<String>,
 }
 impl EnableFastSnapshotRestoresOutputBuilder {
@@ -64,20 +54,12 @@ impl EnableFastSnapshotRestoresOutputBuilder {
         self
     }
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>,
-        >,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>>) -> Self {
         self.successful = input;
         self
     }
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
-    pub fn get_successful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>>
-    {
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreSuccessItem>> {
         &self.successful
     }
     /// Appends an item to `unsuccessful`.
@@ -92,20 +74,12 @@ impl EnableFastSnapshotRestoresOutputBuilder {
         self
     }
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>,
-        >,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>>
-    {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -118,9 +92,7 @@ impl EnableFastSnapshotRestoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableFastSnapshotRestoresOutput`](crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput {
+    pub fn build(self) -> crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput {
         crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput {
             successful: self.successful,
             unsuccessful: self.unsuccessful,

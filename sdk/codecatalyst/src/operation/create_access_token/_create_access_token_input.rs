@@ -22,17 +22,14 @@ impl CreateAccessTokenInput {
 }
 impl CreateAccessTokenInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
-    pub fn builder(
-    ) -> crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
+    pub fn builder() -> crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
         crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) expires_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,10 +55,7 @@ impl CreateAccessTokenInputBuilder {
         self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_expires_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_time = input;
         self
     }
@@ -72,15 +66,10 @@ impl CreateAccessTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_token::CreateAccessTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_access_token::CreateAccessTokenInput {
-                name: self.name,
-                expires_time: self.expires_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_access_token::CreateAccessTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_access_token::CreateAccessTokenInput {
+            name: self.name,
+            expires_time: self.expires_time,
+        })
     }
 }

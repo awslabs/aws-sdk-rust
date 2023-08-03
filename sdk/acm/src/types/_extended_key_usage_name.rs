@@ -48,13 +48,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExtendedKeyUsageName {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,9 +93,7 @@ impl ::std::convert::From<&str> for ExtendedKeyUsageName {
             "TIME_STAMPING" => ExtendedKeyUsageName::TimeStamping,
             "TLS_WEB_CLIENT_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebClientAuthentication,
             "TLS_WEB_SERVER_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebServerAuthentication,
-            other => ExtendedKeyUsageName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExtendedKeyUsageName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

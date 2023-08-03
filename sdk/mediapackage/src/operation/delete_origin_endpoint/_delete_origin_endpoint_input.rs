@@ -15,17 +15,14 @@ impl DeleteOriginEndpointInput {
 }
 impl DeleteOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder {
+    pub fn builder() -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder {
         crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOriginEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DeleteOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput { id: self.id })
     }
 }

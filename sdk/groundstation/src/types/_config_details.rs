@@ -23,9 +23,7 @@ pub enum ConfigDetails {
 impl ConfigDetails {
     /// Tries to convert the enum instance into [`AntennaDemodDecodeDetails`](crate::types::ConfigDetails::AntennaDemodDecodeDetails), extracting the inner [`AntennaDemodDecodeDetails`](crate::types::AntennaDemodDecodeDetails).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_antenna_demod_decode_details(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AntennaDemodDecodeDetails, &Self> {
+    pub fn as_antenna_demod_decode_details(&self) -> ::std::result::Result<&crate::types::AntennaDemodDecodeDetails, &Self> {
         if let ConfigDetails::AntennaDemodDecodeDetails(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -38,9 +36,7 @@ impl ConfigDetails {
     }
     /// Tries to convert the enum instance into [`EndpointDetails`](crate::types::ConfigDetails::EndpointDetails), extracting the inner [`EndpointDetails`](crate::types::EndpointDetails).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_endpoint_details(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EndpointDetails, &Self> {
+    pub fn as_endpoint_details(&self) -> ::std::result::Result<&crate::types::EndpointDetails, &Self> {
         if let ConfigDetails::EndpointDetails(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -53,9 +49,7 @@ impl ConfigDetails {
     }
     /// Tries to convert the enum instance into [`S3RecordingDetails`](crate::types::ConfigDetails::S3RecordingDetails), extracting the inner [`S3RecordingDetails`](crate::types::S3RecordingDetails).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_recording_details(
-        &self,
-    ) -> ::std::result::Result<&crate::types::S3RecordingDetails, &Self> {
+    pub fn as_s3_recording_details(&self) -> ::std::result::Result<&crate::types::S3RecordingDetails, &Self> {
         if let ConfigDetails::S3RecordingDetails(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for UpdateStreamingImageInput {
 }
 impl UpdateStreamingImageInput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamingImageInput`](crate::operation::update_streaming_image::UpdateStreamingImageInput).
-    pub fn builder(
-    ) -> crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder {
+    pub fn builder() -> crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder {
         crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder::default()
     }
 }
@@ -114,18 +113,12 @@ impl UpdateStreamingImageInputBuilder {
         &self.name
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_image_id = input;
         self
     }
@@ -150,19 +143,15 @@ impl UpdateStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStreamingImageInput`](crate::operation::update_streaming_image::UpdateStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_streaming_image::UpdateStreamingImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_streaming_image::UpdateStreamingImageInput {
-                client_token: self.client_token,
-                description: self.description,
-                name: self.name,
-                streaming_image_id: self.streaming_image_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_streaming_image::UpdateStreamingImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_streaming_image::UpdateStreamingImageInput {
+            client_token: self.client_token,
+            description: self.description,
+            name: self.name,
+            streaming_image_id: self.streaming_image_id,
+            studio_id: self.studio_id,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateStreamingImageInputBuilder {

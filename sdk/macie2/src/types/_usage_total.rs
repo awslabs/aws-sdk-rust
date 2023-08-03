@@ -37,9 +37,7 @@ impl UsageTotal {
 
 /// A builder for [`UsageTotal`](crate::types::UsageTotal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageTotalBuilder {
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
     pub(crate) estimated_cost: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl UsageTotalBuilder {
         &self.currency
     }
     /// <p>The estimated value for the metric.</p>
-    pub fn estimated_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated value for the metric.</p>
-    pub fn set_estimated_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_cost = input;
         self
     }

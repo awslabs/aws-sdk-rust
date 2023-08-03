@@ -30,9 +30,7 @@ impl ArcConfiguration {
 
 /// A builder for [`ArcConfiguration`](crate::types::ArcConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArcConfigurationBuilder {
     pub(crate) arc_angle: ::std::option::Option<f64>,
     pub(crate) arc_thickness: ::std::option::Option<crate::types::ArcThicknessOptions>,
@@ -58,10 +56,7 @@ impl ArcConfigurationBuilder {
         self
     }
     /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_arc_thickness(
-        mut self,
-        input: ::std::option::Option<crate::types::ArcThicknessOptions>,
-    ) -> Self {
+    pub fn set_arc_thickness(mut self, input: ::std::option::Option<crate::types::ArcThicknessOptions>) -> Self {
         self.arc_thickness = input;
         self
     }

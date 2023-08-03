@@ -15,18 +15,14 @@ impl StopEntitiesDetectionJobInput {
 }
 impl StopEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobInput`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder {
         crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopEntitiesDetectionJobInput`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEntitiesDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopEntitiesDetectionJobInputBuilder {
         crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobInput { job_id: self.job_id })
     }
 }

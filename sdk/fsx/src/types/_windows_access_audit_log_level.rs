@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WindowsAccessAuditLogLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for WindowsAccessAuditLogLevel {
             "FAILURE_ONLY" => WindowsAccessAuditLogLevel::FailureOnly,
             "SUCCESS_AND_FAILURE" => WindowsAccessAuditLogLevel::SuccessAndFailure,
             "SUCCESS_ONLY" => WindowsAccessAuditLogLevel::SuccessOnly,
-            other => WindowsAccessAuditLogLevel::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WindowsAccessAuditLogLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl WindowsAccessAuditLogLevel {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED",
-            "FAILURE_ONLY",
-            "SUCCESS_AND_FAILURE",
-            "SUCCESS_ONLY",
-        ]
+        &["DISABLED", "FAILURE_ONLY", "SUCCESS_AND_FAILURE", "SUCCESS_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for WindowsAccessAuditLogLevel {

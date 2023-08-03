@@ -38,13 +38,7 @@
 /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsSegmentControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HlsSegmentControl {
         match s {
             "SEGMENTED_FILES" => HlsSegmentControl::SegmentedFiles,
             "SINGLE_FILE" => HlsSegmentControl::SingleFile,
-            other => {
-                HlsSegmentControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HlsSegmentControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

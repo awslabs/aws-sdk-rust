@@ -37,9 +37,7 @@ impl SimpleCondition {
 
 /// A builder for [`SimpleCondition`](crate::types::SimpleCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimpleConditionBuilder {
     pub(crate) event_condition: ::std::option::Option<crate::types::EventCondition>,
     pub(crate) segment_condition: ::std::option::Option<crate::types::SegmentCondition>,
@@ -52,10 +50,7 @@ impl SimpleConditionBuilder {
         self
     }
     /// <p>The dimension settings for the event that's associated with the activity.</p>
-    pub fn set_event_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::EventCondition>,
-    ) -> Self {
+    pub fn set_event_condition(mut self, input: ::std::option::Option<crate::types::EventCondition>) -> Self {
         self.event_condition = input;
         self
     }
@@ -69,10 +64,7 @@ impl SimpleConditionBuilder {
         self
     }
     /// <p>The segment that's associated with the activity.</p>
-    pub fn set_segment_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentCondition>,
-    ) -> Self {
+    pub fn set_segment_condition(mut self, input: ::std::option::Option<crate::types::SegmentCondition>) -> Self {
         self.segment_condition = input;
         self
     }
@@ -86,17 +78,12 @@ impl SimpleConditionBuilder {
         self
     }
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
-    pub fn set_segment_dimensions(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentDimensions>,
-    ) -> Self {
+    pub fn set_segment_dimensions(mut self, input: ::std::option::Option<crate::types::SegmentDimensions>) -> Self {
         self.segment_dimensions = input;
         self
     }
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
-    pub fn get_segment_dimensions(
-        &self,
-    ) -> &::std::option::Option<crate::types::SegmentDimensions> {
+    pub fn get_segment_dimensions(&self) -> &::std::option::Option<crate::types::SegmentDimensions> {
         &self.segment_dimensions
     }
     /// Consumes the builder and constructs a [`SimpleCondition`](crate::types::SimpleCondition).

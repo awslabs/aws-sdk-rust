@@ -35,9 +35,7 @@ impl ListPluginsOutput {
 
 /// A builder for [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPluginsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>,
@@ -70,17 +68,12 @@ impl ListPluginsOutputBuilder {
         self
     }
     /// <p>Migration Hub Orchestrator plugins.</p>
-    pub fn set_plugins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>,
-    ) -> Self {
+    pub fn set_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>) -> Self {
         self.plugins = input;
         self
     }
     /// <p>Migration Hub Orchestrator plugins.</p>
-    pub fn get_plugins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>> {
+    pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>> {
         &self.plugins
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

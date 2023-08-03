@@ -96,9 +96,7 @@ impl UnlockRuleOutput {
 
 /// A builder for [`UnlockRuleOutput`](crate::operation::unlock_rule::UnlockRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlockRuleOutputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -146,10 +144,7 @@ impl UnlockRuleOutputBuilder {
         self
     }
     /// <p>The resource type retained by the retention rule.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -163,10 +158,7 @@ impl UnlockRuleOutputBuilder {
         self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }
@@ -186,17 +178,12 @@ impl UnlockRuleOutputBuilder {
         self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
@@ -219,17 +206,12 @@ impl UnlockRuleOutputBuilder {
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn set_lock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LockConfiguration>,
-    ) -> Self {
+    pub fn set_lock_configuration(mut self, input: ::std::option::Option<crate::types::LockConfiguration>) -> Self {
         self.lock_configuration = input;
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn get_lock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+    pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
         &self.lock_configuration
     }
     /// <p>The lock state for the retention rule.</p>
@@ -270,10 +252,7 @@ impl UnlockRuleOutputBuilder {
         self
     }
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
-    pub fn set_lock_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_lock_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.lock_end_time = input;
         self
     }

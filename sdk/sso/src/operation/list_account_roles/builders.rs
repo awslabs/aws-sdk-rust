@@ -10,10 +10,7 @@ impl ListAccountRolesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_account_roles::ListAccountRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_roles::ListAccountRolesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_roles::ListAccountRolesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_account_roles();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAccountRolesFluentBuilder {
         }
     }
     /// Access the ListAccountRoles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_account_roles::builders::ListAccountRolesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_account_roles::builders::ListAccountRolesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAccountRolesFluentBuilder {
             crate::operation::list_account_roles::ListAccountRoles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_roles::ListAccountRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_roles::ListAccountRolesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAccountRolesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAccountRolesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_roles::ListAccountRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_roles::ListAccountRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_roles::ListAccountRolesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAccountRolesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_roles::ListAccountRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_roles::ListAccountRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_roles::ListAccountRolesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAccountRolesFluentBuilder {
             crate::operation::list_account_roles::ListAccountRoles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_roles::ListAccountRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_roles::ListAccountRolesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_account_roles::paginator::ListAccountRolesPaginator {
-        crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_account_roles::paginator::ListAccountRolesPaginator {
+        crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::new(self.handle, self.inner)
     }
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

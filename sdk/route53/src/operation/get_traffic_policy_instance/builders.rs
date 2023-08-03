@@ -30,7 +30,7 @@ impl GetTrafficPolicyInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder,
+    inner: crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder,
 }
 impl GetTrafficPolicyInstanceFluentBuilder {
     /// Creates a new `GetTrafficPolicyInstance`.
@@ -41,7 +41,7 @@ impl GetTrafficPolicyInstanceFluentBuilder {
         }
     }
     /// Access the GetTrafficPolicyInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl GetTrafficPolicyInstanceFluentBuilder {
             crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl GetTrafficPolicyInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl GetTrafficPolicyInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl GetTrafficPolicyInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl GetTrafficPolicyInstanceFluentBuilder {
             crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError>,
     > {
         self.customize_middleware().await
     }

@@ -37,10 +37,7 @@ impl DeletePackageVersionsFluentBuilder {
         }
     }
     /// Access the DeletePackageVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_package_versions::builders::DeletePackageVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_package_versions::builders::DeletePackageVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeletePackageVersionsFluentBuilder {
             crate::operation::delete_package_versions::DeletePackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_package_versions::DeletePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_package_versions::DeletePackageVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeletePackageVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeletePackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_package_versions::DeletePackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_package_versions::DeletePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_package_versions::DeletePackageVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeletePackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_package_versions::DeletePackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_package_versions::DeletePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_package_versions::DeletePackageVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeletePackageVersionsFluentBuilder {
             crate::operation::delete_package_versions::DeletePackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_package_versions::DeletePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_package_versions::DeletePackageVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -235,10 +221,7 @@ impl DeletePackageVersionsFluentBuilder {
         self
     }
     /// <p> An array of strings that specify the versions of the package to delete. </p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
@@ -252,17 +235,12 @@ impl DeletePackageVersionsFluentBuilder {
         self
     }
     /// <p> The expected status of the package version to delete. </p>
-    pub fn set_expected_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_expected_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.inner = self.inner.set_expected_status(input);
         self
     }
     /// <p> The expected status of the package version to delete. </p>
-    pub fn get_expected_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+    pub fn get_expected_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
         self.inner.get_expected_status()
     }
 }

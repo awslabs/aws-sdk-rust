@@ -35,9 +35,7 @@ impl ListImportsOutput {
 
 /// A builder for [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportsOutputBuilder {
     pub(crate) imports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListImportsOutputBuilder {
         self
     }
     /// <p>A list of stack names that are importing the specified exported output value.</p>
-    pub fn set_imports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_imports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.imports = input;
         self
     }

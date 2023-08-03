@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`mailbox_quota(i32)`](crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaFluentBuilder::mailbox_quota) / [`set_mailbox_quota(Option<i32>)`](crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaFluentBuilder::set_mailbox_quota): <p>The updated mailbox quota, in MB, for the specified user.</p>
     /// - On success, responds with [`UpdateMailboxQuotaOutput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput)
     /// - On failure, responds with [`SdkError<UpdateMailboxQuotaError>`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaError)
-    pub fn update_mailbox_quota(
-        &self,
-    ) -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaFluentBuilder {
-        crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_mailbox_quota(&self) -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaFluentBuilder {
+        crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaFluentBuilder::new(self.handle.clone())
     }
 }

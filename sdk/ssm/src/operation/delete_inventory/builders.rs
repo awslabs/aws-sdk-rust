@@ -10,10 +10,7 @@ impl DeleteInventoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_inventory::DeleteInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inventory::DeleteInventoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_inventory();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteInventoryFluentBuilder {
         }
     }
     /// Access the DeleteInventory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_inventory::builders::DeleteInventoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_inventory::builders::DeleteInventoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteInventoryFluentBuilder {
             crate::operation::delete_inventory::DeleteInventory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inventory::DeleteInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteInventoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteInventoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inventory::DeleteInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inventory::DeleteInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteInventoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inventory::DeleteInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inventory::DeleteInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteInventoryFluentBuilder {
             crate::operation::delete_inventory::DeleteInventory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inventory::DeleteInventoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>,
     > {
         self.customize_middleware().await
     }
@@ -139,29 +123,21 @@ impl DeleteInventoryFluentBuilder {
     /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
     /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
-    pub fn schema_delete_option(
-        mut self,
-        input: crate::types::InventorySchemaDeleteOption,
-    ) -> Self {
+    pub fn schema_delete_option(mut self, input: crate::types::InventorySchemaDeleteOption) -> Self {
         self.inner = self.inner.schema_delete_option(input);
         self
     }
     /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
     /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
-    pub fn set_schema_delete_option(
-        mut self,
-        input: ::std::option::Option<crate::types::InventorySchemaDeleteOption>,
-    ) -> Self {
+    pub fn set_schema_delete_option(mut self, input: ::std::option::Option<crate::types::InventorySchemaDeleteOption>) -> Self {
         self.inner = self.inner.set_schema_delete_option(input);
         self
     }
     /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
     /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
-    pub fn get_schema_delete_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::InventorySchemaDeleteOption> {
+    pub fn get_schema_delete_option(&self) -> &::std::option::Option<crate::types::InventorySchemaDeleteOption> {
         self.inner.get_schema_delete_option()
     }
     /// <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>

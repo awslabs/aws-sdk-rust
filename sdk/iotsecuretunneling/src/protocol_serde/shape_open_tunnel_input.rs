@@ -21,10 +21,7 @@ pub fn ser_open_tunnel_input(
     if let Some(var_6) = &input.destination_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("destinationConfig").start_object();
-        crate::protocol_serde::shape_destination_config::ser_destination_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_destination_config::ser_destination_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.timeout_config {

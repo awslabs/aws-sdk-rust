@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidDomainNameForOriginAccessControl {
     }
 }
 impl ::std::error::Error for InvalidDomainNameForOriginAccessControl {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidDomainNameForOriginAccessControl
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDomainNameForOriginAccessControl {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidDomainNameForOriginAccessControl
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDomainNameForOriginAccessControl {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidDomainNameForOriginAccessControl {
     /// Creates a new builder-style object to manufacture [`InvalidDomainNameForOriginAccessControl`](crate::types::error::InvalidDomainNameForOriginAccessControl).
-    pub fn builder() -> crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder {
         crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder::default()
     }
 }
 
 /// A builder for [`InvalidDomainNameForOriginAccessControl`](crate::types::error::InvalidDomainNameForOriginAccessControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidDomainNameForOriginAccessControlBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidDomainNameForOriginAccessControlBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

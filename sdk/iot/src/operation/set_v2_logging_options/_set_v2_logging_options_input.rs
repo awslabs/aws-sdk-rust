@@ -29,18 +29,14 @@ impl SetV2LoggingOptionsInput {
 }
 impl SetV2LoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder {
-        crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder {
+        crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetV2LoggingOptionsInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -67,10 +63,7 @@ impl SetV2LoggingOptionsInputBuilder {
         self
     }
     /// <p>The default logging level.</p>
-    pub fn set_default_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
+    pub fn set_default_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.default_log_level = input;
         self
     }
@@ -95,16 +88,12 @@ impl SetV2LoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput {
-                role_arn: self.role_arn,
-                default_log_level: self.default_log_level,
-                disable_all_logs: self.disable_all_logs,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput {
+            role_arn: self.role_arn,
+            default_log_level: self.default_log_level,
+            disable_all_logs: self.disable_all_logs,
+        })
     }
 }

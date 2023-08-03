@@ -15,9 +15,7 @@ pub struct ListTargetedSentimentDetectionJobsInput {
 }
 impl ListTargetedSentimentDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetedSentimentDetectionJobFilter> {
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::TargetedSentimentDetectionJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,16 +29,14 @@ impl ListTargetedSentimentDetectionJobsInput {
 }
 impl ListTargetedSentimentDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder {
         crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetedSentimentDetectionJobsInput`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetedSentimentDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl ListTargetedSentimentDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter> {
         &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -95,16 +86,18 @@ impl ListTargetedSentimentDetectionJobsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTargetedSentimentDetectionJobsInput`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

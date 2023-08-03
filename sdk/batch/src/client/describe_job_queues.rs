@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`job_queues(Option<Vec<JobQueueDetail>>)`](crate::operation::describe_job_queues::DescribeJobQueuesOutput::job_queues): <p>The list of job queues.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_job_queues::DescribeJobQueuesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeJobQueuesError>`](crate::operation::describe_job_queues::DescribeJobQueuesError)
-    pub fn describe_job_queues(
-        &self,
-    ) -> crate::operation::describe_job_queues::builders::DescribeJobQueuesFluentBuilder {
-        crate::operation::describe_job_queues::builders::DescribeJobQueuesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_queues(&self) -> crate::operation::describe_job_queues::builders::DescribeJobQueuesFluentBuilder {
+        crate::operation::describe_job_queues::builders::DescribeJobQueuesFluentBuilder::new(self.handle.clone())
     }
 }

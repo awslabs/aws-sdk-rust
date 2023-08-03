@@ -10,10 +10,7 @@ impl GetConfiguredTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table::GetConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table::GetConfiguredTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table::GetConfiguredTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_configured_table();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetConfiguredTableFluentBuilder {
         }
     }
     /// Access the GetConfiguredTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetConfiguredTableFluentBuilder {
             crate::operation::get_configured_table::GetConfiguredTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table::GetConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table::GetConfiguredTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetConfiguredTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetConfiguredTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table::GetConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table::GetConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table::GetConfiguredTableError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetConfiguredTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table::GetConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table::GetConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table::GetConfiguredTableError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetConfiguredTableFluentBuilder {
             crate::operation::get_configured_table::GetConfiguredTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table::GetConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table::GetConfiguredTableError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn configured_table_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configured_table_identifier(input.into());
         self
     }
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }

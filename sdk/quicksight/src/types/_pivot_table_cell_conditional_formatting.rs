@@ -15,8 +15,7 @@ pub struct PivotTableCellConditionalFormatting {
     pub scope: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>,
     /// <p>A list of cell scopes for conditional formatting.</p>
     #[doc(hidden)]
-    pub scopes:
-        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
+    pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
 }
 impl PivotTableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
@@ -28,15 +27,11 @@ impl PivotTableCellConditionalFormatting {
         self.text_format.as_ref()
     }
     /// <p>The scope of the cell for conditional formatting.</p>
-    pub fn scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PivotTableConditionalFormattingScope> {
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::PivotTableConditionalFormattingScope> {
         self.scope.as_ref()
     }
     /// <p>A list of cell scopes for conditional formatting.</p>
-    pub fn scopes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PivotTableConditionalFormattingScope]> {
+    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::PivotTableConditionalFormattingScope]> {
         self.scopes.as_deref()
     }
 }
@@ -49,15 +44,12 @@ impl PivotTableCellConditionalFormatting {
 
 /// A builder for [`PivotTableCellConditionalFormatting`](crate::types::PivotTableCellConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableCellConditionalFormattingBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
     pub(crate) scope: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>,
-    pub(crate) scopes:
-        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
 }
 impl PivotTableCellConditionalFormattingBuilder {
     /// <p>The field ID of the cell for conditional formatting.</p>
@@ -80,10 +72,7 @@ impl PivotTableCellConditionalFormattingBuilder {
         self
     }
     /// <p>The text format of the cell for conditional formatting.</p>
-    pub fn set_text_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TextConditionalFormat>,
-    ) -> Self {
+    pub fn set_text_format(mut self, input: ::std::option::Option<crate::types::TextConditionalFormat>) -> Self {
         self.text_format = input;
         self
     }
@@ -97,17 +86,12 @@ impl PivotTableCellConditionalFormattingBuilder {
         self
     }
     /// <p>The scope of the cell for conditional formatting.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>) -> Self {
         self.scope = input;
         self
     }
     /// <p>The scope of the cell for conditional formatting.</p>
-    pub fn get_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScope> {
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScope> {
         &self.scope
     }
     /// Appends an item to `scopes`.
@@ -122,20 +106,12 @@ impl PivotTableCellConditionalFormattingBuilder {
         self
     }
     /// <p>A list of cell scopes for conditional formatting.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>,
-        >,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>) -> Self {
         self.scopes = input;
         self
     }
     /// <p>A list of cell scopes for conditional formatting.</p>
-    pub fn get_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>
-    {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>> {
         &self.scopes
     }
     /// Consumes the builder and constructs a [`PivotTableCellConditionalFormatting`](crate::types::PivotTableCellConditionalFormatting).

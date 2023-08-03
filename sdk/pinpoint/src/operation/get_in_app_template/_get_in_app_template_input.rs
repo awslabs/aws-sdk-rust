@@ -38,35 +38,26 @@ impl GetInAppTemplateInput {
 }
 impl GetInAppTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetInAppTemplateInput`](crate::operation::get_in_app_template::GetInAppTemplateInput).
-    pub fn builder() -> crate::operation::get_in_app_template::builders::GetInAppTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_in_app_template::builders::GetInAppTemplateInputBuilder {
         crate::operation::get_in_app_template::builders::GetInAppTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInAppTemplateInput`](crate::operation::get_in_app_template::GetInAppTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInAppTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl GetInAppTemplateInputBuilder {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -115,15 +106,10 @@ impl GetInAppTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetInAppTemplateInput`](crate::operation::get_in_app_template::GetInAppTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_in_app_template::GetInAppTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_in_app_template::GetInAppTemplateInput {
-                template_name: self.template_name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_in_app_template::GetInAppTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_in_app_template::GetInAppTemplateInput {
+            template_name: self.template_name,
+            version: self.version,
+        })
     }
 }

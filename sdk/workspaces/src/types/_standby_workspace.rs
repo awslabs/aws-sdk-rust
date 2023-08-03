@@ -44,9 +44,7 @@ impl StandbyWorkspace {
 
 /// A builder for [`StandbyWorkspace`](crate::types::StandbyWorkspace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandbyWorkspaceBuilder {
     pub(crate) primary_workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct StandbyWorkspaceBuilder {
 }
 impl StandbyWorkspaceBuilder {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn set_primary_workspace_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_workspace_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl StandbyWorkspaceBuilder {
         &self.primary_workspace_id
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn volume_encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn set_volume_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_encryption_key = input;
         self
     }
@@ -120,10 +106,7 @@ impl StandbyWorkspaceBuilder {
         self
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

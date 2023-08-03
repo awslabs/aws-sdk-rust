@@ -46,18 +46,14 @@ impl ::aws_http::request_id::RequestId for StartTextTranslationJobOutput {
 }
 impl StartTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_text_translation_job::builders::StartTextTranslationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_text_translation_job::builders::StartTextTranslationJobOutputBuilder {
         crate::operation::start_text_translation_job::builders::StartTextTranslationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTextTranslationJobOutput`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTextTranslationJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -129,9 +125,7 @@ impl StartTextTranslationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartTextTranslationJobOutput`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_text_translation_job::StartTextTranslationJobOutput {
+    pub fn build(self) -> crate::operation::start_text_translation_job::StartTextTranslationJobOutput {
         crate::operation::start_text_translation_job::StartTextTranslationJobOutput {
             job_id: self.job_id,
             job_status: self.job_status,

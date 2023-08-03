@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateLicenseConfigurationOutput {
 }
 impl CreateLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::create_license_configuration::builders::CreateLicenseConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_license_configuration::builders::CreateLicenseConfigurationOutputBuilder {
         crate::operation::create_license_configuration::builders::CreateLicenseConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLicenseConfigurationOutputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLicenseConfigurationOutputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_configuration_arn = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateLicenseConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_license_configuration::CreateLicenseConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_license_configuration::CreateLicenseConfigurationOutput {
         crate::operation::create_license_configuration::CreateLicenseConfigurationOutput {
             license_configuration_arn: self.license_configuration_arn,
             _request_id: self._request_id,

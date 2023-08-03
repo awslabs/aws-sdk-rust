@@ -53,22 +53,16 @@ impl ListSolFunctionInstanceInfo {
         self.vnf_pkg_name.as_deref()
     }
     /// <p>Network function instance instantiation state.</p>
-    pub fn instantiation_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VnfInstantiationState> {
+    pub fn instantiation_state(&self) -> ::std::option::Option<&crate::types::VnfInstantiationState> {
         self.instantiation_state.as_ref()
     }
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    pub fn instantiated_vnf_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GetSolInstantiatedVnfInfo> {
+    pub fn instantiated_vnf_info(&self) -> ::std::option::Option<&crate::types::GetSolInstantiatedVnfInfo> {
         self.instantiated_vnf_info.as_ref()
     }
     /// <p>Network function instance metadata.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListSolFunctionInstanceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolFunctionInstanceMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -81,9 +75,7 @@ impl ListSolFunctionInstanceInfo {
 
 /// A builder for [`ListSolFunctionInstanceInfo`](crate::types::ListSolFunctionInstanceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolFunctionInstanceInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -91,8 +83,7 @@ pub struct ListSolFunctionInstanceInfoBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) vnf_pkg_name: ::std::option::Option<::std::string::String>,
     pub(crate) instantiation_state: ::std::option::Option<crate::types::VnfInstantiationState>,
-    pub(crate) instantiated_vnf_info:
-        ::std::option::Option<crate::types::GetSolInstantiatedVnfInfo>,
+    pub(crate) instantiated_vnf_info: ::std::option::Option<crate::types::GetSolInstantiatedVnfInfo>,
     pub(crate) metadata: ::std::option::Option<crate::types::ListSolFunctionInstanceMetadata>,
 }
 impl ListSolFunctionInstanceInfoBuilder {
@@ -125,18 +116,12 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.arn
     }
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network instance ID.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_id = input;
         self
     }
@@ -178,17 +163,12 @@ impl ListSolFunctionInstanceInfoBuilder {
         self
     }
     /// <p>Network function instance instantiation state.</p>
-    pub fn set_instantiation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VnfInstantiationState>,
-    ) -> Self {
+    pub fn set_instantiation_state(mut self, input: ::std::option::Option<crate::types::VnfInstantiationState>) -> Self {
         self.instantiation_state = input;
         self
     }
     /// <p>Network function instance instantiation state.</p>
-    pub fn get_instantiation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VnfInstantiationState> {
+    pub fn get_instantiation_state(&self) -> &::std::option::Option<crate::types::VnfInstantiationState> {
         &self.instantiation_state
     }
     /// <p>Information about a network function.</p>
@@ -199,18 +179,13 @@ impl ListSolFunctionInstanceInfoBuilder {
     }
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    pub fn set_instantiated_vnf_info(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolInstantiatedVnfInfo>,
-    ) -> Self {
+    pub fn set_instantiated_vnf_info(mut self, input: ::std::option::Option<crate::types::GetSolInstantiatedVnfInfo>) -> Self {
         self.instantiated_vnf_info = input;
         self
     }
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    pub fn get_instantiated_vnf_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetSolInstantiatedVnfInfo> {
+    pub fn get_instantiated_vnf_info(&self) -> &::std::option::Option<crate::types::GetSolInstantiatedVnfInfo> {
         &self.instantiated_vnf_info
     }
     /// <p>Network function instance metadata.</p>
@@ -219,17 +194,12 @@ impl ListSolFunctionInstanceInfoBuilder {
         self
     }
     /// <p>Network function instance metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ListSolFunctionInstanceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolFunctionInstanceMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Network function instance metadata.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListSolFunctionInstanceMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolFunctionInstanceMetadata> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolFunctionInstanceInfo`](crate::types::ListSolFunctionInstanceInfo).

@@ -30,9 +30,7 @@ impl SheetStyle {
 
 /// A builder for [`SheetStyle`](crate::types::SheetStyle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetStyleBuilder {
     pub(crate) tile: ::std::option::Option<crate::types::TileStyle>,
     pub(crate) tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
@@ -58,10 +56,7 @@ impl SheetStyleBuilder {
         self
     }
     /// <p>The layout options for tiles.</p>
-    pub fn set_tile_layout(
-        mut self,
-        input: ::std::option::Option<crate::types::TileLayoutStyle>,
-    ) -> Self {
+    pub fn set_tile_layout(mut self, input: ::std::option::Option<crate::types::TileLayoutStyle>) -> Self {
         self.tile_layout = input;
         self
     }

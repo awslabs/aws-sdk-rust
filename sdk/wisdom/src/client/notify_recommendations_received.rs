@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`recommendation_ids(Option<Vec<String>>)`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput::recommendation_ids): <p>The identifiers of the recommendations.</p>
     ///   - [`errors(Option<Vec<NotifyRecommendationsReceivedError>>)`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput::errors): <p>The identifiers of recommendations that are causing errors.</p>
     /// - On failure, responds with [`SdkError<NotifyRecommendationsReceivedError>`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError)
-    pub fn notify_recommendations_received(&self) -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedFluentBuilder{
+    pub fn notify_recommendations_received(
+        &self,
+    ) -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedFluentBuilder {
         crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,10 +39,7 @@ impl DisposePackageVersionsFluentBuilder {
         }
     }
     /// Access the DisposePackageVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DisposePackageVersionsFluentBuilder {
             crate::operation::dispose_package_versions::DisposePackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dispose_package_versions::DisposePackageVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DisposePackageVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DisposePackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dispose_package_versions::DisposePackageVersionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DisposePackageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dispose_package_versions::DisposePackageVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DisposePackageVersionsFluentBuilder {
             crate::operation::dispose_package_versions::DisposePackageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dispose_package_versions::DisposePackageVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -237,10 +223,7 @@ impl DisposePackageVersionsFluentBuilder {
         self
     }
     /// <p> The versions of the package you want to dispose. </p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
@@ -264,19 +247,13 @@ impl DisposePackageVersionsFluentBuilder {
     /// <p> The revisions of the package versions you want to dispose. </p>
     pub fn set_version_revisions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_version_revisions(input);
         self
     }
     /// <p> The revisions of the package versions you want to dispose. </p>
-    pub fn get_version_revisions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_version_revisions()
     }
     /// <p> The expected status of the package version to dispose. </p>
@@ -285,17 +262,12 @@ impl DisposePackageVersionsFluentBuilder {
         self
     }
     /// <p> The expected status of the package version to dispose. </p>
-    pub fn set_expected_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_expected_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.inner = self.inner.set_expected_status(input);
         self
     }
     /// <p> The expected status of the package version to dispose. </p>
-    pub fn get_expected_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+    pub fn get_expected_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
         self.inner.get_expected_status()
     }
 }

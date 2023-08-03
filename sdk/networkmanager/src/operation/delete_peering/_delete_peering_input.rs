@@ -22,9 +22,7 @@ impl DeletePeeringInput {
 
 /// A builder for [`DeletePeeringInput`](crate::operation::delete_peering::DeletePeeringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePeeringInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeletePeeringInputBuilder {
     /// Consumes the builder and constructs a [`DeletePeeringInput`](crate::operation::delete_peering::DeletePeeringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_peering::DeletePeeringInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_peering::DeletePeeringInput {
-            peering_id: self.peering_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_peering::DeletePeeringInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_peering::DeletePeeringInput { peering_id: self.peering_id })
     }
 }

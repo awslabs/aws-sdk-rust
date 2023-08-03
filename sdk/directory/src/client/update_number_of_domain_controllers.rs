@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`desired_number(i32)`](crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersFluentBuilder::desired_number) / [`set_desired_number(Option<i32>)`](crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersFluentBuilder::set_desired_number): <p>The number of domain controllers desired in the directory.</p>
     /// - On success, responds with [`UpdateNumberOfDomainControllersOutput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput)
     /// - On failure, responds with [`SdkError<UpdateNumberOfDomainControllersError>`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError)
-    pub fn update_number_of_domain_controllers(&self) -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersFluentBuilder{
+    pub fn update_number_of_domain_controllers(
+        &self,
+    ) -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersFluentBuilder {
         crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersFluentBuilder::new(self.handle.clone())
     }
 }

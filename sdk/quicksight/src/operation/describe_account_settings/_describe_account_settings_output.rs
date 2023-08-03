@@ -37,18 +37,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountSettingsOutput {
 }
 impl DescribeAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountSettingsOutput`](crate::operation::describe_account_settings::DescribeAccountSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_settings::builders::DescribeAccountSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_settings::builders::DescribeAccountSettingsOutputBuilder {
         crate::operation::describe_account_settings::builders::DescribeAccountSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountSettingsOutput`](crate::operation::describe_account_settings::DescribeAccountSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountSettingsOutputBuilder {
     pub(crate) account_settings: ::std::option::Option<crate::types::AccountSettings>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -64,10 +60,7 @@ impl DescribeAccountSettingsOutputBuilder {
     }
     /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
     /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
-    pub fn set_account_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountSettings>,
-    ) -> Self {
+    pub fn set_account_settings(mut self, input: ::std::option::Option<crate::types::AccountSettings>) -> Self {
         self.account_settings = input;
         self
     }
@@ -114,9 +107,7 @@ impl DescribeAccountSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountSettingsOutput`](crate::operation::describe_account_settings::DescribeAccountSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_settings::DescribeAccountSettingsOutput {
+    pub fn build(self) -> crate::operation::describe_account_settings::DescribeAccountSettingsOutput {
         crate::operation::describe_account_settings::DescribeAccountSettingsOutput {
             account_settings: self.account_settings,
             request_id: self.request_id,

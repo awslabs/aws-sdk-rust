@@ -36,18 +36,14 @@ impl DescribePackageVersionInput {
 }
 impl DescribePackageVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder {
         crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackageVersionInputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct DescribePackageVersionInputBuilder {
 }
 impl DescribePackageVersionInputBuilder {
     /// <p>The version's owner account.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version's owner account.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -90,18 +80,12 @@ impl DescribePackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>The version's version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version's version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -110,18 +94,12 @@ impl DescribePackageVersionInputBuilder {
         &self.package_version
     }
     /// <p>The version's patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version's patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_version = input;
         self
     }
@@ -132,17 +110,13 @@ impl DescribePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_package_version::DescribePackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_package_version::DescribePackageVersionInput {
-                owner_account: self.owner_account,
-                package_id: self.package_id,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_package_version::DescribePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionInput {
+            owner_account: self.owner_account,
+            package_id: self.package_id,
+            package_version: self.package_version,
+            patch_version: self.patch_version,
+        })
     }
 }

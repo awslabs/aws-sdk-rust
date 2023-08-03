@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::set_type_default_version::builders::SetTypeDefaultVersionFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::set_type_default_version::builders::SetTypeDefaultVersionFluentBuilder::set_version_id): <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     /// - On success, responds with [`SetTypeDefaultVersionOutput`](crate::operation::set_type_default_version::SetTypeDefaultVersionOutput)
     /// - On failure, responds with [`SdkError<SetTypeDefaultVersionError>`](crate::operation::set_type_default_version::SetTypeDefaultVersionError)
-    pub fn set_type_default_version(
-        &self,
-    ) -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionFluentBuilder
-    {
+    pub fn set_type_default_version(&self) -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionFluentBuilder {
         crate::operation::set_type_default_version::builders::SetTypeDefaultVersionFluentBuilder::new(self.handle.clone())
     }
 }

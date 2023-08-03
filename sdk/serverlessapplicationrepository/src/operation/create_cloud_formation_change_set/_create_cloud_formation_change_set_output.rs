@@ -48,16 +48,14 @@ impl ::aws_http::request_id::RequestId for CreateCloudFormationChangeSetOutput {
 }
 impl CreateCloudFormationChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationChangeSetOutput`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput).
-    pub fn builder() -> crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetOutputBuilder{
+    pub fn builder() -> crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetOutputBuilder {
         crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCloudFormationChangeSetOutput`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCloudFormationChangeSetOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ pub struct CreateCloudFormationChangeSetOutputBuilder {
 }
 impl CreateCloudFormationChangeSetOutputBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -89,20 +81,14 @@ impl CreateCloudFormationChangeSetOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
     /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
     /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -114,19 +100,13 @@ impl CreateCloudFormationChangeSetOutputBuilder {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -159,10 +139,7 @@ impl CreateCloudFormationChangeSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCloudFormationChangeSetOutput`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput
-    {
+    pub fn build(self) -> crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput {
         crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput {
             application_id: self.application_id,
             change_set_id: self.change_set_id,

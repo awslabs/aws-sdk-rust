@@ -52,9 +52,7 @@ impl CreateDataViewInput {
         self.as_of_timestamp
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
+    pub fn destination_type_params(&self) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
         self.destination_type_params.as_ref()
     }
 }
@@ -67,9 +65,7 @@ impl CreateDataViewInput {
 
 /// A builder for [`CreateDataViewInput`](crate::operation::create_data_view::CreateDataViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataViewInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
@@ -77,8 +73,7 @@ pub struct CreateDataViewInputBuilder {
     pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) partition_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) as_of_timestamp: ::std::option::Option<i64>,
-    pub(crate) destination_type_params:
-        ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub(crate) destination_type_params: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
 }
 impl CreateDataViewInputBuilder {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -135,17 +130,12 @@ impl CreateDataViewInputBuilder {
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sort_columns = input;
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn get_sort_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sort_columns
     }
     /// Appends an item to `partition_columns`.
@@ -153,27 +143,19 @@ impl CreateDataViewInputBuilder {
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_columns.unwrap_or_default();
         v.push(input.into());
         self.partition_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_columns = input;
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn get_partition_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_columns
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -191,34 +173,23 @@ impl CreateDataViewInputBuilder {
         &self.as_of_timestamp
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        mut self,
-        input: crate::types::DataViewDestinationTypeParams,
-    ) -> Self {
+    pub fn destination_type_params(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.destination_type_params = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn set_destination_type_params(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
-    ) -> Self {
+    pub fn set_destination_type_params(mut self, input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
         self.destination_type_params = input;
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn get_destination_type_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+    pub fn get_destination_type_params(&self) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
         &self.destination_type_params
     }
     /// Consumes the builder and constructs a [`CreateDataViewInput`](crate::operation::create_data_view::CreateDataViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_view::CreateDataViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_data_view::CreateDataViewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_view::CreateDataViewInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

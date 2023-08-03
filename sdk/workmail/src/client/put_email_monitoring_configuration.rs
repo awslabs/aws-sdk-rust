@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`log_group_arn(impl ::std::convert::Into<String>)`](crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationFluentBuilder::log_group_arn) / [`set_log_group_arn(Option<String>)`](crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationFluentBuilder::set_log_group_arn): <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
     /// - On success, responds with [`PutEmailMonitoringConfigurationOutput`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutEmailMonitoringConfigurationError>`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError)
-    pub fn put_email_monitoring_configuration(&self) -> crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationFluentBuilder{
+    pub fn put_email_monitoring_configuration(
+        &self,
+    ) -> crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationFluentBuilder {
         crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MaximumExecutionFrequency {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for MaximumExecutionFrequency {
             "Three_Hours" => MaximumExecutionFrequency::ThreeHours,
             "Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
             "TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
-            other => MaximumExecutionFrequency::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MaximumExecutionFrequency::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl MaximumExecutionFrequency {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "One_Hour",
-            "Six_Hours",
-            "Three_Hours",
-            "Twelve_Hours",
-            "TwentyFour_Hours",
-        ]
+        &["One_Hour", "Six_Hours", "Three_Hours", "Twelve_Hours", "TwentyFour_Hours"]
     }
 }
 impl ::std::convert::AsRef<str> for MaximumExecutionFrequency {

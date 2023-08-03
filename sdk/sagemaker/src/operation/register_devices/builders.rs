@@ -10,10 +10,7 @@ impl RegisterDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_devices::RegisterDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_devices::RegisterDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_devices::RegisterDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_devices();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RegisterDevicesFluentBuilder {
         }
     }
     /// Access the RegisterDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_devices::builders::RegisterDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_devices::builders::RegisterDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RegisterDevicesFluentBuilder {
             crate::operation::register_devices::RegisterDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_devices::RegisterDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_devices::RegisterDevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RegisterDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RegisterDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_devices::RegisterDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_devices::RegisterDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_devices::RegisterDevicesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RegisterDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_devices::RegisterDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_devices::RegisterDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_devices::RegisterDevicesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl RegisterDevicesFluentBuilder {
             crate::operation::register_devices::RegisterDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_devices::RegisterDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_devices::RegisterDevicesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
@@ -152,10 +130,7 @@ impl RegisterDevicesFluentBuilder {
         self
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.inner = self.inner.set_devices(input);
         self
     }
@@ -173,10 +148,7 @@ impl RegisterDevicesFluentBuilder {
         self
     }
     /// <p>The tags associated with devices.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

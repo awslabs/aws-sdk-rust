@@ -30,9 +30,7 @@ impl Group {
 
 /// A builder for [`Group`](crate::types::Group).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupBuilder {
     pub(crate) name: ::std::option::Option<crate::types::GroupName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

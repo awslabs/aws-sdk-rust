@@ -29,16 +29,14 @@ impl ListTrustStoreCertificatesInput {
 }
 impl ListTrustStoreCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListTrustStoreCertificatesInput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput).
-    pub fn builder() -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder {
         crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrustStoreCertificatesInput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustStoreCertificatesInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListTrustStoreCertificatesInputBuilder {
 }
 impl ListTrustStoreCertificatesInputBuilder {
     /// <p>The ARN of the trust store</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListTrustStoreCertificatesInputBuilder {
         crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput {
-                trust_store_arn: self.trust_store_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput {
+            trust_store_arn: self.trust_store_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`speaker_search_task_id(impl ::std::convert::Into<String>)`](crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskFluentBuilder::speaker_search_task_id) / [`set_speaker_search_task_id(Option<String>)`](crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskFluentBuilder::set_speaker_search_task_id): <p>The speaker search task ID.</p>
     /// - On success, responds with [`StopSpeakerSearchTaskOutput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput)
     /// - On failure, responds with [`SdkError<StopSpeakerSearchTaskError>`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError)
-    pub fn stop_speaker_search_task(
-        &self,
-    ) -> crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskFluentBuilder
-    {
+    pub fn stop_speaker_search_task(&self) -> crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskFluentBuilder {
         crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskFluentBuilder::new(self.handle.clone())
     }
 }

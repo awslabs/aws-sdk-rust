@@ -16,8 +16,7 @@ pub struct QueryResultItem {
     pub format: ::std::option::Option<crate::types::QueryResultFormat>,
     /// <p>One or more additional fields/attributes associated with the query result.</p>
     #[doc(hidden)]
-    pub additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
+    pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
     /// <p>The identifier for the document.</p>
     #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
@@ -32,8 +31,7 @@ pub struct QueryResultItem {
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     #[doc(hidden)]
-    pub document_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
     /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
     #[doc(hidden)]
@@ -59,9 +57,7 @@ impl QueryResultItem {
         self.format.as_ref()
     }
     /// <p>One or more additional fields/attributes associated with the query result.</p>
-    pub fn additional_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdditionalResultAttribute]> {
+    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::AdditionalResultAttribute]> {
         self.additional_attributes.as_deref()
     }
     /// <p>The identifier for the document.</p>
@@ -107,21 +103,17 @@ impl QueryResultItem {
 
 /// A builder for [`QueryResultItem`](crate::types::QueryResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryResultItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::QueryResultType>,
     pub(crate) format: ::std::option::Option<crate::types::QueryResultFormat>,
-    pub(crate) additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
+    pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_title: ::std::option::Option<crate::types::TextWithHighlights>,
     pub(crate) document_excerpt: ::std::option::Option<crate::types::TextWithHighlights>,
     pub(crate) document_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) document_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     pub(crate) score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
     pub(crate) feedback_token: ::std::option::Option<::std::string::String>,
     pub(crate) table_excerpt: ::std::option::Option<crate::types::TableExcerpt>,
@@ -161,10 +153,7 @@ impl QueryResultItemBuilder {
         self
     }
     /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryResultFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::QueryResultFormat>) -> Self {
         self.format = input;
         self
     }
@@ -184,17 +173,12 @@ impl QueryResultItemBuilder {
         self
     }
     /// <p>One or more additional fields/attributes associated with the query result.</p>
-    pub fn set_additional_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
-    ) -> Self {
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>) -> Self {
         self.additional_attributes = input;
         self
     }
     /// <p>One or more additional fields/attributes associated with the query result.</p>
-    pub fn get_additional_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>> {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>> {
         &self.additional_attributes
     }
     /// <p>The identifier for the document.</p>
@@ -217,10 +201,7 @@ impl QueryResultItemBuilder {
         self
     }
     /// <p>The title of the document. Contains the text of the title and information for highlighting the relevant terms in the title.</p>
-    pub fn set_document_title(
-        mut self,
-        input: ::std::option::Option<crate::types::TextWithHighlights>,
-    ) -> Self {
+    pub fn set_document_title(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
         self.document_title = input;
         self
     }
@@ -234,10 +215,7 @@ impl QueryResultItemBuilder {
         self
     }
     /// <p>An extract of the text in the document. Contains information about highlighting the relevant terms in the excerpt.</p>
-    pub fn set_document_excerpt(
-        mut self,
-        input: ::std::option::Option<crate::types::TextWithHighlights>,
-    ) -> Self {
+    pub fn set_document_excerpt(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
         self.document_excerpt = input;
         self
     }
@@ -271,17 +249,12 @@ impl QueryResultItemBuilder {
         self
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn set_document_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    ) -> Self {
+    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
         self.document_attributes = input;
         self
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn get_document_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.document_attributes
     }
     /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
@@ -292,10 +265,7 @@ impl QueryResultItemBuilder {
     }
     /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
     /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
-    pub fn set_score_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ScoreAttributes>,
-    ) -> Self {
+    pub fn set_score_attributes(mut self, input: ::std::option::Option<crate::types::ScoreAttributes>) -> Self {
         self.score_attributes = input;
         self
     }
@@ -305,18 +275,12 @@ impl QueryResultItemBuilder {
         &self.score_attributes
     }
     /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
-    pub fn feedback_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feedback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feedback_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
-    pub fn set_feedback_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feedback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feedback_token = input;
         self
     }
@@ -330,10 +294,7 @@ impl QueryResultItemBuilder {
         self
     }
     /// <p>An excerpt from a table within a document.</p>
-    pub fn set_table_excerpt(
-        mut self,
-        input: ::std::option::Option<crate::types::TableExcerpt>,
-    ) -> Self {
+    pub fn set_table_excerpt(mut self, input: ::std::option::Option<crate::types::TableExcerpt>) -> Self {
         self.table_excerpt = input;
         self
     }

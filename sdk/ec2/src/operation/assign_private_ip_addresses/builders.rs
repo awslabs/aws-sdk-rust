@@ -31,7 +31,7 @@ impl AssignPrivateIpAddressesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssignPrivateIpAddressesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder,
+    inner: crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder,
 }
 impl AssignPrivateIpAddressesFluentBuilder {
     /// Creates a new `AssignPrivateIpAddresses`.
@@ -42,7 +42,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
         }
     }
     /// Access the AssignPrivateIpAddresses as a reference.
-    pub fn as_input(&self) -> &crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
             crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
             crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +129,12 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self.inner.get_allow_reassignment()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -165,27 +148,19 @@ impl AssignPrivateIpAddressesFluentBuilder {
     ///
     /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_ip_addresses(input.into());
         self
     }
     /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
     /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
@@ -194,10 +169,7 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
-    pub fn set_secondary_private_ip_address_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_secondary_private_ip_address_count(input);
         self
     }
@@ -210,25 +182,17 @@ impl AssignPrivateIpAddressesFluentBuilder {
     /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
     ///
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn ipv4_prefixes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv4_prefixes(input.into());
         self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ipv4_prefixes(input);
         self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn get_ipv4_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipv4_prefixes()
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>

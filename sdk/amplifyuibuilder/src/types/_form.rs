@@ -27,22 +27,16 @@ pub struct Form {
     pub data_type: ::std::option::Option<crate::types::FormDataTypeConfig>,
     /// <p>Stores the information about the form's fields.</p>
     #[doc(hidden)]
-    pub fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
-    >,
+    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>>,
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
     #[doc(hidden)]
-    pub sectional_elements: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
-    >,
+    pub sectional_elements: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>>,
     /// <p>The schema version of the form when it was imported.</p>
     #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>One or more key-value pairs to use when tagging the form.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Stores the call to action configuration for the form.</p>
     #[doc(hidden)]
     pub cta: ::std::option::Option<crate::types::FormCta>,
@@ -80,19 +74,11 @@ impl Form {
         self.data_type.as_ref()
     }
     /// <p>Stores the information about the form's fields.</p>
-    pub fn fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
-    > {
+    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>> {
         self.fields.as_ref()
     }
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
-    pub fn sectional_elements(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
-    > {
+    pub fn sectional_elements(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>> {
         self.sectional_elements.as_ref()
     }
     /// <p>The schema version of the form when it was imported.</p>
@@ -100,11 +86,7 @@ impl Form {
         self.schema_version.as_deref()
     }
     /// <p>One or more key-value pairs to use when tagging the form.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Stores the call to action configuration for the form.</p>
@@ -125,9 +107,7 @@ impl Form {
 
 /// A builder for [`Form`](crate::types::Form).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FormBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -136,16 +116,10 @@ pub struct FormBuilder {
     pub(crate) form_action_type: ::std::option::Option<crate::types::FormActionType>,
     pub(crate) style: ::std::option::Option<crate::types::FormStyle>,
     pub(crate) data_type: ::std::option::Option<crate::types::FormDataTypeConfig>,
-    pub(crate) fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
-    >,
-    pub(crate) sectional_elements: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
-    >,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>>,
+    pub(crate) sectional_elements: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>>,
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) cta: ::std::option::Option<crate::types::FormCta>,
     pub(crate) label_decorator: ::std::option::Option<crate::types::LabelDecorator>,
 }
@@ -165,18 +139,12 @@ impl FormBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -218,10 +186,7 @@ impl FormBuilder {
         self
     }
     /// <p>The operation to perform on the specified form.</p>
-    pub fn set_form_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FormActionType>,
-    ) -> Self {
+    pub fn set_form_action_type(mut self, input: ::std::option::Option<crate::types::FormActionType>) -> Self {
         self.form_action_type = input;
         self
     }
@@ -249,10 +214,7 @@ impl FormBuilder {
         self
     }
     /// <p>The type of data source to use to create the form.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FormDataTypeConfig>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::FormDataTypeConfig>) -> Self {
         self.data_type = input;
         self
     }
@@ -265,32 +227,19 @@ impl FormBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>Stores the information about the form's fields.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FieldConfig,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FieldConfig) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Stores the information about the form's fields.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
-        >,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>Stores the information about the form's fields.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>> {
         &self.fields
     }
     /// Adds a key-value pair to `sectional_elements`.
@@ -298,11 +247,7 @@ impl FormBuilder {
     /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
     ///
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
-    pub fn sectional_elements(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SectionalElement,
-    ) -> Self {
+    pub fn sectional_elements(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SectionalElement) -> Self {
         let mut hash_map = self.sectional_elements.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.sectional_elements = ::std::option::Option::Some(hash_map);
@@ -311,9 +256,7 @@ impl FormBuilder {
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
     pub fn set_sectional_elements(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>>,
     ) -> Self {
         self.sectional_elements = input;
         self
@@ -321,24 +264,16 @@ impl FormBuilder {
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
     pub fn get_sectional_elements(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>> {
         &self.sectional_elements
     }
     /// <p>The schema version of the form when it was imported.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema version of the form when it was imported.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
@@ -351,32 +286,19 @@ impl FormBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more key-value pairs to use when tagging the form.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more key-value pairs to use when tagging the form.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>One or more key-value pairs to use when tagging the form.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Stores the call to action configuration for the form.</p>
@@ -399,10 +321,7 @@ impl FormBuilder {
         self
     }
     /// <p>Specifies an icon or decoration to display on the form.</p>
-    pub fn set_label_decorator(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelDecorator>,
-    ) -> Self {
+    pub fn set_label_decorator(mut self, input: ::std::option::Option<crate::types::LabelDecorator>) -> Self {
         self.label_decorator = input;
         self
     }

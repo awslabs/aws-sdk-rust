@@ -38,9 +38,7 @@ impl DeleteReplicationJobFluentBuilder {
         }
     }
     /// Access the DeleteReplicationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_replication_job::builders::DeleteReplicationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_replication_job::builders::DeleteReplicationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteReplicationJobFluentBuilder {
             crate::operation::delete_replication_job::DeleteReplicationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_job::DeleteReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_job::DeleteReplicationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteReplicationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteReplicationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_job::DeleteReplicationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_job::DeleteReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_job::DeleteReplicationJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteReplicationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_job::DeleteReplicationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_job::DeleteReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_job::DeleteReplicationJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeleteReplicationJobFluentBuilder {
             crate::operation::delete_replication_job::DeleteReplicationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_job::DeleteReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_job::DeleteReplicationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_job_id(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_job_id(input);
         self
     }

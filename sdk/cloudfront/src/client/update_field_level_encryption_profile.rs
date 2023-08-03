@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Return the results of updating the profile.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput::e_tag): <p>The result of the field-level encryption profile request.</p>
     /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionProfileError>`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError)
-    pub fn update_field_level_encryption_profile(&self) -> crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileFluentBuilder{
+    pub fn update_field_level_encryption_profile(
+        &self,
+    ) -> crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileFluentBuilder {
         crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileFluentBuilder::new(self.handle.clone())
     }
 }

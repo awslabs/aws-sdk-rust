@@ -45,8 +45,7 @@ pub struct Volume {
     pub lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
     #[doc(hidden)]
-    pub administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
     #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsVolumeConfiguration>,
@@ -78,9 +77,7 @@ impl Volume {
         self.name.as_deref()
     }
     /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p>
-    pub fn ontap_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OntapVolumeConfiguration> {
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::OntapVolumeConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -100,21 +97,15 @@ impl Volume {
         self.volume_type.as_ref()
     }
     /// <p>The reason why the volume lifecycle status changed.</p>
-    pub fn lifecycle_transition_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
+    pub fn lifecycle_transition_reason(&self) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
         self.lifecycle_transition_reason.as_ref()
     }
     /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
-    pub fn administrative_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
+    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
         self.administrative_actions.as_deref()
     }
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
-    pub fn open_zfs_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenZfsVolumeConfiguration> {
+    pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsVolumeConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
 }
@@ -127,9 +118,7 @@ impl Volume {
 
 /// A builder for [`Volume`](crate::types::Volume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
@@ -140,12 +129,9 @@ pub struct VolumeBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
-    pub(crate) lifecycle_transition_reason:
-        ::std::option::Option<crate::types::LifecycleTransitionReason>,
-    pub(crate) administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
-    pub(crate) open_zfs_configuration:
-        ::std::option::Option<crate::types::OpenZfsVolumeConfiguration>,
+    pub(crate) lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
+    pub(crate) administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsVolumeConfiguration>,
 }
 impl VolumeBuilder {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
@@ -154,10 +140,7 @@ impl VolumeBuilder {
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -166,18 +149,12 @@ impl VolumeBuilder {
         &self.creation_time
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -209,10 +186,7 @@ impl VolumeBuilder {
     /// <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p> </li>
     /// <li> <p> <code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::VolumeLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -249,17 +223,12 @@ impl VolumeBuilder {
         self
     }
     /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OntapVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::OntapVolumeConfiguration>) -> Self {
         self.ontap_configuration = input;
         self
     }
     /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OntapVolumeConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::OntapVolumeConfiguration> {
         &self.ontap_configuration
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -288,10 +257,7 @@ impl VolumeBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -319,10 +285,7 @@ impl VolumeBuilder {
         self
     }
     /// <p>The type of the volume.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }
@@ -331,25 +294,17 @@ impl VolumeBuilder {
         &self.volume_type
     }
     /// <p>The reason why the volume lifecycle status changed.</p>
-    pub fn lifecycle_transition_reason(
-        mut self,
-        input: crate::types::LifecycleTransitionReason,
-    ) -> Self {
+    pub fn lifecycle_transition_reason(mut self, input: crate::types::LifecycleTransitionReason) -> Self {
         self.lifecycle_transition_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason why the volume lifecycle status changed.</p>
-    pub fn set_lifecycle_transition_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleTransitionReason>,
-    ) -> Self {
+    pub fn set_lifecycle_transition_reason(mut self, input: ::std::option::Option<crate::types::LifecycleTransitionReason>) -> Self {
         self.lifecycle_transition_reason = input;
         self
     }
     /// <p>The reason why the volume lifecycle status changed.</p>
-    pub fn get_lifecycle_transition_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
+    pub fn get_lifecycle_transition_reason(&self) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
         &self.lifecycle_transition_reason
     }
     /// Appends an item to `administrative_actions`.
@@ -364,39 +319,26 @@ impl VolumeBuilder {
         self
     }
     /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
-    pub fn set_administrative_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
-    ) -> Self {
+    pub fn set_administrative_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>) -> Self {
         self.administrative_actions = input;
         self
     }
     /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
-    pub fn get_administrative_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
+    pub fn get_administrative_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
         &self.administrative_actions
     }
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::OpenZfsVolumeConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::OpenZfsVolumeConfiguration) -> Self {
         self.open_zfs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenZfsVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::OpenZfsVolumeConfiguration>) -> Self {
         self.open_zfs_configuration = input;
         self
     }
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenZfsVolumeConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsVolumeConfiguration> {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).

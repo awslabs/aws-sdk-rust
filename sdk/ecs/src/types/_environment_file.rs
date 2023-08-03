@@ -36,9 +36,7 @@ impl EnvironmentFile {
 
 /// A builder for [`EnvironmentFile`](crate::types::EnvironmentFile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentFileBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::EnvironmentFileType>,
@@ -64,10 +62,7 @@ impl EnvironmentFileBuilder {
         self
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentFileType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentFileType>) -> Self {
         self.r#type = input;
         self
     }

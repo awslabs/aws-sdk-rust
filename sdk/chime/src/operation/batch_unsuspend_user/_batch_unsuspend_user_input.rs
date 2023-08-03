@@ -22,17 +22,14 @@ impl BatchUnsuspendUserInput {
 }
 impl BatchUnsuspendUserInput {
     /// Creates a new builder-style object to manufacture [`BatchUnsuspendUserInput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput).
-    pub fn builder(
-    ) -> crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder {
+    pub fn builder() -> crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder {
         crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUnsuspendUserInput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUnsuspendUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,31 +61,21 @@ impl BatchUnsuspendUserInputBuilder {
         self
     }
     /// <p>The request containing the user IDs to unsuspend.</p>
-    pub fn set_user_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_id_list = input;
         self
     }
     /// <p>The request containing the user IDs to unsuspend.</p>
-    pub fn get_user_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_id_list
     }
     /// Consumes the builder and constructs a [`BatchUnsuspendUserInput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput {
-                account_id: self.account_id,
-                user_id_list: self.user_id_list,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput {
+            account_id: self.account_id,
+            user_id_list: self.user_id_list,
+        })
     }
 }

@@ -5,12 +5,10 @@
 pub struct DisassociateFacesOutput {
     /// <p>An array of DissociatedFace objects containing FaceIds that are successfully disassociated with the UserID is returned. Returned if the DisassociatedFaces action is successful.</p>
     #[doc(hidden)]
-    pub disassociated_faces:
-        ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
+    pub disassociated_faces: ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
     /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
     #[doc(hidden)]
-    pub unsuccessful_face_disassociations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>>,
+    pub unsuccessful_face_disassociations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>>,
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
     #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
@@ -22,9 +20,7 @@ impl DisassociateFacesOutput {
         self.disassociated_faces.as_deref()
     }
     /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
-    pub fn unsuccessful_face_disassociations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDisassociation]> {
+    pub fn unsuccessful_face_disassociations(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDisassociation]> {
         self.unsuccessful_face_disassociations.as_deref()
     }
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
@@ -39,22 +35,17 @@ impl ::aws_http::request_id::RequestId for DisassociateFacesOutput {
 }
 impl DisassociateFacesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFacesOutput`](crate::operation::disassociate_faces::DisassociateFacesOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_faces::builders::DisassociateFacesOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_faces::builders::DisassociateFacesOutputBuilder {
         crate::operation::disassociate_faces::builders::DisassociateFacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFacesOutput`](crate::operation::disassociate_faces::DisassociateFacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFacesOutputBuilder {
-    pub(crate) disassociated_faces:
-        ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
-    pub(crate) unsuccessful_face_disassociations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>>,
+    pub(crate) disassociated_faces: ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
+    pub(crate) unsuccessful_face_disassociations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>>,
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
     _request_id: Option<String>,
 }
@@ -71,17 +62,12 @@ impl DisassociateFacesOutputBuilder {
         self
     }
     /// <p>An array of DissociatedFace objects containing FaceIds that are successfully disassociated with the UserID is returned. Returned if the DisassociatedFaces action is successful.</p>
-    pub fn set_disassociated_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
-    ) -> Self {
+    pub fn set_disassociated_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>) -> Self {
         self.disassociated_faces = input;
         self
     }
     /// <p>An array of DissociatedFace objects containing FaceIds that are successfully disassociated with the UserID is returned. Returned if the DisassociatedFaces action is successful.</p>
-    pub fn get_disassociated_faces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>> {
+    pub fn get_disassociated_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>> {
         &self.disassociated_faces
     }
     /// Appends an item to `unsuccessful_face_disassociations`.
@@ -89,10 +75,7 @@ impl DisassociateFacesOutputBuilder {
     /// To override the contents of this collection use [`set_unsuccessful_face_disassociations`](Self::set_unsuccessful_face_disassociations).
     ///
     /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
-    pub fn unsuccessful_face_disassociations(
-        mut self,
-        input: crate::types::UnsuccessfulFaceDisassociation,
-    ) -> Self {
+    pub fn unsuccessful_face_disassociations(mut self, input: crate::types::UnsuccessfulFaceDisassociation) -> Self {
         let mut v = self.unsuccessful_face_disassociations.unwrap_or_default();
         v.push(input);
         self.unsuccessful_face_disassociations = ::std::option::Option::Some(v);
@@ -107,9 +90,7 @@ impl DisassociateFacesOutputBuilder {
         self
     }
     /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
-    pub fn get_unsuccessful_face_disassociations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>> {
+    pub fn get_unsuccessful_face_disassociations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>> {
         &self.unsuccessful_face_disassociations
     }
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
@@ -118,10 +99,7 @@ impl DisassociateFacesOutputBuilder {
         self
     }
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
-    pub fn set_user_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatus>,
-    ) -> Self {
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.user_status = input;
         self
     }

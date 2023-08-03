@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainContactPrivacyOutput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput::operation_id): <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainContactPrivacyError>`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError)
-    pub fn update_domain_contact_privacy(&self) -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyFluentBuilder{
+    pub fn update_domain_contact_privacy(
+        &self,
+    ) -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyFluentBuilder {
         crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyFluentBuilder::new(self.handle.clone())
     }
 }

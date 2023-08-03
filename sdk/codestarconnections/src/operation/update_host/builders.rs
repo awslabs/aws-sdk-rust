@@ -10,10 +10,7 @@ impl UpdateHostInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_host::UpdateHostOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_host::UpdateHostError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_host::UpdateHostError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_host();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateHostFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_host::UpdateHost,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_host::UpdateHost, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_host::UpdateHostError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateHostFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateHostFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_host::UpdateHost,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_host::UpdateHost, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_host::UpdateHostError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl UpdateHostFluentBuilder {
         self.inner.get_host_arn()
     }
     /// <p>The URL or endpoint of the host to be updated.</p>
-    pub fn provider_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_endpoint(input.into());
         self
     }
     /// <p>The URL or endpoint of the host to be updated.</p>
-    pub fn set_provider_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_endpoint(input);
         self
     }
@@ -152,10 +134,7 @@ impl UpdateHostFluentBuilder {
         self
     }
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }

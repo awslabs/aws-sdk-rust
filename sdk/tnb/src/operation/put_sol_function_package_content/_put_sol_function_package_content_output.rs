@@ -45,9 +45,7 @@ impl PutSolFunctionPackageContentOutput {
         self.vnfd_version.as_deref()
     }
     /// <p>Function package metadata.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PutSolFunctionPackageContentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::PutSolFunctionPackageContentMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -58,16 +56,14 @@ impl ::aws_http::request_id::RequestId for PutSolFunctionPackageContentOutput {
 }
 impl PutSolFunctionPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`PutSolFunctionPackageContentOutput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput).
-    pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder{
+    pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder {
         crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSolFunctionPackageContentOutput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSolFunctionPackageContentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) vnfd_id: ::std::option::Option<::std::string::String>,
@@ -107,18 +103,12 @@ impl PutSolFunctionPackageContentOutputBuilder {
         &self.vnfd_id
     }
     /// <p>Function product name.</p>
-    pub fn vnf_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Function product name.</p>
-    pub fn set_vnf_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_product_name = input;
         self
     }
@@ -160,17 +150,12 @@ impl PutSolFunctionPackageContentOutputBuilder {
         self
     }
     /// <p>Function package metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Function package metadata.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -183,10 +168,7 @@ impl PutSolFunctionPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutSolFunctionPackageContentOutput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput
-    {
+    pub fn build(self) -> crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput {
         crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput {
             id: self.id,
             vnfd_id: self.vnfd_id,

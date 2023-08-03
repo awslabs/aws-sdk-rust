@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkspaceImageOutput {
 }
 impl DeleteWorkspaceImageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceImageOutput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageOutputBuilder {
+    pub fn builder() -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageOutputBuilder {
         crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceImageOutput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceImageOutputBuilder {
     _request_id: Option<String>,
 }

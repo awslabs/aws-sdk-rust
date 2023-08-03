@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`exclusion_arns(Option<Vec<String>>)`](crate::operation::list_exclusions::ListExclusionsOutput::exclusion_arns): <p>A list of exclusions' ARNs returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exclusions::ListExclusionsOutput::next_token): <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<ListExclusionsError>`](crate::operation::list_exclusions::ListExclusionsError)
-    pub fn list_exclusions(
-        &self,
-    ) -> crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder {
-        crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_exclusions(&self) -> crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder {
+        crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::new(self.handle.clone())
     }
 }

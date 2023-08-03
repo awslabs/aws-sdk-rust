@@ -44,9 +44,7 @@ impl Branch {
 
 /// A builder for [`Branch`](crate::types::Branch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BranchBuilder {
     pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct BranchBuilder {
 }
 impl BranchBuilder {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn fully_qualified_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn set_fully_qualified_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fully_qualified_name = input;
         self
     }
@@ -89,18 +81,12 @@ impl BranchBuilder {
         &self.description
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn deprecation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deprecation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deprecation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn set_deprecation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deprecation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deprecation_message = input;
         self
     }

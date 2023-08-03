@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`studio_id(impl ::std::convert::Into<String>)`](crate::operation::put_studio_members::builders::PutStudioMembersFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::put_studio_members::builders::PutStudioMembersFluentBuilder::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`PutStudioMembersOutput`](crate::operation::put_studio_members::PutStudioMembersOutput)
     /// - On failure, responds with [`SdkError<PutStudioMembersError>`](crate::operation::put_studio_members::PutStudioMembersError)
-    pub fn put_studio_members(
-        &self,
-    ) -> crate::operation::put_studio_members::builders::PutStudioMembersFluentBuilder {
-        crate::operation::put_studio_members::builders::PutStudioMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_studio_members(&self) -> crate::operation::put_studio_members::builders::PutStudioMembersFluentBuilder {
+        crate::operation::put_studio_members::builders::PutStudioMembersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,8 +31,7 @@ impl ::std::fmt::Debug for StartSourceNetworkRecoveryRequestNetworkEntry {
 }
 impl StartSourceNetworkRecoveryRequestNetworkEntry {
     /// Creates a new builder-style object to manufacture [`StartSourceNetworkRecoveryRequestNetworkEntry`](crate::types::StartSourceNetworkRecoveryRequestNetworkEntry).
-    pub fn builder() -> crate::types::builders::StartSourceNetworkRecoveryRequestNetworkEntryBuilder
-    {
+    pub fn builder() -> crate::types::builders::StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
         crate::types::builders::StartSourceNetworkRecoveryRequestNetworkEntryBuilder::default()
     }
 }
@@ -46,18 +45,12 @@ pub struct StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
 }
 impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     /// <p>The ID of the Source Network you want to recover.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Network you want to recover.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -66,18 +59,12 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
         &self.source_network_id
     }
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
-    pub fn cfn_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cfn_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cfn_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
-    pub fn set_cfn_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cfn_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cfn_stack_name = input;
         self
     }

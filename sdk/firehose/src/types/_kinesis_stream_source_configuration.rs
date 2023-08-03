@@ -30,27 +30,19 @@ impl KinesisStreamSourceConfiguration {
 
 /// A builder for [`KinesisStreamSourceConfiguration`](crate::types::KinesisStreamSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisStreamSourceConfigurationBuilder {
     pub(crate) kinesis_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamSourceConfigurationBuilder {
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
-    pub fn kinesis_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kinesis_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kinesis_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
-    pub fn set_kinesis_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kinesis_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kinesis_stream_arn = input;
         self
     }

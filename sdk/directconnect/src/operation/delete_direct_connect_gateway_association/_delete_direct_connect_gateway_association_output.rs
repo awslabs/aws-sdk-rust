@@ -5,15 +5,12 @@
 pub struct DeleteDirectConnectGatewayAssociationOutput {
     /// <p>Information about the deleted association.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association:
-        ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
+    pub direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,
 }
 impl DeleteDirectConnectGatewayAssociationOutput {
     /// <p>Information about the deleted association.</p>
-    pub fn direct_connect_gateway_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociation> {
+    pub fn direct_connect_gateway_association(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteDirectConnectGatewayAssociation
 }
 impl DeleteDirectConnectGatewayAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationOutput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association::builders::DeleteDirectConnectGatewayAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association::builders::DeleteDirectConnectGatewayAssociationOutputBuilder {
         crate::operation::delete_direct_connect_gateway_association::builders::DeleteDirectConnectGatewayAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDirectConnectGatewayAssociationOutput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationOutputBuilder {
-    pub(crate) direct_connect_gateway_association:
-        ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
+    pub(crate) direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,
 }
 impl DeleteDirectConnectGatewayAssociationOutputBuilder {
     /// <p>Information about the deleted association.</p>
-    pub fn direct_connect_gateway_association(
-        mut self,
-        input: crate::types::DirectConnectGatewayAssociation,
-    ) -> Self {
+    pub fn direct_connect_gateway_association(mut self, input: crate::types::DirectConnectGatewayAssociation) -> Self {
         self.direct_connect_gateway_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the deleted association.</p>
-    pub fn set_direct_connect_gateway_association(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_association(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>) -> Self {
         self.direct_connect_gateway_association = input;
         self
     }
     /// <p>Information about the deleted association.</p>
-    pub fn get_direct_connect_gateway_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociation> {
+    pub fn get_direct_connect_gateway_association(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociation> {
         &self.direct_connect_gateway_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl DeleteDirectConnectGatewayAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationOutput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput).
-    pub fn build(self) -> crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput{
+    pub fn build(self) -> crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput {
         crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput {
-            direct_connect_gateway_association: self.direct_connect_gateway_association
-            ,
+            direct_connect_gateway_association: self.direct_connect_gateway_association,
             _request_id: self._request_id,
         }
     }

@@ -22,18 +22,14 @@ impl CreateRegexPatternSetInput {
 }
 impl CreateRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRegexPatternSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl CreateRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

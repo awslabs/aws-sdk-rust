@@ -16,35 +16,25 @@ impl DeleteCaCertificateInput {
 }
 impl DeleteCaCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteCaCertificateInput`](crate::operation::delete_ca_certificate::DeleteCaCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_ca_certificate::builders::DeleteCaCertificateInputBuilder {
-        crate::operation::delete_ca_certificate::builders::DeleteCaCertificateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_ca_certificate::builders::DeleteCaCertificateInputBuilder {
+        crate::operation::delete_ca_certificate::builders::DeleteCaCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCaCertificateInput`](crate::operation::delete_ca_certificate::DeleteCaCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCaCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCaCertificateInputBuilder {
     /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -55,14 +45,10 @@ impl DeleteCaCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCaCertificateInput`](crate::operation::delete_ca_certificate::DeleteCaCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ca_certificate::DeleteCaCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_ca_certificate::DeleteCaCertificateInput {
-                certificate_id: self.certificate_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_ca_certificate::DeleteCaCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_ca_certificate::DeleteCaCertificateInput {
+            certificate_id: self.certificate_id,
+        })
     }
 }

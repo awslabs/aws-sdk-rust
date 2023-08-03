@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StopExperimentOutput`](crate::operation::stop_experiment::StopExperimentOutput) with field(s):
     ///   - [`ended_time(Option<DateTime>)`](crate::operation::stop_experiment::StopExperimentOutput::ended_time): <p>The date and time that the experiment stopped.</p>
     /// - On failure, responds with [`SdkError<StopExperimentError>`](crate::operation::stop_experiment::StopExperimentError)
-    pub fn stop_experiment(
-        &self,
-    ) -> crate::operation::stop_experiment::builders::StopExperimentFluentBuilder {
-        crate::operation::stop_experiment::builders::StopExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_experiment(&self) -> crate::operation::stop_experiment::builders::StopExperimentFluentBuilder {
+        crate::operation::stop_experiment::builders::StopExperimentFluentBuilder::new(self.handle.clone())
     }
 }

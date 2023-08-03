@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`input_security_groups(Option<Vec<InputSecurityGroup>>)`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput::input_security_groups): List of input security groups
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput::next_token): Placeholder documentation for __string
     /// - On failure, responds with [`SdkError<ListInputSecurityGroupsError>`](crate::operation::list_input_security_groups::ListInputSecurityGroupsError)
-    pub fn list_input_security_groups(
-        &self,
-    ) -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder
-    {
+    pub fn list_input_security_groups(&self) -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder {
         crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

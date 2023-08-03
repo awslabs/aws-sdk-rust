@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScteFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -80,15 +74,11 @@ impl ::std::convert::From<&str> for ScteFilter {
         match s {
             "BREAK" => ScteFilter::Break,
             "DISTRIBUTOR_ADVERTISEMENT" => ScteFilter::DistributorAdvertisement,
-            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => {
-                ScteFilter::DistributorOverlayPlacementOpportunity
-            }
+            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => ScteFilter::DistributorOverlayPlacementOpportunity,
             "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => ScteFilter::DistributorPlacementOpportunity,
             "PROGRAM" => ScteFilter::Program,
             "PROVIDER_ADVERTISEMENT" => ScteFilter::ProviderAdvertisement,
-            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => {
-                ScteFilter::ProviderOverlayPlacementOpportunity
-            }
+            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => ScteFilter::ProviderOverlayPlacementOpportunity,
             "PROVIDER_PLACEMENT_OPPORTUNITY" => ScteFilter::ProviderPlacementOpportunity,
             "SPLICE_INSERT" => ScteFilter::SpliceInsert,
             other => ScteFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -108,15 +98,11 @@ impl ScteFilter {
         match self {
             ScteFilter::Break => "BREAK",
             ScteFilter::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
-            ScteFilter::DistributorOverlayPlacementOpportunity => {
-                "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"
-            }
+            ScteFilter::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
             ScteFilter::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
             ScteFilter::Program => "PROGRAM",
             ScteFilter::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
-            ScteFilter::ProviderOverlayPlacementOpportunity => {
-                "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"
-            }
+            ScteFilter::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
             ScteFilter::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
             ScteFilter::SpliceInsert => "SPLICE_INSERT",
             ScteFilter::Unknown(value) => value.as_str(),

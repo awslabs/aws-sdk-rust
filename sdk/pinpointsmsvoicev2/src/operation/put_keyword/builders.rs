@@ -10,10 +10,7 @@ impl PutKeywordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_keyword::PutKeywordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_keyword::PutKeywordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_keyword::PutKeywordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_keyword();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl PutKeywordFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_keyword::PutKeyword,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_keyword::PutKeyword, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_keyword::PutKeywordError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl PutKeywordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,27 +97,18 @@ impl PutKeywordFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_keyword::PutKeyword,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_keyword::PutKeyword, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_keyword::PutKeywordError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
@@ -154,10 +136,7 @@ impl PutKeywordFluentBuilder {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    pub fn keyword_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyword_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyword_message(input.into());
         self
     }
@@ -167,10 +146,7 @@ impl PutKeywordFluentBuilder {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    pub fn set_keyword_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyword_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keyword_message(input);
         self
     }
@@ -189,10 +165,7 @@ impl PutKeywordFluentBuilder {
         self
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
-    pub fn set_keyword_action(
-        mut self,
-        input: ::std::option::Option<crate::types::KeywordAction>,
-    ) -> Self {
+    pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
         self.inner = self.inner.set_keyword_action(input);
         self
     }

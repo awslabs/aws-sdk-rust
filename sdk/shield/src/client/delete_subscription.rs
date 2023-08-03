@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSubscriptionOutput`](crate::operation::delete_subscription::DeleteSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriptionError>`](crate::operation::delete_subscription::DeleteSubscriptionError)
     #[deprecated]
-    pub fn delete_subscription(
-        &self,
-    ) -> crate::operation::delete_subscription::builders::DeleteSubscriptionFluentBuilder {
-        crate::operation::delete_subscription::builders::DeleteSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_subscription(&self) -> crate::operation::delete_subscription::builders::DeleteSubscriptionFluentBuilder {
+        crate::operation::delete_subscription::builders::DeleteSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_regions::ListRegionsOutput::next_token): <p>If there is more data to be returned, this will be populated. It should be passed into the <code>next-token</code> request parameter of <code>list-regions</code>.</p>
     ///   - [`regions(Option<Vec<Region>>)`](crate::operation::list_regions::ListRegionsOutput::regions): <p>This is a list of Regions for a given account, or if the filtered parameter was used, a list of Regions that match the filter criteria set in the <code>filter</code> parameter.</p>
     /// - On failure, responds with [`SdkError<ListRegionsError>`](crate::operation::list_regions::ListRegionsError)
-    pub fn list_regions(
-        &self,
-    ) -> crate::operation::list_regions::builders::ListRegionsFluentBuilder {
+    pub fn list_regions(&self) -> crate::operation::list_regions::builders::ListRegionsFluentBuilder {
         crate::operation::list_regions::builders::ListRegionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -65,9 +65,7 @@ impl Container {
 
 /// A builder for [`Container`](crate::types::Container).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) container_runtime: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ContainerBuilder {
 }
 impl ContainerBuilder {
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
-    pub fn container_runtime(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_runtime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
-    pub fn set_container_runtime(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_runtime = input;
         self
     }
@@ -166,17 +158,12 @@ impl ContainerBuilder {
         self
     }
     /// <p>Container volume mounts.</p>
-    pub fn set_volume_mounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
-    ) -> Self {
+    pub fn set_volume_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>) -> Self {
         self.volume_mounts = input;
         self
     }
     /// <p>Container volume mounts.</p>
-    pub fn get_volume_mounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
+    pub fn get_volume_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
         &self.volume_mounts
     }
     /// <p>Container security context.</p>
@@ -185,10 +172,7 @@ impl ContainerBuilder {
         self
     }
     /// <p>Container security context.</p>
-    pub fn set_security_context(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityContext>,
-    ) -> Self {
+    pub fn set_security_context(mut self, input: ::std::option::Option<crate::types::SecurityContext>) -> Self {
         self.security_context = input;
         self
     }

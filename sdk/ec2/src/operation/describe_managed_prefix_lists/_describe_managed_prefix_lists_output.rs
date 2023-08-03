@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeManagedPrefixListsOutput {
 }
 impl DescribeManagedPrefixListsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedPrefixListsOutput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput).
-    pub fn builder() -> crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder {
         crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedPrefixListsOutput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedPrefixListsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) prefix_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>>,
+    pub(crate) prefix_lists: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>>,
     _request_id: Option<String>,
 }
 impl DescribeManagedPrefixListsOutputBuilder {
@@ -71,17 +68,12 @@ impl DescribeManagedPrefixListsOutputBuilder {
         self
     }
     /// <p>Information about the prefix lists.</p>
-    pub fn set_prefix_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>>,
-    ) -> Self {
+    pub fn set_prefix_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>>) -> Self {
         self.prefix_lists = input;
         self
     }
     /// <p>Information about the prefix lists.</p>
-    pub fn get_prefix_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>> {
+    pub fn get_prefix_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>> {
         &self.prefix_lists
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,9 +86,7 @@ impl DescribeManagedPrefixListsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeManagedPrefixListsOutput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput {
+    pub fn build(self) -> crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput {
         crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput {
             next_token: self.next_token,
             prefix_lists: self.prefix_lists,

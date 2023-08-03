@@ -6,10 +6,7 @@ pub fn ser_update_bot_recommendation_input(
     if let Some(var_1) = &input.encryption_setting {
         #[allow(unused_mut)]
         let mut object_2 = object.key("encryptionSetting").start_object();
-        crate::protocol_serde::shape_encryption_setting::ser_encryption_setting(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_encryption_setting::ser_encryption_setting(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

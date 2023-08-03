@@ -96,9 +96,7 @@ impl LinuxParameters {
 
 /// A builder for [`LinuxParameters`](crate::types::LinuxParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LinuxParametersBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
     pub(crate) init_process_enabled: ::std::option::Option<bool>,
@@ -124,10 +122,7 @@ impl LinuxParametersBuilder {
     /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
@@ -187,10 +182,7 @@ impl LinuxParametersBuilder {
     /// <p>The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide this parameter for this resource type.</p>
     /// </note>
-    pub fn set_tmpfs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>,
-    ) -> Self {
+    pub fn set_tmpfs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>) -> Self {
         self.tmpfs = input;
         self
     }

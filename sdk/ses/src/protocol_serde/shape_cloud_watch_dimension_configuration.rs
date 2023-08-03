@@ -24,8 +24,7 @@ pub fn ser_cloud_watch_dimension_configuration(
 
 pub fn de_cloud_watch_dimension_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CloudWatchDimensionConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

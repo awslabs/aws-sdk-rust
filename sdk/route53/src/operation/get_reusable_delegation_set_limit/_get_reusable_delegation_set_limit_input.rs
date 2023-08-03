@@ -23,16 +23,14 @@ impl GetReusableDelegationSetLimitInput {
 }
 impl GetReusableDelegationSetLimitInput {
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitInput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput).
-    pub fn builder() -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder{
+    pub fn builder() -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder {
         crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReusableDelegationSetLimitInput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimitInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
     pub(crate) delegation_set_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl GetReusableDelegationSetLimitInputBuilder {
         self
     }
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>) -> Self {
         self.r#type = input;
         self
     }
@@ -56,18 +51,12 @@ impl GetReusableDelegationSetLimitInputBuilder {
         &self.r#type
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub fn delegation_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegation_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegation_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegation_set_id = input;
         self
     }
@@ -82,13 +71,9 @@ impl GetReusableDelegationSetLimitInputBuilder {
         crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput {
-                r#type: self.r#type
-                ,
-                delegation_set_id: self.delegation_set_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput {
+            r#type: self.r#type,
+            delegation_set_id: self.delegation_set_id,
+        })
     }
 }

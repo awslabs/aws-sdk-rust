@@ -28,8 +28,7 @@ impl StopTextTranslationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTextTranslationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder,
+    inner: crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder,
 }
 impl StopTextTranslationJobFluentBuilder {
     /// Creates a new `StopTextTranslationJob`.
@@ -40,10 +39,7 @@ impl StopTextTranslationJobFluentBuilder {
         }
     }
     /// Access the StopTextTranslationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl StopTextTranslationJobFluentBuilder {
             crate::operation::stop_text_translation_job::StopTextTranslationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_text_translation_job::StopTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_text_translation_job::StopTextTranslationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl StopTextTranslationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl StopTextTranslationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_text_translation_job::StopTextTranslationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_text_translation_job::StopTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_text_translation_job::StopTextTranslationJobError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl StopTextTranslationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_text_translation_job::StopTextTranslationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_text_translation_job::StopTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_text_translation_job::StopTextTranslationJobError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl StopTextTranslationJobFluentBuilder {
             crate::operation::stop_text_translation_job::StopTextTranslationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_text_translation_job::StopTextTranslationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_text_translation_job::StopTextTranslationJobError>,
     > {
         self.customize_middleware().await
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_output::AddApplicationOutputOutput::application_version_id): <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     ///   - [`output_descriptions(Option<Vec<OutputDescription>>)`](crate::operation::add_application_output::AddApplicationOutputOutput::output_descriptions): <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     /// - On failure, responds with [`SdkError<AddApplicationOutputError>`](crate::operation::add_application_output::AddApplicationOutputError)
-    pub fn add_application_output(
-        &self,
-    ) -> crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder {
-        crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_application_output(&self) -> crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder {
+        crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder::new(self.handle.clone())
     }
 }

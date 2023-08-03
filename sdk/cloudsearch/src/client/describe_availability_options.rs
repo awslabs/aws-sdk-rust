@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAvailabilityOptionsOutput`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput) with field(s):
     ///   - [`availability_options(Option<AvailabilityOptionsStatus>)`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput::availability_options): <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     /// - On failure, responds with [`SdkError<DescribeAvailabilityOptionsError>`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsError)
-    pub fn describe_availability_options(&self) -> crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsFluentBuilder{
+    pub fn describe_availability_options(
+        &self,
+    ) -> crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsFluentBuilder {
         crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsFluentBuilder::new(self.handle.clone())
     }
 }

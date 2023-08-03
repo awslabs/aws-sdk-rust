@@ -27,7 +27,7 @@ impl CreateMonitoringSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMonitoringSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionInputBuilder,
+    inner: crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionInputBuilder,
 }
 impl CreateMonitoringSubscriptionFluentBuilder {
     /// Creates a new `CreateMonitoringSubscription`.
@@ -38,7 +38,7 @@ impl CreateMonitoringSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateMonitoringSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateMonitoringSubscriptionFluentBuilder {
             crate::operation::create_monitoring_subscription::CreateMonitoringSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateMonitoringSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateMonitoringSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateMonitoringSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl CreateMonitoringSubscriptionFluentBuilder {
             crate::operation::create_monitoring_subscription::CreateMonitoringSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the distribution that you are enabling metrics for.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_id(input.into());
         self
     }
     /// <p>The ID of the distribution that you are enabling metrics for.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_id(input);
         self
     }
@@ -147,17 +130,12 @@ impl CreateMonitoringSubscriptionFluentBuilder {
         self
     }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn set_monitoring_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringSubscription>,
-    ) -> Self {
+    pub fn set_monitoring_subscription(mut self, input: ::std::option::Option<crate::types::MonitoringSubscription>) -> Self {
         self.inner = self.inner.set_monitoring_subscription(input);
         self
     }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn get_monitoring_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringSubscription> {
+    pub fn get_monitoring_subscription(&self) -> &::std::option::Option<crate::types::MonitoringSubscription> {
         self.inner.get_monitoring_subscription()
     }
 }

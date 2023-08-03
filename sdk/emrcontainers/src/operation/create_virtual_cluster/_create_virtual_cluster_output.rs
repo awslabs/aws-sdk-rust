@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateVirtualClusterOutput {
 }
 impl CreateVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualClusterOutput`](crate::operation::create_virtual_cluster::CreateVirtualClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterOutputBuilder {
+    pub fn builder() -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterOutputBuilder {
         crate::operation::create_virtual_cluster::builders::CreateVirtualClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualClusterOutput`](crate::operation::create_virtual_cluster::CreateVirtualClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualClusterOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

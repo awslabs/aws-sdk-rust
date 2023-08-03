@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`user_id(Option<String>)`](crate::operation::reset_user_password::ResetUserPasswordOutput::user_id): <p>The unique identifier of the user that a new password is generated for.</p>
     ///   - [`temporary_password(Option<String>)`](crate::operation::reset_user_password::ResetUserPasswordOutput::temporary_password): <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
     /// - On failure, responds with [`SdkError<ResetUserPasswordError>`](crate::operation::reset_user_password::ResetUserPasswordError)
-    pub fn reset_user_password(
-        &self,
-    ) -> crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder {
-        crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_user_password(&self) -> crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder {
+        crate::operation::reset_user_password::builders::ResetUserPasswordFluentBuilder::new(self.handle.clone())
     }
 }

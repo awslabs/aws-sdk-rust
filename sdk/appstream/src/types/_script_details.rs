@@ -44,9 +44,7 @@ impl ScriptDetails {
 
 /// A builder for [`ScriptDetails`](crate::types::ScriptDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptDetailsBuilder {
     pub(crate) script_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) executable_path: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ScriptDetailsBuilder {
         self
     }
     /// <p>The S3 object location for the script.</p>
-    pub fn set_script_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_script_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.script_s3_location = input;
         self
     }
@@ -72,18 +67,12 @@ impl ScriptDetailsBuilder {
         &self.script_s3_location
     }
     /// <p>The run path for the script.</p>
-    pub fn executable_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The run path for the script.</p>
-    pub fn set_executable_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_executable_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executable_path = input;
         self
     }
@@ -92,18 +81,12 @@ impl ScriptDetailsBuilder {
         &self.executable_path
     }
     /// <p>The runtime parameters passed to the run path for the script.</p>
-    pub fn executable_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The runtime parameters passed to the run path for the script.</p>
-    pub fn set_executable_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_executable_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executable_parameters = input;
         self
     }

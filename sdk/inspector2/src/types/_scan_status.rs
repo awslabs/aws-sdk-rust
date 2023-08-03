@@ -30,9 +30,7 @@ impl ScanStatus {
 
 /// A builder for [`ScanStatus`](crate::types::ScanStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ScanStatusCode>,
     pub(crate) reason: ::std::option::Option<crate::types::ScanStatusReason>,
@@ -44,10 +42,7 @@ impl ScanStatusBuilder {
         self
     }
     /// <p>The status code of the scan.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ScanStatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -61,10 +56,7 @@ impl ScanStatusBuilder {
         self
     }
     /// <p>The reason for the scan.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanStatusReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ScanStatusReason>) -> Self {
         self.reason = input;
         self
     }

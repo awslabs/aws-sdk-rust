@@ -30,9 +30,7 @@ impl SlotSortBy {
 
 /// A builder for [`SlotSortBy`](crate::types::SlotSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SlotSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl SlotSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SlotSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

@@ -26,7 +26,7 @@ impl CreateOutboundConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOutboundConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_outbound_connection::builders::CreateOutboundConnectionInputBuilder,
+    inner: crate::operation::create_outbound_connection::builders::CreateOutboundConnectionInputBuilder,
 }
 impl CreateOutboundConnectionFluentBuilder {
     /// Creates a new `CreateOutboundConnection`.
@@ -37,10 +37,7 @@ impl CreateOutboundConnectionFluentBuilder {
         }
     }
     /// Access the CreateOutboundConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_outbound_connection::builders::CreateOutboundConnectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_outbound_connection::builders::CreateOutboundConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateOutboundConnectionFluentBuilder {
             crate::operation::create_outbound_connection::CreateOutboundConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateOutboundConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateOutboundConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_outbound_connection::CreateOutboundConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateOutboundConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_outbound_connection::CreateOutboundConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateOutboundConnectionFluentBuilder {
             crate::operation::create_outbound_connection::CreateOutboundConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -129,17 +115,12 @@ impl CreateOutboundConnectionFluentBuilder {
         self
     }
     /// <p>Name and Region of the source (local) domain.</p>
-    pub fn set_local_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInformationContainer>,
-    ) -> Self {
+    pub fn set_local_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformationContainer>) -> Self {
         self.inner = self.inner.set_local_domain_info(input);
         self
     }
     /// <p>Name and Region of the source (local) domain.</p>
-    pub fn get_local_domain_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+    pub fn get_local_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformationContainer> {
         self.inner.get_local_domain_info()
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
@@ -148,32 +129,21 @@ impl CreateOutboundConnectionFluentBuilder {
         self
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
-    pub fn set_remote_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInformationContainer>,
-    ) -> Self {
+    pub fn set_remote_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformationContainer>) -> Self {
         self.inner = self.inner.set_remote_domain_info(input);
         self
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
-    pub fn get_remote_domain_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+    pub fn get_remote_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformationContainer> {
         self.inner.get_remote_domain_info()
     }
     /// <p>Name of the connection.</p>
-    pub fn connection_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_alias(input.into());
         self
     }
     /// <p>Name of the connection.</p>
-    pub fn set_connection_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_alias(input);
         self
     }
@@ -187,10 +157,7 @@ impl CreateOutboundConnectionFluentBuilder {
         self
     }
     /// <p>The connection mode.</p>
-    pub fn set_connection_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionMode>,
-    ) -> Self {
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
@@ -204,17 +171,12 @@ impl CreateOutboundConnectionFluentBuilder {
         self
     }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
-    pub fn set_connection_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionProperties>,
-    ) -> Self {
+    pub fn set_connection_properties(mut self, input: ::std::option::Option<crate::types::ConnectionProperties>) -> Self {
         self.inner = self.inner.set_connection_properties(input);
         self
     }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
-    pub fn get_connection_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionProperties> {
+    pub fn get_connection_properties(&self) -> &::std::option::Option<crate::types::ConnectionProperties> {
         self.inner.get_connection_properties()
     }
 }

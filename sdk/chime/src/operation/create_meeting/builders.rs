@@ -10,10 +10,7 @@ impl CreateMeetingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_meeting::CreateMeetingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting::CreateMeetingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting::CreateMeetingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_meeting();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateMeetingFluentBuilder {
         }
     }
     /// Access the CreateMeeting as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_meeting::builders::CreateMeetingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_meeting::builders::CreateMeetingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl CreateMeetingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,18 +111,12 @@ impl CreateMeetingFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -139,18 +125,12 @@ impl CreateMeetingFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_meeting_id(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_meeting_id(input);
         self
     }
@@ -159,18 +139,12 @@ impl CreateMeetingFluentBuilder {
         self.inner.get_external_meeting_id()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meeting_host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_host_id(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_meeting_host_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meeting_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_host_id(input);
         self
     }
@@ -205,10 +179,7 @@ impl CreateMeetingFluentBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -217,25 +188,17 @@ impl CreateMeetingFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        mut self,
-        input: crate::types::MeetingNotificationConfiguration,
-    ) -> Self {
+    pub fn notifications_configuration(mut self, input: crate::types::MeetingNotificationConfiguration) -> Self {
         self.inner = self.inner.notifications_configuration(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn set_notifications_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notifications_configuration(mut self, input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>) -> Self {
         self.inner = self.inner.set_notifications_configuration(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn get_notifications_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
+    pub fn get_notifications_configuration(&self) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
         self.inner.get_notifications_configuration()
     }
 }

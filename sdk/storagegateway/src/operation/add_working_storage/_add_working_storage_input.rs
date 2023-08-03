@@ -26,17 +26,14 @@ impl AddWorkingStorageInput {
 }
 impl AddWorkingStorageInput {
     /// Creates a new builder-style object to manufacture [`AddWorkingStorageInput`](crate::operation::add_working_storage::AddWorkingStorageInput).
-    pub fn builder(
-    ) -> crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder {
+    pub fn builder() -> crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder {
         crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder::default()
     }
 }
 
 /// A builder for [`AddWorkingStorageInput`](crate::operation::add_working_storage::AddWorkingStorageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddWorkingStorageInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -68,10 +65,7 @@ impl AddWorkingStorageInputBuilder {
         self
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn set_disk_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disk_ids = input;
         self
     }
@@ -82,15 +76,10 @@ impl AddWorkingStorageInputBuilder {
     /// Consumes the builder and constructs a [`AddWorkingStorageInput`](crate::operation::add_working_storage::AddWorkingStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_working_storage::AddWorkingStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_working_storage::AddWorkingStorageInput {
-                gateway_arn: self.gateway_arn,
-                disk_ids: self.disk_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_working_storage::AddWorkingStorageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_working_storage::AddWorkingStorageInput {
+            gateway_arn: self.gateway_arn,
+            disk_ids: self.disk_ids,
+        })
     }
 }

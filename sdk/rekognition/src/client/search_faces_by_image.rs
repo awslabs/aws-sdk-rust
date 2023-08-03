@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::operation::search_faces_by_image::SearchFacesByImageOutput::face_matches): <p>An array of faces that match the input face, along with the confidence in the match.</p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::search_faces_by_image::SearchFacesByImageOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<SearchFacesByImageError>`](crate::operation::search_faces_by_image::SearchFacesByImageError)
-    pub fn search_faces_by_image(
-        &self,
-    ) -> crate::operation::search_faces_by_image::builders::SearchFacesByImageFluentBuilder {
-        crate::operation::search_faces_by_image::builders::SearchFacesByImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_faces_by_image(&self) -> crate::operation::search_faces_by_image::builders::SearchFacesByImageFluentBuilder {
+        crate::operation::search_faces_by_image::builders::SearchFacesByImageFluentBuilder::new(self.handle.clone())
     }
 }

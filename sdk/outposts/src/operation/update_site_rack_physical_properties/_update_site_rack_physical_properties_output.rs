@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSiteRackPhysicalPropertiesOutpu
 }
 impl UpdateSiteRackPhysicalPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteRackPhysicalPropertiesOutput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput).
-    pub fn builder() -> crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesOutputBuilder {
         crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSiteRackPhysicalPropertiesOutput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSiteRackPhysicalPropertiesOutputBuilder {
     pub(crate) site: ::std::option::Option<crate::types::Site>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl UpdateSiteRackPhysicalPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSiteRackPhysicalPropertiesOutput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput).
-    pub fn build(self) -> crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput{
+    pub fn build(self) -> crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput {
         crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput {
-            site: self.site
-            ,
+            site: self.site,
             _request_id: self._request_id,
         }
     }

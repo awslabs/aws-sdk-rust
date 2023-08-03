@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`reactive_anomalies(Option<Vec<ReactiveAnomalySummary>>)`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput::reactive_anomalies): <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListAnomaliesForInsightError>`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError)
-    pub fn list_anomalies_for_insight(
-        &self,
-    ) -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightFluentBuilder
-    {
+    pub fn list_anomalies_for_insight(&self) -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightFluentBuilder {
         crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,9 +39,7 @@ impl DeletionConfig {
 
 /// A builder for [`DeletionConfig`](crate::types::DeletionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletionConfigBuilder {
     pub(crate) edge_retention_in_hours: ::std::option::Option<i32>,
     pub(crate) local_size_config: ::std::option::Option<crate::types::LocalSizeConfig>,
@@ -68,10 +66,7 @@ impl DeletionConfigBuilder {
         self
     }
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
-    pub fn set_local_size_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalSizeConfig>,
-    ) -> Self {
+    pub fn set_local_size_config(mut self, input: ::std::option::Option<crate::types::LocalSizeConfig>) -> Self {
         self.local_size_config = input;
         self
     }

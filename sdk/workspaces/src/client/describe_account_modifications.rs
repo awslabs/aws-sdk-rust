@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`account_modifications(Option<Vec<AccountModification>>)`](crate::operation::describe_account_modifications::DescribeAccountModificationsOutput::account_modifications): <p>The list of modifications to the configuration of BYOL.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_modifications::DescribeAccountModificationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeAccountModificationsError>`](crate::operation::describe_account_modifications::DescribeAccountModificationsError)
-    pub fn describe_account_modifications(&self) -> crate::operation::describe_account_modifications::builders::DescribeAccountModificationsFluentBuilder{
+    pub fn describe_account_modifications(
+        &self,
+    ) -> crate::operation::describe_account_modifications::builders::DescribeAccountModificationsFluentBuilder {
         crate::operation::describe_account_modifications::builders::DescribeAccountModificationsFluentBuilder::new(self.handle.clone())
     }
 }

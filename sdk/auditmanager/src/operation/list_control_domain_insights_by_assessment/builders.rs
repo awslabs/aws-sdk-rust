@@ -5,16 +5,16 @@ pub use crate::operation::list_control_domain_insights_by_assessment::_list_cont
 
 impl ListControlDomainInsightsByAssessmentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_control_domain_insights_by_assessment();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ListControlDomainInsightsByAssessmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListControlDomainInsightsByAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder,
+    inner: crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder,
 }
 impl ListControlDomainInsightsByAssessmentFluentBuilder {
     /// Creates a new `ListControlDomainInsightsByAssessment`.
@@ -39,15 +39,22 @@ impl ListControlDomainInsightsByAssessmentFluentBuilder {
         }
     }
     /// Access the ListControlDomainInsightsByAssessment as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +63,17 @@ impl ListControlDomainInsightsByAssessmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,38 +91,46 @@ impl ListControlDomainInsightsByAssessmentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_control_domain_insights_by_assessment::paginator::ListControlDomainInsightsByAssessmentPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_control_domain_insights_by_assessment::paginator::ListControlDomainInsightsByAssessmentPaginator{
-        crate::operation::list_control_domain_insights_by_assessment::paginator::ListControlDomainInsightsByAssessmentPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_control_domain_insights_by_assessment::paginator::ListControlDomainInsightsByAssessmentPaginator {
+        crate::operation::list_control_domain_insights_by_assessment::paginator::ListControlDomainInsightsByAssessmentPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The unique identifier for the active assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p>The unique identifier for the active assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }

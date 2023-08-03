@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput) with field(s):
     ///   - [`window_execution_id(Option<String>)`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput::window_execution_id): <p>The ID of the maintenance window execution that has been stopped.</p>
     /// - On failure, responds with [`SdkError<CancelMaintenanceWindowExecutionError>`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionError)
-    pub fn cancel_maintenance_window_execution(&self) -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionFluentBuilder{
+    pub fn cancel_maintenance_window_execution(
+        &self,
+    ) -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionFluentBuilder {
         crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionFluentBuilder::new(self.handle.clone())
     }
 }

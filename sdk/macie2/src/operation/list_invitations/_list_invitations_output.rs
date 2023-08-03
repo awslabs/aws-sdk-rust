@@ -35,9 +35,7 @@ impl ListInvitationsOutput {
 
 /// A builder for [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInvitationsOutputBuilder {
     pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::Invitation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListInvitationsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each invitation that was received by the account.</p>
-    pub fn set_invitations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Invitation>>,
-    ) -> Self {
+    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Invitation>>) -> Self {
         self.invitations = input;
         self
     }
     /// <p>An array of objects, one for each invitation that was received by the account.</p>
-    pub fn get_invitations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Invitation>> {
+    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Invitation>> {
         &self.invitations
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

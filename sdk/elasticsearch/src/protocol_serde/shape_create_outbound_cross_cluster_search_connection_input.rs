@@ -9,19 +9,13 @@ pub fn ser_create_outbound_cross_cluster_search_connection_input(
     if let Some(var_2) = &input.destination_domain_info {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DestinationDomainInfo").start_object();
-        crate::protocol_serde::shape_domain_information::ser_domain_information(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_domain_information::ser_domain_information(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.source_domain_info {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SourceDomainInfo").start_object();
-        crate::protocol_serde::shape_domain_information::ser_domain_information(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_domain_information::ser_domain_information(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

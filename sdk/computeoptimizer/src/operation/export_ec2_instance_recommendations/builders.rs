@@ -5,16 +5,16 @@ pub use crate::operation::export_ec2_instance_recommendations::_export_ec2_insta
 
 impl ExportEc2InstanceRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.export_ec2_instance_recommendations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ExportEc2InstanceRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportEC2InstanceRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsInputBuilder,
+    inner: crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsInputBuilder,
 }
 impl ExportEC2InstanceRecommendationsFluentBuilder {
     /// Creates a new `ExportEC2InstanceRecommendations`.
@@ -39,15 +39,20 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
         }
     }
     /// Access the ExportEC2InstanceRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `accountIds`.
@@ -114,10 +129,7 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
@@ -126,9 +138,7 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `filters`.
@@ -141,10 +151,7 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that exports a more specific set of instance recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -162,17 +169,12 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
         self
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_fields_to_export(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportableInstanceField>>,
-    ) -> Self {
+    pub fn set_fields_to_export(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportableInstanceField>>) -> Self {
         self.inner = self.inner.set_fields_to_export(input);
         self
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_fields_to_export(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportableInstanceField>> {
+    pub fn get_fields_to_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportableInstanceField>> {
         self.inner.get_fields_to_export()
     }
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>
@@ -183,18 +185,13 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     }
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permissions policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_s3_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfig>,
-    ) -> Self {
+    pub fn set_s3_destination_config(mut self, input: ::std::option::Option<crate::types::S3DestinationConfig>) -> Self {
         self.inner = self.inner.set_s3_destination_config(input);
         self
     }
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permissions policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_s3_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationConfig> {
+    pub fn get_s3_destination_config(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
         self.inner.get_s3_destination_config()
     }
     /// <p>The format of the export file.</p>
@@ -205,10 +202,7 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     }
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::FileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }
@@ -241,25 +235,17 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
         self.inner.get_include_member_accounts()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to export.</p>
-    pub fn recommendation_preferences(
-        mut self,
-        input: crate::types::RecommendationPreferences,
-    ) -> Self {
+    pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.inner = self.inner.recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to export.</p>
-    pub fn set_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationPreferences>,
-    ) -> Self {
+    pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to export.</p>
-    pub fn get_recommendation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+    pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         self.inner.get_recommendation_preferences()
     }
 }

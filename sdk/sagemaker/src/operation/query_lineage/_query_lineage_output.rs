@@ -42,9 +42,7 @@ impl QueryLineageOutput {
 
 /// A builder for [`QueryLineageOutput`](crate::operation::query_lineage::QueryLineageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryLineageOutputBuilder {
     pub(crate) vertices: ::std::option::Option<::std::vec::Vec<crate::types::Vertex>>,
     pub(crate) edges: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
@@ -64,10 +62,7 @@ impl QueryLineageOutputBuilder {
         self
     }
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
-    pub fn set_vertices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Vertex>>,
-    ) -> Self {
+    pub fn set_vertices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vertex>>) -> Self {
         self.vertices = input;
         self
     }
@@ -87,10 +82,7 @@ impl QueryLineageOutputBuilder {
         self
     }
     /// <p>A list of edges that connect vertices in the response.</p>
-    pub fn set_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
-    ) -> Self {
+    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>) -> Self {
         self.edges = input;
         self
     }

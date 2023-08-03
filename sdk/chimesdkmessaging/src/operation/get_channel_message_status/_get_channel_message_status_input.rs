@@ -40,18 +40,14 @@ impl GetChannelMessageStatusInput {
 }
 impl GetChannelMessageStatusInput {
     /// Creates a new builder-style object to manufacture [`GetChannelMessageStatusInput`](crate::operation::get_channel_message_status::GetChannelMessageStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder {
         crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelMessageStatusInput`](crate::operation::get_channel_message_status::GetChannelMessageStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelMessageStatusInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -104,20 +100,14 @@ impl GetChannelMessageStatusInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -134,13 +124,11 @@ impl GetChannelMessageStatusInputBuilder {
         crate::operation::get_channel_message_status::GetChannelMessageStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_channel_message_status::GetChannelMessageStatusInput {
-                channel_arn: self.channel_arn,
-                message_id: self.message_id,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_channel_message_status::GetChannelMessageStatusInput {
+            channel_arn: self.channel_arn,
+            message_id: self.message_id,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }

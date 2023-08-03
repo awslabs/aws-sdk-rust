@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDecoderManifestsOutput {
 }
 impl ListDecoderManifestsOutput {
     /// Creates a new builder-style object to manufacture [`ListDecoderManifestsOutput`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsOutputBuilder {
+    pub fn builder() -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsOutputBuilder {
         crate::operation::list_decoder_manifests::builders::ListDecoderManifestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDecoderManifestsOutput`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDecoderManifestsOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListDecoderManifestsOutputBuilder {
         self
     }
     /// <p> A list of information about each decoder manifest. </p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p> A list of information about each decoder manifest. </p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>> {
         &self.summaries
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>

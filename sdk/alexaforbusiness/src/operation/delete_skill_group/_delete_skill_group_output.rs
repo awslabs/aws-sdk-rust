@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSkillGroupOutput {
 }
 impl DeleteSkillGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillGroupOutput`](crate::operation::delete_skill_group::DeleteSkillGroupOutput).
-    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupOutputBuilder {
         crate::operation::delete_skill_group::builders::DeleteSkillGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSkillGroupOutput`](crate::operation::delete_skill_group::DeleteSkillGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSkillGroupOutputBuilder {
     _request_id: Option<String>,
 }

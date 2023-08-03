@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`deployment_result(DeploymentResult)`](crate::operation::send_heartbeat::builders::SendHeartbeatFluentBuilder::deployment_result) / [`set_deployment_result(Option<DeploymentResult>)`](crate::operation::send_heartbeat::builders::SendHeartbeatFluentBuilder::set_deployment_result): <p>Returns the result of a deployment on the device.</p>
     /// - On success, responds with [`SendHeartbeatOutput`](crate::operation::send_heartbeat::SendHeartbeatOutput)
     /// - On failure, responds with [`SdkError<SendHeartbeatError>`](crate::operation::send_heartbeat::SendHeartbeatError)
-    pub fn send_heartbeat(
-        &self,
-    ) -> crate::operation::send_heartbeat::builders::SendHeartbeatFluentBuilder {
-        crate::operation::send_heartbeat::builders::SendHeartbeatFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_heartbeat(&self) -> crate::operation::send_heartbeat::builders::SendHeartbeatFluentBuilder {
+        crate::operation::send_heartbeat::builders::SendHeartbeatFluentBuilder::new(self.handle.clone())
     }
 }

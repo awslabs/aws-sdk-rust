@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`ipam_resource_discoveries(Option<Vec<IpamResourceDiscovery>>)`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput::ipam_resource_discoveries): <p>The resource discoveries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeIpamResourceDiscoveriesError>`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError)
-    pub fn describe_ipam_resource_discoveries(&self) -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder{
+    pub fn describe_ipam_resource_discoveries(
+        &self,
+    ) -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder {
         crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::new(self.handle.clone())
     }
 }

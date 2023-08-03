@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSpeakerEnrollmentJobOutput {
 }
 impl StartSpeakerEnrollmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StartSpeakerEnrollmentJobOutput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput).
-    pub fn builder() -> crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobOutputBuilder {
         crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSpeakerEnrollmentJobOutput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSpeakerEnrollmentJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::SpeakerEnrollmentJob>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartSpeakerEnrollmentJobOutputBuilder {
         self
     }
     /// <p>Details about the started speaker enrollment job.</p>
-    pub fn set_job(
-        mut self,
-        input: ::std::option::Option<crate::types::SpeakerEnrollmentJob>,
-    ) -> Self {
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::SpeakerEnrollmentJob>) -> Self {
         self.job = input;
         self
     }
@@ -63,9 +58,7 @@ impl StartSpeakerEnrollmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSpeakerEnrollmentJobOutput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput {
+    pub fn build(self) -> crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput {
         crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput {
             job: self.job,
             _request_id: self._request_id,

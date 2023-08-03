@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for TerminateJobFlowsOutput {
 }
 impl TerminateJobFlowsOutput {
     /// Creates a new builder-style object to manufacture [`TerminateJobFlowsOutput`](crate::operation::terminate_job_flows::TerminateJobFlowsOutput).
-    pub fn builder(
-    ) -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsOutputBuilder {
+    pub fn builder() -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsOutputBuilder {
         crate::operation::terminate_job_flows::builders::TerminateJobFlowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateJobFlowsOutput`](crate::operation::terminate_job_flows::TerminateJobFlowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateJobFlowsOutputBuilder {
     _request_id: Option<String>,
 }

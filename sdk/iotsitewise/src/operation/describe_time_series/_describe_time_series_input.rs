@@ -29,17 +29,14 @@ impl DescribeTimeSeriesInput {
 }
 impl DescribeTimeSeriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder {
+    pub fn builder() -> crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder {
         crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTimeSeriesInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DescribeTimeSeriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_time_series::DescribeTimeSeriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_time_series::DescribeTimeSeriesInput {
-                alias: self.alias,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_time_series::DescribeTimeSeriesInput {
+            alias: self.alias,
+            asset_id: self.asset_id,
+            property_id: self.property_id,
+        })
     }
 }

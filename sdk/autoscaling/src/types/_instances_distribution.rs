@@ -156,9 +156,7 @@ impl InstancesDistribution {
 
 /// A builder for [`InstancesDistribution`](crate::types::InstancesDistribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstancesDistributionBuilder {
     pub(crate) on_demand_allocation_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_base_capacity: ::std::option::Option<i32>,
@@ -184,10 +182,7 @@ impl InstancesDistributionBuilder {
     /// <p>You set the order of instance types for the launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling launches your highest priority instance types first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on. This is the default value for Auto Scaling groups that don't specify <code>InstanceRequirements</code> and cannot be used for groups that do.</p>
     /// </dd>
     /// </dl>
-    pub fn on_demand_allocation_strategy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_demand_allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_demand_allocation_strategy = ::std::option::Option::Some(input.into());
         self
     }
@@ -207,10 +202,7 @@ impl InstancesDistributionBuilder {
     /// <p>You set the order of instance types for the launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling launches your highest priority instance types first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on. This is the default value for Auto Scaling groups that don't specify <code>InstanceRequirements</code> and cannot be used for groups that do.</p>
     /// </dd>
     /// </dl>
-    pub fn set_on_demand_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_demand_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_demand_allocation_strategy = input;
         self
     }
@@ -230,9 +222,7 @@ impl InstancesDistributionBuilder {
     /// <p>You set the order of instance types for the launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling launches your highest priority instance types first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on. This is the default value for Auto Scaling groups that don't specify <code>InstanceRequirements</code> and cannot be used for groups that do.</p>
     /// </dd>
     /// </dl>
-    pub fn get_on_demand_allocation_strategy(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_on_demand_allocation_strategy(&self) -> &::std::option::Option<::std::string::String> {
         &self.on_demand_allocation_strategy
     }
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales.</p>
@@ -263,10 +253,7 @@ impl InstancesDistributionBuilder {
     }
     /// <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand Instances are used.</p>
     /// <p>Default: 100</p>
-    pub fn set_on_demand_percentage_above_base_capacity(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_on_demand_percentage_above_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_percentage_above_base_capacity = input;
         self
     }
@@ -303,10 +290,7 @@ impl InstancesDistributionBuilder {
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price.</p>
     /// </dd>
     /// </dl>
-    pub fn spot_allocation_strategy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_allocation_strategy = ::std::option::Option::Some(input.into());
         self
     }
@@ -338,10 +322,7 @@ impl InstancesDistributionBuilder {
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price.</p>
     /// </dd>
     /// </dl>
-    pub fn set_spot_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_allocation_strategy = input;
         self
     }
@@ -397,10 +378,7 @@ impl InstancesDistributionBuilder {
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
-    pub fn spot_max_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_max_price = ::std::option::Option::Some(input.into());
         self
     }
@@ -408,10 +386,7 @@ impl InstancesDistributionBuilder {
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
-    pub fn set_spot_max_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_max_price = input;
         self
     }

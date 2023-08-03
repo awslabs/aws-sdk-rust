@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_experiment::DescribeExperimentOutput::last_modified_time): <p>When the experiment was last modified.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_experiment::DescribeExperimentOutput::last_modified_by): <p>Who last modified the experiment.</p>
     /// - On failure, responds with [`SdkError<DescribeExperimentError>`](crate::operation::describe_experiment::DescribeExperimentError)
-    pub fn describe_experiment(
-        &self,
-    ) -> crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder {
-        crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_experiment(&self) -> crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder {
+        crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder::new(self.handle.clone())
     }
 }

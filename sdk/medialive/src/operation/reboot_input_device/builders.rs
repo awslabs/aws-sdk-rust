@@ -10,10 +10,7 @@ impl RebootInputDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reboot_input_device::RebootInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_input_device::RebootInputDeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_input_device::RebootInputDeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reboot_input_device();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RebootInputDeviceFluentBuilder {
         }
     }
     /// Access the RebootInputDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RebootInputDeviceFluentBuilder {
             crate::operation::reboot_input_device::RebootInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_input_device::RebootInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_input_device::RebootInputDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RebootInputDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RebootInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_input_device::RebootInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_input_device::RebootInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_input_device::RebootInputDeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RebootInputDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_input_device::RebootInputDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_input_device::RebootInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_input_device::RebootInputDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RebootInputDeviceFluentBuilder {
             crate::operation::reboot_input_device::RebootInputDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_input_device::RebootInputDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_input_device::RebootInputDeviceError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl RebootInputDeviceFluentBuilder {
         self
     }
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
-    pub fn set_force(
-        mut self,
-        input: ::std::option::Option<crate::types::RebootInputDeviceForce>,
-    ) -> Self {
+    pub fn set_force(mut self, input: ::std::option::Option<crate::types::RebootInputDeviceForce>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
@@ -140,18 +121,12 @@ impl RebootInputDeviceFluentBuilder {
         self.inner.get_force()
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }

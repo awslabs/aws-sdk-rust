@@ -28,9 +28,7 @@ impl CreateWebAclOutput {
 
 /// A builder for [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebAclOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::WebAclSummary>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateWebAclOutputBuilder {
         self
     }
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::WebAclSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::WebAclSummary>) -> Self {
         self.summary = input;
         self
     }

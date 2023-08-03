@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`ListGroupCertificateAuthoritiesOutput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesOutput) with field(s):
     ///   - [`group_certificate_authorities(Option<Vec<GroupCertificateAuthorityProperties>>)`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesOutput::group_certificate_authorities): A list of certificate authorities associated with the group.
     /// - On failure, responds with [`SdkError<ListGroupCertificateAuthoritiesError>`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesError)
-    pub fn list_group_certificate_authorities(&self) -> crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesFluentBuilder{
+    pub fn list_group_certificate_authorities(
+        &self,
+    ) -> crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesFluentBuilder {
         crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesFluentBuilder::new(self.handle.clone())
     }
 }

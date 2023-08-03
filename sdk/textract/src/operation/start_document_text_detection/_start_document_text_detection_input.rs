@@ -36,9 +36,7 @@ impl StartDocumentTextDetectionInput {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
@@ -52,16 +50,14 @@ impl StartDocumentTextDetectionInput {
 }
 impl StartDocumentTextDetectionInput {
     /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionInput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionInput).
-    pub fn builder() -> crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder{
+    pub fn builder() -> crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder {
         crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDocumentTextDetectionInput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDocumentTextDetectionInputBuilder {
     pub(crate) document_location: ::std::option::Option<crate::types::DocumentLocation>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -77,10 +73,7 @@ impl StartDocumentTextDetectionInputBuilder {
         self
     }
     /// <p>The location of the document to be processed.</p>
-    pub fn set_document_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
+    pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
         self.document_location = input;
         self
     }
@@ -89,18 +82,12 @@ impl StartDocumentTextDetectionInputBuilder {
         &self.document_location
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -128,17 +115,12 @@ impl StartDocumentTextDetectionInputBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
@@ -147,10 +129,7 @@ impl StartDocumentTextDetectionInputBuilder {
         self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -179,15 +158,13 @@ impl StartDocumentTextDetectionInputBuilder {
         crate::operation::start_document_text_detection::StartDocumentTextDetectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionInput {
-                document_location: self.document_location,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_document_text_detection::StartDocumentTextDetectionInput {
+            document_location: self.document_location,
+            client_request_token: self.client_request_token,
+            job_tag: self.job_tag,
+            notification_channel: self.notification_channel,
+            output_config: self.output_config,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNetworkOutput`](crate::operation::delete_network::DeleteNetworkOutput) with field(s):
     ///   - [`network(Option<Network>)`](crate::operation::delete_network::DeleteNetworkOutput::network): <p>Information about the network.</p>
     /// - On failure, responds with [`SdkError<DeleteNetworkError>`](crate::operation::delete_network::DeleteNetworkError)
-    pub fn delete_network(
-        &self,
-    ) -> crate::operation::delete_network::builders::DeleteNetworkFluentBuilder {
-        crate::operation::delete_network::builders::DeleteNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_network(&self) -> crate::operation::delete_network::builders::DeleteNetworkFluentBuilder {
+        crate::operation::delete_network::builders::DeleteNetworkFluentBuilder::new(self.handle.clone())
     }
 }

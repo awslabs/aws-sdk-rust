@@ -18,10 +18,7 @@ pub fn ser_update_cost_category_definition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_cost_category_rule::ser_cost_category_rule(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_cost_category_rule::ser_cost_category_rule(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

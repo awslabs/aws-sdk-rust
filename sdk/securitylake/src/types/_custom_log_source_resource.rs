@@ -44,9 +44,7 @@ impl CustomLogSourceResource {
 
 /// A builder for [`CustomLogSourceResource`](crate::types::CustomLogSourceResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomLogSourceResourceBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl CustomLogSourceResourceBuilder {
         &self.source_name
     }
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }
@@ -94,10 +86,7 @@ impl CustomLogSourceResourceBuilder {
         self
     }
     /// <p>The details of the log provider for a third-party custom source.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLogSourceProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::CustomLogSourceProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -111,17 +100,12 @@ impl CustomLogSourceResourceBuilder {
         self
     }
     /// <p>The attributes of a third-party custom source.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLogSourceAttributes>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::CustomLogSourceAttributes>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes of a third-party custom source.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLogSourceAttributes> {
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::CustomLogSourceAttributes> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`CustomLogSourceResource`](crate::types::CustomLogSourceResource).

@@ -44,9 +44,7 @@ impl AttemptDetail {
 
 /// A builder for [`AttemptDetail`](crate::types::AttemptDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttemptDetailBuilder {
     pub(crate) container: ::std::option::Option<crate::types::AttemptContainerDetail>,
     pub(crate) started_at: ::std::option::Option<i64>,
@@ -60,10 +58,7 @@ impl AttemptDetailBuilder {
         self
     }
     /// <p>The details for the container in this job attempt.</p>
-    pub fn set_container(
-        mut self,
-        input: ::std::option::Option<crate::types::AttemptContainerDetail>,
-    ) -> Self {
+    pub fn set_container(mut self, input: ::std::option::Option<crate::types::AttemptContainerDetail>) -> Self {
         self.container = input;
         self
     }
@@ -100,18 +95,12 @@ impl AttemptDetailBuilder {
         &self.stopped_at
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

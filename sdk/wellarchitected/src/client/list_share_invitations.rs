@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`share_invitation_summaries(Option<Vec<ShareInvitationSummary>>)`](crate::operation::list_share_invitations::ListShareInvitationsOutput::share_invitation_summaries): <p>List of share invitation summaries in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_share_invitations::ListShareInvitationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListShareInvitationsError>`](crate::operation::list_share_invitations::ListShareInvitationsError)
-    pub fn list_share_invitations(
-        &self,
-    ) -> crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder {
-        crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_share_invitations(&self) -> crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder {
+        crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

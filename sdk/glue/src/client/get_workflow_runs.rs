@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`runs(Option<Vec<WorkflowRun>>)`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput::runs): <p>A list of workflow run metadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput::next_token): <p>A continuation token, if not all requested workflow runs have been returned.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowRunsError>`](crate::operation::get_workflow_runs::GetWorkflowRunsError)
-    pub fn get_workflow_runs(
-        &self,
-    ) -> crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder {
-        crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workflow_runs(&self) -> crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder {
+        crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::new(self.handle.clone())
     }
 }

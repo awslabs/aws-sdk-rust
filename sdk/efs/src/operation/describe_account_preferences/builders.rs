@@ -26,7 +26,7 @@ impl DescribeAccountPreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder,
+    inner: crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder,
 }
 impl DescribeAccountPreferencesFluentBuilder {
     /// Creates a new `DescribeAccountPreferences`.
@@ -37,7 +37,7 @@ impl DescribeAccountPreferencesFluentBuilder {
         }
     }
     /// Access the DescribeAccountPreferences as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAccountPreferencesFluentBuilder {
             crate::operation::describe_account_preferences::DescribeAccountPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_preferences::DescribeAccountPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_preferences::DescribeAccountPreferencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAccountPreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAccountPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_preferences::DescribeAccountPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_preferences::DescribeAccountPreferencesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAccountPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_preferences::DescribeAccountPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_preferences::DescribeAccountPreferencesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAccountPreferencesFluentBuilder {
             crate::operation::describe_account_preferences::DescribeAccountPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_preferences::DescribeAccountPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_preferences::DescribeAccountPreferencesError>,
     > {
         self.customize_middleware().await
     }

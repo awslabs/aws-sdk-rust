@@ -37,9 +37,7 @@ impl Folder {
 
 /// A builder for [`Folder`](crate::types::Folder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FolderBuilder {
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
     pub(crate) absolute_path: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl FolderBuilder {
         &self.tree_id
     }
     /// <p>The fully qualified path of the folder in the repository.</p>
-    pub fn absolute_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn absolute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.absolute_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified path of the folder in the repository.</p>
-    pub fn set_absolute_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_absolute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.absolute_path = input;
         self
     }
@@ -81,18 +73,12 @@ impl FolderBuilder {
         &self.absolute_path
     }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
-    pub fn relative_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relative_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
-    pub fn set_relative_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_path = input;
         self
     }

@@ -38,9 +38,7 @@ impl ListTrafficPoliciesFluentBuilder {
         }
     }
     /// Access the ListTrafficPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListTrafficPoliciesFluentBuilder {
             crate::operation::list_traffic_policies::ListTrafficPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policies::ListTrafficPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policies::ListTrafficPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListTrafficPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListTrafficPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policies::ListTrafficPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policies::ListTrafficPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policies::ListTrafficPoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListTrafficPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policies::ListTrafficPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policies::ListTrafficPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policies::ListTrafficPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +106,19 @@ impl ListTrafficPoliciesFluentBuilder {
             crate::operation::list_traffic_policies::ListTrafficPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policies::ListTrafficPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policies::ListTrafficPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>
     /// <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
-    pub fn traffic_policy_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_policy_id_marker(input.into());
         self
     }
     /// <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>
     /// <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
-    pub fn set_traffic_policy_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_policy_id_marker(input);
         self
     }

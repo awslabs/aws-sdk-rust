@@ -8,8 +8,7 @@ pub struct ListServiceInstancesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service instances with summary data.</p>
     #[doc(hidden)]
-    pub service_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
+    pub service_instances: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceInstancesOutput {
@@ -18,9 +17,7 @@ impl ListServiceInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn service_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceInstanceSummary]> {
+    pub fn service_instances(&self) -> ::std::option::Option<&[crate::types::ServiceInstanceSummary]> {
         self.service_instances.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListServiceInstancesOutput {
 }
 impl ListServiceInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstancesOutput`](crate::operation::list_service_instances::ListServiceInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder {
         crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceInstancesOutput`](crate::operation::list_service_instances::ListServiceInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) service_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
+    pub(crate) service_instances: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceInstancesOutputBuilder {
@@ -75,17 +68,12 @@ impl ListServiceInstancesOutputBuilder {
         self
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn set_service_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
-    ) -> Self {
+    pub fn set_service_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>) -> Self {
         self.service_instances = input;
         self
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn get_service_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>> {
+    pub fn get_service_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>> {
         &self.service_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

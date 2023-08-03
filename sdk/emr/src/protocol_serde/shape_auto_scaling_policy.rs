@@ -6,10 +6,7 @@ pub fn ser_auto_scaling_policy(
     if let Some(var_1) = &input.constraints {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Constraints").start_object();
-        crate::protocol_serde::shape_scaling_constraints::ser_scaling_constraints(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_scaling_constraints::ser_scaling_constraints(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.rules {

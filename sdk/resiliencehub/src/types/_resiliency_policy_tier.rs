@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResiliencyPolicyTier {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ResiliencyPolicyTier {
             "Important" => ResiliencyPolicyTier::Important,
             "MissionCritical" => ResiliencyPolicyTier::MissionCritical,
             "NonCritical" => ResiliencyPolicyTier::NonCritical,
-            other => ResiliencyPolicyTier::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResiliencyPolicyTier::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ResiliencyPolicyTier {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CoreServices",
-            "Critical",
-            "Important",
-            "MissionCritical",
-            "NonCritical",
-        ]
+        &["CoreServices", "Critical", "Important", "MissionCritical", "NonCritical"]
     }
 }
 impl ::std::convert::AsRef<str> for ResiliencyPolicyTier {

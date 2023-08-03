@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateVolumeFromBackupOutput {
 }
 impl CreateVolumeFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupOutputBuilder {
         crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVolumeFromBackupOutputBuilder {
     pub(crate) volume: ::std::option::Option<crate::types::Volume>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl CreateVolumeFromBackupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput {
+    pub fn build(self) -> crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput {
         crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput {
             volume: self.volume,
             _request_id: self._request_id,

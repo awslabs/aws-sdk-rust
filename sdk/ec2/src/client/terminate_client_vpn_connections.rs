@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`username(Option<String>)`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput::username): <p>The user who established the terminated client connections.</p>
     ///   - [`connection_statuses(Option<Vec<TerminateConnectionStatus>>)`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput::connection_statuses): <p>The current state of the client connections.</p>
     /// - On failure, responds with [`SdkError<TerminateClientVpnConnectionsError>`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError)
-    pub fn terminate_client_vpn_connections(&self) -> crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsFluentBuilder{
+    pub fn terminate_client_vpn_connections(
+        &self,
+    ) -> crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsFluentBuilder {
         crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

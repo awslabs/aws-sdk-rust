@@ -37,10 +37,7 @@ impl DisassociateTeamMemberFluentBuilder {
         }
     }
     /// Access the DisassociateTeamMember as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisassociateTeamMemberFluentBuilder {
             crate::operation::disassociate_team_member::DisassociateTeamMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_team_member::DisassociateTeamMemberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisassociateTeamMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisassociateTeamMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_team_member::DisassociateTeamMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_team_member::DisassociateTeamMemberError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisassociateTeamMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_team_member::DisassociateTeamMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_team_member::DisassociateTeamMemberError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DisassociateTeamMemberFluentBuilder {
             crate::operation::disassociate_team_member::DisassociateTeamMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_team_member::DisassociateTeamMemberError>,
     > {
         self.customize_middleware().await
     }

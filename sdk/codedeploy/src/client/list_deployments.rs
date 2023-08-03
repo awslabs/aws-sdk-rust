@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`deployments(Option<Vec<String>>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>A list of deployment IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
-    pub fn list_deployments(
-        &self,
-    ) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
-        crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
+        crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

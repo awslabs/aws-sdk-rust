@@ -23,18 +23,14 @@ impl ListIdentityPoolUsageInput {
 }
 impl ListIdentityPoolUsageInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoolUsageInput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageInputBuilder {
         crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityPoolUsageInput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoolUsageInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -71,15 +67,11 @@ impl ListIdentityPoolUsageInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityPoolUsageInput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

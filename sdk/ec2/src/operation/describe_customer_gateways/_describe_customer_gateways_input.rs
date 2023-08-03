@@ -62,18 +62,14 @@ impl DescribeCustomerGatewaysInput {
 }
 impl DescribeCustomerGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerGatewaysInput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder {
         crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomerGatewaysInput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomerGatewaysInputBuilder {
     pub(crate) customer_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -86,10 +82,7 @@ impl DescribeCustomerGatewaysInputBuilder {
     ///
     /// <p>One or more customer gateway IDs.</p>
     /// <p>Default: Describes all your customer gateways.</p>
-    pub fn customer_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.customer_gateway_ids.unwrap_or_default();
         v.push(input.into());
         self.customer_gateway_ids = ::std::option::Option::Some(v);
@@ -97,18 +90,13 @@ impl DescribeCustomerGatewaysInputBuilder {
     }
     /// <p>One or more customer gateway IDs.</p>
     /// <p>Default: Describes all your customer gateways.</p>
-    pub fn set_customer_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.customer_gateway_ids = input;
         self
     }
     /// <p>One or more customer gateway IDs.</p>
     /// <p>Default: Describes all your customer gateways.</p>
-    pub fn get_customer_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.customer_gateway_ids
     }
     /// Appends an item to `filters`.
@@ -153,10 +141,7 @@ impl DescribeCustomerGatewaysInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -200,12 +185,10 @@ impl DescribeCustomerGatewaysInputBuilder {
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput {
-                customer_gateway_ids: self.customer_gateway_ids,
-                filters: self.filters,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput {
+            customer_gateway_ids: self.customer_gateway_ids,
+            filters: self.filters,
+            dry_run: self.dry_run,
+        })
     }
 }

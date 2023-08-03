@@ -26,12 +26,10 @@ pub struct CreateVerifiedAccessEndpointInput {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
     #[doc(hidden)]
-    pub load_balancer_options:
-        ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
+    pub load_balancer_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
     /// <p>The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.</p>
     #[doc(hidden)]
-    pub network_interface_options:
-        ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
+    pub network_interface_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
     /// <p>A description for the Verified Access endpoint.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -54,15 +52,11 @@ impl CreateVerifiedAccessEndpointInput {
         self.verified_access_group_id.as_deref()
     }
     /// <p>The type of Verified Access endpoint to create.</p>
-    pub fn endpoint_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointType> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The type of attachment.</p>
-    pub fn attachment_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointAttachmentType> {
+    pub fn attachment_type(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointAttachmentType> {
         self.attachment_type.as_ref()
     }
     /// <p>The ARN of the public TLS/SSL certificate in Amazon Web Services Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.</p>
@@ -82,15 +76,11 @@ impl CreateVerifiedAccessEndpointInput {
         self.security_group_ids.as_deref()
     }
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
-    pub fn load_balancer_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions> {
+    pub fn load_balancer_options(&self) -> ::std::option::Option<&crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions> {
         self.load_balancer_options.as_ref()
     }
     /// <p>The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.</p>
-    pub fn network_interface_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateVerifiedAccessEndpointEniOptions> {
+    pub fn network_interface_options(&self) -> ::std::option::Option<&crate::types::CreateVerifiedAccessEndpointEniOptions> {
         self.network_interface_options.as_ref()
     }
     /// <p>A description for the Verified Access endpoint.</p>
@@ -116,50 +106,38 @@ impl CreateVerifiedAccessEndpointInput {
 }
 impl CreateVerifiedAccessEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessEndpointInput`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput).
-    pub fn builder() -> crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder{
+    pub fn builder() -> crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder {
         crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVerifiedAccessEndpointInput`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointInputBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_type: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
-    pub(crate) attachment_type:
-        ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
+    pub(crate) attachment_type: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
     pub(crate) domain_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_domain: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_domain_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) load_balancer_options:
-        ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
-    pub(crate) network_interface_options:
-        ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
+    pub(crate) load_balancer_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
+    pub(crate) network_interface_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateVerifiedAccessEndpointInputBuilder {
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
-    pub fn verified_access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_group_id = input;
         self
     }
@@ -173,54 +151,35 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         self
     }
     /// <p>The type of Verified Access endpoint to create.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The type of Verified Access endpoint to create.</p>
-    pub fn get_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointType> {
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointType> {
         &self.endpoint_type
     }
     /// <p>The type of attachment.</p>
-    pub fn attachment_type(
-        mut self,
-        input: crate::types::VerifiedAccessEndpointAttachmentType,
-    ) -> Self {
+    pub fn attachment_type(mut self, input: crate::types::VerifiedAccessEndpointAttachmentType) -> Self {
         self.attachment_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of attachment.</p>
-    pub fn set_attachment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
-    ) -> Self {
+    pub fn set_attachment_type(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>) -> Self {
         self.attachment_type = input;
         self
     }
     /// <p>The type of attachment.</p>
-    pub fn get_attachment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType> {
+    pub fn get_attachment_type(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType> {
         &self.attachment_type
     }
     /// <p>The ARN of the public TLS/SSL certificate in Amazon Web Services Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.</p>
-    pub fn domain_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the public TLS/SSL certificate in Amazon Web Services Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.</p>
-    pub fn set_domain_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_certificate_arn = input;
         self
     }
@@ -229,18 +188,12 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         &self.domain_certificate_arn
     }
     /// <p>The DNS name for users to reach your application.</p>
-    pub fn application_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name for users to reach your application.</p>
-    pub fn set_application_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_domain = input;
         self
     }
@@ -249,18 +202,12 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         &self.application_domain
     }
     /// <p>A custom identifier that is prepended to the DNS name that is generated for the endpoint.</p>
-    pub fn endpoint_domain_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_domain_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_domain_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom identifier that is prepended to the DNS name that is generated for the endpoint.</p>
-    pub fn set_endpoint_domain_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_domain_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_domain_prefix = input;
         self
     }
@@ -273,71 +220,47 @@ impl CreateVerifiedAccessEndpointInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
-    pub fn load_balancer_options(
-        mut self,
-        input: crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions,
-    ) -> Self {
+    pub fn load_balancer_options(mut self, input: crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions) -> Self {
         self.load_balancer_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
-    pub fn set_load_balancer_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
-    ) -> Self {
+    pub fn set_load_balancer_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>) -> Self {
         self.load_balancer_options = input;
         self
     }
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
-    pub fn get_load_balancer_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions> {
+    pub fn get_load_balancer_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions> {
         &self.load_balancer_options
     }
     /// <p>The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.</p>
-    pub fn network_interface_options(
-        mut self,
-        input: crate::types::CreateVerifiedAccessEndpointEniOptions,
-    ) -> Self {
+    pub fn network_interface_options(mut self, input: crate::types::CreateVerifiedAccessEndpointEniOptions) -> Self {
         self.network_interface_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.</p>
-    pub fn set_network_interface_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
-    ) -> Self {
+    pub fn set_network_interface_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>) -> Self {
         self.network_interface_options = input;
         self
     }
     /// <p>The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.</p>
-    pub fn get_network_interface_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions> {
+    pub fn get_network_interface_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions> {
         &self.network_interface_options
     }
     /// <p>A description for the Verified Access endpoint.</p>
@@ -355,18 +278,12 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         &self.description
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -386,17 +303,12 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         self
     }
     /// <p>The tags to assign to the Verified Access endpoint.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the Verified Access endpoint.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -434,23 +346,21 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput {
-                verified_access_group_id: self.verified_access_group_id,
-                endpoint_type: self.endpoint_type,
-                attachment_type: self.attachment_type,
-                domain_certificate_arn: self.domain_certificate_arn,
-                application_domain: self.application_domain,
-                endpoint_domain_prefix: self.endpoint_domain_prefix,
-                security_group_ids: self.security_group_ids,
-                load_balancer_options: self.load_balancer_options,
-                network_interface_options: self.network_interface_options,
-                description: self.description,
-                policy_document: self.policy_document,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput {
+            verified_access_group_id: self.verified_access_group_id,
+            endpoint_type: self.endpoint_type,
+            attachment_type: self.attachment_type,
+            domain_certificate_arn: self.domain_certificate_arn,
+            application_domain: self.application_domain,
+            endpoint_domain_prefix: self.endpoint_domain_prefix,
+            security_group_ids: self.security_group_ids,
+            load_balancer_options: self.load_balancer_options,
+            network_interface_options: self.network_interface_options,
+            description: self.description,
+            policy_document: self.policy_document,
+            tag_specifications: self.tag_specifications,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+        })
     }
 }

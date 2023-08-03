@@ -5,8 +5,7 @@
 pub struct ListAssessmentRunAgentsOutput {
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
     #[doc(hidden)]
-    pub assessment_run_agents:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
+    pub assessment_run_agents: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssessmentRunAgentsOutput {
 }
 impl ListAssessmentRunAgentsOutput {
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
-    pub fn assessment_run_agents(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentRunAgent]> {
+    pub fn assessment_run_agents(&self) -> ::std::option::Option<&[crate::types::AssessmentRunAgent]> {
         self.assessment_run_agents.as_deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssessmentRunAgentsOutput {
 }
 impl ListAssessmentRunAgentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentRunAgentsOutput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsOutputBuilder {
         crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentRunAgentsOutput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentRunAgentsOutputBuilder {
-    pub(crate) assessment_run_agents:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
+    pub(crate) assessment_run_agents: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListAssessmentRunAgentsOutputBuilder {
         self
     }
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
-    pub fn set_assessment_run_agents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
-    ) -> Self {
+    pub fn set_assessment_run_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>) -> Self {
         self.assessment_run_agents = input;
         self
     }
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
-    pub fn get_assessment_run_agents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>> {
+    pub fn get_assessment_run_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>> {
         &self.assessment_run_agents
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -99,9 +86,7 @@ impl ListAssessmentRunAgentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentRunAgentsOutput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
+    pub fn build(self) -> crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
         crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
             assessment_run_agents: self.assessment_run_agents,
             next_token: self.next_token,

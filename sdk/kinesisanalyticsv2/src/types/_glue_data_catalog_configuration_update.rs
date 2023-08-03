@@ -23,26 +23,18 @@ impl GlueDataCatalogConfigurationUpdate {
 
 /// A builder for [`GlueDataCatalogConfigurationUpdate`](crate::types::GlueDataCatalogConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationUpdateBuilder {
     pub(crate) database_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfigurationUpdateBuilder {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn set_database_arn_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_arn_update = input;
         self
     }

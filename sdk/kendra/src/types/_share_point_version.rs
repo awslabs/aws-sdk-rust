@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SharePointVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for SharePointVersion {
             "SHAREPOINT_2016" => SharePointVersion::Sharepoint2016,
             "SHAREPOINT_2019" => SharePointVersion::Sharepoint2019,
             "SHAREPOINT_ONLINE" => SharePointVersion::SharepointOnline,
-            other => {
-                SharePointVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SharePointVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl SharePointVersion {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "SHAREPOINT_2013",
-            "SHAREPOINT_2016",
-            "SHAREPOINT_2019",
-            "SHAREPOINT_ONLINE",
-        ]
+        &["SHAREPOINT_2013", "SHAREPOINT_2016", "SHAREPOINT_2019", "SHAREPOINT_ONLINE"]
     }
 }
 impl ::std::convert::AsRef<str> for SharePointVersion {

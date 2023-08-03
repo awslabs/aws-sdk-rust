@@ -30,9 +30,7 @@ impl TrialComponentSimpleSummary {
         self.trial_component_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
-    pub fn trial_component_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrialComponentSource> {
+    pub fn trial_component_source(&self) -> ::std::option::Option<&crate::types::TrialComponentSource> {
         self.trial_component_source.as_ref()
     }
     /// <p>When the component was created.</p>
@@ -53,9 +51,7 @@ impl TrialComponentSimpleSummary {
 
 /// A builder for [`TrialComponentSimpleSummary`](crate::types::TrialComponentSimpleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialComponentSimpleSummaryBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,12 @@ pub struct TrialComponentSimpleSummaryBuilder {
 }
 impl TrialComponentSimpleSummaryBuilder {
     /// <p>The name of the trial component.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the trial component.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_name = input;
         self
     }
@@ -85,18 +75,12 @@ impl TrialComponentSimpleSummaryBuilder {
         &self.trial_component_name
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_arn = input;
         self
     }
@@ -110,17 +94,12 @@ impl TrialComponentSimpleSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
-    pub fn set_trial_component_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TrialComponentSource>,
-    ) -> Self {
+    pub fn set_trial_component_source(mut self, input: ::std::option::Option<crate::types::TrialComponentSource>) -> Self {
         self.trial_component_source = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
-    pub fn get_trial_component_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrialComponentSource> {
+    pub fn get_trial_component_source(&self) -> &::std::option::Option<crate::types::TrialComponentSource> {
         &self.trial_component_source
     }
     /// <p>When the component was created.</p>
@@ -129,10 +108,7 @@ impl TrialComponentSimpleSummaryBuilder {
         self
     }
     /// <p>When the component was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -146,10 +122,7 @@ impl TrialComponentSimpleSummaryBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }

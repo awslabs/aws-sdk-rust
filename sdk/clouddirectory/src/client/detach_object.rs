@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DetachObjectOutput`](crate::operation::detach_object::DetachObjectOutput) with field(s):
     ///   - [`detached_object_identifier(Option<String>)`](crate::operation::detach_object::DetachObjectOutput::detached_object_identifier): <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
     /// - On failure, responds with [`SdkError<DetachObjectError>`](crate::operation::detach_object::DetachObjectError)
-    pub fn detach_object(
-        &self,
-    ) -> crate::operation::detach_object::builders::DetachObjectFluentBuilder {
-        crate::operation::detach_object::builders::DetachObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_object(&self) -> crate::operation::detach_object::builders::DetachObjectFluentBuilder {
+        crate::operation::detach_object::builders::DetachObjectFluentBuilder::new(self.handle.clone())
     }
 }

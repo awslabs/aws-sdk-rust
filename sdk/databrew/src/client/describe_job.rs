@@ -30,9 +30,7 @@ impl super::Client {
     ///   - [`timeout(i32)`](crate::operation::describe_job::DescribeJobOutput::timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     ///   - [`job_sample(Option<JobSample>)`](crate::operation::describe_job::DescribeJobOutput::job_sample): <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
     /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::operation::describe_job::DescribeJobError)
-    pub fn describe_job(
-        &self,
-    ) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
+    pub fn describe_job(&self) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
         crate::operation::describe_job::builders::DescribeJobFluentBuilder::new(self.handle.clone())
     }
 }

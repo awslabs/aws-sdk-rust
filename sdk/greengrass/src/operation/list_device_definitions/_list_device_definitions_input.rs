@@ -22,18 +22,14 @@ impl ListDeviceDefinitionsInput {
 }
 impl ListDeviceDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionsInput`](crate::operation::list_device_definitions::ListDeviceDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsInputBuilder {
         crate::operation::list_device_definitions::builders::ListDeviceDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceDefinitionsInput`](crate::operation::list_device_definitions::ListDeviceDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceDefinitionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListDeviceDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceDefinitionsInput`](crate::operation::list_device_definitions::ListDeviceDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_definitions::ListDeviceDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_definitions::ListDeviceDefinitionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_definitions::ListDeviceDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_device_definitions::ListDeviceDefinitionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

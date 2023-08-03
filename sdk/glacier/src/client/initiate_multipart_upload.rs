@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput::location): <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     ///   - [`upload_id(Option<String>)`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput::upload_id): <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     /// - On failure, responds with [`SdkError<InitiateMultipartUploadError>`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadError)
-    pub fn initiate_multipart_upload(
-        &self,
-    ) -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadFluentBuilder
-    {
+    pub fn initiate_multipart_upload(&self) -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadFluentBuilder {
         crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadFluentBuilder::new(self.handle.clone())
     }
 }

@@ -71,18 +71,12 @@ pub struct GetFolderPathInputBuilder {
 }
 impl GetFolderPathInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -149,10 +143,7 @@ impl GetFolderPathInputBuilder {
     /// Consumes the builder and constructs a [`GetFolderPathInput`](crate::operation::get_folder_path::GetFolderPathInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_folder_path::GetFolderPathInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_folder_path::GetFolderPathInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_folder_path::GetFolderPathInput {
             authentication_token: self.authentication_token,
             folder_id: self.folder_id,

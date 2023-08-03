@@ -22,35 +22,26 @@ impl DeleteByteMatchSetInput {
 }
 impl DeleteByteMatchSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetInput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder {
         crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteByteMatchSetInput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteByteMatchSetInputBuilder {
     pub(crate) byte_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteByteMatchSetInputBuilder {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.byte_match_set_id = input;
         self
     }
@@ -75,15 +66,11 @@ impl DeleteByteMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteByteMatchSetInput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_byte_match_set::DeleteByteMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetInput {
-                byte_match_set_id: self.byte_match_set_id,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_byte_match_set::DeleteByteMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_byte_match_set::DeleteByteMatchSetInput {
+            byte_match_set_id: self.byte_match_set_id,
+            change_token: self.change_token,
+        })
     }
 }

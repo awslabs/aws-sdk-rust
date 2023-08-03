@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`experiments(Option<Vec<ExperimentSummary>>)`](crate::operation::list_experiments::ListExperimentsOutput::experiments): <p>The experiments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_experiments::ListExperimentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListExperimentsError>`](crate::operation::list_experiments::ListExperimentsError)
-    pub fn list_experiments(
-        &self,
-    ) -> crate::operation::list_experiments::builders::ListExperimentsFluentBuilder {
-        crate::operation::list_experiments::builders::ListExperimentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_experiments(&self) -> crate::operation::list_experiments::builders::ListExperimentsFluentBuilder {
+        crate::operation::list_experiments::builders::ListExperimentsFluentBuilder::new(self.handle.clone())
     }
 }

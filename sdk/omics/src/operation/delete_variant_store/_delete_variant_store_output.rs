@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVariantStoreOutput {
 }
 impl DeleteVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder {
+    pub fn builder() -> crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder {
         crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVariantStoreOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
     _request_id: Option<String>,

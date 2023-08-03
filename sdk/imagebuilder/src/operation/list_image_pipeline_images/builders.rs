@@ -26,8 +26,7 @@ impl ListImagePipelineImagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImagePipelineImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder,
+    inner: crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder,
 }
 impl ListImagePipelineImagesFluentBuilder {
     /// Creates a new `ListImagePipelineImages`.
@@ -38,10 +37,7 @@ impl ListImagePipelineImagesFluentBuilder {
         }
     }
     /// Access the ListImagePipelineImages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListImagePipelineImagesFluentBuilder {
             crate::operation::list_image_pipeline_images::ListImagePipelineImages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListImagePipelineImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListImagePipelineImagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_pipeline_images::ListImagePipelineImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListImagePipelineImagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_pipeline_images::ListImagePipelineImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListImagePipelineImagesFluentBuilder {
             crate::operation::list_image_pipeline_images::ListImagePipelineImages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator {
         crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_pipeline_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_pipeline_arn(input);
         self
     }
@@ -171,10 +147,7 @@ impl ListImagePipelineImagesFluentBuilder {
     /// <li> <p> <code>name</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

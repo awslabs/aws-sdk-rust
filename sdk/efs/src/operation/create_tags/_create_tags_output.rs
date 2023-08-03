@@ -19,9 +19,7 @@ impl CreateTagsOutput {
 
 /// A builder for [`CreateTagsOutput`](crate::operation::create_tags::CreateTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTagsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,35 +23,26 @@ impl GetUsagePlanKeyInput {
 }
 impl GetUsagePlanKeyInput {
     /// Creates a new builder-style object to manufacture [`GetUsagePlanKeyInput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyInput).
-    pub fn builder() -> crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyInputBuilder {
         crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsagePlanKeyInput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlanKeyInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUsagePlanKeyInputBuilder {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_plan_id = input;
         self
     }
@@ -76,10 +67,7 @@ impl GetUsagePlanKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetUsagePlanKeyInput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_plan_key::GetUsagePlanKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_usage_plan_key::GetUsagePlanKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_plan_key::GetUsagePlanKeyInput {
             usage_plan_id: self.usage_plan_id,
             key_id: self.key_id,

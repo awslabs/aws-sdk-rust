@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`project_template_id(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::project_template_id): <p>The ID for the AWS CodeStar project template used to create the project.</p>
     ///   - [`status(Option<ProjectStatus>)`](crate::operation::describe_project::DescribeProjectOutput::status): <p>The project creation or deletion status.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
-    pub fn describe_project(
-        &self,
-    ) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
-        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
+        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())
     }
 }

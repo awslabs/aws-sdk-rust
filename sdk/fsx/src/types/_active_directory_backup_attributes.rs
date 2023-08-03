@@ -37,9 +37,7 @@ impl ActiveDirectoryBackupAttributes {
 
 /// A builder for [`ActiveDirectoryBackupAttributes`](crate::types::ActiveDirectoryBackupAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveDirectoryBackupAttributesBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) active_directory_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ActiveDirectoryBackupAttributesBuilder {
         &self.domain_name
     }
     /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
-    pub fn active_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
-    pub fn set_active_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_directory_id = input;
         self
     }

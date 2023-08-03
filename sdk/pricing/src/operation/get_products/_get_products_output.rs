@@ -42,9 +42,7 @@ impl GetProductsOutput {
 
 /// A builder for [`GetProductsOutput`](crate::operation::get_products::GetProductsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProductsOutputBuilder {
     pub(crate) format_version: ::std::option::Option<::std::string::String>,
     pub(crate) price_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,18 +51,12 @@ pub struct GetProductsOutputBuilder {
 }
 impl GetProductsOutputBuilder {
     /// <p>The format version of the response. For example, aws_v1.</p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format version of the response. For example, aws_v1.</p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format_version = input;
         self
     }
@@ -84,10 +76,7 @@ impl GetProductsOutputBuilder {
         self
     }
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    pub fn set_price_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_price_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.price_list = input;
         self
     }

@@ -8,35 +8,27 @@ pub struct CreateSourceLocationInput {
     pub access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     /// <p>The optional configuration for the server that serves segments.</p>
     #[doc(hidden)]
-    pub default_segment_delivery_configuration:
-        ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
+    pub default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
     /// <p>The source's HTTP package configurations.</p>
     #[doc(hidden)]
     pub http_configuration: ::std::option::Option<crate::types::HttpConfiguration>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
     #[doc(hidden)]
-    pub segment_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
+    pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name associated with the source location.</p>
     #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn access_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccessConfiguration> {
+    pub fn access_configuration(&self) -> ::std::option::Option<&crate::types::AccessConfiguration> {
         self.access_configuration.as_ref()
     }
     /// <p>The optional configuration for the server that serves segments.</p>
-    pub fn default_segment_delivery_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultSegmentDeliveryConfiguration> {
+    pub fn default_segment_delivery_configuration(&self) -> ::std::option::Option<&crate::types::DefaultSegmentDeliveryConfiguration> {
         self.default_segment_delivery_configuration.as_ref()
     }
     /// <p>The source's HTTP package configurations.</p>
@@ -44,9 +36,7 @@ impl CreateSourceLocationInput {
         self.http_configuration.as_ref()
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
+    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
         self.segment_delivery_configurations.as_deref()
     }
     /// <p>The name associated with the source location.</p>
@@ -54,38 +44,27 @@ impl CreateSourceLocationInput {
         self.source_location_name.as_deref()
     }
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateSourceLocationInput {
     /// Creates a new builder-style object to manufacture [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
-    pub fn builder(
-    ) -> crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder {
+    pub fn builder() -> crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder {
         crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSourceLocationInputBuilder {
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
-    pub(crate) default_segment_delivery_configuration:
-        ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
+    pub(crate) default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
     pub(crate) http_configuration: ::std::option::Option<crate::types::HttpConfiguration>,
-    pub(crate) segment_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
+    pub(crate) segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSourceLocationInputBuilder {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -94,24 +73,16 @@ impl CreateSourceLocationInputBuilder {
         self
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn set_access_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessConfiguration>,
-    ) -> Self {
+    pub fn set_access_configuration(mut self, input: ::std::option::Option<crate::types::AccessConfiguration>) -> Self {
         self.access_configuration = input;
         self
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn get_access_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessConfiguration> {
+    pub fn get_access_configuration(&self) -> &::std::option::Option<crate::types::AccessConfiguration> {
         &self.access_configuration
     }
     /// <p>The optional configuration for the server that serves segments.</p>
-    pub fn default_segment_delivery_configuration(
-        mut self,
-        input: crate::types::DefaultSegmentDeliveryConfiguration,
-    ) -> Self {
+    pub fn default_segment_delivery_configuration(mut self, input: crate::types::DefaultSegmentDeliveryConfiguration) -> Self {
         self.default_segment_delivery_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -124,9 +95,7 @@ impl CreateSourceLocationInputBuilder {
         self
     }
     /// <p>The optional configuration for the server that serves segments.</p>
-    pub fn get_default_segment_delivery_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
+    pub fn get_default_segment_delivery_configuration(&self) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
         &self.default_segment_delivery_configuration
     }
     /// <p>The source's HTTP package configurations.</p>
@@ -135,17 +104,12 @@ impl CreateSourceLocationInputBuilder {
         self
     }
     /// <p>The source's HTTP package configurations.</p>
-    pub fn set_http_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpConfiguration>,
-    ) -> Self {
+    pub fn set_http_configuration(mut self, input: ::std::option::Option<crate::types::HttpConfiguration>) -> Self {
         self.http_configuration = input;
         self
     }
     /// <p>The source's HTTP package configurations.</p>
-    pub fn get_http_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::HttpConfiguration> {
+    pub fn get_http_configuration(&self) -> &::std::option::Option<crate::types::HttpConfiguration> {
         &self.http_configuration
     }
     /// Appends an item to `segment_delivery_configurations`.
@@ -153,10 +117,7 @@ impl CreateSourceLocationInputBuilder {
     /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
     ///
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(
-        mut self,
-        input: crate::types::SegmentDeliveryConfiguration,
-    ) -> Self {
+    pub fn segment_delivery_configurations(mut self, input: crate::types::SegmentDeliveryConfiguration) -> Self {
         let mut v = self.segment_delivery_configurations.unwrap_or_default();
         v.push(input);
         self.segment_delivery_configurations = ::std::option::Option::Some(v);
@@ -171,24 +132,16 @@ impl CreateSourceLocationInputBuilder {
         self
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn get_segment_delivery_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
+    pub fn get_segment_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
         &self.segment_delivery_configurations
     }
     /// <p>The name associated with the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name associated with the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -201,50 +154,33 @@ impl CreateSourceLocationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_source_location::CreateSourceLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_source_location::CreateSourceLocationInput {
-                access_configuration: self.access_configuration,
-                default_segment_delivery_configuration: self.default_segment_delivery_configuration,
-                http_configuration: self.http_configuration,
-                segment_delivery_configurations: self.segment_delivery_configurations,
-                source_location_name: self.source_location_name,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_source_location::CreateSourceLocationInput {
+            access_configuration: self.access_configuration,
+            default_segment_delivery_configuration: self.default_segment_delivery_configuration,
+            http_configuration: self.http_configuration,
+            segment_delivery_configurations: self.segment_delivery_configurations,
+            source_location_name: self.source_location_name,
+            tags: self.tags,
+        })
     }
 }

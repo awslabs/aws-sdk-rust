@@ -36,16 +36,14 @@ impl DescribeDocumentPermissionInput {
 }
 impl DescribeDocumentPermissionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentPermissionInput`](crate::operation::describe_document_permission::DescribeDocumentPermissionInput).
-    pub fn builder() -> crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder{
+    pub fn builder() -> crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder {
         crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentPermissionInput`](crate::operation::describe_document_permission::DescribeDocumentPermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentPermissionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) permission_type: ::std::option::Option<crate::types::DocumentPermissionType>,
@@ -73,17 +71,12 @@ impl DescribeDocumentPermissionInputBuilder {
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentPermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::DocumentPermissionType>) -> Self {
         self.permission_type = input;
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn get_permission_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentPermissionType> {
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::DocumentPermissionType> {
         &self.permission_type
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -121,13 +114,11 @@ impl DescribeDocumentPermissionInputBuilder {
         crate::operation::describe_document_permission::DescribeDocumentPermissionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_document_permission::DescribeDocumentPermissionInput {
-                name: self.name,
-                permission_type: self.permission_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_document_permission::DescribeDocumentPermissionInput {
+            name: self.name,
+            permission_type: self.permission_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

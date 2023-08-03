@@ -26,7 +26,7 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopVoiceToneAnalysisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder,
+    inner: crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder,
 }
 impl StopVoiceToneAnalysisTaskFluentBuilder {
     /// Creates a new `StopVoiceToneAnalysisTask`.
@@ -37,7 +37,7 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
         }
     }
     /// Access the StopVoiceToneAnalysisTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
             crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
             crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl StopVoiceToneAnalysisTaskFluentBuilder {
         self.inner.get_voice_connector_id()
     }
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_tone_analysis_task_id(input.into());
         self
     }
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn set_voice_tone_analysis_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_tone_analysis_task_id(input);
         self
     }

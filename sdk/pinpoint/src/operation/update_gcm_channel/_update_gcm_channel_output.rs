@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGcmChannelOutput {
 }
 impl UpdateGcmChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGcmChannelOutput`](crate::operation::update_gcm_channel::UpdateGcmChannelOutput).
-    pub fn builder() -> crate::operation::update_gcm_channel::builders::UpdateGcmChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gcm_channel::builders::UpdateGcmChannelOutputBuilder {
         crate::operation::update_gcm_channel::builders::UpdateGcmChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGcmChannelOutput`](crate::operation::update_gcm_channel::UpdateGcmChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGcmChannelOutputBuilder {
     pub(crate) gcm_channel_response: ::std::option::Option<crate::types::GcmChannelResponse>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl UpdateGcmChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn set_gcm_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::GcmChannelResponse>,
-    ) -> Self {
+    pub fn set_gcm_channel_response(mut self, input: ::std::option::Option<crate::types::GcmChannelResponse>) -> Self {
         self.gcm_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn get_gcm_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::GcmChannelResponse> {
+    pub fn get_gcm_channel_response(&self) -> &::std::option::Option<crate::types::GcmChannelResponse> {
         &self.gcm_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

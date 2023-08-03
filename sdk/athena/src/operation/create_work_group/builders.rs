@@ -10,10 +10,7 @@ impl CreateWorkGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_work_group::CreateWorkGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_work_group::CreateWorkGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_work_group::CreateWorkGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_work_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateWorkGroupFluentBuilder {
         }
     }
     /// Access the CreateWorkGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_work_group::builders::CreateWorkGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_work_group::builders::CreateWorkGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateWorkGroupFluentBuilder {
             crate::operation::create_work_group::CreateWorkGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_work_group::CreateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_work_group::CreateWorkGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateWorkGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateWorkGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_work_group::CreateWorkGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_work_group::CreateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_work_group::CreateWorkGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateWorkGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_work_group::CreateWorkGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_work_group::CreateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_work_group::CreateWorkGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateWorkGroupFluentBuilder {
             crate::operation::create_work_group::CreateWorkGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_work_group::CreateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_work_group::CreateWorkGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +126,12 @@ impl CreateWorkGroupFluentBuilder {
         self
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkGroupConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::WorkGroupConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>The workgroup description.</p>
@@ -179,10 +158,7 @@ impl CreateWorkGroupFluentBuilder {
         self
     }
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

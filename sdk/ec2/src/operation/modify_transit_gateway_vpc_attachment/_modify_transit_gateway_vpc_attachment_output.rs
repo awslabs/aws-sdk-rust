@@ -5,15 +5,12 @@
 pub struct ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
     #[doc(hidden)]
-    pub transit_gateway_vpc_attachment:
-        ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    pub transit_gateway_vpc_attachment: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }
 impl ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
-    pub fn transit_gateway_vpc_attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayVpcAttachment> {
+    pub fn transit_gateway_vpc_attachment(&self) -> ::std::option::Option<&crate::types::TransitGatewayVpcAttachment> {
         self.transit_gateway_vpc_attachment.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for ModifyTransitGatewayVpcAttachmentOutp
 }
 impl ModifyTransitGatewayVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayVpcAttachmentOutput`](crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput).
-    pub fn builder() -> crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentOutputBuilder{
+    pub fn builder() -> crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentOutputBuilder {
         crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTransitGatewayVpcAttachmentOutput`](crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTransitGatewayVpcAttachmentOutputBuilder {
-    pub(crate) transit_gateway_vpc_attachment:
-        ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    pub(crate) transit_gateway_vpc_attachment: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }
 impl ModifyTransitGatewayVpcAttachmentOutputBuilder {
     /// <p>Information about the modified attachment.</p>
-    pub fn transit_gateway_vpc_attachment(
-        mut self,
-        input: crate::types::TransitGatewayVpcAttachment,
-    ) -> Self {
+    pub fn transit_gateway_vpc_attachment(mut self, input: crate::types::TransitGatewayVpcAttachment) -> Self {
         self.transit_gateway_vpc_attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the modified attachment.</p>
-    pub fn set_transit_gateway_vpc_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
-    ) -> Self {
+    pub fn set_transit_gateway_vpc_attachment(mut self, input: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>) -> Self {
         self.transit_gateway_vpc_attachment = input;
         self
     }
     /// <p>Information about the modified attachment.</p>
-    pub fn get_transit_gateway_vpc_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayVpcAttachment> {
+    pub fn get_transit_gateway_vpc_attachment(&self) -> &::std::option::Option<crate::types::TransitGatewayVpcAttachment> {
         &self.transit_gateway_vpc_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl ModifyTransitGatewayVpcAttachmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayVpcAttachmentOutput`](crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput).
-    pub fn build(self) -> crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput{
+    pub fn build(self) -> crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput {
         crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput {
-            transit_gateway_vpc_attachment: self.transit_gateway_vpc_attachment
-            ,
+            transit_gateway_vpc_attachment: self.transit_gateway_vpc_attachment,
             _request_id: self._request_id,
         }
     }

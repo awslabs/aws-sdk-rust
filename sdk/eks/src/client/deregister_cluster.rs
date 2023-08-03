@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeregisterClusterOutput`](crate::operation::deregister_cluster::DeregisterClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::deregister_cluster::DeregisterClusterOutput::cluster): <p>An object representing an Amazon EKS cluster.</p>
     /// - On failure, responds with [`SdkError<DeregisterClusterError>`](crate::operation::deregister_cluster::DeregisterClusterError)
-    pub fn deregister_cluster(
-        &self,
-    ) -> crate::operation::deregister_cluster::builders::DeregisterClusterFluentBuilder {
-        crate::operation::deregister_cluster::builders::DeregisterClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_cluster(&self) -> crate::operation::deregister_cluster::builders::DeregisterClusterFluentBuilder {
+        crate::operation::deregister_cluster::builders::DeregisterClusterFluentBuilder::new(self.handle.clone())
     }
 }

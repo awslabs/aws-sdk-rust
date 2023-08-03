@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`registry_name(impl ::std::convert::Into<String>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput)
     /// - On failure, responds with [`SdkError<DeleteRegistryError>`](crate::operation::delete_registry::DeleteRegistryError)
-    pub fn delete_registry(
-        &self,
-    ) -> crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder {
-        crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_registry(&self) -> crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder {
+        crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::new(self.handle.clone())
     }
 }

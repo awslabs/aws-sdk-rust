@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`source_arn(Option<String>)`](crate::operation::delete_association::DeleteAssociationOutput::source_arn): <p>The ARN of the source.</p>
     ///   - [`destination_arn(Option<String>)`](crate::operation::delete_association::DeleteAssociationOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
     /// - On failure, responds with [`SdkError<DeleteAssociationError>`](crate::operation::delete_association::DeleteAssociationError)
-    pub fn delete_association(
-        &self,
-    ) -> crate::operation::delete_association::builders::DeleteAssociationFluentBuilder {
-        crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_association(&self) -> crate::operation::delete_association::builders::DeleteAssociationFluentBuilder {
+        crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::new(self.handle.clone())
     }
 }

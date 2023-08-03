@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`value(Option<String>)`](crate::operation::get_usage_plan_key::GetUsagePlanKeyOutput::value): <p>The value of a usage plan key.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_usage_plan_key::GetUsagePlanKeyOutput::name): <p>The name of a usage plan key.</p>
     /// - On failure, responds with [`SdkError<GetUsagePlanKeyError>`](crate::operation::get_usage_plan_key::GetUsagePlanKeyError)
-    pub fn get_usage_plan_key(
-        &self,
-    ) -> crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyFluentBuilder {
-        crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_plan_key(&self) -> crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyFluentBuilder {
+        crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyFluentBuilder::new(self.handle.clone())
     }
 }

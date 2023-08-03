@@ -43,9 +43,7 @@ impl CreateOrderInput {
 
 /// A builder for [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrderInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
@@ -54,18 +52,12 @@ pub struct CreateOrderInputBuilder {
 }
 impl CreateOrderInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn outpost_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outpost_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn set_outpost_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outpost_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_identifier = input;
         self
     }
@@ -85,17 +77,12 @@ impl CreateOrderInputBuilder {
         self
     }
     /// <p>The line items that make up the order.</p>
-    pub fn set_line_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
-    ) -> Self {
+    pub fn set_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>) -> Self {
         self.line_items = input;
         self
     }
     /// <p>The line items that make up the order.</p>
-    pub fn get_line_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>> {
+    pub fn get_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>> {
         &self.line_items
     }
     /// <p>The payment option.</p>
@@ -104,10 +91,7 @@ impl CreateOrderInputBuilder {
         self
     }
     /// <p>The payment option.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
@@ -121,10 +105,7 @@ impl CreateOrderInputBuilder {
         self
     }
     /// <p>The payment terms.</p>
-    pub fn set_payment_term(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentTerm>,
-    ) -> Self {
+    pub fn set_payment_term(mut self, input: ::std::option::Option<crate::types::PaymentTerm>) -> Self {
         self.payment_term = input;
         self
     }
@@ -133,12 +114,7 @@ impl CreateOrderInputBuilder {
         &self.payment_term
     }
     /// Consumes the builder and constructs a [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_order::CreateOrderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_order::CreateOrderInput {
             outpost_identifier: self.outpost_identifier,
             line_items: self.line_items,

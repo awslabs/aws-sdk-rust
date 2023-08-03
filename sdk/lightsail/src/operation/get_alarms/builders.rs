@@ -10,10 +10,7 @@ impl GetAlarmsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_alarms::GetAlarmsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_alarms::GetAlarmsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_alarms::GetAlarmsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_alarms();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetAlarmsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_alarms::GetAlarms,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_alarms::GetAlarms, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_alarms::GetAlarmsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetAlarmsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetAlarmsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_alarms::GetAlarms,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_alarms::GetAlarms, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_alarms::GetAlarmsError>,
     > {
         self.customize_middleware().await
@@ -149,19 +137,13 @@ impl GetAlarmsFluentBuilder {
     }
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
-    pub fn monitored_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitored_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitored_resource_name(input.into());
         self
     }
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
-    pub fn set_monitored_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitored_resource_name(input);
         self
     }

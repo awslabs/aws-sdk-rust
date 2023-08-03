@@ -50,18 +50,14 @@ impl ListImageBuildVersionsInput {
 }
 impl ListImageBuildVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListImageBuildVersionsInput`](crate::operation::list_image_build_versions::ListImageBuildVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsInputBuilder {
         crate::operation::list_image_build_versions::builders::ListImageBuildVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageBuildVersionsInput`](crate::operation::list_image_build_versions::ListImageBuildVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageBuildVersionsInputBuilder {
     pub(crate) image_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -70,18 +66,12 @@ pub struct ListImageBuildVersionsInputBuilder {
 }
 impl ListImageBuildVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
-    pub fn image_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
-    pub fn set_image_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_version_arn = input;
         self
     }
@@ -115,10 +105,7 @@ impl ListImageBuildVersionsInputBuilder {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -168,13 +155,11 @@ impl ListImageBuildVersionsInputBuilder {
         crate::operation::list_image_build_versions::ListImageBuildVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_image_build_versions::ListImageBuildVersionsInput {
-                image_version_arn: self.image_version_arn,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_image_build_versions::ListImageBuildVersionsInput {
+            image_version_arn: self.image_version_arn,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

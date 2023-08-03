@@ -29,27 +29,19 @@ impl AssociateAliasInput {
 
 /// A builder for [`AssociateAliasInput`](crate::operation::associate_alias::AssociateAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAliasInputBuilder {
     pub(crate) target_distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAliasInputBuilder {
     /// <p>The ID of the distribution that you're associating the alias with.</p>
-    pub fn target_distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_distribution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the distribution that you're associating the alias with.</p>
-    pub fn set_target_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_distribution_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl AssociateAliasInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAliasInput`](crate::operation::associate_alias::AssociateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_alias::AssociateAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_alias::AssociateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_alias::AssociateAliasInput {
             target_distribution_id: self.target_distribution_id,
             alias: self.alias,

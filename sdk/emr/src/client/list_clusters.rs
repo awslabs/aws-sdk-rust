@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`clusters(Option<Vec<ClusterSummary>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>The list of clusters for the account based on the given filters.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
-    pub fn list_clusters(
-        &self,
-    ) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
+        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
     }
 }

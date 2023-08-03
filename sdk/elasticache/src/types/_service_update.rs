@@ -18,8 +18,7 @@ pub struct ServiceUpdate {
     pub service_update_severity: ::std::option::Option<crate::types::ServiceUpdateSeverity>,
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     #[doc(hidden)]
-    pub service_update_recommended_apply_by_date:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub service_update_recommended_apply_by_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the service update</p>
     #[doc(hidden)]
     pub service_update_status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
@@ -48,9 +47,7 @@ impl ServiceUpdate {
         self.service_update_name.as_deref()
     }
     /// <p>The date when the service update is initially available</p>
-    pub fn service_update_release_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn service_update_release_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.service_update_release_date.as_ref()
     }
     /// <p>The date after which the service update is no longer available</p>
@@ -58,21 +55,15 @@ impl ServiceUpdate {
         self.service_update_end_date.as_ref()
     }
     /// <p>The severity of the service update</p>
-    pub fn service_update_severity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceUpdateSeverity> {
+    pub fn service_update_severity(&self) -> ::std::option::Option<&crate::types::ServiceUpdateSeverity> {
         self.service_update_severity.as_ref()
     }
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub fn service_update_recommended_apply_by_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn service_update_recommended_apply_by_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.service_update_recommended_apply_by_date.as_ref()
     }
     /// <p>The status of the service update</p>
-    pub fn service_update_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceUpdateStatus> {
+    pub fn service_update_status(&self) -> ::std::option::Option<&crate::types::ServiceUpdateStatus> {
         self.service_update_status.as_ref()
     }
     /// <p>Provides details of the service update</p>
@@ -109,16 +100,13 @@ impl ServiceUpdate {
 
 /// A builder for [`ServiceUpdate`](crate::types::ServiceUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceUpdateBuilder {
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_update_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_update_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_update_severity: ::std::option::Option<crate::types::ServiceUpdateSeverity>,
-    pub(crate) service_update_recommended_apply_by_date:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) service_update_recommended_apply_by_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_update_status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     pub(crate) service_update_description: ::std::option::Option<::std::string::String>,
     pub(crate) service_update_type: ::std::option::Option<crate::types::ServiceUpdateType>,
@@ -129,18 +117,12 @@ pub struct ServiceUpdateBuilder {
 }
 impl ServiceUpdateBuilder {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_update_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_update_name = input;
         self
     }
@@ -154,17 +136,12 @@ impl ServiceUpdateBuilder {
         self
     }
     /// <p>The date when the service update is initially available</p>
-    pub fn set_service_update_release_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_service_update_release_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.service_update_release_date = input;
         self
     }
     /// <p>The date when the service update is initially available</p>
-    pub fn get_service_update_release_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_service_update_release_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.service_update_release_date
     }
     /// <p>The date after which the service update is no longer available</p>
@@ -173,17 +150,12 @@ impl ServiceUpdateBuilder {
         self
     }
     /// <p>The date after which the service update is no longer available</p>
-    pub fn set_service_update_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_service_update_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.service_update_end_date = input;
         self
     }
     /// <p>The date after which the service update is no longer available</p>
-    pub fn get_service_update_end_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_service_update_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.service_update_end_date
     }
     /// <p>The severity of the service update</p>
@@ -192,39 +164,26 @@ impl ServiceUpdateBuilder {
         self
     }
     /// <p>The severity of the service update</p>
-    pub fn set_service_update_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceUpdateSeverity>,
-    ) -> Self {
+    pub fn set_service_update_severity(mut self, input: ::std::option::Option<crate::types::ServiceUpdateSeverity>) -> Self {
         self.service_update_severity = input;
         self
     }
     /// <p>The severity of the service update</p>
-    pub fn get_service_update_severity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceUpdateSeverity> {
+    pub fn get_service_update_severity(&self) -> &::std::option::Option<crate::types::ServiceUpdateSeverity> {
         &self.service_update_severity
     }
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub fn service_update_recommended_apply_by_date(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn service_update_recommended_apply_by_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.service_update_recommended_apply_by_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub fn set_service_update_recommended_apply_by_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_service_update_recommended_apply_by_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.service_update_recommended_apply_by_date = input;
         self
     }
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub fn get_service_update_recommended_apply_by_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_service_update_recommended_apply_by_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.service_update_recommended_apply_by_date
     }
     /// <p>The status of the service update</p>
@@ -233,32 +192,21 @@ impl ServiceUpdateBuilder {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_service_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceUpdateStatus>,
-    ) -> Self {
+    pub fn set_service_update_status(mut self, input: ::std::option::Option<crate::types::ServiceUpdateStatus>) -> Self {
         self.service_update_status = input;
         self
     }
     /// <p>The status of the service update</p>
-    pub fn get_service_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceUpdateStatus> {
+    pub fn get_service_update_status(&self) -> &::std::option::Option<crate::types::ServiceUpdateStatus> {
         &self.service_update_status
     }
     /// <p>Provides details of the service update</p>
-    pub fn service_update_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_update_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides details of the service update</p>
-    pub fn set_service_update_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_update_description = input;
         self
     }
@@ -272,17 +220,12 @@ impl ServiceUpdateBuilder {
         self
     }
     /// <p>Reflects the nature of the service update</p>
-    pub fn set_service_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceUpdateType>,
-    ) -> Self {
+    pub fn set_service_update_type(mut self, input: ::std::option::Option<crate::types::ServiceUpdateType>) -> Self {
         self.service_update_type = input;
         self
     }
     /// <p>Reflects the nature of the service update</p>
-    pub fn get_service_update_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceUpdateType> {
+    pub fn get_service_update_type(&self) -> &::std::option::Option<crate::types::ServiceUpdateType> {
         &self.service_update_type
     }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
@@ -300,18 +243,12 @@ impl ServiceUpdateBuilder {
         &self.engine
     }
     /// <p>The Elasticache engine version to which the update applies. Either Redis or Memcached engine version</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elasticache engine version to which the update applies. Either Redis or Memcached engine version</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -325,10 +262,7 @@ impl ServiceUpdateBuilder {
         self
     }
     /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
-    pub fn set_auto_update_after_recommended_apply_by_date(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_auto_update_after_recommended_apply_by_date(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_update_after_recommended_apply_by_date = input;
         self
     }
@@ -337,18 +271,12 @@ impl ServiceUpdateBuilder {
         &self.auto_update_after_recommended_apply_by_date
     }
     /// <p>The estimated length of time the service update will take</p>
-    pub fn estimated_update_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_update_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_update_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated length of time the service update will take</p>
-    pub fn set_estimated_update_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_update_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_update_time = input;
         self
     }
@@ -369,8 +297,7 @@ impl ServiceUpdateBuilder {
             service_update_type: self.service_update_type,
             engine: self.engine,
             engine_version: self.engine_version,
-            auto_update_after_recommended_apply_by_date: self
-                .auto_update_after_recommended_apply_by_date,
+            auto_update_after_recommended_apply_by_date: self.auto_update_after_recommended_apply_by_date,
             estimated_update_time: self.estimated_update_time,
         }
     }

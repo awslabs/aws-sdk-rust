@@ -65,9 +65,7 @@ impl TaskStatistics {
 
 /// A builder for [`TaskStatistics`](crate::types::TaskStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskStatisticsBuilder {
     pub(crate) total_checks: ::std::option::Option<i32>,
     pub(crate) in_progress_checks: ::std::option::Option<i32>,
@@ -112,10 +110,7 @@ impl TaskStatisticsBuilder {
         self
     }
     /// <p>The number of checks waiting for data collection.</p>
-    pub fn set_waiting_for_data_collection_checks(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_waiting_for_data_collection_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.waiting_for_data_collection_checks = input;
         self
     }

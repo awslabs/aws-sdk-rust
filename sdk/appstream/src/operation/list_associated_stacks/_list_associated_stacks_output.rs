@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociatedStacksOutput {
 }
 impl ListAssociatedStacksOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedStacksOutput`](crate::operation::list_associated_stacks::ListAssociatedStacksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_stacks::builders::ListAssociatedStacksOutputBuilder {
+    pub fn builder() -> crate::operation::list_associated_stacks::builders::ListAssociatedStacksOutputBuilder {
         crate::operation::list_associated_stacks::builders::ListAssociatedStacksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedStacksOutput`](crate::operation::list_associated_stacks::ListAssociatedStacksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedStacksOutputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListAssociatedStacksOutputBuilder {
         self
     }
     /// <p>The name of the stack.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }

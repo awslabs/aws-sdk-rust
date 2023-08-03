@@ -26,7 +26,7 @@ impl DescribeBatchInferenceJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBatchInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder,
+    inner: crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder,
 }
 impl DescribeBatchInferenceJobFluentBuilder {
     /// Creates a new `DescribeBatchInferenceJob`.
@@ -37,7 +37,7 @@ impl DescribeBatchInferenceJobFluentBuilder {
         }
     }
     /// Access the DescribeBatchInferenceJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeBatchInferenceJobFluentBuilder {
             crate::operation::describe_batch_inference_job::DescribeBatchInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeBatchInferenceJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeBatchInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeBatchInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeBatchInferenceJobFluentBuilder {
             crate::operation::describe_batch_inference_job::DescribeBatchInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the batch inference job to describe.</p>
-    pub fn batch_inference_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_inference_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_inference_job_arn(input.into());
         self
     }
     /// <p>The ARN of the batch inference job to describe.</p>
-    pub fn set_batch_inference_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_inference_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_inference_job_arn(input);
         self
     }

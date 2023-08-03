@@ -58,9 +58,7 @@ impl InferenceEventSummary {
 
 /// A builder for [`InferenceEventSummary`](crate::types::InferenceEventSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceEventSummaryBuilder {
     pub(crate) inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct InferenceEventSummaryBuilder {
 }
 impl InferenceEventSummaryBuilder {
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
-    pub fn inference_scheduler_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
-    pub fn set_inference_scheduler_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_arn = input;
         self
     }
@@ -91,18 +83,12 @@ impl InferenceEventSummaryBuilder {
         &self.inference_scheduler_arn
     }
     /// <p>The name of the inference scheduler being used for the inference events. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler being used for the inference events. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -116,10 +102,7 @@ impl InferenceEventSummaryBuilder {
         self
     }
     /// <p>Indicates the starting time of an inference event. </p>
-    pub fn set_event_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_start_time = input;
         self
     }
@@ -133,10 +116,7 @@ impl InferenceEventSummaryBuilder {
         self
     }
     /// <p>Indicates the ending time of an inference event. </p>
-    pub fn set_event_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_end_time = input;
         self
     }

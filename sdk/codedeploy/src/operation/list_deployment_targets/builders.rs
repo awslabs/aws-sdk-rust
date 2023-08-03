@@ -37,10 +37,7 @@ impl ListDeploymentTargetsFluentBuilder {
         }
     }
     /// Access the ListDeploymentTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDeploymentTargetsFluentBuilder {
             crate::operation::list_deployment_targets::ListDeploymentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_targets::ListDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_targets::ListDeploymentTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDeploymentTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDeploymentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_targets::ListDeploymentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_targets::ListDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_targets::ListDeploymentTargetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDeploymentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_targets::ListDeploymentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_targets::ListDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_targets::ListDeploymentTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ListDeploymentTargetsFluentBuilder {
             crate::operation::list_deployment_targets::ListDeploymentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_targets::ListDeploymentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_targets::ListDeploymentTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -166,11 +146,7 @@ impl ListDeploymentTargetsFluentBuilder {
     /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
     /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
-    pub fn target_filters(
-        mut self,
-        k: crate::types::TargetFilterName,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn target_filters(mut self, k: crate::types::TargetFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.target_filters(k, v);
         self
     }
@@ -181,12 +157,7 @@ impl ListDeploymentTargetsFluentBuilder {
     /// </ul>
     pub fn set_target_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::TargetFilterName,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_target_filters(input);
         self
@@ -198,12 +169,7 @@ impl ListDeploymentTargetsFluentBuilder {
     /// </ul>
     pub fn get_target_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::TargetFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_target_filters()
     }
 }

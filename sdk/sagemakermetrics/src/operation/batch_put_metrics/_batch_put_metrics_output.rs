@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchPutMetricsOutput {
 }
 impl BatchPutMetricsOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutMetricsOutput`](crate::operation::batch_put_metrics::BatchPutMetricsOutput).
-    pub fn builder() -> crate::operation::batch_put_metrics::builders::BatchPutMetricsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_metrics::builders::BatchPutMetricsOutputBuilder {
         crate::operation::batch_put_metrics::builders::BatchPutMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutMetricsOutput`](crate::operation::batch_put_metrics::BatchPutMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMetricsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl BatchPutMetricsOutputBuilder {
         self
     }
     /// <p>Lists any errors that occur when inserting metric data.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Lists any errors that occur when inserting metric data.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

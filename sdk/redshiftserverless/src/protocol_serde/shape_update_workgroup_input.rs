@@ -21,10 +21,7 @@ pub fn ser_update_workgroup_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_config_parameter::ser_config_parameter(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_config_parameter::ser_config_parameter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

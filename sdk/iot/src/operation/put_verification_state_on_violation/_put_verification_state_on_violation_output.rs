@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutVerificationStateOnViolationOutput
 }
 impl PutVerificationStateOnViolationOutput {
     /// Creates a new builder-style object to manufacture [`PutVerificationStateOnViolationOutput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput).
-    pub fn builder() -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationOutputBuilder{
+    pub fn builder() -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationOutputBuilder {
         crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutVerificationStateOnViolationOutput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutVerificationStateOnViolationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutVerificationStateOnViolationOutput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput
-    {
+    pub fn build(self) -> crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput {
         crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput {
             _request_id: self._request_id,
         }

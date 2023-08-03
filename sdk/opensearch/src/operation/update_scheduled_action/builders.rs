@@ -37,10 +37,7 @@ impl UpdateScheduledActionFluentBuilder {
         }
     }
     /// Access the UpdateScheduledAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateScheduledActionFluentBuilder {
             crate::operation::update_scheduled_action::UpdateScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_action::UpdateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_action::UpdateScheduledActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateScheduledActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduled_action::UpdateScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_action::UpdateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_action::UpdateScheduledActionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateScheduledActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduled_action::UpdateScheduledActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_action::UpdateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_action::UpdateScheduledActionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateScheduledActionFluentBuilder {
             crate::operation::update_scheduled_action::UpdateScheduledAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_action::UpdateScheduledActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_action::UpdateScheduledActionError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl UpdateScheduledActionFluentBuilder {
         self
     }
     /// <p>The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>, <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }
@@ -184,10 +167,7 @@ impl UpdateScheduledActionFluentBuilder {
     /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
     /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
     /// </ul>
-    pub fn set_schedule_at(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleAt>,
-    ) -> Self {
+    pub fn set_schedule_at(mut self, input: ::std::option::Option<crate::types::ScheduleAt>) -> Self {
         self.inner = self.inner.set_schedule_at(input);
         self
     }

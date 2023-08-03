@@ -29,17 +29,14 @@ impl ListServiceQuotasInput {
 }
 impl ListServiceQuotasInput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotasInput`](crate::operation::list_service_quotas::ListServiceQuotasInput).
-    pub fn builder(
-    ) -> crate::operation::list_service_quotas::builders::ListServiceQuotasInputBuilder {
+    pub fn builder() -> crate::operation::list_service_quotas::builders::ListServiceQuotasInputBuilder {
         crate::operation::list_service_quotas::builders::ListServiceQuotasInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceQuotasInput`](crate::operation::list_service_quotas::ListServiceQuotasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceQuotasInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListServiceQuotasInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceQuotasInput`](crate::operation::list_service_quotas::ListServiceQuotasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_quotas::ListServiceQuotasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_quotas::ListServiceQuotasInput {
-                service_code: self.service_code,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_service_quotas::ListServiceQuotasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_service_quotas::ListServiceQuotasInput {
+            service_code: self.service_code,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

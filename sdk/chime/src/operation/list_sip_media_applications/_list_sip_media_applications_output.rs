@@ -5,8 +5,7 @@
 pub struct ListSipMediaApplicationsOutput {
     /// <p>List of SIP media applications and application details.</p>
     #[doc(hidden)]
-    pub sip_media_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>>,
+    pub sip_media_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSipMediaApplicationsOutput {
 }
 impl ListSipMediaApplicationsOutput {
     /// <p>List of SIP media applications and application details.</p>
-    pub fn sip_media_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SipMediaApplication]> {
+    pub fn sip_media_applications(&self) -> ::std::option::Option<&[crate::types::SipMediaApplication]> {
         self.sip_media_applications.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSipMediaApplicationsOutput {
 }
 impl ListSipMediaApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSipMediaApplicationsOutput`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput).
-    pub fn builder() -> crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsOutputBuilder {
         crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSipMediaApplicationsOutput`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSipMediaApplicationsOutputBuilder {
-    pub(crate) sip_media_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>>,
+    pub(crate) sip_media_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListSipMediaApplicationsOutputBuilder {
         self
     }
     /// <p>List of SIP media applications and application details.</p>
-    pub fn set_sip_media_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>>,
-    ) -> Self {
+    pub fn set_sip_media_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>>) -> Self {
         self.sip_media_applications = input;
         self
     }
     /// <p>List of SIP media applications and application details.</p>
-    pub fn get_sip_media_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>> {
+    pub fn get_sip_media_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>> {
         &self.sip_media_applications
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -97,9 +86,7 @@ impl ListSipMediaApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSipMediaApplicationsOutput`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput {
+    pub fn build(self) -> crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput {
         crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput {
             sip_media_applications: self.sip_media_applications,
             next_token: self.next_token,

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SftpAuthenticationMethods {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for SftpAuthenticationMethods {
             "PUBLIC_KEY" => SftpAuthenticationMethods::PublicKey,
             "PUBLIC_KEY_AND_PASSWORD" => SftpAuthenticationMethods::PublicKeyAndPassword,
             "PUBLIC_KEY_OR_PASSWORD" => SftpAuthenticationMethods::PublicKeyOrPassword,
-            other => SftpAuthenticationMethods::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SftpAuthenticationMethods::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl SftpAuthenticationMethods {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "PASSWORD",
-            "PUBLIC_KEY",
-            "PUBLIC_KEY_AND_PASSWORD",
-            "PUBLIC_KEY_OR_PASSWORD",
-        ]
+        &["PASSWORD", "PUBLIC_KEY", "PUBLIC_KEY_AND_PASSWORD", "PUBLIC_KEY_OR_PASSWORD"]
     }
 }
 impl ::std::convert::AsRef<str> for SftpAuthenticationMethods {

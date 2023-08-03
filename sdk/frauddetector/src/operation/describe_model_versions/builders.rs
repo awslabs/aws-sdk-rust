@@ -37,10 +37,7 @@ impl DescribeModelVersionsFluentBuilder {
         }
     }
     /// Access the DescribeModelVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeModelVersionsFluentBuilder {
             crate::operation::describe_model_versions::DescribeModelVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_versions::DescribeModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_versions::DescribeModelVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeModelVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeModelVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_versions::DescribeModelVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_versions::DescribeModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_versions::DescribeModelVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeModelVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_versions::DescribeModelVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_versions::DescribeModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_versions::DescribeModelVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl DescribeModelVersionsFluentBuilder {
             crate::operation::describe_model_versions::DescribeModelVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_versions::DescribeModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_versions::DescribeModelVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator {
-        crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator {
+        crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The model ID.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,18 +130,12 @@ impl DescribeModelVersionsFluentBuilder {
         self.inner.get_model_id()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version_number(input.into());
         self
     }
     /// <p>The model version number.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version_number(input);
         self
     }
@@ -174,10 +149,7 @@ impl DescribeModelVersionsFluentBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }

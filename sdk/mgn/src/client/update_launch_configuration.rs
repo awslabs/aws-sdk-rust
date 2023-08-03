@@ -29,7 +29,7 @@ impl super::Client {
     ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
     ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationError)
-    pub fn update_launch_configuration(&self) -> crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationFluentBuilder{
+    pub fn update_launch_configuration(&self) -> crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationFluentBuilder {
         crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

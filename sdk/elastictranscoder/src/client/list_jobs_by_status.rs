@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput::jobs): <p>An array of <code>Job</code> objects that have the specified status.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput::next_page_token): <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     /// - On failure, responds with [`SdkError<ListJobsByStatusError>`](crate::operation::list_jobs_by_status::ListJobsByStatusError)
-    pub fn list_jobs_by_status(
-        &self,
-    ) -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusFluentBuilder {
-        crate::operation::list_jobs_by_status::builders::ListJobsByStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_jobs_by_status(&self) -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusFluentBuilder {
+        crate::operation::list_jobs_by_status::builders::ListJobsByStatusFluentBuilder::new(self.handle.clone())
     }
 }

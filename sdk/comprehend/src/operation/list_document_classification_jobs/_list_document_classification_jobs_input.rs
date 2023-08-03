@@ -29,16 +29,14 @@ impl ListDocumentClassificationJobsInput {
 }
 impl ListDocumentClassificationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
-    pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder {
         crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentClassificationJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DocumentClassificationJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,12 @@ impl ListDocumentClassificationJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassificationJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DocumentClassificationJobFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassificationJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DocumentClassificationJobFilter> {
         &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -99,15 +92,10 @@ impl ListDocumentClassificationJobsInputBuilder {
         crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

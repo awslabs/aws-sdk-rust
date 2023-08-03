@@ -32,20 +32,16 @@ impl ::aws_http::request_id::RequestId for ListProtectionGroupsOutput {
 }
 impl ListProtectionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectionGroupsOutput`](crate::operation::list_protection_groups::ListProtectionGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_protection_groups::builders::ListProtectionGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_protection_groups::builders::ListProtectionGroupsOutputBuilder {
         crate::operation::list_protection_groups::builders::ListProtectionGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtectionGroupsOutput`](crate::operation::list_protection_groups::ListProtectionGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectionGroupsOutputBuilder {
-    pub(crate) protection_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>>,
+    pub(crate) protection_groups: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +58,12 @@ impl ListProtectionGroupsOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_protection_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>>,
-    ) -> Self {
+    pub fn set_protection_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>>) -> Self {
         self.protection_groups = input;
         self
     }
     /// <p></p>
-    pub fn get_protection_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>> {
+    pub fn get_protection_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>> {
         &self.protection_groups
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>

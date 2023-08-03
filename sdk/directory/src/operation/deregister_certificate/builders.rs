@@ -37,10 +37,7 @@ impl DeregisterCertificateFluentBuilder {
         }
     }
     /// Access the DeregisterCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_certificate::builders::DeregisterCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_certificate::builders::DeregisterCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeregisterCertificateFluentBuilder {
             crate::operation::deregister_certificate::DeregisterCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_certificate::DeregisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_certificate::DeregisterCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeregisterCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeregisterCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_certificate::DeregisterCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_certificate::DeregisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_certificate::DeregisterCertificateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeregisterCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_certificate::DeregisterCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_certificate::DeregisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_certificate::DeregisterCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeregisterCertificateFluentBuilder {
             crate::operation::deregister_certificate::DeregisterCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_certificate::DeregisterCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_certificate::DeregisterCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeregisterCertificateFluentBuilder {
         self.inner.get_directory_id()
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPipelineBlueprintOutput {
 }
 impl GetPipelineBlueprintOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput).
-    pub fn builder(
-    ) -> crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder {
+    pub fn builder() -> crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder {
         crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineBlueprintOutputBuilder {
     pub(crate) blueprint: ::std::option::Option<crate::types::PipelineBlueprint>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetPipelineBlueprintOutputBuilder {
         self
     }
     /// <p>The requested blueprint in YAML format.</p>
-    pub fn set_blueprint(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineBlueprint>,
-    ) -> Self {
+    pub fn set_blueprint(mut self, input: ::std::option::Option<crate::types::PipelineBlueprint>) -> Self {
         self.blueprint = input;
         self
     }

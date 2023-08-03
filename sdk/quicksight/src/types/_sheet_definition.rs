@@ -36,8 +36,7 @@ pub struct SheetDefinition {
     pub layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     /// <p>The control layouts of the sheet.</p>
     #[doc(hidden)]
-    pub sheet_control_layouts:
-        ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
+    pub sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
@@ -87,9 +86,7 @@ impl SheetDefinition {
         self.layouts.as_deref()
     }
     /// <p>The control layouts of the sheet.</p>
-    pub fn sheet_control_layouts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SheetControlLayout]> {
+    pub fn sheet_control_layouts(&self) -> ::std::option::Option<&[crate::types::SheetControlLayout]> {
         self.sheet_control_layouts.as_deref()
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
@@ -110,22 +107,18 @@ impl SheetDefinition {
 
 /// A builder for [`SheetDefinition`](crate::types::SheetDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetDefinitionBuilder {
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
+    pub(crate) parameter_controls: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
     pub(crate) filter_controls: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
     pub(crate) visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
     pub(crate) text_boxes: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
     pub(crate) layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
-    pub(crate) sheet_control_layouts:
-        ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
+    pub(crate) sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     pub(crate) content_type: ::std::option::Option<crate::types::SheetContentType>,
 }
 impl SheetDefinitionBuilder {
@@ -199,18 +192,13 @@ impl SheetDefinitionBuilder {
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_parameter_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
-    ) -> Self {
+    pub fn set_parameter_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>) -> Self {
         self.parameter_controls = input;
         self
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn get_parameter_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>> {
+    pub fn get_parameter_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>> {
         &self.parameter_controls
     }
     /// Appends an item to `filter_controls`.
@@ -227,18 +215,13 @@ impl SheetDefinitionBuilder {
     }
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_filter_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
-    ) -> Self {
+    pub fn set_filter_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>) -> Self {
         self.filter_controls = input;
         self
     }
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn get_filter_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterControl>> {
+    pub fn get_filter_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterControl>> {
         &self.filter_controls
     }
     /// Appends an item to `visuals`.
@@ -253,10 +236,7 @@ impl SheetDefinitionBuilder {
         self
     }
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
-    pub fn set_visuals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
-    ) -> Self {
+    pub fn set_visuals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>) -> Self {
         self.visuals = input;
         self
     }
@@ -276,17 +256,12 @@ impl SheetDefinitionBuilder {
         self
     }
     /// <p>The text boxes that are on a sheet.</p>
-    pub fn set_text_boxes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
-    ) -> Self {
+    pub fn set_text_boxes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>) -> Self {
         self.text_boxes = input;
         self
     }
     /// <p>The text boxes that are on a sheet.</p>
-    pub fn get_text_boxes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>> {
+    pub fn get_text_boxes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>> {
         &self.text_boxes
     }
     /// Appends an item to `layouts`.
@@ -303,10 +278,7 @@ impl SheetDefinitionBuilder {
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_layouts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
-    ) -> Self {
+    pub fn set_layouts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>) -> Self {
         self.layouts = input;
         self
     }
@@ -327,17 +299,12 @@ impl SheetDefinitionBuilder {
         self
     }
     /// <p>The control layouts of the sheet.</p>
-    pub fn set_sheet_control_layouts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
-    ) -> Self {
+    pub fn set_sheet_control_layouts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>) -> Self {
         self.sheet_control_layouts = input;
         self
     }
     /// <p>The control layouts of the sheet.</p>
-    pub fn get_sheet_control_layouts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>> {
+    pub fn get_sheet_control_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>> {
         &self.sheet_control_layouts
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
@@ -354,10 +321,7 @@ impl SheetDefinitionBuilder {
     /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
     /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::SheetContentType>) -> Self {
         self.content_type = input;
         self
     }

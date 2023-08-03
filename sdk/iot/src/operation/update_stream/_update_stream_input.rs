@@ -43,9 +43,7 @@ impl UpdateStreamInput {
 
 /// A builder for [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamInputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -93,10 +91,7 @@ impl UpdateStreamInputBuilder {
         self
     }
     /// <p>The files associated with the stream.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>) -> Self {
         self.files = input;
         self
     }
@@ -119,12 +114,7 @@ impl UpdateStreamInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stream::UpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stream::UpdateStreamInput {
             stream_id: self.stream_id,
             description: self.description,

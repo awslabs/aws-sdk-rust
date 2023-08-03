@@ -16,16 +16,14 @@ impl DeleteSpotDatafeedSubscriptionInput {
 }
 impl DeleteSpotDatafeedSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSpotDatafeedSubscriptionInput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder {
         crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSpotDatafeedSubscriptionInput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSpotDatafeedSubscriptionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -51,11 +49,6 @@ impl DeleteSpotDatafeedSubscriptionInputBuilder {
         crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput {
-                dry_run: self.dry_run
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput { dry_run: self.dry_run })
     }
 }

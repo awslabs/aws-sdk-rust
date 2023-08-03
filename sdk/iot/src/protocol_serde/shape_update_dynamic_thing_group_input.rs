@@ -21,10 +21,7 @@ pub fn ser_update_dynamic_thing_group_input(
     if let Some(var_5) = &input.thing_group_properties {
         #[allow(unused_mut)]
         let mut object_6 = object.key("thingGroupProperties").start_object();
-        crate::protocol_serde::shape_thing_group_properties::ser_thing_group_properties(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_thing_group_properties::ser_thing_group_properties(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

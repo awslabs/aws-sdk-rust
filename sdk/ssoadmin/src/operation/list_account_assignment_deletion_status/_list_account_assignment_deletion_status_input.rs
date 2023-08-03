@@ -36,16 +36,14 @@ impl ListAccountAssignmentDeletionStatusInput {
 }
 impl ListAccountAssignmentDeletionStatusInput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusInput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusInput).
-    pub fn builder() -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusInputBuilder{
+    pub fn builder() -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusInputBuilder {
         crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssignmentDeletionStatusInput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentDeletionStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl ListAccountAssignmentDeletionStatusInputBuilder {
         self
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatusFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OperationStatusFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -113,18 +108,19 @@ impl ListAccountAssignmentDeletionStatusInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListAccountAssignmentDeletionStatusInput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusInput {
-                instance_arn: self.instance_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filter: self.filter
-                ,
-            }
+                instance_arn: self.instance_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filter: self.filter,
+            },
         )
     }
 }

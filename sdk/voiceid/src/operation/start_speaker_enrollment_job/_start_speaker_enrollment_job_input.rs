@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for StartSpeakerEnrollmentJobInput {
 }
 impl StartSpeakerEnrollmentJobInput {
     /// Creates a new builder-style object to manufacture [`StartSpeakerEnrollmentJobInput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput).
-    pub fn builder() -> crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder{
+    pub fn builder() -> crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder {
         crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder::default()
     }
 }
@@ -131,18 +131,12 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -156,10 +150,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self
     }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
-    pub fn set_enrollment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EnrollmentConfig>,
-    ) -> Self {
+    pub fn set_enrollment_config(mut self, input: ::std::option::Option<crate::types::EnrollmentConfig>) -> Self {
         self.enrollment_config = input;
         self
     }
@@ -173,10 +164,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -190,10 +178,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -208,17 +193,15 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
-                client_token: self.client_token,
-                job_name: self.job_name,
-                domain_id: self.domain_id,
-                data_access_role_arn: self.data_access_role_arn,
-                enrollment_config: self.enrollment_config,
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
+            client_token: self.client_token,
+            job_name: self.job_name,
+            domain_id: self.domain_id,
+            data_access_role_arn: self.data_access_role_arn,
+            enrollment_config: self.enrollment_config,
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+        })
     }
 }
 impl ::std::fmt::Debug for StartSpeakerEnrollmentJobInputBuilder {

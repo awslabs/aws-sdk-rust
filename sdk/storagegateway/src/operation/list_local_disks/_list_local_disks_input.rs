@@ -23,9 +23,7 @@ impl ListLocalDisksInput {
 
 /// A builder for [`ListLocalDisksInput`](crate::operation::list_local_disks::ListLocalDisksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLocalDisksInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl ListLocalDisksInputBuilder {
     /// Consumes the builder and constructs a [`ListLocalDisksInput`](crate::operation::list_local_disks::ListLocalDisksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_local_disks::ListLocalDisksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_local_disks::ListLocalDisksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_local_disks::ListLocalDisksInput {
             gateway_arn: self.gateway_arn,
         })

@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::failure_reason): <p>The failure reason if importing hub content failed.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_hub_content::DescribeHubContentOutput::creation_time): <p>The date and time that hub content was created.</p>
     /// - On failure, responds with [`SdkError<DescribeHubContentError>`](crate::operation::describe_hub_content::DescribeHubContentError)
-    pub fn describe_hub_content(
-        &self,
-    ) -> crate::operation::describe_hub_content::builders::DescribeHubContentFluentBuilder {
-        crate::operation::describe_hub_content::builders::DescribeHubContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_hub_content(&self) -> crate::operation::describe_hub_content::builders::DescribeHubContentFluentBuilder {
+        crate::operation::describe_hub_content::builders::DescribeHubContentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for AddLayerVersionPermissionOutput {
 }
 impl AddLayerVersionPermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddLayerVersionPermissionOutput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput).
-    pub fn builder() -> crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder{
+    pub fn builder() -> crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder {
         crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddLayerVersionPermissionOutput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddLayerVersionPermissionOutputBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl AddLayerVersionPermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddLayerVersionPermissionOutput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput {
+    pub fn build(self) -> crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput {
         crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput {
             statement: self.statement,
             revision_id: self.revision_id,

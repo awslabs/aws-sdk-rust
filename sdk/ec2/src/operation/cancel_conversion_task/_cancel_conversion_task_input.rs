@@ -29,17 +29,14 @@ impl CancelConversionTaskInput {
 }
 impl CancelConversionTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelConversionTaskInput`](crate::operation::cancel_conversion_task::CancelConversionTaskInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_conversion_task::builders::CancelConversionTaskInputBuilder {
+    pub fn builder() -> crate::operation::cancel_conversion_task::builders::CancelConversionTaskInputBuilder {
         crate::operation::cancel_conversion_task::builders::CancelConversionTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelConversionTaskInput`](crate::operation::cancel_conversion_task::CancelConversionTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelConversionTaskInputBuilder {
     pub(crate) conversion_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -47,18 +44,12 @@ pub struct CancelConversionTaskInputBuilder {
 }
 impl CancelConversionTaskInputBuilder {
     /// <p>The ID of the conversion task.</p>
-    pub fn conversion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversion_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the conversion task.</p>
-    pub fn set_conversion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversion_task_id = input;
         self
     }
@@ -81,18 +72,12 @@ impl CancelConversionTaskInputBuilder {
         &self.dry_run
     }
     /// <p>The reason for canceling the conversion task.</p>
-    pub fn reason_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reason_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for canceling the conversion task.</p>
-    pub fn set_reason_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reason_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_message = input;
         self
     }
@@ -103,16 +88,12 @@ impl CancelConversionTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelConversionTaskInput`](crate::operation::cancel_conversion_task::CancelConversionTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_conversion_task::CancelConversionTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_conversion_task::CancelConversionTaskInput {
-                conversion_task_id: self.conversion_task_id,
-                dry_run: self.dry_run,
-                reason_message: self.reason_message,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_conversion_task::CancelConversionTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_conversion_task::CancelConversionTaskInput {
+            conversion_task_id: self.conversion_task_id,
+            dry_run: self.dry_run,
+            reason_message: self.reason_message,
+        })
     }
 }

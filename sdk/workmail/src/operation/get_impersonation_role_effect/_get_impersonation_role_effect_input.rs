@@ -39,16 +39,14 @@ impl GetImpersonationRoleEffectInput {
 }
 impl GetImpersonationRoleEffectInput {
     /// Creates a new builder-style object to manufacture [`GetImpersonationRoleEffectInput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput).
-    pub fn builder() -> crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder{
+    pub fn builder() -> crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder {
         crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder::default()
     }
 }
 
 /// A builder for [`GetImpersonationRoleEffectInput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImpersonationRoleEffectInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct GetImpersonationRoleEffectInputBuilder {
 }
 impl GetImpersonationRoleEffectInputBuilder {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -76,18 +68,12 @@ impl GetImpersonationRoleEffectInputBuilder {
         &self.organization_id
     }
     /// <p>The impersonation role ID to test.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The impersonation role ID to test.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.impersonation_role_id = input;
         self
     }
@@ -131,12 +117,10 @@ impl GetImpersonationRoleEffectInputBuilder {
         crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput {
-                organization_id: self.organization_id,
-                impersonation_role_id: self.impersonation_role_id,
-                target_user: self.target_user,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput {
+            organization_id: self.organization_id,
+            impersonation_role_id: self.impersonation_role_id,
+            target_user: self.target_user,
+        })
     }
 }

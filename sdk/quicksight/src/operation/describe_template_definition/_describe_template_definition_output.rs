@@ -90,16 +90,14 @@ impl ::aws_http::request_id::RequestId for DescribeTemplateDefinitionOutput {
 }
 impl DescribeTemplateDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateDefinitionOutput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput).
-    pub fn builder() -> crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder {
         crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTemplateDefinitionOutput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTemplateDefinitionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -152,17 +150,12 @@ impl DescribeTemplateDefinitionOutputBuilder {
         self
     }
     /// <p>Errors associated with the template version.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors associated with the template version.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateError>> {
         &self.errors
     }
     /// <p>Status associated with the template.</p>
@@ -189,10 +182,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.resource_status = input;
         self
     }
@@ -231,18 +221,13 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>The definition of the template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::TemplateVersionDefinition>) -> Self {
         self.definition = input;
         self
     }
     /// <p>The definition of the template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
         &self.definition
     }
     /// <p>The HTTP status of the request.</p>
@@ -283,9 +268,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTemplateDefinitionOutput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput {
+    pub fn build(self) -> crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput {
         crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput {
             name: self.name,
             template_id: self.template_id,

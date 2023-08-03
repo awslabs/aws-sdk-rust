@@ -25,10 +25,7 @@ pub fn ser_create_component_type_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_function_request::ser_function_request(
-                    &mut object_10,
-                    value_9,
-                )?;
+                crate::protocol_serde::shape_function_request::ser_function_request(&mut object_10, value_9)?;
                 object_10.finish();
             }
         }
@@ -57,10 +54,7 @@ pub fn ser_create_component_type_input(
             {
                 #[allow(unused_mut)]
                 let mut object_21 = object_18.key(key_19.as_str()).start_object();
-                crate::protocol_serde::shape_property_group_request::ser_property_group_request(
-                    &mut object_21,
-                    value_20,
-                )?;
+                crate::protocol_serde::shape_property_group_request::ser_property_group_request(&mut object_21, value_20)?;
                 object_21.finish();
             }
         }

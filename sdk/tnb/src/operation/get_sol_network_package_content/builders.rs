@@ -27,7 +27,7 @@ impl GetSolNetworkPackageContentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder,
+    inner: crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder,
 }
 impl GetSolNetworkPackageContentFluentBuilder {
     /// Creates a new `GetSolNetworkPackageContent`.
@@ -38,7 +38,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
         }
     }
     /// Access the GetSolNetworkPackageContent as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
             crate::operation::get_sol_network_package_content::GetSolNetworkPackageContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
             crate::operation::get_sol_network_package_content::GetSolNetworkPackageContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl GetSolNetworkPackageContentFluentBuilder {
         self
     }
     /// <p>The format of the package you want to download from the network package.</p>
-    pub fn set_accept(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.inner = self.inner.set_accept(input);
         self
     }

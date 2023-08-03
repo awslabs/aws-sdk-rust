@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::delete_backend_storage::DeleteBackendStorageOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::operation::delete_backend_storage::DeleteBackendStorageOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBackendStorageError>`](crate::operation::delete_backend_storage::DeleteBackendStorageError)
-    pub fn delete_backend_storage(
-        &self,
-    ) -> crate::operation::delete_backend_storage::builders::DeleteBackendStorageFluentBuilder {
-        crate::operation::delete_backend_storage::builders::DeleteBackendStorageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_backend_storage(&self) -> crate::operation::delete_backend_storage::builders::DeleteBackendStorageFluentBuilder {
+        crate::operation::delete_backend_storage::builders::DeleteBackendStorageFluentBuilder::new(self.handle.clone())
     }
 }

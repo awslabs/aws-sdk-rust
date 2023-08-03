@@ -72,17 +72,14 @@ impl UpdateDevEnvironmentInput {
 }
 impl UpdateDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateDevEnvironmentInput`](crate::operation::update_dev_environment::UpdateDevEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder {
         crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDevEnvironmentInput`](crate::operation::update_dev_environment::UpdateDevEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevEnvironmentInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -162,17 +159,12 @@ impl UpdateDevEnvironmentInputBuilder {
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn set_ides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    ) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.ides = input;
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn get_ides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
@@ -185,10 +177,7 @@ impl UpdateDevEnvironmentInputBuilder {
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -235,21 +224,17 @@ impl UpdateDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevEnvironmentInput`](crate::operation::update_dev_environment::UpdateDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dev_environment::UpdateDevEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_dev_environment::UpdateDevEnvironmentInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                alias: self.alias,
-                ides: self.ides,
-                instance_type: self.instance_type,
-                inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_dev_environment::UpdateDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_dev_environment::UpdateDevEnvironmentInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+            alias: self.alias,
+            ides: self.ides,
+            instance_type: self.instance_type,
+            inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
+            client_token: self.client_token,
+        })
     }
 }

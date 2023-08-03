@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`safety_rule_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_safety_rule::builders::DeleteSafetyRuleFluentBuilder::safety_rule_arn) / [`set_safety_rule_arn(Option<String>)`](crate::operation::delete_safety_rule::builders::DeleteSafetyRuleFluentBuilder::set_safety_rule_arn): <p>The ARN of the safety rule.</p>
     /// - On success, responds with [`DeleteSafetyRuleOutput`](crate::operation::delete_safety_rule::DeleteSafetyRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteSafetyRuleError>`](crate::operation::delete_safety_rule::DeleteSafetyRuleError)
-    pub fn delete_safety_rule(
-        &self,
-    ) -> crate::operation::delete_safety_rule::builders::DeleteSafetyRuleFluentBuilder {
-        crate::operation::delete_safety_rule::builders::DeleteSafetyRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_safety_rule(&self) -> crate::operation::delete_safety_rule::builders::DeleteSafetyRuleFluentBuilder {
+        crate::operation::delete_safety_rule::builders::DeleteSafetyRuleFluentBuilder::new(self.handle.clone())
     }
 }

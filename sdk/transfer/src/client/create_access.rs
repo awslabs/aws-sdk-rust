@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::create_access::CreateAccessOutput::server_id): <p>The identifier of the server that the user is attached to.</p>
     ///   - [`external_id(Option<String>)`](crate::operation::create_access::CreateAccessOutput::external_id): <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     /// - On failure, responds with [`SdkError<CreateAccessError>`](crate::operation::create_access::CreateAccessError)
-    pub fn create_access(
-        &self,
-    ) -> crate::operation::create_access::builders::CreateAccessFluentBuilder {
-        crate::operation::create_access::builders::CreateAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access(&self) -> crate::operation::create_access::builders::CreateAccessFluentBuilder {
+        crate::operation::create_access::builders::CreateAccessFluentBuilder::new(self.handle.clone())
     }
 }

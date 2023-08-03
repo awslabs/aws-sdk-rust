@@ -23,9 +23,7 @@ impl ListOfferingsInput {
 
 /// A builder for [`ListOfferingsInput`](crate::operation::list_offerings::ListOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl ListOfferingsInputBuilder {
     /// Consumes the builder and constructs a [`ListOfferingsInput`](crate::operation::list_offerings::ListOfferingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_offerings::ListOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_offerings::ListOfferingsInput {
-            next_token: self.next_token,
-        })
+    ) -> ::std::result::Result<crate::operation::list_offerings::ListOfferingsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_offerings::ListOfferingsInput { next_token: self.next_token })
     }
 }

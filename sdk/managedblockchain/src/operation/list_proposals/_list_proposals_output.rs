@@ -35,9 +35,7 @@ impl ListProposalsOutput {
 
 /// A builder for [`ListProposalsOutput`](crate::operation::list_proposals::ListProposalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProposalsOutputBuilder {
     pub(crate) proposals: ::std::option::Option<::std::vec::Vec<crate::types::ProposalSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListProposalsOutputBuilder {
         self
     }
     /// <p>The summary of each proposal made on the network.</p>
-    pub fn set_proposals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProposalSummary>>,
-    ) -> Self {
+    pub fn set_proposals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProposalSummary>>) -> Self {
         self.proposals = input;
         self
     }
     /// <p>The summary of each proposal made on the network.</p>
-    pub fn get_proposals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProposalSummary>> {
+    pub fn get_proposals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProposalSummary>> {
         &self.proposals
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

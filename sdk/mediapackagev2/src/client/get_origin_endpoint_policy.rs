@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`origin_endpoint_name(Option<String>)`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput::origin_endpoint_name): <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput::policy): <p>The policy assigned to the origin endpoint.</p>
     /// - On failure, responds with [`SdkError<GetOriginEndpointPolicyError>`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError)
-    pub fn get_origin_endpoint_policy(
-        &self,
-    ) -> crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyFluentBuilder
-    {
+    pub fn get_origin_endpoint_policy(&self) -> crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyFluentBuilder {
         crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

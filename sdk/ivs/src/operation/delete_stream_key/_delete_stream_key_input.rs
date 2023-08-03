@@ -22,9 +22,7 @@ impl DeleteStreamKeyInput {
 
 /// A builder for [`DeleteStreamKeyInput`](crate::operation::delete_stream_key::DeleteStreamKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamKeyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamKeyInput`](crate::operation::delete_stream_key::DeleteStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stream_key::DeleteStreamKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_stream_key::DeleteStreamKeyInput {
-            arn: self.arn,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_stream_key::DeleteStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_stream_key::DeleteStreamKeyInput { arn: self.arn })
     }
 }

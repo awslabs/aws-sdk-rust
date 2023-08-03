@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for InviteAccountToOrganizationOutput {
 }
 impl InviteAccountToOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`InviteAccountToOrganizationOutput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput).
-    pub fn builder() -> crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder {
         crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`InviteAccountToOrganizationOutput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteAccountToOrganizationOutputBuilder {
     pub(crate) handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl InviteAccountToOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InviteAccountToOrganizationOutput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput {
+    pub fn build(self) -> crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput {
         crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput {
             handshake: self.handshake,
             _request_id: self._request_id,

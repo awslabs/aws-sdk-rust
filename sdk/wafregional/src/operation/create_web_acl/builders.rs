@@ -10,10 +10,7 @@ impl CreateWebAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_web_acl::CreateWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_web_acl::CreateWebACLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_web_acl::CreateWebACLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_web_acl();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl CreateWebACLFluentBuilder {
         }
     }
     /// Access the CreateWebACL as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_web_acl::builders::CreateWebAclInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_web_acl::builders::CreateWebAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -76,10 +71,7 @@ impl CreateWebACLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -163,10 +155,7 @@ impl CreateWebACLFluentBuilder {
         self
     }
     /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }
@@ -198,10 +187,7 @@ impl CreateWebACLFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

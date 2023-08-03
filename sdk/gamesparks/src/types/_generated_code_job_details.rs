@@ -53,9 +53,7 @@ impl GeneratedCodeJobDetails {
 
 /// A builder for [`GeneratedCodeJobDetails`](crate::types::GeneratedCodeJobDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneratedCodeJobDetailsBuilder {
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GeneratedCodeJobState>,
@@ -84,10 +82,7 @@ impl GeneratedCodeJobDetailsBuilder {
         self
     }
     /// <p>The status of the generated code job</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GeneratedCodeJobState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::GeneratedCodeJobState>) -> Self {
         self.status = input;
         self
     }
@@ -117,10 +112,7 @@ impl GeneratedCodeJobDetailsBuilder {
     }
     /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
@@ -130,18 +122,12 @@ impl GeneratedCodeJobDetailsBuilder {
         &self.expiration_time
     }
     /// <p>The identifier for the generated code job.</p>
-    pub fn generated_code_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_code_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_code_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the generated code job.</p>
-    pub fn set_generated_code_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_code_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_code_job_id = input;
         self
     }

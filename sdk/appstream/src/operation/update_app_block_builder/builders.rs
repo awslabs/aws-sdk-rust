@@ -38,10 +38,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
         }
     }
     /// Access the UpdateAppBlockBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_app_block_builder::builders::UpdateAppBlockBuilderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_app_block_builder::builders::UpdateAppBlockBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
             crate::operation::update_app_block_builder::UpdateAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_block_builder::UpdateAppBlockBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_block_builder::UpdateAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_block_builder::UpdateAppBlockBuilderError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_block_builder::UpdateAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_block_builder::UpdateAppBlockBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
             crate::operation::update_app_block_builder::UpdateAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_block_builder::UpdateAppBlockBuilderError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +160,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformType>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
@@ -194,10 +177,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
@@ -209,10 +189,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -250,10 +227,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_default_internet_access(input);
         self
     }
@@ -288,17 +262,12 @@ impl UpdateAppBlockBuilderFluentBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
     /// Appends an item to `AttributesToDelete`.
@@ -311,17 +280,12 @@ impl UpdateAppBlockBuilderFluentBuilder {
         self
     }
     /// <p>The attributes to delete from the app block builder.</p>
-    pub fn set_attributes_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
-    ) -> Self {
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>) -> Self {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
     /// <p>The attributes to delete from the app block builder.</p>
-    pub fn get_attributes_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>> {
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>> {
         self.inner.get_attributes_to_delete()
     }
 }

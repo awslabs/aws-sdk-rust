@@ -31,9 +31,7 @@ impl AxisScale {
 
 /// A builder for [`AxisScale`](crate::types::AxisScale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AxisScaleBuilder {
     pub(crate) linear: ::std::option::Option<crate::types::AxisLinearScale>,
     pub(crate) logarithmic: ::std::option::Option<crate::types::AxisLogarithmicScale>,
@@ -45,10 +43,7 @@ impl AxisScaleBuilder {
         self
     }
     /// <p>The linear axis scale setup.</p>
-    pub fn set_linear(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisLinearScale>,
-    ) -> Self {
+    pub fn set_linear(mut self, input: ::std::option::Option<crate::types::AxisLinearScale>) -> Self {
         self.linear = input;
         self
     }
@@ -62,10 +57,7 @@ impl AxisScaleBuilder {
         self
     }
     /// <p>The logarithmic axis scale setup.</p>
-    pub fn set_logarithmic(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisLogarithmicScale>,
-    ) -> Self {
+    pub fn set_logarithmic(mut self, input: ::std::option::Option<crate::types::AxisLogarithmicScale>) -> Self {
         self.logarithmic = input;
         self
     }

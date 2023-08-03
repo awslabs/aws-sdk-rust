@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartQueryExecutionOutput`](crate::operation::start_query_execution::StartQueryExecutionOutput) with field(s):
     ///   - [`query_execution_id(Option<String>)`](crate::operation::start_query_execution::StartQueryExecutionOutput::query_execution_id): <p>The unique ID of the query that ran as a result of this request.</p>
     /// - On failure, responds with [`SdkError<StartQueryExecutionError>`](crate::operation::start_query_execution::StartQueryExecutionError)
-    pub fn start_query_execution(
-        &self,
-    ) -> crate::operation::start_query_execution::builders::StartQueryExecutionFluentBuilder {
-        crate::operation::start_query_execution::builders::StartQueryExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_query_execution(&self) -> crate::operation::start_query_execution::builders::StartQueryExecutionFluentBuilder {
+        crate::operation::start_query_execution::builders::StartQueryExecutionFluentBuilder::new(self.handle.clone())
     }
 }

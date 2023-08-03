@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput::vpc_endpoint_summary_list): <p>Information about each endpoint.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     /// - On failure, responds with [`SdkError<ListVpcEndpointsError>`](crate::operation::list_vpc_endpoints::ListVpcEndpointsError)
-    pub fn list_vpc_endpoints(
-        &self,
-    ) -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder {
-        crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vpc_endpoints(&self) -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder {
+        crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

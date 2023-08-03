@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::claim_device::builders::ClaimDeviceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::claim_device::builders::ClaimDeviceFluentBuilder::set_id): The id of the device you want to claim.
     /// - On success, responds with [`ClaimDeviceOutput`](crate::operation::claim_device::ClaimDeviceOutput)
     /// - On failure, responds with [`SdkError<ClaimDeviceError>`](crate::operation::claim_device::ClaimDeviceError)
-    pub fn claim_device(
-        &self,
-    ) -> crate::operation::claim_device::builders::ClaimDeviceFluentBuilder {
+    pub fn claim_device(&self) -> crate::operation::claim_device::builders::ClaimDeviceFluentBuilder {
         crate::operation::claim_device::builders::ClaimDeviceFluentBuilder::new(self.handle.clone())
     }
 }

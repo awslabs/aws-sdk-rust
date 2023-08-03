@@ -51,9 +51,7 @@ impl ModelMetadataSummary {
 
 /// A builder for [`ModelMetadataSummary`](crate::types::ModelMetadataSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelMetadataSummaryBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) framework: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ impl ModelMetadataSummaryBuilder {
         &self.model
     }
     /// <p>The framework version of the model.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The framework version of the model.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }

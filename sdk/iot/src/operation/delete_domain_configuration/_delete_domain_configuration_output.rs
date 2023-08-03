@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDomainConfigurationOutput {
 }
 impl DeleteDomainConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainConfigurationOutput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationOutputBuilder {
         crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDomainConfigurationOutput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteDomainConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDomainConfigurationOutput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput {
         crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput {
             _request_id: self._request_id,
         }

@@ -30,27 +30,19 @@ impl CustomDnsServer {
 
 /// A builder for [`CustomDnsServer`](crate::types::CustomDnsServer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomDnsServerBuilder {
     pub(crate) custom_dns_server_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_dns_server_ip: ::std::option::Option<::std::string::String>,
 }
 impl CustomDnsServerBuilder {
     /// <p>The name of the DNS server.</p>
-    pub fn custom_dns_server_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_dns_server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_dns_server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DNS server.</p>
-    pub fn set_custom_dns_server_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_dns_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_dns_server_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl CustomDnsServerBuilder {
         &self.custom_dns_server_name
     }
     /// <p>The IP address of the DNS server.</p>
-    pub fn custom_dns_server_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_dns_server_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_dns_server_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of the DNS server.</p>
-    pub fn set_custom_dns_server_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_dns_server_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_dns_server_ip = input;
         self
     }

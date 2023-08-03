@@ -26,7 +26,7 @@ impl GetConnectInstanceConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectInstanceConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder,
+    inner: crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder,
 }
 impl GetConnectInstanceConfigFluentBuilder {
     /// Creates a new `GetConnectInstanceConfig`.
@@ -37,7 +37,7 @@ impl GetConnectInstanceConfigFluentBuilder {
         }
     }
     /// Access the GetConnectInstanceConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetConnectInstanceConfigFluentBuilder {
             crate::operation::get_connect_instance_config::GetConnectInstanceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_instance_config::GetConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_instance_config::GetConnectInstanceConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetConnectInstanceConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetConnectInstanceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_instance_config::GetConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_instance_config::GetConnectInstanceConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetConnectInstanceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_instance_config::GetConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_instance_config::GetConnectInstanceConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetConnectInstanceConfigFluentBuilder {
             crate::operation::get_connect_instance_config::GetConnectInstanceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connect_instance_config::GetConnectInstanceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connect_instance_config::GetConnectInstanceConfigError>,
     > {
         self.customize_middleware().await
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_instance_id(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connect_instance_id(input);
         self
     }

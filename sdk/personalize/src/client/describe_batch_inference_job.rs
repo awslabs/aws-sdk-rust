@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBatchInferenceJobOutput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput) with field(s):
     ///   - [`batch_inference_job(Option<BatchInferenceJob>)`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput::batch_inference_job): <p>Information on the specified batch inference job.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchInferenceJobError>`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError)
-    pub fn describe_batch_inference_job(&self) -> crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobFluentBuilder{
+    pub fn describe_batch_inference_job(&self) -> crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobFluentBuilder {
         crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

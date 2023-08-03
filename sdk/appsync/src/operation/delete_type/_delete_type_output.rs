@@ -19,9 +19,7 @@ impl DeleteTypeOutput {
 
 /// A builder for [`DeleteTypeOutput`](crate::operation::delete_type::DeleteTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTypeOutputBuilder {
     _request_id: Option<String>,
 }

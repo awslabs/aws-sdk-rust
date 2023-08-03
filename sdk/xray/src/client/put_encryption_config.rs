@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutEncryptionConfigOutput`](crate::operation::put_encryption_config::PutEncryptionConfigOutput) with field(s):
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::operation::put_encryption_config::PutEncryptionConfigOutput::encryption_config): <p>The new encryption configuration.</p>
     /// - On failure, responds with [`SdkError<PutEncryptionConfigError>`](crate::operation::put_encryption_config::PutEncryptionConfigError)
-    pub fn put_encryption_config(
-        &self,
-    ) -> crate::operation::put_encryption_config::builders::PutEncryptionConfigFluentBuilder {
-        crate::operation::put_encryption_config::builders::PutEncryptionConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_encryption_config(&self) -> crate::operation::put_encryption_config::builders::PutEncryptionConfigFluentBuilder {
+        crate::operation::put_encryption_config::builders::PutEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

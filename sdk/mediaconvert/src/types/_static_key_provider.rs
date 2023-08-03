@@ -44,9 +44,7 @@ impl StaticKeyProvider {
 
 /// A builder for [`StaticKeyProvider`](crate::types::StaticKeyProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StaticKeyProviderBuilder {
     pub(crate) key_format: ::std::option::Option<::std::string::String>,
     pub(crate) key_format_versions: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl StaticKeyProviderBuilder {
         &self.key_format
     }
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-    pub fn key_format_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_format_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_format_versions = ::std::option::Option::Some(input.into());
         self
     }
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-    pub fn set_key_format_versions(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_format_versions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_format_versions = input;
         self
     }
@@ -89,18 +81,12 @@ impl StaticKeyProviderBuilder {
         &self.key_format_versions
     }
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
-    pub fn static_key_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
-    pub fn set_static_key_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_static_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.static_key_value = input;
         self
     }

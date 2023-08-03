@@ -36,9 +36,7 @@ impl ListInstancesOutput {
 
 /// A builder for [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListInstancesOutputBuilder {
         self
     }
     /// <p>The list of instances for the cluster and given filters.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }

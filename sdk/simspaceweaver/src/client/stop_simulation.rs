@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`simulation(impl ::std::convert::Into<String>)`](crate::operation::stop_simulation::builders::StopSimulationFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::stop_simulation::builders::StopSimulationFluentBuilder::set_simulation): <p>The name of the simulation.</p>
     /// - On success, responds with [`StopSimulationOutput`](crate::operation::stop_simulation::StopSimulationOutput)
     /// - On failure, responds with [`SdkError<StopSimulationError>`](crate::operation::stop_simulation::StopSimulationError)
-    pub fn stop_simulation(
-        &self,
-    ) -> crate::operation::stop_simulation::builders::StopSimulationFluentBuilder {
-        crate::operation::stop_simulation::builders::StopSimulationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_simulation(&self) -> crate::operation::stop_simulation::builders::StopSimulationFluentBuilder {
+        crate::operation::stop_simulation::builders::StopSimulationFluentBuilder::new(self.handle.clone())
     }
 }

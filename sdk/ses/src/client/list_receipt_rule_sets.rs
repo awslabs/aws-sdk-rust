@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`rule_sets(Option<Vec<ReceiptRuleSetMetadata>>)`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput::rule_sets): <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput::next_token): <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     /// - On failure, responds with [`SdkError<ListReceiptRuleSetsError>`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError)
-    pub fn list_receipt_rule_sets(
-        &self,
-    ) -> crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsFluentBuilder {
-        crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_receipt_rule_sets(&self) -> crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsFluentBuilder {
+        crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsFluentBuilder::new(self.handle.clone())
     }
 }

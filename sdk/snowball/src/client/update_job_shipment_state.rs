@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`shipment_state(ShipmentState)`](crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateFluentBuilder::shipment_state) / [`set_shipment_state(Option<ShipmentState>)`](crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateFluentBuilder::set_shipment_state): <p>The state of a device when it is being shipped. </p>  <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>  <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     /// - On success, responds with [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput)
     /// - On failure, responds with [`SdkError<UpdateJobShipmentStateError>`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateError)
-    pub fn update_job_shipment_state(
-        &self,
-    ) -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateFluentBuilder
-    {
+    pub fn update_job_shipment_state(&self) -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateFluentBuilder {
         crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateFluentBuilder::new(self.handle.clone())
     }
 }

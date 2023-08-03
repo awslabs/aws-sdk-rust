@@ -10,10 +10,7 @@ impl PingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::ping::PingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::ping::PingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.ping();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PingFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::ping::Ping,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::ping::Ping, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,14 @@ impl PingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::ping::PingOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::ping::PingOutput, ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError>> {
         let op = self
             .inner
             .build()
@@ -92,10 +80,7 @@ impl PingFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::ping::PingOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::ping::PingOutput, ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError>> {
         self.send_middleware().await
     }
 
@@ -104,10 +89,7 @@ impl PingFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::ping::Ping,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::ping::Ping, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::ping::PingError>,
     > {
         self.customize_middleware().await

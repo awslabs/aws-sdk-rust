@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_connection::builders::CreateConnectionFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_connection::builders::CreateConnectionFluentBuilder::set_tags): <p>The tags you assign to the connection.</p>
     /// - On success, responds with [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput)
     /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::operation::create_connection::CreateConnectionError)
-    pub fn create_connection(
-        &self,
-    ) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
-        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connection(&self) -> crate::operation::create_connection::builders::CreateConnectionFluentBuilder {
+        crate::operation::create_connection::builders::CreateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl S3DestinationAccessControl {
 
 /// A builder for [`S3DestinationAccessControl`](crate::types::S3DestinationAccessControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DestinationAccessControlBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
 }
@@ -36,10 +34,7 @@ impl S3DestinationAccessControlBuilder {
         self
     }
     /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-    pub fn set_canned_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
-    ) -> Self {
+    pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::S3ObjectCannedAcl>) -> Self {
         self.canned_acl = input;
         self
     }
@@ -49,8 +44,6 @@ impl S3DestinationAccessControlBuilder {
     }
     /// Consumes the builder and constructs a [`S3DestinationAccessControl`](crate::types::S3DestinationAccessControl).
     pub fn build(self) -> crate::types::S3DestinationAccessControl {
-        crate::types::S3DestinationAccessControl {
-            canned_acl: self.canned_acl,
-        }
+        crate::types::S3DestinationAccessControl { canned_acl: self.canned_acl }
     }
 }

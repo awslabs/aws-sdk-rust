@@ -37,18 +37,14 @@ impl PutPositionConfigurationInput {
 }
 impl PutPositionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutPositionConfigurationInput`](crate::operation::put_position_configuration::PutPositionConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder {
         crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPositionConfigurationInput`](crate::operation::put_position_configuration::PutPositionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPositionConfigurationInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
@@ -57,18 +53,12 @@ pub struct PutPositionConfigurationInputBuilder {
 }
 impl PutPositionConfigurationInputBuilder {
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -82,10 +72,7 @@ impl PutPositionConfigurationInputBuilder {
         self
     }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -99,17 +86,12 @@ impl PutPositionConfigurationInputBuilder {
         self
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
-    pub fn set_solvers(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverConfigurations>,
-    ) -> Self {
+    pub fn set_solvers(mut self, input: ::std::option::Option<crate::types::PositionSolverConfigurations>) -> Self {
         self.solvers = input;
         self
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
-    pub fn get_solvers(
-        &self,
-    ) -> &::std::option::Option<crate::types::PositionSolverConfigurations> {
+    pub fn get_solvers(&self) -> &::std::option::Option<crate::types::PositionSolverConfigurations> {
         &self.solvers
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
@@ -133,13 +115,11 @@ impl PutPositionConfigurationInputBuilder {
         crate::operation::put_position_configuration::PutPositionConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_position_configuration::PutPositionConfigurationInput {
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-                solvers: self.solvers,
-                destination: self.destination,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_position_configuration::PutPositionConfigurationInput {
+            resource_identifier: self.resource_identifier,
+            resource_type: self.resource_type,
+            solvers: self.solvers,
+            destination: self.destination,
+        })
     }
 }

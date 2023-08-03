@@ -23,12 +23,9 @@ impl PredictorBaseline {
 
 /// A builder for [`PredictorBaseline`](crate::types::PredictorBaseline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorBaselineBuilder {
-    pub(crate) baseline_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>,
+    pub(crate) baseline_metrics: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>,
 }
 impl PredictorBaselineBuilder {
     /// Appends an item to `baseline_metrics`.
@@ -43,17 +40,12 @@ impl PredictorBaselineBuilder {
         self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn set_baseline_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>,
-    ) -> Self {
+    pub fn set_baseline_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>) -> Self {
         self.baseline_metrics = input;
         self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn get_baseline_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>> {
+    pub fn get_baseline_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>> {
         &self.baseline_metrics
     }
     /// Consumes the builder and constructs a [`PredictorBaseline`](crate::types::PredictorBaseline).

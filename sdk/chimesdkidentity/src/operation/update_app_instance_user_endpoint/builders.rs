@@ -26,7 +26,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAppInstanceUserEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder,
+    inner: crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder,
 }
 impl UpdateAppInstanceUserEndpointFluentBuilder {
     /// Creates a new `UpdateAppInstanceUserEndpoint`.
@@ -37,7 +37,7 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
         }
     }
     /// Access the UpdateAppInstanceUserEndpoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
             crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
             crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
@@ -174,10 +157,7 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
         self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn set_allow_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowMessages>,
-    ) -> Self {
+    pub fn set_allow_messages(mut self, input: ::std::option::Option<crate::types::AllowMessages>) -> Self {
         self.inner = self.inner.set_allow_messages(input);
         self
     }

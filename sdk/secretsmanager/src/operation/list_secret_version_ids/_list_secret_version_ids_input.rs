@@ -40,17 +40,14 @@ impl ListSecretVersionIdsInput {
 }
 impl ListSecretVersionIdsInput {
     /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsInput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsInput).
-    pub fn builder(
-    ) -> crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder {
+    pub fn builder() -> crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder {
         crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecretVersionIdsInput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecretVersionIdsInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -123,17 +120,13 @@ impl ListSecretVersionIdsInputBuilder {
     /// Consumes the builder and constructs a [`ListSecretVersionIdsInput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_secret_version_ids::ListSecretVersionIdsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_secret_version_ids::ListSecretVersionIdsInput {
-                secret_id: self.secret_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                include_deprecated: self.include_deprecated,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_secret_version_ids::ListSecretVersionIdsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_secret_version_ids::ListSecretVersionIdsInput {
+            secret_id: self.secret_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            include_deprecated: self.include_deprecated,
+        })
     }
 }

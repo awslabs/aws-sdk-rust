@@ -36,18 +36,14 @@ impl DescribeEndpointTypesInput {
 }
 impl DescribeEndpointTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointTypesInput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesInputBuilder {
         crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointTypesInput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointTypesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -68,10 +64,7 @@ impl DescribeEndpointTypesInputBuilder {
     }
     /// <p>Filters applied to the endpoint types.</p>
     /// <p>Valid filter names: engine-name | endpoint-type</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -117,16 +110,12 @@ impl DescribeEndpointTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointTypesInput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint_types::DescribeEndpointTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_endpoint_types::DescribeEndpointTypesInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_endpoint_types::DescribeEndpointTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_endpoint_types::DescribeEndpointTypesInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

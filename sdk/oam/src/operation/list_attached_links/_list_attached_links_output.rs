@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAttachedLinksOutput {
 }
 impl ListAttachedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedLinksOutput`](crate::operation::list_attached_links::ListAttachedLinksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_links::builders::ListAttachedLinksOutputBuilder {
+    pub fn builder() -> crate::operation::list_attached_links::builders::ListAttachedLinksOutputBuilder {
         crate::operation::list_attached_links::builders::ListAttachedLinksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedLinksOutput`](crate::operation::list_attached_links::ListAttachedLinksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedLinksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAttachedLinksOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the information about the attached links.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of structures that contain the information about the attached links.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>> {
         &self.items
     }
     /// <p>The token to use when requesting the next set of links.</p>

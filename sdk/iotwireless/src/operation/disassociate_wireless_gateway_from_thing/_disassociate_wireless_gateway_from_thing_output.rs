@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateWirelessGatewayFromThingO
 }
 impl DisassociateWirelessGatewayFromThingOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingOutput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput).
-    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingOutputBuilder {
         crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromThingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateWirelessGatewayFromThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingOutput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput).
-    pub fn build(self) -> crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput{
+    pub fn build(self) -> crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput {
         crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput {
             _request_id: self._request_id,
         }

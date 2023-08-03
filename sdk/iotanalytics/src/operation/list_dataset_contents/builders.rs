@@ -37,9 +37,7 @@ impl ListDatasetContentsFluentBuilder {
         }
     }
     /// Access the ListDatasetContents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDatasetContentsFluentBuilder {
             crate::operation::list_dataset_contents::ListDatasetContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_contents::ListDatasetContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_contents::ListDatasetContentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDatasetContentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDatasetContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_contents::ListDatasetContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_contents::ListDatasetContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_contents::ListDatasetContentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDatasetContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_contents::ListDatasetContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_contents::ListDatasetContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_contents::ListDatasetContentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListDatasetContentsFluentBuilder {
             crate::operation::list_dataset_contents::ListDatasetContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_contents::ListDatasetContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_contents::ListDatasetContentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator {
-        crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator {
+        crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the dataset whose contents information you want to list.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,17 +163,12 @@ impl ListDatasetContentsFluentBuilder {
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn set_scheduled_on_or_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_on_or_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_on_or_after(input);
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn get_scheduled_on_or_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_scheduled_on_or_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_scheduled_on_or_after()
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
@@ -200,10 +177,7 @@ impl ListDatasetContentsFluentBuilder {
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn set_scheduled_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_before(input);
         self
     }

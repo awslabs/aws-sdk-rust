@@ -24,9 +24,7 @@ impl GetInstancesInput {
 
 /// A builder for [`GetInstancesInput`](crate::operation::get_instances::GetInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstancesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +47,7 @@ impl GetInstancesInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetInstancesInput`](crate::operation::get_instances::GetInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instances::GetInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_instances::GetInstancesInput {
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instances::GetInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_instances::GetInstancesInput { page_token: self.page_token })
     }
 }

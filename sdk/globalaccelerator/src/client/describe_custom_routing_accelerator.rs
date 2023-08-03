@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeCustomRoutingAcceleratorOutput`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorOutput::accelerator): <p>The description of the custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomRoutingAcceleratorError>`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorError)
-    pub fn describe_custom_routing_accelerator(&self) -> crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder{
+    pub fn describe_custom_routing_accelerator(
+        &self,
+    ) -> crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder {
         crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

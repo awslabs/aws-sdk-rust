@@ -39,16 +39,14 @@ impl ListOrganizationalUnitsForParentInput {
 }
 impl ListOrganizationalUnitsForParentInput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationalUnitsForParentInput`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput).
-    pub fn builder() -> crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder{
+    pub fn builder() -> crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder {
         crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationalUnitsForParentInput`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationalUnitsForParentInputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,16 +111,18 @@ impl ListOrganizationalUnitsForParentInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListOrganizationalUnitsForParentInput`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput {
-                parent_id: self.parent_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                parent_id: self.parent_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

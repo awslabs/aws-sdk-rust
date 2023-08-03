@@ -22,17 +22,14 @@ impl UpdateStreamModeInput {
 }
 impl UpdateStreamModeInput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamModeInput`](crate::operation::update_stream_mode::UpdateStreamModeInput).
-    pub fn builder() -> crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder {
         crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStreamModeInput`](crate::operation::update_stream_mode::UpdateStreamModeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamModeInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
@@ -58,31 +55,21 @@ impl UpdateStreamModeInputBuilder {
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn set_stream_mode_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamModeDetails>,
-    ) -> Self {
+    pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.stream_mode_details = input;
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn get_stream_mode_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamModeDetails> {
+    pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         &self.stream_mode_details
     }
     /// Consumes the builder and constructs a [`UpdateStreamModeInput`](crate::operation::update_stream_mode::UpdateStreamModeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stream_mode::UpdateStreamModeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_stream_mode::UpdateStreamModeInput {
-                stream_arn: self.stream_arn,
-                stream_mode_details: self.stream_mode_details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_stream_mode::UpdateStreamModeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_stream_mode::UpdateStreamModeInput {
+            stream_arn: self.stream_arn,
+            stream_mode_details: self.stream_mode_details,
+        })
     }
 }

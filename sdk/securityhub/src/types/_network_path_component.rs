@@ -44,9 +44,7 @@ impl NetworkPathComponent {
 
 /// A builder for [`NetworkPathComponent`](crate::types::NetworkPathComponent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkPathComponentBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl NetworkPathComponentBuilder {
         &self.component_id
     }
     /// <p>The type of component.</p>
-    pub fn component_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of component.</p>
-    pub fn set_component_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type = input;
         self
     }
@@ -108,10 +100,7 @@ impl NetworkPathComponentBuilder {
         self
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
-    pub fn set_ingress(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkHeader>,
-    ) -> Self {
+    pub fn set_ingress(mut self, input: ::std::option::Option<crate::types::NetworkHeader>) -> Self {
         self.ingress = input;
         self
     }

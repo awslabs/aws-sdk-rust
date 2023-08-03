@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`access_token(impl ::std::convert::Into<String>)`](crate::operation::change_password::builders::ChangePasswordFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::change_password::builders::ChangePasswordFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     /// - On success, responds with [`ChangePasswordOutput`](crate::operation::change_password::ChangePasswordOutput)
     /// - On failure, responds with [`SdkError<ChangePasswordError>`](crate::operation::change_password::ChangePasswordError)
-    pub fn change_password(
-        &self,
-    ) -> crate::operation::change_password::builders::ChangePasswordFluentBuilder {
-        crate::operation::change_password::builders::ChangePasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn change_password(&self) -> crate::operation::change_password::builders::ChangePasswordFluentBuilder {
+        crate::operation::change_password::builders::ChangePasswordFluentBuilder::new(self.handle.clone())
     }
 }

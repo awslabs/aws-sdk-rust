@@ -23,9 +23,7 @@ impl Schedule {
 
 /// A builder for [`Schedule`](crate::types::Schedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ScheduleBuilder {
     }
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
     pub fn build(self) -> crate::types::Schedule {
-        crate::types::Schedule {
-            expression: self.expression,
-        }
+        crate::types::Schedule { expression: self.expression }
     }
 }

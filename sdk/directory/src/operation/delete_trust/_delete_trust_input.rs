@@ -30,9 +30,7 @@ impl DeleteTrustInput {
 
 /// A builder for [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrustInputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_associated_conditional_forwarder: ::std::option::Option<bool>,
@@ -58,10 +56,7 @@ impl DeleteTrustInputBuilder {
         self
     }
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-    pub fn set_delete_associated_conditional_forwarder(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_delete_associated_conditional_forwarder(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_associated_conditional_forwarder = input;
         self
     }
@@ -70,12 +65,7 @@ impl DeleteTrustInputBuilder {
         &self.delete_associated_conditional_forwarder
     }
     /// Consumes the builder and constructs a [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trust::DeleteTrustInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trust::DeleteTrustInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trust::DeleteTrustInput {
             trust_id: self.trust_id,
             delete_associated_conditional_forwarder: self.delete_associated_conditional_forwarder,

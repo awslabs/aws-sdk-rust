@@ -12,10 +12,7 @@ pub fn ser_human_loop_config(
     if let Some(var_3) = &input.data_attributes {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DataAttributes").start_object();
-        crate::protocol_serde::shape_human_loop_data_attributes::ser_human_loop_data_attributes(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_human_loop_data_attributes::ser_human_loop_data_attributes(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

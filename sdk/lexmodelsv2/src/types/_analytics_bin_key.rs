@@ -30,9 +30,7 @@ impl AnalyticsBinKey {
 
 /// A builder for [`AnalyticsBinKey`](crate::types::AnalyticsBinKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsBinKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     pub(crate) value: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl AnalyticsBinKeyBuilder {
         self
     }
     /// <p>The criterion by which to bin the results.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsBinByName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsBinByName>) -> Self {
         self.name = input;
         self
     }

@@ -61,39 +61,29 @@ impl DecreaseReplicaCountInput {
 }
 impl DecreaseReplicaCountInput {
     /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountInput`](crate::operation::decrease_replica_count::DecreaseReplicaCountInput).
-    pub fn builder(
-    ) -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountInputBuilder {
+    pub fn builder() -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountInputBuilder {
         crate::operation::decrease_replica_count::builders::DecreaseReplicaCountInputBuilder::default()
     }
 }
 
 /// A builder for [`DecreaseReplicaCountInput`](crate::operation::decrease_replica_count::DecreaseReplicaCountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecreaseReplicaCountInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_replica_count: ::std::option::Option<i32>,
-    pub(crate) replica_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
+    pub(crate) replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     pub(crate) replicas_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
 }
 impl DecreaseReplicaCountInputBuilder {
     /// <p>The id of the replication group from which you want to remove replica nodes.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The id of the replication group from which you want to remove replica nodes.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -154,17 +144,12 @@ impl DecreaseReplicaCountInputBuilder {
         self
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn set_replica_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
-    ) -> Self {
+    pub fn set_replica_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>) -> Self {
         self.replica_configuration = input;
         self
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn get_replica_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
+    pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         &self.replica_configuration
     }
     /// Appends an item to `replicas_to_remove`.
@@ -172,27 +157,19 @@ impl DecreaseReplicaCountInputBuilder {
     /// To override the contents of this collection use [`set_replicas_to_remove`](Self::set_replicas_to_remove).
     ///
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
-    pub fn replicas_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replicas_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replicas_to_remove.unwrap_or_default();
         v.push(input.into());
         self.replicas_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
-    pub fn set_replicas_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replicas_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replicas_to_remove = input;
         self
     }
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
-    pub fn get_replicas_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replicas_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replicas_to_remove
     }
     /// <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
@@ -212,18 +189,14 @@ impl DecreaseReplicaCountInputBuilder {
     /// Consumes the builder and constructs a [`DecreaseReplicaCountInput`](crate::operation::decrease_replica_count::DecreaseReplicaCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::decrease_replica_count::DecreaseReplicaCountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::decrease_replica_count::DecreaseReplicaCountInput {
-                replication_group_id: self.replication_group_id,
-                new_replica_count: self.new_replica_count,
-                replica_configuration: self.replica_configuration,
-                replicas_to_remove: self.replicas_to_remove,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::decrease_replica_count::DecreaseReplicaCountInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::decrease_replica_count::DecreaseReplicaCountInput {
+            replication_group_id: self.replication_group_id,
+            new_replica_count: self.new_replica_count,
+            replica_configuration: self.replica_configuration,
+            replicas_to_remove: self.replicas_to_remove,
+            apply_immediately: self.apply_immediately.unwrap_or_default(),
+        })
     }
 }

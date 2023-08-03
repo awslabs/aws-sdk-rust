@@ -39,13 +39,7 @@
 /// Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurninSubtitleTeletextSpacing {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for BurninSubtitleTeletextSpacing {
             "AUTO" => BurninSubtitleTeletextSpacing::Auto,
             "FIXED_GRID" => BurninSubtitleTeletextSpacing::FixedGrid,
             "PROPORTIONAL" => BurninSubtitleTeletextSpacing::Proportional,
-            other => BurninSubtitleTeletextSpacing::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => BurninSubtitleTeletextSpacing::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

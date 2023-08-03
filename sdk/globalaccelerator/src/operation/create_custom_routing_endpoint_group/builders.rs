@@ -5,16 +5,16 @@ pub use crate::operation::create_custom_routing_endpoint_group::_create_custom_r
 
 impl CreateCustomRoutingEndpointGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_custom_routing_endpoint_group();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupInputBuilder,
+    inner: crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupInputBuilder,
 }
 impl CreateCustomRoutingEndpointGroupFluentBuilder {
     /// Creates a new `CreateCustomRoutingEndpointGroup`.
@@ -37,15 +37,20 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
         }
     }
     /// Access the CreateCustomRoutingEndpointGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
@@ -109,18 +124,12 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
         self.inner.get_listener_arn()
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
-    pub fn endpoint_group_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_region(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
-    pub fn set_endpoint_group_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_region(input);
         self
     }
@@ -133,43 +142,29 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
     /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
     ///
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    pub fn destination_configurations(
-        mut self,
-        input: crate::types::CustomRoutingDestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configurations(mut self, input: crate::types::CustomRoutingDestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configurations(input);
         self
     }
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
     pub fn set_destination_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_destination_configurations(input);
         self
     }
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    pub fn get_destination_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>
-    {
+    pub fn get_destination_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>> {
         self.inner.get_destination_configurations()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

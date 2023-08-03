@@ -19,9 +19,7 @@ impl DeleteBotOutput {
 
 /// A builder for [`DeleteBotOutput`](crate::operation::delete_bot::DeleteBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBotOutputBuilder {
     _request_id: Option<String>,
 }

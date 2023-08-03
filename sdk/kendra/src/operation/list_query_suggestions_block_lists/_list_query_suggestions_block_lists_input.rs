@@ -31,16 +31,14 @@ impl ListQuerySuggestionsBlockListsInput {
 }
 impl ListQuerySuggestionsBlockListsInput {
     /// Creates a new builder-style object to manufacture [`ListQuerySuggestionsBlockListsInput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput).
-    pub fn builder() -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder{
+    pub fn builder() -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder {
         crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQuerySuggestionsBlockListsInput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQuerySuggestionsBlockListsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -101,13 +99,10 @@ impl ListQuerySuggestionsBlockListsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput {
-                index_id: self.index_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                index_id: self.index_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

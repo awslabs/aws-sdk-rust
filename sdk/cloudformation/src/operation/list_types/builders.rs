@@ -10,10 +10,7 @@ impl ListTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_types::ListTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_types::ListTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_types();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListTypesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_types::ListTypes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_types::ListTypes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListTypesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_types::ListTypes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_types::ListTypes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
     > {
         self.customize_middleware().await
@@ -144,10 +132,7 @@ impl ListTypesFluentBuilder {
     /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.inner = self.inner.set_visibility(input);
         self
     }
@@ -185,10 +170,7 @@ impl ListTypesFluentBuilder {
     /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
-    pub fn set_provisioning_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningType>,
-    ) -> Self {
+    pub fn set_provisioning_type(mut self, input: ::std::option::Option<crate::types::ProvisioningType>) -> Self {
         self.inner = self.inner.set_provisioning_type(input);
         self
     }
@@ -219,10 +201,7 @@ impl ListTypesFluentBuilder {
     /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
     /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
-    pub fn set_deprecated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeprecatedStatus>,
-    ) -> Self {
+    pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
         self.inner = self.inner.set_deprecated_status(input);
         self
     }

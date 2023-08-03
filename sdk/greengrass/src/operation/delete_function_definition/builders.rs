@@ -26,7 +26,7 @@ impl DeleteFunctionDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFunctionDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder,
+    inner: crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder,
 }
 impl DeleteFunctionDefinitionFluentBuilder {
     /// Creates a new `DeleteFunctionDefinition`.
@@ -37,10 +37,7 @@ impl DeleteFunctionDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteFunctionDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteFunctionDefinitionFluentBuilder {
             crate::operation::delete_function_definition::DeleteFunctionDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_definition::DeleteFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_definition::DeleteFunctionDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteFunctionDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteFunctionDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_definition::DeleteFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_definition::DeleteFunctionDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteFunctionDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_definition::DeleteFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_definition::DeleteFunctionDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteFunctionDefinitionFluentBuilder {
             crate::operation::delete_function_definition::DeleteFunctionDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_definition::DeleteFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_definition::DeleteFunctionDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_definition_id(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_definition_id(input);
         self
     }

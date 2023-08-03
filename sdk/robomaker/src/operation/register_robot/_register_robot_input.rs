@@ -32,9 +32,7 @@ impl RegisterRobotInput {
 
 /// A builder for [`RegisterRobotInput`](crate::operation::register_robot::RegisterRobotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterRobotInputBuilder {
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) robot: ::std::option::Option<::std::string::String>,
@@ -71,10 +69,7 @@ impl RegisterRobotInputBuilder {
     /// Consumes the builder and constructs a [`RegisterRobotInput`](crate::operation::register_robot::RegisterRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_robot::RegisterRobotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_robot::RegisterRobotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_robot::RegisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,

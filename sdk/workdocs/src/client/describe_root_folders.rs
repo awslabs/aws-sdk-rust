@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::operation::describe_root_folders::DescribeRootFoldersOutput::folders): <p>The user's special folders.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_root_folders::DescribeRootFoldersOutput::marker): <p>The marker for the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeRootFoldersError>`](crate::operation::describe_root_folders::DescribeRootFoldersError)
-    pub fn describe_root_folders(
-        &self,
-    ) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder {
-        crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_root_folders(&self) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder {
+        crate::operation::describe_root_folders::builders::DescribeRootFoldersFluentBuilder::new(self.handle.clone())
     }
 }

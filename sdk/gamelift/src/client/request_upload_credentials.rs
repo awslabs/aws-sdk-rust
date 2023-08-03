@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput::upload_credentials): <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     ///   - [`storage_location(Option<S3Location>)`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput::storage_location): <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     /// - On failure, responds with [`SdkError<RequestUploadCredentialsError>`](crate::operation::request_upload_credentials::RequestUploadCredentialsError)
-    pub fn request_upload_credentials(
-        &self,
-    ) -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsFluentBuilder
-    {
+    pub fn request_upload_credentials(&self) -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsFluentBuilder {
         crate::operation::request_upload_credentials::builders::RequestUploadCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

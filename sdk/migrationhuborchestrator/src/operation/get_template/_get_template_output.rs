@@ -70,9 +70,7 @@ impl GetTemplateOutput {
 
 /// A builder for [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -138,17 +136,12 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>) -> Self {
         self.inputs = input;
         self
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn get_inputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>> {
         &self.inputs
     }
     /// Appends an item to `tools`.
@@ -163,10 +156,7 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    ) -> Self {
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
         self.tools = input;
         self
     }
@@ -180,10 +170,7 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -197,10 +184,7 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The time at which the template was last created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

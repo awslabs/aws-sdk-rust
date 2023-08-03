@@ -29,18 +29,14 @@ impl DeleteCustomVocabularyInput {
 }
 impl DeleteCustomVocabularyInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder {
         crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomVocabularyInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl DeleteCustomVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+        })
     }
 }

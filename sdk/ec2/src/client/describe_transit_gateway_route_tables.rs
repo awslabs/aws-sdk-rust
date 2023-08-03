@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`transit_gateway_route_tables(Option<Vec<TransitGatewayRouteTable>>)`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput::transit_gateway_route_tables): <p>Information about the transit gateway route tables.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayRouteTablesError>`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesError)
-    pub fn describe_transit_gateway_route_tables(&self) -> crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesFluentBuilder{
+    pub fn describe_transit_gateway_route_tables(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesFluentBuilder {
         crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesFluentBuilder::new(self.handle.clone())
     }
 }

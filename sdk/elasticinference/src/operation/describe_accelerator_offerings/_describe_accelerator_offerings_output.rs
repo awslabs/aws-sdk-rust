@@ -5,15 +5,12 @@
 pub struct DescribeAcceleratorOfferingsOutput {
     /// <p> The list of accelerator type offerings for a specific location. </p>
     #[doc(hidden)]
-    pub accelerator_type_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
+    pub accelerator_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeAcceleratorOfferingsOutput {
     /// <p> The list of accelerator type offerings for a specific location. </p>
-    pub fn accelerator_type_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AcceleratorTypeOffering]> {
+    pub fn accelerator_type_offerings(&self) -> ::std::option::Option<&[crate::types::AcceleratorTypeOffering]> {
         self.accelerator_type_offerings.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAcceleratorOfferingsOutput {
 }
 impl DescribeAcceleratorOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOfferingsOutput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsOutputBuilder {
         crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorOfferingsOutput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsOutputBuilder {
-    pub(crate) accelerator_type_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
+    pub(crate) accelerator_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeAcceleratorOfferingsOutputBuilder {
@@ -45,27 +39,19 @@ impl DescribeAcceleratorOfferingsOutputBuilder {
     /// To override the contents of this collection use [`set_accelerator_type_offerings`](Self::set_accelerator_type_offerings).
     ///
     /// <p> The list of accelerator type offerings for a specific location. </p>
-    pub fn accelerator_type_offerings(
-        mut self,
-        input: crate::types::AcceleratorTypeOffering,
-    ) -> Self {
+    pub fn accelerator_type_offerings(mut self, input: crate::types::AcceleratorTypeOffering) -> Self {
         let mut v = self.accelerator_type_offerings.unwrap_or_default();
         v.push(input);
         self.accelerator_type_offerings = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of accelerator type offerings for a specific location. </p>
-    pub fn set_accelerator_type_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
-    ) -> Self {
+    pub fn set_accelerator_type_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>) -> Self {
         self.accelerator_type_offerings = input;
         self
     }
     /// <p> The list of accelerator type offerings for a specific location. </p>
-    pub fn get_accelerator_type_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>> {
+    pub fn get_accelerator_type_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>> {
         &self.accelerator_type_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,9 +64,7 @@ impl DescribeAcceleratorOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorOfferingsOutput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput {
+    pub fn build(self) -> crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput {
         crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput {
             accelerator_type_offerings: self.accelerator_type_offerings,
             _request_id: self._request_id,

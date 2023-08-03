@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeEffectiveInstanceAssociations
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsOutputBuilder {
         crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEffectiveInstanceAssociationsOutputBuilder {
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeEffectiveInstanceAssociationsOutputBuilder {
         self
     }
     /// <p>The associations for the requested managed node.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>The associations for the requested managed node.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>> {
         &self.associations
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -94,12 +86,10 @@ impl DescribeEffectiveInstanceAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput {
         crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput {
-            associations: self.associations
-            ,
-            next_token: self.next_token
-            ,
+            associations: self.associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

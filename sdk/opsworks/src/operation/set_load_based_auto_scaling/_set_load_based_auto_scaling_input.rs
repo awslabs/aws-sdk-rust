@@ -36,18 +36,14 @@ impl SetLoadBasedAutoScalingInput {
 }
 impl SetLoadBasedAutoScalingInput {
     /// Creates a new builder-style object to manufacture [`SetLoadBasedAutoScalingInput`](crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput).
-    pub fn builder(
-    ) -> crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder {
         crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder::default()
     }
 }
 
 /// A builder for [`SetLoadBasedAutoScalingInput`](crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLoadBasedAutoScalingInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable: ::std::option::Option<bool>,
@@ -89,10 +85,7 @@ impl SetLoadBasedAutoScalingInputBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
-    pub fn set_up_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_up_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.up_scaling = input;
         self
     }
@@ -106,10 +99,7 @@ impl SetLoadBasedAutoScalingInputBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
-    pub fn set_down_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_down_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.down_scaling = input;
         self
     }
@@ -124,13 +114,11 @@ impl SetLoadBasedAutoScalingInputBuilder {
         crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput {
-                layer_id: self.layer_id,
-                enable: self.enable,
-                up_scaling: self.up_scaling,
-                down_scaling: self.down_scaling,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput {
+            layer_id: self.layer_id,
+            enable: self.enable,
+            up_scaling: self.up_scaling,
+            down_scaling: self.down_scaling,
+        })
     }
 }

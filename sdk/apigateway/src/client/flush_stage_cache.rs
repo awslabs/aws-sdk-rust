@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::set_stage_name): <p>The name of the stage to flush its cache.</p>
     /// - On success, responds with [`FlushStageCacheOutput`](crate::operation::flush_stage_cache::FlushStageCacheOutput)
     /// - On failure, responds with [`SdkError<FlushStageCacheError>`](crate::operation::flush_stage_cache::FlushStageCacheError)
-    pub fn flush_stage_cache(
-        &self,
-    ) -> crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder {
-        crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn flush_stage_cache(&self) -> crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder {
+        crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::new(self.handle.clone())
     }
 }

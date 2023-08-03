@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPhoneNumberOrdersOutput {
 }
 impl ListPhoneNumberOrdersOutput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumberOrdersOutput`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersOutputBuilder {
         crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumberOrdersOutput`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumberOrdersOutputBuilder {
-    pub(crate) phone_number_orders:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>>,
+    pub(crate) phone_number_orders: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListPhoneNumberOrdersOutputBuilder {
         self
     }
     /// <p>The phone number order details.</p>
-    pub fn set_phone_number_orders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>>,
-    ) -> Self {
+    pub fn set_phone_number_orders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>>) -> Self {
         self.phone_number_orders = input;
         self
     }
     /// <p>The phone number order details.</p>
-    pub fn get_phone_number_orders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>> {
+    pub fn get_phone_number_orders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberOrder>> {
         &self.phone_number_orders
     }
     /// <p>The token used to retrieve the next page of results.</p>

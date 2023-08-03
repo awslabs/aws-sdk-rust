@@ -50,9 +50,7 @@ impl TagServerCertificateFluentBuilder {
         }
     }
     /// Access the TagServerCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::tag_server_certificate::builders::TagServerCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::tag_server_certificate::builders::TagServerCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +62,7 @@ impl TagServerCertificateFluentBuilder {
             crate::operation::tag_server_certificate::TagServerCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_server_certificate::TagServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_server_certificate::TagServerCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +72,7 @@ impl TagServerCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +81,7 @@ impl TagServerCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_server_certificate::TagServerCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_server_certificate::TagServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_server_certificate::TagServerCertificateError>,
     > {
         let op = self
             .inner
@@ -113,9 +104,7 @@ impl TagServerCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_server_certificate::TagServerCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_server_certificate::TagServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_server_certificate::TagServerCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -129,27 +118,19 @@ impl TagServerCertificateFluentBuilder {
             crate::operation::tag_server_certificate::TagServerCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_server_certificate::TagServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_server_certificate::TagServerCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the IAM server certificate to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_certificate_name(input.into());
         self
     }
     /// <p>The name of the IAM server certificate to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_server_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_certificate_name(input);
         self
     }
@@ -168,10 +149,7 @@ impl TagServerCertificateFluentBuilder {
         self
     }
     /// <p>The list of tags that you want to attach to the IAM server certificate. Each tag consists of a key name and an associated value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

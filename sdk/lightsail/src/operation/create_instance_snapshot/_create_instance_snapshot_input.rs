@@ -31,18 +31,14 @@ impl CreateInstanceSnapshotInput {
 }
 impl CreateInstanceSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceSnapshotInput`](crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder {
         crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceSnapshotInput`](crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceSnapshotInputBuilder {
     pub(crate) instance_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
@@ -50,18 +46,12 @@ pub struct CreateInstanceSnapshotInputBuilder {
 }
 impl CreateInstanceSnapshotInputBuilder {
     /// <p>The name for your new snapshot.</p>
-    pub fn instance_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for your new snapshot.</p>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_snapshot_name = input;
         self
     }
@@ -70,18 +60,12 @@ impl CreateInstanceSnapshotInputBuilder {
         &self.instance_snapshot_name
     }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -103,10 +87,7 @@ impl CreateInstanceSnapshotInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -118,16 +99,12 @@ impl CreateInstanceSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceSnapshotInput`](crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput {
-                instance_snapshot_name: self.instance_snapshot_name,
-                instance_name: self.instance_name,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput {
+            instance_snapshot_name: self.instance_snapshot_name,
+            instance_name: self.instance_name,
+            tags: self.tags,
+        })
     }
 }

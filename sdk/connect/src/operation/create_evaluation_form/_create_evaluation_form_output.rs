@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateEvaluationFormOutput {
 }
 impl CreateEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`CreateEvaluationFormOutput`](crate::operation::create_evaluation_form::CreateEvaluationFormOutput).
-    pub fn builder(
-    ) -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormOutputBuilder {
+    pub fn builder() -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormOutputBuilder {
         crate::operation::create_evaluation_form::builders::CreateEvaluationFormOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEvaluationFormOutput`](crate::operation::create_evaluation_form::CreateEvaluationFormOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEvaluationFormOutputBuilder {
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateEvaluationFormOutputBuilder {
 }
 impl CreateEvaluationFormOutputBuilder {
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateEvaluationFormOutputBuilder {
         &self.evaluation_form_id
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn set_evaluation_form_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_arn = input;
         self
     }

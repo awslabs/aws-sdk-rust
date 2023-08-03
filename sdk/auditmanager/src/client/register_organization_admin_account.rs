@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::admin_account_id): <p> The identifier for the delegated administrator account. </p>
     ///   - [`organization_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::organization_id): <p> The identifier for the organization. </p>
     /// - On failure, responds with [`SdkError<RegisterOrganizationAdminAccountError>`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError)
-    pub fn register_organization_admin_account(&self) -> crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder{
+    pub fn register_organization_admin_account(
+        &self,
+    ) -> crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder {
         crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

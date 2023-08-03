@@ -36,16 +36,14 @@ impl ::aws_http::request_id::RequestId for CreateDistributionWithTagsOutput {
 }
 impl CreateDistributionWithTagsOutput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionWithTagsOutput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput).
-    pub fn builder() -> crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsOutputBuilder{
+    pub fn builder() -> crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsOutputBuilder {
         crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDistributionWithTagsOutput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDistributionWithTagsOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl CreateDistributionWithTagsOutputBuilder {
         self
     }
     /// <p>The distribution's information.</p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::Distribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
         self.distribution = input;
         self
     }
@@ -108,9 +103,7 @@ impl CreateDistributionWithTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDistributionWithTagsOutput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput {
+    pub fn build(self) -> crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput {
         crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput {
             distribution: self.distribution,
             location: self.location,

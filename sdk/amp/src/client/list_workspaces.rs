@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`workspaces(Option<Vec<WorkspaceSummary>>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspaces): The list of existing workspaces, including those undergoing creation or deletion.
     ///   - [`next_token(Option<String>)`](crate::operation::list_workspaces::ListWorkspacesOutput::next_token): Pagination token to use when requesting the next page in this list.
     /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
-    pub fn list_workspaces(
-        &self,
-    ) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {
-        crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workspaces(&self) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {
+        crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DescribeVpcEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeVpcEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeVpcEndpointsFluentBuilder {
             crate::operation::describe_vpc_endpoints::DescribeVpcEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeVpcEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeVpcEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeVpcEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeVpcEndpointsFluentBuilder {
             crate::operation::describe_vpc_endpoints::DescribeVpcEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_endpoints::paginator::DescribeVpcEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_vpc_endpoints::paginator::DescribeVpcEndpointsPaginator {
-        crate::operation::describe_vpc_endpoints::paginator::DescribeVpcEndpointsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_vpc_endpoints::paginator::DescribeVpcEndpointsPaginator {
+        crate::operation::describe_vpc_endpoints::paginator::DescribeVpcEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -152,25 +134,17 @@ impl DescribeVpcEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
     ///
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn vpc_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_ids(input.into());
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn set_vpc_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_ids(input);
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn get_vpc_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_endpoint_ids()
     }
     /// Appends an item to `Filters`.
@@ -215,10 +189,7 @@ impl DescribeVpcEndpointsFluentBuilder {
     /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

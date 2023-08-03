@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoint_access::ListEndpointAccessOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`endpoints(Option<Vec<EndpointAccess>>)`](crate::operation::list_endpoint_access::ListEndpointAccessOutput::endpoints): <p>The returned VPC endpoints.</p>
     /// - On failure, responds with [`SdkError<ListEndpointAccessError>`](crate::operation::list_endpoint_access::ListEndpointAccessError)
-    pub fn list_endpoint_access(
-        &self,
-    ) -> crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder {
-        crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoint_access(&self) -> crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder {
+        crate::operation::list_endpoint_access::builders::ListEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

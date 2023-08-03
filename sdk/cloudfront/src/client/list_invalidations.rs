@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListInvalidationsOutput`](crate::operation::list_invalidations::ListInvalidationsOutput) with field(s):
     ///   - [`invalidation_list(Option<InvalidationList>)`](crate::operation::list_invalidations::ListInvalidationsOutput::invalidation_list): <p>Information about invalidation batches.</p>
     /// - On failure, responds with [`SdkError<ListInvalidationsError>`](crate::operation::list_invalidations::ListInvalidationsError)
-    pub fn list_invalidations(
-        &self,
-    ) -> crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder {
-        crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_invalidations(&self) -> crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder {
+        crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartAssociationsOnceOutput {
 }
 impl StartAssociationsOnceOutput {
     /// Creates a new builder-style object to manufacture [`StartAssociationsOnceOutput`](crate::operation::start_associations_once::StartAssociationsOnceOutput).
-    pub fn builder(
-    ) -> crate::operation::start_associations_once::builders::StartAssociationsOnceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_associations_once::builders::StartAssociationsOnceOutputBuilder {
         crate::operation::start_associations_once::builders::StartAssociationsOnceOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartAssociationsOnceOutput`](crate::operation::start_associations_once::StartAssociationsOnceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAssociationsOnceOutputBuilder {
     _request_id: Option<String>,
 }

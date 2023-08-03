@@ -73,9 +73,7 @@ impl Invitation {
 
 /// A builder for [`Invitation`](crate::types::Invitation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvitationBuilder {
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -86,18 +84,12 @@ pub struct InvitationBuilder {
 }
 impl InvitationBuilder {
     /// <p>The unique identifier for the invitation.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the invitation.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -111,10 +103,7 @@ impl InvitationBuilder {
         self
     }
     /// <p>The date and time that the invitation was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -128,10 +117,7 @@ impl InvitationBuilder {
         self
     }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }
@@ -159,10 +145,7 @@ impl InvitationBuilder {
     /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
     /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InvitationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InvitationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -183,10 +166,7 @@ impl InvitationBuilder {
         self
     }
     /// <p>A summary of network configuration properties.</p>
-    pub fn set_network_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSummary>,
-    ) -> Self {
+    pub fn set_network_summary(mut self, input: ::std::option::Option<crate::types::NetworkSummary>) -> Self {
         self.network_summary = input;
         self
     }

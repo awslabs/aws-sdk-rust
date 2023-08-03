@@ -29,16 +29,14 @@ impl PutSolFunctionPackageContentInput {
 }
 impl PutSolFunctionPackageContentInput {
     /// Creates a new builder-style object to manufacture [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
-    pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder {
         crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSolFunctionPackageContentInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
@@ -65,10 +63,7 @@ impl PutSolFunctionPackageContentInputBuilder {
         self
     }
     /// <p>Function package content type.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -97,12 +92,10 @@ impl PutSolFunctionPackageContentInputBuilder {
         crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput {
-                vnf_pkg_id: self.vnf_pkg_id,
-                content_type: self.content_type,
-                file: self.file,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput {
+            vnf_pkg_id: self.vnf_pkg_id,
+            content_type: self.content_type,
+            file: self.file,
+        })
     }
 }

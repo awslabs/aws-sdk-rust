@@ -9,108 +9,97 @@ pub fn de_get_data_protection_policy_http_error(
     crate::operation::get_data_protection_policy::GetDataProtectionPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled(
+        None => {
+            return Err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationError" => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::AuthorizationErrorException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(_response_body, output).map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalError" => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::InternalErrorException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(_response_body, output).map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidParameter" => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::InvalidParameterException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(_response_body, output).map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidSecurity" => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::InvalidSecurityException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSecurityExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_security_exception::de_invalid_security_exception_xml_err(_response_body, output).map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecurityExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_security_exception::de_invalid_security_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFound" => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::NotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::generic(generic)
+        _ => crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::generic(generic),
     })
 }
 
@@ -126,10 +115,9 @@ pub fn de_get_data_protection_policy_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_data_protection_policy::de_get_data_protection_policy(_response_body, output).map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_data_protection_policy::de_get_data_protection_policy(_response_body, output)
+            .map_err(crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -138,10 +126,7 @@ pub fn de_get_data_protection_policy_http_response_with_props(
 pub fn de_get_data_protection_policy(
     inp: &[u8],
     mut builder: crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder,
-) -> Result<
-    crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

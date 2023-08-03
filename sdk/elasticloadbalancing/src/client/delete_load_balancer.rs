@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`load_balancer_name(impl ::std::convert::Into<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::set_load_balancer_name): <p>The name of the load balancer.</p>
     /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput)
     /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::operation::delete_load_balancer::DeleteLoadBalancerError)
-    pub fn delete_load_balancer(
-        &self,
-    ) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder {
-        crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_load_balancer(&self) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder {
+        crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

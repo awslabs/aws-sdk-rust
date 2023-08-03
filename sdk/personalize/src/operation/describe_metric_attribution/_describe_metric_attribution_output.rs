@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeMetricAttributionOutput {
 }
 impl DescribeMetricAttributionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput).
-    pub fn builder() -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionOutputBuilder {
         crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetricAttributionOutputBuilder {
     pub(crate) metric_attribution: ::std::option::Option<crate::types::MetricAttribution>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeMetricAttributionOutputBuilder {
         self
     }
     /// <p>The details of the metric attribution.</p>
-    pub fn set_metric_attribution(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricAttribution>,
-    ) -> Self {
+    pub fn set_metric_attribution(mut self, input: ::std::option::Option<crate::types::MetricAttribution>) -> Self {
         self.metric_attribution = input;
         self
     }
     /// <p>The details of the metric attribution.</p>
-    pub fn get_metric_attribution(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricAttribution> {
+    pub fn get_metric_attribution(&self) -> &::std::option::Option<crate::types::MetricAttribution> {
         &self.metric_attribution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DescribeMetricAttributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput {
+    pub fn build(self) -> crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput {
         crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput {
             metric_attribution: self.metric_attribution,
             _request_id: self._request_id,

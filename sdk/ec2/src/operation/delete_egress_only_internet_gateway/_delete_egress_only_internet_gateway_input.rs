@@ -22,16 +22,14 @@ impl DeleteEgressOnlyInternetGatewayInput {
 }
 impl DeleteEgressOnlyInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
-    pub fn builder() -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder{
+    pub fn builder() -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder {
         crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEgressOnlyInternetGatewayInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
@@ -52,25 +50,17 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn set_egress_only_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = input;
         self
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn get_egress_only_internet_gateway_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.egress_only_internet_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
@@ -82,11 +72,9 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput {
-                dry_run: self.dry_run
-                ,
-                egress_only_internet_gateway_id: self.egress_only_internet_gateway_id
-                ,
-            }
+                dry_run: self.dry_run,
+                egress_only_internet_gateway_id: self.egress_only_internet_gateway_id,
+            },
         )
     }
 }

@@ -117,18 +117,14 @@ impl CreateKeySigningKeyInput {
 }
 impl CreateKeySigningKeyInput {
     /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyInput`](crate::operation::create_key_signing_key::CreateKeySigningKeyInput).
-    pub fn builder(
-    ) -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyInputBuilder {
-        crate::operation::create_key_signing_key::builders::CreateKeySigningKeyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyInputBuilder {
+        crate::operation::create_key_signing_key::builders::CreateKeySigningKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKeySigningKeyInput`](crate::operation::create_key_signing_key::CreateKeySigningKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeySigningKeyInputBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
@@ -138,18 +134,12 @@ pub struct CreateKeySigningKeyInputBuilder {
 }
 impl CreateKeySigningKeyInputBuilder {
     /// <p>A unique string that identifies the request.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -158,18 +148,12 @@ impl CreateKeySigningKeyInputBuilder {
         &self.caller_reference
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -215,10 +199,7 @@ impl CreateKeySigningKeyInputBuilder {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn key_management_service_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_management_service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_management_service_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -260,10 +241,7 @@ impl CreateKeySigningKeyInputBuilder {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn set_key_management_service_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_management_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_management_service_arn = input;
         self
     }
@@ -339,18 +317,14 @@ impl CreateKeySigningKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeySigningKeyInput`](crate::operation::create_key_signing_key::CreateKeySigningKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_key_signing_key::CreateKeySigningKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_key_signing_key::CreateKeySigningKeyInput {
-                caller_reference: self.caller_reference,
-                hosted_zone_id: self.hosted_zone_id,
-                key_management_service_arn: self.key_management_service_arn,
-                name: self.name,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_key_signing_key::CreateKeySigningKeyInput {
+            caller_reference: self.caller_reference,
+            hosted_zone_id: self.hosted_zone_id,
+            key_management_service_arn: self.key_management_service_arn,
+            name: self.name,
+            status: self.status,
+        })
     }
 }

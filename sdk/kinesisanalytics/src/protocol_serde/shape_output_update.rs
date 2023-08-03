@@ -24,19 +24,13 @@ pub fn ser_output_update(
     if let Some(var_7) = &input.lambda_output_update {
         #[allow(unused_mut)]
         let mut object_8 = object.key("LambdaOutputUpdate").start_object();
-        crate::protocol_serde::shape_lambda_output_update::ser_lambda_output_update(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_lambda_output_update::ser_lambda_output_update(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.destination_schema_update {
         #[allow(unused_mut)]
         let mut object_10 = object.key("DestinationSchemaUpdate").start_object();
-        crate::protocol_serde::shape_destination_schema::ser_destination_schema(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_destination_schema::ser_destination_schema(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

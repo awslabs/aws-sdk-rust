@@ -35,18 +35,14 @@ impl UpdateServerCertificateInput {
 }
 impl UpdateServerCertificateInput {
     /// Creates a new builder-style object to manufacture [`UpdateServerCertificateInput`](crate::operation::update_server_certificate::UpdateServerCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::update_server_certificate::builders::UpdateServerCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_server_certificate::builders::UpdateServerCertificateInputBuilder {
         crate::operation::update_server_certificate::builders::UpdateServerCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServerCertificateInput`](crate::operation::update_server_certificate::UpdateServerCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServerCertificateInputBuilder {
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_path: ::std::option::Option<::std::string::String>,
@@ -55,19 +51,13 @@ pub struct UpdateServerCertificateInputBuilder {
 impl UpdateServerCertificateInputBuilder {
     /// <p>The name of the server certificate that you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the server certificate that you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_server_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_certificate_name = input;
         self
     }
@@ -95,19 +85,13 @@ impl UpdateServerCertificateInputBuilder {
     }
     /// <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn new_server_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_server_certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_new_server_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_server_certificate_name = input;
         self
     }
@@ -123,12 +107,10 @@ impl UpdateServerCertificateInputBuilder {
         crate::operation::update_server_certificate::UpdateServerCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_server_certificate::UpdateServerCertificateInput {
-                server_certificate_name: self.server_certificate_name,
-                new_path: self.new_path,
-                new_server_certificate_name: self.new_server_certificate_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_server_certificate::UpdateServerCertificateInput {
+            server_certificate_name: self.server_certificate_name,
+            new_path: self.new_path,
+            new_server_certificate_name: self.new_server_certificate_name,
+        })
     }
 }

@@ -20,9 +20,7 @@ pub struct CreateConfiguredTableAssociationInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfiguredTableAssociationInput {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
@@ -46,35 +44,27 @@ impl CreateConfiguredTableAssociationInput {
         self.role_arn.as_deref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateConfiguredTableAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
-    pub fn builder() -> crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder{
+    pub fn builder() -> crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder {
         crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAssociationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) configured_table_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfiguredTableAssociationInputBuilder {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
@@ -106,18 +96,12 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.description
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_identifier = input;
         self
     }
@@ -126,18 +110,12 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.membership_identifier
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub fn configured_table_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_identifier = input;
         self
     }
@@ -164,51 +142,37 @@ impl CreateConfiguredTableAssociationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                membership_identifier: self.membership_identifier
-                ,
-                configured_table_identifier: self.configured_table_identifier
-                ,
-                role_arn: self.role_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                membership_identifier: self.membership_identifier,
+                configured_table_identifier: self.configured_table_identifier,
+                role_arn: self.role_arn,
+                tags: self.tags,
+            },
         )
     }
 }

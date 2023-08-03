@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDelegationSignerFromDomai
 }
 impl DisassociateDelegationSignerFromDomainOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainOutput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput).
-    pub fn builder() -> crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainOutputBuilder {
         crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDelegationSignerFromDomainOutput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDelegationSignerFromDomainOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl DisassociateDelegationSignerFromDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateDelegationSignerFromDomainOutput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput).
-    pub fn build(self) -> crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput{
+    pub fn build(self) -> crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput {
         crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput {
-            operation_id: self.operation_id
-            ,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

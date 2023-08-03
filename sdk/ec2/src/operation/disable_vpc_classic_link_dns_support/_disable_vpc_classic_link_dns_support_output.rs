@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableVpcClassicLinkDnsSupportOutput
 }
 impl DisableVpcClassicLinkDnsSupportOutput {
     /// Creates a new builder-style object to manufacture [`DisableVpcClassicLinkDnsSupportOutput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput).
-    pub fn builder() -> crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportOutputBuilder{
+    pub fn builder() -> crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportOutputBuilder {
         crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableVpcClassicLinkDnsSupportOutput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableVpcClassicLinkDnsSupportOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl DisableVpcClassicLinkDnsSupportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableVpcClassicLinkDnsSupportOutput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput
-    {
+    pub fn build(self) -> crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput {
         crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

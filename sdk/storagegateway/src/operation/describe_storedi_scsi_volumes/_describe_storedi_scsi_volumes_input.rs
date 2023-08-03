@@ -16,16 +16,14 @@ impl DescribeStorediScsiVolumesInput {
 }
 impl DescribeStorediScsiVolumesInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorediScsiVolumesInput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput).
-    pub fn builder() -> crate::operation::describe_storedi_scsi_volumes::builders::DescribeStorediScsiVolumesInputBuilder{
+    pub fn builder() -> crate::operation::describe_storedi_scsi_volumes::builders::DescribeStorediScsiVolumesInputBuilder {
         crate::operation::describe_storedi_scsi_volumes::builders::DescribeStorediScsiVolumesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorediScsiVolumesInput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorediScsiVolumesInputBuilder {
     pub(crate) volume_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl DescribeStorediScsiVolumesInputBuilder {
         self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn set_volume_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.volume_ar_ns = input;
         self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn get_volume_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_volume_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.volume_ar_ns
     }
     /// Consumes the builder and constructs a [`DescribeStorediScsiVolumesInput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput).
@@ -62,10 +55,8 @@ impl DescribeStorediScsiVolumesInputBuilder {
         crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput {
-                volume_ar_ns: self.volume_ar_ns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput {
+            volume_ar_ns: self.volume_ar_ns,
+        })
     }
 }

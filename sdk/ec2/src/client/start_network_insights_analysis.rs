@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`StartNetworkInsightsAnalysisOutput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput) with field(s):
     ///   - [`network_insights_analysis(Option<NetworkInsightsAnalysis>)`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput::network_insights_analysis): <p>Information about the network insights analysis.</p>
     /// - On failure, responds with [`SdkError<StartNetworkInsightsAnalysisError>`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError)
-    pub fn start_network_insights_analysis(&self) -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisFluentBuilder{
+    pub fn start_network_insights_analysis(
+        &self,
+    ) -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisFluentBuilder {
         crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

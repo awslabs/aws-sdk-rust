@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelMulticastGroupSessionOutput {
 }
 impl CancelMulticastGroupSessionOutput {
     /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput).
-    pub fn builder() -> crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionOutputBuilder {
         crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMulticastGroupSessionOutput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMulticastGroupSessionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CancelMulticastGroupSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelMulticastGroupSessionOutput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput {
+    pub fn build(self) -> crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput {
         crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput {
             _request_id: self._request_id,
         }

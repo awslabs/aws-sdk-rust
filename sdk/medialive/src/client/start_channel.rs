@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_channel::StartChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::start_channel::StartChannelOutput::vpc): Settings for VPC output
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::operation::start_channel::StartChannelError)
-    pub fn start_channel(
-        &self,
-    ) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {
-        crate::operation::start_channel::builders::StartChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_channel(&self) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {
+        crate::operation::start_channel::builders::StartChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`voice_profile_domains(Option<Vec<VoiceProfileDomainSummary>>)`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput::voice_profile_domains): <p>The list of voice profile domains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput::next_token): <p>The token used to return the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVoiceProfileDomainsError>`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsError)
-    pub fn list_voice_profile_domains(
-        &self,
-    ) -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder
-    {
+    pub fn list_voice_profile_domains(&self) -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder {
         crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -33,8 +33,7 @@ impl GetParametersForImportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetParametersForImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder,
+    inner: crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder,
 }
 impl GetParametersForImportFluentBuilder {
     /// Creates a new `GetParametersForImport`.
@@ -45,10 +44,7 @@ impl GetParametersForImportFluentBuilder {
         }
     }
     /// Access the GetParametersForImport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl GetParametersForImportFluentBuilder {
             crate::operation::get_parameters_for_import::GetParametersForImport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_for_import::GetParametersForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_for_import::GetParametersForImportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl GetParametersForImportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl GetParametersForImportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameters_for_import::GetParametersForImportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_for_import::GetParametersForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_for_import::GetParametersForImportError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl GetParametersForImportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameters_for_import::GetParametersForImportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_for_import::GetParametersForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_for_import::GetParametersForImportError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +112,7 @@ impl GetParametersForImportFluentBuilder {
             crate::operation::get_parameters_for_import::GetParametersForImport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameters_for_import::GetParametersForImportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameters_for_import::GetParametersForImportError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +122,7 @@ impl GetParametersForImportFluentBuilder {
         self
     }
     /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
-    pub fn set_key_material_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyMaterialType>,
-    ) -> Self {
+    pub fn set_key_material_type(mut self, input: ::std::option::Option<crate::types::KeyMaterialType>) -> Self {
         self.inner = self.inner.set_key_material_type(input);
         self
     }
@@ -154,10 +136,7 @@ impl GetParametersForImportFluentBuilder {
         self
     }
     /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    pub fn set_wrapping_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_wrapping_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.inner = self.inner.set_wrapping_key_algorithm(input);
         self
     }

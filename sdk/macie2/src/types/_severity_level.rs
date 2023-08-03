@@ -30,9 +30,7 @@ impl SeverityLevel {
 
 /// A builder for [`SeverityLevel`](crate::types::SeverityLevel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeverityLevelBuilder {
     pub(crate) occurrences_threshold: ::std::option::Option<i64>,
     pub(crate) severity: ::std::option::Option<crate::types::DataIdentifierSeverity>,
@@ -58,10 +56,7 @@ impl SeverityLevelBuilder {
         self
     }
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::DataIdentifierSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::DataIdentifierSeverity>) -> Self {
         self.severity = input;
         self
     }

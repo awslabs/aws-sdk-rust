@@ -9,10 +9,7 @@ pub fn ser_notify_app_validation_output_input(
     if let Some(var_2) = &input.notification_context {
         #[allow(unused_mut)]
         let mut object_3 = object.key("notificationContext").start_object();
-        crate::protocol_serde::shape_notification_context::ser_notification_context(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_notification_context::ser_notification_context(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

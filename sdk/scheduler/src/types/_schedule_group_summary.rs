@@ -51,9 +51,7 @@ impl ScheduleGroupSummary {
 
 /// A builder for [`ScheduleGroupSummary`](crate::types::ScheduleGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleGroupSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl ScheduleGroupSummaryBuilder {
         self
     }
     /// <p>Specifies the state of the schedule group.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleGroupState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduleGroupState>) -> Self {
         self.state = input;
         self
     }
@@ -113,10 +108,7 @@ impl ScheduleGroupSummaryBuilder {
         self
     }
     /// <p>The time at which the schedule group was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -130,17 +122,12 @@ impl ScheduleGroupSummaryBuilder {
         self
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn set_last_modification_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_date = input;
         self
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn get_last_modification_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_date
     }
     /// Consumes the builder and constructs a [`ScheduleGroupSummary`](crate::types::ScheduleGroupSummary).

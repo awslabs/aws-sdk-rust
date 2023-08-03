@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`replication_configuration(ReplicationConfiguration)`](crate::operation::put_bucket_replication::builders::PutBucketReplicationFluentBuilder::replication_configuration) / [`set_replication_configuration(Option<ReplicationConfiguration>)`](crate::operation::put_bucket_replication::builders::PutBucketReplicationFluentBuilder::set_replication_configuration): <p></p>
     /// - On success, responds with [`PutBucketReplicationOutput`](crate::operation::put_bucket_replication::PutBucketReplicationOutput)
     /// - On failure, responds with [`SdkError<PutBucketReplicationError>`](crate::operation::put_bucket_replication::PutBucketReplicationError)
-    pub fn put_bucket_replication(
-        &self,
-    ) -> crate::operation::put_bucket_replication::builders::PutBucketReplicationFluentBuilder {
-        crate::operation::put_bucket_replication::builders::PutBucketReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_replication(&self) -> crate::operation::put_bucket_replication::builders::PutBucketReplicationFluentBuilder {
+        crate::operation::put_bucket_replication::builders::PutBucketReplicationFluentBuilder::new(self.handle.clone())
     }
 }

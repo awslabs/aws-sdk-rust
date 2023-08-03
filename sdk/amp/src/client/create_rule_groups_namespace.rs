@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
     /// - On failure, responds with [`SdkError<CreateRuleGroupsNamespaceError>`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError)
-    pub fn create_rule_groups_namespace(&self) -> crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceFluentBuilder{
+    pub fn create_rule_groups_namespace(&self) -> crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceFluentBuilder {
         crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

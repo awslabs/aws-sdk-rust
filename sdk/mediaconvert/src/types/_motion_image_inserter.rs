@@ -58,9 +58,7 @@ impl MotionImageInserter {
 
 /// A builder for [`MotionImageInserter`](crate::types::MotionImageInserter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MotionImageInserterBuilder {
     pub(crate) framerate: ::std::option::Option<crate::types::MotionImageInsertionFramerate>,
     pub(crate) input: ::std::option::Option<::std::string::String>,
@@ -76,17 +74,12 @@ impl MotionImageInserterBuilder {
         self
     }
     /// If your motion graphic asset is a .mov file, keep this setting unspecified. If your motion graphic asset is a series of .png files, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. Make sure that the number of images in your series matches the frame rate and your intended overlay duration. For example, if you want a 30-second overlay at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need to match the frame rate of the underlying video.
-    pub fn set_framerate(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionImageInsertionFramerate>,
-    ) -> Self {
+    pub fn set_framerate(mut self, input: ::std::option::Option<crate::types::MotionImageInsertionFramerate>) -> Self {
         self.framerate = input;
         self
     }
     /// If your motion graphic asset is a .mov file, keep this setting unspecified. If your motion graphic asset is a series of .png files, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. Make sure that the number of images in your series matches the frame rate and your intended overlay duration. For example, if you want a 30-second overlay at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need to match the frame rate of the underlying video.
-    pub fn get_framerate(
-        &self,
-    ) -> &::std::option::Option<crate::types::MotionImageInsertionFramerate> {
+    pub fn get_framerate(&self) -> &::std::option::Option<crate::types::MotionImageInsertionFramerate> {
         &self.framerate
     }
     /// Specify the .mov file or series of .png files that you want to overlay on your video. For .png files, provide the file name of the first file in the series. Make sure that the names of the .png files end with sequential numbers that specify the order that they are played in. For example, overlay_000.png, overlay_001.png, overlay_002.png, and so on. The sequence must start at zero, and each image file name must have the same number of digits. Pad your initial file names with enough zeros to complete the sequence. For example, if the first image is overlay_0.png, there can be only 10 images in the sequence, with the last image being overlay_9.png. But if the first image is overlay_00.png, there can be 100 images in the sequence.
@@ -109,17 +102,12 @@ impl MotionImageInserterBuilder {
         self
     }
     /// Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
-    pub fn set_insertion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionImageInsertionMode>,
-    ) -> Self {
+    pub fn set_insertion_mode(mut self, input: ::std::option::Option<crate::types::MotionImageInsertionMode>) -> Self {
         self.insertion_mode = input;
         self
     }
     /// Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
-    pub fn get_insertion_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::MotionImageInsertionMode> {
+    pub fn get_insertion_mode(&self) -> &::std::option::Option<crate::types::MotionImageInsertionMode> {
         &self.insertion_mode
     }
     /// Use Offset to specify the placement of your motion graphic overlay on the video frame. Specify in pixels, from the upper-left corner of the frame. If you don't specify an offset, the service scales your overlay to the full size of the frame. Otherwise, the service inserts the overlay at its native resolution and scales the size up or down with any video scaling.
@@ -128,10 +116,7 @@ impl MotionImageInserterBuilder {
         self
     }
     /// Use Offset to specify the placement of your motion graphic overlay on the video frame. Specify in pixels, from the upper-left corner of the frame. If you don't specify an offset, the service scales your overlay to the full size of the frame. Otherwise, the service inserts the overlay at its native resolution and scales the size up or down with any video scaling.
-    pub fn set_offset(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionImageInsertionOffset>,
-    ) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<crate::types::MotionImageInsertionOffset>) -> Self {
         self.offset = input;
         self
     }
@@ -145,10 +130,7 @@ impl MotionImageInserterBuilder {
         self
     }
     /// Specify whether your motion graphic overlay repeats on a loop or plays only once.
-    pub fn set_playback(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionImagePlayback>,
-    ) -> Self {
+    pub fn set_playback(mut self, input: ::std::option::Option<crate::types::MotionImagePlayback>) -> Self {
         self.playback = input;
         self
     }

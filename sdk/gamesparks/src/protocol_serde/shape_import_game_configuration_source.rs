@@ -4,9 +4,7 @@ pub fn ser_import_game_configuration_source(
     input: &crate::types::ImportGameConfigurationSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.file {
-        object
-            .key("File")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("File").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     Ok(())
 }

@@ -10,10 +10,7 @@ impl RevokeInvitationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_invitation::RevokeInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_invitation::RevokeInvitationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_invitation::RevokeInvitationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.revoke_invitation();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl RevokeInvitationFluentBuilder {
         }
     }
     /// Access the RevokeInvitation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_invitation::builders::RevokeInvitationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::revoke_invitation::builders::RevokeInvitationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl RevokeInvitationFluentBuilder {
             crate::operation::revoke_invitation::RevokeInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_invitation::RevokeInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_invitation::RevokeInvitationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl RevokeInvitationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl RevokeInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_invitation::RevokeInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_invitation::RevokeInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_invitation::RevokeInvitationError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl RevokeInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_invitation::RevokeInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_invitation::RevokeInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_invitation::RevokeInvitationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl RevokeInvitationFluentBuilder {
             crate::operation::revoke_invitation::RevokeInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_invitation::RevokeInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_invitation::RevokeInvitationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl RevokeInvitationFluentBuilder {
         self.inner.get_user_arn()
     }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-    pub fn enrollment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enrollment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enrollment_id(input.into());
         self
     }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-    pub fn set_enrollment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_enrollment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_enrollment_id(input);
         self
     }

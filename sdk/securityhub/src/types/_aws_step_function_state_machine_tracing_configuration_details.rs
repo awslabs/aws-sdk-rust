@@ -16,17 +16,14 @@ impl AwsStepFunctionStateMachineTracingConfigurationDetails {
 }
 impl AwsStepFunctionStateMachineTracingConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsStepFunctionStateMachineTracingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
         crate::types::builders::AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsStepFunctionStateMachineTracingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

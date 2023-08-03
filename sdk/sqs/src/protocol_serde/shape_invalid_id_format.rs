@@ -3,10 +3,7 @@
 pub fn de_invalid_id_format_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidIdFormatBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidIdFormatBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidIdFormatBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

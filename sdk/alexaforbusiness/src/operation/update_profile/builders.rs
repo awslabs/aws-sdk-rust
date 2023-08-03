@@ -10,10 +10,7 @@ impl UpdateProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_profile::UpdateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_profile::UpdateProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateProfileFluentBuilder {
         }
     }
     /// Access the UpdateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -191,10 +183,7 @@ impl UpdateProfileFluentBuilder {
         self
     }
     /// <p>The updated distance unit for the room profile.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
@@ -208,10 +197,7 @@ impl UpdateProfileFluentBuilder {
         self
     }
     /// <p>The updated temperature unit for the room profile.</p>
-    pub fn set_temperature_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::TemperatureUnit>,
-    ) -> Self {
+    pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
         self.inner = self.inner.set_temperature_unit(input);
         self
     }
@@ -304,25 +290,17 @@ impl UpdateProfileFluentBuilder {
         self.inner.get_data_retention_opt_in()
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        mut self,
-        input: crate::types::UpdateMeetingRoomConfiguration,
-    ) -> Self {
+    pub fn meeting_room_configuration(mut self, input: crate::types::UpdateMeetingRoomConfiguration) -> Self {
         self.inner = self.inner.meeting_room_configuration(input);
         self
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_room_configuration(mut self, input: ::std::option::Option<crate::types::UpdateMeetingRoomConfiguration>) -> Self {
         self.inner = self.inner.set_meeting_room_configuration(input);
         self
     }
     /// <p>The updated meeting room settings of a room profile.</p>
-    pub fn get_meeting_room_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateMeetingRoomConfiguration> {
+    pub fn get_meeting_room_configuration(&self) -> &::std::option::Option<crate::types::UpdateMeetingRoomConfiguration> {
         self.inner.get_meeting_room_configuration()
     }
 }

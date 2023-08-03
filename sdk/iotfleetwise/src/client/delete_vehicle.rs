@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`vehicle_name(Option<String>)`](crate::operation::delete_vehicle::DeleteVehicleOutput::vehicle_name): <p>The ID of the deleted vehicle.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_vehicle::DeleteVehicleOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
     /// - On failure, responds with [`SdkError<DeleteVehicleError>`](crate::operation::delete_vehicle::DeleteVehicleError)
-    pub fn delete_vehicle(
-        &self,
-    ) -> crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder {
-        crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vehicle(&self) -> crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder {
+        crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::new(self.handle.clone())
     }
 }

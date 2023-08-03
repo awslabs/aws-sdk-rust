@@ -37,10 +37,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
         }
     }
     /// Access the UpdateSMBLocalGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
             crate::operation::update_smb_local_groups::UpdateSMBLocalGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
             crate::operation::update_smb_local_groups::UpdateSMBLocalGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl UpdateSMBLocalGroupsFluentBuilder {
         self
     }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
-    pub fn set_smb_local_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbLocalGroups>,
-    ) -> Self {
+    pub fn set_smb_local_groups(mut self, input: ::std::option::Option<crate::types::SmbLocalGroups>) -> Self {
         self.inner = self.inner.set_smb_local_groups(input);
         self
     }

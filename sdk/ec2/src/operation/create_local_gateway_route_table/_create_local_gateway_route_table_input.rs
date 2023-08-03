@@ -36,37 +36,28 @@ impl CreateLocalGatewayRouteTableInput {
 }
 impl CreateLocalGatewayRouteTableInput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableInput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput).
-    pub fn builder() -> crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder{
+    pub fn builder() -> crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder {
         crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocalGatewayRouteTableInput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableInputBuilder {
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateLocalGatewayRouteTableInputBuilder {
     /// <p> The ID of the local gateway. </p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the local gateway. </p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_id = input;
         self
     }
@@ -80,10 +71,7 @@ impl CreateLocalGatewayRouteTableInputBuilder {
         self
     }
     /// <p> The mode of the local gateway route table. </p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>) -> Self {
         self.mode = input;
         self
     }
@@ -103,17 +91,12 @@ impl CreateLocalGatewayRouteTableInputBuilder {
         self
     }
     /// <p> The tags assigned to the local gateway route table. </p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p> The tags assigned to the local gateway route table. </p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -137,13 +120,11 @@ impl CreateLocalGatewayRouteTableInputBuilder {
         crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput {
-                local_gateway_id: self.local_gateway_id,
-                mode: self.mode,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput {
+            local_gateway_id: self.local_gateway_id,
+            mode: self.mode,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+        })
     }
 }

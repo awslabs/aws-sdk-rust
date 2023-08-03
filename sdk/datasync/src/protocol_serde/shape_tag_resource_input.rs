@@ -12,10 +12,7 @@ pub fn ser_tag_resource_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

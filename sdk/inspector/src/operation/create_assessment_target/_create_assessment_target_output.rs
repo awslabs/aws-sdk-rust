@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAssessmentTargetOutput {
 }
 impl CreateAssessmentTargetOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentTargetOutput`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder {
         crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssessmentTargetOutput`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentTargetOutputBuilder {
     pub(crate) assessment_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAssessmentTargetOutputBuilder {
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    pub fn assessment_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_target_arn = input;
         self
     }

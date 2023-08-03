@@ -30,10 +30,7 @@ pub fn ser_instance_group_config(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_configuration::ser_configuration(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -42,19 +39,13 @@ pub fn ser_instance_group_config(
     if let Some(var_11) = &input.ebs_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("EbsConfiguration").start_object();
-        crate::protocol_serde::shape_ebs_configuration::ser_ebs_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_ebs_configuration::ser_ebs_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.auto_scaling_policy {
         #[allow(unused_mut)]
         let mut object_14 = object.key("AutoScalingPolicy").start_object();
-        crate::protocol_serde::shape_auto_scaling_policy::ser_auto_scaling_policy(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_auto_scaling_policy::ser_auto_scaling_policy(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.custom_ami_id {

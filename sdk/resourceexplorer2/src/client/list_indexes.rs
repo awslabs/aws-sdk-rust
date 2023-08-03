@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`indexes(Option<Vec<Index>>)`](crate::operation::list_indexes::ListIndexesOutput::indexes): <p>A structure that contains the details and status of each index.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_indexes::ListIndexesOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListIndexesError>`](crate::operation::list_indexes::ListIndexesError)
-    pub fn list_indexes(
-        &self,
-    ) -> crate::operation::list_indexes::builders::ListIndexesFluentBuilder {
+    pub fn list_indexes(&self) -> crate::operation::list_indexes::builders::ListIndexesFluentBuilder {
         crate::operation::list_indexes::builders::ListIndexesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,14 +6,11 @@
 pub struct OrganizationKubernetesConfiguration {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
     #[doc(hidden)]
-    pub audit_logs:
-        ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>,
+    pub audit_logs: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>,
 }
 impl OrganizationKubernetesConfiguration {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    pub fn audit_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationKubernetesAuditLogsConfiguration> {
+    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::OrganizationKubernetesAuditLogsConfiguration> {
         self.audit_logs.as_ref()
     }
 }
@@ -26,40 +23,27 @@ impl OrganizationKubernetesConfiguration {
 
 /// A builder for [`OrganizationKubernetesConfiguration`](crate::types::OrganizationKubernetesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesConfigurationBuilder {
-    pub(crate) audit_logs:
-        ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>,
+    pub(crate) audit_logs: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>,
 }
 impl OrganizationKubernetesConfigurationBuilder {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    pub fn audit_logs(
-        mut self,
-        input: crate::types::OrganizationKubernetesAuditLogsConfiguration,
-    ) -> Self {
+    pub fn audit_logs(mut self, input: crate::types::OrganizationKubernetesAuditLogsConfiguration) -> Self {
         self.audit_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    pub fn set_audit_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>,
-    ) -> Self {
+    pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>) -> Self {
         self.audit_logs = input;
         self
     }
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    pub fn get_audit_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration> {
+    pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration> {
         &self.audit_logs
     }
     /// Consumes the builder and constructs a [`OrganizationKubernetesConfiguration`](crate::types::OrganizationKubernetesConfiguration).
     pub fn build(self) -> crate::types::OrganizationKubernetesConfiguration {
-        crate::types::OrganizationKubernetesConfiguration {
-            audit_logs: self.audit_logs,
-        }
+        crate::types::OrganizationKubernetesConfiguration { audit_logs: self.audit_logs }
     }
 }

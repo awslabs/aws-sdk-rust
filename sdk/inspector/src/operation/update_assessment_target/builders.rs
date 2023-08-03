@@ -38,10 +38,7 @@ impl UpdateAssessmentTargetFluentBuilder {
         }
     }
     /// Access the UpdateAssessmentTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateAssessmentTargetFluentBuilder {
             crate::operation::update_assessment_target::UpdateAssessmentTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateAssessmentTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateAssessmentTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_target::UpdateAssessmentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateAssessmentTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_target::UpdateAssessmentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl UpdateAssessmentTargetFluentBuilder {
             crate::operation::update_assessment_target::UpdateAssessmentTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the assessment target that you want to update.</p>
-    pub fn assessment_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arn(input.into());
         self
     }
     /// <p>The ARN of the assessment target that you want to update.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_arn(input);
         self
     }
@@ -145,18 +125,12 @@ impl UpdateAssessmentTargetFluentBuilder {
         self.inner.get_assessment_target_arn()
     }
     /// <p>The name of the assessment target that you want to update.</p>
-    pub fn assessment_target_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_name(input.into());
         self
     }
     /// <p>The name of the assessment target that you want to update.</p>
-    pub fn set_assessment_target_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_name(input);
         self
     }
@@ -165,18 +139,12 @@ impl UpdateAssessmentTargetFluentBuilder {
         self.inner.get_assessment_target_name()
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    pub fn resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_arn(input.into());
         self
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_arn(input);
         self
     }

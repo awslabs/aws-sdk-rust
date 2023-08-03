@@ -10,10 +10,7 @@ impl CreateAccessPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_access_policy::CreateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_access_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAccessPolicyFluentBuilder {
         }
     }
     /// Access the CreateAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAccessPolicyFluentBuilder {
             crate::operation::create_access_policy::CreateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_policy::CreateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_policy::CreateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateAccessPolicyFluentBuilder {
             crate::operation::create_access_policy::CreateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl CreateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

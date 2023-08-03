@@ -12,10 +12,7 @@ pub fn ser_create_launch_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_launch_group_config::ser_launch_group_config(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_launch_group_config::ser_launch_group_config(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_create_launch_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_metric_monitor_config::ser_metric_monitor_config(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_metric_monitor_config::ser_metric_monitor_config(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

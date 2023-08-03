@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput) with field(s):
     ///   - [`certificate(Option<Certificate>)`](crate::operation::delete_certificate::DeleteCertificateOutput::certificate): <p>The Secure Sockets Layer (SSL) certificate.</p>
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::operation::delete_certificate::DeleteCertificateError)
-    pub fn delete_certificate(
-        &self,
-    ) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
-        crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_certificate(&self) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
+        crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(self.handle.clone())
     }
 }

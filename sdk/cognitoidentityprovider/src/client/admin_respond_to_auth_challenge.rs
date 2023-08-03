@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput::challenge_parameters): <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput::authentication_result): <p>The result returned by the server in response to the authentication request.</p>
     /// - On failure, responds with [`SdkError<AdminRespondToAuthChallengeError>`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError)
-    pub fn admin_respond_to_auth_challenge(&self) -> crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeFluentBuilder{
+    pub fn admin_respond_to_auth_challenge(
+        &self,
+    ) -> crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeFluentBuilder {
         crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeFluentBuilder::new(self.handle.clone())
     }
 }

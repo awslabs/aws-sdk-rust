@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`contains_old_group_versions(bool)`](crate::operation::get_service_graph::GetServiceGraphOutput::contains_old_group_versions): <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_service_graph::GetServiceGraphOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetServiceGraphError>`](crate::operation::get_service_graph::GetServiceGraphError)
-    pub fn get_service_graph(
-        &self,
-    ) -> crate::operation::get_service_graph::builders::GetServiceGraphFluentBuilder {
-        crate::operation::get_service_graph::builders::GetServiceGraphFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_graph(&self) -> crate::operation::get_service_graph::builders::GetServiceGraphFluentBuilder {
+        crate::operation::get_service_graph::builders::GetServiceGraphFluentBuilder::new(self.handle.clone())
     }
 }

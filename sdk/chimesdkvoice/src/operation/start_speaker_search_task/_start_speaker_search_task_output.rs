@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSpeakerSearchTaskOutput {
 }
 impl StartSpeakerSearchTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartSpeakerSearchTaskOutput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskOutputBuilder {
         crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSpeakerSearchTaskOutput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSpeakerSearchTaskOutputBuilder {
     pub(crate) speaker_search_task: ::std::option::Option<crate::types::SpeakerSearchTask>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl StartSpeakerSearchTaskOutputBuilder {
         self
     }
     /// <p>The details of the speaker search task.</p>
-    pub fn set_speaker_search_task(
-        mut self,
-        input: ::std::option::Option<crate::types::SpeakerSearchTask>,
-    ) -> Self {
+    pub fn set_speaker_search_task(mut self, input: ::std::option::Option<crate::types::SpeakerSearchTask>) -> Self {
         self.speaker_search_task = input;
         self
     }
     /// <p>The details of the speaker search task.</p>
-    pub fn get_speaker_search_task(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpeakerSearchTask> {
+    pub fn get_speaker_search_task(&self) -> &::std::option::Option<crate::types::SpeakerSearchTask> {
         &self.speaker_search_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl StartSpeakerSearchTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSpeakerSearchTaskOutput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput {
+    pub fn build(self) -> crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput {
         crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput {
             speaker_search_task: self.speaker_search_task,
             _request_id: self._request_id,

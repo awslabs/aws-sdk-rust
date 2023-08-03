@@ -116,9 +116,7 @@ impl CommandFilter {
 
 /// A builder for [`CommandFilter`](crate::types::CommandFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommandFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::CommandFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

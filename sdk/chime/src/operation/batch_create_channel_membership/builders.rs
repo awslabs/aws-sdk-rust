@@ -26,13 +26,11 @@ impl BatchCreateChannelMembershipInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html">BatchCreateChannelMembership</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by BatchCreateChannelMembership in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by BatchCreateChannelMembership in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder,
+    inner: crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder,
 }
 impl BatchCreateChannelMembershipFluentBuilder {
     /// Creates a new `BatchCreateChannelMembership`.
@@ -43,7 +41,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
         }
     }
     /// Access the BatchCreateChannelMembership as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
             crate::operation::batch_create_channel_membership::BatchCreateChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
             crate::operation::batch_create_channel_membership::BatchCreateChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +133,7 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -167,17 +151,12 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self
     }
     /// <p>The ARNs of the members you want to add to the channel.</p>
-    pub fn set_member_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_member_arns(input);
         self
     }
     /// <p>The ARNs of the members you want to add to the channel.</p>
-    pub fn get_member_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_member_arns()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>

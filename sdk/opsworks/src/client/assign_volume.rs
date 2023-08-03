@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::assign_volume::builders::AssignVolumeFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::assign_volume::builders::AssignVolumeFluentBuilder::set_instance_id): <p>The instance ID.</p>
     /// - On success, responds with [`AssignVolumeOutput`](crate::operation::assign_volume::AssignVolumeOutput)
     /// - On failure, responds with [`SdkError<AssignVolumeError>`](crate::operation::assign_volume::AssignVolumeError)
-    pub fn assign_volume(
-        &self,
-    ) -> crate::operation::assign_volume::builders::AssignVolumeFluentBuilder {
-        crate::operation::assign_volume::builders::AssignVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn assign_volume(&self) -> crate::operation::assign_volume::builders::AssignVolumeFluentBuilder {
+        crate::operation::assign_volume::builders::AssignVolumeFluentBuilder::new(self.handle.clone())
     }
 }

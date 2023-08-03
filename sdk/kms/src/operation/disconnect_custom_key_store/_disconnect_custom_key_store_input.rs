@@ -15,35 +15,25 @@ impl DisconnectCustomKeyStoreInput {
 }
 impl DisconnectCustomKeyStoreInput {
     /// Creates a new builder-style object to manufacture [`DisconnectCustomKeyStoreInput`](crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput).
-    pub fn builder(
-    ) -> crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder {
         crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectCustomKeyStoreInput`](crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreInputBuilder {
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectCustomKeyStoreInputBuilder {
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_key_store_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DisconnectCustomKeyStoreInputBuilder {
         crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput {
-                custom_key_store_id: self.custom_key_store_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput {
+            custom_key_store_id: self.custom_key_store_id,
+        })
     }
 }

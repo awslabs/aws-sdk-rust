@@ -38,13 +38,7 @@
 /// <p> The subscription type of the subscriber. It can be SMS or EMAIL.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SubscriptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SubscriptionType {
         match s {
             "EMAIL" => SubscriptionType::Email,
             "SNS" => SubscriptionType::Sns,
-            other => {
-                SubscriptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SubscriptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

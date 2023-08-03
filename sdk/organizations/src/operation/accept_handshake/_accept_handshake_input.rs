@@ -24,9 +24,7 @@ impl AcceptHandshakeInput {
 
 /// A builder for [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl AcceptHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_handshake::AcceptHandshakeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::accept_handshake::AcceptHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_handshake::AcceptHandshakeInput {
             handshake_id: self.handshake_id,
         })

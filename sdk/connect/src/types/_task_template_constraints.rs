@@ -37,16 +37,11 @@ impl TaskTemplateConstraints {
 
 /// A builder for [`TaskTemplateConstraints`](crate::types::TaskTemplateConstraints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskTemplateConstraintsBuilder {
-    pub(crate) required_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>>,
-    pub(crate) read_only_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>>,
-    pub(crate) invisible_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>>,
+    pub(crate) required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>>,
+    pub(crate) read_only_fields: ::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>>,
+    pub(crate) invisible_fields: ::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>>,
 }
 impl TaskTemplateConstraintsBuilder {
     /// Appends an item to `required_fields`.
@@ -61,17 +56,12 @@ impl TaskTemplateConstraintsBuilder {
         self
     }
     /// <p>Lists the fields that are required to be filled by agents.</p>
-    pub fn set_required_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>>,
-    ) -> Self {
+    pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>>) -> Self {
         self.required_fields = input;
         self
     }
     /// <p>Lists the fields that are required to be filled by agents.</p>
-    pub fn get_required_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>> {
+    pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>> {
         &self.required_fields
     }
     /// Appends an item to `read_only_fields`.
@@ -86,17 +76,12 @@ impl TaskTemplateConstraintsBuilder {
         self
     }
     /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
-    pub fn set_read_only_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>>,
-    ) -> Self {
+    pub fn set_read_only_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>>) -> Self {
         self.read_only_fields = input;
         self
     }
     /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
-    pub fn get_read_only_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>> {
+    pub fn get_read_only_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>> {
         &self.read_only_fields
     }
     /// Appends an item to `invisible_fields`.
@@ -111,17 +96,12 @@ impl TaskTemplateConstraintsBuilder {
         self
     }
     /// <p>Lists the fields that are invisible to agents.</p>
-    pub fn set_invisible_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>>,
-    ) -> Self {
+    pub fn set_invisible_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>>) -> Self {
         self.invisible_fields = input;
         self
     }
     /// <p>Lists the fields that are invisible to agents.</p>
-    pub fn get_invisible_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>> {
+    pub fn get_invisible_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvisibleFieldInfo>> {
         &self.invisible_fields
     }
     /// Consumes the builder and constructs a [`TaskTemplateConstraints`](crate::types::TaskTemplateConstraints).

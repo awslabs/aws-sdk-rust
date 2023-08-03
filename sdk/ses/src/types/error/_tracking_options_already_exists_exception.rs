@@ -36,34 +36,27 @@ impl ::std::fmt::Display for TrackingOptionsAlreadyExistsException {
     }
 }
 impl ::std::error::Error for TrackingOptionsAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TrackingOptionsAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TrackingOptionsAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TrackingOptionsAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TrackingOptionsAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TrackingOptionsAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`TrackingOptionsAlreadyExistsException`](crate::types::error::TrackingOptionsAlreadyExistsException).
-    pub fn builder() -> crate::types::error::builders::TrackingOptionsAlreadyExistsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::TrackingOptionsAlreadyExistsExceptionBuilder {
         crate::types::error::builders::TrackingOptionsAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`TrackingOptionsAlreadyExistsException`](crate::types::error::TrackingOptionsAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrackingOptionsAlreadyExistsExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -71,18 +64,12 @@ pub struct TrackingOptionsAlreadyExistsExceptionBuilder {
 }
 impl TrackingOptionsAlreadyExistsExceptionBuilder {
     /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -111,10 +98,7 @@ impl TrackingOptionsAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

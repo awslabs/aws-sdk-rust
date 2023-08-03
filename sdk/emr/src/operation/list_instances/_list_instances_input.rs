@@ -12,8 +12,7 @@ pub struct ListInstancesInput {
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance group for which to list the instances.</p>
     #[doc(hidden)]
-    pub instance_group_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>,
+    pub instance_group_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>,
     /// <p>The unique identifier of the instance fleet.</p>
     #[doc(hidden)]
     pub instance_fleet_id: ::std::option::Option<::std::string::String>,
@@ -37,9 +36,7 @@ impl ListInstancesInput {
         self.instance_group_id.as_deref()
     }
     /// <p>The type of instance group for which to list the instances.</p>
-    pub fn instance_group_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceGroupType]> {
+    pub fn instance_group_types(&self) -> ::std::option::Option<&[crate::types::InstanceGroupType]> {
         self.instance_group_types.as_deref()
     }
     /// <p>The unique identifier of the instance fleet.</p>
@@ -68,14 +65,11 @@ impl ListInstancesInput {
 
 /// A builder for [`ListInstancesInput`](crate::operation::list_instances::ListInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_group_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>,
+    pub(crate) instance_group_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>,
     pub(crate) instance_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_fleet_type: ::std::option::Option<crate::types::InstanceFleetType>,
     pub(crate) instance_states: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
@@ -97,18 +91,12 @@ impl ListInstancesInputBuilder {
         &self.cluster_id
     }
     /// <p>The identifier of the instance group for which to list the instances.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the instance group for which to list the instances.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_group_id = input;
         self
     }
@@ -128,32 +116,21 @@ impl ListInstancesInputBuilder {
         self
     }
     /// <p>The type of instance group for which to list the instances.</p>
-    pub fn set_instance_group_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>,
-    ) -> Self {
+    pub fn set_instance_group_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>) -> Self {
         self.instance_group_types = input;
         self
     }
     /// <p>The type of instance group for which to list the instances.</p>
-    pub fn get_instance_group_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>> {
+    pub fn get_instance_group_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>> {
         &self.instance_group_types
     }
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn instance_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn set_instance_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_fleet_id = input;
         self
     }
@@ -167,17 +144,12 @@ impl ListInstancesInputBuilder {
         self
     }
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-    pub fn set_instance_fleet_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetType>,
-    ) -> Self {
+    pub fn set_instance_fleet_type(mut self, input: ::std::option::Option<crate::types::InstanceFleetType>) -> Self {
         self.instance_fleet_type = input;
         self
     }
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-    pub fn get_instance_fleet_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceFleetType> {
+    pub fn get_instance_fleet_type(&self) -> &::std::option::Option<crate::types::InstanceFleetType> {
         &self.instance_fleet_type
     }
     /// Appends an item to `instance_states`.
@@ -192,17 +164,12 @@ impl ListInstancesInputBuilder {
         self
     }
     /// <p>A list of instance states that will filter the instances returned with this request.</p>
-    pub fn set_instance_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
-    ) -> Self {
+    pub fn set_instance_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>) -> Self {
         self.instance_states = input;
         self
     }
     /// <p>A list of instance states that will filter the instances returned with this request.</p>
-    pub fn get_instance_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
+    pub fn get_instance_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
         &self.instance_states
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -222,10 +189,7 @@ impl ListInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListInstancesInput`](crate::operation::list_instances::ListInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_instances::ListInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_instances::ListInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_instances::ListInstancesInput {
             cluster_id: self.cluster_id,
             instance_group_id: self.instance_group_id,

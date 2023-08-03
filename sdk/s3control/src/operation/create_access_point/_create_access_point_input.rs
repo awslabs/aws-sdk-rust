@@ -31,8 +31,7 @@ pub struct CreateAccessPointInput {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
     #[doc(hidden)]
-    pub public_access_block_configuration:
-        ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
+    pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     #[doc(hidden)]
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
@@ -69,9 +68,7 @@ impl CreateAccessPointInput {
         self.vpc_configuration.as_ref()
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn public_access_block_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
@@ -81,24 +78,20 @@ impl CreateAccessPointInput {
 }
 impl CreateAccessPointInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
-    pub fn builder(
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
+    pub fn builder() -> crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
         crate::operation::create_access_point::builders::CreateAccessPointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
-    pub(crate) public_access_block_configuration:
-        ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
+    pub(crate) public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     pub(crate) bucket_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPointInputBuilder {
@@ -190,10 +183,7 @@ impl CreateAccessPointInputBuilder {
     /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
@@ -204,40 +194,26 @@ impl CreateAccessPointInputBuilder {
         &self.vpc_configuration
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn public_access_block_configuration(
-        mut self,
-        input: crate::types::PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn set_public_access_block_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.public_access_block_configuration = input;
         self
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn get_public_access_block_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+    pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         &self.public_access_block_configuration
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn bucket_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn set_bucket_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_account_id = input;
         self
     }
@@ -248,19 +224,14 @@ impl CreateAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_point::CreateAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_access_point::CreateAccessPointInput {
-                account_id: self.account_id,
-                name: self.name,
-                bucket: self.bucket,
-                vpc_configuration: self.vpc_configuration,
-                public_access_block_configuration: self.public_access_block_configuration,
-                bucket_account_id: self.bucket_account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_access_point::CreateAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_access_point::CreateAccessPointInput {
+            account_id: self.account_id,
+            name: self.name,
+            bucket: self.bucket,
+            vpc_configuration: self.vpc_configuration,
+            public_access_block_configuration: self.public_access_block_configuration,
+            bucket_account_id: self.bucket_account_id,
+        })
     }
 }

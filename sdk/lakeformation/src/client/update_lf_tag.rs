@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tag_values_to_add(Vec<String>)`](crate::operation::update_lf_tag::builders::UpdateLFTagFluentBuilder::tag_values_to_add) / [`set_tag_values_to_add(Option<Vec<String>>)`](crate::operation::update_lf_tag::builders::UpdateLFTagFluentBuilder::set_tag_values_to_add): <p>A list of LF-tag values to add from the LF-tag.</p>
     /// - On success, responds with [`UpdateLfTagOutput`](crate::operation::update_lf_tag::UpdateLfTagOutput)
     /// - On failure, responds with [`SdkError<UpdateLFTagError>`](crate::operation::update_lf_tag::UpdateLFTagError)
-    pub fn update_lf_tag(
-        &self,
-    ) -> crate::operation::update_lf_tag::builders::UpdateLFTagFluentBuilder {
-        crate::operation::update_lf_tag::builders::UpdateLFTagFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_lf_tag(&self) -> crate::operation::update_lf_tag::builders::UpdateLFTagFluentBuilder {
+        crate::operation::update_lf_tag::builders::UpdateLFTagFluentBuilder::new(self.handle.clone())
     }
 }

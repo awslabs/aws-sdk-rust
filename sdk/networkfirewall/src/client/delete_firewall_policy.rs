@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFirewallPolicyOutput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput) with field(s):
     ///   - [`firewall_policy_response(Option<FirewallPolicyResponse>)`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput::firewall_policy_response): <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     /// - On failure, responds with [`SdkError<DeleteFirewallPolicyError>`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyError)
-    pub fn delete_firewall_policy(
-        &self,
-    ) -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyFluentBuilder {
-        crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_firewall_policy(&self) -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyFluentBuilder {
+        crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyFluentBuilder::new(self.handle.clone())
     }
 }

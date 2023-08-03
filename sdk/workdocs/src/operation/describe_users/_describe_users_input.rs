@@ -128,18 +128,12 @@ pub struct DescribeUsersInputBuilder {
 }
 impl DescribeUsersInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -148,18 +142,12 @@ impl DescribeUsersInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -219,10 +207,7 @@ impl DescribeUsersInputBuilder {
         self
     }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<crate::types::UserFilterType>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<crate::types::UserFilterType>) -> Self {
         self.include = input;
         self
     }
@@ -303,10 +288,7 @@ impl DescribeUsersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_users::DescribeUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_users::DescribeUsersInput {
             authentication_token: self.authentication_token,
             organization_id: self.organization_id,

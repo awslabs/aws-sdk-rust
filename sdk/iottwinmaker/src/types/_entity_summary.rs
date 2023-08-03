@@ -79,9 +79,7 @@ impl EntitySummary {
 
 /// A builder for [`EntitySummary`](crate::types::EntitySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitySummaryBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
@@ -137,18 +135,12 @@ impl EntitySummaryBuilder {
         &self.arn
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn parent_entity_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn set_parent_entity_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_entity_id = input;
         self
     }
@@ -204,10 +196,7 @@ impl EntitySummaryBuilder {
         self
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -221,10 +210,7 @@ impl EntitySummaryBuilder {
         self
     }
     /// <p>The last date and time when the entity was updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

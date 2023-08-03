@@ -37,9 +37,7 @@ impl QueryStatistics {
 
 /// A builder for [`QueryStatistics`](crate::types::QueryStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryStatisticsBuilder {
     pub(crate) records_matched: ::std::option::Option<f64>,
     pub(crate) records_scanned: ::std::option::Option<f64>,

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`policy_enabled(Option<bool>)`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput::policy_enabled): <p>The status of the Verified Access policy.</p>
     ///   - [`policy_document(Option<String>)`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput::policy_document): <p>The Verified Access policy document.</p>
     /// - On failure, responds with [`SdkError<GetVerifiedAccessEndpointPolicyError>`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyError)
-    pub fn get_verified_access_endpoint_policy(&self) -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyFluentBuilder{
+    pub fn get_verified_access_endpoint_policy(
+        &self,
+    ) -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyFluentBuilder {
         crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

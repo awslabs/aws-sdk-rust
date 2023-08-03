@@ -10,10 +10,7 @@ impl UpdateDetectorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_detector::UpdateDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector::UpdateDetectorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector::UpdateDetectorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_detector();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateDetectorFluentBuilder {
         }
     }
     /// Access the UpdateDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_detector::builders::UpdateDetectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_detector::builders::UpdateDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,25 +136,17 @@ impl UpdateDetectorFluentBuilder {
         self.inner.get_enable()
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.inner = self.inner.finding_publishing_frequency(input);
         self
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         self.inner.get_finding_publishing_frequency()
     }
     /// <p>Describes which data sources will be updated.</p>
@@ -175,19 +159,14 @@ impl UpdateDetectorFluentBuilder {
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         self.inner.get_data_sources()
     }
     /// Appends an item to `Features`.
@@ -200,17 +179,12 @@ impl UpdateDetectorFluentBuilder {
         self
     }
     /// <p>Provides the features that will be updated for the detector.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }
     /// <p>Provides the features that will be updated for the detector.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
         self.inner.get_features()
     }
 }

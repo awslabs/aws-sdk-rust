@@ -36,18 +36,14 @@ impl DescribeAcceleratorsInput {
 }
 impl DescribeAcceleratorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorsInput`](crate::operation::describe_accelerators::DescribeAcceleratorsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder {
-        crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder {
+        crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorsInput`](crate::operation::describe_accelerators::DescribeAcceleratorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorsInputBuilder {
     pub(crate) accelerator_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -60,27 +56,19 @@ impl DescribeAcceleratorsInputBuilder {
     /// To override the contents of this collection use [`set_accelerator_ids`](Self::set_accelerator_ids).
     ///
     /// <p> The IDs of the accelerators to describe. </p>
-    pub fn accelerator_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accelerator_ids.unwrap_or_default();
         v.push(input.into());
         self.accelerator_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p> The IDs of the accelerators to describe. </p>
-    pub fn set_accelerator_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accelerator_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accelerator_ids = input;
         self
     }
     /// <p> The IDs of the accelerators to describe. </p>
-    pub fn get_accelerator_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accelerator_ids
     }
     /// Appends an item to `filters`.
@@ -95,10 +83,7 @@ impl DescribeAcceleratorsInputBuilder {
         self
     }
     /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -137,17 +122,13 @@ impl DescribeAcceleratorsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcceleratorsInput`](crate::operation::describe_accelerators::DescribeAcceleratorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_accelerators::DescribeAcceleratorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_accelerators::DescribeAcceleratorsInput {
-                accelerator_ids: self.accelerator_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_accelerators::DescribeAcceleratorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_accelerators::DescribeAcceleratorsInput {
+            accelerator_ids: self.accelerator_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

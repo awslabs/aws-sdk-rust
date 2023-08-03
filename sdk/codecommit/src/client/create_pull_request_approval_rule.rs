@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreatePullRequestApprovalRuleOutput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput) with field(s):
     ///   - [`approval_rule(Option<ApprovalRule>)`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleOutput::approval_rule): <p>Information about the created approval rule.</p>
     /// - On failure, responds with [`SdkError<CreatePullRequestApprovalRuleError>`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError)
-    pub fn create_pull_request_approval_rule(&self) -> crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleFluentBuilder{
+    pub fn create_pull_request_approval_rule(
+        &self,
+    ) -> crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleFluentBuilder {
         crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleFluentBuilder::new(self.handle.clone())
     }
 }

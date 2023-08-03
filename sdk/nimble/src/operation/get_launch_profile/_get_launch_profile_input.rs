@@ -22,35 +22,26 @@ impl GetLaunchProfileInput {
 }
 impl GetLaunchProfileInput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileInput`](crate::operation::get_launch_profile::GetLaunchProfileInput).
-    pub fn builder() -> crate::operation::get_launch_profile::builders::GetLaunchProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_profile::builders::GetLaunchProfileInputBuilder {
         crate::operation::get_launch_profile::builders::GetLaunchProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchProfileInput`](crate::operation::get_launch_profile::GetLaunchProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchProfileInputBuilder {
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchProfileInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_profile_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetLaunchProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchProfileInput`](crate::operation::get_launch_profile::GetLaunchProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_launch_profile::GetLaunchProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_launch_profile::GetLaunchProfileInput {
-                launch_profile_id: self.launch_profile_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_launch_profile::GetLaunchProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_launch_profile::GetLaunchProfileInput {
+            launch_profile_id: self.launch_profile_id,
+            studio_id: self.studio_id,
+        })
     }
 }

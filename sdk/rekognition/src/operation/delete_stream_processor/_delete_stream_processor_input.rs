@@ -15,18 +15,14 @@ impl DeleteStreamProcessorInput {
 }
 impl DeleteStreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
-    pub fn builder(
-    ) -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder {
         crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamProcessorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stream_processor::DeleteStreamProcessorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_stream_processor::DeleteStreamProcessorInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_stream_processor::DeleteStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_stream_processor::DeleteStreamProcessorInput { name: self.name })
     }
 }

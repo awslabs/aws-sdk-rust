@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreImageFromRecycleBinOutput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<RestoreImageFromRecycleBinError>`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinError)
-    pub fn restore_image_from_recycle_bin(&self) -> crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinFluentBuilder{
+    pub fn restore_image_from_recycle_bin(
+        &self,
+    ) -> crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinFluentBuilder {
         crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CompleteSnapshotOutput`](crate::operation::complete_snapshot::CompleteSnapshotOutput) with field(s):
     ///   - [`status(Option<Status>)`](crate::operation::complete_snapshot::CompleteSnapshotOutput::status): <p>The status of the snapshot.</p>
     /// - On failure, responds with [`SdkError<CompleteSnapshotError>`](crate::operation::complete_snapshot::CompleteSnapshotError)
-    pub fn complete_snapshot(
-        &self,
-    ) -> crate::operation::complete_snapshot::builders::CompleteSnapshotFluentBuilder {
-        crate::operation::complete_snapshot::builders::CompleteSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn complete_snapshot(&self) -> crate::operation::complete_snapshot::builders::CompleteSnapshotFluentBuilder {
+        crate::operation::complete_snapshot::builders::CompleteSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

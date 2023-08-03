@@ -23,9 +23,7 @@ impl LoRaWanFuotaTask {
 
 /// A builder for [`LoRaWanFuotaTask`](crate::types::LoRaWanFuotaTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanFuotaTaskBuilder {
     pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
 }
@@ -36,10 +34,7 @@ impl LoRaWanFuotaTaskBuilder {
         self
     }
     /// <p>Supported RfRegions</p>
-    pub fn set_rf_region(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedRfRegion>,
-    ) -> Self {
+    pub fn set_rf_region(mut self, input: ::std::option::Option<crate::types::SupportedRfRegion>) -> Self {
         self.rf_region = input;
         self
     }
@@ -49,8 +44,6 @@ impl LoRaWanFuotaTaskBuilder {
     }
     /// Consumes the builder and constructs a [`LoRaWanFuotaTask`](crate::types::LoRaWanFuotaTask).
     pub fn build(self) -> crate::types::LoRaWanFuotaTask {
-        crate::types::LoRaWanFuotaTask {
-            rf_region: self.rf_region,
-        }
+        crate::types::LoRaWanFuotaTask { rf_region: self.rf_region }
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`flywheel_arn(Option<String>)`](crate::operation::create_flywheel::CreateFlywheelOutput::flywheel_arn): <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     ///   - [`active_model_arn(Option<String>)`](crate::operation::create_flywheel::CreateFlywheelOutput::active_model_arn): <p>The Amazon Resource Number (ARN) of the active model version.</p>
     /// - On failure, responds with [`SdkError<CreateFlywheelError>`](crate::operation::create_flywheel::CreateFlywheelError)
-    pub fn create_flywheel(
-        &self,
-    ) -> crate::operation::create_flywheel::builders::CreateFlywheelFluentBuilder {
-        crate::operation::create_flywheel::builders::CreateFlywheelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_flywheel(&self) -> crate::operation::create_flywheel::builders::CreateFlywheelFluentBuilder {
+        crate::operation::create_flywheel::builders::CreateFlywheelFluentBuilder::new(self.handle.clone())
     }
 }

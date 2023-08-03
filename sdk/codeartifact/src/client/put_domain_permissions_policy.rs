@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`PutDomainPermissionsPolicyOutput`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput::policy): <p> The resource policy that was set after processing the request. </p>
     /// - On failure, responds with [`SdkError<PutDomainPermissionsPolicyError>`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError)
-    pub fn put_domain_permissions_policy(&self) -> crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyFluentBuilder{
+    pub fn put_domain_permissions_policy(
+        &self,
+    ) -> crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyFluentBuilder {
         crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

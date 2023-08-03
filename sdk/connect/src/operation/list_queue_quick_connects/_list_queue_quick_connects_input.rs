@@ -36,18 +36,14 @@ impl ListQueueQuickConnectsInput {
 }
 impl ListQueueQuickConnectsInput {
     /// Creates a new builder-style object to manufacture [`ListQueueQuickConnectsInput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsInput).
-    pub fn builder(
-    ) -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsInputBuilder {
         crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueueQuickConnectsInput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueueQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -118,13 +114,11 @@ impl ListQueueQuickConnectsInputBuilder {
         crate::operation::list_queue_quick_connects::ListQueueQuickConnectsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_queue_quick_connects::ListQueueQuickConnectsInput {
-                instance_id: self.instance_id,
-                queue_id: self.queue_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_queue_quick_connects::ListQueueQuickConnectsInput {
+            instance_id: self.instance_id,
+            queue_id: self.queue_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl CreatePricingPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_pricing_plan::CreatePricingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_pricing_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePricingPlanFluentBuilder {
         }
     }
     /// Access the CreatePricingPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreatePricingPlanFluentBuilder {
             crate::operation::create_pricing_plan::CreatePricingPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreatePricingPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreatePricingPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pricing_plan::CreatePricingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreatePricingPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pricing_plan::CreatePricingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreatePricingPlanFluentBuilder {
             crate::operation::create_pricing_plan::CreatePricingPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pricing_plan::CreatePricingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pricing_plan::CreatePricingPlanError>,
     > {
         self.customize_middleware().await
     }
@@ -169,25 +153,17 @@ impl CreatePricingPlanFluentBuilder {
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn pricing_rule_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_rule_arns(input.into());
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn set_pricing_rule_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn get_pricing_rule_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pricing_rule_arns()
     }
     /// Adds a key-value pair to `Tags`.
@@ -195,30 +171,17 @@ impl CreatePricingPlanFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

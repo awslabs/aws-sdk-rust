@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`batch_job_definitions(Option<Vec<BatchJobDefinition>>)`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput::batch_job_definitions): <p>The list of batch job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListBatchJobDefinitionsError>`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError)
-    pub fn list_batch_job_definitions(
-        &self,
-    ) -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsFluentBuilder
-    {
+    pub fn list_batch_job_definitions(&self) -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsFluentBuilder {
         crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

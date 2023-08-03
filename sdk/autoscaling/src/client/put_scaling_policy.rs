@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`policy_arn(Option<String>)`](crate::operation::put_scaling_policy::PutScalingPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the policy.</p>
     ///   - [`alarms(Option<Vec<Alarm>>)`](crate::operation::put_scaling_policy::PutScalingPolicyOutput::alarms): <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     /// - On failure, responds with [`SdkError<PutScalingPolicyError>`](crate::operation::put_scaling_policy::PutScalingPolicyError)
-    pub fn put_scaling_policy(
-        &self,
-    ) -> crate::operation::put_scaling_policy::builders::PutScalingPolicyFluentBuilder {
-        crate::operation::put_scaling_policy::builders::PutScalingPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_scaling_policy(&self) -> crate::operation::put_scaling_policy::builders::PutScalingPolicyFluentBuilder {
+        crate::operation::put_scaling_policy::builders::PutScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

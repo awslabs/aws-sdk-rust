@@ -9,10 +9,7 @@ pub fn ser_analysis_rule_aggregation(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_aggregate_column::ser_aggregate_column(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_aggregate_column::ser_aggregate_column(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -63,10 +60,7 @@ pub fn ser_analysis_rule_aggregation(
             {
                 #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_aggregation_constraint::ser_aggregation_constraint(
-                    &mut object_21,
-                    item_20,
-                )?;
+                crate::protocol_serde::shape_aggregation_constraint::ser_aggregation_constraint(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }
@@ -77,17 +71,9 @@ pub fn ser_analysis_rule_aggregation(
 
 pub(crate) fn de_analysis_rule_aggregation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AnalysisRuleAggregation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AnalysisRuleAggregation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -97,69 +83,54 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "aggregateColumns" => {
-                                builder = builder.set_aggregate_columns(
-                                    crate::protocol_serde::shape_aggregate_column_list::de_aggregate_column_list(tokens)?
-                                );
-                            }
-                            "joinColumns" => {
-                                builder = builder.set_join_columns(
-                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?
-                                );
-                            }
-                            "joinRequired" => {
-                                builder = builder.set_join_required(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::JoinRequiredOption::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "allowedJoinOperators" => {
-                                builder = builder.set_allowed_join_operators(
-                                    crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens)?
-                                );
-                            }
-                            "dimensionColumns" => {
-                                builder = builder.set_dimension_columns(
-                                    crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?
-                                );
-                            }
-                            "scalarFunctions" => {
-                                builder = builder.set_scalar_functions(
-                                    crate::protocol_serde::shape_scalar_functions_list::de_scalar_functions_list(tokens)?
-                                );
-                            }
-                            "outputConstraints" => {
-                                builder = builder.set_output_constraints(
-                                    crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "aggregateColumns" => {
+                            builder =
+                                builder.set_aggregate_columns(crate::protocol_serde::shape_aggregate_column_list::de_aggregate_column_list(tokens)?);
                         }
-                    }
+                        "joinColumns" => {
+                            builder = builder.set_join_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
+                                tokens,
+                            )?);
+                        }
+                        "joinRequired" => {
+                            builder = builder.set_join_required(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::JoinRequiredOption::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "allowedJoinOperators" => {
+                            builder =
+                                builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens)?);
+                        }
+                        "dimensionColumns" => {
+                            builder = builder.set_dimension_columns(
+                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?,
+                            );
+                        }
+                        "scalarFunctions" => {
+                            builder =
+                                builder.set_scalar_functions(crate::protocol_serde::shape_scalar_functions_list::de_scalar_functions_list(tokens)?);
+                        }
+                        "outputConstraints" => {
+                            builder = builder
+                                .set_output_constraints(crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`total_count(Option<i32>)`](crate::operation::search_users::SearchUsersOutput::total_count): <p>The total number of users returned.</p>
     /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::operation::search_users::SearchUsersError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn search_users(
-        &self,
-    ) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
+    pub fn search_users(&self) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
         crate::operation::search_users::builders::SearchUsersFluentBuilder::new(self.handle.clone())
     }
 }

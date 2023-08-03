@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationProfileOutput {
 }
 impl DeleteConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationProfileOutput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput).
-    pub fn builder() -> crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileOutputBuilder {
         crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationProfileOutput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationProfileOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteConfigurationProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationProfileOutput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput {
+    pub fn build(self) -> crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput {
         crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput {
             _request_id: self._request_id,
         }

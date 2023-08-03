@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput::kms_key_arn): <p>The ARN of the KMS key to use to encrypt your data.</p>
     ///   - [`failure_type(Option<AnomalyDetectorFailureType>)`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput::failure_type): <p>The process that caused the detector to fail.</p>
     /// - On failure, responds with [`SdkError<DescribeAnomalyDetectorError>`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError)
-    pub fn describe_anomaly_detector(
-        &self,
-    ) -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder
-    {
+    pub fn describe_anomaly_detector(&self) -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder {
         crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder::new(self.handle.clone())
     }
 }

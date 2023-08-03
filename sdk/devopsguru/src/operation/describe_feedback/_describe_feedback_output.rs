@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFeedbackOutput {
 }
 impl DescribeFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeedbackOutput`](crate::operation::describe_feedback::DescribeFeedbackOutput).
-    pub fn builder() -> crate::operation::describe_feedback::builders::DescribeFeedbackOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_feedback::builders::DescribeFeedbackOutputBuilder {
         crate::operation::describe_feedback::builders::DescribeFeedbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeedbackOutput`](crate::operation::describe_feedback::DescribeFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeedbackOutputBuilder {
     pub(crate) insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeFeedbackOutputBuilder {
         self
     }
     /// <p> Information about insight feedback received from a customer. </p>
-    pub fn set_insight_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightFeedback>,
-    ) -> Self {
+    pub fn set_insight_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedback>) -> Self {
         self.insight_feedback = input;
         self
     }

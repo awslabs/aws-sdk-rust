@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput) with field(s):
     ///   - [`archive_rule(Option<ArchiveRuleSummary>)`](crate::operation::get_archive_rule::GetArchiveRuleOutput::archive_rule): <p>Contains information about an archive rule.</p>
     /// - On failure, responds with [`SdkError<GetArchiveRuleError>`](crate::operation::get_archive_rule::GetArchiveRuleError)
-    pub fn get_archive_rule(
-        &self,
-    ) -> crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder {
-        crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_archive_rule(&self) -> crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder {
+        crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::new(self.handle.clone())
     }
 }

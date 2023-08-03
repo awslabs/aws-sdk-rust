@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopImageBuilderOutput`](crate::operation::stop_image_builder::StopImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::operation::stop_image_builder::StopImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<StopImageBuilderError>`](crate::operation::stop_image_builder::StopImageBuilderError)
-    pub fn stop_image_builder(
-        &self,
-    ) -> crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder {
-        crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_image_builder(&self) -> crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder {
+        crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder::new(self.handle.clone())
     }
 }

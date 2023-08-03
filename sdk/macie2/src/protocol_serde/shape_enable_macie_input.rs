@@ -7,9 +7,7 @@ pub fn ser_enable_macie_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.finding_publishing_frequency {
-        object
-            .key("findingPublishingFrequency")
-            .string(var_2.as_str());
+        object.key("findingPublishingFrequency").string(var_2.as_str());
     }
     if let Some(var_3) = &input.status {
         object.key("status").string(var_3.as_str());

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tolerated_failure_count(i64)`](crate::operation::update_map_run::builders::UpdateMapRunFluentBuilder::tolerated_failure_count) / [`set_tolerated_failure_count(Option<i64>)`](crate::operation::update_map_run::builders::UpdateMapRunFluentBuilder::set_tolerated_failure_count): <p>The maximum number of failed items before the Map Run fails.</p>
     /// - On success, responds with [`UpdateMapRunOutput`](crate::operation::update_map_run::UpdateMapRunOutput)
     /// - On failure, responds with [`SdkError<UpdateMapRunError>`](crate::operation::update_map_run::UpdateMapRunError)
-    pub fn update_map_run(
-        &self,
-    ) -> crate::operation::update_map_run::builders::UpdateMapRunFluentBuilder {
-        crate::operation::update_map_run::builders::UpdateMapRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_map_run(&self) -> crate::operation::update_map_run::builders::UpdateMapRunFluentBuilder {
+        crate::operation::update_map_run::builders::UpdateMapRunFluentBuilder::new(self.handle.clone())
     }
 }

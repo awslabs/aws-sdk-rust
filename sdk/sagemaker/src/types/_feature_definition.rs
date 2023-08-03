@@ -30,9 +30,7 @@ impl FeatureDefinition {
 
 /// A builder for [`FeatureDefinition`](crate::types::FeatureDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureDefinitionBuilder {
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_type: ::std::option::Option<crate::types::FeatureType>,
@@ -58,10 +56,7 @@ impl FeatureDefinitionBuilder {
         self
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-    pub fn set_feature_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureType>,
-    ) -> Self {
+    pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::FeatureType>) -> Self {
         self.feature_type = input;
         self
     }

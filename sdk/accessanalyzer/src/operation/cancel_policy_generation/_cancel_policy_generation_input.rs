@@ -15,18 +15,14 @@ impl CancelPolicyGenerationInput {
 }
 impl CancelPolicyGenerationInput {
     /// Creates a new builder-style object to manufacture [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder {
         crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelPolicyGenerationInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl CancelPolicyGenerationInputBuilder {
     /// Consumes the builder and constructs a [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_policy_generation::CancelPolicyGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_policy_generation::CancelPolicyGenerationInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_policy_generation::CancelPolicyGenerationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_policy_generation::CancelPolicyGenerationInput { job_id: self.job_id })
     }
 }

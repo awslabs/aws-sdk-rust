@@ -36,9 +36,7 @@ impl DeleteTagsInput {
 
 /// A builder for [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTagsInputBuilder {
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DeleteTagsInputBuilder {
         self
     }
     /// <p>One or more tags to delete.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -88,10 +83,7 @@ impl DeleteTagsInputBuilder {
         self
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaggableResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -100,12 +92,7 @@ impl DeleteTagsInputBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_tags::DeleteTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags::DeleteTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tags::DeleteTagsInput {
             tag_keys: self.tag_keys,
             resource_id: self.resource_id,

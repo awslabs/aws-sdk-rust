@@ -26,7 +26,7 @@ impl CreateIntegrationAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntegrationAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_integration_association::builders::CreateIntegrationAssociationInputBuilder,
+    inner: crate::operation::create_integration_association::builders::CreateIntegrationAssociationInputBuilder,
 }
 impl CreateIntegrationAssociationFluentBuilder {
     /// Creates a new `CreateIntegrationAssociation`.
@@ -37,7 +37,7 @@ impl CreateIntegrationAssociationFluentBuilder {
         }
     }
     /// Access the CreateIntegrationAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_integration_association::builders::CreateIntegrationAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_integration_association::builders::CreateIntegrationAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateIntegrationAssociationFluentBuilder {
             crate::operation::create_integration_association::CreateIntegrationAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_association::CreateIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_association::CreateIntegrationAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateIntegrationAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateIntegrationAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_association::CreateIntegrationAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_association::CreateIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_association::CreateIntegrationAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateIntegrationAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_association::CreateIntegrationAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_association::CreateIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_association::CreateIntegrationAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateIntegrationAssociationFluentBuilder {
             crate::operation::create_integration_association::CreateIntegrationAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_integration_association::CreateIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_integration_association::CreateIntegrationAssociationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl CreateIntegrationAssociationFluentBuilder {
         self
     }
     /// <p>The type of information to be ingested.</p>
-    pub fn set_integration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrationType>,
-    ) -> Self {
+    pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
         self.inner = self.inner.set_integration_type(input);
         self
     }
@@ -154,20 +140,14 @@ impl CreateIntegrationAssociationFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
-    pub fn integration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
-    pub fn set_integration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_arn(input);
         self
     }
@@ -178,18 +158,12 @@ impl CreateIntegrationAssociationFluentBuilder {
         self.inner.get_integration_arn()
     }
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
-    pub fn source_application_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_application_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_application_url(input.into());
         self
     }
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
-    pub fn set_source_application_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_application_url(input);
         self
     }
@@ -198,18 +172,12 @@ impl CreateIntegrationAssociationFluentBuilder {
         self.inner.get_source_application_url()
     }
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
-    pub fn source_application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_application_name(input.into());
         self
     }
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
-    pub fn set_source_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_application_name(input);
         self
     }
@@ -223,10 +191,7 @@ impl CreateIntegrationAssociationFluentBuilder {
         self
     }
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
@@ -239,30 +204,17 @@ impl CreateIntegrationAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

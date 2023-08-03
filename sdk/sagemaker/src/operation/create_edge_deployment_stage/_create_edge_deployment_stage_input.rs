@@ -22,34 +22,26 @@ impl CreateEdgeDeploymentStageInput {
 }
 impl CreateEdgeDeploymentStageInput {
     /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentStageInput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput).
-    pub fn builder() -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder{
+    pub fn builder() -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder {
         crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEdgeDeploymentStageInput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentStageInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
 }
 impl CreateEdgeDeploymentStageInputBuilder {
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = input;
         self
     }
@@ -69,17 +61,12 @@ impl CreateEdgeDeploymentStageInputBuilder {
         self
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn set_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
-    ) -> Self {
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>) -> Self {
         self.stages = input;
         self
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn get_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
         &self.stages
     }
     /// Consumes the builder and constructs a [`CreateEdgeDeploymentStageInput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput).
@@ -89,11 +76,9 @@ impl CreateEdgeDeploymentStageInputBuilder {
         crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-                stages: self.stages,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput {
+            edge_deployment_plan_name: self.edge_deployment_plan_name,
+            stages: self.stages,
+        })
     }
 }

@@ -38,18 +38,14 @@ impl PutRumMetricsDestinationInput {
 }
 impl PutRumMetricsDestinationInput {
     /// Creates a new builder-style object to manufacture [`PutRumMetricsDestinationInput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder {
         crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRumMetricsDestinationInput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRumMetricsDestinationInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
@@ -58,18 +54,12 @@ pub struct PutRumMetricsDestinationInputBuilder {
 }
 impl PutRumMetricsDestinationInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_monitor_name = input;
         self
     }
@@ -83,10 +73,7 @@ impl PutRumMetricsDestinationInputBuilder {
         self
     }
     /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -95,18 +82,12 @@ impl PutRumMetricsDestinationInputBuilder {
         &self.destination
     }
     /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -138,13 +119,11 @@ impl PutRumMetricsDestinationInputBuilder {
         crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput {
-                app_monitor_name: self.app_monitor_name,
-                destination: self.destination,
-                destination_arn: self.destination_arn,
-                iam_role_arn: self.iam_role_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput {
+            app_monitor_name: self.app_monitor_name,
+            destination: self.destination,
+            destination_arn: self.destination_arn,
+            iam_role_arn: self.iam_role_arn,
+        })
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_create_custom_plugin_input(
     if let Some(var_3) = &input.location {
         #[allow(unused_mut)]
         let mut object_4 = object.key("location").start_object();
-        crate::protocol_serde::shape_custom_plugin_location::ser_custom_plugin_location(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_custom_plugin_location::ser_custom_plugin_location(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.name {

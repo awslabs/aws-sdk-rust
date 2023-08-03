@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput) with field(s):
     ///   - [`monthly_limit(Option<i64>)`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput::monthly_limit): <p>The current monthly limit to enforce on sending text messages.</p>
     /// - On failure, responds with [`SdkError<SetTextMessageSpendLimitOverrideError>`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideError)
-    pub fn set_text_message_spend_limit_override(&self) -> crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder{
+    pub fn set_text_message_spend_limit_override(
+        &self,
+    ) -> crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder {
         crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder::new(self.handle.clone())
     }
 }

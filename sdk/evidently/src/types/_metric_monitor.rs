@@ -23,9 +23,7 @@ impl MetricMonitor {
 
 /// A builder for [`MetricMonitor`](crate::types::MetricMonitor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricMonitorBuilder {
     pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinition>,
 }
@@ -36,10 +34,7 @@ impl MetricMonitorBuilder {
         self
     }
     /// <p>A structure that defines the metric.</p>
-    pub fn set_metric_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDefinition>,
-    ) -> Self {
+    pub fn set_metric_definition(mut self, input: ::std::option::Option<crate::types::MetricDefinition>) -> Self {
         self.metric_definition = input;
         self
     }

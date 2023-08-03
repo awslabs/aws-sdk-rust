@@ -29,17 +29,14 @@ impl DescribeDocumentInput {
 }
 impl DescribeDocumentInput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
-    pub fn builder() -> crate::operation::describe_document::builders::DescribeDocumentInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_document::builders::DescribeDocumentInputBuilder {
         crate::operation::describe_document::builders::DescribeDocumentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl DescribeDocumentInputBuilder {
         &self.name
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -97,10 +88,7 @@ impl DescribeDocumentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_document::DescribeDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_document::DescribeDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_document::DescribeDocumentInput {
             name: self.name,
             document_version: self.document_version,

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartRxNormInferenceJobOutput {
 }
 impl StartRxNormInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobOutput`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobOutputBuilder {
         crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartRxNormInferenceJobOutput`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRxNormInferenceJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StartRxNormInferenceJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartRxNormInferenceJobOutput`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput {
+    pub fn build(self) -> crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput {
         crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

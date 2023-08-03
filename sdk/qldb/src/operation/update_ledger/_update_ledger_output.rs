@@ -47,9 +47,7 @@ impl UpdateLedgerOutput {
         self.deletion_protection
     }
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
-    pub fn encryption_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LedgerEncryptionDescription> {
+    pub fn encryption_description(&self) -> ::std::option::Option<&crate::types::LedgerEncryptionDescription> {
         self.encryption_description.as_ref()
     }
 }
@@ -67,17 +65,14 @@ impl UpdateLedgerOutput {
 
 /// A builder for [`UpdateLedgerOutput`](crate::operation::update_ledger::UpdateLedgerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLedgerOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::LedgerState>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
-    pub(crate) encryption_description:
-        ::std::option::Option<crate::types::LedgerEncryptionDescription>,
+    pub(crate) encryption_description: ::std::option::Option<crate::types::LedgerEncryptionDescription>,
     _request_id: Option<String>,
 }
 impl UpdateLedgerOutputBuilder {
@@ -129,10 +124,7 @@ impl UpdateLedgerOutputBuilder {
         self
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -158,25 +150,17 @@ impl UpdateLedgerOutputBuilder {
         &self.deletion_protection
     }
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
-    pub fn encryption_description(
-        mut self,
-        input: crate::types::LedgerEncryptionDescription,
-    ) -> Self {
+    pub fn encryption_description(mut self, input: crate::types::LedgerEncryptionDescription) -> Self {
         self.encryption_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
-    pub fn set_encryption_description(
-        mut self,
-        input: ::std::option::Option<crate::types::LedgerEncryptionDescription>,
-    ) -> Self {
+    pub fn set_encryption_description(mut self, input: ::std::option::Option<crate::types::LedgerEncryptionDescription>) -> Self {
         self.encryption_description = input;
         self
     }
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
-    pub fn get_encryption_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::LedgerEncryptionDescription> {
+    pub fn get_encryption_description(&self) -> &::std::option::Option<crate::types::LedgerEncryptionDescription> {
         &self.encryption_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

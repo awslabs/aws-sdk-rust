@@ -26,7 +26,7 @@ impl BatchGetCustomEntityTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetCustomEntityTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder,
+    inner: crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder,
 }
 impl BatchGetCustomEntityTypesFluentBuilder {
     /// Creates a new `BatchGetCustomEntityTypes`.
@@ -37,7 +37,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
         }
     }
     /// Access the BatchGetCustomEntityTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
             crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
             crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl BatchGetCustomEntityTypesFluentBuilder {
         self
     }
     /// <p>A list of names of the custom patterns that you want to retrieve.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

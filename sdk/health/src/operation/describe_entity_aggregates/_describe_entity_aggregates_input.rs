@@ -15,18 +15,14 @@ impl DescribeEntityAggregatesInput {
 }
 impl DescribeEntityAggregatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder {
         crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,10 +39,7 @@ impl DescribeEntityAggregatesInputBuilder {
         self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn set_event_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_arns = input;
         self
     }
@@ -61,10 +54,6 @@ impl DescribeEntityAggregatesInputBuilder {
         crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput {
-                event_arns: self.event_arns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput { event_arns: self.event_arns })
     }
 }

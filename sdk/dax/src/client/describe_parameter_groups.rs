@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`parameter_groups(Option<Vec<ParameterGroup>>)`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput::parameter_groups): <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
     /// - On failure, responds with [`SdkError<DescribeParameterGroupsError>`](crate::operation::describe_parameter_groups::DescribeParameterGroupsError)
-    pub fn describe_parameter_groups(
-        &self,
-    ) -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsFluentBuilder
-    {
+    pub fn describe_parameter_groups(&self) -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsFluentBuilder {
         crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsFluentBuilder::new(self.handle.clone())
     }
 }

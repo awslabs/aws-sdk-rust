@@ -5,18 +5,12 @@
 pub struct GetMetadataOutput {
     /// <p>Represents the configuration settings for the features metadata.</p>
     #[doc(hidden)]
-    pub features: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetMetadataOutput {
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn features(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn features(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.features.as_ref()
     }
 }
@@ -34,13 +28,9 @@ impl GetMetadataOutput {
 
 /// A builder for [`GetMetadataOutput`](crate::operation::get_metadata::GetMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetadataOutputBuilder {
-    pub(crate) features: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) features: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetMetadataOutputBuilder {
@@ -49,32 +39,19 @@ impl GetMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_features`](Self::set_features).
     ///
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn features(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn features(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.features.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.features = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.features = input;
         self
     }
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

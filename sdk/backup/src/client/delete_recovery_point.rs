@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`recovery_point_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_recovery_point::builders::DeleteRecoveryPointFluentBuilder::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::operation::delete_recovery_point::builders::DeleteRecoveryPointFluentBuilder::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     /// - On success, responds with [`DeleteRecoveryPointOutput`](crate::operation::delete_recovery_point::DeleteRecoveryPointOutput)
     /// - On failure, responds with [`SdkError<DeleteRecoveryPointError>`](crate::operation::delete_recovery_point::DeleteRecoveryPointError)
-    pub fn delete_recovery_point(
-        &self,
-    ) -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointFluentBuilder {
-        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_recovery_point(&self) -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointFluentBuilder {
+        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointFluentBuilder::new(self.handle.clone())
     }
 }

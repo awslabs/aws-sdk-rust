@@ -64,9 +64,7 @@ impl CreateFpgaImageInput {
 
 /// A builder for [`CreateFpgaImageInput`](crate::operation::create_fpga_image::CreateFpgaImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFpgaImageInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) input_storage_location: ::std::option::Option<crate::types::StorageLocation>,
@@ -74,8 +72,7 @@ pub struct CreateFpgaImageInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateFpgaImageInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -98,17 +95,12 @@ impl CreateFpgaImageInputBuilder {
         self
     }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
-    pub fn set_input_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLocation>,
-    ) -> Self {
+    pub fn set_input_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
         self.input_storage_location = input;
         self
     }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
-    pub fn get_input_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLocation> {
+    pub fn get_input_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
         &self.input_storage_location
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
@@ -117,17 +109,12 @@ impl CreateFpgaImageInputBuilder {
         self
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
-    pub fn set_logs_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLocation>,
-    ) -> Self {
+    pub fn set_logs_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
         self.logs_storage_location = input;
         self
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
-    pub fn get_logs_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLocation> {
+    pub fn get_logs_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
         &self.logs_storage_location
     }
     /// <p>A description for the AFI.</p>
@@ -184,26 +171,18 @@ impl CreateFpgaImageInputBuilder {
         self
     }
     /// <p>The tags to apply to the FPGA image during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the FPGA image during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateFpgaImageInput`](crate::operation::create_fpga_image::CreateFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_fpga_image::CreateFpgaImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_fpga_image::CreateFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fpga_image::CreateFpgaImageInput {
             dry_run: self.dry_run,
             input_storage_location: self.input_storage_location,

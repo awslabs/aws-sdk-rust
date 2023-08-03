@@ -57,16 +57,14 @@ impl PostCommentForPullRequestInput {
 }
 impl PostCommentForPullRequestInput {
     /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestInput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput).
-    pub fn builder() -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder{
+    pub fn builder() -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder {
         crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder::default()
     }
 }
 
 /// A builder for [`PostCommentForPullRequestInput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCommentForPullRequestInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ pub struct PostCommentForPullRequestInputBuilder {
 }
 impl PostCommentForPullRequestInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -98,18 +90,12 @@ impl PostCommentForPullRequestInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -118,18 +104,12 @@ impl PostCommentForPullRequestInputBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -138,18 +118,12 @@ impl PostCommentForPullRequestInputBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -186,18 +160,12 @@ impl PostCommentForPullRequestInputBuilder {
         &self.content
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -212,16 +180,14 @@ impl PostCommentForPullRequestInputBuilder {
         crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput {
-                pull_request_id: self.pull_request_id,
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                location: self.location,
-                content: self.content,
-                client_request_token: self.client_request_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput {
+            pull_request_id: self.pull_request_id,
+            repository_name: self.repository_name,
+            before_commit_id: self.before_commit_id,
+            after_commit_id: self.after_commit_id,
+            location: self.location,
+            content: self.content,
+            client_request_token: self.client_request_token,
+        })
     }
 }

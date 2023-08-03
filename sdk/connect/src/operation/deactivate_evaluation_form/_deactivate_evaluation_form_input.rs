@@ -29,18 +29,14 @@ impl DeactivateEvaluationFormInput {
 }
 impl DeactivateEvaluationFormInput {
     /// Creates a new builder-style object to manufacture [`DeactivateEvaluationFormInput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput).
-    pub fn builder(
-    ) -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder
-    {
+    pub fn builder() -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder {
         crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder::default()
     }
 }
 
 /// A builder for [`DeactivateEvaluationFormInput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateEvaluationFormInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl DeactivateEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl DeactivateEvaluationFormInputBuilder {
         crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput {
-                instance_id: self.instance_id,
-                evaluation_form_id: self.evaluation_form_id,
-                evaluation_form_version: self.evaluation_form_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput {
+            instance_id: self.instance_id,
+            evaluation_form_id: self.evaluation_form_id,
+            evaluation_form_version: self.evaluation_form_version,
+        })
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness): <p>The readiness status at a recovery group level.</p>
     ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): <p>Summaries of the readiness checks for the recovery group.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryError)
-    pub fn get_recovery_group_readiness_summary(&self) -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder{
+    pub fn get_recovery_group_readiness_summary(
+        &self,
+    ) -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder {
         crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRetentionConfigurationOutput {
 }
 impl DeleteRetentionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationOutputBuilder {
         crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRetentionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRetentionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput {
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput {
             _request_id: self._request_id,
         }

@@ -30,27 +30,19 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetBuilder {
     pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl SubnetBuilder {
     /// <p>The system-assigned identifier for the subnet.</p>
-    pub fn subnet_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-assigned identifier for the subnet.</p>
-    pub fn set_subnet_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_identifier = input;
         self
     }
@@ -59,18 +51,12 @@ impl SubnetBuilder {
         &self.subnet_identifier
     }
     /// <p>The Availability Zone (AZ) for the subnet.</p>
-    pub fn subnet_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone (AZ) for the subnet.</p>
-    pub fn set_subnet_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_availability_zone = input;
         self
     }

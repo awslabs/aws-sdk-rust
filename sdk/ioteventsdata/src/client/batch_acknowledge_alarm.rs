@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchAcknowledgeAlarmOutput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchAcknowledgeAlarmError>`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError)
-    pub fn batch_acknowledge_alarm(
-        &self,
-    ) -> crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmFluentBuilder
-    {
-        crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_acknowledge_alarm(&self) -> crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmFluentBuilder {
+        crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmFluentBuilder::new(self.handle.clone())
     }
 }

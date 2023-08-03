@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionOutput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionOutput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     /// - On failure, responds with [`SdkError<DescribeDataQualityJobDefinitionError>`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionError)
-    pub fn describe_data_quality_job_definition(&self) -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionFluentBuilder{
+    pub fn describe_data_quality_job_definition(
+        &self,
+    ) -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionFluentBuilder {
         crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

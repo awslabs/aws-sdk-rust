@@ -50,18 +50,14 @@ impl NotifyMigrationTaskStateInput {
 }
 impl NotifyMigrationTaskStateInput {
     /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateInput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput).
-    pub fn builder(
-    ) -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder {
         crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyMigrationTaskStateInput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct NotifyMigrationTaskStateInputBuilder {
 }
 impl NotifyMigrationTaskStateInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -92,18 +82,12 @@ impl NotifyMigrationTaskStateInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -131,10 +115,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         self
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }
@@ -177,15 +158,13 @@ impl NotifyMigrationTaskStateInputBuilder {
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                task: self.task,
-                update_date_time: self.update_date_time,
-                next_update_seconds: self.next_update_seconds.unwrap_or_default(),
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            task: self.task,
+            update_date_time: self.update_date_time,
+            next_update_seconds: self.next_update_seconds.unwrap_or_default(),
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

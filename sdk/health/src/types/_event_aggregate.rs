@@ -30,27 +30,19 @@ impl EventAggregate {
 
 /// A builder for [`EventAggregate`](crate::types::EventAggregate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventAggregateBuilder {
     pub(crate) aggregate_value: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
 }
 impl EventAggregateBuilder {
     /// <p>The issue type for the associated count.</p>
-    pub fn aggregate_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregate_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregate_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The issue type for the associated count.</p>
-    pub fn set_aggregate_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregate_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregate_value = input;
         self
     }

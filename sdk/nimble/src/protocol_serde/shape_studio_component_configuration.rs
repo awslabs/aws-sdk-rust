@@ -29,11 +29,9 @@ pub fn ser_studio_component_configuration(
             object_4.finish();
         }
         crate::types::StudioComponentConfiguration::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "StudioComponentConfiguration",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "StudioComponentConfiguration",
+            ))
         }
     }
     Ok(())
@@ -41,17 +39,9 @@ pub fn ser_studio_component_configuration(
 
 pub(crate) fn de_studio_component_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::StudioComponentConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::StudioComponentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -61,59 +51,61 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "activeDirectoryConfiguration" => {
-                                Some(crate::types::StudioComponentConfiguration::ActiveDirectoryConfiguration(
-                                    crate::protocol_serde::shape_active_directory_configuration::de_active_directory_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'activeDirectoryConfiguration' cannot be null"))?
-                                ))
-                            }
-                            "computeFarmConfiguration" => {
-                                Some(crate::types::StudioComponentConfiguration::ComputeFarmConfiguration(
-                                    crate::protocol_serde::shape_compute_farm_configuration::de_compute_farm_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'computeFarmConfiguration' cannot be null"))?
-                                ))
-                            }
-                            "licenseServiceConfiguration" => {
-                                Some(crate::types::StudioComponentConfiguration::LicenseServiceConfiguration(
-                                    crate::protocol_serde::shape_license_service_configuration::de_license_service_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'licenseServiceConfiguration' cannot be null"))?
-                                ))
-                            }
-                            "sharedFileSystemConfiguration" => {
-                                Some(crate::types::StudioComponentConfiguration::SharedFileSystemConfiguration(
-                                    crate::protocol_serde::shape_shared_file_system_configuration::de_shared_file_system_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sharedFileSystemConfiguration' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::StudioComponentConfiguration::Unknown)
-                                                                    }
-                        };
+                        "activeDirectoryConfiguration" => Some(crate::types::StudioComponentConfiguration::ActiveDirectoryConfiguration(
+                            crate::protocol_serde::shape_active_directory_configuration::de_active_directory_configuration(tokens)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'activeDirectoryConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
+                        )),
+                        "computeFarmConfiguration" => Some(crate::types::StudioComponentConfiguration::ComputeFarmConfiguration(
+                            crate::protocol_serde::shape_compute_farm_configuration::de_compute_farm_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'computeFarmConfiguration' cannot be null")
+                            })?,
+                        )),
+                        "licenseServiceConfiguration" => Some(crate::types::StudioComponentConfiguration::LicenseServiceConfiguration(
+                            crate::protocol_serde::shape_license_service_configuration::de_license_service_configuration(tokens)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'licenseServiceConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
+                        )),
+                        "sharedFileSystemConfiguration" => Some(crate::types::StudioComponentConfiguration::SharedFileSystemConfiguration(
+                            crate::protocol_serde::shape_shared_file_system_configuration::de_shared_file_system_configuration(tokens)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'sharedFileSystemConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::StudioComponentConfiguration::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

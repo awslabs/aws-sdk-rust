@@ -10,9 +10,7 @@ pub struct ListTemplateVersionsOutput {
 }
 impl ListTemplateVersionsOutput {
     /// <p>Provides information about all the versions of a specific message template.</p>
-    pub fn template_versions_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemplateVersionsResponse> {
+    pub fn template_versions_response(&self) -> ::std::option::Option<&crate::types::TemplateVersionsResponse> {
         self.template_versions_response.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for ListTemplateVersionsOutput {
 }
 impl ListTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder {
         crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateVersionsOutputBuilder {
-    pub(crate) template_versions_response:
-        ::std::option::Option<crate::types::TemplateVersionsResponse>,
+    pub(crate) template_versions_response: ::std::option::Option<crate::types::TemplateVersionsResponse>,
     _request_id: Option<String>,
 }
 impl ListTemplateVersionsOutputBuilder {
     /// <p>Provides information about all the versions of a specific message template.</p>
-    pub fn template_versions_response(
-        mut self,
-        input: crate::types::TemplateVersionsResponse,
-    ) -> Self {
+    pub fn template_versions_response(mut self, input: crate::types::TemplateVersionsResponse) -> Self {
         self.template_versions_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about all the versions of a specific message template.</p>
-    pub fn set_template_versions_response(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionsResponse>,
-    ) -> Self {
+    pub fn set_template_versions_response(mut self, input: ::std::option::Option<crate::types::TemplateVersionsResponse>) -> Self {
         self.template_versions_response = input;
         self
     }
     /// <p>Provides information about all the versions of a specific message template.</p>
-    pub fn get_template_versions_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateVersionsResponse> {
+    pub fn get_template_versions_response(&self) -> &::std::option::Option<crate::types::TemplateVersionsResponse> {
         &self.template_versions_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

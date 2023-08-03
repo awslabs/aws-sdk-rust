@@ -31,17 +31,14 @@ impl GetDataLakeSourcesInput {
 }
 impl GetDataLakeSourcesInput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeSourcesInput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesInputBuilder {
+    pub fn builder() -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesInputBuilder {
         crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataLakeSourcesInput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeSourcesInputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -60,10 +57,7 @@ impl GetDataLakeSourcesInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
@@ -105,16 +99,12 @@ impl GetDataLakeSourcesInputBuilder {
     /// Consumes the builder and constructs a [`GetDataLakeSourcesInput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_lake_sources::GetDataLakeSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_lake_sources::GetDataLakeSourcesInput {
-                accounts: self.accounts,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_lake_sources::GetDataLakeSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_data_lake_sources::GetDataLakeSourcesInput {
+            accounts: self.accounts,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

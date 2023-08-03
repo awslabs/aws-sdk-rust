@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::policy): <p>The IAM policy for the resource. </p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::operation::describe_resource_policy::DescribeResourcePolicyError)
-    pub fn describe_resource_policy(
-        &self,
-    ) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder
-    {
+    pub fn describe_resource_policy(&self) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

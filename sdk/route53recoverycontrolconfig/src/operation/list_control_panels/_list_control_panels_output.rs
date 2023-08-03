@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListControlPanelsOutput {
 }
 impl ListControlPanelsOutput {
     /// Creates a new builder-style object to manufacture [`ListControlPanelsOutput`](crate::operation::list_control_panels::ListControlPanelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_control_panels::builders::ListControlPanelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_control_panels::builders::ListControlPanelsOutputBuilder {
         crate::operation::list_control_panels::builders::ListControlPanelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListControlPanelsOutput`](crate::operation::list_control_panels::ListControlPanelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlPanelsOutputBuilder {
     pub(crate) control_panels: ::std::option::Option<::std::vec::Vec<crate::types::ControlPanel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListControlPanelsOutputBuilder {
         self
     }
     /// <p>The result of a successful ListControlPanel request.</p>
-    pub fn set_control_panels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlPanel>>,
-    ) -> Self {
+    pub fn set_control_panels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlPanel>>) -> Self {
         self.control_panels = input;
         self
     }
     /// <p>The result of a successful ListControlPanel request.</p>
-    pub fn get_control_panels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlPanel>> {
+    pub fn get_control_panels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlPanel>> {
         &self.control_panels
     }
     /// <p>The token that identifies which batch of results you want to see.</p>

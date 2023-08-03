@@ -37,9 +37,7 @@ impl CreateMulticastGroupFluentBuilder {
         }
     }
     /// Access the CreateMulticastGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_multicast_group::builders::CreateMulticastGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_multicast_group::builders::CreateMulticastGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateMulticastGroupFluentBuilder {
             crate::operation::create_multicast_group::CreateMulticastGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multicast_group::CreateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multicast_group::CreateMulticastGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateMulticastGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateMulticastGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multicast_group::CreateMulticastGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multicast_group::CreateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multicast_group::CreateMulticastGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateMulticastGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multicast_group::CreateMulticastGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multicast_group::CreateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multicast_group::CreateMulticastGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateMulticastGroupFluentBuilder {
             crate::operation::create_multicast_group::CreateMulticastGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multicast_group::CreateMulticastGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multicast_group::CreateMulticastGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl CreateMulticastGroupFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -176,10 +157,7 @@ impl CreateMulticastGroupFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticast>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticast>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
@@ -197,10 +175,7 @@ impl CreateMulticastGroupFluentBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

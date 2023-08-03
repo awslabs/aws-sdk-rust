@@ -17,8 +17,7 @@ pub struct UpdateVolumeInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
     #[doc(hidden)]
-    pub open_zfs_configuration:
-        ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
+    pub open_zfs_configuration: ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
 }
 impl UpdateVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -30,9 +29,7 @@ impl UpdateVolumeInput {
         self.volume_id.as_deref()
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    pub fn ontap_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateOntapVolumeConfiguration> {
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::UpdateOntapVolumeConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
@@ -40,9 +37,7 @@ impl UpdateVolumeInput {
         self.name.as_deref()
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    pub fn open_zfs_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateOpenZfsVolumeConfiguration> {
+    pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::UpdateOpenZfsVolumeConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
 }
@@ -55,32 +50,22 @@ impl UpdateVolumeInput {
 
 /// A builder for [`UpdateVolumeInput`](crate::operation::update_volume::UpdateVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVolumeInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ontap_configuration:
-        ::std::option::Option<crate::types::UpdateOntapVolumeConfiguration>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::UpdateOntapVolumeConfiguration>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) open_zfs_configuration:
-        ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
+    pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
 }
 impl UpdateVolumeInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -103,25 +88,17 @@ impl UpdateVolumeInputBuilder {
         &self.volume_id
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::UpdateOntapVolumeConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::UpdateOntapVolumeConfiguration) -> Self {
         self.ontap_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateOntapVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::UpdateOntapVolumeConfiguration>) -> Self {
         self.ontap_configuration = input;
         self
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateOntapVolumeConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::UpdateOntapVolumeConfiguration> {
         &self.ontap_configuration
     }
     /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
@@ -139,34 +116,21 @@ impl UpdateVolumeInputBuilder {
         &self.name
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::UpdateOpenZfsVolumeConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::UpdateOpenZfsVolumeConfiguration) -> Self {
         self.open_zfs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>) -> Self {
         self.open_zfs_configuration = input;
         self
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration> {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`UpdateVolumeInput`](crate::operation::update_volume::UpdateVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_volume::UpdateVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_volume::UpdateVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_volume::UpdateVolumeInput {
             client_request_token: self.client_request_token,
             volume_id: self.volume_id,

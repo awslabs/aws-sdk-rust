@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`recovery_instance_id(impl ::std::convert::Into<String>)`](crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceFluentBuilder::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceFluentBuilder::set_recovery_instance_id): <p>The ID of the Recovery Instance to disconnect.</p>
     /// - On success, responds with [`DisconnectRecoveryInstanceOutput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput)
     /// - On failure, responds with [`SdkError<DisconnectRecoveryInstanceError>`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError)
-    pub fn disconnect_recovery_instance(&self) -> crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceFluentBuilder{
+    pub fn disconnect_recovery_instance(&self) -> crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceFluentBuilder {
         crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceFluentBuilder::new(self.handle.clone())
     }
 }

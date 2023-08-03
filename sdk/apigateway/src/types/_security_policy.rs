@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SecurityPolicy {
         match s {
             "TLS_1_0" => SecurityPolicy::Tls10,
             "TLS_1_2" => SecurityPolicy::Tls12,
-            other => {
-                SecurityPolicy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SecurityPolicy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

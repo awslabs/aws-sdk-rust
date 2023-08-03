@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput) with field(s):
     ///   - [`analysis_schemes(Option<Vec<AnalysisSchemeStatus>>)`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput::analysis_schemes): <p>The analysis scheme descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeAnalysisSchemesError>`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError)
-    pub fn describe_analysis_schemes(
-        &self,
-    ) -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesFluentBuilder
-    {
+    pub fn describe_analysis_schemes(&self) -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesFluentBuilder {
         crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesFluentBuilder::new(self.handle.clone())
     }
 }

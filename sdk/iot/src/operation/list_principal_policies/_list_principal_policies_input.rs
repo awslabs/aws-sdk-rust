@@ -37,18 +37,14 @@ impl ListPrincipalPoliciesInput {
 }
 impl ListPrincipalPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder {
         crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalPoliciesInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -115,17 +111,13 @@ impl ListPrincipalPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_principal_policies::ListPrincipalPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_principal_policies::ListPrincipalPoliciesInput {
-                principal: self.principal,
-                marker: self.marker,
-                page_size: self.page_size,
-                ascending_order: self.ascending_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_principal_policies::ListPrincipalPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_principal_policies::ListPrincipalPoliciesInput {
+            principal: self.principal,
+            marker: self.marker,
+            page_size: self.page_size,
+            ascending_order: self.ascending_order,
+        })
     }
 }

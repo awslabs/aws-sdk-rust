@@ -6,8 +6,7 @@
 pub struct StorageVirtualMachine {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
     #[doc(hidden)]
-    pub active_directory_configuration:
-        ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
+    pub active_directory_configuration: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -51,14 +50,11 @@ pub struct StorageVirtualMachine {
     pub lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     /// <p>The security style of the root volume of the SVM.</p>
     #[doc(hidden)]
-    pub root_volume_security_style:
-        ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
+    pub root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl StorageVirtualMachine {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
-    pub fn active_directory_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SvmActiveDirectoryConfiguration> {
+    pub fn active_directory_configuration(&self) -> ::std::option::Option<&crate::types::SvmActiveDirectoryConfiguration> {
         self.active_directory_configuration.as_ref()
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
@@ -82,9 +78,7 @@ impl StorageVirtualMachine {
     /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
     /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
     /// </ul>
-    pub fn lifecycle(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageVirtualMachineLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The name of the SVM, if provisioned.</p>
@@ -112,15 +106,11 @@ impl StorageVirtualMachine {
         self.tags.as_deref()
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
-    pub fn lifecycle_transition_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
+    pub fn lifecycle_transition_reason(&self) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
         self.lifecycle_transition_reason.as_ref()
     }
     /// <p>The security style of the root volume of the SVM.</p>
-    pub fn root_volume_security_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+    pub fn root_volume_security_style(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         self.root_volume_security_style.as_ref()
     }
 }
@@ -133,12 +123,9 @@ impl StorageVirtualMachine {
 
 /// A builder for [`StorageVirtualMachine`](crate::types::StorageVirtualMachine).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageVirtualMachineBuilder {
-    pub(crate) active_directory_configuration:
-        ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
+    pub(crate) active_directory_configuration: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) endpoints: ::std::option::Option<crate::types::SvmEndpoints>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
@@ -149,32 +136,22 @@ pub struct StorageVirtualMachineBuilder {
     pub(crate) subtype: ::std::option::Option<crate::types::StorageVirtualMachineSubtype>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) lifecycle_transition_reason:
-        ::std::option::Option<crate::types::LifecycleTransitionReason>,
-    pub(crate) root_volume_security_style:
-        ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
+    pub(crate) lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
+    pub(crate) root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl StorageVirtualMachineBuilder {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
-    pub fn active_directory_configuration(
-        mut self,
-        input: crate::types::SvmActiveDirectoryConfiguration,
-    ) -> Self {
+    pub fn active_directory_configuration(mut self, input: crate::types::SvmActiveDirectoryConfiguration) -> Self {
         self.active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
-    pub fn set_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
-    ) -> Self {
+    pub fn set_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>) -> Self {
         self.active_directory_configuration = input;
         self
     }
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
-    pub fn get_active_directory_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SvmActiveDirectoryConfiguration> {
+    pub fn get_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SvmActiveDirectoryConfiguration> {
         &self.active_directory_configuration
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
@@ -183,10 +160,7 @@ impl StorageVirtualMachineBuilder {
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -200,10 +174,7 @@ impl StorageVirtualMachineBuilder {
         self
     }
     /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<crate::types::SvmEndpoints>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<crate::types::SvmEndpoints>) -> Self {
         self.endpoints = input;
         self
     }
@@ -212,18 +183,12 @@ impl StorageVirtualMachineBuilder {
         &self.endpoints
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -253,10 +218,7 @@ impl StorageVirtualMachineBuilder {
     /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
     /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -269,9 +231,7 @@ impl StorageVirtualMachineBuilder {
     /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
     /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
     /// </ul>
-    pub fn get_lifecycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageVirtualMachineLifecycle> {
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineLifecycle> {
         &self.lifecycle
     }
     /// <p>The name of the SVM, if provisioned.</p>
@@ -303,18 +263,12 @@ impl StorageVirtualMachineBuilder {
         &self.resource_arn
     }
     /// <p>The SVM's system generated unique ID.</p>
-    pub fn storage_virtual_machine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SVM's system generated unique ID.</p>
-    pub fn set_storage_virtual_machine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = input;
         self
     }
@@ -328,17 +282,12 @@ impl StorageVirtualMachineBuilder {
         self
     }
     /// <p>Describes the SVM's subtype.</p>
-    pub fn set_subtype(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageVirtualMachineSubtype>,
-    ) -> Self {
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineSubtype>) -> Self {
         self.subtype = input;
         self
     }
     /// <p>Describes the SVM's subtype.</p>
-    pub fn get_subtype(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageVirtualMachineSubtype> {
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineSubtype> {
         &self.subtype
     }
     /// <p>The SVM's UUID (universally unique identifier).</p>
@@ -367,10 +316,7 @@ impl StorageVirtualMachineBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -379,32 +325,21 @@ impl StorageVirtualMachineBuilder {
         &self.tags
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
-    pub fn lifecycle_transition_reason(
-        mut self,
-        input: crate::types::LifecycleTransitionReason,
-    ) -> Self {
+    pub fn lifecycle_transition_reason(mut self, input: crate::types::LifecycleTransitionReason) -> Self {
         self.lifecycle_transition_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
-    pub fn set_lifecycle_transition_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleTransitionReason>,
-    ) -> Self {
+    pub fn set_lifecycle_transition_reason(mut self, input: ::std::option::Option<crate::types::LifecycleTransitionReason>) -> Self {
         self.lifecycle_transition_reason = input;
         self
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
-    pub fn get_lifecycle_transition_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
+    pub fn get_lifecycle_transition_reason(&self) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
         &self.lifecycle_transition_reason
     }
     /// <p>The security style of the root volume of the SVM.</p>
-    pub fn root_volume_security_style(
-        mut self,
-        input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle,
-    ) -> Self {
+    pub fn root_volume_security_style(mut self, input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle) -> Self {
         self.root_volume_security_style = ::std::option::Option::Some(input);
         self
     }
@@ -417,9 +352,7 @@ impl StorageVirtualMachineBuilder {
         self
     }
     /// <p>The security style of the root volume of the SVM.</p>
-    pub fn get_root_volume_security_style(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+    pub fn get_root_volume_security_style(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         &self.root_volume_security_style
     }
     /// Consumes the builder and constructs a [`StorageVirtualMachine`](crate::types::StorageVirtualMachine).

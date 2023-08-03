@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for AcceptInputDeviceTransferOutput {
 }
 impl AcceptInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferOutput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput).
-    pub fn builder() -> crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferOutputBuilder{
+    pub fn builder() -> crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferOutputBuilder {
         crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInputDeviceTransferOutput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInputDeviceTransferOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl AcceptInputDeviceTransferOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptInputDeviceTransferOutput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput {
+    pub fn build(self) -> crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput {
         crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput {
             _request_id: self._request_id,
         }

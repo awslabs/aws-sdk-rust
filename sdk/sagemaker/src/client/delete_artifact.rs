@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteArtifactOutput`](crate::operation::delete_artifact::DeleteArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::operation::delete_artifact::DeleteArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     /// - On failure, responds with [`SdkError<DeleteArtifactError>`](crate::operation::delete_artifact::DeleteArtifactError)
-    pub fn delete_artifact(
-        &self,
-    ) -> crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder {
-        crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_artifact(&self) -> crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder {
+        crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::new(self.handle.clone())
     }
 }

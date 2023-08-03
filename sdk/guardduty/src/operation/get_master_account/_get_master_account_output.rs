@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetMasterAccountOutput {
 }
 impl GetMasterAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput).
-    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountOutputBuilder {
         crate::operation::get_master_account::builders::GetMasterAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMasterAccountOutputBuilder {
     pub(crate) master: ::std::option::Option<crate::types::Master>,
     _request_id: Option<String>,

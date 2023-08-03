@@ -30,9 +30,7 @@ impl ListAnnotationImportJobsFilter {
 
 /// A builder for [`ListAnnotationImportJobsFilter`](crate::types::ListAnnotationImportJobsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) store_name: ::std::option::Option<::std::string::String>,

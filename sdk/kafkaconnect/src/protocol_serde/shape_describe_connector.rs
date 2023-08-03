@@ -4,143 +4,128 @@ pub fn de_describe_connector_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_connector::DescribeConnectorOutput,
-    crate::operation::describe_connector::DescribeConnectorError,
-> {
+) -> std::result::Result<crate::operation::describe_connector::DescribeConnectorOutput, crate::operation::describe_connector::DescribeConnectorError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_connector::DescribeConnectorError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::describe_connector::DescribeConnectorError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::operation::describe_connector::DescribeConnectorError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::describe_connector::DescribeConnectorError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::describe_connector::DescribeConnectorError::InternalServerErrorException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::describe_connector::DescribeConnectorError::NotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::describe_connector::DescribeConnectorError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::describe_connector::DescribeConnectorError::TooManyRequestsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::describe_connector::DescribeConnectorError::UnauthorizedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_connector::DescribeConnectorError::generic(generic)
+        _ => crate::operation::describe_connector::DescribeConnectorError::generic(generic),
     })
 }
 
@@ -149,23 +134,14 @@ pub fn de_describe_connector_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_connector::DescribeConnectorOutput,
-    crate::operation::describe_connector::DescribeConnectorError,
-> {
+) -> std::result::Result<crate::operation::describe_connector::DescribeConnectorOutput, crate::operation::describe_connector::DescribeConnectorError>
+{
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_describe_connector::de_describe_connector(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder::default();
+        output = crate::protocol_serde::shape_describe_connector::de_describe_connector(_response_body, output)
+            .map_err(crate::operation::describe_connector::DescribeConnectorError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -173,160 +149,123 @@ pub fn de_describe_connector_http_response_with_props(
 pub(crate) fn de_describe_connector(
     value: &[u8],
     mut builder: crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder,
-) -> Result<
-    crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "capacity" => {
-                        builder = builder.set_capacity(
-                            crate::protocol_serde::shape_capacity_description::de_capacity_description(tokens)?
-                        );
-                    }
-                    "connectorArn" => {
-                        builder = builder.set_connector_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "capacity" => {
+                    builder = builder.set_capacity(crate::protocol_serde::shape_capacity_description::de_capacity_description(tokens)?);
+                }
+                "connectorArn" => {
+                    builder = builder.set_connector_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "connectorConfiguration" => {
-                        builder = builder.set_connector_configuration(
-                            crate::protocol_serde::shape___sensitive__map_of__string::de___sensitive__map_of__string(tokens)?
-                        );
-                    }
-                    "connectorDescription" => {
-                        builder = builder.set_connector_description(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "connectorConfiguration" => {
+                    builder = builder.set_connector_configuration(
+                        crate::protocol_serde::shape___sensitive__map_of__string::de___sensitive__map_of__string(tokens)?,
+                    );
+                }
+                "connectorDescription" => {
+                    builder = builder.set_connector_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "connectorName" => {
-                        builder = builder.set_connector_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "connectorName" => {
+                    builder = builder.set_connector_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "connectorState" => {
-                        builder = builder.set_connector_state(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::ConnectorState::from(u.as_ref()))
-                            })
+                    );
+                }
+                "connectorState" => {
+                    builder = builder.set_connector_state(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorState::from(u.as_ref())))
                             .transpose()?,
-                        );
-                    }
-                    "creationTime" => {
-                        builder = builder.set_creation_time(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    "currentVersion" => {
-                        builder = builder.set_current_version(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "creationTime" => {
+                    builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "currentVersion" => {
+                    builder = builder.set_current_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "kafkaCluster" => {
-                        builder = builder.set_kafka_cluster(
-                            crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(tokens)?
-                        );
-                    }
-                    "kafkaClusterClientAuthentication" => {
-                        builder = builder.set_kafka_cluster_client_authentication(
+                    );
+                }
+                "kafkaCluster" => {
+                    builder = builder.set_kafka_cluster(crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(
+                        tokens,
+                    )?);
+                }
+                "kafkaClusterClientAuthentication" => {
+                    builder = builder.set_kafka_cluster_client_authentication(
                             crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens)?
                         );
-                    }
-                    "kafkaClusterEncryptionInTransit" => {
-                        builder = builder.set_kafka_cluster_encryption_in_transit(
+                }
+                "kafkaClusterEncryptionInTransit" => {
+                    builder = builder.set_kafka_cluster_encryption_in_transit(
                             crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens)?
                         );
-                    }
-                    "kafkaConnectVersion" => {
-                        builder = builder.set_kafka_connect_version(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "logDelivery" => {
-                        builder = builder.set_log_delivery(
-                            crate::protocol_serde::shape_log_delivery_description::de_log_delivery_description(tokens)?
-                        );
-                    }
-                    "plugins" => {
-                        builder = builder.set_plugins(
-                            crate::protocol_serde::shape___list_of_plugin_description::de___list_of_plugin_description(tokens)?
-                        );
-                    }
-                    "serviceExecutionRoleArn" => {
-                        builder = builder.set_service_execution_role_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "stateDescription" => {
-                        builder = builder.set_state_description(
-                            crate::protocol_serde::shape_state_description::de_state_description(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "workerConfiguration" => {
-                        builder = builder.set_worker_configuration(
-                            crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-            }
+                "kafkaConnectVersion" => {
+                    builder = builder.set_kafka_connect_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "logDelivery" => {
+                    builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery_description::de_log_delivery_description(
+                        tokens,
+                    )?);
+                }
+                "plugins" => {
+                    builder =
+                        builder.set_plugins(crate::protocol_serde::shape___list_of_plugin_description::de___list_of_plugin_description(tokens)?);
+                }
+                "serviceExecutionRoleArn" => {
+                    builder = builder.set_service_execution_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "stateDescription" => {
+                    builder = builder.set_state_description(crate::protocol_serde::shape_state_description::de_state_description(tokens)?);
+                }
+                "workerConfiguration" => {
+                    builder = builder.set_worker_configuration(
+                        crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(tokens)?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

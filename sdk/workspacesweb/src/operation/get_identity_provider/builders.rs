@@ -37,9 +37,7 @@ impl GetIdentityProviderFluentBuilder {
         }
     }
     /// Access the GetIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetIdentityProviderFluentBuilder {
             crate::operation::get_identity_provider::GetIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_provider::GetIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider::GetIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_provider::GetIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_provider::GetIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider::GetIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_provider::GetIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_provider::GetIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider::GetIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetIdentityProviderFluentBuilder {
             crate::operation::get_identity_provider::GetIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_provider::GetIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider::GetIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_provider_arn(input);
         self
     }

@@ -10,10 +10,7 @@ impl CreateLaunchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_launch::CreateLaunchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch::CreateLaunchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_launch();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateLaunchFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_launch::CreateLaunch,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_launch::CreateLaunch, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateLaunchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateLaunchFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_launch::CreateLaunch,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_launch::CreateLaunch, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
     > {
         self.customize_middleware().await
@@ -157,25 +145,17 @@ impl CreateLaunchFluentBuilder {
         self.inner.get_description()
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn scheduled_splits_config(
-        mut self,
-        input: crate::types::ScheduledSplitsLaunchConfig,
-    ) -> Self {
+    pub fn scheduled_splits_config(mut self, input: crate::types::ScheduledSplitsLaunchConfig) -> Self {
         self.inner = self.inner.scheduled_splits_config(input);
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn set_scheduled_splits_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
-    ) -> Self {
+    pub fn set_scheduled_splits_config(mut self, input: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>) -> Self {
         self.inner = self.inner.set_scheduled_splits_config(input);
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn get_scheduled_splits_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchConfig> {
+    pub fn get_scheduled_splits_config(&self) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchConfig> {
         self.inner.get_scheduled_splits_config()
     }
     /// Appends an item to `metricMonitors`.
@@ -188,17 +168,12 @@ impl CreateLaunchFluentBuilder {
         self
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn set_metric_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
-    ) -> Self {
+    pub fn set_metric_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>) -> Self {
         self.inner = self.inner.set_metric_monitors(input);
         self
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn get_metric_monitors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>> {
+    pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>> {
         self.inner.get_metric_monitors()
     }
     /// Appends an item to `groups`.
@@ -211,32 +186,21 @@ impl CreateLaunchFluentBuilder {
         self
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>) -> Self {
         self.inner = self.inner.set_groups(input);
         self
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>> {
         self.inner.get_groups()
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn randomization_salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.randomization_salt(input.into());
         self
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_randomization_salt(input);
         self
     }
@@ -253,11 +217,7 @@ impl CreateLaunchFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -266,12 +226,7 @@ impl CreateLaunchFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -280,11 +235,7 @@ impl CreateLaunchFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

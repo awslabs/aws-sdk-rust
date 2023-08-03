@@ -30,9 +30,7 @@ impl ScheduleRefreshOnEntity {
 
 /// A builder for [`ScheduleRefreshOnEntity`](crate::types::ScheduleRefreshOnEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleRefreshOnEntityBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     pub(crate) day_of_month: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ScheduleRefreshOnEntityBuilder {
         self
     }
     /// <p>The day of the week that you want to schedule a refresh on.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }

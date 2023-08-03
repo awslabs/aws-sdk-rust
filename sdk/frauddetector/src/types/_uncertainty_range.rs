@@ -30,9 +30,7 @@ impl UncertaintyRange {
 
 /// A builder for [`UncertaintyRange`](crate::types::UncertaintyRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UncertaintyRangeBuilder {
     pub(crate) lower_bound_value: ::std::option::Option<f32>,
     pub(crate) upper_bound_value: ::std::option::Option<f32>,

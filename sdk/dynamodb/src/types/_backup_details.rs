@@ -58,9 +58,7 @@ impl BackupDetails {
         self.backup_type.as_ref()
     }
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub fn backup_creation_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn backup_creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.backup_creation_date_time.as_ref()
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
@@ -77,9 +75,7 @@ impl BackupDetails {
 
 /// A builder for [`BackupDetails`](crate::types::BackupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupDetailsBuilder {
     pub(crate) backup_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_name: ::std::option::Option<::std::string::String>,
@@ -138,10 +134,7 @@ impl BackupDetailsBuilder {
         self
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
-    pub fn set_backup_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupStatus>,
-    ) -> Self {
+    pub fn set_backup_status(mut self, input: ::std::option::Option<crate::types::BackupStatus>) -> Self {
         self.backup_status = input;
         self
     }
@@ -165,10 +158,7 @@ impl BackupDetailsBuilder {
     /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
     /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
     /// </ul>
-    pub fn set_backup_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupType>,
-    ) -> Self {
+    pub fn set_backup_type(mut self, input: ::std::option::Option<crate::types::BackupType>) -> Self {
         self.backup_type = input;
         self
     }
@@ -187,17 +177,12 @@ impl BackupDetailsBuilder {
         self
     }
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub fn set_backup_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_backup_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.backup_creation_date_time = input;
         self
     }
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub fn get_backup_creation_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_backup_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.backup_creation_date_time
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
@@ -206,17 +191,12 @@ impl BackupDetailsBuilder {
         self
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
-    pub fn set_backup_expiry_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_backup_expiry_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.backup_expiry_date_time = input;
         self
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
-    pub fn get_backup_expiry_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_backup_expiry_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.backup_expiry_date_time
     }
     /// Consumes the builder and constructs a [`BackupDetails`](crate::types::BackupDetails).

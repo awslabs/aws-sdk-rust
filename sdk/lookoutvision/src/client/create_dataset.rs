@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput) with field(s):
     ///   - [`dataset_metadata(Option<DatasetMetadata>)`](crate::operation::create_dataset::CreateDatasetOutput::dataset_metadata): <p>Information about the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::operation::create_dataset::CreateDatasetError)
-    pub fn create_dataset(
-        &self,
-    ) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
-        crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dataset(&self) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
+        crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(self.handle.clone())
     }
 }

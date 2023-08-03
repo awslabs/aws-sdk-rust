@@ -42,22 +42,17 @@ impl ::aws_http::request_id::RequestId for GetStatementResultOutput {
 }
 impl GetStatementResultOutput {
     /// Creates a new builder-style object to manufacture [`GetStatementResultOutput`](crate::operation::get_statement_result::GetStatementResultOutput).
-    pub fn builder(
-    ) -> crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder {
+    pub fn builder() -> crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder {
         crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStatementResultOutput`](crate::operation::get_statement_result::GetStatementResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStatementResultOutputBuilder {
-    pub(crate) records:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
-    pub(crate) column_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
+    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
     pub(crate) total_num_rows: ::std::option::Option<i64>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -75,17 +70,12 @@ impl GetStatementResultOutputBuilder {
         self
     }
     /// <p>The results of the SQL statement.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>) -> Self {
         self.records = input;
         self
     }
     /// <p>The results of the SQL statement.</p>
-    pub fn get_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
         &self.records
     }
     /// Appends an item to `column_metadata`.
@@ -100,17 +90,12 @@ impl GetStatementResultOutputBuilder {
         self
     }
     /// <p>The properties (metadata) of a column. </p>
-    pub fn set_column_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    ) -> Self {
+    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
         self.column_metadata = input;
         self
     }
     /// <p>The properties (metadata) of a column. </p>
-    pub fn get_column_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
         &self.column_metadata
     }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FederationSourceErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -68,14 +62,10 @@ impl ::std::convert::From<&str> for FederationSourceErrorCode {
         match s {
             "InternalServiceException" => FederationSourceErrorCode::InternalServiceException,
             "InvalidResponseException" => FederationSourceErrorCode::InvalidResponseException,
-            "OperationNotSupportedException" => {
-                FederationSourceErrorCode::OperationNotSupportedException
-            }
+            "OperationNotSupportedException" => FederationSourceErrorCode::OperationNotSupportedException,
             "OperationTimeoutException" => FederationSourceErrorCode::OperationTimeoutException,
             "ThrottlingException" => FederationSourceErrorCode::ThrottlingException,
-            other => FederationSourceErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FederationSourceErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -92,9 +82,7 @@ impl FederationSourceErrorCode {
         match self {
             FederationSourceErrorCode::InternalServiceException => "InternalServiceException",
             FederationSourceErrorCode::InvalidResponseException => "InvalidResponseException",
-            FederationSourceErrorCode::OperationNotSupportedException => {
-                "OperationNotSupportedException"
-            }
+            FederationSourceErrorCode::OperationNotSupportedException => "OperationNotSupportedException",
             FederationSourceErrorCode::OperationTimeoutException => "OperationTimeoutException",
             FederationSourceErrorCode::ThrottlingException => "ThrottlingException",
             FederationSourceErrorCode::Unknown(value) => value.as_str(),

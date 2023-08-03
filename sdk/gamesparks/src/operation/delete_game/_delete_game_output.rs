@@ -19,9 +19,7 @@ impl DeleteGameOutput {
 
 /// A builder for [`DeleteGameOutput`](crate::operation::delete_game::DeleteGameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGameOutputBuilder {
     _request_id: Option<String>,
 }

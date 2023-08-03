@@ -37,9 +37,7 @@ impl BatchUpdateDetectorFluentBuilder {
         }
     }
     /// Access the BatchUpdateDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchUpdateDetectorFluentBuilder {
             crate::operation::batch_update_detector::BatchUpdateDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_detector::BatchUpdateDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_detector::BatchUpdateDetectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchUpdateDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchUpdateDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_detector::BatchUpdateDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_detector::BatchUpdateDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_detector::BatchUpdateDetectorError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchUpdateDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_detector::BatchUpdateDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_detector::BatchUpdateDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_detector::BatchUpdateDetectorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchUpdateDetectorFluentBuilder {
             crate::operation::batch_update_detector::BatchUpdateDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_detector::BatchUpdateDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_detector::BatchUpdateDetectorError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl BatchUpdateDetectorFluentBuilder {
         self
     }
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn set_detectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
-    ) -> Self {
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>) -> Self {
         self.inner = self.inner.set_detectors(input);
         self
     }
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn get_detectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
+    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
         self.inner.get_detectors()
     }
 }

@@ -28,9 +28,7 @@ impl GetFormOutput {
 
 /// A builder for [`GetFormOutput`](crate::operation::get_form::GetFormOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFormOutputBuilder {
     pub(crate) form: ::std::option::Option<crate::types::Form>,
     _request_id: Option<String>,

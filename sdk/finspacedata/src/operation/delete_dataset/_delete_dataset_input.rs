@@ -30,9 +30,7 @@ impl DeleteDatasetInput {
 
 /// A builder for [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl DeleteDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dataset::DeleteDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

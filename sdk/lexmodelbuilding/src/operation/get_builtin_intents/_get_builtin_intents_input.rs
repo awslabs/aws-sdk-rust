@@ -36,17 +36,14 @@ impl GetBuiltinIntentsInput {
 }
 impl GetBuiltinIntentsInput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinIntentsInput`](crate::operation::get_builtin_intents::GetBuiltinIntentsInput).
-    pub fn builder(
-    ) -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder {
+    pub fn builder() -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder {
         crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBuiltinIntentsInput`](crate::operation::get_builtin_intents::GetBuiltinIntentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentsInputBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) signature_contains: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl GetBuiltinIntentsInputBuilder {
         &self.locale
     }
     /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn signature_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signature_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn set_signature_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signature_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_contains = input;
         self
     }
@@ -119,17 +110,12 @@ impl GetBuiltinIntentsInputBuilder {
     /// Consumes the builder and constructs a [`GetBuiltinIntentsInput`](crate::operation::get_builtin_intents::GetBuiltinIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_builtin_intents::GetBuiltinIntentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_builtin_intents::GetBuiltinIntentsInput {
-                locale: self.locale,
-                signature_contains: self.signature_contains,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_builtin_intents::GetBuiltinIntentsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_builtin_intents::GetBuiltinIntentsInput {
+            locale: self.locale,
+            signature_contains: self.signature_contains,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

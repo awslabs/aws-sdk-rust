@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListWorkflowsItem>>)`](crate::operation::list_workflows::ListWorkflowsOutput::items): <p>List containing workflow details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
-    pub fn list_workflows(
-        &self,
-    ) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
+        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl StartGatewayInput {
 
 /// A builder for [`StartGatewayInput`](crate::operation::start_gateway::StartGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartGatewayInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl StartGatewayInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`StartGatewayInput`](crate::operation::start_gateway::StartGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_gateway::StartGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_gateway::StartGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_gateway::StartGatewayInput {
             gateway_arn: self.gateway_arn,
         })

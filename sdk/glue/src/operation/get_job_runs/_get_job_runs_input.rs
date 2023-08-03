@@ -36,9 +36,7 @@ impl GetJobRunsInput {
 
 /// A builder for [`GetJobRunsInput`](crate::operation::get_job_runs::GetJobRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobRunsInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl GetJobRunsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetJobRunsInput`](crate::operation::get_job_runs::GetJobRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_job_runs::GetJobRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_runs::GetJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_runs::GetJobRunsInput {
             job_name: self.job_name,
             next_token: self.next_token,

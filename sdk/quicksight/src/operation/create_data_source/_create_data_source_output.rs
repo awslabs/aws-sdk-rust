@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateDataSourceOutput {
 }
 impl CreateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
-    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder {
         crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +81,12 @@ impl CreateDataSourceOutputBuilder {
         &self.arn
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -109,10 +100,7 @@ impl CreateDataSourceOutputBuilder {
         self
     }
     /// <p>The status of creating the data source.</p>
-    pub fn set_creation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.creation_status = input;
         self
     }

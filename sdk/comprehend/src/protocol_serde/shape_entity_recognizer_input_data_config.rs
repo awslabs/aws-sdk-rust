@@ -12,10 +12,7 @@ pub fn ser_entity_recognizer_input_data_config(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_entity_types_list_item::ser_entity_types_list_item(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_entity_types_list_item::ser_entity_types_list_item(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_entity_recognizer_input_data_config(
     if let Some(var_6) = &input.documents {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Documents").start_object();
-        crate::protocol_serde::shape_entity_recognizer_documents::ser_entity_recognizer_documents(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_entity_recognizer_documents::ser_entity_recognizer_documents(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.annotations {
@@ -59,63 +53,43 @@ pub fn ser_entity_recognizer_input_data_config(
 
 pub(crate) fn de_entity_recognizer_input_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EntityRecognizerInputDataConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EntityRecognizerInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::EntityRecognizerInputDataConfigBuilder::default();
+            let mut builder = crate::types::builders::EntityRecognizerInputDataConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataFormat" => {
                             builder = builder.set_data_format(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::EntityRecognizerDataFormat::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EntityRecognizerDataFormat::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "EntityTypes" => {
-                            builder = builder.set_entity_types(
-                                    crate::protocol_serde::shape_entity_types_list::de_entity_types_list(tokens)?
-                                );
+                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_types_list::de_entity_types_list(tokens)?);
                         }
                         "Documents" => {
                             builder = builder.set_documents(
-                                    crate::protocol_serde::shape_entity_recognizer_documents::de_entity_recognizer_documents(tokens)?
-                                );
+                                crate::protocol_serde::shape_entity_recognizer_documents::de_entity_recognizer_documents(tokens)?,
+                            );
                         }
                         "Annotations" => {
                             builder = builder.set_annotations(
-                                    crate::protocol_serde::shape_entity_recognizer_annotations::de_entity_recognizer_annotations(tokens)?
-                                );
+                                crate::protocol_serde::shape_entity_recognizer_annotations::de_entity_recognizer_annotations(tokens)?,
+                            );
                         }
                         "EntityList" => {
                             builder = builder.set_entity_list(
-                                    crate::protocol_serde::shape_entity_recognizer_entity_list::de_entity_recognizer_entity_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_entity_recognizer_entity_list::de_entity_recognizer_entity_list(tokens)?,
+                            );
                         }
                         "AugmentedManifests" => {
                             builder = builder.set_augmented_manifests(
@@ -125,20 +99,17 @@ where
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

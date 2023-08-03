@@ -31,9 +31,7 @@ impl ModifyIdFormatInput {
 
 /// A builder for [`ModifyIdFormatInput`](crate::operation::modify_id_format::ModifyIdFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIdFormatInputBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) use_long_ids: ::std::option::Option<bool>,
@@ -73,10 +71,7 @@ impl ModifyIdFormatInputBuilder {
     /// Consumes the builder and constructs a [`ModifyIdFormatInput`](crate::operation::modify_id_format::ModifyIdFormatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_id_format::ModifyIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_id_format::ModifyIdFormatInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_id_format::ModifyIdFormatInput {
             resource: self.resource,
             use_long_ids: self.use_long_ids,

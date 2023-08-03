@@ -22,17 +22,14 @@ impl CreateSmsTemplateInput {
 }
 impl CreateSmsTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateSmsTemplateInput`](crate::operation::create_sms_template::CreateSmsTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_sms_template::builders::CreateSmsTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_sms_template::builders::CreateSmsTemplateInputBuilder {
         crate::operation::create_sms_template::builders::CreateSmsTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSmsTemplateInput`](crate::operation::create_sms_template::CreateSmsTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSmsTemplateInputBuilder {
     pub(crate) sms_template_request: ::std::option::Option<crate::types::SmsTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -44,32 +41,21 @@ impl CreateSmsTemplateInputBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn set_sms_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsTemplateRequest>,
-    ) -> Self {
+    pub fn set_sms_template_request(mut self, input: ::std::option::Option<crate::types::SmsTemplateRequest>) -> Self {
         self.sms_template_request = input;
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn get_sms_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsTemplateRequest> {
+    pub fn get_sms_template_request(&self) -> &::std::option::Option<crate::types::SmsTemplateRequest> {
         &self.sms_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -80,15 +66,10 @@ impl CreateSmsTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateSmsTemplateInput`](crate::operation::create_sms_template::CreateSmsTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sms_template::CreateSmsTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sms_template::CreateSmsTemplateInput {
-                sms_template_request: self.sms_template_request,
-                template_name: self.template_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_sms_template::CreateSmsTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_sms_template::CreateSmsTemplateInput {
+            sms_template_request: self.sms_template_request,
+            template_name: self.template_name,
+        })
     }
 }

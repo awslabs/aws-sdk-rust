@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`schemas(Option<Vec<InventoryItemSchema>>)`](crate::operation::get_inventory_schema::GetInventorySchemaOutput::schemas): <p>Inventory schemas returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_inventory_schema::GetInventorySchemaOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<GetInventorySchemaError>`](crate::operation::get_inventory_schema::GetInventorySchemaError)
-    pub fn get_inventory_schema(
-        &self,
-    ) -> crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder {
-        crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_inventory_schema(&self) -> crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder {
+        crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::new(self.handle.clone())
     }
 }

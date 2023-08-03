@@ -28,7 +28,7 @@ impl CreateSolFunctionPackageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSolFunctionPackageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder,
+    inner: crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder,
 }
 impl CreateSolFunctionPackageFluentBuilder {
     /// Creates a new `CreateSolFunctionPackage`.
@@ -39,7 +39,7 @@ impl CreateSolFunctionPackageFluentBuilder {
         }
     }
     /// Access the CreateSolFunctionPackage as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateSolFunctionPackageFluentBuilder {
             crate::operation::create_sol_function_package::CreateSolFunctionPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateSolFunctionPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateSolFunctionPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateSolFunctionPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateSolFunctionPackageFluentBuilder {
             crate::operation::create_sol_function_package::CreateSolFunctionPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError>,
     > {
         self.customize_middleware().await
     }
@@ -127,30 +116,17 @@ impl CreateSolFunctionPackageFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

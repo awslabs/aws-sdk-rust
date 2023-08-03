@@ -5,8 +5,7 @@
 pub struct ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub query_logging_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
+    pub query_logging_configs: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct ListQueryLoggingConfigsOutput {
 }
 impl ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-    pub fn query_logging_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QueryLoggingConfig]> {
+    pub fn query_logging_configs(&self) -> ::std::option::Option<&[crate::types::QueryLoggingConfig]> {
         self.query_logging_configs.as_deref()
     }
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
@@ -33,21 +30,16 @@ impl ::aws_http::request_id::RequestId for ListQueryLoggingConfigsOutput {
 }
 impl ListQueryLoggingConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsOutput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsOutputBuilder {
         crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueryLoggingConfigsOutput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsOutputBuilder {
-    pub(crate) query_logging_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
+    pub(crate) query_logging_configs: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,17 +56,12 @@ impl ListQueryLoggingConfigsOutputBuilder {
         self
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-    pub fn set_query_logging_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
-    ) -> Self {
+    pub fn set_query_logging_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>) -> Self {
         self.query_logging_configs = input;
         self
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-    pub fn get_query_logging_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>> {
+    pub fn get_query_logging_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>> {
         &self.query_logging_configs
     }
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
@@ -104,9 +91,7 @@ impl ListQueryLoggingConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListQueryLoggingConfigsOutput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
+    pub fn build(self) -> crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
         crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
             query_logging_configs: self.query_logging_configs,
             next_token: self.next_token,

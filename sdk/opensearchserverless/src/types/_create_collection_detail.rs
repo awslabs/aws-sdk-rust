@@ -79,9 +79,7 @@ impl CreateCollectionDetail {
 
 /// A builder for [`CreateCollectionDetail`](crate::types::CreateCollectionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCollectionDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl CreateCollectionDetailBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CollectionStatus>) -> Self {
         self.status = input;
         self
     }

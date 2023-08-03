@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`policy_version_id(i32)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<i32>)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::set_policy_version_id): <p>The ID of the policy version.</p>
     /// - On success, responds with [`ExecuteCoreNetworkChangeSetOutput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput)
     /// - On failure, responds with [`SdkError<ExecuteCoreNetworkChangeSetError>`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError)
-    pub fn execute_core_network_change_set(&self) -> crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder{
+    pub fn execute_core_network_change_set(
+        &self,
+    ) -> crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder {
         crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

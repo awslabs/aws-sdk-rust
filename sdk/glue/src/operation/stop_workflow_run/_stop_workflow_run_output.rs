@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopWorkflowRunOutput {
 }
 impl StopWorkflowRunOutput {
     /// Creates a new builder-style object to manufacture [`StopWorkflowRunOutput`](crate::operation::stop_workflow_run::StopWorkflowRunOutput).
-    pub fn builder() -> crate::operation::stop_workflow_run::builders::StopWorkflowRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_workflow_run::builders::StopWorkflowRunOutputBuilder {
         crate::operation::stop_workflow_run::builders::StopWorkflowRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopWorkflowRunOutput`](crate::operation::stop_workflow_run::StopWorkflowRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopWorkflowRunOutputBuilder {
     _request_id: Option<String>,
 }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteRelationalDatabaseSnapshotOutput`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteRelationalDatabaseSnapshotError>`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError)
-    pub fn delete_relational_database_snapshot(&self) -> crate::operation::delete_relational_database_snapshot::builders::DeleteRelationalDatabaseSnapshotFluentBuilder{
+    pub fn delete_relational_database_snapshot(
+        &self,
+    ) -> crate::operation::delete_relational_database_snapshot::builders::DeleteRelationalDatabaseSnapshotFluentBuilder {
         crate::operation::delete_relational_database_snapshot::builders::DeleteRelationalDatabaseSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

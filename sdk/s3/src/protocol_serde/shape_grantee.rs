@@ -29,19 +29,16 @@ pub fn ser_grantee(
     Ok(())
 }
 
-pub fn de_grantee(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Grantee, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Grantee, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Grantee::builder();
     let attrib_6 = {
         let s = decoder.start_el().attr("xsi:type");
         match s {
             None => None,
-            Some(s) => Some(Result::<
-                crate::types::Type,
-                ::aws_smithy_xml::decode::XmlDecodeError,
-            >::Ok(crate::types::Type::from(s))?),
+            Some(s) => Some(Result::<crate::types::Type, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                crate::types::Type::from(s),
+            )?),
         }
     };
     builder.r#type = attrib_6;

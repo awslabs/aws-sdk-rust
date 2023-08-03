@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for RemoveFlowSourceOutput {
 }
 impl RemoveFlowSourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowSourceOutput`](crate::operation::remove_flow_source::RemoveFlowSourceOutput).
-    pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceOutputBuilder {
         crate::operation::remove_flow_source::builders::RemoveFlowSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFlowSourceOutput`](crate::operation::remove_flow_source::RemoveFlowSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFlowSourceOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,

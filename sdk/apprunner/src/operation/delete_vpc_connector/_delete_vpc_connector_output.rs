@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpcConnectorOutput {
 }
 impl DeleteVpcConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorOutputBuilder {
         crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcConnectorOutputBuilder {
     pub(crate) vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteVpcConnectorOutputBuilder {
         self
     }
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
-    pub fn set_vpc_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnector>,
-    ) -> Self {
+    pub fn set_vpc_connector(mut self, input: ::std::option::Option<crate::types::VpcConnector>) -> Self {
         self.vpc_connector = input;
         self
     }

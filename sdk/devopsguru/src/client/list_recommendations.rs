@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::operation::list_recommendations::ListRecommendationsOutput::recommendations): <p> An array of the requested recommendations. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendations::ListRecommendationsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
-    pub fn list_recommendations(
-        &self,
-    ) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_recommendations(&self) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
+        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

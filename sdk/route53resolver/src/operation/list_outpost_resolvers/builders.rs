@@ -37,9 +37,7 @@ impl ListOutpostResolversFluentBuilder {
         }
     }
     /// Access the ListOutpostResolvers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_outpost_resolvers::builders::ListOutpostResolversInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_outpost_resolvers::builders::ListOutpostResolversInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListOutpostResolversFluentBuilder {
             crate::operation::list_outpost_resolvers::ListOutpostResolvers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_outpost_resolvers::ListOutpostResolversError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListOutpostResolversFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListOutpostResolversFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_outpost_resolvers::ListOutpostResolversOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_outpost_resolvers::ListOutpostResolversError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListOutpostResolversFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_outpost_resolvers::ListOutpostResolversOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_outpost_resolvers::ListOutpostResolversError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListOutpostResolversFluentBuilder {
             crate::operation::list_outpost_resolvers::ListOutpostResolvers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_outpost_resolvers::ListOutpostResolversError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_outpost_resolvers::paginator::ListOutpostResolversPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_outpost_resolvers::paginator::ListOutpostResolversPaginator {
-        crate::operation::list_outpost_resolvers::paginator::ListOutpostResolversPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_outpost_resolvers::paginator::ListOutpostResolversPaginator {
+        crate::operation::list_outpost_resolvers::paginator::ListOutpostResolversPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

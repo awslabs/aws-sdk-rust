@@ -70,16 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeDashboardSnapshotJobResultOut
 }
 impl DescribeDashboardSnapshotJobResultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardSnapshotJobResultOutput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput).
-    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultOutputBuilder {
         crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardSnapshotJobResultOutput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobResultOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,
@@ -112,10 +110,7 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self
     }
     /// <p>Indicates the status of a job after it has reached a terminal state. A finished snapshot job will retuen a <code>COMPLETED</code> or <code>FAILED</code> status.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::SnapshotJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -129,10 +124,7 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self
     }
     /// <p>The time that a snapshot job was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -146,10 +138,7 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self
     }
     /// <p>The time that a snapshot job status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -163,10 +152,7 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self
     }
     /// <p>The result of the snapshot job. Jobs that have successfully completed will return the S3Uri where they are located. Jobs that have failedwill return information on the error that caused the job to fail.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotJobResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::SnapshotJobResult>) -> Self {
         self.result = input;
         self
     }
@@ -180,10 +166,7 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self
     }
     /// <p>Displays information for the error that caused a job to fail.</p>
-    pub fn set_error_info(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotJobErrorInfo>,
-    ) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::SnapshotJobErrorInfo>) -> Self {
         self.error_info = input;
         self
     }
@@ -229,25 +212,16 @@ impl DescribeDashboardSnapshotJobResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDashboardSnapshotJobResultOutput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput).
-    pub fn build(self) -> crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput{
+    pub fn build(self) -> crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput {
         crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput {
-            arn: self.arn
-            ,
-            job_status: self.job_status
-            ,
-            created_time: self.created_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            result: self.result
-            ,
-            error_info: self.error_info
-            ,
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            arn: self.arn,
+            job_status: self.job_status,
+            created_time: self.created_time,
+            last_updated_time: self.last_updated_time,
+            result: self.result,
+            error_info: self.error_info,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

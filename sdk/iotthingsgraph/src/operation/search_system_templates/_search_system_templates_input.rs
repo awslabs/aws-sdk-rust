@@ -29,18 +29,14 @@ impl SearchSystemTemplatesInput {
 }
 impl SearchSystemTemplatesInput {
     /// Creates a new builder-style object to manufacture [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder {
         crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSystemTemplatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl SearchSystemTemplatesInputBuilder {
         self
     }
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -103,16 +94,12 @@ impl SearchSystemTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_system_templates::SearchSystemTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_system_templates::SearchSystemTemplatesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_system_templates::SearchSystemTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_system_templates::SearchSystemTemplatesInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -37,17 +37,14 @@ impl UpdateConfigurationInput {
 }
 impl UpdateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
         crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -96,10 +93,7 @@ impl UpdateConfigurationInputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.server_properties = input;
         self
     }
@@ -114,16 +108,12 @@ impl UpdateConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configuration::UpdateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_configuration::UpdateConfigurationInput {
-                arn: self.arn,
-                description: self.description,
-                server_properties: self.server_properties,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
+            arn: self.arn,
+            description: self.description,
+            server_properties: self.server_properties,
+        })
     }
 }

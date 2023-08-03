@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccountLimitType {
     #[allow(missing_docs)] // documentation missing in model
@@ -68,16 +62,10 @@ impl ::std::convert::From<&str> for AccountLimitType {
         match s {
             "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
             "MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
-            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => {
-                AccountLimitType::MaxReusableDelegationSetsByOwner
-            }
+            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => AccountLimitType::MaxReusableDelegationSetsByOwner,
             "MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
-            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => {
-                AccountLimitType::MaxTrafficPolicyInstancesByOwner
-            }
-            other => {
-                AccountLimitType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => AccountLimitType::MaxTrafficPolicyInstancesByOwner,
+            other => AccountLimitType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -94,13 +82,9 @@ impl AccountLimitType {
         match self {
             AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
             AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
-            AccountLimitType::MaxReusableDelegationSetsByOwner => {
-                "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"
-            }
+            AccountLimitType::MaxReusableDelegationSetsByOwner => "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
             AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
-            AccountLimitType::MaxTrafficPolicyInstancesByOwner => {
-                "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
-            }
+            AccountLimitType::MaxTrafficPolicyInstancesByOwner => "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
             AccountLimitType::Unknown(value) => value.as_str(),
         }
     }

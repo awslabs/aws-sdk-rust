@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetCapacityAssignmentConfigurationOutput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput) with field(s):
     ///   - [`capacity_assignment_configuration(Option<CapacityAssignmentConfiguration>)`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput::capacity_assignment_configuration): <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
     /// - On failure, responds with [`SdkError<GetCapacityAssignmentConfigurationError>`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError)
-    pub fn get_capacity_assignment_configuration(&self) -> crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationFluentBuilder{
+    pub fn get_capacity_assignment_configuration(
+        &self,
+    ) -> crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationFluentBuilder {
         crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

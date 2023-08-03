@@ -77,18 +77,14 @@ impl CreateDataSourceFromRdsInput {
 }
 impl CreateDataSourceFromRdsInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsInput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput).
-    pub fn builder(
-    ) -> crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder {
         crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSourceFromRdsInput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRdsInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_name: ::std::option::Option<::std::string::String>,
@@ -98,18 +94,12 @@ pub struct CreateDataSourceFromRdsInputBuilder {
 }
 impl CreateDataSourceFromRdsInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -118,18 +108,12 @@ impl CreateDataSourceFromRdsInputBuilder {
         &self.data_source_id
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_name = input;
         self
     }
@@ -237,14 +221,12 @@ impl CreateDataSourceFromRdsInputBuilder {
         crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-                rds_data: self.rds_data,
-                role_arn: self.role_arn,
-                compute_statistics: self.compute_statistics.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput {
+            data_source_id: self.data_source_id,
+            data_source_name: self.data_source_name,
+            rds_data: self.rds_data,
+            role_arn: self.role_arn,
+            compute_statistics: self.compute_statistics.unwrap_or_default(),
+        })
     }
 }

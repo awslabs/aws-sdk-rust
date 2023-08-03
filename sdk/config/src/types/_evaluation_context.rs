@@ -23,33 +23,23 @@ impl EvaluationContext {
 
 /// A builder for [`EvaluationContext`](crate::types::EvaluationContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationContextBuilder {
     pub(crate) evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationContextBuilder {
     /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
-    pub fn evaluation_context_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_context_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_context_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
-    pub fn set_evaluation_context_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_context_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_context_identifier = input;
         self
     }
     /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
-    pub fn get_evaluation_context_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_evaluation_context_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_context_identifier
     }
     /// Consumes the builder and constructs a [`EvaluationContext`](crate::types::EvaluationContext).

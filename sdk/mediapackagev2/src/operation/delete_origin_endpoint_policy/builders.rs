@@ -26,7 +26,7 @@ impl DeleteOriginEndpointPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOriginEndpointPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder,
+    inner: crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder,
 }
 impl DeleteOriginEndpointPolicyFluentBuilder {
     /// Creates a new `DeleteOriginEndpointPolicy`.
@@ -37,7 +37,7 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
         }
     }
     /// Access the DeleteOriginEndpointPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
             crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
             crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_group_name(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
@@ -155,18 +138,12 @@ impl DeleteOriginEndpointPolicyFluentBuilder {
         self.inner.get_channel_name()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_endpoint_name(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_endpoint_name(input);
         self
     }

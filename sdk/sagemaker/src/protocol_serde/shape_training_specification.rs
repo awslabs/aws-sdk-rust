@@ -31,9 +31,7 @@ pub fn ser_training_specification(
         array_8.finish();
     }
     if input.supports_distributed_training {
-        object
-            .key("SupportsDistributedTraining")
-            .boolean(input.supports_distributed_training);
+        object.key("SupportsDistributedTraining").boolean(input.supports_distributed_training);
     }
     if let Some(var_10) = &input.metric_definitions {
         let mut array_11 = object.key("MetricDefinitions").start_array();
@@ -41,10 +39,7 @@ pub fn ser_training_specification(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_metric_definition::ser_metric_definition(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_metric_definition::ser_metric_definition(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -56,19 +51,14 @@ pub fn ser_training_specification(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_channel_specification::ser_channel_specification(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_channel_specification::ser_channel_specification(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
         array_15.finish();
     }
     if let Some(var_18) = &input.supported_tuning_job_objective_metrics {
-        let mut array_19 = object
-            .key("SupportedTuningJobObjectiveMetrics")
-            .start_array();
+        let mut array_19 = object.key("SupportedTuningJobObjectiveMetrics").start_array();
         for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
@@ -84,17 +74,9 @@ pub fn ser_training_specification(
 
 pub(crate) fn de_training_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TrainingSpecification>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TrainingSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -104,76 +86,62 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TrainingImage" => {
-                                builder = builder.set_training_image(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TrainingImage" => {
+                            builder = builder.set_training_image(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TrainingImageDigest" => {
-                                builder = builder.set_training_image_digest(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "SupportedHyperParameters" => {
-                                builder = builder.set_supported_hyper_parameters(
-                                    crate::protocol_serde::shape_hyper_parameter_specifications::de_hyper_parameter_specifications(tokens)?
-                                );
-                            }
-                            "SupportedTrainingInstanceTypes" => {
-                                builder = builder.set_supported_training_instance_types(
-                                    crate::protocol_serde::shape_training_instance_types::de_training_instance_types(tokens)?
-                                );
-                            }
-                            "SupportsDistributedTraining" => {
-                                builder = builder.set_supports_distributed_training(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "MetricDefinitions" => {
-                                builder = builder.set_metric_definitions(
-                                    crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?
-                                );
-                            }
-                            "TrainingChannels" => {
-                                builder = builder.set_training_channels(
-                                    crate::protocol_serde::shape_channel_specifications::de_channel_specifications(tokens)?
-                                );
-                            }
-                            "SupportedTuningJobObjectiveMetrics" => {
-                                builder = builder.set_supported_tuning_job_objective_metrics(
-                                    crate::protocol_serde::shape_hyper_parameter_tuning_job_objectives::de_hyper_parameter_tuning_job_objectives(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "TrainingImageDigest" => {
+                            builder = builder.set_training_image_digest(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SupportedHyperParameters" => {
+                            builder = builder.set_supported_hyper_parameters(
+                                crate::protocol_serde::shape_hyper_parameter_specifications::de_hyper_parameter_specifications(tokens)?,
+                            );
+                        }
+                        "SupportedTrainingInstanceTypes" => {
+                            builder = builder.set_supported_training_instance_types(
+                                crate::protocol_serde::shape_training_instance_types::de_training_instance_types(tokens)?,
+                            );
+                        }
+                        "SupportsDistributedTraining" => {
+                            builder =
+                                builder.set_supports_distributed_training(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "MetricDefinitions" => {
+                            builder = builder
+                                .set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?);
+                        }
+                        "TrainingChannels" => {
+                            builder = builder
+                                .set_training_channels(crate::protocol_serde::shape_channel_specifications::de_channel_specifications(tokens)?);
+                        }
+                        "SupportedTuningJobObjectiveMetrics" => {
+                            builder = builder.set_supported_tuning_job_objective_metrics(
+                                crate::protocol_serde::shape_hyper_parameter_tuning_job_objectives::de_hyper_parameter_tuning_job_objectives(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

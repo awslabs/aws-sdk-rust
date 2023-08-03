@@ -10,10 +10,7 @@ impl DescribeVodSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_vod_source::DescribeVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vod_source::DescribeVodSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vod_source::DescribeVodSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_vod_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeVodSourceFluentBuilder {
         }
     }
     /// Access the DescribeVodSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vod_source::builders::DescribeVodSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_vod_source::builders::DescribeVodSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeVodSourceFluentBuilder {
             crate::operation::describe_vod_source::DescribeVodSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vod_source::DescribeVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vod_source::DescribeVodSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeVodSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeVodSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vod_source::DescribeVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vod_source::DescribeVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vod_source::DescribeVodSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeVodSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vod_source::DescribeVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vod_source::DescribeVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vod_source::DescribeVodSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeVodSourceFluentBuilder {
             crate::operation::describe_vod_source::DescribeVodSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vod_source::DescribeVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vod_source::DescribeVodSourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl DescribeVodSourceFluentBuilder {
         self.inner.get_source_location_name()
     }
     /// <p>The name of the VOD Source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vod_source_name(input.into());
         self
     }
     /// <p>The name of the VOD Source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
     }

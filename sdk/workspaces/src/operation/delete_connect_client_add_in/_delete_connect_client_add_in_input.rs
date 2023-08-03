@@ -22,16 +22,14 @@ impl DeleteConnectClientAddInInput {
 }
 impl DeleteConnectClientAddInInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInInput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput).
-    pub fn builder() -> crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder{
+    pub fn builder() -> crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder {
         crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectClientAddInInput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectClientAddInInputBuilder {
     pub(crate) add_in_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DeleteConnectClientAddInInputBuilder {
         crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput {
-                add_in_id: self.add_in_id,
-                resource_id: self.resource_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput {
+            add_in_id: self.add_in_id,
+            resource_id: self.resource_id,
+        })
     }
 }

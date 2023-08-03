@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSystemTemplateOutput {
 }
 impl GetSystemTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetSystemTemplateOutput`](crate::operation::get_system_template::GetSystemTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_system_template::builders::GetSystemTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::get_system_template::builders::GetSystemTemplateOutputBuilder {
         crate::operation::get_system_template::builders::GetSystemTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSystemTemplateOutput`](crate::operation::get_system_template::GetSystemTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSystemTemplateOutputBuilder {
     pub(crate) description: ::std::option::Option<crate::types::SystemTemplateDescription>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetSystemTemplateOutputBuilder {
         self
     }
     /// <p>An object that contains summary data about the system.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemTemplateDescription>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::SystemTemplateDescription>) -> Self {
         self.description = input;
         self
     }
     /// <p>An object that contains summary data about the system.</p>
-    pub fn get_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::SystemTemplateDescription> {
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::SystemTemplateDescription> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

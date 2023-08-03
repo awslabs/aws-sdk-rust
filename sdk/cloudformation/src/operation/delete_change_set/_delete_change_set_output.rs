@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteChangeSetOutput {
 }
 impl DeleteChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput).
-    pub fn builder() -> crate::operation::delete_change_set::builders::DeleteChangeSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_change_set::builders::DeleteChangeSetOutputBuilder {
         crate::operation::delete_change_set::builders::DeleteChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChangeSetOutputBuilder {
     _request_id: Option<String>,
 }

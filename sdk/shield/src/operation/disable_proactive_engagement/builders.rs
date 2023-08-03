@@ -26,7 +26,7 @@ impl DisableProactiveEngagementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableProactiveEngagementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder,
+    inner: crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder,
 }
 impl DisableProactiveEngagementFluentBuilder {
     /// Creates a new `DisableProactiveEngagement`.
@@ -37,7 +37,7 @@ impl DisableProactiveEngagementFluentBuilder {
         }
     }
     /// Access the DisableProactiveEngagement as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableProactiveEngagementFluentBuilder {
             crate::operation::disable_proactive_engagement::DisableProactiveEngagement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_proactive_engagement::DisableProactiveEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_proactive_engagement::DisableProactiveEngagementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableProactiveEngagementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableProactiveEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_proactive_engagement::DisableProactiveEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_proactive_engagement::DisableProactiveEngagementError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableProactiveEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_proactive_engagement::DisableProactiveEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_proactive_engagement::DisableProactiveEngagementError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisableProactiveEngagementFluentBuilder {
             crate::operation::disable_proactive_engagement::DisableProactiveEngagement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_proactive_engagement::DisableProactiveEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_proactive_engagement::DisableProactiveEngagementError>,
     > {
         self.customize_middleware().await
     }

@@ -50,17 +50,14 @@ impl SearchFlowExecutionsInput {
 }
 impl SearchFlowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
         crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFlowExecutionsInputBuilder {
     pub(crate) system_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_execution_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +68,12 @@ pub struct SearchFlowExecutionsInputBuilder {
 }
 impl SearchFlowExecutionsInputBuilder {
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn system_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.system_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn set_system_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_system_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.system_instance_id = input;
         self
     }
@@ -91,18 +82,12 @@ impl SearchFlowExecutionsInputBuilder {
         &self.system_instance_id
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn flow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn set_flow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_execution_id = input;
         self
     }
@@ -116,10 +101,7 @@ impl SearchFlowExecutionsInputBuilder {
         self
     }
     /// <p>The date and time of the earliest flow execution to return.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -133,10 +115,7 @@ impl SearchFlowExecutionsInputBuilder {
         self
     }
     /// <p>The date and time of the latest flow execution to return.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -175,19 +154,15 @@ impl SearchFlowExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_flow_executions::SearchFlowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_flow_executions::SearchFlowExecutionsInput {
-                system_instance_id: self.system_instance_id,
-                flow_execution_id: self.flow_execution_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_flow_executions::SearchFlowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_flow_executions::SearchFlowExecutionsInput {
+            system_instance_id: self.system_instance_id,
+            flow_execution_id: self.flow_execution_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

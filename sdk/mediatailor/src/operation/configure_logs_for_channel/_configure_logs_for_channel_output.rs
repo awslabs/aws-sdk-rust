@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ConfigureLogsForChannelOutput {
 }
 impl ConfigureLogsForChannelOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsForChannelOutput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelOutputBuilder {
         crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfigureLogsForChannelOutput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureLogsForChannelOutputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
@@ -72,10 +68,7 @@ impl ConfigureLogsForChannelOutputBuilder {
         self
     }
     /// <p>The types of logs collected.</p>
-    pub fn set_log_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
-    ) -> Self {
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
         self.log_types = input;
         self
     }
@@ -93,9 +86,7 @@ impl ConfigureLogsForChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForChannelOutput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput {
+    pub fn build(self) -> crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput {
         crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput {
             channel_name: self.channel_name,
             log_types: self.log_types,

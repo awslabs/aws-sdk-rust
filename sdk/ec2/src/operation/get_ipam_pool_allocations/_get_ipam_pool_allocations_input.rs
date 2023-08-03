@@ -50,18 +50,14 @@ impl GetIpamPoolAllocationsInput {
 }
 impl GetIpamPoolAllocationsInput {
     /// Creates a new builder-style object to manufacture [`GetIpamPoolAllocationsInput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder {
         crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamPoolAllocationsInput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamPoolAllocationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -100,18 +96,12 @@ impl GetIpamPoolAllocationsInputBuilder {
         &self.ipam_pool_id
     }
     /// <p>The ID of the allocation.</p>
-    pub fn ipam_pool_allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the allocation.</p>
-    pub fn set_ipam_pool_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = input;
         self
     }
@@ -131,10 +121,7 @@ impl GetIpamPoolAllocationsInputBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -177,15 +164,13 @@ impl GetIpamPoolAllocationsInputBuilder {
         crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                ipam_pool_allocation_id: self.ipam_pool_allocation_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            ipam_pool_allocation_id: self.ipam_pool_allocation_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssetModelOutput {
 }
 impl UpdateAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetModelOutput`](crate::operation::update_asset_model::UpdateAssetModelOutput).
-    pub fn builder() -> crate::operation::update_asset_model::builders::UpdateAssetModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_asset_model::builders::UpdateAssetModelOutputBuilder {
         crate::operation::update_asset_model::builders::UpdateAssetModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssetModelOutput`](crate::operation::update_asset_model::UpdateAssetModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssetModelOutputBuilder {
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateAssetModelOutputBuilder {
         self
     }
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_asset_model_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetModelStatus>,
-    ) -> Self {
+    pub fn set_asset_model_status(mut self, input: ::std::option::Option<crate::types::AssetModelStatus>) -> Self {
         self.asset_model_status = input;
         self
     }

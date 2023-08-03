@@ -28,7 +28,7 @@ impl DescribeClusterSnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder,
+    inner: crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder,
 }
 impl DescribeClusterSnapshotsFluentBuilder {
     /// Creates a new `DescribeClusterSnapshots`.
@@ -39,10 +39,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeClusterSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
             crate::operation::describe_cluster_snapshots::DescribeClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -119,34 +107,23 @@ impl DescribeClusterSnapshotsFluentBuilder {
             crate::operation::describe_cluster_snapshots::DescribeClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator {
         crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -155,18 +132,12 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -190,19 +161,13 @@ impl DescribeClusterSnapshotsFluentBuilder {
     }
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_type(input.into());
         self
     }
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_type(input);
         self
     }
@@ -219,10 +184,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
     }
     /// <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -239,10 +201,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
     }
     /// <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -286,18 +245,12 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self.inner.get_marker()
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -315,10 +268,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -336,10 +286,7 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }
@@ -389,17 +336,12 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_sorting_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>,
-    ) -> Self {
+    pub fn set_sorting_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>) -> Self {
         self.inner = self.inner.set_sorting_entities(input);
         self
     }
     /// <p></p>
-    pub fn get_sorting_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>> {
+    pub fn get_sorting_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>> {
         self.inner.get_sorting_entities()
     }
 }

@@ -51,9 +51,7 @@ impl Cvss {
 
 /// A builder for [`Cvss`](crate::types::Cvss).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CvssBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) base_score: ::std::option::Option<f64>,
@@ -130,17 +128,12 @@ impl CvssBuilder {
         self
     }
     /// <p>Adjustments to the CVSS metrics.</p>
-    pub fn set_adjustments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Adjustment>>,
-    ) -> Self {
+    pub fn set_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Adjustment>>) -> Self {
         self.adjustments = input;
         self
     }
     /// <p>Adjustments to the CVSS metrics.</p>
-    pub fn get_adjustments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Adjustment>> {
+    pub fn get_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Adjustment>> {
         &self.adjustments
     }
     /// Consumes the builder and constructs a [`Cvss`](crate::types::Cvss).

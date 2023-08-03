@@ -35,9 +35,7 @@ impl ListGraphsOutput {
 
 /// A builder for [`ListGraphsOutput`](crate::operation::list_graphs::ListGraphsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGraphsOutputBuilder {
     pub(crate) graph_list: ::std::option::Option<::std::vec::Vec<crate::types::Graph>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListGraphsOutputBuilder {
         self
     }
     /// <p>A list of behavior graphs that the account is an administrator account for.</p>
-    pub fn set_graph_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Graph>>,
-    ) -> Self {
+    pub fn set_graph_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Graph>>) -> Self {
         self.graph_list = input;
         self
     }

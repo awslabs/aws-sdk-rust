@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBlueGreenDeploymentOutput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput) with field(s):
     ///   - [`blue_green_deployment(Option<BlueGreenDeployment>)`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput::blue_green_deployment): <p>Details about a blue/green deployment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<CreateBlueGreenDeploymentError>`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError)
-    pub fn create_blue_green_deployment(&self) -> crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentFluentBuilder{
+    pub fn create_blue_green_deployment(&self) -> crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentFluentBuilder {
         crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

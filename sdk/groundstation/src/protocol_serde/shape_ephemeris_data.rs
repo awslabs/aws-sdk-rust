@@ -17,11 +17,7 @@ pub fn ser_ephemeris_data(
             object_2.finish();
         }
         crate::types::EphemerisData::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "EphemerisData",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("EphemerisData"))
         }
     }
     Ok(())

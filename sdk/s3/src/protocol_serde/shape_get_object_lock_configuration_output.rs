@@ -5,14 +5,15 @@ pub(crate) fn de_object_lock_configuration_payload(
     ::std::option::Option<crate::types::ObjectLockConfiguration>,
     crate::operation::get_object_lock_configuration::GetObjectLockConfigurationError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_object_lock_configuration_output::de_object_lock_configuration(body).map_err(crate::operation::get_object_lock_configuration::GetObjectLockConfigurationError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_get_object_lock_configuration_output::de_object_lock_configuration(body)
+                .map_err(crate::operation::get_object_lock_configuration::GetObjectLockConfigurationError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_object_lock_configuration(
-    inp: &[u8],
-) -> Result<crate::types::ObjectLockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_object_lock_configuration(inp: &[u8]) -> Result<crate::types::ObjectLockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -23,7 +24,5 @@ pub fn de_object_lock_configuration(
             start_el
         )));
     }
-    crate::protocol_serde::shape_object_lock_configuration::de_object_lock_configuration(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_object_lock_configuration::de_object_lock_configuration(&mut decoder)
 }

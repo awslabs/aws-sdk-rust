@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreCoreNetworkPolicyVersionOutput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput) with field(s):
     ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput::core_network_policy): <p>Describes the restored core network policy.</p>
     /// - On failure, responds with [`SdkError<RestoreCoreNetworkPolicyVersionError>`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionError)
-    pub fn restore_core_network_policy_version(&self) -> crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionFluentBuilder{
+    pub fn restore_core_network_policy_version(
+        &self,
+    ) -> crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionFluentBuilder {
         crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

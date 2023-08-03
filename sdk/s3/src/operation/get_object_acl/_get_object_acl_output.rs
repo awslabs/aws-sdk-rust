@@ -48,9 +48,7 @@ impl GetObjectAclOutput {
 
 /// A builder for [`GetObjectAclOutput`](crate::operation::get_object_acl::GetObjectAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectAclOutputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
@@ -85,10 +83,7 @@ impl GetObjectAclOutputBuilder {
         self
     }
     /// <p>A list of grants.</p>
-    pub fn set_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    ) -> Self {
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>) -> Self {
         self.grants = input;
         self
     }
@@ -102,10 +97,7 @@ impl GetObjectAclOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
@@ -118,10 +110,7 @@ impl GetObjectAclOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

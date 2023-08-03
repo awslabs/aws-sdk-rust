@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartStageDeploymentOutput`](crate::operation::start_stage_deployment::StartStageDeploymentOutput) with field(s):
     ///   - [`stage_deployment(Option<StageDeploymentDetails>)`](crate::operation::start_stage_deployment::StartStageDeploymentOutput::stage_deployment): <p>Properties that describe the stage deployment.</p>
     /// - On failure, responds with [`SdkError<StartStageDeploymentError>`](crate::operation::start_stage_deployment::StartStageDeploymentError)
-    pub fn start_stage_deployment(
-        &self,
-    ) -> crate::operation::start_stage_deployment::builders::StartStageDeploymentFluentBuilder {
-        crate::operation::start_stage_deployment::builders::StartStageDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_stage_deployment(&self) -> crate::operation::start_stage_deployment::builders::StartStageDeploymentFluentBuilder {
+        crate::operation::start_stage_deployment::builders::StartStageDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlFluentBuilder::set_if_match): <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
     /// - On success, responds with [`DeleteOriginAccessControlOutput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput)
     /// - On failure, responds with [`SdkError<DeleteOriginAccessControlError>`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlError)
-    pub fn delete_origin_access_control(&self) -> crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlFluentBuilder{
+    pub fn delete_origin_access_control(&self) -> crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlFluentBuilder {
         crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlFluentBuilder::new(self.handle.clone())
     }
 }

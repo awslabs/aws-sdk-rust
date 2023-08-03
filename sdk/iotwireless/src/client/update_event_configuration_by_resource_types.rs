@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`message_delivery_status(MessageDeliveryStatusResourceTypeEventConfiguration)`](crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesFluentBuilder::message_delivery_status) / [`set_message_delivery_status(Option<MessageDeliveryStatusResourceTypeEventConfiguration>)`](crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesFluentBuilder::set_message_delivery_status): <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
     /// - On success, responds with [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput)
     /// - On failure, responds with [`SdkError<UpdateEventConfigurationByResourceTypesError>`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError)
-    pub fn update_event_configuration_by_resource_types(&self) -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesFluentBuilder{
-        crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesFluentBuilder::new(self.handle.clone())
+    pub fn update_event_configuration_by_resource_types(
+        &self,
+    ) -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesFluentBuilder {
+        crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

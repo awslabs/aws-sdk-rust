@@ -27,7 +27,7 @@ impl BatchGetUserAccessTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder,
+    inner: crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder,
 }
 impl BatchGetUserAccessTasksFluentBuilder {
     /// Creates a new `BatchGetUserAccessTasks`.
@@ -38,10 +38,7 @@ impl BatchGetUserAccessTasksFluentBuilder {
         }
     }
     /// Access the BatchGetUserAccessTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl BatchGetUserAccessTasksFluentBuilder {
             crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl BatchGetUserAccessTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl BatchGetUserAccessTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl BatchGetUserAccessTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl BatchGetUserAccessTasksFluentBuilder {
             crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -154,17 +134,12 @@ impl BatchGetUserAccessTasksFluentBuilder {
         self
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn set_task_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_task_id_list(input);
         self
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn get_task_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_task_id_list()
     }
 }

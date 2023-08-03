@@ -30,8 +30,7 @@ pub struct UpdateRecipeJobInput {
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     #[doc(hidden)]
-    pub data_catalog_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     #[doc(hidden)]
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
@@ -76,9 +75,7 @@ impl UpdateRecipeJobInput {
         self.outputs.as_deref()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
+    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
@@ -103,9 +100,7 @@ impl UpdateRecipeJobInput {
 
 /// A builder for [`UpdateRecipeJobInput`](crate::operation::update_recipe_job::UpdateRecipeJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecipeJobInputBuilder {
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
@@ -114,27 +109,19 @@ pub struct UpdateRecipeJobInputBuilder {
     pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) max_retries: ::std::option::Option<i32>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    pub(crate) data_catalog_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    pub(crate) database_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
+    pub(crate) data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub(crate) database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) timeout: ::std::option::Option<i32>,
 }
 impl UpdateRecipeJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
@@ -156,10 +143,7 @@ impl UpdateRecipeJobInputBuilder {
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMode>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -191,10 +175,7 @@ impl UpdateRecipeJobInputBuilder {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::LogSubscription>,
-    ) -> Self {
+    pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
         self.log_subscription = input;
         self
     }
@@ -242,10 +223,7 @@ impl UpdateRecipeJobInputBuilder {
         self
     }
     /// <p>One or more artifacts that represent the output from running the job. </p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
@@ -265,17 +243,12 @@ impl UpdateRecipeJobInputBuilder {
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    ) -> Self {
+    pub fn set_data_catalog_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
         self.data_catalog_outputs = input;
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn get_data_catalog_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+    pub fn get_data_catalog_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
         &self.data_catalog_outputs
     }
     /// Appends an item to `database_outputs`.
@@ -290,17 +263,12 @@ impl UpdateRecipeJobInputBuilder {
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn set_database_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
-    ) -> Self {
+    pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
         self.database_outputs = input;
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn get_database_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+    pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
         &self.database_outputs
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
@@ -334,10 +302,7 @@ impl UpdateRecipeJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecipeJobInput`](crate::operation::update_recipe_job::UpdateRecipeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_recipe_job::UpdateRecipeJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_recipe_job::UpdateRecipeJobInput {
             encryption_key_arn: self.encryption_key_arn,
             encryption_mode: self.encryption_mode,

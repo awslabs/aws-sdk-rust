@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssetModelOutput`](crate::operation::update_asset_model::UpdateAssetModelOutput) with field(s):
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::operation::update_asset_model::UpdateAssetModelOutput::asset_model_status): <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetModelError>`](crate::operation::update_asset_model::UpdateAssetModelError)
-    pub fn update_asset_model(
-        &self,
-    ) -> crate::operation::update_asset_model::builders::UpdateAssetModelFluentBuilder {
-        crate::operation::update_asset_model::builders::UpdateAssetModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_asset_model(&self) -> crate::operation::update_asset_model::builders::UpdateAssetModelFluentBuilder {
+        crate::operation::update_asset_model::builders::UpdateAssetModelFluentBuilder::new(self.handle.clone())
     }
 }

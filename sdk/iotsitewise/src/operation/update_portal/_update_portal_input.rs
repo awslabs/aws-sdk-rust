@@ -86,9 +86,7 @@ impl UpdatePortalInput {
 
 /// A builder for [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePortalInputBuilder {
     pub(crate) portal_id: ::std::option::Option<::std::string::String>,
     pub(crate) portal_name: ::std::option::Option<::std::string::String>,
@@ -130,18 +128,12 @@ impl UpdatePortalInputBuilder {
         &self.portal_name
     }
     /// <p>A new description for the portal.</p>
-    pub fn portal_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new description for the portal.</p>
-    pub fn set_portal_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_description = input;
         self
     }
@@ -150,18 +142,12 @@ impl UpdatePortalInputBuilder {
         &self.portal_description
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_contact_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn set_portal_contact_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_contact_email = input;
         self
     }
@@ -183,10 +169,7 @@ impl UpdatePortalInputBuilder {
     /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
     /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
-    pub fn set_portal_logo_image(
-        mut self,
-        input: ::std::option::Option<crate::types::Image>,
-    ) -> Self {
+    pub fn set_portal_logo_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.portal_logo_image = input;
         self
     }
@@ -227,18 +210,12 @@ impl UpdatePortalInputBuilder {
         &self.client_token
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn notification_sender_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_sender_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_sender_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn set_notification_sender_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_sender_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_sender_email = input;
         self
     }
@@ -261,12 +238,7 @@ impl UpdatePortalInputBuilder {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_portal::UpdatePortalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_portal::UpdatePortalInput {
             portal_id: self.portal_id,
             portal_name: self.portal_name,

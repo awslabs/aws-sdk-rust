@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePreparedStatementOutput {
 }
 impl UpdatePreparedStatementOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePreparedStatementOutput`](crate::operation::update_prepared_statement::UpdatePreparedStatementOutput).
-    pub fn builder(
-    ) -> crate::operation::update_prepared_statement::builders::UpdatePreparedStatementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_prepared_statement::builders::UpdatePreparedStatementOutputBuilder {
         crate::operation::update_prepared_statement::builders::UpdatePreparedStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePreparedStatementOutput`](crate::operation::update_prepared_statement::UpdatePreparedStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePreparedStatementOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdatePreparedStatementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePreparedStatementOutput`](crate::operation::update_prepared_statement::UpdatePreparedStatementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_prepared_statement::UpdatePreparedStatementOutput {
+    pub fn build(self) -> crate::operation::update_prepared_statement::UpdatePreparedStatementOutput {
         crate::operation::update_prepared_statement::UpdatePreparedStatementOutput {
             _request_id: self._request_id,
         }

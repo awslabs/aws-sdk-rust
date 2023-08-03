@@ -10,10 +10,7 @@ impl EvaluateSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::evaluate_session::EvaluateSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_session::EvaluateSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_session::EvaluateSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.evaluate_session();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EvaluateSessionFluentBuilder {
         }
     }
     /// Access the EvaluateSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::evaluate_session::builders::EvaluateSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::evaluate_session::builders::EvaluateSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl EvaluateSessionFluentBuilder {
             crate::operation::evaluate_session::EvaluateSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_session::EvaluateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_session::EvaluateSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl EvaluateSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl EvaluateSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_session::EvaluateSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_session::EvaluateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_session::EvaluateSessionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl EvaluateSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_session::EvaluateSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_session::EvaluateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_session::EvaluateSessionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl EvaluateSessionFluentBuilder {
             crate::operation::evaluate_session::EvaluateSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_session::EvaluateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_session::EvaluateSessionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl EvaluateSessionFluentBuilder {
         self.inner.get_domain_id()
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn session_name_or_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_name_or_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_name_or_id(input.into());
         self
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn set_session_name_or_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_name_or_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_name_or_id(input);
         self
     }

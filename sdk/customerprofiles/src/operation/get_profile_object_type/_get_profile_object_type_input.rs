@@ -22,17 +22,14 @@ impl GetProfileObjectTypeInput {
 }
 impl GetProfileObjectTypeInput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeInput`](crate::operation::get_profile_object_type::GetProfileObjectTypeInput).
-    pub fn builder(
-    ) -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder {
+    pub fn builder() -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder {
         crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProfileObjectTypeInput`](crate::operation::get_profile_object_type::GetProfileObjectTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileObjectTypeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl GetProfileObjectTypeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_type_name = input;
         self
     }
@@ -75,15 +66,11 @@ impl GetProfileObjectTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetProfileObjectTypeInput`](crate::operation::get_profile_object_type::GetProfileObjectTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_profile_object_type::GetProfileObjectTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_profile_object_type::GetProfileObjectTypeInput {
-                domain_name: self.domain_name,
-                object_type_name: self.object_type_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_profile_object_type::GetProfileObjectTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_profile_object_type::GetProfileObjectTypeInput {
+            domain_name: self.domain_name,
+            object_type_name: self.object_type_name,
+        })
     }
 }

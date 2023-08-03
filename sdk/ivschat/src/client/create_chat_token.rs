@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`token_expiration_time(Option<DateTime>)`](crate::operation::create_chat_token::CreateChatTokenOutput::token_expiration_time): <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     ///   - [`session_expiration_time(Option<DateTime>)`](crate::operation::create_chat_token::CreateChatTokenOutput::session_expiration_time): <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     /// - On failure, responds with [`SdkError<CreateChatTokenError>`](crate::operation::create_chat_token::CreateChatTokenError)
-    pub fn create_chat_token(
-        &self,
-    ) -> crate::operation::create_chat_token::builders::CreateChatTokenFluentBuilder {
-        crate::operation::create_chat_token::builders::CreateChatTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_chat_token(&self) -> crate::operation::create_chat_token::builders::CreateChatTokenFluentBuilder {
+        crate::operation::create_chat_token::builders::CreateChatTokenFluentBuilder::new(self.handle.clone())
     }
 }

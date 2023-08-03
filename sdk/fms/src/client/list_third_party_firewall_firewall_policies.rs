@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`third_party_firewall_firewall_policies(Option<Vec<ThirdPartyFirewallFirewallPolicy>>)`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput::third_party_firewall_firewall_policies): <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput::next_token): <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
     /// - On failure, responds with [`SdkError<ListThirdPartyFirewallFirewallPoliciesError>`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError)
-    pub fn list_third_party_firewall_firewall_policies(&self) -> crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesFluentBuilder{
-        crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesFluentBuilder::new(self.handle.clone())
+    pub fn list_third_party_firewall_firewall_policies(
+        &self,
+    ) -> crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
+        crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

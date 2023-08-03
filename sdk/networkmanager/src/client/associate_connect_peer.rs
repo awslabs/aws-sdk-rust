@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateConnectPeerOutput`](crate::operation::associate_connect_peer::AssociateConnectPeerOutput) with field(s):
     ///   - [`connect_peer_association(Option<ConnectPeerAssociation>)`](crate::operation::associate_connect_peer::AssociateConnectPeerOutput::connect_peer_association): <p>The response to the Connect peer request.</p>
     /// - On failure, responds with [`SdkError<AssociateConnectPeerError>`](crate::operation::associate_connect_peer::AssociateConnectPeerError)
-    pub fn associate_connect_peer(
-        &self,
-    ) -> crate::operation::associate_connect_peer::builders::AssociateConnectPeerFluentBuilder {
-        crate::operation::associate_connect_peer::builders::AssociateConnectPeerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_connect_peer(&self) -> crate::operation::associate_connect_peer::builders::AssociateConnectPeerFluentBuilder {
+        crate::operation::associate_connect_peer::builders::AssociateConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

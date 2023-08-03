@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`proxy_session_id(impl ::std::convert::Into<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::set_proxy_session_id): <p>The proxy session ID.</p>
     /// - On success, responds with [`DeleteProxySessionOutput`](crate::operation::delete_proxy_session::DeleteProxySessionOutput)
     /// - On failure, responds with [`SdkError<DeleteProxySessionError>`](crate::operation::delete_proxy_session::DeleteProxySessionError)
-    pub fn delete_proxy_session(
-        &self,
-    ) -> crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder {
-        crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_proxy_session(&self) -> crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder {
+        crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::new(self.handle.clone())
     }
 }

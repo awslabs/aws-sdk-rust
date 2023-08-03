@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::stop_workflow_run::builders::StopWorkflowRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::stop_workflow_run::builders::StopWorkflowRunFluentBuilder::set_run_id): <p>The ID of the workflow run to stop.</p>
     /// - On success, responds with [`StopWorkflowRunOutput`](crate::operation::stop_workflow_run::StopWorkflowRunOutput)
     /// - On failure, responds with [`SdkError<StopWorkflowRunError>`](crate::operation::stop_workflow_run::StopWorkflowRunError)
-    pub fn stop_workflow_run(
-        &self,
-    ) -> crate::operation::stop_workflow_run::builders::StopWorkflowRunFluentBuilder {
-        crate::operation::stop_workflow_run::builders::StopWorkflowRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_workflow_run(&self) -> crate::operation::stop_workflow_run::builders::StopWorkflowRunFluentBuilder {
+        crate::operation::stop_workflow_run::builders::StopWorkflowRunFluentBuilder::new(self.handle.clone())
     }
 }

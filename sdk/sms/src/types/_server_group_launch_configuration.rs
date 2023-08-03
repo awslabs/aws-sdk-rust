@@ -12,8 +12,7 @@ pub struct ServerGroupLaunchConfiguration {
     pub launch_order: ::std::option::Option<i32>,
     /// <p>The launch configuration for servers in the server group.</p>
     #[doc(hidden)]
-    pub server_launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
+    pub server_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
@@ -25,9 +24,7 @@ impl ServerGroupLaunchConfiguration {
         self.launch_order
     }
     /// <p>The launch configuration for servers in the server group.</p>
-    pub fn server_launch_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerLaunchConfiguration]> {
+    pub fn server_launch_configurations(&self) -> ::std::option::Option<&[crate::types::ServerLaunchConfiguration]> {
         self.server_launch_configurations.as_deref()
     }
 }
@@ -40,29 +37,20 @@ impl ServerGroupLaunchConfiguration {
 
 /// A builder for [`ServerGroupLaunchConfiguration`](crate::types::ServerGroupLaunchConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerGroupLaunchConfigurationBuilder {
     pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_order: ::std::option::Option<i32>,
-    pub(crate) server_launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
+    pub(crate) server_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfigurationBuilder {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    pub fn server_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    pub fn set_server_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_group_id = input;
         self
     }
@@ -89,10 +77,7 @@ impl ServerGroupLaunchConfigurationBuilder {
     /// To override the contents of this collection use [`set_server_launch_configurations`](Self::set_server_launch_configurations).
     ///
     /// <p>The launch configuration for servers in the server group.</p>
-    pub fn server_launch_configurations(
-        mut self,
-        input: crate::types::ServerLaunchConfiguration,
-    ) -> Self {
+    pub fn server_launch_configurations(mut self, input: crate::types::ServerLaunchConfiguration) -> Self {
         let mut v = self.server_launch_configurations.unwrap_or_default();
         v.push(input);
         self.server_launch_configurations = ::std::option::Option::Some(v);
@@ -107,9 +92,7 @@ impl ServerGroupLaunchConfigurationBuilder {
         self
     }
     /// <p>The launch configuration for servers in the server group.</p>
-    pub fn get_server_launch_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>> {
+    pub fn get_server_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>> {
         &self.server_launch_configurations
     }
     /// Consumes the builder and constructs a [`ServerGroupLaunchConfiguration`](crate::types::ServerGroupLaunchConfiguration).

@@ -22,9 +22,7 @@ impl DeleteWorkspaceInput {
 
 /// A builder for [`DeleteWorkspaceInput`](crate::operation::delete_workspace::DeleteWorkspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceInput`](crate::operation::delete_workspace::DeleteWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workspace::DeleteWorkspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_workspace::DeleteWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workspace::DeleteWorkspaceInput {
             workspace_id: self.workspace_id,
         })

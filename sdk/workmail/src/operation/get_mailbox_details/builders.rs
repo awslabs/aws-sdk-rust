@@ -10,10 +10,7 @@ impl GetMailboxDetailsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_mailbox_details::GetMailboxDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mailbox_details::GetMailboxDetailsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_mailbox_details();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMailboxDetailsFluentBuilder {
         }
     }
     /// Access the GetMailboxDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_mailbox_details::builders::GetMailboxDetailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_mailbox_details::builders::GetMailboxDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMailboxDetailsFluentBuilder {
             crate::operation::get_mailbox_details::GetMailboxDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mailbox_details::GetMailboxDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMailboxDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMailboxDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mailbox_details::GetMailboxDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mailbox_details::GetMailboxDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMailboxDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mailbox_details::GetMailboxDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mailbox_details::GetMailboxDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetMailboxDetailsFluentBuilder {
             crate::operation::get_mailbox_details::GetMailboxDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mailbox_details::GetMailboxDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

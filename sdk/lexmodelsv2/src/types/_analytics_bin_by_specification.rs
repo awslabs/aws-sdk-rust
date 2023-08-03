@@ -37,9 +37,7 @@ impl AnalyticsBinBySpecification {
 
 /// A builder for [`AnalyticsBinBySpecification`](crate::types::AnalyticsBinBySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsBinBySpecificationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     pub(crate) interval: ::std::option::Option<crate::types::AnalyticsInterval>,
@@ -52,10 +50,7 @@ impl AnalyticsBinBySpecificationBuilder {
         self
     }
     /// <p>Specifies the time metric by which to bin the analytics data.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsBinByName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsBinByName>) -> Self {
         self.name = input;
         self
     }
@@ -69,10 +64,7 @@ impl AnalyticsBinBySpecificationBuilder {
         self
     }
     /// <p>Specifies the interval of time by which to bin the analytics data.</p>
-    pub fn set_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsInterval>,
-    ) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<crate::types::AnalyticsInterval>) -> Self {
         self.interval = input;
         self
     }
@@ -86,10 +78,7 @@ impl AnalyticsBinBySpecificationBuilder {
         self
     }
     /// <p>Specifies whether to bin the analytics data in ascending or descending order. If this field is left blank, the default order is by the key of the bin in descending order.</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSortOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::AnalyticsSortOrder>) -> Self {
         self.order = input;
         self
     }

@@ -26,9 +26,7 @@ impl CreatePublishingDestinationInput {
         self.destination_type.as_ref()
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    pub fn destination_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationProperties> {
+    pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
     /// <p>The idempotency token for the request.</p>
@@ -38,16 +36,14 @@ impl CreatePublishingDestinationInput {
 }
 impl CreatePublishingDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreatePublishingDestinationInput`](crate::operation::create_publishing_destination::CreatePublishingDestinationInput).
-    pub fn builder() -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder{
+    pub fn builder() -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder {
         crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePublishingDestinationInput`](crate::operation::create_publishing_destination::CreatePublishingDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePublishingDestinationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
@@ -75,10 +71,7 @@ impl CreatePublishingDestinationInputBuilder {
         self
     }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
         self.destination_type = input;
         self
     }
@@ -92,17 +85,12 @@ impl CreatePublishingDestinationInputBuilder {
         self
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    pub fn set_destination_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationProperties>,
-    ) -> Self {
+    pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
         self.destination_properties = input;
         self
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    pub fn get_destination_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+    pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         &self.destination_properties
     }
     /// <p>The idempotency token for the request.</p>
@@ -126,13 +114,11 @@ impl CreatePublishingDestinationInputBuilder {
         crate::operation::create_publishing_destination::CreatePublishingDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_publishing_destination::CreatePublishingDestinationInput {
-                detector_id: self.detector_id,
-                destination_type: self.destination_type,
-                destination_properties: self.destination_properties,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_publishing_destination::CreatePublishingDestinationInput {
+            detector_id: self.detector_id,
+            destination_type: self.destination_type,
+            destination_properties: self.destination_properties,
+            client_token: self.client_token,
+        })
     }
 }

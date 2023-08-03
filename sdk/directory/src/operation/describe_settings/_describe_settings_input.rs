@@ -29,17 +29,14 @@ impl DescribeSettingsInput {
 }
 impl DescribeSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSettingsInput`](crate::operation::describe_settings::DescribeSettingsInput).
-    pub fn builder() -> crate::operation::describe_settings::builders::DescribeSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_settings::builders::DescribeSettingsInputBuilder {
         crate::operation::describe_settings::builders::DescribeSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSettingsInput`](crate::operation::describe_settings::DescribeSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSettingsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DirectoryConfigurationStatus>,
@@ -66,10 +63,7 @@ impl DescribeSettingsInputBuilder {
         self
     }
     /// <p>The status of the directory settings for which to retrieve information.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DirectoryConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -94,10 +88,7 @@ impl DescribeSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSettingsInput`](crate::operation::describe_settings::DescribeSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_settings::DescribeSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_settings::DescribeSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_settings::DescribeSettingsInput {
             directory_id: self.directory_id,
             status: self.status,

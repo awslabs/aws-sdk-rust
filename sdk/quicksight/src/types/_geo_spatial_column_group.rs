@@ -37,9 +37,7 @@ impl GeoSpatialColumnGroup {
 
 /// A builder for [`GeoSpatialColumnGroup`](crate::types::GeoSpatialColumnGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoSpatialColumnGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<crate::types::GeoSpatialCountryCode>,
@@ -66,10 +64,7 @@ impl GeoSpatialColumnGroupBuilder {
         self
     }
     /// <p>Country code.</p>
-    pub fn set_country_code(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoSpatialCountryCode>,
-    ) -> Self {
+    pub fn set_country_code(mut self, input: ::std::option::Option<crate::types::GeoSpatialCountryCode>) -> Self {
         self.country_code = input;
         self
     }
@@ -89,10 +84,7 @@ impl GeoSpatialColumnGroupBuilder {
         self
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.columns = input;
         self
     }

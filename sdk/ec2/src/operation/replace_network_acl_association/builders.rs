@@ -27,7 +27,7 @@ impl ReplaceNetworkAclAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder,
+    inner: crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder,
 }
 impl ReplaceNetworkAclAssociationFluentBuilder {
     /// Creates a new `ReplaceNetworkAclAssociation`.
@@ -38,7 +38,7 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
         }
     }
     /// Access the ReplaceNetworkAclAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
             crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
             crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -156,18 +139,12 @@ impl ReplaceNetworkAclAssociationFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_acl_id(input.into());
         self
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_acl_id(input);
         self
     }

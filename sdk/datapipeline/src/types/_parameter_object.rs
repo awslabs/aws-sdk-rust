@@ -30,9 +30,7 @@ impl ParameterObject {
 
 /// A builder for [`ParameterObject`](crate::types::ParameterObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterObjectBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
@@ -64,17 +62,12 @@ impl ParameterObjectBuilder {
         self
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ParameterObject`](crate::types::ParameterObject).

@@ -62,30 +62,21 @@ impl HyperParameterAlgorithmSpecification {
 
 /// A builder for [`HyperParameterAlgorithmSpecification`](crate::types::HyperParameterAlgorithmSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterAlgorithmSpecificationBuilder {
     pub(crate) training_image: ::std::option::Option<::std::string::String>,
     pub(crate) training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
+    pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
 }
 impl HyperParameterAlgorithmSpecificationBuilder {
     /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    pub fn training_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    pub fn set_training_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_image = input;
         self
     }
@@ -117,10 +108,7 @@ impl HyperParameterAlgorithmSpecificationBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    pub fn set_training_input_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingInputMode>,
-    ) -> Self {
+    pub fn set_training_input_mode(mut self, input: ::std::option::Option<crate::types::TrainingInputMode>) -> Self {
         self.training_input_mode = input;
         self
     }
@@ -134,24 +122,16 @@ impl HyperParameterAlgorithmSpecificationBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    pub fn get_training_input_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingInputMode> {
+    pub fn get_training_input_mode(&self) -> &::std::option::Option<crate::types::TrainingInputMode> {
         &self.training_input_mode
     }
     /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-    pub fn algorithm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.algorithm_name = input;
         self
     }
@@ -171,17 +151,12 @@ impl HyperParameterAlgorithmSpecificationBuilder {
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> objects that specify the metrics that the algorithm emits.</p>
-    pub fn set_metric_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
-    ) -> Self {
+    pub fn set_metric_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>) -> Self {
         self.metric_definitions = input;
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> objects that specify the metrics that the algorithm emits.</p>
-    pub fn get_metric_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+    pub fn get_metric_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
         &self.metric_definitions
     }
     /// Consumes the builder and constructs a [`HyperParameterAlgorithmSpecification`](crate::types::HyperParameterAlgorithmSpecification).

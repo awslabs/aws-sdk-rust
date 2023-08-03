@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`detector_id(Option<String>)`](crate::operation::create_detector::CreateDetectorOutput::detector_id): <p>The unique ID of the created detector.</p>
     ///   - [`unprocessed_data_sources(Option<UnprocessedDataSourcesResult>)`](crate::operation::create_detector::CreateDetectorOutput::unprocessed_data_sources): <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
     /// - On failure, responds with [`SdkError<CreateDetectorError>`](crate::operation::create_detector::CreateDetectorError)
-    pub fn create_detector(
-        &self,
-    ) -> crate::operation::create_detector::builders::CreateDetectorFluentBuilder {
-        crate::operation::create_detector::builders::CreateDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_detector(&self) -> crate::operation::create_detector::builders::CreateDetectorFluentBuilder {
+        crate::operation::create_detector::builders::CreateDetectorFluentBuilder::new(self.handle.clone())
     }
 }

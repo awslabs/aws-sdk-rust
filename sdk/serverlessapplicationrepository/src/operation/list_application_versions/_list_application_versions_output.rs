@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListApplicationVersionsOutput {
 }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>>,
@@ -72,17 +68,12 @@ impl ListApplicationVersionsOutputBuilder {
         self
     }
     /// <p>An array of version summaries for the application.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>>) -> Self {
         self.versions = input;
         self
     }
     /// <p>An array of version summaries for the application.</p>
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +86,7 @@ impl ListApplicationVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
+    pub fn build(self) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
         crate::operation::list_application_versions::ListApplicationVersionsOutput {
             next_token: self.next_token,
             versions: self.versions,

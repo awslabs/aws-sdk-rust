@@ -17,9 +17,7 @@ pub fn ser_region(
     Ok(())
 }
 
-pub fn de_region(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Region, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_region(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Region, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Region::builder();
     while let Some(mut tag) = decoder.next_tag() {

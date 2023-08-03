@@ -10,10 +10,7 @@ impl GetMlTaskRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ml_task_run::GetMlTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_task_run::GetMLTaskRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_task_run::GetMLTaskRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ml_task_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMLTaskRunFluentBuilder {
         }
     }
     /// Access the GetMLTaskRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ml_task_run::builders::GetMlTaskRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ml_task_run::builders::GetMlTaskRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetMLTaskRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

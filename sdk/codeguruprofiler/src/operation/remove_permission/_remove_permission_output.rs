@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for RemovePermissionOutput {
 }
 impl RemovePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput).
-    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionOutputBuilder {
         crate::operation::remove_permission::builders::RemovePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemovePermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

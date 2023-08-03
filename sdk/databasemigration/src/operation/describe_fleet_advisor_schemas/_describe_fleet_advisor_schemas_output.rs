@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFleetAdvisorSchemasOutput {
 }
 impl DescribeFleetAdvisorSchemasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemasOutput`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasOutputBuilder {
         crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorSchemasOutput`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemasOutputBuilder {
-    pub(crate) fleet_advisor_schemas:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>>,
+    pub(crate) fleet_advisor_schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeFleetAdvisorSchemasOutputBuilder {
         self
     }
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
-    pub fn set_fleet_advisor_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>>,
-    ) -> Self {
+    pub fn set_fleet_advisor_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>>) -> Self {
         self.fleet_advisor_schemas = input;
         self
     }
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
-    pub fn get_fleet_advisor_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>> {
+    pub fn get_fleet_advisor_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>> {
         &self.fleet_advisor_schemas
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -94,9 +86,7 @@ impl DescribeFleetAdvisorSchemasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemasOutput`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput {
+    pub fn build(self) -> crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput {
         crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput {
             fleet_advisor_schemas: self.fleet_advisor_schemas,
             next_token: self.next_token,

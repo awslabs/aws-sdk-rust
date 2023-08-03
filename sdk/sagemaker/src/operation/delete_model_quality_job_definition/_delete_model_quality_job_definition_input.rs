@@ -15,33 +15,25 @@ impl DeleteModelQualityJobDefinitionInput {
 }
 impl DeleteModelQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelQualityJobDefinitionInput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput).
-    pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder {
         crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelQualityJobDefinitionInput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelQualityJobDefinitionInputBuilder {
     /// <p>The name of the model quality monitoring job definition to delete.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model quality monitoring job definition to delete.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -58,9 +50,8 @@ impl DeleteModelQualityJobDefinitionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+            },
         )
     }
 }

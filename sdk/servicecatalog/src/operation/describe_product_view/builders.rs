@@ -37,9 +37,7 @@ impl DescribeProductViewFluentBuilder {
         }
     }
     /// Access the DescribeProductView as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_product_view::builders::DescribeProductViewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_product_view::builders::DescribeProductViewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeProductViewFluentBuilder {
             crate::operation::describe_product_view::DescribeProductView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_view::DescribeProductViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_view::DescribeProductViewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeProductViewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeProductViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_product_view::DescribeProductViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_view::DescribeProductViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_view::DescribeProductViewError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeProductViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_product_view::DescribeProductViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_view::DescribeProductViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_view::DescribeProductViewError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeProductViewFluentBuilder {
             crate::operation::describe_product_view::DescribeProductView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_view::DescribeProductViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_view::DescribeProductViewError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +114,7 @@ impl DescribeProductViewFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -139,10 +123,7 @@ impl DescribeProductViewFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

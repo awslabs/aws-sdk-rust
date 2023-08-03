@@ -5,8 +5,7 @@
 pub struct ListVpcConnectionsOutput {
     /// <p>A <code>VPCConnectionSummaries</code> object that returns a summary of VPC connection objects.</p>
     #[doc(hidden)]
-    pub vpc_connection_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>,
+    pub vpc_connection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListVpcConnectionsOutput {
 }
 impl ListVpcConnectionsOutput {
     /// <p>A <code>VPCConnectionSummaries</code> object that returns a summary of VPC connection objects.</p>
-    pub fn vpc_connection_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcConnectionSummary]> {
+    pub fn vpc_connection_summaries(&self) -> ::std::option::Option<&[crate::types::VpcConnectionSummary]> {
         self.vpc_connection_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,20 +42,16 @@ impl ::aws_http::request_id::RequestId for ListVpcConnectionsOutput {
 }
 impl ListVpcConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsOutputBuilder {
         crate::operation::list_vpc_connections::builders::ListVpcConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcConnectionsOutputBuilder {
-    pub(crate) vpc_connection_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>,
+    pub(crate) vpc_connection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -77,17 +70,12 @@ impl ListVpcConnectionsOutputBuilder {
         self
     }
     /// <p>A <code>VPCConnectionSummaries</code> object that returns a summary of VPC connection objects.</p>
-    pub fn set_vpc_connection_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>,
-    ) -> Self {
+    pub fn set_vpc_connection_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>) -> Self {
         self.vpc_connection_summaries = input;
         self
     }
     /// <p>A <code>VPCConnectionSummaries</code> object that returns a summary of VPC connection objects.</p>
-    pub fn get_vpc_connection_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>> {
+    pub fn get_vpc_connection_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>> {
         &self.vpc_connection_summaries
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

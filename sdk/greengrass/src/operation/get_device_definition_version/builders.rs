@@ -26,7 +26,7 @@ impl GetDeviceDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeviceDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionInputBuilder,
+    inner: crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionInputBuilder,
 }
 impl GetDeviceDefinitionVersionFluentBuilder {
     /// Creates a new `GetDeviceDefinitionVersion`.
@@ -37,7 +37,7 @@ impl GetDeviceDefinitionVersionFluentBuilder {
         }
     }
     /// Access the GetDeviceDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDeviceDefinitionVersionFluentBuilder {
             crate::operation::get_device_definition_version::GetDeviceDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDeviceDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDeviceDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDeviceDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetDeviceDefinitionVersionFluentBuilder {
             crate::operation::get_device_definition_version::GetDeviceDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the device definition.
-    pub fn device_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_definition_id(input.into());
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_definition_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl GetDeviceDefinitionVersionFluentBuilder {
         self.inner.get_device_definition_id()
     }
     /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn device_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_definition_version_id(input.into());
         self
     }
     /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_device_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_definition_version_id(input);
         self
     }
     /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn get_device_definition_version_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_device_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_definition_version_id()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.

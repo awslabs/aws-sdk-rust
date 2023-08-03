@@ -34,11 +34,7 @@ impl super::Client {
     ///   - [`multi_attach_enabled(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::multi_attach_enabled): <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     ///   - [`throughput(Option<i32>)`](crate::operation::create_volume::CreateVolumeOutput::throughput): <p>The throughput that the volume supports, in MiB/s.</p>
     /// - On failure, responds with [`SdkError<CreateVolumeError>`](crate::operation::create_volume::CreateVolumeError)
-    pub fn create_volume(
-        &self,
-    ) -> crate::operation::create_volume::builders::CreateVolumeFluentBuilder {
-        crate::operation::create_volume::builders::CreateVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_volume(&self) -> crate::operation::create_volume::builders::CreateVolumeFluentBuilder {
+        crate::operation::create_volume::builders::CreateVolumeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`profile_share_summaries(Option<Vec<ProfileShareSummary>>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::profile_share_summaries): <p>Profile share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProfileSharesError>`](crate::operation::list_profile_shares::ListProfileSharesError)
-    pub fn list_profile_shares(
-        &self,
-    ) -> crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder {
-        crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_profile_shares(&self) -> crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder {
+        crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::new(self.handle.clone())
     }
 }

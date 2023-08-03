@@ -71,9 +71,7 @@ impl DescribeStateMachineFluentBuilder {
         }
     }
     /// Access the DescribeStateMachine as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_state_machine::builders::DescribeStateMachineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_state_machine::builders::DescribeStateMachineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +83,7 @@ impl DescribeStateMachineFluentBuilder {
             crate::operation::describe_state_machine::DescribeStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine::DescribeStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine::DescribeStateMachineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -97,10 +93,7 @@ impl DescribeStateMachineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,9 +102,7 @@ impl DescribeStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_state_machine::DescribeStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine::DescribeStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine::DescribeStateMachineError>,
     > {
         let op = self
             .inner
@@ -134,9 +125,7 @@ impl DescribeStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_state_machine::DescribeStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine::DescribeStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine::DescribeStateMachineError>,
     > {
         self.send_middleware().await
     }
@@ -150,27 +139,19 @@ impl DescribeStateMachineFluentBuilder {
             crate::operation::describe_state_machine::DescribeStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine::DescribeStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine::DescribeStateMachineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
     /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
     /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }

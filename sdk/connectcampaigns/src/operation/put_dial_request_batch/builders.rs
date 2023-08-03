@@ -37,9 +37,7 @@ impl PutDialRequestBatchFluentBuilder {
         }
     }
     /// Access the PutDialRequestBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutDialRequestBatchFluentBuilder {
             crate::operation::put_dial_request_batch::PutDialRequestBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dial_request_batch::PutDialRequestBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dial_request_batch::PutDialRequestBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutDialRequestBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutDialRequestBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_dial_request_batch::PutDialRequestBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dial_request_batch::PutDialRequestBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dial_request_batch::PutDialRequestBatchError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutDialRequestBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_dial_request_batch::PutDialRequestBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dial_request_batch::PutDialRequestBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dial_request_batch::PutDialRequestBatchError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PutDialRequestBatchFluentBuilder {
             crate::operation::put_dial_request_batch::PutDialRequestBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dial_request_batch::PutDialRequestBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dial_request_batch::PutDialRequestBatchError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl PutDialRequestBatchFluentBuilder {
         self
     }
     /// A list of dial requests.
-    pub fn set_dial_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
-    ) -> Self {
+    pub fn set_dial_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>) -> Self {
         self.inner = self.inner.set_dial_requests(input);
         self
     }
     /// A list of dial requests.
-    pub fn get_dial_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DialRequest>> {
+    pub fn get_dial_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DialRequest>> {
         self.inner.get_dial_requests()
     }
 }

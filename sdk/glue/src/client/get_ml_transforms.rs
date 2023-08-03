@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`transforms(Option<Vec<MlTransform>>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::transforms): <p>A list of machine learning transforms.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<GetMLTransformsError>`](crate::operation::get_ml_transforms::GetMLTransformsError)
-    pub fn get_ml_transforms(
-        &self,
-    ) -> crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder {
-        crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ml_transforms(&self) -> crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder {
+        crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_update_logging_configuration_input(
     if let Some(var_3) = &input.logging_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("LoggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

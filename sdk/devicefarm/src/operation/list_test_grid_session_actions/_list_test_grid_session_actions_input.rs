@@ -29,16 +29,14 @@ impl ListTestGridSessionActionsInput {
 }
 impl ListTestGridSessionActionsInput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionActionsInput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput).
-    pub fn builder() -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder{
+    pub fn builder() -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder {
         crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridSessionActionsInput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridSessionActionsInputBuilder {
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_result: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListTestGridSessionActionsInputBuilder {
         crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput {
-                session_arn: self.session_arn,
-                max_result: self.max_result,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput {
+            session_arn: self.session_arn,
+            max_result: self.max_result,
+            next_token: self.next_token,
+        })
     }
 }

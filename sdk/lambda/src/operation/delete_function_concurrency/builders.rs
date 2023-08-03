@@ -26,7 +26,7 @@ impl DeleteFunctionConcurrencyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFunctionConcurrencyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_function_concurrency::builders::DeleteFunctionConcurrencyInputBuilder,
+    inner: crate::operation::delete_function_concurrency::builders::DeleteFunctionConcurrencyInputBuilder,
 }
 impl DeleteFunctionConcurrencyFluentBuilder {
     /// Creates a new `DeleteFunctionConcurrency`.
@@ -37,7 +37,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
         }
     }
     /// Access the DeleteFunctionConcurrency as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_function_concurrency::builders::DeleteFunctionConcurrencyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_function_concurrency::builders::DeleteFunctionConcurrencyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
             crate::operation::delete_function_concurrency::DeleteFunctionConcurrency,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
             crate::operation::delete_function_concurrency::DeleteFunctionConcurrency,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +117,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl DeleteFunctionConcurrencyFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

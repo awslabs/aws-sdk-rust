@@ -23,9 +23,7 @@ impl CloudFormationCollection {
 
 /// A builder for [`CloudFormationCollection`](crate::types::CloudFormationCollection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFormationCollectionBuilder {
     pub(crate) stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl CloudFormationCollectionBuilder {
         self
     }
     /// <p> An array of CloudFormation stack names. </p>
-    pub fn set_stack_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stack_names = input;
         self
     }
     /// <p> An array of CloudFormation stack names. </p>
-    pub fn get_stack_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stack_names
     }
     /// Consumes the builder and constructs a [`CloudFormationCollection`](crate::types::CloudFormationCollection).

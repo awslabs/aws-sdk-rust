@@ -23,9 +23,7 @@ impl KubernetesAuditLogsConfigurationResult {
 
 /// A builder for [`KubernetesAuditLogsConfigurationResult`](crate::types::KubernetesAuditLogsConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesAuditLogsConfigurationResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
@@ -36,10 +34,7 @@ impl KubernetesAuditLogsConfigurationResultBuilder {
         self
     }
     /// <p>A value that describes whether Kubernetes audit logs are enabled as a data source.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl KubernetesAuditLogsConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`KubernetesAuditLogsConfigurationResult`](crate::types::KubernetesAuditLogsConfigurationResult).
     pub fn build(self) -> crate::types::KubernetesAuditLogsConfigurationResult {
-        crate::types::KubernetesAuditLogsConfigurationResult {
-            status: self.status,
-        }
+        crate::types::KubernetesAuditLogsConfigurationResult { status: self.status }
     }
 }

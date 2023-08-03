@@ -6,19 +6,13 @@ pub fn ser_revocation_configuration(
     if let Some(var_1) = &input.crl_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CrlConfiguration").start_object();
-        crate::protocol_serde::shape_crl_configuration::ser_crl_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_crl_configuration::ser_crl_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.ocsp_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("OcspConfiguration").start_object();
-        crate::protocol_serde::shape_ocsp_configuration::ser_ocsp_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_ocsp_configuration::ser_ocsp_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())
@@ -26,17 +20,9 @@ pub fn ser_revocation_configuration(
 
 pub(crate) fn de_revocation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RevocationConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RevocationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,36 +32,27 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CrlConfiguration" => {
-                                builder = builder.set_crl_configuration(
-                                    crate::protocol_serde::shape_crl_configuration::de_crl_configuration(tokens)?
-                                );
-                            }
-                            "OcspConfiguration" => {
-                                builder = builder.set_ocsp_configuration(
-                                    crate::protocol_serde::shape_ocsp_configuration::de_ocsp_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CrlConfiguration" => {
+                            builder = builder.set_crl_configuration(crate::protocol_serde::shape_crl_configuration::de_crl_configuration(tokens)?);
                         }
-                    }
+                        "OcspConfiguration" => {
+                            builder = builder.set_ocsp_configuration(crate::protocol_serde::shape_ocsp_configuration::de_ocsp_configuration(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

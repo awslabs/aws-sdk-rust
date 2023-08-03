@@ -43,21 +43,16 @@ impl GetPositionEstimateInput {
 }
 impl GetPositionEstimateInput {
     /// Creates a new builder-style object to manufacture [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
-    pub fn builder(
-    ) -> crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder {
-        crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder {
+        crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPositionEstimateInputBuilder {
-    pub(crate) wi_fi_access_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
+    pub(crate) wi_fi_access_points: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
     pub(crate) cell_towers: ::std::option::Option<crate::types::CellTowers>,
     pub(crate) ip: ::std::option::Option<crate::types::Ip>,
     pub(crate) gnss: ::std::option::Option<crate::types::Gnss>,
@@ -76,17 +71,12 @@ impl GetPositionEstimateInputBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn set_wi_fi_access_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
-    ) -> Self {
+    pub fn set_wi_fi_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>) -> Self {
         self.wi_fi_access_points = input;
         self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn get_wi_fi_access_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
+    pub fn get_wi_fi_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
         &self.wi_fi_access_points
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
@@ -95,10 +85,7 @@ impl GetPositionEstimateInputBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
-    pub fn set_cell_towers(
-        mut self,
-        input: ::std::option::Option<crate::types::CellTowers>,
-    ) -> Self {
+    pub fn set_cell_towers(mut self, input: ::std::option::Option<crate::types::CellTowers>) -> Self {
         self.cell_towers = input;
         self
     }
@@ -140,10 +127,7 @@ impl GetPositionEstimateInputBuilder {
         self
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -154,18 +138,14 @@ impl GetPositionEstimateInputBuilder {
     /// Consumes the builder and constructs a [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_position_estimate::GetPositionEstimateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_position_estimate::GetPositionEstimateInput {
-                wi_fi_access_points: self.wi_fi_access_points,
-                cell_towers: self.cell_towers,
-                ip: self.ip,
-                gnss: self.gnss,
-                timestamp: self.timestamp,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_position_estimate::GetPositionEstimateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_position_estimate::GetPositionEstimateInput {
+            wi_fi_access_points: self.wi_fi_access_points,
+            cell_towers: self.cell_towers,
+            ip: self.ip,
+            gnss: self.gnss,
+            timestamp: self.timestamp,
+        })
     }
 }

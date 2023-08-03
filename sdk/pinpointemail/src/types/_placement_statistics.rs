@@ -51,9 +51,7 @@ impl PlacementStatistics {
 
 /// A builder for [`PlacementStatistics`](crate::types::PlacementStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementStatisticsBuilder {
     pub(crate) inbox_percentage: ::std::option::Option<f64>,
     pub(crate) spam_percentage: ::std::option::Option<f64>,

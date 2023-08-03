@@ -10,10 +10,7 @@ impl CreateScriptInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_script::CreateScriptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_script::CreateScriptError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_script();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateScriptFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_script::CreateScript,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_script::CreateScript, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateScriptFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateScriptFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_script::CreateScript,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_script::CreateScript, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError>,
     > {
         self.customize_middleware().await
@@ -122,17 +110,12 @@ impl CreateScriptFluentBuilder {
         self
     }
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn set_dag_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
-    ) -> Self {
+    pub fn set_dag_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>) -> Self {
         self.inner = self.inner.set_dag_nodes(input);
         self
     }
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn get_dag_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
+    pub fn get_dag_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
         self.inner.get_dag_nodes()
     }
     /// Appends an item to `DagEdges`.
@@ -145,17 +128,12 @@ impl CreateScriptFluentBuilder {
         self
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn set_dag_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
-    ) -> Self {
+    pub fn set_dag_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>) -> Self {
         self.inner = self.inner.set_dag_edges(input);
         self
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn get_dag_edges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
+    pub fn get_dag_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
         self.inner.get_dag_edges()
     }
     /// <p>The programming language of the resulting code from the DAG.</p>

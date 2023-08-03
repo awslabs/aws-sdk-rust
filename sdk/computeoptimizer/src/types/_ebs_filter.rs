@@ -41,9 +41,7 @@ impl EbsFilter {
 
 /// A builder for [`EbsFilter`](crate::types::EbsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EbsFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -89,10 +87,7 @@ impl EbsFilterBuilder {
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

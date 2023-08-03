@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for AdminUpdateUserAttributesOutput {
 }
 impl AdminUpdateUserAttributesOutput {
     /// Creates a new builder-style object to manufacture [`AdminUpdateUserAttributesOutput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput).
-    pub fn builder() -> crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesOutputBuilder {
         crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminUpdateUserAttributesOutput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminUpdateUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl AdminUpdateUserAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminUpdateUserAttributesOutput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput {
+    pub fn build(self) -> crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput {
         crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput {
             _request_id: self._request_id,
         }

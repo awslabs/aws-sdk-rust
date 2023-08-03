@@ -19,9 +19,7 @@ impl DeregisterTypeOutput {
 
 /// A builder for [`DeregisterTypeOutput`](crate::operation::deregister_type::DeregisterTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTypeOutputBuilder {
     _request_id: Option<String>,
 }

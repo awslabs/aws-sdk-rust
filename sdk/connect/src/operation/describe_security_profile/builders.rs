@@ -27,8 +27,7 @@ impl DescribeSecurityProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder,
+    inner: crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder,
 }
 impl DescribeSecurityProfileFluentBuilder {
     /// Creates a new `DescribeSecurityProfile`.
@@ -39,10 +38,7 @@ impl DescribeSecurityProfileFluentBuilder {
         }
     }
     /// Access the DescribeSecurityProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeSecurityProfileFluentBuilder {
             crate::operation::describe_security_profile::DescribeSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_profile::DescribeSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_profile::DescribeSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_profile::DescribeSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_profile::DescribeSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_profile::DescribeSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_profile::DescribeSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_profile::DescribeSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_profile::DescribeSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl DescribeSecurityProfileFluentBuilder {
             crate::operation::describe_security_profile::DescribeSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_profile::DescribeSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_profile::DescribeSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn security_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_id(input.into());
         self
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn set_security_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_id(input);
         self
     }

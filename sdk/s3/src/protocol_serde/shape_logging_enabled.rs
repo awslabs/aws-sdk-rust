@@ -63,10 +63,7 @@ pub fn ser_logging_enabled(
         for list_item_6 in var_5 {
             {
                 let inner_writer = inner_writer.start_el("Grant");
-                crate::protocol_serde::shape_target_grant::ser_target_grant(
-                    list_item_6,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_target_grant::ser_target_grant(list_item_6, inner_writer)?
             }
         }
     }

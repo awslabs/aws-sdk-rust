@@ -17,8 +17,7 @@ pub struct DeleteAppInputSourceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
     #[doc(hidden)]
-    pub eks_source_cluster_namespace:
-        ::std::option::Option<crate::types::EksSourceClusterNamespace>,
+    pub eks_source_cluster_namespace: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
 }
 impl DeleteAppInputSourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -38,32 +37,26 @@ impl DeleteAppInputSourceInput {
         self.client_token.as_deref()
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn eks_source_cluster_namespace(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EksSourceClusterNamespace> {
+    pub fn eks_source_cluster_namespace(&self) -> ::std::option::Option<&crate::types::EksSourceClusterNamespace> {
         self.eks_source_cluster_namespace.as_ref()
     }
 }
 impl DeleteAppInputSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInputSourceInput`](crate::operation::delete_app_input_source::DeleteAppInputSourceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_input_source::builders::DeleteAppInputSourceInputBuilder {
+    pub fn builder() -> crate::operation::delete_app_input_source::builders::DeleteAppInputSourceInputBuilder {
         crate::operation::delete_app_input_source::builders::DeleteAppInputSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppInputSourceInput`](crate::operation::delete_app_input_source::DeleteAppInputSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppInputSourceInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) terraform_source: ::std::option::Option<crate::types::TerraformSource>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) eks_source_cluster_namespace:
-        ::std::option::Option<crate::types::EksSourceClusterNamespace>,
+    pub(crate) eks_source_cluster_namespace: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
 }
 impl DeleteAppInputSourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -100,10 +93,7 @@ impl DeleteAppInputSourceInputBuilder {
         self
     }
     /// <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.</p>
-    pub fn set_terraform_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TerraformSource>,
-    ) -> Self {
+    pub fn set_terraform_source(mut self, input: ::std::option::Option<crate::types::TerraformSource>) -> Self {
         self.terraform_source = input;
         self
     }
@@ -126,42 +116,30 @@ impl DeleteAppInputSourceInputBuilder {
         &self.client_token
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn eks_source_cluster_namespace(
-        mut self,
-        input: crate::types::EksSourceClusterNamespace,
-    ) -> Self {
+    pub fn eks_source_cluster_namespace(mut self, input: crate::types::EksSourceClusterNamespace) -> Self {
         self.eks_source_cluster_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn set_eks_source_cluster_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
-    ) -> Self {
+    pub fn set_eks_source_cluster_namespace(mut self, input: ::std::option::Option<crate::types::EksSourceClusterNamespace>) -> Self {
         self.eks_source_cluster_namespace = input;
         self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn get_eks_source_cluster_namespace(
-        &self,
-    ) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
+    pub fn get_eks_source_cluster_namespace(&self) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
         &self.eks_source_cluster_namespace
     }
     /// Consumes the builder and constructs a [`DeleteAppInputSourceInput`](crate::operation::delete_app_input_source::DeleteAppInputSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_input_source::DeleteAppInputSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_input_source::DeleteAppInputSourceInput {
-                app_arn: self.app_arn,
-                source_arn: self.source_arn,
-                terraform_source: self.terraform_source,
-                client_token: self.client_token,
-                eks_source_cluster_namespace: self.eks_source_cluster_namespace,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_app_input_source::DeleteAppInputSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_app_input_source::DeleteAppInputSourceInput {
+            app_arn: self.app_arn,
+            source_arn: self.source_arn,
+            terraform_source: self.terraform_source,
+            client_token: self.client_token,
+            eks_source_cluster_namespace: self.eks_source_cluster_namespace,
+        })
     }
 }

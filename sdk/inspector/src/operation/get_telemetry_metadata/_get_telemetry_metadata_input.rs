@@ -15,34 +15,25 @@ impl GetTelemetryMetadataInput {
 }
 impl GetTelemetryMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
+    pub fn builder() -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
         crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTelemetryMetadataInputBuilder {
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTelemetryMetadataInputBuilder {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_run_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetTelemetryMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput {
-                assessment_run_arn: self.assessment_run_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput {
+            assessment_run_arn: self.assessment_run_arn,
+        })
     }
 }

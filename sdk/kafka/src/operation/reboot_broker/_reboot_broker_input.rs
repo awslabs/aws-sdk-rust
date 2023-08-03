@@ -30,9 +30,7 @@ impl RebootBrokerInput {
 
 /// A builder for [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootBrokerInputBuilder {
     pub(crate) broker_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl RebootBrokerInputBuilder {
         self
     }
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
-    pub fn set_broker_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_broker_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.broker_ids = input;
         self
     }
@@ -76,12 +71,7 @@ impl RebootBrokerInputBuilder {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_broker::RebootBrokerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_broker::RebootBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_broker::RebootBrokerInput {
             broker_ids: self.broker_ids,
             cluster_arn: self.cluster_arn,

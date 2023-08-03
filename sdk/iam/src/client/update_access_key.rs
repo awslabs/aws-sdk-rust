@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`status(StatusType)`](crate::operation::update_access_key::builders::UpdateAccessKeyFluentBuilder::status) / [`set_status(Option<StatusType>)`](crate::operation::update_access_key::builders::UpdateAccessKeyFluentBuilder::set_status): <p> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</p>
     /// - On success, responds with [`UpdateAccessKeyOutput`](crate::operation::update_access_key::UpdateAccessKeyOutput)
     /// - On failure, responds with [`SdkError<UpdateAccessKeyError>`](crate::operation::update_access_key::UpdateAccessKeyError)
-    pub fn update_access_key(
-        &self,
-    ) -> crate::operation::update_access_key::builders::UpdateAccessKeyFluentBuilder {
-        crate::operation::update_access_key::builders::UpdateAccessKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_access_key(&self) -> crate::operation::update_access_key::builders::UpdateAccessKeyFluentBuilder {
+        crate::operation::update_access_key::builders::UpdateAccessKeyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -56,9 +56,7 @@ impl DeleteAnalysisOutput {
 
 /// A builder for [`DeleteAnalysisOutput`](crate::operation::delete_analysis::DeleteAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnalysisOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -116,10 +114,7 @@ impl DeleteAnalysisOutputBuilder {
         self
     }
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-    pub fn set_deletion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_time = input;
         self
     }

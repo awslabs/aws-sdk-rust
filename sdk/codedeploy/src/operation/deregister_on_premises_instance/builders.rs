@@ -26,7 +26,7 @@ impl DeregisterOnPremisesInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder,
+    inner: crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder,
 }
 impl DeregisterOnPremisesInstanceFluentBuilder {
     /// Creates a new `DeregisterOnPremisesInstance`.
@@ -37,7 +37,7 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
         }
     }
     /// Access the DeregisterOnPremisesInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
             crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
             crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the on-premises instance to deregister.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the on-premises instance to deregister.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }

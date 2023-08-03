@@ -10,10 +10,7 @@ impl DeleteSourceServerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_source_server::DeleteSourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_server::DeleteSourceServerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_server::DeleteSourceServerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_source_server();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteSourceServerFluentBuilder {
         }
     }
     /// Access the DeleteSourceServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_source_server::builders::DeleteSourceServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_source_server::builders::DeleteSourceServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteSourceServerFluentBuilder {
             crate::operation::delete_source_server::DeleteSourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_server::DeleteSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_server::DeleteSourceServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteSourceServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteSourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_source_server::DeleteSourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_server::DeleteSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_server::DeleteSourceServerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteSourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_source_server::DeleteSourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_server::DeleteSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_server::DeleteSourceServerError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteSourceServerFluentBuilder {
             crate::operation::delete_source_server::DeleteSourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_server::DeleteSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_server::DeleteSourceServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Request to delete Source Server from service by Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Request to delete Source Server from service by Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

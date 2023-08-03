@@ -22,17 +22,14 @@ impl DescribeBotVersionInput {
 }
 impl DescribeBotVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder {
+    pub fn builder() -> crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder {
         crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotVersionInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DescribeBotVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot_version::DescribeBotVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_bot_version::DescribeBotVersionInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_bot_version::DescribeBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_bot_version::DescribeBotVersionInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+        })
     }
 }

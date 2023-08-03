@@ -37,10 +37,7 @@ impl CreateDetectorVersionFluentBuilder {
         }
     }
     /// Access the CreateDetectorVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateDetectorVersionFluentBuilder {
             crate::operation::create_detector_version::CreateDetectorVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_detector_version::CreateDetectorVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateDetectorVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateDetectorVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_detector_version::CreateDetectorVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateDetectorVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_detector_version::CreateDetectorVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateDetectorVersionFluentBuilder {
             crate::operation::create_detector_version::CreateDetectorVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_detector_version::CreateDetectorVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -156,25 +142,17 @@ impl CreateDetectorVersionFluentBuilder {
     /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
     ///
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn external_model_endpoints(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_model_endpoints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_model_endpoints(input.into());
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn set_external_model_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_external_model_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_external_model_endpoints(input);
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn get_external_model_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_external_model_endpoints()
     }
     /// Appends an item to `rules`.
@@ -187,10 +165,7 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -208,17 +183,12 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn set_model_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
-    ) -> Self {
+    pub fn set_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>) -> Self {
         self.inner = self.inner.set_model_versions(input);
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn get_model_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
+    pub fn get_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
         self.inner.get_model_versions()
     }
     /// <p>The rule execution mode for the rules included in the detector version.</p>
@@ -235,10 +205,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-    pub fn set_rule_execution_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleExecutionMode>,
-    ) -> Self {
+    pub fn set_rule_execution_mode(mut self, input: ::std::option::Option<crate::types::RuleExecutionMode>) -> Self {
         self.inner = self.inner.set_rule_execution_mode(input);
         self
     }
@@ -247,9 +214,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-    pub fn get_rule_execution_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleExecutionMode> {
+    pub fn get_rule_execution_mode(&self) -> &::std::option::Option<crate::types::RuleExecutionMode> {
         self.inner.get_rule_execution_mode()
     }
     /// Appends an item to `tags`.
@@ -262,10 +227,7 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

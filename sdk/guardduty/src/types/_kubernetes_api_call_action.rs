@@ -65,9 +65,7 @@ impl KubernetesApiCallAction {
 
 /// A builder for [`KubernetesApiCallAction`](crate::types::KubernetesApiCallAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesApiCallActionBuilder {
     pub(crate) request_uri: ::std::option::Option<::std::string::String>,
     pub(crate) verb: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl KubernetesApiCallActionBuilder {
         self
     }
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    pub fn set_source_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_ips = input;
         self
     }
@@ -149,10 +144,7 @@ impl KubernetesApiCallActionBuilder {
         self
     }
     /// <p>Contains information about the remote IP address of the connection.</p>
-    pub fn set_remote_ip_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RemoteIpDetails>,
-    ) -> Self {
+    pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::RemoteIpDetails>) -> Self {
         self.remote_ip_details = input;
         self
     }

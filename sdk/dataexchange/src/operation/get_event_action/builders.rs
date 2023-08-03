@@ -10,10 +10,7 @@ impl GetEventActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_event_action::GetEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_action::GetEventActionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_action::GetEventActionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_event_action();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetEventActionFluentBuilder {
         }
     }
     /// Access the GetEventAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_event_action::builders::GetEventActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_event_action::builders::GetEventActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetEventActionFluentBuilder {
             crate::operation::get_event_action::GetEventAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_action::GetEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_action::GetEventActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetEventActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetEventActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_action::GetEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_action::GetEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_action::GetEventActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetEventActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_action::GetEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_action::GetEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_action::GetEventActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetEventActionFluentBuilder {
             crate::operation::get_event_action::GetEventAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_action::GetEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_action::GetEventActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_action_id(input.into());
         self
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn set_event_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_action_id(input);
         self
     }

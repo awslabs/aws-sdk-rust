@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeManagedProductsByVendorOutput`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput) with field(s):
     ///   - [`managed_products(Option<Vec<ManagedProductDescriptor>>)`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput::managed_products): <p>High-level information for the managed rule groups owned by the specified vendor. </p>
     /// - On failure, responds with [`SdkError<DescribeManagedProductsByVendorError>`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorError)
-    pub fn describe_managed_products_by_vendor(&self) -> crate::operation::describe_managed_products_by_vendor::builders::DescribeManagedProductsByVendorFluentBuilder{
+    pub fn describe_managed_products_by_vendor(
+        &self,
+    ) -> crate::operation::describe_managed_products_by_vendor::builders::DescribeManagedProductsByVendorFluentBuilder {
         crate::operation::describe_managed_products_by_vendor::builders::DescribeManagedProductsByVendorFluentBuilder::new(self.handle.clone())
     }
 }

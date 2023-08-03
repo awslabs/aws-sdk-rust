@@ -74,17 +74,14 @@ impl DescribeAddressesInput {
 }
 impl DescribeAddressesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
-    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
         crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -140,10 +137,7 @@ impl DescribeAddressesInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -183,10 +177,7 @@ impl DescribeAddressesInputBuilder {
     }
     /// <p>One or more Elastic IP addresses.</p>
     /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn set_public_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.public_ips = input;
         self
     }
@@ -200,27 +191,19 @@ impl DescribeAddressesInputBuilder {
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
     /// <p>Information about the allocation IDs.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
         v.push(input.into());
         self.allocation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the allocation IDs.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allocation_ids = input;
         self
     }
     /// <p>Information about the allocation IDs.</p>
-    pub fn get_allocation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allocation_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -240,17 +223,12 @@ impl DescribeAddressesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addresses::DescribeAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_addresses::DescribeAddressesInput {
-                filters: self.filters,
-                public_ips: self.public_ips,
-                allocation_ids: self.allocation_ids,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_addresses::DescribeAddressesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_addresses::DescribeAddressesInput {
+            filters: self.filters,
+            public_ips: self.public_ips,
+            allocation_ids: self.allocation_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

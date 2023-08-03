@@ -23,18 +23,14 @@ impl DeleteGatewayResponseInput {
 }
 impl DeleteGatewayResponseInput {
     /// Creates a new builder-style object to manufacture [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
-    pub fn builder(
-    ) -> crate::operation::delete_gateway_response::builders::DeleteGatewayResponseInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_gateway_response::builders::DeleteGatewayResponseInputBuilder {
         crate::operation::delete_gateway_response::builders::DeleteGatewayResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGatewayResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,
@@ -60,10 +56,7 @@ impl DeleteGatewayResponseInputBuilder {
         self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
         self.response_type = input;
         self
     }
@@ -74,15 +67,11 @@ impl DeleteGatewayResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_gateway_response::DeleteGatewayResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_gateway_response::DeleteGatewayResponseInput {
-                rest_api_id: self.rest_api_id,
-                response_type: self.response_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_gateway_response::DeleteGatewayResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_gateway_response::DeleteGatewayResponseInput {
+            rest_api_id: self.rest_api_id,
+            response_type: self.response_type,
+        })
     }
 }

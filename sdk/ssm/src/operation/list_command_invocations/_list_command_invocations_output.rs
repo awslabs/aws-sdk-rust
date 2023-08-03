@@ -5,8 +5,7 @@
 pub struct ListCommandInvocationsOutput {
     /// <p>(Optional) A list of all invocations. </p>
     #[doc(hidden)]
-    pub command_invocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
+    pub command_invocations: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCommandInvocationsOutput {
 }
 impl ListCommandInvocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_command_invocations::builders::ListCommandInvocationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_command_invocations::builders::ListCommandInvocationsOutputBuilder {
         crate::operation::list_command_invocations::builders::ListCommandInvocationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCommandInvocationsOutputBuilder {
-    pub(crate) command_invocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
+    pub(crate) command_invocations: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListCommandInvocationsOutputBuilder {
         self
     }
     /// <p>(Optional) A list of all invocations. </p>
-    pub fn set_command_invocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
-    ) -> Self {
+    pub fn set_command_invocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>) -> Self {
         self.command_invocations = input;
         self
     }
     /// <p>(Optional) A list of all invocations. </p>
-    pub fn get_command_invocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>> {
+    pub fn get_command_invocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>> {
         &self.command_invocations
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>

@@ -13,9 +13,7 @@ pub struct GetOriginAccessControlOutput {
 }
 impl GetOriginAccessControlOutput {
     /// <p>Contains an origin access control, including its unique identifier.</p>
-    pub fn origin_access_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControl> {
+    pub fn origin_access_control(&self) -> ::std::option::Option<&crate::types::OriginAccessControl> {
         self.origin_access_control.as_ref()
     }
     /// <p>The version identifier for the current version of the origin access control.</p>
@@ -30,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetOriginAccessControlOutput {
 }
 impl GetOriginAccessControlOutput {
     /// Creates a new builder-style object to manufacture [`GetOriginAccessControlOutput`](crate::operation::get_origin_access_control::GetOriginAccessControlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_origin_access_control::builders::GetOriginAccessControlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_origin_access_control::builders::GetOriginAccessControlOutputBuilder {
         crate::operation::get_origin_access_control::builders::GetOriginAccessControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOriginAccessControlOutput`](crate::operation::get_origin_access_control::GetOriginAccessControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOriginAccessControlOutputBuilder {
     pub(crate) origin_access_control: ::std::option::Option<crate::types::OriginAccessControl>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -54,17 +48,12 @@ impl GetOriginAccessControlOutputBuilder {
         self
     }
     /// <p>Contains an origin access control, including its unique identifier.</p>
-    pub fn set_origin_access_control(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControl>,
-    ) -> Self {
+    pub fn set_origin_access_control(mut self, input: ::std::option::Option<crate::types::OriginAccessControl>) -> Self {
         self.origin_access_control = input;
         self
     }
     /// <p>Contains an origin access control, including its unique identifier.</p>
-    pub fn get_origin_access_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControl> {
+    pub fn get_origin_access_control(&self) -> &::std::option::Option<crate::types::OriginAccessControl> {
         &self.origin_access_control
     }
     /// <p>The version identifier for the current version of the origin access control.</p>
@@ -91,9 +80,7 @@ impl GetOriginAccessControlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOriginAccessControlOutput`](crate::operation::get_origin_access_control::GetOriginAccessControlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_origin_access_control::GetOriginAccessControlOutput {
+    pub fn build(self) -> crate::operation::get_origin_access_control::GetOriginAccessControlOutput {
         crate::operation::get_origin_access_control::GetOriginAccessControlOutput {
             origin_access_control: self.origin_access_control,
             e_tag: self.e_tag,

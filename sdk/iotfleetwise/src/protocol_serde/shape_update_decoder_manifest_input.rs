@@ -15,10 +15,7 @@ pub fn ser_update_decoder_manifest_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_update_decoder_manifest_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -54,10 +48,7 @@ pub fn ser_update_decoder_manifest_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_network_interface::ser_network_interface(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -69,10 +60,7 @@ pub fn ser_update_decoder_manifest_input(
             {
                 #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_network_interface::ser_network_interface(
-                    &mut object_21,
-                    item_20,
-                )?;
+                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }

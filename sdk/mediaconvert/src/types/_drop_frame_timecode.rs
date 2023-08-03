@@ -38,13 +38,7 @@
 /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DropFrameTimecode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DropFrameTimecode {
         match s {
             "DISABLED" => DropFrameTimecode::Disabled,
             "ENABLED" => DropFrameTimecode::Enabled,
-            other => {
-                DropFrameTimecode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DropFrameTimecode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

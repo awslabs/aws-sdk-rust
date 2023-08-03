@@ -47,9 +47,7 @@ impl ListenerTls {
 
 /// A builder for [`ListenerTls`](crate::types::ListenerTls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerTlsBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ListenerTlsMode>,
     pub(crate) certificate: ::std::option::Option<crate::types::ListenerTlsCertificate>,
@@ -91,10 +89,7 @@ impl ListenerTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerTlsCertificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::ListenerTlsCertificate>) -> Self {
         self.certificate = input;
         self
     }
@@ -108,17 +103,12 @@ impl ListenerTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn set_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerTlsValidationContext>,
-    ) -> Self {
+    pub fn set_validation(mut self, input: ::std::option::Option<crate::types::ListenerTlsValidationContext>) -> Self {
         self.validation = input;
         self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn get_validation(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListenerTlsValidationContext> {
+    pub fn get_validation(&self) -> &::std::option::Option<crate::types::ListenerTlsValidationContext> {
         &self.validation
     }
     /// Consumes the builder and constructs a [`ListenerTls`](crate::types::ListenerTls).

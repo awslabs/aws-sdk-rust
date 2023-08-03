@@ -184,9 +184,7 @@ impl ScalingActivity {
 
 /// A builder for [`ScalingActivity`](crate::types::ScalingActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingActivityBuilder {
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
@@ -199,8 +197,7 @@ pub struct ScalingActivityBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
-    pub(crate) not_scaled_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
+    pub(crate) not_scaled_reasons: ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
 }
 impl ScalingActivityBuilder {
     /// <p>The unique identifier of the scaling activity.</p>
@@ -223,10 +220,7 @@ impl ScalingActivityBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -357,10 +351,7 @@ impl ScalingActivityBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -388,9 +379,7 @@ impl ScalingActivityBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
@@ -427,10 +416,7 @@ impl ScalingActivityBuilder {
         self
     }
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -444,10 +430,7 @@ impl ScalingActivityBuilder {
         self
     }
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -461,32 +444,21 @@ impl ScalingActivityBuilder {
         self
     }
     /// <p>Indicates the status of the scaling activity.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ScalingActivityStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>Indicates the status of the scaling activity.</p>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalingActivityStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ScalingActivityStatusCode> {
         &self.status_code
     }
     /// <p>A simple message about the current status of the scaling activity.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple message about the current status of the scaling activity.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -520,17 +492,12 @@ impl ScalingActivityBuilder {
         self
     }
     /// <p>Machine-readable data that describes the reason for a not scaled activity. Only available when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> includes not scaled activities.</p>
-    pub fn set_not_scaled_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
-    ) -> Self {
+    pub fn set_not_scaled_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>) -> Self {
         self.not_scaled_reasons = input;
         self
     }
     /// <p>Machine-readable data that describes the reason for a not scaled activity. Only available when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> includes not scaled activities.</p>
-    pub fn get_not_scaled_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>> {
+    pub fn get_not_scaled_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>> {
         &self.not_scaled_reasons
     }
     /// Consumes the builder and constructs a [`ScalingActivity`](crate::types::ScalingActivity).

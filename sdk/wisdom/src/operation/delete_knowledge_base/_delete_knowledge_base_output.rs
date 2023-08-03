@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteKnowledgeBaseOutput {
 }
 impl DeleteKnowledgeBaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKnowledgeBaseOutput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder {
-        crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder {
+        crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteKnowledgeBaseOutput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKnowledgeBaseOutputBuilder {
     _request_id: Option<String>,
 }

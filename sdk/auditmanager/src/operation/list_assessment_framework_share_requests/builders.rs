@@ -5,16 +5,16 @@ pub use crate::operation::list_assessment_framework_share_requests::_list_assess
 
 impl ListAssessmentFrameworkShareRequestsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_assessment_framework_share_requests();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder,
+    inner: crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder,
 }
 impl ListAssessmentFrameworkShareRequestsFluentBuilder {
     /// Creates a new `ListAssessmentFrameworkShareRequests`.
@@ -37,15 +37,22 @@ impl ListAssessmentFrameworkShareRequestsFluentBuilder {
         }
     }
     /// Access the ListAssessmentFrameworkShareRequests as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequests, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequests,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl ListAssessmentFrameworkShareRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +89,38 @@ impl ListAssessmentFrameworkShareRequestsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequests, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequests,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator{
-        crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator {
+        crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
@@ -106,10 +128,7 @@ impl ListAssessmentFrameworkShareRequestsFluentBuilder {
         self
     }
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
-    pub fn set_request_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareRequestType>,
-    ) -> Self {
+    pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::ShareRequestType>) -> Self {
         self.inner = self.inner.set_request_type(input);
         self
     }

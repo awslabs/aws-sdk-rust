@@ -9,7 +9,8 @@ pub fn de_accept_vpc_endpoint_connections_http_error(
     crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError::generic(generic))
@@ -27,16 +28,21 @@ pub fn de_accept_vpc_endpoint_connections_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder::default();
-        output = crate::protocol_serde::shape_accept_vpc_endpoint_connections::de_accept_vpc_endpoint_connections(_response_body, output).map_err(crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_accept_vpc_endpoint_connections::de_accept_vpc_endpoint_connections(_response_body, output)
+            .map_err(crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_accept_vpc_endpoint_connections(inp: &[u8], mut builder: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder) -> Result<crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_accept_vpc_endpoint_connections(
+    inp: &[u8],
+    mut builder: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder,
+) -> Result<
+    crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

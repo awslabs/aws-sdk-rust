@@ -38,13 +38,7 @@
 /// Burn In Teletext Grid Control
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurnInTeletextGridControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for BurnInTeletextGridControl {
         match s {
             "FIXED" => BurnInTeletextGridControl::Fixed,
             "SCALED" => BurnInTeletextGridControl::Scaled,
-            other => BurnInTeletextGridControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BurnInTeletextGridControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

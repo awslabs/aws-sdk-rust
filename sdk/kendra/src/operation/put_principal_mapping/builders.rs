@@ -40,9 +40,7 @@ impl PutPrincipalMappingFluentBuilder {
         }
     }
     /// Access the PutPrincipalMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_principal_mapping::builders::PutPrincipalMappingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_principal_mapping::builders::PutPrincipalMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl PutPrincipalMappingFluentBuilder {
             crate::operation::put_principal_mapping::PutPrincipalMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_principal_mapping::PutPrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_principal_mapping::PutPrincipalMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl PutPrincipalMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl PutPrincipalMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_principal_mapping::PutPrincipalMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_principal_mapping::PutPrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_principal_mapping::PutPrincipalMappingError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl PutPrincipalMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_principal_mapping::PutPrincipalMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_principal_mapping::PutPrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_principal_mapping::PutPrincipalMappingError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl PutPrincipalMappingFluentBuilder {
             crate::operation::put_principal_mapping::PutPrincipalMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_principal_mapping::PutPrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_principal_mapping::PutPrincipalMappingError>,
     > {
         self.customize_middleware().await
     }
@@ -141,19 +128,13 @@ impl PutPrincipalMappingFluentBuilder {
     }
     /// <p>The identifier of the data source you want to map users to their groups.</p>
     /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The identifier of the data source you want to map users to their groups.</p>
     /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
@@ -186,10 +167,7 @@ impl PutPrincipalMappingFluentBuilder {
     /// <p>The list that contains your users or sub groups that belong the same group.</p>
     /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
-    pub fn set_group_members(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupMembers>,
-    ) -> Self {
+    pub fn set_group_members(mut self, input: ::std::option::Option<crate::types::GroupMembers>) -> Self {
         self.inner = self.inner.set_group_members(input);
         self
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`verified_for_sending_status(bool)`](crate::operation::create_email_identity::CreateEmailIdentityOutput::verified_for_sending_status): <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     ///   - [`dkim_attributes(Option<DkimAttributes>)`](crate::operation::create_email_identity::CreateEmailIdentityOutput::dkim_attributes): <p>An object that contains information about the DKIM attributes for the identity.</p>
     /// - On failure, responds with [`SdkError<CreateEmailIdentityError>`](crate::operation::create_email_identity::CreateEmailIdentityError)
-    pub fn create_email_identity(
-        &self,
-    ) -> crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder {
-        crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_email_identity(&self) -> crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder {
+        crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::new(self.handle.clone())
     }
 }

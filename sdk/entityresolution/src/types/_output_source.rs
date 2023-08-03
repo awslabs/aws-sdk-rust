@@ -44,9 +44,7 @@ impl OutputSource {
 
 /// A builder for [`OutputSource`](crate::types::OutputSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputSourceBuilder {
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>,
@@ -55,18 +53,12 @@ pub struct OutputSourceBuilder {
 }
 impl OutputSourceBuilder {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn output_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn set_output_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_path = input;
         self
     }
@@ -86,17 +78,12 @@ impl OutputSourceBuilder {
         self
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>,
-    ) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>) -> Self {
         self.output = input;
         self
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub fn get_output(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>> {
+    pub fn get_output(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>> {
         &self.output
     }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateParticipantTokenOutput {
 }
 impl CreateParticipantTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantTokenOutput`](crate::operation::create_participant_token::CreateParticipantTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::create_participant_token::builders::CreateParticipantTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_participant_token::builders::CreateParticipantTokenOutputBuilder {
         crate::operation::create_participant_token::builders::CreateParticipantTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParticipantTokenOutput`](crate::operation::create_participant_token::CreateParticipantTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParticipantTokenOutputBuilder {
     pub(crate) participant_token: ::std::option::Option<crate::types::ParticipantToken>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateParticipantTokenOutputBuilder {
         self
     }
     /// <p>The participant token that was created.</p>
-    pub fn set_participant_token(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantToken>,
-    ) -> Self {
+    pub fn set_participant_token(mut self, input: ::std::option::Option<crate::types::ParticipantToken>) -> Self {
         self.participant_token = input;
         self
     }

@@ -27,9 +27,7 @@ pub struct Evidence {
     pub resources_included: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
     #[doc(hidden)]
     pub iam_id: ::std::option::Option<::std::string::String>,
@@ -87,11 +85,7 @@ impl Evidence {
         self.resources_included.as_deref()
     }
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
@@ -137,9 +131,7 @@ impl Evidence {
 
 /// A builder for [`Evidence`](crate::types::Evidence).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvidenceBuilder {
     pub(crate) data_source: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_aws_account_id: ::std::option::Option<::std::string::String>,
@@ -148,9 +140,7 @@ pub struct EvidenceBuilder {
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_by_type: ::std::option::Option<::std::string::String>,
     pub(crate) resources_included: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) iam_id: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_check: ::std::option::Option<::std::string::String>,
     pub(crate) aws_organization: ::std::option::Option<::std::string::String>,
@@ -175,18 +165,12 @@ impl EvidenceBuilder {
         &self.data_source
     }
     /// <p> The identifier for the Amazon Web Services account. </p>
-    pub fn evidence_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the Amazon Web Services account. </p>
-    pub fn set_evidence_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_aws_account_id = input;
         self
     }
@@ -237,18 +221,12 @@ impl EvidenceBuilder {
         &self.event_name
     }
     /// <p> The type of automated evidence. </p>
-    pub fn evidence_by_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_by_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_by_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of automated evidence. </p>
-    pub fn set_evidence_by_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_by_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_by_type = input;
         self
     }
@@ -268,17 +246,12 @@ impl EvidenceBuilder {
         self
     }
     /// <p> The list of resources that are assessed to generate the evidence. </p>
-    pub fn set_resources_included(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources_included(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources_included = input;
         self
     }
     /// <p> The list of resources that are assessed to generate the evidence. </p>
-    pub fn get_resources_included(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources_included(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.resources_included
     }
     /// Adds a key-value pair to `attributes`.
@@ -286,32 +259,19 @@ impl EvidenceBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p> The unique identifier for the user or role that's associated with the evidence. </p>
@@ -334,10 +294,7 @@ impl EvidenceBuilder {
     /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
     /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
     /// </ul>
-    pub fn compliance_check(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_check(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_check = ::std::option::Option::Some(input.into());
         self
     }
@@ -347,10 +304,7 @@ impl EvidenceBuilder {
     /// <li> <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
     /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
     /// </ul>
-    pub fn set_compliance_check(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_check = input;
         self
     }
@@ -364,18 +318,12 @@ impl EvidenceBuilder {
         &self.compliance_check
     }
     /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
-    pub fn aws_organization(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_organization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_organization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
-    pub fn set_aws_organization(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_organization = input;
         self
     }
@@ -384,18 +332,12 @@ impl EvidenceBuilder {
         &self.aws_organization
     }
     /// <p> The identifier for the Amazon Web Services account. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the Amazon Web Services account. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -404,18 +346,12 @@ impl EvidenceBuilder {
         &self.aws_account_id
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_folder_id = input;
         self
     }
@@ -438,18 +374,12 @@ impl EvidenceBuilder {
         &self.id
     }
     /// <p> Specifies whether the evidence is included in the assessment report. </p>
-    pub fn assessment_report_selection(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_report_selection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_report_selection = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies whether the evidence is included in the assessment report. </p>
-    pub fn set_assessment_report_selection(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_report_selection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_report_selection = input;
         self
     }

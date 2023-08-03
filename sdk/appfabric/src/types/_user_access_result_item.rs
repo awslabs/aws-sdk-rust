@@ -177,18 +177,12 @@ impl UserAccessResultItemBuilder {
         &self.tenant_id
     }
     /// <p>The display name of the tenant.</p>
-    pub fn tenant_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tenant_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the tenant.</p>
-    pub fn set_tenant_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tenant_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_display_name = input;
         self
     }
@@ -230,10 +224,7 @@ impl UserAccessResultItemBuilder {
     /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
     /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
-    pub fn set_result_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultStatus>,
-    ) -> Self {
+    pub fn set_result_status(mut self, input: ::std::option::Option<crate::types::ResultStatus>) -> Self {
         self.result_status = input;
         self
     }
@@ -277,18 +268,12 @@ impl UserAccessResultItemBuilder {
         &self.user_id
     }
     /// <p>The full name of the user.</p>
-    pub fn user_full_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_full_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_full_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name of the user.</p>
-    pub fn set_user_full_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_full_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_full_name = input;
         self
     }
@@ -297,18 +282,12 @@ impl UserAccessResultItemBuilder {
         &self.user_full_name
     }
     /// <p>The first name of the user.</p>
-    pub fn user_first_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn set_user_first_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_first_name = input;
         self
     }
@@ -317,18 +296,12 @@ impl UserAccessResultItemBuilder {
         &self.user_first_name
     }
     /// <p>The last name of the user.</p>
-    pub fn user_last_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last name of the user.</p>
-    pub fn set_user_last_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_last_name = input;
         self
     }

@@ -29,9 +29,7 @@ impl ListAccessorsInput {
 
 /// A builder for [`ListAccessorsInput`](crate::operation::list_accessors::ListAccessorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ListAccessorsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessorsInput`](crate::operation::list_accessors::ListAccessorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_accessors::ListAccessorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_accessors::ListAccessorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accessors::ListAccessorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

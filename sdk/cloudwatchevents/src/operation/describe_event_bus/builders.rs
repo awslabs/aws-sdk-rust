@@ -10,10 +10,7 @@ impl DescribeEventBusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_event_bus::DescribeEventBusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_bus::DescribeEventBusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_bus::DescribeEventBusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_event_bus();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeEventBusFluentBuilder {
         }
     }
     /// Access the DescribeEventBus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeEventBusFluentBuilder {
             crate::operation::describe_event_bus::DescribeEventBus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_bus::DescribeEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_bus::DescribeEventBusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeEventBusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeEventBusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_bus::DescribeEventBusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_bus::DescribeEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_bus::DescribeEventBusError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeEventBusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_bus::DescribeEventBusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_bus::DescribeEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_bus::DescribeEventBusError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DescribeEventBusFluentBuilder {
             crate::operation::describe_event_bus::DescribeEventBus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_bus::DescribeEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_bus::DescribeEventBusError>,
     > {
         self.customize_middleware().await
     }

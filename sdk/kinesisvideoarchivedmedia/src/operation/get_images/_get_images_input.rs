@@ -28,9 +28,7 @@ pub struct GetImagesInput {
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     #[doc(hidden)]
-    pub format_config: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-    >,
+    pub format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
     #[doc(hidden)]
     pub width_pixels: ::std::option::Option<i32>,
@@ -78,11 +76,7 @@ impl GetImagesInput {
         self.format.as_ref()
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-    > {
+    pub fn format_config(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
         self.format_config.as_ref()
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
@@ -113,9 +107,7 @@ impl GetImagesInput {
 
 /// A builder for [`GetImagesInput`](crate::operation::get_images::GetImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImagesInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -124,9 +116,7 @@ pub struct GetImagesInputBuilder {
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sampling_interval: ::std::option::Option<i32>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
-    pub(crate) format_config: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-    >,
+    pub(crate) format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     pub(crate) width_pixels: ::std::option::Option<i32>,
     pub(crate) height_pixels: ::std::option::Option<i32>,
     pub(crate) max_results: ::std::option::Option<i64>,
@@ -167,17 +157,12 @@ impl GetImagesInputBuilder {
         self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn set_image_selector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageSelectorType>,
-    ) -> Self {
+    pub fn set_image_selector_type(mut self, input: ::std::option::Option<crate::types::ImageSelectorType>) -> Self {
         self.image_selector_type = input;
         self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn get_image_selector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageSelectorType> {
+    pub fn get_image_selector_type(&self) -> &::std::option::Option<crate::types::ImageSelectorType> {
         &self.image_selector_type
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
@@ -186,10 +171,7 @@ impl GetImagesInputBuilder {
         self
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_timestamp = input;
         self
     }
@@ -203,10 +185,7 @@ impl GetImagesInputBuilder {
         self
     }
     /// <p>The end timestamp for the range of images to be generated.</p>
-    pub fn set_end_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_timestamp = input;
         self
     }
@@ -253,11 +232,7 @@ impl GetImagesInputBuilder {
     /// To override the contents of this collection use [`set_format_config`](Self::set_format_config).
     ///
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(
-        mut self,
-        k: crate::types::FormatConfigKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_config(mut self, k: crate::types::FormatConfigKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.format_config.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.format_config = ::std::option::Option::Some(hash_map);
@@ -266,19 +241,13 @@ impl GetImagesInputBuilder {
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     pub fn set_format_config(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     ) -> Self {
         self.format_config = input;
         self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn get_format_config(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-    > {
+    pub fn get_format_config(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
         &self.format_config
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
@@ -344,12 +313,7 @@ impl GetImagesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetImagesInput`](crate::operation::get_images::GetImagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_images::GetImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_images::GetImagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_images::GetImagesInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

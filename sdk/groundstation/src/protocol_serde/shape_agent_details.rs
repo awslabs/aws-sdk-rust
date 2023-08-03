@@ -42,10 +42,7 @@ pub fn ser_agent_details(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_component_version::ser_component_version(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_component_version::ser_component_version(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

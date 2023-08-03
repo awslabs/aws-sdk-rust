@@ -12,8 +12,7 @@ pub struct Scte35SegmentationDescriptor {
     pub segment_num: ::std::option::Option<i32>,
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
     #[doc(hidden)]
-    pub segmentation_cancel_indicator:
-        ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
+    pub segmentation_cancel_indicator: ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
     #[doc(hidden)]
     pub segmentation_duration: ::std::option::Option<i64>,
@@ -41,9 +40,7 @@ pub struct Scte35SegmentationDescriptor {
 }
 impl Scte35SegmentationDescriptor {
     /// Holds the four SCTE-35 delivery restriction parameters.
-    pub fn delivery_restrictions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Scte35DeliveryRestrictions> {
+    pub fn delivery_restrictions(&self) -> ::std::option::Option<&crate::types::Scte35DeliveryRestrictions> {
         self.delivery_restrictions.as_ref()
     }
     /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
@@ -51,9 +48,7 @@ impl Scte35SegmentationDescriptor {
         self.segment_num
     }
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
-    pub fn segmentation_cancel_indicator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Scte35SegmentationCancelIndicator> {
+    pub fn segmentation_cancel_indicator(&self) -> ::std::option::Option<&crate::types::Scte35SegmentationCancelIndicator> {
         self.segmentation_cancel_indicator.as_ref()
     }
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
@@ -98,15 +93,11 @@ impl Scte35SegmentationDescriptor {
 
 /// A builder for [`Scte35SegmentationDescriptor`](crate::types::Scte35SegmentationDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Scte35SegmentationDescriptorBuilder {
-    pub(crate) delivery_restrictions:
-        ::std::option::Option<crate::types::Scte35DeliveryRestrictions>,
+    pub(crate) delivery_restrictions: ::std::option::Option<crate::types::Scte35DeliveryRestrictions>,
     pub(crate) segment_num: ::std::option::Option<i32>,
-    pub(crate) segmentation_cancel_indicator:
-        ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
+    pub(crate) segmentation_cancel_indicator: ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
     pub(crate) segmentation_duration: ::std::option::Option<i64>,
     pub(crate) segmentation_event_id: ::std::option::Option<i64>,
     pub(crate) segmentation_type_id: ::std::option::Option<i32>,
@@ -118,25 +109,17 @@ pub struct Scte35SegmentationDescriptorBuilder {
 }
 impl Scte35SegmentationDescriptorBuilder {
     /// Holds the four SCTE-35 delivery restriction parameters.
-    pub fn delivery_restrictions(
-        mut self,
-        input: crate::types::Scte35DeliveryRestrictions,
-    ) -> Self {
+    pub fn delivery_restrictions(mut self, input: crate::types::Scte35DeliveryRestrictions) -> Self {
         self.delivery_restrictions = ::std::option::Option::Some(input);
         self
     }
     /// Holds the four SCTE-35 delivery restriction parameters.
-    pub fn set_delivery_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte35DeliveryRestrictions>,
-    ) -> Self {
+    pub fn set_delivery_restrictions(mut self, input: ::std::option::Option<crate::types::Scte35DeliveryRestrictions>) -> Self {
         self.delivery_restrictions = input;
         self
     }
     /// Holds the four SCTE-35 delivery restriction parameters.
-    pub fn get_delivery_restrictions(
-        &self,
-    ) -> &::std::option::Option<crate::types::Scte35DeliveryRestrictions> {
+    pub fn get_delivery_restrictions(&self) -> &::std::option::Option<crate::types::Scte35DeliveryRestrictions> {
         &self.delivery_restrictions
     }
     /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
@@ -154,25 +137,17 @@ impl Scte35SegmentationDescriptorBuilder {
         &self.segment_num
     }
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
-    pub fn segmentation_cancel_indicator(
-        mut self,
-        input: crate::types::Scte35SegmentationCancelIndicator,
-    ) -> Self {
+    pub fn segmentation_cancel_indicator(mut self, input: crate::types::Scte35SegmentationCancelIndicator) -> Self {
         self.segmentation_cancel_indicator = ::std::option::Option::Some(input);
         self
     }
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
-    pub fn set_segmentation_cancel_indicator(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
-    ) -> Self {
+    pub fn set_segmentation_cancel_indicator(mut self, input: ::std::option::Option<crate::types::Scte35SegmentationCancelIndicator>) -> Self {
         self.segmentation_cancel_indicator = input;
         self
     }
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
-    pub fn get_segmentation_cancel_indicator(
-        &self,
-    ) -> &::std::option::Option<crate::types::Scte35SegmentationCancelIndicator> {
+    pub fn get_segmentation_cancel_indicator(&self) -> &::std::option::Option<crate::types::Scte35SegmentationCancelIndicator> {
         &self.segmentation_cancel_indicator
     }
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
@@ -218,18 +193,12 @@ impl Scte35SegmentationDescriptorBuilder {
         &self.segmentation_type_id
     }
     /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
-    pub fn segmentation_upid(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segmentation_upid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segmentation_upid = ::std::option::Option::Some(input.into());
         self
     }
     /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
-    pub fn set_segmentation_upid(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_segmentation_upid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segmentation_upid = input;
         self
     }

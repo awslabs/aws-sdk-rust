@@ -22,9 +22,7 @@ pub fn ser_update_replication_configuration_template_input(
         object.key("dataPlaneRouting").string(var_4.as_str());
     }
     if let Some(var_5) = &input.default_large_staging_disk_type {
-        object
-            .key("defaultLargeStagingDiskType")
-            .string(var_5.as_str());
+        object.key("defaultLargeStagingDiskType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.ebs_encryption {
         object.key("ebsEncryption").string(var_6.as_str());
@@ -33,19 +31,13 @@ pub fn ser_update_replication_configuration_template_input(
         object.key("ebsEncryptionKeyArn").string(var_7.as_str());
     }
     if let Some(var_8) = &input.replication_configuration_template_id {
-        object
-            .key("replicationConfigurationTemplateID")
-            .string(var_8.as_str());
+        object.key("replicationConfigurationTemplateID").string(var_8.as_str());
     }
     if let Some(var_9) = &input.replication_server_instance_type {
-        object
-            .key("replicationServerInstanceType")
-            .string(var_9.as_str());
+        object.key("replicationServerInstanceType").string(var_9.as_str());
     }
     if let Some(var_10) = &input.replication_servers_security_groups_i_ds {
-        let mut array_11 = object
-            .key("replicationServersSecurityGroupsIDs")
-            .start_array();
+        let mut array_11 = object.key("replicationServersSecurityGroupsIDs").start_array();
         for item_12 in var_10 {
             {
                 array_11.value().string(item_12.as_str());

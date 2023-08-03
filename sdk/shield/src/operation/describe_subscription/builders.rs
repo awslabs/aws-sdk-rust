@@ -37,9 +37,7 @@ impl DescribeSubscriptionFluentBuilder {
         }
     }
     /// Access the DescribeSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_subscription::builders::DescribeSubscriptionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_subscription::builders::DescribeSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeSubscriptionFluentBuilder {
             crate::operation::describe_subscription::DescribeSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription::DescribeSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription::DescribeSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscription::DescribeSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription::DescribeSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription::DescribeSubscriptionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscription::DescribeSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription::DescribeSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription::DescribeSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeSubscriptionFluentBuilder {
             crate::operation::describe_subscription::DescribeSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription::DescribeSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription::DescribeSubscriptionError>,
     > {
         self.customize_middleware().await
     }

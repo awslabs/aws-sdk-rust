@@ -27,8 +27,7 @@ impl ListFirewallRuleGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder,
+    inner: crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder,
 }
 impl ListFirewallRuleGroupsFluentBuilder {
     /// Creates a new `ListFirewallRuleGroups`.
@@ -39,10 +38,7 @@ impl ListFirewallRuleGroupsFluentBuilder {
         }
     }
     /// Access the ListFirewallRuleGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListFirewallRuleGroupsFluentBuilder {
             crate::operation::list_firewall_rule_groups::ListFirewallRuleGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListFirewallRuleGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListFirewallRuleGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListFirewallRuleGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -119,23 +106,15 @@ impl ListFirewallRuleGroupsFluentBuilder {
             crate::operation::list_firewall_rule_groups::ListFirewallRuleGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_rule_groups::paginator::ListFirewallRuleGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_firewall_rule_groups::paginator::ListFirewallRuleGroupsPaginator
-    {
-        crate::operation::list_firewall_rule_groups::paginator::ListFirewallRuleGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_firewall_rule_groups::paginator::ListFirewallRuleGroupsPaginator {
+        crate::operation::list_firewall_rule_groups::paginator::ListFirewallRuleGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>

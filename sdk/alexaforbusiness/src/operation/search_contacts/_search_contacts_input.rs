@@ -43,9 +43,7 @@ impl SearchContactsInput {
 
 /// A builder for [`SearchContactsInput`](crate::operation::search_contacts::SearchContactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchContactsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
@@ -65,10 +63,7 @@ impl SearchContactsInputBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -88,10 +83,7 @@ impl SearchContactsInputBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -130,10 +122,7 @@ impl SearchContactsInputBuilder {
     /// Consumes the builder and constructs a [`SearchContactsInput`](crate::operation::search_contacts::SearchContactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_contacts::SearchContactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_contacts::SearchContactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_contacts::SearchContactsInput {
             filters: self.filters,
             sort_criteria: self.sort_criteria,

@@ -10,10 +10,7 @@ impl ListEngineVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_engine_versions::ListEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engine_versions::ListEngineVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engine_versions::ListEngineVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_engine_versions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListEngineVersionsFluentBuilder {
         }
     }
     /// Access the ListEngineVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListEngineVersionsFluentBuilder {
             crate::operation::list_engine_versions::ListEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engine_versions::ListEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engine_versions::ListEngineVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListEngineVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_engine_versions::ListEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engine_versions::ListEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engine_versions::ListEngineVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_engine_versions::ListEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engine_versions::ListEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engine_versions::ListEngineVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListEngineVersionsFluentBuilder {
             crate::operation::list_engine_versions::ListEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_engine_versions::ListEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_engine_versions::ListEngineVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator {
-        crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator {
+        crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The type of target platform.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -139,10 +118,7 @@ impl ListEngineVersionsFluentBuilder {
         self
     }
     /// <p>The type of target platform.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.inner = self.inner.set_engine_type(input);
         self
     }

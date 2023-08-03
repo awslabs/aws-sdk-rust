@@ -10,10 +10,7 @@ impl GetReadSetMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_metadata::GetReadSetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_metadata::GetReadSetMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_metadata::GetReadSetMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_read_set_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetReadSetMetadataFluentBuilder {
         }
     }
     /// Access the GetReadSetMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_read_set_metadata::builders::GetReadSetMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_read_set_metadata::builders::GetReadSetMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetReadSetMetadataFluentBuilder {
             crate::operation::get_read_set_metadata::GetReadSetMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_metadata::GetReadSetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_metadata::GetReadSetMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetReadSetMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetReadSetMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_metadata::GetReadSetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_metadata::GetReadSetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_metadata::GetReadSetMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetReadSetMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_metadata::GetReadSetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_metadata::GetReadSetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_metadata::GetReadSetMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetReadSetMetadataFluentBuilder {
             crate::operation::get_read_set_metadata::GetReadSetMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_metadata::GetReadSetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_metadata::GetReadSetMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl GetReadSetMetadataFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }

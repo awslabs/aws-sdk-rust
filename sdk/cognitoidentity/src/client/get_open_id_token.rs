@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`identity_id(Option<String>)`](crate::operation::get_open_id_token::GetOpenIdTokenOutput::identity_id): <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
     ///   - [`token(Option<String>)`](crate::operation::get_open_id_token::GetOpenIdTokenOutput::token): <p>An OpenID token, valid for 10 minutes.</p>
     /// - On failure, responds with [`SdkError<GetOpenIdTokenError>`](crate::operation::get_open_id_token::GetOpenIdTokenError)
-    pub fn get_open_id_token(
-        &self,
-    ) -> crate::operation::get_open_id_token::builders::GetOpenIdTokenFluentBuilder {
-        crate::operation::get_open_id_token::builders::GetOpenIdTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_open_id_token(&self) -> crate::operation::get_open_id_token::builders::GetOpenIdTokenFluentBuilder {
+        crate::operation::get_open_id_token::builders::GetOpenIdTokenFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SavingsPlanRateServiceCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for SavingsPlanRateServiceCode {
             "AmazonECS" => SavingsPlanRateServiceCode::Fargate,
             "AmazonEKS" => SavingsPlanRateServiceCode::FargateEks,
             "AmazonSageMaker" => SavingsPlanRateServiceCode::Sagemaker,
-            other => SavingsPlanRateServiceCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanRateServiceCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl SavingsPlanRateServiceCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSLambda",
-            "AmazonEC2",
-            "AmazonECS",
-            "AmazonEKS",
-            "AmazonSageMaker",
-        ]
+        &["AWSLambda", "AmazonEC2", "AmazonECS", "AmazonEKS", "AmazonSageMaker"]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanRateServiceCode {

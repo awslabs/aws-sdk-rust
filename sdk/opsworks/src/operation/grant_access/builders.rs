@@ -10,10 +10,7 @@ impl GrantAccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::grant_access::GrantAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_access::GrantAccessError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_access::GrantAccessError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.grant_access();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl GrantAccessFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::grant_access::GrantAccess,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::grant_access::GrantAccess, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::grant_access::GrantAccessError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl GrantAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl GrantAccessFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::grant_access::GrantAccess,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::grant_access::GrantAccess, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::grant_access::GrantAccessError>,
     > {
         self.customize_middleware().await

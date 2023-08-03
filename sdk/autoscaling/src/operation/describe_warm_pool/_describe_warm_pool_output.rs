@@ -16,9 +16,7 @@ pub struct DescribeWarmPoolOutput {
 }
 impl DescribeWarmPoolOutput {
     /// <p>The warm pool configuration details. </p>
-    pub fn warm_pool_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WarmPoolConfiguration> {
+    pub fn warm_pool_configuration(&self) -> ::std::option::Option<&crate::types::WarmPoolConfiguration> {
         self.warm_pool_configuration.as_ref()
     }
     /// <p>The instances that are currently in the warm pool.</p>
@@ -37,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeWarmPoolOutput {
 }
 impl DescribeWarmPoolOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWarmPoolOutput`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput).
-    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolOutputBuilder {
         crate::operation::describe_warm_pool::builders::DescribeWarmPoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWarmPoolOutput`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWarmPoolOutputBuilder {
     pub(crate) warm_pool_configuration: ::std::option::Option<crate::types::WarmPoolConfiguration>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
@@ -61,17 +56,12 @@ impl DescribeWarmPoolOutputBuilder {
         self
     }
     /// <p>The warm pool configuration details. </p>
-    pub fn set_warm_pool_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolConfiguration>,
-    ) -> Self {
+    pub fn set_warm_pool_configuration(mut self, input: ::std::option::Option<crate::types::WarmPoolConfiguration>) -> Self {
         self.warm_pool_configuration = input;
         self
     }
     /// <p>The warm pool configuration details. </p>
-    pub fn get_warm_pool_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WarmPoolConfiguration> {
+    pub fn get_warm_pool_configuration(&self) -> &::std::option::Option<crate::types::WarmPoolConfiguration> {
         &self.warm_pool_configuration
     }
     /// Appends an item to `instances`.
@@ -86,10 +76,7 @@ impl DescribeWarmPoolOutputBuilder {
         self
     }
     /// <p>The instances that are currently in the warm pool.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }

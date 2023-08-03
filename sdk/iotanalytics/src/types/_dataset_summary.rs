@@ -58,9 +58,7 @@ impl DatasetSummary {
 
 /// A builder for [`DatasetSummary`](crate::types::DatasetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetSummaryBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
@@ -104,10 +102,7 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>The time the dataset was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -121,10 +116,7 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>The last time the dataset was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -144,17 +136,12 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>) -> Self {
         self.triggers = input;
         self
     }
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
-    pub fn get_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
         &self.triggers
     }
     /// Appends an item to `actions`.
@@ -169,17 +156,12 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`DatasetSummary`](crate::types::DatasetSummary).

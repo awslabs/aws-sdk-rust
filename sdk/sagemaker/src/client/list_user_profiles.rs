@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`user_profiles(Option<Vec<UserProfileDetails>>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::user_profiles): <p>The list of user profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListUserProfilesError>`](crate::operation::list_user_profiles::ListUserProfilesError)
-    pub fn list_user_profiles(
-        &self,
-    ) -> crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder {
-        crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_profiles(&self) -> crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder {
+        crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::new(self.handle.clone())
     }
 }

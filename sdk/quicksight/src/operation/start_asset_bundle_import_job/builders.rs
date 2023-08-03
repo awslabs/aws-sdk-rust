@@ -28,7 +28,7 @@ impl StartAssetBundleImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAssetBundleImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobInputBuilder,
+    inner: crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobInputBuilder,
 }
 impl StartAssetBundleImportJobFluentBuilder {
     /// Creates a new `StartAssetBundleImportJob`.
@@ -39,7 +39,7 @@ impl StartAssetBundleImportJobFluentBuilder {
         }
     }
     /// Access the StartAssetBundleImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl StartAssetBundleImportJobFluentBuilder {
             crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl StartAssetBundleImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl StartAssetBundleImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl StartAssetBundleImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl StartAssetBundleImportJobFluentBuilder {
             crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account to import assets into. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account to import assets into. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -143,18 +126,12 @@ impl StartAssetBundleImportJobFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    pub fn asset_bundle_import_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_bundle_import_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_bundle_import_job_id(input.into());
         self
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    pub fn set_asset_bundle_import_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_bundle_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_bundle_import_job_id(input);
         self
     }
@@ -163,47 +140,31 @@ impl StartAssetBundleImportJobFluentBuilder {
         self.inner.get_asset_bundle_import_job_id()
     }
     /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
-    pub fn asset_bundle_import_source(
-        mut self,
-        input: crate::types::AssetBundleImportSource,
-    ) -> Self {
+    pub fn asset_bundle_import_source(mut self, input: crate::types::AssetBundleImportSource) -> Self {
         self.inner = self.inner.asset_bundle_import_source(input);
         self
     }
     /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
-    pub fn set_asset_bundle_import_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleImportSource>,
-    ) -> Self {
+    pub fn set_asset_bundle_import_source(mut self, input: ::std::option::Option<crate::types::AssetBundleImportSource>) -> Self {
         self.inner = self.inner.set_asset_bundle_import_source(input);
         self
     }
     /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
-    pub fn get_asset_bundle_import_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleImportSource> {
+    pub fn get_asset_bundle_import_source(&self) -> &::std::option::Option<crate::types::AssetBundleImportSource> {
         self.inner.get_asset_bundle_import_source()
     }
     /// <p>Optional overrides to be applied to the resource configuration before import.</p>
-    pub fn override_parameters(
-        mut self,
-        input: crate::types::AssetBundleImportJobOverrideParameters,
-    ) -> Self {
+    pub fn override_parameters(mut self, input: crate::types::AssetBundleImportJobOverrideParameters) -> Self {
         self.inner = self.inner.override_parameters(input);
         self
     }
     /// <p>Optional overrides to be applied to the resource configuration before import.</p>
-    pub fn set_override_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters>,
-    ) -> Self {
+    pub fn set_override_parameters(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters>) -> Self {
         self.inner = self.inner.set_override_parameters(input);
         self
     }
     /// <p>Optional overrides to be applied to the resource configuration before import.</p>
-    pub fn get_override_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters> {
+    pub fn get_override_parameters(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters> {
         self.inner.get_override_parameters()
     }
     /// <p>The failure action for the import job.</p>
@@ -216,19 +177,14 @@ impl StartAssetBundleImportJobFluentBuilder {
     /// <p>The failure action for the import job.</p>
     /// <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p>
     /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight account in an inconsistent state.</p>
-    pub fn set_failure_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleImportFailureAction>,
-    ) -> Self {
+    pub fn set_failure_action(mut self, input: ::std::option::Option<crate::types::AssetBundleImportFailureAction>) -> Self {
         self.inner = self.inner.set_failure_action(input);
         self
     }
     /// <p>The failure action for the import job.</p>
     /// <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p>
     /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight account in an inconsistent state.</p>
-    pub fn get_failure_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleImportFailureAction> {
+    pub fn get_failure_action(&self) -> &::std::option::Option<crate::types::AssetBundleImportFailureAction> {
         self.inner.get_failure_action()
     }
 }

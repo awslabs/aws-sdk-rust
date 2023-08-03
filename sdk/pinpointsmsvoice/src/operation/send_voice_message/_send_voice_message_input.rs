@@ -44,17 +44,14 @@ impl SendVoiceMessageInput {
 }
 impl SendVoiceMessageInput {
     /// Creates a new builder-style object to manufacture [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
-    pub fn builder() -> crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder {
         crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendVoiceMessageInputBuilder {
     pub(crate) caller_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ impl SendVoiceMessageInputBuilder {
         &self.caller_id
     }
     /// The name of the configuration set that you want to use to send the message.
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the configuration set that you want to use to send the message.
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -103,10 +94,7 @@ impl SendVoiceMessageInputBuilder {
         self
     }
     /// An object that contains a voice message and information about the recipient that you want to send it to.
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceMessageContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::VoiceMessageContent>) -> Self {
         self.content = input;
         self
     }
@@ -115,18 +103,12 @@ impl SendVoiceMessageInputBuilder {
         &self.content
     }
     /// The phone number that you want to send the voice message to.
-    pub fn destination_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// The phone number that you want to send the voice message to.
-    pub fn set_destination_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_phone_number = input;
         self
     }
@@ -135,18 +117,12 @@ impl SendVoiceMessageInputBuilder {
         &self.destination_phone_number
     }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    pub fn origination_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    pub fn set_origination_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_phone_number = input;
         self
     }
@@ -157,18 +133,13 @@ impl SendVoiceMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_voice_message::SendVoiceMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::send_voice_message::SendVoiceMessageInput {
-                caller_id: self.caller_id,
-                configuration_set_name: self.configuration_set_name,
-                content: self.content,
-                destination_phone_number: self.destination_phone_number,
-                origination_phone_number: self.origination_phone_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::send_voice_message::SendVoiceMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::send_voice_message::SendVoiceMessageInput {
+            caller_id: self.caller_id,
+            configuration_set_name: self.configuration_set_name,
+            content: self.content,
+            destination_phone_number: self.destination_phone_number,
+            origination_phone_number: self.origination_phone_number,
+        })
     }
 }

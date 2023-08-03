@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`attached_policy_ids(Option<Vec<String>>)`](crate::operation::list_object_policies::ListObjectPoliciesOutput::attached_policy_ids): <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_policies::ListObjectPoliciesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListObjectPoliciesError>`](crate::operation::list_object_policies::ListObjectPoliciesError)
-    pub fn list_object_policies(
-        &self,
-    ) -> crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder {
-        crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_object_policies(&self) -> crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder {
+        crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

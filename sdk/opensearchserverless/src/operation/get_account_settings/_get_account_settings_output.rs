@@ -10,9 +10,7 @@ pub struct GetAccountSettingsOutput {
 }
 impl GetAccountSettingsOutput {
     /// <p>OpenSearch Serverless-related details for the current account.</p>
-    pub fn account_settings_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountSettingsDetail> {
+    pub fn account_settings_detail(&self) -> ::std::option::Option<&crate::types::AccountSettingsDetail> {
         self.account_settings_detail.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccountSettingsOutput {
 }
 impl GetAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
         crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountSettingsOutputBuilder {
     pub(crate) account_settings_detail: ::std::option::Option<crate::types::AccountSettingsDetail>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetAccountSettingsOutputBuilder {
         self
     }
     /// <p>OpenSearch Serverless-related details for the current account.</p>
-    pub fn set_account_settings_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountSettingsDetail>,
-    ) -> Self {
+    pub fn set_account_settings_detail(mut self, input: ::std::option::Option<crate::types::AccountSettingsDetail>) -> Self {
         self.account_settings_detail = input;
         self
     }
     /// <p>OpenSearch Serverless-related details for the current account.</p>
-    pub fn get_account_settings_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountSettingsDetail> {
+    pub fn get_account_settings_detail(&self) -> &::std::option::Option<crate::types::AccountSettingsDetail> {
         &self.account_settings_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

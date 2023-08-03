@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVpcAttachmentOutput {
 }
 impl UpdateVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentOutput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentOutputBuilder {
-        crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentOutputBuilder {
+        crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVpcAttachmentOutput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcAttachmentOutputBuilder {
     pub(crate) vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateVpcAttachmentOutputBuilder {
         self
     }
     /// <p>Describes the updated VPC attachment.</p>
-    pub fn set_vpc_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcAttachment>,
-    ) -> Self {
+    pub fn set_vpc_attachment(mut self, input: ::std::option::Option<crate::types::VpcAttachment>) -> Self {
         self.vpc_attachment = input;
         self
     }

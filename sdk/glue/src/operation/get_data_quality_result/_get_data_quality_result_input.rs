@@ -15,17 +15,14 @@ impl GetDataQualityResultInput {
 }
 impl GetDataQualityResultInput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder {
+    pub fn builder() -> crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder {
         crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityResultInputBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl GetDataQualityResultInputBuilder {
     /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_quality_result::GetDataQualityResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_quality_result::GetDataQualityResultInput {
-                result_id: self.result_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_data_quality_result::GetDataQualityResultInput { result_id: self.result_id })
     }
 }

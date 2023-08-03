@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVpceConfigurationOutput {
 }
 impl UpdateVpceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpceConfigurationOutput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationOutputBuilder {
         crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVpceConfigurationOutput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpceConfigurationOutputBuilder {
     pub(crate) vpce_configuration: ::std::option::Option<crate::types::VpceConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateVpceConfigurationOutputBuilder {
         self
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpceConfiguration>,
-    ) -> Self {
+    pub fn set_vpce_configuration(mut self, input: ::std::option::Option<crate::types::VpceConfiguration>) -> Self {
         self.vpce_configuration = input;
         self
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn get_vpce_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpceConfiguration> {
+    pub fn get_vpce_configuration(&self) -> &::std::option::Option<crate::types::VpceConfiguration> {
         &self.vpce_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateVpceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateVpceConfigurationOutput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput {
         crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput {
             vpce_configuration: self.vpce_configuration,
             _request_id: self._request_id,

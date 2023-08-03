@@ -33,18 +33,14 @@ impl ListInstanceProfileTagsInput {
 }
 impl ListInstanceProfileTagsInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfileTagsInput`](crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder {
         crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceProfileTagsInput`](crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfileTagsInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -53,19 +49,13 @@ pub struct ListInstanceProfileTagsInputBuilder {
 impl ListInstanceProfileTagsInputBuilder {
     /// <p>The name of the IAM instance profile whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM instance profile whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_name = input;
         self
     }
@@ -112,12 +102,10 @@ impl ListInstanceProfileTagsInputBuilder {
         crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput {
-                instance_profile_name: self.instance_profile_name,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput {
+            instance_profile_name: self.instance_profile_name,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

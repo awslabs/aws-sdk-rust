@@ -5,16 +5,16 @@ pub use crate::operation::delete_replication_task_assessment_run::_delete_replic
 
 impl DeleteReplicationTaskAssessmentRunInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_replication_task_assessment_run();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DeleteReplicationTaskAssessmentRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReplicationTaskAssessmentRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunInputBuilder,
+    inner: crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunInputBuilder,
 }
 impl DeleteReplicationTaskAssessmentRunFluentBuilder {
     /// Creates a new `DeleteReplicationTaskAssessmentRun`.
@@ -38,15 +38,20 @@ impl DeleteReplicationTaskAssessmentRunFluentBuilder {
         }
     }
     /// Access the DeleteReplicationTaskAssessmentRun as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRun,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DeleteReplicationTaskAssessmentRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,39 +88,40 @@ impl DeleteReplicationTaskAssessmentRunFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRun,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
-    pub fn replication_task_assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_assessment_run_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
-    pub fn set_replication_task_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_assessment_run_arn(input);
         self
     }
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
-    pub fn get_replication_task_assessment_run_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_task_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_task_assessment_run_arn()
     }
 }

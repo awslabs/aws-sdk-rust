@@ -70,9 +70,7 @@ impl Connection {
 
 /// A builder for [`Connection`](crate::types::Connection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ pub struct ConnectionBuilder {
 }
 impl ConnectionBuilder {
     /// <p>The ARN of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -149,18 +141,12 @@ impl ConnectionBuilder {
         &self.status
     }
     /// <p>The error message when the connection last failed.</p>
-    pub fn last_failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message when the connection last failed.</p>
-    pub fn set_last_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_failure_message = input;
         self
     }
@@ -169,18 +155,12 @@ impl ConnectionBuilder {
         &self.last_failure_message
     }
     /// <p>The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_identifier = input;
         self
     }
@@ -189,25 +169,17 @@ impl ConnectionBuilder {
         &self.endpoint_identifier
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    pub fn replication_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    pub fn set_replication_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_identifier = input;
         self
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    pub fn get_replication_instance_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_identifier
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).

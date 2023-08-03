@@ -16,16 +16,15 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
 }
 impl CancelElasticsearchServiceSoftwareUpdateInput {
     /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput).
-    pub fn builder() -> crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateInputBuilder{
+    pub fn builder() -> crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateInputBuilder
+    {
         crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelElasticsearchServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +44,16 @@ impl CancelElasticsearchServiceSoftwareUpdateInputBuilder {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput {
-                domain_name: self.domain_name
-                ,
-            }
+                domain_name: self.domain_name,
+            },
         )
     }
 }

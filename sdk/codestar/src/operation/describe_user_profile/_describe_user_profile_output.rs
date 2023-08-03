@@ -69,10 +69,8 @@ impl ::aws_http::request_id::RequestId for DescribeUserProfileOutput {
 }
 impl DescribeUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
-        crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
+        crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::default()
     }
 }
 
@@ -118,18 +116,12 @@ impl DescribeUserProfileOutputBuilder {
         &self.display_name
     }
     /// <p>The email address for the user. Optional.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address for the user. Optional.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -138,18 +130,12 @@ impl DescribeUserProfileOutputBuilder {
         &self.email_address
     }
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key = input;
         self
     }
@@ -163,10 +149,7 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -180,17 +163,12 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
-    pub fn get_last_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

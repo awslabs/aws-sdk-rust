@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`update_token(Option<String>)`](crate::operation::create_rule_group::CreateRuleGroupOutput::update_token): <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>  <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     ///   - [`rule_group_response(Option<RuleGroupResponse>)`](crate::operation::create_rule_group::CreateRuleGroupOutput::rule_group_response): <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     /// - On failure, responds with [`SdkError<CreateRuleGroupError>`](crate::operation::create_rule_group::CreateRuleGroupError)
-    pub fn create_rule_group(
-        &self,
-    ) -> crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder {
-        crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_rule_group(&self) -> crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder {
+        crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

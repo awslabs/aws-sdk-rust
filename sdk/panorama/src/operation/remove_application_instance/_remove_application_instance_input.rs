@@ -15,33 +15,25 @@ impl RemoveApplicationInstanceInput {
 }
 impl RemoveApplicationInstanceInput {
     /// Creates a new builder-style object to manufacture [`RemoveApplicationInstanceInput`](crate::operation::remove_application_instance::RemoveApplicationInstanceInput).
-    pub fn builder() -> crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder{
+    pub fn builder() -> crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder {
         crate::operation::remove_application_instance::builders::RemoveApplicationInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveApplicationInstanceInput`](crate::operation::remove_application_instance::RemoveApplicationInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveApplicationInstanceInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveApplicationInstanceInputBuilder {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_instance_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl RemoveApplicationInstanceInputBuilder {
         crate::operation::remove_application_instance::RemoveApplicationInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_application_instance::RemoveApplicationInstanceInput {
-                application_instance_id: self.application_instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_application_instance::RemoveApplicationInstanceInput {
+            application_instance_id: self.application_instance_id,
+        })
     }
 }

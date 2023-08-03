@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateEncryptionConfigOutput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<AssociateEncryptionConfigError>`](crate::operation::associate_encryption_config::AssociateEncryptionConfigError)
-    pub fn associate_encryption_config(&self) -> crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigFluentBuilder{
+    pub fn associate_encryption_config(&self) -> crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigFluentBuilder {
         crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

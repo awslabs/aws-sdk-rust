@@ -5,15 +5,12 @@
 pub struct DescribeDominantLanguageDetectionJobOutput {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
     #[doc(hidden)]
-    pub dominant_language_detection_job_properties:
-        ::std::option::Option<crate::types::DominantLanguageDetectionJobProperties>,
+    pub dominant_language_detection_job_properties: ::std::option::Option<crate::types::DominantLanguageDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDominantLanguageDetectionJobOutput {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-    pub fn dominant_language_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DominantLanguageDetectionJobProperties> {
+    pub fn dominant_language_detection_job_properties(&self) -> ::std::option::Option<&crate::types::DominantLanguageDetectionJobProperties> {
         self.dominant_language_detection_job_properties.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribeDominantLanguageDetectionJobO
 }
 impl DescribeDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobOutput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobOutputBuilder {
         crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDominantLanguageDetectionJobOutput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDominantLanguageDetectionJobOutputBuilder {
-    pub(crate) dominant_language_detection_job_properties:
-        ::std::option::Option<crate::types::DominantLanguageDetectionJobProperties>,
+    pub(crate) dominant_language_detection_job_properties: ::std::option::Option<crate::types::DominantLanguageDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDominantLanguageDetectionJobOutputBuilder {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-    pub fn dominant_language_detection_job_properties(
-        mut self,
-        input: crate::types::DominantLanguageDetectionJobProperties,
-    ) -> Self {
+    pub fn dominant_language_detection_job_properties(mut self, input: crate::types::DominantLanguageDetectionJobProperties) -> Self {
         self.dominant_language_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribeDominantLanguageDetectionJobOutputBuilder {
         self
     }
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-    pub fn get_dominant_language_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DominantLanguageDetectionJobProperties> {
+    pub fn get_dominant_language_detection_job_properties(&self) -> &::std::option::Option<crate::types::DominantLanguageDetectionJobProperties> {
         &self.dominant_language_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl DescribeDominantLanguageDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDominantLanguageDetectionJobOutput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput).
-    pub fn build(self) -> crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput{
+    pub fn build(self) -> crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput {
         crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput {
-            dominant_language_detection_job_properties: self.dominant_language_detection_job_properties
-            ,
+            dominant_language_detection_job_properties: self.dominant_language_detection_job_properties,
             _request_id: self._request_id,
         }
     }

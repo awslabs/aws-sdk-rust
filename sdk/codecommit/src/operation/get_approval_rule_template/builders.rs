@@ -26,8 +26,7 @@ impl GetApprovalRuleTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApprovalRuleTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder,
+    inner: crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder,
 }
 impl GetApprovalRuleTemplateFluentBuilder {
     /// Creates a new `GetApprovalRuleTemplate`.
@@ -38,10 +37,7 @@ impl GetApprovalRuleTemplateFluentBuilder {
         }
     }
     /// Access the GetApprovalRuleTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetApprovalRuleTemplateFluentBuilder {
             crate::operation::get_approval_rule_template::GetApprovalRuleTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetApprovalRuleTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetApprovalRuleTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_approval_rule_template::GetApprovalRuleTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetApprovalRuleTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_approval_rule_template::GetApprovalRuleTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetApprovalRuleTemplateFluentBuilder {
             crate::operation::get_approval_rule_template::GetApprovalRuleTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the approval rule template for which you want to get information.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());
         self
     }
     /// <p>The name of the approval rule template for which you want to get information.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }

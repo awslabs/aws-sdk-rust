@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`constraint_details(Option<Vec<ConstraintDetail>>)`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput::constraint_details): <p>Information about the constraints.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListConstraintsForPortfolioError>`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioError)
-    pub fn list_constraints_for_portfolio(&self) -> crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioFluentBuilder{
+    pub fn list_constraints_for_portfolio(
+        &self,
+    ) -> crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioFluentBuilder {
         crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,14 @@ impl DeletePackagingConfigurationInput {
 }
 impl DeletePackagingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationInputBuilder {
         crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePackagingConfigurationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeletePackagingConfigurationInputBuilder {
         crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput { id: self.id })
     }
 }

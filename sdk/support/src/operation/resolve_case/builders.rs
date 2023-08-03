@@ -10,10 +10,7 @@ impl ResolveCaseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::resolve_case::ResolveCaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_case::ResolveCaseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_case::ResolveCaseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.resolve_case();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl ResolveCaseFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::resolve_case::ResolveCase,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::resolve_case::ResolveCase, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::resolve_case::ResolveCaseError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl ResolveCaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl ResolveCaseFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::resolve_case::ResolveCase,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::resolve_case::ResolveCase, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::resolve_case::ResolveCaseError>,
     > {
         self.customize_middleware().await

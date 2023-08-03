@@ -58,14 +58,11 @@ impl Gateway {
 
 /// A builder for [`Gateway`](crate::types::Gateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayBuilder {
     pub(crate) egress_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) gateway_messages:
-        ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
+    pub(crate) gateway_messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     pub(crate) gateway_state: ::std::option::Option<crate::types::GatewayState>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) networks: ::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>>,
@@ -76,27 +73,19 @@ impl GatewayBuilder {
     /// To override the contents of this collection use [`set_egress_cidr_blocks`](Self::set_egress_cidr_blocks).
     ///
     /// The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn egress_cidr_blocks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.egress_cidr_blocks.unwrap_or_default();
         v.push(input.into());
         self.egress_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_egress_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_egress_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.egress_cidr_blocks = input;
         self
     }
     /// The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn get_egress_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_egress_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.egress_cidr_blocks
     }
     /// The Amazon Resource Name (ARN) of the gateway.
@@ -124,17 +113,12 @@ impl GatewayBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_gateway_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
-    ) -> Self {
+    pub fn set_gateway_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>) -> Self {
         self.gateway_messages = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_gateway_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>> {
+    pub fn get_gateway_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>> {
         &self.gateway_messages
     }
     /// The current status of the gateway.
@@ -143,10 +127,7 @@ impl GatewayBuilder {
         self
     }
     /// The current status of the gateway.
-    pub fn set_gateway_state(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayState>,
-    ) -> Self {
+    pub fn set_gateway_state(mut self, input: ::std::option::Option<crate::types::GatewayState>) -> Self {
         self.gateway_state = input;
         self
     }
@@ -180,17 +161,12 @@ impl GatewayBuilder {
         self
     }
     /// The list of networks in the gateway.
-    pub fn set_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>>,
-    ) -> Self {
+    pub fn set_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>>) -> Self {
         self.networks = input;
         self
     }
     /// The list of networks in the gateway.
-    pub fn get_networks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>> {
+    pub fn get_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>> {
         &self.networks
     }
     /// Consumes the builder and constructs a [`Gateway`](crate::types::Gateway).

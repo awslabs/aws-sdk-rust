@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for GetIntrospectionSchemaOutput {
 }
 impl GetIntrospectionSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetIntrospectionSchemaOutput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput).
-    pub fn builder(
-    ) -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder {
         crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIntrospectionSchemaOutput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntrospectionSchemaOutputBuilder {
     pub(crate) schema: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

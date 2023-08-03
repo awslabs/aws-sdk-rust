@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`user_profiles(Option<Vec<UserProfileSummary>>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::user_profiles): <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     /// - On failure, responds with [`SdkError<ListUserProfilesError>`](crate::operation::list_user_profiles::ListUserProfilesError)
-    pub fn list_user_profiles(
-        &self,
-    ) -> crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder {
-        crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_profiles(&self) -> crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder {
+        crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::new(self.handle.clone())
     }
 }

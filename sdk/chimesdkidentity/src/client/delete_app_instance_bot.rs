@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`app_instance_bot_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::app_instance_bot_arn) / [`set_app_instance_bot_arn(Option<String>)`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::set_app_instance_bot_arn): <p>The ARN of the <code>AppInstanceBot</code> being deleted.</p>
     /// - On success, responds with [`DeleteAppInstanceBotOutput`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceBotError>`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError)
-    pub fn delete_app_instance_bot(
-        &self,
-    ) -> crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder
-    {
-        crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_app_instance_bot(&self) -> crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder {
+        crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::new(self.handle.clone())
     }
 }

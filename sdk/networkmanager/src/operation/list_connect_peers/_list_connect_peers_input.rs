@@ -36,17 +36,14 @@ impl ListConnectPeersInput {
 }
 impl ListConnectPeersInput {
     /// Creates a new builder-style object to manufacture [`ListConnectPeersInput`](crate::operation::list_connect_peers::ListConnectPeersInput).
-    pub fn builder() -> crate::operation::list_connect_peers::builders::ListConnectPeersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_connect_peers::builders::ListConnectPeersInputBuilder {
         crate::operation::list_connect_peers::builders::ListConnectPeersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectPeersInput`](crate::operation::list_connect_peers::ListConnectPeersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectPeersInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_attachment_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListConnectPeersInputBuilder {
 }
 impl ListConnectPeersInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -75,18 +66,12 @@ impl ListConnectPeersInputBuilder {
         &self.core_network_id
     }
     /// <p>The ID of the attachment.</p>
-    pub fn connect_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_connect_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_attachment_id = input;
         self
     }
@@ -125,17 +110,12 @@ impl ListConnectPeersInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectPeersInput`](crate::operation::list_connect_peers::ListConnectPeersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_connect_peers::ListConnectPeersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_connect_peers::ListConnectPeersInput {
-                core_network_id: self.core_network_id,
-                connect_attachment_id: self.connect_attachment_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_connect_peers::ListConnectPeersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_connect_peers::ListConnectPeersInput {
+            core_network_id: self.core_network_id,
+            connect_attachment_id: self.connect_attachment_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

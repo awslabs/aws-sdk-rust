@@ -26,8 +26,7 @@ impl ImportStacksToStackSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportStacksToStackSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetInputBuilder,
+    inner: crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetInputBuilder,
 }
 impl ImportStacksToStackSetFluentBuilder {
     /// Creates a new `ImportStacksToStackSet`.
@@ -38,10 +37,7 @@ impl ImportStacksToStackSetFluentBuilder {
         }
     }
     /// Access the ImportStacksToStackSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ImportStacksToStackSetFluentBuilder {
             crate::operation::import_stacks_to_stack_set::ImportStacksToStackSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ImportStacksToStackSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ImportStacksToStackSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ImportStacksToStackSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl ImportStacksToStackSetFluentBuilder {
             crate::operation::import_stacks_to_stack_set::ImportStacksToStackSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -156,10 +135,7 @@ impl ImportStacksToStackSetFluentBuilder {
     }
     /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
-    pub fn set_stack_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_stack_ids(input);
         self
     }
@@ -170,19 +146,13 @@ impl ImportStacksToStackSetFluentBuilder {
     }
     /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
-    pub fn stack_ids_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_ids_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_ids_url(input.into());
         self
     }
     /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
-    pub fn set_stack_ids_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_ids_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_ids_url(input);
         self
     }
@@ -196,50 +166,34 @@ impl ImportStacksToStackSetFluentBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The list of OU ID's to which the stacks being imported has to be mapped as deployment target.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_ids(input.into());
         self
     }
     /// <p>The list of OU ID's to which the stacks being imported has to be mapped as deployment target.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
     /// <p>The list of OU ID's to which the stacks being imported has to be mapped as deployment target.</p>
-    pub fn get_organizational_unit_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_organizational_unit_ids()
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.inner = self.inner.operation_preferences(input);
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         self.inner.get_operation_preferences()
     }
     /// <p>A unique, user defined, identifier for the stack set operation.</p>

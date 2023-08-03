@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDownloadUrlForLayerOutput {
 }
 impl GetDownloadUrlForLayerOutput {
     /// Creates a new builder-style object to manufacture [`GetDownloadUrlForLayerOutput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput).
-    pub fn builder(
-    ) -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerOutputBuilder {
         crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDownloadUrlForLayerOutput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDownloadUrlForLayerOutputBuilder {
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
@@ -84,9 +80,7 @@ impl GetDownloadUrlForLayerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDownloadUrlForLayerOutput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput {
+    pub fn build(self) -> crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput {
         crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput {
             download_url: self.download_url,
             layer_digest: self.layer_digest,

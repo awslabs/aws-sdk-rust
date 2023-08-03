@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`host_key_id(impl ::std::convert::Into<String>)`](crate::operation::delete_host_key::builders::DeleteHostKeyFluentBuilder::host_key_id) / [`set_host_key_id(Option<String>)`](crate::operation::delete_host_key::builders::DeleteHostKeyFluentBuilder::set_host_key_id): <p>The identifier of the host key that you are deleting.</p>
     /// - On success, responds with [`DeleteHostKeyOutput`](crate::operation::delete_host_key::DeleteHostKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteHostKeyError>`](crate::operation::delete_host_key::DeleteHostKeyError)
-    pub fn delete_host_key(
-        &self,
-    ) -> crate::operation::delete_host_key::builders::DeleteHostKeyFluentBuilder {
-        crate::operation::delete_host_key::builders::DeleteHostKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_host_key(&self) -> crate::operation::delete_host_key::builders::DeleteHostKeyFluentBuilder {
+        crate::operation::delete_host_key::builders::DeleteHostKeyFluentBuilder::new(self.handle.clone())
     }
 }

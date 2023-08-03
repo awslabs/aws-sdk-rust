@@ -42,19 +42,13 @@ pub fn ser_m2ts_settings(
     if let Some(var_10) = &input.dvb_nit_settings {
         #[allow(unused_mut)]
         let mut object_11 = object.key("dvbNitSettings").start_object();
-        crate::protocol_serde::shape_dvb_nit_settings::ser_dvb_nit_settings(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_dvb_nit_settings::ser_dvb_nit_settings(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.dvb_sdt_settings {
         #[allow(unused_mut)]
         let mut object_13 = object.key("dvbSdtSettings").start_object();
-        crate::protocol_serde::shape_dvb_sdt_settings::ser_dvb_sdt_settings(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_dvb_sdt_settings::ser_dvb_sdt_settings(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.dvb_sub_pids {
@@ -72,10 +66,7 @@ pub fn ser_m2ts_settings(
     if let Some(var_17) = &input.dvb_tdt_settings {
         #[allow(unused_mut)]
         let mut object_18 = object.key("dvbTdtSettings").start_object();
-        crate::protocol_serde::shape_dvb_tdt_settings::ser_dvb_tdt_settings(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_dvb_tdt_settings::ser_dvb_tdt_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.dvb_teletext_pid {
@@ -171,10 +162,7 @@ pub fn ser_m2ts_settings(
     if let Some(var_38) = &input.scte35_esam {
         #[allow(unused_mut)]
         let mut object_39 = object.key("scte35Esam").start_object();
-        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(
-            &mut object_39,
-            var_38,
-        )?;
+        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_39, var_38)?;
         object_39.finish();
     }
     if let Some(var_40) = &input.scte35_pid {
@@ -221,17 +209,9 @@ pub fn ser_m2ts_settings(
 
 pub(crate) fn de_m2ts_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::M2tsSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::M2tsSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -241,407 +221,268 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioBufferModel" => {
-                                builder = builder.set_audio_buffer_model(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsAudioBufferModel::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioBufferModel" => {
+                            builder = builder.set_audio_buffer_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsAudioBufferModel::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "audioDuration" => {
-                                builder = builder.set_audio_duration(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsAudioDuration::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "audioFramesPerPes" => {
-                                builder = builder.set_audio_frames_per_pes(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "audioPids" => {
-                                builder = builder.set_audio_pids(
-                                    crate::protocol_serde::shape___list_of__integer_min32_max8182::de___list_of__integer_min32_max8182(tokens)?
-                                );
-                            }
-                            "bitrate" => {
-                                builder = builder.set_bitrate(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "bufferModel" => {
-                                builder = builder.set_buffer_model(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsBufferModel::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "dataPTSControl" => {
-                                builder = builder.set_data_pts_control(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsDataPtsControl::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "dvbNitSettings" => {
-                                builder = builder.set_dvb_nit_settings(
-                                    crate::protocol_serde::shape_dvb_nit_settings::de_dvb_nit_settings(tokens)?
-                                );
-                            }
-                            "dvbSdtSettings" => {
-                                builder = builder.set_dvb_sdt_settings(
-                                    crate::protocol_serde::shape_dvb_sdt_settings::de_dvb_sdt_settings(tokens)?
-                                );
-                            }
-                            "dvbSubPids" => {
-                                builder = builder.set_dvb_sub_pids(
-                                    crate::protocol_serde::shape___list_of__integer_min32_max8182::de___list_of__integer_min32_max8182(tokens)?
-                                );
-                            }
-                            "dvbTdtSettings" => {
-                                builder = builder.set_dvb_tdt_settings(
-                                    crate::protocol_serde::shape_dvb_tdt_settings::de_dvb_tdt_settings(tokens)?
-                                );
-                            }
-                            "dvbTeletextPid" => {
-                                builder = builder.set_dvb_teletext_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "ebpAudioInterval" => {
-                                builder = builder.set_ebp_audio_interval(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsEbpAudioInterval::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "ebpPlacement" => {
-                                builder = builder.set_ebp_placement(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsEbpPlacement::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "esRateInPes" => {
-                                builder = builder.set_es_rate_in_pes(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsEsRateInPes::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "forceTsVideoEbpOrder" => {
-                                builder = builder.set_force_ts_video_ebp_order(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsForceTsVideoEbpOrder::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "fragmentTime" => {
-                                builder = builder.set_fragment_time(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "klvMetadata" => {
-                                builder = builder.set_klv_metadata(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsKlvMetadata::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "maxPcrInterval" => {
-                                builder = builder.set_max_pcr_interval(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "minEbpInterval" => {
-                                builder = builder.set_min_ebp_interval(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "nielsenId3" => {
-                                builder = builder.set_nielsen_id3(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::M2tsNielsenId3::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "nullPacketBitrate" => {
-                                builder = builder.set_null_packet_bitrate(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "patInterval" => {
-                                builder = builder.set_pat_interval(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "pcrControl" => {
-                                builder = builder.set_pcr_control(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::M2tsPcrControl::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "pcrPid" => {
-                                builder = builder.set_pcr_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "pmtInterval" => {
-                                builder = builder.set_pmt_interval(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "pmtPid" => {
-                                builder = builder.set_pmt_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "privateMetadataPid" => {
-                                builder = builder.set_private_metadata_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "programNumber" => {
-                                builder = builder.set_program_number(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "rateMode" => {
-                                builder = builder.set_rate_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::M2tsRateMode::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "scte35Esam" => {
-                                builder = builder.set_scte35_esam(
-                                    crate::protocol_serde::shape_m2ts_scte35_esam::de_m2ts_scte35_esam(tokens)?
-                                );
-                            }
-                            "scte35Pid" => {
-                                builder = builder.set_scte35_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "scte35Source" => {
-                                builder = builder.set_scte35_source(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsScte35Source::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "segmentationMarkers" => {
-                                builder = builder.set_segmentation_markers(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsSegmentationMarkers::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "segmentationStyle" => {
-                                builder = builder.set_segmentation_style(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::M2tsSegmentationStyle::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "segmentationTime" => {
-                                builder = builder.set_segmentation_time(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "timedMetadataPid" => {
-                                builder = builder.set_timed_metadata_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "transportStreamId" => {
-                                builder = builder.set_transport_stream_id(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "videoPid" => {
-                                builder = builder.set_video_pid(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "audioDuration" => {
+                            builder = builder.set_audio_duration(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsAudioDuration::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "audioFramesPerPes" => {
+                            builder = builder.set_audio_frames_per_pes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "audioPids" => {
+                            builder = builder.set_audio_pids(
+                                crate::protocol_serde::shape___list_of__integer_min32_max8182::de___list_of__integer_min32_max8182(tokens)?,
+                            );
+                        }
+                        "bitrate" => {
+                            builder = builder.set_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "bufferModel" => {
+                            builder = builder.set_buffer_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsBufferModel::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "dataPTSControl" => {
+                            builder = builder.set_data_pts_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsDataPtsControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "dvbNitSettings" => {
+                            builder = builder.set_dvb_nit_settings(crate::protocol_serde::shape_dvb_nit_settings::de_dvb_nit_settings(tokens)?);
+                        }
+                        "dvbSdtSettings" => {
+                            builder = builder.set_dvb_sdt_settings(crate::protocol_serde::shape_dvb_sdt_settings::de_dvb_sdt_settings(tokens)?);
+                        }
+                        "dvbSubPids" => {
+                            builder = builder.set_dvb_sub_pids(
+                                crate::protocol_serde::shape___list_of__integer_min32_max8182::de___list_of__integer_min32_max8182(tokens)?,
+                            );
+                        }
+                        "dvbTdtSettings" => {
+                            builder = builder.set_dvb_tdt_settings(crate::protocol_serde::shape_dvb_tdt_settings::de_dvb_tdt_settings(tokens)?);
+                        }
+                        "dvbTeletextPid" => {
+                            builder = builder.set_dvb_teletext_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ebpAudioInterval" => {
+                            builder = builder.set_ebp_audio_interval(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsEbpAudioInterval::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ebpPlacement" => {
+                            builder = builder.set_ebp_placement(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsEbpPlacement::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "esRateInPes" => {
+                            builder = builder.set_es_rate_in_pes(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsEsRateInPes::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "forceTsVideoEbpOrder" => {
+                            builder = builder.set_force_ts_video_ebp_order(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsForceTsVideoEbpOrder::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "fragmentTime" => {
+                            builder = builder.set_fragment_time(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "klvMetadata" => {
+                            builder = builder.set_klv_metadata(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsKlvMetadata::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "maxPcrInterval" => {
+                            builder = builder.set_max_pcr_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "minEbpInterval" => {
+                            builder = builder.set_min_ebp_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "nielsenId3" => {
+                            builder = builder.set_nielsen_id3(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsNielsenId3::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "nullPacketBitrate" => {
+                            builder = builder.set_null_packet_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "patInterval" => {
+                            builder = builder.set_pat_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "pcrControl" => {
+                            builder = builder.set_pcr_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsPcrControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "pcrPid" => {
+                            builder = builder.set_pcr_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "pmtInterval" => {
+                            builder = builder.set_pmt_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "pmtPid" => {
+                            builder = builder.set_pmt_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "privateMetadataPid" => {
+                            builder = builder.set_private_metadata_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "programNumber" => {
+                            builder = builder.set_program_number(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "rateMode" => {
+                            builder = builder.set_rate_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsRateMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "scte35Esam" => {
+                            builder = builder.set_scte35_esam(crate::protocol_serde::shape_m2ts_scte35_esam::de_m2ts_scte35_esam(tokens)?);
+                        }
+                        "scte35Pid" => {
+                            builder = builder.set_scte35_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "scte35Source" => {
+                            builder = builder.set_scte35_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsScte35Source::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentationMarkers" => {
+                            builder = builder.set_segmentation_markers(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsSegmentationMarkers::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentationStyle" => {
+                            builder = builder.set_segmentation_style(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsSegmentationStyle::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentationTime" => {
+                            builder = builder.set_segmentation_time(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "timedMetadataPid" => {
+                            builder = builder.set_timed_metadata_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "transportStreamId" => {
+                            builder = builder.set_transport_stream_id(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "videoPid" => {
+                            builder = builder.set_video_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

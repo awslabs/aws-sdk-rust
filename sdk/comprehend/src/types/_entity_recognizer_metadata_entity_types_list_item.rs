@@ -20,9 +20,7 @@ impl EntityRecognizerMetadataEntityTypesListItem {
         self.r#type.as_deref()
     }
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
-    pub fn evaluation_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityTypesEvaluationMetrics> {
+    pub fn evaluation_metrics(&self) -> ::std::option::Option<&crate::types::EntityTypesEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
@@ -39,13 +37,10 @@ impl EntityRecognizerMetadataEntityTypesListItem {
 
 /// A builder for [`EntityRecognizerMetadataEntityTypesListItem`](crate::types::EntityRecognizerMetadataEntityTypesListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityRecognizerMetadataEntityTypesListItemBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) evaluation_metrics:
-        ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
+    pub(crate) evaluation_metrics: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
     pub(crate) number_of_train_mentions: ::std::option::Option<i32>,
 }
 impl EntityRecognizerMetadataEntityTypesListItemBuilder {
@@ -69,17 +64,12 @@ impl EntityRecognizerMetadataEntityTypesListItemBuilder {
         self
     }
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
-    pub fn set_evaluation_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
-    ) -> Self {
+    pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>) -> Self {
         self.evaluation_metrics = input;
         self
     }
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
-    pub fn get_evaluation_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityTypesEvaluationMetrics> {
+    pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::EntityTypesEvaluationMetrics> {
         &self.evaluation_metrics
     }
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>

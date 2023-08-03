@@ -10,10 +10,7 @@ impl UpdateWebhookInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_webhook::UpdateWebhookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_webhook::UpdateWebhookError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_webhook::UpdateWebhookError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_webhook();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateWebhookFluentBuilder {
         }
     }
     /// Access the UpdateWebhook as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_webhook::builders::UpdateWebhookInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_webhook::builders::UpdateWebhookInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl UpdateWebhookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -133,20 +125,14 @@ impl UpdateWebhookFluentBuilder {
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    pub fn branch_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn branch_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_filter(input.into());
         self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    pub fn set_branch_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_branch_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_filter(input);
         self
     }
@@ -180,17 +166,12 @@ impl UpdateWebhookFluentBuilder {
         self
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn set_filter_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
-    ) -> Self {
+    pub fn set_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>) -> Self {
         self.inner = self.inner.set_filter_groups(input);
         self
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn get_filter_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
+    pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
         self.inner.get_filter_groups()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -199,10 +180,7 @@ impl UpdateWebhookFluentBuilder {
         self
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn set_build_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WebhookBuildType>,
-    ) -> Self {
+    pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::WebhookBuildType>) -> Self {
         self.inner = self.inner.set_build_type(input);
         self
     }

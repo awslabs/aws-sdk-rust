@@ -49,9 +49,7 @@ impl CopyCommand {
 
 /// A builder for [`CopyCommand`](crate::types::CopyCommand).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyCommandBuilder {
     pub(crate) data_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_table_columns: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ pub struct CopyCommandBuilder {
 }
 impl CopyCommandBuilder {
     /// <p>The name of the target table. The table must already exist in the database.</p>
-    pub fn data_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target table. The table must already exist in the database.</p>
-    pub fn set_data_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_table_name = input;
         self
     }
@@ -79,18 +71,12 @@ impl CopyCommandBuilder {
         &self.data_table_name
     }
     /// <p>A comma-separated list of column names.</p>
-    pub fn data_table_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_table_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_table_columns = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comma-separated list of column names.</p>
-    pub fn set_data_table_columns(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_table_columns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_table_columns = input;
         self
     }

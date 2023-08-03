@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`namespaces(Option<Vec<NamespaceSummary>>)`](crate::operation::list_namespaces::ListNamespacesOutput::namespaces): <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::next_token): <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>  </note>
     /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
-    pub fn list_namespaces(
-        &self,
-    ) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
-        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_namespaces(&self) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
+        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
     }
 }

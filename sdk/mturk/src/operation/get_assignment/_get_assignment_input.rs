@@ -22,26 +22,18 @@ impl GetAssignmentInput {
 
 /// A builder for [`GetAssignmentInput`](crate::operation::get_assignment::GetAssignmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssignmentInputBuilder {
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssignmentInputBuilder {
     /// <p>The ID of the Assignment to be retrieved.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Assignment to be retrieved.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`GetAssignmentInput`](crate::operation::get_assignment::GetAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_assignment::GetAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_assignment::GetAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_assignment::GetAssignmentInput {
             assignment_id: self.assignment_id,
         })

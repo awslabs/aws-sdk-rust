@@ -20,32 +20,24 @@ impl BatchUpdateScheduleInput {
         self.channel_id.as_deref()
     }
     /// Schedule actions to create in the schedule.
-    pub fn creates(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchScheduleActionCreateRequest> {
+    pub fn creates(&self) -> ::std::option::Option<&crate::types::BatchScheduleActionCreateRequest> {
         self.creates.as_ref()
     }
     /// Schedule actions to delete from the schedule.
-    pub fn deletes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchScheduleActionDeleteRequest> {
+    pub fn deletes(&self) -> ::std::option::Option<&crate::types::BatchScheduleActionDeleteRequest> {
         self.deletes.as_ref()
     }
 }
 impl BatchUpdateScheduleInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder {
-        crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder {
+        crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateScheduleInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) creates: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
@@ -72,17 +64,12 @@ impl BatchUpdateScheduleInputBuilder {
         self
     }
     /// Schedule actions to create in the schedule.
-    pub fn set_creates(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
-    ) -> Self {
+    pub fn set_creates(mut self, input: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>) -> Self {
         self.creates = input;
         self
     }
     /// Schedule actions to create in the schedule.
-    pub fn get_creates(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchScheduleActionCreateRequest> {
+    pub fn get_creates(&self) -> &::std::option::Option<crate::types::BatchScheduleActionCreateRequest> {
         &self.creates
     }
     /// Schedule actions to delete from the schedule.
@@ -91,32 +78,23 @@ impl BatchUpdateScheduleInputBuilder {
         self
     }
     /// Schedule actions to delete from the schedule.
-    pub fn set_deletes(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
-    ) -> Self {
+    pub fn set_deletes(mut self, input: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>) -> Self {
         self.deletes = input;
         self
     }
     /// Schedule actions to delete from the schedule.
-    pub fn get_deletes(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteRequest> {
+    pub fn get_deletes(&self) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteRequest> {
         &self.deletes
     }
     /// Consumes the builder and constructs a [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_schedule::BatchUpdateScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_update_schedule::BatchUpdateScheduleInput {
-                channel_id: self.channel_id,
-                creates: self.creates,
-                deletes: self.deletes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_update_schedule::BatchUpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_update_schedule::BatchUpdateScheduleInput {
+            channel_id: self.channel_id,
+            creates: self.creates,
+            deletes: self.deletes,
+        })
     }
 }

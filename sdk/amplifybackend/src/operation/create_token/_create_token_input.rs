@@ -22,9 +22,7 @@ impl CreateTokenInput {
 
 /// A builder for [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTokenInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl CreateTokenInputBuilder {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_token::CreateTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_token::CreateTokenInput {
-            app_id: self.app_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_token::CreateTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_token::CreateTokenInput { app_id: self.app_id })
     }
 }

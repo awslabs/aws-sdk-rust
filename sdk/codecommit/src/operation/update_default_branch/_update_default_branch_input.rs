@@ -23,36 +23,26 @@ impl UpdateDefaultBranchInput {
 }
 impl UpdateDefaultBranchInput {
     /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
-    pub fn builder(
-    ) -> crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {
-        crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {
+        crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDefaultBranchInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) default_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultBranchInputBuilder {
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -61,18 +51,12 @@ impl UpdateDefaultBranchInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch to set as the default.</p>
-    pub fn default_branch_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the branch to set as the default.</p>
-    pub fn set_default_branch_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_branch_name = input;
         self
     }
@@ -83,15 +67,11 @@ impl UpdateDefaultBranchInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_default_branch::UpdateDefaultBranchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_default_branch::UpdateDefaultBranchInput {
-                repository_name: self.repository_name,
-                default_branch_name: self.default_branch_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_default_branch::UpdateDefaultBranchInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_default_branch::UpdateDefaultBranchInput {
+            repository_name: self.repository_name,
+            default_branch_name: self.default_branch_name,
+        })
     }
 }

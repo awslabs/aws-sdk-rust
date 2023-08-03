@@ -13,9 +13,7 @@ pub struct PoolOriginationIdentitiesFilter {
 }
 impl PoolOriginationIdentitiesFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PoolOriginationIdentitiesFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::PoolOriginationIdentitiesFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
@@ -32,9 +30,7 @@ impl PoolOriginationIdentitiesFilter {
 
 /// A builder for [`PoolOriginationIdentitiesFilter`](crate::types::PoolOriginationIdentitiesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoolOriginationIdentitiesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,17 +42,12 @@ impl PoolOriginationIdentitiesFilterBuilder {
         self
     }
     /// <p>The name of the attribute to filter on.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the attribute to filter on.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName> {
         &self.name
     }
     /// Appends an item to `values`.
@@ -71,10 +62,7 @@ impl PoolOriginationIdentitiesFilterBuilder {
         self
     }
     /// <p>An array values to filter for.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

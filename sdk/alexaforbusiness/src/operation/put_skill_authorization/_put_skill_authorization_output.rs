@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutSkillAuthorizationOutput {
 }
 impl PutSkillAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`PutSkillAuthorizationOutput`](crate::operation::put_skill_authorization::PutSkillAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationOutputBuilder {
         crate::operation::put_skill_authorization::builders::PutSkillAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSkillAuthorizationOutput`](crate::operation::put_skill_authorization::PutSkillAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSkillAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

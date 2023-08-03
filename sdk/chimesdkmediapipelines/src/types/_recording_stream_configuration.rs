@@ -23,9 +23,7 @@ impl RecordingStreamConfiguration {
 
 /// A builder for [`RecordingStreamConfiguration`](crate::types::RecordingStreamConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordingStreamConfigurationBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl RecordingStreamConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`RecordingStreamConfiguration`](crate::types::RecordingStreamConfiguration).
     pub fn build(self) -> crate::types::RecordingStreamConfiguration {
-        crate::types::RecordingStreamConfiguration {
-            stream_arn: self.stream_arn,
-        }
+        crate::types::RecordingStreamConfiguration { stream_arn: self.stream_arn }
     }
 }

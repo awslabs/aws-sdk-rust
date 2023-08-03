@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DetachInstancesFromLoadBalancerOutput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DetachInstancesFromLoadBalancerError>`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError)
-    pub fn detach_instances_from_load_balancer(&self) -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerFluentBuilder{
+    pub fn detach_instances_from_load_balancer(
+        &self,
+    ) -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerFluentBuilder {
         crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

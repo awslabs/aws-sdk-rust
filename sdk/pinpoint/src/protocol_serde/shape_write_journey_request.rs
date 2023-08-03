@@ -46,10 +46,7 @@ pub fn ser_write_journey_request(
     if let Some(var_15) = &input.schedule {
         #[allow(unused_mut)]
         let mut object_16 = object.key("Schedule").start_object();
-        crate::protocol_serde::shape_journey_schedule::ser_journey_schedule(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_journey_schedule::ser_journey_schedule(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.start_activity {
@@ -73,10 +70,7 @@ pub fn ser_write_journey_request(
     if let Some(var_23) = &input.journey_channel_settings {
         #[allow(unused_mut)]
         let mut object_24 = object.key("JourneyChannelSettings").start_object();
-        crate::protocol_serde::shape_journey_channel_settings::ser_journey_channel_settings(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_journey_channel_settings::ser_journey_channel_settings(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.sending_schedule {

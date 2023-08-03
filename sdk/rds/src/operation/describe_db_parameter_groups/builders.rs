@@ -26,7 +26,7 @@ impl DescribeDbParameterGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBParameterGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder,
+    inner: crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder,
 }
 impl DescribeDBParameterGroupsFluentBuilder {
     /// Creates a new `DescribeDBParameterGroups`.
@@ -37,7 +37,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
         }
     }
     /// Access the DescribeDBParameterGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
             crate::operation::describe_db_parameter_groups::DescribeDBParameterGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeDBParameterGroupsFluentBuilder {
             crate::operation::describe_db_parameter_groups::DescribeDBParameterGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator {
         crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -134,10 +120,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
@@ -146,10 +129,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
@@ -171,10 +151,7 @@ impl DescribeDBParameterGroupsFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

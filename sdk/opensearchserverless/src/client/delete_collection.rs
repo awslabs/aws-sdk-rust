@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCollectionOutput`](crate::operation::delete_collection::DeleteCollectionOutput) with field(s):
     ///   - [`delete_collection_detail(Option<DeleteCollectionDetail>)`](crate::operation::delete_collection::DeleteCollectionOutput::delete_collection_detail): <p>Details of the deleted collection.</p>
     /// - On failure, responds with [`SdkError<DeleteCollectionError>`](crate::operation::delete_collection::DeleteCollectionError)
-    pub fn delete_collection(
-        &self,
-    ) -> crate::operation::delete_collection::builders::DeleteCollectionFluentBuilder {
-        crate::operation::delete_collection::builders::DeleteCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_collection(&self) -> crate::operation::delete_collection::builders::DeleteCollectionFluentBuilder {
+        crate::operation::delete_collection::builders::DeleteCollectionFluentBuilder::new(self.handle.clone())
     }
 }

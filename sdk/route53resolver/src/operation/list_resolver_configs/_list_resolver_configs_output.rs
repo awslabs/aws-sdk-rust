@@ -30,22 +30,17 @@ impl ::aws_http::request_id::RequestId for ListResolverConfigsOutput {
 }
 impl ListResolverConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverConfigsOutput`](crate::operation::list_resolver_configs::ListResolverConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resolver_configs::builders::ListResolverConfigsOutputBuilder {
-        crate::operation::list_resolver_configs::builders::ListResolverConfigsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_resolver_configs::builders::ListResolverConfigsOutputBuilder {
+        crate::operation::list_resolver_configs::builders::ListResolverConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverConfigsOutput`](crate::operation::list_resolver_configs::ListResolverConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resolver_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>,
+    pub(crate) resolver_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverConfigsOutputBuilder {
@@ -78,17 +73,12 @@ impl ListResolverConfigsOutputBuilder {
         self
     }
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    pub fn set_resolver_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>,
-    ) -> Self {
+    pub fn set_resolver_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>) -> Self {
         self.resolver_configs = input;
         self
     }
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    pub fn get_resolver_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>> {
+    pub fn get_resolver_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>> {
         &self.resolver_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

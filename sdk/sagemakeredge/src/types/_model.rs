@@ -51,9 +51,7 @@ impl Model {
 
 /// A builder for [`Model`](crate::types::Model).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl ModelBuilder {
         &self.model_name
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -102,10 +94,7 @@ impl ModelBuilder {
         self
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn set_latest_sample_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_sample_time = input;
         self
     }
@@ -119,10 +108,7 @@ impl ModelBuilder {
         self
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn set_latest_inference(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_inference(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_inference = input;
         self
     }
@@ -142,17 +128,12 @@ impl ModelBuilder {
         self
     }
     /// <p>Information required for model metrics.</p>
-    pub fn set_model_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
-    ) -> Self {
+    pub fn set_model_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>) -> Self {
         self.model_metrics = input;
         self
     }
     /// <p>Information required for model metrics.</p>
-    pub fn get_model_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
+    pub fn get_model_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
         &self.model_metrics
     }
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).

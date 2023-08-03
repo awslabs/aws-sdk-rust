@@ -37,9 +37,7 @@ impl MetricData {
 
 /// A builder for [`MetricData`](crate::types::MetricData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDataBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<f32>,
@@ -80,10 +78,7 @@ impl MetricDataBuilder {
         self
     }
     /// <p>The date and time that the algorithm emitted the metric.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeConfigurationRecorderStatusOutput`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusOutput) with field(s):
     ///   - [`configuration_recorders_status(Option<Vec<ConfigurationRecorderStatus>>)`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusOutput::configuration_recorders_status): <p>A list that contains status of the specified recorders.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationRecorderStatusError>`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError)
-    pub fn describe_configuration_recorder_status(&self) -> crate::operation::describe_configuration_recorder_status::builders::DescribeConfigurationRecorderStatusFluentBuilder{
+    pub fn describe_configuration_recorder_status(
+        &self,
+    ) -> crate::operation::describe_configuration_recorder_status::builders::DescribeConfigurationRecorderStatusFluentBuilder {
         crate::operation::describe_configuration_recorder_status::builders::DescribeConfigurationRecorderStatusFluentBuilder::new(self.handle.clone())
     }
 }

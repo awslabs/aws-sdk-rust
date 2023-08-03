@@ -37,9 +37,7 @@ impl DescribeApplicationsFluentBuilder {
         }
     }
     /// Access the DescribeApplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeApplicationsFluentBuilder {
             crate::operation::describe_applications::DescribeApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_applications::DescribeApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_applications::DescribeApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_applications::DescribeApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_applications::DescribeApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_applications::DescribeApplicationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_applications::DescribeApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_applications::DescribeApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_applications::DescribeApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeApplicationsFluentBuilder {
             crate::operation::describe_applications::DescribeApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_applications::DescribeApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_applications::DescribeApplicationsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl DescribeApplicationsFluentBuilder {
         self
     }
     /// <p>The ARNs for the applications.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_arns(input);
         self
     }

@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataKeyPairSpec {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for DataKeyPairSpec {
             "RSA_3072" => DataKeyPairSpec::Rsa3072,
             "RSA_4096" => DataKeyPairSpec::Rsa4096,
             "SM2" => DataKeyPairSpec::Sm2,
-            other => {
-                DataKeyPairSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataKeyPairSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -72,9 +72,7 @@ impl ReadSetFilter {
 
 /// A builder for [`ReadSetFilter`](crate::types::ReadSetFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadSetFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReadSetStatus>,
@@ -115,18 +113,12 @@ impl ReadSetFilterBuilder {
         &self.status
     }
     /// <p>A genome reference ARN to filter on.</p>
-    pub fn reference_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A genome reference ARN to filter on.</p>
-    pub fn set_reference_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_arn = input;
         self
     }
@@ -140,10 +132,7 @@ impl ReadSetFilterBuilder {
         self
     }
     /// <p>The filter's start date.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -157,10 +146,7 @@ impl ReadSetFilterBuilder {
         self
     }
     /// <p>The filter's end date.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -197,18 +183,12 @@ impl ReadSetFilterBuilder {
         &self.subject_id
     }
     /// <p> Where the source originated. </p>
-    pub fn generated_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Where the source originated. </p>
-    pub fn set_generated_from(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_from = input;
         self
     }

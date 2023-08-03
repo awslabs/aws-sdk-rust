@@ -30,18 +30,14 @@ impl ListDomainAssociationsInput {
 }
 impl ListDomainAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_domain_associations::builders::ListDomainAssociationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_associations::builders::ListDomainAssociationsInputBuilder {
         crate::operation::list_domain_associations::builders::ListDomainAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainAssociationsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -93,16 +89,12 @@ impl ListDomainAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domain_associations::ListDomainAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_domain_associations::ListDomainAssociationsInput {
-                app_id: self.app_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_domain_associations::ListDomainAssociationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_domain_associations::ListDomainAssociationsInput {
+            app_id: self.app_id,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

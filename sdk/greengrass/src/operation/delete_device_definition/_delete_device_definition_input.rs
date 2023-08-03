@@ -15,35 +15,25 @@ impl DeleteDeviceDefinitionInput {
 }
 impl DeleteDeviceDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceDefinitionInput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionInputBuilder {
         crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeviceDefinitionInput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeviceDefinitionInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeviceDefinitionInputBuilder {
     /// The ID of the device definition.
-    pub fn device_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_definition_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteDeviceDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeviceDefinitionInput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_device_definition::DeleteDeviceDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_device_definition::DeleteDeviceDefinitionInput {
-                device_definition_id: self.device_definition_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_device_definition::DeleteDeviceDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_device_definition::DeleteDeviceDefinitionInput {
+            device_definition_id: self.device_definition_id,
+        })
     }
 }

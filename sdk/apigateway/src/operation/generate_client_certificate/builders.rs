@@ -26,7 +26,7 @@ impl GenerateClientCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateClientCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::generate_client_certificate::builders::GenerateClientCertificateInputBuilder,
+    inner: crate::operation::generate_client_certificate::builders::GenerateClientCertificateInputBuilder,
 }
 impl GenerateClientCertificateFluentBuilder {
     /// Creates a new `GenerateClientCertificate`.
@@ -37,7 +37,7 @@ impl GenerateClientCertificateFluentBuilder {
         }
     }
     /// Access the GenerateClientCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::generate_client_certificate::builders::GenerateClientCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::generate_client_certificate::builders::GenerateClientCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GenerateClientCertificateFluentBuilder {
             crate::operation::generate_client_certificate::GenerateClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_client_certificate::GenerateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_client_certificate::GenerateClientCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GenerateClientCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GenerateClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_client_certificate::GenerateClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_client_certificate::GenerateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_client_certificate::GenerateClientCertificateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GenerateClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_client_certificate::GenerateClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_client_certificate::GenerateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_client_certificate::GenerateClientCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GenerateClientCertificateFluentBuilder {
             crate::operation::generate_client_certificate::GenerateClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_client_certificate::GenerateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_client_certificate::GenerateClientCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -139,30 +128,17 @@ impl GenerateClientCertificateFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssistantAssociationOutput`](crate::operation::create_assistant_association::CreateAssistantAssociationOutput) with field(s):
     ///   - [`assistant_association(Option<AssistantAssociationData>)`](crate::operation::create_assistant_association::CreateAssistantAssociationOutput::assistant_association): <p>The assistant association.</p>
     /// - On failure, responds with [`SdkError<CreateAssistantAssociationError>`](crate::operation::create_assistant_association::CreateAssistantAssociationError)
-    pub fn create_assistant_association(&self) -> crate::operation::create_assistant_association::builders::CreateAssistantAssociationFluentBuilder{
+    pub fn create_assistant_association(&self) -> crate::operation::create_assistant_association::builders::CreateAssistantAssociationFluentBuilder {
         crate::operation::create_assistant_association::builders::CreateAssistantAssociationFluentBuilder::new(self.handle.clone())
     }
 }

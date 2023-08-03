@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`snapshots_data(Option<Vec<Vec<String>>>)`](crate::operation::get_snapshots::GetSnapshotsOutput::snapshots_data): <p>The search metrics data. The data returned depends on the metric type you requested.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_snapshots::GetSnapshotsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotsError>`](crate::operation::get_snapshots::GetSnapshotsError)
-    pub fn get_snapshots(
-        &self,
-    ) -> crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder {
-        crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_snapshots(&self) -> crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder {
+        crate::operation::get_snapshots::builders::GetSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

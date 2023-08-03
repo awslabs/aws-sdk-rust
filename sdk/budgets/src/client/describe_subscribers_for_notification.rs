@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`subscribers(Option<Vec<Subscriber>>)`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput::subscribers): <p>A list of subscribers that are associated with a notification.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeSubscribersForNotificationError>`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError)
-    pub fn describe_subscribers_for_notification(&self) -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder{
+    pub fn describe_subscribers_for_notification(
+        &self,
+    ) -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder {
         crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::new(self.handle.clone())
     }
 }

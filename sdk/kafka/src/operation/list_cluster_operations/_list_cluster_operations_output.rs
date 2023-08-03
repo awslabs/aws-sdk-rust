@@ -5,8 +5,7 @@
 pub struct ListClusterOperationsOutput {
     /// <p>An array of cluster operation information objects.</p>
     #[doc(hidden)]
-    pub cluster_operation_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
+    pub cluster_operation_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListClusterOperationsOutput {
 }
 impl ListClusterOperationsOutput {
     /// <p>An array of cluster operation information objects.</p>
-    pub fn cluster_operation_info_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterOperationInfo]> {
+    pub fn cluster_operation_info_list(&self) -> ::std::option::Option<&[crate::types::ClusterOperationInfo]> {
         self.cluster_operation_info_list.as_deref()
     }
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListClusterOperationsOutput {
 }
 impl ListClusterOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListClusterOperationsOutput`](crate::operation::list_cluster_operations::ListClusterOperationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cluster_operations::builders::ListClusterOperationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_cluster_operations::builders::ListClusterOperationsOutputBuilder {
         crate::operation::list_cluster_operations::builders::ListClusterOperationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListClusterOperationsOutput`](crate::operation::list_cluster_operations::ListClusterOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClusterOperationsOutputBuilder {
-    pub(crate) cluster_operation_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
+    pub(crate) cluster_operation_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListClusterOperationsOutputBuilder {
     /// To override the contents of this collection use [`set_cluster_operation_info_list`](Self::set_cluster_operation_info_list).
     ///
     /// <p>An array of cluster operation information objects.</p>
-    pub fn cluster_operation_info_list(
-        mut self,
-        input: crate::types::ClusterOperationInfo,
-    ) -> Self {
+    pub fn cluster_operation_info_list(mut self, input: crate::types::ClusterOperationInfo) -> Self {
         let mut v = self.cluster_operation_info_list.unwrap_or_default();
         v.push(input);
         self.cluster_operation_info_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of cluster operation information objects.</p>
-    pub fn set_cluster_operation_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
-    ) -> Self {
+    pub fn set_cluster_operation_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>) -> Self {
         self.cluster_operation_info_list = input;
         self
     }
     /// <p>An array of cluster operation information objects.</p>
-    pub fn get_cluster_operation_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>> {
+    pub fn get_cluster_operation_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>> {
         &self.cluster_operation_info_list
     }
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>

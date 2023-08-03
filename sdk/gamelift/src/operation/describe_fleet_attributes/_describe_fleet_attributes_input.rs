@@ -29,18 +29,14 @@ impl DescribeFleetAttributesInput {
 }
 impl DescribeFleetAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAttributesInput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder {
         crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAttributesInput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAttributesInputBuilder {
     pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -59,10 +55,7 @@ impl DescribeFleetAttributesInputBuilder {
         self
     }
     /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fleet_ids = input;
         self
     }
@@ -105,12 +98,10 @@ impl DescribeFleetAttributesInputBuilder {
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput {
-                fleet_ids: self.fleet_ids,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput {
+            fleet_ids: self.fleet_ids,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

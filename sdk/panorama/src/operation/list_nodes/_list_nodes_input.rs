@@ -64,9 +64,7 @@ impl ListNodesInput {
 
 /// A builder for [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodesInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::NodeCategory>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -83,10 +81,7 @@ impl ListNodesInputBuilder {
         self
     }
     /// <p>Search for nodes by category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::NodeCategory>) -> Self {
         self.category = input;
         self
     }
@@ -95,18 +90,12 @@ impl ListNodesInputBuilder {
         &self.category
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -129,18 +118,12 @@ impl ListNodesInputBuilder {
         &self.package_name
     }
     /// <p>Search for nodes by version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Search for nodes by version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -149,18 +132,12 @@ impl ListNodesInputBuilder {
         &self.package_version
     }
     /// <p>Search for nodes by patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Search for nodes by patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_version = input;
         self
     }
@@ -197,12 +174,7 @@ impl ListNodesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_nodes::ListNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_nodes::ListNodesInput {
             category: self.category,
             owner_account: self.owner_account,

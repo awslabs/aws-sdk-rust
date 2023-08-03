@@ -35,17 +35,14 @@ impl RevokeCertificateInput {
 }
 impl RevokeCertificateInput {
     /// Creates a new builder-style object to manufacture [`RevokeCertificateInput`](crate::operation::revoke_certificate::RevokeCertificateInput).
-    pub fn builder() -> crate::operation::revoke_certificate::builders::RevokeCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_certificate::builders::RevokeCertificateInputBuilder {
         crate::operation::revoke_certificate::builders::RevokeCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeCertificateInput`](crate::operation::revoke_certificate::RevokeCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeCertificateInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_serial: ::std::option::Option<::std::string::String>,
@@ -54,19 +51,13 @@ pub struct RevokeCertificateInputBuilder {
 impl RevokeCertificateInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -78,20 +69,14 @@ impl RevokeCertificateInputBuilder {
     /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
     /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
     /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
-    pub fn certificate_serial(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_serial(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_serial = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
     /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
     /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
-    pub fn set_certificate_serial(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_serial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_serial = input;
         self
     }
@@ -107,10 +92,7 @@ impl RevokeCertificateInputBuilder {
         self
     }
     /// <p>Specifies why you revoked the certificate.</p>
-    pub fn set_revocation_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::RevocationReason>,
-    ) -> Self {
+    pub fn set_revocation_reason(mut self, input: ::std::option::Option<crate::types::RevocationReason>) -> Self {
         self.revocation_reason = input;
         self
     }
@@ -121,16 +103,11 @@ impl RevokeCertificateInputBuilder {
     /// Consumes the builder and constructs a [`RevokeCertificateInput`](crate::operation::revoke_certificate::RevokeCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_certificate::RevokeCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_certificate::RevokeCertificateInput {
-                certificate_authority_arn: self.certificate_authority_arn,
-                certificate_serial: self.certificate_serial,
-                revocation_reason: self.revocation_reason,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::revoke_certificate::RevokeCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::revoke_certificate::RevokeCertificateInput {
+            certificate_authority_arn: self.certificate_authority_arn,
+            certificate_serial: self.certificate_serial,
+            revocation_reason: self.revocation_reason,
+        })
     }
 }

@@ -2,8 +2,7 @@
 pub fn ser_write_get_object_response_headers(
     input: &crate::operation::write_get_object_response::WriteGetObjectResponseInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.request_route {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_route",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-route", header_value);
@@ -27,10 +23,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-token", header_value);
@@ -44,10 +37,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "status_code",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-status", header_value);
@@ -60,10 +50,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "error_code",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-error-code", header_value);
@@ -76,10 +63,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "error_message",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-error-message", header_value);
@@ -92,10 +76,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "accept_ranges",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-accept-ranges", header_value);
@@ -108,10 +89,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "cache_control",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Cache-Control", header_value);
@@ -124,10 +102,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_disposition",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Content-Disposition", header_value);
@@ -140,10 +115,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_encoding",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Content-Encoding", header_value);
@@ -156,10 +128,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_language",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Content-Language", header_value);
@@ -173,10 +142,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_length",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-Length", header_value);
@@ -189,10 +155,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_range",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Content-Range", header_value);
@@ -205,10 +168,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Content-Type", header_value);
@@ -221,10 +181,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-crc32", header_value);
@@ -237,10 +194,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32_c",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-crc32c", header_value);
@@ -253,10 +207,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha1",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-sha1", header_value);
@@ -269,10 +220,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha256",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-sha256", header_value);
@@ -286,10 +234,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "delete_marker",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-delete-marker", header_value);
@@ -302,10 +247,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "e_tag",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-ETag", header_value);
@@ -318,10 +260,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expires",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Expires", header_value);
@@ -334,10 +273,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expiration",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-expiration", header_value);
@@ -350,10 +286,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "last_modified",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-Last-Modified", header_value);
@@ -367,10 +300,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "missing_meta",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-missing-meta", header_value);
@@ -383,10 +313,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_mode",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-object-lock-mode", header_value);
@@ -399,16 +326,10 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_legal_hold_status",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-object-lock-legal-hold",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-object-lock-legal-hold", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_51) = &input.object_lock_retain_until_date {
@@ -418,16 +339,10 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "object_lock_retain_until_date",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-object-lock-retain-until-date",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-object-lock-retain-until-date", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_53) = &input.parts_count {
@@ -438,10 +353,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "parts_count",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-mp-parts-count", header_value);
@@ -454,10 +366,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "replication_status",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-replication-status", header_value);
@@ -470,10 +379,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_charged",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-request-charged", header_value);
@@ -486,10 +392,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "restore",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-restore", header_value);
@@ -502,16 +405,10 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "server_side_encryption",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-server-side-encryption",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-server-side-encryption", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_63) = &input.sse_customer_algorithm {
@@ -521,16 +418,10 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_algorithm",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_65) = &input.ssekms_key_id {
@@ -540,16 +431,10 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "ssekms_key_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_67) = &input.sse_customer_key_md5 {
@@ -559,16 +444,10 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key_md5",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_69) = &input.storage_class {
@@ -578,10 +457,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "storage_class",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-storage-class", header_value);
@@ -595,10 +471,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "tag_count",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-tagging-count", header_value);
@@ -611,10 +484,7 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "version_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-fwd-header-x-amz-version-id", header_value);
@@ -628,30 +498,22 @@ pub fn ser_write_get_object_response_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bucket_key_enabled",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled",
-                header_value,
-            );
+            builder = builder.header("x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_77) = &input.metadata {
         {
             for (k, v) in inner_77 {
                 use std::str::FromStr;
-                let header_name =
-                    http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
-                        .map_err(|err| {
-                            ::aws_smithy_http::operation::error::BuildError::invalid_field(
-                                "metadata",
-                                format!("`{k}` cannot be used as a header name: {err}"),
-                            )
-                        })?;
+                let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(|err| {
+                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "metadata",
+                        format!("`{k}` cannot be used as a header name: {err}"),
+                    )
+                })?;
                 let header_value = v.as_str();
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_http::operation::error::BuildError::invalid_field(
@@ -676,14 +538,9 @@ pub fn de_write_get_object_response_http_error(
     crate::operation::write_get_object_response::WriteGetObjectResponseError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::write_get_object_response::WriteGetObjectResponseError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::write_get_object_response::WriteGetObjectResponseError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::write_get_object_response::WriteGetObjectResponseError::generic(generic))
@@ -701,13 +558,8 @@ pub fn de_write_get_object_response_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::write_get_object_response::builders::WriteGetObjectResponseOutputBuilder::default();
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

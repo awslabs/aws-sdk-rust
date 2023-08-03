@@ -22,26 +22,18 @@ impl DetachStaticIpInput {
 
 /// A builder for [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachStaticIpInputBuilder {
     /// <p>The name of the static IP to detach from the instance.</p>
-    pub fn static_ip_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the static IP to detach from the instance.</p>
-    pub fn set_static_ip_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_static_ip_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.static_ip_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DetachStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_static_ip::DetachStaticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::detach_static_ip::DetachStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_static_ip::DetachStaticIpInput {
             static_ip_name: self.static_ip_name,
         })

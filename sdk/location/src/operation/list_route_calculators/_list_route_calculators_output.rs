@@ -5,8 +5,7 @@
 pub struct ListRouteCalculatorsOutput {
     /// <p>Lists the route calculator resources that exist in your Amazon Web Services account</p>
     #[doc(hidden)]
-    pub entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRouteCalculatorsOutput {
 }
 impl ListRouteCalculatorsOutput {
     /// <p>Lists the route calculator resources that exist in your Amazon Web Services account</p>
-    pub fn entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListRouteCalculatorsResponseEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListRouteCalculatorsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRouteCalculatorsOutput {
 }
 impl ListRouteCalculatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsOutput`](crate::operation::list_route_calculators::ListRouteCalculatorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_route_calculators::builders::ListRouteCalculatorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_route_calculators::builders::ListRouteCalculatorsOutputBuilder {
         crate::operation::list_route_calculators::builders::ListRouteCalculatorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRouteCalculatorsOutput`](crate::operation::list_route_calculators::ListRouteCalculatorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRouteCalculatorsOutputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,20 +54,12 @@ impl ListRouteCalculatorsOutputBuilder {
         self
     }
     /// <p>Lists the route calculator resources that exist in your Amazon Web Services account</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Lists the route calculator resources that exist in your Amazon Web Services account</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`secret_code(Option<String>)`](crate::operation::associate_software_token::AssociateSoftwareTokenOutput::secret_code): <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
     ///   - [`session(Option<String>)`](crate::operation::associate_software_token::AssociateSoftwareTokenOutput::session): <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     /// - On failure, responds with [`SdkError<AssociateSoftwareTokenError>`](crate::operation::associate_software_token::AssociateSoftwareTokenError)
-    pub fn associate_software_token(
-        &self,
-    ) -> crate::operation::associate_software_token::builders::AssociateSoftwareTokenFluentBuilder
-    {
+    pub fn associate_software_token(&self) -> crate::operation::associate_software_token::builders::AssociateSoftwareTokenFluentBuilder {
         crate::operation::associate_software_token::builders::AssociateSoftwareTokenFluentBuilder::new(self.handle.clone())
     }
 }

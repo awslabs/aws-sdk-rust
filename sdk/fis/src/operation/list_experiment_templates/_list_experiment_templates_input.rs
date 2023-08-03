@@ -22,18 +22,14 @@ impl ListExperimentTemplatesInput {
 }
 impl ListExperimentTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesInput`](crate::operation::list_experiment_templates::ListExperimentTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder {
         crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExperimentTemplatesInput`](crate::operation::list_experiment_templates::ListExperimentTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperimentTemplatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListExperimentTemplatesInputBuilder {
         crate::operation::list_experiment_templates::ListExperimentTemplatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_experiment_templates::ListExperimentTemplatesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_experiment_templates::ListExperimentTemplatesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

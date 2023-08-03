@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`r#type(ClientAuthenticationType)`](crate::operation::enable_client_authentication::builders::EnableClientAuthenticationFluentBuilder::type) / [`set_type(Option<ClientAuthenticationType>)`](crate::operation::enable_client_authentication::builders::EnableClientAuthenticationFluentBuilder::set_type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     /// - On success, responds with [`EnableClientAuthenticationOutput`](crate::operation::enable_client_authentication::EnableClientAuthenticationOutput)
     /// - On failure, responds with [`SdkError<EnableClientAuthenticationError>`](crate::operation::enable_client_authentication::EnableClientAuthenticationError)
-    pub fn enable_client_authentication(&self) -> crate::operation::enable_client_authentication::builders::EnableClientAuthenticationFluentBuilder{
+    pub fn enable_client_authentication(&self) -> crate::operation::enable_client_authentication::builders::EnableClientAuthenticationFluentBuilder {
         crate::operation::enable_client_authentication::builders::EnableClientAuthenticationFluentBuilder::new(self.handle.clone())
     }
 }

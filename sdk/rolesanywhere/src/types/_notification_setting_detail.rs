@@ -56,9 +56,7 @@ impl NotificationSettingDetail {
 
 /// A builder for [`NotificationSettingDetail`](crate::types::NotificationSettingDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationSettingDetailBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) event: ::std::option::Option<crate::types::NotificationEvent>,
@@ -87,10 +85,7 @@ impl NotificationSettingDetailBuilder {
         self
     }
     /// <p>The event to which this notification setting is applied.</p>
-    pub fn set_event(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationEvent>,
-    ) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::NotificationEvent>) -> Self {
         self.event = input;
         self
     }
@@ -122,10 +117,7 @@ impl NotificationSettingDetailBuilder {
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
-    pub fn set_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.channel = input;
         self
     }
@@ -136,18 +128,12 @@ impl NotificationSettingDetailBuilder {
         &self.channel
     }
     /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
-    pub fn configured_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
-    pub fn set_configured_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_by = input;
         self
     }

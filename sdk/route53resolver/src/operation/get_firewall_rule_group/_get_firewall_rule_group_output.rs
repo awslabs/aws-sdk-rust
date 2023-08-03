@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFirewallRuleGroupOutput {
 }
 impl GetFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupOutput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupOutputBuilder {
         crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallRuleGroupOutput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupOutputBuilder {
     pub(crate) firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetFirewallRuleGroupOutputBuilder {
         self
     }
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn set_firewall_rule_group(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRuleGroup>,
-    ) -> Self {
+    pub fn set_firewall_rule_group(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroup>) -> Self {
         self.firewall_rule_group = input;
         self
     }
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn get_firewall_rule_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
+    pub fn get_firewall_rule_group(&self) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
         &self.firewall_rule_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

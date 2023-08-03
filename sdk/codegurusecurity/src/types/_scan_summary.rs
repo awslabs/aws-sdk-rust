@@ -58,9 +58,7 @@ impl ScanSummary {
 
 /// A builder for [`ScanSummary`](crate::types::ScanSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanSummaryBuilder {
     pub(crate) scan_state: ::std::option::Option<crate::types::ScanState>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,10 +88,7 @@ impl ScanSummaryBuilder {
         self
     }
     /// <p> The time when the scan was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -107,10 +102,7 @@ impl ScanSummaryBuilder {
         self
     }
     /// <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -147,18 +139,12 @@ impl ScanSummaryBuilder {
         &self.run_id
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn scan_name_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scan_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn set_scan_name_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scan_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_name_arn = input;
         self
     }

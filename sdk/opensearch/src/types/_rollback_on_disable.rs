@@ -38,13 +38,7 @@
 /// <p>The rollback state while disabling Auto-Tune for the domain.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RollbackOnDisable {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RollbackOnDisable {
         match s {
             "DEFAULT_ROLLBACK" => RollbackOnDisable::DefaultRollback,
             "NO_ROLLBACK" => RollbackOnDisable::NoRollback,
-            other => {
-                RollbackOnDisable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RollbackOnDisable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

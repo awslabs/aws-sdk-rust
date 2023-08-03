@@ -45,9 +45,7 @@ impl TelemetryRecord {
         self.segments_rejected_count
     }
     /// <p></p>
-    pub fn backend_connection_errors(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackendConnectionErrors> {
+    pub fn backend_connection_errors(&self) -> ::std::option::Option<&crate::types::BackendConnectionErrors> {
         self.backend_connection_errors.as_ref()
     }
 }
@@ -60,17 +58,14 @@ impl TelemetryRecord {
 
 /// A builder for [`TelemetryRecord`](crate::types::TelemetryRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TelemetryRecordBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) segments_received_count: ::std::option::Option<i32>,
     pub(crate) segments_sent_count: ::std::option::Option<i32>,
     pub(crate) segments_spillover_count: ::std::option::Option<i32>,
     pub(crate) segments_rejected_count: ::std::option::Option<i32>,
-    pub(crate) backend_connection_errors:
-        ::std::option::Option<crate::types::BackendConnectionErrors>,
+    pub(crate) backend_connection_errors: ::std::option::Option<crate::types::BackendConnectionErrors>,
 }
 impl TelemetryRecordBuilder {
     /// <p></p>
@@ -79,10 +74,7 @@ impl TelemetryRecordBuilder {
         self
     }
     /// <p></p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -147,25 +139,17 @@ impl TelemetryRecordBuilder {
         &self.segments_rejected_count
     }
     /// <p></p>
-    pub fn backend_connection_errors(
-        mut self,
-        input: crate::types::BackendConnectionErrors,
-    ) -> Self {
+    pub fn backend_connection_errors(mut self, input: crate::types::BackendConnectionErrors) -> Self {
         self.backend_connection_errors = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_backend_connection_errors(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendConnectionErrors>,
-    ) -> Self {
+    pub fn set_backend_connection_errors(mut self, input: ::std::option::Option<crate::types::BackendConnectionErrors>) -> Self {
         self.backend_connection_errors = input;
         self
     }
     /// <p></p>
-    pub fn get_backend_connection_errors(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendConnectionErrors> {
+    pub fn get_backend_connection_errors(&self) -> &::std::option::Option<crate::types::BackendConnectionErrors> {
         &self.backend_connection_errors
     }
     /// Consumes the builder and constructs a [`TelemetryRecord`](crate::types::TelemetryRecord).

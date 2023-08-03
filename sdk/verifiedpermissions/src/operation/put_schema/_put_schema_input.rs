@@ -29,27 +29,19 @@ impl PutSchemaInput {
 
 /// A builder for [`PutSchemaInput`](crate::operation::put_schema::PutSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSchemaInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::SchemaDefinition>,
 }
 impl PutSchemaInputBuilder {
     /// <p>Specifies the ID of the policy store in which to place the schema.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store in which to place the schema.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl PutSchemaInputBuilder {
         self
     }
     /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.definition = input;
         self
     }
@@ -75,12 +64,7 @@ impl PutSchemaInputBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`PutSchemaInput`](crate::operation::put_schema::PutSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_schema::PutSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_schema::PutSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_schema::PutSchemaInput {
             policy_store_id: self.policy_store_id,
             definition: self.definition,

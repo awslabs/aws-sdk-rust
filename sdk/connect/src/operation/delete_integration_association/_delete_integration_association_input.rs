@@ -22,16 +22,14 @@ impl DeleteIntegrationAssociationInput {
 }
 impl DeleteIntegrationAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationAssociationInput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationInput).
-    pub fn builder() -> crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder{
+    pub fn builder() -> crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder {
         crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationAssociationInput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationAssociationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteIntegrationAssociationInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteIntegrationAssociationInputBuilder {
         crate::operation::delete_integration_association::DeleteIntegrationAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_integration_association::DeleteIntegrationAssociationInput {
-                instance_id: self.instance_id,
-                integration_association_id: self.integration_association_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_integration_association::DeleteIntegrationAssociationInput {
+            instance_id: self.instance_id,
+            integration_association_id: self.integration_association_id,
+        })
     }
 }

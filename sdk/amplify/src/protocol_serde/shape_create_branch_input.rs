@@ -50,9 +50,7 @@ pub fn ser_create_branch_input(
         object.key("framework").string(var_16.as_str());
     }
     if let Some(var_17) = &input.pull_request_environment_name {
-        object
-            .key("pullRequestEnvironmentName")
-            .string(var_17.as_str());
+        object.key("pullRequestEnvironmentName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.stage {
         object.key("stage").string(var_18.as_str());

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteAuthenticationProfileOutput {
 }
 impl DeleteAuthenticationProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAuthenticationProfileOutput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput).
-    pub fn builder() -> crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileOutputBuilder{
+    pub fn builder() -> crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileOutputBuilder {
         crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAuthenticationProfileOutput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAuthenticationProfileOutputBuilder {
     pub(crate) authentication_profile_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAuthenticationProfileOutputBuilder {
     /// <p>The name of the authentication profile that was deleted.</p>
-    pub fn authentication_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the authentication profile that was deleted.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_profile_name = input;
         self
     }
@@ -66,9 +58,7 @@ impl DeleteAuthenticationProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAuthenticationProfileOutput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput {
+    pub fn build(self) -> crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput {
         crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput {
             authentication_profile_name: self.authentication_profile_name,
             _request_id: self._request_id,

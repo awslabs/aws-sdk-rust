@@ -6,8 +6,7 @@
 pub struct UnprocessedStandardsControlAssociation {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
     #[doc(hidden)]
-    pub standards_control_association_id:
-        ::std::option::Option<crate::types::StandardsControlAssociationId>,
+    pub standards_control_association_id: ::std::option::Option<crate::types::StandardsControlAssociationId>,
     /// <p>The error code for the unprocessed standard and control association. </p>
     #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
@@ -17,9 +16,7 @@ pub struct UnprocessedStandardsControlAssociation {
 }
 impl UnprocessedStandardsControlAssociation {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn standards_control_association_id(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StandardsControlAssociationId> {
+    pub fn standards_control_association_id(&self) -> ::std::option::Option<&crate::types::StandardsControlAssociationId> {
         self.standards_control_association_id.as_ref()
     }
     /// <p>The error code for the unprocessed standard and control association. </p>
@@ -40,36 +37,25 @@ impl UnprocessedStandardsControlAssociation {
 
 /// A builder for [`UnprocessedStandardsControlAssociation`](crate::types::UnprocessedStandardsControlAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedStandardsControlAssociationBuilder {
-    pub(crate) standards_control_association_id:
-        ::std::option::Option<crate::types::StandardsControlAssociationId>,
+    pub(crate) standards_control_association_id: ::std::option::Option<crate::types::StandardsControlAssociationId>,
     pub(crate) error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedStandardsControlAssociationBuilder {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn standards_control_association_id(
-        mut self,
-        input: crate::types::StandardsControlAssociationId,
-    ) -> Self {
+    pub fn standards_control_association_id(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
         self.standards_control_association_id = ::std::option::Option::Some(input);
         self
     }
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn set_standards_control_association_id(
-        mut self,
-        input: ::std::option::Option<crate::types::StandardsControlAssociationId>,
-    ) -> Self {
+    pub fn set_standards_control_association_id(mut self, input: ::std::option::Option<crate::types::StandardsControlAssociationId>) -> Self {
         self.standards_control_association_id = input;
         self
     }
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    pub fn get_standards_control_association_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::StandardsControlAssociationId> {
+    pub fn get_standards_control_association_id(&self) -> &::std::option::Option<crate::types::StandardsControlAssociationId> {
         &self.standards_control_association_id
     }
     /// <p>The error code for the unprocessed standard and control association. </p>
@@ -78,10 +64,7 @@ impl UnprocessedStandardsControlAssociationBuilder {
         self
     }
     /// <p>The error code for the unprocessed standard and control association. </p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::UnprocessedErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
         self.error_code = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVpcAttachmentOutput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput) with field(s):
     ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput::vpc_attachment): <p>Describes the updated VPC attachment.</p>
     /// - On failure, responds with [`SdkError<UpdateVpcAttachmentError>`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentError)
-    pub fn update_vpc_attachment(
-        &self,
-    ) -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentFluentBuilder {
-        crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_vpc_attachment(&self) -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentFluentBuilder {
+        crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

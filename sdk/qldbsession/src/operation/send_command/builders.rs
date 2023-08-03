@@ -10,10 +10,7 @@ impl SendCommandInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_command::SendCommandOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_command::SendCommandError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_command();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl SendCommandFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_command::SendCommand,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_command::SendCommand, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +59,7 @@ impl SendCommandFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,29 +101,20 @@ impl SendCommandFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_command::SendCommand,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_command::SendCommand, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn session_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_token(input.into());
         self
     }
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn set_session_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_token(input);
         self
     }
@@ -147,10 +129,7 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
-    pub fn set_start_session(
-        mut self,
-        input: ::std::option::Option<crate::types::StartSessionRequest>,
-    ) -> Self {
+    pub fn set_start_session(mut self, input: ::std::option::Option<crate::types::StartSessionRequest>) -> Self {
         self.inner = self.inner.set_start_session(input);
         self
     }
@@ -164,17 +143,12 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to start a new transaction.</p>
-    pub fn set_start_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTransactionRequest>,
-    ) -> Self {
+    pub fn set_start_transaction(mut self, input: ::std::option::Option<crate::types::StartTransactionRequest>) -> Self {
         self.inner = self.inner.set_start_transaction(input);
         self
     }
     /// <p>Command to start a new transaction.</p>
-    pub fn get_start_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::StartTransactionRequest> {
+    pub fn get_start_transaction(&self) -> &::std::option::Option<crate::types::StartTransactionRequest> {
         self.inner.get_start_transaction()
     }
     /// <p>Command to end the current session.</p>
@@ -183,10 +157,7 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to end the current session.</p>
-    pub fn set_end_session(
-        mut self,
-        input: ::std::option::Option<crate::types::EndSessionRequest>,
-    ) -> Self {
+    pub fn set_end_session(mut self, input: ::std::option::Option<crate::types::EndSessionRequest>) -> Self {
         self.inner = self.inner.set_end_session(input);
         self
     }
@@ -200,17 +171,12 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to commit the specified transaction.</p>
-    pub fn set_commit_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitTransactionRequest>,
-    ) -> Self {
+    pub fn set_commit_transaction(mut self, input: ::std::option::Option<crate::types::CommitTransactionRequest>) -> Self {
         self.inner = self.inner.set_commit_transaction(input);
         self
     }
     /// <p>Command to commit the specified transaction.</p>
-    pub fn get_commit_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitTransactionRequest> {
+    pub fn get_commit_transaction(&self) -> &::std::option::Option<crate::types::CommitTransactionRequest> {
         self.inner.get_commit_transaction()
     }
     /// <p>Command to abort the current transaction.</p>
@@ -219,17 +185,12 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to abort the current transaction.</p>
-    pub fn set_abort_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortTransactionRequest>,
-    ) -> Self {
+    pub fn set_abort_transaction(mut self, input: ::std::option::Option<crate::types::AbortTransactionRequest>) -> Self {
         self.inner = self.inner.set_abort_transaction(input);
         self
     }
     /// <p>Command to abort the current transaction.</p>
-    pub fn get_abort_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::AbortTransactionRequest> {
+    pub fn get_abort_transaction(&self) -> &::std::option::Option<crate::types::AbortTransactionRequest> {
         self.inner.get_abort_transaction()
     }
     /// <p>Command to execute a statement in the specified transaction.</p>
@@ -238,17 +199,12 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to execute a statement in the specified transaction.</p>
-    pub fn set_execute_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecuteStatementRequest>,
-    ) -> Self {
+    pub fn set_execute_statement(mut self, input: ::std::option::Option<crate::types::ExecuteStatementRequest>) -> Self {
         self.inner = self.inner.set_execute_statement(input);
         self
     }
     /// <p>Command to execute a statement in the specified transaction.</p>
-    pub fn get_execute_statement(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecuteStatementRequest> {
+    pub fn get_execute_statement(&self) -> &::std::option::Option<crate::types::ExecuteStatementRequest> {
         self.inner.get_execute_statement()
     }
     /// <p>Command to fetch a page.</p>
@@ -257,10 +213,7 @@ impl SendCommandFluentBuilder {
         self
     }
     /// <p>Command to fetch a page.</p>
-    pub fn set_fetch_page(
-        mut self,
-        input: ::std::option::Option<crate::types::FetchPageRequest>,
-    ) -> Self {
+    pub fn set_fetch_page(mut self, input: ::std::option::Option<crate::types::FetchPageRequest>) -> Self {
         self.inner = self.inner.set_fetch_page(input);
         self
     }

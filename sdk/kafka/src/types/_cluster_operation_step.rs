@@ -30,9 +30,7 @@ impl ClusterOperationStep {
 
 /// A builder for [`ClusterOperationStep`](crate::types::ClusterOperationStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterOperationStepBuilder {
     pub(crate) step_info: ::std::option::Option<crate::types::ClusterOperationStepInfo>,
     pub(crate) step_name: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ClusterOperationStepBuilder {
         self
     }
     /// <p>Information about the step and its status.</p>
-    pub fn set_step_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterOperationStepInfo>,
-    ) -> Self {
+    pub fn set_step_info(mut self, input: ::std::option::Option<crate::types::ClusterOperationStepInfo>) -> Self {
         self.step_info = input;
         self
     }

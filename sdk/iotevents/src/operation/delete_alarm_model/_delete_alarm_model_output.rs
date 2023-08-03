@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAlarmModelOutput {
 }
 impl DeleteAlarmModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlarmModelOutput`](crate::operation::delete_alarm_model::DeleteAlarmModelOutput).
-    pub fn builder() -> crate::operation::delete_alarm_model::builders::DeleteAlarmModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_alarm_model::builders::DeleteAlarmModelOutputBuilder {
         crate::operation::delete_alarm_model::builders::DeleteAlarmModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAlarmModelOutput`](crate::operation::delete_alarm_model::DeleteAlarmModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlarmModelOutputBuilder {
     _request_id: Option<String>,
 }

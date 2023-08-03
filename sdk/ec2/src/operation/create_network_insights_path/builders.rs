@@ -27,7 +27,7 @@ impl CreateNetworkInsightsPathInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder,
+    inner: crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder,
 }
 impl CreateNetworkInsightsPathFluentBuilder {
     /// Creates a new `CreateNetworkInsightsPath`.
@@ -38,7 +38,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
         }
     }
     /// Access the CreateNetworkInsightsPath as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
             crate::operation::create_network_insights_path::CreateNetworkInsightsPath,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_insights_path::CreateNetworkInsightsPathError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_insights_path::CreateNetworkInsightsPathError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_insights_path::CreateNetworkInsightsPathError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
             crate::operation::create_network_insights_path::CreateNetworkInsightsPath,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_insights_path::CreateNetworkInsightsPathError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self.inner.get_source_ip()
     }
     /// <p>The IP address of the destination.</p>
-    pub fn destination_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_ip(input.into());
         self
     }
     /// <p>The IP address of the destination.</p>
-    pub fn set_destination_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_ip(input);
         self
     }
@@ -221,17 +204,12 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self
     }
     /// <p>The tags to add to the path.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to add to the path.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -268,10 +246,7 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
-    pub fn set_filter_at_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PathRequestFilter>,
-    ) -> Self {
+    pub fn set_filter_at_source(mut self, input: ::std::option::Option<crate::types::PathRequestFilter>) -> Self {
         self.inner = self.inner.set_filter_at_source(input);
         self
     }
@@ -285,17 +260,12 @@ impl CreateNetworkInsightsPathFluentBuilder {
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
-    pub fn set_filter_at_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::PathRequestFilter>,
-    ) -> Self {
+    pub fn set_filter_at_destination(mut self, input: ::std::option::Option<crate::types::PathRequestFilter>) -> Self {
         self.inner = self.inner.set_filter_at_destination(input);
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
-    pub fn get_filter_at_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::PathRequestFilter> {
+    pub fn get_filter_at_destination(&self) -> &::std::option::Option<crate::types::PathRequestFilter> {
         self.inner.get_filter_at_destination()
     }
 }

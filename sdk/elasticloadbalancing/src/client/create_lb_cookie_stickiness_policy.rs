@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`cookie_expiration_period(i64)`](crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLBCookieStickinessPolicyFluentBuilder::cookie_expiration_period) / [`set_cookie_expiration_period(Option<i64>)`](crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLBCookieStickinessPolicyFluentBuilder::set_cookie_expiration_period): <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     /// - On success, responds with [`CreateLbCookieStickinessPolicyOutput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput)
     /// - On failure, responds with [`SdkError<CreateLBCookieStickinessPolicyError>`](crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError)
-    pub fn create_lb_cookie_stickiness_policy(&self) -> crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLBCookieStickinessPolicyFluentBuilder{
+    pub fn create_lb_cookie_stickiness_policy(
+        &self,
+    ) -> crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLBCookieStickinessPolicyFluentBuilder {
         crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLBCookieStickinessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

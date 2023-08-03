@@ -5,8 +5,7 @@
 pub struct ListAnnotationImportJobsOutput {
     /// <p>A list of jobs.</p>
     #[doc(hidden)]
-    pub annotation_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
+    pub annotation_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAnnotationImportJobsOutput {
 }
 impl ListAnnotationImportJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn annotation_import_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnnotationImportJobItem]> {
+    pub fn annotation_import_jobs(&self) -> ::std::option::Option<&[crate::types::AnnotationImportJobItem]> {
         self.annotation_import_jobs.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAnnotationImportJobsOutput {
 }
 impl ListAnnotationImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput).
-    pub fn builder() -> crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsOutputBuilder {
         crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsOutputBuilder {
-    pub(crate) annotation_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
+    pub(crate) annotation_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAnnotationImportJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_annotation_import_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
-    ) -> Self {
+    pub fn set_annotation_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>) -> Self {
         self.annotation_import_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_annotation_import_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>> {
+    pub fn get_annotation_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>> {
         &self.annotation_import_jobs
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -97,9 +86,7 @@ impl ListAnnotationImportJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput {
+    pub fn build(self) -> crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput {
         crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput {
             annotation_import_jobs: self.annotation_import_jobs,
             next_token: self.next_token,

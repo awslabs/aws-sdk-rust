@@ -45,18 +45,12 @@ pub struct ComputeFarmConfigurationBuilder {
 }
 impl ComputeFarmConfigurationBuilder {
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
-    pub fn active_directory_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_directory_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_directory_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
-    pub fn set_active_directory_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_directory_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_directory_user = input;
         self
     }

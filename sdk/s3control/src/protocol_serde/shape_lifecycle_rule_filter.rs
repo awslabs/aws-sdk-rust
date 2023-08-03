@@ -15,10 +15,7 @@ pub fn ser_lifecycle_rule_filter(
     }
     if let Some(var_3) = &input.and {
         let inner_writer = scope.start_el("And");
-        crate::protocol_serde::shape_lifecycle_rule_and_operator::ser_lifecycle_rule_and_operator(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_lifecycle_rule_and_operator::ser_lifecycle_rule_and_operator(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.object_size_greater_than {
         let mut inner_writer = scope.start_el("ObjectSizeGreaterThan").finish();

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput::response_headers_policy): <p>A response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput::e_tag): <p>The current version of the response headers policy.</p>
     /// - On failure, responds with [`SdkError<UpdateResponseHeadersPolicyError>`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError)
-    pub fn update_response_headers_policy(&self) -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyFluentBuilder{
+    pub fn update_response_headers_policy(
+        &self,
+    ) -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyFluentBuilder {
         crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyFluentBuilder::new(self.handle.clone())
     }
 }

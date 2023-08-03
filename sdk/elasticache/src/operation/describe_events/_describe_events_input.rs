@@ -73,9 +73,7 @@ impl DescribeEventsInput {
 
 /// A builder for [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsInputBuilder {
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
@@ -87,18 +85,12 @@ pub struct DescribeEventsInputBuilder {
 }
 impl DescribeEventsInputBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
-    pub fn source_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
-    pub fn set_source_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
         self
     }
@@ -112,10 +104,7 @@ impl DescribeEventsInputBuilder {
         self
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -131,10 +120,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -151,10 +137,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -214,10 +197,7 @@ impl DescribeEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_events::DescribeEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
             source_identifier: self.source_identifier,
             source_type: self.source_type,

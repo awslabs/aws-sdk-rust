@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVoiceProfileDomainOutput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput) with field(s):
     ///   - [`voice_profile_domain(Option<VoiceProfileDomain>)`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput::voice_profile_domain): <p>The updated details of the voice profile domain.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceProfileDomainError>`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainError)
-    pub fn update_voice_profile_domain(&self) -> crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainFluentBuilder{
+    pub fn update_voice_profile_domain(&self) -> crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainFluentBuilder {
         crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainFluentBuilder::new(self.handle.clone())
     }
 }

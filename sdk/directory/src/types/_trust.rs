@@ -72,9 +72,7 @@ impl Trust {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn state_last_updated_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn state_last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.state_last_updated_date_time.as_ref()
     }
     /// <p>The reason for the TrustState.</p>
@@ -95,9 +93,7 @@ impl Trust {
 
 /// A builder for [`Trust`](crate::types::Trust).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
@@ -141,18 +137,12 @@ impl TrustBuilder {
         &self.trust_id
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_domain_name = input;
         self
     }
@@ -180,10 +170,7 @@ impl TrustBuilder {
         self
     }
     /// <p>The trust relationship direction.</p>
-    pub fn set_trust_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustDirection>,
-    ) -> Self {
+    pub fn set_trust_direction(mut self, input: ::std::option::Option<crate::types::TrustDirection>) -> Self {
         self.trust_direction = input;
         self
     }
@@ -197,10 +184,7 @@ impl TrustBuilder {
         self
     }
     /// <p>The trust relationship state.</p>
-    pub fn set_trust_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustState>,
-    ) -> Self {
+    pub fn set_trust_state(mut self, input: ::std::option::Option<crate::types::TrustState>) -> Self {
         self.trust_state = input;
         self
     }
@@ -214,10 +198,7 @@ impl TrustBuilder {
         self
     }
     /// <p>The date and time that the trust relationship was created.</p>
-    pub fn set_created_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date_time = input;
         self
     }
@@ -231,17 +212,12 @@ impl TrustBuilder {
         self
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The date and time that the TrustState was last updated.</p>
@@ -250,32 +226,21 @@ impl TrustBuilder {
         self
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn set_state_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_state_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.state_last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn get_state_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_state_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.state_last_updated_date_time
     }
     /// <p>The reason for the TrustState.</p>
-    pub fn trust_state_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_state_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the TrustState.</p>
-    pub fn set_trust_state_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_state_reason = input;
         self
     }
@@ -289,10 +254,7 @@ impl TrustBuilder {
         self
     }
     /// <p>Current state of selective authentication for the trust.</p>
-    pub fn set_selective_auth(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectiveAuth>,
-    ) -> Self {
+    pub fn set_selective_auth(mut self, input: ::std::option::Option<crate::types::SelectiveAuth>) -> Self {
         self.selective_auth = input;
         self
     }

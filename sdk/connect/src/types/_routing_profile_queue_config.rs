@@ -16,9 +16,7 @@ pub struct RoutingProfileQueueConfig {
 }
 impl RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
-    pub fn queue_reference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoutingProfileQueueReference> {
+    pub fn queue_reference(&self) -> ::std::option::Option<&crate::types::RoutingProfileQueueReference> {
         self.queue_reference.as_ref()
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
@@ -39,9 +37,7 @@ impl RoutingProfileQueueConfig {
 
 /// A builder for [`RoutingProfileQueueConfig`](crate::types::RoutingProfileQueueConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingProfileQueueConfigBuilder {
     pub(crate) queue_reference: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -54,17 +50,12 @@ impl RoutingProfileQueueConfigBuilder {
         self
     }
     /// <p>Contains information about a queue resource.</p>
-    pub fn set_queue_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
-    ) -> Self {
+    pub fn set_queue_reference(mut self, input: ::std::option::Option<crate::types::RoutingProfileQueueReference>) -> Self {
         self.queue_reference = input;
         self
     }
     /// <p>Contains information about a queue resource.</p>
-    pub fn get_queue_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingProfileQueueReference> {
+    pub fn get_queue_reference(&self) -> &::std::option::Option<crate::types::RoutingProfileQueueReference> {
         &self.queue_reference
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>

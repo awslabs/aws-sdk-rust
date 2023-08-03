@@ -29,9 +29,7 @@ impl CreateJobInput {
 
 /// A builder for [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobInputBuilder {
     pub(crate) details: ::std::option::Option<crate::types::RequestDetails>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -43,10 +41,7 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>The details for the CreateJob request.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::RequestDetails>) -> Self {
         self.details = input;
         self
     }
@@ -69,12 +64,7 @@ impl CreateJobInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_job::CreateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             details: self.details,
             r#type: self.r#type,

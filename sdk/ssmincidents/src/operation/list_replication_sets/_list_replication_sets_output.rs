@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReplicationSetsOutput {
 }
 impl ListReplicationSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListReplicationSetsOutput`](crate::operation::list_replication_sets::ListReplicationSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder {
-        crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder {
+        crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReplicationSetsOutput`](crate::operation::list_replication_sets::ListReplicationSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplicationSetsOutputBuilder {
     pub(crate) replication_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,27 +47,19 @@ impl ListReplicationSetsOutputBuilder {
     /// To override the contents of this collection use [`set_replication_set_arns`](Self::set_replication_set_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
-    pub fn replication_set_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_set_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_set_arns.unwrap_or_default();
         v.push(input.into());
         self.replication_set_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
-    pub fn set_replication_set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_set_arns = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
-    pub fn get_replication_set_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_set_arns
     }
     /// <p>The pagination token to continue to the next page of results.</p>

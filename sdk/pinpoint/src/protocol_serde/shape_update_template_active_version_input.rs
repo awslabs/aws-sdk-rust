@@ -6,15 +6,12 @@ pub fn ser_template_active_version_request_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
     };
-    Ok(
-        crate::protocol_serde::shape_update_template_active_version_input::ser_template_active_version_request_payload(payload)?
-    )
+    Ok(crate::protocol_serde::shape_update_template_active_version_input::ser_template_active_version_request_payload(payload)?)
 }
 
 pub fn ser_template_active_version_request_payload(
     input: &crate::types::TemplateActiveVersionRequest,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_template_active_version_request::ser_template_active_version_request(&mut object, input)?;

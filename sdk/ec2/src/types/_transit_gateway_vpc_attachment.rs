@@ -62,9 +62,7 @@ impl TransitGatewayVpcAttachment {
         self.creation_time.as_ref()
     }
     /// <p>The VPC attachment options.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayVpcAttachmentOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::TransitGatewayVpcAttachmentOptions> {
         self.options.as_ref()
     }
     /// <p>The tags for the VPC attachment.</p>
@@ -81,9 +79,7 @@ impl TransitGatewayVpcAttachment {
 
 /// A builder for [`TransitGatewayVpcAttachment`](crate::types::TransitGatewayVpcAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayVpcAttachmentBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -97,40 +93,26 @@ pub struct TransitGatewayVpcAttachmentBuilder {
 }
 impl TransitGatewayVpcAttachmentBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -172,10 +154,7 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>) -> Self {
         self.state = input;
         self
     }
@@ -195,10 +174,7 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -212,10 +188,7 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -229,17 +202,12 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions> {
         &self.options
     }
     /// Appends an item to `tags`.
@@ -254,10 +222,7 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The tags for the VPC attachment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

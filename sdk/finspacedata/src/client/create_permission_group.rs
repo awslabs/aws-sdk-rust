@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePermissionGroupOutput`](crate::operation::create_permission_group::CreatePermissionGroupOutput) with field(s):
     ///   - [`permission_group_id(Option<String>)`](crate::operation::create_permission_group::CreatePermissionGroupOutput::permission_group_id): <p>The unique identifier for the permission group.</p>
     /// - On failure, responds with [`SdkError<CreatePermissionGroupError>`](crate::operation::create_permission_group::CreatePermissionGroupError)
-    pub fn create_permission_group(
-        &self,
-    ) -> crate::operation::create_permission_group::builders::CreatePermissionGroupFluentBuilder
-    {
-        crate::operation::create_permission_group::builders::CreatePermissionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_permission_group(&self) -> crate::operation::create_permission_group::builders::CreatePermissionGroupFluentBuilder {
+        crate::operation::create_permission_group::builders::CreatePermissionGroupFluentBuilder::new(self.handle.clone())
     }
 }

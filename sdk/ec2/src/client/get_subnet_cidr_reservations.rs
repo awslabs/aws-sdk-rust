@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`subnet_ipv6_cidr_reservations(Option<Vec<SubnetCidrReservation>>)`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput::subnet_ipv6_cidr_reservations): <p>Information about the IPv6 subnet CIDR reservations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetSubnetCidrReservationsError>`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError)
-    pub fn get_subnet_cidr_reservations(&self) -> crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsFluentBuilder{
+    pub fn get_subnet_cidr_reservations(&self) -> crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsFluentBuilder {
         crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsFluentBuilder::new(self.handle.clone())
     }
 }

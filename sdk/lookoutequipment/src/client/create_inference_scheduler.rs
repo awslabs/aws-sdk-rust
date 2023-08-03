@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`inference_scheduler_name(Option<String>)`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput::inference_scheduler_name): <p>The name of inference scheduler being created. </p>
     ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput::status): <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
     /// - On failure, responds with [`SdkError<CreateInferenceSchedulerError>`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerError)
-    pub fn create_inference_scheduler(
-        &self,
-    ) -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerFluentBuilder
-    {
+    pub fn create_inference_scheduler(&self) -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerFluentBuilder {
         crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -54,14 +54,11 @@ impl AssociateNodeInput {
 
 /// A builder for [`AssociateNodeInput`](crate::operation::associate_node::AssociateNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateNodeInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
-    pub(crate) engine_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl AssociateNodeInputBuilder {
     /// <p>The name of the server with which to associate the node. </p>
@@ -122,10 +119,7 @@ impl AssociateNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
     /// </ul>
-    pub fn set_engine_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
-    ) -> Self {
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.engine_attributes = input;
         self
     }
@@ -139,18 +133,13 @@ impl AssociateNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
     /// </ul>
-    pub fn get_engine_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.engine_attributes
     }
     /// Consumes the builder and constructs a [`AssociateNodeInput`](crate::operation::associate_node::AssociateNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_node::AssociateNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_node::AssociateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_node::AssociateNodeInput {
             server_name: self.server_name,
             node_name: self.node_name,

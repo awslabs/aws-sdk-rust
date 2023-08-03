@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationFluentBuilder::set_description): <p>The description of the replication run.</p>
     /// - On success, responds with [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput)
     /// - On failure, responds with [`SdkError<StartOnDemandAppReplicationError>`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError)
-    pub fn start_on_demand_app_replication(&self) -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationFluentBuilder{
+    pub fn start_on_demand_app_replication(
+        &self,
+    ) -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationFluentBuilder {
         crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationFluentBuilder::new(self.handle.clone())
     }
 }

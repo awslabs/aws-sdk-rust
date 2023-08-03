@@ -52,9 +52,7 @@ impl Model {
         self.containers.as_deref()
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn inference_execution_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
+    pub fn inference_execution_config(&self) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
         self.inference_execution_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
@@ -82,9 +80,7 @@ impl Model {
         self.tags.as_deref()
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
-    pub fn deployment_recommendation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentRecommendation> {
+    pub fn deployment_recommendation(&self) -> ::std::option::Option<&crate::types::DeploymentRecommendation> {
         self.deployment_recommendation.as_ref()
     }
 }
@@ -97,24 +93,19 @@ impl Model {
 
 /// A builder for [`Model`](crate::types::Model).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) primary_container: ::std::option::Option<crate::types::ContainerDefinition>,
-    pub(crate) containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    pub(crate) inference_execution_config:
-        ::std::option::Option<crate::types::InferenceExecutionConfig>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
+    pub(crate) inference_execution_config: ::std::option::Option<crate::types::InferenceExecutionConfig>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) deployment_recommendation:
-        ::std::option::Option<crate::types::DeploymentRecommendation>,
+    pub(crate) deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
 }
 impl ModelBuilder {
     /// <p>The name of the model.</p>
@@ -137,17 +128,12 @@ impl ModelBuilder {
         self
     }
     /// <p>Describes the container, as part of model definition.</p>
-    pub fn set_primary_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDefinition>,
-    ) -> Self {
+    pub fn set_primary_container(mut self, input: ::std::option::Option<crate::types::ContainerDefinition>) -> Self {
         self.primary_container = input;
         self
     }
     /// <p>Describes the container, as part of model definition.</p>
-    pub fn get_primary_container(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerDefinition> {
+    pub fn get_primary_container(&self) -> &::std::option::Option<crate::types::ContainerDefinition> {
         &self.primary_container
     }
     /// Appends an item to `containers`.
@@ -162,54 +148,35 @@ impl ModelBuilder {
         self
     }
     /// <p>The containers in the inference pipeline.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The containers in the inference pipeline.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
         &self.containers
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn inference_execution_config(
-        mut self,
-        input: crate::types::InferenceExecutionConfig,
-    ) -> Self {
+    pub fn inference_execution_config(mut self, input: crate::types::InferenceExecutionConfig) -> Self {
         self.inference_execution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn set_inference_execution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExecutionConfig>,
-    ) -> Self {
+    pub fn set_inference_execution_config(mut self, input: ::std::option::Option<crate::types::InferenceExecutionConfig>) -> Self {
         self.inference_execution_config = input;
         self
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn get_inference_execution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
+    pub fn get_inference_execution_config(&self) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
         &self.inference_execution_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -237,10 +204,7 @@ impl ModelBuilder {
         self
     }
     /// <p>A timestamp that indicates when the model was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -288,10 +252,7 @@ impl ModelBuilder {
         self
     }
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -300,25 +261,17 @@ impl ModelBuilder {
         &self.tags
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
-    pub fn deployment_recommendation(
-        mut self,
-        input: crate::types::DeploymentRecommendation,
-    ) -> Self {
+    pub fn deployment_recommendation(mut self, input: crate::types::DeploymentRecommendation) -> Self {
         self.deployment_recommendation = ::std::option::Option::Some(input);
         self
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
-    pub fn set_deployment_recommendation(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentRecommendation>,
-    ) -> Self {
+    pub fn set_deployment_recommendation(mut self, input: ::std::option::Option<crate::types::DeploymentRecommendation>) -> Self {
         self.deployment_recommendation = input;
         self
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
-    pub fn get_deployment_recommendation(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentRecommendation> {
+    pub fn get_deployment_recommendation(&self) -> &::std::option::Option<crate::types::DeploymentRecommendation> {
         &self.deployment_recommendation
     }
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).

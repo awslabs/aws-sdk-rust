@@ -27,7 +27,7 @@ impl DeleteBotChannelAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotChannelAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationInputBuilder,
+    inner: crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationInputBuilder,
 }
 impl DeleteBotChannelAssociationFluentBuilder {
     /// Creates a new `DeleteBotChannelAssociation`.
@@ -38,7 +38,7 @@ impl DeleteBotChannelAssociationFluentBuilder {
         }
     }
     /// Access the DeleteBotChannelAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteBotChannelAssociationFluentBuilder {
             crate::operation::delete_bot_channel_association::DeleteBotChannelAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteBotChannelAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteBotChannelAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteBotChannelAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteBotChannelAssociationFluentBuilder {
             crate::operation::delete_bot_channel_association::DeleteBotChannelAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError>,
     > {
         self.customize_middleware().await
     }

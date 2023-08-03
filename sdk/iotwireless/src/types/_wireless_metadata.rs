@@ -30,9 +30,7 @@ impl WirelessMetadata {
 
 /// A builder for [`WirelessMetadata`](crate::types::WirelessMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WirelessMetadataBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkSendDataToDevice>,
@@ -44,10 +42,7 @@ impl WirelessMetadataBuilder {
         self
     }
     /// <p>LoRaWAN device info.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -61,10 +56,7 @@ impl WirelessMetadataBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkSendDataToDevice>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkSendDataToDevice>) -> Self {
         self.sidewalk = input;
         self
     }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateExternalConnectionOutput 
 }
 impl DisassociateExternalConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateExternalConnectionOutput`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput).
-    pub fn builder() -> crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder {
         crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateExternalConnectionOutput`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateExternalConnectionOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DisassociateExternalConnectionOutputBuilder {
         self
     }
     /// <p> The repository associated with the removed external connection. </p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryDescription>,
-    ) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::RepositoryDescription>) -> Self {
         self.repository = input;
         self
     }
@@ -63,10 +58,7 @@ impl DisassociateExternalConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateExternalConnectionOutput`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput {
         crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput {
             repository: self.repository,
             _request_id: self._request_id,

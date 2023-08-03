@@ -19,9 +19,7 @@ impl UntagUserOutput {
 
 /// A builder for [`UntagUserOutput`](crate::operation::untag_user::UntagUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagUserOutputBuilder {
     _request_id: Option<String>,
 }

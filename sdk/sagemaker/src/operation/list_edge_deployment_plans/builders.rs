@@ -26,8 +26,7 @@ impl ListEdgeDeploymentPlansInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEdgeDeploymentPlansFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder,
+    inner: crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder,
 }
 impl ListEdgeDeploymentPlansFluentBuilder {
     /// Creates a new `ListEdgeDeploymentPlans`.
@@ -38,10 +37,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         }
     }
     /// Access the ListEdgeDeploymentPlans as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
             crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListEdgeDeploymentPlansFluentBuilder {
             crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_edge_deployment_plans::paginator::ListEdgeDeploymentPlansPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_edge_deployment_plans::paginator::ListEdgeDeploymentPlansPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_edge_deployment_plans::paginator::ListEdgeDeploymentPlansPaginator {
         crate::operation::list_edge_deployment_plans::paginator::ListEdgeDeploymentPlansPaginator::new(self.handle, self.inner)
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -167,10 +149,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self
     }
     /// <p>Selects edge deployment plans created after this time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -184,10 +163,7 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self
     }
     /// <p>Selects edge deployment plans created before this time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -201,17 +177,12 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self
     }
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
@@ -220,32 +191,21 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self
     }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>Selects edge deployment plans with names containing this name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Selects edge deployment plans with names containing this name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -254,18 +214,12 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self.inner.get_name_contains()
     }
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
-    pub fn device_fleet_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name_contains(input.into());
         self
     }
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
-    pub fn set_device_fleet_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name_contains(input);
         self
     }
@@ -279,17 +233,12 @@ impl ListEdgeDeploymentPlansFluentBuilder {
         self
     }
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy> {
         self.inner.get_sort_by()
     }
     /// <p>The direction of the sorting (ascending or descending).</p>

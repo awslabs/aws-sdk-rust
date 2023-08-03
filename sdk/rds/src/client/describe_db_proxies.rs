@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`db_proxies(Option<Vec<DbProxy>>)`](crate::operation::describe_db_proxies::DescribeDbProxiesOutput::db_proxies): <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_proxies::DescribeDbProxiesOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDBProxiesError>`](crate::operation::describe_db_proxies::DescribeDBProxiesError)
-    pub fn describe_db_proxies(
-        &self,
-    ) -> crate::operation::describe_db_proxies::builders::DescribeDBProxiesFluentBuilder {
-        crate::operation::describe_db_proxies::builders::DescribeDBProxiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_db_proxies(&self) -> crate::operation::describe_db_proxies::builders::DescribeDBProxiesFluentBuilder {
+        crate::operation::describe_db_proxies::builders::DescribeDBProxiesFluentBuilder::new(self.handle.clone())
     }
 }

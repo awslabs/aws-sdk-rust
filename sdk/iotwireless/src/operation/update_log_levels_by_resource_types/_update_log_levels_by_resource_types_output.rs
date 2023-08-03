@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLogLevelsByResourceTypesOutput 
 }
 impl UpdateLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput).
-    pub fn builder() -> crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesOutputBuilder {
         crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateLogLevelsByResourceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput
-    {
+    pub fn build(self) -> crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput {
         crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput {
             _request_id: self._request_id,
         }

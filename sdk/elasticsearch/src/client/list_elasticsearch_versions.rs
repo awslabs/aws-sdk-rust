@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`elasticsearch_versions(Option<Vec<String>>)`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput::elasticsearch_versions): <p>List of supported elastic search versions. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput::next_token): <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     /// - On failure, responds with [`SdkError<ListElasticsearchVersionsError>`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError)
-    pub fn list_elasticsearch_versions(&self) -> crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsFluentBuilder{
+    pub fn list_elasticsearch_versions(&self) -> crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsFluentBuilder {
         crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsFluentBuilder::new(self.handle.clone())
     }
 }

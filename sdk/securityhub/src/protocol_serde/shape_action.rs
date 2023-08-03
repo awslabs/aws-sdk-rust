@@ -9,37 +9,25 @@ pub fn ser_action(
     if let Some(var_2) = &input.network_connection_action {
         #[allow(unused_mut)]
         let mut object_3 = object.key("NetworkConnectionAction").start_object();
-        crate::protocol_serde::shape_network_connection_action::ser_network_connection_action(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_network_connection_action::ser_network_connection_action(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.aws_api_call_action {
         #[allow(unused_mut)]
         let mut object_5 = object.key("AwsApiCallAction").start_object();
-        crate::protocol_serde::shape_aws_api_call_action::ser_aws_api_call_action(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_aws_api_call_action::ser_aws_api_call_action(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.dns_request_action {
         #[allow(unused_mut)]
         let mut object_7 = object.key("DnsRequestAction").start_object();
-        crate::protocol_serde::shape_dns_request_action::ser_dns_request_action(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_dns_request_action::ser_dns_request_action(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.port_probe_action {
         #[allow(unused_mut)]
         let mut object_9 = object.key("PortProbeAction").start_object();
-        crate::protocol_serde::shape_port_probe_action::ser_port_probe_action(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_port_probe_action::ser_port_probe_action(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())
@@ -49,12 +37,7 @@ pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,55 +47,43 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ActionType" => {
-                                builder = builder.set_action_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ActionType" => {
+                            builder = builder.set_action_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "NetworkConnectionAction" => {
-                                builder = builder.set_network_connection_action(
-                                    crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens)?
-                                );
-                            }
-                            "AwsApiCallAction" => {
-                                builder = builder.set_aws_api_call_action(
-                                    crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens)?
-                                );
-                            }
-                            "DnsRequestAction" => {
-                                builder = builder.set_dns_request_action(
-                                    crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens)?
-                                );
-                            }
-                            "PortProbeAction" => {
-                                builder = builder.set_port_probe_action(
-                                    crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "NetworkConnectionAction" => {
+                            builder = builder.set_network_connection_action(
+                                crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens)?,
+                            );
+                        }
+                        "AwsApiCallAction" => {
+                            builder =
+                                builder.set_aws_api_call_action(crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens)?);
+                        }
+                        "DnsRequestAction" => {
+                            builder = builder.set_dns_request_action(crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens)?);
+                        }
+                        "PortProbeAction" => {
+                            builder = builder.set_port_probe_action(crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -17,9 +17,7 @@ impl ScanningRepositoryFilter {
         self.filter.as_deref()
     }
     /// <p>The type associated with the filter.</p>
-    pub fn filter_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScanningRepositoryFilterType> {
+    pub fn filter_type(&self) -> ::std::option::Option<&crate::types::ScanningRepositoryFilterType> {
         self.filter_type.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ScanningRepositoryFilter {
 
 /// A builder for [`ScanningRepositoryFilter`](crate::types::ScanningRepositoryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanningRepositoryFilterBuilder {
     pub(crate) filter: ::std::option::Option<::std::string::String>,
     pub(crate) filter_type: ::std::option::Option<crate::types::ScanningRepositoryFilterType>,
@@ -60,17 +56,12 @@ impl ScanningRepositoryFilterBuilder {
         self
     }
     /// <p>The type associated with the filter.</p>
-    pub fn set_filter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanningRepositoryFilterType>,
-    ) -> Self {
+    pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::ScanningRepositoryFilterType>) -> Self {
         self.filter_type = input;
         self
     }
     /// <p>The type associated with the filter.</p>
-    pub fn get_filter_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScanningRepositoryFilterType> {
+    pub fn get_filter_type(&self) -> &::std::option::Option<crate::types::ScanningRepositoryFilterType> {
         &self.filter_type
     }
     /// Consumes the builder and constructs a [`ScanningRepositoryFilter`](crate::types::ScanningRepositoryFilter).

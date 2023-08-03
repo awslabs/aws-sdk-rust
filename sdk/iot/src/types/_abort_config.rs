@@ -23,9 +23,7 @@ impl AbortConfig {
 
 /// A builder for [`AbortConfig`](crate::types::AbortConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortConfigBuilder {
     pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
 }
@@ -42,17 +40,12 @@ impl AbortConfigBuilder {
         self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn set_criteria_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
-    ) -> Self {
+    pub fn set_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>) -> Self {
         self.criteria_list = input;
         self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn get_criteria_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>> {
+    pub fn get_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>> {
         &self.criteria_list
     }
     /// Consumes the builder and constructs a [`AbortConfig`](crate::types::AbortConfig).

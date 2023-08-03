@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`PutHypervisorPropertyMappingsOutput`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     /// - On failure, responds with [`SdkError<PutHypervisorPropertyMappingsError>`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError)
-    pub fn put_hypervisor_property_mappings(&self) -> crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsFluentBuilder{
+    pub fn put_hypervisor_property_mappings(
+        &self,
+    ) -> crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsFluentBuilder {
         crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsFluentBuilder::new(self.handle.clone())
     }
 }

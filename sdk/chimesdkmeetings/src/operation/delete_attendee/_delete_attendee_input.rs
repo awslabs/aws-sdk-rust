@@ -29,9 +29,7 @@ impl DeleteAttendeeInput {
 
 /// A builder for [`DeleteAttendeeInput`](crate::operation::delete_attendee::DeleteAttendeeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAttendeeInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttendeeInput`](crate::operation::delete_attendee::DeleteAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_attendee::DeleteAttendeeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_attendee::DeleteAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_attendee::DeleteAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssessmentStatusOutput {
 }
 impl UpdateAssessmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentStatusOutput`](crate::operation::update_assessment_status::UpdateAssessmentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_assessment_status::builders::UpdateAssessmentStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assessment_status::builders::UpdateAssessmentStatusOutputBuilder {
         crate::operation::update_assessment_status::builders::UpdateAssessmentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssessmentStatusOutput`](crate::operation::update_assessment_status::UpdateAssessmentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssessmentStatusOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateAssessmentStatusOutputBuilder {
         self
     }
     /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
-    pub fn set_assessment(
-        mut self,
-        input: ::std::option::Option<crate::types::Assessment>,
-    ) -> Self {
+    pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }

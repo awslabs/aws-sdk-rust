@@ -11,9 +11,7 @@ pub struct EventDataStore {
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the event data store is protected from termination.</p>
-    #[deprecated(
-        note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
-    )]
+    #[deprecated(note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
     /// <p>The status of an event data store.</p>
@@ -23,8 +21,7 @@ pub struct EventDataStore {
     /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
-    pub advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
@@ -56,9 +53,7 @@ impl EventDataStore {
         self.name.as_deref()
     }
     /// <p>Indicates whether the event data store is protected from termination.</p>
-    #[deprecated(
-        note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
-    )]
+    #[deprecated(note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
     pub fn termination_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.termination_protection_enabled
     }
@@ -69,9 +64,7 @@ impl EventDataStore {
     }
     /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
-    pub fn advanced_event_selectors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
+    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
@@ -109,16 +102,13 @@ impl EventDataStore {
 
 /// A builder for [`EventDataStore`](crate::types::EventDataStore).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDataStoreBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) termination_protection_enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::EventDataStoreStatus>,
-    pub(crate) advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     pub(crate) multi_region_enabled: ::std::option::Option<bool>,
     pub(crate) organization_enabled: ::std::option::Option<bool>,
     pub(crate) retention_period: ::std::option::Option<i32>,
@@ -127,18 +117,12 @@ pub struct EventDataStoreBuilder {
 }
 impl EventDataStoreBuilder {
     /// <p>The ARN of the event data store.</p>
-    pub fn event_data_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event data store.</p>
-    pub fn set_event_data_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store_arn = input;
         self
     }
@@ -161,28 +145,19 @@ impl EventDataStoreBuilder {
         &self.name
     }
     /// <p>Indicates whether the event data store is protected from termination.</p>
-    #[deprecated(
-        note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
-    )]
+    #[deprecated(note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
         self.termination_protection_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the event data store is protected from termination.</p>
-    #[deprecated(
-        note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
-    )]
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    #[deprecated(note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protection_enabled = input;
         self
     }
     /// <p>Indicates whether the event data store is protected from termination.</p>
-    #[deprecated(
-        note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
-    )]
+    #[deprecated(note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
     pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.termination_protection_enabled
     }
@@ -194,10 +169,7 @@ impl EventDataStoreBuilder {
     }
     /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDataStoreStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventDataStoreStatus>) -> Self {
         self.status = input;
         self
     }
@@ -220,18 +192,13 @@ impl EventDataStoreBuilder {
     }
     /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.advanced_event_selectors = input;
         self
     }
     /// <p>The advanced event selectors that were used to select events for the data store.</p>
     #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
@@ -293,10 +260,7 @@ impl EventDataStoreBuilder {
     }
     /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -313,10 +277,7 @@ impl EventDataStoreBuilder {
     }
     /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }

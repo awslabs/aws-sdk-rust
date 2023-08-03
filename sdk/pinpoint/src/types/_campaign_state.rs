@@ -25,9 +25,7 @@ impl CampaignState {
 
 /// A builder for [`CampaignState`](crate::types::CampaignState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CampaignStateBuilder {
     pub(crate) campaign_status: ::std::option::Option<crate::types::CampaignStatus>,
 }
@@ -40,10 +38,7 @@ impl CampaignStateBuilder {
     }
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
-    pub fn set_campaign_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignStatus>,
-    ) -> Self {
+    pub fn set_campaign_status(mut self, input: ::std::option::Option<crate::types::CampaignStatus>) -> Self {
         self.campaign_status = input;
         self
     }

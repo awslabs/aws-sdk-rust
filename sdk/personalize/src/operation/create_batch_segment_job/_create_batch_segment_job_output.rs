@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateBatchSegmentJobOutput {
 }
 impl CreateBatchSegmentJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchSegmentJobOutput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobOutputBuilder {
         crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchSegmentJobOutput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchSegmentJobOutputBuilder {
     pub(crate) batch_segment_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateBatchSegmentJobOutputBuilder {
     /// <p>The ARN of the batch segment job.</p>
-    pub fn batch_segment_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_segment_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_segment_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the batch segment job.</p>
-    pub fn set_batch_segment_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_segment_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_segment_job_arn = input;
         self
     }

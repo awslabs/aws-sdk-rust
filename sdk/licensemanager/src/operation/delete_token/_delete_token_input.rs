@@ -22,9 +22,7 @@ impl DeleteTokenInput {
 
 /// A builder for [`DeleteTokenInput`](crate::operation::delete_token::DeleteTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTokenInputBuilder {
     pub(crate) token_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteTokenInputBuilder {
         &self.token_id
     }
     /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::operation::delete_token::DeleteTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_token::DeleteTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_token::DeleteTokenInput {
-            token_id: self.token_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_token::DeleteTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_token::DeleteTokenInput { token_id: self.token_id })
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StopSourceNetworkReplicationOutput {
 }
 impl StopSourceNetworkReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopSourceNetworkReplicationOutput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput).
-    pub fn builder() -> crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationOutputBuilder{
+    pub fn builder() -> crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationOutputBuilder {
         crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopSourceNetworkReplicationOutput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSourceNetworkReplicationOutputBuilder {
     pub(crate) source_network: ::std::option::Option<crate::types::SourceNetwork>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopSourceNetworkReplicationOutputBuilder {
         self
     }
     /// <p>Source Network which was requested to stop replication.</p>
-    pub fn set_source_network(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceNetwork>,
-    ) -> Self {
+    pub fn set_source_network(mut self, input: ::std::option::Option<crate::types::SourceNetwork>) -> Self {
         self.source_network = input;
         self
     }
@@ -63,9 +58,7 @@ impl StopSourceNetworkReplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopSourceNetworkReplicationOutput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput {
+    pub fn build(self) -> crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput {
         crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput {
             source_network: self.source_network,
             _request_id: self._request_id,

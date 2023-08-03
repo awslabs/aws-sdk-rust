@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`gateway_routes(Option<Vec<GatewayRouteRef>>)`](crate::operation::list_gateway_routes::ListGatewayRoutesOutput::gateway_routes): <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateway_routes::ListGatewayRoutesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListGatewayRoutesError>`](crate::operation::list_gateway_routes::ListGatewayRoutesError)
-    pub fn list_gateway_routes(
-        &self,
-    ) -> crate::operation::list_gateway_routes::builders::ListGatewayRoutesFluentBuilder {
-        crate::operation::list_gateway_routes::builders::ListGatewayRoutesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_gateway_routes(&self) -> crate::operation::list_gateway_routes::builders::ListGatewayRoutesFluentBuilder {
+        crate::operation::list_gateway_routes::builders::ListGatewayRoutesFluentBuilder::new(self.handle.clone())
     }
 }

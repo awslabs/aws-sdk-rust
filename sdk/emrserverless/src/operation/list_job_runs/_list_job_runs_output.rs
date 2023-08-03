@@ -35,9 +35,7 @@ impl ListJobRunsOutput {
 
 /// A builder for [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobRunsOutputBuilder {
     pub(crate) job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListJobRunsOutputBuilder {
         self
     }
     /// <p>The output lists information about the specified job runs.</p>
-    pub fn set_job_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>>,
-    ) -> Self {
+    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>>) -> Self {
         self.job_runs = input;
         self
     }
     /// <p>The output lists information about the specified job runs.</p>
-    pub fn get_job_runs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
+    pub fn get_job_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
         &self.job_runs
     }
     /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>

@@ -22,18 +22,14 @@ impl DescribePermissionSetInput {
 }
 impl DescribePermissionSetInput {
     /// Creates a new builder-style object to manufacture [`DescribePermissionSetInput`](crate::operation::describe_permission_set::DescribePermissionSetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_permission_set::builders::DescribePermissionSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_permission_set::builders::DescribePermissionSetInputBuilder {
         crate::operation::describe_permission_set::builders::DescribePermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePermissionSetInput`](crate::operation::describe_permission_set::DescribePermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DescribePermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the permission set. </p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set. </p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -76,15 +66,11 @@ impl DescribePermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribePermissionSetInput`](crate::operation::describe_permission_set::DescribePermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_permission_set::DescribePermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_permission_set::DescribePermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_permission_set::DescribePermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_permission_set::DescribePermissionSetInput {
+            instance_arn: self.instance_arn,
+            permission_set_arn: self.permission_set_arn,
+        })
     }
 }

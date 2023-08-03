@@ -23,16 +23,14 @@ impl UpdateCampaignDialerConfigInput {
 }
 impl UpdateCampaignDialerConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateCampaignDialerConfigInput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput).
-    pub fn builder() -> crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder{
+    pub fn builder() -> crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder {
         crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCampaignDialerConfigInput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) dialer_config: ::std::option::Option<crate::types::DialerConfig>,
@@ -58,10 +56,7 @@ impl UpdateCampaignDialerConfigInputBuilder {
         self
     }
     /// The possible types of dialer config parameters
-    pub fn set_dialer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DialerConfig>,
-    ) -> Self {
+    pub fn set_dialer_config(mut self, input: ::std::option::Option<crate::types::DialerConfig>) -> Self {
         self.dialer_config = input;
         self
     }
@@ -76,11 +71,9 @@ impl UpdateCampaignDialerConfigInputBuilder {
         crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput {
-                id: self.id,
-                dialer_config: self.dialer_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput {
+            id: self.id,
+            dialer_config: self.dialer_config,
+        })
     }
 }

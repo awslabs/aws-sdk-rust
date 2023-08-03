@@ -26,8 +26,7 @@ impl GetResolverDnssecConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResolverDnssecConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder,
+    inner: crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder,
 }
 impl GetResolverDnssecConfigFluentBuilder {
     /// Creates a new `GetResolverDnssecConfig`.
@@ -38,10 +37,7 @@ impl GetResolverDnssecConfigFluentBuilder {
         }
     }
     /// Access the GetResolverDnssecConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetResolverDnssecConfigFluentBuilder {
             crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetResolverDnssecConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetResolverDnssecConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetResolverDnssecConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetResolverDnssecConfigFluentBuilder {
             crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError>,
     > {
         self.customize_middleware().await
     }

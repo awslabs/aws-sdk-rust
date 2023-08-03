@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`failed_standby_requests(Option<Vec<FailedCreateStandbyWorkspacesRequest>>)`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput::failed_standby_requests): <p>Information about the standby WorkSpace that could not be created. </p>
     ///   - [`pending_standby_requests(Option<Vec<PendingCreateStandbyWorkspacesRequest>>)`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput::pending_standby_requests): <p>Information about the standby WorkSpace that was created.</p>
     /// - On failure, responds with [`SdkError<CreateStandbyWorkspacesError>`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError)
-    pub fn create_standby_workspaces(
-        &self,
-    ) -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesFluentBuilder
-    {
+    pub fn create_standby_workspaces(&self) -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesFluentBuilder {
         crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

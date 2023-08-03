@@ -9,76 +9,66 @@ pub fn de_start_instance_refresh_http_error(
     crate::operation::start_instance_refresh::StartInstanceRefreshError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InstanceRefreshInProgress" => crate::operation::start_instance_refresh::StartInstanceRefreshError::InstanceRefreshInProgressFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InstanceRefreshInProgressFaultBuilder::default();
-                    output = crate::protocol_serde::shape_instance_refresh_in_progress_fault::de_instance_refresh_in_progress_fault_xml_err(_response_body, output).map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InstanceRefreshInProgressFaultBuilder::default();
+                output = crate::protocol_serde::shape_instance_refresh_in_progress_fault::de_instance_refresh_in_progress_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceeded" => crate::operation::start_instance_refresh::StartInstanceRefreshError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceContention" => crate::operation::start_instance_refresh::StartInstanceRefreshError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output).map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::start_instance_refresh::StartInstanceRefreshError::generic(generic)
+        _ => crate::operation::start_instance_refresh::StartInstanceRefreshError::generic(generic),
     })
 }
 
@@ -94,14 +84,9 @@ pub fn de_start_instance_refresh_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder::default();
-        output = crate::protocol_serde::shape_start_instance_refresh::de_start_instance_refresh(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_start_instance_refresh::de_start_instance_refresh(_response_body, output)
+            .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -110,10 +95,7 @@ pub fn de_start_instance_refresh_http_response_with_props(
 pub fn de_start_instance_refresh(
     inp: &[u8],
     mut builder: crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder,
-) -> Result<
-    crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

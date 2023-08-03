@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`db_proxy_endpoints(Option<Vec<DbProxyEndpoint>>)`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput::db_proxy_endpoints): <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDBProxyEndpointsError>`](crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError)
-    pub fn describe_db_proxy_endpoints(&self) -> crate::operation::describe_db_proxy_endpoints::builders::DescribeDBProxyEndpointsFluentBuilder{
+    pub fn describe_db_proxy_endpoints(&self) -> crate::operation::describe_db_proxy_endpoints::builders::DescribeDBProxyEndpointsFluentBuilder {
         crate::operation::describe_db_proxy_endpoints::builders::DescribeDBProxyEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

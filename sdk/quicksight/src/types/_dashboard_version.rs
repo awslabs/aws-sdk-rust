@@ -86,9 +86,7 @@ impl DashboardVersion {
 
 /// A builder for [`DashboardVersion`](crate::types::DashboardVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardVersionBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
@@ -108,10 +106,7 @@ impl DashboardVersionBuilder {
         self
     }
     /// <p>The time that this dashboard version was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -131,17 +126,12 @@ impl DashboardVersionBuilder {
         self
     }
     /// <p>Errors associated with this dashboard version.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors associated with this dashboard version.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardError>> {
         &self.errors
     }
     /// <p>Version number for this version of the dashboard.</p>
@@ -164,10 +154,7 @@ impl DashboardVersionBuilder {
         self
     }
     /// <p>The HTTP status of the request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -190,18 +177,12 @@ impl DashboardVersionBuilder {
         &self.arn
     }
     /// <p>Source entity ARN.</p>
-    pub fn source_entity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_entity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_entity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source entity ARN.</p>
-    pub fn set_source_entity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_entity_arn = input;
         self
     }
@@ -214,27 +195,19 @@ impl DashboardVersionBuilder {
     /// To override the contents of this collection use [`set_data_set_arns`](Self::set_data_set_arns).
     ///
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
-    pub fn data_set_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_set_arns.unwrap_or_default();
         v.push(input.into());
         self.data_set_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
-    pub fn set_data_set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_set_arns = input;
         self
     }
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
-    pub fn get_data_set_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_set_arns
     }
     /// <p>Description.</p>
@@ -277,10 +250,7 @@ impl DashboardVersionBuilder {
         self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn set_sheets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
-    ) -> Self {
+    pub fn set_sheets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>) -> Self {
         self.sheets = input;
         self
     }

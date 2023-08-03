@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UnshareApplicationOutput {
 }
 impl UnshareApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UnshareApplicationOutput`](crate::operation::unshare_application::UnshareApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::unshare_application::builders::UnshareApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::unshare_application::builders::UnshareApplicationOutputBuilder {
         crate::operation::unshare_application::builders::UnshareApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnshareApplicationOutput`](crate::operation::unshare_application::UnshareApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnshareApplicationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopSessionOutput`](crate::operation::stop_session::StopSessionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::stop_session::StopSessionOutput::id): <p>Returns the Id of the stopped session.</p>
     /// - On failure, responds with [`SdkError<StopSessionError>`](crate::operation::stop_session::StopSessionError)
-    pub fn stop_session(
-        &self,
-    ) -> crate::operation::stop_session::builders::StopSessionFluentBuilder {
+    pub fn stop_session(&self) -> crate::operation::stop_session::builders::StopSessionFluentBuilder {
         crate::operation::stop_session::builders::StopSessionFluentBuilder::new(self.handle.clone())
     }
 }

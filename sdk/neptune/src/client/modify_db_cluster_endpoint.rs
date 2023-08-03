@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`excluded_members(Option<Vec<String>>)`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     ///   - [`db_cluster_endpoint_arn(Option<String>)`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput::db_cluster_endpoint_arn): <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     /// - On failure, responds with [`SdkError<ModifyDBClusterEndpointError>`](crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError)
-    pub fn modify_db_cluster_endpoint(
-        &self,
-    ) -> crate::operation::modify_db_cluster_endpoint::builders::ModifyDBClusterEndpointFluentBuilder
-    {
+    pub fn modify_db_cluster_endpoint(&self) -> crate::operation::modify_db_cluster_endpoint::builders::ModifyDBClusterEndpointFluentBuilder {
         crate::operation::modify_db_cluster_endpoint::builders::ModifyDBClusterEndpointFluentBuilder::new(self.handle.clone())
     }
 }

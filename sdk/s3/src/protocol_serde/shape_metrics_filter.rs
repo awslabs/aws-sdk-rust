@@ -46,9 +46,7 @@ pub fn de_metrics_filter(
             _unknown => base = Some(crate::types::MetricsFilter::Unknown),
         }
     }
-    base.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing")
-    })
+    base.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing"))
 }
 
 pub fn ser_metrics_filter(
@@ -71,17 +69,10 @@ pub fn ser_metrics_filter(
         }
         crate::types::MetricsFilter::And(inner) => {
             let inner_writer = scope_writer.start_el("And");
-            crate::protocol_serde::shape_metrics_and_operator::ser_metrics_and_operator(
-                inner,
-                inner_writer,
-            )?
+            crate::protocol_serde::shape_metrics_and_operator::ser_metrics_and_operator(inner, inner_writer)?
         }
         crate::types::MetricsFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "MetricsFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("MetricsFilter"))
         }
     }
     Ok(())

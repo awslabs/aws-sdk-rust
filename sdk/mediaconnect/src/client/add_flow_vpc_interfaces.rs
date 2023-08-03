@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::flow_arn): The ARN of the flow that these VPC interfaces were added to.
     ///   - [`vpc_interfaces(Option<Vec<VpcInterface>>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::vpc_interfaces): The details of the newly added VPC interfaces.
     /// - On failure, responds with [`SdkError<AddFlowVpcInterfacesError>`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError)
-    pub fn add_flow_vpc_interfaces(
-        &self,
-    ) -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder
-    {
-        crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_flow_vpc_interfaces(&self) -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder {
+        crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,7 +28,7 @@ impl DescribeLifecycleConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder,
+    inner: crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder,
 }
 impl DescribeLifecycleConfigurationFluentBuilder {
     /// Creates a new `DescribeLifecycleConfiguration`.
@@ -39,7 +39,7 @@ impl DescribeLifecycleConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeLifecycleConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeLifecycleConfigurationFluentBuilder {
             crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeLifecycleConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeLifecycleConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeLifecycleConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeLifecycleConfigurationFluentBuilder {
             crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

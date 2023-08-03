@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`generated_fields(Option<Vec<Field>>)`](crate::operation::execute_statement::ExecuteStatementOutput::generated_fields): <p>Values for fields generated during a DML request.</p> <note>   <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>  </note>
     ///   - [`formatted_records(Option<String>)`](crate::operation::execute_statement::ExecuteStatementOutput::formatted_records): <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>  <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
     /// - On failure, responds with [`SdkError<ExecuteStatementError>`](crate::operation::execute_statement::ExecuteStatementError)
-    pub fn execute_statement(
-        &self,
-    ) -> crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder {
-        crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_statement(&self) -> crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder {
+        crate::operation::execute_statement::builders::ExecuteStatementFluentBuilder::new(self.handle.clone())
     }
 }

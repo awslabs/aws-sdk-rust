@@ -26,7 +26,7 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceByEvidenceFolderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderInputBuilder,
+    inner: crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderInputBuilder,
 }
 impl GetEvidenceByEvidenceFolderFluentBuilder {
     /// Creates a new `GetEvidenceByEvidenceFolder`.
@@ -37,7 +37,7 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
         }
     }
     /// Access the GetEvidenceByEvidenceFolder as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
             crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
             crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator {
         crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::new(self.handle, self.inner)
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -147,18 +130,12 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
@@ -167,18 +144,12 @@ impl GetEvidenceByEvidenceFolderFluentBuilder {
         self.inner.get_control_set_id()
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_folder_id(input.into());
         self
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }

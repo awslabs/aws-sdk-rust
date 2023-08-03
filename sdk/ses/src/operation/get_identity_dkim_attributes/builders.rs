@@ -34,7 +34,7 @@ impl GetIdentityDkimAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder,
+    inner: crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder,
 }
 impl GetIdentityDkimAttributesFluentBuilder {
     /// Creates a new `GetIdentityDkimAttributes`.
@@ -45,7 +45,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
         }
     }
     /// Access the GetIdentityDkimAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
             crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
             crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -138,10 +127,7 @@ impl GetIdentityDkimAttributesFluentBuilder {
         self
     }
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_identities(input);
         self
     }

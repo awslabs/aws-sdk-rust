@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`api_destinations(Option<Vec<ApiDestination>>)`](crate::operation::list_api_destinations::ListApiDestinationsOutput::api_destinations): <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_api_destinations::ListApiDestinationsOutput::next_token): <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListApiDestinationsError>`](crate::operation::list_api_destinations::ListApiDestinationsError)
-    pub fn list_api_destinations(
-        &self,
-    ) -> crate::operation::list_api_destinations::builders::ListApiDestinationsFluentBuilder {
-        crate::operation::list_api_destinations::builders::ListApiDestinationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_api_destinations(&self) -> crate::operation::list_api_destinations::builders::ListApiDestinationsFluentBuilder {
+        crate::operation::list_api_destinations::builders::ListApiDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput) with field(s):
     ///   - [`approval_rule_id(Option<String>)`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput::approval_rule_id): <p>The ID of the deleted approval rule. </p> <note>   <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>  </note>
     /// - On failure, responds with [`SdkError<DeletePullRequestApprovalRuleError>`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError)
-    pub fn delete_pull_request_approval_rule(&self) -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleFluentBuilder{
+    pub fn delete_pull_request_approval_rule(
+        &self,
+    ) -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleFluentBuilder {
         crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -2,8 +2,7 @@
 pub fn ser_put_object_lock_configuration_headers(
     input: &crate::operation::put_object_lock_configuration::PutObjectLockConfigurationInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.request_payer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_put_object_lock_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -27,10 +23,7 @@ pub fn ser_put_object_lock_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-bucket-object-lock-token", header_value);
@@ -43,10 +36,7 @@ pub fn ser_put_object_lock_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_md5",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-MD5", header_value);
@@ -59,10 +49,7 @@ pub fn ser_put_object_lock_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
@@ -75,10 +62,7 @@ pub fn ser_put_object_lock_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -97,23 +81,14 @@ pub fn de_put_object_lock_configuration_http_error(
     crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError::unhandled,
-    )?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -129,16 +104,14 @@ pub fn de_put_object_lock_configuration_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationOutputBuilder::default();
         output = output.set_request_charged(
-            crate::protocol_serde::shape_put_object_lock_configuration_output::de_request_charged_header(_response_headers)
-                                    .map_err(|_|crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
+            crate::protocol_serde::shape_put_object_lock_configuration_output::de_request_charged_header(_response_headers).map_err(|_| {
+                crate::operation::put_object_lock_configuration::PutObjectLockConfigurationError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

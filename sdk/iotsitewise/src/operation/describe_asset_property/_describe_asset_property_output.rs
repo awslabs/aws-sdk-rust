@@ -51,18 +51,14 @@ impl ::aws_http::request_id::RequestId for DescribeAssetPropertyOutput {
 }
 impl DescribeAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetPropertyOutput`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder {
         crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssetPropertyOutput`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetPropertyOutputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
@@ -101,18 +97,12 @@ impl DescribeAssetPropertyOutputBuilder {
         &self.asset_name
     }
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -128,10 +118,7 @@ impl DescribeAssetPropertyOutputBuilder {
     }
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
-    pub fn set_asset_property(
-        mut self,
-        input: ::std::option::Option<crate::types::Property>,
-    ) -> Self {
+    pub fn set_asset_property(mut self, input: ::std::option::Option<crate::types::Property>) -> Self {
         self.asset_property = input;
         self
     }
@@ -146,17 +133,12 @@ impl DescribeAssetPropertyOutputBuilder {
         self
     }
     /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
-    pub fn set_composite_model(
-        mut self,
-        input: ::std::option::Option<crate::types::CompositeModelProperty>,
-    ) -> Self {
+    pub fn set_composite_model(mut self, input: ::std::option::Option<crate::types::CompositeModelProperty>) -> Self {
         self.composite_model = input;
         self
     }
     /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
-    pub fn get_composite_model(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompositeModelProperty> {
+    pub fn get_composite_model(&self) -> &::std::option::Option<crate::types::CompositeModelProperty> {
         &self.composite_model
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -41,9 +41,7 @@ impl AwsManagedRulesAcfpRuleSet {
         self.registration_page_path.as_deref()
     }
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
-    pub fn request_inspection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RequestInspectionAcfp> {
+    pub fn request_inspection(&self) -> ::std::option::Option<&crate::types::RequestInspectionAcfp> {
         self.request_inspection.as_ref()
     }
     /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates. </p> <note>
@@ -67,9 +65,7 @@ impl AwsManagedRulesAcfpRuleSet {
 
 /// A builder for [`AwsManagedRulesAcfpRuleSet`](crate::types::AwsManagedRulesAcfpRuleSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsManagedRulesAcfpRuleSetBuilder {
     pub(crate) creation_path: ::std::option::Option<::std::string::String>,
     pub(crate) registration_page_path: ::std::option::Option<::std::string::String>,
@@ -80,19 +76,13 @@ pub struct AwsManagedRulesAcfpRuleSetBuilder {
 impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
     /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
-    pub fn creation_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
     /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
-    pub fn set_creation_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_path = input;
         self
     }
@@ -105,10 +95,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
-    pub fn registration_page_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_page_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_page_path = ::std::option::Option::Some(input.into());
         self
     }
@@ -116,10 +103,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
-    pub fn set_registration_page_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_page_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registration_page_path = input;
         self
     }
@@ -136,17 +120,12 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self
     }
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
-    pub fn set_request_inspection(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestInspectionAcfp>,
-    ) -> Self {
+    pub fn set_request_inspection(mut self, input: ::std::option::Option<crate::types::RequestInspectionAcfp>) -> Self {
         self.request_inspection = input;
         self
     }
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
-    pub fn get_request_inspection(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestInspectionAcfp> {
+    pub fn get_request_inspection(&self) -> &::std::option::Option<crate::types::RequestInspectionAcfp> {
         &self.request_inspection
     }
     /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates. </p> <note>
@@ -161,10 +140,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time. </p>
-    pub fn set_response_inspection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseInspection>,
-    ) -> Self {
+    pub fn set_response_inspection(mut self, input: ::std::option::Option<crate::types::ResponseInspection>) -> Self {
         self.response_inspection = input;
         self
     }
@@ -172,9 +148,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time. </p>
-    pub fn get_response_inspection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseInspection> {
+    pub fn get_response_inspection(&self) -> &::std::option::Option<crate::types::ResponseInspection> {
         &self.response_inspection
     }
     /// <p>Allow the use of regular expressions in the registration page path and the account creation path. </p>

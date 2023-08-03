@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::cancel_findings_report::CancelFindingsReportOutput::report_id): <p>The ID of the canceled report.</p>
     /// - On failure, responds with [`SdkError<CancelFindingsReportError>`](crate::operation::cancel_findings_report::CancelFindingsReportError)
-    pub fn cancel_findings_report(
-        &self,
-    ) -> crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder {
-        crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_findings_report(&self) -> crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder {
+        crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder::new(self.handle.clone())
     }
 }

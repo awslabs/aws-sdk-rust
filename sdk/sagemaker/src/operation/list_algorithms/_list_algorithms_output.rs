@@ -5,8 +5,7 @@
 pub struct ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     #[doc(hidden)]
-    pub algorithm_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>,
+    pub algorithm_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAlgorithmsOutput {
 }
 impl ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    pub fn algorithm_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlgorithmSummary]> {
+    pub fn algorithm_summary_list(&self) -> ::std::option::Option<&[crate::types::AlgorithmSummary]> {
         self.algorithm_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
@@ -38,12 +35,9 @@ impl ListAlgorithmsOutput {
 
 /// A builder for [`ListAlgorithmsOutput`](crate::operation::list_algorithms::ListAlgorithmsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlgorithmsOutputBuilder {
-    pub(crate) algorithm_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>,
+    pub(crate) algorithm_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAlgorithmsOutputBuilder {
         self
     }
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    pub fn set_algorithm_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>,
-    ) -> Self {
+    pub fn set_algorithm_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>>) -> Self {
         self.algorithm_summary_list = input;
         self
     }
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    pub fn get_algorithm_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>> {
+    pub fn get_algorithm_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmSummary>> {
         &self.algorithm_summary_list
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateActionTargetOutput`](crate::operation::create_action_target::CreateActionTargetOutput) with field(s):
     ///   - [`action_target_arn(Option<String>)`](crate::operation::create_action_target::CreateActionTargetOutput::action_target_arn): <p>The Amazon Resource Name (ARN) for the custom action target.</p>
     /// - On failure, responds with [`SdkError<CreateActionTargetError>`](crate::operation::create_action_target::CreateActionTargetError)
-    pub fn create_action_target(
-        &self,
-    ) -> crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder {
-        crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_action_target(&self) -> crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder {
+        crate::operation::create_action_target::builders::CreateActionTargetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,18 +15,14 @@ impl GetTrafficDistributionInput {
 }
 impl GetTrafficDistributionInput {
     /// Creates a new builder-style object to manufacture [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
-    pub fn builder(
-    ) -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionInputBuilder {
         crate::operation::get_traffic_distribution::builders::GetTrafficDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrafficDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl GetTrafficDistributionInputBuilder {
     /// Consumes the builder and constructs a [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_traffic_distribution::GetTrafficDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_traffic_distribution::GetTrafficDistributionInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_traffic_distribution::GetTrafficDistributionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_traffic_distribution::GetTrafficDistributionInput { id: self.id })
     }
 }

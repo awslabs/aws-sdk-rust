@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetResolverQueryLogConfigPolicyOutput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput) with field(s):
     ///   - [`resolver_query_log_config_policy(Option<String>)`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput::resolver_query_log_config_policy): <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverQueryLogConfigPolicyError>`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError)
-    pub fn get_resolver_query_log_config_policy(&self) -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyFluentBuilder{
+    pub fn get_resolver_query_log_config_policy(
+        &self,
+    ) -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyFluentBuilder {
         crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyFluentBuilder::new(self.handle.clone())
     }
 }

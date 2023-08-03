@@ -39,9 +39,7 @@ impl StartStageDeploymentFluentBuilder {
         }
     }
     /// Access the StartStageDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl StartStageDeploymentFluentBuilder {
             crate::operation::start_stage_deployment::StartStageDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stage_deployment::StartStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stage_deployment::StartStageDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl StartStageDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl StartStageDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_stage_deployment::StartStageDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stage_deployment::StartStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stage_deployment::StartStageDeploymentError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl StartStageDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_stage_deployment::StartStageDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stage_deployment::StartStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stage_deployment::StartStageDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl StartStageDeploymentFluentBuilder {
             crate::operation::start_stage_deployment::StartStageDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stage_deployment::StartStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stage_deployment::StartStageDeploymentError>,
     > {
         self.customize_middleware().await
     }

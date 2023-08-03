@@ -50,16 +50,14 @@ impl DescribeBudgetActionHistoriesInput {
 }
 impl DescribeBudgetActionHistoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesInput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput).
-    pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder {
         crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetActionHistoriesInput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -117,10 +115,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
         self
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::TimePeriod>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::TimePeriod>) -> Self {
         self.time_period = input;
         self
     }
@@ -163,21 +158,13 @@ impl DescribeBudgetActionHistoriesInputBuilder {
         crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                action_id: self.action_id
-                ,
-                time_period: self.time_period
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            action_id: self.action_id,
+            time_period: self.time_period,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

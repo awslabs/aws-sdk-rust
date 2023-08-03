@@ -27,8 +27,7 @@ impl DeleteHoursOfOperationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHoursOfOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder,
+    inner: crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder,
 }
 impl DeleteHoursOfOperationFluentBuilder {
     /// Creates a new `DeleteHoursOfOperation`.
@@ -39,10 +38,7 @@ impl DeleteHoursOfOperationFluentBuilder {
         }
     }
     /// Access the DeleteHoursOfOperation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeleteHoursOfOperationFluentBuilder {
             crate::operation::delete_hours_of_operation::DeleteHoursOfOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeleteHoursOfOperationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeleteHoursOfOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeleteHoursOfOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DeleteHoursOfOperationFluentBuilder {
             crate::operation::delete_hours_of_operation::DeleteHoursOfOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +125,12 @@ impl DeleteHoursOfOperationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hours_of_operation_id(input.into());
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hours_of_operation_id(input);
         self
     }

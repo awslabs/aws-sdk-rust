@@ -43,20 +43,17 @@ impl DescribeIpamResourceDiscoveriesInput {
 }
 impl DescribeIpamResourceDiscoveriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamResourceDiscoveriesInput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput).
-    pub fn builder() -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesInputBuilder{
+    pub fn builder() -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesInputBuilder {
         crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamResourceDiscoveriesInput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamResourceDiscoveriesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) ipam_resource_discovery_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipam_resource_discovery_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -81,27 +78,19 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     /// To override the contents of this collection use [`set_ipam_resource_discovery_ids`](Self::set_ipam_resource_discovery_ids).
     ///
     /// <p>The IPAM resource discovery IDs.</p>
-    pub fn ipam_resource_discovery_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipam_resource_discovery_ids.unwrap_or_default();
         v.push(input.into());
         self.ipam_resource_discovery_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPAM resource discovery IDs.</p>
-    pub fn set_ipam_resource_discovery_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipam_resource_discovery_ids = input;
         self
     }
     /// <p>The IPAM resource discovery IDs.</p>
-    pub fn get_ipam_resource_discovery_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_resource_discovery_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipam_resource_discovery_ids
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -144,10 +133,7 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
         self
     }
     /// <p>The resource discovery filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -164,17 +150,12 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput {
-                dry_run: self.dry_run
-                ,
-                ipam_resource_discovery_ids: self.ipam_resource_discovery_ids
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-            }
+                dry_run: self.dry_run,
+                ipam_resource_discovery_ids: self.ipam_resource_discovery_ids,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            },
         )
     }
 }

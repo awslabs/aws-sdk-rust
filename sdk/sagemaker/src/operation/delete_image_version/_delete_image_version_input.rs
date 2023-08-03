@@ -29,17 +29,14 @@ impl DeleteImageVersionInput {
 }
 impl DeleteImageVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageVersionInput`](crate::operation::delete_image_version::DeleteImageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder {
         crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImageVersionInput`](crate::operation::delete_image_version::DeleteImageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageVersionInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl DeleteImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImageVersionInput`](crate::operation::delete_image_version::DeleteImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_image_version::DeleteImageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_image_version::DeleteImageVersionInput {
-                image_name: self.image_name,
-                version: self.version,
-                alias: self.alias,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_image_version::DeleteImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_image_version::DeleteImageVersionInput {
+            image_name: self.image_name,
+            version: self.version,
+            alias: self.alias,
+        })
     }
 }

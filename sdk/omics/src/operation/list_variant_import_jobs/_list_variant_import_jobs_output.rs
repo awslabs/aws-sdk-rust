@@ -5,8 +5,7 @@
 pub struct ListVariantImportJobsOutput {
     /// <p>A list of jobs.</p>
     #[doc(hidden)]
-    pub variant_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>>,
+    pub variant_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListVariantImportJobsOutput {
 }
 impl ListVariantImportJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn variant_import_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VariantImportJobItem]> {
+    pub fn variant_import_jobs(&self) -> ::std::option::Option<&[crate::types::VariantImportJobItem]> {
         self.variant_import_jobs.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVariantImportJobsOutput {
 }
 impl ListVariantImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListVariantImportJobsOutput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsOutputBuilder {
         crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVariantImportJobsOutput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVariantImportJobsOutputBuilder {
-    pub(crate) variant_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>>,
+    pub(crate) variant_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListVariantImportJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_variant_import_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>>,
-    ) -> Self {
+    pub fn set_variant_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>>) -> Self {
         self.variant_import_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_variant_import_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>> {
+    pub fn get_variant_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>> {
         &self.variant_import_jobs
     }
     /// <p>A pagination token that's included if more results are available.</p>

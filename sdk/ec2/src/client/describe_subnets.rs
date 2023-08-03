@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`subnets(Option<Vec<Subnet>>)`](crate::operation::describe_subnets::DescribeSubnetsOutput::subnets): <p>Information about one or more subnets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subnets::DescribeSubnetsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeSubnetsError>`](crate::operation::describe_subnets::DescribeSubnetsError)
-    pub fn describe_subnets(
-        &self,
-    ) -> crate::operation::describe_subnets::builders::DescribeSubnetsFluentBuilder {
-        crate::operation::describe_subnets::builders::DescribeSubnetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_subnets(&self) -> crate::operation::describe_subnets::builders::DescribeSubnetsFluentBuilder {
+        crate::operation::describe_subnets::builders::DescribeSubnetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl SenderIdInformation {
 
 /// A builder for [`SenderIdInformation`](crate::types::SenderIdInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SenderIdInformationBuilder {
     pub(crate) sender_id_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct SenderIdInformationBuilder {
 }
 impl SenderIdInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn sender_id_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sender_id_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn set_sender_id_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sender_id_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id_arn = input;
         self
     }
@@ -97,18 +89,12 @@ impl SenderIdInformationBuilder {
         &self.sender_id
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -128,32 +114,21 @@ impl SenderIdInformationBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
-    ) -> Self {
+    pub fn set_message_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>) -> Self {
         self.message_types = input;
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn get_message_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageType>> {
+    pub fn get_message_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageType>> {
         &self.message_types
     }
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub fn monthly_leasing_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monthly_leasing_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monthly_leasing_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub fn set_monthly_leasing_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monthly_leasing_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monthly_leasing_price = input;
         self
     }

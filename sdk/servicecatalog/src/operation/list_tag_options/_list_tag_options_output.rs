@@ -35,12 +35,9 @@ impl ListTagOptionsOutput {
 
 /// A builder for [`ListTagOptionsOutput`](crate::operation::list_tag_options::ListTagOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagOptionsOutputBuilder {
-    pub(crate) tag_option_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
+    pub(crate) tag_option_details: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListTagOptionsOutputBuilder {
         self
     }
     /// <p>Information about the TagOptions.</p>
-    pub fn set_tag_option_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
-    ) -> Self {
+    pub fn set_tag_option_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>) -> Self {
         self.tag_option_details = input;
         self
     }
     /// <p>Information about the TagOptions.</p>
-    pub fn get_tag_option_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
+    pub fn get_tag_option_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
         &self.tag_option_details
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>

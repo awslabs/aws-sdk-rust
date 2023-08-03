@@ -45,9 +45,7 @@ impl GetSessionInput {
 
 /// A builder for [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,
@@ -99,19 +97,13 @@ impl GetSessionInputBuilder {
     }
     /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
-    pub fn checkpoint_label_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checkpoint_label_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checkpoint_label_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
-    pub fn set_checkpoint_label_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_checkpoint_label_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checkpoint_label_filter = input;
         self
     }
@@ -121,12 +113,7 @@ impl GetSessionInputBuilder {
         &self.checkpoint_label_filter
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_session::GetSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_session::GetSessionInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,

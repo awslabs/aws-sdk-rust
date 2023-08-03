@@ -30,9 +30,7 @@ impl AccountStatus {
 
 /// A builder for [`AccountStatus`](crate::types::AccountStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountStatusBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) slr_deployment_status: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AccountStatusBuilder {
         &self.account_id
     }
     /// <p>The status of SLR deployment for the account.</p>
-    pub fn slr_deployment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slr_deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slr_deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of SLR deployment for the account.</p>
-    pub fn set_slr_deployment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slr_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slr_deployment_status = input;
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput) with field(s):
     ///   - [`bundle_task(Option<BundleTask>)`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput::bundle_task): <p>Information about the bundle task.</p>
     /// - On failure, responds with [`SdkError<CancelBundleTaskError>`](crate::operation::cancel_bundle_task::CancelBundleTaskError)
-    pub fn cancel_bundle_task(
-        &self,
-    ) -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskFluentBuilder {
-        crate::operation::cancel_bundle_task::builders::CancelBundleTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_bundle_task(&self) -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskFluentBuilder {
+        crate::operation::cancel_bundle_task::builders::CancelBundleTaskFluentBuilder::new(self.handle.clone())
     }
 }

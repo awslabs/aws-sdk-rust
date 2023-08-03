@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,19 +57,11 @@ pub enum ValidationExceptionReason {
 impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "API_DOES_NOT_SUPPORT_LABELED_ARNS" => {
-                ValidationExceptionReason::ApiDoesNotSupportLabeledArns
-            }
-            "CANNOT_UPDATE_COMPLETED_MAP_RUN" => {
-                ValidationExceptionReason::CannotUpdateCompletedMapRun
-            }
-            "INVALID_ROUTING_CONFIGURATION" => {
-                ValidationExceptionReason::InvalidRoutingConfiguration
-            }
+            "API_DOES_NOT_SUPPORT_LABELED_ARNS" => ValidationExceptionReason::ApiDoesNotSupportLabeledArns,
+            "CANNOT_UPDATE_COMPLETED_MAP_RUN" => ValidationExceptionReason::CannotUpdateCompletedMapRun,
+            "INVALID_ROUTING_CONFIGURATION" => ValidationExceptionReason::InvalidRoutingConfiguration,
             "MISSING_REQUIRED_PARAMETER" => ValidationExceptionReason::MissingRequiredParameter,
-            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,15 +76,9 @@ impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ValidationExceptionReason::ApiDoesNotSupportLabeledArns => {
-                "API_DOES_NOT_SUPPORT_LABELED_ARNS"
-            }
-            ValidationExceptionReason::CannotUpdateCompletedMapRun => {
-                "CANNOT_UPDATE_COMPLETED_MAP_RUN"
-            }
-            ValidationExceptionReason::InvalidRoutingConfiguration => {
-                "INVALID_ROUTING_CONFIGURATION"
-            }
+            ValidationExceptionReason::ApiDoesNotSupportLabeledArns => "API_DOES_NOT_SUPPORT_LABELED_ARNS",
+            ValidationExceptionReason::CannotUpdateCompletedMapRun => "CANNOT_UPDATE_COMPLETED_MAP_RUN",
+            ValidationExceptionReason::InvalidRoutingConfiguration => "INVALID_ROUTING_CONFIGURATION",
             ValidationExceptionReason::MissingRequiredParameter => "MISSING_REQUIRED_PARAMETER",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }

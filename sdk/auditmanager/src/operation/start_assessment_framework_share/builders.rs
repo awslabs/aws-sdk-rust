@@ -39,7 +39,7 @@ impl StartAssessmentFrameworkShareInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder,
+    inner: crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder,
 }
 impl StartAssessmentFrameworkShareFluentBuilder {
     /// Creates a new `StartAssessmentFrameworkShare`.
@@ -50,7 +50,7 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         }
     }
     /// Access the StartAssessmentFrameworkShare as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +62,7 @@ impl StartAssessmentFrameworkShareFluentBuilder {
             crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +72,7 @@ impl StartAssessmentFrameworkShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +81,7 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError>,
     > {
         let op = self
             .inner
@@ -111,9 +104,7 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +118,7 @@ impl StartAssessmentFrameworkShareFluentBuilder {
             crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError>,
     > {
         self.customize_middleware().await
     }
@@ -148,18 +137,12 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self.inner.get_framework_id()
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn destination_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_account(input.into());
         self
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn set_destination_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_account(input);
         self
     }
@@ -168,18 +151,12 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self.inner.get_destination_account()
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_region(input.into());
         self
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_region(input);
         self
     }

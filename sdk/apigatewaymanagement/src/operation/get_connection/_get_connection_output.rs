@@ -42,9 +42,7 @@ impl GetConnectionOutput {
 
 /// A builder for [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionOutputBuilder {
     pub(crate) connected_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) identity: ::std::option::Option<crate::types::Identity>,
@@ -58,10 +56,7 @@ impl GetConnectionOutputBuilder {
         self
     }
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
-    pub fn set_connected_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_connected_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.connected_at = input;
         self
     }
@@ -89,10 +84,7 @@ impl GetConnectionOutputBuilder {
         self
     }
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
-    pub fn set_last_active_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_active_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_active_at = input;
         self
     }

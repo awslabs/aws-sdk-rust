@@ -44,9 +44,7 @@ impl UdpOutputSettings {
 
 /// A builder for [`UdpOutputSettings`](crate::types::UdpOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UdpOutputSettingsBuilder {
     pub(crate) buffer_msec: ::std::option::Option<i32>,
     pub(crate) container_settings: ::std::option::Option<crate::types::UdpContainerSettings>,
@@ -74,17 +72,12 @@ impl UdpOutputSettingsBuilder {
         self
     }
     /// Udp Container Settings
-    pub fn set_container_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UdpContainerSettings>,
-    ) -> Self {
+    pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::UdpContainerSettings>) -> Self {
         self.container_settings = input;
         self
     }
     /// Udp Container Settings
-    pub fn get_container_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::UdpContainerSettings> {
+    pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::UdpContainerSettings> {
         &self.container_settings
     }
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
@@ -93,10 +86,7 @@ impl UdpOutputSettingsBuilder {
         self
     }
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocationRef>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
         self.destination = input;
         self
     }
@@ -110,17 +100,12 @@ impl UdpOutputSettingsBuilder {
         self
     }
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-    pub fn set_fec_output_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::FecOutputSettings>,
-    ) -> Self {
+    pub fn set_fec_output_settings(mut self, input: ::std::option::Option<crate::types::FecOutputSettings>) -> Self {
         self.fec_output_settings = input;
         self
     }
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-    pub fn get_fec_output_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FecOutputSettings> {
+    pub fn get_fec_output_settings(&self) -> &::std::option::Option<crate::types::FecOutputSettings> {
         &self.fec_output_settings
     }
     /// Consumes the builder and constructs a [`UdpOutputSettings`](crate::types::UdpOutputSettings).

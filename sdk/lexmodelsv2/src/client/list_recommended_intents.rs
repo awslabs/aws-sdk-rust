@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`summary_list(Option<Vec<RecommendedIntentSummary>>)`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput::summary_list): <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListRecommendedIntentsError>`](crate::operation::list_recommended_intents::ListRecommendedIntentsError)
-    pub fn list_recommended_intents(
-        &self,
-    ) -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsFluentBuilder
-    {
+    pub fn list_recommended_intents(&self) -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsFluentBuilder {
         crate::operation::list_recommended_intents::builders::ListRecommendedIntentsFluentBuilder::new(self.handle.clone())
     }
 }

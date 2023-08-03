@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_batch_import_job::builders::CreateBatchImportJobFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_batch_import_job::builders::CreateBatchImportJobFluentBuilder::set_tags): <p>A collection of key-value pairs associated with this request. </p>
     /// - On success, responds with [`CreateBatchImportJobOutput`](crate::operation::create_batch_import_job::CreateBatchImportJobOutput)
     /// - On failure, responds with [`SdkError<CreateBatchImportJobError>`](crate::operation::create_batch_import_job::CreateBatchImportJobError)
-    pub fn create_batch_import_job(
-        &self,
-    ) -> crate::operation::create_batch_import_job::builders::CreateBatchImportJobFluentBuilder
-    {
-        crate::operation::create_batch_import_job::builders::CreateBatchImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_batch_import_job(&self) -> crate::operation::create_batch_import_job::builders::CreateBatchImportJobFluentBuilder {
+        crate::operation::create_batch_import_job::builders::CreateBatchImportJobFluentBuilder::new(self.handle.clone())
     }
 }

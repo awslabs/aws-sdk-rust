@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`report_type(Option<ReportType>)`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput::report_type): <p>The type of task report.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListThingRegistrationTaskReportsError>`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError)
-    pub fn list_thing_registration_task_reports(&self) -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder{
+    pub fn list_thing_registration_task_reports(
+        &self,
+    ) -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder {
         crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::new(self.handle.clone())
     }
 }

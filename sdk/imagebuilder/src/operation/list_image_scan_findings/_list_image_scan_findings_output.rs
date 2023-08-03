@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListImageScanFindingsOutput {
 }
 impl ListImageScanFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListImageScanFindingsOutput`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsOutputBuilder {
         crate::operation::list_image_scan_findings::builders::ListImageScanFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageScanFindingsOutput`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageScanFindingsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
@@ -80,17 +76,12 @@ impl ListImageScanFindingsOutputBuilder {
         self
     }
     /// <p>The image scan findings for your account that meet your request filter criteria.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>) -> Self {
         self.findings = input;
         self
     }
     /// <p>The image scan findings for your account that meet your request filter criteria.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>> {
         &self.findings
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>

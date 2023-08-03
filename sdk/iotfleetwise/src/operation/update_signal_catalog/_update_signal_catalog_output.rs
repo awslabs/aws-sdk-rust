@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateSignalCatalogOutput {
 }
 impl UpdateSignalCatalogOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSignalCatalogOutput`](crate::operation::update_signal_catalog::UpdateSignalCatalogOutput).
-    pub fn builder(
-    ) -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogOutputBuilder {
-        crate::operation::update_signal_catalog::builders::UpdateSignalCatalogOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogOutputBuilder {
+        crate::operation::update_signal_catalog::builders::UpdateSignalCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSignalCatalogOutput`](crate::operation::update_signal_catalog::UpdateSignalCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

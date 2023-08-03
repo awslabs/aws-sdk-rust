@@ -5,8 +5,7 @@
 pub struct DescribeConfigurationAggregatorSourcesStatusOutput {
     /// <p>Returns an AggregatedSourceStatus object. </p>
     #[doc(hidden)]
-    pub aggregated_source_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
+    pub aggregated_source_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeConfigurationAggregatorSourcesStatusOutput {
 }
 impl DescribeConfigurationAggregatorSourcesStatusOutput {
     /// <p>Returns an AggregatedSourceStatus object. </p>
-    pub fn aggregated_source_status_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregatedSourceStatus]> {
+    pub fn aggregated_source_status_list(&self) -> ::std::option::Option<&[crate::types::AggregatedSourceStatus]> {
         self.aggregated_source_status_list.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationAggregatorSource
 }
 impl DescribeConfigurationAggregatorSourcesStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput).
-    pub fn builder() -> crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
         crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
-    pub(crate) aggregated_source_status_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
+    pub(crate) aggregated_source_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +48,19 @@ impl DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
     /// To override the contents of this collection use [`set_aggregated_source_status_list`](Self::set_aggregated_source_status_list).
     ///
     /// <p>Returns an AggregatedSourceStatus object. </p>
-    pub fn aggregated_source_status_list(
-        mut self,
-        input: crate::types::AggregatedSourceStatus,
-    ) -> Self {
+    pub fn aggregated_source_status_list(mut self, input: crate::types::AggregatedSourceStatus) -> Self {
         let mut v = self.aggregated_source_status_list.unwrap_or_default();
         v.push(input);
         self.aggregated_source_status_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns an AggregatedSourceStatus object. </p>
-    pub fn set_aggregated_source_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
-    ) -> Self {
+    pub fn set_aggregated_source_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>) -> Self {
         self.aggregated_source_status_list = input;
         self
     }
     /// <p>Returns an AggregatedSourceStatus object. </p>
-    pub fn get_aggregated_source_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>> {
+    pub fn get_aggregated_source_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>> {
         &self.aggregated_source_status_list
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -100,12 +87,10 @@ impl DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput).
-    pub fn build(self) -> crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput{
+    pub fn build(self) -> crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput {
         crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput {
-            aggregated_source_status_list: self.aggregated_source_status_list
-            ,
-            next_token: self.next_token
-            ,
+            aggregated_source_status_list: self.aggregated_source_status_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

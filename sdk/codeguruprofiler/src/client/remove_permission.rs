@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::remove_permission::RemovePermissionOutput::policy): <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
     ///   - [`revision_id(Option<String>)`](crate::operation::remove_permission::RemovePermissionOutput::revision_id): <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
     /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::operation::remove_permission::RemovePermissionError)
-    pub fn remove_permission(
-        &self,
-    ) -> crate::operation::remove_permission::builders::RemovePermissionFluentBuilder {
-        crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_permission(&self) -> crate::operation::remove_permission::builders::RemovePermissionFluentBuilder {
+        crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::new(self.handle.clone())
     }
 }

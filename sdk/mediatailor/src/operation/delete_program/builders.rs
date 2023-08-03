@@ -10,10 +10,7 @@ impl DeleteProgramInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_program::DeleteProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_program::DeleteProgramError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_program::DeleteProgramError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_program();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteProgramFluentBuilder {
         }
     }
     /// Access the DeleteProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_program::builders::DeleteProgramInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_program::builders::DeleteProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

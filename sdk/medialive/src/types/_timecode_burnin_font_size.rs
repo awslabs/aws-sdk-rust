@@ -40,13 +40,7 @@
 /// Timecode Burnin Font Size
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TimecodeBurninFontSize {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for TimecodeBurninFontSize {
             "LARGE_48" => TimecodeBurninFontSize::Large48,
             "MEDIUM_32" => TimecodeBurninFontSize::Medium32,
             "SMALL_16" => TimecodeBurninFontSize::Small16,
-            other => TimecodeBurninFontSize::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TimecodeBurninFontSize::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

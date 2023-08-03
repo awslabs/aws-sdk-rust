@@ -22,17 +22,14 @@ impl ListFleetMetricsInput {
 }
 impl ListFleetMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListFleetMetricsInput`](crate::operation::list_fleet_metrics::ListFleetMetricsInput).
-    pub fn builder() -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder {
         crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFleetMetricsInput`](crate::operation::list_fleet_metrics::ListFleetMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetMetricsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListFleetMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListFleetMetricsInput`](crate::operation::list_fleet_metrics::ListFleetMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fleet_metrics::ListFleetMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_fleet_metrics::ListFleetMetricsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_fleet_metrics::ListFleetMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_fleet_metrics::ListFleetMetricsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

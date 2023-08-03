@@ -44,9 +44,7 @@ impl FreeTrialInfo {
 
 /// A builder for [`FreeTrialInfo`](crate::types::FreeTrialInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeTrialInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FreeTrialType>,
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -102,10 +100,7 @@ impl FreeTrialInfoBuilder {
         self
     }
     /// <p>The order to sort results by.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeTrialStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FreeTrialStatus>) -> Self {
         self.status = input;
         self
     }

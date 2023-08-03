@@ -37,9 +37,7 @@ impl ResolvedArtifact {
 
 /// A builder for [`ResolvedArtifact`](crate::types::ResolvedArtifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolvedArtifactBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactsType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

@@ -81,9 +81,7 @@ impl NewPrivateVirtualInterfaceAllocation {
 
 /// A builder for [`NewPrivateVirtualInterfaceAllocation`](crate::types::NewPrivateVirtualInterfaceAllocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewPrivateVirtualInterfaceAllocationBuilder {
     pub(crate) virtual_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) vlan: ::std::option::Option<i32>,
@@ -97,18 +95,12 @@ pub struct NewPrivateVirtualInterfaceAllocationBuilder {
 }
 impl NewPrivateVirtualInterfaceAllocationBuilder {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn set_virtual_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_name = input;
         self
     }
@@ -176,18 +168,12 @@ impl NewPrivateVirtualInterfaceAllocationBuilder {
         &self.auth_key
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amazon_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amazon_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn set_amazon_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amazon_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amazon_address = input;
         self
     }
@@ -201,10 +187,7 @@ impl NewPrivateVirtualInterfaceAllocationBuilder {
         self
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressFamily>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
         self.address_family = input;
         self
     }
@@ -213,18 +196,12 @@ impl NewPrivateVirtualInterfaceAllocationBuilder {
         &self.address_family
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn set_customer_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_address = input;
         self
     }
@@ -244,10 +221,7 @@ impl NewPrivateVirtualInterfaceAllocationBuilder {
         self
     }
     /// <p>The tags associated with the private virtual interface.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

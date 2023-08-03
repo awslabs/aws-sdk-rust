@@ -32,7 +32,7 @@ impl DescribeAffectedEntitiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesInputBuilder,
+    inner: crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesInputBuilder,
 }
 impl DescribeAffectedEntitiesFluentBuilder {
     /// Creates a new `DescribeAffectedEntities`.
@@ -43,10 +43,7 @@ impl DescribeAffectedEntitiesFluentBuilder {
         }
     }
     /// Access the DescribeAffectedEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl DescribeAffectedEntitiesFluentBuilder {
             crate::operation::describe_affected_entities::DescribeAffectedEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_affected_entities::DescribeAffectedEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_entities::DescribeAffectedEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl DescribeAffectedEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl DescribeAffectedEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_affected_entities::DescribeAffectedEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_entities::DescribeAffectedEntitiesError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl DescribeAffectedEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_affected_entities::DescribeAffectedEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_entities::DescribeAffectedEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -123,19 +111,14 @@ impl DescribeAffectedEntitiesFluentBuilder {
             crate::operation::describe_affected_entities::DescribeAffectedEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_affected_entities::DescribeAffectedEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_entities::DescribeAffectedEntitiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator {
         crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>Values to narrow the results returned. At least one event ARN is required.</p>

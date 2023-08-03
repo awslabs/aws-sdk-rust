@@ -15,33 +15,25 @@ impl DescribeDataQualityJobDefinitionInput {
 }
 impl DescribeDataQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataQualityJobDefinitionInput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput).
-    pub fn builder() -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionInputBuilder {
         crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataQualityJobDefinitionInput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataQualityJobDefinitionInputBuilder {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data quality monitoring job definition to describe.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -50,12 +42,16 @@ impl DescribeDataQualityJobDefinitionInputBuilder {
         &self.job_definition_name
     }
     /// Consumes the builder and constructs a [`DescribeDataQualityJobDefinitionInput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+            },
         )
     }
 }

@@ -30,9 +30,7 @@ impl PropertyResponse {
 
 /// A builder for [`PropertyResponse`](crate::types::PropertyResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyResponseBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     pub(crate) value: ::std::option::Option<crate::types::DataValue>,
@@ -44,17 +42,12 @@ impl PropertyResponseBuilder {
         self
     }
     /// <p>An object that specifies information about a property.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PropertyDefinitionResponse>) -> Self {
         self.definition = input;
         self
     }
     /// <p>An object that specifies information about a property.</p>
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::PropertyDefinitionResponse> {
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PropertyDefinitionResponse> {
         &self.definition
     }
     /// <p>The value of the property.</p>

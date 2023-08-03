@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`cache_policy(Option<CachePolicy>)`](crate::operation::update_cache_policy::UpdateCachePolicyOutput::cache_policy): <p>A cache policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_cache_policy::UpdateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
     /// - On failure, responds with [`SdkError<UpdateCachePolicyError>`](crate::operation::update_cache_policy::UpdateCachePolicyError)
-    pub fn update_cache_policy(
-        &self,
-    ) -> crate::operation::update_cache_policy::builders::UpdateCachePolicyFluentBuilder {
-        crate::operation::update_cache_policy::builders::UpdateCachePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_cache_policy(&self) -> crate::operation::update_cache_policy::builders::UpdateCachePolicyFluentBuilder {
+        crate::operation::update_cache_policy::builders::UpdateCachePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct DescribeLocalGatewayRouteTableVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub local_gateway_route_table_vpc_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>>,
+    pub local_gateway_route_table_vpc_associations: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeLocalGatewayRouteTableVpcAssociationsOutput {
 }
 impl DescribeLocalGatewayRouteTableVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn local_gateway_route_table_vpc_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LocalGatewayRouteTableVpcAssociation]> {
+    pub fn local_gateway_route_table_vpc_associations(&self) -> ::std::option::Option<&[crate::types::LocalGatewayRouteTableVpcAssociation]> {
         self.local_gateway_route_table_vpc_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,18 @@ impl ::aws_http::request_id::RequestId for DescribeLocalGatewayRouteTableVpcAsso
 }
 impl DescribeLocalGatewayRouteTableVpcAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocalGatewayRouteTableVpcAssociationsOutput`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder
+    {
         crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocalGatewayRouteTableVpcAssociationsOutput`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder {
-    pub(crate) local_gateway_route_table_vpc_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>>,
+    pub(crate) local_gateway_route_table_vpc_associations: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +49,8 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_local_gateway_route_table_vpc_associations`](Self::set_local_gateway_route_table_vpc_associations).
     ///
     /// <p>Information about the associations.</p>
-    pub fn local_gateway_route_table_vpc_associations(
-        mut self,
-        input: crate::types::LocalGatewayRouteTableVpcAssociation,
-    ) -> Self {
-        let mut v = self
-            .local_gateway_route_table_vpc_associations
-            .unwrap_or_default();
+    pub fn local_gateway_route_table_vpc_associations(mut self, input: crate::types::LocalGatewayRouteTableVpcAssociation) -> Self {
+        let mut v = self.local_gateway_route_table_vpc_associations.unwrap_or_default();
         v.push(input);
         self.local_gateway_route_table_vpc_associations = ::std::option::Option::Some(v);
         self
@@ -67,9 +58,7 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder {
     /// <p>Information about the associations.</p>
     pub fn set_local_gateway_route_table_vpc_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>>,
     ) -> Self {
         self.local_gateway_route_table_vpc_associations = input;
         self
@@ -77,8 +66,7 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder {
     /// <p>Information about the associations.</p>
     pub fn get_local_gateway_route_table_vpc_associations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>> {
         &self.local_gateway_route_table_vpc_associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -105,12 +93,10 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayRouteTableVpcAssociationsOutput`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput {
         crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput {
-            local_gateway_route_table_vpc_associations: self.local_gateway_route_table_vpc_associations
-            ,
-            next_token: self.next_token
-            ,
+            local_gateway_route_table_vpc_associations: self.local_gateway_route_table_vpc_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

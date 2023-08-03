@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSipMediaApplicationOutput`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput) with field(s):
     ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput::sip_media_application): <p>The details of the SIP media application.</p>
     /// - On failure, responds with [`SdkError<GetSipMediaApplicationError>`](crate::operation::get_sip_media_application::GetSipMediaApplicationError)
-    pub fn get_sip_media_application(
-        &self,
-    ) -> crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder
-    {
+    pub fn get_sip_media_application(&self) -> crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder {
         crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder::new(self.handle.clone())
     }
 }

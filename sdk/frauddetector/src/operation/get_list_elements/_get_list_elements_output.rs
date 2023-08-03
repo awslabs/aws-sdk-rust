@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetListElementsOutput {
 }
 impl GetListElementsOutput {
     /// Creates a new builder-style object to manufacture [`GetListElementsOutput`](crate::operation::get_list_elements::GetListElementsOutput).
-    pub fn builder() -> crate::operation::get_list_elements::builders::GetListElementsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_list_elements::builders::GetListElementsOutputBuilder {
         crate::operation::get_list_elements::builders::GetListElementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetListElementsOutput`](crate::operation::get_list_elements::GetListElementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetListElementsOutputBuilder {
     pub(crate) elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl GetListElementsOutputBuilder {
         self
     }
     /// <p> The list elements. </p>
-    pub fn set_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.elements = input;
         self
     }

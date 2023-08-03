@@ -156,17 +156,14 @@ impl ::aws_http::request_id::RequestId for StartExportTaskOutput {
 }
 impl StartExportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartExportTaskOutput`](crate::operation::start_export_task::StartExportTaskOutput).
-    pub fn builder() -> crate::operation::start_export_task::builders::StartExportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_export_task::builders::StartExportTaskOutputBuilder {
         crate::operation::start_export_task::builders::StartExportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartExportTaskOutput`](crate::operation::start_export_task::StartExportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportTaskOutputBuilder {
     pub(crate) export_task_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
@@ -188,18 +185,12 @@ pub struct StartExportTaskOutputBuilder {
 }
 impl StartExportTaskOutputBuilder {
     /// <p>A unique identifier for the snapshot or cluster export task. This ID isn't an identifier for the Amazon S3 bucket where the data is exported.</p>
-    pub fn export_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the snapshot or cluster export task. This ID isn't an identifier for the Amazon S3 bucket where the data is exported.</p>
-    pub fn set_export_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_task_identifier = input;
         self
     }
@@ -245,10 +236,7 @@ impl StartExportTaskOutputBuilder {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn set_export_only(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_only = input;
         self
     }
@@ -259,9 +247,7 @@ impl StartExportTaskOutputBuilder {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn get_export_only(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.export_only
     }
     /// <p>The time that the snapshot was created.</p>
@@ -270,10 +256,7 @@ impl StartExportTaskOutputBuilder {
         self
     }
     /// <p>The time that the snapshot was created.</p>
-    pub fn set_snapshot_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.snapshot_time = input;
         self
     }
@@ -287,10 +270,7 @@ impl StartExportTaskOutputBuilder {
         self
     }
     /// <p>The time that the snapshot or cluster export task started.</p>
-    pub fn set_task_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_start_time = input;
         self
     }
@@ -304,10 +284,7 @@ impl StartExportTaskOutputBuilder {
         self
     }
     /// <p>The time that the snapshot or cluster export task ended.</p>
-    pub fn set_task_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_end_time = input;
         self
     }
@@ -438,18 +415,12 @@ impl StartExportTaskOutputBuilder {
         &self.total_extracted_data_in_gb
     }
     /// <p>The reason the export failed, if it failed.</p>
-    pub fn failure_cause(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_cause = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the export failed, if it failed.</p>
-    pub fn set_failure_cause(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_cause = input;
         self
     }
@@ -458,18 +429,12 @@ impl StartExportTaskOutputBuilder {
         &self.failure_cause
     }
     /// <p>A warning about the snapshot or cluster export task.</p>
-    pub fn warning_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn warning_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warning_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A warning about the snapshot or cluster export task.</p>
-    pub fn set_warning_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_warning_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warning_message = input;
         self
     }
@@ -483,10 +448,7 @@ impl StartExportTaskOutputBuilder {
         self
     }
     /// <p>The type of source for the export.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
         self.source_type = input;
         self
     }

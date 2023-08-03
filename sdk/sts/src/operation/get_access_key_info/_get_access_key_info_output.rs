@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccessKeyInfoOutput {
 }
 impl GetAccessKeyInfoOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoOutput`](crate::operation::get_access_key_info::GetAccessKeyInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::get_access_key_info::builders::GetAccessKeyInfoOutputBuilder {
+    pub fn builder() -> crate::operation::get_access_key_info::builders::GetAccessKeyInfoOutputBuilder {
         crate::operation::get_access_key_info::builders::GetAccessKeyInfoOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessKeyInfoOutput`](crate::operation::get_access_key_info::GetAccessKeyInfoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessKeyInfoOutputBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

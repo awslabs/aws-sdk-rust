@@ -22,18 +22,14 @@ impl UpdateGatewayInformationInput {
 }
 impl UpdateGatewayInformationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_display_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl UpdateGatewayInformationInputBuilder {
         &self.gateway_arn
     }
     /// <p>The updated display name of the gateway.</p>
-    pub fn gateway_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated display name of the gateway.</p>
-    pub fn set_gateway_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_display_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl UpdateGatewayInformationInputBuilder {
         crate::operation::update_gateway_information::UpdateGatewayInformationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_gateway_information::UpdateGatewayInformationInput {
-                gateway_arn: self.gateway_arn,
-                gateway_display_name: self.gateway_display_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_gateway_information::UpdateGatewayInformationInput {
+            gateway_arn: self.gateway_arn,
+            gateway_display_name: self.gateway_display_name,
+        })
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateGameSessionOutput {
 }
 impl CreateGameSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameSessionOutput`](crate::operation::create_game_session::CreateGameSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_game_session::builders::CreateGameSessionOutputBuilder {
+    pub fn builder() -> crate::operation::create_game_session::builders::CreateGameSessionOutputBuilder {
         crate::operation::create_game_session::builders::CreateGameSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGameSessionOutput`](crate::operation::create_game_session::CreateGameSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGameSessionOutputBuilder {
     pub(crate) game_session: ::std::option::Option<crate::types::GameSession>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateGameSessionOutputBuilder {
         self
     }
     /// <p>Object that describes the newly created game session record.</p>
-    pub fn set_game_session(
-        mut self,
-        input: ::std::option::Option<crate::types::GameSession>,
-    ) -> Self {
+    pub fn set_game_session(mut self, input: ::std::option::Option<crate::types::GameSession>) -> Self {
         self.game_session = input;
         self
     }

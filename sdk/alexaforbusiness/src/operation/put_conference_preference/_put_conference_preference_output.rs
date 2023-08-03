@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutConferencePreferenceOutput {
 }
 impl PutConferencePreferenceOutput {
     /// Creates a new builder-style object to manufacture [`PutConferencePreferenceOutput`](crate::operation::put_conference_preference::PutConferencePreferenceOutput).
-    pub fn builder(
-    ) -> crate::operation::put_conference_preference::builders::PutConferencePreferenceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_conference_preference::builders::PutConferencePreferenceOutputBuilder {
         crate::operation::put_conference_preference::builders::PutConferencePreferenceOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutConferencePreferenceOutput`](crate::operation::put_conference_preference::PutConferencePreferenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConferencePreferenceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutConferencePreferenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutConferencePreferenceOutput`](crate::operation::put_conference_preference::PutConferencePreferenceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_conference_preference::PutConferencePreferenceOutput {
+    pub fn build(self) -> crate::operation::put_conference_preference::PutConferencePreferenceOutput {
         crate::operation::put_conference_preference::PutConferencePreferenceOutput {
             _request_id: self._request_id,
         }

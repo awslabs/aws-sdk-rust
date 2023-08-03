@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateResolverQueryLogConfigOutput`](crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput) with field(s):
     ///   - [`resolver_query_log_config_association(Option<ResolverQueryLogConfigAssociation>)`](crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput::resolver_query_log_config_association): <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
     /// - On failure, responds with [`SdkError<AssociateResolverQueryLogConfigError>`](crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError)
-    pub fn associate_resolver_query_log_config(&self) -> crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigFluentBuilder{
+    pub fn associate_resolver_query_log_config(
+        &self,
+    ) -> crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigFluentBuilder {
         crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

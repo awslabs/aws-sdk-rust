@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateColumnStatisticsForTableOutput 
 }
 impl UpdateColumnStatisticsForTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput).
-    pub fn builder() -> crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableOutputBuilder{
+    pub fn builder() -> crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableOutputBuilder {
         crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateColumnStatisticsForTableOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl UpdateColumnStatisticsForTableOutputBuilder {
         self
     }
     /// <p>List of ColumnStatisticsErrors.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>List of ColumnStatisticsErrors.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +64,7 @@ impl UpdateColumnStatisticsForTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput
-    {
+    pub fn build(self) -> crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput {
         crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput {
             errors: self.errors,
             _request_id: self._request_id,

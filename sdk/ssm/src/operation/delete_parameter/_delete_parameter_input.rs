@@ -22,9 +22,7 @@ impl DeleteParameterInput {
 
 /// A builder for [`DeleteParameterInput`](crate::operation::delete_parameter::DeleteParameterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteParameterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteParameterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteParameterInput`](crate::operation::delete_parameter::DeleteParameterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_parameter::DeleteParameterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_parameter::DeleteParameterInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_parameter::DeleteParameterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_parameter::DeleteParameterInput { name: self.name })
     }
 }

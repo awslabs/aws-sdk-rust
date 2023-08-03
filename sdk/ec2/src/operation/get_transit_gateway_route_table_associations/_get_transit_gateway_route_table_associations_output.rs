@@ -5,8 +5,7 @@
 pub struct GetTransitGatewayRouteTableAssociationsOutput {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetTransitGatewayRouteTableAssociationsOutput {
 }
 impl GetTransitGatewayRouteTableAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTableAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTableAssociation]> {
         self.associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayRouteTableAssociatio
 }
 impl GetTransitGatewayRouteTableAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAssociationsOutput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsOutputBuilder
+    {
         crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayRouteTableAssociationsOutput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTableAssociationsOutputBuilder {
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,30 +48,19 @@ impl GetTransitGatewayRouteTableAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).
     ///
     /// <p>Information about the associations.</p>
-    pub fn associations(
-        mut self,
-        input: crate::types::TransitGatewayRouteTableAssociation,
-    ) -> Self {
+    pub fn associations(mut self, input: crate::types::TransitGatewayRouteTableAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
         v.push(input);
         self.associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the associations.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>,
-        >,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>Information about the associations.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>
-    {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>> {
         &self.associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -103,12 +87,10 @@ impl GetTransitGatewayRouteTableAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAssociationsOutput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput).
-    pub fn build(self) -> crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput{
+    pub fn build(self) -> crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput {
         crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput {
-            associations: self.associations
-            ,
-            next_token: self.next_token
-            ,
+            associations: self.associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

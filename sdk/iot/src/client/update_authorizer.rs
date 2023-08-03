@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`authorizer_name(Option<String>)`](crate::operation::update_authorizer::UpdateAuthorizerOutput::authorizer_name): <p>The authorizer name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::operation::update_authorizer::UpdateAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>
     /// - On failure, responds with [`SdkError<UpdateAuthorizerError>`](crate::operation::update_authorizer::UpdateAuthorizerError)
-    pub fn update_authorizer(
-        &self,
-    ) -> crate::operation::update_authorizer::builders::UpdateAuthorizerFluentBuilder {
-        crate::operation::update_authorizer::builders::UpdateAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_authorizer(&self) -> crate::operation::update_authorizer::builders::UpdateAuthorizerFluentBuilder {
+        crate::operation::update_authorizer::builders::UpdateAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InstanceNameAlreadyRegisteredException {
     }
 }
 impl ::std::error::Error for InstanceNameAlreadyRegisteredException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InstanceNameAlreadyRegisteredException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InstanceNameAlreadyRegisteredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InstanceNameAlreadyRegisteredException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InstanceNameAlreadyRegisteredException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InstanceNameAlreadyRegisteredException {
     /// Creates a new builder-style object to manufacture [`InstanceNameAlreadyRegisteredException`](crate::types::error::InstanceNameAlreadyRegisteredException).
-    pub fn builder() -> crate::types::error::builders::InstanceNameAlreadyRegisteredExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InstanceNameAlreadyRegisteredExceptionBuilder {
         crate::types::error::builders::InstanceNameAlreadyRegisteredExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InstanceNameAlreadyRegisteredException`](crate::types::error::InstanceNameAlreadyRegisteredException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceNameAlreadyRegisteredExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InstanceNameAlreadyRegisteredExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

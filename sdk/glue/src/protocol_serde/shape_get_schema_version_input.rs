@@ -15,10 +15,7 @@ pub fn ser_get_schema_version_input(
     if let Some(var_4) = &input.schema_version_number {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SchemaVersionNumber").start_object();
-        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

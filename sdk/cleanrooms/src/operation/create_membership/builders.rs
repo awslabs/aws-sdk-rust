@@ -10,10 +10,7 @@ impl CreateMembershipInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_membership::CreateMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_membership::CreateMembershipError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_membership::CreateMembershipError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_membership();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateMembershipFluentBuilder {
         }
     }
     /// Access the CreateMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_membership::builders::CreateMembershipInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_membership::builders::CreateMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateMembershipFluentBuilder {
             crate::operation::create_membership::CreateMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_membership::CreateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_membership::CreateMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_membership::CreateMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_membership::CreateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_membership::CreateMembershipError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_membership::CreateMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_membership::CreateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_membership::CreateMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateMembershipFluentBuilder {
             crate::operation::create_membership::CreateMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_membership::CreateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_membership::CreateMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collaboration_identifier(input.into());
         self
     }
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
@@ -148,17 +126,12 @@ impl CreateMembershipFluentBuilder {
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn set_query_log_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
-    ) -> Self {
+    pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn get_query_log_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
+    pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         self.inner.get_query_log_status()
     }
     /// Adds a key-value pair to `tags`.
@@ -166,30 +139,17 @@ impl CreateMembershipFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

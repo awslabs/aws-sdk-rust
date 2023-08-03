@@ -9,7 +9,10 @@ pub fn ser_update_table_replica_auto_scaling_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_global_secondary_index_auto_scaling_update::ser_global_secondary_index_auto_scaling_update(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_global_secondary_index_auto_scaling_update::ser_global_secondary_index_auto_scaling_update(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }
@@ -20,9 +23,7 @@ pub fn ser_update_table_replica_auto_scaling_input(
     }
     if let Some(var_6) = &input.provisioned_write_capacity_auto_scaling_update {
         #[allow(unused_mut)]
-        let mut object_7 = object
-            .key("ProvisionedWriteCapacityAutoScalingUpdate")
-            .start_object();
+        let mut object_7 = object.key("ProvisionedWriteCapacityAutoScalingUpdate").start_object();
         crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_7, var_6)?;
         object_7.finish();
     }

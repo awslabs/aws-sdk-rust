@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ec2InstanceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for Ec2InstanceState {
             "STOPPED" => Ec2InstanceState::Stopped,
             "STOPPING" => Ec2InstanceState::Stopping,
             "TERMINATED" => Ec2InstanceState::Terminated,
-            other => {
-                Ec2InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Ec2InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl Ec2InstanceState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NOT_FOUND",
-            "PENDING",
-            "RUNNING",
-            "SHUTTING-DOWN",
-            "STOPPED",
-            "STOPPING",
-            "TERMINATED",
-        ]
+        &["NOT_FOUND", "PENDING", "RUNNING", "SHUTTING-DOWN", "STOPPED", "STOPPING", "TERMINATED"]
     }
 }
 impl ::std::convert::AsRef<str> for Ec2InstanceState {

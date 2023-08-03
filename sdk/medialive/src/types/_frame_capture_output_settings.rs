@@ -23,26 +23,18 @@ impl FrameCaptureOutputSettings {
 
 /// A builder for [`FrameCaptureOutputSettings`](crate::types::FrameCaptureOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameCaptureOutputSettingsBuilder {
     pub(crate) name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl FrameCaptureOutputSettingsBuilder {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
-    pub fn name_modifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_modifier = ::std::option::Option::Some(input.into());
         self
     }
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
-    pub fn set_name_modifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_modifier = input;
         self
     }

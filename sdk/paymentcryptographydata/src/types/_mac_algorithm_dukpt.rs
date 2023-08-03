@@ -24,9 +24,7 @@ impl MacAlgorithmDukpt {
         self.dukpt_key_variant.as_ref()
     }
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
-    pub fn dukpt_derivation_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DukptDerivationType> {
+    pub fn dukpt_derivation_type(&self) -> ::std::option::Option<&crate::types::DukptDerivationType> {
         self.dukpt_derivation_type.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl MacAlgorithmDukpt {
 
 /// A builder for [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MacAlgorithmDukptBuilder {
     pub(crate) key_serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) dukpt_key_variant: ::std::option::Option<crate::types::DukptKeyVariant>,
@@ -49,18 +45,12 @@ pub struct MacAlgorithmDukptBuilder {
 }
 impl MacAlgorithmDukptBuilder {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub fn key_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub fn set_key_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_serial_number = input;
         self
     }
@@ -74,10 +64,7 @@ impl MacAlgorithmDukptBuilder {
         self
     }
     /// <p>The type of use of DUKPT, which can be MAC generation, MAC verification, or both.</p>
-    pub fn set_dukpt_key_variant(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptKeyVariant>,
-    ) -> Self {
+    pub fn set_dukpt_key_variant(mut self, input: ::std::option::Option<crate::types::DukptKeyVariant>) -> Self {
         self.dukpt_key_variant = input;
         self
     }
@@ -91,17 +78,12 @@ impl MacAlgorithmDukptBuilder {
         self
     }
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
-    pub fn set_dukpt_derivation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptDerivationType>,
-    ) -> Self {
+    pub fn set_dukpt_derivation_type(mut self, input: ::std::option::Option<crate::types::DukptDerivationType>) -> Self {
         self.dukpt_derivation_type = input;
         self
     }
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
-    pub fn get_dukpt_derivation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DukptDerivationType> {
+    pub fn get_dukpt_derivation_type(&self) -> &::std::option::Option<crate::types::DukptDerivationType> {
         &self.dukpt_derivation_type
     }
     /// Consumes the builder and constructs a [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).

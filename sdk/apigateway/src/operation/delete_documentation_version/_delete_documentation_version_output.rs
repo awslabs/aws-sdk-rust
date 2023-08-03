@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDocumentationVersionOutput {
 }
 impl DeleteDocumentationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentationVersionOutput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput).
-    pub fn builder() -> crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionOutputBuilder {
         crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDocumentationVersionOutput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDocumentationVersionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteDocumentationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDocumentationVersionOutput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput {
+    pub fn build(self) -> crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput {
         crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput {
             _request_id: self._request_id,
         }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteColumnStatisticsForPartitionOut
 }
 impl DeleteColumnStatisticsForPartitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteColumnStatisticsForPartitionOutput`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput).
-    pub fn builder() -> crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionOutputBuilder {
         crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteColumnStatisticsForPartitionOutput`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteColumnStatisticsForPartitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteColumnStatisticsForPartitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteColumnStatisticsForPartitionOutput`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput).
-    pub fn build(self) -> crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput{
+    pub fn build(self) -> crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput {
         crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput {
             _request_id: self._request_id,
         }

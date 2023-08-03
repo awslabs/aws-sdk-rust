@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`workspace_creation_properties(WorkspaceCreationProperties)`](crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesFluentBuilder::workspace_creation_properties) / [`set_workspace_creation_properties(Option<WorkspaceCreationProperties>)`](crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesFluentBuilder::set_workspace_creation_properties): <p>The default properties for creating WorkSpaces.</p>
     /// - On success, responds with [`ModifyWorkspaceCreationPropertiesOutput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifyWorkspaceCreationPropertiesError>`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesError)
-    pub fn modify_workspace_creation_properties(&self) -> crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesFluentBuilder{
+    pub fn modify_workspace_creation_properties(
+        &self,
+    ) -> crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesFluentBuilder {
         crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

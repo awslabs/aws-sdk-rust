@@ -56,8 +56,7 @@ pub struct Bucket {
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
     #[doc(hidden)]
-    pub resources_receiving_access:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
+    pub resources_receiving_access: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     /// <p>An object that describes the state of the bucket.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::BucketState>,
@@ -130,9 +129,7 @@ impl Bucket {
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
-    pub fn resources_receiving_access(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceReceivingAccess]> {
+    pub fn resources_receiving_access(&self) -> ::std::option::Option<&[crate::types::ResourceReceivingAccess]> {
         self.resources_receiving_access.as_deref()
     }
     /// <p>An object that describes the state of the bucket.</p>
@@ -153,9 +150,7 @@ impl Bucket {
 
 /// A builder for [`Bucket`](crate::types::Bucket).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) access_rules: ::std::option::Option<crate::types::AccessRules>,
@@ -169,27 +164,19 @@ pub struct BucketBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) object_versioning: ::std::option::Option<::std::string::String>,
     pub(crate) able_to_update_bundle: ::std::option::Option<bool>,
-    pub(crate) readonly_access_accounts:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resources_receiving_access:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
+    pub(crate) readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources_receiving_access: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     pub(crate) state: ::std::option::Option<crate::types::BucketState>,
     pub(crate) access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl BucketBuilder {
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -203,10 +190,7 @@ impl BucketBuilder {
         self
     }
     /// <p>An object that describes the access rules of the bucket.</p>
-    pub fn set_access_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessRules>,
-    ) -> Self {
+    pub fn set_access_rules(mut self, input: ::std::option::Option<crate::types::AccessRules>) -> Self {
         self.access_rules = input;
         self
     }
@@ -254,10 +238,7 @@ impl BucketBuilder {
         self
     }
     /// <p>The timestamp when the distribution was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -285,10 +266,7 @@ impl BucketBuilder {
         self
     }
     /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -336,10 +314,7 @@ impl BucketBuilder {
         self
     }
     /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -354,10 +329,7 @@ impl BucketBuilder {
     /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
     /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
     /// </ul>
-    pub fn object_versioning(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_versioning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_versioning = ::std::option::Option::Some(input.into());
         self
     }
@@ -368,10 +340,7 @@ impl BucketBuilder {
     /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
     /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
     /// </ul>
-    pub fn set_object_versioning(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_versioning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_versioning = input;
         self
     }
@@ -410,27 +379,19 @@ impl BucketBuilder {
     /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
     ///
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    pub fn readonly_access_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readonly_access_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.readonly_access_accounts.unwrap_or_default();
         v.push(input.into());
         self.readonly_access_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    pub fn set_readonly_access_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_readonly_access_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.readonly_access_accounts = input;
         self
     }
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    pub fn get_readonly_access_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_readonly_access_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.readonly_access_accounts
     }
     /// Appends an item to `resources_receiving_access`.
@@ -439,10 +400,7 @@ impl BucketBuilder {
     ///
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
-    pub fn resources_receiving_access(
-        mut self,
-        input: crate::types::ResourceReceivingAccess,
-    ) -> Self {
+    pub fn resources_receiving_access(mut self, input: crate::types::ResourceReceivingAccess) -> Self {
         let mut v = self.resources_receiving_access.unwrap_or_default();
         v.push(input);
         self.resources_receiving_access = ::std::option::Option::Some(v);
@@ -450,18 +408,13 @@ impl BucketBuilder {
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
-    pub fn set_resources_receiving_access(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
-    ) -> Self {
+    pub fn set_resources_receiving_access(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>) -> Self {
         self.resources_receiving_access = input;
         self
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
-    pub fn get_resources_receiving_access(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>> {
+    pub fn get_resources_receiving_access(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>> {
         &self.resources_receiving_access
     }
     /// <p>An object that describes the state of the bucket.</p>
@@ -484,17 +437,12 @@ impl BucketBuilder {
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn set_access_log_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketAccessLogConfig>,
-    ) -> Self {
+    pub fn set_access_log_config(mut self, input: ::std::option::Option<crate::types::BucketAccessLogConfig>) -> Self {
         self.access_log_config = input;
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn get_access_log_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
+    pub fn get_access_log_config(&self) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
         &self.access_log_config
     }
     /// Consumes the builder and constructs a [`Bucket`](crate::types::Bucket).

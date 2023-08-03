@@ -30,9 +30,7 @@ impl AppCookieStickinessPolicy {
 
 /// A builder for [`AppCookieStickinessPolicy`](crate::types::AppCookieStickinessPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppCookieStickinessPolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) cookie_name: ::std::option::Option<::std::string::String>,

@@ -36,17 +36,14 @@ impl ListBuiltInIntentsInput {
 }
 impl ListBuiltInIntentsInput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInIntentsInput`](crate::operation::list_built_in_intents::ListBuiltInIntentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder {
+    pub fn builder() -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder {
         crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuiltInIntentsInput`](crate::operation::list_built_in_intents::ListBuiltInIntentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuiltInIntentsInputBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::BuiltInIntentSortBy>,
@@ -74,10 +71,7 @@ impl ListBuiltInIntentsInputBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BuiltInIntentSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BuiltInIntentSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -116,17 +110,13 @@ impl ListBuiltInIntentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBuiltInIntentsInput`](crate::operation::list_built_in_intents::ListBuiltInIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_built_in_intents::ListBuiltInIntentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_built_in_intents::ListBuiltInIntentsInput {
-                locale_id: self.locale_id,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_built_in_intents::ListBuiltInIntentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_built_in_intents::ListBuiltInIntentsInput {
+            locale_id: self.locale_id,
+            sort_by: self.sort_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

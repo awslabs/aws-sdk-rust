@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`content_type(impl ::std::convert::Into<String>)`](crate::operation::post_agent_profile::builders::PostAgentProfileFluentBuilder::content_type) / [`set_content_type(Option<String>)`](crate::operation::post_agent_profile::builders::PostAgentProfileFluentBuilder::set_content_type): <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>  <ul>   <li> <p> <code>application/json</code> — standard JSON format </p> </li>   <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>  </ul>
     /// - On success, responds with [`PostAgentProfileOutput`](crate::operation::post_agent_profile::PostAgentProfileOutput)
     /// - On failure, responds with [`SdkError<PostAgentProfileError>`](crate::operation::post_agent_profile::PostAgentProfileError)
-    pub fn post_agent_profile(
-        &self,
-    ) -> crate::operation::post_agent_profile::builders::PostAgentProfileFluentBuilder {
-        crate::operation::post_agent_profile::builders::PostAgentProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn post_agent_profile(&self) -> crate::operation::post_agent_profile::builders::PostAgentProfileFluentBuilder {
+        crate::operation::post_agent_profile::builders::PostAgentProfileFluentBuilder::new(self.handle.clone())
     }
 }

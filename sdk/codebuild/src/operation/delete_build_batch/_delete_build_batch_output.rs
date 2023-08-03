@@ -35,22 +35,18 @@ impl ::aws_http::request_id::RequestId for DeleteBuildBatchOutput {
 }
 impl DeleteBuildBatchOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBuildBatchOutput`](crate::operation::delete_build_batch::DeleteBuildBatchOutput).
-    pub fn builder() -> crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder {
         crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBuildBatchOutput`](crate::operation::delete_build_batch::DeleteBuildBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBuildBatchOutputBuilder {
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) builds_deleted: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) builds_not_deleted:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>,
+    pub(crate) builds_not_deleted: ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>,
     _request_id: Option<String>,
 }
 impl DeleteBuildBatchOutputBuilder {
@@ -73,27 +69,19 @@ impl DeleteBuildBatchOutputBuilder {
     /// To override the contents of this collection use [`set_builds_deleted`](Self::set_builds_deleted).
     ///
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
-    pub fn builds_deleted(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn builds_deleted(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.builds_deleted.unwrap_or_default();
         v.push(input.into());
         self.builds_deleted = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
-    pub fn set_builds_deleted(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_builds_deleted(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.builds_deleted = input;
         self
     }
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
-    pub fn get_builds_deleted(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_builds_deleted(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.builds_deleted
     }
     /// Appends an item to `builds_not_deleted`.
@@ -108,17 +96,12 @@ impl DeleteBuildBatchOutputBuilder {
         self
     }
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
-    pub fn set_builds_not_deleted(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>,
-    ) -> Self {
+    pub fn set_builds_not_deleted(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>) -> Self {
         self.builds_not_deleted = input;
         self
     }
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
-    pub fn get_builds_not_deleted(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>> {
+    pub fn get_builds_not_deleted(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>> {
         &self.builds_not_deleted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

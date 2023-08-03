@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`events_detection_job_properties_list(Option<Vec<EventsDetectionJobProperties>>)`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput::events_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEventsDetectionJobsError>`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError)
-    pub fn list_events_detection_jobs(
-        &self,
-    ) -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder
-    {
+    pub fn list_events_detection_jobs(&self) -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder {
         crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

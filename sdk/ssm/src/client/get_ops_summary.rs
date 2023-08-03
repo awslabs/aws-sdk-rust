@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<OpsEntity>>)`](crate::operation::get_ops_summary::GetOpsSummaryOutput::entities): <p>The list of aggregated details and filtered OpsData.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ops_summary::GetOpsSummaryOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetOpsSummaryError>`](crate::operation::get_ops_summary::GetOpsSummaryError)
-    pub fn get_ops_summary(
-        &self,
-    ) -> crate::operation::get_ops_summary::builders::GetOpsSummaryFluentBuilder {
-        crate::operation::get_ops_summary::builders::GetOpsSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ops_summary(&self) -> crate::operation::get_ops_summary::builders::GetOpsSummaryFluentBuilder {
+        crate::operation::get_ops_summary::builders::GetOpsSummaryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl BatchDeleteAutomationRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder,
+    inner: crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder,
 }
 impl BatchDeleteAutomationRulesFluentBuilder {
     /// Creates a new `BatchDeleteAutomationRules`.
@@ -37,7 +37,7 @@ impl BatchDeleteAutomationRulesFluentBuilder {
         }
     }
     /// Access the BatchDeleteAutomationRules as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDeleteAutomationRulesFluentBuilder {
             crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDeleteAutomationRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDeleteAutomationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDeleteAutomationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDeleteAutomationRulesFluentBuilder {
             crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl BatchDeleteAutomationRulesFluentBuilder {
     /// To override the contents of this collection use [`set_automation_rules_arns`](Self::set_automation_rules_arns).
     ///
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn automation_rules_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_rules_arns(input.into());
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn set_automation_rules_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_automation_rules_arns(input);
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn get_automation_rules_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_automation_rules_arns()
     }
 }

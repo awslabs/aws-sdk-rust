@@ -49,9 +49,7 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProjectOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ impl CreateProjectOutputBuilder {
         &self.arn
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -109,18 +101,12 @@ impl CreateProjectOutputBuilder {
         &self.client_request_token
     }
     /// <p>Reserved for future use.</p>
-    pub fn project_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_project_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_template_id = input;
         self
     }

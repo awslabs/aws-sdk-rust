@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`VerifyDomainDkimOutput`](crate::operation::verify_domain_dkim::VerifyDomainDkimOutput) with field(s):
     ///   - [`dkim_tokens(Option<Vec<String>>)`](crate::operation::verify_domain_dkim::VerifyDomainDkimOutput::dkim_tokens): <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>  <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>  <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
     /// - On failure, responds with [`SdkError<VerifyDomainDkimError>`](crate::operation::verify_domain_dkim::VerifyDomainDkimError)
-    pub fn verify_domain_dkim(
-        &self,
-    ) -> crate::operation::verify_domain_dkim::builders::VerifyDomainDkimFluentBuilder {
-        crate::operation::verify_domain_dkim::builders::VerifyDomainDkimFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_domain_dkim(&self) -> crate::operation::verify_domain_dkim::builders::VerifyDomainDkimFluentBuilder {
+        crate::operation::verify_domain_dkim::builders::VerifyDomainDkimFluentBuilder::new(self.handle.clone())
     }
 }

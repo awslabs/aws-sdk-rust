@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBgpPeerOutput`](crate::operation::create_bgp_peer::CreateBgpPeerOutput) with field(s):
     ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::operation::create_bgp_peer::CreateBgpPeerOutput::virtual_interface): <p>The virtual interface.</p>
     /// - On failure, responds with [`SdkError<CreateBGPPeerError>`](crate::operation::create_bgp_peer::CreateBGPPeerError)
-    pub fn create_bgp_peer(
-        &self,
-    ) -> crate::operation::create_bgp_peer::builders::CreateBGPPeerFluentBuilder {
-        crate::operation::create_bgp_peer::builders::CreateBGPPeerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bgp_peer(&self) -> crate::operation::create_bgp_peer::builders::CreateBGPPeerFluentBuilder {
+        crate::operation::create_bgp_peer::builders::CreateBGPPeerFluentBuilder::new(self.handle.clone())
     }
 }

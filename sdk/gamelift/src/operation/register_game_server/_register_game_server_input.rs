@@ -43,17 +43,14 @@ impl RegisterGameServerInput {
 }
 impl RegisterGameServerInput {
     /// Creates a new builder-style object to manufacture [`RegisterGameServerInput`](crate::operation::register_game_server::RegisterGameServerInput).
-    pub fn builder(
-    ) -> crate::operation::register_game_server::builders::RegisterGameServerInputBuilder {
+    pub fn builder() -> crate::operation::register_game_server::builders::RegisterGameServerInputBuilder {
         crate::operation::register_game_server::builders::RegisterGameServerInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterGameServerInput`](crate::operation::register_game_server::RegisterGameServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterGameServerInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct RegisterGameServerInputBuilder {
 }
 impl RegisterGameServerInputBuilder {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -83,18 +74,12 @@ impl RegisterGameServerInputBuilder {
         &self.game_server_group_name
     }
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_id = input;
         self
     }
@@ -117,18 +102,12 @@ impl RegisterGameServerInputBuilder {
         &self.instance_id
     }
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
-    pub fn connection_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_info = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
-    pub fn set_connection_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_info = input;
         self
     }
@@ -137,18 +116,12 @@ impl RegisterGameServerInputBuilder {
         &self.connection_info
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn game_server_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn set_game_server_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_data = input;
         self
     }
@@ -159,18 +132,13 @@ impl RegisterGameServerInputBuilder {
     /// Consumes the builder and constructs a [`RegisterGameServerInput`](crate::operation::register_game_server::RegisterGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_game_server::RegisterGameServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_game_server::RegisterGameServerInput {
-                game_server_group_name: self.game_server_group_name,
-                game_server_id: self.game_server_id,
-                instance_id: self.instance_id,
-                connection_info: self.connection_info,
-                game_server_data: self.game_server_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_game_server::RegisterGameServerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_game_server::RegisterGameServerInput {
+            game_server_group_name: self.game_server_group_name,
+            game_server_id: self.game_server_id,
+            instance_id: self.instance_id,
+            connection_info: self.connection_info,
+            game_server_data: self.game_server_data,
+        })
     }
 }

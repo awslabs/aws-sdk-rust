@@ -43,28 +43,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget::CreateBudgetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -74,56 +62,26 @@ where
 impl From<crate::operation::create_budget::CreateBudgetError> for Error {
     fn from(err: crate::operation::create_budget::CreateBudgetError) -> Self {
         match err {
-            crate::operation::create_budget::CreateBudgetError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_budget::CreateBudgetError::CreationLimitExceededException(
-                inner,
-            ) => Error::CreationLimitExceededException(inner),
-            crate::operation::create_budget::CreateBudgetError::DuplicateRecordException(inner) => {
-                Error::DuplicateRecordException(inner)
-            }
-            crate::operation::create_budget::CreateBudgetError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::operation::create_budget::CreateBudgetError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::create_budget::CreateBudgetError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_budget::CreateBudgetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_budget::CreateBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_budget::CreateBudgetError::CreationLimitExceededException(inner) => Error::CreationLimitExceededException(inner),
+            crate::operation::create_budget::CreateBudgetError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
+            crate::operation::create_budget::CreateBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_budget::CreateBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_budget::CreateBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_budget::CreateBudgetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget_action::CreateBudgetActionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_budget_action::CreateBudgetActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget_action::CreateBudgetActionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_budget_action::CreateBudgetActionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -134,42 +92,32 @@ impl From<crate::operation::create_budget_action::CreateBudgetActionError> for E
     fn from(err: crate::operation::create_budget_action::CreateBudgetActionError) -> Self {
         match err {
             crate::operation::create_budget_action::CreateBudgetActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_budget_action::CreateBudgetActionError::CreationLimitExceededException(inner) => Error::CreationLimitExceededException(inner),
-            crate::operation::create_budget_action::CreateBudgetActionError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
+            crate::operation::create_budget_action::CreateBudgetActionError::CreationLimitExceededException(inner) => {
+                Error::CreationLimitExceededException(inner)
+            }
+            crate::operation::create_budget_action::CreateBudgetActionError::DuplicateRecordException(inner) => {
+                Error::DuplicateRecordException(inner)
+            }
             crate::operation::create_budget_action::CreateBudgetActionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::create_budget_action::CreateBudgetActionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_budget_action::CreateBudgetActionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::create_budget_action::CreateBudgetActionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_budget_action::CreateBudgetActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_budget_action::CreateBudgetActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_notification::CreateNotificationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_notification::CreateNotificationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_notification::CreateNotificationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_notification::CreateNotificationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -180,42 +128,30 @@ impl From<crate::operation::create_notification::CreateNotificationError> for Er
     fn from(err: crate::operation::create_notification::CreateNotificationError) -> Self {
         match err {
             crate::operation::create_notification::CreateNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_notification::CreateNotificationError::CreationLimitExceededException(inner) => Error::CreationLimitExceededException(inner),
+            crate::operation::create_notification::CreateNotificationError::CreationLimitExceededException(inner) => {
+                Error::CreationLimitExceededException(inner)
+            }
             crate::operation::create_notification::CreateNotificationError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
             crate::operation::create_notification::CreateNotificationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::create_notification::CreateNotificationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_notification::CreateNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::create_notification::CreateNotificationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_notification::CreateNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_notification::CreateNotificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscriber::CreateSubscriberError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_subscriber::CreateSubscriberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subscriber::CreateSubscriberError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_subscriber::CreateSubscriberError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -226,7 +162,9 @@ impl From<crate::operation::create_subscriber::CreateSubscriberError> for Error 
     fn from(err: crate::operation::create_subscriber::CreateSubscriberError) -> Self {
         match err {
             crate::operation::create_subscriber::CreateSubscriberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_subscriber::CreateSubscriberError::CreationLimitExceededException(inner) => Error::CreationLimitExceededException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::CreationLimitExceededException(inner) => {
+                Error::CreationLimitExceededException(inner)
+            }
             crate::operation::create_subscriber::CreateSubscriberError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
             crate::operation::create_subscriber::CreateSubscriberError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::create_subscriber::CreateSubscriberError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -236,28 +174,16 @@ impl From<crate::operation::create_subscriber::CreateSubscriberError> for Error 
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_budget::DeleteBudgetError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_budget::DeleteBudgetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget::DeleteBudgetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_budget::DeleteBudgetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -267,53 +193,25 @@ where
 impl From<crate::operation::delete_budget::DeleteBudgetError> for Error {
     fn from(err: crate::operation::delete_budget::DeleteBudgetError) -> Self {
         match err {
-            crate::operation::delete_budget::DeleteBudgetError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_budget::DeleteBudgetError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::operation::delete_budget::DeleteBudgetError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::delete_budget::DeleteBudgetError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::delete_budget::DeleteBudgetError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_budget::DeleteBudgetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_budget::DeleteBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_budget::DeleteBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_budget::DeleteBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_budget::DeleteBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_budget::DeleteBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_budget::DeleteBudgetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -325,7 +223,9 @@ impl From<crate::operation::delete_budget_action::DeleteBudgetActionError> for E
         match err {
             crate::operation::delete_budget_action::DeleteBudgetActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_budget_action::DeleteBudgetActionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::delete_budget_action::DeleteBudgetActionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_budget_action::DeleteBudgetActionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::delete_budget_action::DeleteBudgetActionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_budget_action::DeleteBudgetActionError::ResourceLockedException(inner) => Error::ResourceLockedException(inner),
             crate::operation::delete_budget_action::DeleteBudgetActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -333,32 +233,16 @@ impl From<crate::operation::delete_budget_action::DeleteBudgetActionError> for E
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -370,39 +254,25 @@ impl From<crate::operation::delete_notification::DeleteNotificationError> for Er
         match err {
             crate::operation::delete_notification::DeleteNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_notification::DeleteNotificationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::delete_notification::DeleteNotificationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_notification::DeleteNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::delete_notification::DeleteNotificationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_notification::DeleteNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_notification::DeleteNotificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscriber::DeleteSubscriberError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_subscriber::DeleteSubscriberError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -421,32 +291,16 @@ impl From<crate::operation::delete_subscriber::DeleteSubscriberError> for Error 
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget::DescribeBudgetError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget::DescribeBudgetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget::DescribeBudgetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget::DescribeBudgetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -456,53 +310,25 @@ where
 impl From<crate::operation::describe_budget::DescribeBudgetError> for Error {
     fn from(err: crate::operation::describe_budget::DescribeBudgetError) -> Self {
         match err {
-            crate::operation::describe_budget::DescribeBudgetError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget::DescribeBudgetError::InternalErrorException(
-                inner,
-            ) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget::DescribeBudgetError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budget::DescribeBudgetError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::describe_budget::DescribeBudgetError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::describe_budget::DescribeBudgetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_budget::DescribeBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_budget::DescribeBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_budget::DescribeBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_budget::DescribeBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_budget::DescribeBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_budget::DescribeBudgetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action::DescribeBudgetActionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action::DescribeBudgetActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action::DescribeBudgetActionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action::DescribeBudgetActionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -513,182 +339,150 @@ impl From<crate::operation::describe_budget_action::DescribeBudgetActionError> f
     fn from(err: crate::operation::describe_budget_action::DescribeBudgetActionError) -> Self {
         match err {
             crate::operation::describe_budget_action::DescribeBudgetActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget_action::DescribeBudgetActionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget_action::DescribeBudgetActionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_budget_action::DescribeBudgetActionError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_budget_action::DescribeBudgetActionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::describe_budget_action::DescribeBudgetActionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::describe_budget_action::DescribeBudgetActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_budget_action::DescribeBudgetActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-    ) -> Self {
+impl From<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError> for Error {
+    fn from(err: crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError) -> Self {
         match err {
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl
-    From<
-        crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError,
-    ) -> Self {
+impl From<crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError> for Error {
+    fn from(err: crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError) -> Self {
         match err {
-            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError, R>,
     ) -> Self {
         match err {
-            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError> for Error {
+    fn from(err: crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError) -> Self {
+        match err {
+            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError> for Error {
-    fn from(err: crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError) -> Self {
-        match err {
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError> for Error {
-    fn from(err: crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError) -> Self {
-        match err {
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budgets::DescribeBudgetsError,
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError,
             R,
         >,
     > for Error
@@ -697,20 +491,108 @@ where
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budgets::DescribeBudgetsError,
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError> for Error {
+    fn from(err: crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError) -> Self {
+        match err {
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::ExpiredNextTokenException(
+                inner,
+            ) => Error::ExpiredNextTokenException(inner),
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::InternalErrorException(
+                inner,
+            ) => Error::InternalErrorException(inner),
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError> for Error {
+    fn from(err: crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError) -> Self {
+        match err {
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_budgets::DescribeBudgetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_budgets::DescribeBudgetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -720,117 +602,123 @@ where
 impl From<crate::operation::describe_budgets::DescribeBudgetsError> for Error {
     fn from(err: crate::operation::describe_budgets::DescribeBudgetsError) -> Self {
         match err {
-            crate::operation::describe_budgets::DescribeBudgetsError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::describe_budgets::DescribeBudgetsError::ExpiredNextTokenException(
-                inner,
-            ) => Error::ExpiredNextTokenException(inner),
-            crate::operation::describe_budgets::DescribeBudgetsError::InternalErrorException(
-                inner,
-            ) => Error::InternalErrorException(inner),
-            crate::operation::describe_budgets::DescribeBudgetsError::InvalidNextTokenException(
-                inner,
-            ) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_budgets::DescribeBudgetsError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::describe_budgets::DescribeBudgetsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::describe_budgets::DescribeBudgetsError::ThrottlingException(
-                inner,
-            ) => Error::ThrottlingException(inner),
-            crate::operation::describe_budgets::DescribeBudgetsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_budgets::DescribeBudgetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_budgets::DescribeBudgetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError,
-    ) -> Self {
+impl From<crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError> for Error {
+    fn from(err: crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError) -> Self {
         match err {
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError> for Error {
     fn from(err: crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError) -> Self {
         match err {
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_budget_action::ExecuteBudgetActionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::execute_budget_action::ExecuteBudgetActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_budget_action::ExecuteBudgetActionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::execute_budget_action::ExecuteBudgetActionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -842,36 +730,28 @@ impl From<crate::operation::execute_budget_action::ExecuteBudgetActionError> for
         match err {
             crate::operation::execute_budget_action::ExecuteBudgetActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::execute_budget_action::ExecuteBudgetActionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::execute_budget_action::ExecuteBudgetActionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::execute_budget_action::ExecuteBudgetActionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::execute_budget_action::ExecuteBudgetActionError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::execute_budget_action::ExecuteBudgetActionError::ResourceLockedException(inner) => Error::ResourceLockedException(inner),
+            crate::operation::execute_budget_action::ExecuteBudgetActionError::ResourceLockedException(inner) => {
+                Error::ResourceLockedException(inner)
+            }
             crate::operation::execute_budget_action::ExecuteBudgetActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::execute_budget_action::ExecuteBudgetActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::update_budget::UpdateBudgetError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_budget::UpdateBudgetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_budget::UpdateBudgetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_budget::UpdateBudgetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -881,53 +761,25 @@ where
 impl From<crate::operation::update_budget::UpdateBudgetError> for Error {
     fn from(err: crate::operation::update_budget::UpdateBudgetError) -> Self {
         match err {
-            crate::operation::update_budget::UpdateBudgetError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_budget::UpdateBudgetError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::operation::update_budget::UpdateBudgetError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::update_budget::UpdateBudgetError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::update_budget::UpdateBudgetError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_budget::UpdateBudgetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_budget::UpdateBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_budget::UpdateBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_budget::UpdateBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_budget::UpdateBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_budget::UpdateBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_budget::UpdateBudgetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_budget_action::UpdateBudgetActionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_budget_action::UpdateBudgetActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_budget_action::UpdateBudgetActionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_budget_action::UpdateBudgetActionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -939,7 +791,9 @@ impl From<crate::operation::update_budget_action::UpdateBudgetActionError> for E
         match err {
             crate::operation::update_budget_action::UpdateBudgetActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_budget_action::UpdateBudgetActionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::update_budget_action::UpdateBudgetActionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_budget_action::UpdateBudgetActionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::update_budget_action::UpdateBudgetActionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_budget_action::UpdateBudgetActionError::ResourceLockedException(inner) => Error::ResourceLockedException(inner),
             crate::operation::update_budget_action::UpdateBudgetActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -947,32 +801,16 @@ impl From<crate::operation::update_budget_action::UpdateBudgetActionError> for E
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -985,39 +823,25 @@ impl From<crate::operation::update_notification::UpdateNotificationError> for Er
             crate::operation::update_notification::UpdateNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_notification::UpdateNotificationError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
             crate::operation::update_notification::UpdateNotificationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::update_notification::UpdateNotificationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_notification::UpdateNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::update_notification::UpdateNotificationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_notification::UpdateNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_notification::UpdateNotificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`rule_arn(Option<String>)`](crate::operation::get_topic_rule::GetTopicRuleOutput::rule_arn): <p>The rule ARN.</p>
     ///   - [`rule(Option<TopicRule>)`](crate::operation::get_topic_rule::GetTopicRuleOutput::rule): <p>The rule.</p>
     /// - On failure, responds with [`SdkError<GetTopicRuleError>`](crate::operation::get_topic_rule::GetTopicRuleError)
-    pub fn get_topic_rule(
-        &self,
-    ) -> crate::operation::get_topic_rule::builders::GetTopicRuleFluentBuilder {
-        crate::operation::get_topic_rule::builders::GetTopicRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_topic_rule(&self) -> crate::operation::get_topic_rule::builders::GetTopicRuleFluentBuilder {
+        crate::operation::get_topic_rule::builders::GetTopicRuleFluentBuilder::new(self.handle.clone())
     }
 }

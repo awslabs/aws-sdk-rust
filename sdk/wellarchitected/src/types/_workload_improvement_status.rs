@@ -41,13 +41,7 @@
 /// <p>The improvement status for a workload.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorkloadImprovementStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for WorkloadImprovementStatus {
             "NOT_APPLICABLE" => WorkloadImprovementStatus::NotApplicable,
             "NOT_STARTED" => WorkloadImprovementStatus::NotStarted,
             "RISK_ACKNOWLEDGED" => WorkloadImprovementStatus::RiskAcknowledged,
-            other => WorkloadImprovementStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WorkloadImprovementStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl WorkloadImprovementStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETE",
-            "IN_PROGRESS",
-            "NOT_APPLICABLE",
-            "NOT_STARTED",
-            "RISK_ACKNOWLEDGED",
-        ]
+        &["COMPLETE", "IN_PROGRESS", "NOT_APPLICABLE", "NOT_STARTED", "RISK_ACKNOWLEDGED"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkloadImprovementStatus {

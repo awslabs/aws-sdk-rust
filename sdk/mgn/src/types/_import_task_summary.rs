@@ -20,9 +20,7 @@ impl ImportTaskSummary {
         self.waves.as_ref()
     }
     /// <p>Import task summary applications.</p>
-    pub fn applications(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImportTaskSummaryApplications> {
+    pub fn applications(&self) -> ::std::option::Option<&crate::types::ImportTaskSummaryApplications> {
         self.applications.as_ref()
     }
     /// <p>Import task summary servers.</p>
@@ -39,9 +37,7 @@ impl ImportTaskSummary {
 
 /// A builder for [`ImportTaskSummary`](crate::types::ImportTaskSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryBuilder {
     pub(crate) waves: ::std::option::Option<crate::types::ImportTaskSummaryWaves>,
     pub(crate) applications: ::std::option::Option<crate::types::ImportTaskSummaryApplications>,
@@ -54,10 +50,7 @@ impl ImportTaskSummaryBuilder {
         self
     }
     /// <p>Import task summary waves.</p>
-    pub fn set_waves(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskSummaryWaves>,
-    ) -> Self {
+    pub fn set_waves(mut self, input: ::std::option::Option<crate::types::ImportTaskSummaryWaves>) -> Self {
         self.waves = input;
         self
     }
@@ -71,17 +64,12 @@ impl ImportTaskSummaryBuilder {
         self
     }
     /// <p>Import task summary applications.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskSummaryApplications>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<crate::types::ImportTaskSummaryApplications>) -> Self {
         self.applications = input;
         self
     }
     /// <p>Import task summary applications.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportTaskSummaryApplications> {
+    pub fn get_applications(&self) -> &::std::option::Option<crate::types::ImportTaskSummaryApplications> {
         &self.applications
     }
     /// <p>Import task summary servers.</p>
@@ -90,10 +78,7 @@ impl ImportTaskSummaryBuilder {
         self
     }
     /// <p>Import task summary servers.</p>
-    pub fn set_servers(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskSummaryServers>,
-    ) -> Self {
+    pub fn set_servers(mut self, input: ::std::option::Option<crate::types::ImportTaskSummaryServers>) -> Self {
         self.servers = input;
         self
     }

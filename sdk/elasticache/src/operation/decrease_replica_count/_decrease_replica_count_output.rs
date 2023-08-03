@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DecreaseReplicaCountOutput {
 }
 impl DecreaseReplicaCountOutput {
     /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountOutput`](crate::operation::decrease_replica_count::DecreaseReplicaCountOutput).
-    pub fn builder(
-    ) -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder {
+    pub fn builder() -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder {
         crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DecreaseReplicaCountOutput`](crate::operation::decrease_replica_count::DecreaseReplicaCountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecreaseReplicaCountOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DecreaseReplicaCountOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }

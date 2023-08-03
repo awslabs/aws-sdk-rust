@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`contact_arn(Option<String>)`](crate::operation::create_contact::CreateContactOutput::contact_arn): <p>The ARN of the newly created address book.</p>
     /// - On failure, responds with [`SdkError<CreateContactError>`](crate::operation::create_contact::CreateContactError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn create_contact(
-        &self,
-    ) -> crate::operation::create_contact::builders::CreateContactFluentBuilder {
-        crate::operation::create_contact::builders::CreateContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_contact(&self) -> crate::operation::create_contact::builders::CreateContactFluentBuilder {
+        crate::operation::create_contact::builders::CreateContactFluentBuilder::new(self.handle.clone())
     }
 }

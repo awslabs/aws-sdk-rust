@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`agent_arns(Option<Vec<String>>)`](crate::operation::describe_location_s3::DescribeLocationS3Output::agent_arns): <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_s3::DescribeLocationS3Output::creation_time): <p>The time that the Amazon S3 bucket location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationS3Error>`](crate::operation::describe_location_s3::DescribeLocationS3Error)
-    pub fn describe_location_s3(
-        &self,
-    ) -> crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder {
-        crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_location_s3(&self) -> crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder {
+        crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder::new(self.handle.clone())
     }
 }

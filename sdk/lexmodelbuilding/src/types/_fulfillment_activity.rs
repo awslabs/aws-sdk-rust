@@ -35,9 +35,7 @@ impl FulfillmentActivity {
 
 /// A builder for [`FulfillmentActivity`](crate::types::FulfillmentActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FulfillmentActivityBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FulfillmentActivityType>,
     pub(crate) code_hook: ::std::option::Option<crate::types::CodeHook>,
@@ -49,10 +47,7 @@ impl FulfillmentActivityBuilder {
         self
     }
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FulfillmentActivityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FulfillmentActivityType>) -> Self {
         self.r#type = input;
         self
     }

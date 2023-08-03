@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetLoadBalancerOutput {
 }
 impl GetLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerOutput`](crate::operation::get_load_balancer::GetLoadBalancerOutput).
-    pub fn builder() -> crate::operation::get_load_balancer::builders::GetLoadBalancerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_load_balancer::builders::GetLoadBalancerOutputBuilder {
         crate::operation::get_load_balancer::builders::GetLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoadBalancerOutput`](crate::operation::get_load_balancer::GetLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerOutputBuilder {
     pub(crate) load_balancer: ::std::option::Option<crate::types::LoadBalancer>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetLoadBalancerOutputBuilder {
         self
     }
     /// <p>An object containing information about your load balancer.</p>
-    pub fn set_load_balancer(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancer>,
-    ) -> Self {
+    pub fn set_load_balancer(mut self, input: ::std::option::Option<crate::types::LoadBalancer>) -> Self {
         self.load_balancer = input;
         self
     }

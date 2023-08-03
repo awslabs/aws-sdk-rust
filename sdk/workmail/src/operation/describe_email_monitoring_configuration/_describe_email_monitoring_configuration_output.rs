@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeEmailMonitoringConfigurationO
 }
 impl DescribeEmailMonitoringConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEmailMonitoringConfigurationOutput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationOutputBuilder {
         crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEmailMonitoringConfigurationOutput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl DescribeEmailMonitoringConfigurationOutputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
@@ -88,12 +80,10 @@ impl DescribeEmailMonitoringConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEmailMonitoringConfigurationOutput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput {
         crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput {
-            role_arn: self.role_arn
-            ,
-            log_group_arn: self.log_group_arn
-            ,
+            role_arn: self.role_arn,
+            log_group_arn: self.log_group_arn,
             _request_id: self._request_id,
         }
     }

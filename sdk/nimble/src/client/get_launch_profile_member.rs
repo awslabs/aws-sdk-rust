@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetLaunchProfileMemberOutput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput) with field(s):
     ///   - [`member(Option<LaunchProfileMembership>)`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput::member): <p>The member.</p>
     /// - On failure, responds with [`SdkError<GetLaunchProfileMemberError>`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberError)
-    pub fn get_launch_profile_member(
-        &self,
-    ) -> crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberFluentBuilder
-    {
+    pub fn get_launch_profile_member(&self) -> crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberFluentBuilder {
         crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberFluentBuilder::new(self.handle.clone())
     }
 }

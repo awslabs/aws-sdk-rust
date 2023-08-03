@@ -36,17 +36,14 @@ impl DescribeAssociationInput {
 }
 impl DescribeAssociationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationInput`](crate::operation::describe_association::DescribeAssociationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_association::builders::DescribeAssociationInputBuilder {
+    pub fn builder() -> crate::operation::describe_association::builders::DescribeAssociationInputBuilder {
         crate::operation::describe_association::builders::DescribeAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssociationInput`](crate::operation::describe_association::DescribeAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssociationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl DescribeAssociationInputBuilder {
         &self.instance_id
     }
     /// <p>The association ID for which you want information.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for which you want information.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -103,18 +94,12 @@ impl DescribeAssociationInputBuilder {
         &self.association_id
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    pub fn association_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    pub fn set_association_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_version = input;
         self
     }
@@ -125,17 +110,13 @@ impl DescribeAssociationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssociationInput`](crate::operation::describe_association::DescribeAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_association::DescribeAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_association::DescribeAssociationInput {
-                name: self.name,
-                instance_id: self.instance_id,
-                association_id: self.association_id,
-                association_version: self.association_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_association::DescribeAssociationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_association::DescribeAssociationInput {
+            name: self.name,
+            instance_id: self.instance_id,
+            association_id: self.association_id,
+            association_version: self.association_version,
+        })
     }
 }

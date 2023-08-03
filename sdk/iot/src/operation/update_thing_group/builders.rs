@@ -10,10 +10,7 @@ impl UpdateThingGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_thing_group::UpdateThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_group::UpdateThingGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_group::UpdateThingGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_thing_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateThingGroupFluentBuilder {
         }
     }
     /// Access the UpdateThingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_thing_group::builders::UpdateThingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_thing_group::builders::UpdateThingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateThingGroupFluentBuilder {
             crate::operation::update_thing_group::UpdateThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_group::UpdateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_group::UpdateThingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateThingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_group::UpdateThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_group::UpdateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_group::UpdateThingGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_group::UpdateThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_group::UpdateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_group::UpdateThingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateThingGroupFluentBuilder {
             crate::operation::update_thing_group::UpdateThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_group::UpdateThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_group::UpdateThingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The thing group to update.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
         self
     }
     /// <p>The thing group to update.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
@@ -149,17 +127,12 @@ impl UpdateThingGroupFluentBuilder {
         self
     }
     /// <p>The thing group properties.</p>
-    pub fn set_thing_group_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingGroupProperties>,
-    ) -> Self {
+    pub fn set_thing_group_properties(mut self, input: ::std::option::Option<crate::types::ThingGroupProperties>) -> Self {
         self.inner = self.inner.set_thing_group_properties(input);
         self
     }
     /// <p>The thing group properties.</p>
-    pub fn get_thing_group_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+    pub fn get_thing_group_properties(&self) -> &::std::option::Option<crate::types::ThingGroupProperties> {
         self.inner.get_thing_group_properties()
     }
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>

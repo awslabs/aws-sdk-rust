@@ -29,9 +29,7 @@ impl DeleteJobOutput {
 
 /// A builder for [`DeleteJobOutput`](crate::operation::delete_job::DeleteJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteJobOutputBuilder {
     pub(crate) job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DeleteJobOutputBuilder {
         self
     }
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
-    pub fn set_job_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::JobSummary>,
-    ) -> Self {
+    pub fn set_job_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
         self.job_summary = input;
         self
     }

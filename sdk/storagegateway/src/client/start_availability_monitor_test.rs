@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StartAvailabilityMonitorTestOutput`](crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<StartAvailabilityMonitorTestError>`](crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError)
-    pub fn start_availability_monitor_test(&self) -> crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestFluentBuilder{
+    pub fn start_availability_monitor_test(
+        &self,
+    ) -> crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestFluentBuilder {
         crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestFluentBuilder::new(self.handle.clone())
     }
 }

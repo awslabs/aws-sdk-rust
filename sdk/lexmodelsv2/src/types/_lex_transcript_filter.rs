@@ -23,9 +23,7 @@ impl LexTranscriptFilter {
 
 /// A builder for [`LexTranscriptFilter`](crate::types::LexTranscriptFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LexTranscriptFilterBuilder {
     pub(crate) date_range_filter: ::std::option::Option<crate::types::DateRangeFilter>,
 }
@@ -36,10 +34,7 @@ impl LexTranscriptFilterBuilder {
         self
     }
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
-    pub fn set_date_range_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DateRangeFilter>,
-    ) -> Self {
+    pub fn set_date_range_filter(mut self, input: ::std::option::Option<crate::types::DateRangeFilter>) -> Self {
         self.date_range_filter = input;
         self
     }

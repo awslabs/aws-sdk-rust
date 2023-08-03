@@ -56,9 +56,7 @@ impl CreateIngestionOutput {
 
 /// A builder for [`CreateIngestionOutput`](crate::operation::create_ingestion::CreateIngestionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIngestionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl CreateIngestionOutputBuilder {
         self
     }
     /// <p>The ingestion status.</p>
-    pub fn set_ingestion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionStatus>,
-    ) -> Self {
+    pub fn set_ingestion_status(mut self, input: ::std::option::Option<crate::types::IngestionStatus>) -> Self {
         self.ingestion_status = input;
         self
     }

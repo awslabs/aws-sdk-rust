@@ -5,8 +5,7 @@
 pub struct ListServiceActionsForProvisioningArtifactOutput {
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
     #[doc(hidden)]
-    pub service_action_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
+    pub service_action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListServiceActionsForProvisioningArtifactOutput {
 }
 impl ListServiceActionsForProvisioningArtifactOutput {
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-    pub fn service_action_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceActionSummary]> {
+    pub fn service_action_summaries(&self) -> ::std::option::Option<&[crate::types::ServiceActionSummary]> {
         self.service_action_summaries.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for ListServiceActionsForProvisioningArti
 }
 impl ListServiceActionsForProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceActionsForProvisioningArtifactOutput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput).
-    pub fn builder() -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactOutputBuilder {
         crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceActionsForProvisioningArtifactOutput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceActionsForProvisioningArtifactOutputBuilder {
-    pub(crate) service_action_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
+    pub(crate) service_action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,32 +55,21 @@ impl ListServiceActionsForProvisioningArtifactOutputBuilder {
         self
     }
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-    pub fn set_service_action_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
-    ) -> Self {
+    pub fn set_service_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>) -> Self {
         self.service_action_summaries = input;
         self
     }
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-    pub fn get_service_action_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>> {
+    pub fn get_service_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>> {
         &self.service_action_summaries
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -103,12 +87,10 @@ impl ListServiceActionsForProvisioningArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceActionsForProvisioningArtifactOutput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput).
-    pub fn build(self) -> crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput{
+    pub fn build(self) -> crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput {
         crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput {
-            service_action_summaries: self.service_action_summaries
-            ,
-            next_page_token: self.next_page_token
-            ,
+            service_action_summaries: self.service_action_summaries,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

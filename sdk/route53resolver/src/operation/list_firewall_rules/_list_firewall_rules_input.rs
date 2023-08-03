@@ -61,17 +61,14 @@ impl ListFirewallRulesInput {
 }
 impl ListFirewallRulesInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRulesInput`](crate::operation::list_firewall_rules::ListFirewallRulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {
+    pub fn builder() -> crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {
         crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallRulesInput`](crate::operation::list_firewall_rules::ListFirewallRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRulesInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -81,18 +78,12 @@ pub struct ListFirewallRulesInputBuilder {
 }
 impl ListFirewallRulesInputBuilder {
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
@@ -186,18 +177,13 @@ impl ListFirewallRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallRulesInput`](crate::operation::list_firewall_rules::ListFirewallRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_firewall_rules::ListFirewallRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_firewall_rules::ListFirewallRulesInput {
-                firewall_rule_group_id: self.firewall_rule_group_id,
-                priority: self.priority,
-                action: self.action,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_firewall_rules::ListFirewallRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_firewall_rules::ListFirewallRulesInput {
+            firewall_rule_group_id: self.firewall_rule_group_id,
+            priority: self.priority,
+            action: self.action,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

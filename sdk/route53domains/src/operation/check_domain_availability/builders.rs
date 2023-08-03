@@ -26,8 +26,7 @@ impl CheckDomainAvailabilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CheckDomainAvailabilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder,
+    inner: crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder,
 }
 impl CheckDomainAvailabilityFluentBuilder {
     /// Creates a new `CheckDomainAvailability`.
@@ -38,10 +37,7 @@ impl CheckDomainAvailabilityFluentBuilder {
         }
     }
     /// Access the CheckDomainAvailability as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CheckDomainAvailabilityFluentBuilder {
             crate::operation::check_domain_availability::CheckDomainAvailability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_availability::CheckDomainAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_availability::CheckDomainAvailabilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CheckDomainAvailabilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CheckDomainAvailabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_domain_availability::CheckDomainAvailabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_availability::CheckDomainAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_availability::CheckDomainAvailabilityError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CheckDomainAvailabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_domain_availability::CheckDomainAvailabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_availability::CheckDomainAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_availability::CheckDomainAvailabilityError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CheckDomainAvailabilityFluentBuilder {
             crate::operation::check_domain_availability::CheckDomainAvailability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_availability::CheckDomainAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_availability::CheckDomainAvailabilityError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +148,12 @@ impl CheckDomainAvailabilityFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idn_lang_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idn_lang_code(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_idn_lang_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idn_lang_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idn_lang_code(input);
         self
     }

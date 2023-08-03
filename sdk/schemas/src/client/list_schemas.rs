@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schemas(Option<Vec<SchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>An array of schema summaries.</p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
-    pub fn list_schemas(
-        &self,
-    ) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
+    pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
         crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
     }
 }

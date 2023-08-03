@@ -10,10 +10,7 @@ impl CreateRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_repository();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateRepositoryFluentBuilder {
         }
     }
     /// Access the CreateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.customize_middleware().await
     }
@@ -188,17 +172,12 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn set_upstreams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>,
-    ) -> Self {
+    pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>) -> Self {
         self.inner = self.inner.set_upstreams(input);
         self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn get_upstreams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
+    pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
         self.inner.get_upstreams()
     }
     /// Appends an item to `tags`.
@@ -211,10 +190,7 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p>One or more tag key-value pairs for the repository.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

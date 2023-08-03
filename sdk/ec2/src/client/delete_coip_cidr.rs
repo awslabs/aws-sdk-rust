@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCoipCidrOutput`](crate::operation::delete_coip_cidr::DeleteCoipCidrOutput) with field(s):
     ///   - [`coip_cidr(Option<CoipCidr>)`](crate::operation::delete_coip_cidr::DeleteCoipCidrOutput::coip_cidr): <p> Information about a range of customer-owned IP addresses. </p>
     /// - On failure, responds with [`SdkError<DeleteCoipCidrError>`](crate::operation::delete_coip_cidr::DeleteCoipCidrError)
-    pub fn delete_coip_cidr(
-        &self,
-    ) -> crate::operation::delete_coip_cidr::builders::DeleteCoipCidrFluentBuilder {
-        crate::operation::delete_coip_cidr::builders::DeleteCoipCidrFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_coip_cidr(&self) -> crate::operation::delete_coip_cidr::builders::DeleteCoipCidrFluentBuilder {
+        crate::operation::delete_coip_cidr::builders::DeleteCoipCidrFluentBuilder::new(self.handle.clone())
     }
 }

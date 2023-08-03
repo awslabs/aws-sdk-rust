@@ -34,18 +34,14 @@ impl UpdateApplicationVersionInput {
 }
 impl UpdateApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationVersionInput`](crate::operation::update_application_version::UpdateApplicationVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder {
         crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationVersionInput`](crate::operation::update_application_version::UpdateApplicationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationVersionInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
@@ -54,19 +50,13 @@ pub struct UpdateApplicationVersionInputBuilder {
 impl UpdateApplicationVersionInputBuilder {
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -77,19 +67,13 @@ impl UpdateApplicationVersionInputBuilder {
     }
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -119,12 +103,10 @@ impl UpdateApplicationVersionInputBuilder {
         crate::operation::update_application_version::UpdateApplicationVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_application_version::UpdateApplicationVersionInput {
-                application_name: self.application_name,
-                version_label: self.version_label,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_application_version::UpdateApplicationVersionInput {
+            application_name: self.application_name,
+            version_label: self.version_label,
+            description: self.description,
+        })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RetrieveTapeArchiveOutput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
     /// - On failure, responds with [`SdkError<RetrieveTapeArchiveError>`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveError)
-    pub fn retrieve_tape_archive(
-        &self,
-    ) -> crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveFluentBuilder {
-        crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn retrieve_tape_archive(&self) -> crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveFluentBuilder {
+        crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateKnowledgeBaseTemplateUriOutput 
 }
 impl UpdateKnowledgeBaseTemplateUriOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKnowledgeBaseTemplateUriOutput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput).
-    pub fn builder() -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriOutputBuilder{
+    pub fn builder() -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriOutputBuilder {
         crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateKnowledgeBaseTemplateUriOutput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUriOutputBuilder {
     pub(crate) knowledge_base: ::std::option::Option<crate::types::KnowledgeBaseData>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateKnowledgeBaseTemplateUriOutputBuilder {
         self
     }
     /// <p>The knowledge base to update.</p>
-    pub fn set_knowledge_base(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseData>,
-    ) -> Self {
+    pub fn set_knowledge_base(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseData>) -> Self {
         self.knowledge_base = input;
         self
     }
@@ -63,10 +58,7 @@ impl UpdateKnowledgeBaseTemplateUriOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateKnowledgeBaseTemplateUriOutput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput
-    {
+    pub fn build(self) -> crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput {
         crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput {
             knowledge_base: self.knowledge_base,
             _request_id: self._request_id,

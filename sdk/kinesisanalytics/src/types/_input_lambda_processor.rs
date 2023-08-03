@@ -34,9 +34,7 @@ impl InputLambdaProcessor {
 
 /// A builder for [`InputLambdaProcessor`](crate::types::InputLambdaProcessor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputLambdaProcessorBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

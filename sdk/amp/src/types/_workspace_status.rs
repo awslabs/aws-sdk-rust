@@ -23,9 +23,7 @@ impl WorkspaceStatus {
 
 /// A builder for [`WorkspaceStatus`](crate::types::WorkspaceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::WorkspaceStatusCode>,
 }
@@ -36,10 +34,7 @@ impl WorkspaceStatusBuilder {
         self
     }
     /// Status code of this workspace.
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::WorkspaceStatusCode>) -> Self {
         self.status_code = input;
         self
     }

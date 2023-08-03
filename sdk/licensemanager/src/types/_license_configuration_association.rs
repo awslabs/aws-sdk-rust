@@ -51,9 +51,7 @@ impl LicenseConfigurationAssociation {
 
 /// A builder for [`LicenseConfigurationAssociation`](crate::types::LicenseConfigurationAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseConfigurationAssociationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -82,10 +80,7 @@ impl LicenseConfigurationAssociationBuilder {
         self
     }
     /// <p>Type of server resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -94,18 +89,12 @@ impl LicenseConfigurationAssociationBuilder {
         &self.resource_type
     }
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
-    pub fn resource_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
-    pub fn set_resource_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_id = input;
         self
     }
@@ -119,10 +108,7 @@ impl LicenseConfigurationAssociationBuilder {
         self
     }
     /// <p>Time when the license configuration was associated with the resource.</p>
-    pub fn set_association_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.association_time = input;
         self
     }
@@ -131,18 +117,12 @@ impl LicenseConfigurationAssociationBuilder {
         &self.association_time
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn ami_association_scope(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ami_association_scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_association_scope = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn set_ami_association_scope(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ami_association_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_association_scope = input;
         self
     }

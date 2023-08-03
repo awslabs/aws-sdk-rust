@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDestinationsOutput {
 }
 impl ListDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::operation::list_destinations::ListDestinationsOutput).
-    pub fn builder() -> crate::operation::list_destinations::builders::ListDestinationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_destinations::builders::ListDestinationsOutputBuilder {
         crate::operation::list_destinations::builders::ListDestinationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDestinationsOutput`](crate::operation::list_destinations::ListDestinationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDestinationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) destination_list: ::std::option::Option<::std::vec::Vec<crate::types::Destinations>>,
@@ -71,17 +68,12 @@ impl ListDestinationsOutputBuilder {
         self
     }
     /// <p>The list of destinations.</p>
-    pub fn set_destination_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destinations>>,
-    ) -> Self {
+    pub fn set_destination_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destinations>>) -> Self {
         self.destination_list = input;
         self
     }
     /// <p>The list of destinations.</p>
-    pub fn get_destination_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destinations>> {
+    pub fn get_destination_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destinations>> {
         &self.destination_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

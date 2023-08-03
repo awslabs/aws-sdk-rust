@@ -31,10 +31,7 @@ pub fn ser_training_job_definition(
     if let Some(var_10) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.resource_config {
@@ -46,10 +43,7 @@ pub fn ser_training_job_definition(
     if let Some(var_14) = &input.stopping_condition {
         #[allow(unused_mut)]
         let mut object_15 = object.key("StoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_15, var_14)?;
         object_15.finish();
     }
     Ok(())
@@ -57,17 +51,9 @@ pub fn ser_training_job_definition(
 
 pub(crate) fn de_training_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TrainingJobDefinition>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TrainingJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -77,64 +63,43 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TrainingInputMode" => {
-                                builder = builder.set_training_input_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::TrainingInputMode::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TrainingInputMode" => {
+                            builder = builder.set_training_input_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TrainingInputMode::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "HyperParameters" => {
-                                builder = builder.set_hyper_parameters(
-                                    crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?
-                                );
-                            }
-                            "InputDataConfig" => {
-                                builder = builder.set_input_data_config(
-                                    crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?
-                                );
-                            }
-                            "OutputDataConfig" => {
-                                builder = builder.set_output_data_config(
-                                    crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?
-                                );
-                            }
-                            "ResourceConfig" => {
-                                builder = builder.set_resource_config(
-                                    crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?
-                                );
-                            }
-                            "StoppingCondition" => {
-                                builder = builder.set_stopping_condition(
-                                    crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "HyperParameters" => {
+                            builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                        }
+                        "InputDataConfig" => {
+                            builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?);
+                        }
+                        "OutputDataConfig" => {
+                            builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?);
+                        }
+                        "ResourceConfig" => {
+                            builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
+                        }
+                        "StoppingCondition" => {
+                            builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

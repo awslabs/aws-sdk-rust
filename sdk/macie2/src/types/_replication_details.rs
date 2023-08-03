@@ -37,9 +37,7 @@ impl ReplicationDetails {
 
 /// A builder for [`ReplicationDetails`](crate::types::ReplicationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationDetailsBuilder {
     pub(crate) replicated: ::std::option::Option<bool>,
     pub(crate) replicated_externally: ::std::option::Option<bool>,
@@ -79,27 +77,19 @@ impl ReplicationDetailsBuilder {
     /// To override the contents of this collection use [`set_replication_accounts`](Self::set_replication_accounts).
     ///
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn replication_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_accounts.unwrap_or_default();
         v.push(input.into());
         self.replication_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn set_replication_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_accounts = input;
         self
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn get_replication_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_accounts
     }
     /// Consumes the builder and constructs a [`ReplicationDetails`](crate::types::ReplicationDetails).

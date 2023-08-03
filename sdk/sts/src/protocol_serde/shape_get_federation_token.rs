@@ -9,74 +9,69 @@ pub fn de_get_federation_token_http_error(
     crate::operation::get_federation_token::GetFederationTokenError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_federation_token::GetFederationTokenError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::get_federation_token::GetFederationTokenError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "MalformedPolicyDocument" => crate::operation::get_federation_token::GetFederationTokenError::MalformedPolicyDocumentException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(_response_body, output).map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "PackedPolicyTooLarge" => crate::operation::get_federation_token::GetFederationTokenError::PackedPolicyTooLargeException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(_response_body, output).map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RegionDisabledException" => crate::operation::get_federation_token::GetFederationTokenError::RegionDisabledException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(_response_body, output).map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_federation_token::GetFederationTokenError::generic(generic)
+        _ => crate::operation::get_federation_token::GetFederationTokenError::generic(generic),
     })
 }
 
@@ -92,14 +87,9 @@ pub fn de_get_federation_token_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_federation_token::de_get_federation_token(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_federation_token::de_get_federation_token(_response_body, output)
+            .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -108,10 +98,7 @@ pub fn de_get_federation_token_http_response_with_props(
 pub fn de_get_federation_token(
     inp: &[u8],
     mut builder: crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder,
-) -> Result<
-    crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -173,9 +160,7 @@ pub fn de_get_federation_token(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetFederationTokenResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetFederationTokenResult tag"));
     };
     Ok(builder)
 }

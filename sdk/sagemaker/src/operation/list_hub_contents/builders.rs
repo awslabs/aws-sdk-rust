@@ -10,10 +10,7 @@ impl ListHubContentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_hub_contents::ListHubContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hub_contents::ListHubContentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hub_contents::ListHubContentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_hub_contents();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListHubContentsFluentBuilder {
         }
     }
     /// Access the ListHubContents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_hub_contents::builders::ListHubContentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_hub_contents::builders::ListHubContentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListHubContentsFluentBuilder {
             crate::operation::list_hub_contents::ListHubContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hub_contents::ListHubContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hub_contents::ListHubContentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListHubContentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListHubContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hub_contents::ListHubContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hub_contents::ListHubContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hub_contents::ListHubContentsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListHubContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hub_contents::ListHubContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hub_contents::ListHubContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hub_contents::ListHubContentsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl ListHubContentsFluentBuilder {
             crate::operation::list_hub_contents::ListHubContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hub_contents::ListHubContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hub_contents::ListHubContentsError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl ListHubContentsFluentBuilder {
         self
     }
     /// <p>The type of hub content to list.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.inner = self.inner.set_hub_content_type(input);
         self
     }
@@ -156,18 +137,12 @@ impl ListHubContentsFluentBuilder {
         self.inner.get_hub_content_type()
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -176,18 +151,12 @@ impl ListHubContentsFluentBuilder {
         self.inner.get_name_contains()
     }
     /// <p>The upper bound of the hub content schema verion.</p>
-    pub fn max_schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_schema_version(input.into());
         self
     }
     /// <p>The upper bound of the hub content schema verion.</p>
-    pub fn set_max_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_max_schema_version(input);
         self
     }
@@ -201,10 +170,7 @@ impl ListHubContentsFluentBuilder {
         self
     }
     /// <p>Only list hub content that was created before the time specified.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -218,10 +184,7 @@ impl ListHubContentsFluentBuilder {
         self
     }
     /// <p>Only list hub content that was created after the time specified.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -235,10 +198,7 @@ impl ListHubContentsFluentBuilder {
         self
     }
     /// <p>Sort hub content versions by either name or creation time.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::HubContentSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

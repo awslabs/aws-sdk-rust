@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWhatIfForecastExportOutput {
 }
 impl DeleteWhatIfForecastExportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastExportOutput`](crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput).
-    pub fn builder() -> crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportOutputBuilder{
+    pub fn builder() -> crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportOutputBuilder {
         crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWhatIfForecastExportOutput`](crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastExportOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteWhatIfForecastExportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteWhatIfForecastExportOutput`](crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput {
+    pub fn build(self) -> crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput {
         crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput {
             _request_id: self._request_id,
         }

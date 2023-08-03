@@ -19,9 +19,7 @@ impl super::Client {
     ///   - [`file_format(Option<FaqFileFormat>)`](crate::operation::describe_faq::DescribeFaqOutput::file_format): <p>The file format used by the input files for the FAQ.</p>
     ///   - [`language_code(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::language_code): <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeFaqError>`](crate::operation::describe_faq::DescribeFaqError)
-    pub fn describe_faq(
-        &self,
-    ) -> crate::operation::describe_faq::builders::DescribeFaqFluentBuilder {
+    pub fn describe_faq(&self) -> crate::operation::describe_faq::builders::DescribeFaqFluentBuilder {
         crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::new(self.handle.clone())
     }
 }

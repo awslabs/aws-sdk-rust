@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_tags): <p>The tags to be assigned to the directory.</p>
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput)
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::operation::add_tags_to_resource::AddTagsToResourceError)
-    pub fn add_tags_to_resource(
-        &self,
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
-        crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_tags_to_resource(&self) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
+        crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(self.handle.clone())
     }
 }

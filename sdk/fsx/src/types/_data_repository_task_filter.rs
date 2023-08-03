@@ -38,9 +38,7 @@ impl DataRepositoryTaskFilter {
 
 /// A builder for [`DataRepositoryTaskFilter`](crate::types::DataRepositoryTaskFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,10 +58,7 @@ impl DataRepositoryTaskFilterBuilder {
     /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
     /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -87,10 +82,7 @@ impl DataRepositoryTaskFilterBuilder {
         self
     }
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

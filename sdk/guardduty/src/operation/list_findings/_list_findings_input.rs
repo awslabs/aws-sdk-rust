@@ -150,9 +150,7 @@ impl ListFindingsInput {
 
 /// A builder for [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
@@ -281,10 +279,7 @@ impl ListFindingsInputBuilder {
     /// <li> <p>type</p> </li>
     /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -348,10 +343,7 @@ impl ListFindingsInputBuilder {
         self
     }
     /// <p>Represents the criteria used for sorting findings.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -388,12 +380,7 @@ impl ListFindingsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings::ListFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             detector_id: self.detector_id,
             finding_criteria: self.finding_criteria,

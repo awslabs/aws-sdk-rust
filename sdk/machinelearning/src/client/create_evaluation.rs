@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEvaluationOutput`](crate::operation::create_evaluation::CreateEvaluationOutput) with field(s):
     ///   - [`evaluation_id(Option<String>)`](crate::operation::create_evaluation::CreateEvaluationOutput::evaluation_id): <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     /// - On failure, responds with [`SdkError<CreateEvaluationError>`](crate::operation::create_evaluation::CreateEvaluationError)
-    pub fn create_evaluation(
-        &self,
-    ) -> crate::operation::create_evaluation::builders::CreateEvaluationFluentBuilder {
-        crate::operation::create_evaluation::builders::CreateEvaluationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_evaluation(&self) -> crate::operation::create_evaluation::builders::CreateEvaluationFluentBuilder {
+        crate::operation::create_evaluation::builders::CreateEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

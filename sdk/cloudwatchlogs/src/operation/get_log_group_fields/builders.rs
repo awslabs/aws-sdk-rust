@@ -10,10 +10,7 @@ impl GetLogGroupFieldsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_log_group_fields::GetLogGroupFieldsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_group_fields::GetLogGroupFieldsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_group_fields::GetLogGroupFieldsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_log_group_fields();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetLogGroupFieldsFluentBuilder {
         }
     }
     /// Access the GetLogGroupFields as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_log_group_fields::builders::GetLogGroupFieldsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_log_group_fields::builders::GetLogGroupFieldsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetLogGroupFieldsFluentBuilder {
             crate::operation::get_log_group_fields::GetLogGroupFields,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_group_fields::GetLogGroupFieldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_group_fields::GetLogGroupFieldsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetLogGroupFieldsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetLogGroupFieldsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_log_group_fields::GetLogGroupFieldsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_group_fields::GetLogGroupFieldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_group_fields::GetLogGroupFieldsError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetLogGroupFieldsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_log_group_fields::GetLogGroupFieldsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_group_fields::GetLogGroupFieldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_group_fields::GetLogGroupFieldsError>,
     > {
         self.send_middleware().await
     }
@@ -120,29 +106,21 @@ impl GetLogGroupFieldsFluentBuilder {
             crate::operation::get_log_group_fields::GetLogGroupFields,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_log_group_fields::GetLogGroupFieldsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_log_group_fields::GetLogGroupFieldsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group to search.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group to search.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -172,20 +150,14 @@ impl GetLogGroupFieldsFluentBuilder {
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn log_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_identifier(input.into());
         self
     }
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn set_log_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_identifier(input);
         self
     }

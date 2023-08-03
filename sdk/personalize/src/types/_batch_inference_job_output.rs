@@ -23,9 +23,7 @@ impl BatchInferenceJobOutput {
 
 /// A builder for [`BatchInferenceJobOutput`](crate::types::BatchInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchInferenceJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }
@@ -36,10 +34,7 @@ impl BatchInferenceJobOutputBuilder {
         self
     }
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
-    pub fn set_s3_data_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataConfig>,
-    ) -> Self {
+    pub fn set_s3_data_destination(mut self, input: ::std::option::Option<crate::types::S3DataConfig>) -> Self {
         self.s3_data_destination = input;
         self
     }

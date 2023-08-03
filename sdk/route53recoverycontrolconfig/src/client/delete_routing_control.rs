@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`routing_control_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_routing_control::builders::DeleteRoutingControlFluentBuilder::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::operation::delete_routing_control::builders::DeleteRoutingControlFluentBuilder::set_routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
     /// - On success, responds with [`DeleteRoutingControlOutput`](crate::operation::delete_routing_control::DeleteRoutingControlOutput)
     /// - On failure, responds with [`SdkError<DeleteRoutingControlError>`](crate::operation::delete_routing_control::DeleteRoutingControlError)
-    pub fn delete_routing_control(
-        &self,
-    ) -> crate::operation::delete_routing_control::builders::DeleteRoutingControlFluentBuilder {
-        crate::operation::delete_routing_control::builders::DeleteRoutingControlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_routing_control(&self) -> crate::operation::delete_routing_control::builders::DeleteRoutingControlFluentBuilder {
+        crate::operation::delete_routing_control::builders::DeleteRoutingControlFluentBuilder::new(self.handle.clone())
     }
 }

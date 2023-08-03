@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`vdm_options(VdmOptions)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::vdm_options) / [`set_vdm_options(Option<VdmOptions>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_vdm_options): <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
-    pub fn create_configuration_set(
-        &self,
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder
-    {
+    pub fn create_configuration_set(&self) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

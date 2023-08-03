@@ -73,16 +73,14 @@ impl ::aws_http::request_id::RequestId for StartDominantLanguageDetectionJobOutp
 }
 impl StartDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobOutput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput).
-    pub fn builder() -> crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobOutputBuilder {
         crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDominantLanguageDetectionJobOutput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDominantLanguageDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -199,14 +197,11 @@ impl StartDominantLanguageDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDominantLanguageDetectionJobOutput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput).
-    pub fn build(self) -> crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput{
+    pub fn build(self) -> crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput {
         crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput {
-            job_id: self.job_id
-            ,
-            job_arn: self.job_arn
-            ,
-            job_status: self.job_status
-            ,
+            job_id: self.job_id,
+            job_arn: self.job_arn,
+            job_status: self.job_status,
             _request_id: self._request_id,
         }
     }

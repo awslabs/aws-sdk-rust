@@ -15,18 +15,14 @@ impl DeleteTestGridProjectInput {
 }
 impl DeleteTestGridProjectInput {
     /// Creates a new builder-style object to manufacture [`DeleteTestGridProjectInput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectInput).
-    pub fn builder(
-    ) -> crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectInputBuilder {
         crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTestGridProjectInput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTestGridProjectInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DeleteTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTestGridProjectInput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_test_grid_project::DeleteTestGridProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_test_grid_project::DeleteTestGridProjectInput {
-                project_arn: self.project_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_test_grid_project::DeleteTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_test_grid_project::DeleteTestGridProjectInput {
+            project_arn: self.project_arn,
+        })
     }
 }

@@ -20,9 +20,7 @@ pub struct AwsJobAbortCriteria {
 }
 impl AwsJobAbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn failure_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsJobAbortCriteriaFailureType> {
+    pub fn failure_type(&self) -> ::std::option::Option<&crate::types::AwsJobAbortCriteriaFailureType> {
         self.failure_type.as_ref()
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
@@ -48,9 +46,7 @@ impl AwsJobAbortCriteria {
 
 /// A builder for [`AwsJobAbortCriteria`](crate::types::AwsJobAbortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsJobAbortCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType>,
     pub(crate) action: ::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction>,
@@ -64,17 +60,12 @@ impl AwsJobAbortCriteriaBuilder {
         self
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType>,
-    ) -> Self {
+    pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType>) -> Self {
         self.failure_type = input;
         self
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn get_failure_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType> {
+    pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType> {
         &self.failure_type
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
@@ -83,17 +74,12 @@ impl AwsJobAbortCriteriaBuilder {
         self
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction> {
         &self.action
     }
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>

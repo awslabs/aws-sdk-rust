@@ -28,8 +28,7 @@ impl ListSigningCertificatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSigningCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_signing_certificates::builders::ListSigningCertificatesInputBuilder,
+    inner: crate::operation::list_signing_certificates::builders::ListSigningCertificatesInputBuilder,
 }
 impl ListSigningCertificatesFluentBuilder {
     /// Creates a new `ListSigningCertificates`.
@@ -40,10 +39,7 @@ impl ListSigningCertificatesFluentBuilder {
         }
     }
     /// Access the ListSigningCertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_signing_certificates::builders::ListSigningCertificatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_signing_certificates::builders::ListSigningCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ListSigningCertificatesFluentBuilder {
             crate::operation::list_signing_certificates::ListSigningCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_certificates::ListSigningCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_certificates::ListSigningCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ListSigningCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ListSigningCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_certificates::ListSigningCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_certificates::ListSigningCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_certificates::ListSigningCertificatesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ListSigningCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_certificates::ListSigningCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_certificates::ListSigningCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_certificates::ListSigningCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -120,19 +107,14 @@ impl ListSigningCertificatesFluentBuilder {
             crate::operation::list_signing_certificates::ListSigningCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_certificates::ListSigningCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_certificates::ListSigningCertificatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator {
         crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the IAM user whose signing certificates you want to examine.</p>

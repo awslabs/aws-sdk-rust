@@ -62,8 +62,7 @@ impl ::std::fmt::Debug for ConfigureAccessPointInput {
 }
 impl ConfigureAccessPointInput {
     /// Creates a new builder-style object to manufacture [`ConfigureAccessPointInput`](crate::operation::configure_access_point::ConfigureAccessPointInput).
-    pub fn builder(
-    ) -> crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder {
+    pub fn builder() -> crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder {
         crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder::default()
     }
 }
@@ -81,18 +80,12 @@ pub struct ConfigureAccessPointInputBuilder {
 }
 impl ConfigureAccessPointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }
@@ -143,18 +136,12 @@ impl ConfigureAccessPointInputBuilder {
         &self.cpi_user_id
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
-    pub fn cpi_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cpi_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpi_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
-    pub fn set_cpi_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cpi_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpi_user_password = input;
         self
     }
@@ -163,18 +150,12 @@ impl ConfigureAccessPointInputBuilder {
         &self.cpi_user_password
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
-    pub fn cpi_secret_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cpi_secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpi_secret_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
-    pub fn set_cpi_secret_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cpi_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpi_secret_key = input;
         self
     }
@@ -185,20 +166,16 @@ impl ConfigureAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`ConfigureAccessPointInput`](crate::operation::configure_access_point::ConfigureAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::configure_access_point::ConfigureAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::configure_access_point::ConfigureAccessPointInput {
-                access_point_arn: self.access_point_arn,
-                position: self.position,
-                cpi_username: self.cpi_username,
-                cpi_user_id: self.cpi_user_id,
-                cpi_user_password: self.cpi_user_password,
-                cpi_secret_key: self.cpi_secret_key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::configure_access_point::ConfigureAccessPointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::configure_access_point::ConfigureAccessPointInput {
+            access_point_arn: self.access_point_arn,
+            position: self.position,
+            cpi_username: self.cpi_username,
+            cpi_user_id: self.cpi_user_id,
+            cpi_user_password: self.cpi_user_password,
+            cpi_secret_key: self.cpi_secret_key,
+        })
     }
 }
 impl ::std::fmt::Debug for ConfigureAccessPointInputBuilder {

@@ -24,8 +24,7 @@ pub fn ser_fleet_launch_template_specification(
 
 pub fn de_fleet_launch_template_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FleetLaunchTemplateSpecification, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::FleetLaunchTemplateSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FleetLaunchTemplateSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

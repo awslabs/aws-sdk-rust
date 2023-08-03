@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput) with field(s):
     ///   - [`stack_summary(Option<StackSummary>)`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput::stack_summary): <p>A <code>StackSummary</code> object that contains the results.</p>
     /// - On failure, responds with [`SdkError<DescribeStackSummaryError>`](crate::operation::describe_stack_summary::DescribeStackSummaryError)
-    pub fn describe_stack_summary(
-        &self,
-    ) -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder {
-        crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stack_summary(&self) -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder {
+        crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder::new(self.handle.clone())
     }
 }

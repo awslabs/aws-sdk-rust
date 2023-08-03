@@ -35,9 +35,7 @@ impl ListFrameworksOutput {
 
 /// A builder for [`ListFrameworksOutput`](crate::operation::list_frameworks::ListFrameworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFrameworksOutputBuilder {
     pub(crate) frameworks: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFrameworksOutputBuilder {
         self
     }
     /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
-    pub fn set_frameworks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>,
-    ) -> Self {
+    pub fn set_frameworks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>) -> Self {
         self.frameworks = input;
         self
     }
     /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
-    pub fn get_frameworks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Framework>> {
+    pub fn get_frameworks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Framework>> {
         &self.frameworks
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

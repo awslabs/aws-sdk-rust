@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSchemaMappingOutput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput::message): <p>A successful operation message.</p>
     /// - On failure, responds with [`SdkError<DeleteSchemaMappingError>`](crate::operation::delete_schema_mapping::DeleteSchemaMappingError)
-    pub fn delete_schema_mapping(
-        &self,
-    ) -> crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder {
-        crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schema_mapping(&self) -> crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder {
+        crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::new(self.handle.clone())
     }
 }

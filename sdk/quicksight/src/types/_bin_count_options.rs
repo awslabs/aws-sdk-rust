@@ -23,9 +23,7 @@ impl BinCountOptions {
 
 /// A builder for [`BinCountOptions`](crate::types::BinCountOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BinCountOptionsBuilder {
     pub(crate) value: ::std::option::Option<i32>,
 }

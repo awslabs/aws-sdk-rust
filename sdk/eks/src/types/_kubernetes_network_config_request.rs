@@ -46,9 +46,7 @@ impl KubernetesNetworkConfigRequest {
 
 /// A builder for [`KubernetesNetworkConfigRequest`](crate::types::KubernetesNetworkConfigRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesNetworkConfigRequestBuilder {
     pub(crate) service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) ip_family: ::std::option::Option<crate::types::IpFamily>,
@@ -62,10 +60,7 @@ impl KubernetesNetworkConfigRequestBuilder {
     /// </ul> <important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
-    pub fn service_ipv4_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_ipv4_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_ipv4_cidr = ::std::option::Option::Some(input.into());
         self
     }
@@ -77,10 +72,7 @@ impl KubernetesNetworkConfigRequestBuilder {
     /// </ul> <important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
-    pub fn set_service_ipv4_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_ipv4_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_ipv4_cidr = input;
         self
     }

@@ -40,9 +40,7 @@ impl ListTargetsInput {
 
 /// A builder for [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -65,19 +63,14 @@ impl ListTargetsInputBuilder {
     /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>> {
         &self.filters
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -109,12 +102,7 @@ impl ListTargetsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets::ListTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsInput {
             filters: self.filters,
             next_token: self.next_token,

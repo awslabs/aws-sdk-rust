@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAutoMlJobOutput`](crate::operation::create_auto_ml_job::CreateAutoMlJobOutput) with field(s):
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::operation::create_auto_ml_job::CreateAutoMlJobOutput::auto_ml_job_arn): <p>The unique ARN assigned to the AutoML job when it is created.</p>
     /// - On failure, responds with [`SdkError<CreateAutoMLJobError>`](crate::operation::create_auto_ml_job::CreateAutoMLJobError)
-    pub fn create_auto_ml_job(
-        &self,
-    ) -> crate::operation::create_auto_ml_job::builders::CreateAutoMLJobFluentBuilder {
-        crate::operation::create_auto_ml_job::builders::CreateAutoMLJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_auto_ml_job(&self) -> crate::operation::create_auto_ml_job::builders::CreateAutoMLJobFluentBuilder {
+        crate::operation::create_auto_ml_job::builders::CreateAutoMLJobFluentBuilder::new(self.handle.clone())
     }
 }
